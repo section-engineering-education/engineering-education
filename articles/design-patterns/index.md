@@ -47,7 +47,7 @@ To implement a simple factory, we need at least three things:
 3. The client that uses it.
 
 Here is a basic example of how the factory pattern can be implemented.
-Say you wanted to create smartphones in an object oriented, non modular way.
+Say you wanted to create smartphones in an object-oriented, non-modular way.
 To keep our example super simple, we'll start with only three types of phones:
 ```java
 enum PhoneType {
@@ -67,7 +67,7 @@ abstract class Phone {
     abstract void construct();
 }
 ```
-The phone class is an abstract class because we want its children to inherit some base functionalities (please note that this is just a simplified example, you might have complex real world objects in your project).
+The phone class is an abstract class because we want its children to inherit some base functionalities (please note that this is just a simplified example, you might have complex real-world objects in your project).
 It's children are:
 ```java
 class Samsung extends Phone {
@@ -132,7 +132,7 @@ You're also forced to add some decision logic when deciding which object to crea
 ### The Abstract Factory Pattern
 The Abstract Factory pattern introduces another layer of abstraction over the Factory pattern.
 It uses a Factory of Factories that creates other Factories.
-Using our example from earlier on, let's say we wanted to add the production of generic cellphones to our system, again this example might not reflect a real life use case but for the sake of learning, let's go with it.
+Using our example from earlier on, let's say we wanted to add the production of generic cellphones to our system, again this example might not reflect a real-life use case but for the sake of learning, let's go with it.
 cellphones are the ones we used before smartphones took over, they share some functionalities with modern smartphones but they lack some features.
 To be clear on the distinction, we are going to have two factories, one for SmartPhones, another for CellPhones. We'll store the types in an enum:
 ```java
@@ -141,7 +141,7 @@ enum FactoryType {
 }
 ```
 Let's create the Factory classes
-We're going to use an abstract Phone Factory class so that the `PhoneFactory classes will inherit some shared functionalities that the might have.
+We're going to use an abstract Phone Factory class so that the `PhoneFactory` classes will inherit some shared functionalities that they might have.
 ```java
 abstract class AbstractPhoneFactory{
    abstract Phone getPhone(PhoneType type);
@@ -202,9 +202,10 @@ Phone blackberry = FactoryGenerator.getFactory(FactoryType.SMARTPHONEFACTORY).ge
 One drawback of this is pattern extensibility; it is difficult to extend abstract factories to produce new kinds of products. 
 
 ### Conclusion
-In this article we introduced three design patterns and how to implement them in Java.
+In this article, we introduced three design patterns and how to implement them in Java.
 Learning about design patterns can help you become a better developer and may give you an edge over others in an interview.
 Since this article is by no means exhaustive, I hope it has helped get your feet wet as there's a whole world of design patterns out there.
+To get the full picture, a deeper understanding, and perhaps prep for an interview, here are a few relevant links:
 
 To get the full picture, a deeper understanding and perhaps prep for an interview, here are a few relevant links:
 1. [Design Patterns](https://sourcemaking.com/design_patterns)
