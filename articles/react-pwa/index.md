@@ -348,9 +348,9 @@ In this component:
 
 Your app so far should look like this:
 
-![React-PWA-image](/engineering-education/react-pwa/react-pwa1.png)
+![React-PWA-image](/engineering-education/react-progressive-web-application/react-pwa1.png)
 
-![React-PWA-image2](/engineering-education/react-pwa/react-pwa2.png)
+![React-PWA-image2](/engineering-education/react-progressive-web-application/react-pwa2.png)
 
 
 ### Adding functionality to make it a Progressive Web App
@@ -486,11 +486,11 @@ Try to simulating an offline experience. In your browser DevTools, in the Networ
 
 The development version performance
 
-![PWA Performance](/engineering-education/react-pwa/pwa-performance.png)
+![PWA Performance](/engineering-education/react-progressive-web-application/pwa-performance.png)
 
-![PWA install](/engineering-education/react-pwa/install.png)
+![PWA install](/engineering-education/react-progressive-web-application/install.png)
 
-![Requirements for PWA](/engineering-education/react-pwa/requirements.png)
+![Requirements for PWA](/engineering-education/react-progressive-web-application/requirements.png)
 
 Our app is now installable by clicking the plus(+) icon on google chrome near bookmarks icon and available for offline use.
 
