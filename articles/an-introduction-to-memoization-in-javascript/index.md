@@ -264,11 +264,11 @@ Here is a Fibonacci example that generates the nth Fibonacci terms in the Fibona
 
 ```js
 const fibonacci = (n) => {
-    // if n is equal to 1 return the first term 1
+    // if n is equal to 1, return the first term 1
     if (n == 1) {
       return 1;
     }
-    // if n is equal 2 return the second term 1
+    // if n is equal 2, return the second term 1
     else if (n == 2) {
       return 1;
     }
@@ -287,11 +287,11 @@ However, when we want to generate a higher nth Fibonacci term, the program becom
 
 ```js
 const fibonacci = (n) => {
-    // if n is equal to 1 return the first term 1
+    // if n is equal to 1, return the first term 1
     if (n == 1) {
       return 1;
     }
-    // if n is equal 2 return the second term 1
+    // if n is equal 2, return the second term 1
     else if (n == 2) {
       return 1;
     }
