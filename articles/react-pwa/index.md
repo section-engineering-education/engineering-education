@@ -484,15 +484,15 @@ I have used lighthouse to generate an audit report. [Lighthouse](https://develop
 > Note that this will not pass the HTTPS audit in the development environment. So if you need hosting, make sure the production web-server supports HTTPS.
 Try to simulating an offline experience. In your browser DevTools, in the Network tab, enable the offline checkbox and reload the app. The application should be able to work offline.
 
-The development version performance
+The development version performance:
 
 ![PWA Performance](/engineering-education/react-progressive-web-application/pwa-performance.png)
-
-![PWA install](/engineering-education/react-progressive-web-application/install.png)
 
 ![Requirements for PWA](/engineering-education/react-progressive-web-application/requirements.png)
 
 Our app is now installable by clicking the plus(+) icon on google chrome near bookmarks icon and available for offline use.
+
+![PWA install](/engineering-education/react-progressive-web-application/install.png)
 
 Check the deployed app on [Netlify](https://reactify-pwa.netlify.app/) and the project source code in my repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
 
