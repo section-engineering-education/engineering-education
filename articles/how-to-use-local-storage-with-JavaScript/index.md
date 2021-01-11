@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-use-localstorage-with-javascript/hero.jpg
-    alt: How to Use local storage with JavaScript Image
+    alt: How to use local storage with JavaScript Image
 ---
 Local storage allows developers to store and retrieve data in the browser. The data stored in local storage will not expire. This means the data will persist even if the tab or the browser window is closed.
 <!--more-->
