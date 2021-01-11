@@ -32,9 +32,9 @@ Predictions are made based on unseen data, and the future is predicted with all 
 
 Time series are assumed to be generated at a spaced timing. When the data in time series are timed and regular, they are called **regular time series** and when they are not at regular or timed, they are called **irregular time series**.
 
-### Real life examples of time series
+### Real life applications of time series
 - A time series model can be used in predicting the closing price of the stock at the end of the day.
-- it can be used in predicting the number of product sales.
+- It can be used in predicting the number of product sales.
 - Time series models can forecast the birth or death rate at a hospital.
 - It can be used to forecast the number of passengers a bus terminal will have.
 - Used to forecast the unemployment rate of a city or state.
@@ -75,7 +75,11 @@ Here are four useful time series analysis techniques:
 ![Simple](/engineering-education/introduction-to-time-series/img.jpg)
 
 ### Conclusion
-Time series problems provide an unending opportunity for prediction. In this article we have gone through what a time series model is, a few different time series forecasting methods. 
+In this article we have gone through time Series forecasting methods, time-series forecasting & time-series analysis, components of time series etc. Hopefully this article has given you a beginer friendly introduction to time sereis and makes you do more research. 
+
+#### sources
+[Time series-Introduction](https://towardsdatascience.com/time-series-introduction-7484bc25739a)
+[What Is Time Series Forecasting?](https://machinelearningmastery.com/time-series-forecasting/)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
