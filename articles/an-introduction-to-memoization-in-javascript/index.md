@@ -264,16 +264,16 @@ Here is a Fibonacci example that generates the nth Fibonacci terms in the Fibona
 
 ```js
 const fibonacci = (n) => {
-    // if num is equal to 1 return the first term 1
+    // if n is equal to 1 return the first term 1
     if (n == 1) {
       return 1;
     }
-    // if num is equal 2 1 return the second term 1
+    // if n is equal 2 return the second term 1
     else if (n == 2) {
       return 1;
     }
 
-    // else num is larger than two, return the sum of the previous two terms
+    // else n is greater than two, return the sum of the previous two terms
     else 
       return fibonacci(n - 1) + fibonacci(n - 2);
 };
@@ -287,16 +287,16 @@ However, when we want to generate a higher nth Fibonacci term, the program becom
 
 ```js
 const fibonacci = (n) => {
-    // if num is equal to 1 return the first term 1
+    // if n is equal to 1 return the first term 1
     if (n == 1) {
       return 1;
     }
-    // if num is equal 2 1 return the second term 1
+    // if n is equal 2 1 return the second term 1
     else if (n == 2) {
       return 1;
     }
 
-    // else num is larger than two, return the sum of the previous two terms
+    // else n is larger than two, return the sum of the previous two terms
     else 
       return fibonacci(n - 1) + fibonacci(n - 2);
 };
@@ -333,16 +333,16 @@ const memoize = (func) => {
 };
 
 const fibonacci = memoize((n) => {
-  // if num is equal to 1 return the first term 1
+  // if n is equal to 1 return the first term 1
   if (n == 1) {
     return 1;
   }
-  // if num is equal 2 1 return the second term 1
+  // if n is equal 2 1 return the second term 1
   else if (n == 2) {
     return 1;
   }
 
-  // else num is larger than two, return the sum of the previous two terms
+  // else n is larger than two, return the sum of the previous two terms
   else 
   return fibonacci(n - 1) + fibonacci(n - 2);
 });
