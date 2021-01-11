@@ -78,8 +78,8 @@ Here are four useful time series analysis techniques:
 In this article we have gone through time Series forecasting methods, time-series forecasting & time-series analysis, components of time series etc. Hopefully this article has given you a beginer friendly introduction to time sereis and makes you do more research. 
 
 #### sources
-[Time series-Introduction](https://towardsdatascience.com/time-series-introduction-7484bc25739a)
-[What Is Time Series Forecasting?](https://machinelearningmastery.com/time-series-forecasting/)
+1. [Time series-Introduction](https://towardsdatascience.com/time-series-introduction-7484bc25739a)
+2. [What Is Time Series Forecasting?](https://machinelearningmastery.com/time-series-forecasting/)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
