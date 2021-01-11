@@ -18,7 +18,7 @@ Let's start with creating a new React application using `create-react-app` comma
 npx create-react-app react-pwa --template cra-template-pwa
 ```
 
-This will create a folder named `react-pwa`. The argument `--template cra-template-pwa` is added to create an app with service worker for Progressive Web App functionality since version 4 or later will not provide a built-in service worker.
+This will create a folder named `react-pwa`. The argument `--template cra-template-pwa` is added to create an app with a service worker for Progressive Web App functionality since version 4 or later will not provide a built-in service worker.
 
 You can now open the project in your favorite code editor. The folder structure will initially look similar to this:
 
@@ -65,6 +65,8 @@ We'll have four components:
 ### The App component 
 Let's start with the `App` component since it is the parent component of the `TodoList` and the `Form` components.
 
+This is the code for the `App.js`:
+
 ```javascript
 import React,{useState} from 'react';
 
@@ -80,9 +82,9 @@ const App=()=>{
   const [todos,setTodos]=useState([]);
 
   const addTodo= todo=>{
-          const newTodos=[todo,...todos];
-           setTodos(newTodos);
-       }
+    const newTodos=[todo,...todos];
+    setTodos(newTodos);
+ }
   
   return (
     <div>
@@ -96,7 +98,7 @@ const App=()=>{
 export default App;
 ```
 
-The App component walkthrough:
+In this component:
 
 - We import the `TodoList` and `Form` component which we will create in the next steps.
 
@@ -159,7 +161,7 @@ button:hover{
 
 This component will be used to add new todos. 
 
-In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you need to create a file named `Form.js`. 
+In your `src/` folder, create a new folder named `components`. Inside the `components` folder, you should create a file named `Form.js`. 
 
 This is the code for the `Form.js`:
 
@@ -174,6 +176,7 @@ const Form =({addTodo})=>{
     const inputTextHandler=(e)=>{
         setInputText(e.target.value);
     }
+    
     const submitTodoHandler=(e)=>{
         e.preventDefault();
         if(inputText){
@@ -195,7 +198,7 @@ const Form =({addTodo})=>{
 export default Form;
 ```
 
-The Form component walkthrough:
+In this component:
 
 - The method `inputTextHandler` is set to the `onChange` property of the input tag and is invoked every time when the value of the input element changes.
 
@@ -229,13 +232,14 @@ npm install uuid
 
 This is the component that acts as a container to the list of the todo items.
 
-You need to create a new file named `TodosList.js` inside the components folder. Since our Todo component is a child of the TodoList component, we will first need to create the `TodoList`.
+You should create a new file named `TodosList.js` inside the components folder. Since our Todo component is a child of the TodoList component, we should first create the `TodoList` component.
 
 The TodoList component is recieving todos state from the App component. We have [lifted its state up](https://reactjs.org/docs/lifting-state-up.html) in the App component so that our `TodoList` can access it via props.
 
 To create this component, go into your components folder and create a new file named `TodoList.js`.
 
-This component code is like:
+This is the code for the `TodoList.js`:
+
 ```javascript
 import React from "react";
 import Todo from "./Todo";
@@ -250,6 +254,7 @@ const TodoList = ({ todos, setTodos }) => {
       })
       setTodos(updatedTodos);
   };
+  
   const removeTodo=(id)=>{
     setTodos(todos.filter(todo=>todo.id!==id));
   }
@@ -283,9 +288,9 @@ In this component:
 
 ### The Todo component
 
-You need to add a new file and name it `Todo.js` in the components folder.
+You should create a new file and name it `Todo.js` in the components folder.
 
-Check the code below:
+This is the code for the `Todo.js`:
 
 ```javascript
 import React from 'react';
@@ -347,7 +352,9 @@ Our application will need functionalities to run offline, caching assets by regi
 
 ### Registering a service worker
 
-A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability. The `create-react-app` provided all the tools needed to create a Progressive Web App in React. To configure this to run offline, we need to register the generated service worker file. In the project, open the file named `index.js` and find the code that looks like:
+A service worker is a script that runs in the browser's background. It handles network intercepts from requests and managing caching for offline availability. 
+
+The `create-react-app` provided all the tools needed to create a Progressive Web App in React. To configure this to run offline, we should register the generated service worker file. In the project, open the file named `index.js` and find the code that looks like:
 
 ```javascript
 // If you want your app to work offline and load faster, you can change
@@ -408,7 +415,7 @@ The functionality of these attributes in the manifest are:
 
 - Property `"background_color"` is the color of the splash screen.
 
-We will need to link the manifest file to the `index.html` as `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`and add the icon that will point to the apple devices home screen as `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />` . The `index.html` markup should look like:
+We will should link the manifest file to the `index.html` as `<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />`and add the icon that will point to the apple devices home screen as `<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />` . The `index.html` markup should look like:
 
 ```HTML
 <!DOCTYPE html>
@@ -455,7 +462,7 @@ We will need to link the manifest file to the `index.html` as `<link rel="manife
 
 ### Performance of the App
 
-I have used lighthouse to generate an audit report. [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more. To test this, we need to generate the production build by running `npm run build` on the terminal. When in developement mode, a static server may be used. Install one via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
+I have used lighthouse to generate an audit report. [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more. To test this, we should generate the production build by running `npm run build` on the terminal. When in developement mode, a static server may be used. Install one via npm by running the command `npm install serve`. To start the static server, run the command `serve -s build` and open your browser on `http://localhost:5000`.
 
 > Note that this will not pass the HTTPS audit in the development environment. So if you need hosting, make sure the production web-server supports HTTPS.
 Try to simulating an offline experience. In your browser DevTools, in the Network tab, enable the offline checkbox and reload the app. The application should be able to work offline.
