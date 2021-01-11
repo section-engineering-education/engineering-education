@@ -291,7 +291,7 @@ const fibonacci = (n) => {
     if (n == 1) {
       return 1;
     }
-    // if n is equal 2 1 return the second term 1
+    // if n is equal 2 return the second term 1
     else if (n == 2) {
       return 1;
     }
