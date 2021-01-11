@@ -38,7 +38,6 @@ There are two ways we can avoid this:
 #### Limitations of the Singleton pattern
 Singletons introduce a global state. This brings about tight coupling that makes unit testing difficult.
 
-
 ### The Factory pattern
 This pattern separates the process of creating concrete objects from the client that uses said objects; the client does not know about the creation logic.
 It reduces the dependency of the client on the implementations.
@@ -183,9 +182,9 @@ Next we are going to create a Factory generator class:
 class FactoryGenerator{
     static AbstractPhoneFactory getFactory(FactoryType factoryType){
         switch (factoryType){
-            case CELLPHONEFACTORY :
+            case CELL_PHONE_FACTORY :
                 return new CellPhoneFactory();
-            case SMARTPHONEFACTORY :
+            case SMART_PHONE_FACTORY :
                 return new SmartPhoneFactory();
         }
         return null;
