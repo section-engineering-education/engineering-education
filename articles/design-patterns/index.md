@@ -1,12 +1,12 @@
 # Understanding design patterns in Java
+
 ### What are design patterns?
+
 A design pattern is a reusable solution to a commonly occurring problem in software design.
 They can be thought of as tried and tested approaches; guidelines for how to structure your objects and the relationships between them. These guidelines are not too opinionated, they are implementation specific and are meant to be used with any programming language while designing any kind of system.
 Design patterns were invented by a group of software engineers known as The Gang of Four in their book, Elements of Reusable Object-Oriented Software. They created 23 design patterns and revolutionized the way people design software. 
 Though the book was written in a C++ context, it is still relevant to Java programmers.
 Let us discuss some of the most popular design patterns and how to implement them in Java using simple examples.
-
-
 
 ### The Singleton pattern
 The Singleton pattern is perhaps the most popular and controversial design pattern. 
@@ -36,19 +36,19 @@ There are two ways we can avoid this:
 1.  Find a way to make the getInstance method synchronized.
 2.  Create the instance of the Singleton class as soon as the class is loaded to the JVM.
 #### Limitations of the Singleton pattern
-Singletons introduce a global state, this brings about tight coupling that makes unit testing difficult.
+Singletons introduce a global state. This brings about tight coupling that makes unit testing difficult.
 
 
 ### The Factory pattern
 This pattern separates the process of creating concrete objects from the client that uses said objects; the client does not know about the creation logic.
-it  reduces the dependency of the client on the implementations.
+It reduces the dependency of the client on the implementations.
 To implement a simple factory, we need at least three things:
 1. A factory
 2. The products a factory makes
 3. The client that uses it.
 
 Here is a basic example of how the factory pattern can be implemented.
-Say you wanted to create smartphones in an object oriented, non modular way,
+Say you wanted to create smartphones in an object oriented, non modular way.
 To keep our example super simple, we'll start with only three types of phones:
 ```java
 enum PhoneType {
@@ -104,8 +104,8 @@ class BlackBerry extends Phone {
     }
 }
 ```
-The next thing we are going to create is a SmartPhoneFactory class:
-In the PhoneFactory class below, you'll notice that the getPhone method takes a parameter representing which class to instantiate.
+The next thing we are going to create is a `PhoneFactory` class:
+In the `PhoneFactory` class below, you'll notice that the getPhone method takes a parameter representing which class to instantiate.
 ```java
 class PhoneFactory {
     static Phone getPhone(PhoneType type) {
@@ -128,7 +128,7 @@ Phone blackberry = PhoneFactory.getPhone(PhoneType.BLACKBERRY);
 ```
 ### Limitations of the Factory pattern
 As you've seen above, the Factory pattern makes code less readable as it introduces a layer of abstraction.
-You're also forced to add some decision logic when deciding which object to create, which adds a bit of ugliness to your code (think of a situation where you have more than 10 different types of phones to create, the number of if statements you'd have to write!)
+You're also forced to add some decision logic when deciding which object to create, which adds a bit of ugliness to your code (think of a situation where you have more than 10 different types of phones to create, and the number of if statements you'd have to write!)
 
 ### The Abstract Factory Pattern
 The Abstract Factory pattern introduces another layer of abstraction over the Factory pattern.
@@ -138,11 +138,11 @@ cellphones are the ones we used before smartphones took over, they share some fu
 To be clear on the distinction, we are going to have two factories, one for SmartPhones, another for CellPhones. We'll store the types in an enum:
 ```java
 enum FactoryType {
-    SMARTPHONEFACTORY, CELLPHONEFACTORY
+    SMART_PHONE_FACTORY, CELL_PHONE_FACTORY
 }
 ```
-Let's create the Factory classes.
-We're going to use an abstract Phone Factory class so that the PhoneFactory classes will inherit some shared functionalities that the might have.
+Let's create the Factory classes
+We're going to use an abstract Phone Factory class so that the `PhoneFactory classes will inherit some shared functionalities that the might have.
 ```java
 abstract class AbstractPhoneFactory{
    abstract Phone getPhone(PhoneType type);
@@ -151,8 +151,7 @@ abstract class AbstractPhoneFactory{
 ```
 The SmartPhone Factory class:
 ```java
-class SmartPhoneFactory extends  AbstractPhoneFactory{
-
+class SmartPhoneFactory extends AbstractPhoneFactory {
 
     @Override
     Phone getPhone(PhoneType type) {
@@ -198,7 +197,7 @@ As you can see, it looks just like the Factory classes used to create the Produc
 
 When using it within a client class, say we want to create a new Blackberry Phone:
 ```java
- Phone blackberry = FactoryGenerator.getFactory(FactoryType.SMARTPHONEFACTORY).getPhone(PhoneType.BLACKBERRY);
+Phone blackberry = FactoryGenerator.getFactory(FactoryType.SMARTPHONEFACTORY).getPhone(PhoneType.BLACKBERRY);
 ```
 ### Limitations of the Abstract Factory pattern
 One drawback of this is pattern extensibility; it is difficult to extend abstract factories to produce new kinds of products. 
