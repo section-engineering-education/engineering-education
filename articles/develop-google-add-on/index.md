@@ -14,7 +14,7 @@ The Apps Script displays a programming interface as shown below.
 We now head straight to the features and development.
 
 #### 1. Menu creation
-The aim is to add on the google sheet menu our functions for users to click and execute a script. The script remains invisible for users, hence the need to have menu buttons to enable interaction and execution. To create a menu, `onOpen()` function is used with the reference to the spreadsheet's user interface being made in the body. A function `createMenu('Menu')` is called and provided with a suitable name for the add-on top Menu. To add items on the menu, the `addItem('Item')` function is used with a suitable name provided. Items in a menu can be separated by calling a function `addSeparator()` that does not take any parameter.  To add a submenu, the `addSubMenu()` function is called that reference also the spreadsheet's user interface and call the `createMenu()` function supplying it with the submenu name. The function `addToUi()` is used  to add the menu in the spreadsheet's user interface.
+The aim is to add on the google sheet menu our functions for users to click and execute a script. The script remains invisible for users, hence the need to have menu buttons to enable interaction and execution. To create a menu, `onOpen()` function is used with the reference to the spreadsheet's user interface being made in the body. A `createMenu('Menu')` function is called and provided with a suitable name for the add-on top Menu. To add items on the menu, the `addItem('Item')` function is used with a suitable name provided. Items in a menu can be separated by calling a function `addSeparator()` that does not take any parameter. To add a submenu, the `addSubMenu()` function is called with a reference to the spreadsheet's user interface and a call the `createMenu()` function supplyied with the submenu name. The function `addToUi()` is used  to add the menu in the spreadsheet's user interface.
 
 ```javascript
 function onOpen() {
@@ -45,17 +45,15 @@ function onOpen() {
 ![Create menu](/engineering-education/google-sheet-add-on/menu.png)
 
 #### 2. User Interface (UI) development
-On top of the spreadsheet's user interface, Google enriches it with popups, sidebars, dialogue boxes, alerts among others. They help to improve the interaction between the client and the backend systems by providing information on progress, prompting users to give more information, or even giving feedback. There are custom dialogues for Apps Script projects that take HTML input that is built to open like modal items and interrupt the user from doing anything else before batting it. File-open dialogues allow the user to pick/choose a file from the drive, computer, or other location.  We provide a case for a sidebar that takes HTML as input and requires a title.
+On top of the spreadsheet's user interface, Google enriches it with popups, sidebars, dialogue boxes, alerts, among others. They help to improve the interaction between the client and the backend systems by providing information on progress, prompting users to give more information, or even giving feedback. There are custom dialogues for Apps Script projects that take HTML input that is built to open like modal items and interrupt the user from doing anything else before batting it. File-open dialogues allow the user to pick/choose a file from the drive, computer, or other location.  We provide a case for a sidebar that takes HTML as input and requires a title.
 
 ```javascript
-function showSideBar()
-{
+function showSideBar() {
   var htmlOutput = HtmlService
     .createHtmlOutput('<p>This is the body in HTML</p>')
     .setTitle('SideBar Header');
-SpreadsheetApp.getUi().showSidebar(htmlOutput);
+  SpreadsheetApp.getUi().showSidebar(htmlOutput);
 }
-
 ```
 
 ![Side bar](/engineering-education/google-sheet-add-on/sideBar.png)
@@ -72,39 +70,35 @@ Apps Script provides a way to use external libraries to make use of the existing
 <body>
 ```
 
-
 #### 4. Availability of helper functions.
-Apps Script provides functions that give quick access to spreadsheets and data during processing. `SpreadsheetApp.getActiveSpreadsheet()` is a function used to instruct the Spreadsheet application to return the spreadsheet in use. It can be concatenated with `.getSheetByName`, `getSheetByUrl` among others to return a particular sheet. The `getRange()` function is used with range parameters to return a particular section of the sheet. It can be used together with `getValues()` function to return the values of the selected range. Other inbuilt functions include `getMaxRows()`, `getNumRows()`, `getNumColumns()` etc.
+Apps Script provides functions that give quick access to spreadsheets and data during processing. `SpreadsheetApp.getActiveSpreadsheet()` is a function used to instruct the Spreadsheet application to return the spreadsheet in use. It can be concatenated with `.getSheetByName`, `getSheetByUrl`, among others to return a particular sheet. The `getRange()` function is used with range parameters to return a particular section of the sheet. It can be used together with `getValues()` function to return the values of the selected range. Other inbuilt functions include `getMaxRows()`, `getNumRows()`, `getNumColumns()`, etc.
 
 ```javascript
-function helperFunction()
-{
+function helperFunction() {
   var spreadsheet = SpreadsheetApp.getActive();
   sheet = spreadsheet.getSheetByName('Sheet1');
   range = sheet.getRange('B2:C5');
   data = range.getValues();
   text = '';
-  for (v in data)
-  {
+  for (v in data) {
     text = text +'<p>'+data[v]+'</p>';
   }
 
   var htmlOutput = HtmlService
     .createHtmlOutput(text)
     .setTitle('Returned Data');
-SpreadsheetApp.getUi().showSidebar(htmlOutput);
-
+  SpreadsheetApp.getUi().showSidebar(htmlOutput);
 }
 ```
 
 ![Helper function](/engineering-education/google-sheet-add-on/helperFunction.png)
 
 #### 5. Triggers
-Add-ons are capable of using three types of triggers: 
-* Simple triggers that run on performing a certain function like the onOpen() that is called when the spreadsheet is opened; 
-* Installable triggers that are called after being installed like the form-submit; and 
-* Time-driven triggers that are time-dependent. 
-In this section, we illustrate the time-based triggers which are defined mostly by the user. They let the script execute at a particular time at most once per hour. You specify the time you want the script to execute but the script may randomly choose the time within that hour which is appropriate to execute i.e. if you choose to execute at 8 am, the script may choose between 8 am and 9 am.
+Add-ons are capable of using three types of triggers:
+* Simple triggers that run on performing a certain function like the `onOpen()` that is called when the spreadsheet is opened;
+* Installable triggers that are called after being installed like the form-submit; and
+* Time-driven triggers that are time-dependent.
+In this section, we illustrate the time-based triggers which are defined mostly by the user. They let the script execute at a particular time at most once an hour. You specify the hour you want the script to execute but the script may randomly choose the appropriate time within that hour for it to execute i.e. if you choose to execute at 8 am, the script may choose between 8 am and 9 am.
 
 ```javascript
 function createTimeDrivenTriggers() {
@@ -119,7 +113,7 @@ function createTimeDrivenTriggers() {
 ![Triggers](/engineering-education/google-sheet-add-on/triggers.png)
 
 #### 6. Storage
-Apps Script supports both Properties and JDBC services to facilitate data storage. Properties service is majorly used to store key-value pairs for simple strings with a scope of one script, one user of the script, or the document within which the add-on is used. The `getScriptProperties()`, `getUserProperties()` and `getDocumentProperties()` functions return similar Properties objects that define the access levels. All data is stored as strings, if not a string, it is converted. JDBC allows you to connect to an external database such as Cloud SQL instance, Mysql, Oracle, etc. This makes it the best choice for robust applications.  To establish the connection, one is required to ensure that the database accepts Apps Script Ip addresses that are provided by Google whereas, for own databases, JDBC should run in port 1025 and above.
+Apps Script supports both Properties and JDBC services to facilitate data storage. Properties service is majorly used to store key-value pairs for simple strings with a scope of one script, one user of the script, or the document within which the add-on is used. The `getScriptProperties()`, `getUserProperties()` and `getDocumentProperties()` functions return similar Properties objects that define the access levels. All data is stored as strings, if not a string, it is converted. JDBC allows you to connect to an external database such as Cloud SQL instance, Mysql, Oracle, etc. This makes it the best choice for robust applications. To establish the connection, one is required to ensure that the database accepts Apps Script Ip addresses that are provided by Google. Whereas, for own databases, JDBC should run in port 1025 and above.
 
 ```javascript
 // Cloud SQL
@@ -162,7 +156,7 @@ function writeFirstRecord() {
 ```
 
 #### 7. Logging/debugging
-Apps Script does provides a way to log and debug when the add-on is in the development phase. The `clear()`, `getLog()`, and `log()` functions are useful when logging errors. Syntax errors are detected immediately they occur and the page does not allow saving. Runtime errors are slightly hard to detect thus only reported during code execution. Apps Script saves execution scripts that record each call to services thus helping to show the point the error occurred. To view the records you navigate to Executions. Further to this, Apps Script allows users to run code in debug mode by choosing a breakpoint at which execution stops.
+Apps Script does provides a way to log and debug when the add-on is in the development phase. The `clear()`, `getLog()`, and `log()` functions are useful when logging errors. Syntax errors are detected immediately they occur and the page does not allow saving. Runtime errors are slightly hard to detect thus only reported during code execution. Apps Script saves execution scripts that record each call to services thus helping to show the point the error occurred. Navigate to Executions to view the records. Further to this, Apps Script allows users to run code in debug mode by choosing a breakpoint at which the execution stops.
 
 ```javascript
 // Generate a log, then email it to the person who ran the script.
@@ -177,7 +171,7 @@ Apps Script does provides a way to log and debug when the add-on is in the devel
 ![Logging / Debugging](/engineering-education/google-sheet-add-on/debugging.png)
 
 #### 8. Authorization
-On install and addition of new service, Apps Script requires that the user authorize the application to execute from their spreadsheet application. After it has acquired the necessary permission, the add-on can access private data in the scopes defined. Permissions on an add-on can be revoked at any time by navigating to Account> Security > View all and clicking revoke access on the add-on.
+On install and addition of new service, Apps Script requires that the user authorize the application to execute from their spreadsheet application. After it has acquired the necessary permission, the add-on can access private data in the scopes defined. Permissions on an add-on can be revoked at any time by navigating to Account > Security > View all and clicking revoke access on the add-on.
 
 ![Review permissions](/engineering-education/google-sheet-add-on/reviewpermissions.png)
 
@@ -213,7 +207,7 @@ Apps Script provides mechanisms by which spreadsheets can connect to other Googl
 ```
 
 #### 11. Publishing
-This is the last step. It allows developers to make the add-on available to the public or targeted group. The add-on should be properly tested for the specified type i.e. Workspace or Editors add-on. The project version is created and the platform while verifying collaborators.
+This is the last step. It allows developers to make the add-on available to the public or targeted group. The add-on should be properly tested for the specified type i.e. Workspace or Editors add-on. The project version is created on the platform while verifying collaborators.
 
 ![Deployment](/engineering-education/google-sheet-add-on/deployment.png)
 
