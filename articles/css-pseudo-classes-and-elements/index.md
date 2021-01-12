@@ -73,7 +73,7 @@ Other common CSS pseudo-classes include:
 
 - `:nth-child()` match elements from a list of siblings. We apply a formula of an+b to match the siblings. For example, 2n+1 would match elements 1,3,5,7, etc to give an odd outcome.
 
-Check out other CSS pseudo-classes available in detail [here]().
+Check out other CSS pseudo-classes available in detail [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements).
 
 ### The CSS Pseudo Elements
 
@@ -174,7 +174,7 @@ Using the `::first-line` pseudo-element in the CSS will make this `<p>` tag firs
     background-color: yellow;
   }
   ```
-Check out all the Pseudo-elements available and the browser compatibility in the [MDNdocs].
+Check out all the Pseudo-elements available and the browser compatibility in the [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements) documentation.
 
 ### Conclusion
 CSS plays a crucial part in frontend web development. With concepts such as pseudo-elements and pseudo-classes, web developers now have more exciting options for styling web pages. The question of which pseudo-class or element to use depends on what you want to achieve. If used wisely, these concepts will bring a cleaner semantic style. I appreciate your time to read this article.
