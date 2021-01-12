@@ -51,7 +51,9 @@ There are two ways we can avoid this:
 1.  Find a way to make the getInstance method synchronized.
 2.  Create the instance of the Singleton class as soon as the class is loaded to the JVM.
 #### Limitations of the Singleton pattern
-Singletons introduce a global state. This brings about tight coupling that makes unit testing difficult.
+Singletons introduce a global state that brings about tight coupling, which makes unit testing difficult.
+Coupling is the degree of interdependence between software modules, a tightly coupled system is one where classes are highly dependent on one another.
+ 
 
 ### The Factory pattern
 This pattern separates the process of creating concrete objects from the client that uses said objects; the client does not know about the creation logic.
@@ -222,7 +224,7 @@ Learning about design patterns can help you become a better developer and may gi
 Since this article is by no means exhaustive, I hope it has helped get your feet wet as there's a whole world of design patterns out there.
 To get the full picture, a deeper understanding, and perhaps prep for an interview, here are a few relevant links:
 
-To get the full picture, a deeper understanding and perhaps prep for an interview, here are a few relevant links:
+To get the full picture, a deeper understanding, and perhaps prep for an interview, here are a few relevant links:
 1. [Design Patterns](https://sourcemaking.com/design_patterns)
 2. [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
 3. [Free course](https://courses.caveofprogramming.com/p/java-design-patterns-and-architecture)
