@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-text-recognition-with-firebase/
+title: Text Recognition Using Firebase ML in a Non-Expo React Native Application 
+description: This tutorial will give readers a detailed guide on how to implment text recognition from an image using Firebase's ML kit in a Non-Expo React Native appliaction.
+author: mohan-raj
+date: 2021-01-12T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-native-text-recognition-with-firebase/hero.jpg
+    alt: React Native Text Recognition With Firebase Hero Image
+---
 Firebase ML Kit's text recognition APIs can recognize text in any Latin-based character set. They can also be used to automate data-entry tasks such as processing credit cards, receipts, and business cards. In this tutorial, we will be building a Non-Expo React Native application to recognize text from an image using Firebase's ML kit.
+<!--more-->
 
 Cloud Vision APIs allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
 
