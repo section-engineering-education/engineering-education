@@ -113,7 +113,7 @@ import users.views as views
 urlpatterns = [
     path('', views.user_dashboard),
     path('home/', views.HomePageView.as_view(), name='home'),
-    path('about/', views.about),
+    path('about/', views.about),]
 ```
 
 To specify texts in your web application that you will like to make translatable, we use the **gettext()** function in the views.py file, for example:
