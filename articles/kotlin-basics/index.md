@@ -1,7 +1,21 @@
-### Kotlin Programming  for Beginners 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/kotlin-basics/
+title: Kotlin Programming for Beginners 
+description: Learn Kotlin Programming, its basics, and Fundamentals from scratch.
+author: stephen-chacha
+date: 2021-01-12T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/kotlin-basics/hero.png
+    alt: kotlin basics image
+---
 
 #### Introduction
-
 Learn Kotlin Programming, its basics, and Fundamentals from scratch. 
 
 #### Prerequisites
@@ -9,13 +23,12 @@ For you to follow along with this tutorial, you need to have:
 - Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine.
 
 ### Topics to be covered
-
 1. Data Types and Variables 
     - Data Types and Variables
-    - String, Literals and String Interpolation
+    - String, Literals, and String Interpolation
     - Comments 
 
-2. Constants, Variables and Data Types
+2. Constants, Variables, and Data Types
 
 3. Control Flow Statements 
     - IF ELSE 
@@ -84,44 +97,28 @@ For you to follow along with this tutorial, you need to have:
 
 ```kotlin
 // Hello World 
-
 fun main(args: Array<String>) {
-
     print("Hello World")
 }
 
+// Output: Hello world
 ```
 
-```kotlin
-Output 
+### Defining Variables
 
-Hello World
-
-```
-
- ### Defining Variable 
-
-#### val 
-
+#### `val`
 It can be assigned a value only once 
 They are immutable string
 ``` kotlin
-
 fun main(args: Array<String>) {
-
     val x=2
     println( value x is : $x)
 }
 
+// Output: 2
 ```
 
-```kotlin
-Output
-2 
-```
-
- #### Var
-
+ #### `var`
 It can be reassigned a value after assigned locally
 They are mutable string
 
