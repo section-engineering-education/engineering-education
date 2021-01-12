@@ -148,3 +148,155 @@ Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 ![Cloud Vision Metrics](cloud_vision_dashboard.png)
 
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
+
+### Building the UI
+
+In the `App.js`, let's add 2 buttons to the screen to take a photo and pick a photo.
+
+```JSX
+import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native';
+
+export default function App() {
+  return (
+    <ScrollView contentContainerStyle={styles.screen}>
+      <Text style={styles.title}>Text Recognition</Text>
+      <View>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Take Photo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Pick a Photo</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
+}
+```
+
+Styles:
+
+```JSX
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 35,
+    marginVertical: 40,
+  },
+  button: {
+    backgroundColor: '#47477b',
+    color: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 50,
+    marginTop: 20,
+  },
+  buttonText: {
+    color: '#fff',
+  },
+});
+```
+
+![Buttons](buttons_ui.jpg)
+
+### Adding media picker
+
+Let's install the `react-native-image-picker` to add these functionalities.
+
+```bash
+npm install react-native-image-picker
+```
+
+> The minimum target SDK for the React Native Image Picker is 21. If your project targets an SDK below 21, bump up the minSDK target in `android/build.gradle`.
+
+After the package is installed, import the `launchCamera` and `launchImageLibrary` functions from the package.
+
+```JSX
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+```
+
+Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
+
+Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
+
+Now let's add 2 functions, one for each button.
+
+```JSX
+const onTakePhoto = () => launchCamera({ mediaType: 'image' }, onImageSelect);
+
+const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onImageSelect);
+```
+
+Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
+
+We should start the image labeling only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    // Image Labeling Process
+  }
+};
+```
+
+You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
+
+Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
+
+```JSX
+<View>
+  <TouchableOpacity style={styles.button} onPress={onTakePhoto}>
+    <Text style={styles.buttonText}>Take Photo</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
+    <Text style={styles.buttonText}>Pick a Photo</Text>
+  </TouchableOpacity>
+<View>
+```
+
+Let's create a state to display the selected image on the UI.
+
+```JSX
+const [image, setImage] = useState();
+```
+
+Now, let's add an Image component below the buttons to display the selected image.
+
+```JSX
+<View>
+  <TouchableOpacity style={styles.button} onPress={onTakePhoto}>
+    <Text style={styles.buttonText}>Take Photo</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
+    <Text style={styles.buttonText}>Pick a Photo</Text>
+  </TouchableOpacity>
+  <Image source={{ uri: image }} style={styles.image} />
+</View>
+```
+
+Styles for the Image:
+
+```JSX
+image: {
+  height: 300,
+  width: 300,
+  marginTop: 20,
+  borderRadius: 10,
+},
+```
+
+Let's set the image state with the URI of the selected image in the `onImageSelect` function when the user did not cancel the operation.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    setImage(media.uri);
+  }
+};
+```
+
+![Image UI](with_image.jpg)
