@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/develop-google-add-on/
+title: Developing a Google Add-on
+description: This article will go through creating a google add-on by using apps script which is a javascript based scripting language created by google to make automation a reality and make third-party services and information available.
+author: peter-ndegwa
+date: 2021-01-12T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/develop-google-add-on/hero.png
+    alt: google add-on example image
+---
+Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Also, Google has provided a scripting language to allow automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to make automation a reality and make third-party services or information available.
+<!--more-->
 ### Introduction
-Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Also, Google has provided a scripting language to allow automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to make automation a reality and make third-party services or information available. The language is useful in building web apps, desktop and android add-ons for Sheets, Docs, and Forms applications. There are two types of add-ons: Google Workspace that works for cross applications and Editor Add-on which works with a single application.  Developers can benefit a lot by knowing how to create add-ons. This provides a channel to conveniently offer services to google applications users, using a server-less platform.
+The language is useful in building web apps, desktop and android add-ons for Sheets, Docs, and Forms applications. There are two types of add-ons: Google Workspace that works for cross applications and Editor Add-on which works with a single application. Developers can benefit a lot by knowing how to create add-ons. This provides a channel to conveniently offer services to google applications users, using a server-less platform.
 
 ### Discussion
 To access the App Script programming interface, open google sheet and navigate to Tools > Script Editor.
@@ -229,3 +246,6 @@ Innovations shared in Google Marketplace go way into improving service delivery 
 4. [https://support.google.com/docs/answer/2942256?co=GENIE.Platform%3DDesktop&hl=en](https://support.google.com/docs/answer/2942256?co=GENIE.Platform%3DDesktop&hl=en)
 5. [https://www.add-in-express.com/creating-addins-blog/2014/03/27/extending-google-spreadsheets-apps-script/](https://www.add-in-express.com/creating-addins-blog/2014/03/27/extending-google-spreadsheets-apps-script/)
 6. [https://developers.google.com/gsuite/add-ons/overview](https://developers.google.com/gsuite/add-ons/overview)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
