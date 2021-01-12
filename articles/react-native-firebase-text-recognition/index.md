@@ -367,6 +367,26 @@ We'll use this state to render the recognized text in the UI.
 
 ![Final Result](final_result.jpg)
 
+### Additional Configurations
+
+The `cloudDocumentTextRecognizerProcessImage` method accepts an optional [configuration object](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions).
+
+- **languageHints**: In most cases, not setting this yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting language hints is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get better results (although it will be a significant hindrance if the hint is wrong). [Documentation](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions#languageHints)
+
+- **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
+
+- **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
+
+Example: 
+
+```JSX
+await ml().cloudDocumentTextRecognizerProcessImage(imagePath, {
+  languageHints: ["en"], // string[]
+  apiKeyOverride: "<-- API KEY -->",  // undefined | string,
+  enforceCertFingerprintMatch: true, // undefined | false | true,
+});
+```
+
 ### Let's Recap
 
 1. We set up our development environment and created a React Native app.
