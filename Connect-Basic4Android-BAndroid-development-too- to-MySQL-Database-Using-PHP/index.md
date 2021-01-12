@@ -8,7 +8,7 @@ B4A is a tool for developing mobile application. PHP is a programming language t
 ### Prerequisites
 - Prior programming language.
 - B4A application in windows machine if not installed follow instruction on this [link](https://www.section.io/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/).
-- Running Apache server to support PHP environment and MySQL server to support MySQL database.
+- Running Apache server to support PHP environment and MySQL server to support MySQL database for this case we will use Xampp.
 
 ### Installing B4A
 - Kindly follow on this [Tutorial](https://www.section.io/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1).
