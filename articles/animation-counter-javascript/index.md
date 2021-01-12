@@ -1,6 +1,26 @@
-Maybe you want to give some visual statistics about your site visits, members registered, or showing some numbers in your online game.</br>To give an appealing look and nice User Experience, you will in one way or another need to animate the digits which also aids in grabbing the attention of your site visitors for example in a social site. Moreover, it can be used as a marketing tool. This could otherwise be implemented using some static boring numbers.</br>The counters help us give our sites an expressive and professional look.</br></br>
-JavaScript has helper methods which when artistically manipulated can help us achieve that in a very easy manner.(Of course, we can do this in a few statements using a framework or library, but it's better to create one for ourselves from scratch and understand the underlying code. It also gives us an upper hand in customizing the code and adding more functionalities ourselves).</br>
-#### Overview
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/animation-counter-javascript/
+title: Creating an Animated Counter in JavaScript
+description: This article will be a guide on how to create an animated counter in a web application using Javascript.
+author: terrence-aluda
+date: 2021-01-12T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/animation-counter-javascript/hero.jpg
+    alt: Javascript Animation Image
+---
+Maybe you want to give some visual statistics about your site visits, members registered, or show some numbers in your online game. To give an appealing look and nice User Experience, you will in one way or another need to animate the digits which also aids in grabbing the attention of your site visitors for example in a social site.
+<!--more-->
+Moreover, it can be used as a marketing tool. This could otherwise be implemented using some static boring numbers. The counters help us give our sites an expressive and professional look.
+
+JavaScript has helper methods which when artistically manipulated can help us achieve that in a very easy way. Of course, we can do this in a few statements using a framework or library, but it's better to create one for ourselves from scratch and understand the underlying code. It also gives us an upper hand in customizing the code and adding more functionalities ourselves.
+
+### Overview
 We only need to use a few JavaScript helper methods and set the duration in which we will use it in animating.</br>
 The JavaScript methods used are:<br>
 
@@ -14,7 +34,7 @@ We are going to create one as illustrated below:
 
 ![Illustration](/engineering-education/animation-counter-javascript/illustration.gif)
 
-#### The JavaScript code
+### The JavaScript code
 The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/).
 
 ```Javascript
@@ -77,7 +97,8 @@ We got three user-defined functions:
 - `animate()`
 - `step()`
 - `load()`
-##### The code explanation</br>
+
+#### The code explanation
 The `animate()` function is a higher-order function containing the `step()` function.</br>
 The function takes four parameters:
 - **A DOM object**(```obj```)
@@ -109,48 +130,46 @@ The `window.requestAnimationFrame()` method is used when we need to show an anim
 The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute(This is shown in the HTML code below). It uses the `animate()` function to set the values and perform the counter.<br>
 
 #### The HTML code
-
 Below is the HTML code. Bootstrap 5 is used for styling.
 ```html
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animation counter</title>
-    </head>
-    <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <style>
-        .container{
-            background-color: #6f4e37;
-        }
-        p{
-           text-align: center;
-        }
-    </style>
-    <body onload="load()">
-        <p>
-        <div class="d-flex justify-content-center fs-1 fw-bold ">Animation Counter</div>
-        </p>
-        <p>
-            <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                      <p id='0101' class="fs-2 text-light">0</p>
-                      <p class="text-light">Site visits</p>
-                  </div>
-                  <div class="col-sm">
-                    <p id='0102' class="fs-2 text-light">876</p>
-                    <p class="text-light">Members signed</p>
-                  </div>
-                  <div class="col-sm">
-                    <p class="fs-2 text-light"><span id='0103'>12</span>%</p>
-                    <p class="text-light align-content-center">Average complain rate</p>
-                  </div>
-                </div>
-              </div>
-        </p>
-    </body>
-    </html>
-
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Animation counter</title>
+   </head>
+   <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+   <style>
+      .container{
+      background-color: #6f4e37;
+      }
+      p{
+      text-align: center;
+      }
+   </style>
+   <body onload="load()">
+      <p>
+      <div class="d-flex justify-content-center fs-1 fw-bold ">Animation Counter</div>
+      </p>
+      <p>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm">
+               <p id='0101' class="fs-2 text-light">0</p>
+               <p class="text-light">Site visits</p>
+            </div>
+            <div class="col-sm">
+               <p id='0102' class="fs-2 text-light">876</p>
+               <p class="text-light">Members signed</p>
+            </div>
+            <div class="col-sm">
+               <p class="fs-2 text-light"><span id='0103'>12</span>%</p>
+               <p class="text-light align-content-center">Average complain rate</p>
+            </div>
+         </div>
+      </div>
+      </p>
+   </body>
+</html>
 ```
 Although we have used JavaScript in this piece, you can do it with pure CSS only. That, we will talk about in another tutorial.<br>
 That's all for now. Hope you got an insight on JavaScript counters.</br>You can, later on, add more enhancements like changing the durations, numbers, or even implement it for words other than digits.</br>
