@@ -1,7 +1,22 @@
-This article will cover the different User Interface(UI) layouts used in android application developments.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-ui-layouts-in-android/
+title: Getting Started With UI Layouts in Android
+description: This article will cover the different User Interface layouts used in android application development.
+author: briana-nzivu
+date: 2021-01-12T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-ui-layouts-in-android/hero.jpg
+    alt: Android UI layout example image
+---
+The basic building block in the User Interface(UI) of an application is called a **View**. A view occupies a rectangular area in a mobile screen. An android UI contains a layout, a view group and views such as a `Button`, `ImageView`, `TextView`, and others.
+<!--more-->
 ### Introduction
-The basic building block in the User Interface(UI) of an application is called a **View**. A view occupies a rectangular area in a mobile screen. A view contains a layout and a view group such as a `Button`, `ImageView`, `TextView`, and others.
 These layouts design and guide the positioning of various view groups in an application. Every Mobile Application developer needs to learn and understand how to implement most, if not all, layouts.
 Currently, Google's [Constraint](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout) layout is the default layout used due to its simplicity and flexibility.
 
