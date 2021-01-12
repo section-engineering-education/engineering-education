@@ -274,7 +274,7 @@ Now, let's add an Image component below the buttons to display the selected imag
   <TouchableOpacity style={styles.button} onPress={onSelectImagePress}>
     <Text style={styles.buttonText}>Pick a Photo</Text>
   </TouchableOpacity>
-  <Image source={{ uri: image }} style={styles.image} />
+  <Image source={{uri: image}} style={styles.image} resizeMode="contain" />
 </View>
 ```
 
@@ -284,7 +284,7 @@ Styles for the Image:
 image: {
   height: 300,
   width: 300,
-  marginTop: 20,
+  marginTop: 30,
   borderRadius: 10,
 },
 ```
@@ -351,8 +351,8 @@ const onImageSelect = async (media) => {
   if (!media.didCancel) {
     setImage(media.uri);
     const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
-    setResult(result);
     console.log(result);
+    setResult(result);
   }
 };
 ```
@@ -361,7 +361,7 @@ We'll use this state to render the recognized text in the UI.
 
 ```JSX
 <View style={{marginTop: 30}}>
-  <Text>{result.text}</Text>
+  <Text style={{fontSize: 30}}>{result.text}</Text>
 </View>
 ```
 
