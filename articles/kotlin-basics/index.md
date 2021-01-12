@@ -1,5 +1,12 @@
 ### Kotlin Programming  for Beginners 
+
+#### Introduction
+
 Learn Kotlin Programming, its basics, and Fundamentals from scratch. 
+
+#### Prerequisites
+For you to follow along with this tutorial, you need to have:
+- Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine.
 
 ### Topics to be covered
 
