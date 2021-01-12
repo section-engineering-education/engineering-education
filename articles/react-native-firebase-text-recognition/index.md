@@ -366,3 +366,27 @@ We'll use this state to render the recognized text in the UI.
 ```
 
 ![Final Result](final_result.jpg)
+
+### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+
+2. We created a Firebase project.
+
+3. We set up the Cloud Vision API to use the image text recognizer in the Firebase ML Kit.
+
+4. We built a simple UI for the app with 2 buttons.
+
+5. We added the `react-native-image-picker` package to pick images using the gallery or capture images using the camera.
+
+6. We installed the Firebase ML package.
+
+7. We used the `cloudDocumentTextRecognizerProcessImage` method in the `ml` package to recognize the text from the image.
+
+8. We displayed the result in the UI.
+
+9. We learned about the additional configurations that we can pass to the `cloudDocumentTextRecognizerProcessImage` function.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
