@@ -207,7 +207,7 @@ Running migrations:
 
 `python manage.py migrate` command created some default tables in our database.
 
-![postgres_database]((/engineering-education/django-app-using-postgresql-database/postgresql_database.jpg)).
+![postgres_database](/engineering-education/django-app-using-postgresql-database/postgresql_database.jpg).
 
 
 To get a better understanding of what this command does, check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/).
