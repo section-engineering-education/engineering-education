@@ -388,6 +388,19 @@ The `cloudLandmarkRecognizerProcessImage` method accepts an optional configurati
 
 - **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
 
+Example:
+
+```JSX
+import ml, { MLCloudLandmarkRecognizerModelType } from '@react-native-firebase/ml';
+
+await ml().cloudImageLabelerProcessImage(imagePath, {
+  maxResults: 2, // undefined | number
+  modelType: MLCloudLandmarkRecognizerModelType.LATEST_MODEL, // LATEST_MODEL | STABLE_MODEL
+  apiKeyOverride: "<-- API KEY -->",  // undefined | string,
+  enforceCertFingerprintMatch: true, // undefined | false | true,
+});
+```
+
 ### Let's Recap
 1. We set up our development environment and created a React Native app.
 
