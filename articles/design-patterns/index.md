@@ -52,7 +52,7 @@ There are two ways we can avoid this:
 2.  Create the instance of the Singleton class as soon as the class is loaded to the JVM.
 #### Limitations of the Singleton pattern
 Singletons introduce a global state that brings about tight coupling, which makes unit testing difficult.
-Coupling is the degree of interdependence between software modules, a tightly coupled system is one where classes are highly dependent on one another.
+Coupling is the degree of interdependence between software modules. A tightly coupled system is one where classes are highly dependent on one another.
  
 
 ### The Factory pattern
