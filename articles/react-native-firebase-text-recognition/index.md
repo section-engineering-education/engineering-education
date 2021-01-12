@@ -325,7 +325,7 @@ const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
 
 The function will process the image and return the text recognized in the image along with an array of blocks of recognized text.
 
-Each block will contain details about:
+Each [block](https://rnfirebase.io/reference/ml/mldocumenttextblock) will contain details about:
 
 - The bounding rectangle of the detected block of text in the image.
 
@@ -333,7 +333,7 @@ Each block will contain details about:
 
 - A list of recognized languages in that block.
 
-- An array of paragaraphs recognized in the block of text.
+- An array of [paragaraphs](https://rnfirebase.io/reference/ml/mldocumenttextparagraph) recognized in the block of text.
 
 To learn more about the result object, refer to [the documentation](https://rnfirebase.io/reference/ml/mldocumenttext).
 
