@@ -8,9 +8,9 @@ This is a command-line tool based on a Linux environment that is used to discove
 
 For instance, you're a network administrator or an IT manager or just a security professional in your organization, one of the key challenges that you will face is a battle to get to know what is running on your network and the kind of security issues/challenges they pose.  
 
-From these challenges, there are several tools available for Network Administrators to use to monitor their network and get real-time activities on their network.  
+From these challenges, there are several tools(Nmap included) available for Network Administrators to use to monitor their network and get real-time activities on their network. 
 
-With this tool,   
+With this Nmap tool,   
 
 * Network administrator(s) can identify all devices that are running/accessing their systems.
 * An administrator can identify all the hosts, a computer connected to their network including the services they offer.  
@@ -109,10 +109,8 @@ jumamiller@OpijaKaeli:~$
 Now that our system is up-to-date,run the following command to install Nmap:-
 ```console
 sudo apt-get install nmap
-```
-The expected output:-  
-Next you be presented with a yes or no question to continue, enter ```y``` to proceed. 
-
+``` 
+The expected output:-
 ```console
 jumamiller@OpijaKaeli:~$ sudo apt-get install nmap
 Reading package lists... Done
@@ -130,7 +128,7 @@ After this operation, 26.3 MB of additional disk space will be used.
 Do you want to continue? [Y/n]
 ```
 
-On Pressing ```y```, the output should present the following screen,wait for a few seconds for it to complete :-   
+Press on the ```y```, to proceed, the output should present the following screen:-   
 ```console
 Do you want to continue? [Y/n] y
 Get:1 http://ke.archive.ubuntu.com/ubuntu focal/main amd64 libblas3 amd64 3.9.0-1build1 [142 kB]
@@ -178,7 +176,7 @@ To confirm the version of the Nmap you have just installed, run the following co
 ```console
 nmap --version
 ```
-At the time of this writing, my Nmap version command outputs the following:-  
+At the time of this writing, Nmap version command outputs the following:-  
 ```console
 jumamiller@OpijaKaeli:~$ nmap --version
 Nmap version 7.80 ( https://nmap.org )
