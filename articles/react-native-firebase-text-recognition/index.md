@@ -147,7 +147,7 @@ Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
 ![Cloud Vision Metrics](cloud_vision_dashboard.png)
 
-With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
+With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for recognizing text from images.
 
 ### Building the UI
 
@@ -233,12 +233,12 @@ const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onIm
 
 Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
 
-We should start the image labeling only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
+We should start the text recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
 
 ```JSX
 const onImageSelect = async (media) => {
   if (!media.didCancel) {
-    // Image Labeling Process
+    // Text Recognition Process
   }
 };
 ```
@@ -315,7 +315,7 @@ Once the package is installed, let's import the package.
 import ml from '@react-native-firebase/ml';
 ```
 
-We should use the `cloudDocumentTextRecognizerProcessImage` method in the `ml` package to process the image and label the image.
+We should use the `cloudDocumentTextRecognizerProcessImage` method in the `ml` package to process the image and recognize text from it.
 
 We will pass the URI of the selected image to this function.
 
@@ -323,7 +323,20 @@ We will pass the URI of the selected image to this function.
 const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
 ```
 
-The function will process the image and return the text recognized in the image.
+The function will process the image and return the text recognized in the image along with an array of blocks of recognized text.
+
+Each block will contain details about:
+
+- The bounding rectangle of the detected block of text in the image.
+
+- The confidence the maching learning service has in the result.
+
+- A list of recognized languages in that block.
+
+- An array of paragaraphs recognized in the block of text.
+
+To learn more about the result object, refer to [the documentation](https://rnfirebase.io/reference/ml/mldocumenttext).
+
 
 Let's set up a state to store the result and render it in the UI.
 
@@ -331,7 +344,7 @@ Let's set up a state to store the result and render it in the UI.
 const [result, setResult] = useState({});
 ```
 
-Let's set the state to the response of the `cloudImageLabelerProcessImage` function.
+Let's set the state to the response of the `cloudDocumentTextRecognizerProcessImage` function.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -339,6 +352,7 @@ const onImageSelect = async (media) => {
     setImage(media.uri);
     const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
     setResult(result);
+    console.log(result);
   }
 };
 ```
@@ -346,12 +360,9 @@ const onImageSelect = async (media) => {
 We'll use this state to render the recognized text in the UI.
 
 ```JSX
-{labels.map((item, i) => (
-  <View style={{ marginTop: 20, width: 300 }} key={i}>
-    <Text>Label: {item.text}</Text>
-    <Text>Confidence: {item.confidence}</Text>
-  </View>
-))}
+<View style={{marginTop: 30}}>
+  <Text>{result.text}</Text>
+</View>
 ```
 
 ![Final Result](final_result.jpg)
