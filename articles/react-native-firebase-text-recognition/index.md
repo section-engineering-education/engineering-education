@@ -300,3 +300,58 @@ const onImageSelect = async (media) => {
 ```
 
 ![Image UI](with_image.jpg)
+
+### Recognize the text from the image
+
+Let's install the package for Firebase ML.
+
+```bash
+npm install @react-native-firebase/ml
+```
+
+Once the package is installed, let's import the package.
+
+```JSX
+import ml from '@react-native-firebase/ml';
+```
+
+We should use the `cloudDocumentTextRecognizerProcessImage` method in the `ml` package to process the image and label the image.
+
+We will pass the URI of the selected image to this function.
+
+```JSX
+const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
+```
+
+The function will process the image and return the text recognized in the image.
+
+Let's set up a state to store the result and render it in the UI.
+
+```JSX
+const [result, setResult] = useState({});
+```
+
+Let's set the state to the response of the `cloudImageLabelerProcessImage` function.
+
+```JSX
+const onImageSelect = async (media) => {
+  if (!media.didCancel) {
+    setImage(media.uri);
+    const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
+    setResult(result);
+  }
+};
+```
+
+We'll use this state to render the recognized text in the UI.
+
+```JSX
+{labels.map((item, i) => (
+  <View style={{ marginTop: 20, width: 300 }} key={i}>
+    <Text>Label: {item.text}</Text>
+    <Text>Confidence: {item.confidence}</Text>
+  </View>
+))}
+```
+
+![Final Result](final_result.jpg)
