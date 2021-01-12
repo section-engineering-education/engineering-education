@@ -1,10 +1,10 @@
 
 Cascading Style Sheets (CSS) is an independent language used to describe the presentation of web applications.
-In this article, we will look at pseudo-classes and pseudo-elements in CSS using practical examples. 
+As any other language, you will need to understand the various concepts of the language.
+In this article, we will look at pseudo-classes and pseudo-elements concepts in CSS using practical examples. 
 
 ### Prerequisites
 This article focuses on the concepts of pseudo-classes and pseudo-elements. You will therefore need a basic understanding of other HTML and CSS concepts. Check the introduction to CSS and HTML topics.
-We will be creating a simple web page to demonstrate these two concepts. Therefore, you need a text editor such as [VS Code]() and a browser like [Google Chrome]().
 
 ### The CSS Pseudo Classes
 A pseudo-class is a CSS property that will style an element based on a change to its state. 
