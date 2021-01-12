@@ -26,7 +26,7 @@ It's a flexible and versatile tool, meaning it can adapt/change to different act
 
 Note:- port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing. 
 
-Example 1.1 simple port scan ```scanme.nmap.org```
+#### Example 1.1 simple port scan ```scanme.nmap.org```
 ```console
 
 jumamiller@janabi$ nmap scanme.nmap.org
@@ -105,7 +105,7 @@ jumamiller@OpijaKaeli:~$
 
 ```
 
-#### Step 1: Install Network Mapper(Nmap)
+#### Step 2: Install Network Mapper(Nmap)
 Now that our system is up-to-date,run the following command to install Nmap:-
 ```console
 sudo apt-get install nmap
@@ -170,7 +170,7 @@ Alternatively, install Nmap using snaps by simply running the following command:
 $ sudo snap install nmap
 ```
 
-####  Verify Installed Version:-
+#### Step 3:  Verify Installed Version:-
 To confirm the version of the Nmap you have just installed, run the following command:-
 
 ```console
@@ -190,7 +190,7 @@ NOTE:- Your version might be different.
 
 If you have reached this far, congratulations, you now have Nmap installed in your system.
 
-### Nmap Scanning Types:
+#### Step 4: Nmap Scanning Types:
 ```DISCLAIMER!!- The information given in this module is solely for use to scan your networks or networks for which you have been authorized to scan. ```   
 ```DO NOT scan networks that you have not been given access or permission to scan, or in case of lawsuits, I hereby disclaim any responsibility for any action taken based on this information presented in this tutorial.```  
 
@@ -200,7 +200,7 @@ There are several scan types, used in Nmap:-
 * UDP SCAN.
 * RPC SCAN. et cetera...
 
-In this tutorial, we will be looking at the first two commonly used scans:-
+In this tutorial, we will be looking at the two commonly used scans:-
 #### TCP SCAN
 Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a connect() system call. If it succeeds, 
 it creates a 3-way handshake, a process used by TCP to create/make a connection between the client and the server, otherwise, the port is closed/the target remote system is offline and cannot be accessed.  
@@ -257,7 +257,7 @@ The client may send several SYN packets to the server, consuming a lot of resour
 
 Now that we've got an idea of how SYN Scan works, let's look at an example:-  
 
-Example 1.3: simple port scan ```scanme.nmap.org``` using TCP Scan -sS [target] command.
+#### Example 1.3: simple port scan ```scanme.nmap.org``` using TCP Scan -sS [target] command.
 
 On your terminal, run the following command:-  
 ```console
