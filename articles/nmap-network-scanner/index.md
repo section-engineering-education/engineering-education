@@ -80,7 +80,7 @@ But you're free to follow along with [MacOs](https://nmap.org/download.html) and
 
 To install Nmap in Ubuntu:-  
  #### Requirements:-
- * Sudo Privileges- you should have the installation rights on the system.
+ * Sudo privileges- you should have the installation rights on the system.
  * An access to ubuntu terminal(Ctrl + T).  
  * An advanced package tool(apt) package manager or snap store.
   #### Step 1: Updating Package List
@@ -210,11 +210,11 @@ From the above, you can notice that if a port is listed as open, you can simply 
 
 TCP scan has an option which is usually used when scanning a port, ``` -sT```.
 
-Example 1.2: simple port scan ```scanme.nmap.org``` using TCP Scan -sT [target] command.
+#### Example 1.2: simple port scan ```scanme.nmap.org``` using TCP Scan -sT [target] command.
 
 On your terminal, run the following command:-  
 ```console
-sudo nmap -sS scanme.nmap.org
+sudo nmap -sT scanme.nmap.org
 ```
 This outputs the following:-  
 ```console
