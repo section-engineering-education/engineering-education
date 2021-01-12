@@ -19,24 +19,24 @@ I highly recommend going over [this](/engineering-education/complete-guide-on-in
 
 ### Table of contents
 - [Objective](#objective)
-- [Machine Learning model](#machine-learning-model)
-- [HTML webpage](#html-webpage)
-- [Flask webserver](#flask-webserver)
-- [Output display page](#output-display-page)
+- [Machine Learning Model](#machine-learning-model)
+- [HTML Webpage](#html-webpage)
+- [Flask Webserver](#flask-webserver)
+- [Output Display Page](#output-display-page)
 - [Conclusion](#conclusion)
-- [Further reading](#further-reading)
+- [Further Reading](#further-reading)
 
-### Step by step guide for implementation
+### Step by Step Guide for Implementation
 #### Objective
 In this tutorial, we are going to deploy a simple Machine Learning model using the flask webserver. For the demonstration, our Machine Learning model helps us classify the variety of flowers based on the length and width of sepals and petals. So, we build a simple HTML webpage to accept the measurements as input and classify the variety based on the classification model.
 
-#### Machine Learning model
+#### Machine Learning Model
 ##### Dataset
 For building the Machine Learning model, we make use of the [Iris](https://gist.github.com/netj/8836201) dataset. A glimpse of the data is as shown below:
 
 ![A few rows of Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
-##### Classification model
+##### Classification Model
 Having chosen the dataset, it's time to build our classification model. Let's name the file `model.py`.
 
 Firstly, we import the necessary Python libraries for building the classification model. Here, we use the following libraries:
@@ -91,7 +91,7 @@ In the above snippet, for features columns `X`, we consider all the columns from
 Similarly, for target column `y`, we consider only the last column.
 
 ```python
-logreg = LogisticRegression() # Initializing the Logistic Regression model
+logreg = LogisticRegression(max_iter=1000) # Initializing the Logistic Regression model
 logreg.fit(X, y) # Fitting the model
 ```
 
@@ -115,7 +115,7 @@ Now, our Logistic regression model classifies the variety based on the above-pre
 
 For example, if the rounded-off probability score is `1`, then `variety_mappings[1]` would be `Versicolor`.
 
-#### HTML webpage
+#### HTML Webpage
 Having built our Machine Learning model, now let's build a simple form using HTML to accept the inputs from the user.
 
 Since our objective is not learning how to build an HTML webpage, let's focus on building the body content. The remaining contents are written to enhance and beautify the webpage. Full webpage code can be found [here](https://github.com/srishilesh/Machine-learning/blob/master/Local%20Deployment/templates/home.html).
@@ -167,6 +167,8 @@ We have built our webpage using Bulma CSS. To know more about it, refer to the [
 </body>
 ```
 
+The above code is saved as `home.html` under the directory `./templates/home.html`.
+
 To explain the above code in simple words, we create a `div` tag with class `field` containing `input` tags with its respective labels. Each `input` tag has fixed styling property like:
 
 - `class = "input"`
@@ -181,7 +183,7 @@ To explain the above code in simple words, we create a `div` tag with class `fie
 
 All the `div` tags are enclosed within a `form` with `action="classify"` and `method="GET"`. Here, `GET` request helps us transport the data from the HTML form to the backend server. To learn more about such methods, [this](/engineering-education/rest-api/) article would help you understand better.
 
-#### Flask webserver
+#### Flask Webserver
 In Python, we use the Flask framework for hosting local servers and routing the webpages. Here, we use it for deploying our Machine Learning model locally. If you are new to the Flask framework, it is highly recommended to go over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article before building.
 
 To begin with, let's start building by importing the necessary libraries.
@@ -238,10 +240,18 @@ To call a method in another file, we specify `filename.methodname()`. Here, it i
 
 To render the returned value i.e the variety of flowers, we specify the output HTML file along with the arguments to be rendered, using `render_template(filename, arguments)` command.
 
-#### Output display page
+Finally, to run the Flask webserver, we must use `app.run()` method as shown below:
+
+```python
+# Run the Flask server
+if(__name__=='__main__'):
+    app.run(debug=True)
+```
+
+#### Output Display Page
 Having predicted the variety of the flower, now we have to display our classification, back in a new HTML webpage.
 
-To do this, we create a very similar HTML webpage like we did earlier.
+To do this, we create a very similar HTML webpage like we did earlier. Now, we name a new file as `output.html` and save it in the directory `./templates/output.html`.
 
 ```html
 <body>
@@ -266,7 +276,7 @@ To do this, we create a very similar HTML webpage like we did earlier.
 
 In the above code, `{{ variety }}` specifies the input argument which was passed in `render_template()` in the flask server. In Flask, such arguments can be passed along with the respective HTML file, to get rendered in the new HTML file.
 
-#### Sample outputs
+#### Sample Outputs
 Now, on running the flask server using the command `python server.py` on your terminal, your development server gets hosted locally. Now, copy and paste the local URL that you get at the start of the server.
 
 To view the landing page, append `/home` to the existing URL. You can view sample inputs and outputs in the below screenshots.
@@ -276,6 +286,18 @@ To view the landing page, append `/home` to the existing URL. You can view sampl
 ![HTML page to display the variety of flower](/engineering-education/deploying-machine-learning-models-using-flask/Output.PNG)
 
 From the above images, you can see that `Virginica` is the classified variety for the given inputs of sepal and petal.
+
+The folder structure should like this:
+
+```md
+deploying-machine-learning-model-using-flask
+├── iris.csv
+├── model.py
+├── server.py
+├── templates
+   ├── home.html
+   ├── output.html
+```
 
 ### Conclusion
 In conclusion, we have gone through how Machine Learning models are built, how to connect them with a web application, and how to deploy them locally using Flask. This article serves only as an introduction to deploying Machine Learning models using Flask. It's highly recommended to try out the code manually by reading further from the referenced articles.
@@ -290,7 +312,7 @@ To summarize:
 
 - We also learned about the Flask framework.
 
-### Further reading
+### Further Reading
 
 - [Deploying ML models](https://towardsdatascience.com/deployment-of-machine-learning-model-demystified-part-1-1181d91815d2)
 - [Another similar implementation](https://www.analyticsvidhya.com/blog/2017/09/machine-learning-models-as-apis-using-flask/)
