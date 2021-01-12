@@ -1,37 +1,35 @@
 ---
 layout: engineering-education
 status: publish
-published: false
+published: true
 url: /engineering-education/crud-operation-with-mysql-using-vue-js-and-php/
 title: CRUD Operation with MySQL using Vue.js and PHP
 description: In this article, you will learn how to select, insert, update, and delete records from a MySQL database with Vue.js and PHP.
-
 author: aransiola-ayodele
-date: 2020-12-17T00:00:00-05:00
+date: 2021-01-12T00:00:00-11:00
 topic: []
 excerpt_separator: <!--more-->
 images:
 
-    - url: /engineering-education/css-in-js-solutions/hero.jpg
- alt: Interconnection of blue lines with a background of building
+  - url: /engineering-education/crud-operation-with-mysql-using-vue-js-and-php/hero.jpg
+    alt: cross platform apps electron
 ---
-CRUD functionality is mostly required on every dynamic web-based project. This article will put you through how you can connect your Vuejs project with a MYSQL database.
+The [CRUD functionality](https://www.sumologic.com/glossary/crud/) is required on every dynamic web-based project. This article will walk you through how to connect your Vue.js project with a MYSQL database.
 <!--more-->
+### Technologies involved in this article
+1. AJAX (Asynchronous JavaScript and XML) is a technique used for creating fast and dynamic web pages. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
 
-### Technologies Involved in this Article
-1. AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+2. [Axios](https://www.npmjs.com/package/axios) is a modern and promise-based JavaScript HTTP client library that can be used both in the browser and the server with Node.js. Axios works asynchronously and allows you to make HTTP calls to REST endpoints and consume JSON REST APIs. You can read more about how to consume API Endpoint with Vue.js [here](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html).
 
-2. [Axios](https://www.npmjs.com/package/axios) is a modern and Promise-based JavaScript HTTP client library that can be used both in the browser and the server with Node.js. Axios works asynchronously and allows you to make HTTP calls to REST endpoints and consume JSON REST APIs. You can read more about how to consume API Endpoint with Vue.js [here](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html).
+3. [Vue.js](https://vuejs.org/) is an open-source model-view-view-model front end progressive Javascript framework used for building user interfaces and single-page applications. Vue.js is not just used for web interfaces development alone, it is also used for desktop and mobile application development. You can read about the PROS and CONS of Vue.js [here](https://www.altexsoft.com/blog/engineering/pros-and-cons-of-vue-js/)
 
-3. [Vue.js](https://vuejs.org/) is an open-source model-view-view-model front end progressive Javascript framework for building user interfaces and single-page applications. Vue.js is not just used for web interfaces development alone, it is also used for desktop and mobile application development. You can read about the PROS and CONS of Vue.js [here](https://www.altexsoft.com/blog/engineering/pros-and-cons-of-vue-js/)
-
-4. [PHP](https://www.php.net/) is a server-side scripting language, and a powerful tool for making dynamic and interactive Web pages. Every PHP code is executed on a web server. An instance of this is when you complete a form on a website and submit it, or click a link to a web page written in PHP, no actual PHP code runs on your computer. Instead, the form data or request for the web page gets sent to a web server to be processed by the PHP scripts. The web server then sends the processed data and your web browser displays the results. You can install a local server on your computer by visiting this [link](https://www.apachefriends.org/download.html).
+4. [PHP](https://www.php.net/) is a server-side scripting language, and a powerful tool for making dynamic and interactive web pages. Every PHP code is executed on a web server. An instance of this is when you complete a form on a website and submit it, or click a link to a web page written in PHP, no actual PHP code runs on your computer. Instead, the form data or request for the web page gets sent to a web server to be processed by the PHP scripts. The web server then sends the processed data and displays the results on your web browser. You can install a local server on your computer by visiting this [link](https://www.apachefriends.org/download.html).
 
 Add, edit, and delete functionality is mostly required on every dynamic web-based project. With AJAX you can improve user experience and these operations can be performed without page reload. For this tutorial, I will be using the Axios package to send an Ajax request to PHP from Vue.js.
 
 The article will be a hands-on skill practice on how to have a Vue.js application that can communicate with your MySQL database using Axios and PHP.
 
-### Creating Our Database
+### Creating our database
 We will need to create a database using SQL: 
 
 ```sql
@@ -47,7 +45,7 @@ CREATE TABLE `products` (
  `p_description` varchar(100) NOT NULL
 );
 ```
-### Configuring Our Database
+### Configuring our database
 After creating the database, the next thing is  to create a database configuration file called **config**
 
 Create a file in folder on your desktop, name it CRUD and create a config.php file inside the folder. Copy the code below into this file:
@@ -69,7 +67,7 @@ Create a file in folder on your desktop, name it CRUD and create a config.php fi
     }
 ?>
 ```
-### Including Axios and VUE in our Project through Content Delivery Network (CDN)
+### Including Axios and VUE in our project through Content Delivery Network (CDN)
 
 A CDN (Content Delivery Network) is a highly-distributed platform of servers that helps minimize delays in loading web page content by reducing the physical distance between the server and the user. This helps users around the world view the same high-quality content without slow loading times. Read more about CDN [here](https://www.globaldots.com/content-delivery-network-explained)
 
@@ -92,6 +90,7 @@ We will be creating an Html index.php file in our root folder (CRUD folder), the
 </body>
 </html>
 ```
+
 Afterward, in the body of the Html file, let's create a table where we will display the data that will be fetched from the database. We will also be adding three buttons to the table for Adding, Updating, and Deleting data on the table. 
 
 Below is the updated code
@@ -147,8 +146,7 @@ Below is the updated code
 </html>
 ```
 
-### Creating an Ajax Module
-
+### Creating an Ajax module
 As it has been discussed earlier, that Ajax will be used to make a fetch call, update records, delete and check for data existence in the database. Therefore we will create a file called ajax.php in the root folder (CRUD). Below is the code to insert:
 
 ```php
@@ -213,10 +211,10 @@ if($request == 4){
 ?>
 ```
 
-### Creating the Vue Application
+### Creating the Vue application
 We used the CDN to register our project as a Vue app, so we will be creating an app,js file which will be located also at the root folder (CRUD) our project. There, we will define all the methods required for the CRUD operations to work.
 
-Below is the complete code 
+Below is the complete code: 
 ```js
 var app = new Vue({
  el: '#productapp',
