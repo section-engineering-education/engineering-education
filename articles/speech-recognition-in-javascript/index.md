@@ -2,25 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/speech-recognition-using-web-speech-api-in-javascript/
+url: /engineering-education/speech-recognition-in-javascript/
 title: Speech Recognition Using the Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how to implement speech recognition using the Web Speech API in JavaScript.
 author: mohan-raj
-date: 2021-01-11T00:00:00-13:00
+date: 2021-01-11T00:00:00-22:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/speech-recognition-using-web-speech-api-in-javascript/hero.jpg
+  - url: /engineering-education/speech-recognition-in-javascript/hero.jpg
     alt: Speech Recognition in JavaScript Hero Image
 ---
-The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement speech recognition.
+The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement speech recognition. You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility).
 <!--more-->
-
-You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
-
 ### Prerequisites
-
 To follow along with this tutorial, you should have:
 
 - A basic understanding of HTML and JavaScript.
@@ -29,18 +25,16 @@ To follow along with this tutorial, you should have:
 
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
-### Cloning the Starter Code
-
+### Cloning the starter code
 To focus more on speech recognition, I've prepared some starter code. You can clone it [from this repository](https://github.com/zolomohan/speech-recognition-in-javascript-starter) on GitHub. Follow the Repository's README for instructions.
 
 For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/speech-recognition-in-javascript).
 
 In the starter code, I've set up a language and dialect select menu, two buttons to start/stop the speech recognition, and a box to display the transcript. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
 
-![Starter Code Screen](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/start_screen.png)
+![Starter Code Screen](/engineering-education/speech-recognition-in-javascript/start_screen.png)
 
 ### Let's code
-
 First, create a new JavaScript file and name it `speechRecognition.js`. Next, add the script to the HTML file using the `script` tag after the `body` tag.
 
 > Adding the `script` tag after the `body` tag will make sure that the script file is loaded after all the elements have been loaded to the DOM which aids performance.
@@ -49,7 +43,7 @@ First, create a new JavaScript file and name it `speechRecognition.js`. Next, ad
 <script src="./speechRecognition.js"></script>
 ```
 
-Now, inside the script file, let's check if the `webkitSpeechRecognition` class is available in the `window` object. If not, let's `console.log` that it's not available.
+Now, inside the script file, let's check if the `webkitSpeechRecognition` class is available in the `window` object. If not, let's `console.log` so that it's not available.
 
 ```JavaScript
 if ("webkitSpeechRecognition" in window) {
@@ -62,7 +56,6 @@ if ("webkitSpeechRecognition" in window) {
 ```
 
 ### Initialization
-
 Everything we write from now on goes inside the `if` condition.
 
 Let's create a `webkitSpeechRecognition` object.
@@ -72,11 +65,9 @@ let speechRecognition = new webkitSpeechRecognition();
 ```
 
 ### Properties
-
 Now, let's configure some properties on this `speechRecognition` object.
 
 #### Continuous listening
-
 The speech recognition object can either stop listening after the user stops speaking or it can keep listening until the user stops it. If you only want to recognize a phrase or a word, you can set this to `false`. For this tutorial, let's set it to `true`.
 
 ```JavaScript
@@ -84,7 +75,6 @@ speechRecognition.continuous = true;
 ```
 
 #### Interim results
-
 Interim results are results that are not yet final. If you enable this property, the `speechRecognition` object will also return the interim results along with the final results. Let's set it to `true`.
 
 ```JavaScript
@@ -92,7 +82,6 @@ speechRecognition.interimResults = true;
 ```
 
 #### Language
-
 This is the language that the user will speak in. You need to use locale codes to set this property. Please note that not all languages are available in this feature yet.
 
 Let's set the language that the user has chosen from the select menu. You need to select the Dialect select menu and use its value for the language property.
@@ -101,12 +90,10 @@ Let's set the language that the user has chosen from the select menu. You need t
 speechRecognition.lang = document.querySelector("#select_dialect").value;
 ```
 
-### Events & Callbacks
-
+### Events & callbacks
 You can provide callbacks for events like `onStart`, `onEnd`, `onResult`, and `onError`.
 
 #### onStart
-
 This event is triggered when speech recognition is started by the user. Let's pass a callback function that will display that the speech recognition instance is listening on the webpage.
 
 In the starter code, there is a `<p>` element with an ID called status that says `Listening...`. It's been hidden by setting the display property of the element to none using CSS.
@@ -120,8 +107,7 @@ speechRecognition.onstart = () => {
 ```
 
 #### onEnd
-
-This event is triggered when speech recognition is ended by the user. Let's pass a callback function that will hide the status `<p>` element in the webpage.
+This event is triggered when the speech recognition is ended by the user. Let's pass a callback function that will hide the status `<p>` element in the webpage.
 
 Let's set it to `display: none` when the speech recognition starts.
 
@@ -132,7 +118,6 @@ speechRecognition.onend = () => {
 ```
 
 #### onError
-
 This event is triggered when there is some sort of error in speech recognition. Let's pass a callback function that will hide the status `<p>` element in the webpage.
 
 Let's set it to `display: none` when the speech recognition starts.
@@ -144,7 +129,6 @@ speechRecognition.onError = () => {
 ```
 
 #### onResult
-
 This event is triggered when the `speechRecognition` object has some results from the recognition. It will contain the final results and interim results. Let's pass a callback function that will set the results to the respective `<span>` inside the transcript box.
 
 This is the HTML code for the transcript box on the web page. The interim results span is colored in a different color to differentiate between the interim results and the final results.
@@ -217,9 +201,8 @@ speechRecognition.onresult = (event) => {
 };
 ```
 
-### Start/Stop Recognition
-
-Finally, let's start and stop recognition.
+### Start/Stop recognition
+Finally, let's start and stop the recognition.
 
 We need to set the onClick property of the start and stop buttons to start and stop the speech recognition.
 
@@ -296,13 +279,11 @@ if ("webkitSpeechRecognition" in window) {
 ```
 
 ### Result
-
 You can take a look at the deployed version of the project [here](https://zolomohan.github.io/speech-recognition-in-javascript/).
 
-![Final Result](/engineering-education/speech-recognition-using-web-speech-api-in-javascript/final.gif)
+![Final Result](/engineering-education/speech-recognition-in-javascript/final.gif)
 
 ### Let's Recap
-
 - We cloned the starter code from the GitHub repository.
 
 - We created a new JavaScript file and linked it to the HTML file.
