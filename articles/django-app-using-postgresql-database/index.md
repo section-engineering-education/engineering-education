@@ -1,22 +1,40 @@
-Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open-source. [Django](https://www.djangoproject.com)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/django-app-using-postgresql-database/
+title: Creating a Django App Using PostgreSQL Database
+description: In this article, we wil create a Hello World Django application using PostgreSQL database. PostgreSQL is a open-source object-relational database system that uses the SQL language.
+author: adeyemi-atoyegbe
+date: 2021-01-12T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads. [PostgreSQL](https://www.postgresql.org/about/)
+  - url: /engineering-education/django-app-using-postgresql-database/hero.jpg
+    alt: Django PostgreSQL Database example
+---
+Django is a high-level Python Web framework that encourages rapid development, clean, and pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Best of all, it's [free and open-source](https://www.djangoproject.com).
+<!--more-->
+PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated [data workloads](https://www.postgresql.org/about/).
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
 
- - [Python3](https://www.python.org/downloads/)
+ - [Python3](https://www.python.org/downloads/).
  
- - [PostgreSQL](https://www.postgresql.org/download/windows/)
+ - [PostgreSQL](https://www.postgresql.org/download/windows/).
  
- - [virtualenv](https://pypi.org/project/virtualenv/)
+ - [virtualenv](https://pypi.org/project/virtualenv/).
 
-### Step 1: Creating our database through the command line.
+### Step 1: Creating our database through the command line
 Open the PostgreSQL shell. You can find the PSQL Shell in the Start Menu.
 
 ![access psql](/engineering-education/django-app-using-postgresql-database/access_psql.png)
 
-The shell will prompt you for **Server, Database, Port, and Username** details. You can set it to default by clicking on the Enter button in the keyboard without providing any value. Finally, the shell will prompt you for the **Password**. You should provide the password that you used during the PostgreSQL Installation. You will see a similar result in your PSQL shell like the one the above image if correctly implemented.
+The shell will prompt you for **Server, Database, Port, and Username** details. You can set it to default by clicking on the Enter button in the keyboard without providing any value. Finally, the shell will prompt you for the **Password**. 
+
+You should provide the password that you used during the PostgreSQL installation. You will see a similar result in your PSQL shell like the one the above image if correctly implemented.
 
 ![psql_shell](/engineering-education/django-app-using-postgresql-database/psql_shell.png)
 
@@ -44,9 +62,9 @@ ALTER ROLE <yourname> SET timezone TO 'UTC';
 
 - In the first line we are setting the default encoding to UTF-8 expected by Django.
 
-- The second line we are also setting the default transaction isolation scheme to “read committed”, which blocks reads from uncommitted transactions. 
+- With the second line we are also setting the default transaction isolation scheme to “read committed”, that blocks reads from uncommitted transactions. 
 
-- Lastly, By default Django timezone is UTC we are setting our database's timezone to UTC.
+- Finally, by default Django timezone is UTC we are setting our database's timezone to UTC.
 
 
 Next, we have to grant our new user access to the database we created earlier.
@@ -55,7 +73,7 @@ Next, we have to grant our new user access to the database we created earlier.
 GRANT ALL PRIVILEGES ON DATABASE helloworld TO <yourname>;
 ```
 
-### Step 2: Creating a virtual environment & Installing necessary Python packages.
+### Step 2: Creating a virtual environment & installing necessary Python packages
 Let's start by creating a folder for our project.
 
 ```bash 
@@ -63,19 +81,21 @@ Let's start by creating a folder for our project.
  cd myproject     #changing into our project folder directory
 ```
 
-A virtual environment helps create an isolated python environment which will contain all that packages that our Django project will need. Let's create a virtual environment named `venv`.
+A virtual environment helps create an isolated Python environment that will contain all that packages that our Django project will need. Let's create a virtual environment named `venv`.
 
 ```bash 
 virtualenv venv
 ```
 
-When we activate our virtual environment, any Python packages installed will only be available for our Django project. To activate the **venv** virtual environment, run:
+When we activate our virtual environment, any Python packages installed will only be available for our Django project. 
+
+To activate the **venv** virtual environment, run:
 
 ```bash 
 source venv/bin/activate
 ```
 
-**pip** is the standard package manager for Python. **pip** is used to install python packages from the Python package index(PyPI). More on `pip` [here](https://pip.pypa.io/en/stable/).
+**pip** is the standard package manager for Python. **pip** is used to install Python packages from the Python package index(PyPI). More on `pip` [here](https://pip.pypa.io/en/stable/).
 
 Let's install `django` and `psycopg2` using `pip`. `psycopg2` is a popular PostgreSQL database adapter for Python.
 
@@ -97,7 +117,7 @@ cd django_app
 
 Let's create an `hello_world` app in our `django_app` project.
 
-> A Django application is a Python package that is specifically intended for use in a Django project. Django apps are reusable in different Django project. [Django](https://docs.djangoproject.com/en/3.1/ref/applications/)
+> A Django application is a Python package that is specifically intended for use in a Django project. Django apps are reusable in different [Django project](https://docs.djangoproject.com/en/3.1/ref/applications/).
 
 ```bash 
 django-admin startapp hello_world
@@ -117,8 +137,8 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Step 3: Set up your project to use PostgreSQL Database.
-SQlite is the default database that comes with Django. We need the to change the database configurations to use PostgreSQL.
+### Step 3: Set up your project to use PostgreSQL database
+SQlite is the default database that comes with Django. We need to change the database configurations to use PostgreSQL.
 
 Let's navigate to `django_app/settings.py`. In the `DATABASES` section, you'll see the code snippet below.
 
@@ -156,7 +176,7 @@ We changed the database engine to use `postgresql_psycopg2` instead of the defau
 
 Now, let's make sure that we have connected to the PostgreSQL database.
 
-> The **manage.py** file is a python script which allows us to perform adminstartive tasks like migrations, running the server, etc.
+> The **manage.py** file is a Python script that allows us to perform adminstartive tasks like migrations, running the server, etc.
 
 The `makemigrations` command is responsible for creating new migrations based on the changes you have made to our models. Since we don't have a model in our Django project, we will not worry about this.
 
@@ -164,7 +184,7 @@ The `makemigrations` command is responsible for creating new migrations based on
 python manage.py makemigrations
 ```
 
-When you run it for the first time, the default models in the Django project will get migrated and the `makemigrations` command creates a file with all the SQL commands that  needs to be executed for the models. The `migrate` command will execute SQL commands.
+When you run it for the first time, the default models in the Django project will get migrated and the `makemigrations` command creates a file with all the SQL commands that needs to be executed for the models. The `migrate` command will execute SQL commands.
 
 ```python
 python manage.py migrate
@@ -198,7 +218,7 @@ Now, Let's start the server by running this command:
 python manage.py runserver
 ```
 
-After running the above command, proceed to visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
+After running the command above, proceed to visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 
 If your Django project runs without any errors, you should see something like this.
 
@@ -218,7 +238,7 @@ First, let create a templates folder in our `django_app/templates` directory and
 | ---manage.py
 ```
 
-The templates folder is the display layer which handles user interface of our Django project. It contains HTML, CSS and JavaScript files that are required in our Django project. We can use a single template folder for our entire project, or we can create different templates folder for each app in our django project. Since we only have one app which is our **helloworld** app, we will stick to using a single temlate folder for our project. 
+The templates folder is the display layer that handles user interface of our Django project. It contains HTML, CSS, and JavaScript files that are required in our Django project. We can use a single template folder for our entire project, or we can create different templates folder for each app in our Django project. Since we only have one app, which is our **helloworld** app, we will stick to using a single template folder for our project. 
 
 Django web framework comes with is own built-in template engine called the Django template language. For more information on [Django template langauage](https://docs.djangoproject.com/en/3.1/topics/templates/).
 
@@ -244,7 +264,7 @@ TEMPLATES = [
 ]
 ```
 
-In `hello_world/views.py`, add the `homepage()` function which will render our `index.html` file.
+In `hello_world/views.py`, add the `homepage()` function, that will render our `index.html` file.
   
 ```python 
 from django.shortcuts import render
@@ -253,7 +273,7 @@ def homepage(request):
   return render(request, 'index.html', context={})
 ```
 
-Let's create a new python file in the `hello_world` folder, `hello_world/urls.py`.
+Let's create a new Python file in the `hello_world` folder, `hello_world/urls.py`.
 
 ```python 
 from django.urls import path
@@ -297,14 +317,13 @@ Let's navigate to the `index.html` in our templates folder and add this:
 </html>
 ```
 
-If the developemnt server is still running visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser or run the `python manage.py runserver` command again. 
+If the development server is still running visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser or run the `python manage.py runserver` command again. 
 
 ![homepage](/engineering-education/django-app-using-postgresql-database/homepage.png)
 
-If you can see the above image, Congratulations! You just created a Hello World App in Django.
+If you can see the image above, Congratulations! You just created a Hello World App in Django.
 
 ### References
-
 1. [Django](https://www.djangoproject.com).
 
 2. [PostgreSQL](https://www.postgresql.org/about/).
@@ -312,3 +331,7 @@ If you can see the above image, Congratulations! You just created a Hello World 
 3. [Views and URLs in Django](https://djangobook.com/mdj2-django-views/).
 
 4.  [Django Migrations](https://realpython.com/django-migrations-a-primer/). 
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
