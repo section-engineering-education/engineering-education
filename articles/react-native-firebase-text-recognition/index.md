@@ -124,3 +124,27 @@ We should install the `@react-native-firebase/app` package in our app to complet
 ```bash
 npm install @react-native-firebase/app
 ```
+
+### Setting up Cloud Vision API
+
+Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
+
+![Cloud Dashboard](cloud_dashboard.png)
+
+In the API & Service tab, Head to the Libraries section.
+
+![API & Services Tab](api_services.png)
+
+Search for Cloud Vision API.
+
+![API Library Section](search_libraries.png)
+
+Once you open the API page, click on the Enable button.
+
+![Enable Cloud Vision](enable_cloud_vision.png)
+
+Once you've enabled the API, you'll see the Cloud Vision API Overview page.
+
+![Cloud Vision Metrics](cloud_vision_dashboard.png)
+
+With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
