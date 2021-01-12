@@ -16,9 +16,9 @@ B4A is a tool for developing mobile application. PHP is a programming language t
 ### Installing Xampp
 - Download from this [Xampp](https://www.apachefriends.org/index.html) website.
 - Click on downloaded file and continue with installation
-![initializing-installation-window](/engineering-education/Connect-Basic4Android-BAndroid-development-too- to-MySQL-Database-Using-PHP/xampp-first-installation.png)
+![initializing-installation-window](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-first-installation.png)
 - Pick on the components that we are going to use that is MySQL and phpMyAdmin and click next
-image
+![Pick components](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-second-pick-components.png)
 - Select folder where xampp is to be installed and click next
 image
 - Select language and click next
