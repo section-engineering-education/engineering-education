@@ -19,7 +19,7 @@ In this article, I will show you some important guidelines to learn typescript b
 
 ## TypeScript Basics
 
-#### Boolean
+### Boolean
 
 This data type is simply a true/false
 
@@ -27,7 +27,7 @@ This data type is simply a true/false
 let isOpen: Boolean = true;
 ```
 
-#### Number
+### Number
 
 TypeScript Supports floating-point values or BigIntegers
 
@@ -39,7 +39,7 @@ let octal: number = 0o744;
 let big: bigint = 100n;
 ```
 
-#### String
+### String
 
 TypeScript uses single (') or double(") quote similar to JavaScript.
 
@@ -56,7 +56,7 @@ let age: number = 47;
 let text: string = `Hello, my name is ${fullName}.`
 ```
 
-#### Enum
+### Enum
 
 Enum in TypeScript is a special class that contains constant values. By default enum numbering start from the index zero.
 
@@ -82,7 +82,7 @@ enum Fruits {
 let c: Fruits = Fruits.Bannana;
 ```
 
-#### Array
+### Array
 
 TypeScript also supports array similar to javascript and its represented as
 
@@ -90,7 +90,7 @@ TypeScript also supports array similar to javascript and its represented as
 let listOfNumbers: number[] = [1, 2, 3, 4, 5, 6];
 ```
 
-#### Object
+### Object
 
 An object in TypeScript is an instance that contains a set of key-value pairs. It gives a compilation error whenever you try to access a value that does not exist in a given object.
 
@@ -101,7 +101,7 @@ var person = {
 };
 ```
 
-#### Any
+### Any
 
 The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript.
 
@@ -116,7 +116,7 @@ amount = null;
 amount = undefined;
 ```
 
-#### Unknown
+### Unknown
 
 This works similar to Any but when you try to reassign the value initialized to a new variable then you get an error, Which means anything is assignable to unknown but itself and `any`core types.
 
@@ -126,7 +126,7 @@ let amount: unknown;
 let newAmount: number = amount;
 ```
 
-#### Void
+### Void
 
 A void in TypeScript is set when it's certain that a function is not returning a value.
 
@@ -221,7 +221,7 @@ tsconfig.json is used to specify the root files and the compiler options require
 
 Most of the configurations are commented out but you can uncomment where necessary after reading the description attached to it on the right-hand side.
 
-#### To run your TypeScript File
+### To run your TypeScript File
 
 - Configure typescript using the ` tsconfig.json` file.
 - Run `tsc --watch`, so that every time you change a `.ts` file, tsc will compile it and produce the output in any folder configured e.g a dist folder.
@@ -245,7 +245,7 @@ Interface in TypeScript is a structured group of properties that describe an obj
 
 Class is a blueprint from which we can create objects that share the same configuration or properties and methods.
 
-##### Interface
+### Interface
 
 ```
 interface IStudent {
@@ -256,7 +256,7 @@ interface IStudent {
 }
 ```
 
-##### Class
+### Class
 
 ```
 class WelcomeMessage {
@@ -283,12 +283,12 @@ JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static ty
 
 ## Namespaces and Module
 
-##### Namespaces
+### Namespaces
 
 Namespaces are used for logical grouping and can include functions, classes, interfaces to support a group of related functionalities.
 Namespaces structures codes in a web application in such a way that all dependencies can be included in a `script` tag.
 
-##### Module
+### Module
 
 Modules in TypeScript can contain declarations, code, and dependency on a module loader or a runtime that supports ES Modules. They provide strong isolation and separation of concern, reusable code, and great support for bundling. Modules are recommended for code organization mechanisms to suit proper business logic.
 
