@@ -1,6 +1,6 @@
 # Building an Image Classifier with Keras
 
-In this article, we will learn how to use a Convolutional Neural Network to build an Image Classifier. We will use Keras with TensorFlow at the backend. Image Classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
+In this article, we will learn how to use a Convolutional Neural Network to build an Image Classifier. We will use Keras with TensorFlow at the backend. Image Classification helps us recognize and identify images. We apply Image Classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
 
 We will apply Image Classifiers in healthcare. Our goal here is to train a CNN model to classify COVID-19 and normal chest X-ray scans of patients.
 
