@@ -80,7 +80,7 @@ But you're free to follow along with [MacOs](https://nmap.org/download.html) and
 
 To install Nmap in Ubuntu:-  
  #### Requirements:-
- * Sudo Priviges- you should have the installation rights on the system.
+ * Sudo Privileges- you should have the installation rights on the system.
  * An access to ubuntu terminal(Ctrl + T).  
  * An advanced package tool(apt) package manager or snap store.
   #### Step 1: Updating Package List
