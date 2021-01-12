@@ -1,6 +1,6 @@
 # Internalization in Django
 
-Django is one of the most popular web frameworks known for its battery-inclusion. One of the inbuilt features of Django is internationalization (also known as i18n). This article shows how to utilize i18n to reduce language barriers in web applications by offering their content in languages tailored to the audience.
+Django is one of the most popular web frameworks known for its battery-inclusion. One of the inbuilt features of Django is internationalization (popularly referred to as i18n). This article shows how to utilize i18n to reduce language barriers in web applications by offering their content in languages tailored to the audience.
 
 ## Table of Content
 
@@ -12,6 +12,7 @@ Django is one of the most popular web frameworks known for its battery-inclusion
     - [Pluralization](#pluralization)
     - [Using Translations in Template](#using-translations-in-template)
     - [Summary](#summary)
+    - [References](#references)
 
 ### What is internationalization and why it is needed
 
@@ -419,6 +420,10 @@ Now, visiting <http://localhost:8000/home/>, you should see the translated versi
 In this article, we discussed what internationalization is and how Django handles it.
 We discussed the developer's role in relation to internationalization and how translators can access messages files.
 We also showed how translations could be done in the Django templates.
+
+### References
+
+[Django Software Foundation Documentation: Internationalization and Localization](https://docs.djangoproject.com/en/3.1/topics/i18n/#internationalization-and-localization)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
