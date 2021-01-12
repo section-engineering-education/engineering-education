@@ -3,7 +3,7 @@ This article will cover the different User Interface(UI) layouts used in android
 ### Introduction
 The basic building block in the User Interface(UI) of an application is called a **View**. A view occupies a rectangular area in a mobile screen. A view contains a layout and a view group such as a `Button`, `ImageView`, `TextView`, and others.
 These layouts design and guide the positioning of various view groups in an application. Every Mobile Application developer needs to learn and understand how to implement most, if not all, layouts.
-Currently, Google's [Constraint](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout) layout is the default layout used due to its flexibility and simplicity.
+Currently, Google's [Constraint](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout) layout is the default layout used due to its simplicity and flexibility.
 
 ### Anatomy of Android Layouts
 - Root Element: This refers to layouts that encapsulate all the XML elements. Examples are Constraint, Linear, Relative, and Frame Layouts.
@@ -116,22 +116,25 @@ Examples of the values are `center_vertical`, `center_horizontal`, top, bottom, 
 ### View group layouts used in Android
 The following are layouts popularly used as view groups:
 ### A) ScrollView
-A `ScrollView` is a view group that allows scrollable content. Scrolling in the `ScrollView` is either vertically or horizontally. The layout uses the `<ScrollView>` tag. A `ScrollView` can only support one direct child; otherwise, one must add view groups, e.g., Linear Layout, if they want the scroll view to be more detailed. One can use it as a view group only.
+A `ScrollView` is a view group that allows scrollable content. Scrolling in the `ScrollView` is either vertically or horizontally. The layout uses the `<ScrollView>` tag. A `ScrollView` can only support one direct child; otherwise, one must add view groups, e.g., Linear Layout, if they want the scroll view to be more detailed. One can use it as both a view group and a root element, but it is preferable to use it as a view group.
 
 ### B) NestedScrollView
-A `NestedScrollView` is just a `ScrollView` that can act as both a nested scrolling parent and a child. The layout uses the `<NestedScrollView>` tag. It is supported by both old and new versions of Android. One can use it as a view group only.
+A `NestedScrollView` is just a `ScrollView` that can act as both a nested scrolling parent and a child. The layout uses the `<NestedScrollView>` tag. It is supported by both old and new versions of Android. One can use it as both a view group and a root element, but it is preferable to use it as a view group.
+
 
 ### C) ListView
-A `ListView` displays content in a vertically scrollable list. The layout uses the `<ListView>` tag. The list view is a subclass of the `AdapterView` class. One can use it as both a view group and a root element. It is most suitable to use it under a root element.
+A `ListView` displays content in a vertically scrollable list. The layout uses the `<ListView>` tag. The list view is a subclass of the `AdapterView` class.  One can use it as both a view group and a root element, but it is preferable to use it as a view group.
 
 ### D) RecyclerView
-A `RecyclerView` is an improved version of the `ListView` with better performance and added features. The layout uses the `<RecyclerView>` tag. One can use it as both a view group and a root element. It is most suitable to use it under a root element.
+A `RecyclerView` is an improved version of the `ListView` with better performance and added features. The layout uses the `<RecyclerView>` tag. One can use it as both a view group and a root element, but it is preferable to use it as a view group.
+
 
 ### E) GridView
-The Grid layout displays items in a two-dimensional, scrollable grid. The layout uses the `<GridView>` tag. The Grid View is a subclass of the `AdapterView` class. This layout is slowly becoming outdated as developers have found other ways to have a more responsive grid layout. One can use it as both a view group and a root element. It is most suitable to use it under a root element.
+The Grid layout displays items in a two-dimensional, scrollable grid. The layout uses the `<GridView>` tag. The Grid View is a subclass of the `AdapterView` class. This layout is slowly becoming outdated as developers have found other ways to have a more responsive grid layout. One can use it as both a view group and a root element, but it is preferable to use it as a view group.
 
 ### F) TableLayout
-The Table layout groups view into rows and columns depending on the size required. The layout uses the `<TableLayout>` tag. This layout is rarely used in Android compared to its use in web applications.  It can be used as both a root element and a view group, but it is advisable to use it under a root element.
+The Table layout groups view into rows and columns depending on the size required. The layout uses the `<TableLayout>` tag. This layout is rarely used in Android compared to its use in web applications. One can use it as both a view group and a root element, but it is preferable to use it as a view group.
+
 
 ### To wrap up
 Android applications use layouts as the basic UI building block. We have learned about both the root element and view group layouts and their uses. We have also learned about attributes used by each root element. Feel free to research and practice most if not all of the layouts we have discussed above.
