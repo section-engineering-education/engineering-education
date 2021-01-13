@@ -1,10 +1,6 @@
 ### Introduction
-In software applications, Language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. A perfect example is an online shopping site.
-
-For instance, Chinese can access the Alibaba site in Chinese while those in other regions such as the US can navigate the website using English. This is known as internationalization, commonly denoted as (i18n).  
-
-It simply involves presenting your website in different languages.  
-Developers can use this feature to design applications that fit various cultures and languages through translations.  
+In software applications, Language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. A perfect example is an online shopping site such as Alibaba. Chinese citizens can access this site in Chinese while those in other regions such as the US can navigate the e-commerce website using English. This is known as internationalization, commonly denoted as (i18n).  
+Therefore, localization simply involves presenting your website in different languages. Developers can thus, use this feature to design applications that fit various cultures and languages through translations.  
 
 ### Objectives
 At the end of this tutorial, you should be able to:
@@ -24,23 +20,22 @@ Localization in Laravel can be achieved in two different ways.
 
 * Storing the language strings within the `resources/lang`  directory
 
-* Defining translation strings within the `JSON`  files which are located in the `resources/lang` directory  
+* Defining translation strings within the `JSON`  file which are located in the `resources/lang` directory  
 
 ### Configuring Locale
-Laravel configurations are always stored in the `app/config` directory. Files such as database and other file systems are all configured here. This includes the application's default language. Let us start by building a simple application to help you follow along.  
+Laravel configurations are always stored in the `app/config` directory. Files such as database and other file systems are all also configured here. This includes the application's default language. Let us start by building a simple application to help you follow along.  
 
 ### Setting Up Laravel
-We will be using Laravel 8.x and PHP 7.4.x in our application. Php dependencies are managed via composer. Think of it as NPM for Javascript. Therefore, to install Laravel, we should have a composer on our computer.  
-Follow these simple steps to make the composer available in your system.  
+As noted, we will be using Laravel 8.x and PHP 7.4.x in our application. Php dependencies are managed via composer. Think of it as NPM for Javascript. Therefore, to install Laravel, we should have a composer on our computer.  
+Follow these simple steps to install composer.  
 
-To download composer, click [here](https://getcomposer.org/download/).  
-Once the composer has been successfully downloaded, the next step is to run the following command in the command prompt.
+To download Composer, click [here](https://getcomposer.org/download/).  
+Once Composer has been successfully downloaded, the next step is to run the following command in the command prompt.
 
 ``` 
 composer global require laravel/installer
 ```
-
-You have noticed the use of the `global` keyword in our command above, this makes laravel installer available globally.  
+In the above command, we use the `global` keyword. This makes the Laravel installer available globally.  
 
 Now that we have Laravel installed globally in our system, we can ``cd`` into a directory and create our application. In our case, we will create our application in the directory,  
 
@@ -54,25 +49,26 @@ While in your preferred directory, create your application by running the follow
 laravel new localization_app
 ```  
 This will take a few minutes depending on your internet speed.  
+
 We now have `localization_app` in our system, open this application in your text editor of choice, like PhpStorm. 
 
-If you have reached this far, congratulations, we can now serve our application, make sure you're in the ```localization_app ``` directory.  
+If you have reached this far, congratulations, we can now host our application using the `serve` command. Make sure you're in the `localization_app` directory.  
 Run the command:-
  ```
  php artisan serve
  ```
- Note Laravel application will start on port `8000` by default. It will automatically retry another immediate port such as 8001, in case this port is already in use.
+ Note Laravel application will start on port `8000` by default. It will automatically retry another immediate port such as 8001, in case port  8000 is in use.
 
  If you wish to stop any application running on port 8000, use the following command to kill the process in Linux distribution.
 
  ```
  sudo fuser -k 8000/tcp
  ```  
-This gives a response like  ``` 8000/tcp:    10017```,
-your `process Id` might be different from mine.  
+This gives a response like  ` 8000/tcp:    10017`.
+> Note that your `process Id` might be different from mine.  
 
 Congratulations, you're now free to use port 8000 to run your Laravel application.  
-And in case you wish Laravel application on a specific port of your choice, run the following command  
+And in case you wish to run the Laravel application on a specific port of your choice, use the following command  
 ```
 php artisan serve --port myPortNumber
 ```
@@ -80,9 +76,9 @@ Now that we have our Laravel application up and running, let us have a look at L
 
 
 ### Configuring Locales in action:-
-Our default application language is in English, remember from the beginning we said our application configuration 
+Our default application language is in English. Remember, our application's configurations are stored in the `app/config` folder.
 
-In this directory, there are several files arranged in alphabetical order, by default 
+In this directory, there are several files arranged in alphabetical order. 
 
 The first file is app.php. Open this file in your text editor.  
 
@@ -94,13 +90,12 @@ return [
    
     'locale' => 'en',
     'fallback_locale' => 'en',
-
     'faker_locale' => 'en_US',
 
 ];
 
 ```
-This is the part we're interested in, you can scroll down within the file to find this section.  
+We are interested in the above portion. Scroll down within the file to find this section.  
 A closer look at this part, the default `locale`  is set to `en `, English
 
 ```
@@ -139,22 +134,20 @@ return [
 
 ```
 Whenever this PHP file is called, it returns an associative array, in case you have no clue what associative arrays are, you can check it in the following link quickly:- 
- [https://www.php.net/manual/en/language.types.array.php](https://www.php.net/manual/en/language.types.array.php)  .
+ [associative arrays](https://www.php.net/manual/en/language.types.array.php)  .
 
  The first element in this array:-
  ```
  'failed' => 'These credentials do not match our records.'
  ```
- This line simply states that assign ```' failed'``` a string ``` 'These credentials do not match our records.' ```  
- This will allow us to call ``` 'failed'``` without necessarily assigning it to string in our controller while performing authentication or any other task that requires us to return this array.  
-This is an important point, we will need it in the future.  
+This line simply states that assign `failed` a string `These credentials do not match our records`. This allows us to call the `failed` variable without necessarily assigning it to a string in our controller.  
+This is an important point which we will need in the future.  
 
 Now, let us build a simple translation string for English to Spanish.  
 
 In our directory
 ```
  resources/lang/en
-
 ```
 Create a file and name it as `language.php`.  
 
@@ -163,11 +156,11 @@ Create a new directory names `es` in the `lang` folder to hold our Spanish trans
  ```
  resources/lang/es
  ```
- Next, create another `language.php` file to hold English translations, note that the file names should match.
+ Next, create another `language.php` file to hold English translations. Note that the file names should match.
 
  If you have reached this far, congratulations, that is the first step to create our translation strings.  
 
- Next step, open the ``` 'language.php' ``` file in your text editor for the English translation,```en``` directory and copy and paste the following:-  
+ Next step, open the `language.php` file in your text editor for the English translation,`en`` directory and copy and paste the following:-  
 
  ```php
 
@@ -202,7 +195,7 @@ Open the `language.php` file in your text editor for Spanish translation, ``es``
 
  ```
 Pay attention to what's going on in these two files:
-* Filename to hold strings are the same.
+* Filenames to hold strings are the same.
 * The array element names are the same for files.
 * The assignment strings have been translated to respective languages, in this case, Espanol and English.
 
@@ -252,12 +245,9 @@ Now that we have everything set, visit the link
 http://localhost:8000
 ```
 Note that this URL might be different from yours.  
-A few things you might have noted, in case strange, is the use of this syntax
-```
-{{__("filename.shortKey")}}
+A few things you might have noted is the use of `{{__("filename.shortKey")}}` syntax.
 
-```
-This is used to present translation strings, you can also use the @lang directive.   
+This is used to present translation strings. You can also use the @lang directive.   
 
 ```php
     @lang("filename.shortKey")
