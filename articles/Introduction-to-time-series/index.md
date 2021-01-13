@@ -67,10 +67,10 @@ This type of time-series means an analytic expression can not describe it and ha
 ### Components of time series
 Here are four useful time series analysis techniques:
 
-1. Trend: This is the long-term increase or decrease in the data. It can be linear or non-linear.
-2. Irregular component: This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable
-3. Seasonality: It is the regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors.
-4. Cyclicity: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals.
+1. **Trend**: This is the long-term increase or decrease in the data. It can be linear or non-linear.
+2. **Irregular** component: This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable
+3. **Seasonality**: It is the regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors.
+4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals.
 
 ![Simple](/engineering-education/introduction-to-time-series/img.jpg)
 
