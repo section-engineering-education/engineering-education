@@ -6,15 +6,15 @@ url: /engineering-education/how-to-execute-linux-commands-in-python/
 title: How to Execute Linux Commands in Python
 description: This tutorial will serve and an introduction to Linux commands. We are going to look at how we can automate and run Linux commands in Python.
 author: adith-bharadwaj
-date: 2020-12-22T00:00:00-19:00
+date: 2021-01-13T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-execute-linux-commands-in-python/hero.jpg
+  - url: /engineering-education/how-to-execute-linux-commands-in-python/hero.jpeg
     alt: Linux commands Python example image
 ---
-Linux is one of the most popular operating systems used by software developers and system administrators. It is open-source, free, customizable, and is very robust and adaptable making it an ideal choice for servers, [virtual machines (VMs)](https://www.vmware.com/topics/glossary/content/virtual-machine), and many other use cases.
+Linux is one of the most popular operating systems used by software developers and system administrators. It is open-source, free, customizable, very robust, and adaptable. Making it an ideal choice for servers, [virtual machines (VMs)](https://www.vmware.com/topics/glossary/content/virtual-machine), and many other use cases.
 <!--more-->
 Therefore, it is essential for anyone working in the tech industry to know how to work with Linux because it is used almost everywhere. *In this tutorial, we are going to look at how we can automate and run Linux commands in Python*. 
 
@@ -40,7 +40,7 @@ cmd = 'ls -l'
 os.system(cmd)
 ```
 
-The `os.system()` function allows users to execute commands in Python.  The program above lists all the files inside a directory. However, we can't read and parse the output of the command. 
+The `os.system()` function allows users to execute commands in Python. The program above lists all the files inside a directory. However, we can't read and parse the output of the command. 
 
 In some commands, it is imperative to read the output and analyze it. The `subprocess` library provides a better, safer, and faster approach for this and allows us to view and parse the output of the commands.  
 
