@@ -210,8 +210,8 @@ The code walkthrough:
 - `const targets=document.querySelectorAll("img")` will get all our images in the DOM.
 - the `lazyLoad` function takes a DOM element as its argument. Inside this function, we create our observer object named `io` that takes a callback with two parameters.
 - The first parameter `entries` is the actual observations on the element and the `observer` parameter is the interface used to manage the instance of this observer.
-- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry,isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the src attribute from its `data-src` attribute 
-  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer that we can call the method `observer.disconnect()` to dispose of the observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image.
+- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry.isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the src attribute from its `data-src` attribute 
+  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer that we can call with the method `observer.disconnect()` to dispose of the observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image visibility.
 - We now need to loop over our targets containing our images and pass the `lazyLoad` callback function to be observed by the `IntersectionObserver`.
 
 Check my deployed version on netlify [here](https://galleryio.netlify.app/).
