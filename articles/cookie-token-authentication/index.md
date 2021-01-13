@@ -1,4 +1,4 @@
-To secure communication between a client and a web server, we often need to associate an incoming request with a set of credentials for identity. We refer to this as authentication, which is used to recognize user identity against credential information such as usernames or passwords. In this article, we will compare cookie and token-based authentication and how they work.
+To secure acommunication between a client and a web server, we often need to associate an incoming request with a set of credentials for identity. We refer to this as authentication, which is used to recognize user identity against credential information such as usernames or passwords. In this article, we will compare cookie and token-based authentication and how they work.
 
 ### Prerequisites
 
