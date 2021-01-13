@@ -40,7 +40,7 @@ A hypothesis test evaluates two statements about a population. The statements ar
 
 #### Establish hypotheses
 
-The first step in the testing of a hypothesis is first defining a hypothesis. This is done by establishing both a null and alternative hypothesis. A null hypothesis can be thought of as a statement claiming no relationship between two measured events. It is an assumption made, which may be based on domain experience. Scientists carry out experiments to retain or reject a null hypothesis based upon the nature of (or lack of) the relationship between occurrences. A null hypothesis is usually considered to be true until proven otherwise. It is denoted as H0.
+The first step in the testing of a hypothesis is first defining a hypothesis. This is done by establishing both a null and alternative hypothesis. A null hypothesis can be thought of as a statement claiming no relationship between two measured events. It is an assumption made, which may be based on domain experience. Scientists carry out experiments to retain or reject a null hypothesis based upon the nature of (or lack of) the relationship between occurrences. A null hypothesis is usually considered to be true until proven otherwise. It is denoted as $H_0$.
 
 On the other hand, an alternative hypothesis results from the experiment that we hope to show. We want the alternative hypothesis to be true. It is the hypothesis that is the alternate of the null hypothesis. The image below shall aid in the understanding of these two types of hypotheses.
 
@@ -75,6 +75,8 @@ There exists a region in the sample space where we reject the null hypothesis. T
 Assuming the null hypothesis is true, the probability of getting an outcome at least as extreme as the observed outcome of a hypothesis test is the p-value. The meaning of “extreme” is dependent on how the testing is carried out. The p-value determines whether there is enough evidence to retain the alternative hypothesis or retain the null hypothesis.
 Given the probability distribution of a specific statistic we are testing, we may use the deviation between an observed value and a selected reference value. The greater the difference between the two values, the lower the p-value. The p-value is lower as a result of this kind of difference, which shows that it is less likely that the difference is thanks to random chance.
 To understand how to calculate the p-value, with examples, I suggest going through this [post](https://www.wallstreetmojo.com/p-value-formula/).
+
+Many tests may be used to compute the critical region. Other Hypothesis testing types include the t-test, z-test, ANOVA test, and chi-square test. A t-test computes the difference between the means of a pair of groups that might have related features. z-tests also test the means of two populations. ANOVA may be used when comparing more than two groups simultaneously. A chi-square test is used in the presence of a pair of categorical variables in a population. In the context of this article, since we are comparing two distributions, the p-test is suitable. We shall explore the other types of hypothesis tests in a future article.
 
 #### Compare p-value to the significance level to retain or reject the null hypothesis
 
