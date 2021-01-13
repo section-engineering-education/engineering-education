@@ -1,5 +1,5 @@
 
-The Intersection Observer is a browser API that provides a way to observe the visibility and position of the DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling and animations.
+The Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling and animations.
 In this article, we will discuss how this API is made to detect element visibility by building a simple web page that implements image lazy-loading features.
 
 ### Prerequisites
