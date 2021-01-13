@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/meta-learning/hero.jpg
-    alt: Underspecification in Machine Learning image example
+    alt: Meta-learning Machine Learning image example
 ---
 The application of machine learning to real-world problems is a very involving task for data scientists. For instance, they need to assess algorithms and tune many parameters. This may be based on their experience, biases, or assumptions.
 <!--more-->
