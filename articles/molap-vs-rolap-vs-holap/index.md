@@ -1,9 +1,9 @@
-Businesses and organizations require analytical tools for analyzing their processes, performance, and strategies. OLAP (Online Analytical Processing) is a tool that can be used to provide multidimensional data analysis and complex data modeling. This technique is employed in business intelligence (BI) applications to support management reporting, trends analysis, forecasting, and planning. 
+Businesses and organizations require analytical tools for analyzing their processes, performance, and strategies. OLAP (Online Analytical Processing) is a tool that can be used to provide multi-dimensional data analysis and complex data modeling. This technique is employed in business intelligence (BI) applications to support management reporting, trends analysis, forecasting, and planning. 
 
 OLAP consists of three data models: MOLAP, ROLAP, and HOLAP. These data models differ mainly in terms of data storage and technique. This article provides a comparison of these models to improve our understanding of OLAP in data warehousing. 
 
 ### An Overview of OLAP
-Online Analytical Processing (OLAP) is a tool that enables users to perform data analysis from various database systems simultaneously. Users can use this tool to extract, query and retrieve data.  OLAP enables users to analyze the collected data from diverse points of view. 
+Online Analytical Processing (OLAP) is a tool that enables users to perform data analysis from various database systems simultaneously. Users can use this tool to extract, query, and retrieve data.  OLAP enables users to analyze the collected data from diverse points of view. 
 
 Let's briefly look at how OLAP works to improve our understanding of this concept. First, data is collected from multiple sources such as a spreadsheet, video, and online databases. Data warehouse stores the collected data and cleanses it. The data is then organized into OLAP cubes. Each data cube consists of some dimensions. When a user runs a data query, the front-end tool presents data collected from the OLAP cubes. 
 
@@ -11,19 +11,19 @@ Let's briefly look at how OLAP works to improve our understanding of this concep
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2019/04/OLAP-Architecture.png)
 
-There are three main types of OLAP: MOLAP, HOLAP, and ROLAP. These categories are mainly distinguished by the data storage mode. For example, MOLAP is a multi-dimensional storage mode while ROLAP is a relational mode of storage. HOLAP is a combination of multi-dimensional and relational elements. 
+There are three main types of OLAP: MOLAP, HOLAP, and ROLAP. These categories are mainly distinguished by the data storage mode. For example, MOLAP is a multi-dimensional storage mode, while ROLAP is a relational mode of storage. HOLAP is a combination of multi-dimensional and relational elements. 
 
 ### Differences between MOLAP, ROLAP, and HOLAP
 
 #### MOLAP
-MOLAP is an abreviation for Multi-dimensional Online Analytical Processing. In this type of analytical processing, multidimensional databases (MDDBs) are used to store data. This data is later used for analysis. MOLAP consists of data that is pre-computed and fabricated. The data cubes from MDDBs carry data that has already been calculated. This increases the speed of querying data.   
+MOLAP is an abbreviation for Multi-dimensional Online Analytical Processing. In this type of analytical processing, multi-dimensional databases (MDDBs) are used to store data. This data is later used for analysis. MOLAP consists of data that is pre-computed and fabricated. The data cubes from MDDBs carry data that has already been calculated. This increases the speed of querying data.   
 
 The architecture of MOLAP consists of three main components:
 * **Database server:** This exists in the data layer.
 * **MOLAP server:** This consists of the MOLAP engine in the application layer.
 * **Front-end tool:** This is usually the client desktop in the presentation layer. 
 
-The MOLAP engine in the application layer collects data from the databases in the data layer. It then loads data cubes into the multidimensional databases. When the user makes a query, data will move in a propriety format from the MDDBs to the client desktop in the presentation layer.This enables users to view data in multiple dimensions.   
+The MOLAP engine in the application layer collects data from the databases in the data layer. It then loads data cubes into the multi-dimensional databases. When the user makes a query, data will move in a propriety format from the MDDBs to the client desktop in the presentation layer. This enables users to view data in multiple dimensions.   
 
 ![MOLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/molap-architecture.png)
 
@@ -39,14 +39,14 @@ The MOLAP engine in the application layer collects data from the databases in th
 * The data used for analysis depends on certain requirements that were set (previously). This limits data analysis and navigation. 
 
 #### ROLAP
-ROLAP is an abreviation for Relational Online Analytical Processing. In this type of analytical processing, data storage is done in a relational database. In this database, the arrangement of data is done in rows and columns. Data is presented to end-users in a multi-dimensional form. 
+ROLAP is an abbreviation for Relational Online Analytical Processing. In this type of analytical processing, data storage is done in a relational database. In this database, the arrangement of data is made in rows and columns. Data is presented to end-users in a multi-dimensional form. 
 
 There are three main components in a ROLAP model:
 * **Database server:** This exists in the data layer. This consists of data that is loaded into the ROLAP server. 
 * **ROLAP server:** This consists of the ROLAP engine that exists in the application layer. 
 * **Front-end tool:** This is the client desktop that exists in the presentation layer. 
 
-Let’s briefly look at how ROLAP works. When a user makes a query (complex), the ROLAP server will fetch data from the RDBMS server. The ROLAP engine will then create data cubes dynamically. The user will view data from a multi-dimensional point. Unlike in MOLAP where the multi-dimensional view is static, ROLAP provides a dynamic multi-dimensional view. This explains why it is slower as compared to MOLAP. 
+Let’s briefly look at how ROLAP works. When a user makes a query (complex), the ROLAP server will fetch data from the RDBMS server. The ROLAP engine will then create data cubes dynamically. The user will view data from a multi-dimensional point. Unlike in MOLAP, where the multi-dimensional view is static, ROLAP provides a dynamic multi-dimensional view. This explains why it is slower as compared to MOLAP. 
 
 ![ROLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/rolap-architecture.jpg)
 
@@ -58,11 +58,11 @@ Let’s briefly look at how ROLAP works. When a user makes a query (complex), th
 * ROLAP utilizes a relational database. This enables the model to integrate the ROLAP server with an RDBMS (relational database management system). 
 
 ##### Disadvantages
-* There is slow performance especially when the volume of data is huge.
+* There is slow performance, especially when the volume of data is huge.
 * ROLAP has certain limitations relating to SQL. For example, the SQL feature has difficulties in handling complex calculations. 
   
 #### HOLAP
-This is an abreviatioon for Hybrid Online Analytical Processing. This type of analytical processing solves the limitations of MOLAP and ROLAP, and combines their attributes. Data in the database is divided into two: specialized storage and relational storage. Integrating these two aspects addresses issues relating to performance and scalability. HOLAP stores huge volumes of data in a relational database and keeps aggregations in a MOLAP server. 
+This is an abbreviation for Hybrid Online Analytical Processing. This type of analytical processing solves the limitations of MOLAP and ROLAP and combines their attributes. Data in the database is divided into two: specialized storage and relational storage. Integrating these two aspects addresses issues relating to performance and scalability. HOLAP stores huge volumes of data in a relational database and keeps aggregations in a MOLAP server. 
 
 The HOLAP model consists of a server that can support ROLAP and MOLAP. It consists of a complex architecture that requires frequent maintenance. Queries made in the HOLAP model involve the multi-dimensional database and the relational database. The front-user tool presents data from the database management system (directly) or through the intermediate MOLAP.  
 
@@ -86,17 +86,21 @@ The following table provides a summary of the differences between MOLAP, ROLAP, 
 | :----- | :-----: | :-------: | ------|
 |**Meaning**|Multi-Dimensional Online Analytical Processing|Relational Online Analytical Processing|Hybrid Online Analytical Processing|
 |**Data Storage**|It stores data in a multi-dimensional database.|It stores data in a relational database.|It stores data in a relational database|
-|**Technique**|It utilizes Sparse Matrix technique.|It employs Structured Query Language (SQL).|It uses a combination of SQL and Sparse Matrix technique.|
+|**Technique**|It utilizes the Sparse Matrix technique.|It employs Structured Query Language (SQL).|It uses a combination of SQL and Sparse Matrix technique.|
 |**Volume of data**|It can process a limited volume of data.|It processes enormous data.|It can process huge volumes of data.|
 |**Designed view**|The multi-dimensional view is static.|The multi-dimensional view is dynamic.|The multi-dimensional view is dynamic.|
 |**Data arrangement**|It arranges data in data cubes.|It arranges data in rows and columns (tables).|There is a multi-dimensional arrangement of data|
 
 ### Conclusion
-OLAP is an important concept in warehousing because it enables users to query, retrieve, and analyze data. MOLAP, ROLAP, and HOLAP are the main forms of OLAP. These models can be distinguished using various aspects such as volume of data, storage, designed view, and data arrangement. Various business intelligence companies have utilized these tools to suit their needs and objectives. These companies have used the above aspects of comparison to choose the right OLAP model for their businesses. 
+OLAP is an important concept in warehousing because it enables users to query, retrieve, and analyze data. MOLAP, ROLAP, and HOLAP are the main forms of OLAP. These models can be distinguished using various aspects such as the volume of data, storage, designed view, and data arrangement. Various business intelligence companies have utilized these tools to suit their needs and objectives. These companies have used the above aspects of comparison for choosing the right OLAP model for their businesses. 
 
 ### Resources
 
 [Techopedia]( https://www.techopedia.com/definition/12830/hybrid-online-analytical-processing-holap)
 
 [1 Key Data]( https://www.1keydata.com/datawarehousing/toololap.html)
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
