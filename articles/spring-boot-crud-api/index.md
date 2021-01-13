@@ -1,13 +1,29 @@
-In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle as our build tool. Rest APIs make it possible to establish communication between a backend server and a frontend web or mobile applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-boot-crud-api/
+title: How to create CRUD API using Spring Boot
+description: This tutorial will be an introduction .
+author: odhiambo-paul
+date: 2021-01-12T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/spring-boot-crud-api/hero.jpg
+    alt: CRUD API using Spring Boot example image
+---
+In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle as our build tool. Rest APIs make it possible to establish communication between a backend server and a frontend web or mobile applications.
+<!--more-->
 ### Prerequisites
-- Basics of [Spring framework and Spring Boot](https://spring.io/guides/gs/spring-boot/)
-- Basic Knowledge of [Java programming language](https://www.javatpoint.com/java-tutorial)
+- Basics of [Spring framework and Spring Boot](https://spring.io/guides/gs/spring-boot/).
+- Basic Knowledge of [Java programming language](https://www.javatpoint.com/java-tutorial).
 - [Java development kit](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) (JDK) installed and set up on your computer.
 - [Postman](https://www.postman.com/downloads/) installed on your computer.
 - Your favorite Java IDE installed. I use [Intellij](https://www.jetbrains.com/idea/download/#section=windows)
 
-To verify if Java and java compiler are installed and configured correctly on your system, Open the terminal and type in the command `java --version` to see the version of java installed and `javac --version` to see the version of java compiler installed.
+To verify if Java and Java compiler are installed and configured correctly on your system, Open the terminal and type in the command `java --version` to see the version of Java installed and `javac --version` to see the version of Java compiler installed.
 
 ```bash
 $ java --version
@@ -46,7 +62,7 @@ The easiest way to create a new spring boot application is to use the [spring in
 ![Project setup](/engineering-education/spring-boot-crud-api/generate-project.png)
 
 ### Configuring Spring Datasource, JPA, Hibernate
-We are using the H2 database which is an in-memory database meaning the data stored in the database is destroyed if the application is stopped or restarted.
+We are using the H2 database which is an in-memory database, meaning the data stored in the database is destroyed if the application is stopped or restarted.
 
 In the `resources` folder within the `src/main` folder, open `application.properties` file and write the below properties.
 ```groovy
@@ -56,22 +72,22 @@ spring.datasource.username=sa
 spring.datasource.password=password
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ```
+
 - `spring.datasource.username` & `spring.datasource.password` properties are the H2 database username and password. The default H2 database `username` is `sa` and `password` is `password`.
 - Spring Boot uses Hibernate for Spring Data JPA implementation, that is why we configure `spring.jpa.database-platform=org.hibernate.dialect.H2Dialect`.
 - `spring.datasource.url=jdbc:h2:mem:todo` species the database url and the database name. In our case the database name is `todo`.
 
 ### Todo model
-Models are plain old java objects that represent a table in the database.
-We will start by creating a model package in our root project package `com.example.demo`.
-Within the `model` package created above create a Java enum with the name `TodoStatus` with the fields as shown below.
+Models are plain old Java objects that represent a table in the database. We will start by creating a model package in our root project package `com.example.demo`.
+
+Within the `model` package created above, create a Java enum with the name `TodoStatus` with the fields as shown below.
 ```java
 public enum TodoStatus {
     COMPLETED, NOT_COMPLETED
 }
 ```
 
-
-Within the `model` package created above create a Java class with the name `Todo` with the fields as shown below.
+Within the `model` package created above, create a Java class with the name `Todo` with the fields as shown below.
 ```java
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -120,13 +136,14 @@ public class Todo {
 - `@UpdateTimestamp` annotation is a JPA annotation that automatically updates the `todo` last modified timestamp.
 - `@Data` annotation is from project Lombok. It generates the getters and setters for all the fields that we have in the todo class, equals method, and a toString method.
 - `@NoArgsConstructor` annotation is from project Lombok and it generates an empty constructor for our `Todo` class.
-- `@AllArgsConstructor` annotation is from project Lombok and it generates a constructor will all the fields that are available in our `Todo` class.
-- `@Builder` annotation is from project Lombok. It makes it possible for us to use the builder pattern with our `Todo` model. We will use the builder pattern later in the article when creating initial bootstrap data.
+- `@AllArgsConstructor` annotation is from project Lombok and it generates a constructor with all the fields that are available in our `Todo` class.
+- `@Builder` annotation is from project Lombok. It makes it possible for us to use the builder pattern with our `Todo` model. 
 
-### Creating the Repository interface
+We will use the builder pattern later in the article when creating initial bootstrap data.
 
+### Creating the repository interface
 In the root package of our project, create a package with the name `repositories`.
-In the `repositories` package created above create an interface with the name `TodoRepository` that extends the `CrudRepository` interface with comes with CRUD functions already implemented.
+In the `repositories` package created above, create an interface with the name `TodoRepository` that extends the `CrudRepository` interface and comes with CRUD functions already implemented.
 
 ```java
 import com.odhiambopaul.demo.model.Todo;
@@ -138,15 +155,16 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
 }
 
 ``` 
-The `CrudRespository` interface takes in the model and the type of the id, in our case the model is `Todo` and the id type is `Long`.
-We are now able to use all the `CrudRepository` methods `save()`, `findOne()`, `findById()`, `findAll()`, `count()`, `delete()`, `deleteById()` without providing implementation.
+
+The `CrudRespository` interface takes in the model and the type of the ID, in our case the model is `Todo` and the ID type is `Long`. We are now able to use all the `CrudRepository` methods `save()`, `findOne()`, `findById()`, `findAll()`, `count()`, `delete()`, `deleteById()` without providing implementation.
+
 - `@Repository` annotation marks this interface as a Spring Data JPA repository.
 
-### Creating the todo service.
+### Creating the todo service
 A service is an interface from which different implementations of the same functions can be made.
 
 In the root package of our application create a package with the name `services`.
-In the `services` package created above create an interface with the name `TodoService`.
+In the `services` package created above, create an interface with the name `TodoService`.
 ```java
 import java.util.List;
 
@@ -162,7 +180,8 @@ public interface TodoService {
     void deleteTodo(Long todoId);
 }
 ```
-The above interface defines the base CRUD operations that we will implement in our `TodoServiceImpl` class.
+
+The interface above defines the base CRUD operations that we will implement in our `TodoServiceImpl` class.
 In the `services` package create a class with the name `TodoServiceImp` and implements the `TodoService` interface we created above.
 
 ```java
@@ -215,13 +234,14 @@ public class TodoServiceImpl implements TodoService {
 }
 
 ```
-We create and initialize the `TodoRepository` in the constructor of the above class to be able to use the various methods that CrudRepository provides.
-- `@service` annotation makes Spring context to be aware of this class as a service.
+
+We will create and initialize the `TodoRepository` in the constructor of the class above to be able to use the various methods that CrudRepository provides.
+
+- `@service` annotation makes Spring context be aware of this class as a service.
 
 ### Creating the Rest API controller
-
 In the root package of our project create a package with the name `controllers`.
-In the `controllers` package create above, create a Java class with the name `TodoController`.
+In the `controllers` package we created above, create a Java class with the name `TodoController`.
 
 ```java
 import com.example.demo.model.Todo;
@@ -275,6 +295,7 @@ public class TodoController {
 }
 
 ```
+
 - `@RestController` annotation marks this class as a controller that can process the incoming HTTP requests.
 - `@RequestMapping("/api/v1/todo")` annotation sets the base path to the resource endpoints in the controller as `/api/v1/todo`.
 - We inject the TodoService through our contractor to be able to use the various methods defined in it within the `TodoController` class.
@@ -283,10 +304,8 @@ public class TodoController {
 - `@PutMapping` annotation indicates that a function processes a `PUT` request.
 - `@DeleteMapping` annotation indicates that a function processes a `DELETE` request.
 
-
 ### Creating a bootstrapper
-Data bootstrapper creates and loads the initial data whenever the application is run. We will make use of the builder pattern we mention while creating the `Todo` model.
-In the root package of our project, create a package with the name `bootstrap`.
+Data bootstrapper creates and loads the initial data whenever the application runs. We will make use of the builder pattern we mention while creating the `Todo` model. In the root package of our project, create a package with the name `bootstrap`.
 In the `bootstrap` package created above create a Java class with the name `TodoLoader`.
 
 ```java
@@ -341,7 +360,8 @@ The final project structure should be as shown below.
 
 **Creating a new `Todo`**
 
- Make a `POST` request with JSON body as shown below to `http://127.0.0.1:8080/api/v1/todo`.
+ Make a `POST` request with the JSON body as shown below to `http://127.0.0.1:8080/api/v1/todo`.
+
 ```json
 {
     "title": "Go to market",
@@ -358,15 +378,15 @@ Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo` to get all the `todo
 
 ![Get Todos](/engineering-education/spring-boot-crud-api/get-todos.png)
 
-**Getting a `Todo` by id**
+**Getting a `Todo` by ID**
 
-Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the id of the `Todo` at the end of the URL, in our case id is 2.
+Make a `GET` request to `http://127.0.0.1:8080/api/v1/todo/2` specifying the ID of the `Todo` at the end of the URL, in our case ID is 2.
 
 ![Get Todo by Id](/engineering-education/spring-boot-crud-api/get-todo-by-id.png)
 
 **Updating a `Todo`**
 
-Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the id of the `todo` to update in the URL, in our case the id is 2 and a JSON body with the fields to update.
+Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the ID of the `todo` to update in the URL, in our case the ID is 2 and a JSON body with the fields to update.
 
 ```json
 {
@@ -380,14 +400,14 @@ Make a `PUT` request to `http://127.0.0.1:8080/api/v1/todo/2` adding the id of t
 
 **Deleting a `Todo`**
 
-Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the end of the URL the id of the `todo` to delete, in our case the id is 2.
+Make a `DELETE` request to `http://127.0.0.1:8080/api/v1/todo/2` adding to the end of the URL the ID of the `todo` to delete, in our case the ID is 2.
 
 ![Delete Todo](/engineering-education/spring-boot-crud-api/delete-todo.png)
 
 ### Conclusion
-Now that you have learned how to create a Restful web service in Spring Boot, Clone the project [here](https://github.com/paulodhiambo/springbootcrud) and `IN_PROGRESS` status to our `TodoStatus` enum in the `models` package.
+Now that you have learned how to create a Restful web service in Spring Boot, clone the project [here](https://github.com/paulodhiambo/springbootcrud) and `IN_PROGRESS` status to our `TodoStatus` enum in the `models` package.
 
-In our next secure our Restful endpoints and handle various exceptions in our application.
+In our next article we will demonstrate how to secure our Restful endpoints and handle various exceptions in our application.
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
