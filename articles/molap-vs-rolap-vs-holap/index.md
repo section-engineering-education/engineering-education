@@ -3,7 +3,7 @@ Businesses and organizations require analytical tools for analyzing their proces
 OLAP consists of three data models: MOLAP, ROLAP, and HOLAP. These data models differ mainly in terms of data storage and technique. This article provides a comparison of these models to improve our understanding of OLAP in data warehousing. 
 
 ### An Overview of OLAP
-Online Analytical Processing (OLAP) is a tool that enables users to perform data analysis from various database systems simultaneously. Users can use this tool to extract, query, and retrieve data.  OLAP enables users to analyze the collected data from diverse points of view. 
+Online Analytical Processing (OLAP) is a tool that enables users to perform data analysis from various database systems simultaneously. Users can use this tool to extract, query, and retrieve data. OLAP enables users to analyze the collected data from diverse points of view. 
 
 Let's briefly look at how OLAP works to improve our understanding of this concept. First, data is collected from multiple sources such as a spreadsheet, video, and online databases. Data warehouse stores the collected data and cleanses it. The data is then organized into OLAP cubes. Each data cube consists of some dimensions. When a user runs a data query, the front-end tool presents data collected from the OLAP cubes. 
 
