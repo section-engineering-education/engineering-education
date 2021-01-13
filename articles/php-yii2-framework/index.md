@@ -1,6 +1,21 @@
-
-
-Nowadays, many developers are using frameworks for designing websites. This has led to improved production speeds. PHP is a server-side scripting language that can be embedded in [HTML](https://en.wikipedia.org/wiki/HTML). 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/php-yii2-framework/
+title: Getting started with Yii 2 PHP Framework
+description: A tutorial that provides a detailed guide on how to use the Yii 2 framework to create web applications. The Yii 2 framework supports the development of both the backend and the frontend.
+author: Erastus Muriithi
+date: 2021-01-12T00:00:00-13:00
+date: 2021-01-14T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/php-yii2-framework/hero.jpg
+    alt: Getting started with Yii 2 PHP Framework
+---
+Nowadays, many developers are using frameworks for designing websites. This has led to improved production speeds. PHP is a server-side scripting language that can be embedded in [HTML](https://en.wikipedia.org/wiki/HTML).
+<!--more-->
 
 ### Introduction
 Yii 2 is a generic PHP framework used for developing web applications with many ties. Yii 2 implements the MVC (Model, View, and Controller) development principle.
@@ -13,7 +28,7 @@ To follow along with this tutorial, you need to have the following:
 - Knowledge of PHP, HTML, and CSS
 - Apache Web server. Download it [here](https://www.apachefriends.org/download.html). After installation, a folder `/opt/lampp` will be created but not a folder `/opt/xampp`. This folder is only created in Linux OS like Ubuntu.
 
-### step 1 -- install Yii 2
+### Step 1 - Install Yii 2
 
 Yii 2 can be installed from an archive file.
 
@@ -45,7 +60,7 @@ When the Congratulations page is displayed on your browser, it means that the in
 ![A congratulatory note](/engineering-education/php-yii2-framework/congratulations.png)
 
 
-### step 2--understanding the Folder Structure and directories
+### Step 2 - Understanding the folder structure and directories
 Below are the folders inside the `advanced`. Open `/opt/lampp/htdocs/advanced` folder using your favorite code editor to see them.
 
 ```bash
@@ -97,14 +112,14 @@ Inside the `view` folder, we have two directories:
 
 - **`views/site`**: Unlike files in layout, files in the site are not fixed. That is, one page does not have the same view as another page. The only similar thing is the header and the footer since they were placed in `main.php`.
 
-### Folder 2: common
+#### Folder 2: common
 Here, we have files that are common to both the backend and frontend directory. For instance, database configurations in `/common/config` takes place here.
 
-### Folder 3: frontend
+#### Folder 3: frontend
 
 The `/frontend` project contains the contents displayed to the users. This folder has similar directories to those of `/backend`.
 
-### Step 3--Creating our first web application using Yii 2
+### Step 3 - Creating our first web application using Yii 2
 
 To create a web page, we need to change the different parts of our website to fit our preferences. Let us change the footer of our website. Replace the whole `<footer>` in `/frontend/views/layout/main.php` with the following code:
 
@@ -126,7 +141,7 @@ To create a web page, we need to change the different parts of our website to fi
 //...
 
 ```
-### Step 4 -- Configure CSS and JavaScript
+### Step 4 - Configure CSS and JavaScript
 All CSS files in a project are stored under `/web/CSS`, and all JavaScript is stored under `/web/js`. 
 
 Let us customize the footer we created above. Create a `footer.css` under `/web/css` and put the code below. 
@@ -154,7 +169,7 @@ Then register the styles above in `assets/AppAsset.php`.
     /* ... */
 }
 ```
-### Step 5 -- Modifying site contents
+### Step 5 - Modifying site contents
 Now let us change the contents of our website. Replace the contents of `frontend/views/site/index.php` with the following code:
 
 ```PHP
@@ -181,7 +196,7 @@ You should have a page like the one below;
 
 The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using the PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link, you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
 
-### Step 6 -- Adding a new page to our website
+### Step 6 - Adding a new page to our website
 To add a new page to our website, we need to create a view and an action. A view is an interface that the user will see on the browser. Create a new file, `frontend/views/site/portfolio.php`, and paste the following code in it.
 
 ```php
@@ -242,3 +257,5 @@ In this article;
 - we have created a portfolio page using yii2.
 
 **Have a good Yii 2 coding ahead**
+
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
