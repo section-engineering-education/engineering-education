@@ -1,4 +1,4 @@
-In this era of Big Data, companies are using data-driven approaches to improve various aspects of their businesses. Data used by these businesses is complex, huge and evolving, which requires an effective tool for managing it. Teradata is an open and scalable database management system that can enable businesses to improve their outcomes using data management tools. This system is used in various industries such as manufacturing, health care, and transport to optimize their processes. 
+In this era of Big Data, companies are using data-driven approaches to improve their businesses' various aspects. These businesses' data is complex, huge, and evolving, which requires an effective tool for managing it. Teradata is an open and scalable database management system that can enable businesses to improve their outcomes using data management tools. This system is used in various industries such as manufacturing, health care, and transport to optimize their processes. 
 
 This article takes you through this system and provides an overview of various aspects such as the importance, features, and architecture of Teradata. It also explains how Teradata works and highlights its real-life applications. 
 
@@ -9,7 +9,7 @@ It supports strategic intelligence, which provides queries, intelligence tools, 
 
 ### Why You Should Use Teradata
 
-* It can support a huge volume of data (more than 50 petabytes).
+* It can support a massive volume of data (more than 50 petabytes).
 * It can be integrated with various business intelligence (BI) tools.
 * It consists of many deployment options that can be used to fetch the same data.
 * Users can perform complex analytics because it supports OLAP (online analytical processing).
@@ -37,7 +37,7 @@ The following diagram shows the architecture of Teradata.
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/04/Components-of-Teradata-Architecture.png)
 
-The architecture of Teradata is based on MPP (massively parallel processing). It can be divided into two main parts: storage architecture and retrieval architecture. The entire architecture comprises four parts: passing engine, AMPs, BYNET, and disks. The first two components form the storage architecture while the last two form the retrieval architecture. 
+The architecture of Teradata is based on MPP (massively parallel processing). It can be divided into two main parts: storage architecture and retrieval architecture. The entire architecture comprises four parts: passing engine, AMPs, BYNET, and disks. The first two components form the storage architecture, while the last two form the retrieval architecture. 
 
 #### Storage Architecture
 This architecture is used when the client makes a storage query. The following diagram shows the storage architecture of Teradata.
@@ -71,13 +71,13 @@ This architecture is used when a client makes a retrieval query. The diagram bel
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/teradata/images/teradata-architecture3.png)
 
 ##### BYNET
-This component links the parsing engine to the Access Module Processor. It is a message passing layer. BYNETS exist in two main forms: BYNET 0 and BYNET 1. If one of the BYNETS fails to function well, the other one can replace it. Both forms can be employed if the amount of data used is very huge.
+This component links the parsing engine to the Access Module Processor. It is a message-passing layer. BYNETS exist in two main forms: BYNET 0 and BYNET 1. If one of the BYNETS fails to function well, the other one can replace it. Both forms can be employed if the amount of data used is enormous.
 
 ##### Disk
 This is a storage area for AMPs. They are termed as Vdisks or Virtual disks. 
 
 ### How Teradata Works
-Teradata works through the four aforementioned components. The operation of the system depends on the type of query made by the client. If the client wants to insert records, the storage architecture will be used. In this case, the parsing engine will receive the storage query (insert records) for processing. 
+Teradata works through the four components mentioned above. The operation of the system depends on the type of query made by the client. If the client wants to insert records, the storage architecture will be used. In this case, the parsing engine will receive the storage query (insert records) for processing. 
 
 The parsing engine consists of four main elements that work systematically on the query: the parser, session handler, optimizer, and dispatcher. The systematic process in the parsing engine can be described as follows.
 
@@ -94,7 +94,7 @@ If the client wants to retrieve data, the retrieval architecture will be used. T
 The following are some of the industries in which Teradata is used.
 
 #### Finance
-Teradata enables financial companies to improve customer experience through the data-led decision making and personalized services. It also enables organizations to prepare quality financial reports. 
+Teradata enables financial companies to improve customer experience through data-led decision making and personalized services. It also enables organizations to prepare quality financial reports. 
 
 #### Manufacturing
 Teradata supports manufacturing analytics, which helps in generating resourceful insights for innovation and growth. The insights generated from various data sources help manufacturing companies to reduce costs, improve supply efficiency, and optimize processes. 
@@ -106,12 +106,12 @@ This system offers healthcare analytics solutions to various healthcare provider
 The retail industry is experiencing immense transformation because of increased competition, changing demand patterns, and the pressure to increase profit margins. Teradata provides retail companies with retail analytics that enable them to optimize demand forecasting and their customer experience. This system enables these companies to use a data-driven approach in solving various business problems. 
 
 #### Transport
-Teradata is used by various transport operators to capture and organize data relating to their customers, business operations, logistics, and business strategies. Teradata helps these operators to use a data-driven approach in the optimization of crew planning, marketing, and distribution. 
+Various transport operators use Teradata to capture and organize data relating to their customers, business operations, logistics, and business strategies. Teradata helps these operators use a data-driven approach to optimize crew planning, marketing, and distribution. 
 
 ### Conclusion
-Teradata is an effective database system that enables businesses to use data to improve their processes and outcomes. Many organizations choose this system because it is scalable and can support huge volumes of data. The system consists of exciting features that add value in terms of the low cost of ownership, high performance, and parallel processing. 
+Teradata is a practical database system that enables businesses to use data to improve their processes and outcomes. Many organizations choose this system because it is scalable and can support huge volumes of data. The system consists of exciting features that add value in terms of the low cost of ownership, high performance, and parallel processing. 
 
-Teradata is used in various industries such as healthcare, finance, manufacturing, retail, and transport. Digital transformation is changing the way data is managed. In the future, Teradata will consist of diverse tools that will be used in a wide variety of sectors. 
+Teradata is used in various industries such as healthcare, finance, manufacturing, retail, and transport. Digital transformation is changing the way data is managed. In the future, Teradata will consist of diverse tools used in a wide variety of sectors. 
 
 ### Resources
 
