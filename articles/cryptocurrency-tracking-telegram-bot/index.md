@@ -1,5 +1,9 @@
 # Building a Cryptocurrency Tracking Telegram Bot with Python
 
+title: Building a Cryptocurrency Tracking Telegram Bot with Python
+
+description: Telegram bots are accounts operated by software that serve as handy tools for a lot of tasks.
+
 Telegram bots are accounts operated by software that serve as handy tools for a lot of tasks. In this article, we will go through what Telegram bots are, how to use them, and their development process in Python. We will also build a Telegram bot to track cryptocurrencies and send regular updates on prices to ensure we completely understand them.
 
 ## Introduction
