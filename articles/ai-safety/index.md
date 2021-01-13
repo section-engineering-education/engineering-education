@@ -17,7 +17,7 @@ images:
 
 About a year ago, researchers signed a petition against [AI capable of killing people](https://futureoflife.org/lethal-autonomous-weapons-pledge/). The Future of Life Institute is [very concerned about AI safety](https://futureoflife.org/background/benefits-risks-of-artificial-intelligence/). Why is this?
 
-## The Problems with Superintelligence
+### The Problems with Superintelligence
 
 Say you have a robot that you tell to make you a sandwich. The only thing it cares about is the sandwich. There's a glass in the way, so it knocks over the glass. It only cares about the sandwich, and not about the glass. There's also a baby in the way, so it steps on the baby. It only cares about the sandwich, and not about the baby. On the way there, there's also your homework. It crumples all your work because it doesn't care about your GPA. If a bomb also happens to be in the way, it might set off the bomb. All it cares about is the sandwich.
 
@@ -31,9 +31,9 @@ Don't try turning it off either. It thought of that. Remember, this AI is smarte
 
 Even if you make a good goal for it, it can still find a way to cheat the system. [There are many examples of this happening](https://www.youtube.com/watch?v=nKJlF-olKmg), often hilariously. Say you have an AI that you want to clean a room. It gets rewarded whenever it looks around the room and doesn't see a mess. In response, it puts a bucket on its head, so it doesn't see a mess anymore.
 
-## What Do We Do?
+### What Do We Do?
 
-### Possible Solutions?
+#### Possible Solutions?
 
 [There](http://intelligence.org/summary) [are](http://cser.org/emerging-risks-from-technology/artificial-intelligence/) [entire](http://www.fhi.ox.ac.uk/) [organizations](https://www.partnershiponai.org/) [dedicated](http://gcrinstitute.org/) [to](http://futureoflife.org/static/data/documents/FLI-XRisk-Organizations.pdf?x59035) [this](https://80000hours.org/career-guide/top-careers/profiles/artificial-intelligence-risk-research/). To try to give the definitive solution would be very vain. But, there may be some good leads in the following areas.
 
@@ -41,7 +41,7 @@ Even if you make a good goal for it, it can still find a way to cheat the system
 * **Give the AI an incentive to value ethics.** This would be a great idea if we could all agree on what ethics involves. It doesn't work. [There are many moral philosophies](https://en.wikipedia.org/wiki/Ethics). None of them are perfect.
 * **Make an AI and tell it to maximize [QALYs](https://en.wikipedia.org/wiki/Quality-adjusted_life_year).** Utilitarianism is pretty popular, but it still has [problems](https://www.thinkingmuchbetter.com/main/5-objections-to-utilitarianism). It also still has the problem of [population ethics](https://www.youtube.com/watch?v=vqBl50TREHU). Also, as mentioned before, AIs can take advantage of their reward function. If this AI was implemented, all it would do is maximize the number of babies born.
 
-### Organizations to Donate To
+#### Organizations to Donate To
 
 [In](https://80000hours.org/) [Effective](https://www.evidenceaction.org/) [Altruism](https://www.gfi.org/), [we](https://d-rev.org/) [like](https://www.givedirectly.org/) [to](https://www.gofundme.com/f/covidmoonshot) [focus](https://www.ciwf.com/) [on](https://aisafetycamp.com/) [organizations](https://www.againstmalaria.com/) [to](https://allfed.info/) [donate](https://www.charitywater.org/) [to](https://www.arborday.org/). Here's a shortlist of places to look at:
 
@@ -54,7 +54,7 @@ Even if you make a good goal for it, it can still find a way to cheat the system
 * [80,000 Hours](https://80000hours.org/career-guide/top-careers/profiles/artificial-intelligence-risk-research/)
 * [Ought](https://ought.org/)
 
-### Places to Work
+#### Places to Work
 
 You're going to spend a huge chunk of your life working. You might as well do some good in the world during it. If you're an aspiring Computer Scientist with an interest in AI, any of the above places are good options. [80,000 Hours](https://80000hours.org/job-board/ai-safety-policy/) has a job board if you're looking for jobs. For future reference, here's a list of places to look at:
 
@@ -67,6 +67,6 @@ You're going to spend a huge chunk of your life working. You might as well do so
 
 One thing to note is that as a tech employee, you actually have a lot of power over what the company does. Don't take that for granted. If you work at a company that may be on a path to develop AGI, use your voice.
 
-### More Information
+#### More Information
 
 All the organizations already listed have a lot of information. [Robert Miles'](https://www.youtube.com/channel/UCLB7AzTwc6VFZrBsO2ucBMg) videos are also good resources for learning about the dangers of AI. He also has made a couple of videos on [Computerphile](https://www.youtube.com/user/Computerphile) about this topic. [The Future of Life Institute](https://futureoflife.org/ai-news/) is probably worth a follow as well.
