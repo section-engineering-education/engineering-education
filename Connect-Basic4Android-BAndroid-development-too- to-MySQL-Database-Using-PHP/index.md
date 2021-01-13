@@ -611,6 +611,8 @@ $conn->close();
 ?>
 ```
 
+You can find the complete source code on [Github](https://github.com/tambastar/B4A-PHP). You can also find more example projects in the [B4A community](https://www.b4x.com/android/forum/).
+
 ### Conclusion
 
 if the php file is kept in Apache server host and B4A Android application connected via the `URL` there would be communication with server. This will then lead to having several actions that can be done via the app depending on what the user wants.
