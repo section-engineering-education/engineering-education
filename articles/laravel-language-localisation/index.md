@@ -1,3 +1,4 @@
+This tutorial will be an introduction to the Laravel Localization, a feature that ensures that an application is adaptd to different languages depending on the region.
 ### Introduction
 In software applications, Language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. A perfect example is an online shopping site such as Alibaba. Chinese citizens can access this site in Chinese while those in other regions such as the US can navigate the e-commerce website using English. This is known as internationalization, commonly denoted as (i18n).  
 Therefore, localization simply involves presenting your website in different languages. Developers can thus, use this feature to design applications that fit various cultures and languages through translations.  
@@ -166,12 +167,12 @@ Create a new directory names `es` in the `lang` folder to hold our Spanish trans
 
  <?php
     return [
-        "Name"          => "Enter your name",
+        "name"          => "Enter your name",
         "passport"      => "Enter your passport",
-        "Sector"        => "Select your sector",
-        "Employer"      => "Select your employer",
-        "DateOfBirth"   => "Enter your date of birth",
-        "Gender"        => "Select your gender",
+        "sector"        => "Select your sector",
+        "employer"      => "Select your employer",
+        "dateOfBirth"   => "Enter your date of birth",
+        "gender"        => "Select your gender",
     ];
  ?>
 
@@ -184,12 +185,12 @@ Open the `language.php` file in your text editor for Spanish translation, ``es``
  <?php
 
     return [
-        "Name"          => "introduzca su nombre",
+        "name"          => "introduzca su nombre",
         "passport"      => "Ingrese su pasaporte",
         "Sector"        => "Seleccione su sector",
-        "Employer"      => "Seleccione su empleador",
-        "DateOfBirth"   => "Introduzca su fecha de nacimiento",
-        "Gender"        => "Selecciona tu género",
+        "employer"      => "Seleccione su empleador",
+        "dateOfBirth"   => "Introduzca su fecha de nacimiento",
+        "gender"        => "Selecciona tu género",
     ];
  ?>
 
@@ -278,5 +279,7 @@ To change locale to Spanish, follow these simple steps:-
 Refresh your browser and you will notice that the form labels are now presented in Spanish.
 
 ### Conclusion
+In this tutorial we have looked a simple form that is presented in different languages, English and Spanish.  
+We have seen how to define translation strings for different languages and how to use them in your application.  
 Congratulations, you have built your first Laravel localization application.  
 Practice with more examples are you wait for part two of this tutorial.
