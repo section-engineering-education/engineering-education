@@ -5,7 +5,7 @@ Different tools exist in android app development such as [Android Studio](https:
 ### Introduction
 
 A growing number of mobile applications has made it necessary for organizations to shift focus on acquiring many users in their systems. This growth means that information needs to be stored in databases for easy access and service delivery to organization clients.
-B4A is a tool for developing an android mobile application. PHP is a programming language to develop serverside application and process data. MySQL is a relational database management tool(RDMS).
+B4A is a tool for developing an android mobile application. PHP is a programming language to develop server-side applications and process data. MySQL is a relational database management tool(RDMS).
 
 ### Prerequisites
 
