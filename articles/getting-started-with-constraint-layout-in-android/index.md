@@ -45,7 +45,7 @@ Views and widgets are added inside the layout tag which then becomes the parent 
 
 Views and widgets are those components that the app users see on the screen. We can drag and drop the desired element from the `palette` onto the design preview. Alternatively, we can add the respective element in the XML code.
 
-Each element has four "circular-shaped-dots" on its edges known as `Constraint handles`. They're used to constrain/attach/align a view to a certain position on the screen. Unconstrained views float to the top of the screen hence it is important to give at least three constraints. In the later part of the tutorial, we'll learn about cases when we don't need to constrain a view at all. Meanwhile, a newly added view (in this case a `Button`) looks like this.
+Each element has four "circular-shaped-dots" on its edges known as `Constraint handles`. They're used to constrain/attach/align a view to a certain position on the screen. Unconstrained views float to the top of the screen hence it is important to give at least two constraints, a vertical and a horizontal one. In the later part of the tutorial, we'll learn about cases when we don't need to constrain a view at all. Meanwhile, a newly added view (in this case a `Button`) looks like this.
 
 ![image](/engineering-education/getting-started-with-constraint-layout-in-android/adding-view.png)
 
@@ -340,7 +340,7 @@ The snippet below shows a horizontal chain.
 
 ```
 
-For a chain to exist between two views, there must be a 1:1 alignment ratio between them.
+For a chain to exist between two views, there must be a 1:1 alignment ratio between them. For instance to create a **horizontal chain** between views `A` and `B`, we need to align A's **constraintEnd_toStartOf** B and B's **constraintStart_toEndOf** A. Likewise, **constraintTop** and **constraintBottom** are used to create a **vertical chain**.
 
 preview
 
