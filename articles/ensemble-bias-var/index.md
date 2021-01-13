@@ -20,7 +20,7 @@ Prediction errors are defined as the collection of bias, variance, and irreducib
 
 #### Bias and Variance
 
-**Bias Error**. The bias error of a model is the difference between estimated and actual results. When the bias is high, the model is most likely not learning enough from the training data. The resulting predictions are unreliable, and the generalization is poor. This is what is known as underfitting. To solve this, it is advisable to use a more complex model. However, that is not our focus today. Rather, we shall explore how to deal with bias using boosting.
+**Bias Error**. High bias refres to when a model shows high inclination towards an outcome of a problem it seeks to solve. It is highly biased towards the given problem. This leads to a difference between estimated and actual results. When the bias is high, the model is most likely not learning enough from the training data. It does not learn the key features therefore the resulting predictions are unreliable, and the generalization is poor. This is what is known as underfitting. To solve this, it is advisable to use a more complex model. However, that is not our focus today. Rather, we shall explore how to deal with bias using boosting.
 
 ![bias](/engineering-education/ensemble-bias-var/bias.png)
 
@@ -48,7 +48,7 @@ It is desirable to achieve low bias and variance to ensure accurate predictions.
 
 Let’s interpret the image above.
 The center of the circles represents the actual value. The center of these circles depicts a model with perfect prediction ability. The crosses show the predicted value. The more we move from the center, the more the quality of prediction reduces.
-If predictions are concentrated in one area (which happens not to be the center), underfitting is present. This is because of high bias and low variance. The notable distance from the center of the circles is due to high bias. The crosses being so close to each other shows how variance.
+If predictions are concentrated in one area (which happens not to be the center), underfitting is present. This is because of high bias and low variance. The notable distance from the center of the circles is due to high bias. The crosses being so close to each other shows low variance.
 The scattering of predictions around the outer circles shows that overfitting is present. Low bias ensures the distance from the center of the circles is low. On the other hand, high variance is responsible for the crosses existing at a notable distance from each other.
 
 Increasing bias leads to a decrease in variance. Suppose we reduce bias, variance increases. An ideal model would have low variance and low bias. This is shown in the image below.
@@ -71,13 +71,13 @@ Bagging is meant to reduce the variance without increasing the bias. This techni
 
 Let’s demonstrate how bagging reduces variance with a simple equation:
 
-• Assume we measure a random variable (x), with a normal distribution, which is denoted as N(µ,σ^2). µ is the mean of the distribution. It could also represent its median or mode. The parameter σ is the standard deviation.
+• Assume we measure a random variable $(x)$, with a normal distribution, which is denoted as $N(\mu,\sigma^2)$. $\mu$ is the mean of the distribution. It could also represent its median or mode. The parameter $\sigma$ is the standard deviation.
 
-• Say we carry out only one measurement of the mean and variance of variable x. The mean we expect for variable x1 is µ. On the other hand, the variance of the distribution will be the square of σ.
+• Say we carry out only one measurement of the mean and variance of variable $x$. The mean we expect for variable $x_1$ is $\mu$. On the other hand, the variance of the distribution will be the square of $\sigma$.
 
-• Suppose we measure our random variable (x), P times (x1, x2……, xp). That is, measurement in the form of (x1, x2……, xp)/P. The mean will still be µ. However, as per the equation below, the variance will be smaller.
+• Suppose we measure our random variable $(x)$, $P$ times $(x_1, x_2……, x_p)$. That is, measurement in the form of $(x_1, x_2……, x_p)/P$. The mean will still be $\mu$. However, as per the equation below, the variance will be smaller.
 
-$$ \frac {Var(x_{1})+…..Var(x_{P}}{P^2} = \frac {P * \sigma^2}{P^2} = \frac {\sigma^2}{P} $$
+$$ \frac {Var(x_{1})+…..Var(x_{P})}{P^2} = \frac {P\sigma^2}{P^2} = \frac {\sigma^2}{P} $$
 
 • It is evident that as much as the mean stays the same, the variance is averaged. Hence the variance is reduced.
 
@@ -99,7 +99,7 @@ It is worth noting that boosting can also affect lowering variance but has a foc
 
 ### Wrapping Up
 
-We can simply conclude that ensemble methods reduce the errors of boosting and bagging. We have dissected these two errors. Their relationship with each other is now clear. We have also explored the impact of boosting and bagging on them. Bagging and boosting primarily reduce variance and bias, respectively. Until next time, happy reading!
+We conclude that ensemble methods reduce the errors of boosting and bagging. We have dissected these two errors. Their relationship with each other is now clear. We have also explored the impact of boosting and bagging on them. Bagging and boosting primarily reduce variance and bias, respectively. Until next time, happy reading!
 
 ### References and Further Reading
 
