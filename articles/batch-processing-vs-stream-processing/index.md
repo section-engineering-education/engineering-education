@@ -14,7 +14,7 @@ Basically, in batch processing, data is available for analysis after an hour or 
 
 ### An overview of stream processing
 
-In stream processing, data is processed as soon as it arrives at the storage layer, unlike in batch processing, where you have to wait for data to accumulate. The data generated is processed in sub-second timeframes. For end-users, data processing occurs in real-time. Since this is a stateless operation, data processing only involves a simple calculation or transformation.
+In-stream processing, data is processed as soon as it arrives at the storage layer, unlike in batch processing, where you have to wait for data to accumulate. The data generated is processed in sub-second timeframes. For end-users, data processing occurs in real-time. Since this is a stateless operation, data processing only involves a simple calculation or transformation.
 
 Stream processing queries continuous data stream and detects conditions quickly within a limited time. Stream processing systems are fed on actions that happen in real-time such as web page clicks, sensor readings, e-commerce transactions, social media messages, and more.
 
@@ -73,3 +73,8 @@ Examples of stream processing systems are big data programming platforms like [S
 Both stream and batch processing have benefits and drawbacks, depending on the project at hand. Organizations that want to remain agile tend to use stream processing more, while those defined by legacy systems use batch processing widely.
 
 The most significant factor for data processing teams is flexibility. Different projects have different requirements, and this article has prepared teams to find the best data processing solution for each use case.
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
