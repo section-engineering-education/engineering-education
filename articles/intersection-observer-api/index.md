@@ -61,7 +61,7 @@ let options= {
 This will make the API report only to the change visibility while the target crosses these thresholds.
 
 ### Lazy loading images on a web page using Intersection Observer API
-Images being a common type of content in most websites, lazy-loading loading may increase the response time by deferring the download of the images on the initial rendering. This is the section where we will build a web page that lazy-loads images by applying CSS styles if the image intersects the viewport. I will be fetching images from a third-party API.
+Images being a common type of content in most websites, lazy-loading loading may increase the response time by deferring the download of the images on the initial rendering. This is the section where we will build a web page that lazy-loads images and apply some CSS styles if the image intersects the viewport. 
 
 The project structure is easy. First, open your editor and create a folder named `Gallery-Site`. Inside this folder, create three files namely `index.html` for the markup, `design.css` for our CSS styling, and `app.js` for the JavaScript. 
 For our images, create a folder named images inside the Gallery-Site folder. Check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
