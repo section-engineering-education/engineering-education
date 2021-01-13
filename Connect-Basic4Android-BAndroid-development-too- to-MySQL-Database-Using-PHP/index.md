@@ -1,26 +1,26 @@
 ### Connect Basic4Android(B4A) Android application to MySQL Database Using PHP
 
-Different tools exists in android app development such as [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html)(B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application developement developed by [Anywhere Software](b4x.com).B4A is free and can be downloaded and installed following this [link](https://www.b4x.com/b4a.html)
+Different tools exist in android app development such as [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html)(B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application development developed by [Anywhere Software](b4x.com).B4A is free and can be downloaded and installed following this [link](https://www.b4x.com/b4a.html)
 
 ### Introduction
 
-Growing number of mobile application has made it necessary for many organisation to shift focus on acquiring many users in their systems. This growth means that information need to be stored in databases for easy access and service delivery to organisation clients.
-B4A is a tool for developing mobile application. PHP is a programming language to develop serverside application and process data. MySQL is relational database management tool(RDMS).
+A growing number of mobile applications has made it necessary for organizations to shift focus on acquiring many users in their systems. This growth means that information needs to be stored in databases for easy access and service delivery to organization clients.
+B4A is a tool for developing an android mobile application. PHP is a programming language to develop serverside application and process data. MySQL is a relational database management tool(RDMS).
 
 ### Prerequisites
 
 * Prior programming language.
-* B4A application in windows machine if not installed follow instruction on this [link](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure.
+* B4A application in windows machine if not installed follow the instruction on this [link](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure.
 * Running Apache server to support PHP environment and MySQL server to support MySQL database for this case we will use Xampp.
 
 ### Installing B4A
 
-* Kindly follow on this [Tutorial](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1).
+* Kindly follow this [Tutorial](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1).
 
 ### Installing Xampp
 
 * Download from this [Xampp](https://www.apachefriends.org/index.html) website.
-* Click on downloaded file and continue with installation
+* Click on the downloaded file and continue with the installation
 
 ![initializing-installation-window](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-first-installation.png)
 
@@ -28,7 +28,7 @@ B4A is a tool for developing mobile application. PHP is a programming language t
 
 ![Pick components](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-second-pick-components.png)
 
-* Select folder where xampp is to be installed and click next
+* Select the folder where Xampp is to be installed and click next
 
 ![Installation folder](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-third-folder-selection.png)
 
@@ -42,13 +42,13 @@ B4A is a tool for developing mobile application. PHP is a programming language t
 
 ![Ready to install window](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-sixth-window.png)
 
-* Wait for installation process
+* Wait for the installation process
 
 ![Installation window](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-seventh-installation-process.png)
 
--PHP files are kept in Xampp directory in a folder called `htdocs`. For this application we will create a folder called `B4A-PHP` where we will store our PHP files inside Xampp htdocs folder.
+-PHP files are kept in the Xampp directory in a folder called `htdocs`. For this application, we will create a folder called `B4A-PHP` where we will store our PHP files inside Xampp htdocs folder.
 
--The Xampp folder we have created can be accessed in a network through getting computer IP address and adding the folder name. In this case to get computer IP we will run following command in windows CMD.
+-The Xampp folder we have created can be accessed in a network by getting a computer IP address and adding the folder name. In this case, to get the computer IP we will run the following command in Windows CMD.
 
 ``` bash
 ipconfig
@@ -56,7 +56,7 @@ ipconfig
 
 ![Installation window](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/ipconfig-b4a.png)
 
-`URL : http://192.168.100.118/B4A-PHP/api.php` Change to match yours.
+`URL: http://192.168.100.118/B4A-PHP/api.php` Change to match yours.
 
 -From the IP address a URL can be created which will be used in our B4A Android application provided both the phone and computer are in the same network
 
@@ -66,21 +66,21 @@ ipconfig
 
 From the two stages above we will have Xampp environment which will support PHP and B4A which will support rapid android application development.
 
-From B4A Application click on File -> New -> Default to create new android application.
+From B4A Application click on File -> New -> Default to create a new android application.
 
 ![New B4A application](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/b4a-create-new-default-application.png)
 
-* chose project path and assign project name.
+* chose a project path and assign the project name.
 
 ![Project name](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/project-path.png)
 
 ### B4A Android CRUD Operation
 
-* Add HTTP library to enable connection to host computer. The library is added through a window called Library manager in the right corner of B4A application
+* Add HTTP library to enable connection to host computer. The library is added through a window called Library manager in the right corner of the B4A application
 
 ![Library manager](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/add-http-library.png)
 
-* The application will do CRUD operation. We will create a layout that has a editText and button which we use to create CRUD operations.
+* The application will do a CRUD operation. We will create a layout that has an editText and button which we use to create CRUD operations.
 
 ![Add layout](/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/button-editText-design.png)
 
@@ -88,14 +88,14 @@ From B4A Application click on File -> New -> Default to create new android appli
 
 ### B4A code
 
-* Add button in design view and name it `Save`. Right click on button in design view tto generate Click event. The following code will be generated in the Main class
+* Add button in design view and name it `Save`. Right-click on the button in the design view to generate the Click event. The following code will be generated in the Main class
 
 ``` basic
 Sub Save_Click
 End Sub
 ```
 
-* Declare HTTP , EditText and URL variable in Global function as shown below
+* Declare HTTP, EditText, and URL variable in Global function as shown below
 
 ``` basic
 Sub Globals
@@ -115,9 +115,9 @@ URL="http://192.168.100.118/B4A-PHP/api.php"
 
 ```
 
-`URL is the IP address with PHP file or domain name with php file to be accessed in the server`
+`URL is the IP address with a PHP file or domain name with php file to be accessed in the server`
 
-* Add the following code to initialize and communicate with server or host where the php files are located when the button is clicked.
+* Add the following code to initialize and communicate with the server or host where the PHP files are located when the button is clicked.
 **Note** two variables are posted save to indicate that data is supposed to be saved and editTextData variable that carries the data
 
 ``` basic
@@ -127,7 +127,7 @@ Sub Save_Click
 End Sub
 ```
 
-* Add code to check if connection was successful and capture response from specific request
+* Add code to check if the connection was successful and capture response from the specific request
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -151,10 +151,10 @@ End Sub
 
 ### PHP code
 
-* Start xampp application then click on Apache and MySQL. Once Port number appears it will show the two service are running.
-* Click Admin under MySQL to start phpMyadmin over the browser.
-* By default it will not request for MySQL username and password.
-* Create database in phpMyadmin by Clicking new then put database name then click create.
+* Start Xampp application then click on Apache and MySQL. Once the port numbers appear it will show the two services are running.
+* Click Admin under MySQL to start phpMyAdmin over the browser.
+* By default, it will not request for MySQL username and password.
+* Create a database in phpMyadmin by Clicking new then put database name then click create.
 
 `Our database will be called b4a-php-db`
 
@@ -207,11 +207,11 @@ $conn->close();
 ?>
 ```
 
-* When the button in B4A android application is clicked the data will be inserted to the database
+* When the button in the B4A android application is clicked the data will be inserted to the database
 
 ### Read Data from MySQL to B4A Android application
 
-* This is the fetching of data from MySQL database to B4A android application. In this case we will fetch the fast data in MySQL database table to be added
+* This is the fetching of data from the MySQL database to the B4A android application. In this case, we will fetch the fast data in the MySQL database table to be added
 
 ### PHP code
 
@@ -269,7 +269,7 @@ End Sub
 ```
 
 * Add another button in the designer and name it `Read`
-* Right click on the view and generate click event
+* Right-click on the view and generate a click event
 
 ``` basic
 Private Sub Read_Click
@@ -277,7 +277,7 @@ Private Sub Read_Click
 End Sub
 ```
 
-* Add the following code to initialize and communicate with server or host where the php files are located when the Read button is clicked.
+* Add the following code to initialize and communicate with the server or host where the php files are located when the Read button is clicked.
 **Note** one variable is posted to indicate function read is executed in php
 
 ``` basic
@@ -287,7 +287,7 @@ Private Sub Read_Click
 End Sub
 ```
 
-* Add code to check if connection was successful and capture response from specific request. it has combine with save execution
+* Add code to check if the connection was successful and capture response from the specific request. it has combine with save execution
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -309,7 +309,7 @@ Select job
     'fetch data
         Case readdata
             If job.Success Then
-                ' check if their is data from response
+                ' check if there is data from the response
                 If job.GetString.Length < 1 Then
                     'No data message
                     ToastMessageShow("No Data available",False)
@@ -317,7 +317,7 @@ Select job
                 End If
                 'success message
                 ToastMessageShow("Fetched succesfully ",False)
-                'set editText value to the one fetched from database
+                'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
             Else
 
@@ -346,7 +346,7 @@ End Sub
 ```
 
 * Add another button in the designer and name it `Update`
-* Right click on the view and generate click event
+* Right-click on the view and generate a click event
 
 ``` basic
 Private Sub Update_Click
@@ -354,7 +354,7 @@ Private Sub Update_Click
 End Sub
 ```
 
-* Add a variable called `prevData` to store fetched data in global function
+* Add a variable called `prevData` to store fetched data in the global function
 
 ``` basic
 Sub Globals
@@ -367,7 +367,7 @@ Sub Globals
 End Sub
 ```
 
-* Add the following code to initialize and communicate with server or host where the php files are located when the Read button is clicked.
+* Add the following code to initialize and communicate with the server or host where the php files are located when the Read button is clicked.
 **Note** three variable are posted to indicate function `Update` is to be executed in php ,`editTextData` new data that has been entered in the edittext and finally `prevData` to be replaced in database
 
 ``` basic
@@ -377,7 +377,7 @@ Private Sub Update_Click
 End Sub
 ```
 
-* Add code to check if connection was successful and capture response from specific request. it has combine with save execution
+* Add code to check if the connection was successful and capture response from the specific request. it has combine with save execution
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -399,7 +399,7 @@ Select job
     'fetch data
         Case readdata
             If job.Success Then
-            ' check if their is data from response
+            ' check if there is data from the response
                 If job.GetString.Length < 1 Then
                     'No data message
                     ToastMessageShow("No Data available",False)
@@ -407,7 +407,7 @@ Select job
                 End If
                 'success message
                 ToastMessageShow("Fetched succesfully ",False)
-                'set editText value to the one fetched from database
+                'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
                 prevData= EditText1.Text
             Else
@@ -488,7 +488,7 @@ End Sub
 ```
 
 * Add another button in the designer and name it `Delete`
-* Right click on the view and generate click event
+* Right-click on the view and generate a click event
 
 ``` basic
 Private Sub Delete_Click
@@ -496,7 +496,7 @@ Private Sub Delete_Click
 End Sub
 ```
 
-* Add the following code to initialize and communicate with server or host where the php files are located when the Read button is clicked.
+* Add the following code to initialize and communicate with the server or host where the php files are located when the Read button is clicked.
 **Note** two variables are posted to indicate function `delete` is to be executed in php ,`editTextData` data that has been entered in the edittext to be deleted in database
 
 ``` basic
@@ -506,7 +506,7 @@ Private Sub Delete_Click
 End Sub
 ```
 
-* Add code to check if connection was successful and capture response from specific request.
+* Add code to check if the connection was successful and capture response from the specific request.
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -530,7 +530,7 @@ Select job
             If job.Success Then
 
 
-                ' check if their is data from response
+                ' check if there is data from the response
                 If job.GetString.Length < 1 Then
                     'No data message
                     ToastMessageShow("No Data available",False)
@@ -538,7 +538,7 @@ Select job
                 End If
                 'success message
                 ToastMessageShow("Fetched succesfully ",False)
-                'set editText value to the one fetched from database
+                'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
                 prevData= EditText1.Text
             Else
@@ -615,5 +615,5 @@ You can find the complete source code on [Github](https://github.com/tambastar/B
 
 ### Conclusion
 
-if the php file is kept in Apache server host and B4A Android application connected via the `URL` there would be communication with server. This will then lead to having several actions that can be done via the app depending on what the user wants.
-B4A rapid development has helped in fast application development and this is a good example to achieve faster connection with database and querry without having trouble.
+if the php file is kept in Apache server host and B4A Android application connected via the `URL` there would be communication with the server. This will then lead to having several actions that can be done via the app depending on what the user wants.
+B4A rapid development has helped in fast application development and this is a good example to achieve faster connection with database and query without having trouble.
