@@ -11,7 +11,7 @@ Model, View, and Controller help web developers work with a single part of the w
 To follow along with this tutorial, you need to have the following:
 - A code editor like [Visual Studio Code](https://code.visualstudio.com/download)
 - Knowledge of PHP, HTML, and CSS
-- Apache Web server. Download it [here](https://www.apachefriends.org/download.html). After installation, a folder `/opt/lampp` will be created.
+- Apache Web server. Download it [here](https://www.apachefriends.org/download.html). After installation, a folder `/opt/lampp` will be created but not a folder `/opt/xampp`. This folder is only created in Linux OS like Ubuntu.
 
 ### step 1 -- install Yii 2
 
