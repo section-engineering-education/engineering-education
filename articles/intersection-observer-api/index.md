@@ -14,7 +14,7 @@ First, we need test if the browser supports this API, you can use a condition st
 if ('IntersectionObserver' in window) {
     console.log("Your browser supports IntersectionObserver");
 } else {
-    console.log("Your browser does not support IntersectionObserver")
+    console.log("Your browser does not support IntersectionObserver");
 }
 ```
 The structure of how an `IntersectionObserver` code will look like:
@@ -54,9 +54,9 @@ The `IntersectionObserver` object takes two arguments, a callback function and o
 ```javascript
 let options= {
     root:null, 
-    rootMargin:'0px'
+    rootMargin:'0px',
     threshold:[0, 0.5, 0.75, 1]
-    }
+    };
 ```
 This will make the API report only to the change visibility while the target crosses these thresholds.
 
