@@ -36,7 +36,7 @@ let observer= new IntersectionObserver(callbackFunction,options);
 observer.observe();
 ```
 
-The `IntersectionObserver` object takes two arguments, a callback function and options:
+The `IntersectionObserver` object takes two arguments, a callback function and an optional object:
 - A callback is executed when the target intersects with the viewport.
   
 - The root refers to the element that the target is intersecting against. In the options object, the root property is set to null, which will refer to the viewport. When the root property is not defined, the viewport is the default root.
