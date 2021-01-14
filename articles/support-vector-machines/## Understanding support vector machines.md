@@ -1,15 +1,15 @@
 ## Understanding support vector machines
 
 ### Introduction
-Support vector machines are machine learning methods used mostly to solve classification problems. We can also use them to solve regression and outlier detection problems. Support vector machines perform well even with large datasets with a large number of features. They also don't consume a lot of memory since they only use a subset of the training data in determining the decision function.
+Support vector machines are machine learning methods used mostly to solve classification problems. They can also be used to solve regression and outlier detection problems. Support vector machines perform well even with large datasets and features. They also don't consume a lot of memory since they only use a subset of the training data in determining the decision function.
 
-Support vector machines separate the dataset into classes using the  **maximum margin hyperplane(MMH)**.
+Support vector machines separate the dataset into classes by using the  **maximum margin hyperplane(MMH)**.
 
 ### Prerequisites
-To follow along, you are required to have an understanding of linear algebra, numpy, and scikit-learn.
+To follow along, you are required to have an understanding of linear algebra, numpy and scikit-learn.
  **Definition of terms**
- 1. **Support Vectors**: They are the data points closest to the hyperplane that helps decide the maximum margin. 
- 2. **Hyperplane**: It's defined as the plane that separates the data into different classes.
+ 1. **support vectors**: They are the data points closest to the hyperplane that helps in deciding the maximum margin. 
+ 2. **Hyperplane**: It's defined as the plane  that separates the data into different classes.
  3. **Margin**: This is the path or gap between two lines separating different classes.
  
 
@@ -49,11 +49,11 @@ and hence the equations turn out to be the same,
 
 $$`y_i(w.x + b ) >=1`$$, for +ve samples
 
-`y' <sub>i</sub>`(w.x +b)>=1`, for -ve samples and so we can use one of them can be used as the decision function ie.
+$$`y_i(w.x +b)>=1`$$, for -ve samples and so we can use one of them can be used as the decision function ie.
 
 `y(w.x + b)-1>=0`
 
-Introducing a constraint to the above equation so that whenever we have a sample on the gutter (support vectors), it should then give us 0.
+introducing a constraint to the above equation so that whenever we have a sample on the gutter (support vectors) it should then give us 0.
 
 So we use:
 
@@ -83,7 +83,7 @@ differentiating with respect to `b` we have:
 
 $$`\frac{dl}{db} = - \sum \alpha_i  y_i = 0`$$ so  $$`\sum_{i=1}^{m} \alpha  y _i = 0`$$
 
-plugging back to the equation, we have:
+plugging back to the equation we have:
  
 $$`L = \frac{1}{2} ( \sum \alpha_iy_i x_i) (\sum  \alpha_jy_j x_j) - (\sum  \alpha_iy_i x_i) - (\sum \alpha  y_ ix_i) - \sum  \alpha _i y_i + \sum \alpha`$$
 
@@ -91,23 +91,23 @@ thereby evaluating to:
 
 $$`\sum \alpha -\frac{1}{2}\sum_{j=1}^{m} \sum_{j=1}^{m} \alpha _i\alpha _j y_iy_j x_ix_j`$$ 
 
-This is the **dual optimization** for support vector machines. It depends on the samples' dot product, and so the kernel trick can be applied to improve its performance, especially when the data is not linearly separable.
+This is the **dual optimization** for support vector machines. It depends on the dot product of the samples and so the kernel trick can be applied to improve its performance especially when the data is not linearly separable.
 
 *Our decision rule will now be:*
  
 $$`\alpha y_ix_i.u + b >=0`$$, then  `+ve`
 
-`scikit-learn` implements support vector machines in three different classes, namely **SVC(support vector classification), NuSVC(Nu support vector classification), LinearSVC(Linear support vector classification).**
+`scikit-learn` implements support vector machines in three different classes namely **SVC(support vector classification) , NuSVC(Nu support vector classification) , LinearSVC(Linear support vector classification).**
 
 ### SVC
-Support vector classification takes in a parameter `C` that is used in regularization to avoid overfitting. It uses the `sklearn.svm.SVC` module in its implementation. It can also be used in multiclass classification.
+Support vector classification takes in a parameter `C` that is used in regularization to avoid overfitting. It uses `sklearn.svm.SVC` module in its implementation. It can also be used to classify data with more than two classes ie, multiclass dataset.
 **The following table shows the parameters used by sklearn.svm.SVC class:**
 |  parameter|descriprion  |
 |--|--|
-|  `C`  | Used to specify the regularization term. Its default value is 1. |
-|`kernel` |This parameter specifies the kernel to be used. It can either be "rbf", "poly", "sigmoid", "linear" default is "rbf"
-|`degree` |It is only used only with the "poly" kernel. It represents the degree of the "poly" kernel.
-|`gamma`  |Specifies the kernel coefficient for kernels "rbf", "poly", and "sigmoid". It can either be "scale" or "auto."
+|  `C`  | Used to specify the regulization term.Its default value is 1. |
+|`kernel` |This parameter is used to specify the kernel to be applied for the case when the data is not linearly separable. It can either be '`rbf`', '`poly`', '`sigmoid`', '`linear`' default is '`rbf`'
+|`degree` |It is only used only with `'poly'` kernel,It represents the degree of the `'poly'` kernel.
+|`gamma`  |Specifies the weight gniven to the `'rbf'`, `'poly'`, and `'sigmoid'` kernels. It can either be `'scale'` or `'auto'`.
 |`max_iter` |It specifies the maximum number of iterations for the cost function.
 |`random_state`| Used to generate random numbers for shuffling the data.
 |`fit_intercept` It is used to specify whether to fit a constant in the calculations.
@@ -121,18 +121,18 @@ Support vector classification takes in a parameter `C` that is used in regulariz
 
 4. `dual_coef_`:  It stores the weights of the data point on the margin in the decision function.
 
-5.  `coef_`: This attribute, only available in the linear kernel case, provides the weight assigned to each feature. 
+5.  `coef_`: This attribute, only available in the case of the linear kernel, provides the weight assigned to each feature. 
  
  6. `intercept_`:  It stores the independent/constant term in the calculations. 
  
-7.  `fit_status_`: It returns one if the data is correctly fitted and 0 if incorrectly fitted. 
+7.  `fit_status_`: It returns 1 if the data is correctly fitted and 0 if incorrectly fitted. 
  
 8.  `classes_`: It returns the names of the classes present in the dataset.
 
 **Implementation Example**
 
   *using the iris dataset from sklearn.datasets*
-"`python
+```python
         #import necessary packages
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -147,7 +147,7 @@ iris = load_iris()
 X = iris.data
 y = iris.target
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
 
     
@@ -176,7 +176,7 @@ Confusion matrix :
  [ 0  0 11]]
 ```
 ### NuSVC
-NuSVC is like SVC in that it contains a new parameter `nu` instead of `C,` which controls the number of support data points to be used in the decision function(support vectors) and margin errors. A margin error is a data point in the margin allowed to be on the wrong side by the hyperplane.
+NuSVC is like SVC in that it contains a new parameter `nu` instead of `C` which controls the number of support data points to be used in the decision function(support vectors) and margin errors. A margin error is a data point in the margin that is allowed to be on the wrong side by the hyperplane.
 
 **Implementation Example**
 *using the iris dataset from sklearn.datasets*
@@ -196,7 +196,7 @@ iris = load_iris()
 X = iris.data
 y = iris.target
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
     
     
@@ -224,13 +224,13 @@ Confusion matrix :
 [ 0  0 11]]**
 ``` 
 ### Linear SVC
-Linear SVC is like SVC with `kernel = linear.` But, Linear SVC supports other parameters such as the penalty parameter, which can either be L1 or L2 used for regularization and loss functions such as hinge, squared_hinge. Its optimization function is the hinge loss, which is directly optimized by LinearSVC, and unlike the dual form, this one does not involve inner products between samples and so the kernel trick cannot be applied.
+Linear SVC is like SVC with `kernel = linear`. But, Linear SVC supports other parameters such as the penalty parameter which can either be L1 or L2 used for regularization and loss functions such as hinge, squared_hinge. Its uses the hinge loss as the optimization function which is directly optimized by LinearSVC, The hinge loss does not  involve inner products of samples making it impossible for  the kernel trick to be applied.
 
 
    **Implementation example**
    *using the iris dataset from sklearn.datasets*
-"`python
-#import necessary packages
+```python
+#import packages
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC
@@ -244,7 +244,7 @@ from sklearn import metrics
 X = iris.data
 y = iris.target
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
     
     
@@ -277,8 +277,8 @@ Unlike classification in regression, the support vector machine should predict c
 
 
 **Support vector regression**
-The method of Support Vector machines can also be extended to solve regression problems using Support Vector Regression, which unlike in classification, depends on a subset of the training data because the optimization function ignores samples whose predictions have low variance compared to the actual target values.
-Its implementation is based on libsvm `C` and "epsilon."The epsilon parameter specifies the epsilon-tube whereby samples within are not penalized.
+The method of Support Vector machines can be also be used to solve regression problems using Support Vector Regression that is to predict continuous targets which unlike in classification it tries to narrow the margin as much as possible, its cost function also depends only on the subset of the trainning samples which are far from their targets ignoring the ones with low variance.
+Its implementation is based on libsvm `C` and `‘epsilon’`.The epsilon parameter specifies the epsilon-tube whereby samples within are not penalized.
 
 **Implementation example**
 ```python
@@ -293,7 +293,7 @@ from sklearn import metrics
 X,y = make_regression(n_samples = 200,n_features = 5,noise = 10,random_state = 0)
     
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
     
     
@@ -308,13 +308,13 @@ print("mean absolute error : ",metrics.mean_absolute_error(y_test,y_pred))
 ```
 **Output**
 ```
-mean squared error:  4479.436463820731
-mean absolute error:  57.18029871202693
+mean squared error :  4479.436463820731
+mean absolute error :  57.18029871202693
 ```
 ### Linear SVR
-It is like SVR with parameter `kernel=’linear", which makes it flexible in choosing  penalties and loss functions and scales better to large numbers of samples
+It is like SVR with parameter `kernel=’linear’`, which makes it flexible in choosing  penalties and loss functions and scales better to large numbers of samples
 ## Implementation example
-"`python
+```python
 #import necessary packages
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -326,7 +326,7 @@ from sklearn import metrics
 X,y = make_regression(n_samples = 200,n_features = 5,noise = 10,random_state = 0)
     
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
     
     
@@ -341,8 +341,8 @@ print("mean absolute error : ",metrics.mean_absolute_error(y_test,y_pred))
 ```
 **Output**
 ```
-mean squared error:  138.5487175228963
-mean absolute error:  9.214920086279557
+mean squared error :  138.5487175228963
+mean absolute error :  9.214920086279557
 ```
 **NuSVR**
 It is like NuSVC, for regression, uses a parameter nu to control the number of data points to be used in determining the epsilon tube. It also uses `nu` in place of epsilon of epsilon-SVR. 
@@ -360,7 +360,7 @@ from sklearn import metrics
 X,y = make_regression(n_samples = 200,n_features = 5,noise = 10,random_state = 0)
     
     
-#split the data into training and testing sets
+#split the data into trainning and testing sets
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.3,random_state = 0)
     
     
@@ -374,8 +374,8 @@ print("mean absolute error : ",metrics.mean_absolute_error(y_test,y_pred))
 ```
 **Output:**
 ```
-mean squared error:  21244.45509591478
-mean absolute error:  123.82654607617737**
+mean squared error :  21244.45509591478
+mean absolute error :  123.82654607617737**
 ```
 ### Anomaly detection
 Anomaly detection is an approach used to identify data that is odd and inconsistent from the rest.
@@ -389,18 +389,18 @@ The data used in training contains outliers. Outliers are inconsistent observati
 
 ### Novelty detection
 
-In novelty detection, the training data doesn't have outliers, but we try to detect outliers from incoming data.
+In novelty detection, the training data doesn't have outliers but we try to detect outliers from incoming data.
 
 ### One-class svm
 One-Class SVM was introduced by Schölkopf et al. It is a support vector machine technique used to detect strange occurring events. It works by treating the normal events as one class separating them from the outliers.
  
-`kernel`    Specifies the kernel type to be employed in the algorithm. It takes the following values: "linear', 'poly', 'rbf', 'sigmoid', 'precomputed',' rbf."
+`kernel`    Specifies the kernel type to be employed in the algorithm it takes the following values: `‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’, ’rbf’`.
 
-`degree`  It is only applicable for the case of polynomial kernel function ("poly").
+`degree`  It is only applicable for the case of polynomial kernel function (`‘poly’`).
 
-`gamma` specifies the Kernel coefficient for "rbf," "poly," and "sigmoid." It takes the following values "scale', 'auto' or float,' scale."
+`gamma` Specifies the weights given to the kernels `‘rbf’`, `‘poly’` and `‘sigmoid’` it takes the following values `‘scale’, ‘auto’ or float,’scale’`.
 
-`max_iter`: It is used to limit the number of iterations within the solver or -1 for no limit.
+`max_iter`  It is used to specify the number of iterations for the cost function, or setting it to -1 for limit limitless iterations.
 
 ### Attributes
 
@@ -411,12 +411,12 @@ One-Class SVM was introduced by Schölkopf et al. It is a support vector machine
 `dual_coef_` Coefficients of the support vectors in the decision
 function.
 
-`coef_'It returns the weights assigned to each feature (coefficients in the primal problem): it is only available for the linear kernel.
+`coef_`It returns the weights assigned to each feature (coefficients in the primal problem) it is only available for the linear kernel.
 
 `intercept_` Returns the constant in the decision function.
 
 
-`fit_status_`  It returns 0 if correctly fitted, one otherwise.
+`fit_status_`  I returns 0 if correctly fitted, 1 otherwise.
 
 ###  Implementation example
 ```python
@@ -438,6 +438,4 @@ array([1.70903312, 2.03667   , 2.03667002, 2.05051418, 1.79795364])**
 ​
 
 ### Conclusion
-So far, we've looked at the support vector machines concept from the mathematical perspective. we've also looked at its implementation in scikikit-learn. Support vector machines are very powerful and have a lot more applications, but this should get one started.
----
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+So far we've looked at the support vector machines concept from the mathematical perspective. we've also looked at its implementation in scikikit-learn. Support vector machines are very powerful and have a lot more applications but this should get one started.
