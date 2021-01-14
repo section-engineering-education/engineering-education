@@ -43,7 +43,7 @@ The anchor pseudo-class selectors include:
    }
    ```
 
-- The `: active` pseudo-class matches an element is activated by the user by clicking a link on the web page. An example is like:
+- The `: active` pseudo-class matches an element that is activated by the user by clicking a link on the web page. An example is like:
   ```CSS
    a:active{
      color: green;
