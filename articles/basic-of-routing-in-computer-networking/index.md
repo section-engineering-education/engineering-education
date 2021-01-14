@@ -1,6 +1,6 @@
 ## Basic of Routing in Computer Networking
 
-![](cover.png)
+![router](/engineering-education/new-folder/router.jpg)
 
 Connectivity between networks, both on Local Area Network (LAN) and internet at large, are managed and controlled by the idea of computer networking. Networking is a field in Information Technology (IT) that ensures the interconnectivity between and among networks. It ensures that the broadcasting of packet data (message, data) is an easy and achievable process. The connectivity which ensures movement of data is made possible through the concept of this discourse - “ROUTING”. Routing is the selection of path or route to be followed by a particular data packet (data or message or information) that is being shared over a network.
 
@@ -18,6 +18,7 @@ Connectivity between networks, both on Local Area Network (LAN) and internet at 
 
 Routing heavily relies on the device called router. Router is any device that provides a network to help forward and transfer traffic or help guide a traffic or data packet from the source address to the destination address. It is simply a device that knows and can forward messages or data between two or independent network protocols inasmuch as the protocol are within range and at compatible protocol path. The data obtained from the internet protocol (IP) are used to sort out its own data to execute its own data forwarding.
 The main purpose of routing that cannot be over emphasized is the fact that it enable and ensures data forwarding which is one of the chief aims of computer networking.
+![routing and data transfer](/engineering-education/new-folder-name/Transfer.jpeg)
 
 ### Categories of Routing Network Protocols
 
@@ -29,6 +30,7 @@ Routing is mainly grouped into the following categories
 - Interior Gateway Protocol: This is the protocol of a routing system or routers to forward or share packet data within an (single) autonomous system. The best examples of an IGRP is the Enhanced Interior Gateway Protocol (IGRP), Internal System-to-Internal System.
   The Interior Gateway Protocol (IGRP) also has two main sub-categories of protocols which are “The Link State Protocol and Vector-Distance Protocol”. The link state protocol is an interior routing protocol that determines its route (path) and forward its packet based on the speed at which the packet or message intended location or destination and the vector-distance protocol got its meaning from the general computer science terminology “LIST” which is a vector. The protocols in this category depends solely on the distance of routing path to carry the data to the appropriate destinations. Its distance is calculated through the number of HOPs data required to be followed before getting to the destination.
 - Exterior Gateway Protocol: This is a routing protocol in which the routing system or routers transfer messages among different or groups of an autonomous system. The EGRP examples are Inter Domain Routing (IDRP) and Broadcast Gateway Protocol (BGP).
+![image title](/engineering-education/new-folder-name/image-name.jpg)
 
 ### Stages in computer routing
 
@@ -37,6 +39,7 @@ Routing is mainly grouped into the following categories
 3. The IP destination are been looked-up in this stage
 4. The data packet will be forwarded to the destination IP
    The above are the four stages of a routing system or a router before the completion of a routing process.
+![ip address illustrations](/engineering-education/new-folder/Ip.jpeg)
 
 ### IP ADDRESS IN SIMPLE ENGLISH
 
@@ -45,12 +48,16 @@ The concept of computer is not complete and may sound ambiguous without the basi
 1. Class A which ranges from 0 – 127 and has a format of 0x at its left most.
 2. Class B which ranges from 128 – 191 and has a format of 10x at its left most.
 3. Class C which ranges from 192 – 223 and has a format of 110x at its left most.
+
+
    Every single IP address can be categorized or sectioned into two, namely;
 
 - Network ID
 - Host ID
   In class A for instance, 7.100.200.1 will have its network ID to be 7 and the remaining part of the IP address is referred to as host ID but in Class B for instance, 128.100.121.10 will have its network ID to be 128.100 and the remaining two octet to be the Host ID. In class C as you might have guessed, it has its first three octet to be the network ID and the last one octet to be the host ID.
-  Non-routable Networks or IPs
+  ![ip grouping](/engineering-education/new-folder/Hostidpng)
+  
+###  Non-routable Networks or IPs
   From the above explained IP addresses, there are three main non-routable networks which are;
 - 10.0.0./8
 - 172.16.0.0/12
