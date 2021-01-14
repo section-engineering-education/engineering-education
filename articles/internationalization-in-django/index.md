@@ -135,8 +135,13 @@ Django comes with the `django-admin makemessages` command, which creates and upd
 If you execute `django-admin makemessages --all` and run into CommandError like below, make sure you have gettext binary file installed. `de` and `fr` are the language codes for German and French, respectively.
 
 ```bash
->> django-admin makemessages -l de    
-CommandError: Can't find msguniq. Make sure you have GNU gettext tools 0.15 or newer installed
+>> django-admin makemessages -l de   
+```
+
+Error:
+
+```bash
+CommandError: Cannot find msguniq. Make sure you have GNU gettext tools 0.15 or newer installed
 ```
 
 The command for creating message files is in this format `django-admin makemessages -l <LANGUAGE_CODE>`. If you would like to find out the available language codes in Django, check out [this list](https://github.com/django/django/blob/bebd4cfa8f5e0d2dff2de5e50d86e849a40f4bb2/django/conf/global_settings.py#L51)
