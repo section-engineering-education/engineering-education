@@ -1,4 +1,21 @@
-This tutorial will be an introduction to the Laravel Localization, a feature that ensures that an application is adaptd to different languages depending on the region.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/laravel-language-localisation/index.md
+title: Laravel language localization
+description: This tutorial introduces the basic concepts of localization in Laravel 8.x. This feature ensures that an application adapts to different languages depending on the region.
+author: miller-juma
+date: 2020-12-28T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/laravel-language-localisation/hero.jpg
+    alt: laravel language localisation
+---
+Developers can target users from different regions and cultures using language localization. In Laravel, it is easy to implement language localization due to the well-defined file structure. 
+<!--more-->
+
 ### Introduction
 In software applications, Language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. A perfect example is an online shopping site such as Alibaba. Chinese citizens can access this site in Chinese while those in other regions such as the US can navigate the e-commerce website using English. This is known as internationalization, commonly denoted as (i18n).  
 Therefore, localization simply involves presenting your website in different languages. Developers can thus, use this feature to design applications that fit various cultures and languages through translations.  
@@ -77,9 +94,9 @@ Now that we have our Laravel application up and running, let us have a look at L
 
 
 ### Configuring Locales in action:-
-Our default application language is in English. Remember, our application's configurations are stored in the `app/config` folder.
+Our default application language is English. Remember, our application's configurations are stored in the `app/config` folder.
 
-In this directory, there are several files arranged in alphabetical order. 
+In this directory, there are several files arranged in an alphabetical order. 
 
 The first file is app.php. Open this file in your text editor.  
 
@@ -97,7 +114,7 @@ return [
 
 ```
 We are interested in the above portion. Scroll down within the file to find this section.  
-A closer look at this part, the default `locale`  is set to `en `, English
+A closer look at this part reveals that the default `locale`  is set to `en` (English).
 
 ```
 'locale'=>'en'
@@ -134,15 +151,17 @@ return [
 ];
 
 ```
-Whenever this PHP file is called, it returns an associative array, in case you have no clue what associative arrays are, you can check it in the following link quickly:- 
- [associative arrays](https://www.php.net/manual/en/language.types.array.php)  .
+Whenever this PHP file is called, it returns an associative array, in case you have no clue what associative arrays are, you can check [here](https://www.php.net/manual/en/language.types.array.php)  .
 
  The first element in this array:-
+
  ```
  'failed' => 'These credentials do not match our records.'
  ```
-This line simply states that assign `failed` a string `These credentials do not match our records`. This allows us to call the `failed` variable without necessarily assigning it to a string in our controller.  
-This is an important point which we will need in the future.  
+
+This line simply states that assign `failed` a string `These credentials do not match our records`. 
+
+This allows us to call the `failed` variable without necessarily assigning it to a string in our controller. This is an important point which we will need in the future.  
 
 Now, let us build a simple translation string for English to Spanish.  
 
@@ -159,7 +178,7 @@ Create a new directory names `es` in the `lang` folder to hold our Spanish trans
  ```
  Next, create another `language.php` file to hold English translations. Note that the file names should match.
 
- If you have reached this far, congratulations, that is the first step to create our translation strings.  
+ >If you have reached this far, congratulations, that is the first step to create our translation strings.  
 
  Next step, open the `language.php` file in your text editor for the English translation,`en`` directory and copy and paste the following:-  
 
@@ -240,7 +259,7 @@ By default, Laravel comes with a view `welcome.blade.php`, open this file and ad
 </html>
 
 ```
-### Browse to Home Page
+### Navigate to the Home Page
 Now that we have everything set, visit the link 
 ```
 http://localhost:8000
@@ -254,8 +273,8 @@ This is used to present translation strings. You can also use the @lang directiv
     @lang("filename.shortKey")
 ```
 
-If you open the browser, you will notice that the form is presented in English.  
-To change locale to Spanish, follow these simple steps:-  
+If you open the browser, you will notice that the form is presented in English. To change locale to Spanish, follow these simple steps:-  
+
 * Open ```app.php``` in the ```config``` directory.  
 * Scroll down to line:-
 ```php
@@ -279,7 +298,7 @@ To change locale to Spanish, follow these simple steps:-
 Refresh your browser and you will notice that the form labels are now presented in Spanish.
 
 ### Conclusion
-In this tutorial we have looked a simple form that is presented in different languages, English and Spanish.  
-We have seen how to define translation strings for different languages and how to use them in your application.  
-Congratulations, you have built your first Laravel localization application.  
-Practice with more examples are you wait for part two of this tutorial.
+In this tutorial, we have designed a simple form that can be presented in English or Spanish. We have also learned how to define and use translation strings for different languages. You can now use this knowledge and skills to build more interactive Laravel applications.
+
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
