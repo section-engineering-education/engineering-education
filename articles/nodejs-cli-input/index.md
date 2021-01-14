@@ -52,9 +52,22 @@ For example:
 ```JavaScript
 rl.question("What is your favorite color? ", (input) => {
   console.log(input);
+  rl.close();
 });
 ```
 
 Output:
 
 ![Simple Question Output](question_example.png)
+
+You can set a function that must be executed when the streams are closed using the `rl.on()` method.
+
+```JavaScript
+rl.on('close', () => {
+  console.log('Streams Closed')
+})
+```
+
+Output:
+
+![Close Streams](streams_closed.png)
