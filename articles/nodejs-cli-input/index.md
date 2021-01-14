@@ -86,7 +86,10 @@ rl.question("What is your favorite color? ", (input) => {
 
 Output:
 
-![Simple Question Output](question_example.png)
+```bash
+What is your favorite color? Black
+Black
+```
 
 You can add an event listener for the `close` streams event using the `rl.on()` method.
 
@@ -98,7 +101,11 @@ rl.on('close', () => {
 
 Output:
 
-![Close Streams](streams_closed.png)
+```bash
+What is your favorite color? Black
+Black
+Streams Closed
+```
 
 You can learn more about the `readline` package from it's [documentation](https://nodejs.org/api/readline.html).
 
