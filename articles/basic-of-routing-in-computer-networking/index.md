@@ -1,6 +1,6 @@
 ## Basic of Routing in Computer Networking
 
-![router](/engineering-education/new-folder/router.jpg)
+![router](/engineering-education/articles/basic-of-routing-in-computer-networking/new-folder/router.jpg)
 
 Connectivity between networks, both on Local Area Network (LAN) and internet at large, are managed and controlled by the idea of computer networking. Networking is a field in Information Technology (IT) that ensures the interconnectivity between and among networks. It ensures that the broadcasting of packet data (message, data) is an easy and achievable process. The connectivity which ensures movement of data is made possible through the concept of this discourse - “ROUTING”. Routing is the selection of path or route to be followed by a particular data packet (data or message or information) that is being shared over a network.
 
