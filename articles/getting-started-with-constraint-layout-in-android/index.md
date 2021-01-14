@@ -1,6 +1,21 @@
-### Introduction
-Almost every Android application requires a user interface in which UI elements are held. A `ViewGroup` is a special [view](https://developer.android.com/reference/android/view/View) that holds other views. Sub-classes or children of a `ViewGroup` are called `layouts`. In this tutorial, we'll learn how to design and work with UI elements using `Constraint Layout version 2.0.4`.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-constraint-layout-in-android/
+title: Getting Started With Constraint Layout in Android
+description: This article goes through designing and working with UI elements in Android using Constraint Layout.
+author: eric-gacoki
+date: 2021-01-14T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-constraint-layout-in-android/hero.png
+    alt: Constraint Layout in Android
+---
+Almost every Android application requires a user interface in which UI elements are held. A `ViewGroup` is a special [view](https://developer.android.com/reference/android/view/View) that holds other views. Sub-classes or children of a `ViewGroup` are called `layouts`. In this tutorial, we'll learn how to design and work with UI elements using `Constraint Layout version 2.0.4`.
+<!--more-->
 ### Prerequisites
 This tutorial assumes that you;
 - Have [Android Studio IDE](https://developer.android.com/studio) installed on your machine.
@@ -517,3 +532,6 @@ A flow uses the `FCFS` (first come first served) algorithm where the order of vi
 In this tutorial, we've learned how to design a responsive UI using constraint layout features. There might be new features in the future releases of constraint layout. Check out the [official documentation](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout) to learn more and keep yourself updated.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
