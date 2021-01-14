@@ -4,7 +4,7 @@ In this article, we will discuss how this API is made to detect element visibili
 
 ### Prerequisites
 This article is about a JavaScript browser API and you will need a basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling.
-To build the lazy-loading image web page, you will need a browser and an editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
+To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
 ### How the Intersection Observer works
 To describe how this API works, we will use an example regarding the `IntersectionObserver` object.
