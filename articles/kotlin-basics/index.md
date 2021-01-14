@@ -19,54 +19,58 @@ images:
 Learn Kotlin Programming, its basics, and Fundamentals from scratch. 
 
 #### Prerequisites
-For you to follow along with this tutorial, you need to have:
-- Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine.
+For you to follow along with this tutorial:
+
+- You need to have Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine
+- Or refer to **repl.it** [here]().
+
+<!-- add relevant link and delete this comment -->
 
 ### Topics to be covered
+
 1. Data Types and Variables 
     - Data Types and Variables
-    - String, Literals, and String Interpolation
-    - Comments 
+    - Strings, Literals, and String Interpolation
 
 2. Constants, Variables, and Data Types
 
 3. Control Flow Statements 
-    - IF ELSE 
-    - IF Expressions
-    - WHEN Expressions
+    - `IF ELSE`
+    - `IF` Expressions
+    - `WHEN` Expressions
 
 4. Loop Control Statements 
     - What are Iterators?
-    - FOR Loop and how it works
-    - WHILE Loop
-    - DO WHILE Loop 
-    - BREAK statements 
-    - CONTINUE keyword 
-    - Labelled FOR Loop 
+    - `FOR` Loop and how it works
+    - `WHILE` Loop
+    - `DO WHILE` Loop 
+    - `BREAK` statements 
+    - `CONTINUE` keyword 
+    - Labelled `FOR` Loop 
 
 5. Functions and Interoperability 
     - Declaring functions 
     - Interoperability with Java code 
     - Function as Expressions 
     - Extension Functions
-    - Infix Functions
+    - `Infix` Functions
     - Default Parameters
     - Named Parameters
     - Tailrec Functions 
 
 6. Object Oriented Programming in Kotlin 
-    - Defining Class and creating Objects
-    - INIT block
+    - Defining `Class` and creating `Objects`
+    - `INIT` block
     - Primary and Secondary Constructors 
     - Properties ( Field variables )
     - Inheritance
     - Method and Property Overriding 
     - Polymorphism 
-    - Abstract Class, Property and Method
-    - Interface 
-    - Data Class
-    - Object Declaration
-    - Companion Object
+    - Abstract `Class`, Property and Method
+    - `Interfac`
+    - Data `Class`
+    - `Object` Declaration
+    - `Companion Object`
 
 7. Functional Programming in Koltin
     - Lambdas
@@ -75,28 +79,15 @@ For you to follow along with this tutorial, you need to have:
     - 'it' keyword
     - 'with' function
     - 'apply' function
-
-8. Collections in Kotlin
-    - Arrays
-    - List
-    - Map and HashMap
-    - Set and HashSet  
-
-9. Sorting and Filtering
-    - "filter" function
-    - "map" function
-    - Predicates: all, any, find, count. 
-
-10. Kotlin NULL Safety
+    
+8. Kotlin NULL Safety
     - Safe call
-    - with Let
+    - `with`, `Let`
     - Elvis
     - Lateinit keyword
     - Lazy delegation and 'lateinit' vs. 'lazy'
-
-
+    
 ```kotlin
-// Hello World 
 fun main(args: Array<String>) {
     print("Hello World")
 }
@@ -109,10 +100,12 @@ fun main(args: Array<String>) {
 #### `val`
 It can be assigned a value only once 
 They are immutable string
+
 ``` kotlin
+
 fun main(args: Array<String>) {
-    val x=2
-    println( value x is : $x)
+    val x = 2
+    println("value x is : $x")
 }
 
 // Output: 2
@@ -130,11 +123,8 @@ fun main() {
 
     println(y)
 }
-```
 
-```
-Output
-12
+// Output: 12
 ```
 
 #### Comments
@@ -155,17 +145,16 @@ Comments are written in two version
 ```
 
 ``` kotlin
-fun main(args: Array<String>) {    
+fun main() {    
 
-     // This is an inline comment ...
-    print("Hello World")
+     // This is an inline comment
 }
-
 ```
 
 By use of double slashes `//`
 
 ```kotlin
+
 fun main (){
 
     // This is a comment
@@ -220,7 +209,6 @@ fun main() {
     // 10
     println(marks)
     // 287.4
-
 }
 
 ```
@@ -234,13 +222,12 @@ Characters are represented by the use of the keyword ``Char```. They can not be 
 fun main() {
 
     var gender: Char = 'M'
-
 }
 
 ```
 
 #### Boolean
-Kotlin also contains Boolean types. It has two values of ``false`` and ``true``
+Kotlin also contains Boolean types. It has two values of ``false`` or ``true``
 
 ```kotlin
 
@@ -261,11 +248,7 @@ fun main(args: Array<String>) {
     printlin(name)
 }
 
-```
-
-```
-Output 
-Steve
+// Output: Steve
 ```
 
 #### Arrays
@@ -309,12 +292,8 @@ fun main() {
     print("The length of the rectangle is ${rect.length} and breadth is 5. The area is ${rect.length * rect.breadth}")
 
 }
-```
 
-```
-Output
- The length of the rectangle is 8 and the breadth is 5. The area is 40
-
+// Output: The length of the rectangle is 8 and the breadth is 5. The area is 40
 ```
 
  ### Ranges
@@ -374,14 +353,7 @@ fun main()
     println(maxValue)
 }
 
-```
-
-```kotlin
-
-Output 
-
-b is greater than 6
-
+// Output: b is greater than 6
 ```
 
 #### B). When Expression 
@@ -403,14 +375,8 @@ fun main() {
             "x is an alien"
         }
     }
-
-```
-
-```kotlin
-
-    output 
-    x is an alien 
-
+    
+// Output: x is an alien 
 ```
 
 #### Iterators[LOOPS]
@@ -533,8 +499,10 @@ fun main() {
 ```
 
  #### Break and Continue in loops
+ 
   #### Break
- Break-terminates the nearest enclosing loop
+  
+ Break terminates the nearest enclosing loop
 
  ``BREAK ``Keyword and Labelled ``FOR ``Loop
 
@@ -550,7 +518,6 @@ fun main(args: Array<String>) {
     }
 
     println(i) 
-    //
 
     Loop@ for (i in 1..3) {
         for (j in 1..3) {
@@ -561,14 +528,14 @@ fun main(args: Array<String>) {
     }
 }
 
-output
-1  1
-1  2
-1  3
-2  1
-2  2
-
-
+/**
+* Output
+* 1  1
+* 1  2
+* 1  3
+* 2  1
+* 2  2
+*/
 ````
   #### Continue
 It proceeds to the next step of the nearest enclosing loop
@@ -586,9 +553,9 @@ fun main(args: Array<String>) {
   
     }
 
-    output
-    // 1,2,4,5,6,7,8,9
+Output: 1,2,4,5,6,7,8,9
 ```
+
 ```kotlin
 // CONTINUE Statement
 fun main(args: Array<String>) {
@@ -602,14 +569,16 @@ fun main(args: Array<String>) {
     }
 }
 // We skipped 2 2
-Output
-1  1
-1  2
-1  3
-2  1
-2  3
-3  1
-3  2
+/**
+* Output
+* 1  1
+* 1  2
+* 1  3
+* 2  1
+* 2  3
+* 3  1
+* 3  2
+*/
 
 ```
  #### FUNCTIONS 
@@ -631,8 +600,7 @@ fun add(a: Int, b: Int): Int {
     return a + b
 }
 
-Output
-sum is 6
+// Output: sum is 6
 ```
 
  ####  Default Functions
@@ -652,14 +620,9 @@ fun findVolume(length: Int, breadth: Int, height: Int = 12): Int {
     return length * breadth * height
 }
 
-Output 
-
-360
-
+// Output: 360
 ```
 ####  FUNCTIONS as Expressions
-
-
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -685,7 +648,7 @@ fun max(a: Int, b: Int): Int
    It is a pure kotlin feature since it's not available in java
 
 ```kotlin
-fun main(args: Array<String>) {
+fun main() {
 
     var result = findTheVolume(breadth = 6, length = 5)
     print(result)
@@ -696,10 +659,9 @@ fun findTheVolume(length: Int, breadth: Int, height: Int = 10): Int {
     return length * breadth * height
 }
 
-output
-360
-
+// Output: 360
 ```
+
   #### Extension Functions: EXAMPLE ONE
   The purpose of the extension function in kotlin is to add a new function to the pre-defined classes
   The new functions added behaves like ``static``
@@ -707,7 +669,7 @@ output
 
 
 ```kotlin
-fun main(args: Array<String>) {
+fun main() {
 
     var student = Student()
     println("Pass status: " + student.hasPassed(57))
@@ -727,7 +689,9 @@ class Student {         // OUR OWN CLASS
 }
 
 ```
-   #### Extension Functions: EXAMPLE TWO
+
+#### Extension Functions: EXAMPLE TWO
+   
 ```kotlin
 fun main(args: Array<String>) {
 
@@ -760,21 +724,19 @@ fun Int.greaterValue(other: Int): Int {
         return other
 }
 
-output 
-10
+// Output: 10
 ```
+
    #### INFIX FUNCTIONS
-  Infix`functions must satisfy the following requirements:
+   
+  Infix functions must satisfy the following requirements:
 
    They are member functions or extension functions;
 
    They  have a single parameter
-   They have a prefix of ``infix``
+   They have a prefix of `infix`
 
    The parameter must not accept a variable number of arguments and must have no default value.
-
-  
-
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -801,6 +763,7 @@ infix fun Int.findGreaterValue(other: Int): Int {       // INFIX and Extension F
 ```
 
 ```kotlin
+
 import java.math.BigInteger
 
 /*
@@ -808,9 +771,9 @@ import java.math.BigInteger
 *       -> Prevents Stackoverflow Exception
 *
 *   Fibonacci Series
-*       0  1  1  2  3  5  8  13  21 ......
+*       0  1  1  2  3  5  8  13  21 ...
 * */
-fun main(args: Array<String>) {
+fun main() {
 
     println(getFibonacciNumber(10000, BigInteger("1"), BigInteger("0")))
 }
@@ -823,19 +786,21 @@ tailrec fun getFibonacciNumber(n: Int, a: BigInteger, b: BigInteger): BigInteger
         return getFibonacciNumber(n - 1, a + b, a)
 }
 
-````
+```
 
 #### Class, Primary Constructor, Secondary Constructor, and Init Block
 
 
-#### class in kotlin are declared using a keyword ``class``
+#### class in kotlin are declared using a keyword `class`
 
-class declaration consists of ``class name``, ``class header ``and ``class body``. 
+class declaration consists of `class name`, `class header`, `and `class body`. 
 
 ```kotlin
-class Model {  .....}
+
+class Model { }
 ```
 ### Constructors 
+
 We have a primary constructor and one or more secondary constructors
 
 A class in Kotlin can have a primary constructor and one or more secondary constructors. The primary constructor is part of the class header: it goes after the class name (and optional type parameters).
@@ -845,7 +810,6 @@ A class in Kotlin can have a primary constructor and one or more secondary const
  class Person constructor(firstName: String) {
      /*...*/ }
      
-
 ```
 ### Secondary constructors
 The class can also declare secondary constructors, which are prefixed with ```constructor```:
@@ -858,8 +822,9 @@ parent.children.add(this)
 }
 }
 ```
-Class members
-Classes can contain:
+
+### Class members
+**Classes can contain:**
 
 — Constructors and initializer blocks
 
@@ -872,7 +837,8 @@ Classes can contain:
 — Object Declarations
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     var student = Student("Steve", 10)
 
@@ -893,10 +859,12 @@ class Student(var name: String) {
         this.id = id
     }
 }
+
 ```
-  ####  Inheritance
+  ###  Inheritance
 
 ```kotlin 
+
 fun main(args: Array<String>) {
 
     var dog = Dog()
@@ -946,9 +914,11 @@ class Cat : Animal() {      // Sub class / Child class / Derived class
 }
 ````
 
-   1. Method Overriding
-   As we mentioned before, we stick to making things explicit in Kotlin. So, Kotlin requires explicit modi ers for
+   **1. Method Overriding**
+   
+   As we mentioned before, we stick to making things explicit in Kotlin. So, Kotlin requires explicit modifiers for
 overridable members (we call them open) and for overrides:
+
 ```kotlin
 open class Shape {
 open fun draw() { /*...*/ }
@@ -959,13 +929,15 @@ override fun draw() { /*...*/ }
 }
 ```
 
-   2. Property Overriding
+   **2. Property Overriding**
 
    Overriding properties works in a similar way to overriding methods; properties declared on a superclass
 that is then redeclared on a derived class must be prefaced with ``override``, and they must have a
 compatible type. Each declared property can be overridden by a property with an initializer or by a property
 with a get method.
+
 ```kotlin
+
 open class Shape {
 open val vertexCount: Int = 0
 }
@@ -973,8 +945,10 @@ class Rectangle : Shape() {
 override val vertexCount = 4
 }
 ```
+
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     var dog = MyDog()
 
@@ -1007,12 +981,13 @@ class MyDog : MyAnimal() {
         println("Dog is eating")
     }
 }
+```
 
-````
  ####  Inheritance with Primary and Secondary Constructors
 
 ```kotlin 
-fun main(args: Array<String>) {
+
+fun main() {
 
     var dog = TheDog("Black", "Pug")
 }
@@ -1039,15 +1014,17 @@ class TheDog : TheAnimal {
         println("From Dog: $color and $breed")
     }
 }
-
 ```
+
  ####  Abstract Class
 
  A class and some of its members may be declared abstract. An abstract member does not have an
 implementation in its class. Note that we do not need to annotate an abstract class or function with open – it
 goes without saying.
 We can override a non-abstract open member with an abstract one
+
 ```kotlin
+
 open class Polygon {
 open fun draw() {}
 }
@@ -1055,8 +1032,9 @@ abstract class Rectangle : Polygon() {
 abstract override fun draw()
 }
 ```
+
 ```kotlin
-fun main(args: Array<String>) {
+fun main() {
 
 //    var person = MyPerson()   // Not allowed. You cannot create instance of abstract class
 
@@ -1089,11 +1067,14 @@ class Indian: MyPerson() {
 ```
 
  ####  INTERFACE
+ 
  Interfaces in Kotlin can contain declarations of abstract methods, as well as method implementations. What
 makes them different from abstract classes is that interfaces cannot store state.  They can have properties
 but these need to be abstract or to provide accessor implementations.
 An interface is de ned using the keyword interface
+
 ```kotlin
+
 interface MyInterface {
 fun bar()
 fun foo() {
@@ -1155,14 +1136,16 @@ class MyButton: MyInterfaceListener, MySecondInterface {
  #### Data Class
 
  We frequently create classes whose main purpose is to hold data. In such a class some standard
-functionality and utility functions are often mechanically derivable from the ``data ``. In Kotlin, this is called a
-data class and is marked as ``data`` :
+functionality and utility functions are often mechanically derivable from the `data`. In Kotlin, this is called a
+data class and is marked as `data` :
 
 ```kotlin
+
 data class User(val name: String, val age: Int)
 ```
+
 ```kotlin
-fun main(args: Array<String>) {
+fun main() {
 
     var user1 = User("Sam", 10)
 
@@ -1184,8 +1167,10 @@ data class User(var name: String, var id: Int)
 ```
 
  ####  1. Object Declaration
+ 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     CustomersData.count = 98
     CustomersData.typeOfCustomers()
@@ -1223,9 +1208,11 @@ object CustomersData: MySuperClass() {
     }
 }
 ```
+
  ####  1. Companion Object
 
- An object declaration inside a class can be marked with the ``companion ``keyword:
+ An object declaration inside a class can be marked with the `companion` keyword:
+ 
  ```kotlin
 class MyClass {
 companion object Factory {
@@ -1233,8 +1220,10 @@ fun create(): MyClass = MyClass()
 }
 }
 ```
+
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     MyClass.count      // You can print it and check the result
 
@@ -1253,14 +1242,13 @@ class MyClass {
         }
     }
 }
-
-   ```
+```
    
-   
- EXAMPLE ONE
+ **EXAMPLE ONE**
 
   1. Lambda Expression
   2. Higher-Order Function
+  
 ```kotlin
 fun main(args: Array<String>) {
 
@@ -1316,7 +1304,8 @@ interface MyInterface {
   A higher-order function is a function that takes functions as parameters, or returns a function.
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     val program = MyProgram()
 
@@ -1336,11 +1325,15 @@ class MyProgram {
     }
 }
 ```
+
   #### 1. Closures
+  
   A lambda expression or anonymous function (as well as a local function and an object expression) can
 access its closure, i.e. the variables declared in the outer scope. The variables captured in the closure can be
-modified in the ``lambda ``:
+modified in the `lambda`:
+
 ```kotlin
+
 fun main(args: Array<String>) {
 
     val program = TheProgram()
@@ -1363,8 +1356,10 @@ class TheProgram {
 ```
 
   #### 1. 'it' keyword
+  
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     val program = Programs()
     program.reverseAndDisplay("hello", { it.reversed() })
@@ -1385,7 +1380,8 @@ class Programs {
   ###  2. 'apply' function
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     var person = Perrson()
 
@@ -1413,9 +1409,12 @@ class Person {
     }
 }
 ```
+
   ### 1. Arrays
+  
   ```kotlin
-fun main(args: Array<String>) {
+  
+fun main() {
 
     // Elements :   32  0   0   54  0
     // Index    :   0   1   2   3   4
@@ -1438,8 +1437,10 @@ fun main(args: Array<String>) {
 
 ```
  ### 1. List and ArrayList 
+ 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     // Elements :
     // Index    :   0   1   2   3   4
@@ -1462,10 +1463,12 @@ fun main(args: Array<String>) {
 }
 
 ```
+
  ###  1. Map and HashMap
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     // Map Tutorial: Key-Value pair
 //    var Map = HashMap<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
@@ -1485,12 +1488,14 @@ fun main(args: Array<String>) {
 
 ```
  ###  1. Set and HashSet
-   ``Set `` contains unique elements
-   ``HashSet`` also contains unique elements but sequence is not guaranteed in output
+ 
+   `Set` contains unique elements
+   `HashSet` also contains unique elements but sequence is not guaranteed in output
+   
 ```kotlin
+
  fun main(args: Array<String>) {
-
-
+ 
     var Set = mutableSetOf<Int>( 2, 50, 3, 1, 0, 9, 9, 9, 8)   // Mutable Set, READ and WRITE both
     var Set2 = hashSetOf<Int>( 2, 54, 3, 1, 0, 9, 9, 9, 8)     // Mutable Set, READ and WRITE both
 
@@ -1509,20 +1514,26 @@ fun main(args: Array<String>) {
     }
 }
 ```
+
   ### FILTER
-  Returns a list containing only elements matching the given ``predicate``
+  
+  Returns a list containing only elements matching the given `predicate`
 
   You can lter maps with the filter() function as well as other collections. When calling filter() on a
 map, pass to it a predicate with a Pair as an argument. This enables you to use both the key and the value
 in the ltering predicate.
+
 ```kotlin
+
 val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key11" to 11)
 val filteredMap = numbersMap.filter { (key, value) -> key.endsWith("1") && value > 10}
 println(filteredMap)
 ```
 
 ### PREDICATES
+
  ```kotlin
+ 
 fun main(args: Array<String>) {
 
     val Numbers = listOf(2, 3, 4, 6, 23, 90)
@@ -1550,7 +1561,8 @@ fun main(args: Array<String>) {
 map-specific processing capabilities from getting a value by key to separate filtering of keys and values.
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     val Numbers: List<Int> = listOf(2, 3, 4, 6, 23, 90)
 
@@ -1580,25 +1592,27 @@ class Pperson(var age: Int, var name: String) {
  
 ###  Null safety
 
-A reference must be explicitly marked as ``nullable`` when ``null`` value is possible.
+A reference must be explicitly marked as `nullable` when `null` value is possible.
 Return null if str does not hold an integer:
 
 1. Safe Call ( ?. )
     Returns the length if 'name' is not null else returns NULL
     Use it if you don't mind getting NULL value
+    
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
    // WAP to find out the length of the name
 
     val name: String? = "Steve"
     println("The length of name is ${name?.length}")
+    
+```
 
-
-   ```
-
- 2. Safe Call with let ( ?.let )
+ 2. Safe Call with let ( `?.let` )
     It executes the block ONLY IF name is NOT NULL
+    
 ```kotlin
   fun main(args: Array<String>) {
 
@@ -1609,9 +1623,10 @@ fun main(args: Array<String>) {
  }
 ```
 
- 3. Elvis-operator ( ?: )
+ 3. Elvis-operator ( `?:` )
  When we have nullable reference 'name', we can say "is name is not null", use it,
  otherwise use some non-null value"
+ 
 ```kotlin
     fun main(args: Array<String>) {
     val len = if (name != null)
@@ -1624,9 +1639,11 @@ fun main(args: Array<String>) {
 
     }
 ```
- 4. Non-null assertion operator ( !! )
+
+ 4. Non-null assertion operator ( `!!` )
   Use it when you are sure the value is NOT NULL
 Throws NullPointerException if the value is found to be NULL
+
 ```kotlin
     fun main(args: Array<String>) {
 
@@ -1634,17 +1651,18 @@ Throws NullPointerException if the value is found to be NULL
     println("The length of name is ${name!!.length}")
 }
 ```
- ### Lazy delegation and `` lateinit `` vs. ``lazy``
+ ### Lazy delegation and `lateinit` vs `lazy`
 
- ### `` Lateinit`` keyword
+ ### `Lateinit` keyword
 
- lateinit used only with mutable data type [ var ]
+ lateinit used only with mutable data type `var`
  lateinit used only with non-nullable data type
  lateinit values must be initialized before you use it
  If you try to access lateinit variable without initializing it then it throws Uninitialized Property Access Exception
 
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     val country = Country()
 
@@ -1665,7 +1683,8 @@ class Country {
 }
 
 ```
-### ``Lazy`` delegation 
+
+### `Lazy` delegation 
 
  Lazy initialization’ was designed to prevent unnecessary initialization of objects.
  Your variables will not be initialized unless you use them in your code
@@ -1680,12 +1699,15 @@ class Country {
 
 
 ```kotlin
+
 val pi: Float by lazy {
     3.14f
 }
 ```
+
 ```kotlin
-fun main(args: Array<String>) {
+
+fun main() {
 
     println("Some initial code.....")
 
@@ -1699,3 +1721,8 @@ fun main(args: Array<String>) {
 }
 
 ```
+
+### Conclusion
+
+In this tutorial we have learned the basics of Kotlin programming language. Kotlin skills can be applied in a bunch of fields not limted to Android development and backend programming. 
+
