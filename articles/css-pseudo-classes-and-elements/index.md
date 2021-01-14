@@ -20,7 +20,7 @@ Pseudo-classes are preceded by a colon (:) placed just after a CSS selector and 
 ### Types of CSS Pseudo Classes
 Having understood what a pseudo-class is and its structure, I will introduce you to the common types of CSS pseudo-classes.
 First, we will go through the pseudo-classes for the anchor or the `<a>` tags. These pseudo-classes only apply to elements containing the `<a>` tag and the `href=" "` attribute. 
-They anchor pseudo-class selectors include:
+The anchor pseudo-class selectors include:
 
 - The `: link` pseudo-class will match and select all unvisited. An example to make all unvisited links on a web page grey is like:
   ```CSS
@@ -177,4 +177,4 @@ Using the `::first-line` pseudo-element in the CSS will make this `<p>` tag firs
 Check out all the Pseudo-elements available and the browser compatibility in the [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements) documentation.
 
 ### Conclusion
-CSS plays a crucial part in frontend web development. With concepts such as pseudo-elements and pseudo-classes, web developers now have more exciting options for styling web pages. The question of which pseudo-class or element to use depends on what you want to achieve. If used wisely, these concepts will bring a cleaner semantic style. I appreciate your time to read this article.
+CSS plays a crucial part in frontend web development. With concepts such as pseudo-elements and pseudo-classes, web developers now have more exciting options for styling web pages. The question of which pseudo-class or element to use depends on what you want to achieve. If used wisely, these concepts will bring a cleaner semantic style.
