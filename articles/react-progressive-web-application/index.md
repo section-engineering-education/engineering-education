@@ -6,19 +6,18 @@ url: /engineering-education/react-progressive-web-application/
 title: React Progressive Web Application
 description: In this tutorial, we will create a Todo application using React and convert it into a Progressive Web Application using service workers.
 author: wilson-gichuhi
-date: 2021-01-11T00:00:00-11:00
+date: 2021-01-14T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/react-progressive-web-application/hero.jpg
-    alt: IReact Progressive Web Application Hero Image
+    alt: React Progressive Web Application example Image
 ---
 In this tutorial, we will create a React Todo Progressive Web App. A progressive web app refers to an enhanced web application having the same capabilities as a native platform-specific application by utilizing the emerging browser APIs. The Progressive Web Apps are intended to be fast, reliable, and engaging.
 <!--more-->
 
 ### Prerequisites
-
 1. Knowledge of the [JavaScript programming language](https://www.w3schools.com/js/DEFAULT.asp).
 
 2. Basics of React library. Check documentation [here](https://www.reactjs.org).
@@ -28,7 +27,6 @@ In this tutorial, we will create a React Todo Progressive Web App. A progressive
 4. Node.js installed on your computer. You can download the latest version [here](https://www.nodejs.org).
 
 ### Getting started
-
 Let's start with creating a new React application using `create-react-app` command-line utility. On your terminal, execute the following command:
 
 ```bash
