@@ -71,3 +71,30 @@ rl.on('close', () => {
 Output:
 
 ![Close Streams](streams_closed.png)
+
+### Callback Hell
+
+The problem with the `rl.question()` method is, it doesn't return a `Promise`. Thus, we can't use `async/await` to pause the flow of the program until the user provides the input.
+
+If you want to get multiple user inputs in sequence, you have to do it withing a callback function, like this:
+
+```JavaScript
+rl.question("Question 1? ", (answer1) => {
+  // do stuff
+
+  rl.question("Question 2? ", (answer2) => {
+    // do stuff
+
+    rl.question("Question 3? ", (answer3) => {
+      // do stuff
+
+      rl.question("Question 4? ", (answer4) => {
+        console.log(answer1, answer2, answer3, answer4);
+        rl.close();
+      });
+    });
+  });
+});
+```
+
+As you can see, this can quickly get out of control and the code will get hard to manage.
