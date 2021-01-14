@@ -39,7 +39,7 @@ observer.observe();
 The `IntersectionObserver` object takes two arguments, a callback function and an optional object:
 - A callback is executed when the target intersects with the viewport.
   
-- In our options object,the root refers to the element that the target is intersecting against. The root property is set to null, which will refer to the viewport which is also the default value when it's not defined.
+- In our options object,the root refers to the element that the target is intersecting against. The root property is set to null, which will refer to the viewport and is also the default reference when it's not defined.
   
 - The `rootMargin` will define the margin around the root element to extend or shrink the capturing frame when the dimensions of the root do not provide enough flexibility.
 
