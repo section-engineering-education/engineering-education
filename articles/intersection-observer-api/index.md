@@ -1,10 +1,10 @@
 
-The Intersection Observer is a browser API that provides a way to observe the visibility and position of the DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling and animations.
+The Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling and animations.
 In this article, we will discuss how this API is made to detect element visibility by building a simple web page that implements image lazy-loading features.
 
 ### Prerequisites
 This article is about a JavaScript browser API and you will need a basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling.
-To build the lazy-loading image web page, you will need a browser and an editor.I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
+To build the lazy-loading image web page, you will need a browser and an editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
 ### How the Intersection Observer works
 To describe how this API works, we will use an example regarding the `IntersectionObserver` object.
@@ -14,7 +14,7 @@ First, we need test if the browser supports this API, you can use a condition st
 if ('IntersectionObserver' in window) {
     console.log("Your browser supports IntersectionObserver");
 } else {
-    console.log("Your browser does not support IntersectionObserver")
+    console.log("Your browser does not support IntersectionObserver");
 }
 ```
 The structure of how an `IntersectionObserver` code will look like:
@@ -36,7 +36,7 @@ let observer= new IntersectionObserver(callbackFunction,options);
 observer.observe();
 ```
 
-The `IntersectionObserver` object takes two arguments, a callback function and options:
+The `IntersectionObserver` object takes two arguments, a callback function and an optional object:
 - A callback is executed when the target intersects with the viewport.
   
 - The root refers to the element that the target is intersecting against. In the options object, the root property is set to null, which will refer to the viewport. When the root property is not defined, the viewport is the default root.
@@ -54,14 +54,14 @@ The `IntersectionObserver` object takes two arguments, a callback function and o
 ```javascript
 let options= {
     root:null, 
-    rootMargin:'0px'
+    rootMargin:'0px',
     threshold:[0, 0.5, 0.75, 1]
-    }
+    };
 ```
 This will make the API report only to the change visibility while the target crosses these thresholds.
 
 ### Lazy loading images on a web page using Intersection Observer API
-Images being a common type of content in most websites, lazy-loading loading may increase the response time by deferring the download of the images on the initial rendering. This is the section where we will build a web page that lazy-loads images by applying CSS styles if the image intersects the viewport. I will be fetching images from a third-party API.
+Images being a common type of content in most websites, lazy-loading loading may increase the response time by deferring the download of the images on the initial rendering. This is the section where we will build a web page that lazy-loads images and apply some CSS styles if the image intersects the viewport. 
 
 The project structure is easy. First, open your editor and create a folder named `Gallery-Site`. Inside this folder, create three files namely `index.html` for the markup, `design.css` for our CSS styling, and `app.js` for the JavaScript. 
 For our images, create a folder named images inside the Gallery-Site folder. Check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
@@ -210,8 +210,8 @@ The code walkthrough:
 - `const targets=document.querySelectorAll("img")` will get all our images in the DOM.
 - the `lazyLoad` function takes a DOM element as its argument. Inside this function, we create our observer object named `io` that takes a callback with two parameters.
 - The first parameter `entries` is the actual observations on the element and the `observer` parameter is the interface used to manage the instance of this observer.
-- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry,isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the src attribute from its `data-src` attribute 
-  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer that we can call the method `observer.disconnect()` to dispose of the observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image.
+- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry.isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the src attribute from its `data-src` attribute 
+  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer that we can call with the method `observer.disconnect()` to dispose of the observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image visibility.
 - We now need to loop over our targets containing our images and pass the `lazyLoad` callback function to be observed by the `IntersectionObserver`.
 
 Check my deployed version on netlify [here](https://galleryio.netlify.app/).
