@@ -36,7 +36,7 @@ The anchor pseudo-class selectors include:
      }
 ```
 
-- The `: hover` pseudo-class will apply when the mouse cursor is over a certain link. This link is said to be in its hover state and will be selected. For example, to change a color of a hovered link, the CSS code can be:
+- The `: hover` pseudo-class will apply when the mouse cursor is over a certain link. This link is said to be in its hover state and will be selected. For example, to change a color of a hovered link to cyan, the CSS code can be:
   ```CSS
    a:hover{
      color: cyan;
