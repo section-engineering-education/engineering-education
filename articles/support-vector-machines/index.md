@@ -1,7 +1,7 @@
 ## Understanding support vector machines
 
 ### Introduction
-Support vector machines are machine learning methods used mostly to solve classification problems. They can also be used to solve regression and outlier detection problems. Support vector machines perform well even with a large datasets with large number of features. They also don't consume a lot of memory since they only use a subset of the training data in determining the decision function.
+Support vector machines are machine learning methods used mostly to solve classification problems. They can also be used to solve regression and outlier detection problems. Support vector machines perform well even with large datasets and features. They also don't consume a lot of memory since they only use a subset of the training data in determining the decision function.
 
 Support vector machines separate the dataset into classes by using the  **maximum margin hyperplane(MMH)**.
 
@@ -19,7 +19,7 @@ The following diagram gives a visual representation of the support vector machin
 
 ***mathematical formulation***
 
-Given training vectors `𝑥`<sub>i</sub> `∈ R`<sup>n</sup>, `i=1,. . . , n`, in two classes, and a vector `𝑦 ∈ {1,−1},` our goal is to find `𝑤 ∈ R`<sup>`n`</sup>*** and `𝑏 ∈ R`  such that `w` is normal to the hyperplanes.  (*see figure below*)
+Given training vectors $$`𝑥_i \varepsilon  R^n`, `i=1,. . . , n`$$, in two classes, and a vector $$`𝑦 \varepsilon  {1,−1}`$$, our goal is to find $$`𝑤 \varepsilon  R^n`$$ and $$`𝑏 \varepsilon  R`$$  such that `w` is normal to the hyperplanes.  (*see figure below*)
  
  ![enter image description here](vector.jpg)
 
@@ -27,13 +27,13 @@ Given training vectors `𝑥`<sub>i</sub> `∈ R`<sup>n</sup>, `i=1,. . . , n`, 
 
 `c = -b`
 
-if `w.u + b >=0` ; then `u` is then classified as positive (decision rule).
+if $$`y_i(w.x + b)-1 = 0`$$ ; then `u` is then classified as positive (decision rule).
 
 `w.x + b >=1`
 
 `w.x + b <=-1`
 
-introducing  `y`<sub>i</sub> such that `y`<sub>i</sub>`=+-1` for +ve positive samples and -ve for negative samples.
+introducing  $$`y_i`$$ such that $$`y_i = +-1`$$ for +ve positive samples and -ve for negative samples.
 
 *for the negative class* 
 
@@ -47,9 +47,9 @@ introducing  `y`<sub>i</sub> such that `y`<sub>i</sub>`=+-1` for +ve positive sa
 
 and hence the equations turn out to be the same,
 
-`y`<sub>i</sub>`(w.x + b ) >=1`, for +ve samples
+$$`y_i(w.x + b ) >=1`$$, for +ve samples
 
-`y`<sub>i</sub>`(w.x +b)>=1`, for -ve samples and so we can use one of them can be used as the decision function ie.
+$$`y_i(w.x +b)>=1`$$, for -ve samples and so we can use one of them can be used as the decision function ie.
 
 `y(w.x + b)-1>=0`
 
@@ -57,57 +57,57 @@ introducing a constraint to the above equation so that whenever we have a sample
 
 So we use:
 
-`y`<sub>i</sub>`(w.x + b)-1 = 0` as our contstraint.
+$$`y_i (w.x + b)-1 = 0` $$ as our contstraint.
 
 Now that we have both the decision function and its constraint we, therefore, need to find the width of the margin. We have:
 
-***width***  = `(x`<sub>i</sub> `- x ) = 2/`<sub>||`w`||</sub> as  our optimization problem.(*see fegure below*)
+***width***  = $$`(x_i- x ) = \frac{w2}{||w||^2}`$$ as  our optimization problem.(*see fegure below*)
 
 ![Width](Width.jpg)
  
 We now need to find its maximum.
 
-max <sup>`2`</sup>/<sub>`||w||`</sub>  or  min <sup>`1`</sup>/<sub>`2`</sub>`||w||`
+max $$`\frac{2}{||w||^2}`$$ or  min $$`\frac{1}{2}||w||`$$
 
 Our optimization problem with the constraint will now be,   
 
-`L` = <sup>1</sup>/<sub>2</sub> `||w||`<sup>2</sup> `-  Σ︁`<sub>i.....m</sub> `𝛼  [y(w.x + b)-1 ]`
+$$`L = \frac{1}{2} ||w||^2 - \sum_{i=1}^{m} \alpha  [y(w.x + b)-1 ]`$$
 
 where `m` is the number of samples.
 
 Differentiating the above equation with respect to `w` we have: 
   
-<sup>`dL`</sup>/<sub>`dw`</sub> ` = w -   Σ︁ 𝛼  y`<sub>i</sub> x<sub>i</sub> ` = 0` and so: `w = Σ︁`<sub>i...m</sub>` 𝛼 `<sub>i</sub> ` y`<sub>i</sub> `x`<sub>i</sub>
+$$ `\frac{dl}{dw} = w - \sum \alpha  y_i x_i = 0`$$ and so: $$`w = \sum_{i=1}^{m}\alpha _i y_i x_i` $$
   
 differentiating with respect to `b` we have: 
 
-<sup>`dL`</sup>/<sub>`db`</sub>` = - Σ︁ 𝛼 `<sub>i</sub>` y`<sub>i</sub>` = 0` so  `Σ︁`<sub>`i....m`</sub>` 𝛼  y `<sub>i</sub>` = 0`
+$$`\frac{dl}{db} = - \sum \alpha_i  y_i = 0`$$ so  $$`\sum_{i=1}^{m} \alpha  y _i = 0`$$
 
 plugging back to the equation we have:
  
-`L = `<sup>1</sup>/<sub>2</sub>`  ( Σ︁ 𝛼 `<sub>i</sub>` y `<sub>i</sub>` x`<sub>i</sub>`) (Σ︁ 𝛼 `<sub>j</sub>` y  `<sub>j</sub>` x`<sub>j</sub>`) - (Σ︁ 𝛼`<sub>i</sub>` y `<sub>i</sub>` x`<sub>i</sub>`) - (Σ︁𝛼 y `<sub>i</sub>`x`<sub>i</sub>`) -  Σ︁ 𝛼`<sub>i</sub>`  y `<sub>i</sub>` + Σ︁ 𝛼`<sub>i</sub>
+$$`L = \frac{1}{2} ( \sum \alpha_iy_i x_i) (\sum  \alpha_jy_j x_j) - (\sum  \alpha_iy_i x_i) - (\sum \alpha  y_ ix_i) - \sum  \alpha _i y_i + \sum \alpha`$$
 
 thereby evaluating to:
 
-`L = Σ︁ 𝛼  - `<sup>1</sup>/<sub>2</sub>`  Σ︁ `<sub>j...m</sub>`  Σ︁ `<sub>j...m</sub>`   𝛼 `<sub>i</sub>`  𝛼 `<sub>i</sub>` y`<sub>i</sub>` y`<sub>j</sub>` x`<sub>j</sub>` x`<sub>j</sub>
+$$`\sum \alpha -\frac{1}{2}\sum_{j=1}^{m} \sum_{j=1}^{m} \alpha _i\alpha _j y_iy_j x_ix_j`$$ 
 
 This is the **dual optimization** for support vector machines. It depends on the dot product of the samples and so the kernel trick can be applied to improve its performance especially when the data is not linearly separable.
 
 *Our decision rule will now be:*
  
-`𝛼y`<sub>i</sub>` x`<sub>i</sub>`.u + b = >0`, then  `+ve`
+$$`\alpha y_ix_i.u + b >=0`$$, then  `+ve`
 
 `scikit-learn` implements support vector machines in three different classes namely **SVC(support vector classification) , NuSVC(Nu support vector classification) , LinearSVC(Linear support vector classification).**
 
 ### SVC
-Support vector classification takes in a parameter `C` that is used in regularization to avoid overfitting. It uses `sklearn.svm.SVC` module in its implementation. It can also be used in multiclass classification.
+Support vector classification takes in a parameter `C` that is used in regularization to avoid overfitting. It uses `sklearn.svm.SVC` module in its implementation. It can also be used to classify data with more than two classes ie, multiclass dataset.
 **The following table shows the parameters used by sklearn.svm.SVC class:**
 |  parameter|descriprion  |
 |--|--|
 |  `C`  | Used to specify the regulization term.Its default value is 1. |
-|`kernel` |This parameter specifies the kernel to be used. It can either be '`rbf`', '`poly`', '`sigmoid`', '`linear`' default is '`rbf`'
+|`kernel` |This parameter is used to specify the kernel to be applied for the case when the data is not linearly separable. It can either be '`rbf`', '`poly`', '`sigmoid`', '`linear`' default is '`rbf`'
 |`degree` |It is only used only with `'poly'` kernel,It represents the degree of the `'poly'` kernel.
-|`gamma`  |Specifies the kernel coefficient for kernels `'rbf'`, `'poly'`, and `'sigmoid'`. It can either be `'scale'` or `'auto'`.
+|`gamma`  |Specifies the weight gniven to the `'rbf'`, `'poly'`, and `'sigmoid'` kernels. It can either be `'scale'` or `'auto'`.
 |`max_iter` |It specifies the maximum number of iterations for the cost function.
 |`random_state`| Used to generate random numbers for shuffling the data.
 |`fit_intercept` It is used to specify whether to fit a constant in the calculations.
@@ -117,9 +117,9 @@ Support vector classification takes in a parameter `C` that is used in regulariz
 
 2. `support_vectors_`: It returns data points closest to the margin(support vectors). 
 
-3. `n_support_`:  It returns the number of support vectors for each class.
+3. `n_support_`:  It returns the number of data points present on the margin of each class.
 
-4. `dual_coef_`:  These are the weights of the support vectors in the decision function.
+4. `dual_coef_`:  It stores the weights of the data point on the margin in the decision function.
 
 5.  `coef_`: This attribute, only available in the case of the linear kernel, provides the weight assigned to each feature. 
  
@@ -127,7 +127,7 @@ Support vector classification takes in a parameter `C` that is used in regulariz
  
 7.  `fit_status_`: It returns 1 if the data is correctly fitted and 0 if incorrectly fitted. 
  
-8.  `classes_`: It returns the labels of the classes.
+8.  `classes_`: It returns the names of the classes present in the dataset.
 
 **Implementation Example**
 
@@ -224,13 +224,13 @@ Confusion matrix :
 [ 0  0 11]]**
 ``` 
 ### Linear SVC
-Linear SVC is like SVC with `kernel = linear`. But, Linear SVC supports other parameters such as the penalty parameter which can either be L1 or L2 used for regularization and loss functions such as hinge, squared_hinge. Its optimization function is the hinge loss which is directly optimized by LinearSVC and  unlike the dual form, this one does not involve inner products between samples and so the kernel trick cannot be applied.
+Linear SVC is like SVC with `kernel = linear`. But, Linear SVC supports other parameters such as the penalty parameter which can either be L1 or L2 used for regularization and loss functions such as hinge, squared_hinge. Its uses the hinge loss as the optimization function which is directly optimized by LinearSVC, The hinge loss does not  involve inner products of samples making it impossible for  the kernel trick to be applied.
 
 
    **Implementation example**
    *using the iris dataset from sklearn.datasets*
 ```python
-#import necessary packages
+#import packages
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC
@@ -277,12 +277,12 @@ Unlike classification in regression, the support vector machine should predict c
 
 
 **Support vector regression**
-The method of Support Vector machines can also  be extended to solve regression problems using Support Vector Regression which unlike in classification, depends on a subset of the training data because the optimization function ignores samples whose predictions have low variance compared to the actual target values.
+The method of Support Vector machines can be also be used to solve regression problems using Support Vector Regression that is to predict continuous targets which unlike in classification it tries to narrow the margin as much as possible, its cost function also depends only on the subset of the trainning samples which are far from their targets ignoring the ones with low variance.
 Its implementation is based on libsvm `C` and `‘epsilon’`.The epsilon parameter specifies the epsilon-tube whereby samples within are not penalized.
 
 **Implementation example**
 ```python
-#import necessary packages
+#import packages
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVR
@@ -392,15 +392,15 @@ The data used in training contains outliers. Outliers are inconsistent observati
 In novelty detection, the training data doesn't have outliers but we try to detect outliers from incoming data.
 
 ### One-class svm
-The One-Class SVM introduced by Schölkopf et al. It is a support vector machine technique used to detect strange occurring events. It treats the normal events as one class separating them from the outliers.
+One-Class SVM was introduced by Schölkopf et al. It is a support vector machine technique used to detect strange occurring events. It works by treating the normal events as one class separating them from the outliers.
  
 `kernel`    Specifies the kernel type to be employed in the algorithm it takes the following values: `‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’, ’rbf’`.
 
 `degree`  It is only applicable for the case of polynomial kernel function (`‘poly’`).
 
-`gamma` specifies the Kernel coefficient for `‘rbf’`, `‘poly’` and `‘sigmoid’` it takes the following values `‘scale’, ‘auto’ or float,’scale’`.
+`gamma` Specifies the weights given to the kernels `‘rbf’`, `‘poly’` and `‘sigmoid’` it takes the following values `‘scale’, ‘auto’ or float,’scale’`.
 
-`max_iter`  It is used to limit the number of iterations within solver, or -1 for no limit.
+`max_iter`  It is used to specify the number of iterations for the cost function, or setting it to -1 for limit limitless iterations.
 
 ### Attributes
 
