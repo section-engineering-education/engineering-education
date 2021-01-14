@@ -27,7 +27,7 @@ In this tutorial, we will create a React Todo Progressive Web App. A progressive
 4. Node.js installed on your computer. You can download the latest version [here](https://www.nodejs.org).
 
 ### Getting started
-Let's start with creating a new React application using `create-react-app` command-line utility. On your terminal, execute the following command:
+Let's start by creating a new React application using `create-react-app` command-line utility. On your terminal, execute the following command:
 
 ```bash
 npx create-react-app react-pwa --template cra-template-pwa
