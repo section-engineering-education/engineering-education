@@ -33,7 +33,7 @@ $ flask run
 ```
 With this, you can proceed to your web browser and follow the URL stated in your terminal (127.0.0.1:500), and you should see a simple hello world application displayed.
 
-![Hello world image](/engineering-education/implementing-flask-forms/hello_world.jpg)
+![Hello world image](/engineering-education/implementing-flask-wtform/hello_world.jpg)
 
 # Form Handling In Flask
 The Flask framework does not provide a unique way to handle forms. However, there are two ways developers go through the process of form handling and creation.
@@ -100,7 +100,7 @@ def register():
 ```
 With the form created and the route created, in your web browser, navigate to the form page by following the URL: `127.0.0.1:500/path`, where you replace the **path** variable with the pathname you specified in the route. In our case, the `/register` is the path. If you’ve done everything right, then your web browser should display this:
 
-![formdisplayimage](/engineering-education/implementing-flask-forms/form_displayraw.jpg)
+![formdisplayimage](/engineering-education/implementing-flask-wtform/form_displayraw.jpg)
 
 ## Handling The Form Data
 At this stage, you can view your form. Try filling the data like a regular user signing up for a web application, and hit the submit button. By submitting the data, you should see a 405 method not allowed error page. This error can be handled by following this process.
