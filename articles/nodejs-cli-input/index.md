@@ -2,9 +2,24 @@ In this tutorial, we will learn how to get a user input in a Node.js CLI applica
 
 Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
 
+### Prerequisites
+
+- You should have a basic understanding of the JavaScript language.
+
+- You should have [Node.js](https://nodejs.org/en/) installed in your computer.
+
+### Overview
+
+1. [Project Setup](#project-setup)
+2. [Readline Package](#readline-package)
+3. [Callback Hell](#callback-hell)
+4. [Async Iterator](#async-iterator)
+5. [Readline Sync Package](#readline-sync-package)
+6. [Recap](#lets-recap)
+
 ### Project Setup
 
-To get started, let’s setup our project and Node.js environment. You can download Node.js from [here](https://nodejs.org/en/).
+To get started, let’s setup our project.
 
 Create a new directory called `node-cli-input`. Inside the directory, run:
 
