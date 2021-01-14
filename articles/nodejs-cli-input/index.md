@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-cli-input/
+title: Node.js CLI Input
+description: This tutorial will give readers a detailed guide on how to get input from an user in a Node.js CLI application.
+author: mohan-raj
+date: 2021-01-14T00:00:00-18:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/nodejs-cli-input/hero.jpg
+    alt: Node.js CLI Input Hero Image
+---
 In this tutorial, we will learn how to get a user input in a Node.js CLI application. To do this, you'll need to listen to `STDIN` (Standard Input), which Node.js exposes as `process.stdin`, a readable stream.
+<!--more-->
 
 Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
 
