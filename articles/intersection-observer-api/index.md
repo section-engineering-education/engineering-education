@@ -67,7 +67,7 @@ The project structure is easy. First, open your editor and create a folder named
 For our images, create a folder named images inside the Gallery-Site folder. Check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
 
 #### The HTML file
-The HTML file will be having a simple navigation bar on the top, a heading with an `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. Our images will use a `data-src` attribute that will be pointing to our image, the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file. We will be creating these files in a moment.
+The HTML file will be having a simple navigation bar on the top, a heading with an `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. Our images will use a `data-src` attribute that will be pointing to our image, the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file. We will be creating these files in a the next steps.
 This is the markup in the `index.html` file:
 ```HTML
 <!DOCTYPE html>
