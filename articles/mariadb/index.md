@@ -90,7 +90,8 @@ $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
 
 2. When you click enter in the above command, you should have XAMPP Setup Wizard opens as the image below:
 
-![XAMPP Setup Wizard](img1.png)
+ ![XAMPP Setup Wizard](/engineering-education/mariadb/img1.png)
+
 
 ### . Select Components dialogue
 
@@ -104,13 +105,15 @@ $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
 
 5. The Installation process should start immediately as in the figure below.
 
-![XAMPP Setup Wizard](img2.png)
+ ![XAMPP Setup Wizard](/engineering-education/mariadb/img2.png)
+
 
 ### . Launching Xampp
 
 When you click next, the Xampp control panel will be displayed on the screen as in the figure below:
 
-![XAMPP Setup Wizard](img3.png)
+![XAMPP Setup Wizard](/engineering-education/mariadb/img3.png)
+
 
 In the Manage Serves tab, click `Start` to start all the services.
 
@@ -122,13 +125,16 @@ Here we are going to verify that we have installed two things. The `localhost` a
 
 If You see an image like the one below, the Xampp is installed in your machine.
 
-![localhost dashboard](img4.png)
+![XAMPP Setup Wizard](/engineering-education/mariadb/img4.png)
+
+
 
 2. For MariaDB open the URL: http://localhost/phpmyadmin/
 
 Your browser should look like this;
 
-![localhost phpmyadmin](DB.png)
+![localhost phpmyadmin](/engineering-education/mariadb/DB.png)
+
 
 ### Step 2: Creating tables in MariaDB using SQL commands in the terminal.
 
@@ -146,7 +152,7 @@ The terminal will ask you for a password, click enter as we have not set any pas
 
 When you click enter you should have the following output:
 
-![database](maria.png)
+![database](/engineering-education/mariadb/maria.png)
 
 In the above diagram, it means that you are now working on the MariaDatabase.
 
@@ -210,11 +216,13 @@ desc students;
 
 The output should be as this image below;
 
-![database](table.png)
+![database](/engineering-education/mariadb/table.png)
+
 
 So far, we have created a `database school` and  `tables` inside the school Database via terminal. Now, let's view this database school and its tables in the MariaDB. When you open the URL: http://localhost/phpmyadmin/  you should have an image like this.
 
-![database](database.png)
+![database](/engineering-education/mariadb/database.png)
+
 
 ### Step 3: Creating a registration form
 
@@ -324,7 +332,7 @@ Note. To close the `connect.php` page follow the same procedure you have done in
 
 Note:  Since your working in an environment that requires user permission.  When saving the file `index.php`, you will get an error.  To solve the error select `click Retry as Sudo and enter your password`. This is how we will be saving our files in this article. The error is as the image below:
 
-![error](error.png)
+![error](/engineering-education/mariadb/error.png)
 
 To test the form above using a browser, open URL: http://localhost/test 
 
@@ -358,7 +366,7 @@ color: white;
 
 When you open the URL: http://localhost/test, you should have a page like this on your browser;
 
-![form](test.png)
+![form](/engineering-education/mariadb/test.png)
 
 3. Now we connect our form with the database. Inside connect.php enter this code:
 
@@ -446,7 +454,7 @@ Phone-0700000067
 
 When we call http://localhost/phpmyadmin/ on the browser we should have something like this in our data.
 
-![database2](database2.png)
+![database2](/engineering-education/mariadb/database2.png)
 
 ### Step 5: Fetching data from the Database
 
@@ -530,7 +538,7 @@ while($row = mysqli_fetch_array($result))
 
 On refreshing the page, ( http://localhost/test) we have;
 
-![database2](img5.png)
+![database2](/engineering-education/mariadb/img5.png)
 
 The data at the bottom of the page have been fetched from the database.
 
