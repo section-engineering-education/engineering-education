@@ -1,6 +1,6 @@
 In this tutorial, we will learn how to get a user input in a Node.js CLI application. To do this, you'll need to listen to `STDIN` (Standard Input), which Node.js exposes as `process.stdin`, a readable stream.
 
-Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html). 
+Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
 
 ### Project Setup
 
@@ -140,12 +140,15 @@ async function main() {
   const color = await input("What is your favorite color? ");
 
   console.log(name, color);
+  rl.close();
 }
 
 main();
 ```
 
 ### Readline Sync Package
+
+If you don't mind installing an external package, which will increase the bundle size of the CLI application you are building, you can use the `readline-sync` package to get the input from the user in a synchronous manner.
 
 Let's install the `readline-sync` by runing:
 
@@ -167,3 +170,15 @@ Unlike the `readline` package, you don't have to pass a callback function to thi
 let input = readlineSync.question('May I have your name? ');
 console.log(`Hi ${input}!`);
 ```
+
+You can learn more about the `readline-sync` package from the [npm page](https://www.npmjs.com/package/readline-sync).
+
+### Let's Recap
+
+1. We used the `readline` package to prompt an input from the user.
+
+2. We added an event listener for the `close` event.
+
+3. We used the async iterator to write an async function to get the input from the user to prevent callback hell.
+
+4. We used the `readline-sync` package to prompt an input from the user synchronously.
