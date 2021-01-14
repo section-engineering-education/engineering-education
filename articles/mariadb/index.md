@@ -1,8 +1,8 @@
-### Creating, Connecting, Storing, and fetching data from MariaDatabase using PHP 
+## Creating, Connecting, Storing, and fetching data from MariaDatabase using PHP 
 
 Working with the Database seems to be very complicated in a Developer's coding life. But to me, this is not the case. In this article, we will prove how easy it is to work with MariaDatabase with only SQL and PHP knowledge.
 
-### Prerequisites
+## Prerequisites
 
 To use this tutorial you need to ;
 
@@ -26,17 +26,17 @@ In this article you will learn how to;
 
 - fetch the saved data from the Database  
 
-### Step 1: Installing Xampp
+## Step 1: Installing Xampp
 
 Xampp comes along with PhpMyAdmin when downloaded into a machine.  PhpMyAdmin is the MariaDatabase that we will be working on within this article.
 
 To install Xampp you need to;
 
-### . Download the package to be installed.
+## . Download the package to be installed.
 
 Downloading the package is always the first step you need to do when installing Xampp. You can download the package [here](https://www.apachefriends.org/download.html). Download the latest version of Xampp for Linux and start the installation. Very easy.
 
-### . Give the package permission so that it can be executable
+## . Give the package permission so that it can be executable
 
 To make this package executable, you need to open the terminal (Ctrl+alt+T) and follow the following:
 
@@ -78,7 +78,7 @@ Here, this is the output you will get.
 
 The username above is the user who can execute the file.
 
-### . Launch  Setup Wizard
+## . Launch  Setup Wizard
 
 1. It's now time to run the installer and launch the setup wizard. To do this, use the following command:
 
@@ -93,7 +93,7 @@ $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
  ![XAMPP Setup Wizard](/engineering-education/mariadb/img1.png)
 
 
-### . Select Components dialogue
+## . Select Components dialogue
 
 1. You should click ``Next`` in the above image and Select Components dialogue. You should choose either XAMPP Core Files or Xampp Developer Files and install. You may keep the default setting and proceed with `Next`
 
@@ -108,7 +108,7 @@ $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
  ![XAMPP Setup Wizard](/engineering-education/mariadb/img2.png)
 
 
-### . Launching Xampp
+## . Launching Xampp
 
 When you click next, the Xampp control panel will be displayed on the screen as in the figure below:
 
@@ -117,7 +117,7 @@ When you click next, the Xampp control panel will be displayed on the screen as 
 
 In the Manage Serves tab, click `Start` to start all the services.
 
-### . Verifying that XAMPP is running
+## . Verifying that XAMPP is running
 
 Here we are going to verify that we have installed two things. The `localhost` and the `MariaDB`
 
@@ -542,7 +542,7 @@ On refreshing the page, ( http://localhost/test) we have;
 
 The data at the bottom of the page have been fetched from the database.
 
-### Conclusion
+## Conclusion
 
 From this article, we have learned that working with a Database is as easier as working with any other code. and we have concluded that it is a myth to say that Database is the only meant for backend expert only.
          
