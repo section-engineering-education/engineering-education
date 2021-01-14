@@ -60,7 +60,7 @@ Output:
 
 ![Simple Question Output](question_example.png)
 
-You can set a function that must be executed when the streams are closed using the `rl.on()` method.
+You can add an event listener for the `close` streams event using the `rl.on()` method.
 
 ```JavaScript
 rl.on('close', () => {
@@ -74,7 +74,7 @@ Output:
 
 ### Callback Hell
 
-The problem with the `rl.question()` method is, it doesn't return a `Promise`. Thus, we can't use `async/await` to pause the flow of the program until the user provides the input.
+The problem with the `rl.question()` method is, it doesn't return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Thus, we can't use [async/await](https://javascript.info/async-await) to pause the flow of the program until the user provides the input.
 
 If you want to get multiple user inputs in sequence, you have to do it withing a callback function, like this:
 
