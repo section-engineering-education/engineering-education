@@ -126,7 +126,7 @@ For our problem,
 #### Data Preparation
 > According to Wikipedia, the data preparation phase covers all activities to construct the final dataset (data that will be fed into the modeling tool(s)) from the initial raw data. Data preparation tasks are likely to be performed multiple times and not in any prescribed order. Tasks include table, record, and attribute selection and transformation, and cleaning of data for modeling tools.
 
-In this step, we must follow 5 common steps:
+In this step, we must follow 5 common steps as mentioned in [this](https://quyenntk143.medium.com/problem-solving-framework-crisp-1decbb25a42c) article:
 
 - Gathering: When gathering data - you may need to collect data from multiple sources within your organization.
 - Cleansing: The data set you are working with may have issues you want to resolve before your analysis. This can be in the form of incorrect or missing data.
@@ -146,7 +146,7 @@ Things to consider:
 - Build a model to solve the problem.
 - Run the model and move to the validation phase.
 
-In our problem, we find that there is a high correlation between temperature and electricity consumption. This can found by following a series of steps:
+In our problem, we find that there is a high correlation between temperature and electricity consumption. This can found by following a series of steps as mentioned in [this](https://quyenntk143.medium.com/problem-solving-framework-crisp-1decbb25a42c) article:
 
 1. Build a predictive model - predicting the next days' temperature based on history.
 2. Validate the model - validate this by predicting the electricity of the next day to check if a correlation exists.
@@ -204,6 +204,11 @@ To summarize:
 - [Article by AnalyticsIndiaMag](https://analyticsindiamag.com/crisp-dm-data-science-project/)
 - [A Detailed explanation of the CRISP-DM methodology](https://www.sv-europe.com/crisp-dm-methodology/)
 - [Article by Datascience-pm](https://www.datascience-pm.com/crisp-dm-2/)
+- [Article by Big data path](https://bigdatapath.wordpress.com/2018/11/05/big-data-analytics-data-life-cycle/)
+- [Article on Business Analytics](https://www.theopinionnb.com/2020/12/complete-tutorial-on-business-analytics.html)
+- [Article on analyzing the problem](http://hpscript.com/blog/the-analytical-problem-solving-framework/)
+- [Notes from the course on Udacity](https://github.com/mainkoon81/Study-01-Business-Analytics-I-Theory/blob/master/README.md)
+- [Flash cards on understanding CRISP-DM](https://quizlet.com/gb/454325590/the-crisp-dm-flash-cards/)
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
