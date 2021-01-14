@@ -15,7 +15,7 @@ images:
     alt: Artificial Intelligence Sports Industry Image
 
 ---
-Modern sports have applied technology immensely, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Today's sports involve a massive number of athletes, coaches, and spectators. The vast population involved relies on technologists, scientists, and a host of equipment to manage the sports. Technology use ensures accuracy, makes sports more enjoyable and derives more experiences.
+Modern sports have applied technology immensely, like many other aspects of life. Today, technology is being used almost in all fields of our lives. Todays sports involve a massive number of athletes, coaches, and spectators. The vast population involved relies on technologists, scientists, and a host of equipment to manage the sports. Technology use ensures accuracy, makes sports more enjoyable and derives more experiences.
 <!-- more -->
 The human body is the main protagonist of sports, while technology and science (Technoscience) play a support role. Sometimes, however, technoscience is blamed for giving undue advantages to those who use them. For any game to be fair, all contestants should have an equal chance of winning. Outcomes should not be entirely predictable in any fair game.
 
