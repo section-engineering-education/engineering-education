@@ -16,7 +16,10 @@ images:
 ---
 
 #### Introduction
-Learn Kotlin Programming, its basics, and Fundamentals from scratch. 
+Learn Kotlin Programming, its basics, and Fundamentals from scratch.
+Kotlin was announced in 2017 by google and it supported the features that were presented by Java
+Kotlin is a statically typed language and also known as JVM(Java Virtual Machine)language because it needs JVM to execute its bytecode. Since kotlin is a JVM language it's interoperable with languages like Java. It supports null pointer exception, Support immutability, it's is an object-oriented, supports function, it has less code more result and makes the code cleaner
+Kotlin was announced in 2017 by google and it supported the features that were presented by Java
 
 #### Prerequisites
 For you to follow along with this tutorial:
