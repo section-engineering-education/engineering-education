@@ -118,6 +118,7 @@ This is the markup in the `index.html` file:
 ```
 #### Styling our web page
 This applies simple styles to our images. When the image is visible on the screen, we perform a simple animation in our fade class.
+Note I have also added a customized scroll bar using CSS pseudo-element.
 The `design.css` file is like:
 ```CSS
 *{
