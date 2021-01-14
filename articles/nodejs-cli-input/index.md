@@ -186,7 +186,42 @@ let input = readlineSync.question('May I have your name? ');
 console.log(`Hi ${input}!`);
 ```
 
-You can learn more about the `readline-sync` package from the [npm page](https://www.npmjs.com/package/readline-sync).
+The `readlineSync` package also has other functions like `readlineSync.keyInYN()`, `readlineSync.keyInSelect()`, etc.
+
+The `readlineSync.keyInYN()` is used to get the user's response by a single key without pressing the Enter key. The function will return `true` if **"Y"** was pressed or `false` if something else was pressed.
+
+```JavaScript
+if (readlineSync.keyInYN('Do you want this module?')) {
+  // 'Y' key was pressed.
+} else {
+  // Another key was pressed.
+}
+```
+
+The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doen't have to hit the *enter* button when we use this function.
+
+```JavaScript
+let colors = ['Black', 'White', 'Gray', 'Yellow', 'Blue'];
+
+let index = readlineSync.keyInSelect(colors, 'Favorite Color?');
+console.log(colors[index]);
+```
+
+Output:
+
+```bash
+[1] Black
+[2] White
+[3] Gray
+[4] Yellow
+[5] Blue
+[0] CANCEL
+ 
+Favorite Color? [1...5 / 0]: 2
+White
+```
+
+You can learn more about the `readline-sync` package and the other methods that are available from the [npm page](https://www.npmjs.com/package/readline-sync).
 
 ### Let's Recap
 
