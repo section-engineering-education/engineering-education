@@ -295,3 +295,6 @@ Now, when you click on the button, the theme should change.
 Congratulations, :partying_face: You did it.
 
 Thanks for reading!
+
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
