@@ -1,6 +1,6 @@
-In this tutorial, we will learn how to get a user input in a Node.js CLI application. To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream.
+In this tutorial, we will learn how to get a user input in a Node.js CLI application. To do this, you'll need to listen to `STDIN` (Standard Input), which Node.js exposes as `process.stdin`, a readable stream.
 
-Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html). We'll use the `readline` module which is wrapper around standard I/O.
+Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html). 
 
 ### Project Setup
 
@@ -14,17 +14,13 @@ npm init -y
 
 This will generate a `package.json` file.
 
-Next up, let’s instal the `readline` package.
+Once that's done, create a new JavaScript file called `index.js` to write our code.
 
-```bash
-npm install readline
-```
+### Readline Package
 
-### Let's code
+The `readline` package is a built-in package in the Node.js. The `readline` module which is a wrapper around the standard I/O.
 
-Create a new JavaScript file called `index.js`.
-
-Next, we should import the `readline` package into our `index.js` file.
+Let's import the `readline` package into our `index.js` file. 
 
 ```JavaScript
 const readline = require('readline');
@@ -72,6 +68,8 @@ Output:
 
 ![Close Streams](streams_closed.png)
 
+You can learn more about the Readline package from it's [documentation](https://nodejs.org/api/readline.html).
+
 ### Callback Hell
 
 The problem with the `rl.question()` method is, it doesn't return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Thus, we can't use [async/await](https://javascript.info/async-await) to pause the flow of the program until the user provides the input.
@@ -98,3 +96,26 @@ rl.question("Question 1? ", (answer1) => {
 ```
 
 As you can see, this can quickly get out of control and the code will get hard to manage.
+
+### Readline Sync Package
+
+Let's install the `readline-sync` by runing:
+
+```bash
+npm install readline-sync
+```
+
+Now, let's import the package.
+
+```JavaScript
+const readlineSync = require("readline-sync");
+```
+
+The `readlineSync` also has the `question` method. Similar to the readline package, you can use this method to prompt the user for an input.
+
+Unlike the `readline` package, you don't have to pass a callback function to this function. The `readlineSync.question()` method will return the user's input.
+
+```JavaScript
+let input = readlineSync.question('May I have your name? ');
+console.log(`Hi ${input}!`);
+```
