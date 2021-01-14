@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/network-routing-final/
-title: Understanding network routing
-description: This article will be an overview on time and space complexities and how the Big O notation is a standard measure of complexity.
+title: Understanding Network Routing
+description: This article will be an overview on network routing. Routers use algorithms to make logical data decisions when selecting paths to forward packets. It makes the decisions using the current network states of where the packets would pass through.
 author: terrence-aluda
-date: 2021-01-13T00:00:00-12:00
+date: 2021-01-14T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/network-routing-final/hero.jpg
-    alt: Big O Image
+    alt: Network Routing Image
 ---
 When using the internet, our devices send requests to servers stored in various data centers in packets. Likewise, the servers return responses to the requests using data packets. These packets' journey to the data center from our devices and vice versa form the internet's backbone.
 <!--more-->
@@ -22,7 +22,7 @@ Routers select an appropriate path that will ensure the packets arrive quickly a
 
 Take an example of when one wants to get home situated in an estate from his/her workplace located in a city center. During rush hours, cities are usually characterized by traffic snarl-ups on their roads. The person will then use Google maps to check the route with less traffic and maneuver all the way home.
 
-Similarly, routers use algorithms to make logical data decisions when selecting appropriate paths when forwarding the packets. It makes the decisions using the current network states of where the packets would pass through.
+Similarly, routers use algorithms to make logical data decisions when selecting the appropriate paths to forward the packets. It makes the decisions using the current network states of where the packets would pass through.
 
 There are two types of routing:
 - **Static**
