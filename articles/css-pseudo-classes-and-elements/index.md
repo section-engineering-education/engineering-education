@@ -57,7 +57,7 @@ Other common CSS pseudo-classes include:
   
 - The`:focus` pseudo-class will select all the input elements that have the focus state active. Such as checkbox or radio elements.
   
-- The `focus-within` will match an element with focus and also the descendant's elements with that focus.
+- The `:focus-within` will match an element with focus and also the descendant's elements with that focus.
 
 - Using the `: enabled` pseudo-class will match an element that is in an enabled state.
   
