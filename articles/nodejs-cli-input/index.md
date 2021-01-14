@@ -97,6 +97,54 @@ rl.question("Question 1? ", (answer1) => {
 
 As you can see, this can quickly get out of control and the code will get hard to manage.
 
+### Async Iterator
+
+Asynchronous iteration allow us to iterate over data that comes asynchronously, on-demand. You can create an async iterator to iterates through each line in the input stream.
+
+```JavaScript
+for await (const line of rl) {
+  // Each line in the from the input stream will be available successively here as `line`.
+}
+```
+
+We can't use the `await` keyword outside of an `async` function. So, we need to wrap all of our code inside an async function.
+
+```JavaScript
+async function main() {
+  // do your stuff here
+
+  for await (const line of rl) {
+    // Each line in the from the input stream will be available successively here as `line`.
+  }
+}
+
+main();
+```
+
+Let's create a new function called `input()` to prompt the user and get an input.
+
+We can use the [Symbol.asyncIterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncIterator) of the `readline` object to get the next value in the input stream.
+
+```JavaScript
+async function input(prompt) {
+  console.log(prompt);
+  return (await rl[Symbol.asyncIterator]().next()).value;
+}
+```
+
+Now, we can use this function to get the value from the input stream and use the `await` keyword to pause the execution until we get the input from the user.
+
+```JavaScript
+async function main() {
+  const name = await input("May I ask your name? ");
+  const color = await input("What is your favorite color? ");
+
+  console.log(name, color);
+}
+
+main();
+```
+
 ### Readline Sync Package
 
 Let's install the `readline-sync` by runing:
