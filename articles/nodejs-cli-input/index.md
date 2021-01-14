@@ -33,7 +33,7 @@ Once that's done, create a new JavaScript file called `index.js` to write our co
 
 ### Readline Package
 
-The `readline` package is a built-in package in Node.js. The `readline` module is a wrapper around the standard I/O.
+The `readline` package is a built-in package in Node.js. `readline` is a wrapper around the standard I/O.
 
 Let's import the `readline` package into our `index.js` file. 
 
@@ -54,7 +54,7 @@ We can ask a question to the user using the `rl.question()` method. The `rl.ques
 
 - **String**: This string will be displayed as the question to the user.
 
-- **Callback Function**: The `rl.question()` method will wait until the user provides input. Once the user provides input, the callback function will be executed. The callback function will get the user's input as an argument.
+- **Callback Function**: The `rl.question()` method will wait until the user provides input. Once the user provides input, this callback function will be executed. The callback function will get the user's input as an argument.
 
 > NOTE: We should close the streams using the `rl.close()` method inside the callback function. If not closed, the process will remain in an idle state.
 
@@ -83,13 +83,13 @@ Output:
 
 ![Close Streams](streams_closed.png)
 
-You can learn more about the Readline package from it's [documentation](https://nodejs.org/api/readline.html).
+You can learn more about the `readline` package from it's [documentation](https://nodejs.org/api/readline.html).
 
 ### Callback Hell
 
 The problem with the `rl.question()` method is, it doesn't return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Thus, we can't use [async/await](https://javascript.info/async-await) to pause the flow of the program until the user provides the input.
 
-If you want to get multiple user inputs in sequence, you have to do it withing a callback function, like this:
+If you want to get multiple user inputs in sequence, you have to do it within a callback function, like this:
 
 ```JavaScript
 rl.question("Question 1? ", (answer1) => {
@@ -110,11 +110,11 @@ rl.question("Question 1? ", (answer1) => {
 });
 ```
 
-As you can see, this can quickly get out of control and the code will get hard to manage.
+As you can see, this can quickly get out of control and the code will be hard to manage.
 
 ### Async Iterator
 
-Asynchronous iteration allows us to iterate over data that comes asynchronously, on-demand. You can create an async iterator to iterates through each line in the input stream.
+Asynchronous iteration allows us to iterate over data that comes asynchronously, on-demand. You can create an async iterator that iterates through each line in the input stream.
 
 ```JavaScript
 for await (const line of rl) {
@@ -177,7 +177,7 @@ Now, let's import the package.
 const readlineSync = require("readline-sync");
 ```
 
-The `readlineSync` also has the `question` method. Similar to the `readline` package, you can use this method to prompt the user for input.
+Similar to the `readline` package, you can use the `readlineSync.question()` method to prompt the user for input.
 
 Unlike the `readline` package, you don't have to pass a callback function to this function. The `readlineSync.question()` method will return the user's input.
 
@@ -188,7 +188,7 @@ console.log(`Hi ${input}!`);
 
 The `readlineSync` package also has other functions like `readlineSync.keyInYN()`, `readlineSync.keyInSelect()`, etc.
 
-The `readlineSync.keyInYN()` is used to get the user's response by a single key without pressing the Enter key. The function will return `true` if **"Y"** was pressed or `false` if something else was pressed.
+The `readlineSync.keyInYN()` is used to get the user's response by a single key without pressing the *Enter* key. The function will return `true` if **"Y"** was pressed or `false` if something else was pressed.
 
 ```JavaScript
 if (readlineSync.keyInYN('Do you want this module?')) {
@@ -198,7 +198,7 @@ if (readlineSync.keyInYN('Do you want this module?')) {
 }
 ```
 
-The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doesn't have to hit the *enter* button when we use this function.
+The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doesn't have to press the *Enter* button when we use this function.
 
 ```JavaScript
 let colors = ['Black', 'White', 'Gray', 'Yellow', 'Blue'];
@@ -221,7 +221,7 @@ Favorite Color? [1...5 / 0]: 2
 White
 ```
 
-You can learn more about the `readline-sync` package and the other methods that are available from the [npm page](https://www.npmjs.com/package/readline-sync).
+You can learn more about the `readline-sync` package and the other methods that are available from it's [npm page](https://www.npmjs.com/package/readline-sync).
 
 ### Let's Recap
 
@@ -232,3 +232,7 @@ You can learn more about the `readline-sync` package and the other methods that 
 3. We used the async iterator to write an async function to get the input from the user to prevent callback hell.
 
 4. We used the `readline-sync` package to prompt input from the user synchronously.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for reading!
