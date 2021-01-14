@@ -324,7 +324,7 @@ Note. To close the `connect.php` page follow the same procedure you have done in
 
 Note:  Since your working in an environment that requires user permission.  When saving the file `index.php`, you will get an error.  To solve the error select `click Retry as Sudo and enter your password`. This is how we will be saving our files in this article. The error is as the image below:
 
-![error](index.png)
+![error](error.png)
 
 To test the form above using a browser, open URL: http://localhost/test 
 
