@@ -217,4 +217,4 @@ The code walkthrough:
 Check my deployed version on netlify [here](https://galleryio.netlify.app/).
 
 ### Summary
-In summary, `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running in the background on the main thread. Thanks for reading this article.
+In summary, `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running in the background on the main thread.
