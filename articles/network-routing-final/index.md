@@ -70,7 +70,7 @@ We got zero as the first distance because it is the distance from the source nod
 
 [Image source](https://www.freecodecamp.org/news/content/images/2020/06/image-83.png)
 
-We start checking the distance of adjacent nodes to 0 (nodes 1 & 2). We only add a node if the distance between node 0 and the node is the shortest. From node 0 to node 1, the distance is 2, while from 0 to 2, the distance is 6. The distance to node 1 is the shortest, so we add node 1 to the path.
+We start checking the distance of adjacent nodes to 0 (nodes 1 & 2). We only add a node if the distance between node 0 and the next node is the shortest. From node 0 to node 1, the distance is 2, while from 0 to 2, the distance is 6. The distance to node 1 is the shortest, so we add node 1 to the path.
 
 *(We will mark added nodes by adding an asterisk beside them)*
 
@@ -78,7 +78,7 @@ We start checking the distance of adjacent nodes to 0 (nodes 1 & 2). We only add
 
 [Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-94.png)
 
-We then mark node 1 as visited and add it to our list. We add node 2 for we know its distance, but we will mark it since it is not yet visited.
+We then mark node 1 as visited and add it to our list. We add node 2 because we know its distance, but we will mark it since it is not yet visited.
 
 |NODE|DISTANCE|
 ---|---|
