@@ -6,7 +6,7 @@ Streams are a way of dealing with I/O. You can learn more about it in this [docu
 
 - You should have a basic understanding of the JavaScript language.
 
-- You should have [Node.js](https://nodejs.org/en/) installed in your computer.
+- You should have [Node.js](https://nodejs.org/en/) installed on your computer.
 
 ### Overview
 
@@ -19,7 +19,7 @@ Streams are a way of dealing with I/O. You can learn more about it in this [docu
 
 ### Project Setup
 
-To get started, let’s setup our project.
+To get started, let’s set up our project.
 
 Create a new directory called `node-cli-input`. Inside the directory, run:
 
@@ -33,7 +33,7 @@ Once that's done, create a new JavaScript file called `index.js` to write our co
 
 ### Readline Package
 
-The `readline` package is a built-in package in the Node.js. The `readline` module which is a wrapper around the standard I/O.
+The `readline` package is a built-in package in Node.js. The `readline` module is a wrapper around the standard I/O.
 
 Let's import the `readline` package into our `index.js` file. 
 
@@ -41,7 +41,7 @@ Let's import the `readline` package into our `index.js` file.
 const readline = require('readline');
 ```
 
-We should create a new readline inteface object using the `readline.createInterface()` method and configure the readable and writable streams. Let's set the input and output streams to `process.stdin` and `process.stdout` respectively.
+We should create a new `readline` interface object using the `readline.createInterface()` method and configure the readable and writable streams. Let's set the input and output streams to `process.stdin` and `process.stdout` respectively.
 
 ```JavaScript
 const rl = readline.createInterface({
@@ -54,9 +54,9 @@ We can ask a question to the user using the `rl.question()` method. The `rl.ques
 
 - **String**: This string will be displayed as the question to the user.
 
-- **Callback Function**: The `rl.question()` method will wait until the user provides an input. Once the user provides an input, the callback function will be executed. The callback function will get the user's input as an argument.
+- **Callback Function**: The `rl.question()` method will wait until the user provides input. Once the user provides input, the callback function will be executed. The callback function will get the user's input as an argument.
 
-> NOTE: We should close the streams using `rl.close()` method inside the callback function. If not closed, the process will remain in an idle state.
+> NOTE: We should close the streams using the `rl.close()` method inside the callback function. If not closed, the process will remain in an idle state.
 
 For example:
 
@@ -114,11 +114,11 @@ As you can see, this can quickly get out of control and the code will get hard t
 
 ### Async Iterator
 
-Asynchronous iteration allow us to iterate over data that comes asynchronously, on-demand. You can create an async iterator to iterates through each line in the input stream.
+Asynchronous iteration allows us to iterate over data that comes asynchronously, on-demand. You can create an async iterator to iterates through each line in the input stream.
 
 ```JavaScript
 for await (const line of rl) {
-  // Each line in the from the input stream will be available successively here as `line`.
+  // Each line in from the input stream will be available successively here as `line`.
 }
 ```
 
@@ -129,14 +129,14 @@ async function main() {
   // do your stuff here
 
   for await (const line of rl) {
-    // Each line in the from the input stream will be available successively here as `line`.
+    // Each line in from the input stream will be available successively here as `line`.
   }
 }
 
 main();
 ```
 
-Let's create a new function called `input()` to prompt the user and get an input.
+Let's create a new function called `input()` to prompt the user and get input.
 
 We can use the [Symbol.asyncIterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncIterator) of the `readline` object to get the next value in the input stream.
 
@@ -165,7 +165,7 @@ main();
 
 If you don't mind installing an external package, which will increase the bundle size of the CLI application you are building, you can use the `readline-sync` package to get the input from the user in a synchronous manner.
 
-Let's install the `readline-sync` by runing:
+Let's install the `readline-sync` by running:
 
 ```bash
 npm install readline-sync
@@ -177,7 +177,7 @@ Now, let's import the package.
 const readlineSync = require("readline-sync");
 ```
 
-The `readlineSync` also has the `question` method. Similar to the readline package, you can use this method to prompt the user for an input.
+The `readlineSync` also has the `question` method. Similar to the `readline` package, you can use this method to prompt the user for input.
 
 Unlike the `readline` package, you don't have to pass a callback function to this function. The `readlineSync.question()` method will return the user's input.
 
@@ -198,7 +198,7 @@ if (readlineSync.keyInYN('Do you want this module?')) {
 }
 ```
 
-The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doen't have to hit the *enter* button when we use this function.
+The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doesn't have to hit the *enter* button when we use this function.
 
 ```JavaScript
 let colors = ['Black', 'White', 'Gray', 'Yellow', 'Blue'];
@@ -225,10 +225,10 @@ You can learn more about the `readline-sync` package and the other methods that 
 
 ### Let's Recap
 
-1. We used the `readline` package to prompt an input from the user.
+1. We used the `readline` package to prompt input from the user.
 
 2. We added an event listener for the `close` event.
 
 3. We used the async iterator to write an async function to get the input from the user to prevent callback hell.
 
-4. We used the `readline-sync` package to prompt an input from the user synchronously.
+4. We used the `readline-sync` package to prompt input from the user synchronously.
