@@ -1,6 +1,6 @@
 ﻿
 
-### Intergrating Django with TinyMCE
+### Integrating Django with TinyMCE
 
 TinyMCE is a rich and flexible online text editor which is compatible with Django amongst many other frameworks. It comes in handy when trying to make your content look more stylish with colorful texts, various fonts, tables, and many other features.   
 
@@ -8,11 +8,11 @@ TinyMCE is a rich and flexible online text editor which is compatible with Djang
 I will guide you on creating a simple Django app with a text field, then help you modify the text field to use the TinyMCE text editor in place of Django's plain text field box. 
 
 ### Prerequisites
-You should at least have the following things before we begin as they will come in handy:
+You should at least have the following things before we begin, as they will come in handy:
  - readily installed python in your pc
- - readily installed django
- - some basic knowledge in python programming language
- - either Visual Studio Code, Sublime text or just any other good code editor that you will be comfortable with 
+ - readily installed Django
+ - some basic knowledge in Python programming language
+ - either Visual Studio Code, Sublime Text, or just any other good code editor that you will be comfortable with 
  - a stable internet connection
  - patience
 
@@ -24,7 +24,7 @@ Open your cmd and type in the following commands to create the Django project.
 Now change your directory to TinyMce,
       `$ cd TinyMce `
       
-type the following command to create an app called *myapp* inside the *TinyMce* project.
+Type the following command to create an app called *myapp* inside the *TinyMce* project.
 
     $ django-admin startapp myapp
     
@@ -37,7 +37,7 @@ and then use the below command to activate it.
     $ .venv\Scripts\activate.bat
 
 ### Step 2 – Installations
-You can now Install Django in the virtual enviroment:
+You can now Install Django in the virtual environment:
 
     $ pip install django
 
@@ -47,7 +47,7 @@ and also Install TinyMCE:
 
 ### Step 3 – Intergrations
 After the installations are complete, you can now proceed
-to *settings. py*  and add both our app and the *tinymce* app.
+to *settings.py*  and add both our app and the *tinymce* app.
 
 
     INSTALLED_APPS = [
@@ -57,7 +57,7 @@ to *settings. py*  and add both our app and the *tinymce* app.
      ... 
     ]
 
-You should also add the below *tinymce*  configurations to *settings. py*, where you can opt to copy and paste.
+You should also add the below *tinymce*  configurations to *settings.py*, where you can opt to copy and paste.
 
     TINYMCE_DEFAULT_CONFIG = {
 
@@ -123,8 +123,8 @@ You should also add the below *tinymce*  configurations to *settings. py*, where
 
 
 ### Step 4 – Applying tinyMCE
-Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models. py* that will utilize TinyMCE.
-In *models. py* create a model by the name *textEditor* and a textfield by the name *content* :
+Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models.py* that will utilize TinyMCE.
+In *models.py* create a model by the name *textEditor* and a textfield by the name *content* :
    
 
     from django.db import models
@@ -140,7 +140,7 @@ Next, run the Django command-line utilities to create the database table automat
 
     $ py manage.py migrate
 
-In your *admin. py* add the following code 
+In your *admin.py* file, add the following code. 
 
     from .models import textEditor
     from django.db import models
@@ -156,7 +156,7 @@ In your *admin. py* add the following code
 
     admin.site.register(textEditor, textEditorAdmin)
 
-then in your project-level  *urls. py* add the following code that's commented *new* :
+Then in your project-level  *urls.py* add the following code that's commented *new* :
 
     from django.contrib import admin
 
@@ -183,14 +183,14 @@ open your browser now and type in the following URL :
 
 > you should make sure that up to this step, you'll still be connected to the internet since TinyMCE fetches its CSS and js javascript from a CDN.
 
-After logging in you should be able to see *MYAPP* with its * Text editors * table, and when you click on *add* you should be able to see the below results:
+After logging in, you should be able to see *MYAPP* with its * Text editors * table, and when you click on *add*, you should be able to see the below results:
 
 ![tinymce-the-final-results](/engineering-education/integrating-django-with-tinymce/tinymce-the-final-results.jpg)
 
 ### Conclusion
-If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in *settings. py* and adjust the *height* and *width* values until you get the size you want.
+If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in *settings.py* and adjust the *height* and *width* values until you get the size you want.
 
-In the above project, we used the *modern* theme, although you might be pleased to know that there are other themes available that you can always google and replace the *modern* theme in the TinyMCE configurations with any other that is available.
+In the above project, we used the *modern* theme. However, you might be pleased to know that there are other themes available to always google and replace the *modern* theme in the TinyMCE configurations with any other available.
 
-Now that we have accomplished the goal, you can go ahead and try to use TinyMCE in various projects since practice makes perfect.
+Now that we have accomplished the goal, you can try to use TinyMCE in various projects since practice makes perfect.
 
