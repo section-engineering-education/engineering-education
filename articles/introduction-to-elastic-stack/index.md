@@ -17,7 +17,7 @@ images:
 ---
 
 
-[**Elastic stack** (ELK)](https://www.elastic.co/elastic-stack)  is a bundle of software components that can search, visualize, and manage log files(end to end log analysis).
+[**Elastic stack(ELK)**](https://www.elastic.co/elastic-stack)  is a bundle of software components that can search, visualize, and manage log files(end to end log analysis).
 <!--more-->
 
 Computing devices perform activities and processes that upon completion result into logs that are stored as files. These log data can be  present in servers(i.e. from completed user authentication processes) as well as mobile devices (i.e from activity log).
@@ -55,7 +55,7 @@ The Elastic Stack is made up of 4 independent, powerful and compatible open sour
 ### Components of the Elastic Stack
 
 1. ### Elasticsearch
-[**Elasticsearch**] (https://www.elastic.co/elasticsearch/) is a distributed search and analytics engine (with apache lucene as the base).This distributed, open-source tool acts as the engine of the entire suite and supports all data types/formats i.e. texts, semi-structured data or even unstructured data. It is essentially a really powerful database where all the logs are stored for other applications to retrieve later. 
+[**Elasticsearch**](https://www.elastic.co/elasticsearch/) is a distributed search and analytics engine (with apache lucene as the base).This distributed, open-source tool acts as the engine of the entire suite and supports all data types/formats i.e. texts, semi-structured data or even unstructured data. It is essentially a really powerful database where all the logs are stored for other applications to retrieve later. 
 Elastic search prides itself in scalability, robustness, speed and in its ability of sharding large data sets.
 Sharding is the horizontal partitioning of data in a database to produce other sets of data that are spread across multiple computers on separate database server instances.
 Its two primary roles within the stack are:
@@ -84,7 +84,7 @@ Log stash uses input , filter and output plugins for transformation of logs and 
 ![Logstash](/engineering-education/introduction-to-elastic-stack/logstash-logo-color.png)
 
 3. ### Kibana
-[**Kibana**] (https://www.elastic.co/kibana) is an open-source tool for data visualization and exploration that acts as a front end for the elastic stack.
+[**Kibana**](https://www.elastic.co/kibana) is an open-source tool for data visualization and exploration that acts as a front end for the elastic stack.
 Kibana comes with a graphical user interface to generate and present data more intuitively. The graphical interface provides a better usability experience.
 Since elastic search supports curl and JSON queries, integrating Kibana with elastic search makes browsing and data querying faster.
 Kibana can be installed on users' devices or be run in a cloud environment.
@@ -99,7 +99,7 @@ Kibana provides the following visualizations features:
 ![Kibana](/engineering-education/introduction-to-elastic-stack/kibana-logo-color.png)
 
 4. ### Beats
-[**Beats**] (https://www.elastic.co/beats/) are open-source data collectors/ shippers that can be installed in servers to send operational data directly to elasticsearch or through Logstash for processing.
+[**Beats**](https://www.elastic.co/beats/) are open-source data collectors/ shippers that can be installed in servers to send operational data directly to elasticsearch or through Logstash for processing.
 Beats act as agents for capturing diverse data types, i.e., audit data, log files, network traffic, windows events log, which can then become visible in Kibana after being transformed.
 The beat application involved in data shipping is determined by the data file being retrieved i.e :
 
@@ -116,7 +116,7 @@ The following processes occur within the stack when using ELK for log analysis o
 
 1. Beat applications like filebeat or winlogbeats collect the log files based on the servers involved, then parse the logs to Logstash or Elasticsearch directly.
 2. Elasticsearch, which is a searchable database, receives the incoming pipelined data from Logstash and stores them ready for querying and transformation.
-3 Kibana then presents data through [dashboards](https://www.elastic.co/guide/en/kibana/current/dashboard.html) in a visually appealing manner, i.e., through the use of histograms, graphs, and heat maps based on the settings that are configured by users at installation.
+3 Kibana then presents the transformed and analyzed data through [dashboards](https://www.elastic.co/guide/en/kibana/current/dashboard.html) in a visually appealing manner, i.e., through the use of histograms, graphs, and heat maps based on the settings that are configured by users at installation.
 
 ### Benefits of Using ELK
 + ELK is dynamic and scalable - support small scale data as well as large scale data based on users tuning, thus giving small corporations a chance to perform log analysis.
