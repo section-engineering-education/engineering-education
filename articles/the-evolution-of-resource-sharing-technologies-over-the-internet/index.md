@@ -18,7 +18,7 @@ images:
 With the growth of the internet and the web, there has always been a need for resource sharing and collaboration. As we could work more effectively through collaborating with others. This often involved the sharing or interaction of various software products.
 <!--more-->
 There arose the need for distributed computing. However, one of the biggest challenges of distributed computing was how to get software components located in different geographic locations to interact in a standardized way. They created several technologies to try and meet this need.
-
+TEST
 ### 1. CORBA OMG
 [CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture), which stands for the Common Object Request Broker Architecture (CORBA), is a standard defined by the Object Management Group (OMG). It is a distributed object which provides an interchange that enables collaboration between systems on different operating systems, programming languages, and computing hardware. It uses an object-oriented model, although the systems that use the CORBA do not have to be object-oriented. 
 
