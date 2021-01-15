@@ -16,7 +16,7 @@ MATLAB (an abbreviation of "matrix laboratory") is a programming language and nu
 MATLAB has an additional package "Simulink" which you can use for graphical multi-domain simulation and model-based design for dynamic and embedded systems. And you can get access to the symbolic computing abilities by using an optional toolbox that uses the MuPAD symbolic engine.
 
 ### Lets code!
-In heart, MATLAB is a calculator. For example, try: `1+1`, `sqrt(4)`, or `sin(pi/2)`.
+MATLAB is like any programming language that allows you to do mathematical operations. For example, try: `1+1`, `sqrt(4)`, or `sin(pi/2)`.
 
 Also, you can present complex numbers by:
 | Symbol  | Function  |   
@@ -41,6 +41,21 @@ a =
 
      1     2     3     4
 ```
+
+###### Slicing Operation
+If you want to output a specific range of elements, you have to reference the vector with a colon. For example:
+```matlab
+values=[6 513 21 9 23 1 0];
+values(2:5)
+```
+The result will be:
+```matlab
+ans =
+
+   513    21     9    23
+```
+And if you want to list all of the vector elements, you can use `values(:)`.
+
 ##### Column vector
 You need to use semicolons between values. For example:
 ```matlab
@@ -55,18 +70,6 @@ a =
      3
      4
 ```
-If you want to output a specific range of elements, you have to reference the vector with a colon. For example:
-```matlab
-values=[6 513 21 9 23 1 0];
-values(2:5)
-```
-The result will be:
-```matlab
-ans =
-
-   513    21     9    23
-```
-And if you want to list all of the vector elements, you can use `values(:)`.
 
 #### Matrix
 The matrix is a two-dimensional array of numbers.
@@ -93,9 +96,17 @@ ans =
 ```
 You can specify the rows you want before the comma, in our case, it is every row in that matrix. Also, you can specify the columns you want after the comma, in the code above it is the first and the second rows.
 
-Now go and execute `values(1:3, 2:4)` yourself. What will be the result?
+Try executing `values(1:3, 2:4)`. Check if you get the same result as shown below:
+```matlab
+ans =
+
+     2     3     4
+     6     7     8
+    10    11    12
+```
+
 #### Zeros, Ones and Eye
-When you use `zeros` which is a built-in function, it makes every value equal to zero. For example, if you write `a = zeros(4:5)` then the result will be four rows and five columns of zeros:
+When you use `zeros` which is a built-in function, it initializes a matrix of specified dimensions with values initialized to 0. For example, if you write `a = zeros(4:5)` then the result will be four rows and five columns of zeros:
 ```matlab
 a =
 
@@ -104,9 +115,9 @@ a =
      0     0     0     0     0
      0     0     0     0     0
 ```
-`Ones` use the same method above, it makes every value equal to one. Try `b = ones(5:6)` and see the result yourself.
+The `ones` method is similar to `zeros`, except it initializes the matrix's values to 1.
 
-`Eye` is a built-in function as well, it makes every value on the main diagonal equal to one and zeros elsewhere. Example:
+`Eye` is a built-in function that generates an identity matrix. An identity matrix is characterized by all diagonal elements being 1 and the non-diagonal entries equal to 0. Example:
 ```matlab
 c = eye(4)
 ```
@@ -120,7 +131,7 @@ c =
      0     0     0     1
 ```
 #### Linspace 
-Linspace function generates linearly spaced vectors. The difference between colon operator and linspace is that the second one gives us control over the points. For example, if you write `linspace(1,10,10)` then the result will be:
+`Linspace` generates vectors with entries spaced equidistantly. It takes in the starting point, the ending point, and the number of points as its arguments. For example, if you write `linspace(1,10,10)` then the result will be:
 ```matlab
 ans =
 
@@ -133,16 +144,13 @@ ans =
     1.0000    2.2857    3.5714    4.8571    6.1429    7.4286    8.7143   10.0000
 ```
 
-#### M-files
-Entering commands at MATLAB prompt is not practical when the problems will be complicated. The solution will be using M-files which is user-defined commands that normally have input & output and the script will be executed in sequence when it is called.
+#### MATLAB-files
+Using the MATLAB interpreter is not a wise choice for implementing and storing MATLAB code. Therefore, the code is stored in `.m` files.
 
-It is saved with the extension ".m".
-
-Now let's create a function. First of all, you need to press on *New Script*:
-
+Now let's begin by clicking on *New Script*.
 ![](/engineering-education/getting-started-with-matlab/1.PNG)
 
-Second, press on *New* then *Function*:
+Secondly, press on *New* followed by *Function*:
 
 ![](/engineering-education/getting-started-with-matlab/2.PNG)
 
@@ -164,7 +172,7 @@ ans =
 ```
 
 #### Plotting
-If you are familiar with the Matplotlib plotting library for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
+If you are familiar with the [Matplotlib plotting library](https://www.section.io/engineering-education/matplotlib-visualization-python/) for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
 
 To plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
 
@@ -172,11 +180,11 @@ Now let's move on to a complex example. We are going to create the following fig
 
 ![sin and cos waves](/engineering-education/getting-started-with-matlab/sin-cos.jpg)
 
-First of all, let's define the t (a variable indicating time).
+We need to define t (a variable indicating time).
 ```matlab
 t = 0:0.01:5
 ```
-Second, let's define the first sin wave:
+Then to define the first sin wave:
 ```matlab
 first = 3*sin(2*t+pi/2)
 subplot(2,2,1),plot(t,first)
