@@ -17,6 +17,38 @@ In this tutorial, we will go through the basics of the Node.js buffer and stream
 Streams allow us to access data from the source while the data is actively being transferred to its destination. They are basically objects that let us read data from the source (server) to the destination(browser) even in low bandwith
 Streams are objects that let us read and write data from source to the destination.
 In Node.js, each type of stream is an instance of the `EventEmitter`.
+
+### Why Streams matters in Node.js
+To explain this better, I am going to use a code example of how streams can increase efficiency in the application performance while giving composability in our code. We already know that any I/O bound tasks in Node.js is asynchronous. Therefore, interacting with the disk or network calls will involve callbacks and functions. This example below is a code that that serves up a file from disk:
+```javascript
+let http = require("http");
+let fs = require("fs");
+let server = http.createServer((req,res)=>{
+    fs.readFile(__dirname,+"/data.txt",(error,data)=>{
+        res.end(data)
+    });
+});
+server.listen(8000,()=>console.log("Our server is running on port 8000"))
+```
+The above code raises the concerns of:
+1. Before the respose is made back to the client, we need to buffer the entire `data.txt` file into memory in every request. This might not be an issue when the file size is small. When the `data.txt` file is large, the program performance decreases while using alot of memory especially when serving lots of concurrent requests. This is even more worse when users are on low bandwidth and slow network connections.
+2. This results in poor user experience as users will need to wait for the whole file to load in memory on the server before recieving the data.
+
+We could re-implement the above code to improve its flaws. First, our callback function containing the `(req,res)` arguments allow us to actually streams. This means we can therefore write this in a much better way using the `fs.createReadStream` instead of the `fs.readFile()` method. Here is an example:
+```javascript
+ let http = require("http");
+ let fs = require("fs");
+ let server = require((req,res)=>{
+     let stream = fs.createReadStream(__dirname + "/data.txt");
+     stream.pipe(res);
+ });
+ server.listen(8000);
+ ```
+ Code walkthrough:
+ 1. The `.pipe()` will be listening for the data and end events from the fs.createReadStream(). This will now write the write the data from the `data.txt` file in chunks to the clients as they are immediately being recieved.
+ 2. 
+
+### Types
 In the next sections, I will be discussing about the types of streams which include:
 1. Readable stream -- read from the meaning you recieve from them
 2. Writable stream --they're recieving inputs
