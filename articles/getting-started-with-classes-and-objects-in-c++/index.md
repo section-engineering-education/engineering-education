@@ -4,13 +4,13 @@ The C language limitations are evident when a software project is too large to m
 #### Prerequisites
 To follow this article, you’ll need to have:
 - [Codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
-- A basic understanding of the C++ language.
-- A basic understanding of functions.
+- A basic understanding of the [C++ language](https://www.section.io/engineering-education/intro-to-c-part1/).
+- A basic understanding of [functions](https://www.section.io/engineering-education/functions-in-cpp/).
 
-#### What is a Class?
+#### What is a class?
 A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword, whose functionality is similar to that of the `struct` C keyword, but with the option of including functions as members rather than data. Classes are data types specified by users and behave like a programming language's built-in types. We can construct objects of any number belonging to that class after the class has been defined.
 
-#### What is an Object?
+#### What is an object?
 An object is a data structure that encapsulates data and functions in a single construct. In an object-oriented framework, they are the basic run-time entities. Objects can represent anything the program has to handle, such as a shape, a place, time, and many others.
 
 Objects communicate by sending messages to each other when a program is being executed. Each object requires data and functions to modify the data. They can interact without having to know each other's data or function details.
@@ -47,16 +47,16 @@ After writing the class's name, we open the class, using the curly bracket `{` a
 
 Let's get started and create our first class and object!
 
-#### Step 1 – Creating a console wizard application
+#### Step 1 – creating a console wizard application
 In the first step, we're going to create a console application. Open code blocks and click create a new project with console application wizard and select the language as C++. On the next page, give the project a title. In this case, we are going to name it after our class `person` example. Keep the default settings. 
 
 ![Console app](/engineering-education/getting-started-with-classes-and-objects/console.png)
 
 Click `Finish` to create the project.
 
-#### Step 2 – Creating a class
+#### Step 2 – creating a class
 On your project window, 
-- Select `person -> sources -> main.cpp` - On the screen that will be displayed, we can go ahead and keep `#include<iostream>` and `using namespace std`, the header file containing definitions objects like cin, cout, which stands for input-output manipulators. When we run a program to print something, it says if you find something that is not declared in the current scope, check `std` respectively. 
+- Select `person -> sources -> main.cpp` - On the screen that will be displayed, we can go ahead and keep `#include<iostream>` and `using namespace std` library files. `#include<iostream>` is the header file containing definitions objects like cin, cout, which stands for input-output manipulators. `namespace` is used to avoid conflicts in files having the same variable names and function names in the same scope. `using namespace std` means that we use the namespace called standard. It is because the compiler needs to know the definition of the code of the functionalities which is defined in the header file `#include<iostream>`. `using namespace std` is required when functionalities like `cout`, `cin` and `endl` is used, but not defined in the current scope, the compiler needs to know where to check. If this namespace is not used, the compiler generates errors.
 - Go ahead and clear the default main function program example. Add the following code after `using namespace std` to create the class:
 
 ```c++
@@ -91,7 +91,7 @@ We can break down the code, as shown below:
 
 It's that simple to create a class. You need data and functions that manipulate the data. In the program above, we have created our class `person`, which is used to get and display the user's name and age details. 
 
-#### Step 3 – Defining the functions
+#### Step 3 – defining the functions
 Now that we have the class, we can create objects from it, but before we create the object, let's first define our functions. We can define functions either within the class(inline member functions) or outside the class(non-inline member functions).
 
 For example, in the class `person`, the function `void get_details(void)` is inline as the function has been defined within the class. The function prototype ` void display_details(void);` can be defined outside the class using the scope resolution operator`::,` which specifies the class to which the member being declared belongs:
@@ -104,7 +104,7 @@ void person::display_details(void);
 ```
 The scope resolution operator specifies that the function `display_details` belongs to the class `person`.
 
-#### Step 4 – Creating an object
+#### Step 4 – creating an object
 In this step, we will create the object, which is simply a variable of the `type` class. After our class has been defined, we can declare any number of objects from it in the main function. To create the object, we specify our class's name, followed by the desired object name.
 
 For example, from our class `person`, we can create an object as shown below:
@@ -126,7 +126,7 @@ int main()
 Using the dot membership operator `.`, public member functions can be accessed through the class object. Related to a data member of the class is accessed. The dot operator specifies the data or function belonging to a particular object.
 **NOTE:** The user is not limited to the number of objects he/she can create.
 
-#### Step 5 - Compiling and running our program
+#### Step 5 - compiling and running our program
 Let us put the concepts above together to create a complete program that will take a user's name and age and display, as shown below:
 ```c++
 #include <iostream>
@@ -166,10 +166,10 @@ int main()
     return 0;
 }
 ```
-After compiling our program, we can run it. Our program takes user input in the console window. Hence, we need to input the name and age details. Let's input the name David and age 30 as an example.
+We can compile and run our program [here](https://repl.it/@Dawe7/class-person#main.cpp). Our program takes user input in the console window. Hence, we need to input the name and age details. Let's input the name David and age 30 as an example.
 When the above code is compiled and executed, it produces the following result after entering the details we have stated above:
 
-```
+```bash
 Enter your Name:
 David
 Enter your Age:
@@ -236,11 +236,14 @@ int main()
 	return 0;
 }
 ```
+Go ahead and run the program [here](https://repl.it/@Dawe7/Objects-as-function-arguements-1#main.cpp).
 output:
+
+```bash
 C value:5
 C value:15
 C value:20
-
+```
 We are passing objects `a1` and `a2` as arguments to the member function `sum` and adding the value of ` c` data members of both objects and allocating to the current objects (that will call the function, which is `a3`) data member `c`.
 
 #### Conclusion
