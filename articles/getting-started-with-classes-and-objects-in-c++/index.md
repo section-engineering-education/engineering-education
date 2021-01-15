@@ -96,7 +96,7 @@ Now that we have the class, we can create objects from it, but before we create 
 
 For example, in the class `person`, the function `void get_details(void)` is inline as the function has been defined within the class. The function prototype ` void display_details(void);` can be defined outside the class using the scope resolution operator`::,` which specifies the class to which the member being declared belongs:
 ```c++
-Void person::display_details(void);
+void person::display_details(void);
 {
 	cout<<” NAME: “<<name<<endl;
 	cout<<” AGE: “<<age<<endl;
