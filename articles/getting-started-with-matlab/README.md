@@ -42,7 +42,7 @@ a =
      1     2     3     4
 ```
 
-###### Slicing Operation
+##### Slicing Operation
 If you want to output a specific range of elements, you have to reference the vector with a colon. For example:
 ```matlab
 values=[6 513 21 9 23 1 0];
