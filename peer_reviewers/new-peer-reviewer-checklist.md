@@ -40,7 +40,7 @@
 
 - Section team reviews article (Round 1):
 
-	- Formatting [add front matter - check that description is around 150 characters - add hero image (if needed)]
+	- Formatting [[add front matter](https://github.com/section-io/engineering-education/blob/master/peer_reviewers/front-matter-process.md) - check that description is around 150 characters - add hero image (if needed)]
 
 	- Check all links work and lead to the intended website
 	
