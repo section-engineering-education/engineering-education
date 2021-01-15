@@ -60,7 +60,7 @@ choice = ["rock", "paper", "scissors"]
 ```
 Your terminal would display,
 
-![Input field](Input.png)
+![Input field](input.png)
 
 **Random** is a built in module which generates random values within a particular specified range.
 
