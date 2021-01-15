@@ -20,9 +20,9 @@ It supports strategic intelligence, which provides queries, intelligence tools, 
 Teradata database has the following features.
 
 * **Structured Query Language (SQL):** Teradata provides an extension for SQL, which interacts with data.
-* **Linear scalability:** The system of Teradata can be scaled up linearly to increase the number of nodes. An increased number of nodes improves system performance. 
-* **Unlimited Parallelism:** This feature enables huge tasks to be divided into smaller tasks. These tasks can be run in a parallel manner. 
-* **Automatic distribution:** The distribution of data in the disks does not require manual intervention (It is automatic).
+* **Linear scalability:** The Teradata system can be scaled up linearly to increase the number of nodes. An increased number of nodes improves system performance. 
+* **Unlimited Parallelism:** This feature enables huge tasks to be divided into smaller tasks. One can run these tasks in a parallel manner. 
+* **Automatic distribution:** The disks' distribution of data does not require manual intervention (It is automatic).
 * **Mature Optimizer:** Teradata has an advanced optimizer that can support many joins in one query. 
 * **Total cost of ownership (TCO):** It provides a low TCO. This is because of the easy setup, administration, and maintenance. 
 * **Robust Utilities:** It consists of robust utilities such as Multiload, FastExport, TPT, and FastLoad. These utilities enable users to import or export data (from or to the Teradata system).
@@ -124,8 +124,3 @@ Teradata is used in various industries such as healthcare, finance, manufacturin
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
-
-
-
-
-
