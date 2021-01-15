@@ -12,8 +12,7 @@ When watching a game online, we often say that we are streaming. At times in the
 In the next part, we will be switching our focus to the stream module in Node.js.
 
 ### The Node.js stream module
-Streams allow us to access data from the source while the data is actively being transferred to its destination in a more efficient manner. Streams are just objects that let us read data from the input or write to outputs sequentially.
-To explain this better, I am going to use an example in a moment. We already know that any I/O bound tasks in Node.js is handled asynchronously. Therefore, interacting with the disk or network calls will involve callback functions. 
+Streams allow us to access data from the source while the data is actively being transferred to its destination in a more efficient manner. Streams are just abstract object interfaces that let us read data from the input or write to outputs sequentially. To explain this better, I am going to use an example in a moment. We already know that any I/O bound tasks in Node.js is handled asynchronously. Therefore, interacting with the disk or network calls will involve callback functions. 
 Here is an example code that that serves up a file from disk:
 
 ```javascript
@@ -21,7 +20,7 @@ const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer((req,res)=>{
-    fs.readFile(__dirname,+"/data.txt",(error,data)=>{
+    fs.readFile(__dirname, +"/data.txt", (error,data)=>{
         res.end(data);
     });
 });
@@ -41,14 +40,14 @@ We could re-implement the above code to improve its flaws. First, our callback f
 ```javascript
  const http = require("http");
  const fs = require("fs");
- const server = require((req,res)=>{
+ const server = require((req, res) => {
      const stream = fs.createReadStream(__dirname + "/data.txt");
      stream.pipe(res);
  });
  server.listen(8000);
  ```
  In the program:
- - The `.pipe()` method will be listening for the data and end events from the `fs.createReadStream()`. 
+ - The `.pipe()` method will be listening for the data and end events from the `fs.createReadStream()` and pair the inputs with the outputs. 
 
  - This will write the data from the `data.txt` file in chunks to the clients as we immediately recieve them. 
 
@@ -67,7 +66,7 @@ readableStream.push("this is a readable stream");
 readableStream.push("Yet another data push to the readable stream");
 readableStream.push(null);
 ```
-In the above code, we can see that readable streams are generators of data where we can write data using the `readableStream.push()` method. The `new Stream.Readable()` will initialize the `readableStream` object before pushing data into it using it using the `readableStream.push()` method. passin a `null` in the `readableStream.push(null)` tells the consumer that our stream object is done outputing the data.
+In the above code, we can see that readable streams are generators of data where we can write data using the `readableStream.push()` method. The `new Stream.Readable()` interface will initialize the `readableStream` object before pushing data into it using it using the `readableStream.push()` method. passin a `null` in the `readableStream.push(null)` tells the consumer that our stream object is done outputing the data.
 
 
 
@@ -84,14 +83,15 @@ Writable streams are data recievers that is, we can pipe to but not pipe from th
     process.stdin.pipe(writableStream);
 ```
 To create a writable stream, we have defined a `writableStream._write` as an arrow function that we use to pipe a readable stream into it. The `chunk` argument refers to the data written by the emitter. The `next` arguments is a callback function that will allow the consumer to write more data. The piping is the process that will allow data flow in an efficient manner.
-When we need to write into our writeable streams, we can call `.write(data)`method passing along the data we want to write:
+When we need to write into our writeable streams, we can call `.write(data)`method passing along the data we want to write.
+The `fs` module can be used to read from and write to files using a stream interface
 Calling the `.end()` method tells the reciever that we are done. Here is an example using the `fs` module:
 ```javascript
 const fs = require("fs");
 const writableStream = new fs.createWriteStream();
 
 // Pipe a readable stream
-writableStream.write("beep");
+writableStream.write("data one");
 writableStream.end();
 ``` 
 
@@ -105,10 +105,12 @@ a.pipe(b).pipe(a)
 They are special type of duplex streams that allow the output to transform its input meaning we calculate the output from the inputs.
 
 ### Summary
-Streaming and buffering allows us to read data piece by piece while processing its content. This proves to be more memory efficient as you do not have to load large data. The end result is a more performant applicaton (it will take less time to start processing) even for users on slow network connections. In the context of the backend developers, the code composability and the way we handle I/O tasks and all end to end communications is greatly improved.
+Streaming and buffering allows us to read data piece by piece while processing its content. This proves to be more memory efficient as you do not have to load large data. The end result is a more performant applicaton (it will take less time to start processing) even for users on slow network connections. In the context of the backend developers, they help us write an idiomati composable code that handles I/O tasks in a scalable manner.
 
 ### Extra Resources
 
 - [The Node.js streams handbook](https://github.com/substack/stream-handbook).
   
-- [Node.js documentation](https://nodejs.org/api/buffer.html).
+- [Node.js buffer documentation](https://nodejs.org/api/buffer.html).
+
+- [Node.js streams documentation](https://nodejs.org/api/stream.html).
