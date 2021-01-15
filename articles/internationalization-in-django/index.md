@@ -16,11 +16,11 @@ Django is one of the most popular web frameworks known for its battery-inclusion
 
 ### What is internationalization and why it is needed
 
-Internationalization, abbreviated as i18n, involves making a software application translatable to have a wider audience in the international market.
+Internationalization, abbreviated as i18n, involves making a software application translatable to have a broader audience in the international market.
 
-With the internet's borderlessness, it binds different individuals speaking different languages to come across your web application.
+The internet's borderlessness binds different individuals speaking different languages to come across your web application.
 
-Considering language being a major barrier in software adoptions, the introduction of i18n in web frameworks helps translators perform translations for varied languages.
+Considering language being a significant barrier in software adoptions, the introduction of i18n in web frameworks helps translators perform translations for varied languages.
 
 Why should developers care?  
 When one intends to scale their applications beyond the immediate environment, the need for internationalization arises.
@@ -162,7 +162,7 @@ This is because Django is looking for a folder named *" locale"*. By default, th
 1. The base folder of the Django project itself
 2. The base folder of one of the Django apps, in our case, "simple."
 
-To direct Django, we add a `LANGUAGE_PATHS,` a list similar to **TEMPLATES.DIR** that gives several locations to search.
+To direct Django, we add`LANGUAGE_PATHS,` a list similar to **TEMPLATES.DIR** that gives several locations to search.
 
 In ***settings.py***:
 
@@ -227,7 +227,7 @@ MIDDLEWARE_CLASSES = [
 ]
 ```
 
-Our **simple** app creates a folder named *locale*, which shall store the message file for our application. Then rerun the `makemessages` command in the app-level (**simple**):
+Our **simple** app creates a folder named *locale*, storing the message file for our application. Then rerun the `makemessages` command in the app-level (**simple**):
 
 ```bash
 >> cd simple
@@ -275,7 +275,7 @@ Note that the above command should run in the same directory `django-admin makem
 
 ### Pluralization
 
-Pluralization simply means providing a singular word with its plural form.
+Pluralization means providing a singular word with its plural form.
 The function responsible for pluralization in Django is **ngettext()**, which takes three arguments; the singular string, the plural string, and the number of objects expected to be represented.
 
 For example:
@@ -412,7 +412,7 @@ Start your local server:
 >> python manage.py runserver
 ```
 
-Visit <http://localhost:8000/home/>, there are no obvious changes. Let's compile the messages file.
+Visit <http://localhost:8000/home/>, there are no apparent changes. Let's compile the messages file.
 
 ```bash
 >> django-admin compilemessages
@@ -423,7 +423,7 @@ Now, visiting <http://localhost:8000/home/>, you should see the translated versi
 ### Summary
 
 In this article, we discussed what internationalization is and how Django handles it.
-We discussed the developer's role in relation to internationalization and how translators can access messages files.
+We discussed the developer's role in relation to internationalization and how translators can access message files.
 We also showed how translations could be done in the Django templates.
 
 ### References
