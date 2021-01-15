@@ -1,9 +1,22 @@
-# Internalization in Django
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/internationalization-in-django/
+title: Internalization in Django
+description: This article shows how to utilize i18n to reduce language barriers in web applications. Internationalization, abbreviated as i18n, involves making a software application translatable to have a broader audience in the international market.
+author: ifenna-okoye
+date: 2021-01-15T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/internationalization-in-django/hero.jpg
+    alt: Internalization in Django example image
+---
 Django is one of the most popular web frameworks known for its battery-inclusion. One of the inbuilt features of Django is internationalization (popularly referred to as i18n). This article shows how to utilize i18n to reduce language barriers in web applications by offering their content in languages tailored to the audience.
-
-## Table of Content
-
+<!--more-->
+### Table of content
 - [Internalization in Django](#internalization-in-django)
   - [Table of Content](#table-of-content)
     - [What is internationalization and why it is needed](#what-is-internationalization-and-why-it-is-needed)
@@ -15,7 +28,6 @@ Django is one of the most popular web frameworks known for its battery-inclusion
     - [References](#references)
 
 ### What is internationalization and why it is needed
-
 Internationalization, abbreviated as i18n, involves making a software application translatable to have a broader audience in the international market.
 
 The internet's borderlessness binds different individuals speaking different languages to come across your web application.
@@ -25,16 +37,17 @@ Considering language being a significant barrier in software adoptions, the intr
 Why should developers care?  
 When one intends to scale their applications beyond the immediate environment, the need for internationalization arises.
 
-Django supports text translation. According to the Django official documentation:
+Django supports text translation. 
+
+According to the Django official documentation:
 > Essentially, Django does two things:  
 >
 > - It allows developers and template authors to specify which parts of their apps should be translated or formatted for local languages and cultures.
 > - It uses these hooks to localize Web apps for particular users according to their preferences.
 
-Developers do internationalization since it involves preparing software for localization -- target audience.
+Developers implement internationalization since it involves preparing the software for localization -- or the target audience.
 
 ### Translation strings and message files
-
 I18n involves translating from one language to another. We need to know which information (dynamic and static data) will be translated. One may choose to translate a fraction of a software application, whereas another can choose to translate the whole application.
 
 The selected information translated to the end user's language is referred to as "translation strings."
@@ -43,21 +56,20 @@ The message file is a file that contains these translation strings and their equ
 Translators fill message files with translations for the target language.
 
 ### Language file creation
-
-Let's create a Django project titled **transy**
+Let's create a Django project titled **transy**.
 
 ```bash
 >> django-admin startproject transy
 >> cd transy
 ```
 
-We create an app named **simple**
+We create an app named **simple**.
 
 ```bash
 >> python manage.py startapp simple
 ```
 
-Add it to `INSTALLED_APPS` in **settings.py**
+Add it to `INSTALLED_APPS` in **settings.py**.
 
 ```python
 ...
@@ -74,7 +86,7 @@ INSTALLED_APPS = [
 ...
 ```
 
-Setup URLs in **transy/urls.py** and **simple/urls.py**
+Setup URLs in **transy/urls.py** and **simple/urls.py**.
 
 ```python
 # in transy/urls.py
@@ -132,7 +144,7 @@ To use gettext() on Windows, you will need to download the executable file from 
 
 Django comes with the `django-admin makemessages` command, which creates and updates the message files by pulling out all strings marked for translation. Run the command to create a message file for our simple app:
 
-If you execute `django-admin makemessages --all` and run into CommandError like below, make sure you have gettext binary file installed. `de` and `fr` are the language codes for German and French, respectively.
+If you execute `django-admin makemessages --all` and run into CommandError like below, make sure you have the gettext binary file installed. `de` and `fr` are the language codes for German and French, respectively.
 
 ```bash
 >> django-admin makemessages -l de   
@@ -144,13 +156,13 @@ Error:
 CommandError: Cannot find msguniq. Make sure you have GNU gettext tools 0.15 or newer installed
 ```
 
-The command for creating message files is in this format `django-admin makemessages -l <LANGUAGE_CODE>`. If you would like to find out the available language codes in Django, check out [this list](https://github.com/django/django/blob/bebd4cfa8f5e0d2dff2de5e50d86e849a40f4bb2/django/conf/global_settings.py#L51)
+This command is used when creating message files is in this format `django-admin makemessages -l <LANGUAGE_CODE>`. If you would like to find out the available language codes in Django, check out [this list](https://github.com/django/django/blob/bebd4cfa8f5e0d2dff2de5e50d86e849a40f4bb2/django/conf/global_settings.py#L51)
 
 ```bash
 >> django-admin makemessages -l fr
 ```
 
-You will run into a CommandError like below:
+You will run into a CommandError like the one below:
 
 ```bash
 >> django-admin makemessages -l fr  
@@ -159,7 +171,7 @@ CommandError: Unable to find a locale path to store translations for file simple
 
 This is because Django is looking for a folder named *" locale"*. By default, the script `django-admin makemessages -l fr` is expected to run from one of these two places:
 
-1. The base folder of the Django project itself
+1. The base folder of the Django project itself.
 2. The base folder of one of the Django apps, in our case, "simple."
 
 To direct Django, we add`LANGUAGE_PATHS,` a list similar to **TEMPLATES.DIR** that gives several locations to search.
@@ -202,7 +214,7 @@ LANGUAGES = [
 ]
 ```
 
-We can include Django's `LocaleMiddleware,` which allows the user to specify the language preferred.
+We can include Django's `LocaleMiddleware,` which allows the user to specify their preferred language.
 
 ```python
 MIDDLEWARE_CLASSES = [
@@ -214,7 +226,7 @@ MIDDLEWARE_CLASSES = [
 ]
 ```
 
-Because `LocaleMiddleware` makes use of session and cache (if set) data, it is advised to place `LocaleMiddleware` after the two ( or one, if the `CacheMiddleware` is not set).
+Because `LocaleMiddleware` makes use of session and cache (if set) data, it is advised to place `LocaleMiddleware` after the two (or one, if the `CacheMiddleware` is not set).
 
 ```python
 MIDDLEWARE_CLASSES = [
@@ -271,12 +283,10 @@ Upon translations made available, we compile them by running the following comma
 
 Note that the above command should run in the same directory `django-admin makemessages` was executed, **simple** app. Each time changes are made to message (**.po**) files, you must compile them.
 
-`django-admin compilemessages` create **.mo** files, which according to the Django documentation, are binary files optimized for use by **gettext**.
+`django-admin compilemessages` create **.mo** files, which according to the Django documentation, are binary files optimized to be use by **gettext**.
 
 ### Pluralization
-
-Pluralization means providing a singular word with its plural form.
-The function responsible for pluralization in Django is **ngettext()**, which takes three arguments; the singular string, the plural string, and the number of objects expected to be represented.
+Pluralization means providing a singular word with its plural form. The function responsible for pluralization in Django is **ngettext()**, which takes three arguments; the singular string, the plural string, and the number of objects expected to be represented.
 
 For example:
 
@@ -295,11 +305,10 @@ def user_dashboard(request, count):
     return HttpResponse(statistics)
 ```
 
-### Using Translations in Template
+### Using translations in template
+Often, one would like to apply translations directly in the Django template. To achieve this in our Django project named **trans**, we need to load an internationalization tag similar to how *"static"* is loaded in the template files.
 
-Often, one would like to apply translations directly in the Django template. To achieve this in our Django project titled **trans**, we need to load an internationalization tag similar to how *"static"* is loaded in template files.
-
-In our app template folder, create **home.html** file:
+In our app template folder, create a **home.html** file:
 
 ```html
 {% load static %}
@@ -333,7 +342,9 @@ To include translations in the template folder, Django provides `{% translate '<
 ```
 
 `translate` accepts either a string or a variable but never both.
-`blocktranslate` accepts a mix of strings, variables and template literals.  For example:
+`blocktranslate` accepts a mix of strings, variables and template literals.  
+
+For example:
 
 ```html
 {% for house in houses %}
@@ -346,14 +357,16 @@ To include translations in the template folder, Django provides `{% translate '<
 {% endfor %}
 ```
 
-We update the messages file for our **home.html** file. Django detects changes and automatically updates the messages file.
+We update the messages file for our **home.html** file. Django detects the changes and automatically updates the messages file.
 
 ```bash
 >> django-admin makemessages -l de
 processing locale de
 ```
 
-Take a look at the generated message (**.po**) file for German (de). You find something similar to this:
+Take a look at the generated message (**.po**) file for German (de). 
+
+You will find something similar to this:
 
 ```txt
 # SOME DESCRIPTIVE TITLE.
@@ -421,13 +434,9 @@ Visit <http://localhost:8000/home/>, there are no apparent changes. Let's compil
 Now, visiting <http://localhost:8000/home/>, you should see the translated version since we previously set `LANGUAGE_CODE='de'`, the browser detects this and uses the translation provided for German.
 
 ### Summary
-
-In this article, we discussed what internationalization is and how Django handles it.
-We discussed the developer's role in relation to internationalization and how translators can access message files.
-We also showed how translations could be done in the Django templates.
+In this article, we discussed what internationalization is and how Django handles it. We discussed the developer's role in relation to internationalization and how translators can access message files. We also showed how translations could be done in the Django templates.
 
 ### References
-
 [Django Software Foundation Documentation: Internationalization and Localization](https://docs.djangoproject.com/en/3.1/topics/i18n/#internationalization-and-localization)
 
 ---
