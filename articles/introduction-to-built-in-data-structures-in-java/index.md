@@ -36,7 +36,7 @@ Data structures like Stack or Queue can be created on our own using other basic 
 
 Built-in data structures do not require the creation of a data structure from scratch. But, we can make use of prebuilt methods that abstract the working of the data structure.
 
-By using built-in data structures, we can improve productivity by writing the operations of data structures from scratch. Also, built-in data structures are generally written with the most efficient time and space complexities.
+Using built-in data structures, has improved the productivity of the developer, since writing operations for the user-defined data structures is time consuming, and cannot guarantee the efficiency. Also, built-in data structures are generally written with the most efficient time and space complexities.
 
 Time and space complexities are measures of code that ensures the effective usage of time and memory while running a code snippet. By reducing these complexities, the efficiency of data structures can be improved.
 
@@ -99,7 +99,7 @@ list1.remove(0); // Removes "Hello" from list1
 
 #### LinkedList
 
-Linked lists are linear data structures that are connected using pointers, and holds data. The memory allocation is not contiguous which makes it better than the use of Arrays.
+Linked lists are linear data structures that are connected using pointers, and holds data. Pointers are used to store and manage the addresses of dynamically allocated blocks of memory. The memory allocation is not contiguous which makes it better than the use of Arrays.
 
 While creating linked lists in Java, we have to create a class for defining the structure of every node of the linked list. A sample class demonstrating the creation of pointers in user-defined linked list is shown as below:
 
@@ -157,7 +157,12 @@ list2.set(0, "Welcome"); // Update the string at index 0 to "Welcome"
 
 Similarly, for deletion of an element in a user-defined linked list is cumbersome, where the pointer of the previous element is pointed to the address of the next element. When working with huge data, working with pointers is not easy.
 
-`LinkedList` data structure uses `remove(Object)` methods for deletion of elements from the linked list.
+Deletion of an element in a user-defined linked list happens in the below mentioned sequence of steps:
+- Initialize a pointer `node` as `node = head`.
+- Traverse the linked list until you reach the element (`node.next.val != value`) that you wish to delete.
+- On reaching the node, we point the `node` to `node.next.next`, which means, we point the previous node to the next node. `node = node.next.next`.
+
+By using built-in data structures, the above sequence can be avoided using `remove(Object)` method for deletion of elements from the linked list.
 
 Example:
 
@@ -248,7 +253,11 @@ Example:
 ```java
 stack.pop(); // Removes 11 from Stack
 // OUTPUT: stack = [10]
+stack.pop() // Remove 10 from Stack
+// OUTPUT: EmptyStackException
 ```
+
+If your `Stack` is empty i.e. `(stack.size() == 0)`, then popping of elements is not possible. If you still proceed with `pop()` method, then it would raise an exception called `EmptyStackException`.
 
 #### Queue
 
