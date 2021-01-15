@@ -1,10 +1,10 @@
 ### Introduction to Scikit-Learn in Python - Part 1
 
-The concept of Machine Learning has been blooming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to Data Science or Machine Learning. An important ingredient for establishing familiarity in this field is to know your libraries and dependencies, as a major chunk of your work goes towards having the right approach towards the problem and manipulating the dataset with regards to your approach. This multi-part article focuses on introducing the reader to SciKit-Learn, an important library that is used to build statistical models that are used to make predictions.
+The concept of Machine Learning has been blooming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to Data Science or Machine Learning. An essential ingredient for establishing familiarity in this field is to know your libraries and dependencies. Your work's significant chunk goes towards having the right approach towards the problem and manipulating the dataset regarding your approach. This multi-part article introduces the reader to SciKit-Learn, a vital library used to build statistical models to make predictions.
 
 ### Pre-Requisites
 
-The reader is expected to have a basic understanding of basic libraries like NumPy and Pandas, machine learning, and machine learning algorithms including linear and logistic regression, support vector machines and decision trees and boosting algorithms. For better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](https://www.section.io/engineering-education/introduction-to-numpy/), [Matplotlib](https://www.section.io/engineering-education/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
+The reader is expected to understand basic libraries like NumPy and Pandas, machine learning, and machine learning algorithms, including linear and logistic regression, support vector machines and decision trees, and boosting algorithms. For better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](https://www.section.io/engineering-education/introduction-to-numpy/), [Matplotlib](https://www.section.io/engineering-education/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
 
 ### Table of Contents
 
@@ -21,7 +21,7 @@ The reader is expected to have a basic understanding of basic libraries like Num
 
 ### Introduction
 
-SciKit-Learn (often referred to as sklearn) provides a wide array of statistical models and machine learning. sklearn, unlike most modules is written in Python and not in C. Although written in Python, sklearn's performance is attributed to its usage of NumPy for high-performance linear algebra and array operations. SciKit-Learn was written as a part of Google's Summer of Code project and has since made lives easier for thousands of Python centered data scientists across the world. This part of the series focuses on introducing the library on the whole and focus on one aspect - dataset transformations, an important and crucial step to go through before building a prediction model.
+SciKit-Learn (often referred to as sklearn) provides a wide array of statistical models and machine learning. sklearn, unlike most modules, is written in Python and not in C. Although written in Python, sklearn's performance is attributed to its usage of NumPy for high-performance linear algebra and array operations. SciKit-Learn was written as a part of Google's Summer of Code project and has since made lives easier for thousands of Python centered data scientists worldwide. This part of the series focuses on introducing the library and focusing on one aspect - dataset transformations, an important and crucial step to go through before building a prediction model.
 
 ### Installing the Scikit-Learn Library
 
@@ -34,7 +34,7 @@ Scikit-Learn requires the following libraries to be pre-installed: NumPy, SciPy,
 \>> pip install sympy
 \>> pip install pandas
 
-Now that we've installed the dependent libraries, let us install Scikit-Learn.
+Now that we've installed the dependent libraries let us install Scikit-Learn.
 
 \>> pip install scikit-learn
 
@@ -47,7 +47,7 @@ Yes, it works!
 
 ### Dataset Transformations using sklearn
 
-An essential component for building a machine learning algorithm is data. A lot of work goes into preparing the data so that it can be fed to the model. This is called data preprocessing. Data preprocessing tasks can range from a mere change in notation to changing a continuous variable to a categorical variable. The sklearn.preprocessing package provides various functions and classes to change the representation of certain variables so that they can be better suited for the estimators down the model pipeline. So, let's go ahead and take a look at the methods that Scikit-Learn offers which help in data preprocessing and transformation. Before that, let's import the sklearn.preprocessing package.
+An essential component for building a machine learning algorithm is data. A lot of work goes into preparing the data so that it can be fed to the model. This is called data preprocessing. Data preprocessing tasks can range from a mere change in notation to changing a continuous variable to a categorical variable. The sklearn.preprocessing package provides various functions and classes to change the representation of certain variables to be better suited for the estimators down the model pipeline. So, let's go ahead and look at the methods that Scikit-Learn offers, which help in data preprocessing and transformation. Before that, let's import the sklearn.preprocessing package.
 
 ```py
 from sklearn import preprocessing
@@ -55,13 +55,13 @@ from sklearn import preprocessing
 
 ### Scikit-Learn for Standardization
 
-Standardization is an important task to be done for [distance based models](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) so that one particular feature does not dominate over the other. 
+Standardization is an essential task for [distance based models](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) so that one particular feature does not dominate over the other. 
 
 A data point x is standardized as follows:
 
 ![Standardization](/engineering-education/introduction-to-scikit-learn-in-python/standardization-formula.png)
 
-where µ is the mean of the distribution and σ is the standard deviation of the distribution. Standardization is centering around zero and scaling the data point such that the mean is 0 and the standard deviation is 1. This means all the data points now lie between -1 and 1. The reader is encouraged to go through this [resource](https://builtin.com/data-science/when-and-why-standardize-your-data) to get a better grip on why to standardize your features.
+Where µ is the mean of the distribution and σ is the standard deviation of the distribution. Standardization is centering around zero and scaling the data point such that the mean is 0, and the standard deviation is 1. This means all the data points now lie between -1 and 1. The reader is encouraged to go through this [resource](https://builtin.com/data-science/when-and-why-standardize-your-data) to get a better grip on why to standardize your features.
 
 The following are the temperatures recorded in Bloomington (in Fahrenheits) in Illinois in the month of January: [33.2,33.1,33.1,33.0,32.9,32.9,32.8,32.8,32.7,32.7,32.6,32.6,32.6,32.6,32.5,32.5,32.5,32.6,32.6,32.6,32.7,32.7,32.8,32.9,33.0,33.1,33.2,33.4,33.5, 33.7, 33.9].
 
@@ -92,11 +92,11 @@ print("Mean After Standardizing:",sum(temperatures_std.reshape(1,-1)[0])/len(tem
 ```
 Notice that after standardizing the data, the mean is almost 0.
 
-In the above example, fit_transform() is used. There are two important functions - fit() and fit_transform(). fit() is used to compute the mean and standard deviation which is later used for scaling along the feature axis and fit_transform() computes the mean and standard deviation, scales the vector and returns a NumPy array of the computed values. Therefore, standardization can either be done using fit() and transform() or in one single optimized step, fit_transform().
+In the above example, fit_transform() is used. There are two important functions - fit() and fit_transform(). fit() is used to compute the mean and standard deviation, which is later used for scaling along the feature axis and fit_transform() computes the mean and standard deviation, scales the vector, and returns a NumPy array of the computed values. Therefore, standardization can either be done using fit() and transform() or in one single optimized step, fit_transform().
 
 ### Scikit-Learn for Normalization
 
-[Normalization](https://en.wikipedia.org/wiki/Normalization_(statistics)) is another feature scaling technique used to transform the values of the numeric attributes to a common scale (0 to 1). Normalization is used in cases where the values do not follow Gaussian distribution. (Rule of thumb - Standardize if the attribute can be modelled to be a Gaussian distribution. If not, normalize) Normalization is important because it does not provide a window for the model to prefer one attribute over the other because of the scale of values. This [resource](https://blog.datasciencedojo.com/importance-of-data-normalization-prior-to-analytics/) by DataScienceDojo explains normalization with an easy-to-understand example.
+[Normalization](https://en.wikipedia.org/wiki/Normalization_(statistics)) is another feature scaling technique used to transform the values of the numeric attributes to a standard scale (0 to 1). Normalization is used in cases where the values do not follow Gaussian distribution. (Rule of thumb - Standardize if the attribute can be modeled to be a Gaussian distribution. If not, normalize) Normalization is important because it does not provide a window for the model to prefer one attribute because of the scale of values. This [resource](https://blog.datasciencedojo.com/importance-of-data-normalization-prior-to-analytics/) by DataScienceDojo explains normalization with an easy-to-understand example.
 
 A data point x is normalized as follows:
 
@@ -134,11 +134,11 @@ print("Maximum Value After Normalization:",max(temperatures_norm))
 
 ### Scikit-Learn for Encoding Categorical Features
 
-Almost every dataset has a feature (or more than one feature) which is [categorical](https://en.wikipedia.org/wiki/Categorical_variable) in nature. Consider a dataset containing the details of all the passengers of a certain airline. The possible categorical variables in the dataset could be the passenger's gender (male/female) and their choice of seating (economy, business, first-class). Estimators take in only numerical data and hence, these categorical features have to be encoded.
+Almost every dataset has a feature (or more than one feature), which is [categorical](https://en.wikipedia.org/wiki/Categorical_variable) in nature. Consider a dataset containing the details of all the passengers of a certain airline. The possible categorical variables in the dataset could be the passenger's gender (male/female) and their seating choice (economy, business, first-class). Estimators take in only numerical data, and hence, these categorical features have to be encoded.
 
 There are 2 types of encoding - [Label Encoding](https://www.geeksforgeeks.org/ml-label-encoding-of-datasets-in-python/) and [One Hot Encoding](https://medium.com/@michaeldelsole/what-is-one-hot-encoding-and-how-to-do-it-f0ae272f1179)
 
-Summarizing the above resources with an example, assume a dataset of car information that has a feature "Manufacturer" and there are three car manufacturers - Ford, Hyundai and Tata. Label Encoding would mean replacing all "Ford" with 0, all "Hyundai" with 1 and all "Tata" with 2 and one hot encoding would have three more features, 1 representing if the manufacturer was indeed that company, 0 indicating otherwise.
+Summarizing the above resources with an example, assume a dataset of car information with the feature "Manufacturer," and there are three car manufacturers - Ford, Hyundai, and Tata. Label Encoding would mean replacing all "Ford" with 0, all "Hyundai" with 1, and all "Tata" with 2, and one hot encoding would have three more features, 1 representing if the manufacturer was indeed that company, 0 indicating otherwise.
 
 ```py
 from sklearn.preprocessing import LabelEncoder
@@ -206,7 +206,7 @@ print(encoded.transform(band_list).toarray())
 
 ### Scikit-Learn for Filling Missing Values
 
-For every project, almost 70% of time and resources are spent on collecting and cleaning the dataset. And when one deals with a real-life dataset, there is always missing values. Cleaning the dataset and handling missing data is important as many machine learning algorithms do not accommodate a missing attribute in the data. This is where Scikit-Learn's impute module comes into play. A simple way to deal with missing values is to remove the row of data that has a missing value, which would mean losing valuable-yet-incomplete data. A better way is to replace the missing values with values that can be inferred from known data. One way would be to replace the missing data with the mean of that column.
+Almost 70% of time and resources are spent on collecting and cleaning the dataset for every project. And when one deals with a real-life dataset, there are always missing values. Cleaning the dataset and handling missing data is important as many machine learning algorithms do not accommodate a missing attribute in the data. This is where Scikit-Learn's impute module comes into play. A simple way to deal with missing values is to remove the row of data with a missing value, which would mean losing valuable-yet-incomplete data. A better way is to replace the missing values with values that can be inferred from known data. One way would be to replace the missing data with the mean of that column.
 
 Missing values are encoded with NumPy's NaN (numpy.nan)
 
@@ -245,7 +245,7 @@ print(*temperatures_np, sep=", ")
 #          [32.7], [32.7], [32.6], [32.91111111], [32.6], [32.9], [32.8], [32.8], [32.5], [32.6], [32.91111111], [32.6], 
 #          [32.7], [32.7], [33.5], [33.7], [33.9]
 ```
-SimpleImputer provides four options for strategy - mean, median, most_frequent and constant. Since mean was the chosen strategy, the nan's were replaced with the mean of the temperatures (which is 32.91111111). Had most_frequent been the chosen category,
+SimpleImputer provides four options for strategy - mean, median, most_frequent, and constant. Since mean was the chosen strategy, the nan's were replaced with the mean of the temperatures (32.91111111). Had most_frequent been the chosen category,
 
 ```py
 # Create an instance of the imputer
@@ -278,7 +278,7 @@ print(*temperatures_np,sep=", ")
 
 ### Conclusion
 
-This article was a delve into the multi-faceted world of scikit-learn. Scikit-Learn is a very important package to have understood and worked with in every data scientist's journey. This article was aimed at making the reader comfortable with data manipulation using sklearn and would prove to be a great starting point for Scikit-Learn.
+This article was a delve into the multi-faceted world of scikit-learn. Scikit-Learn is a very important package to have understood and worked within every data scientist's journey. This article aimed to make the reader comfortable with data manipulation using sklearn and would prove to be a great starting point for Scikit-Learn.
 
 ### Further Readings
 
@@ -291,3 +291,7 @@ This article was a delve into the multi-faceted world of scikit-learn. Scikit-Le
 4. [Machine Learning Mastery](https://machinelearningmastery.com/handle-missing-data-python/)
 
 5. [Data Camp](https://www.datacamp.com/community/blog/scikit-learn-cheat-sheet)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
