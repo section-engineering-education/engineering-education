@@ -120,7 +120,7 @@ game_level = input("Select desired level: ").lower()
 ```
 When you run this, the result in your terminal will be:
 
-![Input field](Input2.png)
+![Input field](Input2.JPG)
 
 ***While loop*** is used to run a set of commands multiple times as long as the condition is true, i.e, for while loop to be executed the condition must be set to '*True*'. The while loop also runs continuously, therefore we use ***break*** statement to stop the loop from running.
 
