@@ -4,7 +4,7 @@ In this article, we will discuss how this API is made to detect element visibili
 
 ### Prerequisites
 This article is about a JavaScript browser API and you will need a basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling.
-To build the lazy-loading image web page, you will need a browser and an editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
+To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
 ### How the Intersection Observer works
 To describe how this API works, we will use an example regarding the `IntersectionObserver` object.
@@ -39,7 +39,7 @@ observer.observe();
 The `IntersectionObserver` object takes two arguments, a callback function and an optional object:
 - A callback is executed when the target intersects with the viewport.
   
-- The root refers to the element that the target is intersecting against. In the options object, the root property is set to null, which will refer to the viewport. When the root property is not defined, the viewport is the default root.
+- In our options object, the root refers to the element that the target is intersecting against. The root property is set to null, which will refer to the viewport and is also the default reference when it's not defined.
   
 - The `rootMargin` will define the margin around the root element to extend or shrink the capturing frame when the dimensions of the root do not provide enough flexibility.
 
@@ -67,7 +67,7 @@ The project structure is easy. First, open your editor and create a folder named
 For our images, create a folder named images inside the Gallery-Site folder. Check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
 
 #### The HTML file
-The HTML file will be having a simple navigation bar on the top, a heading with an `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. Our images will use a `data-src` attribute that will be pointing to our image, the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file. We will be creating these files in a moment.
+The HTML file will be having a simple navigation bar on the top, a heading with an `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. Our images will use a `data-src` attribute that will be pointing to our image, the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file. We will be creating these files in a the next steps.
 This is the markup in the `index.html` file:
 ```HTML
 <!DOCTYPE html>
@@ -118,6 +118,7 @@ This is the markup in the `index.html` file:
 ```
 #### Styling our web page
 This applies simple styles to our images. When the image is visible on the screen, we perform a simple animation in our fade class.
+Note I have also added a customized scroll bar using CSS pseudo-element.
 The `design.css` file is like:
 ```CSS
 *{
@@ -211,7 +212,7 @@ The code walkthrough:
 - the `lazyLoad` function takes a DOM element as its argument. Inside this function, we create our observer object named `io` that takes a callback with two parameters.
 - The first parameter `entries` is the actual observations on the element and the `observer` parameter is the interface used to manage the instance of this observer.
 - The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry.isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the src attribute from its `data-src` attribute 
-  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer that we can call with the method `observer.disconnect()` to dispose of the observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image visibility.
+  by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer therefore, we can call the method `observer.disconnect()` to dispose of the image observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image visibility.
 - We now need to loop over our targets containing our images and pass the `lazyLoad` callback function to be observed by the `IntersectionObserver`.
 
 Check my deployed version on netlify [here](https://galleryio.netlify.app/).
