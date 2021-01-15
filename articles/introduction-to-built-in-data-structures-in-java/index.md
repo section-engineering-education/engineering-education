@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-built-in-data-structures-in-java/
 title: Introduction to built-in data structures in Java
 description: An introduction to various built-in data structures in Java and a comparison on how it differs from user-defined data structures.
 author: srishilesh-p-s
-date: 2021-02-00T00:00:00-00:00
+date: 2021-01-15T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
