@@ -43,7 +43,7 @@ a =
 ```
 
 ##### Slicing Operation
-If you want to output a specific range of elements, you have to reference the vector with a colon. For example:
+To output a specific range of elements, you have to reference the vector with a colon. For example:
 ```matlab
 values=[6 513 21 9 23 1 0];
 values(2:5)
@@ -61,7 +61,7 @@ You need to use semicolons between values. For example:
 ```matlab
 a = [1;2;3;4]
 ```
-And the output will be:
+The output:
 ```matlab
 a =
 
@@ -86,7 +86,7 @@ values =
      5     6     7     8
      9    10    11    12
 ```
-Now let's learn how to create a smaller matrix from our existing one. For example, if you execute `values(:, 1:2)` the result will be:
+Now let's create a smaller matrix from our existing one. For example, `values(:, 1:2)` and the result will be:
 ```matlab
 ans =
 
@@ -147,7 +147,7 @@ ans =
 #### MATLAB-files
 Using the MATLAB interpreter is not a wise choice for implementing and storing MATLAB code. Therefore, the code is stored in `.m` files.
 
-Now let's begin by clicking on *New Script*.
+Let's begin by clicking on *New Script*.
 ![](/engineering-education/getting-started-with-matlab/1.PNG)
 
 Secondly, press on *New* followed by *Function*:
