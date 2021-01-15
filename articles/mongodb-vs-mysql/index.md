@@ -2,7 +2,7 @@ A few years ago, applications had just a handful number of users. Today, the num
 
 Most applications use [relational databases](https://www.oracle.com/database/what-is-a-relational-database/#:~:text=A%20relational%20database%20is%20a,of%20representing%20data%20in%20tables) – a database that stores and provides access to data points related to one another. They work best when they use limited sized data. Relational databases are insufficient when they have to handle a large volume of data such as the internet, multimedia, and social media. Non-relational databases emerged to overcome this limitation. Non-relational differ from relational databases in that they store data in non-tabular form, also known as [NoSQL](https://www.mongodb.com/nosql-explained) (Not only SQL database). NoSQL can handle unstructured data such as e-mails, documents, multimedia, and social media more efficiently.
 
-MySQL is a good example of a relational database, while MongoDB is an excellent example of a non-relational database.
+MySQL is an excellent example of a relational database, while MongoDB is an excellent example of a non-relational database.
 
 This article will extensively enumerate the difference between relational and non-relational databases, and specifically MySQL and MongoDB. It will highlight the advantages and disadvantages of using the two to help you choose the best depending on the project situation.
 
@@ -10,7 +10,7 @@ This article will extensively enumerate the difference between relational and no
 
 MongoDB is a document database with scalability and flexibility that supports querying and indexing as per users' needs. It is a popular document-oriented and NoSQL database. The first MongoDB version was released in the year 2010. Documents in MongoDB are created and stored in BSON files (Binary JSON). BSON file is a modified version of [JSON](https://www.json.org/json-en.html) (JavaScript Object Notation) files and supports all JavaScript files. JSON is a lightweight data-interchange format, easy for humans to read and write and for machines to parse and generate. JSON enables the interchange of data between web apps and servers in a human-readable format.
 
-MongoDB is highly efficient and reliable. It is good for storage capacity and speed demands.
+MongoDB is highly efficient and reliable. It is suitable for storage capacity and speed demands.
 
 MongoDB does not require a fixed structure and is flexible to change in its schema-free implementation. It is highly scalable and available.
 
@@ -33,7 +33,7 @@ Examples of platforms run by MySQL include Linux UNIX and Windows. Examples of w
 | [Schemas](https://www.tutorialspoint.com/dbms/dbms_data_schemas.htm) (Skelton structure that represents the logic of the database). | It has a strict schema. Before storing anything, one needs to define tables and columns clearly. Also, ensure that every row in the table should have the same column. | It has a dynamic schema. Several documents can be dropped with no relation, only that documents need to be supported by data structures. |
 | Attack risks | It is prone to [SQL injection attacks](https://www.imperva.com/learn/application-security/sql-injection-sqli/) (a vector that uses malicious SQL code). | Less risk of attack. Its design makes it hard to attack. |
 | Organized By | Data is organized by a table, row, and columns. | Data is organized by collection, document, and field classification. |
-| Performance and Speed | It is better for smaller databases and more general solutions. | It is better for handling huge, unstructured data sets as it has in-memory speed. |
+| Performance and Speed | It is better for smaller databases and more general solutions. | It is better for handling massive, unstructured data sets as it has in-memory speed. |
 | Website | Mysql.com | Mongodb.com |
 | Developer | Oracle corporation does the ongoing development. | MongoDB, Inc. does the ongoing development. |
 | Scaling | Allows using more powerful database servers (vertical scaling). | Allows adding more database servers (horizontal scaling). |
@@ -69,8 +69,11 @@ Examples of platforms run by MySQL include Linux UNIX and Windows. Examples of w
 - It has no in-built [XML](https://en.wikipedia.org/wiki/XML#:~:text=Extensible%20Markup%20Language%20(XML)%20is,free%20open%20standards%E2%80%94define%20XML) (Extensible Markup Language) and [OLAP](https://olap.com/olap-definition/) (Online Analytical Processing).
 
 ### Conclusion
-Both MySQL and MongoDB are important databases. Even after the emergence of non-relational data, relational data are still important databases. It is unlikely that they will be extinct or even threatened by the emergence of non-relational databases.
+Both MySQL and MongoDB are essential databases. Even after the emergence of non-relational data, relational data are still important databases. It is unlikely that they will be extinct or even threatened by the emergence of non-relational databases.
 
 It is the developer's job to decide, depending on the project, which database to use. The developer should choose carefully considering the requirements of the application and features of the database.
 
 MySQL is flexible, high-performance, and easy to manage data. However, suppose the developer comes across characteristics of the project with the complexity of data, big sized data, growing data, and the need for object querying. In that case, it is advisable to change from MySQL to MongoDB.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
