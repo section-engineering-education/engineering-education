@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/text-to-speech-using-web-speech-api-in-javascript/
+url: /engineering-education/text-to-speech-in-javascript/
 title: Text to Speech using Web Speech API in JavaScript
-description: This tutorial will give readers a detailed guide on how they can implement text to speech using Web speech API in JavaScript.
+description: This tutorial will give readers a detailed guide on how they can implement text to speech using Web Speech API in JavaScript.
 author: mohan-raj
 date: 2020-12-02T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/text-to-speech-using-web-speech-api-in-javascript/hero.jpg
+  - url: /engineering-education/text-to-speech-in-javascript/hero.jpg
     alt: Text to Speech using Web Speech API in JavaScript Hero Image
 ---
 The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement text to speech.
@@ -98,7 +98,7 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 </html>
 ```
 
-![HTML Web Page](start_screen.png)
+![HTML Web Page](/engineering-education/text-to-speech-in-javascript/start_screen.png)
 
 ### The JavaScript file
 Let's create an instance of the [`SpeechSynthesisUtterance`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance) class. We'll configure this instance with various properties.
@@ -140,7 +140,7 @@ document.querySelector("#talk").addEventListener("click", () => {
 
 The `volume` property gets and sets the volume of the utterance. It is a float that represents the volume value, between 0 (lowest) and 1 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
+Let's add an `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
 
@@ -161,7 +161,7 @@ document.querySelector("#rate").addEventListener("input", () => {
 
 The `rate` property gets and sets the rate of the utterance. It is a float representing the rate value which can range between 0.1 (lowest) and 10 (highest). The default value is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
+Let's add an `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
 
@@ -182,7 +182,7 @@ document.querySelector("#volume").addEventListener("input", () => {
 
 The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
 
-Let's add a `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max and default value of the slider in the HTML tag.
+Let's add an `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
 Let us also set the `<span>` that displays the value of the `pitch` in the webpage next to the range slider.
 
