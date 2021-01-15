@@ -14,9 +14,7 @@ In this tutorial, we will go through the basics of the Node.js buffer and stream
 
 
 ### The Node.js stream module
-Streams allow us to access data from the source while the data is actively being transferred to its destination in a more efficient way. They are basically objects that let us read data from the source (server) to the destination (browser) even in low bandwiths. In Node.js, each type of stream is an instance of the `EventEmitter`.
-
-### Why Streams matters in Node.js
+Streams allow us to access data from the source while the data is actively being transferred to its destination in a more efficient way. They are basically objects that let us read data from the input or write to outputs sequentially.
 To explain this better, I am going to use a code example of how streams can increase efficiency in the application performance while giving composability in our code. We already know that any I/O bound tasks in Node.js is asynchronous. Therefore, interacting with the disk or network calls will involve callbacks and functions. This example below is a code that that serves up a file from disk:
 ```javascript
 let http = require("http");
@@ -58,30 +56,57 @@ We could re-implement the above code to improve its flaws. First, our callback f
 The traditional way of reading a file is inefficient. The file is first read into memory before processing the request. When using streams, we read it piece by piece, processing its content without keeping the entire file in the memory. Therefore, the advantages of streams include memory efficiency (you do not have to load large amount of data in memory before processing) and time efficiency (it takes less time to start processing). 
 
 
-### Types
-In the next sections, I will be discussing about the types of streams which include:
-1. Readable stream -- read from the meaning you recieve from them. That is, we can actually pipe from but not pipe into. Pushing data to it will be buffered till the consumer starts to read it.
-2. Writable stream --they're recieving inputs
-   Readable and writable are simplex meaning they are unidirectional. Can pipe to but not pipe from.
+### Types of streams in Node.js
+In this part I will be discussing the four types of Node.js streams which include the readable, writable, duplex and transform stream.
 
-
-3. Duplex stream -- Performs both pipe into and pipe from . Combination of Readable and Writable
-   
-4. Transform stream -- Similar to duplex but the output is a transform of its input.
-
-
-
-### Readable stream
-We get the readable stream from the stream module.
+### Creating readable streams
+Readable streams are data emitters that is, we can only pipe from but not into (read or recieve data only). The consumer will read the data when we push (buffer) into it. An example of how a readable stream is created:
 ```javascript
 const Stream = require("stream");
 const readableStream = new Stream.Readable();
+readableStream.push("this is a readable stream");
+readableStream.push("Yet another data push to the readable stream");
+readableStream.push(null);
 ```
-This initializes the stream . To send data into it:
+In the above code, we can see that readable streams are generators of data where we can write data using the `readableStream.push()` method. The `new Stream.Readable()` will initialize the `readableStream` object before pushing data into it using it using the `readableStream.push()` method. The `readableStream.push(null)` will tell the consumer that our stream object is done outputing the data. 
+
+
+
+### Creating writable streams
+Writable streams are data recievers that is, we can pipe to but not pipe from them. They recieve inputs in an unidirectional way (simplex).
 ```javascript
-readableStream.push("hi");
-readableStream.push("There");
+    let Stream = require("stream");
+    let writableStream = Stream.Writable();
+
+    writableStream._write = (chunk, encoding, next)=>{
+        console.log(chunk);
+        next();
+    };
+    process.stdin.pipe(writableStream);
 ```
+To create a writable stream, we have defined a `writableStream._write` as an arrow function then piped a readable stream into it.
+- The `chunk` argument refers to the data written by the producer. 
+- Our `encoding` argument is a string with the string encoding.
+- The `next` arguments is a callback function that will allow the consumer to write more data.
+
+To write intom our writeable streams, we call `.write(data)` passing along the data we wre writing:
+`process.stdout.write("beep beep...");`
+If we need to tell the destintion that we are done, we meed to call a `.end()` method. An example using the `fs` module:
+```javascript
+let fs = require("fs");
+let writableStream = new fs.createWriteStream();
+writableStream.write("beep ");
+writableStream.end();
+``` 
+
+### The Duplex streams
+The duplex streams are both readable and writable. Both ends of the stream will engage in a two-way (bi directional) way performing both pipe into and pipe from. An example is websockets.
+```javascript
+a.pipe(b).pipe(a)
+```
+   
+### The Transform streams
+They are special type of duplex streams that allow the output to transform its input meaning we calculate the output from the inputs.
 
 ### Writable stream
 ```javascript
