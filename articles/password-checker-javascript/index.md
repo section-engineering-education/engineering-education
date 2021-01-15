@@ -1,5 +1,5 @@
 ### Password strength check using JavaScript Regex</br></br>
-
+TEST
 ![hero image](/engineering-education/password-checker-javascript/hero.jpg)
 
 [Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fpassword-access-and-cybersecurity-icon-vector-26197809&psig=AOvVaw3DyHpwGFj6n6zfdkifE8mD&ust=1609411254673000&source=images&cd=vfe&ved=2ahUKEwjZiaqiwvXtAhUMQRoKHffrB8gQr4kDegUIARC9AQ)
