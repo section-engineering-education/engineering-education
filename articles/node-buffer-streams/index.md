@@ -107,7 +107,7 @@ They are special type of duplex streams that allow the output to transform its i
 ### Summary
 Streaming and buffering allows us to read data piece by piece while processing its content. This proves to be more memory efficient as you do not have to load large data. The end result is a more performant applicaton (it will take less time to start processing) even for users on slow network connections. In the context of the backend developers, the code composability and the way we handle I/O tasks and all end to end communications is greatly improved.
 
-### Extra resources
+### Extra Resources
 
 - [The Node.js streams handbook](https://github.com/substack/stream-handbook).
   
