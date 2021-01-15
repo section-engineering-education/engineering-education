@@ -86,6 +86,7 @@ values =
      5     6     7     8
      9    10    11    12
 ```
+
 Now let's create a smaller matrix from our existing one. For example, `values(:, 1:2)` and the result will be:
 ```matlab
 ans =
@@ -184,7 +185,7 @@ We need to define t (a variable indicating time).
 ```matlab
 t = 0:0.01:5
 ```
-Then to define the first sin wave:
+Then to define the first [sin wave](https://en.wikipedia.org/wiki/Sine_wave):
 ```matlab
 first = 3*sin(2*t+pi/2)
 subplot(2,2,1),plot(t,first)
@@ -212,4 +213,4 @@ That's all!
 *Note*: please be sure to execute all of the code together to allow the 3 plots to appear in the same figure.
 
 ### Conclusion
-This is just a *tip of the iceberg*. Change the amplitude, frequency, phase, subplot numbers, etc.. . Try it out for yourself and see the results. If you are interested more in MATLAB, keep following our [languages](https://www.section.io/engineering-education/topic/languages/) section to create future tutorials about SIMULINK and a lot more. Have a nice day!
+This is just a *tip of the iceberg*. Change the [amplitude](https://en.wikipedia.org/wiki/Amplitude), [frequency](https://en.wikipedia.org/wiki/Frequency), [phase](https://en.wikipedia.org/wiki/Phase_(waves)), subplot numbers, etc.. . Try it out for yourself and see the results. If you are interested more in MATLAB, keep following our [languages](https://www.section.io/engineering-education/topic/languages/) section to create future tutorials about SIMULINK and a lot more. Have a nice day!
