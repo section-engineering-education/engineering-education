@@ -26,13 +26,15 @@ You will also learn how to work with built-in data structures.
 
 ### Introduction
 
-> According to Wikipedia, a data structure is a data organization, management, and storage format that enables efficient access and modification. More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.
+> According to Wikipedia, a data structure is a data organization, management, and storage format that enables efficient access and modification. 
+
+More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.
 
 #### Built-in vs. User-defined Data Structures
 
-Data structures like Stack, or Queue can be created on our own using other basic data structures. For example, Stacks can be created using Arrays or Linked lists. These are known as User-defined data structures.
+Data structures like Stack or Queue can be created on our own using other basic data structures. For example, Stacks can be created using Arrays or Linked lists. These are known as User-defined data structures.
 
-While built-in data structures do not require the creation of a data structure from scratch. But, we can make use of prebuilt methods that abstract the working of the data structure.
+Built-in data structures do not require the creation of a data structure from scratch. But, we can make use of prebuilt methods that abstract the working of the data structure.
 
 By using built-in data structures, we can improve productivity by writing the operations of data structures from scratch. Also, built-in data structures are generally written with the most efficient time and space complexities.
 
@@ -99,7 +101,7 @@ list1.remove(0); // Removes "Hello" from list1
 
 Linked lists are linear data structures that are connected using pointers, and holds data. The memory allocation is not contiguous which makes it better than the use of Arrays.
 
-While creating linked lists in Java, we have to create a separate class for working and managing the pointers. A sample class demonstrating the creation of pointers in user-defined linked list is shown as below:
+While creating linked lists in Java, we have to create a class for defining the structure of every node of the linked list. A sample class demonstrating the creation of pointers in user-defined linked list is shown as below:
 
 ```java
 class Node { // Node class containing a single pointer and data
@@ -274,7 +276,7 @@ queue.add(2); // 2 added to queue
 
 ##### Removing Elements
 
-In `Queue`, removing elements is referred to as "Polling". Polling can be performed on one end of the queue, called the "Rear" end. Similarly, adding can be performed on the opposite end, called the "Front" end.
+In `Queue`, removing elements is referred to as "Polling". Polling can be performed on one end of the queue, called the "Rear" end. Similarly, adding can be performed on the opposite end called the "Front" end.
 
 Example:
 
