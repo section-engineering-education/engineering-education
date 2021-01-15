@@ -1,7 +1,7 @@
 
 # How to use Seaborn for Data Visualization
 
-Data Visualization is the art of representing data in the form of graphs. It is a useful tool for professionals who work with data, i.e financial analysts, business analysts, data analysts, data scientists, etc.
+Data Visualization is the art of representing data in the form of graphs. It is a useful tool for professionals who work with data, i.e., financial analysts, business analysts, data analysts, data scientists, etc.
 
 In this tutorial, we will be working with Seaborn, a Python Library.
 
@@ -31,11 +31,11 @@ In this tutorial, we will be working with Seaborn, a Python Library.
 
 ### Introduction
 
-Seaborn is an open-source Python library build on top of matplotlib. It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized  easily. Below are a few benefits of Data Visualization
+Seaborn is an open-source Python library build on top of matplotlib. It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized easily. Below are a few benefits of Data Visualization
 
   
 
-- Graphs can help us find trends in data which is really useful in any machine learning or forecasting project.
+Graphs can help us find data trends that are useful in any machine learning or forecasting project.
 
 - Graphs make it easier to explain your data to non-technical people
 
@@ -47,7 +47,7 @@ The tutorial can be divided into three main parts. The first part will talk abou
 
   
 
-I will we writing all my code in a google colab file, you can find it over [here](https://colab.research.google.com/drive/1Kv8B74wBfNhCD232DTnwdOCOJdXn_IxB?usp=sharing)
+I will be writing all my code in a google colab file. You can find it over [here](https://colab.research.google.com/drive/1Kv8B74wBfNhCD232DTnwdOCOJdXn_IxB?usp=sharing)
 
   
 
@@ -89,13 +89,13 @@ import pandas
 import matplotlib.pyplot as plt
 ```
 
-Seabron has 18 in-built datasets, you can list them down by typing the following command.
+Seaborn has 18 in-built datasets, which can be found using the following command.
 
 ```python
 sns.get_dataset_names()
 ```
 
-We will be using the titanic dataset for this tutorial
+We will be using the Titanic dataset for this tutorial.
 
 ```python
 df = sns.load_dataset('titanic')
@@ -108,7 +108,7 @@ df.head()
 
 #### Count Plot
 
-A count plot is helpful when dealing with categorical values. It is used to plot the frequency of the different categories. In the titanic data, the column **sex** contains categorical data, i.e male and female.
+A count plot is helpful when dealing with categorical values. It is used to plot the frequency of the different categories. The column **sex** contains categorical data in the titanic data, i.e., male and female.
 
 ```python
 sns.countplot(x='sex',data=df)
@@ -172,7 +172,7 @@ You can also pass **hue** and **palette** as parameters to customize the graph.
   
 
 #### Scatter Plot
-For this plot and the plots below we will be working with the iris dataset. First, we will need to load the iris dataset
+For this plot and the plots below, we will be working with the iris dataset. First, we will need to load the iris dataset.
 
 ```python
 df = sns.load_dataset('iris')
@@ -186,7 +186,7 @@ data = df , hue = 'species')
 ```
 ![image title](/engineering-education/seaborn-tutorial/scatterplot.png)
 
-A scatterplot requires data for its **x axis** and **y axis**. We can also pass a value for the **hue** parameter to color the dots based on a categorical column.
+A scatterplot requires data for its **x-axis** and **y-axis**. We can also pass a value for the **hue** parameter to color the dots based on a categorical column.
 
   
 
@@ -224,7 +224,7 @@ If you do not wish to pair all the columns, you can pass in two more parameters 
 
 #### Heatmaps
 
-A heat map can be used to visualize confusion matrices and correlation.
+A heat map can be used to visualize confusion, matrices, and correlation.
 
 ```python
 corr = df.corr()
@@ -232,7 +232,7 @@ sns.heatmap(corr)
 ```
 ![image title](/engineering-education/seaborn-tutorial/heatmap1.png)
 
-We can customise the color scheme, the minimum and maximum values and annotations.
+We can customize the color scheme, the minimum and maximum values, and annotations.
 
 ```python
 sns.heatmap(corr, cmap=['red','green','blue'],
@@ -246,14 +246,14 @@ vmin = -.5 , vmax = 0.6,annot = True)
 
 You can download the Pokemon dataset from [here](https://www.kaggle.com/rounakbanik/pokemon).
 
-To upload a file to google drive
+To upload a file to google drive.
 
 ```python
 from google.colab import files
 files.upload()
 ```
 
-You can skip the above step if you are working on your local machine
+You can skip the above step if you are working on your local machine.
 
 ```python
 pokemon_df = pd.read_csv('pokemon.csv')
@@ -269,7 +269,7 @@ hue = 'is_legendary')
 ```
 ![image title](/engineering-education/seaborn-tutorial/pokemon1.png)
 
-Since seaborn is built on top of matplotlib, we can matplotlib's function to increase the size of our graph. Looking at the graph, we can conclude the Water and Normal are the domination Pokemon types. We can also cocnlude that the dominating type for Legendary Pokemons is Psychic.
+Since seaborn is built on top of matplotlib, we can matplotlib's function to increase our graph's size. Looking at the graph, we can conclude the Water and Normal are the dominant Pokemon types. We can also conclude that the dominating type for Legendary Pokemons is Psychic.
 
 #### Relation between Attack and Defense
 
@@ -293,11 +293,11 @@ data = pokemon_df,hue = 'is_legendary')
 
 ![image title](/engineering-education/seaborn-tutorial/pokemon3.png)
 
-Some other plots you could try
+Some other plots you could try.
 
 - Distribution of Height/Weight
 
-- Number of Legendary Pokemon vs Non-Legendary Pokemon
+- Number of Legendary Pokemon vs. Non-Legendary Pokemon
 
 - Regression Plot of special attack and special defense
 
@@ -307,4 +307,7 @@ Some other plots you could try
 
 ### Conclusion
 
-Data Visualization is a good way to present data and seaborn is a useful tool to have in your toolbox. Since it is built on top of matplotlib, you can customize your plots the same way you customize plots made using matplotlib.
+Data Visualization is a good way to present data, and seaborn is a useful tool to have in your toolbox. Since it is built on top of matplotlib, you can customize your plots the same way you customize plots made using matplotlib.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
