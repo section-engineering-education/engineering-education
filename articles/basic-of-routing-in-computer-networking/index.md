@@ -1,6 +1,6 @@
 ## Basic of Routing in Computer Networking
 
-![router](/engineering-education/router.jpg)
+![router](/engineering-education/articles/basic-of-routing-in-computer-networking/router.jpg)
 
 Connectivity between networks, both on Local Area Network (LAN) and internet at large, are managed and controlled by the idea of computer networking. Networking is a field in Information Technology (IT) that ensures the interconnectivity between and among networks. It ensures that the broadcasting of packet data (message, data) is an easy and achievable process. The connectivity which ensures movement of data is made possible through the concept of this discourse - “ROUTING”. Routing is the selection of path or route to be followed by a particular data packet (data or message or information) that is being shared over a network.
 
@@ -18,7 +18,7 @@ Connectivity between networks, both on Local Area Network (LAN) and internet at 
 
 Routing heavily relies on the device called router. Router is any device that provides a network to help forward and transfer traffic or help guide a traffic or data packet from the source address to the destination address. It is simply a device that knows and can forward messages or data between two or independent network protocols inasmuch as the protocol are within range and at compatible protocol path. The data obtained from the internet protocol (IP) are used to sort out its own data to execute its own data forwarding.
 The main purpose of routing that cannot be over emphasized is the fact that it enable and ensures data forwarding which is one of the chief aims of computer networking.
-![routing and data transfer](/engineering-education/articles/basic-of-routing-in-computer-networking/new-folder/Transfer.jpeg)
+![routing and data transfer](/engineering-education/articles/basic-of-routing-in-computer-networking/Transfer.jpeg)
 
 ### Categories of Routing Network Protocols
 
@@ -30,7 +30,7 @@ Routing is mainly grouped into the following categories
 - Interior Gateway Protocol: This is the protocol of a routing system or routers to forward or share packet data within an (single) autonomous system. The best examples of an IGRP is the Enhanced Interior Gateway Protocol (IGRP), Internal System-to-Internal System.
   The Interior Gateway Protocol (IGRP) also has two main sub-categories of protocols which are “The Link State Protocol and Vector-Distance Protocol”. The link state protocol is an interior routing protocol that determines its route (path) and forward its packet based on the speed at which the packet or message intended location or destination and the vector-distance protocol got its meaning from the general computer science terminology “LIST” which is a vector. The protocols in this category depends solely on the distance of routing path to carry the data to the appropriate destinations. Its distance is calculated through the number of HOPs data required to be followed before getting to the destination.
 - Exterior Gateway Protocol: This is a routing protocol in which the routing system or routers transfer messages among different or groups of an autonomous system. The EGRP examples are Inter Domain Routing (IDRP) and Broadcast Gateway Protocol (BGP).
-![image title](/engineering-education/new-folder/image-name.jpg)
+![routing and data transfer](/engineering-education/articles/basic-of-routing-in-computer-networking/Transfer.jpeg)
 
 ### Stages in computer routing
 
