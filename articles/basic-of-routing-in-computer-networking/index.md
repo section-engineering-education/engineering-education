@@ -18,7 +18,7 @@ Connectivity between networks, both on Local Area Network (LAN) and internet at 
 
 Routing heavily relies on the device called router. Router is any device that provides a network to help forward and transfer traffic or help guide a traffic or data packet from the source address to the destination address. It is simply a device that knows and can forward messages or data between two or independent network protocols inasmuch as the protocol are within range and at compatible protocol path. The data obtained from the internet protocol (IP) are used to sort out its own data to execute its own data forwarding.
 The main purpose of routing that cannot be over emphasized is the fact that it enable and ensures data forwarding which is one of the chief aims of computer networking.
-![routing and data transfer](/engineering-education/new-folder-name/Transfer.jpeg)
+![routing and data transfer](/engineering-education/articles/basic-of-routing-in-computer-networking//new-folder-name/Transfer.jpeg)
 
 ### Categories of Routing Network Protocols
 
