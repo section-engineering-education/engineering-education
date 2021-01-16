@@ -1,6 +1,6 @@
 ### Introduction to Scikit-Learn in Python - Part 1
 
-The concept of Machine Learning has been blooming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to Data Science or Machine Learning. An essential ingredient for establishing familiarity in this field is to know your libraries and dependencies. Your work's significant chunk goes towards having the right approach towards the problem and manipulating the dataset regarding your approach. This multi-part article introduces the reader to SciKit-Learn, a vital library used to build statistical models to make predictions.
+The concept of machine learning has been blooming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to data science or machine learning. An essential ingredient for establishing familiarity in this field is to know your libraries and dependencies. Your work's significant chunk goes towards having the right approach towards the problem and manipulating the dataset regarding your approach. This multi-part article introduces the reader to SciKit-Learn, a vital library used to build statistical models to make predictions.
 
 ### Pre-Requisites
 
@@ -27,12 +27,14 @@ SciKit-Learn (often referred to as sklearn) provides a wide array of statistical
 
 Scikit-Learn requires the following libraries to be pre-installed: NumPy, SciPy, Matplotlib, IPython, Sympy, and Pandas. Let's go ahead and install them from the terminal using pip (works only for Windows)
 
-\>> pip install numpy
-\>> pip install scipy
-\>> pip install matplotlib
-\>> pip install ipython
-\>> pip install sympy
-\>> pip install pandas
+```
+pip install numpy
+pip install scipy
+pip install matplotlib
+pip install ipython
+pip install sympy
+pip install pandas
+```
 
 Now that we've installed the dependent libraries let us install Scikit-Learn.
 
@@ -55,7 +57,7 @@ from sklearn import preprocessing
 
 ### Scikit-Learn for Standardization
 
-Standardization is an essential task for [distance based models](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) so that one particular feature does not dominate over the other. 
+Standardization is an essential task for [distance based models](https: //ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) so that one particular feature does not dominate over the other. 
 
 A data point x is standardized as follows:
 
@@ -63,7 +65,11 @@ A data point x is standardized as follows:
 
 Where µ is the mean of the distribution and σ is the standard deviation of the distribution. Standardization is centering around zero and scaling the data point such that the mean is 0, and the standard deviation is 1. This means all the data points now lie between -1 and 1. The reader is encouraged to go through this [resource](https://builtin.com/data-science/when-and-why-standardize-your-data) to get a better grip on why to standardize your features.
 
-The following are the temperatures recorded in Bloomington (in Fahrenheits) in Illinois in the month of January: [33.2,33.1,33.1,33.0,32.9,32.9,32.8,32.8,32.7,32.7,32.6,32.6,32.6,32.6,32.5,32.5,32.5,32.6,32.6,32.6,32.7,32.7,32.8,32.9,33.0,33.1,33.2,33.4,33.5, 33.7, 33.9].
+The following are the temperatures recorded in Bloomington (in Fahrenheits) in Illinois in the month of January: 
+
+```
+[33.2,33.1,33.1,33.0,32.9,32.9,32.8,32.8,32.7,32.7,32.6,32.6,32.6,32.6,32.5,32.5,32.5,32.6,32.6,32.6,32.7,32.7,32.8,32.9,33.0,33.1,33.2,33.4,33.5, 33.7, 33.9]
+```
 
 Let us try to standardize this vector. 
 
@@ -210,7 +216,11 @@ Almost 70% of time and resources are spent on collecting and cleaning the datase
 
 Missing values are encoded with NumPy's NaN (numpy.nan)
 
-The following are the temperatures recorded in Bloomington (in Fahrenheits) in Illinois in the month of February: [33.2,32.8,32.9,33.0,nan,33.2,33.4,33.1,32.6,32.5,32.5,33.1,33.0,nan,32.7,32.7,32.6,nan,32.6,32.9,32.8,32.8,32.5,32.6,nan,32.6,32.7,32.7,33.5, 33.7,33.9].
+The following are the temperatures recorded in Bloomington (in Fahrenheits) in Illinois in the month of February: 
+
+```
+[33.2,32.8,32.9,33.0,nan,33.2,33.4,33.1,32.6,32.5,32.5,33.1,33.0,nan,32.7,32.7,32.6,nan,32.6,32.9,32.8,32.8,32.5,32.6,nan,32.6,32.7,32.7,33.5, 33.7,33.9].
+```
 
 Let us try to replace the missing temperatures with their mean.
 
@@ -234,10 +244,10 @@ for temperature in temperatures:
 temperatures_np = np.array(temperatures_cleaned).reshape(-1,1)
 
 # Create an instance of the imputer
-imputer = SimpleImputer(missing_values=np.nan,strategy='mean')
+imputer_mean = SimpleImputer(missing_values=np.nan,strategy='mean')
 
 #Transform the array and fit according to the chosen strategy
-temperatures_np = imputer.fit_transform(temperatures_np)
+temperatures_np = imputer_mean.fit_transform(temperatures_np)
 
 print(*temperatures_np, sep=", ")
 
@@ -249,10 +259,10 @@ SimpleImputer provides four options for strategy - mean, median, most_frequent, 
 
 ```py
 # Create an instance of the imputer
-imputer = SimpleImputer(missing_values=np.nan,strategy='most_frequent')
+imputer_most_frequent = SimpleImputer(missing_values=np.nan,strategy='most_frequent')
 
 #Transform the array and fit according to the chosen strategy
-temperatures_np = imputer.fit_transform(temperatures_np)
+temperatures_np = imputer_most_frequent.fit_transform(temperatures_np)
 
 print(*temperatures_np,sep=", ")
 
@@ -265,10 +275,10 @@ Opting for constant would require a value for the parameter fill_value.
 
 ```py
 # Create an instance of the imputer
-imputer = SimpleImputer(missing_values=np.nan,strategy='constant',fill_value=32.9)
+imputer_constant = SimpleImputer(missing_values=np.nan,strategy='constant',fill_value=32.9)
 
 #Transform the array and fit according to the chosen strategy
-temperatures_np = imputer.fit_transform(temperatures_np)
+temperatures_np = imputer_constant.fit_transform(temperatures_np)
 
 print(*temperatures_np,sep=", ")
 
