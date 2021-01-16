@@ -1,20 +1,27 @@
-React is a popular platform for creating rich and interactive web applications. Some of the major companies that use react include Facebook, Twitter, and Airbnb. Therefore, knowing React, particularly how to consume data from an API, can be a positive addition to your CV.
+React is a popular platform for creating rich and interactive single page web applications. Some of the major companies that use react include Facebook, Twitter, and Airbnb. Therefore, knowing React, particularly how to consume data from an API, can be a positive addition to your CV.
 
 ### Introduction
+
 Application Programming Interface, denoted by `API`, allows developers to access and use data from third parties. Today, there are many free and paid APIs. For example, some APIs provide information about movies, animals, weather, and even financial records. Many developers prefer APIs because it helps save significant resources. Therefore, the time that could have been spent building a back-end application can be invested in other applications. In `React`, using an API allows developers to focus on the front-side application. This means that they have enough time to create a visually appealing website.
 
 ### Prerequisites
-To follow along in this tutorial, you must have the following elements.
- - Some knowledge in using React and Bootstrap
- - npm installed on your computer
- - Node.js server
+
+To follow along in this tutorial, you must have:
+
+ - Some knowledge in using React and Bootstrap.
+ 
+ - npm installed on your computer.
+ 
+ - Node.js server.
 
 ### Goal
+
 To create a react application that consumes data from an API
 
 Now that we have got the introduction out of the way, let's jump into the cool stuff.
 
 ### Step 1 – Understand the data coming from the API
+
 Before creating any react web application, it's vital to evaluate the type of information presented by the API. Some of the areas to look at include `variables names,` `types,` `dates,` and `arrays.` Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
 In this tutorial, we will be using [omdapi](http://www.omdbapi.com/). One needs a valid key to gain access to this API. This key can be generated from the omdapi website and looks something like this `cebd9b53`.
 
@@ -69,7 +76,8 @@ When we navigate to the above link in a browser, it returns `JSON` data as shown
 ```
 In the above `JSON` response, the variables include `Title,` `Year,` `Rated,` `Released,` `Runtime,` and `Genre.`
 
-### Step 2 – Creating a react project.
+### Step 2: Creating a react project.
+
 We create a React application using the following `npx` command.
 
 ```
@@ -77,12 +85,14 @@ npx create-react-app omdapi
 ```
 Once you execute the above statement, you have to give it a few minutes to enable the installation of the required dependencies. You can then open the folder in your preferred code editor when the installation is completed. Please note that to use `npx,` you must have `npm` installed.
 
-### Step 3 – Understanding the react project structure.
+### Step 3: Understanding the react project structure
+
 All the files we will be working with are located in the `src` folder. These files will be compiled and shown to the user. The `public` folder stores all of the compiled files. The `App.js` helps to connect different `UI` components. The `index.css` stores the formatting properties of the body tag on the web page. The `App.css,` on the other hand, helps format individual components. The `node_modules` folder stores all the required React dependencies. The image below shows the overall structure of the React application.
 
 ![structure](/engineering-education/how-to-consume-data-from-an-API-using-react/structure.png)
 
-### Step 4 – Developing the react application
+### Step 4: Developing the react application
+
 Use `npm start ` to start the development server. All changes you make in the code editor are reflected in the application. By default, the react projects are usually hosted at `http://localhost:3000/`.
 Let’s delete all the unnecessary items in our project. Modify the `app.js` file to look like this.
 
@@ -100,7 +110,8 @@ export default App;
 
 Our app will have two major components: `Movie` page and `MovieItem`. The movie page will showcase the `movies` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
 
-### Step 5 – Creating the Movie web page.
+### Step 5: Creating the Movie web page
+
 Please note that this page will hold our logic for requesting and handling data from the omdapi. To get started, create a new folder named components in the src directory. In the components folder, create a file called Movie.js. Before we move forward, we need to import `useEffect` and `useState`. We do so by adding the following line in the `Movie.js` file.
 
 ```javascript
@@ -122,11 +133,11 @@ We will add other logic and elements in the above `Movie` component.
 We need to define several constants in the Movie component. 
 
 ```javascript
-    const [movie, setMovie]=useState([]);
-    const [search, setSearch]= useState('');
-    const [userquery, setUserQuery] = useState('chicken');
-    const API_KEY = "cebd9b53";
-    const url = `http://www.omdbapi.com/?t=${userquery}&apikey=${API_KEY}`;
+const [movie, setMovie]=useState([]);
+const [search, setSearch]= useState('');
+const [userquery, setUserQuery] = useState('chicken');
+const API_KEY = "cebd9b53";
+const url = `http://www.omdbapi.com/?t=${userquery}&apikey=${API_KEY}`;
 ```
 
 The `movie` will hold data returned from the omdAPI. The `setMovie` helps in changing the contents of the movie.
@@ -136,56 +147,53 @@ Finally, the `userquery` and `setUserQuery` hold the actual values that will be 
 #### 1.	getMovie
 This method will be called whenever the page is reloaded. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` object.
 ```
- const getMovie = async()=>{
-        const response = await fetch(url);
-        const data = await response.json()
-        setMovie(data);
-    };
+const getMovie = async()=>{
+  const response = await fetch(url);
+  const data = await response.json()
+  setMovie(data);
+};
 ```
 #### 2.	getInput
 This method helps in getting the users' input before a query is performed. It listens for changes in the input field. The entered value is then updated using the setSearch method.
 
 ```javascript
 const getInput = e =>{
-        setSearch(e.target.value);
-    }
+  setSearch(e.target.value);
+}
 ```
 #### 3.	getSearch
 This method is executed when a user clicks on the `search` button. It updates the `userquery` variable using the `setUserQuery` function. This function also prevents the page from reloading when the `form` is submitted.
 
 ```javascript
 const getSearch = e =>{
-        e.preventDefault(); //prevents page from reloading
-        setUserQuery(search); //updating the value for the search variable
-    }
+  e.preventDefault(); //prevents page from reloading
+  setUserQuery(search); //updating the value for the search variable
+}
 ```
 #### 4.	useEffect
 As noted, this method is executed after the components are rendered. We will fetch data from the API in this function. We will also listen for changes in the query. 
 
 ```javascript
 useEffect(()=>{
-        getMovie(); //fetch data from api
-    },[userquery]); //listens for changes in the userquery
+    getMovie(); //fetch data from api
+}, [userquery]); //listens for changes in the userquery
 ```
 
 ### Step 6 – Returning the component
 When we fetch data, we need to display it to the user. The web page will have a `form` (one input field and a button). It will also have a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for our MovieItem layout.
 
 ```javascript
- return(
-            <div>
-            <br/>
-                <form onSubmit={getSearch}>
-                    <input type="text" value={search} onChange={getInput}/>
-                    <button type="submit">Search</button>
-                </form>
-                <br/>
-
-            <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
-            
-        </div>
-            
-    );
+return(
+  <div>
+  <br/>
+  <form onSubmit={getSearch}>
+      <input type="text" value={search} onChange={getInput}/>
+      <button type="submit">Search</button>
+  </form>
+  <br/>
+  <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
+ </div>
+);
 ```
 
 As shown above, the `getSearch` method is called whenever the form is submitted. Similarly, we listen for changes in the input value using the `getInput` function.
@@ -223,26 +231,27 @@ function Movie(){
         getMovie();
     },[userquery]);
 
-        return(
-            <div>
+    return(
+        <div>
+        <br/>
+            <form onSubmit={getSearch}>
+                <input type="text" value={search} onChange={ getInput}/>
+                <button type="submit">Search</button>
+            </form>
             <br/>
-                <form onSubmit={getSearch}>
-                    <input type="text" value={search} onChange={ getInput}/>
-                    <button type="submit">Search</button>
-                </form>
-                <br/>
 
-            <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/> //this movie item is created in the next step
-            
-        </div>
-            
-        );
+        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/> //this movie item is created in the next step
+
+    </div>
+
+    );
 }
 
 export default Movie;
 ```
 
-### Step 7 – Creating the MovieItem component.
+### Step 7: Creating the MovieItem component
+
 Create a new file named `MovieItem.js` in the `components` folder. Add the following line to import the required dependencies.
 
 ```javascript
@@ -263,20 +272,21 @@ import React from 'react';
 
 const MovieItem = ({title, year, writer, poster})=>{
   return (
-      <div className="Movie">
-           <img src={poster} alt=""/>
-           <h4>Title: {title}</h4>
-           <p>Year: {year}</p>
-           <p>Writer: {writer}</p>
-          <p></p>
-      </div>
+    <div className="Movie">
+      <img src={poster} alt=""/>
+      <h4>Title: {title}</h4>
+      <p>Year: {year}</p>
+      <p>Writer: {writer}</p>
+     <p></p>
+    </div>
   );
 }
 
-  export default MovieItem;
+export default MovieItem;
 ```
 
-### Step 8 – Linking components
+### Step 8: Linking components
+
 In this stage, we need to link our movie component to the main app layout. Open the App.js file and add <Movie/> as shown below. Once again, ensure that you have imported the Movie component.
 
 ```javascript
@@ -286,7 +296,6 @@ import Movie from './components/Movie.js';
 function App() {
   return (
     <div className="App">
-
       <Movie/>
     </div>
   );
@@ -295,10 +304,12 @@ function App() {
 export default App;
 ```
 
-### Step 9 – Testing our web application.
+### Step 9: Testing our web application
+
 If you have successfully reached this stage, congratulations. Follow the steps in the video below to test out the web application.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/lud9SWK8pmo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Conclusion.
+### Conclusion
+
 In the above tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. Furthermore, useEffects and useState help in state management. This means that we can update our UI components in case our data changes. You can download the entire code from [here](https://github.com/WanjaMIKE/react-omdapi/).
