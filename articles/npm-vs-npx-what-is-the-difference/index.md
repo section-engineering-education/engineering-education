@@ -1,6 +1,7 @@
 If you are a Node.js developer, you must have used NPM in one or many instances when developing your Node.js app. NPM is buddle with Node.js. If you install Node.js on your computer, you get NPM. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. It helps to install Node.js packages and modules and later run them as if they were built-in. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. When you install npm@5.2.0 or higher, a new binary/package pre-installed with the NPM called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
 
 ### What is NPM
+
 NPM is the Node Package Manager. It's pre-installed with Node.js. It makes it easier for developers to share and reuse open source code by enabling them to install open source modules. Modules are JavaScript packages that you install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
 
 ### What is NPX
@@ -8,17 +9,14 @@ NPM is the Node Package Manager. It's pre-installed with Node.js. It makes it ea
 [NPX](https://www.npmjs.com/package/npx) is an NPM package Executor. Initially, NPX was lauched in [July 2017](https://nodejs.dev/learn/the-npx-nodejs-package-runner); this was just an NPM package that could be installed like other NPM packages. Currently, NPX is bundled with NPM. When you install the NPM version 5.2.0 or higher, you get NPX installed in your system. NPX executes packages without installing them.
 
 ### How NPM treat Node.js packages
+
 It sets up modules such that Node.js can locate them to manage their dependencies intelligently.
 
 When using NPM, there are two ways to install a package into your local computer.
 
-- Locally
+- Locally: When a package is installed locally, It is installed to the `./node_modules/.bin/` local project directory.
 
-When a package is installed locally, It is installed to the `./node_modules/.bin/` local project directory.
-
-- Globally
-
-A global package is installed in the user environment path. `/usr/local/bin` for Linus and `AppData%/npm` for Windows.
+- Globally: A global package is installed in the user environment path. `/usr/local/bin` for Linux and `AppData%/npm` for Windows.
 
 When you install executables using NPM, Node.js links them either from the local or global path. As a package manager, NPM does not execute a package directly.
 
@@ -170,6 +168,7 @@ With NPX, one-off commands such as this are a lot more simple and straightforwar
 When you execute the NPX command within your project context directory, NPM will execute your project without the package being installed globally. With such approaches, you avoid clogging up your globals with packages that you use once in a blue moon.
 
 #### NPX versioning
+
 When it comes to packages versioning, NPX will handle that perfectly with its `package-lock.json` file. With NPX, there are a lot more features that you can benefit from package versioning, such as
 
 - Executing a specific package version.
@@ -233,6 +232,7 @@ npx -p node-@v12.18.3
 It would become useful when checking the different new features added in Node.js versions.
 
 #### Execute Code from URL such as gist
+
 NPX will download and run the code directly from the gist.
 
 Here is a simple example of running a gist code. The gist has the main js and `package.json` files.  Let's see the NPX output. Check the code from the [Github gist](https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5).
