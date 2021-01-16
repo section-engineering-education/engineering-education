@@ -1,6 +1,6 @@
 ### Getting Started with Grails Java Framework
 
-In recent years, many developers are using frameworks when coming up with websites. Frameworks have assisted in making sure there is  faster application deployment and also coming up with quality code. Java supports multiple  multiplatform including a desktop application, web application, mobile app development, and many more. In the web application, it can be embedded with Javascript, HTML, CSS, and many front end applications.
+In recent years, many developers are using frameworks when coming up with websites. Frameworks have assisted in making sure there is  faster application deployment and also coming up with quality code. Java supports multiplatform including a desktop application, web application, mobile app development, and many more. In the web application, it can be embedded with Javascript, HTML, CSS, and many front end applications.
 
 ### Introduction
 
