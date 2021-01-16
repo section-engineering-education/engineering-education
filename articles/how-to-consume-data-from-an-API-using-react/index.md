@@ -1,28 +1,19 @@
-React is a popular platform for creating rich and interactive single page web applications. Some of the major companies that use react include Facebook, Twitter, and Airbnb. Therefore, knowing React, particularly how to consume data from an API, can be a positive addition to your CV.
+Application Programming Interface (API), allows developers to access and use data from third parties. Today, there are many free and paid APIs. For example, some APIs provide information about movies, animals, weather, and even financial records. Many developers prefer APIs because it helps save time and resources. The time that could have been spent building a back-end application can be invested elsewhere. In React, using an API allows developers to focus on the front-side application. This means that they have enough time to create a visually appealing website.
 
-### Introduction
-
-Application Programming Interface, denoted by `API`, allows developers to access and use data from third parties. Today, there are many free and paid APIs. For example, some APIs provide information about movies, animals, weather, and even financial records. Many developers prefer APIs because it helps save significant resources. Therefore, the time that could have been spent building a back-end application can be invested in other applications. In `React`, using an API allows developers to focus on the front-side application. This means that they have enough time to create a visually appealing website.
+The goal of this tutorial is to create a React application that consumes data from an API.
 
 ### Prerequisites
 
 To follow along in this tutorial, you must have:
 
- - Some knowledge in using React and Bootstrap.
+ - Basic knowledge in using React and Bootstrap.
  
- - npm installed on your computer.
- 
- - Node.js server.
-
-### Goal
-
-To create a react application that consumes data from an API
-
-Now that we have got the introduction out of the way, let's jump into the cool stuff.
+ - Node.js installed in your computer.
 
 ### Step 1 – Understand the data coming from the API
 
 Before creating any react web application, it's vital to evaluate the type of information presented by the API. Some of the areas to look at include `variables names,` `types,` `dates,` and `arrays.` Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
+
 In this tutorial, we will be using [omdapi](http://www.omdbapi.com/). One needs a valid key to gain access to this API. This key can be generated from the omdapi website and looks something like this `cebd9b53`.
 
 The `key` is included in the `API` request, as shown.
@@ -30,6 +21,7 @@ The `key` is included in the `API` request, as shown.
 ```
 http://www.omdbapi.com/?i=tt3896198&apikey=cebd9b53
 ```
+
 When we navigate to the above link in a browser, it returns `JSON` data as shown below.
 
 ```json
@@ -74,6 +66,7 @@ When we navigate to the above link in a browser, it returns `JSON` data as shown
    "Response":"True"
 }
 ```
+
 In the above `JSON` response, the variables include `Title,` `Year,` `Rated,` `Released,` `Runtime,` and `Genre.`
 
 ### Step 2: Creating a react project.
@@ -145,6 +138,7 @@ The search variable will help retrieve user input. This value is updated by the 
 Finally, the `userquery` and `setUserQuery` hold the actual values that will be sent to the `omdapi` to perform a search. Let's dive into the actual methods.
 
 #### 1.	getMovie
+
 This method will be called whenever the page is reloaded. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` object.
 ```
 const getMovie = async()=>{
@@ -154,6 +148,7 @@ const getMovie = async()=>{
 };
 ```
 #### 2.	getInput
+
 This method helps in getting the users' input before a query is performed. It listens for changes in the input field. The entered value is then updated using the setSearch method.
 
 ```javascript
@@ -162,6 +157,7 @@ const getInput = e =>{
 }
 ```
 #### 3.	getSearch
+
 This method is executed when a user clicks on the `search` button. It updates the `userquery` variable using the `setUserQuery` function. This function also prevents the page from reloading when the `form` is submitted.
 
 ```javascript
@@ -171,6 +167,7 @@ const getSearch = e =>{
 }
 ```
 #### 4.	useEffect
+
 As noted, this method is executed after the components are rendered. We will fetch data from the API in this function. We will also listen for changes in the query. 
 
 ```javascript
@@ -180,6 +177,7 @@ useEffect(()=>{
 ```
 
 ### Step 6 – Returning the component
+
 When we fetch data, we need to display it to the user. The web page will have a `form` (one input field and a button). It will also have a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for our MovieItem layout.
 
 ```javascript
