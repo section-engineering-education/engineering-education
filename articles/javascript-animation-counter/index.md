@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/javascript-animation-counter/
 title: Creating an Animated Counter in JavaScript
-description: This article gives the reader a guide on how to create an animated counter in a web application using JavaScript.
+description: This article gives the reader a guide on how to create an animated counter in a web application using JavaScript. We will do this with a few JavaScript helper methods and by setting the duration for the animation.
 author: terrence-aluda
-date: 2021-01-15T00:00:00-20:00
+date: 2021-01-16T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,9 +16,9 @@ images:
 ---
 Animated counters are a great way to show statistics on your website because interactive elements improve the user experience. Animated counters can be used to show your site visits, members registered, or show some numbers in your online game.
 <!--more-->
-While, this could otherwise be implemented using some static boring numbers. Animated counters help us give our sites an expressive and professional look.
+While this could otherwise be implemented using some static boring numbers. Animated counters help us give our sites an expressive and professional look.
 
-JavaScript has helper methods which when artistically manipulated can help us achieve that in a very easy way. Of course, we can do this in a few statements using a framework or library, but it's better to create one for ourselves from scratch and understand the underlying code. It also gives us an upper hand in customizing the code and adding more functionalities ourselves.
+JavaScript has helper methods that when artistically manipulated can help us achieve that in a very easy way. We can do this in a few statements using a framework or library, but it's better to create one for ourselves from scratch and understand the underlying code. It also gives us an upper hand in customizing the code and adding more functionalities ourselves.
 
 ### Overview
 We only need to use a few JavaScript helper methods and set the duration for the animation. The JavaScript methods used (which we will discuss in more detail further on) are:
@@ -84,26 +84,30 @@ const load = () => {
 #### Explanation
 We have three user-defined functions:
 
-- `animate()`
-- `step()`
-- `load()`
+1. `animate()`
+2. `step()`
+3. `load()`
 
-The `animate()` function is a higher-order function containing the `step()` function. This function takes four parameters:
+The `animate()` function is a higher-order function containing the `step()` function. 
 
-- **A DOM object**(`obj`).
+This function takes four parameters:
 
-- **Initial value** which the counter will start with(`initVal`).
+1. **A DOM object**(`obj`).
 
-- **Last value** which the counter will end with (`lastVal`).
+2. **Initial value** which the counter will start with(`initVal`).
 
-- The **duration** in milliseconds which the animation will last (`duration`).
+3. **Last value** which the counter will end with (`lastVal`).
 
-The animate function has a variable `startTime` initialized to `null`. This variable stores the timestamp when the counter starts. It also has a `currentTime` variable which stores the latest timestamp as the counter executes. Next, we have the `step()` function which is used to compute the number to be displayed, where it is displayed, and controls the animation.
+4. The **duration** in milliseconds which the animation will last (`duration`).
 
-The first `if` block assigns the starting time of the counter to `startTime`. It negates `startTime` to get a *true* value if `startTime` is `null` and then assigns it the current start time. The constant `progress` stores a value that will set the interval between the previous and next number which should not exceed 1. It does so by subtracting the start timestamp from the current timestamp then dividing it by the duration. Since it does not have to be greater than 1 (1,2,3,4,...), we use the `Math.min` method which usually returns the lowest value from its parameters. The interval number does not need to change throughout the lifetime of the `step` function hence we make it a `const`.
+The animate function has a variable `startTime` initialized to `null`. This variable stores the timestamp when the counter starts. It also has a `currentTime` variable that stores the latest timestamp as the counter executes. Next, we have the `step()` function which is used to compute the number to be displayed, where it is displayed, and controls the animation.
+
+The first `if` block assigns the starting time of the counter to `startTime`. It negates `startTime` to get a *true* value if `startTime` is `null` and then assigns it the current start time. The constant `progress` stores a value that will set the interval between the previous and next number which should not exceed 1. 
+
+It does so by subtracting the start timestamp from the current timestamp then dividing it by the duration. Since it does not have to be greater than 1 (1,2,3,4,...), we use the `Math.min` method which usually returns the lowest value from its parameters. The interval number does not need to change throughout the lifetime of the `step` function hence we make it a `const`.
 
 **A mathematical example**
-The next statement first subtracts the first value from the last value, multiplies the answer gotten by the interval then adds the first value basing on the operator precedence e.g. for a reducing counter
+The next statement subtracts the first value from the last value, multiplies the answer gotten by the interval then adds the first value basing on the operator precedence e.g. for a reducing counter.
 
 
 *Current timestamp = 202018500*
@@ -131,7 +135,7 @@ The `window.requestAnimationFrame()` method is used when we need to show an anim
 The `window.cancelAnimationFrame()` cancels an animation to be called by taking the animation frame request ID as a parameter. The `load()` functions assigns `text1`, `text2` and `text3` DOM objects gotten by their respective IDs. It is called when the HTML body loads using the `<body>` `onload` attribute. This is shown in the HTML code below. It uses the `animate()` function to set the values and perform the counter.
 
 ### The HTML code
-Below is the HTML code. Bootstrap 5 is used for styling.
+Below is the HTML code. We used Bootstrap 5 for the styling.
 
 ```html
 <html>
@@ -176,7 +180,7 @@ Below is the HTML code. Bootstrap 5 is used for styling.
 
 Although we have used JavaScript in this tutorial, you can also achieve this with pure CSS. We will talk about that in another tutorial.
 
-That's all for now. I hope you got an insight into how to create animated counters using JavaScript. Later on, you can enhance this counter further by changing the durations, numbers, or even implement it for words rather than digits.</br>
+That's all for now. I hope you got a helpful insight into how to create animated counters using JavaScript. Later on, you can enhance this counter further by changing the durations, numbers, or even implement it for words rather than digits.</br>
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
