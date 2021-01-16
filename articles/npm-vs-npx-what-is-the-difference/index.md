@@ -242,7 +242,7 @@ NPX is a great tool that you should try out. It will help you to avoid NPM depen
 
 Here is some common comparison summary between NPX and NPM
 
-#### Comparison summary
+### Comparison summary
 
 | NPM | NPX |
 |-|-|
