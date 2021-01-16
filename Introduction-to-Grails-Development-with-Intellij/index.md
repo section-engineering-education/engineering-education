@@ -4,7 +4,7 @@ In recent years, many developers are using frameworks when coming up with websit
 
 ### Introduction
 
-**Grails** is Java and Groovy framework developing agile web applications. Grails implements MVCS (Model,View, and Controller) design pattern.
+**Grails** is Java and Groovy framework developing agile web applications. Grails implements MVCS (Model, View, and Controller) design pattern.
 
 Grails is superb because it makes developers concentrate on application requirements and use less time in configuring the framework. Grails provides tools for development and it is build based on tools like  Quarts, Hibernate, Spring and uses Gradle for library management.
 
@@ -126,11 +126,11 @@ All business logic are usually put under the service folder
 
 ### taglib folder
 
-Folder contain tags and developers can be able to add their own tags. Tags help im compressing GSP code since helps in the re-use of code
+This folder contains tags and developers can be able to add their own tags. Tags help in compressing GSP code since helps in the re-use of code
 
 ### utils folder
 
-in this folder we can put utility Groovy classes.
+in this folder, we can put utility Groovy classes.
 
 ### views folder
 
@@ -139,7 +139,7 @@ it contains GSP files, where HTML code is kept
 
 ### GRAILS MVC
 
-MVC design patterns help in partitioning responsibilities in the application to simplify the architecture. Model classes represent domain objects in them system. Controller classes control the flow of your application. Service classes control the business logic in the application. Views artifacts are to present information in a way desired.
+MVC design patterns help in partitioning responsibilities in the application to simplify the architecture. Model classes represent domain objects in the system. Controller classes control the flow of your application. Service classes control the business logic in the application. Views artifacts are to present information in a way desired.
 
 ### Adding more Classes in the `Firstapp` project
 
@@ -181,7 +181,7 @@ class Student {
 
 ### Creating Controller Class
 
-The below command adds empty Controller Class
+The below command adds an empty Controller Class
 
 ```bash
 grails create-controller Student
@@ -280,7 +280,7 @@ For the source code check [here](https://github.com/tambastar/Grails-Firstapp)
 
 ### Conclusion
 
-Congratulations your fast grail app is successfully running. Grails Framework has really helped by taking the advantages of several tools and bringing them together.
+Congratulations your fast grail app is successfully running. Grails Framework has helped by taking the advantages of several tools and bringing them together.
 
 In this article;
 
