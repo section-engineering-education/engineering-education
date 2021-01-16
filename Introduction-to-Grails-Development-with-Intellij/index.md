@@ -1,10 +1,10 @@
 ### Getting Started with Grails Java Framework
 
-In recent Years, many developers are using frameworks when coming up with websites. Frameworks has assisted in making sure their is  faster in application deployment and also coming up with quality code. Java supports multiple  multiplatform including desktop application , web application, mobile app development and many more. IN web application it can be embedded with Javascript, HTML, CSS and many front end applications.
+In recent years, many developers are using frameworks when coming up with websites. Frameworks have assisted in making sure there is  faster application deployment and also coming up with quality code. Java supports multiple  multiplatform including a desktop application, web application, mobile app development, and many more. In the web application, it can be embedded with Javascript, HTML, CSS, and many front end applications.
 
 ### Introduction
 
-**Grails** is Java and Groovy framework developing agile web applications. Grails implements MVCS (Model ,View , and Controller) design pattern.
+**Grails** is Java and Groovy framework developing agile web applications. Grails implements MVCS (Model,View, and Controller) design pattern.
 
 Grails is superb because it makes developers concentrate on application requirements and use of less time in configuring the framework. Grails provides tools for development and it is build based on tools like  Quarts, Hibernate,Spring and uses Gradle for library managemnet.
 
@@ -276,7 +276,7 @@ How it looks in IntelliJ
 
 ![INTELLIJ VIEW](/engineering-education/how-to-replicate-postgresql-database/grails-intellij-view.PNG).
 
-For the source code check [here]
+For the source code check [here](https://github.com/tambastar/Grails-Firstapp)
 
 ### Conclusion
 
