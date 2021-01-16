@@ -192,7 +192,7 @@ Time: 394ms
    [0] ./index.js 4.02 kB {0} [built]
 ```
 
-Let's try using NPX and run webpack at version 5.11.1 to see what the difference would look like on the project. Run `npx webpack@5.11.1`.
+Let's try using NPX and run the webpack at version 5.11.1 to see what the difference would look like on the project. Run `npx webpack@5.11.1`.
 
 ```bash
 Hash: b41ed73s02F90S74F9b
@@ -234,7 +234,7 @@ NPX will point to the remote `.js` file, download it temporarily, execute it and
 
 ![Execute Gist Code with NPX](/engineering-education/npm-vs-npx-what-is-the-difference/execute-gist-code-with-npx.jpg)
 
-Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped into malicious code.
+Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped in malicious code.
 
 ### Final notes
 
