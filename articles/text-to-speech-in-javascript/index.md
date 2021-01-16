@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /engineering-education/text-to-speech-in-javascript/
 title: Text to Speech using Web Speech API in JavaScript
-description: This tutorial will give readers a detailed guide on how they can implement text to speech using Web Speech API in JavaScript.
+description: This tutorial will give readers a detailed guide on how they can implement text to speech using the Web Speech API in JavaScript.
 author: mohan-raj
-date: 2020-12-02T00:00:00-16:00
-topics: []
+date: 2021-01-16T00:00:00-10:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -26,10 +26,10 @@ To follow along with this tutorial, you should have:
 
 - A code editor. I'll be using [Visual Studio Code](https://code.visualstudio.com/download).
 
-- A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/).
+- A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
 ### Project Directory
-Create a new directory for the project and create 2 new files called `index.html` and `textToSpeech.js`.
+Create a new directory for the project and create two new files called `index.html` and `textToSpeech.js`.
 
 ```bash
 project-directory/
@@ -38,13 +38,13 @@ project-directory/
 ```
 
 ### The HTML Page
-In this HTML file, Let's set up:
+In the HTML file, let's set up:
 
 - An empty select menu. We will fill the empty select menu with the list of voices available using JavaScript.
 
 - Range sliders for volume, pitch, and rate.
 
-- A `textarea` to type.
+- A `textarea` to type in.
 
 - Control buttons for the speech.
 
@@ -110,7 +110,7 @@ let speech = new SpeechSynthesisUtterance();
 #### Properties
 Now, let's configure some properties on this `SpeechSynthesisUtterance` instance.
 
-There are 6 properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
+There are six properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
 
 **Language**:
 
@@ -142,7 +142,7 @@ The `volume` property gets and sets the volume of the utterance. It is a float t
 
 Let's add an `onInput` listener to the `volume` range slider and adjust the `volume` property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
-Let us also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
+Let's also set the `<span>` that displays the value of the `volume` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#rate").addEventListener("input", () => {
@@ -163,7 +163,7 @@ The `rate` property gets and sets the rate of the utterance. It is a float repre
 
 Let's add an `onInput` listener to the `rate` range slider and adjust the `rate` property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
-Let us also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
+Let's also set the `<span>` that displays the value of the `rate` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#volume").addEventListener("input", () => {
@@ -184,7 +184,7 @@ The `pitch` property gets and sets the pitch of the utterance. It is a float rep
 
 Let's add an `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
-Let us also set the `<span>` that displays the value of the `pitch` in the webpage next to the range slider.
+Let's also set the `<span>` that displays the value of the `pitch` in the webpage next to the range slider.
 
 ```JavaScript
 document.querySelector("#pitch").addEventListener("input", () => {
@@ -371,9 +371,9 @@ document.querySelector("#cancel").addEventListener("click", () => {
 ```
 
 ### Result
-You can take a look at the project that's been deployed using GitHub pages [here](https://zolomohan.github.io/text-to-speech/).
+You can take a look at the project that's been deployed using GitHub Pages [here](https://zolomohan.github.io/text-to-speech/).
 
-You can check out the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
+You can also check out the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
 
 ### Let's Recap
 - We created an HTML page with a select menu for the voices, a text area, and control buttons.
@@ -382,7 +382,7 @@ You can check out the final code in this [GitHub Repository](https://github.com/
 
 - We created a new `SpeechSynthesisUtterance` object.
 
-- We tweaked the 6 properties of the `SpeechSynthesisUtterance` instance. They are Pitch, Volume, Text, Voice, Rate, and Language.
+- We tweaked the six properties of the `SpeechSynthesisUtterance` instance. They are Pitch, Volume, Text, Voice, Rate, and Language.
 
 - We added listeners on the control button to control the `SpeechSynthesisUtterance` instance when they are clicked. They are Start, Pause, Resume, and Cancel.
 
