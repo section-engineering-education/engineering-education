@@ -1,14 +1,9 @@
-### Password strength check using JavaScript Regex</br></br>
-TEST
-![hero image](/engineering-education/password-checker-javascript/hero.jpg)
-
-[Image source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fpassword-access-and-cybersecurity-icon-vector-26197809&psig=AOvVaw3DyHpwGFj6n6zfdkifE8mD&ust=1609411254673000&source=images&cd=vfe&ved=2ahUKEwjZiaqiwvXtAhUMQRoKHffrB8gQr4kDegUIARC9AQ)
-
 For us to secure our systems and accounts, we need a strong password.</br>
 The person developing the system has to ensure that the password the end-user chooses is strong enough to guard his/her account.</br>
 We are going to discuss one of the tools offered to developers to achieve that, the **Regular Expression** class in JavaScript.</br>
 
 #### The Regular Expressions Class</br>
+
 It is a class containing patterns used to check character combinations in strings.</br>
 It can be taken as an object in JavaScript.</br>
 We can either use **simple patterns** such as `/vet/` for finding a direct much or **special  characters** like `/?=/` for getting more than a direct match.</br></br>
@@ -27,6 +22,7 @@ let check = new RegExp('vet')
 We use the constructor function when we know the pattern keeps changing or like if we get it from a different source, such as the user input. For this reason, we are going to use the constructor function for we are getting the password from the user input.</br></br>
 
 #### Patterns we are going to use</br></br>
+
 |Characters|Meaning|
 --|--|
 \d|Checks for a digit match e.g it returns 2 in "U2". |
@@ -43,12 +39,19 @@ We use the constructor function when we know the pattern keeps changing or like 
 
 
 #### The JavaScript program</br></br>
+
 We are going to discuss how to check the strength of  a password a user enters based on if the password:</br>
+
 - Is at least 8 characters long(`?=.{8,}`)
+
 - Has at least one uppercase letter(`?=.*[A-Z]`)
+
 - Has at least one lowercase letter(`?=.*[a-z]`)
+
 - Has at least one digit(`?=.*[0-9]`)
+
 - Has at least one special character(`[^A-Za-z0-9]`)
+
 
 We are going to have three levels:</br>
 - **Strong**</br>
@@ -124,6 +127,7 @@ Green for strong, Blue for medium and Red for weak.</br></br>
 ```
 
 #### JavaScript Code</br>
+
 The complete code can be accessed in my [Github repository](https://github.com/Agusioma/Password-Strength-Checker/).</br>
 
 ```java
