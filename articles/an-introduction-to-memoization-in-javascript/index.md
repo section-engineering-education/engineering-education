@@ -4,11 +4,11 @@ This concept is continuously applied in any functional programming. When you hav
 
 This way, a program computation may depend on executing the results of another function. This means that every time the program is executed, it will run and call these functions repeatedly, return the results, and pass them to the respective computations.
 
-Executing such a function is inefficient, especially for an extensive system that needs to do long and heavy computations. The concept of Memoization comes to rescue such expensive computations.
+Executing such functions is inefficient, especially for an extensive system that needs to do long and heavy computations. The concept of Memoization comes to rescue such expensive computations.
 
 ### What is Memoization?
 
-It is a concept of top-down, depth-first optimization technique of storing previously executed computations. Whenever the program needs the result of these computations, the program will not have to execute that computation again. Instead, it will reuse the result of the previously executed computation. The program will not have to repeat expensive computation. It will just return the results returned when the computation was first completed.
+It is a concept of top-down, depth-first optimization technique of storing previously executed computations. Whenever the program needs the result of these computations, the program will not have to execute that computation again. Instead, it will reuse the result of the previously executed computation. This way the program will not have to repeat expensive computations.
 
 This concept is relative to the application of functional programming. In many instances, you will reuses functions within a program. With the concept of Memoization, when a function is called, its result will temporarily be stored. Any computation that needs the result of this function will not have to execute that function again. Instead, it will reuse results when the function was previously executed.
 
@@ -16,7 +16,7 @@ In this case, we can say that Memoization is a technique of caching results of e
 
 ### Importance of Memoization
 
-- It is an optimization technique when applied hand in hand with functional programming. It increases functions by caching its results. It stores the previous results. It then retrieves the results whenever needed in your program. This reduces execution time and increases CPU performance.
+- It is an optimization technique when applied hand in hand with functional programming. It increases function performance by caching its results. It stores the previous results. It then retrieves the results whenever needed in your program. This reduces execution time and increases CPU performance.
 - A memoized function is a pure function. This means the function execution does not mutate. When called, it always returns the original values, regardless of how many times the function will be called.
 
 - Assuming you have a function that executes not one, not two-times but several times, why not memorize the result of that function. This way, you only execute this function once. This makes your program more performance efficient.
@@ -25,13 +25,13 @@ In this case, we can say that Memoization is a technique of caching results of e
 
 Let’s take a real-life situation. Assume you are reading a novel with a cozy and fancy, attractive cover. A stranger passes and asks you what is the title and the author of the book. Chances are you'll flip the book, read the title and the author's name, and reply to that stranger.
 
-The book is attractive, and chances are more people will like to know about the book. When another person passes by and asks you the details of that book, chances are you will not relook at the book's author and title again. Moreover, if you don’t really remember, you will look and reread those details. At this point, you must now be having the book details in your memory. And if a third person asks you about the book details, you will receive the information from your memory. The book details don’t change even if 100 people asked you about it.
+The book is attractive, and chances are more people will like to know about the book. When another person passes by and asks you the details of that book, chances are you will not relook at the book's author and title again. Moreover, if you don’t remember, you will look and reread those details. At this point, you must now be having the book details in your memory. And if a third person asks you about the book details, you will receive the information from your memory. The book details don’t change even if 100 people asked you about it.
 
 The same applies to the concept of Memoization. When a function is called, memoization stores the function results before it returns the result to the function caller. This way, when another caller point to the results of this function, Memoization will return the result stored (cached) in the memory, and the function will not be executed over and over again. Memorizing reduces redundant function calls by caching the results based on its inputs.
 
 The concept of Memoization is backed by two main sub-concepts, namely;
 
-- [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) - Closure is a combination of a function wrapped together (enclosed) with references to the corresponding state (the lexical environment). In other terms, the Closure allows you access to the domain of the outer function from the inner function. In JavaScript, closures are generated every time a function is created, at the time of a function is created.
+- [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) - Closure is a combination of a function wrapped together (enclosed) with references to the corresponding state (the lexical environment). In other terms, the Closure allows you access to the domain of the outer function from the inner function. In JavaScript, closures are generated every time a function is created, at the time a function is created.
 - [High order function](/engineering-education/javascript-higher-order-functions/) - A high order function accepts another function as an argument or returns a function as its output.
 
 ### Caching functions values using Memoization technique
@@ -121,7 +121,7 @@ console.log(clumsysquare(7467));
 console.log(clumsysquare(9666));
 ```
 
-The example above executes faster compared to when not using the concept of Memoization. You can choose to the cached using another function like shown above. Alternatively, you chose to store the results in a variable. Check this example.
+The example above executes faster compared to when not using the concept of Memoization. You can choose to store the cache using another function like shown above. Alternatively, you chose to store the results in a variable. Check this example.
 
 ```js
 const memoizedValue = [];
@@ -147,9 +147,9 @@ const clumsysquare = (num) => {
 
 Let's test the function execution time using the normal function flow comparing to a memoized function.
 
-The example below will calculate the time to take whenever a function is called.
+The example below will calculate the time to take whenever a function `clumsysquare()` is called.
 
-#### Using the default function flow.
+#### Using the default function flow
 
 ```js
 const clumsysquare = (num) => {
@@ -187,7 +187,7 @@ Second call: 145.090ms
 Third call: 166.594ms
 ```
 
-The time it takes to execute each function increases. Every function call restarts the execution process, even though they are referring to the same results.
+The time it takes to execute each function increases. Every function call restarts the execution process.
 
 #### Using a memoized function
 
@@ -260,7 +260,7 @@ Each number is the sum of the previous two numbers. Here is how the sequence is 
 
 A Fibonacci calculate the same numbers repeatedly. This becomes a redundant computation. In addition, as you generate more Fibonacci terms, the program might slow down.
 
-Here is a Fibonacci example that generates the nth Fibonacci terms in the Fibonacci sequence. Putting in mind that the function execution should be fast, well written, and stable, and reliable.
+Here is a Fibonacci example that generates the nth Fibonacci terms in the Fibonacci sequence. Putting in mind that the function execution should be fast, well written, stable, and reliable.
 
 ```js
 const fibonacci = (n) => {
