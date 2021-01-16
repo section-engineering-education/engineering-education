@@ -1,5 +1,6 @@
 For us to secure our systems and accounts, we need a strong password.
 The person developing the system has to ensure that the password the end-user chooses is strong enough to guard his/her account.
+
 We are going to discuss one of the tools offered to developers to achieve that, the **Regular Expression** class in JavaScript.
 
 #### The Regular Expressions Class
@@ -9,7 +10,10 @@ It can be taken as an object in JavaScript.
 We can either use **simple patterns** such as `/vet/` for finding a direct much or **special  characters** like `/?=/` for getting more than a direct match.
 
 **How to use Regex**
+
+
 Regex, also denoted as RegExp, can be constructed in one of these two ways:
+
 - **Using Regular Expression literal** where the pattern is enclosed between two slashes.
 `
 let check = /vet/
@@ -55,6 +59,7 @@ We are going to discuss how to check the strength of  a password a user enters b
 
 We are going to have three levels:
 - **Strong**
+
 The password has to meet all the requirements to be strong.
 ```java
 (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
@@ -64,6 +69,7 @@ The password has to meet all the requirements to be strong.
 ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
 - **Medium**
+
 The password can only be medium either if it is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
 ```java
 ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
@@ -73,6 +79,7 @@ The password can only be medium either if it is at least 6 characters long and m
 ![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
 
 - **Weak**
+
 If the entered password does not meet the strong or medium-level requirements then it is deemed weak.
 
 ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
