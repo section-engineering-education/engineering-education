@@ -1,32 +1,42 @@
-### Introduction
+In this article, we are going to take a look at variables, data types, and control statements.
 
-In this article, we are going to look at variables, data types, and control statements. We shall look at different types of variables, data types, and control statements.
 ### Variables in C#
 
-At some point, we need to utilize some information in our program, we can store it in a memory location and name the memory location as it gets simpler to get to it. We can achieve these by using variables.
+At some point, we need to utilize some data in our program, we can store it in a memory location and name the memory location as it gets simpler to get to it. We can achieve these by using variables.
+
 Variables are names of a memory location for storing data types.
 
 Variables are classified into various types:
->
+
 - `int` is used to hold an integer(whole numbers) like 5,6,7,8.
+
 - `char` is used to hold a character like 'A'.
+
 - `string` is used to store text like "C# Language".
+
 - `double` is used to store a fraction or a decimal value.
+
 - `bool` is used to hold a true or false value.
 
-### Syntax of declaring a variable.
+### Syntax of declaring a variable
 
 ```C#
 <data type> <variable_name> = value;
 ```
-**Data type** is the C# type like `int,double,string,char or bool` while **variable_name** is the name of the variable (like x or name).
+
+**Data type** is the C# type like `int, double, string, char or bool` while **variable_name** is the name of the variable (like x or name).
 The **equal sign** initializes or provides the variable with a value.
 
 **Rules of declaring a variable name:**
+
 - Keywords should not be used as a name for the variable.
+
 - Blank spaces are not used in a variable name(use an underscore `(_)`.
+
 - Variable name **must** not start with a digit.
+
 - Variable names can consist of characters, digits, or symbols like underscore(_).
+
 - C# is case-sensitive as it treats uppercase and lowercase names differently thus **program** and **Program** are different names.
 
 ### Example
@@ -37,6 +47,7 @@ Creating a variable and assigning the value immediately.
 int a = 5;
 Console.WriteLine(a);
 ```
+
 We have created a variable called **a** that stores an integer **5**.
 
 Creating a variable and assigning the value later.
@@ -45,15 +56,14 @@ Creating a variable and assigning the value later.
 int b;
 b = 5;
 Console.WriteLine(b);
-
 ```
+
 This will still print out the value as 5. When we assign a new value in b, it will over right the other value.
 
 ```C#
 int b = 5; //initializing b as 5
 b = 10; // changing the value of be to 10
 Console.WriteLine(b);//it will output 10
-
 ```
 
 Creating a variable of data type string.
@@ -74,6 +84,7 @@ double num = 3.33;
 string text = "Hello World";
 bool isCsEasy = true;
 ```
+
 ### Constants in variables
 
 Constant is a keyword used to store variables whose value cannot be changed(it is a read-only value). 
@@ -82,6 +93,7 @@ It is denoted by `const` keyword:
 ```C#
 const int num = 5;
 ```
+
 Here,` num` value cannot be changed:
 
 ```C#
@@ -106,7 +118,6 @@ a = 2;
 b = 5;
 c = a + b;// 2 + 5
 Console.WriteLine(c);//prints out 7
-
 ```
 
 This will take the value assigned to *a* (which is 2)and add to the value of *b* (which is 5) and `Console.WriteLine()` will print out the answer as 7. 
@@ -118,7 +129,6 @@ string firstName = "Mike";
 string secondName = "Sam";
 string fullname =  firstName + secondName;
 Console.WriteLine(fullname);//prints out MIke Sam
-
 ```
 
 ### Declaring multiple variables
@@ -129,7 +139,6 @@ a = 2;
 b = 5;
 c = 7
 Console.WriteLine(a + b + c);//prints out the answer as 14
-
 ```
 
 ### C# Identifiers
@@ -146,13 +155,12 @@ char letter = 'A';            //storing character
 double num = 3.33;            //storing fraction and decimals
 string text = "Hello World";  //storing string
 bool myBool = true;           //storing boolean(true or false)
-
 ```
 
 Data types are so much related to variables and many programmers tend to confuse between the two. Data types classify the various types of variables and state the size of data that they are supposed to store.
 
 Data types are classified into various types:
-> 
+
 
 | Data types |      size     |  Explanation                          |                         
 |----------  |:-------------:|--------------------------------------  |
@@ -169,47 +177,56 @@ Data types are classified into various types:
 Let us look at each of them:
 
 ### 1. Byte
+
 The `byte` data type is used to store whole numbers from -128 to 127.
 
-**Example**
+**Example**:
+
 ```C#
 byte number = 75;
 console.WiteLine(number);//prints out 75
 ```
 
 ### 2. Int
+
 The `int` (integer) data type is used to store whole numbers from -2,147,483,648 to 2,147,483,647.
 
-**Example**
+**Example**:
 ```C#
 int a = 5; 
 console.WiteLine(a);//prints out 5
 ```
 
 ### 3. Long
+
 The `long` data type allows you to store whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807.
 This data type is used when a number is large to be stored in the *int* data type. We should add a letter **L** at the end of the long number to specify it is a long number.
 
 
-**Example**
+**Example**:
+
 ```C#
 long b = 50000000000000L; //stores a long number
 console.WiteLine(b);
 ```
 
 ### 4. Float
+
 The `float` store a fraction number and a decimal number of up to 6 decimal digits. We should add an **F** at the end of the decimal number to specify that it is a float number.
 
-**Example**
+**Example**:
+
 ```C#
 float c = 0.64737F;
 console.WriteLine(c);
 ```
 
 ### 5. Double
+
 The `double` data type stores a fraction and a decimal number of up to 15 decimal digits.
 
-**Example**
+**Example**:
+
 ```C#
 double d = 4.847376474;
 console.WriteLine(d);
@@ -217,17 +234,20 @@ console.WriteLine(d);
 *Note*: Double data type stores many decimal numbers than float. It is advisable to use double in most of the calculations.
 
 ### 6. Char
+
 The `char` type is used to store **one** character.
 
-**Example**
+**Example**:
+
 ```C#
 char letter='A';
 console.WriteLine(letter);
 ```
 ### 7. String
+
 The `string` data type is used to store **many** characters.
 
-**Example**
+**Example**:
 ```C#
 string name="My name is Geoffrey";
 console.WriteLine(name);
@@ -238,7 +258,7 @@ console.WriteLine(name);
 
 The `bool` data type is used to store **true** or **false** value.
 
-**Example**
+**Example**:
 ```C#
 bool myBoolean=true;
 bool nextBoolean=false;
@@ -248,6 +268,7 @@ console.WriteLine(nextBoolean);//prints out false
 
 ### Control Statements 
 Control statements help to make decisions in a program, loop(iterate) through the conditions, select and change the flow of the conditions.
+
 There are four types of control statements in C#:
 
 - Decision-making statements
@@ -261,22 +282,24 @@ We will look at decision-making statements and selection statements.
 
 This type of condition test the conditions provided evaluating each of them either true or false.We use **if-else Statement** and **else if statement**.  
 
-**Syntax of if-else Statement**
+**Syntax of if-else Statement**:
+
 ```C#
 if (condition)
-  {
-    statements // block of code to be executed if the condition is true
+{
+  statements // block of code to be executed if the condition is true
+}
+else
+ {
+    statements // block of code to be executed if the condition is false
   }
-    else
-     {
-        statements // block of code to be executed if the condition is false
-      }
 ```
- If the statements in the `if condition` is **true**, the block of code inside the *if condition* is executed.
 
- The `else statement` is executed only when the *if condition* is false.
+If the statements in the `if condition` is **true**, the block of code inside the *if condition* is executed.
 
- **Example**
+The `else statement` is executed only when the *if condition* is false.
+
+**Example**:
  ```C#
 int age = 18;
 if (age < 15) 
@@ -291,9 +314,11 @@ if (age < 15)
 ```
 From the program above, we have set our age as 18. The program first checks for the first condition, that is if the age is less than 15. If it is true, the block of code in the *if condition* is executed otherwise the *else statement* is executed. In our program the if condition is false thus printing out the else statement.
 ### Else if Statement
+
 This condition is used if the first condition is **False**.
 
-**Syntax of the Else if Statement**
+**Syntax of the Else if Statement**:
+
 ```C#
 if (condition1)
   {
@@ -308,7 +333,9 @@ if (condition1)
         statements //block of code to be executed if both condition1 and condition2 is false
       }
 ```
-**Example**
+
+**Example**:
+
 ```C#
 int age = 18;
 if (age < 10) 
@@ -325,6 +352,7 @@ if (age < 10)
           }
       //Prints out "You are old"
 ```
+
 From the program above, we have set our age as 18.Thus,our *if condition* is **false**. The program moves to the next condition,*else if condition* which is also **false**.
 Our program executes else statement since both if and else if conditions are **false**.
 
@@ -332,7 +360,8 @@ Our program executes else statement since both if and else if conditions are **f
 
 This type of condition statement is used to select a code block out of many. We use the switch-case statement in such a case.
 
-**Syntax of the switch-case Statement**
+**Syntax of the switch-case Statement**:
+
 ```C#
 switch(expression) 
   {
@@ -347,9 +376,11 @@ switch(expression)
       break;
   }
 ```
+
 The expression value can either be user input or program generated. When the expression matches with one of the cases, the code block is executed. The **break statement** is used to exit the testing of the cases when the match is found. The **default** condition is executed when any of the cases does not match with the expression on the cases.
 
 ### Example of the switch-case Statement
+
 ```C#
 //The program gets input from the user and determines the day as per the number entered by the user
  using System;
@@ -392,11 +423,17 @@ The expression value can either be user input or program generated. When the exp
       }
     }
 ```
+
 From the above program, if the user enters 5, the program will execute *"Friday"*
 
-### Takeaways:
+### Takeaways
+
 In this tutorial we looked at:
+
 - Variables and the various types
+
 - Data Types and the various types
+
 - Control statements (If-else statements, else if statements and switch-case statements)
+
 - Example programs in each case for better understanding of the control statements
