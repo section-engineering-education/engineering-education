@@ -202,6 +202,7 @@ The complete code can be accessed in my [Github repository](https://github.com/A
 In the event listener, we check the strength when the user has typed something, but
 we won't do it immediately after every input event.
 When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.
+
 We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
 
 ```java
@@ -218,6 +219,7 @@ We also clear the previous timeout, if there is any so that when the events occu
 ```
 
 In the function `StrengthChecker`, we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
+
 It then sets the background colour(`strengthBadge.style.backgroundColor`) and text of the badge(`strengthBadge.textContent`).
 
 ```java
