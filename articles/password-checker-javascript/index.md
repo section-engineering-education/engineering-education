@@ -224,4 +224,6 @@ It then sets the background colour(`strengthBadge.style.backgroundColor`) and te
         }
 ```
 
-That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).</br>Hope you can manipulate the code more and give it more levels like Too Strong, Too Weak, etc.</br>
+That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).</br>Hope you can manipulate the code more and give it more levels like Too Strong, Too Weak, etc.
+You may even make it check the strength using percentages and animate the badge.</br>Passwords are a great deal in application security so we have to take our time in checking their strength.</br>
+Have a good one.
