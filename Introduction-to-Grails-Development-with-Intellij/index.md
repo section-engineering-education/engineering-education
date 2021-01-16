@@ -6,29 +6,29 @@ In recent years, many developers are using frameworks when coming up with websit
 
 **Grails** is Java and Groovy framework developing agile web applications. Grails implements MVCS (Model,View, and Controller) design pattern.
 
-Grails is superb because it makes developers concentrate on application requirements and use of less time in configuring the framework. Grails provides tools for development and it is build based on tools like  Quarts, Hibernate,Spring and uses Gradle for library managemnet.
+Grails is superb because it makes developers concentrate on application requirements and use less time in configuring the framework. Grails provides tools for development and it is build based on tools like  Quarts, Hibernate, Spring and uses Gradle for library management.
 
-There are many Grails framework version being built which has support of different libraries and tools
+There are many Grails framework version being built which has the support of different libraries and tools
 
 ### Prerequisites
 
-- IntelliJ intergrated development environment(IDE)
+- IntelliJ integrated development environment(IDE)
 - Knowledge in Java development
 - Java development kit(JDK) installed in your computer/laptop to help in application development
 
 ### Installing Grails
 
-- Download [Grail Framework](https://grails.org/download.html) as per tutorial we were at version 4.0.6 in which you will get a zipped file.
-- Extract the zipped file and place where you keep development tools. This is how to do Windows [Unzip](https://www.windowscentral.com/how-zip-and-unzip-files-windows-10). Ubuntu [unzip](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal)
+- Download [Grail Framework](https://grails.org/download.html) as per the tutorial we were at version 4.0.6 in which you will get a zipped file.
+- Extract the zipped file and place it where you keep development tools. This is how to do Windows [Unzip](https://www.windowscentral.com/how-zip-and-unzip-files-windows-10). Ubuntu [unzip](https://askubuntu.com/questions/499807/how-to-unzip-tgz-file-using-the-terminal)
 - Set environment variable `GRAILS_HOME` to point where Grails installation directory is located. [Set windows environment variable](https://www.computerhope.com/issues/ch000549.htm).[ Set Ubuntu environment variable](https://askubuntu.com/questions/58814/how-do-i-add-environment-variables)
 
 ### Getting Started
 
-Grails provides a set of commands to support application development.IDE have also easen the use of commands and provided a way user can click menus for fast application development.
+Grails provides a set of commands to support application development.IDE has also easen the use of commands and provided a way users can click menus for fast application development.
 
-To create an application in Grail framework `create-app` command can be passed in terminal or windows CMD with arguements like name of the application.
+To create an application in Grail framework `create-app` command can be passed in terminal or windows CMD with arguments like the name of the application.
 
-The command below shows how to create an application via terminal or CMD. Open terminal or CMD in a directory where you want to save the application. In this case we have a folder called `Projects` in document folder
+The command below shows how to create an application via terminal or CMD. Open terminal or CMD in a directory where you want to save the application. In this case, we have a folder called `Projects` in the document folder
 
 Navigate to `Projects` folder via terminal
 
@@ -40,7 +40,7 @@ cd C:\Users\user\Documents\Projects
 cd C:\Users\user\Documents\Projects
 ```
 
-Create first application with the following command
+Create the first application with the following command
 
 ```bash
  grails create-app Firstapp
@@ -48,14 +48,14 @@ Create first application with the following command
 
 ![CREATE-APP](/engineering-education/how-to-replicate-postgresql-database/grails-create-app.png)
 
-The Grails application is formed within the  `Firstapp` directory and many other grails command can be executed.
+The Grails application is formed within the  `Firstapp` directory and many other grails commands can be executed.
 
 To run the application run the following command
 
 ```bash
 grails run-app
 ```
-The command will make the web application to run via browser. You can type the highlighted command in the browser.
+The command will make the web application to run via a browser. You can type the highlighted command in the browser.
 
 ![CREATE-APP](/engineering-education/how-to-replicate-postgresql-database/grails-run-app.png).
 
@@ -98,15 +98,15 @@ In `gails-app`  has  the following directories
 
 ### assets folder
 
-This is where all static folders are kept like javascript , Images ,CSS and other static multimedia content
+This is where all static folders are kept like javascript, Images, CSS and other static multimedia content
 
 ### conf folder
 
-This is where configuration files resides this includes resources.groovy ,application.yml ,logback.groovy and any other configuration from plugins
+This is where configuration files reside this includes resources.groovy, application.yml,logback.groovy, and any other configuration from plugins
 
 ### controller folder
 
-The folder contain Controllers , default UrlMapping.groovy which control requests.
+The folder contains Controllers, default UrlMapping.groovy which control requests.
 
 ### domain folder
 
@@ -122,11 +122,11 @@ The folder contains files related to when you launch the web application.
 
 ### services folder
 
-All business logic are usually put under service folder
+All business logic are usually put under the service folder
 
 ### taglib folder
 
-Folder contain tags and developers can be able to add their own tags. Tags help im compressing GSP code since helps in re-use of code
+Folder contain tags and developers can be able to add their own tags. Tags help im compressing GSP code since helps in the re-use of code
 
 ### utils folder
 
@@ -139,13 +139,13 @@ it contains GSP files, where HTML code is kept
 
 ### GRAILS MVC
 
-MVC design pattern help in partioning responsibilities in the application to simplify architecture. Model classes represent domain objects in system. Controller classes control the flow of your application. Service classes control the business logic in the application. Views artifacts is to present information in a way desired.
+MVC design patterns help in partitioning responsibilities in the application to simplify the architecture. Model classes represent domain objects in them system. Controller classes control the flow of your application. Service classes control the business logic in the application. Views artifacts are to present information in a way desired.
 
-### Adding more Classes in `Firstapp` project
+### Adding more Classes in the `Firstapp` project
 
 ### Creating Domain Class
 
-The below command adds empty Domain Class
+The below command adds an empty Domain Class
 
 ```bash
 
@@ -199,7 +199,7 @@ class StudentController {
 
 ### Configure database
 
-This is done in application.yml to any database with any credentials needed. Within the file any database can connected provide it has a JDBC driver.
+This is done in application.yml to any database with any credentials needed. Within the file, any database can be connected provide it has a JDBC driver.
 
 ```java
 dataSource:
@@ -262,15 +262,15 @@ The command also creates views in the views folder under the same object student
 └── edit.gsp
 ```
 
-Just as the views are each has its function. show.gsp is used to show a single object selected, index.gsp is used to show list of objects in database, create.gsp provide a form for adding new object and edit.gsp is used to edit an existing data.
+Just as the views are each has its function. show.gsp is used to show a single object selected, index.gsp is used to show a list of objects in the database, create.gsp provide a form for adding new object and edit.gsp is used to edit an existing data.
 
-The new view in browser will look like the following.
+The new view in the browser will look like the following.
 
 ![VIEWS](/engineering-education/how-to-replicate-postgresql-database/grails-views-data.png).
 
-The same folder can be opened in Intellij and continue with fast coding. For any Class to be added the developer needs to right click on a given folder and create a Grails Class based on the Folder.
+The same folder can be opened in Intellij and continue with fast coding. For any Class to be added the developer needs to  right-click on a given folder and create a Grails Class based on the Folder.
 
-Any library that is not there can be added through build.gradle. Just like  CMD/Terminal grails has terminal window where the grails command can be done without coming ot to main CMD/Terminal.
+Any library that is not there can be added through build.gradle. Just like  CMD/Terminal grails has a terminal window where the grails command can be done without coming to the main CMD/Terminal.
 
 How it looks in IntelliJ
 
@@ -280,10 +280,10 @@ For the source code check [here](https://github.com/tambastar/Grails-Firstapp)
 
 ### Conclusion
 
-Congratulations you fast grail app is successfully ran. Grails Framework has really help by taking the advantages of several tools and bringing them together.
+Congratulations your fast grail app is successfully running. Grails Framework has really helped by taking the advantages of several tools and bringing them together.
 
 In this article;
 
--We have installed Grails framework.
--We have looked at Grails directories.
--We have created a Student Object Management
+- We have installed the Grails framework.
+- We have looked at Grails directories.
+- We have created a Student Object Management
