@@ -6,7 +6,7 @@ url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/
 title: Dark Mode for React Application using Context API and Hooks
 description: This tutorial gives readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
 author: mohan-raj
-date: 2020-12-26T00:00:00-13:00
+date: 2021-01-16T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -27,7 +27,7 @@ By the end of this tutorial, you’ll know:
 - How to implement dark mode in a React application using React's Context API.
 
 ### Prerequisites
-The fundamentals of React will not be covered in this tutorial. If you are not comfortable with the fundamentals, here is a [helpful tutorial](https://reactjs.org/tutorial/tutorial.html) that you can go through before beginning with this project.
+We will not cover the fundamentals of React in this tutorial. If you are not comfortable with the fundamentals, here is a [helpful tutorial](https://reactjs.org/tutorial/tutorial.html) that you can go through before beginning with this project.
 
 ### Overview
 We'll be going through these steps in this article:
@@ -66,6 +66,7 @@ Every Context object comes with a Provider component. All the components that co
   {/* Children */}
 </Context.Provider>;
 ```
+
 To subscribe to the Context object, we will use the `useContext` hook and pass the Context object created by `createContext` to it.
 
 When a component subscribes to the Context object, it will read the current context value from the closest matching Provider above it in the tree.
