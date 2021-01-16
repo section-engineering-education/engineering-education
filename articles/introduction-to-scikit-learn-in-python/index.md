@@ -57,7 +57,7 @@ from sklearn import preprocessing
 
 ### Scikit-Learn for Standardization
 
-Standardization is an essential task for [distance based models](https: //ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) so that one particular feature does not dominate over the other. 
+[Distance based models](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/zw12z7835) are machine learning algorithms that use distances to check if they are similar or not. If two points are close together, one can infer that the feature values are simiar and hence, can be classified as similar.  Standardization is an essential task for distance based models so that one particular feature does not dominate over the other. 
 
 A data point x is standardized as follows:
 
