@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-recursion/
 title: Introduction to Recursion
 description: This article will help the readers to understand the basics of recursion using Python. Recursion falls under a category of algorithms called "divide and conquer", in which a problem is broken down into smaller sub-problems that are easier to solve.
 author: adith-bharadwaj
-date: 2021-01-06T00:00:00-12:00
+date: 2021-01-16T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
