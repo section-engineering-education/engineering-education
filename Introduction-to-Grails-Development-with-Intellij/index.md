@@ -278,6 +278,10 @@ How it looks in IntelliJ
 
 For the source code check [here](https://github.com/tambastar/Grails-Firstapp)
 
+### More details
+
+- [Grails](https://grails.org/)
+
 ### Conclusion
 
 Congratulations your fast grail app is successfully running. Grails Framework has helped by taking the advantages of several tools and bringing them together.
