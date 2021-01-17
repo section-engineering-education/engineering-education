@@ -96,10 +96,38 @@ writableStream.end();
 ``` 
 
 ### The Duplex streams
-The duplex streams are both readable and writable. Both ends of the stream will will interact performing both pipe into and pipe from. An example is websockets.
+The duplex streams are both readable and writable. Both ends of the stream will will interact performing both pipe into and pipe from.```javascripta.pipe(b).pipe(a)```
+I will be demonstrating this using a simple HTTP server as they recieve a request and send a response, a perfect example of duplex that is, a readable stream as the request and the writable stream as the response.
+
 ```javascript
-a.pipe(b).pipe(a)
+const http = require("http");
+const server = http.createServer((req,res)=>{
+    let body = "";
+    req.setEncoding("utf8");
+    req.on("data", (chunk)=>{
+        body + = chunk;
+    });
+    req.on("end", ()=>{
+        console.log(body);
+        try{
+            res.write("Hello world");
+            res.end();
+        }
+        catch(error){
+            res.statusCode = 400;
+            return res.end(`An error occured, ${error.message}`)
+        }
+    })
+})
 ```
+The `req` param is a readable stream that will be processed when recieved as a request.
+We will then send a `res` which is a writable stream.
+The `req.setEncoding` will get the data as `utf8` string. /// use it before reading the stream
+Readable streams emit "data" events once a listener is added. Using the `.on` method will read our body in chunks and store it in the body, triggered by the data event.
+The `end` event is triggered when nothing is left to read in a readable stream
+We listen on the server then
+
+
    
 ### The Transform streams
 They are special type of duplex streams that allow the output to transform its input meaning we calculate the output from the inputs.
