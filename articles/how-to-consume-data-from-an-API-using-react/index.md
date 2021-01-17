@@ -139,7 +139,7 @@ Finally, the `userquery` and `setUserQuery` hold the actual values that will be 
 
 #### 1.	getMovie
 
-This method will be called whenever the page is reloaded. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` object.
+This method will be called whenever the page is reloaded. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the `movie` state. Here is the code for the `getMovie` function.
 ```
 const getMovie = async()=>{
   const response = await fetch(url);
