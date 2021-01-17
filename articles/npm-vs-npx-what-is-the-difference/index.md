@@ -1,8 +1,8 @@
-If you are a Node.js developer, you must have used NPM in one or many instances when developing your Node.js app. NPM is buddle with Node.js. If you install Node.js on your computer, you get NPM. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. It helps to install Node.js packages and modules and later run them as if they were built-in. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
+If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
 
-### What is NPM
+### What is NPM?
 
-NPM is the Node Package Manager. It's pre-installed with Node.js. It makes it easier for developers to share and reuse open source code by enabling them to install open source modules. Modules are JavaScript packages that you install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
+NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is used to install Node.js packages to use them in our application. It makes it easier for developers to share and reuse open source code by enabling them to install as modules. Modules are JavaScript packages that you can install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
 
 ### What is NPX
 
@@ -20,7 +20,7 @@ When using NPM, there are two ways to install a package into your local computer
 
 When you install executables using NPM, Node.js links them either from the local or global path. As a package manager, NPM does not execute a package directly.
 
-To use and run an NPM installed package, you should specify the package is the `package.json` file. It is created automatically when you initialize your first Node.js project with `npm init -y`.
+To use and run an NPM installed package, you should specify the package is the `package.json` file. The `package.json` file is created automatically when you initialize your first Node.js project with `npm init -y`.
 
 To execute a locally installed package, it must be specified in the package.json scripts scaffold as shown below.
 
@@ -60,7 +60,8 @@ And provide the argument to execute
 ./node_modules/.bin/eslint yourfile.js
 ```
 
-NPX comes in to solve a couple of keystrokes to make it easier to execute Node.js modules. It makes it easier to run and interact with executables hosted in the NPM registry and to execute NPM local binaries. It also comes with many added features.
+NPX comes in to save a couple of keystrokes to make it easier to execute Node.js modules. It makes it easier to run and interact with executables hosted in the NPM registry and to execute NPM local binaries. It also comes with many added features.
+
 ### Using NPX
 
 With NPX, you can run and execute packages without having to install them locally or globally.
@@ -111,7 +112,7 @@ With NPX, you can have your local packages installed and use NPX commands (inste
 npx eslint yourfile.js
 ```
 
-NPX lets you execute local 'node_modules' as if they were global. If the package was not previously installed, NPX would not install the package in your system; instead, it will create a temporary cache that will hold the package binaries. Once the execution is over, NPX will remove the installed cache binaries from the system. This way, your globals stays clean. This saves on disk size and allows you to run a package only when it's needed. It also gives you the advantage of testing packages without having to install them.
+NPX lets you execute local 'node_modules' as if they were global. If the package was not previously installed, NPX would not install the package in your system; instead, it will create a temporary cache that will hold the package binaries. Once the execution is over, NPX will remove the installed cache binaries from the system. This way, your globals stays clean. This saves disk space and allows you to run a package only when it's needed. It also gives you the advantage of testing packages without having to install them.
 
 This concept is commonly seen when executing NPM scripts. For example, let's say you are using the [Sequelize](https://sequelize.org/) package to automate data migration and seed data from your project. For that case, you will need the [Sequelize CLI](https://www.npmjs.com/package/sequelize-cli). You will need to know where Sequelize is installed in your project in order to execute the package binaries. For example
 
@@ -138,11 +139,12 @@ This is not that hard.
 However, when you use NPX, things get very much simpler.
 
 Running the below command will be enough to seed the database.
-Why NPX over NPM scripts.
 
 ```bash
 npx sequelize db:seed
 ```
+
+### Why NPX over NPM scripts
 
 - No need to edit the `package.json` file with `node_modules` paths.
 - You can directly execute the tool from the command line.
@@ -165,7 +167,7 @@ With NPX, one-off commands such as this are a lot more simple and straightforwar
 
 When it comes to packages versioning, NPM will handle that perfectly with its `package-lock.json` file. With NPX, there are a lot more features that you can benefit from package versioning, such as
 
-- Executing a specific package version.
+- **Executing a specific package version**: 
 
 If you want to execute a specific package's version, let's say, Eslint, you should specify the package version, as shown below.
 
@@ -173,9 +175,7 @@ If you want to execute a specific package's version, let's say, Eslint, you shou
 npx eslint@3.9.0 --version
 ```
 
-Your project will be executed with the package version you have specified.
-
-- Version testing.
+- **Version testing**:
 
 With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can check out the new version before deciding whether to update them to determine if the new version is compatible with your project.
 
@@ -209,7 +209,7 @@ Here, the results show that the new version will help you buddle your project fu
 
 [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) stands for Node Version Management. It helps you to install different Node.js versions is your computer.
 
-Moving a Node.js installation from one version to another using [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) can be a little bit tricky. NPX helps you to use specific Node.js versions without using NVM.
+Moving a Node.js installation from one version to another using [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) can be tricky. NPX helps you to use specific Node.js versions without using NVM.
 
 For example
 
