@@ -14,10 +14,10 @@ images:
   - url: /engineering-education/upload-multi-part-form-data-using-multer/hero.jpg
     alt: Multer example image
 ---
-Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, **form-data gets encoded before submitting it to the server**.
+Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before submitting it to the server. We can do this by specifying the enctype attribute in the \<form> tag in HTML. If we don't specify it, form-data gets encode with the default type.
 <!--more-->
 ### Introduction
-We can do this by specifying the **enctype attribute in the \<form> tag in HTML.** If we don't specify it, form-data gets encode with the default type. This is usually the case when we are dealing with text-only data like name, email, password, etc.
+This is usually the case when we are dealing with text-only data like name, email, password, etc.
 But, **if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data."** This value is required when we are using forms that have a file upload control.
 Now, **Multer is an npm package that makes it easy to handle the file uploads.** It does it very efficiently, thus it is quite popular. In this article, we will see how to use Multer to handle Multipart/form-data using Node.js, Express and MongoDB.
 
