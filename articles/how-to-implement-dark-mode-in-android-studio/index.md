@@ -1,5 +1,21 @@
-In the recent past, there has been a lot of excitement in regards to dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-implement-dark-mode-in-android-studio/
+title: How to Implement Dark Mode in Android
+description: This article gives the reader a guide on how to implement dark mode in android using android studio.
+author: michael-barasa
+date: 2021-01-17T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-implement-dark-mode-in-android-studio/hero.jpg
+    alt: Dark mode example image
+---
+In the recent past, there has been a lot of excitement in regards to dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
+<!--more-->
 ### Introduction
 The dark mode feature does not need any significant explanation. It's highly likely that you have already used dark mode on your phone or computer at one point. So, we can simply define dark mode as a setting that changes the overall color of your application to black. The dark mode is supported by both mobile and web applications. Many applications on the Google Play Store are already equipped with this feature. There are even rumors that enabling dark mode helps prolong battery life. Furthermore, it improves the visual appeal of the app, especially for those users with eye problems.
 
@@ -186,3 +202,6 @@ Your app should have a dark mode if you have followed the above steps properly. 
 
 ### Conclusion
 The dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
