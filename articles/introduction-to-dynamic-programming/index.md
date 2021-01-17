@@ -139,6 +139,7 @@ In conclusion, dynamic programming is an exceptional variant of recursion that c
 
 Whether you are a student preparing for a job or a professional, understanding how DP works can benefit you. Head over to these websites and resources to better understand DP and solve problems on your own because that is the best way to learn something new.
 
+### Resources
 [Hackerrank](https://www.hackerrank.com): Hackerrank allows you to select the problems' type and difficulty, making it perfect for beginners.
 
 [Hackerearth](https://www.hackerearth.com/)
