@@ -343,7 +343,7 @@ We should use the `cloudDocumentTextRecognizerProcessImage` method in the `ml` p
 We will pass the URI of the selected image to this function.
 
 ```JSX
-const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
+const processingResult = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
 ```
 
 The function will process the image and return the text recognized in the image along with an array of blocks of recognized text.
@@ -373,9 +373,9 @@ Let's set the state to the response of the `cloudDocumentTextRecognizerProcessIm
 const onImageSelect = async (media) => {
   if (!media.didCancel) {
     setImage(media.uri);
-    const result = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
-    console.log(result);
-    setResult(result);
+    const processingResult = await ml().cloudDocumentTextRecognizerProcessImage(media.uri);
+    console.log(processingResult);
+    setResult(processingResult);
   }
 };
 ```
