@@ -6,7 +6,7 @@ url: /engineering-education/text-to-speech-in-javascript/
 title: Text to Speech using Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how they can implement text to speech using the Web Speech API in JavaScript.
 author: mohan-raj
-date: 2021-01-16T00:00:00-10:00
+date: 2021-01-17T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,8 @@ images:
   - url: /engineering-education/text-to-speech-in-javascript/hero.jpg
     alt: Text to Speech using Web Speech API in JavaScript Hero Image
 ---
-The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement text to speech.
+The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement text to speech. You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
 <!--more-->
-
-You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
-
 ### Prerequisites
 To follow along with this tutorial, you should have:
 
@@ -28,7 +25,7 @@ To follow along with this tutorial, you should have:
 
 - A browser to view the webpage, preferably [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/).
 
-### Project Directory
+### Project directory
 Create a new directory for the project and create two new files called `index.html` and `textToSpeech.js`.
 
 ```bash
@@ -37,7 +34,7 @@ project-directory/
 |-textToSpeech.js
 ```
 
-### The HTML Page
+### The HTML page
 In the HTML file, let's set up:
 
 - An empty select menu. We will fill the empty select menu with the list of voices available using JavaScript.
@@ -110,7 +107,9 @@ let speech = new SpeechSynthesisUtterance();
 #### Properties
 Now, let's configure some properties on this `SpeechSynthesisUtterance` instance.
 
-There are six properties on the `SpeechSynthesisUtterance` instance that we can tweak. They are:
+There are six properties on the `SpeechSynthesisUtterance` instance that we can tweak. 
+
+They are:
 
 **Language**:
 
@@ -180,7 +179,7 @@ document.querySelector("#volume").addEventListener("input", () => {
 
 **Pitch**:
 
-The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value which can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
+The `pitch` property gets and sets the pitch of the utterance. It is a float representing the pitch value that can range between 0 (lowest) and 2 (highest). The default pitch is 1 if this property is unset.
 
 Let's add an `onInput` listener to the `pitch` range slider and adjust the pitch property when the value of the slider changes. We've already set the min, max, and default value of the slider in the HTML tag.
 
@@ -204,7 +203,7 @@ document.querySelector("#pitch").addEventListener("input", () => {
 
 The `voice` property gets and sets the voice that will be used to speak the utterance. This should be set to one of the [`SpeechSynthesisVoice`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisVoice) objects. If it is not set, the most suitable default voice available for the utterance's language setting will be used.
 
-To set the voice of the utterance, we need to get the list of available voices in the `window` object. When the window object loads, the available voices will not be available immediately. It's an async operation. An event will be triggered when the voices are loaded. We can set a function that should be executed when the voices are loaded.
+To set the voice of the utterance, we need to get the list of available voices in the `window` object. When the window object loads, the voices will not be available immediately. It's an async operation. An event will be triggered when the voices are loaded. We can set a function that should be executed when the voices are loaded.
 
 ```JavaScript
 window.speechSynthesis.onvoiceschanged = () => {
@@ -375,7 +374,7 @@ You can take a look at the project that's been deployed using GitHub Pages [here
 
 You can also check out the final code in this [GitHub Repository](https://github.com/zolomohan/text-to-speech).
 
-### Let's Recap
+### Let's recap
 - We created an HTML page with a select menu for the voices, a text area, and control buttons.
 
 - We created a new JavaScript file and linked it to the HTML file.
