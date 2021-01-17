@@ -64,7 +64,7 @@ We are going to have three levels:
 
 - **Strong**: The password has to meet all the requirements to be strong.
 
-Using the metrics above, we are going to create a strong level which has at least one lowercase letter, one uppercase letter, one digit, one special character, and is atleast 8 characters long.
+Using the metrics above, we are going to create a strong level which has at least one lowercase letter( `?=.*[a-z]` ), one uppercase letter( `?=.*[A-Z]` ), one digit( `?=.*[0-9]` ), one special character( `?=.*[^A-Za-z0-9]` ), and is atleast 8 characters long( `?=.{8,}` ).
 
 - Two groups of parentheses **(x)(y)** is the same as check for both  **x** and **y** while two groups of parentheses with | between them **(x)|(y)** is the same as  either check **x**  or **y** as shown in the table above.
 
@@ -75,7 +75,7 @@ Using the metrics above, we are going to create a strong level which has at leas
 
 - **Medium**: The password can only be medium either if it is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
 
-The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **I** for checking for either the two conditions.
+The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **I** for checking for either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
 
 ```java
 ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
