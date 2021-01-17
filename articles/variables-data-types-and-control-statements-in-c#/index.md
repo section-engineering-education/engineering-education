@@ -1,10 +1,8 @@
-In this article, we are going to take a look at variables, data types, and control statements.
+In this article, we are going to take a look at variables, data types, and control statements in C#.
 
 ### Variables in C#
 
 A variable is a storage location paired with a name, which contains some known or unknown data referred to as a value.
-
-Variables are names of a memory location for storing data types.
 
 Variables are classified into various types based on the type of data stored. They are:
 
@@ -44,12 +42,10 @@ The **equal sign (=)** is used to assign the variable with a value. It's called 
 
 Let's define a variable and assign a value to it immediately.
 
-
 ```C#
 int a = 5;
 Console.WriteLine(a);
 ```
-
 
 Let's define a variable and assign a value to it later..
 
@@ -74,7 +70,7 @@ string name = "Sam";
 Console.WriteLine(name);
 ```
 
-### Examples of C# variables:
+### Examples of C# variables
 
 ```C#
 int a = 5;
