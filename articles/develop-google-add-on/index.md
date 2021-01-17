@@ -4,23 +4,25 @@ status: publish
 published: true
 url: /engineering-education/develop-google-add-on/
 title: Developing a Google Add-on
-description: This article will go through creating a google add-on by using apps script which is a javascript based scripting language created by google to make automation a reality and make third-party services and information available.
+description: This article will go through creating a Google add-on by using apps script which is a javascript based scripting language created by google to make automation a reality and make third-party services and information available.
 author: peter-ndegwa
-date: 2021-01-12T00:00:00-19:00
+date: 2021-01-17T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/develop-google-add-on/hero.png
-    alt: google add-on example image
+    alt: Google add-on example image
 ---
-Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Also, Google has provided a scripting language to allow automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to make automation a reality and make third-party services or information available.
+Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Google has also provided a scripting language that allows automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to that make automation a reality and make third-party services or information available.
 <!--more-->
 ### Introduction
-The language is useful in building web apps, desktop and android add-ons for Sheets, Docs, and Forms applications. There are two types of add-ons: Google Workspace that works for cross applications and Editor Add-on which works with a single application. Developers can benefit a lot by knowing how to create add-ons. This provides a channel to conveniently offer services to google applications users, using a server-less platform.
+The language is useful in building web apps, desktop, and Android add-ons for Sheets, Docs, and Forms applications. There are two types of add-ons: Google Workspace that works for cross applications and Editor Add-on that works with a single application. 
+
+Developers can benefit a lot by knowing how to create add-ons. This provides a channel to conveniently offer services to Google applications users, using a server-less platform.
 
 ### Discussion
-To access the App Script programming interface, open google sheet and navigate to Tools > Script Editor.
+To access the App Script programming interface, open Google sheet and navigate to Tools > Script Editor.
 
 ![Access Script Editor](/engineering-education/develop-google-add-on/apps-script-access.png)
 
@@ -28,10 +30,16 @@ The Apps Script displays a programming interface as shown below.
 
 ![Apps Script Editor](/engineering-education/develop-google-add-on/apps-script-editor.png)
 
-We now head straight to the features and development.
+We will now head straight to the features and development.
 
 #### 1. Menu creation
-The aim is to add on the google sheet menu our functions for users to click and execute a script. The script remains invisible for users, hence the need to have menu buttons to enable interaction and execution. To create a menu, `onOpen()` function is used with the reference to the spreadsheet's user interface being made in the body. A `createMenu('Menu')` function is called and provided with a suitable name for the add-on top Menu. To add items on the menu, the `addItem('Item')` function is used with a suitable name provided. Items in a menu can be separated by calling a function `addSeparator()` that does not take any parameter. To add a submenu, the `addSubMenu()` function is called with a reference to the spreadsheet's user interface and a call the `createMenu()` function supplyied with the submenu name. The function `addToUi()` is used  to add the menu in the spreadsheet's user interface.
+The aim is to add on the Google sheet menu our functions for users to click and execute a script. The script remains invisible for users, hence the need to have menu buttons to enable interaction and execution. 
+
+To create a menu, an `onOpen()` function is used with reference to the spreadsheet's user interface being made in the body. A `createMenu('Menu')` function is called and provided with a suitable name for the add-on top Menu. 
+
+To add items on the menu, the `addItem('Item')` function is used with a suitable name provided. Items in a menu can be separated by calling a function `addSeparator()` that does not take any parameter. 
+
+To add a submenu, the `addSubMenu()` function is called with a reference to the spreadsheet's user interface and a call to the `createMenu()` function supplied with the submenu name. The function `addToUi()` is used  to add the menu in the spreadsheet's user interface.
 
 ```javascript
 function onOpen() {
@@ -62,7 +70,11 @@ function onOpen() {
 ![Create menu](/engineering-education/develop-google-add-on/menu.png)
 
 #### 2. User Interface (UI) development
-On top of the spreadsheet's user interface, Google enriches it with popups, sidebars, dialogue boxes, alerts, among others. They help to improve the interaction between the client and the backend systems by providing information on progress, prompting users to give more information, or even giving feedback. There are custom dialogues for Apps Script projects that take HTML input that is built to open like modal items and interrupt the user from doing anything else before batting it. File-open dialogues allow the user to pick/choose a file from the drive, computer, or other location.  We provide a case for a sidebar that takes HTML as input and requires a title.
+On top of the spreadsheet's user interface, Google enriches it with popups, sidebars, dialogue boxes, alerts, among others. They help improve the interaction between the client and the backend systems by providing information on progress, prompting users to give more information, or even giving feedback. 
+
+There are custom dialogues for Apps Script projects that take HTML input that are built to open like modal items and interrupt the user from doing anything else before batting it. 
+
+File-open dialogues allow the user to pick/choose a file from the drive, computer, or other location.  We will provide a case for a sidebar that takes HTML as input and requires a title.
 
 ```javascript
 function showSideBar() {
@@ -75,7 +87,7 @@ function showSideBar() {
 
 ![Side bar](/engineering-education/develop-google-add-on/side-bar.png)
 
-#### 3. Interaction with external features such as CSS and JQuery.
+#### 3. Interaction with external features such as CSS and JQuery
 Apps Script provides a way to use external libraries to make use of the existing CSS and Javascript libraries. Below is an example of how to link to the JQuery library in the header section.
 
 ```html
@@ -87,8 +99,10 @@ Apps Script provides a way to use external libraries to make use of the existing
 <body>
 ```
 
-#### 4. Availability of helper functions.
-Apps Script provides functions that give quick access to spreadsheets and data during processing. `SpreadsheetApp.getActiveSpreadsheet()` is a function used to instruct the Spreadsheet application to return the spreadsheet in use. It can be concatenated with `.getSheetByName`, `getSheetByUrl`, among others to return a particular sheet. The `getRange()` function is used with range parameters to return a particular section of the sheet. It can be used together with `getValues()` function to return the values of the selected range. Other inbuilt functions include `getMaxRows()`, `getNumRows()`, `getNumColumns()`, etc.
+#### 4. Availability of helper functions
+Apps Script provides functions that give quick access to spreadsheets and data during processing. `SpreadsheetApp.getActiveSpreadsheet()` is a function used to instruct the Spreadsheet application to return the spreadsheet in use. It can be concatenated with `.getSheetByName`, `getSheetByUrl`, among others to return a particular sheet. 
+
+The `getRange()` function is used with range parameters to return a particular section of the sheet. It can be used together with a `getValues()` function to return the values of the selected range. Other inbuilt functions include `getMaxRows()`, `getNumRows()`, `getNumColumns()`, etc.
 
 ```javascript
 function helperFunction() {
@@ -112,10 +126,13 @@ function helperFunction() {
 
 #### 5. Triggers
 Add-ons are capable of using three types of triggers:
-* Simple triggers that run on performing a certain function like the `onOpen()` that is called when the spreadsheet is opened;
-* Installable triggers that are called after being installed like the form-submit; and
-* Time-driven triggers that are time-dependent.
-In this section, we illustrate the time-based triggers which are defined mostly by the user. They let the script execute at a particular time at most once an hour. You specify the hour you want the script to execute but the script may randomly choose the appropriate time within that hour for it to execute i.e. if you choose to execute at 8 am, the script may choose between 8 am and 9 am.
+1. Simple triggers that run on performing a certain function like the `onOpen()` that is called when the spreadsheet is opened;
+2. Installable triggers that are called after being installed like the form-submit; and
+3. Time-driven triggers that are time-dependent.
+
+In this section, we will illustrate the time-based triggers which are defined mostly by the user. They let the script execute at a particular time at most once an hour. 
+
+You specify the hour you want and the script to execute, but the script may randomly choose the appropriate time within that hour for it to execute i.e. if you choose to execute at 8 am, the script may choose between 8 am and 9 am.
 
 ```javascript
 function createTimeDrivenTriggers() {
@@ -130,7 +147,11 @@ function createTimeDrivenTriggers() {
 ![Triggers](/engineering-education/develop-google-add-on/triggers.png)
 
 #### 6. Storage
-Apps Script supports both Properties and JDBC services to facilitate data storage. Properties service is majorly used to store key-value pairs for simple strings with a scope of one script, one user of the script, or the document within which the add-on is used. The `getScriptProperties()`, `getUserProperties()` and `getDocumentProperties()` functions return similar Properties objects that define the access levels. All data is stored as strings, if not a string, it is converted. JDBC allows you to connect to an external database such as Cloud SQL instance, Mysql, Oracle, etc. This makes it the best choice for robust applications. To establish the connection, one is required to ensure that the database accepts Apps Script Ip addresses that are provided by Google. Whereas, for own databases, JDBC should run in port 1025 and above.
+Apps Script supports both Properties and JDBC services to facilitate data storage. Properties service is mostly used to store key-value pairs for simple strings with a scope of one script, one user of the script, or the document within which the add-on is used. 
+
+The `getScriptProperties()`, `getUserProperties()` and `getDocumentProperties()` functions return similar Properties objects that define the access levels. All data is stored as strings, if not a string, it is converted. JDBC allows you to connect to an external database such as Cloud SQL instance, Mysql, Oracle, etc.
+
+This makes it the best choice for robust applications. To establish the connection, one is required to ensure that the database accepts Apps Script IP addresses that are provided by Google. Whereas, for own databases, JDBC should run in port 1025 and above.
 
 ```javascript
 // Cloud SQL
@@ -173,7 +194,11 @@ function writeFirstRecord() {
 ```
 
 #### 7. Logging/debugging
-Apps Script does provides a way to log and debug when the add-on is in the development phase. The `clear()`, `getLog()`, and `log()` functions are useful when logging errors. Syntax errors are detected immediately they occur and the page does not allow saving. Runtime errors are slightly hard to detect thus only reported during code execution. Apps Script saves execution scripts that record each call to services thus helping to show the point the error occurred. Navigate to Executions to view the records. Further to this, Apps Script allows users to run code in debug mode by choosing a breakpoint at which the execution stops.
+Apps Script does provides a way to log and debug when the add-on is in the development phase. The `clear()`, `getLog()`, and `log()` functions are useful when logging errors. Syntax errors are detected immediately they occur and the page does not allow saving. 
+
+Runtime errors are slightly hard to detect thus only reported during code execution. Apps Script saves execution scripts that record each call to services thus helping show the point the error occurred. 
+
+Navigate to Executions to view the records. Apps Script also allows users to run code in debug mode by choosing a breakpoint at which the execution stops.
 
 ```javascript
 // Generate a log, then email it to the person who ran the script.
@@ -188,7 +213,9 @@ Apps Script does provides a way to log and debug when the add-on is in the devel
 ![Logging / Debugging](/engineering-education/develop-google-add-on/debugging.png)
 
 #### 8. Authorization
-On install and addition of new service, Apps Script requires that the user authorize the application to execute from their spreadsheet application. After it has acquired the necessary permission, the add-on can access private data in the scopes defined. Permissions on an add-on can be revoked at any time by navigating to Account > Security > View all and clicking revoke access on the add-on.
+On install and addition of new services, Apps Script requires that the user authorize the application to execute from their spreadsheet application. 
+
+After it has acquired the necessary permission, the add-on can access private data in the scopes defined. Permissions on an add-on can be revoked at any time by navigating to Account > Security > View all and clicking revoke access on the add-on.
 
 ![Review permissions](/engineering-education/develop-google-add-on/review-permissions.png)
 
@@ -237,15 +264,19 @@ Access published add-on
 ![Access published add-on](/engineering-education/develop-google-add-on/access-published.png)
 
 ### Conclusion
-Innovations shared in Google Marketplace go way into improving service delivery and their efficiency and effectiveness. Developers can make use of the existing features in Apps Script to come up with robust add-ons to be used in enhancing Google Applications and services. Apps Script is a versatile programming language that provides collection, storage, manipulation, and data availability in a role-based manner. Add-ons user interfaces are customizable thus developers' information is available to the public. Add-ons may have a subscription that requires the user to pay some amount before using it. This study empowers developers with the necessary tools to create add-ons and publish them for use.
+Innovations shared in the Google Marketplace go deep into improving service delivery, their efficiency, and effectiveness. Developers can make use of the existing features in Apps Script to come up with robust add-ons to enhance Google Applications and services. 
+
+Apps Script is a versatile programming language that provides collection, storage, manipulation, and data availability in a role-based manner. 
+
+Add-ons user interfaces are customizable thus developers' information is available to the public. Add-ons may have a subscription that requires the user to pay some amount before using it. This guide was meant to empower developers with the necessary tools to create add-ons and publish them for use.
 
 ### References
-1. [https://railsware.com/blog/google-apps-script-gotchas-to-develop-an-add%E2%80%91on/](https://railsware.com/blog/google-apps-script-gotchas-to-develop-an-add%E2%80%91on/)
-2. [https://ctrlq.org/google.apps.script/docs/add-ons/index.html](https://ctrlq.org/google.apps.script/docs/add-ons/index.html)
-3. [https://medium.com/@factoryhr/google-sheets-add-on-tutorial-exporting-key-value-column-pairs-to-json-56107e82b4ca](https://medium.com/@factoryhr/google-sheets-add-on-tutorial-exporting-key-value-column-pairs-to-json-56107e82b4ca)
-4. [https://support.google.com/docs/answer/2942256?co=GENIE.Platform%3DDesktop&hl=en](https://support.google.com/docs/answer/2942256?co=GENIE.Platform%3DDesktop&hl=en)
-5. [https://www.add-in-express.com/creating-addins-blog/2014/03/27/extending-google-spreadsheets-apps-script/](https://www.add-in-express.com/creating-addins-blog/2014/03/27/extending-google-spreadsheets-apps-script/)
-6. [https://developers.google.com/gsuite/add-ons/overview](https://developers.google.com/gsuite/add-ons/overview)
+1. [https://railsware.com/blog/](https://railsware.com/blog/google-apps-script-gotchas-to-develop-an-add%E2%80%91on/)
+2. [https://ctrlq.org/google.apps.script](https://ctrlq.org/google.apps.script/docs/add-ons/index.html)
+3. [https://medium.com/@factoryhr/google-sheets-add-on](https://medium.com/@factoryhr/google-sheets-add-on-tutorial-exporting-key-value-column-pairs-to-json-56107e82b4ca)
+4. [https://support.google.com/docs/](https://support.google.com/docs/answer/2942256?co=GENIE.Platform%3DDesktop&hl=en)
+5. [https://www.add-in-express.com/creating-addins-blog/](https://www.add-in-express.com/creating-addins-blog/2014/03/27/extending-google-spreadsheets-apps-script/)
+6. [https://developers.google.com/gsuite/add-ons/](https://developers.google.com/gsuite/add-ons/overview)
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
