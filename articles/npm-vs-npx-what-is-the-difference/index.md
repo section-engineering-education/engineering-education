@@ -134,9 +134,7 @@ To seed the database, execute the script by running:
 npm run db:migrate
 ```
 
-This is not that hard.
-
-However, when you use NPX, things get very much simpler.
+This may not be that hard. However, when you use NPX, things get very much simpler.
 
 Running the below command will be enough to seed the database.
 
@@ -152,9 +150,9 @@ npx sequelize db:seed
 
 ### One-off commands
 
-NPX treats global packages differently. Global packages are commonly used for development purposes. For that reason, you don’t need them installed all the time. NPX helps to execute these packages only when you need them. This comes in hand, as many global packages are one-off commands.  You only need to run them once.
+NPX treats global packages differently. Global packages are commonly used for development purposes. For that reason, you don’t need them installed all the time. NPX helps to execute these packages only when you need them. This comes in hand, as many global packages are one-off commands. You only need to run them once.
 
-For example, to create a [React](https://create-react-app.dev/docs/getting-started/) boilerplate app with NPM, you need to install the [React](https://www.npmjs.com/package/create-react-app) module and then create an app with `npm init react-app my-app`. This means that when you need to create another React app in features, chances are you will create an app using the executables that you installed previously. This rule you out of newly updated features under this package unless you update the package manually.
+For example, to create a [React](https://create-react-app.dev/docs/getting-started/) boilerplate app with NPM, you need to install the [Create React App](https://www.npmjs.com/package/create-react-app) module and then create an app with `npm init react-app my-app`. This means that when you need to create another React app in features, chances are you will create an app using the executables that you installed previously. This rule you out of newly updated features under this package unless you update the package manually.
 
 Using NPX, you will only run the command once without installing the package.
 
@@ -162,11 +160,11 @@ Using NPX, you will only run the command once without installing the package.
 npx create-react-app my-sample-app
 ```
 
-With NPX, one-off commands such as this are a lot more simple and straightforward. You need to run an NPX command once, and the app is created under the directory where the command line point. And when you need to create another React app, you just run the NPX command repeatedly without installing the package on your local computer. You don't need to worry about the package updates, as NPX will always fetch the latest version available in the NPM registry. With such approaches, you avoid clogging up your globals with packages that you use once in a blue moon.
+With NPX, one-off commands such as this are a lot more simple and straightforward. You need to run an NPX command once, and the app is created. And when you need to create another React app, you just run the NPX command repeatedly without installing the package on your local computer. You don't need to worry about the package updates, as NPX will always fetch the latest version available in the NPM registry. With such approaches, you avoid clogging up your globals with packages that you use once in a blue moon.
 
 ### NPX versioning
 
-When it comes to packages versioning, NPM will handle that perfectly with its `package-lock.json` file. With NPX, there are a lot more features that you can benefit from package versioning, such as
+When it comes to packages versioning, NPM will handle that with the `package-lock.json` file. With NPX, there are more features that you can benefit from package versioning, such as:
 
 - **Executing a specific package version**: 
 
@@ -178,9 +176,7 @@ npx eslint@3.9.0 --version
 
 - **Version testing**:
 
-With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can check out the new version before deciding whether to update them to determine if the new version is compatible with your project.
-
-NPX plays a great role in testing new package versions with your project before integrating them into your project. You can check out the latest version before you decide whether to upgrade your project or not.
+With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can determine if the new version is compatible with your project before deciding whether to update them.
 
 For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/engineering-education/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
 
@@ -212,30 +208,31 @@ Here, the results show that the new version will help you buddle your project fu
 
 Moving a Node.js installation from one version to another using [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) can be tricky. NPX helps you to use specific Node.js versions without using NVM.
 
-For example
+For example:
 
 ```bash
 npx -p node@12.18.3 -- node index.js
 ```
 
-You can use the version to run your .js files. This becomes useful when checking the different new features added in Node.js versions.
+You can use this version to run your `.js` files. This becomes useful when checking the different features added in different Node.js versions.
 
 ### Execute Code from URL such as gist
 
-NPX will download and run the code directly from a gist.
+NPX can download and run the code directly from a gist.
 
-Here is a simple example of running a gist code. The gist has the `main.js` and `package.json` files.  Let's see the NPX output. Check the code from the [Github gist](https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5).
-Then run
+Here is a simple example of running a gist code. The gist has the `main.js` and `package.json` files. Check the code from the [Github gist](https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5).
+
+Let's run:
 
 ```bash
 npx https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5
 ```
 
-NPX will point to the remote `.js` file, download it temporarily, execute it and give you the result to your console.
+NPX will point to the remote `.js` file, download it temporarily, execute it and it will give you the result in the console.
 
 ![Execute Gist Code with NPX](/engineering-education/npm-vs-npx-what-is-the-difference/execute-gist-code-with-npx.jpg)
 
-Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped in malicious code.
+> Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped in malicious code.
 
 ### Comparison summary
 
