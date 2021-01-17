@@ -33,10 +33,9 @@ The **equal sign (=)** is used to assign the variable with a value. It's called 
 
 - Variable name **must not** start with a digit.
 
-
 - Variable names can consist of characters, digits, or symbols like underscore(_).
 
-- - C# is case-sensitive as it treats uppercase and lowercase names differently thus **program** and **Program** are different variable names.
+- C# is case-sensitive as it treats uppercase and lowercase names differently thus **program** and **Program** are different variable names.
 
 ### Example
 
@@ -150,8 +149,6 @@ double num = 3.33;            //storing fraction and decimals
 string text = "Hello World";  //storing string
 bool myBool = true;           //storing boolean(true or false)
 ```
-
-Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
 
 Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
 
