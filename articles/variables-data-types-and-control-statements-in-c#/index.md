@@ -1,18 +1,16 @@
 In this article, we are going to take a look at variables, data types, and control statements in C#.
 
-### C# Data Types
+### Variables in C#
 
-Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
+A variable is a storage location paired with a name, which contains some known or unknown data referred to as a value.
 
-**Example**
+**Syntax for declaring a variable**:
 
 ```C#
-int a = 5;                    //storing integer
-char letter = 'A';            //storing character
-double num = 3.33;            //storing fraction and decimals
-string text = "Hello World";  //storing string
-bool myBool = true;           //storing boolean(true or false)
+<data type> <variable_name> = value;
 ```
+
+Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
 
 The different data types are:
 
@@ -51,18 +49,9 @@ The `string` data type is used to store **many** characters.
 
 The `bool` data type is used to store **true** or **false** value.
 
-### Variables in C#
+### C# Identifiers
 
-A variable is a storage location paired with a name, which contains some known or unknown data referred to as a value.
-
-**Syntax for declaring a variable**:
-
-```C#
-<data type> <variable_name> = value;
-```
-
-**Data type** is the C# type like `int, double, string, char or bool` while **variable_name** is the name of the variable (like x or name).
-The **equal sign (=)** is used to assign the variable with a value. It's called an assignment operator.
+This is the name given to the variable. It should be unique for each entity for the compiler to distinguish it during the execution of the program. You can choose any name for the variables but it should have some meaning to improve the readability of the code.
 
 **Rules for declaring a variable name:**
 
@@ -76,7 +65,7 @@ The **equal sign (=)** is used to assign the variable with a value. It's called 
 
 - C# is case-sensitive as it treats uppercase and lowercase names differently thus **program** and **Program** are different variable names.
 
-### Example
+### Examples
 
 Let's define a variable and assign a value to it immediately.
 
@@ -172,11 +161,6 @@ b = 5;
 c = 7
 Console.WriteLine(a + b + c);//prints out the answer as 14
 ```
-
-### C# Identifiers
-
-This is the name given to the variable. It should be unique for each entity for the compiler to distinguish it during the execution of the program. You can choose any name for the variables but it should have some meaning to improve the readability of the code.
-
 
 ### Control Statements 
 Control statements help to make decisions in a program, loop(iterate) through the conditions, select and change the flow of the conditions. We are going to look at decision-making or selection statements.
