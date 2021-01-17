@@ -1,5 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/upload-multi-part-form-data-using-multer/
+title: Uploading Files Using Multer in a Node.js Application.
+description: In this article, we will see how to use Multer to handle Multipart/form-data using Node.js, Express and MongoDB.
+author: sarthak-duggal
+date: 2021-01-17T00:00:00-17:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/upload-multi-part-form-data-using-multer/hero.jpg
+    alt: Multer example image
+---
+Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, **form-data gets encoded before submitting it to the server**.
+<!--more-->
 ### Introduction
-Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, **form-data gets encoded before submitting it to the server**. We can do this by specifying the **enctype attribute in the \<form> tag in HTML.** If we don't specify it, form-data gets encode with the default type. This is usually the case when we are dealing with text-only data like name, email, password, etc.
+We can do this by specifying the **enctype attribute in the \<form> tag in HTML.** If we don't specify it, form-data gets encode with the default type. This is usually the case when we are dealing with text-only data like name, email, password, etc.
 But, **if we are uploading some kind of files, we need to specify the enctype attribute with the value "multipart/form-data."** This value is required when we are using forms that have a file upload control.
 Now, **Multer is an npm package that makes it easy to handle the file uploads.** It does it very efficiently, thus it is quite popular. In this article, we will see how to use Multer to handle Multipart/form-data using Node.js, Express and MongoDB.
 
@@ -641,3 +659,6 @@ html {
 ### Conclusion
 So, **this is how we can upload files using multer and view them on the front-end.** **In the case of images, we can also resize them** according to our needs. **For this, we have to store the images in the buffer storage before storing them in disk storage.**
 There are also lots of things that we can do with multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
