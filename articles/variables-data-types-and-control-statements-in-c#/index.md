@@ -155,7 +155,7 @@ string text = "Hello World";  //storing string
 bool myBool = true;           //storing boolean(true or false)
 ```
 
-Data types are so much related to variables and many programmers tend to confuse between the two. Data types classify the various types of variables and state the size of data that they are supposed to store.
+Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
 
 Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
 
