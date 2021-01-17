@@ -14,17 +14,15 @@ In this example, the `div` is a container element where other `divs` inside the 
 
 This guide will discuss the differences and relationships that exist between Grid and Flexbox layouts.
 
-To get along with this guide, prior knowledge of [CSS Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) will be of great importance.
+To follow along with this guide, prior knowledge of [CSS Flexbox](/engineering-education/css-flexbox/) and [CSS Grid](/engineering-education/css-grid/) ould be helpful.
 
-### What is CSS FlexBox
-It is a layout mode in CSS3. It gives a more proficient approach to designing, aligning, and disseminating space between items in a container to control their arrangement.
-
+### What is CSS Flexbox
+Flexbox is a layout mode in CSS3. It's a more proficient approach to designing, aligning, and disseminating space between items in a container to control their arrangement.
 With Flexbox, we can arrange items left to right, right to left, top to bottom, or bottom to top and at the same time control the spacing, alignment, and order of items in the container.
 
-### What is CSS  Grid
-CSS Grid is a collection of styles that allow you to control page layout based on rows and columns. In a Grid system, the containing elements are used to define a row within the layout. Then you apply class attributes to item elements that then span them over the desired number of columns. This allows you to create more complex nested layouts.
-
-### CSS Grid vs CSS FlexBox
+### What is CSS Grid
+CSS Grid is a collection of styles that allow you to control page layout based on rows and columns. In a Grid system, the containing elements are used to define a row within the layout. Then, you apply class attributes to item elements that then span them over the desired number of columns. This allows you to create more complex nested layouts.
+### CSS Grid vs CSS Flexbox
 
 Let's have a look at some of the common differences between the two layouts.
 
@@ -40,9 +38,9 @@ A Flexbox layout fits best when aligning items either horizontally or vertically
 
 ![](/engineering-education/css-flexbox-vs-css-grid/horizontal.png)
 
-A perfect example of one dimensional is a header navigation bar or a footer.
+A perfect example of a one dimensional layout is a header navigation bar or a footer.
 
-Let's have a look at a simple example of implementing a header navigation menu.
+Let's have a look at implementing a header navigation menu using Flexbox.
 
 ```html
 <div class="nav">
@@ -54,7 +52,7 @@ Let's have a look at a simple example of implementing a header navigation menu.
 </div>
 ```
 
-Some CSS to style the header.
+Some CSS to style the header:
 
 ```css
 .nav {
@@ -73,7 +71,7 @@ Some CSS to style the header.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/flex-hearder-nav.png)
 
-Having a header in your pages, you would probably lay its items in one direction. It is flexibly easier to implement this with a Flexbox layout as it arranges items in one direction. The menu is one-dimensional that perfectly fits well with `display: flex`.
+Most common header layouts lay its items in one direction thus it's much easier to use Flexbox because it arranges items in one direction.
 
 On the other hand, a Grid is a two-dimensional layout, meaning you can lay out items in rows and columns.
 
@@ -109,19 +107,19 @@ An example of a basic two-dimensional layout.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/grid-example.jpg)
 
-We specify a Grid with `display: grid` and then determine rows and columns with `grid-template-columns` and `grid-template-rows`. This defines a two-dimensional layout. In this case, each column and row take the size of `150px`.
+We specify a grid with `display: grid` and then determine rows and columns with `grid-template-columns` and `grid-template-rows`. This defines a two-dimensional layout. In this case, each column and row take the size of `150px`.
 
 #### Content vs layout
 
-Flexbox is content-based. Content comes first. By content first means it help you align contents and move blocks and items within a container.
+Flexbox is content-based so content comes first. By content first, we mean it helps you align the contents of and move blocks and items within a container.
 
 On the other hand, the Grid focuses on laying out the outer/skeleton layout of the page.
 
 To understand the content vs layout concept, let's go back to the header navigation bar design we've discussed above. We can target an item inside the header and determine where to display it.
 
-To get the core difference, Assuming we want to move the `SIGH IN` and `SIGH UP` menu to the left, we can do it using the Flex and Grid.
+To get the core difference, Assuming we want to move the `Sign In` and `Sign Up` menu to the left, we can do it using the using Flexbox and CSS Grid.
 
-Using flex;
+Using Flexbox;
 
 ```css
 .nav {
@@ -145,9 +143,9 @@ di v:nth-child(4) {
 
 ![](/engineering-education/css-flexbox-vs-css-grid/flex-content-first.png)
 
-We specify the child item of the container and determine its position. That’s what we mean by referring to flex as content-based.
+We specify the child item of the container and determine its position. That's what we mean by referring to flex as content-based.
 
-On the other hand, we can implement the same using the Grid. The header is one dimensional, and Flexbox is perfect for doing this, but we can do that with the Grid to differentiate between layout and content.
+On the other hand, we can implement the same using CSS Grid. The header is one dimensional, and Flexbox is perfect for doing this, but we can do that with CSS Grid instead to differentiate between layout and content.
 
 ```css
 .nav-grid {
@@ -166,19 +164,19 @@ On the other hand, we can implement the same using the Grid. The header is one d
 }
 ```
 
-And the result looks pretty the same.
+And the result looks pretty much the same.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/grid-header-nav.png)
 
-But notice, we specify ten columns, each taking a fraction of one unit. To drive the point home, let's see how the Grid layout works under the hood.
+But notice, we specified ten columns, each taking a fraction of one unit. To drive the point home, let's see how the Grid layout works under the hood.
 
-Use chrome to inspect the parent `div` element.
+Use a web browser to inspect the parent `div` element.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/grid-header-under-the-hood.png)
 
-This is awesome. The Grid show it's divided into ten cells. This where the concept of the layout first applying We define the layout and then fix items into the Grid cells.
+This is awesome. We can see the grid is divided into ten cells. This is where the concept of layout first is applied. First, we define the layout and then fix items into the grid cells.
 
-Check this. If we were to move the items `SIGH IN` and `SIGH UP` to the left, applying `margin-left: auto`, as we did in the Flexbox example, won't work. This how we can do it using a Grid.
+Check this. If we were to move the items `SIGH IN` and `SIGH UP` to the left, applying `margin-left: auto`, as we did in the Flexbox example, it won't work. This how we can do it using CSS Grid.
 
 ```css
 .nav-grid {
