@@ -10,7 +10,7 @@ NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is
 
 ### How NPM treat Node.js packages?
 
-It sets up modules such that Node.js can locate the packages and manage the dependencies of that application intelligently.
+It sets up modules such that Node.js can locate the packages and manage the dependencies of that application.
 
 When using NPM, there are two ways to install a package into your local computer.
 
@@ -18,11 +18,11 @@ When using NPM, there are two ways to install a package into your local computer
 
 - Globally: A global package is installed in the user environment path. `/usr/local/bin` for Linux and `AppData%/npm` for Windows.
 
-When you install executables using NPM, Node.js links them either from the local or global path. As a package manager, NPM does not execute a package directly.
+When you install executables using NPM, Node.js links them either from the local or global path. NPM does not execute a package directly.
 
-To use and run an NPM installed package, you should specify the package is the `package.json` file. The `package.json` file is created automatically when you initialize your first Node.js project with `npm init -y`.
+To use and run an NPM installed package, you should specify the package in the `package.json` file. The `package.json` file is created automatically when you initialize your Node.js project with `npm init -y`.
 
-To execute a locally installed package, it must be specified in the package.json scripts scaffold as shown below.
+To execute a locally installed package, it should specified in the `package.json` scripts block as shown below.
 
 ```bash
 "scripts": {
@@ -30,13 +30,17 @@ To execute a locally installed package, it must be specified in the package.json
 },
 ```
 
-Then execute with
+Then, you can execute the package with:
 
 ```bash
 npm run your-package-name
 ```
 
 On the other hand, you can type the package path in a command-line tool.
+
+```bash
+./node_modules/.bin/your-package-name
+```
 
 For example, let’s say you have installed [Eslint](https://www.npmjs.com/package/eslint), a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 
@@ -47,14 +51,10 @@ npm install eslint
 To execute the package binaries, you have to point to the package path.
 
 ```bash
-./node_modules/.bin/your-package-name
-```
-
-```bash
 ./node_modules/.bin/eslint --init
 ```
 
-And provide the argument to execute
+You should provide the file name as the argument to execute for the ESlint package.
 
 ```bash
 ./node_modules/.bin/eslint yourfile.js
@@ -68,7 +68,7 @@ With NPX, you can run and execute packages without having to install them locall
 
 When running NPM executables with NPX, if a package is installed, NPX will search for the package binaries (either local or global) and then run the package.
 
-If the package is not installed, executes the package directly from the NPM registry without locally saving the package binaries. It will execute the package binaries without installing the packages in your system, as you would typically do with NPM.
+If the package was not previously installed, NPX would not install the package in your system; instead, it will create a temporary cache that will hold the package binaries. Once the execution is over, NPX will remove the installed cache binaries from the system. This way, your globals stays clean. This saves disk space and allows you to run a package only when it's needed. It also gives you the advantage of testing packages without having to install them.
 
 Let's check some key use cases of NPX.
 
@@ -112,9 +112,9 @@ With NPX, you can have your local packages installed and use NPX commands (inste
 npx eslint yourfile.js
 ```
 
-NPX lets you execute local 'node_modules' as if they were global. If the package was not previously installed, NPX would not install the package in your system; instead, it will create a temporary cache that will hold the package binaries. Once the execution is over, NPX will remove the installed cache binaries from the system. This way, your globals stays clean. This saves disk space and allows you to run a package only when it's needed. It also gives you the advantage of testing packages without having to install them.
+This concept is commonly seen when executing NPM scripts. For example, let's say you are using the [Sequelize](https://sequelize.org/) package to automate data migration and seed data from your project. For that case, you will need the [Sequelize CLI](https://www.npmjs.com/package/sequelize-cli). You will need to know where Sequelize is installed in your project in order to execute the package binaries. 
 
-This concept is commonly seen when executing NPM scripts. For example, let's say you are using the [Sequelize](https://sequelize.org/) package to automate data migration and seed data from your project. For that case, you will need the [Sequelize CLI](https://www.npmjs.com/package/sequelize-cli). You will need to know where Sequelize is installed in your project in order to execute the package binaries. For example
+For example:
 
 ```bash
 node_modules/.bin/sequelize
@@ -128,7 +128,7 @@ Using NPM is pretty easy, as you just need to edit the `package.json` script and
 },
 ```
 
-To seed the database, execute the script by running
+To seed the database, execute the script by running:
 
 ```bash
 npm run db:migrate
