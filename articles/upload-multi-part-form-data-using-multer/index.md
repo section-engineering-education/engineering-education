@@ -74,7 +74,7 @@ Also, don't forget to follow the same structure for creating different files. I'
 ### Next step
 Before moving forward, make sure that Node.js is installed in your system. Write this command in your terminal to check whether it is installed.
 
-```
+```bash
 node -v
 ```
 
@@ -86,7 +86,7 @@ Since our static site is ready **we can start initiating this project with npm.*
 
 1. Write this command in the integrated terminal in your code editor or in any command line tool. Make sure that you are in the root directory of this project while running this command.
 
-```
+```bash
 npm init
 ```
 
@@ -104,7 +104,7 @@ Also, most of the things that we'll be doing now will only help us to set-up our
 
 Now, before that, we have to install the **three most important npm packages that we need for this tutorial. These are:- express, body-parser and mongoose.** Thus, write this command in the terminal:-
 
-```
+```bash
 npm i express body-parser mongoose
 ```
 
@@ -183,13 +183,13 @@ const server = app.listen(port, () => {
 
 Now, we have to run our project on the express server that we have mentioned. To do this, run the "server.js" file by writing this command on the terminal.
 
-```
+```bash
 nodemon server.js
 ```
 
 **You should see this message on the terminal if you have done everything right.**
 
-```
+```bash
 Server is up listening on port:3000
 DB connected successfully
 ```
@@ -237,7 +237,7 @@ Follow these steps:
 
 **1)** Install the template engine for ejs by writing this command.
 
-```
+```bash
 npm i ejs
 ```
 
@@ -269,7 +269,7 @@ After all these steps, your app.js file should look like this.
 
 Restart the server with the same command as above.
 
-```
+```bash
 nodemon server.js
 ```
 
@@ -343,7 +343,7 @@ There are two uses of middleware in node.js
 
 Let's start by installing Multer. Write this command in your terminal.
 
-```
+```bash
 npm i multer
 ```
 
@@ -405,7 +405,7 @@ Now, we can start sending the request with files on this API. But, before that, 
 
 This is my output, yours can be different based on what you uploaded.
 
-```
+```bash
 {
   fieldname: 'myFile',
   originalname: 'Final Resume.pdf',
