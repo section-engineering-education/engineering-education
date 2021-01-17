@@ -193,7 +193,7 @@ function StrengthChecker(PasswordParameter){
     }
 }
 ```
-The whole JavaScript code:
+The full JavaScript code:
 
 ```java
     //timeout before a callback is called
