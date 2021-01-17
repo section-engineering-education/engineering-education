@@ -2,12 +2,13 @@ We need a strong password to secure our systems and accounts. In this tutorial, 
 
 ### The Regular Expressions Class
 
-It is a class containing patterns used to check character combinations in strings. It can be taken as an object in JavaScript.
+Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
+
 We can either use **simple patterns** such as `/vet/` for finding a direct much or **special characters** like `/?=/` for getting more than a direct match.
 
 ### How to use Regex
 
-Regex, also denoted as RegExp, can be constructed in one of these two ways:
+Regex, also denoted as `RegExp`, can be constructed in one of these two ways:
 
 - **Using the Regular Expression literal** where the pattern is enclosed between two slashes.
 
