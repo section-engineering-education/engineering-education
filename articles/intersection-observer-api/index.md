@@ -1,7 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/intersection-observer-api/
+title: How to use Intersection Observers in a Website
+description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading feature.
+author: wilson-gichuhi
+date: 2021-01-17T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/intersection-observer-api/hero.jpg
+    alt: Intersection observer example image
+---
 An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.
 In this article, we will discuss how this API is made to detect element visibility by building a simple web page that implements image lazy-loading features.
-
+<!--more-->
 ### Prerequisites
 This article is about a JavaScript browser API and you will need a basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling. To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
@@ -219,3 +234,6 @@ Check my deployed version on [netlify](https://galleryio.netlify.app/).
 
 ### Summary
 In summary, `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
