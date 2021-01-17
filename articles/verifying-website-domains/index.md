@@ -81,7 +81,7 @@ Windows PowerShell is structured differently. There are subcategorized features 
 
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
-As shown below, brackets are used to call a website with an API to sift through permissible website layers and should be present and must begin with 'curl'.
+As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
 
 Scroll down to the 'primary' layer to display all associated domains with the IP address.
 
