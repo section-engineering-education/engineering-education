@@ -121,9 +121,11 @@ To know whether to keep or reject the null hypothesis, we can compare our signif
 If the p-value is less than the significance level we selected, we then reject the null hypothesis. This means that if the p-value is less than our 0.05 significance level, we accept that the sample we used supports the alternative hypothesis.
 
 ### Closing
-A crucial part of the modeling process is having a significant question or assumption. This are what form our hypothesis. In addition to formulating the right hypotheses, it is essential to test them out. 
+A crucial part of the modeling process is having a significant question or assumption. This are what form our hypothesis. In addition to formulating the right hypotheses, it is important to test them out. 
 
-We have introduced the concept of a hypothesis and discussed its significance. We have gone further to give a basic overview of the steps taken to test a hypothesis. In the future, we may dive into the different tests used to test out hypotheses. Until then, happy reading!
+We have introduced the concept of a hypothesis and discussed its significance. We have gone further to give a basic overview of the steps taken to test a hypothesis. In the future, we may dive into the different tests used to test out hypotheses. 
+
+Happy coding, happy reading!
 
 ### References and further reading
 1. [Hypothesis Testing in Data Science](https://towardsdatascience.com/hypothesis-testing-in-data-science-875e9d24785e)
