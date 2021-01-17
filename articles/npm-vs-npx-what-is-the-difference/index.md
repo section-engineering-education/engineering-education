@@ -4,11 +4,11 @@ If you are a Node.js developer, you must have used NPM in one or many instances 
 
 NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is used to install Node.js packages to use them in our application. It makes it easier for developers to share and reuse open source code by enabling them to install as modules. Modules are JavaScript packages that you can install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
 
-### What is NPX
+### What is NPX?
 
 [NPX](https://www.npmjs.com/package/npx) is an NPM package Executor. Initially, NPX was launched in [July 2017](https://nodejs.dev/learn/the-npx-nodejs-package-runner). NPX was just an NPM package that could be installed like other NPM packages. Currently, NPX is bundled with NPM when you install the NPM version 5.2.0 or higher.
 
-### How NPM treat Node.js packages
+### How NPM treat Node.js packages?
 
 It sets up modules such that Node.js can locate the packages and manage the dependencies of that application intelligently.
 
@@ -76,7 +76,7 @@ Run the following command to make sure you have NPX installed using `which npx`.
 
 If not installed, use `npm install -g NPM@latest` to update NPM to the higher version above 5.2 or later, and you will have the NPX CLI tool available. You can also install NPX as a stand-alone package. Run `npm i npx` to install the NPX runner.
 
-#### NPX standard command
+### NPX standard command
 
 To execute a package with NPX, run:
 
@@ -96,7 +96,7 @@ npx [options] [-p|--package <package>]... <command> [command-arg]...
 npx [options] -c '<command-string>'
 ```
 
-#### Executing installed packages
+### Executing installed packages
 
 When using NPM, you had to remember and type the path of the package in the command, as explained in the Eslint case.
 
@@ -144,12 +144,13 @@ Running the below command will be enough to seed the database.
 npx sequelize db:seed
 ```
 
-### Why NPX over NPM scripts
+**Why NPX over NPM scripts?**:
 
 - No need to edit the `package.json` file with `node_modules` paths.
+
 - You can directly execute the tool from the command line.
 
-#### One-off commands
+### One-off commands
 
 NPX treats global packages differently. Global packages are commonly used for development purposes. For that reason, you don’t need them installed all the time. NPX helps to execute these packages only when you need them. This comes in hand, as many global packages are one-off commands.  You only need to run them once.
 
@@ -163,7 +164,7 @@ npx create-react-app my-sample-app
 
 With NPX, one-off commands such as this are a lot more simple and straightforward. You need to run an NPX command once, and the app is created under the directory where the command line point. And when you need to create another React app, you just run the NPX command repeatedly without installing the package on your local computer. You don't need to worry about the package updates, as NPX will always fetch the latest version available in the NPM registry. With such approaches, you avoid clogging up your globals with packages that you use once in a blue moon.
 
-#### NPX versioning
+### NPX versioning
 
 When it comes to packages versioning, NPM will handle that perfectly with its `package-lock.json` file. With NPX, there are a lot more features that you can benefit from package versioning, such as
 
@@ -219,7 +220,7 @@ npx -p node@12.18.3 -- node index.js
 
 You can use the version to run your .js files. This becomes useful when checking the different new features added in Node.js versions.
 
-#### Execute Code from URL such as gist
+### Execute Code from URL such as gist
 
 NPX will download and run the code directly from a gist.
 
