@@ -310,7 +310,7 @@ image: {
 },
 ```
 
-Let's set the image state with the URI of the selected image in the `onImageSelect` function when the user did not cancel the operation.
+If the user did not cancel the operation, Let's set the image state with the URI of the selected image in the `onImageSelect` function.
 
 ```JSX
 const onImageSelect = async (media) => {
