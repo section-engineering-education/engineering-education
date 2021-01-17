@@ -1,5 +1,9 @@
 We need a strong password to secure our systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to guard his/her account using the **Regular Expressions**.
 
+### Prerequisites
+
+A basic understanding of HTML, CSS and JavaScript is needed.
+
 ### The Regular Expressions Class
 
 Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
@@ -60,13 +64,18 @@ We are going to have three levels:
 
 - **Strong**: The password has to meet all the requirements to be strong.
 
+Using the metrics above, we are going to create a strong level which has at least one lowercase letter, one uppercase letter, one digit, one special character, and is atleast 8 characters long.
+
+- Two groups of parentheses **(x)(y)** is the same as check for both  **x** and **y** while two groups of parentheses with | between them **(x)|(y)** is the same as  either check **x**  or **y** as shown in the table above.
+
 ```java
 (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
 ```
-
 ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
 - **Medium**: The password can only be medium either if it is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
+
+The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **I** for checking for either the two conditions.
 
 ```java
 ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
@@ -74,7 +83,7 @@ We are going to have three levels:
 
 ![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
 
-- **Weak**: If the entered password does not meet the strong or medium-level requirements then it is deemed weak.
+- **Weak**: If the entered password does not meet the strong or medium-level requirements, then it is deemed weak.
 
 ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
@@ -83,7 +92,7 @@ We will use Bootstrap 5 for UI styling.
 
 A badge is used to show the password strength and color. Green for strong, Blue for medium and Red for weak.
 
-#### HTML Code
+#### HTML Code and explanation
 
 ```html
 <html>
@@ -124,14 +133,69 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 </body>
 </html>
 ```
+First, we make the page have the same scaling in the `<meta>` tag. The tag defines more about the HTML page.
 
-#### JavaScript Code
+We then link Bootstrap CSS styling. The next `<style>` tag is where we provide our custom styling using CSS with two classes and their respective stylings.
 
-You can take a look at the complete code in this [GitHub repository](https://github.com/Agusioma/Password-Strength-Checker/).
+In the `<body>` tag we have a paragraph ( `p` ) with a `div` element. Bootstrap provides a `d-flex` class for making the div a flexbox, a `text-danger` for color red and `justify-content-center` for justify the content of a div in the center.
+
+In the div, we have an unordered list with the style `list-style-type:none` for removing bullets. It has three items( `li` ):
+
+The first is under class `fs-4` which makes the text size that of **h4**. We have also given it an inline styling.
+
+The second item is an input where our password will be typed in. It is under the Bootstrap's class `form-control` and the class `passwordInput` which we custom styled in the `<style>` tag. The `form-control` shows the inputshould be used in a `form` element(We have not added a form since we are not sending any data).
+
+The third item contains a `<span>` which is where the password strength will be labeled. It is under the class `displayBadge` which we custom styled and `badge` given by Bootstrap which makes it appear as a badge.
+
+#### JavaScript Code creation and explanation
+
+Create five variables: `timeout` for storing the timeout before a callback is called, `password` & `strengthBadge` for storing the input and span after traversing the DOM and getting them using their IDs, and `strongPassword` & `mediumPassword` for storing the Regex conditions.
 
 ```java
-<script type="text/javascript">
+    let timeout;
+    let password = document.getElementById('0101')
+    let strengthBadge = document.getElementById('0102')
+    let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+```
+We then add an input event listener to the `password` input where we check the strength when the user has typed something, but we won't do it immediately after every input event. When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.
 
+We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
+
+```java
+password.addEventListener("input", () => {
+    strengthBadge.style.display= 'block'
+    clearTimeout(timeout)
+    timeout = setTimeout(() => StrengthChecker(password.value), 500)
+    if(password.value.length !== 0){
+        strengthBadge.style.display != 'block'
+    }else{
+        strengthBadge.style.display = 'none'
+    }
+});
+```
+
+We then create a function `StrengthChecker`where we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
+
+It then sets the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`). The `if else` statement is used in deciding what will be done from the results gotten.
+
+```java
+function StrengthChecker(PasswordParameter){
+    if(strongPassword.test(PasswordParameter)){
+        strengthBadge.style.backgroundColor = "green"
+        strengthBadge.textContent = 'Strong'
+    }else if(mediumPassword.test(PasswordParameter)){
+        strengthBadge.style.backgroundColor = 'blue'
+        strengthBadge.textContent = 'Medium'
+    }else{
+        strengthBadge.style.backgroundColor = 'red'
+        strengthBadge.textContent = 'Weak'
+    }
+}
+```
+The whole JavaScript code:
+
+```java
     //timeout before a callback is called
 
     let timeout;
@@ -186,42 +250,7 @@ You can take a look at the complete code in this [GitHub repository](https://git
 </script>
 ```
 
-
-In the event listener, we check the strength when the user has typed something, but we won't do it immediately after every input event. When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.
-
-We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
-
-```java
-password.addEventListener("input", () => {
-    strengthBadge.style.display= 'block'
-    clearTimeout(timeout)
-    timeout = setTimeout(() => StrengthChecker(password.value), 500)
-    if(password.value.length !== 0){
-        strengthBadge.style.display != 'block'
-    }else{
-        strengthBadge.style.display = 'none'
-    }
-});
-```
-
-In the function `StrengthChecker`, we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
-
-It then sets the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`).
-
-```java
-function StrengthChecker(PasswordParameter){
-    if(strongPassword.test(PasswordParameter)){
-        strengthBadge.style.backgroundColor = "green"
-        strengthBadge.textContent = 'Strong'
-    }else if(mediumPassword.test(PasswordParameter)){
-        strengthBadge.style.backgroundColor = 'blue'
-        strengthBadge.textContent = 'Medium'
-    }else{
-        strengthBadge.style.backgroundColor = 'red'
-        strengthBadge.textContent = 'Weak'
-    }
-}
-```
+You can take a look at the complete code in this [GitHub repository](https://github.com/Agusioma/Password-Strength-Checker/).
 
 That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
