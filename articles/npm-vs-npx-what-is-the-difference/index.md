@@ -236,13 +236,9 @@ NPX will point to the remote `.js` file, download it temporarily, execute it and
 
 Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped in malicious code.
 
-### Final notes
-
-NPX is a great tool that you should try out. It will help you to avoid NPM dependencies and versioning. Above all, you get to execute packages without having to install them.
+### Comparison summary
 
 Here is some common comparison summary between NPX and NPM
-
-### Comparison summary
 
 | NPM | NPX |
 |-|-|
@@ -252,5 +248,9 @@ Here is some common comparison summary between NPX and NPM
 | When executing a package, it will look for the package binaries either from the local or global installation. If not found that the end and no package will be executed. | When executing a package, it will look for them either in the local or global path. If the package is no found, NPX will take a step further. It will download and store the package binaries temporarily and then execute the package. When the execution is over, NPX will do away with the install. |
 | For NPM to use a package, it has to be specified in the `package.json` under the script fold or available in the package's executable path. | No much hustle with editing the package.json script or remembering the package path. NPX executes packages directly from the NPM registry if not available on your local machine. |
 | Due to package versioning of the NPM `package-lock.json` file, you must update the package to the latest version to use the latest updated package version. | You don't have to update and installed the package to take advantage of new update features or bug fixes. NPX will always execute the latest available version in the NPM registry. And if you need to run a specific package version, you specify the version in the NPX command, and NPX will handle the versioning for you. |
+
+### Final notes
+
+NPX is a great tool that you should try out. It will help you to avoid NPM dependencies and versioning. Above all, you get to execute packages without having to install them.
 
 I hope this guide helped you understand the differences between NPM and NPX and understand some major use cases of NPX.
