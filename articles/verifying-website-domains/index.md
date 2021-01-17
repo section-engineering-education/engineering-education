@@ -9,7 +9,7 @@ This topic could interest individuals and/or groups who would like to verify dom
 
 
 
-At the end of this tutorial, it is possible to have a good gasp on retrieving DNS information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
+At the end of this tutorial, it is possible to have a good grasp on retrieving DNS information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
 
 
 
@@ -81,7 +81,7 @@ Windows PowerShell is structured differently. There are subcategorized features 
 
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
-As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
+As shown below, brackets are used to call a website with an API to sift through permissible website layers and should be present and must begin with 'curl'.
 
 Scroll down to the 'primary' layer to display all associated domains with the IP address.
 
@@ -89,7 +89,7 @@ Scroll down to the 'primary' layer to display all associated domains with the IP
 
 ---
 
-Whenever confronted with a domain that may appear authentic and genuine, it might be best to do some coding research first.
+When confronted with a domain that may appear authentic and genuine, it might be best to do some coding research first.
 
 Domains and websites in general have components that identify itself to initiate internet presence.
 
@@ -98,7 +98,7 @@ Domains and websites in general have components that identify itself to initiate
 * Extension purchases are readily available in a wide variety of selections
 * Website hosting providers can offer e-mail addresses for any purpose with the website domain
 
-These components can be combined to modify to replicate an already existing website domain or create a completely unique website domain.
+These components can be combined and modified to replicate an already existing website domain or create a completely unique website domain.
 
 
 #### Special consistency factors to look for:
