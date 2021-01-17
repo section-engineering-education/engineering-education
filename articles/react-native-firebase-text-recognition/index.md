@@ -278,6 +278,10 @@ Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for th
 Let's create a state to display the selected image on the UI.
 
 ```JSX
+import { useState } from 'react';
+```
+
+```JSX
 const [image, setImage] = useState();
 ```
 
