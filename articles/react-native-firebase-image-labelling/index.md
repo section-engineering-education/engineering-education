@@ -169,7 +169,9 @@ With this, you have set up the Cloud Vision API for your Firebase project. This 
 
 ### Building the UI
 
-In the `App.js`, let's add 2 buttons to the screen to take a photo and pick a photo.
+We'll be writing all of our code in the App.js file.
+
+Let's add 2 buttons to the screen to take a photo and pick a photo.
 
 ```JSX
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native';
