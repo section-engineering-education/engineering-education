@@ -1,5 +1,19 @@
 If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
 
+**Table of Contents**
+
+- [What is NPM?](#what-is-npm)
+- [What is NPX?](#what-is-npx)
+- [How NPM treat Node.js packages?](#how-npm-treat-nodejs-packages)
+- [Using NPX](#using-npx)
+- [NPX standard command](#npx-standard-command)
+- [Executing installed packages](#executing-installed-packages)
+- [One-off commands](#one-off-commands)
+- [NPX versioning](#npx-versioning)
+- [Execute code from URL such as gist](#execute-code-from-url-such-as-gist)
+- [Comparison summary](#comparison-summary)
+- [Final notes](#final-notes)
+
 ### What is NPM?
 
 NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is used to install Node.js packages to use them in our application. It makes it easier for developers to share and reuse open source code by enabling them to install as modules. Modules are JavaScript packages that you can install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
@@ -216,7 +230,7 @@ npx -p node@12.18.3 -- node index.js
 
 You can use this version to run your `.js` files. This becomes useful when checking the different features added in different Node.js versions.
 
-### Execute Code from URL such as gist
+### Execute code from URL such as gist
 
 NPX can download and run the code directly from a gist.
 
