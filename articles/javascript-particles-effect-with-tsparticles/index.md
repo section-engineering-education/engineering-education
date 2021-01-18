@@ -76,7 +76,7 @@ In your `index.html` file, add tsparticles `div` DOM. Add CDN, and import `app.c
    <!-- tsparticles div dom -->
     <div id="tsparticles"></div>
    <!-- Import cdn -->
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.5/tsparticles.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"></script>
 
     <!-- Import app.js from root directory -->
     <script src="/app.js">
