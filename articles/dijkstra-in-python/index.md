@@ -41,9 +41,48 @@ Initially we have this list of distances. We mark the initial distances as INF(i
 5|INF
 6|INF
 
-We also have a list to keep track of the visited nodes only and since we have started with node 0, we add it to the list.
+We also have a list to keep track of the visited nodes only and since we have started with node 0, we add it to the list(We denote a visited node by adding an asterisk beside it in the table and a red border around it on the graph).
 
 **{0}**
 
+We check the distances 0 -> 1 and 0 -> 2 which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
 
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2
+2|6
+3|INF
+4|INF
+5|INF
+6|INF
+
+We then choose the shortest one which is 0 -> 1 and mark node 1 it as visited and we add it to the visited path list.
+
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2*
+2|6
+3|INF
+4|INF
+5|INF
+6|INF
+
+**{0,1}**
+
+Next, we check the nodes adjacent to the nodes added to the path(Nodes 2 and 3).
+We then update our distance table with the distance from the source node to the new adjacent node, node 3 (2 + 5 = 7).
+
+To choose what to add to the path, we select tyhe node with nthe shortest currently known distance to the source node which is 0 -> 2 with distance 6.
+
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2*
+2|6*
+3|7
+4|INF
+5|INF
+6|INF
 
