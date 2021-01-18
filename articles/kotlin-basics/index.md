@@ -25,7 +25,7 @@ Kotlin was announced in 2017 by google and it supported the features that were p
 For you to follow along with this tutorial:
 
 - You need to have Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine
-- Or refer to **repl.it** [https://repl.it/join/uovhpspi-stephenchacha]().
+- Or refer to **repl.it** [click here](https://repl.it/join/uovhpspi-stephenchacha).
 
 <!-- add relevant link and delete this comment -->
 
