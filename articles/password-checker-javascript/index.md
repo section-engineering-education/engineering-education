@@ -8,30 +8,30 @@ A basic understanding of HTML, CSS and JavaScript is required to follow along wi
 
 Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
 
-Regex, also denoted as `RegExp`, can be constructed in one of these two ways:
+Regex is also denoted as `RegExp`. They can be constructed using:
 
-- **Using the Regular Expression literal** where the pattern is enclosed between two slashes.
+- **The Regular Expression literal** where the pattern is enclosed between two slashes.
 
-    ```
+    ```JavaScript
     let check = /vet/
     ```
 
-- **Using the constructor function** of the *RegExp()* class and passing the string to be checked as a parameter.
+- **The constructor function** of the `RegExp()` class and by passing a string that has to be checked.
 
-    ```
+    ```JavaScript
     let check = new RegExp('vet')
     ```
 
-We use the constructor function when the pattern keeps changing or if we get it from a different source, such as the user input. For this reason, we are going to use the constructor function since we are getting the password from the user input.
+    We use the constructor function when the pattern keeps changing or if we get it from a different source, such as a user input. For this reason, we are going to use the constructor function since we will get the password from the user.
 
 ### Patterns
 
 |Characters|Meaning|
 --|--|
-\d|Checks for a digit match e.g it returns 2 in "U2". |
-|\W|Checks for a special character e.g returns % in "2%".|
-|x{n,}|Checks for at least n terms from the preceding term x e.g O{2,} does not return anything in "BOY" but returns all Os in GOOOOOAL!.|
-|xIy |Matches either x or y in a string| eg YouIHim returns You in "You aren't lucky".
+\d|Checks for a digit match e.g: it returns 2 in "U2". |
+|\W|Checks for a special character e.g: returns % in "2%".|
+|x{n,}|Checks for at least n terms from the preceding term x e.g: O{2,} does not return anything in "BOY" but returns all Os in GOOOOOAL!.|
+|xIy |Matches either x or y in a string| e.g: YouIHim returns You in "You aren't lucky".
 |[^vet]|A negated set. Doesn't check for anything included in the range ie Does not check for *vet* in "veterinary"  |
 |[A-Za-z0-9]|Checks all alphanumeric characters|
 |[a-z]|Checks for lowercase letters|
@@ -55,28 +55,27 @@ We are going to check the strength of a password that a user enters based on the
 
 - The password has at least one special character (`[^A-Za-z0-9]`).
 
+> Two groups of parentheses **(x)(y)** is the same as check for both  **x** and **y** while two groups of parentheses with | between them **(x)|(y)** is the same as  either check **x**  or **y** as shown in the table above.
 
-We are going to have three levels to denote how secure the password is. They are:
+We are going to have three levels to denote how secure a password is. They are:
 
 - **Strong**: The password has to meet all the requirements.
 
-Using the metrics above, we are going to create a strong level which has at least one lowercase letter( `?=.*[a-z]` ), one uppercase letter( `?=.*[A-Z]` ), one digit( `?=.*[0-9]` ), one special character( `?=.*[^A-Za-z0-9]` ), and is atleast 8 characters long( `?=.{8,}` ).
+    Using the metrics above, we are going to create a strong level which has at least one lowercase letter (`?=.*[a-z]`), one uppercase letter (`?=.*[A-Z]`), one digit (`?=.*[0-9]`), one special character (`?=.*[^A-Za-z0-9]`), and is atleast 8 characters long(`?=.{8,}`).
 
-- Two groups of parentheses **(x)(y)** is the same as check for both  **x** and **y** while two groups of parentheses with | between them **(x)|(y)** is the same as  either check **x**  or **y** as shown in the table above.
-
-```java
-(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
-```
+    ```JavaScript
+    (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
+    ```
 
 ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
-- **Medium**:  If the password is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
+- **Medium**:  If the password is at least 6 characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
-The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **|** for checking either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
+    The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **|** for checking either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
 
-```java
-((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
-```
+    ```JavaScript
+    ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
+    ```
 
 ![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
 
@@ -88,7 +87,7 @@ The code is the same as for the **Strong** level only that **?=.{6,}** shows tha
 
 A badge is used to show the password strength and color. Green for strong, Blue for medium and Red for weak.
 
-```html
+```HTML
 <html>
     <!-- Bootstrap 5 link -->
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -108,42 +107,42 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 </style>
     
 <body>
-    <p>
-        <div class="d-flex text-danger justify-content-center">
-            <ul style="list-style-type:none">
-                <li class="fs-4" style="margin-top: 10%; text-align :center">
-                    Password Strength Checker
-                </li>
-                <li>
-                    <input id="0101" class="form-control passwordInput" type="password" placeholder="Type your password" id="inputPassword">
-                </li>
-                <li>
-                    <span id="0102" class="badge displayBadge">Weak</span>
-                </li>
-            </ul>
-        </div>  
-    </p>     
+    <div class="d-flex text-danger justify-content-center">
+        <ul style="list-style-type:none">
+            <li class="fs-4" style="margin-top: 10%; text-align :center">
+                Password Strength Checker
+            </li>
+            <li>
+                <input id="0101" class="form-control passwordInput" type="password" placeholder="Type your password" id="inputPassword">
+            </li>
+            <li>
+                <span id="0102" class="badge displayBadge">Weak</span>
+            </li>
+        </ul>
+    </div>     
 </body>
 </html>
 ```
 
-We will use Bootstrap 5 for UI styling. We then link Bootstrap CSS styling. The next `<style>` tag is where we provide our custom styling using CSS with two classes and their respective stylings.
+- We will use Bootstrap 5 for styling. We will provide a CDN link for the bootstrap file and link it to the HTML file using the `<link>` tag. 
 
-In the `<body>` tag we have a paragraph ( `p` ) with a `div` element. Bootstrap provides a `d-flex` class for making the div a flexbox, a `text-danger` for color red and `justify-content-center` for justify the content of a div in the center.
+- We write our custom styles using the `<style>` tag. We have two classes and their respective stylings.
 
-In the div, we have an unordered list with the style `list-style-type:none` for removing bullets. It has three items( `li` ):
+- In the `<body>` tag we have a `<div>` element.
 
-The first is under class `fs-4` which makes the text size that of **h4**. We have also given it an inline styling.
+- In the `<div>`, we have an unordered list with the style `list-style-type:none` for removing bullets. It has three items (`<li>`):
 
-The second item is an input where our password will be typed in. It is under the Bootstrap's class `form-control` and the class `passwordInput` which we custom styled in the `<style>` tag. The `form-control` shows the inputshould be used in a `form` element(We have not added a form since we are not sending any data).
+- The first is under class `fs-4` which makes the text size that of **h4**. We have also given it an inline styling.
 
-The third item contains a `<span>` which is where the password strength will be labeled. It is under the class `displayBadge` which we custom styled and `badge` given by Bootstrap which makes it appear as a badge.
+- The second item is an input where our password will be typed in. It is under the Bootstrap's class `form-control` and the class `passwordInput` which we custom styled in the `<style>` tag. The `form-control` shows the inputshould be used in a `form` element(We have not added a form since we are not sending any data).
+
+- The third item contains a `<span>` which is where the password strength will be labeled. It is under the class `displayBadge` which we custom styled and `badge` given by Bootstrap which makes it appear as a badge.
 
 #### JavaScript Code creation and explanation
 
 Create five variables: `timeout` for storing the timeout before a callback is called, `password` & `strengthBadge` for storing the input and span after traversing the DOM and getting them using their IDs, and `strongPassword` & `mediumPassword` for storing the Regex conditions.
 
-```java
+```JavaScript
 let timeout;
 let password = document.getElementById('0101')
 let strengthBadge = document.getElementById('0102')
@@ -154,7 +153,7 @@ We then add an input event listener to the `password` input where we check the s
 
 We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
 
-```java
+```JavaScript
 password.addEventListener("input", () => {
     strengthBadge.style.display= 'block'
     clearTimeout(timeout)
@@ -167,11 +166,11 @@ password.addEventListener("input", () => {
 });
 ```
 
-We then create a function `StrengthChecker`where we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
+We then create a function `StrengthChecker` where we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
 
 It then sets the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`). The `if else` statement is used in deciding what will be done from the results gotten.
 
-```java
+```JavaScript
 function StrengthChecker(PasswordParameter){
     if(strongPassword.test(PasswordParameter)){
         strengthBadge.style.backgroundColor = "green"
@@ -185,9 +184,11 @@ function StrengthChecker(PasswordParameter){
     }
 }
 ```
+
 The full JavaScript code:
 
-```java
+```JavaScript
+<script>
     //timeout before a callback is called
 
     let timeout;
