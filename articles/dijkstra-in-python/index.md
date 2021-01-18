@@ -234,6 +234,7 @@ We have  a constructor for giving initial `_init_` values and three user-defined
 The constructor takes the parameter `nodes` which is the number of nodes to analyze initializes respective values.
 
 ```python
+def __init__(self, nodes):
 #distance array initialization
 self.distArray = [0 for i in range(nodes)]
 #visited nodes initialization
@@ -247,7 +248,7 @@ self.graph = [[0 for column in range(nodes)]
     for row in range(nodes)]
 ```
 
-`dijkstra()` takes a parameter the source node, `srcNode`. It then first initialises each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
+`dijkstra()` takes a parameter, the source node(`srcNode`). It then first initializes each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
 
 ```python
 self.distArray[i] = self.INF
@@ -291,4 +292,80 @@ min = self.INF
 print ("Node \tDistance from 0")
     for i in range(self.V): 
         print (i, "\t", distArray[i])
+```
+
+We then create an object `ourGraph` from our `Graph()` class and pass to it the number of nodes.
+
+```python
+ourGraph = Graph(7)
+```
+
+Next, create the matrix to store the distances.
+
+```python
+ourGraph.graph = [[0, 2, 6, 0, 0, 0, 0], 
+        [2, 0, 0, 5, 0, 0, 0], 
+        [6, 6, 0, 8, 0, 0, 0], 
+        [0, 0, 8, 0, 10, 15, 0], 
+        [0, 0, 0, 10, 0, 6, 2], 
+        [0, 0, 0, 15, 6, 0, 6], 
+        [0, 0, 0, 0, 2, 6, 0],
+        ]; 
+```
+The matrix is the same as the table such as shown below:
+
+||0|1|2|3|4|5|6|
+|---|---|---|---|---|---|---|---|
+|**0**|0|2|6|0|0|0|0|
+|**1**|2|0|0|5|0|0|0|
+|**2**|6|6|0|8|0|0|0|
+|**3**|0|0|8|0|10|15|0|
+|**4**|0|0|0|10|0|6|2|
+|**5**|0|0|0|15|6|0|6|
+|**6**|0|0|0|0|2|6|0|
+
+The top most row and far left column represents the nodes.
+We read a node from the left column and check its distance with the top most row. The intersection shows the distance. The distance is 0 if the nodes are not adjacent e.g
+
+The distance of 0 from 0 is 0.
+
+||0|1|2|3|4|5|6|
+|---|---|---|---|---|---|---|---|
+|**0**|***0***|2|6|0|0|0|0|
+|**1**|2|0|0|5|0|0|0|
+|**2**|6|6|0|8|0|0|0|
+|**3**|0|0|8|0|10|15|0|
+|**4**|0|0|0|10|0|6|2|
+|**5**|0|0|0|15|6|0|6|
+|**6**|0|0|0|0|2|6|0|
+
+The distance of 5 from 3 is 15.
+
+||0|1|2|3|4|5|6|
+|---|---|---|---|---|---|---|---|
+|**0**|0|2|6|0|0|0|0|
+|**1**|2|0|0|5|0|0|0|
+|**2**|6|6|0|8|0|0|0|
+|**3**|0|0|8|0|10|15|0|
+|**4**|0|0|0|10|0|6|2|
+|**5**|0|0|0|***15***|6|0|6|
+|**6**|0|0|0|0|2|6|0|
+
+Finally, we display our results.
+
+```python
+ourGraph.dijkstra(0)
+```
+
+The output will be:
+
+```python
+Node    Distance from 0
+0        0
+1        2
+2        6
+3        7
+4        17
+5        22
+6        19
 ```
