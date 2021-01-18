@@ -29,15 +29,21 @@ A node is then marked as **visited** and added to the path if the distance betwe
 
 The source node here is node **0**. We assume the weights show the distances.
 
-Initially we have this list of distances. We mark the initial distances as INF(infinity) because we have not yet determined the actual distance.
+Initially we have this list of distances. We mark the initial distances as INF(infinity) because we have not yet determined the actual distance except for node 0 because the distance from the node 0 to itself is 0.
 
 |NODE|DISTANCE|
 ---|---|
-0|INF
+0|0
 1|INF
 2|INF
 3|INF
 4|INF
 5|INF
 6|INF
+
+We also have a list to keep track of the visited nodes only and since we have started with node 0, we add it to the list.
+
+**{0}**
+
+
 
