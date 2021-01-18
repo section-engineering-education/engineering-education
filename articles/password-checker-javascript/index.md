@@ -139,7 +139,7 @@ Create five variables: `timeout` for storing the timeout before a callback is ca
 ```JavaScript
 let timeout;
 let password = document.getElementById('PassEntry')
-let strengthBadge = document.getElementById('StrengDisp')
+let strengthBadge = document.getElementById('StrengthDisp')
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
@@ -189,8 +189,8 @@ The full JavaScript code:
 
     //traversing the DOM and getting the input and span using their IDs
 
-    let password = document.getElementById('0101')
-    let strengthBadge = document.getElementById('0102')
+    let password = document.getElementById('PassEntry')
+    let strengthBadge = document.getElementById('StrengthDisp')
 
     //The strong and weak password Regex pattern checker
 
