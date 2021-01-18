@@ -143,7 +143,7 @@ di v:nth-child(4) {
 
 ![](/engineering-education/css-flexbox-vs-css-grid/flex-content-first.png)
 
-We specify the child item of the container and determine its position. That's what we mean by referring to flex as content-based.
+We specify the child item of the container and determine its position. That's what we mean by referring to Flexbox as content-based.
 
 On the other hand, we can implement the same using CSS Grid. The header is one dimensional, and Flexbox is perfect for doing this, but we can do that with CSS Grid instead to differentiate between layout and content.
 
@@ -455,7 +455,7 @@ Some CSS to style the container and the items;
 
 ![](/engineering-education/css-flexbox-vs-css-grid/grid-and-flexible.jpg)
 
-Go up to the container, and apply the wrap property to it because that's the container of these items. It's going to control the wrapping of those items.
+Apply the wrap property to the container because that's the container of these items. It's going to control the wrapping of those items.
 
 Let's do that.
 
