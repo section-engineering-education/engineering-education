@@ -1,0 +1,65 @@
+# What is the OpenFlow protocol? 
+
+**Openflow protocol** is a standard in Software Defined Networking(SDN) architecture. This protocol defines the communication between an SDN controller and the network device/agent. Before delving deep into the OpenFlow protocol, here is a background on SDN. 
+
+Before moving further, the term "switch" denotes a network device capable of using OF protocol, and not the Layer 2 device. 
+
+## Background on traditional SDN
+
+**Software Defined Networking** is a novel concept for the network engineering field which enables traditional networks to be controlled through a separate centralized entity, usually an SDN controller. In simple terms, **SDN is defined as separating the _control plane_(or the brain) of the network and the _data/forwarding plane_(or the brawn)**.
+
+The SDN controller is a centralized physical/virtual device that communicates with all the "dumb" network devices and updates them on how to forward traffic. This southbound communication takes place through means like an SSH connection, APIs, and most commonly through the OpenFlow(OF) protocol. This protocol defines the requirements and the standards for communication between an SDN controller and the "agent" network device.
+
+In traditional SDN architecture, there are three layers:
+- Application layer: This is where the applications will run and decide how the traffic should move in a network. For example, routing protocols like OSPF, BGP, Firewall application, etc. 
+- Control Layer: This is where the controller resides. The controller acts as a bridge between the application and the switches. It relays the information from the application and converts them into network "flows" that are entered in the switch's "flow table". 
+- Data/ Infrastructure layer: This is the forwarding plane that has the actual hardware devices. These devices refer to the flow entries in their flow table to forward packets through the network. 
+
+## Basics of Openflow
+
+As mentioned, the OpenFlow protocol lays out the foundation for communication between an SDN controller and a dumb network device. This protocol was developed first by researchers at Stanford University in 2008 and was first adopted by [Google](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42948.pdf) in their backbone network in 2011-2012. It is managed now by the [Open Networking Foundation(ONF)](https://opennetworking.org/sdn-definition/). The latest version used in the industry is V1.5. 
+
+OpenFlow is the standard southbound protocol used between the SDN controller and the switch. The SDN controller takes the information from the applications and converts them into flow entries which are fed to the switch via OF. It can also be used for monitoring switch and port statistics for network management.
+
+**NOTE**
+The OpenFlow protocol is only established between a controller and the switch. It does not affect the rest of the network and if a packet capture were to be taken between two switches in a network, both of them connected to the controller via another port, the packet capture would not reveal any OF messages between the switches. It is strictly for the use between a switch and the controller. The rest of the network is not affected.
+
+### Initiation of OpenFlow channel 
+
+OpenFlow protocol works on the TCP protocol. The standard protocol is TCP 6633 for OF V1.0 and 6653 for OF V1.3+. There needs to be IP connectivity between the controller and the switches for them to establish an OF connection. OF channel is formed only after a successful TCP 3-way handshake. 
+
+1. To start the OF channel communication, the switch sends a "HELLO" packet to introduce it to the controller. The switch also sends information like the highest version of OF it supports. The controller replies to the hello message with its highest supported OF version. Then, the switch negotiates on the highest level of the OpenFlow version that they both support. 
+2. Once the version is negotiated, the controller sends a "FEATURE_REQUEST" message. This message essentially asks the switch for its supported OF capabilities like the number of flow tables supported, supported actions, etc. The switch replies to it with a "FEATURE_REPLY" message stating all its capabilities along with its unique identifier or Datapath ID(DPID).
+
+After this, it is said that the OpenFlow channel is successfully established between the switch and the controller. 
+
+The connection between the controller and switch is really important as it is the only way for a switch to communicate with a controller. To secure this connection, a protocol like TLS can also be used instead of a TCP connection. Here, the controller and switch need to have the proper certificates and keys for a successful TLS connection. This prevents snooping on the OF channel.
+
+### OpenFlow tables and Flow entries
+
+Flow tables are like a traditional switch's MAC/CAM table that stores the hardware addresses of hosts. Flow tables store flow entries or flows, that tell the SDN switch what to do with a packet when it comes on an incoming port.
+The switch will generally match certain parameters like IP address, port number, MAC address, VLAN ID, etc. and select the best matching flow entry from the table and execute the action associated with that entry. Actions could be to drop the packet, forward it out a different port, flood the packet or send it to the controller for further inspection of the packet.
+
+If a switch does not have an entry for a packet, the switch might have a default entry or "TABLE_MISS" entry. This entry has the lowest priority and the actions can either be to drop the packet or send it to the controller. When the controller receives this kind of packet from a switch, it sends it to the application running at the application layer which can process the packet and let the controller know if a new flow entry needs to be inserted in the switch's flow table. If that's the case, the controller will insert a flow entry on the switch. 
+
+The next packet of the same kind will be dealt with by the switch at the Data layer as it already has an entry and appropriate actions would be taken. This improves the efficiency of the network by a huge factor. 
+
+## Advantages of Using OpenFlow
+There are several advantages of OpenFlow and SDN rather than traditional networks.
+1. SDN enables separation of control and data plane which means switches can use all their hardware resources in just forwarding data instead of computing routes. 
+2. OpenFlow provides an easy way of communication between controller and switch which can be easily implemented in an existing network. 
+3. Most current devices in the field support OpenFlow, it is not enabled by default, but we can easily enable and use it in the transition to SDN. 
+4. It provides security with a TLS connection to prevent snooping and DoS attacks on the controller and/or the network. 
+5. OpenFlow does **NOT** change the configuration for a switch. It just updates the flow tables which define the path for a packet.
+
+## Alternatives and other means of SDN 
+
+Although it seems that OpenFlow is ingrained with SDN, it is just an industry-standard practice to easily implement SDN in an organization. There are several other means with which one can program the SDN switches and insert flow entries in its flow tables.
+
+1. REST APIs: REST APIs are the most popular choice after OpenFlow to communicate with the switches. All the controller applications also have a REST module supported with them. The user can query the database of the switch to POST or GET data. "curl" is one of the most popular tools for this. An example of a REST call on the RYU controller to get all the switches in your network would be
+``` curl -XGET http://localhost:8080/stats/switches```
+
+2. Management protocols: Protocols like SSH, NETCONF, and SNMP could also be used to manage an OF enabled switch from the controller. This method is generally used for old devices that do not support OpenFlow. 
+
+
+
