@@ -231,6 +231,31 @@ We have three user-defined functions:
 `minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
 
 `dijkstra()` takes a parameter the source node, `srcNode`. It then first initialises each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
+
+```python
+          self.distArray[i] = self.INF
+          self.vistSet[i] = False
+```
+
 In the next loop, it picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in first iteration.
 
+```python
+          self.distArray[i] = self.INF
+          #set the visited nodes set to false for each node
+          self.vistSet[i] = False
+```
+
 It then adds the node with the minimum distance in the visited nodes set by setting the value to `True`.
+
+```python
+self.vistSet[u] = True
+```
+
+In the last loop, the code updates distance of the node from node 0, `dist[v]` only if is not in visited list array, `vistSet[]`, and if there is an edge from `u` to `v`, and total distance of path from `srcNode` to  `v` through `u` is less than current value of `dist[v]`.
+
+```python
+
+if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
+    self.distArray[v] = self.distArray[u] + self.graph[u][v]
+
+```
