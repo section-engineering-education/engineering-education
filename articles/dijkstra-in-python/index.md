@@ -270,6 +270,7 @@ if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > sel
     self.distArray[v] = self.distArray[u] + self.graph[u][v]
 
 ```
+It then calls the `printSolution()` to display the table after passing the distance array to the function.
 
 `minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
 It takes two arrays as parameters `distArray` and `vistSet[v]`.
@@ -284,7 +285,7 @@ min = self.INF
     return min_index
 ```
 
-`printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray`.
+`printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray` which it takes as a parameter.
 
 ```python
 print ("Node \tDistance from 0")
