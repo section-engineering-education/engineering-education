@@ -31,7 +31,7 @@ To follow along, you are required to have an understanding of linear algebra, nu
 
 The following diagram gives a visual representation of the support vector machine concept.
 
- ![terms](support-vector-machines.jpg)
+ ![terms](/engineering-education/support-vector-machines/support-vector-machines.jpg)
 
 ***mathematical formulation***
 
@@ -49,7 +49,7 @@ Such that $$w$$ is normal to the hyperplanes.<br>
 
 (*See figure below*)
  
-![enter image description here](vector.jpg)
+![enter image description here](/engineering-education/support-vector-machines/vector.jpg)
 
 $$w.u>=c$$ ; ie. project $$u$$ on the normal
 
@@ -91,7 +91,7 @@ Now that we have both the decision function and its constraint we, therefore, ne
 
 ***width***  = $$(x_i- x ) = \frac{w2}{||w||^2}$$ as  our optimization problem.(*see fegure below*)
 
-![Width](Width.jpg)
+![Width](/engineering-education/support-vector-machines/Width.jpg)
  
 We now need to find its maximum.
 
