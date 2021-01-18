@@ -1,34 +1,30 @@
-We need a strong password to secure our systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to guard his/her account using the **Regular Expressions**.
+Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to secure their account using **Regular Expressions** in JavaScript.
 
 ### Prerequisites
 
-A basic understanding of HTML, CSS and JavaScript is needed.
+A basic understanding of HTML, CSS and JavaScript is required to follow along with this tutorial.
 
 ### The Regular Expressions Class
 
 Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
 
-We can either use **simple patterns** such as `/vet/` for finding a direct much or **special characters** like `/?=/` for getting more than a direct match.
-
-### How to use Regex
-
 Regex, also denoted as `RegExp`, can be constructed in one of these two ways:
 
 - **Using the Regular Expression literal** where the pattern is enclosed between two slashes.
 
-```
-let check = /vet/
-```
+    ```
+    let check = /vet/
+    ```
 
 - **Using the constructor function** of the *RegExp()* class and passing the string to be checked as a parameter.
 
-```
-let check = new RegExp('vet')
-```
+    ```
+    let check = new RegExp('vet')
+    ```
 
 We use the constructor function when the pattern keeps changing or if we get it from a different source, such as the user input. For this reason, we are going to use the constructor function since we are getting the password from the user input.
 
-#### Patterns we are going to use
+### Patterns
 
 |Characters|Meaning|
 --|--|
@@ -45,24 +41,24 @@ We use the constructor function when the pattern keeps changing or if we get it 
 |x*|Checks for x 0 or more times|
 
 
-#### The JavaScript program
+### The JavaScript program
 
-We are going to discuss how to check the strength of a password that a user enters based on:
+We are going to check the strength of a password that a user enters based on the following rules.
 
-- Is at least 8 characters long(`?=.{8,}`)
+- The password is at least 8 characters long (`?=.{8,}`).
 
-- Has at least one uppercase letter(`?=.*[A-Z]`)
+- The password has at least one uppercase letter (`?=.*[A-Z]`).
 
-- Has at least one lowercase letter(`?=.*[a-z]`)
+- The password has at least one lowercase letter (`?=.*[a-z]`).
 
-- Has at least one digit(`?=.*[0-9]`)
+- The password has at least one digit (`?=.*[0-9]`).
 
-- Has at least one special character(`[^A-Za-z0-9]`)
+- The password has at least one special character (`[^A-Za-z0-9]`).
 
 
-We are going to have three levels:
+We are going to have three levels to denote how secure the password is. They are:
 
-- **Strong**: The password has to meet all the requirements to be strong.
+- **Strong**: The password has to meet all the requirements.
 
 Using the metrics above, we are going to create a strong level which has at least one lowercase letter( `?=.*[a-z]` ), one uppercase letter( `?=.*[A-Z]` ), one digit( `?=.*[0-9]` ), one special character( `?=.*[^A-Za-z0-9]` ), and is atleast 8 characters long( `?=.{8,}` ).
 
@@ -71,11 +67,12 @@ Using the metrics above, we are going to create a strong level which has at leas
 ```java
 (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
 ```
+
 ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
-- **Medium**: The password can only be medium either if it is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
+- **Medium**:  If the password is at least 6 characters long and meets all the other requirements or has no digit but meets the rest of the requirements.
 
-The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **I** for checking for either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
+The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **|** for checking either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
 
 ```java
 ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
@@ -87,16 +84,12 @@ The code is the same as for the **Strong** level only that **?=.{6,}** shows tha
 
 ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
-
-We will use Bootstrap 5 for UI styling.
+#### HTML Code and explanation
 
 A badge is used to show the password strength and color. Green for strong, Blue for medium and Red for weak.
 
-#### HTML Code and explanation
-
 ```html
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap 5 link -->
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -133,9 +126,8 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 </body>
 </html>
 ```
-First, we make the page have the same scaling in the `<meta>` tag. The tag defines more about the HTML page.
 
-We then link Bootstrap CSS styling. The next `<style>` tag is where we provide our custom styling using CSS with two classes and their respective stylings.
+We will use Bootstrap 5 for UI styling. We then link Bootstrap CSS styling. The next `<style>` tag is where we provide our custom styling using CSS with two classes and their respective stylings.
 
 In the `<body>` tag we have a paragraph ( `p` ) with a `div` element. Bootstrap provides a `d-flex` class for making the div a flexbox, a `text-danger` for color red and `justify-content-center` for justify the content of a div in the center.
 
@@ -152,11 +144,11 @@ The third item contains a `<span>` which is where the password strength will be 
 Create five variables: `timeout` for storing the timeout before a callback is called, `password` & `strengthBadge` for storing the input and span after traversing the DOM and getting them using their IDs, and `strongPassword` & `mediumPassword` for storing the Regex conditions.
 
 ```java
-    let timeout;
-    let password = document.getElementById('0101')
-    let strengthBadge = document.getElementById('0102')
-    let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
-    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+let timeout;
+let password = document.getElementById('0101')
+let strengthBadge = document.getElementById('0102')
+let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
 We then add an input event listener to the `password` input where we check the strength when the user has typed something, but we won't do it immediately after every input event. When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.
 
