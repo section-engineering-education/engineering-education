@@ -89,9 +89,9 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 
 ```HTML
 <html>
+<head>
     <!-- Bootstrap 5 link -->
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
 <!-- CSS Styling -->
 <style>
     .passwordInput{
@@ -105,20 +105,14 @@ A badge is used to show the password strength and color. Green for strong, Blue 
         text-align :center;
     }
 </style>
-    
+</head>
 <body>
     <div class="d-flex text-danger justify-content-center">
-        <ul style="list-style-type:none">
-            <li class="fs-4" style="margin-top: 10%; text-align :center">
+            <h4 style="margin-top: 10%; text-align :center">
                 Password Strength Checker
-            </li>
-            <li>
-                <input id="0101" class="form-control passwordInput" type="password" placeholder="Type your password" id="inputPassword">
-            </li>
-            <li>
-                <span id="0102" class="badge displayBadge">Weak</span>
-            </li>
-        </ul>
+            <h4></br>
+                <input class="form-control passwordInput" type="password" placeholder="Type your password" id="PassEntry"></br>
+                <span id="StrengthDisp" class="badge displayBadge">Weak</span></br>
     </div>     
 </body>
 </html>
@@ -130,9 +124,9 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 
 - In the `<body>` tag we have a `<div>` element.
 
-- In the `<div>`, we have an unordered list with the style `list-style-type:none` for removing bullets. It has three items (`<li>`):
+- In the `<div>`, we have an three elements:
 
-- The first is under class `fs-4` which makes the text size that of **h4**. We have also given it an inline styling.
+- The first is a **h4** which we given it an inline styling.
 
 - The second item is an input where our password will be typed in. It is under the Bootstrap's class `form-control` and the class `passwordInput` which we custom styled in the `<style>` tag. The `form-control` shows the inputshould be used in a `form` element(We have not added a form since we are not sending any data).
 
@@ -140,12 +134,12 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 
 #### JavaScript Code creation and explanation
 
-Create five variables: `timeout` for storing the timeout before a callback is called, `password` & `strengthBadge` for storing the input and span after traversing the DOM and getting them using their IDs, and `strongPassword` & `mediumPassword` for storing the Regex conditions.
+Create five variables: `timeout` for storing the timeout before a callback is called, `password` for the input where the password will be entered, `strengthBadge` for storing the span used for displaying the strength of the password (gotten after traversing the DOM and getting them using their IDs), and `strongPassword` & `mediumPassword` for storing the Regex conditions.
 
 ```JavaScript
 let timeout;
-let password = document.getElementById('0101')
-let strengthBadge = document.getElementById('0102')
+let password = document.getElementById('PassEntry')
+let strengthBadge = document.getElementById('StrengDisp')
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
@@ -242,8 +236,6 @@ The full JavaScript code:
     }
 </script>
 ```
-
-You can take a look at the complete code in this [GitHub repository](https://github.com/Agusioma/Password-Strength-Checker/).
 
 That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
