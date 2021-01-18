@@ -45,7 +45,7 @@ We also have a list to keep track of the visited nodes only and since we have st
 
 **{0}**
 
-We check the distances 0 -> 1 and 0 -> 2 which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
+We check the distances 0 > 1 and 0 > 2 which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
 
 |NODE|DISTANCE|
 ---|---|
@@ -57,7 +57,7 @@ We check the distances 0 -> 1 and 0 -> 2 which are 2 and 6 respectively. We firs
 5|INF
 6|INF
 
-We then choose the shortest one which is 0 -> 1 and mark node 1 it as visited and we add it to the visited path list.
+We then choose the shortest one which is 0 > 1 and mark node 1 it as visited and we add it to the visited path list.
 
 |NODE|DISTANCE|
 ---|---|
@@ -74,7 +74,7 @@ We then choose the shortest one which is 0 -> 1 and mark node 1 it as visited an
 Next, we check the nodes adjacent to the nodes added to the path(Nodes 2 and 3).
 We then update our distance table with the distance from the source node to the new adjacent node, node 3 (2 + 5 = 7).
 
-To choose what to add to the path, we select tyhe node with nthe shortest currently known distance to the source node which is 0 -> 2 with distance 6.
+To choose what to add to the path, we select tyhe node with nthe shortest currently known distance to the source node which is 0 > 2 with distance 6.
 
 |NODE|DISTANCE|
 ---|---|
@@ -86,3 +86,55 @@ To choose what to add to the path, we select tyhe node with nthe shortest curren
 5|INF
 6|INF
 
+**{0,1,2}**
+
+Next we have the distances 0 > 1 > 3(2 + 5 = 7) and 0 > 2 > 3(6 + 8 = 14) in which 7 is clearly the shorter distance, so we add node 3 to the path and mark it as visited.
+
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2*
+2|6*
+3|7*
+4|INF
+5|INF
+6|INF
+
+**{0,1,2,3}**
+
+We then check the next adjacent nodes(node 4 and 5) in which we have 0 > 1 > 3 > 4(7 + 10 = 17) for node 4 and 0 > 1 > 3 > 5(7 + 15 = 22) for node 5. We add node 4.
+
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2*
+2|6*
+3|7*
+4|17*
+5|22
+6|INF
+
+**{0,1,2,3,4}**
+
+In the same way, we check the adjacent nodes(node 5 and 6).
+
+Node 5:
+- Option 1: 0 > 1 > 3 > 5(7 + 15 = 22)
+- Option 2: 0 > 1 > 3 > 4 > 5(17 + 6 = 23)
+- Option 3: 0 > 1 > 3 > 4 > 6 > 5(17 + 2 + 6 = 25)
+We choose 22.
+
+Node 6
+0 > 1 > 3 > 4 > 6(17 + 2 = 19)
+
+|NODE|DISTANCE|
+---|---|
+0|0
+1|2*
+2|6*
+3|7*
+4|17*
+5|22*
+6|19*
+
+**{0,1,2,3,4,5}**
