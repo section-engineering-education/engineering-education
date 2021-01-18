@@ -498,12 +498,13 @@ Multer has an in-built method called `diskStorage` and it takes a couple of opti
 
   3. cb, which is again another callback function.
 
-Finally, we call the cb function that takes two arguments. The first is **error and we are going to pass null in this.** The second is the **destination folder which is public.**
-- The **second option that this method takes is the filename.** It is almost the same as the destination option **except in this, the inner callback function takes the filename as the 2nd argument.**
+Finally, we call the cb function that takes two arguments. The first is error which we are going to pass null to. The second is the destination folder which is public.
+
+The second option that this method takes is the filename. It is almost the same as the destination option except in this, the inner callback function takes the filename as the second argument.
 
 So, you can see that I have created a unique filename for this using the template string in JavaScript. You can refer to the file object that we logged in to our terminal earlier. I have taken the extension from the `mimetype` property of the file object and also the fieldname.
 
-We have completed the first step of configuring multer. Next, we will make a filter to filter out different kinds of files. I will make a filter to upload only pdf files. You can make your kind of filter by referring to the code below.
+Congratulations. We have completed the first step of configuring Multer. Next, we will make a filter to filter out different kinds of files. I will make a filter to upload only PDF files. You can make your own filter by referring to the code below:
 
 ```javascript
 // Multer Filter
@@ -516,10 +517,9 @@ const multerFilter = (req, file, cb) => {
 };
 ```
 
-Now, this piece of code is very simple. **Multer filter is just a function that also has req, file, and a callback function as its arguments.** In this, we will check if the uploaded files are PDFs, if so we will pass true in the callback function. If it isn't a PDF, we will pass false along with an error in the callback function.
-If you want to filter out some other files like images, you can do that easily by checking the mimetype of the uploaded files.
+Now, this piece of code is very simple. Multer filter is just a function that also has req, file, and a callback function as its arguments. In this, we will check if the uploaded files are PDFs, if so we will pass true in the callback function. If it isn't a PDF, we will pass false along with an error in the callback function. If you want to filter out some other files like images, you can do that easily by checking the mimetype of the uploaded files.
 
-**And the last step is to again call the multer function but now passing our manually configured `multerStorage` and `multerFilter` as options.**
+The last step is to again call the Multer function but now passing our manually configured `multerStorage` and `multerFilter` as options like the code below:
 
 ```javascript
 //Calling the "multer" Function
@@ -529,12 +529,13 @@ const upload = multer({
 });
 ```
 
-Finally, **if you will restart your server** or since it is running on nodemon, then all you have to do is to save the file and it will restart it.
-And, **now if you try to upload a PDF file, you should see that uploaded file (in PDF format) in your files folder under the public directory. But, if you upload any other file, it will show an error.**
+Finally, save the file to restart the server.
 
-So, **we can finally see our uploaded file in our disk storage.** But, if we want to see this file on the front-end, we need to store the name of the file in our Database. Also, we have already created the schema for our database earlier. **So, all we have to do is to save the name of the file in our route-handler function.**
+Now, if you try to upload a PDF file, you should see that uploaded file (in PDF format) in your files folder under the public directory. But, if you upload any other file, it will show an error.
 
-**Write this code inside the uploadFile API endpoint:-**
+So, we can finally see our uploaded file in our disk storage. But, if we want to see this file on the front-end, we need to store the name of the file in our database. Since, we have already created the schema for our database, all we have to do is to save the name of the file in our route-handler function.
+
+Write the following code inside the uploadFile API endpoint:-
 
 ```javascript
 // Stuff to be added later
@@ -554,18 +555,19 @@ try {
 }
 ```
 
-**app.js File for your reference**
+#### Updated app.js File
 
-![atlas](/engineering-education/uploading-files-using-multer-nodejs/appjs3.png)
+![app.js3](/engineering-education/uploading-files-using-multer-nodejs/appjs3.png)
 
-And, **now if you again upload a file and hit submit, the name of the file will be saved in your cloud database.** To see that, **you can go to your cluster at the MongoDB site, and in the collections, you should see something like this.**
+Nnow if you upload a file and hit submit again, the name of the file will be saved in your cloud database. To see that, you can go to your cluster at the MongoDB site, and in the collections, you should see something like the image below:
 
 ![atlas](/engineering-education/uploading-files-using-multer-nodejs/atlas.png)
 
-Note that, **the name of the file in the database should match the filename in your disk storage and this is how we can upload a file using Multer as a middleware in a node.js application.**
+Note that, the name of the file in the database should match the filename in your disk storage and this is how we can upload a file using Multer as a middleware in a node.js application.
 
-### View these files on your Front-End
-The next part of this tutorial is to view these uploaded files on the front-end of your project. **To do this, we have to create another API endpoint to get all the files.** So, write this code in your app.js file.
+### View these files on your front-end
+
+The next part of this tutorial is to view these uploaded files on the front-end of your project. To do this, we have to create another API endpoint to get all the files. So, write the following code in your app.js file:
 
 ```javascript
 app.get("/api/getFiles", async (req, res) => {
@@ -584,15 +586,15 @@ app.get("/api/getFiles", async (req, res) => {
 });
 ```
 
-Now, **all we have to do is to make an API call on this endpoint.** I prefer **using Axios**. After getting the results, **we can show these files on our page using some basic HTML code and styling.**
+Now, all we have to do is to make an API call on this endpoint. I prefer using Axios to do this. After getting the results, we can show these files on our page using some basic HTML code and CSS.
 
-**Include this script at the end of your HTML code before closing the \<html> tag.**
+Include this script at the end of your HTML code before closing the `<html>` tag.
 
 ```html
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
-**I'll be writing all the javascript after this only.** But you can create a new javascript file and then place it in the public directory same as your CSS file.
+I'll include the JavaScript code after the HTML but you can create a new JavaScript file and then place it in the public directory same as your CSS file.
 
 ```html
 <script>
@@ -622,9 +624,9 @@ Now, **all we have to do is to make an API call on this endpoint.** I prefer **u
 </script>
 ```
 
-With this code, **we are calling the API endpoint that we created.** And then, **with the data we receive, we are making entities for each different file.** Also, **we made a link in those entities and set its value to the name of the file stored in the database.** In this way, **when we'll click that link, our uploaded file will open in our browser.**
+With this code, we are calling the API endpoint that we created and then, with the data we receive, we are making entities for each different file. We also made a link in those entities and set its value to the name of the file stored in the database. This way, when we click that link, our uploaded file will open in our browser.
 
-**My CSS styling**
+### CSS Styles
 
 ```css
 *,
@@ -679,8 +681,10 @@ html {
 ```
 
 ### Conclusion
-So, **this is how we can upload files using Multer and view them on the front-end.** **In the case of images, we can also resize them** according to our needs. **For this, we have to store the images in the buffer storage before storing them in disk storage.**
-There are also lots of things that we can do with multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer).
+Congratulations. You've uploaded files using Multer and viewed them on the front-end.
+There are also lots of things that we can do with Multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer). 
+
+One suggestion is if you want to upload images, resize them according to your needs to save space on the server. For this, we would have to store the images in the buffer storage before storing them in disk storage.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
