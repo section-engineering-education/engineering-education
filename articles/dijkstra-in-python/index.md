@@ -1,6 +1,7 @@
 ### Dijkstra's Shortest Path Algorithm using Python
 
 In this article, we are going to talk about how Dijkstra's algorithm finds the shortest path between nodes in a network and use a Python script in illustrating the same.
+A basic understanding of Python and its OOP concepts is needed.
 
 We shall first talk about basic graph concepts because we are going to use them in this article.
 
@@ -138,3 +139,98 @@ Node 6
 6|19*
 
 **{0,1,2,3,4,5}**
+
+#### Python code and explanation
+
+We have the Python code below to illustrate the  above process:
+
+```python
+
+class Graph(): 
+    # A constructor to iniltialize the values
+    def __init__(self, vertices):
+        self.distArray = [0 for i in range(vertices)]
+        self.vistSet = [0 for i in range(vertices)]
+        self.V = vertices
+        self.INF = 1000000
+        self.graph = [[0 for column in range(vertices)]  
+                    for row in range(vertices)]
+   
+    def dijkstra(self, srcNode):
+        for i in range(self.V):
+          #initialise the distances to infinity first
+          self.distArray[i] = self.INF
+          #set the visited nodes set to false for each node
+          self.vistSet[i] = False
+        #initialise the first distance to 0
+        self.distArray[srcNode] = 0
+        for i in range(self.V): 
+  
+            # Pick the minimum distance vertex from  
+            # the set of vertices not yet processed.  
+            # u is always equal to srcNode in first iteration 
+            u = self.minDistance(self.distArray, self.vistSet) 
+  
+            # Put the minimum distance vertex in the  
+            # visited nodes set
+            self.vistSet[u] = True
+  
+             # Update dist[v] only if is not in vistSet, there is an edge from 
+            # u to v, and total weight of path from src to  v through u is 
+            # smaller than current value of dist[v]
+            for v in range(self.V): 
+                if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
+                        self.distArray[v] = self.distArray[u] + self.graph[u][v] 
+  
+        self.printSolution(self.distArray)
+
+    #A utility function to find the vertex with minimum distance value, from 
+	# the set of vertices not yet included in shortest path tree 
+    def minDistance(self, distArray, vistSet): 
+  
+        # Initilaize minimum distance for next node
+        min = self.INF
+  
+        # Search not nearest vertex not in the  
+        # unvisited nodes
+        for v in range(self.V): 
+            if distArray[v] < min and vistSet[v] == False: 
+                min = distArray[v] 
+                min_index = v 
+  
+        return min_index
+
+    def printSolution(self, distArray): 
+        print ("Node \tDistance from 0")
+        for i in range(self.V): 
+            print (i, "\t", distArray[i])
+#Display our vertices
+ourGraph = Graph(7) 
+ourGraph.graph = [[0, 2, 6, 0, 0, 0, 0], 
+        [2, 0, 0, 5, 0, 0, 0], 
+        [6, 6, 0, 8, 0, 0, 0], 
+        [0, 0, 8, 0, 10, 15, 0], 
+        [0, 0, 0, 10, 0, 6, 2], 
+        [0, 0, 0, 15, 6, 0, 6], 
+        [0, 0, 0, 0, 2, 6, 0],
+        ]; 
+  
+ourGraph.dijkstra(0);
+
+```
+
+**Explanation**
+
+We have three user-defined functions:
+- `printSolution()`
+- `minDistance()`
+- `dijkstra()`
+
+`printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray`.
+
+`minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
+
+`dijkstra()` takes a parameter the source node, `srcNode`. It then first initialises each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
+In the next loop, it picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in first iteration.
+
+It then adds the node with the minimum distance in the visited nodes set by setting the value to `True`.
