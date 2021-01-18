@@ -149,7 +149,7 @@ let strengthBadge = document.getElementById('0102')
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
-We then add an input event listener to the `password` input where we check the strength when the user has typed something, but we won't do it immediately after every input event. When typing quickly, we wait until a pause occurs so instead of immediately acting as the event handler, we set a timeout.
+Let's add an input event listener to the `password` input and check the strength when the user has typed something, but we won't do it immediately after every keystroke. When the user types quickly, we should wait until a pause occurs. So, instead of checking the strength immediately, we'll set a timeout.
 
 We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
 
