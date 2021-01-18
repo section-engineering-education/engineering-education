@@ -168,7 +168,7 @@ password.addEventListener("input", () => {
 
 We then create a function `StrengthChecker` where we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
 
-It then sets the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`). The `if else` statement is used in deciding what will be done from the results gotten.
+Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result. 
 
 ```JavaScript
 function StrengthChecker(PasswordParameter){
