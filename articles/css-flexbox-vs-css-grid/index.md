@@ -1,4 +1,22 @@
-CSS is one of the important web development technologies. For a lot of time, we have used some common CSS properties to build and lay out HTML elements. These include floats, block-inline styling, and position. In recent years, you don't have to depend on properties such as floats to lay out your web pages. There are many modern CSS technologies that are making it a lot easier to create dynamic layouts. Some of these robust technologies include CSS Grid and CSS Flexbox. They change the way you lay out HTML elements in an incredibly easy approach. When we talk about Flexbox and Grid layouts, we understand the concept of containers and items. In this case, a container is an HTML block that can contain other HTML elements.  An item is an HTML element that can be placed inside a container.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mysql-with-node-js/
+title: MySQL with Node.js
+description: This tutorial will explain the basics of MySQL and how to use it with Node.js
+author: joseph-chege
+date: 2021-01-10T00:00:00-14:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mysql-with-node-js/hero.png
+    alt: MySQL with Node.js Image
+---
+CSS is one of the important web development technologies. For a lot of time, we have used some common CSS properties to build and lay out HTML elements. These include floats, block-inline styling, and position. In recent years, you don't have to depend on properties such as floats to lay out your web pages. There are many modern CSS technologies that are making it a lot easier to create dynamic layouts.
+<!--more-->
+Some of these robust technologies include CSS Grid and CSS Flexbox. They change the way you lay out HTML elements in an incredibly easy approach. When we talk about Flexbox and Grid layouts, we understand the concept of containers and items. In this case, a container is an HTML block that can contain other HTML elements.  An item is an HTML element that can be placed inside a container.
 
 ```html
 <div>
