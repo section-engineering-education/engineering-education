@@ -166,7 +166,7 @@ password.addEventListener("input", () => {
 });
 ```
 
-We then create a function `StrengthChecker` where we test for the match through the `RegExp.prototype.test()` method. It returns true if there is a match or false if there is no match.
+Let's create a function called `StrengthChecker` where we test for the strength of the passwords using the regular expressions that we wrote with the `RegExp.prototype.test()` method. It returns `true` if there is a match or `false` if there is no match.
 
 Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result. 
 
