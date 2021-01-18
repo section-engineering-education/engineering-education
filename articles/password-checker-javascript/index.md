@@ -151,7 +151,7 @@ let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z
 ```
 Let's add an input event listener to the `password` input and check the strength when the user has typed something, but we won't do it immediately after every keystroke. When the user types quickly, we should wait until a pause occurs. So, instead of checking the strength immediately, we'll set a timeout.
 
-We also clear the previous timeout, if there is any so that when the events occur close together than our timeout duration, the timeout from the preceding input event is canceled.
+We should clear the previous timeout if there is any. When the events occur close together than our timeout duration, the timeout from the preceding input event should be canceled.
 
 ```JavaScript
 password.addEventListener("input", () => {
