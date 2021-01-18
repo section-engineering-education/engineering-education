@@ -1,28 +1,36 @@
 Application Programming Interface (API), allows developers to access and use data from third parties. Today, there are many free and paid APIs. For example, some APIs provide information about movies, animals, weather, and even financial records. Many developers prefer APIs because it helps save time and resources. The time that could have been spent building a back-end application can be invested elsewhere. In React, using an API allows developers to focus on the front-side application. This means that they have enough time to create a visually appealing website.
 
+### Goal
+
 The goal of this tutorial is to create a React application that consumes data from an API.
 
 ### Prerequisites
 
 To follow along in this tutorial, you must have:
 
- - Basic knowledge in using React and Bootstrap.
- 
- - Node.js installed in your computer.
+ - Basic knowledge in using React and JavaScript. 
+
+ You can learn more about ReactJs from [here](https://reactjs.org/docs/getting-started.html).
 
 ### Step 1 – Understand the data coming from the API
 
-Before creating any react web application, it's vital to evaluate the type of information presented by the API. Some of the areas to look at include `variables names,` `types,` `dates,` and `arrays.` Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
+Before consuming data from an API, it's vital to understand the type of data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
 
-In this tutorial, we will be using [omdapi](http://www.omdbapi.com/). One needs a valid key to gain access to this API. This key can be generated from the omdapi website and looks something like this `cebd9b53`.
+In this tutorial, we will be using [OMDb API](http://www.omdbapi.com/). You need an API key to gain access to this API. This API key can be generated from the OMDb API's [website](http://www.omdbapi.com/apikey.aspx). 
 
-The `key` is included in the `API` request, as shown.
+![signup](/engineering-education/how-to-consume-data-from-an-API-using-react/signup.png)
+
+The API key is usually sent to your email, as shown below.
+
+![email](/engineering-education/how-to-consume-data-from-an-API-using-react/email.png)
+
+> Note that the API key must be included in the API request, as shown:
 
 ```
-http://www.omdbapi.com/?i=tt3896198&apikey=cebd9b53
+http://www.omdbapi.com/?i=tt3896198&apikey={your_key}
 ```
 
-When we navigate to the above link in a browser, it returns `JSON` data as shown below.
+When we navigate to the above link in a browser, the endpoint will return JSON data as shown below.
 
 ```json
 {
@@ -74,13 +82,21 @@ In the above `JSON` response, the variables include `Title,` `Year,` `Rated,` `R
 We create a React application using the following `npx` command.
 
 ```
-npx create-react-app omdapi
+npx create-react-app OMDbApi
 ```
 Once you execute the above statement, you have to give it a few minutes to enable the installation of the required dependencies. You can then open the folder in your preferred code editor when the installation is completed. Please note that to use `npx,` you must have `npm` installed.
 
 ### Step 3: Understanding the react project structure
 
-All the files we will be working with are located in the `src` folder. These files will be compiled and shown to the user. The `public` folder stores all of the compiled files. The `App.js` helps to connect different `UI` components. The `index.css` stores the formatting properties of the body tag on the web page. The `App.css,` on the other hand, helps format individual components. The `node_modules` folder stores all the required React dependencies. The image below shows the overall structure of the React application.
+All the files we will be working with are located in the `src` folder. These files will be compiled and shown to the user. 
+
+- The `App.js` helps to connect different `UI` components. 
+
+- The `index.css` stores the formatting properties of the body tag, as well as other React components. 
+
+- The `App.css,` on the other hand, helps format individual components. 
+
+- The `node_modules` folder stores all the required React dependencies. The image below shows the   overall structure of the React application.
 
 ![structure](/engineering-education/how-to-consume-data-from-an-API-using-react/structure.png)
 
@@ -101,151 +117,132 @@ function App() {
 export default App;
 ```
 
-Our app will have two major components: `Movie` page and `MovieItem`. The movie page will showcase the `movies` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
+Our app will have two major components: `Movie` page and `MovieItem`. The movie page will showcase the `movie` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
 
 ### Step 5: Creating the Movie web page
 
-Please note that this page will hold our logic for requesting and handling data from the omdapi. To get started, create a new folder named components in the src directory. In the components folder, create a file called Movie.js. Before we move forward, we need to import `useEffect` and `useState`. We do so by adding the following line in the `Movie.js` file.
+Please note that this page will hold our logic for requesting and handling data from the OMDb API. 
+we need to import `useEffect` and `useState` in our react application. We do so by adding the following line in the `app.js` file.
 
 ```javascript
 import React, {useEffect, useState} from 'react';
 ```
 
-The `useEffect` allows `React` to perform a specific action after a web page is loaded. In our case, we will use `useEffect` to make network requests to the API.
-`useState` method will help in state management. It ensures that `UI` components are updated in case there of any data changes. 
+The `useEffect` allows `React` to perform a specific action when the state changes. In our case, we will use `useEffect` to make network requests to the API.
+`useState` method will help in state management. It ensures that `UI` components are updated in case of any data changes. 
 
-The next step is to create a function named `Movie`, as shown below.
+We need to define several constants in the `App.js` file. 
 
-```javascript
-Function Movie(){
-}
-```
-
-We will add other logic and elements in the above `Movie` component.
-
-We need to define several constants in the Movie component. 
+The `movie` will hold data returned from the OMDb API. The `setMovie` helps in changing the contents of the movie.
 
 ```javascript
-const [movie, setMovie]=useState([]);
-const [search, setSearch]= useState('');
-const [userquery, setUserQuery] = useState('chicken');
-const API_KEY = "cebd9b53";
-const url = `http://www.omdbapi.com/?t=${userquery}&apikey=${API_KEY}`;
+ const [movie, setMovie] = useState([]);
+ ```
+The search variable will help retrieve user input. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url and a request sent to the server.
+
+```javascript
+const [search, setSearch] = useState('');
+```
+You can also have a constant for your API key or include it in your url directly.
+
+```javascript
+const API_KEY = "your_api_key";
+const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
 
-The `movie` will hold data returned from the omdAPI. The `setMovie` helps in changing the contents of the movie.
-The search variable will help retrieve user input. This value is updated by the `setSearch` function whenever the user enters a value in the input field.
-Finally, the `userquery` and `setUserQuery` hold the actual values that will be sent to the `omdapi` to perform a search. Let's dive into the actual methods.
+The App component also has several functions which are discussed below.
 
 #### 1.	getMovie
 
-This method will be called whenever the page is reloaded. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` object.
-```
-const getMovie = async()=>{
-  const response = await fetch(url);
-  const data = await response.json()
-  setMovie(data);
-};
-```
-#### 2.	getInput
+This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` function.
 
-This method helps in getting the users' input before a query is performed. It listens for changes in the input field. The entered value is then updated using the setSearch method.
-
-```javascript
-const getInput = e =>{
-  setSearch(e.target.value);
-}
 ```
-#### 3.	getSearch
+    const getMovie = async()=>{
+      const response = await fetch(url);
+      const data = await response.json()
+      setMovie(data);
+    }
+```
+#### 2.	onInputChange
 
-This method is executed when a user clicks on the `search` button. It updates the `userquery` variable using the `setUserQuery` function. This function also prevents the page from reloading when the `form` is submitted.
+This method helps in updating the search query state when the value of the input changes, The value of the search state is updated using the `setSearch` method.
 
 ```javascript
-const getSearch = e =>{
-  e.preventDefault(); //prevents page from reloading
-  setUserQuery(search); //updating the value for the search variable
-}
+   const onInputChange = e =>{
+      setSearch(e.target.value);
+    }
 ```
+
 #### 4.	useEffect
 
 As noted, this method is executed after the components are rendered. We will fetch data from the API in this function. We will also listen for changes in the query. 
 
 ```javascript
-useEffect(()=>{
-    getMovie(); //fetch data from api
-}, [userquery]); //listens for changes in the userquery
+  useEffect(()=> {
+      getMovie();//fetch data from api
+    }, []);
 ```
 
 ### Step 6 – Returning the component
 
-When we fetch data, we need to display it to the user. The web page will have a `form` (one input field and a button). It will also have a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for our MovieItem layout.
+When we fetch data, we need to display it to the user. In the app.js file we need to include an input field and a button. The page also has a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for the input and MovieItem components.
 
 ```javascript
-return(
-  <div>
-  <br/>
-  <form onSubmit={getSearch}>
-      <input type="text" value={search} onChange={getInput}/>
-      <button type="submit">Search</button>
-  </form>
-  <br/>
-  <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
- </div>
-);
+    return(
+      <div>
+        <input type="text" value={search} onChange={onInputChange}/>
+        <button type="submit" onClick={getMovie}>Search</button>
+        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
+      </div>
+    );
 ```
 
-As shown above, the `getSearch` method is called whenever the form is submitted. Similarly, we listen for changes in the input value using the `getInput` function.
-Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `{movie.Title} ` to extract data and pass it to the `MovieItem` component.
+As shown above, the `getMovie` method is called whenever the button is clicked. Similarly, we listen for changes in the input value using the `onInputChange` function.
 
-Here is the code for the `Movie.js` component
+Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `{movie.Title}`,`movie.Year`, and `movie.Writer` to extract data and pass it to the `MovieItem` component.
+
+Here is the code for the `app.js` component
 
 ```javascript
+import './App.css';
 import React, {useEffect, useState} from 'react';
-import MovieItem from './MovieItem.js'
+import MovieItem from './components/MovieItem.js'
 
-function Movie(){
-    const [movie, setMovie]=useState([]);
-    const [search, setSearch]= useState('');
-    const [userquery, setUserQuery] = useState('chicken');
+
+function App() {
+    const [movie, setMovie] = useState([]);
+    const [search, setSearch] = useState('');
     const API_KEY = "cebd9b53";
-    const url = `http://www.omdbapi.com/?t=${userquery}&apikey=${API_KEY}`;
+    const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
     const getMovie = async()=>{
-        const response = await fetch(url);
-        const data = await response.json()
-        setMovie(data);
-    };
-
-    const getInput = e =>{
-        setSearch(e.target.value);
+      const response = await fetch(url);
+      const data = await response.json()
+      setMovie(data);
     }
 
-    const getSearch = e =>{
-        e.preventDefault();
-        setUserQuery(search);
+
+    const onInputChange = e =>{
+      setSearch(e.target.value);
     }
 
-    useEffect(()=>{
-        getMovie();
-    },[userquery]);
+    useEffect(()=> {
+      getMovie();
+    }, []);
 
     return(
-        <div>
-        <br/>
-            <form onSubmit={getSearch}>
-                <input type="text" value={search} onChange={ getInput}/>
-                <button type="submit">Search</button>
-            </form>
-            <br/>
-
-        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/> //this movie item is created in the next step
-
-    </div>
-
+      <div>
+        <input type="text" value={search} onChange={onInputChange}/>
+        <button type="submit" onClick={getMovie}>Search</button>
+        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
+        //movieitem
+      </div>
     );
+
 }
 
-export default Movie;
+export default App;
+
 ```
 
 ### Step 7: Creating the MovieItem component
@@ -285,21 +282,17 @@ export default MovieItem;
 
 ### Step 8: Linking components
 
-In this stage, we need to link our movie component to the main app layout. Open the App.js file and add <Movie/> as shown below. Once again, ensure that you have imported the Movie component.
+In this stage, we need to link our MovieItem component to the main app layout. Open the App.js file and add <Movie/> as shown below. Once again, ensure that you have imported the MovieItem component.
 
 ```javascript
-import './App.css';
-import Movie from './components/Movie.js';
-
-function App() {
-  return (
-    <div className="App">
-      <Movie/>
-    </div>
-  );
-}
-
-export default App;
+return(
+      <div>
+        <input type="text" value={search} onChange={onInputChange}/>
+        <button type="submit" onClick={getMovie}>Search</button>
+        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
+        //movieitem
+      </div>
+    );
 ```
 
 ### Step 9: Testing our web application
