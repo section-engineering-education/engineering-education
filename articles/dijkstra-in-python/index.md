@@ -148,13 +148,18 @@ We have the Python code below to illustrate the  above process:
 
 class Graph(): 
     # A constructor to iniltialize the values
-    def __init__(self, vertices):
-        self.distArray = [0 for i in range(vertices)]
-        self.vistSet = [0 for i in range(vertices)]
-        self.V = vertices
+    def __init__(self, nodes):
+        #distance array initialization
+        self.distArray = [0 for i in range(nodes)]
+        #visited nodes initialization
+        self.vistSet = [0 for i in range(nodes)]
+        #initializing the number of nodes
+        self.V = nodes
+        #initializing the infinity value
         self.INF = 1000000
-        self.graph = [[0 for column in range(vertices)]  
-                    for row in range(vertices)]
+        #initializing the graph matrix
+        self.graph = [[0 for column in range(nodes)]  
+                    for row in range(nodes)]
    
     def dijkstra(self, srcNode):
         for i in range(self.V):
@@ -166,12 +171,12 @@ class Graph():
         self.distArray[srcNode] = 0
         for i in range(self.V): 
   
-            # Pick the minimum distance vertex from  
-            # the set of vertices not yet processed.  
+            # Pick the minimum distance node from  
+            # the set of nodes not yet processed.  
             # u is always equal to srcNode in first iteration 
             u = self.minDistance(self.distArray, self.vistSet) 
   
-            # Put the minimum distance vertex in the  
+            # Put the minimum distance node in the  
             # visited nodes set
             self.vistSet[u] = True
   
@@ -184,14 +189,14 @@ class Graph():
   
         self.printSolution(self.distArray)
 
-    #A utility function to find the vertex with minimum distance value, from 
-	# the set of vertices not yet included in shortest path tree 
+    #A utility function to find the node with minimum distance value, from 
+	# the set of nodes not yet included in shortest path tree 
     def minDistance(self, distArray, vistSet): 
   
         # Initilaize minimum distance for next node
         min = self.INF
   
-        # Search not nearest vertex not in the  
+        # Search not nearest node not in the  
         # unvisited nodes
         for v in range(self.V): 
             if distArray[v] < min and vistSet[v] == False: 
@@ -204,7 +209,7 @@ class Graph():
         print ("Node \tDistance from 0")
         for i in range(self.V): 
             print (i, "\t", distArray[i])
-#Display our vertices
+#Display our table
 ourGraph = Graph(7) 
 ourGraph.graph = [[0, 2, 6, 0, 0, 0, 0], 
         [2, 0, 0, 5, 0, 0, 0], 
@@ -221,41 +226,68 @@ ourGraph.dijkstra(0);
 
 **Explanation**
 
-We have three user-defined functions:
+We have  a constructor for giving initial `_init_` values and three user-defined functions:
 - `printSolution()`
 - `minDistance()`
 - `dijkstra()`
 
-`printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray`.
+The constructor takes the parameter `nodes` which is the number of nodes to analyze initializes respective values.
 
-`minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
+```python
+#distance array initialization
+self.distArray = [0 for i in range(nodes)]
+#visited nodes initialization
+self.vistSet = [0 for i in range(nodes)]
+#initializing the number of nodes
+self.V = nodes
+#initializing the infinity value
+self.INF = 1000000
+#initializing the graph matrix
+self.graph = [[0 for column in range(nodes)]  
+    for row in range(nodes)]
+```
 
 `dijkstra()` takes a parameter the source node, `srcNode`. It then first initialises each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
 
 ```python
-          self.distArray[i] = self.INF
-          self.vistSet[i] = False
+self.distArray[i] = self.INF
+self.vistSet[i] = False
 ```
 
-In the next loop, it picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in first iteration.
-
-```python
-          self.distArray[i] = self.INF
-          #set the visited nodes set to false for each node
-          self.vistSet[i] = False
-```
-
+In the next loop, it first picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in first iteration.
 It then adds the node with the minimum distance in the visited nodes set by setting the value to `True`.
 
 ```python
+u = self.minDistance(self.distArray, self.vistSet) 
 self.vistSet[u] = True
 ```
 
-In the last loop, the code updates distance of the node from node 0, `dist[v]` only if is not in visited list array, `vistSet[]`, and if there is an edge from `u` to `v`, and total distance of path from `srcNode` to  `v` through `u` is less than current value of `dist[v]`.
+In the last loop which is in the second loop, the code updates distance of the node from node 0, `dist[v]` only if is not in visited list array, `vistSet[]`, and if there is an edge from `u` to `v`, and total distance of path from `srcNode` to  `v` through `u` is less than current value of `dist[v]`.
 
 ```python
 
 if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
     self.distArray[v] = self.distArray[u] + self.graph[u][v]
 
+```
+
+`minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
+It takes two arrays as parameters `distArray` and `vistSet[v]`.
+
+```python
+min = self.INF
+    for v in range(self.V): 
+        if distArray[v] < min and vistSet[v] == False: 
+            min = distArray[v] 
+            min_index = v 
+  
+    return min_index
+```
+
+`printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray`.
+
+```python
+print ("Node \tDistance from 0")
+    for i in range(self.V): 
+        print (i, "\t", distArray[i])
 ```
