@@ -682,7 +682,7 @@ html {
 
 ### Conclusion
 Congratulations. You've uploaded files using Multer and viewed them on the front-end.
-There are also lots of things that we can do with Multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer). 
+There are also lots of things that we can do with Multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer).
 
 One suggestion is if you want to upload images, resize them according to your needs to save space on the server. For this, we would have to store the images in the buffer storage before storing them in disk storage.
 
