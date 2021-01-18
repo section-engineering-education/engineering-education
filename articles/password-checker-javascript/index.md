@@ -124,7 +124,7 @@ A badge is used to show the password strength and color. Green for strong, Blue 
 
 - In the `<body>` tag we have a `<div>` element.
 
-- In the `<div>`, we have an three elements:
+- In the `<div>`, we have an three elements.
 
 - The first is a **h4** which we given it an inline styling.
 
