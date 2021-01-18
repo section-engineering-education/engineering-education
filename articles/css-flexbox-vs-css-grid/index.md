@@ -1,3 +1,4 @@
+CSS is one of the important web development technologies. For a lot of time, we have used some common CSS properties to build and lay out HTML elements. These include floats, block-inline styling, and position. In recent years, you don't have to depend on properties such as floats to lay out your web pages. There are many modern CSS technologies that are making it a lot easier to create dynamic layouts. Some of these robust technologies include CSS Grid and CSS Flexbox. They change the way you lay out HTML elements in an incredibly easy approach.
 When we talk about Flexbox and Grid layouts, we understand the concept of containers and items. In this case, a container is an HTML block that can contain other HTML elements.  An item is an HTML element that can be placed inside a container.
 
 ```html
@@ -22,6 +23,7 @@ With Flexbox, we can arrange items left to right, right to left, top to bottom, 
 
 ### What is CSS Grid
 CSS Grid is a collection of styles that allow you to control page layout based on rows and columns. In a Grid system, the containing elements are used to define a row within the layout. Then, you apply class attributes to item elements that then span them over the desired number of columns. This allows you to create more complex nested layouts.
+
 ### CSS Grid vs CSS Flexbox
 
 Let's have a look at some of the common differences between the two layouts.
@@ -30,13 +32,16 @@ Let's have a look at some of the common differences between the two layouts.
 
 Flexbox arranges items in a one-dimensional layout. This can be either in rows or columns.
 
-![](/engineering-education/css-flexbox-vs-css-grid/flex-horizontal-or-vertical.png)
+![](/engineering-education/css-flexbox-vs-css-grid/flex-horizontal-or-vertical.jpg)
+[***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
 A Flexbox layout fits best when aligning items either horizontally or vertically. It is one dimensional and can only fit a row or a column.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/vertical.png)
+[***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
 ![](/engineering-education/css-flexbox-vs-css-grid/horizontal.png)
+[***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
 A perfect example of a one-dimensional layout is a header navigation bar or a footer.
 
@@ -69,13 +74,14 @@ Some CSS to style the header:
 }
 ```
 
-![](/engineering-education/css-flexbox-vs-css-grid/flex-hearder-nav.png)
+![](/engineering-education/css-flexbox-vs-css-grid/flex-header-nav.png)
 
 Most common header layouts lay their items in one direction; thus, it's much easier to use Flexbox because it arranges items in one direction.
 
 On the other hand, a Grid is a two-dimensional layout, meaning you can lay out items in rows and columns.
 
 ![](/engineering-education/css-flexbox-vs-css-grid/grid.png)
+[***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
 An example of a basic two-dimensional layout.
 
@@ -117,7 +123,7 @@ On the other hand, the CSS Grid focuses on laying out the outer/skeleton layout 
 
 To understand the content vs layout concept, let's go back to the header navigation bar design we've discussed above. We can target an item inside the header and determine where to display it.
 
-To get the core difference, Assuming we want to move the `Sign In` and `Sign Up` menu to the left, we can do it using Flexbox and CSS Grid.
+To get the [core difference](https://www.youtube.com/watch?v=9zA8cB-54SA), Assuming we want to move the `Sign In` and `Sign Up` menu to the left, we can do it using Flexbox and CSS Grid.
 
 Using Flexbox;
 
@@ -589,7 +595,7 @@ Every layout has its power. They both work differently. The best and easiest way
 
 Let's illustrate where the CSS Grid can be implemented, working together with CSS Flexbox to create something awesome.
 
-![](/engineering-education/css-flexbox-vs-css-grid/web-page-desigh-and-content-alignment.png)
+![](/engineering-education/css-flexbox-vs-css-grid/web-page-design-and-content-alignment.png)
 
 The above is an example of a web page design representation. By implementation, the design was done with a Grid layout. Check the [code](https://codepen.io/abbeyjfitzgerald/pen/zzqqYo) that was used to implement it.
 
@@ -663,7 +669,7 @@ Again the navigation menu will fit well with a Flexbox layout.
     list-style-type: none;
 }
 ```
-![](/engineering-education/css-flexbox-vs-css-grid/nav-header-content.png.png)
+![](/engineering-education/css-flexbox-vs-css-grid/nav-header-content.png)
 
 Another case that embraces one dimension flexibility is the extra content section.
 
