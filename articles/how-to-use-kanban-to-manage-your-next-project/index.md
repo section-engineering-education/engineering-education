@@ -126,7 +126,7 @@ Scrum is more suitable appropriate when the product has a long development cycle
 - Both are ["pull systems"](https://kanbanize.com/lean-management/pull/what-is-pull-system). They ensure work gets from the backlog to the customer within the shortest time possible.
 
 ### Conclusion
-At first, Kanban may seem complex, but you are ready to implement Kanban in your next project after going through this article. Start now with the baby steps and keep on improving.
+At first, Kanban may seem complex, but you are now ready to implement Kanban in your next project after going through this article. Start now with the baby steps and keep on improving.
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
