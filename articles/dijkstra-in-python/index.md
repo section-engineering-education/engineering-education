@@ -46,7 +46,7 @@ We also have a list to keep track of the visited nodes only and since we have st
 
 **{0}**
 
-We check the distances 0 > 1 and 0 > 2 which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
+We check the distances `0 -> 1` and `0 -> 2` which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
 
 |NODE|DISTANCE|
 ---|---|
@@ -58,7 +58,7 @@ We check the distances 0 > 1 and 0 > 2 which are 2 and 6 respectively. We first 
 5|INF
 6|INF
 
-We then choose the shortest one which is 0 > 1 and mark node 1 it as visited and we add it to the visited path list.
+We then choose the shortest one which is `0 -> 1` and mark node 1 it as visited and we add it to the visited path list.
 
 |NODE|DISTANCE|
 ---|---|
@@ -75,7 +75,7 @@ We then choose the shortest one which is 0 > 1 and mark node 1 it as visited and
 Next, we check the nodes adjacent to the nodes added to the path(Nodes 2 and 3).
 We then update our distance table with the distance from the source node to the new adjacent node, node 3 (2 + 5 = 7).
 
-To choose what to add to the path, we select tyhe node with nthe shortest currently known distance to the source node which is 0 > 2 with distance 6.
+To choose what to add to the path, we select the node with nthe shortest currently known distance to the source node which is `0 -> 2` with distance 6.
 
 |NODE|DISTANCE|
 ---|---|
@@ -89,7 +89,7 @@ To choose what to add to the path, we select tyhe node with nthe shortest curren
 
 **{0,1,2}**
 
-Next we have the distances 0 > 1 > 3(2 + 5 = 7) and 0 > 2 > 3(6 + 8 = 14) in which 7 is clearly the shorter distance, so we add node 3 to the path and mark it as visited.
+Next we have the distances `0 -> 1 -> 3`(2 + 5 = 7) and `0 -> 2 -> 3`(6 + 8 = 14) in which 7 is clearly the shorter distance, so we add node 3 to the path and mark it as visited.
 
 |NODE|DISTANCE|
 ---|---|
@@ -103,7 +103,7 @@ Next we have the distances 0 > 1 > 3(2 + 5 = 7) and 0 > 2 > 3(6 + 8 = 14) in whi
 
 **{0,1,2,3}**
 
-We then check the next adjacent nodes(node 4 and 5) in which we have 0 > 1 > 3 > 4(7 + 10 = 17) for node 4 and 0 > 1 > 3 > 5(7 + 15 = 22) for node 5. We add node 4.
+We then check the next adjacent nodes(node 4 and 5) in which we have `0 -> 1 -> 3 -> 4`(7 + 10 = 17) for node 4 and `0 -> 1 -> 3 -> 5`(7 + 15 = 22) for node 5. We add node 4.
 
 |NODE|DISTANCE|
 ---|---|
@@ -120,13 +120,13 @@ We then check the next adjacent nodes(node 4 and 5) in which we have 0 > 1 > 3 >
 In the same way, we check the adjacent nodes(node 5 and 6).
 
 Node 5:
-- Option 1: 0 > 1 > 3 > 5(7 + 15 = 22)
-- Option 2: 0 > 1 > 3 > 4 > 5(17 + 6 = 23)
-- Option 3: 0 > 1 > 3 > 4 > 6 > 5(17 + 2 + 6 = 25)
+- Option 1: `0 -> 1 -> 3 -> 5`(7 + 15 = 22)
+- Option 2: `0 -> 1 -> 3 -> 4 -> 5`(17 + 6 = 23)
+- Option 3: `0 -> 1 -> 3 -> 4 -> 6 -> 5`(17 + 2 + 6 = 25)
 We choose 22.
 
 Node 6
-0 > 1 > 3 > 4 > 6(17 + 2 = 19)
+`0 -> 1 -> 3 -> 4 -> 6`(17 + 2 = 19)
 
 |NODE|DISTANCE|
 ---|---|
@@ -250,34 +250,42 @@ self.graph = [[0 for column in range(nodes)]
 
 `dijkstra()` takes a parameter, the source node(`srcNode`). It then first initializes each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
 
-```python
-self.distArray[i] = self.INF
-self.vistSet[i] = False
-```
-
 In the next loop, it first picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in first iteration.
 It then adds the node with the minimum distance in the visited nodes set by setting the value to `True`.
 
-```python
-u = self.minDistance(self.distArray, self.vistSet) 
-self.vistSet[u] = True
-```
-
 In the last loop which is in the second loop, the code updates distance of the node from node 0, `dist[v]` only if is not in visited list array, `vistSet[]`, and if there is an edge from `u` to `v`, and total distance of path from `srcNode` to  `v` through `u` is less than current value of `dist[v]`.
 
-```python
-
-if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
-    self.distArray[v] = self.distArray[u] + self.graph[u][v]
-
-```
 It then calls the `printSolution()` to display the table after passing the distance array to the function.
+
+```python
+    def dijkstra(self, srcNode):
+        for i in range(self.V):
+          
+          self.distArray[i] = self.INF
+          
+          self.vistSet[i] = False
+      
+        self.distArray[srcNode] = 0
+        for i in range(self.V): 
+  
+            u = self.minDistance(self.distArray, self.vistSet) 
+
+            self.vistSet[u] = True
+
+            for v in range(self.V): 
+                if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
+                        self.distArray[v] = self.distArray[u] + self.graph[u][v] 
+  
+        self.printSolution(self.distArray)
+```
 
 `minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
 It takes two arrays as parameters `distArray` and `vistSet[v]`.
 
 ```python
-min = self.INF
+def minDistance(self, distArray, vistSet): 
+
+    min = self.INF
     for v in range(self.V): 
         if distArray[v] < min and vistSet[v] == False: 
             min = distArray[v] 
@@ -289,9 +297,10 @@ min = self.INF
 `printSolution()` is used to display the final results which is the nodes and their respective tables stored in an array `distArray` which it takes as a parameter.
 
 ```python
-print ("Node \tDistance from 0")
-    for i in range(self.V): 
-        print (i, "\t", distArray[i])
+def printSolution(self, distArray):
+    print ("Node \tDistance from 0")
+        for i in range(self.V): 
+            print (i, "\t", distArray[i])
 ```
 
 We then create an object `ourGraph` from our `Graph()` class and pass to it the number of nodes.
@@ -324,7 +333,7 @@ The matrix is the same as the table such as shown below:
 |**5**|0|0|0|15|6|0|6|
 |**6**|0|0|0|0|2|6|0|
 
-The top most row and far left column represents the nodes.
+The top most row and most left column represents the nodes.
 We read a node from the left column and check its distance with the top most row. The intersection shows the distance. The distance is 0 if the nodes are not adjacent e.g
 
 The distance of 0 from 0 is 0.
