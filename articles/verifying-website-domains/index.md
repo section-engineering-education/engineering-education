@@ -385,6 +385,21 @@ These components can be combined and modified to replicate an already existing w
 * IP address
 * Associated domains with IP address
 
+--
+
+**Play a Matching Game!**
+
+If possible, compare values with the original to find any matches. If not, output values can offer insights.
+
+_What does a match mean?_
+
+Most likely related to the origial website domain.
+
+
+_What does a mismatch mean?_
+
+Most likely a replicated version of the original. Beware, be cautious, and watch out.
+
 ---
 Try the tutorial out next time a suspicious website domain crosses paths while using the internet, the results can be fascinating.
 
@@ -394,7 +409,7 @@ It can possibly protect individuals and/or groups from the dark web.
 --
 
 
-Have any feedback or comments about what was written on website domains and its possible authenticity?
+Have any feedback or comments about the lines of codes used for verifying website domains?
 
 
 **Feel free to contact me**
