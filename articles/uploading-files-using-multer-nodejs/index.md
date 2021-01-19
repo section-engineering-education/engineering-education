@@ -145,7 +145,7 @@ npm i express body-parser mongoose
 
 Let's start by creating a new file named `app.js` in our root directory. In this file, we will make different routes and also write some configuration code.
 
-Finally, write the following code in your app.js file.
+Write the following code in your app.js file.
 
 ```javascript
 // Calling all the required packages
@@ -265,7 +265,7 @@ We have added the '/' in front of it because we now have to mention the relative
 ├───package.json (file)<br/>
 ├───server.js (file)<br/>
 
-Finally, we have to define some routes in our `app.js` file, so we will start by defining the route for our home page.
+We have to define some routes in our `app.js` file, so we will start by defining the route for our home page.
 
 Follow these steps:
 
