@@ -393,7 +393,7 @@ If possible, compare values with the original to find any matches. If not, outpu
 
 _What does a match mean?_
 
-Most likely related to the origial website domain.
+Most likely related to the original website domain.
 
 
 _What does a mismatch mean?_
