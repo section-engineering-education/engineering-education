@@ -30,6 +30,8 @@ Time series can be defined as a sequence or series of data points that are order
 
 Predictions are made based on unseen data, and the future is predicted with all the previous observations taken into consideration. In a time series, the dataset is different. A time-series adds a definite order of dependence between observations.
 
+In time series any variable that changes as time goes on is acceptable, It is normal to use a time series to track progress over a period of time. This can be tracked over a short term or long term.
+
 Time series are assumed to be generated at a spaced timing. When the data in time series are timed and regular, they are called **regular time series**, and when they are not regular or timed, they are called **irregular time series**.
 
 ### Real-life applications of time series
@@ -40,10 +42,10 @@ Time series are assumed to be generated at a spaced timing. When the data in tim
 - Used to forecast the unemployment rate of a city or state.
 
 ### Time series forecasting
-Time series forecasting fits a model on a historical dataset, that is, the training set, and then using it to predict a future occurrence, which is the test set. The performance of the time series model is rated based on its future prediction. The whole idea is that our model observes all the previous data and understands the foundational process in the series. Secondly, it predicts based on its understanding of the foundational process of the historical data.
+Time series forecasting fits a model on a historical dataset, that is, the training set, and then using it to predict a future occurrence, which is the test set. The performance of the time series model is rated based on its future prediction. The whole idea is that our model observes all the previous data and understands the foundational process in the series. Secondly, it predicts based on its understanding of the foundational process of the historical data. time series forecasting deals with trend analysis, cyclical fluctuation analysis, and issues of seasonality like every forecasting method which is based on probability too.
 
 ### Time series analysis
-Time series analysis can be defined as getting meaningful insight and characteristics to comprehend it better. Time series is beneficial in making predictions. It understands the scope and uses it for future forecasting.
+Time series analysis can be defined as getting meaningful insight and characteristics to comprehend it better. Time series is beneficial in making predictions. It understands the scope and uses it for future forecasting.time series analysis is also used to understand the changes between the chosen data point compared to changes in other variables over the same time period.
 
 ### Time series forecasting methods 
 Now let’s look at four time-series forecasting methods. Let's go over a brief introduction on Autoregression (AR) and Moving average models to understand them. 
@@ -67,10 +69,10 @@ This type of time-series means an analytic expression can not describe it and ha
 ### Components of time series
 Here are four useful time series analysis techniques:
 
-1. **Trend**: This is the long-term increase or decrease in the data. It can be linear or non-linear.
-2. **Irregular** component: This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable
-3. **Seasonality**: It is the regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors.
-4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals.
+1. **Trend**: This is the long-term increase or decrease in the data. The trend can be increasing or decreasing as well as linear or nonlinear.
+2. **Irregular** This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable which is as a results of a short-term fluctuations in a series which are not systematic and in some instances not predictable.
+3. **Seasonality**: It is the regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors, in seasonality there's a situation in which the data experiences regular and predictable changes
+4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals. the length of the cycle is described as the period 
 
 ![Simple](/engineering-education/introduction-to-time-series/img.jpg)
 
