@@ -28,7 +28,7 @@ _Knowledge_
 * Working with 'PATH' or directories
 * Run PowerShell as Administrator
 * Command Prompts and its structures
-* Element of Websites (terms include but not limited to: layers, domains, and hosting)
+* Elements of Websites (terms include but not limited to: layers, domains, and hosting)
 * Webpage scripting (HTML or JavaScript)
 
 --
