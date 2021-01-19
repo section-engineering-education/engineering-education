@@ -11,7 +11,7 @@ We shall first talk about basic graph concepts because we are going to use them 
 
 #### A basic introduction to Graphs
 
-Graphs are pictorial representations of data structures used to show connections between pairs of elements. The graphs in our case represent a network topology.
+Graphs are pictorial representations of connections between pairs of elements. The graphs in our case represent a network topology.
 
 ![Graph 1](/engineering-education/dijkstra-in-python/graph-1.png)
 
