@@ -380,6 +380,7 @@ These components can be combined and modified to replicate an already existing w
 #### Special consistency factors to look for:
 * Date-time stamp values
 * Null or missing values
+* Web hosting provider
 * Extension creation date and purchase
 * IP address
 * Associated domains with IP address
