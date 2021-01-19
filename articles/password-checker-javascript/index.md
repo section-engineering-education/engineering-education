@@ -41,7 +41,7 @@ Regex is also denoted as `RegExp`. They can be constructed using:
 |x*|Checks for x 0 or more times|
 
 
-### The JavaScript program
+### RegEx for testing password strength
 
 We are going to check the strength of a password that a user enters based on the following rules.
 
@@ -83,7 +83,7 @@ We are going to have three levels to denote how secure a password is. They are:
 
     ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
-#### HTML Code and explanation
+### HTML Code
 
 ```HTML
 <html>
@@ -131,7 +131,7 @@ We are going to have three levels to denote how secure a password is. They are:
 
 - The third element is a `<span>` which is where the password strength will be labeled as a badge with color: Green for strong, Blue for medium and Red for weak.
 
-#### JavaScript Code creation and explanation
+### JavaScript Code
 
 Let's create five variables: 
 
