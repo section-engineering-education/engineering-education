@@ -18,6 +18,11 @@ In-stream processing, data is processed as soon as it arrives at the storage lay
 
 Stream processing queries continuous data stream and detects conditions quickly within a limited time. Stream processing systems are fed on actions that happen in real-time such as web page clicks, sensor readings, e-commerce transactions, social media messages, and more.
 
+Stream processing is used to detect complex world problems and provide a reasonable response for a better outcome. Machine learning techniques for predictive maintenance rely on stream processing.  Real-time predictive maintenance provides fast detection and classification of developing faults as well as their locations.
+
+The use of complex event processing technology enables the surveillance of systems state in real-time. Thus, identifying the causes of faults while evaluating the status of the technical components. This information provides the basis for initiating various maintenance measures within the maintenance planning framework.
+
+
 ### Batch processing pros and cons
 
 #### Pros
