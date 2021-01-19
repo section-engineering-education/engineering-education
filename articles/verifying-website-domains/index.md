@@ -2,7 +2,7 @@
 
 --
 
-Verifying website domains for originality can be complicated during a time where internet is used constantly for both good and bad. By using Python 3.8.5 Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
+Verifying website domains for originality can be complicated during a time where internet is used constantly for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
 
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
@@ -17,15 +17,18 @@ At the end of this tutorial, it is possible to have a good grasp on retrieving D
 
 _Software and Hardware_
 * Windows Operating System (Version 10)
-* Python 3.8.5 Shell
+* Python Shell (Any version that is compatible with the packages and functions mentioned. _3.8.5 is used_)
 * Windows PowerShell
 * Internet connection
 * Internet browser
 
 _Knowledge_
 * Python Programming language
+* Package installations
 * Working with 'PATH' or directories
-* Command Prompts and its structure
+* Run PowerShell as Administrator
+* Command Prompts and its structures
+* Webpage scripting (HTML or JavaScript)
 
 --
 
@@ -126,7 +129,7 @@ Below, there are further options within the DNS function revealing additional in
 
 Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", "MX".
 
-_NS for Nameserver information Input_:
+NS for Nameserver information Input:
 
 ```python
 ip = "69.195.108.249"
@@ -142,7 +145,7 @@ Output:
 [<DNS IN NS rdata: ns3.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns4.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns1.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns2.bdm.microsoftonline.com.>]
 ```
 
-_TXT additional intenet properties Input_:
+TXT additional intenet properties Input:
 
 ```python
 ip = "69.195.108.249"
@@ -158,7 +161,7 @@ Output:
 [<DNS IN TXT rdata: "google-site-verification=34Jb2Tx28xLGRll4nwbUOq6dyu-P_VOD3OcO9qqDTKo">, <DNS IN TXT rdata: "mscid=w87OZ8XPKbefuE8BURYoqwPFO1CdSFjEo5RIqw7JWEL/fy7vVSsP/Q6Slgu5MYk2ihGpG6SHuF70r+a7X9J8cw==">, <DNS IN TXT rdata: "v=spf1 ip4:72.139.55.134 include:spf.protection.outlook.com -all">]
 ```
 
-_MX for mailing information Input_:
+MX for digital mailing information Input:
 
 ```python
 ip = "69.195.108.249"
