@@ -6,7 +6,7 @@ url: /engineering-education/uploading-files-using-multer-nodejs/
 title: Uploading Files Using Multer in a Node.js Application.
 description: In this article, we will see how to use Multer to handle multipart/form-data using Node.js, Express and MongoDB.
 author: sarthak-duggal
-date: 2021-01-17T00:00:00-11:00
+date: 2021-01-18T00:00:00-17:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/uploading-files-using-multer-nodejs/hero.jpg
     alt: Multer example image
 ---
-Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before submitting it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. If we don't specify it, form-data gets encoded with the default type.
+Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before we submit it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. If we don't specify it, form-data gets encoded with the default type.
 <!--more-->
 ### Introduction
 This is usually the case when we are dealing with text-only data like name, email, and password, etc.
@@ -24,7 +24,6 @@ But, if we are uploading some kind of files, we need to specify the enctype attr
 Multer is an npm package that makes it easy to handle file uploads. It does it very efficiently, thus it is quite popular. In this article, we will see how to use Multer to handle multipart/form-data using Node.js, Express and MongoDB.
 
 ### Prerequisites
-
 There are four things you should know/have installed before you attempt this tutorial.
 
 1. Good understanding of HTML and CSS.
@@ -33,9 +32,9 @@ There are four things you should know/have installed before you attempt this tut
 
 3. MongoDB should be installed in your system and you should have a working knowledge of it.
 
-4. Good understanding of command-line or integrated terminals in code-editors.
+4. Good understanding of the command-line or integrated terminals in code-editors.
 
-### Goals of the Tutorial
+### Goals of the tutorial
 The goal of this tutorial is to help you understand these four things:
 
 1. How to design an API endpoint for posting data.
@@ -49,7 +48,7 @@ The goal of this tutorial is to help you understand these four things:
 ### Project setup
 First, create a new folder/directory in your system and name it Multer-Tutorial. Then, open this folder in your favorite code editor. I'll be using VSCode. 
 
-Next, create a new HTML file and name it index.html. Inside it, we will add a form for uploading files. Your HTML code should look something like this:
+Next, create a new HTML file and name it index.html. Inside it, we will add a form to upload files. Your HTML code should look something like this:
 
 ```html
 <!DOCTYPE html>
@@ -85,8 +84,7 @@ Next, create a new HTML file and name it index.html. Inside it, we will add a fo
 </html>
 ```
 
-#### Important points to note in the above code
-
+#### Important points to note in the code above
 - In the form tag, the `enctype` attribute must be set to `multipart/form-data`, for Multer to work.
 
 - Also, in the form tag, we have specified the action attribute to `#`. This is because we haven't made any API endpoint to receive the data from this form. We'll be creating this API endpoint later in this tutorial.
@@ -95,8 +93,7 @@ Next, create a new HTML file and name it index.html. Inside it, we will add a fo
 
 You should follow the same folder structure that's specified. I'll be sharing it several times as we create new files and folders so you can follow this tutorial without any difficulty.
 
-#### Current Folder Structure
-
+#### Current folder structure
 > Multer-Tutorial (Root Directory)
 >
 > > index.html (file)
@@ -111,7 +108,9 @@ Before moving forward, make sure that Node.js is installed in your system. Write
 node -v
 ```
 
-It should show you the installed version of Node.js in your system. Something like:- `v14.8.0`
+It should show you the installed version of Node.js in your system. 
+
+Something like:- `v14.8.0`
 
 Now, since our static site is ready we can start initiating this project with npm. To do this:-
 
@@ -121,25 +120,28 @@ Now, since our static site is ready we can start initiating this project with np
 npm init
 ```
 
-`npm init -y` creates a new `package.json` file. This file will help us to manage all the dependencies that we will install later on in this tutorial but you should create the main option in `package.json` from index.js to app.js.**
+**`npm init -y` creates a new `package.json` file. This file will help us to manage all the dependencies that we will install later on in this tutorial but you should create the main option in `package.json` from index.js to app.js.**
 
 The resulting `package.json` file should look like this:
 
 ![package.json](/engineering-education/uploading-files-using-multer-nodejs/json.png)
 
 ### Setting up the project with Node.js, Express, and MongoDB
+First, we need to install the three most important npm packages that we need for this tutorial. 
 
-First, we need to install the three most important npm packages that we need for this tutorial. These are:- express, body-parser and mongoose. Thus, write this command in the terminal:-
+These are: express, body-parser and mongoose. 
+
+Thus, write this command in the terminal:
 
 ```bash
 npm i express body-parser mongoose
 ```
 
-1. Express will help us in creating different API endpoints and much more.
+1. Express will help us create different API endpoints and much more.
 
 2. `body-parser` will mount the data coming from the form onto the incoming request.
 
-3. Mongoose will help us to work with MongoDB much easily.
+3. Mongoose will help us work with MongoDB easily.
 
 Let's start by creating a new file named `app.js` in our root directory. In this file, we will make different routes and also write some configuration code.
 
@@ -169,7 +171,7 @@ app.use(
 module.exports = app;
 ```
 
-Note that I have exported the app because we will be creating a new file. In that file, we will make our express server and also a connection with our MongoDB cluster.
+Note that I have exported the app because we will be creating a new file. In that file, we will make our express server and a connection with our MongoDB cluster.
 
 Please refer to these two videos to learn how to make a MongoDB cluster in Atlas (cloud database) and how to connect it to our project.
 
@@ -177,7 +179,9 @@ Please refer to these two videos to learn how to make a MongoDB cluster in Atlas
 
 2. This [video](https://www.youtube.com/watch?v=Qn0SOL8vK8w) will help you connect it to our project.
 
-When you are ready with your cluster, create a new file in the root directory and name it `server.js`. This file will make the connection with our server and database. Write this code in the file:-
+When you are ready with your cluster, create a new file in the root directory and name it `server.js`. This file will make the connection with our server and database. 
+
+Write this code in the file:
 
 ```javascript
 const app = require("./app");
@@ -225,15 +229,17 @@ Server is up listening on port:3000
 DB connected successfully
 ```
 
-But, if you see something else like any error, watch those videos again or try fixing those errors by surfing on the internet.
+If you see something else like any error, watch those videos again or try fixing those errors by surfing on the internet.
 
-Before writing any code in the `app.js` file, we have to make some new folders and change the locations of some files. You must be wondering why we are putting so much effort into emphasizing these things. It is because writing clean and manageable code with an organized folder structure is as important as writing the "right" code. These kinds of folder structure and refactoring will help you with your big, future projects.
+Before writing any code in the `app.js` file, we have to make some new folders and change the locations of some files. You must be wondering why we are putting so much effort into emphasizing these things. 
+
+It is because writing clean and manageable code with an organized folder structure is as important as writing the "right" code. These kinds of folder structure and refactoring will help you with your big, future projects.
 
 - Create a new folder in the root directory and name it `public`. This will hold the static files that we will serve. Cut the `css` folder that we created at the start of this project and paste it into this folder.
 
-- Create a second folder and name it `views`. This will hold our HTML file which we created at the beginning.
+- Create a second folder and name it `views`. This will hold our HTML file that we created at the beginning.
 
-Since we are dealing with a HTML file, we have to make some changes. First, change the file extension from `.html` to `.ejs` because we'll be using the `ejs` render engine.Then, inside the head tag, where we have linked our CSS file, change that link from this:-
+Since we are dealing with a HTML file, we have to make some changes. First, change the file extension from `.html` to `.ejs` because we'll be using the `ejs` render engine. Then, inside the head tag, where we have linked our CSS file, change that link from this:
 
 ```html
 <link rel="stylesheet" href="css/style.css" />
@@ -245,10 +251,9 @@ to this:-
 <link rel="stylesheet" href="/css/style.css" />
 ```
 
-We haveadded the '/' in front of it because now we have to mention the relative path from the public folder, as it contains our static files.
+We have added the '/' in front of it because we now have to mention the relative path from the public folder, as it contains our static files.
 
-#### New Folder Structure
-
+#### New folder structure
 ├───node_modules (folder) <br/>
 ├───public (folder) <br/>
 │ └───css (folder) <br/>
@@ -260,7 +265,7 @@ We haveadded the '/' in front of it because now we have to mention the relative 
 ├───package.json (file)<br/>
 ├───server.js (file)<br/>
 
-Finally, we have to define some routes in our `app.js` file so we will start by defining the route for our home page.
+Finally, we have to define some routes in our `app.js` file, so we will start by defining the route for our home page.
 
 Follow these steps:
 
@@ -284,7 +289,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(`${__dirname}/public`));
 ```
 
-- Now, we will create our first API endpoint, which is to render the HTML file that we build at the start of this tutorial.
+- Now, we will create our first API endpoint, to render the HTML file that we build at the start of this tutorial.
 
 ```javascript
 app.use("/", (req, res) => {
@@ -302,20 +307,20 @@ Restart the server with the same command as above:
 nodemon server.js
 ```
 
-You should see the rendered HTML file which you created earlier.
+You should see the rendered HTML file that you created earlier.
 
-### Uploading and Storing Files
-Before using Multer for handling the upload action of files, we need to understand a few things.
+### Uploading and storing files
+Before using Multer to handle the upload action of files, we need to understand a few things.
 
 - The actual files are never stored in the database. They are always stored someplace on the server. In our tutorial, we will store the uploaded files in the public folder. 
 
-  This is because all the files that are in the public folder are meant to be available to the public at the front-end.
+This is because all the files that are in the public folder are meant to be available to the public at the front-end.
 
-  Also, later in the tutorial, we will learn how to view those files on the front-end. So, that is another reason to store them in the public folder.
+Later in the tutorial, we will learn how to view those files on the front-end. So, that is another reason to store them in the public folder.
 
 - But, we will use the database to store some information about those files. The first thing can be the name of the file and other information can vary according to the project.
 
-So, the next thing we need to do is to create a schema for storing the name of our uploaded files. We will do this with the help of the Mongoose package that we installed earlier.
+Next we create a schema to store the name of our uploaded files. We will do this with the help of the Mongoose package that we installed earlier.
 
 To do this, follow these three steps:
 
@@ -348,7 +353,7 @@ const File = mongoose.model("File", fileSchema);
 module.exports = File;
 ```
 
-This is how we create a Schema with Mongoose and extract a model from it. We will now use this model to store information about uploaded files in MongoDB. Also, don't forget to call this model in the `app.js` file at the top.
+This is how we create a Schema with Mongoose and extract a model from it. We will now use this model to store information about uploaded files in MongoDB. Don't forget to call this model in the `app.js` file at the top.
 
 ```javascript
 const File = require("./model/fileSchema");
@@ -356,7 +361,7 @@ const File = require("./model/fileSchema");
 
 Next, create a new folder named "files" inside the public folder. This is where we'll be storing the uploaded files.
 
-#### Updated Folder Structure:-
+#### Updated folder structure:
 ├───model (folder)<br>
 │ └───fileSchema.js (file)<br>
 ├───node_modules (folder)<br>
@@ -371,16 +376,18 @@ Next, create a new folder named "files" inside the public folder. This is where 
 ├───server.js (file)<br>
 
 ### Multer
-As mentioned previously, Multer is a `Node.js` middleware for handling multipart/form-data, which is primarily used for uploading files.
+As mentioned previously, Multer is a `Node.js` middleware used for handling multipart/form-data, which is primarily used for uploading files.
 
-For those who don't know what is a middleware in Node.js** is, a piece of middleware is a function that receives the request and response object when a user from the client-side makes any request.
+For those who don't know what a middleware is in Node.js, it's a function that receives the request and response object when a user from the client-side makes any request.
 
 There are two uses of middleware in Node.js:
 
 1. To send the response based on the request coming from the user.
 2. To change or modify the request object and send it to the next middleware.
 
-We can add as many middleware as we wish in this request-response cycle. Let's start by installing Multer. Write this command in your terminal:
+We can add as many middleware as we wish in this request-response cycle. Let's start by installing Multer. 
+
+Write this command in your terminal:
 
 ```bash
 npm i multer
@@ -392,9 +399,9 @@ After installing the package, we will import it at the top of the `app.js` file:
 const multer = require("multer");
 ```
 
-Then we will start by creating an API endpoint for uploading the file, just above the previous one.
+Then we will start by creating an API endpoint to upload the file, just above the previous one.
 
-**Note:-** Make sure that the endpoint to render the page is at the end of all the API endpoints.
+**Note:** Make sure that the endpoint used to render the page is at the end of all the API endpoints.
 
 ```javascript
 //API Endpoint for uploading file
@@ -411,9 +418,11 @@ We are going to store the uploaded files in our disk storage inside the files fo
 const upload = multer({ dest: "public/files" });
 ```
 
-In this code, we are calling the `multer` function which takes certain options as arguments. So, we pass the dest (destination) option and the value of dest will be :- ``public/files``.
+In this code, we are calling the `multer` function that takes certain options as arguments. We pass the dest (destination) option and the value of dest will be:``public/files``.
 
-After that, we have to use this upload variable as the middleware in the above-created API endpoint. So, change that API endpoint to this:-
+After that, we have to use this upload variable as the middleware in the API endpoint created above. 
+
+Change that API endpoint to this:
 
 ```javascript
 app.post("/api/uploadFile", upload.single("myFile"), (req, res) => {
@@ -422,12 +431,15 @@ app.post("/api/uploadFile", upload.single("myFile"), (req, res) => {
 });
 ```
 
-Here, `upload.single` is again a function. The single determines that only a single file is to be uploaded. In the case of many files, we can use **multiple** instead of single.
+Here, `upload.single` is again a function. The single determines that only a single file is to be uploaded. In the case of there being many files, we can use **multiple** instead of single.
+
 It takes a string as an argument and that string is the name of the input that we mentioned in our HTML code.
 
-Finally, we did `console.log(req.file)` to see the details of the file that we are uploading. This will help us to configure multer in a more advanced way. Also, we will be able to do the filtering on those files.
+We did `console.log(req.file)` to see the details of the file that we are uploading. This will help us configure multer in a more advanced way. We will also be able to do the filtering on those files.
 
-Now, we can start sending the request with files on this API. But, before that, we need to make small changes in our HTML code in the `index.ejs` file. So, open that file and change the value of the action attribute in the form to '/api/uploadFile'. Also, note the name of the input that we mentioned in the above code.
+Now, we can start by sending the request with files on this API. But, before that, we need to make small changes in our HTML code in the `index.ejs` file. 
+
+Open that file and change the value of the action attribute in the form to '/api/uploadFile'. Also, note the name of the input that we mentioned in the above code.
 
 ```html
 <form action="/api/uploadFile" enctype="multipart/form-data" method="POST">
@@ -436,7 +448,7 @@ Now, we can start sending the request with files on this API. But, before that, 
 </form>
 ```
 
-Just to make sure that we are on the same page, here is the state of the app.js file up to now**
+Just to make sure that we are on the same page, here is the state of the app.js file up to now.
 
 ![app.js](/engineering-education/uploading-files-using-multer-nodejs/appjs2.png)
 
@@ -459,23 +471,23 @@ This is my output. Yours will be different based on what you uploaded.
 
 Also, note that a new file would already have been created in your files folder under public. But, that file won't be readable because there is no extension for that file.
 
-With the information we just got, we will configure multer in a more complex way so that our files can become readable.
+With the information we just got, we will configure multer in a more complex way so that our files become readable.
 
 ### Configuring Multer
-Now, we can start configuring Multer in a more complex way and we will do that in two parts:-
+Now, we can start configuring Multer in a more complex way and we will do that in two parts:
 
-1. Configuring the disk storage and naming the uploaded files
+1. Configuring the disk storage and naming the uploaded files.
 
 To do this, replace the previous one-liner code for configuration with this code:
 
-**Delete this:-**
+**Delete this:**
 
 ```javascript
 //Configuration for Multer
 const upload = multer({ dest: "public/files" });
 ```
 
-**and write this:-**
+**Now write this:**
 
 ```javascript
 //Configuration for Multer
@@ -490,21 +502,22 @@ const multerStorage = multer.diskStorage({
 });
 ```
 
-Multer has an in-built method called `diskStorage` and it takes a couple of options. The first option is again the destination, but we cannot simply set it as we did before. The destination option is a callback function that takes three arguments:-
+Multer has an in-built method called `diskStorage` and it takes a couple of options. The first option is again the destination, but we cannot simply set it as we did before. 
 
+The destination option is a callback function that takes three arguments:
   1. req, which is the incoming request object.
   
   2. file, which is the incoming file object (that we saw in the terminal a bit before).
 
   3. cb, which is again another callback function.
 
-Finally, we call the cb function that takes two arguments. The first is error which we are going to pass null to. The second is the destination folder which is public.
+We call the cb function that takes the two arguments. The first is error which we are going to pass null to. The second is the destination folder which is public.
 
 The second option that this method takes is the filename. It is almost the same as the destination option except in this, the inner callback function takes the filename as the second argument.
 
 So, you can see that I have created a unique filename for this using the template string in JavaScript. You can refer to the file object that we logged in to our terminal earlier. I have taken the extension from the `mimetype` property of the file object and also the fieldname.
 
-Congratulations. We have completed the first step of configuring Multer. Next, we will make a filter to filter out different kinds of files. I will make a filter to upload only PDF files. You can make your own filter by referring to the code below:
+Congratulations. We have completed the first step of configuring Multer. Next, we will make a filter to filter out different kinds of files. I will make a filter to only allow the upload of PDF files. You can make your own filter by referring to the code below:
 
 ```javascript
 // Multer Filter
@@ -529,7 +542,7 @@ const upload = multer({
 });
 ```
 
-Finally, save the file to restart the server.
+Save the file to restart the server.
 
 Now, if you try to upload a PDF file, you should see that uploaded file (in PDF format) in your files folder under the public directory. But, if you upload any other file, it will show an error.
 
@@ -556,18 +569,18 @@ try {
 ```
 
 #### Updated app.js File
-
 ![app.js3](/engineering-education/uploading-files-using-multer-nodejs/appjs3.png)
 
-Nnow if you upload a file and hit submit again, the name of the file will be saved in your cloud database. To see that, you can go to your cluster at the MongoDB site, and in the collections, you should see something like the image below:
+Know if you upload a file and hit submit again, the name of the file will be saved in your cloud database. To see that, you can go to your cluster at the MongoDB site, and in the collections, you should see something like the image below:
 
 ![atlas](/engineering-education/uploading-files-using-multer-nodejs/atlas.png)
 
 Note that, the name of the file in the database should match the filename in your disk storage and this is how we can upload a file using Multer as a middleware in a node.js application.
 
 ### View these files on your front-end
+The next part of this tutorial is to view these uploaded files on the front-end of your project. To do this, we have to create another API endpoint to get all the files. 
 
-The next part of this tutorial is to view these uploaded files on the front-end of your project. To do this, we have to create another API endpoint to get all the files. So, write the following code in your app.js file:
+Write the following code in your app.js file:
 
 ```javascript
 app.get("/api/getFiles", async (req, res) => {
@@ -586,7 +599,7 @@ app.get("/api/getFiles", async (req, res) => {
 });
 ```
 
-Now, all we have to do is to make an API call on this endpoint. I prefer using Axios to do this. After getting the results, we can show these files on our page using some basic HTML code and CSS.
+Now, all we have to do is make an API call on this endpoint. I prefer using Axios to do this. After getting the results, we can show these files on our page using some basic HTML code and CSS.
 
 Include this script at the end of your HTML code before closing the `<html>` tag.
 
@@ -594,7 +607,7 @@ Include this script at the end of your HTML code before closing the `<html>` tag
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
-I'll include the JavaScript code after the HTML but you can create a new JavaScript file and then place it in the public directory same as your CSS file.
+I'll include the JavaScript code after the HTML but you can create a new JavaScript file and then place it in the public directory the same as your CSS file.
 
 ```html
 <script>
@@ -624,10 +637,9 @@ I'll include the JavaScript code after the HTML but you can create a new JavaScr
 </script>
 ```
 
-With this code, we are calling the API endpoint that we created and then, with the data we receive, we are making entities for each different file. We also made a link in those entities and set its value to the name of the file stored in the database. This way, when we click that link, our uploaded file will open in our browser.
+With this code, we are calling the API endpoint that we created and with the data we receive, we are making entities for each different file. We also made a link in those entities and set its value to the name of the file stored in the database. This way, when we click that link, our uploaded file will open in our browser.
 
 ### CSS Styles
-
 ```css
 *,
 *::before,
@@ -684,7 +696,9 @@ html {
 Congratulations. You've uploaded files using Multer and viewed them on the front-end.
 There are also lots of things that we can do with Multer, therefore I suggest you to check out its documentation [here](https://github.com/expressjs/multer).
 
-One suggestion is if you want to upload images, resize them according to your needs to save space on the server. For this, we would have to store the images in the buffer storage before storing them in disk storage.
+If you want to upload images, resize them according to your needs, in order to save space on the server. We would have to store the images in the buffer storage before storing them in disk storage.
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
