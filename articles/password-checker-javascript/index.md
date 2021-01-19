@@ -1,4 +1,4 @@
-Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to secure their account using **Regular Expressions** in JavaScript.
+Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to secure their account using **Regular Expressions** in JavaScript.
 
 ### Prerequisites
 
@@ -67,7 +67,7 @@ We are going to have three levels to denote how secure a password is. They are:
     (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
     ```
 
-![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
+    ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
 
 - **Medium**:  If the password is at least 6 characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
@@ -77,85 +77,93 @@ We are going to have three levels to denote how secure a password is. They are:
     ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
     ```
 
-![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
+    ![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
 
 - **Weak**: If the entered password does not meet the strong or medium-level requirements, then it is deemed weak.
 
-![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
+    ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
 
 #### HTML Code and explanation
-
-A badge is used to show the password strength and color. Green for strong, Blue for medium and Red for weak.
 
 ```HTML
 <html>
 <head>
     <!-- Bootstrap 5 link -->
     <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<!-- CSS Styling -->
-<style>
-    .passwordInput{
-        margin-top: 5%; 
-        text-align :center;
-    }
+    <!-- CSS Styling -->
+    <style>
+        .passwordInput{
+            margin-top: 5%; 
+            text-align :center;
+        }
 
-    .displayBadge{
-        margin-top: 5%; 
-        display: none; 
-        text-align :center;
-    }
-</style>
+        .displayBadge{
+            margin-top: 5%; 
+            display: none; 
+            text-align :center;
+        }
+    </style>
 </head>
 <body>
     <div class="d-flex text-danger justify-content-center">
-            <h4 style="margin-top: 10%; text-align :center">
-                Password Strength Checker
-            <h4></br>
-                <input class="form-control passwordInput" type="password" placeholder="Type your password" id="PassEntry"></br>
-                <span id="StrengthDisp" class="badge displayBadge">Weak</span></br>
+        <h4 style="margin-top: 10%; text-align :center">
+            Password Strength Checker
+        </h4>
+        <br>
+        <input type="password" placeholder="Type your password" id="PassEntry" class="form-control passwordInput">
+        <br>
+        <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+        <br>
     </div>     
 </body>
 </html>
 ```
 
-- We will use Bootstrap 5 for styling. We will provide a CDN link for the bootstrap file and link it to the HTML file using the `<link>` tag. 
+- We'll use Bootstrap 5 for styling. We'll use a CDN link for the bootstrap file and link it to the HTML file using the `<link>` tag. 
 
-- We write our custom styles using the `<style>` tag. We have two classes and their respective stylings.
+- We'll write our custom styles using the `<style>` tag. We have two classes and their respective stylings.
 
-- In the `<body>` tag we have a `<div>` element.
+- In the `<body>` tag we have a `<div>` element with three elements.
 
-- In the `<div>`, we have an three elements.
+- The first element is a simple heading (**h4**) with some inline styles.
 
-- The first is a **h4** which we given it an inline styling.
+- The second element is an input where the user will type the password. We have used the `form-control` class from Bootstrap and our custom class `passwordInput` to style the element.
 
-- The second item is an input where our password will be typed in. It is under the Bootstrap's class `form-control` and the class `passwordInput` which we custom styled in the `<style>` tag. The `form-control` shows the inputshould be used in a `form` element(We have not added a form since we are not sending any data).
-
-- The third item contains a `<span>` which is where the password strength will be labeled. It is under the class `displayBadge` which we custom styled and `badge` given by Bootstrap which makes it appear as a badge.
+- The third element is a `<span>` which is where the password strength will be labeled as a badge with color: Green for strong, Blue for medium and Red for weak.
 
 #### JavaScript Code creation and explanation
 
-Create five variables: `timeout` for storing the timeout before a callback is called, `password` for the input where the password will be entered, `strengthBadge` for storing the span used for displaying the strength of the password (gotten after traversing the DOM and getting them using their IDs), and `strongPassword` & `mediumPassword` for storing the Regex conditions.
+Let's create five variables: 
+
+- `timeout`: for referencing the timeout before a callback is called.
+
+- `password`: for the input where the password will be entered.
+
+- `strengthBadge`: for storing the span used for displaying the strength of the password (which we can access using the DOM element's ID.
+
+- `strongPassword` & `mediumPassword`: for storing the Regex conditions.
 
 ```JavaScript
 let timeout;
-let password = document.getElementById('PassEntry')
-let strengthBadge = document.getElementById('StrengthDisp')
+let password = document.getElementById('PassEntry');
+let strengthBadge = document.getElementById('StrengthDisp');
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
+
 Let's add an input event listener to the `password` input and check the strength when the user has typed something, but we won't do it immediately after every keystroke. When the user types quickly, we should wait until a pause occurs. So, instead of checking the strength immediately, we'll set a timeout.
 
 We should clear the previous timeout if there is any. When the events occur close together than our timeout duration, the timeout from the preceding input event should be canceled.
 
 ```JavaScript
 password.addEventListener("input", () => {
-    strengthBadge.style.display= 'block'
-    clearTimeout(timeout)
-    timeout = setTimeout(() => StrengthChecker(password.value), 500)
-    if(password.value.length !== 0){
-        strengthBadge.style.display != 'block'
-    }else{
-        strengthBadge.style.display = 'none'
+    strengthBadge.style.display = 'block';
+    clearTimeout(timeout);
+    timeout = setTimeout(() => StrengthChecker(password.value), 500);
+    if(password.value.length !== 0) {
+        strengthBadge.style.display != 'block';
+    } else {
+        strengthBadge.style.display = 'none';
     }
 });
 ```
@@ -165,16 +173,16 @@ Let's create a function called `StrengthChecker` where we test for the strength 
 Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result. 
 
 ```JavaScript
-function StrengthChecker(PasswordParameter){
-    if(strongPassword.test(PasswordParameter)){
-        strengthBadge.style.backgroundColor = "green"
-        strengthBadge.textContent = 'Strong'
-    }else if(mediumPassword.test(PasswordParameter)){
-        strengthBadge.style.backgroundColor = 'blue'
-        strengthBadge.textContent = 'Medium'
-    }else{
-        strengthBadge.style.backgroundColor = 'red'
-        strengthBadge.textContent = 'Weak'
+function StrengthChecker(PasswordParameter) {
+    if(strongPassword.test(PasswordParameter)) {
+        strengthBadge.style.backgroundColor = "green";
+        strengthBadge.textContent = 'Strong';
+    } else if(mediumPassword.test(PasswordParameter)) {
+        strengthBadge.style.backgroundColor = 'blue';
+        strengthBadge.textContent = 'Medium';
+    } else {
+        strengthBadge.style.backgroundColor = 'red';
+        strengthBadge.textContent = 'Weak';
     }
 }
 ```
@@ -183,6 +191,7 @@ The full JavaScript code:
 
 ```JavaScript
 <script>
+    
     //timeout before a callback is called
 
     let timeout;
@@ -239,6 +248,4 @@ The full JavaScript code:
 
 That's all for now. You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
-Hope you can manipulate the code more and give it more levels like Too Strong, Too Weak, etc. You may even make it check the strength using percentages and animate the badge.
-
-Passwords are a great deal in application security so we have to take our time in checking their strength.
+Hope you can further enhance the code and add checks for more levels like Too Strong, Too Weak, etc.
