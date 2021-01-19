@@ -2,16 +2,16 @@
 
 --
 
-Verifying website domains for originality can be complicated during a time where this internet is constantly used for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
+Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
 
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
 
 
 
-At the end of this tutorial, it is possible to have a good grasp on retrieving DNS information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
+At the end of this tutorial, it is possible to have a good grasp on retrieving DNS (Domain Name System) information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
 
-
+Overall, this tutorial helps complete reverse domain name lookups.
 
 **Prerequisites**
 
@@ -39,7 +39,7 @@ Some Python compatible packages that will be used are 'socket', 'dns', and 'whoi
 Ensuring that packages are installed and functional using the command prompt window and the designated 'PATH' or 'ROOT' from folder-to-folder are accurate will be slightly time efficient.
 
 
-In socket, the opportunity to find the IP address associated with the domain name can be processed.
+In socket, the opportunity to find the IP (Internet Protocol) address associated with the domain name can be processed.
 
 The following lines of codes are processed in socket.
 
@@ -94,7 +94,7 @@ _Screenshot_:
 
 --
 
-In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
+In DNS (Domain Name System), a plentiful array of resource information is displayed given that the website domain is still active.
 
 
 This is a good opportunity to use basic Python coding skills in for-loops held within a variable to iterate and display all results.
@@ -122,7 +122,7 @@ _Screenshot_:
 
 ![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
-The PTR value determines if the domain can resolve.
+The PTR (Pointer Record) value determines if the domain can resolve.
 
 Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain.
 
@@ -370,7 +370,7 @@ When confronted with a domain that may appear authentic and genuine, it might be
 Domains and websites in general have components that identify itself to initiate internet presence.
 
 **Here are a few website components:**
-* Overall DNS records
+* DNS records
 * Extension purchases are readily available in a wide variety of selections
 * Website hosting providers and its ability to offer e-mail addresses for any purpose with the website domain
 
