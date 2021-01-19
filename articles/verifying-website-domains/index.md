@@ -2,7 +2,7 @@
 
 --
 
-Verifying website domains for originality can be complicated during a time where internet is used constantly for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
+Verifying website domains for originality can be complicated during a time where this internet is constantly used for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
 
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
@@ -17,7 +17,7 @@ At the end of this tutorial, it is possible to have a good grasp on retrieving D
 
 _Software and Hardware_
 * Windows Operating System (Version 10)
-* Python Shell (Any version that is compatible with the packages and functions mentioned. _3.8.5 is used_)
+* Python Shell (Any version that is compatible with the packages and functions mentioned. _3.8.5 was used here_)
 * Windows PowerShell
 * Internet connection
 * Internet browser
@@ -28,7 +28,7 @@ _Knowledge_
 * Working with 'PATH' or directories
 * Run PowerShell as Administrator
 * Command Prompts and its structures
-* Elements of Websites (terms include but not limited to: layers, domains, and hosting)
+* Website mechanics (terms include but not limited to: layers, domains, and hosting)
 * Webpage scripting (HTML or JavaScript)
 
 --
@@ -387,7 +387,7 @@ These components can be combined and modified to replicate an already existing w
 
 --
 
-**Play a Matching Game!**
+**Time to Match Values Up**
 
 If possible, compare values with the original to find any matches. If not, output values can offer insights.
 
