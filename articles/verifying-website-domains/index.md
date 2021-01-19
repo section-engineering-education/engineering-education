@@ -47,7 +47,7 @@ Input:
 ```python
 import socket
 domainName = 'interviews-massiveinsights.digital'
-ip= socket.gethostbyname(domainName)
+ip = socket.gethostbyname(domainName)
 print ("IP:", ip)
 ```
 
