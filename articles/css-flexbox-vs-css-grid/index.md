@@ -116,7 +116,7 @@ We specify a grid with `display: grid` and then determine rows and columns with 
 
 #### Content vs layout
 
-Flexbox is content-based; content comes first. By content first, we mean it helps you align the contents of and move blocks and items within a container.
+Flexbox is content-based so content comes first. By content first, we mean it helps you align the contents of and move blocks and items within a container.
 
 On the other hand, the CSS Grid focuses on laying out the outer/skeleton layout of the page.
 
