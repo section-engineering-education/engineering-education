@@ -21,14 +21,20 @@ By the end end of this article you will:
 4. Understand how we can target more browser support of this specification.
 
 ### The web CSS Scrollbar
-The pseudo elements available for scrollbar customization include:
-`::-webkit-scrollbar` the scrollbar.
-`::-webkit-scrollbar-button` the buttons on the scrollbar (arrows pointing upwards and downwards).
-`::-webkit-scrollbar-thumb` the draggable scrolling handle.
-`::-webkit-scrollbar-track` the track (progress bar) of the scrollbar.
-`::-webkit-scrollbar-track-piece` the track (progress bar) NOT covered by the handle.
-`::-webkit-scrollbar-corner` the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
-`::-webkit-resizer` the draggable resizing handle that appears at the bottom corner of some elements.
+The following are the available selectors for scrollbar customization include:
+- The `::-webkit-scrollbar` will represent the entire scrollbar.
+
+- `::-webkit-scrollbar-button` is the buttons on the scrollbar. The arrows that point upwards and downwards.
+  
+- The `::-webkit-scrollbar-thumb` is a draggable handle for making scrolls.
+  
+- `::-webkit-scrollbar-track` is the track or the progress bar.
+
+- `::-webkit-scrollbar-track-piece` represents the track that will not be covered by the handle when scrolling.
+  
+- `::-webkit-scrollbar-corner` is the bottom corner of the scrollbar, this is where both horizontal and vertical scrollbars meet.
+  
+- `::-webkit-resizer` is the draggable resizing handle that will appear at the bottom corner of the elements.
 
 ### Targeting more browser support
 Building Future-Proof Scrollbar Styles
@@ -58,7 +64,26 @@ Here is an example that uses scrollbar-width, scrollbar-color, `::-webkit-scroll
 }
 ```
  
-Blink and WebKit browsers will ignore rules they do not recognize and apply -webkit-scrollbar rules. Firefox browsers will ignore rules they do not recognize and apply CSS Scrollbars rules. Once Blink and WebKit browsers fully deprecate the -webkit-scrollbar specification, they will gracefully fall back to the new CSS Scrollbars specification.
+> A note : WebKit browsers will ignore some of the rules  that are not recognized  and make a fallback to apply 
+> apply the `-webkit-scrollbar` rules. An example, Firefox browsers will ignore rules that they are not recognizing and instead
+> use the CSS Scrollbars specifications.
+
+### Building a web page and implementing a customized scrollbar
+This is the part where I will design a landing page that implements a customized landing page. Let us create a folder for our project named `landing-page`. Our folder structure is very simple. We will create another folder inside the `landing-page` named `images` that will contain an image. In the root of our `landing-page`, we have two two files, the `index.html` and `styles.css`.
+Let us design this application in the following steps.
+1. Write the code for our HTML file
+
+2. Add the CSS stylesheet for the application layout design and scrollbar customization  
+
+### The HTML
+
+### Adding the CSS to our application
+
+### Final application
+
+That is the final application utilizing our CSS scrollbar feature. The [mozilla] documentation is a great site for reference and checking on the current browser support.
+You can check the live application on [netlify]()
+
 
 ### Conclusion 
-CSS is a fundamental language for any frontend developer. In this article, we covered on how to use CSS to style scrollbars by building a practical web page. I find the `::-webkit-scrollbar` pseudo element useful when I need to customize my website scrollbar. This feature translates to even better looking user interface. I hope you find this tutorial useful.
+CSS is a fundamental language for any frontend developer. In this article, we covered on how to use CSS to style scrollbars by building a practical web page. I find the `::-webkit-scrollbar` pseudo element useful when I need to customize my website scrollbar. This feature translates to even better looking user interface. The code is very simple and you can go ahead and incoporate it on your projects. I hope you find this tutorial useful.
