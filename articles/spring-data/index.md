@@ -3,7 +3,7 @@ JPA is a set of standards that defines how Java objects are represented in a dat
 JPA makes it easier to switch from one ORM tool to another without refactoring code since it abstracts away the complexities involved with various ORM tools. JPA falls between the ORM and the application layer.
 In this tutorial, we will be modeling a `Recipe` application using Spring Data and JPA. The entity-relationship diagram for our application is shown below.
 
-![Entity Diagram](relationship.png)
+![Entity Diagram](/engineering-education/spring-data/relationship.png)
 ### Prerequisite
 1. JDK installed on your computer.
 2. Favourite IDE.
