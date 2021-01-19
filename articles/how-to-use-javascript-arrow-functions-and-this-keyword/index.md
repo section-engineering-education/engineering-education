@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/
+title: How To Use Javascript Arrow Functions & This Keyword
+description: This tutorial will explain Javascript arrow functions and the this keyword and how to use it
+author: joseph-chege
+date: 
+topics: [Javascript]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/hero.png
+    alt: JS Arrow Funcitons and This Keyword tutorial Image
+---
 ES6 introduced a new way of writing JavaScript functions called arrow function that uses a [fat arrow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ( => ).
 
 This guide will discuss how to use the arrow function to write your JavaScript functions. Focusing on converting regular functions to arrow functions as we consider when not to use arrow functions. To understand the arrow functions, it is essential to have prior knowledge of [JavaScript functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
@@ -703,3 +719,6 @@ With an arrow function:
 As a beginner, arrow functions seem unfamiliar and hard to read. They take time to understand. As you learn about them, they become convenient and straightforward to implement in your functions.
 
 I hope this guide gives you an overview of applying the fat arrow within your functional code blocks.
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
