@@ -24,7 +24,7 @@ _Software and Hardware_
 
 _Knowledge_
 * Python Programming language
-* Package installations
+* Package/Library installations
 * Working with 'PATH' or directories
 * Run PowerShell as Administrator
 * Command Prompts and its structures
@@ -404,6 +404,22 @@ Most likely a replicated version of the original. Beware, be cautious, and watch
 Try the tutorial out next time a suspicious website domain crosses paths while using the internet, the results can be fascinating.
 
 It can possibly protect individuals and/or groups from the dark web.
+
+
+--
+
+**Resources**
+
+_Documentation_
+
+
+[Socket Library](https://docs.python.org/3/library/socket.html)
+
+[DNS Library](https://dnspython.readthedocs.io/en/latest/manual.html)
+
+[Whois Library](https://openbase.com/python/whois/documentation#whois)
+
+[Host.io API](https://host.io/)
 
 
 --
