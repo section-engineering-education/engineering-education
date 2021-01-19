@@ -151,23 +151,6 @@ let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 ```
 
-Let's add an input event listener to the `password` input and check the strength when the user has typed something, but we won't do it immediately after every keystroke. When the user types quickly, we should wait until a pause occurs. So, instead of checking the strength immediately, we'll set a timeout.
-
-We should clear the previous timeout if there is any. When the events occur close together than our timeout duration, the timeout from the preceding input event should be canceled.
-
-```JavaScript
-password.addEventListener("input", () => {
-    strengthBadge.style.display = 'block';
-    clearTimeout(timeout);
-    timeout = setTimeout(() => StrengthChecker(password.value), 500);
-    if(password.value.length !== 0) {
-        strengthBadge.style.display != 'block';
-    } else {
-        strengthBadge.style.display = 'none';
-    }
-});
-```
-
 Let's create a function called `StrengthChecker` where we test for the strength of the passwords using the regular expressions that we wrote with the `RegExp.prototype.test()` method. It returns `true` if there is a match or `false` if there is no match.
 
 Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result. 
@@ -187,26 +170,58 @@ function StrengthChecker(PasswordParameter) {
 }
 ```
 
+Let's add an input event listener to the `password` input and check the strength with the `StrengthChecker` function when the user has typed something. We won't call the function immediately after every keystroke. When the user types quickly, we should wait until a pause occurs. So, instead of checking the strength immediately, we'll set a timeout.
+
+We should clear the previous timeout if there is any. When the events occur close together than our timeout duration, the timeout from the preceding input event should be canceled.
+
+```JavaScript
+password.addEventListener("input", () => {
+    strengthBadge.style.display = 'block';
+    clearTimeout(timeout);
+    timeout = setTimeout(() => StrengthChecker(password.value), 500);
+    if(password.value.length !== 0) {
+        strengthBadge.style.display != 'block';
+    } else {
+        strengthBadge.style.display = 'none';
+    }
+});
+```
+
 The full JavaScript code:
 
 ```JavaScript
 <script>
     
-    //timeout before a callback is called
+    // timeout before a callback is called
 
     let timeout;
 
-    //traversing the DOM and getting the input and span using their IDs
+    // traversing the DOM and getting the input and span using their IDs
 
     let password = document.getElementById('PassEntry')
     let strengthBadge = document.getElementById('StrengthDisp')
 
-    //The strong and weak password Regex pattern checker
+    // The strong and weak password Regex pattern checker
 
     let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
     let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+    
+    function StrengthChecker(PasswordParameter){
+        // We then change the badge's color and text based on the password strength
 
-    //Adding an input event listener when a user types to the  password input 
+        if(strongPassword.test(PasswordParameter)) {
+            strengthBadge.style.backgroundColor = "green"
+            strengthBadge.textContent = 'Strong'
+        } else if(mediumPassword.test(PasswordParameter)){
+            strengthBadge.style.backgroundColor = 'blue'
+            strengthBadge.textContent = 'Medium'
+        } else{
+            strengthBadge.style.backgroundColor = 'red'
+            strengthBadge.textContent = 'Weak'
+        }
+    }
+
+    // Adding an input event listener when a user types to the  password input 
 
     password.addEventListener("input", () => {
 
@@ -227,22 +242,6 @@ The full JavaScript code:
             strengthBadge.style.display = 'none'
         }
     });
-
-
-    function StrengthChecker(PasswordParameter){
-        //We then change the badge's color and text based on the password strength
-
-        if(strongPassword.test(PasswordParameter)) {
-            strengthBadge.style.backgroundColor = "green"
-            strengthBadge.textContent = 'Strong'
-        } else if(mediumPassword.test(PasswordParameter)){
-            strengthBadge.style.backgroundColor = 'blue'
-            strengthBadge.textContent = 'Medium'
-        } else{
-            strengthBadge.style.backgroundColor = 'red'
-            strengthBadge.textContent = 'Weak'
-        }
-    }
 </script>
 ```
 
