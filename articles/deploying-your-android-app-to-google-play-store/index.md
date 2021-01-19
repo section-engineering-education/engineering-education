@@ -1,7 +1,10 @@
 ### Introduction
-Releasing your first application to Google Play Store can seem like a nebulous undertaking. Worry no more as you'll be learning how to release your apps to Google Play store in this article. Through this article, the aim is to:
-1. Understand how to make your application store-ready
-2. Learn about the Google Play Console
+Releasing your first application to Google Play Store can seem like a difficult undertaking. Worry no more as you'll be learning how to publish your apps on the Google Play store in this article. 
+
+### Aims
+The article aims at helping you:
+1. Understand how to make your application store-ready.
+2. Learn about the Google Play Console.
 3. Deploy your application to Google Play Store. 
 
 ### Prerequisites
@@ -11,59 +14,68 @@ Before we begin, please ensure that you have:
 3. A Google Play Console account
 
 ### Step 1 - Check for compliance with Google quality guidelines
-You can check out Google’s [core app quality](https://developer.android.com/docs/quality-guidelines/core-app-quality) page to ensure that your mobile application matches the global standard. This is about following the design patterns, compatibility, security and so on.
+You can check out Google’s [core app quality](https://developer.android.com/docs/quality-guidelines/core-app-quality) page to ensure that your mobile application matches the global standard. This is about following the design patterns, compatibility, security, and so on.
 
 ### Step 2 - Turn off logging and debugging.
-This process involves commenting out all log and print statements within your code. Turning off logs and debuggers reduces your codebase’s size and decreases security vulnerability if you may have logged sensitive information during development.
+This process involves commenting out all log and print statements within your code. Turning off logs and debuggers reduces your codebase size and decreases security vulnerability, especially if you may have logged sensitive information during development.
 
 ### Step 3 - Add a crash reporting library.
-Crash reporting libraries give you insights into your application’s performance on different devices once it goes live. [Crashlytics](https://firebase.google.com/docs/crashlytics) by firebase is a great example. You get to call the library when you need it.
+Crash reporting libraries give you insights into your application’s performance on different devices once it goes live. [Crashlytics](https://firebase.google.com/docs/crashlytics) by firebase is a great example. You can call the library whenever you need it.
 
-### Step 4 - Prepare the What’s New notes for the app release.
-It’s always great to prepare a “What’s New” list for your application’s users. This list helps your users get an idea of what to expect from the application, especially when you’re deploying an update.
+### Step 4 - Prepare the what’s new notes for the app release.
+It’s always great to prepare a `What’s New` list for your application’s users. This list helps your users get an idea of what to expect from the application, especially when you’re deploying an update.
 
 ### Step 5 - Update app version code and version name for the release build.
-Updating your version code and name is essential in keeping track of your app’s different build variants whenever you wish to deploy updates. Do this in your build.gradle file.
-![Version Code Name](version_code_name.png)
+Updating your version code and name is essential in keeping track of your app’s different build variants whenever you wish to deploy updates. Do this in your app-level `build.gradle` file.
+![Version Code Name](/engineering-education/deploying-your-android-app-to-google-play-store/version_code_name.png)
 
 ### Step 6 - Create a Developer Console Account
-If you do not have a Google Play Console account, please sign up for one [here](https://play.google.com/apps/publish). The signup fee is a one-time payment of $25 (for life). You could also reach out to a friend with an existing account and have them add you to their dashboard as a developer.
+If you do not have a Google Play Console account, please sign up [here](https://play.google.com/apps/publish). The signup fee is a one-time payment of $25 (for life). Alternatively, you could reach out to a friend with an existing account and have them add you to their dashboard as a developer.
 
 ### Step 7 - Upload App Bundle to the closed or open test track
 #### Minifying your codebase
-Minifying your codebase makes your application lighter by reducing its size. 
-You should start by setting the _minifyEnabled_ attribute in your build.gradle (:app) to true. To learn more about how to shrink your code, take a look at [How to Shrink Code](https://developer.android.com/studio/build/shrink-code).
-![Minify](minify.png)
+Minifying your codebase reduces your application's size, thus making it lighter. 
+You should start by setting the `_minifyEnabled_` attribute in your `build.gradle` (app level) to `true`. You can learn more on how to shrink your code [here](https://developer.android.com/studio/build/shrink-code).
+
+![Minify](/engineering-education/deploying-your-android-app-to-google-play-store/minify.png)
 
 #### Generating a signed App Bundle
-In Android Studio, navigate to the build option at the top and click _Generate Signed Bundle/APK_.
-![Generate Signed Bundle/APK](generate_app_bundle.png)
+In Android Studio, navigate to the `build` option on the top menu and click _Generate Signed Bundle/APK_.
+
+![Generate Signed Bundle/APK](/engineering-education/deploying-your-android-app-to-google-play-store/generate_app_bundle.png)
 
 The Generate Signed Bundle or APK window will pop up, click the _Android App Bundle_ option then _next_.
-![Android App Bundle](android_app_bundle.png)
 
-Click the _Create new_ button to generate your signed app bundle. This signed app bundle will always be useful when you need to push an update to Play Store. It is unique to your app and you.
-![Create new](create_new.png)
+![Android App Bundle](/engineering-education/deploying-your-android-app-to-google-play-store/android_app_bundle.png)
+
+Click the _Create new_ button to generate your signed app bundle. This signed app bundle will always be useful when you need to push an update to Play Store. It is a unique configuration associated with your app.
+
+![Create new](/engineering-education/deploying-your-android-app-to-google-play-store/create_new.png)
 
 Fill in the fields with fields and then confirm by pressing _OK_.
-![Keystore](key_store.png)
-![Confirm](confirm.png)
+
+![Keystore](/engineering-education/deploying-your-android-app-to-google-play-store/key_store.png)
+
+![Confirm](/engineering-education/deploying-your-android-app-to-google-play-store/confirm.png)
 
 Select _release_ as the app bundle destination because we are preparing the app for deployment.
-![Release](release.png)
 
-Once the process is complete, you will get a confirmation message at the bottom of your window. You can now find your app bundle file in your release folder.
-![Message](message.png)
+![Release](/engineering-education/deploying-your-android-app-to-google-play-store/release.png)
 
-The Android App Bundle is a more recent format for Android distribution than the Android Application Package, otherwise known as the APK, which we will touch on later. I highly recommend using App Bundles because of their size reduction. With assets packs and dynamic features, apps become 35% smaller.
-The APK has all of the app’s files and code inside. You can think of it as .zip file with its particular extension. However, the APK has several disadvantages such as
+Once the process is complete, you will get a confirmation message at the bottom of your window. You can now find your app bundle file in your `release` folder.
+
+![Message](/engineering-education/deploying-your-android-app-to-google-play-store/message.png)
+
+The Android App Bundle is a more recent format for Android distribution. It's quite different from the Android Application Package, otherwise known as the APK, which we will touch on later. I highly recommend using App Bundles because of their ability to reduce the overall size. With asset packs and dynamic features, apps become 35% smaller.
+
+The APK stores all of the app’s files and code. You can think of it as a zip file with its particular extension. However, the APK has several disadvantages such as
 - Lower conversion rates
 - Slower downloads
 - Higher uninstalls
 - Lower update rates
 
 ### Step 8 - Application details needed for Play Store
-Here is a quick checklist of all the details you need for Play Store.
+Here is a quick checklist of all the details you need for the Play Store.
 
 
 | #   | Details                                        | Requirements |
@@ -83,14 +95,15 @@ Here is a quick checklist of all the details you need for Play Store.
 
 
 ### Useful resources for the application details
-The resources below helped me through some of the Play Store requirements that I was not prepared for as I started. Hopefully, they will be of help to you as they are for me.
+The resources below helped me understand different Play Store requirements. Hopefully, they will be of use to you as well.
 
-Here is a useful tool, [App Store Screenshot Generator](https://www.appstorescreenshot.com/),  to help you present your app screenshots on a mobile frame. You will need a minimum of 2 screenshots and a maximum of 8.
+Here is a vital tool, [App Store Screenshot Generator](https://www.appstorescreenshot.com/), to help you present your app's screenshots on a mobile frame. You will need a minimum of 2 screenshots and a maximum of 8.
 
-[App Privacy Policy Generator](https://app-privacy-policy-generator.firebaseapp.com/) has made it easy for developers to generate privacy policies that follow the requirements of Google Play, Apple Store, Google Adsense and many 
+[App Privacy Policy Generator](https://app-privacy-policy-generator.firebaseapp.com/) has made it easy for developers to create privacy policies that follow the requirements of Google Play, Apple Store, Google Adsense, and many 
 more.
 
 For high-resolution icons, please go over Google Play’s guidelines: [Icon design specifications](https://developer.android.com/google-play/resources/icon-design-specifications).
+
 The [feature graphic generator](https://www.norio.be/graphic-generator/) will help you make a graphic banner as per Google Play’s specific dimensions.
 
 ### Conclusion
