@@ -15,11 +15,17 @@ At the end of this tutorial, it is possible to have a good grasp on retrieving D
 
 **Prerequisites**
 
+_Software_
 * Windows Operating System (Version 10)
 * Python 3.8.5 Shell
 * Windows PowerShell
 * Internet connection
 * Internet browser
+
+_Knowledge_
+* Python Programming language
+* Working with 'PATH' or directories
+* Command Prompts and its structure
 
 --
 
@@ -31,6 +37,27 @@ Ensuring that packages are installed and functional using the command prompt win
 
 In socket, the opportunity to find the IP address associated with the domain name can be processed.
 
+The following lines of codes are processed in socket.
+
+Input:
+```python
+import socket
+domainName = 'interviews-massiveinsights.digital'
+ip= socket.gethostbyname(domainName)
+print ("IP:", ip)
+```
+
+Output:
+```python
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+socket.gaierror: [Errno 11002] getaddrinfo failed
+>>> print ("IP:", ip)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ip' is not defined
+```
+
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 
@@ -41,18 +68,103 @@ Shown below is a functional and valid output of the code since the domain is act
 
 ![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
+Input:
 
+```python
+import socket
+domainName = 'massiveinsights.com'
+ip = socket.gethostbyname(domainName)
+print ("IP:", ip)
+```
+
+Output:
+
+```python
+IP: 69.195.108.249
+```
 --
 
 In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
 
 ![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
+This is a good opportunity to use basic Python coding skills in for-loops to iterate and display all results.
+
+Input:
+
+```python
+import dns
+import dns.resolver
+ip = "69.195.108.249"
+myResolver = dns.resolver.Resolver()
+req = '.'.join(reversed(ip.split("."))) + ".in-addr.arpa"
+myAnswers = myResolver.resolve(req, "PTR")
+ans = [item for item in myAnswers]
+ans
+```
+
+Output:
+
+```python
+[<DNS IN PTR rdata: 69-195-108-249.unifiedlayer.com.>]
+```
 The PTR value determines if the domain can resolve.
 
 Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain.
 
 Below, there are further options within the DNS function revealing additional information about the domain such as Nameservers and DNS parking which are a few critical elements in establishing website internet connection.
+
+Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", "MX".
+
+_NS for Nameserver information_
+
+```python
+ip = "69.195.108.249"
+myResolver = dns.resolver.Resolver()
+myAnswers = myResolver.resolve('massiveinsights.com', "NS")
+ans = [item for item in myAnswers]
+ans
+```
+
+Output:
+
+```python
+[<DNS IN NS rdata: ns3.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns4.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns1.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns2.bdm.microsoftonline.com.>]
+```
+
+_TXT additional intenet properties_
+input:
+
+```python
+ip = "69.195.108.249"
+myResolver = dns.resolver.Resolver()
+myAnswers = myResolver.resolve('massiveinsights.com', "TXT")
+ans = [item for item in myAnswers]
+ans
+```
+
+```python
+[<DNS IN TXT rdata: "google-site-verification=34Jb2Tx28xLGRll4nwbUOq6dyu-P_VOD3OcO9qqDTKo">, <DNS IN TXT rdata: "mscid=w87OZ8XPKbefuE8BURYoqwPFO1CdSFjEo5RIqw7JWEL/fy7vVSsP/Q6Slgu5MYk2ihGpG6SHuF70r+a7X9J8cw==">, <DNS IN TXT rdata: "v=spf1 ip4:72.139.55.134 include:spf.protection.outlook.com -all">]
+```
+
+_MX for mailing information_
+
+Input:
+
+```python
+ip = "69.195.108.249"
+myResolver = dns.resolver.Resolver()
+myAnswers = myResolver.resolve('massiveinsights.com', "MX")
+ans = [item for item in myAnswers]
+ans
+```
+```python
+[<DNS IN MX rdata: 0 massiveinsights-com.mail.protection.outlook.com.>]
+```
+
+
+
+
 
 ![dns-txt-mx](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
@@ -62,11 +174,50 @@ Below, there are further options within the DNS function revealing additional in
 
 Who is, a continuous recording registry for websites, is one of several databases that compiles and lists website information.
 
+Input:
+
+```python
+import whois
+whois_info = whois.whois("interviews-massiveinsights.works")
+print("Domain registrar:", whois_info.registrar)
+print("WHOIS server:", whois_info.whois_server)
+print("Domain creation date:", whois_info.creation_date)
+print("Expiration date:", whois_info.expiration_date)
+```
+Output:
+
+```python
+Domain registrar: None
+WHOIS server: None
+Domain creation date: None
+Expiration date: None
+```
+
 ![whois-invalid](/engineering-education/verifying-website-domains/whois-invalid.jpg)
 
 Null values would be an indication that modifications were made during the development of the website.
 
 Most original websites will openly disclose this information as exemplified below.
+
+
+Input:
+
+```python
+import whois
+whois_info = whois.whois("massiveinsights.com")
+print("Domain registrar:", whois_info.registrar)
+print("WHOIS server:", whois_info.whois_server)
+print("Domain creation date:", whois_info.creation_date)
+print("Expiration date:", whois_info.expiration_date)
+```
+Output:
+
+```python
+Domain registrar: GoDaddy.com, LLC
+WHOIS server: whois.godaddy.com
+Domain creation date: 2012-06-04 23:22:58
+Expiration date: 2021-06-04 23:22:58
+```
 
 ![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
@@ -79,11 +230,103 @@ _Make sure to right-click and select the 'Run as Administrator' option before ru
 
 Windows PowerShell is structured differently. There are subcategorized features to select specific content in a website language. It is essential to select and include '.Content' at the end of the command.
 
+Input:
+
+```PowerShell
+(curl host.io/careers.massiveinsights.works).Content
+```
+
+
+Partial Output:
+
+```PowerShell
+<!DOCTYPE html>
+<html  style="scroll-behavior: smooth;">
+
+<head>
+    <title>careers-massiveinsights.works (Default page) - host.io</title>
+    <meta charset="utf-8">
+    <meta name="google" value="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="description" content="careers-massiveinsights.works (hosted on hostinger.com) details, including IP, backlinks, redirect information, and reverse IP shared hosting data">
+```
+
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
 As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
 
 Scroll down to the 'primary' layer to display all associated domains with the IP address.
+
+```PowerShell
+<a href="/ip/45.88.197.212" class="text-primary">Show All &rarr;</a>
+
+                        </div>
+                    </div>
+                    <div class="mt-2 sm:mt-0">
+                        <a class="btn btn-secondary-hollow" href="/docs#apidomainsfieldvalue">View API &rarr;</a>
+                    </div>
+                </div>
+                <ul class="text-sm flex flex-wrap">
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/careers-target.com" class="border-b border-gray-400" rel="nofollow">careers-target.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/careers-villagemd.com" class="border-b border-gray-400" rel="nofollow">careers-villagemd.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/interviews-villagemedical.com" class="border-b border-gray-400" rel="nofollow">interviews-villagemedical.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/interviews-hd-supply.online" class="border-b border-gray-400" rel="nofollow">interviews-hd-supply.online</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/hdsupply.us" class="border-b border-gray-400" rel="nofollow">hdsupply.us</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/medicalvillage.us" class="border-b border-gray-400" rel="nofollow">medicalvillage.us</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/careers-massiveinsights.works" class="border-b border-gray-400" rel="nofollow">careers-massiveinsights.works</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/morgeesmodcon.com" class="border-b border-gray-400" rel="nofollow">morgeesmodcon.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/asianausa.us" class="border-b border-gray-400" rel="nofollow">asianausa.us</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/interviews-massiveinsights.digital" class="border-b border-gray-400" rel="nofollow">interviews-massiveinsights.digital</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/sobeyscareer.com" class="border-b border-gray-400" rel="nofollow">sobeyscareer.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/interviews-sobeys.com" class="border-b border-gray-400" rel="nofollow">interviews-sobeys.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/interviews-target.com" class="border-b border-gray-400" rel="nofollow">interviews-target.com</a>
+                        </li>
+
+                        <li class="sm:w-1/3 w-1/2 border-b border-r px-6 py-4 truncate">
+                            <a href="/hdsupply-ca.com" class="border-b border-gray-400" rel="nofollow">hdsupply-ca.com</a>
+                        </li>
+
+                </ul>
+            </div>
+```
 
 ![power-curl-domains](/engineering-education/verifying-website-domains/power-curl-domains.jpg)
 
