@@ -121,7 +121,7 @@ We are going to have three levels to denote how secure a password is. They are:
 
 - We'll use Bootstrap 5 for styling. We'll use a CDN link for the bootstrap file and link it to the HTML file using the `<link>` tag. 
 
-- We'll write our custom styles using the `<style>` tag. We have two classes, `passwordInput` and `displayBadge`, and their respective stylings. The passwordInput styles the password input by allowing a 5% margin from the top and also ligns the text typed to it at the center. The displayBadge does the same for our span and hides it for we only display it when a user starts typing the password.
+- We'll write our custom styles using the `<style>` tag. We have two classes, `passwordInput` and `displayBadge`, and their respective stylings. The `passwordInput` styles the password input by allowing a 5% margin from the top and also aligns the text typed to it at the center. The `displayBadge` does the same for our span and hides it for we only display it when a user starts typing the password.
 
 - In the `<body>` tag we have a `<div>` element with three elements.
 
