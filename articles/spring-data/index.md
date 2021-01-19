@@ -161,4 +161,51 @@ JPA CASCADE types control how state changes are cascaded from the parent object 
         val category: Set<Category>?
     )
     ```
-    
+    - `@JoinTable` annotation facilitates the generation of the table with the name `recipe_category` which will store the primary keys for both `Recipe` and `Category`. The generated table has two columns `recipe_id` which references the id in the `Recipe` table and `category_id` which references the id column of the `Category` table. 
+
+4. **Enumerated**
+    Used to store map enum values to database representation in JPA.
+
+    In the `domain` package create a Kotlin enum class with the name `Difficulty`. Add the below code snippet into the enum class created above.
+    ```kotlin
+    enum class Difficulty {
+        EASY, MODERATE, HARD
+    }
+    ```
+
+    In the `Recipe` entity add the `difficulty` field of the type Difficulty as shown below.
+    ```kotlin
+       @Entity
+    data class Recipe(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY) //Uses underlying   persistence framework to generate an Id
+        var id: Long?,
+        var description: String?,
+        var prepTime: String?,
+        var cookTime: String?,
+        var servings: String?,
+        var url: String?,
+        var directions: String?,
+        @OneToMany(cascade = [CascadeType.ALL], mappedBy = "recipe")
+        var ingredient: Set<Ingredient>?,
+        @OneToOne(cascade = [CascadeType.ALL])
+        var notes: Notes?,//Foreign Key
+        @ManyToMany
+        @JoinTable(
+        name = "recipe_category",
+        joinColumns = [JoinColumn(name = "recipe_id")],
+        inverseJoinColumns = [JoinColumn(name = "category_id")]
+        )   
+        val category: Set<Category>?,
+        @Enumerated(value = EnumType.STRING)
+        val difficulty: Difficulty,
+    )
+    ```
+    - `@Enumerated(value = EnumType.STRING)` sets the difficulty field to enumeration. There are two enum types `EnumType.STRING` and `EnumType.ORDINAL`.
+    - `EnumType.ORDINAL` stores the enum values as integers i.e `EASY` as 1, `HARD` as 3 while `EnumType.STRING` stores the values as string i.e `EASY` as EASY.
+
+
+    ### Conclusion
+    Now that you have learned how to model the database using Spring Data JPA, implement the JPA repositories, and then create a REST controller for our recipe application.
+
+    Happy coding
