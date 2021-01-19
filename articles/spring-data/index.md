@@ -1,7 +1,9 @@
 ### Java Persistence API (JPA)
 JPA is a set of standards that defines how Java objects are represented in a database. JPA provides a set of annotations and interfaces that makes it possible to configure java objects and map them to relational database tables. Relationships between Java objects are provided through annotations (one-to-one, one-to-many, many-to-one, many-to-many). The implementations of the JPA specifications are provided by the object-relational mapping tools (ORM) like [Hibernate](https://hibernate.org/).
 JPA makes it easier to switch from one ORM tool to another without refactoring code since it abstracts away the complexities involved with various ORM tools. JPA falls between the ORM and the application layer.
+In this tutorial, we will be modeling a `Recipe` application using Spring Data and JPA. The entity-relationship diagram for our application is shown below.
 
+![Entity Diagram](relationship.png)
 ### Prerequisite
 1. JDK installed on your computer.
 2. Favourite IDE.
@@ -19,3 +21,144 @@ We will be using [spring initializr](https://start.spring.io/) to create our app
 ### Domain
 The domain package is where we will define our models.
 1. In the root package where the `DemoApplication.kt` file exists, create a new package with the name `domain`.
+2. In the `domain` package you created above create two Kotlin files with the names `Recipe.kt` and `Ingredient.kt`.
+
+**JPA mappings**
+There are two types of JPA mappings
+1. **Unidirectional mapping** - This is where the JPA mapping is only done on one side of the relationship. If entity A has a one-to-many relationship with entity B then only a one-to-many relationship annotation is on entity A.
+2. **Bidirectional mapping** - This is where the JPA mappings are declared on both entities that are related. If entity A has a one-to-many relation with entity B then a one-to-many annotation is used on entity A and a ManyToOne annotation is used on entity B. This type of mapping is recommended since it makes it possible to navigate the object graph in either direction.
+
+**JPA CASCADE types**
+JPA CASCADE types control how state changes are cascaded from the parent object to child objects.
+1. **PERSIST**  - save operations are cascaded to related entities.
+2. **MERGE** - related entities are merged if the owning entity is merged.
+3. **REFRESH** - related entities are refreshed when the owning entity is refreshed.
+4. **REMOVE** - removes all the related entities whenever the owning entity is deleted.
+5. **DETACH** - detaches all the related entities is a manual detach occurs.
+6. **ALL** - applies all of the above cascade options.
+
+**JPA relationships**
+1. **OneToMany Relation**
+   In this type of JPA relation, a row in the parent entity is referenced by many child records in another entity. From our entity relationship diagram above we can see that the `Recipe` entity has an **OneToMany** relation with the ingredient entity meaning that a single recipe is capable of having several ingredients.
+    In the `Recipe.kt` file we created earlier, add the below code snippets.
+    ```kotlin
+    import javax.persistence.*
+
+    @Entity
+    data class Recipe(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY) //Uses underlying persistence framework to generate an Id
+        var id: Long?,
+        var description: String?,
+        var prepTime: String?,
+        var cookTime: String?,
+        var servings: String?,
+        var url: String?,
+        var directions: String?,
+        @OneToMany(cascade = [CascadeType.ALL], mappedBy = "recipe")
+        var ingredient: Set<Ingredient>?
+    )
+    ```
+   - `@Entity` annotation marks the `Recipe` data class as a JPA entity that can be persisted into the database.
+   - `@Id` annotation makes the `id` field as the primary for the database table that will be generated from the `Recipe` entity.
+   - `@GeneratedValue(strategy = GenerationType.IDENTITY)` annotation sets the `id` field to be autogeneration and `GenerationType.IDENTITY` marks the field as unique.
+   - `@OneToMany` annotation creates an OneToMany relationship between `Recipe` entity and the `Ingredient` entity. `mappedBy = "recipe"` indicates that the `recipe` field in the `Ingredient` entity is the foreign key for the `Recipe` entity.
+  
+    In the `Ingredient.kt` file add the below snippet.
+    ```kotlin
+    @Entity
+    data class Ingredient(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        val id: Long?,
+        val description: String?,
+        val amount: BigDecimal?,
+        @ManyToOne
+        val recipe: Recipe
+    )
+    ```
+   - `@ManyToOne` annotation creates a bidirectional mapping which makes it possible to navigate the object graph from `Ingredient` or `Recipe`.
+
+2. **OneToOne Relation**
+   In this type of JPA relation, an entity can only belong to another entity.
+   In our `Recipe` entity add the `notes` variable of the type `Note` that we will be creating. 
+   ```kotlin
+   @Entity
+    data class Recipe(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY) //Uses underlying   persistence framework to generate an Id
+        var id: Long?,
+        var description: String?,
+        var prepTime: String?,
+        var cookTime: String?,
+        var servings: String?,
+        var url: String?,
+        var directions: String?,
+        @OneToMany(cascade = [CascadeType.ALL], mappedBy = "recipe")
+        var ingredient: Set<Ingredient>?,
+        @OneToOne(cascade = [CascadeType.ALL])
+        var notes: Notes?,//Foreign Key
+    )
+    ```
+    - `@OneToOne` annotation indicates that the `Notes` entity will have a One-to-one relationship with the `Recipe` entity.
+
+    In the `domain` package create a Kotlin file with the name `Notes.kt`. In the `Notes.kt` file created add the below code snippet.
+    ```kotlin
+    @Entity
+    data class Notes(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        var id: Long?,
+        @OneToOne
+        var recipe: Recipe?,
+        @Lob //Allows for more than 256 characters in the notes field as hibernate always limits the String field to 256 characters.
+        var notes: String?
+    )
+    ```
+    - `@OneToOne` annotation creates a bidirectional mapping with the `Recipe` entity.
+
+
+3. **ManyToMany relationship**
+    In this type of JPA relationship, one or more rows from an entity are associated with one or more rows from another entity.
+
+    From our entity relation diagram we see that the `Recipe` entity has a ManyToMany relation with the `Category` entity, meaning a recipe can belong to many categories and vice versa.
+    In the `domain` package create a Kotlin file with the name `Category.kt`. In the `Category.kt` file add the below code snippet.
+    ```kotlin
+    @Entity
+    data class Category(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        val id: Long,
+        val name: String,
+        @ManyToMany(mappedBy = "category")
+        val recipe: Set<Recipe>
+    )
+    ```
+
+    In the `Recipe` entity add the `category` field and annotate it with the `@ManyToMany` annotation.
+    ```kotlin
+   @Entity
+    data class Recipe(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY) //Uses underlying   persistence framework to generate an Id
+        var id: Long?,
+        var description: String?,
+        var prepTime: String?,
+        var cookTime: String?,
+        var servings: String?,
+        var url: String?,
+        var directions: String?,
+        @OneToMany(cascade = [CascadeType.ALL], mappedBy = "recipe")
+        var ingredient: Set<Ingredient>?,
+        @OneToOne(cascade = [CascadeType.ALL])
+        var notes: Notes?,//Foreign Key
+        @ManyToMany
+        @JoinTable(
+        name = "recipe_category",
+        joinColumns = [JoinColumn(name = "recipe_id")],
+        inverseJoinColumns = [JoinColumn(name = "category_id")]
+        )   
+        val category: Set<Category>?
+    )
+    ```
+    
