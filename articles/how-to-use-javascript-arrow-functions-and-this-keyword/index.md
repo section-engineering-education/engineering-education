@@ -6,12 +6,12 @@ url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keywo
 title: How To Use Javascript Arrow Functions & This Keyword
 description: This tutorial will explain Javascript arrow functions and the this keyword and how to use it
 author: joseph-chege
-date: 
+date: 2021-01-19T00:00:00-13:00
 topics: [Javascript]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/hero.png
+  - url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/hero.jpg
     alt: JS Arrow Funcitons and This Keyword tutorial Image
 ---
 ES6 introduced a new way of writing JavaScript functions called arrow function that uses a [fat arrow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ( => ).
@@ -19,13 +19,17 @@ ES6 introduced a new way of writing JavaScript functions called arrow function t
 This guide will discuss how to use the arrow function to write your JavaScript functions. Focusing on converting regular functions to arrow functions as we consider when not to use arrow functions. To understand the arrow functions, it is essential to have prior knowledge of [JavaScript functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
 
 ### What are the arrow functions
-It is a sort of an abbreviated way to write compact functions. The following are a few facts about arrow functions;
+It is a sort of an abbreviated way to write compact functions. 
+
+The following are a few facts about arrow functions:
 - Using the arrow function, curly braces, parenthesis, function, and return keywords become optional.
 - The arrow function has a [lexical scoping](https://stackoverflow.com/questions/1047454/what-is-lexical-scope#:~:text=A%20lexical%20scope%20in%20JavaScript,be%20accessible%20outside%20that%20function.) to `this` context.
 
-One of the main differences between arrow functions and regular functions is that arrow functions can only be anonymous. They are not bound to any identifier. Thus they created dynamically. We cannot name an arrow function as we do for the regular functions. However, if you'd like to call or reuse an arrow function, you will need to assign it to a variable.
+One of the main differences between arrow functions and regular functions is that arrow functions can only be anonymous. They are not bound to any identifier. 
 
-For example;
+Thus they created dynamically. We cannot name an arrow function as we do for the regular functions. However, if you'd like to call or reuse an arrow function, you will need to assign it to a variable.
+
+For example:
 
 ```js
 // a named regular function
@@ -43,7 +47,7 @@ Arrow functions are always anonymous.
 };
 ```
 
-To call an arrow function and reuse it, you need to store it in a variable, for example;
+To call an arrow function and reuse it, you need to store it in a variable, for example:
 
 ```js
 const myFunc = (params) => {
@@ -52,10 +56,13 @@ const myFunc = (params) => {
 ```
 
 ### How to use arrow functions
+One aspect you will recognize frequently is the range of syntaxes usable in the arrow functions. Arrow function have a lot of variations and different syntax depending on your block of code. 
 
-One aspect you will recognize frequently is the range of syntaxes usable in the arrow functions. Arrow function has a lot of variations and different syntax depending on your block of code. Let’s discuss some of the common ones:
+Let’s discuss some of the common ones.
 
-Here is a standard arrow function syntax. Arrow functions are denoted with the following syntax:
+Here is a standard arrow function syntax. 
+
+Arrow functions are denoted with the following syntax:
 
 ```js
 (paraml, param2, paramN) => {
@@ -63,17 +70,17 @@ Here is a standard arrow function syntax. Arrow functions are denoted with the f
 };
 ```
 
-- Param - function arguments/parameters
-- Statement - the body of the function
+- Param - function arguments/parameters.
+- Statement - the body of the function.
 
-When writing an arrow function;
+When writing an arrow function:
 - The keyword function is eliminated.
 - The arrow is positioned in between the arguments of the function and the function body.
 
 #### More dynamic arrow functions syntax
 Let's try to derive more arrow function syntaxes by converting some regular functions to arrow functions.
 
-Example one: A function with one Argument.
+Example one: A function with one argument.
 
 ```js
 function square(a) {
@@ -81,7 +88,7 @@ function square(a) {
 }
 ```
 
-Here we have a named function `square()` with a single parameter `a`. As we said, the arrow function takes different syntax variations. This is how we can replicate using an arrow function.
+Here we have a named function `square()` with a single parameter `a`. As we said, the arrow function takes different syntax variations. This is how we can replicate it using an arrow function.
 
 - No function keyword anymore.
 
@@ -91,7 +98,7 @@ const square = (a) => {
 }
 ```
 
-- When a function has one parameter, parenthesis is optional.
+- When a function has one parameter, the parentheses are optional.
 
 ```js
 const square = a => {
@@ -114,7 +121,7 @@ const square = a =>
      a * a;
 ```
 
-- And finally, move everything to one line.
+- Finally, move everything to one line.
 
 ```js
 const square = a => a * a;
@@ -138,7 +145,7 @@ const square = a => {
 }
 ```
 
-Example two: A function with multiple parameters
+Example two: A function with multiple parameters.
 
 ```js
 function sum(x, y) {
@@ -146,7 +153,7 @@ function sum(x, y) {
 }
 ```
 
-Curly brackets are optional, and since we have one statement, we can do away we the return keyword.
+Curly brackets are optional, and since we have one statement, we can do away with the return keyword.
 
 ```js
 const sum = (x, y) => x + y;
@@ -154,7 +161,7 @@ const sum = (x, y) => x + y;
 
 In this case, the function accepts two parameters, `a` and `b`, and returns the expression `a+b`.
 
-Because we have more than one parameter, you need to wrap the parameters with parenthesis (`(x,y)`). Otherwise, that will be a syntax error.
+Because we have more than one parameter, you need to wrap the parameters with parentheses (`(x,y)`). Otherwise, that will be a syntax error.
 
 We can derive the following syntax.
 
@@ -164,11 +171,15 @@ We can derive the following syntax.
 (paraml, param2) => {return expression; }
 ```
 
-Because more than one parameter requires parenthesis, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. They both need parenthesis.
+Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
 
-Example three: A function with an anonymous function
+They both need parentheses.
 
-It is a function with no name. Here is an example.
+Example three: A function with an anonymous function.
+
+It is a function with no name. 
+
+Here is an example.
 
 ```js
 const anonyFunc = function () {
@@ -176,7 +187,7 @@ const anonyFunc = function () {
 };
 ```
 
-Example four: Anonymous Function with Parameters
+Example four: Anonymous Function with Parameters.
 
 ```js
 const add = function (a, b) {
@@ -184,7 +195,7 @@ const add = function (a, b) {
 };
 ```
 
-This is how we can replicate the above example using the arrow function.
+This is how we can replicate the example above using the arrow function.
 
 ```js
 const anonyFunc = () => {};
@@ -197,7 +208,7 @@ const add = (a, b) =>  a + b
 };
 ```
 
-A clear note here is that the anonymous function always uses the parenthesis.
+A clear note here is that the anonymous function always uses the parentheses.
 
 **Syntax summary.**
 
@@ -209,7 +220,9 @@ A clear note here is that the anonymous function always uses the parenthesis.
 () => { return expression; }
 ```
 
-Anonymous functions are mostly applied as an argument to another function. I.e., a callback. For example;
+Anonymous functions are mostly applied as an argument to another function. Such as a callback. 
+
+For example:
 
 ```js
 setTimeout(function () {
@@ -229,6 +242,7 @@ setTimeout(() => console.log("Executed after 3 second"), 3000);
 
 #### Arrow functions and callbacks
 The arrow function syntax is heavily seen when using [callback functions](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function).
+
 For example, let's use some of the built-in JavaScript callback functions, such as `filter` and `map`, and see what we can achieve with arrow functions.
 
 Assume you have an array of donors:
@@ -258,7 +272,7 @@ const sum = donated.reduce(function (total, amount) {
 console.log("Total donations", sum);
 ```
 
-Replicate the above logic using an arrow function.
+Replicate the logic above using an arrow function.
 
 ```js
 const donate = donated.filter((donated) => donated.age >= 18);
@@ -268,11 +282,10 @@ const sum = donated.reduce((total, amount) => total + amount.donation, 0);
 console.log("Total donations", sum);
 ```
 
-The arrow function makes the callback function compact and less verbose. This doesn't affect the code is readable.
+The arrow function makes the callback function compact and less verbose. This doesn't affect the readable code.
 
 #### Arrow function and `this` context
-
-[`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) represents an object that executes the current function. In short, `this` is defined by the function execution context. I.e., how a function is called, it refers to a global object window. I.e., when a function is being executed from a global object.
+[`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) represents an object that executes the current function. In short, `this` is defined by the function execution context. Such as how a function is called, it refers to a global object window. For example, when a function is being executed from a global object.
 
 You might have used `this` keyword in a real-life situation without realizing it. Suppose you are walking along with your mother and meet a friend along the way. This is how you would introduce your mom to your friend. ***This is my mother.***
 
@@ -294,7 +307,7 @@ const parent = {
 console.log(parent.mother());
 ```
 
-This log ***This is my mother*** to the console. But what if we replace "this" in the sentence with JavaScript `this` keyword.
+Log ***This is my mother*** to the console. But what if we replace "this" in the sentence with JavaScript `this` keyword.
 
 ```js
 // an object parent with the property mom_name
@@ -323,7 +336,7 @@ console.log(parent.mother());
 
 ***Samantha Quinn is my mother***, will be printed in the console.
 
-In this example, we used `this` keyword to refer to the `parent`. Meaning `this` refers to its `parent` object. It refers to the context where the anonymous function is called. And this will bind to the `parent` object to return the name of the mother.
+In this example, we used the `this` keyword to refer to the `parent`. Meaning `this` refers to its `parent` object. It refers to the context where the anonymous function is called. And this will bind to the `parent` object to return the name of the mother.
 
 What if we use this globally. Let's see that with examples.
 
@@ -334,15 +347,17 @@ function test() {
 test();
 ```
 
-Run the above call in a browse console. You will get something like;
+Run the above call in a browse console. You will get something like:
 
 ```js
 Window {window: Window, . . . .}
 ```
 
-![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
+![window objects](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
 
-This is because the `test()` is called from a global context, and `this` will refer to a global object. In this case, a global object window from the browser. `this` is not defined by the caller. Thus, it will turn to the default window object. Javascript engine will check if `test()` is available in the window object. If not, the engine will add it to the many available javascript window object methods.
+This is because the `test()` is called from a global context, and `this` will refer to a global object. In this case, a global object window is called from the browser. `this` is not defined by the caller. 
+
+Thus, it will turn to the default window object. The Javascript engine will check if `test()` is available in the window object. If not, the engine will add it to the many available Javascript window object methods.
 
 Let's get a little complex. What if we use the arrow function.
 
@@ -362,7 +377,7 @@ It actually makes sense. In the regular function, a function always defines its 
 
 `this` in regular function always refers to the context of the function being called. However, in the arrow function, `this` has nothing to do with the caller of the function. It refers to the scope where the function (the enclosing context) is present. That's why we get undefined.
 
-To understand `this`, let's have another example.
+To understand `this`, let's go through another example.
 
 ```js
 function User() {
@@ -392,13 +407,13 @@ John Doe
 undefined
 ```
 
-In the first case, we get the user name because `this.name` is inside `this.sayUser`, which is accessible. The reason, because `this.sayUser` is a method of object `User`.
+In the first case, we get the user name because `this.name` is inside `this.sayUser`, which is accessible. The reason is because `this.sayUser` is a method of the object `User`.
 
 On the other hand, the `this.name` inside `innerFunction` function is not accessible. It refers to the global object window where `sayUser` is not defined—thus returning `undefined`.
 
 To solve that, you would typically assign `this` to a variable that doesn't shadow `innerFunction`.
 
-For example;
+For example:
 
 ```js
 function User() {
@@ -422,9 +437,9 @@ let name = new User();
 name.sayUserName();
 ```
 
-However, when `innerFunction` is inside an arrow function, `this` will refer to the parent scope by creating `this` of its own context.
+However, when the `innerFunction` is inside an arrow function, `this` will refer to the parent scope by creating `this` of its own context.
 
-For example;
+For example:
 
 ```js
 function User() {
@@ -450,7 +465,7 @@ Let's look at the broader scope of how the arrow function binds to this keyword.
 
 Here is an example that uses the regular function.
 
-Execute the below examples with the console. You can choose to use the Google chrome console.
+Execute the examples below with the console. You can use the Google chrome console.
 
 ```js
 let animals = {
@@ -471,9 +486,11 @@ animals.printdomesticAnimals();
 
 The above example accesses the object's property `domesticAnimals` and prints the domestic animals in 3 seconds. Unfortunately, we ran into an error.
 
-![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
+![error](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
 
-`setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else. Does it refer to the
+`setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else. 
+
+Does it refer to the:
 - inner function context
 - the outer (enclosing) function context
 - the object context or
@@ -497,11 +514,13 @@ let animals = {
 animals.printdomesticAnimals();
 ```
 
-![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
+![execution context](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
 
 `this` inside `printdomesticAnimals()` points to the object `animals` with the `domesticAnimals` property. `this` inside `setTimeout()` points to the window object where property `domesticAnimals` is undefined.
 
-This is where the arrow function comes into play. They don't have their own `this` context. When used inside the outer (enclosing) function, `this` keyword will point to where the function is present. In this case, `this` will be attached to the outer context `printdomesticAnimals()` where `setTimeout()` is called. `printdomesticAnimals()` will be the enclosing context where `this` will be attached.
+This is where the arrow function comes into play. They don't have their own `this` context. When used inside the outer (enclosing) function, `this` keyword will point to where the function is present. 
+
+In this case, `this` will be attached to the outer context `printdomesticAnimals()` where `setTimeout()` is called. `printdomesticAnimals()` will be the enclosing context where `this` will be attached.
 
 ```js
 let animals = {
@@ -519,10 +538,10 @@ animals.printdomesticAnimals();
 
 When we use the arrow function, we get the results as we expected.
 
-![](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
+![inside arrow function](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
 
 #### Arrow functions with object literal
-Let's have an example that represents [JavaScrip object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+Let's have an example that represents a [JavaScript object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
 ```js
 const sayName = function(){
@@ -547,9 +566,11 @@ const sayName = () => {
 console.log(sayName().name);
 ```
 
-You should note that when we return the literal object using the arrow function cause an error. This is because JavaScript can't distinguish if the curly braces represent a block of code or an object.
+You should note that when we return the literal object using the arrow function it causes an error. This is because JavaScript can't distinguish if the curly braces represent a block of code or an object.
 
-To solve this, wrap the literal object with parenthesis. For example;
+To solve this, wrap the literal object with parenthesis. 
+
+For example:
 
 ```js
 const sayName = () => ({
@@ -560,12 +581,16 @@ console.log(sayName().name);
 ```
 
 ### When not to use arrow functions
+The arrow functions concept is great, however, they are not ideal across all functional instances. You should be keen on where to apply the arrow function. 
 
-The arrow functions concept is great; however, they are not ideal across all functional instances. You should be keen on where to apply the arrow function. For example, there are some instances that you should avoid using. They include;
+For example, there are some instances that you should avoid using. 
+
+They include:
 
 #### Arrow function can never be a method
+For example, this applies to the `mom` example we explained earlier
 
-For example, this applies to the `mom` example we explained earlier, i.e.;
+For example:
 
 ```js
 // an object parent with the property mom_name
@@ -588,9 +613,11 @@ As we said earlier, `this` inside an arrow function is equivalent to the global 
 
 Whenever an arrow function is inside an object, it will derive `this` value from the enclosing lexical scope. Lexical scope, in this case, is the global scope.
 
-`this.mom_name` in the `mother` method is equal to the `window.mom_name` in the web browser. The `window.mom_name` is `undefined` by default. Window object doesn’t have the property `mom_name`. Thus `console.log(mom. mother())` will return `undefined` as `this` inherits its eclosing context `mother` where `mom_name` is undefined.
+`this.mom_name` in the `mother` method is equal to the `window.mom_name` in the web browser. The `window.mom_name` is `undefined` by default. 
 
-To prevent the `this` value from binding to the global scope, use the regular function inside the object method as follows;
+Window object doesn’t have the property `mom_name`. Thus `console.log(mom. mother())` will return `undefined` as `this` inherits its eclosing context `mother` where `mom_name` is undefined.
+
+To prevent the `this` value from binding to the global scope, use the regular function inside the object method as follows:
 
 ```js
 // an object mom with the property mom_name
@@ -608,7 +635,6 @@ console.log(parent.mother());
 Avoid arrow functions when using a code block with methods. They can be confusing at times due to their lexical scoping. This occurs mostly on object methods, prototype methods, and class methods. `this` is scoped to the parent (window) context.
 
 #### An arrow function can never be a constructor
-
 The value `this` points to its parent does not have a [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor).
 
 ```js
@@ -620,9 +646,11 @@ console.log(user);
 
 ```
 
-When you execute, `this` will throw an error `Uncaught TypeError: User is not a constructor` because arrow functions are not constructable. However, a regular function can be `constructors`,
+When you execute, `this` will throw an error `Uncaught TypeError: User is not a constructor` because arrow functions are not constructable. 
 
-For example;
+However, a regular function can be `constructors`,
+
+For example:
 
 ```js
 function User() {
@@ -635,7 +663,6 @@ console.log(user);
 Using the `new` keyword to create an object in an arrow function will output an error.
 
 #### Click handlers
-
 Suppose I have a button `CLICK ME`.
 
 Here is the code to implement a click me button.
@@ -667,9 +694,13 @@ Here is the code to implement a click me button.
 </html>
 ```
 
-When you click the button, you get an error. But why? This means that `this` in the click event handle is undefined. And will always return undefined. Remember what we said about the arrow functions using `this`?. `this`, inside the arrow function, implies that the function does not have `this` value of its own.
+When you click the button, you get an error. But why? This means that `this` in the click event handle is undefined. And will always return undefined. 
 
-They don't define their own context since it doesn't have its own `this` context. They inherit that from the parent scope whenever you call `this`. The parent scope is the window scope. Thus `this` in the above example will reference the window object. `this` is not attached to the element we refer to. The window object doesn't have `.classList.toggle` property. Thus Javascript engine will add the `.classList.toggle` to the window object and set it to undefined. To fix these issues, you would use the regular function where `this` is bound to the element that triggers the click event.
+Remember what we said about the arrow functions using `this`?. `this`, inside the arrow function, implies that the function does not have a `this` value of its own.
+
+They don't define their own context since it doesn't have its own `this` context. They inherit that from the parent scope whenever you call `this`. The parent scope is the window scope. Thus `this` in the above example will reference the window object. 
+
+`this` is not attached to the element we refer to. The window object doesn't have `.classList.toggle` property. Thus Javascript engine will add the `.classList.toggle` to the window object and set it to undefined. To fix these issues, you would use the regular function where `this` is bound to the element that triggers the click event.
 
 ```html
 <!DOCTYPE html>
@@ -697,19 +728,21 @@ They don't define their own context since it doesn't have its own `this` context
 </html>
 ```
 
-#### Debugging may not be easy.
+#### Debugging may not be easy
 Arrow functions cannot be named. They are anonymous. Anonymous functions are labeled as anonymous during a debugging session.
 
 This doesn't give you any idea what the code block is running. When you run into issues, it may be harder to debug the root cause. When the functions have names, it's simpler to trace back to the problem. With anonymous functions, it adds a level of complexity to debugging.
 
-#### Readability takes a hit.
-Although arrow functions help in writing short and concise code, it is not necessarily readable. Most programmers are used to the traditional way of writing functions, and arrow functions change this completely. This makes code harder to read and might take a while for someone newer to grasp the code. Therefore in such circumstances, developers may choose to use regular functions rather than arrow functions. The primary objective when you compose a function is to create the purest function practicable. Meaning that the function would still return its same value. If you're using regular functions or arrow functions, it doesn't matter. It should be about writing more readable and cleaner code always.
+#### Readability takes a hit
+Although arrow functions help with writing short and concise code, it is not necessarily readable. Most programmers are used to the traditional way of writing functions, and arrow functions change this completely. This makes code harder to read and might take a while for someone newer to grasp the code. 
+
+Therefore in such circumstances, developers may choose to use regular functions rather than arrow functions. The primary objective when you compose a function is to create the purest function practicable. Meaning that the function would still return its same value. If you're using regular functions or arrow functions, it doesn't matter. It should be about writing readable and cleaner code always.
 
 ### Final Notes
 Arrow functions save you some keystrokes when working with the functions. They are especially useful for inline functions, as they pass along the outer `this` context.
 
 With an arrow function:
-- No more function keywords, parenthesis are optional and curly braces are optional.
+- No more function keywords are need, and parenthesis are optional as well as curly braces.
 - Arrow functions make code shorter, more concise, and less verbose.
 - The keyword return would indeed be optional. The Arrow function has an implicit return. Thus no curly braces. If you are using the curly braces, you have to use the return statement.
 - Arrow functions are not attached to an identifier (the function name). To call or reuse them, your need to assign them to a variable.
