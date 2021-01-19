@@ -409,7 +409,7 @@ Node    Distance from 0
 6        19
 ```
 
-That's all for. We have an idea on how Dijkstra's Algorithm works.
+That's all for now. We have an idea on how Dijkstra's Algorithm works.
 Hope ypu can work with different graphs and language of your own.
 
 Have a good one.
