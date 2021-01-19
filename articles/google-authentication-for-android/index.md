@@ -103,7 +103,7 @@ Add the following dependencies to your **app** module `build.gradle` and sync th
 
 In our `MainActivity.java` we will add the following lines of code.
 
-First, initialize the views for the authentication process.
+First, initialize the views for the authentication process.c
 
 ```java
 //Initializing the views required for the Authentication process.

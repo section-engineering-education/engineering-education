@@ -25,6 +25,8 @@ So you've created your [first NodeJS web app](/engineering-education/static-site
 
 To be able to use the API, we first need to obtain some keys. This, among other things, allows the API provider to monitor your usage and ensure you are within their terms of services.
 
+**Note:** Unfortunately as of 8th December 2020, the Goodreads APIs is being deprecated with no new API keys being issued so new developers cannot use it. However, this article is still useful as an in-depth beginner's guide to working with APIs since the process is similiar no matter which API you use. But if you're looking for a guide about an active API you can use in your next project, watch out for Getting to Grips with APIs - Using the Spotify API.
+
 First, you need to have a Goodreads account. Register on the Goodreads [website](https://www.goodreads.com) if you haven't already done so.
 
 Second, you need to register your app to get the key. Go to [goodreads.com/api/keys](https://www.goodreads.com/api/keys) and fill in the name of the app and the company name (which can just be your name.)
