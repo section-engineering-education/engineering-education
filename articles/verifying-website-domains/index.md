@@ -96,7 +96,7 @@ _Screenshot_:
 In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
 
 
-This is a good opportunity to use basic Python coding skills in for-loops in square brackets held within a variable to iterate and display all results.
+This is a good opportunity to use basic Python coding skills in for-loops held within a variable to iterate and display all results.
 
 Input:
 
