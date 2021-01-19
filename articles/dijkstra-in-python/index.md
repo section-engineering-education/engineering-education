@@ -3,6 +3,8 @@
 ![hero image](hero.jpg)
 
 In this article, we are going to talk about how Dijkstra's algorithm finds the shortest path between nodes in a network and use a Python script to illustrate the same.
+[Click here](https://www.section.io/engineering-education/network-routing-final/) to view more about network routing.
+
 A basic understanding of Python and its OOP concepts is needed.
 
 We shall first talk about basic graph concepts because we are going to use them in this article.
