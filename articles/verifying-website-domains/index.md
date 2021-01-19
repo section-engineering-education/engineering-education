@@ -28,6 +28,7 @@ _Knowledge_
 * Working with 'PATH' or directories
 * Run PowerShell as Administrator
 * Command Prompts and its structures
+* Element of Websites (terms include but not limited to: layers, domains, and hosting)
 * Webpage scripting (HTML or JavaScript)
 
 --
@@ -66,7 +67,7 @@ _Screenshot_:
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 
-Because the domain name is removed due to unoriginality, error messages are displayed.
+Because the domain name was removed due to unoriginality, error messages are displayed.
 
 
 Shown below is a functional and valid output of the code since the domain is active and not removed.
@@ -129,7 +130,7 @@ Below, there are further options within the DNS function revealing additional in
 
 Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", "MX".
 
-NS for Nameserver information Input:
+"NS" for Nameserver information Input:
 
 ```python
 ip = "69.195.108.249"
@@ -145,7 +146,7 @@ Output:
 [<DNS IN NS rdata: ns3.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns4.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns1.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns2.bdm.microsoftonline.com.>]
 ```
 
-TXT additional intenet properties Input:
+"TXT" for additional intenet properties Input:
 
 ```python
 ip = "69.195.108.249"
@@ -161,7 +162,7 @@ Output:
 [<DNS IN TXT rdata: "google-site-verification=34Jb2Tx28xLGRll4nwbUOq6dyu-P_VOD3OcO9qqDTKo">, <DNS IN TXT rdata: "mscid=w87OZ8XPKbefuE8BURYoqwPFO1CdSFjEo5RIqw7JWEL/fy7vVSsP/Q6Slgu5MYk2ihGpG6SHuF70r+a7X9J8cw==">, <DNS IN TXT rdata: "v=spf1 ip4:72.139.55.134 include:spf.protection.outlook.com -all">]
 ```
 
-MX for digital mailing information Input:
+"MX" for digital mailing information Input:
 
 ```python
 ip = "69.195.108.249"
@@ -251,6 +252,8 @@ _Make sure to right-click and select the 'Run as Administrator' option before ru
 
 Windows PowerShell is structured differently. There are subcategorized features to select specific content in a website language. It is essential to select and include '.Content' at the end of the command.
 
+As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
+
 Input:
 
 ```PowerShell
@@ -278,9 +281,8 @@ _Screenshot_:
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
 
-As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
 
-Scroll down to the 'primary' layer to display all associated domains with the IP address.
+Scroll down to the 'text-primary' class layer to display all associated domains with the IP address.
 
 Partial Output:
 
@@ -370,7 +372,7 @@ Domains and websites in general have components that identify itself to initiate
 **Here are a few website components:**
 * Overall DNS records
 * Extension purchases are readily available in a wide variety of selections
-* Website hosting providers can offer e-mail addresses for any purpose with the website domain
+* Website hosting providers and its ability to offer e-mail addresses for any purpose with the website domain
 
 These components can be combined and modified to replicate an already existing website domain or create a completely unique website domain.
 
