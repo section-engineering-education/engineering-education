@@ -37,16 +37,17 @@ In this guide, we'll show you how to create a particle animation background effe
 Tsparticles supports CDN hosting to load particles. CDN includes script tags and CDN `src`, as these shown below.
 
 ```js
-<script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.5/tsparticles.min.js"> </script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"> </script>
 ```
 
 Head out to [tsparticles CDN](https://cdnjs.com/libraries/tsparticles) and check the latest CDN version to take advantage of any updated features.
 
 #### Using NPM
-If you are a Node.js user and love using `require()` and `import{}` in your project, tsparticles is available in the [npm registry](https://www.npmjs.com/package/tsparticles).
+If you are a Node.js user and love using `require()` or `import{}` in your project, tsparticles is available in the [npm registry](https://www.npmjs.com/package/tsparticles).
 
 
-Run `npm install tsparticles` and use `require()` in `.js` files.
+Run `npm install tsparticles` and use `require()` or ES6 `import` in `.js` files.
+
 ```js
 const tsParticles = require("tsparticles")
 ```
@@ -56,7 +57,7 @@ import { tsParticles } from "tsparticles"
 ```
 
 #### JavaScript Frameworks
-If you love working with a JavaScript frameworks such as React Vue, Agular and jQuery, head [here](https://particles.matteobruni.it/) and choose the framework of your choice to integrate with tsparticles.
+If you love working with a JavaScript frameworks such as React, Vue, Angular, Svelte or jQuery, head [here](https://particles.matteobruni.it/) and choose the framework of your choice to integrate with tsparticles.
 
 ### File Setup
 Create three files, named `index.html` `app.css` and `app.js`.
@@ -76,7 +77,7 @@ In your `index.html` file, add tsparticles `div` DOM. Add CDN, and import `app.c
    <!-- tsparticles div dom -->
     <div id="tsparticles"></div>
    <!-- Import cdn -->
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.5/tsparticles.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"></script>
 
     <!-- Import app.js from root directory -->
     <script src="/app.js">
@@ -105,23 +106,21 @@ That's all for `app.css` and `index.html`.
 The aspect properties of the particles are specified on the `.js` file. This is where you manipulate and play with the particles until you get the desired particle movements. Specify both the `tsparticles` and the `div` element we defined earlier in the `index.html` file.
 
 ```js
-/* tsParticles.load("tsparticles", {
-.load(@dom-id, @path-json, @callback (optional)); */
-tsParticles.load("tsparticles", {}
+/* tsParticles.load(@dom-id, @options); */
+tsParticles.load("tsparticles", {})
 ```
 
 First, specify the number of particles you would like to have move on your background canvas.
 
 ```js
-/* tsParticles.load("tsparticles", {
-.load(@dom-id, @path-json, @callback (optional)); */
+/* tsParticles.load(@dom-id, @options); */
 tsParticles.load("tsparticles", {
   particles: {
     number: {
       value: 200
     },
   }
-})
+});
 ```
 
 Define the number of particles you would like to show within the parameter values and pass a number to it. I choose to use 400; it mainly depends on the kind of movement you want to build in the animation. Load the `index.html` and 400 particles will float onto your canvas.
@@ -147,8 +146,8 @@ The particle we created are motionless at the moment. Right below the `number:` 
 
 ```js
 move: {
-      enable: true
-    },
+	enable: true
+},
 ```
 
 We need to enable motion to `true`. We then save the file. A live server will reload the page, and you'll now notice the particles are moving around.
@@ -161,7 +160,7 @@ By adding the code snippet below we will have all the particles in one uniform c
 
 ```js
 color: {
-    value: "#ff0000"
+	value: "#ff0000"
 },
 ```
 
@@ -170,7 +169,7 @@ Particles can have different colors as well, the color value can take an array o
 
 ```js
 color: {
-value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"],
+	value: ["#5bc0eb", "#fde74c", "#9bc53d", "#e55934", "#fa7921"],
 },
 ```
 
@@ -179,7 +178,7 @@ Passing a random value, tsparticles can give the particles randomized colors. Wi
 
 ```js
 color: {
-    value: "random ",
+	value: "random ",
 },
 ```
 
@@ -187,12 +186,12 @@ Let's animate the tsParticles to have a beautiful transforming colored animation
 
 ```js
 color: {
-      value: "#ff0000",
-      animation: {
-        enable: true,
-        speed: 40,
-        sync: true
-      }
+	value: "#ff0000",
+	animation: {
+		enable: true,
+      speed: 40,
+      sync: true
+  }
 },
 ```
 
@@ -201,17 +200,19 @@ The particles will load on the default circular shape. Other common shapes inclu
 
 ```js
 "circle"
-"edge"
+"edge" / "square"
 "triangle"
 "polygon"
 "star"
+"char" / "character"
+"image" / "images"
 ```
 
 We can specify it with:
 
 ```js
 shape: {
-    type: "circle",
+	type: "circle",
 },
 ```
 
@@ -221,7 +222,8 @@ Example snippet below:
 
 ```js
 polygon: {
-    nb_sides: 5
+	sides: 5
+}
 ```
 
 Just like the colors, we can add an array of shapes to have multiple shaped particles.
@@ -236,20 +238,20 @@ Tsparticles allows you to choose an image or an array of images as a particle. F
 
 ```js
 shape: {
-    type: "image",
-      image: [{
-          src: "https://cdn130.picsart.com/262323691001212.png?r1024x1024",
-          width: 202,
-          height: 200},{
-          src: "http://pngimg.com/uploads/soap_bubbles/soap_bubbles_PNG72.png",
-          width: 1153,
-          height: 1080},{
-          src:
-            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/54e847be-8444-4485-9d2f-0d51a9ab6b3f/dcruv7h-9c57c565-e380-4d20-9413-d743c35c83a4.png/v1/fill/w_894,h_894,strp/transparent_rainbow_bubble_prop_png_3_by_lxc808_dcruv7h-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzU0ZTg0N2JlLTg0NDQtNDQ4NS05ZDJmLTBkNTFhOWFiNmIzZlwvZGNydXY3aC05YzU3YzU2NS1lMzgwLTRkMjAtOTQxMy1kNzQzYzM1YzgzYTQucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.laWMbla12KsLhf1aJHcWGzVyHxfciBK84P_uzOZSKTs",
-          width: 894,
-          height: 894
-        }
-      ]
+	type: "image",
+	image: [{
+		src: "https://cdn130.picsart.com/262323691001212.png?r1024x1024",
+		width: 202,
+		height: 200
+	}, {
+		src: "http://pngimg.com/uploads/soap_bubbles/soap_bubbles_PNG72.png",
+		width: 1153,
+		height: 1080
+	},{
+		src: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/54e847be-8444-4485-9d2f-0d51a9ab6b3f/dcruv7h-9c57c565-e380-4d20-9413-d743c35c83a4.png/v1/fill/w_894,h_894,strp/transparent_rainbow_bubble_prop_png_3_by_lxc808_dcruv7h-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzU0ZTg0N2JlLTg0NDQtNDQ4NS05ZDJmLTBkNTFhOWFiNmIzZlwvZGNydXY3aC05YzU3YzU2NS1lMzgwLTRkMjAtOTQxMy1kNzQzYzM1YzgzYTQucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.laWMbla12KsLhf1aJHcWGzVyHxfciBK84P_uzOZSKTs",
+		width: 894,
+		height: 894
+	}]
 },
 ```
 
@@ -260,14 +262,14 @@ We can modify the shape size.
 
 ```js
 size: {
-      value: 10,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 20,
-        size_min: 0.1,
-        sync: false
-    }
+	value: 10,
+	random: true,
+	animation: {
+		enable: true,
+		speed: 20,
+		minimumValue: 0.1,
+		sync: false
+	}
 },
 ```
 
@@ -279,35 +281,35 @@ At this point, the `app.js` should look close to this code sample below.
 
 ```js
 tsParticles.load("tsparticles", {
-  particles: {
-    number: {
-      value: 400
-    },
-    color: {
-      value: "#344455",
-      animation: {
-        enable: true,
-        speed: 40,
-        sync: false
-      }
-    },
-    shape: {
-      type: "circle",
-      },
-    size: {
-      value: 6,
-      random: true,
-      anim: {
-        enable: true,
-        speed: 20,
-        size_min: 0.1,
-        sync: false
-      }
-    },
-    move: {
-      enable: true,
-    },
-  }});
+	particles: {
+		number: {
+			value: 400
+		},
+		color: {
+			value: "#344455",
+			animation: {
+				enable: true,
+				speed: 40,
+				sync: false
+			}
+		},
+		shape: {
+			type: "circle",
+		},
+		size: {
+			value: 6,
+			random: true,
+			animation: {
+			enable: true,
+			speed: 20,
+			minimumValue: 0.1,
+			sync: false
+		},
+		move: {
+			enable: true,
+    	},
+	}
+});
 ```
 
 If you serve `index.html`, you should be seeing a background close to the samples below.
@@ -319,41 +321,42 @@ If you serve `index.html`, you should be seeing a background close to the sample
 ![Bubbled Particles](/engineering-education/javascript-particles-effect-with-tsparticles/bubbled-image.gif)
 
 ### Particle Linking
-The next big thing we will go over is linking a particle to the nearest neighboring particles to create a connection between the particle movement. When `line_linked:` is enabled to true, every particle will be connected to the most relative adjacent particle.
+The next big thing we will go over is linking a particle to the nearest neighboring particles to create a connection between the particle movement. When `links:` is enabled to true, every particle will be connected to the all the adjacent particles.
 
 The linking line takes additional values such as distance. Distance specifies the range at which a particle should link to another particle. Customize the link by passing the color, opacity, and width parameters.
 
 ```js
-line_linked: {
-      enable: true,
-      distance: 100,
-      color: "#fff",
-      opacity: 0.4,
-      width: 1
+links: {
+	enable: true,
+	distance: 100,
+	color: "#fff",
+	opacity: 0.4,
+	width: 1
 },
 ```
 
 ![Particle Linking](/engineering-education/javascript-particles-effect-with-tsparticles/linked-particles.gif)
 
 ### Interactivity
-One more thing I would like to add, is that the particles' interactivity with screen movements, such as onclick and onhover events. This will tell the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on an event detection. These modes specify the behaviors of the events.
+One more thing I would like to add, is that the particles' interactivity with screen movements, such as onClick and onHover events. This will tell the particle what to do whenever onscreen interaction is detected. Each event takes a parameter mode that defines how the particles will behave on an event detection. These modes specify the behaviors of the events.
 
 The modes include:
-- Push­ - add more particles. Specified with `particles_nb` (the number of particles to add).
+- Push­ - add more particles. Specified with `quantity` (the number of particles to add).
 - Bubble - expand particles on a specified range.
-- Remove - delete or remove particles on onclick. Specified with `particles_nb` (the number of particles to remove).
+- Remove - delete or remove particles on onClick. Specified with `quantity` (the number of particles to remove).
 - Repulse - pushes particles away to a radius.
-- Grab - connect the nearest particle in a specified radius. This is only applicable with onhover.
+- Grab - connect the particles and mouse in a specified radius. This is only applicable with onHover.
+- Connect - connect particles between themself in a specified radius. This is only applicable with onHover
 
 ```js
 interactivity: {
-    detect_on: "canvas",
+    detectsOn: "canvas",
     events: {
-      onhover: {
+      onHover: {
         enable: true,
         mode: "repulse"
       },
-     onclick: {
+     onClick: {
         enable: true,
         mode: "bubble"
       },
@@ -362,7 +365,7 @@ interactivity: {
     modes: {
       grab: {
         distance: 400,
-        line_linked: {
+        links: {
           opacity: 1
         }
       },
@@ -376,10 +379,10 @@ interactivity: {
         distance: 200
       },
       push: {
-        particles_nb: 4
+        quantity: 4
       },
       remove: {
-        particles_nb: 2
+        quantity: 2
       }
     }
   },
@@ -407,14 +410,14 @@ tsParticles.load("tsparticles", {
       size: {
       value: 5,
       random: true,
-      anim: {
+      animation: {
         enable: true,
         speed: 16,
-        size_min: 0.1,
+        minimumValue: 0.1,
         sync: false
       }
     },
-      line_linked: {
+      links: {
       enable: true,
       distance: 100,
       color: "random",
@@ -426,13 +429,13 @@ tsParticles.load("tsparticles", {
     },
   },
  interactivity: {
-    detect_on: "canvas",
+    detectsOn: "canvas",
     events: {
-      onhover: {
+      onHover: {
         enable: true,
         mode: "repulse"
       },
-      onclick: {
+      onClick: {
         enable: true,
         mode: "bubble"
       },
@@ -441,7 +444,7 @@ tsParticles.load("tsparticles", {
     modes: {
       grab: {
         distance: 400,
-        line_linked: {
+        links: {
           opacity: 1
         }
       },
@@ -455,14 +458,14 @@ tsParticles.load("tsparticles", {
         distance: 200
       },
       push: {
-        particles_nb: 4
+        quantity: 4
       },
       remove: {
-        particles_nb: 2
+        quantity: 2
       }
     }
   },
-  retina_detect: true,
+  detectRetina: true,
 });
 ```
 
@@ -700,14 +703,14 @@ tsParticles.load("tsparticles", {
       size: {
       value: 5,
       random: true,
-      anim: {
+      animation: {
         enable: true,
         speed: 16,
-        size_min: 0.1,
+        minimumValue: 0.1,
         sync: false
       }
     },
-      line_linked: {
+      links: {
       enable: true,
       distance: 100,
       color: "random",
@@ -719,13 +722,13 @@ tsParticles.load("tsparticles", {
     },
   },
  interactivity: {
-    detect_on: "canvas",
+    detectsOn: "canvas",
     events: {
-      onhover: {
+      onHover: {
         enable: true,
         mode: "repulse"
       },
-      onclick: {
+      onClick: {
         enable: true,
         mode: "bubble"
       },
@@ -734,7 +737,7 @@ tsParticles.load("tsparticles", {
     modes: {
       grab: {
         distance: 400,
-        line_linked: {
+        links: {
           opacity: 1
         }
       },
@@ -748,14 +751,14 @@ tsParticles.load("tsparticles", {
         distance: 200
       },
       push: {
-        particles_nb: 4
+        quantity: 4
       },
       remove: {
-        particles_nb: 2
+        quantity: 2
       }
     }
   },
-  retina_detect: true,
+  detectRetina: true,
 });
 ```
 
