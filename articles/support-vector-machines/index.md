@@ -14,24 +14,24 @@ images:
   - url: /engineering-education/support-vector-machines/hero.jpg
     alt: Supervised Learning Algorithms image
 ---
-Support vector machines are machine learning methods used mostly to solve classification problems. We can also use them to solve regression and outlier detection problems. Support vector machines perform well even with large datasets with a large number of features.
+Support vector machines are machine learning methods used mainly to solve classification problems. We can also use them to solve regression and outlier detection problems. Support vector machines perform well even with large datasets with a large number of features.
 <!--more-->
 ### Introduction
-They also don't consume a lot of memory since they only use a subset of the training data in determining the decision function.
+They don't consume a lot of memory, since they only use a subset of the training data in determining the decision function.
 
 Support vector machines separate the dataset into classes using the  **maximum margin hyperplane (MMH)**.
 
 ### Prerequisites
 To follow along, you are required to have an understanding of linear algebra, numpy, and scikit-learn.
- **Definition of terms**
- 1. **Support Vectors**: They are the data points closest to the hyperplane that helps decide the maximum margin. 
- 2. **Hyperplane**: It's defined as the plane that separates the data into different classes.
- 3. **Margin**: This is the path or gap between two lines separating different classes.
- 
 
+**Definition of terms**
+1. **Support Vectors**: They are the data points closest to the hyperplane that helps decide the maximum margin. 
+2. **Hyperplane**: It's defined as the plane that separates the data into different classes.
+3. **Margin**: This is the path or gap between two lines separating different classes.
+ 
 The following diagram gives a visual representation of the support vector machine concept.
 
- ![terms](/engineering-education/support-vector-machines/support-vector-machines.jpg)
+![terms](/engineering-education/support-vector-machines/support-vector-machines.jpg)
 
 ***mathematical formulation***
 
@@ -61,7 +61,7 @@ $$w.x + b >=1$$
 
 $$w.x + b <=-1$$
 
-introducing  $$y_i$$ such that $$y_i = +-1$$ for +ve positive samples and -ve for negative samples.
+introducing $$y_i$$ such that $$y_i = +-1$$ for +ve positive samples and -ve for negative samples.
 
 *for the negative class* 
 
