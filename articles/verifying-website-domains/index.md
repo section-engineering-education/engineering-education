@@ -86,7 +86,7 @@ IP: 69.195.108.249
 
 _Screenshot_:
 
-![socket-valid](section-io/engineering-education/verifying-website-domains/socket2.jpg)
+![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
 --
 
