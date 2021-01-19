@@ -206,6 +206,6 @@ JPA CASCADE types control how state changes are cascaded from the parent object 
 
 
     ### Conclusion
-    Now that you have learned how to model the database using Spring Data JPA, implement the JPA repositories, and then create a REST controller for our recipe application.
+    Now that you have learned how to model the database using Spring Data JPA, implement the JPA repositories, and then create a REST controller for our recipe application. Source code for the appliaction can be downloaded [here](https://github.com/paulodhiambo/recipe)
 
     Happy coding
