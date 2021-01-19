@@ -31,7 +31,7 @@ myfunc a b = a + 1
 ```
 
 Example use:
-```
+```bash
 myfunc 2 (1 / 0)
 => 3
 ```
