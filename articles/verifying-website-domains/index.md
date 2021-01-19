@@ -15,7 +15,7 @@ At the end of this tutorial, it is possible to have a good grasp on retrieving D
 
 **Prerequisites**
 
-_Software_
+_Software and Hardware_
 * Windows Operating System (Version 10)
 * Python 3.8.5 Shell
 * Windows PowerShell
@@ -58,6 +58,8 @@ Traceback (most recent call last):
 NameError: name 'ip' is not defined
 ```
 
+_Screenshot_:
+
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 
@@ -65,8 +67,6 @@ Because the domain name is removed due to unoriginality, error messages are disp
 
 
 Shown below is a functional and valid output of the code since the domain is active and not removed.
-
-![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
 Input:
 
@@ -82,13 +82,18 @@ Output:
 ```python
 IP: 69.195.108.249
 ```
+
+
+_Screenshot_:
+
+!([socket-valid]/engineering-education/verifying-website-domains/socket2.jpg)
+
 --
 
 In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
 
-![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
-This is a good opportunity to use basic Python coding skills in for-loops to iterate and display all results.
+This is a good opportunity to use basic Python coding skills in for-loops in square brackets held within a variable to iterate and display all results.
 
 Input:
 
@@ -108,6 +113,11 @@ Output:
 ```python
 [<DNS IN PTR rdata: 69-195-108-249.unifiedlayer.com.>]
 ```
+
+_Screenshot_:
+
+![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
+
 The PTR value determines if the domain can resolve.
 
 Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain.
@@ -116,7 +126,7 @@ Below, there are further options within the DNS function revealing additional in
 
 Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", "MX".
 
-_NS for Nameserver information_
+_NS for Nameserver information Input_:
 
 ```python
 ip = "69.195.108.249"
@@ -132,8 +142,7 @@ Output:
 [<DNS IN NS rdata: ns3.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns4.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns1.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns2.bdm.microsoftonline.com.>]
 ```
 
-_TXT additional intenet properties_
-input:
+_TXT additional intenet properties Input_:
 
 ```python
 ip = "69.195.108.249"
@@ -143,13 +152,13 @@ ans = [item for item in myAnswers]
 ans
 ```
 
+Output:
+
 ```python
 [<DNS IN TXT rdata: "google-site-verification=34Jb2Tx28xLGRll4nwbUOq6dyu-P_VOD3OcO9qqDTKo">, <DNS IN TXT rdata: "mscid=w87OZ8XPKbefuE8BURYoqwPFO1CdSFjEo5RIqw7JWEL/fy7vVSsP/Q6Slgu5MYk2ihGpG6SHuF70r+a7X9J8cw==">, <DNS IN TXT rdata: "v=spf1 ip4:72.139.55.134 include:spf.protection.outlook.com -all">]
 ```
 
-_MX for mailing information_
-
-Input:
+_MX for mailing information Input_:
 
 ```python
 ip = "69.195.108.249"
@@ -158,12 +167,14 @@ myAnswers = myResolver.resolve('massiveinsights.com', "MX")
 ans = [item for item in myAnswers]
 ans
 ```
+
+Output:
+
 ```python
 [<DNS IN MX rdata: 0 massiveinsights-com.mail.protection.outlook.com.>]
 ```
 
-
-
+_Screenshots:_
 
 
 ![dns-txt-mx](/engineering-education/verifying-website-domains/dns-ptr.jpg)
@@ -193,7 +204,11 @@ Domain creation date: None
 Expiration date: None
 ```
 
+_Screenshot_:
+
+
 ![whois-invalid](/engineering-education/verifying-website-domains/whois-invalid.jpg)
+
 
 Null values would be an indication that modifications were made during the development of the website.
 
@@ -218,6 +233,9 @@ WHOIS server: whois.godaddy.com
 Domain creation date: 2012-06-04 23:22:58
 Expiration date: 2021-06-04 23:22:58
 ```
+
+_Screenshot_:
+
 
 ![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
@@ -251,11 +269,17 @@ Partial Output:
     <meta name="description" content="careers-massiveinsights.works (hosted on hostinger.com) details, including IP, backlinks, redirect information, and reverse IP shared hosting data">
 ```
 
+_Screenshot_:
+
+
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
+
 
 As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
 
 Scroll down to the 'primary' layer to display all associated domains with the IP address.
+
+Partial Output:
 
 ```PowerShell
 <a href="/ip/45.88.197.212" class="text-primary">Show All &rarr;</a>
@@ -328,6 +352,10 @@ Scroll down to the 'primary' layer to display all associated domains with the IP
             </div>
 ```
 
+
+_Screenshot_:
+
+
 ![power-curl-domains](/engineering-education/verifying-website-domains/power-curl-domains.jpg)
 
 ---
@@ -337,7 +365,7 @@ When confronted with a domain that may appear authentic and genuine, it might be
 Domains and websites in general have components that identify itself to initiate internet presence.
 
 **Here are a few website components:**
-* Nameservers for DNS parking
+* Overall DNS records
 * Extension purchases are readily available in a wide variety of selections
 * Website hosting providers can offer e-mail addresses for any purpose with the website domain
 
@@ -353,6 +381,8 @@ These components can be combined and modified to replicate an already existing w
 
 ---
 Try the tutorial out next time a suspicious website domain crosses paths while using the internet, the results can be fascinating.
+
+It can possibly protect individuals and/or groups from the dark web.
 
 
 --
