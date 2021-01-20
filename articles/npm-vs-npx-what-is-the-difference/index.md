@@ -263,3 +263,6 @@ Here is some common comparison summary between NPX and NPM
 NPX is a great tool that you should try out. It will help you to avoid NPM dependencies and versioning. Above all, you get to execute packages without having to install them.
 
 I hope this guide helped you understand the differences between NPM and NPX and understand some major use cases of NPX.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
