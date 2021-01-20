@@ -1,6 +1,23 @@
-If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/npm-vs-npx/
+title: NPM vs NPX 
+description: This article will explain the differences between NPM (Node Package Manager) and NPX (Node Package Executor).
+author: joseph-chege
+date: 2020-12-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-**Table of Contents**
+  - url: /engineering-education/npm-vs-npx/hero.png
+    alt: NPM vs NPX Image
+---
+If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. With the progressive growth of Node.js, NPM has introduced a new tool called NPX. Although NPX is bundled with NPM, they both treat packages differently. This guide will help you learn and contrast the difference between NPM and NPX.
+<!--more-->
+
+### Table of Contents
 
 - [What is NPM?](#what-is-npm)
 - [What is NPX?](#what-is-npx)
@@ -241,7 +258,7 @@ npx https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5
 
 NPX will point to the remote `.js` file, download it temporarily, execute it and it will give you the result in the console.
 
-![Execute Gist Code with NPX](/engineering-education/npm-vs-npx-what-is-the-difference/execute-gist-code-with-npx.jpg)
+![Execute Gist Code with NPX](/engineering-education/npm-vs-npx/execute-gist-code-with-npx.jpg)
 
 > Note, it is advisable to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped in malicious code.
 
