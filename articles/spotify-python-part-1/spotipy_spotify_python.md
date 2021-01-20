@@ -132,5 +132,6 @@ Voila! If you want to learn about other spotipy functions, check out their [webs
 ### Conclusion
 
 In the next tutorial, we will start analyzing our data, and to do this, we have to beat Spotify's data limit, which restricts the number of items the API can call. For now, play around with other spotipy functions, so you are comfortable with the API.  
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
