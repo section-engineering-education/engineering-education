@@ -10,7 +10,7 @@ A variable is a storage location paired with a name, which contains some known o
 <data type> <variable_name> = value;
 ```
 
-Data types are used to classify the various types of variables and state the size of data the variable is supposed to store.
+Data types are used to specify the type of variable that the variable can hold and state the size of data the variable is supposed to store.
 
 The different data types are:
 
@@ -18,17 +18,18 @@ The different data types are:
 
 The `byte` data type is used to store whole numbers from -128 to 127.
 
-**Example**
+**Example**:
+
 ```C#
 byte number = 75;
-console.WiteLine(number);//prints out 75
 ```
 
 - Int
 
 The `int` (integer) data type is used to store whole numbers from -2,147,483,648 to 2,147,483,647.
 
-**Example**
+**Example**:
+
 ```C#
 int a = 5; 
 ```
@@ -36,10 +37,11 @@ int a = 5;
 - Long
 
 The `long` data type allows you to store whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807.
+
 This data type is used when a number is large to be stored in the *int* data type. We should add a letter **L** at the end of the long number to specify it is a long number.
 
+**Example**:
 
-**Example**
 ```C#
 long b = 50000000000000L;
 ```
@@ -48,7 +50,8 @@ long b = 50000000000000L;
 
 The `float` store a fraction number and a decimal number of up to 6 decimal digits. We should add an **F** at the end of the decimal number to specify that it is a float number.
 
-**Example**
+**Example**:
+
 ```C#
 float c = 0.64737F;
 ```
@@ -57,17 +60,20 @@ float c = 0.64737F;
 
 The `double` data type stores a fraction and a decimal number of up to 15 decimal digits.
 
-**Example**
+**Example**:
+
 ```C#
 double d = 4.847376474;
 ```
+
 *Note*: Double data type stores many decimal numbers than float. It is advisable to use double in most of the calculations.
 
 - Char 
 
 The `char` type is used to store **one** character.
 
-**Example**
+**Example**:
+
 ```C#
 char letter='A';
 ```
@@ -75,18 +81,21 @@ char letter='A';
 
 The `string` data type is used to store **many** characters.
 
-**Example**
+**Example**:
+
 ```C#
 string name="My name is Geoffrey";
 ```
+
 - Bool
 
 The `bool` data type is used to store **true** or **false** value.
 
-**Example**
+**Example**:
+
 ```C#
-bool myBoolean=true;
-bool nextBoolean=false;
+bool trueBoolean=true;
+bool falseBoolean=false;
 ```
 
 ### C# Identifiers
@@ -114,7 +123,7 @@ int a = 5;
 Console.WriteLine(a);
 ```
 
-Let's define a variable and assign a value to it later..
+Let's define a variable and assign a value to it later.
 
 ```C#
 int b;
@@ -137,16 +146,6 @@ string name = "Sam";
 Console.WriteLine(name);
 ```
 
-### Examples of C# variables
-
-```C#
-int a = 5;
-char letter = 'A';
-double num = 3.33;
-string text = "Hello World";
-bool isCsEasy = true;
-```
-
 ### Constant variables
 
 The `const` keyword is used to declare variables whose value cannot be changed (it is a read-only value). 
@@ -159,7 +158,7 @@ Here, the `num` value cannot be changed:
 
 ```C#
 const int num = 5;
-num = 9;//It will display an Error
+num = 9; // It will throw an Error
 ```
 
 ### Displaying variables
@@ -183,7 +182,7 @@ Console.WriteLine(c);//prints out 7
 
 This will take the value assigned to *a* (which is 2)and add to the value of *b* (which is 5) and `Console.WriteLine()` will print out the answer as 7. 
 
-Similarly, you can add two variables of data type **string**:
+Similarly, you can add two variables of data type **string** and that will concatnate both the strings.
 
 ```C#
 string firstName = "Mike";
@@ -192,21 +191,12 @@ string fullname =  firstName + secondName;
 Console.WriteLine(fullname);//prints out MIke Sam
 ```
 
-### Declaring multiple variables
+### Control Statements
 
-```C#
-int a,b,c;
-a = 2;
-b = 5;
-c = 7
-Console.WriteLine(a + b + c);//prints out the answer as 14
-```
-
-### Control Statements 
-Control statements help to make decisions in a program, loop(iterate) through the conditions, select and change the flow of the conditions. We are going to look at decision-making or selection statements.
+Control statements help to make decisions in a program, loop(iterate) through statements, select and change the flow of the conditions. We are going to look at decision-making or selection statements.
 
 There are three types of control statements in C#:
->
+
 - Decision making statements or Selection statements
 - Iteration statements
 - Jump statements
@@ -214,8 +204,12 @@ There are three types of control statements in C#:
 We will look at decision making statements or selection statements. You can read more on selection statements, jump statements and iteration statements from [here](https://freeasphosting.net/csharp-tutorial-control-statements.html)
 
 ### Decision-making or Selection statements
-In this control statements,we need to specify a condition that will be evaluated by the program.
-The condition is evaluated as true or false.We use `if-else statement`, `else if statement` and `switch-case statement`.  
+
+In decision-making statements, we need to specify a condition that'll be evaluated by the program.
+
+If the condition is evaluated as true, the specified code block will be executed. If not, we can either specify another code block that must be executed or not do anything. 
+
+We use `if-else statement`, `else if statement` and `switch-case statement` to perform these actions.
 
 **Syntax of if-else Statement**:
 
@@ -254,7 +248,7 @@ From the program above, we have set our age as 18. Thus, our *if condition* is e
 
 ### Else if Statement
 
-We use this statement when we have multiple conditions to be tested. It is executed when the `if condition` is `false`.
+We use this statement when we have multiple conditions to be tested. The `else-if` condition is executed if the `if condition` is evaluvated as `false`.
 
 **Syntax of the Else if Statement**:
 
@@ -293,6 +287,7 @@ if (age < 10)
 ```
 
 From the program above, we have set our age as 18. Thus, our *if condition* is evaluated to **false**. The program moves to the next condition, *else if condition* which is also evaluated to **false**.
+
 Our program executes the else statement since both if and the else if conditions are **false**.
 
 ### Switch-case Statement
@@ -303,70 +298,69 @@ We use the `switch` statement to test a variable and compare it to multiple case
 
 ```C#
 switch(expression) 
-  {
-    case 1:
-      // code block
-      break;
-    case 2:
-      // code block
-      break;
-    default:
-      // code block
-      break;
-  }
+{
+  case 1:
+    // code block
+    break;
+  case 2:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}
 ```
 
 When the expression matches with one of the cases, that particular code block is executed. The **break** statement is used to exit from the code block. The **default** condition is executed when none of the cases match with the expression.
 
-
-### Example of the switch-case Statement
+Example:
 
 ```C#
 //The program gets input from the user and determines the day as per the number entered by the user
- using System;
-  namespace hello
-    {
-      class hello
-      {
-        static void Main(string[] args)
-        {
-        Console.WriteLine("Enter a number to give you the day");
-        int day = Convert.ToInt32(Console.ReadLine());
-        switch (day) 
-        {
-          case 1:
-            Console.WriteLine("Monday");
-            break;
-          case 2:
-            Console.WriteLine("Tuesday");
-            break;
-          case 3:
-            Console.WriteLine("Wednesday");
-            break;
-          case 4:
-            Console.WriteLine("Thursday");
-            break;
-          case 5:
-            Console.WriteLine("Friday");
-            break;
-          case 6:
-            Console.WriteLine("Saturday");
-            break;
-          case 7:
-            Console.WriteLine("Sunday");
-            break;
-          default:
-            Console.WriteLine("Invalid Input");
-            break;
-            }
-        }
-      }
-    }
+using System;
+namespace hello
+{
+ class hello
+ {
+   static void Main(string[] args)
+   {
+   Console.WriteLine("Enter a number to give you the day");
+   int day = Convert.ToInt32(Console.ReadLine());
+   switch (day) 
+   {
+     case 1:
+       Console.WriteLine("Monday");
+       break;
+     case 2:
+       Console.WriteLine("Tuesday");
+       break;
+     case 3:
+       Console.WriteLine("Wednesday");
+       break;
+     case 4:
+       Console.WriteLine("Thursday");
+       break;
+     case 5:
+       Console.WriteLine("Friday");
+       break;
+     case 6:
+       Console.WriteLine("Saturday");
+       break;
+     case 7:
+       Console.WriteLine("Sunday");
+       break;
+     default:
+       Console.WriteLine("Invalid Input");
+       break;
+       }
+   }
+ }
+}
 ```
 
-From the above program, if the user enters 5, the program will execute *"Friday"*.
+For the above program, if the user enters 5, the program will execute *"Friday"*.
 
-### Takeaways
+### Key Takeaways
 
 In this tutorial we looked at:
 
