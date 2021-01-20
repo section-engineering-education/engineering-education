@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/password-strength-checker-using-regex-in-javascript/
+title: Password Strength Checker using Regular Expressions in JavaScript
+description: This tutorial will give readers a detailed guide on how to build a password strength checker using regular expressions in JavaScript.
+author: terrence-aluda
+date: 2021-01-20T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/password-strength-checker-using-regex-in-javascript/hero.jpg
+    alt: Password Strength Checker using Regular Expressions in JavaScript Image
+---
 Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to secure their account using **Regular Expressions** in JavaScript.
+<!--more-->
 
 ### Prerequisites
 
