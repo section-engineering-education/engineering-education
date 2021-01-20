@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-native-text-recognition-with-firebase/
-title: Text Recognition Using Firebase ML in a Non-Expo React Native Application 
+title: Text Recognition using Firebase ML in a Non-Expo React Native Application 
 description: This tutorial will give readers a detailed guide on how to implment text recognition from an image using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
-date: 2021-01-12T00:00:00-15:00
+date: 2021-01-20T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,24 +14,21 @@ images:
   - url: /engineering-education/react-native-text-recognition-with-firebase/hero.jpg
     alt: React Native Text Recognition With Firebase Hero Image
 ---
-Firebase ML Kit's text recognition APIs can recognize text in any Latin-based character set. They can also be used to automate data-entry tasks such as processing credit cards, receipts, and business cards. In this tutorial, we will be building a Non-Expo React Native application to recognize text from an image using Firebase's ML kit.
+Firebase ML Kits text recognition APIs can recognize text in any Latin-based character set. They can also be used to automate data-entry tasks such as processing credit cards, receipts, and business cards. In this tutorial, we will be building a Non-Expo React Native application to recognize text from an image using Firebase's ML kit.
 <!--more-->
-
 Cloud Vision APIs allows developers to easily integrate vision detection features within applications, including image labeling, face and landmark detection, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
 
 ### Firebase
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
+Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In [2014](https://en.wikipedia.org/wiki/Firebase), Google acquired the platform and it is now their flagship offering for app development. 
 
 ### Prerequisites
-
 To proceed with this tutorial:
 
-- You will need a fundamenal knowledge of React & React Native.
+- You will need a basic understanding of React & React Native.
 
 - You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Development environment.
@@ -47,7 +44,6 @@ We'll be going through these steps in this article:
 You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-text-recognition).
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -57,7 +53,6 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](/engineering-education/react-native-text-recognition-with-firebase/env_setup.png)
 
 ### Installing dependencies
-
 You can install these packages in advance or while going through the article.
 
 ```JSON
@@ -82,7 +77,7 @@ pod install
 
 > **IMPORTANT FOR ANDROID**
 >
-> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+> As you add more native dependencies to your project, it may bump you over the 64K method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
@@ -90,18 +85,17 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Setting up the Firebase project
-
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
 
 ![Create New Project](/engineering-education/react-native-text-recognition-with-firebase/firebase_new.png)
 
-Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
+Once you create a new project, you'll see the dashboard. Upgrade your project to the Blaze plan.
 
 ![New Dashboard](/engineering-education/react-native-text-recognition-with-firebase/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-text-recognition-with-firebase/register_app.png)
 
@@ -143,12 +137,11 @@ npm install @react-native-firebase/app
 ```
 
 ### Setting up Cloud Vision API
-
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
 ![Cloud Dashboard](/engineering-education/react-native-text-recognition-with-firebase/cloud_dashboard.png)
 
-In the API & Service tab, Head to the Libraries section.
+In the API & Service tab, head to the Libraries section.
 
 ![API & Services Tab](/engineering-education/react-native-text-recognition-with-firebase/api_services.png)
 
@@ -164,10 +157,9 @@ Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
 ![Cloud Vision Metrics](/engineering-education/react-native-text-recognition-with-firebase/cloud_vision_dashboard.png)
 
-With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for recognizing text from images.
+With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit to recognize text from images.
 
 ### Building the UI
-
 We'll be writing all of our code in the `App.js` file.
 
 Let's add 2 buttons to the screen to take a photo and pick a photo.
@@ -223,7 +215,6 @@ const styles = StyleSheet.create({
 ![Buttons](/engineering-education/react-native-text-recognition-with-firebase/buttons_ui.jpg)
 
 ### Adding media picker
-
 Let's install the `react-native-image-picker` to add these functionalities.
 
 ```bash
@@ -240,7 +231,7 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
 
-Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
+Check out this [API reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
 
 Now let's add 2 functions, one for each button.
 
@@ -287,7 +278,7 @@ import { useState } from 'react';
 const [image, setImage] = useState();
 ```
 
-Now, let's add an Image component below the buttons to display the selected image.
+Now, let's add an image component below the buttons to display the selected image.
 
 ```JSX
 <View>
@@ -301,7 +292,7 @@ Now, let's add an Image component below the buttons to display the selected imag
 </View>
 ```
 
-Styles for the Image:
+Styles for the image:
 
 ```JSX
 image: {
@@ -325,7 +316,6 @@ const onImageSelect = async (media) => {
 ![Image UI](/engineering-education/react-native-text-recognition-with-firebase/with_image.jpg)
 
 ### Recognize the text from the image
-
 Let's install the package for Firebase ML.
 
 ```bash
@@ -352,14 +342,13 @@ Each [block](https://rnfirebase.io/reference/ml/mldocumenttextblock) will contai
 
 - The bounding rectangle of the detected block of text in the image.
 
-- The confidence the maching learning service has in the result.
+- The confidence the machine learning service has in the result.
 
 - A list of recognized languages in that block.
 
 - An array of [paragaraphs](https://rnfirebase.io/reference/ml/mldocumenttextparagraph) recognized in the block of text.
 
 To learn more about the result object, refer to [the documentation](https://rnfirebase.io/reference/ml/mldocumenttext).
-
 
 Let's set up a state to store the result and render it in the UI.
 
@@ -390,15 +379,14 @@ We'll use this state to render the recognized text in the UI.
 
 ![Final Result](/engineering-education/react-native-text-recognition-with-firebase/final_result.jpg)
 
-### Additional Configurations
-
+### Additional configurations
 The `cloudDocumentTextRecognizerProcessImage` method accepts an optional [configuration object](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions).
 
-- **languageHints**: In most cases, not setting this yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting language hints is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get better results (although it will be a significant hindrance if the hint is wrong). [Documentation](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions#languageHints)
+- **languageHints**: In most cases, not setting this yields the best results since it enables automatic language detection. For languages based on the Latin alphabet, setting language hints is not needed. In rare cases, when the language of the text in the image is known, setting a hint will help get [better results](https://rnfirebase.io/reference/ml/mlclouddocumenttextrecognizeroptions#languageHints) (although it will be a significant hindrance if the hint is wrong). 
 
-- **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
+- **apiKeyOverride**: API key to use for the ML API. If not set, the default API key from `firebase.app()` will be used.
 
-- **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
+- **enforceCertFingerprintMatch**: Only allow registered application instances with a matching certificate fingerprints to use ML API.
 
 Example: 
 
@@ -411,7 +399,6 @@ await ml().cloudDocumentTextRecognizerProcessImage(imagePath, {
 ```
 
 ### Let's Recap
-
 1. We set up our development environment and created a React Native app.
 
 2. We created a Firebase project.
@@ -433,3 +420,8 @@ await ml().cloudDocumentTextRecognizerProcessImage(imagePath, {
 Congratulations, :partying_face: You did it.
 
 Thanks for Reading!
+
+---
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
+
+
