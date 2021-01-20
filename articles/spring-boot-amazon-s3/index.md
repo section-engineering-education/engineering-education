@@ -1,9 +1,9 @@
-Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offer scalable, secure, and performant object storage.
+Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offers scalable, secure, and performant object storage.
 
 ### Prerequisites
 1. Some knowledge in [Java](https://www.javatpoint.com/java-tutorial) and [Spring Boot](https://spring.io/projects/spring-boot).
 2. Java development kit installed on your computer.
-3. Favourite IDE. I use [Intellij community edition](https://www.jetbrains.com/idea/download/) which is free.
+3. Your favourite IDE. I use [Intellij community edition](https://www.jetbrains.com/idea/download/) which is free.
 
 ### Amazon web services account
 Before we start creating our application, head over to [Amazon console](https://portal.aws.amazon.com/billing/signup#/start), and create an account. You will be given 12 months of free access to various Amazon web services which you can use to test various Amazon services.
@@ -16,10 +16,11 @@ After signing up, head over to [Amazon console](https://ap-south-1.console.aws.a
 After selecting amazon S3 from the above step, create a new S3 bucket which we will use to store the files we will be uploading from our application.
 
 ![Amazon creating S3 bucket](/engineering-education/spring-boot-amazon-s3/amazon-s3-create-bucket.png)
-Name the bucket as `spring-amazon-storage` and leave all other settings as default and create the bucket.
+
+Name the bucket as `spring-amazon-storage` and leave all other settings as default then create the bucket.
 
 ### Access and secret keys
-Create a new access key from my security credentials navigation menu as shown in the image below. Copy the access and the secret key generated as we will be using them to access the bucket we created earlier from the application we will be creating.
+Create a new access key from `My Security Credentials` navigation menu as shown in the image below. Copy the access and the secret key generated as we will be using them to access the bucket from the application we will be creating.
 
 ![Amazon secret key](/engineering-education/spring-boot-amazon-s3/amazon-security-key.png)
 
@@ -86,7 +87,7 @@ public class AmazonConfig {
     }
 }
 ```
-`AmazonConfig` class above is annotated with `@Configuration` annotation to make it available to the Spring context is a configuration class. With the Amazon credentials we got from the Amazon console earlier we will authenticate to S3 using the `AmazonS3ClientBuilder` available in the Amazon-SDK that we added to our `pom.xml` ealier.
+`AmazonConfig` class above is annotated with `@Configuration` annotation to make it available to the Spring context as a configuration class. With the Amazon credentials we got from the Amazon console earlier we will authenticate to S3 using the `AmazonS3ClientBuilder` available in the Amazon-SDK that we added to our `pom.xml` ealier.
 
 ```java
 import lombok.AllArgsConstructor;
