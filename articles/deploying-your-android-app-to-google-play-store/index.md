@@ -1,5 +1,3 @@
-TEST
-
 ### Introduction
 Releasing your first application to Google Play Store can seem like a difficult undertaking. Worry no more as you'll be learning how to publish your apps on the Google Play store in this article. 
 
