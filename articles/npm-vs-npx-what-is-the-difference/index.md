@@ -6,7 +6,6 @@ If you are a Node.js developer, you must have used NPM in one or many instances 
 - [What is NPX?](#what-is-npx)
 - [How NPM treat Node.js packages?](#how-npm-treat-nodejs-packages)
 - [Using NPX](#using-npx)
-- [NPX standard command](#npx-standard-command)
 - [Executing installed packages](#executing-installed-packages)
 - [One-off commands](#one-off-commands)
 - [NPX versioning](#npx-versioning)
@@ -90,8 +89,6 @@ Run the following command to make sure you have NPX installed using `which npx`.
 
 If not installed, use `npm install -g NPM@latest` to update NPM to the higher version above 5.2 or later, and you will have the NPX CLI tool available. You can also install NPX as a stand-alone package. Run `npm i npx` to install the NPX runner.
 
-### NPX standard command
-
 To execute a package with NPX, run:
 
 ```bash
@@ -164,7 +161,7 @@ npx sequelize db:seed
 
 ### One-off commands
 
-NPX treats global packages differently. Global packages are commonly used for development purposes. For that reason, you don’t need them installed all the time. NPX helps to execute these packages only when you need them. This comes in hand, as many global packages are one-off commands. You only need to run them once.
+Global packages are commonly used for development purposes. For that reason, you don’t need them installed all the time. NPX helps to execute these packages only when you need them. This comes in hand, as many global packages are one-off commands. You only need to run them once.
 
 For example, to create a [React](https://create-react-app.dev/docs/getting-started/) boilerplate app with NPM, you need to install the [Create React App](https://www.npmjs.com/package/create-react-app) module and then create an app with `npm init react-app my-app`. This means that when you need to create another React app in features, chances are you will create an app using the executables that you installed previously. This rule you out of newly updated features under this package unless you update the package manually.
 
@@ -182,53 +179,53 @@ When it comes to packages versioning, NPM will handle that with the `package-loc
 
 - **Executing a specific package version**: 
 
-If you want to execute a specific package's version, let's say, Eslint, you should specify the package version, as shown below.
+    If you want to execute a specific package's version, let's say, Eslint, you should specify the package version, as shown below.
 
-```bash
-npx eslint@3.9.0 --version
-```
+    ```bash
+    npx eslint@3.9.0 --version
+    ```
 
 - **Version testing**:
 
-With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can determine if the new version is compatible with your project before deciding whether to update them.
+    With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can determine if the new version is compatible with your project before deciding whether to update them.
 
-For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/engineering-education/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
+    For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/engineering-education/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
 
-```bash
-Hash: b41ed73s02F90S74F9b
-Version: webpack 4.40.3
-Time: 394ms
-        Asset     Size  Chunks             Chunk Names
-    build/main.js   7.32 kB       0  [emitted]  main
-   [0] ./index.js 4.02 kB {0} [built]
-```
+    ```bash
+    Hash: b41ed73s02F90S74F9b
+    Version: webpack 4.40.3
+    Time: 394ms
+            Asset     Size  Chunks             Chunk Names
+        build/main.js   7.32 kB       0  [emitted]  main
+       [0] ./index.js 4.02 kB {0} [built]
+    ```
 
-Let's try using NPX and run the webpack at version 5.11.1 to see what the difference would look like on the project. Run `npx webpack@5.11.1`.
+    Let's try using NPX and run the webpack at version 5.11.1 to see what the difference would look like on the project. Run `npx webpack@5.11.1`.
 
-```bash
-Hash: b41ed73s02F90S74F9b
-Version: webpack 5.11.1
-Time: 379ms
-        Asset     Size  Chunks             Chunk Names
-    build/main.js   5.62 kB       0  [emitted]  main
-   [0] ./index.js 4.02 kB {0} [built]
-```
+    ```bash
+    Hash: b41ed73s02F90S74F9b
+    Version: webpack 5.11.1
+    Time: 379ms
+            Asset     Size  Chunks             Chunk Names
+        build/main.js   5.62 kB       0  [emitted]  main
+       [0] ./index.js 4.02 kB {0} [built]
+    ```
 
-Here, the results show that the new version will help you buddle your project further with a couple of KBs.
+    Here, the results show that the new version will help you buddle your project further with a couple of KBs.
 
 - NPX with NVM
 
-[NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) stands for Node Version Management. It helps you to install different Node.js versions is your computer.
+    [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) stands for Node Version Management. It helps you to install different Node.js versions is your computer.
 
-Moving a Node.js installation from one version to another using [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) can be tricky. NPX helps you to use specific Node.js versions without using NVM.
+    Moving a Node.js installation from one version to another using [NVM](https://dev.to/ms314006/how-to-install-NPM-through-nvm-node-version-manager-5gif) can be tricky. NPX helps you to use specific Node.js versions without using NVM.
 
-For example:
+    For example:
 
-```bash
-npx -p node@12.18.3 -- node index.js
-```
+    ```bash
+    npx -p node@12.18.3 -- node index.js
+    ```
 
-You can use this version to run your `.js` files. This becomes useful when checking the different features added in different Node.js versions.
+    You can use this version to run your `.js` files. This becomes useful when checking the different features added in different Node.js versions.
 
 ### Execute code from URL such as gist
 
