@@ -49,7 +49,7 @@ and also Install TinyMCE:
 After the installations are complete, you can now proceed
 to *settings.py*  and add both our app and the *tinymce* app.
 
-   ``` 
+   ```py
    INSTALLED_APPS = [
      ...
     'myapp',
@@ -58,7 +58,7 @@ to *settings.py*  and add both our app and the *tinymce* app.
     ]
 ```
 You should also add the below *tinymce*  configurations to *settings.py*, where you can opt to copy and paste.
-   ```
+   ```py
  TINYMCE_DEFAULT_CONFIG = {
 
    'height': 360,
@@ -123,7 +123,7 @@ You should also add the below *tinymce*  configurations to *settings.py*, where 
 ### Step 4 – Applying tinyMCE
 Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models.py* that will utilize TinyMCE.
 In *models.py* create a model by the name *textEditor* and a textfield by the name *content* :
- ```
+ ```py
 from django.db import models
 
 class textEditor(models.Model): # new
@@ -140,7 +140,7 @@ Next, run the Django command-line utilities to create the database table automat
    
 In your *admin.py* file, add the following code. 
 
- ```
+ ```py
 from .models import textEditor
 
 from django.db import models
@@ -163,7 +163,7 @@ admin.site.register(textEditor, textEditorAdmin)
  
 Then in your project-level  *urls.py* add the following code that's commented *new* :
 
-```
+```py
 from django.contrib import admin
 
 from django.urls import path ,include # new
