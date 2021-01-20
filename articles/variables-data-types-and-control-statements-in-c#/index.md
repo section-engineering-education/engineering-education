@@ -14,6 +14,20 @@ Data types are used to specify the type of variable that the variable can hold a
 
 The different data types are:
 
+| Data types |      size     |  Explanation                          |                         
+|----------  |:-------------:|--------------------------------------  |
+|  byte      |    1 byte	   | stores whole numbers from -128 to 127  |
+|  int       |   4 bytes	   | stores whole numbers from -2,147,483,648 to 2,147,483,647   |                                 
+|  long      |   8 bytes	   | stores whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807    |                                        
+|  char      |   2 bytes	    |stores a chacter  
+|  string    |   2 bytes per character         | stores many characters  |
+|  double    |   8 bytes    | stores fraction and decimal numbers of 15 decimal digits  |
+|  float     |   4 bytes    | stores fractional numbers and decimal numbers of 6 decimal digits  |
+|  bool      |   1 bit      | stores true or false value  |
+|
+
+Lets look at each of them:
+
  - Byte
 
 The `byte` data type is used to store whole numbers from -128 to 127.
