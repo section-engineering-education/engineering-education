@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mysql-with-node-js/
-title: MySQL with Node.js
-description: This tutorial will explain the basics of MySQL and how to use it with Node.js
+url: /engineering-education/css-flexbox-vs-css-grid/
+title: CSS Flexbox vs CSS Grid
+description: There are many modern CSS technologies that are making it a lot easier to create dynamic layouts. Two of these are CSS Flexbox and CSS Grid. Learn the difference between them.
 author: joseph-chege
-date: 2021-01-10T00:00:00-14:00
-topics: [Node.js]
+date: 2021-01-20T00:00:00-13:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/mysql-with-node-js/hero.png
-    alt: MySQL with Node.js Image
+  - url: /engineering-education/css-flexbox-vs-css-grid/hero.png
+    alt: CSS Flexbox vs CSS Grid Image
 ---
 CSS is one of the important web development technologies. For a lot of time, we have used some common CSS properties to build and lay out HTML elements. These include floats, block-inline styling, and position. In recent years, you don't have to depend on properties such as floats to lay out your web pages. There are many modern CSS technologies that are making it a lot easier to create dynamic layouts.
 <!--more-->
@@ -159,12 +159,12 @@ Using Flexbox;
     color: whitesmoke;
 }
 
-di v:nth-child(4) {
+div:nth-child(4) {
     margin-left: auto;
 }
 ```
 
-![](/engineering-education/css-flexbox-vs-css-grid/flex-content-first.png)
+![Flex Content First](/engineering-education/css-flexbox-vs-css-grid/flex-content-first.png)
 
 We specify the child item of the container and determine its position. That's what we mean by referring to Flexbox as content-based.
 
@@ -246,7 +246,7 @@ The great news is that CSS has added features that support implementing gutters 
 
 Let's see how to implement that.
 
-Here I have nine items inside a Flexbox container.
+Here, I have nine items inside a Flexbox container.
 
 ```html
 <div class="gap">
