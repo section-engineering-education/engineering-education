@@ -58,6 +58,17 @@ import java.util.ArrayList; // Import the ArrayList class
 ArrayList<String> list1 = new ArrayList<String>(); // Create an ArrayList object
 ```
 
+Before we proceed on with the built-in methods, let's build a user-defined function for displaying all the elements of an `ArrayList`.
+
+```java
+void printArrayList(ArrayList<String> list) {
+  for (int i = 0; i < list.size(); i ++) {
+    System.out.print(list.get(i) + " ");
+  }
+  System.out.println();
+}
+```
+
 ##### Add Elements
 
 When using an `Array`, we have to manually assign the values or variables to the particular index. But, in `ArrayList` adding elements to the list is made simpler with the use of the `add()` method.
@@ -66,9 +77,16 @@ Example:
 
 ```java
 list1.add("Hello"); // Add "Hello" to the ArrayList
-// OUTPUT: list1 = ["Hello"]
+printArrayList(); // OUTPUT: list1 = ["Hello"]
 list1.add("World"); // Add "World" to the ArrayList
-// OUTPUT: list1 = ["Hello", "World"]
+printArrayList();  // OUTPUT: list1 = ["Hello", "World"]
+```
+
+**Output:**
+
+```bash
+Hello
+Hello World
 ```
 
 ##### Update Elements
@@ -81,7 +99,13 @@ Example:
 
 ```java
 list1.set(1, "Welcome"); // Replaces "World" with "Welcome" in list1
-// OUTPUT: list1 = ["Hello", "Welcome"]
+printArrayList();  // OUTPUT: list1 = ["Hello", "Welcome"]
+```
+
+**Output:**
+
+```bash
+Hello Welcome
 ```
 
 ##### Remove Elements
@@ -94,7 +118,16 @@ Example:
 
 ```java
 list1.remove(0); // Removes "Hello" from list1
-// OUTPUT: list1 = ["Welcome"]
+printArrayList(); // OUTPUT: list1 = ["Welcome"]
+list1.remove(1); // Remove element from Empty list
+printArrayList(); // Exception
+```
+
+**Output:**
+
+```bash
+Welcome
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 0
 ```
 
 #### LinkedList
@@ -125,6 +158,17 @@ import java.util.LinkedList; // Import package
 LinkedList<String> list2 = new LinkedList<String>(); // Create new object
 ```
 
+Before we proceed on with the built-in methods, let's build a user-defined function for displaying all the elements of a `LinkedList`.
+
+```java
+void printLinkedList(LinkedList<String> list) {
+  for (int i = 0; i < list.size(); i ++) {
+    System.out.print(list.get(i) + " ");
+  }
+  System.out.println();
+}
+```
+
 ##### Add Elements
 
 In the user-defined linked list data structure, for adding new data, we have to manually move the pointers and assign data. Whereas, in the `LinkedList` data structure, we make use of `add(Object)` or `add(int index, Object)` methods for adding new elements.
@@ -133,11 +177,19 @@ Example:
 
 ```java
 list2.add("Hello"); // Add "Hello" to the LinkedList list2
-// OUTPUT: ["Hello"]
+printLinkedList(); // OUTPUT: ["Hello"]
 list2.add("World"); // Add "World" to the LinkedList list2
-// OUTPUT: ["Hello", "World"]
+printLinkedList(); // OUTPUT: ["Hello", "World"]
 list2.add(1, "Computer"); // Add "Computer" to the LinkedList list2 at index 1
-// OUTPUT: ["Hello", "Computer", "World"]
+printLinkedList(); // OUTPUT: ["Hello", "Computer", "World"]
+```
+
+**Output:**
+
+```bash
+Hello
+Hello World
+Hello Computer World
 ```
 
 ##### Update Elements
@@ -150,7 +202,13 @@ Example:
 
 ```java
 list2.set(0, "Welcome"); // Update the string at index 0 to "Welcome"
-// OUTPUT: ["Welcome", "Computer", "World"]
+printLinkedList(); // OUTPUT: ["Welcome", "Computer", "World"]
+```
+
+**Output:**
+
+```bash
+Welcome Computer World
 ```
 
 ##### Remove Elements
@@ -168,7 +226,19 @@ Example:
 
 ```java
 list2.remove(1); // Removes "Computer" from list2
-// OUTPUT: ["Welcome", "World"]
+printLinkedList(); // OUTPUT: ["Welcome", "World"]
+list2.remove(0); // Remove "Welcome" from list2
+list2.remove(0); // Remove "World" from list2
+printLinkedList(); // Empty list
+list2.remove(0); // Remove elements from Empty list
+```
+
+**Output:**
+
+```bash
+Welcome World
+
+java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 ```
 
 #### HashMap
@@ -185,14 +255,22 @@ HashMap<Integer, String> map1 = new HashMap<Integer, String>(); // Creating a Ha
 
 ##### Adding Elements
 
-`HashMap` is one of the important data structures, where mapping the key and the value helps in accessing the elements with very little time complexity. To map a key with a value, we make use of the `put(key, value)` method.
+`HashMap` is one of the important data structures, where mapping the key and the value helps in accessing the elements with very little average time complexity of O(1). To map a key with a value, we make use of the `put(key, value)` method.
+
+The average time complexity for adding or accessing or removing an element using `HashMap` is O(1).
 
 Example:
 
 ```java
 map1.put(0, "A"); // Map (0, "A") and hash the key
 map1.put(1, "B"); // Map (1, "B") and hash the key
-// OUTPUT: map1 = {0="A", 1="B"}
+System.out.println(map1); // OUTPUT: map1 = {0="A", 1="B"}
+```
+
+**Output:**
+
+```bash
+{0=A, 1=B}
 ```
 
 ##### Updating Elements
@@ -204,7 +282,13 @@ Example:
 ```java
 map1.put(0, "B"); // Map (0, "B") and hash the key
 map1.put(1, "C"); // Map (1, "C") and hash the key
-// OUTPUT: map1 = {0="B", 1="C"}
+System.out.println(map1); // OUTPUT: map1 = {0="B", 1="C"}
+```
+
+**Output:**
+
+```bash
+{0=B, 1=C}
 ```
 
 ##### Removing Elements
@@ -215,7 +299,13 @@ Example:
 
 ```java
 map1.remove(0); // Remove mapping (0, "B") from map1
-// OUTPUT: map1 = {1="C"}
+System.out.println(map1); // OUTPUT: map1 = {1="C"}
+```
+
+**Output:**
+
+```bash
+{1=C}
 ```
 
 #### Stack
