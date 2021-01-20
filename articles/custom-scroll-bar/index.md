@@ -35,6 +35,8 @@ The following are the available selectors for scrollbar customization include:
 - `::-webkit-scrollbar-corner` is the bottom corner of the scrollbar, this is where both horizontal and vertical scrollbars meet.
   
 - `::-webkit-resizer` is the draggable resizing handle that will appear at the bottom corner of the elements.
+  
+This property is common in a -webkit vendor prefix. There are various jQuery plugins written to extend ("polyfill") this functionality to other browsers. A common plugin is [jScrollPane](http://jscrollpane.kelvinluck.com/).
 
 ### Targeting more browser support
 Building Future-Proof Scrollbar Styles
@@ -81,7 +83,7 @@ Let us design this application in the following steps.
 
 ### Final application
 
-That is the final application utilizing our CSS scrollbar feature. The [mozilla] documentation is a great site for reference and checking on the current browser support.
+That is the final application utilizing our CSS scrollbar feature. The [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is a great site for reference and checking on the current browser support.
 You can check the live application on [netlify]()
 
 
