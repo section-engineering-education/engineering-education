@@ -82,38 +82,38 @@ You are going to need to client ID, client Secret, and redirect url for this par
 
 I recommend you create a file called cred.py and store your values inside it. It goes without saying that this file should not be committed to a repository. 
 
-Create a cred.py file and put the following in your file: 
-
+Create a _cred.py_ file and put the following in your file: 
+```py
     client_ID='your-spotify-client-id'
     client_SECRET='your-spotify-client-secret'   
     redirect_url='your-spotify-redirect-url'
-
+```
 Now create a file main.py and add the following boilerplate code: 
-
+```py
     import spotipy
     from spotipy.oauth2 import SpotifyOAuth
     import cred 
-
+```
 Before going any further, you should have an idea of scopes. Spotify uses scopes to ensure programs only have permission to do what you specify they can do. You can read the list of scopes available [here](https://developer.spotify.com/documentation/general/guides/scopes/). You always need to specify the scope you want to use. 
 
 For part 1 of this tutorial, you should use the following scope: 
-
+```py
     scope = "user-read-recently-played"
-
+```
 Now for authentication. Like I said at the beginning, Spotipy makes it easy! 
-
+```py
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_url, scope=scope))
-
+```
 And now that you have your authenticated spotipy object you can now request data from your spotify client. Lets get our 50 most recent songs and list them out:
-
+```py
     results = sp.current_user_recently_played()
     for idx, item in enumerate(results['items']):
         track = item['track']
         print(idx, track['artists'][0]['name'], " – ", track['name'])
 
-
+```
 If everything went well, your code should look like this:
-
+```py
     import spotipy
     from spotipy.oauth2 import SpotifyOAuth
     import cred
@@ -126,7 +126,7 @@ If everything went well, your code should look like this:
     for idx, item in enumerate(results['items']):
         track = item['track']
         print(idx, track['artists'][0]['name'], " – ", track['name'])
-
+```
 Voila! If you want to learn about other spotipy functions, check out their [website](https://spotipy.readthedocs.io/en/2.16.1/). 
 
 ### Conclusion
