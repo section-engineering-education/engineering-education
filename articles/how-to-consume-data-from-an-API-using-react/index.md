@@ -169,8 +169,21 @@ As shown above, we handle the Promise when it is rejected in the catch.
 
 The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
 
-Async - It helps in performing promise-based or asynchronous operations. 
-await -  keyword allows you to wait for a Promise to get resolved.
+Async - It is used to wait for the Promise to get resolved. Async functions can have several `await` statements. We define a async function as shown below.
+
+```JSX
+async getData(){
+  //do something
+  //await statement
+}
+```
+await keyword - It allows you to wait for a Promise to get resolved. We can incorporate the await keyword in the getData method as follows.
+
+```JSX
+async getData(){
+    var user =await fetch("your_url")
+}
+```
 
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
@@ -310,17 +323,31 @@ A `No Movie Found` message is displayed in case the response is False.
 
 > Note the `Response` variable stores a string rather than a boolean.
 
-We need to replace the following code with our function as shown below.
+We need to replace the following code:
 
 ```JSX
-<!-- <img src={data.Poster} alt=""/>
-<h4>Title: {data.Title}</h4>
-<p>Year: {data.Year}</p>
-<p>Writer: {data.Writer}</p>
-<p>{data.Response}</p> -->
+    return(
+      <div>
+         <img src={data.Poster} alt=""/>
+         <h4>Title: {data.Title}</h4>
+         <p>Year: {data.Year}</p>
+         <p>Writer: {data.Writer}</p>
+         <p>{data.Response}</p> 
+      </div>
+    );
+   }
+```
+With this:
 
-
- {checkResponse(movie)}
+```JSX
+   return(
+      <div>
+         <input type="text" value={search} onChange={onInputChange}/>
+         <button type="submit" onClick={getMovie}>Search</button>
+         <br></br>   
+         {checkResponse(movie)}
+      </div>
+   );
 ```
 
 Here is the `App.js` code with the error handling part included.
