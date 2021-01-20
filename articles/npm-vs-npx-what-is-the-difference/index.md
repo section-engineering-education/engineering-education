@@ -33,7 +33,7 @@ This guide will help you learn and contrast the difference between NPM and NPX.
 - [Final notes](#final-notes)
 
 ### What is NPM?
-NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is used to install Node.js packages to use them in our application. It makes it easier for developers to share and reuse open source code by enabling them to install as modules. Modules are JavaScript packages that you can install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
+NPM stands for Node Package Manager. It comes pre-installed with Node.js. NPM is used to install Node.js packages to use them in our application. It makes it easier for developers to share and reuse open source code by enabling them to be installed as modules. Modules are JavaScript packages that you can install in your system using NPM. NPM helps to manage packages in your projects as dependencies.
 
 ### What is NPX?
 [NPX](https://www.npmjs.com/package/npx) is an NPM package executor. Initially, NPX was launched in [July 2017](https://nodejs.dev/learn/the-npx-nodejs-package-runner). NPX was just an NPM package that could be installed like other NPM packages. Currently, NPX is bundled with NPM when you install the NPM version 5.2.0 or higher.
