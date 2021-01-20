@@ -80,7 +80,7 @@ In the file above, we only have 1 line of code, the ```import``` statement.
 What happens is that the import statement lists the items which are being imported and including the path where the module is located.  
 Once these items are imported into the file, in this case, ```results.js```, they are readily available for using a smart IDE will even suggest for you the methods and properties when you start typing.  
 
-It's important to note that these methods and properties imported are read-only features of the exported files.  You cannot modify them.  
+It's important to note that these methods and properties imported are read-only features of the exported files. You cannot modify them.  
 
 ### Applying Modules to HTML
 
@@ -100,7 +100,7 @@ In our ```example.html``` file, add the following.
 ```
 Well, this is slightly different when working with modules, you need a few modifications as we will see soon.  
 
-The first and the most important part is to add a ``` type``` as ```module```, that is, ```type=" module" ``` in the script element.  
+The first and the most important part is to add a ```type``` as ```module```, that is, ```type="module" ``` in the script element.  
 This ensures that the script is defined or declared as a module.  
 
 Now to import ```results.js``` we would do something like:-  
