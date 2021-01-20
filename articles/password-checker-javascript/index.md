@@ -251,3 +251,6 @@ You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/
 Hope you can further enhance the code and add checks for more levels like Too Strong, Too Weak, etc.
 
 Thanks for Reading!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
