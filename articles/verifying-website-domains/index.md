@@ -133,7 +133,6 @@ Instead of using the IP address, use the domain name in the myAnswers variable a
 "NS" for nameserver information Input:
 
 ```python
-ip = "69.195.108.249"
 myResolver = dns.resolver.Resolver()
 myAnswers = myResolver.resolve('massiveinsights.com', "NS")
 ans = [item for item in myAnswers]
@@ -149,7 +148,6 @@ Output:
 "TXT" for additional internet properties Input:
 
 ```python
-ip = "69.195.108.249"
 myResolver = dns.resolver.Resolver()
 myAnswers = myResolver.resolve('massiveinsights.com', "TXT")
 ans = [item for item in myAnswers]
@@ -165,7 +163,6 @@ Output:
 "MX" for digital mailing information Input:
 
 ```python
-ip = "69.195.108.249"
 myResolver = dns.resolver.Resolver()
 myAnswers = myResolver.resolve('massiveinsights.com', "MX")
 ans = [item for item in myAnswers]
