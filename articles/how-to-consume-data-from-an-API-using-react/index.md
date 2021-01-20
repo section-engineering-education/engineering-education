@@ -1,8 +1,6 @@
-Application Programming Interface (API), allows developers to access and use data from third parties. Today, there are many free and paid APIs. For example, some APIs provide information about movies, animals, weather, and even financial records. Many developers prefer APIs because it helps save time and resources. The time that could have been spent building a back-end application can be invested elsewhere. In React, using an API allows developers to focus on the front-side application. This means that they have enough time to create a visually appealing website.
+API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your own API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.
 
-### Goal
-
-The goal of this tutorial is to create a React application that consumes data from an API.
+In this tutorial, you'll learn how to consume data from an API in a React application. 
 
 ### Prerequisites
 
@@ -223,7 +221,7 @@ const onInputChange = e => {
  }
 ```
 
-### Step 6: Returning the component
+### Step 5: Building the UI
 
 After we fetch the data, we should display it to the user. In the `App.js` file, we should include an input field and a button for search. The page also has an image, title, and paragraph tags. Here is the code for our app's layout.
 
@@ -296,7 +294,7 @@ function App() {
 export default App;
 
 ```
-### Step 7: Handling errors
+### Step 6: Handling errors
 
 Errors are a common occurence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if its unavailable. We, therefore, check the state of this variable.
 
@@ -415,7 +413,7 @@ function App() {
 export default App;
 ```
 
-### Step 8: Testing our web application
+### Step 7: Testing our web application
 
 If you have successfully reached this stage, congratulations. Follow the steps in the video below to test out the web application.
 
@@ -423,4 +421,4 @@ If you have successfully reached this stage, congratulations. Follow the steps i
 
 ### Conclusion
 
-In the above tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. Furthermore, useEffects and useState help in state management. This means that we can update our UI components in case our data changes. You can download the entire code from [here](https://github.com/WanjaMIKE/react-omdapi/).
+In the above tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. You can refer to the final code from this [GitHub Repository](https://github.com/WanjaMIKE/react-omdapi/).
