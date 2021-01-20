@@ -150,17 +150,40 @@ This method will be called whenever the search button is clicked. It will make a
 Async - It helps in performing promise-based or asynchronous operations. 
 await -  keyword allows you to wait for a Promise.
 
-A promise is something which can be returned after the completion of a asynchronous operation.
+A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is something which can be returned after the completion of a asynchronous operation. In other words, it allows asynchronous functions to return information just like synchronous methods. A Promise can, therefore, contain a success or failure message. 
 
-You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp).
+A Promise can either be one of the following states:
+Pending - this means that the Promise has neither been rejected or completed.
+Fulfilled - It means the operation was successful.
+Rejected - This state means that the operation failed.
+
+When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting state.
+Here is an example of a Promise and then method.
+```
+const dataPromise =
+  (new Promise(fetchData))
+  .then(handleData1)
+  .then(handleData1)
+  .catch(handleRejectedAny);
+```
+As shown above, we handle the Promise when it is rejected in the catch.
+
+You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
+
+We can handle server and network errors using `try and catch` methods. We send a network request inside the `try `function and then listen for an error and display it using the `catch` method.
 
 Here is the code for the `getMovie` function.
 
 ```JavaScript
 const getMovie = async() => {
-  const response = await fetch(url);
-  const data = await response.json()
-  setMovie(data);
+  try {
+     const response = await fetch(url);
+      const data = await response.json()
+      setMovie(data);
+} catch (e) {
+    console.error(e.toString);
+} 
+ 
 }
 ```
 
@@ -219,9 +242,13 @@ function App() {
     const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
     const getMovie = async()=>{
-      const response = await fetch(url);
-      const data = await response.json()
-      setMovie(data);
+      try {
+        const response = await fetch(url);
+         const data = await response.json()
+         setMovie(data);
+      } catch (e) {
+          console.error(e);
+      } 
     }
 
     const onInputChange = e =>{
@@ -305,10 +332,13 @@ function App() {
     const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
     const getMovie = async()=>{
-      const response = await fetch(url);
-      const data = await response.json()
-      setMovie(data);
-      console.log(movie)
+      try {
+        const response = await fetch(url);
+         const data = await response.json()
+         setMovie(data);
+      } catch (e) {
+          console.error(e);
+      } 
     }
 
     const onInputChange = e =>{
