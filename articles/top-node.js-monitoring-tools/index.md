@@ -75,3 +75,6 @@ With Express Status Monitor, it is possible to regulate response time, request f
 
 ### Conclusion
 For application availability and other vital metrics, developers cannot wish monitoring away. The cost of development is skyrocketing, and custom-designs after application release can be an uphill task. As such, developers have to fully utilize these application performance management tools to mitigate time wastage and tediousness. This article has gone a long way to discussing top Node.js monitoring tools to help you in selecting the best monitoring solution.
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
