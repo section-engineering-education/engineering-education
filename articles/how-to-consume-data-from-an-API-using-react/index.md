@@ -6,21 +6,19 @@ The goal of this tutorial is to create a React application that consumes data fr
 
 ### Prerequisites
 
-To follow along in this tutorial, you must have:
+To follow along in this tutorial, you must have a basic knowledge in using React and JavaScript. 
 
- - Basic knowledge in using React and JavaScript. 
+You can learn more about React from [here](https://reactjs.org/docs/getting-started.html).
 
- You can learn more about ReactJs from [here](https://reactjs.org/docs/getting-started.html).
+### Step 1: Understand the data from the API
 
-### Step 1 – Understand the data coming from the API
-
-Before consuming data from an API, it's vital to understand the type of data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
+Before consuming data from an API, it's vital to understand the data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
 
 In this tutorial, we will be using [OMDb API](http://www.omdbapi.com/). You need an API key to gain access to this API. This API key can be generated from the OMDb API's [website](http://www.omdbapi.com/apikey.aspx). 
 
 ![signup](/engineering-education/how-to-consume-data-from-an-API-using-react/signup.png)
 
-The API key is usually sent to your email, as shown below.
+The API key will be sent to your email, as shown below.
 
 ![email](/engineering-education/how-to-consume-data-from-an-API-using-react/email.png)
 
@@ -30,7 +28,7 @@ The API key is usually sent to your email, as shown below.
 http://www.omdbapi.com/?i=tt3896198&apikey={your_key}
 ```
 
-When we navigate to the above link in a browser, the endpoint will return JSON data as shown below.
+When we navigate to the above link in a browser, the endpoint will return the JSON data as shown below.
 
 ```json
 {
@@ -75,34 +73,30 @@ When we navigate to the above link in a browser, the endpoint will return JSON d
 }
 ```
 
-In the above `JSON` response, the variables include `Title,` `Year,` `Rated,` `Released,` `Runtime,` and `Genre.`
+In the above `JSON` response, we have data like the `Title,` `Year,` `Rated,` `Released,` `Runtime,` `Genre`, etc, of the movie Guardians of the Galaxy Vol. 2.
 
 ### Step 2: Creating a react project.
 
-We create a React application using the following `npx` command.
+Let's create a React application using the following `npx` command:
 
 ```
 npx create-react-app OMDbApi
 ```
-Once you execute the above statement, you have to give it a few minutes to enable the installation of the required dependencies. You can then open the folder in your preferred code editor when the installation is completed. Please note that to use `npx,` you must have `npm` installed.
 
-### Step 3: Understanding the react project structure
+Once you execute the above statement, you have to give it a few minutes to install the required dependencies. You can then open the folder in your preferred code editor when the installation is complete. Please note that to use `npx`, you must have `npm` installed.
 
-All the files we will be working with are located in the `src` folder. These files will be compiled and shown to the user. 
+### Step 3: Project Structure
 
-- The `App.js` helps to connect different `UI` components. 
+All the files that we will be working with are located in the `src` folder. These files will be compiled and shown to the user.
 
-- The `index.css` stores the formatting properties of the body tag, as well as other React components. 
-
-- The `App.css,` on the other hand, helps format individual components. 
-
-- The `node_modules` folder stores all the required React dependencies. The image below shows the   overall structure of the React application.
+The image below shows the overall structure of the React application.
 
 ![structure](/engineering-education/how-to-consume-data-from-an-API-using-react/structure.png)
 
 ### Step 4: Developing the react application
 
-Use `npm start ` to start the development server. All changes you make in the code editor are reflected in the application. By default, the react projects are usually hosted at `http://localhost:3000/`.
+Use `npm start` to start the development server. By default, the react projects are usually hosted at `http://localhost:3000/`.
+
 Let’s delete all the unnecessary items in our project. Modify the `app.js` file to look like this.
 
 ```javascript
@@ -117,32 +111,36 @@ function App() {
 export default App;
 ```
 
-Our app will have two major components: `Movie` page and `MovieItem`. The movie page will showcase the `movie` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
+Our app will have two components: `Movie` page and `MovieItem`. The movie page will showcase the `movie` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
 
-### Step 5: Creating the Movie web page
+### Step 5: Creating the Movie Component
 
-Please note that this page will hold our logic for requesting and handling data from the OMDb API. 
-we need to import `useEffect` and `useState` in our react application. We do so by adding the following line in the `app.js` file.
+Please note that this component will hold our logic for requesting and handling data from the OMDb API.
+
+We should import `useEffect` and `useState` into this component.
 
 ```javascript
 import React, {useEffect, useState} from 'react';
 ```
 
 The `useEffect` allows `React` to perform a specific action when the state changes. In our case, we will use `useEffect` to make network requests to the API.
+
 `useState` method will help in state management. It ensures that `UI` components are updated in case of any data changes. 
 
 We need to define several constants in the `App.js` file. 
 
-The `movie` will hold data returned from the OMDb API. The `setMovie` helps in changing the contents of the movie.
+The `movie` state will hold data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
 
 ```javascript
- const [movie, setMovie] = useState([]);
- ```
-The search variable will help retrieve user input. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url and a request sent to the server.
+const [movie, setMovie] = useState([]);
+```
+
+The search variable will be used to hold user input. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
 
 ```javascript
 const [search, setSearch] = useState('');
 ```
+
 You can also have a constant for your API key or include it in your url directly.
 
 ```javascript
@@ -150,56 +148,57 @@ const API_KEY = "your_api_key";
 const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
 
-The App component also has several functions which are discussed below.
+The `Movie` component also has several functions which are discussed below.
 
 #### 1.	getMovie
 
 This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` function.
 
+```JavaScript
+const getMovie = async() => {
+  const response = await fetch(url);
+  const data = await response.json()
+  setMovie(data);
+}
 ```
-    const getMovie = async()=>{
-      const response = await fetch(url);
-      const data = await response.json()
-      setMovie(data);
-    }
+
+This method is initially executed after the components are rendered using the `useEffect` hook.
+
+```javascript
+useEffect(()=> {
+    getMovie(); //fetch data from api
+ }, []);
 ```
+
 #### 2.	onInputChange
 
 This method helps in updating the search query state when the value of the input changes, The value of the search state is updated using the `setSearch` method.
 
-```javascript
-   const onInputChange = e =>{
-      setSearch(e.target.value);
-    }
+```JavaScript
+const onInputChange = e => {
+   setSearch(e.target.value);
+ }
 ```
 
-#### 4.	useEffect
+### Step 6: Returning the component
 
-As noted, this method is executed after the components are rendered. We will fetch data from the API in this function. We will also listen for changes in the query. 
-
-```javascript
-  useEffect(()=> {
-      getMovie();//fetch data from api
-    }, []);
-```
-
-### Step 6 – Returning the component
-
-When we fetch data, we need to display it to the user. In the app.js file we need to include an input field and a button. The page also has a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for the input and MovieItem components.
+After we fetch data, we should display it to the user. In the `app.js` file we should include an input field and a button for search. The page also has a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for the input and MovieItem components.
 
 ```javascript
-    return(
-      <div>
-        <input type="text" value={search} onChange={onInputChange}/>
-        <button type="submit" onClick={getMovie}>Search</button>
-        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
-      </div>
-    );
+return(
+   <div>
+     <input type="text" value={search} onChange={onInputChange}/>
+     <button type="submit" onClick={getMovie}>Search</button>
+     <MovieItem  title={movie.Title} year={movie.Year} writer={movie.Writer} poster={movie.Poster}/>
+   </div>
+);
 ```
 
-As shown above, the `getMovie` method is called whenever the button is clicked. Similarly, we listen for changes in the input value using the `onInputChange` function.
+As shown above, the `getMovie` method is called whenever the button is clicked. 
 
-Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `{movie.Title}`,`movie.Year`, and `movie.Writer` to extract data and pass it to the `MovieItem` component.
+The `onInputChange` function is called when the value of the input changes.
+
+Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `movie.Title`,`movie.Year`, and `movie.Writer` to extract data and pass it to the `MovieItem` component.
 
 Here is the code for the `app.js` component
 
@@ -253,13 +252,16 @@ Create a new file named `MovieItem.js` in the `components` folder. Add the follo
 import React from 'react';
 ```
 
-The `MovieItem` widget will have an image, heading, and paragraph tags. We will receive data from the parent widget through a constructor, as shown.
+The `MovieItem` widget will have an image, heading, and paragraph tags. We will receive data from the parent component as props.
 
 ```javascript
-MovieItem = ({title, year, writer, poster})
+const MovieItem = ({title, year, writer, poster}) => {
+
+}
 ```
 
-This data is then parsed to the specific widgets. Remember to add `export default MovieItem` at the end of the file.
+This data is then used in the JSX. Remember to add `export default MovieItem` at the end of the file.
+
 Here is the code for the MovieItem.js
 
 ```javascript
@@ -282,17 +284,17 @@ export default MovieItem;
 
 ### Step 8: Linking components
 
-In this stage, we need to link our MovieItem component to the main app layout. Open the App.js file and add <Movie/> as shown below. Once again, ensure that you have imported the MovieItem component.
+In this stage, we need to add our `MovieItem` component to the main app layout. Open the `App.js` file and add `<Movie>` as shown below. Once again, ensure that you have imported the MovieItem component.
 
 ```javascript
 return(
-      <div>
-        <input type="text" value={search} onChange={onInputChange}/>
-        <button type="submit" onClick={getMovie}>Search</button>
-        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
-        //movieitem
-      </div>
-    );
+  <div>
+    <input type="text" value={search} onChange={onInputChange}/>
+    <button type="submit" onClick={getMovie}>Search</button>
+    <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
+    //movieitem
+  </div>
+);
 ```
 
 ### Step 9: Testing our web application
