@@ -84,7 +84,7 @@ We are going to have three levels to denote how secure a password is. They are:
     (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
     ```
 
-    ![Strong password](/engineering-education/password-checker-javascript/strong-password.png)
+    ![Strong password](/engineering-education/password-strength-checker-using-regex-in-javascript/strong-password.png)
 
 - **Medium**:  If the password is at least 6 characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
@@ -94,11 +94,11 @@ We are going to have three levels to denote how secure a password is. They are:
     ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
     ```
 
-    ![Medium password](/engineering-education/password-checker-javascript/medium-password.png)
+    ![Medium password](/engineering-education/password-strength-checker-using-regex-in-javascript/medium-password.png)
 
 - **Weak**: If the entered password does not meet the strong or medium-level requirements, then it is deemed weak.
 
-    ![Weak password](/engineering-education/password-checker-javascript/weak-password.png)
+    ![Weak password](/engineering-education/password-strength-checker-using-regex-in-javascript//weak-password.png)
 
 ### HTML Code
 
