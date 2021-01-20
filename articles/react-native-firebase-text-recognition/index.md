@@ -6,7 +6,7 @@ url: /engineering-education/react-native-text-recognition-with-firebase/
 title: Text Recognition using Firebase ML in a Non-Expo React Native Application 
 description: This tutorial will give readers a detailed guide on how to implment text recognition from an image using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
-date: 2021-01-20T00:00:00-15:00
+date: 2021-01-20T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
