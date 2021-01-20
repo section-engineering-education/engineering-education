@@ -10,7 +10,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine accordi
 
 1. Simplicity – It is easy to learn and use and especially with JavaScript knowledge.
 2. Open-source language – It does not require installation fees and is free to use and readily available to the public.
-3. Object-oriented – It can model real-world data rather than functions and codes.
+3. Object-oriented – Object-oriented programming allows efficient data flows between components in large applications. 
 4. It is swift to execute codes.
 5. A lot of community tutorials, resources, and shared codes are available.
 6. Node.js is a JavaScript runtime, a high-level and dynamic language. 
@@ -21,7 +21,7 @@ It is an open-source python web framework designed for high-speed web developmen
 #### Basic features of Django
 
 1. Simplicity – Especially with the Python language, Django is easy to learn, use, and implement.
-2. It is an open-source language – No fees for installation and usage. It is free to access and readily available to the public.
+2. Open-ource language – No fees for installation and usage. It is free to access and readily available to the public.
 3. High-level language – It simplifies computer syntax into a language the user can easily understand.
 4. It is both object-oriented and functional – meaning it can model real-world data and focus on functions. Node.js allows code reusability.
 5. Portable – There is no need to write different codes for different machines as it is highly portable and flexible.
