@@ -97,7 +97,7 @@ Use `npm start` to start the development server. By default, the react projects 
 
 We'll write all of our code in the `App.js`. Modify the `App.js` file to look like this before we start.
 
-```javascript
+```JSX
 import React from 'react';
 
 function App() {
@@ -113,7 +113,7 @@ export default App;
 
 We should import `useEffect` and `useState` into this component.
 
-```javascript
+```JSX
 import React, {useEffect, useState} from 'react';
 ```
 
@@ -123,19 +123,19 @@ The `useState` hook will help in creating a state and a function to update that 
 
 Let's create a state for the movie. The `movie` state will hold data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
 
-```javascript
+```JSX
 const [movie, setMovie] = useState([]);
 ```
 
 Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
 
-```javascript
+```JSX
 const [search, setSearch] = useState('');
 ```
 
 You can also have a constant for your API key or include it in your url directly.
 
-```javascript
+```JSX
 const API_KEY = "your_api_key";
 const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
@@ -157,7 +157,8 @@ A Promise can either be one of the following states:
 When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting state.
 
 Here is an example of a Promise and then method.
-```
+
+```JSX
 const dataPromise = (new Promise(fetchData))
   .then(handleData1)
   .then(handleData1)
@@ -191,7 +192,7 @@ We can handle server and network errors using a `try/catch` block. We send a net
 
 Here is the code for the `getMovie` function.
 
-```JavaScript
+```JSX
 const getMovie = async() => {
   try {
      const response = await fetch(url);
@@ -205,7 +206,7 @@ const getMovie = async() => {
 
 This method is also executed when the component is rendered for the first time using the `useEffect` hook to load some initial data.
 
-```javascript
+```JSX
 useEffect(()=> {
  getMovie(); //fetch data from api
 }, []);
@@ -215,7 +216,7 @@ useEffect(()=> {
 
 This method helps in updating the search query state when the value of the input changes, The value of the search state is updated using the `setSearch` method.
 
-```JavaScript
+```JSX
 const onInputChange = e => {
    setSearch(e.target.value);
 }
@@ -225,7 +226,7 @@ const onInputChange = e => {
 
 After we fetch the data, we should display it to the user. In the `App.js` file, we should include an input field and a button for search. The page also has an image, title, and paragraph tags. Here is the code for our app's layout.
 
-```javascript
+```JSX
 return(
    <div>
      <input type="text" value={search} onChange={onInputChange}/>
@@ -245,7 +246,7 @@ The `onInputChange` function is called when the value of the input changes.
 
 Here is the complete code for the `App.js` component
 
-```javascript
+```JSX
 import './App.css';
 import React, {useEffect, useState} from 'react';
 
