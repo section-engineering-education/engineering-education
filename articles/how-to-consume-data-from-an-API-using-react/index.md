@@ -111,7 +111,7 @@ function App() {
 export default App;
 ```
 
-Our app will have two components: `Movie` page and `MovieItem`. The movie page will showcase the `movie` returned from the API, while the `MovieItem` presents precise information about the film. In other words, the `Movie` page hosts the `MovieItem`. Let’s create these items.
+Our app will have one major component: `Movie`page. The movie page will showcase the `movie` returned from the API.
 
 ### Step 5: Creating the Movie Component
 
@@ -152,7 +152,13 @@ The `Movie` component also has several functions which are discussed below.
 
 #### 1.	getMovie
 
-This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. Here is the code for the `getMovie` function.
+This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
+Async - It helps in performing promise-based or asynchronous operations. 
+await -  keyword allows you to wait for a Promise.
+A promise is something which can be returned after the completion of a asynchronous operation.
+You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp).
+
+Here is the code for the `getMovie` function.
 
 ```JavaScript
 const getMovie = async() => {
@@ -182,14 +188,18 @@ const onInputChange = e => {
 
 ### Step 6: Returning the component
 
-After we fetch data, we should display it to the user. In the `app.js` file we should include an input field and a button for search. The page also has a `MovieItem` (displays actual movie data), which we will create in the next step. Here is the code for the input and MovieItem components.
+After we fetch data, we should display it to the user. In the `app.js` file, we should include an input field and a button for search. The page also has an image, h4, and paragraph tags. Here is the code for our app's layout.
 
 ```javascript
 return(
    <div>
      <input type="text" value={search} onChange={onInputChange}/>
      <button type="submit" onClick={getMovie}>Search</button>
-     <MovieItem  title={movie.Title} year={movie.Year} writer={movie.Writer} poster={movie.Poster}/>
+     
+     <img src={movie.Poster} alt=""/>
+     <h4>Title: {movie.Title}</h4>
+     <p>Year: {movie.Year}</p>
+     <p>Writer: {movie.Writer}</p>
    </div>
 );
 ```
@@ -198,15 +208,13 @@ As shown above, the `getMovie` method is called whenever the button is clicked.
 
 The `onInputChange` function is called when the value of the input changes.
 
-Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `movie.Title`,`movie.Year`, and `movie.Writer` to extract data and pass it to the `MovieItem` component.
+Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `movie.Title`,`movie.Year`, and `movie.Writer` to extract data and pass it to the children components.
 
 Here is the code for the `app.js` component
 
 ```javascript
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import MovieItem from './components/MovieItem.js'
-
 
 function App() {
     const [movie, setMovie] = useState([]);
@@ -220,7 +228,6 @@ function App() {
       setMovie(data);
     }
 
-
     const onInputChange = e =>{
       setSearch(e.target.value);
     }
@@ -233,8 +240,15 @@ function App() {
       <div>
         <input type="text" value={search} onChange={onInputChange}/>
         <button type="submit" onClick={getMovie}>Search</button>
-        <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
-        //movieitem
+            <br></br>
+            if(movie==null){
+              <p>Movie Not Found</p>
+            }else{
+            <img src={movie.Poster} alt=""/>
+            <h4>Title: {movie.Title}</h4>
+            <p>Year: {movie.Year}</p>
+            <p>Writer: {movie.Writer}</p>
+            }
       </div>
     );
 
@@ -243,65 +257,109 @@ function App() {
 export default App;
 
 ```
+### Step 7: Handling errors
+Errors are a common occurence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if its unavailable. We, therefore, check the state of this variable.
 
-### Step 7: Creating the MovieItem component
+To do this, we need a new method and an if else statement. create a method named checkResponse in the app.js file. Add the following code.
 
-Create a new file named `MovieItem.js` in the `components` folder. Add the following line to import the required dependencies.
+```
+ function checkResponse(data){
+     if(data.Response==="True"){
+       return(
+         <div>
+            <!-- <img src={data.Poster} alt=""/>
+            <h4>Title: {data.Title}</h4>
+            <p>Year: {data.Year}</p>
+            <p>Writer: {data.Writer}</p>
+            <p>{data.Response}</p> -->
+         </div>
+       );
+    }
+      return (
+        <p>No Movie found</p>
+      );
+    }
+```
+The data is sent to the children components when the response is True. However a `No Movie Found` message is displayed in case the response is False.
+>Note the Response variable stores a string rather than a boolean.
 
-```javascript
-import React from 'react';
+We need to replace the following code with our function as shown below.
+
+```    
+       <!-- <img src={data.Poster} alt=""/>
+            <h4>Title: {data.Title}</h4>
+            <p>Year: {data.Year}</p>
+            <p>Writer: {data.Writer}</p>
+            <p>{data.Response}</p> -->
+
+
+             {checkResponse(movie)}
 ```
 
-The `MovieItem` widget will have an image, heading, and paragraph tags. We will receive data from the parent component as props.
+Here is the `app.js` code with the error handling part included.
 
-```javascript
-const MovieItem = ({title, year, writer, poster}) => {
+```
+import './App.css';
+import React, {useEffect, useState} from 'react';
+
+function App() {
+    const [movie, setMovie] = useState([]);
+    const [search, setSearch] = useState('');
+    const API_KEY = "cebd9b53";
+    const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+
+    const getMovie = async()=>{
+      const response = await fetch(url);
+      const data = await response.json()
+      setMovie(data);
+      console.log(movie)
+    }
+
+    const onInputChange = e =>{
+      setSearch(e.target.value);
+    }
+
+    useEffect(()=> {
+      getMovie();
+    }, []);
+
+
+  function checkResponse(data){
+     if(data.Response==="True"){
+       return(
+         <div>
+            <img src={data.Poster} alt=""/>
+            <h4>Title: {data.Title}</h4>
+            <p>Year: {data.Year}</p>
+            <p>Writer: {data.Writer}</p>
+            <p>{data.Response}</p>
+         </div>
+       );
+    }
+      return (
+        <p>No Movie found</p>
+      );
+    }
+
+    return(
+      <div>
+        <input type="text" value={search} onChange={onInputChange}/>
+        <button type="submit" onClick={getMovie}>Search</button>
+            <br></br>   
+               {checkResponse(movie)}
+            </div>
+    );
 
 }
+
+export default App;
 ```
 
-This data is then used in the JSX. Remember to add `export default MovieItem` at the end of the file.
-
-Here is the code for the MovieItem.js
-
-```javascript
-import React from 'react';
-
-const MovieItem = ({title, year, writer, poster})=>{
-  return (
-    <div className="Movie">
-      <img src={poster} alt=""/>
-      <h4>Title: {title}</h4>
-      <p>Year: {year}</p>
-      <p>Writer: {writer}</p>
-     <p></p>
-    </div>
-  );
-}
-
-export default MovieItem;
-```
-
-### Step 8: Linking components
-
-In this stage, we need to add our `MovieItem` component to the main app layout. Open the `App.js` file and add `<Movie>` as shown below. Once again, ensure that you have imported the MovieItem component.
-
-```javascript
-return(
-  <div>
-    <input type="text" value={search} onChange={onInputChange}/>
-    <button type="submit" onClick={getMovie}>Search</button>
-    <MovieItem  title = {movie.Title} year={movie.Year} writer = {movie.Writer} poster ={movie.Poster}/>
-    //movieitem
-  </div>
-);
-```
-
-### Step 9: Testing our web application
+### Step 8: Testing our web application
 
 If you have successfully reached this stage, congratulations. Follow the steps in the video below to test out the web application.
 
-<iframe width="478" height="269" src="https://www.youtube.com/embed/lud9SWK8pmo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![React App](/engineering-education/how-to-consume-data-from-an-API-using-react/app.gif)
 
 ### Conclusion
 
