@@ -14,9 +14,8 @@ You should at least have the following things before we begin, as they will come
  - some basic knowledge in Python programming language
  - either Visual Studio Code, Sublime Text, or just any other good code editor that you will be comfortable with 
  - a stable internet connection
- - patience
 
-### Step 1 – Creating our  Django app
+### Step 1 – Creating our Django app
 Open your cmd and type in the following commands to create the Django project.
 
    `$ django-admin startproject TinyMce`
@@ -36,7 +35,7 @@ and then use the below command to activate it.
 
    `$ .venv\Scripts\activate.bat`
 
-### Step 2 – Installations
+### Step 2 – Installation
 You can now Install Django in the virtual environment:
 
    `$ pip install django`
@@ -45,7 +44,7 @@ and also Install TinyMCE:
 
    `$ pip install django-tinymce4-lite`
 
-### Step 3 – Intergrations
+### Step 3 – Intergration
 After the installations are complete, you can now proceed
 to *settings.py*  and add both our app and the *tinymce* app.
 
@@ -120,7 +119,7 @@ You should also add the below *tinymce*  configurations to *settings.py*, where 
 
 ```
 
-### Step 4 – Applying tinyMCE
+### Step 4 – Applying TinyMCE
 Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models.py* that will utilize TinyMCE.
 In *models.py* create a model by the name *textEditor* and a textfield by the name *content* :
  ```py
