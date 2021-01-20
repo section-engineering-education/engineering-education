@@ -307,3 +307,6 @@ public class TodoController {
 ### Conclusion
 Now that you have learned how to upload and download files from Amazon S3, go ahead and implement the logic for uploading multiple files to Amazon S3.
 Find the source code [here](https://github.com/paulodhiambo/spring-amazon).
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
