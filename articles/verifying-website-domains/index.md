@@ -2,7 +2,7 @@
 
 --
 
-Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using a Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
+Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
 
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
@@ -94,10 +94,10 @@ _Screenshot_:
 
 --
 
-In DNS (Domain Name System), a plentiful array of resource information is displayed given that the website domain is still active.
+In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
 
 
-This is a good opportunity to use basic Python coding skills in for-loops held within a variable to iterate and display all results.
+This is a good opportunity to use for-loops held within a variable to iterate and display all results.
 
 Input:
 
@@ -126,11 +126,11 @@ The PTR (Pointer Record) value determines if the domain can resolve.
 
 Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain.
 
-Below, there are further options within the DNS function revealing additional information about the domain such as Nameservers and DNS parking which are a few critical elements in establishing website internet connection.
+Below, there are further options within the DNS function revealing additional information about the domain such as nameservers and DNS parking which are a few critical elements in establishing website internet connection.
 
-Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", "MX".
+Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", and/or "MX".
 
-"NS" for Nameserver information Input:
+"NS" for nameserver information Input:
 
 ```python
 ip = "69.195.108.249"
@@ -146,7 +146,7 @@ Output:
 [<DNS IN NS rdata: ns3.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns4.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns1.bdm.microsoftonline.com.>, <DNS IN NS rdata: ns2.bdm.microsoftonline.com.>]
 ```
 
-"TXT" for additional intenet properties Input:
+"TXT" for additional internet properties Input:
 
 ```python
 ip = "69.195.108.249"
@@ -401,7 +401,7 @@ _What does a mismatch mean?_
 Most likely a replicated version of the original. Beware, be cautious, and watch out.
 
 ---
-Try the tutorial out next time a suspicious website domain crosses paths while using the internet, the results can be fascinating.
+Try the tutorial out next time a suspicious website domain crosses paths while using the internet. The results can be fascinating.
 
 It can possibly protect individuals and/or groups from the dark web.
 
@@ -425,7 +425,7 @@ _Documentation_
 --
 
 
-Have any feedback or comments about the lines of codes used for verifying website domains?
+Have any feedback or comments about the lines of code used for verifying website domains?
 
 
 **Feel free to contact me**
