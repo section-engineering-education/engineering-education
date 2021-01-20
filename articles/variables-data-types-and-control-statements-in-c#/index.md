@@ -1,5 +1,7 @@
 In this article, we are going to take a look at variables, data types, and control statements in C#.
 
+C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework. It is used to develop web apps, desktop apps, mobile apps, games and much more.
+
 ### Variables in C#
 
 A variable is a storage location paired with a name, which contains some known or unknown data referred to as a value.
@@ -29,71 +31,71 @@ Let's take a look at each of them:
 
 - **byte**:
 
-The `byte` data type is used to store whole numbers from -128 to 127.
+  The `byte` data type is used to store whole numbers from -128 to 127.
 
-```C#
-byte number = 75;
-```
+  ```C#
+  byte number = 75;
+  ```
 
 - **int**:
 
-The `int` (integer) data type is used to store whole numbers from -2,147,483,648 to 2,147,483,647.
+  The `int` (integer) data type is used to store whole numbers from -2,147,483,648 to 2,147,483,647.
 
-```C#
-int a = 5; 
-```
+  ```C#
+  int a = 5; 
+  ```
 
 - **long**:
 
-The `long` data type allows you to store whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807.
+  The `long` data type allows you to store whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807.
 
-This data type is used when a number is large to be stored in the *int* data type. We should add a letter **L** at the end of the long number to specify it is a long number.
+  This data type is used when a number is large to be stored in the *int* data type. We should add a letter **L** at the end of the long number to specify it is a long number.
 
-```C#
-long b = 50000000000000L;
-```
+  ```C#
+  long b = 50000000000000L;
+  ```
 
 - **float**:
 
-The `float` store a fraction number and a decimal number of up to 6 decimal digits. We should add an **F** at the end of the decimal number to specify that it is a float number.
+  The `float` store a fraction number and a decimal number of up to 6 decimal digits. We should add an **F** at the end of the decimal number to specify that it is a float number.
 
-```C#
-float c = 0.64737F;
-```
+  ```C#
+  float c = 0.64737F;
+  ```
 
 - **double**:
 
-The `double` data type stores a fraction and a decimal number of up to 15 decimal digits.
+  The `double` data type stores a fraction and a decimal number of up to 15 decimal digits.
 
-```C#
-double d = 4.847376474;
-```
+  ```C#
+  double d = 4.847376474;
+  ```
 
-*Note*: Double data type stores many decimal numbers than float. It is advisable to use double in most of the calculations.
+  *Note*: Double data type stores many decimal numbers than float. It is advisable to use double in most of the calculations.
 
 - **char**: 
 
-The `char` type is used to store **one** character.
+  The `char` type is used to store **one** character.
 
-```C#
-char letter='A';
-```
+  ```C#
+  char letter='A';
+  ```
 - **string**:
 
-The `string` data type is used to store **many** characters.
+  The `string` data type is used to store **many** characters.
 
-```C#
-string name="My name is Geoffrey";
-```
+  ```C#
+  string name="My name is Geoffrey";
+  ```
 
 - **bool**:
 
-The `bool` data type is used to store **true** or **false** value.
+  The `bool` data type is used to store **true** or **false** value.
 
-```C#
-bool trueBoolean=true;
-bool falseBoolean=false;
-```
+  ```C#
+  bool trueBoolean=true;
+  bool falseBoolean=false;
+  ```
 
 ### C# Identifiers
 
@@ -213,13 +215,12 @@ We use `if-else statement`, `else if statement` and `switch-case statement` to p
 ```C#
 if (condition)
 {
-  statements // block of code to be executed if the condition is true
+  // block of code to be executed if the condition is true
 }
 else
- {
-    statements // block of code to be executed if the condition is false
-  }
-
+{
+   // block of code to be executed if the condition is false
+}
 ```
 
 
@@ -238,7 +239,7 @@ if (age < 15)
     {
      Console.WriteLine("You are old.");
     }
-  //the program outputs "You are old"
+//the program outputs "You are old"
 ```
 
 From the program above, we have set our age as 18. Thus, our *if condition* is evaluated to **false**. The program moves to the next condition, *else if condition* which is also evaluated to **false**.
@@ -361,10 +362,8 @@ For the above program, if the user enters 5, the program will execute *"Friday"*
 
 In this tutorial we looked at:
 
-- Variables and the various types
+- Variables and the various data types.
 
-- Data Types and the various types
+- How to declare and name a variable. 
 
-- Control statements (If-else statements, else if statements and switch-case statements)
-
-- Example programs in each case for better understanding of the control statements
+- Control statements (If-else statements, else if statements and switch-case statements).
