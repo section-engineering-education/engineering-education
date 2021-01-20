@@ -38,7 +38,9 @@ pip install pandas
 
 Now that we've installed the dependent libraries let us install Scikit-Learn.
 
+```bash
 \>> pip install scikit-learn
+```
 
 Let's check if Scikit-Learn can be accessed using Python.
 
@@ -98,7 +100,7 @@ print("Mean After Standardizing:",sum(temperatures_std.reshape(1,-1)[0])/len(tem
 ```
 Notice that after standardizing the data, the mean is almost 0.
 
-In the above example, fit_transform() is used. There are two important functions - fit() and fit_transform(). fit() is used to compute the mean and standard deviation, which is later used for scaling along the feature axis and fit_transform() computes the mean and standard deviation, scales the vector, and returns a NumPy array of the computed values. Therefore, standardization can either be done using fit() and transform() or in one single optimized step, fit_transform().
+In the above example, `fit_transform()` is used. There are two important functions - `fit()` and `fit_transform()`. `fit()` is used to compute the mean and standard deviation, which is later used for scaling along the feature axis and `fit_transform()` computes the mean and standard deviation, scales the vector, and returns a NumPy array of the computed values. Therefore, standardization can either be done using `fit()` and `transform()` or in one single optimized step, `fit_transform()`.
 
 ### Scikit-Learn for Normalization
 
@@ -162,7 +164,7 @@ print(encoded.transform(bands))
 
 # Output - [5 3 5 2 6 6 5 0 2 3 6 4 0 7 6 1 4]
 ```
-If one were to look at the output, they would understand that the feature has been encoded. But mere numbers do not make any sense. Luckily, classes_ help us interpret what these labels are.
+If one were to look at the output, they would understand that the feature has been encoded. But mere numbers do not make any sense. Luckily, `classes_` help us interpret what these labels are.
 
 ```py
 #Iterate through the classes_ list and print them
@@ -183,7 +185,7 @@ for band_number in range(1,len(band_list)+1):
 ```
 Note that the labels have been encoded in ascending order.
 
-If the "band_list" feature is one-hot encoded, it would be represented in 1's and 0's instead of decimals.
+If the `band_list` feature is one-hot encoded, it would be represented in 1's and 0's instead of decimals.
 
 ```py
 import numpy as np
@@ -271,7 +273,7 @@ print(*temperatures_np,sep=", ")
 ```
 ...nan's will be replaced with the value with the most occurrences (the mode of the feature) - 32.6.
 
-Opting for constant would require a value for the parameter fill_value.
+Opting for constant would require a value for the parameter `fill_value`.
 
 ```py
 # Create an instance of the imputer
