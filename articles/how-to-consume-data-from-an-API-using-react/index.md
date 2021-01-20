@@ -218,7 +218,7 @@ This method helps in updating the search query state when the value of the input
 ```JavaScript
 const onInputChange = e => {
    setSearch(e.target.value);
- }
+}
 ```
 
 ### Step 5: Building the UI
@@ -326,29 +326,28 @@ A `No Movie Found` message is displayed in case the response is False.
 We need to replace the following code:
 
 ```JSX
-    return(
-      <div>
-         <img src={data.Poster} alt=""/>
-         <h4>Title: {data.Title}</h4>
-         <p>Year: {data.Year}</p>
-         <p>Writer: {data.Writer}</p>
-         <p>{data.Response}</p> 
-      </div>
-    );
-   }
+return(
+   <div>
+      <img src={data.Poster} alt=""/>
+      <h4>Title: {data.Title}</h4>
+      <p>Year: {data.Year}</p>
+      <p>Writer: {data.Writer}</p>
+      <p>{data.Response}</p> 
+   </div>
+ );
 ```
 
 With this:
 
 ```JSX
-   return(
-      <div>
-         <input type="text" value={search} onChange={onInputChange}/>
-         <button type="submit" onClick={getMovie}>Search</button>
-         <br></br>   
-         {checkResponse(movie)}
-      </div>
-   );
+return(
+   <div>
+      <input type="text" value={search} onChange={onInputChange}/>
+      <button type="submit" onClick={getMovie}>Search</button>
+      <br></br>   
+      {checkResponse(movie)}
+   </div>
+);
 ```
 
 Here is the `App.js` code with the error handling part included.
