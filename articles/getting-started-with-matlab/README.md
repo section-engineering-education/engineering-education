@@ -213,4 +213,4 @@ That's all!
 *Note*: please be sure to execute all of the code together to allow the 3 plots to appear in the same figure.
 
 ### Conclusion
-This is just a *tip of the iceberg*. Change the [amplitude](https://en.wikipedia.org/wiki/Amplitude), [frequency](https://en.wikipedia.org/wiki/Frequency), [phase](https://en.wikipedia.org/wiki/Phase_(waves)), subplot numbers, etc.. . Try it out for yourself and see the results. If you are interested more in MATLAB, keep following our [languages](https://www.section.io/engineering-education/topic/languages/) section to create future tutorials about SIMULINK and a lot more. Have a nice day!
+This is just the *tip of the iceberg*. Change the [amplitude](https://en.wikipedia.org/wiki/Amplitude), [frequency](https://en.wikipedia.org/wiki/Frequency), [phase](https://en.wikipedia.org/wiki/Phase_(waves)), subplot numbers, etc. Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](https://www.section.io/engineering-education/topic/languages/) section. Have a nice day.
