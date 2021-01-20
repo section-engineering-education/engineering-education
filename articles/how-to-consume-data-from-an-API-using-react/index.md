@@ -165,11 +165,10 @@ const dataPromise = (new Promise(fetchData))
   .then(handleData1)
   .catch(handleRejectedAny);
 ```
+
 As shown above, we handle the Promise when it is rejected in the catch.
 
-The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
-
-Async - It is used to wait for the Promise to get resolved. Async functions can have several `await` statements. We define a async function as shown below.
+The `getMovie` is a async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is permitted within them.
 
 ```JSX
 async getData(){
@@ -177,11 +176,14 @@ async getData(){
   //await statement
 }
 ```
-await keyword - It allows you to wait for a Promise to get resolved. We can incorporate the await keyword in the getData method as follows.
+
+This is because network operations are asynchronous in nature. Therefore, an API request will return a promise and we should wait for the promise to get resolved. The promise will be resolved if the API request is successful. If not, the promise will be rejected.
+
+The `await` keyword allows you to wait for a Promise to get resolved. We can incorporate the await keyword in the getData method as follows.
 
 ```JSX
 async getData(){
-    var user =await fetch("your_url")
+    var user = await fetch("your_url")
 }
 ```
 
@@ -337,6 +339,7 @@ We need to replace the following code:
     );
    }
 ```
+
 With this:
 
 ```JSX
