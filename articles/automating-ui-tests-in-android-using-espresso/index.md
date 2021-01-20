@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/automating-ui-tests-in-android-using-espresso/
 title: Automating UI Tests in Android Using Espresso
-description: This article will cover how to automate UI tests in Andriod using the Espresso framework. Espresso is part of the `androidx` library. 
+description: This article will cover how to automate UI tests in Andriod using the Espresso framework. Espresso is part of the `androidx` library which also observes the activity lifecycle. 
 author: peter-kayere
 date: 2021-01-20T00:00:00-14:00
 topics: []
