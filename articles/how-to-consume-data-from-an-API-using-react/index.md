@@ -148,15 +148,17 @@ This method will be called whenever the search button is clicked. It will make a
 
 A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. 
 
-A Promise can either be one of the following states:
+A Promise can either be in one of the following states:
 
 - Pending: It means that the Promise has neither been rejected or completed.
+
 - Fulfilled: It means the operation was successful.
+
 - Rejected: This state means that the operation failed.
 
 When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting state.
 
-Here is an example of a Promise and then method.
+Here is an example of handling a promise:
 
 ```JSX
 const dataPromise = (new Promise(fetchData))
@@ -188,12 +190,12 @@ async getData(){
 
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
-We can handle server and network errors using a `try/catch` block. We send a network request inside the `try `function. If an error occurs, the catch block will be executed.
+We can handle server and network errors using a `try/catch` block. We send a network request inside the `try` block . If an error occurs, the catch block will be executed.
 
 Here is the code for the `getMovie` function.
 
 ```JSX
-const getMovie = async() => {
+const getMovie = async () => {
   try {
      const response = await fetch(url);
       const data = await response.json()
@@ -208,7 +210,7 @@ This method is also executed when the component is rendered for the first time u
 
 ```JSX
 useEffect(()=> {
- getMovie(); //fetch data from api
+   getMovie(); //fetch data from api
 }, []);
 ```
 
@@ -278,22 +280,20 @@ function App() {
       <div>
         <input type="text" value={search} onChange={onInputChange}/>
         <button type="submit" onClick={getMovie}>Search</button>
-            <br></br>
-            if(movie==null){
-              <p>Movie Not Found</p>
-            }else{
-               <img src={movie.Poster} alt=""/>
-               <h4>Title: {movie.Title}</h4>
-               <p>Year: {movie.Year}</p>
-               <p>Writer: {movie.Writer}</p>
-            }
+         <br></br>
+         if(movie==null){
+           <p>Movie Not Found</p>
+         }else{
+            <img src={movie.Poster} alt=""/>
+            <h4>Title: {movie.Title}</h4>
+            <p>Year: {movie.Year}</p>
+            <p>Writer: {movie.Writer}</p>
+         }
       </div>
     );
-
 }
 
 export default App;
-
 ```
 ### Step 6: Handling errors
 
