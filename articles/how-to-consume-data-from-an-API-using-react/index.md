@@ -97,23 +97,18 @@ The image below shows the overall structure of the React application.
 
 Use `npm start` to start the development server. By default, the react projects are usually hosted at `http://localhost:3000/`.
 
-Let’s delete all the unnecessary items in our project. Modify the `app.js` file to look like this.
+We'll write all of our code in the `App.js`. Modify the `App.js` file to look like this.
 
 ```javascript
 function App() {
   return (
     <div className="App">
-      // we will add our components here
-      <Movie/>
+    
     </div>
   );
 }
 export default App;
 ```
-
-Our app will have one major component: `Movie`page. The movie page will showcase the `movie` returned from the API.
-
-### Step 5: Creating the Movie Component
 
 Please note that this component will hold our logic for requesting and handling data from the OMDb API.
 
@@ -123,19 +118,17 @@ We should import `useEffect` and `useState` into this component.
 import React, {useEffect, useState} from 'react';
 ```
 
-The `useEffect` allows `React` to perform a specific action when the state changes. In our case, we will use `useEffect` to make network requests to the API.
+The `useEffect` hook allows `React` to perform a specific action when the state changes. In our case, we will use `useEffect` to make network requests to the API when the component mounts for the first time.
 
-`useState` method will help in state management. It ensures that `UI` components are updated in case of any data changes. 
+The `useState` hook will help in creating a state and a function to update that state. When you update a state, the component will re-render.
 
-We need to define several constants in the `App.js` file. 
-
-The `movie` state will hold data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
+Let's create a state for the movie. The `movie` state will hold data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
 
 ```javascript
 const [movie, setMovie] = useState([]);
 ```
 
-The search variable will be used to hold user input. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
+Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
 
 ```javascript
 const [search, setSearch] = useState('');
@@ -148,14 +141,17 @@ const API_KEY = "your_api_key";
 const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
 
-The `Movie` component also has several functions which are discussed below.
+The `App` component also has several functions which are discussed below.
 
 #### 1.	getMovie
 
 This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
+
 Async - It helps in performing promise-based or asynchronous operations. 
 await -  keyword allows you to wait for a Promise.
+
 A promise is something which can be returned after the completion of a asynchronous operation.
+
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp).
 
 Here is the code for the `getMovie` function.
@@ -262,43 +258,43 @@ Errors are a common occurence when dealing with an API. For this tutorial, we ne
 
 To do this, we need a new method and an if else statement. create a method named checkResponse in the app.js file. Add the following code.
 
-```
- function checkResponse(data){
-     if(data.Response==="True"){
-       return(
-         <div>
-            <!-- <img src={data.Poster} alt=""/>
-            <h4>Title: {data.Title}</h4>
-            <p>Year: {data.Year}</p>
-            <p>Writer: {data.Writer}</p>
-            <p>{data.Response}</p> -->
-         </div>
-       );
-    }
-      return (
-        <p>No Movie found</p>
-      );
-    }
+```JSX
+function checkResponse(data){
+  if(data.Response==="True"){
+    return(
+      <div>
+         <!-- <img src={data.Poster} alt=""/>
+         <h4>Title: {data.Title}</h4>
+         <p>Year: {data.Year}</p>
+         <p>Writer: {data.Writer}</p>
+         <p>{data.Response}</p> -->
+      </div>
+    );
+ }
+   return (
+     <p>No Movie found</p>
+   );
+ }
 ```
 The data is sent to the children components when the response is True. However a `No Movie Found` message is displayed in case the response is False.
 >Note the Response variable stores a string rather than a boolean.
 
 We need to replace the following code with our function as shown below.
 
-```    
-       <!-- <img src={data.Poster} alt=""/>
-            <h4>Title: {data.Title}</h4>
-            <p>Year: {data.Year}</p>
-            <p>Writer: {data.Writer}</p>
-            <p>{data.Response}</p> -->
+```JSX
+<!-- <img src={data.Poster} alt=""/>
+<h4>Title: {data.Title}</h4>
+<p>Year: {data.Year}</p>
+<p>Writer: {data.Writer}</p>
+<p>{data.Response}</p> -->
 
 
-             {checkResponse(movie)}
+ {checkResponse(movie)}
 ```
 
 Here is the `app.js` code with the error handling part included.
 
-```
+```JSX
 import './App.css';
 import React, {useEffect, useState} from 'react';
 
@@ -341,14 +337,14 @@ function App() {
       );
     }
 
-    return(
+   return(
       <div>
-        <input type="text" value={search} onChange={onInputChange}/>
-        <button type="submit" onClick={getMovie}>Search</button>
-            <br></br>   
-               {checkResponse(movie)}
-            </div>
-    );
+         <input type="text" value={search} onChange={onInputChange}/>
+         <button type="submit" onClick={getMovie}>Search</button>
+         <br></br>   
+         {checkResponse(movie)}
+      </div>
+   );
 
 }
 
