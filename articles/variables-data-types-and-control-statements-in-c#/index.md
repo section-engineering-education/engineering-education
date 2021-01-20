@@ -24,57 +24,46 @@ The different data types are:
 |  double    |   8 bytes    | stores fraction and decimal numbers of 15 decimal digits  |
 |  float     |   4 bytes    | stores fractional numbers and decimal numbers of 6 decimal digits  |
 |  bool      |   1 bit      | stores true or false value  |
-|
 
-Lets look at each of them:
+Let's take a look at each of them:
 
- - Byte
+- **byte**:
 
 The `byte` data type is used to store whole numbers from -128 to 127.
-
-**Example**:
 
 ```C#
 byte number = 75;
 ```
 
-- Int
+- **int**:
 
 The `int` (integer) data type is used to store whole numbers from -2,147,483,648 to 2,147,483,647.
-
-**Example**:
 
 ```C#
 int a = 5; 
 ```
 
-- Long
+- **long**:
 
 The `long` data type allows you to store whole numbers from -923,372,036,854,775,808 to 9,223,372,036,854,775,807.
 
 This data type is used when a number is large to be stored in the *int* data type. We should add a letter **L** at the end of the long number to specify it is a long number.
 
-**Example**:
-
 ```C#
 long b = 50000000000000L;
 ```
 
-- Float
+- **float**:
 
 The `float` store a fraction number and a decimal number of up to 6 decimal digits. We should add an **F** at the end of the decimal number to specify that it is a float number.
-
-**Example**:
 
 ```C#
 float c = 0.64737F;
 ```
 
-- Double
+- **double**:
 
 The `double` data type stores a fraction and a decimal number of up to 15 decimal digits.
-
-**Example**:
 
 ```C#
 double d = 4.847376474;
@@ -82,30 +71,24 @@ double d = 4.847376474;
 
 *Note*: Double data type stores many decimal numbers than float. It is advisable to use double in most of the calculations.
 
-- Char 
+- **char**: 
 
 The `char` type is used to store **one** character.
-
-**Example**:
 
 ```C#
 char letter='A';
 ```
-- String
+- **string**:
 
 The `string` data type is used to store **many** characters.
-
-**Example**:
 
 ```C#
 string name="My name is Geoffrey";
 ```
 
-- Bool
+- **bool**:
 
 The `bool` data type is used to store **true** or **false** value.
-
-**Example**:
 
 ```C#
 bool trueBoolean=true;
