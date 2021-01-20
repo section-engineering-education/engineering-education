@@ -13,37 +13,37 @@ For Docker installation, setup, and a quick start, visit [Getting started with D
 ### Project setup
 We will be creating a Docker image for the Todo application that we created on [this](https://www.section.io/engineering-education/django-crud-api/) article.
 
-Ensure `virtualenv` is installed on your computer by executing the below command.
+Ensure `virtualenv` is installed on your computer by executing the command below.
 ```bash
 $ virtualenv --version
 virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtualenv/__init__.py
 ```
-If you get an error executing the above command, run the below command to install `virtualenv` on your computer.
+If you get an error executing the command above, run the command below to install `virtualenv` on your computer.
 
 ```bash
 $ pip install virtualenv
 ```
 
-Create a working directory for the project by executing the below command.
+Create a working directory for the project by executing the command below.
 ```bash
 $ mkdir todo
 $ cd todo
 ```
-Create a virtual environment for our project using the `virtualenv` module that we just installed. Execute the below command to create and activate the virtual environment.
+Create a virtual environment for our project using the `virtualenv` module that we just installed. Execute the command below to create and activate the virtual environment.
 ```bash
 $ virtualenv venv
 $ source venv/bin/activate
 ```
 
-In the working directory, clone the project from Github to your computer using the below command.
+In the working directory, clone the project from Github to your computer using the command below.
 ```bash
 $ git clone https://github.com/paulodhiambo/django_todo.git
 ```
-Move into the project directory by executing the below command.
+Move into the project directory by executing the command below.
 ```bash
 $ cd django_todo
 ```
-Execute the below command to install all the required dependencies for the project to run.
+Execute the command below to install all the required dependencies for the project to run.
 
 ```bash
 $ pip install -r requirements,txt
@@ -118,7 +118,7 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 - `CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]` sets the executable commands in the container.
 
 ### Building Docker image
-To build the Docker image from the Dockerfile we created above, execute the below command.
+To build the Docker image from the Dockerfile we created above, execute the command below.
 
 ```bash
 $ docker build --tag django_todo:latest .
@@ -127,7 +127,7 @@ $ docker build --tag django_todo:latest .
 - `--tag` sets the tag for the image. For example, we are creating a Docker image from `python:3.8.3` which has the tag `alpine`. In our Docker image, `latest` is the tag set.
 - The trailing `.` indicates that the `Dockerfile` is within the current working directory.
   
-To list all the available images on your computer executes the below command.
+To list all the available images on your computer executes the command below.
 ```bash
 $ docker image ls
 REPOSITORY    TAG            IMAGE ID       CREATED         SIZE
@@ -142,7 +142,7 @@ hello-world   latest         bf756fb1ae65   12 months ago   13.3kB
 From the above list we see the `django_container` image that we have created.
 
 ### Creating and running Docker Container
-To build and run a Docker container from the Docker image we created above, run the below command.
+To build and run a Docker container from the Docker image we created above, run the command below.
 
 ```bash
 $ docker run --name django_todo -d -p 8000:8000 django_todo:latest
@@ -152,7 +152,7 @@ $ docker run --name django_todo -d -p 8000:8000 django_todo:latest
 - `-p 8000:8000` maps port 8000 in the Docker container to port 8000 in the server.
 - `django_todo: latest` specifies which image is used to build the Docker container. 
 
-To list all the running Docker containers, execute the below command.
+To list all the running Docker containers, execute the command below.
 ```bash
 $ docker container ps
 CONTAINER ID   IMAGE                COMMAND                  CREATED       STATUS       PORTS                    NAMES
@@ -168,7 +168,7 @@ Visit [Docker Hub](https://hub.docker.com/) and create an account if you don't h
 
 Once you have created an account and logged in to Docker hub, Creat a repository with the name `django_todo` and description `Django Docker applications`.
 
-Now that we have created a repository in the Docker hub, to push Docker image to the repository we have created we execute the below commands.
+Now that we have created a repository in the Docker hub, to push Docker image to the repository we have created we execute the command belows.
 ```bash
 $ docker login
 
