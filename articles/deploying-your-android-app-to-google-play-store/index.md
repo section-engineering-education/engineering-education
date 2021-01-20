@@ -127,3 +127,6 @@ The [feature graphic generator](https://www.norio.be/graphic-generator/) will he
 
 ### Conclusion
 You can now comfortably check the boxes on [Google Play Console](https://play.google.com/apps/publish) and publish your application to production.
+
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
