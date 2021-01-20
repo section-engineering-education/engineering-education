@@ -173,3 +173,6 @@ Here, we create an array of one thousand coroutines. Each coroutine delays for t
 
 ### Conclusion
 This article has gone through the basics of writing asynchronous code using coroutines. Coroutines help us consecutively write asynchronous code. We don't use callbacks as in other libraries. We have seen how coroutines are launched, joined to, and canceled. We have also seen how we can obtain values from coroutines and how to create suspending functions. This is just the foundation of coroutines. You can discover other features from their [documentation](https://kotlinlang.org/docs/reference/coroutines-overview.html). I hope you find this useful. Happy coding!
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
