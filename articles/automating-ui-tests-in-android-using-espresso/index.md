@@ -44,7 +44,7 @@ Wait for the project build to finish.
 
 Once it's done, open the app-level `build.gradle` file and check whether the following dependencies are present. 
 
-```Gradle
+```bash
 testImplementation 'junit:junit:4.13.1'
 androidTestImplementation 'androidx.test:runner:1.3.0'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
