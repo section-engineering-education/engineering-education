@@ -19,164 +19,171 @@ You should at least have the following things before we begin, as they will come
 ### Step 1 – Creating our  Django app
 Open your cmd and type in the following commands to create the Django project.
 
-    $ django-admin startproject TinyMce
+   `$ django-admin startproject TinyMce`
 
 Now change your directory to TinyMce,
       `$ cd TinyMce `
       
 Type the following command to create an app called *myapp* inside the *TinyMce* project.
 
-    $ django-admin startapp myapp
+   `$ django-admin startapp myapp`
     
 Next, use the below command to create a virtual environment in our project-level directory,
 
-    $ py -m venv .venv
+   `$ py -m venv .venv`
     
 and then use the below command to activate it.    
 
-    $ .venv\Scripts\activate.bat
+   `$ .venv\Scripts\activate.bat`
 
 ### Step 2 – Installations
 You can now Install Django in the virtual environment:
 
-    $ pip install django
+   `$ pip install django`
 
 and also Install TinyMCE:
 
-    $ pip install django-tinymce4-lite
+   `$ pip install django-tinymce4-lite`
 
 ### Step 3 – Intergrations
 After the installations are complete, you can now proceed
 to *settings.py*  and add both our app and the *tinymce* app.
 
-
-    INSTALLED_APPS = [
+   ``` 
+   INSTALLED_APPS = [
      ...
     'myapp',
     'tinymce',
      ... 
     ]
-
+```
 You should also add the below *tinymce*  configurations to *settings.py*, where you can opt to copy and paste.
+   ```
+ TINYMCE_DEFAULT_CONFIG = {
 
-    TINYMCE_DEFAULT_CONFIG = {
+   'height': 360,
 
-       'height': 360,
+   'width': 1000,
 
-       'width': 1000,
+   'cleanup_on_startup': True,
 
-       'cleanup_on_startup': True,
+   'custom_undo_redo_levels': 20,
 
-       'custom_undo_redo_levels': 20,
+   'selector': 'textarea',
 
-       'selector': 'textarea',
+   'theme': 'modern',
 
-       'theme': 'modern',
+   'plugins': '''
 
-       'plugins': '''
-               textcolor save link image media preview codesample contextmenu
+   textcolor save link image media preview codesample contextmenu
 
-               table code lists fullscreen insertdatetime nonbreaking
+   table code lists fullscreen insertdatetime nonbreaking
 
-               contextmenu directionality searchreplace wordcount visualblocks
+   contextmenu directionality searchreplace wordcount visualblocks
 
-               visualchars code fullscreen autolink lists charmap print hr
+   visualchars code fullscreen autolink lists charmap print hr
 
-               anchor pagebreak
+   anchor pagebreak
 
-              ''',
-
-
-
-
-       'toolbar1': '''
-               fullscreen preview bold italic underline | fontselect,
-
-               fontsizeselect | forecolor backcolor | alignleft alignright |
-
-               aligncenter alignjustify | indent outdent | bullist numlist table |
-
-               | link image media | codesample |
-
-               ''',
+   ''',
 
 
+   'toolbar1': '''
 
+   fullscreen preview bold italic underline | fontselect,
 
-       'toolbar2': '''
-               visualblocks visualchars |
+   fontsizeselect | forecolor backcolor | alignleft alignright |
 
-               charmap hr pagebreak nonbreaking anchor | code |
+   aligncenter alignjustify | indent outdent | bullist numlist table |
 
-               ''',
+   | link image media | codesample |
 
+  
 
+   ''',
 
+   'toolbar2': '''
 
-       'contextmenu': 'formats | link image',
+   visualblocks visualchars |
 
-       'menubar': True,
+   charmap hr pagebreak nonbreaking anchor | code |
 
-       'statusbar': True,
+   ''',
 
-       }
+   'contextmenu': 'formats | link image',
 
+   'menubar': True,
+
+   'statusbar': True,
+
+   }
+
+```
 
 ### Step 4 – Applying tinyMCE
 Now that we have installed and integrated TinyMCE, we can create a model with a text field in *models.py* that will utilize TinyMCE.
 In *models.py* create a model by the name *textEditor* and a textfield by the name *content* :
-   
+ ```
+from django.db import models
 
-    from django.db import models
-    
+class textEditor(models.Model): # new
 
-    class textEditor(models.Model): # new
+   content = models.TextField() #new
 
-        content = models.TextField() #new
+ ```
 
 Next, run the Django command-line utilities to create the database table automatically:
 
-    $ py manage.py makemigrations
+   `$ py manage.py makemigrations`
 
-    $ py manage.py migrate
-
+   `$ py manage.py migrate `
+   
 In your *admin.py* file, add the following code. 
 
-    from .models import textEditor
-    from django.db import models
-    from tinymce.widgets import TinyMCE
+ ```
+from .models import textEditor
 
-    class textEditorAdmin(admin.ModelAdmin):
+from django.db import models
 
-        list_display = ["content"]
-    
-        formfield_overrides = {
-            models.TextField: {'widget': TinyMCE()}
-        }
-
-    admin.site.register(textEditor, textEditorAdmin)
-
-Then in your project-level  *urls.py* add the following code that's commented *new* :
-
-    from django.contrib import admin
-
-    from django.urls import path ,include # new
+from tinymce.widgets import TinyMCE
 
   
 
-    urlpatterns = [
-        path('admin/', admin.site.urls),
-        path('tinymce/',include('tinymce.urls')), # new
-     ]
+class textEditorAdmin(admin.ModelAdmin):
+
+   list_display = ["content"]
+
+   formfield_overrides = {
+
+   models.TextField: {'widget': TinyMCE()}
+
+   }
+admin.site.register(textEditor, textEditorAdmin)
+ ```
+ 
+Then in your project-level  *urls.py* add the following code that's commented *new* :
+
+```
+from django.contrib import admin
+
+from django.urls import path ,include # new
+
+  
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('tinymce/',include('tinymce.urls')), # new
+    ]
+ ```
 
 Now let us create the super-user to be able to login to the admin's page.
 
-    $ py manage.py createsuperuser
+   `$ py manage.py createsuperuser`
     
 After typing in the above command, you'll be asked to enter the username and password, which you shall use to log into Django admin.
 Now let us run our local server and log into the admin's page. 
 
-    $ py manage.py runserver
+   `$ py manage.py runserver`
 
 open your browser now and type in the following URL :
 **http://127.0.0.1:8000/admin/** and log in using the credentials that you used to create the super-user.
