@@ -17,79 +17,25 @@ images:
 
 #### Introduction
 Learn Kotlin Programming, its basics, and Fundamentals from scratch.
-Kotlin was announced in 2017 by google and it supported the features that were presented by Java
-Kotlin is a statically typed language and also known as JVM(Java Virtual Machine)language because it needs JVM to execute its bytecode. Since kotlin is a JVM language it's interoperable with languages like Java. It supports null pointer exception, Support immutability, it's is an object-oriented, supports function, it has less code more result and makes the code cleaner
-Kotlin was announced in 2017 by google and it supported the features that were presented by Java
+
+Kotlin was announced in 2017 by google, and it supported the features that were presented by Java.
+Kotlin is a statically typed language. It is also known as JVM(Java Virtual Machine)language because it needs JVM to execute its bytecode. Since kotlin is a JVM language, it's interoperable with languages like Java. It supports null pointer exception and immutability. It is object-oriented, supports functions and has less code making it cleaner than other JVM languages.
 
 #### Prerequisites
 For you to follow along with this tutorial:
-
 - You need to have Kotlin editor preferably [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) installed on your machine
 - Or refer to **repl.it** [click here](https://repl.it/join/uovhpspi-stephenchacha).
 
-<!-- add relevant link and delete this comment -->
-
 ### Topics to be covered
-
-1. Data Types and Variables 
-    - Data Types and Variables
-    - Strings, Literals, and String Interpolation
-
+1. Data Types and Variables
 2. Constants, Variables, and Data Types
-
-3. Control Flow Statements 
-    - `IF ELSE`
-    - `IF` Expressions
-    - `WHEN` Expressions
-
-4. Loop Control Statements 
-    - What are Iterators?
-    - `FOR` Loop and how it works
-    - `WHILE` Loop
-    - `DO WHILE` Loop 
-    - `BREAK` statements 
-    - `CONTINUE` keyword 
-    - Labelled `FOR` Loop 
-
-5. Functions and Interoperability 
-    - Declaring functions 
-    - Interoperability with Java code 
-    - Function as Expressions 
-    - Extension Functions
-    - `Infix` Functions
-    - Default Parameters
-    - Named Parameters
-    - Tailrec Functions 
-
-6. Object Oriented Programming in Kotlin 
-    - Defining `Class` and creating `Objects`
-    - `INIT` block
-    - Primary and Secondary Constructors 
-    - Properties ( Field variables )
-    - Inheritance
-    - Method and Property Overriding 
-    - Polymorphism 
-    - Abstract `Class`, Property and Method
-    - `Interfac`
-    - Data `Class`
-    - `Object` Declaration
-    - `Companion Object`
-
-7. Functional Programming in Koltin
-    - Lambdas
-    - Higher-Order Functions
-    - Closures
-    - 'it' keyword
-    - 'with' function
-    - 'apply' function
-    
+3. Control Flow Statements
+4. Loop Control Statements
+5. Functions and Interoperability
+6. Object Oriented Programming in Kotlin
+7. Functional Programming in Kotlin
 8. Kotlin NULL Safety
-    - Safe call
-    - `with`, `Let`
-    - Elvis
-    - Lateinit keyword
-    - Lazy delegation and 'lateinit' vs. 'lazy'
-    
+ 
 ```kotlin
 fun main(args: Array<String>) {
     print("Hello World")
@@ -98,14 +44,13 @@ fun main(args: Array<String>) {
 // Output: Hello world
 ```
 
-### Defining Variables
+### 1. Defining Variables
 
 #### `val`
 It can be assigned a value only once 
 They are immutable string
 
 ``` kotlin
-
 fun main(args: Array<String>) {
     val x = 2
     println("value x is : $x")
@@ -119,79 +64,55 @@ It can be reassigned a value after assigned locally
 They are mutable string
 
 ```kotlin
-
 fun main() {
     var y = 10
     y += 2
-
     println(y)
 }
 
 // Output: 12
 ```
 #### Comments
-
-Like in other programming languages comments are used to explain or highlight what you are talking about. It helps in the documentation for developers
+Like in other programming languages comments are used to explain or highlight what you are talking about. It helps in the documentation for developers.
 Comments are ignored during code compilation
 
-Comments are written in two version
+Comments can be written in two ways:
 
-### Using block comments
-
+* Using block comments
 ```kotlin
-
 /*
 * This is comment line 1
 * */
-
 ```
 
-``` kotlin
-fun main() {    
-
-     // This is an inline comment
-}
-```
-
-By use of double slashes `//`
-
+* By use of double forward slashes
 ```kotlin
-
 fun main (){
-
     // This is a comment
 }
 ```
 
 ### Data types
-
 In kotlin data, types are all objects.
-They include 
+They include:
 
-```kolin
-
-Data types              Size   
-     
-Boolean                 1 bit
-Byte                    8 bit
-Char                    16 bit
-Short                   16 bit
-Int                     32 bit
-Long                    64 bit
-Float                   32 bit
-Double                  64 bit
-
-```
+| Data type         | size          |
+|-------------------|:-------------:|
+| Boolean           | 1 bit         |
+| Byte              | 8 bit         |
+| Char              | 16 bit        |
+| Short             | 16 bit        |
+| Int               | 32 bit        |
+| Long              | 64 bit        |
+| Float             | 32 bit        |
+| Double            | 64 bit        |
 
 #### Numbers
-
 Kotlin provides a set of built-in types that represent numbers.
 For integer numbers, there are four types with different sizes and, hence, value ranges.
 
 ```kotlin
-
 fun main() {
-
     val num1= 1 //Int
     val One_Billion=1000000000 //Long
     val num1 = 53L // Long
@@ -203,8 +124,8 @@ fun main() {
     
     println(num1)
     //1
-     println(num2)
-     //3.14
+    println(num2)
+    //3.14
 
     println(myAge)
     // 10
