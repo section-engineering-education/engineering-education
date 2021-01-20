@@ -77,17 +77,17 @@ In the above `JSON` response, we have data like the `Title,` `Year,` `Rated,` `R
 
 ### Step 2: Creating a react project.
 
-Let's create a React application using the following `npx` command:
+Let's create a React application using the following command:
 
 ```
 npx create-react-app OMDbApi
 ```
 
-Once you execute the above statement, you have to give it a few minutes to install the required dependencies. You can then open the folder in your preferred code editor when the installation is complete. Please note that to use `npx`, you must have `npm` installed.
+Once you run the above statement, it'll take a few minutes to install the required dependencies. Once the project is created, you can open the folder in your preferred code editor.
 
 ### Step 3: Project Structure
 
-All the files that we will be working with are located in the `src` folder. These files will be compiled and shown to the user.
+All the files that we'll be working with are located in the `src` folder. These files will be compiled and shown to the user.
 
 The image below shows the overall structure of the React application.
 
@@ -97,9 +97,11 @@ The image below shows the overall structure of the React application.
 
 Use `npm start` to start the development server. By default, the react projects are usually hosted at `http://localhost:3000/`.
 
-We'll write all of our code in the `App.js`. Modify the `App.js` file to look like this.
+We'll write all of our code in the `App.js`. Modify the `App.js` file to look like this before we start.
 
 ```javascript
+import React from 'react';
+
 function App() {
   return (
     <div className="App">
@@ -107,10 +109,9 @@ function App() {
     </div>
   );
 }
+
 export default App;
 ```
-
-Please note that this component will hold our logic for requesting and handling data from the OMDb API.
 
 We should import `useEffect` and `useState` into this component.
 
@@ -141,36 +142,39 @@ const API_KEY = "your_api_key";
 const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
 
-The `App` component also has several functions which are discussed below.
+The `App` component will also has several functions. They are:
 
 #### 1.	getMovie
 
-This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object. The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
+This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object.
 
-Async - It helps in performing promise-based or asynchronous operations. 
-await -  keyword allows you to wait for a Promise.
-
-A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is something which can be returned after the completion of a asynchronous operation. In other words, it allows asynchronous functions to return information just like synchronous methods. A Promise can, therefore, contain a success or failure message. 
+A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. 
 
 A Promise can either be one of the following states:
-Pending - this means that the Promise has neither been rejected or completed.
-Fulfilled - It means the operation was successful.
-Rejected - This state means that the operation failed.
+
+- Pending: It means that the Promise has neither been rejected or completed.
+- Fulfilled: It means the operation was successful.
+- Rejected: This state means that the operation failed.
 
 When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting state.
+
 Here is an example of a Promise and then method.
 ```
-const dataPromise =
-  (new Promise(fetchData))
+const dataPromise = (new Promise(fetchData))
   .then(handleData1)
   .then(handleData1)
   .catch(handleRejectedAny);
 ```
 As shown above, we handle the Promise when it is rejected in the catch.
 
+The `getMovie` function uses async and await. This is because network operations may take some time before they are completed. We, therefore, need to wait for the result. When we get the response, we convert it into JSON and store it in the movie variable. 
+
+Async - It helps in performing promise-based or asynchronous operations. 
+await -  keyword allows you to wait for a Promise to get resolved.
+
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
-We can handle server and network errors using `try and catch` methods. We send a network request inside the `try `function and then listen for an error and display it using the `catch` method.
+We can handle server and network errors using a `try/catch` block. We send a network request inside the `try `function. If an error occurs, the catch block will be executed.
 
 Here is the code for the `getMovie` function.
 
@@ -180,19 +184,18 @@ const getMovie = async() => {
      const response = await fetch(url);
       const data = await response.json()
       setMovie(data);
-} catch (e) {
-    console.error(e.toString);
-} 
- 
+   } catch (e) {
+       console.error(e.toString);
+   } 
 }
 ```
 
-This method is initially executed after the components are rendered using the `useEffect` hook.
+This method is also executed when the component is rendered for the first time using the `useEffect` hook to load some initial data.
 
 ```javascript
 useEffect(()=> {
-    getMovie(); //fetch data from api
- }, []);
+ getMovie(); //fetch data from api
+}, []);
 ```
 
 #### 2.	onInputChange
@@ -207,7 +210,7 @@ const onInputChange = e => {
 
 ### Step 6: Returning the component
 
-After we fetch data, we should display it to the user. In the `app.js` file, we should include an input field and a button for search. The page also has an image, h4, and paragraph tags. Here is the code for our app's layout.
+After we fetch the data, we should display it to the user. In the `App.js` file, we should include an input field and a button for search. The page also has an image, title, and paragraph tags. Here is the code for our app's layout.
 
 ```javascript
 return(
@@ -227,9 +230,7 @@ As shown above, the `getMovie` method is called whenever the button is clicked.
 
 The `onInputChange` function is called when the value of the input changes.
 
-Since we are returning a JSON object rather than an array, there is no need to loop through it. We use `movie.Title`,`movie.Year`, and `movie.Writer` to extract data and pass it to the children components.
-
-Here is the code for the `app.js` component
+Here is the complete code for the `App.js` component
 
 ```javascript
 import './App.css';
@@ -267,10 +268,10 @@ function App() {
             if(movie==null){
               <p>Movie Not Found</p>
             }else{
-            <img src={movie.Poster} alt=""/>
-            <h4>Title: {movie.Title}</h4>
-            <p>Year: {movie.Year}</p>
-            <p>Writer: {movie.Writer}</p>
+               <img src={movie.Poster} alt=""/>
+               <h4>Title: {movie.Title}</h4>
+               <p>Year: {movie.Year}</p>
+               <p>Writer: {movie.Writer}</p>
             }
       </div>
     );
@@ -281,13 +282,14 @@ export default App;
 
 ```
 ### Step 7: Handling errors
+
 Errors are a common occurence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if its unavailable. We, therefore, check the state of this variable.
 
 To do this, we need a new method and an if else statement. create a method named checkResponse in the app.js file. Add the following code.
 
 ```JSX
 function checkResponse(data){
-  if(data.Response==="True"){
+   if(data.Response==="True"){
     return(
       <div>
          <!-- <img src={data.Poster} alt=""/>
@@ -297,14 +299,16 @@ function checkResponse(data){
          <p>{data.Response}</p> -->
       </div>
     );
- }
+   }
    return (
      <p>No Movie found</p>
    );
  }
 ```
-The data is sent to the children components when the response is True. However a `No Movie Found` message is displayed in case the response is False.
->Note the Response variable stores a string rather than a boolean.
+
+A `No Movie Found` message is displayed in case the response is False.
+
+> Note the `Response` variable stores a string rather than a boolean.
 
 We need to replace the following code with our function as shown below.
 
@@ -319,7 +323,7 @@ We need to replace the following code with our function as shown below.
  {checkResponse(movie)}
 ```
 
-Here is the `app.js` code with the error handling part included.
+Here is the `App.js` code with the error handling part included.
 
 ```JSX
 import './App.css';
