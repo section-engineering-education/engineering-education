@@ -4,41 +4,39 @@ status: publish
 published: true
 url: /engineering-education/how-to-consume-data-from-an-api-in-react/
 title: How to Consume Data from an API in a React application
-description: This tutorial provides a detailed overview how to consume data from an API in a React application.
+description: This tutorial provides a detailed overview how to consume data from an API in a React application. We will learn how to fetch and consume data from an API. We will use async and await when performing network operations.
 author: michael-barasa
-date: 2021-01-21T00:00:00-13:00
+date: 2021-01-21T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-consume-data-from-an-api-in-react/hero.jpg
-    alt: How to Consume Data from an API in a React application image
+  - url: /engineering-education/how-to-consume-data-from-an-api-in-react/hero.png
+    alt: How to consume data from an API in a React application image
 ---
 API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.
-
+<!--more-->
 In this tutorial, you'll learn how to consume data from an API in a React application. 
 
 ### Prerequisites
-
-To follow along in this tutorial, you must have basic knowledge of using React and JavaScript. 
+To follow along in this tutorial, you must have a basic understanding of how to use React and JavaScript. 
 
 You can learn more about React from [here](https://reactjs.org/docs/getting-started.html).
 
 ### Step 1: Understand the data from the API
-
 Before consuming data from an API, it's important to understand the data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
 
 In this tutorial, we will be using [OMDb API](http://www.omdbapi.com/). You need an API key to gain access to this API. This API key can be generated from the OMDb API's [website](http://www.omdbapi.com/apikey.aspx). 
 
-![signup](/engineering-education/how-to-consume-data-from-an-API-using-react/signup.png)
+![signup](/engineering-education/how-to-consume-data-from-an-api-in-react/signup.png)
 
 The API key will be sent to your email, as shown below.
 
-![email](/engineering-education/how-to-consume-data-from-an-API-using-react/email.png)
+![email](/engineering-education/how-to-consume-data-from-an-api-in-react/email.png)
 
 > Note that the API key must be included in the API request, as shown:
 
-```
+```bash
 http://www.omdbapi.com/?i=tt3896198&apikey={your_key}
 ```
 
@@ -89,8 +87,7 @@ When we navigate to the above link in a browser, the endpoint will return the JS
 
 In the above `JSON` response, we have data like the `Title,` `Year,` `Rated,` `Released,` `Runtime,` `Genre`, etc, of the movie Guardians of the Galaxy Vol. 2.
 
-### Step 2: Creating a react project.
-
+### Step 2: Creating a react project
 Let's create a React application using the following command:
 
 ```bash
@@ -99,16 +96,14 @@ npx create-react-app omdbapi
 
 Once you run the above statement, it'll take a few minutes to install the required dependencies. Once the project is created, you can open the folder in your preferred code editor.
 
-### Step 3: Project Structure
-
+### Step 3: Project structure
 All the files that we'll be working with are located in the `src` folder. These files will be compiled and shown to the user.
 
 The image below shows the overall structure of the React application.
 
-![structure](/engineering-education/how-to-consume-data-from-an-API-using-react/structure.png)
+![structure](/engineering-education/how-to-consume-data-from-an-api-in-react/structure.png)
 
 ### Step 4: Developing the react application
-
 Use `npm start` to start the development server. By default, the react projects are usually hosted at `http://localhost:3000/`.
 
 We'll write all of our code in the `App.js`. Modify the `App.js` file to look like this before we start.
@@ -135,7 +130,7 @@ import React, {useEffect, useState} from 'react';
 
 The `useEffect` hook allows `React` to perform a specific action when the state changes. In our case, we will use `useEffect` to make network requests to the API when the component mounts for the first time.
 
-The `useState` hook will help in creating a state and a function to update that state. When you update a state, the component will re-render.
+The `useState` hook will help create a state and a function to update that state. When you update a state, the component will re-render.
 
 Let's create a state for the movie. The `movie` state will hold the `object` or data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
 
@@ -143,7 +138,7 @@ Let's create a state for the movie. The `movie` state will hold the `object` or 
 const movie, setMovie = useState({});
 ```
 
-Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. 
+Next, let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. 
 
 ```JSX
 const [search, setSearch] = useState('');
@@ -156,13 +151,16 @@ const API_KEY = "your_api_key";
 const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 ```
 
-The `App` component will also has several functions. They are:
+The `App` component will also has several functions. 
 
-#### 1.	getMovie
+They are:
 
+#### getMovie
 This method will be called whenever the search button is clicked. It will request the API and return a movie object.
 
-A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. 
+A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's, such as eventual success value or failure reason. 
+
+This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. 
 
 A Promise can either be in one of the following states:
 
@@ -191,7 +189,7 @@ const dataPromise = (new Promise(fetchData))
 
 As shown above, we handle the Promise if it is rejected in the catch block.
 
-The `getMovie` is an async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is permitted within them.
+The `getMovie` is an async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is allowed within them.
 
 ```JSX
 async getData(){
@@ -211,7 +209,7 @@ async getData(){
 }
 ```
 
-The above function will wait for the promise returned from the network request to be resolved and will print the response from the request.
+The above function will wait for the promise to be returned from the network request to be resolved and will print the response from the request.
 
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
@@ -239,9 +237,8 @@ useEffect(()=> {
 }, []);
 ```
 
-#### 2. onInputChange
-
-This method helps in updating the search query state when the value of the input changes, The value of the search state is updated using the `setSearch` method.
+#### onInputChange
+This method helps update the search query state when the value of the input changes, the value of the search state is updated using the `setSearch` method.
 
 ```JSX
 const onInputChange = e => {
@@ -250,7 +247,6 @@ const onInputChange = e => {
 ```
 
 ### Step 5: Building the UI
-
 After we fetch the data, we should display it to the user. In the `App.js` file, we should include an input field and a button for search. The page also has an image, title, and paragraph tags. Here is the code for our app's layout.
 
 ```JSX
@@ -271,10 +267,11 @@ As shown above, the `getMovie` method is called whenever the button is clicked.
 The `onInputChange` function is called when the value of the input changes.
 
 ### Step 6: Handling errors
+Errors are a common occurrence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. 
 
-Errors are a common occurrence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if it's unavailable. We, therefore, check the state of this variable.
+The API returns the `Response` with a value of `True` when a movie is found and `False` if it's unavailable. We therefore, check the state of this variable.
 
-To do this, we need a new method and an if-else statement. create a method named `checkResponse` in the app.js file. Add the following code.
+To do this, we need a new method and an if-else statement. Create a method named `checkResponse` in the app.js file. Add the following code.
 
 ```JSX
 function checkResponse(data){
@@ -390,14 +387,12 @@ export default App;
 ```
 
 ### Step 7: Testing our web application
-
 If you have successfully reached this stage, congratulations. Follow the steps in the video below to test out the web application.
 
-![React App](/engineering-education/how-to-consume-data-from-an-API-using-react/app.gif)
+![React App](/engineering-education/how-to-consume-data-from-an-api-in-react/app.gif)
 
 ### Conclusion
-
-In the above tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. You can refer to the final code from this [GitHub Repository](https://github.com/WanjaMIKE/react-omdapi/).
+In this tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. You can refer to the final code from this [GitHub Repository](https://github.com/WanjaMIKE/react-omdapi/).
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
