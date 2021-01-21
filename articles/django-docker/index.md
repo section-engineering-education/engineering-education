@@ -10,7 +10,7 @@ For Docker installation, setup, and a quick start, visit [Getting started with D
 
 
 ### Project setup
-We will be creating a Docker image for the Todo application that we created on [this](https://www.section.io/engineering-education/django-crud-api/) tutorial. The `Todo` application allowed us to `create`, `update`, `delete`, and `get` list of `todos` through REST APIs.
+We will be creating a Docker image for the Todo application that we created on [this](https://www.section.io/engineering-education/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `update`, `delete`, and `get` list of `todos` through REST APIs.
 
 Ensure `virtualenv` is installed on your computer by executing the command below.
 ```bash
