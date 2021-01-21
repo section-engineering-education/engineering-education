@@ -72,9 +72,9 @@ This is an example that uses the properties of a scrollbar namely `scrollbar-wid
 ### Building a web page and implementing a customized scrollbar
 This is the part where I will design a landing page that implements a customized landing page. Let us create a folder for our project named `landing-page`. Our folder structure is very simple. We will create another folder inside the `landing-page` named `images` that will contain an image. In the root of our `landing-page`, we have two two files, the `index.html` and `styles.css`.
 Let us design this application in the following steps.
-1. Write the code for our HTML file
+1. Write the code for our HTML file. This will be a simple scrollable web page.
 
-2. Add the CSS stylesheet for the application layout design and scrollbar customization  
+2. Add the CSS stylesheet for the application layout design and scrollbar customization. 
 
 ### The HTML
 
@@ -82,8 +82,8 @@ Let us design this application in the following steps.
 
 ### Final application
 
-That is the final application utilizing our CSS scrollbar feature. The [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is a great site for reference and checking on the current browser support.
-You can check the live application on [netlify]()
+That is the final application utilizing our CSS scrollbar feature. The [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is an awesome resource for reference and checking on the current browser support.
+You can check the live application on [netlify]().
 
 
 ### Conclusion 
