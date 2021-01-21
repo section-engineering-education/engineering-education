@@ -127,13 +127,13 @@ Let's create a state for the movie. The `movie` state will hold the `object` or 
 const movie, setMovie = useState({});
 ```
 
-Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
+Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. 
 
 ```JSX
 const [search, setSearch] = useState('');
 ```
 
-You can also have a constant for your API key or include it in your url directly.
+The search query value is added to the search url.
 
 ```JSX
 const API_KEY = "your_api_key";
@@ -163,7 +163,7 @@ Here is an example of handling a promise:
 ```JSX
 const dataPromise = (new Promise(fetchData))
   .then(handleData1)
-  .then(handleData1)
+  .then(handleData2)
   .catch(handleRejectedAny);
 ```
 
@@ -180,13 +180,16 @@ async getData(){
 
 This is because network operations are asynchronous in nature. Therefore, an API request will return a promise and we should wait for the promise to get resolved. The promise will be resolved if the API request is successful. If not, the promise will be rejected.
 
-The `await` keyword allows you to wait for a Promise to get resolved. We can incorporate the await keyword in the getData method as follows.
+The `await` keyword allows you to wait for a Promise to get resolved.
 
 ```JSX
 async getData(){
-    var user = await fetch("your_url")
+    var response = await fetch("your_url")
+    console.log(response);
 }
 ```
+
+The above function will wait for the promise returned from the network request to be resolved and will print the response from the request.
 
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
@@ -246,51 +249,6 @@ As shown above, the `getMovie` method is called whenever the button is clicked.
 
 The `onInputChange` function is called when the value of the input changes.
 
-Here is the complete code for the `App.js` component
-
-```JSX
-import './App.css';
-import React, {useEffect, useState} from 'react';
-
-function App() {
-    const [movie, setMovie] = useState({});
-    const [search, setSearch] = useState('');
-    const API_KEY = "cebd9b53";
-    const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
-
-    const getMovie = async()=>{
-      try {
-        const response = await fetch(url);
-         const data = await response.json()
-         setMovie(data);
-      } catch (error) {
-          console.error(error);
-      } 
-    }
-
-    const onInputChange = e =>{
-      setSearch(e.target.value);
-    }
-
-    useEffect(()=> {
-      getMovie();
-    }, []);
-
-    return(
-      <div>
-        <input type="text" value={search} onChange={onInputChange}/>
-        <button type="submit" onClick={getMovie}>Search</button>
-         <br></br>
-            <img src={movie.Poster} alt=""/>
-            <h4>Title: {movie.Title}</h4>
-            <p>Year: {movie.Year}</p>
-            <p>Writer: {movie.Writer}</p>
-      </div>
-    );
-}
-
-export default App;
-```
 ### Step 6: Handling errors
 
 Errors are a common occurence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if its unavailable. We, therefore, check the state of this variable.
