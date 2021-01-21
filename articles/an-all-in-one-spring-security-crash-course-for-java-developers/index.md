@@ -3,19 +3,19 @@ Title: An All-In-One Spring Security Crash Course For Java Developers
 Description: A crash course on how to secure a Spring Boot application. 
 
 
-### Introduction:
+### Introduction
 
 Whenever we build an application, security isn’t exactly the first thing we think about. Yet, it is one of the most important features that needs your attention. In this article, we will cover some key ways to secure your apps with Spring Security. I know security might seem a little daunting especially if you are focused on the bigger picture. Knowing this I tried to make a simple all-in-one guide that would have helped me when I was learning this.
 
-### Prerequisites:
+### Prerequisites
 
 In this guide, I will assume that you have experience with Spring Boot. This includes some of the common design patterns such as DTOs and services. As well, I will assume you have some basic knowledge of Spring data to store users in a database.
 
-### Theory:
+### Theory
 
 Before we begin coding, let’s go over some theory. The main features we will cover are different tactics for authentication and authorization. Authorization is the process of verifying we allow the user to do what they are asking to do. Authentication is the process of verifying who it is that is sending a request. The three authentication strategies we will go over are HTTP basic, JWT, and OAuth.
 
-### HTTP Basic Authentication:
+### HTTP Basic Authentication
 
 With HTTP basic authentication, each secured request requires an Authorization header. In case you don’t know, each request sent to your controllers has what we call headers. These are a bunch of key-value pairs that give extra information about the request. When I say *Authorization header*, this means the *key* of the header is the string *Authorization*. With HTTP Basic Authentication, the value must be in this format: ```Basic <Credentials>```. The credentials, in this case, is the username and password joined by a colon and base 64 encoded. While simple, this strategy comes with some concerns. Base 64 encoding is easily reversible and thus practically unprotected. Although we can compensate with an HTTPS connection, it is still not ideal to have credentials attached to every request. As well, the browser can sometimes send the Authorization header automatically if you have an active session. This can make your clients vulnerable to a CSRF (cross-site request forgery) attack. These are attacks where another web server can send a request while your client has an active session. With JWT authentication, however, we can avoid that issue completely.
 
@@ -253,7 +253,7 @@ In the first method, we restrict the */api/secret-admin-business* endpoint to be
 
 Just like that, we have configured simple HTTP basic authentication. Not only that but our app has some role-based authorization too. Although role-based authorization isn't the only authorization method that Spring provides. Spring security also allows authorization on a method-level using annotations.
 
-### Simple Method-level Authorization:
+### Simple Method-level Authorization
 
 As an impractical example, say we gave the User objects a new field called *secret*. This contains sensitive information only the owner of the secret should access. Then suppose we had an endpoint ```/api/user/{username}/secret``` which we can send a GET request to retrieve a user’s secret. The corresponding controller would call the following method from the ```UserService``` class:
 
