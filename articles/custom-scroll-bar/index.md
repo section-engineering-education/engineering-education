@@ -36,21 +36,20 @@ The following are the available selectors for scrollbar customization include:
   
 - `::-webkit-resizer` is the draggable resizing handle that will appear at the bottom corner of the elements.
   
-This property is common in a -webkit vendor prefix. There are various jQuery plugins written to extend ("polyfill") this functionality to other browsers. A common plugin is [jScrollPane](http://jscrollpane.kelvinluck.com/).
+These are common properties in a -webkit vendor prefix. There exists various jQuery plugins that will extend or polyfill this functionality to other legacy browsers. A common plugin used is [jScrollPane](http://jscrollpane.kelvinluck.com/).
 
 ### Targeting more browser support
-Building Future-Proof Scrollbar Styles
-You can write your CSS in a way to support both -webkit-scrollbar and CSS Scrollbars specifications.
-
-Here is an example that uses scrollbar-width, scrollbar-color, `::-webkit-scrollbar`, `::-webkit-scrollbar-track`, `::webkit-scrollbar-thumb`:
+To build scrollbar customized styles, it is a good practice to target more support of this feature.
+This is where we need to write a CSS code that targets support for both `-webkit-scrollbar` and CSS Scrollbars specifications from W3C.
+This is an example that uses the properties of a scrollbar namely `scrollbar-width`, `scrollbar-color`, `::-webkit-scrollbar`, `::-webkit-scrollbar-track`, `::webkit-scrollbar-thumb`:
 ```CSS
-/* Works on Firefox */
+/* This will work on Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: blue orange;
 }
 
-/* Works on Chrome, Edge, and Safari */
+/* Targtes on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
 }
@@ -66,7 +65,7 @@ Here is an example that uses scrollbar-width, scrollbar-color, `::-webkit-scroll
 }
 ```
  
-> A note : WebKit browsers will ignore some of the rules  that are not recognized  and make a fallback to apply 
+> A side note : WebKit browsers will ignore some of the rules  that are not recognized  and make a fallback to apply 
 > apply the `-webkit-scrollbar` rules. An example, Firefox browsers will ignore rules that they are not recognizing and instead
 > use the CSS Scrollbars specifications.
 
