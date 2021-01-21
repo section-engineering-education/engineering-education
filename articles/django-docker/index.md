@@ -1,6 +1,6 @@
-Docker is a containerization platform that makes it possible to build, ship, and run distributed applications in controlled environments with defined rules.
+[Docker](https://docs.docker.com) is a containerization platform that makes it possible to build, ship, and run distributed applications in controlled environments with defined rules.
 
-### Prerequisite
+### Prerequisites
 1. [Python 3.6](https://www.python.org/downloads/) and above installed on your computer.
 2. Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 3. [Docker](https://docs.docker.com/docker-for-windows/install/) installed on your computer.
@@ -71,8 +71,8 @@ Below is the project structure.
         ├── urls.py
         └── wsgi.py
 ```
-### Creating Dockerfile
-Dockerfile is a text file that contains instructions on how the Docker image will be built. Dockerfile contains the below directives.
+### Creating a Dockerfile
+Dockerfile is a text file that contains instructions on how the Docker image will be built. A Dockerfile contains the below directives.
 - **FROM** directive sets the base image from which the Docker container will be built.
 - **WORKDIR** directive sets the working directory in the image created.
 - **RUN** directive executes commands in the container. 
@@ -127,7 +127,7 @@ $ docker build --tag django_todo:latest .
 - `--tag` sets the tag for the image. For example, we are creating a Docker image from `python:3.8.3` which has the tag `alpine`. In our Docker image, `latest` is the tag set.
 - The trailing `.` indicates that the `Dockerfile` is within the current working directory.
   
-To list all the available images on your computer executes the command below.
+To list all the available images on your computer, execute the command below.
 ```bash
 $ docker image ls
 REPOSITORY    TAG            IMAGE ID       CREATED         SIZE
@@ -141,14 +141,14 @@ hello-world   latest         bf756fb1ae65   12 months ago   13.3kB
 ```
 From the above list we see the `django_container` image that we have created.
 
-### Creating and running Docker Container
+### Creating and running the Docker Container
 To build and run a Docker container from the Docker image we created above, run the command below.
 
 ```bash
 $ docker run --name django_todo -d -p 8000:8000 django_todo:latest
 ```
 - `--name` sets the name of the Docker container.
-- `-d` makes the image to run in detached mode. The image is capable of running in the background.
+- `-d` makes the image run in detached mode. The image is capable of running in the background.
 - `-p 8000:8000` maps port 8000 in the Docker container to port 8000 in the server.
 - `django_todo: latest` specifies which image is used to build the Docker container. 
 
@@ -159,27 +159,27 @@ CONTAINER ID   IMAGE                COMMAND                  CREATED       STATU
 d73306a9fb04   django_todo:latest   "python manage.py ru…"   3 hours ago   Up 3 hours   0.0.0.0:8000->8000/tcp   django_todo
 ```
 On your browser visit `http://localhost:8000/api/v1/todo/` to confirm if the `django_todo` application is running in the container and you get a list of `todo` as a response.
-![Docker hub image](/engineering-education/django-docker/docker-create.png)
+![Docker Hub image](/engineering-education/django-docker/docker-create.png)
 
-### Publishing Docker image to Docker hub
-Docker hub is a repository of container images that can be used to create other docker images.
+### Publishing Docker image to Docker Hub
+Docker Hub is a repository of container images that can be used to create other docker images.
 
 Visit [Docker Hub](https://hub.docker.com/) and create an account if you don't have one.
 
-Once you have created an account and logged in to Docker hub, Creat a repository with the name `django_todo` and description `Django Docker applications`.
+Once you have created an account and logged in to Docker Hub, create a repository with the name `django_todo` and the description `Django Docker Image`.
 
-Now that we have created a repository in the Docker hub, to push Docker image to the repository we have created we execute the command belows.
+Now that we have created a repository in Docker Hub, to push the Docker image to the repository we have created we execute the command below.
 ```bash
 $ docker login
 
-$ docker tag django_todo:latest <docker hub username>/django_todo:latest
+$ docker tag django_todo:latest <Docker Hub username>/django_todo:latest
 
-$ docker push <docker hub username>/django_todo:latest
+$ docker push <Docker Hub username>/django_todo:latest
 ```
-- `docker login` command logins in your docker hub account in the command line, making it possible to push Docker images to Docker hub.
-- `docker tag django_todo: latest <docker hub username>/django_todo: latest` command changes the tag to our local Docker image to include the Docker hub username which makes it possible to push the image to docker hub.
-- `docker push <docker hub username>/django_todo: latest` pushes the image to the Docker hub repository we created earlier.
+- `docker login` command logs you into your Docker Hub account on the command line, making it possible to push Docker images to Docker Hub.
+- `docker tag django_todo: latest <Docker Hub username>/django_todo: latest` command modifies the tag of our local Docker image to include the Docker Hub username.
+- `docker push <Docker Hub username>/django_todo: latest` pushes the image to Docker Hub repository we created earlier.
 
-Full source code for the application is in [this](https://github.com/paulodhiambo/django_todo/tree/token_auth) github repository.
+The full source code for the application is in [this](https://github.com/paulodhiambo/django_todo/tree/token_auth) GitHub repository.
 ### Conclusion
 Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. [Docker playground](https://labs.play-with-docker.com/) is an online playground that you can use to test various Docker commands by installing Docker locally on your computer.
