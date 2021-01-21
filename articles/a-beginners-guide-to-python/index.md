@@ -6,11 +6,11 @@ According to the official [documentation](https://www.python.org/), Python is a 
 ### What You will learn
 
 In this tutorial, you will learn how to define and use the following elements
-•   Variables
-•   Methods
-•   loops
-•   lists and arrays
-•   Classes
+-  Variables
+-  Methods
+-  Loops
+-  Lists and Arrays
+-  Classes
 
 ### Prerequisites
 For simplicity, we will be using IDLE in this tutorial. IDLE is the default python code editor and compiler. You can download it from [here](https://www.python.org/downloads/).
@@ -146,7 +146,7 @@ As noted, we can use a for loop to iterate through a list, as shown below.
 ```
 Student_list=[“John Doore”,”Matu Smith”]
 for x in student_list:
-        print(x)
+    print(x)
 ```
 The above `for` loop will print every item in the student_list.
 
@@ -156,9 +156,9 @@ A while can help us check for a particular condition. For instance, while someth
 ```
 isChecked=false
 while isChecked == true:
-  print('Hallo there')
+    print('Hallo there')
 ```
->Note that the above while loop will be executed indefinitely until isChecked is set to false. You can press ctrl+c to stop the loop.
+> Note that the above while loop will be executed indefinitely until isChecked is set to false. You can press ctrl+c to stop the loop.
 
 ### Classes
 
