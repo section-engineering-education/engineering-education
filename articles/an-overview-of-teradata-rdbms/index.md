@@ -24,7 +24,7 @@ Teradata is an open RDBMS (relational database management system) that runs on o
 
 It supports strategic intelligence, that provides queries, intelligence tools, and utilities for strategic decision making. For example, users can use Teradata to generate complex reports such as business trends. These reports can be used to make useful future predictions, that improve decision making in an organization. Teradata offers operational intelligence tools that enhance front-line or operational decision making.
 
-### Why you should use teradata
+### Why you should use Teradata
 - It can support a massive volume of data (more than 50 petabytes).
 - It can be integrated with various business intelligence (BI) tools.
 - It consists of many deployment options that can be used to fetch the same data.
