@@ -2,7 +2,7 @@ Angular 11 was released on Nov 11, 2020, by the Angular team at Google.
 Angular's development community has been growing over the past few years.
 If you aren't familiar with Angular, there are plenty of reasons why you should start learning.
 This year's release focuses on improving the developer's experience.
-To check out more about releases, [click here](#https://blog.angular.io/version-11-of-angular-now-available-74721b7952f7).
+To check out more about releases, [click here](https://blog.angular.io/version-11-of-angular-now-available-74721b7952f7).
 
 ### Introduction 
 This article will walk you by building a simple Angular application covering the basic and core Angular CLI concepts.
