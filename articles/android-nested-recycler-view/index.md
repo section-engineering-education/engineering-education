@@ -1,6 +1,6 @@
-RecyclerView helps to display different items inside your application. They have become one of the commonly used views to display necessary information to users. RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget streamlines the display and handling of large data sets by providing [Layout Managers for positioning items](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity). This way, you can create customized layout managers for RecyclerView containers.
+RecyclerView helps to display a dynamic list of items in our android applications. RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of list items by providing [Layout Managers for positioning items](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity). This way, you can create customized layout managers for RecyclerView containers.
 
-A RecyclerView can even be used inside another RecyclerView. This concept is called a nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
+A RecyclerView can be used inside another RecyclerView, this is referred to as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
 ![Google play store nested RecyclerView](/engineering-education/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
 [***Image Source***](https://play.google.com/store/apps?hl=en)
@@ -102,7 +102,7 @@ android:background="#0F171E">
 
 #### Child RecyclerView layout items
 
-We have designed the parent View and the items that belong to it, including the child RecyclerView. We need to add the items to the child RecyclerView. These are the items that will be scrollable horizontally in each child RecyclerView widgets that we add. Create an XML file, name it `child_recyclerview_items.xml`, and include the layout below.
+We have designed the parent View and the items that belong to it, including the child RecyclerView. We need to add the items to the child RecyclerView. These are the items that will be scrollable horizontally in each child RecyclerView widget that we add. Create an XML file, name it `child_recyclerview_items.xml`, and include the layout below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -190,7 +190,7 @@ Adapters are used to set and pass data that will be displayed in the respective 
 
 Technically, the data could come from a database or a remote server if the information to be passed to the recycling view is hosted remotely. To keep this app straight to the point, we will use dummy/locally available information and then pass them to the respective RecyclerView Adapters.
 
-Let populate this data into the respective views. We will have two view adapters for each of the RecyclerView widgets. Create the two adapters.
+Let's populate this data into the respective views. We will have two view adapters for each of the RecyclerView widgets. Create the two adapters.
 
 - Adapter one:  `ChildRecyclerViewAdapter.java`. This adapter will hold the information that belongs to the child widget.
 
@@ -358,7 +358,7 @@ As you can see, we are binding the information of the  `ChildRecyclerViewAdapter
 - Pass `ArrayList` of the child items to the respective `ParentViewHolder` as `category.setText(currentItem.movieCategory())` of the parent RecyclerView. Each category will inflate with respective array list items consisting of a movie name and a hero image. Make sure to check the content of this project on [GitHub](https://github.com/kimkimani/Nested_RecyclerView) to get all the necessary image resources for each `movieCategory`.
 - Associate the child Adapter and the RecyclerView. This informs the RecyclerView which adapter it should work with.
 
-Let set the necessary categories to display the movies to the main RecyclerView layout.
+Let's set the necessary categories to display the movies to the main RecyclerView layout.
 
 ```java
 public class MainActivity extends AppCompatActivity {
