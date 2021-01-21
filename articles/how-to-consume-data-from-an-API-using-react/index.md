@@ -14,14 +14,13 @@ images:
   - url: /engineering-education/how-to-consume-data-from-an-api-in-react/hero.jpg
     alt: How to Consume Data from an API in a React application image
 ---
-API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your own API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.
-<!--more-->
+API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.
 
 In this tutorial, you'll learn how to consume data from an API in a React application. 
 
 ### Prerequisites
 
-To follow along in this tutorial, you must have a basic knowledge in using React and JavaScript. 
+To follow along in this tutorial, you must have basic knowledge of using React and JavaScript. 
 
 You can learn more about React from [here](https://reactjs.org/docs/getting-started.html).
 
@@ -45,7 +44,7 @@ http://www.omdbapi.com/?i=tt3896198&apikey={your_key}
 
 When we navigate to the above link in a browser, the endpoint will return the JSON data as shown below.
 
-```json
+```JSON
 {
    "Title":"Guardians of the Galaxy Vol. 2",
    "Year":"2017",
@@ -150,7 +149,7 @@ Next, Let's create a state to hold the search input from the user. This value is
 const [search, setSearch] = useState('');
 ```
 
-The search query value is added to the search url.
+The search query value is added to the search URL.
 
 ```JSX
 const API_KEY = "your_api_key";
@@ -161,19 +160,19 @@ The `App` component will also has several functions. They are:
 
 #### 1.	getMovie
 
-This method will be called whenever the search button is clicked. It will make a request to the API and return a movie object.
+This method will be called whenever the search button is clicked. It will request the API and return a movie object.
 
 A [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future. 
 
 A Promise can either be in one of the following states:
 
-- Pending: It means that the Promise has neither been rejected or completed.
+- Pending: It means that the Promise has neither been rejected nor completed.
 
 - Fulfilled: It means the operation was successful.
 
 - Rejected: This state means that the operation failed.
 
-When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting state.
+When a Promise is pending, it can either be completed successfully or rejected. The `then` method helps handle any of the resulting states.
 
 Here is an example of handling a promise:
 
@@ -192,7 +191,7 @@ const dataPromise = (new Promise(fetchData))
 
 As shown above, we handle the Promise if it is rejected in the catch block.
 
-The `getMovie` is a async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is permitted within them.
+The `getMovie` is an async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is permitted within them.
 
 ```JSX
 async getData(){
@@ -201,7 +200,7 @@ async getData(){
 }
 ```
 
-This is because network operations are asynchronous in nature. Therefore, an API request will return a promise and we should wait for the promise to get resolved. The promise will be resolved if the API request is successful. If not, the promise will be rejected.
+This is because network operations are asynchronous. Therefore, an API request will return a promise and we should wait for the promise to get resolved. The promise will be resolved if the API request is successful. If not, the promise will be rejected.
 
 The `await` keyword allows you to wait for a Promise to get resolved.
 
@@ -216,7 +215,7 @@ The above function will wait for the promise returned from the network request t
 
 You can learn more about async, await, and promise from [here](https://www.w3schools.com/js/js_promise.asp). This tutorial uses async and await methods.
 
-We can handle server and network errors using a `try/catch` block. We send a network request inside the `try` block . If an error occurs, the catch block will be executed.
+We can handle server and network errors using a `try/catch` block. We send a network request inside the `try` block. If an error occurs, the catch block will be executed.
 
 Here is the code for the `getMovie` function.
 
@@ -273,9 +272,9 @@ The `onInputChange` function is called when the value of the input changes.
 
 ### Step 6: Handling errors
 
-Errors are a common occurence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if its unavailable. We, therefore, check the state of this variable.
+Errors are a common occurrence when dealing with an API. For this tutorial, we need to notify the user in case a movie is not found in the database. One key variable we can use to track the data is `Response`. The API returns the `Response` with a value of `True` when a movie is found and `False` if it's unavailable. We, therefore, check the state of this variable.
 
-To do this, we need a new method and an if else statement. create a method named checkResponse in the app.js file. Add the following code.
+To do this, we need a new method and an if-else statement. create a method named `checkResponse` in the app.js file. Add the following code.
 
 ```JSX
 function checkResponse(data){
