@@ -20,7 +20,7 @@ By the end end of this article you will:
    
 4. Understand how we can target more browser support of this specification.
 
-### The web CSS Scrollbar
+### The Browser Scrollbar CSS properties
 The following are the available selectors for scrollbar customization include:
 - The `::-webkit-scrollbar` will represent the entire scrollbar.
 
