@@ -11,8 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  + url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.png
-
+  - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.png
     alt: javascript tsparticles example image
 
 ---
