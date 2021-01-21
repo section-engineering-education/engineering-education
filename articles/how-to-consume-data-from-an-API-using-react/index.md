@@ -77,8 +77,8 @@ In the above `JSON` response, we have data like the `Title,` `Year,` `Rated,` `R
 
 Let's create a React application using the following command:
 
-```
-npx create-react-app OMDbApi
+```bash
+npx create-react-app omdbapi
 ```
 
 Once you run the above statement, it'll take a few minutes to install the required dependencies. Once the project is created, you can open the folder in your preferred code editor.
@@ -121,10 +121,10 @@ The `useEffect` hook allows `React` to perform a specific action when the state 
 
 The `useState` hook will help in creating a state and a function to update that state. When you update a state, the component will re-render.
 
-Let's create a state for the movie. The `movie` state will hold data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
+Let's create a state for the movie. The `movie` state will hold the `object` or data returned from the OMDb API. The `setMovie` helps in updating the `movie` state.
 
 ```JSX
-const [movie, setMovie] = useState([]);
+const movie, setMovie = useState({});
 ```
 
 Next, Let's create a state to hold the search input from the user. This value is updated by the `setSearch` function whenever the user enters a value in the input field. The final value is then added to the search url.
@@ -253,7 +253,7 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 
 function App() {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState({});
     const [search, setSearch] = useState('');
     const API_KEY = "cebd9b53";
     const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
@@ -263,8 +263,8 @@ function App() {
         const response = await fetch(url);
          const data = await response.json()
          setMovie(data);
-      } catch (e) {
-          console.error(e);
+      } catch (error) {
+          console.error(error);
       } 
     }
 
@@ -306,14 +306,15 @@ function checkResponse(data){
    if(data.Response==="True"){
     return(
       <div>
-         <!-- <img src={data.Poster} alt=""/>
+         <img src={data.Poster} alt=""/>
          <h4>Title: {data.Title}</h4>
          <p>Year: {data.Year}</p>
          <p>Writer: {data.Writer}</p>
-         <p>{data.Response}</p> -->
+         <p>{data.Response}</p> 
       </div>
     );
    }
+
    return (
      <p>No Movie found</p>
    );
@@ -358,7 +359,7 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 
 function App() {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState({});
     const [search, setSearch] = useState('');
     const API_KEY = "cebd9b53";
     const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
@@ -368,8 +369,8 @@ function App() {
         const response = await fetch(url);
          const data = await response.json()
          setMovie(data);
-      } catch (e) {
-          console.error(e);
+      } catch (error) {
+          console.error(error);
       } 
     }
 
