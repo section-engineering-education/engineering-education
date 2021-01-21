@@ -128,7 +128,7 @@ Test Score:  0.6504432415059116
 
 ### Comparison with scikit learn
 
-The training and test accuracy obtained using the [library](/engineering-education/house-price-prediction/) stands at 93% and 79.29%, respectively. We conclude that the data requires some non-linearity to be introduced, and polynomial regression would probably work much better than linear regression. 
+The training and test accuracy obtained using the [library](/engineering-education/house-price-prediction/) stand at 93% and 79.29%, respectively. We conclude that the data requires some non-linearity to be introduced, and polynomial regression would probably work much better than linear regression. 
 
 ### Conclusion
 
