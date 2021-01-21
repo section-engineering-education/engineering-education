@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/deploying-your-android-app-to-google-play-store/hero.jpg
     alt: Google Play Store
 ---
-It is always challenging for beginners to deploy their first Android application on the Play Store. There are just too many rules and steps that need to be followed. Failure to adhere to these regulations may impact your application negatively. This tutorial helps you avoid the headaches and negative experiences associated with the app deployment process.
+It is often challenging for beginners to deploy their first Android application to Play Store. There are just too many rules and steps that need to be followed. Failure to adhere to these regulations may impact your application negatively. This tutorial helps you avoid the headaches and negative experiences associated with the app deployment process.
 <!--more-->
 
 ### Introduction
