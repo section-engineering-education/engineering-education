@@ -6,7 +6,7 @@ This article will extensively enumerate the difference between relational and no
 [Relational databases](https://www.oracle.com/database/what-is-a-relational-database/#:~:text=A%20relational%20database%20is%20a,of%20representing%20data%20in%20tables) store and provide access to data points related to another. Most applications use relational databases. They work best when they use limited sized data. Relational databases are insufficient when they have to handle a large volume of data such as the internet, multimedia, and social media.
 [Non-relational databases or NoSQL](https://www.mongodb.com/nosql-explained) (Not only SQL database), unlike MySQL, stores data in a non-tabular format. NoSQL can handle unstructured data such as e-mails, documents, multimedia, and social media more efficiently. They are best to use whenever one has a large volume of data. 
 
-MySQL is a good example of a relational database, while MongoDB is an excellent example of a non-relational database.
+MySQL is an excellent example of a relational database, while MongoDB is an excellent example of a non-relational database.
 
 ### MongoDB
 
@@ -27,7 +27,7 @@ It is an open-source and a relational database management system. The concept be
 4. Allows creating new databases.
 5. Allows creating new tables and views.
 
-Each table in MySQL stores separates information. The concept of MySQL [Joins](https://www.techopedia.com/definition/1213/join#:~:text=A%20join%20is%20an%20SQL,a%20relationship%20between%20the%20tables.&text=The%20type%20of%20join%20a,which%20records%20the%20query%20selects) is applied. Join operations concept is a method of inter-linking data in one or more tables based on a common column's values between the tables. Joins minimizes data duplication chances across the tables. 
+Each table in MySQL stores separates information. The concept of MySQL [Joins](https://www.techopedia.com/definition/1213/join#:~:text=A%20join%20is%20an%20SQL,a%20relationship%20between%20the%20tables.&text=The%20type%20of%20join%20a,which%20records%20the%20query%20selects) is applied. Join operations concept is a method of inter-linking data in one or more tables based on a standard column's values between the tables. Joins minimizes data duplication chances across the tables. 
 
 Examples of platforms run by MySQL include Linux UNIX and Windows. Examples of web-based applications that use MySQL include Facebook, Twitter, YouTube, etcetera.
 
@@ -41,12 +41,12 @@ Examples of platforms run by MySQL include Linux UNIX and Windows. Examples of w
 | [Schemas](https://www.tutorialspoint.com/dbms/dbms_data_schemas.htm) (Skelton structure that represents the logic of the database). | It has a strict schema. Before storing anything, one needs to define tables and columns clearly. Also, ensure that every row in the table should have the same column. | It has a dynamic schema. Several documents can be dropped with no relation, only that documents need to be supported by data structures. |
 | Attack risks and security | It is prone to [SQL injection attacks](https://www.imperva.com/learn/application-security/sql-injection-sqli/) (a vector that uses malicious SQL code). It has a privileged-based security model; it authenticates any user and gives users privileges on specific tasks, such as creating, selecting, or inserting.  | Less risk of attack. Its design makes it hard to attack. Unlike MySQL, MongoDB uses role-based authentication. Its security procedures include authentication, auditing, and authorization.  |
 | Organized By | Data is organized by a table, row, and columns. | Data is organized by collection, document, and field classification. |
-| Website | Mysql.com | Mongodb.com |
+| Performance | It is better for smaller databases and more general solutions. | It is better for handling massive, unstructured data sets as it has in-memory speed. |
 | Developer | Oracle corporation does the ongoing development. | MongoDB, Inc. does the ongoing development. |
-| Scaling | MySQL is vertically scalable. More powerful CPU and RAM are needed to increase the size of data in a server. | MongoDB is horizontal scalable. It is possible to increase more servers or create clusters with multiple servers. |
+| Scaling | MySQL is vertically scalable. More powerful CPU and RAM are needed to increase the size of data in a server. | MongoDB is horizontally scalable. It is possible to increase more servers or create clusters with multiple servers. |
 | Support provider | It offers [Oracle lifetime support](https://www.mysql.com/support/), though at different versions. Each level offers a knowledge base, maintenance releases, bug fixes, patches, and updates. | Offers Enterprise-Grade Support. It allows flexibility to upgrade to the newer versions. It has unlimited access to security fixes, updates, and many more. |
 | Community of users | MySQL started several years ago. It enjoys a large community of users. It is extensively tested to ensure stability. | It has a relatively smaller community than that of MySQL, as it is newer. |
-| Command speed | MySQL is slower than MongoDB in executing the same commands like select, update, and insert. | MMongoDB is faster since it is written in C++, which is an object-oriented language.  |
+| Command speed | MySQL is slower than MongoDB in executing the same commands like the select, update, and insert. | MongoDB is faster since it is written in C++, which is an object-oriented language.  |
 
 ### MongoDB vs. MySQL: Advantages and disadvantages.
 
@@ -72,8 +72,8 @@ Examples of platforms run by MySQL include Linux UNIX and Windows. Examples of w
 #### Disadvantages of using MySQL.
 
 - It may take a lot of time and effort to perform some tasks, even for some tasks requiring an automatic update, such as incremental back-ups.
-- It is not esily scalable. It is not possible to use replica sets in MySQL. In some exceptional instances, scaling in MySQL is done using a robust server or even complex sharding (breaking large tables into smaller ones across the multiple servers) solution is done. Powerful servers are not only costly but also difficult to handle. 
-- It has no in-built [XML](https://en.wikipedia.org/wiki/XML#:~:text=Extensible%20Markup%20Language%20(XML)%20is,free%20open%20standards%E2%80%94define%20XML) (Extensible Markup Language) and [OLAP](https://olap.com/olap-definition/) (Online Analytical Processing). MySQL requires more procedures in requesting scripts into XML format, as one has to send the script which connects to MySQL, retrieves and formats to XML, and is returned to the client which consumes more time.
+- It is not easily scalable. It is not possible to use replica sets in MySQL. In some exceptional instances, scaling in MySQL is done using a robust server or even complex sharding (breaking large tables into smaller ones across the multiple servers) solution is done. Powerful servers are not only costly but also challenging to handle. 
+- It has no in-built [XML](https://en.wikipedia.org/wiki/XML#:~:text=Extensible%20Markup%20Language%20(XML)%20is,free%20open%20standards%E2%80%94define%20XML) (Extensible Markup Language) and [OLAP](https://olap.com/olap-definition/) (Online Analytical Processing). MySQL requires more procedures in requesting scripts into XML format, as one has to send the script which connects to MySQL, retrieves and formats to XML, and is returned to the client, which consumes more time.
 
 ### Conclusion
 Both MySQL and MongoDB are essential databases. Even after the emergence of non-relational data, relational data are still important databases. It is unlikely that they will be extinct or even threatened by the emergence of non-relational databases.
