@@ -60,7 +60,7 @@ One can use it either as a root element or a view group.
 This layout positions views relative to each other. The layout uses the `<RelativeLayout>` tag.
 The position of each view can be relative to sibling elements or relative to the parent. By default, all child views are aligned at the top corner before setting the screen's desired alignment, for example, center-left and others. One can use it either as a root element or a view group.
 
-![Relative Layout](/engineering-education/getting-started-with-ui-layouts-in-android/relative.jpg)
+![Relative Layout](/engineering-education/getting-started-with-ui-layouts-in-android/relative.png)
 
 #### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
