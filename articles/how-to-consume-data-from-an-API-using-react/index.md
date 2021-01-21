@@ -10,7 +10,7 @@ You can learn more about React from [here](https://reactjs.org/docs/getting-star
 
 ### Step 1: Understand the data from the API
 
-Before consuming data from an API, it's vital to understand the data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
+Before consuming data from an API, it's important to understand the data that the API provides. Data from an API is commonly presented in a `JSON` format. This makes it much easier for it to be consumed in the application.
 
 In this tutorial, we will be using [OMDb API](http://www.omdbapi.com/). You need an API key to gain access to this API. This API key can be generated from the OMDb API's [website](http://www.omdbapi.com/apikey.aspx). 
 
@@ -162,12 +162,18 @@ Here is an example of handling a promise:
 
 ```JSX
 const dataPromise = (new Promise(fetchData))
-  .then(handleData1)
-  .then(handleData2)
-  .catch(handleRejectedAny);
+  .then(() => {
+      // handleData1
+  })
+  .then(() => {
+      // handleData2
+   })
+  .catch(() => {
+      // handleError
+   });
 ```
 
-As shown above, we handle the Promise when it is rejected in the catch.
+As shown above, we handle the Promise if it is rejected in the catch block.
 
 The `getMovie` is a async function. An async function is a function declared with the async keyword. Async functions are instances of the AsyncFunction constructor, and the await keyword is permitted within them.
 
@@ -217,7 +223,7 @@ useEffect(()=> {
 }, []);
 ```
 
-#### 2.	onInputChange
+#### 2. onInputChange
 
 This method helps in updating the search query state when the value of the input changes, The value of the search state is updated using the `setSearch` method.
 
@@ -236,7 +242,6 @@ return(
    <div>
      <input type="text" value={search} onChange={onInputChange}/>
      <button type="submit" onClick={getMovie}>Search</button>
-     
      <img src={movie.Poster} alt=""/>
      <h4>Title: {movie.Title}</h4>
      <p>Year: {movie.Year}</p>
@@ -315,7 +320,8 @@ import React, {useEffect, useState} from 'react';
 function App() {
     const [movie, setMovie] = useState({});
     const [search, setSearch] = useState('');
-    const API_KEY = "cebd9b53";
+    
+    const API_KEY = "<-- Your API Key here -->";
     const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
     const getMovie = async()=>{
@@ -362,7 +368,6 @@ function App() {
          {checkResponse(movie)}
       </div>
    );
-
 }
 
 export default App;
