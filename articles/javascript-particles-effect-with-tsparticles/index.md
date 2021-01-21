@@ -13,7 +13,6 @@ images:
 
   - url: /engineering-education/javascript-particles-effect-with-tsparticles/hero.png
     alt: javascript tsparticles example image
-
 ---
 tsParticles is a perfect background animation library with diverse ways to move fancy particles that fit your website layout. It is extremely flexible and made to fit any background that matches your website.
 <!--more-->
