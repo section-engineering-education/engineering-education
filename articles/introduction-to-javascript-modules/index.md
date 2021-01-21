@@ -142,4 +142,6 @@ export { studentName,studentDetails };
 ```
 Exports and imports are only used within modules and not regular scripts.
 
+---
 
+Peer review contributions by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
