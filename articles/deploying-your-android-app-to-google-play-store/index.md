@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/deploying-your-android-app-to-google-play-store/index.md
+title: Deploying your Android App to Play Store
+description: This tutorial provides a detailed guide on the steps you should follow when deploying your Android application to the Play Store.
+author: Christine Wasike
+date: 2021-01-20T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/deploying-your-android-app-to-google-play-store/hero.jpg
+    alt: Google Play Store
+---
+It is always challenging for beginners to deploy their first Android application on the Play Store. There are just too many rules and steps that need to be followed. Failure to adhere to these regulations may impact your application negatively. This tutorial helps you avoid the headaches and negative experiences associated with the app deployment process.
+<!--more-->
+
 ### Introduction
 Releasing your first application to Google Play Store can seem like a difficult undertaking. Worry no more as you'll be learning how to publish your apps on the Google Play store in this article. 
 
@@ -27,6 +45,7 @@ It’s always great to prepare a `What’s New` list for your application’s us
 
 ### Step 5 - Update app version code and version name for the release build.
 Updating your version code and name is essential in keeping track of your app’s different build variants whenever you wish to deploy updates. Do this in your app-level `build.gradle` file.
+
 ![Version Code Name](/engineering-education/deploying-your-android-app-to-google-play-store/version_code_name.png)
 
 ### Step 6 - Create a Developer Console Account
@@ -68,7 +87,7 @@ Once the process is complete, you will get a confirmation message at the bottom 
 
 The Android App Bundle is a more recent format for Android distribution. It's quite different from the Android Application Package, otherwise known as the APK, which we will touch on later. I highly recommend using App Bundles because of their ability to reduce the overall size. With asset packs and dynamic features, apps become 35% smaller.
 
-The APK stores all of the app’s files and code. You can think of it as a zip file with its particular extension. However, the APK has several disadvantages such as
+The APK stores all of the app’s files and code. You can think of it as a zip file with its particular extension. However, the APK has several disadvantages, such as
 - Lower conversion rates
 - Slower downloads
 - Higher uninstalls
@@ -97,14 +116,17 @@ Here is a quick checklist of all the details you need for the Play Store.
 ### Useful resources for the application details
 The resources below helped me understand different Play Store requirements. Hopefully, they will be of use to you as well.
 
-Here is a vital tool, [App Store Screenshot Generator](https://www.appstorescreenshot.com/), to help you present your app's screenshots on a mobile frame. You will need a minimum of 2 screenshots and a maximum of 8.
+[App Store Screenshot Generator](https://www.appstorescreenshot.com/) is a vital tool that helps you present your app's screenshots on a mobile frame. You will need a minimum of 2 screenshots and a maximum of 8.
 
 [App Privacy Policy Generator](https://app-privacy-policy-generator.firebaseapp.com/) has made it easy for developers to create privacy policies that follow the requirements of Google Play, Apple Store, Google Adsense, and many 
 more.
 
-For high-resolution icons, please go over Google Play’s guidelines: [Icon design specifications](https://developer.android.com/google-play/resources/icon-design-specifications).
+Please go over Google Play’s guidelines on creating high-resolution icons: [Icon design specifications](https://developer.android.com/google-play/resources/icon-design-specifications).
 
 The [feature graphic generator](https://www.norio.be/graphic-generator/) will help you make a graphic banner as per Google Play’s specific dimensions.
 
 ### Conclusion
 You can now comfortably check the boxes on [Google Play Console](https://play.google.com/apps/publish) and publish your application to production.
+
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
