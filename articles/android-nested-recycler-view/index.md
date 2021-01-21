@@ -1,6 +1,6 @@
 RecyclerView helps to display a dynamic list of items in our android applications. RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of list items by providing [Layout Managers for positioning items](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity). This way, you can create customized layout managers for RecyclerView containers.
 
-A RecyclerView can be used inside another RecyclerView, this is referred to as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
+A RecyclerView can be used inside another RecyclerView. This is referred to as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
 ![Google play store nested RecyclerView](/engineering-education/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
 [***Image Source***](https://play.google.com/store/apps?hl=en)
@@ -64,7 +64,7 @@ As we said, we have an outer and inner RecyclerView. To start with, we will crea
 
 #### The parent RecyclerView items
 
-An item layout defines the layout of the individual row that we will show in the RecyclerView list. This layout will hold any item that is a child of the main (parent) RecyclerView. This includes the child RecyclerView. Create an XML file, name it `parent_recyclerview_items.xml`. Below is the XML code to implement that.
+An item layout defines the layout of the individual row that we will show in the RecyclerView list. This layout will hold any item that is a child of the primary (parent) RecyclerView. This includes the child RecyclerView. Create an XML file, name it `parent_recyclerview_items.xml`. Below is the XML code to implement that.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -351,7 +351,7 @@ public class ParentRecyclerViewAdapter extends RecyclerView.Adapter<ParentRecycl
 }
 ```
 
-As you can see, we are binding the information of the  `ChildRecyclerViewAdapter` to the `ParentRecyclerViewAdapter`. I have set different data categories. In this case, each category contains its distinct data. The `ArrayList` of all the categories binds to the parent RecyclerView. In the `onBindViewHolder`, we are setting up the child RecyclerView by
+As you can see, we are binding the information of the  `ChildRecyclerViewAdapter` to the `ParentRecyclerViewAdapter`. I have set different data categories. In this case, each category contains its distinct data. The `ArrayList` binds to the parent RecyclerView. In the `onBindViewHolder`, we are setting up the child RecyclerView by
 
 - Initializing and setting the [`LinearLayoutManager`](https://developer.android.com/reference/androidx/recyclerview/widget/LinearLayoutManager) (create an instance of the layout manager) for the child RecyclerView. Here we specify that this view will be `HORIZONTAL`.
 - Invoke the layout fixed size. This tells the layout not to move around the screen. It stabilizes the layout screen movements.
