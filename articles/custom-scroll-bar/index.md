@@ -255,7 +255,7 @@ The scrollbar will have a background color of `linear-gradient(transparent, #00c
 
 ![the application photo](/engineering-education/img_2.png)
 
-That is our final application that implements the scrollbar feature. The [mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is an awesome resource for reference and checking on the current browser support.
+That is our final application that implements the scrollbar feature. The [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is an awesome resource for reference and checking on the current browser support.
 You can check the live application on [netlify](https://scrollbar-site.netlify.app/).
 
 
