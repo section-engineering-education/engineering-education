@@ -33,17 +33,15 @@ The following diagram gives a visual representation of the support vector machin
 
 ![terms](/engineering-education/support-vector-machines/support-vector-machines.jpg)
 
-***mathematical formulation***
+***Mathematical formulation***
 
-<br>Given the training vectors: 
-
-$$𝑥_i \varepsilon  R^n$$, $$i=1,. . . , n$$ 
+<br>Given the training vectors: $𝑥_i \varepsilon  R^n$,i=1,. . . , n$ 
 
 In two classes, and a vector 
 
-$$𝑦 \varepsilon  {1,−1}$$ 
+$𝑦 \varepsilon  {1,−1}$
 
-Our goal is to find $$𝑤 \varepsilon  R^n$$ and $$𝑏 \varepsilon  R$$  
+Our goal is to find $𝑤 \varepsilon  R^n$$ and $𝑏 \varepsilon  R$  
 
 Such that $$w$$ is normal to the hyperplanes.<br>  
 
@@ -51,81 +49,81 @@ Such that $$w$$ is normal to the hyperplanes.<br>
  
 ![enter image description here](/engineering-education/support-vector-machines/vector.jpg)
 
-$$w.u>=c$$ ; ie. project $$u$$ on the normal
+$w.u>=c$ ; ie. project $u$ on the normal
 
-$$c = -b$$
+$c = -b$
 
-if $$y_i(w.x + b)-1 = 0$$ ; then $$u$$ is then classified as positive (decision rule).
+if $y_i(w.x + b)-1 = 0$ ; then $u$ is then classified as positive (decision rule).
 
-$$w.x + b >=1$$
+$w.x + b >=1$
 
-$$w.x + b <=-1$$
+$w.x + b <=-1$
 
 introducing $$y_i$$ such that $$y_i = +-1$$ for +ve positive samples and -ve for negative samples.
 
 *for the negative class* 
 
-*replacing y with $$-1$$ in the equation we have* 
+*replacing y with $-1$ in the equation we have* 
 
-$$-(w.x + b) <=-1$$
+$-(w.x + b) <=-1$
 
-*dividing both sides by $$-1$$ we have*
+*dividing both sides by $-1$ we have*
 
-$$w.x + b >= 1$$
+$w.x + b >= 1$
 
 and hence the equations turn out to be the same,
 
-$$y_i(w.x + b ) >=1$$, for +ve samples
+$y_i(w.x + b ) >=1$, for +ve samples
 
-$$y' <sub>i</sub>`(w.x +b)>=1$$, for -ve samples and so we can use one of them can be used as the decision function ie.
+$y_i(w.x +b)>=1$, for -ve samples and so we can use one of them can be used as the decision function ie.
 
-$$y(w.x + b)-1>=0$$
+$y(w.x + b)-1>=0$ : This is called the primal problem which can be optimized directly when the data is linearly separable. For the case when the data cannot be separated linearly we can use the dual optimization since it involves the dot product of samples and so the kernel trick to map the samples into a higher dimension where it can be separated.
 
 Introducing a constraint to the above equation so that whenever we have a sample on the gutter (support vectors), it should then give us 0.
 
 So we use:
 
-$$y_i (w.x + b)-1 = 0$$ as our contstraint.
+$y_i (w.x + b)-1 = 0$ as our contstraint.
 
 Now that we have both the decision function and its constraint we, therefore, need to find the width of the margin. We have:
 
-***width***  = $$(x_i- x ) = \frac{w2}{||w||^2}$$ as  our optimization problem.(*see fegure below*)
+***width***  = $(x_i- x ) = \frac{w2}{||w||^2}$ as  our optimization problem.(*see fegure below*)
 
 ![Width](/engineering-education/support-vector-machines/Width.jpg)
  
 We now need to find its maximum.
 
-max $$\frac{2}{||w||^2}$$ or  min $$\frac{1}{2}||w||$$
+max $\frac{2}{||w||^2}$ or  min $\frac{1}{2}||w||$
 
 Our optimization problem with the constraint will now be,   
 
-$$L = \frac{1}{2} ||w||^2 - \sum_{i=1}^{m} \alpha  [y(w.x + b)-1 ]$$
+$L = \frac{1}{2} ||w||^2 - \sum_{i=1}^{m} \alpha  [y(w.x + b)-1 ]$
 
 where `m` is the number of samples.
 
 Differentiating the above equation with respect to $$w$$ we have: 
   
-$$\frac{dl}{dw} = w - \sum \alpha  y_i x_i = 0$$ and so: $$w = \sum_{i=1}^{m}\alpha _i y_i x_i$$
+$\frac{dl}{dw} = w - \sum \alpha  y_i x_i = 0$$ and so: $$w = \sum_{i=1}^{m}\alpha _i y_i x_i$
   
-differentiating with respect to $$b$$ we have: 
+differentiating with respect to $b$ we have: 
 
-$$\frac{dl}{db} = - \sum \alpha_i  y_i = 0$$ so  $$\sum_{i=1}^{m} \alpha  y _i = 0$$
+$\frac{dl}{db} = - \sum \alpha_i  y_i = 0$$ so  $$\sum_{i=1}^{m} \alpha  y _i = 0$
 
 plugging back to the equation, we have:
  
-$$L = \frac{1}{2} ( \sum \alpha_iy_i x_i) (\sum  \alpha_jy_j x_j) - (\sum  \alpha_iy_i x_i) - (\sum \alpha  y_ ix_i) - \sum  \alpha _i y_i + \sum \alpha$$
+$L = \frac{1}{2} ( \sum \alpha_iy_i x_i) (\sum  \alpha_jy_j x_j) - (\sum  \alpha_iy_i x_i) - (\sum \alpha  y_ ix_i) - \sum  \alpha _i y_i + \sum \alpha$
 
 thereby evaluating to:
 
-$$\sum \alpha -\frac{1}{2}\sum_{j=1}^{m} \sum_{j=1}^{m} \alpha _i\alpha _j y_iy_j x_ix_j$$ 
+$\sum \alpha -\frac{1}{2}\sum_{j=1}^{m} \sum_{j=1}^{m} \alpha _i\alpha _j y_iy_j x_ix_j$ 
 
-This is the **dual optimization** for support vector machines. It depends on the samples' dot product, and so the kernel trick can be applied to improve its performance, especially when the data is not linearly separable.
+This is the **dual optimization** for support vector machines. It depends on the samples' dot product, and so the kernel trick can be applied to improve its performance, especially when the data is not linearly separable. The kernel trick is a trick applied to data that is not linearly separable and so it gives a higher-dimensional representation of the data and computes the dot product of the higher dimensional data without explicitly mapping the data.
 
 *Our decision rule will now be:*
  
-$$\alpha y_ix_i.u + b >=0$$
+$\alpha y_ix_i.u + b >=0$
 
-Then $$+ve$$
+Then $+ve$
 
 `scikit-learn` implements support vector machines in three different classes, namely **SVC(support vector classification), NuSVC(Nu support vector classification), LinearSVC(Linear support vector classification).**
 
