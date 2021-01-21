@@ -281,14 +281,10 @@ function App() {
         <input type="text" value={search} onChange={onInputChange}/>
         <button type="submit" onClick={getMovie}>Search</button>
          <br></br>
-         if(movie==null){
-           <p>Movie Not Found</p>
-         }else{
             <img src={movie.Poster} alt=""/>
             <h4>Title: {movie.Title}</h4>
             <p>Year: {movie.Year}</p>
             <p>Writer: {movie.Writer}</p>
-         }
       </div>
     );
 }
