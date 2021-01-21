@@ -30,7 +30,7 @@ Time series can be defined as a sequence or series of data points that are order
 
 Predictions are made based on unseen data, and the future is predicted with all the previous observations taken into consideration. In a time series, the dataset is different. A time-series adds a definite order of dependence between observations.
 
-In time series any variable that changes as time goes on is acceptable, It is normal to use a time series to track progress over a period of time. This can be tracked over a short term or long term.
+In time series, any variable that changes as time goes on is acceptable. It is normal to use a time series to track progress over some time. This can be tracked over a short term or long term.
 
 Time series are assumed to be generated at a spaced timing. When the data in time series are timed and regular, they are called **regular time series**, and when they are not regular or timed, they are called **irregular time series**.
 
@@ -42,20 +42,20 @@ Time series are assumed to be generated at a spaced timing. When the data in tim
 - Used to forecast the unemployment rate of a city or state.
 
 ### Time series forecasting
-Time series forecasting fits a model on a historical dataset, that is, the training set, and then using it to predict a future occurrence, which is the test set. The performance of the time series model is rated based on its future prediction. The whole idea is that our model observes all the previous data and understands the foundational process in the series. Secondly, it predicts based on its understanding of the foundational process of the historical data. time series forecasting deals with trend analysis, cyclical fluctuation analysis, and issues of seasonality like every forecasting method which is based on probability too.
+Time series forecasting fits a model on a historical dataset, that is, the training set, and then using it to predict a future occurrence, which is the test set. The performance of the time series model is rated based on its future prediction. The whole idea is that our model observes all the previous data and understands the foundational process in the series. Secondly, it predicts based on its understanding of the foundational process of the historical data. Time series forecasting deals with trend analysis, cyclical fluctuation analysis, and seasonality issues like every forecasting method, which is based on probability.
 
 ### Time series analysis
-Time series analysis can be defined as getting meaningful insight and characteristics to comprehend it better. Time series is beneficial in making predictions. It understands the scope and uses it for future forecasting.time series analysis is also used to understand the changes between the chosen data point compared to changes in other variables over the same time period.
+Time series analysis can be defined as getting meaningful insight and characteristics to comprehend it better. Time series is beneficial in making predictions. It understands the scope and uses it for future forecasting. Time series analysis is also used to understand the changes between the chosen data point and changes in other variables over the same period.
 
 ### Time series forecasting methods 
 Now let’s look at four time-series forecasting methods. Let's go over a brief introduction on Autoregression (AR) and Moving average models to understand them. 
 
 An AR model uses a linear combination of the target's past values to make forecasts, while a moving-average model is an approach for modeling univariate time series. The moving-average model specifies that the output variable relies linearly on a stochastic term's current and various past values.
 
-1. Autoregressive Integrated Moving Average (ARIMA): This method combines both the Autoregression and Moving Average model. In ARIMA models, the steps are in sequence as a linear function. The difference in observation and residual errors are at previous steps. This method works best for univariate time series with trends and without seasonal components.
-2. Seasonal Autoregressive Integrated Moving-Average (SARIMA): In the SARIMA model, the next steps are in a linear function style based on the different observations, errors, difference in seasonal observation, and seasonal errors at the previous time steps. The SARIMA is fitted for a univariate time series with the trend or seasonal components.
-3. Vector Autoregression (VAR): This method models the next step in each of the time series using the AR methods. It uses the generalization of the AR to multiply parallel time series, such as multivariate time series.
-4. Simple Exponential Smoothing (SES): In this method, the model uses the next step as an exponentially weighted linear function of observation at previous time steps. This method works best for a univariate time series without trends and seasonal components.
+1. _Autoregressive Integrated Moving Average (ARIMA)_: This method combines both the Autoregression and Moving Average model. In ARIMA models, the steps are in sequence as a linear function. The difference in observation and residual errors are at previous steps. This method works best for univariate time series with trends and without seasonal components.
+2. _Seasonal Autoregressive Integrated Moving-Average (SARIMA)_: In the SARIMA model, the next steps are in a linear function style based on the different observations, errors, difference in seasonal observation, and seasonal errors at the previous time steps. The SARIMA is fitted for a univariate time series with the trend or seasonal components.
+3. _Vector Autoregression (VAR)_: This method models the next step in each of the time series using the AR methods. It uses the generalization of the AR to multiply parallel time series, such as multivariate time series.
+4. _Simple Exponential Smoothing (SES)_: In this method, the model uses the next step as an exponentially weighted linear function of observation at previous time steps. This method works best for a univariate time series without trends and seasonal components.
 
 ### Types of time series
 We are going to look at two types of time series:
@@ -70,8 +70,8 @@ This type of time-series means an analytic expression can not describe it and ha
 Here are four useful time series analysis techniques:
 
 1. **Trend**: This is the long-term increase or decrease in the data. The trend can be increasing or decreasing as well as linear or nonlinear.
-2. **Irregular** This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable which is as a results of a short-term fluctuations in a series which are not systematic and in some instances not predictable.
-3. **Seasonality**: It is the regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors, in seasonality there's a situation in which the data experiences regular and predictable changes
+2. **Irregular** This component is uncertain. In every time series, there's an unpredictable component that makes it a random variable, resulting from short-term fluctuations in a series that are not systematic and, in some instances, not predictable.
+3. **Seasonality**: The regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors. In seasonality, there's a situation in which the data experiences regular and predictable changes
 4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals. the length of the cycle is described as the period 
 
 ![Simple](/engineering-education/introduction-to-time-series/img.jpg)
