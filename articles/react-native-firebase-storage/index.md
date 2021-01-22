@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-firebase-storage/
 title: React Native Firebase Storage for Non-Expo Workflow
-description: This tutorial will give readers a detailed guide on how to implement firebase storage for a Non-Expo React Native application.
+description: This tutorial gives readers a detailed guide on how to implement firebase storage for a Non-Expo React Native application.
 author: mohan-raj
 date: 2020-12-07T00:00:00-15:00
 topics: []
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/react-native-firebase-storage/hero.jpg
     alt: React Native Non-Expo Firebase Storage Hero Image
 ---
-In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase's cloud storage.
+In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase cloud storage.
 <!--more-->
 
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
-Cloud Storage for Firebase is a powerful and cost-effective storage service built. The Firebase SDKs for Cloud Storage allow file uploads and downloads for your apps. You can use the cloud storage SDKs to store images, audio, video, or other user-generated content.
+Cloud Storage for Firebase is a powerful and cost-effective storage service. The Cloud Storage SDK supports file uploads and downloads for your apps. You can use the cloud storage SDK to store images, audio, video, or other user-generated content.
 
 ### Prerequisites
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
@@ -251,7 +251,7 @@ Let's install the `react-native-image-picker` to add these functionalities.
 npm install react-native-image-picker
 ```
 
-> The minimum target SDK for the React Native Image Picker is 21. If your project targets an SDK below 21, bump up the minSDK target in `android/build.gradle`.
+> The minimum target SDK for the React Native Image Picker is `21`. If your project targets an SDK below 21, bump up the minSDK target in `android/build.gradle`.
 
 After the package is installed, import the `launchCamera` and `launchImageLibrary` functions from the package.
 
@@ -582,7 +582,7 @@ Now, the button should open the media that we uploaded on the phone's browser.
 
 1. We set up our development environment and created a React Native app.
 
-2. We create a Firebase project.
+2. We created a Firebase project.
 
 3. We set up cloud storage for our Firebase project.
 
@@ -596,7 +596,7 @@ Now, the button should open the media that we uploaded on the phone's browser.
 
 8. We created a cloud storage reference using the `ref` function.
 
-9. We uploaded our file to that location which was being pointed by the reference we created.
+9. We uploaded our file to the location which was being pointed by the reference we created.
 
 10. We added an event handler for the `state_changed` event during upload and used the `TaskSnapshot` object to get the upload progress.
 
