@@ -8,6 +8,7 @@ This guide will primarily discuss the concept of the shimmer loading effect. Shi
 
 To implement a shimmering effect in android studio, you need a library called [Shimmer](http://facebook.github.io/shimmer-android/). This dependency helps implement a shimmer layout when fetching data from a server. It implements the same concept as a Spinner or ProgressBar. Major corporates have implemented the shimmer loading effect in their applications. They include;
 
+
 - YouTube
 - LinkedIn
 - Google Drive
