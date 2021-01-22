@@ -2,6 +2,12 @@ Pure Node.js? Node.js without frameworks? An overview
 
 Are you a Node.js developer, and you frequently use Node.js libraries?  First, there is nothing wrong with using them. However, have you ever thought of using Node.js with no frameworks or external libraries? Yes, it is possible to develop a Node.js application with no NPM registry binaries. This guide aims to discuss an overview of using pure Node.js and its functionalities.
 
+- [Background](#background)
+- [An overview](#an-overview)
+- [Why should you bother learning raw Node.js?](#why-should-you-bother-learning-raw-nodejs)
+- [A pure Node.js HTTP server](#a-pure-nodejs-http-server)
+- [Conclusion](#conclusion)
+
 ### Background
 
 JavaScript has gained a lot of love from the developers' community. It is diverse and can be applied to any application, from mobile apps, web pages, internet of things, networking, servers, real-time applications, microservices, etc. Thus, JavaScript is a cross-platform language.
