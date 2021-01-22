@@ -1,0 +1,205 @@
+# fork() in C programming language
+
+![hero-image](/engineering-education/fork-in-C-programming-language/hero.png)
+
+### Introduction
+You have seen a lot of processes in your task manager if you are using Windows. And in your resource monitor if you are using Linux. But did you think even once how these are created? In this tutorial, we will talk about fork then implement some examples in the C programming language. 
+
+### Prerequisites
+To follow along with this tutorial, you should have:
+- A good understanding of C programming language.
+- Familiar with Unix-like operating systems.
+
+### What is Fork()?
+In the computing field, **Fork** is the primary method of process creation on Unix-like operating systems. Which creates a new copy called *child* out of the original process that called *parent*. And when the parent process is closed or crashed for some reason, it also kills the child process. 
+
+Let's start with the life-cycle of a process:
+
+![Process life-cycle](/engineering-education/fork-in-C-programming-language/ProcessState.jpg)
+
+[Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html).
+
+The operating system is using a unique id for every process to keep track of all processes. And for that, fork() doesn't take any parameter and return an int value as following:
+ - Zero: if it is the child process(the process created).
+ - Positive value: if it is the parent process.
+ - Negative value: if an error occurred.
+ 
+*Note*: The following codes only run in Linux and UNIX based. If you are running Windows, then I recommend you to use [Cygwin](https://www.cygwin.com/). 
+
+Let's jump into the practical section where we will create examples from the simple level to the advanced one.
+
+### Hello world!
+```c
+#include <stdio.h> 
+#include <sys/types.h> 
+#include <unistd.h> 
+int main() 
+{ 
+    fork(); 
+    printf("Hello world!\n"); 
+    return 0; 
+} 
+```
+
+The output will be:
+```
+Hello world!
+Hello world!
+```
+Where one of the output came from the parent process and the other one from the child process.
+
+![simple fork](/engineering-education/fork-in-C-programming-language/fork.png)
+
+Simply, we can tell that the result is 2 power of n, where n is the number of fork() system calls. For example:
+```c
+#include <stdio.h> 
+#include <sys/types.h> 
+#include <unistd.h> 
+#include <stdlib.h>
+int main() 
+{ 
+    fork(); 
+    fork(); 
+    fork(); 
+    printf("Hello world!\n");
+    return 0; 
+} 
+```
+The result is:
+```
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+```
+Another example is:
+```c
+int main() {
+  if(fork() ==0)
+    if(fork())
+      printf("Hello world!!\n");
+  exit(0);
+  }
+```
+I drew a brief sketch to let you understand the idea:
+
+![Fork()](/engineering-education/fork-in-C-programming-language/fork1.png)
+
+Then the result will be just one "Hello World!".
+
+Now try to execute the following code and compare your result with ours:
+```c
+int doWork(){
+	fork();
+	fork();
+	printf("Hello World!\n");
+}
+int main() {
+	doWork();
+	printf("Hello world!\n");
+	exit(0);
+}
+```
+The result will be:
+```
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+```
+
+![fork explaination](/engineering-education/fork-in-C-programming-language/fork2.png)
+
+Because when the process that has been forked inside `dowork()` print `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exit.
+
+### Advanced example 
+When a process creates a new process, then there are two possibilities for the execution exit:
+ - The parent continues to execute concurrently with its child.
+ - The parent waits until some or all of its children have terminated.
+ 
+ ```c
+#include <sys/types.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+int main(int argc, char *argv[]) {
+ 
+	/* fork a child process */
+	pid_t pid = fork();
+
+	if (pid < 0) { /* error occurred */
+		fprintf(stderr, "Fork Failed");
+		return 1;
+	}
+
+	else if (pid == 0) { /* child process */
+		printf("I'm the child \n"); /* you can execute some commands here */
+	}
+
+	else { /* parent process */
+		/* parent will wait for the child to complete */
+		  wait(NULL);
+		  printf("Child Complete \n");
+	}
+}
+ ```
+The wait call system `wait(NULL)` will make the parent process wait until the child process has executed all of its commands. The result will be:
+```c
+I'm the child 
+Child Complete 
+
+```
+
+Another example:
+ ```c
+#include <sys/types.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+int main(int argc, char *argv[])
+{
+	printf("I am: %d\n", (int) getpid());
+
+	pid_t pid = fork();
+	printf("fork returned: %d\n", (int) pid);
+
+	if (pid < 0) { /* error occurred */
+		perror("Fork failed");
+	}
+	if (pid == 0) { /* child process */
+		printf("I am the child with pid %d\n", (int) getpid());
+                printf("Child process is exiting\n");
+                exit(0);
+        }
+	/* parent process */
+	printf("I am the parent waiting for the child process to end\n");
+        wait(NULL);
+        printf("parent process is exiting\n");
+        return(0);
+} 
+ ```
+The result will be something like:
+```c
+I am: 2337
+fork returned: 2338
+I am the parent waiting for the child process to end
+fork returned: 0
+I am the child with pid 2338
+Child process is exiting
+parent process is exiting
+```
+
+That's all for today!🥳 
+
+### Conclusion
+We have learned what fork() can do, and how to implement it in the C programming language in unique examples. If you are interested more in the operating system abstractions, and how it is working, then I recommend you to start learning about pipes then semaphores.
