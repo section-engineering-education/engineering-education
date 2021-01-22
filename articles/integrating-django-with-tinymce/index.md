@@ -6,13 +6,13 @@ url: /engineering-education/integrating-django-with-tinymce/
 title: Integrating Django with TinyMCE
 description: This article will serve as a guide to integrate Django with a TinyMCE. TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks.
 author: samuel-mwangi
-date: 2021-01-20T00:00:00-09:00
+date: 2021-01-22T00:00:00-10:00
 topics:
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/integrating-django-with-tinymce/hero.jpg
-    alt: installing Kubernetes on ubuntu server
+    alt: Integrating Django with TinyMCE example image
 ---
 TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks. It comes in handy when trying to make your content look more stylish with colorful texts, various fonts, tables, and many other features.
 <!--more-->
@@ -43,7 +43,7 @@ Next, use the command below to create a virtual environment in our project-level
 
 `$ py -m venv .venv`
     
-and then use the below command to activate it.    
+and then use the command below to activate it.    
 
 `$ .venv\Scripts\activate.bat`
 
@@ -68,7 +68,7 @@ After the installations are complete, you can now proceed to *settings.py* and a
     ]
 ```
 
-You should also add the *tinymce* below configurations to *settings.py*, where you can opt to copy and paste.
+You should also add the *tinymce* configurations below to *settings.py*, where you can opt to copy and paste.
 
 ```py
  TINYMCE_DEFAULT_CONFIG = {
@@ -203,7 +203,7 @@ Now let us run our local server and log into the admin's page.
 Open your browser now and type in the following URL:
 **http://127.0.0.1:8000/admin/** and log in using the credentials that you used to create the super-user.
 
-> You should make sure that up to this step, you'll still be connected to the internet since TinyMCE fetches its CSS and Javascript from a CDN.
+> You should make sure that up to this step, that you're still connected to the internet since TinyMCE fetches its CSS and Javascript from a CDN.
 
 After logging in, you should be able to see *MYAPP* with its *Text editors* table, and when you click on *add*, you should be able to see the below results:
 
@@ -212,7 +212,7 @@ After logging in, you should be able to see *MYAPP* with its *Text editors* tabl
 ### Conclusion
 If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in *settings.py* and adjust the *height* and *width* values until you get the size you want.
 
-In the project above, we used the *modern* theme. However, you might be pleased to know that there are other themes availablet to replace the *modern* theme in the TinyMCE configurations with any other available.
+In the project above, we used the *modern* theme. However, you might be pleased to know that there are other themes available to replace the *modern* theme in the TinyMCE configurations with any other available.
 
 Now that we have accomplished the goal, you can try to use TinyMCE in various projects since practice makes perfect.
 
@@ -220,5 +220,4 @@ Happy Coding!
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
-
 
