@@ -50,7 +50,7 @@ Libraries make your work easier and more efficient by reducing redundant code. B
 
 They are reliable but shrink your learning exposure. Of course, you can't learn everything, but it is important to understand how your system works. Therefore, it is a good experience for a developer to learn vanilla Node.js
 
-While learning Node.js, you will typically use packages. As you level up, the urge to learn more might increase, you will realize that you can build APIs and servers using vanilla Node.js, without the use of packages or third-party frameworks. This way, you utilize core Node.js runtime code.
+While learning Node.js, you will typically use packages. As you level up, the urge to learn more might increase, you will realize that you can build APIs and servers using vanilla Node.js without using packages or third-party frameworks. This way, you utilize core Node.js runtime code.
 
 ### Why should you bother learning raw Node.js?
 
