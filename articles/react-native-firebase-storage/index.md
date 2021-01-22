@@ -20,6 +20,8 @@ In this tutorial, we will be building a Non-Expo React Native application to upl
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
+Cloud Storage for Firebase is a powerful and cost-effective storage service built. The Firebase SDKs for Cloud Storage allow file uploads and downloads for your apps. You can use the cloud storage SDKs to store images, audio, video, or other user-generated content.
+
 ### Prerequisites
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
 
@@ -47,7 +49,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-storage/env_setup.png)
 
 ### Installing dependencies
 You can install these in advance or while going through the article.
