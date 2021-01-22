@@ -417,7 +417,7 @@ The last step would be to use `<router-outlet>` placeholder in our
   }
 
 ```
-With all these done, our Angular SPA is ready. 
+With all these steps followed, our Anime SPA is ready. Below, are few screenshots of the same:)
 ![home page](/engineering-education/building-a-simple-angular-app/my-app-home.png)
 ![anime profile page](/engineering-education/building-a-simple-angular-app/my-app-anime-akira.png)
 
