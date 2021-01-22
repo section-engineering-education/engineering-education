@@ -10,7 +10,7 @@ For Docker installation, setup, and a quick start, visit [Getting started with D
 
 
 ### Project setup
-We will be creating a Docker image for the Todo application that we created on [this](https://www.section.io/engineering-education/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `update`, `delete`, and `get` list of `todos` through REST APIs.
+We will be creating a Docker image for the Todo application that we created on [this](https://www.section.io/engineering-education/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
 
 Ensure `virtualenv` is installed on your computer by executing the command below.
 ```bash
@@ -71,7 +71,7 @@ Below is the project structure.
         └── wsgi.py
 ```
 ### Creating a Dockerfile
-A Dockerfile is a text file that contains instructions on how the Docker image will be built. A Dockerfile contains the below directives.
+A Dockerfile is a text file that contains instructions on how the Docker image will be built. A Dockerfile contains the directives below.
 - **FROM** directive sets the base image from which the Docker container will be built.
 - **WORKDIR** directive sets the working directory in the image created.
 - **RUN** directive executes commands in the container. 
@@ -148,7 +148,7 @@ $ docker run --name django_todo -d -p 8000:8000 django_todo:latest
 ```
 - `--name` sets the name of the Docker container.
 - `-d` makes the image run in detached mode. The image is capable of running in the background.
-- `-p 8000:8000` maps port 8000 in the Docker container to port 8000 in the localhost.
+- `-p 8000:8000` maps port 8000 in the Docker container to port 8000 in localhost.
 - `django_todo: latest` specifies which image is used to build the Docker container. 
 
 To list all the running Docker containers, execute the command below.
