@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: 
+url: /engineering-education/group-operator/
+title: $group operator
+description:  $group operator is a very important operator in MongoDB language and it is the part of aggregation in MongoDB so this article will cover $group operator, its applications along with examples.
+author: harit-joshi
+date: 21:52:42 2021 +0530
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/group-operator/hero.jpg
+    alt: $group operator
+---
+
+
 # $group operator :
 
 $group operator is a very important operator in MongoDB language and it is the part of aggregation in MongoDB so in this article we are going to learn :
