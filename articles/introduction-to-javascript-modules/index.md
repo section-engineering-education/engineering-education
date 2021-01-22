@@ -45,7 +45,7 @@ function studentDetails(name,
 )
 {
     const myDetails="My name is "+ name
-     + " ,a student at "+ college
+     +  ", a student at " + college
      + " ,admission number "+ admission_number
      +" .I'm in year"+ yearOfStudy;
 
