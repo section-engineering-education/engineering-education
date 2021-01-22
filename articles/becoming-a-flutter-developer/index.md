@@ -135,7 +135,7 @@ Knowing a native language will give you an advantage over a person who only know
 
 Flutter and Dart are still fairly new technologies. Finding a single tutorial or reading material to kick off your career might not give you sufficient knowledge. It is advisable to look into multiple resources to get a good grasp of Flutter and Dart. Different tutors have unique experiences and information on the framework and programming language.
 
-- **Learning Flutter in general.**
+- **Learning Flutter generally.**
 
 Avoid confusion when trying to get into a new profession. Do not learn the framework generally, instead find an example of an application you would like build from scratch upwards. It will allow you to make mistakes, learn from them, and have an actual project to add into your portfolio. Building such apps from scratch helps you acquire critical skills and experiences. These attributes can help in the creatio of more powerful applications.
 
