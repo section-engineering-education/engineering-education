@@ -104,6 +104,8 @@ You will need the package name of the application to register the application. Y
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
+This file contains configurations that'll enable your application to access firebase services.
+
 ![Download Google Services JSON](/engineering-education/react-native-firebase-storage/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
@@ -142,7 +144,7 @@ Head over to the Storage section in the dashboard and click on the `Get Started`
 
 A modal will pop up with information about the storage rules. By default, only authenticated users can read and write from the cloud storage. Since we are not going to cover authentication in this tutorial, we will change the rules and set the cloud storage to open.
 
-> Do not set your cloud storage open in a production application. This will allow anyone to read and write to your cloud storage, compromising all the data in your cloud storage.
+> Do not set your cloud storage as open in a production application. This will allow anyone to read and write to your cloud storage, compromising all the data in your cloud storage.
 
 ![Default Rules](/engineering-education/react-native-firebase-storage/default_rules.png)
 
@@ -154,7 +156,7 @@ Once this is done, you'll see this screen. You can upload files and delete files
 
 ![Storage Setup Done](/engineering-education/react-native-firebase-storage/storage_setup_done.png)
 
-Now, Let's edit the cloud storage rules and set it to open. Switch to the `Rules` tab.
+Now, Let's edit the cloud storage rules and set the cloud storage bucket as `open`. Switch to the `Rules` tab.
 
 ![Storage Rules Tab](/engineering-education/react-native-firebase-storage/storage_default_rules.png)
 
