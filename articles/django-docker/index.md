@@ -6,7 +6,7 @@ url: /engineering-education/django-docker/
 title: How to Create Django Docker Images
 description: This tutorial will go over how to create Django Docker images. Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. 
 author: odhiambo-paul
-date: 2021-01-22T00:00:00-12:00
+date: 2021-01-22T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
