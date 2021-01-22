@@ -1,6 +1,6 @@
 ## Creating, Connecting, Storing, and fetching data from MariaDatabase using PHP 
 
-[MariaDatabase](https://mariadb.org/) is one of the most popular relational database management system (DBMS). It is the open source version of MySQL database. It is based on Structured Query Language (SQL). SQL is a standard language for creating, storing, and fetching data in databases. In this tutorial, we are going to learn how to use MariaDatabase and PHP in Ubuntu. 
+[MariaDatabase](https://mariadb.com/) is one of the most popular relational database management system (DBMS). It is the open source version of MySQL database. It is based on Structured Query Language (SQL). SQL is a standard language for creating, storing, and fetching data in databases. In this tutorial, we are going to learn how to use MariaDatabase and PHP in Ubuntu. 
 
 ## Prerequisites
 
@@ -19,48 +19,13 @@ In this tutorial you will learn how to:
 
 ### Step 1 -- Installing Xampp
 
-Xampp comes along with PhpMyAdmin when downloaded into a machine. 
-PhpMyAdmin is the tool to help manage the database.
+Xampp comes along with PhpMyAdmin when downloaded into a machine.  PhpMyAdmin is the tool to help manage the database.
 
 Download Xampp [here](https://www.apachefriends.org/download.html).
 
 Move to where your package was downloaded and open in terminal.
 
-<<<<<<< HEAD
 To install the package, you'll need to make it executable using the `chmod` command. Execute the command below in the terminal.
-=======
-- create a registration form using 
-
-- store data from the registration form into the database
-
-- fetch the saved data from the Database  
-
-## Step 1: Installing Xampp
-
-Xampp comes along with PhpMyAdmin when downloaded into a machine.  PhpMyAdmin is the MariaDatabase that we will be working on within this article.
-
-To install Xampp you need to;
-
-## . Download the package to be installed.
-
-Downloading the package is always the first step you need to do when installing Xampp. You can download the package [here](https://www.apachefriends.org/download.html). Download the latest version of Xampp for Linux and start the installation. Very easy.
-
-## . Give the package permission so that it can be executable
-
-To make this package executable, you need to open the terminal (Ctrl+alt+T) and follow the following:
-
-1. Move to where your package is located. In my case,  it is in the Downloads folder and so I will navigate to the Downloads folder using this command:
-
-```bash
-
-$ cd /home/[username]/Downloads
-
-```
-
-2. Run the Chmod command (sudo chmod 755 [package name] )to make the package file executable.
-
-The  Xampp version may differ. In my case I have then following:
->>>>>>> e1aa8e4a4d9709652fa76ad40a09b5b78a96b994
 
 ```bash
 $ sudo chmod 755 xampp-linux-x64-7.4.10-0-installer.run
@@ -74,76 +39,23 @@ $  ls -l xampp-linux-x64-7.4.10-0-installer.run
 -rwxrwxrwx 1 erastus erastus 157293721 Sep 12 22:23 xampp-linux-x64-7.4.10-0-installer.run
 ```
 
-<<<<<<< HEAD
 Then run the installer by executing the command below.
-=======
-Here, this is the output you will get.
-
-```bash
-
--rwxrwxrwx 1 [username] [username] 157293721 Sep 12 22:23 xampp-linux-x64-7.4.10-0-installer.run
-
-```
-
-The username above is the user who can execute the file.
-
-## . Launch  Setup Wizard
-
-1. It's now time to run the installer and launch the setup wizard. To do this, use the following command:
->>>>>>> e1aa8e4a4d9709652fa76ad40a09b5b78a96b994
 
 ```bash
 $ sudo ./xampp-linux-x64-7.4.10-0-installer.run
 ```
 
-<<<<<<< HEAD
 ![XAMPP Setup Wizard](/engineering-education/mariadb/img1.png)
-=======
-2. When you click enter in the above command, you should have XAMPP Setup Wizard opens as the image below:
-
- ![XAMPP Setup Wizard](/engineering-education/mariadb/img1.png)
-
-
-## . Select Components dialogue
-
-1. You should click ``Next`` in the above image and Select Components dialogue. You should choose either XAMPP Core Files or Xampp Developer Files and install. You may keep the default setting and proceed with `Next`
-
-2. The Setup will show you where the software will be installed. The location should be `/opt/lampp`. Click `Next` to proceed.
-
-3. After clicking next, you should see a dialogue box installing applications. Uncheck  `Learn more about Bitnami for XAMPP` to deny and click `Next`.
-
-4. Xampp is now ready to be installed by the Wizard. Start the installation by clicking `Next`.
-
-5. The Installation process should start immediately as in the figure below.
->>>>>>> e1aa8e4a4d9709652fa76ad40a09b5b78a96b994
 
 Click **Next** until the installation process is finished.
 
-
-<<<<<<< HEAD
 ![XAMPP Setup Wizard](/engineering-education/mariadb/img2.png)
-=======
-## . Launching Xampp
->>>>>>> e1aa8e4a4d9709652fa76ad40a09b5b78a96b994
 
 Once the installation is finished, move to the Manage Servers tab and click **Start** to start all the services.
 
 ![XAMPP Start Services](/engineering-education/mariadb/img3.png)
 
-<<<<<<< HEAD
 To verify your installation open your browser at http://localhost/dashboard. You should see something like this.
-=======
-
-In the Manage Serves tab, click `Start` to start all the services.
-
-## . Verifying that XAMPP is running
-
-Here we are going to verify that we have installed two things. The `localhost` and the `MariaDB`
-
-1. For localhost enter the following URL in a browser: http://localhost/dashboard
-
-If You see an image like the one below, the Xampp is installed in your machine.
->>>>>>> e1aa8e4a4d9709652fa76ad40a09b5b78a96b994
 
 ![XAMPP Setup Wizard](/engineering-education/mariadb/img4.png)
 
@@ -427,4 +339,5 @@ In this tuorial we have:
 - Installed xampp
 - Created a simple form using a `PHP` code
 - Stored data into the database
-- Fetched data from the database
+- Fetched data from the database 
+
