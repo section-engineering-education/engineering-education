@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/react-native-firebase-storage/
 title: React Native Firebase Storage for Non-Expo Workflow
-description: This tutorial gives readers a detailed guide on how to implement firebase storage for a Non-Expo React Native application.
+description: This tutorial gives readers a detailed guide on how to implement firebase cloud storage for a Non-Expo React Native application.
 author: mohan-raj
-date: 2020-12-07T00:00:00-15:00
+date: 2021-01-22T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,10 @@ images:
   - url: /engineering-education/react-native-firebase-storage/hero.jpg
     alt: React Native Non-Expo Firebase Storage Hero Image
 ---
-In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase cloud storage.
+In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase cloud storage. Firebase is a platform developed by Google used to create mobile and web applications. It was originally an independent company founded in 2011.
 <!--more-->
-
 ### Firebase
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
-
-Cloud Storage for Firebase is a powerful and cost-effective storage service. The Cloud Storage SDK supports file uploads and downloads for your apps. You can use the cloud storage SDK to store images, audio, video, or other user-generated content.
+In 2014, Google acquired the platform and it is now their flagship offering for app development. Cloud Storage for Firebase is a powerful and cost-effective storage service. The Cloud Storage SDK supports file uploads and downloads for your apps. You can use the cloud storage SDK to store images, audio, video, or other user-generated content.
 
 ### Prerequisites
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
@@ -94,11 +91,11 @@ Once you create a new project, you'll see the dashboard.
 
 ![New Dashboard](/engineering-education/react-native-firebase-storage/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-storage/register_app.png)
 
-You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` that is located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-firebase-storage/package_name.png)
 
@@ -112,7 +109,7 @@ After adding the file, proceed to the next step. It will ask you to add some con
 
 First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
 
-```gradle
+```bash
 buildscript {
   dependencies {
     // ... other dependencies
@@ -124,14 +121,14 @@ buildscript {
 
 Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
 
-```Gradle
+```bash
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 ```
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
-Finally, We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+Finally, we should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
 
 ```bash
 npm install @react-native-firebase/app
@@ -156,13 +153,13 @@ Once this is done, you'll see this screen. You can upload files and delete files
 
 ![Storage Setup Done](/engineering-education/react-native-firebase-storage/storage_setup_done.png)
 
-Now, Let's edit the cloud storage rules and set the cloud storage bucket as `open`. Switch to the `Rules` tab.
+Now, let's edit the cloud storage rules and set the cloud storage bucket as `open`. Switch to the `Rules` tab.
 
 ![Storage Rules Tab](/engineering-education/react-native-firebase-storage/storage_default_rules.png)
 
 Now, replace the existing rules with this.
 
-```rules
+```bash
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
@@ -302,7 +299,6 @@ For example:
 ```
 
 ### Uploading media
-
 Let's install the package for Firebase storage.
 
 ```bash
@@ -428,7 +424,7 @@ statusText: {
 
 ![Upload Progress](/engineering-education/react-native-firebase-storage/upload_progress.gif)
 
-### Adding pause/resume Upload
+### Adding pause/resume upload
 Let's add a state to maintain whether the upload is paused or not. This will be a boolean state.
 
 ```JSX
@@ -499,7 +495,7 @@ Let's update the status text to *paused* and hide the activity indicator if the 
 ### Get the download URL
 The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object.
 
-We can add a `.then()` to it which will get called when the upload is completed. If not, the `.catch()` will be called.
+We can add a `.then()` to it that will get called when the upload is completed. If not, the `.catch()` will be called.
 
 ```JSX
 const onMediaSelect = async (media) => {
