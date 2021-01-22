@@ -2,9 +2,9 @@
 
 ### Introduction
 
-Cross-platform applications enable companies to cut down on development costs. They eliminate the need to hire different software development teams. They also reduce the time and cost to manage different code bases by using a single code base to develop applications.  `Flutter developers` develop cross-platform applications. 
+Cross-platform applications enable companies to cut down on development costs. They eliminate the need to hire different software development teams. They also reduce the time and cost to manage different code bases. Flutter enables developers to create cross-platform applications. 
 
-For these reasons, the need for Flutter Developers will continue to increase. 
+Due to these reasons, the need for Flutter Developers will continue to increase. 
 
 
 ### Table of Content
@@ -22,7 +22,7 @@ For these reasons, the need for Flutter Developers will continue to increase.
 
 ### Who is a Flutter Developer
 
-A Flutter developer is a software developer who uses Flutter framework to develp cross-platform applications. They use `Flutter Framework` to develop these applications using a single base code. 
+A Flutter developer is a software developer who uses the Flutter framework to develop cross-platform applications. 
 
 ### Roles and Responsibilities of a Flutter Developer
 
@@ -32,28 +32,28 @@ It is the process of writing the code to develop software. Flutter developers us
 
 2. **TO Test Applications.**
 
-They test the functionality of the applications to make sure it does not crash. Testing ensure that apps are running well based on the system and user requirements.
+They test the functionality of the applications to make sure they do not crash. Testing ensures that apps are running well based on the system and user requirements.
 
 3. **To Deliver Applications.**
 
-It involves launching a complete application to the public. A mobile app is placed on `PlayStore` for Android applications or `AppleStore` for iOS applications. The feedback from the users is monitored and used to make changes and update the applications.
+It involves releasing a complete application to the public. A mobile app is placed on `PlayStore` for Android applications or `AppleStore` for iOS applications. The feedback from the users is monitored and used to make changes to the applications.
 
 
 ### Flutter Developer Tools
 
 1. **Version Control Tools**
 
-These tools allow software developers to keep track of changes they make on their projects. They also help for easy collaboration of a team of software developers while contributing to the same project. 
+These tools allow software developers to keep track of changes they make on their projects. They also boost collaboration among software developers. This paves the way for increased productivity. 
 
 Examples of version control tools:
 
-- [Git and Github](https://github.com/) - to use git and github you will need to install git to the code editor or IDE you are using and have an existing github account. All you need to do is write git commands to push your code to a github repository. From the repository other developers can help you make your code better. You can also make the repository private.
+[Git and Github](https://github.com/) - To use git and github you will need to install git to the code editor or IDE you are using and have an existing github account. All you need to do is write git commands to push your code to a github repository. From the repository other developers can help you improve your code. You can also set your repository as private.
 
 - [Bitbucket](https://bitbucket.org/)
 
 2. **Flutter Framework**
 
-Flutter is a UI framework used to develop high performance and high-quality native applications for Android, iOs, the Web and desktop using a single code base. Dart is the primary programming language for Flutter Framework. It is a free and open-source framework. 
+Flutter is a UI framework used to develop high performance and high-quality native applications for Android, iOS, web and desktop using a single code base. Dart is the primary programming language for Flutter Framework. 
 
 Some features of Flutter that make it popular include 
 
@@ -104,7 +104,7 @@ After designing, you can use [Supernova](https://www.supernova.io/) to convert t
 
 1. **Dart Programming Language**
 
-`Dart` is a client-based programming language that is scalable and can be used to write simple scripts. It is an object-oriented and dynamic language. Google developed dart. It is the primary language used in Flutter.
+`Dart` is a client-based programming language that is scalable and can be used to write simple scripts. It is an object-oriented and dynamic language. Google developed dart. It is the primary language used in Flutter development.
 
 2. **Knowledge on Agile Methodology and Waterfall for Software Development**
 
@@ -129,7 +129,7 @@ Understanding these languages will make it easier to become a flutter developer.
 
 - **Learn native languages, not just Flutter and Dart.**
 
-Most software developers will argue that prior knowledge in a native language is unnecessary, but it is a skill requirement on most job descriptions. Flutter development is still fairly new, and employers must have proof that you know about application development. The only way to show this is by having experience with native languages which have been previously used to build comercial apps.
+Most software developers will argue that prior knowledge in a native language is unnecessary, but it is a skill requirement on most job descriptions. Flutter development is still fairly new, and employers must have proof that you know about application development. The only way to show this is by having experience with native languages such as Java, Swift, or Kotlin.
 
 Knowing a native language will give you an advantage over a person who only knows flutter and dart. It will display a variety of expertise and knowledge. A grasp on native languages will make it easier to move flutter development.
 
@@ -139,7 +139,7 @@ Flutter and Dart are still fairly new technologies. Finding a single tutorial or
 
 - **Do not learn Flutter in general, pick an app to develop from scratch upwards.**
 
-Avoid confusion when trying to get into a new profession. Do not learn the framework generally, instead find an example of an application you would like buildfrom scratch upwards. It will allow you to make mistakes, learn from them, and have an actual project to add into your portfolio. Learning through building an actual application will prepare you for a real-world experience into the profession.
+Avoid confusion when trying to get into a new profession. Do not learn the framework generally, instead find an example of an application you would like build from scratch upwards. It will allow you to make mistakes, learn from them, and have an actual project to add into your portfolio. Building such apps from scratch helps you acquire critical skills and experiences. These attributes can help in the creatio of more powerful applications.
 
 
 ### Getting a job as a Flutter Developer
@@ -155,12 +155,11 @@ Technical questions a Flutter Developer gets during an interview are mostly cate
 
 1. **Written Questions.**
 
-They mostly test your knowledge on `Dart Programming Language`. Its data structures and algorithms, control flows and general knowledge in the programming language.
+They mostly test your knowledge on `Dart Programming Language`. Its data structures, algorithms, control flows, and general knowledge in the programming language.
 
 2. **Verbal Questions.**
 
 These questions will test your knowledge on Flutter framework. They may also include questions on Dart Programming Language.
-
 
 You can have a look at these resources to see more interview questions:
 
@@ -181,7 +180,6 @@ To get a better grip on the topic, take a look at these resources:
 - To learn more about `Flutter DevTools`
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/nq43mP7hjAE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ### Conclusion
 Becoming a Flutter developer is simple. Dart is a friendly language and Flutter an easy-to-understand framework. It is an interesting field to dive into.
