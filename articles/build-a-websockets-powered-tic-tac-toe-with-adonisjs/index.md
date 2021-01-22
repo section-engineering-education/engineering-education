@@ -1,63 +1,35 @@
 ## Introduction
 
-Browser-based multiplayer gaming requires split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2's move in record time. To achieve this communication speed, we will use the WebSocket API.
+Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2's move in less than a second. We will use the WebSocket API to achieve this communication speed.
 
-We will use AdonisJS, which is a Node.js MVC framework, on the backend. AdonisJS implements web sockets both on the client and server. Check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
+We will use AdonisJS, which is a NodeJS MVC framework, on the backend. AdonisJS implements web sockets both on the client and server. Check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
 
 ## Technologies Involved
 
-1. Node.js
+1. NodeJS
 2. AdonisJS
 3. Redis
 
 ## Prerequisites
 
-### Node.js
+### NodeJS
 
-![nodejs-logo.png](nodejs-logo.png)
+![nodejs-logo.png](/engineering-education/nodejs-logo.png)
 
-First, check that your Node.js version is >= 10.
+First, check that your NodeJS version is >= 10.
 
 ```bash
 $ node -v
 # v10.19.0
 ```
 
-Install the latest LTS version of Node.js from the [official website](http://nodejs.org/) if yours is less than v10.
-
-### Adonis CLI
-
-<img width="200px" alt="adonis-logo.png" src="adonis-logo.png" />
-
-The Adonis will be used for running the development server. It has other uses such as creating migrations and models. Install it globally using:
-
-```bash
-$ npm i -g @adonisjs/cli
-```
-
-If you encounter `Error: EACCES: permission denied`, prefix `sudo` to the command.
-
-[Adonis v5](https://preview.adonisjs.com/) will deprecate the CLI, so you can use `nodemon` instead of the CLI. All you need to do is install it as a dev dependency.
-
-```bash
-$ npm i -D nodemon
-```
-
-and add a dev npm script
-
-```diff
-  "scripts": {
-    "start": "node server.js",
-    "test": "node ace test",
-+   "dev": "nodemon"
-  },
-```
+Install the latest LTS version of NodeJS from the [official website](http://nodejs.org/) if yours is less than v10.
 
 ### Redis
 
-<img width="200px" alt="redis.png" src="redis.png" />
+![Redis Logo](/engineering-education/redis.png)
 
-We will use Redis to handle game state. Horizontal scaling is common in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store state in our apps since instances will not be able to share state.
+We will use Redis to handle game state. Horizontal scaling is a common requirement in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store state in our apps since instances will not be able to share state.
 
 Redis will allow us to maintain the game state for millions of gamers. Redis offers faster read-write operations than a traditional DB, so it is ideal for the game.
 
@@ -67,34 +39,34 @@ Follow the [instructions here](https://redis.io/topics/quickstart#installing-red
 
 According to Wikipedia
 
-> A WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.
+> A WebSocket is a computer communication protocol, providing a full-duplex communication channel over a single TCP connection.
 
 A WebSocket is a communication channel that allows for bi-directional communication. Emissions and broadcasts replace the request-response mechanism in HTTP.
 
-![Client to server](client-to-server.png)
+![Client to server](/engineering-education/client-to-server.png)
 
 So a server can broadcast to several connected clients at the same time.
 
-![Server to multiple clients](server-to-multiple-clients.png)
+![Server to two clients](/engineering-education/server-to-multiple-clients.png)
 
 Clients emit information to the server without waiting for a response. So communication occurs through listeners set up by the client.
 
 ## Project Architecture
 
-The project follows this simple architecture
+The project follows this architecture
 
 - A user sets a username
 
-![set-username.gif](set-username.gif)
+![set-username.gif](/engineering-education/set-username.gif)
 
 - The user generates a game code
 
-![generate-game-code.gif](generate-game-code.gif)
+![generate-game-code.gif](/engineering-education/generate-game-code.gif)
 
 - The user shares the game code with a friend
 - The friend sets a username and uses the game code to initialize the game
 
-![joining-game-with-code.gif](joining-game-with-code.gif)
+![joining-game-with-code.gif](/engineering-education/joining-game-with-code.gif)
 
 - Both users are redirected to the game where they play in rounds
 
@@ -120,10 +92,10 @@ Step 3: Start the Redis server
 $ redis-server
 ```
 
-Step 3: In another terminal, start the Adonis server or nodemon
+Step 3: In another terminal, start the dev server
 
 ```bash
-$ adonis serve --dev
+$ npm run dev
 
 # or
 $ npm run dev
@@ -175,7 +147,7 @@ this.request.cookies();
 
 ## Handling User Registration
 
-To be able to identify a user, we set their username in an [encrypted, httpOnly cookie](https://adonisjs.com/docs/4.1/response#_cookies) during registration.
+To identify a user, we set their username in an [encrypted, httpOnly cookie](https://adonisjs.com/docs/4.1/response#_cookies) during registration.
 
 ```js
 // register method in UserController.js
@@ -183,7 +155,7 @@ session.flash({ success: "Account created successfully" });
 response.cookie("username", username);
 ```
 
-Since we didn't use session or JWT auth, the cookies serve as a Psuedo-auth. So if the user reloads the browser and the username cookie is present, we return an authenticated view. An example of this is showing `Hi {{username}}` in `home.edge`.
+Since we didn't use session or JWT auth, the cookies serve as a Psuedo-auth. We return an authenticated view if the username cookie is present after reload. An example of this is displaying `Hi {{username}}` in `home.edge`.
 
 ```html
 @if(username)
@@ -205,7 +177,7 @@ return view.render("home", { game_code, username });
 
 ## How to Handle Connected Clients
 
-When the home or game page loads, the browser tries to establish a connection with the server. An API call triggers the `setSocketId` method in `UserController.js`. This is where the gamer's socket-id is set to their created Redis map.
+When the home or game page loads, the browser tries to establish a connection with the server. An API call triggers the `setSocketId` method in `UserController.js`. This is where the gamer's socket-id is linked to their created Redis map.
 
 ```js
 const username = request.cookie("username");
@@ -223,7 +195,7 @@ Events sent by your client to the server can [trigger emissions](https://adonisj
 3. All other connected clients except yourself using `this.socket.broadcast`
 4. All connected clients including yourself using `this.socket.broadcastToAll`
 
-This game utilizes 1 and 2. For example when player1 makes a mark ("X") on the board, they send the board's index. The server then **emitsTo** player2 with player1's mark ("X") and the board index.
+This game utilizes 1 and 2. For example, when player1 makes a mark ("X") on the board, they send the board's index. The server then **emitsTo** player2 with player1's mark ("X") and the board index.
 
 ```js
 this.socket.emitTo(
@@ -235,7 +207,7 @@ this.socket.emitTo(
 
 This is an instance of where we can't rely on the client's innocence. We don't expect player1 not to change their mark from "X" to say "M". The client can do a lot to break our game so we must limit their power.
 
-## How Player Moves are Handled.
+## How We Handle Player Moves
 
 When a player makes a move, we execute that turn's logic if the move is valid.
 
@@ -260,7 +232,7 @@ Then checking if the board has a valid win state
 const { status, player, sequence } = this.checkForWinner(board);
 ```
 
-In the `checkForWinner` method, we iterate through a set of winning sequences
+In the `checkForWinner` method, we iterate through a set of winning sequences.
 
 ```js
 const winningSequences = [
@@ -275,14 +247,14 @@ const winningSequences = [
 ];
 ```
 
-We represent the board cells which map to the sequence as `boardSequence`. For the first of the winning sequences, it will look like
+We represent the board cells which map to the sequence as `boardSequence`. The first winning sequence will look like
 
 ```
 [0, 1, 2]
 ["O", "X", "X"]
 ```
 
-We check if all elements in the current sequence mapping have the same values, "O" or "X". If it is "X", player1 wins, else player2 wins.
+We check if all elements in the current sequence mapping have the same values: "O" or "X". If it is "X", player1 wins, else player2 wins.
 
 ```js
 for (let sequence of winningSequences) {
@@ -304,7 +276,7 @@ for (let sequence of winningSequences) {
 ```
 
 Here's a visualization of an iteration on move 7
-![Winning Sequence Visualization](winning-sequence-iteration.png)
+![Winning Sequence Visualization](/engineering-education/winning-sequence-iteration.png)
 
 #### Draw State
 
@@ -314,7 +286,7 @@ At the start of the game, the board is an 8 sized array of empty strings.
 const board = ["", "", "", "", "", "", "", ""];
 ```
 
-If at any point, no empty string exists in the array, the game results in a draw. Both players will be able to request a rematch.
+If no empty string exists in the array, the game results in a draw. Both players will be able to request a rematch.
 
 ```bash
 # Example of draw state
@@ -352,19 +324,19 @@ game.on("otherPlayerMove", (response) => {
 });
 ```
 
-We set up all the listeners in the `subscribeToChannel` function in `game.js`. These listeners are like JavaScript event listeners. They keep handling the events they are listening to after registration.
+We set up all the listeners in the `subscribeToChannel` function in `game.js`. These listeners are like JavaScript event listeners. They keep handling the events they are listening to after their registration.
 
 ## Security Considerations
 
-![security-implications](security-implications.jpg)
+![security-implications](/engineering-education/security-implications.jpg)
 
-<span>Photo by <a href="https://unsplash.com/@jsalvino?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">John Salvino</a> on <a href="https://unsplash.com/s/photos/padlock?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+Photo by [John Salvino](https://unsplash.com/@jsalvino) on [Unsplash](https://unsplash.com/s/photos/padlock)
 
-Most of the game logic lives on the server. Every datastore on a web-browser is mutable by javascript. Javascript can't read or change encrypted cookies, giving them the highest security.
+Most of the game logic lives on the server. Every datastore on a web-browser is mutable by Javascript. Javascript can't read or change encrypted cookies. This gives them the highest security.
 
 ## Best practices when dealing with WebSockets
 
-1. Only use Websockets if HTTP, polling and [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) aren't suitable for the problem. For example, if you building a real-time dashboard with little or no events sent from the client, you are better off using SSE.
+1. Only use Websockets if HTTP, polling and [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) aren't suitable for the problem. For example, a real-time dashboard with little or no events sent from the client should use SSE.
 2. Maintain state in a cache such as Redis or [Memcached](https://memcached.org/). You won't want to be making DB calls for time-sensitive operations.
 
 ## Conclusion
