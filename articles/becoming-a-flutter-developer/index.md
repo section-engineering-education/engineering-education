@@ -125,17 +125,17 @@ Understanding these languages will make it easier to become a flutter developer.
 
 ### Mistakes to Avoid When Learning Flutter Development
 
-- **Learn native languages, not just Flutter and Dart.**
+- **Ignoring native languages.**
 
 Most software developers will argue that prior knowledge in a native language is unnecessary, but it is a skill requirement on most job descriptions. Flutter development is still fairly new, and employers must have proof that you know about application development. The only way to show this is by having experience with native languages such as Java, Swift, or Kotlin.
 
 Knowing a native language will give you an advantage over a person who only knows flutter and dart. It will display a variety of expertise and knowledge. A grasp on native languages will make it easier to move flutter development.
 
-- **Do not over-rely on one source to develop your career as a Flutter Developer.**
+- **Over-relying on one source to develop your career as a Flutter Developer.**
 
 Flutter and Dart are still fairly new technologies. Finding a single tutorial or reading material to kick off your career might not give you sufficient knowledge. It is advisable to look into multiple resources to get a good grasp of Flutter and Dart. Different tutors have unique experiences and information on the framework and programming language.
 
-- **Do not learn Flutter in general, pick an app to develop from scratch upwards.**
+- **Learning Flutter in general.**
 
 Avoid confusion when trying to get into a new profession. Do not learn the framework generally, instead find an example of an application you would like build from scratch upwards. It will allow you to make mistakes, learn from them, and have an actual project to add into your portfolio. Building such apps from scratch helps you acquire critical skills and experiences. These attributes can help in the creatio of more powerful applications.
 
