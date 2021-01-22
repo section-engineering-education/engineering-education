@@ -4,25 +4,26 @@ status: publish
 published: true
 url: /engineering-education/intersection-observer-api/
 title: How to use Intersection Observers in a Website
-description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading feature.
+description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading.
 author: wilson-gichuhi
-date: 2021-01-17T00:00:00-11:00
-topics: []
+date: 2021-01-22T00:00:00-11:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/intersection-observer-api/hero.jpg
-    alt: Intersection observer example image
+    alt: Intersection Observer example image
 ---
 An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.
 In this article, we will discuss how this API is made to detect element visibility by building a simple web page that implements image lazy-loading features.
 <!--more-->
 ### Prerequisites
-This article is about a JavaScript browser API and you will need a basic knowledge of [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling. To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
+This article is about a JavaScript browser API so you will need a basic knowledge of the[JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling. To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support for this API, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
 ### How the Intersection Observer works
 To describe how this API works, we will use an example regarding the `IntersectionObserver` object.
-First, we need to test if the browser supports this API, you can use a condition statement like:
+
+First, we need to test if the browser supports this API. You can use a condition statement like:
 
 ```javascript
 if ('IntersectionObserver' in window) {
@@ -31,7 +32,8 @@ if ('IntersectionObserver' in window) {
     console.log("Your browser does not support IntersectionObserver");
 }
 ```
-The structure of how an `IntersectionObserver` code will look like:
+
+See the structure of how an `IntersectionObserver` look like below:
 
 ```javascript
 let options= {
@@ -51,6 +53,7 @@ observer.observe();
 ```
 
 The `IntersectionObserver` object takes two arguments, a callback function, and an optional object:
+
 - A callback is executed when the target intersects with the viewport.
 
 - In our options object, the root refers to the element that the target is intersecting against. The root property is set to null, which will refer to the viewport and is also the default reference when it's not defined.
@@ -63,7 +66,8 @@ The `IntersectionObserver` object takes two arguments, a callback function, and 
 
 - A `threshold` refers to numeric values between 0 and 1 to represent the percentage in which the target intersects the root. A value of 0 will mean the intersection is 0% and a value of 1 will mean that the intersection is 100%. In our case, it is 50%. If the `threshold` option is not set, the default value 0 is used.
 
-- If you need to observe the same element multiple times on different percentages, you need to set multiple thresholds as an array in the options object like:
+- If you need to observe the same element multiple times on different percentages, you need to set multiple thresholds as an array in the options object like this:
+
 ```javascript
 let options= {
     root:null,
@@ -71,17 +75,24 @@ let options= {
     threshold:[0, 0.5, 0.75, 1]
     };
 ```
-This will make the API report only to the change visibility while the target crosses these thresholds.
 
-### Lazy loading images on a web page using Intersection Observer API
-Images being a common type of content in most websites, lazy-loading loading may increase the response time by deferring the download of the images on the initial rendering. This is the section where we will build a web page that lazy-loads images and apply some CSS styles if the image intersects the viewport.
+This will make the API report only to the change in visibility when the target crosses these thresholds.
 
-The project structure is easy. First, open your editor and create a folder named `Gallery-Site`. Inside this folder, create three files namely `index.html` for the markup, `design.css` for our CSS styling, and `app.js` for the JavaScript. For our images, create a folder named images inside the Gallery-Site folder. Check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
+### Lazy loading images on a web page using the Intersection Observer API
+
+Since images are a common form of content in most websites, lazy-loading may improve page load speed by deferring downloading images on the initial page render. This is the part where we will build a webpage that lazy-loads images and applies some CSS styles if the image intersects the viewport.
+
+The structure for this project is simple. First, open your editor and create a folder named `Gallery-Site`. Inside this folder, create three files namely `index.html` for the markup, `design.css` for our CSS styling, and `app.js` for the JavaScript. For our images, create a folder named images inside the Gallery-Site folder. 
+
+You can check out the images and this application in my [Github repository](https://github.com/ReactifyStudio/ImageLoad-IntersectionObserver).
 
 #### The HTML file
-The HTML file will be having a simple navigation bar on the top, a heading with a `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. Our images will use a `data-src` attribute that will be pointing to our image, the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file. We will be creating these files in the next steps.
+The HTML file will have a simple navigation bar on the top, a heading with a `h2` tag, a `div` acting as the container for the images, and a footer at the bottom of the page. 
 
-This is the markup in the `index.html` file:
+Our images will use a `data-src` attribute that will point to our image and the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file.
+
+We will be creating these files in the next steps. This is the markup in the `index.html` file:
+
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -129,12 +140,13 @@ This is the markup in the `index.html` file:
 </body>
 </html>
 ```
-#### Styling our web page
-This applies simple styles to our images. When the image is visible on the screen, we perform a simple animation in our fade class.
+#### Styling our webpage
+Next, we'll apply some simple styles to our images. When the image is visible on the screen, we will perform a simple animation in our fade class.
 
 *Note* - I have also added a customized scroll bar using CSS `pseudo-element`.
 
 The `design.css` file is as shown below:
+
 ```CSS
 *{
     margin: 0;
@@ -200,7 +212,8 @@ footer{
 ```
 
 ### The Intersection Observer with JavaScript
-Here is the JavaScript code.
+Here is the JavaScript code:
+
 ```javascript
 const targets = document.querySelectorAll("img");
 
@@ -225,15 +238,25 @@ targets.forEach(lazyLoad);
 
 The code walkthrough:
 - `const targets=document.querySelectorAll("img")` will get all our images in the DOM.
-- the `lazyLoad` function takes a DOM element as its argument. Inside this function, we create our observer object named `io` that takes a callback with two parameters.
+
+- The `lazyLoad` function takes a DOM element as its argument. Inside this function, we create our observer object named `io` that takes a callback with two parameters.
+
 - The first parameter `entries` is the actual observations on the element and the `observer` parameter is the interface used to manage the instance of this observer.
-- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry.isIntersecting` to see if the image is intersecting with the viewport, when the image intersects, we will add the `src` attribute from its `data-src` attribute by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method. Each image has its own observer therefore, we can call the method `observer.disconnect()` to dispose of the image observer. Our options object will use a threshold of 0.7. The `io.observe(target)` is the method that will observe the image visibility.
+
+- The `entries.forEach` method will loop over our entries. Inside the loop, we check with `entry.isIntersecting` to see if the image is intersecting with the viewport. 
+
+    When the image intersects, we will add the `src` attribute from its `data-src` attribute by calling `img.setAttribute("src",src)` and then add a fade class using `img.classList.add()` method.
+
+    Each image has its own observer therefore, we can call the method `observer.disconnect()` to dispose of the image observer. Our options object will use a threshold of 0.7. 
+
+    The `io.observe(target)` is the method that will observe the image visibility.
+
 - We now need to loop over `targets` containing our images and pass the `lazyLoad` callback function to be observed by the `IntersectionObserver`.
 
-Check my deployed version on [netlify](https://galleryio.netlify.app/).
+To see the finished example, check out the deployed version on [Netlify](https://galleryio.netlify.app/).
 
 ### Summary
-In summary, `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread.
+In summary, the `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread so isn't a detriment to loading pages quickly.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
