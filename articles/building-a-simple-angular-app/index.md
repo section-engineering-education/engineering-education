@@ -56,6 +56,7 @@ my-app
     │   │   └───anime-profile.component.ts
     │   ├───model
     │   │   └───animeInterface.ts
+    │   ├───anime.service.ts
     │   ├───app.component.css
     │   ├───app.component.html
     │   ├───app.component.ts
@@ -131,9 +132,10 @@ Create a component `anime-list` from your terminal with the following command:
     @Component({
       selector: 'app-anime-list',
       templateUrl: './anime-list.component.html',
+      styleUrls: ['./anime-list.component.css']
     })
 
-    export class AnimeComponent{
+    export class AnimeListComponent{
       animes = ANIME;
     }
   ```
@@ -161,8 +163,18 @@ Now, create a `anime-card` component, which will display the anime card
 and provide a static router link to the *anime profile* section.
 ```typescript
   // anime-card.component.ts
+  
+    import {Component, Input } from '@angular/core';
+    import {AnimeInterface} from '../model/animeInterface';
 
-    export class AnimeComponent{
+    @Component({
+      selector: 'app-anime-card',
+      templateUrl: './anime-card.component.html',
+      styleUrls: ['./anime-card.component.css']
+    })
+
+
+    export class AnimeCardComponent{
       @Input()
       anime: AnimeInterface;
 
@@ -267,8 +279,21 @@ Create an `anime-profile` component.
 ```
 ```typescript
     // anime-profile.component.ts
+    
+    import {Component, OnInit } from '@angular/core';
+    import {AnimeInterface} from '../model/animeInterface';
+    import {AnimeService} from '../anime.service';
+    import {ActivatedRoute} from '@angular/router';
+    import { Location } from '@angular/common';
+    import {Subscription} from 'rxjs';
+    
+    @Component({
+      selector: 'app-anime-profile',
+      templateUrl: './anime-profile.component.html',
+      styleUrls: ['./anime-profile.component.css']
+    })
 
-    export class AnimeDetailsComponent implements OnInit{
+    export class AnimeProfileComponent implements OnInit{
       anime: AnimeInterface;
       animeSubscription: Subscription;
     
@@ -304,6 +329,27 @@ the above code uses a *service* to fetch the anime profile based on the
 *id*, and `<ng-template>` is used to define an *else block*. The `location` service 
 interacts with a browser's URL directly and redirects the user should you wish to.
 
+the `anime.service.ts` is as follows:
+```typescript
+   // anime.service.ts
+   
+   import { Injectable } from '@angular/core';
+   import {AnimeInterface} from './model/animeInterface';
+   import {ANIME} from '../db-data';
+   import {Observable, of} from 'rxjs';
+
+   @Injectable({
+     providedIn: 'root'
+   })
+   
+   export class AnimeService {
+     getAnime(id: number): Observable<AnimeInterface> {
+       return of(ANIME.find(anime => anime.id === id + 1));
+     }
+   }
+
+```
+
 ##### Setting up the Routes
 
 The next step is to set up routes for in-app navigation. For that, mention paths in the `imports` array of `app.module.ts`. Also, initialize the `exports` array 
@@ -311,11 +357,27 @@ with `RouterModule` as shown below. Doing this will allow us to use `<router-out
 
 ```typescript
     // app.module.ts
+    
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+
+    import { AppComponent } from './app.component';
+    import { AnimeListComponent } from './anime-list/anime-list.component';
+    import { AnimeCardComponent } from './anime-card/anime-card.component';
+    import {RouterModule} from '@angular/router';
+    import { AnimeProfileComponent } from './anime-profile/anime-profile.component';
 
     @NgModule({
+      declarations: [
+        AppComponent,
+        AnimeListComponent,
+        AnimeCardComponent,
+        AnimeProfileComponent
+      ],
+
       imports: [
                   
-      //  Routes for in-app navigation
+      // Routes for in-app navigation
         RouterModule.forRoot([
           {path: '', component: AnimeListComponent},
           {path: 'anime/:id', component: AnimeProfileComponent},
@@ -324,6 +386,8 @@ with `RouterModule` as shown below. Doing this will allow us to use `<router-out
         FormsModule, BrowserModule
       ],
       exports: [RouterModule],
+      providers: [],
+      bootstrap: [AppComponent]
     })
     export class AppModule { }
 ```
