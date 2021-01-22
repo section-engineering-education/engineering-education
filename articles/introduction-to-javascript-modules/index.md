@@ -26,7 +26,7 @@ export function addTwoNumbers(firstNumber,secondNumber) {
 In this file, we have a method(function) called ```addTwoNumbers```, which takes two parameters, ```firstNumber``` and ```lastNumber```.  
 But have you noticed the use of the keyword ```export``` coming before the function name?  
 
-what it does is very simple, it makes your code available for importation into another file, for example, the code in ```add.js``` is made available for use in another file.  
+What it does is very simple, it makes your code available for importation into another file. For example, the code in `add.js` is made available for use in another file.
 
 This means that the method defined here, ```addTwoNumbers()``` will be made available into the code where this file is imported.  
 
