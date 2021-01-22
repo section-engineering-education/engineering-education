@@ -98,8 +98,6 @@ Here are some of the most popular design tools:
 - [Figma.](https://www.figma.com/) 
 - [Flutter Studio.](https://flutterstudio.app/)
 
-After designing, you can use [Supernova](https://www.supernova.io/) to convert the design into code by exporting it. You will, however, need to refactor the exported code to break it into readable code. Supernova is compatible with the design tools mentioned above. 
-
 ### Flutter Developer Skills
 
 1. **Dart Programming Language**
