@@ -157,13 +157,11 @@ $ docker container ps
 CONTAINER ID   IMAGE                COMMAND                  CREATED       STATUS       PORTS                    NAMES
 d73306a9fb04   django_todo:latest   "python manage.py ru…"   3 hours ago   Up 3 hours   0.0.0.0:8000->8000/tcp   django_todo
 ```
-1. On your browser visit `http://localhost:8000/api/v1/todo/` to confirm if the `django_todo` application is running in the container.
-2. Make a `GET` request to `http://localhost:8000/api/v1/todo/`as shown below.
-   
-![Docker GET reequest](/engineering-education/django-docker/docker-get.png)
+1. On your browser visit `localhost` on port 8000 to confirm if the `django_todo` application is running in the container.
+![Docker Hub image](/engineering-education/django-docker/docker_get.png)
 
 ### Publishing the Docker image to Docker Hub
-![Docker Hub image](/engineering-education/django-docker/docker-create.png)
+![Docker Hub image](/engineering-education/django-docker/docker_create.png)
 Docker Hub is a repository of container images that can be used to create Docker containers.
 
 Visit [Docker Hub](https://hub.docker.com/) and create an account if you don't have one.
@@ -181,7 +179,7 @@ $ docker push <Docker Hub username>/django_todo:latest
 - `docker login` command logs you into your Docker Hub account on the command line, making it possible to push Docker images to Docker Hub.
 - `docker tag django_todo: latest <Docker Hub username>/django_todo: latest` command modifies the tag of our local Docker image to include the Docker Hub username.
 - `docker push <Docker Hub username>/django_todo: latest` pushes the image to Docker Hub repository we created earlier.
-**Docker Hub username** should be replaced by your Docker Hub username.
+**Note** replace `<Docker Hub username>` with your actual Docker Hub username.
 
 The full source code for the application is in [this](https://github.com/paulodhiambo/django_todo/tree/token_auth) GitHub repository.
 ### Conclusion
