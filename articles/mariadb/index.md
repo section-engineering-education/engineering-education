@@ -337,6 +337,7 @@ The data at the bottom of the page has been fetched from the database.
 
 In this tuorial we have:
 - Installed xampp
+- Created a database using terminal
 - Created a simple form using a `PHP` code
 - Stored data into the database
 - Fetched data from the database 
