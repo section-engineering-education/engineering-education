@@ -6,7 +6,7 @@ url: /engineering-education/intersection-observer-api/
 title: How to use Intersection Observers in a Website
 description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading.
 author: wilson-gichuhi
-date: 2021-01-22T00:00:00-11:00
+date: 2021-01-22T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,20 @@ images:
   - url: /engineering-education/intersection-observer-api/hero.jpg
     alt: Intersection Observer example image
 ---
-An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.
+An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous, giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.
 In this article, we will discuss how this API is made to detect element visibility by building a simple web page that implements image lazy-loading features.
 <!--more-->
 ### Prerequisites
-This article is about a JavaScript browser API so you will need a basic knowledge of the[JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling. To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support for this API, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
+This article is about a JavaScript browser API so you will need a basic knowledge of the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language, [HTML markup](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/) styling. 
+
+To build the lazy-loading image web page, you will need a browser and a text editor. I will be using [Google Chrome](https://www.google.com/chrome/) and [VS Code](https://code.visualstudio.com/download). Regarding the browser support for this API, [caniuse](https://caniuse.com/intersectionobserver) is a great site for reference.
 
 ### How the Intersection Observer works
 To describe how this API works, we will use an example regarding the `IntersectionObserver` object.
 
-First, we need to test if the browser supports this API. You can use a condition statement like:
+First, we need to test if the browser supports this API. 
+
+You can use a condition statement like:
 
 ```javascript
 if ('IntersectionObserver' in window) {
@@ -79,7 +83,6 @@ let options= {
 This will make the API report only to the change in visibility when the target crosses these thresholds.
 
 ### Lazy loading images on a web page using the Intersection Observer API
-
 Since images are a common form of content in most websites, lazy-loading may improve page load speed by deferring downloading images on the initial page render. This is the part where we will build a webpage that lazy-loads images and applies some CSS styles if the image intersects the viewport.
 
 The structure for this project is simple. First, open your editor and create a folder named `Gallery-Site`. Inside this folder, create three files namely `index.html` for the markup, `design.css` for our CSS styling, and `app.js` for the JavaScript. For our images, create a folder named images inside the Gallery-Site folder. 
@@ -91,7 +94,9 @@ The HTML file will have a simple navigation bar on the top, a heading with a `h2
 
 Our images will use a `data-src` attribute that will point to our image and the attribute `src` will be updated with JavaScript when the image is visible on the screen. This will prevent the image from loading instantly on the page. We also have a `<link rel="stylesheet" href="design.css">` link tag for our styles and a `<script src="app.js"></script>` for the JavaScript file.
 
-We will be creating these files in the next steps. This is the markup in the `index.html` file:
+We will be creating these files in the next steps. 
+
+This is the markup in the `index.html` file:
 
 ```HTML
 <!DOCTYPE html>
@@ -256,7 +261,7 @@ The code walkthrough:
 To see the finished example, check out the deployed version on [Netlify](https://galleryio.netlify.app/).
 
 ### Summary
-In summary, the `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread so isn't a detriment to loading pages quickly.
+In summary, the `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread, therefore it isn't a detriment to load pages quickly.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
