@@ -6,7 +6,14 @@ There are many methods of implementing the loading progress of your remote data.
 
 This guide will primarily discuss the concept of the shimmer loading effect. Shimmer Loading widget acts as a skeleton layout. Typically a content placeholder with a shimmering animation. It overrides the application's main screen as the application requests data from the server. Once the data is loaded, the dummy skeleton screen will be replaced by the main screen views.
 
-To implement a shimmering effect in android studio, you need a library called [Shimmer](http://facebook.github.io/shimmer-android/). This dependency helps implement a shimmer layout when fetching data from a server. It implements the same concept as a Spinner or ProgressBar. Major corporates such as YouTube, LinkedIn, Google Drive, and Facebook have implemented the shimmer loading effect in their applications. [Facebook]((http://facebook.github.io/shimmer-android/)) developed it to show loading animation while requesting data from APIs or servers.
+To implement a shimmering effect in android studio, you need a library called [Shimmer](http://facebook.github.io/shimmer-android/). This dependency helps implement a shimmer layout when fetching data from a server. It implements the same concept as a Spinner or ProgressBar. Major corporates have implemented the shimmer loading effect in their applications. They include;
+
+- YouTube
+- LinkedIn
+- Google Drive
+- Facebook
+
+[Facebook]((http://facebook.github.io/shimmer-android/)) developed it to show loading animation while requesting data from APIs or servers.
 
 ![Facebook Shimmering Example](/engineering-education/android-studio-shimmer-loading-effect/shimmer-small.gif)
 
@@ -14,7 +21,7 @@ To implement a shimmering effect in android studio, you need a library called [S
 
 ### Goal
 
-This guide shows you how to implement the Shimmer library in your Android application. We will load data from the Internet and display it in the app while implementing the shimmer layouts. 
+This guide shows you how to implement the Shimmer library in your Android application. We will load data from the Internet and display it in the app while implementing the shimmer layouts.
 
 >Though the shimmer loading effect can be used in any view, we will focus on the RecyclerView layout.
 
@@ -40,7 +47,7 @@ Once you have created a new android studio project, include the following librar
 implementation 'com.facebook.shimmer:shimmer:0.5.0'
 ```
 
-- An HTTP call library. We will use the Volley libray to handle HTTP requests.
+- An HTTP call library. We will use the Volley library to handle HTTP requests.
 
 ```java
 implementation 'com.android.volley:volley:1.1.0'
@@ -64,7 +71,7 @@ Since the application is making remote calls, add internet permissions into your
 </manifest>
 ```
 
-- To demonstrate this application, I've created a sample [JSON](https://jsonkeeper.com/b/3JMS) data containing a students' list and hosted the data online.
+- To demonstrate this application, I've created a sample [JSON](https://jsonkeeper.com/b/3JMS) data containing a student list and hosted the data online.
 
 ```JSON
 [
@@ -82,8 +89,8 @@ Since the application is making remote calls, add internet permissions into your
 
 We are ready to set the Shimmering effect in the RecyclerView layout. This application involves two phases.
 
-- Loading data into the view
-- Show a shimmering animation when fetching data.
+- Show a shimmering animation when fetching data
+- Loading data into the view.
 
 The project will involve six main files.
 
@@ -97,7 +104,7 @@ The project will involve six main files.
 
 - A model class (`Students.java`) - It contains objects to hold the application's datasets using the preferred getters and setters.
 
-- The main application layout (`activity_main.xml`) - It will host the RecyclerView widget. The view will bind the students' list elements as specified in the students' list layout design (`item_student_list.xml`). The layout will also bind the shimmer layout as defined in the `shimmer_placeholder_layout.xml`.
+- The main application layout (`activity_main.xml`) - It will host the RecyclerView widget. The view will bind the students' list elements specified in the students' list layout design (`item_student_list.xml`). The layout will also bind the shimmer layout as defined in the `shimmer_placeholder_layout.xml`.
 
 - Students' list layout (`item_student_list.xml`) - It will arrange the students' elements into the desirable screen design.
 - Shimmer placeholder layout (`shimmer_placeholder_layout.xml`) - It will define the shimmering effect of individual students' elements with the desirable shimmering screen design.
@@ -120,13 +127,8 @@ Here is the code to implement that.
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText,MissingConstraints"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        tools:ignore="HardcodedText,MissingConstraints"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
+    android:layout_height="wrap_content"
+    android:padding="20dp">
 
         <ImageView
             android:id="@+id/item_profile_img"
@@ -182,8 +184,6 @@ Here is the code to implement that.
             android:background="@color/shimmer_placeholder"
             android:layout_marginTop="3dp"
             app:layout_constraintTop_toBottomOf="@+id/item_student_description"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
@@ -546,12 +546,13 @@ public class MainActivity extends AppCompatActivity {
 
 As you can see above, the code implements loading data from the Internet into a RecyclerView using the Volley library. We fetch the data from [here](https://jsonkeeper.com/b/3JMS) data and display it into the main activity of our application.
 
-We can now focus on explaining the shimmer loading effect. The shimmer is implemented, just like regular views. 
+We can now focus on explaining the shimmer loading effect. The shimmer is implemented, just like regular views.
+
 First declare the `ShimmerFrameLayout` and initialize it as `shimmerFrameLayout = findViewById(R.id.shimmerLayout)` in the `onCreate` method. With that, we are ready to utilize the different functionalities that the Shimmer library offers.
 
 We should implement a shimmer layout before the app has loaded the students' data into the view, which in this case, is the RecyclerView. The `SetRecyclerViewAdapter(studentsList)` method binds the JSON data into the RecyclerView adapter. `SetRecyclerViewAdapter()` function takes one mandatory argument `studentsList`. When invoked, the method initiates the data lading process from the `studentsList`.
 
-While waiting for the Volley to return a response from the JSON remote data, we should start the shimmer loading animation. Use the function `startShimmer()`, i.e., `shimmerFrameLayout.startShimmer()`. This will start the shimmer layout as specified in `shimmer_placeholder_layout.xml` into the main screen, as we await the server response.
+While waiting for the Volley to return a response from the JSON remote data, we should start the shimmer loading animation. Use the function `startShimmer()`, i.e., `shimmerFrameLayout.startShimmer()`. This will start the shimmer layout as specified in `shimmer_placeholder_layout.xml` into the main screen as we await the server response.
 
 Once the data is ready and loaded into the RecyclerView, specify the following two functions.
 
