@@ -1,58 +1,62 @@
 Pure Node.js? Node.js without frameworks? An overview
 
-Are you a Node.js developer, and you frequently use Node.js libraries?  First, there is nothing wrong with using them. However, if you are unaware, have you ever thought of using Node.js with no frameworks or eternal libraries? Yes, developing a Node.js with no NPM registry binaries. Well, this guide aims to discuss an overview of using pure Node.js functionalities.
+Are you a Node.js developer, and you frequently use Node.js libraries?  First, there is nothing wrong with using them. However, have you ever thought of using Node.js with no frameworks or external libraries? Yes, it is possible to develop a Node.js application with no NPM registry binaries. This guide aims to discuss an overview of using pure Node.js and its functionalities.
 
 ### Background
 
-JavaScript has gained a lot of love from the developers' community. It is diverse and can be applied to any application, from mobile apps, web pages, internet of things, networking, servers, real-time application, microservices, etc. In short, JavaScript is a cross-platform language.
+JavaScript has gained a lot of love from the developers' community. It is diverse and can be applied to any application, from mobile apps, web pages, internet of things, networking, servers, real-time applications, microservices, etc. Thus, JavaScript is a cross-platform language.
 
-With the steady growth of JavaScript, it has led to the development of powerful JavaScript extensions such as Node.js.
+The steady growth of JavaScript has led to the development of powerful JavaScript libraries and frameworks such as Node.js.
 
 ![Most popular language](/engineering-education/pure-node-js-no-frameworks-or-packages/most-popular-language.jpg)
+
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents)
 
 Node.js is capable of building super fast and highly scalable applications. It has emerged as one of the Most Popular JavaScript Technologies.
 
 ![The most popular technologies](/engineering-education/pure-node-js-no-frameworks-or-packages/popular-technologies.jpg)
+
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 It emerged as the most wanted web technology, a survey conducted by [stack overflow](https://insights.stackoverflow.com/survey/2020).
 
 ![The most wanted technology](/engineering-education/pure-node-js-no-frameworks-or-packages/most-wanted-technology.jpg)
+
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-other-frameworks-libraries-and-tools-wanted3)
 
-Node.js runtime  [download metrics](https://nodejs.org/metrics/) speak for themselves.
+Node.js runtime [download metrics](https://nodejs.org/metrics/) speak for themselves.
 
-![Node.js downoad metrics](/engineering-education/pure-node-js-no-frameworks-or-packages/node-js-downoad-metrics.jpg)
+![Node.js download metrics](/engineering-education/pure-node-js-no-frameworks-or-packages/node-js-download-metrics.jpg)
+
 [Image Source](https://nodejs.org/metrics/)
 
 ### An overview
 
-One of the most influencing [reasons for Node.js popularity](/engineering-education/why-node-js-is-popular/) is the availability of diverse [open-source frameworks and libraries](/engineering-education/most-useful-nodejs-packages/).
+One of the most influential [reasons for Node.js popularity](/engineering-education/why-node-js-is-popular/) is the availability of diverse [open-source frameworks and libraries](/engineering-education/most-useful-nodejs-packages/).
 
-A package is somebody else code. It is developed to help the community solve day-to-day problems easily and quickly without writing many code setups, especially for a large app.
+A package is code written by someone else. It is developed to help the community solve day-to-day problems easily and quickly without re-writing code, especially for a large application.
 
-Open-source codes, frameworks, external libraries, and packages are available for most programming languages. Therefore, you only need basic skills to write your application logic. However, one thing makes Node.js unique. It exposes you to running the core Node.js barebones. With raw Node.js, you can learn and build apps from scratch with no frameworks.
+Open-source frameworks, external libraries, and packages are available for most programming languages. Therefore, you only need basic skills to write your application logic. However, one thing makes Node.js unique. It exposes you to running the core Node.js barebones. With vanilla Node.js, you can learn and build apps from scratch with no external frameworks.
 
-Let's take the example of building a Node.js server. In this case, you would use packages such as [Express.js](https://expressjs.com/) to create a server route and manage your HTTP server. Using such a framework is terrific. It makes your server easy to set up, scalable, and easy to manage.
+Let's take the example of building a Node.js server. In this case, you would use packages such as [Express.js](https://expressjs.com/) to create server routes and manage your HTTP server. Using such a framework is terrific. It makes your server easy to set up, scalable, and easy to manage.
 
-Libraries make your work efficient by obstructing redundant functionalities concepts. Nevertheless, there is what goes on behind the scenes of these packages. They are developed using pure Node.js. This way, as you implement your HTTP server, the low-level Node.js logic is hidden from you. In such circumstances, your server logic does not directly interact with the pure Node.js.
+Libraries make your work easier and more efficient by reducing redundant code. Behind the scenes, these libraries are developed using pure Node.js. This way, as you implement your HTTP server, the low-level Node.js logic is hidden from you. In such circumstances, your server logic does not directly interact with vanilla Node.js.
 
-They are reliable but shrink your learning exposure. Of course, you can't learn everything, but it is important to understand how your system works. Moreover, with that, you start asking yourself the real capability of using Node.js on its own. This drives you to learn the pure Node.js
+They are reliable but shrink your learning exposure. Of course, you can't learn everything, but it is important to understand how your system works. Therefore, it is a good experience for a developer to learn vanilla Node.js
 
-When learning Node.js, you will typically use packages. As you level up, the urge to learn more might increase, you will realize that you can build APIs and Serves using raw Node.js. No packages or any third-party framework. This way, you utilize the core Node.js runtime code.
+While learning Node.js, you will typically use packages. As you level up, the urge to learn more might increase, you will realize that you can build APIs and servers using vanilla Node.js, without the use of packages or third-party frameworks. This way, you utilize core Node.js runtime code.
 
 ### Why should you bother learning raw Node.js?
 
-As developers, it's hard to imagine a day without using NPM. A package manager helps you install these packages and use them in your project as if they were build-in. Nevertheless, the NPM ecosystem drives you away and makes it tough to learn a more profound overview of the pure Node.js functionalities.
+As developers, it's hard to imagine a day without using NPM (Node Package Manager). A package manager helps you install packages and use them in your project. Nevertheless, the NPM ecosystem drives you away and makes it tough to learn the pure Node.js functionalities.
 
-With packages, every project becomes scalable, fast to build, and easy to manage. This makes it challenging for professionals to dig deeper. Your application development life cycle is reduced to packages names. You call a package function and a set of parameters, and boom, you are done, very easy indeed.
+With packages, every project becomes scalable, fast to build, and easy to manage. This makes it challenging for professionals to dig deeper. Your application development life cycle is reduced to package names. You call a package function and a set of parameters, and boom, you are done, very easy indeed.
 
 Learning raw Node.js puts you in a position to develop and contribute to these packages. Packages are built based on pure Node.js. Thus, learning pure Node.js puts you in a position to build a package to help other developers in their development workflow.
 
-Packages are open-source, and frequently there will be issues with the packages, such as bugs. With the knowledge of pure Node.js, you stand in a position to address an issue to solve a bug or improve a package. Packager's code is hosted in GitHub. You can create an issue or a pull request to post your improvement. With that, you become a package contributor, helping the community utilize your skills of using pure Node.js. As a contributor, you understand what happened behind the scene of Node.js packages.
+Packages are open-source, and frequently there will be issues with the packages, such as bugs. With the knowledge of pure Node.js, you stand in a position to address an issue to solve a bug or improve a package. Package code is hosted in GitHub. You can create an issue or a pull request to post your improvement. With that, you become a package contributor, helping the community utilize your skills of using pure Node.js. As a contributor, you understand what happened behind the scene of Node.js packages.
 
-We mentioned packages having bugs, so if you develop an app with raw Node.js, How would you run into a bug contributed by a package. Packages have compatibility issues with certain projects due to package versioning specified in the NPM module dependencies. A no package app will not worry about version compatibility. You are the sole manager of your project's functions lifecycle.
+We mentioned packages having bugs, so if you develop an app with vanilla Node.js, How would you run into a bug contributed by a package. Packages have compatibility issues with certain projects due to package versioning specified in the NPM module dependencies. A no package app will not worry about version compatibility. You are the sole manager of your project's functions lifecycle.
 
 The biggest drawback of raw Node.js is that you will have to write so much code provided by Express and other frameworks. You'll have to manage most things and operations on your own.
 
@@ -64,7 +68,7 @@ When installing a library in your project, its binaries are saved as dependencie
 
 ### A pure Node.js HTTP server
 
-To put the raw Node.js knowledge, I have demonstrated how to create a simple web server. No frameworks, no Node package manager (NPM). Thus no `package.json` file as you have no dependency management—just a text editor and command line and using the functionalities that are core provided by Node.js itself.
+To put the raw Node.js knowledge, I have demonstrated how to create a simple web server. No frameworks, no Node package manager (NPM). Thus no `package.json` file as you have no dependency management — just a text editor and command line and using the functionalities that are core provided by Node.js itself.
 
 Go ahead and install [Node.js runtime](https://nodejs.org/en/) on your computer.
 
@@ -80,9 +84,9 @@ const hostname = "127.0.0.1";
 const port = 3000;
 ```
 
-- Create an HTTP serve.
+- Create an HTTP server.
 
-Use the `createServer()` method to create a server instance. It takes a callback function as its second argument. The callback takes arguments, response, and request.
+Use the `createServer()` method to create a server instance. It takes a callback function as its second argument. The callback takes the arguments: response, and request.
 
 The request object contains information about the client's request, such as a URL. Response object returns the data requested by the client.
 
