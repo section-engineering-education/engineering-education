@@ -36,7 +36,7 @@ The main reason why you need user acceptance testing is to validate if all busin
 
 UAT also validates that change requirements are implemented tou suit the business requirements. There could be some business changes that might not have been communicated to the development team effectively. UAT would be able to capture such.
 
-UAT ensures losses that may arise from post-release issues are reduced. The cost of fixing software issues before release is lower than fixing after release. UAT prevents loss of reputation by organizations that would be as a result of releasing software with defects to production.
+UAT ensures losses that may arise from post-release issues are reduced. The cost of fixing software issues before release is lower than fixing after release. UAT prevents loss of reputation by Organizations that would be as a result of releasing software with defects to production.
 
 ### UAT process
 
