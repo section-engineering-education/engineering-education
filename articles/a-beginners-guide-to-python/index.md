@@ -45,8 +45,8 @@ When we run `print(name)`, the output will be `john`.
 These variables hold numeric values, as shown below.
 ```python
 math=90
-chemistry = 100
-biology =70
+chemistry=100
+biology=70
 ```
 
 We can find the total of the above variables using the following statement.
