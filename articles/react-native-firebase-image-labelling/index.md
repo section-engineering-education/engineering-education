@@ -20,7 +20,7 @@ Image labeling gives you insight into the content of images. In this tutorial, w
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
-Firebase Machine Learning is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. Whether you're new or experienced in machine learning, you can implement the functionality you need in just a few lines of code. There's no need to have deep knowledge of neural networks or model optimization to get started. On the other hand, if you are an experienced ML developer, Firebase ML provides convenient APIs that help you use your custom TensorFlow Lite models in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
+Firebase's ML kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
 
 ### Prerequisites
 
