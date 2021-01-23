@@ -2,9 +2,7 @@
 
 ### Introduction
 
-Cross-platform applications enable companies to cut down on development costs. They eliminate the need to hire different software development teams. They also reduce the time and cost to manage different code bases. Flutter enables developers to create cross-platform applications. 
-
-Due to these reasons, the need for Flutter Developers will continue to increase. 
+Cross-platform applications enable companies to cut down on development costs. They eliminate the need to hire different software development teams. These applications also reduce the time and cost to manage different code bases. Flutter enables developers to create cross-platform applications. Due to these reasons, the need for Flutter Developers will continue to rise in the forseeable future. 
 
 
 ### Table of Content
@@ -27,23 +25,20 @@ A Flutter developer is a software developer who uses the Flutter framework to de
 ### Roles and Responsibilities of a Flutter Developer
 
 1. **To Code Applications.**
-
-It is the process of writing the code to develop software. Flutter developers use the Flutter SDK to craft beautiful and interactive applications.
+Flutter developers use the Flutter SDK to craft beautiful and interactive applications.
 
 2. **TO Test Applications.**
-
-They test the functionality of the applications to make sure they do not crash. Testing ensures that apps are running well based on the system and user requirements.
+Flutter developers test the functionality of the applications to make sure they do not crash. Testing ensures that the apps adhere to system and user requirements.
 
 3. **To Deliver Applications.**
-
-It involves releasing a complete application to the public. A mobile app is placed on `PlayStore` for Android applications or `AppleStore` for iOS applications. The feedback from the users is monitored and used to make changes to the applications.
+Flutter developers are involved in the deployment of applications. A mobile app is placed on `PlayStore` for Android applications or `AppleStore` for iOS applications. User feedback is then monitored and used to make changes to the applications.
 
 
 ### Flutter Developer Tools
 
 1. **Version Control Tools**
 
-These tools allow software developers to keep track of changes they make on their projects. They also boost collaboration among software developers. This paves the way for increased productivity. 
+These tools allow software developers to keep track of changes they make on their projects. They also boost collaboration among software developers. As a result, they help increase overall productivity. 
 
 Examples of version control tools:
 
@@ -65,12 +60,11 @@ These UI designs are
 1. Cupertino 
 2. Material Design. 
 
-These built-in features make building Flutter applications fast in performance. 
-
+These built-in features enhance the development of Flutter applications. 
 
 3. **Integrated Development Environment**
 
-In using Flutter, you will choose between three IDEs. Which are:
+The three popular IDEs that support Flutter are:
 - Android Studio.
 - Visual Studio Code.
 - IntelliJ IDEA.
@@ -90,7 +84,7 @@ Some of tools in the [Flutter DevTools web suite](https://flutter.dev/docs/devel
 
 5. **Design Tools**
 
-These are tools used to craft and visualize ideas. Design is an important stage of app development. It ensures for a smooth software development process. Some software development teams include UI/UX designers, especially for building commercial applications while others lack. Building personal projects will also need knowledge of design tools.
+These are tools used to craft and visualize ideas. Design is an important stage of app development. It supports a smooth software development process. Some software development teams include UI/UX designers, especially for building commercial applications while others lack. Building personal projects will also need knowledge of design tools.
 
 Here are some of the most popular design tools:
 - [Sketch.](https://www.sketch.com/) This is however only available for Mac.
@@ -106,9 +100,7 @@ Here are some of the most popular design tools:
 
 2. **Knowledge on Agile Methodology and Waterfall for Software Development**
 
-A software development method is dividing the software development process into different phases. It enhances product design and resource utilization ***for example*** money and time. 
-
-The most commonly used methodologies are `Waterfall Methodology` and `Agile Methodology`. A Flutter developer needs to familiarize themselves with the software methodologies to work with ease in a software development team.
+A software development process involves different phases. For instance, there are idea generation and design stages. The most commonly used methodologies in software development are are `Waterfall Methodology` and `Agile Methodology`. A Flutter developer needs to familiarize themselves with the software methodologies to work with ease in a software development team.
 
 `Waterfall Methodology` is a system development life cycle model used to create a system with a linear and sequential approach.
 `Agile Methodology` is also a system development life cycle model that implements the practice of iteration during testing and development throughout the cycle.
@@ -127,9 +119,7 @@ Understanding these languages will make it easier to become a flutter developer.
 
 - **Ignoring native languages.**
 
-Most software developers will argue that prior knowledge in a native language is unnecessary, but it is a skill requirement on most job descriptions. Flutter development is still fairly new, and employers must have proof that you know about application development. The only way to show this is by having experience with native languages such as Java, Swift, or Kotlin.
-
-Knowing a native language will give you an advantage over a person who only knows flutter and dart. It will display a variety of expertise and knowledge. A grasp on native languages will make it easier to move flutter development.
+Most software developers will argue that prior knowledge in a native language is unnecessary, but it is a skill requirement on most job descriptions. Flutter development is still fairly new, and employers must have proof that you know about application development. The only way to show this is by having experience with native languages such as Java, Swift, or Kotlin.Therefore, knowing a native language may give you an advantage over a person who only knows Flutter and dart. 
 
 - **Over-relying on one source to develop your career as a Flutter Developer.**
 
