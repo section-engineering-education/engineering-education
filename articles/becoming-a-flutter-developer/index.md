@@ -54,7 +54,7 @@ Some features of Flutter that make it popular include
 
 1. `Hot Reloading` which enables developers to load code changes quickley and preserves the state of the app. 
 2. `Hot Restart`. This is similar to hot reloading but causes the app to lose its state and takes more time.
-3. `Present UI element` to create beautiful app designs for better `UI and UX`. 
+3. Availability of widgets which can be imported into Flutter projects easily.
 
 These UI designs are 
 1. Cupertino 
@@ -65,9 +65,9 @@ These built-in features enhance the development of Flutter applications.
 3. **Integrated Development Environment**
 
 The three popular IDEs that support Flutter are:
-- Android Studio.
-- Visual Studio Code.
-- IntelliJ IDEA.
+- [Android Studio.](https://developer.android.com/studio?gclid=CjwKCAiAr6-ABhAfEiwADO4sfa1AfvuxdsipeSb6kBcErdXuclAHU1HAFag4_R_xPfuDJzQRnWUP5hoCrewQAvD_BwE&gclsrc=aw.ds)
+- [Visual Studio Code.](https://code.visualstudio.com/download)
+- [IntelliJ IDEA.](https://www.jetbrains.com/idea/promo/?gclid=CjwKCAiAr6-ABhAfEiwADO4sfRBLM6b-L-B5-iVm6zWaAiu9kI-sxLyz7GrdXxHBEoBDIGo4OvAFBBoChboQAvD_BwE)
 
 Most Flutter developers pick either Android Studio and Visual Studio Code. They chose IDEs depending on the features suitable to them. Android Studio and Visual Studio Code are both capable of creating full Flutter apps, developer preferences aside.
 
@@ -88,7 +88,7 @@ These are tools used to craft and visualize ideas. Design is an important stage 
 
 Here are some of the most popular design tools:
 - [Sketch.](https://www.sketch.com/) This is however only available for Mac.
-- [Adobe XD.](https://www.sketch.com/)
+- [Adobe XD.](https://www.adobe.com/products/xd.html)
 - [Figma.](https://www.figma.com/) 
 - [Flutter Studio.](https://flutterstudio.app/)
 
