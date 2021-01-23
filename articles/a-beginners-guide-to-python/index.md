@@ -102,7 +102,7 @@ The above function adds `Guardian Angel` at the end of the `student_marks` list.
 ```python
 #output
 [90, 78, 90, 78, 'Guardian Angel']
-``
+```
 
 We use `len(student_marks)` to determine the length of the list.
 We use the `remove()` function to delete something from the list. For instance, we can remove `90` from the `student_mark` list as shown below.
