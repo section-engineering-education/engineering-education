@@ -2,19 +2,19 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/password-strength-checker-using-regex-in-javascript/
+url: /engineering-education/password-strength-checker-javascript/
 title: Password Strength Checker using Regular Expressions in JavaScript
 description: This tutorial will give readers a detailed guide on how to build a password strength checker using regular expressions in JavaScript.
 author: terrence-aluda
-date: 2021-01-20T00:00:00-14:00
-topics: []
+date: 2021-01-23T00:00:00-17:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/password-strength-checker-using-regex-in-javascript/hero.jpg
+  - url: /engineering-education/password-strength-checker-javascript/hero.jpg
     alt: Password Strength Checker using Regular Expressions in JavaScript Image
 ---
-Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that the password the end-user chooses is strong enough to secure their account using **Regular Expressions** in JavaScript.
+Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that end-users choose passwords that are strong enough to secure their account using Regular Expressions in JavaScript.
 <!--more-->
 
 ### Prerequisites
@@ -27,16 +27,16 @@ Regular expressions are patterns used to match character combinations in strings
 
 Regex is also denoted as `RegExp`. They can be constructed using:
 
-- **The Regular Expression literal** where the pattern is enclosed between two slashes.
+- The Regular Expression literal where the pattern is enclosed between two slashes.
 
     ```JavaScript
     let check = /vet/
     ```
 
-- **The constructor function** of the `RegExp()` class and by passing a string that has to be checked.
+- The constructor function of the `RegExp()` class and by passing a string that has to be checked.
 
     ```JavaScript
-    let check = new RegExp('vet')
+    let check = new RegExp('vet');
     ```
 
     We use the constructor function when the pattern keeps changing or if we get it from a different source, such as a user input. For this reason, we are going to use the constructor function since we will get the password from the user.
@@ -57,10 +57,9 @@ Regex is also denoted as `RegExp`. They can be constructed using:
 |**.**|Checks for any single character except line terminators |
 |x*|Checks for x 0 or more times|
 
-
 ### RegEx for testing password strength
 
-We are going to check the strength of a password that a user enters based on the following rules.
+We are going to check the strength of a password that a user enters based on the following rules:
 
 - The password is at least 8 characters long (`?=.{8,}`).
 
@@ -72,33 +71,33 @@ We are going to check the strength of a password that a user enters based on the
 
 - The password has at least one special character (`[^A-Za-z0-9]`).
 
-> Two groups of parentheses **(x)(y)** is the same as check for both  **x** and **y** while two groups of parentheses with | between them **(x)|(y)** is the same as  either check **x**  or **y** as shown in the table above.
+> Two groups of parentheses `(x)(y)` is the same as check for both x and y while two groups of parentheses with `|` between them `(x)|(y)` is the same as  either check x or y as shown in the table above.
 
 We are going to have three levels to denote how secure a password is. They are:
 
-- **Strong**: The password has to meet all the requirements.
+1. Strong: The password has to meet all the requirements.
 
-    Using the metrics above, we are going to create a strong level which has at least one lowercase letter (`?=.*[a-z]`), one uppercase letter (`?=.*[A-Z]`), one digit (`?=.*[0-9]`), one special character (`?=.*[^A-Za-z0-9]`), and is atleast 8 characters long(`?=.{8,}`).
+    Using the metrics above, we are going to create a strong level which has at least one lowercase letter (`?=.*[a-z]`), one uppercase letter (`?=.*[A-Z]`), one digit (`?=.*[0-9]`), one special character (`?=.*[^A-Za-z0-9]`), and is at least eight characters long(`?=.{8,}`).
 
     ```JavaScript
     (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
     ```
 
-    ![Strong password](/engineering-education/password-strength-checker-using-regex-in-javascript/strong-password.png)
+    ![Strong password](/engineering-education/password-strength-checker-javascript/strong-password.png)
 
-- **Medium**:  If the password is at least 6 characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
+2. Medium: If the password is at least six characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
-    The code is the same as for the **Strong** level only that **?=.{6,}** shows that we are checking for at least 6 characters. It also has **|** for checking either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
+    The code is the same as for the Strong level only that `?=.{6,}` shows that we are checking for at least six characters. It also has `|` for checking either of the two conditions `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})` or `(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,})`.
 
     ```JavaScript
     ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
     ```
 
-    ![Medium password](/engineering-education/password-strength-checker-using-regex-in-javascript/medium-password.png)
+    ![Medium password](/engineering-education/password-strength-checker-javascript/medium-password.png)
 
-- **Weak**: If the entered password does not meet the strong or medium-level requirements, then it is deemed weak.
+3. Weak: If the entered password does not meet the strong or medium-level requirements, then it is deemed weak.
 
-    ![Weak password](/engineering-education/password-strength-checker-using-regex-in-javascript//weak-password.png)
+    ![Weak password](/engineering-education/password-strength-checker-javascript/weak-password.png)
 
 ### HTML Code
 
@@ -136,13 +135,13 @@ We are going to have three levels to denote how secure a password is. They are:
 </html>
 ```
 
-- We'll use Bootstrap 5 for styling. We'll use a CDN link for the bootstrap file and link it to the HTML file using the `<link>` tag. 
+- We'll use Bootstrap 5 for styling by adding the CDN link for the Bootstrap stylesheet and link it to the HTML file using the `<link>` tag.
 
 - We'll write our custom styles using the `<style>` tag. We have two classes, `passwordInput` and `displayBadge`. The `passwordInput` styles the password input by allowing a 5% margin from the top and also aligns the text typed to it at the center. The `displayBadge` does the same for the span and hides it since we only display it when a user starts typing the password.
 
 - In the `<body>` tag we have a `<div>` element with three elements.
 
-- The first element is a simple heading (**h4**) with some inline styles.
+- The first element is a simple heading (`h4`) with some inline styles.
 
 - The second element is an input where the user will type the password. We have used the `form-control` class from Bootstrap and our custom class `passwordInput` to style the element.
 
@@ -150,15 +149,15 @@ We are going to have three levels to denote how secure a password is. They are:
 
 ### JavaScript Code
 
-Let's create five variables: 
+Let's create five variables:
 
-- `timeout`: for referencing the timeout before a callback is called.
+1. `timeout`: for referencing the timeout before a callback is called.
 
-- `password`: for the input where the password will be entered.
+2. `password`: for the input where the password will be entered.
 
-- `strengthBadge`: for storing the span used for displaying the strength of the password (which we can access using the DOM element's ID.
+3. `strengthBadge`: for storing the span used for displaying the strength of the password (which we can access using the DOM element's ID.
 
-- `strongPassword` & `mediumPassword`: for storing the Regex conditions.
+4 & 5. `strongPassword` and `mediumPassword`: for storing the Regex conditions.
 
 ```JavaScript
 let timeout;
@@ -170,7 +169,7 @@ let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z
 
 Let's create a function called `StrengthChecker` where we test for the strength of the passwords using the regular expressions that we wrote with the `RegExp.prototype.test()` method. It returns `true` if there is a match or `false` if there is no match.
 
-Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result. 
+Then, let's set the background colour (`strengthBadge.style.backgroundColor`) and text of the badge (`strengthBadge.textContent`) according to the result.
 
 ```JavaScript
 function StrengthChecker(PasswordParameter) {
@@ -204,9 +203,9 @@ password.addEventListener("input", () => {
 });
 ```
 
-The full JavaScript code:
+### The full JavaScript code
 
-We will not write a JavScript code in the HTML file but we will create a new JavaScript file, write the following code and then link it using the tag `<script src="pathtothefile"></script>` line.
+Instead of writing JavaScript inline with the HTML file, we will create a new JavaScript file, write the following code and then link it to the HTML using the script tag such as `<script src="pathtothefile"></script>`.
 
 ```JavaScript
     
@@ -263,9 +262,11 @@ We will not write a JavScript code in the HTML file but we will create a new Jav
 
 ```
 
-You can read more about JavaScript Regex at [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+#### Conclusion
 
-Hope you can further enhance the code and add checks for more levels like Too Strong, Too Weak, etc.
+You've learned how to use JavaScript RegEx to create a three level password checker. You can build on the example by implementing more levels like Too Strong and Too Weak, etc.
+
+To find out more about JavaScript RegEx, read the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 Thanks for Reading!
 
