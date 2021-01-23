@@ -40,15 +40,15 @@ This will be the folder structre of the application.
 
 ![Folder Structure](folder_structure.png)
 
-I've set up 3 screens in the `screens/` directory: 
+I've set up 3 screens in the `screens/` directory:
 
-- *PhoneNumber.js*: Screen to enter the phone number.
+- _PhoneNumber.js_: Screen to enter the phone number.
 
-- *OTP.js*: Screen to enter the one-time verification code.
+- _OTP.js_: Screen to enter the one-time verification code.
 
-- *Authorized.js*:  Screen that the user can see only if he is logged in.
+- _Authorized.js_: Screen that the user can see only if he is logged in.
 
-In the *App.js*, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
+In the _App.js_, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
 
 ### Installing dependencies
 
@@ -83,6 +83,7 @@ pod install
 > To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Setting up the Firebase project
+
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -173,13 +174,13 @@ There are two ways to accomplish this:
 
 1. **SafetyNet**: If the user has a device with Google Play Services installed, then Firebase can verify whether the request is legitimage.
 
-    In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used, and needs to be allowed to access the DeviceCheck API.
+   In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used, and needs to be allowed to access the DeviceCheck API.
 
-    ![Enable Device Verification API](advAPI.png)
+   ![Enable Device Verification API](advAPI.png)
 
-2. **reCAPTCHA**: In the event that SafetyNet cannot be used, Firebase does a *reCAPTCHA* verification. The *reCAPTCHA* challenge can often be completed without the user having to solve anything. 
+2. **reCAPTCHA**: In the event that SafetyNet cannot be used, Firebase does a _reCAPTCHA_ verification. The _reCAPTCHA_ challenge can often be completed without the user having to solve anything.
 
-    > Please note that this flow requires that a SHA-1 is associated with your application.
+   > Please note that this flow requires that a SHA-1 is associated with your application.
 
 Now, let's head to the application and install the auth module.
 
@@ -199,7 +200,7 @@ dependencies {
 }
 ```
 
-When `reCAPTCHA` is used for device verification, the application will open the browser for the `reCAPTCHA` test. So, we should also add `implementation "androidx.browser:browser:1.2.0"` in the  `android/app/build.gradle` file.
+When `reCAPTCHA` is used for device verification, the application will open the browser for the `reCAPTCHA` test. So, we should also add `implementation "androidx.browser:browser:1.2.0"` in the `android/app/build.gradle` file.
 
 ```gradle
 dependencies {
@@ -212,3 +213,104 @@ dependencies {
 ```
 
 With this, the firebase authentication module is set up in our application.
+
+### Collecting Phone Number
+
+In _App.js_, Let's import the Authentication module from Firebase.
+
+```JSX
+import auth from '@react-native-firebase/auth';
+```
+
+We should use the `signInWithPhoneNumber` method in the auth module. It accepts a phone number in the form of a string as it's argument. It is an `async` function, thus it returns a Promise.
+
+```JSX
+auth().signInWithPhoneNumber('+91 1234567890');
+```
+
+The `signInWithPhoneNumber` method returns a `confirmation` method that accepts a one time verification code sent by Firebase to the given phone number. The `confirmation` method also returns a Promise. If the verification code is correct, the promise is resolved. If not, it's rejected.
+
+Let's create a state using the `useState` hook to hold the `confirmation` method.
+
+```JSX
+import React, { useState } from 'react';
+```
+
+```JSX
+const [confirm, setConfirm] = useState(null);
+```
+
+Now, let's write a function that accepts a phone number as an argument, and calls `signInWithPhoneNumber` function with the given phone number. We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
+
+```JSX
+async function signIn(phoneNumber) {
+  try{
+    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+    setConfirm(confirmation);
+  } catch(error) {
+    console.log(error)
+  }
+}
+```
+
+We should pass this function to the `PhoneNumber` screen as a prop, and call this function when the user presses the button.
+
+```JSX
+return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+```
+
+In *PhoneNumber.js*, I've already set up a state that holds the phone number from the input. Let's call the function that we passed and send the phone number as the argument.
+
+You should pass a function to the `onPress` property of the button to call it when the user presses the button.
+
+```JSX
+<Button title="Phone Number Sign In" onPress={() => props.onSubmit(phoneNumber)} />
+```
+
+### Collecting OTP
+
+When the `confirmation` method is available, we should display the *OTP* screen instead of the *PhoneNumber* screen.
+
+```JSX
+if (confirm) return <OTPScreen />;
+
+return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+```
+
+If the one time code is verfied, the user will be authenticated into your app. So, let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
+
+```JSX
+const [authenticated, setAutheticated] = useState(false);
+```
+
+Now, let's write a function that accepts a one-time verification code as an argument, and calls the `confirm` method with the code. 
+
+We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the `authenticated` state to `true` using the `setAutheticated` method.
+
+```JSX
+async function confirmOTP(otp) {
+  try {
+    await confirm.confirm(otp);
+    setAutheticated(true);
+  } catch {
+    alert('Invalid code');
+  }
+}
+```
+
+We should pass this function to the `OTP` screen as a prop, and call this function when the user presses the confirm button.
+
+```JSX
+if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
+
+return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+```
+
+In *OTP.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and send the verification code as the argument.
+
+You should pass a function to the `onPress` property of the button to call it when the user presses the button.
+
+```JSX
+<Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
+```
+
