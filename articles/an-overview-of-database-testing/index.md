@@ -21,10 +21,10 @@ Database testing is important because it enables users to validate data mapping,
 * **Data Mapping:** In database systems, data travels from the user interface (front-end) to the database (back-end). This movement can also be in the opposite direction. Database testing verifies whether data appearing in a table at the user interface is mapped well in the database (at a corresponding table).
 * **Data Integrity:** Data integrity tests involve an evaluation of the operations, methods, and processes used for managing, updating, and accessing the database. These operations are commonly known as CRUID (create, retrieve, update, and delete).
 * **ACID properties:** Database testing ensures that ACID properties are validated. These properties can be described as follows.
-**Atomicity:** The transaction can generate two main types of results: pass or fail.
-**Consistency:** This indicates that the validity of the database will remain once the transaction is finalized.
-**Isolation:** Various transactions can be done without affecting each other. 
-**Durability:** Any changes regarding a transaction will be saved without adverse effects from external factors (eg. loss of power). 
+    * **Atomicity:** The transaction can generate two main types of results: pass or fail.
+    * **Consistency:** This indicates that the validity of the database will remain once the transaction is finalized.
+    * **Isolation:** Various transactions can be done without affecting each other. 
+    * **Durability:** Any changes regarding a transaction will be saved without adverse effects from external factors (eg. loss of power). 
 * **Business Rule:** Database testing helps in testing whether the database conforms to business rules. Testers use SQL queries to validate components such as triggers, procedures, and relational constraints. 
   
 ### Types of Database Testing
