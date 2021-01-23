@@ -1,21 +1,40 @@
-## Creating, Connecting, Storing, and fetching data from MariaDatabase using PHP 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mariadb/index.md
+title: Creating and Connecting Maria Database to a PHP registration form 
+description: A tutorial that provides a detailed guide on how to create and connect a Maria database to a PHP registration form.
+author: erastus-muriithi
+date: 2021-01-23T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-[MariaDatabase](https://mariadb.com/) is one of the most popular relational database management system (DBMS). It is the open source version of MySQL database. It is based on Structured Query Language (SQL). SQL is a standard language for creating, storing, and fetching data in databases. In this tutorial, we are going to learn how to use MariaDatabase and PHP in Ubuntu. 
+  - url: /engineering-education/mariadb/hero.jpg
+    alt: MariaDB example image
+---
+Database is a critical tool when it comes to software development. It helps you to manage different information or records. A database such as MYSQL is used by numerous developers worldwide. This tutorial shows you how to use Maria database in PHP.
+<!--more-->
 
-## Prerequisites
+### Introduction
+
+[Maria Database](https://mariadb.com/) is one of the most popular relational database management system (DBMS). It is an open source version of MySQL database. Maria Database is based on Structured Query Language (SQL). SQL is a standard language for creating, storing, and fetching data in databases. In this tutorial, we are going to learn how to use MariaDatabase and PHP in Ubuntu. 
+
+### Prerequisites
 
 To follow along with this tutorial you need:
 
-- Some knowledge of `HTML` and `CSS`
-- A code editor. You can get Visual Studio Code [here](https://code.visualstudio.com/download).
+- Some knowledge of `HTML`, `PHP`, and `CSS`
+- A code editor. You can download Visual Studio Code from [here](https://code.visualstudio.com/download).
 
-In this tutorial you will learn how to:
+**In this tutorial you will learn how to:**
 
-- Install Xampp
-- Create  tables in a database using SQL commands
-- Create a registration form using PHP
-- Store form data into the database
-- Fetch the stored data from the database using PHP
+- Install Xampp.
+- Create  tables in a database using SQL commands.
+- Create a registration form using PHP.
+- Store form data into the database.
+- Fetch the stored data from the database using PHP.
 
 ### Step 1 -- Installing Xampp
 
@@ -23,7 +42,7 @@ Xampp comes along with PhpMyAdmin when downloaded into a machine.  PhpMyAdmin is
 
 Download Xampp [here](https://www.apachefriends.org/download.html).
 
-Move to where your package was downloaded and open in terminal.
+Navigate to where your package was downloaded and open in terminal.
 
 To install the package, you'll need to make it executable using the `chmod` command. Execute the command below in the terminal.
 
@@ -80,7 +99,7 @@ When you press Enter you should have the following output:
 
 The next thing to do is to create a Database. Let's create a Database called `school`. execute the following sql command:
 
-```sql
+```sql  
 $ create database school;
 
 Query OK, 1 row affected (0.000 sec)
@@ -336,10 +355,11 @@ The data at the bottom of the page has been fetched from the database.
 ## Conclusion
 
 In this tuorial we have:
-- Installed xampp
-- Created a database using terminal
-- Created a simple form using a `PHP` code
-- Stored data into the database
-- Fetched data from the database 
+- Installed xampp.
+- Created a database using terminal.
+- Created a simple form using a `PHP` code.
+- Stored data into the database.
+- Fetched data from the database. 
 
-
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
