@@ -135,3 +135,59 @@ Finally, We should install the `@react-native-firebase/app` package in our app t
 ```bash
 npm install @react-native-firebase/app
 ```
+
+### Setting up Firebase Authentication
+
+Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
+
+![Get Started Auth](auth_get_starterd.png)
+
+Next, you should enable the phone authentication in the sign-in methods. Once you've enabled it, press save.
+
+![Signin-method](enabled.png)
+
+Firebase must be able to verify that the requests are coming from your app.
+
+There are two ways to accomplish this:
+
+1. **SafetyNet**: If the user has a device with Google Play Services installed, then Firebase can verify whether the request is legitimage.
+
+    In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used, and needs to be allowed to access the DeviceCheck API.
+
+    ![Enable Device Verification API](advAPI.png)
+
+2. **reCAPTCHA**: In the event that SafetyNet cannot be used, Firebase does a *reCAPTCHA* verification. The *reCAPTCHA* challenge can often be completed without the user having to solve anything. 
+
+    > Please note that this flow requires that a SHA-1 is associated with your application.
+
+Now, let's head to the application and install the auth module.
+
+Let's install the `@react-native-firebase/auth` package in our app.
+
+```bash
+npm install @react-native-firebase/app
+```
+
+Let's declare the dependency for the authentication module in the `android/app/build.gradle` file using the [Firebase Android BoM](https://firebase.google.com/docs/android/learn-more?authuser=0#bom)
+
+```gradle
+dependencies {
+    // Add these lines
+    implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-auth'
+}
+```
+
+When `reCAPTCHA` is used for device verification, the application will open the browser for the `reCAPTCHA` test. So, we should also add `implementation "androidx.browser:browser:1.2.0"` in the  `android/app/build.gradle` file.
+
+```gradle
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Add this line
+    implementation "androidx.browser:browser:1.2.0
+}
+```
+
+With this, the firebase authentication module is set up in our application.
