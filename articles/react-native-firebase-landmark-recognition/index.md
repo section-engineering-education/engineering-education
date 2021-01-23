@@ -20,10 +20,12 @@ In this tutorial, we will be building a Non-Expo React Native application to rec
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
+Firebase's ML kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
+
 ### Prerequisites
 To proceed with this tutorial:
 
-- You will need a fundamenal knowledge of React & React Native. 
+- You will need a basic knowledge of React & React Native. 
 
 - You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
@@ -304,7 +306,7 @@ image: {
 },
 ```
 
-If the user did not cancel the operation, let's set the image state with the URI of the selected image in the onImageSelect function.
+If the user did not cancel the operation, we will set the image state with the URI of the selected image in the onImageSelect function.
 
 ```JSX
 const onImageSelect = async (media) => {
