@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/an-overview-of-compiler-design/
+title: An Overview of Compiler Design
+description: This article will be an overview of the fundamental aspects of Compiler Design such as the Phases of a Compiler and its real-life applications.
+author: onesmus-mbaabu
+date: 2021-01-24T00:00:00-03:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-overview-of-compiler-design/hero.jpg
+    alt: Compiler Design image
+---
 The computer is an integral tool in our lives because it runs applications that solve many real-life problems. Computer programmers write programs (using programming languages) to perform various tasks. High-level programming language used can only be understood by human beings, but not the computer. A compiler is required to convert this high-level language to a language that can be understood by the machine. 
+<!--more-->
 
 In this article, we learn about the fundamental aspects of compiler design. Some of the aspects covered include language processing systems, compiler design architecture, and the phases of a compiler. The article will also discuss the real-life applications of compiler technology.
 
