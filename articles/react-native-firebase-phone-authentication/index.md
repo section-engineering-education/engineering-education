@@ -19,6 +19,10 @@ We'll be going through these steps in this article:
 3. Installing dependencies.
 4. Setting up the Firebase project.
 5. Setting up Firebase Authentication.
+6. Collecting Phone Number.
+7. Collecting Verification Code.
+8. Displaying Authenticated Screen.
+9. Recap.
 
 ### Development environment
 
@@ -46,7 +50,7 @@ I've set up 3 screens in the `screens/` directory:
 
 - _OTP.js_: Screen to enter the one-time verification code.
 
-- _Authorized.js_: Screen that the user can see only if he is logged in.
+- _Authenticated.js_: Screen that the user can see only if he is logged in.
 
 In the _App.js_, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
 
@@ -248,7 +252,7 @@ async function signIn(phoneNumber) {
     const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
     setConfirm(confirmation);
   } catch(error) {
-    console.log(error)
+    alert(error)
   }
 }
 ```
@@ -256,7 +260,7 @@ async function signIn(phoneNumber) {
 We should pass this function to the `PhoneNumber` screen as a prop, and call this function when the user presses the button.
 
 ```JSX
-return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+return <PhoneNumber onSubmit={signIn} />;
 ```
 
 In *PhoneNumber.js*, I've already set up a state that holds the phone number from the input. Let's call the function that we passed and send the phone number as the argument.
@@ -274,7 +278,7 @@ When the `confirmation` method is available, we should display the *OTP* screen 
 ```JSX
 if (confirm) return <OTPScreen />;
 
-return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+return <PhoneNumber onSubmit={signIn} />;
 ```
 
 If the one time code is verfied, the user will be authenticated into your app. So, let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
@@ -303,7 +307,7 @@ We should pass this function to the `OTP` screen as a prop, and call this functi
 ```JSX
 if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
 
-return <PhoneNumber onSubmit={signInWithPhoneNumber} />;
+return <PhoneNumber onSubmit={signIn} />;
 ```
 
 In *OTP.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and send the verification code as the argument.
@@ -314,3 +318,16 @@ You should pass a function to the `onPress` property of the button to call it wh
 <Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
 ```
 
+### Display Autheticated Screen
+
+If the user is autheticated, we should display the authenticated screen. We will use the `autheticated` state that we defined in the previous step.
+
+```JSX
+if (authenticated) return <Autheticated />;
+
+if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
+
+return <PhoneNumber onSubmit={signIn} />;
+```
+
+### Let's Recap
