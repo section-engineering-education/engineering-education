@@ -1,12 +1,17 @@
-In this tutorial, we will learn how to add phone number authentication using Firebase's authentication module to a Non-Expo React Native application.
+In this tutorial, we will learn how to authenticate users with their phone number using Firebase's authentication module in a Non-Expo React Native application.
 
 ### Firebase
+
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
+Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
+
 ### Prerequisites
-The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
+
+The basics of React and React Native will not be covered in this tutorial. If you are not comfortable with the basics, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial).
 
 ### Overview
+
 We'll be going through these steps in this article:
 
 1. Development environment.
@@ -15,6 +20,7 @@ We'll be going through these steps in this article:
 4. Installing dependencies.
 
 ### Development environment
+
 > **IMPORTANT** - We will not be using Expo in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -24,13 +30,14 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](env_setup.png)
 
 ### Installing dependencies
+
 You can install these in advance or while going through the article.
 
 ```JSON
-"@react-native-firebase/app": "^10.4.0",
-"@react-native-firebase/auth": "^10.4.0",
+"@react-native-firebase/app": "^10.5.0",
+"@react-native-firebase/auth": "^10.5.1",
 "react": "16.13.1",
-"react-native": "0.63.4",
+"react-native": "0.63.4"
 ```
 
 To install a dependency, run:
@@ -47,7 +54,7 @@ pod install
 
 > **IMPORTANT FOR ANDROID**
 >
-> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+> Adding more native dependecies may bump you over the 64k method limit on the Android build system. If you reach this limit, you will see the following error while attempting to build your Android application.
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
@@ -73,7 +80,30 @@ You will need the package name of the application to register the application. Y
 
 ![Package Name](package_name.png)
 
-Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+You will also need the Debug signing certificate `SHA-1`. You can get that by running the following command in the application directory.
+
+```bash
+cd android && ./gradlew signingReport
+```
+
+This will generate the signing certificate of the application. You will get a similiar output like this:
+
+```bash
+Variant: debugUnitTest
+Config: debug
+Store: C:\Users\Mohan\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 5F:BB:9E:98:5E:E7:E6:29:19:28:61:4F:42:B9:74:AB
+SHA1: 9E:61:75:0E:5C:F4:EB:B4:EB:9D:B3:13:5F:50:D6:AB:2E:4E:12:0D
+SHA-256: 6C:BB:49:66:18:B9:7F:74:49:B5:56:D0:24:43:6A:1B:41:91:97:A3:2E:7C:4A:6E:59:40:8F:5C:74:6F:CC:93
+Valid until: Friday, December 23, 2050
+```
+
+Copy the `SHA1` value and paste it in the firebase console.
+
+Now, Proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+
+This file contains configurations that'll enable your application to access firebase services.
 
 ![Download Google Services JSON](download_services.json.png)
 
