@@ -15,13 +15,12 @@ images:
     alt: React Native Image Labeling With Firebase Hero Image
 ---
 Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using the machine learning kit from Firebase.
+<!--more-->
 
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
 Firebase Machine Learning is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. Whether you're new or experienced in machine learning, you can implement the functionality you need in just a few lines of code. There's no need to have deep knowledge of neural networks or model optimization to get started. On the other hand, if you are an experienced ML developer, Firebase ML provides convenient APIs that help you use your custom TensorFlow Lite models in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
-
-The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
 
 ### Prerequisites
 
@@ -146,6 +145,10 @@ npm install @react-native-firebase/app
 
 
 ### Setting up Cloud Vision API
+
+The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
+
+The ML Kit uses the cloud vision API to label the images.
 
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
