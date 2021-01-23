@@ -181,7 +181,7 @@ constraint colors[TX] != colors[AR];
 constraint colors[TX] != colors[NM];
 ```
 
-We've provided the full U.S. state [constraints file](/engineering-education/constraint-satisfaction-minizinc-gecode/all_state_touching_constraints.mzn), `all_state_touching_constraints.mzn`. It contains the full list of state-touching constraints. Download that file by clicking the link and pressing `Ctrl-S` (or clicking File>Save in your browser). Then, click and drag it into the folder you saved `us_map.mzn` in. Import this list of constraints into MiniZinc, to let the main file use the constraints. Your code should look like this:
+We've provided the full U.S. state [constraints file](https://github.com/nicholaskross/constraint-satisfaction-minizinc-example/blob/main/all_state_touching_constraints.mzn), `all_state_touching_constraints.mzn`. It contains the full list of state-touching constraints. Download that file by clicking the link and pressing `Ctrl-S` (or clicking File>Save in your browser). Then, click and drag it into the folder you saved `us_map.mzn` in. Import this list of constraints into MiniZinc, to let the main file use the constraints. Your code should look like this:
 
 ```
 int: num_colors = 4;
@@ -279,7 +279,7 @@ Now, what if you not only wanted to solve this problem, but to solve it with the
 3. Change the "solve" statement to `solve minimize num_colors;`. This will tell Gecode to satisfy the problem in the way that makes `num_colors` as small as possible.
 4. Add another "output" statement at the end of the file, to tell us how many colors we needed, printing out `num_colors`'s value.
 
-Your final code should look like this:
+Your final code should look like [this](https://github.com/nicholaskross/constraint-satisfaction-minizinc-example/blob/main/us_map.mzn):
 
 ```
 enum States = {AL, AZ, AR, CA, CO, CT, DC, DE, FL, GA, 
