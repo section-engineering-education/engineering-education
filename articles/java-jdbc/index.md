@@ -1,16 +1,33 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/java-jdbc/
+title: Getting Started with Java JDBC
+description: This article will be an introduction to Java database connectivity, we will learn how to perform various database query operations from a Java application.
+author: paul-juma
+date: 2021-01-22T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/java-jdbc/hero.jpg
+    alt: Java database connectivity (JDBC) example
+---
 Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries.
-
+<!--more-->
 ### Prerequisites
+To follow this tutorial along you will need the following:
 1. Java development kit [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
-2. Code Editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux) which is free.
-3. Knowledge in [Java](https://www.javatpoint.com/java-tutorial) programming language.
-
+2. A code editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux) which is free.
+3. Some basic knowledge in the [Java](https://www.javatpoint.com/java-tutorial) programming language.
 4. Apache [XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
-5. Knowledge of [SQL](https://www.guru99.com/sql.html).
+5. Basic knowledge of [SQL](https://www.guru99.com/sql.html).
 
 ### Project setup
-- In your favorite code editor, create a new Java maven application.
-- In the `pom.xml` file of the created project add `mysql-connector` dependency as shown below. `mysql-connector` makes it possible to connect to MySQL database from a java application.
+- In your code editor, create a new Java maven application.
+- In the the `pom.xml` file of the created project add `mysql-connector` dependency as shown below. `mysql-connector` makes it possible to connect to MySQL database from a java application.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -38,9 +55,10 @@ Java database connectivity (JDBC) is an application programming interface that d
 
 </project>
 ```
-- In the `src` package create 3 java files namely `Main.java` which will contain our `main` method, `Student.java` which will hold various student information, and `MysqlAccess.java` which will contain our database access source code.
 
-**Student.java**
+- In the `src` package create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java` which will hold various student information, and `MysqlAccess.java` that will contain our database access source code.
+
+#### Student.java
 This is a plain Java object (POJO) that will contain the student information.
 
 ```java
@@ -90,12 +108,14 @@ public class Student {
 }
 
 ```
+
 - The `Student` class has three member variables `name`, `course`, and `email` which represent the students' details.
 - The constructor of the `Student` class makes it possible to create a new Student every time an instance of the class is created.
 - The `getters` and `setters` make it possible to access the member variables of the class from outside the class.
 - The `toString()` method returns a string representation of the class variables.
   
-**MysqlAccess.java**
+#### MysqlAccess.java
+
 ```java
 import java.sql.*;
 import java.util.ArrayList;
@@ -215,18 +235,17 @@ public class MySqlAccess {
 
 }
 ```
-- `databaseConnection()` method establishes a connection to the database. `connect = DriverManager
-                .getConnection("jdbc:mysql://localhost/school?user=root&password=");` sets up the database connection information. `school` is the database name,`root` is the database username, and the database password is a blank string ``.
 
-- `getStudents()` method returns a list of students from the database. ` resultSet = statement
-                    .executeQuery("select * from school.students");` executes the `SELECT` query that gets all the students from the database and stores the result in the `resultSet`. The `while (resultSet.next())` loops through the resultset to get all the students' data returned.
-- `getStudentByEmail(String email)` method returns a student from the database with the email password in the `SELECT` query.
-- `saveStudent(Student student)` method inserts a new student passed to the method into the database.
-- `deleteStudent(String email)` method deletes a student with the email passed to the `DELETE` query in the database.
-- `updateStudent(Student student, String email)` method updates the student information of the student with the email passed to the `UPDATE` query.
-- `close()` method closes the database connection.
+- `databaseConnection()` method establishes a connection to the database. `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
+- `getStudents()` method returns a list of students from the database. ` resultSet = statement.executeQuery("select * from school.students");` executes the `SELECT` query that gets all the students from the database and stores the result in the `resultSet`. 
+- The `while (resultSet.next())` loops through the result set to get all the students' data returned.
+- The `getStudentByEmail(String email)` method returns a student from the database with the email password in the `SELECT` query.
+- The `saveStudent(Student student)` method inserts a new student passed to the method into the database.
+- The `deleteStudent(String email)` method deletes a student with the email passed to the `DELETE` query in the database.
+- This `updateStudent(Student student, String email)` method updates the student information of the student with the email passed to the `UPDATE` query.
+- The `close()` method closes the database connection.
 
-**Main.java**
+#### Main.java
 In this class, we create an instance of the `MySqlAccess` class and call its various methods to execute various database queries.
 ```java
 import java.util.List;
@@ -275,12 +294,16 @@ public class Main {
     }
 }
 ```
+
 ### Creating the database
 - Start the  Apache and MySQL servers from the XAMPP control panel.
 - On the `PHPMyAdmin` site on your browser create a database with the name `school`.
-- In the `school` database create a table with the name `students` with fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
+- In the `school` database create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
   
 Run the application by executing the `main` function in the `Main` class.
 
 ### Conclusion
 Now that you have learned how to perform various database query operations from a Java application, add an `id` field to the `Student` class and make the `id` field in the database a primary key in the `students` table.
+
+---
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
