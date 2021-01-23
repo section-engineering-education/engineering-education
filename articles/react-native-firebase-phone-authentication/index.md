@@ -15,9 +15,10 @@ The basics of React and React Native will not be covered in this tutorial. If yo
 We'll be going through these steps in this article:
 
 1. Development environment.
-2. Setting up the Firebase project.
-3. Setting up Firebase Authentication.
-4. Installing dependencies.
+2. Cloning the starter code.
+3. Installing dependencies.
+4. Setting up the Firebase project.
+5. Setting up Firebase Authentication.
 
 ### Development environment
 
@@ -28,6 +29,26 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
 ![Env Setup](env_setup.png)
+
+### Cloning the starter code
+
+To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
+
+For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
+
+This will be the folder structre of the application.
+
+![Folder Structure](folder_structure.png)
+
+I've set up 3 screens in the `screens/` directory: 
+
+- *PhoneNumber.js*: Screen to enter the phone number.
+
+- *OTP.js*: Screen to enter the one-time verification code.
+
+- *Authorized.js*:  Screen that the user can see only if he is logged in.
+
+In the *App.js*, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
 
 ### Installing dependencies
 
