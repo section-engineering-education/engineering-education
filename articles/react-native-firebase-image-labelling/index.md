@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-native-image-labeling-with-firebase/hero.jpg
     alt: React Native Image Labeling With Firebase Hero Image
 ---
-Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using Firebase's machine learning kit.
+Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using the machine learning kit from Firebase.
 
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
