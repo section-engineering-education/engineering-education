@@ -331,3 +331,25 @@ return <PhoneNumber onSubmit={signIn} />;
 ```
 
 ### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+
+2. We created a Firebase project.
+
+3. We set up the authentication module and enabled phone numbe authentication in our project.
+
+4. We enabled the Device Verification API in the Google Cloud Console for our project.
+
+5. We cloned the starter code.
+
+6. We added the dependencies to the `build.gradle` files.
+
+7. We used the `auth` module to send a verification code to the given phone number.
+
+8. We added a method to confirm the verification code.
+
+9. We displayed the authenticated screen is the verification code is correct.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
