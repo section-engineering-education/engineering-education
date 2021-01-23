@@ -16,16 +16,18 @@ images:
 ---
 Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using Firebase's machine learning kit.
 
-The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
-
 ### Firebase
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
+
+Firebase Machine Learning is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. Whether you're new or experienced in machine learning, you can implement the functionality you need in just a few lines of code. There's no need to have deep knowledge of neural networks or model optimization to get started. On the other hand, if you are an experienced ML developer, Firebase ML provides convenient APIs that help you use your custom TensorFlow Lite models in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
+
+The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
 
 ### Prerequisites
 
 To proceed with this tutorial:
 
-- You will need a fundamenal knowledge of React & React Native.
+- You will need a basic knowledge of React & React Native.
 
 - You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
@@ -313,7 +315,7 @@ image: {
 },
 ```
 
-If the user did not cancel the operation, let's set the image state with the URI of the selected image in the onImageSelect function.
+If the user did not cancel the operation, we should set the image state with the URI of the selected image using the `onImageSelect` function.
 
 ```JSX
 const onImageSelect = async (media) => {
