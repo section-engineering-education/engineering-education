@@ -159,7 +159,7 @@ Loops are critical because they allow us to iterate through lists, check for dif
 As noted, we can use a for loop to iterate through a list, as shown below.
 
 ```python
-Student_list=[“John Doore”,”Matu Smith”]
+student_list=[“John Doore”,”Matu Smith”]
 for x in student_list:
     print(x)
 ```
