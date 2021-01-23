@@ -136,7 +136,7 @@ print(calculateTotal(90,80))
 The `calculateTotal` method takes in two parameters (chem, bio). The function then returns the sum of the two values. It is important to take note of the data types when passing parameters. For instance, the `calculateTotal` method will not work when we pass in a string as a parameter. This is because the program cannot sum up an integer and a string. 
 As shown above, we can call the `calculateTotal` method directly from our print statement.
 ```python
-print(calculateTotal (90,80)
+print(calculateTotal(90,80))
 ```
 The `return` keyword ensures that the method returns a result after execution.
 
