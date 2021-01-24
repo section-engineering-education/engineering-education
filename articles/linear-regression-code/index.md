@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/linear-regression-code/
 title: Implementing Linear Regression Using Gradient Descent in Python
-description: This article will be a hands-on implementation of Linear Regression using the Gradient Descent algorithm.
+description: This article will be a hands-on implementation of Linear Regression using the Gradient Descent algorithm in Python. We will implement the linear regression from scratch using numpy.
 author: lalithnarayan-c
-date: 2021-01-24T00:00:00-20:00
+date: 2021-01-24T00:00:00-11:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,22 +16,18 @@ images:
 ---
 In the previous article, we looked at the theory behind linear regression. In this article, we will implement the linear regression algorithm from scratch and understand the various steps involved. 
 <!--more-->
-
-In my earlier [article](/engineering-education/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason the outputs.
+In my earlier [article](/engineering-education/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason for the outputs.
 
 ### Prerequisites
-
 - [Introduction to Machine Learning ](/engineering-education/supervised-learning-algorithms/)
 - [Feature Engineering in Machine Learning](/engineering-education/feature-engineering-in-machine-learning/)
 
 ### Introduction
+Linear regression is a type of supervised learning algorithm. It is used in many applications, such as in the financial industry. First, let's understand the various functions needed to implement a linear regression class, to begin with the coding aspect. 
 
-As discussed in the previous article, linear regression is a type of supervised learning algorithm. It is used in many applications in the financial industry. First, let us understand the various functions needed to implement a linear regression class, to begin with the coding aspect. 
-
-### Code Structure
-
+### Code structure
 We define the following methods in the class `Regressor`:
-1. `__init__`: In the `__init__` method, we initialize all the parameters with default values. These parameters are added as and when required. For now, you will see that all the parameters are initialized beforehand. But while coding, you create new variables as and when required.
+1. `__init__`: In the `__init__` method, we initialize all the parameters with default values. These parameters are added as and when required. For now, you will see that all the parameters are initialized beforehand. But while coding, you create new variables as and when needed.
 2. `initialize_weights_and_bias`: In the `initialize_weights_and_bias` method, the weights and biases are initialized. We use random initialization to initialize the weights, and the bias is initially 0. 
 3. `computeError`: This function calculates the error or loss function and returns the cost. The input to this function is the predicted output and the actual output. 
 4. `optimize`: This function uses stochastic gradient descent to optimize the loss function. We initially compute the gradients of the weights and the bias in the variables `dW` and `db.` Using these gradients, we updated our weights and biases iteratively.
@@ -40,10 +36,10 @@ We define the following methods in the class `Regressor`:
 7. `predict`: This function is used to test the model on unseen data. The input to the function is the input data. The predict function outputs the dependent variable.
 8. `plot`: In this method, we plot the loss function versus the number of iterations.
 9. `score`: This function calculates the accuracy. The accuracy is computed using the following formula:
+
     $$ accuracy = \frac{(y - \hat{y})^2}{\sum{_i}^n(y-\bar{y})^2}$$
 
 ### Code 
-
 Let us put together the information we collected above and create the `Regressor` class. 
 
 ```py
@@ -116,8 +112,8 @@ class Regressor():
         return 1-(np.sum(((y-self.predict(X))**2))/np.sum((y-np.mean(y))**2))
 
 ```
-### Test the code 
 
+### Test the code 
 We use the Boston housing dataset to test the performance of the model built. The code to call the Boston housing dataset and to train the model is given below.
 
 ```py
@@ -146,8 +142,7 @@ regressor.plot()
 Run this code [here](https://repl.it/@lalithNarayan/SuperiorDeficientType).
 
 
-### Output Analysis
-
+### Output analysis
 We get a training accuracy of about 71%, and test accuracy stands at 65%. A fun exercise would be to set `normalize` to `False` and try the same code. Check the train and test accuracies. You will understand the significance of normalization.
 
 ```bash
@@ -156,12 +151,12 @@ Test Score:  0.6504432415059116
 ```
 
 ### Comparison with scikit learn
-
 The training and test accuracy obtained using the [library](/engineering-education/house-price-prediction/) stand at 93% and 79.29%, respectively. We conclude that the data requires some non-linearity to be introduced, and polynomial regression would probably work much better than linear regression. 
 
 ### Conclusion
+In this article, we implemented the linear regression from scratch using numpy. This should give you an idea about converting mathematical equations into Pythonic code. Implementing machine learning algorithms from scratch enhances one's understanding of the subject. 
 
-In this article, we implemented the linear regression from scratch using numpy. This should give you an idea about converting mathematical equations into Pythonic code. Implementing machine learning algorithms from scratch enhances one's understanding of the subject. Happy learning. 
+Happy learning. 
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
