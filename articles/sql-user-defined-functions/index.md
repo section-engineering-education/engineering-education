@@ -88,7 +88,7 @@ Before creating a table-valued function, we will create a simple table.
     CREATE TABLE TEST(
 	    num1 INT,
 	    num2 INT
-    )
+    );
     
     INSERT INTO TEST
     VALUES
