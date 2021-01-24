@@ -124,7 +124,7 @@ test_covid_dir = os.path.join(test_dir, 'COVID19')
 test_normal_dir = os.path.join(test_dir, 'NORMAL')
 ```
 
-Let us put all the images in each directory in a list, and print out the first ten file names in each list.
+Let us put all the images in each directory in a list and print out the first ten file names in each list.
 
 ```python
 # Creating a list of filenames in each directory
@@ -216,7 +216,7 @@ Our dataset only has training data and testing data. There is no validation data
 
 ```python
 
-# Data Preprocessing and Augumentation
+# Data Preprocessing and Augmentation
 # Generate training, testing and validation batches
 dgen_train = ImageDataGenerator(rescale=1./255,
                                 validation_split=0.2,  # using 20% of training data for validation 
@@ -228,7 +228,7 @@ dgen_test = ImageDataGenerator(rescale=1./255)
 
 ![alt text](/engineering-education/image-classifier-keras/meme3.jpg)
 
-Image Augmentation helps us increase the size of our training set. It will also help to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We will create objects of the class. One will be for the training images where we will apply image augmentation. We will also create objects for the validation images and the test images.
+Image Augmentation helps us increase the size of our training set. It will also help to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We will create objects of the class. One will be for the training images, where we will apply image augmentation. We will also create objects for the validation images and the test images.
 
 We start by rescaling the images, which will normalize the pixel values of our images. The *rescale* parameter is for feature scaling. It is vital when training neural networks. The *validation_split* parameter allows us to split a subset of our training data into the validation set. 0.2 means we will use 20% of our training set as the validation set. We will set *zoom_range* to 0.2. Finally, we set *horizontal_flip* to True.
 
@@ -313,7 +313,7 @@ The Dropout layer will help us to avoid overfitting. We will use a rate of 0.5. 
 
 We will add another Convolutional layer with 64 filters and a MaxPooling layer. We will also add another Dropout layer.
 
-The Flatten layer will convert the data to a 1D vector. The dense layer is our fully connected layer. We are using 256 nodes with a *ReLU* activation function. We add another dropout layer and we create an output layer with one node, using a *sigmoid* activation function. We are using one node at the output because it is a binary classification problem.
+The Flatten layer will convert the data to a 1D vector. The dense layer is our fully connected layer. We are using 256 nodes with a *ReLU* activation function. We add another dropout layer, and we create an output layer with one node, using a *sigmoid* activation function. We are using one node at the output because it is a binary classification problem.
 
 ![alt text](/engineering-education/image-classifier-keras/14.jpg)
 
@@ -378,7 +378,7 @@ history.history.keys()
 
 ![alt text](/engineering-education/image-classifier-keras/17.jpg)
 
-The history object stores the values of loss, accuracy, val loss, and val accuracy in each epoch.
+The history object stores the values of loss, accuracy, validation loss, and validation accuracy in each epoch.
  
 We will now plot a graph to visualize the training and validation loss after each epoch of training.
 
@@ -426,7 +426,7 @@ We get a test loss of approximately 0.0824 and a test accuracy of approximately 
 
 
 ## PREDICTION ON NEW DATA
-Let us use our model to make predictions on new data. Our new data will be a random image from our test set. We will get the path to the directory of the test image and pass it to the *load_img()* function.
+Let us use our model to make predictions on new data. Our new data will be a random image from our test set. We will get the path to the test image's directory and pass it to the *load_img()* function.
 
 ```python
 # Making a Single Prediction
@@ -452,7 +452,7 @@ else:
 
 ![alt text](/engineering-education/image-classifier-keras/22.jpg)
 
-The *load_img()* function from *keras.preprocessing.image* lets us load images in a PIL format. The first argument is the path to the image, and the second argument resizes our input image. After we load and resize our image, we convert it to a numpy array. We also have to expand the dimension of the image. This is because we trained our model with images in a batch, that is 32 images entering the model at a time. So we will create a batch of one image before calling the *predict* method. The *axis* parameter of the *expand_dims* function specifies where we want to add that extra dimension. The dimension of the batch is always the first dimension, so the argument will be 0. We will now encode the result, so our model will tell us if the scan has Covid or is normal for instance instead of 0 or 1. Remember from the class indices, 0 represents a scan with covid, and 1 represents a normal scan. So if the prediction is 0, the patient has covid, otherwise, the patient is normal. Our model has detected COVID-19 in the patient’s X-ray scan.
+The *load_img()* function from *keras.preprocessing.image* lets us load images in a PIL format. The first argument is the path to the image, and the second argument resizes our input image. After we load and resize our image, we convert it to a numpy array. We also have to expand the dimension of the image. This is because we trained our model with images in a batch, 32 images entering the model at a time. So we will create a batch of one image before calling the *predict* method. The *axis* parameter of the *expand_dims* function specifies where we want to add that extra dimension. The dimension of the batch is always the first dimension, so the argument will be 0. We will now encode the result, so our model will tell us if the scan has Covid or is normal, for instance, instead of 0 or 1. Remember, from the class indices, 0 represents a scan with covid, and 1 represents a normal scan. So if the prediction is 0, the patient has covid. Otherwise, the patient is normal. Our model has detected COVID-19 in the patient’s X-ray scan.
 
 
 ## CONCLUSION
