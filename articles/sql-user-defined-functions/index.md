@@ -71,7 +71,7 @@ Below is the definition of a simple Function. It takes in two numbers and return
 
     ```@VariableName AS Data Type```
 
-   In our above example, we have defined two Integer parameters **a** and **b**.
+In our above example, we have defined two Integer parameters `a` and `b`.
 
 - The return type of the result has to be mentioned below the definition of the parameters. In the above example, we are returning the sum which is an Integer.
 
