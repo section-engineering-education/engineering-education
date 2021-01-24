@@ -140,6 +140,8 @@ As you can see, this can quickly get out of control and the code will be hard to
 
 Asynchronous iteration allows us to iterate over data that comes asynchronously, on-demand. You can create an async iterator that iterates through each line in the input stream.
 
+If you'd like to learn more about Async Iterators, refer to this [article](https://blog.risingstack.com/async-iterators-in-node-js/). 
+
 ```JavaScript
 for await (const line of rl) {
   // Each line in from the input stream will be available successively here as `line`.
