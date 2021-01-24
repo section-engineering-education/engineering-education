@@ -19,10 +19,12 @@ We'll be going through these steps in this article:
 3. Installing dependencies.
 4. Setting up the Firebase project.
 5. Setting up Firebase Authentication.
-6. Collecting Phone Number.
-7. Collecting Verification Code.
-8. Displaying Authenticated Screen.
-9. Recap.
+6. Phone Number.
+7. Verification Code.
+8. Authenticated Screen.
+9. Signout.
+10. Test phone numbers.
+11. Recap.
 
 ### Development environment
 
@@ -283,12 +285,13 @@ if (confirm) return <OTPScreen />;
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-Now, let's write a function to confirm the verification code.
+Now, let's write a function to confirm the verification code. We should also make sure to clear the `confirm` method from the state once it serves its purpose.
 
 ```JSX
 async function confirmVerificationCode(code) {
   try {
-    confirm.confirm(code);
+    await confirm.confirm(code);
+    setConfrim(null);
   } catch (error) {
     alert('Invalid code');
   }
@@ -341,6 +344,36 @@ if (authenticated) return <Autheticated />;
 if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
 
 return <PhoneNumber onSubmit={signIn} />;
+```
+
+### Signout
+
+We should use the `signOut` method in the auth module to sign out a user from the application.
+
+Let's import the `auth` module in *Authenticated.js*.
+
+```JSX
+import auth from '@react-native-firebase/auth';
+```
+
+Let's call the `signOut` method when the user presses the signout button.
+
+```JSX
+<Button title="Signout" onPress={() => auth().signOut()} />
+```
+
+Now, when the user presses the button, the auth module will signout the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will recieve `null` instead of the `user` object.
+
+Thus, we should set the authenticated state to `false` if we recieve `null`.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAuthenticated(true);
+  } else {
+    setAuthenticated(false);
+  }
+})
 ```
 
 ### Let's Recap
