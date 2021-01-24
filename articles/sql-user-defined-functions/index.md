@@ -65,7 +65,7 @@ Below is the definition of a simple Function. It takes in two numbers and return
 	    RETURN @a + @b
     END
 ```
-- We use the **Create Function** command to define Functions. It is followed by the name of the function. In the above example, the name of the function is **scalar_func**.
+- We use the **Create Function** command to define Functions. It is followed by the name of the function. In the above example, the name of the function is `scalar_func`.
 
 - We need to declare the parameters of the function in the following format
 
