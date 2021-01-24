@@ -1,6 +1,6 @@
 # An Overview of Consensus Protocols in Blockchain
 
-An exciting application called Bitcoin was introduced after the great recession in 2008. This was one of the first real applications of blockchain technology. Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
+Satoshi Nakamoto introduced an exciting application called Bitcoin after the great recession in 2008. This was one of the first real applications of blockchain technology. Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
 
 - Security
 - Accountability
@@ -12,9 +12,13 @@ This article will discuss the role of consensus protocols in blockchain technolo
 
 ### Introduction
 
-Blockchain technology is a distributed ledger to record any transactions that happen over the network. The concept of decentralization is deeply engraved into the design of blockchain technology. Decentralization means there is no major entity keeping track of the transactions, and instead, it is distributed across many nodes in the network. The technology allows one to verify the transactions via cryptographic hash functions. The underlying assumption is that the record present with most nodes is likely to be the least falsible. 
+Blockchain technology is a distributed ledger to record any transactions that happen over the network. The concept of decentralization is deeply engraved into the design of blockchain technology. Decentralization means there is no major entity keeping track of the transactions, and instead, it is distributed across many nodes in the network. 
 
-Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work(PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. All the crypto-currencies and other blockchain applications, also known as decentralized applications (DApps), vary in how the network reaches a consensus. 
+The technology allows one to verify the transactions via [cryptographic hash functions](/engineering-education/understand-hashing-in-cryptography/). Hash functions are special functions that generate unique values for unique inputs. The underlying assumption is that the record present with most nodes is likely to be the least fallible. 
+
+Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work(PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. 
+
+All the crypto-currencies and other blockchain applications, also known as decentralized applications (dApps), vary in how the network reaches a consensus. dApps are applications that use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
 
 ### Types of consensus protocols
 
@@ -32,17 +36,18 @@ Proof of work is one of the first consensus protocols used in blockchain applica
 - Every transaction is validated and signed using the public and private keys assigned to each user. 
 
 
+
 ##### Popular Crypto-currencies
 
 Bitcoin and Litecoin are two prominent cryptocurrencies using Proof of Work. These are energy-intensive algorithms. The idea behind making the computation of such transactions costly and verification of transactions cheap is as follows: 
 
-An asymmetry between the verification and updation of ledgers results in more comfortable access to the ledger and greater resistance to changing values in the ledger. 
+An asymmetry between the verification and updation of ledgers results in more comfortable access to the ledger and greater resistance to changing values in the ledger. The asymmetry is also a disadvantage. PoW algorithms require humongous amounts of power and resources. Moreover, small players with less amount of resources are penalized for having a lower amount of resources, and therefore the aim of decentralization is hit.
 
-#### Proof of  Stake
+#### Proof of Stake
 
-Ethereum was one of the largest cryptocurrencies to decide to move onto proof of stake consensus. Let us understand the example intuitively. Let us say we are miners and are validating the transactions made. In bitcoin, a person to validate the transactions by computing the hash value with a certain number of leading zeros gets the allocated amount of bitcoins. 
+Ethereum was one of the largest cryptocurrencies to decide to move onto proof of stake consensus. Let us understand the example intuitively. Let us say we are miners and are validating the transactions made. In bitcoin, a person validates the transactions by computing the hash value with a certain number of leading zeros gets the allocated amount of bitcoins. 
 
-In proof of stake consensus, a validator is picked and assigned a block. The miner has to allocate a certain part of his cryptocurrency to start validating. If the miner succeeds in invalidating the transaction, then the award is the stake they had pledged initially, along with certain transaction fees. This is a way to penalize bad behavior and incentivize good behavior.
+In proof of stake consensus, a validator is picked and assigned a block. The miner has to allocate a particular part of his cryptocurrency to start validating. If the miner succeeds in invalidating the transaction, then the award is the stake they had pledged initially, along with certain transaction fees. This is a way to penalize bad behavior and incentivize good behavior. 
 
 ##### Properties
 
@@ -56,21 +61,23 @@ In proof of stake consensus, a validator is picked and assigned a block. The min
 
 Proof of space, also known as PoSpace, is a network consensus protocol similar to the Proof of Work consensus protocol. Instead of the computational resources, PoSpace uses disk storage to validate transactions.
 
-PoSpace consumes disk space and incentivizes miners with the most considerable disk space allocated to a block. PoSpace is implemented using the hard-to-pebble graphs. 
+PoSpace consumes disk space and incentivizes miners with the most considerable disk space allocated to a block. Implemented using the hard-to-pebble graphs, this data structure is used to solve the pebbling game. The pebbling game consists of pebbling vertices in a graph only if all the parent vertices have been pebbled. Pebbling refers to storing the parents' hash values, and removing the pebble refers to freeing the memory. Refer to this article for more details on the [pebbling game](https://math.mit.edu/research/highschool/primes/materials/2016/conf/10-2%20Bhupatiraju-Kuszmaul-Vale.pdf). 
+
+This consensus protocol again favors the miners with the maximum amount of space. It is resource biased, and therefore, miners with less amount of space cannot participate actively. This is a problem that goes against the concept of decentralization. 
 
 All the feasible solutions to the problem are generated randomly, called plots. These plots are stored on the disks and solved using an algorithm called Shabal's algorithm. Once the solutions are computed, the miners compare their solutions, and the solution with the best time and space complexity is rewarded with the next block.
 
-#### Applications
+##### Applications
 - Burstcoin is a decentralized cryptocurrency built using PoSpace. The value proposition is to aid payment systems. 
 - SpaceMint is another example in its early conceptual stages.
 - 
-#### Proof Elapsed Time
+#### Proof of Elapsed Time
 
 Proof of Elapsed time is a network consensus protocol developed by Intel Corporation. The algorithm is predominantly used in permissioned blockchain ledgers. The hardware used in PoET is specially designed for this protocol. For example, Intel Software Guarded Extension (SGX) is used in networks using PoET. 
 
-This consensus protocol is used to allocate blocks to miners on the network. In permissioned blockchain systems, the miners' identity is determined before they are allowed access into the network. Therefore, anonymity is not achieved in this protocol. 
+This consensus protocol is used to allocate blocks to miners on the network. In permissioned blockchain systems, the miners' identity is determined before allowing access into the network. Therefore, anonymity is not achieved in this protocol. 
 
-Each node in the network is assigned a random waiting time. The first node to complete the randomly chosen time period validates the new block. The specialized hardware puts the processor to sleep during the wait time—this repeats over all the blocks in the network. 
+Each node in the network is assigned a random waiting time. The first node to complete the randomly chosen period validates the new block. The specialized hardware puts the processor to sleep during the wait time—this repeats over all the blocks in the network. 
 
 ##### Applications
 
