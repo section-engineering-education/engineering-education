@@ -3,7 +3,7 @@ In the previous article, we looked at the theory behind linear regression. In th
 ### Prerequisites
 
 - [Introduction to Machine Learning ](/engineering-education/supervised-learning-algorithms/)
-- [Feature Engineering in Machine Learning]/engineering-education/feature-engineering-in-machine-learning/)
+- [Feature Engineering in Machine Learning](/engineering-education/feature-engineering-in-machine-learning/)
 
 ### Introduction
 
