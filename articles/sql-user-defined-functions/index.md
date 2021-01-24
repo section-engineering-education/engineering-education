@@ -12,9 +12,9 @@ The concept of functions in SQL is similar to other programming languages like P
 
   
 
-- **Scalar functions-** These types of functions return a single value, i.e float, int, varchar, datetime, etc
+- **Scalar functions-** These types of functions return a single value, i.e float, int, varchar, datetime, etc.
 
-- **Table-Valued functions-** These functions return tables
+- **Table-Valued functions-** These functions return tables.
 
   
 
@@ -65,7 +65,7 @@ Below is the definition of a simple function. It takes in two numbers and return
 	    RETURN @a + @b
     END;
 ```
-- We use the **Create function** command to define functions. It is followed by the name of the function. In the above example, the name of the function is `scalar_func`.
+- We use the ```Create function``` command to define functions. It is followed by the name of the function. In the above example, the name of the function is `scalar_func`.
 
 - We need to declare the parameters of the function in the following format
 
