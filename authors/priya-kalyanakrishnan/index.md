@@ -1,1 +1,1 @@
-Priya enjoys helping others. Her skills at a Graduate-level are in Python, R, Java, and SQL/NoSQL with additional knowledge in general website scripting and information systems at an Undergraduate-level along with data science development at a certificate-level.
+Priya studied Analytics. She is skilled in other technical fields including programming in object-oriented languages, web coding, machine learning, and statistical coding.
