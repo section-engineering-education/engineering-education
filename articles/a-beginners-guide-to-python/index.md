@@ -156,7 +156,7 @@ getTotal()
 Loops are critical because they allow us to iterate through lists, check for different conditions, and continuously execute various statements. The main loops are `for` and `while`.
 
 1. For loops
-As noted, we can use a for loop to iterate through a list, as shown below.
+As noted, we can use a for loop to iterate through a list, as shown below:
 
 ```python
 student_list=[“John Doore”,”Matu Smith”]
