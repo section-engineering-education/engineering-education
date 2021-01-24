@@ -96,7 +96,7 @@ Before creating a table-valued function, we will create a simple table.
     VALUES
     (1,2),
     (2,3),
-	    (4,5);
+	(4,5);
 ```
 The table contains 2 columns. We will create a function which returns a new table with an extra column. This extra column will contain the sum of numbers in the column ```num1``` and column ```num2```.
 
