@@ -1,4 +1,4 @@
-In this tutorial, we will learn how to authenticate users with their phone number using Firebase's authentication module in a Non-Expo React Native application.
+In this tutorial, we will learn how to authenticate users with their phone numbers using Firebase's authentication module in a Non-Expo React Native application.
 
 ### Firebase
 
@@ -42,7 +42,7 @@ To focus more on the authentication module, You can clone the starter code from 
 
 For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
 
-This will be the folder structre of the application.
+This will be the folder structure of the application.
 
 ![Folder Structure](folder_structure.png)
 
@@ -81,7 +81,7 @@ pod install
 
 > **IMPORTANT FOR ANDROID**
 >
-> Adding more native dependecies may bump you over the 64k method limit on the Android build system. If you reach this limit, you will see the following error while attempting to build your Android application.
+> Adding more native dependencies may bump you over the 64k method limit on the Android build system. If you reach this limit, you will see the following error while attempting to build your Android application.
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
@@ -104,7 +104,7 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](register_app.png)
 
-You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need the package name of the application to register application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
 ![Package Name](package_name.png)
 
@@ -127,7 +127,7 @@ SHA-256: 6C:BB:49:66:18:B9:7F:74:49:B5:56:D0:24:43:6A:1B:41:91:97:A3:2E:7C:4A:6E
 Valid until: Friday, December 23, 2050
 ```
 
-Copy the `SHA1` value and paste it in the firebase console.
+Copy the `SHA1` value and paste it into the Firebase console.
 
 Now, Proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
@@ -170,7 +170,7 @@ Head over to the Authentication section in the dashboard and click on the `Get S
 
 ![Get Started Auth](auth_get_starterd.png)
 
-Next, you should enable the phone authentication in the sign-in methods. Once you've enabled it, press save.
+Next, you should enable phone authentication in the sign-in methods. Once you've enabled it, press save.
 
 ![Signin-method](enabled.png)
 
@@ -178,15 +178,15 @@ Firebase must be able to verify that the requests are coming from your app.
 
 There are two ways to accomplish this:
 
-1. **SafetyNet**: If the user has a device with Google Play Services installed, then Firebase can verify whether the request is legitimage.
+1. **SafetyNet**: If the user has a device with Google Play Services installed, then Firebase can verify whether the request is legitimate.
 
-   In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used, and needs to be allowed to access the DeviceCheck API.
+   In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used and needs to be allowed to access the DeviceCheck API.
 
    ![Enable Device Verification API](advAPI.png)
 
-2. **reCAPTCHA**: In the event that SafetyNet cannot be used, Firebase does a _reCAPTCHA_ verification. The _reCAPTCHA_ challenge can often be completed without the user having to solve anything.
+2. **reCAPTCHA**: If SafetyNet cannot be used, Firebase does a _reCAPTCHA_ verification. The _reCAPTCHA_ challenge can often be completed without the user having to solve anything.
 
-   > Please note that this flow requires that a SHA-1 is associated with your application.
+   > Please note that this flow requires that an SHA-1 is associated with your application.
 
 Now, let's head to the application and install the auth module.
 
@@ -228,7 +228,7 @@ In _App.js_, Let's import the Authentication module from Firebase.
 import auth from '@react-native-firebase/auth';
 ```
 
-We should use the `signInWithPhoneNumber` method in the auth module. It accepts a phone number in the form of a string as it's argument. It is an `async` function, thus it returns a Promise.
+We should use the `signInWithPhoneNumber` method in the auth module. It accepts a phone number in the form of a string as its argument. It is an `async` function, thus it returns a Promise.
 
 The phone number should also contain the country code in it.
 
@@ -238,7 +238,7 @@ auth().signInWithPhoneNumber('+91 1234567890');
 
 This will trigger the Firebase servers to send a verification code to the given phone number.
 
-The `signInWithPhoneNumber` method returns a object with a `confirmation` method that is used to verify the one-time code sent to the number.
+The `signInWithPhoneNumber` method returns an object with a `confirmation` method that is used to verify the one-time code sent to the number.
 
 Let's create a state using the `useState` hook to hold the `confirmation` method.
 
@@ -250,7 +250,7 @@ import React, { useState } from 'react';
 const [confirm, setConfirm] = useState(null);
 ```
 
-Now, let's write a function that accepts a phone number as an argument, and calls `signInWithPhoneNumber` function with the given phone number. We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
+Now, let's write a function that accepts a phone number as an argument and calls the` signInWithPhoneNumber` function with the given phone number. We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
 
 ```JSX
 async function signIn(phoneNumber) {
@@ -318,13 +318,13 @@ In *VerifyCode.js*, I've already set up a state that holds the verification code
 <Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
 ```
 
-Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the app if the verfication code is correct. If not, we will display an error message to the user.
+Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the app if the verification code is correct. If not, we will display an error message to the user.
 
-### Autheticated Screen
+### Authenticated Screen
 
 We can add a listener to the authentication state of the user. The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
-You can set an event handler to this listener. This handler will recieve the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise they are signed-in. 
+You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in. 
 
 Let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
 
@@ -342,7 +342,7 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
-If the user is autheticated, we should display the *Authenticated* screen. 
+If the user is authenticated, we should display the *Authenticated* screen. 
 
 ```JSX
 if (authenticated) return <Autheticated />;
@@ -368,9 +368,9 @@ Let's call the `signOut` method when the user presses the signout button.
 <Button title="Signout" onPress={() => auth().signOut()} />
 ```
 
-Now, when the user presses the button, the auth module will signout the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will recieve `null` instead of the `user` object.
+Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
 
-Thus, we should set the authenticated state to `false` if we recieve `null`.
+Thus, we should set the authenticated state to `false` if we receive `null`.
 
 ```JSX
 auth().onAuthStateChanged((user) => {
@@ -400,7 +400,7 @@ Once added, the number can be used with the `signInWithPhoneNumber` method. The 
 
 2. We created a Firebase project.
 
-3. We set up the authentication module and enabled phone numbe authentication in our project.
+3. We set up the authentication module and enabled phone number authentication in our project.
 
 4. We enabled the Device Verification API in the Google Cloud Console for our project.
 
@@ -414,7 +414,7 @@ Once added, the number can be used with the `signInWithPhoneNumber` method. The 
 
 9. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
 
-10. We used the `auth` module to signout the user from the application from the *Authenticated* screen.
+10. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
 
 11. We learned how to add Test numbers from the Firebase console.
 
