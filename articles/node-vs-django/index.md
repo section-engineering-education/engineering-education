@@ -15,7 +15,7 @@ images:
     alt: Node.js vs Django Image
 
 ---
-Node.js and Django are technologies used in building versatile web and mobile applications. Both have an excellent user interface, are open-source, do not require a license to operate, and therefore they have a vast number of users. Node.js is a framework that JavaScript uses on a client-side web application wheras Django is a Python framework used to develop fully functional websites faster with less coding.
+Node.js and Django are technologies used in building versatile web and mobile applications. Both have an excellent user interface, are open-source, do not require a license to operate, and therefore they have a vast number of users. Node.js is a framework that JavaScript uses on a client-side web application, whereas Django is a Python framework used to develop fully functional websites faster with less coding.
 <!--more-->
 This article will analyze these two popular technologies. The article will critically give each member the pros and cons to help the reader choose the best technology depending on the project needs.
 
