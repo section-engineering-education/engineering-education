@@ -17,7 +17,7 @@ images:
 In this tutorial, we will learn how to get a user input in a Node.js CLI application. To do this, you'll need to listen to `STDIN` (Standard Input), which Node.js exposes as `process.stdin`, a readable stream.
 <!--more-->
 
-Streams are a way of dealing with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
+Streams are used to deal with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
 
 ### Prerequisites
 
@@ -46,7 +46,7 @@ npm init -y
 
 This will generate a `package.json` file.
 
-Once that's done, create a new JavaScript file called `index.js` to write our code.
+Once that's done, create a new file called `index.js` to write our code.
 
 ### Readline Package
 
@@ -78,7 +78,7 @@ We can ask a question to the user using the `rl.question()` method. The `rl.ques
 For example:
 
 ```JavaScript
-rl.question("What is your favorite color? ", (input) => {
+rl.question("Your favorite color? ", (input) => {
   console.log(input);
   rl.close();
 });
@@ -87,7 +87,7 @@ rl.question("What is your favorite color? ", (input) => {
 Output:
 
 ```bash
-What is your favorite color? Black
+Your favorite color? Black
 Black
 ```
 
@@ -102,7 +102,7 @@ rl.on('close', () => {
 Output:
 
 ```bash
-What is your favorite color? Black
+Your favorite color? Black
 Black
 Streams Closed
 ```
@@ -153,7 +153,7 @@ async function main() {
   // do your stuff here
 
   for await (const line of rl) {
-    // Each line in from the input stream will be available successively here as `line`.
+    // Each line in from the input stream will be available here as `line`.
   }
 }
 
@@ -175,8 +175,8 @@ Now, we can use this function to get the value from the input stream and use the
 
 ```JavaScript
 async function main() {
-  const name = await input("May I ask your name? ");
-  const color = await input("What is your favorite color? ");
+  const name = await input("May I have your name? ");
+  const color = await input("Your favorite color? ");
 
   console.log(name, color);
   rl.close();
@@ -212,17 +212,17 @@ console.log(`Hi ${input}!`);
 
 The `readlineSync` package also has other functions like `readlineSync.keyInYN()`, `readlineSync.keyInSelect()`, etc.
 
-The `readlineSync.keyInYN()` is used to get the user's response by a single key without pressing the *Enter* key. The function will return `true` if **"Y"** was pressed or `false` if something else was pressed.
+The `readlineSync.keyInYN()` is used to get the user's response from a single key without pressing the *Enter* key. The function will return `true` if **"Y"** was pressed or `false` if something else was pressed.
 
 ```JavaScript
-if (readlineSync.keyInYN('Do you want this module?')) {
+if (readlineSync.keyInYN('Yes?')) {
   // 'Y' key was pressed.
 } else {
   // Another key was pressed.
 }
 ```
 
-The `readlineSync.keyInSelect()` is used to let the user choose an item from a list. The function will return the number the user selected. The user doesn't have to press the *Enter* button when we use this function.
+The `readlineSync.keyInSelect()` is used to prompt an user to choose an item from a list. The function will return the number the user selected. The user doesn't have to press the *Enter* button when we use this function.
 
 ```JavaScript
 let colors = ['Black', 'White', 'Gray', 'Yellow', 'Blue'];
@@ -251,7 +251,7 @@ You can learn more about the `readline-sync` package and the other methods that 
 
 1. We used the `readline` package to prompt input from the user.
 
-2. We added an event listener for the `close` event.
+2. We added an event listener for the readline stream's `close` event.
 
 3. We used the async iterator to write an async function to get the input from the user to prevent callback hell.
 
