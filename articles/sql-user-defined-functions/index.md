@@ -227,7 +227,7 @@ Below is a function using an **IF...ELSE** Block
 
 #### Case Statements
 
-When you are dealing mith multiple if statements, it is better to use case statements. They make your code easier to read. Below is the general syntax for Case Statements
+When you are dealing with multiple if statements, it is better to use case statements. They make your code easier to read. Below is the general syntax for Case Statements
 ```sql
 	CASE
 	    WHEN  condition1  THEN  result1  
