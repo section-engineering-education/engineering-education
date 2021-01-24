@@ -376,6 +376,18 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
+### Test Phone Numbers
+
+Firebase provides support for testing phone numbers.
+
+In the Firebase Console, click on the "Phone numbers for testing" dropdown in the "Phone" authentication provider.
+
+![Test Phone](test_phone.png)
+
+Enter a new phone number and a test code.
+
+Once added, the number can be used with the `signInWithPhoneNumber` method. The firebase server will not send a verification code to a test number. You should enter the test code that you specified here in the application to sign-in.
+
 ### Let's Recap
 
 1. We set up our development environment and created a React Native app.
