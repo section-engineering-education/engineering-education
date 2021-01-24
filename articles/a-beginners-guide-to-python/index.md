@@ -55,6 +55,25 @@ print(math+chemistry+biology)
 ```
 The total is `260`.
 
+A TypeError is thrown when you try to add a string to an integer, as shwon below.
+
+```python
+var1 = "30" #string
+var2 = 20 #integer
+
+print(var1+var2)#type error
+```
+
+We can sum `var1` and `var2` by converting `var1` to an integer using the `int()` function. The following code will execute successfully
+
+```python
+var1 = "30" #string
+var2 = 20 #integer
+
+print(int(var1)+var2)#type error
+```
+>Ensure that the variable stores a value that can be converted to an integer before using the int() method.
+
 3. Booleans
 
 There are only two Boolean values: `True` and `False`. In other words, something can either be true or false. We declare these values, as shown below. Please note that Python is case sensitive.
