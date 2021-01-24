@@ -59,7 +59,7 @@ I will be writing all my code in a google colab file. You can find it over [here
 
 2. Some Experience working with the Pandas Library
 
-3. Some Experience working with the Matplotlib Library, you can check out the [following article](https://www.section.io/engineering-education/getting-started-with-data-visualization-using-pandas/)
+3. Some Experience working with the Matplotlib Library, you can check out the [following article](https://www.section.io/engineering-education/matplotlib-visualization-python/)
 
 4. A basic understanding of Data Analysis, you can check out the [following article](https://www.section.io/engineering-education/data-analytics-using-pandas/)
 
@@ -118,7 +118,7 @@ sns.countplot(x='sex',data=df)
 
 - **x** - The name of the column
 
-  
+We can observe from the graph that the number of male passengers is significantly higher than the number of female passengers.
 
 We can further break up the bars in the count plot based on another categorical variable. The color palette of the plot can also be customized.
 
@@ -147,7 +147,7 @@ sns.kdeplot(x = 'age' , data = df , color = 'black')
 
 - **color** - The color of the graph. You can find a list of colors [here](https://matplotlib.org/3.1.0/gallery/color/named_colors.html)
 
-  
+The peak of the above graph is in between 20 and 40 so we can conclude that most passengers were between the ages of 20 and 40.
 
 #### Distribution Plot
 
@@ -161,6 +161,8 @@ sns.displot(x = 'age',kde=True,bins = 5 , data =df)
 
 - **bins** - The number of bins/bars. The lower the number, wider the bards and wider the intervals
 
+ The above plot tells us that most people onboard the titanic were in their mid-twenties.
+
 ```python
 sns.displot(x ='age',kde=True,bins = 5 ,
 hue = df['survived'] , palette = 'Set3', data=df)
@@ -169,10 +171,11 @@ hue = df['survived'] , palette = 'Set3', data=df)
 
 You can also pass **hue** and **palette** as parameters to customize the graph.
 
-  
+Most of the surviving passengers were in their high-twenties.
 
 #### Scatter Plot
-For this plot and the plots below, we will be working with the iris dataset. First, we will need to load the iris dataset.
+For this plot and the plots below, we will be working with the iris dataset. The iris dataset contains data related to flower's petal size (petal length and petal width) and sepal size(sepal length and sepal width). These features are used to classify the type of iris (Setosa, Versicolour, and Virginica). Below we will try to investigate the relation between the features.
+First, we will need to load the iris dataset.
 
 ```python
 df = sns.load_dataset('iris')
@@ -187,6 +190,9 @@ data = df , hue = 'species')
 ![image title](/engineering-education/seaborn-tutorial/scatterplot.png)
 
 A scatterplot requires data for its **x-axis** and **y-axis**. We can also pass a value for the **hue** parameter to color the dots based on a categorical column.
+
+In the above plot we can observe that an iris flower with a sepal length < 6cm and petal length > 2cm is most likely of type **setosa**. 
+Although there is no distinct boundary present between the **versicolor** dots and **virginica** dots, an iris flower with petal length between 2cm and 5cm is most likely of type **versicolor**, while iris flowers with petal length > 5cm are most likely of type **virginica**.
 
   
 
@@ -204,7 +210,6 @@ data = df , kind = 'reg')
 
 'scatter', 'hist', 'hex', 'kde', 'reg', 'resid'
 
-  
 
 #### Pair Plots
 
@@ -234,6 +239,8 @@ sns.heatmap(corr)
 
 We can customize the color scheme, the minimum and maximum values, and annotations.
 
+Based on the heatmap we can conclude that sepal length has a high positive correlation with petal length and petal width while sepal width has negative correlation with petal length and petal width.
+
 ```python
 sns.heatmap(corr, cmap=['red','green','blue'],
 vmin = -.5 , vmax = 0.6,annot = True)
@@ -253,7 +260,7 @@ from google.colab import files
 files.upload()
 ```
 
-You can skip the above step if you are working on your local machine.
+You can skip the above step if you are working on your local machine. Make sure your downloaded file is in the same folder as your python file.
 
 ```python
 pokemon_df = pd.read_csv('pokemon.csv')
@@ -292,6 +299,8 @@ data = pokemon_df,hue = 'is_legendary')
 ```
 
 ![image title](/engineering-education/seaborn-tutorial/pokemon3.png)
+
+Based on the above graph, we can conclude that height and weight of a Pokemon do not have any correlation
 
 Some other plots you could try.
 
