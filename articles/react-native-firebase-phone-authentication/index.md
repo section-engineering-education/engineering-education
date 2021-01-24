@@ -54,6 +54,8 @@ I've set up 3 screens in the `screens/` directory:
 
 - _Authenticated.js_: Screen that the user can see only if he is logged in.
 
+![screens](screens.jpg)
+
 In the _App.js_, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
 
 ### Installing dependencies
@@ -382,6 +384,8 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
+![Signout](signout.gif)
+
 ### Test Phone Numbers
 
 Firebase provides support for testing phone numbers.
@@ -393,6 +397,16 @@ In the Firebase Console, click on the "Phone numbers for testing" dropdown in th
 Enter a new phone number and a test code.
 
 Once added, the number can be used with the `signInWithPhoneNumber` method. The firebase server will not send a verification code to a test number. You should enter the test code that you specified here in the application to sign-in.
+
+### Result
+
+Here is the sign in flow if the Device Verification API works properly.
+
+![With SafetyNet](safetynet.gif)
+
+If the Device Verification API is not enabled, or if SafetyNet can't be reached, the auth module will use a *reCAPTCHA* to verify the request.
+
+![With Recaptch](recaptcha.gif)
 
 ### Let's Recap
 
