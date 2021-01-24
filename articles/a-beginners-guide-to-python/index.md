@@ -19,7 +19,7 @@ Also, note that this tutorial is based on python 3.9 rather than the 3.6 version
 ### Understanding variables
 Variables are simply declarations that are used to store certain values. For instance, the variable `name` can hold the value of `John Smith.` Several rules need to be considered when declaring variable names. For starters, a variable name cannot begin with a number. 
 
-2name  = incorrect #incorrect
+2name = incorrect #incorrect
 
 name = correct  #correct
 
@@ -44,9 +44,9 @@ When we run `print(name)`, the output will be `john`.
 
 These variables hold numeric values, as shown below.
 ```python
-math=90
-chemistry=100
-biology=70
+math = 90
+chemistry = 100
+biology = 70
 ```
 
 We can find the total of the above variables using the following statement.
@@ -70,17 +70,17 @@ We can sum `var1` and `var2` by converting `var1` to an integer using the `int()
 var1 = "30" #string
 var2 = 20 #integer
 
-print(int(var1)+var2)#type error
+print(int(var1)+var2) # Output: 50
 ```
->Ensure that the variable stores a value that can be converted to an integer before using the int() method.
+> Ensure that the variable stores a value that can be converted to an integer before using the int() method.
 
 3. Booleans
 
 There are only two Boolean values: `True` and `False`. In other words, something can either be true or false. We declare these values, as shown below. Please note that Python is case sensitive.
 
 ```python
-isOn=True
-isChecked=False
+isOn = True
+isChecked = False
 ```
 
 4. Float
@@ -107,7 +107,7 @@ Each element in the above `students` list has an index. By default, the first in
 A list of integers will look as follows.
 
 ```python
-student_marks =[90, 78, 90, 78]
+student_marks = [90, 78, 90, 78]
 ```
 We can access different list functionalities using built-in functions. For instance, to add a value to the `student_marks` list, we use the `append` function.
 
@@ -178,7 +178,7 @@ Loops are critical because they allow us to iterate through lists, check for dif
 As noted, we can use a for loop to iterate through a list, as shown below:
 
 ```python
-student_list=[“John Doore”,”Matu Smith”]
+student_list = [“John Doore”,”Matu Smith”]
 for x in student_list:
     print(x)
 ```
@@ -188,7 +188,7 @@ The above `for` loop will print every item in the student_list.
 A while can help us check for a particular condition. For instance, while something is true specific statements can be executed. Here is an example of a while loop in action.
 
 ```python
-isChecked=false
+isChecked = false
 while isChecked == true:
     print('Hallo there')
 ```
@@ -200,10 +200,10 @@ Classes are a vital component of object-oriented programming. When creating a cl
 
 ```python
 class Farmer: # a class with the name farmer
-    name="John" # A variable
-    produce ="1000kgs" # A variable
+    name = "John" # A variable
+    produce = "1000kgs" # A variable
 
-farmer=Farmer() #instatiating the class as an object. 
+farmer = Farmer() #instatiating the class as an object. 
 print(farmer.name) # accessing the properties of the Farmer class.
 ```
 Classes can help as group things with similar characteristics. 
