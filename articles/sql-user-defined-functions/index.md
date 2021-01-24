@@ -1,20 +1,20 @@
 
-# Working With User-Defined Functions In SQL Server
+# Working With User-Defined functions In SQL Server
 
   
 
-In this tutorial, we will be discussing user-defined functions in SQL Server. More specifically, we will be discussing Scalar Functions and Table-Valued Functions.
+In this tutorial, we will be discussing user-defined functions in SQL Server. More specifically, we will be discussing Scalar functions and Table-Valued functions.
 
-When writing code, one must aim to follow the DRY Principle (Don’t Repeat Yourself). One way to avoid repetition of code is to put chunks of code inside Functions and invoke them as required.
+When writing code, one must aim to follow the DRY Principle (Don’t Repeat Yourself). One way to avoid repetition of code is to put chunks of code inside functions and invoke them as required.
 
 
 The concept of functions in SQL is similar to other programming languages like Python. The major difference being the way they are implemented. There are two main types of user-defined functions in SQL based on the data they return:
 
   
 
-- **Scalar Functions-** These types of Functions return a single value, i.e float, int, varchar, datetime, etc
+- **Scalar functions-** These types of functions return a single value, i.e float, int, varchar, datetime, etc
 
-- **Table-Valued Functions-** These Functions return tables
+- **Table-Valued functions-** These functions return tables
 
   
 
@@ -22,13 +22,13 @@ The concept of functions in SQL is similar to other programming languages like P
 
 - Prerequisites
 
-- Creating Functions
+- Creating functions
 
-- Using Functions in Statements
+- Using functions in Statements
 
-- Update/Delete Functions
+- Update/Delete functions
 
-- Using Variables, Conditional Statements inside Functions
+- Using Variables, Conditional Statements inside functions
 
 - Conclusion
 
@@ -48,11 +48,11 @@ The concept of functions in SQL is similar to other programming languages like P
 
 ---
 
-### Creating Functions
+### Creating functions
 
-#### Scalar Functions
+#### Scalar functions
 
-Below is the definition of a simple Function. It takes in two numbers and returns their sum. Since this function returns a number, it is a scalar function.
+Below is the definition of a simple function. It takes in two numbers and returns their sum. Since this function returns a number, it is a scalar function.
 ```sql
     CREATE FUNCTION scalar_func
     (
@@ -65,7 +65,7 @@ Below is the definition of a simple Function. It takes in two numbers and return
 	    RETURN @a + @b
     END;
 ```
-- We use the **Create Function** command to define Functions. It is followed by the name of the function. In the above example, the name of the function is `scalar_func`.
+- We use the **Create function** command to define functions. It is followed by the name of the function. In the above example, the name of the function is `scalar_func`.
 
 - We need to declare the parameters of the function in the following format
 
@@ -75,11 +75,11 @@ In our above example, we have defined two Integer parameters `a` and `b`.
 
 - The return type of the result has to be mentioned below the definition of the parameters. In the above example, we are returning the sum which is an Integer.
 
-- After the return statements, we create a **BEGIN ... END** block which contains the logic of our function. Although in this case, since we have a single return statement, we don't require a **BEGIN ... END** block
+- After the return statements, we create a ```BEGIN ... END``` block which contains the logic of our function. Although in this case, since we have a single return statement, we don't require a ```BEGIN ... END``` block
 
   
 
-#### Table-Valued Functions
+#### Table-Valued functions
 
 Before creating a table-valued function, we will create a simple table.
 
@@ -96,7 +96,7 @@ Before creating a table-valued function, we will create a simple table.
     (2,3),
 	    (4,5);
 ```
-The table contains 2 columns. We will create a function which returns a new table with an extra column. This extra column will contain the sum of numbers in the column **num1** and column **num2**.
+The table contains 2 columns. We will create a function which returns a new table with an extra column. This extra column will contain the sum of numbers in the column ```num1``` and column ```num2```.
 
   
 ```sql
@@ -105,23 +105,23 @@ The table contains 2 columns. We will create a function which returns a new tabl
     AS
     RETURN
 	    SELECT num1 , num2, num1 + num2 AS 'SUM'
-	    FROM TEST
+	    FROM TEST;
 ```
 - The above function does not take in any parameter.
 
-- The SQL statement simply calculates the sum and stores it in a new column named **SUM**
+- The SQL statement simply calculates the sum and stores it in a new column named ```SUM```
 
 ---
 
-### Using Functions in Statement
+### Using functions in Statement
 
-#### Scalar Functions
+#### Scalar functions
 ```sql
     SELECT dbo.scalar_func(1,2);
 ```
-When using functions in statements, we will need to prefix our functions with the database schema it is associated with. The default schema in Microsoft SQL Server is **dbo**. If the database schema is not mentioned, SQL will give an error,
+When using functions in statements, we will need to prefix our functions with the database schema it is associated with. The default schema in Microsoft SQL Server is ```dbo```. If the database schema is not mentioned, SQL will give an error,
 
-#### Table-Valued Functions
+#### Table-Valued functions
 
 Since the function returns a table, we will need to select the columns we are interested in.
 ```sql
@@ -129,11 +129,9 @@ Since the function returns a table, we will need to select the columns we are in
 ```
 Like scalar functions, we will need to mention the database schema.
 
-  
-
 ---
 
-### Update/Delete Functions
+### Update/Delete functions
 
 The syntax to update/delete scalar and table-valued functions are the same.
 
@@ -141,40 +139,40 @@ The syntax to update/delete scalar and table-valued functions are the same.
 
 #### Update
 
-We will update our table-valued function to add 10 to the existing sum and change the name of the column to **New_Sum**
+We will update our table-valued function to add 10 to the existing sum and change the name of the column to ```New_Sum```
 ```sql
     ALTER FUNCTION table_valued_func()
     RETURNS TABLE
     AS
     RETURN
 	    SELECT num1 , num2, num1 + num2 + 10 AS 'NEW_SUM'
-	    FROM TEST
+	    FROM TEST;
 ```
-The **Alter** Keyword is used to update the function.
+The ```Alter``` Keyword is used to update the function.
 
   
 
 #### Drop
 ```sql
-    DROP FUNCTION dbo.scalar_func
+    DROP FUNCTION dbo.scalar_func;
     
-    DROP FUNCTION dbo.table_valued_func
+    DROP FUNCTION dbo.table_valued_func;
  ```   
 > Note: Do not put parenthesis after the function name
 
 -----
 
-### Using Variables, Conditional Statements inside Functions
+### Using Variables, Conditional Statements inside functions
 
 #### Variables
 
 Below is the syntax to declare and initialize variables
 ```sql
-    DECLARE @result AS INT
+    DECLARE @result AS INT;
     
-    SET @result = @a + @b
+    SET @result = @a + @b;
 ```
-The **DECLARE** Keyword is used to create a variable and the **SET** Keyword is used to initialize a variable.
+The ```DECLARE``` Keyword is used to create a variable and the ```SET``` Keyword is used to initialize a variable.
 
 Below is an example of a scalar function using a variable
 ```sql
@@ -189,15 +187,15 @@ Below is an example of a scalar function using a variable
 	    DECLARE @result AS INT
 	    SET @result = @a + @b
 	    RETURN @a + @b
-    END
+    END;
 ```
 
 #### IF...ELSE Statements
 
-The syntax for IF...ELSE Statements is like IF...ELSE Statements in Python or C++
+The syntax for ```IF...ELSE``` Statements is like ```IF...ELSE``` Statements in Python or C++
 ```sql
-    DECLARE @num AS INT
-    SET @num = 4
+    DECLARE @num AS INT;
+    SET @num = 4;
     IF @num % 2 = 0    
 	    BEGIN
 		    SELECT 'Number is Even'
@@ -207,9 +205,9 @@ The syntax for IF...ELSE Statements is like IF...ELSE Statements in Python or C+
 		    SELECT 'Number is Odd'
 	    END
 ```
-The above piece of code checks whether the value in variable **num** is even or odd. Based on the value, the **IF** or the **ELSE** Block is executed.
+The above piece of code checks whether the value in variable ```num``` is even or odd. Based on the value, the ```IF``` or the ```ELSE``` Block is executed.
 
-Below is a function using an **IF...ELSE** Block
+Below is a function using an ```IF...ELSE``` Block
 
 ```sql
     CREATE FUNCTION is_even(@num AS INT)
@@ -222,7 +220,7 @@ Below is a function using an **IF...ELSE** Block
 	    ELSE
 		    SET @result = 0
 	    RETURN @result
-    END
+    END;
 ```
 
 #### Case Statements
@@ -236,7 +234,7 @@ When you are dealing with multiple if statements, it is better to use case state
 		.
 		.  
 		ELSE  result  
-	END
+	END;
 ```
 Like switch cases, all the cases are checked and if multiple cases are satisfied, the respective code blocks will be executed.
 Below is a function which uses Case statements,
@@ -256,11 +254,11 @@ Below is a function which uses Case statements,
 		ELSE 'Equal to'
 	END
 	+ 'B')
-	END
+	END;
 ```
 It compares two integers and returns a string based on the comparison result.
 
 -----
 
 ### Conclusion
-As I mentioned above, try to follow the DRY Principle while writing SQL Statements. When you see the same piece of code is being used in multiple statements, consider putting it inside a function. Functions make your statements look much cleaner and shorter. 
+As I mentioned above, try to follow the DRY Principle while writing SQL Statements. When you see the same piece of code is being used in multiple statements, consider putting it inside a function. functions make your statements look much cleaner and shorter. 
