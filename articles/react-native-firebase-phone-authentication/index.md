@@ -412,7 +412,11 @@ Once added, the number can be used with the `signInWithPhoneNumber` method. The 
 
 8. We added a method to confirm the verification code.
 
-9. We displayed the authenticated screen is the verification code is correct.
+9. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
+
+10. We used the `auth` module to signout the user from the application from the *Authenticated* screen.
+
+11. We learned how to add Test numbers from the Firebase console.
 
 Congratulations, :partying_face: You did it.
 
