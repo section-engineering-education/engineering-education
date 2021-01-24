@@ -55,7 +55,7 @@ $$ \gamma(x,\alpha, \beta) = \begin{cases} 0 & x\le \alpha \\
 
 The s function gets its name from its shape. The s-shaped function is useful in cases with a gradual change in the membership. 
 
-Mathematially, it is given as:
+Mathematically, it is given as:
 
 $$ S(x,\alpha,\beta) = \begin{cases}
 0 & x\le \alpha \\
@@ -133,6 +133,5 @@ $$new\; degree\; of\; membership(x)\; = 1\; -\; degree\; of\; membership(x)$$
 ### Conclusion
 
 In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. 
-
 
 
