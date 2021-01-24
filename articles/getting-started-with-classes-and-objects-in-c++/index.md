@@ -229,7 +229,7 @@ Syntax:
 
 `function_name(object_name);`
 
-Consider the below program:
+Consider the program below:
 
 ```c++
 #include <iostream>
