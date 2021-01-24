@@ -143,3 +143,6 @@ The training and test accuracy obtained using the [library](/engineering-educati
 ### Conclusion
 
 In this article, we implemented the linear regression from scratch using numpy. This should give you an idea about converting mathematical equations into Pythonic code. Implementing machine learning algorithms from scratch enhances one's understanding of the subject. Happy learning. 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
