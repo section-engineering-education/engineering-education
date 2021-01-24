@@ -48,7 +48,7 @@ Hello world!
 ```
 Where one of the output came from the parent process and the other one from the child process.
 
-![simple fork](/engineering-education/fork-in-C-programming-language/fork.png)
+![Simple fork](/engineering-education/fork-in-C-programming-language/fork.png)
 
 Simply, we can tell that the result is 2 power of n, where n is the number of fork() system calls. For example:
 ```c
@@ -87,7 +87,7 @@ int main() {
 ```
 I drew a brief sketch to let you understand the idea:
 
-![Fork()](/engineering-education/fork-in-C-programming-language/fork1.png)
+![Fork](/engineering-education/fork-in-C-programming-language/fork1.png)
 
 Then the result will be just one "Hello World!".
 
@@ -116,7 +116,7 @@ Hello world!
 Hello world!
 ```
 
-![fork explaination](/engineering-education/fork-in-C-programming-language/fork2.png)
+![Fork explaination](/engineering-education/fork-in-C-programming-language/fork2.png)
 
 Because when the process that has been forked inside `dowork()` print `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exit.
 
