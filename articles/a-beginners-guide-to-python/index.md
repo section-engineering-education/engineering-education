@@ -82,6 +82,14 @@ There are only two Boolean values: `True` and `False`. In other words, something
 isOn = True
 isChecked = False
 ```
+A `bool()` method can help convert a value to a boolean. The below code snippets showcase how a `bool()` function ca be used.
+
+```python
+print(bool("abc")) #returns True
+print(bool(0))  #returns False
+```
+
+The `bool()` function returns False when there are no parameters.
 
 4. Float
 
