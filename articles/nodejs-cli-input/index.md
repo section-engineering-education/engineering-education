@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/nodejs-cli-input/
 title: Node.js CLI Input
-description: This tutorial will give readers a detailed guide on how to get input from an user in a Node.js CLI application.
+description: This tutorial will give readers a detailed guide on how to get input from a user in a Node.js CLI application.
 author: mohan-raj
 date: 2021-01-14T00:00:00-18:00
 topics: [Node.js]
@@ -224,7 +224,7 @@ if (readlineSync.keyInYN('Yes?')) {
 }
 ```
 
-The `readlineSync.keyInSelect()` is used to prompt an user to choose an item from a list. The function will return the number the user selected. The user doesn't have to press the *Enter* button when we use this function.
+The `readlineSync.keyInSelect()` is used to prompt a user to choose an item from a list. The function will return the number the user selected. The user doesn't have to press the *Enter* button when we use this function.
 
 ```JavaScript
 let colors = ['Black', 'White', 'Gray', 'Yellow', 'Blue'];
