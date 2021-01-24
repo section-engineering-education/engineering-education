@@ -48,7 +48,7 @@ I've set up 3 screens in the `screens/` directory:
 
 - _PhoneNumber.js_: Screen to enter the phone number.
 
-- _OTP.js_: Screen to enter the one-time verification code.
+- _VerifyCode.js_: Screen to enter the one-time verification code.
 
 - _Authenticated.js_: Screen that the user can see only if he is logged in.
 
@@ -218,7 +218,7 @@ dependencies {
 
 With this, the firebase authentication module is set up in our application.
 
-### Collecting Phone Number
+### Phone Number
 
 In _App.js_, Let's import the Authentication module from Firebase.
 
@@ -232,7 +232,7 @@ We should use the `signInWithPhoneNumber` method in the auth module. It accepts 
 auth().signInWithPhoneNumber('+91 1234567890');
 ```
 
-The `signInWithPhoneNumber` method returns a `confirmation` method that accepts a one time verification code sent by Firebase to the given phone number. The `confirmation` method also returns a Promise. If the verification code is correct, the promise is resolved. If not, it's rejected.
+The `signInWithPhoneNumber` method returns a object with a `confirmation` method that accepts a one time verification code sent by Firebase. The `confirmation` method is also an async method. If the verification code is correct, the promise is resolved. If not, it's rejected.
 
 Let's create a state using the `useState` hook to hold the `confirmation` method.
 
@@ -248,11 +248,11 @@ Now, let's write a function that accepts a phone number as an argument, and call
 
 ```JSX
 async function signIn(phoneNumber) {
-  try{
+  try {
     const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
     setConfirm(confirmation);
-  } catch(error) {
-    alert(error)
+  } catch (error) {
+    alert(error);
   }
 }
 ```
@@ -265,15 +265,17 @@ return <PhoneNumber onSubmit={signIn} />;
 
 In *PhoneNumber.js*, I've already set up a state that holds the phone number from the input. Let's call the function that we passed and send the phone number as the argument.
 
-You should pass a function to the `onPress` property of the button to call it when the user presses the button.
+To call a function when the user presses a button, you should pass the function to the `onPress` property of the button.
 
 ```JSX
 <Button title="Phone Number Sign In" onPress={() => props.onSubmit(phoneNumber)} />
 ```
 
-### Collecting OTP
+Now, when the user presses the button, the `signInWithPhoneNumber` method from the auth module is called and it will trigger the Firebase servers to send a verification code to the given phone number. It will also return a method that should be used to confirm the verification code.
 
-When the `confirmation` method is available, we should display the *OTP* screen instead of the *PhoneNumber* screen.
+### Verification Code
+
+When the `confirmation` method is available, we should display the *VerifyCode* screen instead of the *PhoneNumber* screen.
 
 ```JSX
 if (confirm) return <OTPScreen />;
@@ -281,46 +283,57 @@ if (confirm) return <OTPScreen />;
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-If the one time code is verfied, the user will be authenticated into your app. So, let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
+Now, let's write a function to confirm the verification code.
 
 ```JSX
-const [authenticated, setAutheticated] = useState(false);
-```
-
-Now, let's write a function that accepts a one-time verification code as an argument, and calls the `confirm` method with the code. 
-
-We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the `authenticated` state to `true` using the `setAutheticated` method.
-
-```JSX
-async function confirmOTP(otp) {
+async function confirmVerificationCode(code) {
   try {
-    await confirm.confirm(otp);
-    setAutheticated(true);
-  } catch {
+    confirm.confirm(code);
+  } catch (error) {
     alert('Invalid code');
   }
 }
 ```
 
-We should pass this function to the `OTP` screen as a prop, and call this function when the user presses the confirm button.
+We should pass this function to the *VerifyCode* screen as a prop, and call this function when the user presses the confirm button.
 
 ```JSX
-if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
+if (confirm) return <OTPScreen onSubmit={confirmVerificationCode} />;
 
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-In *OTP.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and send the verification code as the argument.
-
-You should pass a function to the `onPress` property of the button to call it when the user presses the button.
+In *VerifyCode.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and send the verification code as the argument.
 
 ```JSX
 <Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
 ```
 
-### Display Autheticated Screen
+Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the code if the verfication code is correct. If not, we will display an error message to the user.
 
-If the user is autheticated, we should display the authenticated screen. We will use the `autheticated` state that we defined in the previous step.
+### Autheticated Screen
+
+If the verification code is correct, the user will be authenticated into your app. So, let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
+
+```JSX
+const [authenticated, setAutheticated] = useState(false);
+```
+
+We can add a listener to the authentication state of the user. This event will be triggered whenever the authentication state of the user changes inside the application.
+
+You can set an event handler to this listener. This handler will recieve the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise they are signed-in. 
+
+Let's set the `authenticated` state to `true` if the `user` object is not `null`.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAutheticated(true);
+  }
+})
+```
+
+If the user is autheticated, we should display the *Authenticated* screen. 
 
 ```JSX
 if (authenticated) return <Autheticated />;
