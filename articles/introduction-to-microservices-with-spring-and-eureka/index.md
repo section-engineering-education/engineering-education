@@ -32,7 +32,7 @@ Although scaling up only for that service seems wasteful. Not to mention the sim
 
 You can solve all these problems through the use of microservice architecture.
 
-With microservices, you split the codebase into several smaller applications. Each application acts as its own small individual service hence the name *microservice*. Each microservice would have its own codebase, server, and sometimes database. 
+With [microservices](https://www.tibco.com/reference-center/what-is-microservices-architecture?utm_medium=cpc&utm_source=google&utm_content=s&utm_campaign=ggl_s_en_nam_TCI_nonbrand_events_beta&utm_term=%2Bwhat%20%2Bis%20%2Ba%20%2Bmicroservice&_bt=473116235446&_bm=b&_bn=g&gclid=Cj0KCQiA0rSABhDlARIsAJtjfCcK5uqb_pFuHmAHQ5p2zTuVwEys1hFlG7CZq9RG35hoJw_DtUyc6rgaAs24EALw_wcB), you split the codebase into several smaller applications. Each application acts as its own small individual service hence the name *microservice*. Each microservice would have its own codebase, server, and sometimes database. 
 
 Although this may seem to be unnecessary at first, it can very well be worth it for its advantages. Say you wanted to make use of a new technology for the application. 
 
@@ -55,7 +55,7 @@ Let’s also consider the issue of scaling that we talked about earlier. Say you
 
 Service discovery gives you a flexible way to locate microservices. On a high level, here’s how this would work. Whenever you want to find and call a microservice, you would use another server as a medium to do so. 
 
-This server is called the discovery server. When they start up, your microservices first register themselves with this discovery server. This lets the discovery server know their location so it can share it later. 
+This server is called the [discovery server](https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/). When they start up, your microservices first register themselves with this discovery server. This lets the discovery server know their location so it can share it later. 
 
 Then, whenever we want to call a microservice, we ask the discovery server to help us connect to it. *Note microservices may cache the location of each other so they don’t have to contact the discovery server every time.* Service discovery comes in two different forms, client-side and server-side service discovery.
 
