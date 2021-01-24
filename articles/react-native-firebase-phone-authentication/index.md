@@ -230,11 +230,15 @@ import auth from '@react-native-firebase/auth';
 
 We should use the `signInWithPhoneNumber` method in the auth module. It accepts a phone number in the form of a string as it's argument. It is an `async` function, thus it returns a Promise.
 
+The phone number should also contain the country code in it.
+
 ```JSX
 auth().signInWithPhoneNumber('+91 1234567890');
 ```
 
-The `signInWithPhoneNumber` method returns a object with a `confirmation` method that accepts a one time verification code sent by Firebase. The `confirmation` method is also an async method. If the verification code is correct, the promise is resolved. If not, it's rejected.
+This will trigger the Firebase servers to send a verification code to the given phone number.
+
+The `signInWithPhoneNumber` method returns a object with a `confirmation` method that is used to verify the one-time code sent to the number.
 
 Let's create a state using the `useState` hook to hold the `confirmation` method.
 
@@ -285,7 +289,9 @@ if (confirm) return <OTPScreen />;
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-Now, let's write a function to confirm the verification code. We should also make sure to clear the `confirm` method from the state once it serves its purpose.
+Now, let's write a function to confirm the verification code.
+
+The `confirm` method is an async method. If the verification code is correct, the promise will be resolved. If not, it'll be rejected. We should also make sure to clear the `confirm` method from the state once it serves its purpose.
 
 ```JSX
 async function confirmVerificationCode(code) {
@@ -298,7 +304,7 @@ async function confirmVerificationCode(code) {
 }
 ```
 
-We should pass this function to the *VerifyCode* screen as a prop, and call this function when the user presses the confirm button.
+Let's pass this function to the *VerifyCode* screen as a prop, and call this function when the user presses the confirm button.
 
 ```JSX
 if (confirm) return <OTPScreen onSubmit={confirmVerificationCode} />;
@@ -306,27 +312,27 @@ if (confirm) return <OTPScreen onSubmit={confirmVerificationCode} />;
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-In *VerifyCode.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and send the verification code as the argument.
+In *VerifyCode.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and pass the verification code as the argument.
 
 ```JSX
 <Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
 ```
 
-Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the code if the verfication code is correct. If not, we will display an error message to the user.
+Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the app if the verfication code is correct. If not, we will display an error message to the user.
 
 ### Autheticated Screen
 
-If the verification code is correct, the user will be authenticated into your app. So, let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
+We can add a listener to the authentication state of the user. The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
+
+You can set an event handler to this listener. This handler will recieve the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise they are signed-in. 
+
+Let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
 
 ```JSX
 const [authenticated, setAutheticated] = useState(false);
 ```
 
-We can add a listener to the authentication state of the user. This event will be triggered whenever the authentication state of the user changes inside the application.
-
-You can set an event handler to this listener. This handler will recieve the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise they are signed-in. 
-
-Let's set the `authenticated` state to `true` if the `user` object is not `null`.
+Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
 
 ```JSX
 auth().onAuthStateChanged((user) => {
