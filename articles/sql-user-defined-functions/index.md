@@ -8,7 +8,7 @@ In this tutorial, we will be discussing user-defined functions in SQL Server. Mo
 When writing code, one must aim to follow the DRY Principle (Don’t Repeat Yourself). One way to avoid repetition of code is to put chunks of code inside Functions and invoke them as required.
 
 
-The concept of Functions in SQL is like that in any other programming language like Python. The major difference being the way they are implemented. There are two main types of user-defined functions in SQL based on the data they return
+The concept of functions in SQL is similar to other programming languages like Python. The major difference being the way they are implemented. There are two main types of user-defined functions in SQL based on the data they return:
 
   
 
