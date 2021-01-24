@@ -85,13 +85,13 @@ Before creating a table-valued function, we will create a simple table.
 
   
 ```sql
-	-- Creating new table
+    -- Creating new table
     CREATE TABLE TEST(
 	    num1 INT,
 	    num2 INT
     );
     
-	-- Inserting values into new table
+    -- Inserting values into new table
     INSERT INTO TEST
     VALUES
     (1,2),
@@ -106,7 +106,7 @@ The table contains 2 columns. We will create a function which returns a new tabl
     RETURNS TABLE
     AS
     RETURN
-		-- statement to calculate sum
+	    -- statement to calculate sum
 	    SELECT num1 , num2, num1 + num2 AS 'SUM'
 	    FROM TEST;
 ```
@@ -120,7 +120,7 @@ The table contains 2 columns. We will create a function which returns a new tabl
 
 #### Scalar functions
 ```sql
-	-- invoking previously created scalar function
+    -- invoking previously created scalar function
     SELECT dbo.scalar_func(1,2);
 ```
 When using functions in statements, we will need to prefix our functions with the database schema it is associated with. The default schema in Microsoft SQL Server is ```dbo```. If the database schema is not mentioned, SQL will give an error,
@@ -129,7 +129,7 @@ When using functions in statements, we will need to prefix our functions with th
 
 Since the function returns a table, we will need to select the columns we are interested in.
 ```sql
-	-- invoking previously created table valued function
+    -- invoking previously created table valued function
     SELECT * FROM dbo.table_valued_func();
 ```
 Like scalar functions, we will need to mention the database schema.
@@ -150,7 +150,7 @@ We will update our table-valued function to add 10 to the existing sum and chang
     RETURNS TABLE
     AS
     RETURN
-		-- updating statement to add 10 to sum
+	    -- updating statement to add 10 to sum
 	    SELECT num1 , num2, num1 + num2 + 10 AS 'NEW_SUM'
 	    FROM TEST;
 ```
@@ -160,7 +160,7 @@ The ```Alter``` Keyword is used to update the function.
 
 #### Drop
 ```sql
-	-- dropping previously created scalar function
+    -- dropping previously created scalar function
     DROP FUNCTION dbo.scalar_func;
     -- dropping previously created tabular function
     DROP FUNCTION dbo.table_valued_func;
@@ -175,7 +175,7 @@ The ```Alter``` Keyword is used to update the function.
 
 Below is the syntax to declare and initialize variables
 ```sql
-	-- declaring integer variable
+    -- declaring integer variable
     DECLARE @result AS INT;
     -- initializing created varaible
     SET @result = @a + @b;
@@ -192,7 +192,7 @@ Below is an example of a scalar function using a variable
     RETURNS INT
     AS
     BEGIN
-		-- using variables inside function
+	    -- using variables inside function
 	    DECLARE @result AS INT
 	    SET @result = @a + @b
 	    RETURN @a + @b
@@ -205,12 +205,12 @@ The syntax for ```IF...ELSE``` Statements is like ```IF...ELSE``` Statements in 
 ```sql
     DECLARE @num AS INT;
     SET @num = 4;
-	-- if condition
+    -- if condition
     IF @num % 2 = 0    
 	    BEGIN
 		    SELECT 'Number is Even'
 	    END
-	-- else condition
+    -- else condition
     ELSE
 	    BEGIN
 		    SELECT 'Number is Odd'
@@ -226,11 +226,11 @@ Below is a function using an ```IF...ELSE``` Block
     AS
     BEGIN
 	    DECLARE @result AS BIT
-		-- set variable to 1 if number is even
+	    -- set variable to 1 if number is even
 	    IF @num % 2 = 0
 		    SET @result = 1
 	    -- set variable to 0 if number is odd
-		ELSE
+	    ELSE
 		    SET @result = 0
 	    RETURN @result
     END;
