@@ -1,4 +1,23 @@
-In the previous article, we looked at the theory behind linear regression. In this article, we will implement the linear regression algorithm from scratch and understand the various steps involved. In my earlier [article](/engineering-education/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason the outputs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/linear-regression-code/
+title: Implementing Linear Regression Using Gradient Descent in Python
+description: This article will be a hands-on implementation of Linear Regression using the Gradient Descent algorithm.
+author: lalithnarayan-c
+date: 2021-01-24T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/linear-regression-code/hero.jpg
+    alt: Linear Regression example image
+---
+In the previous article, we looked at the theory behind linear regression. In this article, we will implement the linear regression algorithm from scratch and understand the various steps involved. 
+<!--more-->
+
+In my earlier [article](/engineering-education/linear-regression-introduction/), I used the in-built function in scikit-learn to predict the houses' prices. Towards the end of the article, we will compare the two approaches and reason the outputs.
 
 ### Prerequisites
 
