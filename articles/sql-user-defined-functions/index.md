@@ -44,7 +44,7 @@ The concept of functions in SQL is similar to other programming languages like P
 
 - A SQL Server with a database
 
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) to connect to your database.
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) to connect to your database
 
 ---
 
