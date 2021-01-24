@@ -1,0 +1,75 @@
+### An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
+
+![hero-image](/engineering-education/ssl-tls/hero.jpg)
+
+Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/iar-afB0QQw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
+
+**Introduction**
+
+2020 was a challenging year that resulted in some crucial, groundbreaking innovations and changes across domains. With the pandemic compelling various operations and workforce to go remote, thereby leaving the infrastructure susceptible to increased cyber attacks, the need for security has undoubtedly been reinforced. Anti-malware softwares, intrusion prevention systems, firewalls, Virtual Private Networks (VPNs) are some of the rudimentary technologies required to safeguard your resources these days. In this article, we will focus on one such security technique i.e SSL/TLS communication encryption protocol. 
+
+In simple terms, encryption is the process of converting data into another form (referred to as Cipher text) that can be understood only by parties that possess a secret decryption key. To everybody else, it’s gibberish.  [Google's transparency report](https://transparencyreport.google.com/https/overview?hl=en) shows the significant increase in the amount of encrypted traffic on the internet over the last few years. As of December 2020, approximately 95% of all traffic across Google was encrypted. Many web browsers have been relentlessly pushing websites to use encryption by marking HTTP sites as unsafe. 
+
+**What makes HTTPS sites safe?**
+
+Hypertext Transfer Protocol Secure ([HTTPS](https://en.wikipedia.org/wiki/HTTPS)) is an extension of Hypertext Transfer Protocol (HTTP). All HTTPS traffic is encrypted using a communication protocol called Secure Sockets Layer (SSL)/ Transport Layer Security (TLS) protocol.
+
+**What is SSL/TLS?**
+
+Secure Sockets Layer (SSL) and its successor, Transport Layer Security (TLS) are encryption protocols designed to ensure security, reliability and authenticity of the information being exchanged. Although SSL is deprecated and replaced by TLS, the industry uses the two terms interchangeably. To avoid confusion, we’ll continue to refer to TLS as SSL/TLS throughout this article.
+
+**History of SSL/TLS**
+
+The earliest original SSL protocols were developed at Netscape. SSL 2.0 was the first version to be released to the public in 1995. SSL 2.0 had vulnerabilities and consequently, [SSL 3.0](https://tools.ietf.org/html/rfc6101) was developed and released in the following year. In 2014, SSL 3.0 was found to be vulnerable to the [POODLE attack](https://en.wikipedia.org/wiki/POODLE). It was deprecated in 2015. SSL 3.0 was shortly followed by TLS 1.0 in 1999. We’ve had TLS 1.1, TLS 1.2 and TLS 1.3 so far. TLS 1.0 and TLS 1.1 were deprecated in 2020. You can read more about the protocol’s history and development [here](https://en.wikipedia.org/wiki/Transport_Layer_Security#History_and_development).
+
+![SSL/TLS Timeline](/engineering-education/ssl-tls/timeline.png)
+
+Before we dive into the working of SSL/TLS, let us familiarise ourselves with a few technical terms:
+
+1. [Encryption](https://en.wikipedia.org/wiki/Encryption)  is a cryptological technique of converting data in its original form (known as plaintext) into an alternative form (known as cipher text) that can be deciphered only by authorised parties. The conversion is done by a cryptological algorithm (cipher) that takes a secret “key” as the input to reverse the action. Although encryption does not prevent intrusion, it aids in securing your data by rendering it useless to overhearers. Only those in possession of the decryption key will be able to decipher it.
+Two of the most widely used encryption techniques are briefly explained below:
+
+    - **Symmetric key encryption** is the technique of encrypting information using cryptographic algorithms that use the same key for encryption and decryption. Such algorithms are called symmetric ciphers. When Alice and Bob communicate, they encrypt and decrypt their messages using a shared key. Care should be taken that this shared key isn’t compromised because it allows anybody to decrypt the ciphertext.
+
+        ![Symmetric key encryption](/engineering-education/ssl-tls/Sym.png)
+
+    - **Asymmetric key encryption** (also called public-key encryption) is the technique of encrypting information using cryptographic algorithms that use different keys for encryption and decryption. Such algorithms are called asymmetric ciphers. When Alice sends a message to Bob, she encrypts it using Bob’s public key. Bob decrypts Alice’s message using his private key, which isn’t known to anybody but him. Asymmetric encryption is more secure than symmetric encryption. However, it is computationally more expensive.
+
+         ![Asymmetric key encryption](/engineering-education/ssl-tls/Asym.png)
+
+2. **Cipher Suites** are a set of algorithms that are used to secure information being exchanged by the end points. A cipher suite announces the key exchange algorithm, the authentication algorithm, the bulk encryption algorithm and the Message Authentication Code (MAC) algorithm it supports. For example, the  `ECDHE-ECDSA-AES256-GCM-SHA384` suite implies that ECDHE is the key exchange algorithm, ECDSA is the authentication algorithm, AES256-GCM is the bulk encryption algorithm and SHA384 is the MAC algorithm it uses. Cipher suites are updated with safer algorithms from time to time. You can find out more about cipher suites [here](https://www.venafi.com/blog/what-are-cipher-suites).
+
+3. **SSL certificates** are digital data files that bind an organisation/domain name to a cryptographic key. SSL certificates are issued by Certificate Authorities (CAs) after verification of the data provided by the organisation. By signing and issuing an SSL certificate, the CA assures that the information enclosed in it is valid. 
+
+**How does SSL/TLS work?**
+
+As discussed before, public-key encryption requires high compute and adds considerable overhead. SSL/TLS, thus, makes use of public-key encryption just in the beginning, to exchange session keys. These session keys are symmetric in nature and are used to carry out the rest of the communication. SSL/TLS handshake is a part of an SSL/TLS exchange wherein the two end points exchange messages and establish the details of their communication. Since SSL/TLS is most widely used to encrypt web traffic, we’ll use a web client and server as examples of end points.
+
+**NOTE:** The exact steps of a TLS handshake will vary depending upon the kind of key exchange algorithm used and the cipher suites supported by both sides. RSA  (Rivest–Shamir–Adleman), Diffie-Hellman (DH), Ephemeral Diffie-Hellman (DHE), Elliptic Curve Diffie-Hellman (ECDH) and Ephemeral Elliptic Curve Diffie-Hellman (ECDHE) are some examples of key exchange algorithms.
+
+The steps of TLS handshake with RSA key exchange algorithm are discussed below:
+
+1. **Client Hello:** The client initiates communication by sending a “Client Hello” to the server. This message contains the TLS version and a list of cipher suites it supports, along with a string of random bytes called “client random”.
+2. **Server Hello:** The server sends a “Server Hello” in response to the client. This message contains the server's SSL/TLS certificate, server’s chosen cipher suite, session ID and a string of random bytes called “server random”.
+**Note:** The server may request the client for its Client Certificate by sending a "CertificateRequest" message. This is typically called a two-way handshake which is mostly used in server to server communication where both parties need to validate the identity of each other.
+3. **Authentication and pre-master secret:** Client authenticates the server’s SSL/TLS certificate with the CA that issued it. It then sends another random string of bytes called “pre-master secret”, encrypted with the server’s public key (derived from the server's SSL/TLS certificate).
+4. **Decryption of pre-master key:** Server decrypts the pre-master secret using its private key.
+5. **Generation of Session keys** (also called master keys): Client generates session key using Server Random and pre-master secret. Server generates session key using Client Random and pre-master secret. These session keys will be symmetrical.
+6. **Client ready:** The client sends a "Finished" message encrypted with the session key.
+7. **Server ready:** The server sends a "Finished" message encrypted with the session key. 
+8. **Encryption with session keys:** The handshake is now complete, and the rest of the communication is encrypted using session keys.
+
+![TLS Handshake](/engineering-education/ssl-tls/Handshake.png)
+
+**Note:** [RFC 5246](https://tools.ietf.org/html/rfc5246#page-33) lays down the messages that are exchanged during the SSL/TLS handshake.
+
+**Summary**
+
+SSL/TLS is a cryptographic protocol that enables applications to communicate securely over the internet. It is widely used for secure web browsing, audio/video conferencing, email and file transferring, voice-over-IP, instant messaging and more. TLS 1.3, currently in use, comes with notable security improvements. It is faster and more efficient than its predecessors. With 85% of the web traffic encrypted today, there’s no doubt that in a few more years, TLS security will be ubiquitous.
+
+**Additional Resources**
+
+1. [The Evolution of SSL and TLS](https://www.digicert.com/dc/blog/evolution-of-ssl/)
+2. [Cipher Suites: Ciphers, Algorithms and Negotiating Security Settings](https://www.thesslstore.com/blog/cipher-suites-algorithms-security-settings/)
+3. [The SSL/TLS Handshake: an Overview](https://www.ssl.com/article/ssl-tls-handshake-overview/)
+4. [How is Diffie-Hellman Key Exchange Different from RSA?](https://www.venafi.com/blog/how-diffie-hellman-key-exchange-different-rsa)
