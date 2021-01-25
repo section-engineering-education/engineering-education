@@ -1,16 +1,16 @@
 ### Introduction
 A name can represent only one entity in each scope. Thus, in the same scope, there cannot be two variables with the same name as this can generate compiler errors.  we may declare two variables or member functions which have the same name within the same scope using `namespace`. This causes several functions to have the same name and all functions can be accessed from anywhere in the program by referencing the name of the namespace. This article will go through namespaces and how they are used in C++.
 
-#### Prerequisites
+### Prerequisites
 To follow this article, you’ll need to have:
 - [Codeblocks IDE]() to run the code.
 - A basic understanding of the C++ language.
 - A basic understanding of the C++ functions.
 
-#### What is a namespace?
+### What is a namespace?
 [Namespace](https://www.educba.com/c-plus-plus-namespace) refers to various blocks that can be created in a program to group all similar objects, and you can refer to all variables, functions, or classes within a block.
 
-#### Some of the features of namespace declarations are:
+### Some of the features of namespace declarations are:
 - Declarations of namespace appear only on a global scale.
 - Nesting namespace declarations inside another namespace is possible.
 - Namespace declarations do not have permission labels (private, public, and protected) because they are declared in global scopes and can be easily nested in other namespaces.
@@ -18,7 +18,7 @@ To follow this article, you’ll need to have:
 - The definition of a namespace can be divided into multiple units.
 - Multiple blocks of namespace declarations are allowed for the same name. Within those blocks in the named scope is where all the declarations are made.
 
-##### Syntax of namespace declaration:
+#### Syntax of namespace declaration:
 The namespace is a declarative region that specifies different scopes for different functions and variables, so we can use the name of the namespace when one has to refer to one such variable function::
 
 ```c++
@@ -41,7 +41,7 @@ as shown below:
 namespace_name :: variablename
 Namespace_name :: functionname
 ```
-#### How namespace works in c++
+### How namespace works in c++
 When a namespace is declared using the keyword `namespace`,  all the functions, variables, or classes declared inside that namespace belongs to that scope and can be referred to using the `name` of that namespace with the scope resolution operator`::`.
 
 The compiler sends the control to the namespace block when it encounters the scope resolution operator`::`. A namespace can also be defined in multiple scopes and if a namespace is unnamed, the variables and functions specified within them can be explicitly accessed in the same manner that global variables are accessed.
@@ -70,7 +70,7 @@ This allows the developer to call functions from inside the namespace without ne
 
 which is used to give access to the namespace called standard that includes C++ I/O objects `cout` and `cin`.
 
-#####  Example 1
+####  Example 1
 Program to illustrate working of namespace:
 
 ```c++
@@ -121,7 +121,7 @@ no3::sample::show()
 ```
 In the program above we have described the same function name in two different namespaces, `no1` and `no2`. We have also defined and accessed the class `sample` in another namespace `no3`.  As we have mentioned earlier to access the functions of the various namespaces the scope resolution operator`::` is used. As shown in the program, we can access the function `fun()` by using the operator as `no1::fun()`.
 
-##### Example 2
+#### Example 2
 Program to illustrate the working of namespace with the same name:
 
 ```c++
@@ -160,7 +160,7 @@ Value returned by the unnamed namespace =15
 ```
 In the program above, we can see how we can create several namespaces with the same name. The name `sample` has been used by two namespaces that have different variables. Thus, in the same scope, are the variables within both of them. We can also see how to define the unnamed namespace and access the function `fun()`.
 
-##### Example 3
+#### Example 3
 Program to illustrate nested namespace:
 
 ```c++
@@ -202,11 +202,11 @@ Value of sample1 in nested namespace third =15
 ```
 In the program above, we can see how nested namespaces are declared and accessed from outside of the namespace. The way we access a variable in the namespace without the scope resolution operator`::` and use the `using` directive is also demonstrated. We have also seen how we can create the namespace `myalias` that allows us to use it explicitly using the name of the alias.
 
-#### Advantages of namespace
+### Advantages of namespace
 
 - In one program, namespace helps a lot to define different scopes to provide scope to different identifiers declared within them.
 - By using namespace - the same variable names may be reused in a different program.
 - Use libraries- Namespaces and named spaces help a lot to use both libraries together, and defining the name using the scope resolution operator, helps determine the variable we try to access.
 
-#### Conclusion 
+### Conclusion 
 The benefits of using namespace in our programs are evident as we have seen above. By using namespace, we can prevent conflicts in files with the same variable names and function names within the same program. The use of namespace to define identical code in different files and libraries increases our code's readability.
