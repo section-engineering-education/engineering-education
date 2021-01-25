@@ -254,3 +254,56 @@ When the user presses the *login* button, we should call this function. We shoul
 
 Now, when a user presses the *Login* button, the `signInWithEmailAndPassword` is called with the email and password, and this login the user into the app. If there is any error, we'll display it to the user using `alert()`.
 
+### Signout
+
+We should use the `signOut` method in the auth module to sign out a user from the application.
+
+Let's import the `auth` module in *Authenticated.js*.
+
+```JSX
+import auth from '@react-native-firebase/auth';
+```
+
+Let's call the `signOut` method when the user presses the signout button.
+
+```JSX
+<Button title="Signout" onPress={() => auth().signOut()} />
+```
+
+Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
+
+Thus, we should set the authenticated state to `false` if we receive `null`.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAuthenticated(true);
+  } else {
+    setAuthenticated(false);
+  }
+})
+```
+
+### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+
+2. We created a Firebase project.
+
+3. We set up the authentication module and enabled email/password authentication in our project.
+
+4. We cloned the starter code.
+
+5. We added the dependencies to the `build.gradle` files.
+
+6. We added a function to create a new user with the `createUserWithEmailAndPassword` method from the `auth` module.
+
+7. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
+
+8. We added a function to log in a user with the `signInWithEmailAndPassword` method from the `auth` module.
+
+9. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
