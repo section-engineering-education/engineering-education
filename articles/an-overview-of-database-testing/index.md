@@ -7,7 +7,7 @@ Understanding the concept of database testing requires knowledge of the terms 'd
 
 Database testing is the process of validating data existing in a database by substantiating the elements that affect the data and other related functionalities. It can also be referred to as back-end testing. Some of the tests conducted during database testing include data validity checks, data integrity tests, tests for procedures, triggers, performance checks, and database functions.
 
-This validation process is used in an online analytical processing (OLAP) system. Some of the tools that can be used for database testing include Selenium and QuickTest Professional (QTP). 
+This validation process is used in an [online analytical processing (OLAP)](https://en.wikipedia.org/wiki/Online_analytical_processing) system. OLAP is a system used for data modelling and multidimensional data analysis. Some of the tools that can be used for database testing include Selenium and QuickTest Professional (QTP). 
 
 Let’s consider a database that stores the daily transactions of users in a retail store. In this case, database testing can be done to check whether:
 * all the information relating to a transaction is in the database. 
@@ -19,8 +19,8 @@ Let’s consider a database that stores the daily transactions of users in a ret
 ### Why Database Testing is Important
 Database testing is important because it enables users to validate data mapping, data integrity, ACID (atomicity, consistency, isolation, and durability) properties, and business rules conformity. These aspects can be explained as follows:
 * **Data Mapping:** In database systems, data travels from the user interface (front-end) to the database (back-end). This movement can also be in the opposite direction. Database testing verifies whether data appearing in a table at the user interface is mapped well in the database (at a corresponding table).
-* **Data Integrity:** Data integrity tests involve an evaluation of the operations, methods, and processes used for managing, updating, and accessing the database. These operations are commonly known as CRUID (create, retrieve, update, and delete).
-* **ACID properties:** Database testing ensures that ACID properties are validated. These properties can be described as follows.
+* **Data Integrity:** Data integrity tests involve an evaluation of the operations, methods, and processes used for managing, updating, and accessing the database. These operations are commonly known as CRUD (create, retrieve, update, and delete).
+* **ACID properties:** Database testing ensures that ACID properties are validated. These properties can be described as follows:
     * **Atomicity:** The transaction can generate two main types of results: pass or fail.
     * **Consistency:** This indicates that the validity of the database will remain once the transaction is finalized.
     * **Isolation:** Various transactions can be done without affecting each other. 
@@ -68,7 +68,7 @@ The following is a description of the various tools for database testing and the
 * **Unit testing tools:** These tools test whether each element of a database object works as required. Examples include SQLUnit, DBfit, and DBUnit. 
   
 ### Conclusion
-Database testing is an important process that helps in validating data and checking the functionality of databases. This process consists of various validations such as data mapping, business rules conformity, data integrity, and AICD properties. Structural, functional, and non-functional testing are the main types of database testing. 
+Database testing is an important process that helps in validating data and checking the functionality of databases. This process consists of various validations such as data mapping, business rules conformity, data integrity, and ACID properties. Structural, functional, and non-functional testing are the main types of database testing. 
 
 Databases should be tested to ensure the optimal functioning of key database operations. This will minimize the risk of a system crash. Database testing is an effective way of enhancing the quality and durability of databases. Organizations should choose reliable database testing tools that align with their business goals. 
 
