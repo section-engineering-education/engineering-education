@@ -48,7 +48,7 @@ This will be the folder structure of the application.
 
 I've set up 2 screens in the `screens/` directory:
 
-- _Authentication.js_: Screen to login or create account.
+- _Authentication.js_: Screen to signin or create account.
 
 - _Authenticated.js_: Screen that the user can see only if he is logged in.
 
@@ -149,7 +149,7 @@ auth().createUserWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
 
 This will create a new user in the Firebase app with the email ID `johndoe@gmail.com` and his respective password. Two users in the same application can't have the same email ID.
 
-This function will also login the user into the application after creating an user account.
+This function will also signin the user into the application after creating an user account.
 
 In the *App.js*, Let's import the `auth` module.
 
@@ -231,7 +231,7 @@ Let's write a function that will accept an email and a password and call the `si
 The `signInWithEmailAndPassword` is an asynchronous function.
 
 ```JSX
-const login = (email, password) => {
+const signin = (email, password) => {
   try {
     auth().signInWithEmailAndPassword(email, password);
   } catch (error) {
@@ -243,16 +243,18 @@ const login = (email, password) => {
 Now, Let's pass this function to the *Authentication* screen.
 
 ```JSX
-return <Authentication login={login} createUser={createUser} />;
+return <Authentication signin={signin} createUser={createUser} />;
 ```
 
-When the user presses the *login* button, we should call this function. We should pass the email and the password from the state to this function when it is called.
+When the user presses the *signin* button, we should call this function. We should pass the email and the password from the state to this function when it is called.
 
 ```JSX
-<Button title="Login" onPress={() => props.login(email, password)} />
+<Button title="signin" onPress={() => props.signin(email, password)} />
 ```
 
-Now, when a user presses the *Login* button, the `signInWithEmailAndPassword` is called with the email and password, and this login the user into the app. If there is any error, we'll display it to the user using `alert()`.
+Now, when a user presses the *signin* button, the `signInWithEmailAndPassword` is called with the email and password, and this signin the user into the app. If there is any error, we'll display it to the user using `alert()`.
+
+![Signin](signin.gif)
 
 ### Signout
 
@@ -284,6 +286,8 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
+![Signout](signout.gif)
+
 ### Let's Recap
 
 1. We set up our development environment and created a React Native app.
@@ -300,7 +304,7 @@ auth().onAuthStateChanged((user) => {
 
 7. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
 
-8. We added a function to log in a user with the `signInWithEmailAndPassword` method from the `auth` module.
+8. We added a function to signin a user with the `signInWithEmailAndPassword` method from the `auth` module.
 
 9. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
 
