@@ -1,9 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/sql-user-defined-functions/
+title: Working With User-Defined functions In SQL Server
+description: This tutorial will discuss user-defined functions in SQL Server.  
+author: rahul-banerjee
+date: 2021-01-25T00:00:00-23:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# Working With User-Defined functions In SQL Server
-
-  
-
+  - url: /engineering-education/sql-user-defined-functions/hero.jpg
+    alt: SQL Functions image
+---
 In this tutorial, we will be discussing user-defined functions in SQL Server. More specifically, we will be discussing Scalar functions and Table-Valued functions.
+<!--more-->
 
 When writing code, one must aim to follow the DRY Principle (Don’t Repeat Yourself). One way to avoid repetition of code is to put chunks of code inside functions and invoke them as required.
 
