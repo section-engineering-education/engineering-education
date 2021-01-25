@@ -99,7 +99,7 @@ function sum(){
 window.sum=sum;
 ```
 
-In the file module above, we have the ```import``` statement with a list of items, in this case, a method. This function is now available in our module for use.
+In the file module above, we have the ```import``` statement with a list of items, in this case, a method.   This function is now available in our module for use.
 
 NOTE: All items listed in the import statement are always read-only.  It means that they remain unchanged in the importing module.
 
@@ -141,11 +141,10 @@ test.html:2 GET file:///var/www/html/Projects/Javascript/results.js net::ERR_FAI
 
 ```
 Modules are only designed to work on ``` HTTP(S)``` and not in local files.  
-To test this example to get the actual result, a server is required. This may include your local servers such as static servers, or a live server available on your editor, in my case Visual Studio Code.  
+To test this example to get the actual result, a server is required. This may include your local servers such as static servers, or a live server available on your editor, in my case Visual Studio Code, [Live server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).  
+Refer to the link to learn how to start a live server from your VSCode.  
 
 When you click on the ```Calculate Sum```button, a result is displayed on the screen, ```3```. Now try to modify the parameters of the ```addTwoNumbers``` in the ```result.js``` file.  You will realize the sum is being displayed each time you refresh your browser.  
-
-[Live server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 ***NOTE***: The Javascript module could also be embedded directly into the HTML file as follows:-  
 
