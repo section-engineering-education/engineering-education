@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-image-labeling-with-firebase/
 title: Image Labeling Using Firebase ML in a Non-Expo React Native Application 
-description: This tutorial will give readers a detailed guide on how to implment image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
+description: This tutorial gives readers a detailed guide on how to implment image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
 date: 2021-01-07T00:00:00-15:00
 topics: []
@@ -143,7 +143,6 @@ We should install the `@react-native-firebase/app` package in our app to complet
 npm install @react-native-firebase/app
 ```
 
-
 ### Setting up Cloud Vision API
 
 The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
@@ -176,7 +175,7 @@ With this, you have set up the Cloud Vision API for your Firebase project. This 
 
 We'll be writing all of our code in the App.js file.
 
-Let's add 2 buttons to the screen to take a photo and pick a photo.
+Let's start by adding 2 buttons to the screen to `take a photo` and `pick a photo`.
 
 ```JSX
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native';
