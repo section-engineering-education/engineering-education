@@ -135,9 +135,13 @@ int main() {
 	cout << "x / y = " << (x / y) << endl;
 	cout << "x % y = " << (x % y) << endl;
 	cout<<" ++x : "<< ++x <<endl;
-	cout<<"--x : "<< --x <<endl;
-	cout<<"++y : "<< ++y <<endl;
+	cout<<" --x : "<< --x <<endl;
+    cout<<" x++ : "<< x++ <<endl;
+    cout<<" x-- : "<< x-- <<endl;
+	cout<<" ++y : "<< ++y <<endl;
 	cout<<" --y : "<< --y <<endl;
+	cout<<" y++ : "<< y++ <<endl;
+	cout<<" y-- : "<< y-- <<endl;
 
 	return 0;
 }
@@ -153,8 +157,12 @@ x / y=1
 x % y=2
 ++x : 6
 --x : 5
+x++ : 5
+x-- : 6
 ++y : 4
 --y : 3
+y++ : 3
+y-- : 4
 ```
 
 We used the `++` and `--` operators in the program above as prefixes. We can as well use it in postfix mode if required.
@@ -186,35 +194,35 @@ int main()
 	X=5;
 	Y=3;
 	// equal to
-	if (X == Y)
-		cout << "X == Y";
-	else
-		cout << "X != Y\n";
+	if (X == Y){
+		cout << "X == Y";}
+	else{
+		cout << "X != Y\n";}
 	// not equal to
-	if (X != Y)
-		cout << "X != Y\n";
-	else
-		cout << "X == Y\n";
+	if (X != Y){
+		cout << "X != Y\n";}
+	else{
+		cout << "X == Y\n";}
 	// greater than example
-	if (X > Y)
-		cout << "X > Y\n";
-	else
-		cout << "X < Y\n";
+	if (X > Y){
+		cout << "X > Y\n";}
+	else{
+		cout << "X < Y\n";}
 	// less than example
-	if (X < Y)
-		cout << "X < Y\n";
-	else
-		cout << "X > Y\n";
+	if (X < Y){
+		cout << "X < Y\n";}
+	else{
+		cout << "X > Y\n";}
 	// greater than or equal to
-	if (X >= Y)
-		cout << "X >= Y\n";
-	else
-		cout << "X < || != Y\n"; // Demonstration of both Relational and Logical operators
+	if (X >= Y){
+		cout << "X >= Y\n";}
+	else{
+		cout << "X < || != Y\n";} // Demonstration of both Relational and Logical operators
 	// lesser than or equal to
-	if (X <= Y)
-		cout << "X <= Y\n";
-	else
-		cout << "X > || != Y\n"; // Demonstration of both Relational and Logical operators
+	if (X <= Y){
+		cout << "X <= Y\n";}
+	else{
+		cout << "X > || != Y\n";} // Demonstration of both Relational and Logical operators
 	return 0;
 }
 
@@ -223,7 +231,7 @@ int main()
 Output:
 
 ```bash
-X == Y
+X != Y
 X != Y
 X > Y
 X > Y
@@ -316,22 +324,22 @@ main() {
 	int x = 0; 
 
 	x = a & b; // 12 = 0000 1100
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 
 	x = a | b; // 61 = 0011 1101
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 
 	x = a ^ b; // 49 = 0011 0001
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 
 	x = ~a; // -61 = 1100 0011
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 
 	x = a << 2; // 240 = 1111 0000
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 
 	x = a >> 2; // 15 = 0000 1111
-	cout << "The value of x: " << c << endl ;
+	cout << "The value of x: " << x << endl ;
 	return 0;
 }
 ```
@@ -347,83 +355,94 @@ The value of x: 240
 The value of x: 15
 ```
 
-In the program above we compare each of the binary digits of the two integers we have and return a 1 with a new integer anywhere both of the binary digits of the two integers had a 1 and a 0 where the two binary digits are not 1. For example in the `&` operator we have:
+In the program above we compare the individual bits of the two integers `60` and `13` that we have.  As we had stated before bitwise operators perform operations on individual bits. Our integers `60` and `13` in binary format is `0011 1100` and `0000 1101`. The program returns a new integer from the binary digits formed after comparison. For example in the `&` operator we have:
 
 ```bash
 60 = 0011 1100
-&13 = 0000 1101
-0000 1100 =12 
+&
+13 = 0000 1101
+________________
+12  = 0000 1100   //result after comparison
 ```
 
-Above we have compared each of the binary digits of the two integers and returned a 1 anywhere both of the integers binary digits had a 1. 
+Here, when we perform the `&` operation, it first compares each of the individual bits of the integers `60` and `13`. The program will return a 1 anywhere both of the individual bits of the two integers have a 1. If both of them do not have a `1`, a `0` will return. Afterward, the binary digits formed from the comparison will convert to an integer. Thus, `0000 1100` which is the result of the comparison is `12`.   
 
 The bitwise OR `|` operator performs the following operation when the program is executed:
 
 ```bash
 60 = 0011 1100
-|13 = 0000 1101
-0000 1100 =61 
+|
+13 = 0000 1101
+________________
+61  = 0011 1101  //result after comparison
 ```
 
-Here, it compares the two integers binary digits and returns 1 if "either" of them is 1.
+Here, when we perform the `|` operation, it first compares each of the individual bits of the integers `60` and `13`. The program returns a 1 if either of the individual bits of the two integers have a 1. If both of them do not have a `1`, a `0` will return. Afterward, the binary digits formed from the comparison will convert to an integer. Thus, `0011 1101` which is the result of the comparison is `61`.
 
 The bitwise XOR `^` operator performs the following operation when the program is executed:
 
 ```bash
 60 = 0011 1100
-|13 = 0000 1101
-0011 0001 =49 
+^
+13 = 0000 1101
+_______________
+49  = 0011 0001  //result after comparison
 ```
 
-Here, it also compares the two number binary digits and returns 1 if "either" of them is 1.
+Here, when we perform the `^` operation, it first compares each of the individual bits of the integers `60` and `13`. If the two bits are distinct, XOR's result is 1. Or else, 0 will return. Afterward, the binary digits formed from the comparison will convert to an integer. Thus, `0011 0001` which is the result of the comparison is `49`.
 
 The bitwise NOT `~` operator performs the following operation when the program is executed:
 
 ```bash
 ~60 = 0011 1100
-1100 0011 = -61 
+________________
+-61 = 1100 0011   //result after inverting
 ```
 
-Here, It is somewhat different from the ones we've looked at so far. It only takes an integer after it rather than taking an integer on both of the sides. For any binary digit, the `~` operator inverts a number: from 0 to 1 and from 1 to 0.
+Here, It is somewhat different from the ones we've looked at so far. It only takes an operand after it rather than taking operands on both of the sides. For any individual bit, the `~` operator inverts a number: from 0 to 1 and from 1 to 0. When the individual bits of 60 are inverted, a new binary digit is formed. `1100 0011` is the binary digit formed after inverting the individual bits of `60` and `1100 0011` in integer form is `-61`.
 
 The bitwise SHIFT LEFT `<<` operator performs the following operation when the program is executed:
 
 ```bash
+60 = 0011 1100
 60<<2
 11 1100
-0
+0  		 // The two bits being shifted to the left
 0
 ```
-
-Here, instead of comparing two integers, they shift an integer. The integer that is being shifted is on the left side of the operator, and the right is the number to shift by [Bitwise SHIFT LEFT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). So, for example, 60 << 2 is shifting the number 60 to the left by 2 places. The 2 open bits of memory are replaced with zeros as shown below:
+Here, instead of comparing the individual bits of two integers, they shift the bits of an integer. The integer we want to shift, we place on the left side of the [Bitwise SHIFT LEFT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). On the right, we place the number to shift by. So, for example, `60 << 2`  will shift `2` bits of our integer `60` to the `left`. If we begin with a positive number (0) on the left, then all the empty spaces are filled with a 0 and if it starts with a negative number where the leftmost bit is a 1, all empty spaces are filled with 1. The 2 open bits of memory that remain are replaced with zeros as shown below:
 
 ```bash
 60<<2
 11 1100
 0
 0
-= 11 1100 00 
-= 1111 0000 = 240
+= 11 1100 00  // The leftmost bit being a 1, two one's are added to replace the shifted bits
+_____________
+= 1111 0000 = 240 //result after shifting
 ```
+Afterward, the binary digits formed which is `1111 0000` is converted to decimal to become `240`.
 
 The bitwise SHIFT RIGHT `>>` operator performs the following operation when the program is executed:
 
 ```bash
+60 = 0011 1100
 60>>2
 0011 11
-0
+0		//The two bits being shifted to the right
 0
 ```
 
-Here, 60 >> 2 is shifting the number 60 to the right by 2 places. If we begin with a positive number with a 0 on the left, then all the empty spaces are filled with a 0 [Bitwise SHIFT RIGHT](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). If a binary number starts with a negative number where the leftmost bit is a1, all empty spaces are filled with 1. The 2 open bits of memory are replaced with ones as shown below:
+Here, instead of comparing the individual bits of two integers, they shift the bits of an integer. The integer we want to shift, we place on the left side of the [Bitwise SHIFT RIGHT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). On the right, we place the number to shift by. So, for example, `60 >> 2`  will shift `2` bits of our integer `60` to the `left`. If we begin with a positive number (0) on the right, then all the empty spaces are filled with a 0 and if it starts with a negative number where the rightmost bit is a 1, all empty spaces are filled with 1. The 2 open bits of memory that remain are replaced with one's as shown below:
 
 ```bash
 60>>2
 0011 11
 0
 0
-= 11 1100 11 
-= 0000 1111 = 15
+= 0000 1111  // The rightmost bit being a 1, two one's are added to replace the shifted bits
+_____________
+= 0000 1111 = 15   //result after shifting
 ```
 
 ### Conclusion
