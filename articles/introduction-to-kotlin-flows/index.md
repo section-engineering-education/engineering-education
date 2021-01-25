@@ -5,7 +5,7 @@ Suspending functions and/or coroutines launched with the `async` builder return 
 To follow through with this tutorial, you will need to:
   1. Have IntelliJ IDEA installed.
   2. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
-  3. Have a basic understanding of coroutines. Check this [article] to get started.
+  3. Have a basic understanding of coroutines. Check this [article](/engineering-education/introduction-to-kotlin-coroutines/) to get started.
 
 ### What is a flow
 A flow is a stream of multiple, asynchronously computed values. Flows emit values as soon as they are done computing them. A flow consists of a producer and a consumer. As the names suggest, a producer emits values while the consumer receives the values. 
@@ -102,6 +102,6 @@ Run the main function again. This time the delay is of two seconds which is what
 However, the most important thing is that we have not lost any values which means that flows really support backpressure.
 
 ### Conclusion
-In this article, we have gone through the basics of flows in kotlin. We have seen how flows are created and consumed. We have also proved that flows are aware of backpressure. This is all you need to get started with flows. Check on their official [documentation]() for more details. Otherwise, I cant wait to see what you do with flows.
+In this article, we have gone through the basics of flows in kotlin. We have seen how flows are created and consumed. We have also proved that flows are aware of backpressure. This is all you need to get started with flows. Check on their official [documentation](https://kotlinlang.org/docs/reference/coroutines/flow.html) for more details. Otherwise, I cant wait to see what you do with flows.
 
 Happy coding!
