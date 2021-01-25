@@ -31,7 +31,7 @@ namespace namespacename
 ```
 Let's  break down the syntax:
 - `namespace` - is the keyword used to declare a namespace.
-- `namespace_name` - is the name given to the namespace.
+- `namespacename` - is the name given to the namespace.
 - `int m, n` - are the variables in the namespace_name’s scope.
 
 We use the scope resolution operator `::` to access a variable in a specific namespace,
@@ -48,12 +48,12 @@ The compiler sends the control to the namespace block when it encounters the sco
 The namespaces in some namespaces may also be nested. To access them we are required to use the scope resolution operator `::` operator the number of times that are there to access them. For example:
 
 ```c++
-namespace example1{
-namespace example2{
-namespace example3{
-int sample;
-}
-}
+namespace example1 {
+  namespace example2 {
+    namespace example3 {
+      int sample;
+    }
+  }
 }
 ```
 When we want to access the variable `sample`, we need to use `example1::example2::example3::sample`.
@@ -62,7 +62,7 @@ Through this, we can make separate scopes and reuse the same variable names exis
 
 Up to now, anytime we decided to use a namespace, we had to refer to the namespace functions by including the namespace identifier preceded by the scope resolution operator. However, by using the `using`-directive with the syntax shown below, you can insert an entire namespace into a section of code:
 
-`using  namespace namespacename;`
+`using namespace namespacename;`
 
 This allows the developer to call functions from inside the namespace without needing to define the function's namespace when in the current scope. Typically, if you are not within a code block, before the next closing bracket, or the whole file. This simplicity can be exploited by using a namespace globally, which contradicts certain of the purposes of using a namespace. The most common example of this use is:
 
@@ -74,45 +74,41 @@ which is used to give access to the namespace called standard that includes C++ 
 Program to illustrate working of namespace:
 
 ```c++
-#include <iostream>
+namespace no1 {
+  int fun() {
+    return 10;
+  }
+}
 
-using namespace std;
+namespace no2 {
+  const double x = 200;
+  double fun() {
+    return 2 * x;
+  }
+}
 
-namespace no1
-{
-int fun(){
-return 10;
+namespace no3 {
+  class sample {
+    public:
+      void show() {
+        cout << "no3::sample::show()\n";
+      }
+  };
 }
-}
-namespace no2
-{
-const double x = 200;
-double fun() {  return 2*x; }
-}
-namespace no3
-{
-class sample
-{
-public:
-void show()
-{
-cout << "no3::sample::show()\n";
-}
-};
-}
-int main()
-{
-cout << no1::fun()<< '\n';
-cout << no2::fun() << '\n';
-cout << no2::x << '\n';
-no3::sample myObj;
-myObj.show();
-return 0;
+
+int main() {
+  cout << no1::fun() << '\n';
+  cout << no2::fun() << '\n';
+  cout << no2::x << '\n';
+  no3::sample myObj;
+  myObj.show();
+  return 0;
 }
 ```
 Go ahead and run the code [here](https://repl.it/@Dawe7/Example-1-of-namespace-in-c#main.cpp).
 
 Output:
+
 ```bash
 10
 400
@@ -126,27 +122,29 @@ Program to illustrate the working of namespace with the same name:
 
 ```c++
 #include <iostream>
+
 using namespace std;
-namespace sample
-{
-int x=20;
+
+namespace sample {
+  int x = 20;
 }
-namespace sample
-{
-int y=50;
+
+namespace sample {
+  int y = 50;
 }
+
 namespace {
-int a=15;
-int fun(){
-return a;
+  int a = 15;
+  int fun() {
+    return a;
+  }
 }
-}
-int main()
-{
-cout << "Value of x = "<<sample::x<< '\n';
-cout <<"Value of y = "<<sample::y<< '\n';
-cout <<"Value returned by the unnamed namespace = "<<fun()<< '\n';
-return 0;
+
+int main() {
+  cout << "Value of x = " << sample::x << '\n';
+  cout << "Value of y = " << sample::y << '\n';
+  cout << "Value returned by the unnamed namespace = " << fun() << '\n';
+  return 0;
 }
 ```
 
@@ -168,28 +166,27 @@ Program to illustrate nested namespace:
 
 using namespace std;
 
-namespace no1
-{
-int sample = 10;
-namespace no2
-{
-namespace no3
-{
-int sample1=sample;
+namespace no1 {
+  int sample = 10;
+  namespace no2 {
+    namespace no3 {
+      int sample1 = sample;
+    }
+  }
 }
-}
-}
+
 namespace myalias = no1::no2::no3;
-namespace demo
-{
-int gvar = 200;
+
+namespace demo {
+  int gvar = 200;
 }
+
 using namespace demo;
-int main()
-{
-cout << "Value of global variable in demo namespace = "<<gvar << "\n";
-cout << "Value of sample1 in nested namespace third = "<<myalias::sample1 << "\n";
-return 0;
+
+int main() {
+  cout << "Value of global variable in demo namespace = " << gvar << "\n";
+  cout << "Value of sample1 in nested namespace third = " << myalias::sample1 << "\n";
+  return 0;
 }
 ```
 Go ahead and run the code [here](https://repl.it/@Dawe7/nested-namespace#main.cpp)
