@@ -2,13 +2,11 @@ Sorting can be referred to as an operation performed to arrange records in some 
 
 ### Prerequisites
 
-- Have [Node.js](#https://nodejs.org/en/) installed on your computer.
+- You should have some basic knowledge of JavaScript.
 
-- Some basic knowledge of JavaScript.
+- You should have [Node.js](#https://nodejs.org/en/) installed on your computer.
 
-### What we will cover:
-
-- [Introduction to sorting and sorting algorithms](#introduction-to-sorting-and-algorithms)
+### Overview
 
 - [Categories of sorting](#categories-of-sorting)
 
@@ -32,7 +30,7 @@ Some sorting algorithms are more efficient than others. The effectiveness of a s
 
 - **Memory complexity**: It is the amount of computer memory required by the computer to perform the sorting based on an algorithm.
 
-Based on the above factors an algorithm has three performance cases:
+Based on the above factors, an algorithm has three performance cases:
 
 - **Worst case time complexity**: It is a function defined as a result of a maximum number of steps taken on any instance of size n. It is usually expressed in [Big O notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
 
@@ -59,8 +57,11 @@ Bubble sort follows the recursion technique.
 **Step-by-step guide**:
 
 - Start by comparing two elements in a list.
+
 - Swap them if required.
+
 - Continue till the end of the list. At this point, you have made a series of inner passes and completed an outer pass.
+
 - Repeat the process until the entire list is sorted.
 
 **Pictorial representation**:
@@ -496,7 +497,7 @@ Quicksort has the following performance cases:
 
 ### Key takeaways
 
-- JavaScript by default uses insertion sort for the `sort()`. This means that it is not appropriate when sorting large lists. Therefore when dealing with large lists one should consider other sorting algorithms such as quicksort or merge sort.
+- JavaScript by default uses insertion sort for the `sort()`. This means that it is not appropriate when sorting large lists. Therefore when dealing with large lists you should consider other sorting algorithms such as quicksort or merge sort.
 
 - Divide and conquer based sorting algorithm are faster than Recursion based sorting algorithm.
 
