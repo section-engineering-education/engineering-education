@@ -3,28 +3,31 @@
 ![hero-image](/engineering-education/fork-in-C-programming-language/hero.png)
 
 ### Introduction
-You have seen a lot of processes in your task manager if you are using Windows. And in your resource monitor if you are using Linux. But did you think even once how these are created? In this tutorial, we will talk about fork then implement some examples in the C programming language. 
+You have seen a lot of processes in your task manager if you are using Windows. And in your resource monitor if you are using Linux. But did you think even once how these are created? In this tutorial, we will talk about the `fork()` function and then implement some examples in the C programming language.
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
-- A good understanding of C programming language.
+- A good understanding of the C programming language.
 - Familiar with Unix-like operating systems.
 
+### What is a process?
+According to [Wikipedia](https://en.wikipedia.org/wiki/Process_(computing)#:~:text=In%20computing%2C%20a%20process%20is,execution%20that%20execute%20instructions%20concurrently.), a process is the instance of a computer program that is being executed by one or many threads. It contains the program code and its activity. Depending on the operating system (OS), a process may be made up of multiple threads of execution that execute instructions concurrently.
+
 ### What is Fork()?
-In the computing field, **Fork** is the primary method of process creation on Unix-like operating systems. Which creates a new copy called *child* out of the original process that called *parent*. And when the parent process is closed or crashed for some reason, it also kills the child process. 
+In the computing field, **`fork()`** is the primary method of process creation on Unix-like operating systems. This function creates a new copy called the *child* out of the original process, that is called the *parent*. And when the parent process closes or crashes for some reason, it also kills the child process.
 
 Let's start with the life-cycle of a process:
 
 ![Process life-cycle](/engineering-education/fork-in-C-programming-language/ProcessState.jpg)
 
-[Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html).
+[Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html)
 
-The operating system is using a unique id for every process to keep track of all processes. And for that, fork() doesn't take any parameter and return an int value as following:
- - Zero: if it is the child process(the process created).
+The operating system is using a unique id for every process to keep track of all processes. And for that, `fork()` doesn't take any parameter and return an int value as following:
+ - Zero: if it is the child process (the process created).
  - Positive value: if it is the parent process.
  - Negative value: if an error occurred.
  
-*Note*: The following codes only run in Linux and UNIX based. If you are running Windows, then I recommend you to use [Cygwin](https://www.cygwin.com/). 
+*Note*: The following code only runs in Linux and UNIX based operating systems. If you are running Windows, then I recommend you to use [Cygwin](https://www.cygwin.com/). 
 
 Let's jump into the practical section where we will create examples from the simple level to the advanced one.
 
@@ -35,7 +38,9 @@ Let's jump into the practical section where we will create examples from the sim
 #include <unistd.h> 
 int main() 
 { 
+    /* fork a process */
     fork(); 
+    /* the child and parent will execute every line of code after the fork (each separately)*/
     printf("Hello world!\n"); 
     return 0; 
 } 
@@ -79,24 +84,26 @@ Hello world!
 Another example is:
 ```c
 int main() {
-  if(fork() ==0)
+  if(fork() == 0)
     if(fork())
       printf("Hello world!!\n");
   exit(0);
-  }
+}
 ```
-I drew a brief sketch to let you understand the idea:
+I drew a brief sketch to help you understand the idea:
 
 ![Fork](/engineering-education/fork-in-C-programming-language/fork1.png)
 
-Then the result will be just one "Hello World!".
+Inside the first `if` condition a fork happened and it is checking if it is the child process then continue to execute its code. Otherwise (parent process) will not go through that `if`. Then in the second `if`, it is only accepting the parent process which holds the positive id. 
+
+As a result, it will print only one "Hello world!".
 
 Now try to execute the following code and compare your result with ours:
 ```c
 int doWork(){
 	fork();
 	fork();
-	printf("Hello World!\n");
+	printf("Hello world!\n");
 }
 int main() {
 	doWork();
@@ -118,7 +125,7 @@ Hello world!
 
 ![Fork explaination](/engineering-education/fork-in-C-programming-language/fork2.png)
 
-Because when the process that has been forked inside `dowork()` print `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exit.
+Because when the process that has been forked inside `dowork()` prints `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exit.
 
 ### Advanced example 
 When a process creates a new process, then there are two possibilities for the execution exit:
@@ -148,6 +155,7 @@ int main(int argc, char *argv[]) {
 	else { /* parent process */
 		/* parent will wait for the child to complete */
 		  wait(NULL);
+		/* When the child is ended then the parent will continue to execute its code */
 		  printf("Child Complete \n");
 	}
 }
