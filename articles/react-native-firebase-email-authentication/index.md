@@ -4,7 +4,11 @@ In this tutorial, we will learn how to authenticate users with their email and p
 
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
+### Firebase Authentication
+
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
+
+The native Firebase SDKs ensures that a users authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
 
 ### Prerequisites
 
@@ -16,14 +20,13 @@ We'll be going through these steps in this article:
 
 1. Development environment.
 2. Cloning the starter code.
-3. Installing dependencies.
-4. Setting up the Firebase project.
-5. Setting up Firebase Authentication.
-6. Create Account.
-7. Sign in to Existing Account.
-8. Authenticated Screen.
-9. Signout.
-10. Recap.
+3. Setting up the Firebase project.
+4. Setting up Firebase Authentication.
+5. Create Account.
+6. Sign in to Existing Account.
+7. Authenticated Screen.
+8. Signout.
+9. Recap.
 
 ### Development environment
 
@@ -49,39 +52,9 @@ I've set up 2 screens in the `screens/` directory:
 
 - _Authenticated.js_: Screen that the user can see only if he is logged in.
 
+![Screens](screens.jpg)
+
 In the _App.js_, the *Authentication* screen is exported. As we write the code for the, we will conditionally display the *Authenticated* screen after authenticating the user.
-
-### Installing dependencies
-
-You can install these in advance or while going through the article.
-
-```JSON
-"@react-native-firebase/app": "^10.5.0",
-"@react-native-firebase/auth": "^10.5.1",
-"react": "16.13.1",
-"react-native": "0.63.4"
-```
-
-To install a dependency, run:
-
-```bash
-npm i --save <package-name>
-```
-
-After installing the packages, for iOS, go into your `ios/` directory, and run:
-
-```bash
-pod install
-```
-
-> **IMPORTANT FOR ANDROID**
->
-> Adding more native dependencies may bump you over the 64k method limit on the Android build system. If you reach this limit, you will see the following error while attempting to build your Android application.
->
-> `Execution failed for task ':app:mergeDexDebug'.`
->
-> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
-> To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Setting up the Firebase project
 
@@ -163,4 +136,121 @@ dependencies {
 ```
 
 With this, the firebase authentication module is set up in our application.
+
+### Create user acccount
+
+The Firebase `auth` module has a function called `createUserWithEmailAndPassword` that'll help creating a new user in the application with an email and a password.
+
+For exmaple:
+
+```JSX
+auth().createUserWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
+```
+
+This will create a new user in the Firebase app with the email ID `johndoe@gmail.com` and his respective password. Two users in the same application can't have the same email ID.
+
+This function will also login the user into the application after creating an user account.
+
+In the *App.js*, Let's import the `auth` module.
+
+```JSX
+import auth from '@react-native-firebase/auth';
+```
+
+Let's write a function that will accept an email and a password and call the `createUserWithEmailAndPassword` to create a new user.
+
+The `createUserWithEmailAndPassword` is an asynchronous function.
+
+```JSX
+const createUser = (email, password) => {
+  try {
+    auth().createUserWithEmailAndPassword(email, password);
+  } catch (error) {
+    alert(error);
+  }
+};
+```
+
+Now, Let's pass this function to the *Authentication* screen.
+
+```JSX
+return <Authentication createUser={createUser} />;
+```
+
+When the user presses the *create* button, we should call this function. We should pass the email and the password from the state to this function when it is called.
+
+```JSX
+<Button title="Create" onPress={() => props.createUser(email, password)} />
+```
+
+Now, when a user presses this button, the `createUserWithEmailAndPassword` is called with the email and password, and this will create a new user in the Firebase app. If there is any error, we'll display it to the user using `alert()`. 
+
+He/She will also be logged in to the application after the user account is created. To track whether the user is authenticated or not, let's create a state and set the initial value to false.
+
+```JSX
+const [authenticated, setAuthenticated] = useState(false);
+```
+
+The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
+
+You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in. 
+
+Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAutheticated(true);
+  }
+})
+```
+
+Now, let's return the *Authenticated* screen if the user is authenticated in the application.
+
+```JSX
+if (authenticated) {
+  return <Authenticated />;
+}
+
+return <Authentication createUser={createUser} />;
+```
+
+### Sign in user
+
+The Firebase `auth` module has a function called `signInWithEmailAndPassword` that'll sign in the user into the application with an email and a password.
+
+For exmaple, This will sign in the user into the app with the email ID:
+
+```JSX
+auth().signInWithEmailAndPassword('johndoe@gmail.com', 'helloworld123');
+```
+
+
+Let's write a function that will accept an email and a password and call the `signInWithEmailAndPassword` to sign in the user.
+
+The `signInWithEmailAndPassword` is an asynchronous function.
+
+```JSX
+const login = (email, password) => {
+  try {
+    auth().signInWithEmailAndPassword(email, password);
+  } catch (error) {
+    alert(error);
+  }
+};
+```
+
+Now, Let's pass this function to the *Authentication* screen.
+
+```JSX
+return <Authentication login={login} createUser={createUser} />;
+```
+
+When the user presses the *login* button, we should call this function. We should pass the email and the password from the state to this function when it is called.
+
+```JSX
+<Button title="Login" onPress={() => props.login(email, password)} />
+```
+
+Now, when a user presses the *Login* button, the `signInWithEmailAndPassword` is called with the email and password, and this login the user into the app. If there is any error, we'll display it to the user using `alert()`.
 
