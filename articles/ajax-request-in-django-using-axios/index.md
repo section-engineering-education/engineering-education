@@ -1,16 +1,16 @@
 ### What is AJAX? 
 
-Ajax is an acronym for Asynchronous JavaScript and XML. It’s not a language, framework or a web library. It’s a web technology that sends and receives data from a client to a server asynchronously all done in the background behind the scenes without needing to reload the current web page. Even though XML is in the acronym, it’s rarely used in AJAX anymore, it has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
+Ajax is an acronym for Asynchronous JavaScript and XML. It’s not a language, framework or a web library. It’s a web technology that sends and receives data from a client to a server asynchronously all done in the background without needing to reload the current web page. It includes even though XML in the acronym, it’s rarely used in AJAX anymore, it has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
 
-### Prerequisite
+### Prerequisites
 
-1. [Python](https://www.python.org/downloads/) and above installed on your computer.
+1. [Python](https://www.python.org/downloads/) 3.7 and above installed on your computer.
 
 2. Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 
-3. knowledge of [Django]()
+3. knowledge of [Django](https://www.djangoproject.com/)
 
-3. knowledge of [JavScript](https://javascript.info/).
+3. knowledge of [JavaScript](https://javascript.info/).
 
 ### Goals.
 
@@ -23,7 +23,6 @@ Ajax is an acronym for Asynchronous JavaScript and XML. It’s not a language, f
 Ensure `virtualenv` is installed on your computer.
 
 ```bash
-
 $ virtualenv --version
 
 virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtualenv/__init__.py
@@ -33,50 +32,42 @@ virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtual
 If you get an error message command, run the command below to install `virtualenv` on your computer.
 
 ```bash
-
- pip install virtualenv
-
+$ pip install virtualenv
 ```
 
-Change to any directory of your choice on your system/laptop or you can as well make a new directory.  Create a virtual environment for our project using the `virtualenv`.
+Change to any directory of your choice on your machine or you can as well make a new directory.  Create a virtual environment for our project using `virtualenv`.
 
  Run the command below to create and activate the virtual environment.
 
 ```bash
-
 $ virtualenv venv
 
 $ source venv/bin/activate
-
 ```
 
- 
-
-I have created a starter template for you to follow along in this tutorial, clone the starter template in your current directory using the command below.
+I have created a starter template for you to follow along in this tutorial.
+Clone the starter template in your current directory using the command below.
 
 ```bash 
-
- git clone https://github.com/atoyegbe/note-app.git
-
+$ git clone https://github.com/atoyegbe/note-app.git
  ```
 
-Run the command below to install the dependency needed for this project to work.
+Run the command below to install the dependencies needed for this project to work.
 
 ```bash 
-
-pip install -r requirements.txt
-
+$ pip install -r requirements.txt
 ```
 
 Let’s make sure nothing is broken in our application, change into the project directory and run the command below.
 
 ```bash 
-python manage.py runserver
+$ python manage.py runserver
 ```
-After running the above command you will see the below image in your browser.
+After running the above command you will see something like this in your browser.
 ![form page](/engineering-education/ajax-request-in-django-using-axios/form_page.png)
 
-Let’s go into the **templates/home.html** and we will add to our project the **Axios** library by adding the CDN script tag below outside the div tag.
+Let’s go into the **templates/home.html**.
+We will add **Axios** library to our project the by adding the CDN script tag below outside the div tag.
 
 ```html
 
@@ -88,9 +79,8 @@ Let’s go into the **templates/home.html** and we will add to our project the *
 
      <h1> Notes </h1>
 
- .....
-
- ....
+ <!-- ..... -->
+ <!-- ..... -->
 
 </div>
 
@@ -103,40 +93,41 @@ Let’s go into the **templates/home.html** and we will add to our project the *
 ```
 
 ### Using Axios to submit a form.
+>Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the Fetch API and is used to perform HTTP requests.
+
 
 Adding event listener to the form and sending form data to Django serverside. Add these code snippets below the Axios script tag.
 
-```javascript
+```html
 <script>
-let form = document.getElementById(‘form’); #selecting the form
+let form = document.getElementById(‘form’); // selecting the form
 
-form.addEventListener(‘submit’, function(event) { #a
+form.addEventListener(‘submit’, function(event) { // 1
     event.preventDefault()
     
-    let data = new FormData(); #b
+    let data = new FormData(); // 2
     
     data.append(“title”, document.getElementById(‘title’).value)  
     data.append(“note”, document.getElementById(‘note’).value)
-    data.append(“csrfmiddlewaretoken”, ‘{{csrf_token}}’) #c
+    data.append(“csrfmiddlewaretoken”, ‘{{csrf_token}}’) // 3
     
-    axios.post(‘create_note/’, data) #d
-     .then(res => alert(“Form Submitted”)) #e
-     .catch(errors => console.log(errors)) #f
+    axios.post(‘create_note/’, data) // 4
+     .then(res => alert(“Form Submitted”)) // 5
+     .catch(errors => console.log(errors)) // 6
 
 })
 
 </script>
-
 ```
-The above code 
-   - #a - Adding a submit event listener to the form.
-   - #b - Creating a new Form in JavaScript.
-   - #c - adding a CRSF token, if we do not include this we get a 403 forbidden response we won’t be able to submit the form data.
-   - #d - Here we use **axios.post** method to submit form data.
-   - #e - A alert message **Form Submitted** pop on your windows if the form submitted successfully.
-   - #f - This catches and displays the error in the console if an error occurs when submitting the form.
+The above code:
+   - 1 - Adds a submit event listener to the form.
+   - 2 - Creating a new Form in JavaScript.
+   - 3 - Adds a CRSF token, if we do not include this we get a 403 forbidden response we won’t be able to submit the form data.
+   - 4 - Here we use **Axios.post** method to submit form data.
+   - 5 - A alert message **Form Submitted** pop on your windows if the form submitted successfully.
+   - 6 - This catches and displays the error in the console if an error occurs when submitting the form.
 
-Your **home.html** file should exactly like this.
+Your **home.html** should look like this.
 
 ```html
 
@@ -180,12 +171,12 @@ Your **home.html** file should exactly like this.
 ```
 
 ### Handling Post Request in Django views.
-Navigate to the note app in the views.py file. add the code below
+Navigate to the note directory and add the code below into views.py
 
 ```python
 from django.http import JsonResponse 
-    ....
-    ....
+    #....
+    #....
 def createNote(request):
     if request.method == ‘POST’: 
         title = request.POST.get(‘title’) 
@@ -198,7 +189,7 @@ def createNote(request):
 
 ```
 
-Your note/view.py file should look like this now.
+Your note/views.py file should look like this now.
 ```python
 from django.shortcuts import render
 from .models import Note    #imported the Note model from the models.py file
@@ -235,10 +226,11 @@ urlpatterns = [
     path(‘create_note/’, createNote, name="note" ) #add this 
 ]
 ```
-Let test our form, first start up the project development server by running the command below.
+Let us test our form.
+First, start up the project development server by running the command below.
 
-```python 
-python manage.py runserver
+```bash 
+$ python manage.py runserver
 ```
 
 Fill in the form and submit it. You should see an alert message pop up in your browser. Saying “Form Submitted” 
