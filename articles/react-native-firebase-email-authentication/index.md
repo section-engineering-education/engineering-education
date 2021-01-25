@@ -40,9 +40,9 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 
 ### Cloning the starter code
 
-To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
+To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-email-password-auth-starter) on GitHub. Follow the Repository's README for instructions.
 
-For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
+For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-email-password-auth).
 
 This will be the folder structure of the application.
 
