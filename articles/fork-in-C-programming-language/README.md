@@ -213,11 +213,11 @@ That's all for today!🥳
 We have learned what fork() can do, and how to implement it in the C programming language in unique examples. If you are interested more in the operating system abstractions, and how it is working, then I recommend you to start learning about pipes then semaphores.
 
 ### Further reading
-1. https://ops-class.org/slides/2017-02-10-forksynch/
+1. [More about fork](https://ops-class.org/slides/2017-02-10-forksynch/).
 
-2. http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html
+2. [Pipe with fork](http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html).
 
-3. https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM
+3. [Introduction to Semaphore](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM).
 
-4. https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.&text=That%20system%20eventually%20became%20known%20as%20THE%20multiprogramming%20system.
+4. [What is a semaphore](https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.&text=That%20system%20eventually%20became%20known%20as%20THE%20multiprogramming%20system.).
 
