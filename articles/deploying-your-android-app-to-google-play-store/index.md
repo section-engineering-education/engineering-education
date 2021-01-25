@@ -104,11 +104,11 @@ Here is a quick checklist of all the details you need for the Play Store.
 | 5   | High-resolution icon                           | (512 x 512)(32-bit PNG(with alpha))|
 | 6   | Feature graphic                                | (1024 w x 500 h)(JPG or 24-bit PNG(no alpha)) |
 | 7   | Video trailer                                  | Aim for a 30 to 120 seconds video highlighting the most important and compelling features first|
-| 8   | App category                                   |  |
+| 8   | App category                                   | N/A |
 | 9   | Content rating                                 | Apps that are "Unrated" may be removed from Google Play |
-| 10  | Developer email                                |  |
-| 11  | Privacy Policy URL                             |  |
-| 12  | Check for app localisation (multiple dialects) |  |
+| 10  | Developer email                                | N/A |
+| 11  | Privacy Policy URL                             | N/A |
+| 12  | Check for app localisation (multiple dialects) | N/A |
 
 
 ### Useful resources for the application details
