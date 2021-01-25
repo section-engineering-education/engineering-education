@@ -21,7 +21,11 @@ In this tutorial, we will learn how to authenticate users with their phone numbe
 
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
+### Firebase Authentication
+
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
+
+The native Firebase SDKs ensures that a users authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
 
 ### Prerequisites
 
@@ -33,15 +37,14 @@ We'll be going through these steps in this article:
 
 1. Development environment.
 2. Cloning the starter code.
-3. Installing dependencies.
-4. Setting up the Firebase project.
-5. Setting up Firebase Authentication.
-6. Phone Number.
-7. Verification Code.
-8. Authenticated Screen.
-9. Signout.
-10. Test phone numbers.
-11. Recap.
+3. Setting up the Firebase project.
+4. Setting up Firebase Authentication.
+5. Phone Number.
+6. Verification Code.
+7. Authenticated Screen.
+8. Signout.
+9. Test phone numbers.
+10. Recap.
 
 ### Development environment
 
@@ -74,38 +77,6 @@ I've set up 3 screens in the `screens/` directory:
 ![screens](/engineering-education/react-native-firebase-phone-authentication/screens.jpg)
 
 In the _App.js_, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
-
-### Installing dependencies
-
-You can install these in advance or while going through the article.
-
-```JSON
-"@react-native-firebase/app": "^10.5.0",
-"@react-native-firebase/auth": "^10.5.1",
-"react": "16.13.1",
-"react-native": "0.63.4"
-```
-
-To install a dependency, run:
-
-```bash
-npm i --save <package-name>
-```
-
-After installing the packages, for iOS, go into your `ios/` directory, and run:
-
-```bash
-pod install
-```
-
-> **IMPORTANT FOR ANDROID**
->
-> Adding more native dependencies may bump you over the 64k method limit on the Android build system. If you reach this limit, you will see the following error while attempting to build your Android application.
->
-> `Execution failed for task ':app:mergeDexDebug'.`
->
-> Use [this documentation](https://rnfirebase.io/enabling-multidex) to enable multidexing.
-> To learn more about multidex, view the official [Android documentation](https://developer.android.com/studio/build/multidex#mdex-gradle).
 
 ### Setting up the Firebase project
 
