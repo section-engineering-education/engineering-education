@@ -171,7 +171,7 @@ We specify the child item of the container and determine its position. That's wh
 On the other hand, we can implement the same using CSS Grid. The header is one dimensional, and Flexbox is perfect for doing this, but we can do that with CSS Grid instead to differentiate between layout and content.
 
 ```css
-.nav-grid {
+.nav {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     background: seagreen;
@@ -180,7 +180,7 @@ On the other hand, we can implement the same using CSS Grid. The header is one d
     gap: 1px;
 }
 
-.nav-grid div {
+.nav div {
     margin-left: 20px;
     margin-right: 20px;
     color: whitesmoke;
@@ -202,7 +202,7 @@ This is awesome. We can see the grid is divided into ten cells. This is where th
 Check this. If we were to move the items `Sign In` and `Sign Up` to the left, applying `margin-left: auto`,  as we did in the Flexbox example, it won't work. This how we can do it using CSS Grid.
 
 ```css
-.nav-grid {
+.nav {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     background: seagreen;
@@ -212,7 +212,7 @@ Check this. If we were to move the items `Sign In` and `Sign Up` to the left, ap
 
 }
 
-.nav-grid div {
+.nav div {
     margin-left: 20px;
     margin-right: 20px;
     color: whitesmoke;
