@@ -1,21 +1,38 @@
 ## Introduction to Javascript Modules
 
-As you write programs, once in a while, you'll find yourself in a position where you need to write several lines of code to achieve a specific task.  
+While writing programs, there are scenarios where you need to write several lines of code. It could make the code so big and complex to maintain.
 
-Instead of writing all these codes in a single file, you could as well separate concerns, by creating several files each with its own defined task.  
-
-With this approach, your code will be well organized and maintainable in the essence that in the future when you or even another developer wants to update the code, it becomes easier.
-
+The simple solution to this problem is the use of Javascript modules. It ensures the organization and ease of code maintenance.
 
 ### Getting Started With JavaScript Modules
-In Javascript, there is a functionality known as modules, this feature allows us to divide our Javascript codes into smaller portions.  
-This could enhance system security by enabling you to expose some parts of the code to be exported while keeping others.  
 
-A point to note, Javascript modules concept depends on the ```import``` and ```export``` statements.  
+In Javascript, there is a functionality known as modules. This feature allows us to divide our Javascript codes into smaller portions. 
+
+In the past, Javascript existed without modules which are part of the core language.  
+This was not a problem to most developers as scripts were simple and small.  
+
+Due to the growth or as more companies started appreciating Javascript, scripts became complex. 
+This led to the invention of the various ways to organise the scritpts, the modules.
+
+This breakthrough has also led to the creation of several libraries to load these modules. 
+
+These libraries include:  
+* CommonJs 
+* Asynchronous Module Definition(AMD)
+* Universal Module Definition(UMD)
+
+For more details about these libraries, visit this [link](https://javascript.info/modules-intro)
+
+Writing codes in this manner enables the separation of concern.
+It also ensures the exportation of certain functionalities, hence system security. 
+For example, hiding the configuration files in their module.  
+It minimizes the exposure of the vital software files.
+NOTE:  Javascript modules concept depends on the ```import``` and ```export``` statements.  
 
 ### Export Module Feature
-Let's create a simple file and name it 
-```add.js```.
+Let's create a simple file called ```add.js``` in the ```modules``` directory.
+
+```modules/add.js```.
 ```js
 // exporting a function
 export function addTwoNumbers(firstNumber,secondNumber) {
@@ -23,105 +40,21 @@ export function addTwoNumbers(firstNumber,secondNumber) {
     return sum;
 }
 ```
-In this file, we have a method(function) called ```addTwoNumbers```, which takes two parameters, ```firstNumber``` and ```lastNumber```.  
+In this file, ```addTwoNumbers``` takes two parameters, ```firstNumber``` and ```secondNumber```. 
+  
 But have you noticed the use of the keyword ```export``` coming before the function name?  
 
-What it does is very simple, it makes your code available for importation into another file. For example, the code in `add.js` is made available for use in another file.
+```Export``` makes the code available for importation. For example, the code in ```modules/add.js``` is available for importation into another file module.  
+Hence the method, ```addTwoNumbers()``` is available in the importing file module.  
 
-This means that the method defined here, ```addTwoNumbers()``` will be made available into the code where this file is imported.  
-
-The most common way of exporting items in Javascript has been the use of a single export statement at the end of the module file.  
-This is then followed by a list of items to be exported separated by commas in curly braces. For example:-  
+The most common way of exporting items is by defining the ```export``` statement at the end of the module file. A list of items separated by commas in curly braces follows. For example:   
 
 ```code snippet for student.js```
 
 ```js
 
 let studentName = 'John Doe';
-
-function studentDetails(name,
-                        admission_number,
-                        college,yearOfStudy
-)
-{
-    const myDetails="My name is "+ name
-     +", a student at " + college
-     +", admission number "+ admission_number
-     +". I'm in year"+ yearOfStudy;
-
-    return myDetails;
-}
-
-export { studentName,studentDetails };
-
-```
-In the above code, we have a method named ```studentDetails()```  which is being passed several parameters and, a variable named ```studentName```.  
-Now instead of prepending the ```export``` keyword for each item, we export them at once, by simply defining them at the end of the module. 
-```js
-export { studentName,studentDetails };
-```
-
-### Import-Module Feature
-
-Now that we have exported several items from the previous part, in this section, we want to see how to use these exported items in our application.  
-
-Previously, we created a file ```add.js```, let's see how we can import the contents of this module into our new module file and use its contents.  
-
-Let's start by creating a file called ```results.js```.  
-
-```js
-//import the contents of add.js
-//ensure the file path is correct
-import { addTwoNumbers } from './modules/add.js';
-
-```
-
-In the file above, we only have 1 line of code, the ```import``` statement.  
-What happens is that the import statement lists the items which are being imported.  
-Once these items are imported into the file, in this case, ```results.js```, they are readily available for use of a smart IDE will even suggest for you the methods and properties when you start typing.  
-
-It's important to note that these methods and properties imported are read-only features of the exported files. You cannot modify them.  
-
-### Applying Modules to HTML
-
-Now that we have seen how to export and import a module file, how do you use them in HTML pages?  
-In this section, we want to use the previous examples to see the actual results.  
-
-First, we need to remind ourselves how to include an external Javascript file in our HTML pages.  
-To include a ```test.js``` file in our ```example.html```
-file, we do the following:   
-
-In our ```example.html``` file, add the following.  
-```html
-<head>
-    <script type="text/javascript" src="myScript.js"></script>
-</head>
-
-```
-Well, this is slightly different when working with modules, you need a few modifications as we will see soon.  
-
-The first and the most important part is to add a ```type``` as ```module```, that is, ```type="module" ``` in the script element.  
-This ensures that the script is defined or declared as a module.  
-
-Now to import ```results.js``` we would do something like:    
-```html
-<head>
-    <script type="module" src="results.js"></script>
-</head>
-<body>
-    <button onClick="addTwoNumbers(1,2);">
-    Calculate Sum</button>
-</body>
-```
-
-
-NOTE:- The Javascript module could also be embedded directly into the HTML file as follows:    
-
-```HTML
-
-<script type="module">
-    
-let studentName = 'John Doe';
+let admissionNumber = "SCT111-00-000";
 
 function studentDetails(name,
                         admission_number,
@@ -131,7 +64,93 @@ function studentDetails(name,
     const myDetails="My name is "+ name
      +", a student at "+ college
      +", admission number "+ admission_number
-     +". I'm in year"+ yearOfStudy;
+     +". I'm in year "+ yearOfStudy;
+
+    return myDetails;
+}
+
+export { studentName, admissionNumber, studentDetails };
+
+```
+In the ```student.js``` file module, we have several codes.  
+It has variables, a function, and an ```export``` statement. 
+
+Instead of prepending the ```export``` keyword for each item, we export them at once.
+It's achievable by defining them at the end of the module in an ```export``` statement. 
+
+```js
+export { studentName, admissionNumber, studentDetails };
+```
+
+### Import-Module Feature
+
+In the previous section, we learned how to export items. Now let's work with these items by importing them into our module.
+
+Let's start by creating a file called ```results.js```.  
+
+```js
+//import the contents of add.js
+//ensure the file path is correct
+import { addTwoNumbers } from './modules/add.js';
+
+function sum(){
+    alert(addTwoNumbers(1,2));
+}
+window.sum=sum;
+
+```
+
+In the file module above, we have the ```import``` statement with a list of items, in this case, a method. This function is now available in our module for use.
+
+NOTE: All items listed in the import statement are always read-only.  It means that they remain unchanged in the importing module.
+
+### Applying Modules to HTML
+
+We have seen how to export and import a module file, but how do you use them in HTML pages? 
+In this section, we will use the previous examples of modules to get the actual results on our browser. 
+
+First, let's remind ourselves how to include an external Javascript file in our HTML pages. To include an imaginary file, let's say ```test.js``` file in our ```example.html``` file, we do the following: 
+
+In our ```example.html``` file, add the following.  
+```html
+<head>
+    <script type="text/javascript" src="myScript.js"></script>
+</head>
+
+```
+Well, this is different while working with modules. In modules, we will need a few modifications.
+
+The important part is adding a ``` type``` as ``` module```, that is, ```type=" module" ``` in the script tag. 
+What it does is that it marks our script as a module, different from the normal JavaScript. 
+
+Now to import ```results.js``` we would do something like:  
+```html
+<head>
+    <script type="module" src="results.js"></script>
+</head>
+<body>
+    <button onClick="sum()">
+    Calculate Sum</button>
+</body>
+```
+
+
+***NOTE***: The Javascript module could also be embedded directly into the HTML file as follows:-  
+
+```HTML
+
+<script type="module">
+  let studentName = 'John Doe';
+
+function studentDetails(name,
+                        admission_number,
+                        college,yearOfStudy
+)
+{
+    const myDetails="My name is "+ name
+     +", a student at "+ college
+     +", admission number "+ admission_number
+     +", I'm in year"+ yearOfStudy;
 
     return myDetails;
 }
@@ -141,8 +160,4 @@ export { studentName,studentDetails };
 </script>
 
 ```
-Exports and imports are only used within modules and not regular scripts.
-
----
-
-Peer review contributions by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
+Note: ```Exports``` and ```imports``` are only used within modules and not regular scripts.
