@@ -94,7 +94,7 @@ I drew a brief sketch to help you understand the idea:
 
 ![Fork](/engineering-education/fork-in-C-programming-language/fork1.png)
 
-Inside the first `if` condition a fork happened and it is checking if it is the child process then continue to execute its code. Otherwise (parent process) will not go through that `if`. Then in the second `if`, it is only accepting the parent process which holds the positive id. 
+Inside the first `if` condition a fork happened and it is checking if it is the child process then continues to execute its code. Otherwise (parent process) will not go through that `if`. Then in the second `if`, it is only accepting the parent process which holds the positive id. 
 
 As a result, it will print only one "Hello world!".
 
@@ -155,7 +155,7 @@ int main(int argc, char *argv[]) {
 	else { /* parent process */
 		/* parent will wait for the child to complete */
 		  wait(NULL);
-		/* When the child is ended then the parent will continue to execute its code */
+		/* When the child is ended, then the parent will continue to execute its code */
 		  printf("Child Complete \n");
 	}
 }
@@ -211,3 +211,13 @@ That's all for today!🥳
 
 ### Conclusion
 We have learned what fork() can do, and how to implement it in the C programming language in unique examples. If you are interested more in the operating system abstractions, and how it is working, then I recommend you to start learning about pipes then semaphores.
+
+### Further reading
+1. https://ops-class.org/slides/2017-02-10-forksynch/
+
+2. http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html
+
+3. https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM
+
+4. https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.&text=That%20system%20eventually%20became%20known%20as%20THE%20multiprogramming%20system.
+
