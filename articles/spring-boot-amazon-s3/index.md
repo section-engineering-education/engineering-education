@@ -1,19 +1,35 @@
-Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offers scalable, secure, and performant object storage.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-boot-amazon-s3/
+title: How to Upload Files to Amazon S3 in Spring Boot
+description: This tutorial will go over how to download and upload files to Amazon simple storage (AS3) using Spring Boot and spring initializr.
+author: odhiambo-paul
+date: 2021-01-24T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/spring-boot-amazon-s3/hero.jpg
+    alt: Amazon S3 in Spring Boot example image
+---
+Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offers scalable, secure, and well performing object storage. This article will go over how to upload files into Amazon S3 using Spring Boot.
+<!--more-->
 ### Prerequisites
-1. Some knowledge in [Java](https://www.javatpoint.com/java-tutorial) and [Spring Boot](https://spring.io/projects/spring-boot).
-2. Java development kit installed on your computer.
-3. Your favourite IDE. I use [Intellij community edition](https://www.jetbrains.com/idea/download/) which is free.
+- Some knowledge in [Java](https://www.javatpoint.com/java-tutorial) and [Spring Boot](https://spring.io/projects/spring-boot).
+- Java development kit installed on your computer.
+- Your favourite IDE. I use [Intellij community edition](https://www.jetbrains.com/idea/download/) which is free.
 
 ### Amazon web services account
-Before we start creating our application, head over to [Amazon console](https://portal.aws.amazon.com/billing/signup#/start), and create an account. You will be given 12 months of free access to various Amazon web services which you can use to test various Amazon services.
+Before we start creating our application, head over to [Amazon console](https://portal.aws.amazon.com/billing/signup#/start), and create an account. You will be given 12 months of free access to various Amazon web services that you can use to test various Amazon services.
 
 After signing up, head over to [Amazon console](https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1#) and search for Amazon S3 in the search box provided in the console.
 
 ![Amazon search console](/engineering-education/spring-boot-amazon-s3/amazon-search-s3.png)
 
-### Amazon S3 bucket.
-After selecting amazon S3 from the above step, create a new S3 bucket which we will use to store the files we will be uploading from our application.
+### Amazon S3 bucket
+After selecting Amazon S3 from the step above, create a new S3 bucket that we will use to store the files we will be uploading from our application.
 
 ![Amazon creating S3 bucket](/engineering-education/spring-boot-amazon-s3/amazon-s3-create-bucket.png)
 
@@ -24,7 +40,7 @@ Create a new access key from `My Security Credentials` navigation menu as shown 
 
 ![Amazon secret key](/engineering-education/spring-boot-amazon-s3/amazon-security-key.png)
 
-### Creating application
+### Creating the application
 We will be using [spring initializr](https://start.spring.io/) to create our application. Head over to [spring initializr](https://start.spring.io/) and create a new Spring Boot application adding `h2`, `spring boot dev tools`, `spring data jpa` and `spring web` as dependencies then generate the project.
 
 ![Spring Boot create application](/engineering-education/spring-boot-amazon-s3/amazon-spring-boot-project.png)
@@ -42,6 +58,7 @@ In the `pom.xml` file add the Amazon SDK dependency as shown below.
         <version>1.11.931</version>
     </dependency>
 ```
+
 ### Project structure
 ```bash
 config/
@@ -60,8 +77,9 @@ service/
 SpringAmazonApplication.java
 
 ```
+
 ### Configuration package
-In the configuration package, we have two Java files, one which authenticates with Amazon S3 and the other which contains the bucket name.
+In the configuration package, we have two Java files, one that authenticates with Amazon S3 and the other which contains the bucket name.
 
 ```java
 import com.amazonaws.auth.AWSCredentials;
@@ -87,7 +105,8 @@ public class AmazonConfig {
     }
 }
 ```
-`AmazonConfig` class above is annotated with `@Configuration` annotation to make it available to the Spring context as a configuration class. With the Amazon credentials we got from the Amazon console earlier we will authenticate to S3 using the `AmazonS3ClientBuilder` available in the Amazon-SDK that we added to our `pom.xml` ealier.
+
+The `AmazonConfig` class above is annotated with `@Configuration` annotation to make it available to the Spring context as a configuration class. With the Amazon credentials we got from the Amazon console earlier we will authenticate to S3 using the `AmazonS3ClientBuilder` available in the Amazon-SDK that we added to our `pom.xml` ealier.
 
 ```java
 import lombok.AllArgsConstructor;
@@ -100,12 +119,14 @@ public enum BucketName {
     private final String bucketName;
 }
 ```
+
 In the `BucketName` enum above we pass in the bucket name that we created in the Amazon console earlier. The bucket will be used to store all of our file uploads.
+
 - `@AllArgsConstructor` annotation generates a constructor with the `bucketName` variable in the enum.
 - `@Getter` annotation generates a getter for the `bucketName` variable in the enum.
   
 ### Domain package
-In this package we have the `Todo` model which represents our `Todo` in the database.
+In this package we have the `Todo` model that represents our `Todo` in the database.
 ```java
 @Data
 @AllArgsConstructor
@@ -123,23 +144,25 @@ public class Todo {
 
 }
 ```
+
 - `@Data` annotation generates `getters`, `setters`, `toString` and `equals` methods for the `Todo` class.
 - `@AllArgsConstructor` annotation generates a constructor with all the arguments for the `Todo` class.
 - `@NoArgsConstructor` annotation generates a constructor with no arguments for the `Todo` class.
 - `@Builder` annotation creates a builder pattern for the `Todo` class.
 - `@Entity` annotation makes the `Todo` class a database entity.
 - `@Id` annotation marks the `id` field as a primary key in the database.
-- `@GeneratedValue` annotation makes the `id` field to auto-increment whenever a new `todo` is saved into the database.
+- `@GeneratedValue` annotation makes the `id` field auto-increment whenever a new `todo` is saved into the database.
   
 ### Repository package
-In this package, we have the repository class that extends the JPA `CrudRepository` interface which makes it possible to perform various database queries.
+In this package, we have the repository class that extends the JPA `CrudRepository` interface that makes it possible to perform various database queries.
 
 ```java
 public interface TodoRepository extends CrudRepository<Todo, Long> {
     Todo findByTitle(String title);
 }
 ```
-### Service Package
+
+### Service package
 ```java
 @AllArgsConstructor
 @Service
@@ -175,13 +198,16 @@ public class FileStore {
 
 }
 ```
-In the above `FileStore` class, we have the logic for uploading to and downloading files from Amazon S3.
-In the `upload` method we pass in:-
-  - `path` is the path on the Amazon S3 bucket where the file will be stored.
-  - `fileName` is the actual name of the file being uploaded. It will be used as the key when downloading the file from S3.
-  - `optionalMetaData` map contains the details of the file i.e file type and file size.
-  -  `inputStream` contains the actual file that should be saved to Amazon S3. 
-  ```java
+
+In the `FileStore` class above, we have the logic used to upload and download files from Amazon S3.
+
+In the `upload` method we pass in:
+- `path` is the path on the Amazon S3 bucket where the file will be stored.
+- `fileName` is the actual name of the file being uploaded. It will be used as the key when downloading the file from S3.
+- `optionalMetaData` map contains the details of the file i.e file type and file size.
+-  `inputStream` contains the actual file that should be saved to Amazon S3. 
+
+```java
       ObjectMetadata objectMetadata = new ObjectMetadata();
       optionalMetaData.ifPresent(map -> {
             if (!map.isEmpty()) {
@@ -189,13 +215,15 @@ In the `upload` method we pass in:-
             }
         });
   ```
-  The above code block loops through the `optionalMetaData` map adding all of the file information to the S3 `objectMetaData`.
-  - `amazonS3.putObject(path, fileName, inputStream, objectMetadata);` saves the file to Amazon S3 bucket.
 
-In the `download` method:-
-  - ` S3Object object = amazonS3.getObject(path, key);` downloads the file from the path passed in and with the file name similar to the key passed in the `getObject` method.
-  - `S3ObjectInputStream objectContent = object.getObjectContent();` gets an inputStream from the object returned from Amazon S3.
-  - `IOUtils.toByteArray(objectContent)` converts the input stream to `byteArray` which can be sent over Restful APIs.
+The above code block loops through the `optionalMetaData` map adding all of the file information to the S3 `objectMetaData`.
+
+- `amazonS3.putObject(path, fileName, inputStream, objectMetadata);` saves the file to Amazon S3 bucket.
+
+In the `download` method:
+- ` S3Object object = amazonS3.getObject(path, key);` downloads the file from the path passed in and with the file name similar to the key passed in the `getObject` method.
+- `S3ObjectInputStream objectContent = object.getObjectContent();` gets an inputStream from the object returned from Amazon S3.
+- `IOUtils.toByteArray(objectContent)` converts the input stream to `byteArray` that can be sent over Restful APIs.
 
 ```java
 public interface TodoService {
@@ -206,6 +234,7 @@ public interface TodoService {
     List<Todo> getAllTodos();
 }
 ```
+
 The `TodoService` interface above contains various methods that we will implement to be able to save and get `todos`.
 
 ```java
@@ -264,6 +293,7 @@ public class TodoServiceImpl implements TodoService {
     }
 }
 ```
+
 In the `TodoServiceImpl` above, we provide the implementation for the methods for saving and getting all `todos`.
 
 ### Controllers package
@@ -302,11 +332,15 @@ public class TodoController {
 ```
 
 ### Testing upload and download from S3 bucket
+
 ![Amazon S3 upload](/engineering-education/spring-boot-amazon-s3/amazon-upload-image.png)
 
 ### Conclusion
-Now that you have learned how to upload and download files from Amazon S3, go ahead and implement the logic for uploading multiple files to Amazon S3.
+Congratulations! Now that you learned how to upload and download files from Amazon S3, go ahead and implement the logic for uploading multiple files to Amazon S3.
+
 Find the source code [here](https://github.com/paulodhiambo/spring-amazon).
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
