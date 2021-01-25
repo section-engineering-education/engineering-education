@@ -8,11 +8,11 @@ The simple solution to this problem is the use of Javascript modules. It ensures
 
 In Javascript, there is a functionality known as modules. This feature allows us to divide our Javascript codes into smaller portions. 
 
-In the past, Javascript existed without modules which are part of the core language.  
-This was not a problem to most developers as scripts were simple and small.  
+In the past, Javascript existed without modules that are part of the core language.  
+This was not a problem for most developers as scripts were simple and small.  
 
 Due to the growth or as more companies started appreciating Javascript, scripts became complex. 
-This led to the invention of the various ways to organise the scritpts, the modules.
+This led to the invention of various ways to organize the scripts, the modules.
 
 This breakthrough has also led to the creation of several libraries to load these modules. 
 
@@ -94,10 +94,9 @@ Let's start by creating a file called ```results.js```.
 import { addTwoNumbers } from './modules/add.js';
 
 function sum(){
-    alert(addTwoNumbers(1,2));
+    document.write(addTwoNumbers(1,2));
 }
 window.sum=sum;
-
 ```
 
 In the file module above, we have the ```import``` statement with a list of items, in this case, a method. This function is now available in our module for use.
@@ -134,30 +133,37 @@ Now to import ```results.js``` we would do something like:
 </body>
 ```
 
+Now when you try to run this script on your browser, in my case chrome, an error is logged in the console.  
+
+```console
+Access to script at 'file:///var/www/html/Projects/Javascript/results.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: HTTP, data, chrome, chrome-extension, chrome-untrusted, https.
+test.html:2 GET file:///var/www/html/Projects/Javascript/results.js net::ERR_FAILED
+
+```
+Modules are only designed to work on ``` HTTP(S)``` and not in local files.  
+To test this example to get the actual result, a server is required. This may include your local servers such as static servers, or a live server available on your editor, in my case Visual Studio Code.  
+
+When you click on the ```Calculate Sum```button, a result is displayed on the screen, ```3```. Now try to modify the parameters of the ```addTwoNumbers``` in the ```result.js``` file.  You will realize the sum is being displayed each time you refresh your browser.  
+
+[Live server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
 ***NOTE***: The Javascript module could also be embedded directly into the HTML file as follows:-  
 
 ```HTML
 
 <script type="module">
-  let studentName = 'John Doe';
-
-function studentDetails(name,
-                        admission_number,
-                        college,yearOfStudy
-)
-{
-    const myDetails="My name is "+ name
-     +", a student at "+ college
-     +", admission number "+ admission_number
-     +", I'm in year"+ yearOfStudy;
-
-    return myDetails;
-}
-
-export { studentName,studentDetails };
-
+//ensure the file path is correct 
+import { addTwoNumbers } from './modules/add.js';
+document.body.innerHTML = addTwoNumbers(30,20);
 </script>
 
+<body>
+
+</body>
+
 ```
+Again on reloading your server, a value ``` 50``` is displayed on the screen.  
+This is the basic knowledge required to get you started with Javascript modules.  
+
+
 Note: ```Exports``` and ```imports``` are only used within modules and not regular scripts.
