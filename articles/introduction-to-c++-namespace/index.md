@@ -152,9 +152,9 @@ Go ahead and run the code [here](https://repl.it/@Dawe7/use-of-namespace-with-th
 
 Output:
 ```bash
-Value of x =20
-Value of y =50
-Value returned by the unnamed namespace =15
+Value of x = 20
+Value of y = 50
+Value returned by the unnamed namespace = 15
 ```
 In the program above, we can see how we can create several namespaces with the same name. The name `sample` has been used by two namespaces that have different variables. Thus, in the same scope, are the variables within both of them. We can also see how to define the unnamed namespace and access the function `fun()`.
 
@@ -194,8 +194,8 @@ Go ahead and run the code [here](https://repl.it/@Dawe7/nested-namespace#main.cp
 Output:
 
 ```bash
-Value of global variable in demo namespace =200
-Value of sample1 in nested namespace third =15
+Value of global variable in demo namespace = 200
+Value of sample1 in nested namespace third = 10
 ```
 In the program above, we can see how nested namespaces are declared and accessed from outside of the namespace. The way we access a variable in the namespace without the scope resolution operator`::` and use the `using` directive is also demonstrated. We have also seen how we can create the namespace `myalias` that allows us to use it explicitly using the name of the alias.
 
