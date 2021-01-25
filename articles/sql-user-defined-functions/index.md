@@ -289,3 +289,6 @@ It compares two integers and returns a string based on the comparison result.
 
 ### Conclusion
 As I mentioned above, try to follow the DRY Principle while writing SQL Statements. When you see the same piece of code is being used in multiple statements, consider putting it inside a function. functions make your statements look much cleaner and shorter. 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
