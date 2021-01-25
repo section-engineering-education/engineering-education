@@ -217,7 +217,8 @@ We have learned what fork() can do, and how to implement it in the C programming
 
 2. [Pipe with fork](http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html).
 
-3. [Introduction to Semaphore](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM).
+3. [What is a semaphore](https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.&text=That%20system%20eventually%20became%20known%20as%20THE%20multiprogramming%20system.).
 
-4. [What is a semaphore](https://en.wikipedia.org/wiki/Semaphore_(programming)#:~:text=In%20computer%20science%2C%20a%20semaphore,as%20a%20multitasking%20operating%20system.&text=That%20system%20eventually%20became%20known%20as%20THE%20multiprogramming%20system.).
+4. [Introduction to Semaphore](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM).
+
 
