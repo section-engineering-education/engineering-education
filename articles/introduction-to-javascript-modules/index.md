@@ -26,7 +26,7 @@ For more details about these libraries, visit this [link](https://javascript.inf
 Writing codes in this manner enables the separation of concern.
 It also ensures the exportation of certain functionalities, hence system security. 
 For example, hiding the configuration files in their module.  
-It minimizes the exposure of the vital software files.
+It minimizes the exposure of the vital software files.  
 NOTE:  Javascript modules concept depends on the ```import``` and ```export``` statements.  
 
 ### Export Module Feature
