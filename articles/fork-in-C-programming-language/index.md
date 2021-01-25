@@ -1,9 +1,23 @@
-# fork() in C programming language
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/fork-in-C-programming-language/
+title: Fork() in C Programming Language
+description: This tutorial will serve as an introduction to the fork function, which is used to create a copy of processes. We will discuss its detailed implementation with examples.  
+author: ahmad-mardeni
+date: 2021-01-26T00:00:00-01:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/fork-in-C-programming-language/hero.png)
+  - url: /engineering-education/fork-in-C-programming-language/hero.jpg
+    alt: Fork function image
+---
+You have seen a lot of processes in your task manager if you are using Windows. And in your resource monitor if you are using Linux. But did you think even once how these are created? 
+<!--more-->
 
-### Introduction
-You have seen a lot of processes in your task manager if you are using Windows. And in your resource monitor if you are using Linux. But did you think even once how these are created? In this tutorial, we will talk about the `fork()` function and then implement some examples in the C programming language.
+In this tutorial, we will talk about the `fork()` function and then implement some examples in the C programming language.
 
 ### Prerequisites
 To follow along with this tutorial, you should have:
