@@ -62,6 +62,8 @@ For the final code, you can look at this [GitHub Repository](https://github.com/
 
 This will be the folder structure of the application.
 
+![Folder Structure](folder_structure.png)
+
 I've set up 2 screens in the `screens/` directory:
 
 - _Authentication.js_: Screen to signin or create account.
@@ -89,6 +91,8 @@ Now, click on the Android icon to add an android app to the Firebase project.
 ![register_app](register_app.png)
 
 You will need the package name of the application to register application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+
+![Package Name](package_name.png)
 
 Now, Proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
