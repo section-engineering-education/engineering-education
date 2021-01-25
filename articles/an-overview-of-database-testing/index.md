@@ -1,4 +1,23 @@
-A database is a crucial element in software applications because it enables users to store and retrieve data. Nowadays, complex applications requiring huge data have increased the need for secure and robust databases. These databases need to be tested to ensure that the huge data stored in them is handled seamlessly. Database testing is important because it verifies the quality, accuracy, and security of data in databases. It establishes whether there are errors in database systems to enhance the consistency, performance, and reliability of these systems. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/an-overview-of-database-testing/
+title: An Overview of Database Testing
+description: This article will be an overview of the fundamentals of database testing. It would also explore the various types of database testing and the tools used.
+author: onesmus-mbaabu
+date: 2021-01-25T00:00:00-03:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-overview-of-database-testing/hero.jpg
+    alt: Database Testing image
+---
+A database is a crucial element in software applications because it enables users to store and retrieve data. 
+<!--more-->
+
+Nowadays, complex applications requiring huge data have increased the need for secure and robust databases. These databases need to be tested to ensure that the huge data stored in them is handled seamlessly. Database testing is important because it verifies the quality, accuracy, and security of data in databases. It establishes whether there are errors in database systems to enhance the consistency, performance, and reliability of these systems. 
 
 In this article, we look at the fundamental aspects of database testing. These include the definition of database testing, its importance, and types of database testing. The article has also provided an overview of the main stages of database testing and popular testing tools.
 
