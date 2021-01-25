@@ -3,7 +3,7 @@ A name can represent only one entity in each scope. Thus, in the same scope, the
 
 ### Prerequisites
 To follow this article, you’ll need to have:
-- [Codeblocks IDE]() to run the code.
+- [Codeblocks IDE](http://www.codeblocks.org/) to run the code.
 - A basic understanding of the C++ language.
 - A basic understanding of the C++ functions.
 
