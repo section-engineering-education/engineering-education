@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/group-operator/hero.jpg
     alt: Group operator in MongoDB Image
 ---
-Group operator is a very important operator in MongoDB language and it is a part of aggregation in MongoDB.
+Group operator also known as accumalator operator is a very important operator in MongoDB language as it helps to perform varoious transformations on the data and it is a part of aggregation in MongoDB.  MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
 
 In this article we are going to learn:
 
@@ -24,27 +24,28 @@ In this article we are going to learn:
 
 3. Applications of $group operator.
 
-## Aggregation
+### Aggregation
 
-Aggregation is an operation that processes the data to give a computed result. It basically involves stages or pipelines through which data is processed to yield a combined result. So pipelines are stages through which data is processed, more technically transformed into by the provided criteria.
- 
-Each pipeline is independent and receives the data of the previous stage and always remember that always the first pipeline will have direct contact with the data itself, not its transformed version, and can take advantage of indexes.
+Aggregation is an operation that processes the data to give a computed result. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. It basically involves stages or pipelines through which data is processed to yield a combined result. 
 
-## What is $group operator?
+Pipelines are stages through which data is processed, more technically transformed into by the provided criteria. Each pipeline is independent and receives the data of the previous stage. Always remember that the first pipeline will have direct contact with the data itself, not its transformed version, and it can take advantage of indexes.
 
-So $group operator as the name suggests groups the similar data by some specified expression and combines it into a single result or document. Just imagine like this suppose there are 15 people and they all have a similar hobby and if we say count all those people who have a similar hobby so let’s say 3 people have swimming as a similar hobby, 5 people have cooking as a similar hobby and so on.
+### What is $group operator?
 
-So $group operator also works in a similar fashion. Let’s see its syntax in order to make this more clear :
+So as the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document. 
+Suppose there are 15 people in a databse and they all have a similar hobby and if we want to count all those people who have a hobby in common then $group operator is an elegant solution for such a task.
+
+Let’s take a look at its syntax:
 
 `{ $group: { _id: <expression>, <field1>: { <accumulator1> : <expression1> }, ... } }`
 
 An _id field in the output documents contains the distinct group by key. The output documents can also contain computed fields that hold the values of some accumulator expression grouped by the $group‘s _id field.
 
-Basically, the _id field here will take those fields by which you want to group the documents and it is compulsory to use _id here otherwise the operator won’t work.
+Basically, the _id field here will take those fields by which you want to group the documents and it is mandatory to use `_id` here.
 
 ### Important points to remember
 
-- Can not be used with the LogReduce operator.
+- It can't be used with the `LogReduce` operator.
 
 - When parsing and naming (aliasing) fields, avoid using the names of grouping functions or other operators as field names.
 
@@ -107,8 +108,8 @@ Output:
 { "_id" : { "gender" : "Male" }, "totalPeople" : 2 }
 ```
 
-Also, remember in order to make the $group operator work you must have to use an accumulator operator like $sum, $avg, $max, etc because as you know that the operator yields a combined result based on the grouping expression. Let's take another used case where this operator can shine. Suppose now we are interested in how many people have a similar hobby so how can we achieve that. Well it's not that much tough
-we first need to make every hobby as a separate top-level field by using $unwind operator and then we have to do the same as we did in the first example,
+To make the $group operator work, you should use an accumulator operator like `$sum`, `$avg`, `$max`, etc since the operator yields a combined result based on the grouping expression. 
+Let's take a look at another use case. Suppose now we are interested in how many people have a similar hobby,
 
 ```JavaScript
 db.person.aggregate([ {$unwind: "$hobbies"}, { $group: {_id: {hobby: "$hobbies"}, totalPeople: {$sum: 1}} } ]).pretty() 
@@ -124,15 +125,15 @@ Output:
 { "_id" : { "hobby" : "sports" }, "totalPeople" : 2 }
 { "_id" : { "hobby" : "swimming" }, "totalPeople" : 1 }
 ```
-## Applications of $group operator:
+### Applications of $group operator:
 
-1.  Whenever we need to do some analytics on the data and need to find how many people fit in that analytics as we did in our examples $group operator can be very useful.
+1.  Whenever we need to do some analytics on the data and need to find how many people fit in a group as we did in our examples, the `$group` operator can be very useful.
 
 1.  It can also be useful in the situations where we want to see documents based on some repeated occurrence of other data.
 
 1.  If we want to create an array of similar entities related to data and include it in our final document then the $group operator can be used.
 
-## Conclusion
+### Conclusion
 
 In this article we have discussed what is $group operator, how can we use it some examples.
 
