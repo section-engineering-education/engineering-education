@@ -331,7 +331,7 @@ public class TodoController {
 }
 ```
 
-### Testing upload and download from S3 bucket
+### Testing our uploads and downloads from the S3 bucket
 
 ![Amazon S3 upload](/engineering-education/spring-boot-amazon-s3/amazon-upload-image.png)
 
