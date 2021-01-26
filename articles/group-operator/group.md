@@ -35,7 +35,7 @@ Pipelines are stages through which data is processed, more technically transform
 
 ### What is $group operator?
 
-So as the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document.
+As the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document.
 
 Suppose there are 15 people in a database and they all have a similar hobby. if we want to count all those people who have a hobby in common, then `$group` operator is an elegant solution for such a task.
 
