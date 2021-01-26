@@ -141,6 +141,7 @@ After downloading the chrome driver, you need to create a class file and add imp
 
 ```Java
 import org.openqa.selenium.By;  
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;  
 import org.openqa.selenium.chrome.ChromeDriver; 
 ```
@@ -183,6 +184,7 @@ The following is the full code snippet for running the first test in Selenium We
 
 ```Java
 import org.openqa.selenium.By;  
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;  
 import org.openqa.selenium.chrome.ChromeDriver;  
 
