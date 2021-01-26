@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-landmark-recognition-with-firebase/
+url: /engineering-education/react-native-firebase-landmark-recognition/
 title: Landmark Recognition Using Firebase ML in a Non-Expo React Native Application 
 description: This tutorial will give readers a detailed guide on how to implment landmark recognition using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-landmark-recognition-with-firebase/hero.jpg
+  - url:/engineering-education/react-native-firebase-landmark-recognition/hero.jpg
     alt: React Native Landmark Recognition With Firebase Hero Image
 ---
 In this tutorial, we will be building a Non-Expo React Native application to recognize landmarks from images using Firebase's machine learning kit.
@@ -51,7 +51,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-landmark-recognition/env_setup.png)
 
 ### Installing dependencies
 You can install these packages in advance or while going through the article.
@@ -90,23 +90,23 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-landmark-recognition/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
 
-![New Dashboard](new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-landmark-recognition/new_dashboard.png)
 
 Now, click on the Android icon to add an android app to the Firebase project.
 
-![register_app](register_app.png)
+![register_app](/engineering-education/react-native-firebase-landmark-recognition/register_app.png)
 
 You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
-![Package Name](package_name.png)
+![Package Name](/engineering-education/react-native-firebase-landmark-recognition/package_name.png)
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
-![Download Google Services JSON](download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-landmark-recognition/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -140,23 +140,23 @@ npm install @react-native-firebase/app
 ### Setting up Cloud Vision API
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
-![Cloud Dashboard](cloud_dashboard.png)
+![Cloud Dashboard](/engineering-education/react-native-firebase-landmark-recognition/cloud_dashboard.png)
 
 In the API & Service tab, Head to the Libraries section.
 
-![API & Services Tab](api_services.png)
+![API & Services Tab](/engineering-education/react-native-firebase-landmark-recognition/api_services.png)
 
 Search for Cloud Vision API. 
 
-![API Library Section](search_libraries.png)
+![API Library Section](/engineering-education/react-native-firebase-landmark-recognition/search_libraries.png)
 
 Once you open the API page, click on the Enable button.
 
-![Enable Cloud Vision](enable_cloud_vision.png)
+![Enable Cloud Vision](/engineering-education/react-native-firebase-landmark-recognition/enable_cloud_vision.png)
 
 Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
-![Cloud Vision Metrics](cloud_vision_dashboard.png)
+![Cloud Vision Metrics](/engineering-education/react-native-firebase-landmark-recognition/cloud_vision_dashboard.png)
 
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for landmark recognition.
 
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-![Buttons](buttons_ui.jpg)
+![Buttons](/engineering-education/react-native-firebase-landmark-recognition/buttons_ui.jpg)
 
 ### Adding media picker
 Let's install the `react-native-image-picker` to add these functionalities.
@@ -316,7 +316,7 @@ const onImageSelect = async (media) => {
 };
 ```
 
-![Image UI](with_image.jpg)
+![Image UI](/engineering-education/react-native-firebase-landmark-recognition/with_image.jpg)
 
 ### Recognize Landmarks from Images
 Let's install the package for Firebase ML.
@@ -383,7 +383,7 @@ We'll use this state to render the details in the UI.
 ))}
 ```
 
-![Final Result](final_result.jpg)
+![Final Result](/engineering-education/react-native-firebase-landmark-recognition/final_result.jpg)
 
 ### Additional Configurations
 The `cloudLandmarkRecognizerProcessImage` method accepts an optional configuration object.
