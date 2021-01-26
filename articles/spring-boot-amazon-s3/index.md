@@ -6,7 +6,7 @@ url: /engineering-education/spring-boot-amazon-s3/
 title: How to Upload Files to Amazon S3 in Spring Boot
 description: This tutorial will go over how to download and upload files to Amazon simple storage (AS3) using Spring Boot and spring initializr.
 author: odhiambo-paul
-date: 2021-01-24T00:00:00-16:00
+date: 2021-01-25T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
