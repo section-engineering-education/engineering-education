@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-native-firebase-image-labeling/
-title: Image Labeling Using Firebase ML in a Non-Expo React Native Application 
-description: This tutorial gives readers a detailed guide on how to implment image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
+title: Image Labeling using Firebase ML in a Non-Expo React Native Application 
+description: This tutorial will give readers a detailed guide on how to implement image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
-date: 2021-01-07T00:00:00-15:00
+date: 2021-01-26T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -16,14 +16,14 @@ images:
 ---
 Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using the machine learning kit from Firebase.
 <!--more-->
-
 ### Firebase
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
+Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their [flagship offering for app development](https://en.wikipedia.org/wiki/Firebase).
 
-Firebase's ML kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
+[Firebase's ML kit](https://firebase.google.com/docs/ml) is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have a deep knowledge of neural networks or model optimization to get started with the ML kit. 
+
+On the other hand, if you are an experienced ML developer, it also provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps.
 
 ### Prerequisites
-
 To proceed with this tutorial:
 
 - You will need a basic knowledge of React & React Native.
@@ -31,7 +31,6 @@ To proceed with this tutorial:
 - You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. Development environment.
@@ -47,7 +46,6 @@ We'll be going through these steps in this article:
 You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-image-labeling).
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -57,7 +55,6 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](/engineering-education/react-native-firebase-image-labeling/env_setup.png)
 
 ### Installing dependencies
-
 You can install these packages in advance or while going through the article.
 
 ```JSON
@@ -91,7 +88,6 @@ pod install
 
 
 ### Setting up the Firebase project
-
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -102,11 +98,11 @@ Once you create a new project, you'll see the dashboard. Upgrade you project to 
 
 ![New Dashboard](/engineering-education/react-native-firebase-image-labeling/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-image-labeling/register_app.png)
 
-You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` that is located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-firebase-image-labeling/package_name.png)
 
@@ -118,7 +114,7 @@ After adding the file, proceed to the next step. It will ask you to add some con
 
 First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
 
-```gradle
+```bash
 buildscript {
   dependencies {
     // ... other dependencies
@@ -130,7 +126,7 @@ buildscript {
 
 Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
 
-```Gradle
+```bash
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 ```
@@ -144,16 +140,15 @@ npm install @react-native-firebase/app
 ```
 
 ### Setting up Cloud Vision API
+The [Cloud Vision API](https://cloud.google.com/vision/docs) allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content.
 
-The Cloud Vision API allows developers to integrate vision detection features within applications like face and landmark detection, image labeling, optical character recognition (OCR), and tagging of explicit content. [Cloud Vision Docs](https://cloud.google.com/vision/docs).
-
-The ML Kit uses the cloud vision API to label the images.
+The ML Kit uses the Cloud Vision API to label the images.
 
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
 ![Cloud Dashboard](/engineering-education/react-native-firebase-image-labeling/cloud_dashboard.png)
 
-In the API & Service tab, Head to the Libraries section.
+In the API & Service tab, head to the Libraries section.
 
 ![API & Services Tab](/engineering-education/react-native-firebase-image-labeling/api_services.png)
 
@@ -172,7 +167,6 @@ Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
 
 ### Building the UI
-
 We'll be writing all of our code in the App.js file.
 
 Let's start by adding 2 buttons to the screen to `take a photo` and `pick a photo`.
@@ -228,7 +222,6 @@ const styles = StyleSheet.create({
 ![Buttons](/engineering-education/react-native-firebase-image-labeling/buttons_ui.jpg)
 
 ### Adding media picker
-
 Let's install the `react-native-image-picker` to add these functionalities.
 
 ```bash
@@ -243,7 +236,7 @@ After the package is installed, import the `launchCamera` and `launchImageLibrar
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 ```
 
-Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
+Both functions accept 2 arguments. The first argument is the `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
 
 Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
 
@@ -257,7 +250,7 @@ const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onIm
 
 Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
 
-We should start the image labeling only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
+We should only start the image labeling when the user doesn't cancel the media picker. If the user cancels the operation, the picker will send a `didCancel` property in the response object.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -384,13 +377,12 @@ We'll use this state to render the details in the UI.
 
 ![Final Result](/engineering-education/react-native-firebase-image-labeling/final_result.jpg)
 
-### Additional Configurations
-
+### Additional configurations
 The `cloudImageLabelerProcessImage` method accepts an optional configuration object.
 
 - **confidenceThreshold**: Sets confidence threshold in the range of [0.0 - 1.0] of detected labels. Only labels detected with confidence higher than this threshold are returned.
 
-- **apiKeyOverride**: API key to use for ML API. If not set, the default API key from `firebase.app()` will be used.
+- **apiKeyOverride**: This is the API key to use for the ML API. If not set, the default API key from `firebase.app()` will be used.
 
 - **enforceCertFingerprintMatch**: Only allow registered application instances with matching certificate fingerprints to use ML API.
 
@@ -405,7 +397,6 @@ await ml().cloudImageLabelerProcessImage(imagePath, {
 ```
 
 ### Let's Recap
-
 1. We set up our development environment and created a React Native app.
 
 2. We created a Firebase project.
@@ -422,7 +413,7 @@ await ml().cloudImageLabelerProcessImage(imagePath, {
 
 8. We displayed the results in the UI.
 
-9. We learned about the additional configurations that we can pass to the `cloudImageLabelerProcessImage` function.
+9. We learned about  additional configurations that we can pass to the `cloudImageLabelerProcessImage` function.
 
 Congratulations, :partying_face: You did it.
 
