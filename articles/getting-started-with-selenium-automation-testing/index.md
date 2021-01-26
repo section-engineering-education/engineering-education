@@ -120,7 +120,7 @@ Let’s test whether a specific URL such as `google.com` functions well. We will
 
 ![Chrome Driver](/engineering-education/getting-started-with-selenium-automation-testing/chrome-driver.png)
 
-Before launching the browser, we need to set the path of the downloaded executable file. The following is an example of how the property can be set.
+After downloading the chrome driver, you need to create a class file and add import statements for necessary classes. You should write these statements in the main function. The next step involves setting the path of the downloaded executable file. The following is an example of how the property can be set.
 
 ```Java
 System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
