@@ -6,7 +6,7 @@ url: /engineering-education/sorting-algorithms-in-js/
 title: Sorting Algorithms in JavaScript
 description: This article will cover how to implement sorting algorithms in Javascript. Sorting can be referred to as an operation performed to arrange records in some particular order.
 author: kennedy-mwangi
-date: 2021-01-26T00:00:00-18:00
+date: 2021-01-26T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,16 @@ images:
   - url: /engineering-education/sorting-algorithms-in-js/hero.jpg
     alt: Sorting Algorithms in JavaScript image
 ---
-Sorting can be referred to as an operation performed to arrange records in some particular order. The arrangement is performed based on the value of each record present. The order applied can either be ascending or descending. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.
+Sorting can be referred to as an operation performed to arrange files in some particular order. The arrangement is performed based on the value of each file present. The order can either be ascending or descending. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.
 <!--more-->
 
 ### Prerequisites
-
+To follow this article along, it will be helpful to have the following.
 - Some basic knowledge of JavaScript.
 
 - [Node.js](#https://nodejs.org/en/) installed on your computer.
 
 ### Overview
-
 - [Categories of sorting algorithms](#categories-of-sorting-algorithms)
 
 - [The Efficiency of sorting algorithms](#efficiency-of-sorting-algorithms)
@@ -42,43 +41,38 @@ Sorting can be referred to as an operation performed to arrange records in some 
 - [Quicksort](#quicksort)
 
 ### Categories of sorting algorithms
-
 Sorting algorithms are categorized into:
 
-- **Internal sorting algorithms**: They are sorting algorithms applied to a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
+- **Internal sorting algorithms**: These are sorting algorithms applied to a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
 
-- **External sorting algorithms**: They are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example is merge sort.
+- **External sorting algorithms**: They are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example would be merge sort.
 
 ### Efficiency of sorting algorithms
-
 Some sorting algorithms are more efficient than others. The effectiveness of a sorting algorithm is usually defined by the following performance measures:
 
-- **Time complexity**: It is the amount of time required by the computer to perform the sorting based on an algorithm.
+- **Time complexity**: This is the amount of time required by the computer to perform the sorting based on an algorithm.
 
 - **Memory complexity**: It is the amount of computer memory required by the computer to perform the sorting based on an algorithm.
 
-Based on the above factors, an algorithm has three performance cases:
+Based on the factors above, an algorithm has four performance cases:
 
-- **Worst case time complexity**: It is a function defined as a result of a maximum number of steps taken on any instance of size n. It is usually expressed in [Big O notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
+1. **Worst case time complexity**: It is a function defined as a result of a maximum number of steps taken on any instance of size n. It is usually expressed in [Big O notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
 
-- **Average case time complexity**: It is a function defined as a result of the average number of steps taken on any instance of size n. It is usually expressed in [Big theta notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
+2. **Average case time complexity**: It is a function defined as a result of the average number of steps taken on any instance of size n. It is usually expressed in [Big theta notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
 
-- **Best case time complexity**: It is a function defined as a result of the minimum number of steps taken on any instance of size n. It is usually expressed in [Big omega notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
+3. **Best case time complexity**: It is a function defined as a result of the minimum number of steps taken on any instance of size n. It is usually expressed in [Big omega notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
 
-- **Space complexity**: It is a function defined as a result of additional memory space needed to carry out the algorithm. It is usually expressed in [Big O notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
+4. **Space complexity**: It is a function defined as a result of additional memory space needed to carry out the algorithm. It is usually expressed in [Big O notation](https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/).
 
 ### Strategies applied during sorting
-
 - **Recursion**: Recursion is a programming method where you define a function in terms of itself. The function generally calls itself with slightly modified parameters (in order to converge).
 
 - **Divide and conquer**: The algorithm accomplishes its task by dividing the problem into smaller subproblems and solving them to come up with the overall solution.
 
 ### Sorting algorithms
+For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, Image representation, and implementation of the algorithm using JavaScript.
 
-For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, pictorial representation, and implementation of the algorithm using JavaScript.
-
-### Bubble sort.
-
+### Bubble sort
 Bubble sort follows the recursion technique.
 
 **Step-by-step guide**:
@@ -91,7 +85,7 @@ Bubble sort follows the recursion technique.
 
 - Repeat the process until the entire array is sorted.
 
-**Pictorial representation**:
+**Image representation**:
 
 ![bubble_sort](/engineering-education/sorting-algorithms-in-js/bubble-sort.png)
 
@@ -121,7 +115,7 @@ function bubbleSort(arr){
 console.log(bubbleSort([5,3,8,4,6]));
 ```
 
-Output
+Output:
 
 ```bash
 [ 3, 4, 5, 6, 8 ]
@@ -138,8 +132,7 @@ Bubble sort has the following performance cases:
 - Space complexity: Big O (1).
 
 ### Insertion sort
-
-Insertion sort uses the recursion technique. There is a portion of the array that is sorted and the other which is unsorted. So you have to compare the elements from the unsorted portion one by one and insert them into the sorted portion in the correct order. In the below guide we are using ascending order.
+Insertion sort uses the recursion technique. There is a portion of the array that is sorted and the other that is unsorted. So you have to compare the elements from the unsorted portion one by one and insert them into the sorted portion in the correct order. In the guide below we are using ascending order.
 
 **Step-by-step guide**:
 
@@ -151,7 +144,7 @@ Insertion sort uses the recursion technique. There is a portion of the array tha
 
 - The sorted portion shall increase until it covers the entire array yielding a sorted array.
 
-**Pictorial representation**
+**Image representation**
 
 ![insertion_sort](/engineering-education/sorting-algorithms-in-js/insertion-sort.png)
 
@@ -198,8 +191,7 @@ Insertion sort has the following performance cases:
 - Space complexity: Big O (1).
 
 ### Selection sort
-
-Selection sort uses recursion technique. In the below guide, we are using ascending order. For descending order, you do the reverse.
+Selection sort uses the recursion technique. In the guide below, we are using ascending order. For descending order, you do the reverse.
 
 **Step-by-step guide**:
 
@@ -209,7 +201,7 @@ Selection sort uses recursion technique. In the below guide, we are using ascend
 
 - Repeat the same procedure with the rest of the array comparing the elements to the right, not the left.
 
-**Pictorial representation**:
+**Image representation**:
 
 ![selection-sort-algorithm](/engineering-education/sorting-algorithms-in-js/selection-sort.png)
 
@@ -261,8 +253,7 @@ Selection sort has the following performance cases:
 - Space complexity: Big O(1).
 
 ### Merge sort
-
-Merge sort uses the divide and conquer technique. The main concept of merge sort is that an array of length 1 is sorted. The task, therefore, lies in splitting the array into subarrays of size 1 and then merge them appropriately so that to come up with the sorted array.
+Merge sort uses the divide and conquer technique. The main concept of merge sort is that an array of length 1 is sorted. The task, therefore, lies in splitting the array into subarrays of size 1 and then merge them appropriately so that it comes up with the sorted array.
 
 **Step-by-step guide**:
 
@@ -278,7 +269,7 @@ Merge sort uses the divide and conquer technique. The main concept of merge sort
 
 - Continue until all subarrays have been covered and you have one sorted array.
 
-**Pictorial representation**
+**Image representation**
 
 ![merge_sort](/engineering-education/sorting-algorithms-in-js/merge_sort.png)
 
@@ -396,7 +387,7 @@ function mergeSort(arr) {
 console.log(mergeSort([70, 50, 30, 10, 20, 40, 60]));
 ```
 
-Output
+Output:
 
 ```bash
 [ 10, 20, 30, 40, 50, 60, 70 ]
@@ -413,8 +404,7 @@ Merge sort has the following performance cases:
 - Space complexity: Big O (n).
 
 ### Quicksort
-
-Quicksort applies the divide and conquer technique. It works by having a pivot element such that the elements to the left of it are less than it and those to the right are greater than it. The pivot element can be any element in the array.
+Quicksort applies the divide and conquer technique as well. It works by having a pivot element such that the elements to the left of it are less than it and those to the right are greater than it. The pivot element can be any element in the array.
 
 **Step-by-step guide**:
 
@@ -424,7 +414,7 @@ Quicksort applies the divide and conquer technique. It works by having a pivot e
 
 - Carry out the above steps recursively until we have subarrays of length 1. Combine the subarrays to yield a sorted array.
 
-**Pictorial representation**
+**Image representation**
 
 ![quick-sort](/engineering-education/sorting-algorithms-in-js/quick-sort.png)
 
@@ -486,13 +476,13 @@ let items = [5, 3, 7, 6, 2, 9];
 console.log(quickSort(items, 0, items.length - 1));
 ```
 
-Output
+Output:
 
 ```bash
 [ 2, 3, 5, 6, 7, 9 ]
 ```
 
-The following steps are followed in implementing quicksort:
+The following steps are followed while implementing quicksort:
 
 - Start with the left pointer pointing at index 0 and the right pointer pointing at index 0.
 
@@ -504,7 +494,7 @@ The following steps are followed in implementing quicksort:
 
 - Increment the right and the left pointer. At this point, a further increment shall cause the left pointer to be greater than the right pointer which shall break the loop returning the left pointer.
 
-- Recursively do the above until the entire array is sorted.
+- Recursively do the steps above until the entire array is sorted.
 
 Quicksort has the following performance cases:
 
@@ -517,21 +507,19 @@ Quicksort has the following performance cases:
 - Space complexity: Big O (n * log n).
 
 ### Key takeaways
-
 - JavaScript by default uses insertion sort for the `sort()` method. This means that it is not appropriate when sorting large data sets. When dealing with large data sets, one should consider other sorting algorithms such as merge sort.
 
 - Generally, a divide and conquer based sorting algorithm is faster than a recursion based sorting algorithm.
 
 ### Conclusion
-
 With an understanding of sorting algorithms, software developers can figure out the appropriate sorting algorithm to use depending on the data set, the time required, and the space available.
 
-In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, Efficiency of sorting algorithms, and discussed the main sorting algorithms used.
+In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, the efficiency of sorting algorithms, and discussed the commonly used sorting algorithms.
 
 For a more comprehensive description of sorting algorithms, you can refer to this [article
 ](https://www.studytonight.com/data-structures/introduction-to-sorting).
 
-You can access the entire code from this [GitHub Repository](https://github.com/mwangiKibui/sorting-algorithms-in-js
+You can access the entire code from this [GitHub Repository](https://github.com/mwangiKibui/sorting-algorithms-in-js)
 
 Happy coding!
 
