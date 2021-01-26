@@ -4,13 +4,13 @@ Ajax is an acronym for Asynchronous JavaScript and XML. It’s not a language, f
 
 ### Prerequisites
 
-1. [Python](https://www.python.org/downloads/) 3.7 and above installed on your computer.
+1. [Python](https://www.python.org/downloads/) 3.7 or newer installed on your computer.
 
 2. Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 
-3. knowledge of [Django](https://www.djangoproject.com/)
+3. Knowledge of [Django](https://www.djangoproject.com/).
 
-3. knowledge of [JavaScript](https://javascript.info/).
+3. Knowledge of [JavaScript](https://javascript.info/).
 
 ### Goals.
 
@@ -67,7 +67,7 @@ After running the above command you will see something like this in your browser
 ![form page](/engineering-education/ajax-request-in-django-using-axios/form_page.png)
 
 Let’s go into the **templates/home.html**.
-We will add **Axios** library to our project the by adding the CDN script tag below outside the div tag.
+We will add **Axios** library to our project the by adding the CDN script tag below </div> closing tag.
 
 ```html
 
