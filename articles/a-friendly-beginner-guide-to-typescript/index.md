@@ -18,11 +18,7 @@ TypeScript is one of the most used tools for adding static types and it's also a
 
 - Basic knowledge of JavaScript
 
-In this article, I will show you some important guidelines to learn typescript but have in mind that practicing is the best way to learn. Let's get started 😊
-
-#### TypeScript Basics
-
-##### Boolean
+In this article, I will show you some important guidelines to learn typescript. But, have in mind that practicing is the best way to learn. Let's get started 😊
 
 This data type is simply a true/false value called Boolean. The example below shows how you can assign a boolean value to a variable in TypeScript.
 
@@ -99,9 +95,10 @@ let c: Fruits = Fruits.Banana;
 
 ##### Array
 
-TypeScript also supports arrays. 
+TypeScript also supports arrays.
 
 ##### Tips about an Array
+
 - Once an array is initialized it can't be resized because it's static and it can be useful in many scenarios.
 - Sequential memory blocks are allocated when an array is declared.
 - An array also needs to be declared before use.
@@ -161,6 +158,7 @@ let amount: unknown;
 // Error
 let newAmount: number = amount;
 ```
+
 A more advanced type guide can be used for something more specific to check types.
 
 ```
@@ -185,6 +183,7 @@ if (typeof maybeItsUnknown=== "string") {
   const aBoolean: boolean = maybeItsUnknown;
 // Type 'string' is not assignable to type 'boolean'.
 ```
+
 ##### Void
 
 A `void` type in TypeScript is seen as a return type function that does not return a value. An example below:
@@ -199,13 +198,11 @@ function greetings(): void {
 
 You can also check out the [TypeScript Doc](https://www.typescriptlang.org/docs) to learn more about the types and basics in TypeScript.
 
-#### Compiler Configurations
+### Compiler Configurations
 
-`tsconfig.json` is used to specify the root files and the compiler options required to compile the project whenever `tsc` is run locally. e.g
+`tsconfig.json` is used to specify the root files and the compiler options required to compile the project whenever `tsc` is run locally. e.g.
 
-```
-TypeScript
-
+```TypeScript
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -279,7 +276,6 @@ TypeScript
   //   "node_modules" exclude by default
   // ]
 }
-
 ```
 
 Most of the configurations are commented out but you can uncomment where necessary after reading the description attached to it on the right-hand side.
@@ -292,9 +288,7 @@ Most of the configurations are commented out but you can uncomment where necessa
 
 configure your script in `package.json` to look like this
 
-```
-TypeScript
-
+```TypeScript
 "scripts": {
     "clean": "rimraf dist",
     "build": "tsc",
@@ -304,7 +298,7 @@ TypeScript
   },
 ```
 
-#### Classes & Interfaces
+### Classes & Interfaces
 
 An Interface is a structured group of properties that describe an object.
 
@@ -315,7 +309,7 @@ Fields − Fields in class represent data pertaining to objects.
 
 Constructors − They are responsible for allocating memory for the objects of the class.
 
-Functions − Functions are also referred to as methods and they represent actions an object can take. 
+Functions − Functions are also referred to as methods and they represent actions an object can take.
 
 ##### Interface
 
@@ -330,11 +324,9 @@ interface IStudent {
 }
 ```
 
-##### Class
+#### Class
 
-```
-TypeScript
-
+```TypeScript
 class WelcomeMessage {
   greeting: string;
 
@@ -350,7 +342,7 @@ class WelcomeMessage {
 let welcomeUser = new WelcomeMessage("Idris"); // Welcome Idris
 ```
 
-#### Typescript Features
+### Typescript Features
 
 JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development)
 
@@ -368,7 +360,7 @@ Namespaces structures codes in a web application in such a way that all dependen
 
 Modules in TypeScript can contain declarations, code, and dependency on a module loader or a runtime that supports ES Modules. They provide strong isolation and separation of concern, reusable code, and great support for bundling. Modules are recommended for code organization mechanisms to suit proper business logic.
 
-#### Resources
+### Resources
 
 [TypeScript Docs](https://www.typescriptlang.org/docs/)
 
@@ -376,7 +368,7 @@ Modules in TypeScript can contain declarations, code, and dependency on a module
 
 [Why Static Typing & Why is TypeScript so popular?](https://www.section.io/engineering-education/typescript-static-typing/)
 
-#### Conclusion
+### Conclusion
 
 > Practice makes perfect, you will learn and find solutions in ways you never imagined possible. "Jo Bradford"
 
