@@ -74,6 +74,10 @@ which is used to give access to the namespace called standard that includes C++ 
 Program to illustrate working of namespace:
 
 ```c++
+#include<iostream>
+//Importing the  namespace standard
+using namespace std;
+//Creating namespaces
 namespace no1 {
   int fun() {
     return 10;
@@ -81,13 +85,16 @@ namespace no1 {
 }
 
 namespace no2 {
+  //Declaring a variable in the namespace
   const double x = 200;
+  //Function definition within the namespace
   double fun() {
     return 2 * x;
   }
 }
 
 namespace no3 {
+  // Creating a class in the namespace
   class sample {
     public:
       void show() {
@@ -97,9 +104,14 @@ namespace no3 {
 }
 
 int main() {
+
+  // Accessing the function within namespace no1
   cout << no1::fun() << '\n';
+  // Accessing the function within namespace no2
   cout << no2::fun() << '\n';
+  // Accessing the variable x directly
   cout << no2::x << '\n';
+  // Creating an object of class sample
   no3::sample myObj;
   myObj.show();
   return 0;
@@ -124,25 +136,32 @@ Program to illustrate the working of namespace with the same name:
 #include <iostream>
 
 using namespace std;
-
+// Creating namespaces with the same name
 namespace sample {
+  // Declaring variable x within the namespace
   int x = 20;
 }
 
 namespace sample {
+  //Declaring variable y within the namespace
   int y = 50;
 }
-
+// Creating unnamed namespace
 namespace {
+  //Declaring and initializing a variable
   int a = 15;
+  // Function definition within the unnamed namespace
   int fun() {
     return a;
   }
 }
 
 int main() {
+  // Accessing the variable x within the namespace sample
   cout << "Value of x = " << sample::x << '\n';
+  // Accessing the variable y within the namespace sample
   cout << "Value of y = " << sample::y << '\n';
+  // Accessing the function within the unnamed namespace
   cout << "Value returned by the unnamed namespace = " << fun() << '\n';
   return 0;
 }
@@ -165,26 +184,31 @@ Program to illustrate nested namespace:
 #include <iostream>
 
 using namespace std;
-
+//Creating nested namespaces
 namespace no1 {
+  // Declaring variable within the namespace no1
   int sample = 10;
   namespace no2 {
     namespace no3 {
+      // Declaring variable within the namespace no3 
+      // that initializes to the variable sample in namespace no1
       int sample1 = sample;
     }
   }
 }
-
+//Creating namespace that allows us to use it explicitly to access a variable in the nested namespace
 namespace myalias = no1::no2::no3;
-
+//Creating namespace demo and declaring an initialized variable
 namespace demo {
   int gvar = 200;
 }
-
+//Inserting the entire namespace demo into our code
 using namespace demo;
 
 int main() {
+  //Accessing the variable without the scope resolution operator as it is a global namespace
   cout << "Value of global variable in demo namespace = " << gvar << "\n";
+  //Accessing the value of sample1 using the namespace myalias
   cout << "Value of sample1 in nested namespace third = " << myalias::sample1 << "\n";
   return 0;
 }
