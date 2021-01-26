@@ -5,7 +5,7 @@ Overfitting impacts the accuracy of machine learning models. The model attempts 
 
 ### Contents
 
-1. Regularization and overfitting
+1. Regularization and Overfitting
 2. Lasso Regression
 3. Ridge Regression
 
