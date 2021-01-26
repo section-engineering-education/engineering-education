@@ -2,6 +2,8 @@
 
 TypeScript is a programming language that extends JavaScript by adding types. It saves time catching errors and providing fixes before you run code, so by understanding JavaScript everything comes in handy.
 
+TypeScript is one of the most used tools for adding static types and it's also an open-source language. Codes written in TypeScript can be transformed easily into javascript using TypeScript compiler or babel. The compiled Javascript code is always clean with no bugs and of course, they run in the browsers or NodeJs application.
+
 #### Table of contents
 
 - TypeScript Basics
@@ -22,7 +24,7 @@ In this article, I will show you some important guidelines to learn typescript b
 
 ##### Boolean
 
-This data type is simply a true/false
+This data type is simply a true/false value called Boolean. The example below shows how you can assign a boolean value to a variable in TypeScript.
 
 ```
 TypeScript
@@ -32,30 +34,30 @@ let isOpen: Boolean = true;
 
 ##### Number
 
-TypeScript Supports floating-point values or BigIntegers
+TypeScript Supports values that are floating-point, this is known as a type `number`. In ECMAScript 2015 octal literals and binary were introduced which is also supported in TypeScript.
 
 ```
 TypeScript
 
-let decimal: number = 6;
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
-let big: bigint = 100n;
+let decimalExample: number = 6;
+let hexExample: number = 0xf00d;
+let octalExample: number = 0o744;
+let bigExample: bigint = 100n;
+let binaryExample: number = 0b1010;
 ```
 
 ##### String
 
-TypeScript uses single (') or double(") quote similar to JavaScript.
+TypeScript uses single (') or double(") quote similar to JavaScript. Textual datatypes refer to as type `string` as in other languages
 
 ```
 TypeScript
 
 let colour: string = "yellow";
-color = 'white';
+colour = 'white';
 ```
 
-Template Strings are also valid in typeScript and can be used without limitations.
+Template Strings are also valid in typeScript and can be used without limitations. This is represented using backtick `(`)` , it can also be used for embedded expressions as shown below:
 
 ```
 TypeScript
@@ -67,7 +69,7 @@ let text: string = `Hello, my name is ${fullName}.`
 
 ##### Enum
 
-Enum in TypeScript is a special class that contains constant values. By default enum numbering start from the index zero.
+Enum in TypeScript is a special class that contains constant values, by default enum numbering start from the index zero. This is a way of giving awesome names to a set of numeric values.
 
 ```
 TypeScript
@@ -81,7 +83,7 @@ enum Fruits {
 let c: Fruits = Fruits.Apple;
 ```
 
-You can manually access set the number of an enum.
+You can manually set the number of an enum by setting its values as shown below:
 
 ```
 TypeScript
@@ -89,7 +91,7 @@ TypeScript
 enum Fruits {
   Orange = 1,
   Apple = 4,
-  Banana= 7
+  Banana = 7
 }
 // can be accessed by
 let c: Fruits = Fruits.Banana;
@@ -97,7 +99,12 @@ let c: Fruits = Fruits.Banana;
 
 ##### Array
 
-TypeScript also supports arrays. They are represented as;
+TypeScript also supports arrays. 
+
+##### Tips about an Array
+- Once an array is initialized it can't be resized because it's static and it can be useful in many scenarios.
+- Sequential memory blocks are allocated when an array is declared.
+- An array also needs to be declared before use.
 
 ```
 TypeScript
@@ -105,9 +112,17 @@ TypeScript
 let listOfNumbers: number[] = [1, 2, 3, 4, 5, 6];
 ```
 
+Using the generic array type declaration
+
+```
+TypeScript
+
+let listOfNumbers: Array<number> = [1, 2, 3, 4, 5, 6];
+```
+
 ##### Object
 
-An object in TypeScript is an instance that contains a set of key-value pairs. It gives a compilation error whenever you try to access a value that does not exist in a given object.
+An object in TypeScript is an instance that contains a set of key-value pairs. The type `object` represents the non-primitive type. An example is shown below:
 
 ```
 TypeScript
@@ -120,7 +135,7 @@ var person = {
 
 ##### Any
 
-The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript.
+The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript. The `any` type allows you to gradually control the opt-in and opt-out of checking types during compilation. An example of the type `Any` is shown below:
 
 ```
 TypeScript
@@ -137,7 +152,7 @@ amount = undefined;
 
 ##### Unknown
 
-This works similar to `Any` core types in typescript but when you try to reassign a value that has been initialized to a new variable then you will get an error, Which means anything is assignable to unknown itself and `any`core types.
+This works similar to `Any` core types in typescript but when you try to reassign a value that has been initialized to a new variable then you will get an error, Which means anything is assignable to unknown itself and `any` core types.
 
 ```
 TypeScript
@@ -146,10 +161,33 @@ let amount: unknown;
 // Error
 let newAmount: number = amount;
 ```
+A more advanced type guide can be used for something more specific to check types.
 
+```
+declare const maybeItsUnknown: unknown;
+
+if (maybeItsUnknown=== true) {
+
+  // Now, TypeScript knows that maybeItsUnknown is a boolean
+  const aBoolean: boolean = maybeItsUnknown;
+
+  // So, it cannot be a string
+  const aString: string = maybeItsUnknown;
+// Type 'boolean' is not assignable to type 'string'.
+}
+
+if (typeof maybeItsUnknown=== "string") {
+
+  // Now, TypeScript knows that maybeItsUnknown is a string
+  const aString: string = maybeItsUnknown;
+
+  // So, it cannot be a boolean
+  const aBoolean: boolean = maybeItsUnknown;
+// Type 'string' is not assignable to type 'boolean'.
+```
 ##### Void
 
-A void in TypeScript is set when it's certain that a function is not returning a value.
+A `void` type in TypeScript is seen as a return type function that does not return a value. An example below:
 
 ```
 TypeScript
@@ -271,6 +309,13 @@ TypeScript
 An Interface is a structured group of properties that describe an object.
 
 A Class is a blueprint from which we can create objects that share the same configuration or properties and methods.
+
+In addition to the class definition:
+Fields − Fields in class represent data pertaining to objects.
+
+Constructors − They are responsible for allocating memory for the objects of the class.
+
+Functions − Functions are also referred to as methods and they represent actions an object can take. 
 
 ##### Interface
 
