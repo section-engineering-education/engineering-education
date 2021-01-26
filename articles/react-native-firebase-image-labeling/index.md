@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-firebase-image-labelling/
+url: /engineering-education/react-native-firebase-image-labeling/
 title: Image Labeling Using Firebase ML in a Non-Expo React Native Application 
 description: This tutorial gives readers a detailed guide on how to implment image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-firebase-image-labelling/hero.jpg
+  - url: /engineering-education/react-native-firebase-image-labeling/hero.jpg
     alt: React Native Image Labeling With Firebase Hero Image
 ---
 Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using the machine learning kit from Firebase.
@@ -54,7 +54,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/engineering-education/react-native-firebase-image-labelling/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-image-labeling/env_setup.png)
 
 ### Installing dependencies
 
@@ -96,23 +96,23 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](/engineering-education/react-native-firebase-image-labelling/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-image-labeling/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
 
-![New Dashboard](/engineering-education/react-native-firebase-image-labelling/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-image-labeling/new_dashboard.png)
 
 Now, click on the Android icon to add an android app to the Firebase project.
 
-![register_app](/engineering-education/react-native-firebase-image-labelling/register_app.png)
+![register_app](/engineering-education/react-native-firebase-image-labeling/register_app.png)
 
 You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
-![Package Name](/engineering-education/react-native-firebase-image-labelling/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-image-labeling/package_name.png)
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
-![Download Google Services JSON](/engineering-education/react-native-firebase-image-labelling/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-image-labeling/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -151,23 +151,23 @@ The ML Kit uses the cloud vision API to label the images.
 
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
-![Cloud Dashboard](/engineering-education/react-native-firebase-image-labelling/cloud_dashboard.png)
+![Cloud Dashboard](/engineering-education/react-native-firebase-image-labeling/cloud_dashboard.png)
 
 In the API & Service tab, Head to the Libraries section.
 
-![API & Services Tab](/engineering-education/react-native-firebase-image-labelling/api_services.png)
+![API & Services Tab](/engineering-education/react-native-firebase-image-labeling/api_services.png)
 
 Search for Cloud Vision API.
 
-![API Library Section](/engineering-education/react-native-firebase-image-labelling/search_libraries.png)
+![API Library Section](/engineering-education/react-native-firebase-image-labeling/search_libraries.png)
 
 Once you open the API page, click on the Enable button.
 
-![Enable Cloud Vision](/engineering-education/react-native-firebase-image-labelling/enable_cloud_vision.png)
+![Enable Cloud Vision](/engineering-education/react-native-firebase-image-labeling/enable_cloud_vision.png)
 
 Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
-![Cloud Vision Metrics](/engineering-education/react-native-firebase-image-labelling/cloud_vision_dashboard.png)
+![Cloud Vision Metrics](/engineering-education/react-native-firebase-image-labeling/cloud_vision_dashboard.png)
 
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
 
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-![Buttons](/engineering-education/react-native-firebase-image-labelling/buttons_ui.jpg)
+![Buttons](/engineering-education/react-native-firebase-image-labeling/buttons_ui.jpg)
 
 ### Adding media picker
 
@@ -327,7 +327,7 @@ const onImageSelect = async (media) => {
 };
 ```
 
-![Image UI](/engineering-education/react-native-firebase-image-labelling/with_image.jpg)
+![Image UI](/engineering-education/react-native-firebase-image-labeling/with_image.jpg)
 
 ### Label the image using Firebase ML
 
@@ -382,7 +382,7 @@ We'll use this state to render the details in the UI.
 ))}
 ```
 
-![Final Result](/engineering-education/react-native-firebase-image-labelling/final_result.jpg)
+![Final Result](/engineering-education/react-native-firebase-image-labeling/final_result.jpg)
 
 ### Additional Configurations
 
