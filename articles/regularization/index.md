@@ -15,13 +15,19 @@ Just a basic understanding of machine learning is required. Here’s a useful [a
 
 ### Regularization and Overfitting
 
-Overfitting is an occurrence that impacts the performance of a model negatively. It occurs when a function fits a limited set of data points too closely. The model learns from noise in the training data. This impacts the performance of the model on test data. The image below shows the phenomena of overfitting, underfitting, and the correct fit.
+Overfitting is an occurrence that impacts the performance of a model negatively. 
+
+It occurs when a function fits a limited set of data points too closely. Data often has some element of random noise within it. For example, The training data may contain data points that do not accurately represent the properties of the data. These points are considered as noise. When a function fits a set of such datapoints too closely, the model learns from noise in the data. As a result, the complexity of the model is increased. This impacts the ability of the model to make reliable predictions on test data. The model may also be unable to fit additional data. This may lead to sub-par performance on test data. 
+
+The image below shows the phenomena of overfitting, underfitting, and the correct fit.
 
 ![overfitting](/engineering-education/regularization/overfitting.png)
 
 *Overfitting, correct fit, and underfitting.*
 
 [Source](https://analyticsindiamag.com/regularization-in-machine-learning-a-detailed-guide/)
+
+For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/). 
 
 Overfitting occurs because a model fails to generalize data that contains a lot of irrelevant data points. Regularization is an answer to overfitting. It is a technique that improves model accuracy as well as prevents loss of important data that is suffered during underfitting. Regularization is a type of regression that shrinks coefficient estimates to zero to reduce the capacity of a model. It removes extra weights from select features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. In turn, the risk of overfitting is lowered.
 Let’s use a linear regression equation to explain regularization further.
