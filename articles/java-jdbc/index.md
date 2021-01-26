@@ -56,7 +56,7 @@ To follow this tutorial along you will need the following:
 </project>
 ```
 
-- In the `src` package create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java` which will hold various student information, and `MysqlAccess.java` that will contain our database access source code.
+- In the `src` package create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java` which will hold various student information and `MysqlAccess.java` that will contain our database access source code.
 
 #### Student.java
 This is a plain Java object (POJO) that will contain the student information.
@@ -115,7 +115,133 @@ public class Student {
 - The `toString()` method returns a string representation of the class variables.
   
 #### MysqlAccess.java
+`MysqlAccess.java`class contains the methods that handle the database operations.
+It has the methods below
+**databaseConnection()** establishes database connection between our application and MYSQL database.
+```java
+  public void databaseConnection() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connect = DriverManager
+                .getConnection("jdbc:mysql://localhost/school?"
+                        + "user=root&password=");
+        statement = connect.createStatement();
+    }
+```
 
+- `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
+
+**getStudents()** method returns a list of students from the database. 
+```java
+
+    public List<Student> getStudents() {
+        List<Student> students = new ArrayList<>();
+        try {
+            resultSet = statement
+                    .executeQuery("select * from school.students");
+            while (resultSet.next()) {
+                student_name = resultSet.getString("name");
+                student_email = resultSet.getString("email");
+                student_course = resultSet.getString("course");
+                Student student = new Student(student_name, student_email, student_course);
+                students.add(student);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return students;
+    }
+```
+- ` resultSet = statement.executeQuery("select * from school.students");` executes the `SELECT` query that gets all the students from the database and stores the result in the `resultSet`. 
+- `while (resultSet.next())` loops through the result set to get all the students' data returned.
+
+**getStudentByEmail(String email)** returns a student from the database with the email password in the `SELECT` query.
+```java
+    public Student getStudentByEmail(String email) {
+        try {
+            resultSet = statement
+                    .executeQuery("select * from school.students WHERE email= \'" + email + "\' LIMIT 1;");
+            while (resultSet.next()) {
+                student_name = resultSet.getString("name");
+                student_email = resultSet.getString("email");
+                student_course = resultSet.getString("course");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        }
+        return new Student(student_name, student_email, student_course);
+    }
+  ```
+**saveStudent(Student student)** inserts a new student passed to the method into the database.
+```java
+    public void saveStudent(Student student) {
+        try {
+            preparedStatement = connect
+                    .prepareStatement("insert into  students values (?, ?, ?)");
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setString(2, student.getCourse());
+            preparedStatement.setString(3, student.getEmail());
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage());
+        }
+
+    }
+```
+**deleteStudent(String email)** deletes a student with the email passed to the `DELETE` query in the database.
+```java
+
+    public void deleteStudent(String email) {
+        try {
+            preparedStatement = connect
+                    .prepareStatement("delete from school.students where email= ? ; ");
+            preparedStatement.setString(1, email);
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+```
+**updateStudent(Student student, String email)** updates the student information of the student with the email passed to the `UPDATE` query.
+```java
+    public void updateStudent(Student student, String email) {
+        try {
+            preparedStatement = connect
+                    .prepareStatement("update students set name= ? where email= ? ;");
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setString(2, email);
+            preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+```
+**close()** closes the database connection.
+```java
+public void close() {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+
+            if (statement != null) {
+                statement.close();
+            }
+
+            if (connect != null) {
+                connect.close();
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+```
+
+Full source code for the `MySqlAccess` class is shown below.
 ```java
 import java.sql.*;
 import java.util.ArrayList;
@@ -235,15 +361,6 @@ public class MySqlAccess {
 
 }
 ```
-
-- `databaseConnection()` method establishes a connection to the database. `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
-- `getStudents()` method returns a list of students from the database. ` resultSet = statement.executeQuery("select * from school.students");` executes the `SELECT` query that gets all the students from the database and stores the result in the `resultSet`. 
-- The `while (resultSet.next())` loops through the result set to get all the students' data returned.
-- The `getStudentByEmail(String email)` method returns a student from the database with the email password in the `SELECT` query.
-- The `saveStudent(Student student)` method inserts a new student passed to the method into the database.
-- The `deleteStudent(String email)` method deletes a student with the email passed to the `DELETE` query in the database.
-- This `updateStudent(Student student, String email)` method updates the student information of the student with the email passed to the `UPDATE` query.
-- The `close()` method closes the database connection.
 
 #### Main.java
 In this class, we create an instance of the `MySqlAccess` class and call its various methods to execute various database queries.
