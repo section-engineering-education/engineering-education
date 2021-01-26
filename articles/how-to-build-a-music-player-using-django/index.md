@@ -604,7 +604,12 @@ You can view it on your localhost at this link [http://127.0.0.1:8000/](http://1
 
 You can also go to the [GitHub repo](https://github.com/Chukslord1/DjangoMusicPlayer) to view the project.
 
+### Resources
+* https://www.javatpoint.com/django-mvt
+
 ### Conclusion
 
 By using Django, we were able to build a music player web app using Django, HTML, Jinja, CSS, and Javascript. We also saw how easy it was to create a web app using Django and manipulate the database with Django's ORM.
 If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
+
+
