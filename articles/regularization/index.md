@@ -100,7 +100,7 @@ Regularization is a formidable technique to prevent overfitting. There are sever
 
 4. [Regularization In Machine Learning – A Detailed Guide](https://analyticsindiamag.com/regularization-in-machine-learning-a-detailed-guide/)
 
-5. [Regularization in Machine Learning](https://www.javatpoint.com/regularization-in-machine-learning#:~:text=Regularization%20is%20one%20of%20the%20most%20important%20concepts,does%20not%20perform%20well%20with%20the%20test%20data.)
+5. [Regularization in Machine Learning](https://www.javatpoint.com/regularization-in-machine-learning)
 
 6. [What is Regularization in Machine Learning?](https://codeburst.io/what-is-regularization-in-machine-learning-aed5a1c36590)
 
