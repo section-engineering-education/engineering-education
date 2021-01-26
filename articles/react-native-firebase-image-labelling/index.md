@@ -40,7 +40,7 @@ We'll be going through these steps in this article:
 4. Setting up Cloud Vision API.
 5. Building the UI.
 6. Adding media picker.
-7. Label the image using Firebase ML.
+7. Labeling the image using Firebase ML.
 8. Additional configurations.
 9. Recap.
 
