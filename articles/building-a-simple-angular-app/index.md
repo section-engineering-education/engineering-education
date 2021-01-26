@@ -1,41 +1,53 @@
-Angular 11 was released on Nov 11, 2020, by the Angular team at Google.
-Angular's development community has been growing over the past few years.
-If you aren't familiar with Angular, there are plenty of reasons why you should start learning.
-This year's release focuses on improving the developer's experience.
-To check out more about releases, [click here](https://blog.angular.io/version-11-of-angular-now-available-74721b7952f7).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-a-simple-angular-app/
+title: Introduction to Data Binding using Angular
+description: This article will walk you on building a simple Angular application covering the basic and core Angular CLI concepts. The guide is handy for developers who are willing to have a hands-on experience, along with learning.
+author: mahantesh-r
+date: 2021-01-25T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-simple-angular-app/hero.png
+    alt: Data Binding using Angular example image
+---
+Angular 11 was released on [Nov 11, 2020](https://angular.io/guide/updating-to-version-11), by the Angular team at Google. Angular's development community has been growing over the past few years. If you are not familiar with Angular, there are plenty of reasons why you should start learning.
+<!--more-->
+This year's release focuses on improving the developer's experience. To check out more about releases, [click here](https://blog.angular.io/version-11-of-angular-now-available-74721b7952f7).
 
 ### Introduction 
-This article will walk you by building a simple Angular application covering the basic and core Angular CLI concepts.
-The guide is handy for developers who are willing to have a hands-on experience, along with learning.
+This article will walk you on building a simple Angular application. We will cover the basics and core Angular CLI concepts. The guide will be handy for developers who are looking to have a hands-on experience while learning.
 
-We are going to build a tiny version of a streaming anime application. On the home page,
-we will display all the anime covers. The user can click on any of the cards to be redirected to the respective anime profile section.
+We are going to build a tiny version of a streaming anime application. On the home page, we will display all the anime covers. The user can click on any of the cards to be redirected to the respective anime profile section.
 
-The anime profile contains all the details about that respective anime—
-also, a comment box at the bottom.
-### Getting Started
+The anime profile contains all the details about that respective anime — and a comment box at the bottom.
 
+### Getting started
 With Node.js installed, run the following command to install Angular CLI.
-```commandline
+```bash
 npm install -g @angular/cli
 ``` 
- This command will install all the dependencies necessary to build an Angular application.
 
+This command will install all the dependencies needed to build an Angular application.
 
-The next step is to create a workspace and starter app, run the following command. 
-```commandline
+The next step is to create a workspace and starter app, lets do so by running the following command. 
+```bash
 ng new my-app
 ``` 
+
 This step will create a new Angular starter app named *my-app*.
 
-Now, with the starter app in-place, run the following commands.
-```commandline
+Now, with this starter app in-place, run the following commands.
+```bash
 cd my-app
 ng serve
 ```
 The latter command will run the *my-app* application.
 
-The folder structure looks as shown below:
+The folder structure should look as shown below:
 ```html
 my-app
 ├───e2e
@@ -70,12 +82,10 @@ my-app
 ```
 
 ### Building the app
-
 We will start with the data part first, and later on, build the UI and its working components.
 
-#### Getting your Data ready
-
-* In your `src/app` folder, create a new interface file under the new folder `model`.
+#### Getting your data ready
+- In your `src/app` folder, create a new interface file under the new folder `model`.
 ```typescript
     // animeInterface.ts
 
@@ -89,7 +99,8 @@ We will start with the data part first, and later on, build the UI and its worki
       comments: string[];
     }
 ```
-* The next step would be to populate the data. We will create a *typescript* file in the `src` folder.
+
+- The next step would be to populate the data. We will create a *typescript* file in the `src` folder.
 ```typescript
     //db-data.ts
 
@@ -106,24 +117,25 @@ We will start with the data part first, and later on, build the UI and its worki
       },
     ];
 ```
-* The const `ANIME` is an array of type `AnimeInterface`, which holds data about each show in `JSON` format.
+
+- The const `ANIME` is an array of the type `AnimeInterface`, which holds data about each show in `JSON` format.
+
 With the data ready, the next step is to display all the anime cards.
 
 #### Building the UI
-
 We will be using `Bootstrap v4.0` to keep our UI simple and clean. Use the bootstrap templates in your `index.html` file.
 
-##### The Layout
+#### The layout
 Create a component `anime-list` from your terminal with the following command:
 
-```commandline
+```bash
     ng g c animeList
 ```
-  This will generate a new component called `anime-list` under the `src/` folder. 
-  The component gets imported into the `declaration` array in `app.module.ts`.
 
-  The `anime-list` component will be used to display the anime list from `db.data.ts` in a grid manner.
-  ```typescript
+This will generate a new component called `anime-list` under the `src/` folder. The component gets imported into the `declaration` array in `app.module.ts`.
+
+The `anime-list` component will be used to display the anime list from `db.data.ts` in a grid manner.
+```typescript
     //anime-list.component.ts
 
     import { Component } from '@angular/core';
@@ -154,13 +166,11 @@ Create a component `anime-list` from your terminal with the following command:
         </div>
       </div>
     </div>
-  ```
-In the above *.ts* code, we are sending 
-data from `db.data.ts` to the template, from where we are 
-calling the *component* `anime-card`.
+```
 
-Now, create a `anime-card` component, which will display the anime card 
-and provide a static router link to the *anime profile* section.
+In the above *.ts* code, we are sending data from `db.data.ts` to the template, that is where we are calling the *component* `anime-card` from.
+
+Now, create a `anime-card` component, which will display the anime card and provide a static router link to the *anime profile* section.
 ```typescript
   // anime-card.component.ts
   
@@ -199,15 +209,12 @@ and provide a static router link to the *anime profile* section.
     </div>
   </div>
 ```
-the above code will get the *anime* and *id* as *inputs* from its parent component `anime-list`; these details are 
-used in the template to display the anime card. The `routerLink` creates a link to the 
-`anime-profile` section(covered below) of our application.
 
-##### Creating the Profile
+The code above will get the *anime* and *id* as *inputs* from its parent component `anime-list`; these details are 
+used in the template to display the anime card. The `routerLink` creates a link to the `anime-profile` section (covered below) of our application.
 
-With layout ready, once the user clicks on any of the anime card,
-an *id* is passed as an URL parameter, and that respective anime profile gets
-displayed.
+#### Creating the profile
+With the layout ready, once the user clicks on any of the anime card, an *id* is passed as an URL parameter, and that respective anime profile gets displayed.
 
 Create an `anime-profile` component.
 ```html
@@ -325,11 +332,9 @@ Create an `anime-profile` component.
       }
     }
 ```
-the above code uses a *service* to fetch the anime profile based on the 
-*id*, and `<ng-template>` is used to define an *else block*. The `location` service 
-interacts with a browser's URL directly and redirects the user should you wish to.
+The code above uses a *service* to fetch the anime profile based on the *id*, and `<ng-template>` is used to define an *else block*. The `location` service interacts with the browser's URL directly and redirects the user should you wish to.
 
-the `anime.service.ts` is as follows:
+The `anime.service.ts` is as follows:
 ```typescript
    // anime.service.ts
    
@@ -350,10 +355,10 @@ the `anime.service.ts` is as follows:
 
 ```
 
-##### Setting up the Routes
+#### Setting up the routes
+The next step is to set up routes for in-app navigation. For that, mention the paths in the `imports` array of `app.module.ts`. Also initialize the `exports` array with the `RouterModule` as shown below. 
 
-The next step is to set up routes for in-app navigation. For that, mention paths in the `imports` array of `app.module.ts`. Also, initialize the `exports` array 
-with `RouterModule` as shown below. Doing this will allow us to use `<router-outlet>` in components declared in `AppModule`.
+Doing this will allow us to use `<router-outlet>` in the components declared in `AppModule`.
 
 ```typescript
     // app.module.ts
@@ -394,8 +399,7 @@ with `RouterModule` as shown below. Doing this will allow us to use `<router-out
 Note that there are other ways to set up your in-app routes. Another method is to create an `AppRoutingModule` file
 and define your paths there. You can reference it [here](https://stackoverflow.com/questions/41823772/angular2-export-of-routermodule-why-it-is-required).
 
-The last step would be to use `<router-outlet>` placeholder in our
-`app.component.html`, which will help load the components based on the current state.
+The last step would be to use `<router-outlet>` placeholder in our `app.component.html`, that will help load the components based on the current state.
 ```html
     <!-- app.component.html-->
 
@@ -417,9 +421,17 @@ The last step would be to use `<router-outlet>` placeholder in our
   }
 
 ```
-With all these steps followed, our Anime SPA is ready. Below, are few screenshots of the same:)
+
+With all these steps followed, our Anime SPA is ready to go. 
+
+Below, are few screenshots for you to compare :)
+
 ![home page](/engineering-education/building-a-simple-angular-app/my-app-home.png)
+
 ![anime profile page](/engineering-education/building-a-simple-angular-app/my-app-anime-akira.png)
 
 ### Additional Resources
 - Refer to the [Angular Docs](https://angular.io/docs) for more info.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
