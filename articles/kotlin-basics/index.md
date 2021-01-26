@@ -47,6 +47,7 @@ fun main(args: Array<String>) {
 ### 1. Defining Variables
 
 #### `val`
+val used to declare a variable
 It can be assigned a value only once 
 They are immutable string
 
@@ -60,6 +61,7 @@ fun main(args: Array<String>) {
 ```
 
  #### `var`
+var used to declare a variable
 It can be reassigned a value after assigned locally
 They are mutable string
 
@@ -79,18 +81,13 @@ Comments are ignored during code compilation
 Comments can be written in two ways:
 
 * Using block comments
-```kotlin
 /*
 * This is comment line 1
 * */
-```
 
 * By use of double forward slashes
-```kotlin
-fun main (){
     // This is a comment
-}
-```
+
 
 ### Data types
 In kotlin data, types are all objects.
@@ -170,6 +167,7 @@ fun main() {
 // Output: Steve
 ```
 
+###  String Interpolation in Kotlin
 #### Arrays
 
 An array is an indexed collection of items that all have the same type. To create an array, we use the `arrayOf ` function
@@ -196,9 +194,6 @@ val firstContinent = Continents[0] // firstContinent= "Africa"
 
 Continents[0] = "Australia"
 ```
-
-###  String Interpolation in Kotlin
-
 ```kotlin
 
 fun main() {
@@ -1309,6 +1304,31 @@ class Person {
 ```
 
 ### 1. Arrays
+
+An array is an indexed collection of items that all have the same type. To create an array, we use the `arrayOf ` function
+
+Arrays in Kotlin are represented by the Array class, which has to get and set functions (that turn into [] by
+operator overloading conventions), and size property, along with a few other useful member functions:
+
+####  Creating array
+
+```kotlin
+
+val Continents = arrayOf("Africa", "Europe", "Asia")
+```
+
+ #### Accesing array
+
+ ```kotlin
+val firstContinent = Continents[0] // firstContinent= "Africa"
+```
+
+#### Repacing of index
+
+```kotlin
+
+Continents[0] = "Australia"
+```
   
   ```kotlin
 fun main() {
