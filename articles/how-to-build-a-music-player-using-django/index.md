@@ -45,10 +45,10 @@ Here is an easy diagram that indicates the MVT structure in Django:
 ![mvt structure](/engineering-education/how-to-build-a-music-player-using-django/mvt.png)
 
 
-#### Getting Started with Django
+## Getting Started with Django
 If you are new to Django and want to get started with it, you can view the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
 
-#### Prerequisites
+### Prerequisites
 Python, Django, Pillow
 
 Install python and enable pip, then run the following to install the required packages
