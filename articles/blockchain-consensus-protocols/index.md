@@ -18,7 +18,7 @@ The technology allows one to verify the transactions via [cryptographic hash fun
 
 Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work(PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. 
 
-All the crypto-currencies and other blockchain applications, also known as decentralized applications (dApps), vary in how the network reaches a consensus. dApps are applications that use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
+All the crypto-currencies and other blockchain applications, also known as decentralized applications (dApps), vary in how the network reaches a consensus. dApps use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
 
 ### Types of consensus protocols
 
@@ -35,7 +35,9 @@ Proof of work is one of the first consensus protocols used in blockchain applica
 - The mining aspect of bitcoins is solving the cryptographic puzzle of finding a random integer, which leads to hashes with a specified number of leading zeros. 
 - Every transaction is validated and signed using the public and private keys assigned to each user. 
 
+##### Disadvantages
 
+- It is a power-hungry and resource-intensive protocol. This protocol wastes a lot of computational power and electricity to solve the cryptographic puzzles compared to the relatively efficient protocols.
 
 ##### Popular Crypto-currencies
 
@@ -56,6 +58,9 @@ In proof of stake consensus, a validator is picked and assigned a block. The min
 - It is environmentally friendly as there is no computational puzzle to be solved
 - Special hardware for mining is not required
 
+##### Disadvantages
+- In PoS, an attacker would need to possess greater than 50% of the currency to gain control over the network compared to 51% in PoW.
+- One of the possible attacks over a PoS consensus-based network is a bribe attack. This happens when the attacker reverses the victim's transactions and bribes the miners for confirming the transactions. 
 
 #### Proof of Space
 
@@ -63,14 +68,18 @@ Proof of space, also known as PoSpace, is a network consensus protocol similar t
 
 PoSpace consumes disk space and incentivizes miners with the most considerable disk space allocated to a block. Implemented using the hard-to-pebble graphs, this data structure is used to solve the pebbling game. The pebbling game consists of pebbling vertices in a graph only if all the parent vertices have been pebbled. Pebbling refers to storing the parents' hash values, and removing the pebble refers to freeing the memory. Refer to this article for more details on the [pebbling game](https://math.mit.edu/research/highschool/primes/materials/2016/conf/10-2%20Bhupatiraju-Kuszmaul-Vale.pdf). 
 
-This consensus protocol again favors the miners with the maximum amount of space. It is resource biased, and therefore, miners with less amount of space cannot participate actively. This is a problem that goes against the concept of decentralization. 
 
 All the feasible solutions to the problem are generated randomly, called plots. These plots are stored on the disks and solved using an algorithm called Shabal's algorithm. Once the solutions are computed, the miners compare their solutions, and the solution with the best time and space complexity is rewarded with the next block.
+
+##### Disadvantages
+
+- This consensus protocol again favors the miners with the maximum amount of space. It is resource biased, and therefore, miners with less amount of space cannot participate actively. This is a problem that goes against the concept of decentralization. 
 
 ##### Applications
 - Burstcoin is a decentralized cryptocurrency built using PoSpace. The value proposition is to aid payment systems. 
 - SpaceMint is another example in its early conceptual stages.
-- 
+
+
 #### Proof of Elapsed Time
 
 Proof of Elapsed time is a network consensus protocol developed by Intel Corporation. The algorithm is predominantly used in permissioned blockchain ledgers. The hardware used in PoET is specially designed for this protocol. For example, Intel Software Guarded Extension (SGX) is used in networks using PoET. 
@@ -79,6 +88,9 @@ This consensus protocol is used to allocate blocks to miners on the network. In 
 
 Each node in the network is assigned a random waiting time. The first node to complete the randomly chosen period validates the new block. The specialized hardware puts the processor to sleep during the wait time—this repeats over all the blocks in the network. 
 
+##### Disadvantages
+- The major disadvantage of this algorithm is its dependency on specialized hardware. This exposes it to various security vulnerabilities due to the lack of standardized and tried and tested protocols.
+  
 ##### Applications
 
 - IBMs Hyperledger Sawtooth supports PoET mechanism for custom blockchain applications development.
