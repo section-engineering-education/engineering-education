@@ -1,30 +1,28 @@
-# Introduction to Nmap  
-Nmap (network mapper), the leading and the most famous security scanning tool used by testers (penetration testers/ethical hackers).  
-In this tutorial, we will be discussing the comprehensive understanding and usage of Nmap along with its most commonly used commands to perform port scans.  
+### Introduction to Nmap  
+Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we will be discussing the comprehensive understanding and usage of Nmap along with its most commonly used commands to perform port scans.  
 
-## What Is A Network Mapper?
+### What Is A Network Mapper?
 
 This is a command-line tool based on a Linux environment used to discover and audit networks, scan and check vulnerabilities on Internet Protocol(IP) addresses and ports for a given network.  
 
 For instance, you're a network administrator, an IT manager, or just a security professional in your organization. One of the critical challenges you will face is a battle to get to know what is running on your network and the kind of security issues/challenges they pose.  
 
-There are several tools(Nmap included) available for Network Administrators to use to monitor their network and get real-time activities on their network from these challenges. 
+There are several tools (Nmap included) available for Network Administrators to use to monitor their network and get real-time activities on their network from these challenges. 
 
 With this Nmap tool,   
 
-* Network administrator(s) can identify all devices that are running/accessing their systems.
-* An administrator can identify all the hosts, a computer connected to their network, including the services they offer.  
-*  An administrator can scan all the open ports(communication endpoint), giving security a priority, that is, security threat detections.
-* An administrator can scan/ monitor a single host(a computer connected to the organization network) or thousands of devices connected.
+- Network administrator(s) can identify all devices that are running/accessing their systems.
+- An administrator can identify all the hosts, a computer connected to their network, including the services they offer.  
+- An administrator can scan all the open ports (communication endpoint), giving security a priority, that is, security threat detections.
+- An administrator can scan/ monitor a single host (a computer connected to the organization network) or thousands of devices connected.
 
-As we said at the beginning, Nmap is by far the most commonly used network scanning tool.  
-It's a port scanning tool, meaning it gathers information from these ports.  This information is commonly known as network packets(consists of control information and user data, i.e., payload), then sent to system ports.  
+As discussed in the beginning, Nmap is by far the most commonly used network scanning tool. It's a port scanning tool, meaning it gathers information from these ports. This information is commonly known as network packets (consists of control information and user data, i.e., payload), then sent to system ports.  
 
-Nmap is a port listener. It can listen for responses in the process. It can determine whether a port is open or closed or filtered in one way or another by the firewall(a system designed to deny unauthorized users access to or from a private network).  
+Nmap is a port listener. It can listen for responses in the process. It can determine whether a port is open or closed or filtered in one way or another by the firewall (a system designed to deny unauthorized users access to or from a private network).  
 
 It's a flexible and versatile tool, meaning it can adapt/change to different activities and functions.  
 
-Note:- port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing. 
+_Note: Port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing. _
 
 #### Example 1.1 simple port scan ```scanme.nmap.org```
 ```console
@@ -56,7 +54,7 @@ PORT      STATE    SERVICE
 
 ```
 
-## Getting Started
+### Getting Started
 Nmap was initially developed to run only on Unix based systems. Windows version was released in 2000, but with a few limitations including:-
 * Microsoft dropped the support for raw```TCP/IP socket```, it has proven hard to scan various VPN clients since Nmap supports ```ethernet``` interfaces only.
 * Windows Networking APIs are known to have several deficiencies hence not efficient enough.  
@@ -79,10 +77,12 @@ Codename:   focal
 But you're free to follow along with [MacOs](https://nmap.org/download.html) and [Windows](https://geekflare.com/nmap-on-windows/).
 
 To install Nmap in Ubuntu:-  
+ 
  #### Requirements:-
  * Sudo privileges- you should have the installation rights on the system.
  * An access to ubuntu terminal (Ctrl + T).  
  * An advanced package tool (apt) package manager or snap store.
+  
   #### Step 1: Updating Package List
   Before installing Nmap in your system, ensure that your software packages are up-to-date by running the following command:
 
@@ -128,7 +128,7 @@ After this operation, 26.3 MB of additional disk space will be used.
 Do you want to continue? [Y/n]
 ```
 
-Press on the ```y```, to proceed, the output should present the following screen:-   
+Press ```y``` to proceed. That should present the following screen:-   
 ```console
 Do you want to continue? [Y/n] y
 Get:1 http://ke.archive.ubuntu.com/ubuntu focal/main amd64 libblas3 amd64 3.9.0-1build1 [142 kB]
@@ -188,7 +188,7 @@ jumamiller@OpijaKaeli:~$
 ```
 NOTE:- Your version might be different.  
 
-If you have reached this far, congratulations, you now have Nmap installed in your system.
+If you have reached this far, you have installed Nmap successfully in your system.
 
 #### Step 4: Nmap Scanning Types:
 ```DISCLAIMER!!- The information given in this module is solely for use to scan your networks or networks for which you have been authorized to scan. ```   
@@ -200,8 +200,10 @@ There are several scan types used in Nmap:-
 * UDP SCAN.
 * RPC SCAN. et cetera...
 
-In this tutorial, we will be looking at the two commonly used scans:-
-#### TCP SCAN
+In this tutorial, we will be looking at the two commonly used scans:
+
+### TCP Scan
+
 Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a connect() system call. If it succeeds, 
 it creates a 3-way handshake, a TCP process to create/make a connection between the client and the server. Otherwise, the port is closed/the remote target system is offline and cannot be accessed.  
 
@@ -244,7 +246,7 @@ It can be easily detected on the system(remote) being scanned. Now imagine this 
 
 Because of this drawback, SYN Stealth Scan [-sS] was developed.
 
-#### SYN Stealth Scan
+### SYN Stealth Scan
 
 In simple terms, SYN scan is used by the penetration tester without establishing a full connection, hence the name half-open scanning.  
 
