@@ -1,4 +1,23 @@
-Many global businesses are building websites to provide a platform for marketing and promoting their products. Building an attractive website only may not be enough since customers require a site that promotes usability and responsiveness. Responsive web design ensures that a website responds well to various devices used by customers. A responsive website is important because it enhances great customer experience, drives mobile traffic, and promotes high conversion rates. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-the-basics-of-responsive-web-design/
+title: Understanding the Basics of Responsive Web Design (RWD)
+description: This article will be an introduction to Responsive Web Design. We explore the building blocks of RWD, it's importance and also a brief guide on how to get started with this technique.
+author: onesmus-mbaabu
+date: 2021-01-26T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-the-basics-of-responsive-web-design/hero.jpg
+    alt: Responsive Web Design Image
+---
+Many global businesses are building websites to provide a platform for marketing and promoting their products. Building an attractive website only may not be enough since customers require a site that promotes usability and responsiveness. Responsive web design ensures that a website responds well to various devices used by customers. 
+<!--more-->
+
+A responsive website is important because it enhances great customer experience, drives mobile traffic, and promotes high conversion rates. 
 
 This article takes you through the basics of responsive web design, including its building blocks and why it is important for your business. It also provides a brief guide on how to get started with this technique. Real-life examples of responsive websites have been provided to improve our understanding of responsive web design.  
 
