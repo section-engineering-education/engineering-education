@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-selenium-automation-testing/
+title: Getting Started with Selenium Automation Testing
+description: This article will help the readers set up Selenium with Java and write their first test using Selenium. It also explains how Selenium WebDriver can be configured with Eclipse.
+author: onesmus-mbaabu
+date: 2021-01-26T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/automation-testing-in-selenium/hero.jpg
+    alt: Automation Testing Image
+---
 Selenium is a popular automation tool that can be used by web developers to test their applications. The article [*An Overview on Automation Testing With Selenium*](https://www.section.io/engineering-education/automation-testing-in-selenium/) provides the basic concepts of automation testing with Selenium. These include the importance of Selenium, its components, and how it works.
+<!--more-->
 
 This article is an extension of the above article. This article will provide an overview of how developers can get started with automation testing in Selenium with Java. It also explains how Selenium WebDriver can be configured with Eclipse.
 
