@@ -486,3 +486,6 @@ _____________
 
 ### Conclusion
 In this article, we got to explore operators provided by the c++ language. You need to know each operator as a beginner, when, and how to use it. With that, you can perform any operation of mathematical and logical computation in your program with ease.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
