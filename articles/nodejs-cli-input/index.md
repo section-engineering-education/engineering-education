@@ -262,3 +262,6 @@ You can learn more about the `readline-sync` package and the other methods that 
 Congratulations, :partying_face: You did it.
 
 Thanks for reading!
+
+--
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
