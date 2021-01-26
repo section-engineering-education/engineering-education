@@ -55,7 +55,9 @@ A loss function is involved in the fitting process. This loss function is referr
 
 $$ RSS = \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} $$
 
-Based on the training data, the coefficients shall be adjusted. If there is the existence of noise in the training data, the approximated coefficients shall not generalize well to unseen data. Regularization comes into play and shrinks the learned estimates towards zero.
+Based on the training data, the loss function will be adjust the coefficients. If presence of noise or outliers is found in the training data, the approximated coefficients will not generalize well to the unseen data. Regularization comes into play and shrinks the learned estimates towards zero. 
+
+In other words, it tunes the loss function by adding a penalty term, which prevents excessive fluctuation of the coefficients. Thereby, reducing chances of overfitting.
 
 ### Lasso Regression
 
