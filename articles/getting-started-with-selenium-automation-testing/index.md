@@ -5,7 +5,7 @@ This article is an extension of the above article. This article will provide an 
 ### Introduction
 Selenium is a resourceful tool for the automation testing of web applications. Many developers are preferring this software because it is open and supports various browsers and operating systems. Many programming languages are supported by Selenium. 
 
-Developers should choose an appropriate language based on factors such as usability, testing frameworks, and the application being tested. Java is very popular programming language among developers in automation testing. This language is preferred by many web developers in Selenium automation testing because it is compatible with other applications and it is easy to use.
+Developers should choose an appropriate language based on factors such as usability, testing frameworks, and the application being tested. Java is a very popular programming language among developers in automation testing. This language is preferred by many web developers in Selenium automation testing because it is compatible with other applications and it is easy to use.
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ After installing Java, ensure you have set the environment variables. You can ve
 
 ### Step 2: Install Eclipse IDE
 
-Eclipse is a IDE used by Java developers for writing and running codes. It can be downloaded from [here]( https://www.eclipse.org/downloads/). You should first download the Eclipse installer. This will enable you to download other Eclipse tools. 
+Eclipse is an IDE used by Java developers for writing and running codes. It can be downloaded from [here]( https://www.eclipse.org/downloads/). You should first download the Eclipse installer. This will enable you to download other Eclipse tools. 
 
 Once you have downloaded the installer, run it to select the desired Eclipse tool.
 
@@ -75,7 +75,7 @@ This will generate a pop-up window that requires you to fill in details such as 
 
 ![Step 4](/engineering-education/getting-started-with-selenium-automation-testing/step-4.jpg)
 
-A new window will pop-up requiring you to fill the name of the package. You can name it **newpackage**. Click on 'Finish'.
+A new window will pop-up requiring you to fill in the name of the package. You can name it **newpackage**. Click on 'Finish'.
 
 **Step 5:** Right-click on the **newpackage** to generate a Java class. Select *New* and click on **Class**. 
 
@@ -128,7 +128,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver; 
 ```
 
-You should write the test within the the main function.
+You should write the test within the main function.
 
 ```Java
 public class FirstTest {
@@ -162,7 +162,7 @@ Let’s assume that we want to search for something on the website. The followin
 driver.findElement(By.name("q")).sendKeys("cheese" + Keys.ENTER); 
 ```
 
-The following is the full code snippet for running the first test in Selenium WebDriver. Each code block consists of embedded comments to provide explanation. 
+The following is the full code snippet for running the first test in Selenium WebDriver. Each code block consists of embedded comments to provide an explanation. 
 
 ```Java
 import org.openqa.selenium.By;  
@@ -191,7 +191,7 @@ After writing the required codes, right-click on the Eclipse interface and selec
 
 ### Conclusion
 
-Selenium automation testing with Java provides a cost-effective and fast way of executing test cases. This type of automation testing has helped developers in reducing human errors relating in manual testing. The popularity of Java among developers has enabled it to be integrated with many applications, including Selenium. Selenium testing with Java provides a strong foundation for the development of effective and innovative web applications. 
+Selenium automation testing with Java provides a cost-effective and fast way of executing test cases. This type of automation testing has helped developers in reducing human errors relating to manual testing. The popularity of Java among developers has enabled it to be integrated with many applications, including Selenium. Selenium testing with Java provides a strong foundation for the development of effective and innovative web applications. 
 
 ### Resources
 
@@ -200,7 +200,3 @@ Selenium automation testing with Java provides a cost-effective and fast way of 
 - [Selenium](https://www.selenium.dev/documentation/en/getting_started/quick/)
 
 - [Testing Experts](https://www.testingxperts.com/blog/5-best-practices-for-web-application-testing#:~:text=The%20methodology%20of%20web%20application%20testing%20successfully%20helps,maintains%20a%20quality%20application.%20Secures%20App%20from%20vulnerabilities%3A)
-
-
-
-
