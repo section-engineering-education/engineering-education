@@ -44,7 +44,9 @@ The image below shows the phenomena of overfitting, underfitting, and the correc
 
 For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/). 
 
-Overfitting occurs because a model fails to generalize data that contains a lot of irrelevant data points. Regularization is an answer to overfitting. It is a technique that improves model accuracy as well as prevents loss of important data that is suffered during underfitting. Regularization is a type of regression that shrinks coefficient estimates to zero to reduce the capacity of a model. It removes extra weights from select features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. In turn, the risk of overfitting is lowered.
+Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. Regularization is the answer to overfitting. It is a technique that improves model accuracy as well as prevents the loss of important data due to underfitting. 
+
+Regularization is a type of regression that minimizes the coefficient estimates to zero to reduce the capacity of a model. It removes extra weights from the selected features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. In turn, the risk of overfitting is lowered.
 
 Let’s use a linear regression equation to explain regularization further.
 
