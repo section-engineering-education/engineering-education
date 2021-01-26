@@ -379,7 +379,7 @@ The value of x: 15
 
 In the program above we compare the individual bits of the two integers `60` and `13` that we have.  As we had stated before bitwise operators perform operations on individual bits. Our integers `60` and `13` in binary format is `0011 1100` and `0000 1101`. The program returns a new integer from the binary digits formed after comparison. For example in the `&` operator we have:
 
-```bash
+```
 60 = 0011 1100
 &
 13 = 0000 1101
@@ -391,7 +391,7 @@ Here, when we perform the `&` operation, it first compares each of the individua
 
 The bitwise OR `|` operator performs the following operation when the program is executed:
 
-```bash
+```
 60 = 0011 1100
 |
 13 = 0000 1101
@@ -403,7 +403,7 @@ Here, when we perform the `|` operation, it first compares each of the individua
 
 The bitwise XOR `^` operator performs the following operation when the program is executed:
 
-```bash
+```
 60 = 0011 1100
 ^
 13 = 0000 1101
@@ -415,7 +415,7 @@ Here, when we perform the `^` operation, it first compares each of the individua
 
 The bitwise NOT `~` operator performs the following operation when the program is executed:
 
-```bash
+```
 ~60 = 0011 1100
 ________________
 -61 = 1100 0011   //result after inverting
@@ -425,7 +425,7 @@ Here, It is somewhat different from the ones we've looked at so far. It only tak
 
 The bitwise SHIFT LEFT `<<` operator performs the following operation when the program is executed:
 
-```bash
+```
 60 = 0011 1100
 60<<2
 11 1100
@@ -434,7 +434,7 @@ The bitwise SHIFT LEFT `<<` operator performs the following operation when the p
 ```
 Here, instead of comparing the individual bits of two integers, they shift the bits of an integer. The integer we want to shift, we place on the left side of the [Bitwise SHIFT LEFT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). On the right, we place the number to shift by. So, for example, `60 << 2`  will shift `2` bits of our integer `60` to the `left`. If we begin with a positive number (0) on the left, then all the empty spaces are filled with a 0 and if it starts with a negative number where the leftmost bit is a 1, all empty spaces are filled with 1. The 2 open bits of memory that remain are replaced with zeros as shown below:
 
-```bash
+```
 60<<2
 11 1100
 0
@@ -447,17 +447,17 @@ Afterward, the binary digits formed which is `1111 0000` are converted to decima
 
 The bitwise SHIFT RIGHT `>>` operator performs the following operation when the program is executed:
 
-```bash
+```
 60 = 0011 1100
 60>>2
 0011 11
-0		//The two bits being shifted to the right
+0	//The two bits being shifted to the right
 0
 ```
 
 Here, instead of comparing the individual bits of two integers, they shift the bits of an integer. The integer we want to shift, we place on the left side of the [Bitwise SHIFT RIGHT operator](https://computerscience4beginners.wordpress.com/2016/09/27/bitwise-operators). On the right, we place the number to shift by. So, for example, `60 >> 2`  will shift `2` bits of our integer `60` to the `left`. If we begin with a positive number (0) on the right, then all the empty spaces are filled with a 0 and if it starts with a negative number where the rightmost bit is a 1, all empty spaces are filled with 1. The 2 open bits of memory that remain are replaced with one's as shown below:
 
-```bash
+```
 60>>2
 0011 11
 0
