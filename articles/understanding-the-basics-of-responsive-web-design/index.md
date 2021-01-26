@@ -18,10 +18,12 @@ The following are the main foundations of responsive web design.
 A combination of Hypertext Markup Language (HTML) and Cascading Styles Sheet (CSS) helps in controlling and adjusting the layout of a webpage. HTML controls the content, structure, and elements of a webpage. CSS technology edits the layout and design of elements that were created using HTML. 
 
 #### Fluid Grids
-This is an important principle of responsive design that uses relative measurement units (eg. percentages), rather than fixed units (like pixels). It enables the webpage to be resized to correspond with any screen size. With this component, a web page can adapt to the screen size or width of any device. 
+This is an important principle of responsive design that uses relative measurement units (eg. view width (vw) and view height (vh)), rather than fixed units (like pixels). 1 vw is equivalent to 1% of the viewport's width. Similarly, 1 vh is equivalent to 1% of the viewport's height. A [viewport](https://en.wikipedia.org/wiki/Viewport) is the area within the display screen or the browser window. 
+
+Fluid grids enable the webpage to be resized to correspond with any screen size. With this component, a web page can adapt to the screen size or width of any device. 
 
 #### Media queries
-Media queries enhance specificity in responsive web design. They enable the website to adjust based on specific screen sizes. The website first uses the media queries to collect data that enables it to establish the screen size. The right CSS styles are then loaded to correspond to this screen size. 
+Media queries enhance specificity in responsive web design. They enable the website to adjust based on specific screen sizes. The website first uses media queries to collect data that enables it to establish the screen size. The right CSS styles are then loaded to correspond to this screen size. 
 
 #### Responsive Media
 This principle is also called flexible media. Websites use media files such as videos, GIFs, and images. Responsive media ensures that these media files correspond to the screen size of various devices. This is done by setting the max-width property of these files to 100% to ensure that they scale nicely on the screen. 
@@ -49,7 +51,11 @@ There is a wide variety of hosting services for WordPress websites. Choose a hos
 Prepare all the images and content that will be used on your website. Doing this in advance enables you to replace the demo content in your purchased theme with your ready content. 
 
 **Step 4:** Select a responsive WordPress Theme
-You can purchase a responsive WordPress theme [here](https://themeforest.net/popular_item/by_category?category=wordpress&_ga=2.256398347.1451571840.1610998232-961460759.1609948334). The theme should be selected based on the features, customization options, and the design. An appealing design should be chosen to attract customers to the responsive website. 
+You can purchase a responsive WordPress theme [here](https://themeforest.net/popular_item/by_category?category=wordpress&_ga=2.256398347.1451571840.1610998232-961460759.1609948334). The theme should be selected based on the features, customization options, and design. An appealing design should be chosen to attract customers to the responsive website. We will use the Oshine theme to explain the setup process. The following is an image of how the Oshine WordPress theme looks like. 
+
+![Oshine Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/oshine-theme.png)
+
+[Image Source: Tutsplus](https://cms-assets.tutsplus.com/uploads/users/1223/posts/29942/image/oshine-theme.png)
 
 **Step 5:** Install WordPress
 When you select a hosting plan, the hosting company will send a link to the email you used for registration. This link will take you to the hosting dashboard. When you fill in your credentials, you will find a section called ‘WordPress install’. Click on the WordPress icon and go through the instructions. 
@@ -57,13 +63,26 @@ When you select a hosting plan, the hosting company will send a link to the emai
 Another screen will pop up requiring you to fill in details such as your site’s description and desired credentials. After filling in all this information, click on ‘install’. Installing WordPress means that you can now access the WordPress dashboard using the registered credentials. 
 
 **Step 6:** Installing a theme
-In this step, you need to install the WordPress theme that you chose in step 4. In the WordPress dashboard, follow this selection sequence: **appearance**-> **themes**-> **add new**. Click on 'upload theme'. Click on 'install' to begin the installation. When this is done, click on 'activate'. 
+In this step, you need to install the WordPress theme that you chose in step 4. In the WordPress dashboard, follow this selection sequence: **appearance**-> **themes**-> **add new**. 
+
+![Adding WordPress Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/adding-wordpress-theme.png)
+
+Click on 'upload theme'. Click on 'install' to begin the installation. When this is done, click on 'activate'. 
+
+![Installing A Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/installing-a-theme.jpg)
+
 
 **Step 7:** Install plugins
-When your chosen theme has been activated, you will find a link written ‘begin installing plugins’. Click on this link to begin the installation process. After selecting all the plugins, click on ‘install’. Any inactive plugins can be activated by following this sequence: **plugins**-> **all plugins**-> **inactive**. Click on ‘activate’. 
+When your chosen theme has been activated, you will find a link written ‘begin installing plugins’. Click on this link to begin the installation process. Click on the tab 'install plugins'.
+
+![Installing plugins](/engineering-education/understanding-the-basics-of-responsive-web-design/installing-plugins.jpg)
+
+After selecting all the plugins, click on ‘install’. Any inactive plugins can be activated by following this sequence: **plugins**-> **all plugins**-> **inactive**. Click on ‘activate’. 
 
 **Step 8:** Import demo content
 You can import the demo content to get an overview of how your site will look like. Go to 'import' and choose a demo design. After selecting the contents needed, click on ‘install’. 
+
+![Importing Demo Content](/engineering-education/understanding-the-basics-of-responsive-web-design/importing-demo-content.jpg)
 
 **Step 9:** Customize your site
 This can be done by replacing the demo content with the content you prepared in step 3. Simply go to the part that you want to change and enter your intended text. Change the settings accordingly to suit your needs. 
@@ -80,7 +99,7 @@ All this content responds well to various screen sizes. The website appears as f
 
 ![BMW via Mobile Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/bmw-via-mobile-browser.jpg)
 
-You can access all the icons even with a mobile device. When using the laptop browser, the main icons appear at the top of the website. When using the mobile device, you can access these icons using a drop-down menu at the top left corner of the website. 
+You can access all the icons even with a mobile device. When using the laptop browser, the main icons appear at the top of the website. When using the mobile device, you can access these icons using a [hamburger menu](https://www.computerhope.com/jargon/h/hamburger-menu.htm) at the top left corner of the website. 
 
 #### 2. YouTube
 Youtube is an online platform that enables users to view, upload, rate, or share video files. If we open youtube using a laptop, the website will appear as follows. 
