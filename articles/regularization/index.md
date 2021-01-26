@@ -92,7 +92,9 @@ When the value of $\lambda$ tends to zero, the L2 regularization equation become
 
 Linear or polynomial regression will likely prove unsuccessful if there is high [collinearity](https://machinelearningmind.com/2019/10/19/multicollinearity-how-to-fix-it/) between the independent variables. Ridge regression is a potential solution to handle multicollinearity. Collinearity is a condition in which there are two features in data that are heavily correalated to each other. Ridge regression adds an amount of bias to the regression estimates to reduce errors. We shall explore this in a different article.
 
-However, ridge regression has one clear disadvantage; model interpretability. When shrinking the coefficients of the predictors of the least importance, it will get them to be very close to zero. Here’s the problem. They won’t actually be zero. As a result, one may end up including all the coefficients in the final model. Whereas lasso regression manages to force some coefficient estimates to zero when $\lambda$ is large enough. Resultantly, we can say lasso performs feature selection. Furthermore, the resulting models can be considered sparser compared to the ones resulting from the L2 technique. This is because some of the estimate coefficients can be truly zero. The number of predictors is reduced.
+However, Ridge regression has one clear disadvantage: model interpretability. When shrinking the coefficients of the predictors of the least importance, it will reduce very close to zero. Here’s the problem. As a result, one may end up including all the coefficients in the final model. Whereas lasso regression manages to force some coefficient estimates to zero, when the $\lambda$ is large enough. Alternatively, we can say lasso performs feature selection. 
+
+Furthermore, the resulting models can be considered sparser when compared to the ones resulting from the L2 technique. This is because some of the estimate coefficients can be truly zero. The number of predictors is reduced.
 
 ### Wrapping Up
 
