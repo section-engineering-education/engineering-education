@@ -68,10 +68,9 @@ Program to illustrate the working of assignment operators:
 using namespace std;
 
 int main() {
-	int a = 6; // 6 is assigned to a
-	int b = 3; // 3 is assigned to b
+	int a = 6;
+	int b = 3;
 
-	// a and b values assigned to a
 	cout << "a = " << (a += b)<< endl; // a = a + b
 	cout << "a = " << (a -= b)<< endl; // a = a - b
 	cout << "a = " << (a *= b)<< endl; // a = a * b
@@ -108,9 +107,9 @@ There are two unary operators for increasing and decreasing scalar values. They 
 
 Binary operators are classified as follows:
 
-- `+ `(Addition) – Adds two operands.
+- `+` (Addition) – Adds two operands.
 
-- `– `(Subtraction) – Subtracts two operands.
+- `–` (Subtraction) – Subtracts two operands.
 
 - `*` (Multiplication) – Multiplies two operands.
 
@@ -127,7 +126,6 @@ using namespace std;
 int main() {
 	int x=5;
 	int y=3;
-
 
 	cout << "x + y = " << (x + y) << endl;
 	cout << "x - y = " << (x - y) << endl;
@@ -191,6 +189,7 @@ int main()
 	int X, Y;
 	X=5;
 	Y=3;
+	
 	// equal to
 	if (X == Y) {
 		cout << "X == Y";
@@ -198,6 +197,7 @@ int main()
 	else {
 		cout << "X != Y\n";
 	}
+	
 	// not equal to
 	if (X != Y) {
 		cout << "X != Y\n";
@@ -205,6 +205,7 @@ int main()
 	else {
 		cout << "X == Y\n";
 	}
+	
 	// greater than example
 	if (X > Y) {
 		cout << "X > Y\n";
@@ -212,6 +213,7 @@ int main()
 	else {
 		cout << "X < Y\n";
 	}
+	
 	// less than example
 	if (X < Y) {
 		cout << "X < Y\n";
@@ -219,20 +221,23 @@ int main()
 	else {
 		cout << "X > Y\n";
 	}
+	
 	// greater than or equal to
 	if (X >= Y) {
 		cout << "X >= Y\n";
 	}
 	else {
 		cout << "X < || != Y\n";
-	} // Demonstration of both Relational and Logical operators
+	}
+	
 	// lesser than or equal to
 	if (X <= Y) {
 		cout << "X <= Y\n";
 	}
 	else {
 		cout << "X > || != Y\n";
-	} // Demonstration of both Relational and Logical operators
+	}
+	
 	return 0;
 }
 ```
@@ -281,12 +286,14 @@ int main()
 	else {
 		cout << "AND condition not satisfied"<<endl;
 	}
+	
 	if (w > x || y == z) {
 		cout << "w is greater than x OR y is equal to z"<<endl;
 	}
 	else {
 		cout << "Neither w is greater than x nor y is equal to z"<<endl;
 	}
+	
 	if (!w) {
 		cout << "w is zero"<<endl;
 	}
