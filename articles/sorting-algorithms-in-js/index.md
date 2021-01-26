@@ -534,3 +534,6 @@ For a more comprehensive description of sorting algorithms, you can refer to thi
 You can access the entire code from this [GitHub Repository](https://github.com/mwangiKibui/sorting-algorithms-in-js
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
