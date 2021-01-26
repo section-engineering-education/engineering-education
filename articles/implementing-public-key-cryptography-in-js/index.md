@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/implementing-public-key-cryptography-in-javascript/
 title: Implementing Public Key Cryptography in JavaScript
-description: This article will cover how to implement public key cryptography in Javascript.
+description: This article will cover how to implement public key cryptography in Javascript. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key.
 author: kennedy-mwangi
-date: 2020-12-31T00:00:00-11:00
+date: 2021-01-25T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/implementing-public-key-cryptography-in-javascript/hero.jpg
     alt: Implementing Public Key Cryptography in JavaScript image
 ---
-Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is secret to a communicating pair. When a pair wants to communicate, the sender encrypts the message using the public key of the recipient to come up with the ciphertext. When the recipient receives the message, they decrypt the message using their private key. The private key of the sender and the public key of the receiver is encoded in the ciphertext. This eliminates the [key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3)
+Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is the secret to a communicating pair. 
 <!--more-->
+When a pair wants to communicate, the sender encrypts the message using the public key of the recipient to come up with the ciphertext. When the recipient receives the message, they decrypt the message using their private key. The private key of the sender and the public key of the receiver is encoded in the ciphertext. This eliminates the [key distribution problem](https://www.open.edu/openlearn/ocw/mod/oucontent/view.php?id=48322&section=1.3).
 
-#### Prerequisites
+### Prerequisites
 Before we begin it would help if you have the following:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 
-- Basic knowledge of the JavaScript programming language.
+- Some basic knowledge of the JavaScript programming language.
 
-- Basic knowledge of cryptography.
+- Some basic knowledge of cryptography.
 
 ### What we will cover
 - [Algorithms using public key cryptography](#algorithms-using-public-key-cryptography)
@@ -43,14 +43,14 @@ Since its initial release in 1976, different algorithms have applied this mechan
 
 - **Elliptic curve cryptography**: Elliptic curve cryptography was suggested in 1985 by [Neal Koblitz](https://en.wikipedia.org/wiki/Neal_Koblitz) and [Victor S.miller](https://en.wikipedia.org/wiki/Victor_S._Miller). It's based on an [algebraic structure](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) over finite fields of elliptic curves.
 
-- **Diffie Hellman protocol**: Diffie Hellman protocol is a mechanism of using the [public channel](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) to exchange cryptographic keys. It was designed by [Whitfield Diffie](https://en.wikipedia.org/wiki/Whitfield_Diffie) and [Martin Hellman](https://en.wikipedia.org/wiki/Martin_Hellman) and was first published in 1976.
+- **Diffie Hellman protocol**: The Diffie Hellman protocol is a mechanism of using the [public channel](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) to exchange cryptographic keys. It was designed by [Whitfield Diffie](https://en.wikipedia.org/wiki/Whitfield_Diffie) and [Martin Hellman](https://en.wikipedia.org/wiki/Martin_Hellman) and was first published in 1976.
 
 ### Libraries for public-key cryptography in JavaScript
 There are different libraries for implementing public-key cryptography in JavaScript. The following are the most commonly used.
 
 - [NaCL](http://nacl.cr.yp.to/): It's a high-speed library for carrying out encryption, decryption, and network communication. It uses an elliptic curve cryptography algorithm.
 
-- [TweetNaCL](http://tweetnacl.cr.yp.to/): It was among the initial cryptographic libraries to be released and it was originally written in the C programming language. TweeNaCL.js is the JavaScript version of the library. It uses the Diffie Hellman algorithm.
+- [TweetNaCL](http://tweetnacl.cr.yp.to/): It was among the first cryptographic libraries to be released and it was originally written in the C programming language. TweeNaCL.js is the JavaScript version of the library. It uses the Diffie Hellman algorithm.
 
 ### Using TweetNaCL.js to implement public-key cryptography
 For this article, we'll use `TweetNaCL.js` to implement the concept of public-key cryptography.
@@ -130,9 +130,9 @@ function davidEncrypting(){
 
 1. We'll generate a one-time code, a code i.e., only valid for the current process.
 
-1. We'll get the plain text from David.
+2. We'll get the plain text from David.
 
-1. We'll compose the ciphertext using `nacl.box()` passing the following parameters:
+3. We'll compose the ciphertext using `nacl.box()` passing the following parameters:
 
     - A string of Unicode characters generated by passing plain text as a parameter through `decodeUTF8()`.
     
@@ -172,7 +172,9 @@ Hello there Viktoria
 We are decoding the message using the ciphertext, one-time code, David's public key, and Viktoria's secret key. The message is then encoded to `UTF8` using `encodeUTF8()` so that its human-readable.
 
 ### Man-in-the-middle attack
-In public-key cryptography, the public key is disseminated widely. This means that an attacker may get the public key of another party. If party A is communicating with party B, an attacker may impersonate himself or herself such that when party A is sending a message to party B, the message reaches the attacker before reaching party B. The attacker then modifies the message and sends the modified message to party B. When party B decides to reply, the message is again sent to the attacker who modifies the message and sends the modified message to party A. In such a situation, the integrity of the message is not preserved. This is a major threat to public-key cryptography.
+In public-key cryptography, the public key is disseminated widely. This means that an attacker may get the public key of another party. If party A is communicating with party B, an attacker may impersonate himself or herself such that when party A is sending a message to party B, the message reaches the attacker before reaching party B. 
+
+The attacker then modifies the message and sends the modified message to party B. When party B decides to reply, the message is again sent to the attacker who modifies the message and sends the modified message to party A. In such a situation, the integrity of the message is not preserved. This is a major threat to public-key cryptography.
 
 ### Using pre-computed keys
 To curb the above threat, we use pre-computed keys. Here, while encrypting and decrypting, instead of using the public key of the other party which could be impersonated, we use a shared key. A shared key is a special combination key of the recipient's public key and the sender's secret key. 
@@ -187,7 +189,7 @@ function davidEncrypting(){
     const one_time_code = nacl.randomBytes(24);
 
     //Davids message
-    const plain_text = "Hey!!, our communication is now much secure";
+    const plain_text = "Hey!!, our communication is now more secure";
 
     //Getting the cipher text
     const cipher_text = nacl.box.after(
@@ -205,11 +207,11 @@ function davidEncrypting(){
 
 1. We'll compute a shared key based on Viktoria's public key and David's secret key.
 
-1. We'll generate a one-time code.
+2. We'll generate a one-time code.
 
-1. We'll get the plain text from David.
+3. We'll get the plain text from David.
 
-1. We'll compute the ciphertext using `nacl.box.after()` passing the following parameters:
+4. We'll compute the ciphertext using `nacl.box.after()` passing the following parameters:
 
     - A string of Unicode characters generated by passing the plain text through `decodeUTF8()`.
     
@@ -217,7 +219,7 @@ function davidEncrypting(){
     
     - David's shared key.
 
-The message to be sent to the recipient comprises:
+The message to be sent to the recipient is comprised of:
 
 - Ciphertext.
 
@@ -240,23 +242,23 @@ function viktoriaDecrypting(message){
 };
 ```
 
-Output
+Output:
 
 ```bash
-Hey!!, our communication is now much secure
+Hey!!, our communication is now more secure
 ```
 
 1. We'll get Viktoria's shared key.
 
-1. We'll decode Viktoria's message using the ciphertext, one-time code, and her shared key.
+2. We'll decode Viktoria's message using the ciphertext, one-time code, and her shared key.
 
-1. We'll encode the message to `UTF8` using `encodeUTF8()` so that its human-readable.
+3. We'll encode the message to `UTF8` using `encodeUTF8()` so that its human-readable.
 
-### Maintaining Public keys
-**Public key infrastructure** is a body responsible for [maintaining and registering public keys](https://en.wikipedia.org/wiki/Public_key_infrastructure). Practical areas that use public key infrastructure are banks. All banks have their keys stored and maintained by one body. So when one bank wants to transfer funds to another they get the keys from the common body. Public key infrastructure ensures the credibility of public keys thereby preventing man in the middle attacks.
+### Maintaining public keys
+**Public key infrastructure** is a body responsible for [maintaining and registering public keys](https://en.wikipedia.org/wiki/Public_key_infrastructure). Practical areas that use public key infrastructure are banks. All banks have their keys stored and maintained by one body. So when one bank wants to transfer funds to another they get the keys from the common body. Public key infrastructure ensures the credibility of public keys thereby preventing [man in the middle attacks](/engineering-education/man-in-the-middle-attack/).
 
-### Maintaining Private or Secret keys
-It's very important to maintain these keys since they are very crucial and critical. Currently, they are stored online in databases or through some other medium. They are usually encrypted using encryption algorithms such as `Advanced Encryption Standard (AES)` to promote integrity before storing them.
+### Maintaining private or secret keys
+It's very important to maintain these keys since they are crucial and critical. Currently, they are stored online in databases or through some other medium. They are usually encrypted using encryption algorithms such as `Advanced Encryption Standard (AES)` to promote integrity before storing them.
 
 ### Platforms that employ public-key cryptography
 Some of the platforms that use public-key cryptography in production include:
@@ -268,7 +270,13 @@ Some of the platforms that use public-key cryptography in production include:
 - [SSL/TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 
 ### Conclusion
-Public key cryptography solves the key distribution problem but suffers the threat of man-in-the-middle attack. There are different solutions to solve it and among them is using pre-computed keys. The method is still in demand and is used by a lot of successful companies. In this article, we have covered an introduction to public-key cryptography, algorithms that use public-key cryptography, libraries to use to implement public-key cryptography in JavaScript, implementing public-key cryptography using `tweetnacl.js`, man-in-the-middle attack, using pre-computed keys, maintaining public keys, maintaining private keys, and platforms using public-key cryptography today. You can access the finalized code from [here](https://github.com/mwangiKibui/public-key-cryptography-in-js).
+Public key cryptography solves the key distribution problem but suffers the threat of man-in-the-middle attack. There are different methods to solve it and among them is using pre-computed keys. The method is still in demand and is used by a lot of successful companies. 
+
+In this article, we have covered an introduction to public-key cryptography, algorithms that use public-key cryptography, libraries to use when implementing public-key cryptography in JavaScript, we implemented public-key cryptography using `tweetnacl.js`, we went over man-in-the-middle attack, a brief example using pre-computed keys, how we maintain public keys and private keys, and we mentioned platforms using public-key cryptography today. 
+
+You can access the finalized code from [here](https://github.com/mwangiKibui/public-key-cryptography-in-js).
+
+Happy Coding!
 
 ### Resources
 - [Node.js](https://nodejs.org/en/)
