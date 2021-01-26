@@ -14,7 +14,7 @@ We will use AdonisJS, which is a NodeJS MVC framework, on the backend. AdonisJS 
 
 ### NodeJS
 
-![nodejs-logo.png](/engineering-education/nodejs-logo.png)
+![nodejs-logo.png](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/nodejs-logo.png)
 
 First, check that your NodeJS version is >= 10.
 
@@ -27,7 +27,7 @@ Install the latest LTS version of NodeJS from the [official website](http://node
 
 ### Redis
 
-![Redis Logo](/engineering-education/redis.png)
+![Redis Logo](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/redis.png)
 
 We will use Redis to handle game state. Horizontal scaling is a common requirement in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store state in our apps since instances will not be able to share state.
 
@@ -35,7 +35,7 @@ Redis will allow us to maintain the game state for millions of gamers. Redis off
 
 Follow the [instructions here](https://redis.io/topics/quickstart#installing-redis) to install Redis on your machine
 
-## What are WebSockets?
+## What is a WebSocket?
 
 According to Wikipedia
 
@@ -43,11 +43,11 @@ According to Wikipedia
 
 A WebSocket is a communication channel that allows for bi-directional communication. Emissions and broadcasts replace the request-response mechanism in HTTP.
 
-![Client to server](/engineering-education/client-to-server.png)
+![Client to server](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/client-to-server.png)
 
 So a server can broadcast to several connected clients at the same time.
 
-![Server to two clients](/engineering-education/server-to-multiple-clients.png)
+![Server to two clients](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/server-to-multiple-clients.png)
 
 Clients emit information to the server without waiting for a response. So communication occurs through listeners set up by the client.
 
@@ -57,16 +57,16 @@ The project follows this architecture
 
 - A user sets a username
 
-![set-username.gif](/engineering-education/set-username.gif)
+![set-username.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/set-username.gif)
 
 - The user generates a game code
 
-![generate-game-code.gif](/engineering-education/generate-game-code.gif)
+![generate-game-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/generate-game-code.gif)
 
 - The user shares the game code with a friend
 - The friend sets a username and uses the game code to initialize the game
 
-![joining-game-with-code.gif](/engineering-education/joining-game-with-code.gif)
+![joining-game-with-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/joining-game-with-code.gif)
 
 - Both users are redirected to the game where they play in rounds
 
@@ -276,7 +276,7 @@ for (let sequence of winningSequences) {
 ```
 
 Here's a visualization of an iteration on move 7
-![Winning Sequence Visualization](/engineering-education/winning-sequence-iteration.png)
+![Winning Sequence Visualization](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/winning-sequence-iteration.png)
 
 #### Draw State
 
@@ -328,7 +328,7 @@ We set up all the listeners in the `subscribeToChannel` function in `game.js`. T
 
 ## Security Considerations
 
-![security-implications](/engineering-education/security-implications.jpg)
+![security-implications](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/security-implications.jpg)
 
 Photo by [John Salvino](https://unsplash.com/@jsalvino) on [Unsplash](https://unsplash.com/s/photos/padlock)
 
