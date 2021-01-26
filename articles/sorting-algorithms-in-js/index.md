@@ -42,7 +42,7 @@ Based on the above factors, an algorithm has three performance cases:
 
 ### Strategies applied during sorting
 
-- **Recursion**: The algorithm performs a particular task over and over as long as a certain condition is being fulfilled.
+- **Recursion**: Recursion is a programming method where you define a function in terms of itself. The function generally calls itself with slightly modified parameters (in order to converge).
 
 - **Divide and conquer**: The algorithm accomplishes its task by dividing the problem into smaller subproblems and solving them to come up with the overall solution.
 
@@ -56,7 +56,7 @@ Bubble sort follows the recursion technique.
 
 **Step-by-step guide**:
 
-- Start by comparing two elements in an array.
+- Start by comparing the first two elements in an array.
 
 - Swap them if required.
 
@@ -97,18 +97,18 @@ console.log(bubbleSort([5,3,8,4,6]));
 Output
 
 ```bash
-[3,4,5,6,8]
+[ 3, 4, 5, 6, 8 ]
 ```
 
 Bubble sort has the following performance cases:
 
-- Worst-case time complexity of Big O n ^2. Requires n steps to sort an array of n elements.
+- Worst-case time complexity of Big O (n^2).
 
-- Average-case time complexity of Big theta n ^ 2. Requires n steps to sort an array of n elements.
+- Average-case time complexity of Big theta (n^2).
 
-- Best-case time complexity of Big omega n. Requires n steps to sort a sorted array of n elements.
+- Best-case time complexity of Big omega (n).
 
-- Space complexity: Big O 1. During swapping only one additional memory space is needed.
+- Space complexity: Big O (1).
 
 ### Insertion sort
 
@@ -128,7 +128,7 @@ Insertion sort uses the recursion technique. There is a portion of the array tha
 
 **JavaScript Implementation**
 
-```javascript
+```JavaScript
 function insertionSort(arr){
     //Start from the second element.
     for(let i = 1; i < arr.length;i++){
@@ -160,13 +160,13 @@ Output:
 
 Insertion sort has the following performance cases:
 
-- Worst-case time complexity of Big O n^2. Requires n steps to sort an array of n elements.
+- Worst-case time complexity: Big O(n^2).
 
-- Average-case time complexity of Big theta n^2. Requires n steps to sort an array of n elements.
+- Average-case time complexity: Big theta (n^2).
 
-- Best-case time complexity of Big omega n. Requires n steps to sort a sorted array of n elements.
+- Best-case time complexity: Big omega (n).
 
-- Space complexity of Big O 1. The additional space for swapping.
+- Space complexity: Big O (1).
 
 ### Selection sort
 
@@ -221,18 +221,18 @@ console.log(selectionSort([29,72,98,13,87,66,52,51,36]));
 Output
 
 ```bash
-[13, 29, 36, 51, 52,66, 72, 87, 98]
+[ 13, 29, 36, 51, 52, 66, 72, 87, 98 ]
 ```
 
 Selection sort has the following performance cases:
 
-- Worst-case time complexity of Big O n^2. Requires n steps to sort an array of n elements.
+- Worst-case time complexity: Big O (n^2).
 
-- Average-case time complexity of Big theta n^2. Requires n steps to sort an array of n elements.
+- Average-case time complexity: Big theta (n^2).
 
-- Best-case time complexity of Big omega n. Requires n steps to sort a sorted array of n elements.
+- Best-case time complexity: Big omega (n).
 
-- Space complexity of Big O 1. The additional space for swapping.
+- Space complexity: Big O(1).
 
 ### Merge sort
 
@@ -380,13 +380,13 @@ Output
 
 Merge sort has the following performance cases:
 
-- Worst-case time complexity: Big O n * log n. It divides an array into two halves and takes linear time to merge the two halves.
+- Worst-case time complexity: Big O (n * log n).
 
-- Average-case time complexity: Big theta n * log n. It divides an array into two halves and takes linear time to merge the two halves.
+- Average-case time complexity: Big theta (n * log n).
 
-- Best-case time complexity: Big omega n * log n. It divides an array into two halves and takes linear time to merge the two halves. 
+- Best-case time complexity: Big omega (n * log n).
 
-- Space complexity: Big O n. It requires additional space based on the elements of the array. 
+- Space complexity: Big O (n).
 
 ### Quicksort
 
@@ -489,13 +489,13 @@ The following steps are followed in implementing quicksort:
 
 Quicksort has the following performance cases:
 
-- Worst-case time complexity: Big O n^2. In the case of unbalanced subarrays, it will take more time to finish.
+- Worst-case time complexity: Big O (n^2).
 
-- Average-case time complexity: Big theta n * log n. It divides an array into two and shall take linear time to merge sorted portions.
+- Average-case time complexity: Big theta (n * log n).
 
-- Best-case time complexity: Big omega n * log n. Given a sorted array, it shall divide the array into two and shall take linear time to merge sorted portions.
+- Best-case time complexity: Big omega (n * log n).
 
-- Space complexity: Big O n * log n. Requires small additional space to hold the subarrays.
+- Space complexity: Big O (n * log n).
 
 ### Key takeaways
 
