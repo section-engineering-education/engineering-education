@@ -112,11 +112,11 @@ Output
 
 Bubble sort has the following performance cases:
 
-- Worst-case time complexity of Big O (n^2).
+- Worst-case time complexity: Big O (n^2).
 
-- Average-case time complexity of Big theta (n^2).
+- Average-case time complexity: Big theta (n^2).
 
-- Best-case time complexity of Big omega (n).
+- Best-case time complexity: Big omega (n).
 
 - Space complexity: Big O (1).
 
