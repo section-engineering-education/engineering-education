@@ -166,10 +166,9 @@ For the templates folder create a new file "index.html" and add the HTML code be
 
 
 ```
-In the code above we created the HTML attributes for our music player and made use of jinja a python web templates engine to render our query set object in our "page_obj" context which is defined in our views.py file. Also the next and previous links, we rendered the pagination attributes which will separate our songs into a page per song format.
+In the code above we created the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our "page_obj" context which we defined in our views.py file. Also the next and previous links, we rendered the pagination attributes which will separate our songs into a page per song format.
 
-For the static folder create two new files; "script.js" and "style.css". These are the static files our HTML templates file is going to use.
-In the "script.js" file, add the following code as seen below
+For the static folder create two new files; "script.js" and "style.css". These are the static files our HTML templates file is going to use. In the "script.js" file, add the following code as seen below
 
 ```script
 #script.js
@@ -534,8 +533,7 @@ def index(request):
     return render(request,"index.html",context)
 
 ```
-In the views.py code above, we started by importing the required packages needed; "render", "redirect" and "Paginator". We also imported our model class "Song" from the models.py file.
-We then defined our index view function which controls how the index page works. In the index view, we defined how our paginator will work. We created the paginator object and gave it a query set to render. We created this query set easily by utilizing Django's ORM to ask the database for all Songs as seen here `Song.objects.all()`. As you can see this method makes your code very clean which minimizes the errors in our code unlike when using raw SQL queries to fetch data from the databse. The number one in the object definition specifies the number of songs we want on one page. Therefore, the number of songs on one page in this project is one.
+In the views.py code above, we started by importing the required packages needed; "render", "redirect" and "Paginator". We also imported our model class "Song" from the models.py file. We then defined our index view function which controls how the index page works. In the index view, we defined how our paginator will work. We created the paginator object and gave it a query set to render. We created this query set by utilizing Django's ORM to ask the database for all Songs as seen here Song.objects.all(). As you can see this method makes your code very clean which minimizes the errors in our code unlike when using raw SQL queries to fetch data from the database. The number one in the object definition specifies the number of songs we want on one page. Thus, the number of songs on one page in this project is one.
 
 Finally, we can migrate our app by typing the below command on the command-line in the root directory where we can find our manage.py file.
 
