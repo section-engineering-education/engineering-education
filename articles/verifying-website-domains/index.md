@@ -35,11 +35,11 @@ _Knowledge_
 
 #### Let's get started with Python Shell ####
 
-Some Python compatible packages that will be used are 'socket', 'dns', and 'whois'.
+Some Python compatible packages that will be used are `socket`, `dns`, and `whois`.
 Ensuring that packages are installed and functional using the command prompt window and the designated 'PATH' or 'ROOT' from folder-to-folder are accurate will be slightly time efficient.
 
 
-In socket, the opportunity to find the IP (Internet Protocol) address associated with the domain name can be processed.
+In `socket`, the opportunity to find the IP (Internet Protocol) address associated with the domain name can be processed.
 
 The following lines of codes are processed in socket.
 
@@ -67,7 +67,7 @@ _Screenshot_:
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 
-Because the domain name was removed due to unoriginality, error messages are displayed.
+Because the domain name was removed due to unoriginality, error messages were displayed.
 
 
 Shown below is a functional and valid output of the code since the domain is active and not removed.
@@ -94,7 +94,7 @@ _Screenshot_:
 
 --
 
-In DNS, a plentiful array of resource information is displayed given that the website domain is still active.
+In `DNS`, a plentiful array of resource information is displayed given that the website domain is still active.
 
 
 This is a good opportunity to use for-loops held within a variable to iterate and display all results.
@@ -124,9 +124,9 @@ _Screenshot_:
 
 The PTR (Pointer Record) value determines if the domain can resolve.
 
-Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain.
+Some hosting websites may hold several domain names within its capacity regardless of intentions which may not resolve the domain. Another reason could be that the data has not been added to DNS records.
 
-Below, there are further options within the DNS function revealing additional information about the domain such as nameservers and DNS parking which are a few critical elements in establishing website internet connection.
+Below, there are further options within the `DNS` function revealing additional information about the domain such as nameservers and DNS parking which are a few critical elements in establishing website internet connection.
 
 Instead of using the IP address, use the domain name in the myAnswers variable and replace "PTR" with "NS", "TXT", and/or "MX".
 
@@ -184,7 +184,7 @@ _Screenshots:_
 
 --
 
-Who is, a continuous recording registry for websites, is one of several databases that compiles and lists website information.
+`Whois`, a continuous recording registry for websites, is one of several databases that compiles and lists website information.
 
 Input:
 
@@ -245,11 +245,11 @@ _Screenshot_:
 
 #### Next up, Windows PowerShell ####
 
-_Make sure to right-click and select the 'Run as Administrator' option before running PowerShell._
+_Make sure to right-click and select the `Run as Administrator` option before running PowerShell._
 
-Windows PowerShell is structured differently. There are subcategorized features to select specific content in a website language. It is essential to select and include '.Content' at the end of the command.
+Windows PowerShell is structured differently. There are subcategorized features to select specific content in a website language. It is essential to select and include `.Content` at the end of the command.
 
-As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with 'curl'.
+As shown below, brackets are used to call a website with an API to sift through permissible website layers and must begin with `curl`.
 
 Input:
 
@@ -279,7 +279,7 @@ _Screenshot_:
 
 
 
-Scroll down to the 'text-primary' class layer to display all associated domains with the IP address.
+Scroll down to the `text-primary` class layer to display all associated domains with the IP address.
 
 Partial Output:
 
