@@ -249,3 +249,6 @@ In the program above, we can see how nested namespaces are declared and accessed
 
 ### Conclusion 
 The benefits of using namespace in our programs are evident as we have seen above. By using namespace, we can prevent conflicts in files with the same variable names and function names within the same program. The use of namespace to define identical code in different files and libraries increases our code's readability.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
