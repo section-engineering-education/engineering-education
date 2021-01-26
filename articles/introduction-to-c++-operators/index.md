@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-constructors-in-c++/hero.jpg
-    alt: Constructors in C++ example image
+    alt:Introduction to C++ Operators image
 ---
 Operators are symbols that help us perform specific mathematical and logical operand computations. C++ has several types of operators built-in to the language. This article will go through the commonly used operators.
 <!--more-->
