@@ -372,10 +372,7 @@ console.log(mergeSort([70,50,30,10,20,40,60]));
 Output
 
 ```bash
-[
-  10, 20, 30, 40,
-  50, 60, 70
-]
+[ 10, 20, 30, 40, 50, 60, 70 ]
 ```
 
 Merge sort has the following performance cases:
@@ -505,6 +502,6 @@ Quicksort has the following performance cases:
 
 ### Conclusion
 
-With an understanding of sorting algorithms, software developers can be able to realize the appropriate sorting algorithm to use depending on the data set, the time required, and the space available.
+With an understanding of sorting algorithms, software developers can figure out the appropriate sorting algorithm to use depending on the data set, the time required, and the space available.
 
 In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, Efficiency of sorting algorithms, and discussed the main sorting algorithms used. For a more comprehensive description of sorting algorithms, you can reference [here](https://www.studytonight.com/data-structures/introduction-to-sorting). You can also access the entire code from [here](https://github.com/mwangiKibui/sorting-algorithms-in-js
