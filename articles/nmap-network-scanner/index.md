@@ -22,7 +22,7 @@ Nmap is a port listener. It can listen for responses in the process. It can dete
 
 It's a flexible and versatile tool, meaning it can adapt/change to different activities and functions.  
 
-_Note: Port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing. _
+_Note: Port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing._
 
 #### Example 1.1 simple port scan ```scanme.nmap.org```
 ```console
