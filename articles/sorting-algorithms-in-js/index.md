@@ -10,7 +10,7 @@ Sorting can be referred to as an operation performed to arrange records in some 
 
 - [Categories of sorting algorithms](#categories-of-sorting-algorithms)
 
-- [Efficiency of sorting algorithms](#efficiency-of-sorting-algorithms)
+- [The Efficiency of sorting algorithms](#efficiency-of-sorting-algorithms)
 
 - [Sorting algorithms](#sorting-algorithms)
 
@@ -28,7 +28,7 @@ Sorting can be referred to as an operation performed to arrange records in some 
 
 Sorting algorithms are categorized into:
 
-- **Internal sorting algorithms**: They are sorting algorithms applied on a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
+- **Internal sorting algorithms**: They are sorting algorithms applied to a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
 
 - **External sorting algorithms**: They are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example is merge sort.
 
@@ -511,8 +511,9 @@ With an understanding of sorting algorithms, software developers can figure out 
 
 In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, Efficiency of sorting algorithms, and discussed the main sorting algorithms used.
 
-For a more comprehensive description of sorting algorithms, you can reference [here](https://www.studytonight.com/data-structures/introduction-to-sorting).
+For a more comprehensive description of sorting algorithms, you can refer to this [article
+](https://www.studytonight.com/data-structures/introduction-to-sorting).
 
-You can access the entire code from [here](https://github.com/mwangiKibui/sorting-algorithms-in-js
+You can access the entire code from this [GitHub Repository](https://github.com/mwangiKibui/sorting-algorithms-in-js
 
 Happy coding!
