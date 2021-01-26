@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
-Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries.
+Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries. In this tutorial we will create a simple console application that will be able to perform database create, read, update and delete operation through JDBC API.
 <!--more-->
 ### Prerequisites
 To follow this tutorial along you will need the following:
-1. Java development kit [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
+1. Java development kit [JDK 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
 2. A code editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux) which is free.
 3. Some basic knowledge in the [Java](https://www.javatpoint.com/java-tutorial) programming language.
 4. Apache [XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
@@ -297,7 +297,7 @@ public class Main {
 
 ### Creating the database
 - Start the  Apache and MySQL servers from the XAMPP control panel.
-- On the `PHPMyAdmin` site on your browser create a database with the name `school`.
+- On the `http://localhost/phpmyadmin/` site on your browser create a database with the name `school`.
 - In the `school` database create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
   
 Run the application by executing the `main` function in the `Main` class.
