@@ -2,9 +2,9 @@ Sorting can be referred to as an operation performed to arrange records in some 
 
 ### Prerequisites
 
-- You should have some basic knowledge of JavaScript.
+- Some basic knowledge of JavaScript.
 
-- You should have [Node.js](#https://nodejs.org/en/) installed on your computer.
+- [Node.js](#https://nodejs.org/en/) installed on your computer.
 
 ### Overview
 
@@ -20,13 +20,13 @@ Sorting algorithms are categorized into:
 
 - **Internal sorting algorithms**: They are sorting algorithms applied on a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
 
-- **External sorting algorithms**: They are sorting algorithms applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example is merge sort.
+- **External sorting algorithms**: They are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example is merge sort.
 
 ### Efficiency of sorting algorithms
 
 Some sorting algorithms are more efficient than others. The effectiveness of a sorting algorithm is usually defined by the following performance measures:
 
-- **Time complexity**: It is the amount of time required by the computer  to perform the sorting based on an algorithm.
+- **Time complexity**: It is the amount of time required by the computer to perform the sorting based on an algorithm.
 
 - **Memory complexity**: It is the amount of computer memory required by the computer to perform the sorting based on an algorithm.
 
@@ -48,7 +48,7 @@ Based on the above factors, an algorithm has three performance cases:
 
 ### Sorting algorithms
 
-For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, pictorial representation, and implementation of the algorithm using JavaScript. 
+For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, pictorial representation, and implementation of the algorithm using JavaScript.
 
 ### Bubble sort.
 
@@ -80,7 +80,7 @@ function bubbleSort(arr){
         for(let j = 0; j < arr.length - i - 1; j++){
 
             //Value comparison using ascending order
-            
+
             if(arr[j + 1] < arr[j]){
 
                 //Swapping
@@ -102,7 +102,7 @@ Output
 
 Bubble sort has the following performance cases:
 
-- Worst-case time complexity of Big O n ^2. Requires n steps to sort an array of n elements.
+- Worst-case time complexity of Big O n^2. Requires n steps to sort an array of n elements.
 
 - Average-case time complexity of Big theta n ^ 2. Requires n steps to sort an array of n elements.
 
@@ -112,15 +112,17 @@ Bubble sort has the following performance cases:
 
 ### Insertion sort
 
-Insertion sort uses the recursion technique. There is a portion of the array that is sorted and the other which is unsorted. So you have to compare the elements from the unsorted portion one by one and insert them into the sorted portion in the correct order.
+Insertion sort uses the recursion technique. There is a portion of the array that is sorted and the other which is unsorted. So you have to compare the elements from the unsorted portion one by one and insert them into the sorted portion in the correct order. In the below guide we are using ascending order.
 
 **Step-by-step guide**:
 
-- Start by comparing the second element of the array with the first element assuming the first element is the sorted portion. Swap if necessary.
+- Start by comparing the second element of the array with the first element assuming the first element is the sorted portion. Swap if the second element is smaller than the first element.
 
-- Iterate through the unsorted portion of the array one by one and insert the element in the right place in the sorted portion.
+- Iterate through comparing the first element with each element of the unsorted portion. If the element from the unsorted portion is smaller than the first element, swap.
 
-- Continue until the entire array is sorted.
+- After iterating through the entire array, increment the sorted portion to the next index and recursively compare the value of the last index of the sorted portion with each value of the unsorted portion. Swap where the value of the unsorted portion is smaller.
+
+- The sorted portion shall increase until it covers the entire array yielding a sorted array.
 
 **Pictorial representation**
 
@@ -129,27 +131,23 @@ Insertion sort uses the recursion technique. There is a portion of the array tha
 **JavaScript Implementation**
 
 ```javascript
-function insertionSort(arr){
-    //Start from the second element.
-    for(let i = 1; i < arr.length;i++){
+function insertionSort(arr) {
+  //Start from the second element.
+  for (let i = 1; i < arr.length; i++) {
+    //Go through the elements behind it.
+    for (let j = i - 1; j > -1; j--) {
+      //value comparison using ascending order.
+      if (arr[j + 1] < arr[j]) {
+        //swap
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+      }
+    }
+  }
 
-        //Go through the elements behind it.
-        for(let j = i - 1; j > -1; j--){
-            
-            //value comparison using ascending order.
-            if(arr[j + 1] < arr[j]){
+  return arr;
+}
 
-                //swap
-                [arr[j+1],arr[j]] = [arr[j],arr[j + 1]];
-
-            }
-        }
-    };
-
-    return arr;
-};
-
-console.log(insertionSort([23,1,10,5,2]))
+console.log(insertionSort([23, 1, 10, 5, 2]));
 ```
 
 Output:
@@ -187,35 +185,32 @@ Selection sort uses recursion technique. In the below guide, we are using ascend
 **JavaScript Implementation**
 
 ```javascript
-function selectionSort(arr){
+function selectionSort(arr) {
+  let min;
 
-    let min;
+  //start passes.
+  for (let i = 0; i < arr.length; i++) {
+    //index of the smallest element to be the ith element.
+    min = i;
 
-    //start passes.
-    for(let i = 0; i < arr.length; i++){
+    //Check through the rest of the array for a lesser element
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
 
-        //index of the smallest element to be the ith element.
-        min = i;
+    //compare the indexes
+    if (min !== i) {
+      //swap
+      [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
+  }
 
-        //Check through the rest of the array for a lesser element
-        for(let j = i + 1; j < arr.length;j++){        
-            if(arr[j] < arr[min]){
-                min = j;
-            }
-        };
+  return arr;
+}
 
-        //compare the indexes
-        if(min !== i){
-            [arr[i],arr[min]] = [arr[min],arr[i]];
-        }
-
-    };
-
-    return arr;
-};
-
-console.log(selectionSort([29,72,98,13,87,66,52,51,36]));
-
+console.log(selectionSort([29, 72, 98, 13, 87, 66, 52, 51, 36]));
 ```
 
 Output
@@ -236,7 +231,7 @@ Selection sort has the following performance cases:
 
 ### Merge sort
 
-Merge sort uses the divide and conquer technique. The main concept of merge sort is that an array of length 1 is sorted. The task, therefore, lies in splitting the array into subarrays of size 1 and then merge them appropriately so that to come up with the sorted array. 
+Merge sort uses the divide and conquer technique. The main concept of merge sort is that an array of length 1 is sorted. The task, therefore, lies in splitting the array into subarrays of size 1 and then merge them appropriately so that to come up with the sorted array.
 
 **Step-by-step guide**:
 
@@ -260,113 +255,114 @@ Merge sort uses the divide and conquer technique. The main concept of merge sort
 
 ```javascript
 //merging two arrays appropriately.
-function merge(arr1,arr2){
+function merge(arr1, arr2) {
+  //make a new array and have two value pointers
+  let res = [],
+    i = 0,
+    j = 0;
 
-    //make a new array and have two value pointers
-    let res = [], i = 0, j = 0;
-
-    //sorting the first array.
-    if(arr1.length > 1){
-        let min = 0;
-        for(let i = 0; i < arr1.length; i++){
-            if(i !== min){
-                if(arr1[i] < arr1[min]){
-                    //also swap the elements
-                    [ arr1[i], arr1[min] ] = [ arr1[min], arr1[i]];
-                    //change the minimum
-                    min = i;
-                }
-            }
+  //sorting the first array.
+  if (arr1.length > 1) {
+    let min = 0;
+    for (let i = 0; i < arr1.length; i++) {
+      if (i !== min) {
+        if (arr1[i] < arr1[min]) {
+          //also swap the elements
+          [arr1[i], arr1[min]] = [arr1[min], arr1[i]];
+          //change the minimum
+          min = i;
         }
-    };
-
-    //sorting the second array.
-    if(arr2.length > 1){
-        let min = 0;
-        for(let i = 0; i < arr2.length; i++){
-            if(i !== min){
-                if(arr2[i] < arr2[min]){
-                    //also swap the elements
-                    [ arr2[i], arr2[min] ] = [ arr2[min], arr2[i]];
-                    //change the minimum
-                    min = i;
-                }
-            }
-        }
-    };
-
-    //Value comparison.
-    while(i < arr1.length && j < arr2.length){
-        if(arr1[i] < arr2[j]){
-            res.push(arr1[i]);
-            i++;
-        }else {
-            res.push(arr2[j]);
-            j++;
-        }
-    };
-
-    //pushing the rest of arr1.
-    while(i < arr1.length){
-        res.push(arr1[i]);
-        i++;
-    };
-
-    //pushing the rest of arr2.
-    while(j < arr2.length){
-        res.push(arr2[j]);
-        j++;
+      }
     }
+  }
 
-    return res;
-};
+  //sorting the second array.
+  if (arr2.length > 1) {
+    let min = 0;
+    for (let i = 0; i < arr2.length; i++) {
+      if (i !== min) {
+        if (arr2[i] < arr2[min]) {
+          //also swap the elements
+          [arr2[i], arr2[min]] = [arr2[min], arr2[i]];
+          //change the minimum
+          min = i;
+        }
+      }
+    }
+  }
+
+  //Value comparison.
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      res.push(arr1[i]);
+      i++;
+    } else {
+      res.push(arr2[j]);
+      j++;
+    }
+  }
+
+  //pushing the rest of arr1.
+  while (i < arr1.length) {
+    res.push(arr1[i]);
+    i++;
+  }
+
+  //pushing the rest of arr2.
+  while (j < arr2.length) {
+    res.push(arr2[j]);
+    j++;
+  }
+
+  return res;
+}
 
 //merge sort
-function mergeSort(arr){
+function mergeSort(arr) {
+  //Best case
+  if (arr.length <= 1) return arr;
 
-    //Best case 
-    if(arr.length <= 1) return arr;
+  //splitting into halves
+  let mid = Math.ceil(arr.length / 2);
 
-    //splitting into halves
-    let mid = Math.ceil(arr.length / 2);
+  let arr1 = arr.slice(0, mid);
 
-    let arr1 = arr.slice(0,mid);
+  let arr2 = arr.slice(mid);
 
-    let arr2 = arr.slice(mid);
+  let arr1_subarrays = [],
+    sorted_arr1_subarrays = [];
 
-    let arr1_subarrays = [],sorted_arr1_subarrays = [];
+  let arr2_subarrays = [],
+    sorted_arr2_subarrays = [];
 
-    let arr2_subarrays = [],sorted_arr2_subarrays = [];
+  //loop through array 1 making subarrays of two elements
+  for (let i = 0; i < arr1.length; i += 2) {
+    arr1_subarrays.push(arr1.slice(i, i + 2));
+  }
 
-    //loop through array 1 making subarrays of two elements
-    for(let i = 0; i < arr1.length; i+=2){
-        arr1_subarrays.push(arr1.slice(i,i + 2));
-    };
+  //loop through array 2 making subarrays of two elements.
+  for (let i = 0; i < arr2.length; i += 2) {
+    arr2_subarrays.push(arr2.slice(i, i + 2));
+  }
 
-    //loop through array 2 making subarrays of two elements.
-    for(let i = 0; i < arr2.length; i+=2){
-        arr2_subarrays.push(arr2.slice(i,i + 2));
-    };
+  // sorting each subarray of arr1.
+  for (let i = 0; i < arr1_subarrays.length; i += 2) {
+    let result = merge(arr1_subarrays[i], arr1_subarrays[i + 1]);
+    result.forEach((value) => sorted_arr1_subarrays.push(value));
+  }
 
-    // sorting each subarray of arr1.
-    for(let i = 0; i < arr1_subarrays.length; i+=2){
-        let result = merge(arr1_subarrays[i],arr1_subarrays[i + 1]);
-        result.forEach((value) => sorted_arr1_subarrays.push(value));
-    };
+  // sorting each subarray of arr2.
+  for (let i = 0; i < arr2_subarrays.length; i += 2) {
+    let result = merge(arr2_subarrays[i], arr2_subarrays[i + 1]);
+    result.forEach((value) => sorted_arr2_subarrays.push(value));
+  }
 
-    // sorting each subarray of arr2.
-    for(let i = 0; i < arr2_subarrays.length; i+=2){
-        let result = merge(arr2_subarrays[i],arr2_subarrays[i + 1]);
-        result.forEach((value) => sorted_arr2_subarrays.push(value));
-    };
+  let result = merge(sorted_arr1_subarrays, sorted_arr2_subarrays);
 
+  return result;
+}
 
-    let result = merge(sorted_arr1_subarrays,sorted_arr2_subarrays);
-
-    return result;
-};
-
-console.log(mergeSort([70,50,30,10,20,40,60]));
+console.log(mergeSort([70, 50, 30, 10, 20, 40, 60]));
 ```
 
 Output
@@ -380,13 +376,13 @@ Output
 
 Merge sort has the following performance cases:
 
-- Worst-case time complexity: Big O n * log n. It divides an array into two halves and takes linear time to merge the two halves.
+- Worst-case time complexity: Big O n \* log n. It divides an array into two halves and takes linear time to merge the two halves.
 
-- Average-case time complexity: Big theta n * log n. It divides an array into two halves and takes linear time to merge the two halves.
+- Average-case time complexity: Big theta n \* log n. It divides an array into two halves and takes linear time to merge the two halves.
 
-- Best-case time complexity: Big omega n * log n. It divides an array into two halves and takes linear time to merge the two halves. 
+- Best-case time complexity: Big omega n \* log n. It divides an array into two halves and takes linear time to merge the two halves.
 
-- Space complexity: Big O n. It requires additional space based on the elements of the array. 
+- Space complexity: Big O n. It requires additional space based on the elements of the array.
 
 ### Quicksort
 
@@ -396,9 +392,9 @@ Quicksort applies the divide and conquer technique. It works by having a pivot e
 
 - Select a pivot element.
 
-- Recursively place the array elements in their correct positions as per the pivot element. Those less than the pivot element should be placed to the left whereas those greater than the pivot element should be placed to the right.
+- Split the array into two arrays with those less than the pivot element on the left and those greater than the pivot element to the right.
 
-- Finally come up with a sorted array.
+- Carry out the above steps recursively until we have subarrays of length 1. Combine the subarrays to yield a sorted array.
 
 **Pictorial representation**
 
@@ -407,67 +403,62 @@ Quicksort applies the divide and conquer technique. It works by having a pivot e
 **JavaScript implementation**
 
 ```javascript
-function partition(items,left,right){
+function partition(items, left, right) {
+  //rem that left and right are pointers.
 
-    //rem that left and right are pointers.
-
-    let pivot = items[Math.floor((right + left) / 2)],
+  let pivot = items[Math.floor((right + left) / 2)],
     i = left, //left pointer
-    j = right //right pointer
+    j = right; //right pointer
 
+  while (i <= j) {
+    //increment left pointer if the value is less than the pivot
+    while (items[i] < pivot) {
+      i++;
+    }
 
-    while( i <= j){
-        
-        //increment left pointer if the value is less than the pivot
-        while(items[i] < pivot){
-            i++;
-        };
+    //decrement right pointer if the value is more than the pivot
+    while (items[j] > pivot) {
+      j--;
+    }
 
-        //decrement right pointer if the value is more than the pivot
-        while(items[j] > pivot){
-            j--;
-        };
+    //else we swap.
+    if (i <= j) {
+      [items[i], items[j]] = [items[j], items[i]];
+      i++;
+      j--;
+    }
+  }
 
-        //else we swap.
-        if(i <= j){
-            [ items[i],items[j] ] = [ items[j], items[i] ];
-            i++;
-            j--;
-        }
-    };
+  //return the left pointer
+  return i;
+}
 
-    //return the left pointer
-    return i;
-};
+function quickSort(items, left, right) {
+  let index;
 
-function quickSort(items,left,right){
-    let index;
-    
+  if (items.length > 1) {
+    index = partition(items, left, right); //get the left pointer returned
 
-    if(items.length > 1){
+    if (left < index - 1) {
+      //more elements on the left side
+      quickSort(items, left, index - 1);
+    }
 
-        index = partition(items,left,right);//get the left pointer returned
+    if (index < right) {
+      //more elements on the right side
+      quickSort(items, index, right);
+    }
+  }
 
-        if(left < index - 1){ //more elements on the left side
-            quickSort(items,left,index - 1);
-        };
+  return items; //return the sorted array
+}
 
-        if(index < right){ //more elements on the right side
-            quickSort(items,index,right);
-        };
+let items = [5, 3, 7, 6, 2, 9];
 
-    };
-
-    return items; //return the sorted array
-
-};
-
-let items = [5,3,7,6,2,9]
-
-console.log(quickSort(items,0,items.length - 1))
+console.log(quickSort(items, 0, items.length - 1));
 ```
 
-Output 
+Output
 
 ```bash
 [ 2, 3, 5, 6, 7, 9 ]
@@ -477,11 +468,11 @@ The following steps are followed in implementing quicksort:
 
 - Start with the left pointer pointing at index 0 and the right pointer pointing at index 0.
 
-- Compare the element at the left pointer with the pivot element. If it is less than, increment the left pointer. Recursively do this until the value at a  pointer is not less than the pivot. At this point, stop the iteration.
+- Compare the element at the left pointer with the pivot element. If it is less than, increment the left pointer. Recursively do this until the value at a pointer is not less than the pivot. At this point, stop the iteration.
 
 - Compare the element at the right pointer with the pivot element. If it is greater than, decrement the right pointer. Recursively do this until the value at a pointer is not greater than the pivot. At this point, stop the iteration.
 
-- When you have stopped the iteration of the left and the right pointer, swap the values being pointed by the right and left pointer. 
+- When you have stopped the iteration of the left and the right pointer, swap the values being pointed by the right and left pointer.
 
 - Increment the right and the left pointer. At this point, a further increment shall cause the left pointer to be greater than the right pointer which shall break the loop returning the left pointer.
 
@@ -491,15 +482,15 @@ Quicksort has the following performance cases:
 
 - Worst-case time complexity: Big O n^2. In the case of unbalanced subarrays, it will take more time to finish.
 
-- Average-case time complexity: Big theta n * log n. It divides an array into two and shall take linear time to merge sorted portions.
+- Average-case time complexity: Big theta n \* log n. It divides an array into two and shall take linear time to merge sorted portions.
 
-- Best-case time complexity: Big omega n * log n. Given a sorted array, it shall divide the array into two and shall take linear time to merge sorted portions.
+- Best-case time complexity: Big omega n \* log n. Given a sorted array, it shall divide the array into two and shall take linear time to merge sorted portions.
 
-- Space complexity: Big O n * log n. Requires small additional space to hold the subarrays.
+- Space complexity: Big O n \* log n. Requires small additional space to hold the subarrays.
 
 ### Key takeaways
 
-- JavaScript by default uses insertion sort for the `sort()` method. This means that it is not appropriate when sorting large data sets. Therefore, when dealing with large data sets, you should consider other sorting algorithms such as  merge sort.
+- JavaScript by default uses insertion sort for the `sort()` method. This means that it is not appropriate when sorting large data sets. When dealing with large data sets, one should consider other sorting algorithms such as merge sort.
 
 - Generally, a divide and conquer based sorting algorithm is faster than a recursion based sorting algorithm.
 
@@ -507,4 +498,10 @@ Quicksort has the following performance cases:
 
 With an understanding of sorting algorithms, software developers can be able to realize the appropriate sorting algorithm to use depending on the data set, the time required, and the space available.
 
-In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, Efficiency of sorting algorithms, and discussed the main sorting algorithms used. For a more comprehensive description of sorting algorithms, you can reference [here](https://www.studytonight.com/data-structures/introduction-to-sorting). You can also access the entire code from [here](https://github.com/mwangiKibui/sorting-algorithms-in-js
+In this article, we covered an introduction to sorting and sorting algorithms, categories of sorting algorithms, Efficiency of sorting algorithms, and discussed the main sorting algorithms used.
+
+For a more comprehensive description of sorting algorithms, you can reference [here](https://www.studytonight.com/data-structures/introduction-to-sorting).
+
+You can access the entire code from [here](https://github.com/mwangiKibui/sorting-algorithms-in-js
+
+Happy coding!
