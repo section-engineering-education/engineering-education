@@ -89,7 +89,7 @@ However, ridge regression has one clear disadvantage; model interpretability. Wh
 
 ### Wrapping Up
 
-Regularization is a formidable technique to prevent overfitting. There are several regularization techniques. We have looked at two of the most popular ones. Through this article, we have understood how the two compare to each other and how they are derived from the linear regression loss function equation. Until next time, good luck!
+Regularization is a formidable technique to prevent overfitting. There are several regularization techniques. We have looked at two of the most popular ones. Through this article, we have understood how the two techniques help in preventing overfitting and how they are derived from the linear regression loss function equation. Until next time, good luck!
 
 ### References and Further Reading
 
