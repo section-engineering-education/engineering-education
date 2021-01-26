@@ -2,11 +2,9 @@
 
 ![cover](/engineering-education/how-to-build-a-music-player-using-django/hero.jpg)
 
-Have you ever wanted to build a music player web application?. If your answer is yes then this article was written just for you.
-I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work the database along with the views(i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture.
-Django is definitely a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
+Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work the database along with the views(i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. Django is definitely a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
 
-The purpose of this article is to introduce the reader to the  Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
+The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
 
 So we will be creating bot song objects, retrieving songs, bookmarking songs, and playing songs.
 
@@ -16,9 +14,9 @@ So we will be creating bot song objects, retrieving songs, bookmarking songs, an
 
 **Introduction**
 
-Object-Relational Mapping (ORM) is a method that helps you to question and control statistics from a database the usage of an object-orientated paradigm. When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, subsequently the phrase "an ORM".
+Object-Relational Mapping (ORM) is a method that helps you to question and control statistics from a database the usage of an object-orientated paradigm. When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, the phrase "an ORM".
 
-An ORM library is a totally everyday library written to your language of desire that encapsulates the code required to control the data so that you do not use raw SQL queries anymore; you engage at once with an object within the same language you are utilizing.
+An ORM library is an everyday library written to your language of desire that encapsulates the code required to control the data so that you do not use raw SQL queries anymore; you engage at once with an object within the same language you are utilizing..
 
 ## MVT Architecture
 
@@ -26,11 +24,11 @@ An ORM library is a totally everyday library written to your language of desire 
 
 MVT (Model View Template) is a software program layout sample that's a group of 3 elements; Model View and Template. The Model allows dealing with the database. It is a data access layer that handles the information in the database.
 
-The Template is a presentation layer that handles all of the User Interface parts. The View is used to execute the logic and interact with the model to carry data and renders the template.
+The Template is a presentation layer that handles all the User Interface parts. The View executes the logic and interact with the model to carry data and renders the template.
 
 Although Django follows the MVC pattern, it however continues its own conventions so control is taken care of through the framework itself.
 
-There isn't any separate controller and the entire framework is primarily based totally on Model View and Template. That's why it's largely known as the  MVT framework.
+There isn't any separate controller and the entire framework is primarily based totally on Model View and Template. That's why it's largely known as the MVT framework.
 
 In the MVC architecture, a user sends a request for a resource to Django, Django works as a controller and check for the available resource in the URL.
 
