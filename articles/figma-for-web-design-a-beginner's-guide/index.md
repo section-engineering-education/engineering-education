@@ -1,5 +1,21 @@
-Web design is a fast-growing area in the tech industry because of digital transformation and the increased number of web applications. Web designers are seeking design tools that offer intriguing user experience. Figma is a unique web design tool that adds value to web design in terms of accessibility, collaboration, and unique features.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/figma-for-web-design-a-beginner's-guide/
+title: Figma for Web Design: A Beginner's Guide
+description: This article takes the reader through an exciting web design tool known as figma. It provides a guide on how to get started with it. It also takes the reader through its user interface and some its basic tools for web design.
+author: onesmus-mbaabu
+date: 2021-01-21T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/figma-for-web-design-a-beginner's-guide/hero.jpg
+    alt: Figma example Image
+---
+Web design is a fast-growing area in the tech industry because of digital transformation and the increased number of web applications. Web designers are seeking design tools that offer intriguing user experience. Figma is a unique web design tool that adds value to web design in terms of accessibility, collaboration, and unique features.
+<!--more-->
 This article provides an overview of this exciting web design tool. It also provides a guide on how to get started with it. The article takes readers through the user interface of Figma and some basic tools used in web design.  
 
 ### What is Figma?
@@ -202,3 +218,6 @@ Figma is a design tool that enables web designers to create unique and exciting 
 [Begin Coding Now](https://begincodingnow.com/figma-introduction/)
 
 [Prototypr.io](https://blog.prototypr.io/understanding-figma-as-a-ui-beginner-50d169c87c49)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
