@@ -122,26 +122,54 @@ Let’s test whether a specific URL such as `google.com` functions well. We will
 
 Before launching the browser, we need to set the path of the downloaded executable file. The following is an example of how the property can be set.
 
-```
+```java
 System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
 ```
 
 The following snippet is used to instantiate the driver. 
 
-```
+```java
 WebDriver driver = new ChromeDriver();
 ```
 
 Launching the Google website requires setting its correct URL. In our case, the URL for Google is `www.google.com`. The corresponding snippet will be as follows.
 
-```
+```java
 driver.get("http://www.google.com/"); 
 ```
 
-Let’s assume that we want to search for something on the website. The following statement will help us to run the search. 
+Let’s assume that we want to search for something on the website. The following snippet will help us to run the search. 
 
-```
+```java
 driver.findElement(By.name("q")).sendKeys("cheese" + Keys.ENTER); 
+```
+
+The following is the full code snippet for running the first test in Selenium WebDriver. Each code block consists of embedded comments to provide explanation. 
+
+```java
+import org.openqa.selenium.By;  
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver;  
+
+public class FirstTest {
+
+public static void main(String[] args) {
+
+//property setting
+System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
+
+//instantiating the driver
+WebDriver driver = new ChromeDriver();
+
+//launching the website
+driver.get("http://www.google.com/"); 
+
+//running a search
+driver.findElement(By.name("q")).sendKeys("cheese" + Keys.ENTER); 
+
+}
+
+}    
 ```
 
 After writing the required codes, right-click on the Eclipse interface and select *run as*. Click on *Java application*. This will open Google in the Chrome browser. If the web application is functioning well, the browser will run the intended search and generate the output. 
