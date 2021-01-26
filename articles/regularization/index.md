@@ -1,7 +1,22 @@
-![hero](/engineering-education/regularization/hero.jpg)
-[Source](https://images.unsplash.com/photo-1530530488105-64664c7213bf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/regularization/
+title: Regularization to Prevent Overfitting
+description: This article will provide an overview on how to prevent overfitting of data using Regularization. The goal is to understand what overfitting is, and how to prevent them using regularization techniques.
+author: collins-ayuya
+date: 2021-01-22T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Overfitting impacts the accuracy of machine learning models. The model attempts to capture data points that do not represent the accurate properties of data. These data points may be considered as noise. To avoid the occurrence of overfitting, we may use a method referred to as regularization. In this article, we introduce and mathematically explore two types of regularization.
+  - url: /engineering-education/regularization/hero.jpg
+    alt: Regularization hero image
+---
+Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as a noise.
+<!--more-->
+To avoid the occurrence of overfitting, we may use a method called as regularization. In this article, we will mathematically explore two types of regularization.
 
 ### Contents
 
