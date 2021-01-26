@@ -61,7 +61,7 @@ In other words, it tunes the loss function by adding a penalty term, which preve
 
 ### Lasso Regression
 
-Lasso regression is a regularization technique to reduce model complexity. It is also known as L1 regularization. Lasso stands for Least Absolute Shrinkage and Selector Operator. Let’s look at the equation below.
+Lasso regression is a regularization technique used to reduce model complexity. It is also known as L1 regularization. Lasso stands for Least Absolute Shrinkage and Selector Operator. Let’s look at the equation below:
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid = RSS + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid $$
 
