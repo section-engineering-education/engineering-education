@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/regularization/hero.jpg
     alt: Regularization hero image
 ---
-Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as a noise.
+Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as noise.
 <!--more-->
 To avoid the occurrence of overfitting, we may use a method called as regularization. In this article, we will mathematically explore two types of regularization.
 
@@ -44,10 +44,10 @@ The image below shows the phenomena of overfitting, underfitting, and the correc
 
 For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/). 
 
-Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. As mentioned in the previous paragraph, data points that do not reflect the properties of the data are considered to be irrelevant. An example is noise. Regularization is the answer to overfitting. It is a technique that improves model accuracy as well as prevents the loss of important data due to underfitting. When a model fails to grasp an underlying data trend, it is considered to be underfitting. The model does not fit enough points to produce accurate predictions. This means that it is likely to miss out on important data points that may have a telling impact on model accuracy. Hence we say important data may be lost as aresult of underfitting.   
+Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. As mentioned in the previous paragraph, data points that do not reflect the properties of the data are considered to be irrelevant. An example is noise. Regularization is the answer to overfitting. It is a technique that improves model accuracy as well as prevents the loss of important data due to underfitting. When a model fails to grasp an underlying data trend, it is considered to be underfitting. The model does not fit enough points to produce accurate predictions. This means that it is likely to miss out on important data points that may have a telling impact on model accuracy. Hence we say important data may be lost as a result of underfitting.   
 
 
-Regularization is a technique that adds information to a model to prevent tne occurence of overfitting. It is a type of regression that minimizes the coefficient estimates to zero to reduce the capacity (size) of a model. In this context, the reduction of the capacity of a model involves the removal of extra weights. Regularization removes extra weights from the selected features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. A highly flexible model is one that possesses the freedom to fit as many data points as possible. Furthermore, in this context, we may judge the complexity of a predictive model by the number of features it possesses. A model with a lot of features to learn from is at a greater risk of overfitting. By discouraging the elarning of highly complex and flexible models, the risk of overfitting is lowered.
+Regularization is a technique that adds information to a model to prevent the occurrence of overfitting. It is a type of regression that minimizes the coefficient estimates to zero to reduce the capacity (size) of a model. In this context, the reduction of the capacity of a model involves the removal of extra weights. Regularization removes extra weights from the selected features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. A highly flexible model is one that possesses the freedom to fit as many data points as possible. Furthermore, in this context, we may judge the complexity of a predictive model by the number of features it possesses. A model with a lot of features to learn from is at a greater risk of overfitting. By discouraging the learning of highly complex and flexible models, the risk of overfitting is lowered.
 
 Let’s use a linear regression equation to explain regularization further.
 
@@ -55,16 +55,16 @@ $$ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + … + \beta_p X_p $$
 
 $Y$ represents the value that is to be predicted. $\beta_i$ stands for the regressor coefficient estimates for the corresponding predictor $X_i$. And, $X_i$ represents the weights or magnitudes assigned to various predictors (independent variables). Here, `i` represents any value greater than or equal to `0`, and less than `p`.
 
-A loss function is involved in the fitting process. It is computed as the difference between actual and predicted output from a model. A loss function provides a means of assessing how well an algorithm models given data. It is used to minimize the error, in turn optimizing the weights. In this context, the loss function is referred to as the residual sum of squares (RSS). 
+A loss function is involved in the fitting process. It is computed as the difference between the actual and predicted output from a model. A loss function provides a means of assessing how well an algorithm models given data. It is used to minimize the error, in turn optimizing the weights. In this context, the loss function is referred to as the residual sum of squares (RSS). 
 
 Below is the equation for the loss function.
 
 
 $$ RSS = \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} $$
 
-Based on the training data, the loss function will be adjust the coefficients. If presence of noise or outliers is found in the training data, the approximated coefficients will not generalize well to the unseen data. Regularization comes into play and shrinks the learned estimates towards zero. 
+Based on the training data, the loss function will adjust the coefficients. If the presence of noise or outliers is found in the training data, the approximated coefficients will not generalize well to the unseen data. Regularization comes into play and shrinks the learned estimates towards zero. 
 
-In other words, it tunes the loss function by adding a penalty term, which prevents excessive fluctuation of the coefficients. Thereby, reducing chances of overfitting.
+In other words, it tunes the loss function by adding a penalty term, which prevents excessive fluctuation of the coefficients. Thereby, reducing the chances of overfitting.
 
 ### Lasso Regression
 
@@ -72,11 +72,11 @@ Lasso regression is a regularization technique used to reduce model complexity. 
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid = RSS + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid $$
 
-We note that it has a slight variation to the previously discussed loss function, with an extra use of a penalty term. To penalize highly fluctuating coefficients, lasso uses absolute values of the regression coefficients$ (\mid \beta\mid) $.
+We note that it has a slight variation to the previously discussed loss function, with the introduction of a penalty term. To penalize highly fluctuating coefficients, lasso uses absolute values of the regression coefficients$ (\mid \beta\mid) $.
 
 Lasso minimizes the regression coefficients to regularize the model parameters. Sometimes, Lasso can reduce regression coefficients to zero, which is particularly important when it comes to feature selection.
 
-[Feature selection](https://machinelearningmastery.com/an-introduction-to-feature-selection/) refers to the process of chossing relevant variables and predictors to construct a model. Here, the feature selection process is attributed to the ability of lasso to reduce some regression coefficients to zero. It occurs after the regression coefficients are shrunk. The predictors whose coefficients are reduced to zero will not be included in the final model. These are the predictors considered to have less importance. This is how some features are eliminated. However, every non-zero regression coefficient is selected for use in the model. This greatly assists in minimizing prediction errors.
+[Feature selection](https://machinelearningmastery.com/an-introduction-to-feature-selection/) refers to the process of choosing relevant variables and predictors to construct a model. Here, the feature selection process is attributed to the ability of lasso to reduce some regression coefficients to zero. It occurs after the regression coefficients are shrunk. The predictors whose coefficients are reduced to zero will not be included in the final model. These are the predictors considered to have less importance. This is how some features are eliminated. However, every non-zero regression coefficient is selected for use in the model. This greatly assists in minimizing prediction errors.
 
 Lasso also improves the prediction accuracy of models. The shrinking of coefficients minimizes the bias and reduces the variance of models. A context that favors the use of lasso is when we have a high number of features and a small amount of data. The tuning parameter $\lambda$ controls the shrinkage. From the equation, when $\lambda$ is zero, the equation is reduced to the linear regression loss function equation. The greater the value of $\lambda$, the greater the reduction of the coefficients towards zero.
 
@@ -90,11 +90,11 @@ As we can see, the main difference between the above equation and the general eq
 
 When the value of $\lambda$ tends to zero, the L2 regularization equation becomes the loss function of the linear regression model. The penalty term will have no effect. This means that if the value of $\lambda$ is minimum, the model can be called a simple linear regression model. Conversely, when the $\lambda$ value tends to infinity, the effect of the shrinkage penalty increases. As a result, the coefficient estimates of the ridge regression will approach zero. This underlines the importance of choosing a good value for $\lambda$.
 
-Linear or polynomial regression will likely prove unsuccessful if there is high [collinearity](https://machinelearningmind.com/2019/10/19/multicollinearity-how-to-fix-it/) between the independent variables. Ridge regression is a potential solution to handle multicollinearity. Collinearity is a condition in which there are two features in data that are heavily correalated to each other. Ridge regression adds an amount of bias to the regression estimates to reduce errors. We shall explore this in a different article.
+Linear or polynomial regression will likely prove unsuccessful if there is high [collinearity](https://machinelearningmind.com/2019/10/19/multicollinearity-how-to-fix-it/) between the independent variables. Ridge regression is a potential solution to handle multicollinearity. Collinearity is a condition in which there are two features in data that are heavily correlated to each other. Ridge regression adds an amount of bias to the regression estimates to reduce errors. We shall explore this in a different article.
 
-However, Ridge regression has one clear disadvantage: model interpretability. When shrinking the coefficients of the predictors of the least importance, it will reduce very close to zero. Here’s the problem. As a result, one may end up including all the coefficients in the final model. Whereas lasso regression manages to force some coefficient estimates to zero, when the $\lambda$ is large enough. Alternatively, we can say lasso performs feature selection. 
+The predictors of least importance refer to predictors that bear no telling influence on the predictive power of the model. They may also be predictors that do not accurately describe the properties of data, such as noise. Ridge regression has one clear disadvantage: model interpretability. When shrinking the coefficients of the predictors of the least importance, it will reduce them to be very close to zero. Here’s the problem. As a result, one may end up including all the coefficients in the final model. The final model ends up containing the predictors one may prefer to eliminate. As such, no feature selection is done. Whereas lasso regression manages to force some coefficient estimates to zero when the $\lambda$ is large enough. Resultantly, we can say lasso performs feature selection. 
 
-Furthermore, the resulting models can be considered sparser when compared to the ones resulting from the L2 technique. This is because some of the estimate coefficients can be truly zero. The number of predictors is reduced.
+Furthermore, the resulting models can be considered sparser when compared to the ones resulting from the L2 technique. This is because some of the estimate coefficients can be truly zero. The predictors that are of little to no importance are eliminated thus reducing the number of predictors.
 
 ### Wrapping Up
 
