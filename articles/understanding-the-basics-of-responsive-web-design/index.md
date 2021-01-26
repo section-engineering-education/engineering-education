@@ -154,3 +154,6 @@ Popular examples of responsive sites include YouTube, BMW, and Amazon. If you ha
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
 [Smashing Magazine](https://www.smashingmagazine.com/2013/05/the-state-of-responsive-web-design/)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
