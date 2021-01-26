@@ -6,7 +6,7 @@ The simple solution to this problem is the use of Javascript modules. It ensures
 
 ### Getting Started With JavaScript Modules
 
-In Javascript, there is a functionality known as modules. This feature allows us to divide our Javascript codes into smaller portions. 
+In Javascript, there is a functionality known as modules. This feature allows us to divide our Javascript code into smaller portions. 
 
 In the past, Javascript existed without modules that are part of the core language.  
 This was not a problem for most developers as scripts were simple and small.  
@@ -23,7 +23,7 @@ These libraries include:
 
 For more details about these libraries, visit this [link](https://javascript.info/modules-intro)
 
-Writing codes in this manner enables the separation of concern.
+Writing code in this manner enables the separation of concern.
 It also ensures the exportation of certain functionalities, hence system security. 
 For example, hiding the configuration files in their module.  
 It minimizes the exposure of the vital software files.  
