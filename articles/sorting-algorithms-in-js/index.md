@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/sorting-algorithms-in-js/
+title: Sorting Algorithms in JavaScript
+description: This article will cover how to implement sorting algorithms in Javascript. Sorting can be referred to as an operation performed to arrange records in some particular order.
+author: kennedy-mwangi
+date: 2021-01-26T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/sorting-algorithms-in-js/hero.jpg
+    alt: Sorting Algorithms in JavaScript image
+---
 Sorting can be referred to as an operation performed to arrange records in some particular order. The arrangement is performed based on the value of each record present. The order applied can either be ascending or descending. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.
+<!--more-->
 
 ### Prerequisites
 
@@ -198,7 +215,7 @@ Selection sort uses recursion technique. In the below guide, we are using ascend
 
 **JavaScript Implementation**
 
-```javascript
+```JavaScript
 function selectionSort(arr) {
   let min;
 
@@ -267,7 +284,7 @@ Merge sort uses the divide and conquer technique. The main concept of merge sort
 
 **JavaScript implementation**
 
-```javascript
+```JavaScript
 //merging two arrays appropriately.
 function merge(arr1, arr2) {
   //make a new array and have two value pointers
@@ -413,7 +430,7 @@ Quicksort applies the divide and conquer technique. It works by having a pivot e
 
 **JavaScript implementation**
 
-```javascript
+```JavaScript
 function partition(items, left, right) {
   //rem that left and right are pointers.
 
