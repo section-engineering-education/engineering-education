@@ -65,7 +65,8 @@ Lasso regression is a regularization technique used to reduce model complexity. 
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid = RSS + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid $$
 
-We note that it is a variation of the loss function equation, with the introduction of a penalty term. To penalize high coefficients, lasso uses absolute values of beta $ (\mid \beta\mid) $. Whereas, as we shall learn, ridge regression uses the squares of beta $(\beta^2)$ for a similar purpose.
+We note that it has a slight variation to the previously discussed loss function, with an extra use of a penalty term. To penalize highly fluctuating coefficients, lasso uses absolute values of the regression coefficients$ (\mid \beta\mid) $.
+
 Lasso shrinks the regression coefficients to regularize the model parameters. Unlike ridge regression, as we shall cover later, lasso can reduce some regression coefficients to zero. This is particularly important when it comes to feature selection.
 The feature selection process is attributed to the ability of lasso to reduce some regression coefficients to zero. It comes after the regression coefficients are shrunk. Every non-zero regression coefficient is selected for use in the model. Since some features are eliminated, less important features will not feature in the final model. This greatly assists in minimizing prediction errors.
 
