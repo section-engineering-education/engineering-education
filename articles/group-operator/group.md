@@ -14,7 +14,10 @@ images:
   - url: /engineering-education/group-operator/hero.jpg
     alt: Group operator in MongoDB Image
 ---
-Group operator also known as accumalator operator is a very important operator in MongoDB language as it helps to perform varoious transformations on the data and it is a part of aggregation in MongoDB.  MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
+Group operator also known as accumalator operator is a very important operator in MongoDB language as it helps to perform varoious transformations on the data. It is a part of aggregation in MongoDB. 
+<!--more-->
+
+MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
 
 In this article we are going to learn:
 
@@ -32,16 +35,19 @@ Pipelines are stages through which data is processed, more technically transform
 
 ### What is $group operator?
 
-So as the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document. 
-Suppose there are 15 people in a databse and they all have a similar hobby and if we want to count all those people who have a hobby in common then $group operator is an elegant solution for such a task.
+So as the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document.
+
+Suppose there are 15 people in a database and they all have a similar hobby. if we want to count all those people who have a hobby in common, then `$group` operator is an elegant solution for such a task.
 
 Let’s take a look at its syntax:
 
 `{ $group: { _id: <expression>, <field1>: { <accumulator1> : <expression1> }, ... } }`
 
-An _id field in the output documents contains the distinct group by key. The output documents can also contain computed fields that hold the values of some accumulator expression grouped by the $group‘s _id field.
+The `_id` field in the output documents contains the distinct group by key. The output documents can also contain computed fields that hold the values of some accumulator expression grouped by the $group‘s `_id` field.
 
-Basically, the _id field here will take those fields by which you want to group the documents and it is mandatory to use `_id` here.
+Basically, the `_id` field here will take those fields by which you want to group the documents. It is mandatory to use `_id` here.
+
+The $group operator does not remove the data from the database. It just aggregates multiple documents into a single document based on the field passed to the `_id` field.
 
 ### Important points to remember
 
@@ -127,16 +133,15 @@ Output:
 ```
 ### Applications of $group operator:
 
-1.  Whenever we need to do some analytics on the data and need to find how many people fit in a group as we did in our examples, the `$group` operator can be very useful.
+1.  Whenever we need to find how many people fit in a group as we did in our examples, the `$group` operator can be very useful.
 
-1.  It can also be useful in the situations where we want to see documents based on some repeated occurrence of other data.
+2.  It can also be useful in the situations where we want to see documents based on some repeated occurrence of other data.
 
-1.  If we want to create an array of similar entities related to data and include it in our final document then the $group operator can be used.
+3.  If we want to create an array of similar entities related to data and include it in our final document then the $group operator can be used.
 
 ### Conclusion
 
-In this article we have discussed what is $group operator, how can we use it some examples.
+In this article we have discussed what is $group operator, how can we use it some examples. $group operator can be very useful for similar data related to some other data.
 
-$group operator can be very useful for similar data related to some other data.
-Never confuse yourself that $group operator removes the data from the database. It just aggregates multiple documents into a single document based on the field passed to the _id field. I hope you enjoyed reading this article as much as I enjoyed writing it.
+I hope you enjoyed reading this article as much as I enjoyed writing it.
 
