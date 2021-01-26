@@ -32,7 +32,7 @@ As a prerequisite, a basic understanding of Machine Learning is required. To lea
 
 Overfitting is an occurrence that impacts the performance of a model negatively. 
 
-It occurs when a function fits a limited set of data points too closely. Data often has some element of random noise within it. For example, The training data may contain data points that do not accurately represent the properties of the data. These points are considered as noise. When a function fits a set of such datapoints too closely, the model learns from noise in the data. As a result, the complexity of the model is increased. This impacts the ability of the model to make reliable predictions on test data. The model may also be unable to fit additional data. This may lead to sub-par performance on test data. 
+It occurs when a function fits a limited set of data points too closely. Data often has some element of random noise within it. For example, The training data may contain data points that do not accurately represent the properties of the data. These points are considered as noise. When a function fits a set of such datapoints too closely, the model learns from noise in the data. This impacts the ability of the model to make reliable predictions on test data. The model may also be unable to fit additional data. This may lead to sub-par performance on test data. 
 
 The image below shows the phenomena of overfitting, underfitting, and the correct fit.
 
@@ -44,9 +44,10 @@ The image below shows the phenomena of overfitting, underfitting, and the correc
 
 For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/). 
 
-Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. Regularization is the answer to overfitting. It is a technique that improves model accuracy as well as prevents the loss of important data due to underfitting. 
+Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. As mentioned in the previous paragraph, data points that do not reflect the properties of the data are considered to be irrelevant. An example is noise. Regularization is the answer to overfitting. It is a technique that improves model accuracy as well as prevents the loss of important data due to underfitting. When a model fails to grasp an underlying data trend, it is considered to be underfitting. The model does not fit enough points to produce accurate predictions. This means that it is likely to miss out on important data points that may have a telling impact on model accuracy. Hence we say important data may be lost as aresult of underfitting.   
 
-Regularization is a type of regression that minimizes the coefficient estimates to zero to reduce the capacity of a model. It removes extra weights from the selected features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. In turn, the risk of overfitting is lowered.
+
+Regularization is a technique that adds information to a model to prevent tne occurence of overfitting. It is a type of regression that minimizes the coefficient estimates to zero to reduce the capacity (size) of a model. In this context, the reduction of the capacity of a model involves the removal of extra weights. Regularization removes extra weights from the selected features and redistributes the weights evenly. This means that regularization discourages the learning of both a model of high complexity and flexibility. A highly flexible model is one that possesses the freedom to fit as many data points as possible. Furthermore, in this context, we may judge the complexity of a predictive model by the number of features it possesses. A model with a lot of features to learn from is at a greater risk of overfitting. By discouraging the elarning of highly complex and flexible models, the risk of overfitting is lowered.
 
 Let’s use a linear regression equation to explain regularization further.
 
