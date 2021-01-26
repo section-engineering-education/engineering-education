@@ -74,7 +74,7 @@ Lasso also improves the prediction accuracy of models. The shrinking of coeffici
 
 ### Ridge Regression
 
-Ridge regression refers to a type of linear regression where in order to get better predictions in the long term, we introduce a small amount of bias. Known as L2 regularization, it is a technique used to reduce model complexity. In ridge regression, the loss function is altered. A penalty term is added to it, as we shall see below. Let’s explain ridge regression better using the following equation.
+Ridge regression refers to a type of linear regression where in order to get better predictions in the long term, we introduce a small amount of bias. It is also known as L2 regularization. In ridge regression, we have the same loss function with a slight alteration in the penalty term, as shown below:
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \beta_j^2 = RSS + \lambda \sum\limits_{j=1}^p \beta_j^2 $$
 
