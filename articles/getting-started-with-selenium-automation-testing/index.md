@@ -120,7 +120,25 @@ Let’s test whether a specific URL such as `google.com` functions well. We will
 
 ![Chrome Driver](/engineering-education/getting-started-with-selenium-automation-testing/chrome-driver.png)
 
-After downloading the chrome driver, you need to create a class file and add import statements for necessary classes. You should write these statements in the main function. The next step involves setting the path of the downloaded executable file. The following is an example of how the property can be set.
+After downloading the chrome driver, you need to create a class file and add import statements for necessary classes like WebDriver and ChromeDriver from Selenium. 
+
+```Java
+import org.openqa.selenium.By;  
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver; 
+```
+
+You should write the test within the the main function.
+
+```Java
+public class FirstTest {
+  public static void main(String[] args) {
+    // Test code goes here
+  }
+}   
+```
+
+The next step involves setting the path of the downloaded executable file. The following is an example of how the property can be set.
 
 ```Java
 System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
