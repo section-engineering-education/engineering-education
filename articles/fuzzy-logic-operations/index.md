@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/fuzzy-logic-operations/
 title: Introduction to Fuzzy Operations
-description: This article will be a hands-on implementation of Linear Regression using the Gradient Descent algorithm in Python. We will implement the linear regression from scratch using numpy.
+description: This article will be an introduction into fuzzy logic operations, we will introduce fuzzy sets and their applications.
 author: lalithnarayan-c
 date: 2021-01-26T00:00:00-09:30
 topics: []
@@ -12,30 +12,33 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/fuzzy-logic-operations/hero.jpg
-    alt: Linear Regression example image
+    alt: Fuzzy Operations example image
 ---
-[Fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic) is a form of many-valued logic in which the truth values of variables may be any real number between 0 and 1, both inclusive. Fuzzy Systems as a subject developed to model the uncertainty and vagueness present in the human thought process. 
+[Fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic) is a form of many-valued logic in which the true value of variables may be any real number between 0 and 1, both being inclusive. Fuzzy Systems as a subject was developed to model the uncertainty and vagueness present in the human thought process. 
 <!--more-->
-In this article, we will understand the following concepts.
 
 ### Prerequisites
 This article on [fuzzy logic](/engineering-education/an-overview-of-fuzzy-logic-system/) is an excellent introduction to the basics of crisp and fuzzy sets. Moreover, it introduces the representation of fuzzy sets and their applications. 
 
 ### Table of contents
-- Degree of membership function
-- Types of membership functions
-- Operations in fuzzy systems
-- Types of operations
+- Degree of membership function.
+- Types of membership functions.
+- Operations in fuzzy systems.
+- Types of operations.
 
 ### Degree of membership function
-A fuzzy set is denoted as a tuple that includes the element and a value indicating its degree of membership to the universal set. Mathematically, it is represented as:
+A fuzzy set is denoted as a tuple that includes the element and a value indicating its degree of membership to the universal set. 
+
+Mathematically, it is represented as:
 
 $$ F= (S,\;\mu(S))\; ;\;S\, \epsilon\, x\; \&\; \mu(S)\:=\:Degree\, of\, S $$
  
-The above equation can be viewed as a collection of ordered pairs. The inclusion of the element $S \epsilon\; x$ into the fuzzy set $F$ is fuzzy.
+The equation above can be viewed as a collection of ordered pairs. The inclusion of the element $S \epsilon\; x$ into the fuzzy set $F$ is fuzzy.
 
 #### Example
-Consider the example of temperature control. We will explore the various membership functions using this example. The task to control the room temperature can be modeled as a fuzzy problem. Let the ranges of temperature be given as follows:
+Consider the example of temperature control. We will explore the various membership functions using this example. The task to control the room temperature can be modeled as a fuzzy problem. 
+
+Let the ranges of temperature be given as follows:
 
 <br>
 $$
@@ -44,11 +47,12 @@ $$
 90 \le Temperature \le 100 \;: High\\
 $$
 <br>
-Graphically the problem can be represented as the following:
+
+Graphically the problem can be represented as follows:
 
 ![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_1.png)
 
-The same problem can be represented using fuzzy. Observe how a given temperature belongs to two classes of temperature in varying degrees. 
+The same problem can be represented using fuzzy logic. Observe how a given temperature belongs to two classes of temperature in varying degrees. 
 
 ![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_2.png)
 
@@ -63,7 +67,7 @@ $$ \gamma(x,\alpha, \beta) = \begin{cases} 0 & x\le \alpha \\
 
 ![gamma](/engineering-education/fuzzy-logic-operations/gamma-correct.png)
 
-#### s- function
+#### s-function
 The s function gets its name from its shape. The s-shaped function is useful in cases with a gradual change in the membership. 
 
 Mathematically, it is given as:
@@ -79,8 +83,10 @@ $$ S(x,\alpha,\beta) = \begin{cases}
 
 ![s-function](/engineering-education/fuzzy-logic-operations/gamma.png)
 
-#### L- function
-This function is the inverse of $\gamma$ function. It is given as follows:
+#### L-function
+This function is the inverse of $\gamma$ function. 
+
+It is given as follows:
 
 $$ L(x,\alpha,\beta) = \begin{cases} 
 1 & x \le \alpha \\
@@ -91,6 +97,7 @@ $$ L(x,\alpha,\beta) = \begin{cases}
 ![L-function](/engineering-education/fuzzy-logic-operations/L-function.png)
 
 #### Triangular function
+
 <br>
 $$ L(x,\alpha,\beta,\gamma) = \begin{cases} 
 0 & x\le \alpha \\
@@ -103,7 +110,9 @@ $$ L(x,\alpha,\beta,\gamma) = \begin{cases}
 ![triangular function](/engineering-education/fuzzy-logic-operations/triangular_function.png)
 
 #### pi function
-This function gets its name from the shape of pi. This function looks similar to the symbol pi ($\pi$). Mathematically it is given as follows:
+This function gets its name from the shape of pi. This function looks similar to the symbol pi ($\pi$). 
+
+Mathematically it is given as follows:
 
 <br>
 $$ \pi(x, \alpha, \beta,\gamma, \delta) = \begin{cases} 
@@ -137,20 +146,29 @@ Various operations can be performed on a crisp set. The same set of operations c
 ### Types of operations in fuzzy logic
 
 #### Union 
-Union operation concatenates the two sets and produces a new set. Since the fuzzy sets may have the same element with varying degrees of membership, the union operation considers the element once. The degree of membership for this value is the maximum value the element has. Hence, this can be viewed as finding the elements with a maximum degree of membership.
+Union operation concatenates the two sets and produces a new set. Since the fuzzy sets may have the same element with varying degrees of membership, the union operation considers the element once. The degree of membership for this value is the maximum value the element has. Therefore, this can be viewed as finding the elements with a maximum degree of membership.
 
 #### Intersection
-Intersection operation finds the common elements between the two sets. In this case, if an element exists in both sets, the element with the least degree of membership is retained in the new set. The intuition behind the intersection operation is to find the common elements between the two sets. Therefore, the element with the lowest degree of membership exists in both sets. This operation is also viewed as finding the elements in both sets with the minimum degree of membership.
+The intersection operation finds the common elements between the two sets. In this case, if an element exists in both sets, the element with the least degree of membership is retained in the new set. The intuition behind the intersection operation is to find the common elements between the two sets. 
+
+Therefore, the element with the lowest degree of membership exists in both sets. This operation can also be viewed as finding the elements in both sets with the minimum degree of membership.
 
 #### Complementation
-The degree of membership for a fuzzy set can range between 0 & 1. Given a set of elements with a degree of memberships, the fuzzy set's complement will behave inverted degrees of membership. The inverted degree of membership for an element x is defined as follows:
+The degree of membership for a fuzzy set can range between 0 & 1. Given a set of elements with a degree of memberships, the fuzzy set's complement will behave inverted to the degrees of membership. 
+
+The inverted degree of membership for element x is defined as follows:
 
 <br>
 $$new\; degree\; of\; membership(x)\; = 1\; -\; degree\; of\; membership(x)$$
 <br>
 
 ### Conclusion
-In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. Happy learning.
+In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. 
+
+Happy learning.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
 
 
 <!-- MathJax script -->
