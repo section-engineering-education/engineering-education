@@ -11,7 +11,7 @@ Overfitting impacts the accuracy of machine learning models. The model attempts 
 
 ### Prerequisites
 
-Just a basic understanding of machine learning is required. Here’s a useful [article](/engineering-education/supervised-learning-algorithms/). The equations covered in this article are very general and easy to follow.
+As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/engineering-education/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
 
 ### Regularization and Overfitting
 
