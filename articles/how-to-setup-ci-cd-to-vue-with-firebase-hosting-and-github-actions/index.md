@@ -2,264 +2,212 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-setup-ci-cd-to-vue-with-firebase-hosting-and-github-actions/
-title: How to setup CI/CD to Vue with Firebase Hosting and Github Actions
-description: Learn How to setup CI/CD to Vue with Firebase Hosting and Github Actions.
+url: /engineering-education/ci-cd-setup-vue/
+title: How to  Set Up CI/CD in a Vue Project with Firebase Hosting and Github Actions
+description: In this tutorial, we walk through how to set up CI/CD in a Vue Project with Firebase Hosting and Github Actions.
 author: worawat-kaewsanmaung
 date: 2020-04-24T00:00:00-07:00
-topics: []
+topics: [Vue,CI/CD]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-setup-ci-cd-to-vue-with-firebase-hosting-and-github-actions/hero.jpg
-    alt: How to setup CI/CD to Vue with Firebase Hosting and Github Actions
+  - url: /engineering-education/ci-cd-setup-vue/hero.png
+    alt: CI CD VUE 
 ---
-In the present software development context, the important workflows for software development are run, tested, built, and deployed without setting up CI/CD. All the processes in the software development are done manually from running tests to running build to get the build file and deploying on the server. The development cycle for adding new features and fixing bugs done manually becomes inefficient and hectic due to processes being run repeatedly.
-<!--more-->
+The technological advancement revolves around the automation of every work that is done manually till today. Such automation can be applied in the software development cycle and project management as well. Most of the workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. Well, what if we can automate this process of deployment? Yes, we can do that by applying the CI/CD (Continuous Integration / Continuous Delivery) to our development projects. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The bottom line is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
 
-Will it be better? if we reduce this repetitive manual process using  CI/CD and dedicate most of the valuable time in developing new, innovative, and problem-solving features?
+- Setting up the Vue project.
+- Pushing the Vue project to the GitHub repository.
+- Setting up Firebase project.
+- Setting up Firebase hosting in Vue project using latest firebase-tools.
+- Configuring the connection between Firebase Hosting and GitHub by applying GitHub workflows.
 
-### The solutions can be...
+What will happen as a result:
 
-* Creating React application and push the repo to Github.
-* Setting up AWS S3 for deployment.
-* Setting AWS Cloudfront with HTTPS and CDN.
-* Setting up Circle CI to subscribing repository and trigger it when commit received while starting the test, build, and deploy to  AWS.
+- Push the code to the master branch or create a pull request to merge the branch.
+- Triggers the GitHub actions workflow scripts.
+- After the successful merge action, the changes will be automatically deployed to the live website without having to do any manual configurations.
+- We can also include the testing scripts in the workflow scripts to automate testing before merging.
 
-### How it works…
+### Step 1: Vue Boilerplate
 
-* When pushing code to the repository ( eg.github, bitbucket ), the repository will trigger (webhook) to CI that subscribes to this repository.
-* CI server starts the run command that we prepared( eg run test, check syntax, build, deploy).
-* In case an error occurs, notification will be sent.
-* A developer will fix the bug and commit code again and loop back to first until the error is resolved.
-
-The steps to setup CI/CD to React ecosystem is explained below:
-
-### Step 1: Setting up Repository
-
-First, we are going to set up a repository in GitHub. The steps are simple. In the GitHub console interface, we just need to click on the ‘**Create new repository**’ button and the following screen will appear:
-
-![create new github repo](1-create-new-github-repo.png)
-
-Here, we need to enter the project repository name and mark it as public or private. 
-
-Note that, making the repository private is not free.
-
-Now, we need to create a React project and add git configuration to it running the following commands: 
+The first step is to get out Vue project ready. For the vue boilerplate project, we are going to make use of Vue CLI. So first, we need to install the latest version of Vue CLI globally in our system. It allows us to download the starter Vue template based on various configurations. The required packages are pre-installed. It also enables us to manage the Vue project. In order to install it, we need to run the following command in our system terminal:
 
 ```bash
-    $ npx create-react-app my-react
-    $ cd my-react
-    $ git init
-    $ git add .
-    $ git commit -m 'initial commit'
-    $ git remote add origin https://github.com/krissnawat/my-react.git
-    $ git push -u origin master
+npm install @vue/cli -g
 ```
 
-### Step 2:  Setting up AWS S3
-
-Now, we are going to setup AWS S3. First, we need to login to the AWS console. After successful login, we need to go to the S3 menu and create a new bucket as directed in the screenshot below:
-
-![create a new bucket](2-create-a-new-s3-bucket.png)
-
-Then, a window will open up where we need to enter the bucket name and choose the server region as directed in the screenshot below:
-
-![enter the bucket name](3-enter-the-bucket-name-and-choose-the-server-region.png)
-
-Initially, the bucket will be set to private. So, we need to make the bucket mode public by clicking on the ‘**Bucket name**’ option as directed in the code snippet below:
-
-![make the bucket mode public](4-make-the-bucket-mode-public.png)
-
-Then, we need to select the ‘**permissions**’ tab as displayed in the code snippet below:
-
-![select the permissions](5-select-the-permissions-tab.png)
-
-In the **permissions** tab, we need to turn-off ‘**Block public access**’ option as directed in the code snippet below:
-
-![turn-off Block public access](6-turn-off-block-public-access.png)
-
-Now, we move on to the local deployment setup.
-
-### Step 3:  Local Deployment
-
-In this step, we are going to upload our react project directly from the local repository to s3 for testing purposes. Firstly, we need to go to ‘**My Security Credential**’ as directed in the menu screenshot below:
-
-![go to my security credential](7-go-to-my-security-credential.png)
-
-Then, we need to create a new Access Key and download the key file by pressing the ‘**Download Key File**’ button as shown in the screenshot below:
-
-![create a new access key and download](8-create-a-new-access-key-and-download-the-key-file.png)
-
-Next, we need to move back to our local repo of our project and install AWS Cli with homebrew running the following command in our project directory:
+After Vue CLI has been installed, we can now start a new Vue Project. For that, we need to run the following command in the directory where we want to download the project:
 
 ```bash
-    $ brew install awscli
+vue create vue_cicd
 ```
-Then, we need to run aws configure command and set AWS Access Key IDand AWS Secret Access Key as directed in the code snippet below:
+
+After running the command instead of executing the automatic setup of features, we need to select manual configuration. In the manual configuration option, we will need to specify which Vue features to include. The required features are marked as shown in the screenshot below:
+
+![1-create-new-vue-porject-with-cli](1-create-new-vue-porject-with-cli.png)
+
+All of the features are unnecessary for this tutorial but for an actual Vue project, the selected features may be a pre-requisite. We have also selected the Unit testing and E2E testing which can be also automated using the GitHub workflow actions. 
+
+After the selection is done, we can hit 'Enter' to go on to next process which is shown in the screenshot below:
+
+![2-set-upnew-vue-porject-with-cli](2-set-upnew-vue-porject-with-cli.png)
+
+Here, we have selected the other additional requirements such as Vue version 3, enable history mode is router, Prettier as code formatted, Jest for unit testing and Cypress for E2E testing, etc. All the configurations will be saved to there default config files.
+
+After then successful installation of the project, we need to go to the project directory using the following command:
 
 ```bash
-    $ aws configure
-    AWS Access Key ID [None]: xxxxxxxxxxx 
-    AWS Secret Access Key [None]:  xxxxxxxxxxx
-    Default region name [None]: ap-southeast-1
-    Default output format [None]: json
+cd vue_cicd
 ```
 
-Now, we need to go back to the s3 project. Then, we need to navigate to *Properties tab -> Static Web Hosting* as directed in the screenshot below:
-
-![navigate to static web hosting](9-navigate-to-static-web-hosting.png)
-
-In the **Static website hosting** option, we need to enable the hosting as shown in the screenshot below: 
-
-![enable the static hosting](10-enable-the-static-hosting.png)
-
-Now, we are going to try and build our react project in order to sync with the AWS s3 bucket. For that, we need to run the commands given in the following snippet in our react project terminal:
+Then, we need to run in order to run the project in the localhost:
 
 ```bash
-    $ yarn build
-    $ aws s3 sync build/ s3://myawesomeapp.com --delete(aws s3 sync <% path build folder %> s3://<% bucket-name %>/)
+npm run serve
 ```
-Here, ( — delete) means we delete the default project file in the bucket then sync the new project.
 
-If the build operation runs successfully, we will get the following result in our browser window:
+Hence, we will get the following result in the browser:
 
-![build operation runs successfully](11-test-run-react-result.png)
+![3-first-vue-hello-world-app](3-first-vue-hello-world-app.png)
 
-Hence, we are done with the local deployment of our project. This also completes our setup of AWS S3 in sync with our React Native project.
+### Step 2: Push Project to GitHub
 
-Now, we move on to set up CircleCI in our react project.
+Now, we are going to upload for code to GitHub using Git. GitHub is a online cloud platform that stores the accurate versions of our coding project after each upload. It is a project management system designed to facilitate the version control for Git. Git is a version control tool used to provide proper version to our coding project after each push or upload. Other major feature it provides is GitHub actions that which be used to automate the workflow. It helps to ease up the build and deployment process.
 
-### Step 4:  CircleCI Setup
+First, we need to login to GitHub account and create a repository as directed in the screenshot below:
 
-First, we need to create an account on CircleCI. We can do that using Github login, which simplifies the register and login process. Then, we will be redirected to [https://circleci.com/dashboard](https://circleci.com/dashboard). If not, we need to go to the same URL which is the CircleCI dashboard. In the dashboard, we need to click on the ‘**Add Project’**. In the Projects screen, we need to choose the repository that we want to follow by clicking on ‘**Set Up Project’ **as directed in the screenshot below:
+![4-create-new-github-repo](4-create-new-github-repo.png)
 
-![circleci setup](12-circlecI-dashboard.png)
+After mentioning the repository name, we can simply hit the 'Create repository' to create a repo. Now, this repository is where we can push our Vue project.
 
-Now, we can set up the configuration process either on CircleCI or on local projects as well as directed in the screenshots below:
+Here, we are going to make use of Git commands to push the project files. In the root project folder, we need to open the terminal or Git Bash and execute the following commands given order:
 
-![configuration process](13-configuration-process-on-circleci.png)
-
-For local setup, we need to copy and paste the above code to our config file as shown in the code snippet below: 
-```yml
-    version: 2.1
-    orbs:
-      aws-s3: circleci/aws-s3@1.0.11
-    jobs:
-      build:
-        docker:
-          - image: circleci/node:12.9.1-browsers
-    
-        working_directory: ~/repo
-    
-        steps:
-          - checkout
-    
-          - restore_cache:
-              keys:
-                - v1-dependencies-{{ checksum "package.json" }}
-                # fallback to using the latest cache if no exact match is found
-                - v1-dependencies-
-          - run: yarn install
-    
-          - save_cache:
-              paths:
-                - node_modules
-                - ~/.npm
-                - ~/.cache
-              key: v1-dependencies-{{ checksum "package.json" }}
-    
-          - run: yarn lint
-    
-          - run: yarn size
-    
-          - run: yarn test
-    
-          - run: yarn build
-    
-          - aws-s3/sync:
-              from: build
-              to: "s3://kriss-react-cicd/"
-              arguments: |
-                --acl public-read \
-                --cache-control "max-age=86400"
-              overwrite: true
+```bash
+git init
+git add .
+git commit -m "<your comment or message>"
+git remote add origin <git repo origin link>
+git push -u origin master
 ```
-For CircleCI, we need to go to the CircleCI dashboard and create a new branch and initialize a ‘pull request’ for that new branch to the master branch. Then, we can work on that branch until deployment is successful as shown in the code snippet below:
 
-![create a new deployment branch](14-work-on-deployment-branch.png)
+This will push our project to the master branch of our GitHub repository 'vue_cicd_example'.
 
-### Step 5:  Setting up Environment Variables
+*After the successful update, you can check your GitHub repo where you will find the project files just as in your vue project folder*
 
-Next, we are going to set up AWS credentials in CircleCI. Firstly, we need to click on the project as directed in the screenshot below:
+This completes our setup of GitHub repo and pushing of our project to GitHub repo.
 
-![setting up environment variables](15-setting-up-environment-variables.png)
+### Step 3: Integrating Firebase Hosting along with GitHub workflow
 
-Then inside the project dashboard, we need to click on ‘**Project Settings**’ as directed in the screenshot below:
+This step is the major one for this tutorial where we are going to link the Firebase Hosting with GitHub workflow actions. The process is to connect Firebase hosting with GitHub actions so as to automate the process of deployment after each push and merge.
 
-![project settings](16-click-on-project-settings.png)
+But first, we need to create a Firebase project in order to link firebase to our Vue project. 
 
-Inside the ‘**Project Settings**’ option, we need to click on the ‘**Add Environment Variable**’ button as shown in the screenshot below:
+### Step 3.1: Creating Firebase Project
 
-![add environment variable](17-add-environment-variable.png)
+To create a Firebase project, we need to log in to the [Firebase](https://firebase.google.com/) and navigate to the firebase console. There we can simply click on 'Add a project' to get our project started.
 
-Then, we need to add the correct variables or correct the existing variables as shown in the screenshot below:
+At first, a window will appear asking to input the project name. Here, we have kept the project name as **`vue-cicd`** as shown in the screenshot below:
 
-![add the correct variables](18-add-the-correct-variables.png)
+![5-create-new-firebase-app](5-create-new-firebase-app.jpg)
 
-Hence, we have successfully configured the Environment variables.
+We can continue to the next step until the project has been created. After the project has been set up, we will get a project console as shown in the screenshot below:
 
-### Step 6:  Setting up AWS CloudFront
+![6-firebase-dashboard](6-firebase-dashboard.jpg)
 
-We know that we have already successfully deployed our React Native project to AWS from what we did before( [http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/](http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/)). However, it doesn't set up HTTPs that makes the deployment insecure. Now in order to make the hosting secure, we can use AWS CloudFront. In CloudFront, we need to go to [https://console.aws.amazon.com/cloudfront/home](https://console.aws.amazon.com/cloudfront/home) and select **Create Distribution -> Get Started**. Then, we need to hit the **Create Distribution **button as directed in the screenshot below:
+Hence, the setup of Firebase project is complete. Now, we can configure the Firebase hosting in our Vue project.
 
-![Setting up AWS CloudFront](19-setting-up-aws-cloudfront.png)
+### Step 3.2: Configure Firebase Hosting
 
-Next, we need to copy and paste the link from AWS S3 to the **Origin Domain Name** field as directed in the screenshot below:
+Now that we have our repo in GitHub and the Firebase project, let’s initialize Firebase hosting for the project.
 
-![Origin Domain Name](20-origin-domain-name.png)
+For this, we need to have Firebase CLI installed on our local machine. Hence, we need to globally install the firebase-tools package by executing the following command in our terminal:
 
-In the Distribution options, we need to supply the following configurations:
+```bash
+npm install -g firebase-tools
+```
 
-* Origin Domain Name: [http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/](http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/) (s3 endpoint )
+> *Note that: We need to install the **latest version of firebase-tools** in order to get the configurations to connect with the GitHub project repo automatically through the firebase commands.*
 
-* Origin ID: [kriss-react-cicd](http://kriss-react-cicd.s3-website-ap-southeast-1.amazonaws.com/)
+Now, we need to make sure that we are in the root project folder, and then execute the following command:
 
-* Viewer Protocol Policy: Redirect HTTP to HTTPS
+```bash
+firebase init
+```
 
-In case of a successful configuration, we will see the status: **In Progress**. Then, after waiting for around 15 to 20 minutes, the status will change to **Deployed** as shown in the screenshot below:
+This command will provide us the configurations to initialize the Firebase project in our Vue project directory:
 
-![In Progress](21-in-progress-status.png)
+First, it will ask us for the Firebase CLI feature that we want to set up in our project folder as shown in the screenshot below:
 
-After the status changes to **Deployed**, we will be able to access the site from the domain name [https://dhhqbyhy7gv01.cloudfront.net/](https://dhhqbyhy7gv01.cloudfront.net/). Here, our transmission protocol is already set to HTTPS. The access site from the above domain name is shown in the demo screenshot below:
+![7-create-new-firebase-cli-app](7-create-new-firebase-cli-app.jpg)
 
-![final result](22-final-result.png)
+Since, we are going link the Firebase hosting, we at least need to select the Hosting feature. Since,
 
-Hence, we have successfully set up the CircleCI and AWS CloudFront to our React Native project.
+After that, we will be asked to select the Firebase Project. For this, we need to select the Firebase project from the existing list of projects in our Firebase console. Since we already have a Firebase project **`vue-cicd`** created in the earlier steps, we need to make sure to select that one. 
 
-### What’s next …
+After the Firebase project has been selected, we will be asked to configure the hosting setups. The configurations that we need to apply is demonstrated in the screenshot below:
 
-* Using Circle CI with different platforms such as iOS, Android, etc.
+![8-setup-new-firebase-cli-app](8-setup-new-firebase-cli-app.jpg)
 
-* [Netlify](https://www.netlify.com/) will be an interesting platform if you host your repository on Gitlab (CircleCI are supported only Github and Bitbucket)
+Here, we have selected our public directory as **'dist'** which will contain the Hosting assets to be uploaded during firebase deployment. Then, we are going to configure our project as a **single-page app** that will link all our coding files to **index.html**. 
 
-### Conclusion
-Well, this tutorial has been long and interesting. Regardless of how long and hefty the setup tasks are, it will be highly beneficial in the long run. CircleCI can do more than what we learned in the article. We should make sure to explore that as well. It will be highly advantageous to setup CI/CD together while starting a new project. Running the test, build, and deployment manually can be hefty work and come at an unacceptable cost. CI/CD makes things automatic which will prove highly efficient in the long run. The CI/CD process also helps to locate bugs in the project easily. If CI is not applicable to your project, an alternative to it can be Jenkins, Travis CI, etc.
+Here, the last configuration question asking **'Set up automatic builds and deploys with GitHub?'** is the most important one. We need to make sure to give 'Yes' as an answer for this as it will connect our Firebase Hosting setup to GitHub and automate the builds and deployments. 
 
-Note that if you find any errors while setting up following this article, do not hesitate to notify me. :)
+At this stage, it will connect to our GitHub to be able to get the repository information after a **simple authorization process** that will open up in the browser. 
 
-### References
+### Step 3.3: Integrating GitHub workflow actions to Hosting
 
-* [What is CI & CD ](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html)
+After the successful authorization, we will be linked with our GitHub account from we can connect for repositories to Firebase hosting. Then, we will asked to select the existing repositories in our GitHub account in which we would like to setup the GitHub workflow as shown in the screenshot below:
 
-* [Continuous Integration. CircleCI vs Travis CI vs Jenkins](https://hackernoon.com/continuous-integration-circleci-vs-travis-ci-vs-jenkins-41a1c2bd95f5)
+![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli.jpg)
 
-* [Speed Up Your npm Workflow With npx](https://alligator.io/workflow/npx/)
+Here, we need to enter our [**GitHub username/GitHub project repository name**(created earlier)].
 
-* [How we used CircleCI 2.0 to build and deploy an Angular app to AWS S3](https://medium.freecodecamp.org/our-journey-for-using-circleci-2-0-to-build-and-deploy-an-angular-app-to-aws-s3-8e7ea3f51503)
+Then, we will be asked if we would like to run the build script before every deploy to which we need to put 'Yes' as an answer. The script to run and commands are automatically given for next configuration for which we simply need to press 'Enter' button. The configuration screenshot is provided below:
 
-* [React with CircleCI, AWS S3, and AWS CloudFront](https://blog.cloudboost.io/react-with-circleci-aws-s3-and-aws-cloudfront-844a1b2c75c9)
+![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli-2.jpg)
 
-* [Automating with CircleCi 2.0](https://medium.com/@RockChalkDev/automating-with-circleci-2-0-57de968bda90)
+This will create a workflow file called **firebase-hosting-pull-request.yml** in our project directory inside the **.github/workflows** folder.
+
+Then, the additional configuration steps to automate the deployment to our site and which GitHub branch to deploy is shown in the screenshot below:
+
+![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli-3.jpg)
+
+Here, we are choosing to automate the deployment to our site in real-time when each pull-request to the master branch in our GitHub repo is merged. 
+
+This will create a workflow file called **firebase-hosting-merge.yml** in our project directory inside the **.github/workflows** folder.
+
+After these successful configurations, the Firebase project with hosting enabled will be created which will connect the Firebase project to the repository in Github. As a result, the workflow folder and files will be created as shown in the screenshot below:
+
+![10-github-actions-workflow-files](10-github-actions-workflow-files.jpg)
+
+The major objective of these two workflows is to build the application and deploy it to Firebase Hosting automatically. 
+
+The first workflow file **firebase-hosting-merge.yml** will execute in every merge to master branch. It will deploy the merge to our production or live website environment. 
+
+The second workflow file **firebase-hosting-pull-request.yml** will only execute when a pull-request is created from any arbitrary branch to the master branch. It will deploy the push to a separate URL which will enable us to test out the result before executing the merge to the pull request.
+
+Now, with these two workflow scripts running, we won't have to deal with deployment every time we make changes to the code and push to the GitHub repo. We only need to push and merge the changes to the master branch. The rest of the build and deployment process will be automatically taken care of by Firebase and GitHub will automatically execute the deployment. 
+
+### Step 4: Testing to see if GitHub actions works
+
+Now that we have everything set up, let's test it out. Since we have two workflow files already in our Vue project directory, we already have some changes to push. 
+
+Now, we need to create a new **Git branch** in the root project and push the branch to the GitHub repo.
+
+Now from the GitHub console, we can navigate to that branch and create a **pull request** in GitHub from the created branch to the master branch, which will automatically trigger the workflow with Github actions as shown in the screenshots below:
+
+![11-testing-deployment-result-1](11-testing-deployment-result-1.png)
 
 
+This proves that our configuration is working properly. Now after accepting the pull-request and merging the branch to the master branch will automatically trigger deployment as well.
+
+We can check the successful deployment action from the [GitHub repo actions](https://github.com/Worawat101/vue_cicd_example/runs/1760954615?check_suite_focus=true). 
+
+The changes will be deployed live in the hosted website [demo here](https://vue-cicd-b28ff.web.app/).
+
+### Recap
+
+Well, the overall objective of the article was to get ourselves familiar with CI/CD  with Vue.js project, Firebase, and GitHub actions workflows. This tutorial article delivered the detailed stepwise concepts of how to configure the CI/CD process. The major step revolved around the configuration of Firebase Hosting with GitHub workflows. The steps are simple and easy to understand and apply. All the manual work for iteratively building and deploying to the live server is nullified by this process. The only work we have to do is to push our changes and merge the changes to the master branch. The rest of the operation is automatically handled by Firebase and GitHub action scripts. 
+
+There is so much more to GitHub actions workflows that we can explore. Remember that we also included the testing configurations in our setup of the Vue project at the beginning. We can also trigger the automatic Unit and E2E testing using the workflow scripts while merging before the deployment. This will easily identify any errors or bugs in the changes automatically without having to do manual testing. Hence, this is highly advantageous in the case of an overall software development cycle.
