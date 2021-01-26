@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-c++-operators/
+title: Introduction to C++ Operators
+description: In this article we will go through the basics of operators in C++. Operators are symbols that help us perform specific mathematical and logical operand computations.
+author: dawe-daniel
+date: 2021-01-26T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-constructors-in-c++/hero.jpg
+    alt: Constructors in C++ example image
+---
 Operators are symbols that help us perform specific mathematical and logical operand computations. C++ has several types of operators built-in to the language. This article will go through the commonly used operators.
+<!--more-->
 
 #### Prerequisites
 
