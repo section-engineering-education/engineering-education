@@ -4,7 +4,7 @@ Operators are symbols that help us perform specific mathematical and logical ope
 
 To follow this article, you’ll need to have:
 
-- A basic understanding of C++ language.
+- A basic understanding of the C++ language.
 
 - [Codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
 
@@ -72,11 +72,11 @@ int main() {
 	int b = 3; // 3 is assigned to b
 
 	// a and b values assigned to a
-	cout << "a = " << (a += b)<< endl; // a = (a+b)
-	cout << "a = " << (a -= b)<< endl; // a =(a-b)
-	cout << "a = " << (a *= b)<< endl; // a = (a *b)
-	cout << "a = " << (a /= b)<< endl; // a = (a /b)
-	cout << "a = " << (a %= b)<< endl; // a = (a %b)
+	cout << "a = " << (a += b)<< endl; // a = a + b
+	cout << "a = " << (a -= b)<< endl; // a = a - b
+	cout << "a = " << (a *= b)<< endl; // a = a * b
+	cout << "a = " << (a /= b)<< endl; // a = a / b
+	cout << "a = " << (a %= b)<< endl; // a = a % b
 
 	return 0;
 }
@@ -85,11 +85,11 @@ int main() {
 Output:
 
 ```bash
-a=9
-a=6
-a=18
-a=3
-a=0
+a = 9
+a = 6
+a = 18
+a = 6
+a = 0
 ```
 
 In the program above, when the first code is executed 9 is assigned to `a`. When the program executes the second line it takes `a` as 9 instead of 6. Therefore the value of `a` throughout the program depends on the result of the last line of code executed before it.
@@ -136,8 +136,8 @@ int main() {
 	cout << "x % y = " << (x % y) << endl;
 	cout<<" ++x : "<< ++x <<endl;
 	cout<<" --x : "<< --x <<endl;
-    cout<<" x++ : "<< x++ <<endl;
-    cout<<" x-- : "<< x-- <<endl;
+  cout<<" x++ : "<< x++ <<endl;
+  cout<<" x-- : "<< x-- <<endl;
 	cout<<" ++y : "<< ++y <<endl;
 	cout<<" --y : "<< --y <<endl;
 	cout<<" y++ : "<< y++ <<endl;
@@ -150,11 +150,11 @@ int main() {
 Output:
 
 ```bash
-x + y=8
-x - y=2
-x * y=15
-x / y=1
-x % y=2
+x + y = 8
+x - y = 2
+x * y = 15
+x / y = 1
+x % y = 2
 ++x : 6
 --x : 5
 x++ : 5
@@ -164,8 +164,6 @@ x-- : 6
 y++ : 3
 y-- : 4
 ```
-
-We used the `++` and `--` operators in the program above as prefixes. We can as well use it in postfix mode if required.
 
 #### Relational operators
 
@@ -194,38 +192,49 @@ int main()
 	X=5;
 	Y=3;
 	// equal to
-	if (X == Y){
-		cout << "X == Y";}
-	else{
-		cout << "X != Y\n";}
+	if (X == Y) {
+		cout << "X == Y";
+	}
+	else {
+		cout << "X != Y\n";
+	}
 	// not equal to
-	if (X != Y){
-		cout << "X != Y\n";}
-	else{
-		cout << "X == Y\n";}
+	if (X != Y) {
+		cout << "X != Y\n";
+	}
+	else {
+		cout << "X == Y\n";
+	}
 	// greater than example
-	if (X > Y){
-		cout << "X > Y\n";}
-	else{
-		cout << "X < Y\n";}
+	if (X > Y) {
+		cout << "X > Y\n";
+	}
+	else {
+		cout << "X < Y\n";
+	}
 	// less than example
-	if (X < Y){
-		cout << "X < Y\n";}
-	else{
-		cout << "X > Y\n";}
+	if (X < Y) {
+		cout << "X < Y\n";
+	}
+	else {
+		cout << "X > Y\n";
+	}
 	// greater than or equal to
-	if (X >= Y){
-		cout << "X >= Y\n";}
-	else{
-		cout << "X < || != Y\n";} // Demonstration of both Relational and Logical operators
+	if (X >= Y) {
+		cout << "X >= Y\n";
+	}
+	else {
+		cout << "X < || != Y\n";
+	} // Demonstration of both Relational and Logical operators
 	// lesser than or equal to
-	if (X <= Y){
-		cout << "X <= Y\n";}
-	else{
-		cout << "X > || != Y\n";} // Demonstration of both Relational and Logical operators
+	if (X <= Y) {
+		cout << "X <= Y\n";
+	}
+	else {
+		cout << "X > || != Y\n";
+	} // Demonstration of both Relational and Logical operators
 	return 0;
 }
-
 ```
 
 Output:
@@ -266,18 +275,24 @@ int main()
 	y=10;
 	z=10;
 
-	if (w > x && y == z)
+	if (w > x && y == z) {
 		cout << "w is greater than x AND y is equal to z"<<endl;
-	else
+	}
+	else {
 		cout << "AND condition not satisfied"<<endl;
-	if (w > x || y == z)
+	}
+	if (w > x || y == z) {
 		cout << "w is greater than x OR y is equal to z"<<endl;
-	else
+	}
+	else {
 		cout << "Neither w is greater than x nor y is equal to z"<<endl;
-	if (!w)
+	}
+	if (!w) {
 		cout << "w is zero"<<endl;
-	else
+	}
+	else {
 		cout << "w is NOT zero"<<endl;
+	}
 	return 0;
 }
 ```
@@ -377,7 +392,7 @@ ________________
 61  = 0011 1101  //result after comparison
 ```
 
-Here, when we perform the `|` operation, it first compares each of the individual bits of the integers `60` and `13`. The program returns a 1 if either of the individual bits of the two integers have a 1. If both of them do not have a `1`, a `0` will return. Afterward, the binary digits formed from the comparison will convert to an integer. Thus, `0011 1101` which is the result of the comparison is `61`.
+Here, when we perform the `|` operation, it first compares each of the individual bits of the integers `60` and `13`. The program returns a 1 if either of the individual bits of the two integers has a 1. If both of them do not have a `1`, a `0` will return. Afterward, the binary digits formed from the comparison will convert to an integer. Thus, `0011 1101` which is the result of the comparison is `61`.
 
 The bitwise XOR `^` operator performs the following operation when the program is executed:
 
@@ -421,7 +436,7 @@ Here, instead of comparing the individual bits of two integers, they shift the b
 _____________
 = 1111 0000 = 240 //result after shifting
 ```
-Afterward, the binary digits formed which is `1111 0000` is converted to decimal to become `240`.
+Afterward, the binary digits formed which is `1111 0000` are converted to decimal to become `240`.
 
 The bitwise SHIFT RIGHT `>>` operator performs the following operation when the program is executed:
 
@@ -440,7 +455,7 @@ Here, instead of comparing the individual bits of two integers, they shift the b
 0011 11
 0
 0
-= 0000 1111  // The rightmost bit being a 1, two one's are added to replace the shifted bits
+= 0000 1111  // The rightmost bit is a 1, two ones are added to replace the shifted bits
 _____________
 = 0000 1111 = 15   //result after shifting
 ```
