@@ -67,7 +67,8 @@ $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2}
 
 We note that it has a slight variation to the previously discussed loss function, with an extra use of a penalty term. To penalize highly fluctuating coefficients, lasso uses absolute values of the regression coefficients$ (\mid \beta\mid) $.
 
-Lasso shrinks the regression coefficients to regularize the model parameters. Unlike ridge regression, as we shall cover later, lasso can reduce some regression coefficients to zero. This is particularly important when it comes to feature selection.
+Lasso minimizes the regression coefficients to regularize the model parameters. Sometimes, Lasso can reduce regression coefficients to zero, which is particularly important when it comes to feature selection.
+
 The feature selection process is attributed to the ability of lasso to reduce some regression coefficients to zero. It comes after the regression coefficients are shrunk. Every non-zero regression coefficient is selected for use in the model. Since some features are eliminated, less important features will not feature in the final model. This greatly assists in minimizing prediction errors.
 
 Lasso also improves the prediction accuracy of models. The shrinking of coefficients minimizes the bias and reduces the variance of models. A context that favors the use of lasso is when we have a high number of features and a small amount of data. The tuning parameter $\lambda$ controls the shrinkage. From the equation, when $\lambda$ is zero, the equation is reduced to the linear regression loss function equation. The greater the value of $\lambda$, the greater the reduction of the coefficients towards zero.
