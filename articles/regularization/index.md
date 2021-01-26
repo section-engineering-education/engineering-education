@@ -55,7 +55,10 @@ $$ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + … + \beta_p X_p $$
 
 $Y$ represents the value that is to be predicted. $\beta_i$ stands for the regressor coefficient estimates for the corresponding predictor $X_i$. And, $X_i$ represents the weights or magnitudes assigned to various predictors (independent variables). Here, `i` represents any value greater than or equal to `0`, and less than `p`.
 
-A loss function is involved in the fitting process. This loss function is referred to as the Residual Sum of Squares (RSS). Linear models attempt to optimize the coefficients to minimize the loss function. This is shown by the equation for the loss function below:
+A loss function is involved in the fitting process. It is computed as the difference between actual and predicted output from a model. A loss function provides a means of assessing how well an algorithm models given data. It is used to minimize the error, in turn optimizing the weights. In this context, the loss function is referred to as the residual sum of squares (RSS). 
+
+Below is the equation for the loss function.
+
 
 $$ RSS = \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} $$
 
