@@ -1,10 +1,10 @@
-Fuzzy logic is an approach to solving problems that take into consideration the degrees of truth. Fuzzy Systems as a subject developed to model the uncertainty and vagueness present in the human thought process. 
+[Fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic) is a form of many-valued logic in which the truth values of variables may be any real number between 0 and 1, both inclusive. Fuzzy Systems as a subject developed to model the uncertainty and vagueness present in the human thought process. 
 
 In this article, we will understand the following concepts.
 
 ### Prerequisites
 
-This article on fuzzy logic is an excellent introduction to the basics of crisp and fuzzy sets. Moreover, it introduces the representation of fuzzy sets and their applications. 
+This article on [fuzzy logic](/engineering-education/an-overview-of-fuzzy-logic-system/) is an excellent introduction to the basics of crisp and fuzzy sets. Moreover, it introduces the representation of fuzzy sets and their applications. 
 
 ### Table of contents
 
@@ -33,11 +33,11 @@ $$
 
 Graphically the problem can be represented as the following:
 
-![graphical representation](graphical_rep_1.png)
+![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_1.png)
 
 The same problem can be represented using fuzzy. Observe how a given temperature belongs to two classes of temperature in varying degrees. 
 
-![graphical representation](graphical_rep_2.png)
+![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_2.png)
 
 ### Types of membership functions
 
@@ -50,7 +50,7 @@ Mathematically, the gamma function is given as follows:
 $$ \gamma(x,\alpha, \beta) = \begin{cases} 0 & x\le \alpha \\
 \frac{x-\alpha}{\beta -\alpha} & \alpha\le\beta \\ 1 & x \ge \beta\end{cases}  $$
 
-![gamma](gamma-correct.png)
+![gamma](/engineering-education/fuzzy-logic-operations/gamma-correct.png)
 #### s- function
 
 The s function gets its name from its shape. The s-shaped function is useful in cases with a gradual change in the membership. 
@@ -64,7 +64,7 @@ $$ S(x,\alpha,\beta) = \begin{cases}
 1 & x \gt \gamma
 \end{cases} $$
 
-![s-function](gamma.png)
+![s-function](/engineering-education/fuzzy-logic-operations/gamma.png)
 
 #### L- function
 This function is the inverse of $\gamma$ function. It is given as follows:
@@ -75,7 +75,7 @@ $$ L(x,\alpha,\beta) = \begin{cases}
 0 & x \gt \beta 
 \end{cases} $$
  
-![L-function](L-function.png)
+![L-function](/engineering-education/fuzzy-logic-operations/L-function.png)
 #### Triangular function
 
 $$ L(x,\alpha,\beta,\gamma) = \begin{cases} 
@@ -85,7 +85,7 @@ $$ L(x,\alpha,\beta,\gamma) = \begin{cases}
 0 & x \gt \gamma
 \end{cases}$$
 
-![triangular function](triangular_function.png)
+![triangular function](/engineering-education/fuzzy-logic-operations/triangular_function.png)
 
 #### pi function
 
@@ -98,7 +98,7 @@ $$ \pi(x, \alpha, \beta,\gamma, \delta) = \begin{cases}
 \frac{\gamma - x }{\delta - \gamma} & \gamma \lt x \le \delta \
 \end{cases}$$
 
-![pi-function](pi_function.png)
+![pi-function](/engineering-education/fuzzy-logic-operations/pi_function.png)
 
 #### Gaussian function
 
@@ -109,6 +109,10 @@ Mathematically, it is given as follows:
 $$ 
 G(x,\mu,\sigma) = exp (-\frac{(x-\mu)^2}{2\sigma^2})
 $$
+
+![gaussian membership function](/engineering-education/fuzzy-logic-operations/gaussian.png)
+
+[*Image source*](https://www.researchgate.net/figure/Gaussian-membership-function-Gxs-c_fig6_233968578)
 
 ### Operations in fuzzy logic
 
@@ -122,7 +126,7 @@ Union operation concatenates the two sets and produces a new set. Since the fuzz
 
 #### Intersection
 
-Intersection operation finds the common elements between the two sets. In this case, if an element exists in both sets, the element with the least degree of membership is retained in the new set. The intuition behind the intersection operation is to find the common elements between the two sets. Therefore, the element with the lowest degree of membership exists in both the sets. This operation is also viewed as finding the elements in both sets with the minimum degree of membership.
+Intersection operation finds the common elements between the two sets. In this case, if an element exists in both sets, the element with the least degree of membership is retained in the new set. The intuition behind the intersection operation is to find the common elements between the two sets. Therefore, the element with the lowest degree of membership exists in both sets. This operation is also viewed as finding the elements in both sets with the minimum degree of membership.
 
 #### Complementation
 
@@ -132,6 +136,6 @@ $$new\; degree\; of\; membership(x)\; = 1\; -\; degree\; of\; membership(x)$$
 
 ### Conclusion
 
-In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. 
+In this article, we discussed the various membership functions that can be used to represent fuzzy sets. Moreover, we looked at the various operations that are used frequently on fuzzy sets. Happy learning.
 
 
