@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/building-a-simple-angular-app/
-title: Introduction to Data Binding using Angular
+title: How to Build a Simple Angular SPA from Scratch
 description: This article will walk you on building a simple Angular application covering the basic and core Angular CLI concepts. The guide is handy for developers who are willing to have a hands-on experience, along with learning.
 author: mahantesh-r
 date: 2021-01-25T00:00:00-20:00
