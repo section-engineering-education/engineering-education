@@ -217,3 +217,6 @@ Selenium automation testing with Java provides a cost-effective and fast way of 
 - [Selenium](https://www.selenium.dev/documentation/en/getting_started/quick/)
 
 - [Testing Experts](https://www.testingxperts.com/blog/5-best-practices-for-web-application-testing#:~:text=The%20methodology%20of%20web%20application%20testing%20successfully%20helps,maintains%20a%20quality%20application.%20Secures%20App%20from%20vulnerabilities%3A)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
