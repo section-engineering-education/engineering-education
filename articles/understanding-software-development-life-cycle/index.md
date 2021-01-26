@@ -1,13 +1,13 @@
-In the current digital era, many software applications are being developed to solve various real-life problems. If you are a new developer, you would probably want to know the steps that can be taken to develop a software product. Understanding the software development life cycle (SDLC) helps developers to plan effectively and deliver high-quality software products. 
+In the current digital era, many software applications are being developed to solve various real-life problems. For software developers, understanding the software development life cycle (SDLC) facilitates the effective planning and delivery of high-quality software products. 
 
-This article takes you through the software development life cycle, which consists of the main stages of software development. It also provides an overview of the model processes in software development and the limitations of SDLC. 
+This article takes you through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
 
 ### What is Software Development Life Cycle (SDLC)?
-A software development life cycle (SDLC) refers to the process followed by software developers to develop a high-quality software product. It can also be termed as a software development process. SDLC provides a framework that outlines the tasks that need to be performed in each phase of software development. Organizations can use SDLC to provide a structure for designing and building applications. 
+The software development life cycle (SDLC) refers to the process followed by software developers to develop high-quality software products. The SDLC provides a framework that outlines the tasks that need to be performed in each phase of software development. Organizations can use the SDLC process to provide structure for the designing and building of applications. 
 
 This life cycle provides an effective plan for various activities in software development such as designing, building (developing), and maintaining software applications. It also provides a methodology for enhancing the quality of software applications in an organization. Organizations can choose an effective software development strategy from a variety of SDLC process models. 
 
-SDLC can be used by various people in the organization such as software engineers, developers, and cross-function teams. Developers and software engineers use it to create effective plans and designs. They also apply the various SDLC stages to develop innovative software products. Cross-function teams use SDLC to collaborate across different software development stages. 
+The SDLC can be used by various people in the organization such as software engineers, developers, and cross-function teams. Developers and software engineers use it to create effective plans and designs. They also apply the various SDLC stages to develop innovative software products. Cross-function teams use the SDLC to collaborate across different software development stages. 
 
 ### Importance of SDLC
 The software development life cycle adds value to software development in the following ways.
@@ -38,13 +38,15 @@ In this phase, the developers are required to refer to the requirements document
 The final design is selected based on certain parameters such as risk, modularity, robustness, time constraints, and budget. This design provides the blueprint of the software application being developed. 
 
 #### Software Development
-This is the implementation stage that involves developing the software. Here, the design of the product is transformed into reality by creating some source codes. The design document specification provides a guideline for the generation of the source codes. Various programming languages can be used. These include PHP, Java, C++, Pascal, and C. The language chosen depends on the type of software being developed. 
+This is the implementation stage that involves developing the software. Here, the design of the product is transformed into reality by the software developers involved. The design document specification provides a guideline for the source code. Various programming languages can be used. These include PHP, Java, C++, Pascal, C, etc. The language chosen depends on the type of software being developed, the business use-case among other constraints. 
 
 #### Testing
 In this phase, the software is sent to a testing environment where it is tested by test engineers. Testing is done to establish whether the software functions based on the requirements given in the first phase. If the test engineers discover some defects, the developers fix them. The software is tested further to check whether there are other defects. 
 
 #### Deployment
-After ensuring that all the customer requirements have been met, the developers deploy the software for use. Before actual deployment is done, the software should be documented for future reference. Ownership should also be transferred to the client. The deployment strategy depends on the specifications of the customer. It may be deployed to an entire segment or a limited segment. It can be deployed in a data center or a client premise. 
+After ensuring that all the customer requirements have been met, the developers deploy the software for use. Before actual deployment is done, the software should be documented for future reference. Ownership should also be transferred to the client. The deployment strategy depends on the specifications of the customer. It can be deployed in a data center or a client premise. 
+
+Sometimes software deployment can be done in stages. It may first be deployed to a limited [customer segment](https://www.cleverism.com/customer-segments-business-model-canvas/) to conduct [user acceptance testing (UAT)](https://searchsoftwarequality.techtarget.com/definition/user-acceptance-testing-UAT#:~:text=user%20acceptance%20testing%20%28UAT%29%20In%20software%20development%2C%20user,in%20the%20%22real%20world%22%20by%20the%20intended%20audience.). The client will collect feedback from the initial users and suggest further enhancements. The enhanced product will then be deployed to the entire target market. 
 
 #### Maintenance
 This phase involves solving issues faced by customers when they use the software. When an issue is solved by the developers or software engineers, the software is tested to ensure it functions well. The software is then handed back to the customer for use. In the maintenance phase, the software can be enhanced to add other new features. It can also be upgraded to establish a new version of the system. 
