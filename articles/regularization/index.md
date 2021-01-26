@@ -36,7 +36,7 @@ It occurs when a function fits a limited set of data points too closely. Data of
 
 The image below shows the phenomena of overfitting, underfitting, and the correct fit.
 
-![overfitting](/engineering-education/regularization/overfitting.png)
+![overfitting](/engineering-education/articles/regularization/overfitting.png)
 
 *Overfitting, correct fit, and underfitting.*
 
