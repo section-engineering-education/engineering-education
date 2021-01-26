@@ -11,21 +11,15 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/group-operator/hero.jpg
+  - url: /engineering-education/group-operator-in-mongodb/hero.jpg
     alt: Group operator in MongoDB Image
 ---
-Group operator also known as accumalator operator is a very important operator in MongoDB language as it helps to perform varoious transformations on the data. It is a part of aggregation in MongoDB. 
+Group operator (is also known as accumulator operator) is a crucial operator in MongoDB language as it helps to perform various transformations of data. It is a part of aggregation in MongoDB.
 <!--more-->
 
-MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
+MongoDB is an open-source NoSQL database management program. NoSQL is an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
 
-In this article we are going to learn:
-
-1. What is the $group operator?
-
-2. Examples for a better understanding of the operator.
-
-3. Applications of $group operator.
+In this article, we are going to learn about the $group operator with some examples.
 
 ### Aggregation
 
@@ -142,7 +136,7 @@ Output:
 
 ### Conclusion
 
-In this article we have discussed what is $group operator, how can we use it some examples. $group operator can be very useful for similar data related to some other data.
+In this article we have discussed the `$group` operator with some examples.
 
 I hope you enjoyed reading this article as much as I enjoyed writing it.
 
