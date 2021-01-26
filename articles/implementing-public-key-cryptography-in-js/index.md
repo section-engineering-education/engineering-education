@@ -272,7 +272,9 @@ Some of the platforms that use public-key cryptography in production include:
 ### Conclusion
 Public key cryptography solves the key distribution problem but suffers the threat of man-in-the-middle attack. There are different methods to solve it and among them is using pre-computed keys. The method is still in demand and is used by a lot of successful companies. 
 
-In this article, we have covered an introduction to public-key cryptography, algorithms that use public-key cryptography, libraries to use when implementing public-key cryptography in JavaScript, we implemented public-key cryptography using `tweetnacl.js`, we went over man-in-the-middle attack, a brief example using pre-computed keys, how we maintain public keys and private keys, and we mentioned platforms using public-key cryptography today. 
+In this article, we have covered an introduction to public-key cryptography, algorithms that use public-key cryptography, libraries to use when implementing public-key cryptography in JavaScript. 
+
+We also implemented public-key cryptography using `tweetnacl.js`, we went over man-in-the-middle attack, a brief example using pre-computed keys, how we maintain public keys and private keys, and we mentioned platforms using public-key cryptography today. 
 
 You can access the finalized code from [here](https://github.com/mwangiKibui/public-key-cryptography-in-js).
 
