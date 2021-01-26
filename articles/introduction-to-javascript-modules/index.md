@@ -166,3 +166,7 @@ This is the basic knowledge required to get you started with Javascript modules.
 
 
 Note: ```Exports``` and ```imports``` are only used within modules and not regular scripts.
+
+---
+
+Peer Review Contribution by: [Mike White](https://www.section.io/engineering-education/authors/mike-white/)
