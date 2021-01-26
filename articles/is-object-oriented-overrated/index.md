@@ -34,7 +34,7 @@ Why is the object-oriented programming paradigm ("OOP" or "the OO paradigm") so 
 
 The internal data of an object is generally hidden from the outside, except through methods. If you need a reusable way to print the words in a text file, you make a `TextFile` **class**. That becomes the template for `TextFile` **objects**, which are "instances" of the class.
 
-```pseudocode
+```bash
 class TextFile {  // the full class
 	attribute filedata;  // The content of the file is a data attribute.
 	attribute filelength;  // So are the file's length and name.
@@ -53,7 +53,7 @@ This makes programming easier since most IDEs can autocomplete an object with it
 #### Inheritance
 **Inheritance** lets a class reuse and build on the existing functionality of a "parent class". When there are many types of objects, each type needs some unique functionality. By making a parent of these objects, each only needs it's *unique* features implemented to work. The shared functionality is only written once.
 
-```pseudocode
+```bash
 class TextFile {  // TextFile is the parent class.
 	attribute filedata;
 	attribute filelength;
@@ -80,7 +80,7 @@ myMarkdown.print_file();  //...but the normal TextFile functionality still works
 #### Polymorphism
 **Polymorphism** means we can do something with an object, *even if* we don't yet know the object's exact type. This builds off the inheritance idea above. A child class can behave differently from the parent class by defining its *own* version of a parent method. We can then call that method on an object, whether it's the parent or the child.
 
-```pseudocode
+```bash
 class TextFile {  // TextFile is the parent class.
 	attribute filedata;
 	attribute filelength;
@@ -128,7 +128,7 @@ The biggest alternative to object-oriented programming is **functional** program
 
 When something needs to happen, data is passed to a function with a set output and (optimally) no side-effects. Nothing about functional programming prevents polymorphism. Let's say you want the `print_file()` function to work differently for different data. You can define different functions with the same name.
 
-```pseudocode
+```bash
 function print_file(Markdown){
 	// do something
 }
@@ -138,7 +138,7 @@ function print_file()
 
 or pass in the data type
 
-```pseudocode
+```bash
 function print_file(myfile){
 	if myfile's type is MarkdownFile{
 		// do one thing
