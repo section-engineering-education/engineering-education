@@ -4,7 +4,7 @@ Verifying website domains for originality can be complicated during a time where
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
 
-At the end of this tutorial, it is possible to have a good grasp on retrieving DNS (Domain Name System) information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
+At the end of this tutorial, you will understand how to retrieve DNS (Domain Name System) information using the Python Shell,  run `curl` in the Windows PowerShell to crawl websites, and how to identify the complexities of domain modifications in an ever-changing technology space.
 
 Overall, this tutorial helps complete reverse domain name lookups.
 
@@ -220,7 +220,7 @@ _Screenshot_:
 
 ![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
-### Next up, Windows PowerShell 
+### Next up, Windows PowerShell
 
 _Make sure to right-click and select the `Run as Administrator` option before running PowerShell._
 
@@ -231,7 +231,7 @@ As shown below, brackets are used to call a website with an API to sift through 
 Input:
 
 ```PowerShell
-(curl host.io/careers.massiveinsights.works).Content
+(curl host.io/careers-massiveinsights.works).Content
 ```
 
 Partial Output:
