@@ -40,13 +40,13 @@ To install the necessary dependencies, in your cloned folder execute the followi
 cd ./start && npm install
 ```
 
-Our main focus shall be implementing `fetchFoodItem` function in `controllers/recipe.js` file. It handles the logic for the `recipe/:foodItem` route.
+Our main focus shall be implementing `fetchFoodItem` function located in `controllers/recipe.js` file. It handles the logic for the `recipe/:foodItem` route.
 
 ### Fetching data from recipe labs API.
 
 To fetch data from the API we:
 
-- Import `axios` module:
+- Import `axios` module in `controllers/recipe.js` file:
 
 ```javascript
 const axios = require("axios");
@@ -55,39 +55,31 @@ const axios = require("axios");
 - Modify the `fetchFoodItem` function as follows:
 
 ```javascript
+const fetchFoodItem = async (req, res, next) => {
+  try {
+    //destructure the foodItem from params.
 
-const fetchFoodItem = (req,res,next) => {
+    let { foodItem } = req.params;
 
-    try {
+    //fetch the data.
 
-        //destructure the foodItem from params.
+    const recipe = await axios
+      .get(`http://www.recipepuppy.com/api/?q=${foodItem}`)
+      .catch(console.log);
 
-        let { foodItem } = req.params;
-
-        //fetch the data.
-
-        const recipe = await axios
-        .get(`http://www.recipepuppy.com/api/?q=${foodItem}`)
-        .catch(console.log);
-
-        //return a response.
-        return res.send({
-          success: true,
-          message: recipe.data.results,
-        });
-
-      } catch (err) {
-
-        //return the error
-        return res.send({
-          success: false,
-          message: err,
-        });
-
-      };
-
+    //return a response.
+    return res.send({
+      success: true,
+      message: recipe.data.results,
+    });
+  } catch (err) {
+    //return the error
+    return res.send({
+      success: false,
+      message: err,
+    });
+  }
 };
-
 ```
 
 From above:
@@ -136,13 +128,13 @@ redis-server
 
 Follow the below steps:
 
-- Import `redis` module.
+- Import `redis` module in `controllers/recipe.js` file:
 
 ```javascript
 const redis = require("redis");
 ```
 
-- Configure `redis` port and error handling.
+- Configure `redis` port and error handling in `controllers/recipe.js` file:
 
 ```javascript
 const client = redis.createClient({
@@ -162,10 +154,10 @@ Incorporating `redis` in our function shall involve:
 
 - If the data does not exist in the cache, fetching the data from the API, saving data in the cache, and sending the data to the client.
 
-The implementation shall be as follows:
+To set up `redis` we modify the `fetchFoodItem` function as follows:
 
 ```javascript
-const fetchFoodItem = (req, res, next) => {
+const fetchFoodItem = async (req, res, next) => {
   try {
     //get the food item.
 
@@ -245,10 +237,10 @@ client.setex(foodItem, 1440, JSON.stringify(recipe.data.results));
 
 - **Uniqueness of the key**: When the keys are similar, the cache will store inappropriate data. In order to ensure that keys do not get similar, you have to hash them.
 
-Make the following modifications in our function in order to support hashing of keys:
+Make the following modifications in our `fetchFoodItem` function in order to support hashing of keys:
 
 ```javascript
-const fetchFoodItem = (req, res, next) => {
+const fetchFoodItem = async (req, res, next) => {
   try {
     //get the food item.
 
