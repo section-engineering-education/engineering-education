@@ -23,7 +23,7 @@ In this article, we are going to learn about the $group operator with some examp
 
 > Note: The code snippets in this article should be run in the Mongo shell.
 
-### Prerequisites :
+### Prerequisites
 
 - MongoDB must be installed in your system. To install the MongoDB safely in your system visit the official documentation via this link
 https://docs.mongodb.com/manual/installation/
@@ -106,13 +106,13 @@ Suppose we have a collection of 3 people with their names, gender, age and hobbi
 
 Let's say we want to find how many males and how many females are there in this document. In this short example, it is pretty clear that there are 2 males and 1 female.
 
-```js
+```bash
 db.person.aggregate([ { $group: {_id: {gender: "$gender"}, totalPeople: {$sum: 1}} } ]).pretty()
 ```
 
 Output:
 
-```JavaScript
+```bash
 { "_id" : { "gender" : "Female" }, "totalPeople" : 1 }
 { "_id" : { "gender" : "Male" }, "totalPeople" : 2 }
 ```
@@ -121,13 +121,13 @@ To make the $group operator work, you should use an accumulator operator like `$
 
 Let's take a look at another use case. Suppose now we are interested in how many people have a similar hobby, We should make every hobby a separate top-level field by using the `$unwind` operator and then we have to do the same as we did in the first example:
 
-```JavaScript
+```bash
 db.person.aggregate([ {$unwind: "$hobbies"}, { $group: {_id: {hobby: "$hobbies"}, totalPeople: {$sum: 1}} } ]).pretty() 
 ```
 
 Output:
 
-```JavaScript
+```bash
 { "_id" : { "hobby" : "jogging" }, "totalPeople" : 1 }
 { "_id" : { "hobby" : "singing" }, "totalPeople" : 1 }
 { "_id" : { "hobby" : "cooking" }, "totalPeople" : 2 }
