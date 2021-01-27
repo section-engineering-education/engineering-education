@@ -1,6 +1,6 @@
-## Introduction to Network Analysis Using Wireshark
-As an IT professional, one of the most powerful networking tools that you will find yourself using is ```Wireshark```, a tool that is mostly used in the analysis of network packets.  
-In this tutorial, we will be looking at an overview of ```Wireshark```, how it works, and other several uses. 
+### Introduction to Network Analysis Using Wireshark
+As an IT professional, one of the most powerful networking tools you will find yourself using is ```Wireshark```, a tool mostly used in the analysis of network packets.  
+In this tutorial, we will be looking at an overview of ```Wireshark```, how it works, and several other uses. 
 
 ### Requirements
 * Networking Basics
@@ -11,24 +11,24 @@ In this tutorial, we will be looking at an overview of ```Wireshark```, how it w
 
 ### What is Wireshark?
 
-The history of Wireshark software goes back to 1998, as an open-source project started by volunteer network experts around the world.  
+Wireshark software's history goes back to 1998, as an open-source project started by volunteer network experts around the world.  
 The main aim was to build a standard network protocol analyzing tool.  
 
-Therefore, ```Wireshark``` is simply a network packet analyzer, that is mainly used to capture the data on your network. This data is then presented in a form understandable by human beings.  
+Therefore, ```Wireshark``` is simply a network packet analyzer that is mainly used to capture the data on your network. This data is then presented in a form understandable by human beings.  
 
 In case you find yourself in a position where you need to try and troubleshoot every single network packet, ``` Wireshark``` is the right tool for you!
 
 This is a very powerful tool, as it enables you, the user, to perform various operations such as:
 * Troubleshooting your network.
-* Performing security operations that is, it can be used to detect security threats such as port scanning.  
+* Performing security operations that are used to detect security threats such as port scanning.  
 * Learning more about your network protocols at the microscopic level.
-* Performing analysis of voice over internet(VoIP).
+* Performing analysis of voice over the internet(VoIP).
 
 ### How Wireshark works
-As we have said, ```Wireshark``` is a packet analyzer, sometimes other people refer to it as a packet sniffer so do not get confused.  
+As we have said, ```Wireshark``` is a packet analyzer, sometimes other people refer to it as a packet sniffer, so do not get confused.  
 
-How it works is very simple, let's take your machine, for example, it's connected to your ```WIFI``` or the network you're currently using, and you want to determine what is currently going on, on your network.  
-What happens is that whenever you use ```Wireshark```, it will capture your network traffic(this refers to the data moving currently on your network), and record every single data offline.  
+How it works is very simple, let's take your machine, for example, connected to your ```WIFI``` or the network you're currently using, and you want to determine what is currently going on, on your network.  
+What happens is that whenever you use ```Wireshark```, it will capture your network traffic(this refers to the data moving currently on your network) and record every single data offline.  
 You can then use this data to analyze the network activities, that is it.  
 
 
@@ -40,7 +40,7 @@ Follow these steps to install Wireshark in ubuntu 20.04.
 ```
 sudo apt update
 ```
-This outputs the following, your output might be different:-
+This outputs the following, and your output might be different:-
 ```console
 jumamiller@OpijaKaeli:~$ sudo apt update
 [sudo] password for jumamiller: 
@@ -55,7 +55,7 @@ jumamiller@OpijaKaeli:~$
 ```
 
 #### Step 2: Installing Wireshark
-Since we have updated our system, Wireshark's latest version will be installed by running the following command:-  
+Since we have updated our system, we install Wireshark's latest version by running the following command:-  
 
 ```console
 sudo apt install Wireshark
@@ -140,8 +140,8 @@ By running this command will redirect you to the Wireshark software window.
 
 Congratulations, you now have ```Wireshark``` installed in your system and running.
 
-### Your first Packet Capture.
-We have Wireshark in our system installed, let's dive in and start experimenting with the features that it has.  
+### Your first packet capture
+We have Wireshark in our system installed. Let's dive in and start experimenting with its features.  
 
 #### 1. Wireshark Graphical User Interface
 From ```Fig 1.2``` above, Wireshark contains some of the commonly used menus,
@@ -157,47 +157,47 @@ Normally, when you start a Wireshark without opening a capture file or starting 
 This window will always display currently opened capture files and the capture available interfaces.  
 
 Therefore the first step involves selecting the network interface to capture its data.  
-Remember the interfaces are different for different operating systems.  
+Remember, the interfaces are different for different operating systems.  
 
 #### Fig 1.3 Network Interfaces
 ![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interface.jpg)
 
-From the above screenshot, we have 6 interfaces which we can then choose from.  
+From the above screenshot, we have 6 interfaces, which we can then choose from.  
 
 Hit on the ```Capture``` button just below the ``` Welcome to Wireshark```.  
-This will prompt you to another window as seen below.  
+This will prompt you to another window, as seen below.  
 
 #### Fig 1.4 Network Interfaces 2
 ![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interfaces-2.jpg)
 
-Now select any of the interfaces you're presented with, in this example, we're going to explore the UDP Listener option.  
+Now select any of the interfaces you're presented with. In this example, we're going to explore the UDP Listener option.  
 Then click on the start button in the far left corner.  
 At this stage, you should be able to get an output like the one presented below.  
 
 #### Fig 1.5 Network Traffics
 ![Network-Traffics](/engineering-education/introduction-to-wireshark/wireshark-live-capture.jpg)
 
-In the capture panel above, you're able to notice that network packet capturing is in sequential order with each line representing each packet captured.  
+In the capture panel above, you're able to notice that network packet capturing is in sequential order, with each line representing each packet captured.  
 
 The information is displayed in tabular form, with rows and columns.  
-Each row represents the packet collected while columns provide you with additional information such as time, protocols, length and et cetera, you can refer to the screenshot above.  
+Each row represents the packet collected, while columns provide you with additional information such as time, protocols, length, et cetera. You can refer to the screenshot above.  
 
 Let's have a look at these columns and what type of information they provide us with.  
 * ```No``` - Represents a unique network packet sequence number. This can be used to identify a given packet.  
 * ``` Time ```- This is the time at which a particular packet was captured.  
 * ```Source ```- This represents where we are getting the packets from. This is denoted as Internet Protocols(IP Addresses).
 * ``` Destination```- This is used to represent the Internet Protocol(IP Address) where the packet is going.  
-* ```Protocol```- This refers to the protocol of the data you have captured, this could ```TCP, ARP et cetera```
+* ```Protocol```- This refers to the protocol of the data you have captured. This could be ```TCP, ARP et cetera```
 * ```Length```- This is used to represent the size of the packet captured.
 * ``` Info```- This gives you additional information about the packet you have captured.  
 
-NOTE:- Each protocol is represented with its color scheme, in our case, for example, the ```TCP ``` protocol has a ```#cccccc``` background.  This helps the user to easily differentiate between these protocols.  
+NOTE:- Each protocol is represented with its color scheme. In our case, for example, the ```TCP ``` protocol has a ```#cccccc``` background.  This helps the user to easily differentiate between these protocols.  
 
 
 Congratulations, you have been able to capture network packets, and that's how simple Wireshark is user friendly. 
 
 ### Packet Details Panel:-
-Now that we're able to capture some data, try to click on a single row, you will notice that some data are being displayed on the immediate window.  
+Now that we can capture some data try to click on a single row, and you will notice that some data are being displayed on the immediate window.  
 
 #### Fig 1.5 Packet Details
 ![Single-Packet-Details](/engineering-education/introduction-to-wireshark/wireshark-single-packet-details.jpg)
@@ -206,10 +206,10 @@ On the highlighted protocol, click on it to get more details about this SSDP pro
 #### Fig 1.6 More on packet Details
 ![Protocol-details](/engineering-education/introduction-to-wireshark/wireshark-protocol-details.jpg)
 
-The information above tells us more about the packet captured including the device used. This is data is very important especially in cases of system hacks, where they can be collected for forensics.  
+The information above tells us more about the packet captured, including the device used. This data is very important, especially in system hacks, where they can be collected for forensics.  
 
 ### Packet Bytes Panel
-From the above packet details, remember when you clicked a given row you were able to get details on the window on fig 1.6 above, consequently, this caused the window below Fig 1.6 to be updated as well.  
+From the above packet details, remember when you clicked a given row, you could get details on the window on fig 1.6 above. Consequently, this caused the window below Fig 1.6 to be updated as well.  
 
 Let's have a look how it looks like.  
 #### Fig 1.7 Bytes Details
@@ -220,6 +220,9 @@ A closer look at this screenshot, the numbers are in bytes. This is the actual f
 
 ### Conclusion
 
-In this tutorial, we have been working on Wireshark, giving a quick overview of how to get started with this amazing tool.  
+In this tutorial, we worked on Wireshark, giving a quick overview of how to get started with this amazing tool.  
 We have seen how we can install Wireshark in a Linux based system and how to perform various tasks such as dumping the packet streams.  
 We will explore in our next tutorial as we discuss more advanced features of Wireshark.  
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
