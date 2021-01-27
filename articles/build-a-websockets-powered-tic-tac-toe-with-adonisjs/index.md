@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
     alt: Adonis.js Websocket image
 ---
-Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2's move in less than a second. In this tutorial we will be using the WebSocket API to achieve this communication speed.
+Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2s move in less than a second. In this tutorial we will be using the WebSocket API to achieve this communication speed.
 <!--more-->
 ### Introduction
 For this article we will use Adonis.js, which is a Node.js MVC framework, on the backend. Adonis.js implements web sockets both on the client and server side. You can check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
