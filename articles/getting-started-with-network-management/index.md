@@ -31,7 +31,9 @@ In this tutorial we will discuss the following:-
 #### ```1.Fault Management``` 
 Imagine if working as a network administrator at a big company, let's say a bank, and then network fails in all branches country-wide and you're not in a position to identify the problem, what will you do?  
 
-You can imagine the pressure you get from top management, the customer's outcry, it'll just be a mess from a company losing a lot of money as well as customers trust.  
+Imagine if working as a network administrator at a big company, say a bank, and the network fails in all branches country-wide and there's no way to identify the problem?
+The network administrator would be pressurized from the senior management to get the network back up or else the organization will suffer financial losses. 
+To avoid these kinds of situation, proper design, documentation and management of network is paramount.
 
 To avoid such issues from arising, complex networks require proper design, with each component's role well defined.
 
