@@ -322,6 +322,10 @@ The `onAuthStateChanged` event will be triggered whenever the authentication sta
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. 
+
+To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
+
 Let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
 
 ```JSX
@@ -329,8 +333,6 @@ const [authenticated, setAutheticated] = useState(false);
 ```
 
 Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
-
-To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
 ```JSX
 auth().onAuthStateChanged((user) => {
@@ -349,8 +351,6 @@ if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
 
 return <PhoneNumber onSubmit={signIn} />;
 ```
-
-> You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application.
 
 ### Signout
 
