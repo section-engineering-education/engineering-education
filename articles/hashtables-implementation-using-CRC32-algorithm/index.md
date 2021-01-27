@@ -1,12 +1,12 @@
-Hash table are the most and convenient data structures that are easily accessible in most programming languages. It uses an associative array to store data and retrieve data. Each data value has its own unique index. Due to this, instead of searching through the whole array, the index is used to directly access the required element. Time taken for search operation is reduced irrespective of the data size. Given a key-value pair, the hash code of the key is computed and used as the index of the value stored in the table.
+Hash tables are the most and convenient data structures that are easily accessible in most programming languages. It uses an associative array to store data and retrieve data. Each data value has its unique index. Instead of searching through the whole array, the index is used to access the required element directly. Time taken for search operation is reduced irrespective of the data size. Given a key-value pair, the hash code of the key is computed and used as the index of the value stored in the table.
 
 ### Prerequisites
 
-To get started, you will need to understand python arrays, lists, and classes. You also need a code editor and a python interpreter to run your code. We will be using visual studio code, which has an integrated terminal for running the code. You can also use pycharm for the same.
+To get started, you will need to understand Python arrays, lists, and classes. You also need a code editor and a Python interpreter to run your code. We will be using visual studio code, which has an integrated terminal for running the code. You can also use PyCharm for the same.
 
-### 1. The HashTable Class Members
+### 1. The HashTable class members
 
-First, we will need to have all the python modules that we will use in our environment. We will import `randint`,`Typevar`, `Callable` and `List`.
+First, we will need to have all the Python modules that we will use in our environment. We will import `randint`,`Typevar`, `Callable`, and `List`.
 
 ```python
 from random import randint
@@ -48,7 +48,7 @@ class HashTable:
 
 ### 2. Class methods & hashing
 
-We have successfully created the data members. We now proceed to write our dunder methods for overwriting some of the python built-in function behaviors. This implementation is based on the following class methods, which will be discussed after the dunder methods.
+We have successfully created the data members. We now proceed to write our dunder methods for overwriting some of the Python built-in function behaviors. This implementation is based on the following class methods, which will be discussed after the dunder methods.
 
 ```python
 def __len__(self) -> int:
@@ -79,7 +79,7 @@ def __len__(self) -> int:
         self.delete(key)
 ```
 
-- **`load_factor()`** This function is responsible for calculating the load factor of the table. The load factor tells the percentage of the table slots filled. The resize function should be called once the load factor reaches 75%. The load factor is obtained by dividing the number of filled slots by the table size.
+**`load_factor()`:** This function is responsible for calculating the table's load factor. The load factor tells the percentage of the table slots filled. The resize function should be called once the load factor reaches 75%. The load factor is obtained by dividing the number of filled slots by the table size.
 
 ```python
 @property
@@ -88,7 +88,7 @@ def __len__(self) -> int:
         return self.filled_count / self.table_size
 ```
 
-- **`encode()`** Handles encoding of the key supplied to the hash function. Strings of arbitrary length are encoded using a [polynomial rolling hash scheme] (https://cp-algorithms.com/string/string-hashing.html). The variables `p` and `m` must be positive numbers. `p` should be a prime number roughly equal to the number of characters in the input alphabet. For our case, the number of printable ASCII characters is 95; therefore, our `p` value is 97. On the other hand, `m` should be a huge prime number. We picked = 115561578124838522881`, which is the 20th prime number in the [Online Encyclopedia of Integer Sequences A118839 (OEIS)] (https://oeis.org/A118839). The function returns an integer `hash value` of the key supplied.
+- **` encode()`** Handles encoding of the key supplied to the hash function. Strings of arbitrary length are encoded using a [polynomial rolling hash scheme](https://cp-algorithms.com/string/string-hashing.html). The variables `p` and `m` must be positive numbers. `p` should be a prime number roughly equal to the number of characters in the input alphabet. For our case, the number of printable ASCII characters is 95; therefore, our `p` value is 97. On the other hand, `m` should be a huge prime number. We picked = `115561578124838522881`, which is the 20th prime number in the [Online Encyclopedia of Integer Sequences A118839 (OEIS)](https://oeis.org/A118839). The function returns an integer `hash value` of the key supplied.
 
 ```python
 @staticmethod
@@ -99,11 +99,11 @@ def __len__(self) -> int:
         """
         if isinstance(key, str):
             hash_value: int = 0
-            # p should be a prime number roughly eaqual to the number of characters in the input alphabet.
+            # p should be a prime number roughly equal to the number of characters in the input alphabet.
             p: int = 97
-            # We have 95 printable ASCII characters so we use 95
+            # We have 95 printable ASCII characters, so we use 95
             m: int = 115561578124838522881
-            # this should be  avery large prime number 20th in the OEIS A118839
+            # this should be  a very large prime number 20th in the OEIS A118839
 
             p_power: int = 1
             for character in key:
@@ -152,7 +152,7 @@ def crc32_hash(self, key: T) -> int:
 
 ```
 
-- **`secondary_hash()`** The secondary hash is used for linear probing when a collision is detected. We are using a random number `b` modulo the table size to find the interval index for double hashing.
+- **`secondary_hash()`:** The secondary hash is used for linear probing when a collision is detected. We are using a random number `b` modulo the table size to find the double hashing interval index.
 
 ```python
 def secondary_hash(self, key) -> int:
@@ -161,7 +161,7 @@ def secondary_hash(self, key) -> int:
         return index if index != 0 else 1
 ```
 
-- **`resize()`** This function increases the table's size once the `load factor` reaches the threshold. The table is resized to the smallest prime number greater than 2 \* the_current_size of the table. We apply the [sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) to find the prime number. After we have resized the table, all the entries in the table are re-hashed.
+- **`resize()`:** This function increases the table's size once the `load factor` reaches the threshold. The table is resized to the smallest prime number greater than 2 \* the_current_size of the table. We apply the [Sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) to find the prime number. After we have resized the table, all the entries in the table are re-hashed.
 
 ```python
  def resize(self) -> None:
@@ -204,7 +204,7 @@ def secondary_hash(self, key) -> int:
 
 The list of functions below shows the basic operations that can be performed on Hashtables.
 
-- **`find ()`** Gets the first occupied position using double hashing.
+- **`find()`:** Gets the first occupied position using double hashing.
   Handles search of a key in the table. It returns a pair value found if the search is successful; otherwise, it raises an exception that the key does not exist in the table.
 
 ```python
@@ -228,7 +228,7 @@ The list of functions below shows the basic operations that can be performed on 
 
 ```
 
-- **`lookup()`** Handles search of a key in the table. It returs a pair value found if the search is succesful otherwise it raises an exception that the key doesnst exist in the table.
+- **`lookup()`:** Handles search of a key in the table. It returns a pair value found if the search is successful; otherwise, it raises an exception that the key doesn't exist in the table.
 
 ```python
 def lookup(self, key: T) -> T:
@@ -242,7 +242,7 @@ def lookup(self, key: T) -> T:
             return self.table[self.find(key)][1]  # return pair value
 ```
 
-- **`delete()`** Removes a key-value pair from the hash table. The key supplied for deletion is hashed then the resulting hash value used locate an element. If the element is found, it gets deleted.
+- **`delete()`:** Removes a key-value pair from the hash table. The key supplied for deletion is hashed then the resulting hash value is used to locate an element. If the element is found, it gets deleted.
 
 ```python
 
@@ -257,7 +257,7 @@ def lookup(self, key: T) -> T:
             self.filled_count -= 1
 ```
 
-- **`update()`** Handles `insert` and `update` of the key-value pairs to the hash table. If the key's index is not occupied, it inserts to that key; otherwise, it updates the key.
+- **`update()`:** Handles `insert` and `update` of the key-value pairs to the hash table. If the key's index is not occupied, it inserts to that key; otherwise, it updates the key.
 
 ```python
 def update(self, key: T, value: T) -> None:
@@ -291,7 +291,7 @@ def update(self, key: T, value: T) -> None:
 
 This finalizes our code for the implementation part. We now perform a unit test for our implementations using the below piece of code.
 
-### 4. Unittesting
+### 4. Unit testing
 
 ```python
 import unittest
@@ -348,7 +348,7 @@ if __name__ == "__main__":
 
 The above program's output will be as shown below, showing that our program passed the tests.
 
-```python
+```bash
 ----------------------------------------------------------------------
 Ran 5 tests in 0.007s
 
@@ -357,4 +357,7 @@ OK
 
 ### 5. Conclusion
 
-In this article learned how to create a hash table, hashing process using CRC32-algorithm, implementing basic hash functions, and collision detection in Hashtables using double hashing and linear probing. The implementation proves that hashing is an effective way to access data using a key-value pair easily. Give that hash tables are so fast at performing functionalities, hash tables will certainly useful for optimization projects.
+This article covered how to create and use the hash table, hashing process using CRC32-algorithm, implementing hash functions, and collision detection in hashtables. The implementation proves that hashing is an effective way to access data using a key-value pair easily. Give that hash tables are so fast at performing functionalities, hash tables will certainly useful for optimization projects.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
