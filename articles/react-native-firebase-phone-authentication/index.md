@@ -25,7 +25,7 @@ Firebase is a platform developed by Google for creating mobile and web applicati
 
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
 
-The native Firebase SDKs ensures that a users authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
+The native Firebase SDKs ensure that a user's authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
 
 ### Prerequisites
 
@@ -104,7 +104,7 @@ You will also need the Debug signing certificate `SHA-1`. You can get that by ru
 cd android && ./gradlew signingReport
 ```
 
-This will generate the signing certificate of the application. You will get a similiar output like this:
+This will generate the signing certificate of the application. You will get similar output like this:
 
 ```bash
 Task :app:signingReport
@@ -398,7 +398,7 @@ Once added, the number can be used with the `signInWithPhoneNumber` method. The 
 
 ### Result
 
-Here is the sign in flow if the Device Verification API works properly.
+Here is the sign-in flow if the Device Verification API works properly.
 
 ![With SafetyNet](/engineering-education/react-native-firebase-phone-authentication/safetynet.gif)
 
