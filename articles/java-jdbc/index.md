@@ -416,6 +416,8 @@ public class Main {
 - Start the  Apache and MySQL servers from the XAMPP control panel.
 - On the `http://localhost/phpmyadmin/` site on your browser create a database with the name `school`.
 - In the `school` database create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
+
+![Table structure](/engineering-education/java-jdbc/database_table_structure.png)
   
 Run the application by executing the `main` function in the `Main` class.
 
