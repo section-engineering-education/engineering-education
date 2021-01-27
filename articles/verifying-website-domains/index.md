@@ -14,8 +14,6 @@ images:
   - url: /engineering-education/verifying-website-domains/hero.jpg
     alt: 
 ---
-## Verifying Website Domains
-
 Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
  <!--more-->
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
