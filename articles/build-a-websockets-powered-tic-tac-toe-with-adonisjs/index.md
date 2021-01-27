@@ -212,6 +212,10 @@ This is an instance of where we can't rely on the client's innocence. We don't e
 When a player makes a move, we execute that turn's logic if the move is valid.
 
 ### Turn Logic
+When a player makes a move, the game may resolve into either
+
+1. A win state
+2. A draw state
 
 #### Win State
 
