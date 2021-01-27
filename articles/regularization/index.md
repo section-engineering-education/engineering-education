@@ -117,3 +117,6 @@ Regularization is a formidable technique to prevent overfitting. There are sever
 7. [Regularization Machine Learning](https://www.educba.com/regularization-machine-learning/)
 
 8. [Regularization](https://datascience.eu/machine-learning/regularization-in-machine-learning/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
