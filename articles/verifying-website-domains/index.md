@@ -1,7 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/verifying-website-domains/
+title: Verifying Website Domains
+description: This tutorial will explain how to programmatically retrieve DNS (Domain Name System) information.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/verifying-website-domains/hero.jpg
+    alt: 
+---
 ## Verifying Website Domains
 
 Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
-
+ <!--more-->
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
 
 At the end of this tutorial, you will understand how to retrieve DNS (Domain Name System) information using the Python Shell,  run `curl` in the Windows PowerShell to crawl websites, and how to identify the complexities of domain modifications in an ever-changing technology space.
@@ -388,3 +404,6 @@ Have any feedback or comments about the lines of code used for verifying website
 GitHub: @pkalynan
 
 Twitter: @pkalynan
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
