@@ -1,13 +1,13 @@
-## Introduction to Network Monitoring and management
+## **Introduction to Network Monitoring and management**
 In this tutorial, we're going to discuss the fundamentals and principles of network monitoring and management while discussing the protocols and architectures involved.  
 
-### Core Concepts to familiarise with:-
+### **Core Concepts to familiarise with:**
 * Definition of network  management
 * Network Management Requirements
 * Network Management Systems
 * Simple Network Management protocol  
 
-### What is Network Management?
+### **What is Network Management?**
 Management simply refers to the set of activities or principles well defined to perform a given task effectively.  
 It involves controlling, organizing, planning, monitoring, controlling resources to achieve the organization's goals.
 
@@ -17,7 +17,7 @@ These activities include network protocol analysis, distributed database managem
 In essence, network management as a service provides network managers with several applications, tools, and devices to ensure there is smooth network management and monitoring.  
 
 
-### Network Management Requirements
+### **Network Management Requirements**
 
 The network management requirements are categorized into 5 distinct groups. 
 * Fault Management
@@ -26,9 +26,9 @@ The network management requirements are categorized into 5 distinct groups.
 * Accounting Management
 * Configuration & Name management.
 
-In this tutorial we will discuss the following:-  
+In this tutorial we will discuss the following:    
 
-### ```1.Fault Management``` 
+### **1.Fault Management** 
 
 Imagine working as a network administrator at a big company, say a bank, and the network fails in all branches country-wide and there's no way to identify the problem?
 The network administrator would be pressurized from the senior management to get the network back up or else the organization will suffer financial losses. 
