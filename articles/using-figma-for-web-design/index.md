@@ -6,7 +6,7 @@ url: /engineering-education/using-figma-for-web-design/
 title: Figma for Web Design - A Beginner's Guide
 description: This article takes the reader through an exciting web design tool known as figma. It provides a guide on how to get started with it. It also takes the reader through its user interface and some its basic tools for web design.
 author: onesmus-mbaabu
-date: 2021-01-26T00:00:00-18:00
+date: 2021-01-26T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -23,14 +23,13 @@ Figma is a web-based interface design tool that consists of powerful and excitin
 
 It consists of unique design tools that provide an interesting experience to web developers. It can be used to perform various tasks such as vector illustration, user interface design, app design, and prototyping.
 
-This application allows users to work on their projects online and offline through its desktop application. Files can be changed even without being online. Figma has a sync feature that integrates the made changes in the desktop application with its web-based application. This feature works when the user goes online.
+This application allows users to work on their projects online and offline through its desktop application. Files can be changed without the user being online. Figma has a sync feature that integrates the changes made in the desktop application with its web-based application. This feature works when the user goes online.
 
 Figma works on various operating systems such as Linux, Windows, and Mac. The web-based application can work on various browsers such as Mozilla Firefox, Google Chrome, and Internet Explorer.
 
-### Why Web Designers Should Choose Figma
-
+### Why web designers should choose Figma
 #### Accessibility
-This web design tool is easily accessible by web designers. It works well in browsers, which means that it is available on multiple platforms. Figma can also be accessed through its desktop app, which provides almost every feature that exists in its web-based application. This is a free tool for the first few projects (3 projects), which gives beginners room to learn how to use the design tool.
+This web design tool is easily accessible by web designers. It works well in browsers, which means that it is available on multiple platforms. Figma can also be accessed through its desktop app, that provides almost every feature that exists in its web-based application. This is a free tool for the first few projects (3 projects), which gives beginners room to learn how to use the design tool.
 
 #### Easy project management
 Figma files are stored in a cloud. This means that users can gain access to these files from any location. If users make changes to these files, they will be saved automatically. There is also an option to reverse the changes. Project management is made easier through this tool because all design projects can be kept in one place.
@@ -41,31 +40,30 @@ The design files saved in the cloud can easily be shared with other online users
 #### Features
 Figma has all the necessary tools for developing a unique and quality web design. It consists of the following exciting design features.
 
-* **Auto layout:** This enables users to develop responsive layouts. This feature also offers flexibility because of its ability to adjust automatically based on the user's content.
-* **Robust vector networks:** These include modern pen and pencil tools that enhance drawing in all directions.
-* **Instant arc designs:** Figma has an arc tool that can be used to design watch screens, clocks, or pie charts.
-* **Plugins:** These are available for flow diagrams, charts, stock imagery, and color accessibility.
-* **Flexible styles:** Figma has flexible and consistent styles such as grids, effects, text, and color. These can be applied to any object or text.
-* **Accessible libraries:** It consists of libraries that can be accessed easily by all team members.
-* **Export feature:** This format enables users to export their designs in various formats.
+- **Auto layout:** This enables users to develop responsive layouts. This feature also offers flexibility because of its ability to adjust automatically based on the user's content.
+- **Robust vector networks:** These include modern pen and pencil tools that enhance drawing in all directions.
+- **Instant arc designs:** Figma has an arc tool that can be used to design watch screens, clocks, or pie charts.
+- **Plugins:** These are available for flow diagrams, charts, stock imagery, and color accessibility.
+- **Flexible styles:** Figma has flexible and consistent styles such as grids, effects, text, and color. These can be applied to any object or text.
+- **Accessible libraries:** It consists of libraries that can be accessed easily by all team members.
+- **Export feature:** This format enables users to export their designs in various formats.
 
 Figma also provides exciting prototyping features that enable designers to validate their designs. Some of these features include:
-* **Shareable prototype:** It enables you to create and share a link to the prototype of your design.
-* **Dynamic overlays:** Users can create dynamic content overlays.
-* **Animated GIFs:** Video elements, subtle animations, and motion designs can be represented using animated GIFs.
-* **Instant design edits:** Figma provides an all-in-one platform that connects the design file with the prototype. Your prototype can generate design edits that appear instantly.
+- **Shareable prototype:** It enables you to create and share a link of your prototype  design.
+- **Dynamic overlays:** Users can create dynamic content overlays.
+- **Animated GIFs:** Video elements, subtle animations, and motion designs can be represented using animated GIFs.
+- **Instant design edits:** Figma provides an all-in-one platform that connects the design file with the prototype. Your prototype can generate design edits that appear instantly.
 
-### Getting Started With Figma
-
+### Getting started with Figma
 #### Prerequisites
-To follow through, you need to have:
-* A computer
-* Stable internet connection
-* A browser
-* An email account
+To follow this tutorial along, you will need to have:
+- A computer.
+- Stable internet connection.
+- A browser.
+- An email account.
 
-#### Step 1 - Set up an account with Figma.
-This can be done by going to the [Figma website](www.figma.com). Click on 'sign up' to begin the setup.
+#### Step 1 - Set up an account with Figma
+This can be done by going to the [Figma website](www.figma.com). Click on 'Sign up' to begin the setup.
 
 ![Sign Up](/engineering-education/figma-for-web-design-a-beginner’s-guide/sign-up.jpg)
 
@@ -73,7 +71,7 @@ Fill in your email address and desired password. Click on ‘create account’.
 
 ![Email and Password](/engineering-education/figma-for-web-design-a-beginner’s-guide/email-and-password.jpg)
 
-This will lead you to another window that will require you to fill in your name, choose your field of work and click on ‘create account’.
+This will lead you to another window that will require you to fill in your name, choose your field of work, and click on ‘create account’.
 
 ![Create Account](/engineering-education/figma-for-web-design-a-beginner’s-guide/create-account.jpg)
 
@@ -89,7 +87,7 @@ Choose the download that corresponds to your operating system.
 
 Download and install the desktop app. When you open the application, you will be required to sign in with the credentials you used in creating your account.
 
-#### Step 2 - Choose a name for the design team.
+#### Step 2 - Choose a name for the design team
 When you finish verifying your email address, the following window will appear. When you fill in the design team name, click on 'next'.
 
 ![Design Team Name](/engineering-education/figma-for-web-design-a-beginner’s-guide/design-team-name.jpg)
@@ -100,11 +98,11 @@ Figma allows you to invite members for collaboration. You can click on ‘skip t
 ![Invite Collaborators](/engineering-education/figma-for-web-design-a-beginner’s-guide/invite-collaborators.png)
 
 #### Step 4 - Choose a plan
-In this step, users are required to choose a plan that suits their needs. If you are a new Figma user, you can click on ‘choose starter’ to learn about the application. This plan is free for the first 3 projects, which allows you to familiarize yourself with this design tool.
+In this step, users are required to choose a plan that suits their needs. If you are a new Figma user, you can click on ‘choose starter’ to learn about the application. This plan is free for the first 3 projects, that allows you to familiarize yourself with this design tool.
 
 ![Choose Plan](/engineering-education/figma-for-web-design-a-beginner’s-guide/choose-plan.jpg)
 
-### An overview of Figma User Interface
+### An overview of Figma user interface
 The following image shows the user interface of Figma.
 
 ![Figma User Interface](/engineering-education/figma-for-web-design-a-beginner’s-guide/figma-user-interface.png)
@@ -117,45 +115,44 @@ If you are a new user, you will probably want to know the various icons on the F
 
 Let’s look at some of the tools on Figma's user interface.
 
-**Constraints:** These allow users to set accurate constraints and enable them to adjust layers to their needs.
+- **Constraints:** These allow users to set accurate constraints and enable them to adjust layers to their needs.
 
 ![Constraints](/engineering-education/figma-for-web-design-a-beginner’s-guide/constraints.jpg)
 
-**Vector networks:** These provide pen and pencil tools that are simple and powerful for web design.
+- **Vector networks:** These provide pen and pencil tools that are simple and powerful for web design.
 
 ![Vector Networks](/engineering-education/figma-for-web-design-a-beginner’s-guide/vector-networks.jpg)
 
-**Comments:** These enable users to write notes on their design files and get requests or feedback.
+- **Comments:** These enable users to write notes on their design files and get requests or feedback.
 
 ![Comments](/engineering-education/figma-for-web-design-a-beginner’s-guide/comments.jpg)
 
-**Share icon:** This enables users to share their design files with teammates and stakeholders. Users can use this section to manage permissions relating to the sharing of design files. It can also be used to enhance real-time collaboration.
+- **Share icon:** This enables users to share their design files with teammates and stakeholders. Users can use this section to manage permissions relating to the sharing of design files. It can also be used to enhance real-time collaboration.
 
 ![Share Icon](/engineering-education/figma-for-web-design-a-beginner’s-guide/share-icon.jpg)
 
-**Team library:** This is a library that allows users to publish styles and components for other teammates to access.
+- **Team library:** This is a library that allows users to publish styles and components for other teammates to access.
 
 ![Team Library](/engineering-education/figma-for-web-design-a-beginner’s-guide/team-library.jpg)
 
-**Menu:** The menu consists of a file browser that can be used to search for any desired command. Users can also use the menu to perform various tasks such as viewing files, managing plugins, and arranging files.  
+- **Menu:** The menu consists of a file browser that can be used to search for any desired command. Users can also use the menu to perform various tasks such as viewing files, managing plugins, and arranging files.  
 
 ![Menu](/engineering-education/figma-for-web-design-a-beginner’s-guide/menu.jpg)
 
-**Canvas:** Canvas provides an area for designing your work.
+- **Canvas:** Canvas provides an area to design your work.
 
 ![Canvas](/engineering-education/figma-for-web-design-a-beginner’s-guide/canvas.jpg)
 
-**Layers:** The layers section lists and organizes file elements in terms of groups and frames.
+- **Layers:** The layers section lists and organizes file elements in terms of groups and frames.
 
 ![Layers](/engineering-education/figma-for-web-design-a-beginner’s-guide/layers.jpg)
 
-**The properties panel:** This panel consists of design, prototyping, and inspection tabs. The design tab provides various options for design. The prototype tab connects the design file with the prototype. The 'inspect' tab presents the settings and contextual information of a selected object.
+- **The properties panel:** This panel consists of design, prototyping, and inspection tabs. The design tab provides various options for design. The prototype tab connects the design file with the prototype. The 'inspect' tab presents the settings and contextual information of a selected object.
 
 ![Properties Panel](/engineering-education/figma-for-web-design-a-beginner’s-guide/properties-panel.jpg)
 
-### Using basic Figma tools.
-
-#### How to Create a Frame
+### Using basic Figma tools
+#### How to create a frame
 Click on the frame tool and select 'frame'. Alternatively, you can press on the letter 'F' on your keyboard.
 
 ![Frame](/engineering-education/figma-for-web-design-a-beginner’s-guide/frame.jpg)
@@ -178,7 +175,7 @@ You can change the name of the frame by double-clicking on the box at the top le
 
 The panel that appears on the right side of the interface can be used to change the orientation (landscape or portrait), size, and fit of the frame.
 
-#### Working with Shapes
+#### Working with shapes
 If you want to create a shape, you should go to the shapes icon on the toolbar and select the desired shape.
 
 ![Creating Shapes](/engineering-education/figma-for-web-design-a-beginner’s-guide/creating-shapes.jpg)
@@ -201,7 +198,7 @@ If we select blue, the above polygon shape will appear as follows.
 
 ![Blue Polygon](/engineering-education/figma-for-web-design-a-beginner’s-guide/blue-polygon.png)
 
-#### Writing Text
+#### Writing text
 You can create a text on the canvas by first clicking on the 'T' tool at the toolbar.
 
 ![Text Tool](/engineering-education/figma-for-web-design-a-beginner’s-guide/text-tool.jpg)
@@ -213,13 +210,14 @@ Click on the exact location (within the canvas) where you want your text to appe
 The panel on the right side of the interface provides all the tools for modifying the text. This includes the font size, alignment, and fill.
 
 ### Conclusion
-Figma is a design tool that enables web designers to create unique and exciting user interfaces for phones, tablets, and social media. This tool provides a platform for collaboration and prototyping, which makes the design journey interesting. Over the years, Figma has been developing new features that have improved the quality of web design. The addition of advanced design features will revolutionize web design in the tech industry.
+Figma is a design tool that enables web designers to create unique and exciting user interfaces for phones, tablets, and social media. This tool provides a platform for collaboration and prototyping, which makes the design journey interesting. 
+
+Over the years, Figma has been developing new features that have improved the quality of web design. The addition of advanced design features will revolutionize web design in the tech industry.
 
 ### Resources
+- [Begin Coding Now](https://begincodingnow.com/figma-introduction/)
 
-[Begin Coding Now](https://begincodingnow.com/figma-introduction/)
-
-[Prototypr.io](https://blog.prototypr.io/understanding-figma-as-a-ui-beginner-50d169c87c49)
+- [Prototypr.io](https://blog.prototypr.io/understanding-figma-as-a-ui-beginner-50d169c87c49)
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
