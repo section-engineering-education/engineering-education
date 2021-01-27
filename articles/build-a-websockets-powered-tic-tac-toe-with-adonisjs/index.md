@@ -1,43 +1,53 @@
-## Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/
+title: Building a Websocket Powered Tic-Tac-Toe Game with Adonis.js
+description: In this article, we will learn about the WebSocket protocol. We will go over the details of building a Tic-Tac-Toe game using the WebSockets in Adonis.js.
+author: osinachi-chukwujama
+date: 2021-01-27T00:00:00-09:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2's move in less than a second. We will use the WebSocket API to achieve this communication speed.
+  - url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
+    alt: Adonis.js Websocket image
+---
+Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2's move in less than a second. In this tutorial we will be using the WebSocket API to achieve this communication speed.
+<!--more-->
+### Introduction
+For this article we will use Adonis.js, which is a Node.js MVC framework, on the backend. Adonis.js implements web sockets both on the client and server side. You can check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
 
-We will use AdonisJS, which is a NodeJS MVC framework, on the backend. AdonisJS implements web sockets both on the client and server. Check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
-
-## Technologies Involved
-
-1. NodeJS
-2. AdonisJS
+### Technologies involved
+1. Node.js
+2. Adonis.js
 3. Redis
 
-## Prerequisites
-
-### NodeJS
-
+### Prerequisites
+#### Node.js
 ![nodejs-logo.png](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/nodejs-logo.png)
 
-First, check that your NodeJS version is >= 10.
+First, check that your Node.js version is >= 10.
 
 ```bash
 $ node -v
 # v10.19.0
 ```
 
-Install the latest LTS version of NodeJS from the [official website](http://nodejs.org/) if yours is less than v10.
+Install the latest LTS version of Node.js from the [official website](http://nodejs.org/) if yours is less than v10.
 
-### Redis
-
+#### Redis
 ![Redis Logo](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/redis.png)
 
-We will use Redis to handle game state. Horizontal scaling is a common requirement in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store state in our apps since instances will not be able to share state.
+We will use Redis to handle the game state. Horizontal scaling is a common requirement in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store the state in our apps since the instances will not be able to share the state.
 
 Redis will allow us to maintain the game state for millions of gamers. Redis offers faster read-write operations than a traditional DB, so it is ideal for the game.
 
-Follow the [instructions here](https://redis.io/topics/quickstart#installing-redis) to install Redis on your machine
+Follow the [instructions here](https://redis.io/topics/quickstart#installing-redis) to install Redis on your machine.
 
-## What is a WebSocket?
-
-According to Wikipedia
+### What is a WebSocket?
+According to Wikipedia:
 
 > A WebSocket is a computer communication protocol, providing a full-duplex communication channel over a single TCP connection.
 
@@ -45,54 +55,53 @@ A WebSocket is a communication channel that allows for bi-directional communicat
 
 ![Client to server](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/client-to-server.png)
 
-So a server can broadcast to several connected clients at the same time.
+A server can broadcast to several connected clients at the same time.
 
 ![Server to two clients](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/server-to-multiple-clients.png)
 
-Clients emit information to the server without waiting for a response. So communication occurs through listeners set up by the client.
+Clients emit information to the server without waiting for a response. That way communication occurs through listeners that are set up by the client.
 
-## Project Architecture
+### Project architecture
+The project follows this architecture:
 
-The project follows this architecture
-
-- A user sets a username
+- A user sets a username.
 
 ![set-username.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/set-username.gif)
 
-- The user generates a game code
+- The user generates a game code.
 
 ![generate-game-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/generate-game-code.gif)
 
-- The user shares the game code with a friend
-- The friend sets a username and uses the game code to initialize the game
+- The user shares the game code with a friend.
+
+- The friend sets a username and uses the game code to initialize the game.
 
 ![joining-game-with-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/joining-game-with-code.gif)
 
-- Both users are redirected to the game where they play in rounds
+- Both users are redirected to the game where they play in rounds.
 
-## Getting Started
+### Getting started
+We won't go into the details of the markup and frontend Javascript. We will instead look into the implementation of Websockets in Adonis.js.
 
-We won't go into the details of the markup and frontend Javascript. We will instead look into the implementation of Websockets in AdonisJS.
-
-Step 1: Clone the repo
+Step 1: Clone the repo.
 
 ```bash
 $ git clone https://github.com/vicradon/tic-tac-toe-tut
 ```
 
-Step 2: Install dependencies
+Step 2: Install the dependencies.
 
 ```bash
 $ npm i
 ```
 
-Step 3: Start the Redis server
+Step 3: Start the Redis server.
 
 ```bash
 $ redis-server
 ```
 
-Step 3: In another terminal, start the dev server
+Step 3: In another terminal, start the dev server.
 
 ```bash
 $ npm run dev
@@ -101,11 +110,10 @@ $ npm run dev
 $ npm run dev
 ```
 
-Now that everything is set up, we will look into the logic in core parts of the game and learn more about WebSockets.
+Now that everything is set up, we will look at the logic in core parts of the game and learn more about WebSockets.
 
-## WebSockets in AdonisJS
-
-AdonisJS uses channels to organize WebSocket business logic. For this game, we created one channel, tic-tac-toe, in `start/socket.js`. Clients subscribe to different channels to listen to events on those channels.
+### WebSockets in Adonis.js
+Adonis.js uses channels to organize WebSocket business logic. For this game, we created one channel, tic-tac-toe, in `start/socket.js`. Clients can subscribe to different channels to listen to events on those channels.
 
 ```js
 const Ws = use("Ws");
@@ -120,7 +128,7 @@ Clients can also communicate with other clients on a channel by emitting to an e
 ws.getSubscription("tic-tac-toe").emit("checkForExistingGame");
 ```
 
-If we wanted to add chat to our game, we will create another channel, say `chat`. We will also create a different controller for the chat channel.
+If we wanted to add chat to our game, we will create another channel, named `chat`. We will also create a different controller for the chat channel.
 
 ```js
 Ws.channel("chat", "ChatController");
@@ -138,15 +146,14 @@ class TicTacToeController {
 }
 ```
 
-Every connected client links to an instance of this class. So a client can communicate with other clients in the server environment. The connected client's socket is `this.socket`. We can also access the request object here using `this.request`. This means we can access cookies in the WebSocket Controller. This will prove useful as we go further.
+Every connected client links to an instance of this class. That way a client can communicate with other clients in the server environment. The connected client's socket is `this.socket`. We can also access the request object here using `this.request`. This means we can access cookies in the WebSocket Controller. This will prove useful as we go further.
 
 ```js
 // get all cookies
 this.request.cookies();
 ```
 
-## Handling User Registration
-
+### Handling user registration
 To identify a user, we set their username in an [encrypted, httpOnly cookie](https://adonisjs.com/docs/4.1/response#_cookies) during registration.
 
 ```js
@@ -175,8 +182,7 @@ const username = request.cookie("username");
 return view.render("home", { game_code, username });
 ```
 
-## How to Handle Connected Clients
-
+### How to handle connected clients
 When the home or game page loads, the browser tries to establish a connection with the server. An API call triggers the `setSocketId` method in `UserController.js`. This is where the gamer's socket-id is linked to their created Redis map.
 
 ```js
@@ -186,14 +192,13 @@ await Redis.hset(username, "socket_id", socket_id);
 
 This happens every time the browser reloads, so the connection is always established.
 
-## Server Emissions
+### Server emissions
+Events sent by your client to the server can [trigger emissions](https://adonisjs.com/docs/4.1/websocket-server#_methods) to:
 
-Events sent by your client to the server can [trigger emissions](https://adonisjs.com/docs/4.1/websocket-server#_methods) to
-
-1. Yourself using `this.socket.emit`
-2. Several connected clients using `this.socket.emitTo`
-3. All other connected clients except yourself using `this.socket.broadcast`
-4. All connected clients including yourself using `this.socket.broadcastToAll`
+1. Yourself using `this.socket.emit`.
+2. Several connected clients using `t=his.socket.emitTo`.
+3. All other connected clients except yourself using `this.socket.broadcast`.
+4. All connected clients including yourself using `this.socket.broadcastToAll`.
 
 This game utilizes 1 and 2. For example, when player1 makes a mark ("X") on the board, they send the board's index. The server then **emitsTo** player2 with player1's mark ("X") and the board index.
 
@@ -205,20 +210,17 @@ this.socket.emitTo(
 );
 ```
 
-This is an instance of where we can't rely on the client's innocence. We don't expect player1 not to change their mark from "X" to say "M". The client can do a lot to break our game so we must limit their power.
+This is an instance of where we can't rely on the client's input. We don't expect player1 not to change their mark from "X" to say "M". The client can do a lot to break our game so we must limit their power.
 
-## How We Handle Player Moves
-
+### How we handle player moves
 When a player makes a move, we execute that turn's logic if the move is valid.
 
-### Turn Logic
-When a player makes a move, the game may resolve into either
-
+#### Turn logic
+When a player makes a move, the game may resolve into either:
 1. A win state
 2. A draw state
 
-#### Win State
-
+#### Win state
 The turn logic involves setting a player's mark on an array. The array's elements' indexes correspond to the game board.
 
 ```js
@@ -229,7 +231,7 @@ const { mark: current_player_mark } = JSON.parse(
 board[Number(cell)] = current_player_mark;
 ```
 
-Then checking if the board has a valid win state
+Then checking if the board has a valid win state.
 
 ```js
 // inside the `executeTurnLogic` method
@@ -251,9 +253,9 @@ const winningSequences = [
 ];
 ```
 
-We represent the board cells which map to the sequence as `boardSequence`. The first winning sequence will look like
+We represent the board cells which map to the sequence as `boardSequence`. The first winning sequence will look like:
 
-```
+```bash
 [0, 1, 2]
 ["O", "X", "X"]
 ```
@@ -279,11 +281,11 @@ for (let sequence of winningSequences) {
 }
 ```
 
-Here's a visualization of an iteration on move 7
+Here's a visualization of an iteration on move 7.
+
 ![Winning Sequence Visualization](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/winning-sequence-iteration.png)
 
-#### Draw State
-
+#### Draw state
 At the start of the game, the board is an 8 sized array of empty strings.
 
 ```js
@@ -301,12 +303,10 @@ X | X | O
 O | X | O
 ```
 
-## Client Emissions and Listeners
-
+### Client emissions and listeners
 Since WebSockets support bidirectional communication, we can have simultaneous client-server communication. A client cannot **emit** events to other clients, it can only emit to the server which then emits to other clients.
 
-### Board Moves on the Client
-
+### Board moves on the client
 When we emit a `boardMove` event to the server. The server has to figure out how to process this event and send a "response" to both players.
 
 ```js
@@ -330,25 +330,17 @@ game.on("otherPlayerMove", (response) => {
 
 We set up all the listeners in the `subscribeToChannel` function in `game.js`. These listeners are like JavaScript event listeners. They keep handling the events they are listening to after their registration.
 
-## Security Considerations
-
-![security-implications](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/security-implications.jpg)
-
-Photo by [John Salvino](https://unsplash.com/@jsalvino) on [Unsplash](https://unsplash.com/s/photos/padlock)
-
+### Security considerations
 Most of the game logic lives on the server. Every datastore on a web-browser is mutable by Javascript. Javascript can't read or change encrypted cookies. This gives them the highest security.
 
-## Best practices when dealing with WebSockets
+### Best practices when dealing with WebSockets
+- Only use Websockets if HTTP, polling, and [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) aren't suitable for the problem. For example, a real-time dashboard with little or no events sent from the client should use SSE.
+- Maintain state in a cache such as Redis or [Memcached](https://memcached.org/). You won't want to be making DB calls for time-sensitive operations.
 
-1. Only use Websockets if HTTP, polling and [Server-Sent Events (SSE)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) aren't suitable for the problem. For example, a real-time dashboard with little or no events sent from the client should use SSE.
-2. Maintain state in a cache such as Redis or [Memcached](https://memcached.org/). You won't want to be making DB calls for time-sensitive operations.
-
-## Conclusion
-
+### Conclusion
 In this article, we learned about the WebSocket protocol. We saw the details of building Tic-Tac-Toe using the WebSockets in AdonisJS. Finally, we learned the best practices to follow when building websocket applications.
 
-## References and Resources
-
+### References and resources
 1. [Wikipedia Article on WebSockets](https://en.wikipedia.org/wiki/WebSocket)
 2. [Mozilla Docs on the WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 3. [Internet Engineering Task Force (IETF) Websocket Protocol](https://tools.ietf.org/html/rfc6455)
