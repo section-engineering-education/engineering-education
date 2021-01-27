@@ -3,7 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/video-editing-python-moviepy/
-title: Videos are great for getting ideas across. But editing those videos can take a long time. In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip.
+title: Editing Video with Python + MoviePy
+description: Videos are great for getting ideas across. But editing those videos can take a long time. In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip.
 author: nicholas-kross
 date: 2021-01-27T00:00:00-20:00
 topics: []
