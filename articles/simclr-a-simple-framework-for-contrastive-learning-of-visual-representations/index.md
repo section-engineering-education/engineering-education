@@ -1,6 +1,6 @@
 ### Prerequisites
 
-Before reading this article, the reader must understand Machine Learning (ML) and Deep Learning (DL). If you are still new to ML and DL, please read my previously published article on the [differences between Artificial Intelligence, Machine Learning, and Deep Learning](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) to learn more.
+Before reading this article, the reader must understand Machine Learning (ML) and Deep Learning (DL). If you are still new to ML and DL, please read my previously published article on the [differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) to learn more.
 
 ### What is Contrastive Learning?
 
@@ -21,8 +21,8 @@ Let's learn about the SimCLR framework's details and the results presented in th
 The major components of the SimCLR framework include:
 
 1. Data Augmentation
-2. A Base Encoder f(x)
-3. A Projection Head g(h)
+2. A Base Encoder $f(x)$
+3. A Projection Head $g(h)$
 4. The Contrastive Loss Function
 
 #### Data Augmentation
@@ -41,27 +41,27 @@ For example, consider this image of the dog below with its global and local cont
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
-The network, having learned about the contrast between the global and local views, is now able to contrast between the adjacent views of the same image shown below.
+Having learned about the contrast between the global and local views, the network is now able to contrast between the adjacent views of the same image shown below.
 
 ![The image of the dog with adjacent views](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/adjacent-views.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
-The paper also mentions a systematic study performed, which combined the different compositions of data augmentations. For example, combining cropping with other data augmentation techniques such as blur, color distortion, and noise. This is shown below. 
+The paper also mentions a systematic study performed, which combined the different compositions of data augmentations—for example, combining cropping with other data augmentation techniques such as blur, color distortion, and noise. This is shown below. 
 
 ![Different compositions of data augmentations](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/different-compositions-of-data-augmentations.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
-The results showed that combining cropping with color distortion and the gaussian blur stood out in terms of the result obtained's accuracy. Thus, they chose to use random crop (with flip and resize), color distortion, and Gaussian blur in their augmentation policy and dropped the other augmentation techniques.
+The results showed that combining cropping with color distortion and the gaussian blur stood out in terms of the result obtained's accuracy. Thus, they chose to use random crop (with flip and resize), color distortion, and gaussian blur in their augmentation policy and dropped the other augmentation techniques.
 
-#### A Base Encoder f(x)
+#### A Base Encoder $f(x)$
 
-The base encoder f(x) uses a Convolutional Neural Network (CNN) variant based on the ResNet architecture. It extracts image representation vectors from the augmented data images produced by the data augmentation module. This extraction produces the embeddings, h.
+The base encoder $f(x)$ uses a Convolutional Neural Network (CNN) variant based on the ResNet architecture. It extracts image representation vectors from the augmented data images produced by the data augmentation module. This extraction produces the embeddings, $h$.
 
-#### A Projection Head g(h)
+#### A Projection Head $g(h)$
 
-The projection head g(h) consists of two fully-connected layers, i.e., a multi-layer perceptron (MLP), which takes in the embeddings, h, as its inputs from the base encoder and produces an embedding z. 
+The projection head $g(h)$ consists of two fully-connected layers, i.e., a multi-layer perceptron (MLP), which takes in the embeddings, $h$, as its inputs from the base encoder and produces an embedding $z$. 
 This module's role is to map the image representations to a latent space where contrastive loss is applied.
 
 #### The Contrastive Loss Function (Normalized temperature-scaled cross entropy (NT-Xent loss))
@@ -72,9 +72,9 @@ The contrastive loss function is a modified version of the cross-entropy loss fu
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
-The contrastive loss function states that the similarity of zi, and zj corresponding to, for example, an image of a cat and its augmentation should be closer together. In other words, they should attract. 
+The contrastive loss function states that the similarity of $z_i$, and $z_j$ corresponding to, for example, an image of a cat and its augmentation should be closer together. In other words, they should attract. 
 
-In contrast, the similarity of any k, which is not i, to be pushed further apart (repel). An example of this would be the representation of a dog, and a cat should repel.
+In contrast, the similarity of any $k$, which is not $i$, to be pushed further apart (repel). An example of this would be the representation of a dog, and a cat should repel.
 
 That's a simplistic view of what the contrastive loss function does in a nutshell.
 
@@ -86,7 +86,7 @@ That's a simplistic view of what the contrastive loss function does in a nutshel
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2002.05709.pdf)*
 
-2. The experiment batch sizes range from 256 to 8,192. The experiment found that the accuracy kept increasing as the batch sizes and the number of epochs were being increased, as shown below. 
+2. The experiment batch sizes range from 256 to 8,192. The experiment found that the accuracy kept increasing as the batch sizes and the number of epochs increased, as shown below. 
 
 ![Linear evaluation models (ResNet-50) trained with different batch size and epochs](/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/training-with-different-batch-sizes-and-epochs.PNG)
 
@@ -121,3 +121,36 @@ That's a simplistic view of what the contrastive loss function does in a nutshel
 2. [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/pdf/2002.05709.pdf)
 3. [Contrastive Representation Learning: A Framework and Review](https://arxiv.org/ftp/arxiv/papers/2010/2010.05113.pdf)
 4. [Supervised Contrastive Learning](https://arxiv.org/abs/2004.11362)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
