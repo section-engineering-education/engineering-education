@@ -76,7 +76,7 @@ I've set up 3 screens in the `screens/` directory:
 
 ![screens](/engineering-education/react-native-firebase-phone-authentication/screens.jpg)
 
-In the _App.js_, the PhoneNumber screen is exported. As we write the code for the authentication, we will conditionally display various screens at various stages.
+In the _App.js_, the PhoneNumber screen is exported. As we write the code for authentication, we will conditionally display various screens at various stages.
 
 ### Setting up the Firebase project
 
@@ -98,7 +98,7 @@ You will need the package name of the application to register application. You c
 
 ![Package Name](/engineering-education/react-native-firebase-phone-authentication/package_name.png)
 
-You will also need the Debug signing certificate `SHA-1`. You can get that by running the following command in the application directory.
+You will also need the Debug signing certificate `SHA-1`. You can get that by running the following command in the project directory.
 
 ```bash
 cd android && ./gradlew signingReport
@@ -107,6 +107,8 @@ cd android && ./gradlew signingReport
 This will generate the signing certificate of the application. You will get a similiar output like this:
 
 ```bash
+Task :app:signingReport
+
 Variant: debugUnitTest
 Config: debug
 Store: C:\Users\Mohan\.android\debug.keystore
@@ -116,6 +118,8 @@ SHA1: 9E:61:75:0E:5C:F4:EB:B4:EB:9D:B3:13:5F:50:D6:AB:2E:4E:12:0D
 SHA-256: 6C:BB:49:66:18:B9:7F:74:49:B5:56:D0:24:43:6A:1B:41:91:97:A3:2E:7C:4A:6E:59:40:8F:5C:74:6F:CC:93
 Valid until: Friday, December 23, 2050
 ```
+
+> Make sure you are copying the `SHA1` from `Task :app:signingReport` and not from any other Task.
 
 Copy the `SHA1` value and paste it into the Firebase console.
 
@@ -176,14 +180,12 @@ There are two ways to accomplish this:
 
 2. **reCAPTCHA**: If SafetyNet cannot be used, Firebase does a _reCAPTCHA_ verification. The _reCAPTCHA_ challenge can often be completed without the user having to solve anything.
 
-   > Please note that this flow requires that an SHA-1 is associated with your application.
-
 Now, let's head to the application and install the auth module.
 
 Let's install the `@react-native-firebase/auth` package in our app.
 
 ```bash
-npm install @react-native-firebase/app
+npm install @react-native-firebase/auth
 ```
 
 Let's declare the dependency for the authentication module in the `android/app/build.gradle` file using the [Firebase Android BoM](https://firebase.google.com/docs/android/learn-more?authuser=0#bom)
@@ -212,7 +214,7 @@ With this, the firebase authentication module is set up in our application.
 
 ### Phone Number
 
-In _App.js_, Let's import the Authentication module from Firebase.
+In _App.js_, Let's import the `auth` module from Firebase.
 
 ```JSX
 import auth from '@react-native-firebase/auth';
@@ -220,7 +222,7 @@ import auth from '@react-native-firebase/auth';
 
 We should use the `signInWithPhoneNumber` method in the auth module. It accepts a phone number in the form of a string as its argument. It is an `async` function, thus it returns a Promise.
 
-The phone number should also contain the country code in it.
+> The phone number should contain the country code in it.
 
 ```JSX
 auth().signInWithPhoneNumber('+91 1234567890');
@@ -240,7 +242,9 @@ import React, { useState } from 'react';
 const [confirm, setConfirm] = useState(null);
 ```
 
-Now, let's write a function that accepts a phone number as an argument and calls the` signInWithPhoneNumber` function with the given phone number. We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
+Now, let's write a function that accepts a phone number as an argument and calls the` signInWithPhoneNumber` function with the given phone number. 
+
+We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
 
 ```JSX
 async function signIn(phoneNumber) {
@@ -274,14 +278,16 @@ Now, when the user presses the button, the `signInWithPhoneNumber` method from t
 When the `confirmation` method is available, we should display the *VerifyCode* screen instead of the *PhoneNumber* screen.
 
 ```JSX
-if (confirm) return <OTPScreen />;
+if (confirm) return <VerifyCode />;
 
 return <PhoneNumber onSubmit={signIn} />;
 ```
 
-Now, let's write a function to confirm the verification code.
+Now that we have displayed the screen, let's write a function to confirm the verification code.
 
-The `confirm` method is an async method. If the verification code is correct, the promise will be resolved. If not, it'll be rejected. We should also make sure to clear the `confirm` method from the state once it serves its purpose.
+The `confirm` method is an async method. If the verification code is correct, the promise will be resolved. If not, it'll be rejected. 
+
+We should also make sure to clear the `confirm` method from the state once it serves its purpose.
 
 ```JSX
 async function confirmVerificationCode(code) {
@@ -297,7 +303,7 @@ async function confirmVerificationCode(code) {
 Let's pass this function to the *VerifyCode* screen as a prop, and call this function when the user presses the confirm button.
 
 ```JSX
-if (confirm) return <OTPScreen onSubmit={confirmVerificationCode} />;
+if (confirm) return <VerifyCode onSubmit={confirmVerificationCode} />;
 
 return <PhoneNumber onSubmit={signIn} />;
 ```
@@ -305,16 +311,16 @@ return <PhoneNumber onSubmit={signIn} />;
 In *VerifyCode.js*, I've already set up a state that holds the verification code from the input. Let's call the function that we passed and pass the verification code as the argument.
 
 ```JSX
-<Button title="Confirm OTP" onPress={() => props.onSubmit(otp)} />
+<Button title="Confirm OTP" onPress={() => props.onSubmit(code)} />
 ```
 
 Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the app if the verification code is correct. If not, we will display an error message to the user.
 
 ### Authenticated Screen
 
-We can add a listener to the authentication state of the user. The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
+The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
-You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in. 
+You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
 Let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
 
@@ -323,6 +329,8 @@ const [authenticated, setAutheticated] = useState(false);
 ```
 
 Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
+
+To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
 ```JSX
 auth().onAuthStateChanged((user) => {
@@ -341,6 +349,8 @@ if (confirm) return <OTPScreen onSubmit={confirmOTP} />;
 
 return <PhoneNumber onSubmit={signIn} />;
 ```
+
+> You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application.
 
 ### Signout
 
