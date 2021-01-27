@@ -2,11 +2,23 @@
 
 Before reading this article, the reader must understand Machine Learning (ML) and Deep Learning (DL). If you are still new to ML and DL, please read my previously published article on the [differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) to learn more.
 
+### What is Self-Supervised Learning? 
+
+[Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning) and [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) techniques are very limited in their real-world applications. For example, the supervised learning technique can be very labor-intensive, computationally expensive, and time-consuming as it requires a lot of labeling to be performed on data. On the other hand, unsupervised learning (which involves using data without labels) hasn't provided very meaningful information, especially when solving real-life cases.
+
+So, how do we overcome these challenges?
+
+We can overcome these challenges by using self-supervised learning. It is a subset of unsupervised learning that aims at mimicking how humans and animals learn. It automatically generates a supervisory signal that helps to solve tasks. For example, it can automatically help label a dataset or learn representations in data without any human help. Unlike unsupervised learning, it is important to note that it doesn't organize data into clusters and groupings. 
+
+It has been used extensively in reinforcement learning, natural language processing, robotics, and neural networks.
+
+Self-supervised learning helps create data-efficient AI systems.
+
 ### What is Contrastive Learning?
 
 Contrastive learning is a very active area in machine learning research. It is a self-supervised method used in machine learning to put together the task of finding similar and dissimilar things. By applying this method, one can train a machine learning model to contrast similar and dissimilar images. For example, given an image of a horse, one can find the matching animal in a gallery of other photos.
 
-SimCLR is a framework developed by Google which demonstrated the implications of contrastive learning. It is a high-impact work that eliminates specialized architectures and memory banks, usually used in contrastive learning. It shows that strong augmentations of unlabeled training data, a standard ResNet-50 architecture, and a small neural network is all you need to achieve state-of-the-art results. For such a simple approach, the results are truly mindblowing.
+SimCLR is a framework developed by Google which demonstrated the implications of contrastive learning. It is a high-impact work that eliminates specialized architectures and memory banks, usually used in contrastive learning. It shows that strong augmentations of unlabeled training data, a standard [ResNet-50](https://www.mathworks.com/help/deeplearning/ref/resnet50.html) architecture, and a small neural network is all you need to achieve state-of-the-art results. For such a simple approach, the results are truly mindblowing.
 
 Throughout this article, this [paper](https://arxiv.org/pdf/2002.05709.pdf) published by Google will be our referencing material for the article. Unlike other papers, this paper entails many tips like the network having a large batch size, more training epochs, and increasing the network's width to make the most out of contrastive learning.
 
@@ -20,7 +32,7 @@ Let's learn about the SimCLR framework's details and the results presented in th
 
 The major components of the SimCLR framework include:
 
-1. Data Augmentation
+1. [Data Augmentation](https://en.wikipedia.org/wiki/Data_augmentation) 
 2. A Base Encoder $f(x)$
 3. A Projection Head $g(h)$
 4. The Contrastive Loss Function
@@ -57,11 +69,11 @@ The results showed that combining cropping with color distortion and the gaussia
 
 #### A Base Encoder $f(x)$
 
-The base encoder $f(x)$ uses a Convolutional Neural Network (CNN) variant based on the ResNet architecture. It extracts image representation vectors from the augmented data images produced by the data augmentation module. This extraction produces the embeddings, $h$.
+The base encoder $f(x)$ uses a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) variant based on the ResNet architecture. It extracts image representation vectors from the augmented data images produced by the data augmentation module. This extraction produces the embeddings, $h$.
 
 #### A Projection Head $g(h)$
 
-The projection head $g(h)$ consists of two fully-connected layers, i.e., a multi-layer perceptron (MLP), which takes in the embeddings, $h$, as its inputs from the base encoder and produces an embedding $z$. 
+The projection head $g(h)$ consists of two fully-connected layers, i.e., a [multi-layer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) (MLP), which takes in the embeddings, $h$, as its inputs from the base encoder and produces an embedding $z$. 
 This module's role is to map the image representations to a latent space where contrastive loss is applied.
 
 #### The Contrastive Loss Function (Normalized temperature-scaled cross entropy (NT-Xent loss))
