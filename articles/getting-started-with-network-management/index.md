@@ -31,7 +31,7 @@ In this tutorial we will discuss the following:
 ### **1.Fault Management** 
 
 Imagine working as a network administrator at a big company, say a bank, and the network fails in all branches country-wide and there's no way to identify the problem?
-The network administrator would be pressurized from the senior management to get the network back up or else the organization will suffer financial losses. 
+The network administrator would be pressurized from the top management to get the network back up or else the organization will suffer financial losses. 
 To avoid such issues from arising, complex networks require proper design, with each component's role well defined.
 
 But what's a fault in networking? is it the same as a network error? you guessed they are not the same? you're right.  
@@ -54,7 +54,7 @@ An organization is therefore recommended to put in place measures to restore net
 This provides a very efficient fault resolution, hence restoring or solving problems as soon as they occur.  
 
 
-### ***2.Security Management***
+### **2.Security Management**
 
 Your organization where you work is in one way or the other a target by hackers.  
 Security management is therefore concerned with how the ***encryption keys*** are being generated, distributed, and stored.  
@@ -71,7 +71,7 @@ An organization should ensure these security facilities are made available to au
 In some situations such as online shopping, users are always concerned about their credit card details.  
 This is an important requirement in network management and should be treated seriously.  
 
-### ***3.Performance management***
+### **3.Performance management**
 
 Communication networks have evolved, many technologies are developed each day.  
 This means that most communication network components are varied, but at the same time, they are required to communicate with each other, share data and resources.
@@ -98,7 +98,7 @@ Users always want to know the average and the worst-case scenario response time 
 
 Therefore, performance must be known in detail for system administrator/ support staff to be in a position to respond to some users' queries.  
 
-###  Network Management Systems
+###  **Network Management Systems**
 
 ### ***Network Management Architecture***
 A network management system comprises of network monitoring and control tools integrated to meet a certain objective. It has both the hardware and the software.
@@ -134,7 +134,7 @@ There are 3 types of network architectures:-
 There are several features such as architecture selection criteria which we have not discussed in this part. Feel free to search for them.  
 
 
-### ***Simple Network Management Protocol (SNMP)***
+### **Simple Network Management Protocol (SNMP)**
 
 This is a protocol that was solely developed to work with NMS operating Transmission Control Protocol (TCP/IP).  
 Simple Network Management Protocol (SNMP) refers to the protocol that runs on the Application Layer of the Open Systems Interconnection (OSI) Model, 
