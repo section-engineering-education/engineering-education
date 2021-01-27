@@ -116,4 +116,5 @@ Each node in the network is assigned a random waiting time. The first node to co
 
 In this article, we have analyzed and discussed the various consensus protocols and their properties. I hope this article helps generate curiosity in the subject of blockchain in general. There is a huge scope of research in the field of blockchain to make it faster and efficient. Happy learning. 
 
-
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
