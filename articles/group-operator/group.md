@@ -30,6 +30,8 @@ https://docs.mongodb.com/manual/installation/
 
 - Must have some prior knowledge about MongoDB and its commands.
 
+> Side note : To create a database in MongoDB type ```use < name of the database >``` , to insert one document and also creating a new collection where the document will be inserted in one go use the command ```db.<name of the collection>.insertOne({ 'details of your document' }) ``` , to insert multiple documents use ```db.<name of the collection>.insertMany([{ 'details of your document' }, { 'details of your document' }, ...])``` and to fetch all the documents from your collection use ```db.<name of the collection>.find({})```.
+  
 ### Aggregation
 
 Aggregation is an operation that processes the data to give a computed result. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. It basically involves stages or pipelines through which data is processed to yield a combined result. 
