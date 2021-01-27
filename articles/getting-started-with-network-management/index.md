@@ -14,7 +14,7 @@ It involves controlling, organizing, planning, monitoring, controlling resources
 Network management, therefore, includes all the mechanisms put in place to monitor, control, and coordinate network activities within an organization.  
 These activities include network protocol analysis, distributed database management, and so many other tasks.  
 
-In short, network management as a service provides the network managers with several applications, tools, and devices to ensure that there are smooth network monitoring and management.  
+In essence, network management as a service provides network managers with several applications, tools, and devices to ensure there is smooth network management and monitoring.  
 
 
 ### Network Management Requirements
