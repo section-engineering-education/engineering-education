@@ -2,7 +2,9 @@ Unsplash is a photography sharing application. It has millions of users who post
 
 #### prerequisites.
 
-- Have [Node.js](https://nodejs.org/en/) installed on your computer.
+To follow along in this article, it is helpful to have the following:
+
+- [Node.js](https://nodejs.org/en/) installed on your computer.
 
 - Some basic knowledge of JavaScript.
 
@@ -54,7 +56,7 @@ If you already have an Unsplash developer account, ensure that you are logged in
 
 ### Setting up the development server.
 
-To follow along, clone this [repo](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, there is the start and the final folder. The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. On your cloned folder, navigate to the start folder and run the following command to install the necessary dependencies.
+To follow along, clone this [Github repository](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, there is the start and the final folder. The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. On your cloned folder, navigate to the start folder and run the following command to install the necessary dependencies.
 
 ```bash
 npm install
