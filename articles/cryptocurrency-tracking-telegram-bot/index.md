@@ -18,7 +18,7 @@ You can learn more about Telegram here: <https://telegram.org>
 
 Telegram bots are accounts that are operated by software and not actual people. They can do anything from teaching to playing games, acting as search engines, broadcasting messages, serving as reminders, connecting and integrating with other services, and even passing commands to Internet of Things (IoT) devices. [@GroupButler_bot](https://t.me/groupbutler_bot) is a very popular Telegram Bot for managing Telegram groups.
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/ngcq6rvjxrpoibsspq9g.png)
+![telegram group butler](/engineering-education/cryptocurrency-tracking-telegram-bot/ngcq6rvjxrpoibsspq9g.png)
 
 Cryptocurrencies are digital forms of currencies in which transactions are verified and records maintained by a decentralized system using cryptography rather than a centralized authority. Examples of cryptocurrency include Bitcoin (BTC), Ethereum (ETH), and Litecoin (LTC).
 
@@ -64,7 +64,7 @@ def get_prices():
 
 This is the expected output from the code above when executed:
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/2en1wn0m-8gcycfjmtvs.png)
+![crypto tracker output](/engineering-education/cryptocurrency-tracking-telegram-bot/2en1wn0m-8gcycfjmtvs.png)
 
 ## Building a Telegram Bot
 
@@ -72,21 +72,21 @@ This is the expected output from the code above when executed:
 
 Sign In to your Telegram account, then search for `@botfather` and start a conversation with the account. PS: BotFather is also a Telegram bot.
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/2frh-rcjna_zv5g1epn7.png)
+![telegram botfather](/engineering-education/cryptocurrency-tracking-telegram-bot/2frh-rcjna_zv5g1epn7.png)
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/ru4lx8fvo0u5nnmmp5bj.png)
+![chatting with botfather ](/engineering-education/cryptocurrency-tracking-telegram-bot/ru4lx8fvo0u5nnmmp5bj.png)
 
 #### Step 2: Creating the Telegram Bot Interface with BotFather
 
 We will now use the `/newbot` command to create a new Telegram bot. Creating a Telegram bot with BotFather means, you assign a name and username to it.
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/w9cqynzuungmtirs_gg6.png)
+![create new bot](/engineering-education/cryptocurrency-tracking-telegram-bot/w9cqynzuungmtirs_gg6.png)
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/a6kvxsmfgq_slhwtwp5z.png)
+![supply bot info](/engineering-education/cryptocurrency-tracking-telegram-bot/a6kvxsmfgq_slhwtwp5z.png)
 
 After supplying the name and username for your Telegram bot, BotFather will give you the API token used to interact with the bot account via the Telegram API.
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/drowpxw1kqxlc2sw7ct8.png)
+![get bot token](/engineering-education/cryptocurrency-tracking-telegram-bot/drowpxw1kqxlc2sw7ct8.png)
 
 #### Step 3: Powering the Bot with Python
 
@@ -131,9 +131,9 @@ After setting our handlers, we initiated our `updater` to start monitoring messa
 
 This is the expected response from our Telegram bot when the `bot.py` script is executed, and a message is sent to the bot (don’t forget to replace the placeholder with your token):
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/iqzwzfv5gdstworaokgj.png)
+![find our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/iqzwzfv5gdstworaokgj.png)
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/3svqucj7ez1ntgridksb.png)
+![message our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/3svqucj7ez1ntgridksb.png)
 
 ### Integrating Cryptocurrency Tracking to Our Bot
 
@@ -174,7 +174,7 @@ updater.start_polling()
 
 This is the expected response from our Telegram bot when the `bot.py` script is executed, and a message is sent to the bot:
 
-![](/engineering-education/cryptocurrency-tracking-telegram-bot/foniwp8tirtgmrqugcxc.png)
+![testing our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/foniwp8tirtgmrqugcxc.png)
 
 ### Resources
 
