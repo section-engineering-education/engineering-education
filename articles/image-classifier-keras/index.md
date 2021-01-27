@@ -1,4 +1,4 @@
-![hero image](header.jpg)
+![hero image](/engineering-education/image-classifier-keras/header.jpg)
 
 # How to Build an Image Classifier with Keras
 
@@ -22,10 +22,10 @@ We will see how we can apply Image Classifiers in Healthcare. Our goal here is t
 - [Colab Notebook](https://colab.research.google.com/)
 
 
-## Importing Libraries and Exploring Dataset
+### Importing libraries and exploring the dataset
 Let us start by importing the libraries we will be using for this project.
 
-![alt text](memetd.jpg)
+![alt text](/engineering-education/image-classifier-keras/memetd.jpg)
 
 ```python
 # Importing Libraries
@@ -50,31 +50,31 @@ print('Tensorflow version:', tf.__version__)
 print('Is using GPU?', tf.test.is_gpu_available())
 ```
 
-![alt text](1.jpg)
+![alt text](/engineering-education/image-classifier-keras/1.jpg)
 
 We are using TensorFlow 2.4, but our output is False for GPU. We need to connect to a GPU runtime. To do that, we:
 
 1. Click on *Runtime*
 
-![alt text](runtime.jpg)
+![alt text](/engineering-education/image-classifier-keras/runtime.jpg)
 
 2. Select *Change runtime type*
 
-![alt text](runtime2.jpg)
+![alt text](/engineering-education/image-classifier-keras/runtime2.jpg)
 
 3. Select *GPU* as the hardware accelerator
 
-![alt text](runtime3.jpg)
+![alt text](/engineering-education/image-classifier-keras/runtime3.jpg)
 
 4. Click on *Save*
 
 Let us run the code above again.
 
-![alt text](4.jpg)
+![alt text](/engineering-education/image-classifier-keras/4.jpg)
 
 Now our output is _True_. It indicates that we are using a GPU on Google’s Colab. With a GPU, we can train our model faster.
 
-![alt text](meme2.jpg)
+![alt text](/engineering-education/image-classifier-keras/meme2.jpeg)
 
 [Image source: 3agsystems](https://www.3agsystems.com/blog/you-get-a-gpu "GPU meme")
 
@@ -85,11 +85,11 @@ Let us clone the GitHub repo containing the dataset.
 !git clone https://github.com/education454/datasets.git
 ```
 
-![alt text](5.jpg)
+![alt text](/engineering-education/image-classifier-keras/5.jpg)
 
 The dataset is now available in Colab.
 
-![alt text](6.jpg)
+![alt text](/engineering-education/image-classifier-keras/6.jpg)
 
 Let us set the path to the main directory of our dataset.
 
@@ -141,7 +141,7 @@ test_normal_names = os.listdir(test_normal_dir)
 print(test_normal_names[:10])
 ```
 
-![alt text](7.jpg)
+![alt text](/engineering-education/image-classifier-keras/7.jpg)
 
 
 Let us see the total number of images available in the training set and test set.
@@ -154,12 +154,12 @@ print("Total no of images in test set:", len(test_covid_names
                                             + test_normal_names))
 ```
 
-![alt text](8.jpg)
+![alt text](/engineering-education/image-classifier-keras/8.jpg)
 
 We have 1,811 images in the training set and 484 images in the test set.
 
 
-## DATA VISUALIZATION
+### Data visualization
 The image module in the matplotlib package will enable us to load, rescale, and display images. We will plot a grid of 16 images, 8 Covid19 images, and 8 Normal images.
 
 ```python
@@ -187,7 +187,7 @@ merged_list = covid_pic + normal_pic
 print(merged_list)
 ```
 
-![alt text](9.jpg)
+![alt text](/engineering-education/image-classifier-keras/9.jpg)
 
 ```python
 # Plotting the images in the merged list
@@ -208,10 +208,10 @@ for i, img_path in enumerate(merged_list):
 plt.show()  # display the plot
 ```
 
-![alt text](10.jpg)
+![alt text](/engineering-education/image-classifier-keras/10.jpg)
 
 
-## DATA PREPROCESSING AND AUGMENTATION
+### Data preprocessing and augmentation
 Our dataset only has training data and testing data. There is no validation data. We will have to use 20% of our training data for validation. We use the training data to train the model. We use the validation data to check the model during training. We use the testing data to test the model after training.
 
 ```python
@@ -226,7 +226,7 @@ dgen_validation = ImageDataGenerator(rescale=1./255)
 dgen_test = ImageDataGenerator(rescale=1./255)
 ```
 
-![alt text](meme3.jpg)
+![alt text](/engineering-education/image-classifier-keras/meme3.jpg)
 
 Image Augmentation helps us increase the size of our training set. It will also help to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We will create objects of the class. One will be for the training images, where we will apply image augmentation. We will also create objects for the validation images and the test images.
 
@@ -259,9 +259,11 @@ test_generator = dgen_test.flow_from_directory(test_dir,
                                                class_mode=CLASS_MODE)
 ```
 
-![alt text](11.jpg)
+![alt text](/engineering-education/image-classifier-keras/11.jpg)
 
-The first argument is the path to the dataset. The next parameter is the *target_size*. It will resize all the images to the specified target size of 200x200. The *batch size* defines how many images we want to have in each batch. We will use a batch size of 32, and the class mode is either *binary* or *categorical*. *Binary* is for two output classes, while categorical is for more than two classes. Since we are working with only *two* classes, we will set the class mode to *binary*.
+The first argument is the path to the dataset. The next parameter is the *target_size*. It will resize all the images to the specified target size of 200x200. The *batch size* defines how many images we want to have in each batch. 
+
+We will use a batch size of 32, and the class mode is either *binary* or *categorical*. *Binary* is for two output classes, while categorical is for more than two classes. Since we are working with only *two* classes, we will set the class mode to *binary*.
 
 The *subset* parameter keeps track of the images we will use for training and validation from the *train_dir*. We don’t need the *subset* parameter for the test generator. We use the subset parameter only if we use validation_split.
 
@@ -274,7 +276,7 @@ To get the class indices, we use the *class_indices* attribute.
 train_generator.class_indices
 ```
 
-![alt text](12.jpg)
+![alt text](/engineering-education/image-classifier-keras/12.jpg)
 
 We can also get the shape of our image by using the *image_shape* function.
 
@@ -283,10 +285,10 @@ We can also get the shape of our image by using the *image_shape* function.
 train_generator.image_shape
 ```
 
-![alt text](13.jpg)
+![alt text](/engineering-education/image-classifier-keras/13.jpg)
 
 
-## BUILD CNN MODEL
+### Build CNN model
 
 ```python
 # Building CNN Model
@@ -315,19 +317,21 @@ We will add another Convolutional layer with 64 filters and a MaxPooling layer. 
 
 The Flatten layer will convert the data to a 1D vector. The dense layer is our fully connected layer. We are using 256 nodes with a *ReLU* activation function. We add another dropout layer, and we create an output layer with one node, using a *sigmoid* activation function. We are using one node at the output because it is a binary classification problem.
 
-![alt text](14.jpg)
+![alt text](/engineering-education/image-classifier-keras/14.jpg)
 
 
-## COMPILE AND TRAIN THE MODEL
+### Compile and train the model
 
 ```python
 # Compile the Model
 model.compile(Adam(lr=0.001), loss='binary_crossentropy', metrics=['accuracy'])
 ```
 
-We will compile our model using *Adam* optimizer with a learning rate of 0.001. That is also the default learning rate. We are using *binary_crossentropy* loss since we have two classes. If we have more than two classes, then we use *categorical_crossentropy*. The loss function gives the measure of our model’s performance. We will also keep track of the accuracy while our model trains.
+We will compile our model using *Adam* optimizer with a learning rate of 0.001. That is also the default learning rate. 
 
-![alt text](meme6.jpg)
+We are using *binary_crossentropy* loss since we have two classes. If we have more than two classes, then we use *categorical_crossentropy*. The loss function gives the measure of our model’s performance. We will also keep track of the accuracy while our model trains.
+
+![alt text](/engineering-education/image-classifier-keras/meme6.jpg)
 
 ```python
 # Train the Model
@@ -349,15 +353,17 @@ history = model.fit(train_generator,
     ])
 ```
 
-We will fit our model to the *train_generator* and train for 30 epochs. We will set the *validation_data* parameter to the *validation_generator*. We will also set some callbacks. As the model trains, we will track the validation accuracy. If the validation accuracy doesn’t improve after 20 epochs, our model will stop training. The *save_best_only* parameter is set to *True*. It will save the model with the highest accuracy after each epoch. The *save_weights_only* parameter is set to *False*. It stores not only the weights but the whole architecture of the model.
+We will fit our model to the *train_generator* and train for 30 epochs. We will set the *validation_data* parameter to the *validation_generator*. We will also set some callbacks. As the model trains, we will track the validation accuracy. 
 
-![alt text](15.jpg)
+If the validation accuracy doesn’t improve after 20 epochs, our model will stop training. The *save_best_only* parameter is set to *True*. It will save the model with the highest accuracy after each epoch. The *save_weights_only* parameter is set to *False*. It stores not only the weights but the whole architecture of the model.
 
-![alt text](23.jpg)
+![alt text](/engineering-education/image-classifier-keras/15.jpg)
+
+![alt text](/engineering-education/image-classifier-keras/23.jpg)
 
 We will store the best performing model in the models’ directory that we created earlier.
 
-![alt text](16.jpg)
+![alt text](/engineering-education/image-classifier-keras/16.jpg)
 
 We added the validation accuracy to the name of the model file. It will be easy for us to identify the best model in the directory.
 
@@ -368,7 +374,7 @@ If you do not get a good validation accuracy, you can increase the number of epo
 After training, we get the history object. It contains the progress of the network during training. That is the loss and the metrics we defined when we compiled our model.
 
 
-## PERFORMANCE EVALUATION
+### Performance evaluation
 Let us get the keys of the history object.
 
 ```python
@@ -376,7 +382,7 @@ Let us get the keys of the history object.
 history.history.keys()
 ```
 
-![alt text](17.jpg)
+![alt text](/engineering-education/image-classifier-keras/17.jpg)
 
 The history object stores the values of loss, accuracy, validation loss, and validation accuracy in each epoch.
  
@@ -391,7 +397,7 @@ plt.title('Training and Validation Losses')
 plt.xlabel('epoch')
 ```
 
-![alt text](18.jpg)
+![alt text](/engineering-education/image-classifier-keras/18.jpg)
 
 Let us also plot a graph to visualize the training and validation accuracy after each epoch of training.
 
@@ -403,11 +409,11 @@ plt.legend(['Training', 'Validation'])
 plt.xlabel('epoch')
 ```
 
-![alt text](19.jpg)
+![alt text](/engineering-education/image-classifier-keras/19.jpg)
 
 Let us see how our model performs on the testing data. Remember, the testing data is the data the model hasn’t seen during the training process.
 
-![alt text](meme1.jpg)
+![alt text](/engineering-education/image-classifier-keras/meme1.jpg)
 
 ```python
 # loading the best perfoming model
@@ -418,14 +424,14 @@ test_loss, test_acc = model.evaluate(test_generator)
 print('Test loss: {} Test Acc: {}'.format(test_loss, test_acc))
 ```
 
-![alt text](21.jpg)
+![alt text](/engineering-education/image-classifier-keras/21.jpg)
 
 We get a test loss of approximately 0.0824 and a test accuracy of approximately 0.9711.
 
-![alt text](meme-test.jpg)
+![alt text](/engineering-education/image-classifier-keras/meme-test.jpg)
 
 
-## PREDICTION ON NEW DATA
+### Prediction on new data
 Let us use our model to make predictions on new data. Our new data will be a random image from our test set. We will get the path to the test image's directory and pass it to the *load_img()* function.
 
 ```python
@@ -450,18 +456,29 @@ else:
   print('Report is Normal')
 ```
 
-![alt text](22.jpg)
+![alt text](/engineering-education/image-classifier-keras/22.jpg)
 
-The *load_img()* function from *keras.preprocessing.image* lets us load images in a PIL format. The first argument is the path to the image, and the second argument resizes our input image. After we load and resize our image, we convert it to a numpy array. We also have to expand the dimension of the image. This is because we trained our model with images in a batch, 32 images entering the model at a time. So we will create a batch of one image before calling the *predict* method. The *axis* parameter of the *expand_dims* function specifies where we want to add that extra dimension. The dimension of the batch is always the first dimension so that the argument will be 0. We will now encode the result, so our model will tell us if the scan has Covid or is normal, for instance, instead of 0 or 1. Remember, from the class indices, 0 represents a scan with covid, and 1 represents a normal scan. So if the prediction is 0, the patient has covid. Otherwise, the patient is normal. Our model has detected COVID-19 in the patient’s X-ray scan.
+The *load_img()* function from *keras.preprocessing.image* lets us load images in a PIL format. The first argument is the path to the image, and the second argument resizes our input image. After we load and resize our image, we convert it to a numpy array. 
+
+We also have to expand the dimension of the image. This is because we trained our model with images in a batch, 32 images entering the model at a time. So we will create a batch of one image before calling the *predict* method. The *axis* parameter of the *expand_dims* function specifies where we want to add that extra dimension. 
+
+The dimension of the batch is always the first dimension so that the argument will be 0. We will now encode the result, so our model will tell us if the scan has Covid or is normal, for instance, instead of 0 or 1.
+
+Remember, from the class indices, 0 represents a scan with covid, and 1 represents a normal scan. So if the prediction is 0, the patient has covid. Otherwise, the patient is normal. Our model has detected COVID-19 in the patient’s X-ray scan.
 
 
-## Conclusion
-In this article, we learned how to build an image classifier using Keras. We applied data augmentation to increase the size of our dataset. We were able to visualize our training images. We created a CNN model and trained it to classify Covid-19 chest X-ray scans and normal chest X-ray scans. We got a test accuracy of 97% and a loss of 0.0824. We were also able to save our model and load it to make predictions on new data. We cannot use this model in real life because we did not train it on a large dataset.
+### Conclusion
+In this article, we learned how to build an image classifier using Keras. We applied data augmentation to increase the size of our dataset. We were able to visualize our training images. We created a CNN model and trained it to classify Covid-19 chest X-ray scans and normal chest X-ray scans. 
+
+We got a test accuracy of 97% and a loss of 0.0824. We were also able to save our model and load it to make predictions on new data. We cannot use this model in real life because we did not train it on a large dataset.
 
 Now you can build an image classifier to classify images, for example, a dog and a cat, a car and a bike, etc.
 
 Thank you for reading!!! Github repo [here](https://github.com/Inyrkz/PneumoniaX/blob/Inyrkz-covid/CovidTrial.ipynb)
 
-## References
+### References
 1. [Keras Documentation](https://keras.io/api/)
 2. [Coursera Guided Project](https://www.coursera.org/learn/classification-of-covid19-using-chest-xray-images-in-keras/home/welcome)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
