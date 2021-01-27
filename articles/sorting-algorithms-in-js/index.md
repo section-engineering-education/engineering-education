@@ -89,6 +89,8 @@ Bubble sort follows the recursion technique.
 
 ![bubble_sort](/engineering-education/sorting-algorithms-in-js/bubble-sort.png)
 
+[Image Source](https://medium.com/karuna-sehgal/an-introduction-to-bubble-sort-d85273acfcd8)
+
 **JavaScript implementation**.
 
 ```JavaScript
@@ -148,6 +150,8 @@ Insertion sort uses the recursion technique. There is a portion of the array tha
 
 ![insertion_sort](/engineering-education/sorting-algorithms-in-js/insertion-sort.png)
 
+[Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
+
 **JavaScript Implementation**
 
 ```JavaScript
@@ -204,6 +208,8 @@ Selection sort uses the recursion technique. In the guide below, we are using as
 **Image representation**:
 
 ![selection-sort-algorithm](/engineering-education/sorting-algorithms-in-js/selection-sort.png)
+
+[Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
 
 **JavaScript Implementation**
 
@@ -272,6 +278,8 @@ Merge sort uses the divide and conquer technique. The main concept of merge sort
 **Image representation**
 
 ![merge_sort](/engineering-education/sorting-algorithms-in-js/merge_sort.png)
+
+[Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
 
 **JavaScript implementation**
 
@@ -417,6 +425,8 @@ Quicksort applies the divide and conquer technique as well. It works by having a
 **Image representation**
 
 ![quick-sort](/engineering-education/sorting-algorithms-in-js/quick-sort.png)
+
+[Image Source](https://www.techiedelight.com/quicksort/)
 
 **JavaScript implementation**
 
