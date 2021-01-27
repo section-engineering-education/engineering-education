@@ -1,9 +1,9 @@
 ### Introduction to Nmap  
-Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we will be discussing the comprehensive understanding and usage of Nmap along with its most commonly used commands to perform port scans.  
+Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we discuss the concepts and usage of Nmap along with its most commonly used commands to perform port scans.  
 
 ### What Is A Network Mapper?
 
-This is a command-line tool based on a Linux environment used to discover and audit networks, scan and check vulnerabilities on Internet Protocol(IP) addresses and ports for a given network.  
+This is a command-line tool based on a Linux environment used to discover and audit networks, scan and check vulnerabilities on Internet Protocol (IP) addresses and ports for a given network.  
 
 For instance, you're a network administrator, an IT manager, or just a security professional in your organization. One of the critical challenges you will face is a battle to get to know what is running on your network and the kind of security issues/challenges they pose.  
 
@@ -11,7 +11,7 @@ There are several tools (Nmap included) available for Network Administrators to 
 
 With this Nmap tool,   
 
-- Network administrator(s) can identify all devices that are running/accessing their systems.
+- Network administrator (s) can identify all devices that are running/accessing their systems.
 - An administrator can identify all the hosts, a computer connected to their network, including the services they offer.  
 - An administrator can scan all the open ports (communication endpoint), giving security a priority, that is, security threat detections.
 - An administrator can scan/ monitor a single host (a computer connected to the organization network) or thousands of devices connected.
@@ -76,15 +76,17 @@ Codename:   focal
 ```
 But you're free to follow along with [MacOs](https://nmap.org/download.html) and [Windows](https://geekflare.com/nmap-on-windows/).
 
-To install Nmap in Ubuntu:-  
+To install Nmap in Ubuntu:  
  
- #### Requirements:-
+ #### Requirements:
+ 
  * Sudo privileges- you should have the installation rights on the system.
  * An access to ubuntu terminal (Ctrl + T).  
  * An advanced package tool (apt) package manager or snap store.
   
-  #### Step 1: Updating Package List
-  Before installing Nmap in your system, ensure that your software packages are up-to-date by running the following command:
+ #### Step 1: Updating Package List
+ 
+ Before installing Nmap in your system, ensure that your software packages are up-to-date by running the following command:
 
   ```console
   sudo apt-get update
@@ -105,12 +107,13 @@ jumamiller@OpijaKaeli:~$
 
 ```
 
-#### Step 2: Install Network Mapper(Nmap)
-Now that our system is up-to-date run the following command to install Nmap:-
-```console
-sudo apt-get install nmap
-``` 
-The expected output:-
+ #### Step 2: Install Network Mapper (Nmap)
+ 
+ Now that our system is up-to-date run the following command to install Nmap:-
+ ```console
+ sudo apt-get install nmap
+ ``` 
+ The expected output:-
 ```console
 jumamiller@OpijaKaeli:~$ sudo apt-get install nmap
 Reading package lists... Done
@@ -204,7 +207,7 @@ In this tutorial, we will be looking at the two commonly used scans:
 
 ### TCP Scan
 
-Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a connect() system call. If it succeeds, 
+Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a ```connect()``` system call. If it succeeds, 
 it creates a 3-way handshake, a TCP process to create/make a connection between the client and the server. Otherwise, the port is closed/the remote target system is offline and cannot be accessed.  
 
 When a connection has been established, the ports are listed as ```open``` while the non-established connection is listed as ```closed```.  
@@ -242,7 +245,7 @@ We have 4 ports open from the above output from the remote target, [nmap](scanme
 
 Albeit we can scan for open ports using this TCP SYN scan technique, it has several drawbacks:-
 
-It can be easily detected on the system(remote) being scanned. Now imagine this remote system(in this case, the victim) is running an intrusion detection system or has a firewall. Every single attempt you make to scan a port sends/triggers a warning to the administrator together with logs. Once again, do not scan big techs because they will watch you!!!
+It can be easily detected on the system(remote) being scanned. Now imagine this remote system (in this case, the victim) is running an intrusion detection system or has a firewall. Every single attempt you make to scan a port sends/triggers a warning to the administrator together with logs. Once again, do not scan big techs because they will watch you!!!
 
 Because of this drawback, SYN Stealth Scan [-sS] was developed.
 
@@ -250,12 +253,12 @@ Because of this drawback, SYN Stealth Scan [-sS] was developed.
 
 In simple terms, SYN scan is used by the penetration tester without establishing a full connection, hence the name half-open scanning.  
 
-For example, you want to scan a remote server. You will establish a TCP/IP connection with a server at every possible open port by sending an SYN packet(synchronization packet) as if to create a 3-way handshake to every single port.    
+For example, you want to scan a remote server. You will establish a TCP/IP connection with a server at every possible open port by sending an SYN packet (synchronization packet) as if to create a 3-way handshake to every single port.    
 
 If the synchronization is acknowledged, the server responds with SYN/ACK packet from a particular port, then that particular port is open.  
 
-From that point, you can send a reset packet(RST); consequently, the server assumes that an error occurred while establishing a connection while the open port remains open and ready/vulnerable to exploitation.  
-The client may send several SYN packets to the server, consuming a lot of resources. This way, legitimate requests cannot be handled. This is one-way of how DOS(Denial of service is achieved).  
+From that point, you can send a reset packet (RST); consequently, the server assumes that an error occurred while establishing a connection while the open port remains open and ready/vulnerable to exploitation.  
+The client may send several SYN packets to the server, consuming a lot of resources. This way, legitimate requests cannot be handled. This is one-way of how DOS (Denial of service is achieved).  
 
 Now that we've got an idea of how SYN Scan works let's look at an example:-  
 
@@ -285,11 +288,8 @@ PORT      STATE    SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 46.24 seconds
 
 ```
-The results are relatively the same, but the output
-```console
-sudo nmap -sT scanme.nmap.org
-```
-is likely to log; hence not recommended in this tutorial.
+From the above output, you notice that the results are relatively the same as the ```TCP Scan``` output.  
+The only difference between the two methods is that ```TCP Scan``` logs any single port scan, therefore leaving your traces to the target system administrator (s). 
 
 ### Conclusion
 In this tutorial, we have been discussing Nmap, a tool that is used to scan Networks. We have discussed how to install Nmap in Linux distribution and perform several scans, including TCP Scan and SYN Steal scan.  
