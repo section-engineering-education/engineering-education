@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/agora-cloud-recording/
-title: Cloud Recording with Agora
+title: Agora Cloud Recording
 description: This tutorial will give readers a detailed guide on how to set up an Express server to record audio/video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
 date: 2021-01-06T00:00:00-18:00
