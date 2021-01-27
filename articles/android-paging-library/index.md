@@ -1,5 +1,21 @@
-With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. A good approach would be to split the data into "pages" and show it to the user one "page" after another. Some restful services like [The Dog API](https://docs.thedogapi.com/) have adopted this technique.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-paging-library/
+title: Paging in Android
+description: This article takes the reader through integrating paging library into an android application. Paging library helps in fetching data in page sets rather than a single list.
+author: linus-muema
+date: 2021-01-27T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/android-paging-library/hero.png
+    alt: Paging image example
+---
+With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. A good approach would be to split the data into "pages" and show it to the user one "page" after another. Some restful services like [The Dog API](https://docs.thedogapi.com/) have adopted this technique.
+<!--more-->
 In Android, achieving such workflow has proved to be a tedious process that can get messy if not handled well. That is where the [paging library](https://developer.android.com/topic/libraries/architecture/paging) comes in to help. It ensures a clean flow of data by observing the user's scrolling process. The basic flow is, once a user nears the end of a recyclerview, the library fetches the next set of data and updates the recyclerview. In this tutorial, we shall integrate the paging library into an Android application.
 
 **NOTE: _this tutorial uses version 2 of the paging library at the time of publishing. Version 3 is in `alpha` and not suitable for production_**
@@ -136,3 +152,6 @@ Once you run the application, you should get a list of the users.
 
 ### Conclusion
 That is how you implement the paging library in an android application. The setup is similar to the recyclerview setup and is also quite easy. The library also ensures a good flow of data when updating your list. Next up we shall check on migrating to paging library version 3. You can go ahead and check the final code on [GitHub](https://github.com/LinusMuema/kotlin/tree/paging-2). Feel free to raise any issue or PR.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
