@@ -231,7 +231,7 @@ As shown below, brackets are used to call a website with an API to sift through 
 Input:
 
 ```PowerShell
-(curl host.io/careers.massiveinsights.works).Content
+(curl host.io/careers-massiveinsights.works).Content
 ```
 
 Partial Output:
