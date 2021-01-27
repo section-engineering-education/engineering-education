@@ -1,7 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-software-development-life-cycle/
+title: Understanding Software Development Life Cycle
+description: This article takes you through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
+author: onesmus-mbaabu
+date:
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-software-development-life-cycle/hero.jpg
+    alt: 
+---
 In the current digital era, many software applications are being developed to solve various real-life problems. For software developers, understanding the software development life cycle (SDLC) facilitates the effective planning and delivery of high-quality software products. 
 
 This article takes you through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
-
+<!--more-->
 ### What is Software Development Life Cycle (SDLC)?
 The software development life cycle (SDLC) refers to the process followed by software developers to develop high-quality software products. The SDLC provides a framework that outlines the tasks that need to be performed in each phase of software development. Organizations can use the SDLC process to provide structure for the designing and building of applications. 
 
@@ -163,3 +179,5 @@ A suitable SDLC model can be selected based on the customer requirements and the
 
 [EDUCBA]( https://www.educba.com/what-is-software-development/)
 
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
