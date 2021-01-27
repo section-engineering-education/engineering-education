@@ -8,13 +8,13 @@ In this tutorial, we're going to discuss the fundamentals and principles of netw
 * Simple Network Management protocol  
 
 ### **What is Network Management?**
-Management simply refers to the set of activities or principles well defined to perform a given task effectively.  
-It involves controlling, organizing, planning, monitoring, controlling resources to achieve the organization's goals.
+Management refers to the set of activities or principles well defined to perform a particular task effectively.  
+It involves controlling, organizing, planning, and monitoring resources to achieve the organization's goals.
 
 Network management, therefore, includes all the mechanisms put in place to monitor, control, and coordinate network activities within an organization.  
 These activities include network protocol analysis, distributed database management, and so many other tasks.  
 
-In essence, network management as a service provides network managers with several applications, tools, and devices to ensure there is smooth network management and monitoring.  
+In essence, network management as a service provides network managers with several applications, tools, and devices to ensure there are smooth network management and monitoring.  
 
 
 ### **Network Management Requirements**
@@ -31,15 +31,15 @@ In this tutorial we will discuss the following:
 ### **1.Fault Management** 
 
 Imagine working as a network administrator at a big company, say a bank, and the network fails in all branches country-wide and there's no way to identify the problem?
-The network administrator would be pressurized from the top management to get the network back up or else the organization will suffer financial losses. 
+The network administrator would be pressurized by the top management to get the network back up or else the organization will suffer a massive financial loss. 
 To avoid such issues from arising, complex networks require proper design, with each component's role well defined.
 
 But what's a fault in networking? is it the same as a network error? you guessed they are not the same? you're right.  
 
-***Network Fault***- refers to the condition that causes the network to fail to perform its task and it requires management action to repair or restore.  
-An example of a networking fault may result due to a telephone cable physically cut, this will prevent signals from passing through it.  
+***Network Fault*** - refers to the condition that causes the network to fail to perform its task and it requires management action to repair or restore.  
+An example of a networking fault may result due to a telephone cable physically cut,  preventing signals from passing through it.  
 
-To solve a networking fault, follow these simple steps:-  
+In case of a networking fault, the following general steps are followed to restore a network:    
 
 * Try and determine exactly where the fault is coming from.
 * Separate the rest of the network from the failure. This will ensure that the network continues to work without interference.
@@ -47,10 +47,9 @@ To solve a networking fault, follow these simple steps:-
 * Finally, repair or replace (in case it's badly damaged to work) the failed component.
 * Restore the network to its initial state.  
 
-Normally, users who depend on an internet connection will not tolerate occasional outages that take long to restore.  
-Sometimes when they do occur, it could be hard to resolve them without proper fault detection systems leading to so many issues with clients/ your network end users.  
-
-An organization is therefore recommended to put in place measures to restore networks or act as swiftly as possible in case of faults, and in this by installing ***Fault Detection and Diagnosis*** systems.  
+Normally, users depending on an internet connection will not tolerate occasional outages that take too long to restore.  
+Sometimes when they do occur, it could be hard to resolve them without proper fault detection systems leading to so many issues network end users.  
+An organization is therefore recommended to put in place measures to restore networks or act as swiftly as possible in case of faults, and in this by installing ***Fault Detection and Diagnosis systems***.  
 This provides a very efficient fault resolution, hence restoring or solving problems as soon as they occur.  
 
 
@@ -59,16 +58,12 @@ This provides a very efficient fault resolution, hence restoring or solving prob
 Your organization where you work is in one way or the other a target by hackers.  
 Security management is therefore concerned with how the ***encryption keys*** are being generated, distributed, and stored.  
 This may involve passwords, authorization keys, and access control information which are usually distributed and requires maintenance.  
-
-Security management is also concerned with computer network access.
-It simply involves monitoring and controlling the network.  
+Security management is also concerned with computer network access. It, therefore, involves monitoring and controlling the network.  
 
 One of the most important tools in security management is ***Network Logs***.
 It records every single activity or event on the network. Storing user details, process calls, and authentication attempts.  
-
 Security will always provide a guaranteed user information and network resources protection.  
-An organization should ensure these security facilities are made available to authorized users only.  
-In some situations such as online shopping, users are always concerned about their credit card details.  
+An organization should ensure these security facilities are made available to authorized users only.   
 This is an important requirement in network management and should be treated seriously.  
 
 ### **3.Performance management**
@@ -81,7 +76,7 @@ Performance management of any computer network is comprised of 2 broad functiona
 * Monitoring
 * Controlling
 
-As we had discussed previously, network monitoring involves tracking the activities on the network while controlling involves making some network adjustments to improve its performance.  
+As we had discussed previously, while network monitoring involves tracking the activities on the network, controlling a network involves making some network adjustments to improve its performance.  
 
 Some of the network performance issues include:-  
 * Utilization level.
@@ -93,10 +88,9 @@ Some of the network performance issues include:-
 As a network manager, you must put in place measures on what resources to monitor as you're assessing their performance level.  
 
 The perfect example of performance management is to do with applications such as [section](section.io).  
-There are many users on this site who search for  articles, now imagine this tutorial you're currently reading took ages to load? Will you be here?  
+There are many users on this site who search for articles, now imagine this article you're currently reading took ages to load? Will you be here?  
 Users always want to know the average and the worst-case scenario response time for the site to load.  
-
-Therefore, performance must be known in detail for system administrator/ support staff to be in a position to respond to some users' queries.  
+Therefore, performance must be known in detail for the system administrator/ support staff to be in a position to respond to some users' queries.  
 
 ###  **Network Management Systems**
 
@@ -107,11 +101,12 @@ Software is mostly used in host computers and communication processors such as f
 
 A network management system is always designed and developed for the end-user to view the entire network as a single architecture.  
 
-### ***FIG 1 NMS*** 
+### ***Fig.1 network management system*** 
 ![Network-Management-System](/engineering-education/getting-started-with-network-management/hierarchical-nms.jpg)
 
 
-There are 3 types of network architectures:-  
+There are 3 types of network architectures:  
+
 * Hierarchical Network Management Architecture  
 
    - In this architecture,  multiple sets of network management systems are installed at the Network Operations Center (NOC).
@@ -128,7 +123,7 @@ There are 3 types of network architectures:-
 * Distributed Network Management Architecture
     - Just like Hierarchical architecture. it has several Network Management Systems installed to monitor the network.  
     - Each NMS is usually installed to monitor the network of a particular geographical region.  
-    - Using figure 1 above, comprises 3 Network Management System (NMS) Servers with each being located at its own Network Operations Center (NOC).
+    - Using figure 1 above, comprises 3 Network Management System (NMS) Servers with each being located at its Network Operations Center (NOC).
     - In this architecture, clients are located in all regions.  
 
 There are several features such as architecture selection criteria which we have not discussed in this part. Feel free to search for them.  
@@ -141,7 +136,7 @@ Simple Network Management Protocol (SNMP) refers to the protocol that runs on th
 which's used to monitor and manage networks.  
 This protocol is whats sets the rules for routers, servers, printers et cetera on how to communicate with each other on the network.  
 
-In Network Management System (NMS), the key elements of an SNMP include:- 
+In-Network Management System (NMS), the key elements of an SNMP include:- 
 
 * Management Station 
     - As we had seen earlier, it's also known as a manager that is used to monitor the network.
