@@ -19,7 +19,9 @@ Group operator (is also known as accumulator operator) is a crucial operator in 
 
 MongoDB is an open-source NoSQL database management program. NoSQL is an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented information, store or retrieve information.
 
-In this article, we are going to learn about the $group operator with some examples. Important note that the code snippets in this article should be run on the shell or terminal.
+In this article, we are going to learn about the $group operator with some examples. 
+
+> Note: The code snippets in this article should be run in the Mongo shell.
 
 ### Prerequisites :
 
@@ -143,6 +145,5 @@ Output:
 
 ### Conclusion
 
-In this article we have discussed the `$group` operator with some examples.
-I hope you enjoyed reading this article as much as I enjoyed writing it.
+In this article we have discussed the `$group` operator with some examples. I hope you enjoyed reading this article as much as I enjoyed writing it.
 
