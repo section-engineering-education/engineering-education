@@ -10,23 +10,24 @@ A big data supply chain is a lifecycle of how data moves into the organization a
 Data supply chain is similar to the concept of the supply chain in the business field, which consists of inputs collected from suppliers and an output distributed to customers. In big data supply chain, input data is collected from various sources such as apps, websites, blogs, and social networks. The output is in the form of resourceful insights that enable managers to make sound decisions. Like a standard supply chain, a data supply chain's output is distributed to various people (users). 
 
 ### Benefits of Big Data Supply Chain
-* It provides a process that generates meaningful insights for strategic decision making. 
-* It enables organizations to organize their data, which improves data analytics. 
-* It enables organizations to accommodate additional data sources.
-* It increases the speed at which data is processed. 
-* It is an effective way of reducing [data latency](https://searchcio.techtarget.com/definition/data-latency#:~:text=1.%20Data%20latency%20is%20the%20time%20it%20takes,from%20a%20data%20warehouse%20or%20business%20intelligence%20dashboard.).
-* It improves the quality of data in the organization.
+
+- It provides a process that generates meaningful insights for strategic decision making. 
+- It enables organizations to organize their data, which improves data analytics. 
+- It enables organizations to accommodate additional data sources.
+- It increases the speed at which data is processed. 
+- It is an effective way of reducing [data latency](https://searchcio.techtarget.com/definition/data-latency#:~:text=1.%20Data%20latency%20is%20the%20time%20it%20takes,from%20a%20data%20warehouse%20or%20business%20intelligence%20dashboard.).
+- It improves the quality of data in the organization.
 ### Components of Big Data Supply Chain
 The following diagram shows the main components of a big data supply chain.
 
 ![Components of Big Data Supply Chain](/engineering-education/fundamentals-of-big-data-supply-chain/components-of-big-data-supply-chain.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2016/03/Data-Components.png)
-* **Data Sourcing:** This involves collecting data from various sources. Data sourcing and collection can be optimized through crowd-sourcing, BPaaS (business process as a service), and integrated workflow tools. 
-* **Data cleansing:** This involves modifying the data to remove incomplete, inaccurate, and irrelevant data parts to improve data quality. This can be achieved using automation tools, open-source tools, and DQaaS (data quality as a service).
-* **Data Enrichment:** Here, data enrichment is done to refine and improve data. This can be done using data mining tools and advanced analytics. 
-* **Data Management:** In this phase, data is managed using various data warehousing tools. Storage is optimized to solve organizations' main storage problems (volume, speed, and variety). The data is transformed to provide meaningful insights. 
-* **Data delivery:** Data is delivered to users through data visualization, DaaS (data as a service), and social media integration. 
+- **Data Sourcing:** This involves collecting data from various sources. Data sourcing and collection can be optimized through crowd-sourcing, BPaaS (business process as a service), and integrated workflow tools. 
+- **Data cleansing:** This involves modifying the data to remove incomplete, inaccurate, and irrelevant data parts to improve data quality. This can be achieved using automation tools, open-source tools, and DQaaS (data quality as a service).
+- **Data Enrichment:** Here, data enrichment is done to refine and improve data. This can be done using data mining tools and advanced analytics. 
+- **Data Management:** In this phase, data is managed using various data warehousing tools. Storage is optimized to solve organizations' main storage problems (volume, speed, and variety). The data is transformed to provide meaningful insights. 
+- **Data delivery:** Data is delivered to users through data visualization, DaaS (data as a service), and social media integration. 
 ### Steps for Building a Big Data Supply Chain
 The following steps can be used to build a big data supply chain.
 
@@ -47,9 +48,9 @@ In this step, the organization should invest in [cognitive computing](https://en
 
 ### Issues for Consideration
 Data analysts and managers in an organization should follow the following considerations to enhance an efficient and optimal data supply chain.
-* **Ensure data quality:** Organizations can use validation workflows to establish whether there are incomplete records within the system. Frequent auditing can be done to ensure that data is accurate and consistent. Quality data enhance the formulation of valuable decisions that can transform the business.
-* **Use a centralized data solution:** Use a collaborative system that enables you to combine data from diverse sources. A centralized data solution allows you to view data strategically, which improves data sorting and the generation of real-time reports. 
-* **Track the lineage of data:** Tracking data lineage can enable the organization to establish the data source and the processes it passed through. This can help in understanding the kind of data one is dealing with. 
+- **Ensure data quality:** Organizations can use validation workflows to establish whether there are incomplete records within the system. Frequent auditing can be done to ensure that data is accurate and consistent. Quality data enhance the formulation of valuable decisions that can transform the business.
+- **Use a centralized data solution:** Use a collaborative system that enables you to combine data from diverse sources. A centralized data solution allows you to view data strategically, which improves data sorting and the generation of real-time reports. 
+- **Track the lineage of data:** Tracking data lineage can enable the organization to establish the data source and the processes it passed through. This can help in understanding the kind of data one is dealing with. 
   
 ### Conclusion
 A big data supply chain is essential to businesses because it provides meaningful insights that improve decision making. This supply chain can eliminate common data problems such as data latency, data redundancy, and inconsistency. The five main components of a big data supply chain include data sourcing, cleansing, enrichment, data management, and delivery. Big data supply chain in an organization can be optimized by ensuring data quality, tracking data lineage, and using centralized data solutions.
