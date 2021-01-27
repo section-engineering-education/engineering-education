@@ -1,6 +1,23 @@
-# An Overview of Consensus Protocols in Blockchain
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/blockchain-consensus-protocols/
+title: An Overview of Consensus Protocols in Blockchain
+description: This article will be a discussion about the various consensus protocols and how they are used in a Blockchain.
+author: lalithnarayan-c
+date: 2021-01-27T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Satoshi Nakamoto introduced an exciting application called Bitcoin after the great recession in 2008. This was one of the first real applications of blockchain technology. Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
+  - url: /engineering-education/blockchain-consensus-protocols/hero.jpg
+    alt: Blockchain Consensus Protocols image
+---
+Satoshi Nakamoto introduced an exciting application called Bitcoin after the great recession in 2008. This was one of the first real applications of blockchain technology. 
+<!--more-->
+
+Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
 
 - Security
 - Accountability
