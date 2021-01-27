@@ -11,7 +11,7 @@ There are several tools (Nmap included) available for Network Administrators to 
 
 With this Nmap tool,   
 
-- Network administrator (s) can identify all devices that are running/accessing their systems.
+- Network administrator(s) can identify all devices that are running/accessing their systems.
 - An administrator can identify all the hosts, a computer connected to their network, including the services they offer.  
 - An administrator can scan all the open ports (communication endpoint), giving security a priority, that is, security threat detections.
 - An administrator can scan/ monitor a single host (a computer connected to the organization network) or thousands of devices connected.
