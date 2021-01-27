@@ -2,9 +2,9 @@
 
 # How to Build an Image Classifier with Keras
 
-In this article, we will learn how to use a Convolutional Neural Network to build an Image Classifier. We will use Keras with TensorFlow at the backend. Image Classification helps us recognize and identify images. We apply Image Classifiers in fields such as Healthcare, Agriculture, Education, Surveillance, etc.
+In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
 
-We will see how we can apply Image Classifiers in Healthcare. Our goal here is to train a CNN model to classify COVID-19 and normal chest X-ray scans of patients.
+We will see how we can apply image classifiers in healthcare. Our goal here is to train a CNN model to classify COVID-19 and normal chest X-ray scans of patients.
 
 ### Table of Content
 - Importing Libraries and Exploring Dataset
@@ -212,7 +212,10 @@ plt.show()  # display the plot
 
 
 ### Data preprocessing and augmentation
-Our dataset only has training data and testing data. There is no validation data. We will have to use 20% of our training data for validation. We use the training data to train the model. We use the validation data to check the model during training. We use the testing data to test the model after training.
+
+Our dataset has training data and testing data. There is no validation data. We use 20% of our training data for validation. 
+
+We use the training data to train the model. We use the validation data to check the model during training. We use the testing data to test the model after training.
 
 ```python
 
@@ -228,12 +231,13 @@ dgen_test = ImageDataGenerator(rescale=1./255)
 
 ![alt text](/engineering-education/image-classifier-keras/meme3.jpg)
 
-Image Augmentation helps us increase the size of our training set. It will also help to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We will create objects of the class. One will be for the training images, where we will apply image augmentation. We will also create objects for the validation images and the test images.
+Image Augmentation helps us increase the size of our training set. It will also help to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We will create objects of the class. 
 
-We start by rescaling the images, which will normalize the pixel values of our images. The *rescale* parameter is for feature scaling. It is vital when training neural networks. The *validation_split* parameter allows us to split a subset of our training data into the validation set. 0.2 means we will use 20% of our training set as the validation set. We will set *zoom_range* to 0.2. Finally, we set *horizontal_flip* to True.
+One will be for the training images, where we will apply image augmentation. We will also create objects for the validation images and the test images.
 
-Now that we have created the objects, we need to connect them to our dataset.  The ImageDataGenerator() class has a function called flow_from_directory. The function will connect the image augmentation tool to the images in our dataset. It will take the path to the directory and generate batches of augmented data.
+We begin by rescaling the images, which normalizes the pixel values of our images. The *rescale* parameter is for feature scaling. It is vital when training neural networks. The *validation_split* parameter allows us to split a subset of our training data into the validation set. 0.2 means we will use 20% of our training set as the validation set. We will set *zoom_range* to 0.2. Finally, we set *horizontal_flip* to True.
 
+Now that we have created the objects, we need to connect them to our dataset.  The ImageDataGenerator() class has a function called flow_from_directory. The function will connect the image augmentation tool to the images in our dataset. It takes the path to the directory and generate batches of augmented data.
 
 ```python
 # Awesome HyperParameters!!!
