@@ -20,7 +20,7 @@ Browser-based multiplayer games require split-second communication between playe
 For this article we will use Adonis.js, which is a Node.js MVC framework, on the backend. Adonis.js implements web sockets both on the client and server side. You can check out the completed app [here](https://tic-tac-toe-adonis.herokuapp.com/).
 
 ### Technologies involved
-1. Node
+1. Node.js
 2. Adonis.js
 3. Redis
 
