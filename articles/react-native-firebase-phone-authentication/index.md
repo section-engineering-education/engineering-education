@@ -21,7 +21,7 @@ In this tutorial, we will learn how to authenticate users with their phone numbe
 
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
-### Firebase Authentication
+### Authentication Module
 
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
 
@@ -35,20 +35,20 @@ The basics of React and React Native will not be covered in this tutorial. If yo
 
 We'll be going through these steps in this article:
 
-1. Development environment.
-2. Cloning the starter code.
-3. Setting up the Firebase project.
-4. Setting up Firebase Authentication.
-5. Phone Number.
-6. Verification Code.
-7. Authenticated Screen.
-8. Signout.
-9. Test phone numbers.
-10. Recap.
+1. [Development environment](#development-environment).
+2. [Cloning the starter code](#cloning-the-starter-code).
+3. [Setting up the Firebase project](#setting-up-the-firebase-project).
+4. [Setting up Firebase Authentication](#setting-up-firebase-authentication).
+5. [Phone Number](#phone-number).
+6. [Verification code](#verification-code).
+7. [Authenticated screen](#authenticated-screen).
+8. [Signout](#signout).
+9. [Test phone numbers](#test-phone-numbers).
+10. [Recap](#lets-recap).
 
 ### Development environment
 
-> **IMPORTANT** - We will not be using Expo in our project.
+> **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
