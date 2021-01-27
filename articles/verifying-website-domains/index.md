@@ -1,19 +1,14 @@
-## Verifying Website Domains ##
-
---
+## Verifying Website Domains
 
 Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
 
-
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
-
-
 
 At the end of this tutorial, it is possible to have a good grasp on retrieving DNS (Domain Name System) information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
 
 Overall, this tutorial helps complete reverse domain name lookups.
 
-**Prerequisites**
+### Prerequisites
 
 _Software and Hardware_
 * Windows Operating System (Version 10)
@@ -31,13 +26,10 @@ _Knowledge_
 * Website mechanics (terms include but not limited to: layers, domains, and hosting)
 * Webpage scripting (HTML or JavaScript)
 
---
-
-#### Let's get started with Python Shell ####
+### Let's get started with Python Shell
 
 Some Python compatible packages that will be used are `socket`, `dns`, and `whois`.
 Ensuring that packages are installed and functional using the command prompt window and the designated 'PATH' or 'ROOT' from folder-to-folder are accurate will be slightly time efficient.
-
 
 In `socket`, the opportunity to find the IP (Internet Protocol) address associated with the domain name can be processed.
 
@@ -66,9 +58,7 @@ _Screenshot_:
 
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
-
 Because the domain name was removed due to unoriginality, error messages were displayed.
-
 
 Shown below is a functional and valid output of the code since the domain is active and not removed.
 
@@ -87,15 +77,11 @@ Output:
 IP: 69.195.108.249
 ```
 
-
 _Screenshot_:
 
 ![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
---
-
 In `DNS`, a plentiful array of resource information is displayed given that the website domain is still active.
-
 
 This is a good opportunity to use for-loops held within a variable to iterate and display all results.
 
@@ -177,12 +163,9 @@ Output:
 
 _Screenshots:_
 
-
 ![dns-txt-mx](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
 ![dns-ns](/engineering-education/verifying-website-domains/dns-ptr.jpg)
-
---
 
 `Whois`, a continuous recording registry for websites, is one of several databases that compiles and lists website information.
 
@@ -207,14 +190,11 @@ Expiration date: None
 
 _Screenshot_:
 
-
 ![whois-invalid](/engineering-education/verifying-website-domains/whois-invalid.jpg)
-
 
 Null values would be an indication that modifications were made during the development of the website.
 
 Most original websites will openly disclose this information as exemplified below.
-
 
 Input:
 
@@ -240,10 +220,7 @@ _Screenshot_:
 
 ![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
-
---
-
-#### Next up, Windows PowerShell ####
+### Next up, Windows PowerShell 
 
 _Make sure to right-click and select the `Run as Administrator` option before running PowerShell._
 
@@ -256,7 +233,6 @@ Input:
 ```PowerShell
 (curl host.io/careers.massiveinsights.works).Content
 ```
-
 
 Partial Output:
 
@@ -274,10 +250,7 @@ Partial Output:
 
 _Screenshot_:
 
-
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
-
-
 
 Scroll down to the `text-primary` class layer to display all associated domains with the IP address.
 
@@ -354,13 +327,9 @@ Partial Output:
             </div>
 ```
 
-
 _Screenshot_:
 
-
 ![power-curl-domains](/engineering-education/verifying-website-domains/power-curl-domains.jpg)
-
----
 
 When confronted with a domain that may appear authentic and genuine, it might be best to do some coding research first.
 
@@ -382,8 +351,6 @@ These components can be combined and modified to replicate an already existing w
 * IP address
 * Associated domains with IP address
 
---
-
 **Time to Match Values Up**
 
 If possible, compare values with the original to find any matches. If not, output values can offer insights.
@@ -392,20 +359,15 @@ _What does a match mean?_
 
 Most likely related to the original website domain.
 
-
 _What does a mismatch mean?_
 
 Most likely a replicated version of the original. Beware, be cautious, and watch out.
 
----
 Try the tutorial out next time a suspicious website domain crosses paths while using the internet. The results can be fascinating.
 
 It can possibly protect individuals and/or groups from the dark web.
 
-
---
-
-**Resources**
+### Resources
 
 _Documentation_
 
@@ -417,10 +379,6 @@ _Documentation_
 [Whois Library](https://openbase.com/python/whois/documentation#whois)
 
 [Host.io API](https://host.io/)
-
-
---
-
 
 Have any feedback or comments about the lines of code used for verifying website domains?
 
