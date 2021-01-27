@@ -4,7 +4,7 @@ Verifying website domains for originality can be complicated during a time where
 
 This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
 
-At the end of this tutorial, it is possible to have a good grasp on retrieving DNS (Domain Name System) information by coding in Python Shell, skills developed or refreshed in website API commands within Windows PowerShell, and a tighter hold on identifying the complexities of domain modifications in an ever-changing technical space.
+At the end of this tutorial, it is possible to have a good grasp on retrieving DNS (Domain Name System) information in Python Shell and Windows PowerShell.
 
 Overall, this tutorial helps complete reverse domain name lookups.
 
