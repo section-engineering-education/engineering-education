@@ -1,127 +1,121 @@
-Caching refers to the process of storing data in a temporary location so that the data is accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network, and the application's response time. Applications that implement caching are faster and user friendly.
+Caching refers to the process of storing data in a temporary location so that the data is accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network and the application's response time. Applications that implement caching are faster and user friendly.
 
 #### prerequisites.
-- Have [Node.js](https://nodejs.org/en/) installed on your computer.
-- Have a working knowledge of JavaScript.
-- Have a working knowledge of Node.js and [Express.js](https://expressjs.com/).
-- Have [Postman](https://www.postman.com/) installed on your computer.
-- Have a Linux or macOS based operating system.
+
+To follow along in this article, it is helpful to have the following:
+
+- [Node.js](https://nodejs.org/en/) installed on your computer.
+- Working knowledge of JavaScript.
+- Working knowledge of Node.js and [Express.js](https://expressjs.com/).
+- [Postman](https://www.postman.com/) installed on your computer.
+- Linux or macOS based operating system.
+
+### Overview
+
+- [Application overview](#application-overview)
+
+- [Setting up the application](#setting-up-the-application)
+
+- [Fetching data from recipe labs API](#fetching-data-from-recipe-labs-api)
+
+- [Installing redis](#installing-redis)
+
+- [Importing and configuring redis.](#importing-and-configuring-redis)
+
+- [Setting up redis](#setting-up-redis)
+
+- [Considerations while implementing caching](#considerations-while-implementing-caching)
 
 ### Application overview.
-In this article, we will walk through the steps of implementing caching in a Node.js app using [redis](https://redis.io/). We will implement a REST API using the Express.js framework. We will be making requests to [recipe labs api](http://www.recipepuppy.com/?ref=hackernoon.com). It is a public API for accessing recipes of different food items.
 
-#### Setting up the application.
-Having installed [Node.js](https://nodejs.org/en/), we are equipped with [npm](https://www.npmjs.com/) which we will use to install the necessary dependencies. Proceed to the directory where you want the project to be and run the following command.
+In this article, we will walk through the steps of implementing caching in a Node.js app using [redis](https://redis.io/) as our cache. We will implement a REST API using the Express.js framework. We will be making requests to [recipe labs api](http://www.recipepuppy.com/?ref=hackernoon.com). It is a public API for accessing recipes of different food items.
 
-```bash
-npm init --yes
-```
+### Setting up the application.
 
-With the `package.json` file generated, we can continue to the next step.
+To set up the application, clone this [Github repository](https://github.com/mwangiKibui/implementing-caching-in-nodejs). The repository has two directories, start, and final. We will be working on the start directory throughout the article but if you encounter an error feel free to check out the final directory.
 
-#### Installing dependencies.
-We will need the following dependencies:
-
-- **axios**: For handling requests to the public API.
-- **express**: For setting up a working Express.js environment.
-- **nodemon**: For automatically restarting the server whenever we make changes.
-- **redis**: For implementing caching.
-
-We install them using the following command:
+To install the necessary dependencies, in your cloned folder execute the following command:
 
 ```bash
-npm install axios redis express nodemon
+cd ./start && npm install
 ```
 
-#### Configuring package.json
-To incorporate `nodemon` in our development, we make the following adjustments in the `package.json` file:
+Our main focus shall be implementing `fetchFoodItem` function in `controllers/recipe.js` file. It handles the logic for the `recipe/:foodItem` route.
+
+### Fetching data from recipe labs API.
+
+To fetch data from the API we:
+
+- Import `axios` module:
 
 ```javascript
-    {
-        "scripts" : {
-            //add the following
-            "dev":"nodemon app.js",
-            "start":"node app.js"
-        }
-    }
+const axios = require("axios");
 ```
 
-#### Creating Express.js app.
-In the same directory, we create an `app.js` file. The file should be as below:
+- Modify the `fetchFoodItem` function as follows:
 
 ```javascript
-//import express
-const express = require('express');
-//import axios
-const axios = require('axios');
-//import redis
-const redis = require('redis');
 
-//create an instance of an app.
-const app = express();
-
-//configure the port
-const PORT = 3001;
-
-//start the server
-app.listen(PORT, () => {
-    console.log(`app started on ${PORT}`)
-});
-```
-
-#### Fetching data from the public API.
-Since we have set up the application, we can now fetch the data from the public API. To do this we need to implement a route. We shall fetch and return the data on the route.
-
-The route shall be as follows:
-```javascript
-app.get(`/recipe/:foodItem`, async (req,res,next) => {
+const fetchFoodItem = (req,res,next) => {
 
     try {
 
         //destructure the foodItem from params.
-        let {foodItem} = req.params;
+
+        let { foodItem } = req.params;
 
         //fetch the data.
-        const recipe = await axios.get(`http://www.recipepuppy.com/api/?q=${fooditem}`).catch(console.log);
+
+        const recipe = await axios
+        .get(`http://www.recipepuppy.com/api/?q=${foodItem}`)
+        .catch(console.log);
 
         //return a response.
         return res.send({
-            success:true,
-            message:recipe.data.results
+          success: true,
+          message: recipe.data.results,
         });
 
-    }catch(err){
+      } catch (err) {
 
+        //return the error
         return res.send({
-            success:false,
-            message:err
+          success: false,
+          message: err,
         });
 
-    };    
+      };
 
-});
+};
+
 ```
 
 From above:
-- We implement a route on `/recipe/:foodItem`.
-- We obtain the food item from the request params.
-- We fetch the data from the public API.
-- Send the message to the client having destructed the necessary portion.
+
+- Get the food item from the request object.
+- Fetch data from the public API.
+- Send the data to the client.
 
 To test this, follow the following steps:
 
-- Go back to your terminal and run `npm run dev` to start the development server.
-- Head over to Postman and send a request to the route we have implemented above. Feel free to enter any food item you like.
-- Once the response is sent back, look at the time taken. Typically, it will take up to 600 ms or even more. With this amount of time, our application can consume a lot of user network bandwidth and this may bring a bad reputation for our application. To handle this, our next step is implementing caching using `redis`.
+- Start the development server from your terminal by running: `npm run dev`.
 
-#### Installing redis.
-If you have already installed `redis` on your computer, feel free to proceed to the next step else continue.
-Proceed to your terminal and run the following command to take you to your home directory.
+- Head over to Postman and send a request to the route. Do not include the semi-colons. The request should be similar to: `http://localhost:3000/recipe/coffee`. Feel free to replace coffee with your preference.
+
+- Wait for the response to be sent back and then check the time taken on the upper right section. Typically, it will take up to 600 ms or even more. This amount of time means that our application is consuming a lot of user network bandwidth. To minimize this cost, we have to set up `caching`. For this article, we will use `redis.`
+
+### Installing redis.
+
+If you have already installed `redis`, feel free to proceed to the next step. Else follow along the below steps.
+
+- Open a separate tab in your terminal and run the following command to shift to your home directory.
+
 ```bash
 cd
 ```
 
-Once in your home directory, run the following commands one by one:
+- In your home directory, run the following commands one by one:
+
 ```bash
 wget http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
@@ -130,128 +124,208 @@ make
 sudo make install
 ```
 
-To confirm that `redis` has successfully been set up correctly on your computer run the following command to start the `redis server`:
+- To confirm installation, run the following command to start the `redis server`:
+
 ```bash
 redis-server
 ```
 
-Open a different tab and run:
-```bash
-redis-cli ping
+- If the server is successfully started, continue to the next step. Else if you encounter an error, kindly reference from the [official docs](https://redis.io/topics/quickstart).
+
+### Importing and configuring redis.
+
+Follow the below steps:
+
+- Import `redis` module.
+
+```javascript
+const redis = require("redis");
 ```
 
-If everything is okay, you should get back `PONG` as a response. Having done this, we can connect `redis` from our application to running `redis server`.
+- Configure `redis` port and error handling.
 
-#### Setting up redis.
-Inside our `app.js` file, we incorporate `redis`.
 ```javascript
-//connecting to our local redis instance
 const client = redis.createClient({
-    port:6379 //default port of redis
+  port: 6379,
 });
 
-//listen for any error
-client.on('error',error => {
-    console.error(error);
-});
+client.on("error", (error) => console.error(error));
+```
 
+### Setting up redis.
 
-app.get(`recipe/:foodItem`, async (req,res,next) => {
+Incorporating `redis` in our function shall involve:
 
-    try {
+- Checking if the record of food item sent from the params is present in the cache since it will be treated as a key.
 
-        //destructure the foodItem from params.
-        let {foodItem} = req.params;
+- If the record exists, sending data to the client from the cache.
 
-        //check the data on redis store.
-        client.get(foodItem, async (err,recipe) => {
+- If the data does not exist in the cache, fetching the data from the API, saving data in the cache, and sending the data to the client.
 
-            if(recipe){
+The implementation shall be as follows:
 
-                //send the response from cache
-                return res.send({
-                    success:true,
-                    message:JSON.parse(recipe),
-                    meta_data:'from cache'
-                });
+```javascript
+const fetchFoodItem = (req, res, next) => {
+  try {
+    //get the food item.
 
-            } else {
+    let { foodItem } = req.params;
 
-                //we have to fetch from the api.
+    //check the data on redis store.
 
-                //fetch the data.
-                const recipe = await axios.get(`http://www.recipepuppy.com/api/?q=${foodItem}`).catch(console.log);
-
-                //set the data on cache
-                client.set(foodItem,JSON.stringify(recipe.data.results));
-
-                //send the response
-                return res.send({
-                    success:true,
-                    message:recipe.data.results,
-                    meta_data:'from server'
-                });
-
-            }
-
-        });
-
-    }catch(err){
+    client.get(foodItem, async (_, recipe) => {
+      if (recipe) {
+        //send the response from cache
 
         return res.send({
-            success:false,
-            message:err
+          success: true,
+          message: JSON.parse(recipe),
+          meta_data: "from cache",
         });
+      } else {
+        //fetch the data.
 
-    };    
+        const recipe = await axios
+          .get(`http://www.recipepuppy.com/api/?q=${foodItem}`)
+          .catch(console.log);
 
-});
+        //set the data on cache
 
+        client.set(foodItem, JSON.stringify(recipe.data.results));
+
+        //send the response
+
+        return res.send({
+          success: true,
+          message: recipe.data.results,
+          meta_data: "from server",
+        });
+      }
+    });
+  } catch (err) {
+    return res.send({
+      success: false,
+      message: err,
+    });
+  }
+};
 ```
 
 From above:
-- We connect the `redis` package to the running `redis server` using the default port.
-- Listen to any error that may come up.
-- In our route, when we get the food item, we check whether we have such a record in the cache. If we have, we return it from there, else we request from the server, set it on the cache, and return the response. 
-- It is important to know that, when storing data in the cache, we have to store it as a String and so when we retrieve it we have to parse that String.
 
-With the above changes, ensure your development server is started and repeat the previous request on Postman. For the first time, it shall save the response to the cache.
-If you send the request again without changing the food item parameter, you will see that the time has subsequently reduced. This time it can take a maximum of 45 milliseconds. This is  positive. The user's network bandwidth won't be consumed much and the response time will be minimal.
+- Get the food item from the request object.
 
-#### Considerations while implementing caching.
-While implementing caching, there are some considerations that one needs to make:
-- **Shall the data be cached forever**: How often is the data being updated from its source. Normally, you would set the time for which the data should be cached. After that time has lapsed, any request sent will go straight to the source and set the data again. 
-Considering our implementation, we can set the data to be cached for only 24 minutes:
+- Check if its record exists in the cache, if it exists we send the data to the client from there. If it does not exist, we fetch the data from the API, set it to cache, and then send it to the client.
+
+- An important takeaway here is that when setting data to the cache, we have to convert it to a `string`. When getting it from the cache, we have to `parse` it to convert it to its original form.
+
+To test the above:
+
+- Ensure that the development server is up and running.
+
+- Head over to Postman and send a request similar to: `http://localhost:3000/food/coffee`. Feel free to replace coffee with your preference.
+
+- Wait for the response and observe the amount of time it has taken to get the response. In the process, it has saved the data in the cache since it was not saved.
+
+- Send the same request again. This time the time taken to get the response will have significantly reduced. This is because the response was accessed from the cache. The network bandwidth used is also reduced.
+
+### Considerations while implementing caching.
+
+The following are important considerations you need to take when implementing caching:
+
+- **How often is data being updated.**: If the data is not prone to update then you are safe with the prior implementation. Else if the data is frequently updated, you need to set the time with which the data shall be available in the cache.
+
+Considering our implementation, we can set the data to be cached for only 24 minutes. You must convert your time to seconds.
+
+In the line where you are setting the data to cache, replace it with the following line of code.
+
 ```javascript
-//setting data
-client.setex(foodItem,1440,JSON.stringify(recipe.data.results));
+client.setex(foodItem, 1440, JSON.stringify(recipe.data.results));
 ```
 
-- **Is the query in redis unique**: We can always make each key stand out by applying some hashing. This way, its data shall not be accessed by another different key. 
-Considering our implementation, to incorporate hashing the key we can make the following adjustments:
+- **Uniqueness of the key**: When the keys are similar, the cache will store inappropriate data. In order to ensure that keys do not get similar, you have to hash them.
+
+Make the following modifications in our function in order to support hashing of keys:
+
 ```javascript
-    //set up a hashkey
+const fetchFoodItem = (req, res, next) => {
+  try {
+    //get the food item.
 
-    let hashKey = new Buffer.from(`${foodItem}`).toString('base64');
+    let { foodItem } = req.params;
 
-    //getting the data from cache
+    //hash the key.
 
-    client.hget(hashKey,foodItem,async (err,recipe) => {
+    let hashKey = new Buffer.from(`${foodItem}`).toString("base64");
 
-        //...the rest of the function.
+    //check the data on redis store.
 
-        //setting the data to cache.
+    client.hget(hashKey, foodItem, async (_, recipe) => {
+      if (recipe) {
+        //send the response from cache
 
-        client.hset(hashKey,foodItem,JSON.stringify(recipe.data.results));
+        return res.send({
+          success: true,
+          message: JSON.parse(recipe),
+          meta_data: "from cache",
+        });
+      } else {
+        //fetch the data.
 
-        //setting the expiration time to 24 minutes.
+        const recipe = await axios
+          .get(`http://www.recipepuppy.com/api/?q=${foodItem}`)
+          .catch(console.log);
 
-        client.expire(hashKey,1440);
+        //set the data on cache
 
-    })
+        client.hset(hashKey, foodItem, JSON.stringify(recipe.data.results));
+
+        //set the duration of cache.
+
+        client.expire(hashKey, 1440);
+
+        //send the response
+
+        return res.send({
+          success: true,
+          message: recipe.data.results,
+          meta_data: "from server",
+        });
+      }
+    });
+  } catch (err) {
+    return res.send({
+      success: false,
+      message: err,
+    });
+  }
+};
 ```
 
-- **Do we want the cache mechanism in each query**: Most of the time, we don't want caching in some parts of our application. For example, if users login into your application, you should not cache the login process. This is because the process may return a token from the  previous operation and may be expired. It is  advisable not to apply caching to data that is real-time or that is frequently updated.
+From above:
+
+- Get the food item from the request object.
+
+- Hash the food item which is the key.
+
+- Check if its record exists in the cache. If it exists, we send it to the client from the cache. If it does not, we fetch it from the API, save it to the cache, and then send it to the client.
+
+To test this:
+
+- Ensure that the development server is running.
+
+- Head over to Postman and send a request similar to: `http://localhost:3000/recipe/coffee`. Feel free to change coffee to your preference.
+
+- Send the request.
+
+- Since it is your first request after hashing, it shall save the data, and then when you send the same request again it shall access the data from the cache. The data is configured to stay in the cache for 24 minutes.
+
+- **Caching on every query**: In some instances such as authorization, caching is not advisable since data is rapidly updated. Real-time communication mechanisms do not also require caching.
 
 ### Conclusion.
-Caching is great in improving the user experience of an application. However, there are key considerations one should make while implementing caching. In this article, we have covered an introduction to caching and implemented caching on an Express.js REST API using redis. You can access the final code from [here](https://github.com/mwangiKibui/implementing-caching-in-nodejs).
+
+Caching is great in improving the user experience of an application. It enables users to access data within a short response time and with less network bandwidth. While implementing caching, software developers should keep in mind the key considerations discussed above.
+
+In this article, we have covered how to implement caching on a Node.js REST API using recipe labs API as our data source and redis as our cache.
+
+Happy coding!
