@@ -1,6 +1,6 @@
-With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. A good approach would be to split the data into "pages" and show it to the user one "page" after the other. Some restful services like [The Dog API](https://docs.thedogapi.com/) also have adopted this technique.
+With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. A good approach would be to split the data into "pages" and show it to the user one "page" after another. Some restful services like [The Dog API](https://docs.thedogapi.com/) have adopted this technique.
 
-In Android, achieving such a workflow has proved to a tedious process which can get messy if not handled well. That is where the [paging library](https://developer.android.com/topic/libraries/architecture/paging) comes in to help. It ensures a clean flow of data by observing the user's scrolling process. The basic flow is, once a user nears the end of a recyclerview, the library fetches the next set of data and updates the recyclerview. In this tutorial, we shall integrate the paging library in an Android application.
+In Android, achieving such workflow has proved to be a tedious process that can get messy if not handled well. That is where the [paging library](https://developer.android.com/topic/libraries/architecture/paging) comes in to help. It ensures a clean flow of data by observing the user's scrolling process. The basic flow is, once a user nears the end of a recyclerview, the library fetches the next set of data and updates the recyclerview. In this tutorial, we shall integrate the paging library into an Android application.
 
 **NOTE: _this tutorial uses version 2 of the paging library at the time of publishing. Version 3 is in `alpha` and not suitable for production_**
 
@@ -8,7 +8,7 @@ In Android, achieving such a workflow has proved to a tedious process which can 
 To follow through the article, you will need:
 - Android Studio installed
 - Basic understanding of Kotlin
-- Experience with the [Room library](/engineering-education/introduction-to-room-db)
+- Experience with the [Room library](/engineering-education/introduction-to-room-db).
 
 ### Step 1 — Getting the starting code
 You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d166e765a3f8107eee2745954.zip) the starting code for this tutorial on GitHub.
@@ -16,9 +16,9 @@ You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d
 In the starting code, we have a `RoomDatabase.Callback` that populates our local database with 50 users on creation. We shall be using this data to demonstrate the paging library.
 
 ### Step 2 — Reading data from Room
-In the `AppDao` interface, we have a function to read data from our database. It has a return type of `DataSource.Factory<Int, User>`. DataSource is used to load our data in form of pages into a `PagedList` once it is requested.
+In the `AppDao` interface, we have a function to read data from our database. It has a return type of `DataSource.Factory<Int, User>`. `DataSource` is used to load our data in form of pages into a `PagedList` once it is requested.
 
-The `Int` tells Room to make use of a `PositionalDataSource` object. PositionalDataSource is used where we know the size of data is known and the data it groups based on its position. If we were getting data from the network, we would make use of `PageKeyedDataSource`. This is because the data size is only known when we get a response from the network.
+The `Int` tells Room to make use of a `PositionalDataSource` object. `PositionalDataSource` is used when the size of data is known and the data is grouped based on its position. If we were getting data from the network, we would make use of `PageKeyedDataSource`. This is because the data size is only known when we get a response from the network.
 
 ### Step 3 — Setting up the adapter
 The adapter is used to connect our recyclerview to the paged data. In the `androidkt` directory, create a class called `UsersAdapter` and add the code below.
@@ -33,7 +33,7 @@ class UsersAdapter: PagedListAdapter<User, UserViewHolder>() {
     }
 }
 ```
-We infer two types in the PagedListAdapter: the data type of each list item and the viewholder.
+We infer two types in the `PagedListAdapter`: the data type of each list item and the `viewholder`.
 
 In the same file, create the `UserViewHolder` class and make it extend the `RecyclerView.ViewHolder` class.
 
@@ -41,7 +41,7 @@ In the same file, create the `UserViewHolder` class and make it extend the `Recy
 class UserViewHolder(): RecyclerView.ViewHolder()
 ```
 
-Add the following to the `onCreateViewHolder` to create the viewholder for our list item.
+Add the following to the `onCreateViewHolder` to create the `viewholder` for our list item.
 
 ```kotlin
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -63,7 +63,7 @@ override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 }
 ```
 
-We use the `getItem` method to get the item in the list based on position. In the viewholder class, add the `bind` function to add data to the UI.
+We use the `getItem` method to get the item in the list based on position. In the `viewholder` class, add the `bind` function to add data to the UI.
 
 ```kotlin
 fun bind(user: User) {
@@ -75,7 +75,7 @@ fun bind(user: User) {
 
 The application has the [coil](https://github.com/coil-kt/coil) image library set up. We load the images using the `load` extension.
 
-In a normal recyclerview setting, this would be the end of it, but we still have an error in our UsersAdapter class. The PagedListAdapter requires a `diffing` callback.
+In a normal recyclerview setting, this would be the end of it, but we still have an error in our `UsersAdapter` class. The `PagedListAdapter` requires a `diffing` callback.
 
 In the same file, add the following code:
 
@@ -90,7 +90,7 @@ private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<User>() {
 }
 ```
 
-We use the DiffUtil to check the difference in multiple lists for correct positioning and animations wherever needed. You can go through [this article](https://medium.com/@sienatime/investigating-pagedlistadapter-performance-and-diffutil-970a20285a24) for a better understanding of the purpose of this util class.
+We use the `DiffUtil` to check the difference in multiple lists for correct positioning and animations wherever needed. You can go through [this article](https://medium.com/@sienatime/investigating-pagedlistadapter-performance-and-diffutil-970a20285a24) for a better understanding of the purpose of this util class.
 
 And our adapter is now ready to be used.
 
@@ -102,7 +102,7 @@ private val dao = AppDatabase.getDatabase(application).dao()
 val users = dao.getUsers().toLiveData(pageSize = 10)
 ```
 
-We pass in the page size to define how many items will be emitted at once. So our data will have 5 pages or rather, 5 `PageList` objects will be emitted.
+We pass in the page size to define how many items will be emitted at once. So, our data will have 5 pages or rather, 5 `PageList` objects will be emitted.
 
 Create an instance of our adapter. Then observe the value in the `MainActivity`. Once a value is emitted, submit the list to the adapter.
 
@@ -110,7 +110,7 @@ Create an instance of our adapter. Then observe the value in the `MainActivity`.
 viewModel.users.observe(this, { usersAdapter.submitList(it) })
 ```
 
-Create the binding object for the MainActivity and set content layout. Use the binding object to get the recyclerview and set the adapter.
+Create the binding object for the `MainActivity` and set content layout. Use the binding object to get the recyclerview and set the adapter.
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -135,4 +135,4 @@ Once you run the application, you should get a list of the users.
 **NOTE: _Don't forget to add the internet permission in the application manifest for the image downloading_**
 
 ### Conclusion
-That is how you implement the paging library in an android application. The setup is similar to the recyclerview setup and is also quite easy. The library also ensures a good flow of data when updating your list. Next up we shall check on migrating to paging library version 3.You can go ahead and check the final code on [GitHub](https://github.com/LinusMuema/kotlin/tree/paging-2).Feel free to raise any issue or PR.
+That is how you implement the paging library in an android application. The setup is similar to the recyclerview setup and is also quite easy. The library also ensures a good flow of data when updating your list. Next up we shall check on migrating to paging library version 3. You can go ahead and check the final code on [GitHub](https://github.com/LinusMuema/kotlin/tree/paging-2). Feel free to raise any issue or PR.
