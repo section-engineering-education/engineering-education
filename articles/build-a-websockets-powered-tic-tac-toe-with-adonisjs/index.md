@@ -344,3 +344,7 @@ In this article, we learned about the WebSocket protocol. We saw the details of 
 1. [Wikipedia Article on WebSockets](https://en.wikipedia.org/wiki/WebSocket)
 2. [Mozilla Docs on the WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 3. [Internet Engineering Task Force (IETF) Websocket Protocol](https://tools.ietf.org/html/rfc6455)
+
+---
+Peer Review Contributions by: [Wilson Gichuhi](engineering-education/authors/wilson-gichuhi/)
+
