@@ -5,7 +5,7 @@ Description: A crash course on how to secure a Spring Boot application.
 
 ### Introduction
 
-Whenever we build an application, security isn’t exactly the first thing we think about. Yet, it is one of the most important features that needs your attention. In this article, we will cover some key ways to secure your apps with Spring Security. I know security might seem a little daunting especially if you are focused on the bigger picture. Knowing this I tried to make a simple all-in-one guide that would have helped me when I was learning this.
+Whenever we build an application, security isn’t exactly the first thing we think about. Yet, it is one of the most important features that need your attention. In this article, we will cover some key ways to secure your apps with Spring Security. I know security might seem a little daunting especially if you are focused on the bigger picture. Knowing this I tried to make a simple all-in-one guide that would have helped me when I was learning this.
 
 ### Prerequisites
 
