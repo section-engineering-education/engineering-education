@@ -113,10 +113,7 @@ We will add **Axios** library to our project the by adding the CDN script tag be
 
 ```
 
-
-
-
-Adding event listener to the form and sending form data to Django serverside. Add these code snippets below the Axios script tag.
+Let us add an event listener to the form to send data to Django serverside. Add these code snippets below the Axios script tag.
 
 ```html
 <script>
@@ -141,10 +138,10 @@ form.addEventListener('submit', function(event) { // 1
 ```
 The above code:
    - 1 - Adds a submit event listener to the form.
-   - 2 - Creating a new Form in JavaScript.
+   - 2 - Creates a new form in JavaScript.
    - 3 - Adds a CRSF token, if we do not include this we get a 403 forbidden response we won’t be able to submit the form data.
    - 4 - Here we use **Axios.post** method to submit form data.
-   - 5 - A alert message **Form Submitted** pop on your windows if the form submitted successfully.
+   - 5 - An alert message `Form Submitted` pop on your windows if the form is submitted successfully.
    - 6 - This catches and displays the error in the console if an error occurs when submitting the form.
 
 ### Handling Post Request in Django views.
@@ -166,7 +163,7 @@ def createNote(request):
 
 ```
 
-In the `note/ursl.py` edit the code to look like below
+In `note/ursl.py` edit the code to look like below
 ```python
 from django.urls import path 
 from .views import *
@@ -186,4 +183,4 @@ $ python manage.py runserver
 
 Fill in the form and submit it. You should see an alert message pop up in your browser, Saying `Form Submitted`.
 
-Navigate to **http://127.0.0.1:8000/notes/** in your browser if your form works as expected, you should see the details of the note you submitted.
+Navigate to **http://127.0.0.1:8000/notes/** in your browser. If your form works as expected, you should see the details of the note you submitted.
