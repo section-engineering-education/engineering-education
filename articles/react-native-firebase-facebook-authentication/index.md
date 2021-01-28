@@ -338,3 +338,88 @@ async function signIn() {
 }
 ```
 
+### Display Authenticated Screen
+
+The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
+
+You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
+
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` which were copied from Google to Firebase.
+
+To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
+
+Let's create a state to track whether the user is authenticated or not. We should set the default value to `false`.
+
+```JSX
+const [authenticated, setAutheticated] = useState(false);
+```
+
+Let's set the `authenticated` state to `true` if the `user` object is not `null` in the `onAuthStateChanged` handler.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAutheticated(true);
+  }
+})
+```
+
+If the user is authenticated, we should display the *Authenticated* screen. 
+
+```JSX
+if (authenticated) {
+  return <Authenticated />;
+}
+return <Authentication signIn={signIn} />;
+```
+
+I'm using `auth().currentUser` in the *Authenticated* screen to display the email ID, name, and the user's profile picture.
+
+```JSX
+const user = auth().currentUser;
+return (
+  <View style={styles.screen}>
+    <Text style={styles.title}>You're Logged In</Text>
+    <Image source={{ uri: user?.photoURL }} style={styles.image} />
+    <Text style={styles.text}>{user?.displayName}</Text>
+    <Text style={styles.text}>{user?.email}</Text>
+    <View style={{ marginTop: 30 }}>
+      <Button title="Signout" onPress={() => auth().signOut()} />
+    </View>
+  </View>
+);
+```
+
+![Auth Screen](auth_screen.gif)
+
+### Sign out
+
+We should use the `signOut` method in the auth module to sign out a user from the application.
+
+Let's import the `auth` module in *Authenticated.js*.
+
+```JSX
+import auth from '@react-native-firebase/auth';
+```
+
+Let's call the `signOut` method when the user presses the signout button.
+
+```JSX
+<Button title="Signout" onPress={() => auth().signOut()} />
+```
+
+Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
+
+Thus, we should set the authenticated state to `false` if we receive `null`.
+
+```JSX
+auth().onAuthStateChanged((user) => {
+  if(user) {
+    setAuthenticated(true);
+  } else {
+    setAuthenticated(false);
+  }
+})
+```
+
+![Signout](signout.gif)
