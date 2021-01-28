@@ -6,7 +6,7 @@ url: /engineering-education/blockchain-consensus-protocols/
 title: An Overview of Consensus Protocols in Blockchain
 description: This article will be a discussion about the various consensus protocols and how they are used in a Blockchain.
 author: lalithnarayan-c
-date: 2021-01-28T00:00:00-10:00
+date: 2021-01-28T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -32,7 +32,7 @@ The technology allows one to verify the transactions via [cryptographic hash fun
 
 Consensus protocols form the backbone of blockchain by helping all the nodes in the network verify the transactions. Bitcoin uses proof of work (PoW) as its consensus protocol, which is energy and time-intensive. The rate of verification of transactions in Bitcoin is relatively slow compared to Visa and MasterCard's likes. Therefore, alternate consensus protocols were proposed. 
 
-All the crypto-currencies and other blockchain applications, also known as decentralized applications (dApps), vary in how the network reaches a consensus. dApps use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
+All the crypto-currencies and other blockchain applications, also known as [decentralized applications (dApps)](https://en.wikipedia.org/wiki/Decentralized_application), vary in how the network reaches a consensus. dApps use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
 
 ### Types of consensus protocols
 Before we move on to the consensus protocols, let us examine a statistical fact related to consensus protocols. Theoretically, the blockchain is considered compromised if a hacker gets access to 51% or a more significant part of the network. The various types of consensus protocols solve the 51% attack problem in various ways.
