@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-create-a-dataset-for-machine-learning/
+title: How to Create a Dataset for Machine Learning
+description: This article gives an overview of how datasets are created for Machine Learning models.
+author: willies-ogola
+date: 2021-01-28T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-create-a-dataset-for-machine-learning/hero.jpg
+    alt: Machine Learning (ML) Datasets example image
+---
+Machine Learning (ML) has had a profound influence on a diverse range of applications. This has been possible mainly due to better computing power and large amounts of training data. I cannot emphasize enough the importance of training data to ML systems.
+<!--more-->
+In fact, most of the machine learning models' problems aren't caused by the models but by issues in the dataset. And yet, the process in which a dataset is created is an underrated topic. This is because creating and improving datasets is a human task and tends to be very time-consuming. In the world of artificial intelligence, tasks that require human labor aren't considered exciting.
+
 ### Table of Contents
 
 1. [Prerequisites](#prerequisites)
@@ -10,13 +29,9 @@
 
 ### Prerequisites
 
-Before reading this article, a reader needs to have knowledge in Artificial Intelligence and Machine Learning. If you're still a beginner, feel free to read my previously published [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) explaining the difference between Artificial Intelligence and Machine Learning
+Before reading this article, the reader needs to have a little knowledge in Artificial Intelligence and Machine Learning. If you're still a beginner, feel free to read my previously published [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) explaining the difference between Artificial Intelligence and Machine Learning.
 
 ### Introduction
-
-Machine Learning (ML) has had a profound influence on a diverse range of applications. This has been possible mainly due to better computing power and large amounts of training data. I cannot emphasize enough the importance of training data to ML systems.
-
-In fact, most of the machine learning models' problems aren't caused by the models but by issues in the dataset. And yet, the process in which a dataset is created is an underrated topic. This is because creating and improving datasets is a human task and tends to be very time-consuming. In the world of artificial intelligence, tasks that require human labor aren't considered exciting.
 
 In any case, before we train a model, we need a dataset. There are many publicly available datasets that one can use in a project.
 
