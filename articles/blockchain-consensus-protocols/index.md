@@ -16,9 +16,7 @@ images:
 ---
 Satoshi Nakamoto introduced an exciting application called Bitcoin after the great recession in 2008. This was one of the first real applications of blockchain technology. 
 <!--more-->
-
 Also known as distributed ledger technology, blockchain stands out as a promising solution due to the following properties:
-
 - Security
 - Accountability
 - Distributed
@@ -28,7 +26,6 @@ Also known as distributed ledger technology, blockchain stands out as a promisin
 This article will discuss the role of consensus protocols in blockchain technology and dive deeper into the various consensus protocols. 
 
 ### Introduction
-
 Blockchain technology is a distributed ledger to record any transactions that happen over the network. The concept of decentralization is deeply engraved into the design of blockchain technology. Decentralization means there is no major entity keeping track of the transactions, and instead, it is distributed across many nodes in the network. 
 
 The technology allows one to verify the transactions via [cryptographic hash functions](/engineering-education/understand-hashing-in-cryptography/). Hash functions are special functions that generate unique values for unique inputs. The underlying assumption is that the record present with most nodes is likely to be the least fallible. 
@@ -38,44 +35,38 @@ Consensus protocols form the backbone of blockchain by helping all the nodes in 
 All the crypto-currencies and other blockchain applications, also known as decentralized applications (dApps), vary in how the network reaches a consensus. dApps use a peer-to-peer (P2P) network of computers instead of a centralized node or server. Another aspect of dApps is the lack of centralized authority. Most of the standard applications we use today are governed by a group of individuals or companies who define the terms of use. dApps are a step in creating decentralized systems at scale. 
 
 ### Types of consensus protocols
-
 Before we move on to the consensus protocols, let us examine a statistical fact related to consensus protocols. Theoretically, the blockchain is considered compromised if a hacker gets access to 51% or a more significant part of the network. The various types of consensus protocols solve the 51% attack problem in various ways.
 
 #### Proof of Work
-
 Proof of work is one of the first consensus protocols used in blockchain applications. It is based on computing the hash values and validating the transactions until a specified number of trailing zeros are found in the hash value. The number that generates the hash with the specified number of trailing zeros is known as a nonce. A nonce is defined as a random number that generates the specified number of trailing zeros in the hash function. 
 
 ##### Properties
-
 - Proof of Work is designed for permissionless public ledgers and uses the computational resources from the systems in the node to reach consensus
 - The blocks are represented in a linear structure. Each block represents a group of transactions.
 - The mining aspect of bitcoins is solving the cryptographic puzzle of finding a random integer, which leads to hashes with a specified number of leading zeros. 
 - Every transaction is validated and signed using the public and private keys assigned to each user. 
 
-##### Disadvantages
-
+#### Disadvantages
 - It is a power-hungry and resource-intensive protocol. This protocol wastes a lot of computational power and electricity to solve the cryptographic puzzles compared to the relatively efficient protocols.
 
-##### Popular Crypto-currencies
-
+#### Popular Crypto-currencies
 Bitcoin and Litecoin are two prominent cryptocurrencies using Proof of Work. These are energy-intensive algorithms. The idea behind making the computation of such transactions costly and verification of transactions cheap is as follows: 
 
 An asymmetry between the verification and updation of ledgers results in more comfortable access to the ledger and greater resistance to changing values in the ledger. The asymmetry is also a disadvantage. PoW algorithms require humongous amounts of power and resources. Moreover, small players with less amount of resources are penalized for having a lower amount of resources, and therefore the aim of decentralization is hit.
 
 #### Proof of Stake
-
 Ethereum was one of the largest cryptocurrencies to decide to move onto proof of stake consensus. Let us understand the example intuitively. Let us say we are miners and are validating the transactions made. In bitcoin, a person validates the transactions by computing the hash value with a certain number of leading zeros gets the allocated amount of bitcoins. 
 
 In proof of stake consensus, a validator is picked and assigned a block. The miner has to allocate a particular part of his cryptocurrency to start validating. If the miner succeeds in invalidating the transaction, then the award is the stake they had pledged initially, along with certain transaction fees. This is a way to penalize bad behavior and incentivize good behavior. 
 
-##### Properties
+#### Properties
 
 - The validators are picked according to their economic stake in the network
 - The objective is to avoid centralization of mining centers and provide a chance to validate to all the miners
 - It is environmentally friendly as there is no computational puzzle to be solved
 - Special hardware for mining is not required
 
-##### Disadvantages
+#### Disadvantages
 - In PoS, an attacker would need to possess greater than 50% of the currency to gain control over the network compared to 51% in PoW.
 - One of the possible attacks over a PoS consensus-based network is a bribe attack. This happens when the attacker reverses the victim's transactions and bribes the miners for confirming the transactions. 
 
@@ -88,32 +79,28 @@ PoSpace consumes disk space and incentivizes miners with the most considerable d
 
 All the feasible solutions to the problem are generated randomly, called plots. These plots are stored on the disks and solved using an algorithm called Shabal's algorithm. Once the solutions are computed, the miners compare their solutions, and the solution with the best time and space complexity is rewarded with the next block.
 
-##### Disadvantages
-
+#### Disadvantages
 - This consensus protocol again favors the miners with the maximum amount of space. It is resource biased, and therefore, miners with less amount of space cannot participate actively. This is a problem that goes against the concept of decentralization. 
 
-##### Applications
+#### Applications
 - Burstcoin is a decentralized cryptocurrency built using PoSpace. The value proposition is to aid payment systems. 
 - SpaceMint is another example in its early conceptual stages.
 
 
 #### Proof of Elapsed Time
-
 Proof of Elapsed time is a network consensus protocol developed by Intel Corporation. The algorithm is predominantly used in permissioned blockchain ledgers. The hardware used in PoET is specially designed for this protocol. For example, Intel Software Guarded Extension (SGX) is used in networks using PoET. 
 
 This consensus protocol is used to allocate blocks to miners on the network. In permissioned blockchain systems, the miners' identity is determined before allowing access into the network. Therefore, anonymity is not achieved in this protocol. 
 
 Each node in the network is assigned a random waiting time. The first node to complete the randomly chosen period validates the new block. The specialized hardware puts the processor to sleep during the wait time—this repeats over all the blocks in the network. 
 
-##### Disadvantages
+#### Disadvantages
 - The major disadvantage of this algorithm is its dependency on specialized hardware. This exposes it to various security vulnerabilities due to the lack of standardized and tried and tested protocols.
   
-##### Applications
-
+#### Applications
 - IBMs Hyperledger Sawtooth supports PoET mechanism for custom blockchain applications development.
 
 ### Conclusion
-
 In this article, we have analyzed and discussed the various consensus protocols and their properties. I hope this article helps generate curiosity in the subject of blockchain in general. There is a huge scope of research in the field of blockchain to make it faster and efficient. Happy learning. 
 
 ---
