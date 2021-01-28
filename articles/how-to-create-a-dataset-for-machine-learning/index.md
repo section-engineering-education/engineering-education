@@ -92,17 +92,9 @@ BoostClean automatically detects and repairs errors in data using statistical bo
 
 MLClean is the most recent data cleaning framework. The framework performs three main tasks: 
 
-- Data sanitization
-
-This is the process of removing poisoned data before it is used for training.
-
-- Traditional data cleaning 
-
-This process involve performing traditional data cleaning techniques such as removing duplicated data and adjusting values to correct ranges. 
-
-- Unfairness mitigation in data. 
-
-This process involves removing unfairness in data e.g., bias against people from certain demographics or discrimination based on gender.  
+- Data sanitization - This is the process of removing poisoned data before it is used for training.
+- Traditional data cleaning - This process involve performing traditional data cleaning techniques such as removing duplicated data and adjusting values to correct ranges. 
+- Unfairness mitigation in data - This process involves removing unfairness in data e.g., bias against people from certain demographics or discrimination based on gender.  
 
 The framework also cleans data to achieve robust, accurate, and fair models.     
 
