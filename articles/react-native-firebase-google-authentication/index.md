@@ -3,7 +3,7 @@ In this tutorial, we will learn how to authenticate users with their Google acco
 
 ### Firebase
 
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
+Firebase is a platform developed by Google for creating mobile and web applications. It was an independent company founded in 2011. In 2014, Google acquired the platform and now it's their flagship offering for application development.
 
 ### Authentication Module
 
@@ -192,7 +192,7 @@ GoogleSignin.configure({
 
 Now, that we have initialized the Google SDK, let's work on authenticating the user.
 
-In the starter code, I've set up a function called `onGoogleButtonPress` in *App.js* file. This function in passed down to the *Authentication* screen as a prop, and then, it is set as the `onPress` property of the Google Sign-in button. Thus, this function in the *App.js* file will be called when the Google sign-in button is pressed by the user.
+In the starter code, I've set up a function called `onGoogleButtonPress` in the *App.js* file. This function is passed down to the *Authentication* screen as a prop, and then, it is set as the `onPress` property of the Google Sign-in button. Thus, this function in the *App.js* file will be called when the Google sign-in button is pressed by the user.
 
 Let's write the code to sign-in the user in the `onGoogleButtonPress` function.
 
@@ -224,7 +224,7 @@ With the Google credential that we have created for the user, we should use the 
 return auth().signInWithCredential(googleCredential);
 ```
 
-This is complete code for the `onGoogleButtonPress` function.
+This is the complete code for the `onGoogleButtonPress` function.
 
 ```JSX
 async function onGoogleButtonPress() {
@@ -245,7 +245,7 @@ The `onAuthStateChanged` event will be triggered whenever the authentication sta
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
-You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email` and `photoURL` which were copied from Google to Firebase.
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` which were copied from Google to Firebase.
 
 To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
@@ -275,7 +275,7 @@ if (authenticated) {
 return <Authentication onGoogleButtonPress={onGoogleButtonPress} />;
 ```
 
-I'm using `auth().currentUser` in the *Authenticated* screen to display the email ID, name and the user's profile picture.
+I'm using `auth().currentUser` in the *Authenticated* screen to display the email ID, name, and the user's profile picture.
 
 ```JSX
 const user = auth().currentUser;
