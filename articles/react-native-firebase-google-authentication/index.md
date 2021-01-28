@@ -3,13 +3,13 @@ In this tutorial, we will learn how to authenticate users with their Google acco
 
 ### Firebase
 
-Firebase is a platform developed by Google for creating mobile and web applications. It was an independent company founded in 2011. In 2014, Google acquired the platform and now it's their flagship offering for application development.
+Firebase is a platform developed by Google for creating mobile and web applications. It was an independent company founded in 2011. In 2014, Google acquired the platform, and now it's their flagship offering for application development.
 
 ### Authentication Module
 
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
 
-The native Firebase SDKs ensure that a user's authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
+The native Firebase SDKs ensure that a user's authentication state between app sessions persists. The user can clear their authentication state by clearing the app's data/cache.
 
 ### Prerequisites
 
