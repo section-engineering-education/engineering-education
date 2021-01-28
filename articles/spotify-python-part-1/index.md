@@ -55,8 +55,7 @@ If you have never installed a virtual environment before or the line above doesn
 
 `~/PythonScripts/spotipy_tutorial >> virtualenv venv`
 
-**Why create a venv?** 
-
+#### Why create a venv?
 Creating a virtual environment is usually overlooked by beginner programmers, yet this can be a bad mistake to make. New versions of Python are released almost every year and this can cause problems when you want to return to a project. Modules start to become incompatible with the new versions of Python and your code begins to break. 
 
 It is much harder to fix your program after it breaks (especially after 6+ months of not reading your code). Additionally, some modules can have bugs that can do some nasty stuff to your system. By creating a self-contained directory you can avoid  stress and worry. 
