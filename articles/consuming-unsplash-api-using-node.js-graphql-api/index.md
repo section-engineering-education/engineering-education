@@ -1,6 +1,8 @@
+### Consuming Unsplash API using Node.js graphql API
+
 Unsplash is a photography sharing application. It has millions of users who post photos related to different topics every day. It is estimated to have more than two million photos. With the need to bring their services closer to developers, Unsplash released their developer API. With over six billion requests per month, it provides an infrastructure for developers to build an experience for their users using services provided by Unsplash. In this article, we will walk through the steps of creating an Unsplash developer account and implement various functionalities of the API on a Graphql API.
 
-#### prerequisites.
+#### prerequisites
 
 To follow along in this article, it is helpful to have the following:
 
@@ -28,7 +30,7 @@ To follow along in this article, it is helpful to have the following:
 
 - [Important take aways](#important-take-aways)
 
-### Creating an Unsplash developer account.
+### Creating an Unsplash developer account
 
 If you already have an Unsplash developer account, ensure that you are logged in from the [Unsplash developer site](https://unsplash.com/developers). Else follow the following steps:
 
@@ -54,19 +56,27 @@ If you already have an Unsplash developer account, ensure that you are logged in
 
 - With that, you are ready for the next step.
 
-### Setting up the development server.
+### Setting up the development server
 
-To follow along, clone this [Github repository](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, there is the start and the final folder. The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. On your cloned folder, navigate to the start folder and run the following command to install the necessary dependencies.
+To follow along, clone this [Github repository](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, there is the start and the final folder. The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. Tp get started, follow the following guidelines:
+
+- Shift to the start folder:
+
+```bash
+cd ./start
+```
+
+- Install the necessary dependencies:
 
 ```bash
 npm install
 ```
 
-To be able to understand the functionalities following, I recommend going through the schema folder to get to know the different types and how data is structured.
+- Head over to your [Unsplash developer account](https://unsplash.com/oauth/applications), select the application you created, scroll down to the keys section, and copy the `Access Key` to the `.env` file.
 
-### Fetching photos.
+- Go through the schema folder to get to know the different types and how data is structured.
 
-Before proceeding, head over to your [Unsplash developer account](https://unsplash.com/oauth/applications), select the application you created, scroll down to the keys section, and copy your `Access Key` to the `.env` file.
+### Fetching photos
 
 On the resolvers folder, open the `image.js` file and add the functionality of fetching photos:
 
@@ -124,15 +134,14 @@ npm run dev
 query GetPhotos {
     getPhotos(page:1,perPage:3){
         image {
-            created_at
-            description
-            link
+            url
             id
+            link
+            created_at
         }
         user {
             name
             username
-            profile_image
         }
     }
 }
@@ -144,9 +153,11 @@ query GetPhotos {
 
 - Hit the play button and observe the results.
 
-### Fetching a single photo.
+- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
 
-In the same `image.js`, we add up the functionality of fetching a single photo:
+### Fetching a single photo
+
+In the same `/resolvers/image.js` file, we add up the functionality of fetching a single photo:
 
 ```javascript
 
@@ -189,15 +200,14 @@ To test the above functionality:
 query GetImage {
     fetchImage(photoId:"any_id"){
         image{
+            url
+            id 
+            link 
             created_at
-            description
-            link
-            id
         }
         user {
             name
             username
-            profile_image
         }
     }
 }
@@ -209,7 +219,9 @@ query GetImage {
 
 - Hit the play button and observe the results.
 
-### Searching for photos based on the topic.
+- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
+
+### Searching for photos based on the topic
 
 Based on a topic, we can be able to get relevant photos from Unsplash API.  Let's add the functionality on the `image.js` file:
 
@@ -260,16 +272,15 @@ query SearchPhotos{
     searchPhotos(key:"enter_any_topic",page:1,perPage:3,orientation:"portrait"){
 
         image {
-            created_at
-            description
-            link
             id
+            url
+            link 
+            created_at
         }
 
         user {
             name
             username
-            profile_image
         }
 
     }
@@ -283,7 +294,9 @@ query SearchPhotos{
 
 - Hit the play button and observe the results.
 
-### Fetching user details.
+- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
+
+### Fetching user details
 
 A user is the one who uploaded a photo to Unsplash. Based on that, we can get user details from the API.
 
@@ -326,9 +339,6 @@ To test the above functionality:
 query GetUserDetails{
     getUserDetails(username:"enter_any_username"){
         name
-        profile_image
-        location
-        bio
         username
         total_photos
     }
@@ -341,7 +351,9 @@ query GetUserDetails{
 
 - Hit the play button and observe the results.
 
-### Fetching user photos.
+- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
+
+### Fetching user photos
 
 Apart from fetching the details, we can also fetch the photos uploaded by a particular user from the API.
 
@@ -397,18 +409,15 @@ query GetUserPhotos {
     getUserPhotos(username:"enter_any_username",page:1,perPage:3,orientation:"portrait"){
 
         image {
-            created_at
-            description
-            url
             id
+            url
+            link 
+            created_at
         }
 
         user {
             name
-            profile_image
             username
-            bio
-            location
         }
     }
 }
@@ -421,13 +430,15 @@ query GetUserPhotos {
 
 - Hit the play button and observe the results.
 
-### Important takeaways.
+- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
+
+### Important takeaways
 
 - The Unsplash API sends a lot of data on a single query. Therefore, you need to have your own schema so that you can extract only the data that you need.
 
 - [Unsplash official docs](https://github.com/unsplash/unsplash-js) support more functionalities than the ones discussed above.
 
-### Conclusion.
+### Conclusion
 
 A simple JSON API from Unsplash makes the difference summing up to more than six billion requests every month. The ease of use of the API makes peace with every software developer interested in exploring it. It is by far the best API for exploring stock photography.
 
