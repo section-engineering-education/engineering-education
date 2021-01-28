@@ -242,7 +242,7 @@ import React, { useState } from 'react';
 const [confirm, setConfirm] = useState(null);
 ```
 
-Now, let's write a function that accepts a phone number as an argument and calls the` signInWithPhoneNumber` function with the given phone number. 
+Now, let's write a function that accepts a phone number as an argument and calls the `signInWithPhoneNumber` function with the given phone number. 
 
 We should use `async/await` to wait for the promise to be resolved. If the promise is resolved, let's set the returned `confirmation` method to the `confirm` state using the `setConfirm` method.
 
