@@ -390,7 +390,7 @@ return (
 );
 ```
 
-![Auth Screen](auth_screen.gif)
+![Auth Screen](signin.gif)
 
 ### Sign out
 
