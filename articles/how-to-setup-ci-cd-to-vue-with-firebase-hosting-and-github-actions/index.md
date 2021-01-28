@@ -16,7 +16,7 @@ images:
 ---
 Most of the software development workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. 
 
-Well, the solution to this is to automate the entire deployment process. And, this can be done by applying CI/CD to our project. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The bottom line is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
+Well, the solution to this is to automate the entire deployment process. This can be done by applying CI/CD to a project. Here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The bottom line is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
 
 - Setting up the Vue project.
 - Pushing the Vue project to the GitHub repository.
@@ -151,7 +151,7 @@ First, it will ask us for the Firebase CLI feature that we want to set up in our
 
 ![create new firebase cli app](7-create-new-firebase-cli-app.jpg)
 
-Since we are going to link the Firebase hosting, we at least need to select the Hosting feature. Since,
+Since we are going to link the Firebase hosting, we at least need to select the Hosting feature.
 
 After that, we will be asked to select the Firebase Project. For this, we need to select the Firebase project from the existing list of projects in our Firebase console. Since we already have a Firebase project **`vue-cicd`** created in the earlier steps, we need to make sure to select that one. 
 
@@ -218,6 +218,6 @@ The changes will be deployed live in the hosted website [demo here](https://vue-
 
 ### Recap
 
-Well, the overall objective of the article was to get ourselves familiar with CI/CD  with Vue.js project, Firebase, and GitHub actions workflows. This tutorial article delivered the detailed stepwise concepts of how to configure the CI/CD process. The major step revolved around the configuration of Firebase Hosting with GitHub workflows. The steps are simple and easy to understand and apply. All the manual work for iteratively building and deploying to the live server is nullified by this process. The only work we have to do is to push our changes and merge the changes to the master branch. The rest of the operation is automatically handled by Firebase and GitHub action scripts. 
+The overall objective of the article was to get ourselves familiar with CI/CD  with Vue.js project, Firebase, and GitHub actions workflows. This tutorial article delivered the detailed stepwise concepts of how to configure the CI/CD process. The major step revolved around the configuration of Firebase Hosting with GitHub workflows. The steps are simple and easy to understand and apply. All the manual work for iteratively building and deploying to the live server is nullified by this process. The only work we have to do is to push our changes and merge the changes to the master branch. The rest of the operation is automatically handled by Firebase and GitHub action scripts. 
 
 There is so much more to GitHub actions workflows that we can explore. Remember that we also included the testing configurations in our setup of the Vue project at the beginning. We can also trigger the automatic Unit and E2E testing using the workflow scripts while merging before the deployment. This will easily identify any errors or bugs in the changes automatically without having to do manual testing. Hence, this is highly advantageous in the case of an overall software development cycle.
