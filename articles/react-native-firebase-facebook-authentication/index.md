@@ -109,15 +109,73 @@ Finally, We should install the `@react-native-firebase/app` package in our app t
 npm install @react-native-firebase/app
 ```
 
+### Setting up Facebook App
+
+Head to [developers.facebook.com](https://developers.facebook.com/) and create a developer account. 
+
+Go to the [Apps](https://developers.facebook.com/apps) section and create a new app.
+
+![Create FB App](create_app.png)
+
+Once you create an application, you will be greeted with the App Dashboard. Add the Facebook Login product to your app from the dashboard.
+
+![App Dashboard](fb_dashboard.png)
+
+To find the App ID and the App secret, which will be required in the later steps, head to basic settings.
+
+![app_secret](app_secret.png)
+
+Once you make a copy of it, Scroll down until you find **Add Platform**.
+
+![add_platform](add_platform.png)
+
+Once you click on it, Select Android. Fill out the **Package Name**, which you can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+
+For the **Class Name**, fill it out as `MainActivity`.
+
+For the **Key Hash**, you need to generate it using [openSSL](https://www.openssl.org/). You can download it from [Google Code Archive](https://code.google.com/archive/p/openssl-for-windows/downloads). Download the **K** version.
+
+![OpenSSL](openssl.png)
+
+Once you've downloaded it, extract it and copy the folder to `C:/`.
+
+Detect your `keytool.exe`, which can be found in the JDK directory inside the `bin/` directory. It's usually in a location like `C:\Program Files\Java\jdk1.8.0_261\bin`.
+
+Now, inside the `bin/` folder, run:
+
+```bash
+keytool -exportcert -alias androiddebugkey -keystore "C:\Documents and Settings\Administrator.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary |"C:\OpenSSL\bin\openssl" base64
+```
+
+Output:
+
+```bash
+4iuaxR+bpCEhMEQslBTwAePpz74=
+```
+
+Refer to this [StackOverflow Question](https://stackoverflow.com/questions/7506392/how-to-create-android-facebook-key-hash) for more details on how to generate a Key Hash.
+
+![FB Android App](fb_android_app.png)
+
+For iOS setup, refer to this [Quick Start](https://developers.facebook.com/quickstarts/?platform=ios) Guide.
+
 ### Setting up Firebase Authentication
 
 Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
 ![Get Started Auth](auth_get_starterd.png)
 
-Next, you should enable phone authentication in the sign-in methods. Once you've enabled it, press save.
+Next, you should enable Facebook authentication in the sign-in methods. Once you've enabled it, you should provide the App ID and the App secret from the Facebook Developer Console and press Save.
 
 ![Signin-method](enable_fb_auth.png)
+
+To complete set up, you should OAuth redirect URI to your Facebook app configuration.
+
+Copy the OAuth redirect URI and head to the Facebook Developer console.
+
+Under Products, head to Settings in Facebook Login. Paste the redirect URI under Valid OAuth Redirect URIs in Clien OAuth Settings.
+
+![Redirect URI](redirect_uri.png)
 
 Now, let's head to the application and install the auth module.
 
