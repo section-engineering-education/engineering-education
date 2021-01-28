@@ -1,4 +1,4 @@
-Python is among the most popular programming languages in the world. Python is ranked high in different StackOverflow programming surveys each year. This article helps beginners familiarize themselves with the basic concepts of Python.  
+Python is among the most popular programming languages in the world. It is ranked high in different StackOverflow programming surveys each year. This article helps beginners familiarize themselves with the basic concepts of Python.  
 
 ### Introduction
 According to the official [documentation](https://www.python.org/), Python is a high-level and general-purpose programming language. It is a preferred programming language for many developers due to its wide range of libraries. Individuals can use these libraries to create complex applications rather than building everything from scratch. Other reasons why developers love Python is due to its simplicity, flexibility, and versatility. Today, Python is being used in upcoming fields such as machine learning and artificial intelligence.
