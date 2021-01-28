@@ -247,3 +247,94 @@ Next, add a `meta-data` to the `application` element:
 </application>
 ```
 
+Follow this [Getting Started Guide](https://developers.facebook.com/docs/ios/getting-started/?sdk=cocoapods) to set up the SDK for iOS.
+
+### Sign-in
+
+In *App.js*, Let's create a function called `signIn` which will be called when the user presses the Sign in button. Let's wrap all the code inside the function in a `try/catch` block to display any error that may arise during the sign in flow.
+
+```JSX
+async function signIn() {
+  try {
+
+    // Code goes here
+
+  } catch (error) {
+    alert(error);
+  }
+}
+```
+
+Let's use the Login Manager to log in with permissions. We need to pass a array of permissions that the app needs to the function.
+
+```JSX
+const result = await LoginManager.logInWithPermissions([
+  'public_profile',
+  'email',
+]);
+```
+
+If the result contains an `isCancelled` propery, it means the user cancelled process. Let's throw an error which will then be handled by `catch` block.
+
+```JSX
+if (result.isCancelled) {
+  throw 'User cancelled the login process';
+}
+```
+
+Once signed in, we should get the users AccesToken.
+
+```JSX
+const data = await AccessToken.getCurrentAccessToken();
+```
+
+If the data is empty, let's throw an error.
+
+```JSX
+if (!data) {
+  throw 'Something went wrong obtaining access token';
+}
+```
+
+Now, we should create a credential using the access token and sign in the user into the app.
+
+```JSX
+const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken,);
+return auth().signInWithCredential(facebookCredential);
+```
+
+Here is the complete code for the signIn function:
+
+```JSX
+async function signIn() {
+  try {
+    // Attempt login with permissions
+    const result = await LoginManager.logInWithPermissions([
+      'public_profile',
+      'email',
+    ]);
+
+    if (result.isCancelled) {
+      throw 'User cancelled the login process';
+    }
+
+    // Once signed in, get the users AccesToken
+    const data = await AccessToken.getCurrentAccessToken();
+
+    if (!data) {
+      throw 'Something went wrong obtaining access token';
+    }
+
+    // Create a Firebase credential with the AccessToken
+    const facebookCredential = auth.FacebookAuthProvider.credential(
+      data.accessToken,
+    );
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(facebookCredential);
+  } catch (error) {
+    alert(error);
+  }
+}
+```
+
