@@ -24,6 +24,9 @@ We'll be going through these steps in this article:
 3. [Setting up the Firebase project](#setting-up-the-firebase-project).
 4. [Setting up Firebase Authentication](#setting-up-firebase-authentication).
 5. [Sign-in](#sign-in)
+6. [Display authenticated screen](#display-authenticated-screen)
+7. [Sign out](#sign-out)
+8. [Recap](#lets-recap)
 
 ### Development environment
 
@@ -236,13 +239,13 @@ async function onGoogleButtonPress() {
 }
 ```
 
-### Authenticated Screen
+### Display Authenticated Screen
 
 The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
-You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. 
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email` and `photoURL` which were copied from Google to Firebase.
 
 To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
@@ -272,7 +275,26 @@ if (authenticated) {
 return <Authentication onGoogleButtonPress={onGoogleButtonPress} />;
 ```
 
-### Signout
+I'm using `auth().currentUser` in the *Authenticated* screen to display the email ID, name and the user's profile picture.
+
+```JSX
+const user = auth().currentUser;
+return (
+  <View style={styles.screen}>
+    <Text style={styles.title}>You're Logged In</Text>
+    <Image source={{ uri: user?.photoURL }} style={styles.image} />
+    <Text style={styles.text}>{user?.displayName}</Text>
+    <Text style={styles.text}>{user?.email}</Text>
+    <View style={{ marginTop: 30 }}>
+      <Button title="Signout" onPress={() => auth().signOut()} />
+    </View>
+  </View>
+);
+```
+
+![Auth Screen](auth_screen.gif)
+
+### Sign out
 
 We should use the `signOut` method in the auth module to sign out a user from the application.
 
@@ -302,4 +324,26 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
-![Signout](/engineering-education/react-native-firebase-phone-authentication/signout.gif)
+![Signout](signout.gif)
+
+### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+
+4. We cloned the starter code.
+
+3. We created a Firebase project and enabled Google authentication in our project.
+
+4. We installed the required packages and we added the dependencies to the `build.gradle` files.
+
+5. We configured the Google SDK and signed in the user when the user presses the Google sign-in button.
+
+6. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
+
+7. We displayed the *Authenticated* screen when the user has been authenticated.
+
+8. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
