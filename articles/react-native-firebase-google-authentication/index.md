@@ -1,11 +1,27 @@
-In this tutorial, we will learn how to authenticate users with their Google accounts using the authentication module in Firebase in a Non-Expo React Native application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-native-firebase-google-authentication/
+title: Google OAuth using Firebase in React Native
+description: This tutorial will give readers a detailed guide on how to implement Google OAuth using Firebase in a Non-Expo React Native Application.
+author: mohan-raj
+date: 2021-21-28T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-native-firebase-google-authentication/hero.jpg
+    alt: Google OAuth using Firebase in React Native Image
+---
+OAuth is an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords.
 <!--more-->
+
+In this tutorial, we will learn how to authenticate users with their Google accounts using the authentication module in Firebase in a Non-Expo React Native application.
 
 ### Firebase
 
 Firebase is a platform developed by Google for creating mobile and web applications. It was an independent company founded in 2011. In 2014, Google acquired the platform, and now it's their flagship offering for application development.
-
-### Authentication Module
 
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
 
