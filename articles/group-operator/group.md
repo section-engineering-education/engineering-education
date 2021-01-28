@@ -30,7 +30,6 @@ https://docs.mongodb.com/manual/installation/
 
 - Must have some prior knowledge about MongoDB and its commands.
 
-> Side note : To create a database in MongoDB type ```use < name of the database >``` , to insert one document and also creating a new collection where the document will be inserted in one go use the command ```db.<name of the collection>.insertOne({ 'details of your document' }) ``` , to insert multiple documents use ```db.<name of the collection>.insertMany([{ 'details of your document' }, { 'details of your document' }, ...])``` and to fetch all the documents from your collection use ```db.<name of the collection>.find({})```.
   
 ### Aggregation
 
@@ -68,8 +67,14 @@ Now, let’s look at an example.
 
 Suppose we have a collection of 3 people with their names, gender, age and hobbies:
 
-```JavaScript
-[
+Let's create the database and to do that the syntax is  ```use <any name of your database> ``` and then create a collection named as person however you can choose any name you like and then insert multiple documents in that collection by using insertMany() function like ```db.<name of your collection>insertMany([{}, {}, ...])```.  For this example we are using database name as review and collection name as person.
+
+```bash 
+use review 
+```
+
+```bash
+db.person.insertMany([
     {
         "_id" : ObjectId("5ffb0dd58591ec5a52d2afbd"),
         "name" : "Harit Joshi",
@@ -103,8 +108,9 @@ Suppose we have a collection of 3 people with their names, gender, age and hobbi
                 "jogging"
         ]
     }
-]
+])
 ```
+Now that we have some documents in the collection, we can use the $group to find how many males and how many females are there.
 
 Let's say we want to find how many males and how many females are there in this document. In this short example, it is pretty clear that there are 2 males and 1 female.
 
