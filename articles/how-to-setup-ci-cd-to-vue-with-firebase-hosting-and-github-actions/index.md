@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/ci-cd-setup-vue/hero.png
     alt: CI CD VUE 
 ---
-The technological advancement revolves around the automation of every work that is done manually till today. Such automation can be applied in the software development cycle and project management as well. Most of the workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. Well, what if we can automate this process of deployment? Yes, we can do that by applying the CI/CD (Continuous Integration / Continuous Delivery) to our development projects. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The bottom line is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
+Well the solution to this is to automate the entire deployment process. And, this can be done by applying CI/CD to our project. Most of the workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The end goal is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
 
 - Setting up the Vue project.
 - Pushing the Vue project to the GitHub repository.
-- Setting up Firebase project.
+- Setting up the Firebase project.
 - Setting up Firebase hosting in Vue project using latest firebase-tools.
 - Configuring the connection between Firebase Hosting and GitHub by applying GitHub workflows.
 
@@ -29,9 +29,17 @@ What will happen as a result:
 - After the successful merge action, the changes will be automatically deployed to the live website without having to do any manual configurations.
 - We can also include the testing scripts in the workflow scripts to automate testing before merging.
 
+### Pre-requisites
+
+- [Git Version Control](https://github.com/git-for-windows/git/releases/download/v2.29.1.windows.1/Git-2.29.1-64-bit.exe)
+- [GitHub Account](http://github.com/)
+- [Firebase Account](https://firebase.google.com/)
+- [Vue CLI](https://cli.vuejs.org/)
+- Knowledge of [Vue JavaScript framework](https://vuejs.org/).
+
 ### Step 1: Vue Boilerplate
 
-The first step is to get out Vue project ready. For the vue boilerplate project, we are going to make use of Vue CLI. So first, we need to install the latest version of Vue CLI globally in our system. It allows us to download the starter Vue template based on various configurations. The required packages are pre-installed. It also enables us to manage the Vue project. In order to install it, we need to run the following command in our system terminal:
+The first step is to get out Vue project ready. For the Vue boilerplate project, we are going to make use of Vue CLI. So first, we need to install the latest version of Vue CLI globally in our system. It allows us to download the starter Vue template based on various configurations. The required packages are pre-installed. It also enables us to manage the Vue project. To install it, we need to run the following command in our system terminal:
 
 ```bash
 npm install @vue/cli -g
@@ -45,15 +53,15 @@ vue create vue_cicd
 
 After running the command instead of executing the automatic setup of features, we need to select manual configuration. In the manual configuration option, we will need to specify which Vue features to include. The required features are marked as shown in the screenshot below:
 
-![1-create-new-vue-porject-with-cli](1-create-new-vue-porject-with-cli.png)
+![create new vue project with cli](1-create-new-vue-project-with-cli.png)
 
 All of the features are unnecessary for this tutorial but for an actual Vue project, the selected features may be a pre-requisite. We have also selected the Unit testing and E2E testing which can be also automated using the GitHub workflow actions. 
 
-After the selection is done, we can hit 'Enter' to go on to next process which is shown in the screenshot below:
+After the selection is done, we can hit 'Enter' to go on to the next process which is shown in the screenshot below:
 
-![2-set-upnew-vue-porject-with-cli](2-set-upnew-vue-porject-with-cli.png)
+![set up new vue project with cli](2-set-up-new-vue-project-with-cli.png)
 
-Here, we have selected the other additional requirements such as Vue version 3, enable history mode is router, Prettier as code formatted, Jest for unit testing and Cypress for E2E testing, etc. All the configurations will be saved to there default config files.
+Here, we have selected the other additional requirements such as Vue version 3, enable history mode is the router, Prettier as code formatted, Jest for unit testing, and Cypress for E2E testing, etc. All the configurations will be saved to their default config files.
 
 After then successful installation of the project, we need to go to the project directory using the following command:
 
@@ -61,7 +69,7 @@ After then successful installation of the project, we need to go to the project 
 cd vue_cicd
 ```
 
-Then, we need to run in order to run the project in the localhost:
+Then, we need to execute the following command to run the project in the localhost:
 
 ```bash
 npm run serve
@@ -69,15 +77,15 @@ npm run serve
 
 Hence, we will get the following result in the browser:
 
-![3-first-vue-hello-world-app](3-first-vue-hello-world-app.png)
+![first vue hello world app](3-first-vue-hello-world-app.png)
 
 ### Step 2: Push Project to GitHub
 
-Now, we are going to upload for code to GitHub using Git. GitHub is a online cloud platform that stores the accurate versions of our coding project after each upload. It is a project management system designed to facilitate the version control for Git. Git is a version control tool used to provide proper version to our coding project after each push or upload. Other major feature it provides is GitHub actions that which be used to automate the workflow. It helps to ease up the build and deployment process.
+Now, we are going to upload for code to GitHub using Git. GitHub is an online cloud platform that stores the accurate versions of our coding project after each upload. It is a project management system designed to facilitate version control for Git. Git is a version control tool used to provide a proper version to our coding project after each push or upload. Another major feature it provides is GitHub actions that which be used to automate the workflow. It helps to ease up the build and deployment process.
 
-First, we need to login to GitHub account and create a repository as directed in the screenshot below:
+First, we need to login into a GitHub account and create a repository as directed in the screenshot below:
 
-![4-create-new-github-repo](4-create-new-github-repo.png)
+![create new github repo](4-create-new-github-repo.png)
 
 After mentioning the repository name, we can simply hit the 'Create repository' to create a repo. Now, this repository is where we can push our Vue project.
 
@@ -95,7 +103,7 @@ This will push our project to the master branch of our GitHub repository 'vue_ci
 
 *After the successful update, you can check your GitHub repo where you will find the project files just as in your vue project folder*
 
-This completes our setup of GitHub repo and pushing of our project to GitHub repo.
+This completes our setup of the GitHub repo and pushing of our project to the GitHub repo.
 
 ### Step 3: Integrating Firebase Hosting along with GitHub workflow
 
@@ -109,13 +117,13 @@ To create a Firebase project, we need to log in to the [Firebase](https://fireba
 
 At first, a window will appear asking to input the project name. Here, we have kept the project name as **`vue-cicd`** as shown in the screenshot below:
 
-![5-create-new-firebase-app](5-create-new-firebase-app.jpg)
+![create new firebase app](5-create-new-firebase-app.jpg)
 
 We can continue to the next step until the project has been created. After the project has been set up, we will get a project console as shown in the screenshot below:
 
-![6-firebase-dashboard](6-firebase-dashboard.jpg)
+![firebase dashboard](6-firebase-dashboard.jpg)
 
-Hence, the setup of Firebase project is complete. Now, we can configure the Firebase hosting in our Vue project.
+Hence, the setup of the Firebase project is complete. Now, we can configure the Firebase hosting in our Vue project.
 
 ### Step 3.2: Configure Firebase Hosting
 
@@ -127,7 +135,7 @@ For this, we need to have Firebase CLI installed on our local machine. Hence, we
 npm install -g firebase-tools
 ```
 
-> *Note that: We need to install the **latest version of firebase-tools** in order to get the configurations to connect with the GitHub project repo automatically through the firebase commands.*
+> *Note that: We need to install the **latest version of firebase-tools** to get the configurations to connect with the GitHub project repo automatically through the firebase commands.*
 
 Now, we need to make sure that we are in the root project folder, and then execute the following command:
 
@@ -139,15 +147,15 @@ This command will provide us the configurations to initialize the Firebase proje
 
 First, it will ask us for the Firebase CLI feature that we want to set up in our project folder as shown in the screenshot below:
 
-![7-create-new-firebase-cli-app](7-create-new-firebase-cli-app.jpg)
+![create new firebase cli app](7-create-new-firebase-cli-app.jpg)
 
-Since, we are going link the Firebase hosting, we at least need to select the Hosting feature. Since,
+Since we are going to link the Firebase hosting, we at least need to select the Hosting feature. Since,
 
 After that, we will be asked to select the Firebase Project. For this, we need to select the Firebase project from the existing list of projects in our Firebase console. Since we already have a Firebase project **`vue-cicd`** created in the earlier steps, we need to make sure to select that one. 
 
 After the Firebase project has been selected, we will be asked to configure the hosting setups. The configurations that we need to apply is demonstrated in the screenshot below:
 
-![8-setup-new-firebase-cli-app](8-setup-new-firebase-cli-app.jpg)
+![setup new firebase cli app](8-setup-new-firebase-cli-app.jpg)
 
 Here, we have selected our public directory as **'dist'** which will contain the Hosting assets to be uploaded during firebase deployment. Then, we are going to configure our project as a **single-page app** that will link all our coding files to **index.html**. 
 
@@ -157,21 +165,21 @@ At this stage, it will connect to our GitHub to be able to get the repository in
 
 ### Step 3.3: Integrating GitHub workflow actions to Hosting
 
-After the successful authorization, we will be linked with our GitHub account from we can connect for repositories to Firebase hosting. Then, we will asked to select the existing repositories in our GitHub account in which we would like to setup the GitHub workflow as shown in the screenshot below:
+After the successful authorization, we will be linked with our GitHub account from we can connect for repositories to Firebase hosting. Then, we will ask to select the existing repositories in our GitHub account in which we would like to set up the GitHub workflow as shown in the screenshot below:
 
-![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli.jpg)
+![setup ci cd in firebase cli](9-setup-ci-cd-in-firebase-cli.jpg)
 
 Here, we need to enter our [**GitHub username/GitHub project repository name**(created earlier)].
 
-Then, we will be asked if we would like to run the build script before every deploy to which we need to put 'Yes' as an answer. The script to run and commands are automatically given for next configuration for which we simply need to press 'Enter' button. The configuration screenshot is provided below:
+Then, we will be asked if we would like to run the build script before every deploy to which we need to put 'Yes' as an answer. The script to run and commands are automatically given for the next configuration for which we simply need to press the 'Enter' button. The configuration screenshot is provided below:
 
-![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli-2.jpg)
+![setup ci cd in firebase cli](9-setup-ci-cd-in-firebase-cli-2.jpg)
 
 This will create a workflow file called **firebase-hosting-pull-request.yml** in our project directory inside the **.github/workflows** folder.
 
 Then, the additional configuration steps to automate the deployment to our site and which GitHub branch to deploy is shown in the screenshot below:
 
-![9-setup-ci-cd-in-firebase-cli](9-setup-ci-cd-in-firebase-cli-3.jpg)
+![setup ci cd in firebase cli](9-setup-ci-cd-in-firebase-cli-3.jpg)
 
 Here, we are choosing to automate the deployment to our site in real-time when each pull-request to the master branch in our GitHub repo is merged. 
 
@@ -179,11 +187,11 @@ This will create a workflow file called **firebase-hosting-merge.yml** in our pr
 
 After these successful configurations, the Firebase project with hosting enabled will be created which will connect the Firebase project to the repository in Github. As a result, the workflow folder and files will be created as shown in the screenshot below:
 
-![10-github-actions-workflow-files](10-github-actions-workflow-files.jpg)
+![github actions workflow files](10-github-actions-workflow-files.jpg)
 
 The major objective of these two workflows is to build the application and deploy it to Firebase Hosting automatically. 
 
-The first workflow file **firebase-hosting-merge.yml** will execute in every merge to master branch. It will deploy the merge to our production or live website environment. 
+The first workflow file **firebase-hosting-merge.yml** will execute in every merge to the master branch. It will deploy the merge to our production or live website environment. 
 
 The second workflow file **firebase-hosting-pull-request.yml** will only execute when a pull-request is created from any arbitrary branch to the master branch. It will deploy the push to a separate URL which will enable us to test out the result before executing the merge to the pull request.
 
@@ -197,7 +205,7 @@ Now, we need to create a new **Git branch** in the root project and push the bra
 
 Now from the GitHub console, we can navigate to that branch and create a **pull request** in GitHub from the created branch to the master branch, which will automatically trigger the workflow with Github actions as shown in the screenshots below:
 
-![11-testing-deployment-result-1](11-testing-deployment-result-1.png)
+![testing deployment result](11-testing-deployment-result-1.png)
 
 
 This proves that our configuration is working properly. Now after accepting the pull-request and merging the branch to the master branch will automatically trigger deployment as well.
