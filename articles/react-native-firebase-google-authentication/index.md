@@ -23,6 +23,7 @@ We'll be going through these steps in this article:
 2. [Cloning the starter code](#cloning-the-starter-code).
 3. [Setting up the Firebase project](#setting-up-the-firebase-project).
 4. [Setting up Firebase Authentication](#setting-up-firebase-authentication).
+5. [Sign-in](#sign-in)
 
 ### Development environment
 
@@ -159,3 +160,78 @@ dependencies {
 ```
 
 With this, the firebase authentication module is set up in our application.
+
+### Sign-in
+
+The [`google-signin`](https://github.com/react-native-google-signin/google-signin) library provides a wrapper around the official Google login library.
+
+We should use this library to create a credential, and then sign-in with Firebase.
+
+Before triggering a sign-in request, you must initialize the Google SDK using your `webClientId` which can be found in the `google-services.json` file in `android/app` as the `client/oauth_client/client_id` property.
+
+![Oauth Client ID](oauth_id.png)
+
+In *App.js*, Let's import the `google-signin` library and the Firebase `auth` module.
+
+```JSX
+import auth from '@react-native-firebase/auth`;
+import { GoogleSignin } from '@react-native-community/google-signin';
+```
+
+You should call the `GoogleSignin.configure` method with the `webClientId` to initialize the SDK. You should do this outside the `App()` function.
+
+```JSX
+GoogleSignin.configure({
+  webClientId:
+    '260759292128-4h94uja4bu3ad9ci5qqagubi6k1m0jfv.apps.googleusercontent.com',
+});
+```
+
+Now, that we have initialized the Google SDK, let's work on authenticating the user.
+
+In the starter code, I've set up a function called `onGoogleButtonPress` in *App.js* file. This function in passed down to the *Authentication* screen as a prop, and then, it is set as the `onPress` property of the Google Sign-in button. Thus, this function in the *App.js* file will be called when the Google sign-in button is pressed by the user.
+
+Let's write the code to sign-in the user in the `onGoogleButtonPress` function.
+
+
+```JSX
+async function onGoogleButtonPress() {
+  // Sign-in Process here
+}
+```
+
+First, we should get the user's `idToken` from Google using the `GoogleSignin.signIn()` method. It's an async function, this let's use the `await` keyword to wait for the Promise to get resolved.
+
+```JSX
+// Get the users ID token
+const { idToken } = await GoogleSignin.signIn();
+```
+
+Now, we should create a Google credential using the `idToken`.
+
+```JSX
+// Create a Google credential with the token
+const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+```
+
+With the Google credential that we have created for the user, we should use the `signInWithCredential` method from the Firebase auth module to sign-in the user into the app.
+
+```JSX
+// Sign-in the user with the credential
+return auth().signInWithCredential(googleCredential);
+```
+
+This is complete code for the `onGoogleButtonPress` function.
+
+```JSX
+async function onGoogleButtonPress() {
+  // Get the users ID token
+  const { idToken } = await GoogleSignin.signIn();
+
+  // Create a Google credential with the token
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+  // Sign-in the user with the credential
+  return auth().signInWithCredential(googleCredential);
+}
+```
