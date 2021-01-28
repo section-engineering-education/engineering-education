@@ -1,4 +1,5 @@
 In this tutorial, we will learn how to authenticate users with their Facebook accounts using the authentication module in Firebase in a Non-Expo React Native application.
+
 <!--more-->
 
 ### Firebase
@@ -111,7 +112,7 @@ npm install @react-native-firebase/app
 
 ### Setting up Facebook App
 
-Head to [developers.facebook.com](https://developers.facebook.com/) and create a developer account. 
+Head to [developers.facebook.com](https://developers.facebook.com/) and create a developer account.
 
 Go to the [Apps](https://developers.facebook.com/apps) section and create a new app.
 
@@ -195,4 +196,54 @@ dependencies {
 }
 ```
 
-With this, the firebase authentication module is set up in our application.
+Next, let's install the React Native Facebook SDK.
+
+```bash
+npm install react-native-fbsdk
+```
+
+In `android/build.gradle`, add `mavenCentral()` under `repositories` in `buildscript`:
+
+```gradle
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+        // Add this line
+        mavenCentral()
+    }
+}
+```
+
+In `android/app/build.gradle`, add the following under `dependencies`:
+
+```gradle
+implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+```
+
+Now, you should add your Facebook App ID to your project's strings file in `android/app/res/values/strings.xml`.
+
+```XML
+<resources>
+  <string name="app_name">RNFirebaseFacebookAuth</string>
+  <string name="facebook_app_id"><-- Your App ID here --></string>
+</resources>
+```
+
+In the `AndroidManifest.xml` file, add a `uses-permission` element under `manifest`:
+
+```XML
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+Next, add a `meta-data` to the `application` element:
+
+```XML
+<application android:label="@string/app_name" ...>
+    ...
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    ...
+</application>
+```
+
