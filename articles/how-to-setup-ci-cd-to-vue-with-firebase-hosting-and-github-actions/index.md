@@ -14,7 +14,9 @@ images:
   - url: /engineering-education/ci-cd-setup-vue/hero.png
     alt: CI CD VUE 
 ---
-Well the solution to this is to automate the entire deployment process. And, this can be done by applying CI/CD to our project. Most of the workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The end goal is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
+Most of the software development workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be measured inefficient to fix bugs and update new features manually as it consumes a lot of time and accuracy. 
+
+Well, the solution to this is to automate the entire deployment process. And, this can be done by applying CI/CD to our project. And here, we are going to do that using Vue, Firebase Hosting, and GitHub workflows. The overall process automates the process of software development and management and makes it easy to test and deploy the final results. The bottom line is to automatically build and deploy the updates to the main server after each pull request or change has been merged to the master branch of our GitHub repository. Hence, the overall process involves:
 
 - Setting up the Vue project.
 - Pushing the Vue project to the GitHub repository.
