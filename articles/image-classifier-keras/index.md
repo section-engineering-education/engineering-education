@@ -5,7 +5,7 @@
 In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
 
 We will see how we can apply image classifiers in healthcare. Our goal here is to train a CNN model to classify COVID-19 and normal chest X-ray scans of patients.
-Github repo [here](https://github.com/Inyrkz/PneumoniaX/blob/Inyrkz-covid/CovidTrial.ipynb)
+The colab notebook for this project is [here](https://github.com/Inyrkz/PneumoniaX/blob/Inyrkz-covid/CovidTrial.ipynb)
 
 ### Table of Content
 - Importing Libraries and Exploring Dataset
@@ -232,13 +232,13 @@ dgen_test = ImageDataGenerator(rescale=1./255)
 
 ![alt text](/engineering-education/image-classifier-keras/meme3.jpg)
 
-Image Augmentation helps us increase the size of our training set. It also helps to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation. We create objects of the class. 
+Image Augmentation helps us increase the size of our training set. It also helps to reduce overfitting. *The ImageDataGenerator()* class generates batches of tensor image data with real-time data augmentation.
 
-One is for the training images, where we apply image augmentation. We also create objects for the validation images and the test images.
+We create objects of the class. One is for the training images, where we apply image augmentation. We also create objects for the validation images and the test images.
 
 We begin by rescaling the images, which normalizes the pixel values of our images. The *rescale* parameter is for feature scaling. It is vital when training neural networks. The *validation_split* parameter allows us to split a subset of our training data into the validation set. 0.2 means we use 20% of our training set as the validation set. We set *zoom_range* to 0.2. Finally, we set *horizontal_flip* to True.
 
-Now that we have created the objects, we need to connect them to our dataset.  The ImageDataGenerator() class has a function called flow_from_directory. The function connects the image augmentation tool to the images in our dataset. It takes the path to the directory and generate batches of augmented data.
+Now that we have created the objects, we need to connect them to our dataset.  The *ImageDataGenerator()* class has a function called *flow_from_directory*. The function connects the image augmentation tool to the images in our dataset. It takes the path to the directory and generate batches of augmented data.
 
 ```python
 # Awesome HyperParameters!!!
@@ -270,7 +270,7 @@ The first argument is the path to the dataset. The next parameter is the *target
 
 We use a batch size of 32, and the class mode is either *binary* or *categorical*. *Binary* is for two output classes, while categorical is for more than two classes. Since we are working with only *two* classes, we set the class mode to *binary*.
 
-The *subset* parameter keeps track of the images we use for training and validation from the *train_dir*. We don’t need the *subset* parameter for the test generator. We use the subset parameter only if we use validation_split.
+The *subset* parameter keeps track of the images we use for training and validation from the *train_dir*. We don’t need the *subset* parameter for the test generator. We use the subset parameter only if we use *validation_split*.
 
 **Note:** We only apply image augmentation to the training set. We can normalize the validation and test set as well.
 
