@@ -154,7 +154,6 @@ fun main() {
 }
 ```
  #### String
-
 ```kotlin
 
 fun main() {
