@@ -1,5 +1,4 @@
 In this tutorial, we will learn how to authenticate users with their Facebook accounts using the authentication module in Firebase in a Non-Expo React Native application.
-
 <!--more-->
 
 ### Firebase
@@ -40,9 +39,9 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 
 ### Cloning the starter code
 
-To focus more on the authentication, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
+To focus more on the authentication, I've prepared a starter code. You can clone it from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
 
-For the final code, check out this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
+You can checkout the final code from this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
 
 This will be the folder structure of the application.
 
@@ -130,7 +129,9 @@ Once you make a copy of it, Scroll down until you find **Add Platform**.
 
 ![add_platform](add_platform.png)
 
-Once you click on it, Select Android. Fill out the **Package Name**, which you can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+Once you click on it, Select Android. 
+
+Fill out the **Package Name**, which you can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
 
 For the **Class Name**, fill it out as `MainActivity`.
 
@@ -140,12 +141,12 @@ For the **Key Hash**, you need to generate it using [openSSL](https://www.openss
 
 Once you've downloaded it, extract it and copy the folder to `C:/`.
 
-Detect your `keytool.exe`, which can be found in the JDK directory inside the `bin/` directory. It's usually in a location like `C:\Program Files\Java\jdk1.8.0_261\bin`.
+Detect your `keytool.exe`, which can be found in the JDK directory inside the `bin/` directory. The JDK is usually in a location like `C:\Program Files\Java\jdk1.8.0_261\bin`.
 
 Now, inside the `bin/` folder, run:
 
 ```bash
-keytool -exportcert -alias androiddebugkey -keystore "C:\Documents and Settings\Administrator.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary |"C:\OpenSSL\bin\openssl" base64
+./keytool -exportcert -alias androiddebugkey -keystore "C:\Documents and Settings\Administrator.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary |"C:\OpenSSL\bin\openssl" base64
 ```
 
 Output:
@@ -170,11 +171,11 @@ Next, you should enable Facebook authentication in the sign-in methods. Once you
 
 ![Signin-method](enable_fb_auth.png)
 
-To complete set up, you should OAuth redirect URI to your Facebook app configuration.
+To complete set up, you should add the OAuth redirect URI to your Facebook app configuration.
 
 Copy the OAuth redirect URI and head to the Facebook Developer console.
 
-Under Products, head to Settings in Facebook Login. Paste the redirect URI under Valid OAuth Redirect URIs in Clien OAuth Settings.
+Under Products, head to *Settings* in Facebook Login. Paste the redirect URI under *Valid OAuth Redirect URIs* in *Client OAuth Settings*.
 
 ![Redirect URI](redirect_uri.png)
 
@@ -231,7 +232,7 @@ Now, you should add your Facebook App ID to your project's strings file in `andr
 </resources>
 ```
 
-In the `AndroidManifest.xml` file, add a `uses-permission` element under `manifest`:
+In the `AndroidManifest.xml` file, add a `uses-permission` element under `manifest`: (Ignore if already present)
 
 ```XML
 <uses-permission android:name="android.permission.INTERNET" />
@@ -299,11 +300,11 @@ if (!data) {
 Now, we should create a credential using the access token and sign in the user into the app.
 
 ```JSX
-const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken,);
+const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
 return auth().signInWithCredential(facebookCredential);
 ```
 
-Here is the complete code for the signIn function:
+Here is the complete code for the `signIn` function:
 
 ```JSX
 async function signIn() {
@@ -344,7 +345,7 @@ The `onAuthStateChanged` event will be triggered whenever the authentication sta
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
-You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` which were copied from Google to Firebase.
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` which were copied from Facebook to Firebase.
 
 To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
