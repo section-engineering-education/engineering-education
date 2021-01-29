@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/group-operator-in-mongodb/
 title: Group operator in MongoDB
-description:  Group operator is a very important operator in MongoDB language and it is a part of aggregation in MongoDB so this article will cover $group operator, its applications along with examples.
+description:  This article will cover the $group operator in MongoDB, which is a part of aggregation with its applications along with examples.
 author: harit-joshi
-date: 21:52:42 2021 +0530
+date: 2021-01-30T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -21,16 +21,13 @@ MongoDB is an open-source NoSQL database management program. NoSQL is an alterna
 
 In this article, we are going to learn about the $group operator with some examples. 
 
-> Note: The code snippets in this article should be run in the Mongo shell.
-
 ### Prerequisites
 
 - MongoDB must be installed in your system. To install the MongoDB safely in your system visit the official documentation via this link
 https://docs.mongodb.com/manual/installation/
 
-- Must have some prior knowledge about MongoDB and its commands.
+- Must have some prior knowledge about MongoDB and its shell commands.
 
-  
 ### Aggregation
 
 Aggregation is an operation that processes the data to give a computed result. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. It basically involves stages or pipelines through which data is processed to yield a combined result. 
@@ -41,7 +38,7 @@ Pipelines are stages through which data is processed, more technically transform
 
 As the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document.
 
-Suppose there are 15 people in a database and they all have a similar hobby. if we want to count all those people who have a hobby in common, then `$group` operator is an elegant solution for such a task.
+Suppose there are 15 people in a database and they all have a similar hobby. if we want to count all those people who have a hobby in common, then the `$group` operator is an elegant solution for such a task.
 
 Let’s take a look at its syntax:
 
@@ -62,17 +59,19 @@ The $group operator does not remove the data from the database. It just aggregat
 - When using count, or any grouping function, remember to include the underscore before the field name (sort by _count).
 
 - Multiple aggregation functions can be on the same line but you can't include another function, such as a math function, on the same line of a query.
+
 ### Example
 
-Now, let’s look at an example.
-
-Suppose we have a collection of 3 people with their names, gender, age and hobbies:
+Now, let’s look at an example. The code snippets should be run in the mongo shell.
 
 Let's create a database:
+
 ```bash 
 use review 
 ```
+
 Now, let's create a collection named `person` and insert multiple documents in that collection using `insertMany()` function like:
+
 ```bash
 db.person.insertMany([
     {
@@ -110,7 +109,8 @@ db.person.insertMany([
     }
 ])
 ```
-Now that we have some documents in the collection, we can use the $group to find how many males and how many females are there. In this short example, it is pretty clear that there are 2 males and 1 female.
+
+Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection.
 
 ```bash
 db.person.aggregate([ { $group: {_id: {gender: "$gender"}, totalPeople: {$sum: 1}} } ]).pretty()
@@ -123,7 +123,7 @@ Output:
 { "_id" : { "gender" : "Male" }, "totalPeople" : 2 }
 ```
 
-For the `$group` operator to work, you should use an accumulator operator like `$sum`, `$avg`, `$max`, etc since the operator yields a combined result based on the grouping expression.
+For the `$group` operator to work, you should use an accumulator operator like `$sum`, `$avg`, `$max`, etc. since the operator yields a combined result based on the grouping expression.
 
 Let's take a look at another use case. Suppose, let's say we are interested in the number of people having a similar hobby, We should make every hobby a separate top-level field by using the `$unwind` operator and then we have to do the same as we did in the first example:
 
@@ -141,6 +141,7 @@ Output:
 { "_id" : { "hobby" : "sports" }, "totalPeople" : 2 }
 { "_id" : { "hobby" : "swimming" }, "totalPeople" : 1 }
 ```
+
 ### Applications of $group operator:
 
 1.  Whenever we need to find how many people fit in a group as we did in our examples, the `$group` operator can be very useful.
@@ -149,6 +150,4 @@ Output:
 
 3.  If we want to create an array of similar entities related to data and include it in our final document then the $group operator can be used.
 
-### Conclusion
-
-In this article we have discussed the `$group` operator with some examples. I hope you enjoyed reading this article as much as I enjoyed writing it.
+I hope you enjoyed reading this article as much as I enjoyed writing it.
