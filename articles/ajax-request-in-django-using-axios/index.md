@@ -3,7 +3,7 @@
 Ajax is an acronym for Asynchronous JavaScript and XML. It’s neither a language, a framework nor a web library. It’s a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page. Even though it includes XML in the acronym, it’s rarely used in AJAX anymore. It has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
 
 ### What is Axios?
-> Axios is a Javascript library used to make HTTP requests from node.js or [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and is used to perform HTTP requests.
+Axios is a Javascript library used to make HTTP requests from node.js or [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and is used to perform HTTP requests.
 
 
 ### Prerequisites
@@ -24,7 +24,7 @@ Ajax is an acronym for Asynchronous JavaScript and XML. It’s neither a languag
 
 ### Project setup
 
-Ensure `virtualenv` is installed on your computer by running the command below.
+First, ensure `virtualenv` is installed on your computer by running the command below.
 
 ```bash
 $ virtualenv --version
@@ -32,13 +32,13 @@ $ virtualenv --version
 virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtualenv/__init__.py
 ```
 
-If you get an error message command, run the command below to install `virtualenv` on your computer.
+If you get an error message, run the command below to install `virtualenv` on your computer.
 
 ```bash
 $ pip install virtualenv
 ```
 
-Change to any directory of your choice on your machine or make a new directory. Create a virtual environment for our project using `virtualenv`.
+Change to a directory of your choice on your machine or make a new directory. Then, create a virtual environment for our project using `virtualenv`.
 
 Run the commands below to create and activate the virtual environment.
 
@@ -53,7 +53,7 @@ I have created a starter template for you to follow along in this tutorial. Clon
 $ git clone https://github.com/atoyegbe/note-app.git
  ```
 
-Change into the cloned folder using `cd note-app` and run the command below to install the dependencies needed for this project to work.
+Change into the cloned directory using `cd note-app` and run the command below to install the dependencies needed for this project to work.
 
 ```bash 
 $ cd note-app
@@ -141,7 +141,7 @@ The above code:
    - 6 - This catches and displays the error in the console if an error occurs when submitting the form.
 
 ### Handling Post Request in Django views.
-Navigate to the note directory and add the code below into `views.py`.
+Navigate to `note` directory and add the code below into `views.py`.
 
 ```python
 from django.http import JsonResponse 
@@ -158,7 +158,7 @@ def createNote(request):
     return JsonResponse({"status": 'Success'}) 
 ```
 
-In `note/ursl.py` edit the code to look like below.
+In `note/urls.py` edit the code to look like below.
 
 ```python
 from django.urls import path 
@@ -171,7 +171,7 @@ urlpatterns = [
 ]
 ```
 
-Let us test our form. First, start up the project development server by running the command below.
+Let us test our form. First, start the project development server by running the command below.
 
 ```bash 
 $ python manage.py runserver
