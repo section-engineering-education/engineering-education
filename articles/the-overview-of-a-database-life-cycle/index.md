@@ -2,7 +2,7 @@
 
 It is frustrating when there is lots of data being used by many people and no place to store it. It becomes difficult to manage such data, secure it, and store it accurately. This is where a database comes in.
 
-A database prevents duplication and loss of data. While designing any information system, a database is a basic component. This article will outline the stages of a database development life cycle. The reader will understand the need for a database and the database life cycle.
+A database prevents duplication and loss of data. While designing any information system, a database is a basic component. This article will outline the stages of a database development life cycle (DBLC). The reader will understand the need for a database and the database life cycle.
 
 ### Table of Contents
 
@@ -22,7 +22,7 @@ A database prevents duplication and loss of data. While designing any informatio
 
 ### The Need for a Database
 
-A database is a collection of data that is organized. Data from the database is accessed from computer systems electronically. The data represents real-world entities in the form of text, numbers, audio, and images. A database is created to solve a problem. Problems a database solve are:
+A database is a collection of data that is organized. Data from the database is accessed from computer systems electronically. The data represents real-world entities in the form of text, numbers, audio, and images. A database is created to solve a problem. Problems a database solves are:
 
 - The size of data
 - Ease of updating data
@@ -52,13 +52,13 @@ A developer uses a data model to outline the data a database will hold and how i
 
 Data modeling is the practice of designing a data model for storing data in a database. Data modeling allows developers to define and organize the company's business processes well.
 
-Data modeling is a crucial step when creating a database for any information system. It helps developers understand the systems step-up and organize the work appropriately. Here are the benefits of effective data modeling.
+Data modeling is a crucial step when creating a database for any information system. It helps developers understand the system's set up and organize the work appropriately. Here are the benefits of effective data modeling.
 
-- It reduces the cost of building an application and achieve fast time to value.
-- High quality – Developers should consider data modeling before building a system. Various projects fail due to premature coding. A data model helps to illustrate the problem. Thus enabling the developer to consider different approaches and chose the best.
-- Good documentation – Data models document vital concepts. Thus, it provides a foundation for endless maintenance.
-- Reduced errors – The systems development begins with a clear understanding of the problem. The developers can still make errors while developing the system. Besides, it will be easy to resolve errors and conflicts. This is because data modeling enables the developers to understand the system well.
-- Successfully design and implement databases.
+- Reduction of the cost of building an application and achievement of fast time to value.
+- High quality – Developers should consider data modeling before building a system. Various projects fail due to premature coding. A data model helps illustrate the problem, enabling the developer to consider different approaches and chose the best.
+- Good documentation – Data models document vital concepts, providing a foundation for endless maintenance.
+- Reduced errors – The systems development begins with a clear understanding of the problem. Although the developers can still make errors while developing the system, it will be easier to resolve errors and conflicts with a data model in place. This is because data modeling enables the developers to understand the system well.
+- Successful design and implementation of databases.
 - Improve staff collaboration– The technical team can easily collaborate with the non-technical team. With the use of data models, the non-technical team can easily understand how the system works. Both teams gather enough information on how they will create the database.
 
 ### Database Design
@@ -97,4 +97,4 @@ Database monitoring tracks the database performance. This is to maintain its hig
 
 ### Conclusion
 
-Database Life Cycle is a sequence of stages for developing a database system. The stages of DBLC logically follow each other. Developers have to follow the cycle while working on the database. In this article, we have learned about database development and the functionalities of each stage. I hope this article will give you an in-depth understanding of the database life cycle.
+Database Life Cycle is a sequence of stages for developing a database system. The stages of DBLC logically follow each other. Developers have to follow the cycle while working on the database. In this article, we have learned about database development and the functionalities of each stage. I hope this article will give you an understanding of the database life cycle.
