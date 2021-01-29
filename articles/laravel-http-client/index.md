@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/laravel-http-client/
 title: Laravel 8 HTTP Client
-description: This tutorial shows you how to make requests using HTTP client in Laravel. This library improves productivity by eliminating boilerplate code.
+description: The tutorial shows you how to make requests using HTTP client in Laravel. This library improves productivity by eliminating boilerplate code.
 author: miller-juma
 date: 2021-01-19T00:00:00-15:00
 topics: [Languages]
@@ -36,7 +36,7 @@ echo $res->getBody();
 ?>
 ```
 Note:
-* To test the above code, you need Guzzle HTTP Client installed.
+* To test the above code, you need to install Guzzle HTTP Client.
 * You should replace the `api_key` value with your key from [themoviedb.org](https://developers.themoviedb.org/3/getting-started).
 * You can also modify the link to return different data.  
 
@@ -65,7 +65,7 @@ composer require guzzlehttp/guzzle
 
 Since Laravel 7.x, `HTTP Client` is included as a built-in feature. With working examples, I want to show you the new way of making HTTP requests.  
 
-If you have used [postman](https://learning.postman.com/) before, you may have encountered some HTTP methods for RESTful(Representational state transfer) services. 
+If you have used [Postman](https://learning.postman.com/) before, you may have encountered some HTTP methods for RESTful(Representational state transfer) services. 
 
 For newbies, don't worry, RESTful APIs simply uses HTTP requests to access and use data. You can learn more [here](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/).  
 
@@ -137,7 +137,7 @@ Run `php artisan serve` to start your application, copy this link and paste on P
 
 Congratulations, you have made your first HTTP request using Laravel built-in feature, HTTP Client.  
 
-## HTTP Response
+### HTTP Response
 In case you ran the above example correctly, you're likely to have received a response such as the one below:-  
 
 ```json
@@ -280,7 +280,7 @@ $response->header($header) : string;
 $response->headers() : array;
 ```
 
-## Making HTTP Post Request
+### Making HTTP Post Request
 This method is used to send additional data together with the request.  
 Take, for example, you have an application that requires users to register via [APIs](https://www.restapitutorial.com/). How do you achieve this functionality in Laravel?  
 
@@ -311,7 +311,7 @@ class HttpAuthController exends Controller
 The above HTTP post method accepts an array of data as the second argument which is sent in `JSON` format.  
 The Post method above accepts `username` and `role`, this array is then sent to the indicated web application URL to register the user.  
 
-## Making HTTP PUT Request
+### Making HTTP PUT Request
 This method is used to send additional data together with the request to modify the targeted resource.      
 
 ```php
@@ -338,7 +338,7 @@ class HttpAuthController exends Controller
 The HTTP put method accepts an array of data as the second argument which is sent in JSON format to modify the resource.    
 
 
-## Making HTTP Delete Request
+### Making HTTP Delete Request
 This method is used to send additional data together with the request to delete the targeted resource.      
 
 ```php
@@ -360,12 +360,11 @@ class HttpAuthController exends Controller
         return $response;
     }
 }
-
 ```
 The HTTP delete method accepts an array of data as the second argument which is sent in JSON format to modify the resource.  
 In this case, the resource is deleted where ```user_id=1```.  
 
-## Conclusion
+### Conclusion
 In this tutorial, we have learned how to use the new Laravel HTTP Client.  
 We have seen how to make `GET`, `POST`, `PUT` and `DELETE` requests.  
 To gain more insights on other features of HTTP requests, [this link](https://laravel.com/docs/8.x/http-client) will be of great help.  
