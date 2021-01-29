@@ -242,7 +242,7 @@ Run the app, clicking the button will trigger the dialog to slide from the botto
 
 Each element's layout included in the dialog can be assigned an action. When an item is clicked, it will redirect the user to the necessary choice of action.
 
-Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of action inside each element according to where you want your users to go once selected an element in the dialog.
+Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of actions inside each element according to where you want your users to go once selected an element in the dialog.
 
 Go ahead and include the following `OnClickListeners` right above `bottomSheetDialog.show()`.
 
@@ -496,9 +496,9 @@ I have created a `bottom_sheet_dialog_layout.xml` and included the following sim
 
 ![Bottom sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet.jpg)
 
-This is not a bottom sheet yet. It's just a regular layout. To make the layout a bottom sheet dialog, there as so few behaviour flags that we need to add to the root layout. They control the bottom sheet behaviours.
+This is not a bottom sheet yet. It's just a regular layout. To make the layout a bottom sheet dialog, there as so few behavior flags that we need to add to the root layout. They control the bottom sheet behaviors.
 
-These bottom sheet behaviour properties are added to the root layout of the bottom sheet design. Any layout that you need to populate as a bottom sheet dialog need this behaviour flags. They can also be added [dynamically using java](https://material.io/components/sheets-bottom/android#handling-insets).
+These bottom sheet behavior properties are added to the root layout of the bottom sheet design. Any layout that you need to populate as a bottom sheet dialog needs these behavior flags. They can also be added [dynamically using java](https://material.io/components/sheets-bottom/android#handling-insets).
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -512,7 +512,7 @@ These bottom sheet behaviour properties are added to the root layout of the bott
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 ```
 
-This bottom sheet behaviour flags include;
+This bottom sheet behavior flags include;
 
 - `app:layout_behavior` - applies the `BottomSheetBehavior` into the XML file. This is assigned to `com.google.android.material.bottom sheet`. It is the most important `BottomSheetBehavior` attribute as it defines a given layout as a bottom sheet dialog.
 
@@ -558,7 +558,7 @@ To control the sliding and collapsing of the dialog we use states. They are diff
 - `STATE_SETTLING` - show that the dialog is settling at a specific height, This can be the `peekHeight`, expanded height, or zero if the dialog is hidden.
 - `STATE_HIDDEN` - the dialog is not visible.
 
-The last thing we will do is to listen to the state of the dialog. To do that, we will add `BottomSheetCallback` to detect any state changes.
+The last thing we will do is listen to the state of the dialog. To do that, we will add `BottomSheetCallback` to detect any state changes.
 
 - Declare the necessary parameters
 
@@ -568,7 +568,7 @@ private BottomSheetBehavior sheetBehavior;
 private ImageView header_Arrow_Image;
 ```
 
-- Initialize the behaviour bottom sheet layout and the arrow image
+- Initialize the behavior bottom sheet layout and the arrow image
 
 ```java
 mBottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
