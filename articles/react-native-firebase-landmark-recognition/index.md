@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-firebase-landmark-recognition/
 title: Landmark Recognition Using Firebase ML in a Non-Expo React Native Application 
-description: This tutorial will give readers a detailed guide on how to implment landmark recognition using Firebase's ML kit in a Non-Expo React Native appliaction.
+description: This tutorial gives readers a detailed guide on implementing landmark recognition using Firebase ML kit in a Non-Expo React Native application.
 author: mohan-raj
 date: 2021-01-07T00:00:00-15:00
 topics: []
@@ -18,16 +18,16 @@ In this tutorial, we will be building a Non-Expo React Native application to rec
 <!--more-->
 
 ### Firebase
-Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
+Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform, and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
-Firebase's ML kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
+Firebase's ML Kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
 
 ### Prerequisites
 To proceed with this tutorial:
 
 - You will need a basic knowledge of React & React Native. 
 
-- You will need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
+- You also need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
 ### Overview
 We'll be going through these steps in this article:
@@ -49,7 +49,7 @@ You can take a look at the final code in this [GitHub Repository](https://github
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
 
-Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+Ensure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
 ![Env Setup](/engineering-education/react-native-firebase-landmark-recognition/env_setup.png)
 
@@ -78,7 +78,7 @@ pod install
 
 > **IMPORTANT FOR ANDROID**
 >
-> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while attempting to build your Android application.
+> As you add more native dependencies to your project, it may bump you over the 64k method limit on the Android build system. Once you reach this limit, you will start to see the following error while building your Android application.
 >
 > `Execution failed for task ':app:mergeDexDebug'.`
 >
@@ -92,7 +92,7 @@ Create a new project.
 
 ![Create New Project](/engineering-education/react-native-firebase-landmark-recognition/firebase_new.png)
 
-Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
+Once you create a new project, you'll see the dashboard. Upgrade your project to the Blaze plan.
 
 ![New Dashboard](/engineering-education/react-native-firebase-landmark-recognition/new_dashboard.png)
 
@@ -100,7 +100,7 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-landmark-recognition/register_app.png)
 
-You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+You will need a package name to register the application. Your app's package name is in the `AndroidManifest.xml` located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-firebase-landmark-recognition/package_name.png)
 
@@ -138,11 +138,11 @@ npm install @react-native-firebase/app
 ```
 
 ### Setting up Cloud Vision API
-Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
+Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project you are working on. Go to the API & Services tab.
 
 ![Cloud Dashboard](/engineering-education/react-native-firebase-landmark-recognition/cloud_dashboard.png)
 
-In the API & Service tab, Head to the Libraries section.
+In the API & Service tab, navigate to the Libraries section.
 
 ![API & Services Tab](/engineering-education/react-native-firebase-landmark-recognition/api_services.png)
 
@@ -158,13 +158,13 @@ Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
 ![Cloud Vision Metrics](/engineering-education/react-native-firebase-landmark-recognition/cloud_vision_dashboard.png)
 
-With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for landmark recognition.
+With this, you have successfully set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for landmark recognition.
 
 ### Building the UI
 
 We'll be writing all of our code in the App.js file.
 
-Let's add 2 buttons to the screen to take a photo and pick a photo.
+Let's add two buttons to the screen to take a photo and pick an image.
 
 ```JSX
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native';
@@ -231,7 +231,7 @@ After the package is installed, import the `launchCamera` and `launchImageLibrar
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 ```
 
-Both functions accept 2 arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
+Both functions accept two arguments. The first argument is `options` for the camera or the gallery, and the second argument is a callback function. This callback function is called when the user picks an image or cancels the operation.
 
 Check out the [API Reference](https://www.npmjs.com/package/react-native-image-picker#api-reference) for more details about these functions.
 
@@ -245,7 +245,7 @@ const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onIm
 
 Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
 
-We should start the landmark recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
+We should start the landmark recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker would send a `didCancel` property in the response object.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -255,7 +255,7 @@ const onImageSelect = async (media) => {
 };
 ```
 
-You can learn more about the response object that we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
+You can learn more about the response object we get from the `launchCamera` and the `launchImageLibrary` functions [here](https://www.npmjs.com/package/react-native-image-picker#the-response-object).
 
 
 Now, pass these functions to the `onPress` prop of the `TouchableOpacity` for the respective buttons.
@@ -306,7 +306,7 @@ image: {
 },
 ```
 
-If the user did not cancel the operation, we will set the image state with the URI of the selected image in the onImageSelect function.
+If the user did not cancel the operation, we will set the image state with the `URI` of the selected image in the `onImageSelect` function.
 
 ```JSX
 const onImageSelect = async (media) => {
@@ -345,7 +345,7 @@ The function will process the image and return the list of landmarks that are id
 
 - Latitude & Longitude of the landmarks.
 
-- The confidence the Machine Learning service has in its own results.
+- The confidence the Machine Learning service has in its results.
 
 - An entity ID for use on Google's [Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
 
@@ -431,3 +431,6 @@ await ml().cloudImageLabelerProcessImage(imagePath, {
 Congratulations, :partying_face: You did it.
 
 Thanks for Reading!
+
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
