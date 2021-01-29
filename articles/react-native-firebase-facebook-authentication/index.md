@@ -309,7 +309,6 @@ Here is the complete code for the `signIn` function:
 ```JSX
 async function signIn() {
   try {
-    // Attempt login with permissions
     const result = await LoginManager.logInWithPermissions([
       'public_profile',
       'email',
@@ -319,20 +318,15 @@ async function signIn() {
       throw 'User cancelled the login process';
     }
 
-    // Once signed in, get the users AccesToken
     const data = await AccessToken.getCurrentAccessToken();
 
     if (!data) {
       throw 'Something went wrong obtaining access token';
     }
 
-    // Create a Firebase credential with the AccessToken
-    const facebookCredential = auth.FacebookAuthProvider.credential(
-      data.accessToken,
-    );
-
-    // Sign-in the user with the credential
+    const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
     return auth().signInWithCredential(facebookCredential);
+    
   } catch (error) {
     alert(error);
   }
