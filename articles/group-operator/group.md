@@ -68,8 +68,7 @@ Now, let’s look at an example.
 
 Suppose we have a collection of 3 people with their names, gender, age and hobbies:
 
-Let's create the database and to do that the syntax is  ```use <any name of your database> ``` and then create a collection named as person however you can choose any name you like and then insert multiple documents in that collection by using insertMany() function like ```db.<name of your collection>insertMany([{}, {}, ...])```.  For this example we are using database name as review and collection name as person.
-
+Let's create a database:
 ```bash 
 use review 
 ```
