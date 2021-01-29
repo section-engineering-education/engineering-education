@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/how-to-implement-dark-mode-in-android-studio/
 title: How to Implement Dark Mode in Android
-description: This article gives the reader a guide on how to implement dark mode in android using android studio.
+description: This article will give the reader a guide on how to implement dark mode in Android using Android studio using Kotlin.
 author: michael-barasa
-date: 2021-01-17T00:00:00-10:00
+date: 2021-01-29T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,23 +14,26 @@ images:
   - url: /engineering-education/how-to-implement-dark-mode-in-android-studio/hero.jpg
     alt: Dark mode example image
 ---
-In the recent past, there has been a lot of excitement in regards to dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
+In the recent past, there has been a lot of excitement regarding dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
 <!--more-->
 ### Introduction
-The dark mode feature does not need any significant explanation. It's highly likely that you have already used dark mode on your phone or computer at one point. So, we can simply define dark mode as a setting that changes the overall color of your application to black. The dark mode is supported by both mobile and web applications. Many applications on the Google Play Store are already equipped with this feature. There are even rumors that enabling dark mode helps prolong battery life. Furthermore, it improves the visual appeal of the app, especially for those users with eye problems.
+The dark mode feature does not need any significant explanation. It's highly likely that you have already used dark mode on your phone or computer at one point. So, we can simply define dark mode as a setting that changes the overall color of your application to black. The dark mode is supported by both mobile and web applications. 
+
+Many applications on the Google Play Store are already equipped with this feature. There are even rumors that enabling dark mode helps prolong battery life. Furthermore, it improves the visual appeal of the app, especially for those users with eye problems.
 
 ### Goal
 To incorporate the dark mode feature into an Android Application using Kotlin.
 
 ### Prerequisites
-This tutorial is suitable for intermediate learners. Therefore, you must be familiar with the Kotlin programming language, as well as the file or project structure in Android studio. When it comes to programs, you need Android Studio installed on your computer. Having a physical android device is also recommended. This is because will test the application on our phones.
+This tutorial is suitable for intermediate learners. Therefore, you must be familiar with the Kotlin programming language, as well as the file or project structure in Android studio. 
 
-### Creating the Project
+When it comes to programs, you will need Android Studio installed on your computer. Having a physical Android device is also recommended. This is because we will test the application on our phones.
+
+### Creating the project
 Open Android Studio and create a new project. You can give it any name. In my case, the project is called `darkmode`. Then, select an Empty Activity and proceed to the next screen.
 
->In this window, ensure that you set the minimum SDK as API 21 OR Lollipop.
-You can then click finish and wait for the project to be set up. This usually takes a few minutes depending on your internet connection.
->Note that we do not need to install any other dependencies for this tutorial.
+>In this window, ensure that you set the minimum SDK as API 21 OR Lollipop. You can then click finish and wait for the project to be set up. This usually takes a few minutes depending on your internet connection.
+>Note: That we do not need to install any other dependencies for this tutorial.
 
 ### Creating the attrs.xml file
 We need to declare our color attributes in an `attrs.xml` file. We will later access our settings from this file rather than the default `colors.xml`.
@@ -45,7 +48,8 @@ In the `res/values` folder, create a new resource file and name it `attrs.xml`. 
     </declare-styleable>
 </resources>
 ```
-`<declare-styleable name="ds"></declare-styleable>` allows us to add the style attributes of our app. As shown in the code snippet, the app will have elements such as `background_color`, `text_color`, and `button_color`. Ensure that all of these attributes have the `color` format.
+
+Here `<declare-styleable name="ds"></declare-styleable>` allows us to add the style attributes of our app. As shown in the code snippet, the app will have elements such as `background_color`, `text_color`, and `button_color`. Ensure that all of these attributes have the `color` format.
 
 ### Modifying the style.xml file
 We need to add our light and dark themes in the `styles.xml`.
@@ -81,12 +85,13 @@ When you open this file, you will realize that there is a pre-existing style nam
 
 </resources>
 ```
->Kindly note that the dark theme should have all the elements described in the light theme but with different colors.
+
+>Kindly note that the dark theme should already have all the elements described in the light theme but with different colors.
 
 ### Creating the UI
-In this tutorial, our app has a simple user interface. The UI includes a switch and a textview. To get started, open the `activity_main.xml`.
-Change the layout from `ConstraintLayout` to `LinearLayout`. Remember to set the `orientation` as vertical.
-Next, add a Switch and `TextView` widgets and position them at the center of the page. Finally, include an id to the Switch widget.
+In this tutorial, our app will have a simple user interface. The UI will include a switch and a textview. To get started, open the `activity_main.xml`. Change the layout from `ConstraintLayout` to `LinearLayout`. 
+
+Remember to set the `orientation` as vertical. Next, add a Switch and `TextView` widgets and position them at the center of the page. Finally, include an id to the Switch widget.
 
 Here is the full code for the `activity_main.xml`.
 
@@ -128,9 +133,10 @@ Here is the full code for the `activity_main.xml`.
 </LinearLayout>
 
 ```
+
 > Remember to set the color of the UI components. As noted, we will access our colors via the `attrs.xml` file we created earlier. We, therefore, use `"?attr/text_color"` to set color to our widgets. Your application will not work if you ignore this crucial aspect.
 
-### Checking state and handling click events.
+### Checking state and handling click events
 Whenever our app starts, we need to check which theme is enabled by default. We do this by using the `AppCompatDelegate` class. Here is the code snippet to check the app’s theme.
 
 ```kotlin
@@ -141,7 +147,7 @@ if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
 }
 ```
 
-> Please note that you should include the above code snippet immediately after the `onCreate` function or before the activity_main.xml layout is initialized.
+> Please note that you should include the code snippet above immediately after the `onCreate` function or before the activity_main.xml layout is initialized.
 
 Next, we need to handle the click events for our Switch. Remember, we had assigned this component with the id of `switchtheme`. We, therefore, use this id to listen for changes as shown below.
 
@@ -167,6 +173,7 @@ We set the default light theme as shown below.
 ```kotlin
 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 ```
+
 Here is the code for the `MainActivity.kt`.
 
 ```kotlin
@@ -197,11 +204,13 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-Your app should have a dark mode if you have followed the above steps properly. The following gif shows the dark mode in action.
+
+If you have followed the above steps properly, your app should now have a dark mode. The following gif shows the dark mode in action.
+
 ![demo](/engineering-education/how-to-implement-dark-mode-in-android-studio/demo.gif).
 
 ### Conclusion
-The dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.
+Dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
