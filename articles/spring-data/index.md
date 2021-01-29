@@ -1,5 +1,22 @@
-### Java Persistence API (JPA)
-JPA is a set of standards that defines how Java objects are represented in a database. JPA provides a set of annotations and interfaces that makes it possible to configure and map java objects to relational database tables. Relationships between Java objects are provided through annotations (one-to-one, one-to-many, many-to-one, many-to-many). The implementations of the JPA specifications are provided by the object-relational mapping tools (ORM) like [Hibernate](https://hibernate.org/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-data/
+title: Getting Started With Spring Data JPA in Kotlin
+description: This article takes the reader through creating a recipe application using spring data and Java Persistent API. JPA is a set of standards that define how Java objects are represented in a database.
+author: odhiambo-paul
+date: 2021-01-29T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-data/hero.jpg
+    alt: Java Persistent API example image
+---
+JPA is a set of standards that defines how Java objects are represented in a database. JPA provides a set of annotations and interfaces that makes it possible to configure and map java objects to relational database tables. Relationships between Java objects are provided through annotations (one-to-one, one-to-many, many-to-one, many-to-many).
+<!--more-->
+The implementations of the JPA specifications are provided by the object-relational mapping tools (ORM) like [Hibernate](https://hibernate.org/).
 JPA makes it easier to switch from one ORM tool to another without refactoring code since it abstracts the complexities involved with various ORM tools. JPA falls between the ORM and the application layer.
 In this tutorial, we will be modeling a `Recipe` application using Spring Data and JPA. The entity-relationship diagram for our application is shown below.
 
@@ -205,6 +222,9 @@ JPA CASCADE types control how state changes are cascaded from the parent object 
     - `EnumType.ORDINAL` stores the enum values as integers i.e. `EASY` as 1, `HARD` as 3 while `EnumType.STRING` stores the values as string i.e. `EASY` as EASY.
 
 ### Conclusion
-Now that you have learned how to model the database using Spring Data JPA, implement the JPA repositories, and then create a REST controller for our recipe application. Source code for the application can be found [here](https://github.com/paulodhiambo/recipe)
+Now that you have learned how to model the database using Spring Data JPA, implement the JPA repositories, and then create a REST controller for our recipe application. Source code for the application can be found [here](https://github.com/paulodhiambo/recipe).
 
-Happy coding
+Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
