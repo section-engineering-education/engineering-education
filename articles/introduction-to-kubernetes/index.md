@@ -120,3 +120,6 @@ $ kubectl version --client
 
 ### Conclusion
 Now that you have learned various components that are found in Kubernetes, run a Kubernetes cluster locally using [minikube](https://minikube.sigs.k8s.io/docs/start/). In the next article, we will deploy a Django application that we created [here](https://www.section.io/engineering-education/django-crud-api/) to a Kubernetes cluster running locally.
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
