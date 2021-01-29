@@ -516,3 +516,5 @@ Then, when you run the app and go to the homepage you should see the following:
 ### Conclusion:
 
 In this guide, we went through how to use many of the key Spring security features. Although we went quick here, hopefully, that would have given a good idea of how to secure your Spring Boot applications. As a next step, I would suggest trying to use this knowledge to secure an existing application you have. As well, I would recommend you try to add claims to the JWT token and try to parse them in a request. You can also try learning to combine OAuth and JWT as mentioned earlier. As a final note, you can find the final code for this guide (here)[https://github.com/john-amiscaray/Spring-Security-Crash-Course]
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
