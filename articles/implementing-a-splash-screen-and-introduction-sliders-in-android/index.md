@@ -25,7 +25,7 @@ There are various ways of creating a splash screen:
 1. Using the Launcher Theme. (The best)
 2. Using a Launcher Theme with a Splash activity. (The ish-ish)
 3. Using Timers. (The bad)
-4. Using Smart Timers.(The ugly)
+4. Using Smart Timers. (The ugly)
 In this section, we will create a splash screen for our application using the launcher theme.
 
 ### Step 1 – Create a new Android Studio Project.
