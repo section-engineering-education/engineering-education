@@ -6,7 +6,7 @@ url: /engineering-education/sorting-algorithms-in-js/
 title: Sorting Algorithms in JavaScript
 description: This article will cover how to implement sorting algorithms in Javascript. Sorting can be referred to as an operation performed to arrange records in some particular order.
 author: kennedy-mwangi
-date: 2021-01-26T00:00:00-15:00
+date: 2021-01-28T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,10 @@ images:
   - url: /engineering-education/sorting-algorithms-in-js/hero.jpg
     alt: Sorting Algorithms in JavaScript image
 ---
-Sorting can be referred to as an operation performed to arrange files in some particular order. The arrangement is performed based on the value of each file present. The order can either be ascending or descending. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.
+Sorting can be referred to as arranging files in some particular order. The arrangement performed can be based on the value of each file present. That particular order can be in either an ascending or descending fashion. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.
 <!--more-->
-
 ### Prerequisites
-To follow this article along, it will be helpful to have the following.
+To follow this article along, it will be helpful to have the following:
 - Some basic knowledge of JavaScript.
 
 - [Node.js](#https://nodejs.org/en/) installed on your computer.
@@ -43,9 +42,9 @@ To follow this article along, it will be helpful to have the following.
 ### Categories of sorting algorithms
 Sorting algorithms are categorized into:
 
-- **Internal sorting algorithms**: These are sorting algorithms applied to a small amount of data. Only the main memory is used. Examples are bubble sort, insertion sort, and quicksort.
+1. **Internal sorting algorithms**: These are sorting algorithms applied to a small amount of data. Only the main memory is used. Examples would be bubble sort, insertion sort, and quicksort.
 
-- **External sorting algorithms**: They are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example would be merge sort.
+2. **External sorting algorithms**: These are sorting algorithms that can be applied to massive amounts of data. As a result, external storage devices such as hard drives, and flash disks are used. An example would be merge sort.
 
 ### Efficiency of sorting algorithms
 Some sorting algorithms are more efficient than others. The effectiveness of a sorting algorithm is usually defined by the following performance measures:
@@ -70,13 +69,12 @@ Based on the factors above, an algorithm has four performance cases:
 - **Divide and conquer**: The algorithm accomplishes its task by dividing the problem into smaller subproblems and solving them to come up with the overall solution.
 
 ### Sorting algorithms
-For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, Image representation, and implementation of the algorithm using JavaScript.
+For each sorting algorithm discussed below, there is a step-by-step explanation of how the algorithm works, image representation, and implementation of the algorithm using JavaScript.
 
 ### Bubble sort
 Bubble sort follows the recursion technique.
 
-**Step-by-step guide**:
-
+#### Step-by-step guide:
 - Start by comparing the first two elements in an array.
 
 - Swap them if required.
@@ -85,13 +83,13 @@ Bubble sort follows the recursion technique.
 
 - Repeat the process until the entire array is sorted.
 
-**Image representation**:
+#### Image representation
 
 ![bubble_sort](/engineering-education/sorting-algorithms-in-js/bubble-sort.png)
 
 [Image Source](https://medium.com/karuna-sehgal/an-introduction-to-bubble-sort-d85273acfcd8)
 
-**JavaScript implementation**.
+#### JavaScript implementation
 
 ```JavaScript
 function bubbleSort(arr){
@@ -136,8 +134,7 @@ Bubble sort has the following performance cases:
 ### Insertion sort
 Insertion sort uses the recursion technique. There is a portion of the array that is sorted and the other that is unsorted. So you have to compare the elements from the unsorted portion one by one and insert them into the sorted portion in the correct order. In the guide below we are using ascending order.
 
-**Step-by-step guide**:
-
+#### Step-by-step guide
 - Start by comparing the second element of the array with the first element assuming the first element is the sorted portion. Swap if the second element is smaller than the first element.
 
 - Iterate through comparing the first element with each element of the unsorted portion. If the element from the unsorted portion is smaller than the first element, swap.
@@ -146,13 +143,13 @@ Insertion sort uses the recursion technique. There is a portion of the array tha
 
 - The sorted portion shall increase until it covers the entire array yielding a sorted array.
 
-**Image representation**
+#### Image representation
 
 ![insertion_sort](/engineering-education/sorting-algorithms-in-js/insertion-sort.png)
 
 [Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
 
-**JavaScript Implementation**
+#### JavaScript Implementation
 
 ```JavaScript
 function insertionSort(arr){
@@ -197,21 +194,20 @@ Insertion sort has the following performance cases:
 ### Selection sort
 Selection sort uses the recursion technique. In the guide below, we are using ascending order. For descending order, you do the reverse.
 
-**Step-by-step guide**:
-
+#### Step-by-step guide
 - Given an array, assume that the first element in the array is the smallest.
 
 - From the other portion of the array, find the minimum value, and swap it with the first element. At this point, you have completed the first pass.
 
 - Repeat the same procedure with the rest of the array comparing the elements to the right, not the left.
 
-**Image representation**:
+#### Image representation
 
 ![selection-sort-algorithm](/engineering-education/sorting-algorithms-in-js/selection-sort.png)
 
 [Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
 
-**JavaScript Implementation**
+#### JavaScript Implementation 
 
 ```JavaScript
 function selectionSort(arr) {
@@ -261,8 +257,7 @@ Selection sort has the following performance cases:
 ### Merge sort
 Merge sort uses the divide and conquer technique. The main concept of merge sort is that an array of length 1 is sorted. The task, therefore, lies in splitting the array into subarrays of size 1 and then merge them appropriately so that it comes up with the sorted array.
 
-**Step-by-step guide**:
-
+#### Step-by-step guide
 - Split the array elements into individual elements.
 
 - Compare the individual elements and arrange them in order. This results in subarrays of length 1 or 2.
@@ -275,14 +270,12 @@ Merge sort uses the divide and conquer technique. The main concept of merge sort
 
 - Continue until all subarrays have been covered and you have one sorted array.
 
-**Image representation**
-
+#### Image representation
 ![merge_sort](/engineering-education/sorting-algorithms-in-js/merge_sort.png)
 
 [Image Source](https://medium.com/@rajat_m/implement-5-sorting-algorithms-using-javascript-63c5a917e811)
 
-**JavaScript implementation**
-
+#### JavaScript implementation
 ```JavaScript
 //merging two arrays appropriately.
 function merge(arr1, arr2) {
@@ -414,7 +407,7 @@ Merge sort has the following performance cases:
 ### Quicksort
 Quicksort applies the divide and conquer technique as well. It works by having a pivot element such that the elements to the left of it are less than it and those to the right are greater than it. The pivot element can be any element in the array.
 
-**Step-by-step guide**:
+#### Step-by-step guide
 
 - Select a pivot element.
 
@@ -422,13 +415,13 @@ Quicksort applies the divide and conquer technique as well. It works by having a
 
 - Carry out the above steps recursively until we have subarrays of length 1. Combine the subarrays to yield a sorted array.
 
-**Image representation**
+#### Image representation
 
 ![quick-sort](/engineering-education/sorting-algorithms-in-js/quick-sort.png)
 
 [Image Source](https://www.techiedelight.com/quicksort/)
 
-**JavaScript implementation**
+#### JavaScript implementation
 
 ```JavaScript
 function partition(items, left, right) {
