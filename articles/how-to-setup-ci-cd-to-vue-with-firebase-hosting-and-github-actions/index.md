@@ -83,7 +83,7 @@ Hence, we will get the following result in the browser:
 
 ### Step 2: Push Project to GitHub
 
-Now, we are going to upload for code to GitHub using Git. GitHub is an online cloud platform that stores the accurate versions of our coding project after each upload. It is a project management system designed to facilitate version control for Git. Git is a version control tool used to provide a proper version to our coding project after each push or upload. Another major feature it provides is GitHub actions that which be used to automate the workflow. It helps to ease up the build and deployment process.
+Now, we are going to upload our code to GitHub using Git. GitHub is an online cloud platform that stores the accurate versions of our coding project after each upload. It is a project management system designed to facilitate version control for Git. Git is a version control tool used to provide a proper version to our coding project after each push or upload. Another major feature it provides is GitHub actions that which be used to automate the workflow. It helps to ease up the build and deployment process.
 
 First, we need to login into a GitHub account and create a repository as directed in the screenshot below:
 
