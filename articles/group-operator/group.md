@@ -110,9 +110,7 @@ db.person.insertMany([
     }
 ])
 ```
-Now that we have some documents in the collection, we can use the $group to find how many males and how many females are there.
-
-Let's say we want to find how many males and how many females are there in this document. In this short example, it is pretty clear that there are 2 males and 1 female.
+Now that we have some documents in the collection, we can use the $group to find how many males and how many females are there. In this short example, it is pretty clear that there are 2 males and 1 female.
 
 ```bash
 db.person.aggregate([ { $group: {_id: {gender: "$gender"}, totalPeople: {$sum: 1}} } ]).pretty()
