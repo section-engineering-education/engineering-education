@@ -72,7 +72,7 @@ Let's create a database:
 ```bash 
 use review 
 ```
-
+Now, let's create a collection named `person` and insert multiple documents in that collection using `insertMany()` function like:
 ```bash
 db.person.insertMany([
     {
