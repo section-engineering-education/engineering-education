@@ -1,4 +1,4 @@
-The bottom sheet dialogs seem to be replacing the regular android dialogs and menus. The bottom sheet is a component that slides up from the bottom of the screen to showcase additional content into your application UI cycle. A bottom sheet dialog is like a message box triggered by user's actions. Many big corporations have implemented the bottom sheet dialog concept. They include Google Maps, Instagram, and Google Drive. It is just countless list all applications that have this fantastic feature.
+The bottom sheet dialogs seem to be replacing the regular android dialogs and menus. The bottom sheet is a component that slides up from the bottom of the screen to showcase additional content into your application UI cycle. A bottom sheet dialog is like a message box triggered by the user's actions. Many big corporations have implemented the bottom sheet dialog concept. They include Google Maps, Instagram, and Google Drive. It is just countless list all applications that have this fantastic feature.
 
 Instance such as that uses the bottom sheet dialog include
 - Music apps use this feature to showcase song playlists and other features.
@@ -59,11 +59,11 @@ Since we have two types of bottom sheet dialog, we will discuss how to implement
 
 #### Preparing layouts
 
-Design the dialog elements. To show the dialog, you need to lay out an XML file that arranges the dialog's content. You can choose to use any view that fits your dialog content. Any view, including Recycler view, Images, Text, Inputs, and Button, can be included in a bottom sheet dialog. The dialog creates more room to showcase more diverse content around your application cycle. Any XML design implemented in the standard activity layout can also be implemented with a bottom sheet dialog.
+Design the dialog elements. To show the dialog, you need to lay out an XML file that arranges the dialog's content. You can choose to use any view that fits your dialog content. Any view, including RecyclerView, Images, Text, Inputs, and Button, can be included in a bottom sheet dialog. The dialog creates more room to showcase more diverse content around your application cycle. Any XML design implemented in the standard activity layout can also be implemented with a bottom sheet dialog.
 
 Here is the `bottom_sheet_dialog_layout.xml` layout that I will be using to implement a modal bottom sheet.
 
-Make sure you generate some vector images as showcased in the ImageView of the below XML file.
+Make sure you generate some vector images as showcased in the ImageView of the below XML file. Or check this [GitHub](https://github.com/kimkimani/ModalBottomSheet) repository for more reference.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -219,7 +219,7 @@ Button mBottton = findViewById(R.id.button);
 });
 ```
 
-Inside the function `showBottomSheetDialog()` initialize the bottom sheet dialog. Set its content views and the dialog layout XML as specified in the `bottom_sheet_dialog_layout.xml`. Declare all the layouts and call them by `id` as specified in the bottom sheet layout. And we are ready to show the dialog with `bottomSheetDialog.show()`.
+Inside the function `showBottomSheetDialog()` initialize the bottom sheet dialog. Set the dialog XML layout `setContentView` as specified in the `bottom_sheet_dialog_layout.xml`. Declare all the views and call them by `id` as specified in the bottom sheet layout. And we are ready to show the dialog with `bottomSheetDialog.show()`.
 
 ```java
 private void showBottomSheetDialog() {
@@ -243,7 +243,7 @@ Run the app to test if the sheet is working. Clicking the button will trigger th
 
 #### Set onClick Listener
 
-Each element's layout included in the dialog can be assigned an action. When an item is clicked, it will redirect the user to the necessary choice of action.
+Each element in the dialog layout can be assigned an action. When an item is clicked, it will redirect the user to the necessary choice of action.
 
 Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of actions inside each element according to where you want your users to be directed once a dialog element is selected.
 
@@ -332,7 +332,7 @@ public class BottomSheetFragment extends Fragment {
 }
 ```
 
-Add a button in the activity XML and declare and set `OnClick` Listener as we explained when using `BottomsheetDialog`.
+Add a button in the activity XML, declare it, and set `OnClick` Listener as we explained when using `BottomsheetDialog`.
 
 We want to open the fragment when the button is clicked.
 Indicate the following code block inside the button `OnClick` Listener.
@@ -356,11 +356,11 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 }
 ```
 
-Run the application, and it should now run as expected.
+Run the application, and it should now show the results as expected.
 
 ![Modal bottom sheet fragment](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
-Check the code for implementing both modal dialogs on [GitHub](https://github.com/kimkimani/ModalBottomSheet).
+Check the code used to implement both modal dialogs on [GitHub](https://github.com/kimkimani/ModalBottomSheet).
 
 ### Implementing a persistent bottom sheet dialog
 
@@ -499,7 +499,7 @@ I have created a `bottom_sheet_dialog_layout.xml` and included the following sim
 
 ![Bottom sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet.jpg)
 
-This is not a bottom sheet yet. It's just a regular layout. To make the layout a bottom sheet dialog, there as so few behavior flags that we need to add to the root layout. They control the bottom sheet behaviors.
+This is not a bottom sheet yet. It's just a regular layout. To transform the layout to a bottom sheet dialog, a few behavior flags need to add to the root layout. They control the bottom sheet behaviors.
 
 These bottom sheet behavior properties are added to the root layout of the bottom sheet design. Any layout that you need to populate as a bottom sheet dialog needs these behavior flags. They can also be added [dynamically using java](https://material.io/components/sheets-bottom/android#handling-insets).
 
@@ -553,7 +553,7 @@ Here is the code to do that
 
 #### Expanding and collapsing the sheet dialog
 
-To control the sliding and collapsing of the dialog we use states. They are different states of the bottom sheet that you need to understand. They include.
+To control the sliding and collapsing of the dialog, we use states. There are different states of the bottom sheet that you need to understand. They include.
 
 - `STATE_EXPANDED` - the dialog is visible to its maximum defined height.
 - `STATE_COLLAPSED` - the dialog is visible depending on the set `peekHeight`.
@@ -612,16 +612,16 @@ sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback
 });
 ```
 
-`onStateChanged` tells the application what's happening on the dialog depending on the corresponding change of state. `onSlide` will rotate the arrow image when `STATE_EXPANDED` has reached its maximum height while sliding bottom to top. On the other side, the image will rotate to its original state when `STATE_COLLAPSED` is at `peekHeight`.
+`onStateChanged` tells the application what's happening on the dialog depending on the corresponding change of state. `onSlide` will rotate the arrow image (while sliding bottom to top) until when `STATE_EXPANDED` has reached its maximum height. On the other side, the image will rotate to its original state when `STATE_COLLAPSED` is at `peekHeight`.
 
 #### Run the application
 
 ![Persistent dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/persistent-dialog.gif)
 
-Check the code for implementing persistent dialog on [GitHub](https://github.com/kimkimani/PersistentBottomSheetDialog).
+Check the code used to implement the persistent dialog on [GitHub](https://github.com/kimkimani/PersistentBottomSheetDialog).
 
 ### Conclusion
 
 The bottom sheet dialog is a unique way to display menus and dialogs. It provides more room to include more content. Bottom sheet dialogs are diverse. You can choose to implement any view or layout into them. This way, it becomes easier to incorporate extra information distinctly into your application life cycle.
 
-Check out [Material documentation](https://material.io/components/sheets-bottom#behavior) and learn more about the bottom sheet dialog. There are diverse dialog examples that will help you learn the do and don't while implementing the dialog into your application, theming, and other more specs.
+Check out [Material documentation](https://material.io/components/sheets-bottom#behavior) and learn more about the bottom sheet dialog. There are diverse dialog examples that will help you understand the do and don't when implementing the dialog into your application, such as theming and other more specs.
