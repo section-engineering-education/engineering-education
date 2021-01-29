@@ -1,6 +1,9 @@
-The bottom sheet seems to be replacing the regular android dialogs and menus. The bottom sheet is a component that slides up from the bottom of the screen to showcase additional content into your application UI cycle. The bottom sheet is like a message box that is triggered by a user's actions. Many big corporations have implemented the bottom sheet dialog concept. Some familiar examples are Google Maps, Instagram, and Google Drive. It is just countless to have all applications that have this fantastic feature.
+The bottom sheet dialogs seem to be replacing the regular android dialogs and menus. The bottom sheet is a component that slides up from the bottom of the screen to showcase additional content into your application UI cycle. A bottom sheet dialog is like a message box triggered by user's actions. Many big corporations have implemented the bottom sheet dialog concept. They include Google Maps, Instagram, and Google Drive. It is just countless list all applications that have this fantastic feature.
 
-An instance such as a music app uses this feature to showcase playlists and other features. An app that requires a user to select a document/file and upload and share them. Payment components have been constantly implemented using the bottom sheet dialog to load and display the end-users' relevant data.
+Instance such as that uses the bottom sheet dialog include
+- Music apps use this feature to showcase song playlists and other features.
+- An application feature that requires a user to select a document/file and upload and share them.
+- Payment components have been constantly implemented using the bottom sheet dialog to load and display the end-users' relevant data.
 
 In terms of application, any android view such as TextView, ImageView, RecyclerViews, Buttons, and Text inputs can be implemented into a bottom sheet. This makes it dynamic to load more diverse information, i.e., load data from the database and display them using the bottom sheet or collect information and save them to a database. In short, a bottom sheet can be applied in many instances as long as it fits your application cycle.
 
@@ -32,7 +35,7 @@ Persistent BottomSheet dialog provides supplementary content about the current s
 
 A portion of the container is visible to provide users with more content and more options about the current screen when slid from bottom to top. Unlike the modal dialog, a persistent dialog widget is permanent for the current screen content.
 
-An excellent example of a persistent bottom sheet dialog is the google map application. It has outstandingly implemented this feature.
+An excellent example of a persistent bottom sheet dialog is the Google maps application. It has outstandingly implemented this feature.
 
 ![Google maps bottom sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/google-map-bottom-sheet.png)
 
@@ -46,7 +49,7 @@ Include the following library in your `app.gradle` file.
 implementation 'com.google.android.material:material:1.2.1'
 ```
 
-Sync the project to download the library. This will make all the required functions available in your project as build-it.
+Sync the project to download the library. This will make all the required functions available in your project as build-in.
 
 Since we have two types of bottom sheet dialog, we will discuss how to implement them using android studio.
 
