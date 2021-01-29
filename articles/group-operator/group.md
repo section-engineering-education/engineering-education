@@ -62,6 +62,7 @@ The $group operator does not remove the data from the database. It just aggregat
 - When using count, or any grouping function, remember to include the underscore before the field name (sort by _count).
 
 - Multiple aggregation functions can be on the same line but you can't include another function, such as a math function, on the same line of a query.
+### Example
 
 Now, let’s look at an example.
 
@@ -154,4 +155,3 @@ Output:
 ### Conclusion
 
 In this article we have discussed the `$group` operator with some examples. I hope you enjoyed reading this article as much as I enjoyed writing it.
-
