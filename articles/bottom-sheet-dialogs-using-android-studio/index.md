@@ -24,7 +24,7 @@ Or this payment bottom sheet dialog examples.
 
 ![Payment bottom sheet dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/payment-bottom-sheet-dialog.jpg)
 
-They are a great alternative to inline menus and simple dialogs as it provides additional room for more content, iconography, and more screen actions. It is not part of the main application layout. It perfect work where the menu content presents a link to other apps.
+They are a great alternative to inline menus and simple dialogs as it provides additional room for more content, iconography, and more screen actions. It is not part of the main application layout. It perfectly works when the menu content presents a link to other apps.
 
 #### Persistent bottom sheet dialog
 
@@ -48,7 +48,7 @@ implementation 'com.google.android.material:material:1.2.1'
 
 Sync the project to download the library. This will make all the required functions available in your project as build-it.
 
-Since we have two types of modal dialog, we will discuss how to implement them using android studio.
+Since we have two types of bottom sheet dialog, we will discuss how to implement them using android studio.
 
 ### Implementing a modal bottom sheet dialog
 
@@ -234,7 +234,7 @@ private void showBottomSheetDialog() {
 }
 ```
 
-Run the app, clicking the button will trigger the dialog to slide from the bottom to the top.
+Run the app to test if the sheet is working. Clicking the button will trigger the dialog to slide from the bottom to the top.
 
 ![Modal bottom sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
@@ -242,7 +242,7 @@ Run the app, clicking the button will trigger the dialog to slide from the botto
 
 Each element's layout included in the dialog can be assigned an action. When an item is clicked, it will redirect the user to the necessary choice of action.
 
-Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of actions inside each element according to where you want your users to go once selected an element in the dialog.
+Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of actions inside each element according to where you want your users to be directed once a dialog element is selected.
 
 Go ahead and include the following `OnClickListeners` right above `bottomSheetDialog.show()`.
 
@@ -290,7 +290,7 @@ delete.setOnClickListener(new View.OnClickListener() {
 
 In this case, once a single element is clicked, I chose to close the dialog by specifying `bottomSheetDialog.dismiss()`.
 
-You can also choose a more distinct action, instructing your application to do something when the dialog is dismissed. That is if you have something specific that your application should do when a user dismisses the dialog.
+You can also choose a more distinct action, instructing your application to do something when the dialog is dismissed. That is, if you have something specific that your application should do when a user dismisses the dialog.
 
 ```java
 bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
@@ -518,7 +518,7 @@ This bottom sheet behavior flags include;
 
 - `app:behavior_hideable` - takes a Boolean value. If `true`, a user can drag and hide the dialog by sliding it down. If false, the dialog will float on the screen and will not be hideable.
 
-- `app:behavior_peekHeight` - it defines the height of the sheet that is visible. A bottom sheet can contain diverse content. Peek height, will highlight a portion of a bottom sheet visible to the user before they start interacting with the other bottom sheet components. When an action is triggered, the dialog will expand to reveal the extra content.
+- `app:behavior_peekHeight` - it defines the height of the sheet that is visible. A bottom sheet can contain diverse content. Peek height highlights a portion of a bottom sheet visible to the users before interacting with the other bottom sheet components. When an action is triggered, the dialog will expand to reveal the extra content.
 
 ***Remember to add an id to be used to access the layout.***
 
@@ -555,7 +555,7 @@ To control the sliding and collapsing of the dialog we use states. They are diff
 - `STATE_EXPANDED` - the dialog is visible to its maximum defined height.
 - `STATE_COLLAPSED` - the dialog is visible depending on the set `peekHeight`.
 - `STATE_DRAGGING` - the user is dragging the dialog up and down.
-- `STATE_SETTLING` - show that the dialog is settling at a specific height, This can be the `peekHeight`, expanded height, or zero if the dialog is hidden.
+- `STATE_SETTLING` - show that the dialog is settling at a specific height. This can be the `peekHeight`, expanded height, or zero if the dialog is hidden.
 - `STATE_HIDDEN` - the dialog is not visible.
 
 The last thing we will do is listen to the state of the dialog. To do that, we will add `BottomSheetCallback` to detect any state changes.
