@@ -27,15 +27,14 @@ There are various ways of creating a splash screen:
 3. Using Timers. (The bad)
 4. Using Smart Timers.(The ugly)
 Since we go for the best, we shall discuss the first option.
-In this section, we are going to create a splash screen for our application.
+In this section, we will create a splash screen for our application using the launcher theme.
 
 ### Step 1 – Create a new Android Studio Project.
 Open Android Studio and select an Empty Activity. We shall name our project **SplashnSlides**. Click *Finish* and wait for the project to build.
 ![Creating an Android Studio project](/engineering-education/implementing-a-splash-screen-and-intoduction-sliders-android/new.jpg)
 
 ### Step 2 – Designing the splash screen.
-In this step, we will design our splash screen. 
-For this project, we will use an image. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File. We shall name our file **splash_image.xml.**
+For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File. We shall name our file **splash_image.xml.**
 Click *ok.*
 This file will set our image as a drawable, which will act as our splash screen.
 Add the following code in the splash_image.xml.
@@ -172,7 +171,7 @@ In our MainActivity, we will add lines of code to perform the following tasks:
 - Adding functionality to the navigating buttons(previous and next).
 - Creating an `addBottomDots` method that sets functionality to the dots for our introduction sliders.
 - Creating the `getItem` method in which we will specify some functions for each slide.
-- Extending a `PagerAdapter` class. A PagerAdapter is the base class providing the adapter to populate pages inside of a `ViewPager`.
+- Extending a `PagerAdapter` class that populates pages inside of a `ViewPager`.
 Add the following code in MainActivity.java;
 ```java
 public class MainActivity extends AppCompatActivity {
