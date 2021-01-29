@@ -423,3 +423,29 @@ auth().onAuthStateChanged((user) => {
 ```
 
 ![Signout](signout.gif)
+
+### Let's Recap
+
+1. We set up our development environment and created a React Native app.
+
+2. We cloned the starter code.
+
+3. We created a Facebook app with a developer account and enabled Facebook Login for the app.
+
+3. We created a Firebase project and enabled Facebook authentication in our project with App ID and App Secret.
+
+4. We installed the required packages and we added the dependencies to the `build.gradle` files.
+
+5. We added the App ID to the `strings.xml` file and added some configurations to the `AndroidManifest.xml` file.
+
+5. We wrote a function to login the user with their facebook access token using the Facebook SDK.
+
+6. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
+
+7. We displayed the *Authenticated* screen when the user has been authenticated.
+
+8. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+
+Congratulations, :partying_face: You did it.
+
+Thanks for Reading!
