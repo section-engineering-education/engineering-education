@@ -1,36 +1,35 @@
-### What is AJAX? 
+### What is AJAX?
 
-Ajax is an acronym for Asynchronous JavaScript and XML. It’s not a language, framework or a web library. It’s a web technology that sends and receives data from a client to a server asynchronously all done in the background without needing to reload the current web page. It includes even though XML in the acronym, it’s rarely used in AJAX anymore, it has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
+Ajax is an acronym for Asynchronous JavaScript and XML. It’s neither a language, a framework nor a web library. It’s a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page. Even though it includes XML in the acronym, it’s rarely used in AJAX anymore. It has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
 
 ### What is Axios?
->Axios is a Javascript library used to make HTTP requests from node.js or [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and is used to perform HTTP requests.
+> Axios is a Javascript library used to make HTTP requests from node.js or [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and is used to perform HTTP requests.
 
 
 ### Prerequisites
 
-1. [Python](https://www.python.org/downloads/) 3.7 or newer installed on your computer.
+1. [Python 3.7](https://www.python.org/downloads/) or newer installed on your computer.
 
 2. Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 
 3. Knowledge of [Django](https://www.djangoproject.com/).
 
-3. Knowledge of [JavaScript](https://javascript.info/).
+4. Knowledge of [JavaScript](https://javascript.info/).
 
-### Goals.
+### Goals
 
 - Using Axios to submit a form.
 
-- Handling a post request in Django.
+- Handling a POST request in Django.
 
 ### Project setup
 
-Ensure `virtualenv` is installed on your computer.
+Ensure `virtualenv` is installed on your computer by running the command below.
 
 ```bash
 $ virtualenv --version
 
 virtualenv 20.2.2 from /home/username/.local/lib/python3.8/site-packages/virtualenv/__init__.py
-
 ```
 
 If you get an error message command, run the command below to install `virtualenv` on your computer.
@@ -39,18 +38,16 @@ If you get an error message command, run the command below to install `virtualen
 $ pip install virtualenv
 ```
 
-Change to any directory of your choice on your machine or you can as well make a new directory.  Create a virtual environment for our project using `virtualenv`.
+Change to any directory of your choice on your machine or make a new directory. Create a virtual environment for our project using `virtualenv`.
 
- Run the command below to create and activate the virtual environment.
+Run the commands below to create and activate the virtual environment.
 
 ```bash
 $ virtualenv venv
-
 $ source venv/bin/activate
 ```
 
-I have created a starter template for you to follow along in this tutorial.
-Clone the starter template in your current directory using the command below.
+I have created a starter template for you to follow along in this tutorial. Clone the starter template in your current directory using the command below.
 
 ```bash 
 $ git clone https://github.com/atoyegbe/note-app.git
@@ -62,6 +59,7 @@ Change into the cloned folder using `cd note-app` and run the command below to i
 $ cd note-app
 $ pip install -r requirements.txt
 ```
+
 Your project directory should look like this.
 
 ```bash
@@ -79,19 +77,18 @@ Your project directory should look like this.
 |   requirements.txt
 ```
 
-Let’s make sure nothing is broken in our application, change into the project directory `cd notes` and run the command below.
+Let’s make sure nothing is broken in our application, change into the project directory by running`cd notes` and run the command below.
 
 ```bash 
 $ python manage.py runserver
 ```
+
 After running the above command you will see something like this in your browser.
 ![form page](/engineering-education/ajax-request-in-django-using-axios/form_page.png)
 
-Let’s go into the `templates/home.html`.
-We will add **Axios** library to our project the by adding the CDN script tag below `</div>` closing tag.
+Let’s go into `templates/home.html`. We will add **Axios** library to our project by adding the CDN script tag below `</div>` closing tag.
 
 ```html
-
 {% include 'base.html' %}
 
 {% block content %}
@@ -100,8 +97,8 @@ We will add **Axios** library to our project the by adding the CDN script tag be
 
      <h1> Notes </h1>
 
- <!-- ..... -->
- <!-- ..... -->
+     <!-- ..... -->
+     <!-- ..... -->
 
 </div>
 
@@ -110,10 +107,9 @@ We will add **Axios** library to our project the by adding the CDN script tag be
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
 {% endblock %}
-
 ```
 
-Let us add an event listener to the form to send data to Django serverside. Add these code snippets below the Axios script tag.
+Let us add an event listener to the form to send data to the Django server-side. Add the code below, just below the Axios script tag.
 
 ```html
 <script>
@@ -139,9 +135,9 @@ form.addEventListener('submit', function(event) { // 1
 The above code:
    - 1 - Adds a submit event listener to the form.
    - 2 - Creates a new form in JavaScript.
-   - 3 - Adds a CRSF token, if we do not include this we get a 403 forbidden response we won’t be able to submit the form data.
-   - 4 - Here we use **Axios.post** method to submit form data.
-   - 5 - An alert message `Form Submitted` pop on your windows if the form is submitted successfully.
+   - 3 - Adds a CRSF token. If we do not include this we get a `403 forbidden response` and we won’t be able to submit the form data.
+   - 4 - Here we use `axios.post` method to submit form data.
+   - 5 - A `Form Submitted` alert message pop on your browser if the form is submitted successfully.
    - 6 - This catches and displays the error in the console if an error occurs when submitting the form.
 
 ### Handling Post Request in Django views.
@@ -149,8 +145,8 @@ Navigate to the note directory and add the code below into `views.py`.
 
 ```python
 from django.http import JsonResponse 
-    #....
-    #....
+#....
+#....
 def createNote(request):
     if request.method == 'POST': 
         title = request.POST.get('title') 
@@ -160,10 +156,10 @@ def createNote(request):
             note=note
         )
     return JsonResponse({"status": 'Success'}) 
-
 ```
 
-In `note/ursl.py` edit the code to look like below
+In `note/ursl.py` edit the code to look like below.
+
 ```python
 from django.urls import path 
 from .views import *
@@ -174,13 +170,13 @@ urlpatterns = [
     path('create_note/', createNote, name="note" ) #add this 
 ]
 ```
-Let us test our form.
-First, start up the project development server by running the command below.
+
+Let us test our form. First, start up the project development server by running the command below.
 
 ```bash 
 $ python manage.py runserver
 ```
 
-Fill in the form and submit it. You should see an alert message pop up in your browser, Saying `Form Submitted`.
+Fill in the form and submit it. You should see a `Form Submitted` alert message pop up on your browser.
 
-Navigate to **http://127.0.0.1:8000/notes/** in your browser. If your form works as expected, you should see the details of the note you submitted.
+Navigate to **http://127.0.0.1:8000/notes/** on your browser. If your form works as expected, you should see the details of the note you submitted.
