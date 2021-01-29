@@ -123,7 +123,7 @@ Output:
 { "_id" : { "gender" : "Male" }, "totalPeople" : 2 }
 ```
 
-To make the $group operator work, you should use an accumulator operator like `$sum`, `$avg`, `$max`, etc since the operator yields a combined result based on the grouping expression.
+For the `$group` operator to work, you should use an accumulator operator like `$sum`, `$avg`, `$max`, etc since the operator yields a combined result based on the grouping expression.
 
 Let's take a look at another use case. Suppose now we are interested in how many people have a similar hobby, We should make every hobby a separate top-level field by using the `$unwind` operator and then we have to do the same as we did in the first example:
 
