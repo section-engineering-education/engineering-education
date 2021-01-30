@@ -71,7 +71,7 @@ Articles are expected to be clearly understood, well-written, pre-checked for En
 We request articles to be cross-checked for readability. 
 All submitted articles should be BOLD & CLEAR, free of any lengthy, complex sentences, and/or common errors.
 
-(Waiving for 1st-time contributors - to help them get familiar with the process, style, and quality we expect.)
+(We may waive for 1st-time contributors - to help them get familiar with the process, style, and quality we expect.)
 
 All other formats payout will be as follows:
 

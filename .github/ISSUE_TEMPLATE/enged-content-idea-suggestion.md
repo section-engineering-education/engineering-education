@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+**NOTE: We tend to stray away  or tend not to publish reviews/comparisons of commercial product offerings.**
+
 ### Brief Summary: 
 Describe the what, why, and how of your content idea in 2-5 sentences.
 
