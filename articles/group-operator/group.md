@@ -30,7 +30,7 @@ https://docs.mongodb.com/manual/installation/
 
 ### Aggregation
 
-Aggregation is an operation that processes the data to give a computed result. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. It basically involves stages or pipelines through which data is processed to yield a combined result. 
+Aggregation is an operation that processes the data to give a computed result. Aggregation operations group values from multiple documents together and can perform a variety of operations on the grouped data to return a single result. It involves stages or pipelines through which data is processed to yield a combined result. 
 
 Pipelines are stages through which data is processed, more technically transformed into by the provided criteria. Each pipeline is independent and receives the data of the previous stage. Always remember that the first pipeline will have direct contact with the data itself, not its transformed version, and it can take advantage of indexes.
 
@@ -47,7 +47,7 @@ Let’s take a look at its syntax:
 
 The `_id` field in the output documents contains the distinct group by key. The output documents can also contain computed fields that hold the values of some accumulator expression grouped by the $group‘s `_id` field.
 
-Basically, the `_id` field here will take those fields by which you want to group the documents. It is mandatory to use `_id` here.
+The `_id` field here will take those fields by which you want to group the documents. It is mandatory to use `_id` here.
 
 The $group operator does not remove the data from the database. It just aggregates multiple documents into a single document based on the field passed to the `_id` field.
 
@@ -113,7 +113,7 @@ db.person.insertMany([
 
 Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection. 
 
-To do that we have to use `aggregate()` function on the collection which takes an array of pipelines or stages through which the data in that collection will be transformed. Since we are interested in grouping the data, we have to use `$group` operator along with an accumalator operator. You have to provide a key which will hold the result of the accumalator operator. For this example, we are using `totalPerson` as a key and this will help us to aggregate the data. 
+To do that we have to use `aggregate()` function on the collection which takes an array of pipelines or stages through which the data in that collection will be transformed. Since we are interested in grouping the data, we have to use the `$group` operator along with an accumulator operator. You have to provide a key that'll hold the result of the accumulator operator. For this example, we are using `totalPerson` as a key and this will help us to aggregate the data. 
 
 Synatx of `aggregate()` function:
 
@@ -138,11 +138,11 @@ Output:
 
 As you can see, the `_id` field will hold the field or criteria by which you have grouped your data and `totalPeople` is the key which is holding the result of the accumalator operator i.e., the `$sum` operator. The `$sum` operator will return the collective sum of all the numeric values from applying a specified expression to each document in a group of documents that share the same group by key.
 
-For the `$group` operator to work, you must have to use an accumulator operator like `$sum`, `$avg`, `$max`, `$push` etc. since the operator yields a combined result based on the grouping expression. To study more about the accumalator operators, please visit the [MongoDB official documentation](https://docs.mongodb.com/manual/reference/operator/aggregation/).
+For the `$group` operator to work, you must have to use an accumulator operator like `$sum`, `$avg`, `$max`, `$push`, etc. since the operator yields a combined result based on the grouping expression. To study more about the accumulator operators, please visit the [MongoDB official documentation](https://docs.mongodb.com/manual/reference/operator/aggregation/).
 
 Let's take a look at another use case. Suppose, let's say we are interested in the number of people having a similar hobby. To achieve this, we should make every hobby a separate top-level field by using the `$unwind` operator.
 
-The `$unwind` operator will pull out every value one by one from the array on which you are using this operator and assign it to the key which is holding that array in a single key-value pair form. This allows more flexibility to query the arrays and data in the database. Then, we have to do the same as we did in the first example because now, hobbies is not an array but a top-level field in key-value form and applying `$group` operator will make it easy.
+The `$unwind` operator will pull out every value one by one from the array on which you are using this operator and assign it to the key which is holding that array in a single key-value pair form. This allows more flexibility to query the arrays and data in the database. Then, we have to do the same as we did in the first example because now, hobbies is not an array but a top-level field in a key-value form, and applying the `$group` operator will make it easy.
 
 ```bash
 db.person.aggregate([ {$unwind: "$hobbies"}, { $group: {_id: {hobby: "$hobbies"}, totalPeople: {$sum: 1}} } ]).pretty() 
