@@ -209,5 +209,6 @@ To summarize:
 - [Notes from the course on Udacity](https://github.com/mainkoon81/Study-01-Business-Analytics-I-Theory/blob/master/README.md)
 - [Flash cards on understanding CRISP-DM](https://quizlet.com/gb/454325590/the-crisp-dm-flash-cards/)
 
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
