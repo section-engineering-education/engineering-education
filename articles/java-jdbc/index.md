@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/java-jdbc/
 title: Getting Started with Java JDBC
-description: This article will be an introduction to Java database connectivity, we will learn how to perform various database query operations from a Java application.
+description: This article introduces Java database connectivity. We will learn how to perform various database query operations from a Java application.
 author: paul-juma
 date: 2021-01-22T00:00:00-17:00
 topics: []
@@ -14,19 +14,19 @@ images:
   - url: /engineering-education/java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
-Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries. In this tutorial we will create a simple console application that will be able to perform database create, read, update and delete operation through JDBC API.
+Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform database create, read, update and delete operation through JDBC API.
 <!--more-->
 ### Prerequisites
-To follow this tutorial along you will need the following:
+To follow along, you will need the following:
 1. Java development kit [JDK 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
-2. A code editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux) which is free.
+2. A code editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux), which is free.
 3. Some basic knowledge in the [Java](https://www.javatpoint.com/java-tutorial) programming language.
 4. Apache [XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
 5. Basic knowledge of [SQL](https://www.guru99.com/sql.html).
 
 ### Project setup
 - In your code editor, create a new Java maven application.
-- In the the `pom.xml` file of the created project add `mysql-connector` dependency as shown below. `mysql-connector` makes it possible to connect to MySQL database from a java application.
+- After the project is created, open the `pom.xml` file and add `mysql-connector` dependency as shown below. `mysql-connector` makes it possible to connect to the MySQL database from a java application.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -56,7 +56,7 @@ To follow this tutorial along you will need the following:
 </project>
 ```
 
-- In the `src` package create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java` which will hold various student information and `MysqlAccess.java` that will contain our database access source code.
+- In the `src` package, create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java`, which will hold various student information, and `MysqlAccess.java` that will contain our database access source code.
 
 #### Student.java
 This is a plain Java object (POJO) that will contain the student information.
@@ -109,9 +109,9 @@ public class Student {
 
 ```
 
-- The `Student` class has three member variables `name`, `course`, and `email` which represent the students' details.
+- The `Student` class has three member variables: `name`, `course`, and `email`. They represent the students' details.
 - The constructor of the `Student` class makes it possible to create a new Student every time an instance of the class is created.
-- The `getters` and `setters` make it possible to access the member variables of the class from outside the class.
+The `getters` and `setters` make it possible to access the class member variables from outside the class.
 - The `toString()` method returns a string representation of the class variables.
   
 #### MysqlAccess.java
@@ -414,15 +414,15 @@ public class Main {
 
 ### Creating the database
 - Start the  Apache and MySQL servers from the XAMPP control panel.
-- On the `http://localhost/phpmyadmin/` site on your browser create a database with the name `school`.
-- In the `school` database create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
+- On the `http://localhost/phpmyadmin/` site on your browser, create a database with the name `school`.
+- In the `school` database, create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
 
 ![Table structure](/engineering-education/java-jdbc/database_table_structure.png)
   
 Run the application by executing the `main` function in the `Main` class.
 
 ### Conclusion
-Now that you have learned how to perform various database query operations from a Java application, add an `id` field to the `Student` class and make the `id` field in the database a primary key in the `students` table.
+Now that you have learned how to perform various database query operations from a Java application add an `id` field to the `Student` class and make the `id` field in the database a primary key in the `students` table.
 
 ---
 Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
