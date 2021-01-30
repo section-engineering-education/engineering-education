@@ -111,14 +111,17 @@ db.person.insertMany([
 ])
 ```
 
-Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection anf in order to do that we have to use `aggregate()` function on the collection which always takes an array of pipelines or stages through which the data in that collection will be transformed and since we are interested in grouping the data we have to use `$group` operator along with an accumalator operator and you have to provide a key which will hold the result of the accumalator operator for this example we are using 'totalPerson' as a key and this will help us to aggregate the data. 
+Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection. 
 
-Synatx of `aggregate()` function looks like :
+To do that we have to use `aggregate()` function on the collection which takes an array of pipelines or stages through which the data in that collection will be transformed. Since we are interested in grouping the data, we have to use `$group` operator along with an accumalator operator. You have to provide a key which will hold the result of the accumalator operator. For this example, we are using `totalPerson` as a key and this will help us to aggregate the data. 
+
+Synatx of `aggregate()` function:
 
 ```bash
 db.<name of the collection>.aggregate([ 'array of pipelines' ])
 ```
-> Note: The pipelines or the stages in the `aggregate()` function will always be in a document format !
+
+> Note: The pipelines or the stages in the `aggregate()` function will always be in a document format.
 
 Now applying the logic and the syntax  which we learned above, the query will look like:
 
@@ -132,11 +135,14 @@ Output:
 { "_id" : { "gender" : "Female" }, "totalPeople" : 1 }
 { "_id" : { "gender" : "Male" }, "totalPeople" : 2 }
 ```
-So in the output as you can see the 'id' field will hold the field or criteria by which you have grouped your data and 'totalPeople' is the key which is holding the result of the  accumalator operator that is the `$sum` operator which will return the collective sum of all the numeric values that result from applying a specified expression to each document in a group of documents that share the same group by key.
 
-For the `$group` operator to work, you must have to use an accumulator operator like `$sum`, `$avg`, `$max`, `$push` etc. since the operator yields a combined result based on the grouping expression. To study more about the accumalator operator you can visit to do MongoDB official docs via this link : https://docs.mongodb.com/manual/reference/operator/aggregation/
+As you can see, the `_id` field will hold the field or criteria by which you have grouped your data and `totalPeople` is the key which is holding the result of the accumalator operator i.e., the `$sum` operator. The `$sum` operator will return the collective sum of all the numeric values from applying a specified expression to each document in a group of documents that share the same group by key.
 
-Let's take a look at another use case. Suppose, let's say we are interested in the number of people having a similar hobby, there can be many approaches to achieve this but the approach which we will use is clear, easy and elegant so to achieve the solution we should make every hobby a separate top-level field by using the `$unwind` operator. What I mean by top-level field is that the `$unwind` operator will pull out every value one by one from the array on which you are using this operator and assign it to the key which is holding that array in a single key-value pair form which will allow us even more flexibility to query the arrays and data in the database and then we have to do the same as we did in the first example as now hobbies is not an array but a top-level field in key-value form and applying `$group` operator will be very easy like this:
+For the `$group` operator to work, you must have to use an accumulator operator like `$sum`, `$avg`, `$max`, `$push` etc. since the operator yields a combined result based on the grouping expression. To study more about the accumalator operators, please visit the [MongoDB official documentation](https://docs.mongodb.com/manual/reference/operator/aggregation/).
+
+Let's take a look at another use case. Suppose, let's say we are interested in the number of people having a similar hobby. To achieve this, we should make every hobby a separate top-level field by using the `$unwind` operator.
+
+The `$unwind` operator will pull out every value one by one from the array on which you are using this operator and assign it to the key which is holding that array in a single key-value pair form. This allows more flexibility to query the arrays and data in the database. Then, we have to do the same as we did in the first example because now, hobbies is not an array but a top-level field in key-value form and applying `$group` operator will make it easy.
 
 ```bash
 db.person.aggregate([ {$unwind: "$hobbies"}, { $group: {_id: {hobby: "$hobbies"}, totalPeople: {$sum: 1}} } ]).pretty() 
@@ -152,7 +158,8 @@ Output:
 { "_id" : { "hobby" : "sports" }, "totalPeople" : 2 }
 { "_id" : { "hobby" : "swimming" }, "totalPeople" : 1 }
 ```
-To study more about the `$unwind` operator you can visit to do MongoDB official docs via this link : https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/
+
+To study more about the `$unwind` operator, please visit the [MongoDB official documentation](https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/)
 
 ### Applications of $group operator:
 
