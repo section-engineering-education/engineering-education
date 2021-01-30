@@ -29,7 +29,7 @@ A popular example of how this can go wrong is called *The Paperclip Maximizer*. 
 
 Don't try turning it off either. It thought of that. Remember, this AI is smarter than any human. There's no hope for us to outsmart it. It knows that a human could unplug it. This would greatly interfere with its ability to manufacture paperclips. Even if it's a very small chance, it can't afford that risk. Thus, the superintelligence benefits from humans not existing. It's not that the AI hates you. It couldn't care less about you. The only thing it cares about is maximizing paperclip production. Killing humans just happens to be beneficial in this goal.
 
-Even if you make a good goal for it, it can still find a way to cheat the system. [There are many examples of this happening](https://www.youtube.com/watch?v=nKJlF-olKmg), often hilariously. Say you have an AI that you want to clean a room. It gets rewarded whenever it looks around the room and doesn't see a mess. In response, it puts a bucket on its head so it doesn't see a mess anymore.
+Even if you make a good goal for it, it can still find a way to cheat the system. [There are many examples of this happening](https://www.youtube.com/watch?v=nKJlF-olKmg), often hilariously. Say you have an AI that you want to clean a room. However, you're programming it to clean the room. You're programming it to make a room that looks clean. It gets rewarded whenever it looks around the room and doesn't see a mess. In response, it puts a bucket on its head so it doesn't see a mess anymore.
 
 ### What do we do?
 
@@ -39,11 +39,11 @@ Even if you make a good goal for it, it can still find a way to cheat the system
 
 * **Involving humans in the process.** You could create an AI that only tells a human of the decisions it makes. It would have to have a pretty realistic simulation of the world to work in. It should never simulate the action of telling a human to make a certain decision. You could also make an AI where all its actions must first be approved, but that would be terribly slow.
 * **Give the AI an incentive to value ethics.** This would be a great idea if we could all agree on what ethics involves. It doesn't work. [There are many moral philosophies](https://en.wikipedia.org/wiki/Ethics). None of them are perfect.
-* **Make an AI and tell it to maximize [QALYs](https://en.wikipedia.org/wiki/Quality-adjusted_life_year).** Utilitarianism is pretty popular, but it still has [problems](https://www.thinkingmuchbetter.com/main/5-objections-to-utilitarianism). It also still has the problem of [population ethics](https://www.youtube.com/watch?v=vqBl50TREHU). Also, as mentioned before, AIs can take advantage of their reward function. If this AI was implemented, all it would do is maximize the number of babies born.
+* **Make an AI and tell it to maximize [QALYs](https://en.wikipedia.org/wiki/Quality-adjusted_life_year).** This AI would hopefully stop any other AIs from killing us. Utilitarianism is pretty popular, but it still has [problems](https://www.thinkingmuchbetter.com/main/5-objections-to-utilitarianism). It also still has the problem of [population ethics](https://www.youtube.com/watch?v=vqBl50TREHU). Also, as mentioned before, AIs can take advantage of their reward function. If this AI was implemented, all it would do is maximize the number of babies born.
 
 #### Organizations to donate to
 
-[In](https://80000hours.org/) [Effective](https://www.evidenceaction.org/) [Altruism](https://www.gfi.org/), [we](https://d-rev.org/) [like](https://www.givedirectly.org/) [to](https://www.gofundme.com/f/covidmoonshot) [focus](https://www.ciwf.com/) [on](https://aisafetycamp.com/) [organizations](https://www.againstmalaria.com/) [to](https://allfed.info/) [donate](https://www.charitywater.org/) [to](https://www.arborday.org/). Here's a shortlist of places to look at:
+In Effective Altruism, we like to look at organizations to donate to. Here's a shortlist of places to look at:
 
 * [Machine Intelligence Research Institute](http://intelligence.org/summary)
 * [Centre for the Study of Existential Risk](http://cser.org/emerging-risks-from-technology/artificial-intelligence/)
