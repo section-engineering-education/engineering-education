@@ -120,7 +120,7 @@ db.<name of the collection>.aggregate([ 'array of pipelines' ])
 ```
 > Note: The pipelines or the stages in the `aggregate()` function will always be in a document format !
 
-Now applying the logic and the syntax  which we learn above the query will look like:
+Now applying the logic and the syntax  which we learned above, the query will look like:
 
 ```bash
 db.person.aggregate([ { $group: {_id: {gender: "$gender"}, totalPeople: {$sum: 1}} } ]).pretty()
