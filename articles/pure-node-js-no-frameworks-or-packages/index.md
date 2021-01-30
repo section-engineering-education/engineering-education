@@ -1,6 +1,23 @@
-Pure Node.js? Node.js without frameworks? An overview
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/pure-node-js-no-frameworks-or-packages/
+title: Pure Node.js? Node.js without frameworks? An overview
+description: This article will help developers understand the nuances in using Node.js without frameworks. There is also a hands-on where we build a HTTP server with pure Node.js.
+author: joseph-chege
+date: 2021-01-30T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Are you a Node.js developer, and you frequently use Node.js libraries? First, there is nothing wrong with using them. However, have you ever thought of using Node.js with no frameworks or external libraries? Yes, it is possible to develop a Node.js application with no NPM registry binaries. This guide aims to discuss an overview of using pure Node.js and its functionalities.
+  - url: /engineering-education/pure-node-js-no-frameworks-or-packages/hero.jpg
+    alt: Node.js without frameworks example image
+---
+Are you a Node.js developer, and you frequently use Node.js libraries? First, there is nothing wrong with using them. However, have you ever thought of using Node.js with no frameworks or external libraries? 
+<!--more-->
+
+Yes, it is possible to develop a Node.js application with no NPM registry binaries. This guide aims to discuss an overview of using pure Node.js and its functionalities.
 
 - [Background](#background)
 - [An overview](#an-overview)
