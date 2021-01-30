@@ -34,6 +34,7 @@ Aggregation is an operation that processes the data to give a computed result. A
 
 Pipelines are stages through which data is processed, more technically transformed into by the provided criteria. Each pipeline is independent and receives the data of the previous stage. Always remember that the first pipeline will have direct contact with the data itself, not its transformed version, and it can take advantage of indexes.
 
+
 ### What is $group operator?
 
 As the name suggests, the `$group` operator groups similar data by some specified expression and combines it into a single result or document.
@@ -110,7 +111,16 @@ db.person.insertMany([
 ])
 ```
 
-Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection anf in order to do that we have to use `aggregate()` function on the collection which always takes an array of pipelines or stages through which the data in that collection will be transformed and since we are interested in grouping the data we have to use `$group` operator along with an accumalator operator and you have to provide a key which will hold the result of the accumalator operator for this example we are using 'totalPerson' as a key and this will help us to aggregate the data like this:
+Now that we have some documents in the collection, let's use the `$group` to find the number of males and females in the collection anf in order to do that we have to use `aggregate()` function on the collection which always takes an array of pipelines or stages through which the data in that collection will be transformed and since we are interested in grouping the data we have to use `$group` operator along with an accumalator operator and you have to provide a key which will hold the result of the accumalator operator for this example we are using 'totalPerson' as a key and this will help us to aggregate the data. 
+
+Synatx of `aggregate()` function looks like :
+
+```bash
+db.<name of the collection>.aggregate([ 'array of pipelines' ])
+```
+> Note: The pipelines or the stages in the `aggregate()` function will always be in a document format !
+
+Now applying the logic and the syntax  which we learn above the query will look like:
 
 ```bash
 db.person.aggregate([ { $group: {_id: {gender: "$gender"}, totalPeople: {$sum: 1}} } ]).pretty()
