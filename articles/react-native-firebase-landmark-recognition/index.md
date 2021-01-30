@@ -18,18 +18,21 @@ In this tutorial, we will be building a Non-Expo React Native application to rec
 <!--more-->
 
 ### Firebase
+
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform, and it is now their flagship offering for app development. [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 
 Firebase's ML Kit is a mobile SDK that brings Google's machine learning expertise to Android and iOS apps. There's no need to have deep knowledge of neural networks or model optimization to get started with the ML kit. On the other hand, if you are an experienced ML developer, it provides APIs that help you use custom [TensorFlow Lite models](https://www.tensorflow.org/lite/models) in your mobile apps. [Firebase ML Docs](https://firebase.google.com/docs/ml).
 
 ### Prerequisites
+
 To proceed with this tutorial:
 
-- You will need a basic knowledge of React & React Native. 
+- You'll need a basic knowledge of React & React Native. 
 
-- You also need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
+- You'll need a Firebase project with the [Blaze plan](https://firebase.google.com/pricing) enabled to access the Cloud Vision APIs.
 
 ### Overview
+
 We'll be going through these steps in this article:
 
 1. Development environment.
@@ -45,6 +48,7 @@ We'll be going through these steps in this article:
 You can take a look at the final code in this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-ml-landmark-recognition).
 
 ### Development environment
+
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -54,6 +58,7 @@ Ensure you're following the React Native CLI Quickstart, not the Expo CLI Quicks
 ![Env Setup](/engineering-education/react-native-firebase-landmark-recognition/env_setup.png)
 
 ### Installing dependencies
+
 You can install these packages in advance or while going through the article.
 
 ```JSON
@@ -100,7 +105,7 @@ Now, click on the Android icon to add an android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-landmark-recognition/register_app.png)
 
-You will need a package name to register the application. Your app's package name is in the `AndroidManifest.xml` located in `android/app/src/main/`.
+You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` file which is located in `android/app/src/main/`.
 
 ![Package Name](/engineering-education/react-native-firebase-landmark-recognition/package_name.png)
 
@@ -245,7 +250,7 @@ const onSelectImagePress = () => launchImageLibrary({ mediaType: 'image' }, onIm
 
 Let's create a function called `onImageSelect`. This is the callback function that we are passing to the `launchCamera` and the `launchImageLibrary` functions. We will get the details of the image that the user picked in this callback function.
 
-We should start the landmark recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker would send a `didCancel` property in the response object.
+We should start the landmark recognition only when the user did not cancel the media picker. If the user canceled the operation, the picker will send a `didCancel` property in the response object.
 
 ```JSX
 const onImageSelect = async (media) => {
