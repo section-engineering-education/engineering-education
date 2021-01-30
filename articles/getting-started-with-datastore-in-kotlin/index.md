@@ -4,7 +4,7 @@
 
 In this tutorial, you will learn how Jetpack DataStore works. We will work on how to change the UI mode of an app.
 
-**prerequisites;**
+**Prerequisites;**
 - Creating projects in android studio.
 - Good understanding of Kotlin(we will use it as the primary language)
 
@@ -15,11 +15,11 @@ In this tutorial, you will learn how Jetpack DataStore works. We will work on ho
 
 ### Introduction
 DataStore is an improved data storage solution by Google to replace SharedPreferences for persisting simple pieces of data such as key-value pairs or typed objects with protocol buffers.
-Datastore uses Kotlin coroutines and flow to store data asynchronously, consistently, transactionally and to even handle data corruption. It works well with small simple datasets. If you are working with large/complex datasets, consider using [Room](https://developer.android.com/training/data-storage/room). This way you will not worry about referential integrity or partial updates.
+Datastore uses Kotlin coroutines and flow to store data asynchronously, consistently, transactionally, and even handle data corruption. It works well with small simple datasets. If you are working with large/complex datasets, consider using [Room](https://developer.android.com/training/data-storage/room). This way you will not worry about referential integrity or partial updates.
 
 #### Shifting from SharedPreferences
 
-SharedPreferences is common among developers, but people are finding better solutions to store data that are more powerful and efficient. It has a few drawbacks that make it a little bit too much to work with.
+SharedPreferences is common among developers, but people are finding better solutions to store data that are more powerful and efficient. It has a few drawbacks that make it a little bit complex to work with.
 If you have worked with Sharedpreferences you might have gotten an ANR(Application Not Responding) on your app. The most common reason is the long-running tasks on the main UI-thread. This is because when using the app, you try to access the value of a particular key as soon as the app launches. With all that, you have to access Sharedpreferences to read the whole file no matter how large it is, bring the data in memory while all this is happening on the UI thread.
 
 ## Why datastore?
@@ -217,7 +217,6 @@ You can check out the entire project on [GitHub]( https://github.com/carolinemus
 The Google team is trying to make android development a little bit easier each day by rolling out new and improved libraries.
 They may change or deprecate from time to time and learning about these tools can put us ahead of the curve. So keep learning.
 
-Incase you run into an issue, reach out on [Twitter](https://twitter.com/carolmusyoka_) or [LinkedIn](https://www.linkedin.com/in/carol-musyoka/)
 
 Happy coding!!
 
