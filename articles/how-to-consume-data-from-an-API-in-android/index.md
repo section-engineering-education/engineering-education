@@ -1,5 +1,21 @@
-APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-consume-data-from-an-API-in-android/
+title: How To Consume Data From an API in Android
+description: This tutorial provides a guideline on how to make an API request basing on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
+author: michael-barasa
+date: 2021-01-30T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-consume-data-from-an-API-in-android/hero.png
+    alt: API image example
+---
+APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.
+<!--more-->
 ### Introduction
 Android is among the most popular operating systems in the world. Statistics from Google show that more than a billion devices run Android. Therefore, the ability to utilize APIs in our applications helps us satisfy the needs of many users. One of the major factors that we should consider when using APIs is the number of requests. We should desist from making too many network operations. This is because it can increase battery drain and lead to poor user satisfaction. Also, API owners can bar applications that make too many requests.
 
@@ -273,3 +289,6 @@ From the above tutorial, we have learned:
 - How to make API requests.
 
 You can, therefore, use this knowledge to develop more complex applications.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
