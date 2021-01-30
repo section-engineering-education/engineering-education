@@ -205,7 +205,7 @@ Seaborn lets us plot multiple scatter plots. It's a good option when you want to
 sns.pairplot(df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/pairplot.png)
+![image title](/engineering-education/seaborn-tutorial/pairplot.jpg)
 
 It pairs all the continuous data and plots their correlation. It also plots the distribution of the data.
 
