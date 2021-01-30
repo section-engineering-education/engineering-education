@@ -48,7 +48,7 @@ B4A is an integrated development environment(IDE) for developing android mobile 
 
 -PHP files are kept in the Xampp directory in a folder called `htdocs`. For this application, we will create a folder called `B4A-PHP` where we will store our PHP files inside Xampp htdocs folder.
 
--The Xampp folder we have created can be accessed in a network by getting a computer IP address and adding the folder name. In this case, to get the computer IP we will run the following command in Windows CMD.
+- The Xampp folder we have created can be accessed in a network by getting a computer IP address and adding the folder name. In this case, to get the computer IP we will run the following command in Windows CMD.
 
 ``` bash
 ipconfig
@@ -58,7 +58,7 @@ ipconfig
 
 `URL: http://192.168.100.118/B4A-PHP/api.php` Change to match yours.
 
--From the IP address, a URL can be created which will be used in our B4A Android application provided both the phone and computer are in the same network.
+- We will use the URL above to connect our B4A application to the server (Xampp) for data exchange. The computer acting as the server and the phone should be on the same network.
 
 ![URL](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/url-php-api.png)
 
