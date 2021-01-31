@@ -5,7 +5,7 @@
 In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
 
 We will see how we can apply image classifiers in healthcare. Our goal here is to train a CNN model to classify COVID-19 and normal chest X-ray scans of patients.
-The colab notebook for this project is [here](https://github.com/Inyrkz/PneumoniaX/blob/Inyrkz-covid/CovidTrial.ipynb)
+The colab notebook for this project is [here](https://github.com/Inyrkz/covid-classifier/blob/main/CovidTrial.ipynb)
 
 ### Table of Content
 - Importing Libraries and Exploring Dataset
