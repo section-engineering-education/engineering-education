@@ -301,13 +301,13 @@ model = Sequential()
 model.add(Conv2D(32, (5,5), padding='same', activation='relu',
                 input_shape=(200, 200, 3)))
 model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Conv2D(64, (5,5), padding='same', activation='relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(1, activation='sigmoid'))
 model.summary()
 ```
@@ -316,7 +316,7 @@ model.summary()
 
 The MaxPooling layer with *pool_size* of (2,2) reduces the image size by half. It helps to maintain the features of the image. It also reduces the number of parameters, which shortens the training time.
 
-The Dropout layer helps us to avoid overfitting. We use a rate of 0.5. You can learn more about the dropout layer [here.](https://machinelearningknowledge.ai/keras-dropout-layer-explained-for-beginners/)
+The Dropout layer helps us to avoid overfitting. We use a rate of 0.2. You can learn more about the dropout layer [here.](https://machinelearningknowledge.ai/keras-dropout-layer-explained-for-beginners/)
 
 We add another Convolutional layer with 64 filters and a MaxPooling layer. We also add another Dropout layer.
 
@@ -371,7 +371,7 @@ We store the best performing model in the models’ directory that we created ea
 
 We added the validation accuracy to the name of the model file. It will be easy for us to identify the best model in the directory.
 
-Our best performing model has a training loss of 0.0617 and a training accuracy of 0.9771. It has a validation loss of 0.0648 and a validation accuracy of 0.9862.
+Our best performing model has a training loss of 0.0366 and a training accuracy of 0.9857. It has a validation loss of 0.0601 and a validation accuracy of 0.9890.
 
 If you do not get a good validation accuracy, you can increase the number of epochs for training. It’s advisable to get more training data. The more data you have, the more accurate your model will be.
 
@@ -421,7 +421,7 @@ Let us see how our model performs on the testing data. Remember, the testing dat
 
 ```python
 # loading the best perfoming model
-model = tf.keras.models.load_model('/content/models/model_0.986.h5')
+model = tf.keras.models.load_model('/content/models/model_0.989.h5')
 
 # Getting test accuracy and loss
 test_loss, test_acc = model.evaluate(test_generator)
@@ -430,7 +430,7 @@ print('Test loss: {} Test Acc: {}'.format(test_loss, test_acc))
 
 ![alt text](/engineering-education/image-classifier-keras/21.jpg)
 
-We get a test loss of approximately 0.0824 and a test accuracy of approximately 0.9711.
+We get a test loss of approximately 0.0768 and a test accuracy of approximately 0.9731.
 
 ![alt text](/engineering-education/image-classifier-keras/meme-test.jpg)
 
@@ -474,7 +474,7 @@ Remember, from the class indices, 0 represents a scan with covid, and 1 represen
 ### Conclusion
 In this article, we learned how to build an image classifier using Keras. We applied data augmentation to increase the size of our dataset. We were able to visualize our training images. We created a CNN model and trained it to classify Covid-19 chest X-ray scans and normal chest X-ray scans. 
 
-We got a test accuracy of 97% and a loss of 0.0824. We were also able to save our model and load it to make predictions on new data. We cannot use this model in real life because we did not train it on a large dataset.
+We got a test accuracy of 97% and a loss of 0.0768. We were also able to save our model and load it to make predictions on new data. We cannot use this model in real life because we did not train it on a large dataset.
 
 Now you can build an image classifier to classify images, for example, a dog and a cat, a car and a bike, etc.
 
