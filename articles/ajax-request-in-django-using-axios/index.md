@@ -1,10 +1,25 @@
-### What is AJAX?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/ajax-post-request-in-django-using-axios/
+title: How to make Ajax POST request in Django using Axios
+description: In this article, we will look at how to make an Ajax POST request in Django using Axios. Axios is a Javascript library used to make HTTP requests from Node.js or XMLHttpRequests from the browser.
+author: adeyemi-atoyegbe
+date: 2021-01-31T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Ajax is an acronym for Asynchronous JavaScript and XML. It’s neither a language, a framework nor a web library. It’s a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page. Even though it includes XML in the acronym, it’s rarely used in AJAX anymore. It has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
+  - url: /engineering-education/ajax-request-in-django-using-axios/hero.jpg
+    alt: Django Ajax Axios example
+---
+Ajax is an acronym for Asynchronous JavaScript and XML. It’s neither a language, a framework nor a web library. It’s a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page.
+<!--more-->
+Even though it includes XML in the acronym, it’s rarely used in AJAX anymore. It has been replaced by JSON (JavaScript Object Notation). JSON is easy to use, faster and much more popular compared to XML.
 
 ### What is Axios?
 Axios is a Javascript library used to make HTTP requests from node.js or [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser. It is a lightweight HTTP client based on the XMLHttpRequests service. It is similar to the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and is used to perform HTTP requests.
-
 
 ### Prerequisites
 
@@ -17,7 +32,6 @@ Axios is a Javascript library used to make HTTP requests from node.js or [XMLHtt
 4. Knowledge of [JavaScript](https://javascript.info/).
 
 ### Goals
-
 - Using Axios to submit a form.
 
 - Handling a POST request in Django.
