@@ -597,7 +597,7 @@ A class in Kotlin can have a primary constructor and one or more secondary const
  class Person constructor(firstName: String) { }
 ```
 
-### Secondary constructors
+#### Secondary constructors
 The class can also declare secondary constructors, which are prefixed with the `constructor` keyword:
 
 ```kotlin
@@ -609,7 +609,7 @@ class Person {
 }
 ```
 
-### Class members
+#### Class members
 Classes can contain:
 
 * Constructors and initializer blocks
