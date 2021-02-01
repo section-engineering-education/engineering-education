@@ -1,9 +1,25 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/the-overview-of-a-database-life-cycle/
+title: The Overview of a Database Life Cycle
+description: This article will outline the stages of a database development life cycle. The reader will understand the need for a database and the database life cycle.
+author: judy-nduati
+date: 
+topics:
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/the-overview-of-a-database-life-cycle/hero.jpg
+    alt: stages of a database development life cycle
+---
 ### Introduction
 
 It is frustrating when there is lots of data being used by many people and no place to store it. It becomes difficult to manage such data, secure it, and store it accurately. This is where a database comes in.
 
 A database prevents duplication and loss of data. While designing any information system, a database is a basic component. This article will outline the stages of a database development life cycle (DBLC). The reader will understand the need for a database and the database life cycle.
-
+<!--more-->
 ### Table of Contents
 
 [The Need for a Database](#the-need-for-a-database)
@@ -98,3 +114,6 @@ Database monitoring tracks the database performance. This is to maintain its hig
 ### Conclusion
 
 Database Life Cycle is a sequence of stages for developing a database system. The stages of DBLC logically follow each other. Developers have to follow the cycle while working on the database. In this article, we have learned about database development and the functionalities of each stage. I hope this article will give you an understanding of the database life cycle.
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
