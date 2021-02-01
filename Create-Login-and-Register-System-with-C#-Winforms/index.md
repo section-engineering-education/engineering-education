@@ -223,7 +223,7 @@ namespace LoginSysten
 
 ### Step IV: Create Register Windows form.
 
-From Microsoft Visual Studio, create windows form by clicking on PROJECT -> Add Windows Form, give the form a name `Register`  then click Add.
+In Microsoft Visual Studio, create a new project. Choose PROJECT -> Add Windows Form from File submenu in the left corner, give the form a name `Register` , and click Add.
 
 We have two Windows form classes that is Form1.cs and Register.cs.
 
@@ -425,6 +425,6 @@ In this article;
 - We created a database for our application.
 - Created Login and Register Interfaces.
 - Connected our application with the database.
-- Coded the logic and functionality.
+- Coded logic and functionality.
 
 Happy c-sharp coding ahead.
