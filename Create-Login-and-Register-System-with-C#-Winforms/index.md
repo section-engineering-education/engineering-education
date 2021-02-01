@@ -1,6 +1,6 @@
 ### Introduction
 
-C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to create many applications, including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, and many others.
+C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to create many applications, including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, etc.
 
 ### Prerequisites
 
@@ -233,9 +233,9 @@ We have two Windows form classes that is Form1.cs and Register.cs.
 
 - Click on Form1.cs in Solution Explorer, and on the form that displays, add three buttons, two textboxes, and two labels.
 
-The first button will be the register button will launch Register form. The second button will be the Login button, when clicked will query  the database with the input Entered. The second button will execute the login MySQL querry. The third button will close the application.
+The first button will be the register button will launch the Register form. The second button will be the Login button. When the second button is clicked, it will query the database with the input Entered. The second button will execute the login MySQL query. The third button will close the application.
 
-The first textbox will allow username input for login, while the second textbox will enable a password's input. This two input will be passed to the SQL.s
+The first textbox will allow username input for login, while the second textbox will enable a password's input. These two-input will be passed to the SQL.
 
 The labels will indicate the functionality of the two textboxes.
 
@@ -245,9 +245,9 @@ The labels will indicate the functionality of the two textboxes.
 
 - Click on Register.cs in Solution Explorer and on the form that displays add two buttons, three textboxes, and three labels.
 
-The first button will be a save button to save data entered, and the second one will be an exit button that will close the Register form.
+The first button will be a register button to save data entered, and the second one will be an exit button that will close the Register form.
 
-The first textbox will allow input of names for the user, the second textbox will allow input of the username of the user, and the third textbox will enable a password to be entered.
+The first textbox will allow input of names for the user, the second textbox will allow input of the user's username, and the third textbox will enable a password to be entered.
 
 The labels will indicate the functionality of the three textboxes.
 
@@ -270,7 +270,7 @@ The labels will indicate the functionality of the three textboxes.
         }
 ```
 
-On click of register button, add the following code
+On click of the register button, add the following code
 
 ``` c#
 
@@ -280,7 +280,7 @@ On click of register button, add the following code
             register.Show();
 ```
 
-On click of login button, add the following code.
+On click of the login button, add the following code.
 
 ``` c#
 
@@ -297,7 +297,7 @@ On click of login button, add the following code.
             }
 ```
 
-On click of exit button, add the following code.
+On click of the exit button, add the following code.
 
 ``` c#
 
@@ -388,7 +388,7 @@ namespace LoginSysten
 
 ```
 
-On click of exit button, add the following code.
+On click of the exit button, add the following code.
 
 ``` c#
 
@@ -399,7 +399,7 @@ On click of exit button, add the following code.
         }
 ```
 
-On click of the save button, add the following code to save the information.
+On click of the register button, add the following code to save the information.
 
 ``` c#
 
@@ -423,8 +423,8 @@ From the above, we can use C# to create a Desktop system with login functionalit
 In this article;
 
 - We created a database for our application.
-- created Login and Register Interfaces.
-- Connected our application with database.
+- Created Login and Register Interfaces.
+- Connected our application with the database.
 - Coded the logic and functionality.
 
 Happy c-sharp coding ahead.
