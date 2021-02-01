@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/laravel-http-client/hero.jpg
     alt: laravel language localisation
 ---
-Laravel has evolved significantly since the release of version 7.x.x. One of the key areas of improvement revolves around the Guzzle HTTP Client. 
+Laravel has evolved significantly since the release of version 7.x.x. One of the key areas of improvement revolves around the Guzzle HTTP Client. This article will serve as an introduction to Laravel 8 HTTP Client.
 <!--more-->
 ### Requirements
 - PHP 7.4.x
