@@ -1,6 +1,22 @@
-Caching refers to the process of storing data in a temporary location so that the data is accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network and the application's response time. Applications that implement caching are faster and user friendly.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-caching-in-nodejs-using-redis/
+title: Implementing Caching in Nodejs using Redis
+description: This article will cover how to implement caching in nodejs using redis.
+author: kennedy-mwangi
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-#### prerequisites.
+  - url: /engineering-education/implementing-caching-in-nodejs-using-redis/hero.jpg
+    alt: Implementing Caching in Nodejs using Redis
+---
+Caching refers to the process of storing data in a temporary location so that the data is accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network and the application's response time. Applications that implement caching are faster and user friendly.
+<!--more-->
+### prerequisites.
 
 To follow along in this article, it is helpful to have the following:
 
@@ -321,3 +337,6 @@ Caching is great in improving the user experience of an application. It enables 
 In this article, we have covered how to implement caching on a Node.js REST API using recipe labs API as our data source and redis as our cache.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
