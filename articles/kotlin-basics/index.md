@@ -426,8 +426,8 @@ fun add(a: Int, b: Int): Int {
 // Output: sum is 6
 ```
 
- ####  Default functions
- We use `@JvmOverloads` for interoperability for kotlin since it was not available in java
+ ####  Default parameters
+ We use `@JvmOverloads` for interoperability for kotlin since it was not available in java. This allows for default parameters to be used in case they are not provided when the function is called.
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -446,54 +446,40 @@ fun findVolume(length: Int, breadth: Int, height: Int = 12): Int {
 
 ```kotlin
 fun main(args: Array<String>) {
-
     var largeValue = max(4, 6)
-
     println("The greater number is $largeValue")
 }
 
-fun max(a: Int, b: Int): Int
-                    = if (a > b) {
-                        println("$a is greater")
-                        a
-                    } else {
-                        println("$b is greater")
-                        b
-                    }
+fun max(a: Int, b: Int): Int = if (a > b) a else b
 
-  ```  
-  The greater number is 6                
+// Output : The greater number is 6 
 
-   #### Named Parameters
-   It is a pure kotlin feature since it's not available in java
+```               
+
+#### Named Parameters
+It is a pure kotlin feature since it's not available in java. Kotlin allows you to assign arguments names when passing them into a function.
 
 ```kotlin
 fun main() {
-
     var result = findTheVolume(breadth = 6, length = 5)
     print(result)
 }
 
 fun findTheVolume(length: Int, breadth: Int, height: Int = 10): Int {
-
     return length * breadth * height
 }
 
 // Output: 360
 ```
 
-  #### Extension Functions: EXAMPLE ONE
-  The purpose of the extension function in kotlin is to add a new function to the pre-defined classes
-  The new functions added behaves like ``static``
-  The importance of extension function they have few properties hence it reduces the code and makes it cleaner
+#### Extension Functions
+The purpose of the extension function in kotlin is to add a new function to the pre-defined classes. The new functions added behave like `static` functions. The advantage of using extension functions is that they have few properties hence they reduce the code making it cleaner
 
-
+* Example 1 :
 ```kotlin
 fun main() {
-
     var student = Student()
     println("Pass status: " + student.hasPassed(57))
-
     println("Scholarship Status: " + student.isLearner(57))
 }
 
@@ -501,65 +487,56 @@ fun Student.isLearner(marks: Int): Boolean {
     return marks > 95
 }
 
-class Student {         // OUR OWN CLASS
-
+// Our custom class
+class Student {       
     fun hasPassed(marks: Int): Boolean {
         return marks > 40
     }
 }
 ```
 
-#### Extension Functions: EXAMPLE TWO
-   
+* Example 2:   
 ```kotlin
 fun main(args: Array<String>) {
 
     var str1: String = "Hello "
     var str2: String = "World"
-
     var str3: String = "Hey "
-
+    
     println(str3.add(str1, str2))
 
     val x: Int = 6
     val y: Int = 10
-
-    val greaterVal = x.greaterValue(y)
-
-    println(greaterVal)
+    
+    println(x.greaterValue(y))
 }
 
 
 fun String.add(s1: String, s2: String): String {
-
     return this + s1 + s2
 }
 
 fun Int.greaterValue(other: Int): Int {
-
     if (this > other)
         return this
     else
         return other
 }
 
+// Output : Hey Hello World
 // Output: 10
 ```
 
-   #### INFIX FUNCTIONS
-   
-  Infix functions must satisfy the following requirements:
+#### Infix Functions
+Infix functions must satisfy the following requirements:
 
-   They are member functions or extension functions;
-
-   They  have a single parameter
-   They have a prefix of `infix`
-
-   The parameter must not accept a variable number of arguments and must have no default value.
+* They are member functions or extension functions
+* They  have a single parameter
+* They have a prefix of `infix`
+* The parameter must not accept a variable number of arguments and must have no default value.
 
 ```kotlin
 fun main(args: Array<String>) {
-
     val x: Int = 6
     val y: Int = 10
 
@@ -568,20 +545,20 @@ fun main(args: Array<String>) {
     println(greaterVal)
 }
 
-infix fun Int.findGreaterValue(other: Int): Int {       // INFIX and Extension Func
-
+infix fun Int.findGreaterValue(other: Int): Int {
     if (this > other)
         return this
     else
         return other
 }
-      1. All INFIX Functions are Extension functions
-        But all Extension functions are not INFIX
-      2. INFIX Functions just have ONE PARAMETER
+
+// Output : 10
 ```
 
-```kotlin
+1. All infix functions are extension functions but all extension functions are not infix
+2. Infix functions have one parameter
 
+```kotlin
 import java.math.BigInteger
 
 /*
@@ -606,68 +583,50 @@ tailrec fun getFibonacciNumber(n: Int, a: BigInteger, b: BigInteger): BigInteger
 }
 ```
 
-#### Class, Primary Constructor, Secondary Constructor, and Init Block
-
-
-#### class in kotlin are declared using a keyword `class`
-
-class declaration consists of `class name`, `class header`, `and `class body`. 
+### Classes
+Classes in kotlin are declared using a keyword `class` .Class declaration consists of `class name`, `class header`, and `class body`. 
 
 ```kotlin
-
 class Model { }
 ```
-### Constructors 
-
-We have a primary constructor and one or more secondary constructors
-
+#### Constructors 
 A class in Kotlin can have a primary constructor and one or more secondary constructors. The primary constructor is part of the class header: it goes after the class name (and optional type parameters).
 
 
 ```kotlin
- class Person constructor(firstName: String) {
-     /*...*/ }
+ class Person constructor(firstName: String) { }
 ```
 
 ### Secondary constructors
-The class can also declare secondary constructors, which are prefixed with ```constructor```:
+The class can also declare secondary constructors, which are prefixed with the `constructor` keyword:
 
 ```kotlin
 class Person {
-var children: MutableList<Person> = mutableListOf<>()
-constructor(parent: Person) {
-parent.children.add(this)
-}
+    var children = mutableListOf<Person>()
+    constructor(parent: Person) {
+        parent.children.add(this)
+    }
 }
 ```
 
 ### Class members
-**Classes can contain:**
+Classes can contain:
 
-— Constructors and initializer blocks
-
-— Functions
-
-— Properties
-
-— Nested and Inner Classes
-
-— Object Declarations
+* Constructors and initializer blocks
+* Functions
+* Properties
+* Nested and Inner Classes
+* Object Declarations
 
 ```kotlin
-
 fun main() {
-
     var student = Student("Steve", 10)
-
     println(student.id)
 }
 
 class Student(var name: String) {
 
-
     var id: Int = -1
-
     init {
         println("Student has got a name as $name and id is $id")
     }
@@ -682,7 +641,6 @@ class Student(var name: String) {
 ### Inheritance
 
 ```kotlin 
-
 fun main(args: Array<String>) {
 
     var dog = Dog()
@@ -704,9 +662,7 @@ fun main(args: Array<String>) {
 
 open class Animal {         
     // Super class / Parent class /  Base class
-
     var color: String = ""
-
     fun eat() {
         println("Eat")
     }
@@ -714,18 +670,15 @@ open class Animal {
 
 class Dog : Animal() {      
     // Sub class / Child class / Derived class
-
     var bread: String = ""
-
     fun bark() {
         println("Bark")
     }
 }
 
-class Cat : Animal() {      // Sub class / Child class / Derived class
-
+class Cat : Animal() {
+    // Sub class / Child class / Derived class
     var age: Int = -1
-
     fun meow() {
         println("Meow")
     }
