@@ -1,11 +1,9 @@
 ### What is TypeScript?
+TypeScript is a programming language that extending JavaScript by adding types. It saves time catching errors and providing fixes before you run code. So, by understanding JavaScript everything comes in handy.
 
-TypeScript is a programming language that adds types by extending JavaScript. It saves time catching errors and providing fixes before you run code, so by understanding JavaScript everything comes in handy.
+TypeScript is one of the most used tools for adding static types. Code written in TypeScript can be transformed easily into JavaScript using TypeScript compiler or babel. The compiled JavaScript code is always clean with no bugs and of course, they run in the browsers or NodeJs application.
 
-TypeScript is one of the most used tools for adding static types and it's also an open-source language. Codes written in TypeScript can be transformed easily into javascript using TypeScript compiler or babel. The compiled Javascript code is always clean with no bugs and of course, they run in the browsers or NodeJs application.
-
-#### Table of contents
-
+### Table of contents
 - TypeScript Basics
 - Compiler Configurations
 - Classes & Interfaces
@@ -14,25 +12,23 @@ TypeScript is one of the most used tools for adding static types and it's also a
 - Resources
 - Conclusion
 
-#### Prerequisite
-
+### Prerequisite
 - Basic knowledge of JavaScript
 
-In this article, I will show you some important guidelines to learn typescript. But, have in mind that practicing is the best way to learn. Let's get started ????
+In this article, I will show you some important guidelines to learn typescript. But, have in mind that practicing is the best way to learn. Let's get started!
 
-This data type is simply a true/false value called Boolean. The example below shows how you can assign a boolean value to a variable in TypeScript.
+### TypeScript types
+#### Boolean
+This data type is simply a true/false value. The example below shows how you can assign a Boolean value to a variable in TypeScript.
 
 ```TypeScript
-
 let isOpen: Boolean = true;
 ```
 
-##### Number
-
-TypeScript Supports values that are floating-point, this is known as a type `number`. In ECMAScript 2015 octal literals and binary were introduced which is also supported in TypeScript.
+#### Number
+TypeScript Supports floating-point values, this type is known as `number`. In ECMAScript 2015, octal literals and binary were introduced which is also supported in TypeScript.
 
 ```TypeScript
-
 let decimalExample: number = 6;
 let hexExample: number = 0xf00d;
 let octalExample: number = 0o744;
@@ -40,31 +36,26 @@ let bigExample: bigint = 100n;
 let binaryExample: number = 0b1010;
 ```
 
-##### String
-
-TypeScript uses single (') or double(") quote similar to JavaScript. Textual datatypes refer to as type `string` as in other languages
+#### String
+TypeScript uses single (') or double(") quote similar to JavaScript. Textual datatypes are refer to as type `string` as in other languages
 
 ```TypeScript
-
 let colour: string = "yellow";
 colour = 'white';
 ```
 
-Template Strings are also valid in typeScript and can be used without limitations. This is represented using backtick `(`)` , it can also be used for embedded expressions as shown below:
+Template Strings are also valid in TypeScript and can be used without limitations. This is represented using backtick (\`) , it can also be used for embedded expressions as shown below:
 
 ```TypeScript
-
 let fullName: string = `Idris Olubisi`;
 let age: number = 47;
 let text: string = `Hello, my name is ${fullName}.`
 ```
 
-##### Enum
-
+#### Enum
 Enum in TypeScript is a special class that contains constant values, by default enum numbering start from the index zero. This type is classified as a means of giving awesome names to a set of numeric values.
 
 ```TypeScript
-
 enum Fruits {
   Orange,
   Apple,
@@ -77,7 +68,6 @@ let c: Fruits = Fruits.Apple;
 You can manually set the number of an enum by setting its values as shown below:
 
 ```TypeScript
-
 enum Fruits {
   Orange = 1,
   Apple = 4,
@@ -87,46 +77,37 @@ enum Fruits {
 let c: Fruits = Fruits.Banana;
 ```
 
-##### Array
-
+#### Array
 TypeScript also supports arrays.
-
 ##### Tips about an Array
-
-- Once an array is initialized it can't be resized because it's static and it can be useful in many scenarios.
+- Once an array is initialized it can't be resized because it's static. This can be useful in many scenarios.
 - Sequential memory blocks are allocated when an array is declared.
 - An array requires declaration before use.
 
 ```TypeScript
-
 let listOfNumbers: number[] = [1, 2, 3, 4, 5, 6];
 ```
 
 Using the generic array type declaration
 
 ```TypeScript
-
 let listOfNumbers: Array<number> = [1, 2, 3, 4, 5, 6];
 ```
 
-##### Object
-
-An object in TypeScript is an instance that contains a set of key-value pairs. The type `object` represents the non-primitive type. An example is shown below:
+#### Object
+An object is an instance that contains a set of key-value pairs. The type `object` is a non-primitive type. An example is shown below:
 
 ```TypeScript
-
 var person = {
    firstName:"Idris",
    lastName:"Olubisi"
 };
 ```
 
-##### Any
-
+#### Any
 The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript. The `any` type allows you to gradually control the opt-in and opt-out of checking types during compilation. An example of the type `Any` is shown below:
 
 ```TypeScript
-
 let amount: any;
 amount = 26;
 amount = true;
@@ -137,12 +118,10 @@ amount = null;
 amount = undefined;
 ```
 
-##### Unknown
-
-This works similar to `Any` core types in typescript but when you try to reassign a value that has been initialized to a new variable then you will get an error, this means anything can be assignable to unknown itself and also `any` core types in TypeScript.
+#### Unknown
+This works similar to `Any`, but, it gives an error when you try to reassign a value that has been initialized. This means anything can be assignable to unknown itself and also `any` types in TypeScript.
 
 ```TypeScript
-
 let amount: unknown;
 // Error
 let newAmount: number = amount;
@@ -173,25 +152,21 @@ if (typeof maybeItsUnknown === "string") {
   const anotherString: boolean = maybeItsUnknown;
 ```
 
-##### Void
-
-A `void` type in TypeScript is seen as a return type function that does not return a value. An example below:
+#### Void
+A `void` type in TypeScript is seen as a return type for a function that does not return a value. An example is shown below:
 
 ```TypeScript
-
 function greetings(): void {
   console.log("Hi everyone ????");
 }
 ```
 
-You can also check out the [TypeScript Doc](https://www.typescriptlang.org/docs) to learn more about the types and basics in TypeScript.
+You can also check out the [TypeScript Docs](https://www.typescriptlang.org/docs) to learn more about the types and basics in TypeScript.
 
 ### Compiler Configurations
-
 `tsconfig.json` specifies the root files in typescript and the compiler options that are required to compile the project whenever `tsc` is run locally. e.g.
 
 ```TypeScript
-
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -269,16 +244,14 @@ You can also check out the [TypeScript Doc](https://www.typescriptlang.org/docs)
 
 Most of the configurations are commented out but you can uncomment where necessary after reading the description attached to it on the right-hand side.
 
-##### To run your TypeScript File
-
-- Configure typescript using the ` tsconfig.json` file.
+#### To run your TypeScript File
+- Configure typescript using the `tsconfig.json` file.
 - Run `tsc --watch`, so that every time you change a `.ts` file, tsc will compile it and produce the output in any folder configured e.g a dist folder.
 - Nodemon can be used to watch files changed in dist folder, then reload happens Automatically.
 
 configure your script in `package.json` to look like this
 
 ```TypeScript
-
 "scripts": {
     "clean": "rimraf dist",
     "build": "tsc",
@@ -289,10 +262,9 @@ configure your script in `package.json` to look like this
 ```
 
 ### Classes & Interfaces
-
 An Interface is a structured group of properties that describe an object.
 
-A Class is a blueprint which objects can be created and configured using the same properties and methods.
+A Class is a blueprint for which objects can be created and configured using the same properties and methods.
 
 In addition to the class definition:
 
@@ -302,10 +274,8 @@ Constructors − They are responsible for allocating memory for the objects of t
 
 Functions − Functions are also referred to as methods and they represent actions an object can take.
 
-##### Interface
-
+#### Interface
 ```TypeScript
-
 interface IStudent {
     studentCode: number;
     studentName: string;
@@ -315,7 +285,6 @@ interface IStudent {
 ```
 
 #### Class
-
 ```TypeScript
 class WelcomeMessage {
   greeting: string;
@@ -333,25 +302,20 @@ let welcomeUser = new WelcomeMessage("Idris"); // Welcome Idris
 ```
 
 ### Typescript Features
-
 JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development)
 
 ![typescript feature](/engineering-education/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
 [image credit](https://www.tutorialspoint.com/)
 
-#### Namespaces and Module
-
-##### Namespaces
-
-Namespaces are used for logical grouping and can include functions, classes, interfaces to support a group of related functionalities.
+### Namespaces and Module
+#### Namespaces
+Namespaces are used for logical grouping and can include functions, classes and, interfaces to support a group of related functionalities.
 Namespaces structures codes in a web application in such a way that all dependencies can be included in a `script` tag.
 
 ##### Module
-
 Modules in TypeScript can contain declarations, code, and dependency on a module loader or a runtime that supports ES Modules. They provide strong isolation and separation of concern, reusable code, and great support for bundling. Modules are recommended for code organization mechanisms to suit proper business logic.
 
 ### Resources
-
 [TypeScript Docs](https://www.typescriptlang.org/docs/)
 
 [Awesome TypeScript](https://github.com/dzharii/awesome-typescript)
@@ -359,7 +323,6 @@ Modules in TypeScript can contain declarations, code, and dependency on a module
 [Why Static Typing & Why is TypeScript so popular?](https://www.section.io/engineering-education/typescript-static-typing/)
 
 ### Conclusion
-
 > Practice makes perfect, you will learn and find solutions in ways you never imagined possible. "Jo Bradford"
 
 I hope you find this useful.
