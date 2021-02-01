@@ -1,16 +1,15 @@
 ### Connect Basic4Android(B4A) Android application to MySQL Database Using PHP
 
-Different tools exist in android app development such as [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html)(B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application development developed by [Anywhere Software](https://www.b4x.com). B4A is free and can be downloaded and installed from the [official website](https://www.b4x.com/b4a.html).
+There are many tools for android application development. Some of the tools are [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html)(B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application development developed by [Anywhere Software](https://www.b4x.com). B4A is free and can be downloaded and installed from the [official website](https://www.b4x.com/b4a.html).
 
 ### Introduction
 
-A growing number of mobile applications has made it necessary for organizations to shift focus on acquiring many users in their systems. This growth means that information needs to be stored in databases for easy access and service delivery to organization clients.
-B4A is an integrated development environment(IDE) for developing android mobile application based on visual basic coding techniques. PHP is a programming language for developing server-side applications. MySQL is a relational database management tool(RDMS) that helps in database management.
+There is an increase in mobile devices in the world. Organizations are concentrating on mobile application development to get more users or clients. This growth means that information needs to be stored in databases. With stored data, there is easy service delivery from organization to clients. B4A is an integrated development environment(IDE) for developing Android mobile applications. B4A bases on visual basic coding techniques. PHP is a programming language for developing server-side applications. MySQL is a relational database management tool(RDMS) that helps in database management.
 
 ### Prerequisites
 
-* Prior SQL, PHP, and B4A programming language.
-* B4A application installation on a Windows computer if not installed follow the instruction on this [article](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure.
+* Have prior SQL, PHP, and B4A programming language.
+* B4A application installation on a Windows computer. If not installed, follow the instruction in this [article](https://www.section.io/introduction-to-android-app-development-basic4android-b4a-part1/) on how to install and configure.
 * PHP and MySQL development environment: In this case, we will use Xampp.
 
 ### Installing B4A
@@ -24,15 +23,15 @@ B4A is an integrated development environment(IDE) for developing android mobile 
 
 ![initializing-installation-window](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-first-installation.png)
 
-* Pick on the components that we are going to use that is MySQL and phpMyAdmin and click Next.
+* Pick on the components that we will use: MySQL and phpMyAdmin, and click Next.
 
 ![Pick components](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-second-pick-components.png)
 
-* Select the folder where Xampp is to be installed and click Next.
+* Select the folder where to install  Xampp, and click Next.
 
 ![Installation folder](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-third-folder-selection.png)
 
-* Select language and click next.
+* Select the language, and click next.
 
 ![Language](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-fourth-language-selection.png)
 
@@ -46,9 +45,9 @@ B4A is an integrated development environment(IDE) for developing android mobile 
 
 ![Installation window](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/xampp-seventh-installation-process.png)
 
--PHP files are kept in the Xampp directory in a folder called `htdocs`. For this application, we will create a folder called `B4A-PHP` where we will store our PHP files inside Xampp htdocs folder.
+-PHP files are kept in the Xampp directory in a folder called `htdocs`. For this application, we will create a folder called `B4A-PHP`. In the folder, we will store our PHP files inside Xampp htdocs folder.
 
-- The Xampp folder we have created can be accessed in a network by getting a computer IP address and adding the folder name. In this case, to get the computer IP we will run the following command in Windows CMD.
+- Access the Xampp folder we have created in a network by getting a computer IP address with a folder name. In this case, to get the computer IP, we will run the following Windows CMD command.
 
 ``` bash
 ipconfig
@@ -64,27 +63,27 @@ ipconfig
 
 ### B4A Android application
 
-From the two stages above we will have a Xampp environment that will support PHP and B4A which will support rapid android application development.
+From the two stages above, we will have a Xampp environment that will support PHP. B4A which will support rapid android application development.
 
-From B4A Application click on File -> New -> Default to create a new project.
+From B4A Application, click on File -> New -> Default to create a new project.
 
 ![New B4A application](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/b4a-create-new-default-application.png)
 
-* chose a project path and assign the project name.
+* Chose a project path and assign the project name.
 
 ![Project name](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/project-path.png)
 
 ### B4A Android CRUD Operation
 
-* Add HTTP library to enable connection to host computer. The library is added through a window called Library manager in the right corner of the B4A application.
+* Add HTTP library that will enable connection to host computer. The library is added through a window called Library manager. The Library manager is in the right corner of the B4A application.
 
 ![Library manager](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/add-http-library.png)
 
-* The application will do a CRUD operation. We will create a layout that has an editText and button which we use to create CRUD operations.
+* The application will do a CRUD operation. We will create a layout with an editText and button, which we use to create CRUD operations.
 
 ![Add layout](/engineering-education/Connect-Basic4Android-BAndroid-development-too--to-MySQL-Database-Using-PHP/button-editText-design.png)
 
-### Save data in MySQL from the B4A Android application
+### Save data in MySQL from the B4A Android application.
 
 ### B4A code
 
@@ -116,8 +115,8 @@ URL="http://192.168.100.118/B4A-PHP/api.php"
 
 `URL is the IP address with a PHP file or domain name with a PHP file to be accessed in the server.`
 
-* Add the following code to initialize and communicate with the server or host where the PHP files are located when the button is clicked.
-**Note** two variables are posted save to indicate that data is supposed to be saved and editTextData variable that carries the data.
+* Add the code to initialize and communicate with the server or host.
+**Note** two variables are posted save to indicate PHP that data is supposed to be saved. The editTextData variable carries the data to be saved in the database.
 
 ``` basic
 Sub Save_Click
@@ -126,7 +125,8 @@ Sub Save_Click
 End Sub
 ```
 
-* Add code to check if the connection was successful and capture response from the specific request.
+* Add code to check if the connection is a success. The code captures the response from the specific request.
+
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -135,7 +135,7 @@ Select job
         Case savedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Saved succesfully ",False)
+                ToastMessageShow("Saved",False)
                 'Clear text in editText
                 EditText1.Text=""
             Else
@@ -150,10 +150,10 @@ End Sub
 
 ### PHP code
 
-* Start Xampp application then click on Apache and MySQL. Once the port numbers appear it will show the two services are running.
+* Start Xampp application, then click on Apache and MySQL. Once the port numbers appear, it will show the two services are running.
 * Click Admin under MySQL to start phpMyAdmin over the browser.
 * By default, it will not request for MySQL username and password.
-* Create a database in phpMyadmin by Clicking new then put database name then click create.
+* Create a database in  phpMyadmin by Clicking new, then put database name, then click create.
 
 `Our database will be called b4a-php-db`
 
@@ -161,13 +161,13 @@ End Sub
 
 * Create a table in the database to store data with the command below under the SQL tab in phpMyadmin.
 
-`Our table will be called student_name`
+`Our table is called student_name`
 
 ``` sql
 CREATE TABLE `b4a-php-db`.`student_name` ( `id` INT(10) NOT NULL AUTO_INCREMENT , `name` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ```
 
-* Create a PHP file to connect to database and execute insert SQL statement.
+* Create a PHP file to connect to the database and execute the insert SQL statement.
 
 ``` php
 <?php
@@ -186,7 +186,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Check which function will be executed
+// Check which function to execute
 if(isset($_POST['save'])) {
 
 //sql statement to insert data
@@ -194,7 +194,7 @@ $sql = "INSERT INTO student_name (name) VALUES ('".$_POST['editTextData']."', )"
 
 // execute to insert data
 if ($conn->query($sql) === TRUE) {
-  die("Data saved successfully");
+  die("Data saved");
 } else {
   die("Error: " . $sql . "<br>
 
@@ -211,9 +211,9 @@ $conn->close();
 ?>
 ```
 
-* When the button in the B4A android application is clicked the data will be inserted into the database.
+* When you click the button in the B4A android application, the data is inserted into the database.
 
-### Read Data from MySQL to B4A Android application
+### Read Data from MySQL to B4A Android application.
 
 * This is the fetching of data from the MySQL database to the B4A android application. In this case, we will fetch the fast data in the MySQL database table to be added.
 
@@ -236,7 +236,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Check which function will be executed
+// Check which function to execute
 if(isset($_POST['fetch'])) {
 
 //sql statement to select data
@@ -281,7 +281,7 @@ Private Sub Read_Click
 End Sub
 ```
 
-* Add the following code to initialize and communicate with the server or host where the PHP files are located when the Read button is clicked.
+* Add the following code to initialize and communicate with the server or host. The code will be executed when the Read button is clicked.
 **Note** one variable is posted to indicate function read is executed in PHP.
 
 ``` basic
@@ -291,7 +291,7 @@ Private Sub Read_Click
 End Sub
 ```
 
-* Add code to check if the connection was successful and capture response from the specific request. It has combined with saving execution.
+* Add code to check if the connection is a success. The code captures the response from the specific request. It has combined with saving execution.
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -301,7 +301,7 @@ Select job
         Case savedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Saved succesfully ",False)
+                ToastMessageShow("Saved",False)
                 'Clear text in editText
                 EditText1.Text=""
             Else
@@ -313,14 +313,14 @@ Select job
     'fetch data
         Case readdata
             If job.Success Then
-                ' check if there is data from the response
+                ' check if there is data from the response.
                 If job.GetString.Length < 1 Then
                     'No data message
                     ToastMessageShow("No Data available",False)
                     Return
                 End If
                 'success message
-                ToastMessageShow("Fetched succesfully ",False)
+                ToastMessageShow("Fetched",False)
                 'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
             Else
@@ -371,8 +371,8 @@ Sub Globals
 End Sub
 ```
 
-* Add the following code to initialize and communicate with the server or host where the PHP files are located when the Read button is clicked.
-**Note** three variables are posted to indicate function `Update` is to be executed in PHP,`editTextData` new data that has been entered in the edittext and finally `prevData` to be replaced in database.
+* Add the following code to initialize and communicate with the server or host. The code will be executed when the Read button is clicked.
+**Note** three variables are posted. One indicates function Update is to be executed in PHP. The  editTextData new data that has been entered in the edittext. The prevData to be replaced in the database.
 
 ``` basic
 Private Sub Update_Click
@@ -381,7 +381,7 @@ Private Sub Update_Click
 End Sub
 ```
 
-* Add code to check if the connection was successful and capture response from the specific request. It has combined with saving execution.
+* Add code to check if the connection is a success. The code captures the response from the specific request. It has combined with saving execution.
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -391,7 +391,7 @@ Select job
         Case savedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Saved succesfully ",False)
+                ToastMessageShow("Saved",False)
                 'Clear text in editText
                 EditText1.Text=""
             Else
@@ -410,7 +410,7 @@ Select job
                     Return
                 End If
                 'success message
-                ToastMessageShow("Fetched succesfully ",False)
+                ToastMessageShow("Fetched",False)
                 'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
                 prevData= EditText1.Text
@@ -425,7 +425,7 @@ Select job
         Case updatedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Updated succesfully ",False)
+                ToastMessageShow("Updated",False)
             Else
 
                 ToastMessageShow("Check your Internet connection",False)
@@ -455,7 +455,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Check which function will be executed
+// Check which function to execute
 if(isset($_POST['update'])) {
 
 //sql statement to select data
@@ -463,7 +463,7 @@ $sql = "UPDATE student_name SET name='".$_POST['editTextData']."' WHERE name='".
 
 //execute update statement
 if ($conn->query($sql) === TRUE) {
-  die ("Updated successfully");
+  die ("Updated");
 } else {
   die( "Error: " . $conn->error);
 }
@@ -500,8 +500,8 @@ Private Sub Delete_Click
 End Sub
 ```
 
-* Add the following code to initialize and communicate with the server or host where the PHP files are located when the Read button is clicked.
-**Note** two variables are posted to indicate function `delete` is to be executed in PHP, `editTextData` data that has been entered in the edittext to be deleted in the database.
+* Add the code below to initialize and communicate with the server or host. In the server, the PHP files are located when the Read button is clicked.
+**Note** two variables are posted. One variable that indicates function delete is to be executed in PHP. The editTextData data that has been entered in the  EditText1.Text is to be deleted from the database.
 
 ``` basic
 Private Sub Delete_Click
@@ -510,7 +510,8 @@ Private Sub Delete_Click
 End Sub
 ```
 
-* Add code to check if the connection was successful and capture response from the specific request.
+* Add code to check if the connection is a success. The code captures the response from the specific request.
+
 
 ``` basic
 Sub JobDone (job As HttpJob)
@@ -520,7 +521,7 @@ Select job
         Case savedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Saved succesfully ",False)
+                ToastMessageShow("Saved",False)
                 'Clear text in editText
                 EditText1.Text=""
             Else
@@ -541,7 +542,7 @@ Select job
                     Return
                 End If
                 'success message
-                ToastMessageShow("Fetched succesfully ",False)
+                ToastMessageShow("Fetched",False)
                 'set editText value to the one fetched from the database
                 EditText1.Text=job.GetString
                 prevData= EditText1.Text
@@ -556,7 +557,7 @@ Select job
         Case updatedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Updated succesfully ",False)
+                ToastMessageShow("Updated",False)
             Else
 
                 ToastMessageShow("Check your Internet connection",False)
@@ -567,7 +568,7 @@ Select job
         Case deletedata
             If job.Success Then
                 'success message
-                ToastMessageShow("Deleted succesfully ",False)
+                ToastMessageShow("Deleted",False)
             Else
 
                 ToastMessageShow("Check your Internet connection",False)
@@ -597,7 +598,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Check which function will be executed
+// Check which function to execute
 if(isset($_POST['delete'])) {
 
 //sql statement to select data
@@ -605,7 +606,7 @@ $sql = "Delete from student_name where name='".$_POST['editTextData']."'";
 
 //execute delete statement
 if ($conn->query($sql) === TRUE) {
-  die("Deleted successfully");
+  die("Deleted");
 } else {
   die("Error: " . $conn->error);
 }
@@ -619,5 +620,4 @@ You can find the complete source code on [Github](https://github.com/tambastar/B
 
 ### Conclusion
 
-if the PHP file is kept in the Apache server host and the B4A Android application connected via the `URL` there would be communication with the server. This will then lead to having several actions that can be done via the app depending on what the user wants.
-B4A rapid development has helped in fast application development and this is a good example to achieve faster connection with database and query without having trouble.
+With the PHP file kept in the Apache server host, the B4A Android application is connected via the URL. The android application would be in communication with the computer as a host server. This will then lead to having several functions within the application. B4A rapid development has helped in fast android application development. This is an example of achieving a faster connection to the database and query database.
