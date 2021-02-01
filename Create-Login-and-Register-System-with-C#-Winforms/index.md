@@ -7,7 +7,7 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 * A code editor a good example is [Visual Studio](https://visualstudio.microsoft.com/vs/).
 * Knowledge of C#, SQL.
 * Running relational database management in this case, we will use [MySQL](https://www.mysql.com/).
-* Visual Studio Knowledge
+* Visual Studio Knowledge.
 
 ### Step I: Create a database and table with required columns.
 
@@ -280,7 +280,7 @@ On click of register button, add the following code
             register.Show();
 ```
 
-On click of login button, add the following code
+On click of login button, add the following code.
 
 ``` c#
 
@@ -297,7 +297,7 @@ On click of login button, add the following code
             }
 ```
 
-On click of exit button, add the following code
+On click of exit button, add the following code.
 
 ``` c#
 
@@ -308,7 +308,7 @@ On click of exit button, add the following code
         }
 ```
 
-Final Form1.cs
+Final Form1.cs.
 
 ``` c#
 
@@ -422,9 +422,9 @@ From the above, we can use C# to create a Desktop system with login functionalit
 
 In this article;
 
-- We created a database for our application
-- created Login and Register Interfaces
-- Connected our application with database
-- Coded the logic and functionality
+- We created a database for our application.
+- created Login and Register Interfaces.
+- Connected our application with database.
+- Coded the logic and functionality.
 
-Happy c-sharp coding ahead
+Happy c-sharp coding ahead.
