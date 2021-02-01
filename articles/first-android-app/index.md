@@ -1,5 +1,21 @@
-Application Softwares commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically android applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/first-android-app/
+title: Creating Your First Android Application
+description: This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps
+author: diana-mutheu
+date: 2021-02-01T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/first-android-app/hero.jpg
+    alt: Android application image example
+---
+Application Softwares commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically android applications.
+<!--more-->
 ### Introduction
 Mobile applications are of two types due to the two mobile operating systems, namely Ios and Android.
 
@@ -228,3 +244,6 @@ There are two approaches to this:
 
 ### Conclusion
 That is it! You have created your first android application. Practice makes perfect so make sure you continue building mobile applications until you become an expert.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
