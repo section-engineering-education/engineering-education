@@ -49,7 +49,7 @@ There is an increase in mobile devices in the world. Organizations are concentra
 
 - Access the Xampp folder we have created in a network by getting a computer IP address with a folder name. In this case, to get the computer IP, we will run the following Windows CMD command.
 
-``` bash
+```bash
 ipconfig
 ```
 
@@ -89,14 +89,14 @@ From B4A Application, click on File -> New -> Default to create a new project.
 
 * Add button in design view and name it `Save`. Right-click on the button in the design view to generate the Click event. The following code will be generated in the Main class.
 
-``` basic
+```basic
 Sub Save_Click
 End Sub
 ```
 
 * Declare HTTP, EditText, and URL variable in Global function as shown below.
 
-``` basic
+```basic
 Sub Globals
     Dim savedata As HttpJob
     Private EditText1 As EditText
@@ -106,7 +106,7 @@ End Sub
 
 * Initialize layout and URL.
 
-``` basic
+```basic
 Activity.LoadLayout("Layout")
 'Link to where PHP file will be located
 'Change URL to match yours
@@ -118,7 +118,7 @@ URL="http://192.168.100.118/B4A-PHP/api.php"
 * Add the code to initialize and communicate with the server or host.
 **Note** two variables are posted save to indicate PHP that data is supposed to be saved. The editTextData variable carries the data to be saved in the database.
 
-``` basic
+```basic
 Sub Save_Click
     savedata.Initialize("savedata", Me)
     savedata.PostString(URL,"save=&editTextData="&EditText1.Text)
@@ -128,7 +128,7 @@ End Sub
 * Add code to check if the connection is a success. The code captures the response from the specific request.
 
 
-``` basic
+```basic
 Sub JobDone (job As HttpJob)
 'save data
 Select job
@@ -169,7 +169,7 @@ CREATE TABLE `b4a-php-db`.`student_name` ( `id` INT(10) NOT NULL AUTO_INCREMENT 
 
 * Create a PHP file to connect to the database and execute the insert SQL statement.
 
-``` php
+```php
 <?php
 
 // change details below to fit your details
@@ -219,7 +219,7 @@ $conn->close();
 
 ### PHP code
 
-``` php
+```php
 <?php
 
 // change details below to fit your details
@@ -263,7 +263,7 @@ $conn->close();
 
 * Add HTTP variable to support fetching of data in global function.
 
-``` basic
+```basic
 Sub Globals
     Dim readdata As HttpJob
     Dim savedata As HttpJob
@@ -275,7 +275,7 @@ End Sub
 * Add another button in the designer and name it `Read.`
 * Right-click on the view and generate a click event.
 
-``` basic
+```basic
 Private Sub Read_Click
 
 End Sub
@@ -284,7 +284,7 @@ End Sub
 * Add the following code to initialize and communicate with the server or host. The code will be executed when the Read button is clicked.
 **Note** one variable is posted to indicate function read is executed in PHP.
 
-``` basic
+```basic
 Private Sub Read_Click
     readdata.Initialize("readdata", Me)
     readdata.PostString(URL,"fetch=")
@@ -293,7 +293,7 @@ End Sub
 
 * Add code to check if the connection is a success. The code captures the response from the specific request. It has combined with saving execution.
 
-``` basic
+```basic
 Sub JobDone (job As HttpJob)
 Select job
 
@@ -339,7 +339,7 @@ End Sub
 
 * Add HTTP variable to support updating of data in global function.
 
-``` basic
+```basic
 Sub Globals
     Dim updatedata As HttpJob
     Dim readdata As HttpJob
@@ -352,7 +352,7 @@ End Sub
 * Add another button in the designer and name it `Update.`
 * Right-click on the view and generate a click event.
 
-``` basic
+```basic
 Private Sub Update_Click
 
 End Sub
@@ -360,7 +360,7 @@ End Sub
 
 * Add a variable called `prevData` to store fetched data in the global function.
 
-``` basic
+```basic
 Sub Globals
     Dim updatedata As HttpJob
     Dim readdata As HttpJob
@@ -374,7 +374,7 @@ End Sub
 * Add the following code to initialize and communicate with the server or host. The code will be executed when the Read button is clicked.
 **Note** three variables are posted. One indicates function Update is to be executed in PHP. The  editTextData new data that has been entered in the edittext. The prevData to be replaced in the database.
 
-``` basic
+```basic
 Private Sub Update_Click
     updatedata.Initialize("updatedata", Me)
     updatedata.PostString(URL,"update=&editTextData="&EditText1.Text&"&prevData="&prevData)
@@ -383,7 +383,7 @@ End Sub
 
 * Add code to check if the connection is a success. The code captures the response from the specific request. It has combined with saving execution.
 
-``` basic
+```basic
 Sub JobDone (job As HttpJob)
 Select job
 
@@ -438,7 +438,7 @@ End Sub
 
 ### PHP code
 
-``` php
+```php
 <?php
 
 // change details below to fit your details
@@ -479,7 +479,7 @@ $conn->close();
 
 * Add HTTP variable to support deleting of data in global function.
 
-``` basic
+```basic
 Sub Globals
     Dim deletedata As HttpJob
     Dim updatedata As HttpJob
@@ -494,7 +494,7 @@ End Sub
 * Add another button in the designer and name it `Delete.`
 * Right-click on the view and generate a click event.
 
-``` basic
+```basic
 Private Sub Delete_Click
 
 End Sub
@@ -503,7 +503,7 @@ End Sub
 * Add the code below to initialize and communicate with the server or host. In the server, the PHP files are located when the Read button is clicked.
 **Note** two variables are posted. One variable that indicates function delete is to be executed in PHP. The editTextData data that has been entered in the  EditText1.Text is to be deleted from the database.
 
-``` basic
+```basic
 Private Sub Delete_Click
     deletedata.Initialize("deletedata", Me)
     deletedata.PostString(URL,"delete=&editTextData="&EditText1.Text)
@@ -513,7 +513,7 @@ End Sub
 * Add code to check if the connection is a success. The code captures the response from the specific request.
 
 
-``` basic
+```basic
 Sub JobDone (job As HttpJob)
 Select job
 
@@ -581,7 +581,7 @@ End Sub
 
 ### PHP code
 
-``` php
+```php
 <?php
 
 // change details below to fit your details.
