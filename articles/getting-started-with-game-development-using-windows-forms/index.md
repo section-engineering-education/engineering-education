@@ -14,12 +14,13 @@ Before we begin, it would help you as the reader to have the following:
 
 - Visual Studio installed on your system.
 
-If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and if you are new to Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
+If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and if you are new to 
+Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
 
 
 ### How to play 
 
-The system of Mastermind will randomly produce 4 colors from 6 colors stored in the system (allowing duplicate colors), and those 4 colors will remain invisible to the player until he wins or losses the game.
+The system of Mastermind will randomly produce 4 colors between 6 colors (allowing duplicate colors). The colors will remain invisible to the player until he wins or losses the game.
 
 - The player will have to guess the 4 colors produced by the system.
 - the player will have 10 chances to guess the colors before losing the game, and each round will give you a hint.
@@ -29,9 +30,9 @@ The system of Mastermind will randomly produce 4 colors from 6 colors stored in 
 
 ### Building the game
 
-We will use the toolbox to select the controls that we need in this game. First of all, we will add 10 labels for each round, and for each label, we will add 4 buttons for the colors one button for the check and another 4 buttons for the hints, a total of 9 buttons for each round (label). Finally 1 button for the start (GO) 4 buttons for the hidden colors produced by the system and 1 one button for the win or loss statement.
+We will use the toolbox to select the controls that we need in this game. First of all, we will add 10 labels for each round, and for each label, we will add 4 buttons for the colors one button for the check, and 4 buttons for the hints. Finally 1 button for the start (GO) 4 buttons for the hidden colors produced by the system and 1 one button for the win or loss statement.
 
-This is how the form should look like after including all the controls, and remember that you can always change the fonts & the colors to whatever suits your taste!
+This is how the form should look like after building the form, and remember that you can always change the fonts & the colors to whatever suits your taste!
 
 ![mastermind_form](/engineering-education/getting-started-with-game-development-using-windows-forms/mastermind_form.png)
 this is the table of the Texts & names of all the controls used in this form.
@@ -68,7 +69,7 @@ empty | VIC
 
 First of all, we need to define the method that will change the color of all the buttons (Col1, Col2, Col3,...).
 To do so we need to change the color of the button each time the player clicks on it, and after it finishes all the colors,
-it will reset the counter (i) and show the colors again on each click.
+it will reset the counter (i) and show the colors again with each click.
 ```c#
  int i = 0;
         void Changecolor(Button x)
@@ -122,7 +123,7 @@ First, we define a random object from the random class, then we use it to produc
             int d = rnd.Next(1, 7);
             int blue = 1, red = 2, green = 3, yellow = 4, pink = 5, purple = 6;
 ```
-After that, we need to check what the random method produced for each digit, and therefore we need to check the `a` 6 times for each color.
+After that, we need to check what the random method produced for each digit, and thus we need to check the `a` 6 times for each color.
 
 ```c#
  if (a == blue)
@@ -154,17 +155,17 @@ After that, we need to check what the random method produced for each digit, and
  //Repeat this with the rest of the digits c & d.   
  
  ch1.Visible = true;
- //The previous line will turn the first Check button to Visible in order to start the first round.
+ //The previous line will turn the first Check button to Visible to start the first round.
         }        
 ```
 **NOTE** that you need to repeat the previous piece of code with `c` and `d` before closing the method.
 
 
 Now we need to define the Check method that will check the colors chosen by the player and compare them with the colors produced by the system.
-The method will take the 4 colors chosen by the player the 4 colors produced by the system and the 4 hint digits as parameters.
+The method will take the four colors chosen by the player the 4 colors produced by the system and the 4 hint digits as parameters.
 
 
-The first condition will check if the 4 color digits are fully clicked by the user, if yes it will turn the second Check button on, if not it will let the player know that he hasn't picked 4 colors in order to finish the round.
+The first condition will check if the four-color digits are fully clicked by the user. If the buttons got clicked, it will turn the second Check button on, if not it will let the player know that he hasn't picked four colors to finish the round.
 ```c#
  void Check_button(Button Col1, Button Col2, Button Col3, Button Col4,
                    Button cool1, Button cool2, Button cool3, Button cool4,
@@ -179,7 +180,7 @@ The first condition will check if the 4 color digits are fully clicked by the us
                 VIC.Text = "ENTER SOME COLORS DUMMY";
 ```
 
-The next piece of code will increase the (q) counter by 1 each time it finds one of the colors chosed by the player in one of the digits produced by the system (but not in the right place). 
+The next snippet will increase the (q) counter by 1 each time it finds one of the colors chosen by the player in one of the digits produced by the system (but not in the right place). 
 
 ```c#
             if (Col1.BackColor == cool1.BackColor || Col1.BackColor == cool2.BackColor || Col1.BackColor == cool3.BackColor || Col1.BackColor == cool4.BackColor)
@@ -216,7 +217,7 @@ if (q == 1)
                 Show4.BackColor = Color.Red;
             }
 ```
-The next piece of code will check how many buttons chosen by the player that has the same **color** and **digit** produced by the system. For an example, the first line of code will give the w counter the number 3 if 3 of the buttons chosen by the player has the same color and digit produced by the system and so on.
+The next piece of code will check how many buttons chosen by the player that has the same **color** and **digit** produced by the system. The first line of code will give the w counter the number 3 if 3 of the buttons chosen by the player have the same color and digit produced by the system and so on.
 
 ```c#
             if (Col1.BackColor == cool1.BackColor && Col2.BackColor == cool2.BackColor && Col3.BackColor == cool3.BackColor && Col4.BackColor != cool4.BackColor)
@@ -280,7 +281,7 @@ if (w == 1)
             }
         }
  ```
-Finally, we will use this method with all of the 10 check buttons.
+Finally, we will use this method with all the 10 check buttons.
 
 ```c#
  private void ch1_Click(object sender, EventArgs e)
@@ -328,7 +329,7 @@ The final check button will have an extra code because reaching the final round 
 ```
 ### Conclusion
 
-In this tutorial, we have created a puzzle game called Mastermind using windows forms. We have used the controls & the properties window to create the form of it, and then we connected these controls with the methods inside of it to give life to the game that we made! Don't forget to test out the code to fully understand how it works.
+In this tutorial, we have created a puzzle game called Mastermind using windows forms. We have used the controls & the properties window to create the form of it, and then we connected these controls with the methods inside of it. To double the fun, try to challenge your friends with Mastermind! Don't forget to test out the code to fully understand how it works.
 
 
 
