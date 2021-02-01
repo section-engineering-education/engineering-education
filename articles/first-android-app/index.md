@@ -1,11 +1,10 @@
-`Application Softwares` commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of using hard code. There are different types of applications `web, mobile and desktop`. In this article, we will look at mobile applications, specifically android applications. 
+Application Softwares commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically android applications.
 
 ### Introduction
-`Mobile applications` are of different types depending on the mobile operating system, namely Ios and Android.
+Mobile applications are of two types due to the two mobile operating systems, namely Ios and Android.
 
-- Examples of phone brands that use android are Samsung, Google pixel.
-
-- Examples of phone brands that use Ios is Apple.
+- Examples of phone brands that use android are Samsung, Google pixel, etc.
+- An example of a phone brands that use Ios is Apple.
 
 This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps. We can develop Android applications using `Java` or `Kotlin` programming languages, here we will use Java.
 
@@ -28,8 +27,7 @@ This article will be a step-by-step guide to creating your first android applica
 > NOTE: Download according to the version of windows you are running, 64bit or 32bit.
  According to Google, you need 2GB of RAM and above (4GB is recommended) to run Android Studio and Java since they are memory consuming and will slow down your PC.
 
- ### New terminologies
-
+### New terminologies
  - **Method** - A block of code that only runs when called and performs an action.
 
  - **Activity** - This is one screen on an Android App's user interface.
@@ -37,20 +35,18 @@ This article will be a step-by-step guide to creating your first android applica
  - **Fragment** - It is a part of an Activity.
 
 ### The steps to build your Application
-
 We are going to create a very simple application that will cover three major parts in android development:
 
-1. Activity navigation - The movement of one Activity to another by a user.
+1. Activity navigation - Movement from one activity to another.
 
 2. UI design - Designing the interface where the user interacts with the computer.
 
 3. Data parsing in an application - Sharing of data within the application.
 
-It will take in a user's name on one Activity and display it on another Activity after clicking a button. 
+It will take in a user's name on one Activity and display it on another Activity after clicking a button.
 Let us begin!
 
-#### Step 1. Android Studio Setup
-
+### Step 1. Android Studio Setup
 - Select ***create a new project***.
 
 - Select ***Empty Activity***.
@@ -70,18 +66,16 @@ Let us begin!
 ![Configure your project](/engineering-education/first-android-app/configure-project.png)
 
 
-#### Step 2. Ui design
-
+### Step 2. User Interface design
 UI for the First Activity:
 
-- Navigate to the ***res Folder*** -> ***Layout Folder*** 
+- Navigate to the ***res Folder*** -> ***Layout Folder***
 
-- Click on the layout name ***(activity_main.xml)*** created by default to design the UI of the MainActivity.
+- Click on the layout name `activity_main.xml` created by default to design the UI of the `MainActivity`.
 
 - We will design our UI for the first activity using the code below. Ensure to change the default layout form Constraint to Linear.
 
 ```xml
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -113,16 +107,12 @@ UI for the First Activity:
         android:text="Submit" />
 
 </LinearLayout>
-
 ```
 UI for the Second Activity:
+- Navigate to the ***Java Folder*** to create the Second Activity.
+- right-click on the first folder with your app's package name. Then go to ***New -> Activity -> Empty Activity***.
 
-- Navigate to the ***Java Folder*** to create the Second Activity. 
-
-- On the first folder with your app's package name, right-click. Then go to ***New -> Activity -> Empty Activity***. 
-
-- Configure the new Activitiy's name and Layout Name, then click ***Finish***. It will generate both the layout and java for the Activity.
-
+- Configure the new Activity's name and Layout Name, then click ***Finish***. It will generate both the layout and java files for the Activity.
 - Then navigate to the Activity's layout to design its UI using the code below.
 
 ```xml
@@ -145,24 +135,18 @@ UI for the Second Activity:
         android:text="TextView" />
 
 </LinearLayout>
-
 ```
-#### Step 3. Write the Java Code
 
-We find the Java Classes for the Activities in the ***Java Folder*** -> then the first folder with the ***Application's package name***
+### Step 3. Write the Java Code
+We find the Java classes for the Activities in the ***Java Folder*** -> then the first folder with the ***Application's package name***
 
 Java code for the First Activity:
-
-- In the first activity outside the ***onCreate***, call the onClick you created in the XML on the button. 
-
-- Inside this method, convert the text input from the user to a String. 
-
-- Then create an extra that will facilitate for parsing of the data. 
-
+- In the first activity outside the `onCreate` method, call the `onClick` you created in the XML on the button.
+- Inside this method, convert the text input from the user to a String.
+- Then create an extra that will facilitate parsing of the data.
 - Finally, create an intent for Activity navigation.
 
 ```java
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -174,14 +158,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    
+
 
     public void onButtonClick (View view){
 
         //    taking text from one activity to another
        username = findViewById(R.id.username_input);
        String message = username.getText().toString();
-       
+
         Intent intent = new Intent(this, Page2.class);
         intent.putExtra("EXTRA_MESSAGE" , message );
         startActivity(intent);
@@ -191,12 +175,11 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
-Java Code for the Second Activity: 
+Java Code for the Second Activity:
 
-- On the second Activity, inside the ***onCreate***, get the text from the previous Activity and display it on the TextView.
+- On the second Activity, inside the `onCreate` method, get the text from the previous Activity and display it on the `TextView`.
 
 ```java
-
 public class Page2 extends AppCompatActivity {
 
     TextView display;
@@ -205,7 +188,7 @@ public class Page2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
-        
+
         //   getting the text frm previous activity
 
         Intent intent = getIntent();
@@ -220,37 +203,28 @@ public class Page2 extends AppCompatActivity {
 
 ```
 
-#### Step 4. Run the application
+### Step 4. Run the application
+There are two approaches to this:
 
-There are two ways to approach this:
- 
  **Using the android emulator**
  1. Under the ***tools*** menu on Android Studio navigate to ***AVD Manager***
+ 2. You will have one emulator by default. Click on the play button in the Actions column on the table to start the emulator. Or, at the top, next to the emulator name, click the play button to start it. As shown below.
 
- 2. You will have one emulator there that comes by default. Click on the play button in the Actions column on the table to start the emulator. OR at the top next to the emulator name, click the play button to start it
-
- ![As shown here](/engineering-education/first-android-app/avd-manager.png)
+ ![Stat emulator](/engineering-education/first-android-app/avd-manager.png)
 
 > NOTE: The performance and RAM left on your PC will determine how long the emulator will take to start.
 
  **Using an android phone**
 1. Connect your mobile phone to your laptop using a ***USB cable***.
-
-2. Navigate to the settings application on your mobile device, look for ***developer options*** which could be locked in the ***additional settings*** option on some phones, click on it. 
-
-3. It will probably prompt you to write the verification code. 
-
+2. Navigate to the settings application on your mobile device, look for ***developer options*** which could be locked in the ***additional settings*** option on some phones, click on it.
+3. It will probably prompt you to write the verification code.
 4. After being verified enable the ***developer options*** then navigate to ***debugging*** and enable ***USB debugging*** option. A pop-up will appear explaining the function of USB debugging, click OK.
-
 5. Another pop-up will appear asking you to allow USB debugging to your computer, click on OK.
+6. The Phone model will appear at the top, run your application by clicking the green play button on the right. As shown.
 
-6. The Phone model will appear at the top,  run your application by clicking the green play button on the right.
-
-![Like Here](/engineering-education/first-android-app/physical-device.png)
+![Physical device](/engineering-education/first-android-app/physical-device.png)
 
 ![Input](/engineering-education/first-android-app/input-page.png)   ![Display](/engineering-education/first-android-app/display-page.png)
 
-
 ### Conclusion
-
 That is it! You have created your first android application. Practice makes perfect so make sure you continue building mobile applications until you become an expert.
