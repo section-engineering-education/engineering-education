@@ -47,9 +47,7 @@ fun main(args: Array<String>) {
 ### 1. Defining Variables
 
 #### `val`
-val used to declare a variable
-It can be assigned a value only once 
-They are immutable string
+val is used to declare a variable. It can be assigned a value only once. They are immutable variables.
 
 ``` kotlin
 fun main(args: Array<String>) {
@@ -61,9 +59,7 @@ fun main(args: Array<String>) {
 ```
 
  #### `var`
-var used to declare a variable
-It can be reassigned a value after assigned locally
-They are mutable string
+var is also used to declare a variable but can be reassigned a value after being assigned locally. They are mutable.
 
 ```kotlin
 fun main() {
@@ -75,23 +71,27 @@ fun main() {
 // Output: 12
 ```
 #### Comments
-Like in other programming languages comments are used to explain or highlight what you are talking about. It helps in the documentation for developers.
-Comments are ignored during code compilation
+Like in other programming languages comments are used to explain or highlight what you are talking about. It helps in the documentation for developers. They are ignored during code compilation.
 
 Comments can be written in two ways:
 
 * Using block comments
+```kotlin
 /*
 * This is comment line 1
+* This is comment line 2
 * */
 
+```
+
 * By use of double forward slashes
-    // This is a comment
+```kotlin
+// This is a comment
+```
 
 
 ### Data types
-In kotlin data, types are all objects.
-They include:
+In kotlin data, types are all objects. They include:
 
 | Data type         | size          |
 |-------------------|:-------------:|
@@ -133,172 +133,99 @@ fun main() {
 
 
 #### Characters
-Characters are represented by the use of the keyword ``Char```. They can not be treated directly as numbers
+Characters are represented by the use of the keyword `Char`. They can not be treated directly as numbers
 
 ```kotlin
-
 fun main() {
-
     var gender: Char = 'M'
 }
 ```
 
 #### Boolean
-Kotlin also contains Boolean types. It has two values of ``false`` or ``true``
+Kotlin also contains Boolean types. The values can either be `false` or `true`
 
 ```kotlin
-
 fun main() {
-    
     var isAlive: Boolean = true
 }
 ```
  #### String
 ```kotlin
-
 fun main() {
-
     var name: String
     name = "Steve"
-    printlin(name)
+    println(name)
 }
 
 // Output: Steve
 ```
 
-###  String Interpolation in Kotlin
-#### Arrays
-
-An array is an indexed collection of items that all have the same type. To create an array, we use the `arrayOf ` function
-
-Arrays in Kotlin are represented by the Array class, which has to get and set functions (that turn into [] by
-operator overloading conventions), and size property, along with a few other useful member functions:
-
-####  Creating array
+##### String Interpolation in Kotlin
+You can add variables in between a string using string interpolation.
 
 ```kotlin
-
-val Continents = arrayOf("Africa", "Europe", "Asia")
-```
-
- #### Accesing array
-
- ```kotlin
-val firstContinent = Continents[0] // firstContinent= "Africa"
-```
-
-#### Repacing of index
-
-```kotlin
-
-Continents[0] = "Australia"
-```
-```kotlin
-
-fun main() {
-
-    var rect = Rectangle()
-    rect.length = 8
-    rect.breadth = 5
-
-    print("The length of the rectangle is ${rect.length} and breadth is 5. The area is ${rect.length * rect.breadth}")
-
-}
-
-// Output: The length of the rectangle is 8 and the breadth is 5. The area is 40
-```
-
- ### Ranges
-
- Check if a number is within a range using `in` operator:
-
-```kotlin 
-
-fun main() {
-
-    var range1 = 1..5
-    // This range contains number 1, 2, 3, 4, 5
-
-    val range2 = 5 downTo 1
-    // This range contains number 5, 4, 3, 2, 1
-
-    val range3 = 5 downTo 1 step 2
-    // This range contains number 5, 3, 1
-
-    val range4 = 'a'..'z'
-    // This range contains the values from "a", "b", "c" . . . "z"
-
-    var isPresent = 'c' in r4
-
-    var countDown = 10.downTo(1)
-    // This range contains number 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
-
-    var moveUp = 1.rangeTo(10)
-    // This range contains number 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    
+fun main(){
+    val age = 20
+    println("I am $age years old")
 }
 ```
 
-### Control Statements: if, when, for, while
+Expressions and operations can also be added to a string provided they return a value.
 
-#### A). `If` as Expression
+```kotlin
+fun main(){
+    val age = 20
+    println("Tomorrow I will be ${age + 1} years old")
+}
+```
+### Control Statements
 
+#### 1. `If` as Expression
 In Kotlin, `if` is an expression, i.e. it returns a value. Therefore there is no ternary operator (condition ? then
 : else), because ordinary if works in this role.
 
 ```kotlin
-
-fun main()
-    val a = 6
-
-    val b = 10
-
-    var maxValue: Int = if (a > b) {
-                            print("a is greater")
-                            a
-                        } else {
-                            print("b is greater")
-                            b
-                        }
-
-    println(maxValue)
+fun main(){ 
+    val a = 6 
+    val b = 10 
+    var maxValue: Int = 
+        if (a > b) { 
+            print("a is greater")
+            a 
+        } else { 
+            print("b is greater")
+            b 
+        }
+    
+    println(maxValue) 
 }
-
-// Output: b is greater than 6
 ```
 
-#### B). When Expression 
-
-It is a replacement of the ``switch ``statement found in c or other languages  like Java, C++
+#### 2. When Expression 
+It is a replacement of the `switch` statement found in C or other languages  like Java, C++
 
 ```kotlin
-
 fun main() {
-
     val x = 100
-
-    val str: String  = when (x) {
-
+    val str: String = when (x) {
         1 -> "x is 1"
         2 -> "x is 2"
-        else -> {
-            "x value is unknown"
-            "x is an alien"
-        }
+        else -> "x value is unknown"
     }
+    println(str)
+}
     
-// Output: x is an alien 
+// Output: x value is unknown
 ```
 
-#### Iterators[LOOPS]
+#### Iterators
 
- #### A). `for` loop
+ #### 1. `for` loop
 
  Syntax
 
  ```kotlin
-
- for(initializer in ranges){
+ for(initializer in ranges/collection){
      //put your code here
  }
  ```
@@ -306,44 +233,40 @@ fun main() {
  Initialize-> condition check -> Code Execute -> Increement
 
  ```kotlin
-
 fun main() {
 
     for (i in 1..10) {
-
         if (i % 2 == 0) {
             println(i)
         }
     }
-
-    println(i)
-    // 2,4,6,8,10
+    // output: 2,4,6,8,10
 
     for (i in 10 downTo 0) {
-
         if (i % 2 == 0) {
             println(i)
         }
     }
+
+    // Output : 8,6,4,2,0
 }
 ```
 
- #### B). `While` Loop
+ #### 2. `While` Loop
 
  Syntax
 
  ```kotlin
-
- // Initialize Counter
+ // Initialize your counter
  while(condition){
      //Put your code here
-     //Incremen or Decrement Counter
+     //increment or decrement your counter
  }
  ```
- 
-  The flow of for loop is as follows
 
- condition check -> Code Execute -> Increement
+The flow of for loop is as follows:
+
+`condition check -> Code Execute -> Increament`
 
 ```kotlin 
 fun main(args: Array<String>) {
@@ -357,7 +280,7 @@ fun main(args: Array<String>) {
     }
 
     println(i)
-    //2,4,6,8,10
+    //Output: 2,4,6,8,10,11
 
     var j = 10
     while (j >= 0) {
@@ -366,43 +289,45 @@ fun main(args: Array<String>) {
         }
         j--
     }
+    
+    println(j)
+    // Output: 10,8,6,4,2,0,-1
 }
 ```
 
- #### C). `do while` loop
+ #### 3. `do while` loop
 
  Syntax
-
  ```kotlin
- // Initialize Counter
+ // Initialize counter
  do(condition){
      //Put your code here
-     //Incremen or Decrement Counter
+     //increment or decrement counter
  } while (condition)
  ```
 
 ```kotlin 
-
 fun main() {
+    
     var i = 0
-
     do {
         if (i % 2 == 0) {
             println(i)
         }
         i++
     } while (i <= 10)
-
-    println()
+    
+    // Output : 0,2,4,6,8,10
 
     var j = 10
-
     do {
         if (j % 2 == 0) {
             println(j)
         }
         j--
     } while (j >= 0)
+    
+    // Output : 10,8,6,4,2,0
 }
 ```
 
@@ -412,21 +337,18 @@ fun main() {
   
  Break terminates the nearest enclosing loop
 
- ``BREAK ``Keyword and Labelled ``FOR ``Loop
+ * `break` Keyword in a labelled `for` loop
 
 ```kotlin
 fun main(args: Array<String>) {
 
     for (i in 0..4) {
         println(i)
-
         if (i == 2) {
             break
         }
     }
-
-    println(i) 
-
+    
     Loop@ for (i in 1..3) {
         for (j in 1..3) {
             println("$i  $j")
@@ -438,34 +360,34 @@ fun main(args: Array<String>) {
 
 /**
 * Output
+* 0
+* 1
+* 2
 * 1  1
 * 1  2
 * 1  3
 * 2  1
 * 2  2
 */
-````
-  #### Continue
+```
+#### Continue
 It proceeds to the next step of the nearest enclosing loop
 
-``CONTINUE`` Keyword and Labelled FOR Loop
+* `cotinue` Keyword in a labelled `for`
 
 ```kotlin
-fun main(args: Array<String>) {
-
+fun main() {
     for (i in 1..10) {
         if (i == 3)
             continue
-    }
         println(i)
-  
     }
-
-Output: 1,2,4,5,6,7,8,9
+    
+    // Output : 1,2,4,5,6,7,8,9,10
+}
 ```
 
 ```kotlin
-// CONTINUE Statement
 fun main(args: Array<String>) {
     Loop@ for (i in 1..3) {
         for (j in 1..3) {
@@ -476,30 +398,24 @@ fun main(args: Array<String>) {
         }
     }
 }
-// We skipped 2 2
+
 /**
 * Output
 * 1  1
 * 1  2
 * 1  3
 * 2  1
-* 2  3
 * 3  1
 * 3  2
+* 3  3
 */
 ```
- #### FUNCTIONS 
-
- Function declarations
-Functions in Kotlin are declared using the ``fun`` keyword:
-
+ #### Functions
+Functions in Kotlin are declared using the `fun` keyword:
 
 ```kotlin
 fun main(args: Array<String>) {
-
-
     var sum = add(2, 4)
-
     println("Sum is " + sum)
 }
 
@@ -510,26 +426,23 @@ fun add(a: Int, b: Int): Int {
 // Output: sum is 6
 ```
 
- ####  Default Functions
- We use @JvmOverloads for interoperability for kotlin since it was not available in java
+ ####  Default functions
+ We use `@JvmOverloads` for interoperability for kotlin since it was not available in java
 
 ```kotlin
-
 fun main(args: Array<String>) {
-
     var result = findVolume(6, 5)
     print(result)
-    
 }
+
 @JvmOverloads
 fun findVolume(length: Int, breadth: Int, height: Int = 12): Int {
-
     return length * breadth * height
 }
 
 // Output: 360
 ```
-####  FUNCTIONS as Expressions
+####  Functions as Expressions
 
 ```kotlin
 fun main(args: Array<String>) {
