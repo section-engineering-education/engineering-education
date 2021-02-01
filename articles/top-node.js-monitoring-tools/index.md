@@ -1,4 +1,21 @@
-Often applications may sometimes not work as efficiently as they should. The responsibility of carrying out preventive and curative maintenance lies on application developers. Customers using your application as a developer may spend a lot of money trying to repair the applications without your guidance. It would be best to have an effective monitoring solution to keep track of your application's behavior.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/top-node.js-monitoring-tools/
+title: Top Node.js Monitoring Tools
+description: Often applications may not work as efficiently as they should. The responsibility of carrying out preventive and curative maintenance lies on application developers.
+author: eric-kahuha
+date: 2021-01-21T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/top-node.js-monitoring-tools/hero.jpg
+    alt: Top Node.js Monitoring Tools image
+---
+
+Often applications may not work as efficiently as they should. The responsibility of carrying out preventive and curative maintenance lies on application developers. Customers using your application as a developer may spend a lot of money trying to repair the applications without your guidance. It would be best to have an effective monitoring solution to keep track of your application's behavior.
 
 ### Node.js monitoring
 Node.js monitoring involves closely keeping track of an application's performance and availability. This is by finding bugs and fixing errors. Node.js monitoring uses application performance management (APM) tools to watch over apps. [APM](https://stackify.com/what-is-apm/) is an essential tool for monitoring and optimizing the performance of apps.
