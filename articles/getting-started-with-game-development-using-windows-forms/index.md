@@ -29,11 +29,11 @@ The system of Mastermind will randomly produce 4 colors from 6 colors stored in 
 
 ### Building the game
 
-We will use the toolbox to select the controls that we need in this game. First of all, we will add 10 labels for each round, and for each label, we will add 4 buttons for the colors one button for the check and another 4 buttons for the hints, a total of 9 buttons for each round (label). Finally 1 button for the start (GO) 4 buttons for the hidden colors produced by the system and 1 one button for the win or lose statement.
+We will use the toolbox to select the controls that we need in this game. First of all, we will add 10 labels for each round, and for each label, we will add 4 buttons for the colors one button for the check and another 4 buttons for the hints, a total of 9 buttons for each round (label). Finally 1 button for the start (GO) 4 buttons for the hidden colors produced by the system and 1 one button for the win or loss statement.
 
-This is how the form should look like after including all the controls, and remember that you can always change the fonts & the colors to what ever that suits your taste!
+This is how the form should look like after including all the controls, and remember that you can always change the fonts & the colors to whatever suits your taste!
 
-![Mastermind_form](/engineering-education/getting-started-with-game-development-using-windows-forms/Mastermind_form.png)
+![mastermind_form](/engineering-education/getting-started-with-game-development-using-windows-forms/mastermind_form.png)
 this is the table of the Texts & names of all the controls used in this form.
 Text | Name
 ---- | ----
@@ -90,7 +90,7 @@ it will reset the counter (i) and show the colors again on each click.
                 i = 0;
           }
 ```
-On each (Col1,Col2,Col3,...) button we double click on it and use this method on its button instead of x.
+On each (Col1, Col2, Col3,...) button we double click on it and use this method on its button instead of x.
 
 ```c#
 private void Col1_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ private void Col2_Click(object sender, EventArgs e)
         }
 ```
 Now we need to define the GO method that will start the game and produce the 4 random colors.
-First we define a random object from the random class, then we use it to produce 4 random numbers from 1 to 6, and each color will have a value.
+First, we define a random object from the random class, then we use it to produce 4 random numbers from 1 to 6, and each color will have a value.
 
 ```c#
  private void GO_Click(object sender, EventArgs e)
@@ -136,18 +136,32 @@ After that, we need to check what the random method produced for each digit, and
             if (a == pink)
                 cool1.BackColor = Color.Pink;
             if (a == purple)
-                cool1.BackColor = Color.Purple;              
- //Repeat this with the snippet with the rest of the digits b c d.   
+                cool1.BackColor = Color.Purple;
+                
+                if (b == blue)
+                cool2.BackColor = Color.Blue;
+            if (b == red)
+                cool2.BackColor = Color.Red;
+            if (b == green)
+                cool2.BackColor = Color.Green;
+            if (b == yellow)
+                cool2.BackColor = Color.Yellow;
+            if (b == pink)
+                cool2.BackColor = Color.Pink;
+            if (b == purple)
+                cool2.BackColor = Color.Purple;
+
+ //Repeat this with the rest of the digits c & d.   
  
  ch1.Visible = true;
  //The previous line will turn the first Check button to Visible in order to start the first round.
         }        
 ```
-**NOTE** that you need to repeat the previous piece of code with `b` `c` and `d` before closing the method.
+**NOTE** that you need to repeat the previous piece of code with `c` and `d` before closing the method.
 
 
-Now we need to define the Check method that will check the colors chosed by the player and compare them with the colors produced by the system.
-The method will take the 4 colors chosed by the player the 4 colors produced by the system and the 4 hint digits as parameters.
+Now we need to define the Check method that will check the colors chosen by the player and compare them with the colors produced by the system.
+The method will take the 4 colors chosen by the player the 4 colors produced by the system and the 4 hint digits as parameters.
 
 
 The first condition will check if the 4 color digits are fully clicked by the user, if yes it will turn the second Check button on, if not it will let the player know that he hasn't picked 4 colors in order to finish the round.
@@ -202,7 +216,7 @@ if (q == 1)
                 Show4.BackColor = Color.Red;
             }
 ```
-The next piece of code will check how many buttons chosed by the player that has the same **color** and **digit** produced by the system. For an example the first line of code will give the w counter the number 3 if 3 of the buttons chosed by the player has the same color and digit produced by the system and so on.
+The next piece of code will check how many buttons chosen by the player that has the same **color** and **digit** produced by the system. For an example, the first line of code will give the w counter the number 3 if 3 of the buttons chosen by the player has the same color and digit produced by the system and so on.
 
 ```c#
             if (Col1.BackColor == cool1.BackColor && Col2.BackColor == cool2.BackColor && Col3.BackColor == cool3.BackColor && Col4.BackColor != cool4.BackColor)
