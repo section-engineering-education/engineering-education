@@ -584,7 +584,7 @@ End Sub
 ``` php
 <?php
 
-// change details below to fit your details
+// change details below to fit your details.
 
 $servername = "localhost";      // Computer host
 $username = "root";             // MySql username
