@@ -78,7 +78,7 @@ let c: Fruits = Fruits.Banana;
 ```
 
 #### Array
-TypeScript also supports arrays.
+TypeScript also supports arrays. An array is a data structure consisting of a set of elements, each defined by an index or key of at least one array and its is stored in such a way that a mathematical formula can compute the position of each element from its index tuple.
 ##### Tips about an Array
 - Once an array is initialized it can't be resized because it's static. This can be useful in many scenarios.
 - Sequential memory blocks are allocated when an array is declared.
