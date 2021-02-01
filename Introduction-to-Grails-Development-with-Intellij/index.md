@@ -64,7 +64,7 @@
 			```
 			
 
-			![CREATE-APP](/engineering-education/how-to-replicate-postgresql-database/grails-create-app.png)
+			![CREATE-APP](/engineering-education/Introduction-to-Grails-Development-with-Intellij/grails-create-app.png)
 			
 
 			The Grails application is formed within the `Firstapp` directory, and one can execute many other grails commands.
@@ -79,10 +79,10 @@
 			The command will make the web application run via a browser. You can type the highlighted command in the browser.
 			
 
-			![CREATE-APP](/engineering-education/how-to-replicate-postgresql-database/grails-run-app.png).
+			![CREATE-APP](/engineering-education/Introduction-to-Grails-Development-with-Intellij/grails-run-app.png).
 			
 
-			![BROWSER VIEW](/engineering-education/how-to-replicate-postgresql-database/grails-first-web-app.png).
+			![BROWSER VIEW](/engineering-education/Introduction-to-Grails-Development-with-Intellij/grails-first-web-app.png).
 			
 
 			### Folder structure and directories
@@ -322,7 +322,7 @@
 			
 			The new view in the browser will look like the following.
 			
-			![VIEWS](/engineering-education/how-to-replicate-postgresql-database/grails-views-data.png).
+			![VIEWS](/engineering-education/Introduction-to-Grails-Development-with-Intellij/grails-views-data.png).
 			
 			The same folder can be opened in Intellij and continue with fast coding. For any Class to be added, the developer needs to right-click on a given folder and create a Grails Class based on the Folder.
 			
@@ -330,7 +330,7 @@
 			
 			How it looks in IntelliJ
 			
-			![INTELLIJ VIEW](/engineering-education/how-to-replicate-postgresql-database/grails-intellij-view.PNG).
+			![INTELLIJ VIEW](/engineering-education/Introduction-to-Grails-Development-with-Intellij/grails-intellij-view.PNG).
 			
 			For the source code check [here](https://github.com/tambastar/Grails-Firstapp)
 			
@@ -346,4 +346,4 @@
 			
 			- We have installed the Grails framework.
 			- We have looked at Grails directories.
-			- We have created a Student Object Management
+			- We have created a Student Object Management.
