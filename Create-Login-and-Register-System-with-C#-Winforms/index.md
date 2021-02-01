@@ -1,51 +1,51 @@
 ### Introduction
 
-C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to develop many kinds of applications including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, and many others.
+C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to create many applications, including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, and many others.
 
 ### Prerequisites
 
-* A code editor e.g [Visual Studio](https://visualstudio.microsoft.com/vs/).
+* A code editor a good example is [Visual Studio](https://visualstudio.microsoft.com/vs/).
 * Knowledge of C#, SQL.
-* Running relational database management in this case we will use [MySQL](https://www.mysql.com/)
+* Running relational database management in this case, we will use [MySQL](https://www.mysql.com/).
 * Visual Studio Knowledge
 
-### Step I: Create a database and table with required columns
+### Step I: Create a database and table with required columns.
 
 ``` sql
 
 Create database userdata;
 ```
 
-![DATABASE CREATION]((/Create-Login-and-Register-System-with-C#-Winforms/create-db-cmd.png))
+![DATABASE CREATION]((/engineering-education/Create-Login-and-Register-System-with-C#-Winforms/create-db-cmd.png))
 
 Create table command
 
 ``` sql
 
-CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(20) NOT NULL , `username` VARCHAR(10) NOT NULL , `password` VARCHAR NOT NULL , PRIMARY KEY (`id`)) ;
+CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(200) NOT NULL , `username` VARCHAR(100) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
-![TABLE CREATION](/Create-Login-and-Register-System-with-C#-Winforms/create-table-cmd.png)
+![TABLE CREATION](/engineering-education/Create-Login-and-Register-System-with-C#-Winforms/create-table-cmd.png)
 
 ### Step II: Create Project
 
-Create a project in Visual Studio by clicking on File -> New -> Project then select Visual C#.
-From the window select Windows Forms App(. Net Framework).
+Create a Visual Studio project by clicking on File -> New -> Project, then select Visual C#.
+From the window, choose Windows Forms App(. Net Framework).
 Give your application a name. Then click ok.
 
 The project will come with default form call a Form1.cs
 
 ### Step III: Create a Config class to execute MySQL queries.
 
-Since C# is object-oriented we will create a class that will handle the execution of queries that we will use in our program.
+Since C# is object-oriented, we will create a class that will handle the execution of queries that we will use in our program.
 
 From Solution Explorer window right-click and select add -> New Item -> Class. Name the class Config.cs the click on the button add.
 
-- Add MySQL.Data Library by right-clicking on solution explorer window then Manage Nuget packages then search for MySQL.Data Library and install
+- Add MySQL.Data Library by right-clicking on solution explorer window, then Manage Nuget packages, then search for MySQL.Data Library and install
 
-![MYSQL LIBRARY](/Create-Login-and-Register-System-with-C#-Winforms/add-mysql-lib-vs.jpg)
+![MYSQL LIBRARY](/engineering-education/Create-Login-and-Register-System-with-C#-Winforms/add-mysql-lib-vs.jpg)
 
-- Add the following class to help in in the execution of MySQL queries
+- Add the following class to help in the execution of MySQL queries.
 
 Config.cs
 
@@ -219,11 +219,11 @@ namespace LoginSysten
 
 ```
 
-- Now that we have Config.cs we can execute any MySQL statement 
+- Now that we have Config.cs, we can execute any MySQL statement.
 
 ### Step IV: Create Register Windows form.
 
-From Microsoft Visual Studio create a windows form by clicking on PROJECT -> Add Windows Form, give the form a name `Register`  then click Add.
+From Microsoft Visual Studio, create windows form by clicking on PROJECT -> Add Windows Form, give the form a name `Register`  then click Add.
 
 We have two Windows form classes that is Form1.cs and Register.cs.
 
@@ -231,27 +231,27 @@ We have two Windows form classes that is Form1.cs and Register.cs.
 
 ### Login form
 
-- Click on Form1.cs in Solution Explorer and on the form that displays add 3 buttons, 2 textboxes, and 2 labels.
+- Click on Form1.cs in Solution Explorer, and on the form that displays, add three buttons, two textboxes, and two labels.
 
-The first button will be the register button will start our Register form, the second one will be the Login button which will query from the input Entered and the third button will close the application.
+The first button will be the register button will launch Register form. The second button will be the Login button, when clicked will query  the database with the input Entered. The second button will execute the login MySQL querry. The third button will close the application.
 
-The first textbox will allow input of username for login while the second textbox will allow input of a password.
+The first textbox will allow username input for login, while the second textbox will enable a password's input. This two input will be passed to the SQL.s
 
 The labels will indicate the functionality of the two textboxes.
 
-![LOGIN INTERFACE](/Create-Login-and-Register-System-with-C#-Winforms/login-interface.jpg)
+![LOGIN INTERFACE](/engineering-education/Create-Login-and-Register-System-with-C#-Winforms/login-interface.jpg)
 
 ### Register form
 
-- Click on Register.cs in Solution Explorer and on the form that displays add 2 buttons, 3 textboxes, and 3 labels.
+- Click on Register.cs in Solution Explorer and on the form that displays add two buttons, three textboxes, and three labels.
 
-The first button will be a save button to save data entered, the second one will be an exit button that will close the Register form.
+The first button will be a save button to save data entered, and the second one will be an exit button that will close the Register form.
 
-The first textbox will allow input of names for the user, the second textbox will allow input of username of the user and the third textbox will allow a password to be entered.
+The first textbox will allow input of names for the user, the second textbox will allow input of the username of the user, and the third textbox will enable a password to be entered.
 
 The labels will indicate the functionality of the three textboxes.
 
-![REGISTER INTERFACE](/Create-Login-and-Register-System-with-C#-Winforms/register-interface.jpg)
+![REGISTER INTERFACE](/engineering-education/Create-Login-and-Register-System-with-C#-Winforms/register-interface.jpg)
 
 ### Step VI: Login Logic.
 
@@ -270,7 +270,7 @@ The labels will indicate the functionality of the three textboxes.
         }
 ```
 
-On click of register button add the following code
+On click of register button, add the following code
 
 ``` c#
 
@@ -280,7 +280,7 @@ On click of register button add the following code
             register.Show();
 ```
 
-On click of login button add the following code
+On click of login button, add the following code
 
 ``` c#
 
@@ -297,7 +297,7 @@ On click of login button add the following code
             }
 ```
 
-On click of exit button add the following code
+On click of exit button, add the following code
 
 ``` c#
 
@@ -388,7 +388,7 @@ namespace LoginSysten
 
 ```
 
-On click of exit button add the following code
+On click of exit button, add the following code.
 
 ``` c#
 
@@ -399,7 +399,7 @@ On click of exit button add the following code
         }
 ```
 
-On click of the save button add the following code to save the information
+On click of the save button, add the following code to save the information.
 
 ``` c#
 
@@ -414,7 +414,7 @@ On click of the save button add the following code to save the information
 
 ```
 
-Find the above application in Github [Login and Register application](https://github.com/tambastar/Create-Login-and-Register-System-with-C--Winforms)
+Find the above application in Github [Login and Register application](https://github.com/tambastar/Create-Login-and-Register-System-with-C--Winforms).
 
 ### Conclusion
 
