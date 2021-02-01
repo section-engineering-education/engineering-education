@@ -48,7 +48,7 @@ This article will be a step-by-step guide to creating your first android applica
 
  - **Activity** - This is one screen on an Android App's user interface.
 
- - **Fragment** - It is a part of an Activity.
+ - **Fragment** - A Fragment represents a reusable portion of your app's UI.
 
 ### The steps to build your Application
 We are going to create a very simple application that will cover three major parts in android development:
@@ -160,7 +160,7 @@ Java code for the First Activity:
 - In the first activity outside the `onCreate` method, call the `onClick` you created in the XML on the button.
 - Inside this method, convert the text input from the user to a String.
 - Then create an extra that will facilitate parsing of the data.
-- Finally, create an intent for Activity navigation.
+- Finally, create an intent which refers to a messaging object used to request an action from another app component. The action requested in this case is Activity navigation. 
 
 ```java
 public class MainActivity extends AppCompatActivity {
