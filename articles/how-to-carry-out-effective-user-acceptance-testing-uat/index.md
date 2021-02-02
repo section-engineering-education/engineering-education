@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/
 title: How to Carry Out Effective User Acceptance Testing (UAT)
-description: This article will be an introduction to User Acceptance Testing. UAT ensures that the software system is working as per the business requirements. The system is evaluated in real-life scenarios from the external user point of view.. 
+description: This article will be an introduction to User Acceptance Testing. UAT ensures that the software system is working as per the business requirements. The system is evaluated in real-life scenarios from the external user point of view.
 author: benson-kariuki
 date: 2021-02-02T00:00:00-13:00
 topics: []
