@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-kotlin-flows/
+title: Introduction to Kotlin Flows
+description: Suspending functions and/or coroutines launched with the `async` builder return single values. These values can be strings, integers, boolean, or even lists. But, what if we want to return multiple asynchronously computed values?
+author: peter-kayere
+date: 2021-01-25T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-kotlin-flows/hero.jpg
+    alt: Kotlin Flows example image
+---
 ### Introduction
 Suspending functions and/or coroutines launched with the `async` builder return single values. These values can be strings, integers, boolean, or even lists. But, what if we want to return multiple asynchronously computed values? Take the case of loading a large list from a database. Using the default coroutine builders will return the whole list at once. However, this will take long thus making a program slow. The best approach to this case would be to return single values after computation rather than the whole list. Well, how can we do this? That's where flows come in.
 
@@ -107,3 +123,6 @@ However, the most important thing is that we have not lost any values which mean
 In this article, we have gone through the basics of flows in kotlin. We have seen how flows are created and consumed. We have also proved that flows are aware of backpressure. This is all you need to get started with flows. Check on their official [documentation](https://kotlinlang.org/docs/reference/coroutines/flow.html) for more details. Otherwise, I cant wait to see what you do with flows.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
