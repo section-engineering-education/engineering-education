@@ -14,7 +14,7 @@ Let me explain what they mean by this to help you understand.
 Transformers were proposed in this [paper](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) for machine translation but have since become the main architecture in solving NLP tasks such as speech recognition and text summarization. 
 They are behind the recent developments in NLP, including OpenAI's GPT-3 and Google's BERT.
 
-Previously, there have been attempts to use transformers for image recognition tasks. These attempts either used a combination of transformers with convolutional networks or performed engineering to transform convolutional networks by replacing certain modules in their overall structure. In this published [paper](https://arxiv.org/abs/2010.11929), they did not rely on CNNs at all. They relied purely on the standard transformer architecture, the dominant architecture in Natural Language Processing (NLP). The only trick they did is break down an input image into a sequence of image patches (16 x 16) fed in as the standard transformer input. But the rest of the transformer architecture remained the same. 
+Previously, there have been attempts to use transformers for image recognition tasks. These attempts either used transformers with convolutional networks or transformed convolutional networks by replacing certain modules. In this published [paper](https://arxiv.org/abs/2010.11929), they did not rely on CNNs at all. They relied purely on the standard transformer architecture, the dominant architecture in Natural Language Processing (NLP). The only trick they did is break down an input image into a sequence of image patches (16 x 16) fed in as the standard transformer input. But the rest of the transformer architecture remained the same. 
 These image patches are viewed in the same way as words (tokens) in the NLP context. Hence, the relation between viewing the 16 x 16 input images as 16 x 16 words.
 
 Results show that this novel architecture outperformed state-of-the-art CNNs, known as the dominant network architecture for image recognition.  
@@ -25,10 +25,10 @@ Results show that this novel architecture outperformed state-of-the-art CNNs, kn
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
-The model's first step is to divide an input image into a sequence of image patches. In the paper, they divided the images into 16 x 16 dimensions, hence the paper's title. 
+The model's first step is to divide an input image into a sequence of image patches. The paper divided the images into 16 x 16 dimensions, hence the paper's title. 
 These image patches are then passed through a trainable linear projection layer. This layer plays the role of an embedding layer and outputs fixed size vectors. 
 Position embeddings are then linearly added to the sequence of image patches so that the images can retain their positional information. It injects key information about the relative or absolute position of the image patches in the sequence.
-An important feature to note in the position embedding module is the 0th class. This idea of the 0th class is borrowed from [BERT's](https://arxiv.org/pdf/1810.04805.pdf) class token. Like the other classes, this class is also learned, but it doesn't come from the image itself. Instead, it is hardcoded in the model architecture.
+An important feature to note in the position embedding module is the 0th class. This idea of the 0th class is borrowed from [BERT's](https://arxiv.org/pdf/1810.04805.pdf) class token. Like the other classes, this class is also learned, but it doesn't come from its image. Instead, it is hardcoded in the model architecture.
 The idea behind how position embedding works is demonstrated in the image below:
 
 ![The sequence of the images](/engineering-education/vision-transformer-using-transformers-for-image-recognition/image-sequence.PNG)
@@ -87,7 +87,7 @@ They used Attention Rollout proposed in this [paper](https://arxiv.org/pdf/2005.
 
 ### Summary of the Model
 
-1. Vision Transformer (ViT) requires substantially less computing power to train. It takes 2.5k TPUv3-days to train it. Seems like much but it's still less compared to the current state-of-the-art methods.
+1. Vision Transformer (ViT) requires substantially less computing power to train. It takes 2.5k TPUv3-days to train it. It seems like much, but it's still less compared to the current state-of-the-art methods.
 2. Huge models (ViT-H) mostly does better than large models (ViT-L) and wins against state-of-the-art methods.
 3. Attention Rollouts are used to compute the attention maps.
 4. Like the GPT-3 and BERT models, the Visual Transformer model also can scale.
@@ -102,7 +102,7 @@ Transformers completely replaced Long Short-Term Memory (LSTM) in NLP. Now, they
 ### References
 
 1. [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929)
-2. [Big Transfer (BiT):General Visual Representation Learning](https://arxiv.org/pdf/1912.11370.pdf)
+2. [Big Transfer (BiT): General Visual Representation Learning](https://arxiv.org/pdf/1912.11370.pdf)
 3. [Attention Is All You Need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
 4. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf) 
 5. [Quantifying Attention Flow in Transformers](https://arxiv.org/pdf/2005.00928.pdf)
