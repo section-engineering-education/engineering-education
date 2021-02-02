@@ -10,11 +10,11 @@ Before we move on, ensure that you;
 
 ### Getting started
 Android offers several types of Dialogs which include;
-- Alert Dialog.
-- DatePicker Dialog.
-- TimePicker Dialog.
+- Alert Dialog
+- DatePicker Dialog
+- TimePicker Dialog
 - Dialog Fragment
-- BottomSheet Dialog.
+- BottomSheet Dialog
 
 In this tutorial, we're going to lay our focus on `AlertDialog` where we'll mainly cover the following concepts:
 
@@ -51,10 +51,10 @@ buildFeatures{
     dataBinding true
 }
 ```
-*Sync* and wait for the Gradle build to finish. Once it's done, proceed to set up the UI.
+*Sync* and wait for the Gradle-build to finish. Once it's done, proceed to set up the UI.
 
-#### UI setup
-In our user interface, we need 2 buttons that we'll use to show the Dialogs. Open `activity_main.xml` file and paste the code below.
+#### Setting up the user interface
+In our UI, we need 2 buttons that we'll use to show the Dialogs. Open `activity_main.xml` file and paste the code below.
 
 ```xml
 <Button
@@ -89,11 +89,11 @@ To fix the error about the unresolved reference in the text attribute, create st
     <string name="show_custom_dialog">Show custom dialog</string>
 </resources>
 ```
-*buttons preview*
+*buttons preview:*
 
 ![buttons image](/engineering-education/getting-started-with-dialogs-in-android-kotlin/buttons.png)
 
-As mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. The beauty of DataBinding is that it generates the objects for us. We just need to enclose the layout with a `layout` tag as shown below.
+As mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. The beauty of DataBinding is that it autogenerates these objects. We just need to enclose the layout with a `layout` tag as shown below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -139,7 +139,7 @@ An Alert Dialog is created by instantiating the `AlertDialog` class and then cre
 #### A). Default Alert Dialog
 This type of dialog is usually rectangular and appears at the center of the screen. We'll discuss its functionalities as we proceed. Meanwhile, paste the code below inside the `MainActivity` class, just below the `onCreate()` method.
 
-```java
+```kotlin
 private fun showDefaultDialog() {
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.apply {
@@ -150,7 +150,7 @@ private fun showDefaultDialog() {
 
 The code above creates a dialog with the title "Hello" and shows it on the screen using the `show()` method. If omitted, the dialog won't pop up. You can verify this by calling its function when the button is clicked. Add the code below.
 
-```java
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -177,7 +177,7 @@ Meanwhile, let us create a Dialog that implements the above features. Create a v
 
 Update `showDefaultDialog()` function to look like the one below.
 
-```java
+```kotlin
 private fun showDefaultDialog() {
         val alertDialog = AlertDialog.Builder(this)
 
@@ -199,13 +199,13 @@ private fun showDefaultDialog() {
 ```
 Also, copy and paste the code below just above or below the `showDefaultDialog()` function.
 
-```java
+```kotlin
     private fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 ```
 
 **Explanation**
 
-The syntax for creating a button requires us to pass in a listener of type `DialogInterface.OnClickListener` in the lambda function. A `DialogInterface` defines a dialog-type class that can be shown, canceled or dismissed, and may have buttons that can be clicked. `Kotlin` simplifies this by allowing us to pass in `underscores` as arguments of the lambda parameters.
+The syntax for creating a button requires us to pass in a listener of type `DialogInterface.OnClickListener` in the lambda function. A `DialogInterface` defines a dialog-type class that can be shown, canceled or dismissed, and may have buttons that can be clicked. `Kotlin` simplifies this by allowing us to pass in `underscores` for unused arguments in the lambda function.
 
 The function `toast()` is used to show a short `Toast` message with a text passed as the argument when a button is clicked.
 
@@ -295,7 +295,7 @@ To fix the errors about unresolved references in the "text" attribute, copy and 
 
 In the `MainActivity.kt` file, paste the following code just below `showDefaultDialog()` function.
 
-```java
+```kotlin
 private fun showCustomDialog() {
         val dialogBinding: LayCustomDialogBinding? =
             DataBindingUtil.inflate(
@@ -321,7 +321,7 @@ Here we've linked the layout and created a non-cancellable dialog that can only 
 
 In the `onCreate()` method, add the following code
 
-```java
+```kotlin
 activityMainBinding?.btnShowCustomDialog?.setOnClickListener {
             showCustomDialog()
         }
@@ -340,11 +340,11 @@ We can customize it further by creating round corners. To achieve this, we'll cr
 Remember to set this as the background of the root `ViewGroup` as shown below.
 
 ```xml
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_corners"
-        >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_corners"
+    >
 ```
 Before running the app we need to do the following;
 
@@ -361,7 +361,7 @@ Paste the code below in the `curved_view.xml` file and `showCustomDialog()` func
 </shape>
 ```
 
-```java
+```kotlin
 customDialog.apply {
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             setView(dialogBinding?.root)
