@@ -29,16 +29,16 @@ We have three types of graphs:
 
 #### Dijkstra's Shortest Path algorithm
 
-This algorithm is used to calculate and find the shortest path between nodes using the weights given in a graph. (In a network, the weights are given by link-state packets and contain information such as the health of the routers, traffic costs, etc).
+This algorithm is used to calculate and find the shortest path between nodes using the weights given in a graph. (In a network, the weights are given by link-state packets and contain information such as the health of the routers, traffic costs, etc.).
 
 ##### Summary of the working
 
 It starts with the source node and finds the rest of the distances from the source node.
 Dijkstra's algorithm keeps track of the currently known distance from the source node to the rest of the nodes and dynamically updates these values if a shorter path is found.
 
-A node is then marked as **visited** and added to the path if the distance between it and the source node is the shortest. This continues until all the nodes have been added to the path and finally we get the shortest path from the source node to all other nodes which packets in a network can follow to their destination.
+A node is then marked as **visited** and added to the path if the distance between it and the source node is the shortest. This continues until all the nodes have been added to the path, and finally, we get the shortest path from the source node to all other nodes, which packets in a network can follow to their destination.
 
-- We need **positive** weights because they have to be added to the computations to achieve our goal. Negative weights would make the algorithm not to give the desired results.
+- We need **positive** weights because they have to be added to the computations to achieve our goal. Negative weights would make the algorithm not give the desired results.
 
 #### An example illustrating the working of the algorithm
 
@@ -58,13 +58,13 @@ Initially, we have this list of distances. We mark the initial distances as INF(
 5|INF
 6|INF
 
-We also have a list to keep track of the visited nodes only and since we have started with node 0, we add it to the list(We denote a visited node by adding an asterisk beside it in the table and a red border around it on the graph).
+We also have a list to keep track of the visited nodes only, and since we have started with node 0, we add it to the list(We denote a visited node by adding an asterisk beside it in the table and a red border around it on the graph).
 
 ![Graph 5](/engineering-education/dijkstra-python/second-illustration.png)
 
 **{0}**
 
-We check the distances `0 -> 1` and `0 -> 2` which are 2 and 6 respectively. We first update the distances from node 1 and 2 in the table.
+We check the distances `0 -> 1` and `0 -> 2`, which are 2 and 6, respectively. We first update the distances from nodes 1 and 2 in the table.
 
 ![Graph 6](/engineering-education/dijkstra-python/third-illustration.png)
 
@@ -78,7 +78,7 @@ We check the distances `0 -> 1` and `0 -> 2` which are 2 and 6 respectively. We 
 5|INF
 6|INF
 
-We then choose the shortest one which is `0 -> 1` and mark node 1 as visited and add it to the visited path list.
+We then choose the shortest one, which is `0 -> 1` and mark node 1 as visited and add it to the visited path list.
 
 ![Graph 7](/engineering-education/dijkstra-python/fourth-illustration.png)
 
@@ -97,7 +97,7 @@ We then choose the shortest one which is `0 -> 1` and mark node 1 as visited and
 Next, we check the nodes adjacent to the nodes added to the path(Nodes 2 and 3).
 We then update our distance table with the distance from the source node to the new adjacent node, node 3 (2 + 5 = 7).
 
-To choose what to add to the path, we select the node with the shortest currently known distance to the source node which is `0 -> 2` with distance 6.
+To choose what to add to the path, we select the node with the shortest currently known distance to the source node, which is `0 -> 2` with distance 6.
 
 ![Graph 8](/engineering-education/dijkstra-python/fifth-illustration.png)
 
@@ -145,7 +145,7 @@ We then check the next adjacent nodes(node 4 and 5) in which we have `0 -> 1 -> 
 
 **{0,1,2,3,4}**
 
-In the same way, we check the adjacent nodes(node 5 and 6).
+In the same way, we check the adjacent nodes(nodes 5 and 6).
 
 Node 5:
 - Option 1: `0 -> 1 -> 3 -> 5`(7 + 15 = 22)
@@ -261,7 +261,7 @@ We have  a constructor for giving initial `_init_` values and three user-defined
 - `minDistance()`
 - `dijkstra()`
 
-The constructor takes the parameter `nodes` which is the number of nodes to analyze initializes respective values.
+The constructor takes the parameter `nodes`, which is the number of nodes to analyze.
 
 ```python
 def __init__(self, nodes):
@@ -283,7 +283,7 @@ self.graph = [[0 for column in range(nodes)]
 In the next loop, it first picks the node with the minimum distance from the set of nodes not yet processed.`u` is always equal to `srcNode` in the first iteration.
 It then adds the node with the minimum distance in the visited nodes set by setting the value to `True`.
 
-In the last loop which is in the second loop, the code updates the distance of the node from node 0, `dist[v]` only if is not in visited list array, `vistSet[]`, and if there is an edge from `u` to `v`, and the total distance of path from `srcNode` to  `v` through `u` is less than the current value of `dist[v]`.
+In the last loop, which is in the second loop, the code updates the distance of the node from node 0, `dist[v]` only if it is not in visited list array, `vistSet[],` and if there is an edge from `u` to `v,` and the total distance of path from `srcNode` to  `v` through `u` is less than the current value of `dist[v].`
 
 It then calls the `printSolution()` to display the table after passing the distance array to the function.
 
@@ -324,7 +324,7 @@ def minDistance(self, distArray, vistSet):
     return min_index
 ```
 
-`printSolution()` is used to display the final results which are the nodes and their respective tables stored in an array `distArray` which it takes as a parameter.
+`printSolution()` is used to display the final results, which are the nodes and their respective tables stored in an array `distArray`, which it takes as a parameter.
 
 ```python
 def printSolution(self, distArray):
@@ -409,9 +409,12 @@ Node    Distance from 0
 6        19
 ```
 
-That's all for now. We have an idea on how Dijkstra's Algorithm works.
-Hope ypu can work with different graphs and language of your own.
+That's all for now. We have an idea of how Dijkstra's Algorithm works.
+I hope you can work with different graphs and language of your own.
 
 Have a good one.
 
 The images used were sourced from [Free Code Camp](https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/).
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
