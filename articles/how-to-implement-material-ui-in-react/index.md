@@ -1,7 +1,7 @@
 ReactJS is one of the leading frameworks for creating web applications. It enables developers to create SEO-friendly and highly-interactive components. ReactJS features also boost maintenance and overall productivity. The integration of the Material Ui library in ReactJS projects takes things to a new level.
 
 ### Introduction to Material-UI
-Material-UI is simply a library that allows us to import and use different components for creating user interface in our React applications. This saves a significant amount of time since the developers do not need to write everything from scratch. Material-UI widgets are heavily inspired by Google’s principles on building user interfaces.  It is, therefore, easy for developers to build visually-appealing applications. You can learn more about Google’s material design principles from [here](https://material.io/design/introduction#principles).
+Material-UI is simply a library that allows us to import and use different components for creating a user interface in our React applications. This saves a significant amount of time since the developers do not need to write everything from scratch. Material-UI widgets are heavily inspired by Google’s principles on building user interfaces.  It is, therefore, easy for developers to build visually-appealing applications. You can learn more about Google’s material design principles from [here](https://material.io/design/introduction#principles).
 
 ### Goal
 To incorporate the Material-UI library and use its components in a ReactJS application.
