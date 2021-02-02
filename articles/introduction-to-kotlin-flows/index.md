@@ -1,5 +1,5 @@
 ### Introduction
-Suspending functions and/or coroutines launched with the `async` builder return single values. These values can be strings, integers, boolean, or even lists. But, what if we want to return multiple asynchronously computed values? Take the case of loading a large list from a database. Using the default coroutine builders will return the whole list at once. However, this will take long thus making a program feel slow. The best approach to this case would be to return single values after computation rather than the whole list. Well, how can we do this? That is where flows come in.
+Suspending functions and/or coroutines launched with the `async` builder return single values. These values can be strings, integers, boolean, or even lists. But, what if we want to return multiple asynchronously computed values? Take the case of loading a large list from a database. Using the default coroutine builders will return the whole list at once. However, this will take long thus making a program slow. The best approach to this case would be to return single values after computation rather than the whole list. Well, how can we do this? That's where flows come in.
 
 ### Prerequisites
 To follow through with this tutorial, you will need to:
@@ -13,9 +13,9 @@ A flow is a stream of multiple, asynchronously computed values. Flows emit value
 Let's see how we can create and use flows in a kotlin program.
 
 ### Step 1 — Creating a Kotlin project
-In this step, we are going to create a console kotlin project that is managed by Gradle.
+In this step, we are going to create a Kotlin console project managed by Gradle.
 
-Open IntelliJ and select `new project`. On the next window, select kotlin, console application. Choose the project JDK, download one if none is installed. 
+Open IntelliJ and select `New Project`. On the next window, select kotlin, console application. Choose the project JDK, download one if none is installed. 
 
 ![New project](/engineering-education/introduction-to-kotlin-flows/new-project.png)
 
@@ -47,7 +47,9 @@ We have marked the main function as suspending since it is later going to call o
 Our flow emits the integer values 1 to 10. We have used `delay` to simulate a long-running task. However, that's not enough. Running the main function now won't give you any output. We first have to create a consumer to receive the values.
 
 ### Step 3 — Creating a consumer
-A flow is a cold stream. Ooh, right, we mentioned that a flow is a stream, but we didn't say it was cold. What is a cold stream🤔? We have two types of streams, a cold and a hot stream. A cold stream does not start producing values until one starts to collect them. A hot stream on the other hand starts producing values immediately.
+A flow is a cold stream. Ooh, right, we mentioned that a flow is a stream, but we didn't say it was cold. What is a cold stream? 🤔
+
+We have two types of streams, a cold and a hot stream. A cold stream does not start producing values until one starts to collect them. A hot stream on the other hand starts producing values immediately.
 
 A flow is an example of a cold stream. Therefore, in order to get the values, we need to collect them. The flow builder gives us a special function `collect` to collect the values emitted by it. 
 
@@ -86,7 +88,7 @@ val job = GlobalScope.launch {
 }
 ```
 
-Run the main function. Notice that all values are displayed but with a delay of three seconds rather than two. This is because the producer and consumer run on the same coroutine by default. Thus, the delays sum up. To solve this, i.e. run the consumer on a separate coroutine, we use the `buffer` function.
+Run the main function. Notice that all values are displayed but with a delay of three seconds rather than two. This is because the producer and consumer run on the same coroutine by default. Thus, the delays sum up. To solve this, we use the `buffer` function ,i.e, we run the consumer on a separate coroutine,
 
 Replace the collect function with the following code.
 ```Kotlin
