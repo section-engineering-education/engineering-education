@@ -125,20 +125,25 @@ The example above executes faster compared to when not using the concept of Memo
 const memoizedValue = [];
 
 const clumsysquare = (num) => {
-    if ((memoizedValue[num] = !null)) {
-        return memoizedValue[num];
-    }
+  if ((memoizedValue[num] == !undefined)) {
+    return memoizedValue[num];
+  }
 
-    let result = 0;
-    for (let i = 1; i <= num; i++) {
-        for (let j = 1; j <= num; j++) {
-            result++;
-        }
+  let result = 0;
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num; j++) {
+      result++;
     }
+  }
 
-    memoizedValue[num] = result;
-    return result;
+  memoizedValue[num] = result;
+  return result;
 };
+console.log(clumsysquare(190));
+console.log(clumsysquare(799));
+console.log(clumsysquare(4000));
+console.log(clumsysquare(7467));
+console.log(clumsysquare(9666));
 ```
 
 ### Test Memoization by Performance
