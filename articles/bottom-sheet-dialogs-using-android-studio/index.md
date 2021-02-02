@@ -1,3 +1,4 @@
+### Introduction
 The bottom sheet dialogs seem to be replacing the regular android dialogs and menus. The bottom sheet is a component that slides up from the bottom of the screen to showcase additional content into your application UI cycle. A bottom sheet dialog is like a message box triggered by the user's actions. Many big corporations have implemented the bottom sheet dialog concept. They include Google Maps, Instagram, and Google Drive. It is just countless list all applications that have this fantastic feature.
 
 Instance such as that uses the bottom sheet dialog include
@@ -8,11 +9,9 @@ Instance such as that uses the bottom sheet dialog include
 In terms of application, any android view such as TextView, ImageView, RecyclerViews, Buttons, and Text inputs can be implemented into a bottom sheet. This makes it dynamic to load more diverse information, i.e., load data from the database and display them using the bottom sheet or collect information and save them to a database. In short, a bottom sheet can be applied in many instances as long as it fits your application cycle.
 
 ### Types of the bottom sheet dialogs
-
 They are two main types of bottom sheet dialog, namely;
 
 #### Modal bottom sheet dialog
-
 It has characteristics of a standard screen dialog, such as an alert dialog. When triggered (by the user’s action), it slides up from the bottom of the current screen. A modal sheet contains a list of items. Items can correspond to some actions when clicked. It blocks interaction with the rest of the screen to indicate a shift of focus to the bottom sheet.
 
 A Modal dialog shadows content and UI elements behind it and switches screen interactions onto the dialog. A click outside or back press dismisses it, and it disappears.
@@ -30,7 +29,6 @@ Or this payment bottom sheet dialog examples.
 They are a great alternative to inline menus and simple dialogs as it provides additional room for more content, iconography, and more screen actions. It is not part of the main application layout. It perfectly works when the menu content presents a link to other apps.
 
 #### Persistent bottom sheet dialog
-
 Persistent BottomSheet dialog provides supplementary content about the current screen. A persistent dialog works as a child of `CoordinatorLayout` to display pages’ additional content.
 
 A portion of the container is visible to provide users with more content and more options about the current screen when slid from bottom to top. Unlike the modal dialog, a persistent dialog widget is permanent for the current screen content.
@@ -58,7 +56,6 @@ Since we have two types of bottom sheet dialog, we will discuss how to implement
 1. Using BottomsheetDialog
 
 #### Preparing layouts
-
 Design the dialog elements. To show the dialog, you need to lay out an XML file that arranges the dialog's content. You can choose to use any view that fits your dialog content. Any view, including RecyclerView, Images, Text, Inputs, and Button, can be included in a bottom sheet dialog. The dialog creates more room to showcase more diverse content around your application cycle. Any XML design implemented in the standard activity layout can also be implemented with a bottom sheet dialog.
 
 Here is the `bottom_sheet_dialog_layout.xml` layout that I will be using to implement a modal bottom sheet.
@@ -206,7 +203,6 @@ Go ahead and add a button in your `main_activity.xml` file.
 ```
 
 #### Initializing the bottom sheet in the activity
-
 Initialize the button and set the onClick Listener inside the `onCreate` function. When the button is clicked, we will show the dialog. Create a function `showBottomSheetDialog()` and call it is inside the button `onClick` Listener.
 
 ```java
@@ -309,7 +305,6 @@ bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 ![Modal dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-dialog.gif)
 
 2. BottomSheetDialogFragment
-
 A fragment can be displayed as a bottom sheet dialog. Go ahead and create a new fragment, call it `BottomSheetFragment`. You can opt to start a new project.
 Creating a fragment will generate an XML file associated with it. Go ahead and include your layout design in it. Use the same layout as specified in `bottom_sheet_dialog_layout.xml`. Inflate the layout for this fragment.
 
@@ -365,7 +360,6 @@ Check the code used to implement both modal dialogs on [GitHub](https://github.c
 ### Implementing a persistent bottom sheet dialog
 
 #### Laying out the bottom sheet design
-
 I will use an example of a simple login screen. Instead of showing it within the regular activity layout, I will use a persistent dialog to slide it into the main screen.
 
 I have created a `bottom_sheet_dialog_layout.xml` and included the following simple login layout.
@@ -552,7 +546,6 @@ Here is the code to do that
 ![Bottom sheet peek height](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet-peek-height.jpg)
 
 #### Expanding and collapsing the sheet dialog
-
 To control the sliding and collapsing of the dialog, we use states. There are different states of the bottom sheet that you need to understand. They include.
 
 - `STATE_EXPANDED` - the dialog is visible to its maximum defined height.
@@ -621,7 +614,6 @@ sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback
 Check the code used to implement the persistent dialog on [GitHub](https://github.com/kimkimani/PersistentBottomSheetDialog).
 
 ### Conclusion
-
 The bottom sheet dialog is a unique way to display menus and dialogs. It provides more room to include more content. Bottom sheet dialogs are diverse. You can choose to implement any view or layout into them. This way, it becomes easier to incorporate extra information distinctly into your application life cycle.
 
 Check out [Material documentation](https://material.io/components/sheets-bottom#behavior) and learn more about the bottom sheet dialog. There are diverse dialog examples that will help you understand the do and don't when implementing the dialog into your application, such as theming and other more specs.
