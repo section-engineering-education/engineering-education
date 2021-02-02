@@ -27,7 +27,7 @@ The below are primary elements of a system;
 - Alternatives for obtaining system elements
 - Managing the design
 
-### [Artificial Intelligence (AI)](https://www.section.io/engineering-education/artificial-intelligence-future/)
+### [Artificial Intelligence (AI)](/engineering-education/artificial-intelligence-future/)
 
 It is human intelligence in machines that are programmed to think like a machine like a human and their actions. A computer uses machine learning to determine how they respond to these situations.
 
