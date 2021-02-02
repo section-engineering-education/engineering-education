@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/hero.jpg
     alt: User Acceptance Testing (UAT) Image
 ---
-User acceptance testing (UAT) is the final stage in the software development process before moving to production. The provided software solution or product is validated against business requirements. This article will discuss UAT in detail.
+User acceptance testing (UAT) is the final stage in the software development process before moving to production. We validate the provided software solution or product against business requirements. This article will discuss User Acceptance Testing in detail.
 <!--more-->
 ### What is user acceptance testing (UAT)?
 UAT is when we conduct a test to see whether a software product meets the business requirements. It is the final stage of software development before moving on to production. The end-user does it to verify a software system before moving the software product to a live environment. It confirms whether the solution works well for the user or not.
