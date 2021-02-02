@@ -1,6 +1,6 @@
 [Kubernetes](https://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) are container orchestration tools that aid the automation and management of microservices in clusters. They have the sole role of deploying the applications to scale; they assist in the planning and coordinating all the components in the system.
 
-In this article, we&#39;ll explore the fundamentals of Docker and Kubernetes and take a look at the similarities and differences between the two tools.
+In this article, we'll explore the fundamentals of Docker and Kubernetes and take a look at the similarities and differences between the two tools.
 
 ### What is Kubernetes?
 
@@ -41,7 +41,7 @@ Taking a comparison between the two, this version of the architectural tool is r
 
 ##### Kubernetes
 
-At first sight, Kubernetes offers users an easily accessible dashboard that has everything you need. The dashboard features items that allow you to deploy the containerized apps in a specific cluster, manage the resources, view the error logs, and information on the cluster resources.
+At first sight, Kubernetes offers users an easily accessible dashboard that has everything they need. The dashboard features items that allow you to deploy the containerized apps in a specific cluster, manage the resources, view the error logs, and information on the cluster resources.
 
 For an introduction to Kubernetes, read this article [here](https://www.section.io/engineering-education/what-is-kubernetes/)
 
@@ -67,7 +67,7 @@ Kubernetes utilizes a one-in-all formula setup, which comprises a complex and so
 
 ##### Docker Swarm
 
-Swarm can deploy containers at a much faster rate when compared to Kubernetes. This then results in quicker reaction times that are up to scale and match the demand for the system&#39;s job requests.
+Swarm can deploy containers at a much faster rate when compared to Kubernetes. This then results in quicker reaction times that are up to scale and match the system's demand for job requests.
 
 #### Availability
 
@@ -87,8 +87,8 @@ In Kubernetes, the load balancing is done when the pods are exposed within the s
 
 ##### Docker Swarm
 
-The nodes in this platform involve a domain name system element that is used for distributing requests towards a service. These services either operate automated or as per the port specified by the user.
+The nodes in this platform involve a domain name system element used to distribute requests towards a service. These services either operate automated or as per the port specified by the user.
 
 ### Conclusion
 
-The two platforms have their strengths and weaknesses but still get the job done. They each offer clients excellent service, although one may be well suited for one situation to another. Both Kubernetes and Docker Swarm have commendable features that make them efficient, productive, and usable. Any user will relish having either of the two as part of the package in managing operations like deployment, cloud, and storage in the cluster. All in all, when it comes to selecting one, it is all up to you.
+The two platforms have their strengths and weaknesses but still, get the job done. They each offer clients excellent service, although one may be well suited for one situation to another. Both Kubernetes and Docker Swarm have commendable features that make them efficient, productive, and usable. Any user will relish having either of the two as part of the package in managing operations like deployment, cloud, and storage in the cluster. All in all, when it comes to selecting one, it is all up to you.
