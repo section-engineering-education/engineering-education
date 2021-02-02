@@ -1,4 +1,19 @@
-### What is TypeScript?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/a-friendly-beginner-guide-to-typescript/
+title: A Friendly Beginner's Guide to TypeScript
+description: This article gives the reader a friendly beginners guide to TypeScript; which is a language that extends JavaScript by adding types.
+author: idris-olubisi
+date: 2021-02-02T00:00:00-07:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/a-friendly-beginner-guide-to-typescript/hero.jpg
+    alt: Guide to TypeScript image example
+---
 TypeScript is a programming language that extending JavaScript by adding types. It saves time catching errors and providing fixes before you run code. So, by understanding JavaScript everything comes in handy.
 
 TypeScript is one of the most used tools for adding static types. Code written in TypeScript can be transformed easily into JavaScript using TypeScript compiler or babel. The compiled JavaScript code is always clean with no bugs and of course, they run in the browsers or NodeJs application.
@@ -78,7 +93,7 @@ let c: Fruits = Fruits.Banana;
 ```
 
 #### Array
-TypeScript also supports arrays. An array is a data structure consisting of a set of elements, each defined by an index or key of at least one array and its is stored in such a way that a mathematical formula can compute the position of each element from its index tuple.
+TypeScript also supports arrays. An array is a data structure consisting of a set of elements. Each element is defined by an index or key and is stored in such a way that a mathematical formula can compute its position from its index tuple.
 ##### Tips about an Array
 - Once an array is initialized it can't be resized because it's static. This can be useful in many scenarios.
 - Sequential memory blocks are allocated when an array is declared.
@@ -328,3 +343,6 @@ Modules in TypeScript can contain declarations, code, and dependency on a module
 I hope you find this useful.
 
 Thank you for reading.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
