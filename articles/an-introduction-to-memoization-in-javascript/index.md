@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-memorization-in-javascript/
+title: Introduction to Memorization in JavaScript
+description: This article will explain how to implement the memorization technique to pure functions that have expensive computations to imporove the performance of a JavaScript program.
+author: joseph-chege
+date: 2020-12-14T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-memorization-in-javascript/hero.png
+    alt: Introduction to Memorization in JavaScript Hero Image
+---
 Functions are a vital building block for any programming language. As a developer, you will often use functions in your project. One important aspect of a function is that they are reusable. You can call them from anywhere within your program. A function can return other functions or take a function as its argument. When you have an extensive program, chances are a function will be reused more than one time.
+<!--more-->
 
 This way, a program computation may depend on executing the results of another function. This means that every time the program is executed, it will run and call these functions repeatedly, return the results, and pass them to the respective computations.
 
@@ -16,9 +33,19 @@ In this case, we can say that Memoization is a technique of caching results of e
 
 - It is an optimization technique which increases performance by caching results of function calls. It stores the previous results and then, it retrieves the results whenever needed in your program. This reduces execution time and increases CPU performance.
 
-- A memoized function is a pure function. This means the function execution does not mutate. When called, it always returns the original values, regardless of how many times the function will be called.
+- A memoized function should be a pure function. This means the function execution does not mutate. When called with a certain input, it should always returns the same value regardless of how many times the function will be called.
 
 - Assuming you have a function that executes not one, not two-times but several times, why not memorize the result of that function. This way, you only execute this function once. This makes your program more performance efficient.
+
+### When to use Memoization
+
+- When a function is pure. A pure function always returns the same value when called. If a function is impure, it returns different values whenever executed. Caching such values may result in unexpected return values.
+
+- Heavy computing functions. Whenever a program has expensive computation, caching the results will significantly increase your program performance. With Memoization, the function doesn’t have to recalculate its values, yet it returns the same results whenever called.
+
+- Remote API calls. When making an API call repeatedly, using Memoization will save you from making repetitive calls to the server. You already know the result when you made the first call, and thus no need to make the same call to get the same results.
+
+- A function that recalls itself with recurring input values, i.e., recursive functions.
 
 ### How Memoization works
 
@@ -356,16 +383,6 @@ console.log(fibonacci(50));
 With a memoized function, this takes about 8.079ms to return the 50th term, which is relatively faster than the example above.
 
 Every function call will be a cache. For example, in this case, `Fibonacci(5)` will only compute `Fibonacci(4) + Fibonacci(3)` since other terms have already been called and cached. Any future calls do not have to repeat any previous computations.
-
-### When to use Memoization
-
-- When a function is pure. A pure function always returns the same value when called. If a function is impure, it returns different values whenever executed. Caching such values may result in unexpected return values.
-
-- Heavy computing functions. Whenever a program has expensive computation, caching the results will significantly increase your program performance. With Memoization, the function doesn’t have to recalculate its values, yet it returns the same results whenever called.
-
-- Remote API calls. When making an API call repeatedly, using Memoization will save you from making repetitive calls to the server. You already know the result when you made the first call, and thus no need to make the same call to get the same results.
-
-- A function that recalls itself with recurring input values, i.e., recursive functions.
 
 ### Conclusion
 
