@@ -25,24 +25,24 @@ The concept of functions in SQL is similar to other programming languages like P
 2. **Table-Valued functions:** These functions return tables.
 
 ### Table of contents
-- Prerequisites
+- Prerequisites.
 
-- Creating functions
+- Creating functions.
 
-- Using functions in Statements
+- Using functions in Statements.
 
-- Update/Delete functions
+- Update/Delete functions.
 
-- Using Variables, Conditional Statements inside functions
+- Using Variables, Conditional Statements inside functions.
 
-- Conclusion
+- Conclusion.
 
 ### Prerequisites  
-- A basic understanding of SQL
+- A basic understanding of SQL.
 
-- A SQL Server with a database
+- A SQL Server with a database.
 
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) to connect to your database
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) to connect to your database.
 
 ### Creating functions
 #### Scalar functions
