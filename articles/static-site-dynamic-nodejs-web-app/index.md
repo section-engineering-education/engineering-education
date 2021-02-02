@@ -69,7 +69,7 @@ When creating static sites, there's often code that you repeat on every page suc
 
 We'll take a typical part of a website to be templated, the header as an example. Create a new file called header.ejs in the partials folder. Copy and paste all the code between the `<header></header>` tags on one of your EJS pages into it.
 
-Finally, on all pages with a header delete the code between the `<header></header>` tags (the same code you copied to the header.ejs partial file) and replace it with `<% include('../partials/header') %>`. Now, you've created your first EJS partial. Repeat the process for any other repetitive pieces of code such as the head and footer sections.
+Finally, on all pages with a header delete the code between the `<header></header>` tags (the same code you copied to the header.ejs partial file) and replace it with `<%- include('../partials/header') %>`. Now, you've created your first EJS partial. Repeat the process for any other repetitive pieces of code such as the head and footer sections.
 
 *Small Tip:* If you find it hard to differentiate between your pages and partials since they have the same .ejs file extension then it can be helpful to put an underscore _ in front of the names of partials so _ header.ejs. This is a naming convention that some developers use that can be helpful.
 

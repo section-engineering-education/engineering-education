@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/react-native-agora-livestreaming-app/
 title: React Native Livestream Application using Agora
-description: This tutorial will give readers a detailed guide on how they can build an app to create or join a livestream using Agora.
+description: This tutorial will give readers a detailed guide on how they can build a React Native app to create or join a livestream using Agora.
 author: mohan-raj
 date: 2020-11-24T00:00:00-13:00
 topics: []
@@ -27,7 +27,7 @@ By the end of this tutorial, you’ll know:
 - How to add event listeners on the livestream to listen to state changes.
 
 ### Prerequisites
-The fundamentals of React and React Native will not be covered in this tutorial. If you don't know the fundamentals, please refer to [some tutorials](https://reactnative.dev/docs/tutorial) before beginning with this project.
+The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial) that you can go through before beginning with this project.
 
 ### Agora
 Founded in 2014, Agora.io is a service provider for real-time voice and video. Its core technology is real-time communication (RTC).
@@ -41,7 +41,7 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-Agora supports up to 1 million users in a live broadcast channel. They also recommend to limit the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+Agora supports up to 1 million users in a live broadcast channel. They also recommend limiting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
@@ -85,7 +85,9 @@ Now, click on the closed eye icon near the App ID to reveal it and copy that App
 
 You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment.
 
-Make sure you're follwing the React Native CLI Quickstart, not the Expo CLI Quickstart.
+Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+
+![Env Setup](/engineering-education/react-native-agora-livestreaming-app/env_setup.png)
 
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
@@ -250,7 +252,7 @@ import React, { useEffect, useRef } from "react";
 
 `RtcEngine.create('Your App ID Here')` takes one argument, that is the App ID that we copied from the Agora Project Management Console. 
 
-It's an async function, and we when we call it, it'll return a RTC engine instance. We'll assign the engine instance to a `ref` created using with `useRef`.
+It's an async function, and when we call it, it'll return an RTC engine instance. We'll assign the engine instance to a `ref` created using `useRef`.
 
 You can't pass an async function to an useEffect. So, let's create an async function called `init` and then call it in the function body of `useEffect`.
 
@@ -379,7 +381,7 @@ Since `init` is an async function, we can add a `.then()` to it and join the cha
 
 To join the channel, the Agora engine instance has a `joinChannel` function on it. It takes 4 arguments, *Authentication Token, Channel ID, Optional Info, and Optional UID*. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](https://docs.agora.io/en/Agora%20Platform/token?platform=Android).
+Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](/engineering-education/agora-express-token-server/).
 
 For the Channel ID, we'll pass what we get from the route props.
 
@@ -387,7 +389,7 @@ For the Optional UID, we'll pass `1` if the user is a Broadcaster or `0` if the 
 
 This is because we'll use the UID of the Broadcaster to listen to state changes and establish the remote feed on the audience's side.
 
-If the Optional UID is set to `0`, the SDK assigns an UID and returns it in the `JoinChannelSuccess` callback.
+If the Optional UID is set to `0`, the SDK assigns a UID and returns it in the `JoinChannelSuccess` callback.
 
 ```JavaScript
 useEffect(() => {
@@ -416,7 +418,7 @@ const init = async () => {
 
 Now, when we navigate to the Live screen page, we will see the `console.log` message from the `JoinChannelSuccess` callback.
 
-This means, we have joined the livestream. But we can't see the livestream feed yet. The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
+This means we have joined the livestream. But we can't see the livestream feed yet. The next step is to display the Remote Feed of the Host to the Audience and the Local Feed to the Broadcaster.
 
 #### Displaying the feed
 Let's import `RtcLocalView` and `RtcRemoteView` form `react-native-agora`.
@@ -452,7 +454,7 @@ import { ActivityIndicator } from "react-native";
 
 If the user has not joined, we'll return the Loading Screen.
 
-```JavaScript
+```JSX
 return (
   <View style={styles.container}>
     {!joined ? (
@@ -495,7 +497,7 @@ Here, we will pass our host's UID, which is `1`.
 
 Return Statement when joined === true:
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -564,9 +566,9 @@ export default function Live(props) {
 }
 ```
 
-Let's add a button in the Live screen page.
+Let's add a button to the Live screen page.
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -613,7 +615,7 @@ buttonText: {
 #### Switch camera
 Let's add another button in the Live screen to switch the camera when the user presses it.
 
-The Agora engine has a method called `switchCamera` on it to toggle between front camera and back camera.
+The Agora engine has a method called `switchCamera` on it to toggle between the front camera and back camera.
 
 Function to Switch camera:
 
@@ -623,7 +625,7 @@ const onSwitchCamera = () => AgoraEngine.current.switchCamera();
 
 Switch Camera button:
 
-```JavaScript
+```JSX
 <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button} onPress={onShare}>
     <Text style={styles.buttonText}>Share</Text>
@@ -682,7 +684,7 @@ const videoStateMessage = (state) => {
 
 We can display the remote feed or the state message based on the broadcaster's video state.
 
-```JavaScript
+```JSX
 broadcasterVideoState === VideoRemoteState.Decoding ? (
   <RtcRemoteView.SurfaceView 
    uid={1} 
@@ -739,6 +741,8 @@ broadcasterVideoStateMessageText: {
 11. We added a Remote Video State Listener to listen to the broadcaster's video state.
 
 Congratulations, :partying_face: You did it.
+
+If you'd like to learn how to build a Video Conference app with React Native and Agora, refer to [this article](https://www.section.io/engineering-education/react-native-agora-video-conference-app/).
 
 Thanks for reading!
 
