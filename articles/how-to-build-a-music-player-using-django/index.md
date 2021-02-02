@@ -10,7 +10,7 @@ So we will be creating bot song objects, retrieving songs, bookmarking songs, an
 
 ### What is Django ORM and MVT architecture?
 
-## Django ORM
+### Django ORM
 
 **Introduction**
 
@@ -18,7 +18,7 @@ Object-Relational Mapping (ORM) is a method that helps you to question and contr
 
 An ORM library is an everyday library written to your language of desire that encapsulates the code required to control the data so that you do not use raw SQL queries anymore; you engage at once with an object within the same language you are utilizing..
 
-## MVT Architecture
+### MVT Architecture
 
 **Introduction**
 
@@ -43,7 +43,7 @@ Here is an easy diagram that indicates the MVT structure in Django:
 ![mvt structure](/engineering-education/how-to-build-a-music-player-using-django/mvt.png)
 
 
-## Getting Started with Django
+### Getting Started with Django
 If you are new to Django and want to get started with it, you can view the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
 
 ### Prerequisites
@@ -600,10 +600,10 @@ You can view it on your localhost at this link [http://127.0.0.1:8000/](http://1
 
 You can also go to the [GitHub repo](https://github.com/Chukslord1/DjangoMusicPlayer) to view the project.
 
-## Resources
+### Resources
 * https://www.javatpoint.com/django-mvt
 
-## Conclusion
+### Conclusion
 
 By using Django, we were able to build a music player web app using Django, HTML, Jinja, CSS, and Javascript. We also saw how easy it was to create a web app using Django and manipulate the database with Django's ORM.
 If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
