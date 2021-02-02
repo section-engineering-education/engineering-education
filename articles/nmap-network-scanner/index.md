@@ -1,31 +1,47 @@
-### Introduction to Nmap  
-Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we discuss the concepts and usage of Nmap along with its most commonly used commands to perform port scans.  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nmap-network-scanner/
+title: Introduction to Nmap  
+description: 
+author: miller-juma
+date: 2021-02-02T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### What Is A Network Mapper?
+  - url: /engineering-education/nmap-network-scanner/hero.jpg
+    alt: Introduction to Javascript Modules
+---
+Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we will discuss the concepts and usage of Nmap along with its most commonly used commands to perform port scans.  
+<!--more-->
 
-This is a command-line tool based on a Linux environment used to discover and audit networks, scan and check vulnerabilities on Internet Protocol (IP) addresses and ports for a given network.  
+### What is a Network Mapper?
+This is a command-line tool based on a Linux environment used to discover and audit networks, scan, and check vulnerabilities on Internet Protocol (IP) addresses and ports for a given network.  
 
-For instance, you're a network administrator, an IT manager, or just a security professional in your organization. One of the critical challenges you will face is a battle to get to know what is running on your network and the kind of security issues/challenges they pose.  
+For instance, if you're a network administrator, an IT manager, or just a security professional in your organization. One of the critical challenges you will face is a battle of getting to know what is running on your network and the kind of security issues/challenges they pose.  
 
 There are several tools (Nmap included) available for Network Administrators to use to monitor their network and get real-time activities on their network from these challenges. 
 
 With this Nmap tool,   
 
 - Network administrator(s) can identify all devices that are running/accessing their systems.
-- An administrator can identify all the hosts, a computer connected to their network, including the services they offer.  
+- An administrator can identify all the hosts, computers connected to their network, including the services that they offer.  
 - An administrator can scan all the open ports (communication endpoint), giving security a priority, that is, security threat detections.
-- An administrator can scan/ monitor a single host (a computer connected to the organization network) or thousands of devices connected.
+- An administrator can scan/monitor a single host (a computer connected to the organization network) or thousands of devices connected.
 
-As discussed in the beginning, Nmap is by far the most commonly used network scanning tool. It's a port scanning tool, meaning it gathers information from these ports. This information is commonly known as network packets (consists of control information and user data, i.e., payload), then sent to system ports.  
+As discussed in the beginning, Nmap is by far the most commonly used network scanning tool. It's a port scanning tool, meaning it gathers information from these ports. This information is commonly known as network packets (consists of control information and user data, i.e., payload), then it's sent to system ports.  
 
 Nmap is a port listener. It can listen for responses in the process. It can determine whether a port is open or closed or filtered in one way or another by the firewall (a system designed to deny unauthorized users access to or from a private network).  
 
 It's a flexible and versatile tool, meaning it can adapt/change to different activities and functions.  
 
-_Note: Port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing._
+*Note: Port scanning could also be referred to as enumeration or port discovery. We will use these terms interchangeably, while they mean the same thing.*
 
-#### Example 1.1 simple port scan ```scanme.nmap.org```
-```console
+#### Example 1.1 Simple port scan 'scanme.nmap.org'
+
+```bash
 
 jumamiller@janabi$ nmap scanme.nmap.org
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-01-12 08:36 EAT
@@ -54,17 +70,16 @@ PORT      STATE    SERVICE
 
 ```
 
-### Getting Started
-Nmap was initially developed to run only on Unix based systems. Windows version was released in 2000, but with a few limitations including:-
-* Microsoft dropped the support for raw```TCP/IP socket```, it has proven hard to scan various VPN clients since Nmap supports ```ethernet``` interfaces only.
-* Windows Networking APIs are known to have several deficiencies hence not efficient enough.  
-* Scanning your machine from itself has proven hard to execute, hence impossible.
+### Getting started
+Nmap was initially developed to run only on Unix based systems. The Windows version was released in 2000, but with a few limitations including:
+- Microsoft dropped the support for raw `TCP/IP socket`, it has proven hard to scan various VPN clients since Nmap supports `ethernet` interfaces only.
+- Windows Networking APIs are known to have several deficiencies therefore they are not efficient enough.  
+- Scanning your machine from itself has proven hard to execute, hence impossible.
 
-### Nmap Installation
-
+### Nmap installation
 In this tutorial, we will be using a Linux based system, 
 
-```console
+```bash
 
 jumamiller@janabi$ lsb_release -a
 No LSB modules are available.
@@ -74,24 +89,24 @@ Release:    20.04
 Codename:   focal
 
 ```
-But you're free to follow along with [MacOs](https://nmap.org/download.html) and [Windows](https://geekflare.com/nmap-on-windows/).
+
+You're free to follow along with [MacOs](https://nmap.org/download.html) and [Windows](https://geekflare.com/nmap-on-windows/).
 
 To install Nmap in Ubuntu:  
  
- #### Requirements:
- 
- * Sudo privileges- you should have the installation rights on the system.
- * An access to ubuntu terminal (Ctrl + T).  
- * An advanced package tool (apt) package manager or snap store.
+ #### Requirements
+- Sudo privileges - you should have the installation rights on the system.
+- Access to an Ubuntu terminal (Ctrl + T).  
+- An advanced package tool (apt) package manager or snap store.
   
- #### Step 1: Updating Package List
- 
+ #### Step 1: Updating package list
  Before installing Nmap in your system, ensure that your software packages are up-to-date by running the following command:
 
-  ```console
+```bash
   sudo apt-get update
-   ```
-```console
+```
+
+```bash
 jumamiller@OpijaKaeli:~$ sudo apt-get update
 
 [sudo] password for jumamiller: 
@@ -107,14 +122,15 @@ jumamiller@OpijaKaeli:~$
 
 ```
 
- #### Step 2: Install Network Mapper (Nmap)
- 
- Now that our system is up-to-date run the following command to install Nmap:-
- ```console
+#### Step 2: Install Network Mapper (Nmap)
+Now that our system is up-to-date run the following command to install Nmap:
+
+```bash
  sudo apt-get install nmap
  ``` 
- The expected output:-
-```console
+ The expected output:
+
+```bash
 jumamiller@OpijaKaeli:~$ sudo apt-get install nmap
 Reading package lists... Done
 Building dependency tree       
@@ -131,8 +147,11 @@ After this operation, 26.3 MB of additional disk space will be used.
 Do you want to continue? [Y/n]
 ```
 
-Press ```y``` to proceed. That should present the following screen:-   
-```console
+Press `y` to proceed. 
+
+That should present the following screen:
+
+```bash
 Do you want to continue? [Y/n] y
 Get:1 http://ke.archive.ubuntu.com/ubuntu focal/main amd64 libblas3 amd64 3.9.0-1build1 [142 kB]
 Get:2 http://ke.archive.ubuntu.com/ubuntu focal/universe amd64 liblinear4 amd64 2.3.0+dfsg-3build1 [41.7 kB]
@@ -167,20 +186,23 @@ Processing triggers for libc-bin (2.31-0ubuntu9) ...
 jumamiller@OpijaKaeli:~$ 
 
 ```
-Alternatively, install Nmap using snaps by running the following command:-
 
-```console
+Alternatively, install Nmap using snaps by running the following command:
+
+```bash
 $ sudo snap install nmap
 ```
 
-#### Step 3:  Verify Installed Version:-
-To confirm the version of the Nmap you have just installed, run the following command:-
+#### Step 3: Verify installed version:
+To confirm the version of the Nmap you have just installed, run the following command:
 
-```console
+```bash
 nmap --version
 ```
-At the time of this writing, Nmap version command outputs the following:-  
-```console
+
+At the time of this writing, Nmap version command outputs the following:
+
+```bash
 jumamiller@OpijaKaeli:~$ nmap --version
 Nmap version 7.80 ( https://nmap.org )
 Platform: x86_64-pc-linux-gnu
@@ -189,40 +211,41 @@ Compiled without:
 Available nsock engines: epoll poll select
 jumamiller@OpijaKaeli:~$ 
 ```
-NOTE:- Your version might be different.  
 
-If you have reached this far, you have installed Nmap successfully in your system.
+NOTE: Your version might be different.  
+
+If you have made it this far, you have installed Nmap successfully in your system.
 
 #### Step 4: Nmap Scanning Types:
-```DISCLAIMER!!- The information given in this module is solely for use to scan your networks or networks for which you have been authorized to scan. ```   
-```DO NOT scan networks that you have not been given access or permission to scan, or in case of lawsuits, I hereby disclaim any responsibility for any action taken based on this information presented in this tutorial.```  
+>DISCLAIMER!! - The information given in this module is solely for use to scan your networks or networks for which you have been authorized to scan. 
+>DO NOT scan networks that you have not been given access or permission to scan, or in case of lawsuits, I hereby disclaim any responsibility for any action taken based on this information presented in this tutorial.
 
-There are several scan types used in Nmap:-  
-* TCP connect() SCAN
-* SYN Stealth SCAN or half-open, or stealth scanning.
-* UDP SCAN.
-* RPC SCAN. et cetera...
+There are several scan types used in Nmap:
+- TCP connect() SCAN.
+- SYN Stealth SCAN or half-open, or stealth scanning.
+- UDP SCAN.
+- RPC SCAN. et cetera...
 
 In this tutorial, we will be looking at the two commonly used scans:
 
 ### TCP Scan
+Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a `connect()` system call. If it succeeds, it creates a 3-way handshake, a TCP process to create/make a connection between the client and the server. Otherwise, the port is closed and/or the remote target system is offline and cannot be accessed.  
 
-Nmap TCP Scan works by establishing a connection between its underlying operating network and the target system via a ```connect()``` system call. If it succeeds, 
-it creates a 3-way handshake, a TCP process to create/make a connection between the client and the server. Otherwise, the port is closed/the remote target system is offline and cannot be accessed.  
+When a connection has been established, the ports are listed as `open` while the non-established connection is listed as `closed`.  
+From the example above, you can notice that if a port is listed as open, you can connect to it, and that is what we refer to as scanning a port.
 
-When a connection has been established, the ports are listed as ```open``` while the non-established connection is listed as ```closed```.  
-From the above, you can notice that if a port is listed as open, you can connect to it, and that's scanning a port.
+TCP scan has an option that is usually used when scanning a port, ` -sT`.
 
-TCP scan has an option that is usually used when scanning a port, ``` -sT```.
+#### Example 1.2: Simple port scan 'scanme.nmap.org' using TCP Scan -sT [target] command
+On your terminal, run the following command: 
 
-#### Example 1.2: simple port scan ```scanme.nmap.org``` using TCP Scan -sT [target] command.
-
-On your terminal, run the following command:-  
-```console
+```bash
 sudo nmap -sT scanme.nmap.org
 ```
-This outputs the following:-  
-```console
+
+This outputs the following: 
+
+```bash
 jumamiller@OpijaKaeli:~$ sudo nmap -sT scanme.nmap.org 
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-12 11:18 EAT
 Nmap scan report for scanme.nmap.org (45.33.32.156)
@@ -241,35 +264,40 @@ PORT      STATE    SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 75.95 seconds
 
 ```
-We have 4 ports open from the above output from the remote target, [nmap](scanme.nmap.org). From this output, we can perform various operations that are beyond the scope of this tutorial.  
 
-Albeit we can scan for open ports using this TCP SYN scan technique, it has several drawbacks:-
+We have 4 ports open from the output above from the remote target, [nmap](scanme.nmap.org). From this output, we can perform various operations that are beyond the scope of this tutorial.  
 
-It can be easily detected on the system(remote) being scanned. Now imagine this remote system (in this case, the victim) is running an intrusion detection system or has a firewall. Every single attempt you make to scan a port sends/triggers a warning to the administrator together with logs. Once again, do not scan big techs because they will watch you!!!
+Albeit we can scan for open ports using this TCP SYN scan technique, although it has several drawbacks:
 
-Because of this drawback, SYN Stealth Scan [-sS] was developed.
+It can be easily detected on the system (remote) being scanned. Now imagine this remote system (in this case, the victim) is running an intrusion detection system or has a firewall. 
+
+Every single attempt you make to scan a port sends or triggers a warning to the administrator together with logs. Once again, do not scan big techs because they will watch you!!!
+
+Due to this drawback, SYN Stealth Scan [-sS] was developed.
 
 ### SYN Stealth Scan
-
 In simple terms, SYN scan is used by the penetration tester without establishing a full connection, hence the name half-open scanning.  
 
 For example, you want to scan a remote server. You will establish a TCP/IP connection with a server at every possible open port by sending an SYN packet (synchronization packet) as if to create a 3-way handshake to every single port.    
 
-If the synchronization is acknowledged, the server responds with SYN/ACK packet from a particular port, then that particular port is open.  
+If the synchronization is acknowledged, the server responds with a SYN/ACK packet from a particular port, then that particular port is open.  
 
-From that point, you can send a reset packet (RST); consequently, the server assumes that an error occurred while establishing a connection while the open port remains open and ready/vulnerable to exploitation.  
-The client may send several SYN packets to the server, consuming a lot of resources. This way, legitimate requests cannot be handled. This is one-way of how DOS (Denial of service is achieved).  
+From that point, you can send a reset packet (RST); consequently, the server assumes that an error occurred while establishing a connection, yet the open port remains open and ready/vulnerable to exploitation.  
 
-Now that we've got an idea of how SYN Scan works let's look at an example:-  
+The client may send several SYN packets to the server, consuming a lot of resources. This way, legitimate requests cannot be handled. This is one-way DOS (Denial of service) is achieved.  
 
-#### Example 1.3: simple port scan ```scanme.nmap.org``` using TCP Scan -sS [target] command.
+Now that we've got an idea of how SYN Scan works let's look at an example:
 
-On your terminal, run the following command:-  
-```console
+#### Example 1.3: Simple port scan 'scanme.nmap.org' using TCP Scan -sS [target] command
+
+On your terminal, run the following command:
+```bash
 sudo nmap -sS scanme.nmap.org
 ```
-This outputs the following:-  
-```console
+
+This outputs the following:
+
+```bash
 jumamiller@OpijaKaeli:~$ sudo nmap -sS scanme.nmap.org
 [sudo] password for jumamiller: 
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-12 11:16 EAT
@@ -288,13 +316,15 @@ PORT      STATE    SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 46.24 seconds
 
 ```
-From the above output, you notice that the results are relatively the same as the ```TCP Scan``` output.  
-The only difference between the two methods is that ```TCP Scan``` logs any single port scan, therefore leaving your traces to the target system administrator (s). 
+
+From the output above, you'll notice that the results are relatively the same as the `TCP Scan` output. The only difference between the two methods is that a `TCP Scan` logs any single port scan, therefore it leaves traces to the target system administrator(s). 
 
 ### Conclusion
-In this tutorial, we have been discussing Nmap, a tool that is used to scan Networks. We have discussed how to install Nmap in Linux distribution and perform several scans, including TCP Scan and SYN Steal scan.  
+In this tutorial, we discussed Nmap, a tool that is used to scan Networks. We have discussed how to install Nmap in Linux distribution and we performed several scans, including a TCP Scan and a SYN Steal scan.  
 
 There are several other Scan Types that we will explore in our next tutorial.  
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
