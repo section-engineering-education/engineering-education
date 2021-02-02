@@ -123,7 +123,6 @@ The example above executes faster compared to when not using the concept of Memo
 
 ```js
 const memoizedValue = [];
-
 const clumsysquare = (num) => {
   if ((memoizedValue[num] == !undefined)) {
     return memoizedValue[num];
@@ -139,6 +138,7 @@ const clumsysquare = (num) => {
   memoizedValue[num] = result;
   return result;
 };
+
 console.log(clumsysquare(190));
 console.log(clumsysquare(799));
 console.log(clumsysquare(4000));
