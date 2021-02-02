@@ -21,7 +21,7 @@ The big data supply chain is essential because it improves strategic decision ma
 ### Introduction to Big Data Supply Chain
 Big data is a term used to describe huge volumes of data. Many organizations have experienced data storage problems due to the volume, speed (velocity), and variety of data. This requires an efficient big data supply chain to improve data management and predictive analytics. 
 
-A big data supply chain is a lifecycle of how data moves into the organization and gets transformed into a valuable form that can be used for decision making. The big data supply chain consists of life cycle processes such as selection, quality assurance, procurement, warehousing, and data management. The data is then transformed and distributed to various users in the organization. A data supply chain used by an organization should be aligned to its underlying goals.
+A big data supply chain is a lifecycle of how data moves into the organization and gets transformed into a valuable form that can be used for decision making. The big data supply chain consists of processes such as selection, quality assurance, procurement, warehousing, and data management. The data is then transformed and distributed to various users in the organization. A data supply chain used by an organization should be aligned to its underlying goals.
 
 Data supply chain is similar to the concept of the supply chain in the business field, which consists of inputs collected from suppliers and an output distributed to customers. In big data supply chain, input data is collected from various sources such as apps, websites, blogs, and social networks. The output is in the form of resourceful insights that enable managers to make sound decisions. Like a standard supply chain, a data supply chain's output is distributed to various people (users). 
 
@@ -42,10 +42,10 @@ The following diagram shows the main components of a big data supply chain.
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2016/03/Data-Components.png)
 
 - **Data Sourcing:** This involves collecting data from various sources. Data sourcing and collection can be optimized through crowd-sourcing, BPaaS (business process as a service), and integrated workflow tools. 
-- **Data cleansing:** This involves modifying the data to remove incomplete, inaccurate, and irrelevant data parts to improve data quality. This can be achieved using automation tools, open-source tools, and DQaaS (data quality as a service).
+- **Data Cleansing:** This involves modifying the data to remove incomplete, inaccurate, and irrelevant data parts to improve data quality. This can be achieved using automation tools, open-source tools, and DQaaS (data quality as a service).
 - **Data Enrichment:** Here, data enrichment is done to refine and improve data. This can be done using data mining tools and advanced analytics. 
 - **Data Management:** In this phase, data is managed using various data warehousing tools. Storage is optimized to solve organizations' main storage problems (volume, speed, and variety). The data is transformed to provide meaningful insights. 
-- **Data delivery:** Data is delivered to users through data visualization, DaaS (data as a service), and social media integration. 
+- **Data Delivery:** Data is delivered to users through data visualization, DaaS (data as a service), and social media integration. 
 
 ### Steps for building a Big Data Supply Chain
 The following steps can be used to build a big data supply chain.
@@ -54,10 +54,10 @@ The following steps can be used to build a big data supply chain.
 Start by choosing a data service platform that your organization can use for accessing data. This platform enables users to have direct access to the data. Choose a vendor that meets the financial capability of your organization. The organization can choose one platform or a combination of many platforms offered by different vendors. 
 
 #### 2. Integrating data
-This step involves integrating data collected from diverse sources. High performing systems can be used to store the most frequently used (relevant) data. This will help in increasing the speed at which users can access the data. 
+This step involves integrating data collected from diverse sources. High performing systems can be used to store the most frequently used (or relevant) data. This will help by increasing the speed at which users can access the data. 
 
 #### 3. Data discovery
-This step involves using data discovery tools to provide answers to specific prescribed questions. The organization can use business intelligence (BI) tools to optimize queries. 
+This step involves using [data discovery tools](https://www.softwareadvice.com/bi/data-discovery-tools-comparison/) to provide answers to specific prescribed questions. The organization can use business intelligence (BI) tools to optimize queries. 
 
 #### 4. Realizing data value
 Once the data is transformed, it is ready to be shared and accessed by various users. The organization can use the final data to make valuable decisions (after understanding and gaining the adequate knowledge). The organization can share the final data with other users such as customers, suppliers, partners, and other stakeholders to realize its value. 
