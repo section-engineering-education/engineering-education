@@ -5,7 +5,7 @@ Forms are integral components of web applications. They are required to send dat
 This article requires your basic understanding of how to set up Flask web applications. If you do not know how to approach that, then read through my previous [article](https://www.section.io/engineering-education/complete-guide-on-installing-flask-for-beginners/).  Clone the GitHub [repository](https://github.com/corpsgeek/introduction-to-flask) to get started with implementing the Flask form.
 
 # Configuring The Work Environment
-Start by cloning the github repository to your environment
+Start by cloning the GitHub repository to your environment.
 
 ```bash
 $ git clone https://github.com/corpsgeek/introduction-to-flask.git
@@ -53,13 +53,13 @@ The first step to working with forms in your Flask application is to create your
 
 However, for development and production purpose. The use of frameworks like Bootstrap because form error handling in Flask is easier.
 
-In our cloned Flask application, the HTML template is rendered from the app/views.py file, which displays a Hello World text. Now, we would undergo some coding sprint here to structure this application properly.
+In our cloned Flask application, the HTML template is rendered from the app/views.py file, displaying a Hello World text. Now, we would undergo some coding sprint here to structure this application properly.
 
 First, create a new folder named **template** within the **app**  folder. This folder will consist of all our HTML files. Proceed further to creating a new HTML file named `register.html`. 
 
 In our register.html folder, we initialize the content with a complete HTML code that links to Bootstrap CSS. By following this process, your `register.html` file content should be similar to mine [here](https://gist.github.com/corpsgeek/18cb010ff2d051c4da15897d08083a45)
 
-With the register.html file setup with bootstrap, you won’t be using any bootstrap classes for the moment. 
+With the register.html file setup with Bootstrap, you won’t be using any bootstrap classes for the moment. 
 
 Proceed to create a basic HTML form that accepts the username, email, and password. Also, ensure you set the method attribute to post in the form tag. You should have something similar to this.
 ```HTML
@@ -141,9 +141,9 @@ def register():
    return render_template('register.html')
 ```
 
-Your register view function should have a similar code. Recall that the value passed to the `request.form` method is the name value of our HTML form. 
+Your register view function should have a similar code. Recall that the value passed to the `request.form` method is our HTML form's name value. 
 
-The form data are handled adequately. The next process is to return the data to the webpage, rather than redirecting the user to the registration form page.
+The form data are handled adequately. The next process is to return the data to the webpage rather than redirecting the user to the registration form page.
 
 To return the data to the webpage, add the following line of code:
 ```python
@@ -187,12 +187,12 @@ class ContactForm(FlaskForm):
 ```
 Ensuing, we proceed to create our form fields. A contact form would ideally consist of the user name, their email address, and Message. To replicate this in pure HTML, input textfield and textarea would be the only choice. But, this process is quite different with WTForms.
 
-To create our form fields in WTForms, we import the fields we require. For example, the name field of the user is going to be a string. Therefore, we import StringField.
+To create our form fields in WTForms, we import the fields we require. For example, the name field of the user is going to be a string. Therefore, we import `StringField`.
 
 ```python
 from wtforms import StringField
 ```
-After importing the StringField, we proceed to initialize the field within our form class for the user name.
+After importing the StringField, we initialized the field within our form class for the user name.
 
 ```python
    name = StringField('name', validators=[])
@@ -218,10 +218,10 @@ class ContactForm(FlaskForm):
 The only new thing here is that I imported the TextAreaField and SubmitField, to handle the user message and to submit the form. With this, your contact form is complete. Now let’s render the form.
 
 ## Errors with validators
-When you run your web application, and a validator package is missing, install the validator using pip install. For example, if the Email validator isn’t available, run the following in your terminal to install the Email validator
+When you run your web application and a validator package is missing, install the validator using pip install. For example, if the Email validator isn’t available, run the following in your terminal to install the Email validator.
 
 ```bash
-$ pip install Email
+$ pip install email
 ```
 ## Rendering The Form
 To render our form, the first thing you need to do is to set a secret key for your application in your app file, which is the `__init__.py` file. 
@@ -248,7 +248,7 @@ app.config["SECRET_KEY"] = '571ebf8e13ca209536c29be68d435c00'
  
 from app import views
 ```
-Subsequently, in our route file where we declared the route function for the contact form, import the contact form in our `forms.py` file.
+Subsequently, in our route file where we declared the contact form's route function, import the contact form in our `forms.py` file.
 
 ```python
 from app.forms import ContactForm
@@ -262,7 +262,7 @@ def contact():
    return render_template('contact.html', form=form)
 ```
 
-Proceed to our contact template to display the forms in our browser. Initialize the form with a POST method.
+Please proceed to our contact template to display the forms in our browser. Initialize the form with a POST method.
 
 ```HTML
    <form action="" method="post">
@@ -303,7 +303,7 @@ The first jinja template returns the label of the form field. While the second r
    {{form.send(class="btn-lg btn-primary m-5")}}
 </form>
 ```
-Your contact form should be similar to this and remember we are using bootstrap. You can now run the server and navigate to the contact page to view the form to ensure you’ve done the right thing.
+Your contact form should be similar to this, and remember we are using Bootstrap. You can now run the server and navigate to the contact page to view the form to ensure you’ve done the right thing.
 
 ## Handling The Form Data
 The form handling process with the Flask-WTF extension is easy. In our contact route, we can fetch the form data by checking if the form is validated when the user submits the data, then if it is, we can fetch the data.
@@ -330,11 +330,11 @@ def contact():
 The Flask-WTForm extension makes it simpler and quicker to assess form data. It also ensures speedy validation checks on form data without writing every code logic for each validation check.
 
 ## Handling Form Errors
-Forms encounter errors when the user submits invalid data, we can capture the error, but the user needs to be aware of what it is he/she is doing wrong to avoid such mistakes. The flask wtf form makes it  easy to work with errors in our form.
+Forms encounter errors when the user submits invalid data, we can capture the error, but the user needs to be aware of what it is he/she is doing wrong to avoid such mistakes. The flask wtf form makes it easy to work with errors in our form.
 
 To display form errors, we navigate to our contact form template. The form field is where we want to perform the error check. 
 
-The first step is to check if the form field itself has any errors, then pass in the form field with a bootstrap class of is-invalid. The bootstrap class makes it easy to work with form errors, hence, why I recommended it for use when working with the flask wtf-forms.
+The first step is to check if the form field itself has any errors, then pass in the form field with a bootstrap class of is-invalid. The bootstrap class makes it easy to work with form errors, so I recommended it for use when working with the flask wtf-forms.
 
 ```JINJA
  {% if form.email.errors %}
@@ -343,8 +343,9 @@ The first step is to check if the form field itself has any errors, then pass in
        {% endif %}
 ```
 The next step is to loop through the errors and display them just below the form field itself. The error response would be wrapped in a div with the bootstrap class invalid-feedback.
+
 ```JINJA
-{% if form.email.errors %}
+{% if form. email.errors %}
  
        {{form.email(class="form-control is-invalid")}}
            {% for error in form.email.errors %}
@@ -357,9 +358,10 @@ The next step is to loop through the errors and display them just below the form
 ```
 
 Lastly, write an else statement to display the form field without the is-invalid bootstrap class.
+
 ```JINJA
  
-       {% if form.email.errors %}
+       {% if form. email.errors %}
  
        {{form.email(class="form-control is-invalid")}}
            {% for error in form.email.errors %}
@@ -372,12 +374,12 @@ Lastly, write an else statement to display the form field without the is-invalid
        {% endif %}
 ```
 
-By the end of the implementation of form error handling, the whole block of a particular form field should be alike to the code below.
+By the end of the implementation of form error handling, the whole block of a particular form field should be similar to the code below.
 ```JINJA
  <div class="form-group m-5">
        {{form.email.label()}}
  
-       {% if form.email.errors %}
+       {% if form. email.errors %}
  
        {{form.email(class="form-control is-invalid")}}
            {% for error in form.email.errors %}
@@ -400,3 +402,6 @@ Form handling is one of the crucial components of web applications. This article
 However, the Flask WTForms extension is the best approach to adopt when handling forms. It has all the components needed for form handling, which makes form writing easy.
 
 The complete codebase for this tutorial can be found [here](https://github.com/corpsgeek/flask-form-handling).
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
