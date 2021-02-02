@@ -1,18 +1,18 @@
 When business shifted to the digital realm, there rose a need to keep the business running around the clock. Unlike physical shops, the internet never sleeps, and online shops operate throughout the day and night. Any company operating online knows that any disruptions, for any reason whatsoever, might be detrimental to the sales and growth of the business. And that need gave rise to the usage of clustering.
 
-Many companies have embraced clustering as a way to increase the computing capabilities and availability of their hardware. Clustering involves the use of multiple processors with the idea that this can handle problems better, faster and more reliably compared to a single computer.
+Many companies have embraced clustering as a way to increase the computing capabilities and availability of their hardware. Clustering involves using multiple processors to handle problems better, faster, and more reliable than a single computer.
 
-Organizations considering clustering options are keen to knowing what architectures and technologies offer the best approach to clustering. In this case, we discuss shared nothing and shared disk clustering architectures.
+Organizations considering clustering options are keen to know what architectures and technologies offer the best approach to clustering. In this case, we discuss shared nothing and shared disk clustering architectures.
 
 ### Why use clusters?
 
-The two main reasons that any online business turns to use clusters is that it works better to increase sales by improving its scalability and enhancing the enterprise&#39;s availability in the virtual realm. Since clusters involve several processors, when one fails, the others take up that workload, and the receiver on the other end using the platform will not experience downtime.
+The two main reasons any online business turns to use clusters is that it works better to increase sales by improving its scalability and enhancing the enterprise&#39;s availability in the virtual realm. Since clusters involve several processors, when one fails, the others take up that workload, and the receiver on the other end using the platform will not experience downtime.
 
 Its scalability is expansive in that you can always upgrade to adding a new processor so that you can handle the workload coming in. The internet is ever-growing; you have your business exposed, you will score more prospects, convert them to clients, and the extra processor will ensure a smooth running even as the numbers of users keep growing. Clusters are available as packages offered by big companies in the computer industry like [IBM](https://www.ibm.com/) and [Microsoft](https://www.microsoft.com/).
 
 ### Types of clustering
 
-There are several types of clustering, but in this piece, we focus on shared-nothing and shared-disk clustering architectures.
+There are several clustering types, but in this piece, we focus on shared-nothing and shared-disk clustering architectures.
 
 #### Shared-nothing clustering
 
@@ -28,7 +28,7 @@ This second type of clustering entails a network linked to one common disk devic
 
 It is perfect for sectors in an industry that use data that cannot be partitioned, and it needs to be in one place for processing. And these syndicates should require only a limited transfer of data at a time.
 
-On the downside, shared-disk clustering architecture model is not as scalable as shared-nothing clustering since each node updates at a time. The way to get around this downside is by using optimization techniques that enable large-scale businesses to expand without a problem.
+On the downside, the shared-disk clustering architecture model is not as scalable as shared-nothing clustering since each node updates at a time. The way to get around this downside is by using optimization techniques that enable large-scale businesses to expand without a problem.
 
 ### Differences between Shared Nothing and Shared Disk Clustering Architectures
 
@@ -46,7 +46,7 @@ The shared disk clustering architecture, which uses one disc device with separat
 
 #### Availability
 
-Shared-nothing clustering architecture is highly available. This attributed to the fact that it can scale up easily and cheaply. The availability of shared-disk can be limiting because the hardware used is costly compared to the shared-nothing clustering architecture.
+Shared-nothing clustering architecture is highly available. This is attributed to the fact that it can scale up quickly and cheaply. The availability of shared-disk can be limiting because the hardware used is costly compared to the shared-nothing clustering architecture.
 
 #### Data storage
 
@@ -61,3 +61,6 @@ Shared-nothing clustering deals with data that is independently stored in separa
 The shared-nothing and the shared-disk clustering architecture systems have different features, and each has its pros and cons. One has better scalability with a counteracting factor in reducing performance when the scaling is expanded to a certain level. The other has commendable prowess of having a dynamic loading balance but needs expensive hardware to work.
 
 That said, one may be suited for one type of business and fail in another sector. The shared-nothing is perfect for computing and database tasks that call for the analytical processing of information stored in multiple data warehouses. While shared-disk is ideal to be used in an establishment that analyses data that has to be in one place and never partitioned. As discussed, each is fundamental.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
