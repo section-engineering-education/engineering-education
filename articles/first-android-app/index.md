@@ -1,5 +1,21 @@
-Application Softwares commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically android applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/first-android-app/
+title: Creating Your First Android Application
+description: This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps
+author: diana-mutheu
+date: 2021-02-01T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/first-android-app/hero.jpg
+    alt: Android application image example
+---
+Application Softwares commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically android applications.
+<!--more-->
 ### Introduction
 Mobile applications are of two types due to the two mobile operating systems, namely Ios and Android.
 
@@ -195,7 +211,7 @@ There are two approaches to this:
 > NOTE: The performance and RAM left on your PC will determine how long the emulator will take to start.
  **Using an android phone**
 1. Connect your mobile phone to your laptop using a ***USB cable***.
-2. Navigate to the settings application on your mobile device, look for ***developer options*** which could be locked in the ***additional settings*** option on some phones, click on it.
+2. Navigate to the settings application on your mobile device, look for ***developer options*** which could be located in the ***additional settings*** option on some phones, click on it.
 3. It will probably prompt you to write the verification code.
 4. After being verified enable the ***developer options*** then navigate to ***debugging*** and enable ***USB debugging*** option. A pop-up will appear explaining the function of USB debugging, click OK.
 5. Another pop-up will appear asking you to allow USB debugging to your computer, click on OK.
@@ -207,3 +223,6 @@ There are two approaches to this:
 
 ### Conclusion
 That is it! You have created your first android application. Practice makes perfect so make sure you continue building mobile applications until you become an expert.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
