@@ -268,3 +268,6 @@ farmer.printDetails()
 
 ### Conclusion
 We have learned how to define and use variables, methods, classes, loops, and lists from this tutorial. You can learn more about other concepts from [here](https://docs.python.org/3/). The secret to becoming a python expert is to practice regularly. 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
