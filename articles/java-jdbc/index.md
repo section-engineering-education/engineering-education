@@ -6,7 +6,7 @@ url: /engineering-education/java-jdbc/
 title: Getting Started with Java JDBC
 description: This article introduces Java database connectivity. We will learn how to perform various database query operations from a Java application.
 author: paul-juma
-date: 2021-01-22T00:00:00-17:00
+date: 2021-02-03T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,12 @@ images:
   - url: /engineering-education/java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
-Java database connectivity (JDBC) is an application programming interface that defines how Java programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform database create, read, update and delete operation through JDBC API.
+Java database connectivity (JDBC) is an application programming interface that defines how Java programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform a database create, read, update, and delete operation through JDBC API.
 <!--more-->
 ### Prerequisites
 To follow along, you will need the following:
 1. Java development kit [JDK 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your machine.
-2. A code editor of your choice. I use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux), which is free.
+2. A code editor of your choice. I will use [Intellij community edition](https://www.jetbrains.com/idea/download/#section=linux), which is free.
 3. Some basic knowledge in the [Java](https://www.javatpoint.com/java-tutorial) programming language.
 4. Apache [XAMPP](https://www.apachefriends.org/download.html) installed on your computer.
 5. Basic knowledge of [SQL](https://www.guru99.com/sql.html).
@@ -56,7 +56,7 @@ To follow along, you will need the following:
 </project>
 ```
 
-- In the `src` package, create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java`, which will hold various students' information, and `MysqlAccess.java` that will contain our database access source code.
+- In the `src` package, create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java`, that will hold various students' information, and `MysqlAccess.java` that will contain our database access source code.
 
 #### Student.java
 This is a plain Java object (POJO) that will contain the student information.
@@ -116,8 +116,9 @@ The `getters` and `setters` make it possible to access the class member variable
   
 #### MysqlAccess.java
 `MysqlAccess.java`class contains the methods that handle the database operations.
+
 It has the following methods below:
-**databaseConnection()** establishes database connection between our application and MYSQL database.
+- **databaseConnection()** establishes a database connection between our application and MYSQL database.
 ```java
   public void databaseConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -130,7 +131,7 @@ It has the following methods below:
 
 - `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?serverTimezone=UTC&user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
 
-**getStudents()** method returns a list of students from the database. 
+- **getStudents()** method returns a list of students from the database. 
 ```java
 
     public List<Student> getStudents() {
@@ -151,10 +152,11 @@ It has the following methods below:
         return students;
     }
 ```
+
 - ` resultSet = statement.executeQuery("select * from school.students");` executes the `SELECT` query that gets all the students from the database and stores the result in the `resultSet`. 
 - `while (resultSet.next())` loops through the result set to get all the students' data returned.
 
-**getStudentByEmail(String email)** returns a student from the database with the email password in the `SELECT` query.
+- **getStudentByEmail(String email)** returns a student from the database with the email password in the `SELECT` query.
 ```java
     public Student getStudentByEmail(String email) {
         try {
@@ -174,7 +176,7 @@ It has the following methods below:
     }
   ```
 
-**saveStudent(Student student)** inserts a new student passed to the method into the database.
+- **saveStudent(Student student)** inserts a new student passed to the method into the database.
 ```java
     public void saveStudent(Student student) {
         try {
@@ -191,7 +193,7 @@ It has the following methods below:
     }
 ```
 
-**deleteStudent(String email)** deletes a student with the email passed to the `DELETE` query in the database.
+- **deleteStudent(String email)** deletes a student with the email passed to the `DELETE` query in the database.
 ```java
 
     public void deleteStudent(String email) {
@@ -208,7 +210,8 @@ It has the following methods below:
 
     }
 ```
-**updateStudent(Student student, String email)** updates the student information of the student with the email passed to the `UPDATE` query.
+
+- **updateStudent(Student student, String email)** updates the student information of the student with the email passed to the `UPDATE` query.
 ```java
     public void updateStudent(Student student, String email) {
         try {
@@ -222,7 +225,8 @@ It has the following methods below:
         }
     }
 ```
-**close()** closes the database connection.
+
+- **close()** closes the database connection.
 ```java
 public void close() {
         try {
@@ -244,6 +248,7 @@ public void close() {
 ```
 
 Full source code for the `MySqlAccess` class is shown below.
+
 ```java
 import java.sql.*;
 import java.util.ArrayList;
@@ -365,7 +370,7 @@ public class MySqlAccess {
 ```
 
 #### Main.java
-In this class, we create an instance of the `MySqlAccess` class and call its various methods to execute various database queries.
+In this class, we will create an instance of the `MySqlAccess` class and call its various methods to execute various database queries.
 ```java
 import java.util.List;
 
@@ -415,7 +420,7 @@ public class Main {
 ```
 
 ### Creating the database
-- Start the  Apache and MySQL servers from the XAMPP control panel.
+- Start the Apache and MySQL servers from the XAMPP control panel.
 - On the `http://localhost/phpmyadmin/` site on your browser, create a database with the name `school`.
 - In the `school` database, create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
 
@@ -425,6 +430,8 @@ Run the application by executing the `main` function in the `Main` class.
 
 ### Conclusion
 Now that you have learned how to perform various database query operations from a Java application. You can use this knowledge to build more complex applications.
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
