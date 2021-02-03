@@ -20,13 +20,11 @@ In essence, network management as a service provides network managers with sever
 ### **Network Management Requirements**
 
 The network management requirements are categorized into 5 distinct groups. 
-* Fault Management
-* Security Management
-* Performance Management
-* Accounting Management
-* Configuration & Name management.
-
-In this tutorial we will discuss the following:    
+- Fault Management
+- Security Management
+- Performance Management
+- Accounting Management
+- Configuration & Name management.   
 
 ### **1.Fault Management** 
 
@@ -41,11 +39,11 @@ An example of a networking fault may result due to a telephone cable physically 
 
 In case of a networking fault, the following general steps are followed to restore a network:    
 
-* Try and determine exactly where the fault is coming from.
-* Separate the rest of the network from the failure. This will ensure that the network continues to work without interference.
-* At this point now, you can try to modify the network and reconfigure without the failed component.  
-* Finally, repair or replace (in case it's badly damaged to work) the failed component.
-* Restore the network to its initial state.  
+- Try and determine exactly where the fault is coming from.
+- Separate the rest of the network from the failure. This will ensure that the network continues to work without interference.
+- At this point now, you can try to modify the network and reconfigure without the failed component.  
+- Finally, repair or replace (in case it's badly damaged to work) the failed component.
+- Restore the network to its initial state.  
 
 Normally, users depending on an internet connection will not tolerate occasional outages that take too long to restore.  
 Sometimes when they do occur, it could be hard to resolve them without proper fault detection systems leading to so many issues network end users.  
@@ -73,17 +71,17 @@ This means that most communication network components are varied, but at the sam
 Sometimes, it can be critical to have your application run within a certain performance limit.  
 
 Performance management of any computer network is comprised of 2 broad functional categories:-  
-* Monitoring
-* Controlling
+- Monitoring
+- Controlling
 
 As we had discussed previously, while network monitoring involves tracking the activities on the network, controlling a network involves making some network adjustments to improve its performance.  
 
 Some of the network performance issues include:-  
-* Utilization level.
-* Traffic - is traffic within our network excess?
-* Bottlenecks- are there problems with our network?
-* Response time.
-* Throughput-has it been reduced or it's within acceptable limits?
+- Utilization level.
+- Traffic - is traffic within our network excess?
+- Bottlenecks- are there problems with our network?
+- Response time.
+- Throughput-has it been reduced or it's within acceptable limits?
 
 As a network manager, you must put in place measures on what resources to monitor as you're assessing their performance level.  
 
