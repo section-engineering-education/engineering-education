@@ -1,12 +1,23 @@
-### An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/ssl-tls/
+title: An Introduction to Secure Sockets Layer/Transport Layer Security Protocol
+description: This article will be a brief introduction to the Secure Sockets Layer / Transport Layer Security Protocol. We would be discussing various SSL/TLS versions and how it works.
+author: kanishkvardhan-a-n
+date: 2021-02-04T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/ssl-tls/hero.jpg)
+  - url: /engineering-education/ssl-tls/hero.jpg
+    alt: SSL/TLS example image
+---
+2020 was a challenging year that resulted in some crucial, groundbreaking innovation and changes across domains. The pandemic has compelled various operations and workforce to go remote, and has left the infrastructure susceptible to increased cyber attacks. 
+<!--more-->
 
-Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/iar-afB0QQw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-
-### Introduction
-
-2020 was a challenging year that resulted in some crucial, groundbreaking innovation and changes across domains. The pandemic has compelled various operations and workforce to go remote, and has left the infrastructure susceptible to increased cyber attacks. The need for security has undoubtedly been reinforced. Anti-malware software, intrusion prevention systems, firewalls, Virtual Private Networks (VPNs) are some of the rudimentary technologies required to safeguard your resources these days. In this article, we will focus on one such security technique i.e SSL/TLS communication encryption protocol. 
+The need for security has undoubtedly been reinforced. Anti-malware software, intrusion prevention systems, firewalls, Virtual Private Networks (VPNs) are some of the rudimentary technologies required to safeguard your resources these days. In this article, we will focus on one such security technique i.e SSL/TLS communication encryption protocol. 
 
 In simple terms, encryption is the process of converting data into another form (referred to as Ciphertext) that can be understood only by parties that possess a secret decryption key. To everybody else, it’s gibberish.  [Google's transparency report](https://transparencyreport.google.com/https/overview?hl=en) shows a significant increase in the amount of encrypted traffic on the internet over the last few years. As of December 2020, approximately 95% of all traffic across Google was encrypted. Many web browsers have been relentlessly pushing websites to use encryption by marking HTTP sites as unsafe. 
 
