@@ -90,3 +90,6 @@ SSL/TLS is a cryptographic protocol that enables applications to communicate sec
 2. [Cipher Suites: Ciphers, Algorithms and Negotiating Security Settings](https://www.thesslstore.com/blog/cipher-suites-algorithms-security-settings/)
 3. [The SSL/TLS Handshake: an Overview](https://www.ssl.com/article/ssl-tls-handshake-overview/)
 4. [How is Diffie-Hellman Key Exchange Different from RSA?](https://www.venafi.com/blog/how-diffie-hellman-key-exchange-different-rsa)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
