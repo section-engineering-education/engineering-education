@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
-Java database connectivity (JDBC) is an application programming interface that defines how Java application programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform database create, read, update and delete operation through JDBC API.
+Java database connectivity (JDBC) is an application programming interface that defines how Java programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform database create, read, update and delete operation through JDBC API.
 <!--more-->
 ### Prerequisites
 To follow along, you will need the following:
@@ -56,7 +56,7 @@ To follow along, you will need the following:
 </project>
 ```
 
-- In the `src` package, create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java`, which will hold various student information, and `MysqlAccess.java` that will contain our database access source code.
+- In the `src` package, create 3 Java files and name them `Main.java` that will contain our `main` method, `Student.java`, which will hold various students' information, and `MysqlAccess.java` that will contain our database access source code.
 
 #### Student.java
 This is a plain Java object (POJO) that will contain the student information.
@@ -116,7 +116,7 @@ The `getters` and `setters` make it possible to access the class member variable
   
 #### MysqlAccess.java
 `MysqlAccess.java`class contains the methods that handle the database operations.
-It has the methods below
+It has the following methods below:
 **databaseConnection()** establishes database connection between our application and MYSQL database.
 ```java
   public void databaseConnection() throws ClassNotFoundException, SQLException {
@@ -173,6 +173,7 @@ It has the methods below
         return new Student(student_name, student_email, student_course);
     }
   ```
+
 **saveStudent(Student student)** inserts a new student passed to the method into the database.
 ```java
     public void saveStudent(Student student) {
@@ -189,6 +190,7 @@ It has the methods below
 
     }
 ```
+
 **deleteStudent(String email)** deletes a student with the email passed to the `DELETE` query in the database.
 ```java
 
@@ -422,7 +424,7 @@ public class Main {
 Run the application by executing the `main` function in the `Main` class.
 
 ### Conclusion
-Now that you have learned how to perform various database query operations from a Java application add an `id` field to the `Student` class and make the `id` field in the database a primary key in the `students` table.
+Now that you have learned how to perform various database query operations from a Java application. You can use this knowledge to build more complex applications.
 
 ---
 Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
