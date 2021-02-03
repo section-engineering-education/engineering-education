@@ -1,4 +1,4 @@
-Here are a few things to note before proceeding:
+### Prerequisites
 1. This is an indepth resource on the basic concepts of systemd 
 2. It requires familiarity with basic Linux commands.
 3. An understanding of Linux processes, daemons and cgroups is also required.
@@ -20,7 +20,7 @@ It's an ancestor process to all processes. It also adpots orphaned or zombie pro
 Now, what happens when the init process doesn't start first (the kernel doesn't boot the init process)? A kernel panic occurs because there isn't an init process to startup things and make way for essential services.
 
 ### Implementations of init
-There are some init implementations which usually differ by the scope of their responsibility.
+There are some init implementations that usually differ by the scope of their responsibility.
 systemd for instance is a very functional software. Some might argue that systemd's functionality is outside the scope of what an init system should do. 
 It does more than starting daemons and services, mounting filesystems, configuring network interfaces.
 
@@ -74,10 +74,10 @@ There are default unit files supplied by the packages of the service that usuall
 
 **Note:** It's common practice to copy the default unit file into **/etc/systemd/system/** and make appropriate customization.
 
-There are 11 type of units in systemd. We'd talk about the most common ones. ***man 1 systemd*** describes them. So give it a check.
+There are 11 types of units in systemd. We'd talk about the most common ones. ***man 1 systemd*** describes them. So give it a check.
 
 1. Service units: This unit defines how to manage service daemons controlled by systemd. Unit files of this service end with .service.
-2. Socket units: This contains information about a local inter-process communication or network sockets in a Linux system.
+2. Socket units: This contains information about local inter-process communication or network sockets in a Linux system.
 3. Target units: This is used to provide synchronization amongst unit files during boot-up. It can also be used as a medium to extend scope by specifying their targets to other targets.
 4. Device units: This unit describes devices that need exposure to systemd by udev and sysfs filesystem.
 5. Mount units: This defines a mount point for attaching filesystems controlled by systemd.
@@ -96,11 +96,11 @@ Earlier on, we talked about systemd starting up services required to hit a defau
 
 A visual cue could be of help here.
 
-![Figure 1. Dependency tree](/engineering-education/understanding-systemd/)
+![Figure 1. Dependency tree](/engineering-education/understanding-systemd/figure-1.png)
 
 So it turns out that dependency management is difficult in modern Linux machines. These machines have many services that depend on each other. One service failure can solely freeze the boot process of a Linux machine.
 
-Imagine defining a dependency from an X server to a logging service. That is, the logging service would have to start before the X server. In a situation where the logging service doesn't start, we'd be unable to get our X server running because one of its dependencies isn't running. In this situation, X server is a target for the logging service.
+Imagine defining a dependency from an X server to a logging service. That is, the logging service would have to start before the X server. In a situation where the logging service doesn't start, we'd be unable to get our X server running because one of its dependencies isn't running.
 
 System V init implementations don't have dependency management issues because things are kept simple at the expense of flexibility.
 systemd developers devised a method for handling dependencies in such a way that the failure of one dependency doesn't put the entire system in limbo.
@@ -135,7 +135,7 @@ NB: *howlinuxworks* notes that unit files are derived from the XDG Desktop Entry
 
 The service section contains configurations applicable only to .service unit files. 
 
-![Figure 2: An example of a unit file (.service) with Sections and Directives](/engineering-education/understanding-systemd/figure-1.png)
+![Figure 2: An example of a unit file (.service) with Sections and Directives](/engineering-education/understanding-systemd/figure-2.png)
 
 
 Figure 2 contains three directives - [Unit], [Service] and [Install] with their respective directives.
@@ -242,7 +242,7 @@ Edit 00.foo.conf to look like this:
 When modifying ExecStart of the actual unit file in a drop-in file, make sure to define ExecStart to nothing and redefine it to a new command just like we have above.
 Now, ExecStart has been successfully modified in **/etc/systemd/system/foo.service** without actually writing to it. Restart the service to see the change.
 
-![Figure 7. Drop-in file modifying foo.service](/engineering-education/understanding-systemd/figure-6.png)
+![Figure 7. Drop-in file modifying foo.service](/engineering-education/understanding-systemd/figure-7.png)
 
 **NB: You should reload the systemd daemon before restarting.**
 
