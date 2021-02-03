@@ -1,14 +1,14 @@
-A heap can be termed as a tree-based data structure that allows access to the minimum and maximum element in constant time. They reduce the normal run time with polynomial order. There are two different types of heaps, Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
+A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. They reduce the normal run time with polynomial order. There are two different types of heaps, Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
 
-#### prerequisites
+### Prerequisites
 
-To follow along in this article, it is helpful to have the following:
+To follow along with this article, you should have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 
 - Basic knowledge of JavaScript.
 
-### Overview.
+### Overview
 
 - [Setting up the project](#setting-up-the-project)
 
@@ -24,7 +24,7 @@ To follow along in this article, it is helpful to have the following:
 
 To set up the project, clone this [Github repository](https://github.com/mwangiKibui/understanding-min-heap-vs-max-heap). In the cloned folder, there are two folders, start, and final. In this article, we will be working on the start folder but in case you encounter an error feel free to check out the final folder.
 
-### Min-heap.
+### Min-heap
 
 In a min-heap, the parent or root node is usually less than the children nodes. The least element is accessed within constant time since it is at index `1`.
 
@@ -36,7 +36,7 @@ In a min-heap, the parent or root node is usually less than the children nodes. 
 
 Based on the figure below, at every level, the smallest number is the root node.
 
-#### Implementation.
+#### Implementation
 
 When illustrating min-heap we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
@@ -58,7 +58,7 @@ In a min-heap, the first element is `null` and then the following formula is use
 
 For the min-heap, we will insert an element, get the least element and remove an element.
 
-#### Inserting an element.
+#### Inserting an element
 
 While inserting an element in a min-heap, we use [heap sort algorithm](https://www.codingeek.com/algorithms/heap-sort-algorithm-explanation-and-implementation/).
 
@@ -98,7 +98,7 @@ insert(1);
 console.log(heap.slice(1));
 ```
 
-Expected output
+Expected output:
 
 ```bash
 [ 1, 5, 36, 90, 10 ]
@@ -116,7 +116,7 @@ From the above:
 
 - If there exists, swap them.
 
-#### Getting the minimum element.
+#### Retrieving the minimum element
 
 With a min-heap data structure, the minimum element is at index `1`.
 
@@ -124,9 +124,7 @@ In the same file, under `getMin()` function, we add up the functionality:
 
 ```javascript
 getMin(){
-
     return heap[1];
-
 };
 
 //testing functionality
@@ -146,9 +144,7 @@ Expected output:
 1
 ```
 
-From the above :
-
-- Get the minimum element at index `1`.
+From the above, We get the minimum element stored at index `1`.
 
 #### Removing an element
 
@@ -255,9 +251,9 @@ Expected output
 [ 5, 10, 36, 90 ]
 ```
 
-From above:
+From the above function:
 
-- Check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the below steps.
+- We check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the below steps.
 
 - Assign the last value to the first index.
 
@@ -271,7 +267,7 @@ From above:
 
 - Where there is no right node value but the parent node is greater than the left node value, swap the values.
 
-### Max-heap.
+### Max-heap
 
 In a max-heap, the parent or root node is usually greater than the children nodes. The maximum element can be accessed in constant time since it is at index `1`.
 
@@ -283,7 +279,7 @@ In a max-heap, the parent or root node is usually greater than the children node
 
 Based on the figure below, at every level, the largest number is the root node.
 
-#### Implementation.
+#### Implementation
 
 Similarly, when illustrating a max-heap we use a tree-based structure but when representing in memory we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
@@ -305,7 +301,7 @@ Similarly, in a max-heap, the first element is `null` and then the following for
 
 For the max-heap, we will insert an element, get the largest element, and remove an element.
 
-#### Inserting an element.
+#### Inserting an element
 
 In a max-heap, we also use heap-sort algorithm while inserting elements.
 
@@ -345,13 +341,13 @@ insert(1000);
 console.log(heap.slice(1));
 ```
 
-Expected output
+Expected output:
 
 ```bash
 [ 1000, 120, 100, 10 ]
 ```
 
-From above:
+From the above function:
 
 - Push the element to the end of the array.
 
@@ -390,11 +386,9 @@ Expected output:
 1000
 ```
 
-From above:
+In the above function, we are returning the element stored at index `1`.
 
-- returning the element at index `1`.
-
-#### Removing an element.
+#### Removing an element
 
 Removing an element from a max-heap involves the following steps:
 
@@ -493,9 +487,9 @@ remove();
 console.log(heap.slice(1));
 ```
 
-From above:
+From the above function:
 
-- Check if the array has more than two elements. If it does not, just remove the element in the first index. If it does, continue with the below steps.
+- We check if the array has more than two elements. If it does not, just remove the element in the first index. If it does, continue with the below steps.
 
 - Assign the last value to the first index.
 
@@ -509,11 +503,11 @@ From above:
 
 - Where there is no right node value but the parent node is less than the left node value, swap the values.
 
-### Why we need heaps.
+### Why we need heaps?
 
-- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation) (n) whereas heaps can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation) (1). This is crucial while processing large data sets. n refers to the number of data sets.
+- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation)(n) whereas heaps can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is crucial while processing large data sets. n refers to the number of data sets.
 
-### Application of heaps.
+### Application of heaps
 
 - Used in [Operating systems](https://www.tutorialspoint.com/operating_system/os_overview.htm) for [job scheduling](https://www.techopedia.com/definition/7882/job-scheduling) on a priority basis.
 
@@ -521,7 +515,7 @@ From above:
 
 - Used in [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) to find the shortest paths.
 
-### Conclusion.
+### Conclusion
 
 With a reduced time complexity, min-heap and max-heap are efficient in processing data sets. Each with its own use case and implementation.
 
