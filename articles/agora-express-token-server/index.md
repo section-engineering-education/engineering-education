@@ -57,7 +57,11 @@ We'll be going through these steps in this article:
 ### Prerequisites
 This tutorial is for applications that use [Agora](https://www.agora.io/) and want to implement authentication for its users. If you are not using Agora in your application, then this tutorial is not for you.
 
-If you'd like to learn how to build a Livestream application with React Native and Agora, you can refer to [this tutorial](/engineering-education/react-native-agora-livestreaming-app/).
+If you'd like to learn how to build a React Native application with Agora, refer to these articles,
+
+- [Livestream App](/engineering-education/react-native-agora-livestreaming-app/).
+
+- [Video Conference App](/engineering-education/react-native-agora-livestreaming-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
@@ -387,7 +391,7 @@ Body of the request:
 
 Request & Response:
 
-![RTM Token Request and Response](rtm_postman.png)
+![RTM Token Request and Response](/engineering-education/agora-express-token-server/rtm_postman.png)
 
 ### Let's Recap
 1. We learned about authentication mechanisms in Agora.
