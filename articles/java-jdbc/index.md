@@ -122,13 +122,13 @@ It has the methods below
   public void databaseConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         connect = DriverManager
-                .getConnection("jdbc:mysql://localhost/school?"
-                        + "user=root&password=");
+            .getConnection("jdbc:mysql://localhost/school?serverTimezone=UTC&"
+           + "user=root&password=");
         statement = connect.createStatement();
     }
 ```
 
-- `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
+- `connect = DriverManager.getConnection("jdbc:mysql://localhost/school?serverTimezone=UTC&user=root&password=");` sets up the database connection information. `school` is the database name, `root` is the database username, and the database password is a blank string ``.
 
 **getStudents()** method returns a list of students from the database. 
 ```java
