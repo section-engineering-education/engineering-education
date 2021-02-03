@@ -1,26 +1,16 @@
-# How To Build A Simple Music Player Using Django
-
-![cover](/engineering-education/how-to-build-a-music-player-using-django/hero.jpg)
-
 Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work the database along with the views(i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. Django is definitely a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
 
 The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
 
 So we will be creating bot song objects, retrieving songs, bookmarking songs, and playing songs.
 
-### What is Django ORM and MVT architecture?
-
 ### Django ORM
-
-**Introduction**
 
 Object-Relational Mapping (ORM) is a method that helps you to question and control statistics from a database the usage of an object-orientated paradigm. When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, the phrase "an ORM".
 
 An ORM library is an everyday library written to your language of desire that encapsulates the code required to control the data so that you do not use raw SQL queries anymore; you engage at once with an object within the same language you are utilizing..
 
 ### MVT Architecture
-
-**Introduction**
 
 MVT (Model View Template) is a software program layout sample that's a group of 3 elements; Model View and Template. The Model allows dealing with the database. It is a data access layer that handles the information in the database.
 
@@ -42,18 +32,19 @@ Here is an easy diagram that indicates the MVT structure in Django:
 
 ![mvt structure](/engineering-education/how-to-build-a-music-player-using-django/mvt.png)
 
-
 ### Getting Started with Django
+
 If you are new to Django and want to get started with it, you can view the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
 
 ### Prerequisites
+
 Python, Django, Pillow
 
 Install python and enable pip, then run the following to install the required packages
 
-```shell
-$ pip install django
-$ pip install pillow
+```bash
+pip install django
+pip install pillow
 ```
 
 ### Creating  our Django App
@@ -82,7 +73,6 @@ $ mkdir templates
 $ mkdir static
 ```
 
-
 Now go to the "MusicPlayer" directory and edit our settings.py file by adding our App to the list of installed apps as seen below
 
 ```python
@@ -95,13 +85,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'App'
 ]
-
 ```
+
 Inside the static and templates folders, we are going to create their respective files.
 
 For the templates folder create a new file "index.html" and add the HTML code below
 
-```html
+```HTML
 {% load static %}
 
 <!DOCTYPE html>
@@ -162,17 +152,13 @@ For the templates folder create a new file "index.html" and add the HTML code be
   </script>
  </body>
 </html>
-
-
-
 ```
+
 In the code above we created the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our "page_obj" context which we defined in our views.py file. Also the next and previous links, we rendered the pagination attributes which will separate our songs into a page per song format.
 
 For the static folder create two new files; "script.js" and "style.css". These are the static files our HTML templates file is going to use. In the "script.js" file, add the following code as seen below
 
-```script
-#script.js
-
+```JavaScript
 var audio = {    
     init: function() {        
     var $that = this;        
@@ -200,7 +186,9 @@ var audio = {    
 };
 audio.init();
 ```
+
 Edit the "style.css" file, add the following code as seen below
+
 ```style
 *:focus{
     outline: none;
@@ -440,6 +428,7 @@ h3 {
 }
 
 ```
+
 The "script.js" file is the javascript file that defines how our music is played, while the "style.js" file is the CSS file that styles our HTML  template design and feels.
 
 We would also define our static_root,media_root, and media_url in our settings.py file as seen below
@@ -449,7 +438,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT =os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 ```
 
 Still in the "MusicPlayer" directory, edit the urls.py file
@@ -468,8 +456,6 @@ urlpatterns = [
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
 ```
 
 Goto back to our APP directory and create a new file called "urls.py". Here we would define the urls the root Django project would be linked to. After creating the new urls.py file, add the following code to it
@@ -484,10 +470,7 @@ app_name = "App"
 
 urlpatterns = [
     path("", views.index, name="index"),
-
-
 ]
-
 ```
 
 In the code above, we defined all the URL patterns our app would be using. In other words all the visitable links on our web app.
@@ -512,7 +495,7 @@ class Song(models.Model):
 
 ```
 
- In the models.py file above, we defined our Song model which represents a data table in our database for storing our songs. The attributes of the class define the fields of the "Song" table in our databse.
+In the models.py file above, we defined our Song model which represents a data table in our database for storing our songs. The attributes of the class define the fields of the "Song" table in our databse.
 
 Next, go to the views.py file in the same directory. Edit the file and add the following lines of code
 
@@ -522,8 +505,6 @@ from django.shortcuts import render,redirect
 # imported our models
 from django.core.paginator import Paginator
 from . models import Song
-
-
 
 def index(request):
     paginator= Paginator(Song.objects.all(),1)
@@ -543,6 +524,7 @@ $ python manage.py makemigrations
 # final migrations
 $ python manage.py migrate
 ```
+
 The result of running the above migrations should be as in the image below
 
 ![success_migrate](/engineering-education/how-to-build-a-music-player-using-django/success_migrate.png)
@@ -559,22 +541,24 @@ Our admin file would contain the following code
 from django.contrib import admin
 from . models import Song
 
-
 # Register your models here.
 admin.site.register(Song)
-
 ```
 
 The last thing we would be doing is creating a superuser so that we can log in to Django's admin page.
-To create a superuser  enter the below command in your command-line
+
+To create a superuser enter the below command in your command-line:
+
 ```shell
 python manage.py createsuperuser
 ```
+
 You will be prompted to create a username, email, and password. Once you are done with this, you can now log in to the admin page and create songs. Let's now run our app with the command below
 
 ```shell
 $ python manage.py runserver
 ```
+
 If your app is running you should see something like this
 
 ![app running](/engineering-education/how-to-build-a-music-player-using-django/runapp.png)
@@ -583,7 +567,6 @@ Finally, let's now login to the admin page, create some song and play them.
 To login to the admin page go to this link [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and enter your login details as seen in the image below
 
 ![admin login](/engineering-education/how-to-build-a-music-player-using-django/adminpage.png)
-
 
 If your login was successful you should now see the page below
 
@@ -600,12 +583,15 @@ You can view it on your localhost at this link [http://127.0.0.1:8000/](http://1
 
 You can also go to the [GitHub repo](https://github.com/Chukslord1/DjangoMusicPlayer) to view the project.
 
-### Resources
-* https://www.javatpoint.com/django-mvt
-
 ### Conclusion
 
 By using Django, we were able to build a music player web app using Django, HTML, Jinja, CSS, and Javascript. We also saw how easy it was to create a web app using Django and manipulate the database with Django's ORM.
+
 If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
+
+### Resources
+
+- https://www.javatpoint.com/django-mvt
+
 
 
