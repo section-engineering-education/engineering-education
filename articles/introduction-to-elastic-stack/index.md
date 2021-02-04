@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-elastic-stack/
 title: Introduction to Elastic Stack (ELK)
-description: This article will cover the basics of Elastic Stack - a log management platform which can can search, visualize, and manage log files
+description: This article will cover the basics of Elastic Stack - which is a log management platform that can search, visualize, and manage log files.
 author: elly-omondi
-date: 2021-01-25T00:00:00-17:00
+date: 2021-02-04T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,10 @@ images:
   - url: /engineering-education/introduction-to-elastic-stack/hero.jpg
     alt: Elastic Stack image
 ---
-
-[**Elastic stack (ELK)**](https://www.elastic.co/elastic-stack) is a bundle of software components that can search, visualize, and manage log files (end to end log analysis).
+[*Elastic stack (ELK)*](https://www.elastic.co/elastic-stack) is a bundle of software components that can search, visualize, and manage log files (end to end log analysis).
 <!--more-->
-
-Computing devices perform activities and processes that upon completion result into logs that are stored as files. This log data can be present in servers (i.e. from completed user authentication processes) as well as mobile devices (i.e from activity log).
-The Elastic stack (ELK) provides a log management platform of these log files.
-
+Computing devices perform activities and processes that upon completion result in logs that are stored as files. This log data can be present in servers (i.e. from completed user authentication processes) as well as mobile devices (i.e from activity log).
+The Elastic stack (ELK) provides a log management platform for these log files.
 ### Overview
 This article will cover:
 
@@ -32,11 +29,10 @@ This article will cover:
 
 - [Benefits of using ELK](#Benefits-of-using-ELK)
 
-### What is Elastic Stack
+### What is Elastic stack
+Elastic stack, popularly known as the ELK stack, is a bundle of software tools that provide the ability to search, view and manage log files. The ELK stack processes the logs (in any format) from all systems and applications in use and stores them as a JSON document.
 
-Elastic stack, popularly known as the ELK stack, is a bundle of software tools that provide the ability to search, view and manage log files. The ELK stack processes the logs(in any format) from all systems and applications in use and stores them as a JSON document.
-
-The ELK gives users the ability to analyze these logs to create meaningful visualisations, perform infrastructure and system monitoring, do efficient troubleshooting and even identify and raise security issues.
+The ELK gives users the ability to analyze these logs, to create meaningful visualisations, to perform infrastructure and system monitoring, allows develepors to do efficient troubleshooting, identify, and raise security issues.
 
 The ELK stack is popular because it is an open-source software. Along with this, it is an easily scalable software which makes it the perfect choice for personal use as well as deploying it in your organization.
 
