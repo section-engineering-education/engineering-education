@@ -14,7 +14,7 @@ There is an increase in mobile devices in the world. Organizations are concentra
 
 ### Installing B4A
 
-- Kindly follow this [Tutorial](https://www.section.io/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/).
+- Kindly follow this [tutorial](https://www.section.io/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/).
 
 ### Installing Xampp
 
@@ -143,7 +143,7 @@ Select job
                 'success message
                 ToastMessageShow("Saved",False)
                 'Clear text in editText
-                EditText1.Text=""
+                 EditText1.Text=""
             Else
 
                 ToastMessageShow("Check your internet connection",False)
@@ -163,7 +163,7 @@ End Sub
 
 `Our database will be called b4a-php-db`
 
-![Create Database](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-databaseP/create-database.png)
+![Create Database](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/create-database.png)
 
 - We need to create a table named `student_name` in the database `b4a-php-db`. With the database selected, navigate to the `SQL` tab in phpMyadmin and run the command below. This creates a new table named `student_name`.
 
