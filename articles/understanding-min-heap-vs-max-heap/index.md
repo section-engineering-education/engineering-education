@@ -1,4 +1,4 @@
-A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. They reduce the normal run time with polynomial order. There are two types of heaps: Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
+A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. The constant time taken is [Big O](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is regardless of the data stored in the heap. There are two types of heaps: Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
 
 ### Prerequisites
 
@@ -121,7 +121,7 @@ With a min-heap data structure, the minimum element is at index `1`.
 In the same file, under `getMin()` function, we add up the functionality:
 
 ```javascript
-getMin(){
+function getMin(){
     return heap[1];
 };
 
@@ -373,7 +373,7 @@ insert(100);
 insert(120);
 insert(1000);
 
-console.log(getMax();
+console.log(getMax());
 ```
 
 Expected output:
@@ -501,7 +501,7 @@ From the above function:
 
 ### Why we need heaps?
 
-- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation)(n) whereas heaps can access the minimum or maximum element present in [`Big O`](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is crucial while processing large data sets. n refers to the number of data sets.
+- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in Big O (n) whereas heaps can access the minimum or maximum element present in Big O (1). This is crucial while processing large data sets. n refers to the number of data sets.
 
 ### Application of heaps
 
