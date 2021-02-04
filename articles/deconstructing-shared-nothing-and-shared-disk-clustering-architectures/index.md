@@ -65,7 +65,7 @@ Shared-nothing clustering deals with data that is independently stored in separa
 [Load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)#) is the process that a computer or processor uses to distribute tasks over specific system resources. The aim is usually to make this transmission more efficient. On that note, shared-nothing clustering architecture has a fixed load balancing, whereas the shared-disk clustering architect has a dynamic loading balancing, which is progressive.
 
 ### Summary of features
-| Feature | Shared Nothing Clustering Architecture | Shared Disk Clustering Architecture |
+| Feature | Shared Nothing | Shared Disk |
 | --- | --- | --- |
 | Scalability according to performance | It can only expand to a limited level | Scalability is unlimited when the right optimization steps are taken |
 | Scalability according to capacity | Easily scalable | It can be upgraded memory-wise |
