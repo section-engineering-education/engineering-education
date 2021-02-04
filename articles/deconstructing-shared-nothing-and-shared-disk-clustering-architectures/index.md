@@ -1,3 +1,4 @@
+
 When business shifted to the digital realm, there rose a need to keep the business running around the clock. Unlike physical shops, the internet never sleeps, and online shops operate throughout the day and night. Any company operating online knows that any disruptions, for any reason whatsoever, might be detrimental to the sales and growth of the business. And that need gave rise to the usage of clustering.
 
 Many companies have embraced clustering as a way to increase the computing capabilities and availability of their hardware. Clustering involves using multiple processors to handle problems better, faster, and more reliable than a single computer.
