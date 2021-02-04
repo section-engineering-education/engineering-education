@@ -1,4 +1,3 @@
-
 When business shifted to the digital realm, there rose a need to keep the business running around the clock. Unlike physical shops, the internet never sleeps, and online shops operate throughout the day and night. Any company operating online knows that any disruptions, for any reason whatsoever, might be detrimental to the sales and growth of the business. And that need gave rise to the usage of clustering.
 
 Many companies have embraced clustering as a way to increase the computing capabilities and availability of their hardware. Clustering involves using multiple processors to handle problems better, faster, and more reliable than a single computer.
@@ -55,7 +54,17 @@ Shared-nothing clustering deals with data that is independently stored in separa
 
 #### Load balancing
 
-[Load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)#) is the process that a computer or processor uses to distribute tasks over specific system resources. The aim is usually to make this transmission more efficient. On that note, shared-nothing clustering architecture has a fixed load balance, whereas the shared-disk clustering architect has a dynamic loading balance, which is progressive.
+[Load balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)#) is the process that a computer or processor uses to distribute tasks over specific system resources. The aim is usually to make this transmission more efficient. On that note, shared-nothing clustering architecture has a fixed load balancing, whereas the shared-disk clustering architect has a dynamic loading balancing, which is progressive.
+
+### Summary of features
+
+| Feature | Shared Nothing Clustering Architecture | Shared Disk Clustering Architecture |
+| --- | --- | --- |
+| Scalability according to performance | It can only expand to a limited level | Scalability is unlimited when the right optimization steps are taken |
+| Scalability according to capacity | Easily scalable | It can be upgraded memory-wise |
+| Availability | Highly available | Has a limited availability |
+| Data storage | Data can be partitioned and summoned | Data cannot be separated |
+| Load balancing | Has a fixed load balancing | has a dynamic loading balancing |
 
 ### Conclusion
 
