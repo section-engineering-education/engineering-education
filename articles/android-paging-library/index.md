@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/android-paging-library/
 title: Paging in Android
-description: This article takes the reader through integrating paging library into an android application. Paging library helps in fetching data in page sets rather than a single list.
+description: This article takes the reader through integrating paging library into an Android application. Paging library helps in fetching data in page sets rather than a single list.
 author: linus-muema
-date: 2021-01-27T00:00:00-14:00
+date: 2021-02-04T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,22 +14,26 @@ images:
   - url: /engineering-education/android-paging-library/hero.png
     alt: Paging image example
 ---
-With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. A good approach would be to split the data into "pages" and show it to the user one "page" after another. Some restful services like [The Dog API](https://docs.thedogapi.com/) have adopted this technique.
+With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. 
 <!--more-->
-In Android, achieving such workflow has proved to be a tedious process that can get messy if not handled well. That is where the [paging library](https://developer.android.com/topic/libraries/architecture/paging) comes in to help. It ensures a clean flow of data by observing the user's scrolling process. The basic flow is, once a user nears the end of a recyclerview, the library fetches the next set of data and updates the recyclerview. In this tutorial, we shall integrate the paging library into an Android application.
+A good approach would be to split the data into "pages" and show it to the user one "page" after another. Some restful services like [The Dog API](https://docs.thedogapi.com/) have adopted this technique. In Android, achieving such a workflow has proved to be a tedious process that can get messy if not handled well. 
 
-**NOTE: _this tutorial uses version 2 of the paging library at the time of publishing. Version 3 is in `alpha` and not suitable for production_**
+That is where the [paging library](https://developer.android.com/topic/libraries/architecture/paging) comes into play. It ensures a clean flow of data by observing the user's scrolling process. 
+
+The basic flow is, once a user nears the end of a recyclerview, the library fetches the next set of data and updates the recyclerview. In this tutorial, we shall integrate the paging library into an Android application.
+
+***NOTE: This tutorial uses version 2 of the paging library at the time of publishing. Version 3 is in `alpha` and not suitable for production.***
 
 ### Prerequisites
 To follow through the article, you will need:
 - Android Studio installed
-- Basic understanding of Kotlin
-- Experience with the [Room library](/engineering-education/introduction-to-room-db).
+- A basic understanding of Kotlin
+- Some experience with the [Room library](/engineering-education/introduction-to-room-db).
 
-### Step 1 — Getting the starting code
-You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d166e765a3f8107eee2745954.zip) the starting code for this tutorial on GitHub.
+### Step 1 — Getting the starter code
+You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d166e765a3f8107eee2745954.zip) the starter code for this tutorial on GitHub.
 
-In the starting code, we have a `RoomDatabase.Callback` that populates our local database with 50 users on creation. We shall be using this data to demonstrate the paging library.
+In the starter code, we have a `RoomDatabase.Callback` that populates our local database with 50 users on creation. We shall be using this data to demonstrate the paging library.
 
 ### Step 2 — Reading data from Room
 In the `AppDao` interface, we have a function to read data from our database. It has a return type of `DataSource.Factory<Int, User>`. `DataSource` is used to load our data in form of pages into a `PagedList` once it is requested.
@@ -49,6 +53,7 @@ class UsersAdapter: PagedListAdapter<User, UserViewHolder>() {
     }
 }
 ```
+
 We infer two types in the `PagedListAdapter`: the data type of each list item and the `viewholder`.
 
 In the same file, create the `UserViewHolder` class and make it extend the `RecyclerView.ViewHolder` class.
@@ -71,7 +76,9 @@ The application uses the [ViewBinding](https://developer.android.com/topic/libra
 class UserViewHolder(private val binding: ListItemBinding): RecyclerView.ViewHolder(binding.root)
 ```
 
-In the `onBindViewHolder`, we take care of binding the data to the viewholder. Add the following code:
+In the `onBindViewHolder`, we take care of binding the data to the viewholder. 
+
+Add the following code:
 
 ```kotlin
 override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
@@ -108,7 +115,7 @@ private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<User>() {
 
 We use the `DiffUtil` to check the difference in multiple lists for correct positioning and animations wherever needed. You can go through [this article](https://medium.com/@sienatime/investigating-pagedlistadapter-performance-and-diffutil-970a20285a24) for a better understanding of the purpose of this util class.
 
-And our adapter is now ready to be used.
+Our adapter is now ready to be used.
 
 ### Step 4 — Finishing up
 In our `MainViewModel`, get an instance of the database in order to access the dao. Then get the datasource and convert it to `LiveData`.
@@ -118,7 +125,7 @@ private val dao = AppDatabase.getDatabase(application).dao()
 val users = dao.getUsers().toLiveData(pageSize = 10)
 ```
 
-We pass in the page size to define how many items will be emitted at once. So, our data will have 5 pages or rather, 5 `PageList` objects will be emitted.
+We pass in the page size to define how many items will be emitted at once. Now, our data will have 5 pages or rather, 5 `PageList` objects will be emitted.
 
 Create an instance of our adapter. Then observe the value in the `MainActivity`. Once a value is emitted, submit the list to the adapter.
 
@@ -148,10 +155,14 @@ class MainActivity : AppCompatActivity() {
 
 Once you run the application, you should get a list of the users.
 
-**NOTE: _Don't forget to add the internet permission in the application manifest for the image downloading_**
+***NOTE: Don't forget to add internet permission in the application manifest for image downloading.***
 
 ### Conclusion
-That is how you implement the paging library in an android application. The setup is similar to the recyclerview setup and is also quite easy. The library also ensures a good flow of data when updating your list. Next up we shall check on migrating to paging library version 3. You can go ahead and check the final code on [GitHub](https://github.com/LinusMuema/kotlin/tree/paging-2). Feel free to raise any issue or PR.
+We just went through how you implement the paging library in an Android application. The setup is similar to the recyclerview setup and is also quite simple. The library also ensures a good flow of data when updating your list. Next up we shall check on migrating to paging library version 3. You can go ahead and check the final code on [GitHub](https://github.com/LinusMuema/kotlin/tree/paging-2). 
+
+Feel free to raise any issue or PR.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
