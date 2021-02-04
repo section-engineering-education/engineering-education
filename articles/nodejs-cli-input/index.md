@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/nodejs-cli-input/
 title: Node.js CLI Input
-description: This tutorial will give readers a detailed guide on how to get input from a user in a Node.js CLI application.
+description: This tutorial will give readers a detailed guide on how to get input from a user in a Node.js CLI application. We will be using event listeners and async iterators.
 author: mohan-raj
-date: 2021-01-14T00:00:00-18:00
+date: 2021-02-04T00:00:00-08:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -16,17 +16,14 @@ images:
 ---
 In this tutorial, we will learn how to get user input in a Node.js CLI application. To do this, you'll need to listen to `STDIN` (Standard Input), which Node.js exposes as `process.stdin`, a readable stream.
 <!--more-->
-
 Streams are used to deal with I/O. You can learn more about it in this [documentation](https://nodejs.org/api/stream.html).
 
 ### Prerequisites
-
 - You should have an understanding of the JavaScript language.
 
 - You should have [Node.js](https://nodejs.org/en/) installed on your computer.
 
 ### Overview
-
 1. [Project Setup](#project-setup)
 2. [Readline Package](#readline-package)
 3. [Callback Hell](#callback-hell)
@@ -34,12 +31,12 @@ Streams are used to deal with I/O. You can learn more about it in this [document
 5. [Readline Sync Package](#readline-sync-package)
 6. [Recap](#lets-recap)
 
-### Project Setup
-
+### Project setup
 To get started, let’s set up our project.
 
-Create a new directory called `node-cli-input`. Inside the directory, run:
+Create a new directory called `node-cli-input`. 
 
+Inside the directory, run:
 ```bash
 npm init -y
 ```
@@ -48,8 +45,7 @@ This will generate a `package.json` file.
 
 Once that's done, create a new file called `index.js` to write our code.
 
-### Readline Package
-
+### Readline package
 The `readline` package is a built-in package in Node.js. `readline` is a wrapper around the standard I/O.
 
 Let's import the `readline` package into our `index.js` file. 
@@ -67,11 +63,12 @@ const rl = readline.createInterface({
 });
 ```
 
-We can ask a question to the user using the `rl.question()` method. The `rl.question()` method takes 2 arguments:
+We can ask a question to the user using the `rl.question()` method. 
 
+The `rl.question()` method takes 2 arguments:
 - **String**: This string will be displayed as the question to the user.
 
-- **Callback Function**: The `rl.question()` method will wait until the user provides input. Once the user provides input, this callback function will be executed. The callback function will get the user's input as an argument.
+- **Callback function**: The `rl.question()` method will wait until the user provides input. Once the user provides input, this callback function will be executed. The callback function will get the user's input as an argument.
 
 > NOTE: We should close the streams using the `rl.close()` method inside the callback function. If not closed, the process will remain in an idle state.
 
@@ -109,8 +106,7 @@ Streams Closed
 
 You can learn more about the `readline` package from it's [documentation](https://nodejs.org/api/readline.html).
 
-### Callback Hell
-
+### Callback hell
 The problem with the `rl.question()` method is, it doesn't return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Thus, we can't use [async/await](https://javascript.info/async-await) to pause the flow of the program until the user provides the input.
 
 If you want to get multiple user inputs in sequence, you have to do it within a callback function, like this:
@@ -136,11 +132,10 @@ rl.question("Question 1? ", (answer1) => {
 
 As you can see, this can quickly get out of control and the code will be hard to manage.
 
-### Async Iterator
-
+### Async iterator
 Asynchronous iteration allows us to iterate over data that comes asynchronously, on-demand. You can create an async iterator that iterates through each line in the input stream.
 
-If you'd like to learn more about Async Iterators, refer to this [article](https://blog.risingstack.com/async-iterators-in-node-js/). 
+If you'd like to learn more about Async iterators, refer to this [article](https://blog.risingstack.com/async-iterators-in-node-js/). 
 
 ```JavaScript
 for await (const line of rl) {
@@ -187,9 +182,8 @@ async function main() {
 main();
 ```
 
-### Readline Sync Package
-
-If you don't mind installing an external package, which will increase the bundle size of the CLI application you are building, you can use the `readline-sync` package to get the input from the user in a synchronous manner.
+### Readline sync package
+If you don't mind installing an external package, that will increase the bundle size of the CLI application you are building, you can use the `readline-sync` package to get the input from the user in a synchronous manner.
 
 Let's install the `readline-sync` by running:
 
@@ -249,8 +243,7 @@ White
 
 You can learn more about the `readline-sync` package and the other methods that are available from it's [npm page](https://www.npmjs.com/package/readline-sync).
 
-### Let's Recap
-
+### Let's recap
 1. We used the `readline` package to prompt input from the user.
 
 2. We added an event listener for the readline stream's `close` event.
