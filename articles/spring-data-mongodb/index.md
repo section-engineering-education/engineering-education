@@ -1,15 +1,16 @@
 ### Spring Data MongoDB
+Spring Data MongoDB makes it possible to integrate a Spring Boot application with Mongo document database.
 
 ### Prerequisites
-1. JDK installed on your computer.
-2. Favourite IDE.
+1. [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your computer.
+2. Your favorite IDE. I use [Intellij IDEA](https://www.jetbrains.com/idea/download/download-thanks.html) community edition.
 3. Some knowledge of [Java](https://www.javatpoint.com/java-tutorial) and [Spring Boot](https://spring.io/projects/spring-boot).
 4. [MongoDB](https://www.mongodb.com/try/download/community) installed on your computer.
 
 ### MongoDB terminology
-**Database** It is a container for collections and can be thought of as similar to an RDBMS database, which is a container for Tables.
-**Collection** It is equivalent to Tables in RDBMS, but unlike a collection, it has a dynamic schema. A collection exists within a database.
-**Document** It is a single record in a MongoDB collection. It can be thought of as a row in RDBMS.
+**Database** is a container for collections and can be thought of as similar to an RDBMS database, which is a container for Tables.
+**Collection** is equivalent to Tables in RDBMS, but unlike a table, it has a dynamic schema. A collection exists within a database.
+**Document** is a single record in a MongoDB collection. It can be thought of as a row in RDBMS.
 **Field** A document has zero or more fields. It's like an RDBMS column having a key-value pair.
 **Embedded document** is an efficient and clean way to store related data, especially data that are regularly accessed together
 **Primary key** uniquely identities a document.
@@ -83,6 +84,9 @@ class TodoController(val todoService: TodoService) {
 
 }
 ```
+- `@CrossOrigin` annotation is used to configure the allowed origins.
+- `@RestController` annotation is used to define a controller and to indicate that the return value of the methods should be bound to the web response body.
+- `@RequestMapping` declares that all APIs URL in the controller will start with `/api/v1/todos/`.
 
 ### Repository Layer
 In the root package of our application create a package named `repository` and create a kotlin file named `TodoRepository.kt`  within the `repository` package, add the code snippet below.
@@ -93,6 +97,8 @@ interface TodoRepository : MongoRepository<Todo, String> {
 - `interface TodoRepository` interface extends the `MongoRepository` interface that contains all the CRUD functions that we will use to query our MongoDB collection.
   
 ### Service layer
+In the root project package, create a package name `service` and add two kotlin files `TodoService.kt`, `TodoServiceImpl` with the code snippets below respectively.
+
 ```kotlin
 interface TodoService {
     fun saveTodo(todo: Todo)
@@ -147,12 +153,18 @@ class TodoServiceImpl(val todoRepository: TodoRepository) : TodoService {
 }
 ```
 ### Configurations
+In the resources directory, open the `application.properties` file in your IDE and add the configurations below.
 ```yaml
 spring.data.mongodb.database=todo_db
 spring.data.mongodb.port=27017
 
 ```
-
-### Testing the endpoints
+- `spring.data.mongodb.database=todo_db` indicates that our database name is `todo_db`.
+- `spring.data.mongodb.port=27017` indicates that we will be connecting to mongodb through port `27017`.
 
 ### Conclusion
+Now that you have learned how to create a Spring Boot CRUD API in Kotlin and MongoDB, Add fields `dateCreated` and `lastModified` in the `Todo` data class.
+
+Find the source code [here](https://github.com/paulodhiambo/mongodb).
+
+Happy coding.
