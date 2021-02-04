@@ -16,13 +16,13 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 Create database userdata;
 ```
 
-![DATABASE CREATION]((/engineering-education/create-login-and-register-system-with-C#-winforms/create-db-cmd.png))
+![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-C#-winforms/create-db-cmd.png)
 
 Create table command
 
 ``` sql
 
-CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(200) NOT NULL , `username` VARCHAR(100) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ;
+CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
 ![TABLE CREATION](/engineering-education/create-login-and-register-system-with-C#-winforms/create-table-cmd.png)
