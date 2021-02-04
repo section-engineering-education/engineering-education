@@ -78,7 +78,7 @@ The shared-nothing and the shared-disk clustering architecture systems have diff
 
 That said, one may be suited for one type of business and fail in another sector. The shared-nothing is perfect for computing and database tasks that call for the analytical processing of information stored in multiple data warehouses. While shared-disk is ideal to be used in an establishment that analyses data that has to be in one place and never partitioned. 
 
-As we can see both are fundamental.
+As we can see, both are fundamental.
 
 Happy coding!
 
