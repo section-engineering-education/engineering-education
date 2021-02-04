@@ -9,20 +9,20 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 * Running relational database management in this case, we will use [MySQL](https://www.mysql.com/).
 * Visual Studio Knowledge.
 
-### Step I: Create a database and table with required columns.
+### Step I: Create a database and table with required columns
 
-``` sql
+```sql
 
-Create database userdata;
+   Create database userdata;
 ```
 
 ![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-db-cmd.png)
 
 Create table command
 
-``` sql
+```sql
 
-CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
+    CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
 ![TABLE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-table-cmd.png)
@@ -35,7 +35,7 @@ Give your application a name. Then click ok.
 
 The project will come with default form call a Form1.cs
 
-### Step III: Create a Config class to execute MySQL queries.
+### Step III: Create a Config class to execute MySQL queries
 
 Since C# is object-oriented, we will create a class that will handle the execution of queries that we will use in our program.
 
@@ -50,7 +50,7 @@ From Solution Explorer window right-click and select add -> New Item -> Class. N
 Config.cs
 
 
-``` c#
+```c#
 
 using System;
 using System.Collections.Generic;
@@ -119,7 +119,6 @@ namespace LoginSysten
                 cs.Open();
                 MySqlCommand myc = new MySqlCommand(sql_comm, cs);
                 myc.ExecuteNonQuery();
-
                 cs.Close();
 
 
@@ -221,13 +220,13 @@ namespace LoginSysten
 
 - Now that we have Config.cs, we can execute any MySQL statement.
 
-### Step IV: Create Register Windows form.
+### Step IV: Create register windows form
 
 In Microsoft Visual Studio, create a new project. Choose PROJECT -> Add Windows Form from File submenu in the left corner, give the form a name `Register` , and click Add.
 
 We have two Windows form classes that is Form1.cs and Register.cs.
 
-### Step V: Design Login and Register interface.
+### Step V: Design login and register interface
 
 ### Login form
 
@@ -253,18 +252,17 @@ The labels will indicate the functionality of the three textboxes.
 
 ![REGISTER INTERFACE](/engineering-education/create-login-and-register-system-with-csharp-winforms/register-interface.jpg)
 
-### Step VI: Login Logic.
+### Step VI: Login logic.
 
 - Initialize the Config file in Form1.cs to allow us to access the database with ease.
 
-``` c#
+```c#
 
  // Initialize the connection class
         Config db = new Config();
         public Form1()
         {
             InitializeComponent();
-
             // pass the database you want to connect to
             db.Connect("userdata");
         }
@@ -272,17 +270,16 @@ The labels will indicate the functionality of the three textboxes.
 
 On click of the register button, add the following code
 
-``` c#
+```c#
 
  // start register window
             Register register = new Register();
-
             register.Show();
 ```
 
 On click of the login button, add the following code.
 
-``` c#
+```c#
 
   // querry MySQL database for the data passed from textboxes
             db.ExecuteSelect("SELECT * FROM `user_info` where username='" + textBox1.Text+ "' and password ='" + textBox2.Text+"'");
@@ -299,7 +296,7 @@ On click of the login button, add the following code.
 
 On click of the exit button, add the following code.
 
-``` c#
+```c#
 
   private void button3_Click(object sender, EventArgs e)
         {
@@ -310,7 +307,7 @@ On click of the exit button, add the following code.
 
 Final Form1.cs.
 
-``` c#
+```c#
 
 using System;
 using System.Collections.Generic;
@@ -372,11 +369,11 @@ namespace LoginSysten
 
 ```
 
-### Step VII: Register Logic.
+### Step VII: Register logic.
 
 - Initialize the Config file in Register.cs to allow us to access the database with ease.
 
-``` c#
+```c#
 
   Config db = new Config();
         public Register()
@@ -390,7 +387,7 @@ namespace LoginSysten
 
 On click of the exit button, add the following code.
 
-``` c#
+```c#
 
  private void button3_Click(object sender, EventArgs e)
         {
@@ -401,7 +398,7 @@ On click of the exit button, add the following code.
 
 On click of the register button, add the following code to save the information.
 
-``` c#
+```c#
 
      private void button2_Click(object sender, EventArgs e)
         {
