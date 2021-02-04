@@ -1,8 +1,8 @@
 ### Prerequisites
-1. This is an indepth resource on the basic concepts of systemd 
-2. It requires familiarity with basic Linux commands.
-3. An understanding of Linux processes, daemons and cgroups is also required.
-4. The reference section contains links to resources referenced in this article
+1. Familiarity with basic Linux commands.
+2. An understanding of Linux processes, daemons and cgroups.
+
+NB: The reference section contains links to resources referenced in this article
 
 ---
 ### Introduction
@@ -56,7 +56,7 @@ systemd on the flip-side takes a different approach towards writing configuratio
 
 [ULSAH](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554) gives a succinct description on systemd's mode of operation:
 
-*Much like a package management system, systemd defines a robust dependency model, not only among services but also among "targets," systemd's term for the operational modes that traditional init calls runlevels. systemd not only manages processes in parallel, but also manages network connections (networkd), kernel log entries (journald), and logins (logind).*
+>Much like a package management system, systemd defines a robust dependency model, not only among services but also among "targets," systemd's term for the operational modes that traditional init calls runlevels. systemd not only manages processes in parallel, but also manages network connections (networkd), kernel log entries (journald), and logins (logind).
 
 systemd is also compatible with existing init scripts of System V.
 
@@ -68,7 +68,8 @@ During boot time systemd loads its configuration, determines its boot goal and d
 systemd also doesn't follow a sequential pattern for starting services. Rather, a flexible process by which extra components activate when system events occur.
 
 The systemd Linux manual states that systemd provides a dependency system between various entities called "units".
-Units encapsulate various objects that are relevant for system boot-up and maintenance. A **unit type** is a type of task relevant to the management of a Linux system. A task is a unit in systemd parlance. These units are a standardized representation of system resources managed by the suite of systemd daemons. 
+Units encapsulate various objects that are relevant for system boot-up and maintenance.
+> A **unit type** is a type of **task that's relevant** to the management of a Linux system. A task is a unit in systemd parlance. These units are a standardized representation of system resources managed by the suite of systemd daemons. 
 
 There are default unit files supplied by the packages of the service that usually reside in **/lib/systemd/system/**.  These files are vendor-written and can be overwritten by the package maintainer in the event of a package update. User-specific configurations for units are usually made in **/etc/systemd/system/** because the unit files in this location won't be overwritten in the event of a package upgrade.
 
@@ -261,11 +262,11 @@ systemd standardizes how Linux-based systems should be managed. This is differen
 
 We've also discussed the Sys V-based issues and how systemd surmounts them. But it is only little of systemd's capabilities that I can fit in this article. Archlinux intro paragraph to their wiki on systemd says:
 
-*systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux control groups, maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic.*
+>systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux control groups, maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic.
 
 Like this isn't huge enough, it still goes on to say:
 
-*systemd supports SysV and LSB init scripts and works as a replacement for sysvinit. Other parts include a logging daemon, utilities to control basic system configuration like the hostname, date, locale, maintain a list of logged-in users and running containers and virtual machines, system accounts, runtime directories and settings, and daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.*
+>systemd supports SysV and LSB init scripts and works as a replacement for sysvinit. Other parts include a logging daemon, utilities to control basic system configuration like the hostname, date, locale, maintain a list of logged-in users and running containers and virtual machines, system accounts, runtime directories and settings, and daemons to manage simple network configuration, network time synchronization, log forwarding, and name resolution.
 
 So to experience and use the power of systemd to its full glory, I'd advise you to study further. Links to resources and materials referenced in this can be found below.
 
