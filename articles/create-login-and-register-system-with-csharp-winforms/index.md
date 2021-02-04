@@ -16,7 +16,7 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 Create database userdata;
 ```
 
-![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-C#-winforms/create-db-cmd.png)
+![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-db-cmd.png)
 
 Create table command
 
@@ -25,7 +25,7 @@ Create table command
 CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
-![TABLE CREATION](/engineering-education/create-login-and-register-system-with-C#-winforms/create-table-cmd.png)
+![TABLE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-table-cmd.png)
 
 ### Step II: Create Project
 
@@ -43,7 +43,7 @@ From Solution Explorer window right-click and select add -> New Item -> Class. N
 
 - Add MySQL.Data Library by right-clicking on solution explorer window, then Manage Nuget packages, then search for MySQL.Data Library and install
 
-![MYSQL LIBRARY](/engineering-education/create-login-and-register-system-with-C#-winforms/add-mysql-lib-vs.jpg)
+![MYSQL LIBRARY](/engineering-education/create-login-and-register-system-with-csharp-winforms/add-mysql-lib-vs.jpg)
 
 - Add the following class to help in the execution of MySQL queries.
 
@@ -239,7 +239,7 @@ The first textbox will allow username input for login, while the second textbox 
 
 The labels will indicate the functionality of the two textboxes.
 
-![LOGIN INTERFACE](/engineering-education/create-login-and-register-system-with-C#-winforms/login-interface.jpg)
+![LOGIN INTERFACE](/engineering-education/create-login-and-register-system-with-csharp-winforms/login-interface.jpg)
 
 ### Register form
 
@@ -251,7 +251,7 @@ The first textbox will allow input of names for the user, the second textbox wil
 
 The labels will indicate the functionality of the three textboxes.
 
-![REGISTER INTERFACE](/engineering-education/create-login-and-register-system-with-C#-winforms/register-interface.jpg)
+![REGISTER INTERFACE](/engineering-education/create-login-and-register-system-with-csharp-winforms/register-interface.jpg)
 
 ### Step VI: Login Logic.
 
