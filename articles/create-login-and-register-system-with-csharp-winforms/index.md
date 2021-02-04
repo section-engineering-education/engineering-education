@@ -7,7 +7,7 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 * A code editor a good example is [Visual Studio](https://visualstudio.microsoft.com/vs/).
 * Knowledge of C#, SQL.
 * Running relational database management in this case, we will use [MySQL](https://www.mysql.com/).
-* Visual Studio Knowledge.
+* Visual Studio knowledge and how to create projects.
 
 ### Step I: Create a database and table with required columns
 
