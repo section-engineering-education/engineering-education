@@ -1,62 +1,54 @@
-# Building a React.js Application Using Django REST framework
+### Building a React.js Application Using Django REST framework
 
 ![admin panel](header.jpg)
 
-## Introduction
+### Introduction
 
 In this article, we build a Todo application using React and Django.
 
 [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs.
 
-[Django](https://www.djangoproject.com/) is a python web framework that simplifies common practices in web development making it easier to build web apps more quickly. It has a stable community and problems have been solved, and there is a set of libraries supporting common development needs.
+[Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
 
 We are going to create an application that consumes [React](https://reactjs.org/) for user interface and [Django](https://www.djangoproject.com/) which render an API to the frontend of our application using Django REST framework(DRF).
 
-## Prerequisites
+### Prerequisites
 Knowledge of `React`, `Python(Django)` is required but I will be able to try and boil things down as possible.
 
 Before getting our hands dirty, you may need to need to:
-1. [Install and set up environment for Python3](https://www.python.org/downloads/)
-2. [Install Node.js and create a Local Development](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+1. [Have python3 installed](https://www.python.org/downloads/)
+2. [Have Node.js installed](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 
-## Step 1: Creating Backend
-We will start by setting our backend and creating all the folders. Launch a new terminal and create the project's directory by running:
+### Step 1: Backend using Django
+From terminal create a new project directory called `django-react-todoApp`
 
 ```
 $ mkdir django-react-todoApp
-```
-Then, we move thereto directory:
-```
 $ cd django-react-todoApp
 ```
-We then install Pipenv using pip and activate our virtual environment;
+We must have pip and virtual environment activated to be able to install django. 
 ```
 $ pip install pipenv
 $ pipenv shell
 ```
-Using Pipenv it is time to make a project called backend:
+Install django and create a project, `backend`:
 ```
 $ pipenv install django
 $ django-admin startproject backend
 ```
-We then do the commands below and start a new app called todo. We then do migrations to have all the changes in history then start up the server.
+Since we already have our project, we go ahead and create an application todo and migrate to add our models into the database schema.
 ```
 $ cd backend
 $ python manage.py startapp todo
 $ python manage.py migrate
 $ python manage.py runserver
 ```
-At this time, we should always see an instance of django application running on this address - http://localhost:8000
+If everything works you should see the Congratulations page from Django.
 
-Great! You ought to be proud :<3
-
-## Registering the Todo Application
-
-After setting the backend, we would like to register our app `todo` as an installed app in order that Django can recognise it. Head to `backend/settings.py` file and update the `INSTALLED_APPS` section:
+ Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
 ```python
 # backend/settings.py
 
-# Application definition
 INSTALLED_APPS = [
     
     'django.contrib.admin',
@@ -68,8 +60,7 @@ INSTALLED_APPS = [
     'todo',                        # Add this
 ]
 ```
-## Defining the Todo model
-We now want to form a model to define how the Todo items, modify `todo/models.py` with this subsequent snippet:
+We now want to form a model to specify the Todo item fields, modify `todo/models.py` as follows:
 ```python
 # todo/models.py
 from django.db import models
@@ -84,18 +75,18 @@ class Todo(models.Model):
    def _str_(self):
      return self.title
 ```
-The code explains three attributes on the Todo model:
+The code explains:
 * Title; What the task is.
 * Description; Give more explanation about a particular task.
 * Completed; Completed is the status of a task; either completed or not completed.
-Since we've got created a Todo model, we'd like to form a migration file and apply the changes to the database, so let's run these commands:
+
+Let us run migrations to add our model to the database schema.
 ```
 $ python manage.py makemigrations todo
 $ python manage.py migrate todo
 ```
-Next we are going to do some bit of configuration.
 
-Update the `todo/admin.py` file:
+We can add models to our Admin page using the `admin.site.register()` functions. Inside our app's `admin.py` we can add the models to our administration page.
 ```python
 # todo/admin.py
 
@@ -108,37 +99,32 @@ class TodoAdmin(admin.ModelAdmin):
   # Register your models here
   admin.site.register(Todo, TodoAdmin)
 ```
-To create a superuser account to access the admin dashboard we run:
+
+An administration page is crucial to any website that deals with dynamic content. Django was built to make that functionality easier.
 ```
 $ python manage.py createsuperuser
 ```
-A username, email and a password will be required to continue creating the superuser.
+This will prompt you to enter the `username`, `email`, `password`, `password(again)`. We can open the admin page using the following link `http://localhost:8000/admin`
 
-NB: Make sure to remember the credentials you enter since you will need them to log in to the admin dashboard.
-
-Start the server all over again and log in on the address - http://localhost:8000/admin
 ```
 $ python manage.py runserver
 ```
 ![admin dashboard](admin.jpg)
 
-We can act and make, edit and delete Todo items using the interface. Try creating and deleting some.
+We can now add and delete items from the admin page. Great!
 
 ![admin panel](adminpanel.jpg)
 
 
-Good job! Take prospect and reflect on what we've got done to this point. In the following section we'll build the API using the Django REST framework.
-
-## Step 2: Putting in the APIs
+### Step 2: Putting in the APIs
 You can learn more about APIs in this amazing [article](https://www.section.io/engineering-education/rest-api/)
 
-Close the terminal(Ctrl-C) then install the `djangorestframework` and `django-cors-headers` using Pip environment:
+Install the `djangorestframework` and `django-cors-headers`
 ```
 $ pipenv install djangorestframework django-cors-headers
 ```
-We need to feature `rest_framework` and `corsheaders` to the installed applications.
+Add `rest_framework` and `corsheaders` to the `INSTALLED_APPS` in `backend/settings.py` file and modifiy the `MIDDLEWARE`:
 
-Head to `backend/settings.py` file and modifiy the `INSTALLED_APPS` and `MIDDLEWARE`:
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -163,20 +149,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
-Update this code to the underside of the `backend/settings.py` file
+Update this code to `backend/settings.py` file:
 ```python
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 ```
-Django-cors-headers helps in handling the server headers. Within the `CORS_ORIGIN_WHITELIST` snippet, we whitelisted `localhost:3000` because we would like the frontend (which are served thereon port) of the application to interact with the API.
+Django-cors-headers helps in handling the server headers. Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
-## Serializers for the Todo model
-Serializers help to convert model instances to JSON in order that the frontend can work with the received data easily. Create a `todo/serializers.py` file:
+Serializers in Django REST framework are responsible for converting objects(JSON) into datatypes to be consume by frontend frameworks. 
+Let us create a serializer file.
 ```
 $ touch todo/serializers.py
 ```
-Update the `serializers.py` file with the subsequent code:
+Let us add this to  `serializers.py` file:
 ```python
 # todo/serializers.py
 
@@ -188,8 +174,7 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = ('id' ,'title', 'description', 'completed')
 ```
-## Creating the view
-Next in line is `TodoView` class within the `todo/views.py` file, so modify it with the subsequent code:
+We also update our `todo/views.py`:
 ```python
 # todo/views.py
 
@@ -205,9 +190,7 @@ class TodoView(viewsets.ModelViewSet):   # add this
     queryset = Todo.objects.all()        # add this
 
 ```
-The `viewsets` base class enables CRUD operations by default, it specify the serializer class and also the query set.
-
-Let us roll over to `backend/urls.py` file and substitute it with the subsequent code below. It defines the URL route for the API:
+In the `backend/urls.py` we define the URL route for the API
 ```python
 # backend/urls.py
 
@@ -224,11 +207,11 @@ urlpatterns = [
     path('api/', include(router.urls))             # add this
 ]
 ```
-This is the ultimate step that completes the building of the API, The router class enables  us to create the subsequent operations:
+That completes the building of the API, The router class enables  us to create the subsequent operations:
+
 * `/todos/` - This returns an inventory of all the Todo items(Create and Read operations may be done here).
 * `todos/id` - Returns one Todo items by the id primary key.
 
-Restart the server and head to this port - http://localhost:8000/api/todos:
 ```
 $ python manage.py runserver
 ```
@@ -237,20 +220,18 @@ $ python manage.py runserver
 
 We have set our backend let us move forward to frontend.
 
-## Step 3: Putting in the frontend
-
-Now we are going to create our frontend and make it interact with the backend.
+### Step 3: Frontend using React
 
 To install `create-react-app` use the following command, `-g` stands for global as we are first installing `create-react-app` globally:
 ```
 $ npm install -g create-react-app
 ```
-Navigate to the parent directory - `django-react-todoApp`- of our application and make a new React application called frontend:
+While in the parent directory - `django-react-todoApp`- create a React application, `frontend`:
 ```
 $ create-react-app frontend
 ```
 
-Run the subsequent commands to start the frontend server:
+To start server:
 ```
 $ cd frontend
 $ npm start
@@ -290,7 +271,7 @@ body {
   background-color: #282c34;
   color: #ffffff; }
 ```
-Import Bootstrap in `src/index.js` to use the Bootstrap's classes:
+Import Bootstrap in `src/index.js`:
 ```javascript
 // frontend/src/index.js
 
@@ -308,7 +289,7 @@ ReactDOM.render(<App />,document.getElementById('root'));
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
-Substitute the code in `src/App.js` with the subsequent below:
+Substitute the code in `src/App.js`:
 ```javascript 
 // frontend/src/App.js
 
@@ -409,20 +390,16 @@ class App extends Component {
 }
 export default App;
 ```
-Well, that's plenty of code, but there's no need to be afraid now, we haven't started interacting with the backend API, so we included default values to populate the Todo list. `renderTabList` function passes spans that dictates group of things displayed.
+`renderTabList` function passes spans that dictates group of things displayed.
 
 Your User Interface should resemble the one below:
 
 ![frontend](todo.jpg)
+Modal component provide creating of dialogs, popovers this handles editing tasks.
 
-To handle actions like adding and editing tasks, we'll use a modal, so let's create a Modal component in `components` folder.
-
-Create a `components` folder within the `src` directory:
+In `src` directory create `components` and in the components folder create `Modal.js` file:
 ```
 $ mkdir src/components
-```
-Create a `Modal.js` file in the components folder:
-```
 $ touch src/components/Modal/js
 ```
 Update the  `Modal.js` file with the code below:
@@ -507,15 +484,10 @@ export default class CustomModal extends Component {
     }
 }
 ```
-The code above is a `CustomModal` class which encapsulates the Modal component it comes from the `reactstrap`. We also defined three fields in the form:
-* Title
-* Description
-* Completed
+`CustomModal` class which encapsulates the Modal component it comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
 
-`CustomModal` operates as follows, it receives `activeItem`, `toggle` and `onSave` as props.
-1. `activeItem` stands for the current item to be edited.
-2. `toggle` used to switch between the Modal's different states.
-3. `onSave` called to save the edited items.
+`CustomModal` accepts `activeItem`- stands for the current item to be edited `toggle` - used to switch between the Modal's different states and `onSave` - called to save the edited items.
+
 
 Head over to the `src/App.js` and replace it completely with this code snippet:
 ```javascript
@@ -669,8 +641,6 @@ The User Interface should be like below at this point:
 
 ![styled](styled.jpg)
 
-Clicking on save and delete still have no functionality. We will add the functionality in the following sections.
-
 It is time to consume the API we created earlier.
 ```
 $ cd backend
@@ -702,13 +672,12 @@ We will need to modify the `frontend/package.json`:
   },
   [...]
 ```
-The `axios` channels the API requests to the port http://localhost:8000 where the backend(Django) execute it, enabling frontend to serve the requests. 
+The `axios` channels the API requests to the port `http://localhost:8000` where the backend(Django) execute it, enabling frontend to serve the requests. 
 ```
 axios.get("/api/todos/")
 ```
-We will update the `frontend/src/App.js` so that it doesn't use dummy data we passed in the array but CRUD operations request from the backend server and lists them instead.
+To consume our API instead of the dummy data update the `frontend/src/App.js` with the snippet below:
 
-Replace `App.js` with this final snippet:
 ```javascript
 // frontend/src/App.js
 
@@ -858,11 +827,11 @@ class App extends Component {
 }
 export default App;
 ```
-The `refreshList()`is executed everytime an API request is completed. It modify the Todo tuple to show the latest items added.
+`refreshList()`is executed everytime an API request is completed. It modify the Todo tuple to show the latest items added.
 
-The `handleSubmit()` handles the create and update CRUD operations.
+`handleSubmit()` handles the create and update CRUD operations.
 
-## Step 4: Testing the Application
+### Step 4: Testing
 Let us test our application backend by doing the following:
 ```
 $ cd backend
@@ -875,12 +844,12 @@ $ npm start
 ```
 Check the address- http://localhost:8000 - to see the final look.
 
-## Conclusion
+### Conclusion
 We've come to the end of this tutorial and learnt how to configure Django and React to interact with each other. Hope you have learnt one thing or two from this.
 
 The source code for this application is available [here](https://github.com/OkothPius/React-todo-app) on Github.
 
-## Citations
+### Citations
 [Build a To-Do application using Django and React](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react)
 
 2020. English. Jordan Irabor. DigitalOcean
