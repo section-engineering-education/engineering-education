@@ -50,6 +50,8 @@ Recently, a fourth component, Beats, was added to the suite by the Elastic compa
 
 ![Flow diagram](/engineering-education/introduction-to-elastic-stack/flow-diagram.png)
 
+[Image Source](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZVZmZFPL7blODx-p4eva1gachnZ407hX1Eg&usqp=CAU
+)
 ### Components of the Elastic Stack
 1. ### Elasticsearch
 [**Elasticsearch**](https://www.elastic.co/elasticsearch/) is a distributed search and analytics engine (with Apache Lucene as the base). This distributed, open-source tool acts as the engine of the entire suite and supports all data types/formats i.e. texts, semi-structured data or even unstructured data.
