@@ -67,8 +67,6 @@ The search operations can be performed by some popular programming languages lik
 
 This software component can be installed and configured on-prem in Ubuntu, Windows, and Mac environments or be hosted and run on a cloud environment.
 
-![Elasticsearch](/engineering-education/introduction-to-elastic-stack/elastic-search-logo-color.png)
-
 2. ### Logstash
 [**Logstash**] (https://www.elastic.co/logstash) is an open source tool that imports data (logs), transforms and then sends them to Elasticsearch. Logstash uses pipeline architecture in the process of retrieving and sending data to Elasticsearch or other engines involved.
 
@@ -85,8 +83,6 @@ Logstash comes with several default configurations when installed but also allow
 
 - Plugin Support - allows other software components to be added to enhance its features.
 
-![Logstash](/engineering-education/introduction-to-elastic-stack/logstash-logo-color.png)
-
 3. ### Kibana
 [**Kibana**](https://www.elastic.co/kibana) is an open-source tool for data visualization and exploration that acts as a front end for the Elasticstack.
 
@@ -102,8 +98,6 @@ Kibana provides the following visualizations features:
 - Maps
 
 - Time Series Visual Builder (TSVB)
-
-![Kibana](/engineering-education/introduction-to-elastic-stack/kibana-logo-color.png)
 
 4. ### Beats
 [**Beats**](https://www.elastic.co/beats/) are open-source data collectors/shippers that can be installed in servers to send operational data directly to Elasticsearch or through Logstash for processing.
