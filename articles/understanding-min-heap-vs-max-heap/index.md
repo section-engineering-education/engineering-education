@@ -1,4 +1,4 @@
-A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. They reduce the normal run time with polynomial order. There are two different types of heaps, Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
+A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. They reduce the normal run time with polynomial order. There are two types of heaps: Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
 
 ### Prerequisites
 
@@ -16,29 +16,27 @@ To follow along with this article, you should have the following:
 
 - [Max-heap](#max-heap).
 
-- [Why we need heaps](#why-we-need-heaps).
+- [Why we need heaps?](#why-we-need-heaps).
 
 - [Application of heaps](#application-of-heaps).
 
 ### Setting up the project
 
-To set up the project, clone this [Github repository](https://github.com/mwangiKibui/understanding-min-heap-vs-max-heap). In the cloned folder, there are two folders, start, and final. In this article, we will be working on the start folder but in case you encounter an error feel free to check out the final folder.
+To set up the project, clone this [Github repository](https://github.com/mwangiKibui/understanding-min-heap-vs-max-heap). After you clone it, you will find two folders: **start** and **final**. In this article, we will be working on the start folder but in case you encounter an error, feel free to check out the **final** folder for the final code.
 
 ### Min-heap
 
-In a min-heap, the parent or root node is usually less than the children nodes. The least element is accessed within constant time since it is at index `1`.
-
-#### Pictorial representation
+In a min-heap, the parent or root node is usually lesser in value than the children nodes. The least element is accessed within constant time since it is at index `1`.
 
 ![min-heap](/engineering-education/understanding-min-heap-vs-max-heap/min-heap.jpg)
 
 [Image Source](https://www.geeksforgeeks.org/difference-between-min-heap-and-max-heap/)
 
-Based on the figure below, at every level, the smallest number is the root node.
+Based on the figure below, at every level, the smallest number is the parent node.
 
 #### Implementation
 
-When illustrating min-heap we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
+When illustrating a min-heap, we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
 ![min-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/min-heap-implementation.jpg)
 
@@ -54,7 +52,7 @@ In a min-heap, the first element is `null` and then the following formula is use
 
 - At any node you can find the parent by `i / 2`
 
-`i` is the index in the array.
+- `i` is the index in the array.
 
 For the min-heap, we will insert an element, get the least element and remove an element.
 
@@ -104,17 +102,17 @@ Expected output:
 [ 1, 5, 36, 90, 10 ]
 ```
 
-From the above:
+From the above function:
 
 - Push the element to the end of the array.
 
 - Check if the number of elements in the array is more than one. If they are, follow the below steps.
 
-- Get an index of the inserted element.
+- Get the index of the inserted element.
 
 - Loop through the array checking if there is a parent greater than the inserted element.
 
-- If there exists, swap them.
+- If it exists, swap them.
 
 #### Retrieving the minimum element
 
@@ -253,7 +251,7 @@ Expected output
 
 From the above function:
 
-- We check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the below steps.
+- Check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the below steps.
 
 - Assign the last value to the first index.
 
@@ -265,19 +263,17 @@ From the above function:
 
 - Loop through the array where there is the left child value and right child value. Where the parent value is greater than the left child value or right child value, swap them. If the left node value is greater than the right node value, swap them too.
 
-- Where there is no right node value but the parent node is greater than the left node value, swap the values.
+- If there is no right node value but the parent node is greater than the left node value, swap the values.
 
 ### Max-heap
 
 In a max-heap, the parent or root node is usually greater than the children nodes. The maximum element can be accessed in constant time since it is at index `1`.
 
-#### Pictorial representation
-
 ![max-heap](/engineering-education/understanding-min-heap-vs-max-heap/max-heap.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
-Based on the figure below, at every level, the largest number is the root node.
+Based on the figure above, at every level, the largest number is the parent node.
 
 #### Implementation
 
@@ -303,7 +299,7 @@ For the max-heap, we will insert an element, get the largest element, and remove
 
 #### Inserting an element
 
-In a max-heap, we also use heap-sort algorithm while inserting elements.
+In a max-heap, we also use the heap-sort algorithm while inserting elements.
 
 In the `maxHeap.js` file, under `insert()` function, we add up the following functionality to insert elements.
 
@@ -489,7 +485,7 @@ console.log(heap.slice(1));
 
 From the above function:
 
-- We check if the array has more than two elements. If it does not, just remove the element in the first index. If it does, continue with the below steps.
+- Check if the array has more than two elements. If it does not, just remove the element in the first index. If it does, continue with the below steps.
 
 - Assign the last value to the first index.
 
@@ -501,7 +497,7 @@ From the above function:
 
 - Loop through the array where there is left node value and right node value. If the parent node value is smaller than either the left node or right node value, swap them. Also, if the left node value is smaller than the right node value, swap them.
 
-- Where there is no right node value but the parent node is less than the left node value, swap the values.
+- If there is no right node value but the parent node is less than the left node value, swap the values.
 
 ### Why we need heaps?
 
@@ -517,7 +513,7 @@ From the above function:
 
 ### Conclusion
 
-With a reduced time complexity, min-heap and max-heap are efficient in processing data sets. Each with its own use case and implementation.
+With a reduced time complexity, min-heap and max-heap are efficient in processing data sets, each with its own use case and implementation.
 
 In this article, we have covered, the min-heap, the max-heap, why we need heaps, and applications of heaps.
 
