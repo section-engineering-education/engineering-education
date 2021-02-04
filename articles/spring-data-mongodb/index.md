@@ -1,5 +1,5 @@
 ### Spring Data MongoDB
-Spring Data MongoDB makes it possible to integrate a Spring Boot application with Mongo document database.
+Spring Data MongoDB makes it possible to integrate a Spring Boot application with Mongo document database. It provides `MongoRepository` containing all of the methods used to perform MongoDB CRUD operations.
 
 ### Prerequisites
 1. [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) installed on your computer.
