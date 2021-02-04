@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/top-node.js-monitoring-tools/
+url: /engineering-education/deconstructing-shared-nothing-and-shared-disk-clustering-architectures/
 title: Deconstructing Shared Nothing and Shared Disk Clustering Architectures
 description: This article will be an overview on shared nothing and shared disk clustering architectures. Clustering involves using multiple processors to handle problems better, faster, and more reliable than a single computer.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/top-node.js-monitoring-tools/hero.jpg
+  - url: /engineering-education/deconstructing-shared-nothing-and-shared-disk-clustering-architectures/hero.jpg
     alt: Shared Nothing and Shared Disk Clustering image
 ---
 When business shifted to the digital realm, there arose a need to keep the business running around the clock. Unlike physical shops, the internet never sleeps, and online shops operate day and night. Any company operating online knows that any disruptions, for any reason whatsoever, might be detrimental to the sales and growth of the business. This need gave rise to the usage of clustering.
