@@ -74,7 +74,7 @@ Learning raw Node.js puts you in a position to develop and contribute to these p
 
 Packages are open-source, and frequently the packages will have issues, such as bugs. When you have some knowledge of pure Node.js, you stand to solve a bug or improve a package. Package code is hosted in GitHub. You can create an issue or a pull request to post your improvement. By doing this, you become a package contributor, helping the community utilize your skills with pure Node.js. As a contributor, you understand what happens behind the scenes in Node.js packages.
 
-We mentioned packages having bugs, but if you develop an app with vanilla Node.js, how would you run into a bug contributed by a package? Packages have compatibility issues with certain projects due to package versioning specified in the NPM module dependencies. A “no-package” app will not have an issue with version compatibility. You are the sole manager of your project's functions lifecycle.
+Packages have compatibility issues with certain projects due to package versioning specified in the NPM module dependencies. A “no-package” app will not have an issue with version compatibility. You are the sole manager of your project's functions lifecycle.
 
 The biggest drawback of using raw Node.js is that you will have to write a lot of code that would otherwise be provided by Express and other frameworks. You'll have to manage most things and operations on your own.
 
