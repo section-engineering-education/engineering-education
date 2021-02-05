@@ -86,3 +86,6 @@ Different pods in different containers have separate IP addresses. This means th
 ### Conclusion
 
 Kubernetes pods look promising to the future for cloud computing, and the above is why. Pods&#39; enhancement of productivity, efficiency, scalability, and prevention of system failure is commendable. Kubernetes pods are certainly something to look into. But remember, it has its challenges too, which you must analyze and find your way around them. All in all, it is a technology development heading directly to the top of the list of the best! 
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
