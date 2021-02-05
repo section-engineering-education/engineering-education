@@ -26,7 +26,6 @@ Yes, it is possible to develop a Node.js application with no NPM registry binari
 - [Conclusion](#conclusion)
 
 ### Background
-
 JavaScript has gotten a lot of love from the developers' community. It is diverse and can be used to develop almost any application, from mobile apps, web pages, networking, servers, real-time applications, microservices, etc. Clearly, JavaScript is a cross-platform language.
 
 The steady growth of JavaScript has led to the development of powerful JavaScript libraries and frameworks such as Node.js.
@@ -54,7 +53,6 @@ Node.js runtime [download metrics](https://nodejs.org/metrics/) speak for themse
 [Image Source](https://nodejs.org/metrics/)
 
 ### An overview
-
 One of the most influential [reasons for the popularity](/engineering-education/why-node-js-is-popular/) of Node.js is the availability of diverse open-source [frameworks and libraries](/engineering-education/most-useful-nodejs-packages/).
 
 A package (library) is code that has been written by someone else. It is developed to help the community solve day-to-day problems easily and quickly without re-writing code, especially for an extensive application.
@@ -87,7 +85,6 @@ The biggest drawback of using packages is that even if a package has a lot of co
 When installing a library in your project, its binaries are saved as dependencies in the `node_module` folder. Of course, you need that folder to execute these packages inside your project. Many packages will end up adding many dependencies in the `node_module` folder. That's a couple of bits added to your project.
 
 ### A pure Node.js HTTP server
-
 To put the raw Node.js knowledge into practice, I have demonstrated how to create a simple web server. No frameworks, no Node package manager (NPM). Thus no `package.json` file as you have no dependency management — just a text editor and command line and using the functionalities that are core provided by Node.js itself.
 
 Go ahead and install [Node.js runtime](https://nodejs.org/en/) on your computer.
@@ -138,7 +135,6 @@ And it is working. Visit `http://127.0.0.1:3000/` to get the server response.
 And you are done. You have created the simplest, purest Node.js server. Simple and straightforward, right? No framework, no NPM, just raw Node.js. Check out a more complex [HTTP server](https://medium.com/@Venpot/my-experiment-with-a-pure-node-js-http-chat-server-and-why-i-destroyed-it-3414a0914420).
 
 ### Conclusion
-
 Of course, packages are important. I can't imagine building a web app without using one. They make development a lot easier, faster, and they are scalable. However, learning pure Node.js can only help. It’s equally valuable to understand what happens behind the scenes of the packages you include in your project.
 
 Node.js has one of the most up to date [docs](https://nodejs.org/en/docs/guides/). The best way to learn pure Node.js is by building some practice projects, such as a simple web server.
