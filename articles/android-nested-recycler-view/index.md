@@ -398,3 +398,5 @@ All is now set. Run the application to test if everything is working.
 ![Nested RecyclerView](/engineering-education/android-nested-recycler-view/nested-recycler-view.gif)
 
 I hope this guide helped you understand and implement nested RecyclerView within your application context. For more reference, check the code on [GitHub](https://github.com/kimkimani/Nested_RecyclerView).
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
