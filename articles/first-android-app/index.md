@@ -6,7 +6,7 @@ url: /engineering-education/first-android-app/
 title: Creating Your First Android Application
 description: This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps
 author: diana-mutheu
-date: 2021-02-01T00:00:00-10:00
+date: 2021-02-05T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -22,7 +22,7 @@ Mobile applications are of two types due to the two mobile operating systems, na
 - Examples of phone brands that use android are Samsung, Google pixel, etc.
 - An example of a phone brands that use Ios is Apple.
 
-This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps. We can develop Android applications using `Java` or `Kotlin` programming languages, here we will use Java.
+This article will be a step-by-step guide to creating your first android application. It will be a very simple application to give you a general knowledge of android apps. We can develop Android applications using `Java` or `Kotlin` programming language, here we will use Java.
 
 ### Table of Content
 - [Prerequisites](#prerequisites)
@@ -42,6 +42,7 @@ This article will be a step-by-step guide to creating your first android applica
 
 > NOTE: Download according to the version of windows you are running, 64bit or 32bit.
  According to Google, you need 2GB of RAM and above (4GB is recommended) to run Android Studio and Java since they are memory consuming and will slow down your PC.
+
 ### New terminologies
  - **Method** - A block of code that only runs when called and performs an action.
 
@@ -63,32 +64,23 @@ Let us begin!
 
 ### Step 1. Android Studio Setup
 - Select ***create a new project***.
-
 - Select ***Empty Activity***.
 
 ![An Empty Activity](/engineering-education/first-android-app/empty-activity.png)
 
 - Configure your project by choosing an appropriate name.
-
 - Write an appropriate and unique package name if you plan to launch your app on `Play Store`, if not leave it on default.
-
 - Select the language as Java.
-
 - Ensure to choose an SDK that will run your app on many devices.
-
 - Click Finish.
 
 ![Configure your project](/engineering-education/first-android-app/configure-project.png)
 
-
 ### Step 2. User Interface design
 UI for the First Activity:
-
-- Navigate to the ***res Folder*** -> ***Layout Folder***
-
-- Click on the layout name `activity_main.xml` created by default to design the UI of the `MainActivity`.
-
-- We will design our UI for the first activity using the code below. Ensure to change the default layout form Constraint to Linear.
+  - Navigate to the ***res Folder*** -> ***Layout Folder***
+  - Click on the layout name `activity_main.xml` created by default to design the UI of the `MainActivity`.
+  - We will design our UI for the first activity using the code below. Ensure to change the default layout form Constraint to Linear.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -125,7 +117,7 @@ UI for the First Activity:
 ```
 UI for the Second Activity:
 - Navigate to the ***Java Folder*** to create the Second Activity.
-- right-click on the first folder with your app's package name. Then go to ***New -> Activity -> Empty Activity***.
+- Right-click on the first folder with your app's package name. Then go to ***New -> Activity -> Empty Activity***.
 
 - Configure the new Activity's name and Layout Name, then click ***Finish***. It will generate both the layout and java files for the Activity.
 - Then navigate to the Activity's layout to design its UI using the code below.
@@ -153,13 +145,13 @@ UI for the Second Activity:
 ```
 
 ### Step 3. Write the Java Code
-We find the Java classes for the Activities in the ***Java Folder*** -> then the first folder with the ***Application's package name***
+We find the Java classes for the Activities in the ***Java Folder*** -> first folder with the ***Application's package name***
 
 Java code for the First Activity:
-- In the first activity outside the `onCreate` method, call the `onClick` you created in the XML on the button.
-- Inside this method, convert the text input from the user to a String.
-- Then create an extra that will facilitate parsing of the data.
-- Finally, create an intent which refers to a messaging object used to request an action from another app component. The action requested in this case is Activity navigation. 
+  - In the first activity outside the `onCreate` method, call the `onClick` you created in the XML on the button.
+  - Inside this method, convert the text input from the user to a String.
+  - Then create an extra that will facilitate parsing of the data.
+  - Finally, create an intent which refers to a messaging object used to request an action from another app component. The action requested in this case is Activity navigation.
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -209,11 +201,12 @@ There are two approaches to this:
  ![Stat emulator](/engineering-education/first-android-app/avd-manager.png)
 
 > NOTE: The performance and RAM left on your PC will determine how long the emulator will take to start.
+
  **Using an android phone**
 1. Connect your mobile phone to your laptop using a ***USB cable***.
 2. Navigate to the settings application on your mobile device, look for ***developer options*** which could be located in the ***additional settings*** option on some phones, click on it.
 3. It will probably prompt you to write the verification code.
-4. After being verified enable the ***developer options*** then navigate to ***debugging*** and enable ***USB debugging*** option. A pop-up will appear explaining the function of USB debugging, click OK.
+4. After being verified, enable the ***developer options*** then navigate to ***debugging*** and enable ***USB debugging*** option. A pop-up will appear explaining the function of USB debugging, click OK.
 5. Another pop-up will appear asking you to allow USB debugging to your computer, click on OK.
 6. The Phone model will appear at the top, run your application by clicking the green play button on the right. As shown.
 
