@@ -194,7 +194,7 @@ if ($conn->connect_error) {
 // Check which function to execute
 if(isset($_POST['save'])) {
     //sql statement to insert data
-    $sql = "INSERT INTO student_name (name) VALUES ('".$_POST['editTextData']."', )";
+    $sql = "INSERT INTO student_name (name) VALUES ('".$_POST['editTextData']."' )";
     // execute to insert data
     if ($conn->query($sql) === TRUE) {
         die("Data saved");
@@ -367,7 +367,7 @@ End Sub
 ```basic
 Private Sub Update_Click
     updatedata.Initialize("updatedata", Me)
-    updatedata.PostString(URL,"update=&editTextData="&EditText1.Text&"&prevData="&prevData)
+    updatedata.PostString(URL,"update=&editTextData="&EditText1.Text&"&prevdata="&prevData)
 End Sub
 ```
 
