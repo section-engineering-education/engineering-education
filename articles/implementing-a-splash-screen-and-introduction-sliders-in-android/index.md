@@ -345,3 +345,5 @@ One can access the tutorial's code on [Github](https://github.com/BrianaNzivu/En
 For any query or clarification, do not hesitate to raise an issue in this [repository](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/SplashnSlides).
 
 Till next time!
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
