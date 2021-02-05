@@ -1,4 +1,23 @@
-In [cloud computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/), a pod is a high-level structure and the tiniest execution object in [Kubernetes](https://www.section.io/engineering-education/what-is-kubernetes/). These pods are temporary. If one pod fails, Kubernetes simultaneously models a copy such that the work keeps going on. The pods are usually in one or several collections.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-kubernetes-pods-work/
+title: How Kubernetes Pods Work
+description: This article will be an overview on Kubernetes Pods, and how they work.
+author: eric-kahuha
+date: 2021-02-06T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-kubernetes-pods-work/hero.jpg
+    alt: Kubernetes Pods image
+---
+In [cloud computing](https://www.section.io/engineering-education/introduction-to-cloud-computing/), a pod is a high-level structure and the tiniest execution object in [Kubernetes](https://www.section.io/engineering-education/what-is-kubernetes/). 
+<!--more-->
+
+These pods are temporary. If one pod fails, Kubernetes simultaneously models a copy such that the work keeps going on. The pods are usually in one or several collections.
 
 Today, the usage of Kubernetes has become the go-to solution in cloud software management. This is the case because Kubernetes use pods, which do not run containers directly. As long as a container shares the same pod with another container, they can access the local network and resources.
 
