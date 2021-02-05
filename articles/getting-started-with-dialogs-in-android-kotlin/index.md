@@ -1,7 +1,23 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/
+title: Getting Started with Dialogs in Android Kotlin
+description: This tutorial takes the reader through creating and implementing dialogs in android. A dialog is usually a small window that pops out on a devices screen.
+author: eric-gacoki
+date: 2021-02-05T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/hero.png
+    alt: Alert Dialogs in Android
+---
+<!--more-->
 Android has distinguished techniques for improving user experience. One of them is the use of dialogs. A [Dialog](https://developer.android.com/guide/topics/ui/dialogs) is a brief conversation between the user and the application. It is usually a small window that pops-up on the device's screen. Dialogs can be used to prompt actions in some events or pass a message to the user. In this tutorial, we are going to learn how to create and implement dialogs in Android.
 
-#### Prerequisites
+### Prerequisites
 Before we move on, ensure that you;
 - Have [Android Studio](https://developer.android.com/studio) installed on your machine.
 - Know how to create Android projects and navigate through the `IDE`.
@@ -378,3 +394,6 @@ Now we're done. Run the app and you should see a dialog similar to this one
 In this tutorial, we've learned how to create, customize and use Alert Dialogs in Android. As you've seen, dialogs are very simple to implement. You can find the full source code for this tutorial [here](https://github.com/Ericgacoki/dialogs-in-android). Check out the [official documentation](https://developer.android.com/guide/topics/ui/dialogs) to learn more about Alert Dialogs and other types of dialogs that Android has to offer.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
