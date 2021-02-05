@@ -6,7 +6,7 @@ url: /engineering-education/understanding-min-heap-vs-max-heap/
 title: Understanding Min Heap vs Max Heap
 description: This article will cover the difference between min heaps and max heaps. A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time.
 author: kennedy-mwangi
-date: 2021-02-05T00:00:00-18:00
+date: 2021-02-05T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,10 @@ images:
   - url: /engineering-education/understanding-min-heap-vs-max-heap/hero.jpg
     alt: Understanding Min Heap vs Max Heap Hero Image
 ---
-A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. The constant time taken is [Big O](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is regardless of the data stored in the heap. There are two types of heaps: Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
+A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. The constant time taken is [Big O](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is regardless of the data stored in the heap. 
 <!--more-->
-
+There are two types of heaps: Min-heap and Max-heap. A min-heap is used to access the minimum element in the heap whereas the Max-heap is used when accessing the maximum element in the heap.
 ### Prerequisites
-
 To follow along with this article, you should have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
@@ -26,7 +25,6 @@ To follow along with this article, you should have the following:
 - Basic knowledge of JavaScript.
 
 ### Overview
-
 - [Setting up the project](#setting-up-the-project)
 
 - [Min-heap](#min-heap).
@@ -38,11 +36,9 @@ To follow along with this article, you should have the following:
 - [Application of heaps](#application-of-heaps).
 
 ### Setting up the project
-
-To set up the project, clone this [Github repository](https://github.com/mwangiKibui/understanding-min-heap-vs-max-heap). After you clone it, you will find two folders: **start** and **final**. In this article, we will be working on the start folder but in case you encounter an error, feel free to check out the **final** folder for the final code.
+To set up the project, clone this [GitHub repository](https://github.com/mwangiKibui/understanding-min-heap-vs-max-heap). After you clone it, you will find two folders: **start** and **final**. In this article, we will be working on the start folder but in case you encounter an error, feel free to check out the **final** folder for the final code.
 
 ### Min-heap
-
 In a min-heap, the parent or root node is usually lesser in value than the children nodes. The least element is accessed within constant time since it is at index `1`.
 
 ![min-heap](/engineering-education/understanding-min-heap-vs-max-heap/min-heap.jpg)
@@ -52,7 +48,6 @@ In a min-heap, the parent or root node is usually lesser in value than the child
 Based on the figure below, at every level, the smallest number is the parent node.
 
 #### Implementation
-
 When illustrating a min-heap, we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
 ![min-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/min-heap-implementation.jpg)
@@ -60,7 +55,6 @@ When illustrating a min-heap, we use a tree-based structure. But when stored in 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
 In a min-heap, the first element is `null` and then the following formula is used in arranging the elements:
-
 - Parent node: `i`
 
 - Left node: `i * 2`
@@ -71,10 +65,9 @@ In a min-heap, the first element is `null` and then the following formula is use
 
 - `i` is the index in the array.
 
-For the min-heap, we will insert an element, get the least element and remove an element.
+For the min-heap, we will insert an element, get the lowest element, and remove an element.
 
 #### Inserting an element
-
 While inserting an element in a min-heap, we use [heap sort algorithm](https://www.codingeek.com/algorithms/heap-sort-algorithm-explanation-and-implementation/).
 
 The algorithm works by first pushing the element to be inserted at the end of the array and then traversing through to find the correct position for the element.
@@ -119,11 +112,10 @@ Expected output:
 [ 1, 5, 36, 90, 10 ]
 ```
 
-From the above function:
-
+From the function above:
 - Push the element to the end of the array.
 
-- Check if the number of elements in the array is more than one. If they are, follow the below steps.
+- Check if the number of elements in the array is more than one. If they are, follow the steps below.
 
 - Get the index of the inserted element.
 
@@ -132,10 +124,9 @@ From the above function:
 - If it exists, swap them.
 
 #### Retrieving the minimum element
-
 With a min-heap data structure, the minimum element is at index `1`.
 
-In the same file, under `getMin()` function, we add up the functionality:
+In the same file, under `getMin()` function, we add up the functionalities:
 
 ```javascript
 function getMin(){
@@ -159,17 +150,15 @@ Expected output:
 1
 ```
 
-From the above, We get the minimum element stored at index `1`.
+From the above code snippets, we get the minimum element stored at index `1`.
 
 #### Removing an element
-
 Removing an element from a min-heap data structure consists of the following steps:
-
-- Removing the first element which is the least.
+- Removing the least element first.
 
 - Adjusting the min-heap to retain the order.
 
-In the same file, under `remove()`, we add up the functionality:
+In the same file, under `remove()`, we add up the functionalities:
 
 ```javascript
 function remove() {
@@ -266,24 +255,22 @@ Expected output
 [ 5, 10, 36, 90 ]
 ```
 
-From the above function:
-
-- Check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the below steps.
+From the function above:
+- Check if the array has more than two elements. If it does not, remove the element in the first index. If it does, continue with the steps below.
 
 - Assign the last value to the first index.
 
 - Remove the last value from the array.
 
-- Check if the array has three elements remaining. If it is `true`, check if the first element is greater than the second element. Swap them if the condition is satisfied. If there are more than three elements, continue with the below steps.
+- Check if the array has three elements remaining. If it is `true`, check if the first element is greater than the second element. Swap them if the condition is satisfied. If there are more than three elements, continue with the steps below.
 
 - Define the index of the parent node, left node, and right node.
 
-- Loop through the array where there is the left child value and right child value. Where the parent value is greater than the left child value or right child value, swap them. If the left node value is greater than the right node value, swap them too.
+- Loop through the array that have both the left child value and right child value. Where the parent value is greater than the left child value or right child value, swap them. If the left node value is greater than the right node value, swap them as well.
 
 - If there is no right node value but the parent node is greater than the left node value, swap the values.
 
 ### Max-heap
-
 In a max-heap, the parent or root node is usually greater than the children nodes. The maximum element can be accessed in constant time since it is at index `1`.
 
 ![max-heap](/engineering-education/understanding-min-heap-vs-max-heap/max-heap.jpg)
@@ -293,15 +280,13 @@ In a max-heap, the parent or root node is usually greater than the children node
 Based on the figure above, at every level, the largest number is the parent node.
 
 #### Implementation
-
 Similarly, when illustrating a max-heap we use a tree-based structure but when representing in memory we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
 ![max-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/max-heap-implementation.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
-Similarly, in a max-heap, the first element is `null` and then the following formula is used in arranging the elements:
-
+Similarly, in a max-heap, the first element is `null` and then the following formula is used when arranging the elements:
 - Parent node: `i`
 
 - Left node: `i * 2`
@@ -315,7 +300,6 @@ Similarly, in a max-heap, the first element is `null` and then the following for
 For the max-heap, we will insert an element, get the largest element, and remove an element.
 
 #### Inserting an element
-
 In a max-heap, we also use the heap-sort algorithm while inserting elements.
 
 In the `maxHeap.js` file, under `insert()` function, we add up the following functionality to insert elements.
@@ -360,11 +344,10 @@ Expected output:
 [ 1000, 120, 100, 10 ]
 ```
 
-From the above function:
-
+From the function above:
 - Push the element to the end of the array.
 
-- Check if there is more than one element in the array. If there is, continue with the below steps.
+- Check if there is more than one element in the array. If there is, continue with the steps below.
 
 - Get the index of the position of the element.
 
@@ -373,10 +356,9 @@ From the above function:
 - If there is, swap the values and update the index of the element in the array.
 
 #### Getting the largest element
-
 In a max-heap, getting the largest element means accessing the element at index `1`.
 
-In the same file, under `getMax()` function, we add up the functionality:
+In the same file, under the `getMax()` function, we add up the functionalities:
 
 ```javascript
 function getMax(){
@@ -399,17 +381,16 @@ Expected output:
 1000
 ```
 
-In the above function, we are returning the element stored at index `1`.
+In the function above, we are returning the element stored at index `1`.
 
 #### Removing an element
-
 Removing an element from a max-heap involves the following steps:
 
 - Removing the first element which is usually the largest.
 
 - Re-arranging the remaining elements in order.
 
-In the same file, under `remove()` function, we add up the functionality:
+In the same file, under the `remove()` function, we will add up the functionalities:
 
 ```javascript
 function remove() {
@@ -500,8 +481,7 @@ remove();
 console.log(heap.slice(1));
 ```
 
-From the above function:
-
+From the function above:
 - Check if the array has more than two elements. If it does not, just remove the element in the first index. If it does, continue with the below steps.
 
 - Assign the last value to the first index.
@@ -512,25 +492,24 @@ From the above function:
 
 - Define the indexes of the parent node, left node, and right node.
 
-- Loop through the array where there is left node value and right node value. If the parent node value is smaller than either the left node or right node value, swap them. Also, if the left node value is smaller than the right node value, swap them.
+- Loop through the array where there is a left node value and right node value. If the parent node value is smaller than either the left node or right node value, swap them. Also, if the left node value is smaller than the right node value, swap them.
 
 - If there is no right node value but the parent node is less than the left node value, swap the values.
 
 ### Why we need heaps?
+- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in Big O (n) whereas heaps can access the minimum or maximum element present in Big O (1). 
 
-- **Reduced time complexity**: Linear data structures such as linked lists or arrays can access the minimum or maximum element present in Big O (n) whereas heaps can access the minimum or maximum element present in Big O (1). This is crucial while processing large data sets. n refers to the number of data sets.
+This is crucial while processing large data sets. n refers to the number of data sets.
 
 ### Application of heaps
+- They have been used in [operating systems](https://www.tutorialspoint.com/operating_system/os_overview.htm) for [job scheduling](https://www.techopedia.com/definition/7882/job-scheduling) on a priority basis.
 
-- Used in [Operating systems](https://www.tutorialspoint.com/operating_system/os_overview.htm) for [job scheduling](https://www.techopedia.com/definition/7882/job-scheduling) on a priority basis.
+- They are used in [Heap sort algorithms](https://www.programiz.com/dsa/heap-sort) to implement priority queues.
 
-- Used in [Heap sort algorithm](https://www.programiz.com/dsa/heap-sort) to implement priority queues.
-
-- Used in [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) to find the shortest paths.
+- Used in the [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) to find the shortest paths.
 
 ### Conclusion
-
-With a reduced time complexity, min-heap and max-heap are efficient in processing data sets, each with its own use case and implementation.
+With a reduced time complexity, min-heap and max-heap are efficient when processing data sets, each with its own use case and implementation.
 
 In this article, we have covered, the min-heap, the max-heap, why we need heaps, and applications of heaps.
 
