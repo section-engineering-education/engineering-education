@@ -1,6 +1,6 @@
-### Introduction
+### Creating login and register system using C# winforms
 
-C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to create many applications, including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, etc.
+Nowadays, many developers are using C# for developing applications. In this tutorial, we will develop an application that helps users create an account. The users will login once they create an account.
 
 ### Prerequisites
 
@@ -8,6 +8,10 @@ C# or C-sharp is an object-oriented programming language developed by Microsoft 
 * Knowledge of C#, SQL.
 * Running relational database management in this case, we will use [MySQL](https://www.mysql.com/).
 * Visual Studio knowledge and how to create projects.
+
+### Introduction
+
+C# or C-sharp is an object-oriented programming language developed by Microsoft that runs on a framework called .Net framework. The language has been used to create many applications, including web applications, mobile applications, computer games, desktop applications, database applications, virtual reality applications, etc.
 
 ### Step I: Create a database and table with required columns
 
