@@ -535,3 +535,7 @@ With a reduced time complexity, min-heap and max-heap are efficient in processin
 In this article, we have covered, the min-heap, the max-heap, why we need heaps, and applications of heaps.
 
 Happy coding!!
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
