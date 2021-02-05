@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-min-heap-vs-max-heap/
+title: Understanding Min Heap vs Max Heap
+description: This article will cover the difference between min heaps and max heaps. A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time.
+author: kennedy-mwangi
+date: 2021-02-05T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-min-heap-vs-max-heap/hero.jpg
+    alt: Understanding Min Heap vs Max Heap Hero Image
+---
 A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. The constant time taken is [Big O](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is regardless of the data stored in the heap. There are two types of heaps: Min-heap and Max-heap. Min-heap is used for accessing the minimum element in the heap whereas the Max-heap is used for accessing the maximum element in the heap.
+<!--more-->
 
 ### Prerequisites
 
