@@ -22,26 +22,26 @@ Before getting our hands dirty, you may need to need to:
 ### Step 1: Backend using Django
 From terminal create a new project directory called `django-react-todoApp`
 
-```
-$ mkdir django-react-todoApp
-$ cd django-react-todoApp
+```bash
+mkdir django-react-todoApp
+cd django-react-todoApp
 ```
 We must have pip and virtual environment activated to be able to install django. 
-```
-$ pip install pipenv
-$ pipenv shell
+```bash
+pip install pipenv
+pipenv shell
 ```
 Install django and create a project, `backend`:
-```
-$ pipenv install django
-$ django-admin startproject backend
+```bash
+pipenv install django
+django-admin startproject backend
 ```
 Since we already have our project, we go ahead and create an application todo and migrate to add our models into the database schema.
-```
-$ cd backend
-$ python manage.py startapp todo
-$ python manage.py migrate
-$ python manage.py runserver
+```bash
+cd backend
+python manage.py startapp todo
+python manage.py migrate
+python manage.py runserver
 ```
 If everything works you should see the Congratulations page from Django.
 
@@ -81,9 +81,9 @@ The code explains:
 * Completed; Completed is the status of a task; either completed or not completed.
 
 Let us run migrations to add our model to the database schema.
-```
-$ python manage.py makemigrations todo
-$ python manage.py migrate todo
+```bash
+python manage.py makemigrations todo
+python manage.py migrate todo
 ```
 
 We can add models to our Admin page using the `admin.site.register()` functions. Inside our app's `admin.py` we can add the models to our administration page.
@@ -101,13 +101,13 @@ class TodoAdmin(admin.ModelAdmin):
 ```
 
 An administration page is crucial to any website that deals with dynamic content. Django was built to make that functionality easier.
-```
-$ python manage.py createsuperuser
+```bash
+python manage.py createsuperuser
 ```
 This will prompt you to enter the `username`, `email`, `password`, `password(again)`. We can open the admin page using the following link `http://localhost:8000/admin`
 
-```
-$ python manage.py runserver
+```bash
+python manage.py runserver
 ```
 ![admin dashboard](admin.jpg)
 
@@ -120,8 +120,8 @@ We can now add and delete items from the admin page. Great!
 You can learn more about APIs in this amazing [article](https://www.section.io/engineering-education/rest-api/)
 
 Install the `djangorestframework` and `django-cors-headers`
-```
-$ pipenv install djangorestframework django-cors-headers
+```bash
+pipenv install djangorestframework django-cors-headers
 ```
 Add `rest_framework` and `corsheaders` to the `INSTALLED_APPS` in `backend/settings.py` file and modifiy the `MIDDLEWARE`:
 
@@ -159,8 +159,8 @@ Django-cors-headers helps in handling the server headers. Within the `CORS_ORIGI
 
 Serializers in Django REST framework are responsible for converting objects(JSON) into datatypes to be consume by frontend frameworks. 
 Let us create a serializer file.
-```
-$ touch todo/serializers.py
+```bash
+touch todo/serializers.py
 ```
 Let us add this to  `serializers.py` file:
 ```python
@@ -213,7 +213,7 @@ That completes the building of the API, The router class enables  us to create t
 * `todos/id` - Returns one Todo items by the id primary key.
 
 ```
-$ python manage.py runserver
+python manage.py runserver
 ```
 ![api](json.jpg)
 
@@ -223,24 +223,24 @@ We have set our backend let us move forward to frontend.
 ### Step 3: Frontend using React
 
 To install `create-react-app` use the following command, `-g` stands for global as we are first installing `create-react-app` globally:
-```
-$ npm install -g create-react-app
+```bash
+npm install -g create-react-app
 ```
 While in the parent directory - `django-react-todoApp`- create a React application, `frontend`:
-```
-$ create-react-app frontend
+```bash
+create-react-app frontend
 ```
 
 To start server:
-```
-$ cd frontend
-$ npm start
+```bash
+cd frontend
+npm start
 ```
 You should be able to see the default React app by now.
 
 Add `bootstrap` and `reactstrap` for elegant UI:
-```
-$ npm add bootstrap reactstrap
+```bash
+npm add bootstrap reactstrap
 ```
 Head to `src/index.css` file and change the css to the one below:
 ```css
@@ -398,9 +398,9 @@ Your User Interface should resemble the one below:
 Modal component provide creating of dialogs, popovers this handles editing tasks.
 
 In `src` directory create `components` and in the components folder create `Modal.js` file:
-```
-$ mkdir src/components
-$ touch src/components/Modal/js
+```bash
+mkdir src/components
+touch src/components/Modal/js
 ```
 Update the  `Modal.js` file with the code below:
 ```javascript
@@ -642,13 +642,13 @@ The User Interface should be like below at this point:
 ![styled](styled.jpg)
 
 It is time to consume the API we created earlier.
-```
-$ cd backend
-$ python manage.py runserver
+```bash
+cd backend
+python manage.py runserver
 ```
 We will install `axios`. It help us retrieve data from external API in our case the backend.
-```
-$ npm add axios
+```bash
+npm add axios
 ```
 We will need to modify the `frontend/package.json`:
 ```javascript
@@ -833,14 +833,14 @@ export default App;
 
 ### Step 4: Testing
 Let us test our application backend by doing the following:
-```
-$ cd backend
-$ pipenv shell
-$ python manage.py runserver
+```bash
+cd backend
+pipenv shell
+python manage.py runserver
 ```
 Serving frontend:
-```
-$ npm start
+```bash
+npm start
 ```
 Check the address- http://localhost:8000 - to see the final look.
 
