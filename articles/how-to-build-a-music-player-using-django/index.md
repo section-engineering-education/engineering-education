@@ -31,6 +31,7 @@ The principal distinction among the 2 styles is that Django itself looks after t
 Here is an easy diagram that indicates the MVT structure in Django:
 
 ![mvt structure](/engineering-education/how-to-build-a-music-player-using-django/mvt.png)
+[Image source](https://www.javatpoint.com/django/images/django-mvt-based-control-flow.png)
 
 ### Getting Started with Django
 
