@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-replicate-postgresql-database/
+url: /engineering-education/introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
 description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10. 
 author: sylvester-tamba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-replicate-postgresql-database/hero.jpg
+  - url: /engineering-education/introduction-to-grails-development-with-intellij/hero.jpg
     alt: Replication of PostgreSQL Database example image
 ---
 In recent years, many developers have been using frameworks when developing websites. Frameworks help by making application deployment quicker and by ensuring quality code. Java provides multiplatform supports, this includes a desktop application, web application, mobile app development, and many more. 
