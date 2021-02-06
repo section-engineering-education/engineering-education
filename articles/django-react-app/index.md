@@ -10,23 +10,29 @@ In this article, we build a Todo application using React and Django.
 
 [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
 
-We are going to create an application that consumes [React](https://reactjs.org/) for user interface and [Django](https://www.djangoproject.com/) which render an API to the frontend of our application using Django REST framework(DRF).
+We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
 ### Prerequisites
 Knowledge of `React`, `Python(Django)` is required but I will be able to try and boil things down as possible.
 
-Before getting our hands dirty, you may need to need to:
-1. [Have python3 installed](https://www.python.org/downloads/)
-2. [Have Node.js installed](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+You can check out this articles for more in React and Python:
+
+[Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
+
+[Django Tutorials](https://realpython.com/tutorials/django/)
+
+Before getting our hands dirty, you may need to:
+1. [Install Python 3](https://www.python.org/downloads/)
+2. [Install Node.js](https://nodejs.org/en/download/)
 
 ### Step 1: Backend using Django
-From terminal create a new project directory called `django-react-todoApp`
+From a terminal create a new project directory called `django-react-todoApp`
 
 ```bash
 mkdir django-react-todoApp
 cd django-react-todoApp
 ```
-We must have pip and virtual environment activated to be able to install django. 
+We must have `pip` and virtual environment activated to be able to install django. 
 ```bash
 pip install pipenv
 pipenv shell
@@ -36,7 +42,8 @@ Install django and create a project, `backend`:
 pipenv install django
 django-admin startproject backend
 ```
-Since we already have our project, we go ahead and create an application todo and migrate to add our models into the database schema.
+Now that we have created our project, let's go ahead and create an application called `todo` and migrate the models into the database.
+
 ```bash
 cd backend
 python manage.py startapp todo
@@ -46,6 +53,7 @@ python manage.py runserver
 If everything works you should see the Congratulations page from Django.
 
  Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
+
 ```python
 # backend/settings.py
 
@@ -57,10 +65,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo',                        # Add this
+    'todo', # Add this
 ]
 ```
-We now want to form a model to specify the Todo item fields, modify `todo/models.py` as follows:
+
+Let's create a model to specify the Todo item fields. Modify `todo/models.py` as follows:
 ```python
 # todo/models.py
 from django.db import models
@@ -77,7 +86,9 @@ class Todo(models.Model):
 ```
 The code explains:
 * Title; What the task is.
+
 * Description; Give more explanation about a particular task.
+
 * Completed; Completed is the status of a task; either completed or not completed.
 
 Let us run migrations to add our model to the database schema.
@@ -86,7 +97,7 @@ python manage.py makemigrations todo
 python manage.py migrate todo
 ```
 
-We can add models to our Admin page using the `admin.site.register()` functions. Inside our app's `admin.py` we can add the models to our administration page.
+We can add models to our Admin page using the `admin.site.register()` functions. In the todo app's `admin.py`, let's add the model to our admin page.
 ```python
 # todo/admin.py
 
@@ -149,15 +160,18 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
-Update this code to `backend/settings.py` file:
+Add this code snippet in `backend/settings.py` file:
 ```python
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 ```
-Django-cors-headers helps in handling the server headers. Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
+Django-cors-headers helps in handling the server headers required for Cross-origin Resource Sharing (CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
-Serializers in Django REST framework are responsible for converting objects(JSON) into datatypes to be consume by frontend frameworks. 
+Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. For instance in our application, the `http://localhost:3000` is the default port for React and we will use it from our Django backend to serve the API. 
+
+Serializers allow complex data such as querysets and model instances to be converted to native python dataypes that can then be easily rendered into JSON, XML, or other content types.
+
 Let us create a serializer file.
 ```bash
 touch todo/serializers.py
@@ -174,7 +188,7 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = ('id' ,'title', 'description', 'completed')
 ```
-We also update our `todo/views.py`:
+Let's also update the `todo/views.py`:
 ```python
 # todo/views.py
 
@@ -190,7 +204,7 @@ class TodoView(viewsets.ModelViewSet):   # add this
     queryset = Todo.objects.all()        # add this
 
 ```
-In the `backend/urls.py` we define the URL route for the API
+In the `backend/urls.py` we define the URL routes for the API.
 ```python
 # backend/urls.py
 
@@ -207,10 +221,10 @@ urlpatterns = [
     path('api/', include(router.urls))             # add this
 ]
 ```
-That completes the building of the API, The router class enables  us to create the subsequent operations:
+That completes the building of the API. The `router` enables  us to create the subsequent operations:
 
-* `/todos/` - This returns an inventory of all the Todo items(Create and Read operations may be done here).
-* `todos/id` - Returns one Todo items by the id primary key.
+* `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
+* `todos/id` - Returns a specific Todo using the `id` primary key.
 
 ```
 python manage.py runserver
@@ -222,7 +236,7 @@ We have set our backend let us move forward to frontend.
 
 ### Step 3: Frontend using React
 
-To install `create-react-app` use the following command, `-g` stands for global as we are first installing `create-react-app` globally:
+To install `create-react-app` use the following command. `-g` stands for global as we are first installing `create-react-app` globally:
 ```bash
 npm install -g create-react-app
 ```
@@ -238,7 +252,7 @@ npm start
 ```
 You should be able to see the default React app by now.
 
-Add `bootstrap` and `reactstrap` for elegant UI:
+Install `bootstrap` and `reactstrap` to help us style the UI:
 ```bash
 npm add bootstrap reactstrap
 ```
@@ -271,7 +285,7 @@ body {
   background-color: #282c34;
   color: #ffffff; }
 ```
-Import Bootstrap in `src/index.js`:
+Import bootstrap file in `src/index.js`:
 ```javascript
 // frontend/src/index.js
 
@@ -289,7 +303,7 @@ ReactDOM.render(<App />,document.getElementById('root'));
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
-Substitute the code in `src/App.js`:
+Substitute the below code in `src/App.js`:
 ```javascript 
 // frontend/src/App.js
 
@@ -672,7 +686,7 @@ We will need to modify the `frontend/package.json`:
   },
   [...]
 ```
-The `axios` channels the API requests to the port `http://localhost:8000` where the backend(Django) execute it, enabling frontend to serve the requests. 
+The `axios` channels the API requests to the port `http://localhost:8000` where the server is running, enabling the frontend to make the requests. 
 ```
 axios.get("/api/todos/")
 ```
