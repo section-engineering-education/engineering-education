@@ -36,11 +36,11 @@ Here is a logical flow of the authentication process:
 4. The client needs to send a cookie on every request, even with the URLs that do not need authentication for access.
 
 ### Understanding Token-based authentication
-In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article.
+In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article. Check [jwt.io](https://jwt.io) to parse the JWT tokens.
 
-The anatomy of a JWT token comprises three parts separated by dots(.). The three parts include the JWT header, the JWT payload, and  its signature, respectively.
-`header.payload.signature`
+The anatomy of a JWT token comprises three parts separated by dots(.). The three parts include the JWT header, the JWT payload, and  its signature respectively. An example of a JWT token will look like:
 
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`. 
 The header part example:
 ```JSON
     {
@@ -58,8 +58,7 @@ The payload part example:
     "admin": true
     }
 ```
-The JWT Payload contains claims that are the statements about the user and additional data. Claims include registered,
-public or private.
+The JWT Payload contains claims which are pieces of information asserted about a subject. The claims have statements about the user and any other additional data. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature. Claims will either be registered, public or private.
 Creating the JWT signature involves taking the encoded header, the encoded payload, a secret key, and applying the algorithm specified.
 This an example from [jwt.io](https://jwt.io/):
 ```
@@ -68,11 +67,11 @@ HMACSHA256(
   base64UrlEncode(payload),
   secret)
 ```
-This will create a using the `HMAC SHA256` algorithm. This is the signature to verify that the token is not changed when the secret key is applied on the backend.
+This will create a JWT token using the `HMAC SHA256` algorithm. This is the signature to verify that the token is not changed when the secret key is applied on the backend.
 You can use [jwt.io](https://jwt.io/) to experiment with JSON Web Tokens by decoding and encoding them.
 Authentication via tokens is a stateless mechanism, as no information about the user is ever stored in the server memory or databases. Therefore, there is no issue with the domains serving your APIs and [downstream services](https://en.wikipedia.org/wiki/Downstream_(software_development)).
 
-Authentication via tokens in a web application is:
+Authentication process via tokens in a web application:
 1. The user submits login credentials to the backend server.
    
 2. Upon the request, the server verifies the credentials before generating an encrypted JWT with a secret key and sends it back to the client.
