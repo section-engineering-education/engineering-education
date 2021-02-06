@@ -35,7 +35,7 @@ Here is a logical flow of the cookie-based authentication process:
 4. The client needs to send a cookie on every request, even with the URLs that do not need authentication for access.
 
 ### Understanding Token-based authentication
-In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article. Check [jwt.io](https://jwt.io) to parse the JWT tokens.
+In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article. The [jwt.io](https://jwt.io) website can be used to parse the JWT tokens information.
 
 The anatomy of a JWT token comprises three parts separated by dots(.). The three parts include the JWT header, the JWT payload, and its signature respectively (`header.payload.signature`). An example of a JWT token will look like:
 
