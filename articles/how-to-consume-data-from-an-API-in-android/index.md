@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/how-to-consume-data-from-an-api-in-android/
 title: How To Consume Data From an API in Android
-description: This tutorial provides a guideline on how to make an API request basing on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
+description: This tutorial provides a guideline on how to make an API request based on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
 author: michael-barasa
-date: 2021-01-30T00:00:00-10:00
+date: 2021-02-07T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -17,13 +17,15 @@ images:
 APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.
 <!--more-->
 ### Introduction
-Android is among the most popular operating systems in the world. Statistics from Google show that more than a billion devices run Android. Therefore, the ability to utilize APIs in our applications helps us satisfy the needs of many users. One of the major factors that we should consider when using APIs is the number of requests. We should desist from making too many network operations. This is because it can increase battery drain and lead to poor user satisfaction. Also, API owners can bar applications that make too many requests.
+Android is among the most popular operating systems in the world. Statistics from Google show that more than a billion devices run Android. Therefore, the ability to utilize APIs in our applications helps us satisfy the needs of many users. 
+
+One of the major factors that we should consider when using APIs is the number of requests. We should desist from making too many network operations. This is because it can increase battery drain and lead to poor user satisfaction. Also, API owners can bar applications that make too many requests.
 
 ### Goal
-This tutorial provides a guideline on how to make an API request basing on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
+This tutorial provides a guideline on how to make an API request based on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
 
 ### Prerequisites
-To understand this tutorial, you must have a basic knowledge of Kotlin. Furthermore, you need Android Studio installed on your computer.
+To understand this tutorial, you must have a basic knowledge of Kotlin. Furthermore, you will need Android Studio installed on your computer.
 
 ### Step 1 - Getting started
 Launch Android Studio and create a new project with an empty activity, as shown below.
@@ -44,6 +46,7 @@ implementation 'com.github.bumptech.glide:glide:4.11.0'
 annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 ```
+
 You then click on the `Sync Now` button to download and incorporate the above dependencies in the application.
 
 ### Step 3 - Reviewing the Movie API
@@ -51,6 +54,7 @@ We will be sending and receiving data from the [OMDb](http://www.omdbapi.com/) A
 
 #### Data access
 For us to access data, we need to create an account on the OMDb website. This process requires a valid email. You can sign up from [here](http://www.omdbapi.com/apikey.aspx). Kindly note that this tutorial uses the free account option, which has a daily limit of 1,000 requests.
+
 After registration, an API key is sent to your email inbox.
 
 #### Site rules
@@ -125,12 +129,12 @@ In the above layout, we have assigned an ID to our components. We will use these
 The `EditText` widget allows us to get the user’s input. When clicked, the search button will initiate a request to the OMDb API. The `ImageView` and `TextViews` will display the data returned from the server.
 
 ### Step 5 - Connecting to the API
-This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 We need to do the following things in the `MainActivity`.
-  - Initiate a `requestQueue`
-  - Make an API request
-  - Parse data to UI components.
+- Initiate a `requestQueue`.
+- Make an API request.
+- Parse data to UI components.
 
 A `RequestQueue` helps us manage HTTP requests. You can learn more about the `RequestQueue` from [here](https://developer.android.com/training/volley/requestqueue).
 
@@ -182,9 +186,7 @@ fun fetchData( input: String){
 ```
 
 The `fetchData` function requires a string (user's input) as a parameter. This string is then joined to the url as `=${input}`.
-We are using a `JsonObjectRequest` because our application returns a single Movie object rather than a list.
-We use an `if-else` statement to handle different states in the `jsonObjectRequest` lambda function.
-If the request is successful, we extract the data and parse it to the components.
+We are using a `JsonObjectRequest` because our application returns a single Movie object rather than a list. We use an `if-else` statement to handle different states in the `jsonObjectRequest` lambda function. If the request is successful, we extract the data and parse it to the components.
 
 ```Kotlin
 Glide.with(this).load(response.getString("Poster")).into(image)
@@ -192,7 +194,7 @@ plot.text = response.getString("Plot")
 name.text = response.getString("Title")+"\n\n"+"Writer: "+response.getString("Writer")
 ```
 
-The Glide library helps in loading the image to the `ImageView`.
+The Glide library helps load the image to the `ImageView`.
 
 An error message is also logged in case the network request fails. This helps in the debugging process.
 
@@ -201,11 +203,13 @@ An error message is also logged in case the network request fails. This helps in
     Log.d("vol",error.toString())
 }
 ```
+
 Finally, the `jsonObjectRequest` is added to the `requestQueue`.
 
 ```Kotlin
 requestQueue.add(jsonObjectRequest)
 ```
+
 Here is the code for the `MainActivity.kt`.
 
 ```kotlin
@@ -269,6 +273,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 > Kindly note that before testing the application, we need to grant it access to the internet. We should also allow the application to use cleartext traffic. This step is essential, especially if the API source does not have an SSL certificate.
+
 To allow these permissions, open the manifest file. Add the following statement immediately after ` package="your-package-name">`.
 
 ```xml
