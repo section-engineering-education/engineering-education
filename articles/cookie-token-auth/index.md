@@ -8,7 +8,7 @@ A cookie is a small piece of data created by a server and sent to your browser w
 
 Here is a logical flow of the cookie-based authentication process:
 
-1. The client sends a login request with credentials to the backend server via the client interface.
+1. The client sends a login request with credentials to the backend server.
 
 2. The server then validates the credentials. If the login is successful, the web server will create a session in the database and include a `Set-Cookie` header on the response containing a unique ID in the cookie object.
 
@@ -35,14 +35,19 @@ Here is a logical flow of the cookie-based authentication process:
 4. The client needs to send a cookie on every request, even with the URLs that do not need authentication for access.
 
 ### Understanding Token-based authentication
-In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article. The [jwt.io](https://jwt.io) website can be used to parse the JWT token information.
+In token-based authentication, we store the user's state on the client. JSON Web Token(JWT) is an open standard [(RFC 7519)](https://tools.ietf.org/html/rfc7519) that defines a way of securely transmitting information between a client and a server as a JSON object. I will use tokens and JWT terms interchangeably in the article. The [jwt.io](https://jwt.io) website can be used to parse the JWT token information. You can use [jwt.io](https://jwt.io/) to experiment with JSON Web Tokens by decoding and encoding them.
 
-The anatomy of a JWT token comprises three parts separated by dots(.). The three parts include the JWT header, the JWT payload, and its signature respectively (`header.payload.signature`). An example of a JWT token will look like:
+The anatomy of a JWT token comprises three parts separated by dots(.). The three parts include the JWT header, the JWT payload, and its signature respectively (`header.payload.signature`). 
 
+Example of a JWT token:
 
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`. 
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+``` 
 
-The header part example:
+The JWT Header is a Base64 URL-encoded JSON object. It contains information describing the type of token and the signing algorithm used, such as HMAC, SHA256, or RSA.
+
+Example:
 
 ```JSON
 {
@@ -51,9 +56,9 @@ The header part example:
 }
 ```
 
-The JWT Header is a Base64 URL-encoded JSON object. It contains information describing the type of token and the signing algorithm used, such as HMAC, SHA256, or RSA.
+The JWT Payload contains claims which are pieces of information asserted about a subject. The claims will contain the statements about the user and any other additional data. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature. Claims will either be registered, public or private.
 
-The payload part example:
+Example:
 
 ```JSON
 {
@@ -63,19 +68,15 @@ The payload part example:
 }
 ```
 
-The JWT Payload contains claims which are pieces of information asserted about a subject. The claims will contain the statements about the user and any other additional data. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature. Claims will either be registered, public or private.
-
 Creating the JWT signature involves taking the encoded header, the encoded payload, a secret key, and applying the algorithm specified.
 
-This an example from [jwt.io](https://jwt.io/):
+Example:
 
 ```
 HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)
 ```
 
 This will create a JWT token using the `HMAC SHA256` algorithm. This is the signature to verify that the token is not changed when the secret key is applied on the backend.
-
-You can use [jwt.io](https://jwt.io/) to experiment with JSON Web Tokens by decoding and encoding them.
 
 Authentication via tokens is a stateless mechanism, as no information about the user is ever stored in the server memory or databases. Therefore, there is no issue with the domains serving your APIs and [downstream services](https://en.wikipedia.org/wiki/Downstream_(software_development)).
 
@@ -124,7 +125,7 @@ In summary, choose token authentication when:
 
 2. Tokens will be useful when the API is being used by different platforms such as the web, IoT, and mobile devices.
 
-Cookies are a great internet experience when:
+Choose cookie authentication when:
 
 1. When the user profile needs personalization. When we need user preferences such as themes, we need a cookie session in the database. Cookies are also used to help build targeted ads for different users.
 
@@ -133,6 +134,6 @@ Cookies are a great internet experience when:
 3. Sessions regarding logins, shopping carts, and game scores may need tracking and saving in a database. Without cookies, you will need to log in every time you leave a site or rebuild your shopping cart if a page is closed.
 
 ### Conculusion
-In conclusion, authentication improves system security by granting authenticated users access to protected resources.
+Authentication improves system security by granting authenticated users access to protected resources.
 
 In this article, we compared cookie-based authentication and token-based authentication. We highlighted the advantages and disadvantages that arise by choosing either of the approaches.
