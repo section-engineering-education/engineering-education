@@ -44,6 +44,8 @@ django-admin startproject backend
 ```
 Now that we have created our project, let's go ahead and create an application called `todo` and migrate the models into the database.
 
+Migration at this point is not really necessary but let's just go ahead and do it. 
+
 ```bash
 cd backend
 python manage.py startapp todo
