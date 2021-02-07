@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/cookie-vs-token-authentication/
 title: Cookie vs Token authentication
-description: This article provides readers with a detailed guide on Token based authentication and Cookie based authentication and the advantages and disadvantages of these approches.
+description: This article provides readers with a detailed guide on Token based authentication and Cookie based authentication and the advantages and disadvantages of these approaches.
 author: wilson-gichuhi
 date: 2021-02-07T00:00:00-11:00
 topics: []
