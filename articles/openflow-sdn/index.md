@@ -78,7 +78,7 @@ Although it seems that OpenFlow is ingrained with SDN, it is just an industry-st
 
 An example of a REST call on the RYU controller to get all the switches in your network would be:
 
-``` curl -XGET http://localhost:8080/stats/switches```
+`curl -XGET http://localhost:8080/stats/switches`
 
 2. **Management protocols:** Protocols like SSH, NETCONF, and SNMP could also manage an OF enabled switch from the controller. This method is generally used for old devices that do not support OpenFlow.
 
@@ -91,5 +91,3 @@ Happy coding!
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
-
-
