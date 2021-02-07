@@ -1,6 +1,6 @@
 ### Creating login and register system using C# winforms
 
-Nowadays, many developers are using C# for developing applications. In this tutorial, we will develop an application that helps users create an account. The users will login once they create an account.
+Many developers in recent years are using C# for developing applications. In this tutorial, we will develop a simple application that helps users create an account and login.
 
 ### Prerequisites
 
@@ -36,8 +36,7 @@ Create table command
 Create a Visual Studio project by clicking on File -> New -> Project, then select Visual C#.
 From the window, choose Windows Forms App(. Net Framework).
 Give your application a name. Then click ok.
-
-The project will come with default form call a Form1.cs
+The project will come with default form called Form1.
 
 ### Step III: Create a Config class to execute MySQL queries
 
@@ -226,7 +225,7 @@ namespace LoginSysten
 
 ### Step IV: Create register windows form
 
-In Microsoft Visual Studio, create a new project. Choose PROJECT -> Add Windows Form from File submenu in the left corner, give the form a name `Register` , and click Add.
+In Microsoft Visual Studio, create a new project. Choose project -> Add Windows Form from File submenu in the left corner, give the form a name `Register` , and click Add.
 
 We have two Windows form classes that is Form1.cs and Register.cs.
 
@@ -236,9 +235,9 @@ We have two Windows form classes that is Form1.cs and Register.cs.
 
 - Click on Form1.cs in Solution Explorer, and on the form that displays, add three buttons, two textboxes, and two labels.
 
-The first button will be the register button will launch the Register form. The second button will be the Login button. When the second button is clicked, it will query the database with the input Entered. The second button will execute the login MySQL query. The third button will close the application.
+The first button will be the register button will launch the Register form. The second button will be the Login button. When the second button is clicked, it will query the database with the input entered. The second button will execute the login MySQL query. The third button will close the application.
 
-The first textbox will allow username input for login, while the second textbox will enable a password's input. These two-input will be passed to the SQL.
+The first textbox will allow username input for login, while the second textbox will enable a password's input. These two inputs will be passed to the SQL.
 
 The labels will indicate the functionality of the two textboxes.
 
