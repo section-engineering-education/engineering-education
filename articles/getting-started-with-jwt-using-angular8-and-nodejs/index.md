@@ -8,7 +8,7 @@ algorithms. In this guide, I will use a secret key.
 
 To accomplish the task using this guide, you will need:
 
--   Basic knowledge of [Node.js](https://nodejs.dev/learn), [Angular 8](https://www.javatpoint.com/angular-8) and [JWT](https://jwt.io/introduction)
+-   Basic knowledge of [Node.js](https://nodejs.dev/learn), [Angular 11](https://www.techiediaries.com/angular-11-crud-rest-api-tutorial/) and [JWT](https://jwt.io/introduction)
 
 -   A text editor, in this guide, I will be using [Visual Studio Code](https://code.visualstudio.com/download).
 
@@ -357,6 +357,6 @@ application is now secure.
 
 Using JSON Web Tokens, the app is now secure since the services and any
 communication between the server and the app is also secure. This guide has also
-helped the reader implement the JSON Web Token in Angular 8 and Node.js. This
+helped the reader implement the JSON Web Token in Angular 11 and Node.js. This
 contribution will help anyone to secure their applications and make them ready
 for production.
