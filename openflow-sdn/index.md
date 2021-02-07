@@ -24,7 +24,7 @@ As a prerequisite to the article, the reader should be aware of traditional netw
 2. [Background on traditional SDN](#background-on-traditional-sdn)
 3. [Basics of OpenFlow](#basics-of-openflow)
 4. [Advantages of using OpenFlow](#advantages-of-using-openflow)
-5. [Alternatives and other means to SDN](#advantages-and-other-means-to-sdn)
+5. [Alternatives and other means to SDN](#alternatives-and-other-means-to-sdn)
 
 ### What is the OpenFlow protocol? 
 
