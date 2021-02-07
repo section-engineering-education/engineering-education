@@ -1,9 +1,5 @@
 # Understanding Dynamic and Static Routing
 
-![Hero image](/engineering-education/understanding-dynamic-and-static-routing/hero.jpeg)
-
-[Source](https://unsplash.com/photos/IL1qSqEMNBo)
-
 ## Introduction
 
 Different devices work together to ensure that data is transferred from one end device to another, but the router is the primary device that learns which paths are available and which path is best to forward traffic. The mechanism through which the router makes such a decision is known as routing. The path or route through which a packet is sent can either be a static or dynamic route.
