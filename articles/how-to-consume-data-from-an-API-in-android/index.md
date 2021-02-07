@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-consume-data-from-an-API-in-android/hero.png
+  - url: /engineering-education/how-to-consume-data-from-an-api-in-android/hero.png
     alt: API image example
 ---
 APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.
@@ -30,7 +30,7 @@ To understand this tutorial, you must have a basic knowledge of Kotlin. Furtherm
 ### Step 1 - Getting started
 Launch Android Studio and create a new project with an empty activity, as shown below.
 
-![New Project](/engineering-education/how-to-consume-data-from-an-API-in-android/new-project.png)
+![New Project](/engineering-education/how-to-consume-data-from-an-api-in-android/new-project.png)
 
 Give the project any name, and then click on the `finish` button. Kindly note that the creation of the project usually takes some considerable time. Therefore, you need to be patient.
 
@@ -69,7 +69,7 @@ The input variable will allow us to search different movies in the OMDb API. The
 ### Step 4 - Layout design
 The application will have a simple layout like the one shown below.
 
-![App Layout](/engineering-education/how-to-consume-data-from-an-API-in-android/layout.jpg)
+![App Layout](/engineering-education/how-to-consume-data-from-an-api-in-android/layout.jpg)
 
 We will use a `LinearLayout` to arrange different components on the screen. Note that the layout’s orientation is set to vertical. Here is the code for `activity-main.xml`.
 
@@ -284,7 +284,7 @@ In the same file, scroll to the application section and add `android:usesClearte
 
 We can now compile and run the application on our phones.
 
-![App Gif](/engineering-education/how-to-consume-data-from-an-API-in-android/app.gif)
+![App Gif](/engineering-education/how-to-consume-data-from-an-api-in-android/app.gif)
 
 ### Conclusion
 From the above tutorial, we have learned:
