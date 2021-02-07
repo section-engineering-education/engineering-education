@@ -19,7 +19,7 @@ Here is a logical flow of the cookie-based authentication process:
 ### Advantages of cookie-based authentication
 1. By using cookies in authentication makes your application stateful. This will be efficient in tracking and personalizing the state of a user.
 
-2. Cookies are small in size, making them efficient to store on the client-side.
+2. Cookies are small in size thus making them efficient to store on the client-side.
 
 3. Cookies can be "HTTP-only" making them impossible to read on the client-side. This improves protection against any Cross-site scripting (XSS) attacks.
    
