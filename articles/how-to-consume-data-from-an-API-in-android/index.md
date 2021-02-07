@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-consume-data-from-an-API-in-android/
+url: /engineering-education/how-to-consume-data-from-an-api-in-android/
 title: How To Consume Data From an API in Android
 description: This tutorial provides a guideline on how to make an API request basing on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
 author: michael-barasa
