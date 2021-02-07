@@ -5,13 +5,13 @@
 Different devices work together to ensure that data is transferred from one end device to another, but the router is the primary device that learns which paths are available and which path is best to forward traffic. The mechanism through which the router makes such a decision is known as routing. The path or route through which a packet is sent can either be a static or dynamic route.
 In this article, we will look at static and dynamic routing in details and it is expected that at the end of this article, the reader should know:
 
-- What static routing is,
+- What static routing is.
 - When to use static routing when setting up a network.
-- The advantages and limitations of static routing
-- What dynamic routing is
-- The advantages and limitations of dynamic routing
-- When to implement static or dynamic routing
-- A brief introduction to some dynamic routing protocols in use today
+- The advantages and limitations of static routing.
+- What dynamic routing is.
+- The advantages and limitations of dynamic routing.
+- When to implement static or dynamic routing.
+- A brief introduction to some dynamic routing protocols in use today.
 
 ### Content
 
@@ -31,7 +31,7 @@ In this article, we will look at static and dynamic routing in details and it is
 
 ### Functions of a router
 
-Multiple networks are connected using a router. To make a routing decision, the router uses the information in the internet protocol header to make various decisions which include:
+A router uses information contain in the internet protocol header to make various decisions, these decisions include:
 
 - Path determination
 - Routing decision
