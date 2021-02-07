@@ -15,7 +15,7 @@ It initializes and terminates programs and services crucial to the operation of 
 
 It's also a [daemon](https://man7.org/linux/man-pages/man7/daemon.7.html) process that runs during the entire lifetime of all programs in the system. 
 
-It's an ancestor process to all processes. It also adpots orphaned or zombie processes. That is, after a child loses its parent, the init process becomes its new parent.
+It's an ancestor process to all processes. It also adopts orphaned or zombie processes. That is, after a child loses its parent, the init process becomes its new parent.
 
 Now, what happens when the init process doesn't start first (the kernel doesn't boot the init process)? A kernel panic occurs because there isn't an init process to startup things and make way for essential services.
 
