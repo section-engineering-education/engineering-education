@@ -136,4 +136,8 @@ Choose cookie authentication when:
 ### Conculusion
 Authentication improves system security by granting authenticated users access to protected resources.
 
-In this article, we compared cookie-based authentication and token-based authentication. We highlighted the advantages and disadvantages that arise by choosing either of the approaches.
+In this article, we compared cookie-based authentication and token-based authentication and highlighted the advantages and disadvantages that arise by choosing either of these approaches.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+
