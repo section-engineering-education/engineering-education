@@ -296,13 +296,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
+
+`ReactDOM.render()` uses a DOM node in HTML to replace it with Javascript XML (JSX).
+
+It enable us to integrate React in every foreign application.
+
+`ReactDOM.render()` takes two arguments. First is the JSX being rendered. Second argument specifies where React application hooks into HTML. 
+
+It expects an element with an `id='root'`.
+
 Substitute the below code in `src/App.js`:
 ```javascript 
 // frontend/src/App.js
@@ -404,7 +416,19 @@ class App extends Component {
 }
 export default App;
 ```
-`renderTabList` function passes spans that dictates group of things displayed.
+
+We start by rendering a list of items. The list will mainly be artificial data in the beginning but later we will fetch the data from the API we created in the previous chapter.
+
+The internal component state allow us to update, store and delete properties of our component. The class component use a constructor to initialize internal component state, which in our case is the `todoItems`, our artificial data.
+
+
+In react we use JavaScript XML (JSX) to write HTML in React. You might have noticed the `className` attribute. It reflects the standard `class` attribute in HTML. [More about supported HTML attributes.](https://reactjs.org/docs/dom-elements.html)
+
+`displayCompleted` function return status of an item, if an item is marked as completed the `viewCompleted` should be true otherwise false.
+
+`renderTabList` function passes spans that dictates group of things displayed. We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) because they shorten our functions declaration.
+
+`renderItems` function returns the properties to be shown when a user wants to add an item, the fields are `title` and `description`. When the component file is called it calls the `render()` method by default displaying th JSX syntax.
 
 Your User Interface should resemble the one below:
 
@@ -498,6 +522,8 @@ export default class CustomModal extends Component {
     }
 }
 ```
+`Reactstrap` is a component library for Reactjs. It has in-built Bootstrap components that provide flexibility and prebuilt validation. This allows us to quickly build elegant forms that provide an intuitive experience.
+
 `CustomModal` class which encapsulates the Modal component it comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
 
 `CustomModal` accepts `activeItem`- stands for the current item to be edited `toggle` - used to switch between the Modal's different states and `onSave` - called to save the edited items.
@@ -561,7 +587,7 @@ class App extends Component {
         this.setSate({ activeItem: item, modal: !this.state.modal });
     };
     displayCompleted = status => {
-        if (satus) {
+        if (status) {
             return this.setState({ viewCompleted: true });
         }
         return this.setState({ viewCompleted: false });
@@ -651,6 +677,10 @@ class App extends Component {
 
 }
 ```
+We add `modal` property to our `state` object. To change a value in the state object we use `this.setState()` method. When a value in the `state` object changes, the component will re-render and the output will change as per the new value(s). We use `this.setState()` method to change the state object of a few components in our application. `setState()` method ensures the components have been updated and calls the `render()` method and other lifecycle methods.
+
+`JSON.stringify()` is used to convert JavaScript objects into a string. When we run our application and input `title` and `description`, clicking the save button prompt a string alert in the browser. The same happens when we try to delete an item.
+
 The User Interface should be like below at this point:
 
 ![styled](styled.jpg)
@@ -690,14 +720,14 @@ The `axios` channels the API requests to the port `http://localhost:8000` where 
 ```
 axios.get("/api/todos/")
 ```
-To consume our API instead of the dummy data update the `frontend/src/App.js` with the snippet below:
+To consume our API instead of the artificial data, update the `frontend/src/App.js` with the snippet below:
 
 ```javascript
 // frontend/src/App.js
 
 import React, { Component } from "react"
 import Modal from "./components/Modal";
-import axios from "axios";
+import axios from "axios"; // Add  this
 
 
 class App extends Component {
@@ -841,9 +871,15 @@ class App extends Component {
 }
 export default App;
 ```
+We assign our `todoList` an empty array because we are going to fetch our data from an API.
+
+`componentDidMount()` function is called by React to either fetch data from an External API or perform unique operations which need the JSX elements. In our case we use it for the former. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
+
+In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
+
 `refreshList()`is executed everytime an API request is completed. It modify the Todo tuple to show the latest items added.
 
-`handleSubmit()` handles the create and update CRUD operations.
+For instance, we are fetching our data from an API, the API call is placed in the lifecycle method, we get the response. We call the `setState()` method and render the element with updated data. `handleSubmit()` function handles the CRUD operations.
 
 ### Step 4: Testing
 Let us test our application backend by doing the following:
