@@ -18,7 +18,7 @@ _Wireshark_ is a network packet analyzer that is used to capture the data on you
 
 In case you find yourself in a position where you need to try and troubleshoot network packets, _Wireshark_ is the right tool for you!
 
-This is a very powerful tool, as it enables you, the user, to perform various operations such as:
+This is a powerful tool that enables you to perform various operations such as:
 * Troubleshooting your network.
 * Performing security operations that are used to detect security threats such as port scanning.  
 * Learning more about your network protocols at the microscopic level.
