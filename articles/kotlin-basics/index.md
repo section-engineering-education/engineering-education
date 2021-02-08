@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/kotlin-basics/hero.png
     alt: kotlin basics image
 ---
-
 #### Introduction
 Learn Kotlin Programming, its basics, and Fundamentals from scratch.
 
@@ -89,7 +88,6 @@ Comments can be written in two ways:
 // This is a comment
 ```
 
-
 ### Data types
 In kotlin data, types are all objects. They include:
 
@@ -140,7 +138,6 @@ fun main() {
     var gender: Char = 'M'
 }
 ```
-
 #### Boolean
 Kotlin also contains Boolean types. The values can either be `false` or `true`
 
@@ -159,7 +156,6 @@ fun main() {
 
 // Output: Steve
 ```
-
 ##### String Interpolation in Kotlin
 You can add variables in between a string using string interpolation.
 
@@ -583,354 +579,6 @@ tailrec fun getFibonacciNumber(n: Int, a: BigInteger, b: BigInteger): BigInteger
 }
 ```
 
-### Classes
-Classes in kotlin are declared using a keyword `class` .Class declaration consists of `class name`, `class header`, and `class body`. 
-
-```kotlin
-class Model { }
-```
-#### Constructors 
-A class in Kotlin can have a primary constructor and one or more secondary constructors. The primary constructor is part of the class header: it goes after the class name (and optional type parameters).
-
-
-```kotlin
- class Person constructor(firstName: String) { }
-```
-
-#### Secondary constructors
-The class can also declare secondary constructors, which are prefixed with the `constructor` keyword:
-
-```kotlin
-class Person {
-    var children = mutableListOf<Person>()
-    constructor(parent: Person) {
-        parent.children.add(this)
-    }
-}
-```
-
-#### Class members
-Classes can contain:
-
-* Constructors and initializer blocks
-* Functions
-* Properties
-* Nested and Inner Classes
-* Object Declarations
-
-```kotlin
-fun main() {
-    var student = Student("Steve", 10)
-    println(student.id)
-}
-
-class Student(var name: String) {
-
-    var id: Int = -1
-    init {
-        println("Student has got a name as $name and id is $id")
-    }
-
-    constructor(n: String, id: Int): this(n) {
-        // The body of the secondary constructor is called after init block
-        this.id = id
-    }
-}
-```
-
-### Inheritance
-
-```kotlin 
-fun main(args: Array<String>) {
-
-    var dog = Dog()
-    dog.bread = "labra"
-    dog.color = "black"
-    dog.bark()
-    dog.eat()
-
-    var cat = Cat()
-    cat.age = 7
-    cat.color = "brown"
-    cat.meow()
-    cat.eat()
-
-    var animal = Animal()
-    animal.color = "white"
-    animal.eat()
-}
-
-open class Animal {         
-    // Super class / Parent class /  Base class
-    var color: String = ""
-    fun eat() {
-        println("Eat")
-    }
-}
-
-class Dog : Animal() {      
-    // Sub class / Child class / Derived class
-    var bread: String = ""
-    fun bark() {
-        println("Bark")
-    }
-}
-
-class Cat : Animal() {
-    // Sub class / Child class / Derived class
-    var age: Int = -1
-    fun meow() {
-        println("Meow")
-    }
-}
-```
-
-**1. Method Overriding**
-   
-As we mentioned before, we stick to making things explicit in Kotlin. So, Kotlin requires explicit modifiers for
-overridable members (we call them open) and for overrides:
-
-```kotlin
-open class Shape {
-open fun draw() { /*...*/ }
-fun fill() { /*...*/ }
-}
-class Circle() : Shape() {
-override fun draw() { /*...*/ }
-}
-```
-
-   **2. Property Overriding**
-
-   Overriding properties works in a similar way to overriding methods; properties declared on a superclass
-that is then redeclared on a derived class must be prefaced with ``override``, and they must have a
-compatible type. Each declared property can be overridden by a property with an initializer or by a property
-with a get method.
-
-```kotlin
-open class Shape {
-open val vertexCount: Int = 0
-}
-class Rectangle : Shape() {
-override val vertexCount = 4
-}
-```
-
-```kotlin
-fun main() {
-
-    var dog = MyDog()
-
-    println(dog.color)
-
-    dog.eat()
-}
-
-open class MyAnimal {
-
-    open var color: String = "White"
-
-    open fun eat() {
-        println("Animal Eating")
-    }
-}
-
-class MyDog : MyAnimal() {
-
-    var bread: String = ""
-
-    override var color: String = "Black"
-
-    fun bark() {
-        println("Bark")
-    }
-
-    override fun eat() {
-        super<MyAnimal>.eat()
-        println("Dog is eating")
-    }
-}
-```
-
- ####  Inheritance with Primary and Secondary Constructors
-
-```kotlin 
-fun main() {
-
-    var dog = TheDog("Black", "Pug")
-}
-
-open class TheAnimal {      
-    // Super class / Parent class /  Base class 
-
-    var color: String = ""
-
-    constructor(color: String) {
-        this.color = color
-        println("From Animal: $color")
-    }
-}
-
-class TheDog : TheAnimal {   
-     // Sub class / Child class / Derived class
-
-    var bread: String = ""
-
-    constructor(color: String, breed: String): super(color) {
-        this.bread = breed
-
-        println("From Dog: $color and $breed")
-    }
-}
-```
-
- ####  Abstract Class
-
- A class and some of its members may be declared abstract. An abstract member does not have an
-implementation in its class. Note that we do not need to annotate an abstract class or function with open – it
-goes without saying.
-We can override a non-abstract open member with an abstract one
-
-```kotlin
-open class Polygon {
-open fun draw() {}
-}
-abstract class Rectangle : Polygon() {
-abstract override fun draw()
-}
-```
-
-```kotlin
-fun main() {
-
-//    var person = MyPerson()   // Not allowed. You cannot create instance of abstract class
-
-    var person = Indian()       // Allowed. Abstract Super class reference variable
-                                // pointing to child class object.
-    person.name = "Steve"
-    person.eat()
-    person.goToSchool()
-}
-
-abstract class MyPerson {     // you cannot create instance of abstract class
-
-    abstract var name: String
-
-    abstract fun eat()      // abstract properties are 'open' by default
-
-    open fun getHeight() {} // A 'open' function ready to be overridden
-
-    fun goToSchool() {}     // A normal function
-}
-
-class Indian: MyPerson() {
-
-    override var name: String = "dummy_indian_name"
-
-    override fun eat() {
-        // Our own code
-    }
-}
-```
-
- ####  INTERFACE
- 
- Interfaces in Kotlin can contain declarations of abstract methods, as well as method implementations. What
-makes them different from abstract classes is that interfaces cannot store state.  They can have properties
-but these need to be abstract or to provide accessor implementations.
-An interface is de ned using the keyword interface
-
-```kotlin
-interface MyInterface {
-fun bar()
-fun foo() {
-// optional body
-}
-}
-Implementing Interfaces
-A class or object can implement one or more interfaces
-class Child : MyInterface {
-override fun bar() {
-// body
-}
-}
-```
-
-```kotlin
-fun main(args: Array<String>) {
-
-    var myButton = MyButton()
-    myButton.onTouch()
-    myButton.onClick()
-}
-
-interface MyInterfaceListener {     // You cannot create the instance of interface
-
-    fun onTouch()                   // Methods in interface are abstract by default
-
-    fun onClick() {                 // Normal methods are public and open by default but NOT FINAL
-        println("MyInterfaceListener: onClick")
-    }
-}
-
-interface MySecondInterface {       // You cannot create the instance of interface
-
-    fun onTouch() {                 // Normal Method
-        println("MySecondInterface: onTouch")
-    }
-
-    fun onClick() {                 // Normal methods are public and open by default but NOT FINAL
-        println("MySecondInterface: onClick")
-    }
-
-}
-
-class MyButton: MyInterfaceListener, MySecondInterface {
-
-    override fun onTouch() {
-        super<MyInterfaceListener>.onClick()
-        super<MySecondInterface>.onClick()
-    }
-
-    override fun onClick() {
-        super.onTouch()
-    }
-}
-
-```
-
- #### Data Class
-
- We frequently create classes whose main purpose is to hold data. In such a class some standard
-functionality and utility functions are often mechanically derivable from the `data`. In Kotlin, this is called a
-data class and is marked as `data` :
-
-```kotlin
-data class User(val name: String, val age: Int)
-```
-
-```kotlin
-fun main() {
-
-    var user1 = User("Sam", 10)
-
-    var user2 = User("Sam", 10)
-
-    println(user1.toString())
-
-    if (user1 == user2)
-        println("Equal")
-    else
-        println("Not equal")
-
-    var newUser = user1.copy(id = 25)
-    println(newUser)
-}
-
-data class User(var name: String, var id: Int)
-
-```
-
  ####  1. Object Declaration
  
 ```kotlin
@@ -1057,37 +705,6 @@ interface MyInterface {
     fun execute(sum: Int)
 }
 ```
-
- EXAMPLE TWO
-
-  1. Lambda Expression
-  2. Higher-Order Function
-
-  A higher-order function is a function that takes functions as parameters, or returns a function.
-
-```kotlin
-
-fun main() {
-
-    val program = MyProgram()
-
-//    val myLambda: (Int, Int) -> Int = { x, y -> x + y}  // Lambda Expression [ Function ]
-// OR,
-//    program.addTwoNumbers(2, 7, { x, y -> x + y })
-// OR,
-    program.addTwoNumbers(2, 7) {x, y -> x + y}
-}
-
-class MyProgram {
-
-    fun addTwoNumbers(a: Int, b: Int, action: (Int, Int) -> Int) {  // High Level Function with Lambda as Parameter
-
-        val result = action(a, b)
-        println(result)
-    }
-}
-```
-
   #### 1. Closures
   
   A lambda expression or anonymous function (as well as a local function and an object expression) can
@@ -1218,33 +835,6 @@ fun main() {
 }
 
 ```
- ### 1. List and ArrayList 
- 
-```kotlin
-
-fun main() {
-
-    // Elements :
-    // Index    :   0   1   2   3   4
-
-//    var list = mutableListOf<String>()  // Mutable, No Fixed Size, Can Add or Remove Elements
-//    var list = arrayListOf<String>()    // Mutable, No Fixed Size, Can Add or Remove Elements
-    var list = ArrayList<String>()      // Mutable, No Fixed Size, Can Add or Remove Elements
-    list.add("Yogi")        // 0
-    list.add("Manmohan")    // 1
-    list.add("Vajpayee")    // 2
-
-//    list.remove("Manmohan")
-//    list.add("Vajpayee")
-
-    list[1] = "Modi"
-
-    for (element in list) {             // Using individual elements (Objects)
-        println(element)
-    }
-}
-```
-
  ###  1. Map and HashMap
 
 ```kotlin
@@ -1327,8 +917,7 @@ fun main(args: Array<String>) {
     val num = Numbers.find(Predicate)           // Returns the first number that matches the predicate
     println(num)
 }
-```
- 
+``` 
 ### MAP
 
   Returns a list containing the results of applying the given [transform] function
@@ -1363,7 +952,6 @@ class Pperson(var age: Int, var name: String) {
     // Some other code...
 }
 ```
-
 ###  Null safety
 
 A reference must be explicitly marked as `nullable` when `null` value is possible.
@@ -1394,7 +982,6 @@ fun main() {
 
  }
 ```
-
  3. Elvis-operator ( `?:` )
  When we have nullable reference 'name', we can say "is name is not null", use it,
  otherwise use some non-null value"
@@ -1411,7 +998,6 @@ fun main() {
 
     }
 ```
-
  4. Non-null assertion operator ( `!!` )
   Use it when you are sure the value is NOT NULL
 Throws NullPointerException if the value is found to be NULL
@@ -1448,9 +1034,7 @@ class Country {
 }
 
 ```
-
 ### `Lazy` delegation 
-
  Lazy initialization’ was designed to prevent unnecessary initialization of objects.
  Your variables will not be initialized unless you use them in your code
  It is initialized only once. Next time when you use it, you get the value from cache memory.
@@ -1468,7 +1052,6 @@ val pi: Float by lazy {
     3.14f
 }
 ```
-
 ```kotlin
 fun main() {
 
@@ -1483,7 +1066,6 @@ fun main() {
     println("Some more code....")
 }
 ```
-
 ### Conclusion
 
 In this tutorial we have learned the basics of Kotlin programming language. Kotlin skills can be applied in a bunch of fields not limted to Android development and backend systems programming. 
