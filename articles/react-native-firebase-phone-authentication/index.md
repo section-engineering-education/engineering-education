@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-native-firebase-phone-authentication/
-title: Firebase Phone Authentication in a Non-Expo React Native Application
+title: Phone Number Authentication using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to add Firebase's phone authentication in a Non-Expo React Native application.
 author: mohan-raj
 date: 2021-01-24T00:00:00-15:00
