@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/regularization/
+url: /engineering-education/regularization-to-prevent-overfitting/
 title: Regularization to Prevent Overfitting
 description: This article will provide an overview on how to prevent overfitting of data using Regularization. The goal is to understand what overfitting is, and how to prevent them using regularization techniques.
 author: collins-ayuya
-date: 2021-01-22T00:00:00-19:00
+date: 2021-02-08T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/regularization/hero.jpg
+  - url: /engineering-education/regularization-to-prevent-overfitting/hero.jpg
     alt: Regularization hero image
 ---
 Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as noise.
@@ -19,17 +19,14 @@ Overfitting impacts the accuracy of Machine Learning models. The model attempts 
 To avoid the occurrence of overfitting, we may use a method called as regularization. In this article, we will mathematically explore two types of regularization.
 
 ### Contents
-
 1. Regularization and Overfitting
 2. Lasso Regression
 3. Ridge Regression
 
 ### Prerequisites
-
 As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/engineering-education/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
 
 ### Regularization and Overfitting
-
 Overfitting is an occurrence that impacts the performance of a model negatively.
 
 It occurs when a function fits a limited set of data points too closely. Data often has some element of random noise within it. For example, The training data may contain data points that do not accurately represent the properties of the data. These points are considered as noise. When a function fits a set of such datapoints too closely, the model learns from noise in the data. This impacts the ability of the model to make reliable predictions on test data. The model may also be unable to fit additional data. This may lead to sub-par performance on test data.
@@ -67,7 +64,6 @@ Based on the training data, the loss function will adjust the coefficients. If t
 In other words, it tunes the loss function by adding a penalty term, which prevents excessive fluctuation of the coefficients. Thereby, reducing the chances of overfitting.
 
 ### Lasso Regression
-
 Lasso regression is a regularization technique used to reduce model complexity. It is also known as L1 regularization. Lasso stands for Least Absolute Shrinkage and Selector Operator. Let’s look at the equation below:
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid = RSS + \lambda \sum\limits_{j=1}^p \mid \beta_j \mid $$
@@ -81,7 +77,6 @@ Lasso minimizes the regression coefficients to regularize the model parameters. 
 Lasso also helps improving the prediction accuracy of the models. The shrinking of coefficients minimizes the bias and improves the variance of models. A context that favors the use of lasso is, when we have a small dataset with more number of features. The tuning parameter $\lambda$ controls the shrinkage. From the equation, when $\lambda$ is zero, the equation is reduced to the linear regression loss function equation. The greater the value of $\lambda$, the greater the reduction of the coefficients towards zero.
 
 ### Ridge Regression
-
 Ridge regression refers to a type of linear regression where in order to get better predictions in the long term, we introduce a small amount of bias. It is also known as L2 regularization. In ridge regression, we have the same loss function with a slight alteration in the penalty term, as shown below:
 
 $$ \sum\limits_{i=1}^n( y_i – \beta_0 - \sum\limits_{j=1}^p {\beta_j x_ij )^2} + \lambda \sum\limits_{j=1}^p \beta_j^2 = RSS + \lambda \sum\limits_{j=1}^p \beta_j^2 $$
@@ -96,12 +91,10 @@ The predictors of least importance refer to predictors that bear no telling infl
 
 Furthermore, the resulting models can be considered sparser when compared to the ones resulting from the L2 technique. This is because some of the estimate coefficients can be truly zero. The predictors that are of little to no importance are eliminated thus reducing the number of predictors.
 
-### Wrapping Up
-
+### Wrapping up
 Regularization is a formidable technique to prevent overfitting. There are several regularization techniques. We have looked at two of the most popular ones. Through this article, we have understood how the two techniques help in preventing overfitting and how they are derived from the linear regression loss function equation. Until next time, good luck!
 
 ### References and Further Reading
-
 1. [The Elements of Statistical Learning](https://www.springer.com/gp/book/9780387848570)
 
 2. [Regularization in Machine Learning](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
@@ -119,4 +112,5 @@ Regularization is a formidable technique to prevent overfitting. There are sever
 8. [Regularization](https://datascience.eu/machine-learning/regularization-in-machine-learning/)
 
 ---
+
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
