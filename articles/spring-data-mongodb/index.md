@@ -160,7 +160,7 @@ spring.data.mongodb.port=27017
 
 ```
 - `spring.data.mongodb.database=todo_db` indicates that our database name is `todo_db`.
-- `spring.data.mongodb.port=27017` indicates that we will be connecting to mongodb through port `27017`.
+- `spring.data.mongodb.port=27017` indicates that we will be connecting to MongoDB through port `27017`.
 
 ### Conclusion
 Now that you have learned how to create a Spring Boot CRUD API in Kotlin and MongoDB, add fields `dateCreated` and `lastModified` in the `Todo` data class.
