@@ -14,7 +14,7 @@ In this tutorial, we will be looking at an overview of ```Wireshark```, how it w
 Wireshark software's history goes back to 1998, as an open-source project started by volunteer network experts around the world.  
 The main aim was to build a standard network protocol analyzing tool.  
 
-Therefore, ```Wireshark``` is simply a network packet analyzer that is mainly used to capture the data on your network. This data is then presented in a form understandable by human beings.  
+_Wireshark_ is a network packet analyzer that is used to capture the data on your network. This data is presented in a human-understandable form.  
 
 In case you find yourself in a position where you need to try and troubleshoot every single network packet, ``` Wireshark``` is the right tool for you!
 
