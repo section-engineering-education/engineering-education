@@ -199,7 +199,7 @@ Use a web browser to inspect the parent `div` element.
 
 This is awesome. We can see the grid is divided into ten cells. This is where the concept of the layout first is applied. First, we define the layout and then fix items into the grid cells.
 
-Check this. If we were to move the items `Sign In` and `Sign Up` to the left, applying `margin-left: auto`,  as we did in the Flexbox example, it won't work. This how we can do it using CSS Grid.
+If we were to move the items `Sign In` and `Sign Up` to the left, applying `margin-left: auto`,  as we did in the Flexbox example, it won't work. This how we can do it using CSS Grid.
 
 ```css
 .nav {
@@ -358,20 +358,18 @@ When we apply the wrap, we force Flexbox to create rows and columns on small scr
 
 To create spacing between rows and columns, we can use gaps and specify the units of both. For example, `gap: 6px 6px` and we will get the same results as applying `column-gap: 6px` and `row-gap: 6px`.
 
-![](/engineering-education/css-flexbox-vs-css-grid/column-gap-row-gap.png)
-
 Note that when using the gap property, you can mix values in pixels and percentages. You do not have to stick to a single unit. For example, `6px 6%`, `6px 6rem` or `6% 6rem`.
 
 When using the Grid, you would use `grid-gap`. `grid-gap` is deprecated, and we have a `gap` property that works on both layouts.
 
->This is not a difference between the two. It used to when only Grid supported gaps. Since it is a [latest update](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), you may find a tutorial stating gaps as a property difference. I highlighted that to keep you up to date.
+> **NOTE** : _This is not a difference between the two. It used to be when only Grid supported gaps. Since it is a [latest update](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), you may find a tutorial stating gaps as a property difference._
 
 #### The wraps
 The wrap is a property used to wrap items inside a container.  It applies when you want items to fit the available spaces of the container. This is one of the common properties needed to resolve a few issues, such as child elements not staying inside the container element.
 
 The wrap allows us to wrap elements onto the next line when there is not enough room for them in the current content column.
 
-The two layout employs the concept of the wrap. They handle wrap differently.
+The two layouts employ the concept of the wrap. They handle wrap differently.
 
 Here is an example;
 
@@ -539,9 +537,9 @@ In the Grid case;
 
 The observation is that;
 
-Flexible layout losses its context. If you look at item five, it loses its context when a wrap is applied. The wrap tries to squeeze the items to fill the space available. Also, when pushed down, item five is not the same size as other items. The concept behind this is Flexbox being one-dimensional, which arranges items in rows or columns. Wrap forces Flexbox to form rows and columns, making Flexbox lose its one-dimensional context.
+Flexible layout loses its context. If you look at item five, it loses its context when a wrap is applied. The wrap tries to squeeze the items to fill the space available. Also, when pushed down, item five is not the same size as other items. This is because Flexbox is one-dimensional, which arranges items in rows or columns. Wrap forces Flexbox to form rows and columns, making Flexbox lose its one-dimensional context.
 
-You can say a grid is just a grid. The items do not lose their grid context. They are all of the same size and fall in grid lines. It doesn't lose its context of being a grid. This has to do with the Grid layout being two-dimensional, and that fits well a layout with rows and columns. In our case, the Grid wrap has forced the items to rows and columns, and basically, it doesn't lose its two-dimensional context.
+You can say a grid is just a grid. The items do not lose their grid context. They are all of the same size and fall in grid lines. It doesn't lose its context of being a grid. This has to do with the Grid layout being two-dimensional, and that fits well in a layout with rows and columns. In our case, the Grid wrap has forced the items to rows and columns and doesn't lose its two-dimensional context.
 
 On the side of the application, the Grid wrap concept works best when you want to push items while maintaining the same width. A good example is the images section we used in our web designed (explained later in this guide).
 
@@ -756,10 +754,10 @@ CSS Grid and Flexbox layout can do a lot of stuff. But in some areas, the CSS Gr
 - When you consider a content first scenario, Flexbox will be a perfect choice.
 
 #### When to consider Grid
-- Larger scale layouts with multi-rows and multi-columns that are two dimensions. CSS Grid will help you with an intricate design like the one we used in the web design above due to its capacity to support multi-directional design. It enables you to design the bigger picture of your layouts and components.
+- Larger scale layouts with multi-rows and multi-columns that are two dimensional. CSS Grid will help you with an intricate design like the one we used in the web design above due to its capacity to support multi-directional design. It enables you to design the bigger picture of your layouts and components.
 
 - When a design of your layout is a choice to arrange the items in your container, the CSS Grid will be ideal for manipulating your layout's design.
 
 The best option is to combine both layouts. A Flexbox container can be used inside a Grid container and not vise versa. When designing a web page, adopt the practice of using a Flexbox layout inside your Grid containers to move your content in the right direction.
 
-I prefer to use both layouts, where I prefer to use Flexbox for specific layouts and CSS Grid for the general or the overall design. Rather than going with choice bias, I generally use them both where they're more needed. They both have different use cases, and I use the one more appropriate for the task at hand.
+I prefer to use Flexbox for specific layouts and CSS Grid for the general or the overall design. Rather than going with choice bias, I generally use them both where they're more needed. They both have different use cases, and I use the one more appropriate for the task at hand.
