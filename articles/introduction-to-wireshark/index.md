@@ -1,6 +1,6 @@
-### Introduction to Network Analysis Using Wireshark
-As an IT professional, one of the most powerful networking tools you will find yourself using is ```Wireshark```, a tool mostly used in the analysis of network packets.  
-In this tutorial, we will be looking at an overview of ```Wireshark```, how it works, and several other uses. 
+### Introduction to network analysis using ***Wireshark***
+As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used in the analysis of network packets.  
+In this tutorial, we will be looking at an overview of ***Wireshark***, how it works, and several other uses. 
 
 ### Requirements
 * Networking Basics
@@ -9,14 +9,14 @@ In this tutorial, we will be looking at an overview of ```Wireshark```, how it w
 * Routing and port forwarding
 * DHCP
 
-### What is Wireshark?
+### What is ***Wireshark***?
 
-Wireshark software's history goes back to 1998, as an open-source project started by volunteer network experts around the world.  
+***Wireshark*** software's history goes back to 1998, as an open-source project started by volunteer network experts around the world.  
 The main aim was to build a standard network protocol analyzing tool.  
 
-_Wireshark_ is a network packet analyzer that is used to capture the data on your network. This data is presented in a human-understandable form.  
+***Wireshark*** is a network packet analyzer that is used to capture the data on your network. This data is presented in a human-understandable form.  
 
-In case you find yourself in a position where you need to try and troubleshoot network packets, _Wireshark_ is the right tool for you!
+In case you find yourself in a position where you need to try and troubleshoot network packets, ***Wireshark*** is the right tool for you!
 
 This is a powerful tool that enables you to perform various operations such as:
 * Troubleshooting your network.
@@ -24,24 +24,23 @@ This is a powerful tool that enables you to perform various operations such as:
 * Learning more about your network protocols at the microscopic level.
 * Performing analysis of voice over the internet(VoIP).
 
-### How Wireshark works
-As we have said, ```Wireshark``` is a packet analyzer, sometimes other people refer to it as a packet sniffer, so do not get confused.  
-
-How it works is very simple, let's take your machine, for example, connected to your ```WIFI``` or the network you're currently using, and you want to determine what is currently going on, on your network.  
-When you use _Wireshark_, it captures your network traffic (the data moving currently on your network) and records the movement of data offline.
+### How ***Wireshark*** works
+As we have said, ***Wireshark*** is a packet analyzer, sometimes other people refer to it as a packet sniffer, so do not get confused.  
+How it works is very simple, let's take your machine, for example, connected to your ***WiFi*** or the network you're currently using, and you want to determine what is currently going on, on your network.  
+When you use ***Wireshark***, it captures your network traffic (the data moving currently on your network) and records the movement of data offline.
 You can then use this data to analyze the network activities, that is it.  
 
 
-### Installing Wireshark
-In this tutorial, we are going to install Wireshark in Ubuntu 20.04. You are free to use any other system by following installation instructions [here](https://www.wireshark.org/download.html).  
-Follow these steps to install Wireshark in ubuntu 20.04.  
+### Installing ***Wireshark***
+In this tutorial, we are going to install ***Wireshark*** in Ubuntu 20.04. You are free to use any other system by following installation instructions [here](https://www.wireshark.org/download.html).  
+Follow these steps to install ***Wireshark*** in ubuntu 20.04.  
 
 #### Step 1: Updating the system apt
 ```
 sudo apt update
 ```
 This outputs the following, and your output might be different:-
-```console
+```bash
 jumamiller@OpijaKaeli:~$ sudo apt update
 [sudo] password for jumamiller: 
 Hit:1 http://ke.archive.ubuntu.com/ubuntu focal InRelease                      
@@ -54,14 +53,14 @@ jumamiller@OpijaKaeli:~$
 
 ```
 
-#### Step 2: Installing Wireshark
-Since we have updated our system, we install Wireshark's latest version by running the following command:-  
+#### Step 2: Installing ***Wireshark***
+Since we have updated our system, we install ***Wireshark's*** latest version by running the following command:-  
 
-```console
+```bash
 sudo apt install Wireshark
 ```
 
-```console
+```bash
 jumamiller@OpijaKaeli:~$ sudo apt install Wireshark
 Reading package lists... Done
 Building dependency tree       
@@ -85,20 +84,20 @@ After this operation, 116 MB of additional disk space will be used.
 Do you want to continue? [Y/n] 
 
 ```
-Enter ```y``` to continue downloading Wireshark. This will take a few minutes depending on your network speed.  
-On completion, it will prompt you with a window to configure Wireshark for root privileges.
+Enter ```y``` to continue downloading ***Wireshark***. This takes a few minutes depending on your network speed.  
+On completion, it prompts you with a window to configure Wireshark for root privileges.
 
 ![Configure-wireshark](/engineering-education/introduction-to-wireshark/configure-wireshark.jpg)
 
-Using the arrow keys, select the ```yes``` or ```no``` depending on your need, then press enter.  
+Using the arrow keys, select the ***yes*** or ***no*** depending on your need, then press enter.  
 
 #### Step 4: Verify Wireshark Installation
-Run the following command to get the version of Wireshark you have installed:-  
+Run the following command to get the version of ***Wireshark*** you have installed:-  
 
-```console
+```bash
 wireshark --version
 ```
-```console
+```bash
 jumamiller@OpijaKaeli:~$ wireshark --version
 Wireshark 3.2.3 (Git v3.2.3 packaged as 3.2.3-1)
 
@@ -124,57 +123,57 @@ Built using gcc 9.3.0.
 jumamiller@OpijaKaeli:~$ 
 
 ```
-#### Step 5: Launch Wireshark
-To start Wireshark, run the following command on the terminal:- 
-```console
+#### Step 5: Launch ***Wireshark***
+To start ***Wireshark***, run the following command in the terminal:- 
+```bash
 wireshark
 ```
-```console
+```bash
 jumamiller@OpijaKaeli:~$ wireshark
 |
 ```
-By running this command will redirect you to the Wireshark software window.
+Running this command redirects you to the ***Wireshark*** software window.
 
-#### Fig 1.2 Wireshark Window
+***Fig 1.2 Wireshark window***
 ![Wireshark-window](/engineering-education/introduction-to-wireshark/wireshark-window.jpg) .  
 
-Congratulations, you now have ```Wireshark``` installed in your system and running.
+Congratulations, you now have ***Wireshark*** installed in your system and running.
 
 ### Your first packet capture
-We have Wireshark in our system installed. Let's dive in and start experimenting with its features.  
+We have ***Wireshark*** in our system installed. Let's dive in and start experimenting with its features.  
 
-#### 1. Wireshark Graphical User Interface
-From ```Fig 1.2``` above, Wireshark contains some of the commonly used menus,
-``` File, Edit, View, Go, Capture, Analyze, Statistics, Telephony, Wireless, Tools, and Help```.  
+#### 1. Wireshark graphical user interface
+From ***Fig 1.2*** above, ***Wireshark*** contains some of the commonly used menus,
+***File, Edit, View, Go, Capture, Analyze, Statistics, Telephony, Wireless, Tools, and Help***.  
 Below menus above are the:-  
-* ``` Start Capturing Packets icon ```
-* ``` Stop Capturing Packets icon ```
-* ``` Restart Current Capture Icon ```
+* **Start Capturing Packets icon**
+* **Stop Capturing Packets icon**
+* **Restart Current Capture Icon**
 and several other icons that you can hover on and get to know what they do.  
 
-#### 2. Wireshark Network Interface Selection
-Normally, when you start a Wireshark without opening a capture file or starting a capture process, a welcome screen is displayed.  
+#### 2. Wireshark network interface selection
+Normally, when you start a ***Wireshark*** without opening a capture file or starting a capture process, a welcome screen is displayed.  
 This window will always display currently opened capture files and the capture available interfaces.  
 
 Therefore the first step involves selecting the network interface to capture its data.  
 Remember, the interfaces are different for different operating systems.  
 
-#### Fig 1.3 Network Interfaces
+***Fig 1.3 Network interfaces***
 ![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interface.jpg)
 
 From the above screenshot, we have 6 interfaces, which we can then choose from.  
 
-Hit on the ```Capture``` button just below the ``` Welcome to Wireshark```.  
-This will prompt you to another window, as seen below.  
+Hit on the ***Capture*** button just below the ***Welcome to Wireshark***.  
+This prompts you to another window, as seen below.  
 
-#### Fig 1.4 Network Interfaces 2
+***Fig 1.4 Network interfaces 2***
 ![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interfaces-2.jpg)
 
 Now select any of the interfaces you're presented with. In this example, we're going to explore the UDP Listener option.  
 Then click on the start button in the far left corner.  
 At this stage, you should be able to get an output like the one presented below.  
 
-#### Fig 1.5 Network Traffics
+***Fig 1.5 Network traffic***
 ![Network-Traffics](/engineering-education/introduction-to-wireshark/wireshark-live-capture.jpg)
 
 In the capture panel above, you're able to notice that network packet capturing is in sequential order, with each line representing each packet captured.  
@@ -183,36 +182,36 @@ The information is displayed in tabular form, with rows and columns.
 Each row represents the packet collected, while columns provide you with additional information such as time, protocols, length, et cetera. You can refer to the screenshot above.  
 
 Let's have a look at these columns and what type of information they provide us with.  
-* ```No``` - Represents a unique network packet sequence number. This can be used to identify a given packet.  
-* ``` Time ```- This is the time at which a particular packet was captured.  
-* ```Source ```- This represents where we are getting the packets from. This is denoted as Internet Protocols(IP Addresses).
-* ``` Destination```- This is used to represent the Internet Protocol(IP Address) where the packet is going.  
-* ```Protocol```- This refers to the protocol of the data you have captured. This could be ```TCP, ARP et cetera```
-* ```Length```- This is used to represent the size of the packet captured.
-* ``` Info```- This gives you additional information about the packet you have captured.  
+* ***No*** - Represents a unique network packet sequence number. This can be used to identify a given packet.  
+* ***Time***- This is the time at which a particular packet was captured.  
+* ***Source***- This represents where we are getting the packets from. This is denoted as Internet Protocols(IP Addresses).
+* ***Destination***- This is used to represent the Internet Protocol(IP Address) where the packet is going.  
+* ***Protocol***- This refers to the protocol of the data you have captured. This could be ***TCP, ARP et cetera***
+* ***Length***- This is used to represent the size of the packet captured.
+* ***Info***- This gives you additional information about the packet you have captured.  
 
-NOTE:- Each protocol is represented with its color scheme. In our case, for example, the ```TCP ``` protocol has a ```#cccccc``` background.  This helps the user to easily differentiate between these protocols.  
+NOTE: Each protocol is represented with its color scheme. In our case, for example, the ***TCP*** protocol has a ***#cccccc*** background.  This helps the user to easily differentiate between these protocols.  
 
 
-Congratulations, you have been able to capture network packets, and that's how simple Wireshark is user friendly. 
+Congratulations, you have been able to capture network packets, and that's how simple ***Wireshark*** is user friendly. 
 
-### Packet Details Panel:-
+### Packet details panel:-
 Now that we can capture some data try to click on a single row, and you will notice that some data are being displayed on the immediate window.  
 
-#### Fig 1.5 Packet Details
+***Fig 1.5 Packet details***
 ![Single-Packet-Details](/engineering-education/introduction-to-wireshark/wireshark-single-packet-details.jpg)
 On the highlighted protocol, click on it to get more details about this SSDP protocol as shown below:-  
 
-#### Fig 1.6 More on packet Details
+***Fig 1.6 More on packet details***
 ![Protocol-details](/engineering-education/introduction-to-wireshark/wireshark-protocol-details.jpg)
 
 The information above tells us more about the packet captured, including the device used. This data is very important, especially in system hacks, where they can be collected for forensics.  
 
-### Packet Bytes Panel
-From the above packet details, remember when you clicked a given row, you could get details on the window on fig 1.6 above. Consequently, this caused the window below Fig 1.6 to be updated as well.  
+### Packet bytes panel
+From the above packet details, remember when you clicked a given row, you could get details on the window on ***fig 1.6*** above. Consequently, this caused the window below ***Fig 1.6*** to be updated as well.  
 
 Let's have a look how it looks like.  
-#### Fig 1.7 Bytes Details
+***Fig 1.7 Bytes details***
 ![bytes-panel](/engineering-education/introduction-to-wireshark/wireshark-bytes-panel.jpg)
 
 A closer look at this screenshot, the numbers are in bytes. This is the actual format of the data dump when the packet was captured.  
@@ -220,9 +219,9 @@ A closer look at this screenshot, the numbers are in bytes. This is the actual f
 
 ### Conclusion
 
-In this tutorial, we worked on Wireshark, giving a quick overview of how to get started with this amazing tool.  
-We have seen how we can install Wireshark in a Linux based system and how to perform various tasks such as dumping the packet streams.  
-We will explore in our next tutorial as we discuss more advanced features of Wireshark.  
+In this tutorial, we worked on ***Wireshark***, giving a quick overview of how to get started with this amazing tool.  
+We have also seen how we can install ***Wireshark*** in a Linux based system and how to perform various tasks such as dumping the packet streams.  
+We will explore in our next tutorial as we discuss more advanced features of ***Wireshark***.  
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
