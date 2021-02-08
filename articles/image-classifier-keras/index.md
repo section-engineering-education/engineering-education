@@ -1,6 +1,19 @@
-![hero image](/engineering-education/image-classifier-keras/header.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/image-classifier-keras/
+title: How to Build an Image Classifier with Keras
+description: In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
+author: iniabasi-affiah
+date: 2021-02-08T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# How to Build an Image Classifier with Keras
+  - url: /engineering-education/image-classifier-keras/header.jpg
+    alt: Shared Nothing and Shared Disk Clustering image
+---
 
 In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
 
