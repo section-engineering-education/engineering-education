@@ -28,7 +28,7 @@ This is a powerful tool that enables you to perform various operations such as:
 As we have said, ```Wireshark``` is a packet analyzer, sometimes other people refer to it as a packet sniffer, so do not get confused.  
 
 How it works is very simple, let's take your machine, for example, connected to your ```WIFI``` or the network you're currently using, and you want to determine what is currently going on, on your network.  
-What happens is that whenever you use ```Wireshark```, it will capture your network traffic(this refers to the data moving currently on your network) and record every single data offline.  
+When you use _Wireshark_, it captures your network traffic (the data moving currently on your network) and records the movement of data offline.
 You can then use this data to analyze the network activities, that is it.  
 
 
