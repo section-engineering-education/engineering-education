@@ -8,12 +8,12 @@ Spring Data MongoDB makes it possible to integrate a Spring Boot application wit
 4. [MongoDB](https://www.mongodb.com/try/download/community) installed on your computer.
 
 ### MongoDB terminology
-**Database** is a container for collections and can be thought of as similar to an RDBMS database, which is a container for Tables.
-**Collection** is equivalent to Tables in RDBMS, but unlike a table, it has a dynamic schema. A collection exists within a database.
-**Document** is a single record in a MongoDB collection. It can be thought of as a row in RDBMS.
-**Field** A document has zero or more fields. It's like an RDBMS column having a key-value pair.
-**Embedded document** is an efficient and clean way to store related data, especially data that are regularly accessed together
-**Primary key** uniquely identities a document.
+- **Database** is a container for collections and can be thought of as similar to an RDBMS database, which is a container for Tables.
+- **Collection** is equivalent to Tables in RDBMS, but unlike a table, it has a dynamic schema. A collection exists within a database.
+- **Document** is a single record in a MongoDB collection. It can be thought of as a row in RDBMS.
+- **Field** A document has zero or more fields. It's like an RDBMS column having a key-value pair.
+- **Embedded document** is an efficient and clean way to store related data, especially data that are regularly accessed together
+- **Primary key** uniquely identifies a document.
 
 ### Creating application
 We will be using [spring initializr](https://start.spring.io/) to create our application.
@@ -163,7 +163,7 @@ spring.data.mongodb.port=27017
 - `spring.data.mongodb.port=27017` indicates that we will be connecting to MongoDB through port `27017`.
 
 ### Conclusion
-Now that you have learned how to create a Spring Boot CRUD API in Kotlin and MongoDB, add fields `dateCreated` and `lastModified` in the `Todo` data class.
+Now that you have learned how to create a Spring Boot CRUD API in Kotlin and MongoDB, go ahead and explore more eaures. Try to add fields `dateCreated` and `lastModified` in the `Todo` data class.
 
 Find the source code [here](https://github.com/paulodhiambo/mongodb).
 
