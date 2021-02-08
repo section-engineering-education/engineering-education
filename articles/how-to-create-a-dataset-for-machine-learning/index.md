@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/articles/how-to-create-a-dataset-for-machine-learning/
+url: /engineering-education/how-to-create-a-dataset-for-machine-learning/
 title: How to Create a Dataset for Machine Learning
 description: This article gives an overview of how datasets are created for Machine Learning models.
 author: willies-ogola
@@ -10,7 +10,7 @@ date: 2021-01-28T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/articles/how-to-create-a-dataset-for-machine-learning/hero.jpg
+  - url: /engineering-education/how-to-create-a-dataset-for-machine-learning/hero.jpg
     alt: Machine Learning (ML) Datasets example image
 ---
 Machine Learning (ML) has had a profound influence on a diverse range of applications. This has been possible mainly due to better computing power and large amounts of training data. I cannot emphasize enough the importance of training data to ML systems.
