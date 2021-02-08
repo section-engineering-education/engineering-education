@@ -16,7 +16,7 @@ The main aim was to build a standard network protocol analyzing tool.
 
 _Wireshark_ is a network packet analyzer that is used to capture the data on your network. This data is presented in a human-understandable form.  
 
-In case you find yourself in a position where you need to try and troubleshoot every single network packet, ``` Wireshark``` is the right tool for you!
+In case you find yourself in a position where you need to try and troubleshoot network packets, _Wireshark_ is the right tool for you!
 
 This is a very powerful tool, as it enables you, the user, to perform various operations such as:
 * Troubleshooting your network.
