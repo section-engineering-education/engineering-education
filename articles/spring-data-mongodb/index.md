@@ -284,7 +284,7 @@ spring.data.mongodb.port=27017
 
   ![Mongo Atlas connection string](/engineering-education/spring-data-mongodb/mongo-db-connection-string.png) 
 
-5. Add configurations below to connect to Mongo Atlas.
+5. Add configurations below to `application.properties` file.
 
   ```yaml
 
