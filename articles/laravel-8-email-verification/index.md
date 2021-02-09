@@ -85,7 +85,7 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=YOUREMAIL
 MAIL_FROM_NAME="${APP_NAME}"
 ```
-This tutorial strongly recommends you to use [Mailtrap](https://mailtrap.io/) as they are very easy to use with well-structured documentation.  
+>This tutorial strongly recommends you to use [Mailtrap](https://mailtrap.io/) as they are very easy to use with well-structured documentation.  
 
 #### Step 4: Installing Laravel Jetstream Scaffolding
 
