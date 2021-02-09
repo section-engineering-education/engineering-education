@@ -104,7 +104,7 @@ php artisan migrate
 ```
 
 #### Step 4: Model preparation:
-Laravel application ships with `User` model(the data structure in a database) on installation
+Laravel application ships with `User` model (the data structure in a database) on installation
 By default, this model class does not implement the `Illuminate\Contracts\Auth\MustVerifyEmail` contract.
 Therefore, our first step ensures this class implements the `MustVerifyEmail` interface.  
 
