@@ -177,6 +177,7 @@ public class ParentModel {
 ```
 
 ### Setting up Adapter classes
+
 Adapters are used to set and pass data that will be displayed in the respective RecyclerView items. The adapter manages the collection of items (defined in an individual layout) and `ViewHolder` objects. `ViewHolder` defines the individual views (widgets) in the layout and populate the components into an individual row layout. An `onBindViewHolder` class will bind the views with their respective data objects.
 
 Technically, the data could come from a database or a remote server if the information to be passed to the recycling view is hosted remotely. To keep this app straight to the point, we will use dummy/locally available information and then pass them to the respective RecyclerView Adapters.
