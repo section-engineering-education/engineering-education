@@ -1,35 +1,56 @@
-RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of items in a list. It provides [Layout Managers](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity) to position these items. This way, you can create customized layout managers for RecyclerView containers.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-nested-recycler-view/
+title: Introduction to Android Nested RecyclerView
+description: This article will explain how to implement a Nested RecyclerView. A RecyclerView widget recycles UI components. It creates components that allow users to scroll through the list. RecyclerView changes the UI components to the data they represent.
+author: joseph-chege
+date: 2021-02-09T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-A RecyclerView can be used inside another RecyclerView. This is referred to as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
+  - url: /engineering-education/android-nested-recycler-view/hero.jpg
+    alt: Introduction to Memorization in JavaScript Hero Image
+---
+RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of items in a list. It provides [Layout Managers](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity) to position these items. This way, you can create customized layout managers for RecyclerView containers.
+<!--more-->
+We can use a RecyclerView inside another RecyclerView. We refer to this as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
 ![Google play store nested RecyclerView](/engineering-education/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
+
 [***Image Source***](https://play.google.com/store/apps?hl=en)
 
 Applications such as eCommerce, music apps, and movie apps such as Netflix uses this concept.
 
 ![Netflix nested Recyclerview](/engineering-education/android-nested-recycler-view/netflix-nested-recycler-view.png)
+
 [***Image Source***](https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en&gl=US)
 
 ![Music app nested Recyclerview](/engineering-education/android-nested-recycler-view/music-app-nested-recycler-view.png)
+
 [***Image Source***](https://play.google.com/store/apps/details?id=com.piyush.music)
 
-In this case, the application would have one parent or the outer RecyclerView widget, which is scrollable vertically. The parent RecyclerView host child or inner RecyclerView, which is scrollable horizontally.
+In this case, the application would have one parent or the outer RecyclerView widget, which is scrollable vertically. The parent RecyclerView host a child or inner RecyclerView, that is scrollable horizontally.
 
 A RecyclerView widget recycles UI components. It creates components that allow users to scroll through the list. As the user scrolls down the screen, RecyclerView changes the UI components to the data they represent.
 
-With such increased UI complexity, you might need to use a nested RecyclerView. This guide will discuss and implement a nested RecyclerView using android studio.
+With such increased UI complexity, you might need to use a nested RecyclerView. This guide will discuss and implement a nested RecyclerView using Android studio.
 
 ### Prerequisites
-To follow along with this guide, prior knowledge of [android RecyclerView](https://guides.codepath.com/android/using-the-recyclerview) would be helpful.
+To follow along with this guide, prior knowledge of [Android RecyclerView](https://guides.codepath.com/android/using-the-recyclerview) would be helpful.
 
 ### Setting Up
-This guide will use java in android studio to create a nested RecyclerView application. Go ahead and start a new android studio project. RecyclerView uses a [library](https://developer.android.com/jetpack/androidx/releases/recyclerview#declaring_dependencies) `implementation "androidx.recyclerview:recyclerview:1.1.0"`. The library is pre-added on project creation, so there is no need to include the library in your grade files.
+This guide will use Java in Android studio to create a nested RecyclerView application. Go ahead and start a new Android studio project. RecyclerView uses a [library](https://developer.android.com/jetpack/androidx/releases/recyclerview#declaring_dependencies) `implementation "androidx.recyclerview:recyclerview:1.1.0"`. 
+
+The library is pre-added on project creation, so there is no need to include the library in your gradle files.
 
 ### What we will look at
 We will be using a movie app scenario to implement a nested RecyclerView concept. We will use a movie template UI on the home screen. We’ll have a vertically scrolling list (parent RecyclerView) and a horizontal carousel as the child RecyclerView.
 
 ### Laying out UI components
-This application will have three XML files. We’ll implement them from top to down, starting with the parent to the child UI components.
+This application will have three XML files. We’ll implement them from the top-down, starting with the parent to the child UI components.
 
 #### The parent RecyclerView
 As we said, we have an outer and inner RecyclerView. To start with, we will create a parent RecyclerView inside the main activity XML file. In this case, `activity_main.xml`. This will be the containing layout of the application. Go ahead and add the following Recycler View widget code into it.
@@ -58,7 +79,9 @@ As we said, we have an outer and inner RecyclerView. To start with, we will crea
 ```
 
 #### The parent RecyclerView items
-An item layout defines the layout of the individual row that we will show in the RecyclerView list. This layout will hold any item that is a child of the primary (parent) RecyclerView. This includes the child RecyclerView. Create an XML file, name it `parent_recyclerview_items.xml`. Below is the XML code to implement that.
+An item layout defines the layout of the individual row that we will show in the RecyclerView list. This layout will hold any item that is a child of the primary (parent) RecyclerView. This includes the child RecyclerView. Create an XML file, name it `parent_recyclerview_items.xml`. 
+
+Below is the XML code to be implemented.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -133,7 +156,7 @@ We have designed the parent View and the items that belong to it, including the 
 ```
 
 ### Setting up Model classes
-These are java classes that utilize the necessary parameters for each item in the RecyclerView. This consists of getters and setters method declaration. A model class contains a collection of data/objects that we want to show in the RecyclerView.
+These are Java classes that utilize the necessary parameters for each item in the RecyclerView. This consists of getters and setters method declaration. A model class contains a collection of data/objects that we want to show in the RecyclerView.
 
 The application will have two model classes.
 
@@ -162,7 +185,7 @@ public class ChildModel {
 
 - Model two: contains information about the parent items.
 
-This is a text view for the movie category. The parent item also consists of an array list of the child items. I will show you to bind them using a RecyclerView adapter holder.
+This is a text view for the movie category. The parent item also consists of an array list of the child items. We will go over how to bind them using a RecyclerView adapter holder.
 
 ```java
 public class ParentModel {
@@ -342,7 +365,7 @@ public class ParentRecyclerViewAdapter extends RecyclerView.Adapter<ParentRecycl
 }
 ```
 
-As you can see, we are binding the information of the  `ChildRecyclerViewAdapter` to the `ParentRecyclerViewAdapter`. I have set different data categories. In this case, each category contains its distinct data. The `ArrayList` binds to the parent RecyclerView. In the `onBindViewHolder`, we are setting up the child RecyclerView by
+As you can see, we are binding the information of the  `ChildRecyclerViewAdapter` to the `ParentRecyclerViewAdapter`. We have set different data categories. In this case, each category contains its distinct data. The `ArrayList` binds to the parent RecyclerView. In the `onBindViewHolder`, we will set up the child RecyclerView by:
 
 - Initializing and setting the [`LinearLayoutManager`](https://developer.android.com/reference/androidx/recyclerview/widget/LinearLayoutManager) (create an instance of the layout manager) for the child RecyclerView. Here we specify that this view will be `HORIZONTAL`.
 - Invoke the layout fixed size. This tells the layout not to move around the screen. It stabilizes the layout screen movements.
@@ -384,10 +407,13 @@ public class MainActivity extends AppCompatActivity {
 
 Initialize the parent adapter layout manager and inflate the view data into the application's main RecyclerView by associating it with the `ParentRecyclerViewAdapter`.
 
-All is now set. Run the application to test if everything is working.
+Everything is now set. Run the application to test if everything is working.
 
 ![Nested RecyclerView](/engineering-education/android-nested-recycler-view/nested-recycler-view.gif)
 
 I hope this guide helped you understand and implement nested RecyclerView within your application context. For more reference, check the code on [GitHub](https://github.com/kimkimani/Nested_RecyclerView).
 
+Happy coding!
+
+---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
