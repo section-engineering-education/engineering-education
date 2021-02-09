@@ -21,7 +21,7 @@ Like any programming language, the best practice for learning Python is building
 
 Remember that Python is a beginner-friendly language.
 
-## Introduction
+### Introduction
 
 Python is a high-level, general-purpose programming language. Python is popularly known for its simple and straightforward syntax, which makes it easy to learn.
 
@@ -35,13 +35,13 @@ It can be a bit difficult as a beginner to decide what project to build. This tu
 - Building a *rock, paper and scissors* game
 - Building a *guessing game*
 
-## Prerequisite
+### Prerequisite
 Basic knowledge of Python concepts.
 
 
 Before we begin, let's install Python on your computer, open up your browser and go to python.org, click on downloads. At the time of this tutorial, the latest version of Python is ***version 3.9.1.*** When downloading is done, open up your file explorer on your machine and install Python on your local device.
 
-### Rock-paper-scissor Game
+#### Rock-paper-scissor Game
 
 If this is your first Python project, there are tons of code editors you could use, [Visual studio code](https://code.visualstudio.com/download), [pycharm](https://www.jetbrains.com/pycharm/download/#section=windows), [sublime text](https://www.sublimetext.com/3), etc. For this tutorial, I will be using visual studio code as my code editor.
 
@@ -60,7 +60,7 @@ choice = ["rock", "paper", "scissors"]
 ```
 Your terminal would display,
 
-![Input field](input.png)
+![Input field](/engineering-education/python-projects-for-beginners/input.png)
 
 **Random** is a built-in module that generates random values within a particular specified range.
 
@@ -94,13 +94,16 @@ def game():
 
 game()
 ```
-In your terminal, the game will be displayed like this.
-![Rock-paper-scissor](RPS.png)
+
+You can run your code [here](https://repl.it/@Anitaachu/pythontest#main.py), your terminal should display.
+
+![Rock-paper-scissor](/engineering-education/python-projects-for-beginners/RPS.png)
 
 Notice, we use the *if-else* method in Python. They are very important in programming. With these methods, we can build programs that make decisions based on certain conditions. These are conditional statements. The ***if*** statement implies that if this is true or if it happens, then this should happen. While the ***elif*** and ***else*** statement simply implies that if the previous conditions don't happen or if it is not true, then this should happen.
 
 Notice, in this simple game, we have used a few methods in Python, such as *random, function, input, conditional statements.* I hope you properly understand how these concepts work in Python.
 
+#### Guessing game
 Now let's move to something a bit more complex, building a *guessing game* with different levels where users will be able to choose the desired level and given limited chances to guess.
 
 To begin, create a Python file and add:
@@ -113,14 +116,17 @@ print(f"Welcome {user} to Guessing game101, have fun!")
 
 keep_playing = True
 while keep_playing:
-      print("\nThere are diferent levels: easy, medium and hard")
-      print("\nFor easy, you have 6 chances to guess a number between 1-10. \nFor meduim, you have 4 chances to guess a number between 1-20. \nFor hard, you have 4 chances to guess a number between 1-50")
+      print("There are diferent levels: easy, medium and hard")
+      print("For easy, you have 6 chances to guess a number between 1-10")
+      print("For meduim, you have 4 chances to guess a number between 1-20")
+      print("For hard, you have 4 chances to guess a number between 1-50")
       break
 game_level = input("Select desired level: ").lower()
 ```
-When you run this, the result in your terminal will be:
+Run your code [here](https://repl.it/@Anitaachu/pythontest#main.py)
 
-![Input field](Input2.JPG)
+When you run this, the result in your terminal will be:
+![Input field](/engineering-education/python-projects-for-beginners/Input2.JPG)
 
 ***While loop*** is used to run a set of commands multiple times as long as the condition is true, i.e., for a while loop to be executed, the condition must be set to '*True*.' The while loop also runs continuously. Therefore we use the ***break*** statement to stop the loop from running.
 
@@ -183,14 +189,17 @@ else:
     print("Invalid, try easy, medium or hard")
 ```
 
-Let's see this in our terminal.
+You can run the code [here](https://repl.it/@Anitaachu/pythontest#main.py)
 
-![guessing game](Guessinggame.png)
+Let's see this in our terminal.
+![guessing game](/engineering-education/python-projects-for-beginners/Guessinggame.png)
 
 The ***randint*** method returns an integer from a random range. Notice the indentations? In Python, indentation is important, and improper indentation will cause an error, or the codes may not run as desired.
 
 Pretty easy, right? 
 
-In further tutorials, we'll work on a more complex project and use more Python methods and tools. I hope you followed along. 
+### Conclusion
+Python syntax is quite easy to get started with. I hope you understand these concepts better how and how they work. In further tutorials, we'll work on a more complex project and use more Python methods and tools.  
+
 
 Keep coding and building! Goodluck 🙂
