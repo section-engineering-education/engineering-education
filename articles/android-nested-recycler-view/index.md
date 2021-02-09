@@ -23,7 +23,7 @@ With such increased UI complexity, you might need to use a nested RecyclerView. 
 To follow along with this guide, prior knowledge of [android RecyclerView](https://guides.codepath.com/android/using-the-recyclerview) would be helpful.
 
 ### Setting Up
-This guide will use java in android studio to create a nested RecyclerView application. Go ahead and start a new android studio project. RecyclerView uses a library. The library is pre-added on project creation, so there is no need to include the library in your grade files.
+This guide will use java in android studio to create a nested RecyclerView application. Go ahead and start a new android studio project. RecyclerView uses a [library](https://developer.android.com/jetpack/androidx/releases/recyclerview#declaring_dependencies) `implementation "androidx.recyclerview:recyclerview:1.1.0"`. The library is pre-added on project creation, so there is no need to include the library in your grade files.
 
 ### What we will look at
 We will be using a movie app scenario to implement a nested RecyclerView concept. We will use a movie template UI on the home screen. We’ll have a vertically scrolling list (parent RecyclerView) and a horizontal carousel as the child RecyclerView.
@@ -32,7 +32,7 @@ We will be using a movie app scenario to implement a nested RecyclerView concept
 This application will have three XML files. We’ll implement them from top to down, starting with the parent to the child UI components.
 
 #### The parent RecyclerView
-As we said, we have an outer and inner RecyclerView. To start with, we will create a parent RecyclerView inside the main activity XML file. In this case, `activity_main.xml`. This will be the containing layout of the application. Go ahead and add the following recycler widget code into it.
+As we said, we have an outer and inner RecyclerView. To start with, we will create a parent RecyclerView inside the main activity XML file. In this case, `activity_main.xml`. This will be the containing layout of the application. Go ahead and add the following Recycler View widget code into it.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -133,7 +133,7 @@ We have designed the parent View and the items that belong to it, including the 
 ```
 
 ### Setting up Model classes
-These are java classes that utilize the necessary parameters for each in the RecyclerView. It consists of getters and setters method declaration. A model class contains a collection of data/objects that we want to show in the RecyclerView.
+These are java classes that utilize the necessary parameters for each item in the RecyclerView. This consists of getters and setters method declaration. A model class contains a collection of data/objects that we want to show in the RecyclerView.
 
 The application will have two model classes.
 
