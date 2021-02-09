@@ -1,6 +1,3 @@
-### Introduction to network analysis using ***Wireshark***
-As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used in the analysis of network packets.  
-In this tutorial, we will be looking at an overview of ***Wireshark***, how it works, and several other uses. 
 
 ### Requirements
 * Networking Basics
@@ -9,38 +6,40 @@ In this tutorial, we will be looking at an overview of ***Wireshark***, how it w
 * Routing and port forwarding
 * DHCP
 
+### Introduction
+
+As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used in the analysis of network packets.  
+In this tutorial, we will be looking at an overview of ***Wireshark***, how it works, and its other several uses. 
+
 ### What is ***Wireshark***?
 
-***Wireshark*** software's history goes back to 1998, as an open-source project started by volunteer network experts around the world.  
-The main aim was to build a standard network protocol analyzing tool.  
-
-***Wireshark*** is a network packet analyzer that is used to capture the data on your network. This data is presented in a human-understandable form.  
-
-In case you find yourself in a position where you need to try and troubleshoot network packets, ***Wireshark*** is the right tool for you!
-
-This is a powerful tool that enables you to perform various operations such as:
-* Troubleshooting your network.
-* Performing security operations that are used to detect security threats such as port scanning.  
-* Learning more about your network protocols at the microscopic level.
+***Wireshark*** is an open-source project whose main aim is to build a standard network protocol analyzing tool. 
+It's a network packet analyzer that captures data on a network then presenting in a human-understandable form
+This tool performs various operations such as:  
+* Troubleshooting networks.
+* Performing security operations used to detect security threats such as port scanning on a network.  
+* Learning more about network protocols at the microscopic level.
 * Performing analysis of voice over the internet(VoIP).
 
-### How ***Wireshark*** works
-As we have said, ***Wireshark*** is a packet analyzer, sometimes other people refer to it as a packet sniffer, so do not get confused.  
-How it works is very simple, let's take your machine, for example, connected to your ***WiFi*** or the network you're currently using, and you want to determine what is currently going on, on your network.  
-When you use ***Wireshark***, it captures your network traffic (the data moving currently on your network) and records the movement of data offline.
-You can then use this data to analyze the network activities, that is it.  
 
+### How does***Wireshark*** works?
+As we have said, ***Wireshark*** is a packet analyzer or a packet sniffer.   
+How it works is very simple, let's take your computer, for example, connected to your network, and you want to determine what is currently going on, on your network.    
+When you use ***Wireshark***, it captures network traffic (the data moving currently on your network) and records the movement of data offline. You can then use this data to analyze the network activities.  
 
 ### Installing ***Wireshark***
-In this tutorial, we are going to install ***Wireshark*** in Ubuntu 20.04. You are free to use any other system by following installation instructions [here](https://www.wireshark.org/download.html).  
-Follow these steps to install ***Wireshark*** in ubuntu 20.04.  
+In this tutorial, we are installing ***Wireshark*** in Ubuntu 20.04. You are free to use any other system by following installation instructions [here](https://www.wireshark.org/download.html).   
 
-#### Step 1: Updating the system apt
-```
+### Step 1: Updating the system apt
+```bash
+
 sudo apt update
 ```
-This outputs the following, and your output might be different:-
+
+This outputs the following,remember your output might be different from the one shown below:  
+
 ```bash
+
 jumamiller@OpijaKaeli:~$ sudo apt update
 [sudo] password for jumamiller: 
 Hit:1 http://ke.archive.ubuntu.com/ubuntu focal InRelease                      
@@ -55,10 +54,6 @@ jumamiller@OpijaKaeli:~$
 
 #### Step 2: Installing ***Wireshark***
 Since we have updated our system, we install ***Wireshark's*** latest version by running the following command:-  
-
-```bash
-sudo apt install Wireshark
-```
 
 ```bash
 jumamiller@OpijaKaeli:~$ sudo apt install Wireshark
@@ -95,9 +90,7 @@ Using the arrow keys, select the ***yes*** or ***no*** depending on your need, t
 Run the following command to get the version of ***Wireshark*** you have installed:-  
 
 ```bash
-wireshark --version
-```
-```bash
+
 jumamiller@OpijaKaeli:~$ wireshark --version
 Wireshark 3.2.3 (Git v3.2.3 packaged as 3.2.3-1)
 
@@ -124,11 +117,10 @@ jumamiller@OpijaKaeli:~$
 
 ```
 #### Step 5: Launch ***Wireshark***
-To start ***Wireshark***, run the following command in the terminal:- 
+To start ***Wireshark***, run the following command in the terminal:  
+
 ```bash
-wireshark
-```
-```bash
+
 jumamiller@OpijaKaeli:~$ wireshark
 |
 ```
@@ -142,7 +134,7 @@ Congratulations, you now have ***Wireshark*** installed in your system and runni
 ### Your first packet capture
 We have ***Wireshark*** in our system installed. Let's dive in and start experimenting with its features.  
 
-#### 1. Wireshark graphical user interface
+### 1. Wireshark graphical user interface
 From ***Fig 1.2*** above, ***Wireshark*** contains some of the commonly used menus,
 ***File, Edit, View, Go, Capture, Analyze, Statistics, Telephony, Wireless, Tools, and Help***.  
 Below menus above are the:-  
@@ -151,7 +143,7 @@ Below menus above are the:-
 * **Restart Current Capture Icon**
 and several other icons that you can hover on and get to know what they do.  
 
-#### 2. Wireshark network interface selection
+### 2. Wireshark network interface selection
 Normally, when you start a ***Wireshark*** without opening a capture file or starting a capture process, a welcome screen is displayed.  
 This window will always display currently opened capture files and the capture available interfaces.  
 
