@@ -2,20 +2,17 @@ Hash table are the most and convenient data structures that are easily accessibl
 
 ### Prerequisites
 
-To get started, you will need to understand python arrays, lists, and classes. You also need a code editor and a python interpreter to run your code. We will be using visual studio code, which has an integrated terminal for running the code. You can also use pycharm for the same.
+To get started, you will need to understand python arrays, lists, and classes. You also need a code editor and a python interpreter to run your code. We will be using visual studio code, which has an integrated terminal for running the code. You can also use pycharm for the same. The working implementation can be found [here](https://repl.it/@jerimkaura/Hash-Table#hashtable.py).
 
-### 1. The HashTable Class Members
+### 1. The HashTable Class 
 
-First, we will need to have all the python modules that we will use in our environment. We will import `randint`,`Typevar`, `Callable` and `List`.
+First, we will need to have all the python modules that we will use in our environment. We will import `randint`,`Typevar`, `Callable` and `List`. We then define our `HashTable` class with its data members.
 
 ```python
 from random import randint
 from typing import TypeVar, Callable,  List
-```
-
-We then define our `HashTable` class with its data members and methods.
-
-```python
+from bisect import bisect_left
+T = TypeVar('T')
 class HashTable:
     def __init__(self):
         # Initial table size
@@ -44,20 +41,14 @@ class HashTable:
 
         # random integer for use in secondary hashing
         self.b: int = randint(1, 2**32)
-```
 
-### 2. Class methods & hashing
-
-We have successfully created the data members. We now proceed to write our dunder methods for overwriting some of the python built-in function behaviors. This implementation is based on the following class methods, which will be discussed after the dunder methods.
-
-```python
-def __len__(self) -> int:
+    def __len__(self) -> int:
         """ Returns number of (key, value) pairs in table """
         return self.filled_count
 
     def __repr__(self) -> str:
         """ Returns HashTable's string representation
-        (à la Python's dict's {key1: value1, key2: value2, ..., keyN: valueN})
+        ({key1: value1, key2: value2, ..., keyN: valueN})
         """
 
         r: str = "{" + ''.join([(f'\"{pair[0]}\"' if isinstance(pair[0], str) else str(pair[0])) + ': ' +
@@ -79,7 +70,11 @@ def __len__(self) -> int:
         self.delete(key)
 ```
 
-- **`load_factor()`** This function is responsible for calculating the load factor of the table. The load factor tells the percentage of the table slots filled. The resize function should be called once the load factor reaches 75%. The load factor is obtained by dividing the number of filled slots by the table size.
+### 2. Class methods & hashing
+
+We have successfully created the data members. We now proceed to write our class methods. This implementation is based on the following class methods.
+
+- **`load_factor()`** This method is responsible for calculating the load factor of the table. The load factor tells the percentage of the table slots filled. The resize method should be called once the load factor reaches 75%. The load factor is obtained by dividing the number of filled slots by the table size.
 
 ```python
 @property
@@ -88,7 +83,7 @@ def __len__(self) -> int:
         return self.filled_count / self.table_size
 ```
 
-- **`encode()`** Handles encoding of the key supplied to the hash function. Strings of arbitrary length are encoded using a [polynomial rolling hash scheme] (https://cp-algorithms.com/string/string-hashing.html). The variables `p` and `m` must be positive numbers. `p` should be a prime number roughly equal to the number of characters in the input alphabet. For our case, the number of printable ASCII characters is 95; therefore, our `p` value is 97. On the other hand, `m` should be a huge prime number. We picked = 115561578124838522881`, which is the 20th prime number in the [Online Encyclopedia of Integer Sequences A118839 (OEIS)] (https://oeis.org/A118839). The function returns an integer `hash value` of the key supplied.
+- **`encode()`** Handles encoding of the key supplied to the method. Strings of arbitrary length are encoded using a [polynomial rolling hash scheme] (https://cp-algorithms.com/string/string-hashing.html). The variables `p` and `m` must be positive numbers. `p` should be a prime number roughly equal to the number of characters in the input alphabet. For our case, the number of printable ASCII characters is 95; therefore, our `p` value is 97. On the other hand, `m` should be a huge prime number. We picked = 115561578124838522881`, which is the 20th prime number in the [Online Encyclopedia of Integer Sequences A118839 (OEIS)] (https://oeis.org/A118839). The function returns an integer `hash value` of the key supplied.
 
 ```python
 @staticmethod
@@ -117,7 +112,7 @@ def __len__(self) -> int:
                 f"Cannot encode {type(key)} (Only integers & strings supported)")
 ```
 
-- **`crc32_table()`** Generates a table of values for use with the CRC32 hash function
+- **`crc32_table()`** Generates a table of values for use with the CRC32 hash method
 
 ```python
 @staticmethod
@@ -134,7 +129,7 @@ def __len__(self) -> int:
         return table
 ```
 
-- **`crc32_hash()`** This the Hashing function. It hashes the key generated by the `encode () ` function. It uses the Least-Significant-Bit-first order, sets the initial CRC to FFFFFFFF<sub>16</sub>, and complements the final CRC. The CRC32 algorithm produces checksums that are so well distributed that we use it as a hashing function. Detailed information about the CR32 algorithm could be found [here](https://rosettacode.org/wiki/CRC-32#Python).
+- **`crc32_hash()`** This the Hashing method. It hashes the key generated by the `encode () ` method. It uses the Least-Significant-Bit-first order, sets the initial CRC to FFFFFFFF<sub>16</sub>, and complements the final CRC. The CRC32 algorithm produces checksums that are so well distributed that we use it as a hashing function. Detailed information about the CR32 algorithm could be found [here](https://rosettacode.org/wiki/CRC-32#Python).
 
 ```python
 def crc32_hash(self, key: T) -> int:
@@ -161,7 +156,7 @@ def secondary_hash(self, key) -> int:
         return index if index != 0 else 1
 ```
 
-- **`resize()`** This function increases the table's size once the `load factor` reaches the threshold. The table is resized to the smallest prime number greater than 2 \* the_current_size of the table. We apply the [sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) to find the prime number. After we have resized the table, all the entries in the table are re-hashed.
+- **`resize()`** The  method increases the table's size once the `load factor` reaches the threshold. The table is resized to the smallest prime number greater than 2 \* the_current_size of the table. We apply the [sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) to find the prime number. After we have resized the table, all the entries in the table are re-hashed.
 
 ```python
  def resize(self) -> None:
@@ -180,29 +175,11 @@ def secondary_hash(self, key) -> int:
             if pair is not None:
                 self[pair[0]] = pair[1]
 
-    @staticmethod
-    def primes_below_n(n: int) -> List[int]:
-        sieve: List[bool] = [True] * n
-        p: int = 2
-        k: int = 2
-        primes: List[int] = [2]
-        while p < n:
-            while k*p < n:
-                sieve[k*p] = False
-                k += 1
-            try:
-                p = sieve.index(True, p+1)
-                k = 2
-                primes.append(p)
-            except ValueError:
-                break
-        return primes
-
 ```
 
 ### 3. Operations on Hashtables
 
-The list of functions below shows the basic operations that can be performed on Hashtables.
+The list of methoeds below shows the basic operations that can be performed on Hashtables.
 
 - **`find ()`** Gets the first occupied position using double hashing.
   Handles search of a key in the table. It returns a pair value found if the search is successful; otherwise, it raises an exception that the key does not exist in the table.
@@ -289,72 +266,52 @@ def update(self, key: T, value: T) -> None:
                 self.filled_count += 1
 ```
 
-This finalizes our code for the implementation part. We now perform a unit test for our implementations using the below piece of code.
-
 ### 4. Unittesting
 
+This finalizes our code for the implementation part. We now perform a unit test for our implementations  [here.](http://repl.it/@jerimkaura/Hash-table-tests#main.py). 
+
+- `test_empty_table()`. Returns true if the table size is zero. `AssertEquals` is used to determine if the length and the load factor are both zero.
 ```python
-import unittest
-from hash import HashTable
-from random import randint, random
-import binascii
-
-
-class TestHashTableMethods(unittest.TestCase):
-    def test_empty_table(self):
-        table = HashTable()
-        self.assertEqual(str(table), '{}')
-        self.assertEqual(len(table), 0)
-        self.assertEqual(table.load_factor, 0)
-
-    def test_update_ops(self):
-        table = HashTable()
-        table['answer'] = 42
-        # or table.update('answer', 42)
-        # or self.assertEqual(table.lookup('answer', 42))
-        self.assertEqual(table['answer'], 42)
-        table[53] = "test"
-        table[53] = "updated"
-        self.assertEqual(table[53], "updated")
-        self.assertEqual(len(table), 2)
-        self.assertAlmostEqual(table.load_factor, 2 / table.table_size)
-
-    def test_delete(self):
-        table = HashTable()
-        table['answer'] = 42
-        table[53] = 1.618
-        del table[53]                           # or table.delete(53)
-        with self.assertRaises(Exception):
-            table[53]
-        self.assertAlmostEqual(table.load_factor, 1 / table.table_size)
-
-    def test_encoding(self):
-        with self.assertRaises(Exception):
-            HashTable.encode(1.555)
-        self.assertEqual(HashTable.encode("Azc8{"), 10941154641)
-
-    def test_crc32(self):
-        table = HashTable()
-        table.hash_function = table.crc32_hash
-        self.assertEqual(table.crc32_hash("C'est la vie"),
-                         0x2805c0d0 % table.table_size)
-        self.assertEqual(table.crc32_hash("hello-world"),
-                         binascii.crc32(b"hello-world") % table.table_size)
-
-
-if __name__ == "__main__":
-    unittest.main()
+def test_empty_table(self):
+    table = HashTable()
+    self.assertEqual(str(table), '{}')
+    self.assertEqual(len(table), 0)
+    self.assertEqual(table.load_factor, 0)
 ```
 
-The above program's output will be as shown below, showing that our program passed the tests.
-
+- `test_update_ops()`. The method checks for an existing key and replace the value associated with the key with the input supplied. `AsseertEqual` checks if the value of the key is similar to the value that is supplied during replacement.
 ```python
-----------------------------------------------------------------------
-Ran 5 tests in 0.007s
+def test_update_ops(self):
+    table = HashTable()
+    table["Apple"] = "Steve Jobs"
+    table["Apple"] = "Tim Cook"
+    self.assertEqual(table["Apple"], "Tim Cook")
+```
 
-OK
+- `test_delete()`. We insert `Porshe` into the table since something must exist for it to be deleted. With `AssertRaises`,if `Porsche` exist in the table  after the `del table["Porsche"] operation, the method should return an error otherwise success.
+```python
+def test_delete(self):
+    table = HashTable()
+    table['Porsche'] = "Oliver Blume"
+    del table["Porsche"]                           
+    with self.assertRaises(Exception):
+        table["Porche"]
+```
+
+- `test_encoding()`. Tests the success of the `encode` method
+```python
+def test_encoding(self):
+        self.assertEqual(HashTable.encode("Azc8{"), 10941154641)
+
+```
+- `test_crc32()`. Using the  `binascii.crc32` we check if our hash function returns the same value as  `binascii.crc32` for the same input value.
+```python
+def test_crc32(self):
+        table = HashTable()
+        table.hash_function = table.crc32_hash        
+        self.assertEqual(table.crc32_hash("hello-world"),binascii.crc32(b"hello-world") % table.table_size)
 ```
 
 ### 5. Conclusion
 
-In this article learned how to create a hash table, hashing process using CRC32-algorithm, implementing basic hash functions, and collision detection in Hashtables using double hashing and linear probing. The implementation proves that hashing is an effective way to access data using a key-value pair easily. Give that hast tables are so fast at performing functionalities, hash tables will certainly useful for optimization projects.
+In this article, we learned how to create a hash table, hashing process using CRC32-algorithm and implementing basic hash functions. The implementation proves that hashing is an effective way to access data using a key-value pair easily. Give that hast tables are so fast at performing functionalities, hash tables will certainly useful for optimization projects. You can run the code for this project code [here.](https://repl.it/@jerimkaura/Hash-Table#hashtable.py) by clicking run.
