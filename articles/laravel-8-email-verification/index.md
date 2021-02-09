@@ -11,7 +11,7 @@ Since Laravel 7.x, Laravel includes an email verification feature by default in 
 It includes a built-in email verification setup for newly registered users, **MustVerifyEmail**.
 
 ### Getting Started
-In this tutorial, we build an authentication application that allows users to sign up and verify their email address. 
+In this tutorial, we build an authentication application that allows users to sign up and verify their email addresses. 
 
 ### step 1: Laravel 8 installation
 Install new Laravel application either via composer or Laravel installer.  
