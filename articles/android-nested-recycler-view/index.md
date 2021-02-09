@@ -1,4 +1,4 @@
-RecyclerView helps to display a dynamic list of items in our android applications. RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of list items by providing [Layout Managers for positioning items](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity). This way, you can create customized layout managers for RecyclerView containers.
+RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of items in a list. It provides [Layout Managers](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity) to position these items. This way, you can create customized layout managers for RecyclerView containers.
 
 A RecyclerView can be used inside another RecyclerView. This is referred to as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
@@ -20,23 +20,18 @@ A RecyclerView widget recycles UI components. It creates components that allow u
 With such increased UI complexity, you might need to use a nested RecyclerView. This guide will discuss and implement a nested RecyclerView using android studio.
 
 ### Prerequisites
-
 To follow along with this guide, prior knowledge of [android RecyclerView](https://guides.codepath.com/android/using-the-recyclerview) would be helpful.
 
 ### Setting Up
-
 This guide will use java in android studio to create a nested RecyclerView application. Go ahead and start a new android studio project. RecyclerView uses a library. The library is pre-added on project creation, so there is no need to include the library in your grade files.
 
 ### What we will look at
-
 We will be using a movie app scenario to implement a nested RecyclerView concept. We will use a movie template UI on the home screen. We’ll have a vertically scrolling list (parent RecyclerView) and a horizontal carousel as the child RecyclerView.
 
 ### Laying out UI components
-
 This application will have three XML files. We’ll implement them from top to down, starting with the parent to the child UI components.
 
 #### The parent RecyclerView
-
 As we said, we have an outer and inner RecyclerView. To start with, we will create a parent RecyclerView inside the main activity XML file. In this case, `activity_main.xml`. This will be the containing layout of the application. Go ahead and add the following recycler widget code into it.
 
 ```xml
@@ -63,7 +58,6 @@ As we said, we have an outer and inner RecyclerView. To start with, we will crea
 ```
 
 #### The parent RecyclerView items
-
 An item layout defines the layout of the individual row that we will show in the RecyclerView list. This layout will hold any item that is a child of the primary (parent) RecyclerView. This includes the child RecyclerView. Create an XML file, name it `parent_recyclerview_items.xml`. Below is the XML code to implement that.
 
 ```xml
@@ -101,7 +95,6 @@ android:background="#0F171E">
 ```
 
 #### Child RecyclerView layout items
-
 We have designed the parent View and the items that belong to it, including the child RecyclerView. We need to add the items to the child RecyclerView. These are the items that will be scrollable horizontally in each child RecyclerView widget that we add. Create an XML file, name it `child_recyclerview_items.xml`, and include the layout below.
 
 ```xml
@@ -140,7 +133,6 @@ We have designed the parent View and the items that belong to it, including the 
 ```
 
 ### Setting up Model classes
-
 These are java classes that utilize the necessary parameters for each in the RecyclerView. It consists of getters and setters method declaration. A model class contains a collection of data/objects that we want to show in the RecyclerView.
 
 The application will have two model classes.
@@ -185,7 +177,6 @@ public class ParentModel {
 ```
 
 ### Setting up Adapter classes
-
 Adapters are used to set and pass data that will be displayed in the respective RecyclerView items. The adapter manages the collection of items (defined in an individual layout) and `ViewHolder` objects. `ViewHolder` defines the individual views (widgets) in the layout and populate the components into an individual row layout. An `onBindViewHolder` class will bind the views with their respective data objects.
 
 Technically, the data could come from a database or a remote server if the information to be passed to the recycling view is hosted remotely. To keep this app straight to the point, we will use dummy/locally available information and then pass them to the respective RecyclerView Adapters.
