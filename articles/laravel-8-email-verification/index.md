@@ -1,34 +1,35 @@
 ## Laravel 8 Email Verification
 
-### Introduction
-This tutorial is solely meant to guide you in implementing email verification in Laravel 8.x. 
- In the earlier versions of Laravel, the email verification process was manual.  
-
-Since the release of Laravel 7.x, the verification feature has been included by default in the Laravel authentication process.  
-This includes a built-in email verification setup for newly registered users, ```MustVerifyEmail```.
-
 ### Requirements
+This tutorial assumes you've have a basic knowledge in the following:  
 * PHP 7.4.x
 * Laravel 8.x
 
+### Introduction
+Since the release of Laravel 7.x, the verification feature has been included by default in the Laravel authentication process.  
+This includes a built-in email verification setup for newly registered users, **MustVerifyEmail**.
+
 ### Getting Started
-In this tutorial, we will be building an authentication application to help you follow along on how to implement this amazing feature.  
+In this tutorial, we build an authentication application that allows users to sign up and verify their email address. 
 
-#### step 1:  Install Laravel 8
+### step 1:  Install Laravel 8
 Install new Laravel application either via composer or Laravel installer.  
-* Via Composer:- if your machine already has PHP and Composer readily available, you can install Laravel directly by running the following command  
 
-```
+* Via Composer: if your machine already has PHP and Composer readily available, you can install Laravel directly by running the following command  
+
+```bash
 composer create-project laravel/laravel verifyEmailApp
 
 cd verifyEmailApp
 
 ph artisan serve
+
 ```
+
 * Via Laravel Installer
 In case you've decided to install Laravel via its installer, you're required to install the Laravel Installer globally as a composer dependency.  
 
-```
+```bash
 
 composer global require laravel/installer
 
@@ -40,13 +41,13 @@ php artisan serve
 
 ```
 
-Note that this tutorial does not teach you how to install Laravel, in one way or the other you're unable to install the ```verifyEmailApp```, head over to [this link](https://laravel.com/docs/8.x/installation) to learn more about Laravel installation before you continue.  
+Note that this tutorial does not teach you how to install Laravel, in one way or the other you're unable to install the `verifyEmailApp`, head over to [this link](https://laravel.com/docs/8.x/installation) to learn more about Laravel installation before you continue.  
 
-#### step 2: Configuring Database
-The database configuration file is located at ```config/database.php```.
-The default connection is configured to use```mysql```database. Now head over to the ```.env``` file and modify the default database configurations:-  
+### step 2: Configuring Database
+`config/database.php` file contains all the database configurations.  
+The default connection is configured to use `mysql` database. Now head over to the `.env` file and modify the default database configurations as follows:      
 
-```
+```bash
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -56,15 +57,17 @@ DB_USERNAME=MyDatabaseUserName
 DB_PASSWORD=MyDatabasePassword
 
 ```
-You will notice that Laravel 8 automatically updates this file without running the command:-  
-```
+You notice that Laravel 8 automatically updates this file without running the command:-  
+```bash
 php artisan config:clear
 ```
+While you're on Laravel 7.x, you've to clear the `cache` to reflect changes made.  
 
-#### Step 3: Configuring E-Mail
-On user registration, we're sending a verification email to the user, we need to add the email verification to allow us to send these emails.  
+### Step 3: Configuring E-Mail
+On registration, we should send a verification email to the user, hence configure the SMTP server.  
 
-```
+```bash
+
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
