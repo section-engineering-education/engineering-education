@@ -1,7 +1,21 @@
-### Understanding Loss Functions in Machine Learning
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-loss-functions-in-machine-learning/
+title: Understanding Loss Functions in Machine Learning
+description: This tutorial will be a brief dive into the understanding loss functions used in Machine Learning.
+author: prashanth-saravanan
+date: 2021-02-10T00:00:00-00:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Loss functions play an important role in any statistical model - they define an objective against which the performance of the model is evaluated and the parameters learned by the model are determined by minimizing a chosen loss function. 
-
+  - url: /engineering-education/understanding-loss-functions-in-machine-learning/hero.png
+    alt: Loss functions hero image
+---
+Loss functions play an important role in any statistical model - they define an objective against which the performance of the model is evaluated and the parameters learned by the model are determined by minimizing a chosen loss function.
+<!--more-->
 Loss functions define what a good prediction is and isn't. In short, choosing the right loss function dictates how well your estimator is. This article probes into loss functions, the role they play in validating predictions and the various loss functions used.
 
 ### Prerequisities
