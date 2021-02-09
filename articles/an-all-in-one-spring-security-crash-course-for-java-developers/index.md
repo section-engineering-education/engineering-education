@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/
+url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/
 title: An All-In-One Spring Security Crash Course For Java Developers
 description: This tutorial will cover a crash course on how to secure a Spring Boot application. We will cover the topics of authentication and authorization. Authorization is the process of verifying we allow the user to do what they are asking to do. Authentication is the process of verifying who it is that is sending a request.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/hero.jpg
+  - url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/hero.jpg
     alt:  example image
 ---
 Whenever we build an application, security may not exactly be the first thing we think about. Yet, it is one of the most important features that need our attention. In this article, we will cover some key ways to secure your apps with Spring Security. Security might seem a little daunting especially if you are focused on the bigger picture.
