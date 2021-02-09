@@ -152,7 +152,7 @@ Three routes are required to implement email verification in Laravel:
 * A route to handle user click event to verify email.  
 * A route to resend email on user request.  
 
-#### Step 6: Email verificiation notification
+#### Step 6: Email verification notification
 From the previous step, we have discussed that after sending an email to a user, before they verify this email,
 return a view asking them to check their email inbox to verify the email sent to them.   
 
