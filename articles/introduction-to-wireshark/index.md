@@ -22,7 +22,7 @@ This tool performs various operations such as:
 * Performing analysis of voice over the internet(VoIP).
 
 
-### How does***Wireshark*** works?
+### How does ***Wireshark*** works?
 As we have said, ***Wireshark*** is a packet analyzer or a packet sniffer.   
 How it works is very simple, let's take your computer, for example, connected to your network, and you want to determine what is currently going on, on your network.    
 When you use ***Wireshark***, it captures network traffic (the data moving currently on your network) and records the movement of data offline. You can then use this data to analyze the network activities.  
