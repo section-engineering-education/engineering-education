@@ -151,3 +151,6 @@ This article was a run-through of the loss functions used in classification and 
 3. [Article on Machine Learning Mastery](https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/)
 4. [Article on Medium](https://towardsdatascience.com/loss-functions-when-to-use-which-one-718ebad36e0)
 5. [Article by Rohan Varma](https://rohanvarma.me/Loss-Functions/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
