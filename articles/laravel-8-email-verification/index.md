@@ -13,7 +13,7 @@ It includes a built-in email verification setup for newly registered users, **Mu
 ### Getting Started
 In this tutorial, we build an authentication application that allows users to sign up and verify their email address. 
 
-### step 1: Laravel 8 installlation
+### step 1: Laravel 8 installation
 Install new Laravel application either via composer or Laravel installer.  
 
 * ***Via Composer:***  
