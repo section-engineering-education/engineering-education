@@ -25,7 +25,7 @@ composer create-project laravel/laravel verifyEmailApp
 
 cd verifyEmailApp
 
-ph artisan serve
+php artisan serve
 
 ```
 
