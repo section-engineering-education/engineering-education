@@ -3,29 +3,25 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/
-title: 
-description: 
-author: 
-date: 2021-01-28T00:00:00-05:00
-topics: []
+title: Consuming the Unsplash API using Node.js Graphql API
+description: In this article, we will cover the process of creating an Unsplash developer account and implemented various functionalities provided by Unsplash API on a Node.js Graphql API.
+author: kennedy-mwangi
+date: 2021-02-08T00:00:00-21:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/hero.jpg
     alt: extending classes example image
 ---
-
-
-
+Unsplash is a photography sharing application. It has millions of users who post photos related to different topics every day. It is estimated the platform has over two million photos. With the need to bring their services closer to developers, Unsplash released their developer API.
 <!--more-->
-
-
 ### Consuming Unsplash API using Node.js graphql API
+With over six billion requests per month, it provides an infrastructure for developers to build an experience for their users using services provided by Unsplash. 
 
-Unsplash is a photography sharing application. It has millions of users who post photos related to different topics every day. It is estimated to have more than two million photos. With the need to bring their services closer to developers, Unsplash released their developer API. With over six billion requests per month, it provides an infrastructure for developers to build an experience for their users using services provided by Unsplash. In this article, we will walk through the steps of creating an Unsplash developer account and implement various functionalities of the API on a Graphql API.
+In this article, we will walk through the steps of creating an Unsplash developer account and implement various functionalities of the API on a Graphql API.
 
-#### prerequisites
-
-To follow along in this article, it is helpful to have the following:
+#### Prerequisites
+To follow along in this article, it would be helpful to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 
@@ -34,7 +30,6 @@ To follow along in this article, it is helpful to have the following:
 - Some basic knowledge of implementing a GraphQl API in Node.js
 
 ### What we will cover
-
 - [Creating an Unsplash developer account](#creating-an-unsplash-developer-account)
 
 - [Setting up the development server](#setting-up-the-development-server)
@@ -52,8 +47,9 @@ To follow along in this article, it is helpful to have the following:
 - [Important take aways](#important-take-aways)
 
 ### Creating an Unsplash developer account
+If you already have an Unsplash developer account, make sure that you are logged in from the [Unsplash developer site](https://unsplash.com/developers). 
 
-If you already have an Unsplash developer account, ensure that you are logged in from the [Unsplash developer site](https://unsplash.com/developers). Else follow the following steps:
+If so follow the next steps:
 
 - Proceed to the [Unsplash developer site](https://unsplash.com/developers).
 
@@ -78,8 +74,11 @@ If you already have an Unsplash developer account, ensure that you are logged in
 - With that, you are ready for the next step.
 
 ### Setting up the development server
+To follow along, clone this [GitHub repository](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, you will find the start and the final folder. 
 
-To follow along, clone this [Github repository](https://github.com/mwangiKibui/unsplash_api_graph_ql_server.git). In the repo, there is the start and the final folder. The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. Tp get started, follow the following guidelines:
+The start folder is where we will be implementing the functionality throughout this article. The final folder is already implemented and you are free to check it out in case you encounter any errors. 
+
+To get started, follow the following guidelines:
 
 - Shift to the start folder:
 
@@ -95,10 +94,9 @@ npm install
 
 - Head over to your [Unsplash developer account](https://unsplash.com/oauth/applications), select the application you created, scroll down to the keys section, and copy the `Access Key` to the `.env` file.
 
-- Go through the schema folder to get to know the different types and how data is structured.
+- Go through the schema folder, to btter understand the different types and how the data is structured.
 
 ### Fetching photos
-
 On the resolvers folder, open the `image.js` file and add the functionality of fetching photos:
 
 ```javascript
@@ -131,16 +129,14 @@ async listPhotos(page,perPage){
 };
 ```
 
-From above:
-
-- Query for photos from the  API passing in the page, and the number of photos per page.
+From the snippet above:
+- Query for photos from the API passing in the page, and the number of photos per page.
 
 - Check for any error encountered while querying. If there is, throw it.
 
 - Map through each record sent, structuring it to match schema's expected output.
 
-To test the above functionality, follow the following steps:
-
+To test the above functionality, let's follow the next steps:
 - In your terminal, in the start folder, start the development server by:
 
 ```bash
@@ -174,10 +170,9 @@ query GetPhotos {
 
 - Hit the play button and observe the results.
 
-- In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
+- In case any of the fields return `null`, this means that Unsplash API does not have the data for that field.
 
 ### Fetching a single photo
-
 In the same `/resolvers/image.js` file, we add up the functionality of fetching a single photo:
 
 ```javascript
@@ -203,8 +198,7 @@ async getImage(photoId){
 }
 ```
 
-From above:
-
+From the above snippet:
 - Query for the photo from the API based on the `photoId`.
 
 - Check for any error resulting from the query. If there is, throw it.
@@ -212,7 +206,6 @@ From above:
 - Structure data to match the schema's expected output.
 
 To test the above functionality:
-
 - Ensure that your development server is running.
 
 - Open another tab on the Graphql playground and enter the following query:
@@ -243,8 +236,9 @@ query GetImage {
 - In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
 
 ### Searching for photos based on the topic
+Based on a topic, we are able to get relevant photos from Unsplash API.  
 
-Based on a topic, we can be able to get relevant photos from Unsplash API.  Let's add the functionality on the `image.js` file:
+Let's add the functionality on the `image.js` file:
 
 ```javascript
 
@@ -279,7 +273,6 @@ async searchPhotos(key,page,perPage,orientation){
 ```
 
 From above:
-
 - Search for photos from the API based on the key, which is the topic. We are also sending the page, the number of photos per page, and the orientation which can be `portrait`, `squarish`, or `landscape`.
 
 To test the above functionality:
@@ -318,7 +311,6 @@ query SearchPhotos{
 - In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
 
 ### Fetching user details
-
 A user is the one who uploaded a photo to Unsplash. Based on that, we can get user details from the API.
 
 On the resolvers folder, in `user.js`, we add up the functionality:
@@ -375,7 +367,6 @@ query GetUserDetails{
 - In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
 
 ### Fetching user photos
-
 Apart from fetching the details, we can also fetch the photos uploaded by a particular user from the API.
 
 In the same `user.js` file, we add up the functionality:
@@ -411,9 +402,9 @@ In the same `user.js` file, we add up the functionality:
 }
 ```
 
-From above:
+From the snippet above:
 
-- Query for the photos of the user based on the username. We also pass along other data: page, number of photos per page, order to follow which can be: `latest` or `oldest`, and orientation which can be: `portrait`, `squarish` or `landscape`.
+- Query for the photos of the user based on the username. We also passed along other data, such as: page, number of photos per page, order to follow which could be: `latest` or `oldest`, and orientation which could be: `portrait`, `squarish` or `landscape`.
 
 - Check if there is an error as a result of the query, if there is, throw it.
 
@@ -454,15 +445,16 @@ query GetUserPhotos {
 - In case any of the fields return `null`, it means that Unsplash API does not have the data for that field.
 
 ### Important takeaways
-
 - The Unsplash API sends a lot of data on a single query. Therefore, you need to have your own schema so that you can extract only the data that you need.
 
 - [Unsplash official docs](https://github.com/unsplash/unsplash-js) support more functionalities than the ones discussed above.
 
 ### Conclusion
+In this article, we covered the process of creating an Unsplash developer account and implemented various functionalities provided by Unsplash API on a Node.js Graphql API.
 
-A simple JSON API from Unsplash makes the difference summing up to more than six billion requests every month. The ease of use of the API makes peace with every software developer interested in exploring it. It is by far the best API for exploring stock photography.
-
-In this article, we covered the process of creating an Unsplash developer account and implemented various functionalities provided by Unsplash API on a Node.js  Graphql API.
+The ease of use of the API makes peace with every software developer interested in exploring it. It is by far the best API for exploring stock photography.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
