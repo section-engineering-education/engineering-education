@@ -10,12 +10,12 @@ JavaScript is a single threaded language yet most of the tasks done on the web s
 3. How to use Suspense component for data fetching
 
 
-### The React concurrent mode
-React does alot of work under the hood to handle updates to the components and map them to the DOM. Concurrent Mode is a set of changes to the React rendering mechanism so as to essentially let React perform multiple renders concurrently. It can interrupt, delay, or dismiss an ongoing render and defer state updates. This has the benefit of making the application stay responsive while adjusting to user's device capability and network speeds.
+### The React concurrent mode 
+In a single threaded language like JavaScript, concurrency is used to structure a program by breaking it into pieces that can execute independently. React does alot of work under the hood to handle updates to the components and map them to the DOM. Concurrent Mode is a set of changes to the React rendering mechanism so as to essentially let React perform multiple renders concurrently. It can interrupt, delay, or dismiss an ongoing render and defer state updates. This has the benefit of making the application stay responsive while adjusting to user's device capability and network speeds.
 You need to change the line `ReactDOM.render(<App />, rootNode)` to:
 `ReactDOM.createRoot(rootNode).render(<App />)`
 
-This will enable full Concurrent Mode for your application. To use Concurrent Mode effectively, we will refer to the Suspense that React rolls out together with Concurrent Mode.
+This will enable full Concurrent Mode for your application. To use Concurrent Mode effectively, we will refer to the Suspense  that React rolls out together with Concurrent Mode.
 
 ### The React Suspense
 
