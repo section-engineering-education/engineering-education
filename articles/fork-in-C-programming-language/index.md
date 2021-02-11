@@ -31,7 +31,7 @@ In the computing field, **`fork()`** is the primary method of process creation o
 
 Let's start with the life-cycle of a process:
 
-![Process life-cycle](/engineering-education/fork-in-c-programming-language/ProcessState.png)
+![Process life-cycle](/engineering-education/fork-in-c-programming-language/ProcessState.jpg)
 
 [Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html)
 
@@ -60,7 +60,7 @@ int main()
 ```
 
 The output will be:
-```
+```bash
 Hello world!
 Hello world!
 ```
@@ -87,7 +87,7 @@ int main()
 } 
 ```
 The result is:
-```
+```bash
 Hello world!
 Hello world!
 Hello world!
@@ -131,7 +131,7 @@ int main() {
 ```
 
 The result will be:
-```
+```bash
 Hello world!
 Hello world!
 Hello world!
