@@ -132,3 +132,6 @@ To summarize:
 - [Article by the Economic Times](https://economictimes.indiatimes.com/definition/mobile-automation)
 - [Article by Tutorials Point](https://www.tutorialspoint.com/mobile_testing/mobile_testing_overview.htm)
 - [Article by Edureka](https://www.edureka.co/blog/what-is-appium/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
