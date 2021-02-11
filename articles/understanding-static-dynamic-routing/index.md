@@ -4,7 +4,8 @@
 
 ## Introduction
 
-Different devices work together to ensure data transfer from one end device to another, but the router is the primary device that learns which paths are available and which path is best to forward traffic. The mechanism through which the router makes such a decision is known as **routing**. A router can use either a static or dynamic route to send a packet to a destination sub-network. In this article, we will look at static and dynamic routing in details, after which the reader should know: 
+ Networking devices share data among themselves with the help of a router, a device that learns which paths are available and which path is best to forward traffic. 
+ The mechanism through which the router makes such a decision is known as **routing**. In this article, we will look at static and dynamic routing in details, with the following objectives: 
 - What static routing is.
 - When to use static routing when setting up a network.
 - The advantages and limitations of static routing.
@@ -38,12 +39,15 @@ A router uses information contained in the internet protocol header to make vari
 - Load balancing
 
 **Path determination**
-When a router receives an IP packet through any of its many interfaces, the router examines the packet's destination IP address to forward the packet; the optimal path is used to forward the packet to that destination address its routing table, this process called **routing**. Routing uses an algorithm that decides the best path through which to transmit a packet. 
-Both static and dynamic routing protocols use a metric to determine the best path to transmit the packet. These metrics are standard measurements or vectors that can either be; hop count, bandwidth, Delay, current load on the path, reliability, or the combination of two or more of these standards, giving a quantitative value measure for the distance to a given network.
+When a router receives an IP packet through any of its many interfaces, the router examines the packet's destination IP address to forward the packet; the optimal path is used to forward the packet to that destination address its routing table, this process called **routing**. 
+ 
+ Both static and dynamic routing protocols use a metric to determine the best path to transmit the packet. These metrics are standard measurements or vectors that can either be; hop count, bandwidth, Delay, current load on the path, reliability, or the combination of two or more of these standards, giving a quantitative value measure for the distance to a given network.
 
 #### Common Metric
 
-**Hop count:** This is the number of internetworking devices, such as a router in which a packet must pass through to reach its destination subnet. If a routing protocol uses Hop count as its metric, then the path with the least metric or number of routers is considered the best path. This path is then added to the routing table only if there is no other routing protocol with less administrative distance. Routing Information Protocol (RIP) uses hop count as its metric.
+**Hop count:** This is the number of internetworking devices, such as a router in which a packet must pass through to reach its destination subnet. 
+If a routing protocol uses Hop count as its metric, then the path with the least metric or number of routers is considered the best path. This path is then added to the routing table if there is no other routing protocol with less administrative distance. 
+ Routing Information Protocol (RIP) uses hop count as its metric.
 ![Hop count](/engineering-education/understandinding-dynamic-and-static-routing/hop.jpeg)
 [Image source](AUthor)
 
@@ -51,7 +55,8 @@ In the image above, a device in sub-network-A want to reach another in sub-netwo
 
 ** Delay:** Delay refers to the time taken to send data from source to destination; this includes the time taken by a router to process and send a datagram to the receiving interface.
 
-** bandwidth:** This is the capacity of a link or the number of bits that a link between two devices can send per second. The link with a higher transfer rate is preferable to the link with a lower bandwidth capacity. For a protocol that uses bandwidth capacity as its metric, the protocol determines the bandwidth capacity of all possible routes to the destination subnet, and the route with higher bandwidth capacity is considered the best path and added to the routing table.
+** Bandwidth:** This is the capacity of a link or the number of bits that a link between two devices can send per second.
+  For a protocol that uses bandwidth capacity as its metric, the protocol determines the bandwidth capacity of all possible routes to the destination subnet, and the route with higher bandwidth capacity is considered the best path and added to the routing table.
 Because metrics can depend on single or many characteristics, Enhanced Interior Gateway Routing Protocol (EIGRP) uses a composite of bandwidth and delay to calculate its metric.
 ![Bandwidth](/engineering-education/understandinding-dynamic-and-static-routing/bandwidth.jpeg)
 [Image source](AUthor)
@@ -63,13 +68,14 @@ In the figure above, Router 6 will prefer to send its traffic through router eig
 
 The primary function of a router is to forward a packet to its destination. The router encapsulates the IP packet using the appropriate data link frame type of the egress port after the router has determined the exit interface associated with the best path to forward that packet. 
 The path can either be:
-a connected route( the destination address in the IP header belongs to a network connected to one of the router interfaces),
-a remote network (when the destination IP address of the packet  belongs to another network), 
+- a connected route( the destination address in the IP header belongs to a network connected to one of the router interfaces),
+- a remote network (when the destination IP address of the packet  belongs to another network), 
  no route determined ( when the destination address is not in the routing table), the packet is discarded or dropped.
 
 ### Load balancing
 
-A router can have two or more paths with equal metric and administrative distance to a destination sub-network. When this happens, the router will forward the packet using both paths. This method of sending data to a destination sub-network using two or more paths is called *Load balancing*; this is possible because a routing table can contain many paths associated with different exit interfaces of a router having equal metric or cost path.
+A router can have two or more paths with equal metric and administrative distance to a destination sub-network. When this happens, the router will forward the packet using both paths.
+  The method of sending data to a destination sub-network using two or more paths is called *Load balancing*; this is possible because a routing table can contain many paths associated with different exit interfaces of a router having equal metric or cost path.
 
 ![Load balancing](/engineering-education/understandinding-dynamic-and-static-routing/load.jpeg)
 [Image source](Author)
@@ -79,8 +85,13 @@ For a well-configured network, load balancing increases the network's effectiven
 
 ## Administrative distance
 
- An Organization can configure its router(s) with many dynamic routing protocols and a static route. However, this is not common but required in some situations.  For example, two companies, A and B, can connect their networks to exchange data, thus exchanging routing information.  If company A uses Open Shortest First (OSPF), while company B uses the Enhanced Interior Gateway Routing Protocol (EIGRP), both OSPF and EIGRP must be configured at least on one router. This router then takes the route learned from OSPF and advertises it to EIGRP and vice versa; this process is called **route redistribution**. If this occurs, then the routing table can contain more than one route source to a destination network.
-When a routing protocol learns more than one route to the same destination subnet, the metric can decide which route is the best. However, in a situation whereby two routing protocols learn a route to the same subnet, the metric values cannot decide which path to use because each routing protocol calculates its metric using different information. To resolve these issues, the cisco internetworking operating system (OIS) uses a concept known as **administrative distance** to decide which routing protocol's learned route is to be added to the routing table. **Administrative distance is a number that represents the trustworthiness of an entire routing protocol on a router**. The lower the value of this number, the better the routing protocol. For example, RIP has an administrative distance of 120, while OSPF default to 110, for a router that learned a path to the same subnet using both RIP and OSPF, the router will believe OSPF to be the trusted route source and it routing information is added to the routing table for reaching the destination subnetwork.
+ An Organization can configure its router(s) with many dynamic routing protocols and a static route. However, this is not common but required in some situations.  
+  For example, two companies, A and B, can connect their networks to exchange data. If company A uses Open Shortest First (OSPF), while company B uses the Enhanced Interior Gateway Routing Protocol (EIGRP), both OSPF and EIGRP must be configured at least on one router. This router then takes the route learned from OSPF and advertises it to EIGRP and vice versa; this process is called **route redistribution**. If this occurs, then the routing table can contain more than one route source to a destination network.
+When a routing protocol learns more than one route to the same destination subnet, the metric can decide which route is the best. However, in a situation whereby two routing protocols learn a route to the same subnet, the metric values cannot decide which path to use because each routing protocol calculates its metric using different information.
+ 
+ To resolve these issues, the cisco internetworking operating system (OIS) uses a concept known as **administrative distance** to decide which routing protocol's learned route is to be added to the routing table.
+ **Administrative distance** is a number that represents the trustworthiness of an entire routing protocol on a router. The lower the value of this number, the better the routing protocol. 
+ For example, RIP has an administrative distance of 120, while OSPF default to 110, for a router that learned a path to the same subnet using both RIP and OSPF,  OSPF will be the trusted route source and it routing information is added to the routing table for reaching the destination subnetwork.
 The table below shows some route type and their Administrative distance.
 |route type| administrative distance
 |--------|------------|
@@ -99,14 +110,6 @@ Because a connected route has an administrative distance of 0, it takes preceden
 A router can learn about remote networks using either static or dynamic routing.
 #####Static routing
 Static routing is also known as non-adaptive routing; it is a routing type in which a network administrator configures the routes into the routing table to be used by the router to send packets to the destination subnet using the specified route.
-Two common static routes found in a routing table are:
-
-- Default static route
-- A static route to a specific network.
-
-A default static route is also referred to as the gateway of last resort because it specifies an exit interface to use when a more specific destination address is not in the routing table. It is useful on routers or networks with only one exit point to another network or router or an Internet Service Provider (ISP). The packet will be discarded in a situation where their destination address and a default static route is not in the routing table, 
-An IPV4 default static route can be configured on a CISCO router using the global configuration command.
-Router(Config)# IP route 0.0.0.0.0  0.0.0.0 {exit|next-hop}  (this command will be covered in a later article).
 
 ### Types of Static routes
 
@@ -120,12 +123,13 @@ Static routes can be grouped into:
 **Standard static route** This Is a route that consists of a destination host address, its corresponding network mask, and the IP address of the next-hop address.
 
 **Default static route**
- It is a route configured with 0.0.0.0/0 as its destination IPV4 address. By configuring a default static route, a router can match all packets to use this route. A default static route is used to send packets when a more specific route match is not in the routing table.
+ It is a route configured with 0.0.0.0/0 as its destination IPV4 address. By configuring a default static route, a router can match all packets to use this route.
+ A default static route is used to send packets when a more specific route match is not in the routing table.
 ![Default Static route](/engineering-education/understandinding-dynamic-and-static-routing/default-route.jpeg)
 [Image source](Author)
 
 **Summary route**
-A routing table can contain a summary route. This route reduces the number of routing table entries required for many static routes. This route can only be implemented on contiguous routes that use the same exit interface or next-hop address.
+This route reduces the number of routing table entries required for many static routes. This route can only be implemented on contiguous routes that use the same exit interface or next-hop address.
 ![Summary route](/engineering-education/understandinding-dynamic-and-static-routing/summary-route.jpeg)
 [Image source](Author)
 
@@ -177,24 +181,28 @@ Static routing has the following advantages:
 - Static route is error-prone especially, in large networks.
 
 ## Dynamic routing
-
-Routing protocols are used to exchange routing information so that routers can learn network routes. A router uses this information to learn about a network subnet, route to reach those networks, and the route's trustworthiness. Dynamic routing, also known as adaptive routing, is a technique in which a router learns about this information without an administrator's help and adds the best route to its routing table. A router running a dynamic routing protocol adds the best route to its routing table and can also determine another path if the primary route goes down, unlike static routing, in which the route needs to be reconfigured by the administrator in the event of any change.
-There are various types of dynamic routing protocol used, but in this article, we will look at Routing Information Protocol (RIP), Open Shortest Path First (OSPF), and Enhanced Interior Gateway Routing Protocol (EIGRP).
+  Dynamic routing, also known as adaptive routing, is a technique in which a router learns about routing information without an administrator's help and adds the best route to its routing table.
+ A router running a dynamic routing protocol adds the best route to its routing table and can also determine another path if the primary route goes down, unlike static routing, in which the route needs to be reconfigured by the administrator in the event of any change.
+ There are various types of dynamic routing protocol used, but in this article, we will look at Routing Information Protocol (RIP), Open Shortest Path First (OSPF), and Enhanced Interior Gateway Routing Protocol (EIGRP).
 
 ### Interior and Exterior Routing Protocols
 
 Routing protocols can be categorized into two major groups: Interior gateway protocols (IGP) and Exterior Gateway Routing Protocols (EGP).
 
-**Interior routing protocols** are protocols designed for use within a single autonomous system, while **exterior routing protocols** are designed for use between different Autonomous Systems (AS). An Autonomous System is any network that is under the administrative control of a single organization; as such, routing protocols that by design work best within an autonomous system are known as IGP, and protocols that are designed to exchange routing information between Autonomous Systems (AS) are known as EGP. Border Gateway Protocol (BGP) is the only EGP is used today.
+**Interior routing protocols** are protocols designed for use within a single autonomous system, while **exterior routing protocols** are designed for use between different Autonomous Systems (AS). 
+ An Autonomous System is any network that is under the administrative control of a single organization; as such, routing protocols that by design work best within an autonomous system are known as IGP, and protocols that are designed to exchange routing information between Autonomous Systems (AS) are known as EGP. Border Gateway Protocol (BGP) is the only EGP is used today.
 
 ### Routing Information Protocol (RIP)
 
-Routing information protocol is not in use today because it does not scale well for large network implementation. However, because it is one of the first routing protocols to come into existence, having a basic understanding of it gives us an advantage in understanding other more advanced routing protocols like OSPF and EIGRP. Routing information protocol is an IGP that based its internal logic on distance-vector; this vector describes the information a router knows about a route.
-This information includes; the destination subnet, the distance (metric, and the vector (which is the link and the next-hop router).
+ Routing information protocol is an IGP that based its internal logic on distance-vector; this vector describes the information a router knows about a route. This information includes; the destination subnet, the distance (metric, and the vector (which is the link and the next-hop router).
+Routing information protocol is not in use today because it does not scale well for large network implementation.
+ 
 
 ### Open Shortest Path First (OSPF)
 
-Open Shortest Path First (OSPF) is a link-state routing protocol; these protocols create a complete view of the network by gathering information from all the other routers. These protocols do not use periodic updates to send new routing updates to their neighbors; instead, they advertised every detail about the internetwork to all other routers such that all routers in this internetwork have the same information.OSPF organizes the network topology information using **Link-State Advertisements (LSA)** and **Link-State Database (LSDB)**. As a link-state protocol, OSPF builds its routes using a mathematical algorithm known as the Dijkstra Shortest Path First (SPF) algorithm. This algorithm analyses the link-state database and then builds the local routes with the router's information to add to the routing table. This information includes; the subnet number and mask, an outgoing interface, and a next-hop router IP address.
+Open Shortest Path First (OSPF) is a link-state routing protocol; these protocols create a complete view of the network by gathering information from all the other routers. 
+  These protocols do not use periodic updates to send new routing updates to their neighbors; instead, they advertised every detail about the internetwork to all other routers such that all routers in this internetwork have the same information.OSPF organizes the network topology information using **Link-State Advertisements (LSA)** and **Link-State Database (LSDB)**.
+   As a link-state protocol, OSPF builds its routes using a mathematical algorithm known as the Dijkstra Shortest Path First (SPF) algorithm. This algorithm analyses the link-state database and then builds the local routes with the router's information to add to the routing table. This information includes; the subnet number and mask, an outgoing interface, and a next-hop router IP address.
 
 ### Three main components of OSPF
 
@@ -237,8 +245,9 @@ OSPF can be implemented using many areas, this creates fewer routing table entri
 
 ### Enhanced Interior Routing Protocol (EIGRP)
 
-The advancement of businesses and technical factors pushed the world toward the second generation of better routing protocols. Today EIGRP and OSPF are the two primary routing protocols in use in modern enterprise networks. Due to the less robust hop-count of metric that RIP uses, it has fallen away as a serious competitor as most cooperate networks uses either EIGRP or OSPF as their routing protocol.
-EIGRP includes features of both link-state and distance vector routing protocols; because of this, EIGRP does not fit into Distance vector protocols or Link-state protocols, but it based its vital principle on the distance vector, as such it is considered as an *advance distance-vector routing protocol* as it includes features not found in other distance vector routing protocols.
+The advancement of businesses and technical factors pushed the world toward the second generation of better routing protocols. Today EIGRP and OSPF are the two primary routing protocols in use in modern enterprise networks. 
+  Due to the less robust hop-count of metric that RIP uses, it has fallen away as a serious competitor as most cooperate networks uses either EIGRP or OSPF as their routing protocol.
+EIGRP includes features of both link-state and distance vector routing protocols; because of this, EIGRP does not fit into Distance vector protocols or Link-state protocols, but it based its vital principle on the distance vector, as such it is considered as an *advance distance-vector routing protocol*.
 
 ### EIRGP features
 
