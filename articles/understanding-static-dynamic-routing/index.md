@@ -53,16 +53,16 @@ If a routing protocol uses Hop count as its metric, then the path with the least
 
 In the image above, a device in sub-network-A want to reach another in sub-network-B, using hop count as its metric, the network will use Route 1 because it has the least Hop count value (2)
 
-** Delay:** Delay refers to the time taken to send data from source to destination; this includes the time taken by a router to process and send a datagram to the receiving interface.
+**Delay:** Delay refers to the time taken to send data from source to destination; this includes the time taken by a router to process and send a datagram to the receiving interface.
 
-** Bandwidth:** This is the capacity of a link or the number of bits that a link between two devices can send per second.
+**Bandwidth:** This is the capacity of a link or the number of bits that a link between two devices can send per second.
   For a protocol that uses bandwidth capacity as its metric, the protocol determines the bandwidth capacity of all possible routes to the destination subnet, and the route with higher bandwidth capacity is considered the best path and added to the routing table.
 Because metrics can depend on single or many characteristics, Enhanced Interior Gateway Routing Protocol (EIGRP) uses a composite of bandwidth and delay to calculate its metric.
 ![Bandwidth](/engineering-education/understandinding-dynamic-and-static-routing/bandwidth.jpeg)
 [Image source](AUthor)
 In the figure above, Router 6 will prefer to send its traffic through router eight rather than send it to router seven because the route through router 8 has a high bandwidth.
 
-** Load:** Network load refers to the extent to which a network resource like router or link between networks is busy or in use at a given period. For protocols that use load as their metric, the path with less load is considered the best and added to the routing table to transmit the datagram to the destination subnet.
+**Load:** Network load refers to the extent to which a network resource like router or link between networks is busy or in use at a given period. For protocols that use load as their metric, the path with less load is considered the best and added to the routing table to transmit the datagram to the destination subnet.
 
 ### Routing decision
 
