@@ -1,5 +1,21 @@
-Appium is an automation testing tool that can be used for validating mobile browsers and mobile applications. This tool is widely used in mobile automation testing because it is free and can support both iOS and Android platforms. Mobile apps have become an important element in our lives because they provide us a smart way of doing things like shopping, paying bills, chatting, and booking flights.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mobile-automation-testing-with-appium/
+title: Mobile Automation Testing with Appium - An Introduction
+description: This article will be an introduction to mobile automation testing using Appium. We will explore the building blocks of automation testing, it's importance and also a brief guide on how to get started with Appium.
+author: onesmus-mbaabu
+date: 2021-02-11T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/mobile-automation-testing-with-appium/hero.jpg
+    alt: Mobile testing hero image
+---
+Appium is an automation testing tool that can be used for validating mobile browsers and mobile applications. This tool is widely used in mobile automation testing because it is free and can support both iOS and Android platforms. Mobile apps have become an important element in our lives because they provide us a smart way of doing things like shopping, paying bills, chatting, and booking flights.
+<!--more-->
 Many mobile apps are constantly being developed to solve various real-life problems. Before these apps are commissioned for use, they are tested to validate their usability, quality, and functionality.
 
 This article takes readers through Appium mobile automation testing tool and discusses its key features. It also provides an overview of Appium architecture and explains how it works.
