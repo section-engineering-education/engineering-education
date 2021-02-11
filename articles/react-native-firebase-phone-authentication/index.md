@@ -6,7 +6,7 @@ url: /engineering-education/react-native-firebase-phone-authentication/
 title: Phone Number Authentication using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to add Firebase's phone authentication in a Non-Expo React Native application.
 author: mohan-raj
-date: 2021-01-24T00:00:00-15:00
+date: 2021-02-11T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,25 +14,21 @@ images:
   - url: /engineering-education/react-native-firebase-phone-authentication/hero.jpg
     alt: React Native Firebase Phone Authentication Image
 ---
-In this tutorial, we will learn how to authenticate users with their phone numbers using Firebase's authentication module in a Non-Expo React Native application.
+In this tutorial, we will learn how to authenticate users with their phone numbers using Firebases authentication module in a Non-Expo React Native application.
 <!--more-->
 
 ### Firebase
-
 Firebase is a platform developed by Google for creating mobile and web applications. It was originally an independent company founded in 2011. In 2014, Google acquired the platform and it is now their flagship offering for app development.
 
 ### Authentication Module
-
 Firebase's authentication module provides backend services and SDKs to authenticate users in your app. It supports authentication using passwords, phone numbers, popular identity providers like Google, Facebook and Twitter, and more.
 
 The native Firebase SDKs ensure that a user's authentication state between app sessions is persisted. The user can clear their authentication state by clearing the app's data/cache.
 
 ### Prerequisites
-
 The basics of React and React Native will not be covered in this tutorial. If you are not comfortable with the basics, this is a [helpful tutorial](https://reactnative.dev/docs/tutorial).
 
 ### Overview
-
 We'll be going through these steps in this article:
 
 1. [Development environment](#development-environment).
@@ -47,7 +43,6 @@ We'll be going through these steps in this article:
 10. [Recap](#lets-recap).
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 You can follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the environment and create a new React app.
@@ -57,8 +52,7 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](/engineering-education/react-native-firebase-phone-authentication/env_setup.png)
 
 ### Cloning the starter code
-
-To focus more on the authentication module, You can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
+To focus more on the authentication module, you can clone the starter code from this [repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter) on GitHub. Follow the Repository's README for instructions.
 
 For the final code, you can look at this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
 
@@ -68,18 +62,17 @@ This will be the folder structure of the application.
 
 I've set up 3 screens in the `screens/` directory:
 
-- _PhoneNumber.js_: Screen to enter the phone number.
+- *PhoneNumber.js*: Screen to enter the phone number.
 
-- _VerifyCode.js_: Screen to enter the one-time verification code.
+- *VerifyCode.js*: Screen to enter the one-time verification code.
 
-- _Authenticated.js_: Screen that the user can see only if he is logged in.
+- *Authenticated.js*: Screen that the user can see only if he is logged in.
 
 ![screens](/engineering-education/react-native-firebase-phone-authentication/screens.jpg)
 
-In the _App.js_, the PhoneNumber screen is exported. As we write the code for authentication, we will conditionally display various screens at various stages.
+In the *App.js*, the PhoneNumber screen is exported. As we write the code for authentication, we will display various screens at various stages.
 
 ### Setting up the Firebase project
-
 Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to your account.
 
 Create a new project.
@@ -90,7 +83,7 @@ Once you create a new project, you'll see the dashboard.
 
 ![New Dashboard](/engineering-education/react-native-firebase-phone-authentication/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-phone-authentication/register_app.png)
 
@@ -104,7 +97,9 @@ You will also need the Debug signing certificate `SHA-1`. You can get that by ru
 cd android && ./gradlew signingReport
 ```
 
-This will generate the signing certificate of the application. You will get similar output like this:
+This will generate the signing certificate of the application. 
+
+You will get an output like this:
 
 ```bash
 Task :app:signingReport
@@ -123,7 +118,7 @@ Valid until: Friday, December 23, 2050
 
 Copy the `SHA1` value and paste it into the Firebase console.
 
-Now, Proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
+Now, proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
 This file contains configurations that'll enable your application to access firebase services.
 
@@ -152,14 +147,13 @@ apply plugin: 'com.google.gms.google-services'
 
 You need to perform some additional steps to configure `Firebase` for `iOS`. Follow [this documentation](https://rnfirebase.io/#3-ios-setup) to set it up.
 
-Finally, We should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
+Finally, we should install the `@react-native-firebase/app` package in our app to complete the set up for Firebase.
 
 ```bash
 npm install @react-native-firebase/app
 ```
 
 ### Setting up Firebase Authentication
-
 Head over to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
 ![Get Started Auth](/engineering-education/react-native-firebase-phone-authentication/auth_get_starterd.png)
@@ -174,11 +168,11 @@ There are two ways to accomplish this:
 
 1. **SafetyNet**: If the user has a device with Google Play Services installed, then Firebase can verify whether the request is legitimate.
 
-   In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used and needs to be allowed to access the DeviceCheck API.
+In the Google Cloud console, enable the [Android Device Verification API](https://console.cloud.google.com/apis/library/androidcheck.googleapis.com) for your project. The default Firebase API Key will be used and needs to be permitted to access the DeviceCheck API.
 
-   ![Enable Device Verification API](/engineering-education/react-native-firebase-phone-authentication/advAPI.png)
+![Enable Device Verification API](/engineering-education/react-native-firebase-phone-authentication/advAPI.png)
 
-2. **reCAPTCHA**: If SafetyNet cannot be used, Firebase does a _reCAPTCHA_ verification. The _reCAPTCHA_ challenge can often be completed without the user having to solve anything.
+2. **reCAPTCHA**: If SafetyNet cannot be used, Firebase does a *reCAPTCHA* verification. The *reCAPTCHA* challenge can often be completed without the user having to solve anything.
 
 Now, let's head to the application and install the auth module.
 
@@ -213,8 +207,7 @@ dependencies {
 With this, the firebase authentication module is set up in our application.
 
 ### Phone Number
-
-In _App.js_, Let's import the `auth` module from Firebase.
+In *App.js*, let's import the `auth` module from Firebase.
 
 ```JSX
 import auth from '@react-native-firebase/auth';
@@ -274,7 +267,6 @@ To call a function when the user presses a button, you should pass the function 
 Now, when the user presses the button, the `signInWithPhoneNumber` method from the auth module is called and it will trigger the Firebase servers to send a verification code to the given phone number. It will also return a method that should be used to confirm the verification code.
 
 ### Verification Code
-
 When the `confirmation` method is available, we should display the *VerifyCode* screen instead of the *PhoneNumber* screen.
 
 ```JSX
@@ -314,10 +306,9 @@ In *VerifyCode.js*, I've already set up a state that holds the verification code
 <Button title="Confirm OTP" onPress={() => props.onSubmit(code)} />
 ```
 
-Now, when the user presses the button, the `confirm` method is called and that will verify the whether is code is correct or not. The user will be authenticated into the app if the verification code is correct. If not, we will display an error message to the user.
+Now, when the user presses the button, the `confirm` method is called and that will verify whether the code is correct or not. The user will be authenticated into the app if the verification code is correct. If not, we will display an error message to the user.
 
-### Authenticated Screen
-
+### Authenticated screen
 The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
@@ -353,7 +344,6 @@ return <PhoneNumber onSubmit={signIn} />;
 ```
 
 ### Signout
-
 We should use the `signOut` method in the auth module to sign out a user from the application.
 
 Let's import the `auth` module in *Authenticated.js*.
@@ -370,7 +360,7 @@ Let's call the `signOut` method when the user presses the signout button.
 
 Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
 
-Thus, we should set the authenticated state to `false` if we receive `null`.
+We should set the authenticated state to `false` if we receive `null`.
 
 ```JSX
 auth().onAuthStateChanged((user) => {
@@ -384,8 +374,7 @@ auth().onAuthStateChanged((user) => {
 
 ![Signout](/engineering-education/react-native-firebase-phone-authentication/signout.gif)
 
-### Test Phone Numbers
-
+### Test phone numbers
 Firebase provides support for testing phone numbers.
 
 In the Firebase Console, click on the "Phone numbers for testing" dropdown in the "Phone" authentication provider.
@@ -397,7 +386,6 @@ Enter a new phone number and a test code.
 Once added, the number can be used with the `signInWithPhoneNumber` method. The firebase server will not send a verification code to a test number. You should enter the test code that you specified here in the application to sign-in.
 
 ### Result
-
 Here is the sign-in flow if the Device Verification API works properly.
 
 ![With SafetyNet](/engineering-education/react-native-firebase-phone-authentication/safetynet.gif)
@@ -407,7 +395,6 @@ If the Device Verification API is not enabled, or if SafetyNet can't be reached,
 ![With Recaptch](/engineering-education/react-native-firebase-phone-authentication/recaptcha.gif)
 
 ### Let's Recap
-
 1. We set up our development environment and created a React Native app.
 
 2. We created a Firebase project.
@@ -426,10 +413,14 @@ If the Device Verification API is not enabled, or if SafetyNet can't be reached,
 
 9. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
 
-10. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+10. We used the `auth` module to sign the user out from the application from the *Authenticated* screen.
 
 11. We learned how to add Test numbers from the Firebase console.
 
 Congratulations, :partying_face: You did it.
 
-Thanks for Reading!
+Thanks for reading!
+
+---
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
+
