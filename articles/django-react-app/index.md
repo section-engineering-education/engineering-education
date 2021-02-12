@@ -1,8 +1,11 @@
 ### Building a React.js Application Using Django REST framework
 
+
+
 ![admin panel](header.jpg)
 
 ### Introduction
+
 
 In this article, we build a Todo application using React and Django.
 
@@ -13,19 +16,26 @@ In this article, we build a Todo application using React and Django.
 We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
 ### Prerequisites
-Knowledge of `React`, `Python(Django)` is required but I will be able to try and boil things down as possible.
 
-You can check out this articles for more in React and Python:
 
+Basic knowledge of `React`, `Python(Django)` is required but I'll be able to try and boil things down as possible.
+
+You can check out this articles to get started with React and Python:
+
+[Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
 [Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
 
 [Django Tutorials](https://realpython.com/tutorials/django/)
 
 Before getting our hands dirty, you may need to:
+
 1. [Install Python 3](https://www.python.org/downloads/)
+
 2. [Install Node.js](https://nodejs.org/en/download/)
 
 ### Step 1: Backend using Django
+
+
 From a terminal create a new project directory called `django-react-todoApp`
 
 ```bash
@@ -37,7 +47,7 @@ We must have `pip` and virtual environment activated to be able to install djang
 pip install pipenv
 pipenv shell
 ```
-Install django and create a project, `backend`:
+Install django and create a project named `backend`:
 ```bash
 pipenv install django
 django-admin startproject backend
@@ -54,13 +64,12 @@ python manage.py runserver
 ```
 If everything works you should see the Congratulations page from Django.
 
- Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
+Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
 
 ```python
 # backend/settings.py
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +81,7 @@ INSTALLED_APPS = [
 ```
 
 Let's create a model to specify the Todo item fields. Modify `todo/models.py` as follows:
+
 ```python
 # todo/models.py
 from django.db import models
@@ -87,11 +97,11 @@ class Todo(models.Model):
      return self.title
 ```
 The code explains:
-* Title; What the task is.
+- Title: What the task is.
 
-* Description; Give more explanation about a particular task.
+- Description: Give more explanation about a particular task.
 
-* Completed; Completed is the status of a task; either completed or not completed.
+- Completed: Completed is the status of a task; either completed or not completed.
 
 Let us run migrations to add our model to the database schema.
 ```bash
@@ -130,9 +140,13 @@ We can now add and delete items from the admin page. Great!
 
 
 ### Step 2: Putting in the APIs
-You can learn more about APIs in this amazing [article](https://www.section.io/engineering-education/rest-api/)
 
-Install the `djangorestframework` and `django-cors-headers`
+
+You can learn more about APIs in this amazing [article]
+(https://www.section.io/engineering-education/rest-api/)
+
+Install the `djangorestframework` and `django-cors-headers`:
+
 ```bash
 pipenv install djangorestframework django-cors-headers
 ```
@@ -174,11 +188,13 @@ Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP heade
 
 Serializers allow complex data such as querysets and model instances to be converted to native python dataypes that can then be easily rendered into JSON, XML, or other content types.
 
-Let us create a serializer file.
+Let us create a serializer file:
+
 ```bash
 touch todo/serializers.py
 ```
 Let us add this to  `serializers.py` file:
+
 ```python
 # todo/serializers.py
 
@@ -206,7 +222,9 @@ class TodoView(viewsets.ModelViewSet):   # add this
     queryset = Todo.objects.all()        # add this
 
 ```
-In the `backend/urls.py` we define the URL routes for the API.
+
+In the `backend/urls.py` we define the URL routes for the API:
+
 ```python
 # backend/urls.py
 
@@ -226,11 +244,14 @@ urlpatterns = [
 That completes the building of the API. The `router` enables  us to create the subsequent operations:
 
 * `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
+
 * `todos/id` - Returns a specific Todo using the `id` primary key.
 
 ```
 python manage.py runserver
 ```
+
+
 ![api](json.jpg)
 
 
@@ -526,10 +547,9 @@ export default class CustomModal extends Component {
 ```
 `Reactstrap` is a component library for Reactjs. It has in-built Bootstrap components that provide flexibility and prebuilt validation. This allows us to quickly build elegant forms that provide an intuitive experience.
 
-`CustomModal` class which encapsulates the Modal component it comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
+`CustomModal` class which encapsulates the Modal component comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
 
 `CustomModal` accepts `activeItem`- stands for the current item to be edited `toggle` - used to switch between the Modal's different states and `onSave` - called to save the edited items.
-
 
 Head over to the `src/App.js` and replace it completely with this code snippet:
 ```javascript
@@ -900,7 +920,5 @@ Check the address- http://localhost:8000 - to see the final look.
 We've come to the end of this tutorial and learnt how to configure Django and React to interact with each other. Hope you have learnt one thing or two from this.
 
 The source code for this application is available [here](https://github.com/OkothPius/React-todo-app) on Github and you can also check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020)
-
-
 
 
