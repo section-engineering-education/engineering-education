@@ -1,24 +1,24 @@
-Python is a dynamically typed language. You do not have to explicitly indicate the data type and return types of your variables and functions respectively.
+Python is a dynamically typed language. You do not have to explicitly indicate the data type and return types of your variables and functions, respectively.
 Dynamic typing makes Python very user-friendly. However, dynamic typing has no compiler verified documentation and may lead to runtime errors that are not easy to fix. Static typing provides a solution to these problems.
-In this article, we are going to see how to perform static typing in Python and handle both variable and function annotations. You need to have a basic understanding of Python to follow along. You will also install [mypy](http://mypy-lang.org/) for type checking.
+This article will see how to perform static typing in Python and handle both variable and function annotations. You need to have a basic understanding of Python to follow along. You will also install [mypy](http://mypy-lang.org/) for type checking.
 
-### Table of Contents
+### Table of contents
 
-1. Introduction to Type Annotations
-2. Variable Annotations
-3. Function Annotations
-4. Selected Annontations in the Python `Typing` module
+1. Introduction to type annotations
+2. Variable annotations
+3. Function annotations
+4. Selected annotations in Python `Typing` module
    - Callable
    - List
    - Dict & Any
    - Union
 5. Using mypy static type checker
 
-### 1. Introduction to Type Annotations
+### 1. Introduction to type annotations
 
 Type annotations is a new feature added by [PEP 484](https://www.python.org/dev/peps/pep-0484/) to python version 3.5 and above. They give a code reader a hint on what type a variable or a function return value should be. Type annotations can be performed on variables and functions as well.
 
-### 2. Variable Annotations
+### 2. Variable annotations
 
 We achieve variable annotation by adding a semicolon and the type after declaring or initializing a variable. i.e `: <type>`. Like in the example below, instead of saying `name = "John Doe"` we specify the return type by writing `name: str = "John Doe"`
 
@@ -28,9 +28,9 @@ print(name)
 
 ```
 
-### 3. Function Annotations
+### 3. Function annotations
 
-This is achieved by adding a forward arrow and indicating the expected return type of the function after the closing bracket of the function parameters. i.e `-> <return type>`.
+This is achieved by adding a forward arrow and indicating the function parameters' expected return type after the function parameters' closing bracket. i.e `-> <return type>`.
 
 ```python
 
@@ -39,7 +39,7 @@ def square(x: int) -> int:
 
 ```
 
-### 4. Selected Annontations in the Python `Typing` module
+### 4. Selected annotations in the Python `Typing` module
 
 Here we will look a some of the most commonly used annotations in the Python Typing module.
 
@@ -93,7 +93,7 @@ Output:
 [100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148]
 ```
 
-**4.3. Dict & Any**
+**4.3. Dict & any**
 
 ```python
 from typing import Callable, Dict, Any
@@ -116,10 +116,10 @@ Output:
 {'one': 1, 'two': 4, 'three': 9, 'four': 16, 'five': 25}
 ```
 
-The type checker treats `Any` as compatible with any data type. Any operation or method call can be perfomed on `Any`.
+The type checker treats `Any` as compatible with any data type. We can perform any operation or method call on `Any`.
 
 **4.4. Union**
-Union is used when a function has more than one return type. For instance, we can use `Union` to modify our `square()` function to find the square of both an `int` and a `float`
+The union is used when a function has more than one return type. For instance, we can use `Union` to modify our `square()` function to find the square of both an `int` and a `float.`
 
 ```python
 from typing import Union, List
@@ -148,7 +148,7 @@ Output:
 
 ### 5. Using mypy static type checker.
 
-First we will install `mypy`.
+First, we install `mypy`.
 
 ```python
 $ pip install mypy-lang
@@ -176,7 +176,7 @@ def square(list: List) -> Union[int, float]:
 print(square([12.9, 5, 2.1, 8, 4, 6.5]))
 ```
 
-The program outputs a string `Hello There` even though we expected integers or floats. You will notice that this program was run successfully without errors. Let us use `mypy` to type-check out code for errors. To check a piece of code using mypy, run `mypy filename.py` in the directory of your code.
+The program outputs a string `Hello There` even though we expected integers or floats. You will notice that this program was run successfully without errors. Let us use `mypy` to type-check out code for errors. To check a piece of code using mypy, run `mypy filename.py` in your code's directory.
 
 Output:
 
@@ -215,4 +215,4 @@ Success: no issues found in 1 source file
 
 ### 5. Conclusion
 
-Type hinting is a useful feature in python. It helps you to identify bugs and maintain a clean record. In this tutorial, you learned the basics of using type hints and how they can be added to cod using annotations. You also had an introduction to using my pie as a static type checker. You can go ahead and have a deeper digging [PEP 484](https://www.python.org/dev/peps/pep-0484/) and [Mypy documentation](https://mypy.readthedocs.io/) for more.
+Type hinting is a useful feature in Python. It helps you to identify bugs and maintain a clean record. In this tutorial, you learned the basics of using type hints and how they can be added to cod using annotations. You also had an introduction to using my pie as a static type checker. You can go ahead and have a deeper digging [PEP 484](https://www.python.org/dev/peps/pep-0484/) and [Mypy documentation](https://mypy.readthedocs.io/) for more.
