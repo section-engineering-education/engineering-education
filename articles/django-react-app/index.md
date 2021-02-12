@@ -299,50 +299,11 @@ npm start
 
 You should be able to see the default React app by now.
 
-Install `bootstrap` and `reactstrap` to help us style the UI:
-
-```bash
-npm add bootstrap reactstrap
-```
-
-Head to `src/index.css` file and change the css to the one below:
-
-```css
-/_frontend/src/index.css _/
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34; }
-
-.todo-title {
-  cursor: pointer; }
-
-.completed-todo {
-  text-decoration: line-through; }
-
-.tab-list > span {
-  padding: 5px 8px;
-  border: 1px solid #282c34;
-  border-radius: 10px;
-  margin-right: 5px;
-  cursor: pointer; }
-
-.tab-list > span.active {
-  background-color: #282c34;
-  color: #ffffff; }
-```
-Import bootstrap file in `src/index.js`:
 ```javascript
 // frontend/src/index.js
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';   // add this
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -371,376 +332,66 @@ Substitute the below code in `src/App.js`:
 // frontend/src/App.js
 
 import React, { Component } from "react";
+
 const todoItems = [
-    {
-        id: 1,
-        title: "Code",
-        description: "Learn React Components",
-        completed: true
-    },
-    {
-        id: 2,
-        title: "Study",
-        description: "Go to the library at 1400hrs",
-        completed: false
-    },{
-        id: 3,
-        title: "Supper",
-        description: "Go to the mall to pick some groceries",
-        completed: false
-    }
+  {
+    id: 1,
+    title: "Go to the market",
+    description: "Buy ingredients to buy supper",
+    completed: true
+  },
+
+  {
+    id: 2,
+    title: "Study",
+    description: "Read algebra and history books about the coming test",
+    completed: true
+  },
+
+  {
+    id: 3,
+    title: "Sally's Book",
+    description: "Go to the library to rent Sally's books",
+    completed: true
+  },
+
 ];
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            viewCompleted: false, 
-            todoList: todoItems
-            };
-    }
-    displayCompleted = status => {
-        if (status) {
-            return this.state({ viewCompleted: true });
-        }
-        return this.state({ viewCompleted: false });
-    };
-    renderTabList = () => {
-        return (
-            <div className="my-5 tab-list">
-                <span 
-                    onClick={() => this.displayCompleted(true)}
-                    className={this.state.viewCompleted ? "active" : ""}
-                >
-                Complete
-                </span>
-                <span 
-                    onClick={() => this.displayCompleted(false)}
-                    className={this.state.viewCompleted ? "" : "active"}
-                >
-                Incomplete
-                </span>
-            </div>    
-        );
-    };
-    renderItems = () => {
-        const { viewCompleted } = this.state;
-        const newItems = this.state.todoList.filter(
-            item => item.completed === viewCompleted
-        );
-        return newItems.map(item => (
-            <li key={item.id}
-                className="list-group-item d-flex justify-content-between align-items-center">
-                <span 
-                    className={`todo-title mr-2 ${
-                        this.state.viewCompleted ? "completed-todo" : ""
-                     }`}
-                    title={item.description}>
-                    {item.title}
-                </span>
-                <span>
-                    <button className="btn btn-secondary mr-2"> Edit</button>
-                    <button className="btn btn-danger">Delete</button>
-                </span>
-            </li>
-        ));
+  constructor(props) {
+    super(props);
+    this.state = {todoItems};
     };
     render() {
-        return (
-            <main className="content">
-                <h1 className="text-white text-uppercase text-center my-4">Todo app</h1>
-                <div className="row">
-                    <div className="col-md-6 col-sm-10 mx-auto p-0">
-                        <div className="card p-3">
-                            <div className="">
-                                <button className="btn btn-primary">Add Task</button>
-                            </div>
-                            {this.renderTabList()}
-                            <ul className="list-group list-group-flush">
-                                {this.renderItems()}
-                            </ul>  
-                        </div>
-                    </div>
-                </div>
-            </main>                  
-        );
+      return (
+        <div>
+          {this.state.todoItems.map(item => (
+            <div>
+              <h1>{item.title}</h1>
+              <span>{item.description}</span>
+            </div>
+          ))}
+        </div>
+      )
     }
-}
+  }
 export default App;
 ```
 
 We start by rendering a list of items. The list will mainly be artificial data in the beginning but later we will fetch the data from the API we created in the previous chapter.
 
-The internal component state allow us to update, store and delete properties of our component. The class component use a constructor to initialize internal component state, which in our case is the `todoItems`, our artificial data.
+We define the list of items. An item in the list has an `id`, `title`, `description` and status of whether the task is completed or not, `completed`.
 
+We introduce the class constructor where we set the initial internal component state. In our case the internal state is the dummy list of items, `todoItems`.
 
-In react we use JavaScript XML (JSX) to write HTML in React. You might have noticed the `className` attribute. It reflects the standard `class` attribute in HTML. [More about supported HTML attributes.](https://reactjs.org/docs/dom-elements.html)
+We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). It allow us to iterate over the list of items and display them. We use the curly braces to encapsulate our item property since it evaluate Javascript expressions during compilation.
 
-`displayCompleted` function return status of an item, if an item is marked as completed the `viewCompleted` should be true otherwise false.
+When the component file is called it calls the `render()` method by default displaying th JSX syntax.
 
-`renderTabList` function passes spans that dictates group of things displayed. We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) because they shorten our functions declaration.
-
-`renderItems` function returns the properties to be shown when a user wants to add an item, the fields are `title` and `description`. When the component file is called it calls the `render()` method by default displaying th JSX syntax.
+We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) because they shorten our functions declaration.
 
 Your User Interface should resemble the one below:
 
-![frontend](todo.jpg)
-
-Modal component provide creating of dialogs, popovers this handles editing tasks.
-
-In `src` directory create `components` and in the components folder create `Modal.js` file:
-
-```bash
-mkdir src/components
-touch src/components/Modal/js
-```
-
-Update the  `Modal.js` file with the code below:
-
-```javascript
-// frontend/src/components/Modal.js
-
-import React, { Component } from "react";
-import {
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    Form,
-    FormGroup,
-    Input,
-    Label
-} from "reactstrap";
-
-export default class CustomModal extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            activeItem: this.props.activeItem
-        };
-    }
-    handleChange = e => {
-        let { name, value } = e.target;
-        if (e.target.type === "checkbox") {
-            value = e.target.checked;
-        }
-        const activeItem = { ...this.state.activeItem, [name]: value };
-        this.setState({ activeItem });
-    };
-    render() {
-        const { toggle, onSave } = this.props;
-        return (
-            <Modal isOpen={true} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Todo Item</ModalHeader>
-                <ModalBody>
-                    <Form>
-                        <FormGroup>
-                            <Label for="title">Title</Label>
-                            <Input
-                                type="text"
-                                name="title"
-                                value={this.state.activeItem.title}
-                                onChange={this.handleChange}
-                                placeholder="Enter Todo Title"
-                            />
-                        </FormGroup>   
-                        <FormGroup>
-                            <Label for="description">Description</Label>
-                            <Input
-                                type="text"
-                                name="description"
-                                value={this.state.activeItem.description}
-                                onChange={this.handleChange}
-                                placeholder="Enter Todo description"
-                            />
-                        </FormGroup>   
-                        <FormGroup check>
-                            <Label for="completed">
-                                <Input
-                                    type="checkbox"
-                                    name="completed"
-                                    checked={this.state.activeItem.completed}
-                                    onChange={this.handleChange}
-                                />
-                                Completed
-                            </Label>
-                        </FormGroup>  
-                    </Form>
-                </ModalBody> 
-                <ModalFooter>
-                    <Button color="success" onClick={() => onSave(this.state.activeItem)}>
-                    Save
-                    </Button>  
-                </ModalFooter>
-            </Modal>               
-        );
-    }
-}
-```
-
-`Reactstrap` is a component library for Reactjs. It has in-built Bootstrap components that provide flexibility and prebuilt validation. This allows us to quickly build elegant forms that provide an intuitive experience.
-
-`CustomModal` class which encapsulates the Modal component comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
-
-`CustomModal` accepts `activeItem`- stands for the current item to be edited `toggle` - used to switch between the Modal's different states and `onSave` - called to save the edited items.
-
-Head over to the `src/App.js` and replace it completely with this code snippet:
-
-```javascript
-// frontend/src/App.js
-
-import React, { Component } from "react";
-import Modal from "./components.Modal"; // import CustomModal
-
-const todoItems = [
-    {
-        id: 1,
-        title: "Code",
-        description: "Learn React Components",
-        completed: true
-    },
-    {
-        id: 2,
-        title: "Study",
-        description: "Go to the library at 1400hrs",
-        completed: false
-    },{
-        id: 3,
-        title: "Supper",
-        description: "Go to the mall to pick some groceries",
-        completed: false
-    }
-];
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            modal: false,
-            viewCompleted: false,
-            activeItem: {
-                title: "",
-                description: "",
-                completed: false
-            },
-            todoList: todoItems
-        };
-    }
-    toggle = () => {
-        this.setState({ modal: !this.state.modal });
-    };
-    handleSubmit = item => {
-        this.toggle();
-        alert("save" + JSON.stringify(item));
-    };
-    handleDelete = item => {
-        alert("delete" + JSON.stringify(item));
-    };
-    createItem = () => {
-        const item = { title: "", description: "", completed: false };
-        this.setState({ activeItem: item, modal: !this.state.modal });
-    };
-    editItem = item => {
-        this.setSate({ activeItem: item, modal: !this.state.modal });
-    };
-    displayCompleted = status => {
-        if (status) {
-            return this.setState({ viewCompleted: true });
-        }
-        return this.setState({ viewCompleted: false });
-    };
-    renderTabList = () => {
-        return (
-            <div className="my-5 tab-list">
-                <span
-                    onClick={() => this.displayCompleted(true)}
-                    className={this.state.viewCompleted ? "active" : ""}
-                >
-                    Complete
-                </span>
-                <span
-                    onClick={() => this.displayCompleted(false)}
-                    className={this.state.viewCompleted ? "" : "active"}
-                >
-                    Incomplete
-                </span>
-            </div>    
-        );
-    };
-    renderItems = () => {
-        const { viewCompleted } = this.state;
-        const newItems = this.state.todoList.filter(
-            item => item.completed === viewCompleted
-        );
-        return newItems.map(item => (
-            <li
-                key={item.id}
-                className="list-group-item d-flex justify-content-between align-items-center"
-            >
-                <span
-                    className={`todo-title mr-2 ${
-                        this.state.viewCompleted ? "complete-todo" : ""
-                    }`}
-                    title={item.description}
-                >
-                    {item.title}
-                </span>
-                <span>
-                    <button
-                        onClick={() => this.editItem(item)}
-                        className="btn btn-secondary mr-2"
-                    >
-                        Edit
-                    </button>
-                    <button
-                        onClick={() => this.handleDelete(item)}
-                        className="btn btn-danger"
-                    >
-                        Delete
-                    </button>
-                </span>
-            </li>
-        ));
-    };
-    render() {
-        return (
-            <main className="content">
-                <h1 className="text-white text-uppercase text-center my-4">Todo app</h1>
-                <div className="row">
-                    <div className="col-md-6 col-sm-10 mx-auto p-0">
-                        <div className="card p-3">
-                            <div className="">
-                                <button onClick={this.createItem} className="btn btn-primary">
-                                    Add Task
-                                </button>
-                            </div>
-                            {this.renderTabList()}
-                            <ul className="list-group list-group-flush">
-                                {this.renderItems()}
-                            </ul>
-                        </div>
-                    </div>
-                </div>   
-                {this.state.modal ? (
-                    <Modal
-                        activeItem={this.state.activeItem} 
-                        toggle={this.toggle}
-                        onSave={this.handleSubmit}
-                    />
-                ) : null} 
-            </main>
-        );
-    }
-
-}
-```
-
-We add `modal` property to our `state` object. To change a value in the state object we use `this.setState()` method. When a value in the `state` object changes, the component will re-render and the output will change as per the new value(s). We use `this.setState()` method to change the state object of a few components in our application. `setState()` method ensures the components have been updated and calls the `render()` method and other lifecycle methods.
-
-`JSON.stringify()` is used to convert JavaScript objects into a string. When we run our application and input `title` and `description`, clicking the save button prompt a string alert in the browser. The same happens when we try to delete an item.
-
-The User Interface should be like below at this point:
-
-![styled](styled.jpg)
+![frontend](dummy_data.jpg)
 
 It is time to consume the API we created earlier.
 
@@ -749,7 +400,7 @@ cd backend
 python manage.py runserver
 ```
 
-We will install `axios`. It help us retrieve data from external API in our case the backend.
+Let's install `axios`. It help us retrieve data from external API in our case the backend.
 
 ```bash
 npm add axios
@@ -785,167 +436,77 @@ The `axios` channels the API requests to the port `http://localhost:8000` where 
 axios.get("/api/todos/")
 ```
 
+First, lets install the bootstrap module that we will use to create a jumbotron header:
+
+```bash
+npm install --save react-bootstrap-validation
+```
+
+We then import the `Jumbotron` in our `App.js` file.
+
 To consume our API instead of the artificial data, update the `frontend/src/App.js` with the snippet below:
 
 ```javascript
 // frontend/src/App.js
 
 import React, { Component } from "react"
-import Modal from "./components/Modal";
-import axios from "axios"; // Add  this
+import Jumbotron from 'react-bootstrap/Jumbotron' // Add this
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      viewCompleted: false,
-      activeItem: {
-        title: "",
-        description: "",
-        completed: false
-      },
+    state = {
       todoList: []
     };
-  }
-  componentDidMount() {
-    this.refreshList();
-  }
-  //Rendering the backend data to frontend
-  refreshList = () => {
-    axios
-      .get("/api/todos/")
-      .then(res => this.setState({ todoList: res.data}))
-      .catch(err => console.log(err));
-  };
 
-  toggle = () => {
-    this.setState({ modal: !this.state.modal });
-  };
-
-  //Responsible for saving the task
-  handleSubmit = item => {
-    this.toggle();
-    if (item.id) {
-      axios
-        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
-        .then(res => this.refreshList());
-      return;  
+    async componentDidMount() {
+      try {
+        const res = await fetch('http://localhost:8000/api/todos/');
+        const todoList = await res.json();
+        this.setState({
+          todoList
+        });
+      } catch (e) {
+        console.log(e);
     }
-    axios
-      .post("http://localhost:8000/api/todos/", item)
-      .then(res => this.refreshList())
-  };
-
-  //deleting the task
-  handleDelete = item => {
-    axios
-      .delete(`http://localhost:8000/api/todos/${item.id}/`, item)
-      .then(res => this.refreshList());
-  };
-  
-  //Create an item
-  createItem = () => {
-    const item = {title: "", description: "", completed: false };
-    this.setState({ activeItem: item, modal: !this.state.modal });
-  };
-  //Edit an item
-  editItem = item => {
-    this.setState({ activeItem: item, modal: !this.state.modal });
-  };
-  displayCompleted = status => {
-    if (status) {
-      return this.setState({ viewCompleted: true});
     }
-    return this.setState({ viewCompleted: false});
-  };
-  renderTabList = () => {
-    return (
-      <div className="my-5 tab-list">
-        <span 
-          onClick={() => this.displayCompleted(true)}
-          className={this.state.viewCompleted ? "active" : ""}
-        >
-          Complete
-        </span>
-        <span 
-          onClick={() => this.displayCompleted(false)}
-          className={this.state.viewCompleted ? "" : "active"}
-        >
-          Incomplete
-        </span>
-      </div>  
-    );
-  };
-  renderItems = () => {
-    const { viewCompleted } = this.state;
-    const newItems = this.state.todoList.filter(
-      item => item.completed === viewCompleted
-    );
-    return newItems.map(item => (
-      <li 
-        key={item.id}
-        className="list-group-item d-flex justify-content-between align-items-center"
-      >
-        <span 
-          className={`todo-title mr-2 ${
-            this.state.viewCompleted ? "completed-todo" : ""
-          }`}
-          title={item.description}
-          >
-            {item.title}
-          </span>
-          <span>
-            <button 
-              onClick={() => this.editItem(item)}
-              className="btn btn-secondary mr-2">Edit</button>
-            <button 
-              onClick={() => this.handleDelete(item)}
-              className="btn btn-danger">Delete</button>
-          </span>
-      </li>
-    ));
-  };
-  render() {
-    return (
-      <main className="content">
-        <h1 className="text-white text-uppercase text-center my-4">Todo App</h1>
-        <div className="row">
-          <div className="col-md-6 col-sm-10 mx-auto p-0">
-            <div className="card p-3">
-              <div className="">
-                <button onClick={this.createItem} className="btn btn-primary">Add Task</button>
-              </div>
-              {this.renderTabList()}
-              <ul className="list-group list-group-flush">
-                {this.renderItems()}
-              </ul>
+
+    render() {
+      return (
+        <div>
+          <Jumbotron>
+          <h1>Todo App</h1>
+          </Jumbotron>
+          {this.state.todoList.map(item => (
+            <div>
+              <h1>{item.title}</h1>
+              <span>{item.description}</span>
             </div>
-          </div>
+          ))}
         </div>
-        {this.state.modal ? (
-          <Modal
-            activeItem={this.state.activeItem}
-            toggle={this.toggle}
-            onSave={this.handleSubmit}
-          />
-        ): null}
-      </main>
-    );
+      )
+    }
   }
-}
+  
 export default App;
 ```
 
 We assign our `todoList` an empty array because we are going to fetch our data from an API.
 
+When we call the `fetch()` with the `await` keyword, where we pass our apiEndpoints. We're telling the  `async` function to stop executing untill the promise is resolved at which point it can resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
+
+We are using the `async` to fetch data from the API we created. Our application uses the `componentDidMount()` method from `React.Component` but defining it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
+
 `componentDidMount()` function is called by React to either fetch data from an External API or perform unique operations which need the JSX elements. In our case we use it for the former. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
+
 
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
-`refreshList()`is executed everytime an API request is completed. It modify the Todo tuple to show the latest items added.
+The consumed data from the api should be displayed as follows:
 
-For instance, we are fetching our data from an API, the API call is placed in the lifecycle method, we get the response. We call the `setState()` method and render the element with updated data. `handleSubmit()` function handles the CRUD operations.
+![api_data](api_fetched_data.jpg)
+
+
+
 
 ### Step 4: Testing
 
