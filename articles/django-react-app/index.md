@@ -973,4 +973,3 @@ We've come to the end of this tutorial and learnt how to configure Django and Re
 
 The source code for this application is available [here](https://github.com/OkothPius/React-todo-app) on Github and you can also check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020)
 
-
