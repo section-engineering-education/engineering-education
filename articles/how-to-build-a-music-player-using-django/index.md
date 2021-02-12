@@ -154,7 +154,7 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we created the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we defined in our *views.py* file. Also the next and previous links, we rendered the pagination attributes which will separate our songs into a page per song format.
+In the code above we created the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to defined in our *views.py* file. Also the next and previous links in our html code will render the pagination attributes which will separate our songs into a page per song format.This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
 In the static folder create two new files: *script.js* and *style.css*. These are the static files that the HTML template file is going to use. In the *script.js* file, add the following code as seen below:
 
