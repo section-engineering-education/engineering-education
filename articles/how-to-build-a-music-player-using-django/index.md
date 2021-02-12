@@ -51,13 +51,13 @@ Let's begin by creating a Django project from any directory using our command-li
 
 ```bash
 # create our project
-$ django-admin startproject MusicPlayer
+django-admin startproject MusicPlayer
 
 # change directory to project
-$ cd MusicPlayer
+cd MusicPlayer
 
 # create our app
-$ django-admin startapp App
+django-admin startapp App
 ```
 
 The above commands should provide you with a directory structured as seen in the image below
@@ -82,11 +82,11 @@ Now let's create our static and templates folders in our APP directory. The temp
 
 ```bash
 # changing directory to our app
-$ cd App
+cd App
 
 # creating  the static and templates folders
-$ mkdir templates
-$ mkdir static
+mkdir templates
+mkdir static
 ```
 
 In the templates folder, create a new file "index.html" and add the HTML code below:
@@ -289,10 +289,10 @@ Finally, we can migrate our model to the database by using the below command on 
 
 ```shell
 # migrating the app and database changes
-$ python manage.py makemigrations
+python manage.py makemigrations
 
 # final migrations
-$ python manage.py migrate
+python manage.py migrate
 ```
 
 The result of running the above migrations should be as in the image below:
@@ -328,7 +328,7 @@ python manage.py createsuperuser
 You'll be prompted to create a **username**, **email**, and **password**. Once you are done with this, you can now log in to the admin page and create songs. Let's now run our app with the command below
 
 ```bash
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 If your app is running you should see something like this:
