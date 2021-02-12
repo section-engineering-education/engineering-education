@@ -24,7 +24,7 @@ If you stumble upon the following error when installing the required dependencie
 $   Could not find a version that satisfies the requirement pkg-resources==0.0.0 (from -r requirements.txt (line 6)) (from versions: )
 No matching distribution found for pkg-resources==0.0.0 (from -r requirements.txt (line 6))
 ```
-The `requirements.txt` folder has a `pkg-resources==0.0.0` requirement for the Flask web app. This resource is as a result of the use of a virtual environment in the cloned repository, while this article isn't working with a virtual environment, this causes the `pkg-resources` error.
+The `requirements.txt` folder has a `pkg-resources==0.0.0` requirement for the Flask web app. This resource is a result of the use of a virtual environment in the cloned repository. While this article isn't working with a virtual environment, this causes the `pkg-resources` error.
 
 An alternative to resolving this error is to delete the `pkg-reources==0.0.0` requirement in line 6 from the `requirements.txt` file before installing the required packages for the project.
 
@@ -110,7 +110,7 @@ With the form created and the route created, in your web browser, navigate to th
 At this stage, you can view your form. Try filling the data like a regular user signing up for a web application, and hit the submit button. By submitting the data, you should see a 405 method not allowed error page. This error can be handled by following this process.
 
 ### Handling The 405 Method Error
-The 405 method not allowed error tells us that the method we passed in our HTML form is not accepted by the route rendering the page. 
+The 405 method not allowed error tells us that the page's route does not accept the method we passed in our HTML form. 
 
 The way to fix this is to switch to the registration route function. In the app route decoration, we pass in another parameter called `methods` with a list of methods the route should expect. 
 
@@ -170,7 +170,7 @@ If you’ve followed the instructions accordingly, then you should be able to ha
 ### Form Creation With Flask-WTForms
 Flask WTForms is a library that makes form handling easy and structured. It also ensures the effective handling of form rendering, validation, and security.
 
-To build forms with this approach, you start by creating a new file in our app directory and name it `forms.py`. This file will contain all the application forms. Let’s create a new `contact.html` template, then the route with path `/contact` to handle the form logic, then render the contact template.
+To build forms with this approach, you start by creating a new file in our app directory and name it `forms.py.` This file will contain all the application forms. Let’s create a new `contact.html` template, then the route with path `/contact` to handle the form logic, then render the contact template.
 
 In the implementation of our flask form, we need to install the `Flask-WTForms` first. 
 
@@ -189,7 +189,7 @@ class ContactForm(FlaskForm):
    pass
 
 ```
-Ensuing, we proceed to create our form fields. A contact form would ideally consist of the user name, their email address, and Message. To replicate this in pure HTML, input textfield and textarea would be the only choice. But, this process is quite different with WTForms.
+Ensuing, we proceed to create our form fields. A contact form would ideally consist of the user name, their email address, and Message. To replicate this in pure HTML, input textfield and textarea would be the only choice. But, this process is quite different from WTForms.
 
 To create our form fields in WTForms, we import the fields we require. For example, the name field of the user is going to be a string. Therefore, we import `StringField`.
 
@@ -219,10 +219,10 @@ class ContactForm(FlaskForm):
   send = SubmitField('send')
 ```
 
-The only new thing here is that I imported the `TextAreaField` and `SubmitField`, to handle the user message and to submit the form. With this, your contact form is complete. Now let’s render the form.
+The only new thing here is that I imported the `TextAreaField` and `SubmitField`, to handle the user message and submit the form. With this, your contact form is complete. Now let’s render the form.
 
 ### Errors with validators
-When you run your web application and a validator package is missing, install the validator using `pip install`. For example, if the Email validator isn’t available, run the following in your terminal to install the Email validator.
+When you run your web application, and a validator package is missing, install the validator using `pip install`. For example, if the Email validator isn’t available, run the following in your terminal to install the Email validator.
 
 ```bash
 $ pip install email
@@ -338,7 +338,7 @@ Forms encounter errors when the user submits invalid data, we can capture the er
 
 To display form errors, we navigate to our contact form template. The form field is where we want to perform the error check. 
 
-The first step is to check if the form field itself has any errors, then pass in the form field with a bootstrap class of is-invalid. The bootstrap class makes it easy to work with form errors, so I recommended it for use when working with the flask wtf-forms.
+The first step is to check if the form field itself has any errors, then pass in the form field with a bootstrap class of is-invalid. The bootstrap class makes it easy to work with form errors, so I recommended it when working with the flask wtf-forms.
 
 ```JINJA
  {% if form.email.errors %}
@@ -346,7 +346,7 @@ The first step is to check if the form field itself has any errors, then pass in
  
        {% endif %}
 ```
-The next step is to loop through the errors and display them just below the form field itself. The error response would be wrapped in a div with the bootstrap class `invalid-feedback`.
+The next step is to loop through the errors and display them just below the form field itself. The error response is wrapped in a div with the bootstrap class `invalid-feedback`.
 
 ```JINJA
 {% if form. email.errors %}
@@ -405,7 +405,7 @@ Form handling is one of the crucial components of web applications. This article
 
 However, the Flask WTForms extension is the best approach to adopt when handling forms. It has all the components needed for form handling, which makes form writing easy.
 
-The complete codebase for this tutorial can be found [here](https://github.com/corpsgeek/flask-form-handling).
+One can find the complete codebase for this tutorial [here](https://github.com/corpsgeek/flask-form-handling).
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
