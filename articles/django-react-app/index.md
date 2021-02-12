@@ -150,7 +150,6 @@ We can now add and delete items from the admin page. Great!
 
 ![admin panel](adminpanel.jpg)
 
-
 ### Step 2: Putting in the APIs
 
 
@@ -377,9 +376,9 @@ class App extends Component {
 export default App;
 ```
 
-We start by rendering a list of items. The list will mainly be artificial data in the beginning but later we will fetch the data from the API we created in the previous chapter.
+We start by rendering a list of items. The list will be artificial data but later we will fetch the data from the API we created in the previous chapter.
 
-We define the list of items. An item in the list has an `id`, `title`, `description` and status of whether the task is completed or not, `completed`.
+We define the list of items, an item in the list has an `id`, `title`, `description` and status of whether the task is completed or not, `completed`.
 
 We introduce the class constructor where we set the initial internal component state. In our case the internal state is the dummy list of items, `todoItems`.
 
@@ -400,12 +399,6 @@ cd backend
 python manage.py runserver
 ```
 
-Let's install `axios`. It help us retrieve data from external API in our case the backend.
-
-```bash
-npm add axios
-```
-
 We will need to modify the `frontend/package.json`:
 
 ```javascript
@@ -420,20 +413,12 @@ We will need to modify the `frontend/package.json`:
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
-    "bootstrap": "^4.5.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "reactstrap": "^8.8.1",
     "web-vitals": "^0.2.4"
   },
   [...]
-```
-
-The `axios` channels the API requests to the port `http://localhost:8000` where the server is running, enabling the frontend to make the requests. 
-
-```
-axios.get("/api/todos/")
 ```
 
 First, lets install the bootstrap module that we will use to create a jumbotron header:
@@ -498,15 +483,13 @@ We are using the `async` to fetch data from the API we created. Our application 
 
 `componentDidMount()` function is called by React to either fetch data from an External API or perform unique operations which need the JSX elements. In our case we use it for the former. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
 
-
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
-The consumed data from the api should be displayed as follows:
+There are third party node packages that we can use in place of the native `fetch` API: [superagent](https://www.npmjs.com/package/superagent) and [axios](https://www.npmjs.com/package/axios).
+
+The consumed data from the API should be displayed as follows:
 
 ![api_data](api_fetched_data.jpg)
-
-
-
 
 ### Step 4: Testing
 
