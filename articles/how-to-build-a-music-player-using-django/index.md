@@ -189,7 +189,8 @@ audio.init();
 
 Edit the "style.css" file, add the following code from this [GitHub Gist](https://gist.github.com/Chukslord1/f65093cd9b16fff56e68903259887299).
 
-The "script.js" file is the javascript file that defines how our music is played, while the "style.css" file in the link above is the CSS file that styles our HTML template design and feels.
+The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in our databse is passed to this page, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. 
+While the "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
 Next, Let's first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
 
