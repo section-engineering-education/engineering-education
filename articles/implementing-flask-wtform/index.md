@@ -1,4 +1,19 @@
-# Implementing Flask WTForms
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/implementing-flask-wtform/
+- title: Implementing Flask WTForms
+- description: Forms are integral components of web applications. They are required to send data from the user to the backend. In this article, you will understand how to work with forms in your Flask web application.
+- author: adetu-ridwan
+- date: 2021-02-12T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/implementing-flask-wtform/hero.jpg
+-    alt: Implementing Flask WTForms example image
+- ---
 
 Forms are integral components of web applications. They are required to send data from the user to the backend. In this article, you will understand how to work with forms in your Flask web application.
 
