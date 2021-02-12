@@ -23,7 +23,6 @@ Basic knowledge of `React`, `Python(Django)` is required but I'll be able to try
 You can check out this articles to get started with React and Python:
 
 [Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
-[Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
 
 [Django Tutorials](https://realpython.com/tutorials/django/)
 
@@ -42,16 +41,21 @@ From a terminal create a new project directory called `django-react-todoApp`
 mkdir django-react-todoApp
 cd django-react-todoApp
 ```
+
 We must have `pip` and virtual environment activated to be able to install django. 
+
 ```bash
 pip install pipenv
 pipenv shell
 ```
+
 Install django and create a project named `backend`:
+
 ```bash
 pipenv install django
 django-admin startproject backend
 ```
+
 Now that we have created our project, let's go ahead and create an application called `todo` and migrate the models into the database.
 
 Migration at this point is not really necessary but let's just go ahead and do it. 
@@ -62,6 +66,7 @@ python manage.py startapp todo
 python manage.py migrate
 python manage.py runserver
 ```
+
 If everything works you should see the Congratulations page from Django.
 
 Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
@@ -96,7 +101,9 @@ class Todo(models.Model):
    def _str_(self):
      return self.title
 ```
+
 The code explains:
+
 - Title: What the task is.
 
 - Description: Give more explanation about a particular task.
@@ -104,12 +111,14 @@ The code explains:
 - Completed: Completed is the status of a task; either completed or not completed.
 
 Let us run migrations to add our model to the database schema.
+
 ```bash
 python manage.py makemigrations todo
 python manage.py migrate todo
 ```
 
 We can add models to our Admin page using the `admin.site.register()` functions. In the todo app's `admin.py`, let's add the model to our admin page.
+
 ```python
 # todo/admin.py
 
@@ -124,14 +133,17 @@ class TodoAdmin(admin.ModelAdmin):
 ```
 
 An administration page is crucial to any website that deals with dynamic content. Django was built to make that functionality easier.
+
 ```bash
 python manage.py createsuperuser
 ```
+
 This will prompt you to enter the `username`, `email`, `password`, `password(again)`. We can open the admin page using the following link `http://localhost:8000/admin`
 
 ```bash
 python manage.py runserver
 ```
+
 ![admin dashboard](admin.jpg)
 
 We can now add and delete items from the admin page. Great!
@@ -150,6 +162,7 @@ Install the `djangorestframework` and `django-cors-headers`:
 ```bash
 pipenv install djangorestframework django-cors-headers
 ```
+
 Add `rest_framework` and `corsheaders` to the `INSTALLED_APPS` in `backend/settings.py` file and modifiy the `MIDDLEWARE`:
 
 ```python
@@ -176,12 +189,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
+
 Add this code snippet in `backend/settings.py` file:
+
 ```python
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 ```
+
 Django-cors-headers helps in handling the server headers required for Cross-origin Resource Sharing (CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
 Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. For instance in our application, the `http://localhost:3000` is the default port for React and we will use it from our Django backend to serve the API. 
@@ -193,6 +209,7 @@ Let us create a serializer file:
 ```bash
 touch todo/serializers.py
 ```
+
 Let us add this to  `serializers.py` file:
 
 ```python
@@ -206,7 +223,9 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = ('id' ,'title', 'description', 'completed')
 ```
+
 Let's also update the `todo/views.py`:
+
 ```python
 # todo/views.py
 
@@ -220,7 +239,6 @@ from .models import Todo                 # add this
 class TodoView(viewsets.ModelViewSet):   # add this
     serializer_class = TodoSerializer    # add this
     queryset = Todo.objects.all()        # add this
-
 ```
 
 In the `backend/urls.py` we define the URL routes for the API:
@@ -241,6 +259,7 @@ urlpatterns = [
     path('api/', include(router.urls))             # add this
 ]
 ```
+
 That completes the building of the API. The `router` enables  us to create the subsequent operations:
 
 * `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
@@ -251,7 +270,6 @@ That completes the building of the API. The `router` enables  us to create the s
 python manage.py runserver
 ```
 
-
 ![api](json.jpg)
 
 
@@ -259,27 +277,36 @@ We have set our backend let us move forward to frontend.
 
 ### Step 3: Frontend using React
 
+
 To install `create-react-app` use the following command. `-g` stands for global as we are first installing `create-react-app` globally:
+
 ```bash
 npm install -g create-react-app
 ```
+
 While in the parent directory - `django-react-todoApp`- create a React application, `frontend`:
+
 ```bash
 create-react-app frontend
 ```
 
 To start server:
+
 ```bash
 cd frontend
 npm start
 ```
+
 You should be able to see the default React app by now.
 
 Install `bootstrap` and `reactstrap` to help us style the UI:
+
 ```bash
 npm add bootstrap reactstrap
 ```
+
 Head to `src/index.css` file and change the css to the one below:
+
 ```css
 /_frontend/src/index.css _/
 
@@ -339,6 +366,7 @@ It enable us to integrate React in every foreign application.
 It expects an element with an `id='root'`.
 
 Substitute the below code in `src/App.js`:
+
 ```javascript 
 // frontend/src/App.js
 
@@ -456,14 +484,18 @@ In react we use JavaScript XML (JSX) to write HTML in React. You might have noti
 Your User Interface should resemble the one below:
 
 ![frontend](todo.jpg)
+
 Modal component provide creating of dialogs, popovers this handles editing tasks.
 
 In `src` directory create `components` and in the components folder create `Modal.js` file:
+
 ```bash
 mkdir src/components
 touch src/components/Modal/js
 ```
+
 Update the  `Modal.js` file with the code below:
+
 ```javascript
 // frontend/src/components/Modal.js
 
@@ -545,6 +577,7 @@ export default class CustomModal extends Component {
     }
 }
 ```
+
 `Reactstrap` is a component library for Reactjs. It has in-built Bootstrap components that provide flexibility and prebuilt validation. This allows us to quickly build elegant forms that provide an intuitive experience.
 
 `CustomModal` class which encapsulates the Modal component comes from the `reactstrap`. Three fields are also defined; `Title`,`Description`,`Completed`.
@@ -552,6 +585,7 @@ export default class CustomModal extends Component {
 `CustomModal` accepts `activeItem`- stands for the current item to be edited `toggle` - used to switch between the Modal's different states and `onSave` - called to save the edited items.
 
 Head over to the `src/App.js` and replace it completely with this code snippet:
+
 ```javascript
 // frontend/src/App.js
 
@@ -699,6 +733,7 @@ class App extends Component {
 
 }
 ```
+
 We add `modal` property to our `state` object. To change a value in the state object we use `this.setState()` method. When a value in the `state` object changes, the component will re-render and the output will change as per the new value(s). We use `this.setState()` method to change the state object of a few components in our application. `setState()` method ensures the components have been updated and calls the `render()` method and other lifecycle methods.
 
 `JSON.stringify()` is used to convert JavaScript objects into a string. When we run our application and input `title` and `description`, clicking the save button prompt a string alert in the browser. The same happens when we try to delete an item.
@@ -708,15 +743,20 @@ The User Interface should be like below at this point:
 ![styled](styled.jpg)
 
 It is time to consume the API we created earlier.
+
 ```bash
 cd backend
 python manage.py runserver
 ```
+
 We will install `axios`. It help us retrieve data from external API in our case the backend.
+
 ```bash
 npm add axios
 ```
+
 We will need to modify the `frontend/package.json`:
+
 ```javascript
 // frontend/package.json
 
@@ -738,10 +778,13 @@ We will need to modify the `frontend/package.json`:
   },
   [...]
 ```
+
 The `axios` channels the API requests to the port `http://localhost:8000` where the server is running, enabling the frontend to make the requests. 
+
 ```
 axios.get("/api/todos/")
 ```
+
 To consume our API instead of the artificial data, update the `frontend/src/App.js` with the snippet below:
 
 ```javascript
@@ -893,6 +936,7 @@ class App extends Component {
 }
 export default App;
 ```
+
 We assign our `todoList` an empty array because we are going to fetch our data from an API.
 
 `componentDidMount()` function is called by React to either fetch data from an External API or perform unique operations which need the JSX elements. In our case we use it for the former. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
@@ -904,19 +948,27 @@ In the `componentDidMount()` function we call `setState()` method to change the 
 For instance, we are fetching our data from an API, the API call is placed in the lifecycle method, we get the response. We call the `setState()` method and render the element with updated data. `handleSubmit()` function handles the CRUD operations.
 
 ### Step 4: Testing
+
+
 Let us test our application backend by doing the following:
+
 ```bash
 cd backend
 pipenv shell
 python manage.py runserver
 ```
+
 Serving frontend:
+
 ```bash
 npm start
 ```
+
 Check the address- http://localhost:8000 - to see the final look.
 
 ### Conclusion
+
+
 We've come to the end of this tutorial and learnt how to configure Django and React to interact with each other. Hope you have learnt one thing or two from this.
 
 The source code for this application is available [here](https://github.com/OkothPius/React-todo-app) on Github and you can also check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020)
