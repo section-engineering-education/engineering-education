@@ -120,6 +120,7 @@ The final database will have three main entities with attributes, as shown below
 We will use the information in the tables below to design the ER model. All the column names have been defined. Primary keys, foreign keys, and datatypes are also outlined.
 
 **Book table**
+
 column name | data type | can be null | index type | auto_increment
 --- | --- | --- | --- | ---
 id | integer | no | primary key | yes
@@ -131,6 +132,7 @@ publication_year | year(4) | no
 title | varchar(255) | no
 
 **Author table**
+
 column name | data type | can be null | index type | auto_increment
 --- | --- | --- | --- | ---
 id | integer | no | primary key | yes
@@ -138,6 +140,7 @@ first_name | varchar(45)| no
 last_name | varchar(45)| no
 
 **Publisher table**
+
 column name | data type | can be null | index type | auto_increment
 --- | --- | --- | --- | ---
 id | integer| no | primary key | yes

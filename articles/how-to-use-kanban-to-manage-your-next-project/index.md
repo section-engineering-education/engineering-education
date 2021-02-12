@@ -97,15 +97,15 @@ It is straightforward to adopt Kanban in your next project. The most crucial req
 - **Embrace leadership at all levels.** Kanban encourages everyone to be a leader by making continuous improvements at a personal level. The team should be self-managing.
 - **Follow the current process and roles.** You do not have to create new roles or processes. The responsibilities and titles in your team remain the same.
 
-**Step 1:** Get a Kanban board. Choose between a physical board or a digital board. Discuss with your team and decide what fits you best.
-**Step 2:** Identify the different states in your existing process and put the workflow on the Kanban board.
-**Step 3:** Identify the commitment point and the delivery point.
-**Step 4:** Set the Work in Progress Limits.
-**Step 5:** Identify the work items. Identify the different tasks and put them on cards.
-**Step 6:** Place cards in the appropriate stages of the workflow.
-**Step 7:** Work on the cards. 
-**Step 8:** Identify bottlenecks.
-**Step 9:** Work on the bottlenecks and improve continuously.
+- **Step 1:** Get a Kanban board. Choose between a physical board or a digital board. Discuss with your team and decide what fits you best.
+- **Step 2:** Identify the different states in your existing process and put the workflow on the Kanban board.
+- **Step 3:** Identify the commitment point and the delivery point.
+- **Step 4:** Set the Work in Progress Limits.
+- **Step 5:** Identify the work items. Identify the different tasks and put them on cards.
+- **Step 6:** Place cards in the appropriate stages of the workflow.
+- **Step 7:** Work on the cards. 
+- **Step 8:** Identify bottlenecks.
+- **Step 9:** Work on the bottlenecks and improve continuously.
 
 ### Kanban vs. Scrum
 Both Scrum and Kanban are frameworks used in agile project management. You can learn more about Scrum in the article [Introduction to Scrum](https://www.section.io/engineering-education/introduction-to-scrum/). The table below shows the core differences between Scrum and Kanban.
