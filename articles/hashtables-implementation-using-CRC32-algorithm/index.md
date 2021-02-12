@@ -1,3 +1,20 @@
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/hashtables-implementation-using-CRC32-algorithm/
+- title: Hash Table implementation using CRC32 algorithm
+- description: Hash tables are the most and convenient data structures that are easily accessible in most programming languages. It uses an associative array to store data and retrieve data. Each data value has its unique index. 
+- author: jerim-kaura
+- date: 2021-02-12T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/hashtables-implementation-using-CRC32-algorithm/hero.jpg
+-    alt: Hashtables implementation using CRC32 example image
+- ---
+
 Hash tables are the most and convenient data structures that are easily accessible in most programming languages. It uses an associative array to store data and retrieve data. Each data value has its unique index. Instead of searching through the whole array, the index is used to access the required element directly. Time taken for search operation is reduced irrespective of the data size. Given a key-value pair, the hash code of the key is computed and used as the index of the value stored in the table.
 
 ### Prerequisites
