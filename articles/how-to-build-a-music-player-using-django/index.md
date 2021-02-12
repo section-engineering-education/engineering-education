@@ -197,6 +197,12 @@ The "script.js" file is the javascript file that defines how our music is played
 
 The *script.js* file is the javascript file that defines how our music is played, while the *style.js* file is the CSS file that styles our HTML template design and feels.
 
+Lets first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
+
+```python
+import os
+``` 
+
 We would also define our `static_root`, `media_root`, and `media_url` in our *settings.py* file as seen below
 
 ```python
@@ -303,7 +309,7 @@ You would also notice our SQLite database file was created in the root folder fo
 
 If your migrations were successful, congratulations!!!. However, the work isn't finished. We still have to import and register our models in our "admin.py" file so we would be able to create new Song objects.
 
-Our admin file would contain the following code
+The `admin.py` file can be found in the `App` folder. Edit and add the following code.
 
 ```python
 from django.contrib import admin
