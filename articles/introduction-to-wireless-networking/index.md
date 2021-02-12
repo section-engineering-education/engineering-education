@@ -39,7 +39,7 @@ to a router or access switch, let's say via ethernet, minimizing the portability
 Obviously, in wireless, we don't use cables but radio waves instead.
 But do you remember **Carrier-sense multiple access with collision detection (CSMA/CD)** used in half-duplex networks?    
 Wireless networking is always half-duplex where the transmission can only take place in a single direction.   
-The main reason why wireless is half-duplex is because of sending and receiving on a single frequency.    
+The reason why wireless is half-duplex is that sending and receiving happens on the same frequency. 
 Discussing this always leads to arguments on collisions, but that's beyond the scope of this article.  
 
 ### How does a wireless network works?
