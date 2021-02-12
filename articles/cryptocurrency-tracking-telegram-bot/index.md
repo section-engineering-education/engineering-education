@@ -8,19 +8,28 @@ Telegram bots are accounts operated by software that serve as handy tools for a 
 
 ### Introduction
 
-Telegram is one of the top social media platforms for messaging. Its core functionalities include:
+Telegram is a very popular social media platform for messaging and privacy. Its core functionalities include:
 - Sending messages to other Telegram users.
-- Creating group chats.
 - Calling contacts.
 - Sending files and stickers.
+- Creating group chats and channels.
+- Cloud backup
 
 You can learn more about Telegram here: <https://telegram.org>
 
-Telegram bots are accounts that are operated by software and not actual people. They can do anything from teaching to playing games, acting as search engines, broadcasting messages, serving as reminders, connecting and integrating with other services, and even passing commands to Internet of Things (IoT) devices. [@GroupButler_bot](https://t.me/groupbutler_bot) is a very popular Telegram Bot for managing Telegram groups.
+Telegram bots are accounts that are operated by software. They can do a lot of things including:
+- Teaching users.
+- Broadcasting messages.
+- Playing games.
+- Acting as search engines.
+- Serving as reminders.
+- Passing commands to Internet of Things (IoT) devices.
+- Connecting and integrating with other services.
+[@GroupButler_bot](https://t.me/groupbutler_bot) is a Telegram bot for managing Telegram groups.
 
 ![telegram group butler](/engineering-education/cryptocurrency-tracking-telegram-bot/ngcq6rvjxrpoibsspq9g.png)
 
-Cryptocurrencies are digital forms of currencies in which transactions are verified and records maintained by a decentralized system using cryptography rather than a centralized authority. Examples of cryptocurrency include Bitcoin (BTC), Ethereum (ETH), and Litecoin (LTC).
+Cryptocurrencies are digital forms of currencies that exist in the cyber world. They are peer-to-peer and built upon blockchain technology which is a distributed and decentralized ledger having no central authority. Popular cryptocurrencies include Bitcoin, Ethereum, Litecoin, Doge, and Ripple.
 
 ### Building a Cryptocurrency Tracker
 
@@ -28,9 +37,7 @@ Cryptocurrencies are volatile, so their prices change every second. There are al
 
 This article will build a cryptocurrency tracker by consuming data provided by [CryptoCompare API](https://min-api.cryptocompare.com) using Python.
 
-First, we need to install the [Requests](https://requests.readthedocs.io/en/master/) library, an elegant and simple HTTP library for Python. Requests allow us to send HTTP/1.1 requests too easily by saving us the stress of manually adding query strings to our URLs or form-encode POST data.
-
-In the terminal, type:
+First, we need to install the [Requests](https://requests.readthedocs.io/en/master/) library which extends the functionality of Python programs by providing functions that allow them to make HTTP requests. Here, we will be using it to communicate with the CryptoCompare API. In the terminal, type:
 
 ```
 pip install requests
@@ -66,31 +73,31 @@ This is the expected output from the code above when executed:
 
 ![crypto tracker output](/engineering-education/cryptocurrency-tracking-telegram-bot/2en1wn0m-8gcycfjmtvs.png)
 
-## Building a Telegram Bot
+### Building a Telegram Bot
 
-#### Step 1: Have a Conversation with BotFather
+#### Step 1: Launch BotFather on Telegram
 
-Sign In to your Telegram account, then search for `@botfather` and start a conversation with the account. PS: BotFather is also a Telegram bot.
+Search for `@botfather` on Telegram and launch the bot. BotFather is a bot that helps us create and manage Telegram bot interfaces.
 
 ![telegram botfather](/engineering-education/cryptocurrency-tracking-telegram-bot/2frh-rcjna_zv5g1epn7.png)
 
 ![chatting with botfather ](/engineering-education/cryptocurrency-tracking-telegram-bot/ru4lx8fvo0u5nnmmp5bj.png)
 
-#### Step 2: Creating the Telegram Bot Interface with BotFather
+#### Step 2: Create a Telegram Bot Interface
 
-We will now use the `/newbot` command to create a new Telegram bot. Creating a Telegram bot with BotFather means, you assign a name and username to it.
+To create a new bot with BotFather. First, use the `/newbot` command which will trigger BotFather to ask you for the details of the bot you want to create.
 
 ![create new bot](/engineering-education/cryptocurrency-tracking-telegram-bot/w9cqynzuungmtirs_gg6.png)
 
 ![supply bot info](/engineering-education/cryptocurrency-tracking-telegram-bot/a6kvxsmfgq_slhwtwp5z.png)
 
-After supplying the name and username for your Telegram bot, BotFather will give you the API token used to interact with the bot account via the Telegram API.
+BotFather will give you the HTTP token after you have supplied the name and username for your bot. The token is used to build functionality for your bot via the Telegram API.
 
 ![get bot token](/engineering-education/cryptocurrency-tracking-telegram-bot/drowpxw1kqxlc2sw7ct8.png)
 
-#### Step 3: Powering the Bot with Python
+#### Step 3: Connect To Telegram API via Python
 
-First, we will install the required Python libraries for building telegram bots. Of course, we can use the Telegram API directly following the [official docs](https://core.telegram.org/bots), but Python already simplifies this by providing libraries we can easily make use of.
+First, we will be installing a couple of Python libraries that allow us easily interact with the Telegram API. You can also refer to Telegram API documentation if you want to explore the full functionality of Telegram bots here <https://core.telegram.org/bots>
 
 In the terminal, type:
 
@@ -99,7 +106,7 @@ pip install telegram
 pip install python_telegram_bot
 ```
 
-Second, we need to write code that listens to new messages being sent to our bot on Telegram and sends a reply to the user. Create a file named `bot.py` and save the following code in it:
+Second, we need to write another Python script that will connect to the Telegram API and listen to messages that are being sent to our bot then respond to them. Create a file named `bot.py` and save the code below in it:
 
 ```Python
 import telegram
@@ -121,15 +128,13 @@ dispatcher.add_handler(CommandHandler("start", start))
 updater.start_polling()
 ```
 
-In the code above, we created an `updater` and `dispatcher` for our Telegram bot using the Telegram python module. The `updater` class tracks and monitors messages sent to the bot and delivers them to the `dispatcher`, while the `dispatcher` handles and processes the received message.
+In the code above, we first made use of the `updater` class from the Telegram library to listen to new messages being sent to our bot then a message handler with the `dispatcher` class.
 
-Then, we created a `command handler` for our dispatcher. A `command handler` is a function called when a bot user triggers a certain command.
+Then, we created a `command handler` and assigned it to our dispatcher. A `command handler` is a block of code that is called when a certain command is triggered by a bot user.
 
-We then used the `send_message` method of the `context.bot` class, which takes in a `chat_id` parameter. Telegram assigns a unique identifier to every user on its platform, and it is accessible via the `chat_id` variable. Bots can use the `chat_id` to send messages to users or serve as a primary key in databases.
+Then, we used the `send_message` method provided by the Telegram library to send messages to our users when they expect a response. The method takes in a parameter called `chat_id` that is uniquely assigned to every Telegram user along with the message we want to send.
 
-After setting our handlers, we initiated our `updater` to start monitoring messages sent to the bot from Telegram using the `start_polling` method of the `updater` class.
-
-This is the expected response from our Telegram bot when the `bot.py` script is executed, and a message is sent to the bot (don’t forget to replace the placeholder with your token):
+This is the expected response from our Telegram bot when the `bot.py` script is executed and a message is sent to the bot (don’t forget to replace the placeholder with your API token):
 
 ![find our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/iqzwzfv5gdstworaokgj.png)
 
