@@ -6,7 +6,7 @@ url: /engineering-education/python-projects-for-beginners
 title: Python Projects for Beginners
 description: This article provides a guide on building simple Python projects and working with basic concepts in Python. 
 author: anita-achu
-date: 2021-01-15T00:00:00-03:00
+date: 2021-02-12T00:00:00-03:00
 topics: [Python]
 excerpt_separator: <!--more-->
 images:
@@ -43,7 +43,7 @@ Before we begin, let's install Python on your computer, open up your browser and
 
 #### Rock-paper-scissor Game
 
-If this is your first Python project, there are tons of code editors you could use, [Visual studio code](https://code.visualstudio.com/download), [pycharm](https://www.jetbrains.com/pycharm/download/#section=windows), [sublime text](https://www.sublimetext.com/3), etc. For this tutorial, I will be using visual studio code as my code editor.
+If this is your first Python project, there are several editors you may use, [Visual Studio Code](https://code.visualstudio.com/download), [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), [Sublime Text](https://www.sublimetext.com/3), etc. For this tutorial, I will be using Visual Studio Code as my code editor.
 
 Before we begin, if you don't know how the game works, [read here](https://en.wikipedia.org/wiki/Rock_paper_scissors).
 
@@ -203,3 +203,7 @@ Python syntax is quite easy to get started with. I hope you understand these con
 
 
 Keep coding and building! Goodluck 🙂
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
