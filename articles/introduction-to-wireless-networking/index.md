@@ -36,7 +36,7 @@ which is not the case with Wireless networks.
 Now, wired networks have one drawback, that is, your desktop or laptop has to be physically connected or tethered   
 to a router or access switch, let's say via ethernet, minimizing the portability of your computers.  
 
-Obviously, in wireless, we don't use cables but radio waves instead.
+In wireless networks, we use radio waves instead of cables.
 But do you remember **Carrier-sense multiple access with collision detection (CSMA/CD)** used in half-duplex networks?    
 Wireless networking is always half-duplex where the transmission can only take place in a single direction.   
 The reason why wireless is half-duplex is that sending and receiving happens on the same frequency. 
