@@ -1,4 +1,6 @@
-
+When a new user clicks on the signup button of an application, he or she usually gets a confirmation email with an activation link.  
+This is needed to make sure that the user owns the email address entered during the authentication. After the click on the activation link, the user is authenticated for the application. 
+In this email verification tutorial, we have a glance at how this functionality is achieved in Laravel 8.
 
 ### Requirements
 This tutorial assumes you have basic knowledge in the following:  
