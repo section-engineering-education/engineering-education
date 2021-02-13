@@ -113,13 +113,13 @@ class UIModePreference(context: Context) {
 **1: creating the datastore.**
 The 1st line basically creates a datastore using the file name `"ui_mode_preference"`. The `createDataStore()` function is extension function created on Context.
 
-**2: writing to the datastore.**
+**2: Writing to the datastore.**
 Preference DataStore provides the `.edit()` function to make it easier to update data. This method will save the UI mode from our activity.
 
 **3: Reading data from the datastore**
 DataStore exposes the stored data in a `Flow` in the preferences object which will emit values whenever the preferences are updated. It also ensures that the data is retrieved on `Dispatcher.IO`. we use `map{}` because we are mapping boolean values(remember we are storing boolean values in our datastore).
 
-**4: storing preference using a key.**
+**4: Storing preference using a key.**
 We have created a key `UI_MODE_KEY` which will store the boolean value for either the light or dark mode. Preferences.preferencesKey() defines a key for each value that you need to store in the `DataStore<Preferences>`
 
 
@@ -220,8 +220,4 @@ They may change or deprecate from time to time and learning about these tools ca
 
 Happy coding!!
 
-
-
-
-
-
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
