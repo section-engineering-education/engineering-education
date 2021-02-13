@@ -4,19 +4,19 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
-description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10. 
+description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10.
 author: sylvester-tamba
-date: 2021-02-05T00:00:00-17:00
+date: 2021-02-12T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-grails-development-with-intellij/hero.jpg
-    alt: Replication of PostgreSQL Database example image
+    alt: Grails Java Framework example image
 ---
-In recent years, many developers have been using frameworks when developing websites. Frameworks help by making application deployment quicker and by ensuring quality code. Java provides multiplatform supports, this includes a desktop application, web application, mobile app development, and many more. 
+In recent years, many developers have been using frameworks when developing websites. Frameworks help by making application deployment quicker and by ensuring quality code. Java provides multiplatform supports, this includes a desktop application, web application, mobile app development, and many more.
 <!--more-->
-The web applications can be embedded with Javascript, HTML, CSS, and many front end applications.
+The web applications can be embedded with JavaScript, HTML, CSS, and many front end applications.
 ### Introduction
 **Grails** is Java and Groovy framework used when developing agile web applications. Grails implements the MVCS (Model, View, and Controller) design pattern.
 
@@ -40,7 +40,7 @@ Grails provides a set of commands to support application development. IDE has al
 
 To create an application in the Grails framework, the `create-app` command can be executed in terminal or Windows CMD with arguments like the application's name.
 
-The command below shows how to create an application via terminal or CMD. Open terminal or CMD in a directory where you want to save the application. 
+The command below shows how to create an application via terminal or CMD. Open terminal or CMD in a directory where you want to save the application.
 
 In this case, we have a folder called `Projects` in the document folder.
 
@@ -69,10 +69,9 @@ grails run-app
 
 The command will run the web application via a browser. You can type the highlighted command in the browser.
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.PNG).
+![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.png)
 
-![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-first-web-app.PNG).
-
+![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-first-web-app.png)
 
 ### Folder structure and directories
 The grails application has the following folder structure.
@@ -139,7 +138,7 @@ In this folder, we can put utility Groovy classes.
 It contains GSP files, where HTML code is kept
 
 ### GRAILS MVC
-MVC design patterns help in partitioning responsibilities in the application to simplify the architecture. Model classes represent domain objects in the system. 
+MVC design patterns help in partitioning responsibilities in the application to simplify the architecture. Model classes represent domain objects in the system.
 
 Controller classes control the flow of your application. Service classes handle the business logic in the application. Views artifacts are used to present information in a way desired.
 
@@ -151,20 +150,20 @@ grails create-domain-class Student
 
 ```groovy
 package firstapp
-            
+
 class Student {
-            
+
     static constraints = {
         }
     }
-            
+
 ```
-            
-We can add attributes. 
+
+We can add attributes.
 
 ```groovy
 package firstapp
-            
+
 class Student {
     String name
     String gender
@@ -173,29 +172,29 @@ class Student {
     static constraints = {
         }
     }
-            
+
 ```
-            
+
 ### Creating Controller Class
 The below command adds an empty Controller Class.
-            
+
 ```bash
 grails create-controller Student
 ```
-            
+
 ```groovy
 package firstapp
-            
+
 class StudentController {
-            
+
     def index() { }
     }
-            
+
 ```
-            
+
 ### Configure database
 Database configuration is done in the application.yml to any database with any credentials needed. Within the file, any database can be connected, provided it has a JDBC driver.
-            
+
 ```yaml
 dataSource:
 pooled: true
@@ -203,7 +202,7 @@ jmxExport: true
 driverClassName: org.h2.Driver
 username: sa
 password: ''
-            
+
 environments:
 development:
 dataSource:
@@ -235,51 +234,51 @@ testWhileIdle: true
 testOnReturn: false
 jdbcInterceptors: ConnectionState
 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
-            
-            
+
+
 ```
 ### Generating views
 The command below generates GSP views.
-            
+
 ```bash
 grails generate-all Student
 ```
-            
+
 The Student Controller Class will have many other functions in it. Run the grails application and access the following link `http://localhost:8080/student/index` in the browser.
 
-The command also creates views in the views folder under the same object student. 
+The command also creates views in the views folder under the same object student.
 
 The following views are created.
-            
+
 ```bash
 ├── show.gsp
 ├── index.gsp
 ├── create.gsp
 └── edit.gsp
 ```
-            
+
 Each view has its function. show.gsp is used to show a single object selected, index.gsp is used to display a list of items in the database, create.gsp provides a form when adding new items, and edit.gsp is used to edit any existing data.
-            
+
 The new view in the browser will look like the following.
-            
-![VIEWS](/engineering-education/introduction-to-grails-development-with-intellij/grails-views-data.PNG).
-            
+
+![VIEWS](/engineering-education/introduction-to-grails-development-with-intellij/grails-views-data.png).
+
 The same folder can be opened in Intellij and continue with fast coding. For any Class to be added, the developer needs to right-click on a given folder and create a Grails Class based on the Folder.
-            
+
 Any library that is not there can be added through build.gradle. Just like CMD/Terminal grails has a terminal window where one can do the grails command without coming to the main CMD/Terminal.
-            
+
 This how it looks in IntelliJ.
-            
-![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.PNG).
-            
+
+![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.png).
+
 For the source code check [here](https://github.com/tambastar/Grails-Firstapp).
-            
+
 ### More details   
 - [Grails](https://grails.org/)
-            
+
 ### Conclusion
 Congratulations, your fast grail app is successfully running. Grails Framework help by taking advantages of several tools and bringing them together.
-            
+
 In this article:
 - We have installed the Grails framework.
 - We have looked at Grails directories.
