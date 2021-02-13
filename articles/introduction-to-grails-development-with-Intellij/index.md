@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
-description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10.
+description: This article will go over Grails, which is Java and Groovy framework used when developing agile web applications. Grails implements the MVCS (Model, View, and Controller) design pattern.
 author: sylvester-tamba
 date: 2021-02-05T00:00:00-17:00
 topics: []
