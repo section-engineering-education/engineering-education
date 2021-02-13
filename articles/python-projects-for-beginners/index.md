@@ -129,12 +129,14 @@ while keep_playing:
       break
 game_level = input("Select desired level: ").lower()
 ```
-Run your code [here](https://repl.it/@Anitaachu/pythontest#main.py)
+
+Run your code [here](https://repl.it/@Anitaachu/pythontest#main.py).
 
 When you run this, the result in your terminal will be:
+
 ![Input field](/engineering-education/python-projects-for-beginners/Input2.JPG)
 
-***While loop*** is used to run a set of commands multiple times as long as the condition is true, i.e., for a while loop to be executed, the condition must be set to '*True*.' The while loop also runs continuously. Therefore we use the ***break*** statement to stop the loop from running.
+***While loop*** is used to run a set of commands multiple times as long as the condition is true, i.e., for a while loop to be executed, the condition must be set to *'True'*. The while loop also runs continuously. Therefore we use the ***break*** statement to stop the loop from running.
 
 The user can choose a different desired level. With the ***lower()*** method, the user input will automatically return a lower case string so the program can run without error.
 
@@ -195,18 +197,18 @@ else:
     print("Invalid, try easy, medium or hard")
 ```
 
-You can run the code [here](https://repl.it/@Anitaachu/pythontest#main.py)
+You can run the code [here](https://repl.it/@Anitaachu/pythontest#main.py).
 
 Let's see this in our terminal.
-![guessing game](/engineering-education/python-projects-for-beginners/Guessinggame.png)
 
-The ***randint*** method returns an integer from a random range. Notice the indentations? In Python, indentation is important, and improper indentation will cause an error, or the codes may not run as desired.
+![guessing game](/engineering-education/python-projects-for-beginners/guessinggame.png)
+
+The ***randint*** method returns an integer from a random range. Notice the indentations? In Python, indentation is very important, and improper indentation will cause an error, otherwise the codes may not run as intended.
 
 Pretty easy, right? 
 
 ### Conclusion
-Python syntax is quite easy to get started with. I hope you understand these concepts better how and how they work. In further tutorials, we'll work on a more complex project and use more Python methods and tools.  
-
+Python syntax is quite easy to get started with. I hope you understand these concepts better now and how they work. In further tutorials, we'll work on a more complex project and use more Python methods and tools.  
 
 Keep coding and building! 
 
