@@ -6,7 +6,7 @@ url: /engineering-education/python-projects-for-beginners
 title: Python Projects for Beginners
 description: This article provides a guide on building simple Python projects and working with basic concepts in Python. 
 author: anita-achu
-date: 2021-02-12T00:00:00-03:00
+date: 2021-02-13T00:00:00-12:00
 topics: [Python]
 excerpt_separator: <!--more-->
 images:
@@ -14,42 +14,45 @@ images:
   - url: /engineering-education/python-projects-for-beginners/hero.jpg
     alt: python example image
 ---
-
-In learning any programming language, the first step is learning the basic concepts of the language. While this is important, theoretical learning without working on real projects is not sufficient. The best way to have a good understanding of the language's basic concepts is by creating real-world projects with the learned concepts. This will help the programmer understand the language give a real insight into how the different tools are used and how they work. Working on projects makes learning a lot easier and helps you build your confidence, also choosing what to build is important. It is best to work with a project that involves using the concepts of the programming language.
+When learning any programming language, the first step is learning the basic concepts of the language. While this is important, theoretical learning without working on real projects is not sufficient. The best way to have a good understanding of the language's basic concepts is by creating real-world projects with the learned concepts.
+<!--more-->
+This will help the programmer understand the language give a real insight into how the different tools are used and how they work. Working on projects makes learning a lot easier and helps you build your confidence, also choosing what to build is important. It is best to work with a project that involves using the concepts of the programming language.
 
 Like any programming language, the best practice for learning Python is building simple projects, which we will be doing in this tutorial.
 
 Remember that Python is a beginner-friendly language.
 
 ### Introduction
-
 Python is a high-level, general-purpose programming language. Python is popularly known for its simple and straightforward syntax, which makes it easy to learn.
 
 At this point, I believe you've learned the basic concept of Python theoretically? *Great*! Now we will be testing these new skills you have learned by building a simple project to aid your understanding of Python, and by this, you'll see how the concepts are implemented. 
 
-It can be a bit difficult as a beginner to decide what project to build. This tutorial will build two simple Python games (a rock-paper-scissor game and a guessing game). These projects involve a good number of Python basic concepts and tools. Quite sure that you have played either one or both of these games at one point or the other. Now let's build 🙂
+It can be a bit difficult as a beginner to decide what project to build. This tutorial will build two simple Python games (a rock-paper-scissor game and a guessing game). 
+
+These projects involve a good number of Python basic concepts and tools. Quite sure that you have played either one or both of these games at one point or the other. 
+
+Now let's build 🙂
 
 ### Goal
-
-- Understanding how fundamental concepts of Python work
-- Building a *rock, paper and scissors* game
-- Building a *guessing game*
+- Understanding how fundamental concepts of Python work.
+- Building a *rock, paper and scissors* game.
+- Building a *guessing game*.
 
 ### Prerequisite
 Basic knowledge of Python concepts.
 
+Before we begin, let's install Python on your computer, open up your browser and go to python.org, click on downloads. At the time of this tutorial, the latest version of Python is ***version 3.9.1.***. When the downloading is complete, open up your file explorer on your machine and install Python on your local device.
 
-Before we begin, let's install Python on your computer, open up your browser and go to python.org, click on downloads. At the time of this tutorial, the latest version of Python is ***version 3.9.1.*** When downloading is done, open up your file explorer on your machine and install Python on your local device.
+#### Rock-paper-scissor game
+If this is your first Python project, there are several editors you may use, [Visual Studio Code](https://code.visualstudio.com/download), [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), [Sublime Text](https://www.sublimetext.com/3), etc. 
 
-#### Rock-paper-scissor Game
+For this tutorial, I will be using Visual Studio Code as my code editor.
 
-If this is your first Python project, there are several editors you may use, [Visual Studio Code](https://code.visualstudio.com/download), [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), [Sublime Text](https://www.sublimetext.com/3), etc. For this tutorial, I will be using Visual Studio Code as my code editor.
-
-Before we begin, if you don't know how the game works, [read here](https://en.wikipedia.org/wiki/Rock_paper_scissors).
+Before we begin, if you don't know how the game works, [read the rules here](https://en.wikipedia.org/wiki/Rock_paper_scissors).
 
 Let's begin with your code text editor. Create a Python file. A Python file is created by adding '.py' at the end of your file name.
 
-In your [game.py](http://game.py)  file, import the random method and add the following:
+In your [game.py](http://game.py) file, import the random method and add the following:
 
 ```python
 import random
@@ -58,15 +61,16 @@ player_name= input("Enter your name: ")
 print(f"Welcome {player_name} to the rock, paper and scissor game\n")
 choice = ["rock", "paper", "scissors"]
 ```
-Your terminal would display,
+
+Your terminal should display,
 
 ![Input field](/engineering-education/python-projects-for-beginners/input.png)
 
 **Random** is a built-in module that generates random values within a particular specified range.
 
-To get the details from a user, we use the Python **input** function**.**
+To get the details from a user, we use the Python **input** function.
 
-*Next,* define a functioning game and set out the rules of the game.
+Next, define a functioning game and set out the rules of the game.
 
 ```python
 def game():
@@ -95,11 +99,13 @@ def game():
 game()
 ```
 
-You can run your code [here](https://repl.it/@Anitaachu/pythontest#main.py), your terminal should display.
+You can run your code [here](https://repl.it/@Anitaachu/pythontest#main.py), and your terminal should display.
 
 ![Rock-paper-scissor](/engineering-education/python-projects-for-beginners/RPS.png)
 
-Notice, we use the *if-else* method in Python. They are very important in programming. With these methods, we can build programs that make decisions based on certain conditions. These are conditional statements. The ***if*** statement implies that if this is true or if it happens, then this should happen. While the ***elif*** and ***else*** statement simply implies that if the previous conditions don't happen or if it is not true, then this should happen.
+Notice, we use the *if-else* method in Python. They are very important in programming. With these methods, we can build programs that make decisions based on certain conditions. 
+
+These are conditional statements. The ***if*** statement implies that if this is true or if it happens, then this should happen. While the ***elif*** and ***else*** statement simply implies that if the previous conditions don't happen or if it is not true, then this should happen.
 
 Notice, in this simple game, we have used a few methods in Python, such as *random, function, input, conditional statements.* I hope you properly understand how these concepts work in Python.
 
@@ -202,7 +208,9 @@ Pretty easy, right?
 Python syntax is quite easy to get started with. I hope you understand these concepts better how and how they work. In further tutorials, we'll work on a more complex project and use more Python methods and tools.  
 
 
-Keep coding and building! Goodluck 🙂
+Keep coding and building! 
+
+Goodluck 🙂
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
