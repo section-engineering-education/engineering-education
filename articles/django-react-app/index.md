@@ -477,7 +477,7 @@ export default App;
 
 We assign our `todoList` an empty array because we are going to fetch our data from an API.
 
-When we call the `fetch()` with the `await` keyword, where we pass our apiEndpoints. We're telling the  `async` function to stop executing untill the promise is resolved at which point it can resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
+First, we wrap Fetch in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our apiEndpoints. We're telling the  `async` function to stop executing untill the promise is resolved at which point it can resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
 
 We are using the `async` to fetch data from the API we created. Our application uses the `componentDidMount()` method from `React.Component` but defining it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
 
@@ -486,6 +486,7 @@ We are using the `async` to fetch data from the API we created. Our application 
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
 There are third party node packages that we can use in place of the native `fetch` API: [superagent](https://www.npmjs.com/package/superagent) and [axios](https://www.npmjs.com/package/axios).
+
 
 The consumed data from the API should be displayed as follows:
 
@@ -515,5 +516,5 @@ Check the address- http://localhost:8000 - to see the final look.
 
 We've come to the end of this tutorial and learnt how to configure Django and React to interact with each other. Hope you have learnt one thing or two from this.
 
-The source code for this application is available [here](https://github.com/OkothPius/React-todo-app) on Github and you can also check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020)
+Check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020).
 
