@@ -16,7 +16,7 @@ images:
 ---
 Hash tables are the most convenient data structures that are easily accessible in most programming languages. It uses an associative array to store data and retrieve data. Each data value has its unique index. Instead of searching through the whole array, the index is used to access the required element directly. 
 <!--more-->
-The time taken for search operation is reduced irrespective of the data size. Given a key-value pair, the hash code of the key is computed and used as the index of the value stored in the table.
+It reduces the time taken for search operation irrespective of the data size. Given a key-value pair, the hash code of the key is computed and used as the index of the value stored in the table.
 ### Prerequisites
 To get started, you will need to understand Python arrays, lists, and classes. You also need a code editor and a Python interpreter to run your code. 
 
