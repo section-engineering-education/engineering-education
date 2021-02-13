@@ -58,7 +58,7 @@ Create the first application with the following command.
 grails create-app Firstapp
 ```
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-Intellij/grails-create-app.png)
+![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-create-app.png)
 
 The Grails application is formed within the `Firstapp` directory, and one can execute many other grails commands.
 
@@ -69,7 +69,7 @@ grails run-app
 
 The command will run the web application via a browser. You can type the highlighted command in the browser.
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-Intellij/grails-run-app.png).
+![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.png).
 
 ![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-Intellij/grails-first-web-app.png).
 
@@ -270,7 +270,7 @@ Any library that is not there can be added through build.gradle. Just like CMD/T
             
 This how it looks in IntelliJ.
             
-![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-Intellij/grails-intellij-view.PNG).
+![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.PNG).
             
 For the source code check [here](https://github.com/tambastar/Grails-Firstapp).
             
