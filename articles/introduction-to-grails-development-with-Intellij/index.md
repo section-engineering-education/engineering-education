@@ -69,7 +69,7 @@ grails run-app
 
 The command will run the web application via a browser. You can type the highlighted command in the browser.
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.png).
+![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.PNG).
 
 ![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-Intellij/grails-first-web-app.png).
 
@@ -262,7 +262,7 @@ Each view has its function. show.gsp is used to show a single object selected, i
             
 The new view in the browser will look like the following.
             
-![VIEWS](/engineering-education/introduction-to-grails-development-with-Intellij/grails-views-data.png).
+![VIEWS](/engineering-education/introduction-to-grails-development-with-Intellij/grails-views-data.PNG).
             
 The same folder can be opened in Intellij and continue with fast coding. For any Class to be added, the developer needs to right-click on a given folder and create a Grails Class based on the Folder.
             
