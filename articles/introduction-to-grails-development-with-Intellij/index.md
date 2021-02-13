@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
 description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10.
 author: sylvester-tamba
-date: 2021-02-12T00:00:00-17:00
+date: 2021-02-05T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
