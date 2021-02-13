@@ -69,9 +69,9 @@ grails run-app
 
 The command will run the web application via a browser. You can type the highlighted command in the browser.
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.png)
+![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.PNG)
 
-![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-first-web-app.png)
+![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-first-web-app.PNG)
 
 ### Folder structure and directories
 The grails application has the following folder structure.
@@ -261,7 +261,7 @@ Each view has its function. show.gsp is used to show a single object selected, i
 
 The new view in the browser will look like the following.
 
-![VIEWS](/engineering-education/introduction-to-grails-development-with-intellij/grails-views-data.png).
+![VIEWS](/engineering-education/introduction-to-grails-development-with-intellij/grails-views-data.PNG).
 
 The same folder can be opened in Intellij and continue with fast coding. For any Class to be added, the developer needs to right-click on a given folder and create a Grails Class based on the Folder.
 
@@ -269,7 +269,7 @@ Any library that is not there can be added through build.gradle. Just like CMD/T
 
 This how it looks in IntelliJ.
 
-![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.png).
+![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.PNG).
 
 For the source code check [here](https://github.com/tambastar/Grails-Firstapp).
 
