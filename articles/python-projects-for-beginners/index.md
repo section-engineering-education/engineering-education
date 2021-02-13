@@ -64,7 +64,7 @@ choice = ["rock", "paper", "scissors"]
 
 Your terminal should display,
 
-![Input field](/engineering-education/python-projects-for-beginners/input.png)
+![Input field](/engineering-education/python-projects-for-beginners/Input.PNG)
 
 **Random** is a built-in module that generates random values within a particular specified range.
 
