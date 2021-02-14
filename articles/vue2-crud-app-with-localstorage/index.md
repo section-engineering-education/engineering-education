@@ -525,4 +525,4 @@ export default {
 
 Conclusion
 
-We just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage). 
+We've just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage). 
