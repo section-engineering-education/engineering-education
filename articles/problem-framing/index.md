@@ -16,7 +16,17 @@ An understanding of the basic concepts of machine learning. Introductory concept
 
 ### Machine learning workflow
 
-A basic machine learning project workflow has four stages. The first is problem framing. It is followed by data analysis, model building, and deployment. The data analysis stage involves handling and refining the data that is available to build the model. Model building is a stage where the desired model is selected for use. The available dataset is divided into training and test sets (validation sets too, where necessary). The model is trained and tested. The last stage involves the application of the model. Its performance is evaluated in a production setting.
+A basic machine learning project workflow has four stages:
+
+•	Problem framing. 
+
+•	Data analysis.
+
+•	Model building. 
+
+•	Deployment.
+
+The data analysis stage involves handling and refining the data that is available to build the model. Model building is a stage where the desired model is selected for use. The available dataset is divided into training and test sets (validation sets too, where necessary). The model is trained and tested. The last stage involves the application of the model. Its performance is evaluated in a production setting.
 
 We are concerned with the first stage. Problem framing is the stage that involves defining the problem one seeks to solve. It involves outlining the goals of a given project. This stage shapes the rest of the machine learning process. It provides some sort of “checklist” before proceeding with the subsequent stages. We get to understand the problem that is to be solved. We get to understand whether machine learning is a suitable solution. The availability and sources of data are examined, among other considerations. In this article, we consider problem framing in a business/organizational context.
 
@@ -61,7 +71,16 @@ In a business context, we may take a step back from metrics like accuracy and de
 
 #### Setting observable and quantifiable performance metrics
 
-Once we understand what counts as a successful project, we may deliberate on which metrics would best reflect said success. Let’s use our example of categorizing customers based on their habits. Success would involve correctly categorizing customers into their respective segments. As a result, a key performance metric may be classification accuracy.
+Once we understand what counts as a successful project, we may deliberate on which metrics would best reflect said success. Quantifiable metrics provide adequate information for evaluating real-world success. A number of metrics are covered in this [article](/engineering-education/evaluating-ml-model-performance/). Important questions to ask at this stage include:
+
+•	How will the metrics be measured? 
+
+•	When can the metrics be measured? 
+
+•	What period will it take to evaluate the success (or failure) of the model?
+
+
+Let’s use our example of categorizing customers based on their habits. Success would involve correctly categorizing customers into their respective segments. As a result, a key performance metric may be classification accuracy. We can measure these metrics after a set period that would allow us to gather enough data. The data should also be obtained from the right sources and be of the right quality. The duration to evaluate whether the model is a success or failure would depend on the goals of the organization. For example, quarterly goals would help in determining a period for assessment. It might be said that if no product-market fit is attained within a given quarter, it may be deemed as an unsuccessful model.
 
 #### Assessing feasibility of machine learning
 
@@ -75,15 +94,61 @@ On the other hand, machine learning may prove to be the most feasible approach. 
 
 At this point, we have already identified and defined the business problem. To formulate a machine learning question, we first need to understand the problem domain. In this case, we seek to classify customers into their correct segments based on their buying habits.
 
-Relating the problem to machine learning would result in understanding the algorithm that could provide the best value. We would have to ask questions such as; could it be best framed as a classification problem? Is it a regression problem? Correct analysis of the problem shows that it is a classification problem. As a result, a classification algorithm would be an obvious choice.
+Relating the problem to machine learning would result in understanding the algorithm that could provide the best value. We would have to ask questions such as; could it be best framed as a classification problem? Is it a regression problem? 
+
+To determine what kind of algorithm would solve a given problem, let us go through what we would expect from different algorithms:
+
+##### Classification
+
+A question we would have to ask is how many categories our problem would yield. This would give us either a binary classification problem or a multi-class classification problem. 
+
+**Binary classification.** This offers only two classes for the problem. An example is giving binary output such as yes or no (or 0 or 1). The pair of possible outcomes are mutually exclusive.
+
+**Multi-class classification** We would expect many possible outcomes that would happen to be mutually exclusive.   
+
+##### Regression
+
+A regression problem would have us considering whether to implement linear, logistic, or multiple linear regression. 
+
+**Linear regression.** If our problem involves just a single independent variable, then linear regression would be most appropriate. 
+
+**Multiple linear regression.** In case our regression problem involves more than a single independent variable, we would use multiple linear regression.
+
+**Logistic regression.** For a logistic regression model, we would have to model data in binary values. It involves the use of dependent variables that can be represented as binary values. For example, if our problem requires us to compute the probability of the success or failure of an event, logistic regression would prove useful.
+
+Going back to our problem of classifying customers into their respective segments. Analysis of the problem shows that it is a multi-class classification problem. As a result, a classification algorithm would be an obvious choice.
 
 The next step would involve understanding how the output of the proposed classification algorithm would impact decision making. The solution would have to fit into the overall picture of the organization. For instance, the classification of customers would potentially allow the organization to develop better products. It could allow the production of more personalized products. It could also result in a better understanding of how to produce the right number of products for given customer segments to allow better inventory clearance. The model’s output data would help make all these decisions.
 
-We would then need to identify the sources of data for our model. Data powers machine learning algorithms. The data that would offer the best value would have to be of the utmost quality. Data of lesser quality would undermine the goals of our model.
+#### Data and its sources
+
+The problem framing process involves defining the data collection process. It is important to identify the sources of data for our model. Data powers machine learning algorithms. The data that would offer the best value would have to be of the utmost quality. Data of lesser quality would undermine the goals of our model. Questions worth asking at this point include;
+
+•	How much labeled data does the organization have?
+
+•	What is the source of the organization's data?
+
+•	Will the data have an impact on the problem's decision making?
+
+We should also think about potential bias in data at this stage. The data we feed our model may be biased in one way or another. As such, biased data will affect the quality of the predictions made. The predictions may not reflect the real-world nature of consumers of the organization's product. This would provide an underwhelming experience for the organization. In such an environment, such experiences tend to prove costly since they may translate into losses.
+
+It is also worth considering the ethical and legal implications of obtaining the desired data. We would need to understand whether the data we seek has sensitive information about potential clients that might end up infringing the rights of individuals. Are there aspects of the data that would be considered to be illegal? Are the methods of data collection legal too? 
+
+We should also consider the integrity of data. Is the data we are collecting both accurate and consistent? How do we ensure that the data is not degraded or compromised as it moves through a pipeline to another? How many people have access to said data? Data storage should also be considered. Would it be expensive to store data? Does the organization possess the adequate infrastructure to store the required data? Is the right data being collected? Is it stored in the right form? 
+
+As such, a data strategy should be clearly defined to avoid ending up on the wrong side of the above-mentioned points. It would also help to avoid collecting unnecessary data. It could help deal with missing data, outliers as well as preventing gaps in data entirely. This would help maintain high standards of data quality, integrity, and consistency.
 
 #### Beginning with a simple model
 
 To allow for a not only explainable but interpretable model, one may consider using a simple model at this stage. A simple model may be described as one with the least possible complexity required to correctly carry out a task. The use of such a model allows for controllable debugging. Simple models also provide a good baseline. They can help evaluate whether there is a need for a more complex model. Complex models provide less explainability. They are harder and take longer to train compared to simple ones. If the need for more complexity is justified, it may be implemented later on.
+
+We should also assess the ability of a model to learn. It is important to point out the sections of our problem that might make learning difficult. A few factors that might be responsible for such difficulty include:
+
+•	The number of examples in a training set. If the number is low, the model's ability to learn will be impacted due to inadequate data.
+
+•	Noise. the learning process will be impacted if the examples contain too much noise.
+
+•	Performance on training data contrasts performance on unseen data. Performing poorly on unseen data means the model struggles to generalize to new data. A reason for such might be [overfitting](/engineering-education/regularization-to-prevent-overfitting/).
 
 ### Wrapping up
 
