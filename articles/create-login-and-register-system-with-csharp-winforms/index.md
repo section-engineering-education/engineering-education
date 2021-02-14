@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/create-login-and-register-system-with-csharp-winforms/hero.jpg
-    alt:  example image
+    alt: Register System with C# Winforms example image
 ---
 Many developers in recent years have been using C# to develop their applications. In this tutorial, we'll go through a simple example of how to create a basic user authentication in C#. 
 <!--more-->
@@ -40,7 +40,7 @@ To follow this article along it would be helpful to have the following:
    Create database userdata;
 ```
 
-![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-db-cmd.png)
+![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-db-cmd.PNG)
 
 Create table command:
 
@@ -49,7 +49,7 @@ Create table command:
     CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
-![TABLE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-table-cmd.png)
+![TABLE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-table-cmd.PNG)
 
 ### Step II: Create a project
 Create a Visual Studio project by clicking on `File -> New -> Project` and then select Visual C#. From the window, choose Windows Forms App(.Net Framework). Give your application a name. Then click ok. The project will come with default form called Form 1.
