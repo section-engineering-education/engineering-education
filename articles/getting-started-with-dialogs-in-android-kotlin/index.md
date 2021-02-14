@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/
 title: Getting Started with Dialogs in Android Kotlin
-description: This tutorial takes the reader through creating and implementing dialogs in android. A dialog is usually a small window that pops out on a devices screen.
+description: This tutorial takes the reader through creating and implementing dialogs in Android. A dialog is usually a small window that pops out on a devices screen.
 author: eric-gacoki
-date: 2021-02-05T00:00:00-15:00
+date: 2021-02-14T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,33 +14,34 @@ images:
   - url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/hero.png
     alt: Alert Dialogs in Android
 ---
+Android has distinguished techniques for improving user experience. One of them is the use of dialogs. A [Dialog](https://developer.android.com/guide/topics/ui/dialogs) is a brief conversation between the user and the application. It is usually a small window that pops-up on the device's screen.
 <!--more-->
-Android has distinguished techniques for improving user experience. One of them is the use of dialogs. A [Dialog](https://developer.android.com/guide/topics/ui/dialogs) is a brief conversation between the user and the application. It is usually a small window that pops-up on the device's screen. Dialogs can be used to prompt actions in some events or pass a message to the user. In this tutorial, we are going to learn how to create and implement dialogs in Android.
+Dialogs can be used to prompt actions in some events or pass a message to the user. In this tutorial, we are going to learn how to create and implement dialogs in Android.
 
 ### Prerequisites
-Before we move on, ensure that you;
+Before we move on, make sure that you:
 - Have [Android Studio](https://developer.android.com/studio) installed on your machine.
 - Know how to create Android projects and navigate through the `IDE`.
 - Are familiar with `XML` and the `Kotlin` programming language.
 - Have basic knowledge of `Data binding`.
 
 ### Getting started
-Android offers several types of Dialogs which include;
+Android offers several types of Dialogs which include:
 - Alert Dialog
 - DatePicker Dialog
 - TimePicker Dialog
 - Dialog Fragment
 - BottomSheet Dialog
 
-In this tutorial, we're going to lay our focus on `AlertDialog` where we'll mainly cover the following concepts:
+In this tutorial, we're going to lay our focus on `AlertDialog`, and we'll mainly cover the following concepts:
 
-- Creating Alert dialogs;
-    - Adding title, buttons, message, and an icon
-    - Handle dialog events
+- Creating Alert dialogs:
+    - Adding title, buttons, message, and an icon.
+    - Handle dialog events.
 
-- Customizing Alert dialogs;
-    - Creating custom layout resource file
-    - Use of DataBinding to access views
+- Customizing Alert dialogs:
+    - Creating custom layout resource file.
+    - Use of DataBinding to access views.
     - Creating a round-corner-shape dialog.
 
 #### Creating an Android project
@@ -67,6 +68,7 @@ buildFeatures{
     dataBinding true
 }
 ```
+
 *Sync* and wait for the Gradle-build to finish. Once it's done, proceed to set up the UI.
 
 #### Setting up the user interface
@@ -97,6 +99,7 @@ In our UI, we need 2 buttons that we'll use to show the Dialogs. Open `activity_
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="1" />
 ```
+
 To fix the error about the unresolved reference in the text attribute, create strings in the strings resources as shown below.
 
 ```xml
@@ -105,11 +108,14 @@ To fix the error about the unresolved reference in the text attribute, create st
     <string name="show_custom_dialog">Show custom dialog</string>
 </resources>
 ```
+
 *buttons preview:*
 
 ![buttons image](/engineering-education/getting-started-with-dialogs-in-android-kotlin/buttons.png)
 
-As mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. The beauty of DataBinding is that it autogenerates these objects. We just need to enclose the layout with a `layout` tag as shown below.
+As we mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. 
+
+The beauty of DataBinding is that it autogenerates these objects. We just need to enclose the layout with a `layout` tag as shown below.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,9 +133,13 @@ As mentioned earlier, we will use these buttons to show the necessary dialogs. T
 ```
 
 #### Writing Kotlin code
-Inside the `MainActivity.kt` file is where we'll write the logic of our app. First, create a mutable variable of type `ActivityMainBinding` that will initially be `null` but be initialized in the `onCreate()` method. To learn more about DataBinding please refer to [this article by Michael Barasa](https://www.section.io/engineering-education/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
+Inside the `MainActivity.kt` file is where we'll write the logic of our app. First, create a mutable variable of type `ActivityMainBinding` that will initially be `null` but be initialized in the `onCreate()` method. 
 
-When activities or fragments are destroyed, variables or objects can still be holding a reference to non-existing values. This is called a memory leak which of course can lead to unwanted behavior in our app. To avoid this, always de-allocate memory allocated to such objects in the `onDestroy()` method.
+To learn more about DataBinding please refer to [this article by Michael Barasa](/engineering-education/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
+
+When activities or fragments are destroyed, variables or objects can still be holding a reference to non-existing values. This is called a memory leak which of course can lead to unwanted behavior in our app. 
+
+To avoid this, always de-allocate memory allocated to such objects in the `onDestroy()` method.
 
 The snippet below shows the above-discussed concepts.
 
@@ -153,7 +163,7 @@ class MainActivity : AppCompatActivity() {
 An Alert Dialog is created by instantiating the `AlertDialog` class and then creating a `Builder` for it. There are several types of Alert Dialogs in Android. In this tutorial, we'll create every dialog in its own `function` and the respective one will be called when a button is clicked.
 
 #### A). Default Alert Dialog
-This type of dialog is usually rectangular and appears at the center of the screen. We'll discuss its functionalities as we proceed. Meanwhile, paste the code below inside the `MainActivity` class, just below the `onCreate()` method.
+This type of dialog is usually rectangular and appears at the center of the screen. We'll discuss its functionalities as we proceed. In the meanwhile, paste the code below inside the `MainActivity` class, just below the `onCreate()` method.
 
 ```kotlin
 private fun showDefaultDialog() {
@@ -182,7 +192,7 @@ Ensure that there are no errors in your code before running the app. When you cl
 ![empty dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/empty-dialog.png)
 
 ##### Adding features to a Dialog
-Now that we've created a Dialog, we can add functionalities such as;
+Now that we've created a Dialog, we can add functionalities such as:
 
 - `Icon` - This is a small-sized image that appears alongside the title. It usually makes the dialog more informative and attractive.
 - `Message` - This is the main content of the alert dialog. It gives a short description of the reason for its pop-up or, prompts the user to make a decision before proceeding.
@@ -191,7 +201,7 @@ Now that we've created a Dialog, we can add functionalities such as;
 
 Meanwhile, let us create a Dialog that implements the above features. Create a vector drawable (icon) named `ic_hello`.
 
-Update `showDefaultDialog()` function to look like the one below.
+Update the `showDefaultDialog()` function to look like the one below.
 
 ```kotlin
 private fun showDefaultDialog() {
@@ -213,7 +223,8 @@ private fun showDefaultDialog() {
         }.create().show()
     }
 ```
-Also, copy and paste the code below just above or below the `showDefaultDialog()` function.
+
+Now, copy and paste the code below just above or below the `showDefaultDialog()` function.
 
 ```kotlin
     private fun toast(text: String) = Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
@@ -221,7 +232,7 @@ Also, copy and paste the code below just above or below the `showDefaultDialog()
 
 **Explanation**
 
-The syntax for creating a button requires us to pass in a listener of type `DialogInterface.OnClickListener` in the lambda function. A `DialogInterface` defines a dialog-type class that can be shown, canceled or dismissed, and may have buttons that can be clicked. `Kotlin` simplifies this by allowing us to pass in `underscores` for unused arguments in the lambda function.
+The syntax for creating a button requires us to pass in a listener of type `DialogInterface.OnClickListener` in the lambda function. A `DialogInterface` defines a dialog-type class that can be shown, canceled (or dismissed), and may have buttons that can be clicked. `Kotlin` simplifies this by allowing us to pass in `underscores` for unused arguments in the lambda function.
 
 The function `toast()` is used to show a short `Toast` message with a text passed as the argument when a button is clicked.
 
@@ -333,9 +344,10 @@ private fun showCustomDialog() {
         }
     }
 ```
+
 Here we've linked the layout and created a non-cancellable dialog that can only be canceled by clicking the `Ok` button.
 
-In the `onCreate()` method, add the following code
+In the `onCreate()` method, add the following code.
 
 ```kotlin
 activityMainBinding?.btnShowCustomDialog?.setOnClickListener {
@@ -353,6 +365,7 @@ We can customize it further by creating round corners. To achieve this, we'll cr
     <corners android:radius="20dp" />
 </shape>
 ```
+
 Remember to set this as the background of the root `ViewGroup` as shown below.
 
 ```xml
@@ -362,6 +375,7 @@ Remember to set this as the background of the root `ViewGroup` as shown below.
     android:background="@drawable/round_corners"
     >
 ```
+
 Before running the app we need to do the following;
 
 - Create a top-curved shape drawable resource named `curved_view` and set it as the view's background
@@ -384,6 +398,7 @@ customDialog.apply {
             setCancelable(false)
         }.show()
 ```
+
 The rest of the function remains the same.
 
 Now we're done. Run the app and you should see a dialog similar to this one
@@ -391,7 +406,9 @@ Now we're done. Run the app and you should see a dialog similar to this one
 ![round dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/round-dialog.png)
 
 ### Conclusion
-In this tutorial, we've learned how to create, customize and use Alert Dialogs in Android. As you've seen, dialogs are very simple to implement. You can find the full source code for this tutorial [here](https://github.com/Ericgacoki/dialogs-in-android). Check out the [official documentation](https://developer.android.com/guide/topics/ui/dialogs) to learn more about Alert Dialogs and other types of dialogs that Android has to offer.
+In this tutorial, we've learned how to create, customize, and use Alert Dialogs in Android. As you've seen, dialogs are very simple to implement. You can find the full source code for this tutorial [here](https://github.com/Ericgacoki/dialogs-in-android). 
+
+Check out the [official documentation](https://developer.android.com/guide/topics/ui/dialogs) to learn more about Alert Dialogs and other types of dialogs that Android has to offer.
 
 Happy Coding!
 
