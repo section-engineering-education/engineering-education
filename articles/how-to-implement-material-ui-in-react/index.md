@@ -1,34 +1,53 @@
-ReactJS is one of the leading frameworks for creating web applications. It enables developers to create SEO-friendly and highly-interactive components. ReactJS features also boost maintenance and overall productivity. The integration of the Material Ui library in ReactJS projects takes things to a new level.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-implement-material-ui-in-react/
+title: How to Implement Material-UI in React
+description: This tutorial will provide a guideline on how to implement material ui in react applications. Material-UI is a simple library that allows developers to import and use different components to create a user interface in react applications.
+author: michael-barasa
+date: 2021-02-14T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-implement-material-ui-in-react/hero.png
+    alt: Material-UI in React example
+---
+React.js is one of the leading frameworks used when creating web applications. It enables developers to create SEO-friendly and highly-interactive components. React.js features also boost maintenance and overall productivity. The integration of the Material UI library in React.js projects takes things to a new level.
+<!--more-->
 ### Introduction to Material-UI
-Material-UI is simply a library that allows us to import and use different components for creating a user interface in our React applications. This saves a significant amount of time since the developers do not need to write everything from scratch. Material-UI widgets are heavily inspired by Google’s principles on building user interfaces.  It is, therefore, easy for developers to build visually-appealing applications. You can learn more about Google’s material design principles from [here](https://material.io/design/introduction#principles).
+Material-UI is simply a library that allows us to import and use different components to create a user interface in our React applications. This saves a significant amount of time since the developers do not need to write everything from scratch. 
+
+Material-UI widgets are heavily inspired by Google’s principles on building user interfaces. It is, therefore, easy for developers to build visually-appealing applications. You can learn more about Google’s material design principles from [here](https://material.io/design/introduction#principles).
 
 ### Goal
-To incorporate the Material-UI library and use its components in a ReactJS application.
+To incorporate the Material-UI library and use its components in a React.js application.
 
 ### Prerequisites
-For this tutorial, ensure that you have [npm](https://www.npmjs.com/) installed on your computer. We will use npm to download and install the required dependencies in our application. You also need a code editor. The tutorial uses Visual Studio Code, which you can download from [here](https://code.visualstudio.com/).
+For this tutorial, make sure that you have [npm](https://www.npmjs.com/) installed on your computer. We will use npm to download and install the required dependencies in our application. You also need a code editor. The tutorial uses Visual Studio Code, which you can download from [here](https://code.visualstudio.com/).
 
 Let’s jump into the cool stuff.
 
 ### Step 1 - Getting started
 Navigate to your desired folder and create a React project by typing the following command in a terminal or cmd.
 
-```
+```bash
 npx create-react-app materialuiexample
 ```
 
-> Please note that this build process may take some time depending on your internet speeds.
+> Please note that this build process may take some time depending on your internet speed.
 
-Once the installation completes, open the folder in your code editor. Then, type `npm start` to launch the development server. You can view the default React application by navigating to `http://localhost:3000/` in your browser.
+Once the installation is complete, open the folder in your code editor. Then, type `npm start` to launch the development server. You can view the default React application by navigating to `http://localhost:3000/` in your browser.
 
 ### Step 2 - Installing the Material-UI dependencies
-We must install the Material-UI to access its different functionalities or components. 
-Open your terminal, and ensure that you are inside your application’s master folder. 
+We must install the Material-UI to access its different functionalities or components. Open your terminal, and ensure that you are inside your application’s master folder.
+
 Type `npm install @material-ui/core` in the terminal and click `enter.` 
+
 Run the command below to use Material-UI icons in our project.
 
-```
+```bash
 npm install @material-ui/icons
 ```
 
@@ -86,6 +105,7 @@ export default App;
 
 When you refresh your browser, you will see a `button` with the words `press me`. However, this button is not styled properly. 
 We can use `props` to style buttons, as well as other components. `Props` are essential properties that are passed down to an element. You can read more about Material-UI props from [here]( https://material-ui.com/api/).
+
 The Material-UI button that we imported in the project is styled, as shown below.
 
 ```javascript
@@ -126,8 +146,9 @@ The next step is to import the above component into the app.js file. To do this,
 import Header from './NavBar.js';
 ```
 
-We can use the widget by adding <Header/> in the `div` tag.
-Here is the full code
+We can use the widget by adding `<Header/>` in the `div` tag.
+
+Here is the full code:
 
 ```javascript
 import './App.css';
@@ -160,7 +181,13 @@ export default App;
 From the above tutorial, we have learned:
 
 - What Material-UI entails.
-- How to add Material-UI dependency in a ReactJS application.
+- How to add Material-UI dependencies in a ReactJS application.
 - How to use Material-UI components and icons. 
 
 We have also seen how easy it is to build highly appealing websites by incorporating Material-UI in React applications. You can, therefore, use this information to build complex applications that adhere to material design principles.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
