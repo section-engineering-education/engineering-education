@@ -1,6 +1,6 @@
 Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. Django is a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
 
-The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use. Readers are expected to have some experience with HTML,CSS and Javascript as this article will be focusing majorly on the backend implementation.
+The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use. Readers are expected to have some experience with HTML, CSS, and Javascript as this article will be focusing majorly on the backend implementation.
 
 ### Django ORM
 
@@ -10,13 +10,13 @@ An ORM library is an everyday library written in your language of desire that en
 
 ### MVT Architecture
 
-MVT (Model View Template) is a software program layout sample that's a group of 3 elements: Model, View and Template. The Model allows dealing with the database. It is a data access layer that handles the information in the database.
+MVT (Model View Template) is a software program layout sample that's a group of 3 elements: Model, View, and Template. The Model allows dealing with the database. It is a data access layer that handles the information in the database.
 
 The Template is a presentation layer that handles all the User Interface parts. The View executes the logic and interact with the model to carry data and renders the template.
 
-Although Django follows the MVC pattern, it however, continues its conventions so control is taken care of through the framework itself.
+Although Django follows the MVC pattern, it, however, continues its conventions so control is taken care of through the framework itself.
 
-There isn't any separate controller and the entire framework is primarily based totally on Model, View and Template. That's why it's largely known as the MVT framework.
+There isn't any separate controller and the entire framework is primarily based totally on Model, View, and Template. That's why it's largely known as the MVT framework.
 
 In the MVC architecture, a user sends a request for a resource to Django, Django works as a controller and check for the available resource in the URL.
 
@@ -154,7 +154,7 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we used Bootstrap which we imported using th cdn link(as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to defined in our *views.py* file. Also the next and previous links in our html code will render the pagination attributes which will separate our songs into a page per song format.This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
+In the code above we used Bootstrap which we imported using the CDN link(as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
 In the static folder create two new files: *script.js* and *style.css*. These are the static files that the HTML template file is going to use. In the *script.js* file, add the following code as seen below:
 
@@ -189,7 +189,7 @@ audio.init();
 
 Edit the "style.css" file, add the following code from this [GitHub Gist](https://gist.github.com/Chukslord1/f65093cd9b16fff56e68903259887299).
 
-The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in our database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. TO do this we first created a variable function `audio` that contorols all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The `media` function checks if the length of the music in the music link is undefined. If this is the case then no data is passed to the html page. However, if the length of the music is defined or greater than 0 then the media components can be set and passed to the body. In this case, the `audioHeight` attribute which is the default volume is set to 40 , the `features` attribute which carries all the allowed controls for the audio file is defined, the `alwaysShowConttrols` attribute which specifies if the  controls in the `features` attribute is shown for the users to see or not, and the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which forces the specified device's native controls styles to the player attributes are all rendered in the html page for the music to play.
+The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in our database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. TO do this we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The `media` function checks if the length of the music in the music link is undefined. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than 0 then the media components can be set and passed to the body. In this case, the `audioHeight` attribute which is the default volume is set to 40, the `features` attribute which carries all the allowed controls for the audio file is defined, the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not, and the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the player attributes are all rendered in the HTML page for the music to play.
 
 While the "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
