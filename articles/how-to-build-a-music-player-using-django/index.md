@@ -2,6 +2,17 @@ Have you ever wanted to build a music player web application?. If your answer is
 
 The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use. Readers are expected to have some experience with HTML, CSS, and Javascript as this article will be focusing majorly on the backend implementation.
 
+If you are new to Django and want to get started with it, you can refer to the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
+
+### Prerequisites
+
+Install python and enable `pip`. Then run the following to install the required packages:
+
+```bash
+pip install django
+pip install pillow
+```
+
 ### Django ORM
 
 Object-Relational Mapping (ORM) is a method that helps you to question and control statistics from a database, the usage of an object-orientated paradigm. When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, the phrase "an ORM".
@@ -32,19 +43,6 @@ Here is an easy diagram that indicates the MVT structure in Django:
 
 [Image source](https://www.javatpoint.com/django/images/django-mvt-based-control-flow.png)
 
-### Getting Started with Django
-
-If you are new to Django and want to get started with it, you can refer to the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
-
-### Prerequisites
-
-Install python and enable `pip`. Then run the following to install the required packages:
-
-```bash
-pip install django
-pip install pillow
-```
-
 ### Creating our Django App
 
 Let's begin by creating a Django project from any directory using our command-line interface:
@@ -60,7 +58,7 @@ cd MusicPlayer
 django-admin startapp App
 ```
 
-The above commands should provide you with a directory structured as seen in the image below
+The above commands should provide you with a directory structured as seen in the image below:
 
 ![directory structure](/engineering-education/how-to-build-a-music-player-using-django/structure.png)
 
@@ -154,7 +152,9 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we used Bootstrap which we imported using the CDN link(as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
+In the code above we used Bootstrap which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. 
+
+Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
 In the static folder create two new files: *script.js* and *style.css*. These are the static files that the HTML template file is going to use. In the *script.js* file, add the following code as seen below:
 
@@ -184,12 +184,19 @@ var audio = {    
             
     },
 };
+
 audio.init();
 ```
 
 Edit the "style.css" file, add the following code from this [GitHub Gist](https://gist.github.com/Chukslord1/f65093cd9b16fff56e68903259887299).
 
-The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in our database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. TO do this we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The `media` function checks if the length of the music in the music link is undefined. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than 0 then the media components can be set and passed to the body. In this case, the `audioHeight` attribute which is the default volume is set to 40, the `features` attribute which carries all the allowed controls for the audio file is defined, the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not, and the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the player attributes are all rendered in the HTML page for the music to play.
+The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in the database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. 
+
+To do this, we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed.
+
+The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
+
+In this case, the `audioHeight` attribute which is the default volume is set to 40, the `features` attribute which carries all the allowed controls for the audio file is defined, the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not, and the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the player attributes are all rendered in the HTML page for the music to play.
 
 While the "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
