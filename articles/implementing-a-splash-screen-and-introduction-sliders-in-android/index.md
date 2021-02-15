@@ -86,7 +86,7 @@ Add the following code in your themes.xml.
 ### Step 4 - Update the Android Manifest
 Open the AndroidManifest.xml and update the theme under the `<application>` tag to the style we have created in our themes.xml.
 
-```manifest
+```bash
 android:theme="@style/splashScreen">
 ```
 
