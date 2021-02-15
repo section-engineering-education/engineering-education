@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-build-a-music-player-using-django/
-title: How to Build a Music Player Using Django
-description: This tutorial gives readers a detailed guide on how to build a music player using django.
+title: How to Build a Music Player using Django
+description: This tutorial gives readers a detailed guide on how to build a music player using Django.
 author: onojakpor-ochuko
-date: 2021-02-15T00:00:00-15:00
+date: 2021-02-15T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,47 +14,51 @@ images:
   - url: /engineering-education/how-to-build-a-music-player-using-django/hero.jpg
     alt: How to Build a Music Player Using Django Hero Image
 ---
-Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. Django is a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
+Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. 
 <!--more-->
+Django is a perfect choice when building a music player web application, and I would be happy to walk you through every step of the way.
 
-The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use. Readers are expected to have some experience with HTML, CSS, and Javascript as this article will be focusing majorly on the backend implementation.
+This article introduces the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
+
+We expect readers to have some experience with HTML, CSS, and Javascript as this article will be mostly focusing on the backend implementation.
 
 If you are new to Django and want to get started with it, you can refer to the [official Django documentation](https://docs.djangoproject.com/en/3.1/).
 
 ### Prerequisites
+Install Python from [python.org](https://www.python.org/). 
 
-Install python from [python.org](https://www.python.org/). Then run the following to install the required packages:
+Then run the following to install the required packages:
 
 ```bash
 pip install django
 pip install pillow
 ```
 
-The `pillow` package is a python image handling library which we'll use to save cover images for the music in the database.
+The `pillow` package is a Python image handling library which we'll use to save cover images for the music in the database.
 
 ### Django ORM
+Object-Relational Mapping (ORM) is a method that helps you question and control statistics from a database, the use of an object-orientated paradigm. 
 
-Object-Relational Mapping (ORM) is a method that helps you to question and control statistics from a database, the usage of an object-orientated paradigm. When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, the phrase "an ORM".
+When speaking about ORM, we are referring to a library that implements the Object-Relational Mapping technique, the phrase "an ORM".
 
-An ORM library is an everyday library written in your language of desire that encapsulates the code required to control the data so that you do not use raw SQL queries anymore. You engage at once with an object within the same language you are utilizing.
+An ORM library is an everyday library written in your language of choice that encapsulates the code required to control the data so that you do not use raw SQL queries anymore. You engage with an object immediately within the same language you are utilizing.
 
 ### MVT Architecture
-
 MVT (Model View Template) is a software program layout sample that's a group of 3 elements: Model, View, and Template. The Model allows dealing with the database. It is a data access layer that handles the information in the database.
 
 The Template is a presentation layer that handles all the User Interface parts. The View executes the logic and interact with the model to carry data and renders the template.
 
-Although Django follows the MVC pattern, it, however, continues its conventions so control is taken care of through the framework itself.
+Although Django follows the MVC pattern, it still continues its conventions, so control is taken care of through the framework itself.
 
-There isn't any separate controller and the entire framework is primarily based totally on Model, View, and Template. That's why it's largely known as the MVT framework.
+There isn't any separate controller and the entire framework is primarily based on Model, View, and Template. That's why it's largely known as the MVT framework.
 
-In the MVC architecture, a user sends a request for a resource to Django, Django works as a controller and check for the available resource in the URL.
+In the MVC architecture, a user sends a request for a resource to Django, Django works as a controller and checks for the available resource in the URL.
 
-If URL maps, a view is called that interact with model and template, it renders a template.
+If a URL is mapped, a view is called that interact with the model and template, it renders a template.
 
 Django responds to the user and sends a template as a response.
 
-The principal distinction among the 2 styles is that Django itself looks after the Controller part (Software Code that controls the interactions among the Model and View), leaving us with the template. The template is an HTML record combined with Django Template Language (DTL).
+The main distinction among the 2 styles is that Django itself looks after the Controller part (Software Code that controls the interactions among the Model and View), leaving us with the template. The template is an HTML record combined with Django Template Language (DTL).
 
 Here is an easy diagram that indicates the MVT structure in Django:
 
@@ -63,7 +67,6 @@ Here is an easy diagram that indicates the MVT structure in Django:
 [Image source](https://www.javatpoint.com/django/images/django-mvt-based-control-flow.png)
 
 ### Creating our Django App
-
 Let's begin by creating a Django project from any directory using our command-line interface:
 
 ```bash
@@ -77,11 +80,11 @@ cd MusicPlayer
 django-admin startapp App
 ```
 
-The above commands should provide you with a directory structured as seen in the image below:
+The commands above should provide you with a directory structured as seen in the image below:
 
-![directory structure](/engineering-education/how-to-build-a-music-player-using-django/structure.png)
+![directory structure](/engineering-education/how-to-build-a-music-player-using-django/structure.PNG)
 
-Now go to the "MusicPlayer" directory and edit our *settings.py* file by adding our App to the list of installed apps as seen below
+Now go to the "MusicPlayer" directory and edit our *settings.py* file by adding our App to the list of installed apps as seen below.
 
 ```python
 INSTALLED_APPS = [
@@ -95,7 +98,9 @@ INSTALLED_APPS = [
 ]
 ```
 
-Now let's create our static and templates folders in our APP directory. The template folder will house our HTML files, while the static folder will house our CSS, Javascript, and other static files. To do this, run the command below on your command-line
+Now let's create our static and templates folders in our APP directory. The template folder will house our HTML files, while the static folder will house our CSS, Javascript, and other static files. 
+
+To do this, run the command below on your command-line.
 
 ```bash
 # changing directory to our app
@@ -171,13 +176,15 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we used [Bootstrap](https://getbootstrap.com/) which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. 
+In the code above we used [Bootstrap](https://getbootstrap.com/), which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and we made use of jinja.  Which is a Python web template engine to render our query set object in our **"page_obj"** context that we are going to define in our *views.py* file. 
 
-We are also importing the `mediaelement.js` plugin which ensures that the browser can play our media files even on browsers that do not support HTML5 attributes.
+We are also importing the `mediaelement.js` plugin that ensures that the browser can play our media files even on browsers that do not support HTML5 attributes.
 
-Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
+The next and previous links in our HTML code will also render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
-In the static folder create two new files: *script.js* and *style.css*. These are the static files that the HTML template file is going to use. In the *script.js* file, add the following code as seen below:
+In the static folder create two new files: *script.js* and *style.css*. These are the static files that the HTML template file is going to use. 
+
+In the *script.js* file, add the following code as seen below:
 
 ```JavaScript
 var audio = {    
@@ -211,17 +218,19 @@ audio.init();
 
 Edit the "style.css" file, add the following code from this [GitHub Gist](https://gist.github.com/Chukslord1/f65093cd9b16fff56e68903259887299).
 
-The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in the database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. 
+The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in the database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', and 'tracks'. 
 
-To do this, we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The media function then carries out the following:
+To do this, we started by creating a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. 
+
+We then defined the `components` method and initialized a variable function `media` in it, that uses the music link passed earlier. The media function then carries out the following:
 
 - The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
 
-- Then, it sets the value of the `audioHeight`. In this case, the `audioHeight` attribute which is the default volume is set to 40.
+- Then, it sets the value of the `audioHeight`. In this case, the `audioHeight` attribute (which is the default volume) is set to 40.
 
-- Next, it sets the `features` attribute which carries all the allowed controls for the audio file.
+- Next, it sets the `features` attribute that carries all the allowed controls for the audio file.
 
-- Then, it sets the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not. In this case we set the `alwaysShowConttrols` to true. 
+- Then, it sets the `alwaysShowConttrols` attribute that specifies if the controls in the `features` attribute are shown for the users to see or not. In this case we set the `alwaysShowConttrols` to true. 
 
 - The `media` function also sets the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which forces the specified device's native controls styles to the music player.
 
@@ -229,13 +238,13 @@ All these components are then called with `audio.init()` command and rendered to
 
 The "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
-Next, Let's first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
+Next, let's first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
 
 ```python
 import os
 ``` 
 
-We would also define our `static_root`, `media_root`, and `media_url` in our *settings.py* file as seen below
+We should also define our `static_root`, `media_root`, and `media_url` in our *settings.py* file as seen below:
 
 ```python
 STATIC_URL = '/static/'
@@ -298,9 +307,11 @@ class Song(models.Model):
         return self.title
 ```
 
-In the *models.py* file above, we defined our **Song** model which represents a data table in our database for storing our songs. The attributes of the class define the fields of the "Song" table in our database.
+In the *models.py* file above, we defined our **Song** model which represents a data table in our database to store our songs. The attributes of the class define the fields of the "Song" table in our database.
 
-Next, go to the *views.py* file in the same directory. Edit the file and add the following lines of code:
+Next, go to the *views.py* file in the same directory. 
+
+Edit the file and add the following lines of code:
 
 ```python
 # Create your views here.
@@ -320,7 +331,11 @@ def index(request):
 
 In the *views.py* code above, we started by importing the required packages needed; "render", "redirect" and "Paginator". We also imported our model class "Song" from the *models.py* file. 
 
-Then, we defined our index view function which controls how the index page works. In the index view, we defined how our paginator will work. We created the paginator object and gave it a query set to render. We created this query set by utilizing Django's ORM to ask the database for all Songs as seen here `Song.objects.all()`. As you can see this method makes your code very clean which minimizes the errors in our code unlike when using raw SQL queries to fetch data from the database. The number "*1*" in the object definition specifies the number of songs we want on one page. Thus, the number of songs on one page will be one.
+Then, we defined our index view function that controls how the index page works. In the index view, we defined how our paginator will work. We created the paginator object and gave it a query set to render. 
+
+We created this query set by utilizing Django's ORM to ask the database for all Songs as seen here `Song.objects.all()`. This method makes your code cleaner, by minimizing the errors in our code as opposed to using raw SQL queries to fetch data from the database. 
+
+The number "*1*" in the object definition specifies the number of songs we want on one page. Thus, the number of songs on one page will be one.
 
 Finally, we can migrate our model to the database by using the below command on the command-line in the root directory where we can find our *manage.py* file.
 
@@ -332,17 +347,17 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-The result of running the above migrations should be as in the image below:
+The result of running the above migrations should look like the image below:
 
-![success_migrate](/engineering-education/how-to-build-a-music-player-using-django/success_migrate.png)
+![success_migrate](/engineering-education/how-to-build-a-music-player-using-django/sucess_migrate.PNG)
 
-You would also notice our SQLite database file was created in the root folder for us very easily. You should see the file in the root directory as seen below:
+You will also notice our SQLite database file was created in the root folder for us easily. The root directory file should look like the image seen below:
 
-![database file created](/engineering-education/how-to-build-a-music-player-using-django/db_Seen.png)
+![database file created](/engineering-education/how-to-build-a-music-player-using-django/db_Seen.PNG)
 
-If your migrations were successful, Congratulations!!!. 
+If your migrations were successful, congratulations!!!. 
 
-However, the work isn't finished. We still have to import and register our models in our "admin.py" file so we would be able to create new Song objects.
+However, our work isn't finished. We still have to import and register our models in our "admin.py" file so we would be able to create new Song objects.
 
 The `admin.py` file can be found in the `App` folder. Edit and add the following code.
 
@@ -354,7 +369,7 @@ from . models import Song
 admin.site.register(Song)
 ```
 
-The last thing we would be doing is creating a superuser so that we can log in to Django's admin page.
+The last thing we will be doing is creating a superuser so that we can log in to Django's admin page.
 
 To create a superuser enter the below command in your command-line:
 
@@ -362,7 +377,9 @@ To create a superuser enter the below command in your command-line:
 python manage.py createsuperuser
 ```
 
-You'll be prompted to create a **username**, **email**, and **password**. Once you are done with this, you can now log in to the admin page and create songs. Let's now run our app with the command below
+You'll be prompted to create a **username**, **email**, and **password**. Once you are done with this, you can log in to the admin page and create songs. 
+
+Let's now run our app with the command below.
 
 ```bash
 python manage.py runserver
@@ -370,35 +387,36 @@ python manage.py runserver
 
 If your app is running you should see something like this:
 
-![app running](/engineering-education/how-to-build-a-music-player-using-django/runapp.png)
+![app running](/engineering-education/how-to-build-a-music-player-using-django/runapp.PNG)
 
 Finally, let's now login to the admin page, and add some songs to play them.
 
 To login to the admin page go to this link [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and enter your login details as seen in the image below:
 
-![admin login](/engineering-education/how-to-build-a-music-player-using-django/adminpage.png)
+![admin login](/engineering-education/how-to-build-a-music-player-using-django/adminpage.PNG)
 
 If your login was successful you should now see the page below:
 
-![admin home](/engineering-education/how-to-build-a-music-player-using-django/admin_home.png)
+![admin home](/engineering-education/how-to-build-a-music-player-using-django/admin_home.PNG)
 
 Click on the add button where you have the Songs panel and enter the song details as seen below. Add two or three more songs by clicking on the "add and save another" button at the bottom right of the page as seen in the image below:
 
-![admin song creation](/engineering-education/how-to-build-a-music-player-using-django/new_admin_add.png)
+![admin song creation](/engineering-education/how-to-build-a-music-player-using-django/new_admin_add.PNG)
 
-If you completed all the steps above, **Congratulations!!** you just built a music player.
+If you completed all the steps above, **congratulations!!** you just built a music player.
 
-You can view it on your localhost at this link [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and you would have a music player like the one in the image below:
+You can view it on your localhost at this link [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and you should have a music player like the one in the image below:
 
-![music player image](/engineering-education/how-to-build-a-music-player-using-django/final_image_music.png)
+![music player image](/engineering-education/how-to-build-a-music-player-using-django/final_image_music.PNG)
 
 ### Conclusion
-
 You can take a look at this [GitHub repo](https://github.com/Chukslord1/DjangoMusicPlayer) to view the final code.
 
 By using Django, we were able to build a music player web app using Django, HTML, Jinja, CSS, and Javascript. We also saw how easy it was to create a web app using Django and manipulate the database with Django's ORM.
 
 If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
