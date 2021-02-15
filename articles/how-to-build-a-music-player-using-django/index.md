@@ -400,3 +400,5 @@ By using Django, we were able to build a music player web app using Django, HTML
 
 If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
 
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
