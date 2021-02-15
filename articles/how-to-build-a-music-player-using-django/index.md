@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-build-a-music-player-using-django/
+title: How to Build a Music Player Using Django
+description: This tutorial gives readers a detailed guide on how to build a music player using django.
+author: onojakpor-ochuko
+date: 2021-02-15T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-build-a-music-player-using-django/hero.jpg
+    alt: How to Build a Music Player Using Django Hero Image
+---
 Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I have always wanted to build a music player and finally, I did. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. Django is a perfect choice when building a music player web application, and I would be happy to walk you through every step of how I achieved it.
+<!--more-->
 
 The purpose of this article is to introduce the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use. Readers are expected to have some experience with HTML, CSS, and Javascript as this article will be focusing majorly on the backend implementation.
 
@@ -154,7 +171,9 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we used [Bootstrap](https://getbootstrap.com/) which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. We are also importing the `mediaelement.js` plugin which ensures that the browser can play our media files even on browsers that do not support HTML5 attributes.
+In the code above we used [Bootstrap](https://getbootstrap.com/) which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. 
+
+We are also importing the `mediaelement.js` plugin which ensures that the browser can play our media files even on browsers that do not support HTML5 attributes.
 
 Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
