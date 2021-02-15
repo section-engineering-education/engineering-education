@@ -391,9 +391,9 @@ Have any feedback or comments about the lines of code used for verifying website
 
 **Feel free to contact me**
 
-GitHub: @pkalynan
+GitHub: [@pkalynan](https://github.com/pkalynan)
 
-Twitter: @pkalynan
+Twitter: [@pkalynan](https://twitter.com/pkalynan)
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
