@@ -3,13 +3,13 @@
 The planet has been becoming increasingly mobile over the past five years. 
 As a consequence, the world's conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle.   When users need to be connected by physical cables to a network, their movement is drastically reduced.
 However, wireless networking does not face such a constraint and enables the user of the network to move much more freely.  
-As a result, wireless technologies are invading "fixed" or "wired" networks in the conventional realm. To someone who travels on a daily basis, this move is apparent.
+As a result, wireless technologies are invading "fixed" or "wired" networks in the conventional realm. To someone who travels daily, this move is apparent.
 
 A whole new industry has been developed by wireless networking for voice telephony.  
 Adding mobile access to the telephony mix had profound influences on the voice calls market because callers could be connected to individuals, not computers.
 We are at the height of an equally profound shift in networking for computers.  
 Wireless telephony has been popular since, regardless of venue, it allows people to communicate with each other.  
-For Internet access, modern technology aimed at computer networks promise to do the same. This far, 802.11 has become the most popular wireless data networking technology.
+For Internet access, modern technology aimed at computer networks promise to do the same. Thus far, 802.11 has become the most popular wireless data networking technology.
 
 
 In this article, we are going to discuss the following:
@@ -35,23 +35,23 @@ They include  ***message, sender, receiver, protocol, and transmission medium***
 ### What's wireless networking?
 A wireless network allows devices to remain linked to the network, yet to roam to any cables unattached. Wi-Fi signals are amplified by access points, meaning a computer can be far from a router but still be linked to the network. You connect to the wireless network of that organization when you connect to a Wi-Fi hotspot at a cafe or another public location.  
 
-The only difference between wireless and wired network is that, wired network uses cables to link devices to the Internet or another network, such as laptops or desktop computers. As opposed to a wireless network, a wired network has several drawbacks. The main downside is that a router is tied to your computer. Cables attached at one end to an Ethernet port on the network router and at the other end to a computer or other system are used by the most popular wired networks.
+The only difference between wireless and wired network is that wired network uses cables to link devices to the Internet or another network, such as laptops or desktop computers. As opposed to a wireless network, a wired network has several drawbacks. The main downside is that a router is tied to your computer. Cables attached at one end to an Ethernet port on the network router and the other end to a computer or other system are used by the most popular wired networks.
 
 
 ### Why Wireless?
 At this point, digging into a particular technology is getting a little ahead of the story, however. Wireless networks share some major benefits, regardless of how the protocols are built or what kind of information they bring.  
 
-Mobility is the most apparent value of wireless networking. Wireless network users can link to existing networks and are then able to travel freely. In the course of a single call, a mobile phone user will travel miles because the phone links the user via cell towers. Mobile telephony was costly initially. Costs limited its use to highly mobile professionals such as sales managers and significant executive decision makers who, regardless of their venue, would need to be reached at a moment's notice. However, mobile telephony has proved to be a useful service and is now increasingly popula.  
+Mobility is the most apparent value of wireless networking. Wireless network users can link to existing networks and are then able to travel freely. In the course of a single call, a mobile phone user will travel miles because the phone links the user via cell towers. Mobile telephony was costly initially. Costs limited its use to highly mobile professionals such as sales managers and significant executive decision-makers who, regardless of their venue, would need to be reached at a moment's notice. However, mobile telephony has proved to be a useful service and is now increasingly popular.  
 
 Usually, wireless networks have a lot of versatility, which can translate into rapid implementation. A variety of base stations are used by wireless networks to connect users to an existing network.  
 
 
 ### How wireless networks work
-To connect a group of computers, Wireless Local Area Network (WLAN) serves the same function as a wired one. Since "wireless" does not require expensive wiring, the primary advantage is that it is typically simpler, quicker and cheaper to set up as we've seen previously.  
+To connect a group of computers, Wireless Local Area Network (WLAN) serves the same function as a wired one. Since "wireless" does not require expensive wiring, the primary advantage is that it is typically simpler, quicker, and cheaper to set up as we've seen previously.  
 By contrast, it can be labor-intensive and thus costly to build a network by dragging wires over an office's walls and ceilings. But a wireless network can be a cost-effective way to extend or increase it, even though you have a wired network already in place.  
 
 Wireless networks operate using Radio Frequency (RF) technology, a frequency associated with radio wave propagation within the electromagnetic spectrum. An electromagnetic field is generated when an RF current is supplied to an antenna that is then able to spread through space.  
-A system recognized as an access point is the core of a wireless network (AP). An access point's primary role is to broadcast a wireless signal that can be sensed and tuned into by computers. Since wireless networks are typically linked to wired networks, an access point often sometimes acts as a gateway to a wired network's resources, such as an Internet connection.  
+A system recognized as an access point is the core of a wireless network (AP). An access point's primary role is to broadcast a wireless signal that can be sensed and tuned into by computers. Since wireless networks are typically linked to wired networks, and access point often sometimes acts as a gateway to a wired network's resources, such as an Internet connection.  
 
 Computers need to be fitted with wireless network adapters to connect to an access point and join a wireless network. These are mostly built right into the device, but if not, by using an add-on adapter attached to an empty expansion slot, USB port, or, in the case of notebooks, a PC card slot, just about any computer or notebook can be made wireless-capable.  
 
