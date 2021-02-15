@@ -178,7 +178,7 @@ fun main(){
 
 #### 1. `If` as Expression
 In Kotlin, `if` is an expression, i.e. it returns a value. Therefore there is no ternary operator (condition ? then
-: else), because ordinary if works in this role.
+: else), because ordinary `if` works in this role.
 
 ```kotlin
 fun main(){ 
@@ -197,7 +197,7 @@ fun main(){
 }
 ```
 
-#### 2. When Expression 
+#### 2. `when` Expression 
 It is a replacement of the `switch` statement found in C or other languages  like Java, C++
 
 ```kotlin
@@ -226,7 +226,7 @@ fun main() {
  }
  ```
  The flow of for loop is as follows
- Initialize-> condition check -> Code Execute -> Increement
+ Initialize-> condition check -> Code Execute -> Increament
 
  ```kotlin
 fun main() {
@@ -439,7 +439,6 @@ fun findVolume(length: Int, breadth: Int, height: Int = 12): Int {
 // Output: 360
 ```
 ####  Functions as Expressions
-
 ```kotlin
 fun main(args: Array<String>) {
     var largeValue = max(4, 6)
@@ -461,11 +460,12 @@ fun main() {
     print(result)
 }
 
+@JvmOverloads
 fun findTheVolume(length: Int, breadth: Int, height: Int = 10): Int {
     return length * breadth * height
 }
 
-// Output: 360
+// Output: 300
 ```
 
 #### Extension Functions
@@ -489,6 +489,9 @@ class Student {
         return marks > 40
     }
 }
+
+// Output: Pass status: true
+// Outputs: Scholarship Status: false
 ```
 
 * Example 2:   
@@ -537,7 +540,6 @@ fun main(args: Array<String>) {
     val y: Int = 10
 
     val greaterVal = x findGreaterValue y   // x.findGreaterValue(y)
-
     println(greaterVal)
 }
 
@@ -571,7 +573,6 @@ fun main() {
 }
 
 tailrec fun getFibonacciNumber(n: Int, a: BigInteger, b: BigInteger): BigInteger {
-
     if (n == 0)
         return  b
     else
@@ -602,14 +603,10 @@ open class MySuperClass {
     }
 }
 
-object CustomersData: MySuperClass() {     
-     // Object Declaration
+object CustomersData: MySuperClass() {  // Object Declaration
+    var count: Int = -1 // Behaves like a STATIC variable
 
-    var count: Int = -1             
-    // Behaves like a STATIC variable
-
-    fun typeOfCustomers(): String { 
-        // Behaves like a STATIC method
+    fun typeOfCustomers(): String {     // Behaves like a STATIC method
         return "Indian"
     }
 
@@ -627,26 +624,21 @@ object CustomersData: MySuperClass() {
  
  ```kotlin
 class MyClass {
-companion object Factory {
-fun create(): MyClass = MyClass()
-}
+    companion object Factory {
+        fun create(): MyClass = MyClass()
+    }
 }
 ```
 
 ```kotlin
 fun main() {
-
     MyClass.count      // You can print it and check the result
-
     MyClass.typeOfCustomers()
 }
 
 class MyClass {
-
     companion object {
-
         var count: Int = -1  // Behaves like STATIC variable
-
         @JvmStatic
         fun typeOfCustomers(): String { // Behaves like STATIC method
             return "Indian"
@@ -654,39 +646,29 @@ class MyClass {
     }
 }
 ```
-   
- **EXAMPLE ONE**
-
-  1. Lambda Expression
-  2. Higher-Order Function
+#### Higher Order Functions & Lambdas
   
 ```kotlin
 fun main(args: Array<String>) {
-
     val program = Program()
-
     program.addTwoNumbers(2, 7)     // Simple way... for better understanding
 
     program.addTwoNumbers(2, 7, object : MyInterface {   // Using Interface / OOPs way
-
         override fun execute(sum: Int) {
             println(sum)    // Body
         }
     })
 
     val test: String = "Hello"
-
     val myLambda: (Int) -> Unit = { s: Int -> println(s)}   // Lambda Expression [ Function ]
     program.addTwoNumbers(2, 7, myLambda)
 }
 
 class Program {
-
-    fun addTwoNumbers(a: Int, b: Int, action: (Int) -> Unit) {  // High Level Function with Lambda as Parameter
-
+    fun addTwoNumbers(a: Int, b: Int, action: (Int) -> Unit) {  // Higher order Function with Lambda as Parameter
         val sum = a + b
         action(sum)     // println(sum)
-//        println(sum)  // Body
+        println(sum)  // Body
     }
 
     fun addTwoNumbers(a: Int, b: Int, action: MyInterface) {    // Using Interface / Object Oriented Way
@@ -695,7 +677,6 @@ class Program {
     }
 
     fun addTwoNumbers(a: Int, b: Int) {                         // Simple way.. Just for Better Understanding
-
         val sum =  a + b
         println(sum)
     }
@@ -705,61 +686,46 @@ interface MyInterface {
     fun execute(sum: Int)
 }
 ```
-  #### 1. Closures
-  
-  A lambda expression or anonymous function (as well as a local function and an object expression) can
+#### 1. Closures
+A lambda expression or anonymous function (as well as a local function and an object expression) can
 access its closure, i.e. the variables declared in the outer scope. The variables captured in the closure can be
 modified in the `lambda`:
 
 ```kotlin
 fun main(args: Array<String>) {
-
     val program = TheProgram()
-
     var result = 0
-
     program.addTwoNumbers(2, 7) {x, y -> result = x + y}
-
     println(result)
 }
 
 class TheProgram {
-
     fun addTwoNumbers(a: Int, b: Int, action: (Int, Int) -> Unit) {  // High Level Function with Lambda as Parameter
-
         action(a, b)
     }
 }
 ```
-
-### 1. 'it' keyword
+### 1. `it` keyword
   
 ```kotlin
 fun main() {
-
     val program = Programs()
     program.reverseAndDisplay("hello", { it.reversed() })
 }
 
 class Programs {
-
     fun reverseAndDisplay(str: String, myFunc: (String) -> String) {  // High Level Function with Lambda as Parameter
-
         val result = myFunc(str)    // it.reversed() ==> str.reversed() ==> "hello".reversed() = "olleh"
         println(result)
     }
 }
 
 ```
-
-  ###  1. 'with' function
-  ###  2. 'apply' function
+###  2. `with` & `apply` function
 
 ```kotlin
 fun main() {
-
     var person = Perrson()
-
     with(person) {
         name = "Steve"
         age = 23
@@ -785,266 +751,79 @@ class Person {
 }
 ```
 
-### 1. Arrays
-
-An array is an indexed collection of items that all have the same type. To create an array, we use the `arrayOf ` function
-
-Arrays in Kotlin are represented by the Array class, which has to get and set functions (that turn into [] by
-operator overloading conventions), and size property, along with a few other useful member functions:
-
-####  Creating array
-
-```kotlin
-
-val Continents = arrayOf("Africa", "Europe", "Asia")
-```
-
- #### Accesing array
-
- ```kotlin
-val firstContinent = Continents[0] // firstContinent= "Africa"
-```
-
-#### Repacing of index
-
-```kotlin
-
-Continents[0] = "Australia"
-```
-  
-  ```kotlin
-fun main() {
-
-    // Elements :   32  0   0   54  0
-    // Index    :   0   1   2   3   4
-
-    var myArray = Array<Int>(5) { 0 }   // Mutable. Fixed Size.
-    myArray[0] = 32
-    myArray[3] = 54
-    myArray[1] = 11
-
-    for (element in myArray) {              // Using individual elements (Objects)
-        println(element)
-    }
-
-    println()
-
-    for (index in 0..myArray.size - 1) {
-        println(myArray[index])
-    }
-}
-
-```
- ###  1. Map and HashMap
-
-```kotlin
-fun main() {
-
-    // Map Tutorial: Key-Value pair
-//    var Map = HashMap<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
-//    var Map = mutableMapOf<Int, String>() // Mutable, READ and WRITE both, No Fixed Size
-    var Map = hashMapOf<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
-
-    Map.put(4, "Yogi")
-    Map.put(43, "Manmohan")
-    Map.put(7, "Vajpayee")
-
-    Map.put(43, "Modi")
-
-    for (key in Map.keys) {
-        println("Element at $key = ${Map[key]}")  // Map.get(key)
-    }
-}
-```
- ###  1. Set and HashSet
- 
-   `Set` contains unique elements
-   `HashSet` also contains unique elements but sequence is not guaranteed in output
-   
-```kotlin
- fun main(args: Array<String>) {
- 
-    var Set = mutableSetOf<Int>( 2, 50, 3, 1, 0, 9, 9, 9, 8)   // Mutable Set, READ and WRITE both
-    var Set2 = hashSetOf<Int>( 2, 54, 3, 1, 0, 9, 9, 9, 8)     // Mutable Set, READ and WRITE both
-
-    Set.remove(50)
-    Set.add(90)
-
-      Set2.remove(3)
-    Set2.add(10)
-
-    for (element in Set) {
-        println(element)
-    }
-
-    for (element in Set2) {
-        println(element)
-    }
-}
-```
-  ### FILTER
-  
-  Returns a list containing only elements matching the given `predicate`
-
-  You can lter maps with the filter() function as well as other collections. When calling filter() on a
-map, pass to it a predicate with a Pair as an argument. This enables you to use both the key and the value
-in the ltering predicate.
-
-```kotlin
-val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key11" to 11)
-val filteredMap = numbersMap.filter { (key, value) -> key.endsWith("1") && value > 10}
-println(filteredMap)
-```
-
-### PREDICATES
-
- ```kotlin
-fun main(args: Array<String>) {
-
-    val Numbers = listOf(2, 3, 4, 6, 23, 90)
-
-    val Predicate = { num: Int -> num > 10 }
-
-    val check1 = Numbers.all( Predicate )       // Are all elements greater than 10?
-    println(check1)
-
-    val check2 = Numbers.any(Predicate)         // Does any of these elements satisfy the predicate?
-    println(check2)
-
-    val totalCount: Int = Numbers.count(Predicate) // Number of elements that satify the predicate.
-    println(totalCount)
-
-    val num = Numbers.find(Predicate)           // Returns the first number that matches the predicate
-    println(num)
-}
-``` 
-### MAP
-
-  Returns a list containing the results of applying the given [transform] function
-  to each element in the original collection
-  In maps, types of both keys and values are user-de ned. Key-based access to map entries enables various
-map-specific processing capabilities from getting a value by key to separate filtering of keys and values.
-
-```kotlin
-fun main() {
-
-    val Numbers: List<Int> = listOf(2, 3, 4, 6, 23, 90)
-
-    val SmallNums = Numbers.filter { it < 10 }    // OR { num -> num < 10 }
-    for (num in SmallNums) {
-        println(num)
-    }
-
-    val SquaredNums = myNumbers.map { it * it }     // OR { num -> num * num }
-    for (num in SquaredNums) {
-        println(num)
-    }
-
-    var people = listOf<Pperson>(Pperson(10, "Steve"), Pperson(23, "Annie"), Pperson(17, "Sam"))
-    var names = people.filter { person ->person.name.startsWith("S") }.map { it.name }
-
-    for (name in names) {
-        println(name)
-    }
-}
-
-class Pperson(var age: Int, var name: String) {
-    // Some other code...
-}
-```
 ###  Null safety
-
 A reference must be explicitly marked as `nullable` when `null` value is possible.
-Return null if str does not hold an integer:
 
-1. Safe Call ( ?. )
-    Returns the length if 'name' is not null else returns NULL
-    Use it if you don't mind getting NULL value
-    
+1. **Safe Call ( ?. ):** Returns the length if 'name' is not null else returns `null`. Use it if you don't mind getting `null` values
 ```kotlin
 fun main() {
-
    // WAP to find out the length of the name
-
     val name: String? = "Steve"
     println("The length of name is ${name?.length}")
+}
 ```
 
- 2. Safe Call with let ( `?.let` )
-    It executes the block ONLY IF name is NOT NULL
-    
+2. **Safe Call with let ( `?.let` ):** It executes the block ONLY IF name is not null
 ```kotlin
-  fun main(args: Array<String>) {
-
-         name?.let {
+fun main(args: Array<String>) {
+    val name: String? = "Steve"
+    name?.let {
         println("The length of name is ${name.length}")
     }
-
- }
+}
 ```
- 3. Elvis-operator ( `?:` )
- When we have nullable reference 'name', we can say "is name is not null", use it,
- otherwise use some non-null value"
+
+3. **Elvis-operator ( `?:` ):** When we have nullable reference
+'name', we can say "is name is not null", use it, otherwise use some non-null value"
  
 ```kotlin
-    fun main(args: Array<String>) {
+fun main(args: Array<String>) {
+    val name: String? = "Steve"
     val len = if (name != null)
-        name.length
+       name.length
     else
-        -1
+      -1
 
     val length = name?.length ?: -1
     println("The length of name is ${length}")
-
-    }
+}
 ```
- 4. Non-null assertion operator ( `!!` )
-  Use it when you are sure the value is NOT NULL
-Throws NullPointerException if the value is found to be NULL
-
+4. **Non-null assertion operator ( `!!` ):** Use it when you are sure the value is not null. It Throws NullPointerException if the value is found to be null.
 ```kotlin
-    fun main(args: Array<String>) {
+fun main(args: Array<String>) {
+    val name: String? = "Steve"
     println("The length of name is ${name!!.length}")
 }
 ```
 ### Lazy delegation and `lateinit` vs `lazy`
 
-### `Lateinit` keyword
-
- lateinit used only with mutable data type `var`
- lateinit used only with non-nullable data type
- lateinit values must be initialized before you use it
- If you try to access lateinit variable without initializing it then it throws Uninitialized Property Access Exception
+### `lateinit` keyword
+ `lateinit` used only with mutable data type `var` and only with non-nullable data type.
+ `lateinit` values must be initialized before you use it. If you try to access a lateinit variable without initializing it then it throws `Uninitialized Property Access` Exception.
 
 ```kotlin
 fun main() {
-
     val country = Country()
     country.setup()
 }
 
 class Country {
-
     lateinit var name: String
-
     fun setup() {
         name = "Kenya"
         println("The name of country is $name")
     }
 }
-
 ```
-### `Lazy` delegation 
- Lazy initialization’ was designed to prevent unnecessary initialization of objects.
- Your variables will not be initialized unless you use them in your code
+### `lazy` delegation 
+ Lazy initialization’ was designed to prevent unnecessary initialization of objects. Your variables will not be initialized unless you use them in your code
+
  It is initialized only once. Next time when you use it, you get the value from cache memory.
 
- It is thread safe
- It is initialized in the thread where it is used for the first time.
+ It is thread safe since it is initialized in the thread where it is used for the first time.
  Other threads use the same value stored in the cache
 
- The variable can be var or val.
- The variable can be nullable or non-nullable
+ The variable can be var or val and can be nullable or non-nullable
 
 
 ```kotlin
@@ -1054,19 +833,16 @@ val pi: Float by lazy {
 ```
 ```kotlin
 fun main() {
-
     println("Some initial code.....")
-
     // pi is not initialized yet
-
     val area1 = pi * 4 * 4      // pi gets initialised and assigned the value of 3.14f for the first time
-
     val area2 = pi * 9 * 9      // The value pi is loaded from cache memory
-
     println("Some more code....")
 }
 ```
 ### Conclusion
-
 In this tutorial we have learned the basics of Kotlin programming language. Kotlin skills can be applied in a bunch of fields not limted to Android development and backend systems programming. 
+
+---
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
 
