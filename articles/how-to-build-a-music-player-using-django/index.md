@@ -6,12 +6,13 @@ If you are new to Django and want to get started with it, you can refer to the [
 
 ### Prerequisites
 
-Install python and enable `pip`. Then run the following to install the required packages:
+Install python from [python.org](https://www.python.org/) and enable `pip`. `pip` is enabled by default after you have installed python. Then run the following to install the required packages:
 
 ```bash
 pip install django
 pip install pillow
 ```
+The `pillow` package is a python imaging library that handles the images we are going to saved to the database.
 
 ### Django ORM
 
@@ -152,7 +153,7 @@ In the templates folder, create a new file "index.html" and add the HTML code be
 </html>
 ```
 
-In the code above we used Bootstrap which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. 
+In the code above we used [Bootstrap](https://getbootstrap.com/) which we imported using the CDN link (as seen in the head tag) to create the HTML attributes for our music player and made use of jinja; a python web templates engine to render our query set object in our **"page_obj"** context which we are going to define in our *views.py* file. We are also importing the `mediaelement.js` plugin which ensures that the browser can play our media files even on browsers that do not support HTML5 attributes.
 
 Also, the next and previous links in our HTML code will render the pagination attributes which will separate our songs into a page per song format. This pagination will reflect after we have set the **"page_obj"** in our **views.py** file later in this tutorial.
 
@@ -192,13 +193,19 @@ Edit the "style.css" file, add the following code from this [GitHub Gist](https:
 
 The "script.js" file is the javascript file that defines how our music is played. When a link for the music stored in the database is passed to the music player, this code controls how the music is used. This includes how it is 'played', paused' or 'displayed' along with  its 'duration', 'progress', 'volume', 'tracks'. 
 
-To do this, we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed.
+To do this, we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The media function then carries out the following:
 
-The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
+* The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
 
-In this case, the `audioHeight` attribute which is the default volume is set to 40, the `features` attribute which carries all the allowed controls for the audio file is defined, the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not, and the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the player attributes are all rendered in the HTML page for the music to play.
+* The `media` function sets the value of the `audioHeight`. In this case, the `audioHeight` attribute which is the default volume is set to 40.
 
-While the "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
+* The `media` function sets the `features` attribute which carries all the allowed controls for the audio file.
+
+* The `media` function sets the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not. In this case we set the `alwaysShowConttrols` to true. 
+
+* The `media` function sets the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the music player.
+
+The "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
 Next, Let's first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
 
