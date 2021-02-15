@@ -26,7 +26,7 @@ As a prerequisite, a little understanding of IoT deployments and cloud computing
 - [Further reading](#further-reading)
 
 ### Introduction to Internet of Things (IoT)
-> According to [Wikipedia](https://en.wikipedia.org/wiki/Internet_of_things), the Internet of things (IoT) describes a network of physical objects (things) that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet.
+> According to [Wikipedia](https://en.wikipedia.org/wiki/Internet_of_things), Internet of things (IoT) describes a network of physical objects (things) that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet.
 
 In the Internet of Things, the "Things" are uniquely identified based on the property of communication and identifying objects. "Things" can be classified based on people, machines, and information. For example, computers, sensors, TVs, books, etc. can be called "Things".
 
@@ -65,7 +65,7 @@ With the rise in digital transformations, IoT deployments in the cloud have beco
 
 Adafruit IO is one such cloud provider focusing more on IoT deployments on the cloud. Adafruit IO supports different hardware like Raspberry PI, ESP2866, and Arduino. IoT developers prefer Adafruit IO over other IoT cloud providers for the following reasons:
 
-- **Powerful API** - Provides us libraries for various programming languages, which also provides built-in user interface support
+- **Powerful API** - Provides us libraries for various programming languages, which also provides the built-in user interface support
 - **Dashboard** - Understanding data via charts and graphs enables us to make better decisions
 - **Privacy** - Data is secured in the cloud platform with better encryption algorithms
 - **Documentation & Community** - Many blogs with amazing community support allows continuous developments of the products.
@@ -135,7 +135,7 @@ aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY) # Calling Client() construct
 digitalio = aio.feeds('[TYPE YOUR DASHBOARD NAME]')
 ```
 
-Now, let's setup the LED by connecting the NodeMCU.
+Now, let's set up the LED by connecting the NodeMCU.
 
 ```python
 # LED setup
@@ -143,7 +143,7 @@ led = digitalio.DigitalInOut(board.D5) # Setup LED at Pin 5
 led.direction = digitalio.Direction.OUTPUT # Sets the direction of LED to an output
 ```
 
-To subscribe the readings from Adafruit IO, we make use of `receive(digital.key)` function.
+To subscribe to the readings from Adafruit IO, we make use of `receive(digital.key)` function.
 
 ```python
 while True:
