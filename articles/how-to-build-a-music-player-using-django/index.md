@@ -6,13 +6,14 @@ If you are new to Django and want to get started with it, you can refer to the [
 
 ### Prerequisites
 
-Install python from [python.org](https://www.python.org/) and enable `pip`. `pip` is enabled by default after you have installed python. Then run the following to install the required packages:
+Install python from [python.org](https://www.python.org/). Then run the following to install the required packages:
 
 ```bash
 pip install django
 pip install pillow
 ```
-The `pillow` package is a python imaging library that handles the images we are going to saved to the database.
+
+The `pillow` package is a python image handling library which we'll use to save cover images for the music in the database.
 
 ### Django ORM
 
@@ -195,15 +196,15 @@ The "script.js" file is the javascript file that defines how our music is played
 
 To do this, we first created a variable function `audio` that controls all the components of the music link we passed by calling the `components` method. We then defined the `components` method and initialized a variable function `media` in it which uses the music link earlier passed. The media function then carries out the following:
 
-* The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
+- The `media` function checks if the length of the music in the music link is `undefined`. If this is the case then no data is passed to the HTML page. However, if the length of the music is defined or greater than `0`, then the media components can be set and passed to the body. 
 
-* The `media` function sets the value of the `audioHeight`. In this case, the `audioHeight` attribute which is the default volume is set to 40.
+- Then, it sets the value of the `audioHeight`. In this case, the `audioHeight` attribute which is the default volume is set to 40.
 
-* The `media` function sets the `features` attribute which carries all the allowed controls for the audio file.
+- Next, it sets the `features` attribute which carries all the allowed controls for the audio file.
 
-* The `media` function sets the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not. In this case we set the `alwaysShowConttrols` to true. 
+- Then, it sets the `alwaysShowConttrols` attribute which specifies if the controls in the `features` attribute are shown for the users to see or not. In this case we set the `alwaysShowConttrols` to true. 
 
-* The `media` function sets the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the music player.
+- The `media` function also sets the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which forces the specified device's native controls styles to the music player.
 
 All these components are then called with `audio.init()` command and rendered to the HTML.
 
