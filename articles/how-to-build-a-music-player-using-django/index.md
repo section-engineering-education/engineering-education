@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-build-a-music-player-using-django/
 title: How to Build a Music Player using Django
-description: This tutorial gives readers a detailed guide on how to build a music player using Django.
+description: This tutorial introduces the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
 author: onojakpor-ochuko
 date: 2021-02-15T00:00:00-13:00
 topics: []
