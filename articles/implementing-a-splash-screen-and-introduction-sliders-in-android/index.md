@@ -1,42 +1,68 @@
-This article will illustrate how to add a splash screen and introduction sliders in an Android application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/
+title: Implementing a Splash screen and Introduction Sliders in Android
+description: This article will illustrate how to add a splash screen and introduction sliders in an Android application.
+author: briana-nzivu
+date: 2021-02-15T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/hero.jpg
+    alt: Splash screen and Introduction Sliders in Android example image
+---
+A splash screen is an introduction screen in an application once it is launched. Splash screens are vital since they are the first interaction a user has with an application. Most splash screens either contain a company's logo, an animation, an image, or many other features.
+<!--more-->
 ### Introduction
-A splash screen is an introduction screen in an application once it is launched. Splash screens are vital since they are the first interaction a user has with an application. Most splash screens either contain a company's logo, an animation, an image, or many other features. Splash screens are essential since it gives adequate time for data to be fetched and identifies an application.
-Introduction sliders in android applications give instructions or display features offered by an application. Introduction sliders come in handy, especially in applications that are quite complex and have many functionalities.
+Splash screens are essential since it allows for the adequate time needed for data to be fetched and also identifies an application. Introduction sliders in Android applications give instructions or display features offered by an application. Introduction sliders come in handy, especially in applications that are quite complex and have many functionalities.
 
-### USES OF A SPLASH SCREEN AND INTRODUCTION SLIDES.
+### Uses of a Splash screen and introduction slides
 - A splash screen gives adequate time for data to be fetched.
 - Introduction sliders are used to illustrate the functions of an application.
 
-### USEFUL TERMINOLOGY
-- Splash screen - This refers to an introduction screen in an application once it is launched.
-- Introduction sliders -A 'slideshow' in android applications that gives instructions or display features offered by an application.
-- View pager - A class in android applications that permit a user to flip left or right to view data in an application. 
+### Useful terminology
+- Splash screen - This refers to an introduction screen in an application once it has been launched.
+- Introduction sliders - A 'slideshow' in Android applications that gives instructions or display features offered by an application.
+- View pager - A class in Android applications that permit a user to flip left or right to view data in an application. 
 - Pager Adapter - This refers to a base class providing the adapter to populate pages inside of a `ViewPager`.
 
-### PREREQUISITES
-- Have [Android](https://developer.android.com/studio) Studio installed.
+### Prerequisites 
+- Make sure you have [Android](https://developer.android.com/studio) Studio installed.
 - The reader should have a basic level understanding of Java and XML.
 - The reader should have a basic understanding of building Android applications.
 
-### A) SPLASH SCREEN.
+### A) Splash screen
 As described earlier, a splash screen is an introduction screen in an application once it is launched.
+
 There are various ways of creating a splash screen:
 1. Using the Launcher Theme. (The best)
-2. Using a Launcher Theme with a Splash activity. (The ish-ish)
+2. Using a Launcher Theme with a Splash activity. (The okay-ish)
 3. Using Timers. (The bad)
 4. Using Smart Timers. (The ugly)
+
 In this section, we will create a splash screen for our application using the launcher theme.
 
-### Step 1 – Create a new Android Studio Project.
+### Step 1 – Create a new Android Studio Project
 Open Android Studio and select an Empty Activity. We shall name our project **SplashnSlides**. Click *Finish* and wait for the project to build.
+
 ![Creating an Android Studio project](/engineering-education/implementing-a-splash-screen-and-intoduction-sliders-android/new.jpg)
 
-### Step 2 – Designing the splash screen.
-For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File. We shall name our file **splash_image.xml.**
+### Step 2 – Designing the Splash screen
+For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). 
+
+First, create a layout resource file. Right-click the drawable folder under the res directory, click New - > Drawable Resource File. 
+
+We shall name our file **splash_image.xml.**
+
 Click *ok.*
+
 This file will set our image as a drawable, which will act as our splash screen.
+
 Add the following code in the splash_image.xml.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
@@ -45,8 +71,9 @@ Add the following code in the splash_image.xml.
 ```
 **Note: We are using the `<layer-list>` tag in order to specify the different layers one wants to have in their splash drawable.**
 
-### Step 3 – Update themes.xml.
+### Step 3 – Update themes.xml
 In our **themes.xml** in the *themes* directory, we will add a style for our splash screen. In this style, we will set the `windowbackground` to be our drawable and the status bar color to be the same as our drawable's background color.
+
 Add the following code in your themes.xml.
 
 ```xml
@@ -56,29 +83,34 @@ Add the following code in your themes.xml.
 </style>
 ```
 
-### Step 4 - Update the Android Manifest.
-Open the AndroidManifest.xml and update the theme under the `<application>` tag to the style we have created in our themes.xml
+### Step 4 - Update the Android Manifest
+Open the AndroidManifest.xml and update the theme under the `<application>` tag to the style we have created in our themes.xml.
+
 ```manifest
 android:theme="@style/splashScreen">
 ```
+
 ### Step 4 – Update MainActivity.java
 Finally, we will set the main theme in our **theme.xml** file to run before our MainActivity. In our `onCreate` method, add the following line of code:
 
 ```java
 setTheme(R.style.Theme_SplashnSlides);
 ```
+
 **Note: This should be done before the setContentView statement.**
 
 That is it. Simple right?
+
 Let us run the app. We have a splash screen. Let us now work on getting introduction sliders.
 
 ![Spash screen](/engineering-education/implementing-a-splash-screen-and-intoduction-sliders-android/splash.jpg)
 
-### B)INTRODUCTION SLIDERS
-Introduction sliders in android applications are customarily used to give instructions or display features offered by an application. In this section, we shall implement introduction sliders in our application.
+### B) Introduction Sliders
+Introduction sliders in Android applications are customarily used to give instructions or display features offered by an application. In this section, we shall implement introduction sliders in our application.
 
-### Step 1 – Design the UI for our intro sliders.
+### Step 1 – Design the UI for our intro sliders
 In our MainActivity layout resource file, we will add a `ViewPager` that allows the user to flip through the different sliders. We will also add a `linear layout` that will contain the dots showing the different slides, and finally, two buttons used to access the next or previous slide.
+
 Add the following code in the activity_main.xml file.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -126,8 +158,11 @@ Add the following code in the activity_main.xml file.
 </RelativeLayout>
 ```
 Next, we will create layout resource files for our sliders. Right-click the layout folder under the res directory. Select new - > Layout Resource File, name the file **slider_1.xml** and select ok.
-For the UI layout of the slider, import a drawable and set it as a background. 
+
+For the UI layout of the slider, import a drawable, and set it as a background. 
+
 Repeat the same process till we get three sliders in total.
+
 This is the code in our slider layout resource files.
 
 ```xml
@@ -139,9 +174,11 @@ This is the code in our slider layout resource files.
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-### Step 2 – Create an Intromanager class.
-Create a new java class and name it **Intomanager.** This class will use the `SharedPreferences` class, which keeps the preference name and a Boolean state 'true' displaying the introduction sliders if the app is launched for the first time.
-Add the following code in the Intromanager.java:
+### Step 2 – Create an Intromanager class
+Create a new Java class and name it **Intomanager.** This class will use the `SharedPreferences` class, which keeps the preference name and a Boolean state 'true' displaying the introduction sliders if the app is launched for the first time.
+
+Add the following code in the Intromanager.java
+
 ```java
 public class Intromanager {
     SharedPreferences pref;
@@ -164,13 +201,14 @@ public class Intromanager {
     }
 }
 ```
-### Step 3 – Adding functionality to our intro sliders.
+### Step 3 – Adding functionality to our intro sliders
 In our MainActivity, we will add lines of code to perform the following tasks:
 - Import our `Intromanager` class, which will check if an application is launched for the first time.
-- Adding functionality to the navigating buttons(previous and next).
+- Adding functionality to the navigating buttons (previous and next).
 - Creating an `addBottomDots` method that sets functionality to the dots for our introduction sliders.
 - Creating the `getItem` method in which we will specify some functions for each slide.
 - Extending a `PagerAdapter` class that populates pages inside of a `ViewPager`.
+
 Add the following code in MainActivity.java;
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -332,18 +370,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 ```
+
 **Note: One can implement the methods required by clicking Alt+Enter and selecting implement methods.**
 
 That is it! Let us run our app.
 
 ![Introduction sliders](/engineering-education/implementing-a-splash-screen-and-intoduction-sliders-android/intro.gif)
 
-### To wrap up.
-We have learned about splash screens and introduction sliders and how to implement them in an android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications. Remember, practice makes perfect.
-One can access the tutorial's code on [Github](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/SplashnSlides). Also, you can download the sample APK and files used in the application on [Google Drive](https://drive.google.com/drive/folders/17N1m7tkaDeuPWkKrrlrdzCj827BHBpwf?usp=sharing).
+### To wrap up
+We have learned about splash screens, we had an introduction to sliders, and how we implement them in an Android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications. 
+
+Remember, practice makes perfect.
+
+One can access the tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/SplashnSlides). You can also download the sample APK and files used in the application on [Google Drive](https://drive.google.com/drive/folders/17N1m7tkaDeuPWkKrrlrdzCj827BHBpwf?usp=sharing).
 
 For any query or clarification, do not hesitate to raise an issue in this [repository](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/SplashnSlides).
 
-Till next time!
+Till next time! Happy coding!
 
+---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
