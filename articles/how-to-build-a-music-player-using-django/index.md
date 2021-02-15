@@ -205,6 +205,8 @@ To do this, we first created a variable function `audio` that controls all the c
 
 * The `media` function sets the native device attributes (`iPadUseNativeControls`, `iPhoneUseNativeControls` and `AndroidUseNativeControls`) which force the specified device's native controls styles to the music player.
 
+All these components are then called with `audio.init()` command and rendered to the HTML.
+
 The "style.css" file in the link above is the CSS file that styles how our HTML template design looks and feels.
 
 Next, Let's first import the `os` module in our *settings.py* file. To import the `os` module add the code below to the top of the *settings.py* file.
