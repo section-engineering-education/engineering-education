@@ -1,12 +1,16 @@
 ### Introduction
 
-Wireless networks have exploded the world currently, all the same, we all hate wires all over, or don't we? Or perhaps not!  
-It has even replaced desktops that had connectors (RJ-45) on the wall.  
-Okay, let's say you go to a big hotel or airport, they will have a wireless network that you can use to access the internet.  
-The world has undergone a lot of internet evolution. 
-I would tell you this for sure if you wanted to buy a laptop that had the specification of a desktop with an RJ-45 connector on the wall,
-you would pay the double price.  
-Nowadays, the laptop price is affordable, or isn't it?  
+The planet has been becoming increasingly mobile over the past five years. 
+As a consequence, the world's conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle.   When users need to be connected by physical cables to a network, their movement is drastically reduced.
+However, wireless networking does not face such a constraint and enables the user of the network to move much more freely.  
+As a result, wireless technologies are invading "fixed" or "wired" networks in the conventional realm. To someone who travels on a daily basis, this move is apparent.
+
+A whole new industry has been developed by wireless networking for voice telephony.  
+Adding mobile access to the telephony mix had profound influences on the voice calls market because callers could be connected to individuals, not computers.
+We are at the height of an equally profound shift in networking for computers.  
+Wireless telephony has been popular since, regardless of venue, it allows people to communicate with each other.  
+For Internet access, modern technology aimed at computer networks promise to do the same. This far, 802.11 has become the most popular wireless data networking technology.
+
 
 In this article, we are going to discuss the following:
 
@@ -25,47 +29,31 @@ For example, in Local Area Networks (LAN), computers are interconnected in a sma
 The main reason for connecting several devices on a network is to share resources. For example, an office has one printer shared, it can be connected to all computers within this office on a network to allow usage by each department.  
 
 You ought to have also learned that computer networks have five components.  
-They include  ***message, sender, receiver, protocol, and Transmission media***.  
+They include  ***message, sender, receiver, protocol, and transmission medium***.  
 
 
 ### What's wireless networking?
+A wireless network allows devices to remain linked to the network, yet to roam to any cables unattached. Wi-Fi signals are amplified by access points, meaning a computer can be far from a router but still be linked to the network. You connect to the wireless network of that organization when you connect to a Wi-Fi hotspot at a cafe or another public location.  
 
-Wireless networking refers to the technology where devices communicate without being tethered to any wires or cables.  
-As we have already learned, in wired networks, computers are connected physically via transmission media,  
-which is not the case with Wireless networks.  
-Now, wired networks have one drawback, that is, your desktop or laptop has to be physically connected or tethered   
-to a router or access switch, let's say via ethernet, minimizing the portability of your computers.  
+The only difference between wireless and wired network is that, wired network uses cables to link devices to the Internet or another network, such as laptops or desktop computers. As opposed to a wireless network, a wired network has several drawbacks. The main downside is that a router is tied to your computer. Cables attached at one end to an Ethernet port on the network router and at the other end to a computer or other system are used by the most popular wired networks.
 
-In wireless networks, we use radio waves instead of cables.
-But do you remember **Carrier-sense multiple access with collision detection (CSMA/CD)** used in half-duplex networks?    
-Wireless networking is always half-duplex where the transmission can only take place in a single direction.   
-The reason why wireless is half-duplex is that sending and receiving happens on the same frequency. 
-Discussing this always leads to arguments on collisions, but that's beyond the scope of this article.  
 
-### How does a wireless network works?
-While learning about computer networks, you might have come across radio frequency technology.    
-Well, if you haven't, then let's remind ourselves of what it means and its role in wireless networking.
+### Why Wireless?
+At this point, digging into a particular technology is getting a little ahead of the story, however. Wireless networks share some major benefits, regardless of how the protocols are built or what kind of information they bring.  
 
-***Radio Frequency wireless technology***
-Radio Frequency (RF) refers to the electromagnetic signals sent wirelessly to allow for communication.  
-These signals are unique and, therefore, cannot interfere with each other.
-For more information on radio frequencies, click [here](https://eu.mouser.com/applications/rf-wireless-technology/#:~:text=A%20radio%20frequency%20(RF)%20signal,from%203kHz%20to%20300%20GHz.)
+Mobility is the most apparent value of wireless networking. Wireless network users can link to existing networks and are then able to travel freely. In the course of a single call, a mobile phone user will travel miles because the phone links the user via cell towers. Mobile telephony was costly initially. Costs limited its use to highly mobile professionals such as sales managers and significant executive decision makers who, regardless of their venue, would need to be reached at a moment's notice. However, mobile telephony has proved to be a useful service and is now increasingly popula.  
 
-Now that we've got a little knowledge of Radio Frequencies, a point to note 
-is that wireless networks depend on this technology to accomplish their tasks. 
+Usually, wireless networks have a lot of versatility, which can translate into rapid implementation. A variety of base stations are used by wireless networks to connect users to an existing network.  
 
->This technology is beyond the scope of this article. Therefore we won't discuss it in-depth, but you're free to find good books on the topic. 
-For wireless networks to work, a device is known as `Access Point(AP)` is required.   
 
-The ***Access Point (AP)*** has its sole responsibility to broadcast(distribute) the signals so that the devices can detect and connect to them.  
-Have you ever wondered how public ***Wi-Fi***, e.g., the ones in hotels, schools, or airports, work? 
+### How wireless networks work
+To connect a group of computers, Wireless Local Area Network (WLAN) serves the same function as a wired one. Since "wireless" does not require expensive wiring, the primary advantage is that it is typically simpler, quicker and cheaper to set up as we've seen previously.  
+By contrast, it can be labor-intensive and thus costly to build a network by dragging wires over an office's walls and ceilings. But a wireless network can be a cost-effective way to extend or increase it, even though you have a wired network already in place.  
 
-How it works is that wireless networks create a two-way data communication channel.    
-A computer has a wireless adapter that it uses to translate the data into a radio signal transmitted via an antenna.  
-A wireless router then receives this radio signal. The router decodes this signal and sends information using a physical connection.  
-Now that our Access Point has an internet connection, what next?  
-It will now be able to transmit and receive wireless signals in its own defined frequency range.   
-This will therefore enable you to connect wirelessly to your Local Area Network and the rest of the internet.  
+Wireless networks operate using Radio Frequency (RF) technology, a frequency associated with radio wave propagation within the electromagnetic spectrum. An electromagnetic field is generated when an RF current is supplied to an antenna that is then able to spread through space.  
+A system recognized as an access point is the core of a wireless network (AP). An access point's primary role is to broadcast a wireless signal that can be sensed and tuned into by computers. Since wireless networks are typically linked to wired networks, an access point often sometimes acts as a gateway to a wired network's resources, such as an Internet connection.  
+
+Computers need to be fitted with wireless network adapters to connect to an access point and join a wireless network. These are mostly built right into the device, but if not, by using an add-on adapter attached to an empty expansion slot, USB port, or, in the case of notebooks, a PC card slot, just about any computer or notebook can be made wireless-capable.  
 
 ### Types of wireless networks
 
