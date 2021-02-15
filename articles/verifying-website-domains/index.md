@@ -4,46 +4,43 @@ status: publish
 published: true
 url: /engineering-education/verifying-website-domains/
 title: Verifying Website Domains
-description: This tutorial will explain how to programmatically retrieve DNS (Domain Name System) information.
-author: 
-date: 
+description: This tutorial will explain how to programmatically retrieve DNS (Domain Name System) information. At the end of this tutorial, you will understand how to retrieve DNS (Domain Name System) information using the Python Shell.
+author: priya-kalyanakrishnan
+date: 2021-02-15T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/verifying-website-domains/hero.jpg
-    alt: 
+    alt: Verifying Website Domains
 ---
-Verifying website domains for originality can be complicated during a time where the internet is constantly used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name can be done.
- <!--more-->
-This topic could interest individuals and/or groups who would like to verify domain names for its validity and credibility through coding.
+Verifying website domains for originality can be complicated during a time where the internet is constantly being used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name we determine website domain originality.
+<!--more-->
+This topic could interest individuals and/or groups who would like to verify domain names for their validity and credibility through coding.
 
 At the end of this tutorial, you will understand how to retrieve DNS (Domain Name System) information using the Python Shell,  run `curl` in the Windows PowerShell to crawl websites, and how to identify the complexities of domain modifications in an ever-changing technology space.
 
-Overall, this tutorial helps complete reverse domain name lookups.
+Overall, this tutorial will help complete reverse domain name lookups.
 
 ### Prerequisites
+*Software and Hardware*
+- Windows Operating System (Version 10).
+- Python Shell (Any version that is compatible with the packages and functions mentioned. *3.8.5 will be used here*)
+- Windows PowerShell
+- Internet connection
+- Internet browser
 
-_Software and Hardware_
-* Windows Operating System (Version 10)
-* Python Shell (Any version that is compatible with the packages and functions mentioned. _3.8.5 was used here_)
-* Windows PowerShell
-* Internet connection
-* Internet browser
-
-_Knowledge_
-* Python Programming language
-* Package/Library installations
-* Working with 'PATH' or directories
-* Run PowerShell as Administrator
-* Command Prompts and its structures
-* Website mechanics (terms include but not limited to: layers, domains, and hosting)
-* Webpage scripting (HTML or JavaScript)
+*Knowledge*
+- Python Programming language
+- Package/Library installations
+- Working with 'PATH' or directories
+- Run PowerShell as Administrator
+- Command Prompts and its structures
+- Website mechanics (terms include but not limited to: layers, domains, and hosting)
+- Webpage scripting (HTML or JavaScript)
 
 ### Let's get started with Python Shell
-
-Some Python compatible packages that will be used are `socket`, `dns`, and `whois`.
-Ensuring that packages are installed and functional using the command prompt window and the designated 'PATH' or 'ROOT' from folder-to-folder are accurate will be slightly time efficient.
+Some Python compatible packages that will be used are `socket`, `dns`, and `whois`. Let's make sure that the packages are installed and functional using the command prompt window and the designated 'PATH' or 'ROOT' from folder-to-folder are accurate will be slightly more time efficient.
 
 In `socket`, the opportunity to find the IP (Internet Protocol) address associated with the domain name can be processed.
 
@@ -68,13 +65,13 @@ Traceback (most recent call last):
 NameError: name 'ip' is not defined
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![socket-error](/engineering-education/verifying-website-domains/socket1.jpg)
 
 Because the domain name was removed due to unoriginality, error messages were displayed.
 
-Shown below is a functional and valid output of the code since the domain is active and not removed.
+Shown below is a functional and valid output of the code since the domain is active and has not been removed.
 
 Input:
 
@@ -91,7 +88,7 @@ Output:
 IP: 69.195.108.249
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![socket-valid](/engineering-education/verifying-website-domains/socket2.jpg)
 
@@ -118,7 +115,7 @@ Output:
 [<DNS IN PTR rdata: 69-195-108-249.unifiedlayer.com.>]
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![dns-ptr](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
@@ -175,13 +172,13 @@ Output:
 [<DNS IN MX rdata: 0 massiveinsights-com.mail.protection.outlook.com.>]
 ```
 
-_Screenshots:_
+*Screenshots:*
 
 ![dns-txt-mx](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
 ![dns-ns](/engineering-education/verifying-website-domains/dns-ptr.jpg)
 
-`Whois`, a continuous recording registry for websites, is one of several databases that compiles and lists website information.
+`Whois`, is a continuous recording registry for websites, it is one of several databases that compiles and lists website information.
 
 Input:
 
@@ -202,7 +199,7 @@ Domain creation date: None
 Expiration date: None
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![whois-invalid](/engineering-education/verifying-website-domains/whois-invalid.jpg)
 
@@ -229,14 +226,13 @@ Domain creation date: 2012-06-04 23:22:58
 Expiration date: 2021-06-04 23:22:58
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 
 ![whois-valid](/engineering-education/verifying-website-domains/whois-valid.jpg)
 
 ### Next up, Windows PowerShell
-
-_Make sure to right-click and select the `Run as Administrator` option before running PowerShell._
+*Make sure to right-click and select the `Run as Administrator` option before running PowerShell.*
 
 Windows PowerShell is structured differently. There are subcategorized features to select specific content in a website language. It is essential to select and include `.Content` at the end of the command.
 
@@ -262,7 +258,7 @@ Partial Output:
     <meta name="description" content="careers-massiveinsights.works (hosted on hostinger.com) details, including IP, backlinks, redirect information, and reverse IP shared hosting data">
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![power-curl](/engineering-education/verifying-website-domains/power-curl.jpg)
 
@@ -341,61 +337,57 @@ Partial Output:
             </div>
 ```
 
-_Screenshot_:
+*Screenshot*:
 
 ![power-curl-domains](/engineering-education/verifying-website-domains/power-curl-domains.jpg)
 
 When confronted with a domain that may appear authentic and genuine, it might be best to do some coding research first.
 
-Domains and websites in general have components that identify itself to initiate internet presence.
+Domains and websites in general have components that identify themselves when initiating internet presence.
 
 **Here are a few website components:**
-* DNS records
-* Extension purchases are readily available in a wide variety of selections
-* Website hosting providers and its ability to offer e-mail addresses for any purpose with the website domain
+- DNS records
+- Extension purchases are readily available in a wide variety of selections.
+- Website hosting providers and its ability to offer e-mail addresses for any purpose with the website domain.
 
 These components can be combined and modified to replicate an already existing website domain or create a completely unique website domain.
 
-
 #### Special consistency factors to look for:
-* Date-time stamp values
-* Null or missing values
-* Web hosting provider
-* Extension creation date and purchase
-* IP address
-* Associated domains with IP address
+- Date-time stamp values
+- Null or missing values
+- Web hosting provider
+- Extension creation date and purchase
+- IP address
+- Associated domains with IP address
 
-**Time to Match Values Up**
-
+**Time to match values up**
 If possible, compare values with the original to find any matches. If not, output values can offer insights.
 
-_What does a match mean?_
+*What does a match mean?*
 
 Most likely related to the original website domain.
 
-_What does a mismatch mean?_
+*What does a mismatch mean?*
 
 Most likely a replicated version of the original. Beware, be cautious, and watch out.
 
-Try the tutorial out next time a suspicious website domain crosses paths while using the internet. The results can be fascinating.
+Try the tutorial out next time a suspicious website domain crosses your path while using the internet. The results can be fascinating.
 
 It can possibly protect individuals and/or groups from the dark web.
 
+Happy coding!
+
 ### Resources
+- [Socket Library](https://docs.python.org/3/library/socket.html)
 
-_Documentation_
+- [DNS Library](https://dnspython.readthedocs.io/en/latest/manual.html)
 
+- [Whois Library](https://openbase.com/python/whois/documentation#whois)
 
-[Socket Library](https://docs.python.org/3/library/socket.html)
+- [Host.io API](https://host.io/)
 
-[DNS Library](https://dnspython.readthedocs.io/en/latest/manual.html)
-
-[Whois Library](https://openbase.com/python/whois/documentation#whois)
-
-[Host.io API](https://host.io/)
 
 Have any feedback or comments about the lines of code used for verifying website domains?
-
 
 **Feel free to contact me**
 
