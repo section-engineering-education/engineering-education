@@ -11,10 +11,10 @@
 As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used in the analysis of network packets.  
 In this tutorial, we will be looking at an overview of ***Wireshark***, how it works, and its other several uses. 
 
-### What is ***Wireshark***?
+### What is ***Wireshark***?  
 
-***Wireshark*** is an open-source project whose main aim is to build a standard network protocol analyzing tool. 
-It's a network packet analyzer that captures data on a network then presenting in a human-understandable form
+***Wireshark*** is an open-source project whose main purpose is to develop a standard analysis tool for network protocols.  
+It's a network packet analyzer that captures data on a network then presenting in a human-understandable form.  
 This tool performs various operations such as:  
 * Troubleshooting networks.
 * Performing security operations used to detect security threats such as port scanning on a network.  
@@ -23,12 +23,12 @@ This tool performs various operations such as:
 
 
 ### How does ***Wireshark*** works?
-As we have said, ***Wireshark*** is a packet analyzer or a packet sniffer.   
+***Wireshark*** is, like we said, a packet analyzer or a packet sniffer.   
 How it works is very simple, let's take your computer, for example, connected to your network, and you want to determine what is currently going on, on your network.    
-When you use ***Wireshark***, it captures network traffic (the data moving currently on your network) and records the movement of data offline. You can then use this data to analyze the network activities.  
+When you use ***Wireshark***, it captures network traffic (the data moving currently on your network) and records the movement of data offline. To analyze the network activities, you can then use this data.  
 
 ### Installing ***Wireshark***
-In this tutorial, we are installing ***Wireshark*** in Ubuntu 20.04. You are free to use any other system by following installation instructions [here](https://www.wireshark.org/download.html).   
+In this tutorial, we are installing ***Wireshark*** in Ubuntu 20.04. By following the installation instructions [here](https://www.wireshark.org/download.html), you are free to use any other device.  
 
 ### Step 1: Updating the system apt
 ```bash
@@ -79,8 +79,9 @@ After this operation, 116 MB of additional disk space will be used.
 Do you want to continue? [Y/n] 
 
 ```
-Enter ```y``` to continue downloading ***Wireshark***. This takes a few minutes depending on your network speed.  
-On completion, it prompts you with a window to configure Wireshark for root privileges.
+To continue downloading ***Wireshark***, type `y`. Depending on your network level, this needs a few minutes.
+Upon completion, it prompts you to configure Wireshark for root privileges using a window.  
+
 
 ![Configure-wireshark](/engineering-education/introduction-to-wireshark/configure-wireshark.jpg)
 
@@ -162,7 +163,7 @@ This prompts you to another window, as seen below.
 ![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interfaces-2.jpg)
 
 Now select any of the interfaces you're presented with. In this example, we're going to explore the UDP Listener option.  
-Then click on the start button in the far left corner.  
+Then, in the far left corner, click on the start button.    
 At this stage, you should be able to get an output like the one presented below.  
 
 ***Fig 1.5 Network traffic***
@@ -170,12 +171,12 @@ At this stage, you should be able to get an output like the one presented below.
 
 In the capture panel above, you're able to notice that network packet capturing is in sequential order, with each line representing each packet captured.  
 
-The information is displayed in tabular form, with rows and columns.  
-Each row represents the packet collected, while columns provide you with additional information such as time, protocols, length, et cetera. You can refer to the screenshot above.  
+The details, with rows and columns, is displayed in tabular form.
+Each row represents the collected packet, while additional information such as time, protocols, duration, et cetera is given in columns. You should refer to the above screenshot.   
 
 Let's have a look at these columns and what type of information they provide us with.  
-* ***No*** - Represents a unique network packet sequence number. This can be used to identify a given packet.  
-* ***Time***- This is the time at which a particular packet was captured.  
+* ***No*** - Represents a specific sequence number of the network packet. To classify a given packet, this can be used.  
+* ***Time***- This is the time that a specific packet has been recorded.  
 * ***Source***- This represents where we are getting the packets from. This is denoted as Internet Protocols(IP Addresses).
 * ***Destination***- This is used to represent the Internet Protocol(IP Address) where the packet is going.  
 * ***Protocol***- This refers to the protocol of the data you have captured. This could be ***TCP, ARP et cetera***
