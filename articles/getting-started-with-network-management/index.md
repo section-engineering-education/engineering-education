@@ -22,14 +22,14 @@ In this article, we're going to discuss the fundamental principles of network mo
 - Network Management systems
 - Simple Network Management protocol  
 
-### What is Network Management?
+### What is Network management?
 Management refers to the set of activities or principles well defined to perform a particular task effectively. It involves controlling, organizing, planning, and monitoring resources to achieve the organization's goals.
 
 Network management, therefore, includes all the mechanisms put in place to monitor, control, and coordinate network activities within an organization. These activities include network protocol analysis, distributed database management, and so many other tasks.  
 
 In essence, network management as a service provides network managers with several applications, tools, and devices to ensure smooth network management and monitoring.  
 
-### Network Management requirements
+### Network management requirements
 The network management requirements are categorized into 5 distinct groups. 
 - Fault Management
 - Security Management
@@ -37,7 +37,7 @@ The network management requirements are categorized into 5 distinct groups.
 - Accounting Management
 - Configuration & Name Management   
 
-### 1. Fault Management 
+### 1. Fault management 
 Imagine working as a network administrator at a big company, say a bank, and the network fails in all branches country-wide and there's no way to identify the problem?
 
 The network administrator would be pressured by top management to get the network back up or else the organization will suffer a massive financial loss. 
@@ -61,7 +61,7 @@ Normally, users depending on an internet connection will not tolerate occasional
 
 An organization is therefore recommended to have measures in place to restore networks or to act as swiftly as possible in cases of faults, and in this can be done by installing ***Fault Detection and Diagnosis systems***. This provides a very efficient fault resolution, by restoring or solving problems as soon as they occur.  
 
-### 2. Security Management
+### 2. Security management
 The organization you work at, is in one way or the other a target to hackers. Security management is therefore concerned with how the ***encryption keys*** are being generated, distributed, and stored. This may involve passwords, authorization keys, and access control information that are usually distributed and requires maintenance.  
 
 Security management is also concerned with computer network access. It involves monitoring and controlling the network. One of the most important tools in security management is ***Network Logs***. Network logs records every single activity or event on the network. Storing user details, process calls, and authentication attempts.
@@ -92,8 +92,8 @@ Would you be patient enough to wait?
 
 Users always want to know the average and the worst-case scenario response time for the site to load. Therefore, performance must be known in detail for the system administrator/support staff to be in a position to respond to some user queries.  
 
-### Network Management Systems
-#### Network Management Architecture
+### Network management systems
+#### Network management architecture
 A network management system is comprised of network monitoring and control tools that are integrated to meet a certain objective. It has both the hardware and the software.
 
 The software is mostly used in host computers and communication processors such as front-end processors, cluster processors, bridges, routers et cetera) to accomplish network management tasks.  
@@ -106,18 +106,18 @@ A network management system is always designed and developed for the end-user to
 
 There are 3 types of network architectures:  
 
-#### 1. Hierarchical Network Management Architecture  
+#### 1. Hierarchical network management architecture  
 - In this architecture, multiple sets of network management systems are installed at the Network Operations Center (NOC).
 - Each is in turn used to monitor and manage the whole network.  
 - It has Manager of Manager (refer to Figure 1), a layer that sits at the highest level, requesting data from the domain managers.
 - This architecture is scalable since it's possible to add additional Manager of Managers (MoM) layers.  
    
-#### 2. Centralised Network Management Architecture  
+#### 2. Centralized network management architecture  
 - Unlike hierarchical architecture, it has a single Network Management System (NMS) installed to help in monitoring the whole network.  
 - It can contain one or more servers and it will only be considered centralized if all the servers are located in the same Network Operations Center (NOC).  
 - It may also comprise of one or more clients distributed in all regions, communicating via Dynamic Circuit Network to a central server.  
 
-#### 3. Distributed Network Management Architecture
+#### 3. Distributed network management architecture
 - Just like Hierarchical architecture. It has several Network Management Systems installed to monitor the network.  
 - Each NMS is usually installed to monitor the network of a particular geographical region.  
 - Using Figure 1 above, it is comprised of 3 Network Management System (NMS) Servers with each being located at its Network Operations Center (NOC).
