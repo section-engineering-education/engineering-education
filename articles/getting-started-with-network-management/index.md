@@ -22,7 +22,7 @@ In this article, we're going to discuss the fundamental principles of network mo
 - Network Management systems
 - Simple Network Management protocol  
 
-### What is Network management?
+### What is network management?
 Management refers to the set of activities or principles well defined to perform a particular task effectively. It involves controlling, organizing, planning, and monitoring resources to achieve the organization's goals.
 
 Network management, therefore, includes all the mechanisms put in place to monitor, control, and coordinate network activities within an organization. These activities include network protocol analysis, distributed database management, and so many other tasks.  
