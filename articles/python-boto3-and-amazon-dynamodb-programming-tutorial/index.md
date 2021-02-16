@@ -38,7 +38,8 @@ At this stage, we have imported the Boto3 library and have a local version of Dy
 We are going to create a table called `Devices` using the method `create_table`. The table has attributes `device_id` as the partition key and `datacount` as the sort key. Create a script and name it `create_table.py`. Paste the code below in the script.
 
 ```python
-import boto3 #import Boto3
+import boto3  # import Boto3
+
 
 def create_devices_table(dynamodb=None):
     dynamodb = boto3.resource(
@@ -59,7 +60,8 @@ def create_devices_table(dynamodb=None):
         AttributeDefinitions=[
             {
                 'AttributeName': 'device_id',
-                'AttributeType': 'S' #AttributeType defines the data type. 'S' is string type and 'N' is number type 
+                # AttributeType defines the data type. 'S' is string type and 'N' is number type
+                'AttributeType': 'S'
             },
             {
                 'AttributeName': 'datacount',
@@ -67,16 +69,19 @@ def create_devices_table(dynamodb=None):
             },
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits': 10, #ReadCapacityUnits set to 10 strongly consistent reads per second
-            'WriteCapacityUnits': 10 #WriteCapacityUnits set to 10 writes per second
+            # ReadCapacityUnits set to 10 strongly consistent reads per second
+            'ReadCapacityUnits': 10,
+            'WriteCapacityUnits': 10  # WriteCapacityUnits set to 10 writes per second
         }
     )
     return table
 
+
 if __name__ == '__main__':
     device_table = create_devices_table()
-    #Print tablle status
+    # Print tablle status
     print("Status:", device_table.table_status)
+
 ```
 
 In the script above, the first thing is to import boto3 dependency. Import the dependency in every script connecting to DynamoDB. We are also connecting to DynamoDB local server. In the script, we are defining the structure of the table. Only the partition key and the sort key are required. Take note of the `AttributeType` and `ProvisionedThroughput`. `AttributeType` defines the data types. `ProvisionedThroughput` is the maximun read and write capacity that an application can consume on a table. Learn more about `ProvisionedThroughput` on [AWS API documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ProvisionedThroughput.html). To run the script, enter the command below.
@@ -168,9 +173,11 @@ Let's populate the table with some data. We will do this by loading data from a 
 Create a script named `load_data.py` and add the code below. The code loads data from the JSON file `data.json` and inserts it into the `Devices` table.
 
 ```python
-import json #module for converting Python objects to JSON
-from decimal import Decimal #decimal module support correctly-rounded decimal floating point arithmetic.
-import boto3 #import Boto3
+import json  # module for converting Python objects to JSON
+# decimal module support correctly-rounded decimal floating point arithmetic.
+from decimal import Decimal
+import boto3  # import Boto3
+
 
 def load_data(devices, dynamodb=None):
     dynamodb = boto3.resource(
@@ -181,15 +188,17 @@ def load_data(devices, dynamodb=None):
     for device in devices:
         device_id = (device['device_id'])
         datacount = device['datacount']
-        #Print device info
+        # Print device info
         print("Loading Devices Data:", device_id, datacount)
         devices_table.put_item(Item=device)
+
 
 if __name__ == '__main__':
     # open file and read all the data in it
     with open("data.json") as json_file:
         device_list = json.load(json_file, parse_float=Decimal)
     load_data(device_list)
+
 ```
 
 To execute the script, run the command below.
@@ -213,16 +222,17 @@ Adding Device Data: 10003 2
 We used the `put_item` method to insert items in our table. We will create a script that inserts/creates a new item in the table `Devices`. Create a script named `create_item.py` and paste the code below.
 
 ```python
-from pprint import pprint #import pprint, a module that enable to “pretty-print” 
-import boto3 #import Boto3
+from pprint import pprint  # import pprint, a module that enable to “pretty-print”
+import boto3  # import Boto3
+
 
 def put_device(device_id, datacount, timestamp, temperature1, temperature2, temperature3, temperature4, temperature5, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table
+    # Specify the table
     devices_table = dynamodb.Table('Devices')
     response = devices_table.put_item(
-        #Data to be inserted
+        # Data to be inserted
         Item={
             'device_id': device_id,
             'datacount': datacount,
@@ -238,12 +248,14 @@ def put_device(device_id, datacount, timestamp, temperature1, temperature2, temp
     )
     return response
 
+
 if __name__ == '__main__':
     device_resp = put_device("10001", 3, "1612522800",
                              "23.74", "32.56", "12.43", "44.74", "12.74")
     print("Create item successful.")
-    #Print response
+    # Print response
     pprint(device_resp)
+
 ```
 
 Run the command below to execute the script `create_item.py`.
@@ -273,13 +285,15 @@ We just added the item below.
 We will read the item we just created using the `get_item` method. We will need to specify the primary key of the item we want to read. In this case, the primary key of the `Devices` table is a combination of a partition key and a sort key. The primary key is `device_id`, and the sort key is `datacount`.
 
 ```python
-from botocore.exceptions import ClientError #import Boto3 exceptions and error handling module
-import boto3 #import Boto3
+# import Boto3 exceptions and error handling module
+from botocore.exceptions import ClientError
+import boto3  # import Boto3
+
 
 def get_device(device_id, datacount, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table to read from
+    # Specify the table to read from
     devices_table = dynamodb.Table('Devices')
 
     try:
@@ -290,11 +304,12 @@ def get_device(device_id, datacount, dynamodb=None):
     else:
         return response['Item']
 
+
 if __name__ == '__main__':
     device = get_device("10001", 3,)
     if device:
         print("Get Device Data Done:")
-        #Print the data read
+        # Print the data read
         print(device)
 
 ```
@@ -359,13 +374,14 @@ Update refers to modifying a previously created item by updating the values of e
 We will use the `update_item` method, as shown in the code below. Create a script named  `update_item.py` and add the code below.
 
 ```python
-from pprint import pprint #import pprint, a module that enable to “pretty-print”
-import boto3 #import Boto3
+from pprint import pprint  # import pprint, a module that enable to “pretty-print”
+import boto3  # import Boto3
+
 
 def update_device(device_id, datacount, info_timestamp, temperature1, temperature2, temperature3, temperature4, temperature5, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table
+    # Specify the table
     devices_table = dynamodb.Table('Devices')
 
     response = devices_table.update_item(
@@ -386,12 +402,14 @@ def update_device(device_id, datacount, info_timestamp, temperature1, temperatur
     )
     return response
 
+
 if __name__ == '__main__':
     update_response = update_device(
         "10001", 3, "1612522800", "33.74", "23.74", "25.20", "22.00", "25.00")
     print("Device Updated")
-    #Print response
+    # Print response
     pprint(update_response)
+
 ```
 
 Run the command below to execute the script`update_item.py`.
@@ -446,18 +464,20 @@ We will delete the item below:
 The item will be deleted if the value of `info_timestamp` is greater than or equal to the value provided. Create a script named `delete_item.py` and paste the code below.
 
 ```python
-from botocore.exceptions import ClientError #import Boto3 exceptions and error handling module
-from pprint import pprint #import pprint, a module that enable to “pretty-print” 
-import boto3 #import Boto3
+# import Boto3 exceptions and error handling module
+from botocore.exceptions import ClientError
+from pprint import pprint  # import pprint, a module that enable to “pretty-print”
+import boto3  # import Boto3
+
 
 def delete_device(device_id, datacount, info_timestamp, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table to delete from
+    # Specify the table to delete from
     devices_table = dynamodb.Table('Devices')
 
     try:
-        response1 = devices_table.delete_item(
+        response = devices_table.delete_item(
             Key={
                 'device_id': device_id,
                 'datacount': datacount
@@ -469,21 +489,23 @@ def delete_device(device_id, datacount, info_timestamp, dynamodb=None):
             }
         )
     except ClientError as er:
-        if er.response1['Error']['Code'] == "ConditionalCheckFailedException":
+        if er.response['Error']['Code'] == "ConditionalCheckFailedException":
             print(er.response['Error']['Message'])
         else:
             raise
     else:
-        return response1
+        return response
+
 
 if __name__ == '__main__':
     print("DynamoBD Conditional delete")
     # Provide device_id, datacount, info_timestamp
-    delete_response = delete_device("10001", 1, 1714910791415)
+    delete_response = delete_device("10001", 3, "1712519200")
     if delete_response:
         print("Item Deleted:")
-        #Print response
+        # Print response
         pprint(delete_response)
+
 ```
 
 Run the command below to execute the script `delete_item.py`.
@@ -504,26 +526,29 @@ If the condition is removed or met, then the item will be deleted successfully.
 Querry returns all items that match the partition key value. In this example, we will query all the data for a specific partition key. We need to specify the partition key value. In this case, the partition key is `device_id`. We will query all the items where `device_id` is equal to 10001. To learn more about DynamoDB queries, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html).
 
 ```python
-import boto3 #import Boto3
-from boto3.dynamodb.conditions import Key #import Boto3 conditions
+import boto3  # import Boto3
+from boto3.dynamodb.conditions import Key  # import Boto3 conditions
+
 
 def query_devices(device_id, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table to query
+    # Specify the table to query
     devices_table = dynamodb.Table('Devices')
     response = devices_table.query(
         KeyConditionExpression=Key('device_id').eq(device_id)
     )
     return response['Items']
 
+
 if __name__ == '__main__':
     query_id = "10001"
     print(f"Device Data from Device ID: {query_id}")
     devices_data = query_devices(query_id)
-    #Print the items returned
+    # Print the items returned
     for device_data in devices_data:
         print(device_data['device_id'], ":", device_data['datacount'])
+
 ```
 
 Run the command below to execute the script `query.py`.
@@ -536,12 +561,13 @@ python query.py
 Scan operation reads and returns all the items in the table. The method `DynamoDB.Table.scan()` is used to scan a table. Using a `filter_expression`, we can filter the items to be returned. However, the whole table will be scanned, and items not matching the `filter_expression` will be thrown away. Create a script named `scan.py` and paste the code below. To learn more about DynamoDB scans, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html).
 
 ```python
-import boto3 #import Boto3
+import boto3  # import Boto3
+
 
 def scan_devices(display_devices_data, dynamodb=None):
     dynamodb = boto3.resource(
         'dynamodb', endpoint_url="http://localhost:8000")
-    #Specify the table to scan
+    # Specify the table to scan
     devices_table = dynamodb.Table('Devices')
     done = False
     start_key = None
@@ -563,8 +589,9 @@ if __name__ == '__main__':
 
     print(
         f"Scanning all devices data")
-    #Print the items returned
+    # Print the items returned
     scan_devices(print_devices)
+
 ```
 
 The script above scans the `Devices` table with no `filter_expression`. Run the command below to execute the script scan.py. The output will be all the items in the `Devices` table.
@@ -577,7 +604,8 @@ python scan.py
 To delete a table, we use the method `DynamoDB.Table.delete()`. All we need is to specify the table name. This action is rarely performed. Create a script named `delete_table.py` and add the code below.
 
 ```python
-import boto3 #import Boto3
+import boto3  # import Boto3
+
 
 def delete_devices_table(dynamodb=None):
     dynamodb = boto3.resource(
@@ -586,9 +614,11 @@ def delete_devices_table(dynamodb=None):
     devices_table = dynamodb.Table('Devices')
     devices_table.delete()
 
+
 if __name__ == '__main__':
     delete_devices_table()
     print("Table deleted.")
+
 ```
 
 Run the command below to execute the script `delete_table.py`.
