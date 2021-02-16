@@ -49,7 +49,7 @@ When a router receives an IP packet through any of its many interfaces, the rout
 If a routing protocol uses Hop count as its metric, then the path with the least metric or number of routers is considered the best path. This path is then added to the routing table if there is no other routing protocol with less administrative distance. 
  Routing Information Protocol (RIP) uses hop count as its metric.
 ![Hop count](/engineering-education/understandinding-dynamic-and-static-routing/hop.jpeg)
-[Image source](AUthor)
+Image source: Author
 
 In the image above, a device in sub-network-A want to reach another in sub-network-B, using hop count as its metric, the network will use Route 1 because it has the least Hop count value (2)
 
@@ -59,7 +59,7 @@ In the image above, a device in sub-network-A want to reach another in sub-netwo
   For a protocol that uses bandwidth capacity as its metric, the protocol determines the bandwidth capacity of all possible routes to the destination subnet, and the route with higher bandwidth capacity is considered the best path and added to the routing table.
 Because metrics can depend on single or many characteristics, Enhanced Interior Gateway Routing Protocol (EIGRP) uses a composite of bandwidth and delay to calculate its metric.
 ![Bandwidth](/engineering-education/understandinding-dynamic-and-static-routing/bandwidth.jpeg)
-[Image source](AUthor)
+Image source: AUthor
 In the figure above, Router 6 will prefer to send its traffic through router eight rather than send it to router seven because the route through router 8 has a high bandwidth.
 
 **Load:** Network load refers to the extent to which a network resource like router or link between networks is busy or in use at a given period. For protocols that use load as their metric, the path with less load is considered the best and added to the routing table to transmit the datagram to the destination subnet.
@@ -78,7 +78,7 @@ A router can have two or more paths with equal metric and administrative distanc
   The method of sending data to a destination sub-network using two or more paths is called *Load balancing*; this is possible because a routing table can contain many paths associated with different exit interfaces of a router having equal metric or cost path.
 
 ![Load balancing](/engineering-education/understandinding-dynamic-and-static-routing/load.jpeg)
-[Image source](Author)
+Image source: Author
 
 In the figure, the network uses RIP as its routing protocol. To send traffic to Sub-network B, Router 6 will distribute its traffic to Route 1 and 4 because they have an equal metric.
 For a well-configured network, load balancing increases the network's effectiveness and performance for both static and dynamic routes.
@@ -126,12 +126,12 @@ Static routes can be grouped into:
  It is a route configured with 0.0.0.0/0 as its destination IPV4 address. By configuring a default static route, a router can match all packets to use this route.
  A default static route is used to send packets when a more specific route match is not in the routing table.
 ![Default Static route](/engineering-education/understandinding-dynamic-and-static-routing/default-route.jpeg)
-[Image source](Author)
+Image source:Author
 
 **Summary route**
 This route reduces the number of routing table entries required for many static routes. This route can only be implemented on contiguous routes that use the same exit interface or next-hop address.
 ![Summary route](/engineering-education/understandinding-dynamic-and-static-routing/summary-route.jpeg)
-[Image source](Author)
+Image source: Author
 
 **Route summarization**
 A summary can be calculated for contiguous addresses; this calculation can be done using either the binary or decimal (fastest) method. Both of which will be looked at in the example below.
