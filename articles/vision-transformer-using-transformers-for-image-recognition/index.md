@@ -87,7 +87,7 @@ They used Attention Rollout proposed in this [paper](https://arxiv.org/pdf/2005.
 
 ### Summary of the Model
 
-1. Vision Transformer (ViT) requires substantially less computing power to train. It takes 2.5k TPUv3-days to train it. It seems like much, but it's still less compared to the current state-of-the-art methods.
+1. Vision Transformer (ViT) requires substantially less computing power to train. It takes 2.5k TPUv3-days to train it. It seems like a lot, but it's still less compared to the current state-of-the-art methods.
 2. Huge models (ViT-H) generally do better than large models (ViT-L) and wins against state-of-the-art methods.
 3. Attention Rollouts are used to compute the attention maps.
 4. Like the GPT-3 and BERT models, the Visual Transformer model also can scale.
