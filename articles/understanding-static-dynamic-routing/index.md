@@ -284,7 +284,7 @@ Both Static and Dynamic routing have their advantages and disadvantages; it is u
 
 ### About the author
 
-![Author's Image](/engineering-education/understanding-tcp-ip-transport-layer-protocols/rabo.jpeg)
+
 Rabo James Bature is a postgraduate student (Applied Physics) at the University of Jos with networking skills and a strong passion for Cybersecurity and data science. He spends most of his time studying current cybersecurity threats while teaching organizations and individuals how to better secure devices and networks.  
 
 
