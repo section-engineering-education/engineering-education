@@ -106,3 +106,7 @@ Transformers completely replaced Long Short-Term Memory (LSTM) in NLP. Now, they
 3. [Attention Is All You Need](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
 4. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf) 
 5. [Quantifying Attention Flow in Transformers](https://arxiv.org/pdf/2005.00928.pdf)
+
+
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
