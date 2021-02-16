@@ -149,7 +149,7 @@ The mathematical formulation of hinge loss is as follows:
 
 Where s<sub>j</sub> is the true value and s<sub>y<sub>i</sub></sub> is the predicted value.
 
-Hinge Loss is also extended to [Squared Hinge Loss Error](https://peltarion.com/knowledge-center/documentation/modeling-view/build-an-ai-model/loss-functions/squared-hinge) and [Categorical Hinge Loss Error](https://www.tensorflow.org/api_docs/python/tf/keras/losses/categorical_hinge)
+Hinge Loss is also extended to [Squared Hinge Loss Error](https://peltarion.com/knowledge-center/documentation/modeling-view/build-an-ai-model/loss-functions/squared-hinge) and [Categorical Hinge Loss Error](https://www.tensorflow.org/api_docs/python/tf/keras/losses/categorical_hinge).
 
 #### Kullback Leibler Divergence Loss (KL Loss)
 Kullback Leibler Divergence Loss is a measure of how a distribution varies from a reference distribution (or a baseline distribution). A Kullback Leibler Divergence Loss of zero means that both the probability distributions are identical. 
