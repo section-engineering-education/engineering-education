@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/getting-started-with-network-management/hero.jpg
     alt: Introduction to Network Monitoring example image
 ---
-In this tutorial, we're going to discuss the fundamental principles of network monitoring and management while discussing the protocols and architectures involved. 
+In this article, we're going to discuss the fundamental principles of network monitoring and management while discussing the protocols and architectures involved. 
 <!--more-->
 ### Core concepts we will go over:
 - Definition of network  management
@@ -104,21 +104,20 @@ A network management system is always designed and developed for the end-user to
 
 ![Network-Management-System](/engineering-education/getting-started-with-network-management/hierarchical-nms.jpg)
 
-
 There are 3 types of network architectures:  
 
-1. Hierarchical Network Management Architecture  
+#### 1. Hierarchical Network Management Architecture  
 - In this architecture, multiple sets of network management systems are installed at the Network Operations Center (NOC).
 - Each is in turn used to monitor and manage the whole network.  
 - It has Manager of Manager (refer to Figure 1), a layer that sits at the highest level, requesting data from the domain managers.
 - This architecture is scalable since it's possible to add additional Manager of Managers (MoM) layers.  
    
-2. Centralised Network Management Architecture  
+#### 2. Centralised Network Management Architecture  
 - Unlike hierarchical architecture, it has a single Network Management System (NMS) installed to help in monitoring the whole network.  
 - It can contain one or more servers and it will only be considered centralized if all the servers are located in the same Network Operations Center (NOC).  
 - It may also comprise of one or more clients distributed in all regions, communicating via Dynamic Circuit Network to a central server.  
 
-3. Distributed Network Management Architecture
+#### 3. Distributed Network Management Architecture
 - Just like Hierarchical architecture. It has several Network Management Systems installed to monitor the network.  
 - Each NMS is usually installed to monitor the network of a particular geographical region.  
 - Using Figure 1 above, it is comprised of 3 Network Management System (NMS) Servers with each being located at its Network Operations Center (NOC).
