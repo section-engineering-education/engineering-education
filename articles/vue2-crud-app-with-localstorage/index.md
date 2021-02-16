@@ -1,3 +1,17 @@
+---
+layout: engineering-education
+url: /engineering-education/vue2-crud-app-with-localstorage/
+title: Vuejs 2 CRUD App With LocalStorage
+description: This article is a tutorial on how to build a crud app with vuejs version 2 and store the app data in localStorage.
+author: espira-marvin
+date: 2021-02-16T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
+    alt: vuejs 2 crud app with localstorage
+---
 ![local storage with vuejs](/engineering-education/vue2-crud-app-with-localstorage/hero.jpg)
 
 
