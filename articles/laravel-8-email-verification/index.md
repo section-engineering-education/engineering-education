@@ -13,9 +13,11 @@ images:
   - url: /engineering-education/laravel-8-email-verification/hero.jpg
     alt: laravel language localisation
 ---
-When a new user clicks on the signup button of an application, he or she usually gets a confirmation email with an activation link.  
-This is needed to make sure that the user owns the email address entered during the authentication. After the click on the activation link, the user is authenticated for the application. 
-In this email verification tutorial, we have a glance at how this functionality is achieved in Laravel 8.
+Typically, you should send a verification email after registering a user with an email address to verify that the user owns the email address they used for account registration.  
+The user will only be authenticated and redirected to the home page upon successful email verification.
+
+If the email address is not verified by the user, the app will show the message:"Before proceeding, please check your email for a verification link." "If the email has not been received, "and disable access to the home page."  
+
 <!--more-->
 ### Requirements
 This tutorial assumes you have basic knowledge in the following:  
