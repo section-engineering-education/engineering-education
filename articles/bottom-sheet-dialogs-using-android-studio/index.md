@@ -1,22 +1,29 @@
-### Introduction
-The Bottom Sheet dialogs seem to be replacing the regular Android dialogs and menus. The Bottom Sheet is a component that slides up from the bottom of the screen to showcase additional content in your application. A Bottom Sheet dialog is like a message box triggered by the user's actions. Many companies have implemented the Bottom Sheet dialog concept. They include Google Maps, Instagram, and Google Drive.
-
-Instance such as that uses the Bottom Sheet dialog include
-- Music apps use this feature to showcase song playlists and other features.
-- An application feature that requires a user to select a document/file and upload and share them.
-- Payment components have been constantly implemented using the Bottom Sheet dialog to load and display the end-users' relevant data.
-
-In terms of application, any `Android view` such as `TextView`, `ImageView`, `RecyclerViews`, `Buttons`, and `Text inputs` can be implemented into a Bottom Sheet. This makes it quite dynamic. For instance, it can help display data retrieved from a database. In short, a Bottom Sheet can be applied in many instances as long as it fits your application cycle.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/bottom-sheet-dialogs-using-android-studio/
+title: Implementing Bottom Sheet Dialogs Using Android Studio
+description: This article explains how to use Bottom Sheets in Android. Bottom Sheets provide extra UI space, which can be used to present different details to the user.
+author: joseph-chege
+date: 2021-02-09T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/bottom-sheet-dialogs-using-android-studio/hero.jpg
+    alt: Introduction to Bottom Sheets in Android
+---
+Bottom Sheet dialogs seem to be replacing regular Android dialogs and menus. The Bottom Sheet is a component that slides up from the bottom of the screen to showcase additional content in your application. A Bottom Sheet dialog is like a message box triggered by the user's actions. Companies such as Google, Facebook, and Twitter have implemented this feature in their applications.
+<!--more-->
+Bottom Sheet dialogs are used in music, payment, and file management applications. In terms of application, any `Android view` including `TextView`, `ImageView`, `RecyclerViews`, `Buttons`, and `Text inputs` can be included in a Bottom Sheet. This makes it quite dynamic. For instance, it can help display data retrieved from a database. A Bottom Sheet can be applied in many instances as long as it fits your application cycle.
 
 ### Types of the Bottom Sheet dialogs
-They are two main types of Bottom Sheet dialog, namely;
+The two main types of Bottom Sheets are Modal and Persistent dialogs;
 
 #### Modal Bottom Sheet dialog
-It has similar characteristics as a standard screen dialog, such as an Alert dialog. When triggered (by the user’s action), it slides up from the bottom of the current screen. A Modal Sheet can contain a list of items. The items can correspond to some actions when clicked. The Modal Bottom Sheet blocks interaction with the rest of the screen to indicate a shift of focus.
+It has similar characteristics as an Alert dialog. When triggered (by the user’s action), it slides up from the bottom of the current screen. A Modal Sheet can contain a list of items. These elements can correspond to some action when clicked. The Modal Bottom Sheet blocks interaction with the rest of the screen to indicate a shift of focus. It is dismissed when the user clicks outside the view or on back press. 
 
-A Modal dialog shadows content and UI elements behind it and switches screen interactions onto the dialog. A click outside or back press dismisses it.
-
-Instead of wrapping it up with the `CoordinatorLayout` like the persistent dialog, we create it dynamically, just like a regular dialog.
+Instead of wrapping the Modal Bottom Sheet with the `CoordinatorLayout` like the persistent dialog, we create it dynamically, just like a regular dialog.
 
 An excellent example of a Modal Bottom Sheet dialog is the Google Drive application.
 
@@ -26,19 +33,18 @@ Or this payment Bottom Sheet dialog example.
 
 ![Payment Bottom Sheet Dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/payment-bottom-sheet-dialog.jpg).
 
-Modal Bottom Sheets are a great alternative to inline menus and simple dialogs. They provide additional room for more content, iconography, and more screen actions.
+Modal Bottom Sheets are an excellent alternative to inline menus and simple dialogs. They provide additional room for more content, iconography, and more screen actions.
 
 #### Persistent Bottom Sheet dialog
-Persistent Bottom Sheet dialog provides supplementary content about the current screen. A Persistent dialog works as a child of `CoordinatorLayout` to display pages’ additional content.
+Persistent Bottom Sheet dialogs provide supplementary content about the current screen. It is as a child of the `CoordinatorLayout`.
 
-A portion of the container is visible to provide users with more content and more options about the current screen when slid from bottom to top. Unlike the Modal dialog, a Persistent dialog widget is permanent for the current screen content.
+A portion of the container is visible to provide users with more content. Unlike the Modal dialog, a Persistent Bottom Sheet widget is permanent for the current screen content.
 
-An example of a Persistent Bottom Sheet dialog is the Google maps application.
+Here is an example of a Persistent Bottom Sheet dialog in a Google Maps application.
 
 ![Google Maps Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/google-map-bottom-sheet.png)
 
 ### Implementation
-
 Create a new Android studio project. To implement a Bottom Sheet dialog, you need a material design library.
 
 Include the following library in your `app.gradle` file.
@@ -56,11 +62,11 @@ We will discuss how to implement the two types of Bottom Sheet dialogs using And
 1. Using BottomsheetDialog
 
 #### Preparing layouts
-Design the dialog elements. To show the dialog, you need an XML file that arranges the dialog's content. You can choose to use any widgets that fit your dialog content. The views can include `RecyclerView`, `ImageViews`, `Text`, `Inputs`, and `Button`. The dialog creates more room to showcase diverse content in your application. An existing XML design in the standard activity layout can also be implemented with a Bottom Sheet dialog.
+To show the dialog, you need an XML file that arranges the dialog's content. You can choose to use any widgets that fit in the dialog. The views can include `RecyclerView`, `ImageViews`, `Text`, `Inputs`, and `Button`.
+
+>Make sure you generate some vector images as showcased in the ImageView of the below XML file. Or check this [GitHub](https://github.com/kimkimani/ModalBottomSheet) repository for more reference.
 
 Here is the `bottom_sheet_dialog_layout.xml` layout that I will be using to implement a Modal Bottom Sheet.
-
-Make sure you generate some vector images as showcased in the ImageView of the below XML file. Or check this [GitHub](https://github.com/kimkimani/ModalBottomSheet) repository for more reference.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -183,7 +189,7 @@ Make sure you generate some vector images as showcased in the ImageView of the b
 </LinearLayout>
 ```
 
-A dialog is triggered by a specified user action around the application cycle. In this tutorial, we will include a button to implement an `onClick` Listener event to trigger the dialog.
+A dialog is triggered by a specified user action. In this tutorial, we will include a button and trigger the dialog using it's `onClick` Listener.
 
 Go ahead and add a button in your `activity_main.xml` file.
 
@@ -203,7 +209,7 @@ Go ahead and add a button in your `activity_main.xml` file.
 ```
 
 #### Initializing the Bottom Sheet in the activity
-Initialize the button and set the onClick Listener inside the `onCreate` function. When the button is clicked, we will show the dialog. Create a function `showBottomSheetDialog()` and call it inside the button's `onClick` Listener.
+Initialize the button and set the onClick Listener inside the `onCreate` function. When the button is clicked, we will show the dialog. Create a function `showBottomSheetDialog()` and call it inside the button's `onClick` Listener, as shown below.
 
 ```java
 Button mBottton = findViewById(R.id.button);
@@ -215,7 +221,8 @@ Button mBottton = findViewById(R.id.button);
 });
 ```
 
-Inside the function `showBottomSheetDialog()` initialize the Bottom Sheet dialog. Set the dialog XML layout `setContentView` as specified in the `bottom_sheet_dialog_layout.xml`. Declare all the views and call them by `id` as specified in the Bottom Sheet layout. And we are ready to show the dialog with `bottomSheetDialog.show()`.
+Inside the `showBottomSheetDialog()` function, initialize the Bottom Sheet dialog. Initialize the `bottom_sheet_dialog_layout.xml` using the `setContentView` method. 
+Declare all the views and call them by `id` as specified in the Bottom Sheet layout. Finally, we will diplay the dialog using `bottomSheetDialog.show()`.
 
 ```java
 private void showBottomSheetDialog() {
@@ -233,17 +240,17 @@ private void showBottomSheetDialog() {
 }
 ```
 
-Run the app to test if the Bottom Sheet is working. Clicking the button will trigger the dialog to slide from the bottom to the top.
+Run the app to test if the Bottom Sheet is working. Clicking the button should trigger the dialog to slide from the bottom to the top.
 
 ![Modal Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
 #### Set onClick Listener
 
-Each element in the dialog layout can be assigned an action. When an item is clicked, it will redirect the user to the necessary choice of action.
+Each element in the dialog layout can be assigned an action. When an item is clicked, it will redirect the user as specified in the code.
 
-Set `onClick` to each element. In our case, we are designing a dialog boilerplate. We will toast a message to show that an element was clicked. In a real app implementation, you would set the necessary set of actions inside each element according to where you want your users to be directed once a dialog element is selected.
+In our application, we will show a Toast message when an element is clicked. You can make modifications in your future apps to direct users to different activities.
 
-Go ahead and include the following `OnClickListeners` right above `bottomSheetDialog.show()`.
+Add the following `OnClickListeners` right above `bottomSheetDialog.show()`.
 
 ```java
 copy.setOnClickListener(new View.OnClickListener() {
@@ -286,10 +293,9 @@ delete.setOnClickListener(new View.OnClickListener() {
     }
 });
 ```
+We use `bottomSheetDialog.dismiss()` to close the dialog once an element is clicked.
 
-In this case, once a single element is clicked, I chose to close the dialog by specifying `bottomSheetDialog.dismiss()`.
-
-You can also choose a more distinct action, instructing your application to do something when the dialog is dismissed. For instance, the app can start a new activity.
+You can also set a more distinct action, instructing your application to do something when the dialog is dismissed. For instance, the app can launch a new activity.
 
 ```java
 bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
@@ -307,7 +313,7 @@ bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 2. BottomSheetDialogFragment
 A fragment can be displayed as a Bottom Sheet dialog. Go ahead and create a new fragment, call it `BottomSheetFragment`. You can opt to start a new project.
 
-Creating a fragment will generate an XML file associated with it. Go ahead and include your layout design in it. Use the same layout as specified in `bottom_sheet_dialog_layout.xml`. Inflate the layout for this fragment.
+Creating a new fragment will generate an XML file associated with it. Go ahead and include your layout design in it. Use the same layout as specified in `bottom_sheet_dialog_layout.xml`. Inflate the layout for this fragment, as shown below.
 
 ```java
 public class BottomSheetFragment extends Fragment {
@@ -328,10 +334,10 @@ public class BottomSheetFragment extends Fragment {
 }
 ```
 
-Add a button in the `activity_main.xml`, declare it, and set `OnClick` Listener as we explained when using `BottomsheetDialog`.
+Add a button in the `activity_main.xml`, declare it, and set `OnClick` Listener as dicussed in the previous steps.
 
 We want to open the fragment when the button is clicked.
-Indicate the following code block inside the button `OnClick` Listener.
+Indicate the following code block inside the button's `OnClick` Listener.
 
 ```java
 Button bottton = findViewById(R.id.button);
@@ -344,7 +350,7 @@ bottton.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-This won't load a Bottom Sheet dialog. To convert the fragment to a Bottom Sheet is simple. Instead of the fragment extending to the `Fragment`, (`BottomSheetFragment extends Fragment`) make the fragment extent to `BottomSheetDialogFragment`, (`BottomSheetFragment extends BottomSheetDialogFragment`).
+We need to onvert the fragment to a Bottom Sheet. We do so by extending `BottomSheetDialogFragment` rather than `Fragment`.
 
 ```java
 public class BottomSheetFragment extends BottomSheetDialogFragment {
@@ -352,7 +358,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 }
 ```
 
-Run the application, and it should now show the results as expected.
+When you run the application, it should show the dialog shown below.
 
 ![Modal Bottom Sheet Fragment](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
@@ -361,9 +367,9 @@ Check the code used to implement both Modal dialogs on [GitHub](https://github.c
 ### Implementing a Persistent Bottom Sheet dialog
 
 #### Laying out the Bottom Sheet design
-I will use an example of a simple login screen. Instead of showing it within the regular activity layout, I will use a Persistent dialog to slide it into the main screen.
+We will use an example of a simple login screen. Instead of showing it within the regular activity layout, we will use a Persistent dialog to slide it into the main screen.
 
-I have created a `bottom_sheet_dialog_layout.xml` and included the following simple login layout.
+I have created a `bottom_sheet_dialog_layout.xml`file and included the following simple login layout.
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -494,9 +500,7 @@ I have created a `bottom_sheet_dialog_layout.xml` and included the following sim
 
 ![Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet.jpg)
 
-This is not a Bottom Sheet yet. It's just a regular layout. To transform the layout to a Bottom Sheet dialog, a few behavior flags need to add to the root layout. They control the Bottom Sheet behaviors.
-
-These Bottom Sheet behavior properties are added to the root layout of the Bottom Sheet design. Any layout that you need to populate as a Bottom Sheet dialog needs these behavior flags. They can also be added [dynamically using java](https://material.io/components/sheets-bottom/android#handling-insets).
+This is not a Bottom Sheet yet. It's just a regular layout. To transform the layout to a Bottom Sheet dialog, a few declarations should be added to the root layout. These statements will control the Bottom Sheet's behaviors. You can learn more about these attributes from [here](https://material.io/components/sheets-bottom/android#handling-insets).
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -510,19 +514,19 @@ These Bottom Sheet behavior properties are added to the root layout of the Botto
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 ```
 
-This Bottom Sheet behavior flags include;
+The Bottom Sheet behavioral flags include;
 
-- `app:layout_behavior` - applies the `BottomSheetBehavior` into the XML file. This is assigned to `com.google.android.material.bottom sheet`. It is the most important `BottomSheetBehavior` attribute as it defines a given layout as a Bottom Sheet dialog.
+- `app:layout_behavior` - applies the `BottomSheetBehavior` into the XML file. This is assigned to `com.google.android.material.bottomsheet`. It is the most important `BottomSheetBehavior` attribute since it defines a given layout as a Bottom Sheet dialog.
 
 - `app:behavior_hideable` - takes a Boolean value. If `true`, a user can drag and hide the dialog by sliding it down. If false, the dialog will float on the screen and will not be hideable.
 
-- `app:behavior_peekHeight` - it defines the height of the sheet dialog that is visible. A Bottom Sheet can contain diverse content. Peek height highlights a portion of a Bottom Sheet visible to the users before interacting with the other Bottom Sheet components. When an action is triggered, the dialog will expand to reveal the extra content.
+- `app:behavior_peekHeight` - it defines the height of the Bottom Sheet visible to the user. 
 
 ***Remember to add an id to be used to access the layout.***
 
-For a Bottom Sheet to be implemented effectively, it must be a child of `CoordinatorLayout`. To do that, go to your main root XML file of your Activity or Fragment. In our case, it will be the `activity_main.xml`.
+For a Bottom Sheet to be implemented effectively, it must be a child of `CoordinatorLayout`. To do that, go to your main XML file. This could be an Activity or Fragment. In our case, it will be the `activity_main.xml`.
 
-Here is the code to do that
+Here is the code to do that.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -547,7 +551,7 @@ Here is the code to do that
 ![Bottom Sheet Peek Height](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet-peek-height.jpg)
 
 #### Expanding and collapsing the sheet dialog
-To control the sliding and collapsing of the dialog, we use states. There are different states of the Bottom Sheet that you need to understand. They include.
+To control the sliding and collapsing of the dialog, we use states. The Bottom Sheet has several states which you need to understand. They include:
 
 - `STATE_EXPANDED` - the dialog is visible to its maximum defined height.
 - `STATE_COLLAPSED` - the dialog is visible depending on the set `peekHeight`.
@@ -555,9 +559,9 @@ To control the sliding and collapsing of the dialog, we use states. There are di
 - `STATE_SETTLING` - show that the dialog is settling at a specific height. This can be the `peekHeight`, expanded height, or zero if the dialog is hidden.
 - `STATE_HIDDEN` - the dialog is not visible.
 
-The last thing we will do is listen to the state of the dialog. To do that, we will add `BottomSheetCallback` to detect any state changes.
+The last thing we will do is listen to the state of the dialog. We use `BottomSheetCallback` to detect any state changes.
 
-- Declare the necessary parameters
+Declare the following parameters
 
 ```java
 private LinearLayout mBottomSheetLayout;
@@ -565,16 +569,15 @@ private BottomSheetBehavior sheetBehavior;
 private ImageView header_Arrow_Image;
 ```
 
-- Initialize the behavior Bottom Sheet layout and the arrow image
+Initialize the behavior Bottom Sheet layout and the arrow image
 
 ```java
 mBottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
 sheetBehavior = BottomSheetBehavior.from(mBottomSheetLayout);
-
 header_Arrow_Image = findViewById(R.id.bottom_sheet_arrow);
 ```
 
-- We will assign `OnClick` Listener to the arrow vector image. When clicked, we want to expand or collapse the dialog
+- We will assign `OnClick` Listener to the `arrow` vector image. When clicked, we want to expand or collapse the dialog.
 
 ```java
 header_Arrow_Image.setOnClickListener(new View.OnClickListener() {
@@ -591,7 +594,7 @@ header_Arrow_Image.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-- A `BottomSheetCallback` to listen to the `BottomSheetBehavior` state
+Implement a `BottomSheetCallback` to listen to the `BottomSheetBehavior` state
 
 ```java
 sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
@@ -606,7 +609,7 @@ sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback
 });
 ```
 
-`onStateChanged` tells the application what's happening on the dialog depending on the corresponding change of state. `onSlide` will rotate the arrow image (while sliding bottom to top) until when `STATE_EXPANDED` has reached its maximum height. On the other side, the image will rotate to its original state when `STATE_COLLAPSED` is at `peekHeight`.
+`onStateChanged` tells the application what's happening on the dialog depending on the state. `onSlide` will rotate the arrow image (while sliding bottom to top) until when `STATE_EXPANDED` has reached its maximum height. On the other side, the image will rotate to its original state when `STATE_COLLAPSED` is at `peekHeight`.
 
 #### Run the application
 
@@ -615,6 +618,7 @@ sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback
 Check the code used to implement the Persistent dialog on [GitHub](https://github.com/kimkimani/PersistentBottomSheetDialog).
 
 ### Conclusion
-The Bottom Sheet dialog is a unique way to display menus and dialogs. It provides more room to include more content. Bottom Sheet dialogs are diverse. You can choose to implement any view or layout into them. This way, it becomes easier to incorporate extra information distinctly into your application life cycle.
+The Bottom Sheet dialog is a unique way to display menus and dialogs. It provides more room to include content. Bottom Sheet dialogs can accomodate different components. Check out [Material documentation](https://material.io/components/sheets-bottom#behavior) to learn more about the Bottom Sheet dialog. 
 
-Check out [Material documentation](https://material.io/components/sheets-bottom#behavior) and learn more about the Bottom Sheet dialog. There are diverse dialog examples that will help you understand the do and don't when implementing the dialog into your application, such as theming and other more specs.
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
