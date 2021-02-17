@@ -2,16 +2,15 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-language-localization/index.md
-url: /engineering-education/laravel-language-localization/
-title: Laravel Language Localization
-description: This tutorial introduces the basic concepts of localization in Laravel 8.x. This feature ensures that an application adapts to different languages depending on the region.
+url: /engineering-education/laravel-8-email-verification/
+title: Laravel Email Verification
+description: This tutorial introduces the basic concepts of email verification in Laravel 8.x. This feature ensures that only users with authentic emails sign up for a particular service.
 author: miller-juma
 date: 2021-01-19T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/laravel-language-localization/hero.jpg
+  - url: /engineering-education/laravel-8-email-verification/hero.jpg
     alt: laravel language localisation
 ---
 When a new user clicks on the signup button of an application, he or she usually gets a confirmation email with an activation link.  
