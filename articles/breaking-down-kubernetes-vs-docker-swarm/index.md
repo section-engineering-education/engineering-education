@@ -1,3 +1,21 @@
+
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/breaking-down-kubernetes-vs-docker-swarm//
+- title: Breaking Down Kubernetes vs Docker Swarm
+- description: [Kubernetes](https://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) are container orchestration tools that aid the automation and management of microservices in clusters. In this article, we'll explore the fundamentals of Docker and Kubernetes and take a look at the similarities and differences between the two tools.
+- author: eric-kahuha
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/breaking-down-kubernetes-vs-docker-swarm//hero.jpg
+-    alt: Breaking Down Kubernetes vs Docker Swarm example image
+- ---
+
 [Kubernetes](https://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) are container orchestration tools that aid the automation and management of microservices in clusters. They have the sole role of deploying the applications to scale; they assist in the planning and coordinating all the components in the system.
 
 In this article, we'll explore the fundamentals of Docker and Kubernetes and take a look at the similarities and differences between the two tools.
@@ -91,4 +109,7 @@ The nodes in this platform involve a domain name system element used to distribu
 
 ### Conclusion
 
-The two platforms have their strengths and weaknesses but still, get the job done. They each offer clients excellent service, although one may be well suited for one situation to another. Both Kubernetes and Docker Swarm have commendable features that make them efficient, productive, and usable. Any user will relish having either of the two as part of the package in managing operations like deployment, cloud, and storage in the cluster. All in all, when it comes to selecting one, it is all up to you.
+The two platforms have their strengths and weaknesses but still get the job done. They each offer clients excellent service, although one may be well suited for one situation to another. Both Kubernetes and Docker Swarm have commendable features that make them efficient, productive, and usable. Any user will relish having either of the two as part of the package in managing operations like deployment, cloud, and storage in the cluster. All in all, when it comes to selecting one, it is all up to you.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
