@@ -43,7 +43,7 @@ Algorithms that do not make particular assumptions about the kind of mapping fun
 
 One might think that non-parametric means that there are no parameters. However, this is not true. Rather, it simply means that the parameters are not only adjustable but can also change.
 
-[K-nearest neighbors](https://www.geeksforgeeks.org/k-nearest-neighbours/) is an example of a non-parametric algorithm. Its predictions are founded on the k most similar training patterns for a new instance of data. We should note that there are no assumptions made about the form of the mapping function aside from one. It is assumed that most alike' training patterns have a high likelihood of producing a similar output.
+[K-nearest neighbors](https://www.geeksforgeeks.org/k-nearest-neighbours/) is an example of a non-parametric algorithm. Its predictions are based on the k most similar training patterns for a new instance of data. We should note that there are no assumptions made about the form of the mapping function aside from one. It is assumed that most alike' training patterns have a high likelihood of producing a similar output.
 
 We mentioned that linear SVM is an example of a parametric model. This is because basic support vector machines are linear classifiers. However, SVMs not constrained by a set number of parameters are considered non-parametric.
 
