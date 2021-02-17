@@ -1,3 +1,21 @@
+
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/
+- title: StyleGAN: A Style-Based Generator Architecture for Generative Adversarial Networks 
+- description: Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. In this article, we will learn about the StyleGAN architecture in detail. 
+- author: willies-ogola
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/hero.jpg
+-    alt: Hashtables implementation using CRC32 example image
+- ---
+
 ### What is a Generative Adversarial Network (GAN)?
 
 Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. If you go to this [website](https://thispersondoesnotexist.com/), you'll find generated images of people who do not exist.
@@ -15,7 +33,7 @@ So, what are the main problems with GANs?
 ### Challenges with Generative Adversarial Networks
 
 Despite improvements in image quality synthesis, the generator in Generative Adversarial Networks (GANs) still operates as black boxes. For example, the properties of the latent spaces and the understanding of various aspects of the image synthesis process still lack, e.g., the origin of stochastic features. 
-In simple terms, we have no control over the style of the image that is being generated. We only feed in noise (latent noise vector) as the input to the generator and wait for it to churn out images as it's output.
+In simple terms, we have no control over the style of the image that is being generated. We only feed in noise (latent noise vector) as the generator's input and wait for it to churn out images as its output.
 
 ### StyleGAN
 
@@ -37,7 +55,7 @@ The main contributions of the StyleGAN architecture are:
 
 #### The Mapping Network 
 
-The mapping network consists of a multi-layer perceptron (MLP) with eight layers. Its role is to encode the input latent vector z into an intermediate latent space W. This input latent vector z must have the probability density of the training data, thus having a deep effect on how the variation factors have represented the network. Unlike traditional architecture, where the latent vector is provided to the generator through an input layer, with StyleGAN, we start from a learned constant. The input layer is omitted in this architecture.
+The mapping network consists of a multi-layer perceptron (MLP) with eight layers. Its role is to encode the input latent vector z into an intermediate latent space W. This input latent vector z must have the probability density of the training data, thus having a strong effect on how the various factors have represented the network. Unlike traditional architecture, where the latent vector is provided to the generator through an input layer, with StyleGAN, we start from a learned constant. The input layer is omitted in this architecture.
 
 The W vectors are then fed into the Affine Transformation module (A). The letter y represents the output styles of module (A). These outputs, y along with the features of the previous convolutions x, are passed as input to the Adaptive Instance Normalization layers.
 
@@ -73,7 +91,7 @@ This algorithm is shown below:
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1703.06868.pdf)*
 
-The algorithm receives two inputs: input x and style input y. The input x represents features from the previous layer convolutions, while y represents the output styles of the Affine Transformation module (A). It is style input y that controls the style of the images that are being generated. 
+The algorithm receives two inputs: input x and style input y. The input x represents features from the previous layer convolutions, while y represents the Affine Transformation module (A). It is style input y that controls the style of the images that are being generated. 
 
 It is important to note that AdaIN has no learnable parameters. This is unlike batch normalization and instance normalization, which both have learnable parameters. Rather, it adaptively computes the affine parameters from the style input.
 
@@ -147,3 +165,6 @@ This research has greatly helped improve the general understanding and controlla
 6. [Flickr](https://www.flickr.com/)
 7. [Flickr-Faces-HQ Dataset (FFHQ)](https://github.com/NVlabs/ffhq-dataset)
 8. [CELEBA-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
