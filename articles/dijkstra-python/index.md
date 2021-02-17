@@ -250,7 +250,7 @@ ourGraph.graph = [[0, 2, 6, 0, 0, 0, 0],
         [0, 0, 0, 0, 2, 6, 0],
         ]; 
   
-ourGraph.dijkstra(0);
+ourGraph.dijkstra(0)
 
 ```
 
@@ -265,17 +265,17 @@ The constructor takes the parameter `nodes`, which is the number of nodes to ana
 
 ```python
 def __init__(self, nodes):
-#distance array initialization
-self.distArray = [0 for i in range(nodes)]
-#visited nodes initialization
-self.vistSet = [0 for i in range(nodes)]
-#initializing the number of nodes
-self.V = nodes
-#initializing the infinity value
-self.INF = 1000000
-#initializing the graph matrix
-self.graph = [[0 for column in range(nodes)]  
-    for row in range(nodes)]
+    #distance array initialization
+    self.distArray = [0 for i in range(nodes)]
+    #visited nodes initialization
+    self.vistSet = [0 for i in range(nodes)]
+    #initializing the number of nodes
+    self.V = nodes
+    #initializing the infinity value
+    self.INF = 1000000
+    #initializing the graph matrix
+    self.graph = [[0 for column in range(nodes)]  
+        for row in range(nodes)]
 ```
 
 `dijkstra()` takes a parameter, the source node(`srcNode`). It then first initializes each distance to infinity and visited status to false to show the node is unvisited using a for loop and the initial distance from the source node to 0.
@@ -288,25 +288,18 @@ In the last loop, which is in the second loop, the code updates the distance of 
 It then calls the `printSolution()` to display the table after passing the distance array to the function.
 
 ```python
-    def dijkstra(self, srcNode):
-        for i in range(self.V):
-          
-          self.distArray[i] = self.INF
-          
-          self.vistSet[i] = False
-      
+def dijkstra(self, srcNode):
+    for i in range(self.V):  
+        self.distArray[i] = self.INF
+        self.vistSet[i] = False
         self.distArray[srcNode] = 0
-        for i in range(self.V): 
-  
-            u = self.minDistance(self.distArray, self.vistSet) 
-
-            self.vistSet[u] = True
-
-            for v in range(self.V): 
-                if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
-                        self.distArray[v] = self.distArray[u] + self.graph[u][v] 
-  
-        self.printSolution(self.distArray)
+    for i in range(self.V): 
+        u = self.minDistance(self.distArray, self.vistSet) 
+        self.vistSet[u] = True
+        for v in range(self.V): 
+            if self.graph[u][v] > 0 and self.vistSet[v] == False and self.distArray[v] > self.distArray[u] + self.graph[u][v]: 
+                self.distArray[v] = self.distArray[u] + self.graph[u][v] 
+    self.printSolution(self.distArray)
 ```
 
 `minDistance()`checks for the nearest node in the `distArray` not included in the unvisited nodes in the array `vistSet[v]`. It then returns the node's index.
@@ -314,13 +307,11 @@ It takes two arrays as parameters `distArray` and `vistSet[v]`.
 
 ```python
 def minDistance(self, distArray, vistSet): 
-
     min = self.INF
     for v in range(self.V): 
         if distArray[v] < min and vistSet[v] == False: 
             min = distArray[v] 
             min_index = v 
-  
     return min_index
 ```
 
@@ -417,4 +408,4 @@ Have a good one.
 The images used were sourced from [Free Code Camp](https://www.freecodecamp.org/news/dijkstras-shortest-path-algorithm-visual-introduction/).
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
