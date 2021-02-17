@@ -261,4 +261,4 @@ You can check the live application on [netlify](https://scrollbar-site.netlify.a
 
 
 ### Conclusion 
-CSS is a fundamental language for any front-end developer as its among the core styling languages. The language is among the quickest to get started with but one of the hardest to master. This article covers topics on how to use CSS to style scrollbars by building a simple yet practical web page that translates to an even better-looking user interface. I hope you find this tutorial useful. 
+CSS is a fundamental language for any front-end developer as its among the core styling languages. The language is among the quickest to get started with but one of the hardest to master. This article covered topics on how to use CSS to style scrollbars by building a simple yet practical web page that translates to an even better-looking user interface. I hope you find this tutorial useful. 
