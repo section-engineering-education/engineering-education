@@ -1,5 +1,20 @@
-![hero](/engineering-education/multicollinearity/hero.jpg)
-[Image Source](https://images.unsplash.com/photo-1523508685883-61bd1ef9ceaa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/multicollinearity/
+- title: How to Detect and Correct Multicollinearity in Regression Models
+- description: Interpretability of machine learning models helps us understand the predictions of a model. Interpretable models are desirable. However, the interpretability of a regression model may be affected when determining individual features' effects in a model becomes unreliable. A cause of this is multicollinearity. We explore multicollinearity.
+- author: collins-ayuya
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/multicollinearity/hero.jpg
+-    alt: Machine learning multicollinearity example image
+- 
+---
 
 Interpretability of machine learning models helps us understand the predictions of a model. Interpretable models are desirable. However, the interpretability of a regression model may be affected when determining individual features' effects in a model becomes unreliable. A cause of this is multicollinearity. We explore multicollinearity; we learn a method to detect and fix it.
 
