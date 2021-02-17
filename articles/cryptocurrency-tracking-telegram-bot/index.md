@@ -1,35 +1,36 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/cryptocurrency-tracking-telegram-bot/
+title: Building a Cryptocurrency Tracking Telegram Bot with Python
+description: Telegram bots are accounts operated by software that serve as handy tools for many tasks. In this article, we will build a cryptocurrency tracking telegram bot using Python. 
+author: solomon-esenyi
+date: 2021-02-17T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
- ---
-- layout: engineering-education
-- status: publish
-- published: true
-- url: /engineering-education/cryptocurrency-tracking-telegram-bot/
-- title: Building a Cryptocurrency Tracking Telegram Bot with Python
-- description: Telegram bots are accounts operated by software that serve as handy tools for many tasks. In this article, we will build a cryptocurrency tracking telegram bot using Python. 
-- author: solomon-esenyi
-- date: 2021-02-17T00:00:00-18:00
-- topics: []
-- excerpt_separator: <!--more-->
-- images:
-
--  - url: /engineering-education/cryptocurrency-tracking-telegram-bot/hero.jpg
--    alt: Telegram Bot to track cryptocurrencies image
-- ---
-
-Telegram bots are accounts operated by software that serve as handy tools for a lot of tasks. This article will go through what Telegram bots are, how to use them, and their development process in Python. We will also build a Telegram bot to track cryptocurrencies and send regular updates on prices to understand them completely.
-
+  - url: /engineering-education/cryptocurrency-tracking-telegram-bot/hero.jpg
+    alt: Telegram Bot to track cryptocurrencies image
+---
+Telegram bots are accounts operated by software that serve as handy tools for many tasks. This article will go through what Telegram bots are, how to use them, and their development process in Python. We will also build a Telegram bot to track cryptocurrencies and send regular updates on prices to better understand them.
+<!--more-->
 ### Introduction
+Telegram is a trendy social media platform for messaging and privacy. 
 
-Telegram is a trendy social media platform for messaging and privacy. Its core functionalities include:
+Its core functionalities include:
 - Sending messages to other Telegram users.
 - Calling contacts.
 - Sending files and stickers.
 - Creating group chats and channels.
 - Cloud backup
 
-You can learn more about Telegram here: <https://telegram.org>.
+You can learn more about Telegram [here](https://telegram.org).
 
-Telegram bots are accounts that are operated by software. They can do a lot of things, including:
+Telegram bots are accounts that are operated by software. 
+
+They can do many things, including:
 - Teaching users.
 - Broadcasting messages.
 - Playing games.
@@ -37,25 +38,27 @@ Telegram bots are accounts that are operated by software. They can do a lot of t
 - Serving as reminders.
 - Passing commands to Internet of Things (IoT) devices.
 - Connecting and integrating with other services.
+
 [@GroupButler_bot](https://t.me/groupbutler_bot) is a Telegram bot for managing Telegram groups.
 
 ![telegram group butler](/engineering-education/cryptocurrency-tracking-telegram-bot/ngcq6rvjxrpoibsspq9g.png)
 
-Cryptocurrencies are digital forms of currencies that exist in the cyber world. They are peer-to-peer and built upon blockchain technology, a distributed and decentralized ledger with no central authority. Popular cryptocurrencies include Bitcoin, Ethereum, Litecoin, Doge, and Ripple.
+Cryptocurrencies are digital forms of currencies that exist in the cyber world. They are peer-to-peer and built upon [blockchain technology](/engineering-education/history-of-blockchain/), a distributed and decentralized ledger with no central authority. Popular cryptocurrencies include Bitcoin, Ethereum, Litecoin, Doge, and Ripple.
 
-### Building a Cryptocurrency Tracker
-
-Cryptocurrencies are volatile, so their prices change every second. There are also many cryptocurrencies in existence, and it can be troublesome to keep track of everyone. A cryptocurrency tracker aggregates multiple coins' prices in a single place and updates itself as their prices change.
+### Building a cryptocurrency tracker
+Cryptocurrencies are volatile, so their prices change every second. There are also many cryptocurrencies in existence, and it can be troublesome to keep track of every one. A cryptocurrency tracker aggregates multiple coins' prices in a single place and updates itself as their prices change.
 
 This article will build a cryptocurrency tracker by consuming data provided by [CryptoCompare API](https://min-api.cryptocompare.com) using Python.
 
-First, we need to install the [Requests](https://requests.readthedocs.io/en/master/) library, which extends Python programs' functionality by providing functions that allow them to make HTTP requests. Here, we will be using it to communicate with the CryptoCompare API. In the terminal, type:
+First, we need to install the [Requests](https://requests.readthedocs.io/en/master/) library, which extends Python programs' functionality by providing functions that allow them to make HTTP requests. Here, we will be using it to communicate with the CryptoCompare API. 
 
-```
+In the terminal, type:
+
+```bash
 pip install requests
 ```
 
-Second, we need to write code responsible for sending requests to CryptoCompare to fetch the current prices of currencies we wish to track. CryptoCompare provides an endpoint that returns the data we require so that we will be consuming that.
+Second, we need to write the code responsible for sending requests to CryptoCompare to fetch the current prices of currencies we wish to track. CryptoCompare provides an endpoint that returns the data we require so that we will be consuming that.
 
 Create a file named `tracker.py` and save the following code in it:
 
@@ -85,19 +88,16 @@ This is the expected output from the code above when executed:
 
 ![crypto tracker output](/engineering-education/cryptocurrency-tracking-telegram-bot/2en1wn0m-8gcycfjmtvs.png)
 
-### Building a Telegram Bot
-
+### Building a Telegram bot
 #### Step 1: Launch BotFather on Telegram
-
 Search for `@botfather` on Telegram and launch the bot. BotFather is a bot that helps us create and manage Telegram bot interfaces.
 
 ![telegram botfather](/engineering-education/cryptocurrency-tracking-telegram-bot/2frh-rcjna_zv5g1epn7.png)
 
-![chatting with botfather ](/engineering-education/cryptocurrency-tracking-telegram-bot/ru4lx8fvo0u5nnmmp5bj.png)
+![chatting with botfather](/engineering-education/cryptocurrency-tracking-telegram-bot/ru4lx8fvo0u5nnmmp5bj.png)
 
-#### Step 2: Create a Telegram Bot Interface
-
-To create a new bot with BotFather. First, use the `/newbot` command, which will trigger BotFather to ask you for the details of the bot you want to create.
+#### Step 2: Create a Telegram bot interface
+To create a new bot with BotFather. First, use the `/newbot` command, that will trigger BotFather to ask you for the details of the bot you want to create.
 
 ![create new bot](/engineering-education/cryptocurrency-tracking-telegram-bot/w9cqynzuungmtirs_gg6.png)
 
@@ -107,18 +107,18 @@ BotFather will give you the HTTP token after you have supplied the name and user
 
 ![get bot token](/engineering-education/cryptocurrency-tracking-telegram-bot/drowpxw1kqxlc2sw7ct8.png)
 
-#### Step 3: Connect To Telegram API via Python
-
-First, we will be installing a couple of Python libraries that allow us easily interact with the Telegram API. You can also refer to Telegram API documentation if you want to explore the full functionality of Telegram bots here <https://core.telegram.org/bots>.
+#### Step 3: Connect to the Telegram API via Python
+First, we will be installing a couple of Python libraries that will allow us to easily interact with the Telegram API. You can also refer to Telegram API documentation if you want to explore the full functionality of Telegram bots [here](https://core.telegram.org/bots).
 
 In the terminal, type:
-
-```
+```bash
 pip install telegram
 pip install python_telegram_bot
 ```
 
-Second, we need to write another Python script that will connect to the Telegram API and listen to messages sent to our bot then respond to them. Create a file named `bot.py` and save the code below in it:
+Second, we need to write another Python script that will connect to the Telegram API and listen to messages sent to our bot then respond to them. 
+
+Create a file named `bot.py` and save the code below in it:
 
 ```Python
 import telegram
@@ -152,8 +152,7 @@ This is the expected response from our Telegram bot when the `bot.py` script is 
 
 ![message our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/3svqucj7ez1ntgridksb.png)
 
-### Integrating Cryptocurrency Tracking to Our Bot
-
+### Integrating cryptocurrency tracking to our bot
 Now we have a script that tracks cryptocurrency prices and a Telegram bot that responds to messages sent to it. Let us build a Telegram bot that will fetch cryptocurrency data from CryptoCompare and send it to users.
 
 We need to update our `bot.py` file with the following code:
@@ -193,17 +192,16 @@ This is the expected response from our Telegram bot when the `bot.py` script is 
 
 ![testing our bot](/engineering-education/cryptocurrency-tracking-telegram-bot/foniwp8tirtgmrqugcxc.png)
 
-### Resources
-
-
-- <https://core.telegram.org/bots>
-- <https://python-telegram-bot.readthedocs.io/en/stable/>
-
 ### Conclusion
-
 In this article, we learned what Telegram bots are and built our first Telegram bot. We also built a script to track cryptocurrency prices and integrated it into a Telegram bot to build a handy tool for us.
 
-Looking to develop the Telegram bot further, improve the design or check out example code? Check out the [Github Repo](https://github.com/LordGhostX/telegram-crypto-tracker). You can also access the bot built in this article [here](https://t.me/lordghostx_cryptobot). I hope you find this tutorial on building telegram bots useful.
+Looking to develop the Telegram bot further, improve the design or check out example code? Check out the [GitHub Repo](https://github.com/LordGhostX/telegram-crypto-tracker). 
+
+You can also access the bot built in this article [here](https://t.me/lordghostx_cryptobot). I hope you find this tutorial on building telegram bots useful.
+
+### Resources
+- https://core.telegram.org/bots
+- https://python-telegram-bot.readthedocs.io/en/stable/
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
