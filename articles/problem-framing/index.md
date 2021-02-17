@@ -16,8 +16,6 @@
 -    alt: Problem framing in machine learning example image
 - ---
 
-![hero](/engineering-education/problem-framing/hero.jpg)
-
 
 Choosing a machine learning method to implement on data is not the easiest of processes. It is essential first to understand the precise business problem and its objectives. For instance, understanding what is to be predicted and the potential outcomes is critical. One also needs to know what data should be used to train a model, among other factors. Such considerations help in the framing of a machine learning problem. In this article, we look at how to frame a machine learning problem correctly.
 
