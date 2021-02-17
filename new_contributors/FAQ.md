@@ -38,5 +38,8 @@ Article payout will be as follows:
 - Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
 - Articles with (3+) and up rounds of revisions) we will consider closing the PR
 
+### How does one apply to be a Peer Reviewer?
+
+
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
