@@ -1,30 +1,16 @@
-### Building a React.js Application Using Django REST framework
-
-
-
-![admin panel](header.jpg)
-
-### Introduction
-
-
-In this article, we build a Todo application using React and Django.
-
-[React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs.
-
-[Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
+In this article, we build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
 
 We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
 ### Prerequisites
 
-
 Basic knowledge of `React`, `Python(Django)` is required but I'll be able to try and boil things down as possible.
 
-You can check out this articles to get started with React and Python:
+You can check out these articles to get started with React and Python:
 
-[Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
+- [Introduction to React](https://www.freecodecamp.org/news/react-introduction-for-people-who-know-just-enough-jquery-to-get-by-2019-version-28a4b4316d1a/)
 
-[Django Tutorials](https://realpython.com/tutorials/django/)
+- [Django Tutorials](https://realpython.com/tutorials/django/)
 
 Before getting our hands dirty, you may need to:
 
@@ -34,7 +20,6 @@ Before getting our hands dirty, you may need to:
 
 ### Step 1: Backend using Django
 
-
 From a terminal create a new project directory called `django-react-todoApp`
 
 ```bash
@@ -42,7 +27,7 @@ mkdir django-react-todoApp
 cd django-react-todoApp
 ```
 
-We must have `pip` and virtual environment activated to be able to install django. 
+We must have `pip` and a virtual environment activated to be able to install django. 
 
 ```bash
 pip install pipenv
@@ -67,7 +52,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-If everything works you should see the Congratulations page from Django.
+If everything works you should see the "Congratulations" page from Django.
 
 Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
 
@@ -102,7 +87,7 @@ class Todo(models.Model):
      return self.title
 ```
 
-The code explains:
+The model contains:
 
 - Title: What the task is.
 
@@ -152,9 +137,7 @@ We can now add and delete items from the admin page. Great!
 
 ### Step 2: Putting in the APIs
 
-
-You can learn more about APIs in this amazing [article]
-(https://www.section.io/engineering-education/rest-api/)
+You can learn more about APIs in this amazing [article](https://www.section.io/engineering-education/rest-api/)
 
 Install the `djangorestframework` and `django-cors-headers`:
 
@@ -199,17 +182,17 @@ CORS_ORIGIN_WHITELIST = [
 
 Django-cors-headers helps in handling the server headers required for Cross-origin Resource Sharing (CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
-Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. For instance in our application, the `http://localhost:3000` is the default port for React and we will use it from our Django backend to serve the API. 
+Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. For instance in our application, the `http://localhost:3000` is the default port for React and we will use it from our Django backend to serve the API.
+
+Now, Let's create a serializer file.
 
 Serializers allow complex data such as querysets and model instances to be converted to native python dataypes that can then be easily rendered into JSON, XML, or other content types.
-
-Let us create a serializer file:
 
 ```bash
 touch todo/serializers.py
 ```
 
-Let us add this to  `serializers.py` file:
+Let us add this to `serializers.py` file:
 
 ```python
 # todo/serializers.py
@@ -271,11 +254,9 @@ python manage.py runserver
 
 ![api](json.jpg)
 
-
 We have set our backend let us move forward to frontend.
 
 ### Step 3: Frontend using React
-
 
 To install `create-react-app` use the following command. `-g` stands for global as we are first installing `create-react-app` globally:
 
