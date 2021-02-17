@@ -43,15 +43,6 @@ django-admin startproject backend
 
 Now that we have created our project, let's go ahead and create an application called `todo` and migrate the models into the database.
 
-Migration at this point is not really necessary but let's just go ahead and do it. 
-
-```bash
-cd backend
-python manage.py startapp todo
-python manage.py migrate
-python manage.py runserver
-```
-
 If everything works you should see the "Congratulations" page from Django.
 
 Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
@@ -95,12 +86,15 @@ The model contains:
 
 - Completed: Completed is the status of a task; either completed or not completed.
 
+We need to tell Django which attribute to use by default when it displays information about Todo. Django calls a `_str_()` method to display a simple representation of a model. Here we've written a `_str_()` method that returns the string stored in the `title` attribute.
+
 Let us run migrations to add our model to the database schema.
 
 ```bash
 python manage.py makemigrations todo
 python manage.py migrate todo
 ```
+Django comes with a built-in admin interface. With Django's admin we can authenticate users, display and handle forms automatically. It reads data from our models to provide a quick interface where trusted users can manage content on your site.
 
 We can add models to our Admin page using the `admin.site.register()` functions. In the todo app's `admin.py`, let's add the model to our admin page.
 
@@ -117,7 +111,7 @@ class TodoAdmin(admin.ModelAdmin):
   admin.site.register(Todo, TodoAdmin)
 ```
 
-An administration page is crucial to any website that deals with dynamic content. Django was built to make that functionality easier.
+Let's create a superuser for the admin page to login.
 
 ```bash
 python manage.py createsuperuser
@@ -223,6 +217,12 @@ class TodoView(viewsets.ModelViewSet):   # add this
     queryset = Todo.objects.all()        # add this
 ```
 
+A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines how the page will look like.
+
+A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
+
+The `ModelViewSet` is an extention of the `ViewSet`. It inherits from `GenericAPIView` which provide the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
+
 In the `backend/urls.py` we define the URL routes for the API:
 
 ```python
@@ -242,7 +242,17 @@ urlpatterns = [
 ]
 ```
 
-That completes the building of the API. The `router` enables  us to create the subsequent operations:
+URL stand for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
+
+Making webpages in Django involves three steps: defining URLs, writing views and writing templates.
+
+Defining URL pattern describes the way the URL is laid out and tells Django what to look for when matching a browser request with a site URL so it knows which site to return.
+
+The body of the file defines the `urlpatterns` variable. The `urlpatterns` variable includes sets of URLs, one is the module `admin.site.urls`, which defines all the URLs that can be requested from the admin site.
+
+The next module is the `router.urls` which provides routing for our API.
+
+The `router` enables  us to create the subsequent operations:
 
 * `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
 
