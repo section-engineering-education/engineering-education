@@ -236,7 +236,7 @@ This code has a form that you can use to add a book, it has a method addBook, an
 
 ---
 
-Each book needs a unique id, we will use javascript Math.random function to generate unique ids.
+Each book needs a unique id, we will use javascript Math.random method to generate unique ids.
 
 ---
 
