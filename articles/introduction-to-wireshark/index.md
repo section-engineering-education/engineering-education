@@ -1,4 +1,21 @@
 
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/introduction-to-wireshark/
+- title: Introduction to Wireshark
+- description: ***Wireshark*** is an open-source project whose primary purpose is to develop a standard analysis tool for network protocols. In this article, we will consider installing Wireshark on an Ubuntu machine and proceed further with mapping data packets using the same.  
+- author: miller-juma
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/introduction-to-wireshark/hero.jpg
+-    alt: Introduction to wireshark example image
+- ---
+
 ### Requirements
 * Networking Basics
 * TCP/IP stack
@@ -8,12 +25,12 @@
 
 ### Introduction
 
-As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used in the analysis of network packets.  
+As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, a tool mostly used to analyze network packets.  
 In this tutorial, we will be looking at an overview of ***Wireshark***, how it works, and its other several uses. 
 
 ### What is ***Wireshark***?  
 
-***Wireshark*** is an open-source project whose main purpose is to develop a standard analysis tool for network protocols.  
+***Wireshark*** is an open-source project whose primary purpose is to develop a standard analysis tool for network protocols.  
 It's a network packet analyzer that captures data on a network then presenting in a human-understandable form.  
 This tool performs various operations such as:  
 * Troubleshooting networks.
@@ -36,7 +53,7 @@ In this tutorial, we are installing ***Wireshark*** in Ubuntu 20.04. By followin
 sudo apt update
 ```
 
-This outputs the following,remember your output might be different from the one shown below:  
+This outputs the following, remember your output might be different from the one shown below:  
 
 ```bash
 
@@ -85,7 +102,7 @@ Upon completion, it prompts you to configure Wireshark for root privileges using
 
 ![Configure-wireshark](/engineering-education/introduction-to-wireshark/configure-wireshark.jpg)
 
-Using the arrow keys, select the ***yes*** or ***no*** depending on your need, then press enter.  
+Use the arrow keys, select the ***yes*** or ***no*** depending on your need, and then press enter.  
 
 #### Step 4: Verify Wireshark Installation
 Run the following command to get the version of ***Wireshark*** you have installed:-  
@@ -145,7 +162,7 @@ Below menus above are the:-
 and several other icons that you can hover on and get to know what they do.  
 
 ### 2. Wireshark network interface selection
-Normally, when you start a ***Wireshark*** without opening a capture file or starting a capture process, a welcome screen is displayed.  
+Usually, when you start a ***Wireshark*** without opening a capture file or starting a capture process, a welcome screen is displayed.  
 This window will always display currently opened capture files and the capture available interfaces.  
 
 Therefore the first step involves selecting the network interface to capture its data.  
@@ -171,11 +188,11 @@ At this stage, you should be able to get an output like the one presented below.
 
 In the capture panel above, you're able to notice that network packet capturing is in sequential order, with each line representing each packet captured.  
 
-The details, with rows and columns, is displayed in tabular form.
-Each row represents the collected packet, while additional information such as time, protocols, duration, et cetera is given in columns. You should refer to the above screenshot.   
+The details, with rows and columns, are displayed in tabular form.
+Each row represents the collected packet, while additional information such as time, protocols, duration, et cetera is given in columns. It would be best if you referred to the above screenshot.   
 
 Let's have a look at these columns and what type of information they provide us with.  
-* ***No*** - Represents a specific sequence number of the network packet. To classify a given packet, this can be used.  
+* ***No*** - Represents a specific sequence number of the network packet. To classify a given packet, one can use this.  
 * ***Time***- This is the time that a specific packet has been recorded.  
 * ***Source***- This represents where we are getting the packets from. This is denoted as Internet Protocols(IP Addresses).
 * ***Destination***- This is used to represent the Internet Protocol(IP Address) where the packet is going.  
@@ -183,13 +200,13 @@ Let's have a look at these columns and what type of information they provide us 
 * ***Length***- This is used to represent the size of the packet captured.
 * ***Info***- This gives you additional information about the packet you have captured.  
 
-NOTE: Each protocol is represented with its color scheme. In our case, for example, the ***TCP*** protocol has a ***#cccccc*** background.  This helps the user to easily differentiate between these protocols.  
+_NOTE_: Each protocol is represented with its color scheme. In our case, for example, the ***TCP*** protocol has a ***#cccccc*** background.  This helps the user to differentiate between these protocols easily.  
 
 
-Congratulations, you have been able to capture network packets, and that's how simple ***Wireshark*** is user friendly. 
+Congratulations, you have been able to capture network packets, and that's how simple ***Wireshark*** is user-friendly. 
 
 ### Packet details panel:-
-Now that we can capture some data try to click on a single row, and you will notice that some data are being displayed on the immediate window.  
+Now that we can capture some data, try to click on a single row, and you will notice that some data are being displayed on the immediate window.  
 
 ***Fig 1.5 Packet details***
 ![Single-Packet-Details](/engineering-education/introduction-to-wireshark/wireshark-single-packet-details.jpg)
@@ -198,22 +215,22 @@ On the highlighted protocol, click on it to get more details about this SSDP pro
 ***Fig 1.6 More on packet details***
 ![Protocol-details](/engineering-education/introduction-to-wireshark/wireshark-protocol-details.jpg)
 
-The information above tells us more about the packet captured, including the device used. This data is very important, especially in system hacks, where they can be collected for forensics.  
+The information above tells us more about the packet captured, including the device used. This data is critical, especially in system hacks, where they can be collected for forensics.  
 
 ### Packet bytes panel
-From the above packet details, remember when you clicked a given row, you could get details on the window on ***fig 1.6*** above. Consequently, this caused the window below ***Fig 1.6*** to be updated as well.  
+Remember when you clicked a given row from the above packet details, you could get details on the window on ***fig 1.6*** above. Consequently, this caused the window below ***Fig 1.6*** to be updated as well.  
 
 Let's have a look how it looks like.  
 ***Fig 1.7 Bytes details***
 ![bytes-panel](/engineering-education/introduction-to-wireshark/wireshark-bytes-panel.jpg)
 
-A closer look at this screenshot, the numbers are in bytes. This is the actual format of the data dump when the packet was captured.  
+A closer look at this screenshot, the numbers are in bytes. This is the exact format of the data dump when the packet is captured.  
 
 
 ### Conclusion
 
 In this tutorial, we worked on ***Wireshark***, giving a quick overview of how to get started with this amazing tool.  
-We have also seen how we can install ***Wireshark*** in a Linux based system and how to perform various tasks such as dumping the packet streams.  
+We have also seen how we can install ***Wireshark*** in a Linux-based system and perform various tasks such as dumping the packet streams.  
 We will explore in our next tutorial as we discuss more advanced features of ***Wireshark***.  
 
 ---
