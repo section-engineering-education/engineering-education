@@ -275,7 +275,11 @@ watch: {
 }
 ```
 localStorage uses the setItem method to save data as key-value pair, the data must be a string so we convert the JSON into a string in order to save it using [JSON.stringify](https://www.geeksforgeeks.org/javascript-json-stringify-method/#:~:text=The%20JSON.,the%20form%20of%20the%20strings.) method.
+<<<<<<< HEAD
 ### Load data from local storage
+=======
+4.2 Load data from local storage
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
 We need to display the saved data from local storage to the user, we use a lifecycle hook called [mounted](https://vuejs.org/v2/api/#mounted) that’s executed after Vue instance has been created.
 In the cycle hook, we use the method ```localStorage.getItem(‘key’)``` to retrieve data from localStorage. The same key we used to store is the same we’ll use to retrieve the data.
 Add the code below just after the watch method.
@@ -298,9 +302,12 @@ Update the BookItem.vue file with the following code
 </div>
 ```
 I added a bootstrap CSS CDN link in the index.html file, you can style yours to look much better.
+<<<<<<< HEAD
 ```
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 ```
+=======
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
 When you click delete, an event is emitted to pass book id to the parent (Books.vue).
 In the Books.vue file update code to this below
 ```
@@ -320,7 +327,11 @@ methods: {
 
 In the parent component, let’s make some changes.
 <Books v-bind:books="books" v-on:del-book-event="deleteBookItem" />
+<<<<<<< HEAD
  The child event was captured and assigned to a method ```deleteBookItem```, this method will help us delete the book item that was clicked on. Remember the ID we passed from BookItem to Books up to the App component, it will be used to delete the book. Using JavaScript filter method to create the books array excluding the book with the passed id. We will use es6 arrow function as below, this returns all the books except the one with the ID passed.
+=======
+ The child event was captured and assigned to a method ```deleteBookItem```, this method will help us delete the book item that was clicked on. Remember the ID we passed from BookItem to Books up to the App component will be used to delete the book. Using JavaScript filter method to create the books array excluding the book with the passed id. We will use es6 arrow function as below, this returns all the books except the one with the ID passed.
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
  ```vue
   deleteBookItem(id){
      this.books = this.books.filter(book => book.id !== id);
@@ -341,7 +352,11 @@ Just like we did while deleting data, make changes to the BookItem.vue to add an
 </template>
 ```
 
+<<<<<<< HEAD
  An event called ```edit-book-item``` is emitted and passed with it the book id to its parent (Books.vue). In the Books.vue listen to the event and assign it to a method called ```editBookMethod``` just like below
+=======
+ An event called ```edit-book-item``` is emitted and passed with it the book id to its parent (Books.vue) Remember to style your app to look much better. In the Books.vue listen to the event and assign it to a method called ```editBookMethod``` just like below
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
 <BookItem  v-bind:book="book"  v-on:del-book-item="delBookMethod" v-on:edit-todo-item="editBookMethod" />
 Using the method send an event to its parent (App.vue) and along with it pass the book id.
 
@@ -353,7 +368,11 @@ editBookMethod(id){
 
 ```
 
+<<<<<<< HEAD
 In the parent make changes to capture the event ```edit-book-event``` from Books component, and assign it to a method ```editBookItem```. In the data create a new object called editBook which will hold the data being edited. The object should have a title and an ID both should be empty strings.
+=======
+In the parent make changes to capture the event edit-book-event from Books component, and assign it to a method ```editBookItem```. In the data create a new object called editBook which will hold the data being edited. The object should have a title and an ID both should be empty strings.
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
 ```vue
 data () {
   return {
@@ -372,6 +391,10 @@ Now in the method ```editBookItem``` we need to find the index of the object’s
 editBookItem(id){
   //find the index of the book's id
   var objIndex = this.books.findIndex(obj=> obj.id === id);
+<<<<<<< HEAD
+=======
+  console.log('objIndex',objIndex)
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
   this.editBook.title = this.books[objIndex].title;
   this.editBook.id = id;
 },
@@ -425,7 +448,11 @@ addBook(e){
 ``` 
 
 By now you can click on the edit button and the input field will be populated with the book title. 
+<<<<<<< HEAD
 The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set ```deep:true``` property to let the Vue instance continuously watch for changes, so while editing the edit property will always be true, it also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
+=======
+The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set ```deep:true``` property to let the Vue instance continuously watch changes, so while editing the edit property will always be true, it also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
+>>>>>>> d615e25c4c69c7d09fb2d4688de278ffe0b8ba9e
 ```vue
 watch: {
     editBook: {
