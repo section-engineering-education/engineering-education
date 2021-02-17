@@ -1,8 +1,25 @@
+
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/problem-framing/
+- title: Problem Framing in Machine Learning
+- description: Choosing a machine learning method to implement on data is not the easiest of processes. It is essential first to understand the precise business problem and its objectives. For instance, understanding what is to be predicted and the potential outcomes is critical. In this article, we look at how to frame a machine learning problem correctly.
+- author: collins-ayuya
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/problem-framing/hero.jpg
+-    alt: Problem framing in machine learning example image
+- ---
+
 ![hero](/engineering-education/problem-framing/hero.jpg)
 
-[Image Source](https://images.unsplash.com/photo-1587093336587-eeca6cb17cf2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80)
 
-Choosing a machine learning method to implement on data is not the easiest of processes. It is important to first understand the precise business problem and its objectives. For instance, understanding what is to be predicted and the potential outcomes is key. One also needs to know what data should be used to train a model, among other factors. Such considerations help in the framing of a machine learning problem. In this article, we look at how to correctly frame a machine learning problem.
+Choosing a machine learning method to implement on data is not the easiest of processes. It is essential first to understand the precise business problem and its objectives. For instance, understanding what is to be predicted and the potential outcomes is critical. One also needs to know what data should be used to train a model, among other factors. Such considerations help in the framing of a machine learning problem. In this article, we look at how to frame a machine learning problem correctly.
 
 ### Contents
 
@@ -12,7 +29,7 @@ Choosing a machine learning method to implement on data is not the easiest of pr
 
 ### Prerequisites
 
-An understanding of the basic concepts of machine learning. Introductory concepts to machine learning covered in this [article](/engineering-education/supervised-learning-algorithms/) may prove helpful. The introduction to machine learning section of this [article](/engineering-education/feature-engineering-in-machine-learning/) may also provide value.
+An understanding of the basic concepts of machine learning. Introductory concepts to machine learning covered in this [article](/engineering-education/supervised-learning-algorithms/) may prove helpful. The introduction to the machine learning section of this [article](/engineering-education/feature-engineering-in-machine-learning/) may also provide value.
 
 ### Machine learning workflow
 
@@ -28,11 +45,11 @@ A basic machine learning project workflow has four stages:
 
 The data analysis stage involves handling and refining the data that is available to build the model. Model building is a stage where the desired model is selected for use. The available dataset is divided into training and test sets (validation sets too, where necessary). The model is trained and tested. The last stage involves the application of the model. Its performance is evaluated in a production setting.
 
-We are concerned with the first stage. Problem framing is the stage that involves defining the problem one seeks to solve. It involves outlining the goals of a given project. This stage shapes the rest of the machine learning process. It provides some sort of “checklist” before proceeding with the subsequent stages. We get to understand the problem that is to be solved. We get to understand whether machine learning is a suitable solution. The availability and sources of data are examined, among other considerations. In this article, we consider problem framing in a business/organizational context.
+We are concerned with the first stage. Problem framing is the stage that involves defining the problem one seeks to solve. It involves outlining the goals of a given project. This stage shapes the rest of the machine learning process. It provides some “checklist” before proceeding with the subsequent stages. We get to understand the problem that is to be solved. We get to understand whether machine learning is a suitable solution. The availability and sources of data are examined, among other considerations. In this article, we consider problem framing in a business/organizational context.
 
 ### Why problem framing is a challenge
 
-Framing the correct problem in real-world data science projects may involve more process than one would think. As much as it is worth noting that a data scientist’s role varies from company to company, problem framing is more of a challenge in organizations yet to become data-driven. Let’s look at a few reasons why.
+Framing the correct problem in real-world data science projects may involve more processes than one would think. As much as it is worth noting that a data scientist’s role varies from company to company, problem framing is a challenge in organizations yet to become data-driven. Let’s look at a few reasons why.
 
 #### Complex datasets
 
@@ -43,9 +60,9 @@ It is common to find that the datasets available for use are complex. A dataset 
 
 #### Little or no domain knowledge
 
-The understanding of a specialized field or discipline is what we refer to as domain knowledge. A data scientist with domain knowledge in a field that a machine learning system intends to operate has an edge over one that lacks it. It might be a challenge to gather domain knowledge as a data scientist. Consider a context where a data scientist typically works on projects in different or unrelated domains. Since the domain often changes, a data scientist may have to rely on the organization they work to determine features for use in a model. 
+The understanding of a specialized field or discipline is what we refer to as domain knowledge. A data scientist with domain knowledge in a field that a machine learning system intends to operate has the edge over one that lacks it. It might be a challenge to gather domain knowledge as a data scientist. Consider a context where a data scientist typically works on projects in different or unrelated domains. Since the domain often changes, a data scientist may have to rely on the organization they work to determine features for use in a model. 
 
-For a healthcare dataset, such a data scientist may have to work with doctors to cover for the lack of domain experience. The features or variables for use in the model end up being dependent on medical professionals' guidance. This complicates the process of problem framing.
+For a healthcare dataset, such a data scientist may have to work with doctors to cover the lack of domain experience. The features or variables for use in the model end up being dependent on medical professionals' guidance. This complicates the process of problem framing.
 
 #### Organizational inability to leverage data
 
@@ -55,13 +72,13 @@ A data scientist working in such an organization may be tasked with using such d
 
 #### Inadequate data
 
-To frame a machine learning problem, a key requirement is data. Let’s look at a scenario where a data scientist is working for a company attempting to leverage data science. Let’s assume the company is looking to use data to help in attaining product-market fit. The company may not have enough (or any) data for analysis.
+To frame a machine learning problem, an essential requirement is data. Let’s look at a scenario where a data scientist works for a company attempting to leverage data science. Let’s assume the company is looking to use data to help in attaining product-market fit. The company may not have enough (or any) data for analysis.
 
-A data scientist in this setup may need to liaise with upper management, product development teams, marketing, and sales teams to understand the company's aspirations and needs before devising how the problem may be framed. The team may then carry out methods to collect data. These methods may be in the form of experiments as well as surveys. If the company already has a product in the market, data such as user reviews may be especially useful. The collected data may be used as sample data.
+In this setup, a data scientist may need to liaise with upper management, product development teams, marketing and sales teams to understand its aspirations and needs before devising how the problem may be framed. The team may then carry out methods to collect data. These methods may be in the form of experiments as well as surveys. If the company already has a product in the market, data such as user reviews may be instrumental. The collected data may be used as sample data.
 
 ### Problem framing best practices
 
-It is important to acknowledge problems vary from domain to domain. As such, this is not a one size fits all approach. The steps to framing a machine learning problem may differ based on context. I attempt to highlight the steps I find to be most important.
+It is essential to acknowledge problems vary from domain to domain. As such, this is not a one size fits all approach. The steps to framing a machine learning problem may differ based on context. I attempt to highlight the steps I find to be most important.
 
 #### Defining success
 
@@ -80,7 +97,7 @@ Once we understand what counts as a successful project, we may deliberate on whi
 •	What period will it take to evaluate the success (or failure) of the model?
 
 
-Let’s use our example of categorizing customers based on their habits. Success would involve correctly categorizing customers into their respective segments. As a result, a key performance metric may be classification accuracy. We can measure these metrics after a set period that would allow us to gather enough data. The data should also be obtained from the right sources and be of the right quality. The duration to evaluate whether the model is a success or failure would depend on the goals of the organization. For example, quarterly goals would help in determining a period for assessment. It might be said that if no product-market fit is attained within a given quarter, it may be deemed as an unsuccessful model.
+Let’s use our example of categorizing customers based on their habits. Success would involve correctly categorizing customers into their respective segments. As a result, a key performance metric may be classification accuracy. We can measure these metrics after a set period that would allow us to gather enough data. The data should also be obtained from the right sources and be of the right quality. The duration to evaluate whether the model is a success or failure would depend on the organization's goals. For example, quarterly goals would help in determining a period for assessment. It might be said that if no product-market fit is attained within a given quarter, it may be deemed as an unsuccessful model.
 
 #### Assessing feasibility of machine learning
 
@@ -108,17 +125,17 @@ A question we would have to ask is how many categories our problem would yield. 
 
 ##### Regression
 
-A regression problem would have us considering whether to implement linear, logistic, or multiple linear regression. 
+A regression problem would have us considering whether to implement linear, logistic or multiple linear regression. 
 
 **Linear regression.** If our problem involves just a single independent variable, then linear regression would be most appropriate. 
 
-**Multiple linear regression.** In case our regression problem involves more than a single independent variable, we would use multiple linear regression.
+**Multiple linear regression.** If our regression problem involves more than a single independent variable, we will use multiple linear regression.
 
-**Logistic regression.** For a logistic regression model, we would have to model data in binary values. It involves the use of dependent variables that can be represented as binary values. For example, if our problem requires us to compute the probability of the success or failure of an event, logistic regression would prove useful.
+**Logistic regression.** For a logistic regression model, we would have to model data in binary values. It involves the use of dependent variables that can be represented as binary values. For example, if our problem requires us to compute the probability of an event's success or failure, logistic regression would prove useful.
 
 Going back to our problem of classifying customers into their respective segments. Analysis of the problem shows that it is a multi-class classification problem. As a result, a classification algorithm would be an obvious choice.
 
-The next step would involve understanding how the output of the proposed classification algorithm would impact decision making. The solution would have to fit into the overall picture of the organization. For instance, the classification of customers would potentially allow the organization to develop better products. It could allow the production of more personalized products. It could also result in a better understanding of how to produce the right number of products for given customer segments to allow better inventory clearance. The model’s output data would help make all these decisions.
+The next step would involve understanding how the output of the proposed classification algorithm would impact decision-making. The solution would have to fit into the overall picture of the organization. For instance, the classification of customers would potentially allow the organization to develop better products. It could allow the production of more personalized products. It could also result in a better understanding of how to produce the right number of products for given customer segments to allow better inventory clearance. The model’s output data would help make all these decisions.
 
 #### Data and its sources
 
@@ -128,25 +145,25 @@ The problem framing process involves defining the data collection process. It is
 
 •	What is the source of the organization's data?
 
-•	Will the data have an impact on the problem's decision making?
+•	Will the data have an impact on the problem's decision-making?
 
 We should also think about potential bias in data at this stage. The data we feed our model may be biased in one way or another. As such, biased data will affect the quality of the predictions made. The predictions may not reflect the real-world nature of consumers of the organization's product. This would provide an underwhelming experience for the organization. In such an environment, such experiences tend to prove costly since they may translate into losses.
 
-It is also worth considering the ethical and legal implications of obtaining the desired data. We would need to understand whether the data we seek has sensitive information about potential clients that might end up infringing the rights of individuals. Are there aspects of the data that would be considered to be illegal? Are the methods of data collection legal too? 
+It is also worth considering the ethical and legal implications of obtaining the desired data. We would need to understand whether the data we seek has sensitive information about potential clients that might infringe individuals' rights. Are there aspects of the data that would be considered to be illegal? Are the methods of data collection legal too? 
 
 We should also consider the integrity of data. Is the data we are collecting both accurate and consistent? How do we ensure that the data is not degraded or compromised as it moves through a pipeline to another? How many people have access to said data? Data storage should also be considered. Would it be expensive to store data? Does the organization possess the adequate infrastructure to store the required data? Is the right data being collected? Is it stored in the right form? 
 
-As such, a data strategy should be clearly defined to avoid ending up on the wrong side of the above-mentioned points. It would also help to avoid collecting unnecessary data. It could help deal with missing data, outliers as well as preventing gaps in data entirely. This would help maintain high standards of data quality, integrity, and consistency.
+As such, a data strategy should be clearly defined to avoid ending up on the wrong side of the points mentioned above. It would also help to avoid collecting unnecessary data. It could help deal with missing data, outliers as well as preventing gaps in data entirely. This would help maintain high standards of data quality, integrity, and consistency.
 
 #### Beginning with a simple model
 
-To allow for a not only explainable but interpretable model, one may consider using a simple model at this stage. A simple model may be described as one with the least possible complexity required to correctly carry out a task. The use of such a model allows for controllable debugging. Simple models also provide a good baseline. They can help evaluate whether there is a need for a more complex model. Complex models provide less explainability. They are harder and take longer to train compared to simple ones. If the need for more complexity is justified, it may be implemented later on.
+To allow for a not only explainable but interpretable model, one may consider using a simple model at this stage. A simple model may be described as one with the least possible complexity required to carry out a task correctly. The use of such a model allows for controllable debugging. Simple models also provide a good baseline. They can help evaluate whether there is a need for a more complex model. Complex models provide less explainability. They are harder and take longer to train compared to simple ones. If the need for more complexity is justified, one may implement it later on.
 
-We should also assess the ability of a model to learn. It is important to point out the sections of our problem that might make learning difficult. A few factors that might be responsible for such difficulty include:
+We should also assess the ability of a model to learn. It is essential to point out the sections of our problem that might make learning difficult. A few factors that might be responsible for such difficulty include:
 
 •	The number of examples in a training set. If the number is low, the model's ability to learn will be impacted due to inadequate data.
 
-•	Noise. the learning process will be impacted if the examples contain too much noise.
+•	Noise. The learning process will be impacted if the examples contain too much noise.
 
 •	Performance on training data contrasts performance on unseen data. Performing poorly on unseen data means the model struggles to generalize to new data. A reason for such might be [overfitting](/engineering-education/regularization-to-prevent-overfitting/).
 
@@ -161,3 +178,7 @@ Problem framing is a key step in the machine learning workflow. Since it’s arg
 2. [Machine Learning Problem Framing](https://medium.com/towards-artificial-intelligence/machine-learning-problem-framing-2a0eba4c0d6d)
 
 3. [ML Problem Framing](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/ml-problem-framing.html)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
