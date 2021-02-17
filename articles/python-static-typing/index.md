@@ -1,4 +1,23 @@
-Python is a dynamically typed language. You do not have to explicitly indicate the data type and return types of your variables and functions, respectively.
+
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/python-static-typing/
+- title: Static Typing in Python
+- description: Python is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions, respectively.
+Dynamic typing makes Python very user-friendly.
+- author: jerim-kaura
+- date: 2021-02-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/python-static-typing/hero.jpg
+-    alt: Python static typing example image
+- ---
+
+Python is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions, respectively.
 Dynamic typing makes Python very user-friendly. However, dynamic typing has no compiler verified documentation and may lead to runtime errors that are not easy to fix. Static typing provides a solution to these problems.
 This article will see how to perform static typing in Python and handle both variable and function annotations. You need to have a basic understanding of Python to follow along. You will also install [mypy](http://mypy-lang.org/) for type checking.
 
@@ -21,7 +40,7 @@ Type annotations is a new feature added by [PEP 484](https://www.python.org/dev/
 
 ### 2. Variable annotations
 
-We achieve variable annotation by adding a semicolon and the type after declaring or initializing a variable. i.e `: <type>`. Like in the example below, instead of saying `name = "John Doe"` we specify the return type by writing `name: str = "John Doe"`. The ourput of this code can be found [here](https://repl.it/@jerimkaura/static-typing#main.py)
+We achieve variable annotation by adding a semicolon and the type after declaring or initializing a variable. i.e `: <type>`. Like in the example below, instead of saying `name = "John Doe"` we specify the return type by writing `name: str = "John Doe"`. One can find the output of this code [here](https://repl.it/@jerimkaura/static-typing#main.py)
 
 ```python
 name: str = "John Doe"
@@ -32,10 +51,10 @@ print("Output 1: "+ str(name))
 ```
 Output 1: John Doe
 ```
-You notice that the output is that same as that of the case `name = "John Doe"`, however this we are goint to find out why the latter is recommended.
+You notice that the output is the same as that of the case `name = "John Doe"`. However, we are going to find out why the latter is recommended.
 ### 3. Function annotations
 
-This is achieved by adding a forward arrow and indicating the function parameters' expected return type after the function parameters' closing bracket. i.e `-> <return type>`.
+This is achieved by adding a forward arrow indicating the function parameters' expected return type after the function parameters' closing bracket. i.e `-> <return type>`.
 
 ```python
 def square(x: int) -> int:
@@ -43,7 +62,7 @@ def square(x: int) -> int:
 
 print(square(6))
 ```
-The output is can be found [here](https://repl.it/@jerimkaura/static-typing#main.py) as Output: 2.
+The output can be found [here](https://repl.it/@jerimkaura/static-typing#main.py) as Output: 2.
 ```
 36
 ```
@@ -70,7 +89,7 @@ Output:
 ```
 [100, 121, 144, 169, 196, 225, 256, 289, 324, 361]
 ```
-You can confirm the ouput [here](https://repl.it/@jerimkaura/static-typing#main.py) as output 3.
+You can confirm the output [here](https://repl.it/@jerimkaura/static-typing#main.py) as output 3.
 
 ### 4.2. List
 
@@ -121,7 +140,7 @@ You can find the output [here]](https://repl.it/@jerimkaura/static-typing#main.p
 {'one': 1, 'two': 4, 'three': 9, 'four': 16, 'five': 25} 
 ```
 
-The type checker treats `Any` as compatible with any data type. We can perform any operation or method call on `Any`.
+The type checker treats `Any` as compatible with any data type. We can perform any operation or method call on `Any.`
 
 #### 4.4. Union
 The union is used when a function has more than one return type. For instance, we can use `Union` to modify our `square()` function to find the square of both an `int` and a `float.`
@@ -152,7 +171,7 @@ Th output is [here](https://repl.it/@jerimkaura/static-typing#main.py) as `Outpu
 ```
 
 ### 5. Using mypy static type checker.
-Here is where we are goint to understand the relevance of static typing.
+Here is where we are going to understand the relevance of static typing.
 First, we install `mypy`.
 
 ```python
@@ -183,7 +202,7 @@ print(square([12.9, 5, 2.1, 8, 4, 6.5]))
 
 The program outputs a string `Hello There` even though we expected integers or floats. You will notice that this program was run successfully without errors. Let us use `mypy` to type-check out code for errors. To check a piece of code using mypy, run `mypy filename.py` in your code's directory.
 
-Run the code and check out the out in [repl.it](https://repl.it/@jerimkaura/static-typing#main.py) terminal [here.](https://repl.it/@jerimkaura/static-typing#test.py)
+Run the code and check the output in the following [repl](https://repl.it/@jerimkaura/static-typing#main.py) terminal [here.](https://repl.it/@jerimkaura/static-typing#test.py)
 
 ```
 Output:
@@ -219,9 +238,11 @@ Output:
 $ mypy code.py
 Success: no issues found in 1 source file
 ```
-As you can see through, though static typing, we can use the typecheker to determine errors in out code.
+As you can see through, through static typing, we can use the type checker to determine errors in our code.
 
 ### 5. Conclusion
 
 Type hinting is a useful feature in Python. It helps you to identify bugs and maintain a clean record. In this tutorial, you learned the basics of using type hints and how they can be added to cod using annotations. You also had an introduction to using my pie as a static type checker. You can go ahead and have a deeper digging [PEP 484](https://www.python.org/dev/peps/pep-0484/) and [Mypy documentation](https://mypy.readthedocs.io/) for more.
 
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
