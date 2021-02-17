@@ -23,7 +23,7 @@ If the email address is not verified by the user, the app will show the message:
 This tutorial assumes you have basic knowledge in the following:  
 * PHP
 * Laravel 8.x
-* MYSQL.
+* MYSQL
 
 ### Introduction
 Since Laravel 7.x, Laravel includes an email verification feature by default in the authentication process. This feature helps in the verification of newly registered users.
@@ -34,7 +34,7 @@ In this tutorial, we will build an authentication application that allows users 
 ### step 1: Laravel 8 installation
 Create a new Laravel application either via composer or Laravel installer.  
 
-* *** Installing via composer:***  
+* ***Installing via composer:***  
 If your machine already has [PHP](https://www.php.net/manual/en/install.php) and [Composer](https://getcomposer.org/) installed, you can create a Laravel project directly by running the following command:    
 
 ```bash
