@@ -40,6 +40,8 @@ Article payout will be as follows:
 
 ### How does one apply to be a Peer Reviewer?
 
+### Are the positions voluntary or are Peer Reviewers compensated?
+
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
