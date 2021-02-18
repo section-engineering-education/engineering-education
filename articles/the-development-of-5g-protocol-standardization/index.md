@@ -81,11 +81,7 @@ The implementation of the 5G protocol in Rel-15 underwent a transition through s
 
 **Early Rel-15 drop:** This stage focused on the third architecture option, also known as non-standalone NR (NSA NR). It employed the use of an LTE-A system of LTE base stations (called eNB) added to NR base stations (called gNB) and an Evolved Packet Core network (EPC) without any involvement of 5G core network (NGC). This phase of the Rel-15 standard was frozen in Dec 2017.
 
-<<<<<<< HEAD
-**Regular Rel-15 freeze:** This stage focused on the standalone NR architecture option 2, a connection of NR base stations (called gNB) to the 5G core network (called NGC) without involving any LTE. Apart from option 2 architecture, the option 5 architecture was also completed in this phase. This phase of the Rel-15 standard was frozen in June 2018.
-=======
 **Regular Rel-15 freeze:** This stage focused on the standalone NR architecture option 2, a connection of NR base stations (called gNB) to the 5G core network (called NGC) without involving any LTE. Apart from option 2 architecture, the option 5 architecture was also completed in this phase; this phase of the Rel-15 standard was frozen in June 2018.
->>>>>>> 9240e7c15ff8df9c66e3011684544de6c6499b9d
 
 **Late Rel-15 drop:** This stage focused on architecture option 4, which employs the deployment of an LTE base station to a Standalone NR network such that the control plane is managed via the NR base station. Also, architecture option 7, which employs the deployment of an LTE base station to a Standalone NR network such that the control plane is managed via the LTE base station together with NR-NR dual connectivity. This phase of the Rel-15 standard was frozen in Dec 2018.
 
@@ -140,21 +136,13 @@ Other applications, such as NB IoT/eMTC technology, are still evolving.
 
 - Availability: The identification of illegal attacks and reduction of their impact.
 - Traceability: Recording of operations for security audit and problem identification.
-<<<<<<< HEAD
-- Integrity and Confidentiality: Protection of user privacy information, user communication data, and operator's principal data.   
-=======
 - Integrity and Confidentiality: Protection of user privacy information, user communication data, and operator's principal data.
->>>>>>> 9240e7c15ff8df9c66e3011684544de6c6499b9d
 
 The security measures try to ensure the above by implementing the following;
 
 -	Enhanced security.
 -	Stronger security on the air interface; the user plane has integrity protection by anti-alter, unlike 4G that is prone to user plane attack.
-<<<<<<< HEAD
 -	User privacy protection such that the users' IMSI is encrypted, unlike 4G, transmits user IMSI in plaintext.
-=======
--	User privacy protection such that the users' IMSI is encrypted, unlike 4G, transmits user IMSI in plaintext.
->>>>>>> 9240e7c15ff8df9c66e3011684544de6c6499b9d
 -	Improved interconnection security by implementing end-to-end protection between PLMNs, unlike 4G that is similar to SS7 attacks.
 -	Improved cryptographic algorithm using a 256-bit cryptographic algorithm vis-a-vis 4G that uses a 128-bit cryptographic algorithm.
 
@@ -168,11 +156,7 @@ The security measures try to ensure the above by implementing the following;
 - [Securing the 5G era](https://www.gsma.com/security/securing-the-5g-era/)
 - [3GPP Releases](https://www.3gpp.org/specifications/releases)
 - [5G](https://www.etsi.org/technologies/mobile/5g?jjj=1610802649669)
-<<<<<<< HEAD
-- [5G](https://e.huawei.com/en/talent/#/search-page?productName=&type=HALP)
-=======
 - [5G]https://e.huawei.com/en/talent/#/search-page?productName=&type=HALP)
->>>>>>> 9240e7c15ff8df9c66e3011684544de6c6499b9d
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
