@@ -162,8 +162,3 @@ Dynamic port numbers are usually assigned by a client operating system (OS) dyna
 ### Conclusion  
 
 The transport layer protocol plays a vital role in how applications exchange data between them. One of these two transport layer protocols, Transport layer protocol (TCP) and User data protocol (UDP), can be used by an application to exchange data. Applications that are fault-tolerant but cannot tolerate delay use UDP, while those that can delay but not fault use TCP.
-
-### About the author
-
-![Author Image](/engineering-education/understanding-tcp-ip-transport-layer-protocols/rabo.jpeg)
-Rabo James Bature is a postgraduate student (Applied Physics) at the University of Jos with networking skills and a strong passion for Cybersecurity and data science. He spends most of his time studying current cybersecurity threats while teaching organizations and individuals how to better secure devices and networks.  
