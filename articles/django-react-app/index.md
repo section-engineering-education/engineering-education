@@ -390,7 +390,9 @@ cd backend
 python manage.py runserver
 ```
 
-We will need to modify the `frontend/package.json`:
+We will need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where Django application will handle them.
+
+Let's go ahead and add it.
 
 ```javascript
 // frontend/package.json
