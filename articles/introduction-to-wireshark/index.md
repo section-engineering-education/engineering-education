@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-wireshark/
-title: Introduction to Wireshark
+title: Introduction To Network Analysis Using Wireshark
 description: Wireshark is an open-source project whose primary purpose is to develop a standard analysis tool for network protocols. In this article, we will consider installing Wireshark on an Ubuntu machine and proceed further with mapping data packets using the same.  
 author: miller-juma
 date: 2021-02-17T00:00:00-18:00
