@@ -308,11 +308,11 @@ ReactDOM.render(
 reportWebVitals();
 ```
 
-`ReactDOM.render()` uses a DOM node in HTML to replace it with Javascript XML (JSX).
+`ReactDOM.render()` renders a React element into the DOM in the supplied container.
 
 It enable us to integrate React in every foreign application.
 
-`ReactDOM.render()` takes two arguments. First is the JSX being rendered. Second argument specifies where React application hooks into HTML. 
+`ReactDOM.render()` takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
 
 It expects an element with an `id='root'`.
 
@@ -367,13 +367,13 @@ class App extends Component {
 export default App;
 ```
 
-We start by rendering a list of items. The list will be artificial data but later we will fetch the data from the API we created in the previous chapter.
+We start by rendering a list of items. The list will be artificial data but later we will fetch the data from the API we created in the previous steps.
 
-We define the list of items, an item in the list has an `id`, `title`, `description` and status of whether the task is completed or not, `completed`.
+We define a list of items. Each item has an `id`, `title`, `description`, and status of whether the task is completed or not, `completed`.
 
-We introduce the class constructor where we set the initial internal component state. In our case the internal state is the dummy list of items, `todoItems`.
+We introduce the class constructor where we set the initial state. In our case, the internal state is the dummy list of items, `todoItems`.
 
-We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). It allow us to iterate over the list of items and display them. We use the curly braces to encapsulate our item property since it evaluate Javascript expressions during compilation.
+We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). It allows us to iterate over the list of items and display them. We use curly braces to evaluate Javascript expressions during compilation in JSX.
 
 When the component file is called it calls the `render()` method by default displaying th JSX syntax.
 
@@ -470,11 +470,11 @@ export default App;
 
 We assign our `todoList` an empty array because we are going to fetch our data from an API.
 
-First, we wrap Fetch in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our apiEndpoints. We're telling the  `async` function to stop executing untill the promise is resolved at which point it can resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
+First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints. We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
 
-We are using the `async` to fetch data from the API we created. Our application uses the `componentDidMount()` method from `React.Component` but defining it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
+Our application uses the `componentDidMount()` method from `React.Component` but we'll define it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
 
-`componentDidMount()` function is called by React to either fetch data from an External API or perform unique operations which need the JSX elements. In our case we use it for the former. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
+`componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
 
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
