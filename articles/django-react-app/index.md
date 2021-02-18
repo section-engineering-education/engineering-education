@@ -27,7 +27,7 @@ mkdir django-react-todoApp
 cd django-react-todoApp
 ```
 
-We must have `pip` and a virtual environment activated to be able to install django. 
+We must have a virtual environment activated to be able to install django. Let's create a virtual environment and activate it:
 
 ```bash
 pip install pipenv
@@ -86,7 +86,7 @@ The model contains:
 
 - Completed: Completed is the status of a task; either completed or not completed.
 
-We need to tell Django which attribute to use by default when it displays information about Todo. Django calls a `_str_()` method to display a simple representation of a model. Here we've written a `_str_()` method that returns the string stored in the `title` attribute.
+We need to tell Django which attribute to use by default when it displays information about Todo. Django calls a `_str_()` method to display a simple representation of a model. Here we've defined a `_str_()` method that returns the string stored in the `title` attribute.
 
 Let us run migrations to add our model to the database schema.
 
@@ -94,6 +94,7 @@ Let us run migrations to add our model to the database schema.
 python manage.py makemigrations todo
 python manage.py migrate todo
 ```
+
 Django comes with a built-in admin interface. With Django's admin we can authenticate users, display and handle forms automatically. It reads data from our models to provide a quick interface where trusted users can manage content on your site.
 
 We can add models to our Admin page using the `admin.site.register()` functions. In the todo app's `admin.py`, let's add the model to our admin page.
@@ -174,9 +175,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 ```
 
-Django-cors-headers helps in handling the server headers required for Cross-origin Resource Sharing (CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
-
-Cross-Origin Resource Sharing (CORS) is a module that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. For instance in our application, the `http://localhost:3000` is the default port for React and we will use it from our Django backend to serve the API.
+Django-cors-headers helps in handling the server headers required for [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
 Now, Let's create a serializer file.
 
@@ -186,7 +185,7 @@ Serializers allow complex data such as querysets and model instances to be conve
 touch todo/serializers.py
 ```
 
-Let us add this to `serializers.py` file:
+Let's add this to `serializers.py` file:
 
 ```python
 # todo/serializers.py
@@ -199,6 +198,12 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = ('id' ,'title', 'description', 'completed')
 ```
+
+A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines how the page will look like.
+
+A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
+
+The `ModelViewSet` is an extention of the `ViewSet`. It inherits from `GenericAPIView` which provide the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
 
 Let's also update the `todo/views.py`:
 
@@ -217,11 +222,14 @@ class TodoView(viewsets.ModelViewSet):   # add this
     queryset = Todo.objects.all()        # add this
 ```
 
-A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines how the page will look like.
 
-A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
+URL stand for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
 
-The `ModelViewSet` is an extention of the `ViewSet`. It inherits from `GenericAPIView` which provide the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
+Making webpages in Django involves three steps: defining URLs, writing views and writing templates.
+
+Defining URL pattern describes the way the URL is laid out and tells Django what to look for when matching a browser request with a site URL so it knows which site to return.
+
+The body of the file defines the `urlpatterns` variable. The `urlpatterns` variable includes sets of URLs, one is the module `admin.site.urls`, which defines all the URLs that can be requested from the admin site.
 
 In the `backend/urls.py` we define the URL routes for the API:
 
@@ -241,14 +249,6 @@ urlpatterns = [
     path('api/', include(router.urls))             # add this
 ]
 ```
-
-URL stand for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
-
-Making webpages in Django involves three steps: defining URLs, writing views and writing templates.
-
-Defining URL pattern describes the way the URL is laid out and tells Django what to look for when matching a browser request with a site URL so it knows which site to return.
-
-The body of the file defines the `urlpatterns` variable. The `urlpatterns` variable includes sets of URLs, one is the module `admin.site.urls`, which defines all the URLs that can be requested from the admin site.
 
 The next module is the `router.urls` which provides routing for our API.
 
