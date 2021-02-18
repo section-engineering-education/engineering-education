@@ -30,7 +30,7 @@ _AdonisJS requires Node.js 12.x.x and NPM 6.x.x, so you should check the version
 
 Make sure to install the version corresponding to the requirements.
 
-If you’ve the necessary requirements installed, now you can create a new AdonisJS 5 project by simply running this command.
+If you have the necessary requirements installed, now you can create a new AdonisJS 5 project by simply running this command.
 
 ```bash
     npm init adonis-ts-app adonisjs-forum-api
@@ -131,7 +131,7 @@ Server.middleware.registerNamed({
 
 #### Creating migrations
 
-Next step is to create the remaining migrations for the Post and Forum models we will be creating later.
+The next step is to create the remaining migrations for the Post and Forum models we will be creating later.
 
 Let’s get started:
 
@@ -300,7 +300,7 @@ export default class AuthController {
 }
 ```
 
-The code above simply registers and login a user with any complex validations and error handling, so it can be easy to understand.
+The code above simply register and log in a user with any complex validations and error handling, so it can be easy to understand.
 
 Next, let’s create all the controllers for our API at once:
 
@@ -374,7 +374,7 @@ You can [Clone the repository](https://github.com/Kaperskyguru/adonisjs-forum-ap
 
 ### Creating Endpoint Routes
 
-Next step is to create the endpoints for our frontend or mobile App to consume.
+The next step is to create the endpoints for our frontend or mobile App to consume.
 
 To to that, open the `route.ts` file inside `start` folder and add the following code.
 
@@ -424,7 +424,7 @@ Now, we can access our protected endpoints:
 
 ### Conclusion
 
-In this article, we covered the how to build a RESTful API in AdonisJS 5, we created a simple Forum API with authentication and authorization.
+In this article, we covered how to build a RESTful API in AdonisJS 5, we created a simple Forum API with authentication and authorization.
 
 [You can clone the repository here](https://github.com/Kaperskyguru/adonisjs-forum-api).
 
