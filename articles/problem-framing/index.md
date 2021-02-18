@@ -165,7 +165,9 @@ We should also consider the integrity of data. Is the data we are collecting bot
 
 Would it be expensive to store data? Does the organization possess the adequate infrastructure to store the required data? Is the right data being collected? Is it stored in the right form? 
 
-As such, a data strategy should be clearly defined to avoid ending up on the wrong side of the points mentioned above. It would also help avoid collecting unnecessary data. It could help deal with missing data, outliers as well as preventing gaps in data entirely. This would help maintain high standards of data quality, integrity, and consistency.
+As such, a data strategy should be clearly defined to avoid ending up on the wrong side of the points mentioned above. It would also help avoid collecting unnecessary data. 
+
+It could help deal with missing data, outliers as well as preventing gaps in data entirely. This would help maintain high standards of data quality, integrity, and consistency.
 
 #### Beginning with a simple model
 To allow for an explainable but interpretable model, one may consider using a simple model at this stage. A simple model may be described as one with the least possible complexity required to carry out a task correctly. The use of such a model allows for controllable debugging. Simple models also provide a good baseline. 
