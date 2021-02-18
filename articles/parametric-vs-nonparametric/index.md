@@ -17,7 +17,7 @@ I recommend this article on [supervised learning algorithms](/engineering-educat
 
 ### Parameters
 
-A parameter can be described as a configuration variable that is intrinsic to the model. Model parameters are usually not set manually. Parameters are often mistaken for hyperparameters. Hyperparameters is a configuration variable that is external to the model. Unlike parameters, hyperparameters are manually set.
+A parameter can be described as a configuration variable that is intrinsic to the model. Model parameters are usually not set manually. Parameters are often mistaken for hyperparameters. Hyperparameters are configuration variables that are external to the model. Unlike parameters, hyperparameters are manually set.
 
 The value of a parameter can be approximated from training data in consideration. After training, the parameters used to determine the performance of the model on test data. The model uses them to make predictions. A machine learning model with a set number of parameters is a parametric model. Those without a set number of parameters are referred to as non-parametric. We shall delve deeper into this later.
 As we shall dissect later, the coefficients of a linear regression function are examples of model parameters. Another example is in the form of the coefficients in logistic regression. In a neural network, the weights act as the parameters.
@@ -39,11 +39,11 @@ It is common to have parametric models being referred to as linear machine learn
 
 ### Non-Parametric Models
 
-Algorithms that do not make particular assumptions about the kind of mapping function are known as non-parametric algorithms. Since they make no assumptions, they can learn any form of the function from data.
+Algorithms that do not make particular assumptions about the kind of mapping function are known as non-parametric algorithms. These algorithms do not accept a specific form of the mapping function between input and output data as true. They have the freedom to choose any functional form from the training data. As a result, for parametric models to estimate the mapping function they require much more data than parametric ones.
 
-One might think that non-parametric means that there are no parameters. However, this is not true. Rather, it simply means that the parameters are not only adjustable but can also change.
+One might think that non-parametric means that there are no parameters. However, this is not true. Rather, it simply means that the parameters are not only adjustable but can also change. This leads to a key distinction between parametric and non-parametric algorithms. We mentioned that parametric algorithms have a fixed number of parameters, regardless of the amount of training data. However, in the case of non-parametric ones, the number of parameters is dependent on the amount of training data. The more the training data, the greater the number of parameters. A consequence of this is that non-parametric algorithms may take much longer to train.
 
-[K-nearest neighbors](https://www.geeksforgeeks.org/k-nearest-neighbours/) is an example of a non-parametric algorithm. Its predictions are based on the k most similar training patterns for a new instance of data. We should note that there are no assumptions made about the form of the mapping function aside from one. It is assumed that most alike' training patterns have a high likelihood of producing a similar output.
+[K-nearest neighbors](https://www.geeksforgeeks.org/k-nearest-neighbours/) is an example of a non-parametric algorithm. Its predictions are based on the k most similar training patterns for a new instance of data. We should note that there are no assumptions made about the form of the mapping function aside from one. It is assumed that most alike training patterns have a high likelihood of producing a similar output.
 
 We mentioned that linear SVM is an example of a parametric model. This is because basic support vector machines are linear classifiers. However, SVMs not constrained by a set number of parameters are considered non-parametric.
 
@@ -80,7 +80,7 @@ The image with a wiggly function represents a non-parametric model. As we mentio
 
 **Flexibility.** As shown by the image above, these algorithms provide a good fit for data. They can fit many forms of a function.
 
-**Little to no assumptions.** Little to no guesses about the mapping function is made. Compared to parametric algorithms, non-parametric algorithms learn more from data. This is because the learning of parametric algorithms may be limited by the assumptions they make.
+**Little to no assumptions.** Little to no guesses about the mapping function are made. Compared to parametric algorithms, non-parametric algorithms learn more from data. This is because the learning of parametric algorithms may be limited by the assumptions they make.
 
 #### Limitations
 
