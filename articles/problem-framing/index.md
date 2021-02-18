@@ -182,7 +182,9 @@ A few factors that might be responsible for such difficulty include:
 - Performance on training data contrasts performance on unseen data. Performing poorly on unseen data means the model struggles to generalize to new data. A reason for such might be [overfitting](/engineering-education/regularization-to-prevent-overfitting/).
 
 ### Wrapping up
-Problem framing is a key step in the machine learning workflow. Since it’s arguably less technical than other stages in a machine learning workflow, it might be inaccurately perceived as an easy step. Yet, the challenges we covered show otherwise. The best practices we have covered should be of help when framing machine learning problems.
+Problem framing is a key step in the machine learning workflow. Since it’s arguably less technical than other stages in a machine learning workflow, it might be inaccurately perceived as an easy step. 
+
+Yet, the challenges we covered show otherwise. The best practices we have covered should be of help when framing machine learning problems.
 
 Happy coding.
 
