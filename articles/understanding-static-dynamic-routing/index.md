@@ -282,10 +282,7 @@ Dynamic routing protocols have the following advantages.
 Both Static and Dynamic routing have their advantages and disadvantages; it is up to the network administrator to study the network to know which of the protocols they need to apply or if both are required.
 
 
-### About the author
 
-
-Rabo James Bature is a postgraduate student (Applied Physics) at the University of Jos with networking skills and a strong passion for Cybersecurity and data science. He spends most of his time studying current cybersecurity threats while teaching organizations and individuals how to better secure devices and networks.  
 
 
 
