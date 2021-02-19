@@ -33,7 +33,7 @@ Because a host can have multiple applications communicating with other applicati
 ##### Ordered data transfer  
 A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services. According to [this](http://waksudir.blogspot.com/2015/03/transport-layer-protocols) article, most networks have a limitation on the amount of data that a single packet can contain.
  Because of this, the sending device transport layer prepares the data in manageable pieces or **segments**.
- The receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
+Similarly, the receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
 
 #### Multiplexing Conversation using port numbers
 When using an application, the data or services provided usually appear as a stream of continuous data. 
