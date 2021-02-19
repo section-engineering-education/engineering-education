@@ -36,7 +36,7 @@ Data flowing from one application to another is known as conversation.
  Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier.
 
 **Ordered data transfer**  
-A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services; this is because, according to [waksudir](http://waksudir.blogspot.com/2015/03/transport-layer-protocols), most networks have a limitation on the amount of data that a single packet can contain.
+A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services. According to [this](http://waksudir.blogspot.com/2015/03/transport-layer-protocols) article, most networks have a limitation on the amount of data that a single packet can contain.
  Because of this, the sending device transport layer prepares the data in manageable pieces or **segments**.
  The receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
 
