@@ -1,16 +1,15 @@
-# Understanding TCP/IP Transport Layer (Layer 4) protocols: TCP and UDP  
+# Understanding TCP/IP Transport Layer (Layer 3) protocols: TCP and UDP  
 ![Hero image](/engineering-education/understanding-tcp-ip-transport-layer-protocols/unspalsh.jpg)
 ![Source](https://unsplash.com/photos/3-fuFf4gPNY)
 
 ### Introduction
-Each TCP/IP application typically choose to establish a temporary communication session to deliver data between two devices using either Transport Control Protocol (TCP) or User Datagram Protocol (UDP) based on the application requirements; this is done irrespective  regard to the destination host type, the type of media over which the data is to be sent, and the pathway taken by the information [Cisco](https://www.flashcardmachine.com/cisco-1-chapter4.html)
-TCP provides a wide range of services such as error recovery, windowing, and order segment delivery to applications, whereas UDP does not.
-In this article, we intend to look at these two transport layer protocols in detail.  
+  In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol or User Datagram Protocol.
 
 ### Prerequisites
-As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 3 would help the readers understand the article better.
+As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 2 would help the readers understand the article better.
 
 ### Table of contents
+- Transport Layer
 - Transport Layer responsibilities  
 - Multiplexing
 - Reliability of the transport layer
