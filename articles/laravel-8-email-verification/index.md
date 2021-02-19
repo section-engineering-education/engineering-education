@@ -13,39 +13,32 @@ images:
   - url: /engineering-education/laravel-8-email-verification/hero.jpg
     alt: laravel language localisation
 ---
-
-Laravel is a PHP-based framework that is easy to understand. It makes it extremely easy to write complex characteristics, sometimes just one feature does it all. While the Laravel application is under development, email functionality may also need to be tested.
-In any application, emails play an important part. Users can be notified with emails about new app features, available offers, and security events. Testing your emails before sending them to real customers is extremely important. In the development or production phase, [Mailtrap](https://mailtrap.io/) can be helpful for testing emails.  
-
-Typically, we need to check their email when a user signs up for our applications, so we know that it is their actual email, not a junk one.  
-You reduce the probability of being able to reach them again when you allow users to register with your application without checking their email addresses.  
-If an incorrect email address allows them to sign up, there is no assurance that they can navigate to their profile and fix it later.  
-
-Fortunately, with Laravel 8, we can easily do this and, of course, we can make some changes as we like. So in this post, with the Laravel Jetstream kit, I will show you how to build an email verification framework, so we can test it by sending [Mailtrap](https://mailtrap.io/) a real email verification.  
-
+Laravel is a PHP-based framework that is simple to understand. It makes it easy to code complex features in an application. One of the features that can be implemented quickly using Laravel is email verification.  
 <!--more-->
+Typically, we need to verify users' emails whenever they sign up on the website. This process ensures that we accept only those users with valid email addresses.  In the past, it was quite difficult to code or include email verification in applications. The introduction of Laravel made life better for developers. In other words, implementing email verification in Laravel only requires a few lines of code.
+
 ### Prerequisites
 You will need the following to complete this tutorial:   
 - PHP
 - Laravel 8.x
 - MYSQL
 
-### Getting Started
-In this article, we’ll look at how to implement an authentication application that allows users to sign up and verify their email addresses.   
+### Goal
+To implement email verification on a website using Laravel.
 
 ### step 1: Laravel 8 installation
 Create a new Laravel application either via composer or Laravel installer.  
 
- **Installing via composer:**    
- Laravel uses composers for the control of dependencies. Before you install Laravel, make sure you have the Composer installed on your machine.  
- To install the composer on your system, visit the following [URL](https://getcomposer.org/download/) and download it.  
- Check the installation after the Composer is installed by typing the Composer command in the prompt as shown below:  
+**Installing via composer:**    
+Laravel uses `Composer` for the control of dependencies. Before you install Laravel, make sure you have the Composer installed on your machine. 
+
+You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check the software version using the following command. 
  
  ```bash
 composer --version
 ```
 
-For your new Laravel project, create a new directory anywhere in your system. After that, switch to the path where the new directory was created and enter the following command to install Laravel.  
+For your new Laravel project, create a new directory anywhere in your system. Then navigate to the folder and use the following command to install Laravel.  
  
 ```bash
 composer create-project laravel/laravel verifyEmailApp
@@ -53,7 +46,7 @@ cd verifyEmailApp
 php artisan serve
 ```
 
- **Using Laravel Installer**  
+**Using Laravel Installer**  
 To build Laravel applications easily, Laravel provides a helpful command-line utility. Download the installer first: 
 
 ```bash
