@@ -1,76 +1,48 @@
-JSON Web Token (JWT) is an RFC standard that defines a compact way of securing
-the data transmitted between the parties as a JSON object. The information is
-digitally signed, meaning and it can then be verified and signed. JWTs are
-signed using a secret key or a public/private key pair using RSA/ECDSA
-algorithms. In this guide, I will use a secret key.
+JSON Web Token (JWT) is an RFC standard that defines a compact way of securing the data transmitted between the parties as a JSON object. The information is digitally signed, meaning and it can then be verified and signed. JWTs are signed using a secret key or a public/private key pair using RSA/ECDSA algorithms. In this guide, I will use a secret key.
 
 ## Prerequisites
 
 To accomplish the task using this guide, you will need:
 
--   Basic knowledge of [Node.js](https://nodejs.dev/learn), [Angular 11](https://www.techiediaries.com/angular-11-crud-rest-api-tutorial/) and [JWT](https://jwt.io/introduction)
+-   Some knowledge of [Node.js](https://nodejs.dev/learn), [Angular 11](https://www.techiediaries.com/angular-11-crud-rest-api-tutorial/) and [JWT](https://jwt.io/introduction)
 
 -   A text editor, in this guide, I will be using [Visual Studio Code](https://code.visualstudio.com/download).
 
 -   Installed [Node.js](https://nodejs.org/en/) with related libraries
 
--   A working web browser, in this guide, I am using [Google Chrome](https://www.google.com/chrome/?brand=BNSD&gclid=CjwKCAiAjeSABhAPEiwAqfxURVdP9BRCdHOo148tJef3jdCdPGNhZh5yqStpNbQzAjS3jnUkcdC8jxoCTGgQAvD_BwE&gclsrc=aw.ds).
+-   A working web browser, in this guide, I am using [Google Chrome](https://www.google.com/chrome/).
 
 -   [Postman tool](https://www.postman.com/downloads/) installed
 
 ## Reason for using JSON Web Tokens
 
-The main reason for using JWT is that it ensures the integrity of the
-information exchanged between parties is verified, in this case between a client
-and server, and authorized. In case of any breach, the session will expire since
-the token will not verify.
+The main reason for using JWT is that it ensures the integrity of the information exchanged between parties: a client and a server. The data can then be verified and authorized. In case of any breach, the session will expire since the token will not be verified.
 
 ## How the app will work
 
-The app will use Angular on the front end and the Node.js server on the backend.
-On the front end, I will create an [interceptor](https://itnext.io/understanding-angular-interceptors-405b84d7ad69); this will ensure that any HTTP
-Request sent from Angular is broke down, cloned, and a token is added to it
-before been sent.
+The app will use Angular on the front end and the Node.js server on the backend. On the front end, I will create an [interceptor](https://itnext.io/understanding-angular-interceptors-405b84d7ad69).An interceptor will ensure that any HTTP Request sent from Angular is broken down and cloned. Then a token is added to it before being sent.
 
-All requests received are broken down, cloned, and a token extracted and
-verified on the backend. If verification is successful, the request will then be
-sent to its handler to send a response. Otherwise, on unsuccessful verification,
-any other requests are rejected, and 401 Unauthorized status is sent back to
-Angular, where all the requests are checked for a 401 status. If there are such
-requests, the token stored will be removed, and the user is signed out of all
-the sessions and sent back to the login page.
+All requests received are broken down, cloned, and a token extracted and verified on the backend. If verification is successful, the request will then be sent to its handler to send a response. Otherwise, on unsuccessful verification, any other requests are rejected, and `401 Unauthorized` status is sent back to Angular, where all the requests are checked for a 401 status. If there are such requests, the token stored will be removed, and the user is signed out of all the sessions and sent back to the login page.
 
 ## Creating Angular App
 
-Before creating the Angular App, download Node.js then install it into your
-system. Then create a root folder in your system and browse to that folder using
-cmd. Then you run the following command:
+Before creating the Angular App, download Node.js then install it into your system. Then create a root folder in your system and browse to that folder using cmd. Then you run the following command:
 
-```javascript
-ng new angFrontend
+```bash
+$ng new angFrontend
 ```
 
-The command will create an angular app in your root folder with a new subfolder
-named the same as the app's name; in this case, it will be *angFrontend*, which
-will come with preinstalled libraries modules a typical angular app requires.
+The command will create an angular app in your root folder with a new subfolder named the same as the app's name; in this case, it will be *angFrontend*, which will come with preinstalled libraries a typical angular app requires.
 
 ## Creating an Interceptor
 
-Then next would be creating the interceptor; first, browse to the folder where
-the angular app was created, then run the following code in the command prompt
-to achieve that:
+Next, we will be creating the interceptor. First, browse to the folder where the angular app was created and run the following code in the command prompt to achieve that:
 
-```javascript
-ng generate service AuthInterceptor
+```bash
+$ng generate service AuthInterceptor
 ```
 
-Inside the subfolders created when creating an Angular App, I will then browse
-the file located in the location *src/app/app.module.ts*
-
-Then edit the file named *app.module.ts*, as shown, this is to ensure that I
-import the HTTP Module for HTTP Calls and make the interceptor that has just
-been created to be a provider and so it will have global access to all HTTP
-Calls.
+Then, navigate to `src/app` and edit the file `app.module.ts`, as shown below. This is to ensure that I import the HTTP Module for HTTP Calls and make the interceptor that has just been created to be a provider and so it will have global access to all HTTP Calls.
 
 ```javascript
 //the modules required by the app are imported here
@@ -104,8 +76,7 @@ import { HomeComponent } from './home/home.component';//implements the home rout
 export class AppModule { }
 ```
 
-Next will be to browse and edit the interceptor service class located at
-*src/app/auth-interceptor.service.ts* and make the changes as follows:
+Next, edit `src/app/auth-interceptor.service.ts` to look like shown below:
 
 ```javascript
 import { Injectable } from '@angular/core';//imports the class that provides local storage for token
@@ -143,38 +114,29 @@ export class AuthInterceptorService implements HttpInterceptor {
 
 **Interception Stage Code Explanation**
 
-In authentication, the token obtained from the server is stored locally. Then
-will be retrieved from local storage and the header *httpRequest req* cloned and
-Authorisation, Bearer: token header is added into it. Then the token is sent in
-the httpRequest header.
+In authentication, the token obtained from the server is stored locally. Then will be retrieved from local storage and the header `httpRequest req` cloned and Authorisation, Bearer: token header is added into it. Then the token sent in the httpRequest header.
 
 **Error Stage Code Explanation**
 
-In case of an error response or 401, 402, etc., error status, the pipe will help
-catch the error, and the user will not authenticate due to a bad request or
-Unauthorized Request. The error in the call is returned to the frontend in case
-there are further error requests.
+In case of an error response or 401, 402, etc., error status, the pipe will help catch the error, and the user will not authenticate due to a bad request or Unauthorized Request. The error in the call is returned to the frontend in case there are further error requests.
 
-## Creating Backend
+## Creating the Backend
 
-I will start by creating a directory in the root folder for the server and type
-*npm init* -y to initialize it as a node project as shown:
+I will start by creating a directory in the root folder for the server and type *npm init* -y to initialize it as a node project as shown:
 
-```javascript
-mkdir node_server
-cd node_server
-npm init –y
+```bash
+$mkdir node_server
+$cd node_server
+$npm init –y
 ```
 
-The necessary libraries are required to be installed within the created folder
-by running the command below:
+The necessary libraries([express](https://www.npmjs.com/package/express), [body-parser](https://www.npmjs.com/package/body-parser), [express-jwt](https://www.npmjs.com/package/express-jwt)) are required to be installed within the created folder by running the command below:
 
-```javascript
-npm i -S express cors body-parser express-jwt jsonwebtoken
+```bash
+$npm i -S express cors body-parser express-jwt jsonwebtoken
 ```
 
-Then an **app.js** in the node_server folder is created, below is the code for
-the app and boiler code:
+After running the command above, a new file `app.js` containing the code below is created
 
 ```javascript
 const express       = require('express')
@@ -202,8 +164,7 @@ app.listen(port, function() {
 });
 ```
 
-Next, I will create a route where a token is generated, and it will be where the
-user authenticates. On successful authentication, the token is sent.
+Next, I will create a route where a token is generated, and it will be where the user authenticates. On successful authentication, the token is sent. Below code is added to the file `app.js`.
 
 ```javascript
 //SECRET FOR JWT
@@ -220,26 +181,20 @@ app.get('/token/sign', (req, res) => {
 });
 ```
 
-Since the route has been created, and stored the user data, and encoded when
-decoded, it will give back the user data, in this case only user name and id,
-since storing a password is never a good practice
+Since the route has been created, stored the user data, and encoded the data. When decoded, it will give back the user data, in this case only user name and id, since storing a password is never a good practice.
 
-Next will be to run the app.js application and check the token generated as
-demonstrated below:
+Next will be to run the app.js application and check the token generated as demonstrated below:
 
-```javascript
-node app.js
-Listening to 3000
+```bash
+$node app.js
+$Listening to 3000
 ```
 
-In this guide, I will use the postman tool to test the routes I just have
-created, as shown below:
+In this guide, I will use the Postman to test the routes as shown below.
 
-![first web token](/articles/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.png)
+![first web token](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.png)
 
-As of now, I have generated the first web token.
-
-To illustrate this, I will create a path1 and secure it using my JSON Web Token.
+As of now, I have generated the first web token. To illustrate this, I will create a `/path1` and secure it using my JSON Web Token.
 
 For this task, I will be using the express-jwt function.
 
@@ -265,14 +220,11 @@ app.use(expressJWT({ secret: secret})
     ));
 ```
 
-In the next step, I will be trying to access the path without a token sent in
-the header using the postman tool.
+In the next step, I will be trying to access the path without a token sent in the header using Postman.
 
-![401 Error](/articles/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.png)
+![401 Error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.png)
 
-On trial, the app did not allow me to access the path, the error 401
-Unauthorized was displayed as expected. Next will be to test it with the token I
-first obtained from the token/sign route as show below:
+On trial, the app did not allow me to access the path, the error `401 Unauthorized` was displayed as expected. Next will be to test it with the token I first obtained from the token/sign route as show below:
 
 ```javascript
 app.get('/path1', (req, res) => {
@@ -286,17 +238,15 @@ app.get('/path1', (req, res) => {
 
 On adding the Bearer Token, the success message is displayed as shown below:
 
-![success message](/articles/getting-started-with-jwt-using-angular8-and-nodejs/success-token.png)
+![success message](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/success-token.png)
 
-Heading back to Angular, I will create a new component home by running the
-following command:
+Heading back to Angular, I will create a new component `home` by running the following command:
 
-```javascript
-ng generate component home
+```bash
+$ng generate component home
 ```
 
-Modifying my home.component.ts located at *src/app/home/home.component.ts*  as
-below:
+Then modify `home.component.ts` located at `src/app` to look as shown below:
 
 ```javascript
 signIn() {
@@ -328,35 +278,27 @@ signIn() {
 
 ```
 
-The *signIn()* function in the above code requests a token a stores it into local
-storage, while the second *getPath()* function is for requesting the path.
+The `signIn()` function in the above code requests a token a stores it into local storage, while the second `getPath()` function is for requesting the path.
 
-Coding a simple HTML page to test the two functions above, I will browse to */src/app/home/home.component.html* and code the below: 
+Then I will write a simple HTML page to test the two functions above. Create a new file `/src/app/home/home.component.html` and add the code below: 
 
-```HTML
+```html
 <h3>JSON Web Test</h3>
 
 <button (click)="signIn()">Sign In</button>
 <button (click)="getPath()">Get Path 1</button>
 ```
 
-To run an Angular project on the browser, I will browse the project folder
-using **cmd** and run the command *ng serve*. The command will compile the whole Angular project and launch the page on the browser. Press F12 on the keyboard to open developer tools console window and then click on the **Sign In** button to get a token as explained above, then click on the **Get Path1** Button to access the path as shown below:
+To run the Angular project, browse to the project folder and run the command `ng serve` on a terminal. The command will compile the whole Angular project and launch the page on the browser. Press F12 on the keyboard to open developer tools console window and then click on the **Sign In** button to get a token as explained above, then click on the **Get Path1** Button to access the path as shown below:
 
-![web test success](/articles/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.png)
+![web test success](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.png)
 
-To lose the local storage token, I will refresh the browser, and then I will try
-to access the path as shown below:
+To clear the local storage token, I will refresh the browser, and then I will try to access the path as shown below:
 
-![web test error](/articles/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.png)
+![web test error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.png)
 
-As it is now, we have successfully gotten a 401 Unauthorized, meaning the
-application is now secure.
+As it is now, we have successfully gotten a `401 Unauthorized`, meaning the application is now secure.
 
 ## Conclusion
 
-Using JSON Web Tokens, the app is now secure since the services and any
-communication between the server and the app is also secure. This guide has also
-helped the reader implement the JSON Web Token in Angular 11 and Node.js. This
-contribution will help anyone to secure their applications and make them ready
-for production.
+Using JSON Web Tokens, the app is now secure since the services and any communication between the server and the app is also secure. This guide has also helped the reader implement the JSON Web Token in Angular 11 and Node.js. This contribution will help anyone to secure their applications and make them ready for production.
