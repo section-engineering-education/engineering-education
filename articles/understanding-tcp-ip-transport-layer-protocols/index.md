@@ -13,16 +13,16 @@ In this article, we intend to look at these two transport layer protocols in det
 
 As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 3 would help the readers understand the article better.
 
-**Content**
-  -Transport Layer responsibilities  
-  -Multiplexing
-  -Reliability of the transport layer
-  -Transport Control Protocol (TCP)
-  -User Datagram Protocol (UDP)
-  -Multiple conversations
-  -Port number
-  -Socket and Socket pairs
-  -Conclusion
+### Table of contents
+- Transport Layer responsibilities  
+- Multiplexing
+- Reliability of the transport layer
+- Transport Control Protocol (TCP)
+- User Datagram Protocol (UDP)
+- Multiple conversations
+- Port number
+- Socket and Socket pairs
+- Conclusion
 
 ### Transport Layer responsibility
 
