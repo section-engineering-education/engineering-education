@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/breaking-down-kubernetes-vs-docker-swarm//hero.jpg
     alt: Breaking Down Kubernetes vs Docker Swarm example image
 ---
-[Kubernetes](https://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) are container orchestration tools that aid the automation and management of microservices in clusters. They have the sole role of deploying the applications to scale; they assist in the planning and coordinating all the components in the system.
+[Kubernetes](https://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) are both container orchestration tools that aid with the automation and management of microservices within clusters. They have the sole role of deploying the applications to scale; they also assist with the planning and coordinating of all the components in the system.
 <!--more-->
 In this article, we'll explore the fundamentals of Docker and Kubernetes and take a look at the similarities and differences between the two tools.
 
