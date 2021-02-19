@@ -25,7 +25,6 @@ As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 3 would help th
 The Transport layer has a set of responsibilities to help applications function efficiently and adequately. These responsibilities are:
 - The tracking of individual conversation  
 - Ordered data transfer and data segmentation.
-- Identifying applications.
 
 ##### Tracking of Individual applications
 Data flowing from one application to another is known as conversation.
