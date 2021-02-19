@@ -21,16 +21,21 @@ As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 3 would help th
 - Socket and Socket pairs
 - Conclusion
 
-### Transport Layer responsibility
-The Transport layer has a set of responsibilities to help applications function efficiently and adequately. These responsibilities are:
-- The tracking of individual conversation  
-- Ordered data transfer and data segmentation.
+### Transport Layer
+The transport layer is part of the TCP/IP networking model, sometimes also called the **networking architecture**, a comprehensive set of documents that describes everything required for a computer network to function.
+This model's transport layer is responsible for the logical communication between applications running on a different host, thus providing services to application layer protocols on a higher layer of the TPC/IP networking model.
+Though many transport layer protocols exist, the two most commonly used protocols are the Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP). 
+These protocols support different functionalities for different application requirements, but at the minimum, the transport layer supports these functionalities.
+- Ordered data transfer and data segmentation
+- Tracking of individual conversation
+- Multiplexing conversation using port numbers
 
-##### Tracking of Individual applications
+
+#### Tracking of Individual applications
 Data flowing from one application to another is known as conversation.
 Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier.
 
-##### Ordered data transfer  
+#### Ordered data transfer  
 A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services. According to [this](http://waksudir.blogspot.com/2015/03/transport-layer-protocols) article, most networks have a limitation on the amount of data that a single packet can contain.
  Because of this, the sending device transport layer prepares the data in manageable pieces or **segments**.
 Similarly, the receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
@@ -56,7 +61,7 @@ As defined in Request For Comment (RFC) 7913, TCP has the following features.
 #### Connection establishment and Termination
 Before any TCP feature can occur, TCP connection establishment must first take place. TCP is a connection-oriented protocol; these protocols establish a permanent connection between client and server before the transfer of data can begin. 
  During this connection establishment, a device negotiates the amount of traffic to be forwarded during the  Three-way handshake, which must complete before data transfer can begin.
-For example, to create a three-way handshake between a server and a host, the host sends an SYN flag to a server providing all the necessary information such as its port number (source port) and destination port number (signifying which services it wants access to). When the server receives the SYN flag from the host,  it sends back an SYN and ACK flag, which also contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number which the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake. **
+For example, to create a three-way handshake between a server and a host, the host sends an SYN flag to a server providing all the necessary information such as its port number (source port) and destination port number (signifying which services it wants access to). When the server receives the SYN flag from the host,  it sends back an SYN and ACK flag, which also contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number which the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake.**
 
 [three-way hanshake](/engineering-education/understanding-tcp-ip-transport-layer-protocols/handshake-image.png)
 [Source ](Author)
@@ -91,6 +96,28 @@ User datagram protocol (UDP) is considered as best-effort transport protocol bec
 The significant difference between TCP and UDP is that TCP offers a wide range of services to applications, while UDP does not, this does not make UDP inferior to TCP, but by providing fewer services, UDP has fewer bytes in its header, and this makes UDP is faster in transporting data.
 [UDP header](/engineering-education/understanding-tcp-ip-transport-layer-protocols/udp-image.png)
 [Source](https://en.wikiversity.org/wiki/Internet_Protocol_Analysis/Transport_Layer#/media/File:Internet_Protocol_Analysis_-_Transport_Layer.png)
+
+### Differences between UDP and TCP
+
+|UDP| TCP|
+|:----:|:----:|
+|Because UDP has a low-overhead, it is fast in the transmission of data.|Because of TCP hiigh-over head, it is slow in the transmission of data|
+|UDP does not acknowledge receiving of data and those not resend lost data; thus, it is not reliable.|TCP is reliable because it acknowledges the received of data and resends lost data.| 
+|UDP delivers data as it arrives without an ordered arrangement of the segment.|It delivers data in a sequenced order.|
+
+### Applications that support UDP.
+Becuase of their requirement, the following applictions support UDP
+- Dynamic Host Transfer Protocol (DHCP)
+- Domain Name System(DNS)
+- Trivial File Transfer Protocol (TFTP)
+- Voice over Internet Protocol (VoIP)
+
+### Applications that support TCP.
+Becuase of  reliable their requirement, the following applictions support TCP
+- File Transfer Protocol (FTP)
+- Hyper Text Transfer Protocol (HTTP)
+- Secure Shell (SSH)
+
 
 ### Multiple separate conversations  
 The whole purpose of building an enterprise network or connecting a small office home office (SOHO) network to the internet is for applications such as text messaging, email, video streaming, video, and audio conversations.   To manage these multiple simultaneous conversations, TCP and UDP use a header field that can uniquely identify these applications running simultaneously. This unique identifies are called port numbers.
@@ -135,6 +162,7 @@ The table below shows some well-known ports, the transport layer protocol they s
 |23|TCP|SMTP
 |53|UDP|DNS
 |67|UDP|DHCP Server
+
  [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known ports").
 
 #### Registered port numbers (102-49151)  
