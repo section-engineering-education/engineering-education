@@ -116,7 +116,7 @@ print(even_numbers(range(100, 150)))
 [100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120]
 ```
 
-#### 4.3. Dict & any
+### 4.3. Dict & any
 ```python
 from typing import Callable, Dict, Any
 
@@ -140,7 +140,7 @@ You can find the output [here](https://repl.it/@jerimkaura/static-typing#main.py
 
 The type checker treats `Any` as compatible with any data type. We can perform any operation or method call on `Any.`
 
-#### 4.4. Union
+### 4.4. Union
 The union is used when a function has more than one return type. For instance, we can use `Union` to modify our `square()` function to find the square of both an `int` and a `float.`
 
 ```python
