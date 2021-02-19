@@ -114,10 +114,10 @@ But let's get the Mailtrap credentials before editing the mail configuration fil
 If you have signed up, open the Demo inbox and your account will have SMTP credentials.  
 Pick Laravel from the drop-down menu under the SMTP Settings tab. This shows the configuration you want to use in the Laravel framework.  
 
-The best way to configure Mailtrap is to copy its configuration to the .env file of the program. It's that. Now, your application can deliver emails to the Mailtrap inbox whenever you send emails. If you are not planning to use Mailtrap in development, this is simple and helpful.  
+The best way to configure Mailtrap is to copy its configuration to the .env file of the program. It's that. Now, your application can deliver emails to the Mailtrap inbox whenever you send emails. If you are planning to use Mailtrap in development, this is simple and helpful.  
 
-You may replace mailtrap with mailgrid, ses, or mailgun, etc, after deploying the Laravel app in development.  
-As I said above, it is easier to verify how the emails are made if you are sending emails to your clients. Laravel helps you to quickly move between mailing services, no matter whether the application is in the environment of creation or output.  
+You may replace mailtrap with mailgrid, ses, or mailgun, etc, after deploying the Laravel app in production.  
+As I said above, it is easier to verify how the emails are made if you are sending emails to your clients. Laravel helps you to quickly move between mailing services, no matter whether the application is in the environment of creation (development) or output (production).  
 
 ```bash
 MAIL_MAILER=smtp
