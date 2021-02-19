@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/dijkstra-python/
 title: Understanding Dijkstra's Shortest Path Algorithm in Network Routing using Python
-description: This article gives the reader a guide on how to create an animated counter in a web application using JavaScript. We will do this with a few JavaScript helper methods and by setting the duration for the animation.
+description: This article will give the reader a guide on the Dijkstra algorithm. This is used to calculate and find the shortest path between nodes using the weights given in a graph. 
 author: terrence-aluda
 date: 2021-02-19T00:00:00-10:00
 topics: [Languages]
