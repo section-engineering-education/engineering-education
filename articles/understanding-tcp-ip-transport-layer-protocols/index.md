@@ -11,7 +11,7 @@ In this article, we intend to look at these two transport layer protocols in det
 
 ### Prerequisites
 
-To better understand this article, foundational knowledge of TCP/IP  Layer 1 to 3 is required.  
+As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 3 would help the readers understand the article better.
 
 **Content**
   -Transport Layer responsibilities  
