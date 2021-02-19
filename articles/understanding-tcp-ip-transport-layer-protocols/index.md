@@ -33,11 +33,11 @@ To better understand this article, foundational knowledge of TCP/IP  Layer 1 to 
 
 **Tracking of Individual applications**
 Data flowing from one application to another is known as conversation.
- Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier. 
+ Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier.
 
 **Ordered data transfer**  
 A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services; this is because, according to [waksudir](http://waksudir.blogspot.com/2015/03/transport-layer-protocols), most networks have a limitation on the amount of data that a single packet can contain.
- Because of this, the sending device transport layer prepares the data in manageable pieces, or **segment**. 
+ Because of this, the sending device transport layer prepares the data in manageable pieces or **segments**.
  The receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
 
 ### Multiplexing Conversation using port numbers
@@ -139,7 +139,7 @@ Internet Assigned Numbers Authority (IANA), an organization responsible for assi
   Well-Known ports are port numbers assigned to services such as web browsers, email clients, HTTPS, and Telnet. 
  The RFC6335 Outlines the registration procedures for these services and port numbers.  
 
-The table below shows some well-known port, the transport layer protocol they support, and their applications. These port numbers are assigned as listed in RFC6335.
+The table below shows some well-known ports, the transport layer protocol they support, and their applications. These port numbers are assigned as listed in RFC6335.
 | port number| protocol |    application  
 
 |Port number | Protocol| Application|
