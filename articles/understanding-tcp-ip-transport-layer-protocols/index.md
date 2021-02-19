@@ -78,7 +78,7 @@ The session uses a four-way termination sequence; an additional flag, the FINISH
 
 ![Session termination](/engineering-education/understanding-tcp-ip-transport-layer-protocols/termination-image.png)
 ![Source ](Author)
-  In the example above, the host initiates the session termination; in practice, any device can terminate a session.
+In the example above, the host initiates the session termination; in practice, any device can terminate a session.
   
 **Error recovery**
 TCP provides reliable data transfer, which means that all packet sent from a source reaches its destination.   In a situation where an error occurs along the route, TCP uses a mechanism to resend the faulty segment.     TCP uses acknowledgment (ACK) and sequence fields in the TCP header to number data bytes and tracks them. By so doing, it achieves reliability.  
