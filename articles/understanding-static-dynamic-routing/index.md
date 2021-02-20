@@ -284,10 +284,10 @@ Both Static and Dynamic routing have their advantages and disadvantages; it is u
 - The reader learned about  advantages and disadvantages static and dynamic routing
 - The reader learned about the functions of a router
 - The reader learned about the common dynamic routing protocols in use.
-## Futher reading
-[Routing Protoco messages](https://static-course-assets.s3.amazonaws.com/ScaN6/en/index.html#8.1.1.3)
-[Floating Static route](https://www.ciscopress.com/articles/article.asp?p=2180209&seqNum=4)
-[OPSF](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/configuration/xe-16/iro-xe-16-book/iro-cfg.html)
-[EIGRP](https://en.wikipedia.org/wiki/Enhanced_Interior_Gateway_Routing_Protocol)
-[Route summarization](https://www.ciscopress.com/articles/article.asp?p=2995352)
+## Further reading
+- [Routing Protoco messages](https://static-course-assets.s3.amazonaws.com/ScaN6/en/index.html#8.1.1.3)
+- [Floating Static route](https://www.ciscopress.com/articles/article.asp?p=2180209&seqNum=4)
+- [OPSF](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/configuration/xe-16/iro-xe-16-book/iro-cfg.html)
+- [EIGRP](https://en.wikipedia.org/wiki/Enhanced_Interior_Gateway_Routing_Protocol)
+- [Route summarization](https://www.ciscopress.com/articles/article.asp?p=2995352)
 
