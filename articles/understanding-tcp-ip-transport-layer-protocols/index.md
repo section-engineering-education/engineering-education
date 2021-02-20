@@ -15,28 +15,29 @@ As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 2 would help th
 - User Datagram Protocol (UDP)
 - Multiple conversations
 - Port number
-- Socket and Socket pairs
+- Sockets and socket pairs
 - Conclusion
+- Further reading
 
 ### Transport Layer
 The transport layer is part of the TCP/IP networking model, sometimes also called the **networking architecture**, a comprehensive set of documents that describes everything required for a computer network to function.
 This model's transport layer is responsible for the logical communication between applications running on a different host, thus providing services to application layer protocols on a higher layer of the TPC/IP networking model.
 Though many transport layer protocols exist, the two most commonly used protocols are the Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP). 
-These protocols support different functionalities for different application requirements, but at the minimum, the transport layer supports these functionalities.
-- Ordered data transfer and data segmentation
+These protocols support different functionalities for different application requirements, but at the minimum, the transport layer supports these functionalities:
 - Tracking of individual conversation
+- Ordered data transfer and data segmentation
 - Multiplexing conversation using port numbers
 
-#### Tracking of Individual applications
+#### Tracking of individual applications
 Data flowing from one application to another is known as conversation.
 Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier.
 
-#### Ordered data transfer  
+#### Ordered data transfer
 A continuous stream of bytes is broken down into segments for transmission and delivery by the transport layer's services. According to [this](http://waksudir.blogspot.com/2015/03/transport-layer-protocols) article, most networks have a limitation on the amount of data that a single packet can contain.
 Because of this, the sending device transport layer prepares the data in manageable pieces or **segments**.
 Similarly, the receiving device transport layer receives these segments and uses the header to reconstruct them into complete data useful to the application.
 
-#### Multiplexing Conversation using port numbers
+#### Multiplexing conversation using port numbers
 When using an application, the data or services provided usually appear as a stream of continuous data.
 But sending data ( e.g., video) across a network as a complete stream can consume all of the available network bandwidth, thus preventing other communications such as an email from running simultaneously and making error recovery and retransmission of damage data difficult, if not impossible.
 The Multiplexing mechanism segments TCP and UDP data into small chunks to enable communication from different users to interleave on the same network. This mechanism relies on a concept known as a **socket.**
@@ -54,7 +55,7 @@ As defined in Request For Comment (RFC) 7913, TCP has the following features:
 - Error recovery
 - Ordered data transfer and data segmentation.
 
-#### Connection establishment and Termination
+#### Connection establishment and termination
 Before any TCP feature can occur, TCP connection establishment must first take place. TCP is a connection-oriented protocol; these protocols establish a permanent connection between client and server before the transfer of data can begin.
 During this connection establishment, a device negotiates the amount of traffic to be forwarded during the  Three-way handshake, which must complete before data transfer can begin.
 For example, to create a three-way handshake between a server and a host, the host sends an SYN flag to a server providing all the necessary information such as its port number (source port) and destination port number (signifying which services it wants access to). When the server receives the SYN flag from the host,  it sends back an SYN and ACK flag, which also contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number which the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake.**
@@ -82,7 +83,7 @@ For error recovery, TCP uses the sequence and ACK flag so that the receiving hos
 Assuming in the example above, the host received the first hundred bytes (0-99) with a sequence number of 1, and instead of receiving the next bytes (100-199) with a sequence number of 2, the host receives a segment with (200-299) bytes with a sequence number of 3, it will send a packet requesting for that missing segment, i.e., 100-99 with a sequence number of 2. The sending device can also resend a segment if the receiving device does not acknowledge all the data sent. The sending device, in this case, is a server.  
 The server waits for a few moments using a timer called the retransmission timer to make sure that no other acknowledgment arrives, after which it then decides to resend that particular segment that it did not receive its acknowledgment flag.  
 
-#### Flow control using Widowing
+#### Flow control using widowing
 Because network host has limited resources such as limited space and processing power, TCP implements a mechanism called flow control using a window concept that applied to the amount of data that can be awaiting acknowledgment at any one point in time.
 The receiving device uses the windowing concept to inform the sender how much data it can receive at any given time; this allows the sender to either speed up or slow down the sending of segments through a **window sliding process**.
 
@@ -94,21 +95,20 @@ The significant difference between TCP and UDP is that TCP offers a wide range o
 *Source: UDP Header by [Wikiversity](https://en.wikiversity.org/wiki/Internet_Protocol_Analysis/Transport_Layer#/media/File:Internet_Protocol_Analysis_-_Transport_Layer.png)*
 
 ### Differences between UDP and TCP
-
 |UDP| TCP|
 |:----:|:----:|
 |Because UDP has a low-overhead, it is fast in the transmission of data.|Because of TCP hiigh-over head, it is slow in the transmission of data|
 |UDP does not acknowledge receiving of data and those not resend lost data; thus, it is not reliable.|TCP is reliable because it acknowledges the received of data and resends lost data.| 
 |UDP delivers data as it arrives without an ordered arrangement of the segment.|It delivers data in a sequenced order.|
 
-### Applications that support UDP.
+### Applications supporting UDP
 Becuase of their requirement, the following applictions support UDP:
 - Dynamic Host Transfer Protocol (DHCP)
 - Domain Name System(DNS)
 - Trivial File Transfer Protocol (TFTP)
 - Voice over Internet Protocol (VoIP)
 
-### Applications that support TCP
+### Applications supporting TCP
 Becuase of  reliable their requirement, the following: applictions support TCP
 - File Transfer Protocol (FTP)
 - Hyper Text Transfer Protocol (HTTP)
@@ -130,7 +130,7 @@ Source port numbers are port numbers dynamically generated by the sending device
 In a segment sent by a client, a destination port number is placed within it to tell the destination server the services that the client is requesting. This mechanism is possible because, unlike on a client machine in which request can originate from any locally unused port, services provided by a server have a well-known dedicated port assign to them; as such, the destination port number insert by the client informs the server which serves the client is requesting.
 For example, Telnet uses TCP transport protocol and has a destination port number of 23. When a server receives a segment with a destination port number of 23, it knows that the client is requesting a Telnet service.
 
-### Socket Pairs  
+### Socket Pairs
 The source and destination port numbers placed within a segment only identify which application in a client requests which service from a server, but the segment does not have any mechanism to specify which device is requesting the service.
 To identify which device is requesting a particular service from another device, the internet protocol (IP) encapsulates the segment which contains the source and the destination port number.
 This IP packet includes the source IP address (to identify which device the request originates from) and the destination IP address (to determine the destination device) thus, creating a socket. A socket is a combination of the destination IP address and destination port or source IP address and source port.
@@ -168,3 +168,7 @@ Dynamic port numbers are usually assigned by a client operating system (OS) dyna
 
 ### Conclusion
 The transport layer protocol plays a vital role in how applications exchange data between them. One of these two transport layer protocols, Transport layer protocol (TCP) and User data protocol (UDP), can be used by an application to exchange data. Applications that are fault-tolerant but cannot tolerate delay use UDP, while those that can delay but not fault use TCP.
+
+### Further reading
+- []()
+- []()
