@@ -109,7 +109,7 @@ The significant difference between TCP and UDP is that TCP offers a wide range o
 |UDP| TCP|
 |:----:|:----:|
 |Because UDP has a low-overhead, it has fast transmission of data.|Because of TCP high-overhead, it has slow transmission of data|
-|UDP does not acknowledge receiving of data and those not resend lost data; thus, it is not reliable.|TCP is reliable because it acknowledges the received of data and resends lost data.| 
+|UDP does not acknowledge receiving of data and those not resend lost data. Thus, it is not reliable.|TCP is reliable, because it acknowledges the received data and resends the lost data.| 
 |UDP delivers data as it arrives without an ordered arrangement of the segment.|It delivers data in a sequenced order.|
 
 ### Applications supporting UDP
