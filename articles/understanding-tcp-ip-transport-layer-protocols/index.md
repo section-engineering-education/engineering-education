@@ -80,7 +80,8 @@ The server replies with ACK and FIN flags, informing the host of its willingness
 In the example above, the host initiates the session termination;but in practice, any device can terminate a session.
   
 #### Error recovery
-TCP provides reliable data transfer, which means that all packet sent from a source reaches its destination.   In a situation where an error occurs along the route, TCP uses a mechanism to resend the faulty segment.     TCP uses acknowledgment (ACK) and sequence fields in the TCP header to number data bytes and tracks them. By so doing, it achieves reliability.  
+TCP provides reliable data transfer, which means that all packet sent from a source reaches its destination without any failure. In a situation where an error occurs along the route, TCP uses a mechanism to resend the faulty segment. It uses acknowledgment (ACK) and sequence fields in the TCP header to number the data bytes and track them. By so doing, it achieves reliability.  
+
 For example, if a web server has 400 bytes of data to send to a web client requesting such data, after establishing the session, the server breakdown the data into small size or segment, let's say, 100 bytes. The server will send the first 100 bytes (0-99) of the data, with a sequence number of 1, the host after receiving this first segment, sends an ACK informing the server that the packet has reached its destination and it is reading to receive the next hundred bytes, i.e., 100-199 with a sequence number of 2. This mechanism will continue up to 400 bytes, with the host sending an acknowledgment for each segment received.
 
 Though the explanation above does not recover any error, it is the same TCP mechanism used for error recovery.
