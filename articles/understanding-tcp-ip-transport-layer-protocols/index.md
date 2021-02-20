@@ -125,7 +125,7 @@ Protocols supported by TCP are:
 - Secure Shell (SSH)
 
 ### Multiple separate conversations
-The whole purpose of building an enterprise network or connecting a small office home office (SOHO) network to the internet is for applications such as text messaging, email, video streaming, video, and audio conversations.   To manage these multiple simultaneous conversations, TCP and UDP use a header field that can uniquely identify these applications running simultaneously. This unique identifies are called port numbers.
+The whole purpose of building an enterprise network or connecting a small office home office (SOHO) network to the internet, is for applications such as text messaging, email, video streaming, video, and audio conversations. To manage these multiple simultaneous conversations, TCP and UDP uses a header field that can uniquely identifies these applications running simultaneously. This unique identifier is called port number.
 
 ### Port number
 Each service running on a device uses a specific well-known port number. These port numbers identify each application or service running on a client uniquely.
