@@ -7,17 +7,15 @@ In this article, we will talk about how applications deliver data between two de
 As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 2 would help the readers understand the article better.
 
 ### Table of contents
-- Transport Layer
-- Transport Layer responsibilities  
-- Multiplexing
-- Reliability of the transport layer
-- Transport Control Protocol (TCP)
-- User Datagram Protocol (UDP)
-- Multiple conversations
-- Port number
-- Sockets and socket pairs
-- Conclusion
-- Further reading
+- [Introduction to transport layer](#introduction-to-transport-layer)
+- [Transmission Control Protocol](#transmission-control-protocol)
+- [User Datagram Protocol](#user-datagram-protocol)
+- [Differences between UDP and TCP](#differences-between-udp-and-tcp)
+- [Application](#application)
+- [Port number](#port-number)
+- [Socket pair](#socket-pair)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Transport Layer
 The transport layer is part of the TCP/IP networking model, sometimes also called the **networking architecture**, a comprehensive set of documents that describes everything required for a computer network to function.
