@@ -179,7 +179,7 @@ The table below shows us some well-known port numbers, the transport layer proto
 |53|UDP|DNS
 |67|UDP|DHCP Server
 
-*Source:s") [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port)*
+*Source:s") [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port")*
 
 #### Registered port numbers (102-49151)
 Organizations such as Cisco have port numbers assigned to some of their well-known services by IANA.
@@ -201,5 +201,5 @@ The transport layer protocol plays a vital role in how applications exchange dat
 - [TCP Flags](https://www.geeksforgeeks.org/tcp-flags/)
 - [Transmision Control Protocol](https://searchnetworking.techtarget.com/definition/TCP)
 - [User Datagram Protocol](https://www.briefmenow.org/cisco/what-will-happen-17)
-- [IANA Port numbers ](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port)
+- [IANA Port numbers ](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port")
 - [TCP ordered data transfer](http://waksudir.blogspot.com/2015/03/transport-layer-protocols)
