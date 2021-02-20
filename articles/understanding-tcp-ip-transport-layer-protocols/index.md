@@ -157,7 +157,7 @@ Internet Assigned Numbers Authority (IANA), an organization responsible for assi
 - Registered ports  
 - Dynamic or private ports.
 
-#### Well-known ports (number 0-1023)
+#### Well-known ports (0-1023)
 Well-Known ports are port numbers assigned to services such as web browsers, email clients, HTTPS, and Telnet. 
 The RFC6335 Outlines the registration procedures for these services and port numbers.  
 
