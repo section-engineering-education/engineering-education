@@ -3,7 +3,7 @@
 ### Introduction
 In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol (TCP) or User Datagram Protocol (UDP). By reading this article, you'll understand the working of TCP and UDP, how they are different from each other, and also see various applications using these protocols.
 
-### Prerequisites
+### Prerequisite
 As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 2 would help the readers understand the article better.
 
 ### Table of contents
