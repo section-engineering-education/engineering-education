@@ -71,7 +71,6 @@ The ACK flag is used to acknowledge packets that are successfully received by a 
 For example, to create a three-way handshake between a server and a host, the host sends an SYN flag to a server providing all the necessary information such as its port number (source port) and destination port number (signifying which services it wants access to). When the server receives the SYN flag from the host,  it sends back an SYN and ACK flag, which also contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number which the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake.**
 
 ![Three-way hanshake](/engineering-education/understanding-tcp-ip-transport-layer-protocols/handshake.png)
-*Three-way handshake*
 
 #### Three-way handshake
 - Each flag must contain a source port number and destination port number. 
@@ -179,7 +178,7 @@ The table below shows us some well-known port numbers, the transport layer proto
 |53|UDP|DNS
 |67|UDP|DHCP Server
 
-*Source:[IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port")*
+*Source: [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port")*
 
 #### Registered port numbers (102-49151)
 Organizations such as Cisco have port numbers assigned to some of their well-known services by IANA.
