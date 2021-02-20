@@ -179,7 +179,7 @@ Organizations such as Cisco have port numbers assigned to some of their well-kno
 IANA assigned these port numbers to request entities to use with specific processes or applications.
 
 #### Dynamic (49152-65535)
-Dynamic port numbers are usually assigned by a client operating system (OS) dynamically when establishing a server's connection.
+Dynamic port numbers are usually assigned by a client operating system (OS) dynamically when establishing a server connection.
 
 ### Conclusion
 The transport layer protocol plays a vital role in how applications exchange data between them. One of these two transport layer protocols, Transport layer protocol (TCP) and User data protocol (UDP), can be used by an application to exchange data. Applications that are fault-tolerant but cannot tolerate delay use UDP, while those that can delay but not fault use TCP.
