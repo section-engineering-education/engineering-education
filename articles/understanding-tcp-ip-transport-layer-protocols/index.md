@@ -30,7 +30,7 @@ These protocols provide different functionalities for different application requ
 - Multiplexing conversation using port numbers
 
 #### Tracking of individual conversation
-Data flowing from one application to another is known as conversation.
+Data flowing from one application to another is known as a conversation.
 Because a host can have multiple applications communicating with other applications either within the local network or with a remote network, the transport layer has a mechanism that makes it possible for each application on a host to communicate with another application on a different host either within the local network or in a remote network. According to [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063 ), this mechanism assigns an identifier called a **port number** to each application such that each software process that needs to access the network is has a unique identifier.
 
 #### Ordered data transfer
