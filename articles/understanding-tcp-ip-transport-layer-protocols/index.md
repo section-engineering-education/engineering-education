@@ -94,7 +94,12 @@ Because network host has limited resources such as limited space and processing 
 The receiving device uses the windowing concept to inform the sender how much data it can receive at any given time; this allows the sender to either speed up or slow down the sending of segments through a **window sliding process**.
 
 ### User Datagram Protocol
-User datagram protocol (UDP) is considered as best-effort transport protocol because it is a light-weighted transport protocol. UDP is a connectionless protocol, meaning it provides no reliability nor reordering of the data segment and flow control like TCP, which provides these services. Because of this, UDP is faster than TCP in transporting data. However, according to [Cisco](https://www.briefmenow.org/cisco/what-will-happen-17), UDP provides some similar benefits to TCP, such as data segmentation and Multiplexing using port numbers. UDP is used by applications that are tolerant to loss of data but not delay. For example, TCP's requirement will make it difficult to stream live video as all packets must be sent and acknowledged, which will consume many resources and causes severe delay.
+User datagram protocol (UDP) is considered as best-effort transport protocol because it is a light-weighted transport protocol. UDP is a connectionless protocol, meaning it provides no reliability or reordering of the data segment and flow control like TCP. Because of this, UDP is faster than TCP in transporting data. 
+
+However, according to [Cisco](https://www.briefmenow.org/cisco/what-will-happen-17), UDP provides some similar benefits to TCP, such as data segmentation and multiplexing using port numbers. UDP is used by applications that are tolerant to loss of data but not delay. 
+
+For example, TCP's requirement will make it difficult to stream live video, as all packets must be sent and acknowledged, which will consume many resources and can cause severe delay.
+
 But with UDP, if a packet is missing, the streaming will continue unnoticed. It only becomes apparent when many segments are missing, which is seen in low video quality and lack of synchronization between video and audio.
 The significant difference between TCP and UDP is that TCP offers a wide range of services to applications, while UDP does not, this does not make UDP inferior to TCP, but by providing fewer services, UDP has fewer bytes in its header, and this makes UDP is faster in transporting data.
 ![UDP header](/engineering-education/understanding-tcp-ip-transport-layer-protocols/udp.png)
