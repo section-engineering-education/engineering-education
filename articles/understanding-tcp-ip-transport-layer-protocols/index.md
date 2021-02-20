@@ -1,7 +1,7 @@
 # Understanding TCP/IP Transport Layer (Layer 3) protocols: TCP and UDP  
 
 ### Introduction
-In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol or User Datagram Protocol.
+In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol (TCP) or User Datagram Protocol (UDP). By reading this article, you'll understand the working of TCP and UDP, how they are different from each other, and also see various applications using these protocols.
 
 ### Prerequisites
 As a prerequisite, a foundational knowledge of TCP/IP Layer 1 to 2 would help the readers understand the article better.
