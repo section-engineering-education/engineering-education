@@ -23,7 +23,8 @@ The transport layer is part of the TCP/IP networking model, sometimes called the
 The transport layer is responsible for the logical communication between applications running on different hosts, thus providing services to application layer protocols on a higher layer of the TCP/IP network model.
 
 Though many transport layer protocols exist, the two most commonly used protocols are the Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP). 
-These protocols support different functionalities for different application requirements, but at the minimum, the transport layer supports these functionalities:
+
+These protocols provide different functionalities for different application requirements. A few of the most important functionalities are:
 - Tracking of individual conversation
 - Ordered data transfer and data segmentation
 - Multiplexing conversation using port numbers
