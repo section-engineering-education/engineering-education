@@ -129,7 +129,7 @@ The whole purpose of building an enterprise network or connecting a small office
 
 ### Port number
 Each service running on a device uses a specific well-known port number. These port numbers identify each application or service running on a client uniquely.
-For every connection from clients,  the segment header contains two types of port numbers, they are:
+For every connection from clients, the segment header contains two types of port numbers:
 - Source port number
 - Destination port number.  
 
