@@ -161,7 +161,7 @@ Internet Assigned Numbers Authority (IANA), an organization responsible for assi
 Well-Known ports are port numbers assigned to services such as web browsers, email clients, HTTPS, and Telnet. 
 The RFC6335 Outlines the registration procedures for these services and port numbers.  
 
-The table below shows some well-known ports, the transport layer protocol they support, and their applications. These port numbers are assigned as listed in RFC6335.
+The table below shows us some well-known port numbers, the transport layer protocol that they support, and their applications. These port numbers are assigned as listed in RFC6335.
 
 |Port number | Protocol| Application|
 |:----:|:----:|:----|
