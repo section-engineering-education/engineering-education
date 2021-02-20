@@ -89,7 +89,7 @@ For error recovery, TCP uses the sequence and ACK flag so that the receiving hos
 Assuming in the example above, the host received the first hundred bytes (0-99) with a sequence number of 1, and instead of receiving the next bytes (100-199) with a sequence number of 2, the host receives a segment with (200-299) bytes with a sequence number of 3, it will send a packet requesting for that missing segment, i.e., 100-99 with a sequence number of 2. The sending device can also resend a segment if the receiving device does not acknowledge all the data sent. The sending device, in this case, is a server.  
 The server waits for a few moments using a timer called the retransmission timer to make sure that no other acknowledgment arrives, after which it then decides to resend that particular segment that it did not receive its acknowledgment flag.  
 
-#### Flow control using widowing
+#### Flow control using windowing
 Because network host has limited resources such as limited space and processing power, TCP implements a mechanism called flow control using a window concept that applied to the amount of data that can be awaiting acknowledgment at any one point in time.
 The receiving device uses the windowing concept to inform the sender how much data it can receive at any given time; this allows the sender to either speed up or slow down the sending of segments through a **window sliding process**.
 
