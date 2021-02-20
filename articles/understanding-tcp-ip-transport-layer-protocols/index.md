@@ -69,7 +69,7 @@ Using the session created above, after the host device receives the last packet 
 If the host intends to terminate the session, it sends a FIN flag and the ACK flag, informing the server that it has received all the information it requires from the server and intends to terminate it.
 The server replies with an ACK flag notifying the client that it has received the FIN flag and is aware of the host's readiness to terminate the session.
 The server replies with ACK and FIN flags, informing the host of its willingness to end the session. The session ends immediately after the host sends an ACK flag to the server completing the four way-handshake.
-![Session termination](/engineering-education/understanding-tcp-ip-transport-layer-protocols/termination-image.png)
+![Session termination](/engineering-education/understanding-tcp-ip-transport-layer-protocols/termination.png)
 *Session Termination*
 In the example above, the host initiates the session termination;but in practice, any device can terminate a session.
   
