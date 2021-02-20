@@ -44,37 +44,44 @@ Similarly, the receiving device transport layer receives these segments and uses
 
 #### Multiplexing conversation using port numbers
 When using an application, the data or services provided usually appear as a stream of continuous data.
-But sending data ( e.g., video) across a network as a complete stream can consume all of the available network bandwidth, thus preventing other communications such as an email from running simultaneously and making error recovery and retransmission of damage data difficult, if not impossible.
+But sending data ( e.g., video) across a network as a complete stream can consume all of the available network bandwidth'
+This prevent other services such as an email from using the medium and makes error recovery and retransmission of damage data difficult.
 The Multiplexing mechanism segments TCP and UDP data into small chunks to enable communication from different users to interleave on the same network. This mechanism relies on a concept known as a **socket.**
 
 ### Transmission Control Protocol
+Transmission Control Protocol (TCP) as defined by [this](https://searchnetworking.techtarget.com/definition/TCP)article, is a standard that defines how to establish and maintain a network conversation through which application programs can exchange data.
 The type of transport layer protocol an application chooses to use depends on the application requirement.
 TCP is analogous to sending a package with a tracker that tracks the package from its source to its destination.
 ![TCP Header](/engineering-education/understanding-tcp-ip-transport-layer-protocols/tcp.png)
 *Source: TCP Header by [Wikiversity](https://en.wikiversity.org/wiki/Internet_Protocol_Analysis/Transport_Layer#/media/File:Internet_Protocol_Analysis_-_Transport_Layer.png)*
 
 As defined in Request For Comment (RFC) 7913, TCP has the following features:
-- Connection establishment
+- Connection establishment and termination 
 - Multiplexing using ports
 - Flow control using windowing  
 - Error recovery
 - Ordered data transfer and data segmentation.
 
 #### Connection establishment and termination
-Before any TCP feature can occur, TCP connection establishment must first take place. TCP is a connection-oriented protocol; these protocols establish a permanent connection between client and server before the transfer of data can begin.
+Before any TCP feature can occur, TCP connection establishment must first take place because TCP is a connection-oriented protocol. A connection-oriented protocol as a protocol that establishes a permanent connection between client and server before the transfer of data can begin.
 During this connection establishment, a device negotiates the amount of traffic to be forwarded during the  Three-way handshake, which must complete before data transfer can begin.
+A three-way handshake is established using two flags:the Synchronization (SYN) flag and the Acknowledge (ACK) flag. 
+The SYN flag is used in the first step of connection establishment between the two hosts. This flag is found Only in the first packet from the server and the host containing a synchronizing sequence number. 
+The ACK flag is used to acknowledge packets that are successfully received by a device. 
 For example, to create a three-way handshake between a server and a host, the host sends an SYN flag to a server providing all the necessary information such as its port number (source port) and destination port number (signifying which services it wants access to). When the server receives the SYN flag from the host,  it sends back an SYN and ACK flag, which also contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number which the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake.**
 
 ![Three-way hanshake](/engineering-education/understanding-tcp-ip-transport-layer-protocols/handshake.png)
 *Three-way handshake*
 
-**NOTE:** Each flag must contain a source port number and destination port number. 
-When a device is sending an SYN flag, its port number becomes the source port number, while that of the device it is sending the flag to becomes the destination port number. After the device receives the SYN flag and wants to send an acknowledgment, it uses the ACK flag and then reverses these port numbers.
-The session uses a four-way termination sequence; an additional flag, the FINISHED (FIN) flag, is used together with the SYN and ACK flag.
-Using the session created above, after the host device receives the last packet from the server, it sends an acknowledgment (ACK) flag informing the server that it has received the packet. 
-If the host intends to terminate the session, it sends a FIN flag and the ACK flag, informing the server that it has received all the information it requires from the server and intends to terminate it.
-The server replies with an ACK flag notifying the client that it has received the FIN flag and is aware of the host's readiness to terminate the session.
-The server replies with ACK and FIN flags, informing the host of its willingness to end the session. The session ends immediately after the host sends an ACK flag to the server completing the four way-handshake.
+#### Three-way handshake
+- Each flag must contain a source port number and destination port number. 
+- When a device is sending an SYN flag, its port number becomes the source port number, while that of the device it is sending the flag to becomes the destination port number. After the device receives the SYN flag and wants to send an acknowledgment, it uses the ACK flag and then reverses these port numbers.
+- The session uses a four-way termination sequence; an additional flag, the FINISHED (FIN) flag, is used together with the SYN and ACK flag.
+- The finish (FIN) flag is used to request connection termination when there is no more data from the sender. This is the last packet sent by the sender.
+- Using the session created above, after the host device receives the last packet from the server, it sends an acknowledgment (ACK) flag informing the server that it has received the packet. 
+- If the host intends to terminate the session, it sends a FIN flag and the ACK flag, informing the server that it has received all the information it requires from the server and intends to terminate it.
+- The server replies with an ACK flag notifying the client that it has received the FIN flag and is aware of the host's readiness to terminate the session.
+- The server replies with ACK and FIN flags, informing the host of its willingness to end the session. The session ends immediately after the host sends an ACK flag to the server completing the four way-handshake.
 ![Session termination](/engineering-education/understanding-tcp-ip-transport-layer-protocols/termination.png)
 *Session Termination*
 In the example above, the host initiates the session termination;but in practice, any device can terminate a session.
@@ -172,7 +179,7 @@ The table below shows us some well-known port numbers, the transport layer proto
 |53|UDP|DNS
 |67|UDP|DHCP Server
 
-*Source: [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known ports")*
+*Source:s") [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port)*
 
 #### Registered port numbers (102-49151)
 Organizations such as Cisco have port numbers assigned to some of their well-known services by IANA.
@@ -183,7 +190,16 @@ Dynamic port numbers are usually assigned by a client operating system (OS) dyna
 
 ### Conclusion
 The transport layer protocol plays a vital role in how applications exchange data between them. One of these two transport layer protocols, Transport layer protocol (TCP) and User data protocol (UDP), can be used by an application to exchange data. Applications that are fault-tolerant but cannot tolerate delay use UDP, while those that can delay but not fault use TCP.
+### To summarize:
+- The reader learned about what TCP and UDP is
+- The reader learned about the working of TCP and UDP, along with their comparisons
+- The reader learned how TCP establishes connections, how it terminates connections, and how it recovers from errors during data transfer.
+- The reader learned about applications that use TCP and UDP
+- The reader learned about port numbers 
 
 ### Further reading
-- []()
-- []()
+- [TCP Flags](https://www.geeksforgeeks.org/tcp-flags/)
+- [Transmision Control Protocol](https://searchnetworking.techtarget.com/definition/TCP)
+- [User Datagram Protocol](https://www.briefmenow.org/cisco/what-will-happen-17)
+- [IANA Port numbers ](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml "well Known port)
+- [TCP ordered data transfer](http://waksudir.blogspot.com/2015/03/transport-layer-protocols)
