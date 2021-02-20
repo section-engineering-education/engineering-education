@@ -112,15 +112,14 @@ The significant difference between TCP and UDP is that TCP offers a wide range o
 |UDP does not acknowledge receiving of data and those not resend lost data. Thus, it is not reliable.|TCP is reliable, because it acknowledges the received data and resends the lost data.| 
 |UDP delivers data as it arrives without an ordered arrangement of the segment.|It delivers data in a sequenced order.|
 
-### Applications supporting UDP
-Becuase of their requirement, the following applictions support UDP:
+### Application
+Protocols supported by UDP are:
 - Dynamic Host Transfer Protocol (DHCP)
 - Domain Name System(DNS)
 - Trivial File Transfer Protocol (TFTP)
 - Voice over Internet Protocol (VoIP)
 
-### Applications supporting TCP
-Becuase of  reliable their requirement, the following: applictions support TCP
+Protocols supported by TCP are:
 - File Transfer Protocol (FTP)
 - Hyper Text Transfer Protocol (HTTP)
 - Secure Shell (SSH)
