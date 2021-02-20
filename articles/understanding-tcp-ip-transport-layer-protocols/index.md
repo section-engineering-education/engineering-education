@@ -141,10 +141,15 @@ In a segment sent by a client, a destination port number is placed within it to 
 For example, Telnet uses TCP transport protocol and has a destination port number of 23. When a server receives a segment with a destination port number of 23, it knows that the client is requesting a Telnet service.
 
 ### Socket pair
-The source and destination port numbers placed within a segment only identify which application in a client requests which service from a server, but the segment does not have any mechanism to specify which device is requesting the service.
-To identify which device is requesting a particular service from another device, the internet protocol (IP) encapsulates the segment which contains the source and the destination port number.
-This IP packet includes the source IP address (to identify which device the request originates from) and the destination IP address (to determine the destination device) thus, creating a socket. A socket is a combination of the destination IP address and destination port or source IP address and source port.
-A socket is handy to the transport layer because it keeps track of services and devices requesting such services to properly forward data to the proper application as stated by [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063).
+The source and the destination port numbers placed within a segment, only identifies which application in a client, requests for which service from a server. But the segment does not have any mechanism to specify which device is requesting the service.
+
+To identify which device is requesting a particular service, the internet protocol (IP) encapsulates the segment which contains the source and the destination port number.
+
+This IP packet includes the source IP address to identify which device the request originates from and the destination IP address to determine the destination device. Thus, creating a socket. 
+
+A socket is a combination of the destination IP address and destination port or source IP address and source port.
+
+A socket is handy to the transport layer because it keeps track of services and devices requesting such services, to properly forward the data to the requesting application as stated by [Cisco](https://community.cisco.com/t5/switching/which-layer-of-the-model-osi-and-tcp-ip-is-the-port-number/td-p/3356063).
 
 ### Port number groups
 Internet Assigned Numbers Authority (IANA), an organization responsible for assigning various addressing standards, has grouped port numbers into three major groups, these groups are:
