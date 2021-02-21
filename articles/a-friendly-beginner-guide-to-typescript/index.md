@@ -6,17 +6,17 @@ url: /engineering-education/a-friendly-beginner-guide-to-typescript/
 title: A Friendly Beginner's Guide to TypeScript
 description: This article gives the reader a friendly beginners guide to TypeScript; which is a language that extends JavaScript by adding types.
 author: idris-olubisi
-date: 2021-02-02T00:00:00-07:00
+date: 2021-02-21T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-friendly-beginner-guide-to-typescript/hero.jpg
+  - url: /engineering-education/a-friendly-beginner-guide-to-typescript/hero.png
     alt: Guide to TypeScript image example
 ---
-TypeScript is a programming language that extending JavaScript by adding types. It saves time catching errors and providing fixes before you run code. So, by understanding JavaScript everything comes in handy.
-
-TypeScript is one of the most used tools for adding static types. Code written in TypeScript can be transformed easily into JavaScript using TypeScript compiler or babel. The compiled JavaScript code is always clean with no bugs and of course, they run in the browsers or NodeJs application.
+TypeScript is a programming language that extends JavaScript by adding types. It saves time by catching errors and provides fixes before you run the code. TypeScript is a commonly used tool for adding static types.
+<!--more-->
+Code written in TypeScript can be easily transformed into JavaScript using a TypeScript compiler or babel. The compiled JavaScript code is always cleaner with no bugs and it runs in a browsers or Node.js application.
 
 ### Table of contents
 - TypeScript Basics
@@ -27,10 +27,13 @@ TypeScript is one of the most used tools for adding static types. Code written i
 - Resources
 - Conclusion
 
-### Prerequisite
-- Basic knowledge of JavaScript
+### Prerequisites
+Before we continue it is recommended to have the following.
+- A basic knowledge of JavaScript.
 
-In this article, I will show you some important guidelines to learn typescript. But, have in mind that practicing is the best way to learn. Let's get started!
+In this article, I will show you some important guidelines to follow as you learn Typescript. But it is also key to remember that practicing is the best way to learn. 
+
+Let's get started!
 
 ### TypeScript types
 #### Boolean
@@ -41,7 +44,7 @@ let isOpen: Boolean = true;
 ```
 
 #### Number
-TypeScript Supports floating-point values, this type is known as `number`. In ECMAScript 2015, octal literals and binary were introduced which is also supported in TypeScript.
+TypeScripts supports floating-point values, this type is known as a `number`. In ECMAScript 2015, octal literals and binary were introduced which is also supported in TypeScript.
 
 ```TypeScript
 let decimalExample: number = 6;
@@ -52,14 +55,14 @@ let binaryExample: number = 0b1010;
 ```
 
 #### String
-TypeScript uses single (') or double(") quote similar to JavaScript. Textual datatypes are refer to as type `string` as in other languages
+TypeScript uses single (') or double(") quote similar to JavaScript. Textual datatypes are refer to as a type `string` as in other languages.
 
 ```TypeScript
 let colour: string = "yellow";
 colour = 'white';
 ```
 
-Template Strings are also valid in TypeScript and can be used without limitations. This is represented using backtick (\`) , it can also be used for embedded expressions as shown below:
+Template strings are also valid in TypeScript and can be used without limitations. This is represented using backtick (\`) , it can also be used for embedded expressions as shown below:
 
 ```TypeScript
 let fullName: string = `Idris Olubisi`;
@@ -94,6 +97,7 @@ let c: Fruits = Fruits.Banana;
 
 #### Array
 TypeScript also supports arrays. An array is a data structure consisting of a set of elements. Each element is defined by an index or key and is stored in such a way that a mathematical formula can compute its position from its index tuple.
+
 ##### Tips about an Array
 - Once an array is initialized it can't be resized because it's static. This can be useful in many scenarios.
 - Sequential memory blocks are allocated when an array is declared.
@@ -103,14 +107,16 @@ TypeScript also supports arrays. An array is a data structure consisting of a se
 let listOfNumbers: number[] = [1, 2, 3, 4, 5, 6];
 ```
 
-Using the generic array type declaration
+Using the generic array type declaration.
 
 ```TypeScript
 let listOfNumbers: Array<number> = [1, 2, 3, 4, 5, 6];
 ```
 
 #### Object
-An object is an instance that contains a set of key-value pairs. The type `object` is a non-primitive type. An example is shown below:
+An object is an instance that contains a set of key-value pairs. The type `object` is a non-primitive type. 
+
+An example is shown below:
 
 ```TypeScript
 var person = {
@@ -120,7 +126,9 @@ var person = {
 ```
 
 #### Any
-The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript. The `any` type allows you to gradually control the opt-in and opt-out of checking types during compilation. An example of the type `Any` is shown below:
+The type `Any` allows us to assign “any” particular value to a variable, similar to what we have in JavaScript. The `any` type allows you to gradually control the opt-in and opt-out of checking types during compilation. 
+
+An example of the type `Any` is shown below:
 
 ```TypeScript
 let amount: any;
@@ -134,7 +142,7 @@ amount = undefined;
 ```
 
 #### Unknown
-This works similar to `Any`, but, it gives an error when you try to reassign a value that has been initialized. This means anything can be assignable to unknown itself and also `any` types in TypeScript.
+This works similar to `Any`, but, it gives an error when you try to reassign a value that has been initialized. This means anything can be assigned to unknown itself and also `any` types in TypeScript.
 
 ```TypeScript
 let amount: unknown;
@@ -168,7 +176,9 @@ if (typeof maybeItsUnknown === "string") {
 ```
 
 #### Void
-A `void` type in TypeScript is seen as a return type for a function that does not return a value. An example is shown below:
+A `void` type in TypeScript is seen as a return type for a function that does not return a value. 
+
+An example is shown below:
 
 ```TypeScript
 function greetings(): void {
@@ -179,7 +189,9 @@ function greetings(): void {
 You can also check out the [TypeScript Docs](https://www.typescriptlang.org/docs) to learn more about the types and basics in TypeScript.
 
 ### Compiler Configurations
-`tsconfig.json` specifies the root files in typescript and the compiler options that are required to compile the project whenever `tsc` is run locally. e.g.
+`tsconfig.json` specifies the root files in typescript and the compiler options that are required to compile the project whenever `tsc` is run locally. 
+
+For example:
 
 ```TypeScript
 {
@@ -259,12 +271,12 @@ You can also check out the [TypeScript Docs](https://www.typescriptlang.org/docs
 
 Most of the configurations are commented out but you can uncomment where necessary after reading the description attached to it on the right-hand side.
 
-#### To run your TypeScript File
+#### To run your TypeScript file
 - Configure typescript using the `tsconfig.json` file.
-- Run `tsc --watch`, so that every time you change a `.ts` file, tsc will compile it and produce the output in any folder configured e.g a dist folder.
-- Nodemon can be used to watch files changed in dist folder, then reload happens Automatically.
+- Run `tsc --watch`, so that every time you change a `.ts` file, tsc will compile it and produce the output in any folder configured such as a dist folder.
+- Nodemon can be used to watch files changed in dist folder, then reload happens automatically.
 
-configure your script in `package.json` to look like this
+Configure your script in `package.json` to look like this:
 
 ```TypeScript
 "scripts": {
@@ -279,7 +291,7 @@ configure your script in `package.json` to look like this
 ### Classes & Interfaces
 An Interface is a structured group of properties that describe an object.
 
-A Class is a blueprint for which objects can be created and configured using the same properties and methods.
+A Class is a blueprint so objects can be created and configured using the same properties and methods.
 
 In addition to the class definition:
 
@@ -316,33 +328,38 @@ class WelcomeMessage {
 let welcomeUser = new WelcomeMessage("Idris"); // Welcome Idris
 ```
 
-### Typescript Features
-JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development)
+### Typescript features
+JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development).
 
 ![typescript feature](/engineering-education/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
-[image credit](https://www.tutorialspoint.com/)
+
+[Image Source](https://www.tutorialspoint.com/)
 
 ### Namespaces and Module
 #### Namespaces
-Namespaces are used for logical grouping and can include functions, classes and, interfaces to support a group of related functionalities.
+Namespaces are used for logical grouping and can include functions, classes, and interfaces to support a group of related functionalities.
+
 Namespaces structures codes in a web application in such a way that all dependencies can be included in a `script` tag.
 
 ##### Module
-Modules in TypeScript can contain declarations, code, and dependency on a module loader or a runtime that supports ES Modules. They provide strong isolation and separation of concern, reusable code, and great support for bundling. Modules are recommended for code organization mechanisms to suit proper business logic.
+Modules in TypeScript can contain declarations, code, and dependency on a module loader or a runtime that supports ES Modules. They provide strong isolation/separation of concern, reusable code, and provide great support for bundling. 
 
-### Resources
-[TypeScript Docs](https://www.typescriptlang.org/docs/)
-
-[Awesome TypeScript](https://github.com/dzharii/awesome-typescript)
-
-[Why Static Typing & Why is TypeScript so popular?](https://www.section.io/engineering-education/typescript-static-typing/)
+Modules are recommended for code organization mechanisms to suit any proper business logic.
 
 ### Conclusion
 > Practice makes perfect, you will learn and find solutions in ways you never imagined possible. "Jo Bradford"
 
-I hope you find this useful.
+I hope you found this tutorial useful.
 
 Thank you for reading.
+
+### Resources
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)
+
+- [Awesome TypeScript](https://github.com/dzharii/awesome-typescript)
+
+- [Why Static Typing & Why is TypeScript so popular?](https://www.section.io/engineering-education/typescript-static-typing/)
+
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
