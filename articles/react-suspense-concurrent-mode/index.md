@@ -11,13 +11,18 @@ JavaScript is a single threaded language yet most of the tasks done on the web s
 
 
 ### The React concurrent mode 
-In a single threaded language like JavaScript, concurrency is used to structure a program by breaking it into pieces that can execute independently. React does alot of work under the hood to handle updates to the components and map them to the DOM. Concurrent Mode is a set of changes to the React rendering mechanism so as to essentially let React perform multiple renders concurrently. It can interrupt, delay, or dismiss an ongoing render and defer state updates. This has the benefit of making the application stay responsive while adjusting to user's device capability and network speeds.
+In a single threaded language like JavaScript, concurrency is used to structure a program by breaking it into pieces that can execute independently. React does alot of work under the hood to handle updates to the components and map them to the DOM. Concurrent Mode is a set of changes to the React rendering mechanism so as to essentially let React perform multiple renders concurrently. It can interrupt, delay, or dismiss an ongoing render and defer state updates.  This will help break the limitations of a single threaded language while making our applications stay responsive and performant.
 You need to change the line `ReactDOM.render(<App />, rootNode)` to:
 `ReactDOM.createRoot(rootNode).render(<App />)`
 
 This will enable full Concurrent Mode for your application. To use Concurrent Mode effectively, we will refer to the Suspense  that React rolls out together with Concurrent Mode.
 
 ### The React Suspense
+suspense allows us to show a placeholder while waiting for a code split part of the application.This feature works on anything using promises. It is an overall improvement when dealing with asynchronous data fetching in React applications.
+
+Suspense suspends your component rendering and renders a fallback component until a condition is met. For example, it can render a loader while waiting for resources,
+The future - Suspense for data fetching: your component throws a promise that is caught by Suspense, waiting for it to resolve. While waiting, Suspense renders a 
+fallback component. Then your component is rendered again.
 
 
 ### Conclusion
