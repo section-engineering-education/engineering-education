@@ -11,11 +11,11 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/laravel-8-email-verification/hero.jpg
-    alt: laravel language localisation
+    alt: laravel email verification
 ---
 Laravel is a PHP-based framework that is simple to understand. It makes it easy to code complex features in an application. One of the features that can be implemented quickly using Laravel is email verification.  
 <!--more-->
-Typically, we need to verify users' emails whenever they sign up on the website. This process ensures that we accept only those users with valid email addresses.  In the past, it was quite difficult to code or include email verification in applications. The introduction of Laravel made life better for developers. In other words, implementing email verification in Laravel only requires a few lines of code.
+Typically, we need to verify emails whenever a user signs up on the website. This process ensures that we only accept those users with valid email addresses. In the past, it was quite difficult to code or include email verification in applications. The introduction of Laravel made life better for developers. In other words, implementing email verification in Laravel only requires a few lines of code.
 
 ### Prerequisites
 You will need the following to complete this tutorial:   
@@ -30,7 +30,7 @@ To implement email verification on a website using Laravel.
 Create a new Laravel application either via composer or Laravel installer.  
 
 **Installing via composer:**    
-Laravel uses `Composer` for the control of dependencies. Before you install Laravel, make sure you have the Composer installed on your machine. 
+Laravel uses `Composer` for the control of dependencies. Before you install Laravel, make sure you have Composer installed on your computer. 
 
 You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check the software version using the following command. 
  
@@ -46,24 +46,28 @@ cd verifyEmailApp
 php artisan serve
 ```
 
+`php artisan serve` command allows the application to be hosted locally.
+
 **Using Laravel Installer**  
-To build Laravel applications easily, Laravel provides a helpful command-line utility. Download the installer first: 
+There are numerous command-line utilities that make it easy to build applications using Laravel. We use the following command to download the Laravel installer: 
 
 ```bash
 composer global require laravel/installer
 ```
 
 To run the Laravel installer, you need to make sure that the Composer binary folder is within your `$PATH` variable.
-See if it is already in your `$PATH` variable, first by running the following command in your terminal:  
+Check if it is in your `$PATH` variable by running the following command in your terminal:  
 
 ```bash
 echo $PATH
 ```
-The performance should contain something like this if all is correct:  
+
+The correct output should look, as shown below:  
 `User/username/.vendor/composer/bin`  
-If not, change your `.bashrc` or, if you're using `ZSH`, your `.zshrc` so that it includes the path to the vendor directory for your composer.  
+
+Incase of any errors, change your `.bashrc` or, if you're using `ZSH`, your `.zshrc` so that it includes the path to the vendor directory for your composer.  
 When installed, this command creates a new installation for Laravel in the directory you choose.  
-It's even possible to use. (a dot) instead of `[foldername]` to construct a project without having a subdirectory in the current working directory.
+It's even possible to use a fullstop instead of `[foldername]` to construct a project without having a subdirectory in the current working directory.
 
 ```bash
 laravel new verifyEmailApp
@@ -74,18 +78,17 @@ php artisan serve
 >You can learn more about Laravel installation from [here](https://laravel.com/docs/8.x/installation).  
 
 ### step 2: Configuring database
-The `config/database.php` file contains all the database configurations.  
-You need to tell the details about the database to your laravel project once the database is created.  
-Laravel 8 has a pretty straightforward way to do that, all the configuration should stay private.   
-Modify the following properties according to your database settings in your `.env` file.
+The `config/database.php` file contains all the database configurations. You should, therefore, define all the database details in this file. All database configurations should be private.   
+
+Modify the following properties according to your database settings in the `.env` file.
 
 ```bash
 DB_CONNECTION=mysql #you can change this to any database
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=verification
-DB_USERNAME=MyDatabaseUserName
-DB_PASSWORD=MyDatabasePassword
+DB_DATABASE=verification #database name
+DB_USERNAME=MyDatabaseUserName #insert username
+DB_PASSWORD=MyDatabasePassword #insert password
 ```
 
 You will notice that Laravel 8 automatically updates this file without running the command:  
@@ -97,12 +100,11 @@ php artisan config:clear
 > NOTE: While using Laravel 7.x, you've to clear the `cache` to reflect changes made.  
 
 ### Step 3: Simple Mail Transfer Protocol Configurations
-In this article, we set up [Mailtrap](https://mailtrap.io/), a service in the development environment for testing emails or sending test emails before sending them to real customers. It simulates the actual SMTP server and delivers your emails to a test email on Mailtrap from the localhost or staging website.
+In this article, we set up [Mailtrap](https://mailtrap.io/). We will use this service to test and send emails. Mailtrap simulates the actual SMTP server and delivers your emails to a test recipient. It allows the marketing team to send emails to a Mailtrap inbox and see how they are rendered.
 
-Developers can create features once Mailtrap is set up to allow the marketing team to send emails to a Mailtrap inbox to see how emails are rendered.  
-Like SMTP, Mailgun, Postmark, Amazon SES, and Sendmail, Laravel supports several out-of-the-box email services. The mail configuration file located at `config/mail.php` is provided by Laravel. We can set up the default email service and its credentials at `mail.php`.  
+Laravel supports several out-of-the-box email services. This includes SMTP, Mailgun, Postmark, Amazon SES, and Sendmail. We can set up the default email service and its credentials at `config/mail.php`.  
 
-But let's get the Mailtrap credentials before editing the mail configuration file by creating a Mailtrap account. Visit and sign up for an account on the Mailtrap website. To test their services, go for a free plan. The free plan allows us to send 500 emails a month and one inbox is provided. For small applications, it's just enough.  
+Let's get the Mailtrap credentials before editing the `mail.php` file. Navigate to [Mailtrap](https://mailtrap.io/) and sign up for an account. We will use an account with a free plan in this tutorial. The free plan allows us to send 500 emails a month and one inbox is provided. For small applications, it's just enough.  
 
 If you have signed up, open the Demo inbox and your account will have SMTP credentials.  
 Pick Laravel from the drop-down menu under the SMTP Settings tab. This shows the configuration you want to use in the Laravel framework.  
@@ -126,7 +128,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 >This tutorial strongly recommends you to use [Mailtrap](https://mailtrap.io/) due to its simplicity and well-structured documentation.  
 
 #### Step 4: Installing Laravel Jetstream Scaffolding  
-In a common move among developers, for a more modern strategy using the Jetstream kit, Laravel 8 has distanced itself from its authentication scaffolding.   Jetstream is described by Laravel Documentation as a "beautifully designed application starter kit for Laravel and provides the ideal starting point for your next Laravel application." Jetstream offers the implementation of login, registration, ***email verification***, two-factor authentication, session management, API via Laravel Sanctum, and optional team management functionality for your application.  
+In a common move among developers, for a more modern strategy using the Jetstream kit, Laravel 8 has distanced itself from its authentication scaffolding. Jetstream is described by Laravel Documentation as a "beautifully designed application starter kit for Laravel and provides the ideal starting point for your next Laravel application." Jetstream offers the implementation of login, registration, ***email verification***, two-factor authentication, session management, API via Laravel Sanctum, and optional team management functionality for your application.  
 
 You can learn more about the new Laravel features including authentication scaffolding from [here](https://www.section.io/engineering-education/laravel-8-new-features/).
 
