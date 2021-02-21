@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-kotlin-ktor/
-title: introduction to Kotlin Ktor
+title: Introduction to Kotlin Ktor
 description: In this article, we will take a short look on how to set up a restful Ktor service. We will explore the basic architecture of applications using this framework.
 author: linus-muema
-date: 2021-02-19T00:00:00-14:00
+date: 2021-02-21T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,20 @@ images:
   - url: /engineering-education/introduction-to-kotlin-ktor/hero.jpg
     alt: Kotlin ktor image example
 ---
-Kotlin is used to create different applications for different platforms. Server-side applications are no exception. Just like Java, Kotlin can be used to set up and run server side applications. There are several frameworks that can be used with Kotlin. For instance, all frameworks used with Java like [Spring](https://spring.io/) and [Spark](https://sparkjava.com/) have support for Kotlin. Then there are those specifically meant to be use with Kotlin. One of them is [Ktor](https://ktor.io/). Ktor was created by Jetbrains, the same open source company that brought us Kotlin 😄.
+Kotlin is used to create different applications for different platforms. Server-side applications are no exception. Just like Java, Kotlin can be used to set up and run server side applications. There are several frameworks that can be used with Kotlin. For instance, all frameworks used with Java like [Spring](https://spring.io/) and [Spark](https://sparkjava.com/) have support for Kotlin. 
 <!--more-->
-Ktor is used to create server side applications with asynchronous programming in mind. Ktor is lightweight and has a great support for coroutines. It also has support for [Kotlin Multiplatform](https://kotlinlang.org/docs/reference/multiplatform.html); allowing cross platform capabilities.
+Then there are those specifically meant to be use with Kotlin. One of them is [Ktor](https://ktor.io/). Ktor was created by Jetbrains, the same open source company that brought us Kotlin 😄.
 
-In this article, we will take a short look on how to set up a restful Ktor service. We will explore the basic architecture of applications using this framework.
+Ktor is used to create server side applications with asynchronous programming in mind. Ktor is lightweight and has a great support for coroutines. 
+
+It also has support for [Kotlin Multiplatform](https://kotlinlang.org/docs/reference/multiplatform.html); allowing cross platform capabilities.
+
+In this article, we will take a quick look on how to set up a restful Ktor service. We will explore the basic architecture of applications using this framework.
 
 ### Prerequisites
 You will need:
-1. a basic understanding of the Kotlin programming language
-2. a basic understanding of HTTP methods
+1. A basic understanding of the Kotlin programming language
+2. A basic understanding of HTTP methods
 3. IntelliJ IDE
 4. Postman or an equivalent software.
 
@@ -36,7 +40,7 @@ Open your IDE and select "New Project". Then go to the Ktor section to create a 
 
 We are using `Gradle` and [`Netty`](https://netty.io/) engine for our server functionality. Gradle will handle our third party dependencies.
 
-Once gradle build finishes, open the project's `build.gradle` file and add the Kotlin serialization plugin. This library is used to convert Java objects to Json and vice versa. You can also use Gson or Moshi but in this article, we will be using the serialization library.
+Once gradle build finishes, open the project's `build.gradle` file and add the Kotlin serialization plugin. This library is used to convert Java objects to JSON and vice versa. You can also use Gson or Moshi but in this article, we will be using the serialization library.
 
 ```bash
 plugins {
@@ -156,7 +160,7 @@ post {
 ```
 
 > Test the endpoint on POST:http://0.0.0.0:8080/tasks.
-> Pass in the required json conforming to the data type in the request body
+> Pass in the required JSON conforming to the data type in the request body.
 
 4. To delete a `Task` using the id
 ```kotlin
@@ -172,12 +176,15 @@ delete ("{id}"){
 > Test the endpoint on DELETE:http://0.0.0.0:8080/tasks/1
 
 You can go ahead and test all the endpoints on Postman.
+
 ### Conclusion
-And that is how create a restful service using ktor. It is very easy to set up and understand. You can go ahead and try other HTTP methods inside the `/tasks` route.
+That is how create a restful service using ktor. It is very easy to set up and understand. You can go ahead and try other HTTP methods inside the `/tasks` route.
 
 ***NOTE: The route paths are character sensitive. The forward slash at the end of the endpoint is not ignored hence you should be careful when creating and testing the endpoints***
 
 The full code of the tutorial can be found on [GitHub](https://github.com/LinusMuema/kotlin-ktor). Feel free to raise any issue or PR.
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
