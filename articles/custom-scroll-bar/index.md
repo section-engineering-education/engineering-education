@@ -24,7 +24,7 @@ In this tutorial, we will learn how to build a web page and use CSS to customize
 
 2. To view the web page, you require a web browser such as [Google Chrome](https://www.google.com/chrome/).
 
-3. Basic knowledge of HTML and CSS is needed.
+3. A basic knowledge of [HTML](https://www.w3schools.com/html/html_intro.asp) and [CSS](https://www.w3schools.com/css/default.asp) is needed.
 
 ### Objectives
 
