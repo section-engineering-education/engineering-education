@@ -48,7 +48,6 @@ This is the number of internetworking devices, such as a router in which a packe
 If a routing protocol uses Hop count as its metric, then the path with the least metric or number of routers is considered the best path. This path is then added to the routing table if there is no other routing protocol with less administrative distance. 
  Routing Information Protocol (RIP) uses hop count as its metric.
 ![Hop count](/engineering-education/understandinding-dynamic-and-static-routing/hop.jpeg)
-[Source](Author)
 
 In the image above, a device in sub-network-A want to reach another in sub-network-B, using hop count as its metric, the network will use Route 1 because it has the least Hop count value (2)
 
@@ -60,7 +59,6 @@ This is the capacity of a link or the number of bits that a link between two dev
   For a protocol that uses bandwidth capacity as its metric, the protocol determines the bandwidth capacity of all possible routes to the destination subnet, and the route with higher bandwidth capacity is considered the best path and added to the routing table.
 Because metrics can depend on single or many characteristics, Enhanced Interior Gateway Routing Protocol (EIGRP) uses a composite of bandwidth and delay to calculate its metric.
 ![Bandwidth](/engineering-education/understandinding-dynamic-and-static-routing/bandwidth.jpeg)
-[Source](Author)
 In the figure above, Router 6 will prefer to send its traffic through router eight rather than send it to router seven because the route through router 8 has a high bandwidth.
 
 #### Load
@@ -80,8 +78,6 @@ The method of sending data to a destination sub-network using two or more paths 
 This is possible because a routing table can contain many paths associated with different exit interfaces of a router having equal metric or cost path.
 
 ![Load balancing](/engineering-education/understandinding-dynamic-and-static-routing/load.jpeg)
-[Source](Author)
-
 In the figure, the network uses RIP as its routing protocol. To send traffic to Sub-network B, Router 6 will distribute its traffic to Route 1 and 4 because they have an equal metric.
 For a well-configured network, load balancing increases the network's effectiveness and performance for both static and dynamic routes.
 
@@ -90,8 +86,8 @@ For a well-configured network, load balancing increases the network's effectiven
 For example, two companies, A and B, can connect their networks to exchange data. If company A uses Open Shortest First (OSPF), while company B uses the Enhanced Interior Gateway Routing Protocol (EIGRP), both OSPF and EIGRP must be configured at least on one router. 
 This router then takes the route learned from OSPF and advertises it to EIGRP and vice versa; this process is called **route redistribution**. If this occurs, then the routing table can contain more than one route source to a destination network.
 When a routing protocol learns more than one route to the same destination subnet, the metric can decide which route is the best. However, in a situation whereby two routing protocols learn a route to the same subnet, the metric values cannot decide which path to use because each routing protocol calculates its metric using different information.
- 
- To resolve these issues, the cisco internetworking operating system (OIS) uses a concept known as **administrative distance** to decide which routing protocol's learned route is to be added to the routing table.
+To resolve these issues, the cisco internetworking operating system (OIS) uses a concept known as **administrative distance** to decide which routing protocol's learned route is to be added to the routing table
+
  #### Administrative distance
 This is a number that represents the trustworthiness of an entire routing protocol on a router.
 The lower the value of this number, the better the routing protocol. 
@@ -128,12 +124,10 @@ This Is a route that consists of a destination host address, its corresponding n
  It is a route configured with 0.0.0.0/0 as its destination IPV4 address. By configuring a default static route, a router can match all packets to use this route.
 A default static route is used to send packets when a more specific route match is not in the routing table.
 ![Default Static route](/engineering-education/understandinding-dynamic-and-static-routing/default-route.jpeg)
-[Source](Author)
 
 #### Summary route
 This route reduces the number of routing table entries required for many static routes. This route can only be implemented on contiguous routes that use the same exit interface or next-hop address.
 ![Summary route](/engineering-education/understandinding-dynamic-and-static-routing/summary-route.jpeg)
-[Source](Author)
 
 #### Route summarization
 A summary can be calculated for contiguous addresses; this calculation can be done using either the binary or decimal (fastest) method. Both of which will be looked at in the example below.
@@ -217,11 +211,8 @@ Like all other routing protocols, OSPF uses routing protocol information to help
   
 #### Data Structures
 A router configured to run OSPF as a routing protocol creates and maintains the following three table:
-
 - Adjacency database: This database create a table known as the neighbor's table; this table list all neighbor routers to which a router has established a bidirectional connection, and it is unique to all routers.
-  
 - Link-state database (Topology table): One purpose of forming an OSPF adjacency is to allow two neighbors to exchange their database. This table contains information about all other routers in that network, and it is identical for all routers within an area with identical LSDB.
-
 - Forwarding database: This database creates the routing table, which contains all known networks connected to the router or learned from adjacent routers.
 
 ### Routing protocols messages
