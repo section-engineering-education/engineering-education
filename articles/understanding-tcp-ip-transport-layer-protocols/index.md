@@ -1,9 +1,21 @@
-# Understanding TCP/IP Transport Layer (Layer 3) protocols: TCP and UDP  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/
+title: Understanding TCP/IP Transport Layer (Layer 3) protocols - TCP and UDP
+description: This tutorial will be a brief dive into the understanding the transport layer protocols like TCP and UDP.
+author: rabo-james-bature
+date: 2021-02-21T00:00:00-18:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/hero.jpg
+    alt: Transport layer protocols hero image
+--- 
 In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol (TCP) or User Datagram Protocol (UDP). By reading this article, you'll understand the working of TCP and UDP, how they are different from each other, and also see various applications using these protocols.
-
-### Prerequisite
+<!--more-->
 As a prerequisite, a foundational knowledge of TCP/IP Layer 1 and 2 would help the readers understand the article better.
 
 ### Table of contents
