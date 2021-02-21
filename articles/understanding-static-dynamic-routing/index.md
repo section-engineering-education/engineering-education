@@ -247,7 +247,7 @@ In a multi-area OSPF, all areas must be connected to area 0, and routers that in
 
 ### Enhanced Interior Routing Protocol (EIGRP)
 The advancement of businesses and technical factors pushed the world toward the second generation of better routing protocols.
-Today EIGRP and OSPF are the two primary routing protocols in use in modern enterprise networks. 
+Today EIGRP and OSPF are the two primary routing protocols in use in modern enterprise networks.
 Due to the less robust hop-count of metric that RIP uses, it has fallen away as a serious competitor as most cooperate networks uses either EIGRP or OSPF as their routing protocol.
 EIGRP includes features of both link-state and distance vector routing protocols; because of this, EIGRP does not fit into Distance vector protocols or Link-state protocols, but it based its vital principle on the distance vector, as such it is considered as an *advance distance-vector routing protocol*.
 
