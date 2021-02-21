@@ -124,16 +124,16 @@ class UIModePreference(context: Context) {
 ```
 
 ### Code explanation
-#### 1: Creating the datastore
+#### Creating the datastore
 The 1st line basically creates a datastore using the file name `"ui_mode_preference"`. The `createDataStore()` function is extension function created on Context.
 
-#### 2: Writing to the datastore
+#### Writing to the datastore
 Preference DataStore provides the `.edit()` function to make it easier to update data. This method will save the UI mode from our activity.
 
-#### 3: Reading data from the datastore
+#### Reading data from the datastore
 DataStore exposes the stored data in a `Flow` in the preferences object which will emit values whenever the preferences are updated. It also ensures that the data is retrieved on `Dispatcher.IO`. we use `map{}` because we are mapping boolean values(remember we are storing boolean values in our datastore).
 
-#### 4: Storing preference using a key
+#### Storing preference using a key
 We have created a key `UI_MODE_KEY` which will store the boolean value for either the light or dark mode. Preferences.preferencesKey() defines a key for each value that you need to store in the `DataStore<Preferences>`
 
 ### Step 3: Creating ViewModel class
@@ -158,10 +158,10 @@ class UIViewModel(application: Application):
 }
 ```
 
-#### 1:Reading from the datastore
+#### Reading from the datastore
 The 1st line gets the UI mode from the datastore.
 
-#### 2: Writing from the datastore
+#### Writing from the datastore
 Since the `saveToDataStore()` from the datastore preference class is a suspend function, it can only be called from a coroutine scope. 
 
 That is why we use viewModelScope.
@@ -212,7 +212,7 @@ override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 
 ```
 
-#### 1: Updating preferences
+#### Updating preferences
 Using `setUIMode()`, we are updating the state of the preference if the icon is checked. We are updating the image icon and the background colour so that the UI is changed.
 
 Once you are done, run the app. 
@@ -224,10 +224,6 @@ Here is what you would expect.
 
 You can check out the entire project on [GitHub](https://github.com/carolinemusyoka/NoteApp).
 
-### Resources
-- [Google Developer`s Blog](https://android-developers.googleblog.com/2020/09/prefer-storing-data-with-jetpack.html)
-- [Official Documentation](https://developer.android.com/topic/libraries/architecture/datastore)
- 
 ### Conclusion
 The Google team is trying to make Android development a little bit easier each day by rolling out new and improved libraries.
 They may change or deprecate from time to time and learning about these tools can put us ahead of the curve. 
@@ -235,6 +231,10 @@ They may change or deprecate from time to time and learning about these tools ca
 So keep learning.
 
 Happy coding!!
+
+### Resources
+- [Google Developer`s Blog](https://android-developers.googleblog.com/2020/09/prefer-storing-data-with-jetpack.html)
+- [Official Documentation](https://developer.android.com/topic/libraries/architecture/datastore)
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
