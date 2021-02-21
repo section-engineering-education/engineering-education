@@ -2,10 +2,11 @@
 
 # Understanding Dynamic and Static Routing
 ![Hero-Image](/engineering-education/understandinding-dynamic-and-static-routing/hero.jpeg)
+[Source](https://unsplash.com/photos/BbDb3IMR_rs?modal=%7B%22tag%22%3A%22Login%22%2C%22value%22%3A%7B%22tag%22%3A%22Like%22%2C%22value%22%3A%7B%22photoId%22%3A%22BbDb3IMR_rs%22%2C%22userId%22%3A%22A7mKxgipFc8%22%7D%7D%7D)
 ## Introduction
  Networking devices share data among themselves with the help of a router, a device that learns which paths are available and which path is best to forward traffic. 
  The mechanism through which the router makes such a decision is known as **routing**. 
-In this article, we will look at static and dynamic routing in details, with the following objectives: 
+ In this article, we will look at static and dynamic routing in details, with the following objectives: 
 - What static routing is.
 - When to use static routing when setting up a network.
 - The advantages and limitations of static routing.
@@ -16,18 +17,17 @@ In this article, we will look at static and dynamic routing in details, with the
 
 ###  Table of Content
 - [Functions of a router](#Functions-of-a-router)
-- [Reaching remote networks with a router](#Reaching-remote-networks-with-a-router)
+- [Routing decision](#Routing-decision)
+- [Remote networks](#Remote-networks)
 - [Static routing](#Static-routing)
-- [Types of static routing](#Types-of-static-routing)
-- [Uses of static routing](#Uses-of-static-routing)
-- [When to use static routing](#When-to-use-static-routing)
-- [Advantages static routing](#Advantages-static-routing)
+- [Types of static routes](#Types-of-static-routes)
+- [When to use static routes](#When-to-use-static-routes)
+- [Advantagesof static routing](#Advantages-of-static-routing)
 - [Limitations of static routing](#Limitations-of-static-routing)
-- [Dynamic routing protocol](#Dynamic-routing-protocol)
-- [Differences between dynamic and static routing](#Differences-between-dynamic-and-static-routing)
-- [Introduction to some dynamic routing protocols: RIP, OSPF, and EIGRP](#Introduction-to-some-dynamic-routing-protocols)
-- [Limitations of dynamic routing](#Limitations-of-dynamic-routing)
-- [Conclusion](#[Conclusion)
+- [Dynamic routing](#Dynamic-routing)
+- [Interior and Exterior Routing Protocols](#Interior-and-Exterior-Routing-Protocols)
+- [Conclusion](#Conclusion)
+- [Further reading](#Further-reading)
 
 ### Functions of a router
 A router uses information contained in the internet protocol header to make various decisions; these decisions include:
@@ -154,7 +154,8 @@ This address can be represented in decimal form as thus:
 - With this, the summarized address is 172.16.0.0 /14 or 172.16.0.0 with a subnet mask of 255.252.0.0.
 The binary method of route summarization gives us a detailed explanation of how summary routes are created, but it is time-consuming. 
 The fastest method is to use the decimal method, which uses the formula: 256-number of subnet = subnet mask for the summary address.
-In this case, we have four networks which are:  172.16.0.0, 172.17.0.0, 172.18.0.0 and 172.19.0.0. Thus, the subnet of our summary address will be 256 – 4 = 252. With this, the summarized route is given as 172.16.0.0 with a subnet mask of 255.252.0.0.
+In this case, we have four networks which are:  172.16.0.0, 172.17.0.0, 172.18.0.0 and 172.19.0.0. 
+- Thus, the subnet of our summary address will be 256 – 4 = 252. With this, the summarized route is given as 172.16.0.0 with a subnet mask of 255.252.0.0.
 
 #### Floating static route
 This route is used as a backup route to a static route or any dynamically learned route.
@@ -162,7 +163,7 @@ The route can only be used when the primary route is down or unavailable. This r
 ![Floating static route](/engineering-education/understandinding-dynamic-and-static-routing/float.jpeg)
 [Source](https://www.ciscopress.com/articles/article.asp?p=2180209&seqNum=4)
 
-### When to use the static route
+### When to use static routes
 Static route can be used to:
 - reduce the number of routes advertised by a router.
 - create a backup route if the primary route goes down.
