@@ -92,7 +92,7 @@ This is an example that uses the properties of a scrollbar namely `scrollbar-wid
 
 ### Building a web page and implementing a customized scrollbar
 
-This is the part where we will design a landing page that implements a customized scrollbar. Let's create a folder for our project named `landing-page`. Inside this folder, we will create another folder and name it images`that will contain an image for our showcase section. At the root of our`landing-page`, we have two files, the`index.html`and`styles.css`.
+In this section, we will build a landing page and implement the CSS code to customize the scrollbar. Let's create a folder for our project named `landing-page`. Inside this folder, we will create another folder and name it images`that will contain an image for our showcase section. At the root of our`landing-page`, we have two files, the`index.html`and`styles.css`.
 Let us design this application in the following steps:
 
 1. Write the code for our HTML file for the web page structure.
