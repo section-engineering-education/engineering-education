@@ -268,9 +268,9 @@ footer{
 
 The CSS code:
 
-- The image in the `<main>` tag is our showcase with a width of 100%. This is the entire width of the viewport.
+- The image in the `<main>` tag is our showcase with a width of 100%. This is make it occupy the entire width of the viewport.
 
-- The navbar is using flexbox styling. The `display: flex` property will make it a flexbox. To add space in between, the `justify-content: space-between` is used.
+- The navbar is styled using flexbox. The `display: flex` property will make it a flexbox(flexible container). By default, it will be displayed horizontally. To add space in between, the `justify-content: space-between` is used.
 
 - To style the container element, we are using CSS flexbox to display the elements horizontally.
 
