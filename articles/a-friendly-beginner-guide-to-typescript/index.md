@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/a-friendly-beginner-guide-to-typescript/
 title: A Friendly Beginner's Guide to TypeScript
-description: This article gives the reader a friendly beginners guide to TypeScript; which is a language that extends JavaScript by adding types.
+description: This article gives the reader a friendly beginners guide to TypeScript, which is a language that extends JavaScript by adding types.
 author: idris-olubisi
 date: 2021-02-21T00:00:00-12:00
 topics: [Languages]
