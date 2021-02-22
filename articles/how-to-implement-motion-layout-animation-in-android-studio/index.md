@@ -1,5 +1,21 @@
-Animation is an essential feature in any application. It helps to improve the look and feel of the software. Animations promote user interactions. For instance, when a user clicks a button, some animation may indicate that an action is performed. MotionLayout; the focus of this tutorial, allows you to implement animations in your android app quickly.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-implement-motion-layout-animation-in-android-studio/
+title: How To Implement Motion Layout Animation in Android Studio
+description: This article takes the reader through implementing motion layout in android. Motion layout allows one to implement complex animations quickly.
+author: michael-barasa
+date: 2021-02-22T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-implement-motion-layout-animation-in-android-studio/hero.jpg
+    alt: Motion layout image example
+---
+Animation is an essential feature in any application. It helps to improve the look and feel of the software. Animations promote user interactions. For instance, when a user clicks a button, some animation may indicate that an action is performed. MotionLayout; the focus of this tutorial, allows you to implement animations in your android app quickly.
+<!--more-->
 ### Introduction to MotionLayout
 MotionLayout can be described as a layout that helps you to incorporate and manage animations in your application. This layout is a subclass of the ConstraintLayout. This means that it inherits ConstraintLayout's rich features. ConstraintLayout allows MotionLayout support to older devices using API level 14. Some of the animation styles that MotionLayout can implement are keyframes and seekable transitions. Keyframes enable you to customize transitions to fit your needs. On the other hand, Seekable transitions allow you to jump at a particular point in the animation. One huge advantage of MotionLayout is that it's fully declarative. This factor is quite critical, especially when building complex applications.
 
@@ -129,3 +145,6 @@ You can test the application by creating an APK and installing it on your phone.
 
 ### Conclusion
 Animation is a critical part of any application. MotionLayout makes it easy to incorporate this feature in Android apps. You can, therefore, use this knowledge to develop more appealing applications.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
