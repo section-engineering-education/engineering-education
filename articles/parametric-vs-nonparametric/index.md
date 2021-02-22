@@ -80,7 +80,7 @@ Since we can now define both parametric and non-parametric models, we can compar
 
 *Results of parametric and non-parametric regression.*
 
-[Source](https://medium.com/analytics-vidhya/parametric-and-nonparametric-models-in-machine-learning-a9f63999e233)
+[Image Source](https://medium.com/analytics-vidhya/parametric-and-nonparametric-models-in-machine-learning-a9f63999e233)
 
 Let’s first note that the data points in the two scenarios in the image above are the same.
 
