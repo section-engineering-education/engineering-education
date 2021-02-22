@@ -1,14 +1,33 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/
+title: Python Boto3 and Amazon DynamoDB Programming Tutorial
+description: In this tutorial, we will learn how to use the AWS SDK for Python Boto3 to interact with DynamoDB. Boto3 allows Python developers to create, configure, and manage different AWS products.
+author: benson-kariuki
+date: 2021-02-21T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/hero.jpg
+    alt: Boto3 and Amazon DynamoDB Image
+---
 DynamoDB is a speedy and flexible NoSQL database service offered by AWS (Amazon Web Service). DynamoDB is perfect for mobile apps, web apps, IoT devices, and gaming. Python has good support for DynamoDB. In this tutorial, we will use AWS Python [SDK](https://en.wikipedia.org/wiki/Software_development_kit) (Boto3) to perform CRUD (create, read, update, delete) operations on DynamoDB.
-
+<!--more-->
 ### Prerequisites
-Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend the article [Getting Started With AWS DynamoDB](https://www.section.io/engineering-education/getting-started-with-aws-dynamodb/). To get started with this tutorial, you need the following:
+Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend going over this article [Getting Started with AWS DynamoDB](/engineering-education/getting-started-with-aws-dynamodb/). 
 
-- **DynamoDB local:** Download and configure DynamoDB. Check [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) for guidelines. This version of DynamoDB is used for development purposes only. For production purposes, you should use [Amazon DynamoDB web service](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
+To get started with this tutorial, you need the following:
+- **DynamoDB local:** Download and configure DynamoDB. Check [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) for guidelines. This version of DynamoDB is used for development purposes only. For production purposes, you should use [Amazon DynamoDB Web Services](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
 - **Python:** Download and install Python version 2.7 or later. The latest version of Python is available for download on the [official website](https://www.python.org/downloads/).
 - **[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment):** Use an IDE or a code editor of your choice. [VS Code](https://code.visualstudio.com/) is a good option.
 
 ### Introduction to DynamoDB SDKs
-AWS provides an SDK for interacting with DynamoDB. The SDK tools are available for different programming languages. A complete list of supported programming languages is available on [AWS documentation](https://aws.amazon.com/tools/). In this tutorial, we will learn how to use the AWS SDK for Python ([Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)) to interact with DynamoDB. Boto3 allows Python developers to create, configure, and manage different AWS products.
+AWS provides an SDK for interacting with DynamoDB. The SDK tools are available for different programming languages. A complete list of supported programming languages is available on [AWS documentation](https://aws.amazon.com/tools/). 
+
+In this tutorial, we will learn how to use the AWS SDK for Python ([Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)) to interact with DynamoDB. Boto3 allows Python developers to create, configure, and manage different AWS products.
 
 ### Connecting AWS Python SDK (Boto3) with DynamoDB
 Make sure you meet the [prerequisites](#prerequisites) before moving forward. Install the latest version of Boto3 by running the command below. This will install the Boto3 Python dependency, which is required for our code to run.
@@ -84,7 +103,11 @@ if __name__ == '__main__':
 
 ```
 
-In the script above, the first thing is to import boto3 dependency. Import the dependency in every script connecting to DynamoDB. We are also connecting to DynamoDB local server. In the script, we are defining the structure of the table. Only the partition key and the sort key are required. Take note of the `AttributeType` and `ProvisionedThroughput`. `AttributeType` defines the data types. `ProvisionedThroughput` is the maximun read and write capacity that an application can consume on a table. Learn more about `ProvisionedThroughput` on [AWS API documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ProvisionedThroughput.html). To run the script, enter the command below.
+In the script above, the first thing is to import the boto3 dependency. Import the dependency in every script connecting to DynamoDB. We are also connecting to DynamoDB local server. In the script, we will be defining the structure of the table. 
+
+Only the partition key and the sort key are required. Take note of the `AttributeType` and `ProvisionedThroughput`. `AttributeType` defines the data types. `ProvisionedThroughput` is the maximun read and write capacity that an application can consume on a table. 
+
+Learn more about `ProvisionedThroughput` on [AWS API documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ProvisionedThroughput.html). To run the script, enter the command below.
 
 ```bash
 python create_table.py
@@ -209,7 +232,7 @@ python load_data.py
 
 Below is the expected response upon a successful data loading process.
 
-```
+```bash
 Adding Device Data: 10001 1
 Adding Device Data: 10001 2
 Adding Device Data: 10002 1
@@ -335,7 +358,9 @@ Get Device Data Done:
 ```
 
 ### Conditions
-DynamoDB has a provision of using conditions. Conditions can be applied when updating or deleting items. We can provide a `ConditionExpression`. If the `ConditionExpression` evaluates to true, then the action is performed. Refer [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html) for more information on condition expressions. Familiarize yourself with different [DynamoDB conditions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/customizations/dynamodb.html#dynamodb-conditions).
+DynamoDB has a provision of using conditions. Conditions can be applied when updating or deleting items. We can provide a `ConditionExpression`. 
+
+If the `ConditionExpression` evaluates to true, then the action is performed. Refer [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html) for more information on condition expressions. Familiarize yourself with different [DynamoDB conditions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/customizations/dynamodb.html#dynamodb-conditions).
 
 ### Update
 Update refers to modifying a previously created item by updating the values of existing attributes, removing attributes, or adding new attributes. In this tutorial, we will update the values of existing attributes. Below is the original item and the updated item.
@@ -371,6 +396,7 @@ Update refers to modifying a previously created item by updating the values of e
   }
 }
 ```
+
 We will use the `update_item` method, as shown in the code below. Create a script named  `update_item.py` and add the code below.
 
 ```python
@@ -438,12 +464,17 @@ Below is the expected output.
                       'RetryAttempts': 0}}
 ```
 
-### Delete Item
-To delete an item, we use the `delete_item` method. We can specify the primary key for the item to delete or provide a `ConditionExpression`. If we use a `ConditionExpression`, the item will not be deleted unless the condition is evaluated to True. In this example, we will provide a primary key for the item to be deleted and provide a `ConditionExpression`. The item will be deleted if the `ConditionExpression` is met. In this example, the condition is:
+### Delete item
+To delete an item, we use the `delete_item` method. We can specify the primary key for the item to delete or provide a `ConditionExpression`. If we use a `ConditionExpression`, the item will not be deleted unless the condition is evaluated to be True. 
+
+In this example, we will provide a primary key for the item to be deleted and provide a `ConditionExpression`. The item will be deleted if the `ConditionExpression` is met. 
+
+In this example, the condition is:
 
 ```python
 ConditionExpression="info.info_timestamp >= :val"
 ```
+
 We will delete the item below:
 
 ```json
@@ -514,16 +545,19 @@ Run the command below to execute the script `delete_item.py`.
 python delete_item.py
 ```
 
-If the `ConditionExpression` is not met, the expected response is as shown below.
+If the `ConditionExpression` is not met, the expected response will be as shown below.
 
 ```bash
 Conditional delete
 The conditional request failed
 ```
+
 If the condition is removed or met, then the item will be deleted successfully.
 
 #### Query
-Querry returns all items that match the partition key value. In this example, we will query all the data for a specific partition key. We need to specify the partition key value. In this case, the partition key is `device_id`. We will query all the items where `device_id` is equal to 10001. To learn more about DynamoDB queries, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html).
+Query returns all items that match the partition key value. In this example, we will query all the data for a specific partition key. We need to specify the partition key value. 
+
+In this case, the partition key is `device_id`. We will query all the items where `device_id` is equal to 10001. To learn more about DynamoDB queries, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html).
 
 ```python
 import boto3  # import Boto3
@@ -558,7 +592,9 @@ python query.py
 ```
 
 #### Scan
-Scan operation reads and returns all the items in the table. The method `DynamoDB.Table.scan()` is used to scan a table. Using a `filter_expression`, we can filter the items to be returned. However, the whole table will be scanned, and items not matching the `filter_expression` will be thrown away. Create a script named `scan.py` and paste the code below. To learn more about DynamoDB scans, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html).
+Scan operation reads and returns all the items in the table. The method `DynamoDB.Table.scan()` is used to scan a table. Using a `filter_expression`, we can filter the items to be returned. 
+
+However, the whole table will be scanned, and items not matching the `filter_expression` will be thrown away. Create a script named `scan.py` and paste the code below. To learn more about DynamoDB scans, refer to the [developer guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html).
 
 ```python
 import boto3  # import Boto3
@@ -600,7 +636,7 @@ The script above scans the `Devices` table with no `filter_expression`. Run the 
 python scan.py
 ```
 
-### Delete Table
+### Delete table
 To delete a table, we use the method `DynamoDB.Table.delete()`. All we need is to specify the table name. This action is rarely performed. Create a script named `delete_table.py` and add the code below.
 
 ```python
@@ -629,3 +665,7 @@ python delete_table.py
 
 ### Conclusion
 We have learned how to write python scripts for interacting with AWS DynamoDB using AWS SDK for Python, Boto3. For more on Boto3 usage with DynamoDB, check [AWS Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html). Find the source code created in this tutorial on [Github](https://github.com/Tsanguu/Python-Boto3-DynamoDB-Tutorial).
+
+---
+Peer Review Contributions by: [Rahul Banerjee](engineering-education/authors/rahul-banerjee/)
+
