@@ -15,7 +15,7 @@ selector:pseudo-class{
     property:  value;
 }
 ```
-Pseudo-classes are preceded by a colon (:) placed just after a CSS selector and then the name of the pseudo-class. It is important to note that the pseudo-classes are not case sensitive.
+Pseudo-classes are preceded by a colon (:) placed after a CSS selector has been defined. Pseudo-classes will not case sensitive in your CSS definition.
 
 ### Types of CSS Pseudo Classes
 Having understood what a pseudo-class is and its structure. This section covers the common types of CSS pseudo-classes.
