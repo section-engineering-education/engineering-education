@@ -16,7 +16,7 @@ images:
 ---
 CSS is a very important web development technology. For a long time, we used common CSS properties to lay out HTML elements. These included floats, inline-block, and position styling. In recent years, we have seen many modern CSS technologies that are making it a lot easier to create dynamic HTML layouts.
 <!--more-->
-Some of these robust technologies include CSS Grid and CSS Flexbox. They change the way you lay out HTML elements in an incredibly simple approach.
+Some of these robust technologies include CSS Grid and CSS Flexbox. They have changed the way we lay out HTML elements in an incredibly simple approach.
 
 When we talk about Flexbox and Grid layouts, we understand the concept of containers and items. In this case, a container is an HTML block that can contain other HTML elements. An item is an HTML element that can be placed inside a container.
 
