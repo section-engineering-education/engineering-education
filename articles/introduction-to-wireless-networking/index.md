@@ -1,6 +1,6 @@
 ### Introduction
 
-The planet has been becoming increasingly mobile over the past five years. 
+The planet has been becoming increasingly mobile over the past few years. 
 As a consequence, the world's conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle.   When users need to be connected by physical cables to a network, their movement is drastically reduced.
 However, wireless networking does not face such a constraint and enables the user of the network to move much more freely.  
 As a result, wireless technologies are invading "fixed" or "wired" networks in the conventional realm. To someone who travels daily, this move is apparent.
@@ -27,10 +27,6 @@ Computer network refers to devices, such as computers, fax or even printers conn
 For example, in Local Area Networks (LAN), computers are interconnected in a small area such as an office via communication cables.  
 
 The main reason for connecting several devices on a network is to share resources. For example, an office has one printer shared, it can be connected to all computers within this office on a network to allow usage by each department.  
-
-You ought to have also learned that computer networks have five components.  
-They include  ***message, sender, receiver, protocol, and transmission medium***.  
-
 
 ### What's wireless networking?
 A wireless network allows devices to remain linked to the network, yet to roam to any cables unattached. Wi-Fi signals are amplified by access points, meaning a computer can be far from a router but still be linked to the network. You connect to the wireless network of that organization when you connect to a Wi-Fi hotspot at a cafe or another public location.  
