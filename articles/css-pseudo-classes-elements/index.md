@@ -1,14 +1,14 @@
 
-Cascading Style Sheets (CSS) is an independent language used to describe the presentation of web applications.
-As any other language, you will need to understand the various concepts of the language.
-In this article, we will look at pseudo-classes and pseudo-elements concepts in CSS using practical examples. 
+Cascading Style Sheet (CSS) is an independent language used to describe the presentation of web applications.
+As in any other language, one needs to understand the various concepts of the language.
+In this article, we will look at pseudo-classes and pseudo-elements concepts in CSS using practical examples.
 
 ### Prerequisites
 This article focuses on the concepts of pseudo-classes and pseudo-elements. You will therefore need a basic understanding of other HTML and CSS concepts. Check the introduction to CSS and HTML topics.
 
 ### The CSS Pseudo Classes
-A pseudo-class is a CSS property that will style an element based on a change to its state. 
-A pseudo-class will target HTML elements that cannot be targeted with combinators or other selectors like id or classes. This selector is used to define a special state of an element. An example is when a user mouses over an element in a web page or an input element gets a focus state.
+A pseudo-class is a CSS property that styles an element based on change to its state.
+A pseudo-class targets HTML elements that cannot be targeted by combinators or other selectors such us id and/or classes. This selector is used to define a special state of an element. An example is when a user hoovers the mouse over an element in a web page, or an input element gets a focus state.
 The syntax of pseudo-class looks like:
 ```CSS
 selector:pseudo-class{
@@ -18,8 +18,8 @@ selector:pseudo-class{
 Pseudo-classes are preceded by a colon (:) placed just after a CSS selector and then the name of the pseudo-class. It is important to note that the pseudo-classes are not case sensitive.
 
 ### Types of CSS Pseudo Classes
-Having understood what a pseudo-class is and its structure, I will introduce you to the common types of CSS pseudo-classes.
-First, we will go through the pseudo-classes for the anchor or the `<a>` tags. These pseudo-classes only apply to elements containing the `<a>` tag and the `href=" "` attribute. 
+Having understood what a pseudo-class is and its structure. I will introduce you to the common types of CSS pseudo-classes.
+First, we will go through the pseudo-classes for the anchor tags `<a>`. These pseudo-classes only apply to elements containing the `<a>` tag and the `href=" "` attribute.
 The anchor pseudo-class selectors include:
 
 - The `: link` pseudo-class will match and select all unvisited. An example to make all unvisited links on a web page grey is like:
@@ -54,20 +54,20 @@ The anchor pseudo-class selectors include:
 Other common CSS pseudo-classes include:
 
 - The `:root` selects the document's root element like the `<html>` element.
-  
+
 - The`:focus` pseudo-class will select all the input elements that have the focus state active. Such as checkbox or radio elements.
-  
+
 - The `:focus-within` will match an element with focus and also the descendant's elements with that focus.
 
 - Using the `: enabled` pseudo-class will match an element that is in an enabled state.
-  
+
 -  The `: disabled` selects every disabled element.
 
 -  Using the `: checked` pseudo-class will select every checked element such as a radio button or checkbox.
 
--  Using the `: not` performs a negation of the pseudo-classes. Example `: not(p)` `: not(: hover)` selects every element that is not a `<p>` element and all the other links that will not be in the hover state. 
+-  Using the `: not` performs a negation of the pseudo-classes. Example `: not(p)` `: not(: hover)` selects every element that is not a `<p>` element and all the other links that will not be in the hover state.
 
--  The `:first-child` pseudo-class will match the first element within its parent element. 
+-  The `:first-child` pseudo-class will match the first element within its parent element.
 
 - `:last-child` selects the element which is last among its siblings in the parent element.
 
@@ -150,7 +150,7 @@ Using the `::first-line` pseudo-element in the CSS will make this `<p>` tag firs
   }
   ```
 - The `::placeholder` pseudo-element can be used to grab the placeholder in the `<input type="text" placeholde="Your Username">` tag element. The example below will make the color of the input element's placeholder color red.
-  
+
   ```HTML
   <input type="text" placeholder="Your Username">
   ```
