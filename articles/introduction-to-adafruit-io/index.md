@@ -192,3 +192,5 @@ To summarize:
 - [Features of Cloud computing](https://data-flair.training/blogs/features-of-cloud-computing/)
 - [Internet of Things - Wikipedia](https://en.wikipedia.org/wiki/Internet_of_things)
 - [Adafruit IO - Python](https://learn.adafruit.com/adafruit-io-basics-digital-output/python-code)
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
