@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-systemd/hero.jpg
     alt:  example image 
 ---
-The official website describes systemd (spelled with a small 's') as a suite of tools that forms the basic building block for a Linux system. systemd handles the boot process for Linux systems. As an init implementation, it has a PID of 1 like other init systems, such as System V, Upstart.
+The official website describes systemd (spelled with a small s) as a suite of tools that forms the basic building block for a Linux system. systemd handles the boot process for Linux systems. As an init implementation, it has a PID of 1 like other init systems, such as System V, Upstart.
 <!--more-->
 ### Prerequisites
 To follow this article along, you will need some:
