@@ -36,7 +36,7 @@ You should know the basics of Python 3 (including setting up projects). Basic kn
 
 MoviePy is a Python module for editing videos. It can cut and arrange clips, add video effects, and edit audio. It can work like a toolbox, if you only make changes to one clip. Or, if you have to edit lots of clips, MoviePy can automate that process.
 
-Where would you use MoviePy in a workplace setting? It works best when every video is similar and simple to edit. For example, if you work for a TV studio, you might need to put together lots of clips from a football game. MoviePy could split a full game (hours of video) into a few clips. Then, it could overlay your company's watermark in the corner.
+In the workplace, MoviePy works best when every video is similar and simple to edit. For example, if you work for a TV studio, you might need to put together lots of clips from a football game. MoviePy could split a full game (hours of video) into a few clips. Then, it could overlay your company's watermark in the corner.
 
 The task is simple, but a human would find it boring and time-wasting. Using MoviePy frees a video editor for more creative parts of the job. Thus, the module is good for any editing job where you _know_ exactly what to do... and doing it by hand would take too long. This can mean TV programs, data visualizations, visual effects footage, supercuts, and more.
 
@@ -187,7 +187,7 @@ final_clip.write_videofile("output_3.mp4")
 
 ### Putting It All Together
 
-What if you want to stack video clips on top of each other? Or play music at the same time as the video's sound? For these, we need **compositing**.
+Perhaps you want to stack video clips on top of each other. Or, maybe play music over the video. For these, we need **compositing**.
 
 Compositing is the process of putting one thing on top of another. To play two videos on top of each other, you composite their videos together. To play music on top of the video's current audio, you composite the audios together.
 
