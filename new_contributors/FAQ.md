@@ -40,6 +40,17 @@ Article payout will be as follows:
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
+### What counts as a round of revision?
+Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
+Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
+Instances when the content is too difficult to understand.
+PRs that may lack sufficient unique* value - (any and all comments made by reviewers to draw out more value from the article are great and encouraged but should be limited)
+*by unique we mean content that can NOT simply be found by looking up the official documentation.
+
+Use your EngEd community as a resource - get to know each other and ask for a revision from a fellow contributor before submitting a final draft.
+
+Please do not hesitate to reach out at any time - we’re always happy to help.
+
 ### How does one apply to be a Peer Reviewer?
 For the Content Stewards (Peer Review Program) we typically look for authors who have contributed a few articles (so that they are familiar with the article submission process) and can guide new contributors along the way.
 
