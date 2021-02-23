@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-implement-motion-layout-animation-in-android-studio/
-title: How To Implement Motion Layout Animation in Android Studio
+title: How to Implement Motion Layout Animation in Android Studio
 description: This article takes the reader through implementing motion layout in android. Motion layout allows one to implement complex animations quickly.
 author: michael-barasa
-date: 2021-02-22T00:00:00-12:00
+date: 2021-02-22T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
