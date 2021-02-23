@@ -10,10 +10,8 @@ date: 2021-01-27T00:00:00-20:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/video-editing-python-moviepy/hero.jpg
     alt: film reel
-
 ---
 
 Videos are great for getting ideas across. But editing those videos can take a long time. In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip.
@@ -21,6 +19,7 @@ Videos are great for getting ideas across. But editing those videos can take a l
 <!--more-->
 
 ### Table of Contents
+
 - [Prerequisites](#prerequisites)
 - [Why MoviePy? And When?](#why-moviepy-and-when)
 - [Installing](#installing)
@@ -30,14 +29,16 @@ Videos are great for getting ideas across. But editing those videos can take a l
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+
 You should know the basics of Python 3 (including setting up projects). Basic knowledge about video files is helpful, but not necessary. This tutorial uses Python 3.7.4, MoviePy 1.0.3, PyCharm 2019.3.5 (Community Edition), and Windows 10.
 
 ### Why MoviePy? And When?
+
 MoviePy is a Python module for editing videos. It can cut and arrange clips, add video effects, and edit audio. It can work like a toolbox, if you only make changes to one clip. Or, if you have to edit lots of clips, MoviePy can automate that process.
 
 Where would you use MoviePy in a workplace setting? It works best when every video is similar and simple to edit. For example, if you work for a TV studio, you might need to put together lots of clips from a football game. MoviePy could split a full game (hours of video) into a few clips. Then, it could overlay your company's watermark in the corner.
 
-The task is simple, but a human would find it boring and time-wasting. Using MoviePy frees a video editor for more creative parts of the job. Thus, the module is good for any editing job where you *know* exactly what to do... and doing it by hand would take too long. This can mean TV programs, data visualizations, visual effects footage, supercuts, and more.
+The task is simple, but a human would find it boring and time-wasting. Using MoviePy frees a video editor for more creative parts of the job. Thus, the module is good for any editing job where you _know_ exactly what to do... and doing it by hand would take too long. This can mean TV programs, data visualizations, visual effects footage, supercuts, and more.
 
 ### Installing
 
@@ -47,13 +48,14 @@ First, set up a folder with a new Python script `moviepy_test.py`. Then install 
 
 #### Downloading the Raw Video
 
-Now, we need to download the "raw footage", the video clip that we haven't edited. For this example, we'll be using a sample `.mp4` file provided by [Learning Container](https://www.learningcontainer.com/mp4-sample-video-files-download/#Sample_MP4_File). The `.mp4` file, `sample-mp4-file.mp4`, is a video clip from the Blender Foundation short film [*Big Buck Bunny*](https://www.youtube.com/watch?v=YE7VzlLtp-4).
+Now, we need to download the "raw footage", the video clip that we haven't edited. For this example, we'll be using a sample `.mp4` file provided by [Learning Container](https://www.learningcontainer.com/mp4-sample-video-files-download/#Sample_MP4_File). The `.mp4` file, `sample-mp4-file.mp4`, is a video clip from the Blender Foundation short film [_Big Buck Bunny_](https://www.youtube.com/watch?v=YE7VzlLtp-4).
 
 Go to this [link for the video file](https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4). Download it by pressing `Ctrl-S` (or clicking File>Save in your browser, or the 3 dots in the video player and "Download"). Move `sample-mp4-file.mp4` to the folder with `moviepy_test.py`. The video should look like this by default:
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/awhxIqnmtMQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Basic Editing
+
 The key objects in MoviePy are **VideoClips**. A VideoClip contains video and sound. Open up `moviepy_test.py` and add these lines:
 
 ```python
@@ -64,7 +66,7 @@ clip = VideoFileClip("sample-mp4-file.mp4")
 
 The module `moviepy.editor` contains the objects and methods we're using. `clip` is a new VideoFileClip object, initialized with the name (or filepath) of the video file at hand.
 
-We don't want to use the whole *Big Buck Bunny* clip. We only need 10 seconds from the middle of it. MoviePy measures time in seconds, and we can use the `subclip` method to get what we need:
+We don't want to use the whole _Big Buck Bunny_ clip. We only need 10 seconds from the middle of it. MoviePy measures time in seconds, and we can use the `subclip` method to get what we need:
 
 ```python
 clip = VideoFileClip("sample-mp4-file.mp4").subclip(56, 66)
@@ -107,11 +109,11 @@ To add any effect to a clip, you use the `fx` method on the clip, and pass in th
 ```python
 clip = (VideoFileClip("sample-mp4-file.mp4").subclip(56, 66)
     .fx(vfx.colorx, 0.7))
-    
+
 # you can also do this with clip_edited = clip.fx(vfx.colorx, 0.7)
 ```
 
-Our clip is getting called with `.fx( vfx.colorx, 1.2)`. MoviePy reads this as "apply the vfx.colorx effect and with the parameter of 1.2". What this *does* is make the clip 20% brighter than it was before (since +20% brightness = 1.2x as bright).
+Our clip is getting called with `.fx( vfx.colorx, 1.2)`. MoviePy reads this as "apply the vfx.colorx effect and with the parameter of 1.2". What this _does_ is make the clip 20% brighter than it was before (since +20% brightness = 1.2x as bright).
 
 You can stack several effects, with the same strategy:
 
@@ -233,5 +235,6 @@ The final result now has the music, overlaid clips, and all the previous edits.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/lDBJhMxXFB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-###  Conclusion
+### Conclusion
+
 Good job! You've just edited and remixed a video, all in a Python program. There are plenty of other things you can do with MoviePy, now that you know the basics. For further ideas, check out the [MoviePy Project Galley](https://zulko.github.io/moviepy/gallery.html). MoviePy can even automate large video processing jobs, using [other built-in features](https://zulko.github.io/moviepy/getting_started/efficient_moviepy.html) to speed those up.
