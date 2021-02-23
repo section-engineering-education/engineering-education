@@ -30,7 +30,7 @@ To implement email verification on a website using Laravel.
 You can create a new Laravel application either via Composer or Laravel installer.  
 
 **Installing via composer:**    
-Laravel uses `Composer` for the control of dependencies. Therefore, make sure you have the Composer installed on your computer before installing Laravel. You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check the its version using the following command. 
+Laravel uses `Composer` for the control of dependencies. Therefore, make sure you have the Composer installed on your computer before installing Laravel. You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check its version using the following command. 
  
  ```bash
 composer --version
