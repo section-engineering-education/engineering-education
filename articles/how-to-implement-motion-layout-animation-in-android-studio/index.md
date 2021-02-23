@@ -14,16 +14,18 @@ images:
   - url: /engineering-education/how-to-implement-motion-layout-animation-in-android-studio/hero.jpg
     alt: Motion layout image example
 ---
-Animation is an essential feature in any application. It helps to improve the look and feel of the software. Animations promote user interactions. For instance, when a user clicks a button, some animation may indicate that an action is performed. MotionLayout; the focus of this tutorial, allows you to implement animations in your android app quickly.
+Animation is an essential feature in any application. It helps to improve the look and feel of the software. Animations promote user interactions. For instance, when a user clicks a button, some animation may indicate that an action is performed. MotionLayout will be the focus of this tutorial, which is a layout that allows you to implement animations in your Android app quickly.
 <!--more-->
 ### Introduction to MotionLayout
-MotionLayout can be described as a layout that helps you to incorporate and manage animations in your application. This layout is a subclass of the ConstraintLayout. This means that it inherits ConstraintLayout's rich features. ConstraintLayout allows MotionLayout support to older devices using API level 14. Some of the animation styles that MotionLayout can implement are keyframes and seekable transitions. Keyframes enable you to customize transitions to fit your needs. On the other hand, Seekable transitions allow you to jump at a particular point in the animation. One huge advantage of MotionLayout is that it's fully declarative. This factor is quite critical, especially when building complex applications.
+MotionLayout can be described as a layout that helps you to incorporate and manage animations in your application. This layout is a subclass of the ConstraintLayout. This means that it inherits ConstraintLayout's rich features. ConstraintLayout allows MotionLayout support to older devices using API level 14. 
+
+Some of the animation styles that MotionLayout can implement are keyframes and seekable transitions. Keyframes enable you to customize transitions to fit your needs. On the other hand, seekable transitions allow you to jump at a particular point in the animation. One huge advantage of MotionLayout is that it's fully declarative. This factor is quite critical, especially when building complex applications.
 
 ### Goal
 To implement animations in an Android application using MotionLayout.
 
 ### Prerequisites
-To follow along, you need to have some knowledge of Kotlin programming language. You should also have [Android studio 4.0]( https://developer.android.com/studio) installed on your computer.
+To follow along, you will need to have some knowledge of the Kotlin programming language. You should also have [Android Studio 4.0](https://developer.android.com/studio) installed on your computer.
 
 ### Step 1 – Creating the project
 Open Android studio and create a new project. Choose the `Empty Activity` template since we will be building our layout from scratch. Click `next` and choose `API 14` as your minimum SDK. Remember to set your preferred programming language to `Kotlin`. After completing these settings, click on `finish` to allow the project to be initialized. Note that this process may take some considerable time depending on your computer speed and internet connection.
@@ -32,13 +34,11 @@ Open Android studio and create a new project. Choose the `Empty Activity` templa
 One key dependency that we need in our project is ConstraintLayout. Fortunately, it is included in all Android projects by default.
 Therefore, open the app-level `build.gradle` file. In the dependency section, ensure that you are using a version of ConstraintLayout not less than `2.0.0`. This is demonstrated below.
 
-```
+```bash
 implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 ```
-
 ### Step 3 – Switching to MotionLayout
-In this phase, we want to shift our default layout from ConstraintLayout to MotionLayout. This will allow us to access additional features such as transitions.
-Open the activity_main.xml file and switch from the code view to the design tab, as shown in the image below.
+In this phase, we want to shift our default layout from ConstraintLayout to MotionLayout. This will allow us to access additional features such as transitions. Open the activity_main.xml file and switch from the code view to the design tab, as shown in the image below.
 
 ![DESIGN](/engineering-education/how-to-implement-motion-layout-animation-in-android-studio/design.png)
 
@@ -46,7 +46,7 @@ Next, navigate to the `component tree` section and `right` click on the Constrai
 
 ![CONVERT](/engineering-education/how-to-implement-motion-layout-animation-in-android-studio/convert.png)
 
-An `activity_main_scene.xml` is generated when you click the `Convert to MotionLayout` button demonstrated above. Let’s understand the contents of this file.
+An `activity_main_scene.xml` is generated when you click the `Convert to MotionLayout` button demonstrated above. Let’s better understand the contents of this file.
 
 The first section is `Transition`.
 
@@ -60,8 +60,9 @@ The first section is `Transition`.
 </Transition>
 ```
 
-This section defines how our widgets will move across the screen. For instance, a button can shift from the upper corner to the bottom part of the screen. We use `motion:constraintSetStart` to set where the transition starts. `motion:constraintSetEnd` declares the position where the transition will stop. We can also set how long the transition or animation will take using `motion:duration`.
-Constraints help us position the UI widgets during the animation. For instance, the code snippets below determine where our widgets will be positioned during different transition phases.
+This section defines how our widgets will move across the screen. For instance, a button can shift from the upper corner to the bottom part of the screen. We use `motion:constraintSetStart` to set where the transition starts. `motion:constraintSetEnd` declares the position where the transition will stop. 
+
+We can also set how long the transition or animation will take using `motion:duration`. Constraints help us position the UI widgets during the animation. For instance, the code snippets below determine where our widgets will be positioned during different transition phases.
 
 ```xml
 <ConstraintSet android:id="@+id/start">
@@ -131,9 +132,10 @@ We need to include some UI components in our applications to utilize MotionLayou
 ```
 
 ### Step 5 – Animating the views
-In the past, we were required to input transition values in the `activity_main_scene.xml` file manually. This was quite tiresome and time-consuming. The introduction of Motion Editor in Android studio 4.0 helped deal with these challenges.
+In the past, we were required to input transition values in the `activity_main_scene.xml` file manually. This was quite cubersome and time-consuming. The introduction of Motion Editor in Android Studio 4.0 helped deal with these challenges.
 
 Okay, let’s use `MotionEditor`.
+
 Open the `activity_main.xml` and switch to the `design` view, then follow the instructions in the following video to animate the views.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/h5VVlmBvPGE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
