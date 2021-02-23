@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/understanding-systemd/
-title: 
+title: Understanding systemd
 description: This article will take a reader through the Sys V-based issues and how systemd surmounts them. systemd standardizes how Linux-based systems should be managed. This is different from hacks common among System V init implementations.
 author: emmanuel-bashorun
 date: 2021-02-23T00:00:00-12:00
