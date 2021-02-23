@@ -13,12 +13,12 @@ images:
   - url: /engineering-education/laravel-8-email-verification/hero.jpg
     alt: laravel email verification
 ---
-Laravel is a PHP-based framework that is simple to understand. It makes it easy to code complex features in an application. One of the features that can be implemented quickly using Laravel is email verification.  
+Laravel is a simple-to-understand PHP-based system. It makes it easy to code complex features in an application. Email authentication is one of the characteristics that can be implemented easily using Laravel.  
 <!--more-->
-Typically, we need to verify emails whenever a user signs up on the website. This process ensures that we only accept those users with valid email addresses. In the past, it was quite difficult to code or include email verification in web applications. The introduction of Laravel made life better for developers. In other words, implementing email verification in Laravel only requires a few lines of code.
+Usually, if a user signs up on the website, we need to check emails. This process ensures that we only accept those users with valid email addresses. In the past, it was quite difficult to code or include email verification in web applications. Laravel's arrival made life for developers easier. In other words, implementing email verification in Laravel only requires a few lines of code.
 
 ### Prerequisites
-You will need the following to complete this tutorial:   
+To complete this tutorial, you will need the following:     
 - PHP
 - Laravel 8.x
 - MySQL
@@ -30,14 +30,13 @@ To implement email verification on a website using Laravel.
 You can create a new Laravel application either via Composer or Laravel installer.  
 
 **Installing via composer:**    
-Laravel uses `Composer` for the control of dependencies. Therefore, before you install Laravel, make sure you have Composer installed on your computer. You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check the software version using the following command. 
+Laravel uses `Composer` for the control of dependencies. Therefore, make sure you have the Composer installed on your computer before installing Laravel. You can download composer from [here](https://getcomposer.org/download/). After the installation is complete, check the its version using the following command. 
  
  ```bash
 composer --version
 ```
 
-For your new Laravel project, create a new directory anywhere on your computer. Then navigate to the folder and use the following command to install Laravel.  
- 
+Build a new directory somewhere on your machine for your new project, 'verifyEmailApp'. Then navigate to the folder and install Laravel using the following instruction.  
 ```bash
 composer create-project laravel/laravel verifyEmailApp
 cd verifyEmailApp
@@ -47,13 +46,13 @@ php artisan serve
 `php artisan serve` command allows the application to be hosted locally.
 
 **Using Laravel Installer**  
-There are numerous command-line utilities that make it easy to build applications using Laravel. We use the following command to download the Laravel installer: 
+Laravel has a 'Laravel installer' command-line utility which is used to install Laravel applications. To download the Laravel installer, we use the following command to:   
 
 ```bash
 composer global require laravel/installer
 ```
 
-To run the Laravel installer, you need to make sure that the `Composer binary folder` is within your `$PATH` variable.
+You need to make sure that the 'Composer binary folder' is inside your '$PATH' variable in order to run the Laravel installer.  
 Check if it is in your `$PATH` variable by running the following command in your terminal:  
 
 ```bash
@@ -63,9 +62,8 @@ echo $PATH
 The correct output should look, as shown below:  
 `User/username/.vendor/composer/bin`  
 
-Incase of any errors, modify your `.bashrc` or, if you're using `ZSH`, your `.zshrc` to include the path to the vendor directory for your Composer.  
-When installed, this command creates a new installation for Laravel in the directory you chose. It's even possible to use a fullstop instead of `[foldername]` to construct a project without having a subdirectory in the current working directory.
-
+Modify your '.bashrc' in case of any errors (no output on the screen) or, if you use 'ZSH', your '.zshrc' to provide the path to your composer's vendor directory.
+This command creates a new installation for Laravel in your chosen directory when installed. To build a project without having a subdirectory in the current working directory, it is even possible to use a . (a dot) instead of'[foldername]'.  
 ```bash
 laravel new verifyEmailApp
 cd verifyEmailApp
@@ -97,12 +95,10 @@ php artisan config:clear
 > NOTE: While using Laravel 7.x, you've to clear the `cache` to reflect changes made.  
 
 ### Step 3: Simple Mail Transfer Protocol Configurations
-In this article, we set up [Mailtrap](https://mailtrap.io/). We will use this service to test and send emails. Mailtrap simulates the actual SMTP server and delivers your emails to a test recipient. It allows the marketing team to send emails to a Mailtrap inbox and see how they are rendered.
+In this article, we set up [Mailtrap](https://mailtrap.io/). We will use this service to test and send emails. Mailtrap simulates the actual SMTP server and delivers your emails to a test recipient.  
 
-Laravel supports several out-of-the-box email services. This includes SMTP, Mailgun, Postmark, Amazon SES, and Sendmail. We can set up the default email service and its credentials at `config/mail.php`.  
-
-Let's get the Mailtrap credentials before editing the `mail.php` file. Navigate to [Mailtrap](https://mailtrap.io/) and sign up for an account. In this tutorial, we will use an account with a free plan. The free plan allows us to send 500 emails a month and one inbox is provided. For small applications, it's just enough.  
-
+Laravel supports many email services that are out-of-the-box. SMTP, Mailgun, Postmark, Amazon SES, and Sendmail are included here. At 'config/mail.php', we can set up the default email service and its credentials.  
+Let's get the Mailtrap credentials before editing the `mail.php` file. Switch to and sign up for an account with [Mailtrap](https://mailtrap.io/). We are going to use an account with a free plan in this tutorial. The free plan enables us to send 500 emails a month and offers one inbox. It's only appropriate for small applications.  
 If you have signed up, open the Demo inbox and your account will have SMTP credentials. Pick Laravel from the drop-down menu under the SMTP Settings tab. This shows the configuration you want to use in the Laravel framework.  
 
 The best way to configure Mailtrap is to copy its configuration to the `.env` file of the program. This enables your application to deliver emails to the Mailtrap inbox. However, you may replace Mailtrap with Mailgrid, SES, or Mailgun after deploying the Laravel app. 
@@ -123,15 +119,14 @@ MAIL_FROM_NAME="${APP_NAME}"
 >This tutorial strongly recommends you to use [Mailtrap](https://mailtrap.io/) due to its simplicity and well-structured documentation.  
 
 ### Step 4: Installing Laravel Jetstream Scaffolding  
-Laravel 8 has distanced itself from it's authentication scaffolding and instead endorsed Jetstream Scaffolding. In [Laravel Documentation](https://laravel.com/docs/8.x/installation), Jetstream is described as a "beautifully designed application starter kit for Laravel that provides the ideal starting point for your next Laravel application." 
-Jetstream offers the implementation of login, registration, `email verification`, two-factor authentication, session management, API via Laravel Sanctum, as well as optional team management functionalities.  
+Laravel 8 distanced itself from its scaffolding for authentication and supported Jetstream Scaffolding instead. Jetstream is described as a "beautifully designed application starter kit for Laravel that provides the ideal starting point for your next Laravel application."  
+Jetstream provides login, registration, 'email verification', two-factor authentication, session management, API via Laravel Sanctum, as well as optional features for team management. 
 
 You can learn more about the new Laravel features including authentication scaffolding from [here](https://www.section.io/engineering-education/laravel-8-new-features/).
 
 This tutorial assumes you already have a Laravel project set up and running. If you do not have a project configuration for Laravel, you can do so before proceeding further.  
 
-The Jetstream installation process will begin using Composer. Run the following command in your terminal.
-
+Using Composer, the Jetstream installation process will begin. In your terminal, execute the following instruction.  
  ```bash
  composer install laravel/jetstream
  ``` 
@@ -254,7 +249,7 @@ Route::get('/profile', function () {
 Unverified users are automatically redirected to the email verification notice route.
 
 ### Conclusion
-In this tutorial, we have learned how to implement email verification using Laravel. We have also discussed how to protect our routes, thus, preventing unauthorized users from accessing them. You can, therefore, use this knowledge to build more creative applications.
+We've learned how to incorporate email authentication using Laravel in this tutorial. We also addressed how our routes should be secured, thus stopping unauthorized users from accessing them. Therefore, you can use this experience to create more innovative applications.  
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
