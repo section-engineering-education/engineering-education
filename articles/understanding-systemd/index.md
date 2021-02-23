@@ -17,9 +17,9 @@ images:
 The official website describes systemd (spelled with a small 's') as a suite of tools that forms the basic building block for a Linux system. systemd handles the boot process for Linux systems. As an init implementation, it has a PID of 1 like other init systems, such as System V, Upstart.
 <!--more-->
 ### Prerequisites
-To follow this article along, you will need a:
+To follow this article along, you will need some:
 1. Familiarity with basic Linux commands.
-2. An understanding of Linux processes, daemons and cgroups.
+2. Basic understanding of Linux processes, daemons and cgroups.
 
 NB: The reference section contains links to resources referenced in this article
 
@@ -281,18 +281,21 @@ So to experience and use the power of systemd to its full glory, I'd advise you 
 systemd was developed by Lennart Poeterring and Kay Sievers - software engineers working for Red Hat. The migration from traditional init based systems to systemd is probably the most fiercely debated topics in Linux's history. For arguments for and against systemd, it would be interesting if you visit the biggest myths and without-systemd.
 
 ### References
-[Archlinux systemd wiki](https://wiki.archlinux.org/index.php/Systemd#Editing_provided_units)
+- [Archlinux systemd wiki](https://wiki.archlinux.org/index.php/Systemd#Editing_provided_units)
 
-[Wikipedia systemd](https://en.wikipedia.org/wiki/Systemd)
+- [Wikipedia systemd](https://en.wikipedia.org/wiki/Systemd)
 
-[Understanding Systemd Units and Unit Files | DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files#anatomy-of-a-unit-file)
+- [Understanding Systemd Units and Unit Files | DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files#anatomy-of-a-unit-file)
 
-[UNIX and Linux System Administratior Handbook](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554)
+- [UNIX and Linux System Administratior Handbook](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554)
 
-[How Linux Works](https://www.amazon.com/How-Linux-Works-2nd-Superuser/dp/1593275676)
+- [How Linux Works](https://www.amazon.com/How-Linux-Works-2nd-Superuser/dp/1593275676)
 
-[systemd.service(5) - Linux manual page](https://man7.org/linux/man-pages/man5/systemd.service.5.html)
+- [systemd.service(5) - Linux manual page](https://man7.org/linux/man-pages/man5/systemd.service.5.html)
 
-[cgroups(7) - Linux manual page](https://man7.org/linux/man-pages/man7/cgroups.7.html)
+- [cgroups(7) - Linux manual page](https://man7.org/linux/man-pages/man7/cgroups.7.html)
 
-[Learn Linux, 101: Runlevels, boot targets, shutdown, and reboot](https://developer.ibm.com/technologies/linux/tutorials/l-lpic1-101-3/)
+- [Learn Linux, 101: Runlevels, boot targets, shutdown, and reboot](https://developer.ibm.com/technologies/linux/tutorials/l-lpic1-101-3/)
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
