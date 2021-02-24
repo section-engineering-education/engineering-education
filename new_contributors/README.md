@@ -19,3 +19,5 @@ Here's a list of our contributor documentation to help you get started on your f
 - Tutorial Template: a sugggested structure for Tutorial articles
 
 Any other follow up questions, feel free to ask on the #eng-ed Slack channel.
+
+NOTE: Referral program has been de-activated (until further notice) 2/24/21
