@@ -1,4 +1,4 @@
-## Build A RESTful API With AdonisJS
+### Build A RESTful API With AdonisJS
 
 ### Outline
 
