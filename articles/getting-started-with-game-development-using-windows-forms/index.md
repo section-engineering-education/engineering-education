@@ -1,11 +1,22 @@
-# Getting-started-with-game-development-using-windows-forms
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/
+title: Getting Started with Game Development using Windows Forms
+description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
+author: mohamed-alghadban
+date: 2021-02-24T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-
+  - url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/hero.jpg
+    alt: Windows Forms C# example image 
+---
 Playing video games is always fun, but what about making one? In this tutorial, we will go through the steps of making a small puzzle game called Mastermind using windows forms. Mastermind is a puzzle game that tests the memory and the ability of the player to determine the exact output between all the possibilities.
-
+<!--more-->
 ### Prerequisites
-
 Before we begin, it would help you as the reader to have the following:
 
 - A basic understanding of the C# programming language.
@@ -15,27 +26,24 @@ Before we begin, it would help you as the reader to have the following:
 - Visual Studio installed on your system.
 
 If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and if you are new to 
-Windows forms you can check this tutorial that would help you understand The basics of it [here](https://www.section.io/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
+Windows forms you can check this tutorial that would help you understand the basics of it [here](/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
 
-
-### How to play 
-
+### How to play
 The system of Mastermind will randomly produce 4 colors between 6 colors (allowing duplicate colors). The colors will remain invisible to the player until he wins or losses the game.
-
 - The player will have to guess the 4 colors produced by the system.
-- the player will have 10 chances to guess the colors before losing the game, and each round will give you a hint.
+- The player will have 10 chances to guess the colors before losing the game, and each round will give you a hint.
 - If the player chooses one of the colors included in one of the digits produced by the system but not in the right place it will glow red.
 - If the color is included in one of the digits & at the right place it will glow black.
 - To win the player must have all the colors in right place.
 
 ### Building the game
-
 We will use the toolbox to select the controls that we need in this game. First of all, we will add 10 labels for each round, and for each label, we will add 4 buttons for the colors one button for the check, and 4 buttons for the hints. Finally 1 button for the start (GO) 4 buttons for the hidden colors produced by the system and 1 one button for the win or loss statement.
 
 This is how the form should look like after building the form, and remember that you can always change the fonts & the colors to whatever suits your taste!
 
 ![mastermind_form](/engineering-education/getting-started-with-game-development-using-windows-forms/mastermind_form.png)
-this is the table of the Texts & names of all the controls used in this form.
+
+This is the table of the Texts & names of all the controls used in this form.
 Text | Name
 ---- | ----
  1 | Label1
@@ -66,10 +74,11 @@ empty | cool4
 empty | VIC
 
 ### Let’s start coding
-
 First of all, we need to define the method that will change the color of all the buttons (Col1, Col2, Col3,...).
+
 To do so we need to change the color of the button each time the player clicks on it, and after it finishes all the colors,
 it will reset the counter (i) and show the colors again with each click.
+
 ```c#
  int i = 0;
         void Changecolor(Button x)
@@ -91,6 +100,7 @@ it will reset the counter (i) and show the colors again with each click.
                 i = 0;
           }
 ```
+
 On each (Col1, Col2, Col3,...) button we double click on it and use this method on its button instead of x.
 
 ```c#
@@ -110,8 +120,8 @@ private void Col2_Click(object sender, EventArgs e)
             Changecolor(Col40);
         }
 ```
-Now we need to define the GO method that will start the game and produce the 4 random colors.
-First, we define a random object from the random class, then we use it to produce 4 random numbers from 1 to 6, and each color will have a value.
+
+Now we need to define the GO method that will start the game and produce the 4 random colors. First, we define a random object from the random class, then we use it to produce 4 random numbers from 1 to 6, and each color will have a value.
 
 ```c#
  private void GO_Click(object sender, EventArgs e)
@@ -123,6 +133,7 @@ First, we define a random object from the random class, then we use it to produc
             int d = rnd.Next(1, 7);
             int blue = 1, red = 2, green = 3, yellow = 4, pink = 5, purple = 6;
 ```
+
 After that, we need to check what the random method produced for each digit, and thus we need to check the `a` 6 times for each color.
 
 ```c#
@@ -158,14 +169,15 @@ After that, we need to check what the random method produced for each digit, and
  //The previous line will turn the first Check button to Visible to start the first round.
         }        
 ```
-**NOTE** that you need to repeat the previous piece of code with `c` and `d` before closing the method.
 
+**NOTE:** That you need to repeat the previous piece of code with `c` and `d` before closing the method.
 
 Now we need to define the Check method that will check the colors chosen by the player and compare them with the colors produced by the system.
+
 The method will take the four colors chosen by the player the 4 colors produced by the system and the 4 hint digits as parameters.
 
-
 The first condition will check if the four-color digits are fully clicked by the user. If the buttons got clicked, it will turn the second Check button on, if not it will let the player know that he hasn't picked four colors to finish the round.
+
 ```c#
  void Check_button(Button Col1, Button Col2, Button Col3, Button Col4,
                    Button cool1, Button cool2, Button cool3, Button cool4,
@@ -217,6 +229,7 @@ if (q == 1)
                 Show4.BackColor = Color.Red;
             }
 ```
+
 The next piece of code will check how many buttons chosen by the player that has the same **color** and **digit** produced by the system. The first line of code will give the w counter the number 3 if 3 of the buttons chosen by the player have the same color and digit produced by the system and so on.
 
 ```c#
@@ -251,6 +264,7 @@ The next piece of code will check how many buttons chosen by the player that has
             if (Col1.BackColor == cool1.BackColor && Col2.BackColor == cool2.BackColor && Col3.BackColor == cool3.BackColor && Col4.BackColor == cool4.BackColor)
                 w = 4;
 ```
+
 After that, we will use the w counter to determine how many black hint buttons will glow, and if it's 4 then you have won the game!
 
 ```c#
@@ -302,6 +316,7 @@ Finally, we will use this method with all the 10 check buttons.
         
         //Repeat for all the Check buttons...
 ```
+
 The final check button will have an extra code because reaching the final round without winning means that you have lost the game.
 
 ```c#
@@ -327,9 +342,14 @@ The final check button will have an extra code because reaching the final round 
             cool4.Visible = true;
         }
 ```
-### Conclusion
 
+### Conclusion
 In this tutorial, we have created a puzzle game called Mastermind using windows forms. We have used the controls & the properties window to create the form of it, and then we connected these controls with the methods inside of it. To double the fun, try to challenge your friends with Mastermind! Don't forget to test out the code to fully understand how it works.
+
+---
+Peer Review Contributions by: [Sylvester Tamba](/engineering-education/authors/sylvester-tamba/)
+
+
 
 
 
