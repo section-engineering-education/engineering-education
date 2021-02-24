@@ -1,7 +1,6 @@
 ### Build A RESTful API With AdonisJS
 
 ### Outline
-
 Introduction
 Setting up AdonisJS
 Creating Databases
@@ -13,7 +12,6 @@ Testing the Forum API
 Conclusion
 
 ### Introduction
-
 In today’s ever-changing and rapid world of frameworks including frontend and backend frameworks, learning and building RESTful APIs to bridge the gap between clients and data is a demanding skill for any software engineer.
 
 "A RESTful API is an application program interface (API) that uses HTTP requests exchange data between parties using endpoints (routes) with either GET, PUT, POST and DELETE as the HTTP requests." from [TowardDataScience](https://towardsdatascience.com)
@@ -23,7 +21,6 @@ In this tutorial, we will be showing you how to build a RESTful API with AdonisJ
 AdonisJS is the Laravel of JavaScript and a good grasp of it is a high-demand skill, therefore learning a build your first REST API with it is a game-changer. You can read through the [Ultimate Guide to AdonisJS 5](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide) to learn more.
 
 ### Setting up AdonisJS 5
-
 If you’ve been working with JavaScript frameworks before now, you should already have Node.js in your computer, if not, you can install the latest version by going through the steps [here](https://nodejs.org/en/).
 
 _AdonisJS needs Node.js >=12.x.x and NPM >=6.x.x, make sure you have the required NodeJs by checking the version installed in your computer to make sure it corresponds with the requirement._
@@ -48,7 +45,6 @@ Open your browser and visit the URL presented, if you see `hello world`.
 Congratulations.
 
 ### Creating Databases
-
 Now that we have our first `Hello World` API created, our Forum API cannot be completed with having a database for storing, reading and updating data from it.
 
 Let’s set up our database right away:
@@ -93,7 +89,6 @@ Then open `config/database.ts` and update the `client` field to `mysql2`.
 That’s all.
 
 ### Setting up Authorization and Authentication
-
 In AdonisJS 5, authentication and authorization is very easy to set up, all you need to do is to install the Auth package and every other complicated authentication logic is built in for you already.
 
 Let’s get started:
@@ -128,7 +123,6 @@ Server.middleware.registerNamed({
 ```
 
 #### Creating migrations
-
 The next step is to create the remaining migrations for the Post and Forum models we will be creating later.
 
 Let’s get started:
@@ -203,7 +197,6 @@ You can set up database seeders to generate fake data or [clone my repository](h
 Cheers!
 
 ### Creating Models
-
 Now, we will create all the models we need this API and configure them properly to interact with our database.
 
 ```bash
@@ -256,7 +249,6 @@ export default class User extends BaseModel {
 ```
 
 ### Creating Controllers
-
 Next, we are going to create the individual controllers for each Model that we have created above but before that, let’s create an AuthController for the authentication.
 
 ```bash
@@ -368,7 +360,6 @@ Open the `PostsController.ts` file inside `app/Controllers/Http` folder and add 
 You can [Clone the repository](https://github.com/Kaperskyguru/adonisjs-forum-api) to review the other controllers that I have created.
 
 ### Creating Endpoint Routes
-
 The next step is to create the endpoints for our frontend or mobile App to consume.
 
 To to that, open the `route.ts` file inside `start` folder and add the following code.
@@ -394,7 +385,6 @@ So far, we have created different endpoints for our Forum API.
 Note that the `resource` method will create all the CRUD endpoints we need for our Forum API once. You can review more about it [here](https://preview.adonisjs.com/guides/http/routing#crud-actions).
 
 ### Testing the Forum API
-
 When testing your endpoint using any HTTP clients e.g. [Postwoman](http://postwoman.io/), You might be faced with an error saying `Cannot find module 'phc-argon2'` when testing, please run this command to install the package.
 
 ```bash
@@ -418,7 +408,6 @@ Now, we can access our protected endpoints:
 ![Test API](/engineering-education/build-a-restful-api-with-adonisjs/test-api.gif)
 
 ### Conclusion
-
 In this article, we covered how to build a RESTful API in AdonisJS 5, we created a simple Forum API with authentication and authorization.
 
 [You can clone the repository here](https://github.com/Kaperskyguru/adonisjs-forum-api).
