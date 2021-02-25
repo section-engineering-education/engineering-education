@@ -14,7 +14,9 @@ By the end of this tutorial:
   
 - We will learn how the JavaScript Page visibility API works to control various features in our applications.
   
-- We will look at the API in action by building a simple web page that controls video playback depending on the tab idleness. We will also look at the advantages of utilizing the API to gain optimal web experience. 
+- We will look at the API in action by building a simple web page that controls video playback depending on the tab idleness. 
+  
+- We will look at the advantages of utilizing the API to gain optimal web experience. 
 
 ### Introduction to the Page Visibility API
 
