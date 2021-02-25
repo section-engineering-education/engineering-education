@@ -72,7 +72,7 @@ I will start by writing the code in the `index.html` file:
 
     <video id="video" controls>
         <source id="mp4" src="/videos/my_video.mp4"  type="video/mp4" />
-        <p>Your Browser does not support HTML videos</p>
+        <p>Your Browser does not support HTML videos.</p>
     </video>
 
 <script src="app.js" defer></script>
