@@ -10,7 +10,7 @@ This is useful when we need to reduce resources consumed by background tasks and
    
 ### Objectives
 By the end of this tutorial:
-- We will learn some basics of using HTML5 media tags, particularly the video tag.
+- We will learn how to use HTML5 media tags, particularly the video tag.
   
 - We will learn how the JavaScript Page visibility API works to control various features in our applications.
   
