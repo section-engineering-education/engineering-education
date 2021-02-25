@@ -34,7 +34,7 @@ You should know the basics of Python 3 (including setting up projects). Basic kn
 
 ### Why MoviePy? And When?
 
-MoviePy is a Python module for editing videos. It can cut and arrange clips, add video effects, and edit audio. It can work like a toolbox, if you only make changes to one clip. Or, if you have to edit lots of clips, MoviePy can automate that process.
+MoviePy is a Python module for editing videos. It can cut and arrange clips, add video effects, and edit audio. It can work like a toolbox, if you only make changes to one clip. If you have to edit lots of clips, MoviePy can automate that process.
 
 Where would you use MoviePy in a workplace setting? It works best when every video is similar and simple to edit. For example, if you work for a TV studio, you might need to put together lots of clips from a football game. MoviePy could split a full game (hours of video) into a few clips. Then, it could overlay your company's watermark in the corner.
 
@@ -149,7 +149,7 @@ Our new output should look bright and distorted in the first part. The second pa
 
 We've changed the image, but we haven't yet changed the sound.
 
-**AudioClips** in MoviePy work much the same as VideoClips. We create a new AudioFileClip in the same way we created a VideoFileClip. Download [this sample .mp3 file](https://www.freepd.com/music/Study and Relax.mp3), a public domain song by Kevin MacLeod. Like with the `.mp4` file, download the music `.mp3` and place it in the directory with `moviepy_test.py`. Now you can import the clip and excerpt the first 10 seconds:
+**AudioClips** in MoviePy work much the same as VideoClips. We create a new AudioFileClip in the same way we created a VideoFileClip. Download [this sample .mp3 file](<https://www.freepd.com/music/Study> and Relax.mp3), a public domain song by Kevin MacLeod. Like with the `.mp4` file, download the music `.mp3` and place it in the directory with `moviepy_test.py`. Now you can import the clip and excerpt the first 10 seconds:
 
 ```python
 musicclip = AudioFileClip("Study and Relax.mp3").subclip(0, 6)
@@ -238,3 +238,7 @@ The final result now has the music, overlaid clips, and all the previous edits.
 ### Conclusion
 
 Good job! You've just edited and remixed a video, all in a Python program. There are plenty of other things you can do with MoviePy, now that you know the basics. For further ideas, check out the [MoviePy Project Galley](https://zulko.github.io/moviepy/gallery.html). MoviePy can even automate large video processing jobs, using [other built-in features](https://zulko.github.io/moviepy/getting_started/efficient_moviepy.html) to speed those up.
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
