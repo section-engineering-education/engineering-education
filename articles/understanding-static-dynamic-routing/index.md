@@ -165,8 +165,7 @@ The decimal method is the fastest, and this method uses the formula: 256-number 
   
 #### Floating static route
 A floating static route is a backup route to any static route or a dynamically learned route. This route is used only when the primary route fails or is unavailable.
-![Floating static route](/engineering-education/understanding-dynamic-and-static-routing/float.jpg)
-[Source](https://www.ciscopress.com/articles/article.asp?p=2180209&seqNum=4)
+![Floating static route](/engineering-education/understanding-dynamic-and-static-routing/float.jpg)I
 
 ### When to use static routes
 Static route can be used to:
