@@ -41,7 +41,7 @@ Below is an example code that listens for a tab visibility state and logs a mess
 More about the Page Visibility API can be found in [mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API).
 
 ### Common uses of the Page Visibility API
-Not every user has access to fast internet speeds, by building your applications in a way that favors everyone even when the application is running in the background can be beneficial. I find the Page visibility API useful as its result is a power-efficient application and an improved performance while utilizing fewer resources by letting the application avoid un-necessary tasks when running in the background.
+Not every user has access to fast internet speeds, by building your applications in a way that favors everyone even when the application is running in the background can be beneficial. I find the Page visibility API useful as its result to a power-efficient application and an improved performance while utilizing fewer resources by letting the application avoid un-necessary tasks when running in the background.
 Some common uses of this API include:
 
 1. The Page Visibility API is used to control the web media. Images and videos are common on the web these days. We may cancel network requests if the user is not viewing the web page to reduce network bandwidth. Alternatively, we can fetch the incomplete images or videos to give a completely loaded site when active again. This depends on what you want to achieve for your sites. In later sections of this article, I will demonstrate how to use this API by designing a simple web page that automatically pauses video playback if the window tab is idling in the background and resumes when active again.
