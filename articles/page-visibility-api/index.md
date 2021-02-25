@@ -9,7 +9,7 @@ This is useful when we need to reduce resources consumed by background tasks and
 3. You will require a browser. I will be using the [Google Chrome](https://www.google.com/chrome/).
    
 ### Objectives
-By the end of this:
+By the end of this tutorial:
 - We will learn some basics of using HTML5 media tags, particularly the video tag.
   
 - We will learn how the JavaScript Page visibility API works to control various features in our applications.
