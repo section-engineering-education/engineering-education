@@ -1,5 +1,5 @@
 We mostly use browser tabs to browse the web pages. There is an obvious chance that most of the tabs are not visible to the user at once. The Page Visibility API is a browser API that provides a way to determine which browser tabs are currently active or idle.
-This is useful when we need to reduce resources running in background tasks and improve the experience and browsing user experience. In this tutorial, we will cover the basics of the Page visibility API by building a simple web page utilizing the HTML5 videos.
+This is useful when we need to reduce resources consumed by background tasks and improve the browsing user experience. In this tutorial, we will cover the basics of the Page visibility API by building a simple web page utilizing the HTML5 videos.
 
 ### Prerequisites
 1. A basic of [JavaScript](https://www.w3schools.com/js/js_intro.asp) language and [HTML](https://www.w3schools.com/html/html_intro.asp) is needed.
