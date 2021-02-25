@@ -23,7 +23,7 @@ A whole new industry has been developed by wireless networking for voice telepho
 Wireless telephony has been popular becuase it allows people to communicate with each other regardless of venue. For Internet access, modern technology aimed at computer networks promise to do the same. Thus far, 802.11 has become the most popular wireless data networking technology.
 
 In this article, we are going to discuss the following:
-- THe dDefinition of wireless networking.
+- The definition of wireless networking.
 - How wireless network works.
 - Types of wireless networks.
 - Wireless networking standards.  
@@ -64,9 +64,9 @@ We now know how wireless network works, let's focus our attention to different t
 
 ***1.Fig 1.0 WLAN***
 
-![Wireless-network-LAN](/engineering-education/introduction-to-wireless-networks/wireless-network.jpg)
+![Wireless-network-LAN](/engineering-education/introduction-to-wireless-networking/wireless-network.jpg)
 
-***1. Wireless Local Area Networks (WLAN)***
+### 1. Wireless Local Area Networks (WLAN)
 
 **WLAN** refers to the type of network connecting two or more computers via a wireless distribution method. They have high-frequency radio waves and an AP (access points) to the internet. 
 
