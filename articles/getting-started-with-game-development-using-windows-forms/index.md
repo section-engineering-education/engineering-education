@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/
+url: /engineering-education/getting-started-with-game-development-windows-forms/
 title: Getting Started with Game Development using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
 author: mohamed-alghadban
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/hero.jpg
+  - url: /engineering-education/getting-started-with-game-development-windows-forms/hero.jpg
     alt: Windows Forms C# example image 
 ---
 Playing video games is always fun, but what about making one? In this tutorial, we will go through the steps of making a small puzzle game called Mastermind using windows forms. Mastermind is a puzzle game that tests the memory and the ability of the player to determine the exact output between all the possibilities.
