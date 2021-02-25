@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/introduction-to-wireless-networking/
-title: Introduction To Wireless Networking
+title: Introduction to Wireless Networking
 description: In this article, we discuss the defintiion of wireless networking, types of wireless networks, standards associated with wireless networks and benefits of wireless networking.
 author: miller-juma
 date: 2021-02-25T00:00:00-10:00
@@ -14,7 +14,7 @@ images:
     - url: /engineering-education/introduction-to-wireless-networking/hero.jpg
       alt: Introduction to wireless networking example image
 ---
-The planet is becoming increasingly more mobile over the past few years. The world's conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle. When users need to be connected by physical cables to a network, their movement is drastically reduced.   
+The planet is becoming increasingly more mobile over the past few years. The worlds conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle. When users need to be connected by physical cables to a network, their movement is drastically reduced.   
 <!--more-->
 However, wireless networking does not face such a constraint and enables the network user to move much more freely. As a result, wireless technologies invade "fixed" or "wired" networks in the conventional realm. To someone who travels daily, this move is apparent.
 ### Introduction
