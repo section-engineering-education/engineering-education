@@ -7,7 +7,7 @@ title: Introduction To Wireless Networking
 description: In this article, we discuss the defintiion of wireless networking, types of wireless networks, standards associated with wireless networks and benefits of wireless networking.
 author: miller-juma
 date: 2021-02-25T00:00:00-10:00
-topics: []
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
