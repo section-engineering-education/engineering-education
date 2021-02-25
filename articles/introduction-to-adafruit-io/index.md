@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-adafruit-io/
 title: Introduction to Adafruit IO
 description: Introduction to IoT deployment with Adafruit IO. In this article, we have covered the basics of IoT and cloud computing. We will also build a simple project for better understanding.
 author: srishilesh-p-s
-date: 2021-02-20T00:00:00-20:00
+date: 2021-02-25T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
