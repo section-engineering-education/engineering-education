@@ -7,11 +7,11 @@ title: Editing Video with Python + MoviePy
 description:  In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip. This tutorial uses Python 3.7.4, MoviePy 1.0.3, PyCharm 2019.3.5 (Community Edition), and Windows 10.
 author: nicholas-kross
 date: 2021-02-26T00:00:00-13:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/video-editing-python-moviepy/hero.jpg
-    alt: film reel
+    alt: film reel example image
 ---
 In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip. Videos are great for getting ideas across. But editing those videos can take a long time.
 <!--more-->
