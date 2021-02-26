@@ -64,7 +64,10 @@ There are many reasons why multicollinearity may occur. Let’s consider a handf
 
 #### Variance Inflation Factor
 
-To learn the severity of multicollinearity, there are a few tests that may be carried out. We focus on the use of the variance inflation factor (VIF). The variance inflation factor represents the quotient of model variance with many terms against model variance with a single term. It is the score of an independent variable representing the degree to which other independent variables explain the variable. As such, it works out the magnitude of the correlation between independent variables.
+To learn the severity of multicollinearity, there are a few tests that may be carried out. We focus on the use of the variance inflation factor (VIF). The variance inflation factor represents the quotient of model variance with many terms against model variance with a single term. It is the score of an independent variable representing the degree to which other independent variables explain the variable. 
+
+In simpler terms, it is a measure of the levels of multicollinearity in a group of regression variables. The variance inflation factor not only pinpoints correlation between independent variables but the strength of the correlation. As such, it works out the magnitude of the correlation between independent variables. 
+
 VIF has a range that signifies which denotes various levels of multicollinearity. A VIF value of 1 is non-collinear. We consider it to be negligible. VIF values ranging between 1 and 5 are moderate. They represent a medium level of collinearity. Values of more than 5 are highly collinear. We consider these to be extreme.
 It is advisable to keep the levels of multicollinearity moderate. The VIF scores for the independent variables should be lower than 5. However, it is worth noting that this figure may vary depending on publication or use case. Some use a value of 10 to denote extreme multicollinearity.
 
@@ -79,7 +82,7 @@ $$ VIF_i = \frac{1}{1 – R_i^2} = \frac{1}{Tolerance} $$
 
 The tolerance is the reciprocal of VIF.
 
-If $R_i^2$ is 0, the VIF is equal to 1. As a result, we cannot predict the variance of the remaining predictors. The $i^{th}$ predictor is not correlated to the others. This is why, as mentioned previously, when VIF is 1, collinearity is negligible. Multicollinearity is absent from the regression model.
+If $R_i^2$ is 0, the VIF is equal to 1. As a result, we cannot predict the variance of the remaining predictors. The $i^{th}$ predictor is not correlated to the others. This is why, as mentioned previously, when VIF is 1, collinearity is negligible. Multicollinearity is absent from the regression model. For a better understanding of VIF, you may check out an example [here](https://www.analyticsvidhya.com/blog/2020/03/what-is-multicollinearity/).
 
 As much as high VIFs are a cause of concern, there exist situations where they can be ignored. Multicollinearity will not manifest. These include:
 
@@ -97,9 +100,9 @@ If we conclude that multicollinearity poses a problem for our regression model, 
 
 **More data.** Statistically, a regression model with more data is likely to suffer less variance due to a larger sample size. This reduces the impact of multicollinearity.
 
-**Partial least squares regression (PLS) or principal component analysis (PCA).** A takeaway from this paper on [partial least squares regression](http://www.ijastnet.com/journals/Vol_4_No_1_January_2014/17.pdf) for multicollinearity is that PLS can lessen variables to a smaller grouping with no correlation between them. PLS, like PCA, is a dimensionality reduction technique. PCA reduces the dimension of data through the decomposition of data into independent factors. Resultantly, new variables with no correlation between them are created. This [article](https://towardsdatascience.com/how-to-remove-multicollinearity-in-dataset-using-pca-4b4561c28d0b) explains how PCA handles multicollinearity.
+**Use of techniques such as partial least squares regression (PLS) and principal component analysis (PCA).** A takeaway from this paper on [partial least squares regression](http://www.ijastnet.com/journals/Vol_4_No_1_January_2014/17.pdf) for multicollinearity is that PLS can lessen variables to a smaller grouping with no correlation between them. PLS, like PCA, is a dimensionality reduction technique. PCA reduces the dimension of data through the decomposition of data into independent factors. Resultantly, new variables with no correlation between them are created. This [article](https://towardsdatascience.com/how-to-remove-multicollinearity-in-dataset-using-pca-4b4561c28d0b) explains how PCA handles multicollinearity.
 
-**Centering the variables.** Centering is defined as subtracting a constant from the value of every variable. It redefines the zero point for a given predictor to become the value we subtracted. Here’s how we can center the variables. We can first calculate the mean of every single independent variable. The next step would replace each variable value with the difference between the values and the mean. This reduces the impact of multicollinearity.
+**Centering the variables.** Centering is defined as subtracting a constant from the value of every variable. It redefines the zero point for a given predictor to become the value we subtracted. Here’s how we can center the variables. We can first calculate the mean of every single independent variable. The next step would replace each variable value with the difference between the values and the mean. The result of this is that the interpretation of the regression coefficients remains unchanged while reducing the impact of multicollinearity by making the correlation between variables much more manageable. This [post](https://statisticsbyjim.com/regression/multicollinearity-in-regression-analysis/) contains an example of how centered variables lead to reduced multicollinearity.
 
 ### Wrapping Up
 
