@@ -39,22 +39,22 @@ With this we can work with data without communicating with a back-end applicatio
 ### Create Project with Vue CLI
 To create a Vuejs project first check if vue/cli is globally installed in your computer, using the terminal run
 ``` bash
- Vue –version 
+ $Vue –version 
 ```
 If it does not show a number version run the following command
 ``` bash
-npm install –g @vue/cli 
+ $npm install –g @vue/cli 
 ```
 Otherwise, proceed. Go to your workspace folder, run the command to create a Vuejs app with the app name
 ```vue create books-app ```
 Using the arrow keys select 
 ```` bash
-Default([Vue 2 babel, eslint])
+ >Default([Vue 2 babel, eslint])
 ````
 And hit enter.
 After installing, navigate into the `books-app` folder and run
  ```bash
-  npm run serve
+ $npm run serve
 ```
   open the URL [localhost:8080](http://localhost:8080) in your browser.
 
