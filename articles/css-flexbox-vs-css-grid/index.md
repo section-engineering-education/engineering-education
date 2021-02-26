@@ -776,3 +776,8 @@ I prefer to use Flexbox for specific layouts and CSS Grid for the general or the
 
 Happy coding.
 
+---
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/) & [Louise Findlay](/engineering-education/authors/louise-findlay/)
+
+
+
