@@ -1,3 +1,20 @@
+	---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-docker/
+title: How to Create Spring Boot Docker Images
+description: This tutorial will go over how to create Spring Boot Docker images. Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. 
+author: odhiambo-paul
+date: 2021-02-27T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-docker/hero.jpg
+    alt: Spring Boot Docker Images example image
+---
+
 [Docker](https://docs.docker.com) is a containerization platform that makes it possible to package, ship, and distribute applications across servers in controlled environments.
 <!--more-->
 ### Prerequisites
