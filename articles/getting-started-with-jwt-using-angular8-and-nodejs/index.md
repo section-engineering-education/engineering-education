@@ -1,4 +1,4 @@
-JSON Web Token (JWT) is an RFC standard that defines a compact way of securing the data transmitted between the parties as a JSON object. The information is digitally signed, meaning and it can then be verified and signed. JWTs are signed using a secret key or a public/private key pair using RSA/ECDSA algorithms. In this guide, I will use a secret key.
+JSON Web Token (JWT) is an RFC standard that ensures data transmitted between a client and a server as a JSON object is secured. The information is digitally signed, meaning and it can then be verified and signed. JWTs are signed using a secret key or a public/private key pair using RSA/ECDSA algorithms. This guide uses a secret key.
 
 ## Prerequisites
 
@@ -6,7 +6,7 @@ To accomplish the task using this guide, you will need:
 
 -   Some knowledge of [Node.js](https://nodejs.dev/learn), [Angular 11](https://www.techiediaries.com/angular-11-crud-rest-api-tutorial/) and [JWT](https://jwt.io/introduction)
 
--   A text editor, in this guide, I will be using [Visual Studio Code](https://code.visualstudio.com/download).
+-   A text editor, I will use [Visual Studio Code](https://code.visualstudio.com/download).
 
 -   Installed [Node.js](https://nodejs.org/en/) with related libraries
 
@@ -16,13 +16,13 @@ To accomplish the task using this guide, you will need:
 
 ## Reason for using JSON Web Tokens
 
-The main reason for using JWT is that it ensures the integrity of the information exchanged between parties: a client and a server. The data can then be verified and authorized. In case of any breach, the session will expire since the token will not be verified.
+The main reason for using JWT is that it ensures the integrity of the information exchanged between parties: a client and a server. The data can then be verified and authorized. The session expires based on time upon unsuccessful token verification.
 
-## How the app will work
+## How the app works
 
-The app will use Angular on the front end and the Node.js server on the backend. On the front end, I will create an [interceptor](https://itnext.io/understanding-angular-interceptors-405b84d7ad69).An interceptor will ensure that any HTTP Request sent from Angular is broken down and cloned. Then a token is added to it before being sent.
+The app will use Angular on the frontend and Node.js as the server that is the backend. On the frontend, I will create an [interceptor](https://itnext.io/understanding-angular-interceptors-405b84d7ad69). All HTTP Request sent from the frontend will be broken down and duplicated by the Interceptor. Then a token is added to it before being sent.
 
-All requests received are broken down, cloned, and a token extracted and verified on the backend. If verification is successful, the request will then be sent to its handler to send a response. Otherwise, on unsuccessful verification, any other requests are rejected, and `401 Unauthorized` status is sent back to Angular, where all the requests are checked for a 401 status. If there are such requests, the token stored will be removed, and the user is signed out of all the sessions and sent back to the login page.
+All requests received are broken down, cloned, and a token extracted and verified on the backend. Upon successful verification, the request is then sent to its hander, and a response is sent. Otherwise, on unsuccessful verification, any other requests are rejected, and `401 Unauthorized` status is sent back to Angular, where all the requests are checked for a 401 status. If there are such requests, the token stored will be removed, and the user is signed out of all the sessions and sent back to the login page.
 
 ## Creating Angular App
 
@@ -220,11 +220,11 @@ app.use(expressJWT({ secret: secret})
     ));
 ```
 
-In the next step, I will be trying to access the path without a token sent in the header using Postman.
+Next, I will be testing the path using Postman, with no token sent in the header.
 
 ![401 Error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.png)
 
-On trial, the app did not allow me to access the path, the error `401 Unauthorized` was displayed as expected. Next will be to test it with the token I first obtained from the token/sign route as show below:
+On trial, the app did not allow me to access the path, the error `401 Unauthorized` was displayed as expected. The below code will use the token I first obtained from the token/sign-in route.
 
 ```javascript
 app.get('/path1', (req, res) => {
