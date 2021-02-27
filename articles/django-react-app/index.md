@@ -12,7 +12,7 @@ You can check out these articles to get started with React and Python:
 
 - [Django Tutorials](https://realpython.com/tutorials/django/)
 
-Before getting our hands dirty, you may need to:
+Before getting your hands dirty, you may need to:
 
 1. [Install Python 3](https://www.python.org/downloads/)
 
@@ -175,7 +175,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 ```
 
-Django-cors-headers helps in handling the server headers required for [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
+Django-cors-headers help in handling the server headers required for [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
 Now, Let's create a serializer file.
 
@@ -203,7 +203,7 @@ A view function takes in information from a request, prepares the data required 
 
 A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
 
-The `ModelViewSet` is an extention of the `ViewSet`. It inherits from `GenericAPIView` which provide the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
+The `ModelViewSet` is an extension of the `ViewSet`. It inherits from `GenericAPIView` which provides the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
 
 Let's also update the `todo/views.py`:
 
@@ -223,9 +223,9 @@ class TodoView(viewsets.ModelViewSet):   # add this
 ```
 
 
-URL stand for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
+URL stands for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
 
-Making webpages in Django involves three steps: defining URLs, writing views and writing templates.
+Making webpages in Django involves three steps: defining URLs, writing views, and writing templates.
 
 Defining URL pattern describes the way the URL is laid out and tells Django what to look for when matching a browser request with a site URL so it knows which site to return.
 
@@ -264,7 +264,7 @@ python manage.py runserver
 
 ![api](json.jpg)
 
-We have set our backend let us move forward to frontend.
+We have set our backend to let us move forward to the frontend.
 
 ### Step 3: Frontend using React
 
@@ -317,7 +317,7 @@ reportWebVitals();
 
 `ReactDOM.render()` renders a React element into the DOM in the supplied container.
 
-It enable us to integrate React in every foreign application.
+It enables us to integrate React into every foreign application.
 
 `ReactDOM.render()` takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
 
@@ -406,7 +406,7 @@ cd backend
 python manage.py runserver
 ```
 
-We will need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where Django application will handle them.
+We will need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
 
 Let's go ahead and add it.
 
@@ -505,7 +505,7 @@ export default App;
 
 Let's go through each line of code to better understand what they do:
 
-In our constructor we create a few properties in our `state` object. We assign the `viewCompleted` property false since our interface only show items marked as not complete from our API at the moment. 
+In our constructor, we create a few properties in our `state` object. We assign the `viewCompleted` property false since our interface only shows items marked as not complete from our API at the moment. 
 
 The `activeItem` property includes the `title`, `description` and pass `false` to `completed` as the default status. 
 
@@ -515,11 +515,11 @@ First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We
 
 Our application uses the `componentDidMount()` method from `React.Component` but we'll define it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
 
-`componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
+The `componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
 
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
-We create `renderItems()` function uses the `filter` built-in array functionalty to show the completed items from our list, `todoList`. The `filter` function takes a function to evaluate each item in the list. We define a variable `newItems` to store the items which we display by using the `map` functionality.
+We create `renderItems()` function uses the `filter` built-in array functionality to show the completed items from our list, `todoList`. The `filter` function takes a function to evaluate each item in the list. We define a variable `newItems` to store the items which we display by using the `map` functionality.
 
 We use a ternary conditional operator to show if an `item description` is marked as complete or not. A ternary operator takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
 
@@ -531,9 +531,9 @@ The consumed data from the API should be displayed as follows:
 
 To handle actions such as adding tasks and marking them complete, we will need to create a modal component.
  
-A modal is a message box that is displayed on top of your screen. Modals put an overlay on the screen; therefore, they take visual precedence over all other elements. Modal component provides a solid foundation for creating dialogs, popovers and lightboxes.
+A modal is a message box that is displayed on top of your screen. Modals put an overlay on the screen; therefore, they take visual precedence over all other elements. The modal component provides a solid foundation for creating dialogs, popovers, and lightboxes.
 
-Let's go ahead and create a `components` folder in `src` directory then create a file in it called `Modal.js`:
+Let's go ahead and create a `components` folder in the `src` directory then create a file in it called `Modal.js`:
 
 ```bash
 mkdir src/components
@@ -626,11 +626,11 @@ export default class CustomModal extends Component {
 
 In the code above we first import React and the components from `reactstrap` that we installed earlier. In the constructor we use the property that we created earlier in `App.js` file. The `activeItem` component receives the argument as a `props` object.
 
-The `handleChange` method takes note of a change in state of a React component, takes the event as a parameter and does something to change state.We use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to create a checkbox where users can click to mark a task as complete. We then change the `activeItem` in our state object by `setState()` method.
+The `handleChange` method takes note of a change in the state of a React component, takes the event as a parameter, and does something to change state. We use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to create a checkbox where users can click to mark a task as complete. We then change the `activeItem` in our state object by `setState()` method.
 
 In our `render()` method we pass `toggle` and `onSave()` method to `props`. We return the Modal component when toggled.
 
-We add the `toggle` component in the `ModalHeader` to enable dropping the modal. In the `ModalBody` we add the forms for adding the item title and item description. In each `FormGroup`, we specify the `activeItem` value. We use `onChange` event to detect when the input value changes and returns the target input's name and value. 
+We add the `toggle` component in the `ModalHeader` to enable dropping the modal. In the `ModalBody`, we add the forms for adding the item title and item description. In each `FormGroup`, we specify the `activeItem` value. We use the `onChange` event to detect when the input value changes and returns the target input's name and value. 
 
 Since the last `FormGroup`'s input type is a checkbox the target value will be `checked` as we assigned it in our `handlechange()` method.
 
@@ -638,7 +638,7 @@ In the `ModalFooter` we create a button to save our items using the `onSave()` m
 
 We then create the `add task` and `mark as completed` functionalities in `App.js`.
 
-Before we dive into the code we install `axios` a Javascript library that make requests to the API endpoints on the backend server.
+Before we dive into the code we install `axios` a Javascript library that makes requests to the API endpoints on the backend server.
 
 ```bash
 npm install axios@0.21.1
@@ -779,7 +779,7 @@ First, import the `Modal` that we created earlier and `axios`. The `toggle()` me
 
 The `handleSubmit()` save our items to the API, we use `axios` to make requests to it. We use `PUT` to insert the item into the already existing list of items according to the item id. 
 
-We then create a `createItem()` method for adding our task which is defined in the `render()` method. The `item` variable consist of `title`, `description` and `completed` which by default is false. 
+We then create a `createItem()` method for adding our task which is defined in the `render()` method. The `item` variable consists of `title`, `description`, and `completed` which by default is false. 
 
 The `displayCompleted()` method checks the status of the `viewCompleted` we created in our state earlier and returns true or false.
 
@@ -812,8 +812,7 @@ Check the address- http://localhost:8000 - to see the final look.
 
 ### Conclusion
 
-
-We've come to the end of this tutorial and learnt how to configure Django and React to interact with each other. Hope you have learnt one thing or two from this.
+We've come to the end of this tutorial and learned how to configure Django and React to interact with each other. Hope you have learned one thing or two from this.
 
 Check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020).
 
