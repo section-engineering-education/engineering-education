@@ -12,62 +12,58 @@ images:
   - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
     alt: vuejs 2 crud app with localstorage
 ---
-![local storage with vuejs](/engineering-education/vue2-crud-app-with-localstorage/hero.jpg)
-
 
 ### Introduction
 
-Vuejs is a progressive, versatile, highly adoptable front-end JavaScript framework due to its simplicity, and its little bundle size.
+Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity, and small bundle size.
 
-Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user’s browser. 
-With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client, they were sent to the server when HTTP requests were made and they could be modified by the server.
+Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser. With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client. They were sent to the server when HTTP requests were made and they could be modified by the server.
 
 ### Table of Contents
 
-- Create a Vuejs Project with Vue CLI
-- Install Vuejs dev tools 
+- Create a Vue.js Project with Vue CLI
+- Install Vue.js dev tools 
 - Create Books, BookItem, AddBookItem components
 - working with data with local storage
 
 ### Prerequisites
 
-1. Installed Node.js 6.x and above
-2. Installed npm 5.10 and above
-3. Installed Vue/CLI
-4. Basic understanding of JavaScript, CSS, HTML
+1. Node.js 6.x or newer
+2. Npm 5.10 or newer
+3. Vue/CLI
+4. Some knowledge of JavaScript, CSS, HTML
 
-### Create Project with Vue CLI
-To create a Vuejs project first check if vue/cli is globally installed in your computer, using the terminal run
-``` bash
- $Vue –version 
+### Create project with Vue CLI
+To create a Vue.js project first check if Vue CLI is globally installed in your computer. Using the terminal run:
+```bash
+ $ vue –version 
 ```
-If it does not show a number version run the following command
-``` bash
- $npm install –g @vue/cli 
+If it is not installed, run the following command to install it.
+```bash
+ $ npm install -g @vue/cli 
 ```
-Otherwise, proceed. Go to your workspace folder, run the command to create a Vuejs app with the app name
-```vue create books-app ```
-Using the arrow keys select 
-```` bash
- >Default([Vue 2 babel, eslint])
-````
-And hit enter.
-After installing, navigate into the `books-app` folder and run
- ```bash
- $npm run serve
+Go to your workspace folder and run the command below to create a Vue.js app.
+```bash
+$ vue create books-app
 ```
-  open the URL [localhost:8080](http://localhost:8080) in your browser.
+Using the arrow keys select:
+```bash
+❯ Default ([Vue 2] babel, eslint) 
+```
+Then hit enter. After creating, navigate to the created folder `books-app` and serve it by running the commands:
+```bash
+$ cd books-app
+$ npm run serve
+```
+Then open the URL http://localhost:8080 in your browser to view the app.
 
-### Installing Vuejs devtools
-This is an extension for debugging Vuejs apps, it inspects components, props, routing, vuex, and more.
-Open your browser of choice, search vuejs devtool extension for [Mozilla](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) or [Chrome]( https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en).
- 
-Install, check the Vue tab in browser’s devtool. To open browser devtool click ```SHIFT + CTRL + J``` on Windows/Linux or ```Command + Option + j``` on macOS
+### Installing Vuejs DevTools
+This is a browser extension for debugging Vue.js apps. It inspects components, props, routing, vuex, and more. Open your browser of choice, and install Vue.js DevTools extension for [Mozilla](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) or [Chrome]( https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en). To open the browser's DevTools press `SHIFT + CTRL + J` on Windows/Linux or `Command + Option + j` on macOS.
 
 ### Creating Books component
-This app will be a list of books to read, open a code editor of your choice, the component displayed on our browser is the `HelloWorld` component located in the `src/components folder`.
- 
-We will delete it and its references in the App.vue including the image logo. Now create a Books.vue file in the `components` folder, add the below code 
+This app will be a list of books to read, open a code editor of your choice, the component displayed on our browser is the `HelloWorld` component located in the `src/components` folder.
+
+We will delete it and its references in the `App.vue` including the image logo. Now create a `Books.vue` file in the `components` folder. Add the code below to this file.
 ```vue
 <template>
     <div>
@@ -85,18 +81,16 @@ We will delete it and its references in the App.vue including the image logo. No
 
 </style>
 ```
-Always note in Vue2 component template should only contain one root element. Otherwise, it will throw an error.
-We can then import the Books Component into the root component. The App.vue component should look like below.
-The data function returns an empty array of books, books that we'll add later will populate the array.
+Always note that in Vue 2 component template should only contain one root element. Otherwise, it will throw an error. We can then import the `Books` Component into the root component. The `App.vue` component should now look as shown below. The data function returns an empty array of books, books that we'll add later to populate the array.
 ```vue
 <template>
   <div id="app">
-    <Books />
+    <Books/>
   </div>
 </template>
 
 <script>
- import Books from "./components/Books";
+import Books from "./components/Books";
 
 export default {
   name: 'App',
@@ -119,12 +113,13 @@ export default {
 }
 </style>
 ```
-`v-bind` is a Vue directive that is used to attach data to a Vue component. This will help us bind the data passed to the Books component. As illustrated below make changes to match below
-```
+`v-bind` is a Vue directive that is used to attach data to a Vue component. This will help us bind the data passed to the `Books` component. Make changes as shown below.
+```vue
+<!-- ... -->
 <Books v-bind:books="books"/>
+<!-- ... -->
 ```
-`props` are used to pass data from parent to child component, in this case `App.vue` is the parent component while `Books.vue` is the child. Add the below code to the child component to make use of props.
-
+`props` are used to pass data from parent to child component, in this case `App.vue` is the parent component while `Books.vue` is the child. To make use of props, edit the `<script>` of the child component to look as shown below.
 ```vue
 <script>
     export default {
@@ -133,10 +128,8 @@ export default {
     }
 </script>
 ```
-
-### Creating BookItem Component
-In the components folder create a file BookItem.vue. This component will represent a single book.
-The code for the BookItem.vue should look like below.
+### Creating the `BookItem` Component
+In the components folder create a file `BookItem.vue`. This component will represent a single book. The code for the `BookItem.vue` should look like shown below.
 ```vue
 <template>
     <div>
@@ -150,7 +143,7 @@ The code for the BookItem.vue should look like below.
     }
 </script>
 ```
-Now, import BookItem into the Books component as a child and declare it in the components object. Here we will loop through the data and display the BookItems to the user using a Vue directive ```v-for```. The code is below.
+Now, import `BookItem` into the `Books` component as a child and declare it in the components object. Here we will loop through the data and display the `BookItems` to the user using a Vue directive `v-for`. The code should now look as shown below.
 ```vue
 <template>
     <div>
@@ -172,9 +165,7 @@ Now, import BookItem into the Books component as a child and declare it in the c
     }
 </script>
 ```
-Notice the `v-bind:key` this is important as it gives Vue a hint so that it can track each node’s identity.
-The `v-bind:book` above binds data to a Vue component.
-To display a book(s) add the following code to BookItem.vue
+Notice the `v-bind:key`. This is important as it gives Vue a hint so that it can track each node’s identity. The `v-bind:book` binds data to a Vue component. To display a book(s) edit `BookItem.vue` to look as shown below.
 ```vue
 <template>
     <div>
@@ -189,7 +180,7 @@ To display a book(s) add the following code to BookItem.vue
     }
 </script>
 ```
-You can add your own data in the books array in App.vue just like below to display data to the UI.
+You can add your own data in the books array in `App.vue` as shown below to display data to the UI.
 ```vue
 books: [
   {
@@ -202,8 +193,8 @@ books: [
   },
 ]
 ```
-### Creating AddBookItem component
-You can now delete the test JSON data above. Under the `components` folder, create a file name AddBook.vue. Import it into App.vue and declare it in components object inside the script as below.
+### Creating `AddBookItem` component
+You can now delete the test JSON data above. Under the `components` folder, create a file name `AddBook.vue`. Import it into `App.vue` and declare it in components object inside the script as below.
 ```vue
 import Books from "./components/Books";
 import AddBookItem from "./components/AddBookItem";
@@ -214,9 +205,7 @@ import AddBookItem from "./components/AddBookItem";
        AddBookItem
      }
 ```
-
-Let the AddBookItem be above the Book component in the template. You’ll see a form to add books.
-Now, add the following code to the AddBookItem.vue
+Let the `AddBookItem` be above the `Book` component in the template. You’ll see a form to add books. Now, add the following code to the `AddBookItem.vue`.
 ```vue
 <template>
     <div>
@@ -252,14 +241,13 @@ Now, add the following code to the AddBookItem.vue
     }
 </script>
 ```
->This code has a form that you can use to add a book, it has a method `addBook`, and a vue-directive `v-model` which creates a 2-way binding between user-input and vuejs component, any changes to an input value the bound data will be changed and vice versa. In this case the `title`.
+This code has a form that you can use to add a book, it has a method `addBook()`. It alsp has a vue-directive `v-model` which creates a 2-way binding between user-input and vuejs component. Any changes to an input value changes the bound data and vice versa. In this case the `title`.
 
->Each book needs a unique id, we will use javascript's `Math.random()` method to generate unique ids.
+Each book needs a unique id. We will use javascript's `Math.random()` method to generate unique ids.
 
->The emit method emits an event referred to as `add-book-event` this is used to pass data based on the user’s action from a child to a parent component, when the user adds a book and submits this event is emitted to the parent. 
+The `$emit()` method emits an event `add-book-event` used to pass data based on the user’s action from a child to a parent component. When the user adds a book and submits it, this event is emitted to the parent.
 
->For the parent (App.vue) to listen to this event from the child (AddBookItem.vue), we create a method ```addBook``` and assign it to the emitted event. Make changes to the `App.vue` to this.
-
+For the parent (`App.vue`) to listen to this event from the child (`AddBookItem.vue`), we create a method `addBook` and assign it to the emitted event. Make changes to the `App.vue` to look like this.
 ```vue
 <template>
   <div id="app">
@@ -268,7 +256,7 @@ Now, add the following code to the AddBookItem.vue
   </div>
 </template>
 ```
-Just after data add the method `addBook`, the code is below
+Just after `data()`, add a method `addBook()` using the code below.
 ```vue
 methods: {
   addBookItem(newBook){
@@ -279,9 +267,9 @@ methods: {
 The method adds a new book to the books array, we are using the [spread operator](https://www.geeksforgeeks.org/javascript-spread-operator/), this adds the new book to the end of the array, without creating a new array.
 
 ### Save the data
-Using Vuejs inbuilt method [watch()](https://vuejs.org/v2/api/#watch), the method automatically watches for change in the books array and saves data to local storage. The watch method has a property called `deep` that is set to true to inform the Vue instance to always watch for changes in the books array.
- 
-Watch is used when working with data outside your component like the browser API or fetching data. Add the following code in App.vue file
+Using Vuejs inbuilt method [watch()](https://vuejs.org/v2/api/#watch), the method automatically watches for change in the books array and saves data to local storage. The `watch` method has a property called `deep` that is set to true to inform the Vue instance to always watch for changes in the books array.
+
+`watch` is used when working with data outside your component like the browser API or fetching data. Add the following code to `<script>` in `App.vue`.
 ```vue
 watch: {
   books: {
@@ -292,12 +280,11 @@ watch: {
   }
 }
 ```
-localStorage uses the `setItem()` method to save data as key-value pairs, the data must be a string so we convert the JSON into a string in order to save it using [JSON.stringify()](https://www.geeksforgeeks.org/javascript-json-stringify-method/#:~:text=The%20JSON.,the%20form%20of%20the%20strings.) method.
+localStorage uses the `setItem()` method to save data as key-value pairs, the data must be a string so we convert the JSON into a string in order to save it using [JSON.stringify()](https://www.geeksforgeeks.org/javascript-json-stringify-method/) method.
 
 ### Load data from local storage
-We need to display the saved data from local storage to the user, we use a lifecycle hook called [mounted()](https://vuejs.org/v2/api/#mounted) that’s executed after Vue instance has been created.
-In the cycle hook, we use the method ```localStorage.getItem(‘key’)``` to retrieve data from localStorage. The same key we used to store is the same we’ll use to retrieve the data.
->Add the code below just after the watch method.
+We need to display the saved data, from the local storage to the user. We will use a lifecycle hook called [mounted()](https://vuejs.org/v2/api/#mounted) that’s executed after Vue instance has been created.
+In the cycle hook, we use the method `localStorage.getItem('key')` to retrieve data from localStorage. The same key we used to store is the same we’ll use to retrieve the data. Add the code below just after the `watch` method.
 ```vue
 mounted() {
   if (localStorage.getItem("books")){
@@ -305,9 +292,9 @@ mounted() {
   }
 }
 ```
-The `JSON.parse()` method converts a string to a javascript object since data is only stored as a string in localStorage. The data is then set to the books array which is displayed to the user. You’ll now be able to see a list of books after adding.
+The `JSON.parse()` method converts a string to a javascript object since data is only stored as a string in local storage. The data is then set to the books array which is displayed to the user. You’ll now be able to see a list of books after adding.
 ### Deleting data 
-Update the BookItem.vue file with the following code
+Update the `BookItem.vue` file with the following code
 ```vue
 <div class="float-left">
     <span class="float-right">
@@ -316,18 +303,15 @@ Update the BookItem.vue file with the following code
     </span>
 </div>
 ```
-I added a bootstrap CSS CDN link in the index.html file, you can style yours to look much better.
+I added a bootstrap CSS CDN link in the `index.html` file, you can style yours to look much better.
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 ```
-When you click delete button, an event is emitted to pass book id to the parent(`Books.vue`).
-`$emit` is the way Vue passes data from child to parent component.
-In the Books.vue file update code to this below
+When you click delete button, an event is emitted to pass book id to the parent(`Books.vue`). `$emit` is the way Vue passes data from child to parent component. In `Books.vue` update `<BookItem/>` as shown below.
 ```vue
 <BookItem v-bind:book="book" v-on:del-book-item="delBookMethod" />
 ```
-Assign the event from the child to a method called `delBookMethod`.
-Add it to methods object and emit an event to its parent (`App.vue`) passing the book id with it.
+Assign the event from the child to a method called `delBookMethod`. Add it to methods object and emit an event to its parent (`App.vue`) passing the book id with it.
 ```vue
 methods: {
     delBookMethod(id){
@@ -336,8 +320,7 @@ methods: {
     },
  }
 ```
-
-In the parent component(`App.vue)`, let’s make some changes.
+In the parent component(`App.vue`), let’s make some changes.
 ```vue
 <Books v-bind:books="books" v-on:del-book-event="deleteBookItem" />
 ```
