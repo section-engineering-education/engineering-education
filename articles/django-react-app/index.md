@@ -315,13 +315,9 @@ ReactDOM.render(
 reportWebVitals();
 ```
 
-`ReactDOM.render()` renders a React element into the DOM in the supplied container.
+`ReactDOM.render()` renders a React element into the DOM in the given container element. It takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
 
-It enables us to integrate React into every foreign application.
-
-`ReactDOM.render()` takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
-
-It expects an element with an `id='root'`.
+Here, It expects an element with an `id='root'`.
 
 Substitute the below code in `src/App.js`:
 
@@ -352,6 +348,7 @@ const todoItems = [
     completed: true
   },
 ];
+
 class App extends Component {
     constructor(props) {
       super(props);
@@ -383,7 +380,7 @@ class App extends Component {
 export default App;
 ```
 
-We start by rendering a list of items. The list will be artificial data but later we will fetch the data from the API we created in the previous steps.
+We start by rendering a list of items. The list will be artificial data but later we'll fetch the data from the API we created in the previous steps.
 
 We define a list of items. Each item has an `id`, `title`, `description`, and status of whether the task is completed or not, `completed`.
 
@@ -406,7 +403,7 @@ cd backend
 python manage.py runserver
 ```
 
-We will need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
+We'll need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
 
 Let's go ahead and add it.
 
@@ -511,7 +508,7 @@ The `activeItem` property includes the `title`, `description` and pass `false` t
 
 We pass an empty array to our `todoList` because we are going to fetch our data from an API.
 
-First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints. We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we will get back the parsed JSON data that we expect.
+First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints. We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we'll get back the parsed JSON data that we expect.
 
 Our application uses the `componentDidMount()` method from `React.Component` but we'll define it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
 
@@ -529,7 +526,7 @@ The consumed data from the API should be displayed as follows:
 
 ![api_data](api_fetched_data.jpg)
 
-To handle actions such as adding tasks and marking them complete, we will need to create a modal component.
+To handle actions such as adding tasks and marking them complete, let's create a modal component.
  
 A modal is a message box that is displayed on top of your screen. Modals put an overlay on the screen; therefore, they take visual precedence over all other elements. The modal component provides a solid foundation for creating dialogs, popovers, and lightboxes.
 
@@ -775,6 +772,7 @@ class App extends Component {
   
 export default App;
 ```
+
 First, import the `Modal` that we created earlier and `axios`. The `toggle()` method changes the `Modal` state when toggled, if the expression is true it returns the properties defined in the `Modal` in `Modal.js` else nothing happens. We add this in the `render()` method.
 
 The `handleSubmit()` save our items to the API, we use `axios` to make requests to it. We use `PUT` to insert the item into the already existing list of items according to the item id. 
@@ -792,7 +790,6 @@ Your application should be like the one below by now:
 ![frontend](final.jpg)
 
 ### Step 4: Testing
-
 
 Let us test our application backend by doing the following:
 
