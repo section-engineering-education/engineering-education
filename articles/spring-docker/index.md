@@ -165,7 +165,7 @@ $ docker push <Docker Hub username>/spring-boot-docker:latest
 
 **Note:** Replace `<Docker Hub username>` with your actual Docker Hub username.
 
-The source code to the application is in [this](https://github.com/paulodhiambo/django_todo/tree/token_auth) GitHub repository.
+The source code to the application is in [this](https://github.com/paulodhiambo/springbootcrud/tree/spring-docker) GitHub repository.
 
 ### Conclusion
 Docker is a good tool for packaging applications with the required dependencies to run them both locally and in production. [Docker playground](https://labs.play-with-docker.com/) is an online environment that you can use to test various Docker commands without installing Docker locally on your computer.
