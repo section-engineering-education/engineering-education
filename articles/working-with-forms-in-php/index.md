@@ -1,6 +1,21 @@
-### Introduction
-The main use of HTML forms is collecting user input in web-based applications. They range from contact forms, login forms to registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server (MySQL). It takes data from a webpage and sends it to the server. PHP handles data in the form. Data is then saved in a database, such as MySQL.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/working-with-forms-in-php/
+title: Working with Forms in PHP
+description: This article shows you how to implement forms using php and HTML. The reader will also understand the GET and POST methods.
+author: judy-nduati
+date: 2021-02-04T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/working-with-forms-in-php/hero.jpg
+    alt: stages of a database development life cycle
+---
+The main use of HTML forms is collecting user input in web-based applications. They range from contact forms, login forms to registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server (MySQL). It takes data from a webpage and sends it to the server. PHP handles data in the form. Data is then saved in a database, such as MySQL.
+<!--more-->
 Through this article, you will learn how to:
 - Create an HTML form.
 - Learn about Hypertext Transfer Protocol (HTTP) request methods(GET, POST, and PUT).
@@ -18,7 +33,7 @@ Collecting user's data in a web application using forms is a major task. In web 
 - Login Forms
 - Registration Forms
 
-The form is presented to the user. The user inserts data and submits the form using the submit button. Most of the time, the form data is sent to the server for processing. Processing user input involves validating inputs, database operations, and providing feedback to the user. There are four database operations involved, namely create, read, update, and delete. This pattern is commonly known by the acronym CRUD operations.
+The form is presented to the user who inserts data and submits the form using the `submit` button. Most of the time, the form data is sent to the server for processing. Processing user input involves validating inputs, database operations, and providing feedback to the user. There are four database operations involved, namely create, read, update, and delete. This pattern is commonly known by the acronym CRUD operations.
 
 Hypertext Transfer Protocol (HTTP) enables the communication between the client (browser) and the server. An HTTP request is sent by a client to the server. The server returns the response to the client. There are several HTTP methods, but in this article, we will discuss `GET`, `POST`, and `PUT`. Data is processed based on the method mentioned.
 
@@ -377,3 +392,6 @@ The source code created in this tutorial can be found on [Github](https://github
 
 ### Conclusion
 In conclusion, an HTTP request enables communication between a client and a server. We have learned how to create HTML forms and process the data using PHP. Also, we have learned about POST, PUT and GET methods and how they work. We learned that POST creates data, GET read data from the server and PUT update data in the server. We have learned how to perform CRUD operations on MySQL database using PHP. I hope this article will shed some light and give you an understanding while working with HTML forms in PHP.
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
