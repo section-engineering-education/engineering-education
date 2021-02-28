@@ -1,30 +1,6 @@
----
-layout: engineering-education
-url: /engineering-education/vue2-crud-app-with-localstorage/
-title: Vuejs 2 CRUD App With LocalStorage
-description: This article is a tutorial on how to build a crud app with vuejs version 2 and store the app data in localStorage.
-author: espira-marvin
-date: 2021-02-16T00:00:00-09:00
-topics: []
-excerpt_separator: <!--more-->
-images:
-
-  - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
-    alt: vuejs 2 crud app with localstorage
----
-
 ### Introduction
 
-Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity, and small bundle size.
-
-Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser. With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client. They were sent to the server when HTTP requests were made and they could be modified by the server.
-
-### Table of Contents
-
-- Create a Vue.js Project with Vue CLI
-- Install Vue.js dev tools 
-- Create Books, BookItem, AddBookItem components
-- working with data with local storage
+Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity, and small bundle size. Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser. With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client. They were sent to the server when HTTP requests were made and they could be modified by the server.
 
 ### Prerequisites
 
@@ -57,7 +33,7 @@ $ npm run serve
 ```
 Then open the URL http://localhost:8080 in your browser to view the app.
 
-### Installing Vuejs DevTools
+### Installing Vue.js DevTools
 This is a browser extension for debugging Vue.js apps. It inspects components, props, routing, vuex, and more. Open your browser of choice, and install Vue.js DevTools extension for [Mozilla](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) or [Chrome]( https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en). To open the browser's DevTools press `SHIFT + CTRL + J` on Windows/Linux or `Command + Option + j` on macOS.
 
 ### Creating Books component
@@ -114,10 +90,8 @@ export default {
 </style>
 ```
 `v-bind` is a Vue directive that is used to attach data to a Vue component. This will help us bind the data passed to the `Books` component. Make changes as shown below.
-```vue
-<!-- ... -->
+```html
 <Books v-bind:books="books"/>
-<!-- ... -->
 ```
 `props` are used to pass data from parent to child component, in this case `App.vue` is the parent component while `Books.vue` is the child. To make use of props, edit the `<script>` of the child component to look as shown below.
 ```vue
@@ -181,7 +155,7 @@ Notice the `v-bind:key`. This is important as it gives Vue a hint so that it can
 </script>
 ```
 You can add your own data in the books array in `App.vue` as shown below to display data to the UI.
-```vue
+```javascript
 books: [
   {
     id:1,
@@ -195,7 +169,7 @@ books: [
 ```
 ### Creating `AddBookItem` component
 You can now delete the test JSON data above. Under the `components` folder, create a file name `AddBook.vue`. Import it into `App.vue` and declare it in components object inside the script as below.
-```vue
+```javascript
 import Books from "./components/Books";
 import AddBookItem from "./components/AddBookItem";
    export default {
@@ -241,7 +215,7 @@ Let the `AddBookItem` be above the `Book` component in the template. You’ll se
     }
 </script>
 ```
-This code has a form that you can use to add a book, it has a method `addBook()`. It alsp has a vue-directive `v-model` which creates a 2-way binding between user-input and vuejs component. Any changes to an input value changes the bound data and vice versa. In this case the `title`.
+This code has a form that you can use to add a book, it has a method `addBook()`. It also has a vue-directive `v-model` which creates a 2-way binding between user-input and Vue.js component. Any changes to an input value changes the bound data and vice versa. In this case the `title`.
 
 Each book needs a unique id. We will use javascript's `Math.random()` method to generate unique ids.
 
@@ -257,20 +231,18 @@ For the parent (`App.vue`) to listen to this event from the child (`AddBookItem.
 </template>
 ```
 Just after `data()`, add a method `addBook()` using the code below.
-```vue
-methods: {
-  addBookItem(newBook){
-    this.books = [...this.books, newBook]
-  }
+```javascript
+addBookItem(newBook){
+  this.books = [...this.books, newBook]
 }
 ```
 The method adds a new book to the books array, we are using the [spread operator](https://www.geeksforgeeks.org/javascript-spread-operator/), this adds the new book to the end of the array, without creating a new array.
 
 ### Save the data
-Using Vuejs inbuilt method [watch()](https://vuejs.org/v2/api/#watch), the method automatically watches for change in the books array and saves data to local storage. The `watch` method has a property called `deep` that is set to true to inform the Vue instance to always watch for changes in the books array.
+Using Vue.js inbuilt method [watch()](https://vuejs.org/v2/api/#watch), the method automatically watches for change in the books array and saves data to local storage. The `watch` method has a property called `deep` that is set to true to inform the Vue instance to always watch for changes in the books array.
 
 `watch` is used when working with data outside your component like the browser API or fetching data. Add the following code to `<script>` in `App.vue`.
-```vue
+```javascript
 watch: {
   books: {
     handler() {
@@ -285,7 +257,7 @@ localStorage uses the `setItem()` method to save data as key-value pairs, the da
 ### Load data from local storage
 We need to display the saved data, from the local storage to the user. We will use a lifecycle hook called [mounted()](https://vuejs.org/v2/api/#mounted) that’s executed after Vue instance has been created.
 In the cycle hook, we use the method `localStorage.getItem('key')` to retrieve data from localStorage. The same key we used to store is the same we’ll use to retrieve the data. Add the code below just after the `watch` method.
-```vue
+```javascript
 mounted() {
   if (localStorage.getItem("books")){
     this.books = JSON.parse(localStorage.getItem("books"))
@@ -295,7 +267,7 @@ mounted() {
 The `JSON.parse()` method converts a string to a javascript object since data is only stored as a string in local storage. The data is then set to the books array which is displayed to the user. You’ll now be able to see a list of books after adding.
 ### Deleting data 
 Update the `BookItem.vue` file with the following code
-```vue
+```javascript
 <div class="float-left">
     <span class="float-right">
         {{book.title}}
@@ -307,34 +279,34 @@ I added a bootstrap CSS CDN link in the `index.html` file, you can style yours t
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 ```
-When you click delete button, an event is emitted to pass book id to the parent(`Books.vue`). `$emit` is the way Vue passes data from child to parent component. In `Books.vue` update `<BookItem/>` as shown below.
-```vue
+When you click the delete button, an event is emitted to pass book id to the parent(`Books.vue`). `$emit` is the way Vue passes data from child to parent component. In `Books.vue` update `<BookItem/>` as shown below.
+```javascript
 <BookItem v-bind:book="book" v-on:del-book-item="delBookMethod" />
 ```
 Assign the event from the child to a method called `delBookMethod`. Add it to methods object and emit an event to its parent (`App.vue`) passing the book id with it.
 ```vue
+<script>
+//...
 methods: {
     delBookMethod(id){
         //send to parent
         this.$emit('del-book-event', id);
     },
  }
+</script>
 ```
 In the parent component(`App.vue`), let’s make some changes.
-```vue
+```html
 <Books v-bind:books="books" v-on:del-book-event="deleteBookItem" />
 ```
-The child event was captured and assigned to a method `deleteBookItem`, this method will help us delete the book item that was clicked on. Remember the ID we passed from BookItem.vue to Books.vue up to the App.vue  component? 
-
-It will be used to delete the book. Using JavaScript `filter()` method to create the books array excluding the book with the passed id. We will use es6 arrow function as below, this returns all the books except the one with the ID passed.
-```vue
-  deleteBookItem(id){
-     this.books = this.books.filter(book => book.id !== id);
+The child event was captured and assigned to a method `deleteBookItem`, this method will help us delete the book item that was clicked on. Remember the ID we passed from `BookItem.vue` to `Books.vue` up to `App.vue`? It will be used to delete the book. Using JavaScript `filter()` method to create the books array excluding the book with the passed id. We will use ES6 arrow function as shown below, this returns all the books except the one with the ID passed.
+```javascript
+deleteBookItem(id){
+  this.books = this.books.filter(book => book.id !== id);
 }
 ```
-
-#### Editing data
-Just like we did while deleting data, make changes to the BookItem.vue to add an edit button, the code should look like this
+#### Editing the data
+Just like we did while deleting data, make changes to the `BookItem.vue` to add an edit button, the code should look like this
 ```vue
 <template>
     <div class="float-left">
@@ -346,21 +318,19 @@ Just like we did while deleting data, make changes to the BookItem.vue to add an
     </div>
 </template>
 ```
-An event called ```edit-book-item``` is emitted and passed with it the book id to its parent(`Books.vue`). In the Books.vue listen to the event and assign it to a method called ```editBookMethod``` just like below
-```vue
-    <BookItem  v-bind:book="book"  v-on:del-book-item="delBookMethod" v-on:edit-todo-item="editBookMethod" />
+An event called `edit-book-item` is emitted and passed with it the book id to its parent(`Books.vue`). In `Books.vue` listen to the event and assign it to a method called `editBookMethod` as shown below.
+```html
+<BookItem  v-bind:book="book"  v-on:del-book-item="delBookMethod" v-on:edit-todo-item="editBookMethod" />
 ```
-Using the method send an event to its parent(`App.vue`) and along with it pass the book id.
-
-```vue
+Using the method, send an event to its parent(`App.vue`) and pass the book id along with it.
+```javascript
 editBookMethod(id){
     //send to parent (App.vue)
     this.$emit('edit-book-event', id)
 }
 ```
-
-In the parent make changes to capture the event `edit-book-event` from Books component, and assign it to a method `editBookItem`. In the data create a new object called editBook which will hold the data being edited. The object should have a title and an ID both should be empty strings.
-```vue
+In the parent make changes to capture the event `edit-book-event` from `Books` component, and assign it to a method `editBookItem`. In the data create a new object `editBook` which will hold the data being edited. The object should have a title and an ID both should be empty strings.
+```javascript
 data () {
   return {
     books: [],
@@ -371,10 +341,8 @@ data () {
   }
 }
 ``` 
-
-Now in the method ```editBookItem``` we need to find the index of the object’s id, we do this using JavaScript `findIndex()` method. We go through the books array to find the book object matching the ID passed from the child component and assign it to a variable `objIndex`, this variable helps us access the title of the book from the books array and assign it to the title in the editBook object together with its ID. 
-As below;
-```vue
+Now in the method `editBookItem` we need to find the index of the object’s id. We do this using JavaScript's `findIndex()` method. We go through the books array to find the book object matching the ID passed from the child component and assign it to a variable `objIndex`. This variable helps us to access the title of the book from the books array and assign it to the title in the `editBook` object together with its ID as shown below.
+```javascript
 editBookItem(id){
   //find the index of the book's id
   var objIndex = this.books.findIndex(obj=> obj.id === id);
@@ -382,14 +350,12 @@ editBookItem(id){
   this.editBook.id = id;
 },
 ```
-
-We still cannot edit a book, we capture the earlier event `edit-book-event` in the AddBookItem component and assign it to a method `editBookItemEvent`, we then bind the `editBook` property to the component with v-bind directive and pass it as a prop to the child (`AddBookItem`). As illustrated below;
-```vue
+We still cannot edit a book. We capture the earlier event `edit-book-event` in the `AddBookItem` component and assign it to a method `editBookItemEvent`. We then bind the `editBook` property to the component with `v-bind` directive and pass it as a prop to the child (`AddBookItem`) as illustrated below;
+```html
 <AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook"/>
 ```
-
-Let’s open AddBookItem.vue. We receive the editBook data object from parent as props. Then add ID as an empty string and edit as false in the data function.
-```vue
+Let’s open `AddBookItem.vue`. We receive the `editBook` data object from parent as props. Then add `id` as an empty string and `edit` as false in the data function.
+```javascript
 name: "AddBookItem",
 props: ['editBook'],
 data () {
@@ -400,10 +366,8 @@ data () {
     }
 }
 ```
-
-We will use this edit property to decide whether to edit or add a new book, we first check if the user is not editing we save the data else we edit the data. If we’re editing, we emit an `edit-book-event` and pass the variable that holds the edited data `bookItem` along with the event to the parent, and clear the input field. 
->The addBookItem method should be updated as below.
- ```vue
+We will use this `edit` property to decide whether to edit or add a new book. We first check if the user is not editing. We save the data, else, we edit the data. If we’re editing, we emit an `edit-book-event` and pass the variable that holds the edited data `bookItem` along with the event to the parent. We also clear the input field. Now update `addBookItem` method to look as shown below.
+```javascript
 addBook(e){
     e.preventDefault();
     if (this.edit === false){
@@ -430,12 +394,10 @@ addBook(e){
     }
 }
 ``` 
+Now you can click on the edit button and the input field will be populated with the book title. The `watch` method comes in handy again, to help us watch for any changes in the editBook data. We set `deep:true` property to let the Vue instance continuously watch for changes. So, while editing a book, the `edit` property will always be true.
 
-By now you can click on the edit button and the input field will be populated with the book title. 
-The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set `deep:true` property to let the Vue instance continuously watch for changes, so while editing a book, the edit property will always be true. 
-
-It also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
-```vue
+It also watches the title property and if it’s empty, it sets the `edit` property to false. Here we don’t need the `deep` property.
+```javascript
 watch: {
     editBook: {
         handler() {
@@ -454,14 +416,12 @@ watch: {
     }
 }
 ```
-
-Go back to the App.vue file, after editing a title an event ```edit-book-event``` is sent to App.vue file we assign the event to a method in order to save the changes to localStorage. Update the code
-```vue
+Go back to the `App.vue file`, after editing a title an event `edit-book-event` is sent to `App.vue`. We assign the event to a method in order to save the changes to localStorage. Update your code to look like shown below.
+```html
 <AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook" v-on:edit-book-event="editBookItemEvent" />
 ```
-
-Now we create a method `editBookItemEvent` to handle saving of data. In the method we find the index of the ID’s object, this index will be used to reassign the title of the book being edited. If you’ve reached this far you’re now capable of editing a book title. As below
-```vue
+Now we create a method `editBookItemEvent` to handle saving of data. In the method we find the index of the ID’s object. This index will be used to reassign the title of the book being edited. If you’ve reached this far you’re now capable of editing a book title. Add the code below. 
+```javascript
 editTodoItemEvent(todoItem){
     //find index of this id's object
     var objIndex = this.todo_items.findIndex(obj => obj.id === todoItem.id);
@@ -469,8 +429,7 @@ editTodoItemEvent(todoItem){
     this.todo_items[objIndex].title = todoItem.title;
 }
 ```
-
-This is how the App.vue should look like
+Now, your `App.vue` should look as shown below.
 ```vue
 <template>
   <div id="app">
@@ -482,8 +441,8 @@ This is how the App.vue should look like
 </template>
 
 <script>
-  import Books from "./components/Books";
-  import AddBookItem from "./components/AddBookItem";
+import Books from "./components/Books";
+import AddBookItem from "./components/AddBookItem";
 
 export default {
   name: 'App',
@@ -546,8 +505,5 @@ export default {
 }
 </style>
 ```
-
-
-Conclusion
-
-We've just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage). 
+### Conclusion
+We've just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage).
