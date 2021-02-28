@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-a-todo-app-using-react-and-django-rest-framework/
+title: Building a Todo App Using React and Django REST Framework
+description: In this tutorial, we will create a Todo application using React for the front-end and Django REST Framework for the backend.
+author: oruko-pius
+date: 2021-02-28T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/react-progressive-web-application/hero.jpg
+    alt: React Progressive Web Application example Image
+---
 In this article, we build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
+<!--more-->
 
 We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
