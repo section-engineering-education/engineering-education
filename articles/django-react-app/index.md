@@ -141,11 +141,11 @@ This will prompt you to enter the `username`, `email`, `password`, `password(aga
 python manage.py runserver
 ```
 
-![admin dashboard](admin.jpg)
+![admin dashboard](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/admin.jpg)
 
 We can now add and delete items from the admin page. Great!
 
-![admin panel](adminpanel.jpg)
+![admin panel](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
 
@@ -279,7 +279,7 @@ The `router` enables  us to create the subsequent operations:
 python manage.py runserver
 ```
 
-![api](json.jpg)
+![api](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/json.jpg)
 
 We have set our backend to let us move forward to the frontend.
 
@@ -411,7 +411,7 @@ We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Re
 
 Your User Interface should resemble the one below:
 
-![frontend](dummy_data.jpg)
+![frontend](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/dummy_data.jpg)
 
 It is time to consume the API we created earlier.
 
@@ -541,7 +541,7 @@ In our `render()` method we display the items through the `renderItems()` functi
 
 The consumed data from the API should be displayed as follows:
 
-![api_data](api_fetched_data.jpg)
+![api_data](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/api_fetched_data.jpg)
 
 To handle actions such as adding tasks and marking them complete, let's create a modal component.
  
@@ -804,7 +804,7 @@ Our `render()` method returns `renderTabList()`, `renderItems()` methods and the
 
 Your application should be like the one below by now:
 
-![frontend](final.jpg)
+![frontend](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/final.jpg)
 
 ### Step 4: Testing
 
