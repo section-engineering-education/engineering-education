@@ -289,7 +289,7 @@ npm start
 
 You should be able to see the default React app by now.
 
-Next, let's install `bootstrap` and `reactstrap` to style the user interface. [You can get more on bootstrap and reactstrap here.](https://www.npmjs.com/package/reactstrap)
+Next, let's install `bootstrap` and `reactstrap` to style the user interface. You can lear more on bootstrap and reactstrap from [here](https://www.npmjs.com/package/reactstrap).
 
 ```bash
 npm install bootstrap@4.6.0 reactstrap@8.9.0 --legacy-peer-deps
