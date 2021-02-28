@@ -791,7 +791,7 @@ Your application should be like the one below by now:
 
 ### Step 4: Testing
 
-Let us test our application backend by doing the following:
+Let's start our backend server made using Django by running the following commands:
 
 ```bash
 cd backend
@@ -799,17 +799,18 @@ pipenv shell
 python manage.py runserver
 ```
 
-Serving frontend:
+Let's start our React application by running the following commands:
 
 ```bash
 npm start
 ```
 
-Check the address- http://localhost:8000 - to see the final look.
-
 ### Conclusion
 
-We've come to the end of this tutorial and learned how to configure Django and React to interact with each other. Hope you have learned one thing or two from this.
+We've come to the end of this tutorial and learned how to configure Django and React to interact with each other.
+ 
+You can learn more on Django and React from this [article](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) (Jordan Irabor, 2020).
 
-Check [more](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) on Django and React(Jordan Irabor, 2020).
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 
