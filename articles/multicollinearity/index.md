@@ -49,7 +49,7 @@ Say $x_1$ represents total exam marks. $x_2$ represents exam one. $x_3$ is exam 
 
 This shows that $x_1$ is not independent. The implication is that there is strong multicollinearity between $x_1$, $x_2$ and $x_3$. We can say multicollinearity is present in a regression model when two or more independent variables show a high correlation.
 
-### The Problem
+### The problem
 It affects the interpretability of a regression model since it compromises the statistical significance of independent variables. [Statistical significance](https://www.investopedia.com/terms/s/statistical-significance.asp) claims that an outcome resulting from testing or experimentation is unlikely to occur randomly. 
 
 Instead, an occurrence can be attributed to a specific cause. Statistical significance reflects the confidence level of an outcome. Multicollinearity may make it difficult for us to distinguish between independent variables' isolated effects on a dependent variable.
@@ -118,7 +118,7 @@ If we conclude that multicollinearity poses a problem for our regression model, 
 
 - **Centering the variables.** Centering is defined as subtracting a constant from the value of every variable. It redefines the zero point for a given predictor to become the value we subtracted. Here’s how we can center the variables. We can first calculate the mean of every single independent variable. The next step would replace each variable value with the difference between the values and the mean. The result of this is that the interpretation of the regression coefficients remains unchanged while reducing the impact of multicollinearity by making the correlation between variables much more manageable. This [post](https://statisticsbyjim.com/regression/multicollinearity-in-regression-analysis/) contains an example of how centered variables lead to reduced multicollinearity.
 
-### Wrapping Up
+### Wrapping up
 Multicollinearity can be described as a data disturbance in a regression model. It threatens to undermine the output of a model. However, it can be detected and addressed. We have explored its causes, the problem it poses, how to detect and address it. 
 
 Until next time, good luck!
