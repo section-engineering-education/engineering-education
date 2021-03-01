@@ -131,6 +131,8 @@ After running the command above, a new file `app.js` containing the code below i
 const express       = require('express')
 const bodyParser    = require('body-parser');
 const cors          = require('cors');
+const jwt           = require('jsonwebtoken');
+var expressJWT      = require('express-jwt');
 
 const app           = express();
 const port          = 3000;
@@ -190,7 +192,7 @@ app.get('/path1', (req, res) => {
 Using expressJWT function:
 ```javascript
 //This is to allow access to the path with no token authentication
-app.use(expressJWT({ secret: secret})
+app.use(expressJWT({ secret: secret, algorithms: ['HS256']})
     .unless(
         { path: [
             '/token/sign'
@@ -221,6 +223,25 @@ $ ng generate component home
 ```
 Then modify `home.component.ts` located at `src/app` to look as shown below:
 ```javascript
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+  readonly API_URL = 'http://localhost:3000';
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  ngOnInit() {
+  }
+
 signIn() {
     this.http.get(this.API_URL + '/token/sign')
       .subscribe(
@@ -247,6 +268,7 @@ signIn() {
         }
       );       
   }
+}
 
 ```
 The `signIn()` function in the above code requests a token and stores it into local storage, while the second `getPath()` function requests the path. Then I will write a simple Html page to test the two functions above. Create a new file `src/app/home/home.component.html` and add the code below: 
