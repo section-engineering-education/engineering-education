@@ -224,7 +224,9 @@ Check man 5 systemctl to see more commands systemctl provides.
 ### Editing unit files using drop-ins
 We previously discussed that systemd units can be edited directly from **/lib/systemd/system/** which is not advisable.
 
-Unit files within **/lib/systemd/system/** can be copied to **/etc/systemd/system/**. Edits are made in this location because it won't be overwritten during a system upgrade (advisable). Also, unit files in **/etc/systemd/system/** have higher precedence for discovery than other locations.
+Unit files within **/lib/systemd/system/** can be copied to **/etc/systemd/system/**. 
+
+Edits are made in this location because they won't be overwritten during a system upgrade (which is advisable). Also, unit files in **/etc/systemd/system/** have higher precedence for discovery than other locations.
 
 Unit files in either of these locations can also be overwritten and extended through the use of drop-in files.
 
@@ -278,7 +280,11 @@ Like this isn't huge enough, it still goes on to say:
 So to experience and use the power of systemd to its full glory, I'd advise you to study further. Links to resources and materials referenced in this can be found below.
 
 ### Quick Fact
-systemd was developed by Lennart Poeterring and Kay Sievers - software engineers working for Red Hat. The migration from traditional init based systems to systemd is probably the most fiercely debated topics in Linux's history. For arguments for and against systemd, it would be interesting if you visit the biggest myths and without-systemd.
+systemd was developed by Lennart Poeterring and Kay Sievers - software engineers working for Red Hat. 
+
+The migration from traditional init based systems to systemd is probably the most fiercely debated topics in Linux's history. 
+
+For arguments for and against systemd, it would be interesting if you visit the biggest myths and without-systemd.
 
 ### References
 - [Archlinux systemd wiki](https://wiki.archlinux.org/index.php/Systemd#Editing_provided_units)
