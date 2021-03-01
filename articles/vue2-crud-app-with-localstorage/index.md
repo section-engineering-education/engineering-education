@@ -365,7 +365,7 @@ Just like we did while deleting data, make changes to the BookItem.vue to add an
 ```
 An event called ```edit-book-item``` is emitted and passed with it the book id to its parent(`Books.vue`). In the Books.vue listen to the event and assign it to a method called ```editBookMethod``` just like below
 ```vue
-    <BookItem  v-bind:book="book"  v-on:del-book-item="delBookMethod" v-on:edit-todo-item="editBookMethod" />
+    <BookItem v-bind:book="book" v-on:del-book-item="delBookMethod" v-on:edit-book-item="editBookMethod" />
 ```
 Using the method send an event to its parent(`App.vue`) and along with it pass the book id.
 
@@ -421,72 +421,93 @@ data () {
 We will use this edit property to decide whether to edit or add a new book, we first check if the user is not editing we save the data else we edit the data. If we’re editing, we emit an `edit-book-event` and pass the variable that holds the edited data `bookItem` along with the event to the parent, and clear the input field. 
 >The addBookItem method should be updated as below.
  ```vue
-addBook(e){
-    e.preventDefault();
-    if (this.edit === false){
-        // add new book
-        const newBook = {
-            title: this.title,
-            id: Math.floor(Math.random() * 100)
-        };
-        if (newBook.title !== ''){
-            this.$emit('add-book-event', newBook);
-        }
-        this.title = ''
-    }else{
-        //edit book
-        const bookItem = {
-            title: this.title,
-            id: this.id
-        }
-        //send to parent (App.vue)
-        this.$emit('edit-book-event', bookItem)
-        // clear input field
-        this.title = '';
-        this.edit = false;
-    }
-}
-``` 
+<template>
+    <div>
+        <form @submit="addBook">
+            <input type="text" name="title" v-model="title" placeholder="Add Book">
+                <input type="submit" value="Submit" class="btn btn-info">
+        </form>
+    </div>
+</template>
 
-By now you can click on the edit button and the input field will be populated with the book title. 
-The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set `deep:true` property to let the Vue instance continuously watch for changes, so while editing a book, the edit property will always be true. 
-
-It also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
-```vue
-watch: {
-    editBook: {
-        handler() {
-            this.title = this.editBook.title;
-            this.id = this.editBook.id;
-            this.edit = true
+<script>
+    export default {
+        name: "AddBookItem",
+        props: ['editBook'],
+        data () {
+            return {
+                title: '',
+                id: '',
+                edit: false
+            }
         },
-        deep: true
-    },
-    title: {
-        handler() {
-            if (this.title === ''){
-                this.edit = false;
+        methods: {
+            addBook(e){
+                e.preventDefault();
+                if (this.edit === false){
+                    // add new book
+                    const newBook = {
+                        title: this.title,
+                        id: Math.floor(Math.random() * 100)
+                    };
+                    if (newBook.title !== ''){
+                        this.$emit('add-book-event', newBook);
+                    }
+                    this.title = ''
+                }else{
+                    //edit book
+                    const bookItem = {
+                        title: this.title,
+                        id: this.id
+                    };
+                    //send to parent (App.vue)
+                    this.$emit('edit-book-event', bookItem);
+                    // clear input field
+                    this.title = '';
+                    this.edit = false;
+                }
+            }
+        },
+        watch: {
+            editBook: {
+                handler() {
+                    this.title = this.editBook.title;
+                    this.id = this.editBook.id;
+                    this.edit = true
+                },
+                deep: true
+            },
+            title:{
+                handler(){
+                    if(this.title === ''){
+                        this.edit = false;
+                    }
+                }
             }
         }
     }
-}
-```
+</script>
+``` 
+By now you can click on the edit button and the input field will be populated with the book title. 
+>The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set `deep:true` property to let the Vue instance continuously watch for changes, so while editing a book, the edit property will always be true.
+> 
+>It also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
+
 
 Go back to the App.vue file, after editing a title an event ```edit-book-event``` is sent to App.vue file we assign the event to a method in order to save the changes to localStorage. Update the code
 ```vue
 <AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook" v-on:edit-book-event="editBookItemEvent" />
 ```
-
 Now we create a method `editBookItemEvent` to handle saving of data. In the method we find the index of the ID’s object, this index will be used to reassign the title of the book being edited. If you’ve reached this far you’re now capable of editing a book title. As below
 ```vue
-editTodoItemEvent(todoItem){
-    //find index of this id's object
-    var objIndex = this.todo_items.findIndex(obj => obj.id === todoItem.id);
-    //update the item
-    this.todo_items[objIndex].title = todoItem.title;
+    editBookItemEvent(bookItem){
+      //find the index of this id's object
+      let objIndex = this.books.findIndex(obj => obj.id === bookItem.id)
+      //update the item
+      this.books[objIndex].title = bookItem.title;
+    }
 }
 ```
-
 This is how the App.vue should look like
 ```vue
 <template>
@@ -563,8 +584,6 @@ export default {
 }
 </style>
 ```
-
-
 Conclusion
 
 We've just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage). 
