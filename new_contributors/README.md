@@ -6,7 +6,7 @@ Here's a list of our contributor documentation to help you get started on your f
 
 - [FAQ](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/FAQ.md): answers the most frequent questions students often ask and links to the relevant guide to answer them
 
-- Upload Instructions: a guide on how to submit your article for review
+- [Upload Instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md): a guide on how to submit your article for review
 
 - Example Article Submission: An example of a history of technology article
 
