@@ -95,7 +95,7 @@ The PHP code below can be used to process input from an HTML form with the POST 
 
 The output of the above code is as shown in the animation below.
 
-![POST method Example](/engineering-education/working-with-forms-in-php/post-method.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/JeaM8ZOfLA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### GET method
 GET is the default super global method that collects or retrieves data from the server. It has a global scope. Thus data is accessed from any script in the program. The GET method submits data in the URL. Data transferred via this method is visible on the URL of the HTTP request. The HTTP request can be cached and saved in the browser history. The disadvantage of the GET method is that it be used with sensitive data such as passwords because it is not secure.
@@ -120,7 +120,7 @@ The GET method has a limitation of the amount of data sent from the form. The da
 
 Here is the output of the GET method example.
 
-![GET method Example](/engineering-education/working-with-forms-in-php/get-method.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/9JnxwdvsiDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Tabular comparison of GET and POST methods
 | POST Method | GET Method |
@@ -207,7 +207,7 @@ if(empty($_POST['name']) && empty($_POST['email'])){
 The animation below shows how the above code is working.
 Note: after we submit the form input, a new record is created in the database and displayed in a table.
 
-![Create](/engineering-education/working-with-forms-in-php/insert-records.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/MIfVUyi_594" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Read
 The code below retrieves the inserted data and displays it in an HTML table.
@@ -259,7 +259,7 @@ if ($result->num_rows > 0) {
 ```
 Below is an animation of how the read operation works.
 
-![Read](/engineering-education/working-with-forms-in-php/read.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/iD9qF3mRsDo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Update
 HTML forms are used to update existing data in the database. In this case, we will implement update functionality. Update form will be displayed when we click the button `edit` in the table cell. Take note of the code used to create the edit button on the table. The update button is a submit button for a form with hidden input fields. Once the `edit` button is clicked, the `id` of the item to be edited is sent to the script `update.php`. Either the `GET` or `POST` method can be used.
@@ -356,7 +356,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['id']) ){
 
 The animation below shows how the update function is working on the browser.
 
-![Update](/engineering-education/working-with-forms-in-php/update-record.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/wojpuuIxJsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Delete
 To delete a record in the table, the user clicks the button delete in the HTML table. Take note of the code used to display a button inside a table cell.
@@ -386,7 +386,7 @@ if(!empty($_POST['delete']) && !empty($_POST['id'])){
 ```
 The delete functionality works as shown in the animation below.
 
-![Delete](/engineering-education/working-with-forms-in-php/delete.gif)
+<iframe width="478" height="269" src="https://www.youtube.com/embed/63urOOGyJkk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The source code created in this tutorial can be found on [Github](https://github.com/JudyNduati/HTML-forms-in-PHP-and-MySQL-CRUD-operations).
 
