@@ -194,10 +194,10 @@ The reader learned:
 
 ### Activity files 
 For a better understaing of Network address traslation, the following files are provided for practice.
-[Staic NAT packet tracer activity files](https://drive.google.com/file/d/1GO_LIIUx_qBHQRMWuHQBpzIepQpUM85d/view?usp=sharing)
-[Dynamic packet tracer activity file](https://drive.google.com/file/d/1pwYgVJVSVQStPBy5ftsFtXwIrSq24pEK/view?usp=sharing)
-[PAT with multiple addresses activity file](https://drive.google.com/file/d/1Xf2qxUJ-6X74vsJY4HZ8Z9tZW2C3hT7j/view?usp=sharing)
-[PAT with single address activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
+- [Staic NAT packet tracer activity files](https://drive.google.com/file/d/1GO_LIIUx_qBHQRMWuHQBpzIepQpUM85d/view?usp=sharing)
+- [Dynamic packet tracer activity file](https://drive.google.com/file/d/1pwYgVJVSVQStPBy5ftsFtXwIrSq24pEK/view?usp=sharing)
+- [PAT with multiple addresses activity file](https://drive.google.com/file/d/1Xf2qxUJ-6X74vsJY4HZ8Z9tZW2C3hT7j/view?usp=sharing)
+- [PAT with single address activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
 
 ### Further reading
 - [Access control list](https://searchsoftwarequality.techtarget.com/definition/access-control-list)
