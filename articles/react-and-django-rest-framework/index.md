@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-todo-app-using-react-and-django-rest-framework/
+url: /engineering-education/react-and-django-rest-framework/
 title: Building a Todo App Using React and Django REST Framework
 description: In this tutorial, we will create a Todo application using React for the front-end and Django REST Framework for the backend.
 author: oruko-pius
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-progressive-web-application/hero.jpg
+  - url: /engineering-education/react-and-django-rest-framework/hero.jpg
     alt: React Progressive Web Application example Image
 ---
 In this article, we build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
@@ -141,11 +141,11 @@ This will prompt you to enter the `username`, `email`, `password`, `password(aga
 python manage.py runserver
 ```
 
-![admin dashboard](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/admin.jpg)
+![admin dashboard](/engineering-education/react-and-django-rest-framework/admin.jpg)
 
 We can now add and delete items from the admin page. Great!
 
-![admin panel](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/adminpanel.jpg)
+![admin panel](/engineering-education/react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
 
@@ -279,7 +279,7 @@ The `router` enables  us to create the subsequent operations:
 python manage.py runserver
 ```
 
-![api](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/json.jpg)
+![api](/engineering-education/react-and-django-rest-framework/json.jpg)
 
 We have set our backend to let us move forward to the frontend.
 
@@ -411,7 +411,7 @@ We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Re
 
 Your User Interface should resemble the one below:
 
-![frontend](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/dummy_data.jpg)
+![frontend](/engineering-education/react-and-django-rest-framework/dummy_data.jpg)
 
 It is time to consume the API we created earlier.
 
@@ -541,7 +541,7 @@ In our `render()` method we display the items through the `renderItems()` functi
 
 The consumed data from the API should be displayed as follows:
 
-![api_data](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/api_fetched_data.jpg)
+![api_data](/engineering-education/react-and-django-rest-framework/api_fetched_data.jpg)
 
 To handle actions such as adding tasks and marking them complete, let's create a modal component.
  
@@ -804,7 +804,7 @@ Our `render()` method returns `renderTabList()`, `renderItems()` methods and the
 
 Your application should be like the one below by now:
 
-![frontend](/engineering-education/building-a-todo-app-using-react-and-django-rest-framework/final.jpg)
+![frontend](/engineering-education/react-and-django-rest-framework/final.jpg)
 
 ### Step 4: Testing
 
