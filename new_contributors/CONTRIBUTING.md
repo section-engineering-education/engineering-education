@@ -33,6 +33,16 @@ Be sure to search for similar ideas in our [published articles](www.section.io/e
  
 Once you have narrowed your topic search to one you would like to write about, fill out the [EngEd Content Idea Suggestion form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) with your article suggestion. This will help you to think through and frame your content, while giving us a better idea of the key takeaways that you intend to communicate to your audience.
 
+Below is an example article and some suggested templates to help get you started:
+
+- [Example Article Submission](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/example_article_submission.md): An example of a history of technology article
+
+- [How to Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md): A sugggested structure for How to Guide articles
+
+- [Software Review Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/software-review-template.md): A sugggested structure for Software Review articles
+
+- [Tutorial Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/tutorial-template.md): A sugggested structure for Tutorial articles
+
 Once your topic has been approved and you have a final draft of your article ready  to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
