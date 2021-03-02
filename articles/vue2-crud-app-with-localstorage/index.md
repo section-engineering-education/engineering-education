@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/vue2-crud-app-with-localstorage/
+title: How to Make a CRUD app with Local Storage using Vue 2
+description: In this article, we will look at how to make a CRUD application that implements a Web browser's Local storage using Vue.js 2.
+author: espira-marvin
+date: 2021-03-02T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity and small bundle size. Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser. With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client. They were sent to the server when HTTP requests were made and they could be modified by the server.
+  - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
+    alt: Vue CRUD Local Storage example
+---
+Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity and small bundle size. Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser.
+<!--more-->
+With this we can work with data without communicating with a back-end application, enhancing data persistence. Unlike traditionally, cookies were used which stored a maximum of 4kb of data on the client. They were sent to the server when HTTP requests were made and they could be modified by the server.
 
 ### Prerequisites
 
@@ -216,7 +232,7 @@ Now add the following code to the `AddBookItem.vue`.
     }
 </script>
 ```
-This code has a form that you can use to add a book, it has a method `addBook()`. It also has a vue-directive `v-model` which creates a 2-way binding between user-input and Vue.js component. Any changes to an input value changes the bound data and vice versa. In this case the `title`. You’ll see a form to add books.
+This code has a form that you can use to add a book. It also has a method `addBook()` and a vue-directive `v-model` which creates a 2-way binding between user-input and Vue.js component. Any changes to an input value changes the bound data and vice versa. In this case the `title`. You’ll see a form to add books.
 
 Each book needs a unique id. We will use javascript's `Math.random()` method to generate unique ids.
 
@@ -513,3 +529,10 @@ export default {
 ```
 ### Conclusion
 We've just finished creating a CRUD vue2 application with local storage. You can improve the user interface of your application using materialize components or other UI design materials. Vue is quite a work of art if you ask me. It is much cleaner with great awesome features under the scene. In case you get stuck, here is the link to the code in my [Github repo](https://github.com/EspiraMarvin/vue2-crud-localstorage).
+
+That is it. 
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
