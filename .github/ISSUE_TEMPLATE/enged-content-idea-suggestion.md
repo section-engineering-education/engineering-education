@@ -13,7 +13,7 @@ assignees: ''
 Please begin to write the Introductory paragraph(s), to your article to help us assess overall quality. Take your time and write it as it would be published (as-is), as this will be the qualifiy factor for article approval.
 
 ### Brief Summary: 
-Describe the what, why, and how of your content idea in 2-5 sentences.
+Describe the what, why, and how of your content idea in 3-7 sentences. Use this area to get your ideas down on the bulk of your article or tutorial.
 
 ### Key Takeaways: 
 What are the 3-5 most important things the reader should understand or be able to do after reading this article?
