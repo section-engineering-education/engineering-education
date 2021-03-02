@@ -29,7 +29,7 @@ Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve y
 All contributors are expected to review and adhere to [Our Code of Conduct](https://github.com/section-io/engineering-education/blob/master/CODE_OF_CONDUCT.md) before submitting articles.
 
 ## Suggesting a topic
-Be sure to search for similar ideas in our published articles and #eng-ed-topics channel in Slack to help avoid overlap, ensuring that you are bringing a unique viewpoint to your suggested topic. If there are related articles that have been published, have a think about how you can build off those to bring additional value that hasn’t already been presented.
+Be sure to search for similar ideas in our [published articles](www.section.io/engineering-education/) and #eng-ed-topics channel in Slack to help avoid overlap, ensuring that you are bringing a unique viewpoint to your suggested topic. If there are related articles that have been published, have a think about how you can build off those to bring additional value that hasn’t already been presented.
  
 Once you have narrowed your topic search to one you would like to write about, fill out the [EngEd Content Idea Suggestion form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) with your article suggestion. This will help you to think through and frame your content, while giving us a better idea of the key takeaways that you intend to communicate to your audience.
 
