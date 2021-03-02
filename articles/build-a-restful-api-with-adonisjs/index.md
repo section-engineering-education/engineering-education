@@ -1,9 +1,26 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/build-a-restful-api-with-adonisjs/
+title: Build A RESTful API With AdonisJS
+description: In this tutorial, we will create a RESTful API using Adonis.js. In doing so, we will learn basic aspects of AdonisJs. 
+author: wilson-gichuhi
+date: 2021-03-01T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /build-a-restful-api-with-adonisjs/hero.jpg
+    alt: Buid a restful api with Adonis.js
+---
+In today’s ever-changing and rapid world of frontend and backend frameworks, learning and building RESTful APIs to bridge the gap between clients and data is a demanding skill for any software engineer.
+<!--more-->
+
 ### Build A RESTful API With AdonisJS
 
 ### Outline
-
 Introduction
-Setting up AdonisJS
+Setting up AdonisJs
 Creating Databases
 Setting up Authorization and Authentication
 Creating Models
@@ -13,22 +30,18 @@ Testing the Forum API
 Conclusion
 
 ### Introduction
+"A RESTful API uses HTTP requests to exchange data between parties using endpoints (routes). These HTTP requests include GET, PUT, POST and DELETE." from [TowardDataScience](https://towardsdatascience.com)
 
-In today’s ever-changing and rapid world of frontend and backend frameworks, learning and building RESTful APIs to bridge the gap between clients and data is a demanding skill for any software engineer.
+We will be showing you how to create a RESTful API with `AdonisJs 5`. We will be building an API for a forum. We will cover aspects such as authentication, and authorization. The tutorial also covers best practices in structuring and building out your HTTPS endpoint and industry standard responses.
 
-"A RESTful API is an application program interface (API) that uses HTTP requests to exchange data between parties using endpoints (routes) with either GET, PUT, POST and DELETE as the HTTP requests." from [TowardDataScience](https://towardsdatascience.com)
-
-We will be showing you how to build a RESTful API with AdonisJS 5. we will be building an API for a forum, we are going to cover a lot such as authentication, authorization, etc. we will also cover best practices in structuring and building out your HTTPS endpoint and also industry standard responses.
-
-AdonisJS is the Laravel of JavaScript and a good grasp of it is a high-demand skill, therefore learning a build your first REST API with it is a game-changer. You can read through the [Ultimate Guide to AdonisJS 5](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide) to learn more.
+AdonisJs is the [Laravel](https://laravel.com/) of JavaScript and a good grasp of it is a high-demand skill. Therefore, learning to build your first REST API with AdonisJs is a game-changer. You can read through the [Ultimate Guide to AdonisJs 5](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide) to learn more.
 
 ### Setting up AdonisJS 5
+If you’ve been working with JavaScript frameworks before, you should already have `Node.js` installed on your computer, if not, you can install the latest version by going through the steps [here](https://nodejs.org/en/).
 
-If you’ve been working with JavaScript frameworks before, you should already have Node.js in your computer, if not, you can install the latest version by going through the steps [here](https://nodejs.org/en/).
+_AdonisJs needs Node.js >=12.x.x and NPM >=6.x.x, make sure you have the required NodeJs by checking the version installed on your computer._
 
-_AdonisJS needs Node.js >=12.x.x and NPM >=6.x.x, make sure you have the required NodeJs by checking the version installed in your computer to make sure it corresponds with the requirement._
-
-We will assume you have the requirements, so you can go ahead to create a new AdonisJS 5 project by running this command.
+We will assume you have the requirements, so you can go ahead to create a new AdonisJs 5 project by running this command.
 
 ```bash
     npm init adonis-ts-app adonisjs-forum-api
@@ -48,14 +61,13 @@ Open your browser and visit the URL presented, if you see `hello world`.
 Congratulations.
 
 ### Creating Databases
-
-Now that we have our first `Hello World` API created, our Forum API cannot be completed with having a database for storing, reading and updating data from it.
+Now that we have our first `Hello World` API created, our Forum API is incomplete without having a database for storing, reading and updating data from it.
 
 Let’s set up our database right away:
 
 First, you need to create a database with MySQL using any of these [Database Clients](https://masteringbackend.com/posts/top-10-database-clients-for-developers) of your choice.
 
-In other to access and manipulate Databases seemlessly, let's install the LUCID ORM used by AdonisJS with this command.
+In order to access and manipulate Databases seemlessly, let's install the LUCID ORM used by AdonisJs with this command.
 
 ```bash
     npm i @adonisjs/lucid@alpha
@@ -67,7 +79,7 @@ Then you need to configure it with the database you just created by running the 
     node ace invoke @adonisjs/lucid
 ```
 
-When you run the command, you will be presented with different database options, in this tutorial, we will go with MySQL/MariaDB and then select `In the Terminal` for the instructions.
+When you run the above command, you will be presented with different database options. In this tutorial, we will go with MySQL/MariaDB and then select `In the Terminal` for the instructions.
 
 Read through the instructions and update your `.env` file with your database credentials as follows.
 
@@ -93,8 +105,7 @@ Then open `config/database.ts` and update the `client` field to `mysql2`.
 That’s all.
 
 ### Setting up Authorization and Authentication
-
-In AdonisJS 5, authentication and authorization is very easy to set up, all you need to do is to install the Auth package and every other complicated authentication logic is built in for you already.
+In AdonisJs 5, authentication and authorization is very easy to set up, all you need to do is to install the Auth package and every other complicated authentication logic is built-in for you already.
 
 Let’s get started:
 
@@ -110,12 +121,12 @@ As always, invoke the Auth package with the `invoke` command to configure it.
     node ace invoke @adonisjs/auth
 ```
 
-First, it will ask you to select the provider, In this case, I chose Lucid and API Token next since we are building an API.
+Firstly, it will ask you to select the provider, In this case, I chose `Lucid` and `API Token` next since we are building an API.
 
-1. Next, type in the `User` Model for your authentication,
+1. Type in the `User` Model for your authentication,
 2. Then press `Y` key to create a migration for it.
 3. Next, choose `Database` as your provider
-4. Lastly, press `Y` again to create a `api_tokens` migration.
+4. Lastly, press `Y` again to create a migration for the `api_tokens`.
 
 Now, you should have 2 migrations in your `database/migrations` folder, update the `xxxxx_users.ts` file to include a `name` and any other columns of your choice.
 
@@ -128,12 +139,11 @@ Server.middleware.registerNamed({
 ```
 
 #### Creating migrations
-
-The next step is to create the remaining migrations for the Post and Forum models we will be creating later.
+We should create the remaining migrations for the Post and Forum models that will be used later.
 
 Let’s get started:
 
-Create new migration using this command:
+Create a new migration using this command:
 
 ```bash
     node ace make:migration posts
@@ -207,7 +217,6 @@ You can set up database seeders to generate fake data or [clone my repository](h
 Cheers!
 
 ### Creating Models
-
 Now, we will create all the models we need for this API and configure them properly to interact with our database.
 
 ```bash
@@ -264,7 +273,6 @@ The above codes simply creates the `Post` or `Forum` models respectively with th
 There are many other decorators such as `hasMany` for a one-to-many database relationship defined on the model.
 
 ### Creating Controllers
-
 Next, we are going to create the individual controllers for each Model that we have created above but before that, let’s create an AuthController for the authentication.
 
 ```bash
@@ -378,7 +386,6 @@ The code above represents our API CRUDs for either `Post` model, it contains dif
 You can [Clone the repository](https://github.com/Kaperskyguru/adonisjs-forum-api) to review the other controllers that I have created.
 
 ### Creating Endpoint Routes
-
 The next step is to create the endpoints for our frontend or mobile App to consume.
 
 To do that, open the `route.ts` file inside `start` folder and add the following code.
@@ -406,7 +413,6 @@ So far, we have created different endpoints for our Forum API.
 Note that the `resource` method will create all the CRUD endpoints we need for our Forum API once. You can review more about it [here](https://preview.adonisjs.com/guides/http/routing#crud-actions).
 
 ### Testing the Forum API
-
 When testing your endpoint using any HTTP clients e.g. [Hoppscotch](https://hoppscotch.io), You might be faced with an error saying `Cannot find module 'phc-argon2'` when testing, please run this command to install the package.
 
 ```bash
@@ -427,10 +433,7 @@ We can access the protected endpoints after inserting the token as the Authoriza
 
 Now, we can access our protected endpoints:
 
-<iframe src="https://giphy.com/embed/3vT9lvfexLNlKlmLkE" width="480" height="245" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/3vT9lvfexLNlKlmLkE">via GIPHY</a></p>
-
 ### Conclusion
-
 In this article, we covered how to build a RESTful API in AdonisJS 5, we created a simple Forum API with authentication and authorization.
 
 [You can clone the repository here](https://github.com/Kaperskyguru/adonisjs-forum-api).
@@ -440,3 +443,6 @@ Now, it is your turn, what will you be building and what is missing in the artic
 Let me know in the comment section right below.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
