@@ -1,5 +1,21 @@
-Application logging is one of the most essential practices a developer can implement in their code to facilitate production support. Entries in log files contain essential information, including a timestamp, contextual information, and messages. But, log messages are not quite easy to understand.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-choose-levels-of-logging/
+title: How To Choose Levels Of Logging
+description: In this article we will discuss the various levels of logging, their functions and how to choose a logging level.
+author: eric-kahuha
+date: 2021-03-02T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-choose-levels-of-logging/hero.jpg
+    alt: Logging image
+---
+Application logging is one of the most essential practices a developer can implement in their code to facilitate production support. Entries in log files contain essential information, including a timestamp, contextual information, and messages. But, log messages are not quite easy to understand.
+<!--more-->
 Most log management solutions that collect data and accept data from various sources have different log structures. Therefore, it may be challenging to understand them. It is crucial to keep meaningful log levels as we develop applications. This will ensure that anyone who reads the logs can make meaning of the intended message. It is essential to use the [best logging practices](https://www.scalyr.com/blog/the-10-commandments-of-logging/). This article gives a historical background of logging levels and describes different logging levels.
 
 ### What is a logging level?
@@ -63,3 +79,6 @@ Setting a specific log level in the logging framework ensures less important log
 ### Conclusion
 
 It is crucial to choose the right logging level when developing an application. This is beneficial to everyone using logs when searching for problems, creating alerts, troubleshooting, or regularly checking the application. During coding, it may not seem like an important thing to consider. it is still essential to ease information search, alerting, and filtering when handling vast log messages that the systems produce. To make your logs useful, ensure that you choose the right logging levels.
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
