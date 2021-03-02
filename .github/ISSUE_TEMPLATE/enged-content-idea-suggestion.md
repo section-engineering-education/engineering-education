@@ -9,6 +9,9 @@ assignees: ''
 
 **NOTE: We tend to stray away  or tend not to publish reviews/comparisons of commercial product offerings.**
 
+### Introduction paragraph(s):
+Please begin to write the Introductory paragraph(s), to your article to help us assess overall quality. Take your time and write it as it would be published (as-is), as this will be the qualifiy factor for article approval.
+
 ### Brief Summary: 
 Describe the what, why, and how of your content idea in 2-5 sentences.
 
