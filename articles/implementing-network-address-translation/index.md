@@ -200,6 +200,6 @@ For a better understaing of Network address traslation, the following files are 
 [PAT with single address activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
 
 ### Further reading
-[Access control list](https://searchsoftwarequality.techtarget.com/definition/access-control-list)
-[Network address translation](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html)
-[Understanding CISCO command-line interface](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/configuration/15mt/fundamentals-15-mt-book/cf-cli-basics.html)
+- [Access control list](https://searchsoftwarequality.techtarget.com/definition/access-control-list)
+- [Network address translation](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html)
+- [Understanding CISCO command-line interface](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/configuration/15mt/fundamentals-15-mt-book/cf-cli-basics.html)
