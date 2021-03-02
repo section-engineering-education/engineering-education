@@ -10,9 +10,9 @@ A logging level is a way of classifying the entries in your log file in terms of
 
 Logging levels distinguish various log events from each other. They are a way of filtering important information about your system's state and reduce information noise or alert fatigue.
 
-Log levels were introduced in the 1980s in a project named [Sendmail](https://en.wikipedia.org/wiki/Sendmail). The project owners needed a logging solution that eventually led to the creation of a Syslog server and the idea of severity levels.
+Log levels were introduced in the 1980s in a project named [Sendmail](https://en.wikipedia.org/wiki/Sendmail). Eric Allman developed the Sendmail project. The project owners needed a logging solution that eventually led to the creation of a [System Logging Protocol](https://www.paessler.com/it-explained/syslog#) (Syslog) server and the idea of severity levels.
 
-Eric Allman developed the Sendmail project that eventually needed a logging solution. This is where the System Logging Protocol ([Syslog](https://www.paessler.com/it-explained/syslog#)) was introduced. Ultimately, Syslog was embraced by numerous applications and has become a standard protocol for sending system log and event messages to the Syslog server.
+Ultimately, Syslog was embraced by numerous applications and has become a standard protocol for sending system log and event messages to the Syslog server.
 
 Over the years, programming languages have evolved. Thus the emergence of logging into app frameworks such as [log4net](https://logging.apache.org/log4net/). Log4net helps programmers output log messages to different output targets without changing the application binary. Concepts such as severity level also came along and are seen in logging levels today. These severity levels are emergency, critical, alert, error, warning, debug, informational, and notice.
 
@@ -20,7 +20,11 @@ Each programming language has a logging framework that allows you to store data 
 
 ### Logging levels explained
 
-The most common logging levels include FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL, and OFF. Some of them are important, others less important, while others are meta-considerations. When logging from applications, you can follow the common logging levels as explained below.
+The most common logging levels include FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL, and OFF. Some of them are important, others less important, while others are meta-considerations. The [standard ranking](https://www.tutorialspoint.com/log4j/log4j_logging_levels.htm) of logging levels is as follows: ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF. 
+
+#### OFF
+
+This log level does not log anything. This OFF level is used for turning off logging and is the greatest possible rank. With this log level, nothing gets logged at all.
 
 #### FATAL
 
@@ -49,10 +53,6 @@ TRACE log level captures all the details about the behavior of the application. 
 #### ALL
 
 This log level logs any logging levels that are defined. It logs everything and includes custom logging levels as well. It is the combination of all other logging levels.
-
-#### OFF
-
-This log level does not log anything. This OFF level is used for turning off logging and is the greatest possible rank. With this log level, nothing gets logged at all.
 
 ### Do log levels work on their own?
 
