@@ -422,11 +422,6 @@ watch: {
     }
 }
 ``` 
-By now you can click on the edit button and the input field will be populated with the book title. 
->The Watch method comes in handy again, to help us watch for any changes in the editBook data, we set `deep:true` property to let the Vue instance continuously watch for changes, so while editing a book, the edit property will always be true.
-> 
->It also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
-
 Back to `App.vue`, after editing a title, an event `edit-book-event` is sent to `App.vue`. We assign the event to a method in order to save the changes to local storage. Update your code to look like shown below.
 ```html
 <AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook" v-on:edit-book-event="editBookItemEvent" />
