@@ -22,7 +22,7 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
-- Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).)
+- Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).) Otherwise, payouts may experience delays.
 - To expedite reviews, publishing, and payouts for articles, we request that all first drafts are submitted error-free (pre-checked for English grammar, technically accurate,   properly cited, etc.) and meet our suggested article guidelines as outlined below. 
 Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. Please be sure to go over our [resources page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) to take a look at all the listed resources to help improve overall techinical writing abilities.)
 
