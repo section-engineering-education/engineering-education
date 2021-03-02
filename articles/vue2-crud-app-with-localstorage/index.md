@@ -427,21 +427,6 @@ By now you can click on the edit button and the input field will be populated wi
 > 
 >It also watches the title property and if it’s empty it sets the edit property to false, here we don’t need the deep property.
 
-
-Go back to the App.vue file, after editing a title an event ```edit-book-event``` is sent to App.vue file we assign the event to a method in order to save the changes to localStorage. Update the code
-```vue
-<AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook" v-on:edit-book-event="editBookItemEvent" />
-```
-Now we create a method `editBookItemEvent` to handle saving of data. In the method we find the index of the ID’s object, this index will be used to reassign the title of the book being edited. If you’ve reached this far you’re now capable of editing a book title. As below
-```vue
-    editBookItemEvent(bookItem){
-      //find the index of this id's object
-      let objIndex = this.books.findIndex(obj => obj.id === bookItem.id)
-      //update the item
-      this.books[objIndex].title = bookItem.title;
-    }
-}
-```
 Back to `App.vue`, after editing a title, an event `edit-book-event` is sent to `App.vue`. We assign the event to a method in order to save the changes to local storage. Update your code to look like shown below.
 ```html
 <AddBookItem v-model="editBook.title" v-on:add-book-event="addBookItem"  v-bind:editBook="editBook" v-on:edit-book-event="editBookItemEvent" />
