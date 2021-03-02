@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-and-django-rest-framework/
-title: Building a Todo App Using React and Django REST Framework
+title: Building a React.js Application Using Django REST framework
 description: In this tutorial, we will create a Todo application using React for the front-end and Django REST Framework for the backend.
 author: oruko-pius
-date: 2021-02-28T00:00:00-11:00
+date: 2021-03-01T00:00:00-19:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,11 @@ images:
   - url: /engineering-education/react-and-django-rest-framework/hero.jpg
     alt: React Progressive Web Application example Image
 ---
-In this article, we build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
+In this tutorial, we will build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
 <!--more-->
-
 We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
 ### Prerequisites
-
 Basic knowledge of `React`, `Python(Django)` is required but I'll be able to try and boil things down as possible.
 
 You can check out these articles to get started with React and Python:
@@ -36,7 +34,6 @@ Before getting your hands dirty, you may need to:
 2. [Install Node.js](https://nodejs.org/en/download/)
 
 ### Step 1: Backend using Django
-
 From a terminal create a new project directory called `django-react-todoApp`
 
 ```bash
@@ -44,14 +41,15 @@ mkdir django-react-todoApp
 cd django-react-todoApp
 ```
 
-We must have a virtual environment activated to be able to install django. Let's create a virtual environment and activate it:
+We must have a virtual environment activated to be able to install Django. 
 
+Let's create a virtual environment and activate it:
 ```bash
 pip install pipenv
 pipenv shell
 ```
 
-Install django and create a project named `backend`:
+Install Django and create a project named `backend`:
 
 ```bash
 pipenv install django
@@ -96,7 +94,6 @@ class Todo(models.Model):
 ```
 
 The model contains:
-
 - Title: What the task is.
 
 - Description: Give more explanation about a particular task.
@@ -135,7 +132,7 @@ Let's create a superuser for the admin page to login.
 python manage.py createsuperuser
 ```
 
-This will prompt you to enter the `username`, `email`, `password`, `password(again)`. We can open the admin page using the following link `http://localhost:8000/admin`
+This will prompt you to enter the `username`, `email`, `password`, `password(again)`. We can open the admin page using the following link `http://localhost:8000/admin`.
 
 ```bash
 python manage.py runserver
@@ -148,8 +145,7 @@ We can now add and delete items from the admin page. Great!
 ![admin panel](/engineering-education/react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
-
-You can learn more about APIs in this amazing [article](https://www.section.io/engineering-education/rest-api/)
+You can learn more about APIs in this amazing [article](/engineering-education/rest-api/).
 
 Install the `djangorestframework` and `django-cors-headers`:
 
@@ -194,9 +190,9 @@ CORS_ORIGIN_WHITELIST = [
 
 Django-cors-headers help in handling the server headers required for [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
-Now, Let's create a serializer file.
+Now, let's create a serializer file.
 
-Serializers allow complex data such as querysets and model instances to be converted to native python dataypes that can then be easily rendered into JSON, XML, or other content types.
+Serializers allow complex data such as querysets and model instances to be converted to native Python dataypes that can then be easily rendered into JSON, XML, or other content types.
 
 ```bash
 touch todo/serializers.py
@@ -216,7 +212,7 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = ('id' ,'title', 'description', 'completed')
 ```
 
-A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines how the page will look like.
+A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines what the page will look like.
 
 A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
 
@@ -270,12 +266,11 @@ urlpatterns = [
 The next module is the `router.urls` which provides routing for our API.
 
 The `router` enables  us to create the subsequent operations:
+- `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
 
-* `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
+- `todos/id` - Returns a specific Todo using the `id` primary key.
 
-* `todos/id` - Returns a specific Todo using the `id` primary key.
-
-```
+```bash
 python manage.py runserver
 ```
 
@@ -284,8 +279,9 @@ python manage.py runserver
 We have set our backend to let us move forward to the frontend.
 
 ### Step 3: Frontend using React
+To install `create-react-app` use the following command. 
 
-To install `create-react-app` use the following command. `-g` stands for global as we are first installing `create-react-app` globally:
+`-g` stands for global as we are first installing `create-react-app` globally:
 
 ```bash
 npm install -g create-react-app
@@ -297,7 +293,7 @@ While in the parent directory - `django-react-todoApp`- create a React applicati
 create-react-app frontend
 ```
 
-To start server:
+To start the server:
 
 ```bash
 cd frontend
@@ -306,11 +302,12 @@ npm start
 
 You should be able to see the default React app by now.
 
-Next, let's install `bootstrap` and `reactstrap` to style the user interface. You can lear more on bootstrap and reactstrap from [here](https://www.npmjs.com/package/reactstrap).
+Next, let's install `bootstrap` and `reactstrap` to style the user interface. You can learn more on bootstrap and reactstrap from [here](https://www.npmjs.com/package/reactstrap).
 
 ```bash
 npm install bootstrap@4.6.0 reactstrap@8.9.0 --legacy-peer-deps
 ```
+
 When we open our `index.js` file it should resemble the code below:
 
 ```javascript
@@ -334,7 +331,7 @@ reportWebVitals();
 
 `ReactDOM.render()` renders a React element into the DOM in the given container element. It takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
 
-Here, It expects an element with an `id='root'`.
+Here, it expects an element with an `id='root'`.
 
 Substitute the below code in `src/App.js`:
 
@@ -405,7 +402,9 @@ We introduce the class constructor where we set the initial state. In our case, 
 
 We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). It allows us to iterate over the list of items and display them. We use curly braces to evaluate Javascript expressions during compilation in JSX.
 
-When the component file is called it calls the `render()` method by default displaying th JSX syntax. In the `render()` method, we have used the `classname` attribute to specify a CSS class. It reflects the standard `class` in HTML. You can find all the [supported HTML attributes in the React Documentation.](https://reactjs.org/docs/dom-elements.html)
+When the component file is called, it calls the `render()` method by default displaying th JSX syntax. In the `render()` method, we have used the `classname` attribute to specify a CSS class. 
+
+It reflects the standard `class` in HTML. You can find all the supported HTML attributes in the [React Documentation](https://reactjs.org/docs/dom-elements.html).
 
 We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) because they shorten our functions declaration.
 
@@ -420,11 +419,13 @@ cd backend
 python manage.py runserver
 ```
 
-We'll need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
+We'll need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. 
+
+Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
 
 Let's go ahead and add it.
 
-```javascript
+```JavaScript
 // frontend/package.json
 
 [...]
@@ -519,23 +520,27 @@ export default App;
 
 Let's go through each line of code to better understand what they do:
 
-In our constructor, we create a few properties in our `state` object. We assign the `viewCompleted` property false since our interface only shows items marked as not complete from our API at the moment. 
+In our constructor, we create a few properties in our `state` object. We assign the `viewCompleted` property to false since our interface only shows items marked as not complete from our API at the moment. 
 
 The `activeItem` property includes the `title`, `description` and pass `false` to `completed` as the default status. 
 
 We pass an empty array to our `todoList` because we are going to fetch our data from an API.
 
-First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints. We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we'll get back the parsed JSON data that we expect.
+First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints.
+
+We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we'll get back the parsed JSON data that we expect.
 
 Our application uses the `componentDidMount()` method from `React.Component` but we'll define it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
 
-The `componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React.](https://reactjs.org/docs/react-component.html)
+The `componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React](https://reactjs.org/docs/react-component.html).
 
 In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
 
-We create `renderItems()` function uses the `filter` built-in array functionality to show the completed items from our list, `todoList`. The `filter` function takes a function to evaluate each item in the list. We define a variable `newItems` to store the items which we display by using the `map` functionality.
+We create a `renderItems()` function that uses the `filter` built-in array functionality, to show the completed items from our `todoList`. The `filter` function takes a function to evaluate each item in the list. 
 
-We use a ternary conditional operator to show if an `item description` is marked as complete or not. A ternary operator takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+We define a variable `newItems` to store the items which we display by using the `map` functionality. We use a ternary conditional operator to show if an `item description` is marked as complete or not. 
+
+A ternary operator takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
 
 In our `render()` method we display the items through the `renderItems()` function.
 
@@ -543,7 +548,7 @@ The consumed data from the API should be displayed as follows:
 
 ![api_data](/engineering-education/react-and-django-rest-framework/api_fetched_data.jpg)
 
-To handle actions such as adding tasks and marking them complete, let's create a modal component.
+To handle actions such as adding tasks and marking them complete, we can create a modal component.
  
 A modal is a message box that is displayed on top of your screen. Modals put an overlay on the screen; therefore, they take visual precedence over all other elements. The modal component provides a solid foundation for creating dialogs, popovers, and lightboxes.
 
@@ -557,7 +562,7 @@ touch Modal.js
 
 Let's add this to the file:
 
-```javascript
+```JavaScript
 import React, { Component } from "react";
 import {
     Button,
@@ -638,21 +643,25 @@ export default class CustomModal extends Component {
 }
 ```
 
-In the code above we first import React and the components from `reactstrap` that we installed earlier. In the constructor we use the property that we created earlier in `App.js` file. The `activeItem` component receives the argument as a `props` object.
+In the code above we first import React and the components from `reactstrap` that we installed earlier. In the constructor we use the property that we created earlier in the `App.js` file. The `activeItem` component receives the argument as a `props` object.
 
-The `handleChange` method takes note of a change in the state of a React component, takes the event as a parameter, and does something to change state. We use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to create a checkbox where users can click to mark a task as complete. We then change the `activeItem` in our state object by `setState()` method.
+The `handleChange` method takes note of a change in the state of a React component, takes the event as a parameter, and does something to change state. 
+
+We use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to create a checkbox where users can click to mark a task as complete. We then change the `activeItem` in our state object by `setState()` method.
 
 In our `render()` method we pass `toggle` and `onSave()` method to `props`. We return the Modal component when toggled.
 
-We add the `toggle` component in the `ModalHeader` to enable dropping the modal. In the `ModalBody`, we add the forms for adding the item title and item description. In each `FormGroup`, we specify the `activeItem` value. We use the `onChange` event to detect when the input value changes and returns the target input's name and value. 
+We add the `toggle` component in the `ModalHeader` to enable dropping the modal. In the `ModalBody`, we add the forms for adding the item title and item description. 
+
+In each `FormGroup`, we specify the `activeItem` value. We use the `onChange` event to detect when the input value changes and returns the target input's name and value. 
 
 Since the last `FormGroup`'s input type is a checkbox the target value will be `checked` as we assigned it in our `handlechange()` method.
 
-In the `ModalFooter` we create a button to save our items using the `onSave()` method.
+In the `ModalFooter` we will create a button to save our items using the `onSave()` method.
 
-We then create the `add task` and `mark as completed` functionalities in `App.js`.
+We can then create the `add task` and `mark as completed` functionalities in `App.js`.
 
-Before we dive into the code we install `axios` a Javascript library that makes requests to the API endpoints on the backend server.
+Before we dive into the code we will install `axios`, which a JavaScript library that makes requests to the API endpoints on the backend server.
 
 ```bash
 npm install axios@0.21.1
@@ -660,7 +669,7 @@ npm install axios@0.21.1
 
 In the `App.js` add the code snippet below:
 
-```javascript
+```JavaScript
 // frontend/src/App.js
 
 import React, { Component } from "react"
@@ -792,13 +801,13 @@ export default App;
 
 First, import the `Modal` that we created earlier and `axios`. The `toggle()` method changes the `Modal` state when toggled, if the expression is true it returns the properties defined in the `Modal` in `Modal.js` else nothing happens. We add this in the `render()` method.
 
-The `handleSubmit()` save our items to the API, we use `axios` to make requests to it. We use `PUT` to insert the item into the already existing list of items according to the item id. 
+The `handleSubmit()` save our items to the API, we use `axios` to make the requests to it. We use `PUT` to insert the item into the already existing list of items according to the item id. 
 
-We then create a `createItem()` method for adding our task which is defined in the `render()` method. The `item` variable consists of `title`, `description`, and `completed` which by default is false. 
+We then create a `createItem()` method to add our task which is defined in the `render()` method. The `item` variable consists of `title`, `description`, and `completed` which by default is false. 
 
 The `displayCompleted()` method checks the status of the `viewCompleted` we created in our state earlier and returns true or false.
 
-The `renderTabList()` method define two buttons `Complete` and `Incomplete`, if the `viewCompleted()` method returns true the item(s) is `Complete`. If it returns false then the item(s) is `Incomplete`. We had earlier stated how the `renderItems()` method works.
+The `renderTabList()` method define two buttons `Complete` and `Incomplete`, if the `viewCompleted()` method returns true, the item is `Complete`. If it returns false then the item is `Incomplete`. We had stated earlier how the `renderItems()` method works.
 
 Our `render()` method returns `renderTabList()`, `renderItems()` methods and the `Add Task` functionality which uses the `createItem()` method to allow users to add task.
 
@@ -807,7 +816,6 @@ Your application should be like the one below by now:
 ![frontend](/engineering-education/react-and-django-rest-framework/final.jpg)
 
 ### Step 4: Testing
-
 Let's start our backend server made using Django by running the following commands:
 
 ```bash
@@ -823,10 +831,11 @@ npm start
 ```
 
 ### Conclusion
-
 We've come to the end of this tutorial and learned how to configure Django and React to interact with each other.
  
 You can learn more on Django and React from this [article](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) (Jordan Irabor, 2020).
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
