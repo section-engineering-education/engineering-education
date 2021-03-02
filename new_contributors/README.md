@@ -4,7 +4,7 @@ Here's a list of our contributor documentation to help you get started on your f
 
 - Contributing: is your main starting point. It introduces you to the program and guides you through signing up, proposing your first article and suggested article structures.
 
-- FAQ: answers the most frequent questions students often ask and links to the relevant guide to answer them
+- [FAQ](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/FAQ.md): answers the most frequent questions students often ask and links to the relevant guide to answer them
 
 - Upload Instructions: a guide on how to submit your article for review
 
