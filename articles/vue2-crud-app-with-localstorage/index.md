@@ -144,7 +144,7 @@ To make use of props, edit the `<script>` of the child component to look as show
 </script>
 ```
 
-### Creating the `BookItem` component
+### Creating the 'BookItem' component
 In the components folder create a file `BookItem.vue`. This component will represent a single book. The code for the `BookItem.vue` should look like the snippet shown below.
 ```vue
 <template>
@@ -217,7 +217,7 @@ books: [
 ]
 ```
 
-### Creating `AddBookItem` component
+### Creating 'AddBookItem' component
 You can now delete the **JSON test data** above. Under the `components` folder, create a file named `AddBook.vue`. Import it into `App.vue` and declare it in components object inside the script as demonstrated below.
 
 ```JavaScript
