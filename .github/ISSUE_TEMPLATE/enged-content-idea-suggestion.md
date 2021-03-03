@@ -1,13 +1,15 @@
 ---
 name: EngEd Content Idea Suggestion
-about: Please complete the fields below to submit a new article idea for review.
+about: Please complete the fields below to get a new article idea approved for submission.
 title: ''
 labels: topic suggestion
 assignees: ''
 
 ---
 
-**NOTE: We tend to stray away  or tend not to publish reviews/comparisons of commercial product offerings.**
+Be sure to visit our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for tools, resources, and example articles to go over.
+
+**NOTE: We tend to stray away or tend not to publish reviews/comparisons of commercial product offerings.**
 
 ### Introduction paragraph(s):
 Please begin to write the Introductory paragraph(s), to your article to help us assess overall quality. Take your time and write it as it would be published (as-is), as this will be the qualifiy factor for article approval.
