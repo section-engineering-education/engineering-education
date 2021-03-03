@@ -75,7 +75,7 @@ As a community, we are continually striving to add value to our content pool thr
 
 To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *9/30/20*
 
-We will be increasing the payouts of our Tech Tutorials up to $250.00 USD (for articles that need little to no extra revisions). 
+We will be making our payouts of our Tech Tutorials up to $150.00 USD (for tutorials that need little to no extra revisions). 
 
 Our new tiered pay structure will incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
@@ -88,10 +88,9 @@ All submitted articles should be BOLD & CLEAR, free of any lengthy, complex sent
 
 All other formats payout will be as follows:
 
-- Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
-- Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
-- Articles with (3+) and up rounds of revisions) we will consider closing the PR 
-
+- Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for tutorials)
+- Articles with (2+) and up rounds of revisions) we will consider closing the PR 
+- 
 ## What counts as a round of revision? 
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation. 
 - Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
@@ -100,7 +99,7 @@ All other formats payout will be as follows:
 
 *by unique we mean content that can NOT simply be found by looking up the official documentation.
 
-Note: To test this new tier system - we will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
+Note: We will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
 
 We will highlight articles that are of good consistent quality - to have as examples of the overall quality and style we are looking for. 
 
