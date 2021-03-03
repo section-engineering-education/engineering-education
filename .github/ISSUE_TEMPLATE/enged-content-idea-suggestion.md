@@ -15,7 +15,7 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 Please write the Introductory paragraph(s), that would be included in your article. We will use this writing snippet to help us assess overall quality before approval. Take your time and write the content as you would intend to get it published.
 
 ### Pain point:
-Describe what is the pain point that your article/tutorial topic will address?
+Describe what is the pain point that your article/tutorial topic will address for the larger developer community as a whole?
 
 ### Brief summary: 
 Describe the what, why, and how of your content idea in 3-7 sentences. Use this area to get your ideas down on the bulk of your article or tutorial.
@@ -24,7 +24,7 @@ Describe the what, why, and how of your content idea in 3-7 sentences. Use this 
 What are the 3-5 most important things the reader should understand or be able to do after reading this article?
 
 ### References: 
-Please list links to any published content/research that you intend to use to support/guide this article. (If none, please indicate 'N/A'.)
+Please list links to any published content/research that you intend to use to support/guide this article.
 
 ### Templates to use as guides
 - [How To Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md)
