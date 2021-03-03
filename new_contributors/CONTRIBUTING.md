@@ -50,6 +50,8 @@ Ensure all article submissions are pre-checked for English grammar, technically 
 
 Before submitting your article, we request that you cross-check the readability of your content using this [free tool](http://www.hemingwayapp.com/). This check helps make your writing BOLD & CLEAR by calling attention to any lengthy, complex sentences and common errors. If you see a yellow sentence, you may want to shorten or split it. 
 
+Before submitting your article, we request that you place your article through a 3rd party plagiarism checker? We suggest using [Quetext this is a free tool](https://www.quetext.com/) and has a daily limit. **We typically accept articles with 10% or less.**
+
 These guidelines are intended to help EngEd contributors grow as authors and to enrich the larger engineering community as a whole by continuing to create higher quality educational articles, tutorials, how-to’s,technology reviews, etc. 
 
 ## Communicating your key takeaways
