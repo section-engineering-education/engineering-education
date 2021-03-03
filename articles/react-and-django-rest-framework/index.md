@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/react-and-django-rest-framework/hero.jpg
     alt: React Progressive Web Application example Image
 ---
-In this tutorial, we will build a Todo application using React and Django. [React](https://reactjs.org/) is a JavaScript framework for building painless interactive UIs. [Django](https://www.djangoproject.com/) is a powerful web framework that is used to develop web applications. It is well termed as the web framework for perfectionists with deadlines.
+In this tutorial, we will build a Todo application using React and Django. [React](https://reactjs.org/) is a front-end JavaScript framework that uses components in creating user interfaces for single-page applications. [Django](https://www.djangoproject.com/) is a python backend web framework used to build scalable and secure website applications.
 <!--more-->
 We are going to create an application that consumes [React](https://reactjs.org/) for the user interface and [Django](https://www.djangoproject.com/) for the API of our application using Django REST framework(DRF).
 
@@ -63,8 +63,6 @@ If everything works you should see the "Congratulations" page from Django.
 Navigate to `backend/settings.py` and add `todo` to the list of `INSTALLED_APPS`
 
 ```python
-# backend/settings.py
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -72,18 +70,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo', # Add this
+    'todo',
 ]
 ```
 
-Let's create a model to specify the Todo item fields. Modify `todo/models.py` as follows:
+We'll go ahead and set up our model for Tod item fields. Modify `todo/models.py` as follows:
 
 ```python
-# todo/models.py
 from django.db import models
-#create your models here.
 
-# add this
 class Todo(models.Model):
    title = models.CharField(max_length=100)
    description = models.TextField()
@@ -98,9 +93,9 @@ The model contains:
 
 - Description: Give more explanation about a particular task.
 
-- Completed: Completed is the status of a task; either completed or not completed.
+- Completed: If the task is complete the status is True otherwise it remains False.
 
-We need to tell Django which attribute to use by default when it displays information about Todo. Django calls a `_str_()` method to display a simple representation of a model. Here we've defined a `_str_()` method that returns the string stored in the `title` attribute.
+Django uses `_str_()` to display a default attribute to be displayed, in our case we return `title` to be shown from our model.
 
 Let us run migrations to add our model to the database schema.
 
@@ -109,20 +104,17 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Django comes with a built-in admin interface. With Django's admin we can authenticate users, display and handle forms automatically. It reads data from our models to provide a quick interface where trusted users can manage content on your site.
+Django comes with a built-in admin interface. The interface allows administrators and authorized users to perform actions directly to the objects defined in the models.
 
 We can add models to our Admin page using the `admin.site.register()` functions. In the todo app's `admin.py`, let's add the model to our admin page.
 
 ```python
-# todo/admin.py
-
 from django.contrib import admin
-from .models import Todo # add this
+from .models import Todo
 
 class TodoAdmin(admin.ModelAdmin):
   list = ('title', 'description', 'completed')
 
-  # Register your models here
   admin.site.register(Todo, TodoAdmin)
 ```
 
@@ -164,12 +156,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
-    'corsheaders', # add this
-    'rest_framework', # add this
+    'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # add this
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -188,21 +180,19 @@ CORS_ORIGIN_WHITELIST = [
 ]
 ```
 
-Django-cors-headers help in handling the server headers required for [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
+Django-cors-headers is an HTTP-header-based that allows a server to indicate any other origins to your Django application. [Cross-origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Within the `CORS_ORIGIN_WHITELIST` , `localhost:3000` will serve as our port.
 
 Now, let's create a serializer file.
 
-Serializers allow complex data such as querysets and model instances to be converted to native Python dataypes that can then be easily rendered into JSON, XML, or other content types.
+A serializer is a component that converts Django models to JSON objects and vice-versa.
 
 ```bash
 touch todo/serializers.py
 ```
 
-Let's add this to `serializers.py` file:
+Let's add this to the `serializers.py` file:
 
 ```python
-# todo/serializers.py
-
 from rest_framework import serializers
 from .models import Todo
 
@@ -212,63 +202,49 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = ('id' ,'title', 'description', 'completed')
 ```
 
-A view function takes in information from a request, prepares the data required to generate a page, then sends the data to the browser using a template that defines what the page will look like.
-
-A `ViewSet` class is a type of class-based View, that does not provide any method handlers such as `.get()` or `.post()`.
-
-The `ModelViewSet` is an extension of the `ViewSet`. It inherits from `GenericAPIView` which provides the `queryset` and the `serializer_class` attributes. The `queryset` has all the CRUD operations which we use to get all the instances of the model `Todo`.
+From the `rest_framework` package, we import the `serializers`. We create a class, `TodoSerializer` that extends from the `ModelSerializer` class. We then go ahead and specify the model and fields we want to be returned.
 
 Let's also update the `todo/views.py`:
 
 ```python
-# todo/views.py
-
 from django.shortcuts import render
-from rest_framework import viewsets      # add this
-from .serializers import TodoSerializer  # add this
-from .models import Todo                 # add this
+from .serializers import TodoSerializer 
+from rest_framework import viewsets      
+from .models import Todo                 
 
-# Create your views here.
-
-class TodoView(viewsets.ModelViewSet):   # add this
-    serializer_class = TodoSerializer    # add this
-    queryset = Todo.objects.all()        # add this
+class TodoView(viewsets.ModelViewSet):  
+    serializer_class = TodoSerializer   
+    queryset = Todo.objects.all()     
 ```
 
-
-URL stands for Uniform Resource Locator. It is the address used by your server to search for the right webpage.
-
-Making webpages in Django involves three steps: defining URLs, writing views, and writing templates.
-
-Defining URL pattern describes the way the URL is laid out and tells Django what to look for when matching a browser request with a site URL so it knows which site to return.
-
-The body of the file defines the `urlpatterns` variable. The `urlpatterns` variable includes sets of URLs, one is the module `admin.site.urls`, which defines all the URLs that can be requested from the admin site.
+Before creating webpages in Django we must define URLs.A URL is an address to which a webpage is served. Defining URLs describes what requests are returned from the views when the templates are rendered in the browser.
 
 In the `backend/urls.py` we define the URL routes for the API:
 
 ```python
-# backend/urls.py
-
 from django.contrib import admin
-from django.urls import path,include               # add this
-from rest_framework import routers                 # add this
-from todo import views                             # add this
+from django.urls import path,include               
+from rest_framework import routers                 
+from todo import views                             
 
-router = routers.DefaultRouter()                   # add this
-router.register(r'todos', views.TodoView, 'todo')  # add this
+router = routers.DefaultRouter()                   
+router.register(r'todos', views.TodoView, 'todo')  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))             # add this
+    path('api/', include(router.urls))             
 ]
 ```
 
 The next module is the `router.urls` which provides routing for our API.
 
 The `router` enables  us to create the subsequent operations:
-- `/todos/` - This returns a list of all the Todo items (Create and Read operations can be done here).
 
-- `todos/id` - Returns a specific Todo using the `id` primary key.
+Performing CRUD operations to our items is enabled by the `router`.
+
+- `/todos/` - This route return each item from our API
+
+- `todos/id` - Returns a specific item and it's `id`.
 
 ```bash
 python manage.py runserver
@@ -279,7 +255,7 @@ python manage.py runserver
 We have set our backend to let us move forward to the frontend.
 
 ### Step 3: Frontend using React
-To install `create-react-app` use the following command. 
+To install React we use the following command:
 
 `-g` stands for global as we are first installing `create-react-app` globally:
 
@@ -311,8 +287,6 @@ npm install bootstrap@4.6.0 reactstrap@8.9.0 --legacy-peer-deps
 When we open our `index.js` file it should resemble the code below:
 
 ```javascript
-// frontend/src/index.js
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -323,21 +297,15 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+//React generated comments ignored
 reportWebVitals();
 ```
 
-`ReactDOM.render()` renders a React element into the DOM in the given container element. It takes two arguments. First, is the JSX being rendered. The second argument specifies the container element in the HTML page. 
-
-Here, it expects an element with an `id='root'`.
+`ReactDOM.render()` renders a React element into the DOM in the given container element. It takes two arguments. The first is the JSX being rendered, and the second displays the container element on the HTML page. 
 
 Substitute the below code in `src/App.js`:
 
 ```javascript 
-// frontend/src/App.js
-
 import React, { Component } from "react"
 
 const todoItems = [
@@ -400,11 +368,9 @@ We define a list of items. Each item has an `id`, `title`, `description`, and st
 
 We introduce the class constructor where we set the initial state. In our case, the internal state is the dummy list of items, `todoItems`.
 
-We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). It allows us to iterate over the list of items and display them. We use curly braces to evaluate Javascript expressions during compilation in JSX.
+We use the built-in JavaScript `map` functionality in our JavaScript XML (JSX). The `map()` [method creates a new array populated with the results of calling a provided function on every element in the calling array]((https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)). We use curly braces to evaluate Javascript expressions.
 
-When the component file is called, it calls the `render()` method by default displaying th JSX syntax. In the `render()` method, we have used the `classname` attribute to specify a CSS class. 
-
-It reflects the standard `class` in HTML. You can find all the supported HTML attributes in the [React Documentation](https://reactjs.org/docs/dom-elements.html).
+The `render()` method when called displays the JSX. The `classname` attribute in the `render()` method enables us to use the CSS properties. 
 
 We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) because they shorten our functions declaration.
 
@@ -421,18 +387,16 @@ python manage.py runserver
 
 We'll need to modify the `frontend/package.json` by adding `proxy`. A `proxy` is used in the development environment to facilitate communication between the server and the UI since the backend and the UI will be running on different ports. 
 
-Our `proxy` will tunnel the API requests to `http://localhost:8000` where the Django application will handle them.
+The `proxy` enables us to use Django's localhost which handles our API requests.
 
 Let's go ahead and add it.
 
 ```JavaScript
-// frontend/package.json
-
 [...]
 "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",   // Add this
+  "proxy": "http://localhost:8000", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
@@ -528,19 +492,19 @@ We pass an empty array to our `todoList` because we are going to fetch our data 
 
 First, we wrap `fetch()` in a `try/catch` block to handle any network errors. We then call `fetch()` with the `await` keyword, where we pass our API endpoints.
 
-We're telling the  `async` function to stop executing until the promise is resolved at which point it'll resume execution and return the resolved value. Rather than getting promises, we'll get back the parsed JSON data that we expect.
+The `async` enables asynchronous operations, it returns a resolve value promise from our function.
 
-Our application uses the `componentDidMount()` method from `React.Component` but we'll define it as an `async` function. This allows our use of `await` for each fetch. Using `await` outside of the `async` function results in a syntax error.
+We will define the `componentDidMount()` method as part of the `async` function. This enables us to perform each `fetch` using the `await` keyword.
 
-The `componentDidMount()` function is called by React when a component is mounted for the first time. Read more about [life cycle methods in React](https://reactjs.org/docs/react-component.html).
+The `componentDidMount()` function is called by React when a component is rendered on the client-side. Read more about [life cycle functions from this article.](https://reactjs.org/docs/react-component.html)
 
-In the `componentDidMount()` function we call `setState()` method to change the state of our application and `render()` the updated data loaded JSX. 
+The `setState()` method in the `componentDidMount()` function is called when we want to update a change to our previous state in the application.
 
 We create a `renderItems()` function that uses the `filter` built-in array functionality, to show the completed items from our `todoList`. The `filter` function takes a function to evaluate each item in the list. 
 
 We define a variable `newItems` to store the items which we display by using the `map` functionality. We use a ternary conditional operator to show if an `item description` is marked as complete or not. 
 
-A ternary operator takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+Ternary is a JavaScript operator that returns true in the first condition and false in the second part of an expression.
 
 In our `render()` method we display the items through the `renderItems()` function.
 
@@ -550,7 +514,7 @@ The consumed data from the API should be displayed as follows:
 
 To handle actions such as adding tasks and marking them complete, we can create a modal component.
  
-A modal is a message box that is displayed on top of your screen. Modals put an overlay on the screen; therefore, they take visual precedence over all other elements. The modal component provides a solid foundation for creating dialogs, popovers, and lightboxes.
+ Modal enables us to create custom content such as popovers, dialog boxes in our applications. 
 
 Let's go ahead and create a `components` folder in the `src` directory then create a file in it called `Modal.js`:
 
@@ -643,9 +607,9 @@ export default class CustomModal extends Component {
 }
 ```
 
-In the code above we first import React and the components from `reactstrap` that we installed earlier. In the constructor we use the property that we created earlier in the `App.js` file. The `activeItem` component receives the argument as a `props` object.
+In the code above we first import React and the components from `reactstrap` that we installed earlier. In the constructor, we use the property that we created earlier in the `App.js` file. The `props` keyword passes the argument to the `activeItem` component as objects.
 
-The `handleChange` method takes note of a change in the state of a React component, takes the event as a parameter, and does something to change state. 
+The `handleChange` method takes note of a change in the state of a React component, takes the event as a parameter, and does something to change the state. 
 
 We use [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to create a checkbox where users can click to mark a task as complete. We then change the `activeItem` in our state object by `setState()` method.
 
@@ -661,7 +625,7 @@ In the `ModalFooter` we will create a button to save our items using the `onSave
 
 We can then create the `add task` and `mark as completed` functionalities in `App.js`.
 
-Before we dive into the code we will install `axios`, which a JavaScript library that makes requests to the API endpoints on the backend server.
+Before we continue let's install `axios`. It allows our applications to make a request to external endpoints. We use it to perform CRUD operations to our API.
 
 ```bash
 npm install axios@0.21.1
@@ -670,11 +634,9 @@ npm install axios@0.21.1
 In the `App.js` add the code snippet below:
 
 ```JavaScript
-// frontend/src/App.js
-
 import React, { Component } from "react"
-import Modal from "./components/Modal"; //Add this
-import axios from "axios"; //Add this
+import Modal from "./components/Modal"; 
+import axios from "axios";
 
 class App extends Component {
     state = {
@@ -775,7 +737,7 @@ class App extends Component {
           <div className="col-md-6 col-sm-10 mx-auto p-0">
             <div className="card p-3">
               <div className="">
-                <button onClick={this.createItem} className="btn btn-primary">Add Task</button>
+                <button onClick={this.createItem} className="btn btn-success">Add Task</button>
               </div>
               {this.renderTabList()}
               <ul className="list-group list-group-flush">
@@ -803,7 +765,7 @@ First, import the `Modal` that we created earlier and `axios`. The `toggle()` me
 
 The `handleSubmit()` save our items to the API, we use `axios` to make the requests to it. We use `PUT` to insert the item into the already existing list of items according to the item id. 
 
-We then create a `createItem()` method to add our task which is defined in the `render()` method. The `item` variable consists of `title`, `description`, and `completed` which by default is false. 
+We then create a `createItem()` method to add our task which is defined in the `render()` method.
 
 The `displayCompleted()` method checks the status of the `viewCompleted` we created in our state earlier and returns true or false.
 
@@ -831,7 +793,7 @@ npm start
 ```
 
 ### Conclusion
-We've come to the end of this tutorial and learned how to configure Django and React to interact with each other.
+We have learned how to integrate a Django application with React serving as the frontend.
  
 You can learn more on Django and React from this [article](https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react) (Jordan Irabor, 2020).
 
