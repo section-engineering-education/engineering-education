@@ -1,10 +1,10 @@
-	---
+  ---
 layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/spring-docker/
 title: How to Create Spring Boot Docker Images
-description: This tutorial will go over how to create Spring Boot Docker images. Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. 
+description: This tutorial will go over how to create Spring Boot Docker images. Docker is a great tool for building and packaging applications with their dependencies.
 author: odhiambo-paul
 date: 2021-02-27T00:00:00-12:00
 topics: []
@@ -15,38 +15,37 @@ images:
     alt: Spring Boot Docker Images example image
 ---
 
-[Docker](https://docs.docker.com) is a containerization platform that makes it possible to package, ship, and distribute applications across servers in controlled environments.
+[Docker](https://docs.docker.com) is a container engine that makes it possible to bundle, ship, and distribute applications across distributed servers.
 <!--more-->
 ### Prerequisites
 1. [Java Development Kit 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html/) or newer installed on your computer.
 2. [Docker](https://docs.docker.com/docker-for-windows/install/) installed on your computer.
 
-For Docker installation, and a quick start, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
+For getting started with Docker, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
 
 ### Project setup
-We will containerize the Todo application that we created in [this](/engineering-education/spring-boot-crud-api/) tutorial. The `Todo` application allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
+We will bundle and containerize the application that we created [here](/engineering-education/spring-boot-crud-api/). The application allowed us to perform CRUD functionalities on the Todo items via a REST API.
 
-Ensure `JDK` is installed on your computer by executing the command below.
+To check is `JDK` is installed and configured correctly on your computer, execute the command below.
 
 ```bash
 $ java --version
 java 15.0.2 2021-01-19
-Java(TM) SE Runtime Environment (build 15.0.2+7-27)
-Java HotSpot(TM) 64-Bit Server VM (build 15.0.2+7-27, mixed mode, sharing)
 
 ```
 
-Create a working directory for the project by executing the command below.
+Execute the command below to create a working directory for the project.
 ```bash
 $ mkdir todo
 $ cd todo
 ```
-In the directory created above, clone the project from Github to your machine by executing the command below.
+In the directory created above, execute the command below to clone the project to your computer.
 
 ```bash
 $ git clone https://github.com/paulodhiambo/springbootcrud.git
 ```
-Move into the project folder by executing the command below.
+
+Execute the command below to move into the project folder.
 ```bash
 $ cd springbootcrud
 ```
@@ -55,7 +54,7 @@ Run the application to verify if the project is correctly set up and the applica
 $ gradle build
 ```
 
-Below is the project structure.
+The project structure is shown below.
 ```bash
 └── springbootcrud         # < project root package
     ├── src
@@ -69,15 +68,14 @@ Below is the project structure.
 ```
 
 ### Creating a Dockerfile
-A Dockerfile is a text file containing instructions on how the Docker image will be built. A Dockerfile contains the directives below.
-- **FROM**: sets the base image from which the Docker container will be built.
-- **WORKDIR**: sets the working directory in the image created.
+A Dockerfile is a plain text file that contains instructions from which a Docker image is built. A Dockerfile contains the commands below.
+- **FROM**: directive sets the image on which the container will be based on.
 - **RUN**: executes commands in the container. 
-- **COPY**: copies files from the file system into the container.
+- **COPY**: creates a copy of files from the file system in the container.
 - **CMD**: sets the executable commands within the container.
 
-In the root project folder, create a file with the name `Dockerfile`.
-In the `Dockerfile` created above, add the code snippets below.
+Create a `Dockerfile` in the project's root folder.
+Add the code snippets below to the `Dockerfile` created above.
 
 ```Docker
 FROM openjdk:8-jdk-alpine
@@ -96,14 +94,14 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 - `ENTRYPOINT ["java","-jar","/app.jar"]` indicates that the container has an executable file.
 
 ### Building the Docker image
-Execute the command below to build a Docker image from the Dockerfile we have created above.
+To build a Docker image from the Dockerfile we have created above, execute the command below.
 
 ```bash
 $ docker build --build-arg JAR_FILE=build/libs/\*.jar -t spring-boot-docker:latest .
 ```
 - `--build-arg JAR_FILE=build/libs/\*.jar` sets the path to the `jar` file generated by running `gradle build` command.
-- `-t` sets the tag for the image. For example, we are creating a Docker image from `openjdk:8-jdk-alpine` that has the tag `8-jdk-alpine`. We have set `latest` as the tag in our Docker image.
-- The trailing `.` shows that the `Dockerfile` is within the current directory.
+- `-t` sets the tag for the image.
+- `.` indicates that the `Dockerfile` is in the current directory.
   
 Execute the command below to list all the Docker images available on your computer.
 ```bash
@@ -119,15 +117,15 @@ latest                           latest              6c802830c996   4 weeks ago 
 From the above list, we see the `spring-boot-docker` image that we have created.
 
 ### Creating and running the Docker Container
-Execute the command below to build and run a Docker container from the Docker image we created above.
+Execute the command below to create a Docker container from the Docker image we have created above.
 
 ```bash
 $ docker run --name spring-boot-docker -d -p 8080:8080 spring-boot-docker:latest
 ```
 - `--name` flag sets the Docker container name.
-- `-d` flag makes the image run in detached mode, running in the background.
+- `-d` flag makes the image run in the background.
 - `-p 8080:8080` maps port 8080 in the Docker container to port 8080 in localhost.
-- `spring-boot-docker:latest` specifies which image is used to build the Docker container. 
+- `spring-boot-docker:latest` specifies the image from which the Docker container is built.
 
 Execute the command below to list all the running Docker containers.
 ```bash
@@ -137,37 +135,39 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED       ST
 
 ```
 
-1. On your browser visit `localhost` on port 8000 to confirm if the `spring-boot-crud` application is running in the container.
+1. Visit `localhost` on port 8080 to confirm if the `spring-boot-crud` application is running in the container.
+   
 ![Docker Hub image](/engineering-education/spring-docker/docker_get.png)
 
-### Publishing the Docker image to Docker Hub
+### Pushing the Docker image to Docker Hub
+
 ![Docker Hub image](/engineering-education/spring-docker/docker_create.png)
 
-Docker Hub is a repository of container images. Docker hub stores Docker containers and also makes it easy to share Docker images with other developers.
+Docker Hub is an online repository of Docker container images. Docker hub stores Docker containers and also makes it easy to share Docker images with other developers.
 
 Create a Docker Hub account [here](https://hub.docker.com/) if you don't have one.
 
-Once you have created an account and logged in to Docker Hub, create a repository with the name `spring-boot-crud` and the description `Spring Boot Docker Image`.
+After creating an account, log in to Docker Hub, create a repository with the name `spring-boot-crud` and the description `Spring Boot Docker Image`.
 
 Execute the command below to push the Docker image to the repository that we have created in the Docker Hub.
 
 ```bash
 $ docker login
 
-$ docker tag spring-boot-docker:latest <Docker Hub username>/spring-boot-docker:latest
+$ docker tag spring-boot-docker:latest <username>/spring-boot-docker:latest
 
-$ docker push <Docker Hub username>/spring-boot-docker:latest
+$ docker push <username>/spring-boot-docker:latest
 ```
 
 - `docker login` command authenticates you into your Docker Hub account on the command line, making it possible to push Docker images to Docker Hub.
-- `docker tag spring-boot-docker: latest <Docker Hub username>/spring-boot-docker: latest` command modifies the tag of our local Docker image to include the Docker Hub username.
-- `docker push <Docker Hub username>/spring-boot-docker: latest` pushes the image to Docker Hub repository we created earlier.
+- `docker tag spring-boot-docker: latest <username>/spring-boot-docker: latest` command modifies the tag of our local Docker image to include the Docker Hub username.
+- `docker push <username>/spring-boot-docker: latest` pushes the image to Docker Hub repository we created earlier.
 
-**Note:** Replace `<Docker Hub username>` with your actual Docker Hub username.
+**Note:** Replace `<username>` with your actual Docker Hub username.
 
 The source code to the application is in [this](https://github.com/paulodhiambo/springbootcrud/tree/spring-docker) GitHub repository.
 
 ### Conclusion
-Docker is a good tool for packaging applications with the required dependencies to run them both locally and in production. [Docker playground](https://labs.play-with-docker.com/) is an online environment that you can use to test various Docker commands without installing Docker locally on your computer.
+Docker is a great tool for building and packaging applications with the required dependencies to run them both locally and in production. [Docker playground](https://labs.play-with-docker.com/) is a browser-based environment that you can use to test various Docker commands without installing Docker locally on your computer.
 
 Happy Coding!
