@@ -75,7 +75,7 @@ As a community, we are continually striving to add value to our content pool thr
 
 To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *9/30/20*
 
-We will be making our payouts of our Tech Tutorials up to $150.00 USD (for tutorials that need little to no extra revisions). 
+We will be making our payouts of our Tech Tutorials $150.00 USD (for tutorials that need little to no extra revisions). 
 
 Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
