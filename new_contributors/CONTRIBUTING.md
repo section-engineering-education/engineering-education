@@ -77,7 +77,7 @@ To continue increasing that level of quality and value for the community - we’
 
 We will be making our payouts of our Tech Tutorials up to $150.00 USD (for tutorials that need little to no extra revisions). 
 
-Our new tiered pay structure will incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
+Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
 Articles are expected to be clearly understood, well-written, pre-checked for English grammatical issues, and technically accurate (with code tested).
 
