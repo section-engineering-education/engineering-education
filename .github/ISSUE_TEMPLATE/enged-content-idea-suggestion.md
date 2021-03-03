@@ -14,6 +14,9 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 ### Introduction paragraph(s):
 Please begin to write the Introductory paragraph(s), to your article to help us assess overall quality. Take your time and write it as it would be published (as-is), as this will be the qualifiy factor for article approval.
 
+### Pain Point
+Describe what is the pain point that your article/tutorial topic will address?
+
 ### Brief Summary: 
 Describe the what, why, and how of your content idea in 3-7 sentences. Use this area to get your ideas down on the bulk of your article or tutorial.
 
