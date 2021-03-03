@@ -138,7 +138,7 @@ Server.middleware.registerNamed({
 });
 ```
 
-#### Creating migrations
+### Creating migrations
 We should create the remaining migrations for the Post and Forum models that will be used later.
 
 Let’s get started:
