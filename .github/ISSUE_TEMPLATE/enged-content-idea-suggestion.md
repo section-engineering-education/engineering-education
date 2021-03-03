@@ -11,17 +11,15 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 
 **NOTE: We tend to stray away or tend not to publish reviews/comparisons of commercial product offerings.**
 
+### Proposed title of article
+Your title should be descriptive of the article/tutorial. Be Specific. *Use keyword research to gain your article higher ranking.*
+
 ### Introduction paragraph(s):
-Please write the Introductory paragraph(s), that would be included in your article. We will use this writing snippet to help us assess overall quality before approval. Take your time and write the content as you would intend to get it published.
-
-### Pain point:
-Describe what is the pain point that your article/tutorial topic will address for the larger developer community as a whole?
-
-### Brief summary: 
-Describe the what, why, and how of your content idea in 3-7 sentences. Use this area to get your ideas down on the bulk of your article or tutorial.
+Please write the Introductory paragraph(s), that would be included in your article. We will use this writing snippet to help us assess overall quality before approval. We're looking for the first 2-3 paragraphs of the article that appropriately summarize what your article will be about.
+Take your time and write the content as you would intend to get it published. 
 
 ### Key takeaways: 
-What are the 3-5 most important things the reader should understand or be able to do after reading this article?
+What are the 3-5 most important things the reader should understand or be able to do after reading this article? Use this area to get your ideas down on the bulk of your article or tutorial.
 
 ### References: 
 Please list links to any published content/research that you intend to use to support/guide this article.
