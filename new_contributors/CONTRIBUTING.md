@@ -73,9 +73,18 @@ Note: Articles requiring very few edits will be given priority in the review que
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
 
-To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *9/30/20*
+To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
 
-We will be making our payouts of our Tech Tutorials $150.00 USD (for tutorials that need little to no extra revisions). 
+Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
+
+Our new payout structure will be:
+- $150 for tutorials
+- $100 for non-tutorial content
+- $50/article for peer reviews
+
+Updates to review processes:
+We are introducing a new topic suggestion form that will gather more developed details of your content idea.
+Acceptance of article ideas will consider originality, expected value for readers, overlap with existing content, and quality of the topic outline provided.
 
 Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
