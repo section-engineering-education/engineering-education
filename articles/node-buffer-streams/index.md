@@ -1,18 +1,25 @@
-When watching a game online, we often say that we are streaming. At times in the middle of the game streaming, a spinner may start indicating that the video content is loading, this means that we are trying to fetch the next video segment( Buffer) from the server. As large video files will not fit in memory, we need to read the content in small chunks and send it to its destination. Transferring such data between two endpoints (such as the server and the browser) in this fashion uses the technique of streaming and buffering. In this tutorial, we will go through the basics of the Node.js buffer and stream modules.
+Streaming videos and games is a norm these days. At times in the middle of the game streaming, a spinner may start indicating that the video content is loading, this means that we are trying to fetch the next video segment( Buffer) from the server. As large video files will not fit in memory, we need to read the content in small chunks and send it to its destination. Transferring such data between two endpoints (such as the server and the browser) in this fashion uses the technique of streaming and buffering. In this tutorial, we will go through the basics of the Node.js buffer and stream modules.
 
 ### Prerequisites
-1. Node.js is a JavaScript-based runtime. A basic of the [JavaScript]() programming language and its data types are needed.
+1. Node.js is a JavaScript-based runtime. A basic of the [JavaScript](https://www.w3schools.com/js/js_intro.asp) programming language and its data types are needed.
    
-2. You require Node.js installed on your system. Get the current version [here]().
+2. You require Node.js installed on your system. Get the current version [here](https://nodejs.org/en/download/).
 
-3. You may need to follow along with these code examples in which case I recommend a text editor such as [VS Code]().
+3. You may need to follow along with these code examples in which case I recommend a text editor such as [VS Code](https://code.visualstudio.com/download).
 
 ### The Node.js buffer module
 Buffers are useful when interacting with binary data. A buffer is a memory space that stores binary data. For example, using the `fs.readFile()` will return data inform of buffer object to the callback. When a HTTP request is made in a Node.js server, they return data streams temporarily stored in an internal buffer when the client is unable to process the stream all at once.
 
 ### Creating a Buffer
-Node.js has a built-in class for creating and manipulating Buffers.
-
+Node.js has a built-in class for creating and manipulating Buffers. There are two ways to create a Buffer:
+1. Creating a Buffer of fixed size
+    ```js
+        const buffer = new Buffer.alloc(10);
+    ```
+2. Creating a Buffer with content
+   ```js
+   const buffer2 =  new Buffer.from("This is a node buffer");
+   ```
 
 ### Reading from a Buffer
 
@@ -140,7 +147,7 @@ The code walkthrough:
 
    
 ### The Transform streams
-They are a special type of duplex streams that allow the output to transform its input meaning we calculate the output from the inputs. They can modify data while being read or written. For example, during file compression, we can read compressed data and read the decompressed data to and from the file. For more information on this, check the [official documentation]().
+They are a special type of duplex streams that allow the output to transform its input meaning we calculate the output from the inputs. They can modify data while being read or written. For example, during file compression, we can read compressed data and read the decompressed data to and from the file. For more information on this, check the [official documentation](https://nodejs.org/api/stream.html).
 
 ### Summary
 Streaming and buffering allow us to read data piece by piece while processing its content. This proves to be more memory efficient as you do not have to load large data. The two concepts are fundamental in Node.js applications by handling I/O tasks in a composable and efficient manner.
