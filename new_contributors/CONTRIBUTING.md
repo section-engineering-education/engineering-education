@@ -83,7 +83,7 @@ Our new payout structure will be:
 - $50/article for peer reviews
 
 Updates to review processes:
-We are introducing a new topic suggestion form that will gather more developed details of your content idea.
+We are introducing an [improved topic suggestion form](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) that will gather more developed details of your content idea.
 Acceptance of article ideas will consider originality, expected value for readers, overlap with existing content, and quality of the topic outline provided.
 
 Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
