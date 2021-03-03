@@ -311,22 +311,22 @@ import React, { Component } from "react"
 const todoItems = [
   {
     id: 1,
-    title: "Go to the market",
-    description: "Buy ingredients to buy supper",
+    title: "Nature walk in the park",
+    description: "Visit the park with my friends",
     completed: true
   },
 
   {
     id: 2,
-    title: "Study",
-    description: "Read algebra and history books about the coming test",
+    title: "Visit",
+    description: "Got to my aunt's place",
     completed: true
   },
 
   {
     id: 3,
-    title: "Sally's Book",
-    description: "Go to the library to rent Sally's books",
+    title: "Write",
+    description: "Do an article about anthropology",
     completed: true
   },
 ];
