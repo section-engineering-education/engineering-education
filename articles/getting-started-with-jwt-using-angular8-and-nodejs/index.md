@@ -86,8 +86,8 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     console.log("Interception In Progress"); //Interception Stage
-    const token: string = localStorage.getItem('token');
-    req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + token) });
+    const token: string = localStorage.getItem('token');//This retrieves a token from local storage
+    req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + token) });//This clones HttpRequest and Authorization header with Bearer token added
     req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });
     req = req.clone({ headers: req.headers.set('Accept', 'application/json') });
  
@@ -96,10 +96,10 @@ export class AuthInterceptorService implements HttpInterceptor {
            catchError((error: HttpErrorResponse) => {
                 //Catching Error Stage
                 if (error && error.status === 401) {
-                    console.log("ERROR 401 UNAUTHORIZED")
+                    console.log("ERROR 401 UNAUTHORIZED")//in case of an error response the error message is displayed
                 }
                 const err = error.error.message || error.statusText;
-                return throwError(error);                    
+                return throwError(error);//any further errors are returned to frontend                    
            })
         );
   }  
@@ -149,6 +149,8 @@ app.get('/', (req, res) => {
 /* more code to be added later */
 
 
+
+
 /* the listen function */
 app.listen(port, function() {
     console.log("Listening to " + port);
@@ -157,7 +159,7 @@ app.listen(port, function() {
 Next, I will create a route where a token is generated, and it will be where the user authenticates. On successful authentication, the token is sent. Below code is added to the file `app.js`.
 ```javascript
 //SECRET FOR JWT
-let secret = 'some_secret';
+let secret = 'some_secret';//a secret key is set here
 
 /* Create token to be used */
 app.get('/token/sign', (req, res) => {
@@ -177,19 +179,10 @@ In this guide, I will use Postman to test the routes as shown below.
 
 ![first web token](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.png)
 
-As of now, I have generated the first web token. To illustrate this, I will create a `/path1` and secure it using my JSON Web Token.
+As of now, I have generated the first web token. Next, I will create a `/path1` and secure it using my JSON Web Token.
 
-For this task, I will be using the express-jwt function.
-```javascript
-app.get('/path1', (req, res) => {
-    res.status(200)
-        .json({
-            "success": true,
-            "msg": "Secrect Access Granted"
-        });
-});
-```
-Using expressJWT function:
+For this task, I will be using the express-jwt function as below:
+
 ```javascript
 //This is to allow access to the path with no token authentication
 app.use(expressJWT({ secret: secret, algorithms: ['HS256']})
@@ -205,6 +198,7 @@ Next, I will be testing the path using Postman, with no token sent in the header
 
 The app did not allow me to access the path, the error `401 Unauthorized` was displayed as expected. The code below will use the token I first obtained from the `/token/sign-in` route.
 ```javascript
+//upon successful token authentication, access to path1 is granted
 app.get('/path1', (req, res) => {
     res.status(200)
         .json({
@@ -248,7 +242,7 @@ signIn() {
         (res) => {
           console.log(res);
           if (res['token']) {
-            localStorage.setItem('token', res['token']);
+            localStorage.setItem('token', res['token']);//token here is stored in a local storage
           }
         },
         (err) => {
@@ -258,7 +252,7 @@ signIn() {
   }
 
   getPath() {
-    this.http.get(this.API_URL + '/path1')    
+    this.http.get(this.API_URL + '/path1')//path1 is then requested    
       .subscribe(
         (res) => {
           console.log(res);
@@ -291,3 +285,5 @@ As you can see, we have  a `401 Unauthorized`, meaning the application is now se
 ## Conclusion
 
 Using JSON Web Tokens, the app is now secure since the services and any communication between the server and the app is also secure. This tutorial guides on how to implement the JSON Web Token in Angular 11 and Node.js. This will help anyone to secure their applications and make them ready for production.
+
+The code used in the whole guide can be retrieved at (https://github.com/ephnjor2021/Angular11Project)
