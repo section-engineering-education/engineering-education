@@ -12,7 +12,7 @@ Be sure to visit our [Resources Page](https://github.com/section-engineering-edu
 **NOTE: We tend to stray away or tend not to publish reviews/comparisons of commercial product offerings.**
 
 ### Introduction paragraph(s):
-Please begin to write the Introductory paragraph(s), to your article to help us assess overall quality. Take your time and write it as it would be published (as-is), as this will be the qualifiy factor for article approval.
+Please write the Introductory paragraph(s), that would be included in your article. We will use this writing snippet to help us assess overall quality before approval. Take your time and write the content as you would intend to get it published.
 
 ### Pain point:
 Describe what is the pain point that your article/tutorial topic will address?
