@@ -23,7 +23,7 @@ This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.
 *NOTE To better understand this tutorial, the reader is expected to have a  foundational knowledge of IPV4 and the CISCO command-line interface (CLI)*
 
 ### Internet Protocol
-According to [Wikipeida](https://en.wikipedia.org/wiki/IP_address), an Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+According to [Wikipedia](https://en.wikipedia.org/wiki/IP_address), an Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
 IP address currently have two version in used: Internet Protocol version 4 (IPv4) and Internet Protocol Version 6 (IPv6)
 IPv4 defines an IP address as a 32-bit number while IPv6 defines IP address as a 128-bit number
 ### Public and private ip address
