@@ -37,7 +37,7 @@ These addresses are within the range :
 - `192.168.0.0` to `192.168.255.255`
 
 ### Private addressing.
-The major limitation of Internet Protocol Version 4 (IPV4) was its address exhaustion issue.
+The major limitation of Internet Protocol version 4 (IPv4) was its address exhaustion issue.
 As a short-term solution, various protocols such as private addressing and Network Address Translation (NAT) were introduced.
 These two standards work closely together, allowing organizations to assign private addresses to their internal network while translating them to public addresses to allow them connect to the internet.
 Some devices in an organization's network may not need to connect to the internet; when building such a network, an administrator is expected to use private IP addresses as defined in [RFC 1918](https://tools.ietf.org/html/rfc1918).
