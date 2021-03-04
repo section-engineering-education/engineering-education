@@ -187,10 +187,9 @@ To configure PAT for the topology above, the fowolling steps are applied
 ### Conclusion
 The introduction of private and public addressing and Network Address Translation helped slow down the exhaustion of Internet Protocol version 4 (IPV4).
 But implementing NAT also had an unintended consequences, which is providing a layer of security to the internal network by hiding their internal IP address.
-To summarized
-The reader learned:
-- What network address translation is
-- Different types of NAT and how to configure them on a CISCO router.
+To summarize:
+- The reader learned what network address translation is
+- The reader understood different types of NAT and how to configure them on a CISCO router.
 
 ### Activity files 
 For a better understaing of Network address traslation, the following files are provided for practice.
