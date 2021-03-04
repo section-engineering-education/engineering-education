@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/integration-challenges-and-solutions-in-software-development/
+title: Integration Challenges and Solutions in Software Development
+description: This article will cover about system integration, why it is important, the challenges faced and success factors to be kept into consideration.
+author: judy-nduati
+date: 2021-03-04T00:00:00-23:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/integration-challenges-and-solutions-in-software-development/hero.jpg
+    alt:  image example
+---
 With the IT industry growing at a tremendous rate, there are multiple software being used for various purposes. There are softwares that needs to work hand in hand to act as a single system and perform a certain task. This is where software integration comes into play.
-
+<!--more-->
 Software integration is one of the most important phases during software development. This is because, most of the hidden problems of the previous phases start to appear in this phase. Integrating these technologies and systems is not easy. It has been a challenge for the IT team.
 
 In this article, we'll learn about software integration challenges in software development. Also, you will learn the how to overcome system integration challenges.
