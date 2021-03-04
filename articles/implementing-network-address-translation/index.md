@@ -79,7 +79,7 @@ To resolve this problem, the network administrator decides to configure dynamic 
 If internal devices have been assigned all the available global addresses, any device requesting a public address to reach the internet will have to wait until one is made available.
 
 #### Port Address Translation (PAT)
-Dynamic NAT is use by an organizations to connect their devices, but some organizations need to have most if not all devices reach the internet.
+Dynamic NAT is used by organizations to connect their devices, but some organizations need to have most if not all devices reach the internet.
 If their network is large, it requires a huge set of registered public addresses; thus, it completely defeats NAT's goal.
 Dynamic NAT lessens this problem to some degree. However, if a large percentage of internal hosts need access to the internet, Port Address Translation, also called NAT overload, solves this problem.
 To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) and port numbers to transmit data, which can be found here [Understanding TCP/IP Transport Layer Protocols: TCP and UDP](/engineering-education/understanding-tcp-ip-transport-layer-protocols/).
