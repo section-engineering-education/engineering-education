@@ -119,3 +119,6 @@ Software integration, as seen, is a complex but very vital to today's technology
 To summarize:
 - The reader has learned about what software integration is, and how it works.
 - The reader has also learned about various challenges faced and success factors for measuring successful system integrations.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
