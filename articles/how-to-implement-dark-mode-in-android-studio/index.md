@@ -17,7 +17,7 @@ images:
 In the recent past, there has been a lot of excitement regarding dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
 <!--more-->
 ### Introduction
-The dark mode feature does not need any significant explanation. It's highly likely that you have already used dark mode on your phone or computer at one point. So, we can simply define dark mode as a setting that changes the overall color of your application to black. The dark mode is supported by both mobile and web applications. 
+The dark mode feature does not need any significant explanation. It's highly likely that you have already used dark mode on your phone or computer at one point. So, we can simply define dark mode as a setting that changes the overall color of your application to black. The dark mode is supported by both mobile and web applications.
 
 Many applications on the Google Play Store are already equipped with this feature. There are even rumors that enabling dark mode helps prolong battery life. Furthermore, it improves the visual appeal of the app, especially for those users with eye problems.
 
@@ -25,7 +25,7 @@ Many applications on the Google Play Store are already equipped with this featur
 To incorporate the dark mode feature into an Android Application using Kotlin.
 
 ### Prerequisites
-This tutorial is suitable for intermediate learners. Therefore, you must be familiar with the Kotlin programming language, as well as the file or project structure in Android studio. 
+This tutorial is suitable for intermediate learners. Therefore, you must be familiar with the Kotlin programming language, as well as the file or project structure in Android studio.
 
 When it comes to programs, you will need Android Studio installed on your computer. Having a physical Android device is also recommended. This is because we will test the application on our phones.
 
@@ -89,7 +89,7 @@ When you open this file, you will realize that there is a pre-existing style nam
 >Kindly note that the dark theme should already have all the elements described in the light theme but with different colors.
 
 ### Creating the UI
-In this tutorial, our app will have a simple user interface. The UI will include a switch and a textview. To get started, open the `activity_main.xml`. Change the layout from `ConstraintLayout` to `LinearLayout`. 
+In this tutorial, our app will have a simple user interface. The UI will include a switch and a textview. To get started, open the `activity_main.xml`. Change the layout from `ConstraintLayout` to `LinearLayout`.
 
 Remember to set the `orientation` as vertical. Next, add a Switch and `TextView` widgets and position them at the center of the page. Finally, include an id to the Switch widget.
 
