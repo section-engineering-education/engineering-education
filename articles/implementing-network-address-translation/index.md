@@ -39,7 +39,7 @@ These addresses are within the range :
 ### Private addressing.
 The major limitation of Internet Protocol version 4 (IPv4) was its address exhaustion issue.
 As a short-term solution, various protocols such as private addressing and Network Address Translation (NAT) were introduced.
-These two standards work closely together, allowing organizations to assign private addresses to their internal network while translating them to public addresses to allow them connect to the internet.
+These two standards work closely together, allowing organizations to assign private addresses to their internal network while translating them to public addresses to allow them to connect to the internet.
 Some devices in an organization's network may not need to connect to the internet; when building such a network, an administrator is expected to use private IP addresses as defined in [RFC 1918](https://tools.ietf.org/html/rfc1918).
 The documentation defines a set of network addresses assigned to an organization's internal network so that devices can communicate locally.
 If there is a need for such devices to connect to the internet, their private addresses must be translated to public addresses using Network Address Translation (NAT).
