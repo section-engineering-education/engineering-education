@@ -2,10 +2,7 @@
 ![hero Image](/engineering-education/implementing-network-address-translation/hero.jpg)
 [source](https://unsplash.com/photos/eVWWr6nmDf8)
 ### Introduction
-This tutorial will cover how to implement NAT on a CISCO router, and it is expected that at the of the tutorial, the reader should learn the following:
-- What Network Address Translation is
-- Types of NAT
-- How to configure different types of NAT on a CISCO router.
+In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will learn what NAT is, different types of NAT and how to configure different types of NAT on a Cisco router.
   
 ### Table Contents
 - [Requirement](#Requirement)
