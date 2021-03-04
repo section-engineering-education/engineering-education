@@ -31,7 +31,10 @@ All IPv4 addresses can be divided into two groups: public (global) and private (
 Public addresses are routable addresses that are used on the internet.
 These addresses allow users to access resources on a computer network located anywhere in the world.
 Private addresses are not routable  and no traffic can be sent to them or by them over the internet.
-These address are within the range : 10.0.0.0 to 10.255.255.255.255, 172.16.0.0 to 172.255.255.255 and 192.168.0.0 t0 192.168.255.255
+These addresses are within the range : 
+- `10.0.0.0` to `10.255.255.255.255`
+- `172.16.0.0` to `172.255.255.255`
+- `192.168.0.0` to `192.168.255.255`
 
 ### Private addressing.
 The major limitation of Internet Protocol Version 4 (IPV4) was its address exhaustion issue.
