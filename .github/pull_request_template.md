@@ -1,5 +1,5 @@
 ### Article checklist
-**NOTE: (1st time contributors - submit ONLY one article to get familiar with the process, quality, and style-once published, you can then submit any number of articles.)**
+**NOTE: (Please ensure that you have only one open issue + linked pull request at a time. This will ensure that we complete the article in a timely manner from inception to publishing.)**
 #### Preliminary Checks - Formatting and Structure 
 - [ ] Does your article follow any of the suggested structure formats? - **see [example formats](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)**
 - [ ] Is your article properly formatted in Markdown? - **see [Github Markdown guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)**
