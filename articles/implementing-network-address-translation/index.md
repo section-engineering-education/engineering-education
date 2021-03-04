@@ -3,10 +3,10 @@
 [source](https://unsplash.com/photos/eVWWr6nmDf8)
 ### Introduction
 In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will learn what NAT is, different types of NAT and how to configure different types of NAT on a Cisco router.
-  
-  ### Requirement
+
+As a prerequisite, a foundational knowledge of CISCO command line interface(CLI) and access control list (ACL) would help any readers understand the article better.
+### Requirement
 This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.netacad.com/portal/resources/packet-tracer).
-*NOTE To better understand this tutorial, the reader is expected to have a  foundational knowledge of IPV4 and the CISCO command-line interface (CLI)*
 
 ### Table of Contents
 - [Requirement](#requirement)
@@ -17,7 +17,8 @@ This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.
 - [Types of NAT](#types-of-nat)
 - [Configuring static NAT](#configuring-static-nat)
 - [Configuring dynamic NAT](#configuring-dynamic-nat)
-- [Configuring PAT](#configuring-pat)
+- [Configuring PAT with multiple public addresses](#configuring-pat-with-multiple-public-addresses)
+- [Configuring PAT with one public address](#configuring-pat-with-one-public-address)
 - [Conclusion](#conclusion)
 - [Activity files](#activity-files)
 - [Further reading](#further-reading)
@@ -26,7 +27,7 @@ This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.
 
 ### Internet Protocol
 According to [Wikipedia](https://en.wikipedia.org/wiki/IP_address), an Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
-The IP address currently has two versions in use: Internet Protocol version 4 (IPv4) and Internet Protocol Version 6 (IPv6).
+The IP address currently has two versions in use: Internet Protocol version 4 (IPv4) and Internet Protocol version 6 (IPv6).
 IPv4 defines an IP address as a 32-bit number while IPv6 defines an IP address as a 128-bit number.
 ### Public and private IP address
 All IPv4 addresses can be divided into two groups: public (global) and private (local) addresses.
@@ -48,7 +49,7 @@ If there is a need for such devices to connect to the internet, their private ad
 Because private addresses are not routable addresses, for a device configured with a private address to access the internet or a remote network, the address must be translated into a public routable address.
 This translation takes place on a NAT-enabled router which typically operates on the border of a stub network.
 ![Network address translation](/engineering-education/implementing-network-address-translation/nat.JPG)
-In the figure above, PCA with an IP address of `172.31.1.2` wants to reach the webserver, but because PCA's address is not routable, because of this it cannot access the server directly.
+In the figure above, PCA with an IP address of `172.31.1.2` wants to reach the webserver, but because PCA's address is not routable, it cannot access the server directly.
 To do this, the NAT-enabled router translates the PC's private address of `172.31.1.2` to a public address of `200.100.100.2` that is routable over the internet.
 From the server's perspective, it sees this address as the source address.
 Suppose the server wants to send data to the PC, it will use that source address as its destination address.
@@ -92,7 +93,7 @@ This second part will cover how to implement Static NAT, Dynamic NAT, and PAT on
 
 ####  Steps to Configuring Static NAT.
 Static NAT is configured using two steps, which are:
-1. Creating a mapping between the private internal address and public global address using the  ```ip nat inside source static *private address public address``` global configuration command.
+1. Creating a mapping between the private internal address and public global address using the  ```ip nat inside source static private address public address``` global configuration command.
 2. After the mapping is made, the interfaces partaking in NAT translation are configured as either **inside** or **outside** comparative with NAT.
 The router interface associated with the LAN is assigned the inside interface using the ```ip nat inside``` interface mode command.
 The router interface associated with the internet is assigned the outside interface using  the ```ip nat inside``` interface  mode command
@@ -112,7 +113,7 @@ command and identify it as the inside interface relative to NAT using the ```IP 
 Configuring dynamic NAT has some similarities to configuring static NAT, but it also has differences.
 Dynamic NAT still requires that both inside and outside interface be configured.
 It uses an access control list (ACL) to specify which private addresses are subject to translation and a NAT pool of registered IP addresses to be allocated to them.
-1. Create an ACL using the ```access-list 1  permit  address wildcard mask```
+1. Create an ACL using the ```access-list 1  permit  address wildcard mask```command
 2. Create a NAT pool using the ```ip nat pool name first address last address  netmask sub-net mask``` global configuration command
 This pool will contain the public addresses for the translation.
 *Because ISP usually assigned contiguous public addresses to organizations, the **first address** is the least address in the given address range.
@@ -139,7 +140,7 @@ command and identify it as the inside interface  using the ```ip nat inside``` c
 
 ![Dynamic NAT configuration on a CISCO router](/engineering-education/implementing-network-address-traslation/dynamiccon.JPG)
 
-### Configuring PAT with multiple public addresses
+### PAT with multiple public addresses
 If an organization is assigned more than one public address by an Internet Service Provider (ISP), then configuring PAT looks exactly like dynamic NAT, except that the ```ip nat inside source list--- pool….``` command in step 3 above has an **overload** keyword added to it at the end.
 
 #### Steps to configuring PAT with multiple public addresses
@@ -161,10 +162,10 @@ An organization was assigned two public addressees, `200.100.100.1` and `00.100.
 This allows for the dynamic mapping  of the private addresses and the public address in the NAT pool named LAN.
 The **overload** keyword used here is the only configuration difference between PAT and dynamic NAT.
 -  Enter the ```interface serial 0/0/0/``` to idenfitify the interface as the outside interface  using the: ```ip nat outside command```.
-- Enter gigabitethernet 0/0 using the ```interface gigabitethernet g0/0 command and identify it as the inside interface relative to NAT with the ```ip nat inside``` command
+- Enter gigabitethernet 0/0 using the ```interface gigabitethernet g0/0``` command and identify it as the inside interface relative to NAT with the ```ip nat inside``` command
 ![PAT with multiple publicc address configuration on as CISCO router](/engineering-education/implementing-network-address-translation/patmulcon.JPG)
 
-### Configuring PAT with a single address.
+### Steps to configuring PAT with a single address.
 If an organization is assigned a single public address by an ISP, PAT can be configured with little changes compared to PAT with multiple addresses.
 In this situation, a NAT pool is not created, but an outside interface used for the translation is used in place of the NAT pool in step 3 above.
 1. Create an ACL using the ```access-list 1 permit address wildcard mask```
@@ -174,7 +175,7 @@ In this situation, a NAT pool is not created, but an outside interface used for 
 3. Use the ```ip nat inside``` interface command to enable the inside interface for Nat translation
 4. Use the ```ip nat outside``` interface command to enable the outside interface for NAT translation.
 
-### Configuring PAT with single single
+### Configuring PAT with one public address
 An organization was assigned one public address, `200.100.100.1`, and wants to allow its internal hosts, in the private network `172.31.1.0  255.255.255.0` to reach the internet using PAT
 ![PAT topology](/engineering-education/implementing-network-address-traslation/pattopo.JPG)
 To configure PAT for the topology above, the fowolling steps are applied
@@ -182,10 +183,11 @@ To configure PAT for the topology above, the fowolling steps are applied
 - Bind the access list and the outside interface together using the ```ip inside source list 1 interface s0/0/0 overload```.
 - Enter the ```interface serial 0/0/0/```  command to identify it as the outside interface relative to NAT using the: ip nat outside command.
 - Enter the ```interface gigabitethernet g0/0``` command and identify it as the inside interface relative to NAT using the ```ip nat inside``` command
- ![PAT with single address configuration on a CISCO router](/engineering-education/implementing-network-address-translation/patsincon.JPG)
+ ![PAT with one public address configuration on a CISCO router](/engineering-education/implementing-network-address-translation/patsincon.JPG)
+The figure above shows the configurationof PAT using one public addresson a CISCO router.
 
 ### Conclusion
-The introduction of private and public addressing and Network Address Translation helped slow down the exhaustion of Internet Protocol version 4 (IPV4).
+The introduction of private and public addressing and Network Address Translation helped slow down the exhaustion of Internet Protocol version 4 (IPv4).
 But implementing NAT also had an unintended consequences, which is providing a layer of security to the internal network by hiding their internal IP address.
 To summarize:
 - The reader learned what network address translation is
@@ -193,8 +195,8 @@ To summarize:
 
 ### Activity files 
 For a better understaing of Network address traslation, the following files are provided for practice.
-- [Staic NAT packet tracer activity files](https://drive.google.com/file/d/1GO_LIIUx_qBHQRMWuHQBpzIepQpUM85d/view?usp=sharing)
-- [Dynamic packet tracer activity file](https://drive.google.com/file/d/1pwYgVJVSVQStPBy5ftsFtXwIrSq24pEK/view?usp=sharing)
+- [Staic NAT packet tracer activity files](https://drive.google.com/file/d/1ga7yVUv3oqswbJJW6mnGAZ7A81USSuMf/view?usp=sharing)
+- [Dynamic packet tracer activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
 - [PAT with multiple addresses activity file](https://drive.google.com/file/d/1Xf2qxUJ-6X74vsJY4HZ8Z9tZW2C3hT7j/view?usp=sharing)
 - [PAT with single address activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
 
