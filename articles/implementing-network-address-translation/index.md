@@ -7,7 +7,7 @@ In this article, we will learn how to implement Network Address Translation (NAT
 ### Table Contents
 - [Requirement](#Requirement)
 - [Internet Protocol](#Internet-Protocol)
-- [Public and private ip address](#Public-and-private-ip-address)
+- [Public and private IP address](#public-and-private-ip-address)
 - [Private addressing](#Private-addressing)
 - [Network Address Translation](#Network-Address-Translation)
 - [Types of NAT](#Types-of-NAT)
