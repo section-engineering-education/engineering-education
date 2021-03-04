@@ -26,7 +26,7 @@ This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.
 According to [Wikipedia](https://en.wikipedia.org/wiki/IP_address), an Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
 The IP address currently has two versions in use: Internet Protocol version 4 (IPv4) and Internet Protocol Version 6 (IPv6).
 IPv4 defines an IP address as a 32-bit number while IPv6 defines an IP address as a 128-bit number.
-### Public and private ip address
+### Public and private IP address
 All IPv4 addresses can be divided into two groups: public (global) and private (local) addresses.
 Public addresses are routable addresses that are used on the internet.
 These addresses allow users to access resources on a computer network located anywhere in the world.
