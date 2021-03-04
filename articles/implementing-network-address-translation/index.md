@@ -48,7 +48,7 @@ If there is a need for such devices to connect to the internet, their private ad
 Because private addresses are not routable addresses, for a device configured with a private address to access the internet or a remote network, the address must be translated into a public routable address.
 This translation takes place on a NAT-enabled router which typically operates on the border of a stub network.
 ![Network address translation](/engineering-education/implementing-network-address-translation/nat.jpg)
-In the figure above, PCA with an IP address of 172.31.1.2 want to reach the webserver, but because PCA's address is not routable, because of this it cannot access the server directly.
+In the figure above, PCA with an IP address of 172.31.1.2 wants to reach the webserver, but because PCA's address is not routable, because of this it cannot access the server directly.
 To do this, the NAT-enabled router translates the PC's private address of 172.31.1.2 to a public address of 200.100.100.2 that is routable over the internet.
 From the server's perspective, it sees this address as the source address.
 Suppose the server wants to send data to the PC, it will use that source address as its destination address.
