@@ -41,6 +41,7 @@ The `toJSON()` method is different as it always returns the data as the integer 
 ```js
     buffer3.toJSON()
 ```
+
 The REPL return value will be:
 ```bash
 {
