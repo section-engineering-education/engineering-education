@@ -18,7 +18,7 @@ In this article, we will learn how to implement Network Address Translation (NAT
 - [Activity files](#Activity-files)
 - [Further reading](#Further-reading)
 
-### Requirement.
+### Requirement
 This tutorial uses the CISCO packet tracer [Download packet tracer](https://www.netacad.com/portal/resources/packet-tracer).
 *NOTE To better understand this tutorial, the reader is expected to have a  foundational knowledge of IPV4 and the CISCO command-line interface (CLI)*
 
