@@ -68,7 +68,7 @@ Static NAT is usually configured by a network administrator, and this configurat
 In the figure above, PC1 and PC2 want to reach PC3, which is in a remote network.
 But because both are configured with private addresses, which are not routable, they can not access PC3 directly.
 To access PC3, a NAT-enabled router is configured with static NAT, which mapped their  private addresses to public addresses one-to-one, thus allowing them to communicate with PC3.
-Static NAT is useful for a device that needs a dedicated address, such as a web server, but requires an equal number of public addresses for Simultaneous users.
+Static NAT is useful for a device that needs a dedicated address, such as a web server but requires an equal number of public addresses for Simultaneous users.
 
 #### Dynamic NAT
 Dynamic NAT, much the same as static, gives a one-to-one mapping among private and public addresses, yet not at all like static NAT dynamic.
