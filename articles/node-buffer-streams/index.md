@@ -12,18 +12,47 @@ Buffers are useful when interacting with binary data. A buffer is a memory space
 
 ### Creating a Buffer
 Node.js has a built-in class for creating and manipulating Buffers. There are two ways to create a Buffer:
+
 1. Creating a Buffer of fixed size
     ```js
-        const buffer = new Buffer.alloc(10);
-    ```
-2. Creating a Buffer with content
+        const buffer = new Buffer.alloc(1024);
+   ```
+ The `Buffer` class is available globally. The `alloc()` function is available from the `Buffer` class which takes the size of the buffer as its argument. This creates a size from the passed integer to represent the bytes in memory that the created buffer object will use. In this case, we create a buffer that is 1KB of binary data in size.
+
+2. Creating a Buffer from existing data:
+We use the `from()` method to create a buffer from pre-existing data. An example using a string:
+
    ```js
    const buffer2 =  new Buffer.from("This is a node buffer");
    ```
 
 ### Reading from a Buffer
-
-
+When reading from a buffer, we can either access an individual byte or the entire content. To access a byte, we pass the location or the index of the byte. Since they store the content sequentially, the index starts at `0`. For example:
+```js
+     const buffer3 = new Buffer.from("Hi new buffer!");
+     // To read the data:
+     buffer3[0];
+```
+When using the REPL in Node.js, this should display 72 that corresponds to the `H` in the UTF-8 encoding. This will only read an individual byte. To retrieve all data stored, the buffer object has the `toString()` and the `toJSON()` methods that will return the entire content in the formats. The `toString()` method will convert the bytes of the buffer into a readable string. For example, to output `Hi new buffer` in the REPL:
+```js
+    buffer3.toString()
+```
+The `toJSON()` method is different as it always returns the data as the integer representation of the byte. For example:
+```js
+    buffer3.toJSON()
+```
+The REPL return value will be:
+```bash
+{
+  type: 'Buffer',
+  data: [
+     72, 105,  32, 110, 101,
+    119,  32,  98, 117, 102,
+    102, 101, 114,  33
+  ]
+}
+```
+The JSON object has a property key named `type` that will always be a buffer. This helps to distinguish these types of JSON from other JavaScript JSON objects. The `data` property contains an array of the interger representation of the buffer bytes.
 
 ### The Node.js stream module
 Streams allow us to access data from the source while the data is actively being transferred to its destination in a more efficient manner. Streams are just abstract object interfaces that let us read data from the input or write to outputs sequentially. To explain this better, I am going to use an example in a moment. We already know that any I/O bound tasks in Node.js are handled asynchronously. Therefore, interacting with the disk or network calls will involve callback functions. 
