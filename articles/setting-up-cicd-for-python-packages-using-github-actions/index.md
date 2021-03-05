@@ -128,13 +128,13 @@ We leave the `__init__.py` empty.
 
 **Important things to note:**
 
-1. The `[logic.py](http://logic.py)` uses the Python package *pytz* to understand the different time zones as it comes with the time zones in-built. We wrap the various functions in this file around *pytz* and its in-built functions. We also format some of the results to fit our end goal, a CLI for time zones.
-2. The `[main.py](http://main.py)` is where the magic happens as we build and design our CLI. The *click* library is used to build CLIs in Python (similar to *typer*, *fire*, and the in-built *argparse*). This library has functions that wrap around our previously created functions in `[logic.py](http://logic.py)` to interface directly with a user on the command line.
-3. The `__init__.py` enables the `src` folder to be seen as a module as we imported some functions from *[logic.py](http://logic.py)* into *main.py*.
+1. The `logic.py` uses the Python package *pytz* to understand the different time zones as it comes with the time zones in-built. We wrap the various functions in this file around *pytz* and its in-built functions. We also format some of the results to fit our end goal, a CLI for time zones.
+2. The `main.py` is where the magic happens as we build and design our CLI. The *click* library is used to build CLIs in Python (similar to *typer*, *fire*, and the in-built *argparse*). This library has functions that wrap around our previously created functions in `logic.py` to interface directly with a user on the command line.
+3. The `__init__.py` enables the `src` folder to be seen as a module as we imported some functions from *logic.py* into *main.py*.
 
 ### Packaging Code
 
-Once we're done with the application logic, we package our application to work locally on our machines. First, let's create a `[setup.py](http://setup.py)` file in the top-level directory. 
+Once we're done with the application logic, we package our application to work locally on our machines. First, let's create a `setup.py` file in the top-level directory. 
 
 Then, fill the file with the contents in the code snippet below:
 
