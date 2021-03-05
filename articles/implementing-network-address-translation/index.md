@@ -1,6 +1,21 @@
-# Implementing Network Address Translation (NAT) on a Cisco router
-In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will learn what NAT is, different types of NAT and how to configure different types of NAT on a Cisco router.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-network-address-translation/
+title: Implementing Network Address Translation (NAT) on a Cisco router
+description: This tutorial will be a brief dive into the understanding the address translations like NAT and PAT. We will learn to implement static NAT, dynamic NAT and PAT.
+author: rabo-james-bature
+date: 2021-03-06T00:00:00-00:15
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implementing-network-address-translation/hero.jpg
+    alt: NAT hero image
+--- 
+In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will learn what NAT is, different types of NAT and how to configure different types of NAT on a Cisco router.
+<!--more-->
 As a prerequisite, foundational knowledge of Cisco command-line interface (CLI) and access control list (ACL) would help the readers understand the article better.
 
 ### Requirement
