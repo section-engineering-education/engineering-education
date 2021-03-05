@@ -6,14 +6,14 @@ url: /engineering-education/implementing-network-address-translation/
 title: Implementing Network Address Translation (NAT) on a Cisco Router
 description: This tutorial will be a brief dive into understanding the address translations like NAT and PAT. We will learn to implement static NAT, dynamic NAT and PAT.
 author: rabo-james-bature
-date: 2021-03-05T00:00:00-12:00
+date: 2021-03-05T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementing-network-address-translation/hero.jpg
     alt: NAT hero image
---- 
+---
 In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will have learned what NAT is, the different types of NAT, and how to configure different types of NAT on a Cisco router.
 <!--more-->
 As a prerequisite, foundational knowledge of Cisco command-line interface (CLI) and access control list (ACL) would help the readers understand the article better.
@@ -42,7 +42,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/IP_address), an Internet 
 The IP address can be classifed as:
 - Internet Protocol version 4 (IPv4)
 - Internet Protocol version 6 (IPv6)
-  
+
 IPv4 defines an IP address as a 32-bit number, while IPv6 defines an IP address as a 128-bit number.
 
 ### Public and private IP address
@@ -130,7 +130,7 @@ Dynamic NAT is more commonly used by organizations, to connect their devices to 
 
 Dynamic NAT reduces this problem to some degree. However, if a large percentage of internal hosts need access to the internet then, we must use Port Address Translation, also called NAT overload.
 
-To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP), User Datagram Protocol (UDP) and port numbers to transmit data. 
+To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP), User Datagram Protocol (UDP) and port numbers to transmit data.
 
 To learn more about TCP and UDP, it is highly recommeded to go over [this](/engineering-education/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
 
@@ -287,7 +287,7 @@ To summarize:
 - The reader learned what network address translation is.
 - The reader understood different types of NAT and how to configure them on a Cisco router.
 
-### Activity files 
+### Activity files
 For a better understanding of Network Address Translation, the following files are provided for practice.
 - [Static NAT packet tracer activity files](https://drive.google.com/file/d/1ga7yVUv3oqswbJJW6mnGAZ7A81USSuMf/view?usp=sharing)
 - [Dynamic packet tracer activity file](https://drive.google.com/file/d/1_pBXkLEFshdthJuZHNwLgHOvoapybVEL/view?usp=sharing)
