@@ -75,7 +75,7 @@ def area_zone(zone):
         print("Timezone is not on the list. Consider using location instead.")
 
 def timezones(zone):
-"""This function is used to handle situations of Daylight Saving Time that the standard library can't recognize."""
+	"""This function is used to handle situations of Daylight Saving Time that the standard library can't recognize."""
     zones = {
         "PDT": "PST8PDT",
         "MDT": "MST7MDT",
