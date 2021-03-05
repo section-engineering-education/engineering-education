@@ -168,7 +168,7 @@ This pool will contain the public addresses for the translation. Because, ISP as
 
 The `first address` is the least in the given address range. And, the `last address` is the highest address of that range.
 
-The netmask identifies the network to which of these addresses belong to, using the `ip nat inside source list ACL number pool NAT POOL` command to bind the ACL and the NAT Pool created.
+The netmask identifies the network to which of these addresses belong to, using the `ip nat inside source list [access-list] [number] pool [name]` command to bind the ACL and the NAT Pool created.
 
 In this case, the ACL number is `1`, and the NAT POOL is `LAN`.
 
@@ -198,10 +198,10 @@ command and identify it as the `inside` interface using the `ip nat inside` comm
 If an organization is to assigned more than one public address by an Internet Service Provider (ISP), then configuring PAT looks exactly like a dynamic NAT, except that the `ip nat inside source list--- pool` command in `step 3`, with an `overload` keyword added at the end.
 
 #### Steps to configure PAT with multiple public addresses
-1. Create an ACL using the `access-list 1 permit address wildcard mask`.
+1. Create an ACL using the `access-list 1 permit [address][ wildcard mask]`.
 2. Create a NAT pool using the `ip nat pool [name] [first-address] [last-address] [netmask] [subnet mask]` global configuration command.
 This pool will contain the public addresses to be used for the translation.
-3. The `ip nat inside source list ACL number pool NAT POOL overload`
+3. The `ip nat inside source list [ACL] [number] pool [name] overload`
 The full command is `ip nat inside source list 1 pool LAN overload`.
 4. Use the `ip nat inside` interface command to enable the `inside` interface for NAT translation
 5. Use the `ip nat outside` interface command to enable the `outside` interface for NAT translation.
@@ -212,7 +212,7 @@ An organization is assigned to two public addressees: `200.100.100.1` and `00.10
 *PAT topology*
 To configure PAT for the network topology above, the following steps are applied:
 1. Create an ace list that will specify which private addresses are allowed to be translated using the `access-list 1 permit 172.31.1.0 0.0.0.255`
-2. `ip nat pool LAN 200.100.100.1 200.100.100.1 netmask 255.255.255.0` creates a pool that contains the public addresses to be used for translation.
+2. `ip nat pool LAN 200.100.100.1 200.100.100.1 [netmask] 255.255.255.0` creates a pool that contains the public addresses to be used for translation.
 3. Bind the access list and the pool together using the `ip inside source list 1 pool LAN overload`.
 This allows for the dynamic mapping of the private addresses and the public address in the NAT pool named LAN.
 The **overload** keyword used here is the only configuration difference between PAT and dynamic NAT.
@@ -226,8 +226,8 @@ The **overload** keyword used here is the only configuration difference between 
 If an organization is assigned a single public address by an ISP. Then, PAT can be configured with a little changes when compared to PAT with multiple addresses.
 
 In this situation, a NAT pool is not created, but an outside interface used for the translation is used in place of the NAT pool as mentioned in `step 3` above.
-1. Create an ACL using the `access-list 1 permit address wildcard mask`
-2. PAT is enabled using the `ip nat inside source list ACL number interface interface-type/number overload`
+1. Create an ACL using the `access-list 1 permit [address] [wildcard mask]`
+2. PAT is enabled using the `ip nat inside source list [ACL] [number] interface [interface-type/number] overload`
 The interface used for this is outside interface, and it is configured as the single public address assigned to the organization by an ISP.
 3. Use the `ip nat inside` interface command to enable the `inside` interface for Nat translation
 4. Use the `ip nat outside` interface command to enable the `outside` interface for NAT translation.
