@@ -6,15 +6,15 @@ url: /engineering-education/integration-challenges-and-solutions-in-software-dev
 title: Integration Challenges and Solutions in Software Development
 description: This article will cover about system integration, why it is important, the challenges faced and success factors to be kept into consideration.
 author: judy-nduati
-date: 2021-03-04T00:00:00-23:00
+date: 2021-03-04T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/integration-challenges-and-solutions-in-software-development/hero.jpg
-    alt:  image example
+    alt: Integration Challenges image example
 ---
-With the IT industry growing at a tremendous rate, there are multiple software being used for various purposes. There are softwares that needs to work hand in hand to act as a single system and perform a certain task. This is where software integration comes into play.
+With the IT industry growing at a tremendous rate, there is multiple software being used for various purposes. There are softwares that needs to work hand in hand to act as a single system and perform a certain task. This is where software integration comes into play.
 <!--more-->
 Software integration is one of the most important phases during software development. This is because, most of the hidden problems of the previous phases start to appear in this phase. Integrating these technologies and systems is not easy. It has been a challenge for the IT team.
 
@@ -38,18 +38,19 @@ Software integration is the process of combining different softwares and subsyst
 
 Integration improves business operations and processes, productivity, and quality of the final product. It enables easier communications among IT systems, thus speeding up the flow of information and reducing the operating costs.
 
-There are four various ways to achieve software integration. They are:
+There are four various ways to achieve software integration. 
 
-- [Vertical integration](https://en.wikipedia.org/wiki/Vertical_integration) - it is a software integration method where subsystems of a network are merged according to their functionalities.
-- [Star integration](https://en.wikipedia.org/wiki/System_integration) - it is when the subsystems connect with other subsystems through point-to-point connections.
-- [Horizontal integration](https://en.wikipedia.org/wiki/Horizontal_integration) - it is where a subsystem can be used as an interface for other subsystems. The subsystem used as an interface is the Enterprise Service Bus (ESB). An advantage of this method is that, it is easy to change a subsystem without interfering with other subsystems.
-- [Common data integration format](https://en.wikipedia.org/wiki/System_integration) - it sets down an application-independent format with a goal of achieving a single format system. Systems that use this technique can convert applications to a [common application](https://biz-techservices.com/the-importance-of-system-integration-in-businesses/).
+They are:
+1. [Vertical integration](https://en.wikipedia.org/wiki/Vertical_integration) - this is a software integration method where subsystems of a network are merged according to their functionalities.
+2. [Star integration](https://en.wikipedia.org/wiki/System_integration) - it is when the subsystems connect with other subsystems through point-to-point connections.
+3. [Horizontal integration](https://en.wikipedia.org/wiki/Horizontal_integration) - it is where a subsystem can be used as an interface for other subsystems. The subsystem used as an interface is the Enterprise Service Bus (ESB). An advantage of this method is that, it is easy to change a subsystem without interfering with other subsystems.
+4. [Common data integration format](https://en.wikipedia.org/wiki/System_integration) - it sets down an application-independent format with a goal of achieving a single format system. Systems that use this technique can convert applications to a [common application](https://biz-techservices.com/the-importance-of-system-integration-in-businesses/).
 
 ### Why is software integration important?
 The software integration process is facilitated by Application Programming Interfaces (APIs). They are functions and procedures which facilitate interaction between different software intermediaries. Below are some reasons why integrating software is important.
 
 #### Improved accessibility of data
-When software or systems are integrated, they form a single system. This means that the data is in one place, which in turn eases data accessibility. Employees can access data anytime without looking for help or being familiar with the systems in a company. Improved accessibility enables cost reduction and saves time.
+When software or systems are integrated, they form a single system. This means that the data is in one place, which in turn eases data accessibility. Employees can access data anytime without looking for help or being familiar with the systems in a company. Improved accessibility reduces cost and saves time.
 
 #### Error reduction
 With software integration, errors are very few due to data synchronization. Without software integration, there would be scattered data or manual movement of data. Scattered data lacks uniformity. In case of changes, they have to be done in all the data locations to reflect the right data.
