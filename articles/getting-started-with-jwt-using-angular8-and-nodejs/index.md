@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/jwt-using-angular11-and-nodejs/
-title: Getting Started with JWT using Angular 11 and Node.Js
+url: /engineering-education/json-web-auth-using-angular11-and-nodejs/
+title: Getting Started with Json web auth Using Angular 11 and Node.Js
 description: In this article, we will look at how to implement Json Web Tokens (JWT) in Angular 11 using a simple Node.Js server.
 author: ephraim-njoroge
 date: 2021-06-03T00:00:00-10:00
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/jwt-using-angular11-and-nodejs/hero.jpg
+  - url: /engineering-education/json-web-auth-using-angular11-and-nodejs/hero.jpg
     alt: JWT Angular Node example
 ---
 JSON Web Token (JWT) is an RFC standard that ensures that the data transmitted between a client and a server as a JSON object is secured. The information is digitally signed. ie. it can be verified and signed.
