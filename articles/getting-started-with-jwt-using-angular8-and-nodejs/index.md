@@ -1,4 +1,22 @@
-JSON Web Token (JWT) is an RFC standard that ensures that the data transmitted between a client and a server as a JSON object is secured. The information is digitally signed. ie. it can be verified and signed. JWTs are signed using a secret key or a public or a private key pair using RSA/ECDSA algorithms. In this guide we will use a secret key.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/jwt-using-angular11-and-nodejs/
+title: Getting Started with JWT using Angular 11 and Node.Js
+description: In this article, we will look at how to implement Json Web Tokens (JWT) in Angular 11 using a simple Node.Js server.
+author: ephraim-njoroge
+date: 2021-06-03T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/jwt-using-angular11-and-nodejs/hero.jpg
+    alt: JWT Angular Node example
+---
+JSON Web Token (JWT) is an RFC standard that ensures that the data transmitted between a client and a server as a JSON object is secured. The information is digitally signed. ie. it can be verified and signed.
+<!--more-->
+ JWTs are signed using a secret key or a public or a private key pair using RSA/ECDSA algorithms. In this guide we will use a secret key.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -316,4 +334,9 @@ Using JSON Web Tokens, the app is now secure since the services and any communic
 
 The code used in this tutorial can be found in [this GitHub repo](https://github.com/ephnjor2021/Angular11Project).
 
+That is it. 
+
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
