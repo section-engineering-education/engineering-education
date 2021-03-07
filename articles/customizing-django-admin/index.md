@@ -336,7 +336,6 @@ What is remaining now is just calling our function inside the list display, so l
    ```
 Now you can go ahead and run the localhost and enjoy the view.
 
-
 ###  Conclusion
 With the information above, you are now capable of customizing your Django admin.
 Happy coding!  
