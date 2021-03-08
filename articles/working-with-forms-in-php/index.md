@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/working-with-forms-in-php/
 title: Working with Forms in PHP
-description: This article shows you how to implement forms using PHP and HTML. The reader will also understand the GET and POST methods.
+description: This article will show you how to implement forms using PHP and HTML. The reader will also understand the GET and POST methods. POST creates data, GET reads data from the server, and PUT update data in the server.
 author: judy-nduati
-date: 2021-02-04T00:00:00-14:00
+date: 2021-03-08T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,35 +14,39 @@ images:
   - url: /engineering-education/working-with-forms-in-php/hero.jpg
     alt: Working with Forms in PHP
 ---
-HTML forms are mainly used for collecting user input in web-based applications. They range from contact forms, login forms to registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server. 
+We mainly use HTML forms when collecting user input in web-based applications. They range from contact forms, login forms, and also registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server.
 <!--more-->
 Through this article, you will learn how to:
 - Create an HTML form.
-- Learn about Hypertext Transfer Protocol (HTTP) request methods(GET, POST, and PUT).
+- Learn about Hypertext Transfer Protocol (HTTP) request methods (GET, POST, and PUT).
 - Understand PHP [POST and GET methods](https://www.w3schools.com/tags/ref_httpmethods.asp). 
 
 ### Prerequisites
-You should have prior knowledge of HTML, PHP, and MySQL.
+Before we begin you should have prior knowledge of HTML, PHP, and MySQL.
 
 ### Overview of forms
 A [form](https://www.tutorialspoint.com/php/php_form_introduction.htm) is a document with blank fields for a user to insert or update data. The user's data is stored in the database and retrieved anytime.
 
-Using forms to collect data in a web application is a simple task. Some of the popular forms include:
+Using forms to collect data in a web application is a simple task. 
+
+Some of the popular forms include:
 - Contact Forms
 - Search Forms
 - Login Forms
 - Registration Forms
 
-The form is presented to the user who inserts data and submits the form using a `submit` button. Most of the time, the form data is sent to the server for processing. Processing user input involves validating inputs, database operations, and providing feedback to the user. There are four database operations involved, namely create, read, update, and delete. This pattern is commonly known by the acronym `CRUD` operations.
+The form is presented to the user who inserts data and submits the form using a `submit` button. Most of the time, the form data is sent to the server for processing. Processing user input involves validating inputs, database operations, and providing feedback to the user. There are four database operations involved, these being create, read, update, and delete. This pattern is commonly known by the acronym `CRUD` operations.
 
-Hypertext Transfer Protocol (HTTP) enables the communication between the client (browser) and the server. An HTTP request is sent by a client to the server which then returns a response. Though HTTP supports several methods, we will focus on `GET`, `POST`, and `PUT`. Data is processed based on the selected method.
+Hypertext Transfer Protocol (HTTP) enables communication between the client (browser) and the server. An HTTP request is sent by a client to the server which then returns a response. Though HTTP supports several methods, we will focus on `GET`, `POST`, and `PUT`. Data is processed based on the selected method.
 
-The `GET` method fetches data from the server. The `POST` method sends data from the HTML form to the server to create a resource. `PUT` method sends data to the server to create or update a resource. Some developers are unable to differentiate between the POST and PUT methods. The PUT method is `idempotent`. This means calling a PUT method multiple times will not affect the database because data is already updated. In contrast, calling a `POST` method affects the database because you create multiple objects. 
+The `GET` method fetches data from the server. The `POST` method sends data from the HTML form to the server to create a resource. `PUT` method sends data to the server to create or update a resource. Some developers are unable to differentiate between the POST and PUT methods. 
+
+The PUT method is `idempotent`. This means calling a PUT method multiple times will not affect the database because data is already updated. In contrast, calling a `POST` method affects the database because you create multiple objects. 
 
 ### How to create HTML forms
-HTML forms can contain special elements such as [buttons](https://www.w3schools.com/tags/att_button_form.asp), [radio buttons](https://www.w3schools.com/tags/att_input_type_radio.asp), and [checkboxes](https://www.w3schools.com/tags/att_input_type_checkbox.asp). It, therefore, becomes easy for the user to interact with the webpage. Forms should be user-friendly. This means that a user with no technical skills should use it easily.
+HTML forms can contain special elements such as [buttons](https://www.w3schools.com/tags/att_button_form.asp), [radio buttons](https://www.w3schools.com/tags/att_input_type_radio.asp), and [checkboxes](https://www.w3schools.com/tags/att_input_type_checkbox.asp). It, therefore, becomes easy for the user to interact with the webpage. Forms should be user-friendly. This means that a user with no technical skills should be able to use it.
 
-Forms are defined by the `<form><\form>` tags. The `form` tag surrounds all the inputs. Also, it gives instructions about how and where to submit the form. The HTML form sends data to your PHP script using either `POST` or `GET` methods.
+Forms are defined by the `<form><\form>` tags. The `form` tag surrounds all the inputs. It also gives instructions about how and where to submit the form. The HTML form sends data to your PHP script using either `POST` or `GET` methods.
 
 Here is an example of a form that submits data to a file named `index.php`. To have a complete source code, use this HTML code and change the method to either POST or GET where necessary.
 
@@ -63,6 +67,7 @@ Here is an example of a form that submits data to a file named `index.php`. To h
 </body>
 </html>
 ```
+
 The output for the above code is as shown in the screenshot below.
 
 ![HMTL Form](/engineering-education/working-with-forms-in-php/form.png)
@@ -72,10 +77,14 @@ The `action` identifies the page where the form input is submitted. Data can be 
 ### POST method
 `POST` is a superglobal method, which collects form data and submits it to the HTTP server. The data entered is encoded, and the content is hidden. POST method has a global scope, and data is accessed from any script.
 
-The POST method is preferred because data sent through it is not visible in the URL. The POST method is also important because data cannot be decoded by looking into web server logs. POST does not have a limitation on the amount of data sent from the form. This is because data is submitted via the body of the HTTP request. The `POST` method is appropriate for a `login` form.
+The POST method is preferred because data sent through it is not visible in the URL. The POST method is also important because data cannot be decoded by looking into web server logs. 
+
+POST does not have a limitation on the amount of data sent from the form. This is because data is submitted via the body of the HTTP request. The `POST` method is appropriate for a `login` form.
 
 ### Processing the form data (PHP script)
-The PHP code below can be used to process input from an HTML form with the POST method. The code should be put in the script, which is the form target. It can be in the same script where the HTML form is, or it can be on a different script. In this case, we will have the PHP code in the same script as the HTML form.
+The PHP code below can be used to process input from an HTML form with the POST method. The code should be put in the script, which is the form target. 
+
+It can be in the same script where the HTML form is, or it can be on a different script. In this case, we will have the PHP code in the same script as the HTML form.
 
 ```php
 <?php
@@ -93,14 +102,18 @@ The PHP code below can be used to process input from an HTML form with the POST 
 ?>
 ```
 
-The output of the above code is as shown in the animation below.
+The output of the code above is as shown in the animation below.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/JeaM8ZOfLA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### GET method
-`GET` is the default super global method that collects or retrieves data from the server. It has a global scope. Thus, data is accessed from any script in the program. The GET method submits data in the URL. Data transferred via this method is visible on the URL of the HTTP request. The HTTP request can be cached and saved in the browser history. The disadvantage of the GET method is that it be used with sensitive data such as passwords because it is not secure.
+`GET` is the default super global method that collects or retrieves data from the server. It has a global scope. Thus, data is accessed from any script in the program. The GET method submits data in the URL. 
 
-The GET method has a limitation of the amount of data sent from the form. The data being sent on the URL depends on the web server's operating system and the type of browser. Most systems have a limit of `255` characters. The best example of using the GET method is with the search engine forms. The code below can be used to process an HTML form with a method set as `GET`.
+Data transferred via this method is visible on the URL of the HTTP request. The HTTP request can be cached and saved in the browser history. The disadvantage of the GET method is that it should not be used with sensitive data such as passwords because it is not secure.
+
+The GET method has a limitation of the amount of data sent from the form. The data being sent on the URL depends on the web server's operating system and the type of browser. 
+
+Most systems have a limit of `255` characters. The best example of using the GET method is with the search engine forms. The code below can be used to process an HTML form with a method set as `GET`.
 
 ```php  
 <?php
@@ -134,13 +147,16 @@ Here is the output of the GET method example.
 
 ### HTML forms and MySQL database CRUD operations
 We will learn how to perform CRUD operations on a MySQL database using HTML forms. We will learn how to use HTML forms to create, read, update and delete data from the MySQL database.
-First, create a MySQL database and name it `crud`. create a table with `three `columns, name it `user`. The columns are:
-+ id
-+ name
-+ email
 
-### Create database server connection
-After creating the database and tables, we need a PHP script that connects to the MySQL database server. Create a file named `connect.php` and put the following code. The scripts make a connection to the MySQL database server.
+First, create a MySQL database and name it `crud`. Create a table with `three `columns, name it `user`. 
+
+The columns are:
+1. id
+2. name
+3. email
+
+### Create a database server connection
+After creating the database and tables, we need a PHP script that connects to the MySQL database server. Create a file named `connect.php` and place in it the following code. The scripts make a connection to the MySQL database server.
 
 ```php
 <?php 
@@ -155,6 +171,7 @@ After creating the database and tables, we need a PHP script that connects to th
     }
 ?>
 ```
+
 We will later include this file using the `include()` function.
 
 ```php
@@ -209,8 +226,9 @@ Here is the form.
 </html>
 ```
 
-The video below shows how the above code is working.
-Note: after we submit the form input, a new record is created in the database and displayed in a table.
+The video below shows how the code above works.
+
+*Note: After we submit the form input, a new record is created in the database and displayed in a table.*
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/MIfVUyi_594" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -262,12 +280,17 @@ if ($result->num_rows > 0) {
 }
 ?>
 ```
+
 Below is an animation of how the read operation works.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/iD9qF3mRsDo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Update
-HTML forms are used to update existing data in the database. In this case, we will implement the update functionality. The `update form` is displayed when we click the `edit` button in the table cell. Take note of the code used to create the edit button on the table. The `update` button is a `submit` button for a form with hidden input fields. Once the `edit` button is clicked, the `id` of the item to be edited is sent to the script `update.php`. Either the `GET` or `POST` method can be used.
+HTML forms are used to update existing data in the database. In this case, we will implement the update functionality. The `update form` is displayed when we click the `edit` button in the table cell. 
+
+Take note of the code used to create the edit button on the table. The `update` button is a `submit` button for a form with hidden input fields. 
+
+Once the `edit` button is clicked, the `id` of the item to be edited is sent to the script `update.php`. Either the `GET` or `POST` method can be used.
 
 ```html
     <td>
@@ -362,7 +385,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['id']) ){
 </html>
 ```
 
-The video below shows how the update function is working on the browser.
+The video below shows how the update function will work on the browser.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/wojpuuIxJsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -394,6 +417,7 @@ if(!empty($_POST['delete']) && !empty($_POST['id'])){
     }
 }
 ```
+
 The delete functionality works as shown in the video below.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/63urOOGyJkk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -401,7 +425,11 @@ The delete functionality works as shown in the video below.
 You can download the source code from [here](https://github.com/JudyNduati/HTML-forms-in-PHP-and-MySQL-CRUD-operations).
 
 ### Conclusion
-In conclusion, a HTTP request enables communication between a client and a server. We have learned how to create HTML forms and process the data using PHP. Also, we have learned about POST, PUT and GET methods. We learned that `POST` creates data, `GET` reads data from the server and PUT update data in the server. We have learned how to perform CRUD operations on MySQL database using PHP. I hope this article will shed some light and give you an understanding while working with HTML forms in PHP.
+In conclusion, a HTTP request enables communication between a client and a server. We have learned how to create HTML forms and process the data using PHP. We have also learned about the POST, PUT and GET methods. 
+
+We learned that `POST` creates data, `GET` reads data from the server, and PUT update data in the server. We learned how to perform CRUD operations on MySQL database using PHP. 
+
+I hope this article will shed some light and give you an understanding while working with HTML forms in PHP.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
