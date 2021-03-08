@@ -178,7 +178,7 @@ We will later include this file using the `include()` function.
 include("connect.php")
 ```
 
-#### Create
+### Create
 To create a record in the database, use the code below. Once the form is submitted via the `POST` method, it is processed, and a record is created in the table `user`.
 
 ```php
@@ -228,11 +228,11 @@ Here is the form.
 
 The video below shows how the code above works.
 
-*Note: After we submit the form input, a new record is created in the database and displayed in a table.*
+>Note: After we submit the form input, a new record is created in the database and displayed in a table.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/MIfVUyi_594" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Read
+### Read
 The code below retrieves the inserted data and displays it in an HTML table.
 
 ```php
@@ -285,7 +285,7 @@ Below is an animation of how the read operation works.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/iD9qF3mRsDo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Update
+### Update
 HTML forms are used to update existing data in the database. In this case, we will implement the update functionality. The `update form` is displayed when we click the `edit` button in the table cell. 
 
 Take note of the code used to create the edit button on the table. The `update` button is a `submit` button for a form with hidden input fields. 
@@ -389,7 +389,7 @@ The video below shows how the update function will work on the browser.
 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/wojpuuIxJsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Delete
+### Delete
 To delete a record in the table, the user clicks the `delete` button in the HTML table. 
 
 >Take note of the code used to display a button inside a table cell.
