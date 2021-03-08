@@ -14,7 +14,7 @@ images:
     alt: Introduction to Buffers and Streams in Node.js
 ---
 
-Streaming videos and games is a norm these days. At times in the middle of the game streaming, a spinner may start indicating that the video content is loading, this means that we are trying to fetch the next video segment( Buffer) from the server. As large video files will not fit in memory, we need to read the content in small chunks and send it to its destination. Transferring such data between two endpoints (such as the server and the browser) in this fashion uses the technique of streaming and buffering. In this tutorial, we will go through the basics of the Node.js buffer and stream modules.
+Streaming videos and games is the norm these days. At times, when in the middle of an online game, a spinner may start indicating that the video content is loading, this means that we are trying to fetch the next video segment( Buffer) from the server. As large video files will not fit in memory, we need to read the content in small chunks and send it to its destination. Transferring such data between two endpoints (such as the server and the browser) in this fashion uses the technique of streaming and buffering. In this tutorial, we will go through the basics of the Node.js buffer and stream modules.
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ Streaming videos and games is a norm these days. At times in the middle of the g
 
 ### The Node.js buffer module
 
-Buffers are useful when interacting with binary data. A buffer is a memory space that stores binary data. For example, using the `fs.readFile()` will return data inform of buffer object to the callback. When a HTTP request is made in a Node.js server, they return data streams temporarily stored in an internal buffer when the client is unable to process the stream all at once.
+Buffers are useful when interacting with binary data. A buffer is a memory space that stores binary data. For example, using the `fs.readFile()` will return data in form of buffer object to the callback. When a HTTP request is made in a Node.js server, they return data streams temporarily stored in an internal buffer when the client is unable to process the stream all at once.
 
 ### Creating a Buffer
 
@@ -147,7 +147,7 @@ readableStream.push('Yet another data push to the readable stream');
 readableStream.push(null);
 ```
 
-In the above code, we can see that readable streams are generators of data where we can write data using the `readableStream.push()` method. The `new Stream.Readable()` interface will initialize the `readableStream` object before pushing data into it using the `readableStream.push()` method. Passing a `null` in the `readableStream.push(null)` tells the consumer that our stream object is done outputting the data.
+In the code above, we can see that readable streams are data generators, where we can write data using the `readableStream.push()` method. The `new Stream.Readable()` interface will initialize the `readableStream` object before pushing data into it using the `readableStream.push()` method. Passing a `null` in the `readableStream.push(null)` tells the consumer that our stream object is done outputting the data.
 
 ### Creating writable streams
 
