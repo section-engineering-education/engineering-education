@@ -34,7 +34,16 @@ One of the most useful modules for upcoming events is the countdown timer. Using
 
 By the way, you can make a countdown timer with JavaScript, but the timer will reset if you refresh the tab. You can make the counter timer run indefinitely by using PHP. If you refresh the page, the timer continues to run. 
 
- This tutorial walks you through the process of creating a dynamic countdown.
+This tutorial takes you through the process of building a dynamic countdown.  
+
+### Prerequisites  
+The following are the key fundamental aspects that will help you learn dynamic countdown in JavaScript, PHP, and MySQL:  
+- Object Oriented Programming (OOP) in PHP
+- Basic JavaScript introduction and web in general
+- Structured Query Language (SQL) and ability to use MySQL database
+- PHP Data Objects (PDO) Application Programming Interface (API)
+- Integrated development environment, [PhpStorm](https://www.jetbrains.com/phpstorm/) strongly recommended.
+
 
 ### PHP dynamic countdown timer
 
@@ -77,7 +86,7 @@ Now that we've got a timer model ready, the next step involves connecting to our
 
 As a rule, PHP includes three MySQL APIs: MySQL, MySQLi, and PDO by default.
 For more information, [see](https://devjunky.com/Choosing-between-MySQL-MySQLi-and-PDO/) 
-We'll use the PDO API in this tutorial but you're free to use any API. 
+We'll use the PDO API in this tutorial but you're free to use any of the three. 
 
 Create a `db_credentials.php` file in your server and add MySQL credentials as shown below. 
 
@@ -269,13 +278,13 @@ class Query
 
  $result=[
 
- "date" =>$row['bike_type'],
+ "date" =>$row['date'],
 
- "hr" =>$row['hr'],
+ "hr" =>$row['hour'],
 
- "min" =>$row['min'],
+ "min" =>$row['minutes'],
 
- "sec" =>$row['sec'],
+ "sec" =>$row['seconds'],
 
  ];
 
@@ -532,11 +541,11 @@ This method gets data from an API, in this case, Postman in JSON format. This da
 
 You have reached this far? congratulations, let's now test if our code works: 
 
-Open your Postman application and add requests as shown in the screenshot below. 
+As seen in the screenshot below, open your Postman application and add requests.  
 
 ### Fig 1: Postman Requests
 
-![request](/engineering-education/creating-countdown-in-php-javascript-mysql/timer.png)
+![request](/engineering-education/creating-countdown-in-php-javascript-mysql/timer.png)  
 
 Hit on the send button to add timer details in the `timer_tbl` table. 
 
@@ -635,43 +644,43 @@ Create a JavaScript script, `timer.js`, and add the following code:
 
 const countDownDate = <?php 
 
- echo strtotime("$date $h:$m:$s" ) ?> * 1000;
+ echo strtotime("$date $hour:$minutes:$seconds" ) ?> * 1000;
 
-const now = <?php echo time() ?> * 1000;
+const timeNow = <?php print(time()) ?> * 1000;
 
-// Update the count down every 1 second
+// Every second, the countdown will be updated.
 
-let x = setInterval(function() {
+let i = setInterval(function() {
 
-now = now + 1000;
+timeNow = timeNow + 1000;
 
-// Find the distance between now and the count down the date
+// Calculate the time between now and the end of the countdown.  
 
-let distance = countDownDate - now;
+let dist = countDownDate - timeNow;
 
-// Time calculations for days, hours, minutes, and seconds
+// Calculate the number of days, hours, minutes, and seconds in days, hours, minutes, and seconds.
 
-let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let numOfDays = Math.floor(dist / (1000 * 60 * 60 * 24));
 
-let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let hr = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let min = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
 
-let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+let sec = Math.floor((dist % (1000 * 60)) / 1000);
 
-// Output the result in an element with id="demo"
+// Put the result in an element with the id="timer" attribute.  
 
-document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+document.getElementById("timer").innerHTML = numOfDays + "d " + hr + "h " +
 
-minutes + "m " + seconds + "s ";
+min + "m " + sec + "s ";
 
-// If the count down is over, write some text 
+// When the countdown is over, type some text. 
 
-if (distance < 0) {
+if (dist < 0) {
 
-clearInterval(x);
+clearInterval(i);
 
-document.getElementById("demo").innerHTML = "EXPIRED";
+document.getElementById("timer").innerHTML = "TIMER EXPIRED";
 
 }
 
@@ -697,6 +706,9 @@ To update the database, create an HTML form in `timer.html` with a POST request 
  <head><title> Countdown</title></head>
 
  <body>
+ <div id="timer">
+   
+ </div>
 
  <div>
 
@@ -746,7 +758,7 @@ To update the database, create an HTML form in `timer.html` with a POST request 
 
 ```
 
-In the form above, the action is set to `update.php` script, let's proceed and create this file to update these details. Create this file and add the following snippets. 
+In the form above, the action is set to `update.php` script, let's proceed and create this file to update these details. Make a copy of this file and paste the following snippets into it.  
 
 ```php
 
