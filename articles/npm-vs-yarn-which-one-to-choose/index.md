@@ -6,7 +6,7 @@ url: /engineering-education/npm-vs-yarn-which-one-to-choose/
 title: Choosing between NPM and Yarn
 description: This article explains the key features and differences of NPM and Yarn. It also acts as a guideline when it comes to working with different package managers.
 author: joseph-chege
-date: 2021-03-9T00:00:00-11:00
+date: 2021-03-9T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
