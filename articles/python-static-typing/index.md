@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/python-static-typing/
 title: Static Typing in Python
-description: Python is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions, respectively.
+description: In this tutorial, we will learn the basics of using type hints and how they can be added to cod using annotations. It is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions.
 author: jerim-kaura
 date: 2021-03-08T00:00:00-17:00
 topics: []
