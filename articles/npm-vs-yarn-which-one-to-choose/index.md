@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/npm-vs-yarn-which-one-to-choose/
-title: Choosing between NPM and Yarn
+title: Choosing Between NPM and Yarn
 description: This article explains the key features and differences of NPM and Yarn. It will also act as a guideline when it comes to working with different package managers.
 author: joseph-chege
 date: 2021-03-09T00:00:00-10:00
@@ -196,11 +196,11 @@ Hope you have found this article helpful when making a choice between Yarn and N
 Happy coding!
 
 ### Additional resources
-[An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
-[Create and Deploy NPM Packages](/engineering-education/npm-packages/)
-[Comparing NPM (Node Package Manager) and NPX (Node Package Executor)](/engineering-education/npm-vs-npx/)
-[Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
-[Why is Node.js wildly popular among developers?](/engineering-education/why-node-js-is-popular
+- [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
+- [Create and Deploy NPM Packages](/engineering-education/npm-packages/)
+- [Comparing NPM (Node Package Manager) and NPX (Node Package Executor)](/engineering-education/npm-vs-npx/)
+- [Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
+- [Why is Node.js wildly popular among developers?](/engineering-education/why-node-js-is-popular)
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
