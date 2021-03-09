@@ -94,7 +94,7 @@ Some identical commands include:
 > Make sure you run the package installation command directly from your project directory.
 
 ### The speed
-One of the main difference between NPM and Yarn is how they handle the package installation process. Yarn installs packages in parallell. Yarn is optimized to fetch and install multiple packages simultaneously. If you are installing five packages, and two are taking a long time to install, Yarn will go over and install the packages side by side. 
+One of the main difference between NPM and Yarn is how they handle the package installation process. Yarn installs packages in parallel. Yarn is optimized to fetch and install multiple packages simultaneously. If you are installing five packages, and two are taking a long time to install, Yarn will go over and install the packages side by side. 
 
 On the other hand, NPM would install each package one at a time. It fetches every package independently. This means that if you install a list of five packages, NPM will perform a serial installation process. Parallel installation is one of the reasons why Yarn beats NPM in a speed race.
 
@@ -145,7 +145,7 @@ NPM also audits every package during installation and informs you of possible vu
 
 You can again run `npm audit` to check your entire dependency trees. If any vulnerabilities are found, NPM will give you a security recommendation.
 
-![NPM Audit Report](/engineering-education/npm-vs-yarn-which-one-to-choose/(npm-audit-report.jpg)
+![NPM Audit Report](/engineering-education/npm-vs-yarn-which-one-to-choose/npm-audit-report.jpg)
 
 To fix such package vulnerabilities, run `npm audit fix`, and your dependency trees will be fixed.
 
