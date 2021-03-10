@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/applications-of-artificial-intelligence-ai-in-design-systems/
 title: Applications of AI in Design Technologies
-description:  In this article, we discuss the various design software and the application of AI in these systems. By going through the article, one will understand AI's role in the design systems and how the design workflow is modified with AI in place. 
+description:  In this article we will discuss the various design software and the application of AI in these systems. By going through the article, one will understand AI's role in the design systems and how the design workflow is modified with AI in place. 
 author: pius-macharia
 date: 2021-03-10T00:00:00-09:00
 topics: []
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/applications-of-artificial-intelligence-ai-in-design-systems/hero.jpg
-   alt: Problem framing in machine learning example image
+   alt: AI in Design Technologies example image
 ---
 This article will go over the various design software and applications of AI in these systems. By going through this article, the reader will have a better understanding of AI's role in design systems and how the design workflow can be improved with AI. 
 <!--more-->
