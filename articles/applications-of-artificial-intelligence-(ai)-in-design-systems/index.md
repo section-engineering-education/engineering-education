@@ -1,8 +1,27 @@
+
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/applications-of-artificial-intelligence-(ai)-in-design-systems/
+- title: Applications of AI in Design Technologies
+- description:  In this article, we discuss the various design software and the application of AI in these systems. By going through the article, one will understand AI's role in the design systems and how the design workflow is modified with AI in place. 
+- author: pius-macharia
+- date: 2021-03-10T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/applications-of-artificial-intelligence-(ai)-in-design-systems/hero.jpg
+-    alt: Problem framing in machine learning example image
+- 
+---
+
 The engineering field has evolved rapidly over the past couple of years. Physical models are developed to show the final product design model. Today, engineering relies on software and machine tools. In the design process, engineers use the following techniques;
 
-- Computer-assisted design – It is technology in design and technical documentation. It involves the creation of computer models guided by geometrical parameters.
-- Computational fluid dynamics – It is used in design to check agreement with the standards and structural integrity.
-- Finite-element analysis – It is a tool used in product design processes to make development analyses and ensure prompt implementation of analysis results.
+- _Computer-assisted design_ – It is technology in design and technical documentation. It involves the creation of computer models guided by geometrical parameters.
+- _Computational fluid dynamics_ – It is used in design to check agreement with the standards and structural integrity.
+- _Finite-element analysis_ – It is a tool used in product design processes to make development analyses and ensure prompt implementation of analysis results.
 
 However, despite reliance on those techniques, engineers are still in charge of the design process. There is a new trend of artificial intelligence and innovations emergence, leading to system automation. The article will show the engineers' importance in the design process and the engineer's future.
 
@@ -14,16 +33,16 @@ It is the process of defining architecture, modules, and components and aligning
 
 Below are primary elements of a system design: 
 
-- Architecture – It is the backbone of a system design. It defines the structure, behavior, and view of a course.
-- Modules – Smallest units in a system, each handling a specific task. Several modules together make a system.
-- Components – They are made up of modules; they provide a particular group function.
-- Interfaces – Boundaries upon which components share information and relate.
-- Data – A collection of facts and information.
+- _Architecture_ – It is the backbone of a system design. It defines the structure, behavior, and view of a course.
+- _Modules_ – Smallest units in a system, each handling a specific task. Several modules together make a system.
+- _Components_ – They are made up of modules; they provide a particular group function.
+- _Interfaces_ – Boundaries upon which components share information and relate.
+- _Data_ – A collection of facts and information.
 
 #### Significant design tasks 
 
-- Initialize design definition – It is the planning stage; the designer identifies and determines the technologies to be used on the project.
-- Design Characteristics – It is the stage for defining each system element's architecture and characteristics; also, the definition of the viability of the design.
+- _Initialize design definition_ – It is the planning stage; the designer identifies and determines the technologies to be used on the project.
+- _Design Characteristics_ – It is the stage for defining each system element's architecture and characteristics; also, the definition of the viability of the design.
 - Alternatives for obtaining system elements.
 - Design management. 
 
@@ -45,7 +64,7 @@ With AI technology, one only needs to upload the data content; and build the web
 
 #### Automation of manual design works
 
-Technology can easily automate most of the designers' tasks. Activities like cropping images and correcting colors can be automated easily using AI. [Adobe Sensei](https://www.adobe.com/experience-platform/intelligent-services.html?ref=hackernoon.com) is a design tool that uses intelligent features to improve final product's overall design. It assists designers in performing work more efficiently and faster. Adobe Sensei Stitch is used to identify patterns in images, edit, or even create new scenes.
+Technology can easily automate most of the designers' tasks. Activities like cropping images and correcting colors can be automated easily using AI. [Adobe Sensei](https://www.adobe.com/experience-platform/intelligent-services.html?ref=hackernoon.com) is a design tool that uses intelligent features to improve the final product's overall design. It assists designers in performing work more efficiently and faster. Adobe Sensei Stitch is used to identify patterns in images, edit, or even create new scenes.
 
 Another example is Netflix, which uses an [augmented intelligence](/engineering-education/introduction-to-extended-reality/) system for artwork personalization. When the need arises to create multiple banners, designers only need to look at the robot's banners to accept or reject them.
 
@@ -57,16 +76,19 @@ It assists website designers with suggestions to create near-perfect websites. I
 
 #### Font Joy
 
-[Font Joy](https://fontjoy.com/) uses machine learning to generate font combinations. It assists designers in choosing the best font combination. A person just needs to set different fonts and generate font combinations with a click of a button. The page loads and generates a new font combination.
+[Font Joy](https://fontjoy.com/) uses machine learning to generate font combinations. It assists designers in choosing the best font combination. A person needs to set different fonts and generate font combinations with a click of a button. The page loads and generates a new font combination.
 
 ### Benefits of using AI in design technology 
 
 - AI assists designers in creating designs more quickly. It can also suggest alternatives and report how they can improve the design.
-- AI helps designers to customize and personalize designs more effectively. Different brands can be designed using AI and be distributed to thousands of users based on their preferences and experiences. AI generates millions of unique versions, new sites, and media found on the user profile.
-- AI assists in facial recognition and computer vision. It helps designers to have a wide range of characteristics of users like gender, age, location, context, and mood.
+- It helps designers to customize and personalize designs more effectively. Different brands can be designed using AI and be distributed to thousands of users based on their preferences and experiences. AI generates millions of unique versions, new sites, and media found on the user profile.
+- Useful in facial recognition and computer vision. It helps designers to have a wide range of characteristics of users like gender, age, location, context, and mood.
 - It is possible to couple AI with voice recognition. This helps UX designers create more convenient and personalized experiences.
-- AI assists in data analysis, thereby helping designers have a wide range of information on user metrics.
+- AI is used for performing data analysis, thereby helping designers have a wide range of information on user metrics.
 
 ### Conclusion
 
 AI is essential as far as the engineering field is concerned. There has been a concern arising after all the automation, whether AI is replacing engineers. The answer is no, but AI will assist many engineers with most of the technical work. AI in systems design is of great importance and will be part of a revolution in the future.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
