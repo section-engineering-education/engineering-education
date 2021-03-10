@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/applications-of-artificial-intelligence-(ai)-in-design-systems/
+url: /engineering-education/applications-of-artificial-intelligence-ai-in-design-systems/
 title: Applications of AI in Design Technologies
 description:  In this article, we discuss the various design software and the application of AI in these systems. By going through the article, one will understand AI's role in the design systems and how the design workflow is modified with AI in place. 
 author: pius-macharia
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/applications-of-artificial-intelligence-(ai)-in-design-systems/hero.jpg
+ - url: /engineering-education/applications-of-artificial-intelligence-ai-in-design-systems/hero.jpg
    alt: Problem framing in machine learning example image
 ---
 
