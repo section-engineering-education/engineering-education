@@ -66,11 +66,12 @@ In the `index.php` file you created above put the following code and save:
 
 We use the `echo` statement to display output on the screen. In the code above, we use the `echo` statement to display a Html heading.
 
-To run this code, open your browser at http://localhost/hello. Here, we append the folder name .ie `hello` to the base URL http://localhost/.
+To run this code, open your browser at http://localhost/hello Here, we append the folder name .ie `hello` to the base URL http://localhost/.
 
 You should see something like this image on your browser:
 
-![php](helloworld.png)
+
+![php helloworld!](/engineering-education/Introduction-to-PHP/helloworld.png)
 
 Congratulations! You have written your first PHP program.
 
