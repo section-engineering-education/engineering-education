@@ -1,6 +1,21 @@
-## GETTING STARTED WITH PHP
-[PHP](https://www.php.net/) (Hypertext Pre-processor) is a web server-side programming language. It enables developers to build web applications that interact with databases.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-php/
+title: Getting Started with PHP
+description: A tutorial that introduces us to the PHP programming language. We look at how to declare variables, conditional statements and code commenting in PHP.
+author: erastus-muriithi
+date: 2021-03-12T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-php/hero.jpg
+    alt: PHP example image
+---
+[PHP](https://www.php.net/) (Hypertext Pre-processor) is a web server-side programming language. It enables developers to build web applications that interact with databases.
+<!--more-->
 ### Why PHP?
 PHP can be used to do many things. Let us look at some of the reasons why PHP is used:
 1. PHP is platform-independent. Therefore it can run on major operating systems. ie. Mac OS, Windows, or Linux.
@@ -95,9 +110,9 @@ Conditional statements are used to perform some actions if a certain condition i
 - `if` statement - used to execute some code if a given condition is `True`.
 - `if... else` statement -  the `if` block is used to execute some code if a certain condition is true. If the condition is false, then the `else` block executes another block of code.
 This statement executes some code based on the true or false state of the condition.
-- `if... else if...else` statement - It is like the `if ...else` statement, but with the ability to check for multiple conditions.
+- `if... elseif...else` statement - It is like the `if ...else` statement, but with the ability to check for multiple conditions.
 
-Let us put in place each of the statement above:
+Let us put in place each of the statements above:
 
 ### 1. The if statement
 Below is a syntax for an `if` statement.
@@ -201,11 +216,14 @@ This is a comment spanning many lines. Here, you can use the symbols `/*` to ope
   */
 ?>
 ```
-## Conclusion
+### Conclusion
 In this tutorial, we have looked at the following:
-- Basic PHP program syntax
-- Variables in PHP
-- Conditional statements
-- Comments in PHP
+- The syntax of a basic PHP program
+- Declaring variables in PHP
+- Using conditional statements
+- Code commenting in PHP
 
 Have a good `PHP` coding ahead
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
