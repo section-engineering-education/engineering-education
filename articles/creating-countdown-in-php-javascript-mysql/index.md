@@ -16,7 +16,6 @@ images:
 ---
 
 ### Introduction
-
 One of the most useful modules for upcoming events is the countdown timer. Using JavaScript, PHP, and a MySQL database, you can make a countdown timer. A countdown timer allows you to display the time of an upcoming event on a web page. When the event will begin and when it will end. 
 
 By the way, you can make a countdown timer with JavaScript, but the timer will reset if you refresh the tab. You can make the counter timer run indefinitely by using PHP. If you refresh the page, the timer continues to run. 
@@ -33,7 +32,6 @@ The following are the key fundamental aspects that will help you learn dynamic c
 
 
 ### PHP dynamic countdown timer
-
 You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and database. 
 
 We can set the time as per occasion time. The PHP update activity assists with refreshing the MySQL data set. Users can refresh time as indicated by their necessities.
@@ -41,7 +39,6 @@ We can set the time as per occasion time. The PHP update activity assists with r
 First of all, we create a MySQL data set table for the countdown timer. The information base table contains the date, hours, minutes, seconds as follows: 
 
 ### Create countdown database table
-
 There are several databases on a MySQL database server (or schemas). One or more tables make up each database. Columns (also called fields) and rows make up a table (records). 
 
 The case of the SQL keywords and commands does not matter. They're written in capital letters for emphasis. 
@@ -70,7 +67,6 @@ create table timer_tbl(
 Now that we've got a timer model ready, the next step involves connecting to our MySQL database. 
 
 ### Connecting to database
-
 As a rule, PHP includes three MySQL APIs: MySQL, MySQLi, and PDO by default.
 For more information, [see](https://devjunky.com/Choosing-between-MySQL-MySQLi-and-PDO/) 
 We'll use the PDO API in this tutorial but you're free to use any of the three. 
@@ -537,8 +533,7 @@ As seen in the screenshot below, open your Postman application and add requests.
 Hit on the send button to add timer details in the `timer_tbl` table. 
 
 ### Fetch timer details from database
-
-`NOTE:` It's recommended to proceed with this section if you have timer details in your database. 
+>NOTE: It's recommended to proceed with this section if you have timer details in your database. 
 
 Now, from the previous part, we created a file `query.class.php` and defined a method, `get_timer()`. 
 
