@@ -1,15 +1,16 @@
-Over the past few years, more people and organizations have embraced the use of technology in day-to-day lives, by use of simple networking to complex networking technologies that enable data sharing and communication. Data sharing has come with its security issues challenges. Data security challenges have been necessitated by botnets, used by cybercriminals to instigate various attacks. 
+Over the past few years, many people and organizations have embraced the use of networking technologies to enhance data sharing and communication. Data sharing has come with its security issues challenges. Data security challenges have been necessitated by botnets, used by cybercriminals to instigate various attacks. 
 
-This article pursues the DNS-based approaches for detecting botnets and also explains why these approaches are widely used by providing examples of DNS-based tools.
+This article pursues the DNS-based approaches for detecting botnets and explains why these approaches are widely used. It also provides real-life examples of DNS-based tools.
 
 ### What is a Botnet?
-A botnet can be defined as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and DDoS attacks. To be able to mitigate such a security threat, one should be in a position to identify such attacks in a network. 
-Botnets conceal their malicious activities and avoid detection by using a number of internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks.  Such an attack is the advanced persistent threat (APT). In most cases, experienced botnet developers avoid using domain names and instead, they have successfully set up P2P botnets. 
+A botnet can be defined as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and [DDoS attacks](https://www.csoonline.com/article/3222095/ddos-explained-how-denial-of-service-attacks-are-evolving.html). To mitigate such security threats, one should be in a position to identify attacks in a network.
+
+Botnets conceal their malicious activities and avoid detection by using a number of internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks.  Such an attack is the advanced persistent threat (APT), which is basically an attach where where an intruder gains longterm presence in a network so as to access sensitive data. In most cases, experienced botnet developers avoid using domain names and instead, they have successfully set up P2P botnets. 
 
 In this regard, the DNS system is used by such botnets to support their command and control infrastructure. Further, the use of ‘domain generation algorithms (DGAs)’ in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially due to the easiness of developing and administrating botnets based on DNS.  
 
 The following diagram shows the structure of a botnet. 
-![alt text](botnet-structure.png)
+![Botnet Structure](/engineering-education/detecting-botnets-using-dns-based-technique/botnet-structure.png)
 
 [Image Source: EC-Council-BLOG](https://blog.eccouncil.org/wp-content/uploads/2018/12/the-structure-of-a-botnet.png)
 
@@ -29,7 +30,7 @@ One way of detecting the presence of botnets in a network is by analyzing the [f
 
 Below is an example of a DNS server request from a non-existing domain.
  
-![alt text](failed-dns-request.png)
+![Failed DNS Request](/engineering-education/detecting-botnets-using-dns-based-technique/failed-dns-request.png)
 
 [Image Source: Super User](https://i.stack.imgur.com/trpaB.png)
 
@@ -39,7 +40,7 @@ This technique involves checking all DNS server requests to ensure that none of 
 
 #### 3) Domains with low TTLs
 
-Botnets creators use a fast-flux technique to hinder detection by modifying the IP address associated with a domain. When the destination IP is changed, detecting faults becomes hard. However, such domains have very low TTL, and this means the DNS system refreshes the resolution cache of the IP related to the domain repeatedly. This, therefore, makes domains with low TTL suspicious. Notably, this technique can be misleading as it can generate false positives due to the many legitimate systems that are connected to the Internet that use such a technique to change IP associated with a domain. 
+Botnets creators use a fast-flux technique to hinder detection by modifying the IP address associated with a domain. When the destination IP is changed, detecting faults becomes hard. However, such domains have very low TTL, and this means the DNS system refreshes the resolution cache of the IP related to the domain repeatedly. This, therefore, makes domains with low TTL suspicious. However, this technique can be misleading as it can generate false positives owing to the many legitimate systems that are connected to the Internet that use such a technique to change IP associated with a domain. 
 
 #### 4) Detection of abnormal DNS traffic
 
@@ -56,9 +57,12 @@ Advance in technology, and especially networking has come with a fair share of s
 ### References
 [Computer Engineering & Systems Group](http://cesg.tamu.edu/wp-content/uploads/2012/04/reddy_papers/securecomm11.pdf)
 
+[CSO](https://www.csoonline.com/article/3222095/ddos-explained-how-denial-of-service-attacks-are-evolving.html)
+
 [DNSBL](http://www.dnsbl.info/)
 
-[Spamrats](http://www.spamrats.com/)\
+[Spamrats](http://www.spamrats.com/)
+
 [Computer Weekly](https://www.computerweekly.com/tip/Four-handy-botnet-detection-techniques-and-tools-A-tutorial)
 
 
