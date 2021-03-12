@@ -6,7 +6,7 @@ url: /engineering-education/introduction-to-php/
 title: Getting Started with PHP
 description: A tutorial that introduces us to the PHP programming language. We will look at how to declare variables, conditional statements and code commenting in PHP.
 author: erastus-muriithi
-date: 2021-03-12T00:00:00-11:00
+date: 2021-03-12T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
