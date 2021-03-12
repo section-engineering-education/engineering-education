@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-php/
+url: /engineering-education/Introduction-to-PHP/
 title: Getting Started with PHP
 description: A tutorial that introduces us to the PHP programming language. We will look at how to declare variables, conditional statements and code commenting in PHP.
 author: erastus-muriithi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-php/hero.png
+  - url: /engineering-education/Introduction-to-PHP/hero.png
     alt: PHP example image
 ---
 [PHP](https://www.php.net/) (Hypertext Pre-processor) is a web server-side programming language. It enables developers to build web applications that interact with databases.
@@ -91,7 +91,7 @@ To run this code, open your browser at http://localhost/hello here, we append th
 
 You should see something like this image on your browser:
 
-![php helloworld!](/engineering-education/introduction-to-php/helloworld.png)
+![php helloworld!](/engineering-education/Introduction-to-PHP/helloworld.png)
 
 Congratulations! You have written your first PHP program.
 
