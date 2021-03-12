@@ -4,15 +4,15 @@ On the other hand, API stands for **A**pplication **P**rogram **I**nterface. It 
 
 An API that applies the `REST` style is referred to as `RESTful`. A RESTful API works almost as the web does. Typically, you make an API request to the server and get a response back via an HTTP protocol. The following diagram depicts the concept:
 
-![](rest-http-protocol.png)
+![Rest HTTP Protocols](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/rest-http-protocol.png)
 
 [***Image source***](https://clevertechie.com/guides/96/what-is-rest-api-restful-web-services)
 
 This request made to a server uses HTTP methods such as;
 
 - GET - retrieve data from the server.
-- POST - a good example of a POST where you fill some data in an HTML form and submit it to sever. POST methods help to submit specific data to be processed by the server.
-- PUT- allows sending an update request to sever. PUT method allows modifying specified data values.
+- POST - a good example of a POST where you fill some data in an HTML form and submit it to the server. POST methods help to submit specific data to be processed by the server.
+- PUT- allows sending an update request to the server. PUT method allows modifying specified data values.
 - DELETE - this enables you to make a request and inform the server that you want to delete some specified data values.
 
 RESTful API can be developed will almost every programming language. In this guide, you'll learn the REST concept by building a RESTful API using Node.js.
@@ -35,11 +35,11 @@ We will use a hand on todo list app scenario to create our RESTful API. This app
 - UPDATE the todo list. To update the todo list, we will use a toggle to distinguish between done and undone todo. This will capture the aspect of UPDATE.
 - DELETE a todo.
 
-![](a-todo-list.jpg)
+![A Restful API Todo List](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/a-todo-list.jpg)
 
 These CRUD operations go hand in hand with HTTP methods.
 
-![](crud-operations-http-methods.png)
+![CRUD Operations and HTTP Methods](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/crud-operations-http-methods.png)
 
 [***Image source***](https://www.edureka.co/blog/what-is-rest-api/)
 
@@ -59,7 +59,7 @@ The following packages will help us put the todo app in place.
 - CORS - [CORS](https://www.npmjs.com/package/cors) stands for Cross Origin Resource Sharing. Allows us to bypass security applied to a RESTful API. We said earlier that an API is a set procedure for two programs to communicate. This means the two (client and server) have a different origin, i.e., they access resources from a different server. In this case, trying to request a resource on the server will fail. You are getting something from that server, and it's not the server you (the client) are coming from. This is a great concern for a RESTful API. Because they are meant to be consumed by other clients and servers. CORS comes into play to disable this mechanism and access these resources. Check this [guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/COR) to learn more about CORS.
 - EJS - [EJS](https://www.npmjs.com/package/ejs) stands for **E**mbedded **J**ava**S**cript. It is a template engine language that lets you generate HTML mark-up with plain JavaScript. Instead of serving static content, we can serve more dynamic content using EJS. EJS template is rendered on the server-side to produce an HTML document that the client can then receive. We will use the EJS template to create a client-side page for our RESTful API.
 
-![](ejs-views.jpg)
+![EJS Template Views](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/ejs-views.jpg)
 
 - [PG](https://www.npmjs.com/package/pg) - PG makes it possible for Node.js to connect and communicate with PostgreSQL databases.
 - [Nodemon](https://www.npmjs.com/package/nodemon) - this a `dev` package (not needed for the app to function). Nodemon ensures that the server is running whenever you make changes. When you save changes, you don't have to re-run the server. Nodemon will handle this for you. It saves you a couple of keystrokes in your Node.js server development pipeline.
@@ -67,7 +67,7 @@ The following packages will help us put the todo app in place.
 ### The application structure
 This is how we will lay down our todo app.
 
-![](project-structure.png)
+![Node.js Restful API Project Structure](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/project-structure.png)
 
 ### Setting up the project
 Ensure you have [Node.js](https://nodejs.org/en/download/) runtime installed on your computer. Upon running `node –v`, you will get the Node.js version `v14.16.0` installed on your computer, which checks that Node.js is successfully installed.
@@ -164,7 +164,7 @@ To start the server, configure the `scripts` object in `package.json` as follows
 
 Run to `npm run dev` start the server.
 
-![](start-the-server.jpg)
+![A Simple ExpressJS Server](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/start-the-server.jpg)
 
 Open `http://localhost/4000` In a browser. This should give you a response `hello world!`.
 
@@ -174,7 +174,7 @@ The server is up and running And we can do away with `app.get("/", (req, res) =>
 
 Any changes that you add to the server application will be restarted by Nodemon, no need to re-run the server again.
 
-![](nodemon-restart-the-server.jpg)
+![Nodemon](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/nodemon-restart-the-server.jpg)
 
 ### Setting up the routes
 Create a `routes` folder, in it create a `todos.js` file (`src/routes/todos.js`). Here we will configure our routes as follows:
@@ -296,9 +296,9 @@ We will set the EJS views that will be rendered to the client-side. EJS views wo
 
 Set up the CSS and views folders, as shown in the `application structure`.
 
-![](setting-the-ejs-views.jpg)
+![Setting the EJS Views](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/setting-the-ejs-views.jpg)
 
-![](css-styling.jpg)
+![CSS Styling](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/css-styling.jpg)
 
 We'll include the following views.
 
@@ -559,7 +559,7 @@ npm run dev
 
 Open `http://localhost/4000` in a browser, and interact with the application.
 
-![](a-todo-list.jpg)
+![A Restful API Todo list App](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/a-todo-list.jpg)
 
 Alternatively, clone this project from this [GitHub](https://github.com/kimkimani/A-Simple-RESTful-API-In-Node.js-using-PostgresSQL-and-Express) repository
 
@@ -571,7 +571,7 @@ Run the app using `npm run dev` and open `http://localhost/4000` in a browser to
 
 Check the database to confirm if adding or updating a todo reflect as such.
 
-![](todo-list-database-table.jpg)
+![Postgres SQL Database Table](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/todo-list-database-table.jpg)
 
 For any code reference, check this project from [GitHub](https://github.com/kimkimani/A-Simple-RESTful-API-In-Node.js-using-PostgresSQL-and-Express).
 
