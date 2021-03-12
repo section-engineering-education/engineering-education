@@ -6,7 +6,7 @@ url: /engineering-education/creating-countdown-in-php-javascript-mysql/
 title: Creating Dynamic Countdown In PHP, JavaScript, and MySQL
 description: This tutorial walks you through the process of creating a dynamic countdown.
 author: miller-juma
-date: 2021-03-09T00:00:00-12:00
+date: 2021-03-12T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
