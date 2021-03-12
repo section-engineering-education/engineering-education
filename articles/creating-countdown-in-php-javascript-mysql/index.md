@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/creating-countdown-in-php-javascript-mysql/
 title: Creating Dynamic Countdown In PHP, JavaScript, and MySQL
-description: This tutorial walks you through the process of creating a dynamic countdown.
+description: This tutorial will walk the reader through the process of creating a dynamic countdown. You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and a database.
 author: miller-juma
 date: 2021-03-12T00:00:00-12:00
 topics: []
@@ -16,27 +16,26 @@ images:
 ---
 
 ### Introduction
-One of the most useful modules for upcoming events is the countdown timer. Using JavaScript, PHP, and a MySQL database, you can make a countdown timer. A countdown timer allows you to display the time of an upcoming event on a web page. When the event will begin and when it will end. 
+One of the most useful modules for upcoming events is the countdown timer. Using JavaScript, PHP, and a MySQL database, you can make a countdown timer. A countdown timer allows you to display the time of an upcoming event on a web page. You can display when the event will begin and when it will end. 
+<!--more-->
+You can also make a countdown timer with JavaScript, but the timer will reset if you refresh the tab. You can make the counter timer run indefinitely by using PHP. If you refresh the page, the timer continues to run. 
 
-By the way, you can make a countdown timer with JavaScript, but the timer will reset if you refresh the tab. You can make the counter timer run indefinitely by using PHP. If you refresh the page, the timer continues to run. 
-
-This tutorial takes you through the process of building a dynamic countdown.  
+This tutorial will take you through the process of building a dynamic countdown.  
 
 ### Prerequisites  
 The following are the key fundamental aspects that will help you learn dynamic countdown in JavaScript, PHP, and MySQL:  
-- Object Oriented Programming (OOP) in PHP
-- Basic JavaScript introduction and web in general
-- Structured Query Language (SQL) and ability to use MySQL database
-- PHP Data Objects (PDO) Application Programming Interface (API)
-- Integrated development environment, [PhpStorm](https://www.jetbrains.com/phpstorm/) strongly recommended.
-
+- Object Oriented Programming (OOP) in PHP.
+- Basic JavaScript introduction and web in general.
+- Structured Query Language (SQL) and ability to use MySQL database.
+- PHP Data Objects (PDO) Application Programming Interface (API).
+- Integrated development environment, [PhpStorm](https://www.jetbrains.com/phpstorm/) is strongly recommended.
 
 ### PHP dynamic countdown timer
-You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and database. 
+You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and a database. 
 
-We can set the time as per occasion time. The PHP update activity assists with refreshing the MySQL data set. Users can refresh time as indicated by their necessities.
+The PHP update activity assists with refreshing the MySQL data set. Users can refresh the time as needed.
 
-First of all, we create a MySQL data set table for the countdown timer. The information base table contains the date, hours, minutes, seconds as follows: 
+First we create a MySQL data set table for the countdown timer. The information base table will contain the date, hours, minutes, seconds as follows: 
 
 ### Create countdown database table
 There are several databases on a MySQL database server (or schemas). One or more tables make up each database. Columns (also called fields) and rows make up a table (records). 
@@ -151,7 +150,7 @@ class DB_Configuration
 
 ```
 
-In the above PHP file, we establish a connection to our database. You may have also noticed that we have imported the `db_credentials.php` file. This file provides us with the constants that we have used in our PDO instance. 
+In the above PHP file, we established a connection to our database. You may have also noticed that we have imported the `db_credentials.php` file. This file provides us with the constants that we have used in our PDO instance. 
 
 Now that a connection to our database is set, let's create a method to insert into the `timer_tbl` table. 
 
@@ -429,7 +428,7 @@ class Query
 
 ```
 
-It's this file that we'll use to access our data in the database. We'll use it to add, update and create timer details. 
+This is the file we'll use to access our data in the database. We'll use it to add, update, and create timer details. 
 Next, let's create a file, `timer.class.php` (to create timer details), and add the following. 
 
 ```php
@@ -520,9 +519,11 @@ Timer::create();
 
 This file has a method `create()` declared as static. Declaring class methods as static allows for their access without class instantiation. 
 
-This method gets data from an API, in this case, Postman in JSON format. This data is then converted to object arrays for manipulation. 
+This method gets data from an API, in this case, Postman in a JSON format. This data is then converted to object arrays for manipulation. 
 
-You have reached this far? congratulations, let's now test if our code works: 
+If you have made it this far? 
+
+Congratulations, let's now test if our code works: 
 
 As seen in the screenshot below, open your Postman application and add requests.  
 
@@ -530,7 +531,7 @@ As seen in the screenshot below, open your Postman application and add requests.
 
 ![request](/engineering-education/creating-countdown-in-php-javascript-mysql/timer.png)  
 
-Hit on the send button to add timer details in the `timer_tbl` table. 
+Hit the send button to add timer details in the `timer_tbl` table. 
 
 ### Fetch timer details from database
 >NOTE: It's recommended to proceed with this section if you have timer details in your database. 
@@ -612,7 +613,6 @@ The best way to debug your script is by logging in to check for any errors. In t
 At this stage, we have timer access in our database, let's now create a countdown. 
 
 ### Create a countdown using JavaScript and PHP
-
 Whatever the data we fetched from the previous section, we'll use it here. 
 
 Create a JavaScript script, `timer.js`, and add the following code: 
@@ -675,9 +675,10 @@ document.getElementById("timer").innerHTML = "TIMER EXPIRED";
 Now that we've got a working static countdown script, let's now make it dynamic. 
 
 ### Creating dynamic countdown by a database update
+In this section, we will build a dynamic countdown by updating our database records to set a new time.
+To update the database, create an HTML form in `timer.html` with a POST request action. 
 
-In this section, we build a dynamic countdown by updating our database records to set a new time.
-To update the database, create an HTML form in `timer.html` with a POST request action. Add input fields as shown below. 
+Add the input fields as shown below. 
 
 ```HTML
 
@@ -838,17 +839,18 @@ UpdateTimer::timer_update();
 
 ```
 
-Visit your URL to update this timer, you should be able to see something like this depending on your styling. 
+Visit your URL to update the timer, you should be able to see something like this depending on your styling. 
 
 ![result](/engineering-education/creating-countdown-in-php-javascript-mysql/timer_update.png)
 
 Now, set your preferred countdown dates and refresh the page. 
 
-You notice that the countdown starts from the set time. 
+You'll notice that the countdown starts from the set time. 
 
 ### Conclusion
+We've seen that JavaScript creates a static countdown. With PHP and database, we can make this action dynamic. Users can then proceed to set their countdown dates.
 
-We've seen that JavaScript creates a static countdown. With PHP and database, we can make this action dynamic. Users can then proceed to set their countdown dates. 
+Happy coding!
 
 ---
 
