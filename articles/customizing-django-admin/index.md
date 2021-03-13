@@ -156,7 +156,7 @@ class  Details(models.Model):
       verbose_name_plural  =  "Details"
 ```
 ###  2. Changing the Django administration header text
-To change the admin site header text, the login page and the HTML title tag so that we can put the name of our bookstore instead, add the following code in `urls.py`.
+To change the admin site header-text,login page, and the HTML title tag to our bookstore's instead, add the following code in `urls.py`.
 ```python
 #...
 admin.site.site_header  =  "Custom bookstore admin"  
