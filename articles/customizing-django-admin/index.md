@@ -1,4 +1,4 @@
-### Customizing Django Admin
+﻿### Customizing Django Admin
 Django is a Web framework for perfectionists with deadlines. That is why it comes with its admin site. Django gives programmers the power of customizing this admin site to suit the requirements of the project or the needs of the client.The tutorial is mostly `windows` oriented becouse of the cmd commands.
 
 ### Prerequisites
@@ -111,16 +111,16 @@ from django.db import models
 from .models import Category, Publisher ,Details, Author
 
 class  categoryAdmin(admin.ModelAdmin):
-  pass
+   pass
 
 class  publisherAdmin(admin.ModelAdmin):
-  pass
+   pass
 
 class  detailsAdmin(admin.ModelAdmin):
-  pass
+   pass
 
 class  authorAdmin(admin.ModelAdmin):
-  pass
+   pass
 
 admin.site.register(Category, categoryAdmin)
 admin.site.register(Publisher, publisherAdmin)
