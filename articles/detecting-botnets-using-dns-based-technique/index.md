@@ -5,9 +5,9 @@ This article pursues the DNS-based approaches for detecting botnets and explains
 ### What is a Botnet?
 A botnet can be defined as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and [DDoS attacks](https://www.csoonline.com/article/3222095/ddos-explained-how-denial-of-service-attacks-are-evolving.html). To mitigate such security threats, one should be in a position to identify attacks in a network.
 
-Botnets conceal their malicious activities and avoid detection by using a number of internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks.  Such an attack is the advanced persistent threat (APT), which is basically an attach where where an intruder gains longterm presence in a network so as to access sensitive data. In most cases, experienced botnet developers avoid using domain names and instead, they have successfully set up P2P botnets. 
+Botnets conceal their malicious activities and avoid detection by using a number of internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks.  Such an attack is the advanced persistent threat (APT), which is basically an attach where where an intruder gains longterm presence in a network so as to access sensitive data. In most cases, experienced botnet developers avoid using domain names. Instead, they have successfully set up P2P botnets. 
 
-In this regard, the DNS system is used by such botnets to support their command and control infrastructure. Further, the use of ‘domain generation algorithms (DGAs)’ in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially due to the easiness of developing and administrating botnets based on DNS.  
+In this regard, the DNS system is used by such botnets to support their command and control infrastructure. The use of ‘domain generation algorithms (DGAs)’ in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially due to the easiness of developing and administrating botnets based on DNS.  
 
 The following diagram shows the structure of a botnet. 
 ![Botnet Structure](/engineering-education/detecting-botnets-using-dns-based-technique/botnet-structure.png)
@@ -17,8 +17,8 @@ The following diagram shows the structure of a botnet.
 ### Why DNS-Based Techniques Are Widely Used in the Detection of Botnets
 The DNS-based techniques are widely used because of the following reasons:
 
- * Low cost- the DNS based technique does not require a lot of resources and the cost of the tools is relatively low
-* No effect on network-This detection technique does not affect the network performance or traffic
+ * **Low cost**- the DNS based technique does not require a lot of resources and the cost of the tools is relatively low
+* **No effect on network**-This detection technique does not affect the network performance or traffic
 
 ### DNS-Based Techniques
 
@@ -36,7 +36,7 @@ Below is an example of a DNS server request from a non-existing domain.
 
 #### 2) Monitoring of malicious domains
 
-This technique involves checking all DNS server requests to ensure that none of the domains being resolved is on a blacklist database such as [DNSBL](http://www.dnsbl.info/). Numerous organizations such as [SpamRats](http://www.spamrats.com/) generate a list of domains that are on the blacklist. This becomes the sure way of detecting botnets in a network.  However, there is a disadvantage of this approach since a previous knowledge of the botnet must present and its domain registered. This means it is hard to detect new botnets. 
+This technique involves checking all DNS server requests to ensure that none of the domains being resolved is on a blacklist database such as [DNSBL](http://www.dnsbl.info/). Numerous organizations such as [SpamRats](http://www.spamrats.com/) generate a list of domains that are on the blacklist. This becomes the sure way of detecting botnets in a network.  However, there is a disadvantage of this approach since a previous knowledge of the botnet must be present and its domain registered. This means it is hard to detect new botnets. 
 
 #### 3) Domains with low TTLs
 
