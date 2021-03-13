@@ -1,5 +1,5 @@
 ### Customizing Django Admin
-Django is a Web framework for perfectionists with deadlines. That is why it comes with its admin site. Django gives programmers the power of customizing this admin site to suit the requirements of the project or the needs of the client.
+Django is a Web framework for perfectionists with deadlines. That is why it comes with its admin site. Django gives programmers the power of customizing this admin site to suit the requirements of the project or the needs of the client.The tutorial is mostly `windows` oriented becouse of the cmd commands.
 
 ### Prerequisites
 Before we begin, you should have the following:
