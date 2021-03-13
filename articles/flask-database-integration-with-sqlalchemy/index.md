@@ -23,11 +23,11 @@ At the end of this article, we will be able to do the following:
 ### Setting up the work Environment
 Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone a Flask web application used in a previous tutorial that already has the registration form templates and routes all setup.
 
-We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) github repository
+We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) github repository.
 ```bash
 $ git clone https://github.com/corpsgeek/flask-form-handling.git
 ```
-Change directory to the cloned folder and install the packages in the `requirement.txt` file. This installs the required packages for the cloned flask app to function.
+Change the directory to the cloned folder and install the packages in the `requirement.txt` file using the command:
 ```bash
 $ pip install -r requirement.txt
 ``` 
@@ -51,7 +51,7 @@ To work with SQLAlchemy, we need to install the SQLAlchemy library first.
 ```bash
 $ pip install SQLAlchemy
 ```
-With SQLAlchemy installed, to work with it on our application, we have to import the SQLAlchemy class from the flask_sqlalchemy module in the main application file of our project, which is the __init__.py file in our app folder.
+With SQLAlchemy installed, to work with it on our application, we have to import the SQLAlchemy class from the `flask_sqlalchemy` module in the main application file of our project, which is the `__init__.py` file in our `app` folder.
 
 ```python
 # import sqlaclhemy from the flask_sqlachemy module
@@ -115,7 +115,7 @@ From our Pet management system as an analogy, an example of a one-to-many relati
 
 The representation of this relationship in our model is by following this process:
 
-We create a column containing a ForeignKey() in the PetCategory class. Simply, the pet handler is the attribute having multiple relationships with the pets, therefore the pets will have a column consisting of a  ForeignKey() to the pet handler's unique identify key which is the pet handler’s id.
+We create a column containing a `ForeignKey()` in the `PetCategory` class. Simply, the pet handler is the attribute having multiple relationships with the pets, therefore the pets will have a column consisting of a `ForeignKey()` to the pet handler's unique identify key which is the pet handler’s id.
 
 ```python
 # create pet category table
@@ -388,7 +388,6 @@ I recommend you look up how to implement a Many-to-Many database relationship [h
 
 ### Conclusion
 As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
-
 
 
 
