@@ -21,7 +21,7 @@ In `Custom`, let's go ahead and create our app called "Bookstore".
 $ django-admin startapp Bookstore
 ```
 Then, add Bookstore to the installed apps in `settings.py`.
-```py
+```python
 INSTALLED_APPS  = [
   # ...
   'Bookstore' # new
@@ -41,12 +41,11 @@ Now we can install Django in the virtual environment.
 
 ```bash
 $ pip install django
-$ pip install django
 ```
 ###  Creating the Models
 Add the following code to your *models.py* to create some models.
 
-```py
+```python
 from django.db.models.deletion import CASCADE
 
 class  Category(models.Model):
@@ -106,7 +105,7 @@ class  Details(models.Model):
       return  self.book_name
 ```
 We can now go ahead and register our models in *admin.py* by adding the following lines of code.
-```py
+```python
 from django.contrib import admin
 from django.db import models
 from .models import Category, Publisher ,Details, Author
@@ -145,7 +144,7 @@ $ py manage.py runserver
 You can now log in using the superuser credentials at http://127.0.0.1:8000/admin/. You should see something similar to this.
 ###  1 -  Setting plural text for models
 We can change how the models *category* and *details* are appearing in plural at the admin site by adding the below code to `models.py`.
-```py
+```python
 class  Category(models.Model):
 # ...
   class  Meta:  #new
@@ -158,7 +157,7 @@ class  Details(models.Model):
 ```
 ###  2. Changing the Django administration header text
 To change the admin site header text, the login page and the HTML title tag so that we can put the name of our bookstore instead, add the following code in `urls.py`.
-```py
+```python
 #...
 admin.site.site_header  =  "Custom bookstore admin"  
 admin.site.site_title  =  "Custom bookstore admin site"
@@ -169,7 +168,7 @@ admin.site.index_title  =  "Custom Bookstore Admin"
 ###  3. Removing the default apps
 Let's say we want to get rid of the *Groups* app that is found in our Django admin site by default. We will go ahead and unregister it in `admin.py` after importing it.
 
-```py
+```python
 from  django.contrib.auth.models  import  Group  # new
 #...
 admin.site.unregister(Group)  # new
@@ -178,7 +177,7 @@ If you like, you could also go ahead and unregister *users* through the same pro
 
 ###  4 - Using list_display
 You might also want your *details* model to display more than one column at the change list page. To add other fields we will have to make some adjustments in `admin.py`.
-```py
+```python
 class  detailsAdmin(admin.ModelAdmin):
   list_display=('book_name','category','Author','pages','publisher')
 #pass
@@ -190,7 +189,7 @@ $ pip install pillow
 ```
 Then we open `settings.py` and add the following code. This code tells Django where to store the images.
 
-```py
+```python
 import os # at the top
 #...
 MEDIA_URL = '/media/'
@@ -201,7 +200,7 @@ Now let's create the media folder and add an images folder inside it.
 $ mkdir media\images 
 ```
 The next thing is going to our `urls.py` and adding the code below to add our `media` folder to the static files.
-```py 
+```python
 # below the other imports
 from . import settings
 from django.contrib.staticfiles.urls import static
@@ -214,7 +213,7 @@ urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 In `models.py`  we are going to import `mark_safe` and add the image field to our *Author* model. Then we will add a function that will enable us to view the image in our admin site.
 
-```py
+```python
 # at the top
 from django.utils.safestring import mark_safe
 # in our Author model
@@ -233,7 +232,7 @@ $ py manage.py makemigrations
 $ py manage.py migrate
 ```
 The only thing left is to call our function inside the list display. Lets go to our `admin.py` and modify `authorAdmin()`.
-```py
+```python
 class  authorAdmin(admin.ModelAdmin):
     list_display=['name','image_tag']
 ```
