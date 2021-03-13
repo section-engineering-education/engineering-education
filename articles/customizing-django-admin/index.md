@@ -141,7 +141,7 @@ Now run the development server using the command below:
 ```bash
 $ py manage.py runserver
 ```
-You can now log in using the superuser credentials at http://127.0.0.1:8000/admin/. You should see something similar to this.
+You can now log in using the superuser credentials at http://127.0.0.1:8000/admin/.
 ###  1 -  Setting plural text for models
 We can change how the models *category* and *details* are appearing in plural at the admin site by adding the below code to `models.py`.
 ```python
