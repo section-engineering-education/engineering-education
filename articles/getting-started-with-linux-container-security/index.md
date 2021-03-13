@@ -1,5 +1,8 @@
 # Getting Started With Linux Containers Security
+images:
 
+   -url: /engineering-education/getting-started-with-linux-container-security/hero.jpg
+       alt: linux container security hero image example
 ### Overview of containers
 Linux containers, commonly referred to as LXC, are operating systems used to run multiple containers together using a single Linux kernel through a control host. Containers users can create and manage application and systems easily. This is because containers uses simple tools and a well built API.
 
