@@ -18,16 +18,18 @@
 
 ### Tiered Payout Structure
 - All payouts will be as follows:
-Edit: 3/14/21
-To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 3/3/21
+3/3/21
+To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 
 
 Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
 
 Our new payout structure will be:
 
-$150 for tutorials
-$100 for non-tutorial content
-$50/article for peer reviews
+- $150 for tutorials
+- $100 for non-tutorial content
+- $50/article for peer reviews
+
+We need to be keen on closing articles that are not "publish ready" i.e. an article that is not ready to be published as is (or as close as possible) - the incoming articles should only require a review from our team not a revision.
 
 #### What counts as a round of revision?
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
