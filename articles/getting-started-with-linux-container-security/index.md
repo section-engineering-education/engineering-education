@@ -34,7 +34,7 @@ LXC containers occur in two entities; privileged containers and unprivileged con
 
 - Privileged containers are old-style containers used only when unprivileged containers aren't accessible and when one trusts the container user with the root access to the host. Privileged containers are not safe. In these containers, the container's `uid 0` is mapped to the host `uid 0`. The host might experience accidental damages such as; reconfiguration of host hardware, reconfiguration of the host kernel, or accessibility of the host filesystem. Mandatory Access Control (AppArmor, SELinux), dropping of capabilities, namespaces, and seccomp filters technologies are employed to protect the host.
 
-- Unprivileged containers occur in the `LXC 1.0` and require a kernel version `3.13` or higher. They are considered safe as the container `uid 0`is mapped to an unprivileged user outside of the container with extra rights only on resources that it owns itself. Unpriviledged containers do not require different capabilities, AppArmor, SELinux, and Seccomp to boost security.
+- Unprivileged containers occur in the `LXC 1.0` and require a kernel version `3.13` or higher. They are considered safe as the container `uid 0`is mapped to an unprivileged user outside of the container with extra rights only on resources that it owns itself. Unpriviledged containers only use different capabilities, AppArmor, SELinux, and Seccomp to boost security.
 
 Unprivileged containers work only when `LXC` communicates with three parts of setuid codes: 
 
@@ -77,6 +77,9 @@ Reporting security issues
 In the event of security issues, one can report them through;
 	*Email to serge.hallyn@ubuntu.com / stgraber@ubuntu.com / christian.brauner@ubuntu.com
 	*https://launchpad.net/ubuntu/+source/lxc/+filebug - automatic!
+
+
+To conclude, Linux Containers are virtualization methods used to run multiple containers using a single Linux kernel through a control host. In LXC applications are isolated from the host which they run on. There are two types of containers privileged containers and unprileged containers. Privileged containers which are insecure and requires kernel features for secrity. Unpriveleged containers that are safe on their own but also use kernel features for an extra layer of security. I would highly recommend use of Linux Containers, there are many legit Linux Containers online dealers check them out.
 
 
 References 
