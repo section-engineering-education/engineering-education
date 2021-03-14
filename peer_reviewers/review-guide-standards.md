@@ -14,7 +14,7 @@ For all reviewers:
 - We MUST limit PR comments - in order to use our time wisely we need to be able to work on PRs in a timely manner.
 
 ### Review - Section Peer Reviewers
-- Plagiarism Check (will be done through [Quetext](https://www.quetext.com/search) by managers) if you do not see a comment via GitHub ping a manager.
+- Plagiarism Check (should be be done through [Quetext](https://www.quetext.com/search) by managers) if you do not see a comment via GitHub ping a manager. With new one PR limit - articles contributors can run their own quetext results.
 - Check for proper folder/file structure.
 - Add an article description (doesn't exceed a couple sentences).
 - Make sure the author has added a hero image from [Unsplash](https://unsplash.com/) (if needed - make sure its 600 X 400 pixels)
