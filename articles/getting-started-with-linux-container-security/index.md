@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-linux-container-security/
 title: Getting started with Linux container security
-description: This article informs you of the different processes and features involved in promoting Linux container security. It also guides you on how to deploy container security.
+description: This article informs you of the different processes and features involved in promoting Linux container security. It also guides you on how to enhance container security.
 author: mauline-mwaniki
 date: 2021-03-13T00:00:00-16:00
 topics: []
@@ -13,11 +13,11 @@ images:
   - url: /engineering-education/getting-started-with-linux-container-security/
     alt: Linux container security
 ---
-Linux containers, commonly referred to as LXC, are virtualization methods used to run multiple containers using a single Linux kernel through a control host. Linux containers allow users to create and manage applications and systems easily. This is because containers uses simple tools and a well built API.
+Linux containers, commonly referred to as LXC, are virtualization methods used to run multiple containers using a single Linux kernel through a control host. Linux containers allow users to create and manage applications, as well as systems easily. This is because containers uses simple tools and a well built API.
 <!--more-->
 
-### Features offered by the Linux kernel;
-- Kernel namespaces that allow different resources to use the same name. The use of a common namespace allows resources from multiple sources to exit at the same time examples of namespaces include; `user ID`, `names`, `network`, `mount`.
+### Features offered by the Linux Containers (LXC);
+- Kernel namespaces allow different resources to use the same name. The use of a common namespace enables resources from multiple sources to exit at the same time. Examples of namespaces include; `user`, `pid`, `network`, and`mount`.
 
 - Chroots acts as a virtual machine in LXC. It is a better option than installing a virtual box since it does not need an additional kernel installed. It uses the existing one and does not require a hypervisor for installation and configuration Apparmor that limits resources that a program can access.
 
@@ -32,35 +32,38 @@ Linux containers, commonly referred to as LXC, are virtualization methods used t
 ### Guide on how to deploy container security
 LXC containers occur in two entities; privileged containers and unprivileged containers.
 
-- Privileged containers are old-style containers used only when unprivileged containers aren't accessible and when one trusts the container user with the root access to the host. Privileged containers are not safe. In these containers, the container uid 0 is mapped to the host uid 0. The host might experience accidental damages such as; reconfiguration of host hardware, reconfiguration of the host kernel, or accessibility of the host filesystem. Namespaces, Mandatory Access Control (AppArmor, SELinux), dropping of capabilities, and seccomp filters technologies are employed to protect the host.
+- Privileged containers are old-style containers used only when unprivileged containers aren't accessible and when one trusts the container user with the root access to the host. Privileged containers are not safe. In these containers, the container's `uid 0` is mapped to the host `uid 0`. The host might experience accidental damages such as; reconfiguration of host hardware, reconfiguration of the host kernel, or accessibility of the host filesystem. Mandatory Access Control (AppArmor, SELinux), dropping of capabilities, namespaces, and seccomp filters technologies are employed to protect the host.
 
-- Unprivileged containers occur in the LXC 1.0 and require a kernel version 3.13 or higher. They are considered safe as the container uid 0 is mapped to an unprivileged user outside of the container with extra rights only on resources that it owns itself. To prevent kernel security problems, containers deploy capabilities, AppArmor, SELinux, and Seccomp, making the containers more secure.
+- Unprivileged containers occur in the `LXC 1.0` and require a kernel version `3.13` or higher. They are considered safe as the container `uid 0`is mapped to an unprivileged user outside of the container with extra rights only on resources that it owns itself. Unpriviledged containers do not require different capabilities, AppArmor, SELinux, and Seccomp to boost security.
 
-Unprivileged containers work only when `LXC` communicates with three-set user ID "setuid codes: 
-lxc-user-nic; this is a setuid root command; unprivileged containers use the command to create network interfaces used by lxc containers.
+Unprivileged containers work only when `LXC` communicates with three parts of setuid codes: 
 
-newuidmap: it sets the uid mapping for a user namespace by verifying that the caller owns the process set by pid, uid, lower uid, and count. newuidmap is only used once per process.
-newgidmap; it sets the gid mapping for a user namespace by verifying if a caller is allowed to use the process provided by PID, gid, lowergid, and count. newgidmap is only used once per process.
+- lxc-user-nic: This is a setuid root command; unprivileged containers use the command to create network interfaces used by lxc containers.
+
+- newuidmap: It sets the `uid` mapping for a user namespace by verifying that the caller owns the process set by pid, uid, lower uid, and count. newuidmap is only used once per process.
+
+- newgidmap; it sets the `gid` mapping for a user namespace by verifying if a caller is allowed to use the process provided by PID, gid, lowergid, and count. newgidmap is only used once per process.
 The rest processes run as uid owned by the user.
 
 Consequently, most security concerns in those containers apply to any random unprivileged user, and hence they are regarded as a generic kernel security bug rather than an LXC issue.
-LXC does not stop denial of service attacks automatically. Hence one needs to follow specific security protocols when running several untrusted containers or using untrusted users to operate the containers. Some of the security measures to take include;
+LXC does not stop denial of service attacks automatically. Hence one needs to follow specific security protocols when running several untrusted containers or using untrusted users to operate the containers. 
+
+Some of the security measures to consider include;
 
 - Cgroup limits - 
 The limits in LXC come from its parent. In cases where limits have not been made regarding what resources, memory, and time one container can use, it can easily lead to a DoS attack on the host. To resolve the problem, appropriate lxc.cgroup configurations entries (memory, CPU, and pids)settings are made. During login time, parent users should be assigned the correct configured cgroups. 
 
-- User limits - 
-Cgroups inherit the limits given to the individual parents. This means that unprivileged containers cannot have higher ulimits than the parent. However, ulimits are tangled with a uid at the kernel level, a global kernel uid, and not a uid for a specific user namespace. The link of ulimits to kernel uid implies that if two containers share one kernel uid, they share the same limits, and hence a user of one container can DoS, the same user from another container. To prevent DoS attacks, different untrusted users and containers should have separate id maps.
+- User limits - Cgroups inherit the limits given to the individual parents. This means that unprivileged containers cannot have higher ulimits than the parent. However, ulimits are tangled with a uid at the kernel level, a global kernel uid, and not a uid for a specific user namespace. The link of ulimits to kernel uid implies that if two containers share one kernel uid, they share the same limits, and hence a user of one container can DoS, the same user from another container. To prevent DoS attacks, different untrusted users and containers should have separate id maps.
 
-- Shared network bridges - 
-In LXC, users have access to level 2 connectivity and one default bridge for the containers. The containers perform both IP spoofing or MAC spoofing on the bridge. Also, LXC containers transmit level 2 traffic. Hence, if one is operating untrusted containers or untrusted users are using containers, each user/container should have an individual bridge. They should only have access to the given bridge.
+- Shared network bridges - In LXC, users have access to level 2 connectivity and one default bridge for the containers. The containers perform both IP spoofing or MAC spoofing on the bridge. Also, LXC containers transmit level 2 traffic. Hence, if one is operating untrusted containers or untrusted users are using containers, each user/container should have an individual bridge. They should only have access to the given bridge.
 
-- Securing IPv6 Router Advertisements - acceptance
-IPv6 router advertisements are used for routing and auto-configurations. As LXC containers only use IPv4 addresses, there is a likelihood of containers changing the LXC host's IPv6 routing table through IPv6 router advertisements. For security purpose, it is necessary to configure the networking device manually instead of relying on automatic configuration, which might cause unauthenticity threats.
+- Securing IPv6 Router Advertisements acceptance -
+IPv6 router advertisements are used for routing and auto-configurations. As LXC containers only use IPv4 addresses, there is a likelihood of containers changing the LXC host's IPv6 routing table through IPv6 router advertisements. For security purpose, it is necessary to configure the networking device manually instead of relying on automatic configuration, which might cause unauthentic threats.
 
 Follow the following procedure for configuration:
 1. Run the # grep [01]
 /proc/sys/net/ipv6/conf/*/accept_ra|egrep "default|all" This command ensures that no router advertisements are accepted by the host unless crucial.
+
 2. Configuring the host system to deny IPv6 router advertisements.
 Open the /etc/sysctl.conf file.
 If values are not set to 0;  Set the value to 0. By configuring and adding the following entries.
