@@ -5,7 +5,7 @@ image: "img/portfolio/async-programming.jpg"
 date: 2021-01-04T00:00:00-13:00
 title: "Choosing between Django, Flask, and FastAPI"
 description: This article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
-writer: "james-sandy"
+writer: "louise-findlay"
 categories: [ "Languauges"]
 weight: 1
 ---

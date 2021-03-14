@@ -1,13 +1,14 @@
-+++
-image = "img/portfolio/railroad-forest1.jpg"
-showonlyimage = true
-draft = false
-date = "2017-12-25T19:53:42+05:30"
-title = "A Totally Response Theme"
-writer = "Lukas Herman"
-categories = [ "photography" ]
-weight = 5
-+++
+---
+showonlyimage: true
+draft: false
+image: "img/portfolio/competitive-programming.jpg"
+date: 2021-01-09T00:00:00-13:00
+title: "Static Typing in Python"
+description: This article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
+writer: "sophia-raji"
+categories: ["Blockchain"]
+weight: 5
+---
 
 Fifth abundantly made Give sixth hath. Cattle creature i be don't them.
 <!--more-->

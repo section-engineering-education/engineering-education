@@ -5,7 +5,7 @@ image: "img/portfolio/bunsplash.jpg"
 date: 2021-01-07T00:00:00-13:00
 title: "Applications of AI in Design Technologies"
 description: This article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
-writer: "james-sandy"
+writer: "linus-muema"
 categories: [ "Languauges"]
 weight: 3
 ---
