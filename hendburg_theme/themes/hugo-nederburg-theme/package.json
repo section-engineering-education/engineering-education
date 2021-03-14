@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build-css": "node-sass --include-path node_modules/bootstrap-sass/assets/stylesheets static/scss/main.scss   static/css/style.default.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "dependencies": {
+    "node-sass": "^4.5.0",
+    "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}

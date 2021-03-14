@@ -1,0 +1,118 @@
+<div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fas fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+        </li>
+        {{ end }}
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    {{ with .Site.Params.social.facebook }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="facebook" target="_blank">
+        <i class="fab fa-facebook-square" title="facebook"></i>
+        <span class="screen-reader-text">facebook</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.googleplus }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="gplus" target="_blank">
+        <i class="fab fa-google-plus-g" title="googleplus"></i>
+        <span class="screen-reader-text">googleplus</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.twitter }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fab fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.instagram }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="instagram" target="_blank">
+        <i class="fab fa-instagram" title="instagram"></i>
+        <span class="screen-reader-text">instagram</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.email }}
+    <li>
+      <a href="mailto:{{ . }}" data-animate-hover="pulse" class="email">
+        <i class="fas fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.linkedin }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="linkedin" target="_blank">
+        <i class="fab fa-linkedin-in" title="linkedin"></i>
+        <span class="screen-reader-text">linkedin</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ with .Site.Params.social.stackoverflow }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="stackoverflow" target="_blank">
+        <i class="fab fa-stack-overflow" title="stackoverflow"></i>
+        <span class="screen-reader-text">stackoverflow</span>
+      </a>
+    </li>
+    {{end}}
+
+
+    {{ with .Site.Params.social.github }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fab fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    {{end}}
+
+
+    {{ with .Site.Params.social.pinterest }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="pinterest" target="_blank">
+        <i class="fab fa-pinterest" title="pinterest"></i>
+        <span class="screen-reader-text">pinterest</span>
+      </a>
+    </li>
+    {{end}}
+
+    {{ if .Site.Params.social.rss }}
+    <li>
+      <a href="{{ .Site.RSSLink }}" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fas fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    {{end}}
+
+
+  </ul></div>

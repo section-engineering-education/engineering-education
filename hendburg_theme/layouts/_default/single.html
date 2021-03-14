@@ -1,0 +1,297 @@
+{{ define "body" }}
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+{{ end }}
+
+
+{{ define "main" }}
+  {{ $scratch := newScratch }}
+  {{ if .Site.Params.writers }}
+    {{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
+  {{ else }}
+    {{ $scratch.Set "writer" (.Site.Params.social | default dict) }}
+  {{ end }}
+  {{ $writer := $scratch.Get "writer" }}
+  <div id="loop-container" class="loop-container">
+    {{ if and (isset .Params "image") .Params.image }}
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image' {{ if isset .Site.Params "usepostimgfolder" }} data-background="{{ .Permalink }}{{ .Params.image }}"{{ else }} data-background="{{ .Params.image | absURL }}"{{ end }}>
+      </div>
+      {{ else }}
+
+      <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
+
+        {{ end }}
+        <div class="entry-meta">
+          <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
+
+          <span class="author">
+            <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
+          </span>
+
+
+          {{ range .Params.categories }}
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/{{ . | urlize }}">{{ . }}</a>
+          </span>
+          {{ end }}
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> {{ .Title }}</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              {{ .Content }}
+            </article>
+          </div>
+          <!--  <div class="sidebar sidebar-after-post-content" id="sidebar-after-post-content">
+          <section id="text-2" class="widget widget_text"><h2 class="widget-title">After Post Content Widget</h2>			<div class="textwidget"><p>This is a widget in the "After Post Content" widget area. It's a great place to include related posts or an email optin form.</p>
+        </div>
+      </section>	</div>-->
+      <div class='entry-meta-bottom'>
+        <!--<nav class="further-reading">
+        <p class="prev">
+        <span>Previous Post</span>
+        <a href="https://www.competethemes.com/tracks-live-demo/another-awesome-post/">Another Awesome Post</a>
+      </p>
+      <p class="next">
+      <span>No Newer Posts</span>
+      <a href="https://www.competethemes.com/tracks-live-demo">Return to Blog</a>
+    </p>
+  </nav>-->
+
+  <div class="entry-categories"><p><span>Categories</span>
+    {{ range $index, $name := .Params.categories }}
+    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" title="View all posts in {{ $name }}">{{ $name }}</a>{{ end }}
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  {{ range $index, $name := .Params.tags }}
+  <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="View all posts tagged {{ $name }}">{{ $name }}</a>
+  {{ end }}
+
+</p></div>	</div>
+
+	{{ if and (isset .Site.Params "author") .Site.Params.author }}
+<div class="author-meta">
+
+  <div class="author">
+    	{{ if and (isset .Params "writer") $writer.email }}
+    <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 $writer.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    {{ else }}
+      <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    {{ end }}
+    <span>
+      Written by:<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
+    </div>
+    <div class="bio">
+      {{ if and (isset .Params "writer") $writer.bio }}
+      {{ range $writer.bio  }}
+      <p>{{ . | default "" | safeHTML }}</p>
+        {{ end }}
+      {{ else }}
+      {{ range .Site.Params.bio  }}
+      <p>{{ . | default "" | safeHTML }}</p>
+      {{ end }}
+      {{ end }}
+	{{ if isset .Params "writer" }}
+      {{ with $writer.facebook }}
+      <a class="facebook" target="_blank"
+      href="{{ . }}">
+      <i class="fab fa-facebook-f"
+      title="facebook icon"></i>
+    </a>
+    {{end}}
+
+    {{ with $writer.googleplus }}
+    <a class="googleplus" target="_blank"
+    href="{{ . }}">
+    <i class="fab fa-google-plus-g"
+    title="googleplus icon"></i>
+  </a>
+  {{end}}
+
+
+  {{ with $writer.twitter }}
+  <a class="twitter" target="_blank"
+  href="{{ . }}">
+  <i class="fab fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+{{end}}
+{{ with $writer.linkedin }}
+<a class="linkedin" target="_blank"
+href="{{ . }}">
+<i class="fab fa-linkedin"
+title="linkedin icon"></i>
+</a>
+{{end}}
+
+{{ with $writer.email }}
+<a class="email" target="_blank"
+href="mailto:{{ . }}">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+{{end}}
+
+{{ with $writer.instagram }}
+<a class="instagram" target="_blank"
+href="{{ . }}">
+<i class="fab fa-instagram"
+title="instagram icon"></i>
+</a>
+{{end}}
+
+{{ with $writer.stackoverflow }}
+<a class="stackoverflow" target="_blank"
+href="{{ . }}">
+<i class="fab fa-stack-overflow"
+title="stackoverflow icon"></i>
+</a>
+{{end}}
+
+{{ with $writer.github }}
+<a class="github" target="_blank"
+href="{{ . }}">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+{{end}}
+
+
+{{ with $writer.pinterest }}
+<a class="pinterest" target="_blank"
+href="{{ . }}">
+<i class="fab fa-pinterest"
+title="pinterest icon"></i>
+</a>
+{{end}}
+
+
+{{ else }}
+{{ with .Site.Params.social.facebook }}
+<a class="facebook" target="_blank"
+href="{{ . }}">
+<i class="fab fa-facebook-f"
+title="facebook icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.googleplus }}
+<a class="googleplus" target="_blank"
+href="{{ . }}">
+<i class="fab fa-google-plus-g"
+title="googleplus icon"></i>
+</a>
+{{end}}
+
+
+{{ with .Site.Params.social.twitter }}
+<a class="twitter" target="_blank"
+href="{{ . }}">
+<i class="fab fa-twitter-square"
+title="twitter icon"></i>
+</a>
+{{end}}
+{{ with .Site.Params.social.linkedin }}
+<a class="linkedin" target="_blank"
+href="{{ . }}">
+<i class="fab fa-linkedin"
+title="linkedin icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.email }}
+<a class="email" target="_blank"
+href="mailto:{{ . }}">
+<i class="fas fa-envelope"
+title="email icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.instagram }}
+<a class="instagram" target="_blank"
+href="{{ . }}">
+<i class="fab fa-instagram"
+title="instagram icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.stackoverflow }}
+<a class="stackoverflow" target="_blank"
+href="{{ . }}">
+<i class="fab fa-stack-overflow"
+title="stackoverflow icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.github }}
+<a class="github" target="_blank"
+href="{{ . }}">
+<i class="fab fa-github"
+title="github icon"></i>
+</a>
+{{end}}
+
+
+{{ with .Site.Params.social.pinterest }}
+<a class="pinterest" target="_blank"
+href="{{ . }}">
+<i class="fab fa-pinterest"
+title="pinterest icon"></i>
+</a>
+{{end}}
+{{ end }}
+
+
+</div>
+</div>
+{{ end }}
+</div>
+</div>
+
+<section id="comments" class="comments">
+  {{ template "_internal/disqus.html" . }}
+
+  <!--<div class="comments-number">
+  <h2>
+  4 Comments			</h2>
+</div>-->
+
+<!--
+<ol class="comment-list">
+<li class="comment even thread-even depth-1" id="li-comment-54">
+<article id="comment-54" class="comment">
+<div class="comment-author">
+<img alt='' src='https://secure.gravatar.com/avatar/39f7e57ccd31847dc1a4bfb2ee1cd596?s=72&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/39f7e57ccd31847dc1a4bfb2ee1cd596?s=144&#038;d=mm&#038;r=g 2x' class='avatar avatar-72 photo' height='72' width='72' />				<div>
+<div class="author-name"><a href='http://commenter.url' rel='external nofollow' class='url'>Commenter 2799</a></div>
+<div class="comment-date">April 18</div>
+<a rel='nofollow' class='comment-reply-link' href='https://www.competethemes.com/tracks-live-demo/this-is-a-standard-post/?replytocom=54#respond' onclick='return addComment.moveForm( "comment-54", "54", "respond", "1969" )' aria-label='Reply to Commenter 2799'>Reply</a>									</div>
+</div>
+<div class="comment-content">
+<p>sque lacus. Etiam consectetur rutrum justo.</p>
+<p>Duis facilisis. Aliquam sagittis. Proin consectetur egestas metus. Curabitur pellentesque posuere arcu. Integer lorem nulla, congue a, rhoncus nec, vestibulum a, ante. Mauris lobortis iaculis erat. Maecenas faucibus tincidunt dui. Cras accumsan vestibulum ligula. Morbi dapibus, lorem nec euismod pharetra, augue risus congue augue, molestie eleifend lacus magna nec magna. Mo</p>
+</div>
+</article>
+</li>
+
+</ol>-->
+
+
+</section>
+</div>
+
+<!--</div>--> <!-- .main -->
+
+
+{{ end }}

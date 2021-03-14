@@ -1,0 +1,51 @@
+{{ define "body" }}
+
+<body class="page-template-default page ct-body singular singular-page not-front standard">
+  {{ end }}
+  {{ define "main" }}
+
+    <div id="loop-container" class="loop-container">
+      <div class="entry">
+        <div class="entry-header">
+          <h1 class="entry-title">{{ .Title }}</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              {{ .Content }}
+
+              <div id="simple-contact-form" class="scf">
+                {{ with .Site.Params.email }}
+                <form method="post" action="https://formspree.io/{{ . }}">
+                  <fieldset class="scf-name">
+                    <label for="scf_name">Name (Required)</label>
+                    <input name="scf_name" id="scf_name" type="text" size="33" maxlength="99" value="" placeholder="Your Name">
+                  </fieldset>
+                  <fieldset class="scf-email">
+                    <label for="scf_email">Email (Required)</label>
+                    <input name="scf_email" id="scf_email" type="text" size="33" maxlength="99" value="" placeholder="Your Email">
+                  </fieldset>
+                  <fieldset class="scf-response">
+                    <label for="scf_response">1 + 1 =</label>
+                    <input name="scf_response" id="scf_response" type="text" size="33" maxlength="99" value="" placeholder="Correct Response">
+                  </fieldset>
+                  <fieldset class="scf-message">
+                    <label for="scf_message">Message (Required)</label>
+                    <textarea name="scf_message" id="scf_message" cols="33" rows="7" placeholder="Your Message"></textarea>
+                  </fieldset>
+                  <div class="scf-submit">
+                    <input type="submit" id="scf-button" value="Send email">
+                    <input type="hidden" id="scf-key" name="scf-key" value="process">
+                    <input type="hidden" id="scf-nonce" name="scf-nonce" value="52582b0798">
+                  </div>
+                </form>
+                <style>#simple-contact-form fieldset { width: 100%; overflow: hidden; margin: 12px 0; border: 0; padding: 1px; } #simple-contact-form fieldset input { float: left; width: 60%; } #simple-contact-form textarea { float: left; clear: both; width: 95%; } #simple-contact-form label { float: none; clear: both; display: block; margin-bottom: 12px;}</style>
+                {{ end }}
+              </div>
+              <div style="clear:both">&nbsp;</div>
+            </article>
+          </div>
+        </div>
+      </div>	</div>
+ 
+    {{ end }}

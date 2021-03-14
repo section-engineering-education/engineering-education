@@ -1,0 +1,70 @@
+<div class="archive-header">
+	<h1>
+		Tag: {{ .Title }}
+		{{ if .Site.Params.social.rss }}
+		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
+            <i class="fas fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+		</a>
+		{{ end }}
+	</h1>
+</div>
+
+<h1 class="screen-reader-text">Posts</h1>
+<div id="loop-container" class="loop-container">
+  {{ range $index, $element := (where .Data.Pages "Section" "post").ByDate.Reverse }}
+	{{ if and (isset .Params "image") .Params.image }}
+	{{ if eq (mod $index 2) 0 }}
+	<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured odd excerpt">
+		{{ else }}
+		<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured even excerpt">
+			{{ end }}
+			{{ else }}
+
+			<div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
+
+				{{ end }}
+
+				{{ if and (isset .Params "image") .Params.image }}
+				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Params.image | absURL }}"></div></a>
+
+				{{ end }}
+
+				<div class="excerpt-container">
+					<div class="excerpt-meta">
+						<span class="date">{{ .Date.Format "02 January 2006" }}</span>	<span> / </span>
+
+						{{ if and (isset .Site.Params "author") .Site.Params.author }}
+
+						<span class="author">
+							{{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
+							<a href="{{ .Site.Params.authorLink | default "" | absURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
+							{{ else }}
+							{{ .Site.Params.author | default "" }}
+							{{ end }}
+						</span>
+						{{ end }}
+
+						 {{ range .Params.categories }}
+							<span> / </span>
+						<span class="category">
+							<a href="/categories/{{ . | urlize }}">{{ . }}</a>
+						</span>
+						{{ end }}
+					</div>
+							<div class='excerpt-header'>
+								<h2 class='excerpt-title'>
+									<a href="{{ .Permalink }} "> {{ .Title }} </a>
+								</h2>
+							</div>
+							<div class='excerpt-content'>
+								<article>
+									{{ .Summary }}
+
+									<div class="more-link-wrapper"><a class="more-link" href="{{ .Permalink }}">Read the post<span class="screen-reader-text">This is a Standard Post</span></a></div>
+								</article>
+							</div>
+						</div>
+					</div>
+					{{ end }}
+				</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>{{ partial "head.html" . }}</head>
+{{ block "body" . }}
+<body class="home blog ct-body standard">
+{{ end }}
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        {{ partial "topnavigation.html" . }}
+      </div>
+
+      <div class="container">
+        {{ partial "header.html" . }}
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "scripts.html" . }}
+</body>
+</html>
