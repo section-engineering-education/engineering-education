@@ -31,7 +31,7 @@ Our new payout structure will be:
 
 We need to be keen on closing articles that are not "publish ready" i.e. an article that is not ready to be published as is (or as close as possible) - the incoming articles should only require a review from our team not a revision.
 
-#### What counts as a round of revision?
+#### When should we close PRs during review?
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
 - Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
 - Instances when the content is too difficult to understand.
