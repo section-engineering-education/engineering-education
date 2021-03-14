@@ -16,7 +16,7 @@ We are looking to create a pool of content will be unique from what is already r
 
 In order to participate in the program, all members will be required to agree to established [terms and conditions](https://www.section.io/legal-stuff/engineering-education-terms/). (Agreement is included as part of the enrollment process.)
 
-In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (*1st time contributors-submit please only one article to get familiar with the process and style-once published, you can then submit any number of articles.*)
+In order to achieve a level of consistent style and increasingly elevated quality, we have created this document to help new contributors. Let's start by reviewing what's needed. (Please ensure to only have ONE open issue + linked pull request at a time. This will ensure a steady output of EngEd articles and that they are completed in a timely manner from inception to publishing).
 
 ## Requirements for New Contributors
 - GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
@@ -71,7 +71,7 @@ The details your article gives should help further grow the readers’ skills as
 ## Review, approval, & payment processes
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
-Note: Articles requiring very few edits will be given priority in the review queue, and we reserve the right to refuse any articles that do not adhere to quality standards.PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
+Note: Articles requiring very few edits will be given priority in the review queue, and **we reserve the right to refuse any articles that do not adhere to quality standards.** PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
 
