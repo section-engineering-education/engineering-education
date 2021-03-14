@@ -18,12 +18,16 @@
 
 ### Tiered Payout Structure
 - All payouts will be as follows:
+Edit: 3/14/21
+To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 3/3/21
 
-Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
+Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
 
-Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
+Our new payout structure will be:
 
-Articles with (3+) and up rounds of revisions) we will consider closing the PR
+$150 for tutorials
+$100 for non-tutorial content
+$50/article for peer reviews
 
 #### What counts as a round of revision?
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
