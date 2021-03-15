@@ -13,12 +13,16 @@ The prerequisites for this article include:
 - Intermediate knowledge with the use of terminal.
 - Basic understanding of databases.
 
-### Table of Contents
-At the end of this article, we will be able to do the following:
-- Install and Setup SQLAlchemy.
-- Lay a theoretical foundation on specific database relationships.
-- How to create a model.
-- Building a Flask web application that stores user registration into the database.
+### Table of contents
+- [Setting up the work environment](#setting-up-the-work-environment)
+- [Install and setup SQLAlchemy](#install-and-setup-sqlalchemy)
+- [Database relationship](#database-relationship)
+- [One to many relationship](#one-to-many-relationship)
+- [Creating a model in Flask](#creating-a-model-in-flask)
+- [Storing user registration data with SQLAlchemy](#storing-user-registration-data-with-sqlalchemy)
+- [Adding user data to registration database](#adding-user-data-to-registration-database)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Setting up the work Environment
 Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone a Flask web application used in a previous tutorial that already has the registration form templates and routes all setup.
@@ -388,7 +392,6 @@ I recommend you look up how to implement a Many-to-Many database relationship [h
 
 ### Conclusion
 As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
-
 
 
 
