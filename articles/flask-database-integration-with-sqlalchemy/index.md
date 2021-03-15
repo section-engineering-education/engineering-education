@@ -129,7 +129,7 @@ class PetCategory(db.Model):
     pet_name = db.Column(db.String(100), nullable = False)
     pet_category = db.Column(db.String(50), nullable = False )
     
-    # create an handler id column establishing a relationship with the foreign key class table
+    # create a handler id column establishing a relationship with the foreign key class table
     handler_id = db.Column(db.Integer, db.ForeignKey('pethandler.handler_id'), nullable = False)
 ```
 
