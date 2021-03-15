@@ -21,7 +21,9 @@ This article will go over the DNS-based approaches for detecting botnets and wil
 ### What is a botnet?
 We can define a botnet as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and DDoS attacks. To mitigate such security threats, one should be able to identify attacks in a network.
 
-Botnets conceal their malicious activities and avoid detection using some internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks. Such an attack is the advanced persistent threat (APT), which is an attack where an intruder gains long-term presence in a network to access sensitive data. In most cases, experienced botnet developers avoid using domain names. Instead, they have successfully set up P2P botnets.
+Botnets conceal their malicious activities and avoid detection using some internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks. 
+
+Such an attack is the advanced persistent threat (APT), which is an attack where an intruder gains long-term presence in a network to access sensitive data. In most cases, experienced botnet developers avoid using domain names. Instead, they have successfully set up P2P botnets.
 
 The DNS system is used by such botnets to support their command and control infrastructure. Using domain generation algorithms (DGAs) in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially because of the easiness of developing and administrating botnets based on DNS.
 
@@ -77,10 +79,15 @@ This is what has led to the importance of detection techniques of a botnet. As w
 
 ### Resources
 -[DDoS](https://www.csoonline.com/article/3222095/ddos-explained-how-denial-of-service-attacks-are-evolving.html)
+
 -[Computer Engineering & Systems Group](http://cesg.tamu.edu/wp-content/uploads/2012/04/reddy_papers/securecomm11.pdf)
+
 -[CSO](https://www.csoonline.com/article/3222095/ddos-explained-how-denial-of-service-attacks-are-evolving.html)
+
 -[DNSBL](http://www.dnsbl.info/)
+
 -[Spamrats](http://www.spamrats.com/)
+
 -[Computer Weekly](https://www.computerweekly.com/tip/Four-handy-botnet-detection-techniques-and-tools-A-tutorial)
 
 ---
