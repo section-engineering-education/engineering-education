@@ -9,6 +9,8 @@ assignees: ''
 
 Be sure to visit our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for tools, resources, and example articles to go over.
 
+**NOTE: (Please ensure that you have only one open issue + linked pull request at a time. This will ensure that we complete the article in a timely manner from inception to publishing.)**
+
 **NOTE: We tend to stray away or tend not to publish reviews/comparisons of commercial product offerings.**
 
 ### Proposed title of article
