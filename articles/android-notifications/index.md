@@ -26,7 +26,7 @@ A notification is a message widget that is displayed outside the application's u
 ### Application setup
 Start android studio and create a new android project with an empty activity template. 
 
-![Android studio new project](android.png)
+![Android studio new project](/engineering-education/android-notifications/android.png)
 
 ### Creating and Sending Notifications
 **Basic notification**
