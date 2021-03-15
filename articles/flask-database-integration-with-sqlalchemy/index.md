@@ -6,12 +6,12 @@ Data and information are facets that make web applications valuable. If the user
 In Flask web applications, to manipulate databases, we will be using SQL and Object Relational Mapping (ORM). An ORM makes writing SQL queries easier for a programmer, because it enables us to write queries in an object-oriented language, and then ORM automatically translates it to SQL and retrieves the result in the form of an object.
 
 ### Prerequisite
-The perequisite for this article includes:
-- Basic usage and implementation of a Flask Web app
-- Understanding of Object Oriented Programing Concepts with Python
-- Understanding of Flask Views and Templates
-- Intermediate knowledge with the use of Terminal
-- Basic understanding of databases
+The prerequisites for this article include:
+- Basic usage and implementation of a Flask web app.
+- Understanding of Object-Oriented Programming concepts with Python.
+- Understanding of Flask views and templates.
+- Intermediate knowledge with the use of terminal.
+- Basic understanding of databases.
 
 ### Table of Contents
 At the end of this article, we will be able to do the following:
@@ -388,7 +388,6 @@ I recommend you look up how to implement a Many-to-Many database relationship [h
 
 ### Conclusion
 As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
-
 
 
 
