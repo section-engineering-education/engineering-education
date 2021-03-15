@@ -69,7 +69,7 @@ Articles should be clear, accurate, and fully explained. We are more interested 
 
 We suggest you think about what is most important to your article or any pain point you are addressing. Assume the audience is smart but has no prior exposure to the common terminology in your article.
 
-
+```
 For example:
 If your article is about serving ML models with Django, then the reader should have a decent understanding of something like: 
 
@@ -77,7 +77,7 @@ If your article is about serving ML models with Django, then the reader should h
 2) How to use such an app to serve a model for inference
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
-
+```
 ## Review, approval, & payment processes
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
@@ -120,7 +120,7 @@ All other formats payout will be as follows:
 
 *by unique we mean content that can NOT simply be found by looking up the official documentation.
 
-Note: We will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
+>Note: We will start by calling a “round of revision” - any major back-and-forth between reviewer and contributor.
 
 We will highlight articles that are of good consistent quality - to have as examples of the overall quality and style we are looking for. 
 
