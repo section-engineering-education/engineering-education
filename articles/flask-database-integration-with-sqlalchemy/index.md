@@ -144,7 +144,7 @@ class PetHandler(db.Model):
     handler_id = db.Column(db.Integer, primary_key = True)
     handler_name = db.Column(db.String(150), nullable = False)
     
-    # initialize the relatonship from the pet handler table with pet category table 
+    # initialize the relationship from the pet handler table with pet category table 
     pet_category =  db.relationship('PetCategory', backref='pet_handler', lazy = True)
 ``` 
 In the pet handler class, we wrote the code to inform the handler that it has a relationship with the PetCategory table. The backref argument creates a pet_handler virtual variable in the PetCategory table, such that we can access the handler of the pet by using PetCategory.pet_handler.
@@ -392,4 +392,3 @@ I recommend you look up how to implement a Many-to-Many database relationship [h
 
 ### Conclusion
 As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
-
