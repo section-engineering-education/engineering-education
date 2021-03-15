@@ -391,4 +391,6 @@ We also covered the types of database relationships that could exist in building
 I recommend you look up how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
 
 ### Conclusion
-As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
+As a practice test to improve your skills, try creating a contact form in your flask web app, and then store the content in your custom database. 
+
+You can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy).
