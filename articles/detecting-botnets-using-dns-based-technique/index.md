@@ -7,7 +7,7 @@ title: Dectecting Botnets Using DNS-Based Technique
 description: In this article we will explore the DNS-based technique for detecting botnets. 
 author: paul-muriku
 date: 2021-03-15T00:00:00-16:00
-topics: []
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
