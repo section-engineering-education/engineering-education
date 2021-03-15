@@ -27,7 +27,7 @@ The prerequisites for this article include:
 ### Setting up the work Environment
 Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone a Flask web application used in a previous tutorial that already has the registration form templates and routes all setup.
 
-We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) github repository.
+We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
 ```bash
 $ git clone https://github.com/corpsgeek/flask-form-handling.git
 ```
