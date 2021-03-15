@@ -6,7 +6,7 @@ url: /engineering-education/getting-started-with-linux-container-security/
 title: Getting started with Linux container security
 description: This article informs you of the different processes and features involved in promoting Linux container security. It also guides you on how to enhance LXC container security.
 author: mauline-mwaniki
-date: 2021-03-13T00:00:00-16:00
+date: 2021-03-15T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
