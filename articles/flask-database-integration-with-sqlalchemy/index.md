@@ -47,7 +47,7 @@ The above terminal command sets the Flask environment as a development environme
 $ flask run
 ```
 
-Our flask web application should be live, follow the host URL(127.0.0.1:5000) and you should be able to view the homepage displaying “Hello world”. Navigate to the registration route `127.0.0.1:5000/register` to view the registration page.
+Our flask web application should be live, follow the host URL (127.0.0.1:5000) and you should be able to view the homepage displaying “Hello world”. Navigate to the registration route `127.0.0.1:5000/register` to view the registration page.
 
 ### Install and Setup SQLAlchemy
 To work with SQLAlchemy, we need to install the SQLAlchemy library first.
@@ -55,7 +55,7 @@ To work with SQLAlchemy, we need to install the SQLAlchemy library first.
 ```bash
 $ pip install SQLAlchemy
 ```
-With SQLAlchemy installed, to work with it on our application, we have to import the SQLAlchemy class from the `flask_sqlalchemy` module in the main application file of our project, which is the `__init__.py` file in our `app` folder.
+With SQLAlchemy installed, we have to import the SQLAlchemy class from the `flask_sqlalchemy` module into the main application file (`__init__.py`) of our project.
 
 ```python
 # import sqlaclhemy from the flask_sqlachemy module
@@ -74,7 +74,7 @@ In the code above, the SQLite uniform resource indicator will receive the name o
 # create an instance of the database module
 db = SQLAlchemy(app)
 ``` 
-By following the process above, we have our database initialized and ready to work with, but we can’t add data to this database because it has no tables or columns, neither has it been created for user registration data to be stored. 
+By following the process above, we have our database initialized and ready to work with. But we can’t add data to this database because it contains no tables for storing the registration details.
 
 However, to solve this problem we have to start working with database models for the application. 
 
@@ -85,7 +85,7 @@ In the process of working with databases, the following are the two types of rel
 - One to Many
 - One to One
 
-In our understanding of the various database relationships, consider the creation of a Pet management system. The application will consist of the following models: PetHandler, PetCategory, PetComment and the implementation of this model is as follows:
+In our understanding of the various database relationships, consider the creation of a Pet management system. The application will consist of the following models: `PetHandler`, `PetCategory`, and `PetComment` as shown below:
 ```python
 # pet handler class 
 class PetHandler(db.Model):
@@ -96,7 +96,7 @@ class PetHandler(db.Model):
    handler_name = db.Column(db.String(150), nullable = False)
 
 # pet category class 
-class PetCategory(db.Modle):
+class PetCategory(db.Model):
    # create pet id column
    pet_id = db.Column(db.Integer, primary_key = True)
   
@@ -115,11 +115,11 @@ class PetComnment(db.Model):
 You might not understand the implementation of the above code, but focus on the concept of database relationship, we will get to the point of you understanding the components of creating a database.
 
 ### One-to-Many Relationship
-From our Pet management system as an analogy, an example of a one-to-many relationship is analyzed between a Pet Handler and a Pet in the Pet Category, such that a pet handler can be assigned to multiple (many) pets to care for. 
+From our pet management system as an analogy, an example of a one-to-many relationship is analyzed between a pet handler and a pet in the `PetCategory`, such that a pet handler can be assigned to multiple (many) pets to care for. 
 
 The representation of this relationship in our model is by following this process:
 
-We create a column containing a `ForeignKey()` in the `PetCategory` class. Simply, the pet handler is the attribute having multiple relationships with the pets, therefore the pets will have a column consisting of a `ForeignKey()` to the pet handler's unique identify key which is the pet handler’s id.
+We create a column containing a `ForeignKey()` in the `PetCategory` class. Simply, the pet handler is the attribute having multiple relationships with the pets, therefore the pets will have a column consisting of a `ForeignKey()` to the pet handler's unique identify key which is the pet handler’s id `handler_id`.
 
 ```python
 # create pet category table
@@ -135,7 +135,7 @@ class PetCategory(db.Model):
 
 The last line of code, with the handler_id variable name, initializes the existence of a one-to-many relationship from the pet handler to the pets. The db.ForeignKey receives an argument pointing to the handler_id column in the pethandler table. Note that the pethandler class name has to be in lowercase which tells SQLAlchemy that we are referring to a table.
 
-Now, the pets are aware of a relationship from the handlers, but the handler table isn’t yet aware of any relationship with any table. To do this, we have to add a line of code to the pethandler class:
+Now, the pets are aware of a relationship from the handlers, but the handler table isn’t yet aware of any relationship with any table. To do this, we have to add a line of code to the `PetHandler` class:
 
 ```python
 # create pet handler table
@@ -164,26 +164,26 @@ Class ModelTableName(db.Model):
 ```
 In the process of defining a model, a model must have a unique ID, which serves as its primary key and that’s the first thing you define in your model table. Next, you can proceed to define another data field for your table.
 
- Also, in each column, you have to specify a data type(String, Integer, and other data types that fit the data being stored). It is also a good practice to set nullable to false on data fields if you know they shouldn't be empty.
+ Also, in each column, you have to specify a data type like `String`, `Integer`, or any other data types that fits the data being stored. It is also a good practice to set `nullable` to `False` on data fields, if you know they shouldn't be empty.
 
 Implementation of the above template is as follows:
 
 ```python
 Class UserDetails(db.Model):
     # table column id
-    User_id = db.Column(db.Integer, primary_key = True)
+    user_id = db.Column(db.Integer, primary_key = True)
     
     # table column name with data type of String
     user_name = db.Column(db.String, nullable = False) 
 ```
 
 ### Storing User Registration Data With SQLAlchemy
-We now have a firm understanding of the implementation of SQLAlchemy, now, let’s delve into some practical application through our cloned flask web app, let’s navigate to the registration route in our browser http://127.0.0.1:5000/register.
+Having a firm understanding of the implementation of SQLAlchemy, let's delve into some practical application through our cloned flask web app. Now, let’s navigate to the registration route in our browser `http://127.0.0.1:5000/register`.
 
-From our page, we can see that there are three data fields, which consist of the username, email, and user password. For the scope of this article, we won’t be delving into password encryption, we would be storing our password in plain format (although not a good practice).
+Our registration page contains three input data fields for the username, email, and user password. For the scope of this article, we won’t be delving into password encryption. Instead we would be storing our password in a plain format (although not a good practice).
 
 ### Creating User Registration Model
-In the app folder, create a new file and name it models.py. In our models file, this is where we define the models for the user registration form.
+In the `app` folder, create a new file and name it `models.py`. In our models file, we define the models for the user registration form.
 
 In our model, we start by importing the db object we initialized in our app __init__.py file
 
@@ -195,8 +195,6 @@ In our model, we start by importing the db object we initialized in our app __in
 Next let’s create the User model to handle the registration form data for the username, email, and password.
 
 ```Python 
- from app import db
-
 # create user table with required field
 class User(db.Model):
     id = db.Column(db.Integer, primary_key =True)
@@ -204,9 +202,9 @@ class User(db.Model):
     user_email = db.Column(db.String(100), nullable= False)
     user_password = db.Column(db.String(150), nullable = False)
 ```
-In the model declaration, you can observe the arguments passed to the String data type, they simply are the length of data I expect the user to not surpass. 
+In the model declaration, you can observe that the arguments passed to the `String` data type contains a required length. For `db.String(100)`, it is expected that the string must have its length more than 100.
 
-Next, in our __init__.py file, beneath the database object initialization, we import the models file. The reason for this is that when we create our database, Flask will not be able to access the database models in our models.py file, therefore we have to draw it back into the app initialization file for the database object to be aware of its existence.
+Next, in our `__init__.py` file, beneath the database object initialization, we import the models file. The reason for this is that when we create our database, flask will not be able to access the database models in our `models.py` file, therefore we have to draw it back into the app initialization file for the database object to be aware of its existence.
 
 ```python
 # import the models module
@@ -232,13 +230,13 @@ from app import views
 from app import models
 ```
 
-And your models.py file should look exactly like this;
+And your `models.py` file should look exactly like this:
 
 ```python
-#import db object from flask pp
+# import db object from flask app
 from app import db
 
-# databse tables
+# database tables
 class User(db.Model):
    id = db.Column(db.Integer, primary_key =True)
    username = db.Column(db.String(100), nullable = False)
@@ -247,7 +245,7 @@ class User(db.Model):
 
 ```
 
-We have the data models created, let’s now create this database for usage, to do this, we need to open our terminal to our working directory and follow this process:
+We have the data models created, let’s now create this database for usage. To do this, we need to open our terminal to our working directory and follow this process:
 
 Initialize the Python interpreter
 ```bash
@@ -260,11 +258,11 @@ Next, import the database variable from the __init__.py file where we initialize
 $>> from app import db
 $>> db.create_all()
 ```
-Remember that the database variable is the variable name we used in our __init__.py, if you intend to use a different variable, you have to call that variable name itself and not the database variable created here.
+Remember that the database variable is the variable name we used in our `__init__.py`, if you intend to use a different variable, then you have to call that variable name and not the database variable created here.
 
-To confirm our database is created, check your app folder, you should see a new file title registration.db, which is the db name we specified in our __init__.py file.
+To confirm our database is created, check your app folder, you should see a new file title `registration.db`, which is the `db` name we specified in our `__init__.py` file.
 
-Next, we can import the User table in our models file, via this command
+Next, we can import the `User` table into our models file using this command:
 
 ```bash
 # import the user table from the models
@@ -276,27 +274,29 @@ $>> from app.models import User
 # create an instance of a user with required arguments from the database table
 >>> user1 = User(username = "Demo User", user_email = "demouser@gmail.com", user_password = "demouserpassword")
 ```
-In the above command, we specified the data for each variable defined in our User models, now hit the enter key. Next, we have to add the new user to the database, then commit the changes
+In the above command, we specify the data for each variable as defined in our `User` model, and then hit the `ENTER` key. Next, we have to add a new user to the database, then commit the changes.
 
 ```bash
 # add the user instance to the database
 >>> db.session.add(user1)
 ```
-Next, we commit the changes made to our database
+Next, we commit the changes made to our database.
 ```bash
 # commit the changes to the database
 >>> db.session.commit()
 ```
-To confirm our database works, if we query the database it should return an object of the new user manually added to the registration database:
+To confirm if our database works, we query the database and it should return an object containing the new user details using the following command:
 
 ```bash
 # query all data from the User table
 >>> User.query.all()
 ```
-Note that we are querying the User table. Now, we can add data manually to the registration database, but how do we add data to the database when the user submits data through the frontend?
+Note that, we are querying the `User` table.
+
+Now, we can add data manually to the registration database, but how do we add data to the database directly via the frontend?
 
 ### Adding User Data To Registration Database
-In our views, we start by importing the User model and the db object from our app.
+In our view, we start by importing the `User` model and the `db` object from our app.
 
 ```python
 # import db object and User table
@@ -321,7 +321,7 @@ def register():
         return username + " <br/> " + email
     return render_template('register.html')
 ```
-Next, we add the user and commit the changes to the database and we replace the return statement with “User registration successful”. By the end of the implementation, your registration route should like this.
+Next, we add the user and commit the changes to the database and we replace the return statement with "User registration successful". By the end of the implementation, your registration route should like this:
 
 ```python
 
@@ -350,7 +350,7 @@ def register():
 ```
 
 ### Test Running Our App
-Let’s test run our app. If you have the server running, terminate and restart. Now, you should have your server running, then proceed to the registration page on your web app. Let’s fill the data with this dummy data: username = Peter, email = peterdury@gmail.com, password= password.
+Let’s test run our app. If you have the server running, terminate and restart. Now, you should have your server running, then proceed to the registration page on your web app. Let’s fill in the database with this dummy data: `username` as `Peter`, `email` as `peterdury@gmail.com`, and `password` as `password`.
 
 ![Registration successful](/engineering-education/flask-database-integration-with-sqlalchemy/response.png)
 
@@ -366,7 +366,7 @@ We received the registration successful message, but let’s check the database 
 >>> User.query.all()
 [<User 1>, <User 2>]
 ```
-When you run the following command in sequential order, you should get a response indicating the new User added. In our case, we add a user when we added one manually, and due to the registration, we now have a new user.
+When you run the following command in sequential order, you should get a response indicating the new user added. In our case, we have already added an user manually, and due to the registration, we now have a new user.
 
 Let’s delve deeper and run a new command to query the User table by the username of the registered user.
 
@@ -380,7 +380,7 @@ Let’s delve deeper and run a new command to query the User table by the userna
 Demo user
 Peter
 ```
-If you run the statement in sequential order, you should get the username data of all registered users in the database.
+If you run these code snippets in a sequential order, you should get the username data of all the registered users in the database.
 
 ### Summary
 This article has covered the usage of SQLAlchemy in building Flask Web applications, storing data, accessing stored data through the Python interpreter, database modelling and the understanding of database relationships. 
@@ -388,7 +388,7 @@ This article has covered the usage of SQLAlchemy in building Flask Web applicati
 We also covered the types of database relationships that could exist in building database models. 
 
 ### Further Reading and References
-I recommend you look up how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
+I recommend you, to look up on how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
 
 ### Conclusion
 As a practice test to improve your skills, try creating a contact form in your flask web app, and then store the content in your custom database. 
