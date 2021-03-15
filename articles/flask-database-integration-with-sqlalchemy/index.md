@@ -41,7 +41,7 @@ We also need to set up the Flask environment to develop from the default state w
 $ export FLASK_ENV="DEVELOPMENT"
 ```
 
-The above terminal command sets the Flask environment as a development environment. Now, we can run our Flask app with the following command.
+The above terminal command sets the Flask environment as a development environment. Now, we can run our flask app using the following command:
 
 ```bash
 $ flask run
@@ -392,5 +392,4 @@ I recommend you look up how to implement a Many-to-Many database relationship [h
 
 ### Conclusion
 As a practice test, try creating a contact form in your flask web app, then store the content in your custom database as a project to improve your skills when working with Flask-SQLAlchemy, and you can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy)
-
 
