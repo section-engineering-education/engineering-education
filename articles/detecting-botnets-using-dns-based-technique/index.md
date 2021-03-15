@@ -6,24 +6,24 @@ url: /engineering-education/detecting-botnets-using-dns-based-technique/
 title: Dectecting Botnets Using DNS-Based Technique
 description: In this article we will explore the DNS-based technique for detecting botnets. 
 author: paul-muriku
-date: 2021-03-15T00:00:00-17:00
+date: 2021-03-15T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/detecting-botnets-using-dns-based-technique/hero.jpg
+  - url: /engineering-education/detecting-botnets-using-dns-based-technique/hero.png
     alt: dns technique image example
 ---
-Over the past few years, many people and organizations have embraced the use of networking technologies to enhance data sharing and communication. Data sharing has come with its security challenges. Data security challenges have been necessitated by botnets, used by cybercriminals to instigate various attacks. 
+Over the past few years, many people and organizations have embraced the use of networking technologies to enhance data sharing and communication. Data sharing has come with its security challenges. Data security challenges have been and ongoing issue largely in part by botnets, which are used by cybercriminals to instigate various attacks. 
 <!--more-->
 This article will go over the DNS-based approaches for detecting botnets and will explain why these approaches are widely used. We will also provides real-life examples of DNS-based tools.
 
 ### What is a botnet?
-A botnet can be defined as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and [DDoS attacks](/engineering-education/denial-of-service/). To mitigate such security threats, one should be in a position to identify attacks in a network.
+We can define a botnet as a group of computers or digital devices that are infected with malware to enable hackers to control them. Botnets are used by cybercriminals to instigate attacks such as unauthorized access of information, data theft, credentials leak, and DDoS attacks. To mitigate such security threats, one should be able to identify attacks in a network.
 
-Botnets conceal their malicious activities and avoid detection using some internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks.  Such an attack is the advanced persistent threat (APT), which is an attack where an intruder gains long-term presence in a network to access sensitive data. In most cases, experienced botnet developers avoid using domain names. Instead, they have successfully set up P2P botnets. 
+Botnets conceal their malicious activities and avoid detection using some internet protocols. In the recent past, hackers have abused multiple protocols, whilst DNS has become the central target of cyberattacks. Such an attack is the advanced persistent threat (APT), which is an attack where an intruder gains long-term presence in a network to access sensitive data. In most cases, experienced botnet developers avoid using domain names. Instead, they have successfully set up P2P botnets.
 
-In this regard, the DNS system is used by such botnets to support their command and control infrastructure. The use of domain generation algorithms (DGAs) in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially due to the easiness of developing and administrating botnets based on DNS.  
+The DNS system is used by such botnets to support their command and control infrastructure. Using domain generation algorithms (DGAs) in botnet malware has risen in the past few years. This has compounded the difficulty in the detection of botnets partially because of the easiness of developing and administrating botnets based on DNS.
 
 The following diagram shows the structure of a botnet. 
 
