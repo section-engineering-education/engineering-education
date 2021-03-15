@@ -35,7 +35,7 @@ Change the directory to the cloned folder and install the packages in the `requi
 ```bash
 $ pip install -r requirement.txt
 ``` 
-We also need to set up the Flask environment to develop from the default state which is the production environment.
+We also need to set up the flask develop environment, where the default state is the production environment.
 
 ```bash
 $ export FLASK_ENV="DEVELOPMENT"
