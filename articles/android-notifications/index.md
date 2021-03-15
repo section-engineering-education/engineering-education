@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/android-notifications/
+title: Getting started with android notifications
+description: This tutorial will go over how to create android notifications. A notification is a message widget that is displayed outside the application's user interface
+author: odhiambo-paul
+date: 2021-03-15T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/android-notifications/hero.jpg
+    alt: Android notification example image
+---
+
 ### Android notifications
 A notification is a message widget that is displayed outside the application's user interface. When a notification is issued, it appears as an icon in the notification area. To view the details of the notification, the user opens the notification drawer.
 
@@ -212,3 +229,5 @@ In the `activity_main.xml` file add the code snippet below. There are three butt
 Now that you understand how notifications work, implement a push notification using firebase cloud messaging. Full source code for the application we have built can be downloaded from [here](https://github.com/paulodhiambo/Notification). To read more on the notification anatomy visit [android documentation](https://developer.android.com/guide/topics/ui/notifiers/notifications#Templates).
 
 Happy coding
+
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
