@@ -98,6 +98,18 @@ class DB_Connection{
 ```
 ### Step 2: Install `php-jwt` package
 
-Now, let's use Composer to build the php-jwt library. Run the following command from the root of your project's directory in your terminal:
+Now, let's use Composer to build the php-jwt library. Run the following command from the root of your project's directory in your terminal:  
+
+```bash
+$ composer require firebase/php-jwt
+```
+The php-jwt library will be downloaded into a vendor folder.
+
+Using the following code, you can encode and decode JWT tokens using the php-jwt library:
 
 
+```php
+<?php 
+require "vendor/autoload.php";
+use \Firebase\JWT\JWT;
+```
