@@ -157,7 +157,7 @@ We will handle the theme switching through JavaScript by changing the toggle swi
 ```javascript
     // Reset the html class to default
    const changeThemeToDark = () =>{
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "light"); //set theme to dark
 }
 ```
 
@@ -167,12 +167,12 @@ We will use local storage to store our currently set theme so that in subsequent
 The below pieces of code are used to save and retrieve the theme from local storage:
 ```javascript
     const changeThemeToDark = () =>{
-        document.documentElement.setAttribute("data-theme", "dark")
+        document.documentElement.setAttribute("data-theme", "dark") //set theme to dark
         localStorage.setItem("data-theme", "dark")// save theme to local storage
     }
 
     const changeThemeToLight = () =>{
-        document.documentElement.setAttribute("data-theme", "light")
+        document.documentElement.setAttribute("data-theme", "light") //set theme dark
         localStorage.setItem("data-theme", 'light')// save theme to local storage
     }
 ```
