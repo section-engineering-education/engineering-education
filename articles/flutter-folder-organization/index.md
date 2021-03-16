@@ -104,3 +104,6 @@ Maintaining a good folder structure is a good programming practice that will hel
 ### Conclusion
 In this article, we understood every file and folder generated during the creation of a flutter application. We went ahead and organized the files and folders to facilitate code maintainability. Follow with me in the next article to build a working application using this folder structure. You can find this project structure [here](https://github.com/jerimkaura/bulidingMyApps/tree/flutter-folder-organization/folder_structure_app)
 
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+
