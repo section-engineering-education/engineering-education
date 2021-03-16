@@ -125,7 +125,7 @@ There are three main techniques employed to train TransGAN better. They include:
 ### Wrapping Up
 
 In this article, we have discussed the TransGAN paper. It attempts to re-design GANs architecture by replacing convolutions with pure transformers.
-Over the past years, we've seen a shift in the use of CNNs to use powerful transformers to perform image classification tasks. Transformers are now being attempted on image generation tasks.  Most of these proposed models still have some challenges. One case is in the use of transformers for image generation tasks such as in GANs. But, they still appear to be very promising architectures. 
+Over time, we have seen a shift in the use of CNNs to use powerful transformers for image classification tasks. Transformers are now being tried on image generation tasks. However, most of these proposed models still pose some challenges. An instance is the use of transformers for image generation tasks, such as in GANs. But, they still appear to be very promising architectures.
 
 ### References
 
