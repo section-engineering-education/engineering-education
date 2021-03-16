@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/android-notifications/
-title: Getting started with android notifications
+title: Getting Started with Android Notifications
 description: This tutorial will go over how to create android notifications. A notification is a message widget that is displayed outside the application's user interface
 author: odhiambo-paul
-date: 2021-03-15T00:00:00-13:00
+date: 2021-03-15T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,22 +14,22 @@ images:
   - url: /engineering-education/android-notifications/hero.jpg
     alt: Android notification example image
 ---
-
+A notification is a message widget that is displayed outside the applications user interface. When a notification is issued, it appears as an icon in the notification area. To view the details of the notification, the user opens the notification drawer.
+<!--more-->
 ### Android notifications
-A notification is a message widget that is displayed outside the application's user interface. When a notification is issued, it appears as an icon in the notification area. To view the details of the notification, the user opens the notification drawer.
-
 ### Prerequisites
+To follow this tutorial along ensure you have the following:
 1. [Android Studio](https://developer.android.com/studio) installed on your computer.
 2. Some knowledge of [Kotlin](https://kotlinlang.org/docs/home.html) programming language.
 3. Some knowledge of [Android](https://kotlinlang.org/docs/android-overview.html) app development.
 
 ### Application setup
-Start android studio and create a new android project with an empty activity template. 
+Start Android studio and create a new Android project with an empty activity template. 
 
 ![Android studio new project](/engineering-education/android-notifications/android.png)
 
-### Creating and Sending Notifications
-**Basic notification**
+### Creating and sending notifications
+#### Basic notification
 - Create a function with the name `basicNotification`.
 - The function created above should have the code snippets below. The function creates a basic notification with an icon, title, and notification content.
 
@@ -45,20 +45,22 @@ Start android studio and create a new android project with an empty activity tem
         }
     }
 ```
-From the above code snippet:-
-- `NotificationCompat.Builder(this, CHANNEL_ID)` takes in the context and the channel id. Channel id is required for notifications to work on android 8.0  and later versions, channel id is used to manage notifications on the later android versions.
+
+From the above code snippet:
+- `NotificationCompat.Builder(this, CHANNEL_ID)` takes in the context and the channel id. Channel id is required for notifications to work on Android 8.0 and later versions, channel id is used to manage notifications on the later Android versions.
 - `setSmallIcon(R.drawable.notification_icon)` sets the notification icon that appears on the notification drawer.
 - `setContentTitle(textTitle)` sets the title of the notification that is shown on the notification drawer.
 - `setContentText(textContent)` sets the body of the notification.
-- `setPriority(NotificationCompat.PRIORITY_DEFAULT)` sets how the android system will notify the user of the notification based on the priority set, it works on android 7.0 and below.
+- `setPriority(NotificationCompat.PRIORITY_DEFAULT)` sets how the Android system will notify the user of the notification based on the priority set, it works on Android 7.0 and below.
 - The code snippet below creates and shows the notification in the systems notification drawer.
-  ```kotlin
+
+```kotlin
   with(NotificationManagerCompat.from(this)) {
             notify(notificationId, builder.build())
         }
-    ``` 
+``` 
   
-**Pending intent notification**
+#### Pending intent notification
 It is possible to add an intent to a notification such that whenever a user clicks on the notification it opens up an activity or fragment from a pending intent.
 To create a notification with a pending intent, create a function with the name `pendingNotification` in the `MainActivity.kt` and add the code snippet below.
 
@@ -82,14 +84,21 @@ To create a notification with a pending intent, create a function with the name 
     }
 ```
 
-- `val intent = Intent(this, MainActivity::class.java).apply {
+- The minor snippet below creates a pending intent that gets executed whenever the notification is clicked.
+
+```kotlin
+val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }` creates a pending intent that gets executed whenever the notification is clicked.
+        }
+```
+
 - `.setContentIntent(pendingIntent)` attaches the pending intent created to the notification, this makes it possible for the notification to handle the pending intent operation.
 
-**Notification with action button**
+#### Notification with action button
 Android system makes it possible to perform certain operations through notification action buttons i.e receive an incoming call, snooze an alarm through the notification buttons.
-Notification actions were introduced with Android version 5.0, that's the reason why we will annotate the function `actionNotification` with `@RequiresApi(Build.VERSION_CODES.O)` annotation.
+
+Notification actions were introduced with Android version 5.0, that's the reason why we will annotate the function `actionNotification` with the `@RequiresApi(Build.VERSION_CODES.O)` annotation.
+
 Create a function with the name `actionNotification` and add the code snippets below.
 
 ```kotlin
@@ -116,11 +125,13 @@ Create a function with the name `actionNotification` and add the code snippets b
         }
     }
 ```
+
 To perform an action from the notification, we will create a new kotlin class with the name `MyBroadCastReceiver`. `MyBroadCastReceiver` class extends the `BroadCastReceiver` interface and implements the `onReceive()` method of the `BroadCastReceiver`interface.
 
-**Notification channel**
-Android version 8.0 and later versions require the notification channel for notification to be displayed on the notifications drawer. It is through notification channels that the android operating system manages notifications.
-Create a function with the name `createNotificationChannel()` in the `MainActivity` and add the code snippets below.
+#### Notification channel
+Android version 8.0 and later versions require the notification channel for notification to be displayed on the notifications drawer. 
+
+It is through notification channels that the Android operating system manages notifications. Create a function with the name `createNotificationChannel()` in the `MainActivity` and add the code snippets below.
 
 ```kotlin
  private fun createNotificationChannel() {
@@ -137,8 +148,8 @@ Create a function with the name `createNotificationChannel()` in the `MainActivi
         }
     }
 ```
-**BroadCastReceiver**
 
+#### BroadCastReceiver
 In the project package, create a kotlin class with the name `MyBroadCastReceiver` and add the code snippets below.
 
 ```kotlin
@@ -156,6 +167,7 @@ class MyBroadCastReceiver : BroadcastReceiver() {
 ```
 
 In the `oncreate()` function of the `MainActivity` add the code snippet below.
+
 ```kotlin
  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -180,7 +192,8 @@ In the `oncreate()` function of the `MainActivity` add the code snippet below.
         }
     }
 ```
-**User interface**
+
+#### User interface
 In the `activity_main.xml` file add the code snippet below. There are three buttons in the XML design below. The first button fires up the basic notification, the second button fires up the pending intent notification, and the last button fires the action button notification.
 
 ```xml
@@ -225,9 +238,12 @@ In the `activity_main.xml` file add the code snippet below. There are three butt
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-### Conclusion.
-Now that you understand how notifications work, implement a push notification using firebase cloud messaging. Full source code for the application we have built can be downloaded from [here](https://github.com/paulodhiambo/Notification). To read more on the notification anatomy visit [android documentation](https://developer.android.com/guide/topics/ui/notifiers/notifications#Templates).
+### Conclusion
+Now that you understand how notifications work, implement a push notification using firebase cloud messaging. Full source code for the application we have built can be downloaded from [here](https://github.com/paulodhiambo/Notification). 
 
-Happy coding
+To read more on the notification anatomy visit the [Android documentation](https://developer.android.com/guide/topics/ui/notifiers/notifications#Templates).
 
+Happy coding.
+
+---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
