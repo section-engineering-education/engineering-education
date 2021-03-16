@@ -35,7 +35,7 @@ Change the directory to the cloned folder and install the packages in the `requi
 ```bash
 $ pip install -r requirement.txt
 ``` 
-We also need to set up the flask develop environment, where the default state is the production environment.
+We also need to set up the flask environment variable to development, where the default state is the production environment.
 
 ```bash
 $ export FLASK_ENV="DEVELOPMENT"
@@ -185,7 +185,7 @@ Our registration page contains three input data fields for the username, email, 
 ### Creating User Registration Model
 In the `app` folder, create a new file and name it `models.py`. In our models file, we define the models for the user registration form.
 
-In our model, we start by importing the db object we initialized in our app __init__.py file
+In our model, we start by importing the db object we initialized in our app `__init__.py` file
 
 ```python
  # import the db object from the flask app
@@ -242,7 +242,6 @@ class User(db.Model):
    username = db.Column(db.String(100), nullable = False)
    user_email = db.Column(db.String(100), nullable= False)
    user_password = db.Column(db.String(150), nullable = False)
-
 ```
 
 We have the data models created, let’s now create this database for usage. To do this, we need to open our terminal to our working directory and follow this process:
@@ -255,8 +254,8 @@ Next, import the database variable from the __init__.py file where we initialize
 
 ```bash
 # import db object and create all tables in the database from the models file
-$>> from app import db
-$>> db.create_all()
+$>>>> from app import db
+$>>>> db.create_all()
 ```
 Remember that the database variable is the variable name we used in our `__init__.py`, if you intend to use a different variable, then you have to call that variable name and not the database variable created here.
 
@@ -266,30 +265,30 @@ Next, we can import the `User` table into our models file using this command:
 
 ```bash
 # import the user table from the models
-$>> from app.models import User
+$>>>> from app.models import User
 ```
  To ensure the functionality of the database is intact, let’s create a dummy user from the python interpreter
 
 ```bash
 # create an instance of a user with required arguments from the database table
->>> user1 = User(username = "Demo User", user_email = "demouser@gmail.com", user_password = "demouserpassword")
+>>>> user1 = User(username = "Demo User", user_email = "demouser@gmail.com", user_password = "demouserpassword")
 ```
 In the above command, we specify the data for each variable as defined in our `User` model, and then hit the `ENTER` key. Next, we have to add a new user to the database, then commit the changes.
 
 ```bash
 # add the user instance to the database
->>> db.session.add(user1)
+>>>> db.session.add(user1)
 ```
 Next, we commit the changes made to our database.
 ```bash
 # commit the changes to the database
->>> db.session.commit()
+>>>> db.session.commit()
 ```
 To confirm if our database works, we query the database and it should return an object containing the new user details using the following command:
 
 ```bash
 # query all data from the User table
->>> User.query.all()
+>>>> User.query.all()
 ```
 Note that, we are querying the `User` table.
 
@@ -359,11 +358,11 @@ We received the registration successful message, but let’s check the database 
 
 ```bash
 # import db and User table
->>> from app import db
->>> from app.models import User
+>>>> from app import db
+>>>> from app.models import User
 
 # query User table
->>> User.query.all()
+>>>> User.query.all()
 [<User 1>, <User 2>]
 ```
 When you run the following command in sequential order, you should get a response indicating the new user added. In our case, we have already added an user manually, and due to the registration, we now have a new user.
@@ -376,11 +375,18 @@ Let’s delve deeper and run a new command to query the User table by the userna
 # loop through the user data
 >>>> for user in user_data:
       # print user username in the User table
-….    print(user.username)
+      print(user.username)
+```
+If you run these code snippets in a sequential order, you should get the username data of all the registered users in the database.
+```bash
 Demo user
 Peter
 ```
-If you run these code snippets in a sequential order, you should get the username data of all the registered users in the database.
+
+### Conclusion
+As a practice test to improve your skills, try creating a contact form in your flask web app, and then store the content in your custom database. 
+
+You can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy).
 
 ### Summary
 This article has covered the usage of SQLAlchemy in building Flask Web applications, storing data, accessing stored data through the Python interpreter, database modelling and the understanding of database relationships. 
@@ -389,8 +395,3 @@ We also covered the types of database relationships that could exist in building
 
 ### Further Reading and References
 I recommend you, to look up on how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
-
-### Conclusion
-As a practice test to improve your skills, try creating a contact form in your flask web app, and then store the content in your custom database. 
-
-You can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy).
