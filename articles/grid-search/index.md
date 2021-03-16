@@ -1,8 +1,23 @@
-![hero](/engineering-education/grid-search/hero.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/grid-search/
+title: Using Grid Search to Optimize Hyperparameters
+description: In this post, we dive into a key technique to optimize hyperparameters known as grid-search.
+author: collins-ayuya
+date: 2021-03-16T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-[Source](https://images.unsplash.com/photo-1521620112244-f1d36327c766?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80)
+  - url: /engineering-education/grid-search/hero.jpg
+    alt: Grid search hero image
+---
 
-Unlike parameters, hyperparameters are set before training a machine learning model. These hyperparameters need to be optimized to adapt a model to a dataset. However, the optimal hyperparameter settings on one dataset are unlikely to be optimal on another. This makes the task of hyperparameter optimization that much trickier. In this post, we dive into a key technique to optimize hyperparameters known as grid-search.
+Unlike parameters, hyperparameters are set before training a machine learning model. These hyperparameters need to be optimized to adapt a model to a dataset. However, the optimal hyperparameter settings on one dataset are unlikely to be optimal on another. This makes the task of hyperparameter optimization that much trickier. 
+<!--more-->
+In this post, we dive into a key technique to optimize hyperparameters known as grid-search.
 
 ### Contents
 
@@ -344,5 +359,7 @@ Since grid search attempts all possible combinations, it becomes a computational
 5. [Hyperparameter Optimization With Random Search and Grid Search](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
 
 6. [A Comparison of Grid Search and Randomized Search Using Scikit Learn](https://blog.usejournal.com/a-comparison-of-grid-search-and-randomized-search-using-scikit-learn-29823179bc85)
+
+
 
 7. [An introduction to Grid Search](https://medium.com/datadriveninvestor/an-introduction-to-grid-search-ff57adcc0998)
