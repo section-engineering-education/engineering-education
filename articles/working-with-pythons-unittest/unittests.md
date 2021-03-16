@@ -29,14 +29,14 @@ The units are basic maths functions used to double a given number `x`, get the s
 # mathfns.py
 
 def double(x):
- return 2 * x
+   return 2 * x
 
 def square(x):
- return x * x
+   return x * x
 
 # divide numerator by denominator
 def divide(num, den):
- return num / den
+   return num / den
 ```
 
 #### Unit tests
@@ -57,27 +57,27 @@ from mathfns import double, square, divide
 import unittest
 
 class TestMathFunctions(unittest.TestCase):
- def test_double(self):
- # used to check that double(8) returns 16
- self.assertEqual(double(8), 16)
+   def test_double(self):
+      # used to check that double(8) returns 16
+      self.assertEqual(double(8), 16)
 
- # used to check that double(8) returns a number not equal to 15
- self.assertNotEqual(double(8), 15)
+      # used to check that double(8) returns a number not equal to 15
+      self.assertNotEqual(double(8), 15)
  
- def test_square(self):
- # used to check that square(7) returns 49
- self.assertEqual(square(7), 49)
- 
- def test_divide(self):
- # we want to make sure that the divide unit raises a ZeroDivisionError
- # when one attempts to divide a number by zero.
- with self.assertRaises(ZeroDivisionError):
-            divide(42, 0)
+    def test_square(self):
+       # used to check that square(7) returns 49
+       self.assertEqual(square(7), 49)
+    
+    def test_divide(self):
+       # we want to make sure that the divide unit raises a ZeroDivisionError
+       # when one attempts to divide a number by zero.
+       with self.assertRaises(ZeroDivisionError):
+         divide(42, 0)
 
 if __name__ == '__main__':
- # unittest.main() serves as the main entry point to run the unit tests.
- # unit tests are not performed without this function call
-    unittest.main()
+   # unittest.main() serves as the main entry point to run the unit tests.
+   # unit tests are not performed without this function call
+   unittest.main()
 ```
 
 To run the unit tests, proceed as follows:
@@ -108,7 +108,7 @@ We have seen what happens when the unit tests run correctly. Now, let us take a 
 
 ```python
 def double(x):
- return 4 * x
+   return 4 * x
 ```
 
 When we run the unit tests, we get the following output:
@@ -159,8 +159,8 @@ Error messages are very useful for future code debugging. They also provide docu
 For instance, to add an error message to `self.assertEqual(double(8), 16)`, change your code to match this:
 
 ```python
- def test_double(self):
- self.assertEqual(double(8), 16, "the function should return two times the number provided")
+   def test_double(self):
+      self.assertEqual(double(8), 16, "the function should return two times the number provided")
 ```
 
 ###### Output
