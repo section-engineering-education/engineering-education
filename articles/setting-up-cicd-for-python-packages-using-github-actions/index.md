@@ -44,6 +44,7 @@ This [Amazon](https://aws.amazon.com/devops/continuous-delivery/) blog explains 
 
 ### Building a Python Package
 
+#### Objective
 We will attempt to build a basic Python package that tells a user the time in another time zone and works on the command line. The code for this project is in [this repository](https://github.com/edeediong/timezone_checker).
 
 #### Application Logic
@@ -148,13 +149,14 @@ Then, fill the file with the contents in the code snippet below:
 ```python
     from setuptools import setup, find_packages
 
+
     setup(
         name="timechecker",
         version="0.0.1",
         author="Edidiong Etuk",
         author_email="edeediong@gmail.com",
         url="https://bit.ly/edeediong-resume",
-        description="An aplication that informs you of the time in different locations and timezones",
+        description="An application that informs you of the time in different locations and timezones",
         packages=find_packages(),
         classifiers=[
             "Programming Language :: Python :: 3",
@@ -180,7 +182,7 @@ Below is the directory structure after creating the above file structure:
           └── main.py
 ```
 
-## Authenticating GitHub with Test PyPI
+### Authenticating GitHub with Test PyPI
 
 Let's create a credential for GitHub Action to communicate with Test PyPI. Follow the instructions below:
 
@@ -192,7 +194,7 @@ Let's create a credential for GitHub Action to communicate with Test PyPI. Follo
 
 If you don’t have a TestPyPI account, you’ll need to create it. It’s not the same as a regular PyPI account.
 
-## Packaging & Deploying with GitHub Actions
+### Packaging & Deploying with GitHub Actions
 
 Execute the following steps to package the application with GitHub Actions:
 
@@ -242,7 +244,7 @@ Few things to note about the above workflow:
 1. We have just a single `build-n-publish` job which runs on `ubuntu-18.04`.
 2. Then, we checkout the project into the ubuntu environment and setup our python distribution (Python 3.7)
 3. Then, we install dependencies needed for the package and test it against a `flake8` linter.
-4. Once done, we will produce a source distribution from the packages coded. We do this using the `python [setup.py](http://setup.py) sdist` command.
+4. Once done, we will produce a source distribution from the packages coded. We do this using the `python setup.py sdist` command.
 5. The last step uses `pypa/gh-action-pypi-publish` GitHub Action to upload contents of the dist/ folder into TestPyPI unconditionally.  It also used the secrets declared and defined in the previous section.
 
 Below is the final directory structure:
@@ -266,12 +268,12 @@ Once this is achieved, push the code to the repository. Then navigate to the **A
 
 ![actions.png](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/actions.png)
 
-### Things To Note
+#### Things To Note
 
-- If you're facing *"the user <username> is not allowed...",* change the name of the package in `[setup.py](http://setup.py)` to `<username>_timechecker`.
+- If you're facing *"the user <username> is not allowed...",* change the name of the package in `setup.py` to `<username>_timechecker`.
 - If you face an indentation error, in the pipeline, follow the error on the line flagged and try to fix the indentation error. This is part of CI/CD.
 
-## Testing Python Package Locally
+### Testing Python Package Locally
 
 To test the package locally, execute the following command locally:
 
@@ -281,6 +283,15 @@ timechecker --location Algiers
 timechecker --zone EST
 ```
 
-## Conclusion
 
-At the end of this tutorial, we have built a python application, packaged it in GitHub Action, and deployed it to Test PyPI using GitHub Actions. I hope this guide helps anyone in the future when building their Python packages and wanting to push them using GitHub Actions.
+
+
+### Conclusion
+
+In this tutorial, we've seen what continuous integration, delivery and deployment are, and then built a Python package to detect the time in a particular timezone. We've also seen how to package a Python application and a Test repository that doesn't affect the general Python index.
+
+This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub actions to achieve our said objectives and ensured the entire pipeline works as developed..
+
+The source code for this repository is found on [GitHub](https://github.com/edeediong/timezone_checker).
+
+Happy Building!
