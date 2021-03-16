@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/flask-database-integration-with-sqlalchemy/
-title: Flask Database Integration With SQLAlchemy
+title: Flask Database Integration with SQLAlchemy
 description: In this article we will understand how to work with SQLAlchemy in a Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
 author: adetu-ridwan
 date: 2021-03-16T00:00:00-12:30
