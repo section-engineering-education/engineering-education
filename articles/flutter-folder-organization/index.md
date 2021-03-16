@@ -67,7 +67,7 @@ This folder will contain the application UI files rendered on the device screen.
 This folder contains the functions used to implement the application's business logic. For instance, if we build a social media application that supports a multi-account login, the utilities will ensure that the data rendered is changed according to the currently logged-in account.
 
 **Widgets**
-This folder contain widgest that are used repeatedly in the application. For instance, if you are using an API to list GitHub accounts following a particular user, the list view of the followers remains the same only the data that is rendered is dynamic. In such a case we will use the `followers widget` in our widgets folder.
+This folder contains widgets that are used repeatedly in the application. For instance, if you are using an API to list GitHub accounts following a particular user, the followers' list view remains the same only the data that is rendered is dynamic. In such a case, we will use the `followers widget` in our widgets folder.
 
 **Data**
 The data folder contains data collections that are fetched from services or databases. For instance, if our application will use firebase, we could have a user model containing information about the user relating to password name, age, etc.
@@ -79,11 +79,11 @@ Services folder should handle your application's networking logic. For example, 
 Maintaining a good folder structure is a good programming practice that will help your application from the following problems:
 - Unable to find a specific file
 - Writing a block of codes again and again
-- Mixing up User Interface and back-end code
+- Mixing up User Interface and backend code
 - Unlimited local variable
 - App causing of battery drain
 - Confusion when developing as a team.
 
 ### Conclusion
-In this article, we understood every file and folder generated during the creation of a flutter application. We went ahead and organized the files and folders to facilitate code maintainability. Follow with me in the next article to build a working application using this folder structure. Tou can find this project structure [here](https://github.com/jerimkaura/bulidingMyApps/tree/flutter-folder-organization/folder_structure_app)
+In this article, we understood every file and folder generated during the creation of a flutter application. We went ahead and organized the files and folders to facilitate code maintainability. Follow with me in the next article to build a working application using this folder structure. You can find this project structure [here](https://github.com/jerimkaura/bulidingMyApps/tree/flutter-folder-organization/folder_structure_app)
 
