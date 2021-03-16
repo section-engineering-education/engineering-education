@@ -184,6 +184,7 @@ Below is the directory structure after creating the above file structure:
 
 ### Authenticating GitHub with Test PyPI
 
+Following the guide on the official [Python documentation](http://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows.html),
 Let's create a credential for GitHub Action to communicate with Test PyPI. Follow the instructions below:
 
 1. Go to [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens) and create a new [API token](https://pypi.org/help/#apitoken). If you have the project on Test PyPI already, limit the token scope to just that project. You can call it something like `GitHub Actions CI/CD — project-org/project-repo` in order for it to be easily distinguishable in the token list. **Don’t close the page just yet — you won’t see that token again.**
@@ -192,14 +193,14 @@ Let's create a credential for GitHub Action to communicate with Test PyPI. Follo
 
 **Attention**
 
-If you don’t have a TestPyPI account, you’ll need to create it. It’s not the same as a regular PyPI account.
+You'll need to create a Test PyPI account if you don't have one already as it is different from the standard PyPI account.
 
 ### Packaging & Deploying with GitHub Actions
 
 Execute the following steps to package the application with GitHub Actions:
 
-1. In your repository, create the `.github/workflows/` directory to store your workflow files.
-2. In the `.github/workflows/` directory, create a new file called `python-package.yml` and add the following code:
+1. Create the `.github/workflows/` directory in your repository to store your workflow files.
+2. Create a new file called `python-package.yml` in the `.github/workflows/` directory and add the following code:
 
     ```yaml
     name: Publish Python distributions to PyPI and TestPyPI
@@ -216,7 +217,7 @@ Execute the following steps to package the application with GitHub Actions:
         runs-on: ubuntu-18.04
         steps:
             - uses: actions/checkout@master
-            - name: Set up Python 3.7
+            - name: Initialize Python 3.7
             uses: actions/setup-python@v1
             with:
                 python-version: 3.7
@@ -228,7 +229,7 @@ Execute the following steps to package the application with GitHub Actions:
             run: |
                 # stop the build if there are Python syntax errors or undefined names
                 flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-                # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+                # exit-zero treats all errors as warnings.
                 flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
             - name: Build binary wheel and a source tarball
             run: python setup.py sdist
@@ -244,7 +245,7 @@ Few things to note about the above workflow:
 1. We have just a single `build-n-publish` job which runs on `ubuntu-18.04`.
 2. Then, we checkout the project into the ubuntu environment and setup our python distribution (Python 3.7)
 3. Then, we install dependencies needed for the package and test it against a `flake8` linter.
-4. Once done, we will produce a source distribution from the packages coded. We do this using the `python setup.py sdist` command.
+4. Next, create a source distribution. We do this using the `python setup.py sdist` command.
 5. The last step uses `pypa/gh-action-pypi-publish` GitHub Action to upload contents of the dist/ folder into TestPyPI unconditionally.  It also used the secrets declared and defined in the previous section.
 
 Below is the final directory structure:
