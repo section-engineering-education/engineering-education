@@ -95,7 +95,11 @@ npm install
 
 For handling our routes, we will use the **React Router** where we render a single view for all the routes. This is particularly important if you have many routes. For our case, it will only be one route.
 
-We will create a wildcard route where a view file **app.blade.php** will be used to render our React components.
+We will create a wildcard route in the *routes/web* where a view file **app.blade.php** will be used to render our React components. Replace the view code in the *routes/web*.
+
+```php
+Route::view('/{path?}', 'app');
+```
 
 We head on to the *resources/views* directory, create the file **app.blade.php** and add the following code:
 
