@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/transgan-a-transformer-based-gan-architecture/
+title: TransGAN, a Transformer Based GAN Architecture
+description: In this article we discuss a transformer-based generative adversarial network architecture. We do this with the aid of a recently published research paper.
+author: willies-ogola
+date: 2021-03-16T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/transgan-a-transformer-based-gan-architecture/hero.jpg
+    alt: TransGAN example image
+---
+To date, transformers or attentions have been used in GANs, but they always had a convolution component in their architecture. This research aims to eliminate these convolutions and replace them with pure transformers in the generator and discriminator portions of a GAN.
+<!--more-->
+
 ### Table of contents
 
 1. [Prerequisites](#prerequisites)
