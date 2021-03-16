@@ -25,7 +25,7 @@ The prerequisites for this article include:
 - [Further reading](#further-reading)
 
 ### Setting up the work Environment
-Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone a Flask web application used in a previous tutorial that already has the registration form templates and routes all setup.
+Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/engineering-education/implementing-flask-wtform/) which contains a registration form with all the routes setup.
 
 We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
 ```bash
@@ -76,9 +76,11 @@ db = SQLAlchemy(app)
 ``` 
 By following the process above, we have our database initialized and ready to work with. But we can’t add data to this database because it contains no tables for storing the registration details.
 
-However, to solve this problem we have to start working with database models for the application. 
+However, to solve this problem we have to start working with database models for the application.
 
-In the process of creating models, we find that some models do have some relationship to one another or with other data, e.g a user might have a specific ID, such that this specific ID also refers back to the user, but how do we tell the database about the existence of this symbiotic relationship? To do this, we first need to understand the basic database relationship and how they are being initialized in our models.
+In the process of creating models, we find that some models do have some relationship to one another or with other data, e.g., a user might have a specific ID, such that this specific ID also refers back to the user, but how do we tell the database about the existence of this symbiotic relationship?
+
+To do this, we first need to understand the basic database relationship and how they are being initialized in our models.
 
 ### Database Relationship
 In the process of working with databases, the following are the two types of relationship that you would frequently interact with when working with tables:
@@ -133,7 +135,9 @@ class PetCategory(db.Model):
     handler_id = db.Column(db.Integer, db.ForeignKey('pethandler.handler_id'), nullable = False)
 ```
 
-The last line of code, with the handler_id variable name, initializes the existence of a one-to-many relationship from the pet handler to the pets. The db.ForeignKey receives an argument pointing to the handler_id column in the pethandler table. Note that the pethandler class name has to be in lowercase which tells SQLAlchemy that we are referring to a table.
+The last line of code, with the `handler_id` variable name, initializes the existence of a one-to-many relationship from the pet handler to the pets. The `db.ForeignKey` receives an argument pointing to the `handler_id` column in the pethandler table.
+
+Note that, the `pethandler` class name has to be in lowercase which tells SQLAlchemy that we are referring to a table.
 
 Now, the pets are aware of a relationship from the handlers, but the handler table isn’t yet aware of any relationship with any table. To do this, we have to add a line of code to the `PetHandler` class:
 
@@ -147,7 +151,7 @@ class PetHandler(db.Model):
     # initialize the relationship from the pet handler table with pet category table 
     pet_category =  db.relationship('PetCategory', backref='pet_handler', lazy = True)
 ``` 
-In the pet handler class, we wrote the code to inform the handler that it has a relationship with the PetCategory table. The backref argument creates a pet_handler virtual variable in the PetCategory table, such that we can access the handler of the pet by using PetCategory.pet_handler.
+In the `PetHandler` class, we wrote the code to inform the handler that it has a relationship with the `PetCategory` table. The `backref` argument creates a `pet_handler` virtual variable in the `PetCategory` table, such that we can access the handler of the pet by using `PetCategory.pet_handler`.
 
 ### Creating a Model in Flask
 With a firm understanding of the two most common database relationships, we can proceed with the creation of models in our Flask web app for storing registration data of users.
@@ -377,7 +381,9 @@ Let’s delve deeper and run a new command to query the User table by the userna
       # print user username in the User table
       print(user.username)
 ```
+
 If you run these code snippets in a sequential order, you should get the username data of all the registered users in the database.
+
 ```bash
 Demo user
 Peter
