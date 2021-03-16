@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/transgan-a-transformer-based-gan-architecture/
 title: TransGAN, a Transformer Based GAN Architecture
-description: In this article we will discuss a transformer-based generative adversarial network architecture. We will do this with the aid of a recently published research paper.
+description: In this article we will discuss a transformer-based generative adversarial network architecture. It attempts to re-design GANs architecture by replacing convolutions with pure transformers.
 author: willies-ogola
 date: 2021-03-16T00:00:00-18:00
 topics: []
@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/transgan-a-transformer-based-gan-architecture/hero.png
     alt: TransGAN example image
 ---
-To date, transformers or attentions have been used in GANs, but they always had a convolution component in their architecture.
+To date, transformers or attentions have been used in Generative Adversarial Networks (GANs), but they always had a convolution component in their architecture.
 <!--more-->
 This research aims to eliminate these convolutions and replace them with pure transformers in the generator and discriminator portions of a GAN.
+
 ### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [Introduction](#introduction)
@@ -27,7 +28,7 @@ This research aims to eliminate these convolutions and replace them with pure tr
 ### Prerequisites
 Before reading this article, a reader should have prior knowledge about Generative Adversarial Networks (GANs) and the Transformer architecture popularly used in Natural Language Processing (NLP). 
 
-These [articles](/engineering-education/introduction-to-generative-adversarial-networks/) on Section will help you get started with GANs.
+These [articles](/engineering-education/introduction-to-generative-adversarial-networks/) on Section will help you get familiar with GANs.
 
 Also, feel to read my previous [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/) on the Vision Transformer (ViT) model as it is essential to understanding this article.
 
@@ -61,7 +62,7 @@ They inject information about the relative or absolute sequence position of the 
 
 The next step involves the upscaling of the resolution at different stages. This process is an idea borrowed from this [paper](https://arxiv.org/pdf/1609.05158.pdf). Feel free to read more on it. This process involves increasing the resolution of the image while reducing the number of channels in the image. 
 
-This process helps achieve higher pixel densities (increasing resolution) in images. It also saves on the memory space by reducing the number of channels and preventing computational explosions. In other words, there is a trade-off between pixel density and the depth of information. The upscaling process yields a (16 x 16) x C/4 dimensions output and finally achieves the target dimension of (32 x 32) x C/16. 
+This process helps achieve higher pixel densities (increasing resolution) in images. It also saves memory space by reducing the number of channels and preventing computational explosions. In other words, there is a trade-off between pixel density and the depth of information. The upscaling process yields a (16 x 16) x C/4 dimensions output and finally achieves the target dimension of (32 x 32) x C/16. 
 
 At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold. These are then fed individually into a linear projection layer. It results in the generator producing (32 x 32) x 3-dimensional images fed into the discriminator model.  
 
@@ -92,7 +93,7 @@ This auxiliary task consists of inputs from high and low-resolution images. It r
 
 The task of the GAN is to predict a high-resolution image given the low-resolution image. It's important to note that this is not the same generated image that goes into the discriminator. It is purely for the auxiliary task.
 
-These two losses produced by the auxiliary task and the generator are added together. It turns out that this auxiliary task helped to improve TransGAN training.
+These two losses produced by the auxiliary task and the generator are added together. It turns out that this auxiliary task helped improve TransGAN training.
 
 #### 3. Localized initialization for self-attention
 The success of localization in convolutions has shown to be pretty good for images making CNN's so effective. But this is not the case with transformers which tend to be robust and look at the whole picture. 
