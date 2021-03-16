@@ -134,3 +134,6 @@ Over time, we have seen a shift in the use of CNNs to use powerful transformers 
 3. [Vision Transformer (ViT) - Using Transformers for Image Recognition](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/)
 4. [Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network](https://arxiv.org/pdf/1609.05158.pdf)
 5. [Differentiable Augmentation for Data-Efficient GAN Training](https://arxiv.org/pdf/2006.10738.pdf)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
