@@ -58,7 +58,7 @@ The example given below is a basic implementation of grid search. We simply firs
 
 #### Steps
 
-**Load dataset**. My first step is loading the dataset using ` from sklearn.datasets import load_iris ` and ` iris = load_iris() `. The iris dataset is sci-kit learn library in Python. Data is stored in a $150 * 4$ array. To see the contents of the dataset, we can use ` print(iris.data) ` and ` print(iris.data.shape) `.
+1. **Load dataset**. My first step is loading the dataset using ` from sklearn.datasets import load_iris ` and ` iris = load_iris() `. The iris dataset is sci-kit learn library in Python. Data is stored in a $150 * 4$ array. To see the contents of the dataset, we can use ` print(iris.data) ` and ` print(iris.data.shape) `.
 
 To see the dataset contents, our input becomes:
 
@@ -230,7 +230,7 @@ Our output:
 
 However, it is worth noting that the above visualization step is just to understand the dataset, and not at all necessary in the implementation of grid search.
 
-**Import ` GridSearchCV `, `svm` and `SVR`.** After loading the dataset, we then import ` GridSearchCV ` as well as ` svm ` and `SVR` from ` sklearn.model_selection ` as shown below.
+2. **Import ` GridSearchCV `, `svm` and `SVR`.** After loading the dataset, we then import ` GridSearchCV ` as well as ` svm ` and `SVR` from ` sklearn.model_selection ` as shown below.
 
 [` GridSearchCV `](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) ensures an exhaustive grid search that breeds candidates from a grid of parameter values. As we shall see later on, these values are instanced using the parameter ` param_grid `.
 We import ` svm ` since the type of algorithm we seek to use is a support vector machine. The class ` SVR ` represents [Epsilon Support Vector Regression](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html). With this, the model has two free parameters; C and epsilon. We shall set parameters in the next step.
@@ -241,13 +241,13 @@ from sklearn import svm
 from sklearn.svm import SVR
 ```
 
-**Set estimator parameters.** In this implementation, we use the ` rbf ` kernel of the ` SVR ` model. ` rbf ` stands for the radial basis function. It introduces some form of non-linearity to the model since the data in use is non-linear. By this, we mean that the data arrangement follows no specific sequence.
+3. **Set estimator parameters.** In this implementation, we use the ` rbf ` kernel of the ` SVR ` model. ` rbf ` stands for the radial basis function. It introduces some form of non-linearity to the model since the data in use is non-linear. By this, we mean that the data arrangement follows no specific sequence.
 
 ```python
 estimator=SVR(kernel='rbf')
 ```
 
-**Specify hyperparameters and range of values.** We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to be used are ` C `, ` epsilon `, and ` gamma `. We can give each several values to choose from. Remember that it is possible to change these values and test them to see which collection of values give better results. Below are my randomly chosen values.
+4. **Specify hyperparameters and range of values.** We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to be used are ` C `, ` epsilon `, and ` gamma `. We can give each several values to choose from. Remember that it is possible to change these values and test them to see which collection of values give better results. Below are my randomly chosen values.
 
 ```python
 param_grid={
@@ -259,7 +259,7 @@ param_grid={
 
 The ` param_grid ` parameter takes a list of parameters and ranges for each, as we have shown above.
 
-**Evaluation.** We mentioned that cross-validation is carried out to provide an estimate of the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
+5. **Evaluation.** We mentioned that cross-validation is carried out to provide an estimate of the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
 ` scoring='neg_mean_squared_error' `gives us the mean squared error. It is used in this form in grid search. This is meant to take the negative of the mean squared error to maximize and optimize it as opposed to minimizing the actual error.
 ` n_jobs ` is a parameter that specifies the number of concurrent processes that should be used for routines parallelized with the library [joblib](https://scikit-learn.org/stable/glossary.html#term-joblib). In our case, at -1, it means that all CPUs are in use.
 ` verbose ` gives us an option to produce logging information. We keep it at 0 to disable it since it may slow down our algorithm.
@@ -276,7 +276,7 @@ estimator=SVR(kernel='rbf'),
         cv=5, scoring='neg_mean_squared_error', verbose=0, n_jobs=-1)
 ```
 
-**Fitting the data.** We do this through ` grid.fit(X,y) ` which does the fitting with all the parameters.
+6. **Fitting the data.** We do this through ` grid.fit(X,y) ` which does the fitting with all the parameters.
 
 #### All the code
 
