@@ -60,7 +60,7 @@ From the image above, we note that values are in a matrix-like arrangement.
 
 #### Cross Validation
 
-We have mentioned that cross-validation is used to evaluate the performance of the models. It is crucial that we have a refresher on this technique. Cross-validation measures how a model generalizes to an independent dataset. We use cross-validation to get a good estimate of how well a predictive model performs.
+We have mentioned that cross-validation is used to evaluate the performance of the models. We must have a refresher on this technique. Cross-validation measures how a model generalizes to an independent dataset. We use cross-validation to get a good estimate of how well a predictive model performs.
 With this method, we have a pair of datasets: an independent dataset and a training dataset. We can partition a single dataset to yield the two sets. These partitions are of the same size and are referred to as folds. A model in consideration is trained on all folds, bar one. The excluded fold is used to then test the model. This process is repeated until all folds are used as the test set. The average performance of the model on all folds is then used to estimate the model’s performance.
 In a technique known as the k-fold cross-validation, a user specifies the number of folds, represented by $k$. This means that when $k=5$, there are 5 folds.
 
@@ -72,7 +72,7 @@ In a technique known as the k-fold cross-validation, a user specifies the number
 
 ### Grid Search Implementation
 
-The example given below is a basic implementation of grid search. We simply first specify the hyperparameters we seek to examine. Then we provide a set of values to test. After this, grid search will attempt all possible hyperparameter combinations with the aid of cross-validation. Let’s break down this process into the steps below.
+The example given below is a basic implementation of grid search. We first specify the hyperparameters we seek to examine. Then we provide a set of values to test. After this, grid search will attempt all possible hyperparameter combinations with the aid of cross-validation. Let’s break down this process into the steps below.
 
 #### Steps
 
@@ -246,7 +246,7 @@ Our output:
 (150, 4)
 ```
 
-However, it is worth noting that the above visualization step is just to understand the dataset, and not at all necessary in the implementation of grid search.
+However, it is worth noting that the above visualization step is to understand the dataset and not necessarily in the implementation of grid search.	 
 
 2. **Import ` GridSearchCV `, `svm` and `SVR`.** After loading the dataset, we then import ` GridSearchCV ` as well as ` svm ` and `SVR` from ` sklearn.model_selection ` as shown below.
 
@@ -265,7 +265,7 @@ from sklearn.svm import SVR
 estimator=SVR(kernel='rbf')
 ```
 
-4. **Specify hyperparameters and range of values.** We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to be used are ` C `, ` epsilon `, and ` gamma `. We can give each several values to choose from. Remember that it is possible to change these values and test them to see which collection of values give better results. Below are my randomly chosen values.
+4. **Specify hyperparameters and range of values.** We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to be used are ` C `, ` epsilon `, and ` gamma `. We can give each several values to choose from. Remember that it is possible to change these values and test them to see which values' collection gives better results. Below are my randomly chosen values.
 
 ```python
 param_grid={
@@ -277,9 +277,9 @@ param_grid={
 
 The ` param_grid ` parameter takes a list of parameters and ranges for each, as we have shown above.
 
-5. **Evaluation.** We mentioned that cross-validation is carried out to provide an estimate of the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
-` scoring='neg_mean_squared_error' `gives us the mean squared error. It is used in this form in grid search. This is meant to take the negative of the mean squared error to maximize and optimize it as opposed to minimizing the actual error.
-` n_jobs ` is a parameter that specifies the number of concurrent processes that should be used for routines parallelized with the library [joblib](https://scikit-learn.org/stable/glossary.html#term-joblib). In our case, at -1, it means that all CPUs are in use.
+5. **Evaluation.** We mentioned that cross-validation is carried out to estimate the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
+` scoring='neg_mean_squared_error' `gives us the mean squared error. It is used in this form in grid search. This is meant to take the negative of the mean squared error to maximize and optimize it instead of minimizing the actual error.
+` n_jobs ` parameter specifies the number of concurrent processes that should be used for routines parallelized with the library [joblib](https://scikit-learn.org/stable/glossary.html#term-joblib). In our case, at -1, it means that all CPUs are in use.
 ` verbose ` gives us an option to produce logging information. We keep it at 0 to disable it since it may slow down our algorithm.
 
 ```python
@@ -294,7 +294,7 @@ estimator=SVR(kernel='rbf'),
         cv=5, scoring='neg_mean_squared_error', verbose=0, n_jobs=-1)
 ```
 
-6. **Fitting the data.** We do this through ` grid.fit(X,y) ` which does the fitting with all the parameters.
+6. **Fitting the data.** We do this through ` grid.fit(X,y) `, which does the fitting with all the parameters.
 
 #### All the code
 
