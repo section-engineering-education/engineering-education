@@ -32,11 +32,15 @@ Also, feel to read my previous [article](https://www.section.io/engineering-educ
 
 ### Introduction
 
-Can we build a strong Generative Adversarial Network (GAN) utterly free of convolutions?
+Can we build a strong Generative Adversarial Network (GAN) free of convolutions?
 
-This article aims to discuss this recent [paper](https://arxiv.org/pdf/2102.07074.pdf), a buzz in the AI community over the past couple of weeks. The paper aims to re-design the architecture for Generative Adversarial Networks (GANs) using only pure transformer-based architecture.
+This article aims to discuss this recent [paper](https://arxiv.org/pdf/2102.07074.pdf), a buzz in the AI community over the past couple of weeks. The paper aims to re-design the architecture for GANs by using only pure transformer-based architecture.
 
-To date, transformers or attentions have been used in GANs, but they always had a convolution component in their architecture. This research aims to eliminate these convolutions and replace them with pure transformers in the generator and discriminator portions of a GAN. They discuss what is required to perform the replacements, how they built the architecture, and some of the training tricks they used to make this novel architecture competitive to some of the current state-of-the-art techniques.
+To date, transformers or attentions have been used in GANs, but they always had a convolution component in their architecture. This research aims to drop these convolutions.  It replaces them with pure transformers in the generator and discriminator portions of a GAN. The research also discusses: 
+
+1. What was required to perform the replacements 
+2. How they built the architecture 
+3. Training tricks they used to make this novel architecture competitive 
 
 Let's get into the details of the paper.
 
@@ -46,25 +50,25 @@ Let's get into the details of the paper.
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
-The architecture of a TransGAN is relatively straightforward. In a TransGAN, you have the basic modules of a GAN; a generator G and a discriminator D. The generator and discriminator models in a GAN are usually made up of convolutions. TransGAN replaces these convolutions with transformers.
+The architecture of a TransGAN is relatively straightforward. A TransGAN consists of a generator G and a discriminator D. The generator and discriminator models in a GAN are usually made up of convolutions. TransGAN replaces these convolutions with transformers. 
 
 #### The Generator
 
 The generator model generates a 32 x 32-dimensional image with three color channels (red, green, and blue).
 
-At the beginning of the generator model, random noise inputs are fed into a multi-layer perceptron (MLP) which generates the initial sequence. These initial sequences are of the dimensions 8 x 8 x C, where C stands for the number of channels. Positional encoders are also employed here to inject information about the relative or absolute sequence position of the image patches (which image came first and which one came last). These positional encoders have the same dimensions as the input sequences so that they can be added together. These outputs are then fed into the M-layers of the Transformer Encoder module.
+At the beginning of the generator model, random noise inputs are fed into a multi-layer perceptron (MLP). This process generates the initial sequence. These initial sequences are of the dimensions 8 x 8 x C, where C stands for the number of channels. Positional encoders are also employed in the generator. They inject information about the relative or absolute sequence position of the image patches. For example, which image came first and which one came last. These positional encoders have the same dimensions as the input sequences so that they can be added together. These outputs are then fed into the M-layers of the Transformer Encoder module.
 
-The next step involves the upscaling of the resolution at different stages. This process is an idea borrowed from this [paper](https://arxiv.org/pdf/1609.05158.pdf). Feel free to read more on it. This process involves increasing the resolution of the image while reducing the number of channels in the image. This process helps achieve higher pixel densities (increasing resolution) in images and saves on the memory space by reducing the number of channels and preventing computational explosions. In other words, there is a trade-off between pixel density and the depth of information.
+The next step involves the upscaling of the resolution at different stages. This process is an idea borrowed from this [paper](https://arxiv.org/pdf/1609.05158.pdf). Feel free to read more on it. This process involves increasing the resolution of the image while reducing the number of channels in the image. This process involves increasing the resolution of the image while reducing the number of channels in the image. This process helps achieve higher pixel densities (increasing resolution) in images. It also saves on the memory space by reducing the number of channels and preventing computational explosions. In other words, there is a trade-off between pixel density and the depth of information. 
 
 The upscaling process yields a 16 x 16 x C/4 dimensions output and finally achieves the target dimension of 32 x 32 x C/16. At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold.
 
-These are then fed individually into a linear projection layer resulting in the generator producing 32 x 32 x 3-dimensional images fed into the discriminator model.
+These are then fed individually into a linear projection layer. It results in the generator producing 32 x 32 x 3-dimensional images fed into the discriminator model.  
 
 #### The Discriminator
 
 The discriminator contains the same model mentioned in my previous [article](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
 
-The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, just as is the case in NLP.
+The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, as is the case in NLP.
 
 As a transformer lacks convolutions, it is vital to add positional encodings to the image patches. It must be added as a transformer has no idea about the broken down image patches' sequential positioning.
 
@@ -76,7 +80,7 @@ Backpropagation is then performed throughout the whole architecture to train the
 
 1. Data augmentation 
 
-The type of data augmentation they use is borrowed from this [paper](https://arxiv.org/pdf/2006.10738.pdf), highlighting different augmentation techniques for GANs. Given that transformers don't have locality bias built into their architecture as CNNs do, they tend to need a lot more data. Data augmentation helps get around this problem by producing more data from the same dataset.
+The type of data augmentation they use is borrowed from this [paper](https://arxiv.org/pdf/2006.10738.pdf). It highlights different augmentation techniques for GANs. Given that transformers don't have locality bias built into their architecture as CNNs do, they tend to need a lot more data. Data augmentation helps get around this problem by producing more data from the same dataset.
 
 2. Co-training with Self-Supervised Auxiliary Task
 
@@ -84,7 +88,7 @@ The type of data augmentation they use is borrowed from this [paper](https://arx
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
-This is a super-resolution task. It is a task performed in addition to the whole GAN training. 
+This is a super-resolution task. It is a task performed besides the whole GAN training. 
 
 The GAN training involves the discriminator model receiving images from both the generator and the real dataset. Through training, this gives us the primary GAN loss.
 
@@ -94,7 +98,7 @@ These two losses produced by the auxiliary task and the generator are added toge
 
 3. Localized Initialization for Self-Attention
 
-The success of localization in convolutions has shown to be pretty good for images making CNN's so effective. But this is not the case with transformers which tend to be robust and look at the whole picture. But, maybe it would be ideal first to teach them that local features also matter. Once some quality level has been achieved, we can now let the model look at the whole picture. This was the thought process behind this localized initialization technique.
+The success of localization in convolutions has shown to be pretty good for images making CNN's so effective. But this is not the case with transformers which tend to be robust and look at the whole picture. But, it would be ideal first to teach them that local features also matter. Once some quality level has been achieved, we can now let the model look at the whole picture. This was the thought process behind this localized initialization technique.
 
 So, how do they achieve this?
 
@@ -120,8 +124,8 @@ There are three main techniques employed to train TransGAN better. They include:
 
 ### Wrapping Up
 
-In this article, we have discussed the TransGAN paper that attempts to re-design Generative Adversarial Networks' architecture by replacing convolutions with pure transformers popularly used in NLP. 
-Over the past years, we've seen a shift in the use of CNNs to use powerful transformers to perform image classification tasks. Transformers are now being attempted on image generation tasks.  Most of these proposed models still have some challenges, especially in the use of transformers for image generation tasks such as in GANs. But, they still appear to be very promising architectures.
+In this article, we have discussed the TransGAN paper. It attempts to re-design GANs architecture by replacing convolutions with pure transformers.
+Over the past years, we've seen a shift in the use of CNNs to use powerful transformers to perform image classification tasks. Transformers are now being attempted on image generation tasks.  Most of these proposed models still have some challenges. One case is in the use of transformers for image generation tasks such as in GANs. But, they still appear to be very promising architectures. 
 
 ### References
 
