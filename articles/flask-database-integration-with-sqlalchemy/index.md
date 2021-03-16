@@ -1,6 +1,21 @@
-### Flask Database Integration With SQLAlchemy
-Databases are integral components of building web applications. Throughout the lifecycle of a web application, the user sends bits of data that are needed to be stored for future reference purposes. Simultaneously, the user also requests information from where they are stored.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/flask-database-integration-with-sqlalchemy/
+title: Flask Database Integration With SQLAlchemy
+description: In this article, you will understand how to work with SQLAlchemy in your Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
+author: adetu-ridwan
+date: 2021-03-16T00:00:00-19:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/flask-database-integration-with-sqlalchemy/hero.jpg
+    alt: Flask Database Integration With SQLAlchemy example image
+---
+Databases are integral components of building web applications. Throughout the lifecycle of a web application, the user sends bits of data that are needed to be stored for future reference purposes. Simultaneously, the user also requests information from where they are stored.
+<!--more-->
 Data and information are facets that make web applications valuable. If the user can't send or receive data from your web application, then it's not providing value in its usage. Therefore, the information supplied by the user has to be stored in a database so it can be accessed later.
 
 In Flask web applications, to manipulate databases, we will be using SQL and Object Relational Mapping (ORM). An ORM makes writing SQL queries easier for a programmer, because it enables us to write queries in an object-oriented language, and then ORM automatically translates it to SQL and retrieves the result in the form of an object.
