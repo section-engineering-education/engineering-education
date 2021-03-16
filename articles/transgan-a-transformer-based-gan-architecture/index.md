@@ -56,33 +56,33 @@ The architecture of a TransGAN is relatively straightforward. A TransGAN consist
 
 The generator model generates a 32 x 32-dimensional image with three color channels (red, green, and blue).
 
-At the beginning of the generator model, random noise inputs are fed into a multi-layer perceptron (MLP). This process generates the initial sequence. These initial sequences are of the dimensions 8 x 8 x C, where C stands for the number of channels. Positional encoders are also employed in the generator. They inject information about the relative or absolute sequence position of the image patches. For example, which image came first and which one came last. These positional encoders have the same dimensions as the input sequences so that they can be added together. These outputs are then fed into the M-layers of the Transformer Encoder module.
+At the first stage of the generator model, random noise inputs are fed into a multi-layer perceptron (MLP). This process generates the initial sequence. These initial sequences are of the dimensions 8 x 8 x C, where C stands for the number of channels. Positional encoders are also employed in the generator. They inject information about the relative or absolute sequence position of the image patches. For example, which image came first and which one came last. These positional encoders have the same dimensions as the input sequences so that they can be added together. These outputs are then fed into the M-layers of the Transformer Encoder module.
 
 The next step involves the upscaling of the resolution at different stages. This process is an idea borrowed from this [paper](https://arxiv.org/pdf/1609.05158.pdf). Feel free to read more on it. This process involves increasing the resolution of the image while reducing the number of channels in the image. This process involves increasing the resolution of the image while reducing the number of channels in the image. This process helps achieve higher pixel densities (increasing resolution) in images. It also saves on the memory space by reducing the number of channels and preventing computational explosions. In other words, there is a trade-off between pixel density and the depth of information. 
 
-The upscaling process yields a 16 x 16 x C/4 dimensions output and finally achieves the target dimension of 32 x 32 x C/16. At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold.
+The upscaling process yields a (16 x 16) x C/4 dimensions output and finally achieves the target dimension of (32 x 32) x C/16. At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold.
 
-These are then fed individually into a linear projection layer. It results in the generator producing 32 x 32 x 3-dimensional images fed into the discriminator model.  
+These are then fed individually into a linear projection layer. It results in the generator producing (32 x 32) x 3-dimensional images fed into the discriminator model.  
 
 #### The Discriminator
 
 The discriminator contains the same model mentioned in my previous [article](https://www.section.io/engineering-education/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
 
-The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, as is the case in NLP.
+The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x 3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, as is the case in NLP.
 
 As a transformer lacks convolutions, it is vital to add positional encodings to the image patches. It must be added as a transformer has no idea about the broken down image patches' sequential positioning.
 
-At the end of the discriminator model, you have a [cls] token that classifies whether the output is real or fake. The CLS token is used for classification tasks in NLP.
+At the last stage of the discriminator model, you have a [cls] token that classifies whether the output is real or fake. The CLS token is used for classification tasks in NLP.
 
 Backpropagation is then performed throughout the whole architecture to train the model.
 
 ### Tricks for TransGAN
 
-1. Data augmentation 
+**1. Data augmentation**
 
 The type of data augmentation they use is borrowed from this [paper](https://arxiv.org/pdf/2006.10738.pdf). It highlights different augmentation techniques for GANs. Given that transformers don't have locality bias built into their architecture as CNNs do, they tend to need a lot more data. Data augmentation helps get around this problem by producing more data from the same dataset.
 
-2. Co-training with Self-Supervised Auxiliary Task
+**2. Co-training with Self-Supervised Auxiliary Task**
 
 ![Co-training with Self-Supervised Auxiliary Task](/engineering-education/transgan-a-transformer-based-gan-architecture/co-training.PNG)
 
@@ -96,7 +96,7 @@ This auxiliary task consists of inputs from high and low-resolution images. It r
 
 These two losses produced by the auxiliary task and the generator are added together. It turns out that this auxiliary task helped to improve TransGAN training.
 
-3. Localized Initialization for Self-Attention
+**3. Localized Initialization for Self-Attention**
 
 The success of localization in convolutions has shown to be pretty good for images making CNN's so effective. But this is not the case with transformers which tend to be robust and look at the whole picture. But, it would be ideal first to teach them that local features also matter. Once some quality level has been achieved, we can now let the model look at the whole picture. This was the thought process behind this localized initialization technique.
 
@@ -110,11 +110,11 @@ Throughout the training, they gradually increase the receptive field. In early t
 
 ### Key takeaways
 
-1. Model Architecture
+**1. Model Architecture**
 
 The TransGAN architecture is built purely using transformers. This is unlike previous architectures, which used convolutions or convolutions together with transformers.
 
-2. Training Techniques
+**2. Training Techniques**
 
 There are three main techniques employed to train TransGAN better. They include:
 
