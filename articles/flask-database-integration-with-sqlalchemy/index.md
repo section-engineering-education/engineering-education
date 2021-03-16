@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/flask-database-integration-with-sqlalchemy/
 title: Flask Database Integration With SQLAlchemy
-description: In this article, you will understand how to work with SQLAlchemy in your Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
+description: In this article we will understand how to work with SQLAlchemy in a Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
 author: adetu-ridwan
-date: 2021-03-16T00:00:00-19:30
+date: 2021-03-16T00:00:00-12:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/flask-database-integration-with-sqlalchemy/hero.jpg
     alt: Flask Database Integration With SQLAlchemy example image
 ---
-Databases are integral components of building web applications. Throughout the lifecycle of a web application, the user sends bits of data that are needed to be stored for future reference purposes. Simultaneously, the user also requests information from where they are stored.
+Databases are integral components of building web applications. Throughout the life-cycle of a web application, the user sends bits of data that are needed to be stored for future reference. Simultaneously, the user also requests information from where they are stored.
 <!--more-->
-Data and information are facets that make web applications valuable. If the user can't send or receive data from your web application, then it's not providing value in its usage. Therefore, the information supplied by the user has to be stored in a database so it can be accessed later.
+Data and information are facets that make web applications valuable. If the user can’t send or receive data from your web application, then it’s not providing value in its usage. Therefore, the information supplied by the user has to be stored in a database so it can be accessed later.
 
-In Flask web applications, to manipulate databases, we will be using SQL and Object Relational Mapping (ORM). An ORM makes writing SQL queries easier for a programmer, because it enables us to write queries in an object-oriented language, and then ORM automatically translates it to SQL and retrieves the result in the form of an object.
+In Flask web applications, to manipulate databases, we can use SQL and Object Relational Mapping (ORM). An ORM makes writing SQL queries easier for a programmer, because it enables us to write queries in an object-oriented language, and then ORM automatically translates it to SQL and retrieves the result as an object.
 
 ### Prerequisite
 The prerequisites for this article includes understanding of the following concepts:
@@ -43,13 +43,17 @@ The prerequisites for this article includes understanding of the following conce
 Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/engineering-education/implementing-flask-wtform/) which contains a registration form with all the routes setup.
 
 We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
+
 ```bash
 $ git clone https://github.com/corpsgeek/flask-form-handling.git
 ```
+
 Change the directory to the cloned folder and install the packages in the `requirement.txt` file using the command:
+
 ```bash
 $ pip install -r requirement.txt
 ``` 
+
 We also need to set up the flask environment variable to development, where the default state is the production environment.
 
 ```bash
@@ -91,11 +95,12 @@ In the code above, the SQLite uniform resource indicator will receive the name o
 # create an instance of the database module
 db = SQLAlchemy(app)
 ``` 
+
 By following the process above, we have our database initialized and ready to work with. But we can't add data to this database because it contains no tables for storing the registration details.
 
 However, to solve this problem we have to start working with database models for the application.
 
-In the process of creating models, we find that some models do have some relationship to one another or with other data, e.g., a user might have a specific ID, such that this specific ID also refers back to the user, but how do we tell the database about the existence of this symbiotic relationship?
+In the process of creating models, we find that some models do have some relationship to one another or with other data. For example, a user might have a specific ID, such that this specific ID also refers back to the user, but how do we tell the database about the existence of this symbiotic relationship?
 
 To do this, we first need to understand the basic database relationship and how they are being initialized in our models.
 
@@ -133,7 +138,7 @@ class PetComnment(db.Model):
    comment_content = db.Column(db.String(200), nullable = False)
 ```
 
-You might not understand the implementation of the above code, but focus on the concept of database relationship, we will get to the point of you understanding the components of creating a database.
+You might not understand the implementation of the code above, but focus on the concept of database relationship, we will get to the point of the components of creating a database.
 
 ### One-to-many relationship
 From our pet management system as an analogy, an example of a one-to-many relationship is analyzed between a pet handler and a pet in the `PetCategory`, such that a pet handler can be assigned to multiple (many) pets to care for. 
@@ -158,7 +163,9 @@ The last line of code, with the `handler_id` variable name, initializes the exis
 
 Note that, the `pethandler` class name has to be in lowercase which tells SQLAlchemy that we are referring to a table.
 
-Now, the pets are aware of a relationship from the handlers, but the handler table isn't yet aware of any relationship with any table. To do this, we have to add a line of code to the `PetHandler` class:
+Now, the pets are aware of a relationship from the handlers, but the handler table isn't yet aware of any relationship with any table. 
+
+To do this, we have to add a line of code to the `PetHandler` class:
 
 ```python
 # create pet handler table
@@ -170,12 +177,13 @@ class PetHandler(db.Model):
     # initialize the relationship from the pet handler table with pet category table 
     pet_category =  db.relationship('PetCategory', backref='pet_handler', lazy = True)
 ``` 
-In the `PetHandler` class, we wrote the code to inform the handler that it has a relationship with the `PetCategory` table. The `backref` argument creates a `pet_handler` virtual variable in the `PetCategory` table, such that we can access the handler of the pet by using `PetCategory.pet_handler`.
+
+In the `PetHandler` class, we wrote code to inform the handler that it has a relationship with the `PetCategory` table. The `backref` argument creates a `pet_handler` virtual variable in the `PetCategory` table, such that we can access the handler of the pet by using `PetCategory.pet_handler`.
 
 ### Creating a model in flask
-With a firm understanding of the two most common database relationships, we can proceed with the creation of models in our flask web app for storing registration data of users.
+With a firm understanding of the two most common database relationships, we can proceed with the creation of models in our flask web app to store registration data of users.
 
-To define a model, we follow the template below:
+To define a model, we can follow the template below:
 
 ```python
 class ModelTableName(db.Model):
@@ -190,7 +198,7 @@ In the process of defining a model, a model must have a unique ID, which serves 
 
 Also, in each column, you have to specify a data type like `String`, `Integer`, or any other data types that fits the data being stored. It is also a good practice to set `nullable` to `False` on data fields, if you know they shouldn't be empty.
 
-Implementation of the above template is as follows:
+Implementation of the above template should be as follows:
 
 ```python
 class UserDetails(db.Model):
@@ -202,9 +210,9 @@ class UserDetails(db.Model):
 ```
 
 ### Storing user registration data With SQLAlchemy
-Having a firm understanding of the implementation of SQLAlchemy, let's delve into some practical application through our cloned flask web app. Now, let's navigate to the registration route in our browser `http://127.0.0.1:5000/register`.
+Having a better understanding of the SQLAlchemy implementation, let's delve into some practical application through our cloned flask web app. Now, let's navigate to the registration route in our browser `http://127.0.0.1:5000/register`.
 
-Our registration page contains three input data fields for the username, email, and user password. For the scope of this article, we won't be delving into password encryption. Instead we would be storing our password in a plain format (although not a good practice).
+Our registration page contains three input data fields for the username, email, and user password. For the scope of this article, we won't be delving into password encryption. Instead we will be storing our password in a plain format (although this is not a good practice).
 
 ### Creating user registration model
 In the `app` folder, create a new file and name it `models.py`. In our models file, we define the models for the user registration form.
@@ -229,7 +237,7 @@ class User(db.Model):
 
 In the model declaration, you can observe that the arguments passed to the `String` data type contains a required length. For `db.String(100)`, it is expected that the string must have its length more than 100.
 
-Next, in our `__init__.py` file, beneath the database object initialization, we import the models file. The reason for this is that when we create our database, flask will not be able to access the database models in our `models.py` file, therefore we have to draw it back into the app initialization file for the database object to be aware of its existence.
+Next, in our `__init__.py` file, beneath the database object initialization, we import the models file. The reason for this is that when we create our database, flask will not be able to access the database models in our `models.py` file. Unless we draw it back into the app initialization file for the database object to be aware of its existence.
 
 ```python
 # import the models module
@@ -269,9 +277,9 @@ class User(db.Model):
    user_password = db.Column(db.String(150), nullable = False)
 ```
 
-We have the data models created, let's now create this database for usage. To do this, we need to open our terminal to our working directory and follow this process:
+We have the data models created, let's now create this database. To do this, we need to open our terminal to our working directory and follow this process:
 
-Initialize the Python interpreter
+Initialize the Python interpreter.
 
 ```bash
 $ python
@@ -287,7 +295,7 @@ $ >>> db.create_all()
 
 Remember that the database variable is the variable name we used in our `__init__.py`, if you intend to use a different variable, then you have to call that variable name and not the database variable created here.
 
-To confirm our database is created, check your app folder, you should see a new file title `registration.db`, which is the `db` name we specified in our `__init__.py` file.
+To confirm our database is created, check your app folder, you should see a new file titled `registration.db`, which is the `db` name we specified in our `__init__.py` file.
 
 Next, we can import the `User` table into our models file using this command:
 
@@ -296,14 +304,14 @@ Next, we can import the `User` table into our models file using this command:
 $ >>> from app.models import User
 ```
 
-To ensure the functionality of the database is intact, let's create a dummy user from the python interpreter
+To ensure the functionality of the database is intact, let's create a dummy user from the Python interpreter.
 
 ```bash
 # create an instance of a user with required arguments from the database table
 $ >>> user1 = User(username = "Demo User", user_email = "demouser@gmail.com", user_password = "demouserpassword")
 ```
 
-In the above command, we specify the data for each variable as defined in our `User` model, and then hit the `ENTER` key. Next, we have to add a new user to the database, then commit the changes.
+In the command above, we specify the data for each variable as defined in our `User` model, and then hit the `ENTER` key. Next, we have to add a new user to the database, then commit the changes.
 
 ```bash
 # add the user instance to the database
@@ -323,9 +331,10 @@ To confirm if our database works, we query the database and it should return an 
 # query all data from the User table
 $ >>> User.query.all()
 ```
+
 Note that, we are querying the `User` table.
 
-Now, we can add data manually to the registration database, but how do we add data to the database directly via the frontend?
+Now, we can add data manually to the registration database, how do we add data to the database directly via the frontend?
 
 ### Adding user data to registration database
 In our view, we start by importing the `User` model and the `db` object from our app.
@@ -355,7 +364,9 @@ def register():
     return render_template('register.html')
 ```
 
-Next, we add the user and commit the changes to the database and we replace the return statement with "User registration successful". By the end of the implementation, your registration route should like this:
+Next, we add the user and commit the changes to the database and we replace the return statement with "User registration successful". 
+
+By the end of the implementation, your registration route should like this:
 
 ```python
 @app.route("/register", methods=["GET", "POST"])
@@ -382,7 +393,9 @@ def register():
 ```
 
 ### Test running our app
-Let's test run our app. If you have the server running, terminate and restart. Now, you should have your server running, then proceed to the registration page on your web app. Let's fill in the database with this dummy data: `username` as `Peter`, `email` as `peterdury@gmail.com`, and `password` as `password`.
+Let's test run our app. If you have the server running, terminate and restart. Now, you should have your server running, then proceed to the registration page on your web app. 
+
+Let's fill in the database with this dummy data: `username` as `Peter`, `email` as `peterdury@gmail.com`, and `password` as `password`.
 
 ![Registration successful](/engineering-education/flask-database-integration-with-sqlalchemy/response.png)
 
@@ -398,9 +411,9 @@ $ >>> User.query.all()
 $ [<User 1>, <User 2>]
 ```
 
-When you run the following command in sequential order, you should get a response indicating the new user added. In our case, we have already added an user manually, and due to the registration, we now have a new user.
+When you run the following command in sequential order, you should get a response indicating the new user was added. In our case, we have already added an user manually, and due to the registration, we now have a new user.
 
-Let's delve deeper and run a new command to query the User table by the username of the registered user.
+Let's dive deeper and run a new command to query the User table by the username of the registered user.
 
 ```bash
 $ >>> user_data = User.query.all() # store queried data in the user_data variable
@@ -416,17 +429,18 @@ $ Peter
 ```
 
 ### Conclusion
+This article has covered the usage of SQLAlchemy while building Flask web applications, storing data, accessing stored data through the Python interpreter, and database modeling.
+
+We also covered the types of database relationships that could exist in building database models.
+
 As a practice test to improve your skills, try creating a contact form in your flask web app, and then store the content in your custom database.
 
 You can find the codebase for this article [here](https://github.com/corpsgeek/flask-sqlalchemy).
 
-### Summary
-This article has covered the usage of SQLAlchemy in building Flask web applications, storing data, accessing stored data through the python interpreter, database modelling and the understanding of database relationships.
-
-We also covered the types of database relationships that could exist in building database models.
-
 ### Further Reading and References
-I recommend you, to look up on how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
+I recommend you look up on how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
