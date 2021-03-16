@@ -363,3 +363,7 @@ Since grid search attempts all possible combinations, it becomes a computational
 
 
 7. [An introduction to Grid Search](https://medium.com/datadriveninvestor/an-introduction-to-grid-search-ff57adcc0998)
+
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
