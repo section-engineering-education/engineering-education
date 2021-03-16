@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-notifications/
+url: /engineering-education/getting-started-android-notifications/
 title: Getting Started with Android Notifications
 description: This tutorial will go over how to create android notifications. A notification is a message widget that is displayed outside the application's user interface
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-notifications/hero.jpg
+  - url: /engineering-education/getting-started-android-notifications/hero.jpg
     alt: Android notification example image
 ---
 A notification is a message widget that is displayed outside the applications user interface. When a notification is issued, it appears as an icon in the notification area. To view the details of the notification, the user opens the notification drawer.
@@ -26,7 +26,7 @@ To follow this tutorial along ensure you have the following:
 ### Application setup
 Start Android studio and create a new Android project with an empty activity template. 
 
-![Android studio new project](/engineering-education/android-notifications/android.png)
+![Android studio new project](/engineering-education/getting-started-android-notifications/android.png)
 
 ### Creating and sending notifications
 #### Basic notification
