@@ -20,8 +20,11 @@ Unlike parameters, hyperparameters are set before training a machine learning mo
 ### Prerequisites
 
 • A section of this [article](https://www.section.io/engineering-education/meta-learning/) to give a brief introduction to hyperparameters and the grid search method.
+
 • [VSCode](https://code.visualstudio.com/) as my code editor, with Python as the language in use.
+
 • [` GridSearchCV `](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) is the tool from the [scikit-learn](https://scikit-learn.org/stable/) library to use for carrying out grid search with cross validation.
+
 • [Iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
 ### Goal
