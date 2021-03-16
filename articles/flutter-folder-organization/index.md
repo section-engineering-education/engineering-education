@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/flutter-folder-organization/
+title: Flutter folder organization
+description: In this tutorial, we will learn the folder structure of a flutter application. Folder organization helps optimize the performance of an application.
+author: jerim-kaura
+date: 2021-03-016T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/flutter-folder-organization/hero.jpg
+   alt: Flutter folder organization example image
+---
+
 ## Introduction
 Folder organization helps optimize the performance of an application. As the size of a given android project increases, proper folder organization is necessary to avoid bugs and keep your code maintainable. In as much as flutter documentation does not list a specific standard for folder organization, files and folders should be organized by programmers with a particular pattern. 
  Since there is no rule to flutter folder organization, this article explains just one of the efficient ways of organizing your files and folders for a flutter project. 
