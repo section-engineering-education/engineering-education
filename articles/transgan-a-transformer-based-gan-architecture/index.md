@@ -90,7 +90,7 @@ The type of data augmentation they use is borrowed from this [paper](https://arx
 
 This is a super-resolution task. It is a task performed besides the whole GAN training. 
 
-The GAN training involves the discriminator model receiving images from both the generator and the real dataset. Through training, this gives us the primary GAN loss.
+The GAN training involves the discriminator model receiving images from both the generator and the real dataset. Through training, we get the primary GAN loss.
 
 This auxiliary task consists of inputs from high and low-resolution images. It receives real images from the dataset, which are considered high-resolution images. These images are deliberately downsampled to produce their low-resolution counterparts. The task of the GAN is to predict a high-resolution image given the low-resolution image. It is important to note that this is not the same generated image that goes into the discriminator. It is purely for the auxiliary task.
 
