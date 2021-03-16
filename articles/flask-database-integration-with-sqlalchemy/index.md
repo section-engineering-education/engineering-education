@@ -412,3 +412,6 @@ We also covered the types of database relationships that could exist in building
 
 ### Further Reading and References
 I recommend you, to look up on how to implement a Many-to-Many database relationship [here](https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
