@@ -1,3 +1,21 @@
+ ---
+- layout: engineering-education
+- status: publish
+- published: true
+- url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js
+- title: Rendering HTML Pages as a HTTP Server Response Using Node.js
+- description: In this article, we consider the various approaches to rendering a HTML page. We begin by sending the HTML page bit by bit, and understand its limitations. Then, we shift to creating a Node.js server using Express.js and render the HTML page as a HTTP server response. 
+- author: moses-m
+- date: 2021-03-17T00:00:00-18:00
+- topics: []
+- excerpt_separator: <!--more-->
+- images:
+
+-  - url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/hero.jpg
+-    alt: HTML as a HTTP server response example image
+- 
+---
+
 When developing web applications, you might need to render the HTML components inside your server. This helps you create interactive pages on the client side once a request to access these pages is made. There are various ways of hosting your HTML pages (website), for example;
 
 - Rendering your client-side on its own using frameworks for such as React or,
@@ -344,3 +362,7 @@ Fill in the form inputs and click the subscribe button.
 
 ### Conclusion
 I hope this guide helped you understand how to render HTML data into your server using Express.js. You can also use a template engine such as [pug](https://www.npmjs.com/package/pug) or [ejs](https://www.npmjs.com/package/ejs) render dynamic HTML data into the server. They both compile down HTML using backed technologies such as Express.js.
+
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
