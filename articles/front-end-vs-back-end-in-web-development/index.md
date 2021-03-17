@@ -1,5 +1,21 @@
-Web development is an important field in the tech industry because it contributes to the development of e-commerce sites, social network services, and complex web applications. Building a web application requires two fundamental parts: back end and front end. Understanding the difference between these parts is important especially to young developers because it helps to determine their right career paths.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/front-end-vs-back-end-in-web-development/
+title: Front End vs Back End in Web Development
+description: This article will be an introduction to front-end and back-end development. We will explore the difference between them, understand full-stack development and help you choose the right development path.
+author: onesmus-mbaabu
+date: 2021-03-17T00:00:00-23:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/front-end-vs-back-end-in-web-development/hero.jpg
+    alt: Front end back end Image
+---
+Web development is an important field in the tech industry because it contributes to the development of e-commerce sites, social network services, and complex web applications. Building a web application requires two fundamental parts: back end and front end. Understanding the difference between these parts is important especially to young developers because it helps to determine their right career paths.
+<!--more-->
 This article provides a comparison between the back end and front end in web development and provides an overview of how they interact with each other. It also provides a brief guide that can help developers to choose the right development path.
 
 ### Table of contents
