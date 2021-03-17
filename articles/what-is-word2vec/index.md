@@ -63,7 +63,7 @@ An apple is green in color. If we remove the word "green" from the sentence and 
 It is referred to as the Bag of Words (BOW) model as the word order in history doesn't influence the outcome. Further denoting the BOW model as continuous, i.e., Continous Bag Of Words (CBOW), means that the model uses continuously distributed representation of the context.
 Also, the weight matrix between the projection layer and the input layer is shared for all the word positions.
 
-2. Continuous Skip-gram model
+**2. Continuous Skip-gram model**
 
 The continuous skip-gram model works the other way around. It uses the target words to predict the context words. It involves training a neural network to learn the weights of the hidden layer. These learned weights correspond to the word vectors which we are trying to learn.
 
