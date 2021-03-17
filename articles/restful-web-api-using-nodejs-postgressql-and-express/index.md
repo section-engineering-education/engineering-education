@@ -341,7 +341,7 @@ In the above code, we are doing the following:
 - Importing the `todos.ejs` file. It contains the fetched todos.
 - Importing the `add-todo.ejs` file. It contains the form to add a todo.
 
-1. A header (`header.ejs`)- this will include the following;
+2. A header (`header.ejs`)- this will include the following;
 
 - A todo header.
 
@@ -403,7 +403,7 @@ This how the `src/views/partials/header.ejs` should look like, after adding a he
 </head>
 ```
 
-1. Add new todo (`src/views/partials/add-todo.ejs`) - a form that sends a `POST` request to the server alongside the data entered by a user.
+3. Add new todo (`src/views/partials/add-todo.ejs`) - a form that sends a `POST` request to the server alongside the data entered by a user.
 
 ```html
 <div class="add-todo">
@@ -420,7 +420,7 @@ This how the `src/views/partials/header.ejs` should look like, after adding a he
 </div>
 ```
 
-1. Todo list (`src/views/partials/todos.ejs`). a GET form method fetches all the todo. Every todo item will have a delete button and a toggle to check a completed todo.
+4. Todo list (`src/views/partials/todos.ejs`). a GET form method fetches all the todo. Every todo item will have a delete button and a toggle to check a completed todo.
 
 ```html
 <ul class="list-group">
