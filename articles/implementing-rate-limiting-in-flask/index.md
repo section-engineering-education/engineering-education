@@ -42,7 +42,7 @@ Essentially, the process of rate limiting can be summarised as:
 
 #### Flask Web Framework
 
-Flask is a lightweight web framework written in Python. It is designed to make learning web development using Python quickly and easily, with the ability to scale up to complex applications. Popular websites built with Flask include [Airbnb](https://www.airbnb.com), [Netflix](https://www.netflix.com/), [Reddit](http://reddit.com/), [Uber](https://www.uber.com/), [Mailgun](https://www.mailgun.com), and [many more.](https://github.com/rochacbruno/flask-powered)
+Flask is a lightweight web framework written in Python. It is designed to make web development using Python quick and easy, and also have the capability of building complex applications. Popular websites built with Flask include [Airbnb](https://www.airbnb.com), [Netflix](https://www.netflix.com/), [Reddit](http://reddit.com/), [Uber](https://www.uber.com/), [Mailgun](https://www.mailgun.com), and [many more.](https://github.com/rochacbruno/flask-powered)
 
 ### Rate Limiting Techniques
 
