@@ -88,9 +88,9 @@ Here is the `res.sendFile()` syntax.
 res.sendFile(path [, options] [, fn])
 ```
 
-The path specifies the location of the HTML file you want to use. The path takes an array of the file name such as `index.html`. In some cases, especially when the server is hosted on the cloud (when the server is not hosted locally on your computer), we use `__dirname` instead of the relative file path. When the server is online, you might have no idea of your HTML file location. `__dirname` will give you the current file path no matter where it's hosted inside you project folders.
+The path specifies the location of the HTML file you want to use. The path takes an array of the file name such as `index.html`. In some cases, primarily when the server is hosted on the cloud (when the server is not hosted locally on your computer), we use `__dirname` instead of the relative file path. When the server is online, you might have no idea of your HTML file location. `__dirname` will give you the current file path no matter where it is hosted inside your project folders.
 
-Let’s demonstrate how `__dirname` works with a  simple example that `console.log(__dirname)`.
+Let us demonstrate how `__dirname` works with a  simple example that `console.log(__dirname)`.
 
 ```js
 const express = require("express");
@@ -171,7 +171,7 @@ color: rgb(98, 143, 228);
 }
 ```
 
-Let's render the file into the server.
+Let us render the file into the server.
 
 ```js
 const express = require("express");
@@ -188,7 +188,7 @@ app.get("/", (req, res) => {
 
 ![](html-page-as-server-response.jpg)
 
-But notice, this didn’t load the CSS styling. `app.css` is a static file. To [static server files](https://expressjs.com/en/starter/static-files.html) included in the `index.html` use `express.static` as shown in the example below;
+However, this did not load the CSS styling. `app.css` is a static file. To [static server files](https://expressjs.com/en/starter/static-files.html) included in the `index.html` use `express.static` as shown in the example below;
 
 ```js
 const express = require("express");
@@ -212,9 +212,9 @@ Save the file and open `http://localhost:3000/` in the browser, and the server w
 
 ### Parsering form data to the server using the HTML forms
 
-The server is running. It's now returning HTML form as a response to the client (browser). Whenever you access this server's route, the `Get` request will be executed from the browser. But what would happen if you fill this form with the data and press the button subscribe?
+The server is running. It is now returning HTML form as a response to the client (browser). Whenever you access this server's route, the `Get` request will be executed from the browser. However, what would happen if you fill this form with the data and press the button _subscribe_?
 
-Let's try that out. This gives you the results below, an error returned by the server.
+Let us try that out. This gives you the results below, an error returned by the server.
 
 ![](server-post-error.jpg)
 
@@ -224,7 +224,7 @@ Reload the page again. Open the browser inspector tool and head to the Network t
 
 The HTML form we have created has a `POST` method. This means we are sending a POST request to the server.
 
-Our server does not have a way of processing any POST requests from the client. The server does not give the client a `POST` permission from this route.
+Our server does not have a way of processing any POST requests from the client. The server does not give the client `POST` permission from this route.
 
 We can fix this by adding a `post` method to the route. This will handle any POST requests that come from this route.
 
@@ -248,15 +248,15 @@ app.post("/", (req, res) => {
 });
 ```
 
-When you click the subscribe button, you will get the `Thank you for subscribing` message back. And if you check your browser inspector network, this time you'll get a 200 code, which is okay. The client has POST permissions and can send a POST request to the server.
+When you click the subscribe button, you will get the `Thank you for subscribing` message back. Moreover, if you check your browser inspector network, this time you get a 200 code, which is okay. The client has POST permissions and can send a POST request to the server.
 
 ![](browser-inspector-tool-network-error-resolved.jpg)
 
-Everything is working great. But we need the server to get the form data and send the relevant results to the browser instead of sending some relative plain text such as `Thank you for subscribing`.
+Everything is working great. Nevertheless, we need the server to get the form data and send the relevant results to the browser instead of sending some relative plain text such as `Thank you for subscribing`.
 
 To interact with the form data, we need a body-parser package. Go ahead and install this package using `npm install body-parser`. [Body-parser](https://www.npmjs.com/package/body-parser) helps you parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 
-Import the package using the `require()` function and get the server to use it using `app.use`. Body-parser has a few modes such as;
+Import the package using the `require()` function and get the server to use it via`app.use`. Body-parser has a few modes such as;
 
 - `bodyParser.text` - pass all the requests into text.
 - `bodyParser.json` - parse data into JSON format.
@@ -295,7 +295,7 @@ app.post("/", (req, res) => {
 Open `http://localhost:3000/`. Fill in the form inputs and click the subscribe button. Check your console.
 
 ![](console-log-request-body.jpg)
-And yes, This form data is readily available, and we can now instruct the server what to do with it.
+This form data is readily available, and we can now instruct the server what to do with it.
 
 ```js
 const express = require("express");
