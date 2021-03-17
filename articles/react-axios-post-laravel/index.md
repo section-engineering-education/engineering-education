@@ -2,16 +2,14 @@
 
 ![Hero image](/engineering-education/hero.jpg)
 
-Maybe you are a backend engineer wanting to load data to your site using the React library, or you want to explore the use of React with Laravel or you have any other interests validating the use of Laravel with React, then you are at the right place. We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
+Maybe you are a backend engineer wanting to load data to your site using the React library, or you want to explore the use of React with Laravel, or you have any other interests validating the use of Laravel with React, then you are at the right place. We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
 
-#### Basic descriptions
-
+### Basic descriptions
 - **React:** This is a JavaScript library that assists us in creating interactive and dynamic Single Page Applications. 
-- **Axios:** It is a library used to handle HTTP requests to external resources in our web applications.
-- **Laravel:** This is a PHP framework based on the Model View Controller architecture and it helps us create web backend applications faster.
+- **Axios:** This is a library that is used to handle HTTP requests to external sources in web applications.
+- **Laravel:** This is a PHP framework based on the Model-View-Controller architecture that helps us create web backend applications faster.
 
-#### Prerequisites
-
+### Prerequisites
 - A basic understanding of PHP and its working with Laravel
 - A basic understanding of HTML and CSS
 - A basic understanding of JavaScript and its working with React
@@ -19,14 +17,12 @@ Maybe you are a backend engineer wanting to load data to your site using the Rea
 
 Having that, we can now start delving into the topic.
 
-#### What we will be doing
-
+### What we will be doing
 We will be sending input data from a signup page and send the data to a Laravel controller which will, in turn, return JSON data and display it in an alert.
 
 > **JSON**, JavaScript Object Notation, is a data exchange format between web applications.
 
-#### Getting started
-
+### Getting started
 We create our application by running this command in the terminal:
 
 ```php
@@ -39,8 +35,7 @@ Since Laravel supports Vue.js by default, we first replace the Vue.js scaffoldin
 php artisan preset react
 ```
 
-#### Creating the Controller and the Route
-
+### Creating the Controller and the Route
 We then create the controller of our Laravel application receiving the POST request :
 
 ```php
@@ -85,8 +80,7 @@ We then head on to create a Route for the controller in the *routes/web.php* fil
 Route::post('sendrequest', 'App\Http\Controllers\AxiosReceiverController@ReceiveIt');
 ```
 
-#### Building the React and Frontend module
-
+### Building the React and Frontend module
 We add our application's dependencies.
 
 ```javascript
@@ -104,7 +98,6 @@ Route::view('/{path?}', 'app');
 We head on to the *resources/views* directory, create the file **app.blade.php** and add the following code:
 
 ```html
-
 <!DOCTYPE html>
     <html>
     <head>
@@ -129,7 +122,6 @@ We reference both a CSS and a JavaScript file that contain React and other depen
 Next, we create the App component in the *resources/js/components* with the name **App.jsx** and deleting the **Example.js** that is there by default.
 
 ```javascript
-
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -363,8 +355,7 @@ The ```handleSubmit()``` function is called after the submit button is clicked. 
 
 After the request, we retrieve the results and display it in an alert using the ```JSON.stringify()``` which converts the object return to a string. If there is an error during the process it is shown in the console after being 'caught'.
 
-#### Adding the styling for the page and updating the App.jsx file
-
+### Adding the styling for the page and updating the App.jsx file
 For the styling, you can customise and add your own but what we will be using for formatting our page, is in the CSS code below. Open *resources/js/components/App.css* and add this code:
 
 ```css
@@ -749,7 +740,6 @@ class App extends Component {
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 ### Running the app
-
 Before running the app, we first test compile the react using Laravel Mix by running the command:
 
 ```php
