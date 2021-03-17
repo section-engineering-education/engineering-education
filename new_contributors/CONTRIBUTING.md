@@ -37,11 +37,11 @@ Below is an example article and some suggested templates to help get you started
 
 - [Example Article Submission](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/example_article_submission.md): An example of a history of technology article
 
-- [How to Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md): A sugggested structure for How to Guide articles
+- [How to Guide Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/how-to-guide-template.md): A suggested structure for How to Guide articles
 
-- [Software Review Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/software-review-template.md): A sugggested structure for Software Review articles
+- [Software Review Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/software-review-template.md): A suggested structure for Software Review articles
 
-- [Tutorial Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/tutorial-template.md): A sugggested structure for Tutorial articles
+- [Tutorial Template](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/tutorial-template.md): A suggested structure for Tutorial articles
 
 Once your topic has been approved and you have a final draft of your article ready to submit, follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
