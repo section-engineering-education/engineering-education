@@ -96,3 +96,6 @@ It is also important to note that word2vec isn't the only word embedding model t
 5. [FastText](https://fasttext.cc/)
 6. [BERT](https://en.wikipedia.org/wiki/BERT_(language_model))
 7. [ELMo](https://allennlp.org/elmo)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
