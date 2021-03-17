@@ -539,7 +539,9 @@ ng serve --open //starts on port 4200 by default unless you specfied otherwise
 ```
 You can now make requests to our PHP endpoint and login while the generated token is stored in your browser's local storage.  
 
-### Conclusion
-You learned how to use JWT authentication in your Angular 11 framework in this tutorial.  
+### Conclusion  
+
+You've learned how to use JWT authentication in your Angular 11 application with PHP RESTful APIs in this tutorial. Implement other authentication strategies such as token authentication in your Angular application.  
+
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
