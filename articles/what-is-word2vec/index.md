@@ -32,7 +32,7 @@ Before reading this article, the reader ought to know about Natural Language Pro
 
 ### Introduction
 
-Words play a vital role in our lives as human beings. We think using words, describing the world around us using words, communicating using words, and learning using words. So, we have this intrinsic and innate ability as humans to understand words. But that's not an ability that computers share. That becomes a problem when we are developing systems that we want to integrate more closely into our world. We want computers to understand us better so that they can do more for us.
+Words play a vital role in our lives as human beings. We think, describe the world around us, communicate, and learn using words. As such, we have this intrinsic and innate ability as humans to understand words. But that's not an ability that computers share. That becomes a problem when we are developing systems that we want to integrate more closely into our world. We want computers to understand us better so that they can do more for us.
 
 So, how can we make computers understand us better using natural language?
 
