@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/adding-dark-theme-to-your-site/hero.png
     alt: Dark theme using CSS variables and local storage example image
 ---
-The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems adopt dark themes. Application of dark theme in website context make your website more exciting and attractive to users who love dark them. The experience is even better if you include functionality to switch between light and dark themes.
+The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems adopt dark themes. Application of dark theme makes your website more exciting and attractive to users who love dark theme. The experience is even better if you include functionality to switch between light and dark themes.
 <!--more-->
 This article will help you learn how to implement switching between light and dark themes using [CSS Variables](https://www.w3schools.com/css/css3_variables.asp).
 
@@ -77,7 +77,7 @@ In the same directory as the HTML file, we will add the CSS file that will be us
 
 I recommend installing a live SCSS Compiler to compile our CSS Code in real-time. You can refer about SCSS compiler's installation [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass).
 
-You can change the color code to your favorite color which looks attractive in both dark and light themes.
+You can change the color code to your favorite color which looks attractive both in dark and light themes.
 
 The CSS styling for the default white theme is:
 
@@ -103,7 +103,7 @@ html[data-theme='dark'] {
 }
 ```
 
-Next, we need to specify the CSS styling in the CSS file, so that the website elements will change when we click on the toggle theme button.
+Next, we need to specify the CSS styling in the CSS file `main.css`, so that the website elements will change when we click on the toggle theme button.
 
 ```css
 body { 
@@ -144,18 +144,18 @@ body {
 *Output after adding CSS styling*
 
 ### Toggle theme
-In the next section, we will style our "Toggle switch" which will be checked before switching between the dark and light themes. The code for the toggle button is as below:
+In the next section, we will style our "Toggle switch" which helps us switching between the dark and light themes. The code for the toggle button is as below:
 
 You can find the code to this switch [here](https://codepen.io/mburnette/pen/LxNxNg).
 
 ```css
-input[type=checkbox] {
+input[type=checkbox] { /* styling for input element */
     height: 0;
     width: 0;
     visibility: hidden;
 }
 
-label {
+label { /* styling for labels */
     cursor: pointer;
     text-indent: -9999px;
     width: 52px;
@@ -166,7 +166,7 @@ label {
     position: relative;
 }
 
-label:after {
+label:after { /* styling for labels - on toggle */
     content: '';
     position: absolute;
     top: 3px;
@@ -179,7 +179,7 @@ label:after {
     transition: 0.3s;
 }
 
-input:checked + label {
+input:checked + label { /* conditional check while toggling */
     background: var(--color-heading);
 }
 
@@ -198,7 +198,7 @@ label:active:after {
 *Toggle theme*
 
 ### Adding JavaScript
-We will handle the theme switching through JavaScript by changing the toggle switch's class name to either light or dark, as defined below. In doing so, we write two functions `changeThemeToDark()` and `chnageThemeToWhite()`.
+We will handle the theme switching using JavaScript by changing the toggle switch's class name to either `light` or `dark`, as defined below. In doing so, we write two functions `changeThemeToDark()` and `chnageThemeToWhite()`.
 
 #### Change the theme to dark
 ```javascript
@@ -217,7 +217,7 @@ const changeThemeToDark = () => {
 ```
 
 ### Using local storage
-The local storage provides a store for key and value pairs from a browser. Data store with local storage do not expire even after the browser is closed or refreshed.
+The local storage provides a store for key and value pairs in a browser. Data store with local storage do not expire even after the browser is closed or refreshed.
 
 The `setItem` and `getItem` methods are used to store and retrieve the stored data respectively.
 
@@ -258,9 +258,9 @@ checkbox.addEventListener('change', () => {
 *Dark theme webpage*
 
 ### Conclusion
-This article explained how to implement dark themes and light themes switching using CSS variables and Javascript's LocalStorage.
+This article explained how to implement dark and light themes, and a toggle for switching, using CSS variables and localStorage.
 
-You can now try out the dark theme on your website following this article. You can find the link to the code used in the article [here](https://replit.com/@PhinaKersly/dark-theme#index.html).
+You can now try out implementing the dark theme on your own website. You can find the link to the code used in the article [here](https://replit.com/@PhinaKersly/dark-theme#index.html).
 
 ### Further reading
 - [CSS Variables](https://www.w3schools.com/css/css3_variables.asp)
