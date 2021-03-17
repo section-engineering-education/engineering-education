@@ -4,11 +4,10 @@ This article will help you learn how to implement switching between light and da
 
 Click [this](https://replit.com/@PhinaKersly/dark-theme#index.html) link to find the source code and a runnable program for the implementation.
 
-Before we begin, we will need the following:
 ### Prerequisites
-1. Your favorite text editor. I Prefer vscode
-2. Basic Knowledge of HTML, SCSS, and Javascript
-3. Understand CSS variables
+As a prerequisite, the reader must have a good understanding of:
+- Basic Knowledge of HTML, SCSS, and Javascript
+- Understand CSS variables
 
 ### Adding the HTML
 Lets begin by adding the HTML that we will use for the tutorial. We add the `theme` name and `switch` id to the checkbox input so that we will used theme to refer to it in our `javascript`. We are creating a simple webpage with consisting of a container, in which we add a heading, togglle button, and a paragraph.
@@ -46,7 +45,7 @@ Lets begin by adding the HTML that we will use for the tutorial. We add the `the
 In the same directory as the HTML file, we will add the CSS file that will be used for toggling the default "Light theme" to the "Dark theme". I recommend installing a live SCSS Compiler to compile our CSS Code in real-time. You can the SCSS compiler's installation [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
 
 
-The CSS variables for the default light theme are as shown below. You can change the color code to your favorite color and look attractive in both dark and light themes.
+The CSS variables for the default light theme are as shown below. You can change the color code to your favorite color which looks attractive in both dark and light themes.
 
 The CSS styling for the default white theme is shown below:
 ```CSS
@@ -58,8 +57,8 @@ html{
 }
 ```
 
-CSS styling for dark theme.
-```CSS
+CSS styling for dark theme:
+```css
 html[data-theme='dark'] {
     --bg: #333333;
     --bg-panel: #434343;
@@ -93,7 +92,9 @@ Here is the output after we add our CSS.
 ![Output After Adding CSS](/engineering-education/adding-dark-theme-to-your-site/after-addding-css.png)
 
 ### Switch Theme Button
-In the next section, we will style our toggle switch which will be cheched to switch bewten the dark and ligh theme. The code for this toggle button cis as below. You can find the  code to this switch [here](https://codepen.io/mburnette/pen/LxNxNg)
+In the next section, we will style our toggle switch which will be checked to switch between the dark and light theme. The code for this toggle button is as below.
+
+You can find the code to this switch [here](https://codepen.io/mburnette/pen/LxNxNg)
 
 ```css
     input[type=checkbox] {
@@ -144,7 +145,7 @@ In the next section, we will style our toggle switch which will be cheched to sw
 ### Adding the JavaScript
 We will handle the theme switching through JavaScript by changing the toggle switch's class name to either light or dark, as defined above. In doing so, we write two functions `changeThemeToDark()` and `chnageThemeToWhite()`.
 
-**Change the theme to dark.**
+#### Change the theme to dark
 ```javascript
     // Change theme to dark by adding the `dark` classname to html element.
    const changeThemeToDark = () =>{
@@ -153,7 +154,7 @@ We will handle the theme switching through JavaScript by changing the toggle swi
 
 ```
 
-**Change the theme to Light.**
+#### Change the theme to Light
 ```javascript
     // Reset the html class to default
    const changeThemeToDark = () =>{
