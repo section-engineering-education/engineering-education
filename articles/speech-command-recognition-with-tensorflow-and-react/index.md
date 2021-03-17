@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/speech-command-recognition-with-tensorflow-and-react/hero.png
     alt: Speech Command Recognition in a React Project with Tensorflow 
 ---
-There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that is used in these types of systems is the ability to recognize the speech and perform tasks accordingly. In this tutorial, we are going to explore the basics of speech/commands recognition using a speech-commands recognizer model provided by TensorFlow in a React app ecosystem. The tutorial also demonstrates the use of a system microphone for speech audio input and listen to the audio to make probabilistic predictions. The model library itself makes use of the web browser's WebAudio API. The model can perform inference and transfer learning entirely in the browser, using WebGL GPU acceleration.
+There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that is used in these types of systems is the ability to recognize the speech and perform tasks accordingly. In this tutorial, we are going to explore the basics of speech/commands recognition using a speech-commands recognizer model provided by TensorFlow in a React app ecosystem. The tutorial also demonstrates the use of a system microphone for speech audio input and listen to the audio to make probabilistic predictions.
 <!--more-->
-In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. The idea is to create a React app and trigger the web browser system microphone that feeds the audio data. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy recognition by applying the argmax function to our model.
+In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy recognition by applying the argmax function to our model.
 
 ### What we will cover in this tutorial...
 
@@ -43,14 +43,14 @@ Now, we can execute the command  `yarn start` or `npm start` to run the project 
 
 ### Installing Tensorflow.JS & Speech Command Recognition
 
-Now, we are going to install the main TensorFlow.JS package along with the speech commands recognition package provided by TensorFlow.org. To install, we need to execute the following command in our project terminal:
+Now, we are going to install the main TensorFlow.JS package along with the speech commands recognition package provided by TensorFlow.org. for installation package, we need to execute the following command in our project commmand line or terminal:
 
 ```bash
 yarn add @tensorflow/tfjs @tensorflow-models/speech-commands
 ```
 
 - @tensorflow/tfjs: It is the core Tensorflow package based on JavaScript.
-- @tensorflow-models/speech-commands: It is a JavaScript module that enables us to perform recognition of spoken commands comprised of simple isolated English words from a small vocabulary. It makes use of the web browser's WebAudio API.
+- @tensorflow-models/speech-commands: It is a Tensorflow models that enables us to perform recognition of spoken commands.
 
 ### Importing Dependencies
 
