@@ -24,7 +24,7 @@ It turns out that the word2vec algorithm can help us achieve this.
 
 ### What is Word2Vec? 
 
-Word2Vec is a classical method that creates word embeddings in the field of Natural Language Processing (NLP). It was developed by [Tomas Mikolov](https://en.wikipedia.org/wiki/Tomas_Mikolov) and his team at Google in 2013. Word2vec takes in words from a large corpus of texts as input and learns to give out their vector representation. In the same way, CNN's extract features from images, the word2vec algorithm extract features from the text for particular words. Using those features, word2vec creates vectors that represent a word in the vector space. These vectors are chosen using the cosine similarity function, which indicates the semantic similarity between words. A cosine similarity of 1 would mean that the angle between two words is 0 and 
+Word2Vec is a classical method that creates word embeddings in the field of Natural Language Processing (NLP). It was developed by [Tomas Mikolov](https://en.wikipedia.org/wiki/Tomas_Mikolov) and his team at Google in 2013. Word2vec takes in words from a large corpus of texts as input and learns to give out their vector representation. In the same way, CNNs extract features from images, the word2vec algorithm extracts features from the text for particular words. Using those features, word2vec creates vectors that represent a word in the vector space. These vectors are chosen using the cosine similarity function, which indicates the semantic similarity between words. Cosine similarity of 1 would mean that the angle between two words is 0 and 
 
 Two similar words will occupy locations close to each other in that vector space, whereas words that are very different will occupy far away spaces. In that way, using its ability with linear algebra, the algorithm can recognize context and words that have similar meanings. For example, the words intelligent and smart would appear closer together in this vector space, whereas the words engine and car will be far from intelligent and smart. This is because these words have that contextual understanding within a vector space.
 
@@ -40,7 +40,7 @@ The algorithm uses a neural network architecture that consists of two learning m
 
 In this approach, the model uses context words to predict the target words. The input may be a group of words or a single word. It predicts a missing word given a window of context words or word sequence.
 Suppose we have a sentence:
-An apple is green in colour. If we remove the word "green" from the sentence and leave it blank, the model should predict the missing word.
+An apple is green in color. If we remove the word "green" from the sentence and leave it blank, the model should predict the missing word.
 
 It is referred to as the Bag of Words (BOW) model as the word order in history doesn't influence the outcome. Further denoting the BOW model as continuous, i.e., Continous Bag Of Words (CBOW), means that the model uses continuously distributed representation of the context.
 Also, the weight matrix between the projection layer and the input layer is shared for all the word positions.
