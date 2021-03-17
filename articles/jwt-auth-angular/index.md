@@ -1,8 +1,26 @@
-Without a user authentication system, almost no web application can function. A user is usually authenticated by entering a username or email address and password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/creating-countdown-in-php-javascript-mysql/
+title: Angular 11 - JWT Authentication Example & Tutorial With PHP
+description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backednd service in PHP.  
+author: miller-juma
+date: 2021-03-12T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/jwt-auth-angular/hero.jpg
+   alt: PHP RESTful apis  angular auth example image
+---
+
+
+A user is usually authenticated by entering a username or email address and password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
 
 One solution to this problem is JSON Web Tokens. Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
 
-This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step.  
+This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backednd service in PHP.    
  
 ### Implement a JWT Server and Client with PHP and Angular 11
 In this part, I'll show you how to use PHP in conjunction with an Angular 11 client to implement JWT authentication. Even though the principle is clear, the implementation necessitates familiarity with security best practices.  
@@ -55,7 +73,7 @@ Now, `cd` into the directory we created earlier by running the following command
 In your working directory, create a folder `config` inside the `api` directory.  
 
 ```bash 
-cd api
+cd api && mkdir config
 ````
 Then,
 
@@ -66,7 +84,8 @@ cd config
 ```php
 <?php
 // used to get mysql database connection
-class DB_Connection{
+class DB_Connection
+{
 
     private $db_host     = "localhost"; //change to your  host
     private $db_name     = "jwt-database";//change to your db
@@ -194,8 +213,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $email_address = '';
 $password = '';
 
-$dbService = new DB_Configuration();
-$connection = $dbService->get_connect();
+$dbService = new DB_Connection();
+$connection = $dbService->db_connect();
 
 
 
@@ -272,7 +291,7 @@ These statements are optional, but they help decide a token's validity.
 
 We added the first name, last name, email, and user ID from the database to our JWT payload, which is within the data argument. In the JWT payload, you should not provide any confidential information.  
 
-The JWT::encode() method converts the PHP array to JSON format, signs the payload, and then encodes the final JWT token before sending it to the client. We simply hardcoded the secret key that will be used to sign the JWT payload in our example, but in production, you can use a secret key that is a long, binary string and store it in a configuration file.   
+The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final JWT token before sending it to the client. We simply hardcoded the secret key that will be used to sign the JWT payload in our example, but in production, you can use a secret key that is a long, binary string and store it in a configuration file.   
 
 For registering and logging in users, we now have two RESTful endpoints. You can now communicate with the API using a REST client such as Postman.
 
@@ -294,7 +313,7 @@ $ ng generate service auth
 ```
 The auth service is used to sign in and sign out of the Angular app, as well as to alert other components when a user logs in and out and to give access to the currently logged-in user.  
 
-In your newly generated service, copy and paste the following code sinppets: 
+In your newly generated service, copy and paste the following code snippets: 
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -334,7 +353,7 @@ export class AuthService {
     }
 }
 ```
-In the auth service above, as the user logs in and out of the program, RxJS Subjects and Observables are used to store the current user object and inform other components.  
+In the auth service above, as the user logs in and out of the system, RxJS Subjects and Observables are used to store the current user object and inform other components.  
 
 To be informed of changes, Angular components will `subscribe()` to the public `loggedInUser: Observable` property, and updates are sent when the `this.loggedUserSubject.next() `method in the `loginUser()` and `logOut()` methods is called, passing the argument to each subscriber.  
 
@@ -516,9 +535,11 @@ export class AppModule { }
 Well, let's start our angular application by running the following command:  
 
 ```bash
-ng serve --open
+ng serve --open //starts on port 4200 by default unless you specfied otherwise
 ```
 You can now make requests to our PHP endpoint and login while the generated token is stored in your browser's local storage.  
 
 ### Conclusion
-You learned how to use JWT authentication in your Angular 11 framework in this tutorial.
+You learned how to use JWT authentication in your Angular 11 framework in this tutorial.  
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
