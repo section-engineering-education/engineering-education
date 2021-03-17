@@ -1,6 +1,6 @@
 ### Introduction
 
-Lambda expressions can be challenging to understand. Types that look like this: `(Int -> String` are not intuitive to many developers. This article aims to simplify the concept behind lambda expressions and how to use thm.
+Lambda expressions can be challenging to understand. Types that look like this: `(Int) -> String` are not intuitive to many developers. This article aims to simplify the concept behind lambda expressions and how to use thm.
 
 ### Prerequisites
 
