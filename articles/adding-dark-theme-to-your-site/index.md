@@ -91,18 +91,36 @@ Next, we need to specify the CSS styling in the CSS file, so that the website el
 
 ```css
 body { 
-    background-color: var(--bg);/* background color variable */
+    background-color: var(--bg); /* background color variable */
 }
 
 .container {
-    background-color: var(--bg-panel); /* panel baackground  color variable */
-    h1{
-        margin: 0;
-        color: var(--color-heading);/* heading 1 background color variable */
-    }
-    p{
-        color: var(--color-text); /* text-color variable */  
-    }
+  background-color: var(--bg-panel); /* background panel color variable */
+  margin: 5em;
+  padding: 5em;
+  border-radius: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80% auto;
+      grid-template-columns: 80% auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "title switch"
+ "content content";
+}
+
+.container h1 {
+  margin: 0;
+  color: var(--color-heading); /* heading 1 background color variable */
+}
+
+.container p {
+  color: var(--color-text); /* text-color variable */
+  -ms-grid-column-span: 2;
+  grid-area: content;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  margin-top: 2em;
 }
 ```
 
@@ -192,20 +210,23 @@ We will use local storage to store our currently set theme, so that in subsequen
 The below pieces of code are used to save and retrieve the theme from local storage:
 
 ```javascript
+let theme = localStorage.getItem('data-theme');
 const changeThemeToDark = () => {
-    document.documentElement.setAttribute("data-theme", "dark") //set theme to dark
-    localStorage.setItem("data-theme", "dark")// save theme to local storage
+    document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
+    localStorage.setItem("data-theme", "dark") // save theme to local storage
 }
 
 const changeThemeToLight = () => {
-    document.documentElement.setAttribute("data-theme", "light") //set theme light
-    localStorage.setItem("data-theme", 'light')// save theme to local storage
+    document.documentElement.setAttribute("data-theme", "light") // set theme light
+    localStorage.setItem("data-theme", 'light') // save theme to local storage
 }
 ```
 
-After writing, the functions, we check to see what theme is set currently and toggle it.
+After writing the functions, we check to see what theme is set currently and toggle it.
 
 ```javascript
+// Get the element based on ID
+const checkbox = document.getElementById("switch");
 // Apply retrived them to the website
 checkbox.addEventListener('change', () => {
     let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
