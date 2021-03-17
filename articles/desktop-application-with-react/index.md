@@ -93,13 +93,13 @@ app.on('activate', () => {
 });
 ```
 
-The code creates a `Browserwindow` instance provided by electron, which is used to render the web contents.It then loads the HTML file in the directory on to the `Browserwindow`. It also handles other window events like `closed` when the window is closed, `focus` when the window is in focus, `ready-to-show` when the web page has been rendered, and window states like `maximize`, `minimize`, `restore`. To read more on the configuration, you can visit the [docs](https://www.electronjs.org/docs/tutorial/quick-start).
+The code creates a `Browserwindow` instance provided by electron, which is used to render the web contents. It then loads the HTML file in the directory on to the `Browserwindow`. It also handles other window events like `closed` when the window is closed, `focus` when the window is in focus, `ready-to-show` when the web page has been rendered, and window states like `maximize`, `minimize`, `restore`. To read more on the configuration, you can visit the [docs](https://www.electronjs.org/docs/tutorial/quick-start).
 
 The significant change is that you added the a custom html file to be launched. It will be in your build file, which will be the destination in production.
 
 #### Configuring package.json
 
-Now you have electron installed, but  still have to make a few changes in the `package.json` to syncronize the browser and desktop builds. First, update the project's entry file. In your `package.json` file, add this before your scripts:
+Now you have electron installed, but still have to make a few changes in the `package.json` to syncronize the browser and desktop builds. First, update the project's entry file. In your `package.json` file, add this before your scripts:
 
 ```json
   "main" : "main": "public/electron.js",
@@ -113,7 +113,7 @@ npm i -D concurrently wait-on
 
 `Concurently` allows us to run mutliple commands within one script and `wait-on` will wait for port 3000 which is the default CRA port, to launch the app.
 
-The flag, `BROWSER=none` that you passed  in the `dev` script will prevent the browser from launching once the React app compiles successfully. Under `scripts` in your `package.json` file, add:
+The flag, `BROWSER=none` that you passed in the `dev` script will prevent the browser from launching once the React app compiles successfully. Under `scripts` in your `package.json` file, add:
 
 ```json
 ...
@@ -172,13 +172,13 @@ This tutorial will use fixed latitude and longitude values. Feel free to make th
 Finally, in the return statement for the App function, return a beautiful weather component with the data from the API. You will also pass it some information as props. Some of this information includes, unit labels for the data, language, and also pass in the data object. The code will look like this:
 
 ```js
-<div className='App'>
+<div className="App">
   <ReactWeather
     isLoading={isLoading}
     errorMessage={errorMessage}
     data={data}
-    lang='en'
-    locationLabel='Nairobi'
+    lang="en"
+    locationLabel="Nairobi"
     unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
     showForecast
   />
@@ -201,13 +201,13 @@ function App() {
   });
 
   return (
-    <div className='App'>
+    <div className="App">
       <ReactWeather
         isLoading={isLoading}
         errorMessage={errorMessage}
         data={data}
-        lang='en'
-        locationLabel='Nairobi'
+        lang="en"
+        locationLabel="Nairobi"
         unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
         showForecast
       />
