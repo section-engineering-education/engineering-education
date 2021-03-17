@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
 In the code above, you created a simple Flask application that renders the text `"Welcome to my Flask API"` when the index route is requested. You should get a response similar to the image below after running the Flask application.
 
-![Flask API response](oqahhiaqcfeigq1urdwe.png)
+![Flask API response](/engineering-education/implementing-rate-limiting-in-flask/oqahhiaqcfeigq1urdwe.png)
 
 ### Implementing Rate Limiting in Flask
 
@@ -121,7 +121,7 @@ def index():
 
 In the code above, you defined the rate limiting rule for the endpoint by setting it to accept `10` requests per `60` seconds from every user of the API. If the limit is exceeded, the user receives the response - `status code 429 (Too Many Requests)` and an error page similar to the image below.
 
-![Flask-Limiter limit exceeded error](osw9-4n2ilprrg2m_i9g.png)
+![Flask-Limiter limit exceeded error](/engineering-education/implementing-rate-limiting-in-flask/osw9-4n2ilprrg2m_i9g.png)
 
 Flask-Limiter provides a set of string notations for defining rate limit rules in its [documentation](https://flask-limiter.readthedocs.io/en/stable/%23rate-limit-string-notation) with the given format:
 
@@ -216,7 +216,7 @@ def ratelimit_handler(e):
   return "You have exceeded your rate-limit"
 ```
 
-![custom rate limit exceeded error](nulbeq2kwcnmek9ucrn2.png)
+![custom rate limit exceeded error](/engineering-education/implementing-rate-limiting-in-flask/nulbeq2kwcnmek9ucrn2.png)
 
 ### Resources
 
