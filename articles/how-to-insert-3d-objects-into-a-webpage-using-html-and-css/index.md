@@ -316,3 +316,5 @@ The next step is to modify its appearance using CSS. Let's do this by adding the
 
 If you have reached here, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified. 
 Well done! You have successfully inserted a 3D object into your webpage.
+
+This fixes #1645
