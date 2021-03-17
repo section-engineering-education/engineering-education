@@ -28,7 +28,7 @@ We want computers to understand us better so that they can do more for us. So, h
 
 ### Prerequisites
 
-Before reading this article, the reader ought to know about Natural Language Processing (NLP).
+Before reading this article, a reader should be familiar with basic Natural Language Processing (NLP) concepts.
 
 ### Introduction
 
