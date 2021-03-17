@@ -20,9 +20,9 @@ Folder organization helps optimize the performance of an application. As the siz
 Since there is no rule to flutter folder organization, this article explains just one of the efficient ways of organizing your files and folders in a flutter project. 
 
 ### Table of contents
-1. Default Files and Folders in a Flutter Project.
-2. Folder Organization.
-3. Benefits of maintaining a Proper Folder Structure.
+1. Default files and folders in a Flutter project.
+2. Folder organization.
+3. Benefits of maintaining a proper folder structure.
 4. Conclusion
 
 ### Default folders and files
