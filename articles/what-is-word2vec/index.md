@@ -21,11 +21,10 @@ We want computers to understand us better so that they can do more for us. So, h
 
 1. [Prerequisites](#prerequisites)
 2. [Introduction](#introduction)
-3. [What is Word2Vec](#what-is-word2vec)
-4. [What is Word Embedding](#what-is-word-embedding)
-5. [Key takeaways](#key-takeaways)
-6. [Wrapping Up](#wrapping-up)
-7. [References](#references)
+3. [What is Word2Vec?](#what-is-word2vec)
+4. [Key takeaways](#key-takeaways)
+5. [Wrapping Up](#wrapping-up)
+6. [References and Further Reading](#references-and-further-reading)
 
 ### Prerequisites
 
