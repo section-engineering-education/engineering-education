@@ -80,14 +80,14 @@ The following packages will help us build the todo app.
 - [Nodemon](https://www.npmjs.com/package/nodemon) - this a `dev` package (not needed for the app to function). Nodemon ensures that the server is running whenever you make changes. When you save changes, you don't have to restart the server. Nodemon will handle this for you. 
 
 ### The application structure
-This is how we will lay down our todo app.
+Here is the project structure of the todo app:
 
 ![Node.js Restful API Project Structure](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/project-structure.png)
 
 ### Setting up the project
-Ensure you have [Node.js](https://nodejs.org/en/download/) runtime installed on your computer. Upon running `node –v`, you will get the Node.js version `v14.16.0` installed on your computer, which checks that Node.js is successfully installed.
+Ensure you have [Node.js](https://nodejs.org/en/download/) runtime installed on your computer. You can check the node.js version by running `node –v` command.
 
-In your desired folder, run the following to initialize your Node.js project.
+In your desired folder, run the following command to initialize your node.js project.
 
 ```bash
 npm init
@@ -97,8 +97,8 @@ Answer the relevant questions, and then follow through to the next steps.
 
 Alternatively, you can run `npm init -y' to auto initialize your project with NPM default values. Check this [guide](/engineering-education/beginner-guide-to-npm/) to understand how to use NPM.
 
-#### Install the necessary dependencies
-Install all the Node.js Packages we discussed above as follows
+#### Installing the necessary dependencies
+You can install all the Nde.js Packages that we discussed above as follows:
 
 ```bash
 npm install cors ejs express pg
@@ -113,18 +113,16 @@ npm install --save-dev nodemon
 #### Setting up the PostgreSQL database
 Install the following PostgreSQL environments.
 
-- [PostgreSQL](https://www.postgresql.org/download/)an opensource relational databse management system.
-- [pgAdmin](https://www.pgadmin.org/download/), standalone destop application for managing PostgreSQL databases.
+- [PostgreSQL](https://www.postgresql.org/download/) - an opensource relational databse management system.
+- [pgAdmin](https://www.pgadmin.org/download/) - a standalone destop application for managing PostgreSQL databases.
 
-Once installed and well configured, create a database and a table to work with.
+Once installed and well configured, create a `my_todos_db` database and a table to work with, as shown below.
 
 - Create a database, `my_todos_db`.
 
 ```SQL
 CREATE DATABASE test
 ```
-
-- Create a table, `todos`.
 
 ```SQL
 CREATE TABLE todos (
@@ -170,14 +168,14 @@ app.listen(PORT, () => {
 });
 ```
 
-#### Test if the server is working
+### Test if the server is working
 To start the server, configure the `scripts` object in `package.json` as follows.
 
 ```bash
 "dev": "nodemon ./src/index.js"
 ```
 
-Run to `npm run dev` start the server.
+Then, run `npm run dev` start the server.
 
 ![A Simple ExpressJS Server](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/start-the-server.jpg)
 
@@ -185,14 +183,14 @@ Open `http://localhost/4000` In a browser. This should give you a response `hell
 
 > If there was an error connecting to the server, you will be prompted in the console. Ensure that you fix the error before proceeding to the next step.
 
-The server is up and running And we can do away with `app.get("/", (req, res) =>{res.send("hello world!");`
+Since the server is up and running And we can do away with `app.get("/", (req, res) =>{res.send("hello world!");`
 
-Any changes that you add to the server application will be restarted by Nodemon, no need to re-run the server again.
+The server application will be restarted by Nodemon incase of any changes. There is no need to re-run the server.
 
 ![Nodemon](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/nodemon-restart-the-server.jpg)
 
 ### Setting up the routes
-Create a `routes` folder, in it create a `todos.js` file (`src/routes/todos.js`). Here we will configure our routes as follows:
+Create a `routes` folder and add a `todos.js` file (`src/routes/todos.js`). Here we will configure our routes as follows:
 
 ```js
 const express = require("express");
@@ -228,7 +226,7 @@ app.use(todoRoutes);
 ```
 
 ### Setting up the controllers
-The controllers are responsible for handling the functionality exposed by the routes. To set the controllers, create a folder `controllers` and create a file `Todo.js`, (`src/controllers/Todo.js`). In this file, we will add all our needed SQL queries such as SELECT, INSERT, UPDATE AND DELETE functionalities as follows:
+Controllers are responsible for handling the functionality exposed by the routes. To set the controllers, create a folder name it `controllers`. Next, create a file `Todo.js`, (`src/controllers/Todo.js`). In this file, we will add all our needed SQL queries such as `SELECT`, `INSERT`, `UPDATE` and `DELETE` functionalities as follows:
 
 ```js
 const db = require("../config/db");
@@ -307,7 +305,7 @@ router.delete('/todos/:todoId', async (req,res) => {
 ```
 
 ### Setting up the views
-We will set the EJS views that will be rendered to the client-side. EJS views work the same as HTML elements such as buttons and forms. Views will help us trigger the necessary actions such as adding, deleting, or updating a todo from the client-side.
+We will set the EJS views that will be rendered to the client-side. EJS views work the same as HTML elements such as buttons and forms. Views will help us trigger the necessary actions such as adding, deleting, or updating a todo item from the client-side.
 
 Set up the CSS and views folders, as shown in the `application structure`.
 
@@ -336,19 +334,16 @@ We'll include the following views.
     </section>
 ```
 
-From above, we are:
+In the above code, we are doing the following:
 
 - Importing home page header.
-
 - Setting the layout of the home page.
-
 - Importing the `todos.ejs` file. It contains the fetched todos.
-
 - Importing the `add-todo.ejs` file. It contains the form to add a todo.
 
 1. A header (`header.ejs`)- this will include the following;
 
-- A todo herder.
+- A todo header.
 
 - Link the `src/public/css/custom.css`, `src/public/css/bootstrap.min.css` and, `src/public/js/main.js` We add the update and delete functionalities linking to the views in this `main.js` as shown below;
 
@@ -385,9 +380,9 @@ function deleteTodo(todoId) {
 }
 ```
 
-From above, we are:
+In the above code, we are:
 
-- Using [AJAX](https://www.w3schools.com/js/js_ajax_intro.asp) to communicate with the server based on `PUT` and `DELETE` method. This is because HTML forms do not support these methods on the go.
+- Using [AJAX](https://www.w3schools.com/js/js_ajax_intro.asp) to communicate with the server based on `PUT` and `DELETE` method. This is because HTML forms do not support these methods by default.
 
 This how the `src/views/partials/header.ejs` should look like, after adding a header, the CSS files, and `main.js`.
 
@@ -406,8 +401,6 @@ This how the `src/views/partials/header.ejs` should look like, after adding a he
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="/static/js/main.js"></script>
 </head>
-
-<body>
 ```
 
 1. Add new todo (`src/views/partials/add-todo.ejs`) - a form that sends a `POST` request to the server alongside the data entered by a user.
@@ -427,7 +420,7 @@ This how the `src/views/partials/header.ejs` should look like, after adding a he
 </div>
 ```
 
-1. Todo list (`src/views/partials/todos.ejs`). a GET form method fetches all the todo. Every todo will have a delete button and a toggle to check a completed todo.
+1. Todo list (`src/views/partials/todos.ejs`). a GET form method fetches all the todo. Every todo item will have a delete button and a toggle to check a completed todo.
 
 ```html
 <ul class="list-group">
@@ -530,7 +523,7 @@ This will;
 - Serve static files such as `.css` files.
 
 ### Linking the views to the routes
-To view all our functionalities to the backend client, we need to link the routes' views.
+We need to link our views with the backend.
 
 Add the following configuration to the `src/routes/todos.js` file.
 
@@ -566,13 +559,13 @@ router.delete('/todos/:todoId', async (req,res) => {
 ```
 
 ### Testing the application
-Ensure that the development server is running. If it's not, start it by running the following command;
+Ensure that the development server is running. If it's not, use the following command to restart it;
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost/4000` in a browser, and interact with the application.
+Navigate to `http://localhost/4000` in your browser to access the application.
 
 ![A Restful API Todo list App](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/a-todo-list.jpg)
 
@@ -582,16 +575,14 @@ After cloning the repository, open the project in your terminal and run `npm ins
 
 >Make sure your database is well set as we described in this guide
 
-Run the app using `npm run dev` and open `http://localhost/4000` in a browser to interact with the todo app.
-
-Check the database to confirm if adding or updating a todo reflect as such.
+Run the app using `npm run dev` and open `http://localhost/4000` in a browser to interact with the todo app. Then, check the database to confirm if adding or updating a todo reflect as such.
 
 ![Postgres SQL Database Table](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/todo-list-database-table.jpg)
 
 For any code reference, check this project from [GitHub](https://github.com/kimkimani/A-Simple-RESTful-API-In-Node.js-using-PostgresSQL-and-Express).
 
 ### Conclusion
-RESTful APIs provide independence of the client and the server. This is a significant advantage, especially when you on a team or when you want to build applications that scale. To learn more about RESTful APIs, read the following [post](https://restfulapi.net/).
+RESTful APIs allow client and the server sides to be independent. This is a significant advantage, especially when working as a team or when you want to build scalable applications. To learn more about RESTful APIs, read the following [post](https://restfulapi.net/).
 
 Happy coding!!
 
