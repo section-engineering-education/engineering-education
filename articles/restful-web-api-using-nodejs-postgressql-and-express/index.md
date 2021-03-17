@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/restful-web-api-using-nodejs-postgressql-and-express/hero.jpg
     alt: Building a Web API using Node.js, PostgreSQL and Express
 ---
-[REST](/engineering-education/rest-api/) stands for **RE**presentational **S**tate **T**ransfer. It allows you to create a data object, send the state of that object to the server and return the values of that object. REST is a set of design criteria and not the system's physical structure (architecture). It uses "representations" of resources (data) to transfer a resource state from a server to the application state on the client-side.
+[REST](/engineering-education/rest-api/) stands for **RE**presentational **S**tate **T**ransfer. It allows you to create a data object, send the state of that object to the server and return the values of that object. REST is a set of design criteria rather than the physical structure (architecture). It uses "representations" of resources (data) to transfer a resource state from a server to the application state on the client-side.
 <!--more-->
 API stands for **A**pplication **P**rogramming **I**nterface. It is the communication language between two software programs. An API uses an agreed-upon data format to send requests and responses back and forth between programs. It define the communication rules and procedures between two programs. This helps in the formation of a point of contact (an endpoint) between these programs.
 
@@ -226,7 +226,7 @@ app.use(todoRoutes);
 ```
 
 ### Setting up the controllers
-Controllers are responsible for handling the functionality exposed by the routes. To set the controllers, create a folder name it `controllers`. Next, create a file `Todo.js`, (`src/controllers/Todo.js`). In this file, we will add all our needed SQL queries such as `SELECT`, `INSERT`, `UPDATE` and `DELETE` functionalities as follows:
+Controllers are responsible for handling the functionality exposed by the routes. To set the controllers, create a folder and name it `controllers`. Next, create a file `Todo.js`, (`src/controllers/Todo.js`). In this file, we will add all our needed SQL queries such as `SELECT`, `INSERT`, `UPDATE` and `DELETE` functionalities as follows:
 
 ```js
 const db = require("../config/db");
@@ -569,11 +569,11 @@ Navigate to `http://localhost/4000` in your browser to access the application.
 
 ![A Restful API Todo list App](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/a-todo-list.jpg)
 
-Alternatively, clone this project from this [GitHub](https://github.com/kimkimani/A-Simple-RESTful-API-In-Node.js-using-PostgresSQL-and-Express) repository
+Alternatively, clone this project from this [GitHub](https://github.com/kimkimani/A-Simple-RESTful-API-In-Node.js-using-PostgresSQL-and-Express) repository.
 
 After cloning the repository, open the project in your terminal and run `npm install` to install the project dependencies.
 
->Make sure your database is well set as we described in this guide
+>Make sure your database is well set as we described in this guide.
 
 Run the app using `npm run dev` and open `http://localhost/4000` in a browser to interact with the todo app. Then, check the database to confirm if adding or updating a todo reflect as such.
 
