@@ -18,20 +18,15 @@ images:
 As a network administrator one of the tasks is to segment a single switched LAN logically without having to run new cables and making changes to the existing network.The concept of **`VLANS`** and how they are configured to communicate will help one to be able to handle the task at hand with ease.
 <!--more-->
 ### What is Inter VLAN routing?
-Virtual LANS(VLANS) are logical LANS that act as subnetworks which can group together collections of devices on separate physical local area networks(LANS).
+**`VLANS`** are networks segments on a  switched LAN which groups together hosts on the network logically regardless of there physical locations on the network.
 
 VLANS make it easier for one to segment a single network ,they improve the performance of the network and  tend to be flexible as they  are based on logical connections.VLANS are treated as separate subnets on the network.For that reason to move packets from one VLAN to another and enable communications between hosts we have to configure the network to enable  inter vlan routing.
 
-### Methods of Inter-VLAN routing.
-1. **Legacy inter-vlan routing** -
- Is a legacy solution and relied on using a router with multiple ethernet interfaces. Each interface was connected to a switch port in different VLANs and  served as the default gateways to the local hosts on the VLAN subnet.This brought about some limitations as it required multiple physical interfaces on both the switch and router  meaning as the network grew  additional hardware were required which led to  additional costs. It is no longer used in switched networks.
-2. **Router-on-a-stick** -This method overcomes the limitation of the legacy inter-VLAN routing method as it only requires one physical Ethernet interface to route traffic between multiple VLANs on a network. The router Ethernet interface is configured as a trunk using subinterfaces and connected to a trunk port on a Layer 2 switch.
-3. **Layer 3 switch using switched virtual interface(SVIs)** - This is a modern method of inter-vlan routing that uses layer 3 switches/multilayer switch and switched virtual interfaces (SVI). SVIs are created for a VLANs that exists on the switch and they perform the same function for the VLANs as that of a router.
+### Inter-VLAN routing methods.
+1. **Legacy inter-vlan routing** -In this solution multiple router interfaces were used each connecting to a switch port in different vlans. The interfaces were used as default gateways and this led to some network issues as additional cabling was required when the network was to be expanded.
 
-      Some of the advantages  of layer 3 switches are:
-
-    * They are much faster as everything is hardware switched and routed.
-    *  Lower latency  as data does not need to leave the switch in order to be routed to other networks.
+2. **Router-on-a-stick** -In this method unlike the legacy , one physical interface port is used for routing traffic between the network segments. That is the network administrator does not require to create all the vlan interface like fa0/1 to fa0/10, all the interfaces from 1 to 10 are created in a single interface.
+3. **Layer 3 switch using switched virtual interface(SVIs)** - This is the current method of inter-vlan routing that uses layer 3/multilayer switch and switched virtual interfaces (SVI). SVIs are created for a VLANs that exists on the switch and they perform the same function for the VLANs as that of a router.
 
 Layer 3 switches are expensive hence not afforadable. In this article we are going to focus on the router-on-a-stick method for our inter-vlan routing
 
@@ -42,7 +37,7 @@ Consider a LAN with 4 PCs,1 switch and a router connected as shown.
 
 ![Local Area Network](/engineering-education/inter-vlan-routing/network.jpg)
 
-We want to configure two VLANS 10 and 20. PC0 and PC1 are in VLAN10 while PC2 and PC3 are in VLAN20.
+We want to configure two VLANS 10 and 20. PC0 and PC1 on VLAN10 while PC2 and PC3 are on VLAN20.
 * IP Address of PC0   -192.168.1.10
 * IP Address of PC1   -192.168.1.20
 * IP Address of PC2   -192.168.2.10
@@ -51,7 +46,7 @@ We want to configure two VLANS 10 and 20. PC0 and PC1 are in VLAN10 while PC2 an
 * Default gateway for VLAN10- 192.168.2.1
 
 ### Step 1.
-Create two VLANS on the switch ,VLAN10 and VLAN20. Give them custom names. That is VLAN10 -student and VLAN20 - staff.This is done using  the command line of the switch in  the packet tracer.
+Create two VLANS on the switch ,VLAN10 and VLAN20. Give them custom names. That is VLAN 10 -student and VLAN 20 - staff.
 ```
 Switch>enable
 Switch#config terminal
@@ -64,7 +59,7 @@ Switch(config-vlan)#exit
 
 ```
 ### Step 2.
-Assign switchports to the VLANS. Ports Fa0/1 and Fa0/2 acting as Access ports for VLAN10 while ports Fa0/3 and Fa0/4 for VLAN20. Port Fa0/5 will be the trunk port carrying the traffic between the two VLANS via the router.
+Assign switchports to the VLANS. Ports Fa0/1 and Fa0/2 acting as Access ports for VLAN10 while ports Fa0/3 and Fa0/4 for VLAN20.The trunk port  for carrying the traffic between the two VLANS via the router we shall use Fa0/5 port.
 ```
 Switch>enable
 Switch#config terminal
@@ -94,12 +89,12 @@ Switch(config-if)#switchport mode trunk
 Switch(config-if)#do write
 ```
 ### Step 3.
-Assign static IP address to all the four PCs connected on the network.
+Using static  IP addressing  set the IP addresses to  each PC on the network.
 
-![Static IP addressing](/engineering-education/inter-vlan-routing/pc-ip-configuration.jpg)
+![IP addressing](/engineering-education/inter-vlan-routing/pc-ip-configuration.jpg)
 
 ### Step 4.
-Configure inter-vlan routing on the router to enable communication between the two vlans.
+Configure the  router to enable traffic to move from VLAN10 TO VLAN20 and for the PCs to be able to communicate.This is done by subdiving the single interface on the router  into sub-interfaces which  will act as the default gateways for each of the vlans and this will allow the the two sub networks to communicate using the single interface.
 ```
 Router>enable
 Router#config terminal
@@ -117,7 +112,9 @@ Router(config-subif)#encapsulation dot1q 20
 Router(config-subif)#ip add 192.168.2.1 255.255.255.0
 Router(config-subif)#exit
 Router(config)#do write
+Router(config)#exit
 ```
+From the above configurations,interfaces g0/0 has been subdivided into two sub interfaces  g0/0.10 for VLAN 10 and g0/0.20 for VLAN 20. The two sub-interfaces are then given IP address and they serve as the trunk ports for carrying the traffic.
 ### Step 5.
 Test the inter-vlan connectivity by trying to ping the different PCs .For instance if we ping PC2 in VLAN20 from PC0 in VLAN 10 it should be successful as shown below.
 
