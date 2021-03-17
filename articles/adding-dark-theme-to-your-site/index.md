@@ -1,5 +1,21 @@
-The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems adopt dark themes. Application of dark theme in website context make your website more exciting and attractive to users who love dark them. The experience is even better if you include functionality to switch between light and dark themes.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/adding-dark-theme-to-your-site/
+title: Dark theme using CSS variables and local storage
+description: In this article we will understand how to build dark theme webpages using CSS and local storage. Also, We will build a simple webpage for toggling between light and dark themes.
+author: phina-kersly
+date: 2021-03-17T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/adding-dark-theme-to-your-site/hero.png
+    alt: Dark theme using CSS variables and local storage example image
+---
+The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems adopt dark themes. Application of dark theme in website context make your website more exciting and attractive to users who love dark them. The experience is even better if you include functionality to switch between light and dark themes.
+<!--more-->
 This article will help you learn how to implement switching between light and dark themes using [CSS Variables](https://www.w3schools.com/css/css3_variables.asp).
 
 Click [this link](https://replit.com/@PhinaKersly/dark-theme#index.html) to find the source code and a runnable program for the implementation.
