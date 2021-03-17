@@ -54,7 +54,7 @@ Two similar words will occupy locations close to each other in that vector space
 
 The algorithm uses a neural network architecture that consists of two learning models:
 
-1. Continous Bag-of-Words model (CBOW)
+**1. Continuous Bag-of-Words model (CBOW)**
 
 In this approach, the model uses context words to predict the target words. The input may be a group of words or a single word. It predicts a missing word given a window of context words or word sequence.
 Suppose we have a sentence:
