@@ -85,7 +85,7 @@ The system is trained using backpropagation and stochastic gradient descent to t
 
 I hope this article has been helpful to you. Word2vec has until recently been an extremely influential algorithm in NLP. However, as far as research is concerned, especially due to the rise of language models such as Google's [BERT](https://en.wikipedia.org/wiki/BERT_(language_model)) and [ELMo](https://allennlp.org/elmo) the influence of Word2vec has diminished. Despite this, it is still very relevant.
 
-It is also important to note that word2vec isn't the only word embedding models that work well. Stanford's [GloVe](https://en.wikipedia.org/wiki/GloVe_(machine_learning)) and Facebook's [FastText](https://fasttext.cc/) are examples of other popular word embedding models you can explore that also works so great. Feel free to also read on it.
+It is also important to note that word2vec isn't the only word embedding model that works well. Stanford's [GloVe](https://en.wikipedia.org/wiki/GloVe_(machine_learning)) and Facebook's [FastText](https://fasttext.cc/) are examples of other popular word embedding models you can explore that also work well. Feel free to also have a read on them.
 
 ### References and Further Reading
 
