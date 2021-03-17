@@ -249,3 +249,6 @@ You can now try out the dark theme on your website following this article. You c
 ### Further reading
 - [CSS Variables](https://www.w3schools.com/css/css3_variables.asp)
 - [Local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
