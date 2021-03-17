@@ -36,7 +36,7 @@ Words play a vital role in our lives as human beings. We think, describe the wor
 
 So, how can we make computers understand us better using natural language?
 
-We know that computers are good at understanding numbers. They are good at taking large matrices and applying linear algebra to those matrices. By converting words into vectors, we can make computers understand natural language words' meaning and context. 
+We know that computers are good at understanding numbers. They are good at taking large matrices and applying linear algebra to them. By converting words into vectors, we can make computers understand natural language words' meanings and contexts.
 
 It turns out that the word2vec algorithm can help us achieve this. 
 
