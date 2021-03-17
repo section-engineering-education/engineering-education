@@ -45,7 +45,7 @@ There are many sites with different 3D models. Examples that allow free download
 ## 3D Model Formats
 These are used to store the appearance of a model, encoding the model animations, encoding the geometry, and storing the physical appearance of the model. They are used in video games, 3D printing, engineering, movies and so much more.
 Some popular formats available include *FBX*, *STL*, *OBJ*, *glTF*, and *DAE* among others.
-In our case, we are going to use the *glTF model*.
+In our case, we will use the *glTF model*.
 
 > **glTF**, *Graphics Language Transmission Format*, is a 3D model format designed for efficient transmission and loading of 3D models by applications.
 
