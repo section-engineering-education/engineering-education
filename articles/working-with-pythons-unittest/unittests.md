@@ -1,4 +1,4 @@
-In software engineering, a unit test refers to a program used to automatically check for bugs in individual parts/units of a software. Unit testing is an important phase of the software development life cycle.
+In software engineering, a unit test refers to a program used to automatically check for bugs in individual parts/units of software. Unit testing is an important phase of the software development life cycle.
 To carry out a test, a developer specifies a set of testcases and their expected results for comparison. Most programming languages provide inbuilt unit testing frameworks. In this article, we will focus on Python's unittest.
 Regression testing refers to retesting software to ensure that it works well after a change has been made (after refactoring code). In this article, we'll see how we can use the unittest module to perform regression testing.
 
@@ -96,7 +96,7 @@ Ran 3 tests in 0.000s
 OK
 ```
 
-The above output shows that all the three tests executed correctly.
+The above output shows that all three tests were executed correctly.
 
 ###### Output types
 After running a test, the unittest module has two types of outputs:
@@ -205,7 +205,7 @@ Unit testing is an essential step of the software development life cycle and pro
 
 ### A comparison of unittest with other Python testing frameworks
 The most popular third-party unit testing frameworks include pytest and nose in that order.
-Compared to the above, unittest is more beginner friendly since it has a shallow learning curve. For instance, it does not use the complex annotations used in a framework like pytest. Furthermore, it does not require an installation since it's inbuilt into Python's standard library.
+Compared to the above, unittest is more beginner-friendly since it has a shallow learning curve. For instance, it does not use the complex annotations used in a framework like pytest. Furthermore, it does not require an installation since it's inbuilt into Python's standard library.
 
 #### Limitations
 
@@ -214,7 +214,7 @@ The unittest does have some limitations compared to the third-party frameworks. 
 2. It does not support plugins.
 
 ### Conclusion
-In this article, we learnt about unit testing, regression testing, and how to use Python's unittest module. You can find a working implementation of the project [here](https://replit.com/@StephenMwangi1/unit-testing) which you can execute by clicking the run button. You can also click the fork button to create a copy which you can modify.
+In this article, we learnt about unit testing, regression testing, and how to use Python's unittest module. You can find a working implementation of the project [here](https://replit.com/@StephenMwangi1/unit-testing) which you can execute by clicking the run button. You can also click the fork button to create a copy that you can modify.
 
 For more information, check the [unittest documentation](https://docs.python.org/3/library/unittest.html).
 
