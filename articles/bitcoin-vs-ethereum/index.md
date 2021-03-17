@@ -56,6 +56,13 @@ for nounce in range(100000):
         break
 ```
 
+Running the following code generates the following output:
+
+```bash
+nounce: 66053
+hash: 0000a17d817a5b5414cce89e889278fcb60c6232208b1cc8933014009fd8fa2e
+```
+
 For more details on the Proof of Work protocol, refer to my previous article on [various consensus protocols](/engineering-education/blockchain-consensus-protocols/).
 
 #### Ledgers and Transaction Code
