@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/speech-command-recognition-with-tensorflow-and-react/hero.png
     alt: Speech Command Recognition in a React Project with Tensorflow 
 ---
-There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that are used in these types of system is the ability to recognize the speech and perform task accordingly. In this tutorial, we are going to explore the basics of speech/commands recognition using a speech-commands recognizer model provided by TensorFlow in a React app ecosystem. The tutorial also demonstrates the use of a system microphone for speech audio input and listen to the audio to make the probabilistic predictions. The model library itself makes use of the web browser's WebAudio API. The model can perform inference and transfer learning entirely in the browser, using WebGL GPU acceleration.
+There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that is used in these types of systems is the ability to recognize the speech and perform tasks accordingly. In this tutorial, we are going to explore the basics of speech/commands recognition using a speech-commands recognizer model provided by TensorFlow in a React app ecosystem. The tutorial also demonstrates the use of a system microphone for speech audio input and listen to the audio to make probabilistic predictions. The model library itself makes use of the web browser's WebAudio API. The model can perform inference and transfer learning entirely in the browser, using WebGL GPU acceleration.
 <!--more-->
-In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. The idea is to create a React app and trigger the web browser system microphone that feeds the audio data. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy recognition by applying argmax function to our model.
+In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. The idea is to create a React app and trigger the web browser system microphone that feeds the audio data. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy recognition by applying the argmax function to our model.
 
 ### What we will cover in this tutorial...
 
-- To access the audio data stream from browser microphone.
-- To precit the speech commands using pre-trained speech-commands model from TensorFlow.
+- To access the audio data stream from the browser microphone.
+- To precise, the speech commands using the pre-trained speech-commands model from TensorFlow.
 - To improve the overall prediction/recognition probability by using the argmax function.
 
 *Let's get started!*
@@ -61,7 +61,7 @@ import * as tf from "@tensorflow/tfjs"
 import * as speech from "@tensorflow-models/speech-commands"
 ```
 
-### Setting Up Application States
+### Setting Up the Application States
 
 Then, we need to define the state variable for model, action, and labels using the `useState` hook as shown in the code snippet below:
 
@@ -91,13 +91,13 @@ const loadModel = async () =>{
 useEffect(()=>{loadModel()}, []);
 ```
 
-Now, when we reload our app, we will see the model being loaded and the labels logged in the console as shown in the screenshot below:
+Now, when we reload our app, we will see the model is loaded and the labels logged in the console as shown in the screenshot below:
 
 ![list of command](/engineering-education/speech-command-recognition-with-tensorflow-and-react/3-list-of-command.png)
 
 ### Activating Speech Recognizer
 
-In this step, we are going to activate our speech recognizer i.e. start listening to audio speech. For that, we are going to implement a function called `recognizeCommands`. Inside the function, we are going to listen to audio using `listen` method from `model` state then log the `spectrogram` result of the speech. The additional option of `probabilityThreshold` is applied to improve the recognition. Lastly, we apply the `setTimeout` callback to trigger the `stopListening` method in order to stop the speech recognizer. The overall implementation is provided in the code snippet below:
+In this step, we are going to activate our speech recognizer i.e. start listening to audio speech. For that, we are going to implement a function called `recognizeCommands`. Inside the function, we are going to listen to audio using `listen` method from the `model` state then log the `spectrogram` result of the speech. The additional option of `probabilityThreshold` is applied to improve the recognition. Lastly, we apply the `setTimeout` callback to trigger the `stopListening` method in order to stop the speech recognizer. The overall implementation is provided in the code snippet below:
 
 ```jsx
 const recognizeCommands = async () => {
@@ -128,7 +128,7 @@ But why not improve the speech detection result. To improve the detection result
 
 ### Add argmax for Highest Probability Detection
 
-Now, we are going to add `argmax` function to our speech recognizer model to improve its detection to the highest possible result. The actual source code for this function can be found [here](https://gist.github.com/engelen/fbce4476c9e68c52ff7e5c2da5c24a28).
+Now, we are going to add the `argmax` function to our speech recognizer model to improve its detection to the highest possible result. The actual source code for this function can be found [here](https://gist.github.com/engelen/fbce4476c9e68c52ff7e5c2da5c24a28).
 
 ```jsx
 function argMax(arr){
@@ -163,4 +163,4 @@ Hence, we get the result as shown in the demo on [Codesandbox](https://codesandb
 ### Conclusion
 
 In this tutorial, we learned how to use the speech-commands recognizer TensorFlow model to detect the speech in our React app. Due to the availability of a speech-commands recognizer COCO TensorFlow model, the overall implementation the speech recognition on a React app was simplified and made easy.
-The main objective of this tutorial was to explore the use cases of the speech-commands recognizer model and use it to create a simple speech recognizer React app. Such a speech recognizer feature is highly useful for many audio-text based applications. Such a command recognizer can be used to build a robot or any AI-based application that takes in audio input as a command to trigger actions.
+The main objective of this tutorial was to explore the use cases of the speech-commands recognizer model and use it to create a simple speech recognizer React app. Such a speech recognizer feature is highly useful for many audio-text-based applications. Such a command recognizer can be used to build a robot or any AI-based application that takes in audio input as a command to trigger actions.
