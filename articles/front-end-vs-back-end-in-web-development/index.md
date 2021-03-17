@@ -102,3 +102,6 @@ To summarize:
 - We have gained an understanding of front-end development.
 - We have learned the specific differences between these parts along with various criteria such as interaction, roles, languages, frameworks, and application side.
 - We have also been guided on how to choose the right development path.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
