@@ -181,15 +181,21 @@ FAILED (failures=1)
 
 As demonstrated above, the error message we added describes the `AssertionError` better. This has made it more understandable.
 
-##### More assert methods
-So far, we've seen the `assertEqual(a, b)` method, the `assertNotEqual(a, b)` method, and the `assertRaises(x)` method. Apart from these, the unittest module provides extra assert methods which include:
+##### Assert methods
+So far, we've seen the `assertEqual(a, b)` method, the `assertNotEqual(a, b)` method, and the `assertRaises(x)` method. Apart from these, the unittest module provides these extra assert methods:
 
-1. `assertTrue(x)` checks that a boolean value `x` equals `True`.
-2. `assertFalse(x)` checks that a boolean value `x` equals `False`.
-3. `assertIn(a,b)` checks that a value `a` exists in a list `b`. For instance, this check should pass when `a=2` and `b=[1,2,3]`.
-4. `asserNottIn(a,b)` checks that a value `a` does not exist in a list `b`. For instance, this check should fail when `a=2` and `b=[1,2,3]` since `2` exists in the list `b`.
-
-Once you are comfortable working with these, you can check more assert methods [here](https://docs.python.org/3/library/unittest.html#assert-methods).
+| Method                    | Result                                                                                                                                                            |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| assertTrue(x)             | checks that a boolean value  `x`  equals  `True`                                                                                                                  |
+| assertFalse(x)            | checks that a boolean value  `x`  equals  `False`                                                                                                                 |
+| assertIn(a,b)             | checks that a value  `a`  exists in a list  `b` . For instance, this check should pass when  `a=2`  and  `b=[1,2,3]`                                              |
+| assertNottIn(a,b)         | checks that a value  `a`  does not exist in a list  `b` . For instance, this check should fail when  `a=2`  and  `b=[1,2,3]`  since  `2`  exists in the list  `b` |
+| assertIsNone(x)           | checks that a value `a` equals `None`                                                                                                                             |
+| assertIsNotNone(x)        | checks that a value `a` does not equal `None`                                                                                                                     |
+| assertIs(a, b)            | checks that `a` and `b` are the same object                                                                                                                       |
+| assertIsNot(a, b)         | checks that `a` and `b` are different objects                                                                                                                     |
+| assertIsInstance(a,b)     | checks that `a` is an instance of class `b`. For instance, if `a="Hello"`, and `b=str`, the check should pass since `a` is a string.                              |
+| assertNotIsInstance(a, b) | checks that `a` is not an instance of class `b`                                                                                                                   |
 
 ### Benefits of Unit Testing
 Unit testing is an essential step of the software development life cycle and provides benefits such as:
