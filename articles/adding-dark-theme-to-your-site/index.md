@@ -9,6 +9,14 @@ As a prerequisite, the reader must have a good understanding of:
 - Basic Knowledge of HTML, SCSS, and Javascript
 - Understand CSS variables
 
+### Table of contents
+- Adding HTML
+- Adding CSS
+- The toggle theme switch
+- Adding JavaScript
+- Storing them in local storage
+- Conclusion
+
 ### Adding the HTML
 Lets begin by adding the HTML that we will use for the tutorial. We add the `theme` name and `switch` id to the checkbox input so that we will used theme to refer to it in our `javascript`. We are creating a simple webpage with consisting of a container, in which we add a heading, togglle button, and a paragraph.
 ```html
@@ -48,7 +56,8 @@ In the same directory as the HTML file, we will add the CSS file that will be us
 The CSS variables for the default light theme are as shown below. You can change the color code to your favorite color which looks attractive in both dark and light themes.
 
 The CSS styling for the default white theme is shown below:
-```CSS
+```css
+/* default the styling variables */
 html{
     --bg: #fff;
     --bg-panel: #ebebeb;
@@ -59,6 +68,7 @@ html{
 
 CSS styling for dark theme:
 ```css
+/* dark theme styling */
 html[data-theme='dark'] {
     --bg: #333333;
     --bg-panel: #434343;
@@ -70,19 +80,19 @@ Next, we need to specify the CSS variables' use through the CSS file so that all
 
 ```css
 body { 
-    background-color: var(--bg);
+    background-color: var(--bg);/* background color variable */
 }
 
 .container {
-    background-color: var(--bg-panel);
+    background-color: var(--bg-panel); /* panel baackground  color variable */
 
     h1{
         margin: 0;
-        color: var(--color-heading)
+        color: var(--color-heading);/* heading 1 background color variable */
     }
 
     p{
-        color: var(--color-text);
+        color: var(--color-text); /* text-color variable */
        
     }
 
