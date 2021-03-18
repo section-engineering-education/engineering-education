@@ -42,7 +42,7 @@ It turns out that the word2vec algorithm can help us achieve this.
 
 ### What is Word2Vec? 
 
-Word2Vec is a classical method that creates word embeddings in the field of Natural Language Processing (NLP). It was developed by [Tomas Mikolov](https://en.wikipedia.org/wiki/Tomas_Mikolov) and his team at Google in 2013. Word2vec takes in words from a large corpus of texts as input and learns to give out their vector representation. In the same way CNNs extract features from images, the word2vec algorithm extracts features from the text for particular words. Using those features, word2vec creates vectors that represent a word in the vector space. These vectors are chosen using the cosine similarity function, which indicates the semantic similarity between words. Cosine similarity of 1 would mean that the angle between two words is 0 and 
+Word2Vec is a classical method that creates word embeddings in the field of Natural Language Processing (NLP). It was developed by [Tomas Mikolov](https://en.wikipedia.org/wiki/Tomas_Mikolov) and his team at Google in 2013. Word2vec takes in words from a large corpus of texts as input and learns to give out their vector representation. In the same way CNNs extract features from images, the word2vec algorithm extracts features from the text for particular words. Using those features, word2vec creates vectors that represent a word in the vector space. These vectors are chosen using the cosine similarity function, which indicates the semantic similarity between words. Cosine similarity of 1 would mean that the angle between two words is 0; and would denote that the words are similar.
 
 Two similar words will occupy locations close to each other in that vector space, whereas words that are very different will occupy far away spaces. In that way, using its ability with linear algebra, the algorithm can recognize context and words that have similar meanings. For example, the words intelligent and smart would appear closer together in this vector space, whereas the words engine and car will be far from intelligent and smart. This is because these words have that contextual understanding within a vector space.
 
@@ -72,8 +72,8 @@ Besides, those far apart words are assigned fewer weights while the words that a
 
 #### Training
 
-The system is trained using backpropagation and stochastic gradient descent to tune the weights and reduce the cost function. By doing so, those weights become the vectors for the words in question.
-
+The system is trained using [backpropagation](https://en.wikipedia.org/wiki/Backpropagation) and [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to tune the weights and reduce the cost function. By doing so, those weights become the vectors for the words in question. 
+ 
 ### Key takeaways
 
 1. The Continuous Bag-of-Words (CBOW) model uses context words to predict the target words. Conversely, the skip-gram model, uses the target words to predict the context words.
