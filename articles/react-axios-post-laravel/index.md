@@ -765,6 +765,12 @@ The expected output:
 
 ![Third Screenshot](/engineering-education/screen-three.png)
 
+#### Conclusion
+
+In this tutorial we got a brief overview of using the Axios library to send a HTTP request; more specifically, a POST request which is used in making our applications RESTful.
+Moreover, we saw the use of JSON in passing information between the backend and frontend.
+I will talk about other HTTP methods using these technologies in other tutorials.
+
 That's all for now. Hope you've gotten insights on how to make a POST request from React using Axios to a Laravel application.
 
 Have a good one!.
