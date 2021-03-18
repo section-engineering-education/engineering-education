@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/creating-countdown-in-php-javascript-mysql/
 title: Angular 11 - JWT Authentication Example & Tutorial With PHP
-description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backednd service in PHP.  
+description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.  
 author: miller-juma
 date: 2021-03-17T00:00:00-12:00
 topics: []
@@ -12,15 +12,15 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/jwt-auth-angular/hero.jpg
-   alt: PHP RESTful apis angular auth example image
+   alt: PHP RESTful APIs angular auth example image
 ---
 
 
 A user is usually authenticated by entering a username or email address and password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
 
-One solution to this problem is JSON Web Tokens. Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
+JSON Web Tokens are one solution to this issue. Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
 
-This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backednd service in PHP.    
+This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.    
  
 ### Implement a JWT Server and Client with PHP and Angular 11
 In this part, I'll show you how to use PHP in conjunction with an Angular 11 client to implement JWT authentication. Even though the principle is clear, the implementation necessitates familiarity with security best practices.  
@@ -30,11 +30,11 @@ The example provided here is incomplete, and it lacks several features that a pr
 I'll assume you're familiar with MySQL, Angular, and PHP and have installed [composer](https://www.composer.org) installed in the development environment.     
 
 
-### Building a JWT authentication 
-To begin implementing the server that authenticates users using JSON Web Tokens, open a terminal and create a directory called `jwt-server` that will contain the server application.  
+### Building a JSON Web Token in PHP
+Open a terminal and build a directory named `json-web-tokens-dir` that will contain the server application to begin implementing the server that authenticates users using JSON Web Tokens.  
 
 ### Step 1:  Database preparation
-If you have all of the prerequisites, let's get started by creating a MySQL database. The MySQL client that came with the server will be used. To invoke the client, open a terminal and type the following command:  
+Let's get started by building a MySQL database if you have all of the prerequisites. We'll use the MySQL client that came with the server. Open a terminal and type the following command to start the client:  
 
 ```bash 
     $ mysql -u root -p
@@ -53,11 +53,11 @@ Let's now pick the `jwt-database` we created earlier and create a users table to
 mysql> use jwt-database;
 mysql> CREATE  TABLE IF NOT EXISTS `jwt-users` (
   `user_id` INT  AUTO_INCREMENT PRIMARY KEY,
-  `first_name` VARCHAR(150) NOT NULL ,
-  `last_name` VARCHAR(150) NOT NULL ,
-  `username` VARCHAR(150) NOT NULL ,
-  `email_address` VARCHAR(255) NOT NULL UNIQUE,
-  `password` VARCHAR(255) NOT NULL,
+  `fname` VARCHAR(40) NOT NULL ,
+  `lname` VARCHAR(40) NOT NULL ,
+  `username` VARCHAR(40) NOT NULL ,
+  `email_address` VARCHAR(40) NOT NULL UNIQUE,
+  `password` VARCHAR(40) NOT NULL,
 
 ```
 
@@ -117,15 +117,13 @@ class DB_Connection
 ```
 ### Step 2: Install `php-jwt` package
 
-Now, let's use Composer to build the php-jwt library. Run the following command from the root of your project's directory in your terminal:  
-
+Let's create the `php-jwt` library with Composer now. In your terminal, run the following command from the root of your project's directory:  
 ```bash
 $ composer require firebase/php-jwt
 ```
 The php-jwt library will be downloaded into a vendor folder.
 
-Using the following code, you can encode and decode JWT tokens using the php-jwt library:
-
+The php-jwt library can be used to encode and decode JWT tokens using the following code:  
 
 ```php
 <?php 
@@ -134,11 +132,11 @@ use \Firebase\JWT\JWT;
 ```
 
 ### Step 3: User registration API endpoint
-Create a `register.php` file in the `api` folder we created earlier and apply the following code to it to create a new user in the MySQL database:  
+Create a `registreation.php` file in the `tokens-api` folder we created earlier and apply the following code to it to create a new user in the MySQL database:  
 
 ```php
 <?php
-include_once './config/database.php';
+include_once './configurations/db.php';
 
 header("Access-Control-Allow-Origin: * ");
 header("Content-Type: application/json; charset=UTF-8");
@@ -152,8 +150,8 @@ $email_address = '';
 $password1 = '';
 $connection = null;
 
-$dbService = new DB_Configuration();
-$connection = $databaseService->getConnection();
+$db = new DB_Configuration();
+$connection = $db->db_connect();
 
 $api_data = json_decode(file_get_contents("php://input"));
 
@@ -193,30 +191,21 @@ else{
 
 ```
 ### User sign-in API endpoint
-Inside the `api` directory, make a `signin.php` file and add the  code below to check the client qualifications and return a JWT token to the customer:  
+Inside the `tokens-api` directory, make a `signin.php` file and add the  code below to check the client qualifications and return a JWT token to the customer:  
 
-Create a `signin.php` file inside the `api` directory with the following code to check the user credentials and return a JSON Web Token to the client,mostly likely, a web browser:  
+To validate the user credentials and return a JSON Web Token to the client, most likely a web browser, build a `signin.php` file within the `tokens-api` directory with the following code:    
 
 ```php
 <?php
 include_once './config/database.php';
 require "../vendor/autoload.php";
+//dont forget to add header configurations for CORS
 use \Firebase\JWT\JWT;
-
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-
 $email_address = '';
 $password = '';
 
 $dbService = new DB_Connection();
 $connection = $dbService->db_connect();
-
-
 
 $api_data = json_decode(file_get_contents("php://input"));
 
@@ -281,17 +270,16 @@ You can describe the token's data structure however you like, for example (you c
 
 iat - the time stamp of the token's issuance.
 
-iss - A string containing the issuer application's name or identifier. It may be a domain name, and it'll be used to get rid of tokens from other apps.
+iss - The name or identifier of the issuer application in a string. It's possible that it'll be a domain name, and it'll be used to remove tokens from other applications.  
 
-nbf - The time at which the token should be considered legitimate. Should be the same as or higher than iat. The token will be valid for 10 seconds after it is released in this situation.  
+nbf - The point in time when the token should be considered valid. Should be equal to or greater than iat. In this case, the token will be valid for 10 seconds after it is issued.  
 
-exp - When the token can stop being valid, this is the timestamp. It must be higher than iat and nbf. The token in our example will expire 60 seconds after it is released.
-
+exp - This is the timestamp for when the token can no longer be used. It has to be higher than nbf and iat. In our example, the token will expire 2 hours after it is issued.  
 These statements are optional, but they help decide a token's validity.  
 
-We added the first name, last name, email, and user ID from the database to our JWT payload, which is within the data argument. In the JWT payload, you should not provide any confidential information.  
+Within the data argument, we added the database's name, email, and id to our JSON Web Token payload. 
 
-The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final JWT token before sending it to the client. We simply hardcoded the secret key that will be used to sign the JWT payload in our example, but in production, you can use a secret key that is a long, binary string and store it in a configuration file.   
+The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final JWT token before sending it to the client. In our example, we simply hardcoded the secret key that will be used to sign the JSON Web Token payload.  
 
 For registering and logging in users, we now have two RESTful endpoints. You can now communicate with the API using a REST client such as Postman.
 
@@ -403,23 +391,23 @@ In your new component template, copy and paste the following piece of code:
 
 The auth service is used by the login component to log into the application. The user is automatically redirected to the home page if they are already logged in.  
 
-The `signinForm: FormGroup` object is used to access data entered into the form and specifies the form controls and validators. The `[formGroup]="signinForm"` directive connects the FormGroup to the login template above, which is part of the Angular Reactive Forms module.  
+The signinForm: FormGroup object defines the form controls and validators and is used to access data entered into the form. The [formGroup]="signinForm" directive links the FormGroup to the above-mentioned template from the Angular Reactive Forms module.  
 
 In your component, copy and paste the following code:  
 ```ts
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { AuthenticationService } from './service/auth.service';
+
+import { AuthService } from './service/auth.service';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
-    loginForm: FormGroup;
+    signinForm: FormGroup;
     loading = false;
     submitted = false;
-    returnUrl: string;
     error = '';
 
     constructor(
@@ -465,7 +453,7 @@ export class LoginComponent implements OnInit {
 ### Store login token in local storage
 Angular ships with HTTP [interceptors](https://angular.io/api/common/http/HttpInterceptor). We can use this feature to store our login token.  
 
-If the user is logged in, the JWT Interceptor intercepts HTTP requests from the application and attaches a JWT auth token to the Authorization header.  
+The JWT Interceptor intercepts HTTP requests from the application and adds a JWT auth token to the Authorization header if the user is signed in.  '
 
 It's implemented with the HttpInterceptor class from the HttpClientModule; by expanding the HttpInterceptor class, you can build your custom interceptor to alter HTTP requests before they're sent to the server.  
 
