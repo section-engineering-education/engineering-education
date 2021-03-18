@@ -185,7 +185,7 @@ function showSlides(n) {
 ```
 **N/B**
 
-Remember to link the .css file and the .js file to your HTMl file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or  click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js
+Remember to link the .css file and the .js file to your HTMl file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or  click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.
 
 ### Automatic slide-show
 In order to make the images in the carousel change automatically without the user input,we need to modify our Javascript code. Use the following code. In this code,we include a timer of 2 seconds.
