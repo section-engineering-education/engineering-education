@@ -6,7 +6,7 @@ url: /engineering-education/grid-search/
 title: Using Grid Search to Optimize Hyperparameters
 description: In this post, we dive into a key technique to optimize hyperparameters known as grid-search.
 author: collins-ayuya
-date: 2021-03-16T00:00:00-20:00
+date: 2021-03-18T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,11 @@ images:
   - url: /engineering-education/grid-search/hero.jpg
     alt: Grid search hero image
 ---
-
 Unlike parameters, hyperparameters are set before training a machine learning model. These hyperparameters need to be optimized to adapt a model to a dataset. However, the optimal hyperparameter settings on one dataset are unlikely to be optimal on another. This makes the task of hyperparameter optimization that much trickier. 
 <!--more-->
-In this post, we dive into a key technique to optimize hyperparameters known as grid-search.
+In this post, we will dive into a key technique to optimize hyperparameters known as grid-search.
 
 ### Contents
-
 - [Contents](#contents)
 - [Prerequisites](#prerequisites)
 - [Goal](#goal)
@@ -33,22 +31,22 @@ In this post, we dive into a key technique to optimize hyperparameters known as 
 - [References and Further Reading](#references-and-further-reading)
 
 ### Prerequisites
+Before we begin it may be helpful to go over and install the following:
+• A section of this [article](/engineering-education/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
 
-• A section of this [article](https://www.section.io/engineering-education/meta-learning/) to give a brief introduction to hyperparameters and the grid search method.
+• [VSCode](https://code.visualstudio.com/) will be my code editor, and we will be using Python as the language.
 
-• [VSCode](https://code.visualstudio.com/) as my code editor, with Python as the language in use.
-
-• [` GridSearchCV `](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) is the tool from the [scikit-learn](https://scikit-learn.org/stable/) library to use for carrying out grid search with cross validation.
+• [` GridSearchCV `](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) is the tool from the [scikit-learn](https://scikit-learn.org/stable/) library to use to carry out grid search with cross validation.
 
 • [Iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
 ### Goal
+The goal of this article will be to understand grid search optimization through a simple implementation of it in Python.
 
-To understand grid search optimization through a simple implementation of it in Python.
+### Grid search
+Grid search refers to a technique used to identify the optimal hyperparameters for a model. Unlike parameters, finding hyperparameters in training data is unattainable. As such, to find the right hyperparameters, we create a model for each combination of hyperparameters. 
 
-### Grid Search
-
-Grid search refers to a technique used to identify the optimal hyperparameters for a model. Unlike parameters, finding hyperparameters in training data is unattainable. As such, to find the right hyperparameters, we create a model for each combination of hyperparameters. Grid search is thus considered a very traditional hyperparameter optimization method since we are basically “brute-forcing” all possible combinations. The models are then evaluated through cross-validation. The model boasting the best accuracy is naturally considered to be the best.
+Grid search is thus considered a very traditional hyperparameter optimization method since we are basically “brute-forcing” all possible combinations. The models are then evaluated through cross-validation. The model boasting the best accuracy is naturally considered to be the best.
 
 ![grid](/engineering-education/grid-search/grid.png)
 
@@ -58,10 +56,13 @@ Grid search refers to a technique used to identify the optimal hyperparameters f
 
 From the image above, we note that values are in a matrix-like arrangement.
 
-#### Cross Validation
+#### Cross validation
+We have mentioned that cross-validation is used to evaluate the performance of the models. Cross-validation measures how a model generalizes itself to an independent dataset. We use cross-validation to get a good estimate of how well a predictive model performs.
 
-We have mentioned that cross-validation is used to evaluate the performance of the models. We must have a refresher on this technique. Cross-validation measures how a model generalizes to an independent dataset. We use cross-validation to get a good estimate of how well a predictive model performs.
-With this method, we have a pair of datasets: an independent dataset and a training dataset. We can partition a single dataset to yield the two sets. These partitions are of the same size and are referred to as folds. A model in consideration is trained on all folds, bar one. The excluded fold is used to then test the model. This process is repeated until all folds are used as the test set. The average performance of the model on all folds is then used to estimate the model’s performance.
+With this method, we have a pair of datasets: an independent dataset and a training dataset. We can partition a single dataset to yield the two sets. These partitions are of the same size and are referred to as folds. A model in consideration is trained on all folds, bar one. 
+
+The excluded fold is used to then test the model. This process is repeated until all folds are used as the test set. The average performance of the model on all folds is then used to estimate the model’s performance.
+
 In a technique known as the k-fold cross-validation, a user specifies the number of folds, represented by $k$. This means that when $k=5$, there are 5 folds.
 
 ![crossvalidation](/engineering-education/grid-search/crossvalidation.png)
@@ -70,16 +71,15 @@ In a technique known as the k-fold cross-validation, a user specifies the number
 
 [Source](https://mlfromscratch.com/gridsearch-keras-sklearn/#/)
 
-### Grid Search Implementation
-
+### Grid search implementation
 The example given below is a basic implementation of grid search. We first specify the hyperparameters we seek to examine. Then we provide a set of values to test. After this, grid search will attempt all possible hyperparameter combinations with the aid of cross-validation. Let’s break down this process into the steps below.
 
 #### Steps
+1. **Load dataset**. 
 
-1. **Load dataset**. My first step is loading the dataset using ` from sklearn.datasets import load_iris ` and ` iris = load_iris() `. The iris dataset is sci-kit learn library in Python. Data is stored in a $150 * 4$ array. To see the contents of the dataset, we can use ` print(iris.data) ` and ` print(iris.data.shape) `.
+My first step is loading the dataset using ` from sklearn.datasets import load_iris ` and ` iris = load_iris() `. The iris dataset is sci-kit learn library in Python. Data is stored in a $150 * 4$ array. To see the contents of the dataset, we can use ` print(iris.data) ` and ` print(iris.data.shape) `.
 
 To see the dataset contents, our input becomes:
-
 ```python
 from sklearn.datasets import load_iris
 iris = load_iris()
@@ -88,7 +88,6 @@ print(iris.data.shape)
 ```
 
 Our output:
-
 ```python
 [[5.1 3.5 1.4 0.2]
  [4.9 3. 1.4 0.2]
@@ -248,9 +247,12 @@ Our output:
 
 However, it is worth noting that the above visualization step is to understand the dataset and not necessarily in the implementation of grid search.	 
 
-2. **Import ` GridSearchCV `, `svm` and `SVR`.** After loading the dataset, we then import ` GridSearchCV ` as well as ` svm ` and `SVR` from ` sklearn.model_selection ` as shown below.
+2. **Import ` GridSearchCV `, `svm` and `SVR`.** 
+
+After loading the dataset, we then import ` GridSearchCV ` as well as ` svm ` and `SVR` from ` sklearn.model_selection ` as shown below.
 
 [` GridSearchCV `](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) ensures an exhaustive grid search that breeds candidates from a grid of parameter values. As we shall see later on, these values are instanced using the parameter ` param_grid `.
+
 We import ` svm ` since the type of algorithm we seek to use is a support vector machine. The class ` SVR ` represents [Epsilon Support Vector Regression](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html). With this, the model has two free parameters; C and epsilon. We shall set parameters in the next step.
 
 ```python
@@ -259,13 +261,19 @@ from sklearn import svm
 from sklearn.svm import SVR
 ```
 
-3. **Set estimator parameters.** In this implementation, we use the ` rbf ` kernel of the ` SVR ` model. ` rbf ` stands for the radial basis function. It introduces some form of non-linearity to the model since the data in use is non-linear. By this, we mean that the data arrangement follows no specific sequence.
+3. **Set estimator parameters.** 
+
+In this implementation, we use the ` rbf ` kernel of the ` SVR ` model. ` rbf ` stands for the radial basis function. It introduces some form of non-linearity to the model since the data in use is non-linear. By this, we mean that the data arrangement follows no specific sequence.
 
 ```python
 estimator=SVR(kernel='rbf')
 ```
 
-4. **Specify hyperparameters and range of values.** We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to be used are ` C `, ` epsilon `, and ` gamma `. We can give each several values to choose from. Remember that it is possible to change these values and test them to see which values' collection gives better results. Below are my randomly chosen values.
+4. **Specify hyperparameters and range of values.** 
+
+We then specify the hyperparameters we seek to examine. When using the SVR’s ` rbf ` kernel, the three hyperparameters to use are ` C `, ` epsilon `, and ` gamma `. We can give each one several values to choose from. 
+
+Remember that it is possible to change these values and test them to see which values' collection gives better results. Below are my randomly chosen values.
 
 ```python
 param_grid={
@@ -277,9 +285,14 @@ param_grid={
 
 The ` param_grid ` parameter takes a list of parameters and ranges for each, as we have shown above.
 
-5. **Evaluation.** We mentioned that cross-validation is carried out to estimate the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
-` scoring='neg_mean_squared_error' `gives us the mean squared error. It is used in this form in grid search. This is meant to take the negative of the mean squared error to maximize and optimize it instead of minimizing the actual error.
+5. **Evaluation.** 
+
+We mentioned that cross-validation is carried out to estimate the performance of a model. In k-fold cross-validation, k is the number of folds. As shown below, through ` cv=5 `, we use cross-validation to train the model 5 times. This means that 5 would be the $k$ value.
+
+` scoring='neg_mean_squared_error' ` gives us the mean squared error. It is used in this form in grid search. This is meant to take the negative of the mean squared error to maximize and optimize it instead of minimizing the actual error.
+
 ` n_jobs ` parameter specifies the number of concurrent processes that should be used for routines parallelized with the library [joblib](https://scikit-learn.org/stable/glossary.html#term-joblib). In our case, at -1, it means that all CPUs are in use.
+
 ` verbose ` gives us an option to produce logging information. We keep it at 0 to disable it since it may slow down our algorithm.
 
 ```python
@@ -294,11 +307,14 @@ estimator=SVR(kernel='rbf'),
         cv=5, scoring='neg_mean_squared_error', verbose=0, n_jobs=-1)
 ```
 
-6. **Fitting the data.** We do this through ` grid.fit(X,y) `, which does the fitting with all the parameters.
+6. **Fitting the data.** 
+
+We do this through ` grid.fit(X,y) `, which does the fitting with all the parameters.
 
 #### All the code
+Since we now understand the key aspects of the code, let’s run all of the code. 
 
-Since we now understand the key aspects of the code, let’s run all the code. You can access it and test it out [here](https://repl.it/@collinsa1/GregariousSalmonNetworking).
+You can access it and test it out [here](https://repl.it/@collinsa1/GregariousSalmonNetworking).
 
 ```python
 from sklearn.datasets import load_iris
@@ -343,11 +359,13 @@ best parameters are:
 We are successful in our grid search and identify the best parameters being 170 from C, 0.0003 from the epsilon values, and gamma as 0.008.
 
 ### Conclusion
+Since grid search attempts all possible combinations, it becomes a computationally expensive method. We have defined grid search and explored how it works through a simple Python example. 
 
-Since grid search attempts all possible combinations, it becomes a computationally expensive method. We have defined grid search and explored how it works through a simple Python example. There exist other optimization methods which vary in complexity and effectiveness. I hope to cover a few in the future. Until then, good luck!
+There exist other optimization methods which vary in complexity and effectiveness. I hope to cover a few in the future. 
 
-### References and Further Reading
+Until then, good luck, and happy coding!
 
+### References and further readings
 1. [Tuning the hyper-parameters of an estimator](https://scikit-learn.org/stable/modules/grid_search.html#grid-search)
 
 2. [sklearn.model_selection.GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
@@ -359,8 +377,6 @@ Since grid search attempts all possible combinations, it becomes a computational
 5. [Hyperparameter Optimization With Random Search and Grid Search](https://machinelearningmastery.com/hyperparameter-optimization-with-random-search-and-grid-search/)
 
 6. [A Comparison of Grid Search and Randomized Search Using Scikit Learn](https://blog.usejournal.com/a-comparison-of-grid-search-and-randomized-search-using-scikit-learn-29823179bc85)
-
-
 
 7. [An introduction to Grid Search](https://medium.com/datadriveninvestor/an-introduction-to-grid-search-ff57adcc0998)
 
