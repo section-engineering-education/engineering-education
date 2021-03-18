@@ -100,8 +100,8 @@ key                                                                val
 6         NetType         Early Registrations, Transferred to RIPE NCC
 ```  
 
-Specifying server name according to domain extension  (example, ".works") can produce additional results:  
-`whois_query("asianausa.us", server = "whois.nic.us")'    
+Specifying server name according to domain extension  (example, ".us") can produce additional results:  
+`("asianausa.us", server = "whois.nic.us")'    
 
 Partial Output:  
 ```Shell
