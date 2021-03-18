@@ -286,14 +286,16 @@ timechecker --zone EST
 ```
 
 
-
-
 ### Conclusion
 
 In this tutorial, we've seen what continuous integration, delivery and deployment are, and then built a Python package to detect the time in a particular timezone. We've also seen how to package a Python application and a Test repository that doesn't affect the general Python index.
 
-This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub actions to achieve our said objectives and ensured the entire pipeline works as developed..
+This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub actions to achieve our said objectives and ensured the entire pipeline works as developed.
 
 The source code for this repository is found on [GitHub](https://github.com/edeediong/timezone_checker).
 
 Happy Building!
+
+### Further Reading
+[Introduction to GitHub Actions](/engineering-education/github-actions/)
+[How to Build a Python Package](https://edeediong.me/how-to-build-a-python-package)
