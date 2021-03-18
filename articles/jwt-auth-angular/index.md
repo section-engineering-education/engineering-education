@@ -18,20 +18,16 @@ images:
 
 A user is usually authenticated by entering a username or email address and password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
 
-JSON Web Tokens are one solution to this issue. Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
+Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
 
-This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.    
+This tutorial walks you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.    
  
-### Implement a JWT Server and Client with PHP and Angular 11
+### Implementation
 In this part, I'll show you how to use PHP in conjunction with an Angular 11 client to implement JWT authentication. Even though the principle is clear, the implementation necessitates familiarity with security best practices.  
 
 The example provided here is incomplete, and it lacks several features that a production server would have. I'd therefore not recommend the source code in this tutorial for production purposes.    
 
 I'll assume you're familiar with MySQL, Angular, and PHP and have installed [composer](https://www.composer.org) installed in the development environment.     
-
-
-### Building a JSON Web Token in PHP
-Open a terminal and build a directory named `json-web-tokens-dir` that will contain the server application to begin implementing the server that authenticates users using JSON Web Tokens.  
 
 ### Step 1:  Database preparation
 Let's get started by building a MySQL database if you have all of the prerequisites. We'll use the MySQL client that came with the server. Open a terminal and type the following command to start the client:  
@@ -45,19 +41,17 @@ On the window presented, run the following command to create a database.
 ```bash
     mysql> create database jwt-database;
 ```
-> It's important to note that we're assuming you have a MySQL user named root. This must be replaced with an existing MySQL user's name. To build the database and SQL tables, you can use phpMyAdmin or any other MySQL client that you are familiar with.
 
-Let's now pick the `jwt-database` we created earlier and create a users table to store our application's users:  
-
+In the `jwt-database` we created earlier, create a table `jwt-users` as follows:  
 ```bash 
 mysql> use jwt-database;
-mysql> CREATE  TABLE IF NOT EXISTS `jwt-users` (
-  `user_id` INT  AUTO_INCREMENT PRIMARY KEY,
-  `fname` VARCHAR(40) NOT NULL ,
-  `lname` VARCHAR(40) NOT NULL ,
-  `username` VARCHAR(40) NOT NULL ,
-  `email_address` VARCHAR(40) NOT NULL UNIQUE,
-  `password` VARCHAR(40) NOT NULL,
+mysql> create table `jwt-users` (
+  `user_id` int auto_increment primary key,
+  `fname` varchar(40) ,
+  `lname` varchar(40) ,
+  `username` varchar(40) ,
+  `email_address` varchar(40) unique,
+  `password` varchar(40) not null,
 
 ```
 
@@ -70,20 +64,19 @@ Now, `cd` into the directory we created earlier by running the following command
 
 ### Connecting to your database
 
-In your working directory, create a folder `config` inside the `api` directory.  
+In your working directory, create a folder `db_configurations` inside the `tokens-api` directory.  
 
 ```bash 
-cd api && mkdir config
+cd tikens-api && mkdir configurations
 ````
 Then,
 
 ```bash 
-cd config
+cd configurations
 ```
 
 ```php
 <?php
-// used to get mysql database connection
 class DB_Connection
 {
 
@@ -92,7 +85,7 @@ class DB_Connection
     private $db_username = "root"; //change to your db username
     private $db_password = ""; //enter your password
 
-    private $conn;// db connection
+    private $conn;
 
     public function db_connect(){
 
@@ -103,36 +96,25 @@ class DB_Connection
             $this->connection = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_user, $this->db_password);
             $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-           //echo "connected";
-
         }
         catch(PDOException $e){
-            echo "Error while establishing db connection " . $e->getMessage();
+            echo "Error " . $e->getMessage();
         }
 
         return $this->connect;
     }
 }
-?>
+
 ```
 ### Step 2: Install `php-jwt` package
-
-Let's create the `php-jwt` library with Composer now. In your terminal, run the following command from the root of your project's directory:  
+With database configurations ready, proceed and run the following command to install PHP's token library:   
 ```bash
 $ composer require firebase/php-jwt
 ```
-The php-jwt library will be downloaded into a vendor folder.
-
-The php-jwt library can be used to encode and decode JWT tokens using the following code:  
-
-```php
-<?php 
-require "vendor/autoload.php";
-use \Firebase\JWT\JWT;
-```
+The `php-jwt` library will be downloaded into a vendor folder inside the project folder.  
 
 ### Step 3: User registration API endpoint
-Create a `registreation.php` file in the `tokens-api` folder we created earlier and apply the following code to it to create a new user in the MySQL database:  
+Now that we have `php-jwt` library in our system, let's proceed and create a simple registration system.  In your current directory, add the following lines of code.  
 
 ```php
 <?php
@@ -191,9 +173,8 @@ else{
 
 ```
 ### User sign-in API endpoint
-Inside the `tokens-api` directory, make a `signin.php` file and add the  code below to check the client qualifications and return a JWT token to the customer:  
-
-To validate the user credentials and return a JSON Web Token to the client, most likely a web browser, build a `signin.php` file within the `tokens-api` directory with the following code:    
+Inside the `tokens-api` directory, make a `signin.php` file and add the  code below to check the client qualifications to access our backend services:    
+To validate the user credentials and return a JSON Web Token to the client, build a `signin.php` file script within the `tokens-api` directory with the following code:    
 
 ```php
 <?php
@@ -253,10 +234,10 @@ if($numOfRows) > 0){
         $jwtValue = JWT::encode($token, $secret_key);
         echo json_encode(
             array(
-                "success" => "true",
-                "jwt" => $jwtValue,
-                "email" => $email_address,
-                "expireAt" => $expire_claim
+                "message" => "success",
+                "token" => $jwtValue,
+                "email_address" => $email_address,
+                "expiry" => $expire_claim
             ));
     }
     else{
@@ -270,12 +251,11 @@ You can describe the token's data structure however you like, for example (you c
 
 iat - the time stamp of the token's issuance.
 
-iss - The name or identifier of the issuer application in a string. It's possible that it'll be a domain name, and it'll be used to remove tokens from other applications.  
+iss - The name or identifier of the issuer application in a string.   
 
-nbf - The point in time when the token should be considered valid. Should be equal to or greater than iat. In this case, the token will be valid for 10 seconds after it is issued.  
+nbf - The point in time when the token should be considered valid.  
 
-exp - This is the timestamp for when the token can no longer be used. It has to be higher than nbf and iat. In our example, the token will expire 2 hours after it is issued.  
-These statements are optional, but they help decide a token's validity.  
+exp - This is the timestamp for when the token can no longer be used.   
 
 Within the data argument, we added the database's name, email, and id to our JSON Web Token payload. 
 
@@ -335,7 +315,6 @@ export class AuthService {
     }
 
     logoutUser() {
-        // remove user from local storage to log user out
         localStorage.removeItem('loggedInUser');
         this.loggedUserSubject.next(null);
     }
@@ -345,7 +324,7 @@ In the auth service above, as the user logs in and out of the system, RxJS Subje
 
 To be informed of changes, Angular components will `subscribe()` to the public `loggedInUser: Observable` property, and updates are sent when the `this.loggedUserSubject.next() `method in the `loginUser()` and `logOut()` methods is called, passing the argument to each subscriber.  
 
-Regular Subjects don't store the current value and only emit values that are published after a subscription is established, while the `RxJS BehaviorSubject` keeps track of the current value and emits it to any new subscribers as soon as they subscribe.  
+Regular Subjects in an angular application don't store the values. Whats happens is that they only emit values that are published after a subscription is established, while the `RxJS BehaviorSubject` keeps track of the current value and emits it to any new subscribers as soon as they subscribe.  
 
 ### Set up login component
 Now that we've got a service to query our PHP endpoint, let's proceed and create a login component to test our code by running the following command:  
@@ -523,7 +502,7 @@ export class AppModule { }
 Well, let's start our angular application by running the following command:  
 
 ```bash
-ng serve --open //starts on port 4200 by default unless you specfied otherwise
+ng serve --open //starts on port 4200 by default unless you specify otherwise
 ```
 You can now make requests to our PHP endpoint and login while the generated token is stored in your browser's local storage.  
 
