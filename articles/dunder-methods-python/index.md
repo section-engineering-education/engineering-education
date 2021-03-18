@@ -1,11 +1,24 @@
-### 1. Dunder/Magic Methods in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/dunder-methods-python/
+title: Dunder/Magic Methods in Python
+description: This article will talk about dunder methods like init, len, getitem, add, iadd, etc. Various example functions and classes will be discussed.
+author: rahul-banerjee
+date: 2021-03-18T00:00:00-19:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-The article will talk about dunder methods like init, len, getitem, etc. Various example functions and classes will be discussed.
-
+  - url: /engineering-education/dunder-methods-python/hero.jpg
+    alt: Dunder Methods image
+---
+### 1. Introduction
 Dunder methods are names that are preceded and succeeded by double underscores, hence the name dunder. They are also called magic methods and can help override functionality for built-in functions for custom classes. Implementing dunder methods for classes is a good form of Polymorphism. If you have created a class in Python and used the init function, you have already been using dunder methods.
-
+<!--more-->
 ### 2. Table of Contents
-- [1. Dunder/Magic Methods in Python](#1-dundermagic-methods-in-python)
+- [1. Introduction](#1-introduction)
 - [2. Table of Contents](#2-table-of-contents)
 - [3. Prerequisites](#3-prerequisites)
 - [4. Why do we need Dunder Methods?](#4-why-do-we-need-dunder-methods)
@@ -377,3 +390,6 @@ class point:
 Dunder methods are indeed magical and can help you improve the functionality of your class. You can find more dunder methods [here](https://docs.python.org/3/reference/datamodel.html#)
 
 Happy Learning! :)
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
