@@ -1,9 +1,21 @@
-### React + Axios POST request to a Laravel application
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/react-axios-post-laravel/
+title: How to use React to Send a POST Request to a Laravel Application
+description: This tutorial will give readers a detailed guide on how to make a post request to a Laravel application using React and retrieve the response.
+author: terrence-aluda
+date: 2021-03-18T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-![Hero image](/engineering-education/hero.jpg)
-
-Maybe you are a backend engineer wanting to load data to your site using the React library, or you want to explore the use of React with Laravel, or you have any other interests validating the use of Laravel with React, then you are at the right place. We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
-
+  - url: /engineering-education/react-axios-post-larave/hero.jpg
+    alt: Post Request Using React Example Image
+---
+Maybe you are a backend engineer who wants to load data to your site using the React library, or you want to explore the use of React with Laravel, or you have any other interests validating the use of Laravel with React, then you are at the right place. We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
+<!--more-->
 ### Basic descriptions
 - **React:** This is a JavaScript library that assists us in creating interactive and dynamic Single Page Applications. 
 - **Axios:** This is a library that is used to handle HTTP requests to external sources in web applications.
@@ -756,3 +768,6 @@ The expected output:
 That's all for now. Hope you've gotten insights on how to make a POST request from React using Axios to a Laravel application.
 
 Have a good one!.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
