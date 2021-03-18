@@ -3,6 +3,8 @@ An Internet Protocol (IP) address is one of several Domain Name System (DNS) att
 
 In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. The tutorial can be used on any compatible Windows, Ubuntu, Macintosh, and Google computer operating system. For this tutorial, a Windows laptop with a featured Linux emulator were both chosen based on convenience. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" will be the IP address used.
 #### Table of Contents
+- Prerequisites
+- Goals
 - Introduction to Applications and Devices
 - Linux Basics
 - R-Programming
