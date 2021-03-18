@@ -21,7 +21,7 @@ In this tutorial, R-Programming is used to identify various IP addresses mostly 
 
 #### Goals
 One goal is to acknowledge internet gaps and discrepancies that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
-> It is also important for readers to understand terms and content within context.  
+> It is also important for readers to understand terms and content within scope.  
 
 #### Introduction to Applications and Devices
 For this tutorial, a Windows laptop with at least 100GB in storage is used because this featured Windows Subsystem for Linux emulator will take up a considerable amounts of memory capacity.  
