@@ -6,19 +6,19 @@ url: /engineering-education/setting-up-cicd-for-python-packages-using-github-act
 title: Setting up CI/CD for Python Packages using GitHub Actions
 description: This article will provide an overview what CI/CD is, build a Python package to inform time in various timezones and deploy the package via GitHub Actions.
 author: edidiong-etuk
-date: 2021-03-19T00:00:00-00:00
+date: 2021-03-18T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/hero.jpg
+  - url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/hero.png
     alt: GitHub Actions hero image
 ---
 When building Python packages or any Python project, being able to test code and deploy to production faster is an attribute of a fast-paced development environment. After each bug fix, users expect to see the effect on their local software, and this is an attribute of Continuous Integration and Continuous Deployment.
 <!--more-->
 In this article, we will cover what Continuous Integration and Continuous Deployment (CI/CD) is, build a python package that informs us of the time in various time zones.
 
-Also, we cover working with the Test Python Package Index and GitHub Actions. The outline below shows a bit more information about the article.
+We will also cover working with the Test Python Package Index and GitHub Actions. The list below outlines a bit more information about the article.
 
 ### Outline
 - [Prerequisites](#prerequisites)
@@ -39,9 +39,9 @@ Also, we cover working with the Test Python Package Index and GitHub Actions. Th
 CI/CD is a practice used by organizations to ship applications to customers faster and without common errors.
 
 There are three major phrases when talking about CI/CD namely:
-- Continuous Integration,
-- Continuous Delivery, and
-- Continuous Deployment.
+1. Continuous Integration,
+2. Continuous Delivery, and
+3. Continuous Deployment.
   
 These phrases seem similar but are of different meanings and implementations. Yet, they are very important to the software development life-cycle.
 
@@ -54,7 +54,7 @@ It's an important DevOps (Development Operations) practice that allows developer
 Continuous delivery is a software development practice where code changes are prepared to be released after being built and tested. These builds are automatically pushed to testing/production after a code changes.
 
 #### Continuous Deployment
-[Continuous Deployment (CD)](https://www.atlassian.com/continuous-delivery/continuous-deployment) is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
+[Continuous Deployment (CD)](https://en.wikipedia.org/wiki/Continuous_delivery) is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
 
 This blog by [Amazon](https://aws.amazon.com/devops/continuous-delivery/) explains in details the difference between these three.
 
@@ -63,7 +63,7 @@ This blog by [Amazon](https://aws.amazon.com/devops/continuous-delivery/) explai
 We will attempt to build a basic Python package that tells a user the time in another time zone and works on the command line. The code for this project is in [this repository](https://github.com/edeediong/timezone_checker).
 
 #### Application logic
-To build our basic python package, we need two components, namely a `setup.py` file and an `src` folder containing our package logic.
+To build our basic Python package, we need two components, namely a `setup.py` file and an `src` folder containing our package logic.
 
 Let's start with the `src` folder: it should contain three files, namely `__init__.py`, `logic.py`, and `main.py`.
 
@@ -153,12 +153,11 @@ if __name__ == "__main__":
 We leave the `__init__.py` empty.
 
 **Important things to note:**
-
 1. The `logic.py` uses the Python package `pytz` to understand the different time zones as it comes with the time zones in-built. We wrap the various functions in this file around `pytz` and its in-built functions. We also format some of the results to fit our end goal, a CLI for time zones.
 2. The `main.py` is where the magic happens as we build and design our CLI. The `click` library is used to build CLIs in Python (similar to `typer`, `fire`, and the in-built `argparse`). This library has functions that wrap around our previously created functions in `logic.py` to interface directly with a user on the command line.
 3. The `__init__.py` enables the `src` folder to be seen as a module as we imported some functions from `logic.py` into `main.py`.
 
-### Packaging Code
+### Packaging code
 Once we're done with the application logic, we package our application to work locally on our machines. First, let's create a `setup.py` file in the top-level directory.
 
 Then, fill the file with the contents in the code snippet below:
@@ -184,9 +183,9 @@ setup(
 )
 ```
 
-This file contains the information or metadata for the python package we built. On the command line, we will call it using the command `timechecker` as defined in `entry_point` of *setup.py.*
+This file contains the information or metadata for the Python package we built. On the command line, we will call it using the command `timechecker` as defined in `entry_point` of *setup.py.*
 
-Below is the directory structure after creating the above file structure:
+Below is the directory structure after creating the file structure above:
 
 ```bash
 ├── LICENSE
@@ -199,8 +198,9 @@ Below is the directory structure after creating the above file structure:
 ```
 
 ### Authenticating GitHub with Test PyPI
-Following the guide on the official [Python documentation](http://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows.html), let's create a credential for GitHub Action to communicate with Test PyPI. Follow the instructions below:
+Following the guide on the official [Python documentation](http://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows.html), let's create a credential for GitHub Action to communicate with Test PyPI. 
 
+Follow the instructions below:
 1. Go to [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens) and create a new [API token](https://pypi.org/help/#apitoken). If you have the project on Test PyPI already, limit the token scope to just that project. Name it something unique in order for it to be distinct in the token list. Finally, COPY the token.
 2. In a separate browser tab or window, go to the `Settings` tab of your target repository and then click on `Secrets` in the left sidebar.
 3. Create a new secret called `TEST_PYPI_PASSWORD` and PASTE the token from the first step.
@@ -209,9 +209,8 @@ Following the guide on the official [Python documentation](http://packaging.pyth
 
 You'll need to create a Test PyPI account if you don't have one already as it is different from the standard PyPI account.
 
-### Packaging & Deploying with GitHub Actions
+### Packaging & deploying with GitHub Actions
 Execute the following steps to package the application with GitHub Actions:
-
 1. Create the `.github/workflows/` directory in your repository to store your workflow files.
 2. Create a new file called `python-package.yml` in the `.github/workflows/` directory and add the following code:
 
@@ -253,10 +252,9 @@ jobs:
             repository_url: https://test.pypi.org/legacy/
 ```
 
-Few things to note about the above workflow:
-
+Few things to note about the workflow above:
 1. We have just a single `build-n-publish` job which runs on `ubuntu-18.04`.
-2. Then, we checkout the project into the ubuntu environment and setup our python distribution (Python 3.7)
+2. Then, we checkout the project into the Ubuntu environment and setup our Python distribution (Python 3.7)
 3. Then, we install dependencies needed for the package and test it against a `flake8` linter.
 4. Next, create a source distribution. We do this using the `python setup.py sdist` command.
 5. The last step uses `pypa/gh-action-pypi-publish` GitHub Action to upload contents of the dist/ folder into TestPyPI unconditionally. It also used the secrets declared and defined in the previous section.
@@ -296,15 +294,15 @@ timechecker --zone EST
 ```
 
 ### Conclusion
-In this tutorial, we've seen what continuous integration, delivery and deployment are, and then built a Python package to detect the time in a particular timezone. We've also seen how to package a Python application and a Test repository that doesn't affect the general Python index.
+In this tutorial, we've seen what continuous integration, delivery and deployment are. We then built a Python package to detect the time in a particular timezone. We've also seen how to package a Python application and a Test repository that doesn't affect the general Python index.
 
-This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub actions to achieve our said objectives and ensured the entire pipeline works as developed.
+This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub Actions to achieve our said objectives and ensured the entire pipeline works as developed.
 
 The source code for this repository is found on [GitHub](https://github.com/edeediong/timezone_checker).
 
-Happy Building!
+Happy building!
 
-### Further Reading
+### Further reading
 - [Introduction to GitHub Actions](/engineering-education/github-actions/)
 - [How to Build a Python Package?](https://edeediong.me/how-to-build-a-python-package)
 
