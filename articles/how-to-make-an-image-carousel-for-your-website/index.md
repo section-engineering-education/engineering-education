@@ -6,7 +6,7 @@ To add an image carousell to our website to enhance user experience and make the
 
 ### Prerequisites
 To follow along you should have some basic Knowledge in HTML,CSS and quite some good understanding of JavaScript especially the use of functions in Javascript.
-You should also have a code editor installed in your laptop. The recommended text editor is [visual studio code](https://visualstudio.microsoft.com/downloads/). Click the link to download
+You should also have a code editor installed in your laptop. The recommended text editor is [visual studio code](https://visualstudio.microsoft.com/downloads/). Click the link to download.
 
 ### Procedure
 #### Step -1 Creating the project
