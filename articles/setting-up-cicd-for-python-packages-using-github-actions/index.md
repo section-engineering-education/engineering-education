@@ -1,7 +1,21 @@
-# Setting up CI/CD for Python Packages using GitHub Actions
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/
+title: Setting up CI/CD for Python Packages using GitHub Actions
+description: This article will provide an overview what CI/CD is, build a Python package to inform time in various timezones and deploy the package via GitHub Actions.
+author: edidiong-etuk
+date: 2021-03-18T00:00:00-23:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/hero.jpg
+    alt: GitHub Actions hero image
+---
 When building Python packages or any Python project, being able to test code and deploy to production faster is an attribute of a fast-paced development environment. After each bug fix, users expect to see the effect on their local software, and this is an attribute of Continuous Integration and Continuous Deployment.
-
+<!--more-->
 In this article, we will cover what Continuous Integration and Continuous Deployment (CI/CD) is, build a python package that informs us of the time in various time zones.
 
 Also, we cover working with the Test Python Package Index and GitHub Actions. The outline below shows a bit more information about the article.
