@@ -290,3 +290,7 @@ This article aimed to introduce you to CI/CD with Python packages, and an exampl
 The source code for this repository is found on [GitHub](https://github.com/edeediong/timezone_checker).
 
 Happy Building!
+
+### Further Reading
+[Introduction to GitHub Actions](/engineering-education/github-actions/)
+[How to Build a Python Package](https://edeediong.me/how-to-build-a-python-package)
