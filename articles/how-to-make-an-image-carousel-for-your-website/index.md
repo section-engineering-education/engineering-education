@@ -1,33 +1,18 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /engineering-education/how-to-make-an-image-carousel-for-your-website/
-title: How to make an Image Carousel for your website using HTML,CSS and JS
-description: This article takes the reader in a step by step process on how to make an image carousel and make their web pages more interactive and lively to the user hence enhancing their experience.
-author: eugiene-kanillar
-date: 2021-03-15T00:00:00-22:00
-topics: []
-excerpt_seperator: <!--moore-->
-images:
 
- -url: /engineering-education/how-to-make-an-image-carousel-for-your-website/hero.PNG
-  alt: Sample image of the Carousel
----
 An Image Carousel is like a container of Images which the user can select through by clicking a buttons which directs him forward or backwards in the collection of images. It enables the website to be more interactive and hence enhance the user experience. The collection of Images can be set to change automatically by use of a timer or manually when the user clicks the displayed buttons.
 <!--moore-->
-# Goal
+### Goal
 To add an image carousell to our website to enhance user experience and make the page more lively.
 
-# Prerequisites
+### Prerequisites
 To follow along you should have some basic Knowledge in HTML,CSS and quite some good understanding of JavaScript especially the use of functions in Javascript.
 You should also have a code editor installed in your laptop. The recommended text editor is [visual studio code](https://visualstudio.microsoft.com/downloads/). Click the link to download
 
-# Procedure
-## Step -1 Creating the project
+### Procedure
+#### Step -1 Creating the project
 Open Visual Studio code and create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
 
-## Step -2 Write the HTML code
+#### Step -2 Write the HTML code
 Dive into the HTML file and write the code as illustrated in the figure text below. The code has illustrations so do not worry.
 ```HTML
  <!-- Slideshow container -->
@@ -66,7 +51,7 @@ Dive into the HTML file and write the code as illustrated in the figure text bel
 </div> 
 
 ```
-## Step -3 Write the CSS code
+#### Step -3 Write the CSS code
 Dive into the css file which you created and write the following. The code has illustrations to guide you on what is happening so do not worry.
 ```CSS
 * {box-sizing:border-box}
@@ -164,7 +149,7 @@ Dive into the css file which you created and write the following. The code has i
   to {opacity: 1}
 }
 ```
-## Step -4 Write the Javascript code
+#### Step -4 Write the Javascript code
 Enter into the Javascript file and write the following code. The code has comments to guide you on what is happening .
 ```js
 var slideIndex = 1;
@@ -196,10 +181,11 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 ```
-#### N/B
+**N/B**
+
 Remember to link the .css file and the .js file to your HTMl file. To remind yourself [click here](https://www.w3schools.com/tags/att_script_src.asp).
 
-# Automatic slide-show
+### Automatic slide-show
 In order to make the images in the carousel change automatically without the user input,we need to modify our Javascript code. Use the following code. In this code,we include a timer of 2 seconds.
 ```js
 var slideIndex = 0;
@@ -218,11 +204,11 @@ function showSlides() {
 } 
 
 ```
-# Testing
+### Testing
 You  can test whether your code works. Navigate to the folder where your project is stored and open the HTML file using any browser of your choice. The code should  work just fine.
-# Conclusion
-Javascript is an important scripting language and thus a good command of it is essential in creating interactive web pages.
+### Conclusion
+Image carousels are important in a website in the sense that they reduce the clutter within a website which may make discourage the user from scrolling further. Within an image Carousell the user can view various images or videos by scrolling left or right hence getting an overview of what's in the website and thus a higher chance for them finding something that interests them. Image carousels are a great way for showing content cards.
 
----
-Peer Review Contributions by:[Eugiene Kanillar](/engineering-education/authors/eugiene-kanillar)
+
+
 
