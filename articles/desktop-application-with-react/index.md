@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/desktop-application-with-react/
+title: Getting Started with Electron with Create React App
+description: Creating Desktop applications has come a long way. With every passing day, developers come up with easy to use options for creating desktop applications.
+author: daniel-katungi
+date: 2021-01-11T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/desktop-application-with-react/hero.jpg
+    alt: Getting Started with Electron with Create React App image
+---
+
 # Getting Started with Electron with Create React App
 
 Creating Desktop applications has come a long way. With every passing day, developers come up with easy to use options for creating desktop applications. Electron is one of those solutions. It uses web technologies wrapped around Node.js to come up with web technologies. For a more detailed introduction to the whole Electron.Js ecosystem, you can read [this article](https://www.section.io/engineering-education/cross-platform-applications-electron/).
@@ -233,3 +249,7 @@ Electron offers the power to build desktop applications using Node.js and web te
 You can find the full code for the tutorial [here](https://github.com/katungi/desktop-weather-app-demo)
 
 Happy Coding!
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
