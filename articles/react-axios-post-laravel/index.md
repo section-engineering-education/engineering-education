@@ -10,17 +10,17 @@ Maybe you are a backend engineer wanting to load data to your site using the Rea
 - **Laravel:** This is a PHP framework based on the Model-View-Controller architecture that helps us create web backend applications faster.
 
 ### Prerequisites
-- A basic understanding of PHP and its working with Laravel
+- A basic understanding of PHP and how to work with Laravel
 - A basic understanding of HTML and CSS
-- A basic understanding of JavaScript and its working with React
-- Php, Composer, Laravel installer installed in your machine.
+- A basic understanding of JavaScript and how to use on React
+- Have Php, Composer, and Laravel installer installed in your machine.
 
 Having that, we can now start delving into the topic.
 
 ### What we will be doing
-We will be sending input data from a signup page and send the data to a Laravel controller which will, in turn, return JSON data and display it in an alert.
+We will be sending input data from a sign up page and send the data to a Laravel controller which will, in turn, return JSON data and display it in an alert.
 
-> **JSON**, JavaScript Object Notation, is a data exchange format between web applications.
+> **JSON**, JavaScript Object Notation; is a data exchange format between web applications.
 
 ### Getting started
 We create our application by running this command in the terminal:
@@ -29,14 +29,14 @@ We create our application by running this command in the terminal:
 laravel new reactaxios
 ```
 
-Since Laravel supports Vue.js by default, we first replace the Vue.js scaffolding with React.js.
+Since Laravel supports Vue.js by default, we first have to replace the Vue.js scaffolding with React.js.
 
 ```php
 php artisan preset react
 ```
 
 ### Creating the Controller and the Route
-We then create the controller of our Laravel application receiving the POST request :
+We then create the controller of our Laravel application receiving the POST request.
 
 ```php
 php artisan make:controller AxiosReceiverController
@@ -45,7 +45,6 @@ php artisan make:controller AxiosReceiverController
 Open the controller and add the following code.
 
 ```php
-
 <?php
 
 namespace App\Http\Controllers;
@@ -67,12 +66,10 @@ class AxiosReceiverController extends Controller
 
         return json_encode($validatedData);
     }
-
 }
-
 ```
 
-The controller contains a method ```ReceiveIt()``` which receives a request, validates it according to the user rules then stores it in an array named ```$validatedData```. It then returns the array as a JSON object where we'll retrieve it from here.
+The controller contains a method `ReceiveIt()` which receives a request, validates it according to the user rules then stores it in an array named `$validatedData`. It then returns the array as a JSON object which we'll retrieve later on.
 
 We then head on to create a Route for the controller in the *routes/web.php* file.
 
@@ -89,7 +86,7 @@ npm install
 
 For handling our routes, we will use the **React Router** where we render a single view for all the routes. This is particularly important if you have many routes. For our case, it will only be one route.
 
-We will create a wildcard route in the *routes/web* where a view file **app.blade.php** will be used to render our React components. Replace the view code in the *routes/web*.
+We will create a wildcard route in the *routes/web* where a view file **app.blade.php** will be used to render our React components. Replace the view code in the *routes/web* with the code below.
 
 ```php
 Route::view('/{path?}', 'app');
@@ -114,7 +111,6 @@ We head on to the *resources/views* directory, create the file **app.blade.php**
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
     </html>
-
 ```
 
 We reference both a CSS and a JavaScript file that contain React and other dependencies. We have an empty div with an id of ```"app"``` where our components will be rendered.
@@ -144,12 +140,11 @@ class App extends Component {
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 
-
 We will install **React router** since we are using it:
 ```javascript
 npm install react-router-dom
 ```
-When still installing open and update **app.js** file in the *resources/js/* directly and update the code found there with this one:
+While installation continues, open **app.js** file in the *resources/js/* directly and update the code found there with this one:
 
 ```javascript
     require('./bootstrap')
@@ -351,12 +346,12 @@ The constructor then initializes state values and binds the component's function
 
 The succeeding functions are used to take values from the inputs they are called from after a user types in them then sets the state values appropriately.
 
-The ```handleSubmit()``` function is called after the submit button is clicked. The function contains an object called ```packets``` with properties from the ```state``` object which is then passed in the Axios post method as a request to the Laravel controller route we created.
+The `handleSubmit()` function is called when the submit button is clicked. The function contains an object called `packets` with properties from the `state` object which is then passed in the Axios post method as a request to the Laravel controller route we created.
 
-After the request, we retrieve the results and display it in an alert using the ```JSON.stringify()``` which converts the object return to a string. If there is an error during the process it is shown in the console after being 'caught'.
+After the request, we retrieve the results and display it in an alert using the `JSON.stringify()` method which converts the object returned to a string. If there is an error during the process, it is shown in the console after being 'caught'.
 
 ### Adding the styling for the page and updating the App.jsx file
-For the styling, you can customise and add your own but what we will be using for formatting our page, is in the CSS code below. Open *resources/js/components/App.css* and add this code:
+For the styling, you can customize and add your own but what we will be using for formatting our page, is in the CSS code below. Open *resources/js/components/App.css* and add this code:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto:wght@100&display=swap');
@@ -714,7 +709,7 @@ footer{
 
 ```
 
-We update the App.jsx with the routes for displaying with this code:
+We update the `App.jsx` file with the routes for displaying with this code:
 
 ```javascript
 import React, { Component } from 'react'
@@ -740,7 +735,7 @@ class App extends Component {
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 ### Running the app
-Before running the app, we first test compile the react using Laravel Mix by running the command:
+Before running the app, we first need to test-compile the react using Laravel Mix by running the command:
 
 ```php
 npm run dev
@@ -757,7 +752,6 @@ The expected output:
 ![Second Screenshot](/engineering-education/screen-two.png)
 
 ![Third Screenshot](/engineering-education/screen-three.png)
-
 
 That's all for now. Hope you've gotten insights on how to make a POST request from React using Axios to a Laravel application.
 
