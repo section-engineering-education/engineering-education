@@ -71,10 +71,7 @@ The following screen may appear:
 
 
 Alternatively, using an R-programming application can be equally as effective. The image below is RStudio.  
-![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)
-
-
-Specify which libraries in code format will be used in the R-Programming application. For convenience, R-Studio was also used.  
+![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
 
 
 If not installed already, the list below include libraries used in this tutorial.  
@@ -85,7 +82,7 @@ If not installed already, the list below include libraries used in this tutorial
 `install.packages(c("rIP", dependencies = TRUE))`  
 `install.packages(c("rattle"), dependencies = TRUE)`  
 
-Reminder: Use "options" within the code to include more specifications. For example, `dependencies = TRUE`.  
+Reminder: "Options" can be benefial within the code to include more specifications. For example, `dependencies = TRUE`.  
 
 The following are sample codes with possible results.  
 
@@ -133,14 +130,14 @@ $`45.88.197.212`$proxy
 ```  
 
 
-An IP address can be categorized under multiple registered geological regions of the world databases. The next few codes will showcase basic statistics that can be derived from an IP address.  
+An IP address can be categorized under multiple registered geological regions of various directories. The next few codes will showcase basic statistics that can be derived from an IP address.  
 
 
 #### Basic Statistics  
 
 There are a few major hosting platforms that retain rights to domains while leasing out DNS space to customers. Although a hosting website is one aspect, nameservers (an example, ns1.dns-parking.com) and other DNS attributes are also vital in the creation of a website.  
 
-This can resemble a decision tree or a random forest. The probability of finding the correct geological location can be cumbersome when it comes to meshing various factors together.  
+Determining geological location of an IP address can resemble a decision tree or a random forest. The probability of finding the correct geological location can be cumbersome when it comes to meshing various factors together.  
 
 For example, the IP address "45.88.197.212" was associated with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam from separate sources. The reason for this is other categories influenced the overall decision of where this IP could have originated from regardless of VPN.  
 
@@ -149,8 +146,8 @@ Factors can include:
  -  Hosting  
  -  Whois Registrars (few sample registrars)
   - RIPE - Réseaux IP Européens (translation: "European IP Networks") serves Europe.
-  - NIC - A domain name lookup directory for  'extensions' of a domain name. Helpful to use when specifying servers during whois lookups.
-  - ARIN - American Registry for Internet Numbers serves IP address within North America and portions of the Caribbean.
+  - NIC - A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups.
+  - ARIN - American Registry for Internet Numbers serves North America and portions of the Caribbean.
   - IANA - Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world.  
  - CIRA - Canadian Internet Registration Authority serves Canada.
  - Privacy redactions  
@@ -161,7 +158,7 @@ Hostinger International Limited (AS47583) is the ASN hosting website who owns IP
 
 Now that we know that Hostinger International Limited is the ASN owner of the IP address, the next step is to predict which country within range would be most likely to own the IP address.  
 
-According to various ASN databases including Spyse and DNSlytics, AS47583 associated with 45.88.197.212 have many linking countries.  
+According to various ASN databases including Spyse and DNSlytics, AS47583 associated with 45.88.197.212 have five associated countries.  
 
 Here is the list of countries:  
  - Lithuania (Li)  
@@ -170,16 +167,16 @@ Here is the list of countries:
  - Netherlands (Nl)  
  - Amsterdam (Am)  
 
-By using `rattle`, data modelling can include either a decision tree or random forest. We can see the different possibilities that could lead to an accurate prediction. From a decision tree, we can include a confusion matrix to find potential possibilities.  
+By using `rattle`, data modelling can include either a decision tree or random forest. We can see the different possibilities that could lead to an approximate precise prediction. From a decision tree, we can include a confusion matrix to find potential possibilities.  
 
-IP information that was a near match to 45.88.197.212 was found at IPinfo.io, DNSlytics and Spyse, and i.whoswho by testing a domain name within the specified IP.  
+Near matches to 45.88.197.212 was found using IPinfo.io, DNSlytics and Spyse, and i.whoswho by testing a domain name within the specified IP.  
 
-Below, is a manually made IP address data frame with data sourced from references listed at the end of this tutorial.  
+Shown below, is a manually made IP address data frame with data sourced from references listed at the end of this tutorial.  
 
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)   
 
 
-Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided.  
+Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided efficiently.  
 
 As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further.  
 
@@ -201,7 +198,7 @@ With the highest score of the five countries, Lithuania seemed to have the most 
 
 #### Linux Reverse IP lookup  
 
-To verify and validate the sections mentioned above, here is a quick code to assess.  
+To verify the validity, here is a quick code to assess.  
 
 ```Shell
 sudo curl http://ipinfo.io/45.88.197.212
@@ -228,7 +225,7 @@ The results are shown below.
 
 By using Host.io with any programming language or shell with a `curl` function, a list of possible domains on an IP address can be revealed.  
 
-Perhaps if the listed "businesses" were publicly announced as acquired or merged, this might seem legitimate. However, that would be false. Target, Sobeys, Massive Insights, 'Asianausa', Grand River Hospital, and others listed within this reverse lookup are not associated with each other in any way. Also, the CIRA who manages registered Canadian company websites should have been included. In turn, the association managing American websites should have been included for American companies. A foreign RIPE entity should not have full ownership of the IP address holding varying company webpages from North American organizations.   
+If the listed "businesses" were publicly announced as acquired or merged, this might seem legitimate. However, that would be false. Some domains pointing to "45.88.197.212" included and not limited to Target, Sobeys, Massive Insights, 'Asianausa', Grand River Hospital, and others listed within this reverse lookup are not interrelated. Also, the CIRA who manages registered Canadian company websites should have been included. In turn, the association managing American websites should have been included for American companies. A foreign RIPE entity should not have full ownership of the IP address holding varying company webpages from North American organizations.   
 
 
 #### Closing Comments  
