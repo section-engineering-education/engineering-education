@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/working-with-lambda-expressions-and-anonymous-functions/
+title: Working with Lambda expressions and Anonymous functions
+description: Lambda expressions can be challenging to understand. This article aims to simplify the concept behind lambda expressions and how to use them.
+author: raphael-ndonga
+date: 2021-01-11T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/working-with-lambda-expressions-and-anonymous-functions/hero.jpg
+    alt: Working with Lambda expressions and Anonymous functions image
+---
+
 ### Introduction
 
-Lambda expressions can be challenging to understand. Types that look like this: `(Int) -> String` are not intuitive to many developers. This article aims to simplify the concept behind lambda expressions and how to use thm.
+Lambda expressions can be challenging to understand. Types that look like this: `(Int) -> String` are not intuitive to many developers. This article aims to simplify the concept behind lambda expressions and how to use them.
 
 ### Prerequisites
 
@@ -112,3 +128,7 @@ In the code above, we pass in the implementation of our lambda expression throug
 #### Summary
 
 Lambda expressions allow you to treat functions as variables in different ways. They even allow you to pass different operations as the implementation of the function, as you would pass different values to a variable. Go ahead and explore other use cases for lambda expressions!
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
