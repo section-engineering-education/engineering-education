@@ -9,7 +9,7 @@ To get started with data classes you must have `python 3.7` and above installed 
 The reader should also be able to work with python classes and objects for a better understanding of the chapter. If you would like to brush your skills on classes be sure to visit this [site](https://docs.python.org/3/tutorial/classes.html) to familiarise yourself with the concepts.
 
 ### Defining a data class
-A python class is a program for creating objects and its properties. We use the keyword `class` when creating a class in python. For class attributes to be initialized we use a constructor method called `__init__()`. An `__init__()` method is called when an object is created in a python class. Let's create a class and see how this works.
+A python class is a program for creating objects and its properties. We use the keyword `class` when creating a class in python. For class attributes to be initialized we use a constructor method called `__init__()`. An `__init__()` method is called when an object is created in a python class. Let's implement a python class.
 
 ```python
 class Student:
@@ -53,7 +53,7 @@ print(student2.name)
 print(student1)
 ```
 
-We first import the dataclass. We prefix our class with the `@dataclass` decorator from the imported dataclass. In our class, we define our fields with their data type. For example, `name` and `course` are strings we use the `str` to represent their data type. Our `gpa` will be a decimal so we use a `float`. By running the `dataclass()` decorator, the properties of the class are initialized by a built-in `__init__()` function. We get the same output as the one we got in the previous example. You can go ahead and try it out. 
+We first import the dataclass. We prefix our class with the `@dataclass` decorator from the imported dataclass. In our class, we define our fields with their data type. For example, `name` and `course` are strings we use the `str` to represent their data type. Our `gpa` will be a decimal so we use a `float`. By running the `dataclass()` decorator, the properties of the class are initialized by a built-in `__init__()` function. The output is similar to the one in the previous example.  
 
 Let's add another method in our class and see how we can change fields.
 
@@ -87,8 +87,7 @@ student1.gpa = 3.9
 print(student1.studentinfo())
 ```
 
-We've created a method, `studentinfo()` which returns a formatted name and gpa as a string. We define a method in a dataclass like any other. We then change the `name` attribute of `student1` and his `gpa`. We go ahead and print the student information of the first student using the `studentinfo()` method and we see the output changes. This shows how we can change various fields using the python data classes.
-In the next section, we'll cover post initialization.
+We've created a method, `studentinfo()` which returns a formatted name and gpa as a string. We define a method in a dataclass like any other. We then change the `name` attribute of `student1` and his `gpa`. We go ahead and print the student information of the first student using the `studentinfo()` method and we see the output changes. This shows how we can change various fields using the python data classes. Next we will see how to use the `__post_init__()` function.
 
 ### Using post initialization
 The `__post_init__()` function allow us to customize additional attributes that we do not want at the time of object initialization.
@@ -145,10 +144,10 @@ print(student1)
 print(student2)
 ```
 
-In our class object, we indicate the default value by using an equal sign with the corresponding data type. In our example, we are using a string value to pass the default value. We pass `No Name` and `No Course` for the string data types and pass a field with a defined function `gpa_range()` to generate random GPA values to the gpa attribute. The `default_factory` allow us to use mutable default values using the `field()` specifier. The `gpa_range()` function generate random values between 2 and 5. We then create an instance of Student class by passing the `name` and `course` attribute. The `gpa` property is set by the field operator which we imported. Running the file outputs a Student object with all the properties.
+In our class object, we indicate the default value by using an equal sign with the corresponding data type. We pass `No Name` and `No Course` for the string data types and pass a field with a defined function `gpa_range()` to generate random GPA values to the gpa attribute. The `default_factory` allow us to use mutable default values using the `field()` specifier. The `gpa_range()` function generate random values between 2 and 5. We then create an instance of Student class by passing the `name` and `course` attribute. The `gpa` property is set by the field operator which we imported. Running the file outputs a Student object with all the properties.
 
 ### Immutable data classes
-Immutable data classes are classes that do not allow us to change their values and throws an exception when modified. Why use immutable classes? This might be a question someone is wondering about. Well, first immutable classes are thread-safe since it's content cannot be modified. It also improves clarity and accuracy when reasoning on one's code. With this in mind let's dive into it.
+Immutable data classes are classes that do not allow us to change their values and throws an exception when modified. Why use immutable classes? This might be a question someone is wondering about. Well, first immutable classes are thread-safe since it's content cannot be changed. It also improves clarity and accuracy when reasoning on one's code. The snippet below explains how to go about it.
 
 ```python
 from dataclasses import dataclass
