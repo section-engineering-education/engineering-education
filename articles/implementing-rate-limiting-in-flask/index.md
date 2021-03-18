@@ -154,7 +154,7 @@ limiter = Limiter(
 )
 ```
 
-NOTE: If an endpoint defines its rate limit rules when a default already exists, the newly defined rule is applied on the route alone and the defaults are ignored.
+> NOTE: If an endpoint defines its rate limit rules when a default already exists, the newly defined rule is applied on the route alone and the defaults are ignored.
 
 To enable a route use the default rules and define its own simultaneously, use the `override_defaults` parameter in the decorator as shown:
 
@@ -188,7 +188,7 @@ limiter = Limiter(app, key_func=custom_function_here)
 @limiter.limit("10/minute", key_func=custom_function_here)
 ```
 
-NOTE: The custom function is called from a [Flask Request Context](https://flask.palletsprojects.com/en/1.1.x/reqcontext/%23request-context) and must return a string. You can read more about key functions in the Flask-Limiter [documentation](https://flask-limiter.readthedocs.io/en/stable/%23rate-limit-key-functions).
+> NOTE: The custom function is called from a [Flask Request Context](https://flask.palletsprojects.com/en/1.1.x/reqcontext/%23request-context) and must return a string. You can read more about key functions in the Flask-Limiter [documentation](https://flask-limiter.readthedocs.io/en/stable/%23rate-limit-key-functions).
 
 #### Having Multiple Rate Limit Rules
 
