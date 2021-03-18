@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/adding-dark-theme-to-your-site/
-title: Dark theme using CSS variables and local storage
-description: In this article we will understand how to build dark theme webpages using CSS and local storage. Also, We will build a simple webpage for toggling between light and dark themes.
+title: Dark Theme using CSS Variables and Local Storage
+description: In this article we will understand how to build dark theme webpages using CSS and local storage. We will also build a simple webpage for toggling between light and dark themes.
 author: phina-kersly
 date: 2021-03-17T00:00:00-20:00
 topics: []
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/adding-dark-theme-to-your-site/hero.png
     alt: Dark theme using CSS variables and local storage example image
 ---
-The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems adopt dark themes. Application of dark theme makes your website more exciting and attractive to users who love dark theme. The experience is even better if you include functionality to switch between light and dark themes.
+The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems have adopted dark themes. Dark theme makes your website more exciting and attractive to users who love a darker color theme. The experience becomes better if you include the functionality to switch between light and dark themes.
 <!--more-->
-This article will help you learn how to implement switching between light and dark themes using [CSS Variables](https://www.w3schools.com/css/css3_variables.asp).
+This article will help you learn how to implement a switch function between light and dark themes using [CSS Variables](https://www.w3schools.com/css/css3_variables.asp).
 
 Click [this link](https://replit.com/@PhinaKersly/dark-theme#index.html) to find the source code and a runnable program for the implementation.
 
@@ -35,9 +35,9 @@ As a prerequisite, the reader must have a good understanding of the following co
 - [Further reading](#further-reading)
 
 ### Adding HTML
-Let's begin by building the HTML page that we will use for the tutorial. We add the `theme` name and `switch` id to the checkbox input so that we will used theme to refer to it in our `javascript`.
+Let's begin by building the HTML page that we will use for the tutorial. We will add the `theme` name and `switch` id to the checkbox input so that we will need to to refer to it in our `javascript`.
 
-We are creating a simple webpage consisting of a container, in which we add a heading, toggle button, and a paragraph as shown below:
+We are creating a simple webpage consisting of a container, in which we also add a heading, a toggle button, and a paragraph as shown below:
 
 ```html
 <!DOCTYPE html>
@@ -70,14 +70,15 @@ We are creating a simple webpage consisting of a container, in which we add a he
 ```
 
 ![Output - HTML page](/engineering-education/adding-dark-theme-to-your-site/html-page.PNG)
+
 *HTML page*
 
 ### Adding CSS
-In the same directory as the HTML file, we will add the CSS file that will be used for toggling the default "Light" theme to the "Dark" theme.
+In the same directory as the HTML file, we will add the CSS file that will be used to  toggle the default "Light" theme to the "Dark" theme.
 
-I recommend installing a live SCSS Compiler to compile our CSS Code in real-time. You can refer about SCSS compiler's installation [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass).
+I recommend installing a live SCSS Compiler to compile our CSS Code in real-time. You can look into the SCSS compiler's installation [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass).
 
-You can change the color code to your favorite color which looks attractive both in dark and light themes.
+You can change the color code to your favorite color that looks attractive both in dark and light themes.
 
 The CSS styling for the default white theme is:
 
@@ -141,10 +142,11 @@ body {
 ```
 
 ![Output After Adding CSS](/engineering-education/adding-dark-theme-to-your-site/after-adding-css.png)
+
 *Output after adding CSS styling*
 
 ### Toggle theme
-In the next section, we will style our "Toggle switch" which helps us switching between the dark and light themes. The code for the toggle button is as below:
+In the next section, we will style our "Toggle switch" which will helps us switch between the dark and light themes. The code for the toggle button is shown below:
 
 You can find the code to this switch [here](https://codepen.io/mburnette/pen/LxNxNg).
 
@@ -195,12 +197,14 @@ label:active:after {
 ```
 
 ![Toggle theme switch](/engineering-education/adding-dark-theme-to-your-site/toggle-switch.png)
+
 *Toggle theme*
 
 ### Adding JavaScript
-We will handle the theme switching using JavaScript by changing the toggle switch's class name to either `light` or `dark`, as defined below. In doing so, we write two functions `changeThemeToDark()` and `chnageThemeToWhite()`.
+We will handle the theme switching with JavaScript by changing the toggle switch's class name to either `light` or `dark`, as defined below. In doing so, we write two functions `changeThemeToDark()` and `chnageThemeToWhite()`.
 
 #### Change the theme to dark
+
 ```javascript
 // Change theme to dark by adding the `dark` classname to html element.
 const changeThemeToDark = () => {
@@ -209,6 +213,7 @@ const changeThemeToDark = () => {
 ```
 
 #### Change the theme to light
+
 ```javascript
 // Reset the html class to default
 const changeThemeToDark = () => {
@@ -217,13 +222,13 @@ const changeThemeToDark = () => {
 ```
 
 ### Using local storage
-The local storage provides a store for key and value pairs in a browser. Data store with local storage do not expire even after the browser is closed or refreshed.
+The local storage provides a store for key and value pairs in a browser. Data stores with local storage do not expire even after the browser is closed or refreshed.
 
 The `setItem` and `getItem` methods are used to store and retrieve the stored data respectively.
 
-We will use local storage to store our currently set theme, so that in subsequent visits or page refreshing, users will see their previously set themes.
+We will use local storage to store our currently set theme, so that in subsequent visits or page refreshes, the users will see their previously set themes.
 
-The below pieces of code are used to save and retrieve the theme from local storage:
+The pieces of code below are used to save and retrieve the theme from local storage:
 
 ```javascript
 let theme = localStorage.getItem('data-theme');
@@ -238,7 +243,7 @@ const changeThemeToLight = () => {
 }
 ```
 
-After writing the functions, we check to see what theme is set currently and toggle it.
+After writing the functions, we will check to see what theme is set currently and toggle it.
 
 ```javascript
 // Get the element based on ID
@@ -255,16 +260,19 @@ checkbox.addEventListener('change', () => {
 ```
 
 ![Dark Theme](/engineering-education/adding-dark-theme-to-your-site/dark-theme.png)
+
 *Dark theme webpage*
 
 ### Conclusion
-This article explained how to implement dark and light themes, and a toggle for switching, using CSS variables and localStorage.
+This article has explained how we can implement dark and light themes, and a toggle them to switch, by using CSS variables and localStorage.
 
 You can now try out implementing the dark theme on your own website. You can find the link to the code used in the article [here](https://replit.com/@PhinaKersly/dark-theme#index.html).
 
 ### Further reading
 - [CSS Variables](https://www.w3schools.com/css/css3_variables.asp)
 - [Local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
