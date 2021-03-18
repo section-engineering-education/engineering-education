@@ -13,7 +13,7 @@ You should also have a code editor installed in your laptop. The recommended tex
 Open Visual Studio code and create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
 
 #### Step -2 Write the HTML code
-Dive into the HTML file and write the code as illustrated in the figure text below. The code has illustrations so do not worry.
+Dive into the HTML file and write the code as illustrated in the figure text below. The html is like the skeleton of our code so it will lay out the frame of our work onto which we shall continue modifying by using other languages. So herein we define containers that will have our images,we employ the use of div tags.We also define our buttons which will enable the user to move through the images collection. Some small circles are also defined which can take the user to any image of the collection irregardles of order. The code has illustrations just for you to follow through.
 ```HTML
  <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -52,7 +52,8 @@ Dive into the HTML file and write the code as illustrated in the figure text bel
 
 ```
 #### Step -3 Write the CSS code
-Dive into the css file which you created and write the following. The code has illustrations to guide you on what is happening so do not worry.
+In the CSS file,we start styling our HTML. We style the containers for the images, the buttons and the small circles(we'll call them navigation circles). We also position them in desired places using the various css properties.
+The code has illustrations just so you follow through on what's happening.
 ```CSS
 * {box-sizing:border-box}
 
@@ -150,7 +151,8 @@ Dive into the css file which you created and write the following. The code has i
 }
 ```
 #### Step -4 Write the Javascript code
-Enter into the Javascript file and write the following code. The code has comments to guide you on what is happening .
+In the javascript file,this is where the main action takes place. Herein,we define the functions we had linked to our buttons in the HTML file. It is also in this same Javascript file that we can include a timer so that our image carousel displays images automatically like a slideshow.
+Enter into the Javascript file and write the following code. The code has comments just so you follow through what's happening.
 ```js
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -183,7 +185,7 @@ function showSlides(n) {
 ```
 **N/B**
 
-Remember to link the .css file and the .js file to your HTMl file. To remind yourself [click here](https://www.w3schools.com/tags/att_script_src.asp).
+Remember to link the .css file and the .js file to your HTMl file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or  click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js
 
 ### Automatic slide-show
 In order to make the images in the carousel change automatically without the user input,we need to modify our Javascript code. Use the following code. In this code,we include a timer of 2 seconds.
