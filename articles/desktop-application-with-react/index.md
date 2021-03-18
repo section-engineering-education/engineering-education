@@ -105,7 +105,7 @@ Now you have electron installed, but  still have to make a few changes in the `p
   "main" : "main": "public/electron.js",
 ```
 
-Next, install the following packages, `concurrent` and `wait-on`. These packages will listen to the app, and when it launches on the browser, it will launch as an electron app instead.
+Next, install the following packages, [concurrently](https://www.npmjs.com/package/concurrently) and [wait-on](https://www.npmjs.com/package/wait-on). These packages will listen to the app, and when it launches on the browser, it will launch as an electron app instead.
 
 ```terminal
 npm i -D concurrently wait-on
