@@ -1,10 +1,10 @@
-# 1. Dunder/Magic Methods in Python
+### 1. Dunder/Magic Methods in Python
 
 The article will talk about dunder methods like init, len, getitem, etc. Various example functions and classes will be discussed.
 
 Dunder methods are names that are preceded and succeeded by double underscores, hence the name dunder. They are also called magic methods and can help override functionality for built-in functions for custom classes. Implementing dunder methods for classes is a good form of Polymorphism. If you have created a class in Python and used the init function, you have already been using dunder methods.
 
-# 2. Table of Contents
+### 2. Table of Contents
 - [1. Dunder/Magic Methods in Python](#1-dundermagic-methods-in-python)
 - [2. Table of Contents](#2-table-of-contents)
 - [3. Prerequisites](#3-prerequisites)
@@ -27,13 +27,13 @@ Dunder methods are names that are preceded and succeeded by double underscores, 
   - [7.5. Complete code](#75-complete-code)
 - [8. Conclusion](#8-conclusion)
 
-# 3. Prerequisites
+### 3. Prerequisites
 - A basic understanding of Object Oriented Programming using Python
 - Experience working with classes in Python
 - Familiarity with built-in functions such as len, get, set, etc.
 
 
-# 4. Why do we need Dunder Methods?
+### 4. Why do we need Dunder Methods?
 Consider a case where we have the following class
 
 ```python
@@ -49,7 +49,7 @@ The print statement would print something like `<__main__.point object at 0x7fb9
 
 We could also override other methods such as the `len, +, []` etc. We will create a new class and override many of the built-in functions in this article.
 
-# 5. Our custom class
+### 5. Our custom class
 ```python
 class softwares:
     names = []
@@ -58,10 +58,10 @@ class softwares:
 
 This class will be used to save a list of softwares and their versions. `names` is a list to store the names of the softwares and `versions` is a dictionary where the key is the software name and the value is the version number. By default, all softwares start with a version of 1.
 
-# 6. Dunder Methods for our class
+### 6. Dunder Methods for our class
 Before moving on, please ensure that your indentation is correct. The methods which will be discussed below are methods belonging to the class we created and must be indented  appropriately.
 
-## 6.1. init
+#### 6.1. init
 This a method you must have already used if you have worked with classes. The `init` method is used to create an instance of the class.
 
 ```python
@@ -85,7 +85,7 @@ p1 = softwares([])
 
 The first statement would work fine but the second line would raise an exception since an empty list was passed in as a parameter.
 
-## 6.2. str
+#### 6.2. str
 The `str` method is useful when we want to use instances of our class in a print statement. As discussed earlier, it usually returns a memory object. But we can override the `str` method to meet our requirements.
 
 ```python
@@ -102,7 +102,7 @@ The above `str` method returns the software and their versions. Ensure that the 
 print(p)
 ```
 
-## 6.3. setitem
+#### 6.3. setitem
 When assigning values in a dictionary, the ```setitem``` method is invoked.
 ```python
 d = {}
@@ -125,7 +125,7 @@ p['2'] = 2
 ```
 The first line would update the version of software S1 to 2. But the second line would raise an exception since software 2 doesn't exist.
 
-## 6.4. getitem
+#### 6.4. getitem
 The `getitem` method is like the `setitem` method, the major difference being that the `getitem` method is called when we use the `[]` operator of a dictionary.
 ```python
 d = {'val':key}
@@ -146,7 +146,7 @@ print(p['1'])
 ```
 The first line would print the version of S1. But, the second line would raise an Exception since 1 doesn't exist.
 
-## 6.5. delitem
+#### 6.5. delitem
 The `delitem` is like `setitem` and `getitem` method. To avoid repetition, we will move to the implementation and use case.
 
 ```python
@@ -162,7 +162,7 @@ The `delitem` method deletes the software from the dictionary as well as the lis
 del p['S1']
 ```
 
-## 6.6. len
+#### 6.6. len
 In a dictionary, the `len` method returns the number of elements in a list or the number of key-value pairs in a dictionary. We can define a `len` method for our class as well.
 ```python
 def __len__(self):
@@ -174,7 +174,7 @@ The `len` method of our class can be used in the following way.
 print(len(p))
 ```
 
-## 6.7. contains
+#### 6.7. contains
 The `contains` method is used when using the `in` operator. The return value has to be a boolean.
 
 ```python
@@ -195,7 +195,7 @@ else:
 ```
 The above code prints the statement inside the if blocks since software S2 is present inside the `versions` dictionary.
 
-## 6.8. Complete code
+#### 6.8. Complete code
 ```python
 class softwares:
     names = []
@@ -244,7 +244,7 @@ class softwares:
             return False
 ```
 
-# 7. Some more dunder methods
+### 7. Some more dunder methods
 Before looking at some more dunder methods, let's create a new class.
 
 ```python
@@ -265,7 +265,7 @@ p2 = point(2,3)
 ```
 We have created a class point which is basically a 2D point. The class has an `init` method and a `str` method. We have also created a couple of instances of the class.
 
-## 7.1. add
+#### 7.1. add
 The `add` method is called when using `+` operator. We can define a custom `add` method for our class.
 
 `p1 + p2` is equal to `p1._add__(p2)`
@@ -283,7 +283,7 @@ p3 = p1 + p2
 ```
 The above line of code invokes the `add` method.
 
-## 7.2. iadd
+#### 7.2. iadd
 The `iadd` method is like the `add` method. It is invoked when using the `+=` operator
 
 ```python
@@ -301,7 +301,7 @@ print(p1)
 ```
 The above method invokes the `iadd` method.
 
-## 7.3. Other Operators
+#### 7.3. Other Operators
 - `__sub__(self,p2)` ( - )
 - `__isub__(self,p2)` ( -= )
 - `__mul__(self,p2)` ( * )
@@ -311,7 +311,7 @@ The above method invokes the `iadd` method.
 - `__floordiv__(self,p2)` ( \\\ )
 - `__ifloordiv__(self,p2)` ( \\\= ) 
 
-## 7.4. call
+#### 7.4. call
 When invoking a function like `func()`, we are invoking the `call` method. If we put in place a `call` method for our class, we can do the following
 ```python
 p1()
@@ -324,7 +324,7 @@ def __call__(self):
     print(f"Called Point {self.x},{self.y}")
 ```
 
-## 7.5. Complete code
+#### 7.5. Complete code
 ```python
 class point:
     x = None
@@ -373,7 +373,7 @@ class point:
         print(f"Called Point {self.x},{self.y}")
 ```
 
-# 8. Conclusion
+### 8. Conclusion
 Dunder methods are indeed magical and can help you improve the functionality of your class. You can find more dunder methods [here](https://docs.python.org/3/reference/datamodel.html#)
 
 Happy Learning! :)
