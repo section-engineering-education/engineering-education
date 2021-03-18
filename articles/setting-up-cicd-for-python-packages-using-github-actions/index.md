@@ -298,7 +298,7 @@ In this tutorial, we've seen what continuous integration, delivery and deploymen
 
 This article aimed to introduce you to CI/CD with Python packages, and an example that builds on this introduction. We used GitHub Actions to achieve our said objectives and ensured the entire pipeline works as developed.
 
-The source code for this repository is found on [GitHub](https://github.com/edeediong/timezone_checker).
+The source code for this repository can be found on [GitHub](https://github.com/edeediong/timezone_checker).
 
 Happy building!
 
