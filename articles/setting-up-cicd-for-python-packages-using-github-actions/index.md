@@ -6,7 +6,7 @@ url: /engineering-education/setting-up-cicd-for-python-packages-using-github-act
 title: Setting up CI/CD for Python Packages using GitHub Actions
 description: This article will provide an overview what CI/CD is, build a Python package to inform time in various timezones and deploy the package via GitHub Actions.
 author: edidiong-etuk
-date: 2021-03-18T00:00:00-23:30
+date: 2021-03-19T00:00:00-00:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -210,7 +210,6 @@ Following the guide on the official [Python documentation](http://packaging.pyth
 You'll need to create a Test PyPI account if you don't have one already as it is different from the standard PyPI account.
 
 ### Packaging & Deploying with GitHub Actions
-
 Execute the following steps to package the application with GitHub Actions:
 
 1. Create the `.github/workflows/` directory in your repository to store your workflow files.
@@ -306,8 +305,8 @@ The source code for this repository is found on [GitHub](https://github.com/edee
 Happy Building!
 
 ### Further Reading
-[Introduction to GitHub Actions](/engineering-education/github-actions/)
-[How to Build a Python Package](https://edeediong.me/how-to-build-a-python-package)
+- [Introduction to GitHub Actions](/engineering-education/github-actions/)
+- [How to Build a Python Package?](https://edeediong.me/how-to-build-a-python-package)
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
