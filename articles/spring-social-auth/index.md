@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-social-auth/
+title: Getting started with Spring Boot social authentication
+description: This tutorial will go over Spring Boot social authentication with both google and github. Spring Boot social auth makes it possible for users to authenticate into Spring Boot applications using their existing social accounts.
+author: odhiambo-paul
+date: 2021-03-18T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-social-auth/hero.jpg
+    alt: Spring Boot social authentication example image
+---
+
 ### Spring Boot Social auth
 Spring Boot social auth makes it possible for users to authenticate into Spring Boot applications using their existing social accounts. Using Spring Boot social authentication makes it easy for developers to major in business logic rather than majoring in developing a custom authentication system.
 
@@ -87,6 +104,7 @@ spring:
             clientId: github-client-id
             clientSecret: github-client-secret
 ```
+![Github authentication](github-auth.png)
 
 ### Google authentication
 ```yaml
@@ -102,6 +120,8 @@ spring:
             client-id: google-client-id
             client-secret: google-client-secret
 ```
+
+![Google authentication](google-auth.png)
 
 ### Homepage
 ```html
@@ -144,6 +164,10 @@ spring:
 </body>
 </html>
 ```
+
+![Homepage unauthenticated](home.png)
+
+![Homepage authenticated](logged-in.png)
 
 ### Conclusion
 Now that you have learned how to authenticate users in your Spring Boot application through google and github, implement Facebook social authentication in your Spring Boot application. The source code for the application can be found [here]().
