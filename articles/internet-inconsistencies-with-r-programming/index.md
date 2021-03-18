@@ -70,7 +70,7 @@ The following screen may appear:
 ![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
 
 
-Alternatively, using an R-programming application can be equally as effective. The image below, is RStudio.  
+Alternatively, using an R-programming application can be equally as effective. The image below is RStudio.  
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)
 
 
