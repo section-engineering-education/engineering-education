@@ -1,7 +1,7 @@
 ## Internet Inconsistencies with R-Programming  
 An Internet Protocol (IP) address is one of several Domain Name System (DNS) attributes. Typically, IP sequences can be displayed in two formats: IPv4 and IPv6. There are directories containing further information about an IP such as approximate geological location, longitudinal and latitudinal coordinates, Internet Service Provider (ISP), Media Access Control (MAC), Virtual Private Network (VPN) and Autonomous System Numbers (ASN). Further information can be obtained from various resources receiving continuous disclosures. If not redacted, these pieces of information can merge into one collective research platform. The sole purpose is to detect the likelihood of inconsistencies.  
 
-In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. The tutorial can be used on any compatible Windows, Ubuntu, Macintosh, and Google computer operating system. For this tutorial, a Windows laptop with a featured Linux emulator were both chosen based on convenience. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" will be the IP address used.
+In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. The tutorial can be used on any compatible Windows, Ubuntu, Macintosh, and Google computer operating system. For this tutorial, a Windows laptop with a featured Linux emulator were both chosen based on convenience. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" will be the IP address and various pointing to this IP will be used.
 #### Table of Contents
 - Prerequisites
 - Goals
@@ -101,7 +101,7 @@ key                                                                val
 ```  
 
 Specifying server name according to domain extension  (example, ".works") can produce additional results:  
-`("careers-massiveinsights.works", server = "whois.nic.works")`  
+`whois_query("asianausa.us", server = "whois.nic.us")'    
 
 Partial Output:  
 ```Shell
@@ -182,7 +182,7 @@ Using `library(rattle)` and `rattle()`, a GUI type application would allow proce
 
 As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further.  
 
-From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `Rattle`. We will continue to analyze their accuracy.  
+From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `rattle`. We will continue to analyze their accuracy.  
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpg)  
 
 According to the decision tree error matrix or otherwise known as a confusion matrix, Netherlands seemed to be inaccurate.  
@@ -227,7 +227,7 @@ The results are shown below.
 
 By using Host.io with any programming language or shell with a `curl` function, a list of possible domains on an IP address can be revealed.  
 
-If the listed "businesses" were publicly announced as acquired or merged, this might seem legitimate. However, that would be false. Some domains pointing to "45.88.197.212" included and not limited to Target, Sobeys, Massive Insights, 'Asianausa', Grand River Hospital, and others listed within this reverse lookup are not interrelated. Also, the CIRA who manages registered Canadian company websites should have been included. In turn, the association managing American websites should have been included for American companies. A foreign RIPE entity should not have full ownership of the IP address holding varying company webpages from North American organizations.   
+If the listed "businesses" were publicly announced as acquired or merged, this might seem legitimate. However, that would be false. Some company domains pointing to "45.88.197.212" included and not limited to Target, Sobeys, Massive Insights, 'Asianausa', Grand River Hospital, and others listed within this reverse lookup are not interrelated. Also, the CIRA who manages registered Canadian company websites should have been included. In turn, the association managing American websites should have been included for American companies. A foreign RIPE entity should not have full ownership of the IP address holding varying company webpages from North American organizations.   
 
 
 #### Closing Comments  
