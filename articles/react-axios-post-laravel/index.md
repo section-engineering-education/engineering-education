@@ -6,28 +6,30 @@ url: /engineering-education/react-axios-post-laravel/
 title: How to use React to Send a POST Request to a Laravel Application
 description: This tutorial will give readers a detailed guide on how to make a post request to a Laravel application using React and retrieve the response.
 author: terrence-aluda
-date: 2021-03-18T00:00:00-09:00
+date: 2021-03-18T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-axios-post-larave/hero.jpg
+  - url: /engineering-education/react-axios-post-laravel/hero.jpg
     alt: Post Request Using React Example Image
 ---
-Maybe you are a backend engineer who wants to load data to your site using the React library, or you want to explore the use of React with Laravel, or you have any other interests validating the use of Laravel with React, then you are at the right place. We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
+Perhaps you are a backend engineer who wants to load data to your site using the React library, or you want to explore the use of React with Laravel. Or maybe you have other interests in using Laravel with React, either way you are at the right place. 
 <!--more-->
+We are going to learn how to make a POST request to a Laravel application using React and retrieve the response.
+
 ### Basic descriptions
 - **React:** This is a JavaScript library that assists us in creating interactive and dynamic Single Page Applications. 
 - **Axios:** This is a library that is used to handle HTTP requests to external sources in web applications.
 - **Laravel:** This is a PHP framework based on the Model-View-Controller architecture that helps us create web backend applications faster.
 
 ### Prerequisites
-- A basic understanding of PHP and how to work with Laravel
-- A basic understanding of HTML and CSS
-- A basic understanding of JavaScript and how to use on React
-- Have Php, Composer, and Laravel installer installed in your machine.
+- A basic understanding of PHP and how to work with Laravel.
+- A basic understanding of HTML and CSS.
+- A basic understanding of JavaScript and how to use on React.
+- Have PHP, Composer, and Laravel installer installed in your machine.
 
-Having that, we can now start delving into the topic.
+Having that, we can now start diving into the topic.
 
 ### What we will be doing
 We will be sending input data from a sign up page and send the data to a Laravel controller which will, in turn, return JSON data and display it in an alert.
@@ -96,7 +98,7 @@ We add our application's dependencies.
 npm install
 ```
 
-For handling our routes, we will use the **React Router** where we render a single view for all the routes. This is particularly important if you have many routes. For our case, it will only be one route.
+To handle our routes, we will use the **React Router** where we render a single view for all the routes. This is particularly important if you have many routes. For our case, it will only be one route.
 
 We will create a wildcard route in the *routes/web* where a view file **app.blade.php** will be used to render our React components. Replace the view code in the *routes/web* with the code below.
 
@@ -125,9 +127,9 @@ We head on to the *resources/views* directory, create the file **app.blade.php**
     </html>
 ```
 
-We reference both a CSS and a JavaScript file that contain React and other dependencies. We have an empty div with an id of ```"app"``` where our components will be rendered.
+We reference both a CSS and a JavaScript file that contain React and other dependencies. We have an empty div with an id of `"app"` where our components will be rendered.
 
-Next, we create the App component in the *resources/js/components* with the name **App.jsx** and deleting the **Example.js** that is there by default.
+Next, we create the App component in the *resources/js/components* with the name **App.jsx** and delete the **Example.js** that is there by default.
 
 ```javascript
 import React, { Component } from 'react'
@@ -153,18 +155,19 @@ ReactDOM.render(<App />, document.getElementById('app'))
 ```
 
 We will install **React router** since we are using it:
+
 ```javascript
 npm install react-router-dom
 ```
-While installation continues, open **app.js** file in the *resources/js/* directly and update the code found there with this one:
+
+While the installation continues, open the **app.js** file in the *resources/js/* directly and update the code found there with this one:
 
 ```javascript
     require('./bootstrap')
     require('./components/App')
 ```
 
-**The Signup page**
-
+#### The Signup page
 We will create a folder called *pages* in the *resources/js/components/* directory where we will create the signup page, name it **Register.jsx**, and add it to the folder. Add the following code inside it.
 
 ```javascript
@@ -350,20 +353,21 @@ class Register extends Component {
 export default Register;
 ```
 
-**Explanation**
-
+#### Explanation
 We reference the images we'll be using on the page.
 
 The constructor then initializes state values and binds the component's functions.
 
-The succeeding functions are used to take values from the inputs they are called from after a user types in them then sets the state values appropriately.
+The succeeding functions are used to take values from the inputs they are called from after a user types them in, then sets the state values appropriately.
 
-The `handleSubmit()` function is called when the submit button is clicked. The function contains an object called `packets` with properties from the `state` object which is then passed in the Axios post method as a request to the Laravel controller route we created.
+The `handleSubmit()` function is called when the submit button is clicked. The function contains an object called `packets` with properties from the `state` object. This is then passed in the Axios post method as a request to the Laravel controller route we created.
 
 After the request, we retrieve the results and display it in an alert using the `JSON.stringify()` method which converts the object returned to a string. If there is an error during the process, it is shown in the console after being 'caught'.
 
 ### Adding the styling for the page and updating the App.jsx file
-For the styling, you can customize and add your own but what we will be using for formatting our page, is in the CSS code below. Open *resources/js/components/App.css* and add this code:
+For the styling, you can customize and add your own but what we will be using to format our page, is in the CSS code below. 
+
+Open *resources/js/components/App.css* and add this code:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto:wght@100&display=swap');
@@ -721,7 +725,7 @@ footer{
 
 ```
 
-We update the `App.jsx` file with the routes for displaying with this code:
+We update the `App.jsx` file with the routes to display with this code snippet:
 
 ```javascript
 import React, { Component } from 'react'
@@ -747,16 +751,18 @@ class App extends Component {
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 ### Running the app
-Before running the app, we first need to test-compile the react using Laravel Mix by running the command:
+Before running the app, we first need to test-compile the react using Laravel Mix by running this command:
 
 ```php
 npm run dev
 ```
+
 Then run the Laravel server:
 
 ```php
 php artisan serve
 ```
+
 The expected output:
 
 ![First Screenshot](/engineering-education/screen-one.png)
@@ -766,14 +772,13 @@ The expected output:
 ![Third Screenshot](/engineering-education/screen-three.png)
 
 #### Conclusion
-
-In this tutorial we got a brief overview of using the Axios library to send a HTTP request; more specifically, a POST request which is used in making our applications RESTful.
-Moreover, we saw the use of JSON in passing information between the backend and frontend.
-I will talk about other HTTP methods using these technologies in other tutorials.
+In this tutorial we got an overview on using the Axios library to send a HTTP request. A POST request which is used in making our applications RESTful. We saw the use of JSON in passing information between the backend and frontend. I will talk about other HTTP methods using these technologies in other tutorials.
 
 That's all for now. Hope you've gotten insights on how to make a POST request from React using Axios to a Laravel application.
 
-Have a good one!.
+Have a good one!
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
