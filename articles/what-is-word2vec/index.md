@@ -99,3 +99,9 @@ It is also important to note that word2vec isn't the only word embedding model t
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
+
+---
+title: Wilkister Mumbi
+type: engineering-education/author
+---
+Wilkister is a master's student studying computer science. I am passionate about technology and love to code.
