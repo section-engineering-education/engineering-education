@@ -47,8 +47,7 @@ In the `jwt-database` we created earlier, create a table `jwt-users` as follows:
 mysql> use jwt-database;
 mysql> create table `jwt-users` (
   `user_id` int auto_increment primary key,
-  `fname` varchar(40) ,
-  `lname` varchar(40) ,
+  `fullname` varchar(40) ,
   `username` varchar(40) ,
   `email_address` varchar(40) unique,
   `password` varchar(40) not null,
@@ -67,7 +66,7 @@ Now, `cd` into the directory we created earlier by running the following command
 In your working directory, create a folder `db_configurations` inside the `tokens-api` directory.  
 
 ```bash 
-cd tikens-api && mkdir configurations
+cd tokens-api && mkdir configurations
 ````
 Then,
 
@@ -106,28 +105,40 @@ class DB_Connection
 }
 
 ```
-### Step 2: Install `php-jwt` package
-With database configurations ready, proceed and run the following command to install PHP's token library:   
+### Step 2: Install PHP token generator package  
+PHP has a library jwt library that can be used to generate auth tokens to identify clients accessing the backend service.  
+To install this PHP library in your system, you'll need a [composer](https://www.composer.org) installed. 
+You can verify its installation by running the following command:
+
+```bash
+composer -v
+```
+Now, proceed and import the library by running the following command:  
+
 ```bash
 $ composer require firebase/php-jwt
 ```
-The `php-jwt` library will be downloaded into a vendor folder inside the project folder.  
+To allow for communication between our PHP backend and angular application, we need to set CORS headers.
+Let's proceed and crearte a file `header.php` and add the following CORS scripts: 
+
+```php
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Methods: POST, PUT, DELETE, UPDATE");
+header("Access-Control-Allow-Origin: * ");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+```
 
 ### Step 3: User registration API endpoint
-Now that we have `php-jwt` library in our system, let's proceed and create a simple registration system.  In your current directory, add the following lines of code.  
+Now that we have the `php-jwt` library in our system, let's proceed and create a simple registration system.  In your current directory, add the following lines of code.  
 
 ```php
 <?php
 include_once './configurations/db.php';
+include_once './header.php';
 
-header("Access-Control-Allow-Origin: * ");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-$first_name = '';
-$last_name = '';
+$full_name
 $email_address = '';
 $password1 = '';
 $connection = null;
@@ -137,42 +148,26 @@ $connection = $db->db_connect();
 
 $api_data = json_decode(file_get_contents("php://input"));
 
-$first_name = $api_data->firstName;
-$last_name = $api_data->lastName;
+$full_name = $api_data->full_name;
 $email_address = $api_data->email;
 $password = $api_data->password;
 
-$db_table = 'Users';
-
-$query = "INSERT INTO " . $db_table . "
-                SET first_name = :fname,
-                    last_name = :lname,
+$query = "INSERT INTO " jwt_users . "
+                SET full_name = :fname,
                     email = :emailAdress,
                     password = :pwd";
 
 $stmt = $conn->prepare($query);
 
-$stmt->bindParam(':fname', $first_name);
-$stmt->bindParam(':lname', $last_name);
+$stmt->bindParam(':fname',$full_name)
 $stmt->bindParam(':email', $email_address);
-
-$hashedPassword= password_hash($password, PASSWORD_BCRYPT);
-
-$stmt->bindParam(':password', $hashedPassword);
-
-
-if($stmt->execute()){
-
-    echo json_encode(array("success" => "true"));
-}
-else{
-    
-    echo json_encode(array("success" => "false"));
-}
+$stmt->bindParam(':password', $password1);
+$stmt->execute();
 ?>
 
 ```
 ### User sign-in API endpoint
+
 Inside the `tokens-api` directory, make a `signin.php` file and add the  code below to check the client qualifications to access our backend services:    
 To validate the user credentials and return a JSON Web Token to the client, build a `signin.php` file script within the `tokens-api` directory with the following code:    
 
@@ -247,42 +242,25 @@ if($numOfRows) > 0){
 ?>
 
 ```
-You can describe the token's data structure however you like, for example (you can add only the user's email or ID or both with some additional details such as the user's name), but certain reserved JWT statements should be specified properly because they affect the token's validity, such as:  
+You can describe the token's data structure however you like, but certain reserved JWT statements should be specified properly because they affect the token's validity.  
 
-iat - the time stamp of the token's issuance.
-
-iss - The name or identifier of the issuer application in a string.   
-
-nbf - The point in time when the token should be considered valid.  
-
-exp - This is the timestamp for when the token can no longer be used.   
-
-Within the data argument, we added the database's name, email, and id to our JSON Web Token payload. 
-
-The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final JWT token before sending it to the client. In our example, we simply hardcoded the secret key that will be used to sign the JSON Web Token payload.  
-
-For registering and logging in users, we now have two RESTful endpoints. You can now communicate with the API using a REST client such as Postman.
-
-To begin, run the following command to start your PHP server:  
+The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final token before sending it to the client i.e browser. 
+For registering and logging in users, we now have two RESTful endpoints. Let's test if our endpoints are working by running the following in the 'token-api` folder.    
 
 ```bash
-$ php -S 127.0.0.1:8000
+cd tokens-api && php -S 127.0.0.1:8000 // to start our development server
 ```
-From the address 127.0.0.1:8000, a development server will be running.  
-
 Now that we have a fully functional REST API with a jwt token, let's proceed and create our angular project.  
 
 ### Setting up angular project to consume PHP auth endpoints
+
 >It's worth noting that this tutorial does not teach you how to set up an angular project, for more information, visit [angular](https://angular.io/guide/setup-local).  
 
 In your new angular project, run the following command to create `authService` service: 
 ```bash
 $ ng generate service auth
 ```
-The auth service is used to sign in and sign out of the Angular app, as well as to alert other components when a user logs in and out and to give access to the currently logged-in user.  
-
-In your newly generated service, copy and paste the following code snippets: 
-
+We'll use this service to sign users in and out of our angular application.  Let's add the following codes to our auth service.  
 ```ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -297,12 +275,9 @@ export class AuthService {
     public loggedInUser: Observable<any>;
 
     constructor(private httpClient: HttpClient) {
-        this.loggedUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('loggedInUser')));
+        getLoggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        this.loggedUserSubject = new BehaviorSubject(this.getLoggedUser));
         this.loggedInUser = this.loggedUserSubject.asObservable();
-    }
-
-    public get loggedInUserValue(): any {
-        return this.loggedUserSubject.value;
     }
 
     loginUser(emailAddress: string, password: string) {
@@ -310,6 +285,7 @@ export class AuthService {
             .pipe(map(response=> {
                 localStorage.setItem('loggedInUser', JSON.stringify(response));
                 this.loggedUserSubject.next(response);
+                console.log(response);
                 return response;
             }));
     }
@@ -318,22 +294,19 @@ export class AuthService {
         localStorage.removeItem('loggedInUser');
         this.loggedUserSubject.next(null);
     }
+    public get loggedInUserValue(){
+        return this.loggedUserSubject.value;
+    }
 }
 ```
-In the auth service above, as the user logs in and out of the system, RxJS Subjects and Observables are used to store the current user object and inform other components.  
-
-To be informed of changes, Angular components will `subscribe()` to the public `loggedInUser: Observable` property, and updates are sent when the `this.loggedUserSubject.next() `method in the `loginUser()` and `logOut()` methods is called, passing the argument to each subscriber.  
-
-Regular Subjects in an angular application don't store the values. Whats happens is that they only emit values that are published after a subscription is established, while the `RxJS BehaviorSubject` keeps track of the current value and emits it to any new subscribers as soon as they subscribe.  
+In the auth service above, as the user signs in and out of the system, `RxJS Subjects` and `Observables` are used to store the current user.   
 
 ### Set up login component
-Now that we've got a service to query our PHP endpoint, let's proceed and create a login component to test our code by running the following command:  
+Now that we've got a service to send HTTP requests to our PHP endpoint, let's proceed and create a login component to test our code by running the following command:  
 
 ```bash
 $ ng g c login
 ```
-
-A login form with an email address and password fields is included in the login component template. When the submit button is pressed, it shows validation messages for any incorrect fields. The login component's `onSubmit()` method is bound to the form submit button.  
 
 In your new component template, copy and paste the following piece of code:  
 ```html
@@ -344,61 +317,42 @@ In your new component template, copy and paste the following piece of code:
         <div class="card-body">
             <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label for="username">Email Address</label>
-                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }" />
-                    <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
-                        <div *ngIf="form.email.errors.required">you email address is required</div>
-                    </div>
+                    <label for="email">Email Address</label>
+                    <input type="text" formControlName="email" class="form-control"/>
+                    
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.password.errors }" />
-                    <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
-                        <div *ngIf="form.password.errors.required">your password is required</div>
-                    </div>
+                    <input type="password" formControlName="password" class="form-control"/>
                 </div>
-                <button [disabled]="loading" class="btn btn-danger">
-                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                    Login
+                <button class="btn btn-danger">
+                   Sign In
                 </button>
-                <div *ngIf="error" class="alert alert-warning mt-3 mb-0">{{error}}</div>
             </form>
         </div>
     </div>
 </div>
 ```
+The form we created above makes use of `Angular's Reactive Forms Module`. user information is sent to our component when a click event is fired.  
 
-The auth service is used by the login component to log into the application. The user is automatically redirected to the home page if they are already logged in.  
+With our login template ready, in your `login.compnent.ts` file, add the following code snippets to get user inputs.  
+It's in this script that the user's value is captured then sent to the API service we created earlier via our auth service. 
 
-The signinForm: FormGroup object defines the form controls and validators and is used to access data entered into the form. The [formGroup]="signinForm" directive links the FormGroup to the above-mentioned template from the Angular Reactive Forms module.  
-
-In your component, copy and paste the following code:  
 ```ts
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-
 import { AuthService } from './service/auth.service';
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({ 
+templateUrl: 'login.component.html' 
+})
 export class LoginComponent implements OnInit {
     signinForm: FormGroup;
-    loading = false;
-    submitted = false;
-    error = '';
-
+    
     constructor(
         private fb: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
         private authService: AuthService
-    ) { 
-        if (this.authService.loggedInUserValue) { 
-            this.router.navigate(['/home']);
-        }
-    }
+    ) {  }
 
     ngOnInit() {
         this.signinForm = this.fb.group({
@@ -412,50 +366,44 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        this.submitted = true;
-
-        this.loading = true;
         this.authService.loginUser(this.form.email.value, this.form.password.value)
-            .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['/']);
+                    console.log(data);
                 },
                 error => {
-                    this.error = error;
-                    this.loading = false;
+                    console.log(error);
                 });
     }
 }
 ```
 
 ### Store login token in local storage
-Angular ships with HTTP [interceptors](https://angular.io/api/common/http/HttpInterceptor). We can use this feature to store our login token.  
+Angular ships with HTTP [interceptors](https://angular.io/api/common/http/HttpInterceptor). 
+Any request will therefore be passed a token that will be used in our backend to verify user validity.  
 
-The JWT Interceptor intercepts HTTP requests from the application and adds a JWT auth token to the Authorization header if the user is signed in.  '
+Let's go ahead and create an interceptor for our application, `AuthInterceptor` by running the following command:  
 
-It's implemented with the HttpInterceptor class from the HttpClientModule; by expanding the HttpInterceptor class, you can build your custom interceptor to alter HTTP requests before they're sent to the server.  
-
-In the provider's section of the app.module.ts file, HTTP interceptors are attached to the request pipeline.  
+```bash 
+$ ng g interceptor auth
 
 ```ts
-import { Injectable } from '@angular/core';
+...
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { AuthService } from './service/auth.module';
 
 @Injectable()
-export class JwtInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // add authorization header with jwt token if available
         let loggedInUser = this.authService.currentUserValue;
-        if (loggedInUser && loggedInUser.token) {
+        token = JSON.parse(localStorage.getItem(user.token));
+        if (token) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${loggedInUser.token}`
+                    Authorization: `Bearer ${token}`
                 }
             });
         }
@@ -465,18 +413,17 @@ export class JwtInterceptor implements HttpInterceptor {
 }
 ```
 
-Now let's go ahead and add this script in our `app.module.ts`.  
+Now let's go ahead and add this script in our `app.module.ts` to ensure that any requests we send are cloned and token attached.  
 
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
 
-import { tokenInterceptor} from 'helpers/tokenInterceptor';
+import { AuthInterceptor} from 'helpers/AuthInterceptor';
 import { DashboardComponent } from './dashboard';
 import { LoginComponent } from './login';
 
@@ -489,11 +436,11 @@ import { LoginComponent } from './login';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
+        DashboardComponent,
         LoginComponent
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: tokenInterceptor, multi: true 
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true 
     ],
     bootstrap: [AppComponent]
 })
