@@ -3,8 +3,8 @@
 - status: publish
 - published: true
 - url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js
-- title: Rendering HTML Pages as a HTTP Server Response Using Node.js
-- description: In this article, we consider the various approaches to rendering a HTML page. We begin by sending the HTML page bit by bit, and understand its limitations. Then, we shift to creating a Node.js server using Express.js and render the HTML page as a HTTP server response. 
+- title: Rendering HTML Pages as an HTTP Server Response Using Node.js
+- description: In this article, we consider the various approaches to rendering an HTML page. We begin by sending the HTML page bit by bit and understand its limitations. We then shift to creating a Node.js server using Express.js and render the HTML page an HTTP server response. 
 - author: moses-m
 - date: 2021-03-17T00:00:00-18:00
 - topics: []
@@ -46,7 +46,7 @@ $ node -v
 v12.18.3 ## installed Node.js version
 ```
 
-- Once Node.js is successfully installed, NPM will be installed along. Run `npm -v` to confirm if indeed NPM was installed.
+- Once Node.js is successfully installed, NPM will be installed along. Run `npm -v` to confirm if indeed one installed NPM.
 
 ```bash
 $ npm -v
@@ -279,13 +279,13 @@ app.post("/", (req, res) => {
 });
 ```
 
-When you click the subscribe button, a  `Thank you for subscribing` message will be printed on the browser. Moreover, upon checking the inspector network, the browser will return a 200 code, which is okay. The client has `POST` permissions and can send a `POST` request to the server.
+When you click the subscribe button, a  `Thank you for subscribing` message will be printed on the browser. Moreover, the browser will return a 200 code upon checking the inspector network, which is okay. The client has `POST` permissions and can send a `POST` request to the server.
 
 ![Browser inspector tool network error resolved](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-error-resolved.jpg)
 
 Everything is working great. Nevertheless, we need the server to get the form data and send the relevant results to the browser instead of sending some relative plain text such as `Thank you for subscribing`.
 
-To interact with the form data, we need a body-parser package. Go ahead and install this package using `npm install body-parser`. [Body-parser](https://www.npmjs.com/package/body-parser) helps to parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+To interact with the form data, we need a body-parser package. Go ahead and install this package using `npm install body-parser`. [Body-parser](https://www.npmjs.com/package/body-parser) helps parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 
 Import the package using the `require()` function and get the server to use it via `app.use`. Body-parser has a few modes such as;
 
