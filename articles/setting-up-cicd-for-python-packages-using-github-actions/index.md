@@ -1,9 +1,9 @@
 # Setting up CI/CD for Python Packages using GitHub Actions
 
 When building Python packages or any Python project, being able to test code and deploy to production faster is an attribute of a fast-paced development environment.
-After each bug fix, users expect to see the effect on their local software and this is an attribute of Continuous Integration and Continuous Deployment.
+After each bug fix, users expect to see the effect on their local software ,and this is an attribute of Continuous Integration and Continuous Deployment.
 
-In this article, we will cover what CI/CD is, build a python package that informs us of the time in various timezones.
+In this article, we will cover what CI/CD is, build a python package that informs us of the time in various time zones.
 Then we cover working with the Test Python Package Index and GitHub Actions. The outline below shows a bit more information about the article.
 
 ### Outline
@@ -24,21 +24,20 @@ Then we cover working with the Test Python Package Index and GitHub Actions. The
 - Understanding how to [Build Python Packages](/engineering-education/building-a-python-package-and-publishing-on-pypi/).
 
 ### What is CI/CD
-
-CI/CD comprises three phrases: continuous integration, continuous delivery, and continuous deployment. These phrases seem similar but are of different meanings and implementations. Yet, they are very important to the software development life-cycle.
+CI/CD is a practice used by organizations to ship applications to customers faster and without common errors.
+There are three major phrases when talking about CI/CD namely continuous integration, continuous delivery, and continuous deployment. These phrases seem similar but are of different meanings and implementations. Yet, they are very important to the software development life-cycle.
 
 #### Continuous Integration
 
-Continuous Integration is a set of practices that enable development teams to integrate code into version control repositories regularly.
-> It’s a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository where builds and tests then run.
+Continuous Integration is a set of practices that enable development teams to integrate code into version control repositories regularly. It's an important DevOps practice that allows developers to merge code changes regularly and ensure the execution of builds/tests against the code. We merge this code changes into a central repository.
 
 #### Continuous Delivery
 
-Continuous delivery is a software development practice where release to production is done automatically after a code changes.
+Continuous delivery is a software development practice where code changes are prepared to be released after being built and tested. These builds are automatically pushed to testing/production after a code changes.
 
 #### Continuous Deployment
 
-Continuous Deployment (CD) is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
+[Continuous Deployment (CD)](https://www.atlassian.com/continuous-delivery/continuous-deployment) is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
 
 This [Amazon](https://aws.amazon.com/devops/continuous-delivery/) blog explains in details the difference between these three.
 
@@ -187,9 +186,9 @@ Below is the directory structure after creating the above file structure:
 Following the guide on the official [Python documentation](http://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows.html),
 Let's create a credential for GitHub Action to communicate with Test PyPI. Follow the instructions below:
 
-1. Go to [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens) and create a new [API token](https://pypi.org/help/#apitoken). If you have the project on Test PyPI already, limit the token scope to just that project. You can call it something like `GitHub Actions CI/CD — project-org/project-repo` in order for it to be easily distinguishable in the token list. **Don’t close the page just yet — you won’t see that token again.**
-2. In a separate browser tab or window, go to the `Settings` tab of your target repository and then click on [Secrets](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) in the left sidebar.
-3. Create a new secret called `TEST_PYPI_PASSWORD` and copy-paste the token from the first step.
+1. Go to [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens) and create a new [API token](https://pypi.org/help/#apitoken). If you have the project on Test PyPI already, limit the token scope to just that project. Name it something unique in order for it to be distinct in the token list. Finally, COPY the token.
+2. In a separate browser tab or window, go to the `Settings` tab of your target repository and then click on [Secrets] in the left sidebar.
+3. Create a new secret called `TEST_PYPI_PASSWORD` and PASTE the token from the first step.
 
 **Attention**
 
