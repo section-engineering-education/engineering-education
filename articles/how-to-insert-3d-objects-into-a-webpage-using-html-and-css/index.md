@@ -288,7 +288,7 @@ In the div element with the "aside" id, let's import the 3D object and some of i
 You can obtain the code above and even more attributes on the [Model-viewer](https://modelviewer.dev/) site. Here you can also see some model attributes available for the object and their usages in the docs section. 
 
 In the live preview, it will output the following:
-![Inserting a 3D Model](/engineering-education/How-to-insert-3D-objects-into-a-webpage-using-HTML-and-CSS/Inserting-a-3D-model.png)
+![Inserting a 3D Model](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/Inserting-a-3D-model.png)
 
 The next step is to modify its appearance using CSS. Let's do this by adding the code below to our CSS file:
 
