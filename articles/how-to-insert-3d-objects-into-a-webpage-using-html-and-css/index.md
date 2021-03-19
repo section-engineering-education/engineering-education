@@ -68,7 +68,7 @@ These are the characteristics of the viewed 3D Object on the website set by the 
 **Let's now get into the tutorial:**
 First things first, let's set up our Visual Studio Code IDE. In the extensions tab, search for the "HTML Boilerplate" and "Live Server" extensions and install them. Create a folder and name it "3D Objects". Open the folder with Visual Studio Code and in it create other two folders namely "assets" and "css". Create an "index.html" file in the main directory and "style.css" in the CSS folder. 
 
-## Create a webpage Strucure
+### Create a webpage structure
 We are going to create a simple HTML structure. We can simplify the process using boilerplate generators which may come pre-installed by default in Visual Studio Code or as downloadable extensions by typing in the index file, "html:5" or "html5-boilerplate" then key in the Enter key. Since we don't need additional elements in the boilerplate generated, we will delete the extra code and link it to our CSS file. Let's also link it with some online scripts which will load some Font Awesome fonts and icons. The outcome will be as shown below:
 
 ```html
