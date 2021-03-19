@@ -1,4 +1,4 @@
-## Internet Inconsistencies with R-Programming
+## Internet Inconsistencies with R-Programming  
 An Internet Protocol (IP) address is one of several Domain Name System (DNS) attributes. Typically, IP sequences can be displayed in two formats: IPv4 and IPv6. There are directories containing further information about an IP such as approximate geological location, longitudinal and latitudinal coordinates, Internet Service Provider (ISP), Media Access Control (MAC), Virtual Private Network (VPN) and Autonomous System Numbers (ASN). Further information can be obtained from various resources receiving continuous disclosures. If not redacted, these pieces of information can merge into one collective research platform. The sole purpose is to detect the likelihood of inconsistencies.  
 
 
