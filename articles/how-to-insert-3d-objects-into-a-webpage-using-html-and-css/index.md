@@ -53,7 +53,7 @@ After visiting the above sites or any other, search for any preferable model and
 
 ![VR Headsets](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/poly-VR-Headset.png)
 
-## 3D Model Attributes
+### 3D Model Attributes
 These are the characteristics of the viewed 3D Object on the website set by the frontend developers as preferred. Some attributes one can set to 3D models include:
 - Auto-Rotate
 - Alternative text(alt)
