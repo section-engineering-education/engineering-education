@@ -270,3 +270,6 @@ Happy coding!
 ### Further reading
 - [Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 - [Jquery keyboard events](https://api.jquery.com/category/events/keyboard-events/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
