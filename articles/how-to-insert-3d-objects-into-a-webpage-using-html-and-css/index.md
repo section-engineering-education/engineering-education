@@ -20,7 +20,7 @@ Before we begin, some requirements of this tutorial include:
 # 3D Objects
 Let us learn briefly about 3D Objects:
 
-## What are 3D objects? 
+### What are 3D objects? 
 If this question is in your mind, we can easily answer it by saying that 3D objects or 3D models are shapes with three dimensions; length, width, and height.
 
 ## How to get 3D Objects
