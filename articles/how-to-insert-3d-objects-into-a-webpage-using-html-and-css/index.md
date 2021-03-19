@@ -270,7 +270,7 @@ Now use CSS to style the page and the div elements:
 ```
 
 The results are as follows:
-![Page structure](/engineering-education/How-to-insert-3D-objects-into-a-webpage-using-HTML-and-CSS/structure-design.png)
+![Page structure](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/structure-design.png)
 
 ## Insert the 3D Object
 Let's now add the 3D model to the webpage. First, if the 3D model files are in a zip format, extract the downloaded model zip into files such as the ".bin" and ".gltf".
