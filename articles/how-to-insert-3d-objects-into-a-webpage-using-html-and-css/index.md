@@ -42,7 +42,7 @@ One can modify existing templates that are on the computer or were previously cr
 #### Online download
 There are many sites with different 3D models. Examples that allow free downloads are [Sketchfab](https://sketchfab.com/) and [Google Poly](https://poly.google.com/) among others.
 
-## 3D Model Formats
+### 3D Model Formats
 These are used to store the appearance of a model, encoding the model animations, encoding the geometry, and storing the physical appearance of the model. They are used in video games, 3D printing, engineering, movies and so much more.
 Some popular formats available include *FBX*, *STL*, *OBJ*, *glTF*, and *DAE* among others.
 In our case, we will use the *glTF model*.
