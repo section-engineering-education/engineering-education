@@ -1,5 +1,21 @@
-Caching is a feature in web browsing that allows recent web pages to be stored temporally in web browsers. This feature is important because it improves the page load time and reduces browsing costs. It is a resourceful technique that can be used by developers to improve web browsing experience.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-browser-caching/
+title: Understanding Browser Caching
+description: In this article, we will explore the basics of browser caching in web browsing and understand how it works. We will go through the main headers used in caching and highlight some of the limitations of this phenomenon.  
+author: margret-munganyinka
+date: 2021-03-19T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-browser-caching/hero.jpg
+    alt:  browser caching example image
+---
+Caching is a feature in web browsing that allows recent web pages to be stored temporally in web browsers. This feature is important because it improves the page load time and reduces browsing costs. It is a resourceful technique that can be used by developers to improve web browsing experience.
+<!--more-->
 This article provides an overview of browser caching and how it works. It also recommends the best practices for optimizing browser caching.
 
 ### What is browser caching?
@@ -36,24 +52,21 @@ The above image assumes that the content is fresh. Fresh content means that it h
 
 ### HTTP response headers commonly used for caching
 The owner of a website has control over the cache policy. This control is exercised using HTTP cache headers. These headers are used to define the maximum time that web resources can be cached before expiring. The following are the HTTP response headers commonly used for caching:
-- **ETag:** This is an abbreviation for the term ‘Entity Tag’. It works as a cache validation token. It is used when the cached files have expired. The web browser uses ETag in its requests to establish whether there is a stale copy existing in the cache. 
-- **Cache-Control:** This header consists of various parameters that control validation, cache behavior, and expiration. Some of the directives of this header include:
+#### ETag
+This is an abbreviation for the term ‘Entity Tag’. It works as a cache validation token. It is used when the cached files have expired. The web browser uses ETag in its requests to establish whether there is a stale copy existing in the cache. 
+
+#### Cache-Control
+This header consists of various parameters that control validation, cache behavior, and expiration. Some of the directives of this header include:
+- **no-cache:** This directive instructs the browser to validate the content in the cache to check whether it corresponds to the content in the web server. If the content is fresh, then the browser can fetch it from the cache. 
+- **public:** This means that the browser or any intermediary party (like CDN or proxies) can cache the web resources.
+- **private:** This means that only the browser can cache the web resources.
+- **no-store:** This directive instructs the browser not to cache. 
+
+#### Expires
+This header defines when the resources stored in the cache will expire. When the expiry date reaches, the browser will consider the content stale. For example, *Expires: Mon, 14 June 2021 10:30:00 GMT*. 
   
-*no-cache*
-This directive instructs the browser to validate the content in the cache to check whether it corresponds to the content in the web server. If the content is fresh, then the browser can fetch it from the cache. 
-
-*public*
-This means that the browser or any intermediary party (like CDN or proxies) can cache the web resources.
-
-*private*
-This means that only the browser can cache the web resources.
-
-*no-store*
-This directive instructs the browser not to cache. 
-
-- **Expires:** This header defines when the resources stored in the cache will expire. When the expiry date reaches, the browser will consider the content stale. For example, *Expires: Mon, 14 June 2021 10:30:00 GMT*. 
-  
-- **Last Modified:** This header provides information regarding when the web content was modified. For example, *Last Modified: Tue, 11 February 2021 10:30:00 GMT*. 
+#### Last Modified
+This header provides information regarding when the web content was modified. The main content of this information includes data and time of modification. For example, *Last Modified: Tue, 11 February 2021 10:30:00 GMT*. 
 
 ### Pitfalls of browser caching
 - Incorrect caching setup may make the browser retrieve outdated content, which may affect the user experience negatively.
@@ -75,4 +88,4 @@ This article has provided a basic understanding of browser caching, which is an 
 -	In browser caching, web resources are stored in a cache and retrieved by the web browser. This happens if the cached content is fresh (has not expired). 
 -	The HTTP headers used for controlling cache behavior include ETag, Cache-Control, Expires, and Last-Modified. 
 -	Some of the pitfalls of browser caching include security risks, maintenance requirements, and the existence of stale content. 
--	The article has provided the best practices for optimizing browser caching. 
+-	We have also learned the best practices for optimizing browser caching. 
