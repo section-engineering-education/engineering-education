@@ -36,7 +36,7 @@ Photogrammetry is another process one may use.
 > **Photogrammetry** can be simply defined as the art of acquiring reliable measurements from 2D images by overlapping them to form a 3D model.
 This method is much simpler and more preferable since one can use 2D images generated with a smartphone and obtain live 3D models. An example is illustrated [here](https://www.youtube.com/watch?v=ZIW4XU6Wm8Q).
 
-### 3. Modifying existing templates:
+#### Modifying existing templates
 One can modify existing templates that are on the computer or were previously created for another project to suit your needs.
 
 ### 4. Online download:
