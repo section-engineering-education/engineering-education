@@ -88,9 +88,8 @@ We are going to create a simple HTML structure. We can simplify the process usin
 ```
 Start the live server by either right-clicking on the "index.html" file in the explorer and selecting "Open with Live server" or on the status bar clicking on "Go live" to start the server. It will automatically open a preview of the webpage in the default browser which will be blank because we haven't added any content yet. I recommend you use chrome since it supports most 3D objects. You can change the default browser in the settings. If it doesn't automatically open the webpage preview in the browser, check the port number in which the server uses at the Visual Studio Code status bar then add access it in the browser by typing in the URL:
 
-~~~~
-http://127.0.0.1:5501/
-~~~~
+<code>http://127.0.0.1:5501/</code>
+
 
 Port numbers vary from one to another. In my case, it is port number 5501. If the server doesn't launch completely, stop any services with a similar address running in the background. If it still has errors please look for additional support online concerning the error it displays.
 
@@ -98,6 +97,8 @@ Port numbers vary from one to another. In my case, it is port number 5501. If th
 In the head section, add a link to import a model-viewer JavaScript code. This enables you to import the component into the webpage.
 
 ```html
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 ```
@@ -106,7 +107,10 @@ Copy your logo picture in the assets folder.
 When done, add a div element of id "container" to hold all our content in the body tags and also another in it for our navigation bar. Let us also add div elements with the following id; "aside" for holding our 3D object, "content" for some explanations on the object, and "icons" for some social media icons. Add a simple logo and some links to the webpage and some of their properties in css as shown below:
 
 ```html
+<!-- Main Container -->
 <div id="container">
+
+    <!-- Navbar container -->
     <div id="navbar">
             <div id="logo">
                 <img src="assets/logo.png" alt="logo">
@@ -121,14 +125,23 @@ When done, add a div element of id "container" to hold all our content in the bo
                 <li><a href="#">Help</a></li>
             </ul>
         </div>
+
+        <!-- An aside -->
+        <!-- This is for holding the 3D object -->
         <div id="aSide">
             
         </div>
+
+        <!-- Content container -->
+        <!-- This is for holding some brief description about the 3D object -->
         <div id="content">
             <h2>3D VR LIVE</h2>
             <p>The modern headsets, boost your pleasure to the MAX!</p>
             <button>Shop</button>
         </div>
+
+        <!-- Social media icons -->
+        <!-- This is for holding some company's social media icons and related links -->
         <div id="icons">
             <div id="iconsLogo">
                 <i class="fab fa-facebook-f"></i>
@@ -143,6 +156,7 @@ When done, add a div element of id "container" to hold all our content in the bo
 Now use CSS to style the page and the div elements:
 
 ```css
+/* The webpage overall styling */
 * {
     padding: 0;
     margin: 0;
@@ -151,6 +165,7 @@ Now use CSS to style the page and the div elements:
     color: grey;
 }
 
+/*  This is for styling the main container that holds everything */
 #container {
     height: 100vh;
     width: 100%;
@@ -158,6 +173,7 @@ Now use CSS to style the page and the div elements:
     background: #f7f7f7;
 }
 
+/* This styles the navbar and its contents */
 #navbar {
     height: 60px;
     width: 100%;
@@ -166,6 +182,7 @@ Now use CSS to style the page and the div elements:
     left: 0;
 }
 
+/* This styles the logo in the navbar */
 #navbar #logo {
     height: 60px;
     width: 60px;
@@ -174,11 +191,13 @@ Now use CSS to style the page and the div elements:
     top: -5px;
 }
 
+/* This styles the logo image to be used in the navbar */
 #navbar #logo img {
     height: 60px;
     width: 60px;
 }
 
+/* This styles the unlisted links in the navbar */
 #navbar ul {
     list-style: none;
     display: flex;
@@ -188,6 +207,7 @@ Now use CSS to style the page and the div elements:
     top: 0;
 }
 
+/* This changes the appearance of the listed links in the navbar */
 #navbar ul li {
     height: 60px;
     width: 80px;
@@ -197,11 +217,13 @@ Now use CSS to style the page and the div elements:
     color: grey;
 }
 
+/* This sets the hover action of the navbar links */
 #navbar ul:hover .active {
     background: none;
     border: none;
 }
 
+/* This styles the descriptions of the 3D object */
 #content {
     height: 500px;
     width: 700px;
@@ -210,16 +232,19 @@ Now use CSS to style the page and the div elements:
     top: calc(50% - 250px);
 }
 
+/* This styles the heading in the 3D description */
 #content h2 {
     font-size: 140px;
     color: grey;
 }
 
+/* This styles the paragraph in the 3D description*/
 #content p {
     font-size: 20px;
     color: rgb(189, 189, 189);
 }
 
+/* This styles the button in the 3D description*/
 #content button {
     width: 35%;
     height: 40px;
@@ -234,10 +259,12 @@ Now use CSS to style the page and the div elements:
     color: white;
 }
 
+/* This adds some hover effects over the button */
 #content button:hover {
     background: navy;
 }
 
+/* This styles the social media icons*/
 #icons {
     height: 500px;
     width: 140px;
@@ -250,6 +277,7 @@ Now use CSS to style the page and the div elements:
     filter: drop-shadow(2px 2px 2px grey);
 }
 
+/* This styles the social media icons logos*/
 #icons #iconsLogo {
     height: 300px;
     width: 50px;
@@ -257,6 +285,7 @@ Now use CSS to style the page and the div elements:
     flex-direction: column;
 }
 
+/* This styles the social media icons logos images*/
 #icons #iconsLogo i {
     height: 50px;
     width: 50px;
@@ -281,6 +310,8 @@ Copy the files into the assets folder in the main directory. Make sure to check 
 In the div element with the "aside" id, let's import the 3D object and some of its attributes. For this case, we are going to use the type, source(src), alternative text (in case of any loading errors), auto-rotate(for a continuous rotation of the object), camera-controls(to allow one to view the object at their preferred angle of view), ar(to support Augmented Reality, AR, devices), and ios-src(to be used on supported iOS 12+ devices). Write the code below to import the 3D model in the webpage:
  
  ```html
+ <!-- 3D objsect -->
+ <!-- This inserts the 3D object inside the aside container -->
 <model-viewer src="assets/HTC_Vive_Headset.gltf" alt="VR Headset" auto-rotate camera-controls ar ios-src="assets/HTC_Vive_Headset.gltf">
 </model-viewer>
  ```
@@ -293,6 +324,7 @@ In the live preview, it will output the following:
 The next step is to modify its appearance using CSS. Let's do this by adding the code below to our CSS file:
 
 ```css
+/* This styles the aside container */
 #aSide {
     height: 600px;
     width: 600px;
@@ -301,6 +333,7 @@ The next step is to modify its appearance using CSS. Let's do this by adding the
     right: 7%;
 }
 
+/* This styles the 3D object inserted in the aside container */
 #aSide model-viewer {
     height: 600px;
     width: 600px;
@@ -314,10 +347,21 @@ The next step is to modify its appearance using CSS. Let's do this by adding the
 **Final results:**
 ![Final results](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/full-design.png)
 
-If you have reached here, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified. 
-Well done! You have successfully inserted a 3D object into your webpage.
-<<<<<<< HEAD
-=======
+You can find the code above in [this](https://github.com/RisoriTofa/Insert-3D-Objects-in-a-webpage-using-HTML-and-CSS-only) repository.
 
-This fixes #1645
->>>>>>> 48b77665a9c3c5632e94aa86b877af57df8f2834
+If you have reached here, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified. 
+
+### A summary of what you have learned
+- What 3D objects are
+- Formats and attributes of 3D objects
+- How to get 3D objects
+- How to insert 3D objects into a webpage using HTML and CSS
+
+### Conclusion
+3D objects are very useful in that they help the client see the products in their full dimension and relative size. They are more interesting to look at and interact with compared to 2D images. 
+
+### References
+You can even learn more about 3D objects and how to create one using JavaScript at [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
+
+
+Well done! You have successfully inserted a 3D object into your webpage.
