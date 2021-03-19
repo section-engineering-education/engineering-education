@@ -2,8 +2,8 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/creating-countdown-in-php-javascript-mysql/
-title: Angular 11 - JWT Authentication Example & Tutorial With PHP
+url: /engineering-education/jwt-auth-angular/
+title: Angular 11 - JWT Authentication Example & Tutorial with PHP
 description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.  
 author: miller-juma
 date: 2021-03-19T00:00:00-12:00
@@ -14,27 +14,28 @@ images:
  - url: /engineering-education/jwt-auth-angular/hero.jpg
    alt: PHP RESTful APIs angular auth example image
 ---
-
-
-A user is usually authenticated by entering a username or email address and password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
-
+A user is usually authenticated by entering a username, email address, and/or password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
+<!--more-->
 Your Angular app will communicate with a backend that generates tokens. The Angular app can then send the token to the backend as an Authorization header to show they're authenticated. The JWT should be checked by the backend, and access should be granted based on its validity.  
 
-This tutorial walks you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.    
+This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.    
  
 ### Implementation
 In this part, I'll show you how to use PHP in conjunction with an Angular 11 client to implement JWT authentication. Even though the principle is clear, the implementation necessitates familiarity with security best practices.  
 
 The example provided here is incomplete, and it lacks several features that a production server would have. I'd therefore not recommend the source code in this tutorial for production purposes.    
 
-I'll assume you're familiar with MySQL, Angular, and PHP and have installed [composer](https://www.composer.org) installed in the development environment.     
+I'll assume you're familiar with MySQL, Angular, and PHP. You should also have [composer](https://www.composer.org) installed in the development environment.     
 
 ### Step 1:  Database preparation
-Let's get started by building a MySQL database if you have all of the prerequisites. We'll use the MySQL client that came with the server. Open a terminal and type the following command to start the client:  
+Let's get started by building a MySQL database if you have all of the prerequisites. We'll use the MySQL client that came with the server. 
+
+Open a terminal and type the following command to start the client:  
 
 ```bash 
     $ mysql -u root -p
 ```
+
 Depending on your MySQL configurations, enter the password when prompted.  
 On the window presented, run the following command to create a database.  
 
@@ -59,15 +60,16 @@ Now, `cd` into the directory we created earlier by running the following command
 ```bash
     cd jwt-server
 ```
+
 >NOTE: Depending on your development environment, this path may differ.
 
 ### Connecting to your database
-
 In your working directory, create a folder `db_configurations` inside the `tokens-api` directory.  
 
 ```bash 
 cd tokens-api && mkdir configurations
-````
+```
+
 Then,
 
 ```bash 
@@ -105,20 +107,25 @@ class DB_Connection
 }
 
 ```
+
 ### Step 2: Install PHP token generator package  
-PHP has a library jwt library that can be used to generate auth tokens to identify clients accessing the backend service.  
+PHP has a library JWT library that can be used to generate auth tokens to identify clients accessing the backend service.  
 To install this PHP library in your system, you'll need a [composer](https://www.composer.org) installed. 
+
 You can verify its installation by running the following command:
 
 ```bash
 composer -v
 ```
+
 Now, proceed and import the library by running the following command:  
 
 ```bash
 $ composer require firebase/php-jwt
 ```
+
 To allow for communication between our PHP backend and angular application, we need to set CORS headers.
+
 Let's proceed and crearte a file `header.php` and add the following CORS scripts: 
 
 ```php
@@ -131,7 +138,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 ```
 
 ### Step 3: User registration API endpoint
-Now that we have the `php-jwt` library in our system, let's proceed and create a simple registration system.  In your current directory, add the following lines of code.  
+Now that we have the `php-jwt` library in our system, let's proceed and create a simple registration system. In your current directory, add the following lines of code.  
 
 ```php
 <?php
@@ -166,9 +173,10 @@ $stmt->execute();
 ?>
 
 ```
-### User sign-in API endpoint
 
-Inside the `tokens-api` directory, make a `signin.php` file and add the  code below to check the client qualifications to access our backend services:    
+### User sign-in API endpoint
+Inside the `tokens-api` directory, make a `signin.php` file and add the code below to check the client qualifications to access our backend services.
+
 To validate the user credentials and return a JSON Web Token to the client, build a `signin.php` file script within the `tokens-api` directory with the following code:    
 
 ```php
@@ -242,24 +250,27 @@ if($numOfRows) > 0){
 ?>
 
 ```
+
 You can describe the token's data structure however you like, but certain reserved JWT statements should be specified properly because they affect the token's validity.  
 
-The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final token before sending it to the client i.e browser. 
+The `JWT::encode()` method converts the PHP array to JSON format, signs the payload, and then encodes the final token before sending it to the client i.e browser.
+
 For registering and logging in users, we now have two RESTful endpoints. Let's test if our endpoints are working by running the following in the 'token-api` folder.    
 
 ```bash
 cd tokens-api && php -S 127.0.0.1:8000 // to start our development server
 ```
-Now that we have a fully functional REST API with a jwt token, let's proceed and create our angular project.  
+
+Now that we have a fully functional REST API with a JWT token, let's proceed and create our angular project.  
 
 ### Setting up angular project to consume PHP auth endpoints
-
->It's worth noting that this tutorial does not teach you how to set up an angular project, for more information, visit [angular](https://angular.io/guide/setup-local).  
+>It's worth noting that this tutorial does not teach you how to set up an angular project, for more information, visit the [angular docs](https://angular.io/guide/setup-local).  
 
 In your new angular project, run the following command to create `authService` service: 
 ```bash
 $ ng generate service auth
 ```
+
 We'll use this service to sign users in and out of our angular application.  Let's add the following codes to our auth service.  
 ```ts
 import { Injectable } from '@angular/core';
@@ -299,6 +310,7 @@ export class AuthService {
     }
 }
 ```
+
 In the auth service above, as the user signs in and out of the system, `RxJS Subjects` and `Observables` are used to store the current user.   
 
 ### Set up login component
@@ -333,7 +345,8 @@ In your new component template, copy and paste the following piece of code:
     </div>
 </div>
 ```
-The form we created above makes use of `Angular's Reactive Forms Module`. user information is sent to our component when a click event is fired.  
+
+The form we created above makes use of `Angular's Reactive Forms Module`. User information is sent to our component when a click event is fired.  
 
 With our login template ready, in your `login.compnent.ts` file, add the following code snippets to get user inputs.  
 It's in this script that the user's value is captured then sent to the API service we created earlier via our auth service. 
@@ -379,13 +392,13 @@ export class LoginComponent implements OnInit {
 ```
 
 ### Store login token in local storage
-Angular ships with HTTP [interceptors](https://angular.io/api/common/http/HttpInterceptor). 
-Any request will therefore be passed a token that will be used in our backend to verify user validity.  
+Angular ships with HTTP [interceptors](https://angular.io/api/common/http/HttpInterceptor). Any request will therefore be passed a token that will be used in our backend to verify user validity.  
 
 Let's go ahead and create an interceptor for our application, `AuthInterceptor` by running the following command:  
 
 ```bash 
 $ ng g interceptor auth
+```
 
 ```ts
 ...
@@ -446,16 +459,19 @@ import { LoginComponent } from './login';
 })
 export class AppModule { }
 ```
+
 Well, let's start our angular application by running the following command:  
 
 ```bash
 ng serve --open //starts on port 4200 by default unless you specify otherwise
 ```
+
 You can now make requests to our PHP endpoint and login while the generated token is stored in your browser's local storage.  
 
 ### Conclusion  
+In this tutorial we have learned how to use JWT authentication in our Angular 11 application with PHP RESTful APIs. We also implemented other authentication strategies such as token authentication in your Angular application.
 
-You've learned how to use JWT authentication in your Angular 11 application with PHP RESTful APIs in this tutorial. Implement other authentication strategies such as token authentication in your Angular application.  
+Happy coding.
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
