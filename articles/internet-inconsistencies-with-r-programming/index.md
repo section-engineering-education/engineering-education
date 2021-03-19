@@ -84,7 +84,7 @@ If not installed already, the list below are libraries included in this tutorial
 
 > Reminder: Options can be benefial within the code to include more specifications. For example, `dependencies = TRUE`.  
 
-Sample codes with possible results are shown below.  
+Sample libraries with possible results are shown below.  
 
 `library(Rwhois)`  
 Partial Output:
