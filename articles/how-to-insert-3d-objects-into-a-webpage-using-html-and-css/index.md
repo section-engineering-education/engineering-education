@@ -11,7 +11,7 @@ At the end of this tutorial, the user will get to learn about:
 
 ### Prerequisites
 Before we begin, some requirements of this tutorial include:
-- A basic knowledge and understanding of HTML and web development.
+- Basic knowledge and understanding of HTML and web development.
 - A basic understanding of CSS.
 - A basic web development IDE or a text editor installed on your machine. In our case, let's use Visual Studio Code.
 - A stable internet connection
