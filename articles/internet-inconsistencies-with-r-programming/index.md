@@ -137,16 +137,16 @@ An IP address can be categorized under multiple registered geological regions of
 
 There are a few major hosting platforms that retain rights to domains while leasing out DNS space to customers. Although a hosting website is one aspect, nameservers (an example, ns1.dns-parking.com) and other DNS attributes are also vital in the creation of a website. Determining geological location of an IP address can resemble a decision tree or a random forest. The probability of finding the correct geological location can be cumbersome when it comes to meshing various factors together. For example, the IP address "45.88.197.212" was associated with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam from separate sources. The reason for this is other categories influenced the overall decision of where this IP could have originated from regardless of VPN.  
   
-Factors can include:  
- - DNS variables
- - Hosting
- - Whois Registrars (few sample registrars)
-  * RIPE: Réseaux IP Européens (translation: "European IP Networks") serves Europe
-  * NIC: A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups
-  * ARIN: American Registry for Internet Numbers serves North America and portions of the Caribbean
-  * IANA: Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world
-  * CIRA: Canadian Internet Registration Authority serves Canada
- - Privacy redactions
+Factors can include:
+- DNS variables
+- Hosting
+- Whois Registrars (few sample registrars)
+ * RIPE: Réseaux IP Européens (translation: "European IP Networks") serves Europe
+ * NIC: A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups
+ * ARIN: American Registry for Internet Numbers serves North America and portions of the Caribbean
+ * IANA: Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world
+ * CIRA: Canadian Internet Registration Authority serves Canada
+- Privacy redactions
 
 
 Predicting which country best matches this IP address can be complex, however, it can be viewed through a preferred IP listings provider of one's own choice. Hostinger International Limited (AS47583) is the ASN hosting website who owns IP addresses between 45.88.197.0 to 45.88.197.255 according to the RIPE registrar. This IP address' ASN hosting website serves Europe. Other registrars such as ARIN, indicates this IP was transferred to RIPE. Now that we know that Hostinger International Limited is the ASN owner of the IP address, the next step is to predict which country within range would be most likely to own the IP address. According to various ASN databases including Spyse and DNSlytics, AS47583 associated with 45.88.197.212 have five associated countries.  
