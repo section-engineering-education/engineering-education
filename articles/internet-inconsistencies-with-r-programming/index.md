@@ -29,7 +29,7 @@ For this tutorial, a Windows laptop with at least 100GB in storage is used becau
 #### Linux Basics  
 Open R-Programming with Linux emulator.  
 
->For those who prefer using Linux without ROOT:  
+>For those who prefer using Linux without `ROOT`:  
 ```Shell
 sudo apt update
 ```  
@@ -82,32 +82,34 @@ If not installed already, the list below are libraries included in this tutorial
 `install.packages(c("rIP", dependencies = TRUE))`  
 `install.packages(c("rattle"), dependencies = TRUE)`  
 
-Reminder: "Options" can be benefial within the code to include more specifications. For example, `dependencies = TRUE`.  
+Reminder: Options can be benefial within the code to include more specifications. For example, `dependencies = TRUE`.  
 
 Shown below are sample codes with possible results.  
 
 `library(Rwhois)`  
 Partial Output:
-```Shell
-key                                                                val
-1        NetRange                            45.80.0.0 - 45.95.255.255
-2            CIDR                                         45.80.0.0/12
-3         NetName                                                 RIPE
-4       NetHandle                                      NET-45-80-0-0-1
-5          Parent                               NET45 (NET-45-0-0-0-0)
-6         NetType         Early Registrations, Transferred to RIPE NCC
-```  
+
+index | key | val
+--- | --- | ---
+1 | NetRange | 45.80.0.0 - 45.95.255.255
+2 | CIDR | 45.80.0.0/12
+3 | NetName | RIPE
+4 | NetHandle | NET-45-80-0-0-1
+5 | Parent | NET45 (NET-45-0-0-0-0)
+6 | NetType | Early Registrations, Transferred to RIPE NCC
+  
 
 Specifying server name according to domain extension (example, ".us") can produce additional results:  
 `("asianausa.us", server = "whois.nic.us")`  
 
 Partial Output:  
-```Shell
-52                 ns1.dns-parking.com
-53                 ns2.dns-parking.com
-54                            unsigned
-55         https://www.icann.org/wicf/
-```
+
+key | val
+--- | ---
+Name server | ns1.dns-parking.com
+Name server | ns2.dns-parking.com
+
+
 `library(iptools)`  
 Type in: `iptools::is_valid("45.88.197.212")`. to determine whether this IP is valid.
 
