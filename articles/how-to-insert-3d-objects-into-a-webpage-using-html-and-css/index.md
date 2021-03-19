@@ -39,7 +39,7 @@ This method is much simpler and more preferable since one can use 2D images gene
 #### Modifying existing templates
 One can modify existing templates that are on the computer or were previously created for another project to suit your needs.
 
-### 4. Online download:
+#### Online download
 There are many sites with different 3D models. Examples that allow free downloads are [Sketchfab](https://sketchfab.com/) and [Google Poly](https://poly.google.com/) among others.
 
 ## 3D Model Formats
