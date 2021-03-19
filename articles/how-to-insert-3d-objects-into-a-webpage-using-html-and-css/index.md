@@ -29,7 +29,7 @@ We can obtain 3D Objects by either creating one from scratch, scanning real-life
 #### Creating 3D objects from scratch
 One may create 3D objects from scratch using 3D model creation software which is downloadable into the computer. One may also design it online at 3D modeling sites.
 
-### 2. Scanning from real-life objects:
+#### Scanning from real-life objects
 You can create one by scanning the item with your scanner of choice.
 Photogrammetry is another process one may use.
 
