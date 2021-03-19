@@ -312,7 +312,7 @@ The next step is to modify its appearance using CSS. Let's do this by adding the
 ```
 
 **Final results:**
-![Final results](/engineering-education/How-to-insert-3D-objects-into-a-webpage-using-HTML-and-CSS/full-design.png)
+![Final results](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/full-design.png)
 
 If you have reached here, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified. 
 Well done! You have successfully inserted a 3D object into your webpage.
