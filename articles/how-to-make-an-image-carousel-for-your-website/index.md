@@ -206,7 +206,7 @@ function showSlides() {
 ### Testing
 One can test whether the code works by navigating to the folder where the project is stored and opening the HTML file using any browser. The code should work just fine.
 ### Conclusion
-Image carousels are important in a website in the sense that they reduce the clutter within a website which may make discourage the user from scrolling further. Within an image Carousell the user can view various images or videos by scrolling left or right hence getting an overview of what's in the website and thus a higher chance for them finding something that interests them. Image carousels are a great way for showing content cards.
+In this article, we have learned how to implement an Image carousel on websites. An image Carousel can view various images or videos by scrolling left or right hence getting an overview of the website. Image carousels are essential in websites because they improve the user interface and experience of a website.  Image carousels are a great way to show content cards.
 
 
 
