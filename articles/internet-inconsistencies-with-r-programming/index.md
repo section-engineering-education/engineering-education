@@ -135,7 +135,7 @@ An IP address can be categorized under multiple registered geological regions of
 
 #### Basic Statistics  
 
-There are a few major hosting platforms that retain rights to domains while leasing out DNS space to customers. Although a hosting website is one aspect, nameservers (an example, ns1.dns-parking.com) and other DNS attributes are also vital in the creation of a website. Determining geological location of an IP address can resemble a decision tree or a random forest. The probability of finding the correct geological location can be cumbersome when it comes to meshing various factors together. For example, the IP address "45.88.197.212" was associated with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam from separate sources. The reason for this is other categories influenced the overall decision of where this IP could have originated from regardless of VPN.  
+There are a few major hosting platforms that retain rights to domains while leasing out DNS space to customers. Although a hosting website is one aspect, nameservers (an example, ns1.dns-parking.com) and other DNS attributes are also vital in the creation of a website. Determining geological location of an IP address can resemble a decision tree or a random forest. The probability of finding the correct geological location can be cumbersome when it comes to meshing various factors together. For example, the IP address "45.88.197.212" was overlapping Lithuania, Germany, Cyprus, Netherlands, and Amsterdam altogether according to separate sources. The reason for this is other categories influenced the overall decision of where this IP could have originated from regardless of VPN.  
   
 Factors can include:
 - DNS variables
@@ -161,7 +161,7 @@ Here is the list of countries:
  - Netherlands (Nl)  
  - Amsterdam (Am)  
 
-By using `rattle`, data modelling can include either a decision tree or random forest. We can see the different possibilities that could lead to an approximate precise prediction. From a decision tree, we can include a confusion matrix to find potential possibilities. Near matches to 45.88.197.212 was found using IPinfo.io, DNSlytics and Spyse, and i.whoswho by testing a domain name within the specified IP. Shown below, is a manually made IP address data frame with data sourced from references listed at the end of this tutorial.  
+By using `rattle`, data modelling can include either a decision tree or random forest. We can see the different possibilities that could lead to an approximate precise prediction. From a decision tree, we can find a visualization of nodes, splits, and buckets. Near matches to 45.88.197.212 was found using IPinfo.io, DNSlytics and Spyse, and i.whoswho by testing a domain name within the specified IP. Shown below, is a manually made IP address data frame with data sourced from references listed at the end of this tutorial.    
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)   
 
 Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided efficiently. As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further. From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `rattle`. We will continue to analyze probable accuracy based on IP addresses correlates well with "45.88.197.212" from the data frame.  
@@ -203,6 +203,7 @@ By using Host.io with any programming language or shell with a `curl` function, 
 #### Closing Comments  
 While there is a wide range of resources to use for a variety of reasons to detect inconsistencies, accuracy and inaccuracies are still seen as interchangeable and should be understood carefully and cautiously.  
 Each registrar and provider can hold significant importance in the contribution to internet identities.  
+Data models selected are basic in essence that route propagation with neural nets would be used for DNS, specifically ASN information to determine further associations.  
 
 Happy coding!  
 
@@ -210,6 +211,7 @@ Happy coding!
 [CRAN R-Programming Library Resources](https://cran.r-project.org/)  
 [DNSlytics](https://dnslytics.com/)  
 [Host.io](https://host.io/)  
+[Route Propagation](https://bgp.he.net/AS47583#_graph4)
 [IPaddress.com](https://ipaddress.com)  
 [IPinfo](https://ipinfo.io)  
 [i.whoswho](http://i.whoswho/)  
