@@ -17,9 +17,10 @@ images:
   - url: /engineering-education/inter-vlan-routing/hero.jpg
     alt: Network Connection example image
 ---
-## Concept of Inter-VLAN routing
-As a network administrator, one of the task is to segment a single switched LAN logically without having to run new cables and changing the existing network. The concept of **`VLANS`** and how the configurations done for them to communicate will help one handle the task at hand with ease.
+
+As a network administrator, one of the tasks is to segment a single switched Local Area Network (LAN) logically without having to run new cables and changing the existing network. The concept of "VLAN" and its configurations will help one handle the task at hand with ease.
 <!--more-->
+In this article, we will learn about what inter-VLAN routing is, various methods for VLAN routing, and also build a network configuration to understand how it works.
 
 # Table of contents
 1. [Prerequisites.](#prerequisites)
@@ -30,7 +31,9 @@ As a network administrator, one of the task is to segment a single switched LAN 
 5. [Conclusion. ](#conclusion)
 
 ### Prerequisites <a name="prerequisites"></a>
-  * [Cisco Packet Tracer,](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html) latest version installed on your computer.
+ As a prerequisite, the reader must have a good understanding of basic networking concepts, and how to work with Cisco packet tracer.
+
+To download Cisco packet tracer visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html) to install the latest version installed on your computer.
 ### Vlan routing terminology<a name="terminology"></a>
  - **Vlan** is a networks segment on a switched LAN which groups together hosts on the network logically regardless of their physical locations on the network.
  - A **Local Area Network (LAN)** is a physical interconnection of network devices in a small geographical area.
@@ -41,22 +44,23 @@ As a network administrator, one of the task is to segment a single switched LAN 
  - **Switch port** refers to a physical opening on the switch or router where ethernet cables can be plugged.
  - **Router Interface** refers to a path that enables the router to connect to the network.
 
-
 ### What is Inter VLAN routing? <a name="intervlanrouting"></a>
 Virtual LANs (`VLANS`) are networks segments on a switched LAN. **Inter vlan routing** this refers to the movement of packets across the network between  hosts in different network segments.``VLANS`` make it easier for one to segment a single network, they improve the performance of the network and are flexible as they base on logical connections. VLANS act as separate subnets on the network. For that reason to move packets from one VLAN to another and enable communications between hosts we have to configure the network to enable inter-vlan routing.
 
 ### Inter-VLAN routing methods. <a name="methods"></a>
-1. **Legacy inter-vlan routing** -In this solution multiple router interfaces were used, each connecting to a switch port in different vlans. The interfaces served as default gateways, and this required additional cabling when the network was to be expanded. Hence becoming more costly for the network cables and infrastructure.
+#### Legacy inter-vlan routing
+In this solution multiple router interfaces were used, each connecting to a switch port in different vlans. The interfaces served as default gateways, and this required additional cabling when the network was to be expanded. Hence becoming more costly for the network cables and infrastructure.
 
-2. **Router-on-a-stick** -In this method, unlike the legacy, one physical interface port is used for routing traffic between the network segments. The network administrator does not require creating all the vlan interface like fa0/1 to fa0/10, all the interfaces from 1 to 10 are created in a single interface. This method is simple to implement and use for smaller to medium-sized organisation networks.
-3. **Layer 3 switch using switched virtual interface(SVIs)** - This is the current method of inter-vlan routing that uses layer 3/multilayer switch and switched virtual interfaces (SVI). SVIs are created for  VLANs that exists on the switch and they perform the same function for the VLANs as that of a router.
-
+#### Router-on-a-stick
+In this method, unlike the legacy, one physical interface port is used for routing traffic between the network segments. The network administrator does not require creating all the vlan interface like fa0/1 to fa0/10, all the interfaces from 1 to 10 are created in a single interface. This method is simple to implement and use for smaller to medium-sized organisation networks.
+#### Layer 3 switch using switched virtual interface(SVIs)
+Currently, this method of inter-VLAN routing that uses layer 3/multilayer switch and Switched Virtual Interfaces (SVI) are being used more commonly. SVIs are created for VLANs that exist on the switch and they perform the same function for the VLANs as that of a router.
 Layer 3 switches are expensive, but suitable for large organisation networks.
 
+### Network configurations for Inter-VLAN communication using Router-On-Stick method
+In this article, we will learn how to configure inter-VLAN routing using the router-on-a-stick method.
 
-### Network Configurations for Inter-VLAN communication using Router-On-Stick-Method <a name="configurations"></a>
-
-Consider a LAN with 4 PCs, 1 switch and a router connected as shown.
+Consider a LAN with 4 PCs, 1 switch, and a router connected as shown in the image:
 
 ![Local Area Network](/engineering-education/inter-vlan-routing/network.jpg)
 
@@ -67,6 +71,8 @@ We want to configure two ``VLANS 10`` and ``20``. ``PC0`` and ``PC1`` on ``VLAN1
 - IP Address of PC3   -192.168.2.20
 - Default gateway for ``VLAN10``- 192.168.1.1
 - Default gateway for ``VLAN20``- 192.168.2.1
+
+
 
 #### Step 1
 For us to subdivide the network into two subnets, we have to create two VLANS on the switch,``VLAN10`` and ``VLAN20``. Give them custom names. That is ``VLAN 10 -student`` and ``VLAN 20 - staff``.
@@ -81,12 +87,11 @@ Switch(config-vlan)#exit
 Switch(config)#vlan 20
 Switch(config-vlan)#name staff   !assigns vlan 20 the name staff
 Switch(config-vlan)#exit
-
 ```
+
 #### Step 2
 Assign switch ports to the VLANS. Ports ``Fa0/1 ``and ``Fa0/2`` acting as Access ports for ``VLAN10`` while ports ``Fa0/3`` and`` Fa0/4``  for ``VLAN20``. The trunk port for carrying the traffic between the two VLANS via the router we shall use ``Fa0/5`` port.
 **Fa** refers to fastEthernet ports used for connecting the network hosts to the switch or router.
-
 
 #### Configurations for access ports fa0/1 and fa0/2
 ```
@@ -160,7 +165,7 @@ Test the inter-vlan connectivity by trying to ping the different PCs . For insta
 
 ![Ping PC2 from PC1](/engineering-education/inter-vlan-routing/ping.jpg)
 
-### Conclusion <a name="conclusion"></a>
+### Conclusion
 Inter-VLAN routing is an essential concept for anyone who  has the passion for networking. It is the convenient and better way for subdividing a large LAN and for enabling communication between the network hosts.
 
 You can find more information about inter vlan routing [here](https://contenthub.netacad.com/srwe/4.1.1).
