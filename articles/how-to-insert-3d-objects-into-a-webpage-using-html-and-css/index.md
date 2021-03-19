@@ -51,7 +51,7 @@ In our case, we will use the *glTF model*.
 
 After visiting the above sites or any other, search for any preferable model and download it, in this case, we are going to search, download and use a Virtual Reality Headset (VR Headset) model which is in glTF format. 
 
-![VR Headsets](/engineering-education/How-to-insert-3D-objects-into-a-webpage-using-HTML-and-CSS/poly-VR-Headset.png)
+![VR Headsets](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/poly-VR-Headset.png)
 
 ## 3D Model Attributes
 These are the characteristics of the viewed 3D Object on the website set by the frontend developers as preferred. Some attributes one can set to 3D models include:
