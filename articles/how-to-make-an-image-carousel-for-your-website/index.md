@@ -1,12 +1,13 @@
+### Introduction
+An Image Carousel is a container(slideshow) of images or text that a user can select by clicking a button that directs him forward or backward in collecting images. It enables the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
 
-An Image Carousel is like a container of images which the user can select through by clicking a buttons which directs him forward or backwards in the collection of images. It enables the website to be more interactive and hence enhance the user experience. The collection of Images can be set to change automatically by use of a timer or manually when the user clicks the displayed buttons.
-<!--moore-->
 ### Goal
-To add an image carousell to our website to enhance user experience and make the page more lively.
+To add an image carousel to our website to enhance user experience and improve the website's user interface.
 
 ### Prerequisites
-To follow along you should have some basic Knowledge in HTML,CSS and quite some good understanding of JavaScript especially the use of functions in Javascript.
-You should also have a code editor installed in your laptop. The recommended text editor is [visual studio code](https://visualstudio.microsoft.com/downloads/). Click the link to download.
+* The reader should have basic knowledge in HTML, CSS, and JavaScript, especially the use of functions in Javascript. 
+* A code editor installed. The recommended text editor is visual studio code. 
+
 
 ### Procedure
 #### Step -1 Creating the project
