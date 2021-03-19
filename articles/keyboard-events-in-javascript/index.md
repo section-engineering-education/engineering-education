@@ -15,7 +15,7 @@ images:
     alt: Introduction to keyboard events in JavaScript example image
 ---
 Whenever a user presses any key on the Keyboard, different events are fired. There are three keyboard events, namely `keydown`, `keypress`, and `keyup`. Keyboard events belong to the `KeyboardEvent` object. This tutorial will discuss how to implement JavaScript keyboard events.
-
+<!--more-->
 One of the most common uses of keyboard events today is computer gaming. Most browser-based games require some form of keyboard input. There are different responses from game objects based on the keyboard event. This tutorial will also demonstrate how keyboard events are used in gaming.
 
 ### Table of contents
