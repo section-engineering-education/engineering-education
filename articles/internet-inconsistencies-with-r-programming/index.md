@@ -54,22 +54,22 @@ Open a new Shell window and enter in the following:
 kex
 ```
 
-Another window should appear if successfully installed:  
+A window should appear similar to the image below if successfully installed.  
 ![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)    
 
 
 #### R-Programming  
 Enter in the following code to install a Linux version of the R-Programming application.  
 
-![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)   
-
 ```Shell
 sudo apt-get install r-base r-base-dev
 ```  
 
-The following screen may appear:  
 
+The following screens may appear:  
 ![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
+
+![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)   
 
 Alternatively, using an R-programming application can be equally as effective. The image below is RStudio.  
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
