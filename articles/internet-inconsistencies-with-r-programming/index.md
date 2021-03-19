@@ -163,7 +163,7 @@ By using `rattle`, data modelling can include either a decision tree or random f
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
 Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided efficiently. As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further. From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `rattle`. We will continue to analyze probable accuracy based on IP addresses correlates well with "45.88.197.212" from the data frame.  
-![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpg)  
+![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 
 Switching over to another statistical data model, the random forest data model. We can now evaluate variable importance.  
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
