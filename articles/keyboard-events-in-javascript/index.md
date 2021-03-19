@@ -46,7 +46,7 @@ document.addEventListener('keydown', (event) => {
   var name = event.key;
   var code = event.code;
   // Alert the key name and key code on keydown
-    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+  alert(`Key pressed ${name} \r\n Key code value: ${code}`);
 }, false);
 ```
 
@@ -58,7 +58,7 @@ document.addEventListener('keypress', (event) => {
   var name = event.key;
   var code = event.code;
   // Alert the key name and key code on keydown
-    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+  alert(`Key pressed ${name} \r\n Key code value: ${code}`);
 }, false);
 ```
 
@@ -70,7 +70,7 @@ document.addEventListener('keyup', (event) => {
   var name = event.key;
   var code = event.code;
   // Alert the key name and key code on keydown
-    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+  alert(`Key pressed ${name} \r\n Key code value: ${code}`);
 }, false);
 ```
 
@@ -205,7 +205,7 @@ These functions gives the object's updated position, when given the distance the
 ```JavaScript
 // Update y-axis position.
 function updateYPosition(distance) {
-  position.y -= distance;
+  position.y = position.y - distance;
 // Update y-axis position at the edge.
   if (position.y < 0) {
     position.y = 499;
@@ -215,7 +215,7 @@ function updateYPosition(distance) {
 }
 // Update x-axis position.
 function updateXPosition(distance) {
-  position.x += distance;
+  position.x = position.x + distance;
   // Update x-axis position at the edge.
   if (position.x < 0) {
     position.x = 499;
