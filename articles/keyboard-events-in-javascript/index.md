@@ -1,5 +1,19 @@
 ### Introduction to keyboard events in JavaScript
-This tutorial will discuss how to implement JavaScript keyboard events. Whenever a user presses any key on the Keyboard, differents are fired.  There are three keyboard events, namely `keydown`, `keypress`, and `keyup`. Keyboard Events belongs to the `KeyboardEvent` Object. One of the most common uses of keyboard events today is computer gaming. Most browser-based games require some form of keyboard input. There are different responses from game objects based on the keyboard event. This tutorial will also demonstrate how keyboard events are used in gaming.
+This tutorial will discuss how to implement JavaScript keyboard events. Whenever a user presses any key on the Keyboard, different events are fired. There are three keyboard events, namely `keydown`, `keypress`, and `keyup`. Keyboard events belong to the `KeyboardEvent` Object.
+
+One of the most common uses of keyboard events today is computer gaming. Most browser-based games require some form of keyboard input. There are different responses from game objects based on the keyboard event. This tutorial will also demonstrate how keyboard events are used in gaming.
+
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [JavaScript keyboard events](#javascript-keyboard-events)
+- [KeyboardEvent sequence](#keyboardevent-sequence)
+- [Handling keyboard events in JavaScript](#handling-keyboard-events-in-javascript)
+- [Use of keyboard events in gaming demo](#use-of-keyboard-events-in-gaming-demo)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
+
+### Prerequisites
+This article is suitable for beginner to expert web developers. However, prior knowledge of [HTML](https://www.w3schools.com/html/) and [JavaScript](https://www.w3schools.com/js/) is required.
 
 ### JavaScript keyboard events
 There are three different keyboard events in JavaScript:
@@ -39,11 +53,14 @@ document.addEventListener('keyup', (event) => {
     alert(`Key pressed ${name} \r\n Key code value: ${code}`);
 }, false);
 ```
+
+In the code snippets above, we are adding the `addEventListener()` method to the document. This attaches the event handler to the window to listen for the keyboard events.
+
 ### KeyboardEvent sequence
 KeyboardEvent events are fired in the following order:
 1. The first event is the `keydown` event. If a key that produces a character key is held further, the event is repeated.
 2. If the `keypress` event is supported, it is fired next and repeated while the key is pressed down.
-3. The last event is the `keyup` event`. It is fired when the key is released.
+3. The last event is the `keyup` event. It is fired when the key is released.
 
 ### Handling keyboard events in JavaScript
 The `Event` object is the parent of all event objects. Some of the commonly used event objects are `TouchEvent`, `KeyboardEvent`, `InputEvent`, `ClipboardEvent`, `WheelEvent`, and `MouseEvent`. This tutorial will focus on `KeyboardEvent`.
@@ -108,13 +125,13 @@ document.addEventListener('keyup', (event) => {
 ```
 
 The screenshots below show the code output when different keys are pressed.
-- Control key released output
+- Control key (`Ctrl`) released output
   ![JavaScript keyboard events output 2](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
 
-- Key r pressed output
+- Key "r" (`R`) pressed output
 ![JavaScript keyboard events output 1](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
 
-- Combination of the control key and key d output
+- Combination of the control key and key "d" (`Ctrl` + `D`) output
   ![JavaScript keyboard events output 3](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
 
 ### Use of keyboard events in gaming demo
@@ -130,6 +147,8 @@ Draw a rectangle using HTML SVG code below.
   <script>refreshPosition();</script>
 ```
 
+The HTML code above creates an SVG with a rectangular shape.
+
 #### CSS code
 ```css
   /* Change svg background color. */
@@ -137,6 +156,7 @@ Draw a rectangle using HTML SVG code below.
     background-color: #00FF00;
   }
 ```
+The CSS code above styles the background color of the SVG.
 
 #### JavaScript code
 The code below declares some of the variables that we will be using.
@@ -178,6 +198,8 @@ function updateXPosition(distance) {
 }
 ```
 
+The two functions above updates the object positions based on the distance moved. The function `updateYPosition()` computes the new position of the object by subtracting the distance moved by the object from the Y-axis position. The function `updateXPosition()` computes the new position of the object by adding the distance moved by the object from the X-axis position.
+
 The `refreshPosition()` function draws the object to its new position.
 ```JavaScript
 function refreshPosition() {
@@ -213,6 +235,8 @@ window.addEventListener("keydown", function(event) {
 }, true);
 ```
 
+The JavaScript code above listens for the key events and calls either `updateXPosition()` or `updateYPosition()` function.
+
 The complete source code for the above demo is available on [Github](https://github.com/Tsanguu/Javascript-Keyboard-Events).
 
 **Output**
@@ -220,3 +244,7 @@ The complete source code for the above demo is available on [Github](https://git
 
 ### Conclusion
 JavaScript keyboard events are used in several ways. This article has demonstrated how we can use JavaScript keyboard events in gaming. Happy coding.
+
+### Further reading
+- [Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [Jquery keyboard events](https://api.jquery.com/category/events/keyboard-events/)
