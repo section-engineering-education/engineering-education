@@ -359,9 +359,11 @@ If you have reached here, this means that your 3D model is well inserted in the 
 
 ### Conclusion
 3D objects are very useful in that they help the client see the products in their full dimension and relative size. They are more interesting to look at and interact with compared to 2D images. 
+You can even learn more about 3D objects and how to create one using JavaScript at [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
 
 ### References
-You can even learn more about 3D objects and how to create one using JavaScript at [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
+- School of motion [Photogrammetry video](https://www.youtube.com/watch?v=ZIW4XU6Wm8Q).
+- [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
 
 
 Well done! You have successfully inserted a 3D object into your webpage.
