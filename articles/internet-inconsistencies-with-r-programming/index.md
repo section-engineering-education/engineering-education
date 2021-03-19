@@ -201,9 +201,7 @@ The results are shown below.
 By using Host.io with any programming language or shell with a `curl` function, a list of possible domains on an IP address can be revealed. If the listed "businesses" were publicly announced as acquired or merged, this might seem legitimate. However, that would be false. Some company domains pointing to "45.88.197.212" included and not limited to Target, Sobeys, Massive Insights, 'Asianausa', Grand River Hospital, and others listed within this reverse lookup are not interrelated. Also, the CIRA who manages registered Canadian company websites should have been included. In turn, the association managing American websites should have been included for American companies. A foreign RIPE entity should not have full ownership of the IP address holding varying company webpages from North American organizations.   
 
 #### Closing Comments  
-While there is a wide range of resources to use for a variety of reasons to detect inconsistencies, accuracy and inaccuracies are still seen as interchangeable and should be understood carefully and cautiously.  
-Each registrar and provider can hold significant importance in the contribution to internet identities.  
-Data models selected are basic in essence that route propagation with neural nets would be used for DNS, specifically ASN information to determine further associations.  
+While there is a wide range of resources to use for a variety of reasons to detect inconsistencies, accuracy and inaccuracies are still seen as interchangeable and should be understood carefully and cautiously. Each registrar and provider can hold significant importance in the contribution to internet identities. Data models selected builds on foundational links, however, route propagation with neural nets would be used for DNS, specifically ASN information to determine further associations.  
 
 Happy coding!  
 
