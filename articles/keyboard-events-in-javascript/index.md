@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/keyboard-events-in-javascript/
-title: Introduction to keyboard events in JavaScript
-description: In this article we will learn about what keyboard events are, and explore different keyboard events. We will also build a simple game which uses keyboard events.
+title: Introduction to Keyboard Events in JavaScript
+description: In this article we will learn about what keyboard events are, and explore different keyboard events. We will also build a simple game that uses keyboard events.
 author: benson-kariuki
 date: 2021-03-19T00:00:00-11:00
 topics: []
@@ -122,7 +122,7 @@ We will use the JavaScript scripting language to get each key's keycode value. C
 </script>
 ```
 
-The complete source code for the above demo is available on [Github](https://github.com/Tsanguu/Javascript-Keyboard-Events).
+The complete source code for the above demo is available on [GitHub here](https://github.com/Tsanguu/Javascript-Keyboard-Events).
 
 The `Control` key is used in combination with other keys. Therefore, we need to note that, when the `Control` key is combined with different keys, we perform different `KeyBoard` events.
 
@@ -148,20 +148,26 @@ document.addEventListener('keyup', (event) => {
 ```
 
 The screenshots below shows the codes output, when different keys are pressed:
+
 - Control key (`Ctrl`) released output
+
 ![JavaScript keyboard events output 2](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
 
 - Key "r" (`R`) pressed output
+
 ![JavaScript keyboard events output 1](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
 
 - Combination of the control key and key "d" (`Ctrl` + `D`) output
+
 ![JavaScript keyboard events output 3](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
 
 ### Use of keyboard events in gaming demo
-Keyboard Events are used in gaming, whereby a player can control game objects using some predefined keys. We will create a game demo where a player controls a game object using the arrow keys.
+Keyboard events are used in gaming, whereby a player can control game objects using some predefined keys. We will create a game demo where a player controls a game object using the arrow keys.
 
 #### HTML code
-The HTML code creates a SVG with a rectangular shape. Draw a rectangle using HTML SVG code below:
+The HTML code creates a SVG with a rectangular shape. 
+
+Draw a rectangle using HTML SVG code below:
 
 ```html
   <p>Use the arrow keys to control the square object.</p>
@@ -271,13 +277,14 @@ The JavaScript code above listens for the key events and calls either `updateXPo
 The complete source code for the above demo is available on [Github](https://github.com/Tsanguu/Javascript-Keyboard-Events).
 
 **Output**
+
 ![JavaScript keyboard events animation](/engineering-education/keyboard-events-in-javascript/js-keyboard-events-animation.gif)
 
 ### Conclusion
 JavaScript keyboard events are used in several ways. This article has demonstrated how we can use JavaScript keyboard events in gaming.
 
 To summarize:
-- We learned about what are the different keyboard events.
+- We learned about different keyboard events, and what they are.
 - We implemented keyboard events to create a simple game.
 
 Happy coding!
