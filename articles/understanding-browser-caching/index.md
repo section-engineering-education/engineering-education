@@ -66,7 +66,7 @@ This header consists of various parameters that control validation, cache behavi
 This header defines when the resources stored in the cache will expire. When the expiry date reaches, the browser will consider the content stale. For example, *Expires: Mon, 14 June 2021 10:30:00 GMT*. 
   
 #### Last Modified
-This header provides information regarding when the web content was modified. The main content of this information includes data and time of modification. For example, *Last Modified: Tue, 11 February 2021 10:30:00 GMT*. 
+This header provides information regarding when the web content was modified. The main content of this information includes date and time of modification. For example, *Last Modified: Tue, 11 February 2021 10:30:00 GMT*. 
 
 ### Pitfalls of browser caching
 - Incorrect caching setup may make the browser retrieve outdated content, which may affect the user experience negatively.
