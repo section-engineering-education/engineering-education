@@ -6,7 +6,7 @@ url: /engineering-education/creating-countdown-in-php-javascript-mysql/
 title: Angular 11 - JWT Authentication Example & Tutorial With PHP
 description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.  
 author: miller-juma
-date: 2021-03-17T00:00:00-12:00
+date: 2021-03-19T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
