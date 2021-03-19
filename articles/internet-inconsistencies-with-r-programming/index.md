@@ -1,11 +1,10 @@
 ## Internet Inconsistencies with R-Programming  
 An Internet Protocol (IP) address is one of several Domain Name System (DNS) attributes. Typically, IP sequences can be displayed in two formats: IPv4 and IPv6. There are directories containing further information about an IP such as approximate geological location, longitudinal and latitudinal coordinates, Internet Service Provider (ISP), Media Access Control (MAC), Virtual Private Network (VPN) and Autonomous System Numbers (ASN). Further information can be obtained from various resources receiving continuous disclosures. If not redacted, these pieces of information can merge into one collective research platform. The sole purpose is to detect the likelihood of inconsistencies.  
 
-In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. The tutorial can be used on any compatible Windows, Ubuntu, Macintosh, and Google computer operating system. For this tutorial, a Windows laptop with a featured Linux emulator were both chosen based on convenience. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" is the IP address and various domains pointing to the defined IP are used.
+In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. Compatible Windows, Ubuntu, Macintosh, and Google computer operating systems are all options. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" is the IP address and various domains pointing to the defined IP are used.
 #### Table of Contents
 - Prerequisites
 - Goals
-- Introduction to Applications and Devices
 - Linux Basics
 - R-Programming
 - Basic Statistics
@@ -23,17 +22,13 @@ In this tutorial, R-Programming is used to identify various IP addresses mostly 
 One goal is to acknowledge internet gaps and discrepancies that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
 > It is also important for readers to understand terms and content within scope.  
 
-#### Introduction to Applications and Devices
-For this tutorial, a Windows laptop with at least 100GB in storage is used because this featured Windows Subsystem for Linux emulator will take up a considerable amounts of memory capacity.  
-
 #### Linux Basics  
-Open R-Programming with Linux emulator.  
+Open any Linux Shell.  
 
 >For those who prefer using Linux without `ROOT`:  
 ```Shell
 sudo apt update
 ```  
-
 >As a reminder, users with permission can be in `ROOT` mode by entering the following line:
 ```Shell
 sudo -i
