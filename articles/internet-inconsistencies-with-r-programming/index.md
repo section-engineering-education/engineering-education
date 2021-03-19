@@ -140,12 +140,15 @@ There are a few major hosting platforms that retain rights to domains while leas
 Factors can include:
 - DNS variables
 - Hosting
-- Whois Registrars (few sample registrars)
- * RIPE: Réseaux IP Européens (translation: "European IP Networks") serves Europe
- * NIC: A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups
- * ARIN: American Registry for Internet Numbers serves North America and portions of the Caribbean
- * IANA: Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world
- * CIRA: Canadian Internet Registration Authority serves Canada
+- Whois Registrars (few sample registrars)  
+
+ Directory Name | Information 
+ --- | ---
+ RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe 
+ NIC | A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups 
+ ARIN | American Registry for Internet Numbers serves North America and portions of the Caribbean 
+ IANA |Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world 
+ CIRA | Canadian Internet Registration Authority serves Canada 
 - Privacy redactions
 
 
