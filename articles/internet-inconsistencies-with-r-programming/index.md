@@ -142,11 +142,11 @@ Factors can include:
 
  Directory Name | Information
  --- | ---
- RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe
- NIC | A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups
- ARIN | American Registry for Internet Numbers serves North America and portions of the Caribbean
- IANA |Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world
- CIRA | Canadian Internet Registration Authority serves Canada  
+ RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe.
+ NIC | A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups.
+ ARIN | American Registry for Internet Numbers serves North America and portions of the Caribbean.
+ IANA |Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world.
+ CIRA | Canadian Internet Registration Authority serves Canada.  
 - Privacy redactions
 
 
