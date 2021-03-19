@@ -6,7 +6,7 @@ url: /engineering-education/keyboard-events-in-javascript/
 title: Introduction to keyboard events in JavaScript
 description: In this article we will learn about what keyboard events are, and explore different keyboard events. We will also build a simple game which uses keyboard events.
 author: benson-kariuki
-date: 2021-03-19T00:00:00-12:00
+date: 2021-03-19T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
