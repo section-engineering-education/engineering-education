@@ -3,7 +3,7 @@
 
 ## Introduction
 ---
-This tutorial is for java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented and the different features it offers to ease the development process. [Hibernate was started in 2001](https://en.wikipedia.org/wiki/Hibernate_(framework)#:~:text=Hibernate%20was%20started%20in%202001,and%20supplementing%20certain%20missing%20features.) by Gavin King with colleagues from Cirrus Technologies as an alternative to using EJB2-style entity beans. The original goal was to offer better persistence capabilities than those offered by EJB2. [173  companies reportedly use Hibernate](https://stackshare.io/hibernate) in their tech stacks including platform, Trendyol Group, and WealthSiple. In this tutorial, the reader will learn how to create a one-to-one relationship application where a customer can only have one subscription.
+This tutorial is for java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented and the different features it offers to ease the development process. [Hibernate was started in 2001](https://en.wikipedia.org/wiki/Hibernate_(framework)#:~:text=Hibernate%20was%20started%20in%202001,and%20supplementing%20certain%20missing%20features.) by Gavin King with colleagues from Cirrus Technologies as an alternative to using EJB2-style entity beans. The original goal was to offer better persistence capabilities than those offered by EJB2. [173  companies reportedly use Hibernate](https://stackshare.io/hibernate) in their tech stacks including Platform, Trendyol Group, and WealthSiple. In this tutorial, the reader will learn how to create a one-to-one relationship application where a customer can only have one subscription.
 
 ## Table of contents
 ---
@@ -14,7 +14,7 @@ This tutorial is for java developers who have little or no knowledge of working 
 
 ## Prerequisites
 ---
-Basic java knowledge working with [object oriented programming](https://www.w3schools.com/java/java_oop.asp#:~:text=Java%20%2D%20What%20is%20OOP%3F,contain%20both%20data%20and%20methods.&text=OOP%20provides%20a%20clear%20structure%20for%20the%20programs), how to implement [composition](https://www.geeksforgeeks.org/composition-in-java/#:~:text=The%20composition%20is%20a%20design,that%20refers%20to%20other%20objects.) between entities, [SQL](https://www.w3schools.com/sql/sql_intro.asp) commands and [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/mysql-installer-setup.html) shell/bash which will be used in this tutorial. Intellij will be used but feel free to use any environment preferred.
+Basic java knowledge working with [object oriented programming](https://www.w3schools.com/java/java_oop.asp#:~:text=Java%20%2D%20What%20is%20OOP%3F,contain%20both%20data%20and%20methods.&text=OOP%20provides%20a%20clear%20structure%20for%20the%20programs), how to implement [composition](https://www.geeksforgeeks.org/composition-in-java/#:~:text=The%20composition%20is%20a%20design,that%20refers%20to%20other%20objects.) between entities, [SQL](https://www.w3schools.com/sql/sql_intro.asp) commands, [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/mysql-installer-setup.html) shell/bash, and Intellij but feel free to use any environment preferred.
 
 ## Step 1: Setting up the development environment
 ---
@@ -121,16 +121,16 @@ In IntelliJ create a new file under resources named hibernate.cfg.xml or any nam
 
 </hibernate-configuration>
 ```
-The first section contains the connection details for the database including database URL, username, and password.  
-The connection pool minimizes the number of connections opened between the application and the database.
-Dialect specifies the type of database used in hibernate so that hibernate generates the appropriate type of SQL statements.  
-show_sql will write all SQL statements to the console.  
-current_session_context_class sets the class that implements the current session context.  
-hibernate.hbm2dl.auto of type update will automatically create the tables in the database if the tables don't exist during the first execution then it will update records after entities are created maintaining the data.
+- The first section contains the connection details for the database including database URL, username, and password.  
+- The connection pool minimizes the number of connections opened between the application and the database.
+- Dialect specifies the type of database used in hibernate so that hibernate generates the appropriate type of SQL statements.  
+- show_sql will write all SQL statements to the console.  
+- current_session_context_class sets the class that implements the current session context.  
+- hibernate.hbm2dl.auto of type update will automatically create the tables in the database if the tables don't exist during the first execution then it will update records after entities are created maintaining the data.
 
 ## Step 3: Creating the entities
 ---
-Create a class named Instructor with the following details
+Create a class named customer with the following details
 - id
 - firstName
 - lastName
@@ -220,15 +220,15 @@ public class Customer {
     }
 }
 ```
-@Entity - Marks the class as a database table to be created by Hibernate.  
-@Table(name="customer") - Tells hibernate that the table name will be called customer.
-@Id - primary key of the current entity
-@GeneratedValue - auto-incrementing strategy for the primary key.
-@Column - denotes the name of the fields to be created in the database by Hibernate.  
-@OneToOne(cascade = CascadeType.ALL) - This shows that one customer has one subscription and the cascade type of all tells hibernate that the CRUD operation done to the customer should also be cascaded to the subscription. for example, if a customer is deleted their subscription should also be deleted.  
- @JoinColumn(name = "sub_id") - Tells hibernate to look for column sub_id in the customer table and use the information to find the appropriate subscription for the customer.
+- @Entity - Marks the class as a database table to be created by Hibernate.  
+- @Table(name="customer") - Tells hibernate that the table name will be called customer.
+- @Id - primary key of the current entity
+- @GeneratedValue - an auto-incrementing strategy for the primary key.
+- @Column - denotes the name of the fields to be created in the database by Hibernate.  
+- @OneToOne(cascade = CascadeType.ALL) - This shows that one customer has one subscription and the cascade type of all tells hibernate that the CRUD operation done to the customer should also be cascaded to the subscription. For example, if a customer is deleted their subscription should also be deleted.  
+- @JoinColumn(name = "sub_id") - Tells hibernate to look for column sub_id in the customer table and use the information to find the appropriate subscription for the customer.
 
- After creating customer class create a subscription class with the following details.
+ After creating the customer class create a subscription class with the following details.
  - id
  - name
  - price
@@ -390,7 +390,14 @@ The new customer entry will be returned by the query and note the sub_id is null
 ```java
 public class CreateCustomerSubscription {
     public static void main(String[] args) {
-       .......
+       //create session factory
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Subscription.class)
+                .buildSessionFactory();
+        //create session
+        Session session = factory.getCurrentSession();
         try {
             int theId =1;
 
@@ -428,7 +435,14 @@ A new record will be inserted in the subscription table and the customer sub_id 
 ```java
 public class DeleteSubscription {
     public static void main(String[] args) {
-      ........
+        //create session factory
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Subscription.class)
+                .buildSessionFactory();
+        //create session
+        Session session = factory.getCurrentSession();
         try {
 
             int theId =1;
@@ -465,7 +479,14 @@ The subscription table will return an empty set while the customer table column 
 ```java
 public class UpdateCustomer {
     public static void main(String[] args) {
-    ......
+        //create session factory
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Subscription.class)
+                .buildSessionFactory();
+        //create session
+        Session session = factory.getCurrentSession();
         try {
 
             //start a transaction
@@ -501,7 +522,7 @@ public class UpdateCustomer {
 
 ### Conclusion
 ---
-Strongly believed that by covering and implementing these operations the reader will be more confident to approach a one-to-one Hibernate task and deliver as required. In this stage, the reader will learn how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.         
+At this point, by covering and implementing these operations the reader will be more confident to approach a one-to-one Hibernate task and deliver as required. In this stage, the reader will learn how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.         
 
 
 
