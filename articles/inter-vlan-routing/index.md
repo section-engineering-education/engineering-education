@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/inter-vlan-routing/
-title: Inter-VLAN routing
+title: Understanding Inter-VLAN routing
 description: The objective of this article is to help one understand inter-VLAN routing and how to configure it using a packet tracer.
 author: atonya-dennis
 date: 2021-03-20T00:00:00-23:30
