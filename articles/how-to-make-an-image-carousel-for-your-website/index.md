@@ -1,19 +1,21 @@
+### Introduction
+An Image Carousel is a container(slideshow) of images or text that a user can select by clicking a button that directs him forward or backward in collecting images. It enables the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
 
-An Image Carousel is like a container of images which the user can select through by clicking a buttons which directs him forward or backwards in the collection of images. It enables the website to be more interactive and hence enhance the user experience. The collection of Images can be set to change automatically by use of a timer or manually when the user clicks the displayed buttons.
-<!--moore-->
 ### Goal
-To add an image carousell to our website to enhance user experience and make the page more lively.
+To add an image carousel to our website to enhance user experience and improve the website's user interface.
 
 ### Prerequisites
-To follow along you should have some basic Knowledge in HTML,CSS and quite some good understanding of JavaScript especially the use of functions in Javascript.
-You should also have a code editor installed in your laptop. The recommended text editor is [visual studio code](https://visualstudio.microsoft.com/downloads/). Click the link to download.
+* The reader should have basic knowledge in HTML, CSS, and JavaScript, especially the use of functions in Javascript. 
+* A code editor installed. The recommended text editor is [Visual Studio code](https://visualstudio.microsoft.com/downloads/). 
+
 
 ### Procedure
-#### Step -1 Creating the project
-Open Visual Studio code and create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
+### Step 1 - Creating a new project.
+Open Visual Studio Code and create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
 
-#### Step -2 Write the HTML code
-Dive into the HTML file and write the code as illustrated in the figure text below. The html is like the skeleton of our code so it will lay out the frame of our work onto which we shall continue modifying by using other languages. So herein we define containers that will have our images,we employ the use of div tags.We also define our buttons which will enable the user to move through the images collection. Some small circles are also defined which can take the user to any image of the collection irregardles of order. The code has illustrations just for you to follow through.
+### Step 2 - Write the HTML code
+Html is like our code's skeleton, so it will lay out the frame of our work onto which we shall continue modifying by using other languages. In this step, we will define containers with our images using the `<div>` tags. We also define our buttons which will enable the user to move through the carousel. The small circles at the bottom of the carousel are also defined. The code has comments just for one to follow through. Dive into the HTML file and write the code as illustrated below.
+ 
 ```HTML
  <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -49,11 +51,10 @@ Dive into the HTML file and write the code as illustrated in the figure text bel
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div> 
-
 ```
-#### Step -3 Write the CSS code
-In the CSS file,we start styling our HTML. We style the containers for the images, the buttons and the small circles(we'll call them navigation circles). We also position them in desired places using the various css properties.
-The code has illustrations just so you follow through on what's happening.
+### Step -2 Write the HTML code
+In the CSS file, we will style our HTML. We style the containers for the images, the buttons, and the small circles(we will call them navigation circles). We also position them in desired places using the various CSS properties. The code has comments just for one to follow through. 
+
 ```CSS
 * {box-sizing:border-box}
 
@@ -150,9 +151,9 @@ The code has illustrations just so you follow through on what's happening.
   to {opacity: 1}
 }
 ```
-#### Step -4 Write the Javascript code
-In the javascript file,this is where the main action takes place. Herein,we define the functions we had linked to our buttons in the HTML file. It is also in this same Javascript file that we can include a timer so that our image carousel displays images automatically like a slideshow.
-Enter into the Javascript file and write the following code. The code has comments just so you follow through what's happening.
+### Step 4 - Write the Javascript code
+In this step, we define the functions we had linked to our buttons in the HTML file. Also, we will include a timer so that our image carousel displays images automatically like a slideshow. Add the following lines of code in the Javascript file. The code has comments just for one to follow through. 
+
 ```js
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -183,12 +184,9 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 ```
-**N/B**
+**Remember to link the .css file and the .js file to the HTML file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.**
 
-Remember to link the .css file and the .js file to your HTMl file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or  click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.
-
-### Automatic slide-show
-In order to make the images in the carousel change automatically without the user input,we need to modify our Javascript code. Use the following code. In this code,we include a timer of 2 seconds.
+To make the carousel change images automatically without the user input, we need to modify our Javascript code. In this code, we will include a timer of 2 seconds.
 ```js
 var slideIndex = 0;
 showSlides();
@@ -204,16 +202,11 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 } 
-
 ```
 ### Testing
-You  can test whether your code works. Navigate to the folder where your project is stored and open the HTML file using any browser of your choice. The code should  work just fine. Check out a sample of an image carousel illustrated below from Usain Bolt's website.
-
- ![demo](/engineering-education/articles/how-to-make-an-image-carousel-for-your-website/example.gif)
- 
- The tutorial's code can also be found on my [Github](https://github.com/KanizoRGB/Imagecarousell-for-a-website/tree/main).
+One can test whether the code works by navigating to the folder where the project is stored and opening the HTML file using any browser. The code should work just fine.
 ### Conclusion
-Image carousels are important in a website in the sense that they reduce the clutter within a website which may make discourage the user from scrolling further. Within an image Carousell the user can view various images or videos by scrolling left or right hence getting an overview of what's in the website and thus a higher chance for them finding something that interests them. Image carousels are a great way for showing content cards and thus marketing.
+In this article, we have learned how to implement an Image carousel on websites. An image Carousel can view various images or videos by scrolling left or right hence getting an overview of the website. Image carousels are essential in websites because they improve the user interface and experience of a website.  Image carousels are a great way to show content cards.
 
 
 
