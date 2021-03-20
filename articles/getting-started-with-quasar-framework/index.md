@@ -16,19 +16,19 @@ images:
 
 ### Introduction
 
-Quasar Framework is a Vuejs based framework used to develop cross-platform applications using one code base saving development costs. It offers state of art user Interface, support builds for single page applications, progressive web applications, server side rendering, mobile apps (Ios and android) using cordova or capacitor, multi-platform desktop apps using electron and browser extensions. The overhead of using quasar is minimal as it implements the best practices in web development out-of-the-box. Taking into account performance and responsiveness in mind. It also has components for almost every web development need.
+Quasar Framework is a Vuejs based framework used to develop cross-platform applications using one codebase saving development costs. It offers state of art user Interface, support builds for single-page applications, progressive web applications, server-side rendering, mobile apps (Ios and android) using cordova or capacitor, multi-platform desktop apps using electron and browser extensions. The overhead of using quasar is minimal as it implements the best practices in web development out-of-the-box. Taking into account performance and responsiveness in mind. It also has components for almost every web development need.
 
 ### Prerequisites
 
 1. Knowledge of Vue js
 2. Quasar CLI
-3. Node.js 10.x or newer exluding 13 and 15
+3. Node.js 10.x or newer excluding 13 and 15
 4. Npm 5.10 or newer / yarn 1.2 or newer
 
 ### Installing Quasar Framework
-There are three ways we can install quasar as listed below. In this tutorial we're going to use the third method, `using quasar CLI` which comes with all quasar features out-of-the-box. You can skip the first two and try them at a later time.
+There are three ways we can install quasar as listed below. In this tutorial, we're going to use the third method, `using quasar CLI` which comes with all quasar features out-of-the-box. You can skip the first two and try them at a later time.
 
-1. Embeding into an existing project through CDN. Just like below.
+1. Embedding into an existing project through CDN. Just like below.
 
 ```html
 <!DOCTYPE html>
@@ -59,24 +59,24 @@ Do not use self-closing tags like `<q-list />` but use `<q-list></q-list>`
 
 Note this is not the best practice, since you will have to make sure to match all quasar related tags to the same version you have installed. In the script we have used version `@1.15.6`.
 
-Finally, do not forget to add `<!DOCTYPE html>` at the beginning of the document or else some browsers like safari will have compatibility issues that breaks flex.
+Finally, do not forget to add `<!DOCTYPE html>` at the beginning of the document or else some browsers like safari will have compatibility issues that break flex.
 
 2. Installing using Vue CLI Quasar plugin
 
-To work with quasar through vue CLI plugin ensure to have installed @vue/cli globally.
+To work with quasar through the Vue CLI plugin ensure to have installed @vue/cli globally.
 Make sure you have the right version(3). Check the version using the command below.
 ```bash
 $ vue --version
 ```
 If you have Vue CLI 2.x.x, run the command below to uninstall it.
 ```bash
-$ npm unistall -g vue-cli OR 
+$ npm uninstall -g vue-cli OR 
 ```
 if you're using yarn, run
 ```bash
 $ yarn global remove vue-cli
 ```
-Now install Vue CLI (4+) with command below.
+Now install Vue CLI (4+) with the command below.
 ```bash
 $ npm install -g @vue/cli
 ```
@@ -103,7 +103,7 @@ This may not be the best approach to install quasar, because you'll not have acc
 
 3. Installing using Quasar CLI
 
-Before we install quasar, first check if Quasar CLI is globally installed in your computer. Using the terminal run:
+Before we install quasar, first check if Quasar CLI is globally installed on your computer. Using the terminal run:
 ```bash
 $ quasar -v
 ```
@@ -140,7 +140,7 @@ Select Auto-import-in-use Quasar Components and hit enter
   * Import everything from Quasar
     - not treeshaking Quasar; biggest bundle size    
 ```
-Then press spacebar to unselect the ESLint feature, we won't be needing it here. Hit enter.
+Then press the spacebar to unselect the ESLint feature, we won't be needing it here. Hit enter.
 ```bash
 ❯ (*) ESLint (recommended)
 ```
@@ -163,7 +163,7 @@ Navigate to the `src` folder, open App.vue you'll a div with and id of q-app
 ```html
 <div id="q-app">
 ```
-This is where quasar app is injected into the project using the id `q-app`.
+This is the where quasar app is injected into the project using the id `q-app`.
 
 Navigate to the `src` folder and into `layouts` folder and open MainLayout.vue file.
 
@@ -178,9 +178,9 @@ You can delete the next div after the q-toolbar-title to remove the quasar versi
 ```  
 The  MainLayout.vue file also contains navigation links for the app, this is where you'll put navigation links to your app while it grows bigger.
 
-For now the links component is imported EssentialLink.vue file in the `components` folder into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
+For now, the links component is imported EssentialLink.vue file in the `components` folder into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
 
-Don't worry if you don't fully understand, you'll get it a hang of it with more practice.
+Don't worry if you don't fully understand, you'll get a hang of it with more practice.
 
 Now navigate to the `src` folder, then  `pages` folder and open the Index.vue file,
 You can delete the whole image tag, looks like this below.
@@ -241,22 +241,22 @@ The following are some of the pros of choosing quasar framework
 
 1. Support for multiple platforms
 
-This is probably the most exciting feature of quasar, it has support builds for multiple platforms using only one code base. This is a very huge advantage since it saves on costs of application development and time. It supports builds for single page applications, progressive web applications, server side rendering, mobile apps (Ios and android) using cordova or capacitor,  multi-platform desktop apps using electron and lastly browser extensions
+This is probably the most exciting feature of quasar, it has support builds for multiple platforms using only one codebase. This is a very huge advantage since it saves on costs of application development and time. It supports builds for single-page applications, progressive web applications, server-side rendering, mobile apps (Ios and android) using cordova or capacitor,  multi-platform desktop apps using electron and lastly browser extensions
 
-2. Faster to get upto speed.
+2. Faster to get up to speed.
 
-Although quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), [electron](https://www.electronjs.org/), [nodejs](https://nodejs.org/en/) and [vuejs](https://vuejs.org/), you'll will only need to learn Vue which has a short leaning curve. The other technologies are all integrated and configured in Quasar, therefore, there is no requirements for you to know them. In addition it has one of the best detailed documentations around.
+Although quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), [electron](https://www.electronjs.org/), [nodejs](https://nodejs.org/en/) and [vuejs](https://vuejs.org/), you'll will only need to learn Vue which has a short learning curve. The other technologies are all integrated and configured in Quasar, therefore, there are no requirements for you to know them. In addition, it has one of the best-detailed documentations around.
 
 3. Treeshaking automatically
 
-With treeshaking you can import only components that you need in your app. Quasar provides treeshaking out-of-the-box. Remember during installation of the hello-world-app we were prompted to `Pick a Quasar components & directives import strategy`? We selected the first.
+With treeshaking you can import only components that you need in your app. Quasar provides treeshaking out-of-the-box. Remember during the installation of the hello-world-app we were prompted to `Pick a Quasar components & directives import strategy`? We selected the first.
 ```bash
 ❯ * Auto-import in-use Quasar components & directives
     - also treeshakes Quasar; minimum bundle size
   * Import everything from Quasar
     - not treeshaking Quasar; biggest bundle size    
 ```
-This instructs quasar to only import the components we'll need and not the whole quasar, saving on bundle size of our application.
+This instructs quasar to only import the components we'll need and not the whole quasar, saving on the bundle size of our application.
 
 
 4. Support for RTL language
@@ -276,8 +276,8 @@ Quasar comes with over 40 language packs out-of-the-box.
 
 1. It is developed by only one person.
 
-The only drawback is it was developed by one person. Which may cause developers to rethink about the  framework's future.
+The only drawback is it was developed by one person. Which may cause developers to rethink the framework's future.
 
 ### Conclusion
-We've just created a simple app with quasar framework, you can create even bigger enteprise applications with it. Quasar tends to bring a better development environment and argues that not everything should be done like the last decades.
+We've just created a simple app with quasar framework, you can create even bigger enterprise applications with it. Quasar tends to bring a better development environment and argues that not everything should be done like in the last decades.
 If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, I recommend you take a look at [Vue and Quasar video tutorials by Danny](https://www.youtube.com/watch?v=GV-D85D9KJQ&ab_channel=MakeAppswithDanny).
