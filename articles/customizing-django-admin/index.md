@@ -1,5 +1,21 @@
-### Customizing Django Admin
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/customizing-django-admin/
+title: How to Customize the Django Admin Site
+description: This article will serve as a guide to customize the default Django administration site. Django admin is used to quickly manage a Django site content.
+author: samuel-mwangi
+date: 2021-03-20T00:00:00-10:00
+topics:
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/customizing-django-admin/hero.jpg
+    alt: Customize Django Admin example image
+---
 Django comes with an admin site for managing site data. Django gives developers the power of customizing this admin site to suit the requirements of the project or the client.The tutorial is Windows oriented.
+<!--more-->
 
 ### Prerequisites
 Before we begin, you should have the following:
@@ -252,3 +268,6 @@ class  authorAdmin(admin.ModelAdmin):
 Now, run the development server and enjoy the changes.
 
 Happy coding!  
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
