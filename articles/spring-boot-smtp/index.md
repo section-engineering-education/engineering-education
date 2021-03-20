@@ -1,8 +1,20 @@
-
 ### Spring Boot SMTP
+Simple mail transfer protocol is a standard communication protocol that transfers mail electronically. SMTP makes it possible to send mail messages from within applications. In this tutorial, we will be using SMTP with Spring Boot to send mail messages from our application.
 
+### Prerequisites
+1. [Java developer kit](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
+2. Basic knowledge of [Spring Boot](https://spring.io/projects/spring-boot).
+3. IDE of your choice installed. I use [Intellij IDEA](https://www.jetbrains.com/idea/download/).
 
+### Creating the project
+We are going to use [spring initializr](https://start.spring.io/) to bootstrap our application. 
+- Navigate to [spring initializr](https://start.spring.io/) on your browser and set the project name as `sendmail`.
+- Add `spring web`, `spring mail`, and `spring devtools` as the required dependencies.
+- Click on generate the project to download the project zip file.
+- Unzip the project file downloaded and open it in your favorite IDE.
+- Sync the dependencies with maven.
 
+The `pom.xml` file should contain the dependencies as shown in the code snippet below.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -59,7 +71,36 @@
 
 ```
 
+### Mail configurations
+Now that we have set up the project, add the following configurations into the `applications. properties` file in the resources directory.
 
+```properties
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=email-address
+spring.mail.password=email-password
+# Other smtp properties
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000
+# TLS port 587
+spring.mail.properties.mail.smtp.starttls.enable=true
+```
+
+Replace the `email-address and `email password` with your actual email address and password.
+
+For the above configurations to work in our applications, we must set up Gmail to allow connections from less secure apps.
+- On your Gmail account, click on `manage account`.
+- On the `manage account` screen click on the `security` menu item and select `turn on access to less secure apps` as shown below.
+
+![Turning on access to less secure apps](google-auth.png)
+
+### Domain layer
+Since we are going to create a simple API endpoint that allows users to request with the mail message, recipient, and the subject of the mail, we are going to create a POJO for the mail.
+
+1. In the root package, create a package with the name `domain`.
+2. In the package created above create a Java class with the name `Mail` and add the code snippet below into it.
 
 ```java
 public class Mail {
@@ -102,51 +143,80 @@ public class Mail {
 }
 ```
 
+### Service layer
+The service layer often contains the actual business logic for an application. In this layer, we will implement the logic for sending an actual email to the recipients provided.
+
+1. In the root application package, create a new package with the name `service`.
+2. Create an interface with the name `SendMailService` and add the code snippet below.
+
+**Note** -  Interfaces make it possible to provide several implementations of a given functionality i.e we can create Gmail and SendGrid SMTP implementations of the `SendMailService`.
+
 ```java
-@Service
+import javax.mail.MessagingException;
+
 public interface SendMailService {
-    void sendMail(Mail mail) throws IOException, MessagingException;
+    void sendMail(Mail mail);
+
+    void sendMailWithAttachments(Mail mail) throws MessagingException;
 }
+
 ```
-
+3. In the service package, create a Java class implementation for the `SendMailService` interface with the code snippet below.
+   
 ```java
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+@Service
 public class SendMailServiceImpl implements SendMailService {
+    private final JavaMailSender javaMailSender;
+
+    public SendMailServiceImpl(JavaMailSender javaMailSender) {
+        this.javaMailSender = javaMailSender;
+    }
+
     @Override
-    public void sendMail(Mail mail) throws IOException, MessagingException {
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+    public void sendMail(Mail mail) {
 
-        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("email address", "<your password>");
-            }
-        });
-        Message msg = new MimeMessage(session);
-        msg.setFrom(new InternetAddress("email address", false));
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(mail.getRecipient(), mail.getRecipient());
 
-        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mail.getRecipient()));
         msg.setSubject(mail.getSubject());
-        msg.setContent(mail.getMessage(), "text/html");
-        msg.setSentDate(new Date());
+        msg.setText(mail.getMessage());
 
-        MimeBodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setContent(mail.getMessage(), "text/html");
+        javaMailSender.send(msg);
+    }
 
-        Multipart multipart = new MimeMultipart();
-        multipart.addBodyPart(messageBodyPart);
-        MimeBodyPart attachPart = new MimeBodyPart();
+    @Override
+    public void sendMailWithAttachments(Mail mail) throws MessagingException {
+        MimeMessage msg = javaMailSender.createMimeMessage();
 
-        attachPart.attachFile("/var/tmp/image19.png");
-        multipart.addBodyPart(attachPart);
-        msg.setContent(multipart);
-        Transport.send(msg);
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+
+        helper.setTo("to_@email");
+
+        helper.setSubject("Testing from Spring Boot");
+
+        helper.setText("Find the attached image", true);
+
+        helper.addAttachment("hero.jpg", new ClassPathResource("hero.jpg"));
+
+        javaMailSender.send(msg);
     }
 }
 ```
+From the above code snippets, we have two functions that send emails. The first function sends a plain text email while the second function sends an email with an attachment.
 
+
+### Controller layer
+1. In the projects root package, create a package named `controller`.
+2. Create a Java class named `EmailController` with the code snippet below.
 ```java
 import com.queenter.sendmail.domain.Mail;
 import com.queenter.sendmail.service.SendMailService;
@@ -158,7 +228,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.mail.MessagingException;
-import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/v1/mail/")
@@ -170,9 +239,22 @@ public class EmailController {
     }
 
     @PostMapping("/send")
-    public ResponseEntity<String> sendMail(@RequestBody Mail mail) throws IOException, MessagingException {
+    public ResponseEntity<String> sendMail(@RequestBody Mail mail) {
         service.sendMail(mail);
         return new ResponseEntity<>("Email Sent successfully", HttpStatus.OK);
     }
+
+    @PostMapping("/attachment")
+    public ResponseEntity<String> sendAttachmentEmail(@RequestBody Mail mail) throws MessagingException {
+        service.sendMailWithAttachments(mail);
+        return new ResponseEntity<>("Attachment mail sent successfully", HttpStatus.OK);
+    }
 }
+
 ```
+From the above code snippet, both functions receive a request body containing the details of the email to be sent and the response is a `ResponseEntity` of type string with information on whether the email is sent successfully or not.
+
+### Conclusion
+Now that you have learned how to configure and send emails in a Spring Boot application, try sending an email with an Html body and CSS styling.
+
+Happy coding.
