@@ -207,3 +207,6 @@ To summarize:
 - We learned about what VLAN routing is.
 - We explored different methods to route.
 - We configured the route using route-with-stick method.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
