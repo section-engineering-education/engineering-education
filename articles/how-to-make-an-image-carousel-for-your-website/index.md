@@ -207,9 +207,9 @@ function showSlides() {
 
 ```
 ### Testing
-You  can test whether your code works. Navigate to the folder where your project is stored and open the HTML file using any browser of your choice. The code should  work just fine.
+You  can test whether your code works. Navigate to the folder where your project is stored and open the HTML file using any browser of your choice. The code should  work just fine. Check out a sample of an image carousel illustrated below from Usain Bolt's website ![demo](/engineering-education/articles/how-to-make-an-image-carousel-for-your-website/example.gif)
 ### Conclusion
-Image carousels are important in a website in the sense that they reduce the clutter within a website which may make discourage the user from scrolling further. Within an image Carousell the user can view various images or videos by scrolling left or right hence getting an overview of what's in the website and thus a higher chance for them finding something that interests them. Image carousels are a great way for showing content cards.
+Image carousels are important in a website in the sense that they reduce the clutter within a website which may make discourage the user from scrolling further. Within an image Carousell the user can view various images or videos by scrolling left or right hence getting an overview of what's in the website and thus a higher chance for them finding something that interests them. Image carousels are a great way for showing content cards and thus marketing.
 
 
 
