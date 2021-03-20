@@ -38,7 +38,6 @@ It is applied in the following scenarios:
 -	Website user data behavior data storage.
 -	Meteorological data storage.
 
-
 ### 2)	General Design of HDFS architecture
 The HDFS has design features of its architecture that enable its efficient working among which are the following;
 
