@@ -8,7 +8,7 @@ This article shows a step-by-step guide to integrating TypingDNA services into a
 
 # Signing Up with TypingDNA
 
-To get started we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable. 
+To get started, we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable. 
 
 # Building Our Django Application
 
