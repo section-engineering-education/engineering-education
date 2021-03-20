@@ -20,7 +20,7 @@ Using JavaScript to build a clock on the web using SVG (Scalar Vector Graphics) 
 
 ### Introduction to JavaScript
 
-JavaScript is a programming language that lets you create complex web page features. This occurs in games, in answer actions when buttons are pressed or when data is entered on forms, dynamic styling, animation, and so on.
+JavaScript is a programming language that lets you create complex web page features. It can also be used to create web games with dynamic styling, animation, and other features such as when buttons are pressed or data is entered on forms.
 
 JavaScript is a hugely powerful scripting language. On top of the core JavaScript language, developers have written a number of tools that unlock a vast amount of functionality with minimal effort. There are some of them:
 
@@ -213,15 +213,18 @@ The following are some of the benefits of using SVG over other image formats (su
 
 Now, using JavaScript and one of the SVG examples from above, let's create a simple webpage to develop a clock on the web.
 
-**Step 1:** Navigate to any Directory of your choice on your pc, in the terminal, type:
+**Step 1 -** Open your Integrated Development Environment (IDE).
+
+Navigate to any Directory of your choice on your pc, in the terminal, type:
 
 ```Bash
 code .
 ```
 
 to open visual studio code.
+**Note: `code .` won't work if you don't have visual studio code installed on your system**
 
-**Step 2:** Create index.html, style.css and script.js, by typing the following command:
+**Step 2 -** Create index.html, style.css and script.js, by typing the following command:
 
 - Windows power shell
 
@@ -235,7 +238,9 @@ to open visual studio code.
   touch index.html,style.css,script.js
   ```
 
-**Step 3:** Inside the index.html we need to setup a basic html page with the following snippet:
+**Step 3:** Add Basic html snippet to index.html
+
+Inside the index.html we need to setup a basic html page with the following snippet:
 
 ```html
 <!DOCTYPE html>
@@ -254,7 +259,7 @@ to open visual studio code.
 </html>
 ```
 
-**Step 4:** Lets reference the style.css and script.js we created earlier:
+**Step 4 -** Reference the style.css and script.js we created earlier:
 
 ```html
 <!DOCTYPE html>
@@ -278,7 +283,9 @@ to open visual studio code.
 
 Yes, we're ready to begin; I hope you're following along. 😊
 
-**Step 6:** Since we're building a clock, we'll need the svg circle and svg path for the arm, as shown below.
+**Step 6 -** Add svg to index.html
+
+Since we're building a clock, we'll need the svg circle and svg path for the arm, as shown below.
 
 ```html
 <!DOCTYPE html>
@@ -333,7 +340,9 @@ Yes, we're ready to begin; I hope you're following along. 😊
 
 **Have you noticed that all tags now have an id and a class? We'll use that as a reference point for our design and JavaScript.**
 
-**Step 7:** It's time to start writing some JavaScript code. The JavaScript and time configurations, as shown and explained below, are the core functionalities of this web application.
+**Step 7 -** Implementing the JavaScript code to be used in the implementation
+
+It's time to start writing some JavaScript code. The JavaScript and time configurations, as shown and explained below, are the core functionalities of this web application.
 
 ```javascript
 // Declare and Initialize your variables and make references to the id defined in the html file, as needed.
@@ -353,7 +362,9 @@ let sec = date.getSeconds();
 console.log("Hour: " + hr + " Minute: " + min + " Second: " + sec);
 ```
 
-**Step 8:** Now let us implement the positions for (hr, min sec) since we can now see the output in the console.
+**Step 8 -** Implementing positions
+
+Now let us implement the positions for (hr, min sec) since we can now see the output in the console.
 
 ```javascript
 // Declare and Initialize your variables and create positions for each.
@@ -378,7 +389,9 @@ const runClock = () => {
 setInterval(runClock, 1000);
 ```
 
-**Step 9:** We are almost done 😊
+**Step 9 -** Adding styles in style.css
+
+We are almost done 😊
 Lets's head to style.css to finish the remaining task
 
 ```css
@@ -469,7 +482,7 @@ footer {
 }
 ```
 
-**Step 9:** To see the magic, start our live server or preview your application in your browser as shown below.
+**Step 10 -** To see the magic, start your live server or preview your application in your browser as shown below.
 
 ![result on browser](/engineering-education/how-to-build-a-clock-with-javascript-and-svg/result.png)
 
