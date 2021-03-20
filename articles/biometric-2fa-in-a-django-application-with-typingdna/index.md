@@ -22,7 +22,7 @@ From this point onwards, to follow this step by step guide on building a video p
 
 ## Cloning the Project
 
-To build our Django application, we need to build the frontend and the backend of our video player application. We already have the video application pre-built for us so we can focus mainly on integrating biometrics with TypingDNA. You can clone the [Github](https://github.com/Chukslord1/typingdnavideoplayer.git) repo and run the application with the commands below:
+To build our Django application, we need to build the frontend and the backend of our video player application. We already have the video application pre-built for us so we can focus mainly on integrating biometrics with TypingDNA. You can clone the [Github](https://github.com/Nomzy-kush/mine.git) repo and run the application with the commands below:
 
 ```
 
