@@ -26,7 +26,7 @@ To build our Django application, we need to build the frontend and the backend o
 
 ```
 
-git clone <https://github.com/Nomzy-kush/mine.git>
+git clone https://github.com/Nomzy-kush/mine.git
 
 cd typingdnavideoplayer
 
