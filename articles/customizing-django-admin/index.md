@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/customizing-django-admin/hero.jpg
     alt: Customize Django Admin example image
 ---
-Django comes with an admin site for managing site data. Django gives developers the power of customizing this admin site to suit the requirements of the project or the client.The tutorial is Windows oriented.
+Django comes with an admin site for managing site data. Django gives developers the power of customizing this admin site to suit the requirements of the project or the client.This tutorial is Windows oriented.
 <!--more-->
 
 ### Prerequisites
