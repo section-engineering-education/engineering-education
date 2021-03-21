@@ -522,7 +522,7 @@ public class UpdateCustomer {
 
 ### Conclusion
 ---
-At this point, by covering and implementing these operations the reader will be more confident to approach a one-to-one Hibernate task and deliver as required. In this stage, the reader will learn how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.         
+By covering and implementing these operations, the reader will be more confident to approach a one-to-one Hibernate task and deliver as required. At this point, the reader has learned how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.         
 
 
 
