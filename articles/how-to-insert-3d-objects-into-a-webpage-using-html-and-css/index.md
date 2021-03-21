@@ -1,5 +1,21 @@
-Are you a creative frontend web designer or are you looking for ways to make your website look more interactive and visually appealing? Would you like to advertise your products interestingly? Look no further. Today, we are going to learn how to insert 3D objects into a website.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/
+title: How to Insert 3D Objects into a webpage using HTML and CSS
+description: In this article we will understand how to build build 3D objects in webpage using HTML and CSS. We will also build a simple webpage containing a 3D object.
+author: chris-mutua
+date: 2021-03-21T00:00:00-11:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.png
+    alt: How to Insert 3D Objects into a webpage using HTML and CSS example image
+---
+Are you a creative frontend web designer or are you looking for ways to make your website look more interactive and visually appealing? Would you like to advertise your products interestingly? Look no further. Today, we are going to learn how to insert 3D objects into a website.
+<!--more-->
 In this tutorial, we will be creating a simple webpage with basic components, design its layers, and then inserting 3D objects into the webpage.
 
 ### Key takeaways
