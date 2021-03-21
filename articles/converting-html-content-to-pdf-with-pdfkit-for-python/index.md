@@ -70,7 +70,7 @@ Pdfcrowd is an open-source API that is capable of converting PDF from dynamic 
 
 Pdfkit is an open-source library that generates HTML from web URLs, local files a string and converts this text to PDF format. Web apps often contain tables, charts, and graphs asides text. Export these data professional, PDF converters are the best options, and pdfit converts data regardless of the format, either image, table, graphs, HTML forms, and other complex printable documents.
 
-We will be using wkhtmltopdf alongside pdfkit to achieve perfect work. Wkhtmltopdf is an open-source command-line tool that renders HTML into PDF and various image formats. To know more about wkhtmltopdf see [https://wkhtmltopdf.org/](https://wkhtmltopdf.org/).
+We will be using **[wkhtmltopdf](https://wkhtmltopdf.org/)** alongside pdfkit to achieve perfect work. Wkhtmltopdf is an open-source command-line tool that renders HTML into PDF and various image formats.
 
 First thing first, let's begin by installing pdfkit.
 
@@ -84,6 +84,8 @@ pip install pdfkit
 ```
 
 ![pdfkit-installation](/engineering-education/python-projects-for-beginners/pdfkit.png)
+
+*Pdfkit is successfully installed as shown in this image*
 
 We also need an additional library, *wkhtmltopdf*. Wkhtmltopdf is an open-source command-line tool that renders HTML into PDF and various image formats using the Qt WebKit rendering engine. These run entirely "headless" and do not require a display or display service. In simpler words, wkhtmltopdf enables pdfkit to work convert images and other formats.  Wkhtmltopdf is usually referred to as python wrapper to convert Html to pdfdocument for python 2 and python 3.
 
@@ -101,6 +103,7 @@ Once this is downloaded, open in folder and manually install it.
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/wkhtmltopdf.png)
 
+*Click install and manually install wkhtmltopdf in file path* 
 
 ### Adding Wkhtmltopdf path to the environment variable
 
@@ -108,11 +111,17 @@ Next step, we add the installed tool path to our environment variable. Firstly c
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/path.png)
 
+*Highlight file path as shown in this image*
+
 Copy the highlighted file path, search for environment variables in your system > open page and click on environment variable. In environment variable go to *system variable >click on path > edit >* *new* and add copied file path.
+
+![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/filepath2.png)
+
+*Environment variable*
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/filepath.png)
 
-![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/filepath2.png)
+*System variable*
 
 I know this may be a bit tricky, if you are doing this for the first time, try following the steps carefully. I hope you followed through successfully.
 Once this is done, we move to our code editor to generate PDF.
@@ -134,6 +143,8 @@ pdfkit.from_url("https://en.wikipedia.org/wiki/Serena_Williams", "site.pdf")
 Run code in your terminal
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/weburl.png)
+
+*As shown in this image, "py ./(filename)" is used to run the program*
 
 **N.B**: *'htmltopdf.py*' is my file name. 
 
