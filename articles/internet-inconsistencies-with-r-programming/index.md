@@ -26,6 +26,8 @@ One goal is to acknowledge internet gaps and discrepancies that may impact unawa
 #### Introduction  
 In this tutorial, R-Programming is used to identify various IP addresses mostly in IPv4 format and other DNS components. The purpose is to gain understanding about accuracies and inaccuracies of instances that may occur coincidently during internet activities. Compatible Windows, Ubuntu, Macintosh, and Google computer operating systems are all options. To complement, any programming language can be chosen accordingly. R-Programming was selected because of its built-in libraries dedicated to Domain Name Systems. Extended coding can establish statistical insights. Deriving insights from research can provide the probability of accuracies and inaccuracies. For this tutorial, "45.88.197.212" is the IP address and various domains pointing to the defined IP are used.  
 
+Let's start!
+
 #### Linux Fundamentals  
 Open any Linux Shell.  
 
@@ -162,7 +164,7 @@ Here is the list of countries:
 By using `rattle`, data modelling can include both a decision tree and a random forest. We can see the different possibilities that could lead to an approximate precise prediction. From a decision tree, we can find a visualization of nodes, splits, and buckets. Near matches to "45.88.197.212" were found using IPinfo.io, DNSlytics, and Spyse. I.whoswho was used to test domain names within the specified IP. Shown below, is a manually made IP address data frame with data sourced from references listed at the end of this tutorial.  
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
-Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided. As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further. From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `rattle`. We will continue to analyze probable accuracy based on IP addresses correlates well with "45.88.197.212" from the data frame.  
+Using `library(rattle)` and `rattle()`, a GUI type application would allow processing codes and images from the data frame provided. As you may know, a decision tree selects the highest number possible and treats the selected number as the optimal choice. However, in this scenario, it is the exact opposite. We will take categories with the lowest numbers and analyze them further. From the decision tree drawing generated from `rattle`, Amsterdam, Netherlands, and Cyprus were shown as the top three choices. We will discontinue processing data about them because they have been statistically chosen as the highest numbered categories. The remaining countries: Lithuania and Germany seemed to be the lowest in `rattle`. We will continue to analyze probable accuracy based on IP addresses that correlates well with "45.88.197.212" from the data frame.  
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 
 Switching over to another statistical data model, the random forest data model. We can now evaluate variable importance.  
