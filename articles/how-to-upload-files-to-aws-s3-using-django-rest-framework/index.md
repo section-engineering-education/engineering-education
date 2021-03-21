@@ -382,6 +382,7 @@ In settings.py:
 ```python
 
 ...
+...
 
 AWS_ACCESS_KEY_ID = <YOUR AWS ACCESS KEY>
 
