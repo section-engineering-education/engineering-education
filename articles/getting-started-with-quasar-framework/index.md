@@ -28,7 +28,7 @@ Quasar Framework is a Vuejs based framework used to develop cross-platform appli
 ### Installing Quasar Framework
 There are three ways we can install quasar as listed below. In this tutorial, we're going to use the third method, `using quasar CLI` which comes with all quasar features out-of-the-box. You can skip the first two and try them at a later time.
 
-1. Embedding into an existing project through CDN. Just like below.
+1. Embedding into an existing project through CDN. Like below.
 
 ```html
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ In your body tag you should use quasar components in a div with and id of `q-app
  ```
 Do not use self-closing tags like `<q-list />` but use `<q-list></q-list>`
 
-Note this is not the best practice, since you will have to make sure to match all quasar related tags to the same version you have installed. In the script we have used version `@1.15.6`.
+Note this is not the best practice, since you will have to make sure to match all quasar related tags to the same version you have installed. In the script, we have used version `@1.15.6`.
 
 Finally, do not forget to add `<!DOCTYPE html>` at the beginning of the document or else some browsers like safari will have compatibility issues that break flex.
 
@@ -92,14 +92,14 @@ Make sure to checkmark on babel from the vue CLI features list prompt while inst
 ```bash
 ❯ Default ([Vue 2] babel, eslint) 
 ```
-To add Vue CLI Quasar Plugin, navigate to the newly created project and run the `vue add quasar` to add quasar plugin
+To add Vue CLI Quasar Plugin, navigate to the created project and run the `vue add quasar` to add quasar plugin
 ```bash
 $ cd my-app
 $ vue add quasar
 ```
-The CLI will ask if you want the plugin to replace some existing files, you should accept this and move to pick features you'll need for the quasar plugin.
+The CLI will prompt you to replace some existing files, you should accept this and move to pick features you'll need for the quasar plugin.
 
-This may not be the best approach to install quasar, because you'll not have access to a number of features provided by quasar CLI and quasar was not specifically tested with these plugins.
+This may not be the best approach to install quasar, because you'll not have access to some of the features provided by quasar CLI. Besides, quasar was not tested with these plugins.
 
 3. Installing using Quasar CLI
 
@@ -154,7 +154,7 @@ Navigate to the created `hello-world-app` and serve the app by running the comma
 $ cd hello-world-app
 $ quasar dev
 ```
-After serving the app, it automatically opens the URL http://localhost:8080/#/ in your browser to view the app.
+After serving the app, it  opens the URL http://localhost:8080/#/ in your browser to view the app.
 You'll see quasar logo and the name quasar in the center of the page.
 
 Open the created `hello-world-app` folder in your editor of choice.
@@ -163,7 +163,7 @@ Navigate to the `src` folder, open App.vue you'll a div with and id of q-app
 ```html
 <div id="q-app">
 ```
-This is the where quasar app is injected into the project using the id `q-app`.
+This is the where the quasar app is injected into the project using the id `q-app`.
 
 Navigate to the `src` folder and into `layouts` folder and open MainLayout.vue file.
 
@@ -178,9 +178,9 @@ You can delete the next div after the q-toolbar-title to remove the quasar versi
 ```  
 The  MainLayout.vue file also contains navigation links for the app, this is where you'll put navigation links to your app while it grows bigger.
 
-For now, the links component is imported EssentialLink.vue file in the `components` folder into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
+For now, the links component which is the Essential link.vue file in the `components` folder is imported into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
 
-Don't worry if you don't fully understand, you'll get a hang of it with more practice.
+Don't worry if you don't understand, you'll get a hang of it with more practice.
 
 Now navigate to the `src` folder, then  `pages` folder and open the Index.vue file,
 You can delete the whole image tag, looks like this below.
@@ -195,7 +195,7 @@ This will delete the image at its name quasar from the center of the app. Leavin
 Here we're going to build a component. Just like Vuejs, Quasar uses single file components (SFC) structure. This has 3 parts; the HTML, SCRIPT(JS) and STYLE(CSS). If you have the know-how of building Vuejs apps this should be a breeze.
 
 Create a file named Country.vue in the `components` folder.
-It has the SFC structure just like vue. Add the following code to the HTML part of the code.
+It has the SFC structure like vue. Add the following code to the HTML part of the code.
 ```html
 <template>
   <div>
@@ -241,11 +241,11 @@ The following are some of the pros of choosing quasar framework
 
 1. Support for multiple platforms
 
-This is probably the most exciting feature of quasar, it has support builds for multiple platforms using only one codebase. This is a very huge advantage since it saves on costs of application development and time. It supports builds for single-page applications, progressive web applications, server-side rendering, mobile apps (Ios and android) using cordova or capacitor,  multi-platform desktop apps using electron and lastly browser extensions
+This is the most exciting feature of quasar, it has support builds for multiple platforms using only one codebase. This is a very huge advantage since it saves on costs of application development and time. It supports builds for single-page applications, progressive web applications, server-side rendering, mobile apps (Ios and android) using cordova or capacitor,  multi-platform desktop apps using electron and browser extensions
 
 2. Faster to get up to speed.
 
-Although quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), [electron](https://www.electronjs.org/), [nodejs](https://nodejs.org/en/) and [vuejs](https://vuejs.org/), you'll will only need to learn Vue which has a short learning curve. The other technologies are all integrated and configured in Quasar, therefore, there are no requirements for you to know them. In addition, it has one of the best-detailed documentations around.
+Although quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), [electron](https://www.electronjs.org/), [nodejs](https://nodejs.org/en/) and [vuejs](https://vuejs.org/), you'll will only need to learn Vue which has a short learning curve. The other technologies are all integrated and configured in Quasar, thus, there are no requirements for you to know them. In addition, it has one of the best-detailed documentations around.
 
 3. Treeshaking automatically
 
@@ -281,3 +281,7 @@ The only drawback is it was developed by one person. Which may cause developers 
 ### Conclusion
 We've just created a simple app with quasar framework, you can create even bigger enterprise applications with it. Quasar tends to bring a better development environment and argues that not everything should be done like in the last decades.
 If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, I recommend you take a look at [Vue and Quasar video tutorials by Danny](https://www.youtube.com/watch?v=GV-D85D9KJQ&ab_channel=MakeAppswithDanny).
+
+That is it.
+
+Happy coding!
