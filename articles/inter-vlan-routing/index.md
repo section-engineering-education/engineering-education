@@ -7,7 +7,7 @@ title: Understanding Inter-VLAN Routing
 description: The objective of this article is to help one understand inter-VLAN routing and how to configure it using a packet tracer.
 author: atonya-dennis
 date: 2021-03-21T00:00:00-09:00
-topics: [Languages]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
