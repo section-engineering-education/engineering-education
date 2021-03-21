@@ -393,3 +393,6 @@ Happy coding!
 ### References
 - [School of motion - Photogrammetry video](https://www.youtube.com/watch?v=ZIW4XU6Wm8Q).
 - [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
