@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/inter-vlan-routing/
-title: Understanding Inter-VLAN routing
+title: Understanding Inter-VLAN Routing
 description: The objective of this article is to help one understand inter-VLAN routing and how to configure it using a packet tracer.
 author: atonya-dennis
-date: 2021-03-20T00:00:00-23:30
+date: 2021-03-21T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/inter-vlan-routing/hero.jpg
     alt: Network Connection example image
 ---
-As a network administrator, one of the tasks is to segment a single switched Local Area Network (LAN) logically without having to run new cables and changing the existing network. The concept of "VLAN" and its configurations will help one handle the task at hand with ease.
+As a network administrator, tasks may include having to segment a single switched Local Area Network (LAN) logically without having to run new cables and changing the existing network. The concept of "VLAN" and its configurations will help one handle the task at hand with ease.
 <!--more-->
 In this article, we will learn about what inter-VLAN routing is, various methods for VLAN routing, and also build a network configuration to understand how it works.
 
-# Table of contents
+### Table of contents
 - [Prerequisite](#prerequisite)
 - [VLAN routing terminologies](#vlan-routing-terminologies)
 - [What is Inter-VLAN routing?](#what-is-inter-vlan-routing)
@@ -46,7 +46,7 @@ To download and install Cisco packet tracer on your computer, visit [this link](
 - `VLAN` is a network segment on a switched LAN which groups together the hosts on the network, logically, regardless of their physical locations on the network.
 - A `Local Area Network (LAN)` is a physical interconnection of network devices in a small geographical area.
 - `Layer 3 switch/multilayer switch` is a special type of switch which performs the function of both switches at layer 2  and routers at layer 3 of the OSI model i.e., it can forward both the frames and packets.
-- `Switched Virtual Interface(SVI)` refers to a virtual interface which connects VLANs on the network devices to their respective router engines.
+- `Switched Virtual Interface (SVI)` refers to a virtual interface which connects VLANs on the network devices to their respective router engines.
 - `Default Gateway` is a device that forwards IP packets and provides an access point to the other networks. For instance, a router.
 - `Access Point` is a network device that connects to a router or switch, creating a wireless local area network and acting as a link between the router and the network users.
 - `Switch port` refers to a physical opening on the switch or router where ethernet cables can be plugged.
@@ -66,7 +66,7 @@ In this method, multiple router interfaces are used, each connecting to a switch
 Hence, adding additional network cables and improving infrastructure is more expensive.
 
 #### Router-on-a-stick
-In this method, unlike the legacy routing, one physical interface port is used for routing the traffic between the network segments. The network administrator need not create separate VLAN interfaces like `fa0/1` to `fa0/10`.
+In this method, unlike the legacy routing, one physical interface port is used for routing the traffic between the network segments. The network administrator doesn't need to create separate VLAN interfaces like `fa0/1` to `fa0/10`.
 
 Instead, all the interfaces from 1 to 10 are created with a single interface. This method is simple to implement and used for small to medium-sized networks.
 
@@ -75,7 +75,7 @@ Currently, this method of inter-VLAN routing that uses layer 3/multilayer switch
 
 SVIs are created for VLANs exists on the switch which performs the same function for the VLANs as that of a router.
 
-Layer 3 switches are expensive, which are primarily suitable for large organisation networks.
+Layer 3 switches are expensive, which are primarily suitable for large organization networks.
 
 ### Network configurations for Inter-VLAN communication using Router-On-Stick method
 In this article, we will learn how to configure inter-VLAN routing using the router-on-a-stick method.
@@ -98,7 +98,7 @@ For us to subdivide the network into two subnets, we have to create two VLANS on
 
 To create two VLANs, we enter the configuration mode using the `config terminal` command, and then we enter the VLAN number like `vlan 10` along with the name.
 
-```
+```bash
 Switch>enable                       !moving from user exec mode to priviledge mode
 Switch#config terminal              !moving from priviledge mode to global configuration mode
 Switch(config)#vlan 10              !assigning vlan number
@@ -112,12 +112,13 @@ Switch(config-vlan)#exit
 #### Step 2
 Assign switch ports to the VLANS. Ports `fa0/1 `and `fa0/2` acting as access ports for `VLAN10`, while ports `fa0/3` and`fa0/4` for `VLAN20`.
 
-The trunk port for carrying the traffic between the two VLANS via the router we shall use `fa0/5` port.
+We shall use `fa0/5` port for the trunk port for carrying the traffic between the two VLANS via the router.
 
 **NOTE:** `fa` refers to fast ethernet ports used for connecting the network hosts to the switch or router.
 
 #### Configurations for access ports fa0/1 and fa0/2
-```
+
+```bash
 Switch>enable                                   !moving from user exec mode to the priviledge mode
 Switch#config terminal                          !moving from priviledge mode to the global configuration mode
 Switch(config)#int fa 0/1                       !entering the interface port
@@ -131,12 +132,12 @@ Switch(config-if)#switchport access vlan 10     !making interface access port fo
 Switch(config-if)#exit                          !exiting from the interface
 ```
 
-In the above configuration, `fa0/1` and `fa0/2` are configured as access ports using the command `switchport mode access`.
+In the configuration above, `fa0/1` and `fa0/2` are configured as access ports using the command `switchport mode access`.
 
-Since they belong to `vlan10`, `switchport access vlan 10` command is used to configure them as access ports within `vlan10`.
+Since they belong to `vlan10`, the `switchport access vlan 10` command is used to configure them as access ports within `vlan10`.
 
 #### Configurations for access ports fa0/3 and fa0/4
-```
+```bash
 Switch(config)#int fa 0/3                     !entering the interface port
 Switch(config-if)#switchport mode access      !making the interface fa0/3 an access port
 Switch(config-if)#switchport access vlan 20   !making interface access port for vlan 10
@@ -148,16 +149,17 @@ Switch(config-if)#switchport access vlan 20   !making interface access port for 
 Switch(config-if)#exit
 ```
 
-In the above configuration, `fa0/3` and `fa0/4` are configured as access ports using command `switchport mode access`.
+In the configuration above, `fa0/3` and `fa0/4` are configured as access ports using the command `switchport mode access`.
 
-Since they belong to `vlan20`, `switchport access vlan 20` command is used to configure them as access ports within `vlan20`.
+Since they belong to `vlan20`, the `switchport access vlan 20` command is used to configure them as access ports within `vlan20`.
 
 #### Configurations for trunk port fa0/5
-```
+```bash
 Switch(config)#int fa 0/5                 !entering the interface port
 Switch(config-if)#switchport mode trunk   !making interface a trunk port.
 Switch(config-if)#do write                !saving the running configurations to start-up file
 ```
+
 From the above code interface, `fa0/5` is serving as our trunk port. To configure it to serve as a trunk port and not an access port, we use the command `switchport mode trunk` in the global interface mode.
 
 #### Step 3
@@ -167,7 +169,8 @@ Using static IP addressing, set the IP addresses to static on each PC on the net
 
 #### Step 4
 Configure the router to enable the traffic to move from `VLAN10` to `VLAN20`. For the PCs to communicate, we subdivide the single interface into many sub-interfaces, where each sub-interface will act as the default gateways for each of the VLANs. This will allow two sub networks to communicate using the single interface.
-```
+
+```bash
 Router>enable                       !moving from user exec mode to the priviledge exec mode
 Router#config terminal              !moving from priviledge exec mode to the global configuration mode
 Router(config)#int g0/0             !entering on our physical router interface gigabitEthernet 0/0
@@ -187,7 +190,7 @@ Router(config)#do write             !saving our running configurations into the 
 Router(config)#exit
 ```
 
-From the above configurations, the interface `g0/0` is  subdivided into two sub interfaces: `g0/0.10` for `VLAN10` and `g0/0.20` for `VLAN20`.
+From the configurations above, the interface `g0/0` is  subdivided into two sub interfaces: `g0/0.10` for `VLAN10` and `g0/0.20` for `VLAN20`.
 
 Then, the two sub-interfaces are assigned IP addresses and serve as the trunk ports for carrying the traffic.
 
@@ -199,14 +202,16 @@ For instance, if we ping `PC2` in `VLAN20` from `PC0` in `VLAN10`, it should be 
 ![Ping PC2 from PC1](/engineering-education/inter-vlan-routing/ping.jpg)
 
 ### Conclusion
-Inter-VLAN routing is an essential concept for anyone who has the passion for networking. It is the convenient and better way for subdividing a large LAN and for enabling communication between the network hosts.
+Inter-VLAN routing is an essential concept for anyone who has the passion for networking. It is the convenient and better way to subdivide a large LAN and to enable communication between the network hosts.
 
 You can find more information about inter vlan routing [here](https://contenthub.netacad.com/srwe/4.1.1).
 
 To summarize:
-- We learned about what VLAN routing is.
+- We learned what VLAN routing is.
 - We explored different methods to route.
 - We configured the route using route-with-stick method.
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
