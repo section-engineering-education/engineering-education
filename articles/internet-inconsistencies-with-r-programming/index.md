@@ -12,7 +12,7 @@ This tutorial can help detect internet inconsistencies.
 - [R-Programming](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#R-Programming)  
 - [Basic Statistics](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Basic-Statistics)  
 - [Linux Reverse IP Lookup](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Linux-Reverse-IP-Lookup)  
-- [Closing Comments](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Closing-Comments)    
+- [Takeaways](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Takeaways)    
 
 ### <a href="Prerequisites"></a> Prerequisites 
 - Device with unlimited functional capabilities
@@ -35,17 +35,17 @@ Let's start.
 ### <a href="Linux-Fundamentals"></a>Linux Fundamentals  
 Open any Linux Shell.  
 
-_For those who prefer using Linux without `ROOT`:_  
+For those who prefer using Linux without `ROOT`:  
 ```Sh
 sudo apt update
 ```   
 
-_As a reminder, users with permission can be in `ROOT` mode by entering the following line:_
+As a reminder, users with permission can be in `ROOT` mode by entering the following line:  
 ```Sh
 sudo -i
 ```
 
-_For those who prefer using Linux with `ROOT`:_  
+For those who prefer using Linux with `ROOT`:  
 ```Sh
 apt update
 ```   
@@ -78,7 +78,7 @@ Alternatively, using an R-programming application can be equally as effective. T
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
 *Screencapture*  
 
-If not installed, the list below are libraries included in this tutorial.  
+If not installed, the libraries included in this tutorial are listed below.  
 ```Sh
 install.packages(c("Rwhois", dependencies = TRUE))  
 install.packagec(c("iptools", dependencies = TRUE)  
@@ -108,7 +108,7 @@ index | key | val
 
 
 Specifying server name according to domain extension (example, ".us") can produce additional results.  
-If a server name is included, name servers can be found.  
+If a server name is included, name servers can be displayed.  
 ```Sh
 ("asianausa.us", server = "whois.nic.us")
 ```    
@@ -119,9 +119,9 @@ Name server | ns1.dns-parking.com
 Name server | ns2.dns-parking.com  
 
 
-`library(iptools)`  
 The code shown below can confirm if this IP is valid or not.  
 ```Sh
+library(iptools)
 iptools::is_valid("45.88.197.212")
 ```  
 Output:  
@@ -129,14 +129,13 @@ Output:
 [1] TRUE
 ```  
 
-```Sh
-library(rIP)
-```  
+
 To check if the IP is using a DNS proxy, enter: 
 ```Sh 
+library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
-An IP without a proxy would display in this manner.
+Displaying IP address without a proxy will appear in this manner.
 Output:  
 ```Sh
 [1] "no"
@@ -152,7 +151,7 @@ Geological location of an IP address can resemble many statistical data models. 
 Factors can include:  
 - DNS variables
 - Hosting
-- Whois Registrars (few sample registrars)  
+- Directories   
 
  Directory Name | Information
  --- | ---
@@ -173,10 +172,8 @@ Possiblities:
  - Netherlands (Nl)
  - Amsterdam (Am)  
 
-`Rattle` can generate data models. A decision tree model can visually provide a logical breakdown. Shown below, is a manually made IP address data frame. Data can be sourced with IP registrars.  
+`Rattle` can generate data models. A decision tree model can provide a logical breakdown. Shown below, is a manually made IP address data frame.  
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
-
-A GUI type application can produce necessary visuals and numerical values from `rattle`.  
 
 Typically, a decision tree selects the highest possible number as the optimal choice. In this scenario, the countries categorized as less optimal are analyzed. Amsterdam, Netherlands, and Cyprus were shown as the top three choices. Lithuania and Germany seemed to be less optimal.   
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
@@ -236,7 +233,7 @@ Partial Output:
 
 Did you notice the domain names listed above are companies registered with ARIN and CIRA without any connection to RIPE?    
 
-### <a href="Closing-Comments"></a>Closing Comments  
+### <a href="Takeaways"></a>Takeaways  
 
  - Statistics can reveal internet inconsistencies.
  - Advanced data modells can provide further DNS relationships.
