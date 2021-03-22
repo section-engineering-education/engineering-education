@@ -95,7 +95,7 @@ Information about the IP registrar responsible can be found.
 Partial Output:  
 index | key | val
 --- | --- | ---
-1 | NetRange | 45.80.0.0 - 45.95.255.255
+1 | NetRange | 45.80.0.0 to 45.95.255.255
 2 | CIDR | 45.80.0.0/12
 3 | NetName | RIPE
 4 | NetHandle | NET-45-80-0-0-1
