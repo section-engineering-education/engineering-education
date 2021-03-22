@@ -278,7 +278,7 @@ app.post("/", (req, res) => {
 });
 ```
 
-When you click the subscribe button, a  `Thank you for subscribing` message will be printed on the browser. Moreover, the browser will return a 200 code upon checking the inspector network, which is okay. The client has `POST` permissions and can send a `POST` request to the server.
+When you click the subscribe button, a `Thank you for subscribing` message will be printed on the browser. Moreover, the browser will return a 200 code upon checking the inspector network, which is okay. The client has `POST` permissions and can send a `POST` request to the server.
 
 ![Browser inspector tool network error resolved](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-error-resolved.jpg)
 
@@ -286,8 +286,9 @@ Everything is working great. Nevertheless, we need the server to get the form da
 
 To interact with the form data, we need a body-parser package. Go ahead and install this package using `npm install body-parser`. [Body-parser](https://www.npmjs.com/package/body-parser) helps parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 
-Import the package using the `require()` function and get the server to use it via `app.use`. Body-parser has a few modes such as:
+Import the package using the `require()` function and get the server to use it via `app.use`. 
 
+Body-parser has a few modes such as:
 - `bodyParser.text` - pass all the requests into text.
 - `bodyParser.json` - parse data into JSON format.
 - `bodyParser.urlencoded` - commonly used when getting data posted from HTML forms.
@@ -296,7 +297,7 @@ In this example, we will use the `bodyParser.urlencoded` format to interact with
 
 Body-parser goes into any of your routes using `req.body` and gets a parsed version of HTTP requests made to the server.
 
-With the body-parser, we can access this form data and interact with it. Let try to console log `req.body` to get a grip of a parsed HTTP request;
+With the body-parser, we can access this form data and interact with it. Let try to console log `req.body` to get a grip of a parsed HTTP request:
 
 ```js
 const express = require("express");
@@ -361,7 +362,11 @@ Fill in the form inputs and click the subscribe button.
 >NOTE: The information stored in variables `subName` and `subEmail` correspond to `yourname` and `youremail` respectively. `yourname` and `yourname` naming comes from the `name attribute` of your HTML form inputs. This way, you can use the form data and decide what happens to each of the inputs as if they were just properties of the object body.
 
 ### Conclusion
-I hope this guide helped you understand how to render HTML data into your server using Express.js. Template engines such as [pug](https://www.npmjs.com/package/pug) and [ejs](https://www.npmjs.com/package/ejs) can also be used to render dynamic HTML data into the server. They both compile down HTML using backed technologies such as Express.js.
+I hope this guide helped you understand how to render HTML data into your server using Express.js. 
+
+Template engines such as [pug](https://www.npmjs.com/package/pug) and [ejs](https://www.npmjs.com/package/ejs) can also be used to render dynamic HTML data into the server. They both compile down HTML using backed technologies such as Express.js.
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
