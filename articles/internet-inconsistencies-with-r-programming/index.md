@@ -19,7 +19,7 @@ This tutorial can help individuals and groups who are interested in detecting in
 - Installed a functional Linux emulator (Kali Linux was chosen)
 - R-Programming software  
 - Internet access
-- DNS mechanics
+- DNS mechanics and knowledge
 - R-Programming library installations and documentation  
 - Some arithmetic experience  
 
