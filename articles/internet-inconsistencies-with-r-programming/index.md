@@ -1,5 +1,5 @@
 ## Internet Inconsistencies with R-Programming  
-An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences can be displayed in two formats: IPv4 and IPv6. There are directories containing further information about an IP such as approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN). If not redacted, these pieces of information can merge into one collective research platform.  
+An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences can be displayed in IPv4 and IPv6 formats. There are directories containing further information about an IP. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
 
 This tutorial can help detect internet inconsistencies.  
 
@@ -17,8 +17,9 @@ This tutorial can help detect internet inconsistencies.
 ### <a href="Prerequisites"></a> Prerequisites 
 - Device with unlimited functional capabilities
 - Functional version of Linux emulator _(Kali Linux was used)_
-- Fundamental R-Programming knowledge
+- R-Programming software  
 - Library installations
+- Use R-Programming documentation
 - Some arithmetic experience  
 
 ### <a href="Goals"></a>Goals  
@@ -27,7 +28,7 @@ One goal is to acknowledge internet gaps and discrepancies that may impact unawa
 _It is also important for readers to understand terms and content within scope._  
 
 ### <a href="Introduction"></a>Introduction  
-In this tutorial, R-Programming is used to statistically analyze data from an IPv4 address. The purpose is to gain understanding about accuracies and inaccuracies from internet activities. As a starting point, 45.88.197.212 is the defined IP address used throughout this tutorial.  
+In this tutorial, R-Programming is used to statistically analyze data from an IPv4 address. The purpose is to gain understanding about accuracies and inaccuracies from internet activities. As a starting point, 45.88.197.212 is the defined IP address throughout this tutorial.  
 
 Let's start.  
 
@@ -81,12 +82,11 @@ If not installed, the list below are libraries included in this tutorial.
 ```Sh
 install.packages(c("Rwhois", dependencies = TRUE))  
 install.packagec(c("iptools", dependencies = TRUE)  
-install.packages(c("httr", dependencies = TRUE))  
 install.packages(c("rIP", dependencies = TRUE))  
 install.packages(c("rattle"), dependencies = TRUE)  
 ```
 
-_Just as a reminder: Options can be benefial within a code to include more specifications. For example, `dependencies = TRUE`._  
+_Use `dependencies = TRUE` to install all applicable packages_  
 
 Sample libraries with possible results are shown below.  
 
@@ -94,7 +94,7 @@ Sample libraries with possible results are shown below.
 ```Sh
 library(Rwhois)
 ```  
-The results below shows information of the IP registrar responsible.
+Information about the IP registrar responsible can be found.
 Partial Output:  
 
 index | key | val
@@ -136,7 +136,7 @@ To check if the IP is using a DNS proxy, enter:
 ```Sh 
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
-The result below indicates whether or not a proxy was used.
+An IP without a proxy would display in this manner.
 Output:  
 ```Sh
 [1] "no"
@@ -147,7 +147,7 @@ An IP address can be categorized under multiple registered geological regions in
 
 ### <a href="Basic-Statistics"></a>Basic Statistics  
 
-Determining geological location of an IP address can resemble many statistical data models. The probability of finding the correct geological location can be tough when it comes to meshing various DNS factors together. For example, 45.88.197.212 overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
+Geological location of an IP address can resemble many statistical data models. The probability of determining the correct geological location can be tough as various DNS factors are considered. For example, 45.88.197.212 overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
 
 Factors can include:  
 - DNS variables
@@ -164,20 +164,21 @@ Factors can include:
 - Privacy redactions  
 
 
-Predicting which country best matches this IP address can be complex, however, it is possible. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five associated geological locations.  
-List of countries:
+Predicting which country best matches this IP address can be complex, however, it is possible. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five geological locations.  
+
+Possiblities:
  - Lithuania (Li)
  - Cyprus (Cyp)
  - Germany (De)
  - Netherlands (Nl)
  - Amsterdam (Am)  
 
-`Rattle` can generate data models. A decision tree model can visually provide a logical breakdown. Shown below, is a manually made IP address data frame. Data can be sourced by IP registrars.  
+`Rattle` can generate data models. A decision tree model can visually provide a logical breakdown. Shown below, is a manually made IP address data frame. Data can be sourced with IP registrars.  
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
-Using `library(rattle)` and `rattle()`, a GUI type application can produce necessary visuals and numerical values.  
+A GUI type application can produce necessary visuals and numerical values from `rattle`.  
 
-Typically, a decision tree selects the highest possible number as the optimal choice. In this scenario, the countries categorized as less optimal are analyzed. Amsterdam, Netherlands, and Cyprus were shown as the top three choices. Lithuania and Germany seemed to be less optimal according to `rattle`.   
+Typically, a decision tree selects the highest possible number as the optimal choice. In this scenario, the countries categorized as less optimal are analyzed. Amsterdam, Netherlands, and Cyprus were shown as the top three choices. Lithuania and Germany seemed to be less optimal.   
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 *Screencapture*  
 
@@ -185,7 +186,7 @@ The random forest statistical data model can also offer benefits. It is possible
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 *Screencapture*  
 
-With the highest score of the five countries, Lithuania seemed to have the most variable importance. Germany also showed some correlation. This statistical analysis using Gini found high variable importance in Lithuania with a value of 3087.48.   
+With the highest score of the five countries, Lithuania and Germany both showed some correlation to the IP address. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
 
 
 ### <a href="Linux-Reverse-IP-Lookup"></a>Linux Reverse IP Lookup  
@@ -213,7 +214,7 @@ Output:
 ![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
 *Screencapture*
 
-A `curl` function can list the possible domains on an IP address. The code below can be a potential solution to reverse IP engineering:  
+A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering:  
 
 ```Sh
 sudo curl https://host.io/
