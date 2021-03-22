@@ -24,7 +24,7 @@ After saving the collections you just created, you will notice there are no docu
 
 You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
-For this article, you will be creating three indexes; `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index will also enable you to scroll through data in the `Appointments` collection but will use both the `user_id` and `date_due` fields as parameters to match.
+For this article, you will be creating three indexes; `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` will also enable you to scroll through data in the `Appointments` collection but will use both the `user_id` and `date_due` fields as parameters to match.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
