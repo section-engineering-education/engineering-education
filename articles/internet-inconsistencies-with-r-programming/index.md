@@ -8,7 +8,7 @@ This tutorial can help detect internet inconsistencies.
 - [Prerequisites](#prerequisites)  
 - [Goals](#goals)    
 - [Introduction](#introduction)    
-- [Linux Fundamentals](#linux-gundamentals)  
+- [Linux Fundamentals](#linux-fundamentals)  
 - [R-Programming](#r-programming)  
 - [Basic Statistics](#basic-statistics)  
 - [Linux Reverse IP Lookup](#linux-reverse-ip-lookup)  
