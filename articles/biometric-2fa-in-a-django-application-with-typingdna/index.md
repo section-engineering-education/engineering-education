@@ -2,13 +2,13 @@
 
 Have you ever wanted to implement biometric two-factor authentication in your Django web application? If your answer is yes then this article is just what you need to get started.
 
-TypingDNA is a two-factor authentication API that easily helps to integrate biometrics authentication to secure user accounts on your website using powerful typing analysis. TypingDNA typically helps you learn a user’s typing pattern and match them, then use it to further authenticate users after login. This double user verification is what is known as a “two-factor authentication”. 
+TypingDNA is a two-factor authentication API that easily helps to integrate biometrics authentication to secure user accounts on your website using powerful typing analysis. TypingDNA typically helps you learn a user’s typing pattern and match them, then use it to further authenticate users after login. This double user verification is what is known as a “two-factor authentication”.
 
 This article shows a step-by-step guide to integrating TypingDNA services into a Django web application. To learn more visit their official website <https://www.typingdna.com>
 
 # Signing Up with TypingDNA
 
-To get started we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable. 
+To get started we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable.
 
 # Building Our Django Application
 
@@ -34,7 +34,7 @@ cd typingdnavideoplayer
 
 The structure of our project should be similar to the one in the image below.
 
-![project-structure](ip9jv0towgmn9pwtnqgb.png)
+![project-structure](/engineering-education/new-folder-name/project_structure.png)
 
 We now need to install the `requests` module required by our project to interact with typingdna and the Django framework. Type the command below in your terminal.
 
@@ -54,11 +54,11 @@ python manage.py runserver
 
 ```
 
-![application-running](8f2bomaxvqophte6_iyt.png)
+![application-running](/engineering-education/new-folder-name/application-running.png)
 
 After typing the command, we should get a result similar to the one in the image above. We can now visit our site on the localhost at <http://127.0.0.1:8000/>.
 
-![sign-in-page](tvteamac-6pucz_wsbg-.png)
+![sign-in-page](/engineering-education/new-folder-name/sign-in-page.png)
 
 # Getting the TypingDNA Library
 
@@ -66,7 +66,7 @@ After running our Django application we cloned above, we need to download the Ty
 
 After downloading the javascript files, open the `App` folder and place the `typingdna.js` file in the static folder. We also need to download and import the TypingDNA `Autocomplete Disabler` and `Typing Visualizer` files. These files will allow users to see that their typing pattern is being recorded as they enter the required text. Download the `autocomplete-disabler.js` and `typing-visualizer.js` from this repo <https://github.com/TypingDNA/autocomplete-disabler> and store them in the `static` folder of our Django application. Our project structure should be similar to the image below.
 
-![project-structure](t_nj7whlsj2xka55mrj3.png)
+![project-structure](/engineering-education/new-folder-name/project-structure.png)
 
 After downloading and placing our files in the right directories, we need to modify our models for the `Video` table so we can only display videos added by a particular user. To do this, update the `models.py` file with the code below:
 
@@ -174,7 +174,7 @@ python manage.py migrate
 
 We should see the results below if our migrations ran successfully.
 
-![migrations](pyv1dbr4tgsaracehowl.png)
+![migrations](/engineering-education/new-folder-name/migrations.png)
 
 Let’s edit the `videos` view in the views.py` file with the following code to render only a particular user’s videos in the frontend.
 
@@ -206,7 +206,7 @@ userprofile.save()
 
 # The TypingDNA Check User Endpoint
 
-![check-user-endpoint](b9midwbwiimfsia3pdes.png)
+![check-user-endpoint](/engineering-education/new-folder-name/check-user-endpoint.png)
 
 The TypingDNA API [Check User](https://api.typingdna.com/index.html%23api-API_Services-Standard_APIs-GetUser) endpoint helps us to check if a user exists then checks the number of saved typing patterns they have. If the user has saved typing patterns then verification can be done. It is recommended to save at least two typing patterns to perform accurate authentications.
 
@@ -378,7 +378,7 @@ Add the code below right after where we imported TypingDNA in the `enroll.html` 
 
 ```
 
-![autocomplete-disabler](jsc7e0182se08cgg2idf.png)
+![autocomplete-disabler](/engineering-education/new-folder-name/autocomplete-disabler.png)
 
 Next, create a variable to store the captured typing patterns of our users and a function named `beginAuthentication` which will be triggered by the users when they enter the auth text.
 
@@ -454,9 +454,9 @@ We then proceeded to capture the user’s typing pattern recorded using the `sam
 
 After capturing the user’s typing pattern, we went ahead to verify if the typing pattern was captured successfully. If capturing was successful, we store the typing patterns in the `typing_patterns` variable we created earlier. However, if capturing was not successful, we go ahead to display an error message reflected from TypingDNA.
 
-According to the TypingDNA documentation, to ensure accurate authentications the user is required to enroll his/her typing patterns at least three (3) times. To achieve this, we check if the user enrolled all three times before submitting the form. If the user hasn’t satisfied the three enrollments, we just store the current pattern and restart enrollment using the TypingDNA `TypingDNA.reset()` method and `TypingDNA.start()` method to start the recorder again while keeping track of the number of enrollments the user has done. TypingDNA requires that all typing patterns sent should be concatenated into one (1) string separated by semicolons. 
+According to the TypingDNA documentation, to ensure accurate authentications the user is required to enroll his/her typing patterns at least three (3) times. To achieve this, we check if the user enrolled all three times before submitting the form. If the user hasn’t satisfied the three enrollments, we just store the current pattern and restart enrollment using the TypingDNA `TypingDNA.reset()` method and `TypingDNA.start()` method to start the recorder again while keeping track of the number of enrollments the user has done. TypingDNA requires that all typing patterns sent should be concatenated into one (1) string separated by semicolons.
 
-![enrollment-page](0csfxxqyrg4ivaw_ptqd.png)
+![enrollment-page](/engineering-education/new-folder-name/enrollment-page.png)
 
 # Saving Recorded Typing Patterns
 
@@ -550,7 +550,7 @@ tdna = TypingDNA("apiKey", "apiSecret")
 
 Our `views.py` file libraries importation should look like the image below:
 
-![import](ppmxq0un8c5boand8d3o.png)
+![import](/engineering-education/new-folder-name/import.png)
 
 We want to update our `enroll` view to save the typing patterns we received in our dashboard. Update the `enroll` view with the code below:
 
@@ -594,17 +594,17 @@ In the code above, we collected the typing pattern enrolled by the user and stor
 
 After successfully enrolling to TypingDNA, we should be redirected to a page similar to the one in the image below:
 
-![dashboard](jtvausov1ino4r9xjhkx.png)
+![dashboard](/engineering-education/new-folder-name/dashboard.png)
 
 # Authenticating New Users with TypingDNA
 
 ## Building Our Login Logic
 
-After registering and enrolling our typing patterns with TypingDNA, we can now login and implement our two-factor authentication. 
+After registering and enrolling our typing patterns with TypingDNA, we can now login and implement our two-factor authentication.
 
-![login](t2on_a-qoohixzizjggz.png)
+![login](/engineering-education/new-folder-name/login.png)
 
-In the image above, our `login` view checks if the user is set in session. If the user is set then the user is redirected to view all videos page. However, if the user is not set in the session, then the user is redirected to verify his/her 2FA with their typing pattern. 
+In the image above, our `login` view checks if the user is set in session. If the user is set then the user is redirected to view all videos page. However, if the user is not set in the session, then the user is redirected to verify his/her 2FA with their typing pattern.
 
 ## Building The Verify Page
 
@@ -658,7 +658,7 @@ background-color: #b2beb5
 
  <strong>You have not completed your authentication, please type the text above</strong>
 
- </div> 
+ </div>
 
  <div class="card-body">
 
@@ -708,7 +708,7 @@ background-color: #b2beb5
 
 ```
 
-![verify-page](pfodkqagfufkkt7tc6he.png)
+![verify-page](/engineering-education/new-folder-name/verify-page.png)
 
 This page is where users will be authenticated with their pre-registered typing patterns.
 
@@ -914,7 +914,7 @@ background-color: #b2beb5
 
 ```
 
-![email-verification](slf2oslsvqv9yepskdzk.png)
+![email-verification](/engineering-education/new-folder-name/email-verification.png)
 
 ## Creating The Tokens File
 
@@ -960,7 +960,7 @@ http://{{ domain }}{% url 'App:activate' uidb64=uid token=token %}
 
 ## Building The Login Activation Logic
 
-We will now be building our logic for how the activation token is generated and sent. 
+We will now be building our logic for how the activation token is generated and sent.
 
 First we need to import the required modules and libraries required. Copy and paste the code below in your `views.py` file.
 
@@ -1020,13 +1020,13 @@ def verify_email(request):
 
 ```
 
-In the code above, we checked if the request received from the frontend is a POST request. If this was the case, we proceed to collecting the data in the POST request for `name` and then checking if the value is “true”. If this is the case, we create a message using the `render_to_string` function to send the activation token and other data required to the `activation_email` page to be rendered for the user to see. We created the a token using the `make_token` method we imported from our `tokens.py` file which will make the token using the username of the user. 
+In the code above, we checked if the request received from the frontend is a POST request. If this was the case, we proceed to collecting the data in the POST request for `name` and then checking if the value is “true”. If this is the case, we create a message using the `render_to_string` function to send the activation token and other data required to the `activation_email` page to be rendered for the user to see. We created the a token using the `make_token` method we imported from our `tokens.py` file which will make the token using the username of the user.
 
 In the images below, the activation link was sent to the user and displayed in the console for the user to see.
 
-![link-sent](kbzagepo7zsuaqlrm8sy.png)
+![link-sent](/engineering-education/new-folder-name/link-sent.png)
 
-![verification-token](rveccurpan5zqyy83zoo.png)
+![verification-token](/engineering-education/new-folder-name/verification-token.png)
 
 ## The Confirmation Page
 
@@ -1084,9 +1084,9 @@ class ActivateAccount(View):
 
 In the code above, we created the `get` method which receives the activation token clicked and collects the data required for verification from it. We then create a `try-except` cache which checks if there are any errors in matching the `uid` passed with a user in the database. If there are no errors, the user is automatically logged in and the “verify_email” in the session is set to True. However, if there are any problems matching the `uid` with a user in the database, the user is set to “None” and the error message produced is sent to rendered in the `confirm.html` page.
 
- 
 
-Finally, we need create a new url to handle verifications with the activation token. Add the following code to our `urlpatterns` in the`urls.py` file to allow verification of activation token by the `ActivateAccount` class. 
+
+Finally, we need create a new url to handle verifications with the activation token. Add the following code to our `urlpatterns` in the`urls.py` file to allow verification of activation token by the `ActivateAccount` class.
 
 ```python
 
@@ -1096,17 +1096,17 @@ path('activate/<uidb64>/<token>/', views.ActivateAccount.as_view(), name='activa
 
 The image below is a page showing the result of navigating to a wrong, used or timed-out activation token.
 
-![invalid-token](runqrenqlrva73_p9rvk.png)
+![invalid-token](/engineering-education/new-folder-name/invalid-token.png)
 
 # Adding Videos To Database
 
 For us to add videos to our database that we can play, we need to visit the admin page and login. Lets navigate to the admin page on <http://127.0.0.1:8000/admin> and login. After a successful login, click on the `+` button next to `Videos` to add a new video and provide the required details as seen in the image below.
 
-![add-video](ez2q-b_zvq4q9jz6xf12.png)
+![add-video](/engineering-education/new-folder-name/add-video.png)
 
 After providing the details required for our video, we will click on save to save the video and return to the homepage. Go to the <http://127.0.0.1:8000/all-videos> page, you would notice we now have a new video added that can be played.
 
-![added-video](kpzqvzeuplrpyoh6a_wd.png)
+![added-video](/engineering-education/new-folder-name/added-video.png)
 
 # Conclusion
 
@@ -1115,4 +1115,3 @@ While integrating TypingDNA with Django, we were able to implement two-factor au
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/mine.git) . Trying out TypingDNA for biometric authentication was very interesting and I can’t wait to see the amazing things you build with it!
 
 If you have any questions, don't hesitate to contact me on Twitter: [@DoroChurchill](https://twitter.com/DoroChurchill)
-
