@@ -16,7 +16,7 @@ This tutorial can help detect internet inconsistencies.
 
 ### Prerequisites 
 - Device with unlimited functional capabilities
-- Functional version of Linux emulator _(Kali Linux was used)_
+- Functional version of Linux emulator (Kali Linux was used)
 - R-Programming software  
 - R-Programming library installations and documentation  
 - Some arithmetic experience  
@@ -24,7 +24,7 @@ This tutorial can help detect internet inconsistencies.
 ### Goals  
 One goal is to acknowledge internet gaps that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
 
-_It is also important for readers to understand terms and content within scope._  
+It is also important for readers to understand terms and content within scope.  
 
 ### Introduction  
 In this tutorial, R-Programming is used to statistically analyze data from an IPv4 address. The purpose is to gain understanding about accuracies and inaccuracies from internet activities. As a starting point, 45.88.197.212 is the defined IP address throughout this tutorial.  
@@ -132,8 +132,7 @@ library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
 
-Displaying IP address without a proxy will appear in this manner.
-Output:  
+Displaying IP address without a proxy will appear in this manner.  Output:  
 ```Sh
 [1] "no"
 ```  
