@@ -197,10 +197,8 @@ class ImmutableDataClass:
 obj = ImmutableDataClass()
 print(obj.val1)
 
-obj.val1 = "Another Value"
-print(obj.val1)
-
 obj.func(12)
+print(obj.func)
 ```
 
 ### Conclusion
