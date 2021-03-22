@@ -132,7 +132,7 @@ when we run the program, the following image is displayed on our figure window.
 
 ![Faces detected](/engineering-education/face-detection-matlab/engineers.png)
 
-when we change the image and use a different image that has no face, the following is displayed on our figure window.
+when we use an image that has no face, the following is displayed on our figure window.
 
 ![Building](/engineering-education/face-detection-matlab/building.png)
 
