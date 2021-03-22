@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/spring-boot-smtp/
 title: Getting started with Spring Boot SMTP
-description: This tutorial goes over the configurations of the Gmail SMTP server and sending emails from a Spring Boot application.
+description: This tutorial will go over the configurations of the Gmail SMTP server and how to send emails from a Spring Boot application.
 author: quinter-awuor
-date: 2021-03-22T00:00:00-06:00
+date: 2021-03-22T00:00:00-09:00
 topics: [Spring Boot]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/spring-boot-smtp/hero.jpg
     alt: Spring Boot SMTP example image
 ---
-
 ### Spring Boot SMTP
-Simple mail transfer protocol is a standard communication protocol that transfers mail electronically. SMTP makes it possible to send mail messages from within applications. In this tutorial, we will be using SMTP with Spring Boot to send mail messages from our application.
+Simple mail transfer protocol (SMTP) is a standard communication protocol that transfers mail electronically. SMTP makes it possible to send mail messages from within applications. In this tutorial, we will be using SMTP with Spring Boot to send mail messages from our application.
 
 ### Prerequisites
+Before we begin its important to have the following:
 1. [Java developer kit](https://www.oracle.com/java/technologies/javase-downloads.html) installed on your computer.
 2. Basic knowledge of [Spring Boot](https://spring.io/projects/spring-boot).
-3. IDE of your choice installed. I use [Intellij IDEA](https://www.jetbrains.com/idea/download/).
+3. IDE of your choice installed. I will be using [Intellij IDEA](https://www.jetbrains.com/idea/download/).
 
 ### Creating the project
 We are going to use [spring initializr](https://start.spring.io/) to bootstrap our application. 
@@ -31,7 +31,7 @@ We are going to use [spring initializr](https://start.spring.io/) to bootstrap o
 - Unzip the project file downloaded and open it in your favorite IDE.
 - Sync the dependencies with maven.
 
-The `pom.xml` file should contain the dependencies as shown in the code snippet below.
+The `pom.xml` file should contain the dependencies shown in the code snippet below.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +91,7 @@ The `pom.xml` file should contain the dependencies as shown in the code snippet 
 ### Mail configurations
 Now that we have set up the project, add the following configurations into the `applications. properties` file in the resources directory.
 
-```properties
+```bash
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
 spring.mail.username=email-address
@@ -105,9 +105,9 @@ spring.mail.properties.mail.smtp.writetimeout=5000
 spring.mail.properties.mail.smtp.starttls.enable=true
 ```
 
-Replace the `email-address and `email password` with your actual email address and password.
+Replace the `email-address and email password` with your actual email address and password.
 
-For the above configurations to work in our applications, we must set up Gmail to allow connections from less secure apps.
+For the configurations above to work in our applications, we must set up Gmail to allow connections from less secure apps.
 - On your Gmail account, click on `manage account`.
 - On the `manage account` screen click on the `security` menu item and select `turn on access to less secure apps` as shown below.
 
@@ -161,12 +161,12 @@ public class Mail {
 ```
 
 ### Service layer
-The service layer often contains the actual business logic for an application. In this layer, we will implement the logic for sending an actual email to the recipients provided.
+The service layer often contains the actual business logic for an application. In this layer, we will implement the logic used to send an actual email to the recipients provided.
 
 1. In the root application package, create a new package with the name `service`.
 2. Create an interface with the name `SendMailService` and add the code snippet below.
 
-**Note** -  Interfaces make it possible to provide several implementations of a given functionality i.e we can create Gmail and SendGrid SMTP implementations of the `SendMailService`.
+>**Note** -  Interfaces make it possible to provide several implementations of a given functionality i.e we can create Gmail and SendGrid SMTP implementations of the `SendMailService`.
 
 ```java
 import javax.mail.MessagingException;
@@ -178,6 +178,7 @@ public interface SendMailService {
 }
 
 ```
+
 3. In the service package, create a Java class implementation for the `SendMailService` interface with the code snippet below.
    
 ```java
@@ -228,12 +229,13 @@ public class SendMailServiceImpl implements SendMailService {
     }
 }
 ```
-From the above code snippets, we have two functions that send emails. The first function sends a plain text email while the second function sends an email with an attachment.
 
+From the code snippets above, we have two functions that send emails. The first function sends a plain text email while the second function sends an email with an attachment.
 
 ### Controller layer
 1. In the projects root package, create a package named `controller`.
 2. Create a Java class named `EmailController` with the code snippet below.
+
 ```java
 import com.queenter.sendmail.domain.Mail;
 import com.queenter.sendmail.service.SendMailService;
@@ -269,10 +271,11 @@ public class EmailController {
 }
 
 ```
-From the above code snippet, both functions receive a request body containing the details of the email to be sent and the response is a `ResponseEntity` of type string with information on whether the email is sent successfully or not.
+
+From the code snippet above, both functions receive a request body containing the details of the email to be sent and the response is a `ResponseEntity` of the string type with information on whether the email was sent successfully or not.
 
 ### Conclusion
-Now that you have learned how to configure and send emails in a Spring Boot application, try sending an email with an Html body and CSS styling.
+Now that you have learned how to configure and send emails in a Spring Boot application, try sending an email with an HTML body and CSS styling.
 
 Happy coding.
 
