@@ -22,7 +22,7 @@ This tutorial can help detect internet inconsistencies.
 - Some arithmetic experience  
 
 ### <a href="Goals"></a>Goals  
-One goal is to acknowledge internet gaps and discrepancies that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
+One goal is to acknowledge internet gaps that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
 
 _It is also important for readers to understand terms and content within scope._  
 
@@ -50,7 +50,6 @@ apt update
 ```   
 
 Open a new Shell window and enter in the following:  
-
 ``` Sh
 kex
 ```  
@@ -61,7 +60,6 @@ A window should appear similar to the image below if successfully installed.
 
 ### <a href="R-Programming"></a>R-Programming  
 Enter in the following code to install a Linux version of the R-Programming application.  
-
 ```Sh
 sudo apt-get install r-base r-base-dev
 ```  
@@ -95,7 +93,6 @@ library(Rwhois)
 ```  
 Information about the IP registrar responsible can be found.
 Partial Output:  
-
 index | key | val
 --- | --- | ---
 1 | NetRange | 45.80.0.0 - 45.95.255.255
@@ -128,12 +125,12 @@ Output:
 [1] TRUE
 ```  
 
-
 To check if the IP is using a DNS proxy, enter: 
 ```Sh 
 library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
+
 Displaying IP address without a proxy will appear in this manner.
 Output:  
 ```Sh
@@ -151,7 +148,6 @@ Factors can include:
 - DNS variables
 - Hosting
 - Directories   
-
  Directory Name | Information
  --- | ---
  RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe.
@@ -178,11 +174,11 @@ Typically, a decision tree selects the highest possible number as the optimal ch
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 *Screencapture*  
 
-The random forest statistical data model can also offer benefits. It is possible to evaluate variable importance.  
+It is possible to evaluate variable importance from a random forest statistical data model.  
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 *Screencapture*  
 
-With the highest score of the five countries, Lithuania and Germany both showed some correlation to the IP address. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
+With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also had some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
 
 
 ### <a href="Linux-Reverse-IP-Lookup"></a>Linux Reverse IP Lookup  
@@ -210,7 +206,7 @@ Output:
 ![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
 *Screencapture*
 
-A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering:  
+A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering.  
 
 ```Sh
 sudo curl https://host.io/
@@ -230,12 +226,14 @@ Partial Output:
  - interviews-massiveinsights.digital
  - morgeesmodcon.com  
 
-Did you notice the domain names listed above are companies registered with ARIN and CIRA without any connection to RIPE?    
+Did you notice the domain names listed above are companies registered with ARIN and CIRA without any connection to RIPE?  
+
+Internet inconsistencies exist.
 
 ### <a href="Takeaways"></a>Takeaways  
 
  - Statistics can reveal internet inconsistencies.
- - Advanced data modells can provide further DNS relationships.
+ - Advanced data models can provide further DNS relationships.
  - Internet registrars are important to allocate IP data.
 
 
