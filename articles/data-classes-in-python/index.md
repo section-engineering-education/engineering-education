@@ -1,18 +1,33 @@
-### Data classes in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/data-classes-in-python-3.7+/
+title: Data Classes in Python 3.7+
+description: In this tutorial, we will look at implementing data classes in Python 3.7. Data classes are classes that are declared using @dataclass decorator.
+author: oruko-pius
+date: 2021-03-22T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/data-classes-in-python-3.7+/hero.jpg
+    alt: Data Class Python 3.7+ example Image
+---
 The main function of a Python class is to contain and represent data. In previous Python versions, the `__init__()` function stores values on the instance of the class. This is a common pattern that brings up the question; why must we explicitly store each argument on the object? Well, in Python 3.7 we don't.
+<!--more-->
 
-A new feature called a data class, which solves this was introduced. A data class helps to automate the creation and managing of classes that mostly exist just to hold data.
+A new feature called a data class, which solves this was introduced. A data class helps to automate the creation and management of classes that mostly exist just to hold data.
 
 ### Prerequisites
-To get started with data classes, you must have `python 3.7` or newer installed since previous versions don't have its support. You can get the latest python versions from the official website [here](https://www.python.org/downloads/).
+To get started with data classes, you must have `python 3.7` or newer installed, since previous versions don't have its support. You can get the latest python versions from the official website [here](https://www.python.org/downloads/).
 
 The reader should also be able to work with Python classes and objects for a better understanding of the chapter. If you would like to brush your skills on classes be sure to visit this [site](https://docs.python.org/3/tutorial/classes.html) to familiarise yourself with the concepts.
 
 ### Defining a data class
-A python class is a program for creating objects and its properties. We use the keyword `class` when creating a class in Python. For class attributes to be initialized, we use a constructor method called `__init__()` which is called when an object is created in a Python class.
+A python class is a program for creating objects and their properties. We use the keyword `class` for creating a class in Python. For class attributes to be initialized, we use a constructor method called `__init__()` which is called when an object is created in a Python class.
 
-Let's implement a python class.
+Let's implement a Python class.
 
 ```python
 class Student:
@@ -20,7 +35,6 @@ class Student:
         self.name = name
         self.course = course
         self.gpa = gpa
-
 
 # create instances
 student1 = Student('James', 'Comp Science', 3.7)
@@ -43,7 +57,6 @@ class Student:
     course: str
     gpa: float
 
-
 # create instances
 student1 = Student('James', 'Comp Science', 3.7)
 student2 = Student('Angie', 'Bcom', 4.0)
@@ -58,7 +71,7 @@ print(student1)
 
 We first import the `dataclass`. We prefix our class with the `@dataclass` decorator from the imported dataclass. In our class, we define our fields with their data type. For example, `name` and `course` are strings. We use the `str` to represent their data type. Our `gpa` will be a decimal so we use a `float`.
 
-By running the `dataclass()` decorator, the properties of the class are initialized by a built-in `__init__()` function. The output is similar to the one in the previous example.  
+By running the `dataclass()` decorator, the properties of the class are initialized by a built-in `__init__()` function. The output is similar to the one in the previous example. 
 
 Let's add another method in our class and see how we can change fields.
 
@@ -133,7 +146,6 @@ import random
 def gpa_range():
     return float(random.randrange(2, 5))
 
-
 @dataclass
 class Student:
     name: str = "No Name"
@@ -152,7 +164,7 @@ print(student1)
 print(student2)
 ```
 
-In our class object, we indicate the default value by using an equal sign with the corresponding data type. We pass `No Name` and `No Course` for the string data types and pass a field with a defined function `gpa_range()` to generate random GPA values to the gpa attribute. 
+In our class object, we indicate the default value by using an equal sign with the corresponding data type. We pass `"No Name"` and `"No Course"` for the string data types and pass a field with a defined function `gpa_range()` to generate random GPA values to the gpa attribute. 
 
 The `default_factory` allow us to use mutable default values using the `field()` specifier. The `gpa_range()` function generate random values between 2 and 5. We then create an instance of Student class by passing the `name` and `course` attribute. The `gpa` property is set by the field operator which we imported. Running the file outputs a Student object with all the properties.
 
@@ -176,7 +188,7 @@ obj.val1 = "Another value"
 print(obj.val1)
 ```
 
-We create a new class, `ImmutableDataClass()` and define two attributes: `val1` and `val2`. We assign default values to both: `This value` and `0` respectively. We create a variable `obj` and print `val1`. `"This value"` is displayed. If we try to modify `val1` by assigning it another value, `" Another value"` we get an exception, `FrozenInstanceError`. This is because the class is immutable. In our decorator we pass `Frozen=True` to the `dataclass()` decorator. This make the python objects to be immutable. 
+We create a new class, `ImmutableDataClass()` and define two attributes: `val1` and `val2`. We assign default values to both: `"This value"` and `0` respectively. We create a variable `obj` and print `val1`. `"This value"` is displayed. If we try to modify `val1` by assigning it another value, `" Another value"` we get an exception, `FrozenInstanceError`. This is because the class is immutable. In our decorator we pass `Frozen=True` to the `dataclass()` decorator. This make the Python objects to be immutable. 
 
 The frozen classes can't modify themselves either. For instance the `func()` function in the `ImmutableDataClass` cannot be modified too. 
 
@@ -204,6 +216,9 @@ print(obj.func)
 ### Conclusion
 In this tutorial, we covered how to use data classes to reduce the amount of junk code required to develop data-centric objects.
 
-For more on data classes in python check out the [official documentation](https://docs.python.org/3/library/dataclasses.html#module-dataclasses) and this [source](https://realpython.com/python-data-classes/).
+For more on data classes in Python check out the [official documentation](https://docs.python.org/3/library/dataclasses.html#module-dataclasses) and this [source](https://realpython.com/python-data-classes/).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
