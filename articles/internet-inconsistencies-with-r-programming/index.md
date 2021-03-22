@@ -149,7 +149,8 @@ Factors can include:
 - Hosting
 - Directories   
 A few helpful directories are listed in the table below.  
- Directory Name | Information
+
+Directory Name | Information
  --- | ---
  RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe.
  NIC | A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups.
