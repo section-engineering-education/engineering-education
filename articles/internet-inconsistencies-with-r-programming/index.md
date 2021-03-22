@@ -56,7 +56,7 @@ kex
 
 A window should appear similar to the image below if successfully installed.    
 ![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
-*Screencapture*  
+*Screen capture*  
 
 ### R-Programming  
 Enter in the following code to install a Linux version of the R-Programming application.  
@@ -66,14 +66,14 @@ sudo apt-get install r-base r-base-dev
 
 The following screens may appear:  
 ![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
-*Screencapture*  
+*Screen capture*  
 
 ![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)  
-*Screencapture*  
+*Screen capture*  
 
 Alternatively, using an R-programming application can be equally as effective. The image below is RStudio.  
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
-*Screencapture*  
+*Screen capture*  
 
 If not installed, the libraries included in this tutorial are listed below.  
 ```Sh
@@ -173,11 +173,11 @@ Possiblities:
 
 Typically, a decision tree selects the highest possible number as the optimal choice. In this scenario, the countries categorized as less optimal are analyzed. Amsterdam, Netherlands, and Cyprus were shown as the top three choices. Lithuania and Germany seemed to be less optimal.   
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
-*Screencapture*  
+*Screen capture*  
 
 It is possible to evaluate variable importance from a random forest statistical data model.  
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
-*Screencapture*  
+*Screen capture*  
 
 With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also had some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
 
@@ -205,7 +205,7 @@ Output:
 ```  
 
 ![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
-*Screencapture*
+*Screen capture*
 
 A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering.  
 
