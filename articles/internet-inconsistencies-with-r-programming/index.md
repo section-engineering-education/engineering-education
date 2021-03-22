@@ -83,9 +83,7 @@ install.packages(c("Rwhois", dependencies = TRUE))
 install.packagec(c("iptools", dependencies = TRUE))   
 install.packages(c("rIP", dependencies = TRUE))  
 install.packages(c("rattle", dependencies = TRUE))  
-```
-
-_Use `dependencies = TRUE` to install all applicable packages_  
+```  
 
 Sample libraries with possible results are shown below.  
 
