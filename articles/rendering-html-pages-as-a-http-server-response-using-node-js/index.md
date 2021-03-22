@@ -1,44 +1,40 @@
- ---
-- layout: engineering-education
-- status: publish
-- published: true
-- url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js
-- title: Rendering HTML Pages as an HTTP Server Response Using Node.js
-- description: In this article, we consider the various approaches to rendering an HTML page. We begin by sending the HTML page bit by bit and understand its limitations. We then shift to creating a Node.js server using Express.js and render the HTML page an HTTP server response. 
-- author: moses-m
-- date: 2021-03-17T00:00:00-18:00
-- topics: []
-- excerpt_separator: <!--more-->
-- images:
-
--  - url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/hero.jpg
--    alt: HTML as a HTTP server response example image
-- 
 ---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js
+title: Rendering HTML Pages as an HTTP Server Response Using Node.js
+description: In this article, we consider the various approaches to rendering an HTML page. We begin by sending the HTML page bit by bit and understand its limitations. We then shift to creating a Node.js server using Express.js and render the HTML page an HTTP server response. 
+author: moses-m
+date: 2021-03-22T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-When developing web applications, you might need to render the HTML components inside your server. This helps create interactive pages on the client side once a request to access these pages is made. There are various ways of hosting your HTML pages (website), for example;
-
+ - url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/hero.jpg
+   alt: HTML as a HTTP server response example image
+---
+When developing web applications, you might need to render the HTML components inside your server. This will help create interactive pages on the client side once a request to access these pages is made. 
+<!--more-->
+There are various ways of hosting your HTML pages (website), for example:
 - Rendering your client-side on its own using frameworks for such as React or,
 - Rend the pages directly from the server. When the browser access a route specified in your server, the server will load these HTML pages upon users' requests.
 
 This guide explains how to render HTML elements and HTML pages on your server using Node.js.
 
 ### Prerequisites
-
-Basic knowledge of using [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express.js](/engineering-education/express/)
+Basic knowledge of using [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express.js](/engineering-education/express/) will be helpful to follow along.
 
 ### What we will cover
-
 - [Prerequisites](#prerequisites)
 - [What we will cover](#what-we-will-cover)
 - [Setting up](#setting-up)
 - [Rendering inline Html elements as HTTP responses](#rendering-inline-html-elements-as-http-responses)
 - [Render HTML web pages as server responses](#render-html-web-pages-as-server-responses)
-- [Parsering form data to the server using the HTML forms](#parsering-form-data-to-the-server-using-the-html-forms)
+- [Parsing form data to the server using the HTML forms](#parsing-form-data-to-the-server-using-the-html-forms)
 - [Conclusion](#conclusion)
 
 ### Setting up
-
 - [Download Node.js](https://nodejs.org/en/) and install it. Run `node -v` to test if the installation was successful.
 
 ```bash
@@ -59,11 +55,10 @@ Check this [guide](/engineering-education/beginner-guide-to-npm/) to learn more 
 - Install the Express.js framework using `npm install express`. Check this [guide](/engineering-education/express/) to learn more about of Express.js.
 - We will create a server using Express.js. It is important to hook the server with Nodemon. Nodemon is an optional package (installed globally) which automatically restarts the server after saving server-side code changes. Go ahead and install Nodemon using `npm install -g nodemon`. Check this [guide](https://www.npmjs.com/package/nodemon) to learn more about Nodemon.
 
-### Rendering inline Html elements as HTTP responses
-
+### Rendering inline HTML elements as HTTP responses
 Below is a [simple hello world HTTP server](https://expressjs.com/en/starter/hello-world.html) (`app.js`) listening on port 3000.
 
-**File name**: _app.js_
+**File name**: *app.js*
 
 ```js
 const express = require("express");
@@ -80,7 +75,7 @@ app.get("/", (req, res) => {
 
 >Run `nodemon` to start the server.
 
-Whenever the server is running, accessing the route `http://localhost:3000/`, output the plain text `hello world!`.
+Whenever the server is running, and accessing the route `http://localhost:3000/`, it will output the plain text `hello world!`.
 
 We can use the same server to render HTML elements as the server response instead of sending plain text.
 
@@ -106,10 +101,13 @@ Restart the server and open the route `http://localhost:3000/` on the browser.
 `res.send` is sending individual bits of HTML data to the server, but if we want to send an entire web page such as an `index.html`, we have to use something different.
 
 ### Render HTML web pages as server responses
+The method above can be very tiresome and may not be the type of code you want to write inside your server. In a normal web page, HTML elements are written in a `.html` file. 
 
-The above can be very tiresome and not the type of code you want to write inside your server. In a normal web page, HTML elements are written in a `.html` file. This makes it easier to write all your HTML elements, including CSS styling, to layout these elements. Thus separating the server files and the HTML elements, thus a clean code setup.
+This makes it easier to write all your HTML elements, including CSS styling, to layout these elements. Thus separating the server files and the HTML elements, creating a clean code setup.
 
-To render an HTML file into the server using Express.js, we use `res.sendFile()`. This reads and renders the data included in one's HTML files. This transfers the file to the browser upon a [GET request](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) to the server. The server submits a response status with HTML rendered web content as the message body.
+To render an HTML file into the server using Express.js, we use `res.sendFile()`. This reads and renders the data included in one's HTML files. 
+
+This transfers the file to the browser upon a [GET request](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) to the server. The server submits a response status with HTML rendered web content as the message body.
 
 Here is the `res.sendFile()` syntax.
 
@@ -117,7 +115,9 @@ Here is the `res.sendFile()` syntax.
 res.sendFile(path [, options] [, fn])
 ```
 
-The path specifies the location of the HTML file. It takes an array of the file name such as `index.html`. In some cases, primarily when the server is hosted on the cloud (when the server is not hosted locally on your computer), we use `__dirname` instead of the relative file path. When the server is online, you might have no idea of your HTML file location. `__dirname` will return the current file path no matter where it is hosted inside your project folders.
+The path specifies the location of the HTML file. It takes an array of the file name such as `index.html`. In some cases, primarily when the server is hosted on the cloud (when the server is not hosted locally on your computer), we use `__dirname` instead of the relative file path.
+
+When the server is online, you might have no idea of your HTML file location. `__dirname` will return the current file path no matter where it is hosted inside your project folders.
 
 Let's demonstrate how `__dirname` works with a  simple example that `console.log(__dirname)`.
 
@@ -142,9 +142,9 @@ As you can see, it prints the exact path to reach your server location.
 
 Now we can send HTML files to the server using `__dirname`.
 
-To start with, create an HTML form (`index.html`) and included some CSS styling (`app.css`), as shown below.
+To start, create an HTML form (`index.html`) and include some CSS styling (`app.css`), as shown below.
 
-**File name**: _index.html_
+**File name**: *index.html*
 
 ```html
 <!DOCTYPE html>
@@ -169,7 +169,7 @@ To start with, create an HTML form (`index.html`) and included some CSS styling 
 </html>
 ```
 
-**File name**: _app.css_
+**File name**: *app.css*
 
 ```css
 .subscribe-container {
@@ -219,7 +219,7 @@ app.get("/", (req, res) => {
 
 ![Html page as server response](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-as-server-response.jpg)
 
-However, this did not load the CSS styling. `app.css` is a static file. To [static server files](https://expressjs.com/en/starter/static-files.html) included in the `index.html` use `express.static` to load static server files as shown in the example below;
+However, this did not load the CSS styling. `app.css` is a static file. To load the [static server files](https://expressjs.com/en/starter/static-files.html) included in the `index.html` use `express.static` as shown in the example below:
 
 ```js
 const express = require("express");
@@ -241,9 +241,8 @@ Save the file and open `http://localhost:3000/` in the browser, and the server w
 
 ![Html page with css as server response](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-with-css-as-server-response.jpg)
 
-### Parsering form data to the server using the HTML forms
-
-The server is running. It is now returning HTML form as a response to the client (browser). Whenever this server's route is accessed, the `GET` request will be executed from the browser. However, what would happen if you fill this form with the data and press the button _subscribe_?
+### Parsing form data to the server using the HTML forms
+The server is running. It is now returning HTML form as a response to the client (browser). Whenever this server's route is accessed, the `GET` request will be executed from the browser. However, what would happen if you fill this form with the data and press the button *subscribe*?
 
 Let's try that out. This outputs the results below, an error returned by the server.
 
@@ -287,7 +286,7 @@ Everything is working great. Nevertheless, we need the server to get the form da
 
 To interact with the form data, we need a body-parser package. Go ahead and install this package using `npm install body-parser`. [Body-parser](https://www.npmjs.com/package/body-parser) helps parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 
-Import the package using the `require()` function and get the server to use it via `app.use`. Body-parser has a few modes such as;
+Import the package using the `require()` function and get the server to use it via `app.use`. Body-parser has a few modes such as:
 
 - `bodyParser.text` - pass all the requests into text.
 - `bodyParser.json` - parse data into JSON format.
@@ -326,6 +325,7 @@ app.post("/", (req, res) => {
 Open `http://localhost:3000/`. Fill in the form inputs and click the subscribe button. Check your console.
 
 ![Console log a request body](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/console-log-request-body.jpg)
+
 This form data is readily available, and we can now instruct the server what to do with it.
 
 ```js
