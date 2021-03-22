@@ -73,9 +73,9 @@ The following screens may appear.
 ![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)  
 *Screen capture*  
 
-Alternatively, using an R-programming application can be equally as effective. The image below is RStudio.  
+Alternatively, using an R-programming application can be equally effective.  
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
-*Screen capture*  
+*Screen capture of RStudio*  
 
 If not installed, the libraries used in this tutorial are listed below.  
 ```Sh
@@ -89,7 +89,7 @@ Sample libraries with possible results are shown below.
 
 
 Information about the IP registrar responsible can be found.  
-The library used below can gather this data. 
+The library below can gather this data. 
 ```Sh
 library(Rwhois)
 ```
@@ -106,6 +106,7 @@ index | key | val
 
 A server coordinates with the domain extension (example, ".us").  
 If a server name is included, DNS parking name servers can be displayed.  
+The following code can show those name servers.  
 ```Sh
 ("asianausa.us", server = "whois.nic.us")
 ```    
@@ -132,7 +133,7 @@ library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
 
-Displaying IP address without a proxy will appear in this manner.  
+Displaying an IP address without a proxy will appear in this manner.  
 Output:  
 ```Sh
 [1] "no"
