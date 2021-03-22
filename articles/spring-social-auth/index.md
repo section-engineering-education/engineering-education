@@ -239,3 +239,7 @@ After successful authentication, a user is redirected to the homepage where thei
 Now that you have learned how to authenticate users in your Spring Boot application through Google and Github, implement Facebook social authentication in your Spring Boot application. The source code for the application can be found [here](https://github.com/paulodhiambo/socialauthentication).
 
 Happy coding.
+
+---
+
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
