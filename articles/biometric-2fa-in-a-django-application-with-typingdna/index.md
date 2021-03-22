@@ -34,7 +34,7 @@ cd typingdnavideoplayer
 
 The structure of our project should be similar to the one in the image below.
 
-![project-structure](/engineering-education/new-folder-name/project_structure.png)
+![project-structure](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/project_structure.png)
 
 We now need to install the `requests` module required by our project to interact with typingdna and the Django framework. Type the command below in your terminal.
 
@@ -54,11 +54,11 @@ python manage.py runserver
 
 ```
 
-![application-running](/engineering-education/new-folder-name/application-running.png)
+![application-running](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/application-running.png)
 
 After typing the command, we should get a result similar to the one in the image above. We can now visit our site on the localhost at <http://127.0.0.1:8000/>.
 
-![sign-in-page](/engineering-education/new-folder-name/sign-in-page.png)
+![sign-in-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/sign-in-page.png)
 
 # Getting the TypingDNA Library
 
@@ -66,7 +66,7 @@ After running our Django application we cloned above, we need to download the Ty
 
 After downloading the javascript files, open the `App` folder and place the `typingdna.js` file in the static folder. We also need to download and import the TypingDNA `Autocomplete Disabler` and `Typing Visualizer` files. These files will allow users to see that their typing pattern is being recorded as they enter the required text. Download the `autocomplete-disabler.js` and `typing-visualizer.js` from this repo <https://github.com/TypingDNA/autocomplete-disabler> and store them in the `static` folder of our Django application. Our project structure should be similar to the image below.
 
-![project-structure](/engineering-education/new-folder-name/project-structure.png)
+![project-structure](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/project-structure.png)
 
 After downloading and placing our files in the right directories, we need to modify our models for the `Video` table so we can only display videos added by a particular user. To do this, update the `models.py` file with the code below:
 
@@ -193,7 +193,7 @@ python manage.py migrate
 
 We should see the results below if our migrations ran successfully.
 
-![migrations](/engineering-education/new-folder-name/migrations.png)
+![migrations](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/migrations.png)
 
 Let’s edit the `videos` view in the views.py` file with the following code to render only a particular user’s videos in the frontend.
 
@@ -224,7 +224,7 @@ userprofile.save()
 ```
 # The TypingDNA Check User Endpoint
 
-![check-user-endpoint](/engineering-education/new-folder-name/check-user-endpoint.png)
+![check-user-endpoint](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/check-user-endpoint.png)
 
 The TypingDNA API [Check User](https://api.typingdna.com/index.html%23api-API_Services-Standard_APIs-GetUser) endpoint helps us to check if a user exists then checks the number of saved typing patterns they have. If the user has saved typing patterns then verification can be done. It is recommended to save at least two typing patterns to perform accurate authentications.
 
@@ -401,7 +401,7 @@ Add the code below right after where we imported TypingDNA in the `enroll.html` 
 </script>
 
 ```
-![autocomplete-disabler](/engineering-education/new-folder-name/autocomplete-disabler.png)
+![autocomplete-disabler](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/autocomplete-disabler.png)
 
 Next, create a variable to store the captured typing patterns of our users and a function named `beginAuthentication` which will be triggered by the users when they enter the auth text.
 
@@ -484,7 +484,7 @@ After capturing the user’s typing pattern, we went ahead to verify if the typi
 
 According to the TypingDNA documentation, to ensure accurate authentications the user is required to enroll his/her typing patterns at least three (3) times. To achieve this, we check if the user enrolled all three times before submitting the form. If the user hasn’t satisfied the three enrollments, we just store the current pattern and restart enrollment using the TypingDNA `TypingDNA.reset()` method and `TypingDNA.start()` method to start the recorder again while keeping track of the number of enrollments the user has done. TypingDNA requires that all typing patterns sent should be concatenated into one (1) string separated by semicolons.
 
-![enrollment-page](/engineering-education/new-folder-name/enrollment-page.png)
+![enrollment-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/enrollment-page.png)
 
 # Saving Recorded Typing Patterns
 
@@ -586,7 +586,7 @@ tdna = TypingDNA("apiKey", "apiSecret")
 ```
 Our `views.py` file libraries importation should look like the image below:
 
-![import](/engineering-education/new-folder-name/import.png)
+![import](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/import.png)
 
 We want to update our `enroll` view to save the typing patterns we received in our dashboard. Update the `enroll` view with the code below:
 
@@ -630,7 +630,7 @@ In the code above, we collected the typing pattern enrolled by the user and stor
 
 After successfully enrolling to TypingDNA, we should be redirected to a page similar to the one in the image below:
 
-![dashboard](/engineering-education/new-folder-name/dashboard.png)
+![dashboard](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/dashboard.png)
 
 # Authenticating New Users with TypingDNA
 
@@ -638,7 +638,7 @@ After successfully enrolling to TypingDNA, we should be redirected to a page sim
 
 After registering and enrolling our typing patterns with TypingDNA, we can now login and implement our two-factor authentication.
 
-![login](/engineering-education/new-folder-name/login.png)
+![login](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/login.png)
 
 In the image above, our `login` view checks if the user is set in session. If the user is set then the user is redirected to view all videos page. However, if the user is not set in the session, then the user is redirected to verify his/her 2FA with their typing pattern.
 
@@ -745,7 +745,7 @@ background-color: #b2beb5
     </script>
 
 ```
-![verify-page](/engineering-education/new-folder-name/verify-page.png)
+![verify-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/verify-page.png)
 
 This page is where users will be authenticated with their pre-registered typing patterns.
 
@@ -955,7 +955,7 @@ background-color: #b2beb5
     </div>
 
 ```
-![email-verification](/engineering-education/new-folder-name/email-verification.png)
+![email-verification](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/email-verification.png)
 
 ## Creating The Tokens File
 
@@ -1069,9 +1069,9 @@ In the code above, we checked if the request received from the frontend is a POS
 
 In the images below, the activation link was sent to the user and displayed in the console for the user to see.
 
-![link-sent](/engineering-education/new-folder-name/link-sent.png)
+![link-sent](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/link-sent.png)
 
-![verification-token](/engineering-education/new-folder-name/verification-token.png)
+![verification-token](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/verification-token.png)
 
 ## The Confirmation Page
 
@@ -1144,17 +1144,17 @@ path('activate/<uidb64>/<token>/', views.ActivateAccount.as_view(), name='activa
 ```
 The image below is a page showing the result of navigating to a wrong, used or timed-out activation token.
 
-![invalid-token](/engineering-education/new-folder-name/invalid-token.png)
+![invalid-token](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/invalid-token.png)
 
 # Adding Videos To Database
 
 For us to add videos to our database that we can play, we need to visit the admin page and login. Lets navigate to the admin page on <http://127.0.0.1:8000/admin> and login. After a successful login, click on the `+` button next to `Videos` to add a new video and provide the required details as seen in the image below.
 
-![add-video](/engineering-education/new-folder-name/add-video.png)
+![add-video](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/add-video.png)
 
 After providing the details required for our video, we will click on save to save the video and return to the homepage. Go to the <http://127.0.0.1:8000/all-videos> page, you would notice we now have a new video added that can be played.
 
-![added-video](/engineering-education/new-folder-name/added-video.png)
+![added-video](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/added-video.png)
 
 # Conclusion
 
