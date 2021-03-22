@@ -209,10 +209,10 @@ Output:
 A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering.  
 
 ```Sh
-sudo curl https://host.io/
+sudo curl https://host.io/asianausa.us
 ```  
 
-Partial Output:  
+Partial domain name output:  
  - grh-interviews.online
  - recruits-agility.com
  - careers-mfc.work
@@ -222,7 +222,6 @@ Partial Output:
  - careers-mconsulting.work
  - grandrivershosp.ca
  - interviews-sobeys.com
- - www.mindfield-interviews.online
  - interviews-massiveinsights.digital
  - morgeesmodcon.com  
 
