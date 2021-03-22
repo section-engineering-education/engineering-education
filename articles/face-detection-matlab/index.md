@@ -132,7 +132,9 @@ when we run the program, the following image is displayed on our figure window.
 
 ![Faces detected](/engineering-education/face-detection-matlab/engineers.png)
 
-when we change the image and use a different image that has no face, the following is displayed on our figure window
+when we change the image and use a different image that has no face, the following is displayed on our figure window.
+
+![Building](/engineering-education/face-detection-matlab/building.png)
 
 ### figure
 This code can also be used to detect eyes, mouth, and nose. You only need to change the names, i.e. replace face with nose. You need to vary the MergeThreshold for accuracy.
