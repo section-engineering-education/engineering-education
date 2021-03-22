@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/spring-boot-smtp/
+title: Getting started with Spring Boot SMTP
+description: This tutorial goes over the configurations of the Gmail SMTP server and sending emails from a Spring Boot application.
+author: quinter-awuor
+date: 2021-03-22T00:00:00-06:00
+topics: [Spring Boot]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-boot-smtp/hero.jpg
+    alt: Spring Boot SMTP example image
+---
+
 ### Spring Boot SMTP
 Simple mail transfer protocol is a standard communication protocol that transfers mail electronically. SMTP makes it possible to send mail messages from within applications. In this tutorial, we will be using SMTP with Spring Boot to send mail messages from our application.
 
