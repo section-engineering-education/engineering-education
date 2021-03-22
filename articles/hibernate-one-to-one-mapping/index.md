@@ -25,13 +25,15 @@ Install MySQL server using the following link.
 After successfully installing MySQL and setting up database credentials, use the following command to log in to MySQL.
 
 ```MySQL
-mysql -u "username" -p
+mysql -u username -p
 ```
 A prompt will ask for your password and on entering access will be granted showing the information below.
 
 ![MySQL login](mysql-login.png)
 
-Launch IntelliJ development environment and create a new maven project, A maven project has to have the following structure.
+ Maven is a build tool for managing java projects. Maven is based on the project object model (POM) which is an XML file containing configuration details and information about the project. The dependencies can be obtained from [maven central repository](https://mvnrepository.com/) and added to the POM file where maven will be responsible for source code generation, code compilation, and JAR files packaging of the compiled code in a local repository where they will be accessed when a new maven project is created. The required dependencies will be downloaded automatically by maven and added to the classpath of your project once they are added to the POM file.
+
+In IntelliJ click file, new, project, and on the window that opens select maven, then click next and give your project a name. This will create a new maven project which has the following structure. 
 
 ![maven structure](maven-structure.png)
 
@@ -84,7 +86,7 @@ Add the following dependencies to the file named pom.xml after the properties cl
 Use the following command to create a new database for the application.
 
 ```sql
-create database "database_name";
+create database database_name;
 ```
 In IntelliJ create a new file under resources named hibernate.cfg.xml or any name preferred and add the following properties.
 
@@ -138,6 +140,10 @@ Create a class named customer with the following details
 - constructor with all the fields apart from the id as it will be generated
 - toString method to view the object instances data.
 ```java
+package com.javadev.hibernate.demo.entity;
+
+import javax.persistence.*;
+
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -237,6 +243,10 @@ public class Customer {
  - toString method
 
  ```java
+package com.javadev.hibernate.demo.entity;
+
+import javax.persistence.*;
+
 @Entity
 @Table(name = "subscription")
 public class Subscription {
@@ -263,15 +273,16 @@ public class Subscription {
     },mappedBy = "subscription")
     private Customer customer;
 
+    public Subscription() {
+
+    }
+
     public Subscription(String name, Double price, String descrition) {
         this.name = name;
         this.price = price;
         this.descrition = descrition;
     }
 
-    public Subscription() {
-
-    }
 
     public String getName() {
         return name;
@@ -331,12 +342,13 @@ In this stage, the following will be covered.
 ##### create a new customer
 ---
 ```java
+package com.javadev.hibernate.demo;
+
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 
 public class CreateCustomer {
     public static void main(String[] args) {
@@ -377,7 +389,7 @@ use database_name;
 
 show tables;
 
-select * from the customer;
+select * from customer;
 ```
 The new customer entry will be returned by the query and note the sub_id is null.
 
@@ -388,9 +400,17 @@ The new customer entry will be returned by the query and note the sub_id is null
 ----
 
 ```java
+package com.javadev.hibernate.demo;
+
+import com.javadev.hibernate.demo.entity.Customer;
+import com.javadev.hibernate.demo.entity.Subscription;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class CreateCustomerSubscription {
     public static void main(String[] args) {
-       //create session factory
+        //create session factory
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Customer.class)
@@ -424,6 +444,7 @@ public class CreateCustomerSubscription {
 
     }
 }
+
 ```
 A new record will be inserted in the subscription table and the customer sub_id column will be updated with the foreign key id referencing subscription that the customer was set to. This is because of the CascadeType.ALL which was set in the customer class.
 
@@ -433,6 +454,14 @@ A new record will be inserted in the subscription table and the customer sub_id 
 ---
 
 ```java
+package com.javadev.hibernate.demo;
+
+import com.javadev.hibernate.demo.entity.Customer;
+import com.javadev.hibernate.demo.entity.Subscription;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class DeleteSubscription {
     public static void main(String[] args) {
         //create session factory
@@ -466,6 +495,7 @@ public class DeleteSubscription {
 
     }
 }
+
 ```
 Note that because there was a bi-directional link between customer and subscription the link must be broken for deleting a subscription to work.
 Deleting a subscription will maintain the customer due to CascadeType.REMOVE left out in subscription class.
@@ -477,6 +507,14 @@ The subscription table will return an empty set while the customer table column 
 #####  Retrieve and update a customer using a setter method
 ---
 ```java
+package com.javadev.hibernate.demo;
+
+import com.javadev.hibernate.demo.entity.Customer;
+import com.javadev.hibernate.demo.entity.Subscription;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class UpdateCustomer {
     public static void main(String[] args) {
         //create session factory
