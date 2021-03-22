@@ -1,5 +1,5 @@
 ## Internet Inconsistencies with R-Programming  
-An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences can be displayed in IPv4 and IPv6 formats. There are directories containing further information about an IP. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
+An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
 
 This tutorial can help individuals and groups who are interested in detecting internet inconsistencies.  
 
@@ -66,7 +66,7 @@ Enter in the following code to install a Linux version of the R-Programming appl
 sudo apt-get install r-base r-base-dev
 ```  
 
-The following screens may appear:  
+The following screens may appear.  
 ![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
 *Screen capture*  
 
@@ -126,7 +126,7 @@ Output:
 [1] TRUE
 ```  
 
-To check if the IP is using a DNS proxy, enter: 
+Checking if the IP is using a DNS proxy is possible. Enter in the code shown below to figure that out. 
 ```Sh 
 library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
@@ -138,7 +138,7 @@ Output:
 [1] "no"
 ```  
 
-An IP address can be categorized under multiple registered geological regions in various directories. The next step will showcase basic statistics that can be derived from an IP address.  
+An IP address can be categorized under multiple geological regions. The next step will showcase basic statistics that can be derived from an IPv4 address.  
 
 
 ### Basic Statistics  
@@ -146,7 +146,7 @@ An IP address can be categorized under multiple registered geological regions in
 Geological location of an IP address can resemble many statistical data models. The probability of determining the correct geological location can be tough as various DNS factors are considered. For example, 45.88.197.212 overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
 
 Factors can include:  
-- DNS variables (found with the codes from R-Programming)
+- DNS variables found previously in this tutorial
 - Directories   
 A few helpful directories are listed in the table below.  
 
