@@ -18,6 +18,8 @@ This tutorial can help detect internet inconsistencies.
 - Device with unlimited functional capabilities
 - Functional version of Linux emulator (Kali Linux was used)
 - R-Programming software  
+- Internet access
+- DNS mechanics
 - R-Programming library installations and documentation  
 - Some arithmetic experience  
 
@@ -153,9 +155,9 @@ A few helpful directories are listed in the table below.
 Directory Name | Information
  --- | ---
  RIPE | Réseaux IP Européens (European IP Networks) serves Europe.
- NIC | A domain name lookup directory for 'extensions' of a domain name. Could become helpful when specifying servers during whois lookups.
+ NIC | Server directory for extensions. 
  ARIN | American Registry for Internet Numbers serves North America and portions of the Caribbean.
- IANA |Internet Assigned Numbers Authority reiterates measures set in place for each IP address range designated for each region of the world.
+ IANA | Internet Assigned Numbers Authority.
  CIRA | Canadian Internet Registration Authority serves Canada.  
 - Privacy redactions  
 
