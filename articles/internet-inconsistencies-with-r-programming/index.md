@@ -49,7 +49,7 @@ For those who prefer using Linux with `ROOT`:
 apt update
 ```   
 
-Open a new Shell window and enter in the following:  
+Open a new Kali-Linux window and enter in the following:  
 ``` Sh
 kex
 ```  
@@ -184,12 +184,12 @@ With the highest score of the five countries, Lithuania showed the most links to
 ### Linux Reverse IP Lookup  
 To verify validity, here is a quick code to assess.  
 
-```Shell
+```Sh
 sudo curl http://ipinfo.io/45.88.197.212
 ```  
 
 Output:  
-```Shell
+```Sh
 {
   "ip": "45.88.197.212",
   "city": "Kaunas",
