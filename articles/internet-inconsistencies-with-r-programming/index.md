@@ -88,10 +88,11 @@ _Use `dependencies = TRUE` to install all applicable packages_
 Sample libraries with possible results are shown below.  
 
 
+Information about the IP registrar responsible can be found.  
+The library used below can gather this data. 
 ```Sh
 library(Rwhois)
-```  
-Information about the IP registrar responsible can be found.
+```
 Partial Output:  
 index | key | val
 --- | --- | ---
@@ -160,7 +161,7 @@ Directory Name | Information
 - Privacy redactions  
 
 
-Predicting which country best matches this IP address can be complex, however, it is possible. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five geological locations.  
+The country classified with this IP address is complex. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five geological locations.  
 
 Possiblities:
  - Lithuania (Li)
@@ -176,7 +177,7 @@ Typically, a decision tree selects the highest possible number as the optimal ch
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 *Screen capture*  
 
-It is possible to evaluate variable importance from a random forest statistical data model.  
+It is possible to evaluate variable importance from a random forest model.  
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 *Screen capture*  
 
