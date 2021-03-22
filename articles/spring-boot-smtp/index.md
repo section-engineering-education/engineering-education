@@ -275,3 +275,6 @@ From the above code snippet, both functions receive a request body containing th
 Now that you have learned how to configure and send emails in a Spring Boot application, try sending an email with an Html body and CSS styling.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
