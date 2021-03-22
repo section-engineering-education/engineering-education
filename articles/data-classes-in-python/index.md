@@ -176,7 +176,9 @@ obj.val1 = "Another value"
 print(obj.val1)
 ```
 
-We create a new class, `ImmutableDataClass()` and define two attributes: `val1` and `val2`. We assign default values to both: `This value` and `0` respectively. We create a variable `obj` and print `val1`. `"This value"` is displayed. If we try to modify `val1` by assigning it another value, `" Another value"` we get an exception, `FrozenInstanceError`. This is because the class is immutable. In our decorator we pass `Frozen=True` to the `dataclass()` decorator. This make the python objects to be immutable. The frozen classes can't modify themselves either. For instance the `func()` function in the `ImmutableDataClass` cannot be modified too. 
+We create a new class, `ImmutableDataClass()` and define two attributes: `val1` and `val2`. We assign default values to both: `This value` and `0` respectively. We create a variable `obj` and print `val1`. `"This value"` is displayed. If we try to modify `val1` by assigning it another value, `" Another value"` we get an exception, `FrozenInstanceError`. This is because the class is immutable. In our decorator we pass `Frozen=True` to the `dataclass()` decorator. This make the python objects to be immutable. 
+
+The frozen classes can't modify themselves either. For instance the `func()` function in the `ImmutableDataClass` cannot be modified too. 
 
 Try running the snippet below.
 
