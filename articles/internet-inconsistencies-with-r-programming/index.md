@@ -100,7 +100,7 @@ index | key | val
 3 | NetName | RIPE
 4 | NetHandle | NET-45-80-0-0-1
 5 | Parent | NET45 (NET-45-0-0-0-0)
-6 | NetType | Early Registrations, Transferred to RIPE NCC  
+6 | NetType | Early Registrations, Transferred to RIPE NCC
 
 
 Specifying server name according to domain extension (example, ".us") can produce additional results.  
