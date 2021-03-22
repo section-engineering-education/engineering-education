@@ -6,115 +6,76 @@ url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-grap
 title: Implementing AWS S3 functionalities on a Node.js GraphQL API
 description: In this article, we will cover the process of working with AWS S3 on a Node.js Graphql API.
 author: kennedy-mwangi
-date: 2021-03-22T00:00:00-18:00
+date: 2021-03-22T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/hero.jpg
     alt: AWS S3 GraphQL API sample image
 ---
-Amazon Web Services(AWS) is a subsidiary of Amazon offering cloud computing services. 
+Amazon Web Services (AWS) is a subsidiary of Amazon offering cloud computing services. The services revolve around storage, application, and infrastructure. S3 is the storage service provided by AWS. Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application.
 <!--more-->
-
-The services revolve around storage, application, and infrastructure. S3 is the storage service provided by AWS. Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application. GraphQL on the other hand, is a server-side runtime for executing queries based on a type system defined on the data providing a query language.
+GraphQL on the other hand, is a server-side runtime for executing queries based on a type system defined on the data providing a query language.
 
 ### Goals
-
 In this article, we will implement the following s3 functionalities using Node.js AWS SDK:
-
 - Creating an s3 bucket.
-
 - Fetching created s3 buckets.
-
 - Uploading a single object to an s3 bucket.
-
 - Uploading multiple objects to an s3 bucket.
-
 - Fetching uploaded objects from an s3 bucket.
-
 - Deleting a single object from an s3 bucket.
-
 - Deleting multiple objects from an s3 bucket.
-
 - Deleting an s3 bucket.
 
 ### Prerequisites
-
-To follow along in this article, it is helpful to have the following:
-
+To follow along in this article, it will helpful to have the following:
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-
 - [Altair GraphQl Client](https://altair.sirmuel.design/) installed on your computer.
-
 - [Visual Studio Code](https://code.visualstudio.com/) installed on your computer.
-
 - An AWS account. If you don't have one, follow this [article](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-
 - Basic knowledge of JavaScript.
-
 - Basic knowledge of implementing GraphQL API using [Apollo Server](https://www.apollographql.com/docs/apollo-server/).
 
 ### Overview
-
 - [Obtaining your security credentials](#obtaining-your-security-credentials)
-
 - [Setting up the development server](#setting-up-the-development-server)
-
 - [Creating an s3 bucket](#creating-an-s3-bucket)
-
 - [Fetching created s3 buckets](#fetching-created-s3-buckets)
-
 - [Uploading a single object to an s3 bucket](#uploading-a-single-object-to-an-s3-bucket)
-
 - [Uploading multiple objects to an s3 bucket](#uploading-multiple-objects-to-an-s3-bucket)
-
 - [Fetching uploaded objects from an s3 bucket](#fetching-uploaded-objects-from-an-s3-bucket)
-
 - [Deleting a single object from an s3 bucket](#deleting-a-single-object-from-an-s3-bucket)
-
 - [Deleting multiple objects from an s3 bucket](#deleting-multiple-objects-from-an-s3-bucket)
-
 - [Deleting an s3 bucket](#deleting-an-s3-bucket)
 
-### Obtaining your security credentials.
+### Obtaining your security credentials
 
 To obtain your security credentials, follow the following steps:
-
 - Head over to the [AWS console](https://aws.amazon.com/console/).
-
 - On the top right corner, click `Sign in to the console`.
-
 - Enter your email address and click `Next`.
-
 - Enter your password and click `Sign in`.
-
 - On the redirected page, search for s3 in the search bar and click the first result.
-
 - You will be redirected to your s3 account page.
-
 - On the top right, there is your username and a dropdown arrow. Click here and then click `My security credentials`.
-
 - On the new page, click on `Access keys (access key ID and secret access key)`.
-
 - If you already have an `Access Key ID` and a `Secret access key` feel free to use them. But if you don't have one, click the `Create New Access Key` button.
-
 - Download the `Key File`.
-
 - From the current URL, you pick your region. For example, considering this URL: `https://console.aws.amazon.com/iam/home?region=us-east-2#/security_credentials`, the region is set to us-east-2.
-
 - In the `Key File` you downloaded, add the following:
 
 ```javascript
 region=//the region from the URL. e.g us-east-2
 ```
-
 - After setting the region, you are good for the next step.
 
 ### Setting up the development server
+To set up the development server, clone this [GitHub repository](https://github.com/mwangiKibui/aws-sdk-node.js-s3-graphql). 
 
-To set up the development server, clone this [Github repository](https://github.com/mwangiKibui/aws-sdk-node.js-s3-graphql). In the repository, in the `src` directory, there is the start and final folder. Throughout the article, we will be working on the start folder. In case you encounter an error or you want to compare your code, feel free to check the final folder.
+In the repository, in the `src` directory, there is the start and final folder. Throughout the article, we will be working on the start folder. In case you encounter an error or you want to compare your code, feel free to check the final folder.
 
-From the `Key File` you downloaded copy the data to the `.env` file appropriately. Ensure you match the names so that there is no conflict.
+From the `Key File` you downloaded, copy the data to the `.env` file appropriately. Ensure you match the names so that there is no conflict.
 
 In the cloned folder, run the following command to install the necessary dependencies:
 
@@ -125,7 +86,6 @@ npm install
 Proceed to the start folder and go through the schema files to understand how we are structuring the data. Our focus throughout the article will be on the resolvers folder. It is therefore helpful to have a grasp of the underlying schema.
 
 ### Creating an s3 bucket
-
 An s3 bucket is the foundational storage instance in s3. It consists of folders and objects. The objects are the files. Data in the bucket is stored as either a folder or an object.
 
 To create a bucket, we implement the following functionality in the `resolvers/mutation-resolvers.js` under `createBucket()` function:
@@ -154,19 +114,17 @@ async createBucket(bucketName){
 };
 ```
 
-From the above implementation:
-
+From the implementation above:
 - Create params object with the key `Bucket` to hold the name of the bucket.
 
-- Promisify the `createBucket()` function from s3 so that we can use _async/await_ syntax.
+- Promisify the `createBucket()` function from s3 so that we can use *async/await* syntax.
 
 - Call the `createBucket()` function passing along the params object.
 
 - Send back a response matching the schema.
 
 To test this:
-
-- Open the terminal in your current working directory by pressing the keys _cmd+shift+`_.
+- Open the terminal in your current working directory by pressing the keys *cmd+shift+`*.
 
 - In the terminal that pops up, run the following command:
 
@@ -196,7 +154,6 @@ mutation CreateBucket {
 - Having created a bucket, we will fetch the created buckets to verify the bucket was created.
 
 ### Fetching created s3 buckets
-
 In the `resolvers/query-resolvers.js`, we add up the functionality of fetching created buckets under `fetchBuckets()` function:
 
 ```javascript
@@ -219,8 +176,7 @@ async fetchBuckets(){
 ```
 
 From above:
-
-- Promisify `listBuckets()` function from s3 so that we can use the _async/await_ syntax.
+- Promisify `listBuckets()` function from s3 so that we can use the *async/await_* syntax.
 
 - Fetch the buckets from s3.
 
@@ -241,8 +197,7 @@ query FetchBuckets{
 - Hit the play button. The newly created bucket should be present.
 
 ### Uploading a single object to an s3 bucket
-
-After confirming that the bucket was created successfully, it's time we upload some objects to the bucket. The objects are the files. They can be images, videos, audio, texts, and so much more. In this article, we will focus on images. Feel free to choose any file you want.
+After confirming that the bucket was successfully created, it's time we upload some objects to the bucket. The objects are the files. They can be images, videos, audio, texts, and so much more. In this article, we will focus on images. Feel free to choose any file you want.
 
 In `resolvers/mutation-resolvers.js` under `uploadObject()` function, we add up the functionality of uploading a single object to s3 bucket:
 
@@ -297,7 +252,7 @@ async uploadObject(file,bucketName){
 };
 ```
 
-From above:
+From the snippet above:
 
 - Create params object comprising of the name of the bucket, key of the object, the body of the object, and the permission of the object.
 
@@ -309,14 +264,13 @@ From above:
 
 - Set the key of the object using a specific timestamp and its file extension. The object will be stored in the images folder.
 
-- Promisify the `upload()` function from s3 so that we can use the _async/await_ syntax.
+- Promisify the `upload()` function from s3 so that we can use the *async/await* syntax.
 
 - Call the function sending the params object. We also get the result from the function.
 
 - Structure a sample object to match the schema output.
 
 To test this:
-
 - Ensure that the development server is still running from your terminal.
 
 - Head over to Altair GraphQl Client, open a separate tab, and in the workspace paste the following mutation:
@@ -339,8 +293,7 @@ mutation ObjectUpload($object:Upload!) {
 - To confirm your object, after the response is sent back, copy the URL sent back from the response and paste it in your browser. You should see your image.
 
 ### Uploading multiple objects to an s3 bucket
-
-In the same way, we upload a singular object to the s3 bucket, we can also upload multiple objects to the s3 bucket.
+In the same way, we uploaded a singular object to the s3 bucket, we can also upload multiple objects to the s3 bucket.
 
 In the same file, under `uploadObjects()`, we add up the functionality of uploading multiple objects:
 
@@ -440,10 +393,9 @@ mutation ObjectsUpload($objects:[Upload!]!) {
 - You can verify the objects by visiting each URL sent back as a response from your browser.
 
 ### Fetching uploaded objects from an s3 bucket
+After uploading your objects, you should be able to fetch those objects.
 
-After uploading your objects, you can be able to fetch those objects.
-
-In `resolvers/query-resolvers.js` under `fetchObjects()` function, we implement the functionality of fetching uploaded objects:
+In `resolvers/query-resolvers.js` under the `fetchObjects()` function, we will implement the functionality of fetching uploaded objects:
 
 ```javascript
 //fetching objects.
@@ -481,7 +433,7 @@ From above:
 
 - Create params object with a key of `Bucket` representing the bucket name from which we are fetching the uploaded objects.
 
-- Promisify the `listObjects()` function from s3 so that we can use the _async/await_ syntax.
+- Promisify the `listObjects()` function from s3 so that we can use the *async/await* syntax.
 
 - Fetch the objects.
 
@@ -509,10 +461,9 @@ query FetchObjects {
 - Feel free to copy the URL of any object, paste it in the browser and view that object.
 
 ### Deleting a single object from an s3 bucket
+Once an object is't needed anymore, to free up space, you can always delete it from the bucket.
 
-Once an object is not needed anymore, to free up space, you can always delete it from the bucket.
-
-In `resolvers/mutation-resolvers.js` , under `deleteObject()` function, we implement the functionality of deleting a single object from s3 bucket:
+In `resolvers/mutation-resolvers.js` , under the `deleteObject()` function, we implement the functionality of deleting a single object from s3 bucket:
 
 ```javascript
 //delete object.
@@ -543,14 +494,13 @@ From above:
 
 - Create a params object, with keys of the bucket name and the specific key of the object.
 
-- Promisify the `deleteObject()` function from s3 so that we can use the _async/await_ syntax.
+- Promisify the `deleteObject()` function from s3 so that we can use the *async/await* syntax.
 
 - Delete the object.
 
 - Send back the response as per the schema.
 
 To test this:
-
 - Ensure that the development server is still running from your terminal.
 
 - Head over to Altair GraphQl Client, open a separate tab, and paste in the following mutation in the workspace:
@@ -571,8 +521,7 @@ mutation DeleteObject {
 - Hit the play button and examine the results.
 
 ### Deleting multiple objects from an s3 bucket
-
-Deleting multiple objects that are relevant any more frees up space in the bucket.
+Deleting multiple objects that are not relevant any more frees up space in the bucket.
 
 In the same file, under `deleteObjects()` function, we implement the functionality of deleting multiple objects:
 
@@ -614,7 +563,7 @@ From above:
 
 - Loop through the `objectKeys` passed populating the `Objects` array of the `Delete` key in the `params` object.
 
-- Promisify the `deleteObjects()` function from s3 so that we can use the _async/await_ syntax.
+- Promisify the `deleteObjects()` function from s3 so that we can use the *async/await* syntax.
 
 - Delete the objects.
 
@@ -645,8 +594,7 @@ mutation DeleteObjects {
 - Hit the play button and examine the results.
 
 ### Deleting an s3 bucket
-
-In case an s3 bucket is of no use anymore, you can always delete it. But to delete an s3 bucket, you have to make sure that there are no objects in it. Else it will fail.
+In case an s3 bucket is of no use anymore, you can always delete it. But to delete an s3 bucket, you have to make sure that there are no objects in it. Otherwise it will fail.
 
 In the same file, under `deleteBucket()` function, we implement the functionality of deleting a bucket:
 
@@ -675,15 +623,13 @@ async deleteBucket(bucketName){
 ```
 
 From above:
-
 - Creating a params object which holds the name of the bucket to be deleted under `Bucket` key.
 
-- Promisify the `deleteBucket()` method so that we can use the _async/await_ syntax.
+- Promisify the `deleteBucket()` method so that we can use the *async/await* syntax.
 
 - Remove the bucket and send back a response.
 
 To test this:
-
 - Ensure that the development server is running from your terminal.
 
 - Head over to Altair GraphQl Client, open a separate tab, and paste in the following mutation in the workspace:
@@ -704,30 +650,20 @@ mutation DeleteBucket {
 - Hit the play button and examine the results.
 
 ### Summary
-
 In this tutorial, we have covered the following:
 
 - [How to obtain security credentials from the AWS console](#obtaining-your-security-credentials)
-
 - [How to create an s3 bucket](#creating-an-s3-bucket)
-
 - [How to fetch created s3 buckets](#fetching-created-s3-buckets)
-
 - [How to upload a single object to an s3 bucket](#uploading-a-single-object-to-an-s3-bucket).
-
 - [How to upload multiple objects to an s3 bucket](#uploading-multiple-objects-to-an-s3-bucket).
-
 - [How to fetch objects from an s3 bucket](#fetching-uploaded-objects-from-an-s3-bucket).
-
 - [How to delete a single object from an s3 bucket](#deleting-a-single-object-from-an-s3-bucket).
-
 - [How to delete multiple objects from an s3 bucket](#deleting-multiple-objects-from-an-s3-bucket).
-
 - [How to delete an s3 bucket](#deleting-an-s3-bucket)
 
 ### Conclusion
-
-AWS S3 bucket is by far the most used cloud storage service. It provides the agility to be able to perform various operations on objects. Uploading objects to a cloud storage service is better than flooding your server with bulk data.
+AWS S3 bucket is by far a commonly used cloud storage service. It provides the agility to be able to perform various operations on objects. Uploading objects to a cloud storage service is better than flooding your server with bulk data.
 
 AWS Node.js SDK provides more functionalities to s3 and other services than described in this article. To check them out, visit the [official docs](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/tutorials.html).
 
