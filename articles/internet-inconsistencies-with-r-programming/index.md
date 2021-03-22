@@ -208,7 +208,7 @@ Output:
 ![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
 *Screen capture*
 
-A `curl` function can list the possible domain names on an IP address. The code below can be a potential solution to reverse IP engineering.  
+A `curl` function can list the possible domain names on an IP address. The code below uses reverse IP engineering.  
 
 ```Sh
 sudo curl https://host.io/asianausa.us
