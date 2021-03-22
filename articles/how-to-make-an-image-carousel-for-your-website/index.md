@@ -184,7 +184,7 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable";
 } 
 ```
-**Remember to link the .css file and the .js file to the HTML file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.**
+**Remember to link the .css file and the .js file to the HTML file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.Also ensure to have the images you would like displayed in the carousell, in the same folder as your three files to enable quick and easy access**
 
 To make the carousel change images automatically without the user input, we need to modify our Javascript code. In this code, we will include a timer of 2 seconds.
 ```js
