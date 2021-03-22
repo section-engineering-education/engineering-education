@@ -1,6 +1,22 @@
-### Implementing AWS S3 functionalities on a Node.js GraphQL API
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/
+title: Implementing AWS S3 functionalities on a Node.js GraphQL API
+description: In this article, we will cover the process of working with AWS S3 on a Node.js Graphql API.
+author: kennedy-mwangi
+date: 2021-03-22T00:00:00-18:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/hero.jpg
+    alt: AWS S3 GraphQL API sample image
+---
+Amazon Web Services(AWS) is a subsidiary of Amazon offering cloud computing services. 
+<!--more-->
 
-Amazon Web Services(AWS) is a subsidiary of Amazon offering cloud computing services. The services revolve around storage, application, and infrastructure. S3 is the storage service provided by AWS. Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application. GraphQL on the other hand, is a server-side runtime for executing queries based on a type system defined on the data providing a query language.
+The services revolve around storage, application, and infrastructure. S3 is the storage service provided by AWS. Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application. GraphQL on the other hand, is a server-side runtime for executing queries based on a type system defined on the data providing a query language.
 
 ### Goals
 
