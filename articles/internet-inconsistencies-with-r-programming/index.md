@@ -5,33 +5,33 @@ This tutorial can help detect internet inconsistencies.
 
 
 ### Table of Contents  
-- [Prerequisites](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Prerequisites)  
-- [Goals](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Goals)    
-- [Introduction](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Introduction)    
-- [Linux Fundamentals](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Linux-Fundamentals)  
-- [R-Programming](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#R-Programming)  
-- [Basic Statistics](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Basic-Statistics)  
-- [Linux Reverse IP Lookup](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Linux-Reverse-IP-Lookup)  
-- [Takeaways](https://www.section.io/engineering-education/internet-inconsistencies-with-r-programming/#Takeaways)    
+- [Prerequisites](#prerequisites)  
+- [Goals](#goals)    
+- [Introduction](#introduction)    
+- [Linux Fundamentals](#linux-gundamentals)  
+- [R-Programming](#r-programming)  
+- [Basic Statistics](#basic-statistics)  
+- [Linux Reverse IP Lookup](#linux-reverse-ip-lookup)  
+- [Takeaways](#takeaways)    
 
-### <a href="Prerequisites"></a> Prerequisites 
+### Prerequisites 
 - Device with unlimited functional capabilities
 - Functional version of Linux emulator _(Kali Linux was used)_
 - R-Programming software  
 - R-Programming library installations and documentation  
 - Some arithmetic experience  
 
-### <a href="Goals"></a>Goals  
+### Goals  
 One goal is to acknowledge internet gaps that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
 
 _It is also important for readers to understand terms and content within scope._  
 
-### <a href="Introduction"></a>Introduction  
+### Introduction  
 In this tutorial, R-Programming is used to statistically analyze data from an IPv4 address. The purpose is to gain understanding about accuracies and inaccuracies from internet activities. As a starting point, 45.88.197.212 is the defined IP address throughout this tutorial.  
 
 Let's start.  
 
-### <a href="Linux-Fundamentals"></a>Linux Fundamentals  
+### Linux Fundamentals  
 Open any Linux Shell.  
 
 For those who prefer using Linux without `ROOT`:  
@@ -58,7 +58,7 @@ A window should appear similar to the image below if successfully installed.
 ![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
 *Screencapture*  
 
-### <a href="R-Programming"></a>R-Programming  
+### R-Programming  
 Enter in the following code to install a Linux version of the R-Programming application.  
 ```Sh
 sudo apt-get install r-base r-base-dev
@@ -140,7 +140,7 @@ Output:
 An IP address can be categorized under multiple registered geological regions in various directories. The next step will showcase basic statistics that can be derived from an IP address.  
 
 
-### <a href="Basic-Statistics"></a>Basic Statistics  
+### Basic Statistics  
 
 Geological location of an IP address can resemble many statistical data models. The probability of determining the correct geological location can be tough as various DNS factors are considered. For example, 45.88.197.212 overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
 
@@ -181,7 +181,7 @@ It is possible to evaluate variable importance from a random forest statistical 
 With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also had some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
 
 
-### <a href="Linux-Reverse-IP-Lookup"></a>Linux Reverse IP Lookup  
+### Linux Reverse IP Lookup  
 To verify validity, here is a quick code to assess.  
 
 ```Shell
@@ -230,7 +230,7 @@ Did you notice the domain names listed above are companies registered with ARIN 
 
 Internet inconsistencies exist.
 
-### <a href="Takeaways"></a>Takeaways  
+### Takeaways  
 
  - Statistics can reveal internet inconsistencies.
  - Advanced data models can provide further DNS relationships.
