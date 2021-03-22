@@ -33,7 +33,7 @@ Communication between the user and electronic device is performed by interacting
 
 Graphical user interfaces have become a standard user-centered design when it comes to software application programming. They provide users the capacity to interact and operate electronic devices, more so, computers.
 
-Apple Inc.'s [Macintosh](history-computer.com/macintosh-by-apple-complete-history-of-mac-computers/) and [Microsoft operating system](https://www.microsoft.com/en-us/windows) are excellent examples of GUI.
+Apple Inc.'s [Macintosh](https://history-computer.com/macintosh-by-apple-complete-history-of-mac-computers/) and [Microsoft operating system](https://www.microsoft.com/en-us/windows) are excellent examples of GUI.
 
 ### What is CLI?
 
