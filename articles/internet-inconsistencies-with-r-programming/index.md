@@ -80,7 +80,7 @@ If not installed, the libraries included in this tutorial are listed below.
 install.packages(c("Rwhois", dependencies = TRUE))  
 install.packagec(c("iptools", dependencies = TRUE))   
 install.packages(c("rIP", dependencies = TRUE))  
-install.packages(c("rattle"), dependencies = TRUE))  
+install.packages(c("rattle", dependencies = TRUE))  
 ```
 
 _Use `dependencies = TRUE` to install all applicable packages_  
