@@ -1,12 +1,12 @@
 ### Introduction
-An Image Carousel is a container(slideshow) of images or text that a user can select by clicking a button that directs him forward or backward in collecting images. It enables the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
+An Image Carousel is a container(slideshow) of images or Info that a user can select by clicking a button that directs him forward or backward in collecting images. It enables the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
 
 ### Goal
 To add an image carousel to our website to enhance user experience and improve the website's user interface.
 
 ### Prerequisites
 * The reader should have basic knowledge in HTML, CSS, and JavaScript, especially the use of functions in Javascript. 
-* A code editor installed. The recommended text editor is [Visual Studio code](https://visualstudio.microsoft.com/downloads/). 
+* A code editor installed. The recommended Info editor is [Visual Studio code](https://visualstudio.microsoft.com/downloads/). 
 
 
 ### Procedure
@@ -18,34 +18,34 @@ Html is like our code's skeleton, so it will lay out the frame of our work onto 
  
 ```HTML
  <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container fade">
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
-    <div class="text">Caption Text</div>
+  <!-- Full images with numbers and message Info -->
+  <div class="Containers">
+    <div class="MessageInfo">1 / 3</div>
+    <img src="image1.jpg" style="width:100%">
+    <div class="Info">First caption</div>
   </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
-    <div class="text">Caption Two</div>
+  <div class="Containers">
+    <div class="MessageInfo">2 / 3</div>
+    <img src="image2.jpg" style="width:100%">
+    <div class="Info">Second Caption</div>
   </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+  <div class="Containers">
+    <div class="MessageInfo">3 / 3</div>
+    <img src="image3.jpg" style="width:100%">
+    <div class="Info">Third Caption</div>
   </div>
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- Back and forward buttons -->
+  <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="forward" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>
 
-<!-- The dots/circles -->
+<!-- The circles/dots -->
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
@@ -65,142 +65,142 @@ In the CSS file, we will style our HTML. We style the containers for the images,
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
+/* Make the images invisible by default */
+.Containers {
   display: none;
 }
 
-/* Next & previous buttons */
-.prev, .next {
+/* forward & Back buttons */
+.Back, .forward {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 48%%;
   width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
+  margin-top: -23px;
+  padding: 17px;
+  color: grey;
   font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  font-size: 19px;
+  transition: 0.5s ease;
+  border-radius: 0 4px 4px 0;
   user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
+/* Position the "forward button" to the right */
+.forward {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 4px 0 0 4px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover, .forward:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
+/* Caption Info */
+.Info {
+  color: #f2f2f3;
+  font-size: 16px;
+  padding: 10px 14px;
   position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+/* Number Info (1/3 etc) */
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
   position: absolute;
   top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* The circles or bullets and indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.5s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.enable, .dot:hover {
+  background-color: #717161;
 }
 
-/* Fading animation */
+/* Faint animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1.4s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1.4s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {opacity: .5}
+  to {opacity: 2}
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {opacity: .5}
+  to {opacity: 2}
 }
 ```
 ### Step 4 - Write the Javascript code
 In this step, we define the functions we had linked to our buttons in the HTML file. Also, we will include a timer so that our image carousel displays images automatically like a slideshow. Add the following lines of code in the Javascript file. The code has comments just for one to follow through. 
 
 ```js
-var slideIndex = 1;
-showSlides(slideIndex);
+var slidePosition = 1;
+SlideShow(slidePosition);
 
-// Next/previous controls
+// forward/Back controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  SlideShow(slidePosition += n);
 }
 
-// Thumbnail image controls
+//  images controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  SlideShow(slidePosition = n);
 }
 
-function showSlides(n) {
+function SlideShow(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  var circles = document.getElementsByClassName("dot");
+  if (n > slides.length) {slidePosition = 1}
+  if (n < 1) {slidePosition = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+  for (i = 0; i < circles.length; i++) {
+      circles[i].className = circles[i].className.replace(" enable", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slidePosition-1].style.display = "block";
+  circles[slidePosition-1].className += " enable";
 } 
 ```
 **Remember to link the .css file and the .js file to the HTML file. To remind yourself click [ here ](https://www.w3schools.com/tags/att_script_src.asp) for css or click [ here ](https://www.w3schools.com/tags/att_script_src.asp)js.**
 
 To make the carousel change images automatically without the user input, we need to modify our Javascript code. In this code, we will include a timer of 2 seconds.
 ```js
-var slideIndex = 0;
-showSlides();
+var slidePosition = 0;
+SlideShow();
 
-function showSlides() {
+function SlideShow() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  slidePosition++;
+  if (slidePosition > slides.length) {slidePosition = 1}
+  slides[slidePosition-1].style.display = "block";
+  setTimeout(SlideShow, 2000); // Change image every 2 seconds
 } 
 ```
 ### Testing
