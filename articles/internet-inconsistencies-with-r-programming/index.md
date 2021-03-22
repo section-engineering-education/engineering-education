@@ -18,8 +18,7 @@ This tutorial can help detect internet inconsistencies.
 - Device with unlimited functional capabilities
 - Functional version of Linux emulator _(Kali Linux was used)_
 - R-Programming software  
-- Library installations
-- Use R-Programming documentation
+- R-Programming library installations and documentation  
 - Some arithmetic experience  
 
 ### <a href="Goals"></a>Goals  
