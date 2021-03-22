@@ -1,8 +1,27 @@
-Any device&#39;s operating system is nothing but an interface between the hardware components and its user. The operating system enables the interaction between the user and the device. It does this by providing two user interfaces: a command-line interface (CLI) and a graphical user interface (GUI).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/comparing-graphical-user-interface-gui-and-command-line-interface-cli/
+title: Comparing Graphical User Interface (GUI) and Command Line Interface (CLI)
+description: This article discusses GUI and CLI and compares the two in terms of ease of use, multitasking, remote access, scripting, speed, and control.
+author: bridget-mwikali
+date: 2021-03-22T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/comparing-graphical-user-interface-gui-and-command-line-interface-cli/hero.jpg
+    alt: GUI CLI example image
+---
+The operating system enables the interaction between the user and the device. It does this by providing two user interfaces: a command-line interface (CLI) and a graphical user interface (GUI).
+<!--more-->
+
+Any device's operating system is nothing but an interface between the hardware components and its user. The operating system enables the interaction between the user and the device. It does this by providing two user interfaces: a command-line interface (CLI) and a graphical user interface (GUI).
 
 Users of GUI interact with devices or software through clickable graphical icons. CLI is a text-based or console representation whereby users type commands into a terminal to navigate or operate devices or software.
 
-Deciding whether to use CLI or GUI partially depends on the reason for computer navigation. GUI is user-friendly and more comfortable to use, especially because it makes a visual representation of users&#39; actions on a computer. Users such as software developers, systems administrators, and others that require to perform more advanced tasks use CLI.
+Deciding whether to use CLI or GUI partially depends on the reason for computer navigation. GUI is user-friendly and more comfortable to use, especially because it makes a visual representation of users' actions on a computer. Users such as software developers, systems administrators, and others that require to perform more advanced tasks use CLI.
 
 This article discusses GUI and CLI and compares the two in terms of ease of use, multitasking, remote access, scripting, speed, and control.
 
@@ -14,7 +33,7 @@ Communication between the user and electronic device is performed by interacting
 
 Graphical user interfaces have become a standard user-centered design when it comes to software application programming. They provide users the capacity to interact and operate electronic devices, more so, computers.
 
-Apple Inc.&#39;s [Macintosh](history-computer.com/macintosh-by-apple-complete-history-of-mac-computers/) and [Microsoft operating system](https://www.microsoft.com/en-us/windows) are excellent examples of GUI.
+Apple Inc.'s [Macintosh](history-computer.com/macintosh-by-apple-complete-history-of-mac-computers/) and [Microsoft operating system](https://www.microsoft.com/en-us/windows) are excellent examples of GUI.
 
 ### What is CLI?
 
