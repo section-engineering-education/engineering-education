@@ -148,6 +148,7 @@ Factors can include:
 - DNS variables
 - Hosting
 - Directories   
+A few helpful directories are listed in the table below.  
  Directory Name | Information
  --- | ---
  RIPE | Réseaux IP Européens (translation: "European IP Networks") serves Europe.
