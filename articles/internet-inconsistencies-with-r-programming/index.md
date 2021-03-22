@@ -132,7 +132,8 @@ library(rIP)
 proxycheck("45.88.197.212", api_key = proxycheck_api_key())
 ```  
 
-Displaying IP address without a proxy will appear in this manner.  Output:  
+Displaying IP address without a proxy will appear in this manner.  
+Output:  
 ```Sh
 [1] "no"
 ```  
