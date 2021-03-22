@@ -16,7 +16,7 @@ This tutorial can help detect internet inconsistencies.
 
 ### Prerequisites 
 - Device with unlimited functional capabilities
-- Functional version of Linux emulator (Kali Linux was used)
+- Installed a functional Linux emulator (Kali Linux was chosen)
 - R-Programming software  
 - Internet access
 - DNS mechanics
@@ -56,7 +56,7 @@ Open a new Kali-Linux window and enter in the following:
 kex
 ```  
 
-A window should appear similar to the image below if successfully installed.    
+A window should pop-up.    
 ![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
 *Screen capture*  
 
@@ -77,7 +77,7 @@ Alternatively, using an R-programming application can be equally as effective. T
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
 *Screen capture*  
 
-If not installed, the libraries included in this tutorial are listed below.  
+If not installed, the libraries used in this tutorial are listed below.  
 ```Sh
 install.packages(c("Rwhois", dependencies = TRUE))  
 install.packagec(c("iptools", dependencies = TRUE))   
@@ -104,8 +104,8 @@ index | key | val
 6 | NetType | Early Registrations, Transferred to RIPE NCC
 
 
-Specifying server name according to domain extension (example, ".us") can produce additional results.  
-If a server name is included, name servers can be displayed.  
+A server coordinates with the domain extension (example, ".us").  
+If a server name is included, DNS parking name servers can be displayed.  
 ```Sh
 ("asianausa.us", server = "whois.nic.us")
 ```    
@@ -145,8 +145,7 @@ An IP address can be categorized under multiple registered geological regions in
 Geological location of an IP address can resemble many statistical data models. The probability of determining the correct geological location can be tough as various DNS factors are considered. For example, 45.88.197.212 overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
 
 Factors can include:  
-- DNS variables
-- Hosting
+- DNS variables (found with the codes from R-Programming)
 - Directories   
 A few helpful directories are listed in the table below.  
 
@@ -158,7 +157,6 @@ Directory Name | Information
  IANA | Internet Assigned Numbers Authority.
  CIRA | Canadian Internet Registration Authority serves Canada.  
 - Privacy redactions  
-
 
 The country classified with this IP address is complex. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five geological locations.  
 
@@ -180,7 +178,7 @@ It is possible to evaluate variable importance from a random forest model.
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 *Screen capture*  
 
-With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also had some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
+With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also showed some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
 
 
 ### Linux Reverse IP Lookup  
