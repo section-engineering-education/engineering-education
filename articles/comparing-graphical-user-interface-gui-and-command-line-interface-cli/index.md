@@ -80,3 +80,6 @@ GUI allows control over the operating system and files. But one still needs CLI 
 ### Conclusion
 
 This article has successfully explained how GUI differs from CLI. The notable difference is that GUI users depend on graphical elements such as icons, menus, and windows to interact with the operating system. Those of CLI use commands to interact with the operating system. GUI stands out being a user-friendly option, while CLI is more powerful and advanced.
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
