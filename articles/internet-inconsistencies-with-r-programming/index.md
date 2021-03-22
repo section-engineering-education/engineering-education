@@ -156,7 +156,7 @@ Directory Name | Information
  RIPE | Réseaux IP Européens (European IP Networks) serves Europe.
  NIC | Server directory for extensions. 
  ARIN | American Registry for Internet Numbers serves North America and portions of the Caribbean.
- IANA | Internet Assigned Numbers Authority.
+ IANA | Internet Assigned Numbers Authority provides overall directory and registrar information.
  CIRA | Canadian Internet Registration Authority serves Canada.  
 - Privacy redactions  
 
