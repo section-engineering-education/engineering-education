@@ -2,7 +2,7 @@
 
 1. [Prerequisites](#prerequisites)
 2. [Introduction](#introduction)
-3. [What is Supervised Learning?](#what-is-self-supervised-learning)
+3. [What is Supervised Learning?](#what-is-supervised-learning)
 4. [Challenges with Supervised Learning](#challenges-with-supervised-learning)
 5. [Introduction to Self-Supervised Learning](#introduction-to-self-supervised-learning)
 6. [Applications of Self-Supervised Learning](#applications-of-self-supervised-learning)
@@ -41,7 +41,7 @@ Humans learn by using both supervised learning and unsupervised learning. We are
 
 This multifaced approach to learning has been so easy for humans. But, that has not been the case for deep learning systems. Though we have seen robust deep learning systems that have performed image recognition and natural language processing tasks, performing complex tasks has remained challenging. This is the problem self-supervised learning is trying to address. 
 
-Self-supervised learning has recently been a hot topic in Artificial Intelligence. It is a form of supervised learning that doesn't require human input to perform data labeling. It can also be viewed as a branch of unsupervised learning. The results are obtained by models that analyze data, label and categorize information independently without any human input. The only difference is that unlike unsupervised learning, self-supervised learning does not perform the grouping and clustering of data, as is the case with unsupervised learning. 
+Self-supervised learning has recently been a hot topic in Artificial Intelligence. It is a form of supervised learning that doesn't require human input to perform data labeling. It can also be viewed as a branch of unsupervised learning. The results are obtained by models that analyze data, label and categorize information independently without any human input. The only difference is that, unlike unsupervised learning, self-supervised learning does not perform the grouping and clustering of data, as is the case with unsupervised learning. 
 
 This learning type allows machines to examine part of a data example to figure out the remaining part. In simple terms, self-supervised learning learns from unlabeled data to fill in the blanks for missing pieces. These data can be in the form of images, text, audio, and videos. 
 For example, in videos, the machine can predict the missing part of a video given only a video section. Videos can also use it in predicting missing frames in a video.
