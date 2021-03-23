@@ -103,7 +103,7 @@ Once this is downloaded, open in folder and manually install it.
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/wkhtmltopdf.png)
 
-*Click install and manually install wkhtmltopdf in file path* 
+*As shown in this image, click install and manually install wkhtmltopdf in file path* 
 
 ### Adding Wkhtmltopdf path to the environment variable
 
@@ -117,11 +117,11 @@ Copy the highlighted file path, search for environment variables in your system 
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/filepath2.png)
 
-*Environment variable*
+*Environment variable in windows*
 
 ![wkhtmltopdf-installation](/engineering-education/python-projects-for-beginners/filepath.png)
 
-*System variable*
+*System variable in windows*
 
 I know this may be a bit tricky, if you are doing this for the first time, try following the steps carefully. I hope you followed through successfully.
 Once this is done, we move to our code editor to generate PDF.
