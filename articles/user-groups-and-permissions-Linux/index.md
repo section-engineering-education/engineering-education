@@ -23,7 +23,7 @@ To follow along with this tutorial, you should have:
 Let's start by talking about the ownership of Linux files.
 1. User: he is the owner of the file (who created the file).
 2. Group: the group can contain multiple users. Therefore, all users in that group will have the same permissions. It makes things easier than assign permission for every user you want.
-3. Other: any person has access to that file, that person is neither created the file, nor he is in any group which have access to that file.
+3. Other: any person has access to that file, that person is neither created the file, nor he is in any group which has access to that file.
 
 When you perform the following command:
 ```
@@ -55,7 +55,7 @@ This command will add the write permission for other users to my text file "sect
 
 Now if you try to execute ```ls -l``` then you will see ```-rw-r--rw-```.
 
-"o" refers for others, "g" for the group, "u" for the user, and "a" for all.
+"o" refers to others, "g" for the group, "u" for the user, and "a" for all.
 
 Now let's add the execute permission to the user by:
 ```
@@ -83,7 +83,7 @@ Also, you can use **Symbolic Mode** to modify permissions as the following:
 | 6  | Read and Write  |
 | 7  | Read, Write and Execute  |
 
-For example, lets give every permission for all by:
+For example, let's give every permission for all by:
 ```
 chmod 777 section.txt
 ```
@@ -104,7 +104,7 @@ We can create a new user account by issuing the following command:
 ```
 sudo useradd testuser
 ```
-We can make sure that the user has been created by two ways:
+We can make sure that the user has been created in two ways:
 1. ```id testuser ```.
 
 And the output will be something like this:
@@ -119,7 +119,7 @@ This will show the user id and the groups that the user is currently in, usually
 So we can issue ```cat /etc/passwd``` and we will see the new user that has been
 created.
 
-After creating the user using the above command, you notice that no user directories have been created inside /home directory, which is not good since the user cannot login to his account.
+After creating the user using the above command, you notice that no user directories have been created inside /home directory, which is not good since the user cannot log in to his account.
 
 To create a new user with its directories, we can issue:
 ```
@@ -136,12 +136,12 @@ We noticed that creating a new user takes a lot of commands to accomplish, so th
 ```
 sudo adduser testuser
 ```
-After creating a new user and setting a password to it, you can log in by two ways:
+After creating a new user and setting a password to it, you can log in in two ways:
 1. Through GUI.
 2. By the terminal: ```su - testuser```.
 
 #### Delete a user
-Like the process of adding users, there are two commands which delete a user.
+In the process of adding users, there are two commands which delete a user.
 ```
 sudo userdel testuser
 ```
