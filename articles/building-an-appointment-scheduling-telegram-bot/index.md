@@ -2,17 +2,17 @@ Have you ever wanted to build a telegram bot that would allow you to schedule or
 
 Not so many people know about Fauna and how amazing it can be when managing databases. Therefore, I will be doing a little introduction to the Fauna serverless database system.
 
-# What is Fauna?
+### What is Fauna?
 
 Fauna is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support a variety of data types and particularly relational databases in a serverless API. You can learn more about Fauna in their official documentation [here](https://docs.fauna.com/fauna/current/).
 
-# Creating A Fauna Database
+### Creating A Fauna Database
 
 To make use of Fauna, you have to signup on their website [here](https://dashboard.fauna.com/accounts/register). After signing up, you can create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Provide a name for your database and save it.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
-## Creating the Fauna Collections
+#### Creating the Fauna Collections
 
 For this article, you will need to create two collections in your database. A collection is similar to tables in your conventional database system. The first collection you need to create is the `Users` collection. This collection is where all the registered user’s information will be created, while the second collection you need to create is the `Appointments` collection. This collection is where all the user’s appointments will be created. To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to retain a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is set to 3, Fauna will automatically delete any data stored in the database three (3) days after the last date the data was modified.
 
@@ -20,7 +20,7 @@ For this article, you will need to create two collections in your database. A co
 
 After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to rows of data in a table as in your conventional database system.
 
-## Creating a Fauna Index
+#### Creating a Fauna Index
 
 You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
@@ -30,13 +30,13 @@ For this article, you will be creating three indexes; `users_index`, `appointmen
 
 After clicking on the `New Index` button, the above screen will be displayed to you. You need to select the collection you want to connect to this particular index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to be able to browse.
 
-For the `users_index`, we will use the `id` field as the terms with unique ticked, while for the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling the required fields, click on save and continue.
+For the `users_index`, we will use the `id` field as the terms with unique ticket, for the `apppointment_index`, we will use the `user_id` field as the terms, and for the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling the required fields, click on save and continue.
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
-# Integrating Fauna with Python
+### Integrating Fauna with Python
 
-## Creating a Fauna API Key
+#### Creating a Fauna API Key
 
 For your python app to interact with fauna, you need to create an API key for the database. To create an API key, go to the security tab on the left side of your screen.
 
@@ -46,17 +46,17 @@ Click on `New Key` to generate a secret key. To create the key you will need to 
 
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
-## Prerequisites
+#### Prerequisites
 
 From this point onwards, to follow this step by step guide on building an appointment scheduling telegram bot with fauna, you need to have the following installed:
 
 
-* Python 3.7 or >3.7
-* Faunadb
-* telegram
-* python_telegram_bot
+* [Python 3.7 or >3.7](http://python.org/)
+* [Faunadb](https://pypi.org/project/faunadb/)
+* [telegram](https://pypi.org/project/telegram/)
+* [python_telegram_bot](https://pypi.org/project/python-telegram-bot/)
 
-## Installing the requirements
+#### Installing the requirements
 
 To install the prerequisites, you simply need to run the below commands in your command-line interface.
 
@@ -97,7 +97,7 @@ If your result after running is similar to the image below, then you are good to
 
 # Creating the Telegram Bot
 
-## Starting a Conversation with BotFather
+#### Starting a Conversation with BotFather
 
 Go to your telegram account, then search for @botfather and start a conversation with the account.
 
@@ -105,7 +105,7 @@ Go to your telegram account, then search for @botfather and start a conversation
 
 ![start_bot_father](/engineering-education/building-an-appointment-scheduling-telegram-bot/start_bot_father.png)
 
-## Creating the Telegram Bot Interface with BotFather
+#### Creating the Telegram Bot Interface with BotFather
 
 Use the /newbot command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username to it.
 
@@ -115,7 +115,7 @@ Use the /newbot command to create a new Telegram Bot. To create a bot using BotF
 
 After supplying the name and username for your Telegram Bot, you will be provided with the API token that you can use to interact with the Bot account via the Telegram API (protected for security reasons in the image above ). Copy and paste the API token somewhere safe.
 
-## Powering the Bot with Python
+#### Powering the Bot with Python
 
 Create a new python file and give it any name of your choice. Now you have to import the required modules into your python file.
 
@@ -203,7 +203,7 @@ def start(update, context):
 
 ```
 
-In the code above, we created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler, while `context` is the bot instance passed from the dispatch handler. We then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, a welcome message is sent. However, if no user with that `chat_id` is found then a user is created.
+In the code above, we created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler, while `context` is the bot instance passed from the dispatch handler. We then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, a welcome message. However, if no user with the `chat_id` is found then a user is created.
 
 Next, you need to create a dispatch handler for the `/start` command. A command in telegram is any text that starts with `/`. You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
 
@@ -235,7 +235,7 @@ Open your bot and start it by typing in the `/start` command. You will now recei
 
 ![start_bot](/engineering-education/building-an-appointment-scheduling-telegram-bot/start_bot.png)
 
-## Creating New Appointments
+#### Creating New Appointments
 
 To enable your telegram bot to create new appointments in the fauna database, copy and paste the code below in your python file.
 
@@ -313,7 +313,7 @@ dispatcher.add_handler(MessageHandler(Filters.text, echo))
 
 ![add_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/add_appointment.png)
 
-## Listing Appointments
+#### Listing Appointments
 
 To list all the appointments saved for a user, copy and paste the code below in your python file.
 
@@ -406,7 +406,7 @@ dispatcher.add_handler(CommandHandler("list_today_appointments", list_today_appo
 
 ![list_today_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/list_today_appointment.png)
 
-## Updating Appointments
+#### Updating Appointments
 
 To enable your bot to update appointments in the database, copy and paste the code below in your python file.
 
@@ -451,7 +451,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/update_[0-9]*"), update_ap
 
 ![update_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/update_appointment.png)
 
-## Deleting Appointments
+#### Deleting Appointments
 
 To enable your bot to delete appointments in the database, copy and paste the code below in your python file.
 
@@ -485,7 +485,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 
 ![delete_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/delete_appointment.png)
 
-# Conclusion
+### Conclusion
 
 In this article, we built an appointment scheduler telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
 
