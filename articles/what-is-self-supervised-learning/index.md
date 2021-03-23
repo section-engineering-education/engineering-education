@@ -86,7 +86,7 @@ Self-supervised learning helps predict the missing words in a text in the field 
 ### Wrapping Up
 
 Self-supervised learning has helped develop AI systems that learn with fewer samples or fewer trials. This has been evident in the Natural Language Processing (NLP) field with GPT-3 and BERT, which can learn with very few examples. This network aims not to learn using labeled data but good representations from unlabeled data. This reduces the need to depend on vast amounts of data like in the supervised learning setting. 
-Currently, self-supervised learning is still in its infant stage. Machines cannot learn and understand almost everything humans can, but it seems to be an exciting and promising step in the right direction.
+Currently, self-supervised learning is still in its infancy. Machines cannot yet learn or understand everything humans can, but it seems to be an exciting and promising step in the right direction.
 
 ### References
 
