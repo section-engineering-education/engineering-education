@@ -31,7 +31,7 @@ Artificial Intelligence (AI) is a rapidly advancing field with various technique
 
 ### Prerequisites
 
-Before reading this article, the reader needs to have little knowledge of Artificial Intelligence and Machine Learning. If you're still a beginner, feel free to read this [article](/section-engineering-education/supervised-learning-algorithms/) published on [Section](https://www.section.io/engineering-education/) to understand the differences between supervised learning or unsupervised learning on a larger scale. 
+Before reading this article, a reader should have basic knowledge of Artificial Intelligence and Machine Learning. If you're a beginner, feel free to read this [article](/section-engineering-education/supervised-learning-algorithms/) published on [Section](https://www.section.io/engineering-education/) to better understand the differences between supervised learning and unsupervised learning.
 
 ### Introduction
 
