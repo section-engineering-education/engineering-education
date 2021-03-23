@@ -29,7 +29,7 @@ In this tutorial, we will learn how to perform speech command recognition in rea
 ### Create React Project
 First, we are going to create a new React App project. For that, we need to run the following command in the required local directory:
 
-```jsx
+```bash
 npx create-react-app speech_command
 ```
 
