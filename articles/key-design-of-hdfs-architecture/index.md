@@ -128,3 +128,6 @@ HDFS is similar to other distributed file systems except for some distinct diffe
 - [HDFS Architecture Guide](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)
 - [Characteristics of HDFS](https://www.geeksforgeeks.org/characteristics-of-hdfs/)
 - [Big Data Huawei](http://support.huawei.com/learning/Certificate!showCertificate?lang=en&pbiPath=term1000025450&id=Node1000011796)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
