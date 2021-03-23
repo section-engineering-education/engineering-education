@@ -224,7 +224,7 @@ Unit testing is an essential step of the software development life cycle and pro
 - It can help new developers familiarize themselves with the working of the units.
 - It provides code quality assurance since they show it is functioning correctly.
 
-### unittest and other Python testing frameworks.
+### unittest and other Python testing frameworks
 The most popular third-party unit testing frameworks include pytest and nose in that order. Yet, unittest is more beginner-friendly since it has a shallow learning curve. 
 
 For instance, it does not use the complex annotations used in a framework like pytest. Furthermore, it does not require an installation since it's inbuilt into Python's standard library.
