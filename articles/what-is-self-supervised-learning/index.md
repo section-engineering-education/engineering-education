@@ -39,7 +39,7 @@ Artificial Intelligence (AI) is a rapidly advancing field with various technique
 
 ### What is Supervised Learning?
 
-Supervised learning is a useful technique in deep learning. It is the most widely used type of learning when it comes to AI. It is a learning type where machines learn from labeled data to perform tasks such as predicting and classification of data. For example, a supervisor (someone who knows how to write answers) points out mistakes to a student during the learning process. The student ends up correcting the mistakes until he/she becomes good at them.
+Supervised learning is a useful technique in deep learning. It is the most widely used type of learning when it comes to AI. It is a learning type where machines learn from labeled data to perform tasks such as predicting and classification of data. For example, a supervisor or a teacher points out mistakes to a student during the learning process. The student ends up correcting the mistakes until he/she becomes good at them.
 
 In the supervised learning setting, we want an AI system to consider some data, i.e., given an animal's image, it can classify it with a label. For example, an image of a dog can be classified with the label "a dog." Once the AI system has been trained on the correct labeling of different animals with their correct labels, it should classify new unseen animal data with their correct labels.
 
@@ -75,7 +75,7 @@ Self-supervised learning helps predict the missing words in a text in the field 
 
 **2. Computer Vision**
 
-[SimCLR](https://arxiv.org/pdf/2002.05709.pdf) is a framework used to learn visual representations in images using self-supervised learning. The framework performs two main tasks: a pretext task and the downstream (real) task. Self-supervised learning is used in the pretext task. It involves performing simple augmentation tasks such as random cropping, random color distortions, and random Gaussian blur on input images. This process enables the model to learn better representations of the input images. These results are passed into the downstream task module, which performs the main tasks such as detection and classification tasks.
+[SimCLR](https://arxiv.org/pdf/2002.05709.pdf) is a framework used to learn visual representations in images using self-supervised learning. The framework performs two main tasks: a pretext task and the downstream (real) task. Self-supervised learning is used in the pretext task. It involves performing simple augmentation tasks such as random cropping, random color distortions, and random [Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur) on input images. This process enables the model to learn better representations of the input images. These results are passed into the downstream task module, which performs the main tasks such as detection and classification tasks. 
 
 ### Summary
 
