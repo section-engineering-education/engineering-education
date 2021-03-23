@@ -192,4 +192,7 @@ We can then proceed to listen to the response returned by the api.
 We've seen how we can make requests to external web services and how to use these data.  You proceed and make requests with the PUT, DELETE, and PATCH methods.
 
 
+---
+
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
 
