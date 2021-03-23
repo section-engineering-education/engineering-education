@@ -1,11 +1,21 @@
-JavaScript is a programming language that lets you create complex web page features.
-
-Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation.
-
-Using JavaScript to build a clock on the web using SVG (Scalar Vector Graphics) becomes simpler.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/
+title: How to Build a Clock with JavaScript and SVG
+description: This tutorial will provide a step by step guide on how to build a clock using JavaScript and SVG. 
+author: idris-olubisi
+date: 2021-03-17T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/hero.png
+    alt: Building a clock using JavaScript and SVG
+---
+JavaScript is a programming language that lets you create complex web page features. On the other hand, Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation. Therefore, building a clock using SVG (Scalar Vector Graphics) and JavaScript is quite simple. 
+<!--more-->
 ### Table of Contents
-
 - Introduction to JavaScript
 - What is SVG.
 - Benefits of SVG.
@@ -14,28 +24,21 @@ Using JavaScript to build a clock on the web using SVG (Scalar Vector Graphics) 
 - Conclusion.
 
 ### Prerequisites
-
 - Basic understanding of JavaScript.
 - Integrated Development Environment (eg. Visual studio code).
 
 ### Introduction to JavaScript
+JavaScript is a programming language that lets you create complex applications. It can also be used to create web games with dynamic styling, animation, and other features such as when buttons are pressed or data is entered on forms.
 
-JavaScript is a programming language that lets you create complex web page features. It can also be used to create web games with dynamic styling, animation, and other features such as when buttons are pressed or data is entered on forms.
-
-JavaScript is a hugely powerful scripting language. On top of the core JavaScript language, developers have written a number of tools that unlock a vast amount of functionality with minimal effort. There are some of them:
-
-- Third-party frameworks and libraries that can be used with HTML to speed up the development of websites and applications.
-- Third-party APIs allow developers to integrate features from other content providers, such as Twitter or Facebook, into their own websites.
-- Browser Application Programming Interfaces (APIs) are functions built into web browsers that allow you to do things like dynamically create HTML and set CSS styles.
+JavaScript is a powerful scripting language. On top of the core JavaScript language, developers have written numerous tools that unlock a vast amount of functionality with minimal effort. Some of these tools include:
+- Third-party frameworks and libraries that can be used with HTML to speed up the development of applications.
+- Third-party APIs allow developers to integrate features from other content providers such as Twitter or Facebook, into their websites.
+- Browser Application Programming Interfaces (APIs) are functions built into web browsers that allow you to access different features.
 
 ### What is SVG
-
-Scalable Vector Graphics (SVG) is an abbreviation for Scalable Vector Graphics.
-
-SVG is an XML format that specifies vector-based graphics.
+SVG is an abbreviation for Scalable Vector Graphics. This is an XML format that specifies vector-based graphics.
 
 #### SVG Types
-
 - SVG in HTML
 
   ```html
@@ -64,7 +67,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg width="400" height="110">
         <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
-
   ```
 
 - SVG Circle
@@ -73,7 +75,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg height="100" width="100">
         <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
     </svg>
-
   ```
 
 - SVG Ellipse
@@ -83,7 +84,6 @@ SVG is an XML format that specifies vector-based graphics.
         <ellipse cx="200" cy="80" rx="100" ry="50"
         style="fill:yellow;stroke:purple;stroke-width:2" />
     </svg>
-
   ```
 
 - SVG Line
@@ -92,7 +92,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg height="210" width="500">
         <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
     </svg>
-
   ```
 
 - SVG Polygon
@@ -101,7 +100,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg height="210" width="500">
         <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
     </svg>
-
   ```
 
 - SVG Polyline
@@ -111,7 +109,6 @@ SVG is an XML format that specifies vector-based graphics.
         <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
         style="fill:none;stroke:black;stroke-width:3" />
     </svg>
-
   ```
 
 - SVG Path
@@ -120,7 +117,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg height="210" width="400">
         <path d="M150 0 L75 200 L225 200 Z" />
     </svg>
-
   ```
 
 - SVG Text
@@ -129,7 +125,6 @@ SVG is an XML format that specifies vector-based graphics.
     <svg height="30" width="200">
         <text x="0" y="15" fill="red">I love SVG!</text>
     </svg>
-
   ```
 
 - SVG Stroking
@@ -142,7 +137,6 @@ SVG is an XML format that specifies vector-based graphics.
     <path stroke="blue" d="M5 60 l215 0" />
     </g>
   </svg>
-
   ```
 
 - SVG Blur Effects
@@ -197,34 +191,31 @@ SVG is an XML format that specifies vector-based graphics.
   ```
 
 ### Benefits of SVG
-
 The following are some of the benefits of using SVG over other image formats (such as JPEG and GIF):
-
 - Any text editor can be used to generate and edit SVG files.
 - Photos in SVG format can be found, indexed, scripted, and compressed.
 - SVG images can be scaled to any size.
 - SVG images can be printed in high resolution at any scale.
 - Images in SVG can be zoomed in and out.
 - When SVG graphics are zoomed or resized, they do not lose quality.
-- SVG is a free and open format.
+- SVG is free.
 - SVG files are made up entirely of XML.
 
 ### How to implement JavaScript with SVG on the web
-
 Now, using JavaScript and one of the SVG examples from above, let's create a simple webpage to develop a clock on the web.
 
-**Step 1 -** Open your Integrated Development Environment (IDE).
+### Step 1 - Open your Integrated Development Environment (IDE).
 
-Navigate to any Directory of your choice on your pc, in the terminal, type:
+To open visual studio code, navigate to any Directory of your choice on your pc, in the terminal, type:
 
 ```Bash
-code .
+code.
 ```
 
-to open visual studio code.
-**Note: `code .` won't work if you don't have visual studio code installed on your system**
+> Note: `code .` won't work if you don't have visual studio code installed on your system
 
-**Step 2 -** Create index.html, style.css and script.js, by typing the following command:
+### Step 2 - Generating files
+Create index.html, style.css, and script.js, by typing the following command:
 
 - Windows power shell
 
@@ -238,7 +229,7 @@ to open visual studio code.
   touch index.html,style.css,script.js
   ```
 
-**Step 3:** Add Basic html snippet to index.html
+### Step 3 - Add basic HTML code snippets to index.html
 
 Inside the index.html we need to setup a basic html page with the following snippet:
 
@@ -259,7 +250,7 @@ Inside the index.html we need to setup a basic html page with the following snip
 </html>
 ```
 
-**Step 4 -** Reference the style.css and script.js we created earlier:
+### Step 4 - Reference the style.css and script.js files
 
 ```html
 <!DOCTYPE html>
@@ -269,22 +260,21 @@ Inside the index.html we need to setup a basic html page with the following snip
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>How to Build a Clock with JavaScript and SVG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" /> <--css reference--!>
   </head>
   <body>
     <main class="main">
       <!-- clockbox -->
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <--js reference--!>
   </body>
 </html>
 ```
 
 Yes, we're ready to begin; I hope you're following along. 😊
 
-**Step 6 -** Add svg to index.html
-
+### Step 6 - Add SVG to index.html
 Since we're building a clock, we'll need the svg circle and svg path for the arm, as shown below.
 
 ```html
@@ -338,11 +328,10 @@ Since we're building a clock, we'll need the svg circle and svg path for the arm
 </html>
 ```
 
-**Have you noticed that all tags now have an id and a class? We'll use that as a reference point for our design and JavaScript.**
+> Have you noticed that all tags now have an id and a class? We'll use these ids as a reference point for our design and JavaScript.
 
-**Step 7 -** Implementing the JavaScript code to be used in the implementation
-
-It's time to start writing some JavaScript code. The JavaScript and time configurations, as shown and explained below, are the core functionalities of this web application.
+### Step 7 - Implementing the JavaScript code for the clock
+It's time to start writing some JavaScript code. The JavaScript code and time configurations, shown and explained below, are the core functionalities of this web application.
 
 ```javascript
 // Declare and Initialize your variables and make references to the id defined in the html file, as needed.
@@ -362,9 +351,8 @@ let sec = date.getSeconds();
 console.log("Hour: " + hr + " Minute: " + min + " Second: " + sec);
 ```
 
-**Step 8 -** Implementing positions
-
-Now let us implement the positions for (hr, min sec) since we can now see the output in the console.
+### Step 8 - Implementing positions
+Now let's implement the positions for (hr, min sec) since we can now see the output in the console.
 
 ```javascript
 // Declare and Initialize your variables and create positions for each.
@@ -389,7 +377,7 @@ const runClock = () => {
 setInterval(runClock, 1000);
 ```
 
-**Step 9 -** Adding styles in style.css
+### Step 9 - Adding styles in style.css
 
 We are almost done 😊
 Lets's head to style.css to finish the remaining task
@@ -482,18 +470,20 @@ footer {
 }
 ```
 
-**Step 10 -** To see the magic, start your live server or preview your application in your browser as shown below.
+### Step 10 - Testing the application
+To see the magic, start your live server or preview the application in your browser as shown below.
 
 ![result on browser](/engineering-education/how-to-build-a-clock-with-javascript-and-svg/result.png)
 
 Congratulations 🎉🎉
 
-### Resources
+### Conclusion
+You learned about JavaScript, what SVG is, the benefits of SVG, and how to use JavaScript with SVG on the web in this post.
+Some SVG types were also highlighted, as well as how to use them on the web.
 
+### Resources
 - [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 - [SVG by W3schools](https://www.w3schools.com/graphics/svg_intro.asp)
 
-### Conclusion
-
-You learnt about JavaScript, what SVG is, the benefits of SVG, and how to use JavaScript with SVG on the web in this post.
-Some SVG types were also highlighted, as well as how to use them on the web.
+---
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
