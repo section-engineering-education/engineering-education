@@ -1,18 +1,34 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/working-with-pythons-unittest/
+title: Working with Pythons Unittest
+description: In this article, we'll see how we can use the unittest module to perform regression testing. Regression testing refers to retesting software to ensure that it works well after a change has been made.
+author: stephen-mwangi
+date: 2021-03-22T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/working-with-pythons-unittest/hero.jpg
+    alt: Working with Pythons Unittest
+---
+In software engineering, a unit test refers to a program used to automatically check for bugs in individual parts/units of software. Unit testing is an important phase of the software development life cycle. To carry out a test, a developer specifies a set of testcases and their expected results for comparison.
+<!--more-->
 ### Introduction
-In software engineering, a unit test refers to a program used to automatically check for bugs in individual parts/units of software. Unit testing is an important phase of the software development life cycle.
-To carry out a test, a developer specifies a set of testcases and their expected results for comparison. Most programming languages provide inbuilt unit testing frameworks. In this article, we will focus on Python's unittest.
+Most programming languages provide inbuilt unit testing frameworks. In this article, we will focus on Python's unittest.
 Regression testing refers to retesting software to ensure that it works well after a change has been made (after refactoring code). In this article, we'll see how we can use the unittest module to perform regression testing.
 
 ### Prerequisites
-You will need:
-
+To follow along you will need:
 1. A basic understanding of Python functions and classes.
-2. A text editor. I use [Visual Studio Code](https://code.visualstudio.com/).
+2. A text editor. I'll be using [Visual Studio Code](https://code.visualstudio.com/).
 3. [Python](https://www.python.org/downloads/) installed.
 
 Let's get started by creating two files: `mathfns.py` and `main.py` using the project structure shown below.
 
-```
+```bash
 project-root
     |
     --- mathfns.py
@@ -71,22 +87,23 @@ if __name__ == '__main__':
 
 The `main.py` file will store the unit tests that we have. We import the units `double`, `square`, and `divide` from the `mathfns` script defined above. We then import the `unittest` module from Python's standard library.
 
-The class `TestMathFunctions` inherits unit testing capabilities from the `unittest.TestCase` class. It provides three methods:
+The class `TestMathFunctions` inherits unit testing capabilities from the `unittest.TestCase` class. 
+
+It provides three methods:
 1. `test_double` which does unit tests for the `double` unit.
 2. `test_square` which does unit tests for the `square` unit.
 3. `test_divide` which does unit tests for the `divide` unit.
 
-The following naming convention is used to make the unit tests self-descriptive: the test names should be in the `test_UnitName` format. In this case, `UnitName` refers to the unit being tested.
-Inside each of the unit tests, we use assert methods to check for and report errors if any.
+The following naming convention is used to make the unit tests self-descriptive: the test names should be in the `test_UnitName` format. In this case, `UnitName` refers to the unit being tested. Inside each of the unit tests, we use the assert methods to check for any report errors.
 
 To run the unit tests, proceed as follows:
-```console
+```bash
 >>> python3 -m unittest main.py
 ```
 
 The output will show that all three tests were executed correctly:
 
-```console
+```bash
 >>> python3 -m unittest main.py
 ...
 ----------------------------------------------------------------------
@@ -95,12 +112,12 @@ Ran 3 tests in 0.000s
 OK
 ```
 
-###### Output types
-After running a test, the unittest module has two types of outputs:
+#### Output types
+After running a test, the unittest module will have two types of outputs:
 1. `OK`: This shows that all tests ran successfully as demonstrated above.
 2. `FAILED (failures=n)`: This shows that `n` tests failed. unittest then prints the associated failure information.
 
-##### Failure Example
+#### Failure example
 We have seen what happens when the unit tests run correctly. Now, let us take a look at what happens when one of the unit tests fails. For this, we change the `double` function to quadruple the number `x` instead of doubling it as shown below:
 
 ```python
@@ -110,7 +127,7 @@ def double(x):
 
 When we run the unit tests, we get the following output:
 
-```console
+```bash
 >>> python3 -m unittest main.py
 .F.
 ======================================================================
@@ -131,7 +148,7 @@ Of the 3 tests that we performed, `self.assertEqual(double(8), 16)` produces an 
 
 To see more detailed information, use the `-v` flag before the file holding the unit tests. The `v` stands for `verbose`.
 
-```console
+```bash
 >>> python3 -m unittest -v main.py
 test_divide (tests.TestMathFunctions) ... ok
 test_double (tests.TestMathFunctions) ... FAIL
@@ -151,8 +168,9 @@ Ran 3 tests in 0.001s
 FAILED (failures=1)
 ```
 
-##### Error messages
+#### Error messages
 Error messages are very useful for future code debugging. They also provide documentation for quality assurance testers and other developers.
+
 For instance, to add an error message to `self.assertEqual(double(8), 16)`, change your code to match this:
 
 ```python
@@ -162,7 +180,7 @@ For instance, to add an error message to `self.assertEqual(double(8), 16)`, chan
 
 The output will be:
 
-```console
+```bash
 >>> python3 -m unittest main.py
 .F.
 ======================================================================
@@ -181,7 +199,7 @@ FAILED (failures=1)
 
 As demonstrated above, the error message we added describes the `AssertionError` better. This has made it more understandable.
 
-##### Assert methods
+#### Assert methods
 So far, we've seen the `assertEqual(a, b)` method, the `assertNotEqual(a, b)` method, and the `assertRaises(x)` method. Apart from these, the unittest module provides these extra assert methods:
 
 | Method                    | Result                                                                                                                                                            |
@@ -197,26 +215,32 @@ So far, we've seen the `assertEqual(a, b)` method, the `assertNotEqual(a, b)` me
 | assertIsInstance(a,b)     | checks that `a` is an instance of class `b`. For instance, if `a="Hello"`, and `b=str`, the check should pass since `a` is a string.                              |
 | assertNotIsInstance(a, b) | checks that `a` is not an instance of class `b`                                                                                                                   |
 
-### Benefits of Unit Testing
+### Benefits of unit testing
 Unit testing is an essential step of the software development life cycle and provides benefits such as:
 
-1. Efficient and automated way to discover bugs.
-2. Ensures that a unit works properly after refactoring (regression testing).
-3. Detecting bugs during the early phases of development reduces project costs.
-4. It can help new developers familiarize themselves with the working of the units.
-5. It provides code quality assurance since they show it is functioning correctly.
+- An efficient and automated way to discover bugs.
+- Ensuring that a unit works properly after refactoring (regression testing).
+- Detecting bugs during the early phases of development reduces project costs.
+- It can help new developers familiarize themselves with the working of the units.
+- It provides code quality assurance since they show it is functioning correctly.
 
-### Comparison between unittest and other Python testing frameworks.
-The most popular third-party unit testing frameworks include pytest and nose in that order.
-Compared to the above, unittest is more beginner-friendly since it has a shallow learning curve. For instance, it does not use the complex annotations used in a framework like pytest. Furthermore, it does not require an installation since it's inbuilt into Python's standard library.
+### unittest and other Python testing frameworks.
+The most popular third-party unit testing frameworks include pytest and nose in that order. Yet, unittest is more beginner-friendly since it has a shallow learning curve. 
 
-The unittest does have some limitations compared to the third-party frameworks. These include:
-1. It requires more boilerplate code to get started.
-2. It does not support plugins.
+For instance, it does not use the complex annotations used in a framework like pytest. Furthermore, it does not require an installation since it's inbuilt into Python's standard library.
+
+The unittest does have some limitations compared to the third-party frameworks. 
+
+These include:
+- It requires more boilerplate code to get started.
+- It does not support plugins.
 
 ### Conclusion
-In this article, we learnt about unit testing, regression testing, and how to use Python's unittest module. You can find a working implementation of the project [here](https://replit.com/@StephenMwangi1/unit-testing) which you can execute by clicking the run button. You can also click the fork button to create a copy that you can modify.
+In this article, we learned about unit testing, regression testing, and how to use Python's unittest module. You can find a working implementation of the project [here](https://replit.com/@StephenMwangi1/unit-testing) which you can execute by clicking the run button. You can also click the fork button to create a copy that you can modify.
 
 For more information, check the [unittest documentation](https://docs.python.org/3/library/unittest.html).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
