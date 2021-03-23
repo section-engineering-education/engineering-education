@@ -89,3 +89,6 @@ This article has provided a basic understanding of browser caching, which is an 
 -	The HTTP headers used for controlling cache behavior include ETag, Cache-Control, Expires, and Last-Modified. 
 -	Some of the pitfalls of browser caching include security risks, maintenance requirements, and the existence of stale content. 
 -	We have also learned the best practices for optimizing browser caching. 
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/Onesmus Mbaabu/)
