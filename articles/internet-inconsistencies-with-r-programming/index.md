@@ -36,7 +36,7 @@ Let's start.
 ### Linux Fundamentals  
 Open any Linux Shell.  
 
-For those who prefer using Linux without `ROOT`:  
+For those who prefer using Linux without `ROOT`.  
 ```Sh
 sudo apt update
 ```   
@@ -46,7 +46,7 @@ As a reminder, users with permission can be in `ROOT` mode by entering the follo
 sudo -i
 ```
 
-For those who prefer using Linux with `ROOT`:  
+For those who prefer using Linux with `ROOT`.  
 ```Sh
 apt update
 ```   
@@ -61,7 +61,7 @@ A window should pop-up.
 *Screen capture*  
 
 ### R-Programming  
-Enter in the following code to install a Linux version of the R-Programming application.  
+Enter in the following line to install a Linux version of the R-Programming application.  
 ```Sh
 sudo apt-get install r-base r-base-dev
 ```  
@@ -88,8 +88,7 @@ install.packages(c("rattle", dependencies = TRUE))
 Sample libraries with possible results are shown below.  
 
 
-Information about the IP registrar responsible can be found.  
-The library below can gather this data. 
+Information about the IP registrar responsible can be found. The library below can gather this data. 
 ```Sh
 library(Rwhois)
 ```
@@ -104,8 +103,7 @@ index | key | val
 6 | NetType | Early Registrations, Transferred to RIPE NCC
 
 
-A server coordinates with the domain extension (example, ".us").  
-If a server name is included, DNS parking name servers can be displayed.  
+A server coordinates with the domain extension (example, ".us"). If a server name is included, DNS parking name servers can be displayed.  
 The following code can show those name servers.  
 ```Sh
 ("asianausa.us", server = "whois.nic.us")
@@ -160,7 +158,7 @@ Directory Name | Information
  CIRA | Canadian Internet Registration Authority serves Canada.  
 - Privacy redactions  
 
-The country classified with this IP address is complex. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 has found five geological locations.  
+The country classified with this IP address is complex. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between 45.88.197.0 to 45.88.197.255. Reverse IP engineering websites with data on 45.88.197.212 found five possible geological locations.  
 
 Possiblities:
  - Lithuania (Li)
@@ -176,11 +174,11 @@ Typically, a decision tree selects the highest possible number as the optimal ch
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 *Screen capture*  
 
-It is possible to evaluate variable importance from a random forest model.  
+It is possible to evaluate variable importance from a random forest model. Variable importance is shown in the image below. 
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 *Screen capture*  
 
-With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also showed some correlation. This statistical analysis using Gini found Lithuania had higher variable importance with a value of 3087.48.   
+With the highest score of the five countries, Lithuania showed the most links to the IP address. Germany also showed some correlation. This statistical analysis using Gini found Lithuania generated higher variable importance with a value of 3087.48.   
 
 
 ### Linux Reverse IP Lookup  
