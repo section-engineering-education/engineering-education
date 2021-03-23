@@ -37,7 +37,7 @@ Then, we need to open the project in our code editor IDE (VSCode) as shown in th
 
 ![create new react app](/engineering-education/speech-command-recognition-with-tensorflow-and-react/1-create-new-react-app.png)
 
-Now, we can execute the command  `yarn start` or `npm start` to run the project on the port 3000 of our [localhost](http://localhost):
+Now, we can execute the command  `yarn start` or `npm start` to run the project on the port 3000 of our [localhost](http://localhost:3000):
 
 ![preview react app](/engineering-education/speech-command-recognition-with-tensorflow-and-react/2-preview-react-app.png)
 
