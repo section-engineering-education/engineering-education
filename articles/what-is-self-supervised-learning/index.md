@@ -43,7 +43,7 @@ Supervised learning is a useful technique in deep learning. It is the most widel
 
 In the supervised learning setting, we want an AI system to consider some data, i.e., given an animal's image, it can classify it with a label. For example, an image of a dog can be classified with the label "a dog." Once the AI system has been trained on the correct labeling of different animals with their correct labels, it should classify new unseen animal data with their correct labels.
 
-Supervised learning is how banks know whether you are qualified to be given a loan or not, how Facebook tells apart your face from your friends face, and how email companies can classify your emails into different categories. But, supervised learning does have its drawbacks.
+Supervised learning is how banks know whether you are qualified to be given a loan or not, how Facebook tells apart your face from your friend's face, and how email companies can classify your emails into different categories. But, supervised learning does have its drawbacks.
 
 ### Challenges with Supervised Learning
 
