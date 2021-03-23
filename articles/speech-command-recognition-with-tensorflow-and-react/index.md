@@ -16,7 +16,7 @@ images:
 ---
 There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that is used in these types of systems is the ability to recognize speech and perform tasks accordingly. In this tutorial, we are going to explore the basics of speech/command recognition using a speech-command recognizer model provided by TensorFlow in a React app ecosystem. The tutorial also demonstrates the use of a system microphone for speech audio input and listen to the audio to make probabilistic predictions.
 <!--more-->
-In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy recognition by applying the argmax function to our model.
+In this tutorial, we will learn how to perform speech command recognition in real-time and demonstrate the result of predictions. Then, we are going to load the speech-commands model provided by TensorFlow.org. Feeding the audio data to the model neural network, we are going to listen to the audio and make the predictions. Lastly, we are also going to improve the accuracy of recognition by applying the argmax function to our model.
 
 ### What we will cover in this tutorial...
 
