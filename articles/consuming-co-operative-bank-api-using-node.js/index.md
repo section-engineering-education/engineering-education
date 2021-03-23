@@ -100,11 +100,11 @@ The following are the installed dependencies:
 
 - [dotenv](https://www.npmjs.com/package/dotenv): For loading the environmental variables.
 
-- [express](https://www.npmjs.com/package/express): For setting up the the routes and the controllers in the application.
+- [express](https://www.npmjs.com/package/express): For setting up the routes and the controllers in the application.
 
 - [ngrok](https://www.npmjs.com/package/ngrok): For exposing our localhost server.
 
-- [nodemon](https://www.npmjs.com/package/nodemon): For listening to changes and restartin the server.
+- [nodemon](https://www.npmjs.com/package/nodemon): For listening to changes and restarting the server.
 
 - [unique-string](https://www.npmjs.com/package/unique-string): For generating random strings.
 
@@ -268,11 +268,11 @@ console.log(req.body);
 
 - Open postman and send a `POST` request to: `http://localhost:4000/send-to-mpesa`. In case you encounter an error, revisit the steps, else your response should resemble the following:
 
-![send-to-mpesa-postman-response](./send-to-mpesa-postman-response.png)
+![send-to-mpesa-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/send-to-mpesa-postman-response.png)
 
 - The following should resemble the information logged on your terminal from the callback:
 
-![send-to-mpesa-console-response](./send-to-mpesa-console-response.png)
+![send-to-mpesa-console-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/send-to-mpesa-console-response.png)
 
 ### Accessing account mini-statement
 
@@ -332,7 +332,7 @@ To test this:
 
 - Proceed to postman and send a `POST` request to: `http://localhost:4000/account-mini-statement`. The response should resemble the following:
 
-![account-mini-statement-postman-response](./account-mini-statement-postman-response.png)
+![account-mini-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-mini-statement-postman-response.png)
 
 ### Accessing account full-statement
 
@@ -396,7 +396,7 @@ To test this:
 
 - Head over to postman and send a `POST` request to: `http://localhost:4000/account-full-statement`. The response should resemble the following:
 
-![account-full-statement-postman-response](./account-full-statement-postman-response.png)
+![account-full-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-full-statement-postman-response.png)
 
 ### Accessing account balance
 
@@ -456,7 +456,7 @@ To test this:
 
 - Head over to postman and send a `POST` request to: `http://localhost:4000/account-balance`. The response sent should resemble the following:
 
-![account-balance-postman-response](./account-balance-postman-response.png)
+![account-balance-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-balance-postman-response.png)
 
 ### Validating an account
 
@@ -516,7 +516,7 @@ To test this:
 
 - Head over to postman and send a `POST` request to: `http://localhost:4000/account-validation`. The response sent should resemble the following:
 
-![account-validation-postman-response](./account-validation-postman-response.png)
+![account-validation-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-validation-postman-response.png)
 
 ### Summary
 
