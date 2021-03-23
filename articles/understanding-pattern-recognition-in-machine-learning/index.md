@@ -3,7 +3,7 @@ Pattern recognition is the use of computer algorithms to recognize data regulari
 This article takes readers through pattern recognition in machine learning and explains how it works. It also discusses how it has been applied in various fields and analyzes its future outlook.
 
 ### What is pattern recognition?
-Pattern recognition is the use of machine learning algorithms to identify patterns. It classifies data based on statistical information or knowledge gained from patterns and related representation. 
+Pattern recognition is the use of machine learning algorithms to identify patterns. It classifies data based on statistical information or knowledge gained from patterns and their representation. 
 
 In this technique, labeled training data is used to train pattern recognition systems. A label is attached to a specific input value that is used to produce a pattern-based output. In the absence of labeled data, other computer algorithms may be employed to find unknown patterns.   
 
@@ -24,7 +24,7 @@ The following image shows how data is used for training and testing.
 
 [Image Source: Geeks for Geeks](https://media.geeksforgeeks.org/wp-content/uploads/patt_intro.png)
 
-The training set consists of images or data used for training or building a model. Training rules are used to provide the criteria for output decisions. Training algorithms are used to match a given input data with a corresponding output decision. The algorithms and rules are then applied to facilitate training. The results are attained using the information collected from the data. 
+The training set contains images or data used for training or building a model. Training rules are used to provide the criteria for output decisions. Training algorithms are used to match a given input data with a corresponding output decision. The algorithms and rules are then applied to facilitate training. The system uses the information collected from the data to generate results. 
 
 The testing set is used to validate the accuracy of the system. The testing data is used to check whether the accurate output is attained after the system has been trained. This data represents approximately 20% of the entire data in the pattern recognition system. 
 
@@ -64,13 +64,15 @@ Hybrid algorithms are used to build a hybrid model, which uses multiple classifi
 
 ### Applications of pattern recognition
 Pattern recognition is applied in the following areas:
-- **Image analysis and recognition:** Pattern recognition is used in digital image analysis to automatically study images to gather meaningful information from them. It gives machines the recognition intelligence needed for image processing. 
-- **Seismic analysis:** This process is used for discovering and interpreting patterns in seismic recordings. Statistical pattern recognition is utilized in various seismic models. 
+- **Image analysis:** Pattern recognition is used in digital image analysis to automatically study images to gather meaningful information from them. It gives machines the recognition intelligence needed for image processing. 
+- **Seismic analysis:** Seismic analysis involves studying how natural events like earthquakes affect rocks, buildings, and soils. Pattern recognition is used for discovering and interpreting patterns in seismic events. 
 - **Healthcare:** Pattern recognition is used in the healthcare sector to improve health services. Data of patients is stored and used by medical practitioners for further analysis. This technique is also used to recognize objects or damages in human bodies. 
 - **Fingerprint identification:** This process is used for identifying fingerprints in computer and smartphone devices. Modern smartphones have a fingerprint identification feature that allows you to gain access to your phone after verifying your fingerprint. 
-- **Computer vision:** It is used in computer applications to extract useful features from image samples. It has been applied in computer vision to perform biomedical and biological imaging. 
+- **Computer vision:** It is used in computer applications to extract useful features from image samples. It has been applied in computer vision to perform various tasks such as [object recognition](https://en.wikipedia.org/wiki/Outline_of_object_recognition) and [medical imaging](https://en.wikipedia.org/wiki/Medical_imaging). 
   
 ### The future of pattern recognition
 Pattern recognition is an important technique that enhances the recognition of data regularities and patterns. The number of applications employing this process has grown tremendously over the years. These applications have solved various real-life challenges through the use of training data, testing data, and classifiers. 
 
 Pattern recognition has the potential to evolve into a more intelligent process that supports various digital technologies. This technique can be a source of advancements in robotics and automation, especially in the improvement of how humanoid robots are trained. 
+
+Pattern recognition is also likely to be used extensively in automous cars. As autonomous driving is gaining momentum, the importance of pattern recognition may increase because of the need to detect objects, cars, people and traffic lights.
