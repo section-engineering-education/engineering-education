@@ -203,6 +203,14 @@ Best Parameters:
 
 Our output gives the best parameters as 10 for n_estimators and min_samples_split. It also gives 4 for min_samples_leaf, auto for max_features, 70 for max_depth, and true for bootstrap.
 
+### Grid Search vs Random Search
+
+Off the top of one's head, it would seem that grid search would be the better method as every possible hyperparameter combination is tested. But this is not always the case. These two strategies can be compared in terms of dimensionality.
+
+With grid search, the greater the dimensionality, the greater the number of hyperparameter combinations to search. As such, there is a greater chance of grid search being impractical. The time taken to search would not justify the use of grid search. The computational resources in use would also prove unfeasible with an increase in the number of parameters. Each additional parameter would increase the number of evaluations exponentially. With a small number of hyperparameters, grid search may edge out random search. This is because grid search would guarantee accuracy by exhausting all possible combinations.
+
+Similar to grid search, the higher the dimensionality, the greater the time taken to find the right set of hyperparameters. Higher dimensionality also means a greater number of iterations. Nonetheless, random search may offer a greater chance of realizing the optimal parameters. Even though random search may not be as accurate as grid search, we also get to control the number of combinations to attempt. The random search model may be trained on the optimized parameters within a much shorter time than the same using grid search. This also results in much more efficient computational power used in comparison to grid search. 
+
 ### Wrapping Up
 
 We mentioned that grid search attempts all hyperparameter combinations. Random search lets us specify how many models we want to train, therefore controlling the number of combinations attempted. This introduces a trade-off between the assurance of finding the best parameters and the computational resources/time used. We have gone through the basic implementation of random search. I believe this post has provided a distinction between random search and grid search. Until the next optimization post, good luck!
