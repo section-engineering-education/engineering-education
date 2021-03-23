@@ -212,7 +212,7 @@ A `curl` function can list the possible domain names on an IP address. The code 
 sudo curl https://host.io/asianausa.us
 ```  
 
-Partial domain name output:  
+Partial Output:  
  - grh-interviews.online
  - recruits-agility.com
  - careers-mfc.work
