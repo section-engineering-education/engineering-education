@@ -69,7 +69,7 @@ Self-supervised learning aims to make deep learning models data-efficient. This 
 
 ### Applications of Self-Supervised Learning
 
-1. Natural Language Processing
+**1. Natural Language Processing**
 
 Self-supervised learning helps predict the missing words in a text in the field of NLP. This is achieved by showing segments of texts to a giant neural network with billions of parameters, i.e., the likes of OpenAI's [GPT-3](https://openai.com/blog/openai-api/) and Google's [BERT](https://arxiv.org/pdf/1810.04805.pdf). You mask 15% of the text to force the network to predict the pieces of words that are missing. 
 
