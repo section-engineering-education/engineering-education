@@ -67,7 +67,7 @@ A random forest uses many parameters. Below are the main ones. It is essential t
 
 **min_samples_leaf.** The minimum count of data points that can be stored in a leaf node.
 
-**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population.
+**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population. If ` bootstrap = True ` sampling is carried out randomly with replacement. If  ` bootstrap = False `, sampling is without replacement.
 
 ### Random Search Implementation
 
