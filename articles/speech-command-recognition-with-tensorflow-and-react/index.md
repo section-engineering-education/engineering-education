@@ -50,7 +50,7 @@ yarn add @tensorflow/tfjs @tensorflow-models/speech-commands
 ```
 
 - @tensorflow/tfjs: It is the core Tensorflow package based on JavaScript.
-- @tensorflow-models/speech-commands: It is a Tensorflow models that enables us to perform recognition of spoken commands.
+- @tensorflow-models/speech-commands: It is a Tensorflow model that enables us to perform recognition of spoken commands.
 
 ### Importing Dependencies
 
