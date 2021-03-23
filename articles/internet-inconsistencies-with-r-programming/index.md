@@ -1,6 +1,21 @@
-## Internet Inconsistencies with R-Programming
-An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/internet-inconsistencies-with-r-programming/
+title: Internet Inconsistencies with R-Programming
+description: This article will be an introduction to detecting inconsistences in Internet using R-programming. We will be using Kali Linux and R to detect the internet inconsistencies.
+author: priya-kalyanakrishnan
+date: 2021-03-23T00:00:00-22:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/internet-inconsistencies-with-r-programming/hero.jpg
+    alt: Internet Inconsistencies with R-Programming Image
+---
+An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
+<!--more-->
 This tutorial can help individuals and groups who are interested in detecting internet inconsistencies.  
 
 ### Table of contents
