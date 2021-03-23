@@ -35,7 +35,7 @@ Before reading this article, a reader should have basic knowledge of Artificial 
 
 ### Introduction
 
-Artificial Intelligence (AI) is a rapidly advancing field with various techniques being billed as the most promising to keep an eye on. One of those techniques is self-supervised learning. You'll want to read this article to the end to learn more about it.
+Artificial Intelligence (AI) is a rapidly advancing field with various techniques being billed as the most promising to keep an eye on. One of those techniques is self-supervised learning. This article introduces self-supervised learning.
 
 ### What is Supervised Learning?
 
