@@ -24,19 +24,19 @@ There are many ways to optimize the hyperparameters of a model. We previously lo
 
 • [VSCode](https://code.visualstudio.com/) is my code editor for this tutorial. The language we shall use is Python.
 
-• We shall use a tool from the [scikit-learn](https://scikit-learn.org/stable/) library known as [RandomizedSearchCV](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization) to carry out random search with cross-validation.
+• We shall use a tool from the [scikit-learn](https://scikit-learn.org/stable/) library known as [RandomizedSearchCV](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization) to carry out a random search with cross-validation.
 
 • As with grid search, we use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html).
 
 ### Goal
 
-This article aims to help us familiarize ourselves with random search optimization with the aid of a simple implementation in Python.
+This article aims to help us familiarize ourselves with random search optimization to aid a simple implementation in Python.
 
 ### Random Search
 
-Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. However. A key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. To do a random search, a sampling distribution is defined for every hyperparameter.
+Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. However, a key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. To do a random search, a sampling distribution is defined for every hyperparameter.
 
-This technique allows us to control the number of attempted hyperparameter combinations. Dissimilar to grid search where every possible combination is attempted, random search allows us to specify the number of models to train. We can base our search iterations on our computational resources or the time taken per iteration. The image below shows a random layout.
+This technique allows us to control the number of attempted hyperparameter combinations. Dissimilar to grid search, where every possible combination is attempted, random search allows us to specify the number of models to train. We can base our search iterations on our computational resources or the time taken per iteration. The image below shows a random layout.
 
 ![randomgrid](/engineering-education/random-search/randomgrid.png)
 
@@ -46,16 +46,16 @@ This technique allows us to control the number of attempted hyperparameter combi
 
 #### RandomizedSearchCV
 
-We used the sci-kit learn (sklearn) library when implementing grid search, particularly GridSearchCV. From the same library, we shall use RandomizedSearchCV. Similar to GridSearchCV, it is meant to find the best parameters to improve a given model. A key difference is that it does not test all parameters. Instead, the search is done at random. As we shall note later, a practical difference between the two is that RandomizedSearchCV allows us to specify the number of parameter values we seek to test. This is through the use of ` n_iter `.
+We used the sci-kit learn (sklearn) library when implementing grid search, particularly GridSearchCV. From the same library, we shall use RandomizedSearchCV. Similar to GridSearchCV, it is meant to find the best parameters to improve a given model. A key difference is that it does not test all parameters. Instead, the search is done at random. As we shall note later, a practical difference between the two is that RandomizedSearchCV allows us to specify the number of parameter values we seek to test. This is through the use of ` n_iter. `
 
 #### Random Forest
 
-Since we shall use a random forest regressor during the implementation of random search, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees, capable of both regression and classification tasks. They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging as well as ensemble learning as a whole from this [article](https://www.section.io/engineering-education/ensemble-learning/).
-We have explained why a random forest is a “forest” but not why it is considered to be random. The random nature of a random forest can be attributed to a couple of concepts. Firstly, the samples of training observations when building trees are taken randomly. Secondly, when it comes to the splitting of nodes, random subsets of features are used.
+Since we shall use a random forest regressor during random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](https://www.section.io/engineering-education/ensemble-learning/).
+We have explained why a random forest is a “forest” but not why it is considered random. The random nature of a random forest can be attributed to a couple of concepts. Firstly, the samples of training observations when building trees are taken randomly. Secondly, when it comes to the splitting of nodes, random subsets of features are used.
 
 ##### Random forest parameters
 
-A random forest uses many parameters. Below are the main ones. It is important to introduce them since we shall encounter all of them in our code later on.
+A random forest uses many parameters. Below are the main ones. It is essential to introduce them since we shall encounter all of them in our code later on.
 
 **n_estimators.** This parameter denotes the maximum number of trees in an ensemble/forest.
 
@@ -63,15 +63,15 @@ A random forest uses many parameters. Below are the main ones. It is important t
 
 **max_depth.** max_depth represents the maximum number of levels that are allowed in each decision tree.
 
-**min_samples_split.** To cause a node to split, there is a minimum number of samples required in a node. This minimum number of data points is what is represented by to as min_samples_split.
+**min_samples_split.** To cause a node to split, a minimum number of samples are required in a node. This minimum number of data points is what is represented by to as min_samples_split.
 
 **min_samples_leaf.** The minimum count of data points that can be stored in a leaf node.
 
-**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a population at random, then returned to the population.
+**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population.
 
 ### Random Search Implementation
 
-Let’s have a very simple implementation of random search. Our goal is to identify the best parameters after a randomized search. The steps below illustrate this process.
+Let’s have a straightforward implementation of random search. Our goal is to identify the best parameters after a randomized search. The steps below illustrate this process.
 
 1. **import NumPy.** NumPy simplifies the handling of vectors, matrices as well as multi-dimensional arrays. We import ` numpy ` as shown below.
 
@@ -106,7 +106,7 @@ rf = RandomForestRegressor(random_state = 35)
 from sklearn.model_selection import RandomizedSearchCV
 ```
 
-6. **Provide hyperparameter grid for random search.** Here we specify a few values for the random forest parameters we defined previously.
+6. **Provide hyperparameter grid for a random search.** Here, we specify a few values for the random forest parameters we defined previously.
 
 ```python
 n_estimators = [int(x) for x in np.linspace(start = 1, stop = 20, num = 20)] # number of trees in the random forest
@@ -129,7 +129,7 @@ random_grid = {'n_estimators': n_estimators,
 'bootstrap': bootstrap}
 ```
 
-7. **Evaluation.** Similarly to grid search, we carry out cross-validation in random search. This is enabled by ` RandomizedSearchCV `. By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations.
+7. **Evaluation.** Similarly to grid search, we carry out cross-validation in a random search. This is enabled by ` RandomizedSearchCV. ` By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations.
 
 ```python
 rf_random = RandomizedSearchCV(estimator = rf,
@@ -216,3 +216,6 @@ We mentioned that grid search attempts all hyperparameter combinations. Random s
 3. [How does random search algorithm work? Python implementation](https://medium.com/analytics-vidhya/how-does-random-search-algorithm-work-python-implementation-b69e779656d6)
 
 4. [Why Is Random Search Better Than Grid Search For Machine Learning](https://analyticsindiamag.com/why-is-random-search-better-than-grid-search-for-machine-learning/)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
