@@ -21,7 +21,7 @@ In this tutorial, we will learn how to perform speech command recognition in rea
 ### What we will cover in this tutorial...
 
 - To access the audio data stream from the browser microphone.
-- To precise, the speech commands using the pre-trained speech-commands model from TensorFlow.
+- To be precise, the speech commands using the pre-trained speech-commands model from TensorFlow.
 - To improve the overall prediction/recognition probability by using the argmax function.
 
 *Let's get started!*
