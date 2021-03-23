@@ -33,7 +33,7 @@ First, we are going to create a new React App project. For that, we need to run 
 npx create-react-app speech_command
 ```
 
-Then, we need to open the project in our code editor IDE (VScode) as shown in the screenshot below:
+Then, we need to open the project in our code editor IDE (VSCode) as shown in the screenshot below:
 
 ![create new react app](/engineering-education/speech-command-recognition-with-tensorflow-and-react/1-create-new-react-app.png)
 
