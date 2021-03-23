@@ -152,7 +152,7 @@ You can use this automated command to do everything for you:
 sudo deluser --remove-home testuser
 ```
 ### User groups
-A group is a collection of users. The primary purpose of the groups is to define a set of privileges like read, write, or execute permission for a given resource that can be shared among the users within the group.
+A group is a collection of users. The [primary purpose](http://learningwithpradeep.blogspot.com/2020/05) of the groups is to define a set of privileges like read, write, or execute permission for a given resource that can be shared among the users within the group.
 
 ##### Create a group
 You can see all of the groups you have by opening the following file:
