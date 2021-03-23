@@ -1,5 +1,7 @@
 ### Network Troubleshooting Using Traceroute Utility
 
+![hero.jpg](hero.jpg)
+
 #### Introduction
 
 The internet is a revolutionary technological marvel that has allowed for faster transfer of data between people. The world has been converted into a global village through the internet, allowing businesses to thrive as they offer their services. The internet constitutes a series of interconnected routers that transfer data from one computer to another. Due to the importance that the internet possesses, any networking professional must first be equipped with the basic network troubleshooting skills to allow them to be able to diagnose and repair network issues.
