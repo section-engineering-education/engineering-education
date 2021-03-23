@@ -73,7 +73,7 @@ Self-supervised learning aims to make deep learning models data-efficient. This 
 
 Self-supervised learning helps predict the missing words in a text in the field of NLP. This is achieved by showing segments of texts to a giant neural network with billions of parameters, i.e., the likes of OpenAI's [GPT-3](https://openai.com/blog/openai-api/) and Google's [BERT](https://arxiv.org/pdf/1810.04805.pdf). You mask 15% of the text to force the network to predict the pieces of words that are missing. 
 
-2. Computer Vision
+**2. Computer Vision**
 
 [SimCLR](https://arxiv.org/pdf/2002.05709.pdf) is a framework used to learn visual representations in images using self-supervised learning. The framework performs two main tasks: a pretext task and the downstream (real) task. Self-supervised learning is used in the pretext task. It involves performing simple augmentation tasks such as random cropping, random color distortions, and random Gaussian blur on input images. This process enables the model to learn better representations of the input images. These results are passed into the downstream task module, which performs the main tasks such as detection and classification tasks.
 
