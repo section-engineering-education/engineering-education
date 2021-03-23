@@ -264,7 +264,7 @@ morgeesmodcon.com
 
 Did you notice the domain names listed above are companies registered with `ARIN` and `CIRA` without any connection to `RIPE`?  
 
-Internet inconsistencies exist.
+Internet inconsistencies exist as European countries usually should not have ownership of an IP address with North American company domain names. Codes can help identify internet data as either accurate or inaccurate. A statistical coding approach can display a web of DNS relationships. Online identities can be revealed with internet directories and IP lookups.
 
 ### Takeaways
 - Statistics can reveal internet inconsistencies.
