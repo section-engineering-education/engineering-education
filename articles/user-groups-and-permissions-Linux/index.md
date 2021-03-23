@@ -141,7 +141,7 @@ After creating a new user and setting a password to it, you can log in in two wa
 2. By the terminal: ```su - testuser```.
 
 #### Delete a user
-In the process of adding users, there are two commands which delete a user.
+Like the process of adding users, there are two commands which delete a user.
 ```
 sudo userdel testuser
 ```
