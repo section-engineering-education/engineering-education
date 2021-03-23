@@ -43,7 +43,7 @@ Now, we can execute the command  `yarn start` or `npm start` to run the project 
 
 ### Installing Tensorflow.JS & Speech Command Recognition
 
-Now, we are going to install the main TensorFlow.JS package along with the speech commands recognition package provided by TensorFlow.org. for installation package, we need to execute the following command in our project commmand line or terminal:
+Now, we are going to install the main TensorFlow.js package along with the speech commands recognition package provided by TensorFlow.org. For installing the package, we need to execute the following command in our project command line or terminal:
 
 ```bash
 yarn add @tensorflow/tfjs @tensorflow-models/speech-commands
