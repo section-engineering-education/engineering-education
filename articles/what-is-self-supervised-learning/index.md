@@ -62,7 +62,7 @@ This multifaced approach to learning has been so easy for humans. But, that has 
 
 Self-supervised learning has recently been a hot topic in Artificial Intelligence. It is a form of supervised learning that doesn't require human input to perform data labeling. It can also be viewed as a branch of unsupervised learning. The results are obtained by models that analyze data, label and categorize information independently without any human input. The only difference is that, unlike unsupervised learning, self-supervised learning does not perform the grouping and clustering of data, as is the case with unsupervised learning. 
 
-This learning type allows machines to examine part of a data example to figure out the remaining part. In simple terms, self-supervised learning learns from unlabeled data to fill in the blanks for missing pieces. These data can be in the form of images, text, audio, and videos. 
+This learning type allows machines to examine part of a data example to figure out the remaining part. In simple terms, self-supervised learning learns from unlabeled data to fill in the blanks for missing pieces. This data can be in the form of images, text, audio, and videos.
 For example, in videos, the machine can predict the missing part of a video given only a video section. Videos can also use it in predicting missing frames in a video.
 
 Self-supervised learning aims to make deep learning models data-efficient. This means that it helps reduce the over-dependence on vast amounts of data to achieve good models.
