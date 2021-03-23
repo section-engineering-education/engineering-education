@@ -1,6 +1,6 @@
 ### Network Troubleshooting Using Traceroute Utility
 
-![hero.jpg](hero.jpg)
+![/engineering-education/network-troubleshooting-using-traceroute/hero.jpg](hero.jpg)
 
 #### Introduction
 
@@ -38,7 +38,7 @@ The traceroute utility repeats the above process until the sent packets reach th
 
 *Pictorial demonstration*
 
-![First image](picture-one.png)
+![First image](/engineering-education/network-troubleshooting-using-traceroute/picture-one.png)
 
 #### Using traceroute on Windows, macOS, and Linux distributions
 
@@ -50,7 +50,7 @@ To access traceroute utility, one must first:
 
 **i.** Open the command prompt by going to start on the taskbar.
 
-![First image](picture-two.png)
+![First image](/engineering-education/network-troubleshooting-using-traceroute/picture-two.png)
 
 **ii.** In the search box, type cmd, then press search.
 
@@ -74,7 +74,7 @@ Running traceroute on a mac system is a little different from Windows. There are
 
 **i.** Launch apple spotlight, search for network utility, then run the application.
 
-![Picture three](picture-three.png)
+![Picture three](/engineering-education/network-troubleshooting-using-traceroute/picture-three.png)
 
 **ii.** Inside the application, click on traceroute. 
 
@@ -90,7 +90,7 @@ Running traceroute on a mac system is a little different from Windows. There are
 
 **i.** Navigate to GO, then select utilities.
 
-![picture four](picture-four.png)
+![picture four](/engineering-education/network-troubleshooting-using-traceroute/picture-four.png)
 
 **ii.** In utilities, find Terminal and open it.
 
@@ -106,7 +106,7 @@ Running traceroute on a Linux system is almost the same as running the utility o
 
 **ii.** Inside the terminal, type in the keyword traceroute proceeded with the hostname or IP address.
 
-![picture five](picture-five.png)
+![picture five](/engineering-education/network-troubleshooting-using-traceroute/picture-five.png)
 
 >**N/b:** Ensure that you install traceroute on your Linux distribution. To install traceroute, one can run the commands: Sudo apt-get install traceroute for those using Ubuntu.
 
@@ -120,7 +120,7 @@ Since we know the basic functionality and different procedures of running tracer
 
 >**N/b:** The data interpreted in this Example was from a Windows system.
 
-![picture six](picture-six.png)
+![picture six](/engineering-education/network-troubleshooting-using-traceroute/picture-six.png)
 
 The data displayed within the traceroute utility is divided into five columns.  The first column holds the number of hops; the second, third, and fourth columns show the roundtrip time (RTT) which packets take to get to a gateway and back; the last column holds the identity of a gateway in the network path.
 
@@ -144,7 +144,7 @@ This usually means that the data packet did not return. This can happen when:
 
 ***3.Abnormal intervals in RTT***
 
-![picture seven](picture-seven.png)
+![picture seven](/engineering-education/network-troubleshooting-using-traceroute/picture-seven.png)
 
 In the above example, the second column of the seventh row of the table contains an abnormal RTT value compared to the other RTT values in the table. The significant difference between RTT values is mainly caused by a delay in the network, particularly because the router processing our request may treat it as a low priority function.
 
