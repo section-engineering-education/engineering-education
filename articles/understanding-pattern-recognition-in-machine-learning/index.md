@@ -1,5 +1,21 @@
-Pattern recognition is the use of computer algorithms to recognize data regularities and patterns. This type of recognition can be done on various input types such as biometric recognition, colors, image recognition, and facial recognition. It has been applied in various fields such as image analysis, computer vision, healthcare, and seismic analysis.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-pattern-recognition-in-machine-learning/
+title: Understanding Pattern Recognition in Machine Learning
+description: In this article, we will go through the basics of pattern recognition in machine learning. The article will provide an overview of how this phenomenon works and highlight some of the algorithms used in pattern recognition.   
+author: ann-waweru
+date: 2021-03-23T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-pattern-recognition/hero.jpg
+    alt:  pattern recognition example image
+---
+Pattern recognition is the use of computer algorithms to recognize data regularities and patterns. This type of recognition can be done on various input types such as biometric recognition, colors, image recognition, and facial recognition. It has been applied in various fields such as image analysis, computer vision, healthcare, and seismic analysis.
+<!--more-->
 This article takes readers through pattern recognition in machine learning and explains how it works. It also discusses how it has been applied in various fields and analyzes its future outlook.
 
 ### What is pattern recognition?
@@ -35,10 +51,15 @@ The pattern recognition process works in five main phases as shown in the image 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/01/pattern-2.jpg)
 
 These phases can be explained as follows:
+
 **1. Sensing:** In this phase, the pattern recognition system converts the input data into analogous data. 
+
 **2. Segmentation:** This phase ensures that the sensed objects are isolated.
+
 **3. Feature extraction:** This phase computes the features or properties of the objects and sends them for further classification. 
+
 **4. Classification:** In this phase, the sensed objects are categorized or placed in groups or cases. 
+
 **5. Post-processing:** Here, further considerations are made before a decision is made. 
 
 ### Algorithms in pattern recognition
@@ -75,4 +96,7 @@ Pattern recognition is an important technique that enhances the recognition of d
 
 Pattern recognition has the potential to evolve into a more intelligent process that supports various digital technologies. This technique can be a source of advancements in robotics and automation, especially in the improvement of how humanoid robots are trained. 
 
-Pattern recognition is also likely to be used extensively in automous cars. As autonomous driving is gaining momentum, the importance of pattern recognition may increase because of the need to detect objects, cars, people and traffic lights.
+Pattern recognition is also likely to be used extensively in autonomous cars. As autonomous driving is gaining momentum, the importance of pattern recognition may increase because of the need to detect objects, cars, people and traffic lights.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/Onesmus Mbaabu/)
