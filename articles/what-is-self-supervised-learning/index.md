@@ -94,3 +94,6 @@ Currently, self-supervised learning is still in its infant stage. Machines canno
 2. [Unsupervised Representation Learning by Predicting Image Rotations](https://arxiv.org/pdf/1803.07728.pdf)
 3. [Generative Pre-trained Transformer 3 (GPT-3)](https://openai.com/blog/openai-api/)
 4. [Bidirectional Encoder Representations from Transformers (BERT)](https://arxiv.org/pdf/1810.04805.pdf)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
