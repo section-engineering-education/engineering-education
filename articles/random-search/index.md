@@ -129,7 +129,7 @@ random_grid = {'n_estimators': n_estimators,
 'bootstrap': bootstrap}
 ```
 
-7. **Evaluation.** Similarly to grid search, we carry out cross-validation in a random search. This is enabled by ` RandomizedSearchCV. ` By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations.
+7. **Evaluation.** Similarly to grid search, we carry out cross-validation in a random search. This is enabled by ` RandomizedSearchCV. ` By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations. As mentioned in the previous tutorial on grid search, when ` n_jobs = -1 `, all CPUs are put to use.
 
 ```python
 rf_random = RandomizedSearchCV(estimator = rf,
