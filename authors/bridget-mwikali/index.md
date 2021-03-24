@@ -1,0 +1,1 @@
+Bridget is an undergraduate student perusing a degree in Information Technology and Information Systems. She loves technical writing and managing databases.
