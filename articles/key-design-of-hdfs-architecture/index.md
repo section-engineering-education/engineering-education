@@ -49,7 +49,11 @@ The HDFS has design features of its architecture that enable its efficient worki
 
 ***High Availability:*** HDFS supports features such as data replication which enhances the availability of the system. A single block of data is replicated in 3 nodes, so that even if a single node fail, a client can access the block from 2 other nodes.
 
-Data can still be accessed normally even when a failure occurs on the DataNode or NameNode.
+Data can still be accessed normally even when a failure occurs on the 'DataNode' or 'NameNode'.
+
+A *'NameNode'* is a primary component within the HDFS framework that stores meta-data of files, manages and maintains 'DataNodes', and assigns them tasks. It is also known as the master node.
+
+A *'DataNode'* is a node that stores the actual data within HDFS and does creation, deletion,  and replication of data blocks. It also serves read and write requests for clients and is usually known as the slave node.
 
 ***Multiple access modes:*** Within HDFS data can be accessed through HTTP on an HTTP browser, Java API for applications, or any other command shells.
 
