@@ -1,10 +1,10 @@
 ### A). Introduction
 
-When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. One of the ways to solve this problem is to filter out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match. This improves the users experience by saving their time.
+When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. This problem can be solved by filtering out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match. This improves the users' experience by saving their time.
 
 ### B). Objectives
 
-In this tutorial, we will learn how to implement a SearchView in Android using a RecyclerView. The sample data in this project will be generated explicitly for simplicity purposes.
+In this tutorial, we will learn how to implement a SearchView in Android using a RecyclerView. The sample data used in this project will be generated explicitly for simplicity purposes.
 
 ### C). Prerequisites
 
@@ -24,7 +24,7 @@ First, fire up Android Studio and create an `Empty Activity` project. If you are
 
 When the build process is done, expand the package under `app/java/"package-name"` and create three packages namely, `adapter`, `model`, and `view` respectively. They should look like this.
 
-![](/engineering-education/implementing-search-view-in-android/directories-collapsed.png)
+![image-packages](/engineering-education/implementing-search-view-in-android/directories-collapsed.png)
 
 This aids in organizing the project such that related files belong to the same category. This way robust, production-quality apps can be built rapidly. You can learn more about application architecture [here](https://developer.android.com/jetpack/guide).
 
@@ -44,6 +44,8 @@ This plugin comes with utilities responsible for dataBinding and needs to be ena
 
 ```bash
 android {
+    ...
+
     buildFeatures{
        dataBinding true
     }
@@ -122,25 +124,26 @@ Next, we need to create an item that will be populated in the RecyclerView. Crea
             app:layout_constraintTop_toTopOf="@+id/name"
             app:layout_constraintVertical_bias="0.0"
             tools:text="19" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 ```
-This creates two `TextViews` that will hold a person's name and age respectively. The actual data will be fetched and bound at runtime.
+This creates two `TextViews` that will display a person's name and age respectively. The actual data will be fetched and bound at runtime.
 
 preview: 
 
-![](/engineering-education/implementing-search-view-in-android/row-item.png)
+![image-row-item](/engineering-education/implementing-search-view-in-android/row-item.png)
 
-To preview how this will appear in a RecyclerView, add the following attribute inside the RecyclerView tag.
+To preview how this will appear in a RecyclerView at runtime, add the following attribute inside the RecyclerView tag.
 
 ```xml
 <androidx.recyclerview.widget.RecyclerView
+    ...
+
     tools:listitem="@layout/row_item" />
 ```
 preview: 
 
-![](/engineering-education/implementing-search-view-in-android/main-ui.png)
+![image-recyclerview-preview](/engineering-education/implementing-search-view-in-android/main-ui.png)
 
 ### F). Creating the data model
 
@@ -195,9 +198,9 @@ class PersonAdapter(
 }
 ```
 
-Press `Alt`+`Enter` to fix missing imports. The above code enables the RecyclerView to bind views and populate them with data in the order it appears in the ArrayList. [This tutorial](https://developer.android.com/reference/android/widget/Adapter) elaborates further on how an adapter works.
+Press `Alt`+`Enter` to fix missing imports. The above code enables the RecyclerView to bind views and populate them with data in the order it appears in the ArrayList. [This tutorial](https://developer.android.com/reference/android/widget/Adapter) elaborates further on how an Adapter works.
 
-### H). How Search Algorithm works
+### H). How Linear Search Algorithm works
 
 Just like any other task, searching is a process that requires a series of steps to be performed. In this tutorial, we'll make use of the `Linear search algorithm`. 
 
@@ -325,7 +328,7 @@ private fun search(text: String?) {
 }
 ```
 
-First, the matchedPeople list is cleared to avoid an accumulation of the previous search. If the argument for parameter `text` is not null, a loop is performed for each element in the `people` list to check if the person's name or age contains `text`(query). By default, the `contains()` method is sensitive to the case and order of characters in the query. When a match is found, the current person is added to a new list as discussed in `step (H)` above. If no match is found, a toast is shown indicating the same.
+First, the matchedPeople list is cleared or set to an empty arrayList to avoid accumulation of the previous search. If the argument for parameter `text` is not null, a loop is performed for each element in the `people` list to check if the person's name or age contains `text`(query). By default, the `contains()` function is sensitive to the case and order of characters in the query. When a match is found, the current person is added to a new list as discussed in `step (H)` above. If no match is found, a toast is shown indicating the same.
 
 In our scenario, the list is relatively small making it suitable to update the RecyclerView after each check. Otherwise we'd need to call `updateRecyclerView()` function after the loop.
 
@@ -347,7 +350,7 @@ This function is responsible for updating the RecyclerView once the check is don
 
 Finally this is how the app looks like:
 
-![](/engineering-education/implementing-search-view-in-android/results.png)
+![image-results](/engineering-education/implementing-search-view-in-android/results.png)
 
 ### Conclusion
 
