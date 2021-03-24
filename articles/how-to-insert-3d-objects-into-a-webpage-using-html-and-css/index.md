@@ -6,17 +6,17 @@ url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-a
 title: How to Insert 3D Objects into a webpage using HTML and CSS
 description: In this article we will understand how to build build 3D objects in webpage using HTML and CSS. We will also build a simple webpage containing a 3D object.
 author: chris-mutua
-date: 2021-03-21T00:00:00-11:30
+date: 2021-03-24T00:00:00-08:30
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.png
+  - url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.jpg
     alt: How to Insert 3D Objects into a webpage using HTML and CSS example image
 ---
 Are you a creative frontend web designer or are you looking for ways to make your website look more interactive and visually appealing? Would you like to advertise your products interestingly? Look no further. Today, we are going to learn how to insert 3D objects into a website.
 <!--more-->
-In this tutorial, we will be creating a simple webpage with basic components, design its layers, and then inserting 3D objects into the webpage.
+In this tutorial, we will create a simple webpage with basic components, design its layers, and then inserting 3D objects into the webpage.
 
 ### Key takeaways
 At the end of this tutorial, the reader will get to learn about:
@@ -29,7 +29,7 @@ At the end of this tutorial, the reader will get to learn about:
 Before we begin, some prerequisites for this tutorial include:
 - Basic knowledge with good understanding of HTML and web development.
 - A basic understanding of CSS.
-- A basic web development IDE or a text editor installed on your machine. In our case, let's use Visual Studio Code.
+- A basic web development IDE or a text editor installed on your machine. In our case, we will be using Visual Studio Code.
 - A stable internet connection.
 
 ### What are 3D objects? 
@@ -65,12 +65,12 @@ In our case, we will use the `glTF model`.
 
 > Graphics Language Transmission Format (glTF), is a 3D model format designed for efficient transmission and loading of 3D models by applications.
 
-After visiting the above sites or any other, search for any preferable model and download it. In this case, we are going to search, download and use a Virtual Reality Headset (VR Headset) model in glTF format.
+After visiting the sites above or any other, search for any preferable model and download it. In this case, we are going to search, download and use a Virtual Reality Headset (VR Headset) model in glTF format.
 
 ![VR Headsets](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/poly-VR-Headset.png)
 
-### 3D Model Attributes
-These are the characteristics of the viewed 3D Object on the website set by the frontend developers as preferred.
+### 3D model attributes
+These are the characteristics of the viewed 3D Object on the website set by the frontend developers.
 
 Some attributes that one can set to 3D models include:
 - Auto-Rotate
@@ -87,8 +87,8 @@ Let's now get into the tutorial.
 First things first, let's set up our Visual Studio Code IDE.
 
 1) In the extensions tab, search for the [HTML Boilerplate](https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) and [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extensions and install them.
-2) Create a folder and name it as "3D Objects".
-3) Open the folder with Visual Studio Code and create two folders namely "assets" and "css".
+2) Create a folder and name it "3D Objects".
+3) Open the folder with Visual Studio Code and create two folders named "assets" and "css".
 4) Create an "index.html" file in the main directory and "style.css" in the CSS folder.
 
 ### Create a webpage structure
@@ -98,7 +98,9 @@ We can simplify the process using boilerplate generators which may come pre-inst
 
 Since we don't need additional elements in the boilerplate generated, we will delete the extra code and link it to our CSS file.
 
-Let's also link it with some online scripts which will load some "Font Awesome" fonts and icons. The outcome will be as shown below:
+Let's also link it with some online scripts that will load some "Font Awesome" fonts and icons. 
+
+The outcome will be as shown below:
 
 ```html
 <!DOCTYPE html>
@@ -118,7 +120,9 @@ Start the live server by either right-clicking on the "index.html" file in the e
 
 It will automatically open a preview of the webpage in the default browser which will be blank because we haven't added any content yet.
 
-I recommend you to use Google Chrome browser, since it supports most 3D objects. You can change the default browser in the settings. If it doesn't automatically open the webpage preview in the browser, check the port number in which the server uses at the Visual Studio Code status bar then add access it in the browser by typing in the URL, something like this:
+I recommend you to use Google Chrome browser, since it supports most 3D objects. You can change the default browser in the settings. 
+
+If it doesn't automatically open the webpage preview in the browser, check the port number in which the server uses at the Visual Studio Code status bar then add access it in the browser by typing in the URL, something like this:
 
 ```html
 <code>http://127.0.0.1:5501/</code>
@@ -137,7 +141,7 @@ In the head section, add a link to import a `model-viewer` JavaScript code. This
 
 Copy your logo picture into the assets folder.
 
-When done, add a `div` element of `id` as `container` to hold all our content in the body tags and also another in it for our navigation bar.
+When done, add a `div` element of `id` as a `container` to hold all our content in the body tags and also another in it for our navigation bar.
 
 Let's also add `div` elements with the following `id`s:
 - `aside` for holding our 3D object, 
@@ -337,14 +341,17 @@ Now, use CSS to style the page and the `div` elements:
 ```
 
 The results are as follows:
+
 ![Page structure](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/structure-design.png)
 
-## Insert the 3D Object
+### Insert the 3D Object
 Now, let's add the 3D model to the webpage. First, if the 3D model files are in a `zip` format, extract the downloaded model `zip` into files such as the `.bin` and `.gltf`.
 
 > Data from the ".bin" file is used for buffering in buffers, which is then used by BufferViews, accessors, and mesh primitives
 
-Copy the files into the `assets` folder in the `main` directory. Make sure to check and see if the `zip` has any additional files or images, when copying the files. The file names may not conflict with those of the images in the assets folder. If they do conflict, rename the images in the assets folder first before pasting.
+Copy the files into the `assets` folder in the `main` directory. Make sure to check and see if the `zip` has any additional files or images, when copying the files. 
+
+The file names may not conflict with those of the images in the assets folder. If they do conflict, rename the images in the assets folder first before pasting.
 
 In the `div` element with the `aside` id, let's import the 3D object and some of its attributes.
 
@@ -361,9 +368,12 @@ Write the code below to import the 3D model in the webpage:
 You can obtain the code above and even more attributes on the [Model-viewer](https://modelviewer.dev/) site. Here, you can also see some model attributes available for the object and their usages in the docs section.
 
 In the live preview, it will output the following:
+
 ![Inserting a 3D Model](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/Inserting-a-3D-model.png)
 
-The next step is to modify its appearance using CSS. Let's do this by adding the code below to our CSS file:
+The next step is to modify its appearance using CSS. 
+
+Let's do this by adding the code below to our CSS file:
 
 ```css
 /* This styles the aside container */
@@ -386,15 +396,16 @@ The next step is to modify its appearance using CSS. Let's do this by adding the
 }
 ```
 
-**Final results:**
+#### Final results:
+
 ![Final results](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/full-design.png)
 
 You can find the code above in [this](https://github.com/RisoriTofa/Insert-3D-Objects-in-a-webpage-using-HTML-and-CSS-only) repository.
 
-If you have reached here, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified.
+If you have reached this point, this means that your 3D model is well inserted in the webpage, rotates at a uniform rate and the camera angle can be modified.
 
 ### Conclusion
-3D objects are very useful which helps the client see their products in their full dimension and relative size. They are more interesting to look at and interactive when compared to 2D images.
+3D objects can be very useful to help a client see their products in their full dimension and relative size. They are more interesting to look at and interactive when compared to 2D images.
 
 To summarize, the reader learned about:
 - What 3D objects are.
@@ -402,7 +413,7 @@ To summarize, the reader learned about:
 - How to get 3D objects.
 - How to insert 3D objects into a webpage using HTML and CSS.
 
-You can even learn more about 3D objects and how to create one using JavaScript at [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
+You can learn more about 3D objects and how to create one using JavaScript at the references below.
 
 Happy coding!
 
