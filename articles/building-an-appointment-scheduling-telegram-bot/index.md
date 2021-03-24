@@ -32,7 +32,8 @@ For this article, you will be creating three indexes; `users_index`, `appointmen
 
 After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this particular index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to be able to browse.
 
-For the `users_index`, we will use the `id` field as the terms with unique ticket, for the `apppointment_index`, we will use the `user_id` field as the terms, and for the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
+For the `users_index`, we will use the `id` field as the terms. Also make sure you tick the unique checkbox so the data entered is unique. 
+For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
