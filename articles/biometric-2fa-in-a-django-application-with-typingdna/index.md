@@ -1,4 +1,4 @@
-# Biometric 2FA in a Django Application with TypingDNA
+### Biometric 2FA in a Django Application with TypingDNA
 
 Have you ever wanted to implement biometric two-factor authentication in your Django web application? If your answer is yes, then this article is just what you need to get started.
 
@@ -6,13 +6,13 @@ TypingDNA is a two-factor authentication API that easily integrates biometrics a
 
 This article shows a step-by-step guide to integrating TypingDNA services into a Django web application. To learn more, visit their official website <https://www.typingdna.com>
 
-# Signing Up with TypingDNA
+### Signing Up with TypingDNA
 
 To get started, we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable.
 
-# Building Our Django Application
+### Building Our Django Application
 
-## Prerequisites
+#### Prerequisites
 
 From this point onwards, to follow this step by step guide on building a video player application with Django, you need to have the following installed:
 
@@ -20,7 +20,7 @@ From this point onwards, to follow this step by step guide on building a video p
 * Python 3.7 or >3.7,
 * Django
 
-## Cloning the Project
+#### Cloning the Project
 
 To build our Django application, we need to develop the frontend and the backend of our video player application. We already have the video application pre-built for us to focus mainly on integrating biometrics with TypingDNA. You can clone the [Github](https://github.com/Nomzy-kush/mine.git) repo and run the application with the commands below:
 
@@ -60,7 +60,7 @@ After typing the command, we should get a result similar to the one in the image
 
 ![sign-in-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/sign-in-page.png)
 
-# Getting the TypingDNA Library
+### Getting the TypingDNA Library
 
 After running our Django application we cloned above, we need to download the TypingDNA javascript files required to implement the two-factor authentication in our application. You can download the file from [Github](https://github.com/TypingDNA/TypingDnaRecorder-JavaScript/blob/master/typingdna.js), or <https://typingdna.com/scripts/typingdna.js> or <https://api.typingdna.com/scripts/typingdna.js>.
 
@@ -133,7 +133,7 @@ from django.shortcuts import reverse
 
 from django.contrib.auth.models import User
 
-# Create your models here.
+### Create your models here.
 
 
 
@@ -222,7 +222,7 @@ userprofile=UserProfile.objects.create(user=user)
 userprofile.save()
 
 ```
-# The TypingDNA Check User Endpoint
+### The TypingDNA Check User Endpoint
 
 ![check-user-endpoint](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/check-user-endpoint.png)
 
@@ -265,9 +265,9 @@ def login(request):
         return render(request,"login.html")
 
 ```
-# Enrolling Users Typing Patterns
+### Enrolling Users Typing Patterns
 
-## The Enrollment Page
+#### The Enrollment Page
 
 The enrollment page allows users to register their typing patterns to TypingDNA for future authentication. We will be building the HTML page needed to implement this functionality. As seen in the project we cloned, we already have the `enroll.html` file created already. Update the `enroll.html` file in the templates folder with the code below:
 
@@ -377,7 +377,7 @@ background-color: #b2beb5
 ```
 In the HTML code above, you would notice that at the end of our file, we imported the `typingdna.js`, `autocomplete-disabler.js`, and `typing-visualizer.js` files we downloaded earlier. With jinja tags, we rendered messages passed from the backend in our frontend. TypingDNA visualizer only captures input elements with the `disable-autocomplete` class attribute, which is why we added it to our `input` HTML tags above.
 
-## Submitting Typing Patterns To TypingDNA
+#### Submitting Typing Patterns To TypingDNA
 
 After creating the enrollment page above, we need to send the collated typing patterns to TypingDNA to be recorded. To do this, we need to integrate the TypingDNA recorder and visualizer into the enroll page to enroll our users. Create an instance of the TypingDNA and AutocompleteDIsabler classes so that you can record the user’s typing patterns as soon as he/she starts typing.
 
@@ -486,15 +486,15 @@ According to the TypingDNA documentation, to ensure accurate authentications, ou
 
 ![enrollment-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/enrollment-page.png)
 
-# Saving Recorded Typing Patterns
+### Saving Recorded Typing Patterns
 
 TypingDNA needs to analyze the recorded typing patterns and use them for authenticating users. For this to be possible, we need to save the recorded typing patterns to our database. We then make use of the TypingDNA [”auto” endpoint](https://api.typingdna.com/%23api-API_Services-Standard_APIs-auto) which helps TypingDNA API to submit and save captured typing patterns.
 
-## The TypingDNA Auto Endpoint
+#### The TypingDNA Auto Endpoint
 
  Let’s now talk about how the [”auto” endpoint](https://api.typingdna.com/%23api-API_Services-Standard_APIs-auto) works. The [”auto” endpoint](https://api.typingdna.com/%23api-API_Services-Standard_APIs-auto) enrolls each of the first three patterns captured for the current user using the user’s ID. After registering the first three patterns, you use every other pattern for authentication.
 
-## Building our Helper Library
+#### Building our Helper Library
 
 For our Django app to interact with the TypingDNA API, we need to create a helper library to simplify things for us. Create a new file named `typingdnahelper.py` in your `App` folder and save the following code in it:
 
@@ -572,7 +572,7 @@ class TypingDNA:
 
 TypingDNA requires a user ID to save typing patterns to a user, so we created a `hash_text` method to hash the user’s ID before sending.
 
-## Saving Users Typing Patterns
+#### Saving Users Typing Patterns
 
 After building our helper library, we can start saving our users’ typing patterns in our accounts for future matching. Let’s first import the helper library class into our Django application and create an instance of our helper class by supplying the `apiKey` and `apiSecret` we saved from our TypingDNA dashboard earlier.
 
@@ -632,9 +632,9 @@ After successfully enrolling in TypingDNA, we would be redirected to a page simi
 
 ![dashboard](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/dashboard.png)
 
-# Authenticating New Users with TypingDNA
+### Authenticating New Users with TypingDNA
 
-## Building Our Login Logic
+#### Building Our Login Logic
 
 After registering and enrolling our typing patterns with TypingDNA, we can now log in and implement our two-factor authentication.
 
@@ -642,7 +642,7 @@ After registering and enrolling our typing patterns with TypingDNA, we can now l
 
 In the image above, our `login` view checks if the user is set in the session. If the user is set, then the user is redirected to view all videos page. But if the reverse is the case, the user is redirected to verify his/her 2FA with their typing pattern.
 
-## Building The Verify Page
+#### Building The Verify Page
 
 We want to build our verification HTML page where we will verify user identities using TypingDNA biometrics. We will also create a fall-back verification page where users can verify. Let us update our `verify.html` file as seen in the code below:
 
@@ -751,7 +751,7 @@ This page is where users will be authenticated with their pre-registered typing 
 
  We will now be importing. We also imported the `typingdna.js`, `autocomplete-disabler.js`, and `typing-visualizer.js` files we downloaded earlier on our enrollment page.
 
-## Verifying With TypingDNA
+#### Verifying With TypingDNA
 
 After preparing our `verify.html` page, to start verifying typing patterns, we need to use the TypingDNA recorder, which will help us record typing patterns and match them. You can read more about recording typing patterns [here](https://www.typingdna.com/docs/how-to-record-typing-patterns.html).
 
@@ -861,7 +861,7 @@ def verify(request):
     ```
 In the python code above, we checked if the request sent from the frontend is a POST request. If this was the case, we proceeded to collect the POST request for `tp`, which was the typing pattern recorded, and setting `username` to the current user. In this project, we are using the username as the user ID, which automatically does the authentication required, which we will send to TypingDNA for verifications. We then make a request to the TypingDNA `auto` method while sending the user ID of the current user and the collected typing pattern `tp`. The `auto` method then returns a `status code 200` if the verification is successful or returns an error message if verification is unsuccessful. If the verification is successful, we set `typingdna_auth` in the session to True and redirect the user to the `videos` page. However, if verification is unsuccessful, we display an error message from the `auto` endpoint on the `verify` page.
 
-# Fall Back Verification Option
+### Fall Back Verification Option
 
 Supposing a user cannot use the TypingDNA verify page, we need to provide a fallback option for the user to secure logins. Earlier, while signing up to TypingDNA, you would notice a third option to complete two-factor authentication with OTP if the biometric typing verification fails. In this case, we are using a magic link required sent to the user’s email, which automatically does the authentication required when clicked by the user.
 
@@ -957,7 +957,7 @@ background-color: #b2beb5
 ```
 ![email-verification](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/email-verification.png)
 
-## Creating The Tokens File
+#### Creating The Tokens File
 
 We need to create a `tokens.py` file which we will use to generate the magic link for verification. Create a `tokens.py` file and add the following python code.
 
@@ -982,7 +982,7 @@ class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
 account_activation_token = AccountActivationTokenGenerator()
 
 ```
-## Creating The Activation Token Page
+#### Creating The Activation Token Page
 
 We need to create an `activation.html` file that we will use to display the link sent to the user. Create an `activation.html` file and add the following HTML code.
 
@@ -1004,14 +1004,14 @@ http://{{ domain }}{% url 'App:activate' uidb64=uid token=token %}
 
 ```
 
-## Building The Login Activation Logic
+#### Building The Login Activation Logic
 
 We will now be building our logic for how the activation token is generated and sent.
 
 First, we need to import the required modules and libraries needed. Copy and paste the code below in your `views.py` file.
 
 
-z
+```python
 
 from django.views.generic import  View
 
@@ -1073,7 +1073,7 @@ The activation link was sent to the user in the images below and displayed in th
 
 ![verification-token](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/verification-token.png)
 
-## The Confirmation Page
+#### The Confirmation Page
 
 Create a new file `confirm.html` and update the file with the following HTML code as seen below:
 
@@ -1092,7 +1092,7 @@ Create a new file `confirm.html` and update the file with the following HTML cod
 
 
 ```
-## Verifying The Activation Token
+#### Verifying The Activation Token
 
 The activation token created for the user has to be verified after the user clicks on it. To do this, update your `views.py` file by placing the following python code after all imports at the beginning of the file.
 
@@ -1146,7 +1146,7 @@ The image below is a page showing the result of navigating to a wrong, used, or 
 
 ![invalid-token](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/invalid-token.png)
 
-# Adding Videos To Database
+### Adding Videos To Database
 
 To add videos to our database that we can play, we need to visit the admin page and log in. Let us navigate to the admin page on <http://127.0.0.1:8000/admin> and log in. After a successful login, click on the `+` button next to `Videos` to add a new video and provide the required details as seen in the image below.
 
@@ -1156,12 +1156,10 @@ After providing the details required for our video, we will click on save to sav
 
 ![added-video](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/added-video.png)
 
-# Conclusion
+### Conclusion
 
 While integrating TypingDNA with Django, we implemented two-factor authentication that uses biometrics in a Python web application with little to no effort. We also saw how easy it was to create and verify identities by analyzing user typing patterns using TypingDNA.
 
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/mine.git). Trying out TypingDNA for biometric authentication was very interesting, and I can’t wait to see the amazing things you build with it!
 
 If you have any questions, don't hesitate to contact me on Twitter: [@DoroChurchill](https://twitter.com/DoroChurchill)
-
-
