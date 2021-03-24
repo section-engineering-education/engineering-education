@@ -260,7 +260,7 @@ def add_appointment(update, context):
 
 ```
 
-In the code above, you defined a method called `add_appointment` where you passed `update` and `context` as parameters. In the function, you saved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
+In the `add_appointment` method, you made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
 
 Next, you updated the `last_command` field in the user's data to save the `add_appointment` command the user sent. You then sent a message requesting the user to enter the name of the appointment and its due date separated by a comma.
 
@@ -304,8 +304,7 @@ def echo(update, context):
         context.bot.send_message(chat_id=chat_id, text="Successfully added appointment event 👍")
 
 ```
-
-In the code above, you defined a method called `echo` where you passed `update` and `context` as parameters. In the function, you saved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using the `users_index` index to check the user data that matches the `chat_id`.
+In the `echo` method you made use of the `chat_id` to query the FQL client using the `users_index` index to check the user data that matches the `chat_id`.
 
 Next, you checked if the `last_command` in the data retrieved is an `add_appointment` command. If it is, you proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
 
@@ -360,7 +359,7 @@ def list_appointments(update, context):
 
 ```
 
-In the code above, you defined a method called `list_appointments` where you passed `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and created an empty variable called `event_message`. You then made use of the `chat_id` to query the FQL client using the `appointments_index` index to check the user data that matches the `chat_id`.
+In the `list_appointments` method, you saved the `chat_id` of the user and created an empty variable called `event_message`. You then made use of the `chat_id` to query the FQL client using the `appointments_index` index to check the user data that matches the `chat_id`.
 
 Next, you looped through the data retrieved to check if the `completed` field was set to True. If this was the case, you set the `event_status` to “Completed”. Otherwise, you set it to “Not Completed”. 
 You then sent a message to the user containing the `event`, `status`, update link and delete link for each appointment scheduled.
@@ -453,7 +452,7 @@ def update_appointment(update, context):
 
 ```
 
-In the code above, you defined a method called `update_appointment` where you passed  `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and the message passed, then created `event_id` by removing the `update_` prefix from the message.
+In `update_appointment` method, you saved the `chat_id` of the user and the message passed, then created `event_id` by removing the `update_` prefix from the message.
 
 You then made use of the `event_id` to query the FQL client to check for the appointment that matches the `event_id`. You then checked if the `completed` field of the appointment was set to True. If this is the case, you set the `new_status` variable to False. Otherwise, you set the `new_status` variable to True. 
 
