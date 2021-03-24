@@ -1,15 +1,11 @@
 ### A). Introduction
-
 When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. This problem can be solved by filtering out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match. This improves the users' experience by saving their time.
 
 ### B). Objectives
-
 In this tutorial, we will learn how to implement a SearchView in Android using a RecyclerView. The sample data used in this project will be generated explicitly for simplicity purposes.
 
 ### C). Prerequisites
-
 To follow through with this tutorial, you'll need to:
-
 - Have [Android Studio](https://developer.android.com/studio) IDE installed on your machine.
 - Be dexterous in creating Android applications with: 
     - [Kotlin](https://developer.android.com/kotlin).
@@ -17,21 +13,18 @@ To follow through with this tutorial, you'll need to:
     - [Data Binding](https://www.section.io/engineering-education/how-to-use-databinding-in-android-using-kotlin/).
 
 ### D). Getting started
-
 First, fire up Android Studio and create an `Empty Activity` project. If you are familiar with creating projects and setting up a RecyclerView, you can jump to `step (H)`.
 
 #### i). Project structure
-
 When the build process is done, expand the package under `app/java/"package-name"` and create three packages namely, `adapter`, `model`, and `view` respectively. They should look like this.
 
-![image-packages](/engineering-education/implementing-search-view-in-android/directories-collapsed.png)
+![packages-image](/engineering-education/implementing-search-view-in-android/directories-collapsed.png)
 
 This aids in organizing the project such that related files belong to the same category. This way robust, production-quality apps can be built rapidly. You can learn more about application architecture [here](https://developer.android.com/jetpack/guide).
 
 With that said, drag and drop the `MainActivity.kt` file into the `view` package.
 
 #### ii). Setting up plugins
-
 Since we're going to use dataBinding, open `build.gradle(Module)` file and add the following plugin inside the plugins scope.
 
 ```bash
@@ -55,8 +48,7 @@ android {
 Sync the project and wait for the build to finish.
 
 ### E). Creating the User Interface
-
-In the UI we only need two views, a SearchView and a RecyclerView. Paste the following code into the `activity_main.xml` file to create them. 
+We only need two views in the UI, a SearchView and a RecyclerView. Paste the following code into the `activity_main.xml` file to create them. 
 
 ```xml
 <SearchView
@@ -85,7 +77,7 @@ In the UI we only need two views, a SearchView and a RecyclerView. Paste the fol
 ```
 Remember to enclose the root viewGroup with `<layout> </layout>` tag to generate a binding class for this XML file.
 
-Next, we need to create an item that will be populated in the RecyclerView. Create an XML `layout` file named `row_item.xml` and paste the following code in it.
+Next, we need to create an item that will be populated in the RecyclerView. Create an xml `layout` file named `row_item.xml` and paste the following code in it.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -146,8 +138,7 @@ preview:
 ![image-recyclerview-preview](/engineering-education/implementing-search-view-in-android/main-ui.png)
 
 ### F). Creating the data model
-
-A model is an independent component that is responsible for handling the data for an application. In our case, we need to use a list of data whose type is a `Person` data class that holds two non-nullable variables, name and age.
+A model is an independent component that is responsible for handling the data of an application. In our case, we need to use a list of data which is of type `Person`. The `Person` data class holds two non-nullable variables, name and age.
 
 Go ahead and create a data class inside the model package and paste the following code just below the package name.
 
@@ -159,7 +150,6 @@ data class Person(
 ```
 
 ### G). Setting up RecyclerView Adapter
-
 A RecyclerView is a flexible widget that can bind a variety of data with respect to its type. However, there's no specific type of data that should be provided to it. An adapter helps us prepare the RecyclerView to handle the given data. 
 
 Inside the adapter package (created at step D(i)), create a Kotlin class named `PersonAdapter`. This class will extend a RecyclerView Adapter and accept an `ArrayList` of type `Person` (the data class created in the previous step). Unlike a List, an ArrayList supports the addition and deletion of elements at runtime which is why we're using it.
@@ -201,7 +191,6 @@ class PersonAdapter(
 Press `Alt`+`Enter` to fix missing imports. The above code enables the RecyclerView to bind views and populate them with data in the order it appears in the ArrayList. [This tutorial](https://developer.android.com/reference/android/widget/Adapter) elaborates further on how an Adapter works.
 
 ### H). How Linear Search Algorithm works
-
 Just like any other task, searching is a process that requires a series of steps to be performed. In this tutorial, we'll make use of the `Linear search algorithm`. 
 
 First set up two lists, one containing all the data under consideration, and leave the other one empty. We'll therefore loop through the elements in the first list comparing each content with the given keyword. In this case, the keyword is the `text` typed by the user in the SearchView. If a match is found, the element containing the match is cloned into the second list and the RecyclerView is updated with the new list. 
@@ -209,11 +198,9 @@ First set up two lists, one containing all the data under consideration, and lea
 When working with a very large list or a list of unknown size, it is recommended to update the RecyclerView after looping is done. Otherwise, the app might land into an `ANR` (App Not Responding) situation due to high memory consumption. Also, the newly created list should be cleared when not required for the same reason.
 
 ### I). Implementing Search Algorithm
+Moving on, open the `MainActivity.kt` file and paste the following code sequentially as shown.
 
-Moving on, open the `MainActivity.kt` file and paste the following code sequentially as discussed.
-
-#### i). Just before the `onCreate()`function
-
+#### i). Just before the onCreate function
 ```kotlin
 class MainActivity : AppCompatActivity() {
 
@@ -230,8 +217,7 @@ class MainActivity : AppCompatActivity() {
 
 This declares private global variables that we'll use later. The `people` and `matchedPeople` ArrayLists will hold all data and matched data respectively as explained in `step (H)`.
 
-#### ii). Inside the `onCreate()` function
-
+#### ii). Inside the onCreate function
 This is where we bind the UI and the logic of the App.
 
 ```kotlin
@@ -243,8 +229,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```
 
 #### iii). Initialization stage
-
-Here we need to initialize the RecyclerView and prepare the SearchView. To do so, paste the following code just below `onCreate()`.
+Here, we need to initialize the RecyclerView and prepare the SearchView. To do so, paste the following code just below `onCreate()`.
 
 ```kotlin
 private fun initRecyclerView() {
@@ -299,8 +284,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-#### iv). Understanding the logic behind `performSearch()` function
-
+#### iv). Understanding the logic behind performSearch function
 Have you been wondering how the SearchView knows when the user has typed something? well, a searchView has an inbuilt function, `setOnQueryTextListener()` that accepts an object of type `OnQueryTextListener` as the argument.
 
  This object is an `interface`,a member of `SearchView` class and contains two member functions, `onQueryTextSubmit()` and `onQueryTextChange()`. The two accept a nullable parameter of type String and must be implemented using the `override` keyword when using the interface.
@@ -332,8 +316,7 @@ First, the matchedPeople list is cleared or set to an empty arrayList to avoid a
 
 In our scenario, the list is relatively small making it suitable to update the RecyclerView after each check. Otherwise we'd need to call `updateRecyclerView()` function after the loop.
 
-#### v). `updateRecyclerView()` explained
-
+#### v). updateRecyclerView() explained
 ```kotlin
 private fun updateRecyclerView() {
         binding.recyclerView.apply {
@@ -353,5 +336,4 @@ Finally this is how the app looks like:
 ![image-results](/engineering-education/implementing-search-view-in-android/results.png)
 
 ### Conclusion
-
 In this tutorial, we have learned how to create and use a SearchView to filter data in a RecyclerView in Android. This is a good way to improve the overall performance of the application. The source code for this tutorial can be found in this [Github repository](https://github.com/Ericgacoki/SearchView).
