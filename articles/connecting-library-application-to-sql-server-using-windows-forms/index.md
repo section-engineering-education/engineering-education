@@ -1,7 +1,21 @@
-# Connecting-library-application-to-SQL-Server-using-Windows-forms
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/
+title: Connecting library application to SQL Server using Windows forms
+description: This tutorial will go over the basics of Windows forms using C#. We will also build a simple project using Windows forms and connect it to a database.
+author: mohamed-alghadban
+date: 2021-03-24T00:00:00-22:15
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
+    alt: Windows forms example image c#
+---
 Windows forms are one of the best tools used in making applications. With windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database.
-
+<!--more-->
 According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), Windows Forms is a UI framework for building Windows desktop apps. It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality such as drag-and-drop placement of visual controls makes it easy to build desktop apps.
 
 In this tutorial, we will connect a library application to a SQL database server using Windows forms. We will use a windows forms project to add new forms, edit or delete from the library. Also, we will manage the authors, the stores & the publishers in the database, and display the information of each attribute & refresh it each time, a change accrues.
