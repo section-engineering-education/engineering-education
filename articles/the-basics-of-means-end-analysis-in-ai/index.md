@@ -1,7 +1,21 @@
-Means end analysis (MEA) is an important concept in artificial intelligence because it enhances problem resolution. MEA solves problems by defining the goal and establishing the right action plan. This technique is used in AI programs to limit search.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/the-basics-of-means-end-analysis-in-ai/
+title: Basics of Means End Analysis in AI
+description: This article explains how MEA works and provides the algorithm steps for implementing it. It also provides an example of how a problem is solved using means end analysis. The article also explains how this technique is used in real-life applications.
+author: grace-nkurikiyinka
+date: 2021-03-24T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-This article explains how MEA works and provides the algorithm steps for implementing it. It also provides an example of how a problem is solved using means end analysis. The article also explains how this technique is used in real-life applications.
-
+  - url: /engineering-education/the-basics-of-means-end-analysis-in-ai/hero.jpg
+    alt: Means end analysis image example
+---
+Means end analysis (MEA) is an important concept in artificial intelligence because it enhances problem resolution. MEA solves problems by defining the goal and establishing the right action plan. This technique is used in AI programs to limit search. This article explains how MEA works and provides the algorithm steps for implementing it. It also provides an example of how a problem is solved using means end analysis. The article also explains how this technique is used in real-life applications.
+<!--more-->
 ### Introduction to MEA and problem-solving in AI
 Problem-solving in artificial intelligence (AI) is the application of heuristics, root cause analysis, and algorithms to provide solutions to AI problems. It is an effective way of reaching a target goal from a problematic state. This process begins with the collection of data relating to the problem. This data is then analyzed to establish a suitable solution. 
 
@@ -96,3 +110,5 @@ To summarize:
 4. We have learned an example of problem-solving in means end analysis
 5. We have gone through some of the applications of means end analysis. 
 
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
