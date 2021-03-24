@@ -361,7 +361,7 @@ def list_appointments(update, context):
 
 ```
 
-In the code above, you defined a method called `list_appointments` where you passed `update` and `context` as parameters. In the function, you aved the `chat_id` of the user and created an empty variable called `event_message`. You then made use of the `chat_id` to query the FQL client using the `appointments_index` index to check the user data that matches the `chat_id`.
+In the code above, you defined a method called `list_appointments` where you passed `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and created an empty variable called `event_message`. You then made use of the `chat_id` to query the FQL client using the `appointments_index` index to check the user data that matches the `chat_id`.
 
 Next, you looped through the data retrieved to check if the `completed` field was set to True. If this was the case, you set the `event_status` to “Completed”. Otherwise, you set it to “Not Completed”. 
 You then sent a message to the user containing the `event`, `status`, update link and delete link for each appointment scheduled.
@@ -455,11 +455,11 @@ def update_appointment(update, context):
 
 ```
 
-In the code above, you defined a method called `update_appointment` where you passed  `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and the message passed, then created `event_id` by removing the `update_` prefix for the message.
+In the code above, you defined a method called `update_appointment` where you passed  `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and the message passed, then created `event_id` by removing the `update_` prefix from the message.
 
 You then made use of the `event_id` to query the FQL client to check for the appointment that matches the `event_id`. You then checked if the `completed` field of the appointment was set to True. If this is the case, you set the `new_status` variable to False. Otherwise, you set the `new_status` variable to True. 
 
-Finally, you made a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method then sent a successful update message to the user.
+Finally, you made a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method. You then sent a successful update message to the user.
 
 You set the `update_appointment` method to get triggered by a message handler that uses the regex filter to detect the update method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
@@ -507,7 +507,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 
 ### Conclusion
 
-In this article, we built an appointment scheduler telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
+In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
 
 The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT). If you have any questions, don't hesitate to contact me on Twitter: [@](https://twitter.com/LordChuks3)[LordChuks3](https://twitter.com/LordChuks3).
 
