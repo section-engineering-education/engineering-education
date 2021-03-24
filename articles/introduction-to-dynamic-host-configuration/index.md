@@ -1,7 +1,21 @@
-# Introduction to Dynamic Host Configuration Protocol
-### Introduction
-A vast majority of the hosts on the internet are user-end devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured as static by a network administrator or using Dynamic Host Configuration Protocol (DHCP).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-dynamic-host-configuration/
+title: Introduction to Dynamic Host Configuration Protocol (DHCP)
+description: This tutorial will be a brief dive into understanding Dynamic Host Configuration Protocol. We will also learn in-depth about the types of DHCP.
+author: rabo-james-bature
+date: 2021-03-24T00:00:00-23:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-dynamic-host-configuration/hero.jpg
+    alt: DHCP hero image
+---
+A vast majority of the hosts on the internet are user-end devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured as static by a network administrator or using Dynamic Host Configuration Protocol (DHCP).
+<!--more-->
 In this article, we will look at DHCP version 4 (DHCPv4) and DHCP version 6 (DHCPv6).
 
 ### Prerequisites
