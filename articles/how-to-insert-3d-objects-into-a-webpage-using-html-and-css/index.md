@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/
-title: How to Insert 3D Objects into a webpage using HTML and CSS
+title: How to Insert 3D Objects into a Webpage using HTML and CSS
 description: In this article we will understand how to build build 3D objects in webpage using HTML and CSS. We will also build a simple webpage containing a 3D object.
 author: chris-mutua
 date: 2021-03-24T00:00:00-08:30
