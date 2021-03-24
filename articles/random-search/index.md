@@ -34,7 +34,7 @@ This article aims to help us familiarize ourselves with random search optimizati
 
 ### Random Search
 
-Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. However, a key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. To do a random search, a sampling distribution is defined for every hyperparameter.
+Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. However, a key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. A sampling distribution is defined for every hyperparameter to do a random search.
 
 This technique allows us to control the number of attempted hyperparameter combinations. Dissimilar to grid search, where every possible combination is attempted, random search allows us to specify the number of models to train. We can base our search iterations on our computational resources or the time taken per iteration. The image below shows a random layout.
 
@@ -67,7 +67,7 @@ A random forest uses many parameters. Below are the main ones. It is essential t
 
 **min_samples_leaf.** The minimum count of data points that can be stored in a leaf node.
 
-**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population. If ` bootstrap = True ` sampling is carried out randomly with replacement. If  ` bootstrap = False `, sampling is without replacement.
+**bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population. If `bootstrap = True,` sampling is carried out randomly with replacement. If  `bootstrap = False,` sampling is without replacement.
 
 ### Random Search Implementation
 
@@ -129,7 +129,7 @@ random_grid = {'n_estimators': n_estimators,
 'bootstrap': bootstrap}
 ```
 
-7. **Evaluation.** Similarly to grid search, we carry out cross-validation in a random search. This is enabled by ` RandomizedSearchCV. ` By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations. As mentioned in the previous tutorial on grid search, when ` n_jobs = -1 `, all CPUs are put to use.
+7. **Evaluation.** Similarly to grid search, we carry out cross-validation in a random search. This is enabled by ` RandomizedSearchCV. ` By specifying ` cv=5 `, we train a model 5 times using cross-validation. Furthermore, when we carried out grid search, we had ` verbose=0 ` to avoid slowing down our algorithm. In this case, we can have ` verbose=2 ` to have a glimpse of the logging information generated. We have the ` n_iter ` parameter that allows us to carry out $n$ different iterations as mentioned in the previous tutorial on grid search, when ` n_jobs = -1 `, all CPUs are put to use.
 
 ```python
 rf_random = RandomizedSearchCV(estimator = rf,
@@ -203,13 +203,13 @@ Best Parameters:
 
 Our output gives the best parameters as 10 for n_estimators and min_samples_split. It also gives 4 for min_samples_leaf, auto for max_features, 70 for max_depth, and true for bootstrap.
 
-### Grid Search vs Random Search
+### Grid Search vs. Random Search
 
 Off the top of one's head, it would seem that grid search would be the better method as every possible hyperparameter combination is tested. But this is not always the case. These two strategies can be compared in terms of dimensionality.
 
-With grid search, the greater the dimensionality, the greater the number of hyperparameter combinations to search. As such, there is a greater chance of grid search being impractical. The time taken to search would not justify the use of grid search. The computational resources in use would also prove unfeasible with an increase in the number of parameters. Each additional parameter would increase the number of evaluations exponentially. With a small number of hyperparameters, grid search may edge out random search. This is because grid search would guarantee accuracy by exhausting all possible combinations.
+With grid search, the greater the dimensionality, the greater the number of hyperparameter combinations to search for. As such, there is a greater chance of grid search being impractical. The time taken to search would not justify the use of grid search. The computational resources in use would also prove unfeasible with an increase in the number of parameters. Each additional parameter would increase the number of evaluations exponentially. With a smaller number of hyperparameters, grid search may edge out the random search. This is because grid search would guarantee accuracy by exhausting all possible combinations.
 
-Similar to grid search, the higher the dimensionality, the greater the time taken to find the right set of hyperparameters. Higher dimensionality also means a greater number of iterations. Nonetheless, random search may offer a greater chance of realizing the optimal parameters. Even though random search may not be as accurate as grid search, we also get to control the number of combinations to attempt. The random search model may be trained on the optimized parameters within a much shorter time than the same using grid search. This also results in much more efficient computational power used in comparison to grid search. 
+Similar to grid search, the higher the dimensionality, the greater the time taken to find the right set of hyperparameters. Higher dimensionality also means a greater number of iterations. Nonetheless, the random search may offer a greater chance of realizing the optimal parameters. Even though random search may not be as accurate as grid search, we also get to control the number of combinations to attempt. The random search model may be trained on the optimized parameters within a much shorter time than the same using grid search. This also results in much more efficient computational power used in comparison to grid search. 
 
 ### Wrapping Up
 
