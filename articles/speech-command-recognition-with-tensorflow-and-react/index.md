@@ -74,22 +74,25 @@ const [labels, setLabels] = useState(null)
 
 They are all initialized to null value at the start.
 
+The `useState` hook enables us to define the state variable which is way to preserve the values between the function calls. The hook method takes in a initialization parameter of any data type and returns two pair of values. One is the current state which in the code snippet above are `model`, `action`, and `labels`. And, another is the function that is use to update the state which in above code are `setModel`, `setAction`, `setLabels`.  Now as an example, you can simply use the update function to update state as shown in the code snippet below:
 ### Load the Speech Recognizer Model
 
 Here, we are going to create a function called `loadModel` that loads the Speech Recognizer model into our app. First, a `recognizer` is initialized using the `create` method provided by the `speech` module. This loads the speech model in the app. Then, we ensure that the model is loaded using the `ensureModelLoaded` method from the `recognizer`. Then, we set the `recognizer` to `models` state and `wordLabels` in the recognizer to `labels` state. Then, we call the `loadModel` function inside the `useEffect` hook so that it is triggered when the app starts. The implementation is shown in the code snippet below:
 
-```jsx
+```javascript
 const loadModel = async () =>{
-  const recognizer = await speech.create("BROWSER_FFT")
-  console.log('Model Loaded')
+  // start load model
+  const recognizer = await speech.create("BROWSER_FFT") 
+ // check for ensure model still loaded
   await recognizer.ensureModelLoaded();
-  console.log(recognizer.wordLabels())
+  // store model instance to state
   setModel(recognizer)
+ // store command word list to state
   setLabels(recognizer.wordLabels())
 }
-
 useEffect(()=>{loadModel()}, []);
 ```
+The useEffect hook enables us to perform operations in a React component. This hook runs when the component mounts to the DOM. So, any functional calls that need to be triggered automatically when the template mounts are to be kept inside the useEffect hook. The first parameter takes in a functional callback to which we can apply any code expressions. The second parameter allows us to track the changes in the state which in turn triggers the callback. In the above code snippet, we have called the loadModel method inside the useEffect hook with no tracking state in its second parameter. Hence, the loadModel method will be trigger once the component mounts.
 
 Now, when we reload our app, we will see the model is loaded and the labels logged in the console as shown in the screenshot below:
 
@@ -99,15 +102,18 @@ Now, when we reload our app, we will see the model is loaded and the labels logg
 
 In this step, we are going to activate our speech recognizer i.e. start listening to audio speech. For that, we are going to implement a function called `recognizeCommands`. Inside the function, we are going to listen to audio using `listen` method from the `model` state then log the `spectrogram` result of the speech. The additional option of `probabilityThreshold` is applied to improve the recognition. Lastly, we apply the `setTimeout` callback to trigger the `stopListening` method in order to stop the speech recognizer. The overall implementation is provided in the code snippet below:
 
-```jsx
+```javascript
 const recognizeCommands = async () => {
     console.log("Listening for commands");
+    // start model to listening command
     model.listen(
       (result) => {
+        // print result
         console.log(result.spectrogram);
       },
       { includeSpectrogram: true, probabilityThreshold: 0.9 }
     );
+    // set timeout for stop working 
     setTimeout(() => model.stopListening(), 10e3);
   };
 ```
@@ -138,14 +144,21 @@ function argMax(arr){
 
 The function uses `map` logic along with `reduce` method to improve the overall probability of detection. Hence, it is a Map-Reduce algorithm.
 
+The `map` function takes in the input, converts the input into key-value pair, and sorts the data. The output of the map function is input to reduce function.
+
+The `reduce` function takes in the sorted key-value data from the `map` function. Then, it searches and compares the matching pair of data and reduces them. It prevents redundancy and eliminates duplicate pairs.
+
 Now, we are going to apply the `argMax` function to our model and set the `labels` to `action` state as shown in the code snippet below:
 
 ```jsx
 const recognizeCommands = async () =>{
   console.log('Listening for commands')
+   // start model to listening command
   model.listen(result=>{
+    // add argMax function
     setAction(labels[argMax(Object.values(result.scores))])
   }, {includeSpectrogram:true, probabilityThreshold:0.7})
+      // set timeout for stop working 
   setTimeout(()=>model.stopListening(), 10e3)
 }
 ```
