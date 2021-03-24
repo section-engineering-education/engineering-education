@@ -41,7 +41,7 @@ For the `apppointment_index`, we will use the `user_id` field as the terms. For 
 
 #### Creating a Fauna API Key
 
-For your python app to interact with fauna, you need to create an API key for the database. To create an API key, go to the security tab on the left side of your screen.
+For your python app to interact with fauna, you need to create an API key for the database. To do this, go to the security tab on the left side of your screen.
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
