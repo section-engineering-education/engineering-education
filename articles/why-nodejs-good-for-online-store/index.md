@@ -54,7 +54,7 @@ In many cases, Node.js gives higher performance than other technologies. Node.js
 
 E-commerce stores are growing, and stiff competition is becoming a reality; hence there is also a growing need for a robust, reliable, and more secure platforms. Based on the benefits provided by Node.js, it may be a perfect way to go in your use case. 
 
->Note that you can host your Node.js applications on the [Section.io edge server](https://www.section.io/modules/nodejs-edge-hosting/). 
+>Note that you can host your Node.js applications on the [Section.io edge servers](https://www.section.io/modules/nodejs-edge-hosting/). 
 
 #### Further resources:
 - [Framework](https://hackr.io/blog/what-is-frameworks) 
