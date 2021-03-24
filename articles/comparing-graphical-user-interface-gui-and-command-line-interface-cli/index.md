@@ -77,9 +77,28 @@ Modern GUIs have improved their speed, but one still requires to use of the mous
 
 GUI allows control over the operating system and files. But one still needs CLI to perform advanced tasks. This is because the command line interface allows all the control over the operating system and files. Furthermore, tasks become simple with CLI. One can create a script containing a few command lines and leave it to perform most of the tasks. Shortcuts in GUI do not fully support automation or scripting. This way, you find that a user has to manually repeat each action within the graphical user interface.
 
+### Drawbacks of CLI
+
+- A large number of commands makes it challenging to use CLI, even for experienced users.
+- CLI leaves a small room for error. Mistyped commands may not get processed correctly.
+- In case of a mistyped instructions, you may need to start from scratch again.
+
+### Drawbacks of GUI
+
+- GUI is not resource optimized. The aim is to make a user-friendly interface, and as such, it uses more computer memory.
+- Applications based on GUI require more Ram to run than those based on other interface types.
+- Users need to use the Help file to find hidden commands.
+- Compared to other interface types, GUI uses more processing power.
+
 ### Conclusion
 
 This article has successfully explained how GUI differs from CLI. The notable difference is that GUI users depend on graphical elements such as icons, menus, and windows to interact with the operating system. Those of CLI use commands to interact with the operating system. GUI stands out being a user-friendly option, while CLI is more powerful and advanced.
+
+### References 
+
+https://www.bbc.co.uk/bitesize/guides/zwb4jxs/revision/3
+https://www.ionos.com/digitalguide/websites/web-development/what-is-a-gui/
+https://www.w3schools.com/whatis/whatis_cli.asp
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
