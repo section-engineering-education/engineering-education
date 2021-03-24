@@ -14,7 +14,7 @@ Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&am
 
 
 ### How do I add my author page
-Include a short Author Biography (index.md file) and Headshot image (avatar file). Include these files in the {authors folder}(https://github.com/section-engineering-education/engineering-education/tree/master/authors) within the GitHub repo via your forked repo similar to the article files. We want to credit you for your hard work.
+Include a short Author Biography (index.md file) and Headshot image (avatar file). Include these files in the [authors folder](https://github.com/section-engineering-education/engineering-education/tree/master/authors) within the GitHub repo via your forked repo similar to the article files. We want to credit you for your hard work.
 
 ### I have a merge conflict - how do I resolve it?
 Use this every time before contributing a new article to keep it up to date
