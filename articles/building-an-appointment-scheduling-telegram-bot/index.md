@@ -203,9 +203,11 @@ def start(update, context):
 
 ```
 
-In the code above, we created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler. `context` is the bot instance passed from the dispatch handler. We then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, you send a welcome message. Else,  you create a user with the information provided.
+In the code above, you created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler. `context` is the bot instance passed from the dispatch handler. 
+You then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, you send a welcome message. Else,  you create a user with the information provided.
 
-Next, you need to create a dispatch handler for the `/start` command. A command in telegram is any text that starts with `/`. You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
+Next, you need to create a dispatch handler for the `/start` command. A command in telegram is any text that starts with `/`.
+You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
 
 Copy and paste the code below at the end of your python file to call the dispatch handler to connect a command handler to the “start” command. The “start” command triggers the `start` method. The updater checks for messages from the user.
 
@@ -254,7 +256,8 @@ def add_appointment(update, context):
 
 ```
 
-In the code above, we defined a method called `add_appointment` in which you passed `update` and `context` as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we updated the `last_command` field of the user data to save the `add_appointment` command, which the user sent. You then sent a message requesting the user to enter the name due date for the appointment separated by a comma.
+In the code above, you defined a method called `add_appointment` in which you passed `update` and `context` as parameters. In the function, you aved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
+Next, you updated the `last_command` field in the user data to save the `add_appointment` command the user sent. You then sent a message requesting the user to enter the name of the appointment and its due date separated by a comma.
 
 You have to create another method called `echo` that will collect the name and the due date for the new appointment then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
 
@@ -297,7 +300,8 @@ def echo(update, context):
 
 ```
 
-In the code above, we defined a method called `echo` in which you passed `update` and `context` as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we checked if the `last_command` in the data retrieved is an `add_appoitnment` command. If this is the case, we proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
+In the code above, you defined a method called `echo` in which you passed `update` and `context` as parameters. In the function, you saved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using the `users_index` index to check the user data that matches the `chat_id`.
+Next, you checked if the `last_command` in the data retrieved is an `add_appointment` command. If it is, you proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
 
 Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when a message the user enters a message( a message is any text that does not start with `/`).
 
@@ -350,7 +354,9 @@ def list_appointments(update, context):
 
 ```
 
-In the code above, we defined a method called `list_appointments` in which we passed `update` and `context` as parameters. In our function, we first saved the `chat_id` of the user and created an empty variable called `event_message`. We then made use of the`chat_id` to query the FQL client using `appointments_index` to check the user data that matches the `chat_id`. Next, we looped through the data retrieved and checked if the `completed` field was set to True. If this was the case, you set the `event_status` to “Completed”. Otherwise, you set it to “Not Completed”.  to the user containing the `event`, `status`, update link and delete link for each appointment. The update link is created by attaching `/update_` to the appointment’s id, while the delete link is created by attaching `/delete_` to the appointment’s id. If the query retrieved no data, this means the `event_message` is empty. You then send a message to the user stating that the user has no appointments saved.
+In the code above, you defined a method called `list_appointments` in which you passed `update` and `context` as parameters. In the function, you aved the `chat_id` of the user and created an empty variable called `event_message`. You then made use of the `chat_id` to query the FQL client using the `appointments_index` index to check the user data that matches the `chat_id`.
+Next, you looped through the data retrieved to check if the `completed` field was set to True. If this was the case, you set the `event_status` to “Completed”. Otherwise, you set it to “Not Completed”. 
+You then sent a message to the user containing the `event`, `status`, update link and delete link for each appointment scheduled. The update link is created by attaching `/update_` to the appointment’s id, while the delete link is created by attaching `/delete_` to the appointment’s id. If the query retrieved contains no data, this means the `event_message` is empty. You then sent a message to the user stating that the user has no appointments saved.
 
 ![list_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/list_appointment.png)
 
@@ -439,7 +445,9 @@ def update_appointment(update, context):
 
 ```
 
-You defined a method called `update_appointment` where you passed  `update` and `context` as parameters in the code above. In our function, we first saved the `chat_id` of the user and the message passed, then created `event_id` by splitting the message into the “update_” prefix and the appointment id, then saving only the id. We then made use of the`event_id` to query the FQL client to check for the appointment that matches the `event_id`. We then check if the `completed` field of the data retrieved was set to True. If this is the case, we set the `new_status` variable to False. Otherwise, we set the `new_status` variable to True. Finally, we make a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method then send a successful update message to the user.
+In the code above, you defined a method called `update_appointment` where you passed  `update` and `context` as parameters. In the function, you saved the `chat_id` of the user and the message passed, then created `event_id` by removing the `update_` prefix for the message.
+You then made use of the `event_id` to query the FQL client to check for the appointment that matches the `event_id`. You then checked if the `completed` field of the appointment was set to True. If this is the case, you set the `new_status` variable to False. Otherwise, you set the `new_status` variable to True. 
+Finally, you made a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method then sent a successful update message to the user.
 
 You set the `update_appointment` method to get triggered by a message handler that uses the regex filter to detect the update method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
