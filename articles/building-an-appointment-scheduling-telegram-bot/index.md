@@ -1,10 +1,10 @@
-Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. We would also be utilizing a serverless database system called FaunaDB to build our system, which will make our work easier. Now that we are versed with what this article entails let's get to the building part.
+Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. We would also be utilizing a serverless database system called FaunaDB to build our system, which will make our work easier. Now that you know what this article entails, let's get to the building part.
 
 Not so many people know about Fauna and how amazing it can be when managing databases. Therefore, I will be doing a little introduction to the Fauna serverless database system.
 
 ### What is Fauna?
 
-Fauna is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support a variety of data types and particularly relational databases in a serverless API. You can learn more about Fauna in their official documentation [here](https://docs.fauna.com/fauna/current/).
+Fauna is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API. You can learn more about Fauna in their official documentation [here](https://docs.fauna.com/fauna/current/).
 
 ### Creating A Fauna Database
 
@@ -14,7 +14,7 @@ To make use of Fauna, you have to signup on their website [here](https://dashboa
 
 #### Creating the Fauna Collections
 
-For this article, you will need to create two collections in your database. A collection is similar to tables in your conventional database system. The first collection you need to create is the `Users` collection. This collection is where all the registered user’s information will be created, while the second collection you need to create is the `Appointments` collection. This collection is where all the user’s appointments will be created. To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to retain a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is set to 3, Fauna will automatically delete any data stored in the database three (3) days after the last date the data was modified.
+For this article, you will need to create two collections in your database. A collection is similar to tables in your conventional database system. The first collection you need to create is the `Users` collection. This collection is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This collection is where you will create all the user’s appointments. To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to retain a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is 3, Fauna will automatically delete any data stored in the database three (3) days after the last date you modified it.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
@@ -24,13 +24,13 @@ After saving the collections you just created, you will notice there are no docu
 
 You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
-For this article, you will be creating three indexes; `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` will also enable you to scroll through data in the `Appointments` collection but will use both the `user_id` and `date_due` fields as parameters to match.
+For this article, you will be creating three indexes; `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
-After clicking on the `New Index` button, the above screen will be displayed to you. You need to select the collection you want to connect to this particular index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to be able to browse.
+After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this particular index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to be able to browse.
 
-For the `users_index`, we will use the `id` field as the terms with unique ticket, for the `apppointment_index`, we will use the `user_id` field as the terms, and for the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling the required fields, click on save and continue.
+For the `users_index`, we will use the `id` field as the terms with unique ticket, for the `apppointment_index`, we will use the `user_id` field as the terms, and for the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
@@ -42,7 +42,7 @@ For your python app to interact with fauna, you need to create an API key for th
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
-Click on `New Key` to generate a secret key. To create the key you will need to provide a name for your key and save. Your secret key will now be displayed to you, as seen in the image below. Copy and paste it somewhere you can easily retrieve it.
+Click on `New Key` to generate a secret key. To create the key, you will need to provide a name for your key and save it. Your secret key will now be displayed to you, as seen in the image below. Copy and paste it somewhere you can easily retrieve it.
 
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
@@ -107,13 +107,13 @@ Go to your telegram account, then search for @botfather and start a conversation
 
 #### Creating the Telegram Bot Interface with BotFather
 
-Use the /newbot command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username to it.
+Use the /newbot command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
 
 ![bot_father_command](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_command.png)
 
 ![bot_father_convo](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_convo.png)
 
-After supplying the name and username for your Telegram Bot, you will be provided with the API token that you can use to interact with the Bot account via the Telegram API (protected for security reasons in the image above ). Copy and paste the API token somewhere safe.
+After supplying the name and username for your Telegram Bot, the system will provide you with the API token that you can use to interact with the Bot account via the Telegram API (protected for security reasons in the image above ). Copy and paste the API token somewhere safe.
 
 #### Powering the Bot with Python
 
@@ -203,11 +203,11 @@ def start(update, context):
 
 ```
 
-In the code above, we created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler, while `context` is the bot instance passed from the dispatch handler. We then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, a welcome message. However, if no user with the `chat_id` is found then a user is created.
+In the code above, we created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler. `context` is the bot instance passed from the dispatch handler. We then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, you send a welcome message. Else,  you create a user with the information provided.
 
 Next, you need to create a dispatch handler for the `/start` command. A command in telegram is any text that starts with `/`. You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
 
-Copy and paste the code below at the end of your python file to call the dispatch handler to connect a command handler to the command “start” which triggers the `start` method. The updater checks for messages from the user.
+Copy and paste the code below at the end of your python file to call the dispatch handler to connect a command handler to the “start” command. The “start” command triggers the `start` method. The updater checks for messages from the user.
 
 ```python
 
@@ -254,7 +254,7 @@ def add_appointment(update, context):
 
 ```
 
-In the code above, we defined a method called `add_appointment` in which `update` and `context` are also passed as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we updated the `last_command` field of the user data to save the `add_appointment` command which was sent. A message is then sent requesting the user to enter the name due date for the appointment separated by a comma.
+In the code above, we defined a method called `add_appointment` in which you passed `update` and `context` as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we updated the `last_command` field of the user data to save the `add_appointment` command, which the user sent. You then sent a message requesting the user to enter the name due date for the appointment separated by a comma.
 
 You have to create another method called `echo` that will collect the name and the due date for the new appointment then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
 
@@ -297,9 +297,9 @@ def echo(update, context):
 
 ```
 
-In the code above, we defined a method called `echo` in which `update` and `context` are also passed as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we checked if the `last_command` in the data retrieved is an `add_appoitnment` command. If this is the case, we proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the message sent by the user.
+In the code above, we defined a method called `echo` in which you passed `update` and `context` as parameters. In our function, we first saved the user’s message and the `chat_id` of the user. We then made use of the`chat_id` to query the FQL client using `users_index` to check the user data that matches the `chat_id`. Next, we checked if the `last_command` in the data retrieved is an `add_appoitnment` command. If this is the case, we proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
 
-Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when a message is entered by the user( a message is any text that does not start with `/`).
+Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when a message the user enters a message( a message is any text that does not start with `/`).
 
 > Note: The echo method only works when the last command was an `add_appointment` command.
 
@@ -350,7 +350,7 @@ def list_appointments(update, context):
 
 ```
 
-In the code above, we defined a method called `list_appointments` in which `update` and `context` are also passed as parameters. In our function, we first saved the `chat_id` of the user and created an empty variable called `event_message`. We then made use of the`chat_id` to query the FQL client using `appointments_index` to check the user data that matches the `chat_id`. Next, we looped through the data retrieved and checked if the `completed` field was set to True. If this was the case, the `event_status`will be set to “Completed”. Otherwise it will be set to “Not Completed”. A message is sent to the user containing the `event`, `status`, update link and delete link for each appointment. The update link is created by attaching `/update_` to the appointment’s id, while the delete link is created by attaching `/delete_` to the appointment’s id. If the query retrieved no data, this means the `event_message` is empty. A message is sent to the user stating that the user has no appointments saved.
+In the code above, we defined a method called `list_appointments` in which we passed `update` and `context` as parameters. In our function, we first saved the `chat_id` of the user and created an empty variable called `event_message`. We then made use of the`chat_id` to query the FQL client using `appointments_index` to check the user data that matches the `chat_id`. Next, we looped through the data retrieved and checked if the `completed` field was set to True. If this was the case, you set the `event_status` to “Completed”. Otherwise, you set it to “Not Completed”.  to the user containing the `event`, `status`, update link and delete link for each appointment. The update link is created by attaching `/update_` to the appointment’s id, while the delete link is created by attaching `/delete_` to the appointment’s id. If the query retrieved no data, this means the `event_message` is empty. You then send a message to the user stating that the user has no appointments saved.
 
 ![list_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/list_appointment.png)
 
@@ -439,9 +439,9 @@ def update_appointment(update, context):
 
 ```
 
-In the code above, we defined a method called `update_appointment` in which `update` and `context` are also passed as parameters. In our function, we first saved the `chat_id` of the user and the message passed, then created `event_id` by splitting the message into the “update_” prefix and the appointment id, then saving only the id. We then made use of the`event_id` to query the FQL client to check for the appointment that matches the `event_id`. We then check if the `completed` field of the data retrieved is set to True. If this is the case, we set the `new_status` variable to False. Otherwise, we set the `new_status` variable to True. Finally, we make a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method then send an successful update message to the user.
+You defined a method called `update_appointment` where you passed  `update` and `context` as parameters in the code above. In our function, we first saved the `chat_id` of the user and the message passed, then created `event_id` by splitting the message into the “update_” prefix and the appointment id, then saving only the id. We then made use of the`event_id` to query the FQL client to check for the appointment that matches the `event_id`. We then check if the `completed` field of the data retrieved was set to True. If this is the case, we set the `new_status` variable to False. Otherwise, we set the `new_status` variable to True. Finally, we make a query to the FQL client to update the `completed` field to the value of the `new_status` variable using the Fauna `update` method then send a successful update message to the user.
 
-The `update_appointment` method is triggered by a message handler that uses the regex filter to detect the update method’s regex code. The message is then split to extract the appointment id. Copy and paste the code below to create the message handler.
+You set the `update_appointment` method to get triggered by a message handler that uses the regex filter to detect the update method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
 ```python
 
@@ -473,9 +473,9 @@ def delete_appointment(update, context):
 
 ```
 
-The `delete_appointment` method is similar to the `update_appointment` method. However, the difference is that after retrieving the appointment by querying the `Appointments` collection, the Fauna `delete` method is used to delete the data from the database. Subsequently, a message is sent to alert the user of a successful appointment deletion.
+The `delete_appointment` method is similar to the `update_appointment` method. However, the difference is that after retrieving the appointment by querying the `Appointments` collection, you used the Fauna `delete` method to delete the data from the database. Subsequently, you sent a message to alert the user of a successful appointment deletion.
 
-The `delete_appointment` method similar to the ‘update_appointment` method is triggered by a message handler that uses the regex filter to detect the delete method’s regex code. The message is then split to extract the appointment id. Copy and paste the code below to create the message handler.
+The `delete_appointment` method is similar to the ‘update_appointment` method.  You set the `delete_appointment` method to get triggered by a message handler that uses the regex filter to detect the delete method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
 ```python
 
@@ -490,3 +490,5 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 In this article, we built an appointment scheduler telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
 
 The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT). If you have any questions, don't hesitate to contact me on Twitter: [@](https://twitter.com/LordChuks3)[LordChuks3](https://twitter.com/LordChuks3).
+
+
