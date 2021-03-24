@@ -24,7 +24,7 @@ From this point onwards, to follow this step by step guide on building a video p
 
 To build our Django application, we need to develop the frontend and the backend of our video player application. We already have the video application pre-built for us to focus mainly on integrating biometrics with TypingDNA. You can clone the [Github](https://github.com/Nomzy-kush/mine.git) repo and run the application with the commands below:
 
-```
+```bash
 
 git clone https://github.com/Nomzy-kush/mine.git
 
@@ -38,7 +38,7 @@ The structure of our project should be similar to the one in the image below.
 
 We now need to install the `requests` module required by our project to interact with typingdna and the Django framework. Type the command below in your terminal.
 
-```
+```bash
 
 pip install requests
 
@@ -48,7 +48,7 @@ pip install django
 
 Finally, let's run our application to make sure it’s working. Type the below command in your terminal.
 
-```
+```bash
 
 python manage.py runserver
 
@@ -183,7 +183,7 @@ class UserProfile(models.Model):
 
 After updating the `models.py` file with the code above, we need to run migrations for the database. We can do this by typing the commands below in our terminal at the project’s root directory.
 
-```
+```bash
 
 python manage.py makemigrations
 
@@ -195,7 +195,7 @@ We should see the results below if our migrations ran successfully.
 
 ![migrations](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/migrations.png)
 
-Let’s edit the `videos` view in the views.py` file with the following code to render only a particular user’s videos in the frontend.
+Let’s edit the `videos` view in the `views.py` file with the following code to render only a particular user’s videos in the frontend.
 
 
 ```python
@@ -476,7 +476,7 @@ Next, create a variable to store the captured typing patterns of our users and a
 
 ```
 
-In the code above, we called the`beginAuthentication` function to stop recording the user’s keystrokes by calling the `TypingDNA.stop()`, which allows us to record and analyze the current typing pattern.
+In the code above, we called the `beginAuthentication` function to stop recording the user’s keystrokes by calling the `TypingDNA.stop()`, which allows us to record and analyze the current typing pattern.
 
 We then captured the user’s typing pattern recorded using the `sametext` capture method provided by TypingDNA. There are other TypingDNA methods you can explore on their official docs here [https://api.typingdna.com/#api-capture-methods](https://api.typingdna.com/%23api-capture-methods).
 
