@@ -96,9 +96,9 @@ This article has successfully explained how GUI differs from CLI. The notable di
 
 ### References 
 
-https://www.bbc.co.uk/bitesize/guides/zwb4jxs/revision/3
-https://www.ionos.com/digitalguide/websites/web-development/what-is-a-gui/
-https://www.w3schools.com/whatis/whatis_cli.asp
+1. [User interfaces](https://www.bbc.co.uk/bitesize/guides/zwb4jxs/revision/3)
+2. [What is a graphical user interface (GUI)?](https://www.ionos.com/digitalguide/websites/web-development/what-is-a-gui/)
+3. [What is Command Line Interface (CLI)?](https://www.w3schools.com/whatis/whatis_cli.asp)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
