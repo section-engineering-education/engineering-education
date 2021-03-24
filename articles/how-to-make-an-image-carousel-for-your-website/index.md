@@ -1,5 +1,5 @@
 ### Introduction
-An Image Carousel is a container(slideshow) of images or Info that a user can select by clicking a button that directs him forward or backward in collecting images. It enables the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
+An Image Carousel is a container(slideshow) of images or Info that a user can select by clicking a button that directs him forward or backward in collecting images. It makes the website to be more interactive and hence enhance the user experience. The images' collection can be set to change automatically using a timer or manually when the user clicks the displayed buttons.
 
 ### Goal
 To add an image carousel to our website to enhance user experience and improve the website's user interface.
@@ -11,10 +11,10 @@ To add an image carousel to our website to enhance user experience and improve t
 
 ### Procedure
 ### Step 1 - Creating a new project.
-Open Visual Studio Code and create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
+Open Visual Studio Code then create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
 
 ### Step 2 - Write the HTML code
-Html is like our code's skeleton, so it will lay out the frame of our work onto which we shall continue modifying by using other languages. In this step, we will define containers with our images using the `<div>` tags. We also define our buttons which will enable the user to move through the carousel. The small circles at the bottom of the carousel are also defined. The code has comments just for one to follow through. Dive into the HTML file and write the code as illustrated below.
+Html is like our code's skeleton, so it will lay out the frame of our work onto which we shall continue modifying by using other languages. In this step, we will define containers with our images using the `<div>` tags. We also define our buttons which will enable the user to move through the carousel. We also define the small circles at the bottom of the carousel are also defined. The code has comments just for one to follow through. Dive into the HTML file and write the code as illustrated below.
  
 ```HTML
  <!-- Slideshow container -->
@@ -47,9 +47,9 @@ Html is like our code's skeleton, so it will lay out the frame of our work onto 
 
 <!-- The circles/dots -->
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dots" onclick="currentSlide(1)"></span>
+  <span class="dots" onclick="currentSlide(2)"></span>
+  <span class="dots" onclick="currentSlide(3)"></span>
 </div> 
 ```
 ### Step -2 Write the HTML code
@@ -74,19 +74,19 @@ In the CSS file, we will style our HTML. We style the containers for the images,
 .Back, .forward {
   cursor: pointer;
   position: absolute;
-  top: 48%%;
+  top: 48%;
   width: auto;
   margin-top: -23px;
   padding: 17px;
   color: grey;
   font-weight: bold;
   font-size: 19px;
-  transition: 0.5s ease;
-  border-radius: 0 4px 4px 0;
+  transition: 0.6s ease;
+  border-radius: 0 5px 5px 0;
   user-select: none;
 }
 
-/* Position the "forward button" to the right */
+/* Place the "forward button" to the right */
 .forward {
   right: 0;
   border-radius: 4px 0 0 4px;
@@ -99,16 +99,16 @@ In the CSS file, we will style our HTML. We style the containers for the images,
 
 /* Caption Info */
 .Info {
-  color: #f2f2f3;
+  color: #e3e3e3;
   font-size: 16px;
   padding: 10px 14px;
   position: absolute;
-  bottom: 8px;
+  bottom: 10px;
   width: 100%;
   text-align: center;
 }
 
-/* Number Info (1/3 etc) */
+/* Worknumbering (1/3 etc) */
 .MessageInfo {
   color: #f2f2f3;
   font-size: 14px;
@@ -118,18 +118,18 @@ In the CSS file, we will style our HTML. We style the containers for the images,
 }
 
 /* The circles or bullets and indicators */
-.dot {
+.dots {
   cursor: pointer;
   height: 16px;
   width: 16px;
   margin: 0 3px;
-  background-color: #bbb;
+  background-color: #acc;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.5s ease;
 }
 
-.enable, .dot:hover {
+.enable, .dots:hover {
   background-color: #717161;
 }
 
@@ -152,7 +152,7 @@ In the CSS file, we will style our HTML. We style the containers for the images,
 }
 ```
 ### Step 4 - Write the Javascript code
-In this step, we define the functions we had linked to our buttons in the HTML file. Also, we will include a timer so that our image carousel displays images automatically like a slideshow. Add the following lines of code in the Javascript file. The code has comments just for one to follow through. 
+In this step, we define the functions we had linked to our buttons in the HTML file. Also, we will include a timer so that our image carousel displays images automatically like a slideshow. Type the javascript code below  in the Javascript file. The code has comments just for one to follow through. 
 
 ```js
 var slidePosition = 1;
@@ -170,8 +170,8 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var circles = document.getElementsByClassName("dot");
+  var slides = document.getElementsByClassName("Containers");
+  var circles = document.getElementsByClassName("dots");
   if (n > slides.length) {slidePosition = 1}
   if (n < 1) {slidePosition = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -193,7 +193,7 @@ SlideShow();
 
 function SlideShow() {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("Containers");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
