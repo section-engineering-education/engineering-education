@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/
-title: Android Custom Views - Extending View Class
+title: How to create a Responsive Form Using Tailwind CSS
 description: In this article we will create a simple html form that is styled by tailwind css. Tailwind css is a new css framework that focusses on a utility first approach.
 author: monica-masae
-date: 2021-03-23T00:00:00-12:00
+date: 2021-03-24T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
