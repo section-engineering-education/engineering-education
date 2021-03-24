@@ -110,7 +110,7 @@ Go to your telegram account, then search for @botfather and start a conversation
 
 #### Creating the Telegram Bot Interface with BotFather
 
-Use the /newbot command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
+Use the `/newbot` command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
 
 ![bot_father_command](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_command.png)
 
