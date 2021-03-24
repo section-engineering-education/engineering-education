@@ -1,10 +1,9 @@
+### Introduction
 Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also be utilizing a serverless database system called FaunaDB to build our system which will make your work easier. Now that you know what this article entails, let's get to the building part.
 
-Not so many people know about Fauna and how amazing it can be when managing databases. Therefore, I will be doing a little introduction to the Fauna serverless database system.
+#### What is Fauna?
 
-### What is Fauna?
-
-Fauna is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API. You can learn more about Fauna in their official documentation [here](https://docs.fauna.com/fauna/current/).
+[Fauna](https://docs.fauna.com/fauna/current/) is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
 
 ### Creating A Fauna Database
 
@@ -14,19 +13,19 @@ To make use of Fauna, you have to signup on their website [here](https://dashboa
 
 #### Creating the Fauna Collections
 
-For this article, you will need to create two collections in your database. A collection is similar to tables in your conventional database system. The first collection you need to create is the `Users` collection. This is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This is where you will create all the user’s appointments. 
+For this tutorial, you will need to create two collections in your database. A collection is similar to [tables](https://en.wikipedia.org/wiki/Table_(database)#:~:text=A%20table%20is%20a%20collection,table%20format%20within%20a%20database.&text=In%20relational%20databases%2C%20and%20flat,a%20row%20and%20column%20intersect.) in a [relational](https://en.wikipedia.org/wiki/Relational_database) database system. The first collection you need to create is the `Users` collection. This is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This is where you will create all the user’s appointments. 
 
 To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to retain a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is 3, Fauna will automatically delete any data stored in the database three (3) days after the last date you modified it.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
-After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to rows of data in a table as in your conventional database system.
+After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data in a table as in a relational database system.
 
 #### Creating a Fauna Index
 
 You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
-For this article, you will be creating three indexes; `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
+We will be creating three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
@@ -408,9 +407,9 @@ def list_today_appointments(update, context):
 ```
 
 
-The `list_today_appointments` method is similar to the `list_appointments` method with one striking difference, the `appointment_today_index`. The `appointment_today_index` retrieves only data where the `date_due` field matches the current date.
+The `list_today_appointments` method is similar to the `list_appointments` method with one striking difference, the `appointment_today_index`. This index retrieves only data where the `date_due` field matches the current date.
 
-Copy and paste the code below to create a command handler for both methods above.
+Let's create a command handler for both methods.
 
 ```python
 
@@ -424,8 +423,7 @@ dispatcher.add_handler(CommandHandler("list_today_appointments", list_today_appo
 
 #### Updating Appointments
 
-To enable your bot to update appointments in the database, copy and paste the code below in your python file.
-
+Now you will enable your bot to update appointments in the database.
 
 ```python
 
@@ -473,7 +471,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/update_[0-9]*"), update_ap
 
 #### Deleting Appointments
 
-To enable your bot to delete appointments in the database, copy and paste the code below in your python file.
+Now you will enable your bot to delete appointments in the database.
 
 ```python
 
@@ -509,6 +507,5 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 
 In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
 
-The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT). If you have any questions, don't hesitate to contact me on Twitter: [@](https://twitter.com/LordChuks3)[LordChuks3](https://twitter.com/LordChuks3).
-
+The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT).
 
