@@ -24,7 +24,7 @@ From this point onwards, to follow this step by step guide on building a video p
 
 To build our Django application, we need to develop the frontend and the backend of our video player application. We already have the video application pre-built for us to focus mainly on integrating biometrics with TypingDNA. You can clone the [Github](https://github.com/Nomzy-kush/mine.git) repo and run the application with the commands below:
 
-```bash
+```
 
 git clone https://github.com/Nomzy-kush/mine.git
 
@@ -38,7 +38,7 @@ The structure of our project should be similar to the one in the image below.
 
 We now need to install the `requests` module required by our project to interact with typingdna and the Django framework. Type the command below in your terminal.
 
-```bash
+```
 
 pip install requests
 
@@ -48,7 +48,7 @@ pip install django
 
 Finally, let's run our application to make sure it’s working. Type the below command in your terminal.
 
-```bash
+```
 
 python manage.py runserver
 
@@ -183,7 +183,7 @@ class UserProfile(models.Model):
 
 After updating the `models.py` file with the code above, we need to run migrations for the database. We can do this by typing the commands below in our terminal at the project’s root directory.
 
-```bash
+```
 
 python manage.py makemigrations
 
@@ -195,7 +195,7 @@ We should see the results below if our migrations ran successfully.
 
 ![migrations](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/migrations.png)
 
-Let’s edit the `videos` view in the `views.py` file with the following code to render only a particular user’s videos in the frontend.
+Let’s edit the `videos` view in the views.py` file with the following code to render only a particular user’s videos in the frontend.
 
 
 ```python
@@ -213,7 +213,7 @@ def videos(request):
     return render(request,"videos.html",context)
 
 ```
-Also, we need to update the `register` to create new `UserProfile` objects for every registered user. To do this, edit the `register` view by entering the code below after the line with `user.save`:
+Also, we need to update the `register` to create new `UserProfile` objects for every registered user. To do this, edit the `register` view by entering the code snippet below after the line with `user.save`:
 
 ```python
 
@@ -379,7 +379,7 @@ In the HTML code above, you would notice that at the end of our file, we importe
 
 #### Submitting Typing Patterns To TypingDNA
 
-After creating the enrollment page above, we need to send the collated typing patterns to TypingDNA to be recorded. To do this, we need to integrate the TypingDNA recorder and visualizer into the enroll page to enroll our users. Create an instance of the TypingDNA and AutocompleteDIsabler classes so that you can record the user’s typing patterns as soon as he/she starts typing.
+After creating the enrollment page above, we need to send the collated typing patterns to TypingDNA to be recorded. To do this, we need to integrate the TypingDNA recorder and visualizer into the enroll page to enroll our users. Create an instance of the TypingDNA and Autocomplete-disabler classes so that you can record the user’s typing patterns as soon as he/she starts typing.
 
 Add the code below right after where we imported TypingDNA in the `enroll.html` page.
 
@@ -476,7 +476,7 @@ Next, create a variable to store the captured typing patterns of our users and a
 
 ```
 
-In the code above, we called the `beginAuthentication` function to stop recording the user’s keystrokes by calling the `TypingDNA.stop()`, which allows us to record and analyze the current typing pattern.
+In the code above, we called the`beginAuthentication` function to stop recording the user’s keystrokes by calling the `TypingDNA.stop()`, which allows us to record and analyze the current typing pattern.
 
 We then captured the user’s typing pattern recorded using the `sametext` capture method provided by TypingDNA. There are other TypingDNA methods you can explore on their official docs here [https://api.typingdna.com/#api-capture-methods](https://api.typingdna.com/%23api-capture-methods).
 
@@ -757,7 +757,7 @@ After preparing our `verify.html` page, to start verifying typing patterns, we n
 
  First, we will create two variables, `typingdna` and `auto_complete_dIsabler`, which are instances of the TypingDNA and AutocompleteDisabler classes. This will ensure that as soon as the user starts typing, he/she starts being recorded (as a history of keystroke events).
 
-We also called the`beginAuthentication` function, which told TypingDNA to stop recording the user’s keystrokes using the `TypingDNA.stop()` method to analyze them.
+We also called the `beginAuthentication` function, which told TypingDNA to stop recording the user’s keystrokes using the `TypingDNA.stop()` method to analyze them.
 
 Add the code below right after the TypingDNA importation in the `enroll.html` page.
 
@@ -1163,3 +1163,5 @@ While integrating TypingDNA with Django, we implemented two-factor authenticatio
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/mine.git). Trying out TypingDNA for biometric authentication was very interesting, and I can’t wait to see the amazing things you build with it!
 
 If you have any questions, don't hesitate to contact me on Twitter: [@DoroChurchill](https://twitter.com/DoroChurchill)
+
+
