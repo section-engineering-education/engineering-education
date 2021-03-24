@@ -1,5 +1,5 @@
 ### Introduction
-Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also be utilizing a serverless database system called FaunaDB to build our system which will make your work easier. Now that you know what this article entails, let's get to the building part.
+Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also be utilizing a serverless database system called FaunaDB to build our system, making your work easier. Now that you know what this article entails, let's get to the building part.
 
 #### What is Fauna?
 
@@ -51,7 +51,6 @@ Click on `New Key` to generate a secret key. To create the key, you will need to
 #### Prerequisites
 
 From this point onwards, to follow this step by step guide on building an appointment scheduling telegram bot with fauna, you need to have the following installed:
-
 
 * [Python 3.7 or >3.7](http://python.org/)
 * [Faunadb](https://pypi.org/project/faunadb/)
@@ -507,4 +506,5 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
 
 The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT).
+
 
