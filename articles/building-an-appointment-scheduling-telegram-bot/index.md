@@ -261,7 +261,7 @@ def add_appointment(update, context):
 
 ```
 
-In the code above, you defined a method called `add_appointment` in which you passed `update` and `context` as parameters. In the function, you aved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
+In the code above, you defined a method called `add_appointment` where you passed `update` and `context` as parameters. In the function, you saved the user’s message and `chat_id`. You then made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
 
 Next, you updated the `last_command` field in the user data to save the `add_appointment` command the user sent. You then sent a message requesting the user to enter the name of the appointment and its due date separated by a comma.
 
