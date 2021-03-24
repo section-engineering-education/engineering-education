@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/introduction-to-dynamic-host-configuration/hero.jpg
     alt: DHCP hero image
 ---
-A vast majority of the hosts on the internet are user-end devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured as static by a network administrator or using Dynamic Host Configuration Protocol (DHCP).
+A vast majority of the hosts on the internet are end-user devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured statically by a network administrator or dynamically using Dynamic Host Configuration Protocol (DHCP).
 <!--more-->
 In this article, we will look at DHCP version 4 (DHCPv4) and DHCP version 6 (DHCPv6).
 
@@ -26,8 +26,8 @@ To better understand this article, foundational knowledge of Internet Protocol (
   - [DHCPv4 operation](#dhcpv4-operation)
 - [DHCPv4 DORA process](#dhcpv4-dora-process)
   - [DHCPv4 Discover](#dhcpv4-discover)
-  - [DHCP Offer](#dhcp-offer)
-  - [DHCP Request](#dhcp-request)
+  - [DHCPv4 Offer](#dhcpv4-offer)
+  - [DHCPv4 Request](#dhcpv4-request)
   - [DHCPv4 Acknowledgment](#dhcpv4-acknowledgment)
 - [DCHPv4 lease renewal](#dchpv4-lease-renewal)
 - [DHCPv6](#dhcpv6)
@@ -63,25 +63,25 @@ The client starts this process by sending a broadcast message, also known as *DH
 *DCHPv4 process of assigning IPv4 address*
 
 #### DHCPv4 Discover
-Using the image above, `PC-A` boots up and needs an IP address. It sends a *DHCPv4 Discover* broadcast message to the network to locate a DHCPv4 server.
+Using the image above, `PC-A` boots up and needs an IP address. It sends a **DHCPv4 Discover** broadcast message to the network to locate a DHCPv4 server.
 
-Because `PC-A` has no valid IPv4 information at boot-up, it uses its `MAC` (Media Access Control) address and defaults IP broadcast of `0.0.0.0 0.0.0.0` to communicate with a DHCPv4 server.
+Because `PC-A` has no valid IPv4 information at boot-up, it uses its `MAC` (Media Access Control) address and default IP broadcast of `0.0.0.0 0.0.0.0` to communicate with a DHCPv4 server.
 
-#### DHCP Offer
-When the DHCPv4 server receives the **Discover message** from `PC-A`, it reserves any available IPv4 address for `PC-A`. It then sends a DHCP Offer message back to the client, informing the client of its willingness to lease out an IP address.
+#### DHCPv4 Offer
+When the DHCPv4 server receives the **DHCPv4 Discover** message from `PC-A`, it reserves any available IPv4 address for `PC-A`. It then sends a **DHCPv4 Offer** message back to the client, informing the client about its willingness to lease out an IP address.
 
-#### DHCP Request
-`PC-A` can receive more than one **DHCPv4 offer** message from various servers. Being the client, `PC-A` uses **DHCP Request** to select which DHCP server's offer is found suitable and willing to accept.
+#### DHCPv4 Request
+`PC-A` can receive more than one **DHCPv4 offer** message from various servers. Being a client, `PC-A` uses **DHCPv4 Request** to select which DHCP server's offer is found suitable and is willing to accept.
 
 #### DHCPv4 Acknowledgment
-The server sends the DHCPv4 Acknowledgment message upon receiving the DHCP request message from `PC-A` to verify the lease information and an ICMP ping is issued to that address by `PC-A` to ensure that it is not already in use by another client.
+The server sends the **DHCPv4 Acknowledgment** message upon receiving the **DHCPv4 request** message from `PC-A` to verify the lease information and an ICMP ping is issued to that address by `PC-A` to ensure that it is not already in use by another client.
 
 ### DCHPv4 lease renewal
 DHCP servers do lease out an IP address to a client for an administrative defined period.
 
-Some clients may still need the address even after the defined period. To keep the IP address, the client will issue a **DHCP Request** message to the server that leased out the IPv4 address before the lease ends. This server will respond with a DHCP `Ack` message to renew the lease.
+Some clients may still need the address even after the defined period. To keep the IP address, the client will issue a **DHCP Request** message to the server that leased out the IPv4 address before the lease ends. This server will respond with a **DHCP Acknowledgement** message to renew the lease.
 
-If the client does not receive the **DHCP Acknowledgement** message after a stipulated period, the client issues a fresh DCHP Discover message, and the process above is repeated all over again.
+If the client does not receive the **DHCP Acknowledgement** message after a stipulated period, the client issues a fresh **DCHP Discover** message, and the process above is repeated all over again.
 
 ### DHCPv6
 According to [this](https://tools.ietf.org/html/rfc8415) article, Dynamic Host Configuration Protocol (DHCP) for IPv6 describes an extensive mechanism for configuring nodes with network configuration parameters, IP addresses, and prefixes.
@@ -143,9 +143,9 @@ The client uses this unicast address to reach a DHCPv6 server requesting extra i
 This option is referred to as "stateless" because the DHCPv6 server does not maintain client state information such as addresses that have been assigned and those that are available.
 
 #### Stateful DHCPv6
-Stateful DHCpv6, also known as the **DHCpv6 only**, is like DHCPv4.
+Stateful DHCpv6, also known as **DHCpv6**, which is similar to DHCPv4.
 
-In this option, the router advertisement message informs the client to get all IPv6 addressing information it requires from a dedicated DHCPv6 server.
+In this option, the router advertisement message informs the client to get all IPv6 addressing information required from a dedicated DHCPv6 server.
 
 This addressing information includes the device's global unicast address, prefix, prefix length, DNS server address, and default gateway address.
 
