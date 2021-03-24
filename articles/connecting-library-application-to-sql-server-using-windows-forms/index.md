@@ -287,3 +287,6 @@ In this tutorial, we have learned how to connect an application to a database an
 Don't forget to test out the code to fully understand how it works.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
