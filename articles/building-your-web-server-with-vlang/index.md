@@ -14,7 +14,7 @@ images:
     alt: vlang image 
 ---
 
-They release a lot of new programming languages every year and very few ends up getting noticed or making it to any of the top programming languages lists. One language that has gotten a considerable amount of recognition recently by programmers most especially backend developers is Vlang.
+ A lot of new programming languages are released every year and very few ends up getting noticed or making it to any of the top programming languages lists. One language that has gotten a considerable amount of recognition recently by programmers most especially backend developers is Vlang.
 
 With the rise of statically typed programming languages such as Go and Rust, developers are more interested in languages/frameworks that improve on the tradeoffs of these popular ones, and in this case, Vlang has made some enormous claims. The aim of this article is to:
 
@@ -36,11 +36,11 @@ Let's go through some features of V.
 
 #### Code Style
 
-The V programming language drives programmers to write good code. There’s only one programming style with V unlike languages with similar syntax such as Rust and Golang that have functional and object-oriented styles of writing programs. V claims that cause of its one-style approach to programming, it’s easier for developers in teams to understand, change team members’ code, and build maintainable software.
+The V programming language drives programmers to write good code. There’s only one programming style with V unlike languages such as Rust and Golang. V claims that because of its one-style approach to programming, it’s easier for developers in teams to understand, change team members’ code, and build maintainable software.
 
 #### Safety
 
-V is very strict when it comes to writing safe programs. Some language policies are:
+V is very strict with writing secure, fast and memory-safe programs. Some strict policies of the language are:
 
 - Variables are immutable by default. Let's see how this works:
 
@@ -232,11 +232,11 @@ Finally, to create routes in V, you can either specify the path as an attribute 
 
 You should get something like this on your terminal:
 
-![Building%20your%20Web%20Server%20with%20Vlang%2055ee48a335b145df9af2fe6d5f312905/Untitled.png](/articles/building-your-web-server-with-vlang/v-server.png)
+![vlang server](/articles/building-your-web-server-with-vlang/v-server.png)
 
 Navigate to `[http://localhost:8080](http://localhost:8080)` on your browser and the output will be:
 
-![Building%20your%20Web%20Server%20with%20Vlang%2055ee48a335b145df9af2fe6d5f312905/Untitled%201.png](/articles/building-your-web-server-with-vlang/v-server-runnning.png)
+![running vlang server](/articles/building-your-web-server-with-vlang/v-server-runnning.png)
 
 Exceptional!! You just wrote your first V web server. [Gitly](https://gitly.org/), is an alternative to GitHub/GitLab built with V and Vweb.
 
