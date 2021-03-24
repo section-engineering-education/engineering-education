@@ -11,7 +11,7 @@ To add an image carousel to our website to enhance user experience and improve t
 
 ### Procedure
 ### Step 1 - Creating a new project.
-Open Visual Studio Code then create a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
+Open Visual Studio Code program and make a new folder. In that folder add three files ending with the .html extension, .css extension and .js extension for the HTML,CSS and Javascript files in which you will type the respective codes.
 
 ### Step 2 - Write the HTML code
 Html is like our code's skeleton, so it will lay out the frame of our work onto which we shall continue modifying by using other languages. In this step, we will define containers with our images using the `<div>` tags. We also define our buttons which will enable the user to move through the carousel. We also define the small circles at the bottom of the carousel are also defined. The code has comments just for one to follow through. Dive into the HTML file and write the code as illustrated below.
@@ -81,7 +81,7 @@ In the CSS file, we will style our HTML. We style the containers for the images,
   color: grey;
   font-weight: bold;
   font-size: 19px;
-  transition: 0.6s ease;
+  transition: 0.4s ease;
   border-radius: 0 5px 5px 0;
   user-select: none;
 }
