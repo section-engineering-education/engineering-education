@@ -86,7 +86,7 @@ GUI allows control over the operating system and files. But one still needs CLI 
 ### Drawbacks of GUI
 
 - GUI is not resource optimized. The aim is to make a user-friendly interface, and as such, it uses more computer memory.
-- Applications based on GUI require more Ram to run than those based on other interface types.
+- Applications based on GUI require more RAM to run than those based on other interface types.
 - Users need to use the Help file to find hidden commands.
 - Compared to other interface types, GUI uses more processing power.
 
@@ -96,9 +96,9 @@ This article has successfully explained how GUI differs from CLI. The notable di
 
 ### References 
 
-https://www.bbc.co.uk/bitesize/guides/zwb4jxs/revision/3
-https://www.ionos.com/digitalguide/websites/web-development/what-is-a-gui/
-https://www.w3schools.com/whatis/whatis_cli.asp
+1. [User interfaces](https://www.bbc.co.uk/bitesize/guides/zwb4jxs/revision/3)
+2. [What is a graphical user interface (GUI)?](https://www.ionos.com/digitalguide/websites/web-development/what-is-a-gui/)
+3. [What is Command Line Interface (CLI)?](https://www.w3schools.com/whatis/whatis_cli.asp)
 
 ---
 Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
