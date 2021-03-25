@@ -22,15 +22,15 @@ In this article, we aim to accomplish the following tasks:
 Let's now get started with setting up a new project.
 
 - Open XCode.
-- Now, click on "Create a New XCode Project"
+- Now, click on "Create a New XCode Project".
 
 ![Creating a new project](/engineering-education/ios-tasks-app-using-swift/create-new-project.png)
 
-- Let us use the iOS > App template.
+- Let's use the iOS > App template.
 
 ![iOS App Template](/engineering-education/ios-tasks-app-using-swift/template.png)
 
-- Let us name our app "AwesomeToDo". Select the other settings as shown below.
+- Let's name our app "AwesomeToDo". Select the other settings as shown below.
 
 ![Initial App Settings](/engineering-education/ios-tasks-app-using-swift/app-settings.png)
 
