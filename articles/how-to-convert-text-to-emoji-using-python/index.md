@@ -1,16 +1,16 @@
-## HOW TO CONVERT TEXT TO EMOJI USING PYTHON
+# HOW TO CONVERT TEXT TO EMOJI USING PYTHON
 
 ![Hero image](/engineering-education/how-to-convert-text-to-emoji-using-python/hero.jpg)
 
 ### Introduction
-Emojis are now used by almost all on social media in some form or another.
-As a programmer, have you ever considered writing code that produces emojis in Python? Well, this article is for you.
-In this tutorial, you will learn how to build an emoji converter from text using Python code and dictionaries; which store data as key-value pairs (This is another use for dictionaries in python programming).
-Python is a high-level programming language that is quick to read and execute; it has a vast library that can perform other programming tasks such as changing files and text searching.
+Emojis are frequently used on social media to communication expressions and emotions. As a programmer, have you ever considered writing code that produces emojis in Python? Well, this article is for you.
+
+In this tutorial, you will learn how to build an emoji converter from text using dictionaries in Python, which store data as key-value pairs. Python is a high-level programming language that is quick to read and execute. It has a vast library that can perform other programming tasks such as changing files and text searching.
+
 It is also a scripting language and is often used to create Web applications, dynamic Web content automation, and Artificial intelligence.
 
 ### Table of content
-- perequisites
+- Prerequisites
 - Variables
 - Strings and Formatted strings
 - The IF and ELSE statement
@@ -19,7 +19,7 @@ It is also a scripting language and is often used to create Web applications, dy
 - Text to emoji converter
 - conclusion
 
-### prerequisites
+### Prerequisites
 As a beginner in Python, you can use your browser to download the most recent version of [Python](https://www.python.org/ftp/python/3.9.2/python-3.9.2-macosx10.9.pkg) and install it on your computer. 
 You will also need to download a python code editor more preferable [PyCharm](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac), which is an integrated development environment for professional developers, and it's also student-oriented, friendly, and easy to use.
 
