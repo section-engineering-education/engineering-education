@@ -1,8 +1,23 @@
-There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](https://www.section.io/engineering-education/grid-search/) and a basic example of its implementation. This time, we seek to understand another method of hyperparameter optimization known as random search. We shall introduce random search as well as go through a simple method of its implementation in Python.
+ ---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/random-search/
+title: Using Random Search to Optimize Hyperparameters 
+description: Hyperparameter tuning is a significant step in the process of training machine learning and deep learning models. In this tutorial, we will discuss the random search method to obtain the set of optimal hyperparameters. Going through the article should help one understand the algorithm and its pros and cons. Finally, we will implement the same in Python using the library Scikit-Learn.
+author: collins-ayuya
+date: 2021-03-25T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero](/engineering-education/random-search/hero.jpg)
+ - url: /engineering-education/random-search/hero.jpg
+   alt: Random search hyperparameter optimization image
 
-[Source](https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80)
+---
+
+There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](/engineering-education/grid-search/) and a basic example of its implementation. This time, we seek to understand another method of hyperparameter optimization known as random search. We shall introduce random search as well as go through a simple method of its implementation in Python.
+
 
 ### Contents
 
@@ -50,7 +65,7 @@ We used the sci-kit learn (sklearn) library when implementing grid search, parti
 
 #### Random Forest
 
-Since we shall use a random forest regressor during random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](https://www.section.io/engineering-education/ensemble-learning/).
+Since we shall use a random forest regressor during random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](/engineering-education/ensemble-learning/).
 We have explained why a random forest is a “forest” but not why it is considered random. The random nature of a random forest can be attributed to a couple of concepts. Firstly, the samples of training observations when building trees are taken randomly. Secondly, when it comes to the splitting of nodes, random subsets of features are used.
 
 ##### Random forest parameters
