@@ -5,6 +5,52 @@ Have you ever wanted to build a telegram bot that would allow you to schedule or
 
 [Fauna](https://docs.fauna.com/fauna/current/) is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
 
+#### Prerequisites
+
+To follow along with this tutorial, you need to have:
+
+* A good understanding of the [Python](http://python.org/).
+* [Faunadb](https://pypi.org/project/faunadb/), [telegram](https://pypi.org/project/telegram/) and [python_telegram_bot](https://pypi.org/project/python-telegram-bot/) installed.
+
+#### Installing the requirements
+
+To install the prerequisites, you simply need to run the below commands in your command-line interface.
+
+```bash
+
+pip install faunadb
+
+pip install telegram
+
+pip install python_telegram_bot
+
+```
+
+To check if Fauna installed correctly, run the sample python code provided in Fauna’s Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
+
+```python
+
+from faunadb import query as q
+
+from faunadb.objects import Ref
+
+from faunadb.client import FaunaClient
+
+
+client = FaunaClient(secret="your-secret-here")
+
+
+indexes = client.query(q.paginate(q.indexes()))
+
+
+print(indexes)
+
+
+```
+If your result after running is similar to the image below, then you are good to go.
+
+![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
+
 ### Creating A Fauna Database
 
 To make use of Fauna, you have to signup on their website [here](https://dashboard.fauna.com/accounts/register). After signing up, you can create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Provide a name for your database and save it.
@@ -48,55 +94,7 @@ Click on `New Key` to generate a secret key. To create the key, you will need to
 
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
-#### Prerequisites
-
-From this point onwards, to follow this step by step guide on building an appointment scheduling telegram bot with fauna, you need to have the following installed:
-
-* [Python 3.7 or >3.7](http://python.org/)
-* [Faunadb](https://pypi.org/project/faunadb/)
-* [telegram](https://pypi.org/project/telegram/)
-* [python_telegram_bot](https://pypi.org/project/python-telegram-bot/)
-
-#### Installing the requirements
-
-To install the prerequisites, you simply need to run the below commands in your command-line interface.
-
-```bash
-
-pip install faunadb
-
-pip install telegram
-
-pip install python_telegram_bot
-
-```
-
-To check if Fauna installed correctly, run the sample python code provided in Fauna’s Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
-
-```python
-
-from faunadb import query as q
-
-from faunadb.objects import Ref
-
-from faunadb.client import FaunaClient
-
-
-client = FaunaClient(secret="your-secret-here")
-
-
-indexes = client.query(q.paginate(q.indexes()))
-
-
-print(indexes)
-
-
-```
-If your result after running is similar to the image below, then you are good to go.
-
-![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
-
-# Creating the Telegram Bot
+### Creating the Telegram Bot
 
 #### Starting a Conversation with BotFather
 
@@ -142,9 +140,7 @@ from faunadb.client import FaunaClient
 
 ```
 
-We are importing `telegram`, telegram libraries, the python `datetime` module, and `faunadb` libraries, all of which we will be utilizing while building the bot.
-
-Now you need to create a dispatcher and updater for your bot. Copy and paste the code below after your imports in your python file.
+Now let's create a dispatcher and updater for your bot. Copy and paste the code below after your imports in your python file.
 
 ```python
 
@@ -160,7 +156,7 @@ dispatcher = updater.dispatcher
 
 The dispatcher handles and processes the received message while the updater tracks, monitors, and reads messages sent to the bot and delivers them to the dispatcher.
 
-Now you need to write a script to start your bot. Copy and paste the code below in your python file.
+Now let's start our bot using the python code below.
 
 ```python
 
@@ -242,7 +238,7 @@ Open your bot and start it by typing in the `/start` command. You will now recei
 
 #### Creating New Appointments
 
-To enable your telegram bot to create new appointments in the fauna database, copy and paste the code below in your python file.
+Now we will enable your telegram bot to create new appointments in the fauna database.
 
 ```python
 
@@ -263,7 +259,7 @@ In the `add_appointment` method, you made use of the `chat_id` to query the FQL 
 
 Next, you updated the `last_command` field in the user's data to save the `add_appointment` command the user sent. You then sent a message requesting the user to enter the name of the appointment and its due date separated by a comma.
 
-You have to create another method called `echo` that will collect the name and the due date for the new appointment then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
+Now you have to create another method called `echo` that will collect the name and the due date for the new appointment then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
 
 
 ```python
@@ -307,7 +303,7 @@ In the `echo` method you made use of the `chat_id` to query the FQL client using
 
 Next, you checked if the `last_command` in the data retrieved is an `add_appointment` command. If it is, you proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
 
-Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when a message the user enters a message( a message is any text that does not start with `/`).
+Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when the user enters a message( a message is any text that does not start with `/`).
 
 > Note: The echo method only works when the last command was an `add_appointment` command.
 
@@ -323,7 +319,7 @@ dispatcher.add_handler(MessageHandler(Filters.text, echo))
 
 #### Listing Appointments
 
-To list all the appointments saved for a user, copy and paste the code below in your python file.
+The following part will provide the feature of listing all the appointments saved for a user.
 
 ```python
 
