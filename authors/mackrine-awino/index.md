@@ -1,5 +1,8 @@
 ---
-title:mackrinee Awino
+title: Mackrine Awino
 type: engineering-education/author
+linkedin: https://www.linkedin.com/in/awino/
+github: https://github.com/awinomackrine
 ---
-A third year computer science student at The University Of Nairobi. Enjoys computer networking and software engineering.
+
+Mackrine is a final year student at The Univerisity Of Nairobi. She is a mobile application developer who has been actively leading the tech-based community at the University.
