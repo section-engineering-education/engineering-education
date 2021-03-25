@@ -1,52 +1,27 @@
-Author:
-
-Subject:
-
-
-
-
 
 ### Introduction to Cryptography
 Cryptography refers to technologies that secure information and communication.
-This is achieved by using codes that ensure that the information reaches only the intended recipients. Codes are generated using algorithms and mathematical calculations
- 
- 
+This is achieved by using codes that ensure that the information reaches only the intended recipients. Codes are generated using algorithms and mathematical calculations.  
 
 Cryptography is derived from the word "crypt" which means to hide and "graphy" which means to write.
 
 ### Objectives of Modern Cryptography
-1. Privacy
- 
- Cryptography ensures that the information is not understood by any unintended recipients therefore privacy is to be maintained.
-
- 2. Integrity
-
- Cryptography ensures that information is not interfered with or even interferes with the sender from receiver to receiver in storage or transmission.
-
- 3. Non-redemption
- The creators of information cannot deny their intention to construct the transit of information from a sender to receiver at a later stage of the communication process.
-
- 4. Authenticity
-
- Cryptography ensures that the sender and recipient of information can identify each other and determine the origin and intended destination of the information.
+- **Privacy** - Cryptography ensures that the information is not understood by any unintended recipients therefore privacy is to be maintained.
+- **Integrity**- Cryptography ensures that information is not interfered with or even interferes with the sender from receiver to receiver in storage or transmission.
+- **Non-redemption** - The creators of information cannot deny their intention to construct the transit of information from a sender to receiver at a later stage of the communication process.  
+- **Authenticity** - Cryptography ensures that the sender and recipient of information can identify each other and determine the origin and intended destination of the information.
 
  ### Cryptography Process
-
- Cryptography involves the processes of encryption and decryption.
-  ![Cryptographic process](https://www.freepik.com/free-photos-vectors/cryptography)
+ 
 - Encryption
 
-Encryption is the process of manipulating a piece of information that usually occurs in the form of plain text using code or encrypting algorithms before transit. This ensures that the information is converted into a form that the unintentional recipient cannot understand.
+Encryption is the process of manipulating a piece of information that usually occurs in the form of plain text using code or encrypting algorithms before transit. This ensures that the information is converted into a form that the unintentional recipient cannot understand.  
 
 The encrypted information is then called ciphertext. The cipher-text is non-readable hence the transit.
-
-![Encryption](https://unsplash.com/s/photos/data-encryption)
 
 - Decryption
 
 Decryption converting cipher-text to plain text. This is done at the receiving end using code and decryption keys. Special software can also be used for decryption using algorithms to crack decryption.
-
-![Decryption](https://www.google.com/search?q=decryption+pictures&sxsrf=ALeKk01yHWyaDCGOf1NuA3sQmpQ5w7JTIg:1616007151195&tbm=isch&source=iu&ictx=1&fir=L9SEM_iojITeyM%252CtHP9fH7arWebsM%252C_&vet=1&usg=AI4_-kTKQRAsOTdmK-KnkhBGUIV8VKQkPw&sa=X&ved=2ahUKEwjr8c3h_7fvAhXKWRUIHS1_Cu0Q9QF6BAgREAE#imgrc=L9SEM_iojITeyM)
 
 ### Cryptographic Algorithms
 
@@ -58,13 +33,11 @@ Three known types of cryptography include:
 - Symmetric-key cryptography / secret key cryptography
 - hash function -
 - Asymmetric / Public-Key Cryptography
+- 
 ### 1. Symmetric-Key Cryptography
-
  
-Symmetric-key cryptography can also be referred to as secret-key cryptography.
- This includes the use of the same secret key for both encryption and decryption. The key is known only to the sender and sender of the message. The sender uses this key to encrypt the message that currently converts it to cipher-text in plain text that is unreadable and passes it on to the recipient. A sender and receiver communicating via symmetric encryption must exchange the key so that it can be used in decryption of the message back to plain text for readability.
-
-
+Symmetric-key cryptography can also be referred to as secret-key cryptography.  
+This includes the use of the same secret key for both encryption and decryption. The key is known only to the sender and sender of the message. The sender uses this key to encrypt the message that currently converts it to cipher-text in plain text that is unreadable and passes it on to the recipient. A sender and receiver communicating via symmetric encryption must exchange the key so that it can be used in decryption of the message back to plain text for readability.
 
 There are two types of symmetric encryption:
 
@@ -77,18 +50,15 @@ Bit lengths of data are encrypted into blocks of electronic data using specific 
 
 The data is encrypted because it streams instead of being retained in the system's memory to wait for a complete block. [More](https://en.wikipedia.org/wiki/Stream_cipher)
 
-Some common types of symmetric-key cryptography are: .htm) and [IDEA](https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm)
+Some common types of symmetric-key cryptography and [IDEA](https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm)
 
 AES is a symmetric block cipher that encrypts electronic data specifically to prevent unauthorized access. It consists of three block ciphers; AES-128, AES-192 and AES-256.
 
 ### 2. Asymmetric Cryptography
 
-
-It can also be called public cryptography
-Public-key cryptography uses two keys, which are a public and a private key.
-The public key can be freely distributed while the private key remains a mystery.
-
-The public key is used for cipher-text encryption of plaintext, while the private key is used for decryption of cipher-text into plain-text.
+It can also be called public cryptography. Public-key cryptography uses two keys, which are a public and a private key.
+The public key can be freely distributed while the private key remains a mystery.  
+The public key is used for cipher-text encryption of plaintext, while the private key is used for decryption of cipher-text into plain-text.  
 
 Some types of public-key cryptography include [RSA](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm), the elliptic curve digital signature algorithm.
  ]
