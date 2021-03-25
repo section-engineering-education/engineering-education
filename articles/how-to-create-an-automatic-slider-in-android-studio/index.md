@@ -406,7 +406,6 @@ Run the application to test if this works.
 
 ![Automatic slider timer](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
 
-
 ### Conclusion
 I hope this guide helped you to create and implement sliders in your application. For reference, you can download the project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
 
