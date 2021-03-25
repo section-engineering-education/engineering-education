@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/
-title: Connecting library application to SQL Server using Windows forms
+title: Connecting Library Application to SQL Server using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C#. We will also build a simple project using Windows forms and connect it to a database.
 author: mohamed-alghadban
-date: 2021-03-24T00:00:00-22:15
+date: 2021-03-24T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,15 @@ images:
   - url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
     alt: Windows forms example image c#
 ---
-Windows forms are one of the best tools used in making applications. With windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database.
+Windows forms are one of the best tools used in making applications. With Windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database.
 <!--more-->
-According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), Windows Forms is a UI framework for building Windows desktop apps. It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality such as drag-and-drop placement of visual controls makes it easy to build desktop apps.
+According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), Windows Forms is a UI framework used for building Windows desktop apps. 
 
-In this tutorial, we will connect a library application to a SQL database server using Windows forms. We will use a windows forms project to add new forms, edit or delete from the library. Also, we will manage the authors, the stores & the publishers in the database, and display the information of each attribute & refresh it each time, a change accrues.
+It provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio. Functionality such as drag-and-drop placement of visual controls makes it easy to build desktop apps.
+
+In this tutorial, we will connect a library application to a SQL database server using Windows forms. We will use a Windows forms project to add new forms, edit, or delete from the library. 
+
+We will also manage the authors, the stores & the publishers in the database, and display the information of each attribute & refresh it each time a change occurs.
 
 ### Prerequisites
 As a prerequisite, the reader must have the following:
@@ -45,7 +49,7 @@ As a prerequisite, the reader must have the following:
 ### Installation guide
 - To install Visual Studio and setup the work environment, you can check [this](https://www.geeksforgeeks.org/setting-environment-c-sharp/) article on how to set up the C# environment in Visual Studio.
 - To install SQL Server, you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
-- If you are new to Windows forms, you can check [this](/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial which would help you understand the basic concepts.
+- If you are new to Windows forms, you can check [this](/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial which will help you understand the basic concepts.
 
 ### Creating the Pubs database
 **Pubs** is a database that is used by programmers as a learning tool to fetch data using queries. It contains a large amount of information about books, authors, publishers, and store sales.
@@ -57,18 +61,20 @@ You can find the pubs database [here](https://github.com/microsoft/sql-server-sa
 After copying the database query, paste it as a new query and execute it. You should be able to see the name of the database `pubs` to the left of your screen.
 
 ![CreatingPubs](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/CreatingPubs.png)
+
 *Creating Pubs database*
 
 ### Application main form
 In this tutorial, we will build an end-to-end application using Windows forms for managing books in a library by a librarian.
 
-We will use a project contains a main form, also add 3 other forms for adding, editing, and deleting books from the database.
+We will use a project which contains a main form, we also add 3 other forms used for adding, editing, and deleting books from the database.
 
 You can download the project from [here](https://github.com/mohamedgh16/Library-app-code-in-windowsforms).
 
-On opening the project, firstly we will work on the main form. As you can see, it has 3 buttons, each button for a different operation.
+Upon opening the project, we will work on the main form first. As you can see, it has 3 buttons, each button for a different operation.
 
 ![Mainform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Mainform.png)
+
 *Main form*
 
 Add a refresh button and 3 more other tabs, next to the `Titles` tab to use later. Also, add 4 more columns to the `DataGridView` to show the data of the library.
@@ -76,11 +82,13 @@ Add a refresh button and 3 more other tabs, next to the `Titles` tab to use late
 Also, don't forget to change the colors of the forms and the buttons to whatever suits your taste.
 
 It should look like this:
+
 ![Afterformwork](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Afterformwork.png)
+
 *Mainform with other tabs*
 
 ### Database connection
-In order to connect to SQL server in C#, we will be using the command:
+In order to connect to the SQL server in C#, we will be using the following command:
 
 ```csharp
 using System.Data.SqlClient; 
@@ -139,9 +147,10 @@ foreach (DataRow dr in dt.Rows)
 #### Add form
 Adding a new book will require the `titleID` `titleName` `titletype` `pubid` `pubbdate` & the `price` of the book.
 
-We will request the above information from the user and insert them into the database using the `sqlCommandQueryReader` method.
+We will request the information above from the user and insert it into the database using the `sqlCommandQueryReader` method.
 
 ![Addform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Addform.png)
+
 *Add form - to collect information from the user*
 
 ```csharp
@@ -163,11 +172,12 @@ private void addButton_Click(object sender, EventArgs e) {
 ```
 
 #### Edit form
-Editing a book will require the current `oldid` & the `oldname` of the book,along with the new `Titlename` `Titletype` & `Titleprice` of the book.
+Editing a book will require the current `oldid` & the `oldname` of the book, along with the new `Titlename`, `Titletype` & `Titleprice` of the book.
 
 We will request the information from the user and edit them inside of the database using the `sqlCommandQueryReader` method.
 
 ![Editform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Editform.png).
+
 *Edit form - to edit information in the database*
 
 ```csharp
@@ -192,11 +202,12 @@ private void Edit_Click(object sender, EventArgs e) {
 ```
 
 #### Delete form
-Deleting a book will require only the `titleid`.
+Deleting a book will require only the `titleid` function.
 
 We will request the `id` from the user and delete the book from the database using the `sqlCommandQueryReader` method.
 
 ![Deleteform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Deleteform.png)
+
 *Delete form - to delete information from the database*
 
 ```csharp
@@ -214,7 +225,7 @@ private void Delbu_Click(object sender, EventArgs e) {
 ```
 
 #### Refresh button
-The `Refresh` button will display the latest information from the database. As and when this button is clicked, it fetches the latest information from the database, and displays it here.
+The `Refresh` button will display the latest information from the database. When this button is clicked, it will fetch the latest information from the database, and displays it here.
 
 ```csharp
 private void refresh_Click(object sender, EventArgs e) {
@@ -234,6 +245,7 @@ private void refresh_Click(object sender, EventArgs e) {
 The author's tab will display the `au_id`, `au_fname`, `phone`, `address`, `city`, and `count` of each book that the author wrote.
 
 ![Authors](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Authors.png)
+
 *Author tab - to display author related information*
 
 ```csharp
@@ -259,6 +271,7 @@ foreach (DataRow dr in dt3.Rows)
 The `Publisher` tab will display the information of the `publishers` using the `pub_id`.
 
 ![Publishers](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Publishers.png)
+
 *Publishers tab - to display information related to the publisher*
 
 ```csharp
@@ -283,6 +296,7 @@ private void checkpub_Click(object sender, EventArgs e) {
 The `Store` tab will display the discounts available using a `left outer join` Query.
 
 ![Store](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Store.png)
+
 *Store tab - to display information about the store and discount*
 
 ```csharp
@@ -296,7 +310,7 @@ foreach (DataRow dr in q55.Rows) {
 ```
 
 ### Conclusion
-In this tutorial, we have learned how to connect an application to a database and convert any `string` to a SQL query. We have also learned how to `add`, `edit`, and `delete` a book from the database and display the information of the book authors, publishers & the discounts of each store.
+In this tutorial, we have learned how to connect an application to a database and convert any `string` to a SQL query. We have also learned how to `add`, `edit`, and `delete` a book from the database and display the information of the book authors, publishers, & the discounts of each store.
 
 Don't forget to test out the code to fully understand how it works.
 
