@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/deciding-between-mariadb-and-mysql/
 title: Choosing Between MariaDB and MySQL
 description: This tutorial outlines the key differences and similarities of MariaDB and MySQL. It also discusses the unique features of these database frameworks.  
-author: 
+author: ernest-mwangi
 date: 2021-03-17T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
@@ -30,22 +30,22 @@ MariaDB is available under the [General Public License](https://www.gnu.org/lice
 MariaDB server exists in two editions; [MariaDB Community Server](https://mariadb.com/docs/features/mariadb-community-server/) and [MariaDB Enterprise Server](https://mariadb.com/docs/features/mariadb-enterprise-server/). You can download, modify and use the MariaDB Community Server for free. MariaDB also allows you to have the client and server programs on different hosts.
 
 ### An overview of MySQL
-[MySQL](https://www.mysql.com/) was developed as a Relational Database Management System (RDBMS). RDBMS is a model that structures data into columns and rows. A primary key distinctively identifies each row for the use of SQL jargon. These keys are pegs used by tables to outline a relation to a particular row. A `foreign key` allows a table to relate to another database table.
+[MySQL](https://www.mysql.com/) was developed as a Relational Database Management System (RDBMS). RDBMS is a model that structures data into columns and rows. A primary key distinctively identifies each row. These keys are "pegs" used by tables to outline a relation to a particular row. A `foreign key` allows a table to relate to another database table.
 
 ### Key features of MariaDB framework
-- Backward compatibility - MariaDB data files are binary compatible with the MySQL version. Also, MySQL and MariaDB client protocols are compatible.
+- Backward compatibility - MariaDB data files are binary compatible with MySQL. Also, MySQL and MariaDB use similar client protocols.
 - MariaDB is an open-source software that is developed and maintained by the community.
-- It is based on MySQL community version and a [Percona Server](https://www.percona.com/software/mysql-database/percona-server).
+- MariaDB is based on MySQL community version and a [Percona Server](https://www.percona.com/software/mysql-database/percona-server).
 - MariaDB supports many different SQL statements, rules, procedures, functions, modes, and server variables. It ships with various plugins such as the MariaDB audit plugin.
 - It has new storage engines such as [XtraDB](https://mariadb.com/kb/en/about-xtradb/), [PBXT](https://mariadb.com/kb/en/pbxt-storage-engine/), [FederatedX](https://mariadb.com/kb/en/about-federatedx/).
 - MariaDB has various new options, extensions, bug fixes, and extensions.
 
 ### Key features of MySQL Framework
-- Scalability and flexibility - MySQL allows multi-threading which makes it scalable. In other words, it can manage any amount of data. MySQL's flexibility also supports many applications.
-- High performance - MySQL is a fast database management system with numerous benchmark tests. It is more reliable and cheap due to its unique storage engine architecture that supports high performance, unlike other databases. It performs efficiently without losing crucial functions. It has various cache memories.
+- Scalability and flexibility - MySQL allows multi-threading which makes it scalable. In other words, it can manage a huge amount of data. MySQL's flexibility also supports many applications.
+- High performance - MySQL is a fast database management system with numerous benchmark tests. It is more reliable and cheap due to its unique storage engine architecture that supports high performance. It performs efficiently without losing crucial functions. Furthermore, it has various cache memories.
 - MySQL is easy to use. You only need basic knowledge of SQL to interact and write code using MySQL.
-- MySQL uses a client/server architecture. In such architectures, there is a database server and many clients who communicate with the server. Programs can, therefore, save and retrieve a significamount of data.
-- MySQL is secure. It consists of strong data security that protects sensitive data from malicious people. MySQL encrypts all passwords.
+- MySQL uses a client/server architecture. This architecture supports communication between the server and many clients. Programs can, therefore, save and retrieve a significant amount of data.
+- MySQL is secure. It consists of strong data security layers that protect sensitive data from malicious people. MySQL usually encrypts all passwords.
 
 ### Key differences between MariaDB and MySQL
 
@@ -54,11 +54,11 @@ MariaDB server exists in two editions; [MariaDB Community Server](https://mariad
 | Storage engines| It contains 12 new engine stores that do not exist in MySQL. | It has fewer storage options than MariaDB. |
 | Speed improvements | MariaDB has improved speed. | MySQL is not as fast as MariaDB. |
 | Larger, faster connection pool | It has an advanced connection pool that can run and faster and support more than [200,000](https://mariadb.com/kb/en/incompatibilities-and-feature-differences-between-mariadb-103-and-mysql-57/) connections. | It cannot manage 200,000 connections at a time. |
-| New extensions/ features | MariaDB has new extensions and features, including [WITH](https://mariadb.com/kb/en/with/), [JSON](https://mariadb.com/kb/en/json-functions/), [KILL](https://mariadb.com/kb/en/mysql_kill/) statements. | The new features found in MariaDB do not exist in MySQL. |
-| Priority code | MySQL uses propriety code in the Enterprise Edition. | MariaDB does not allow access to propriety content as it is a closed source. |
+| New extensions/ features | MariaDB has new extensions and features, including [WITH](https://mariadb.com/kb/en/with/), [JSON](https://mariadb.com/kb/en/json-functions/), [KILL](https://mariadb.com/kb/en/mysql_kill/) statements. | The new features found in MariaDB are unavailable in MySQL. |
+| Priority code | MySQL uses propriety code in the Enterprise Edition. | MariaDB does not allow access to propriety content. |
 
 ### Conclusion
-MariaDB offers better performance with more updates and an open-source feature. On the other hand, MySQL has better security features and a strong following globally. Therefore, this comparison allows you to choose which database server suits your needs. 
+MariaDB offers better performance with more updates and an open-source feature. On the other hand, MySQL has better security features and a strong following globally. Therefore, this comparison allows you to choose the database server that suits your needs. 
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
