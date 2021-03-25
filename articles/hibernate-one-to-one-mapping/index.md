@@ -565,10 +565,5 @@ By covering and implementing these operations, the reader will be more confident
 
 
 
-
-
-
-
-
-
-
+---
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
