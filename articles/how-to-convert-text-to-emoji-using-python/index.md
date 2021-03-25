@@ -24,10 +24,10 @@ As a beginner in Python, you can use your browser to download the most recent ve
 You will also need to download a python code editor more preferable [PyCharm](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac), which is an integrated development environment for professional developers, and it's also student-oriented, friendly, and easy to use.
 
 ### Variables
-Variables are the most fundamental concepts in programming, particularly Python. Variables are labels that signify where you can store data in your computer memory, and they may also contain values. They can store simple values like strings, integers, and Boolean values. Variables should be written in lower case, preferably.
+Variables are the most fundamental concepts in programming, particularly Python. Variables are labels that signify where you can store data in your computer memory, and they may also contain values. They can store simple values like strings, integers, and Boolean values. Variables should always be in lowercase, preferably.
 
 ### Strings and Formatted string
-Strings are a sequence of characters. you define strings by both double (“ ”) and single (‘ ’)apostrophe signs. Formatted strings are helpful in situations where you want to generate some text with your variables. Formatted strings make it easier for a user and reader to visualize the string concatenation in their head and output. To define Formatted strings, prefix your code with an ‘f’ and use curly braces/brackets {} to insert values in your strings, using the ‘+’ sign anastomose the strings together.
+Strings are a sequence of characters. You define strings by both double (“ ”) and single (‘ ’)apostrophe signs. Formatted strings are helpful in situations where you want to generate some text with your variables. Formatted strings make it easier for a user and reader to visualize the string concatenation in their head and output. To define Formatted strings, prefix your code with an ‘f’ and use curly braces/brackets {} to insert values in your strings, using the ‘+’ sign anastomose the strings together.
 See example below
 
 ```Python
@@ -72,7 +72,7 @@ print(name + " likes " + favourite_colour)
 Check your terminal to see the result.
 
 ### Dictionary
-Data values are stored in key-value pairs using dictionaries. A dictionary is a list of objects that can be rearranged and they do not repeat. you write the keys and values in dictionaries in curly brackets. The key name refers to dictionary objects, which are presented in keys;value pairs. Data values are stored in dictionaries, which are an ordered list of data values.
+Dictionaries stores data values in key pairs. A dictionary is a list of objects that can be rearranged without repeating its data values. You write the keys and values in dictionaries in curly brackets, it is an ordered list of data values. The key name refers to dictionary objects, which are presented in keys; value pairs.
 
 ```Python
 details = { "brand": "Ford",
@@ -84,7 +84,7 @@ print(details.get("year"))
 ```
 
 In the above illustration, you can use the `.get()` method to get values stored in a dictionary.
-The  `.update()` methods will update the items from an argument. If the item does not exist, then the item will be added to the dictionary. Other methods you can use are:
+The  `.update()` methods will update the items from an argument. If the item does not exist, then it will add the item to the dictionary. Other methods you can use are:
 `.pop()` this method removes the item with the specific key name
 `.del()` removes the item with the specified key name
 `.clear()`method empties the dictionary
@@ -94,7 +94,7 @@ To determine how many items a dictionary has, use the `print(len(details))`
 
 ### Text to emoji converter
 You may believe that printing emojis would require a complex algorithm. However, let me assure you that this is not the case; writing the code to convert texts to emoji is straightforward. This is another excellent application of using a dictionary.
-The first step is to call the input function stored in a string. Next, you will call the `.split(“ ”)` method. This method goes through this string, and anywhere it finds a space, it use it to separate this string into multiple words and return it as a list. Also, you define a dictionary for mapping special characters into emojis features.  you will then add key values of the pair and map it to a specific emoji character.
+The first step is to call the input function stored in a string. Next, you will call the `.split(“ ”)` method. This method goes through this string, and anywhere it finds a space, it uses it to separate this string into multiple words and return it as a list. Also, you define a dictionary for mapping special characters into emojis features.  you will then add key values of the pair and map it to a specific emoji character.
 You can press Ctrl, Command, and Space key on your keyboard to bring out the emoji box on your Mac System. On your Windows System, press and hold the Window button and either the  Fullstop (.) or semicolon (;) until you see the emoji picker appear.
 Finally, You will then loop through the string using the `.get()` method.
 See the example below.
