@@ -1,5 +1,5 @@
 ### Introduction
-Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also be utilizing a serverless database system called FaunaDB to build our system, making your work easier. Now that you know what this article entails, let's get to the building part.
+Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier. Now that you know what this article entails, let's get to the building part.
 
 #### What is Fauna?
 
@@ -47,13 +47,13 @@ print(indexes)
 
 
 ```
-If your result after running is similar to the image below, then you are good to go.
+If your result after running is like the image below, then you are ready.
 
 ![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
 
 ### Creating A Fauna Database
 
-To make use of Fauna, you have to signup on their website [here](https://dashboard.fauna.com/accounts/register). After signing up, you can create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Provide a name for your database and save it.
+To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register). After that, you can create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Provide a name for your database and save it.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
@@ -61,23 +61,23 @@ To make use of Fauna, you have to signup on their website [here](https://dashboa
 
 For this tutorial, you will need to create two collections in your database. A collection is similar to [tables](https://en.wikipedia.org/wiki/Table_(database)#:~:text=A%20table%20is%20a%20collection,table%20format%20within%20a%20database.&text=In%20relational%20databases%2C%20and%20flat,a%20row%20and%20column%20intersect.) in a [relational](https://en.wikipedia.org/wiki/Relational_database) database system. The first collection you need to create is the `Users` collection. This is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This is where you will create all the user’s appointments. 
 
-To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to retain a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is 3, Fauna will automatically delete any data stored in the database three (3) days after the last date you modified it.
+To create a collection, click on `CREATE COLLECTION` then provide information for the required fields. It will require you to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want Fauna to keep a historical record of any data in that collection. The `TTL` refers to an expiry date for data in the collection. For example, if the `TTL` is 3, Fauna will auto-delete any data stored in the database three (3) days after the last date you modified it.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
-After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data in a table as in a relational database system.
+After saving the collections you just created, you will notice there are no documents in your collections. A document is like [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data in a table as in a relational database system.
 
 #### Creating a Fauna Index
 
 You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
-We will be creating three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
+We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
-After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this particular index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to be able to browse.
+After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
 
-For the `users_index`, we will use the `id` field as the terms. Also make sure you tick the unique checkbox so the data entered is unique. 
+For the `users_index`, we will use the `id` field as the terms. Also, make sure you tick the unique checkbox so the data entered is unique. 
 For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
@@ -202,9 +202,9 @@ def start(update, context):
 
 In the code above, you created a function called `start` then passed `update` and `context` as parameters. `update` is the telegram user’s data that is automatically passed from the dispatch handler. `context` is the bot instance passed from the dispatch handler. 
 
-You then collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, you send a welcome message. Else,  you create a user with the information provided.
+Then, you collected the `chat_id`, `first_name`, and `username` from the updater then made a request to the FQL (Fauna Query Language) client using the `users_index` to check if the user with the `chat_id` already exists in the database. If the user exists, you send a welcome message. Else,  you create a user with the information provided.
 
-Next, you need to create a dispatch handler for the `/start` command. A command in telegram is any text that starts with `/`.
+Next, you need to create a dispatch handler for the `/start` command. A command in Telegram is any text that starts with `/`.
 
 You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
 
@@ -255,11 +255,11 @@ def add_appointment(update, context):
 
 ```
 
-In the `add_appointment` method, you made use of the `chat_id` to query the FQL client using  the `users_index` index to check the user data that matches the `chat_id`.
+In the `add_appointment` method, you made use of the `chat_id` to query the FQL client using the `users_index` index to check the user data that matches the `chat_id`.
 
 Next, you updated the `last_command` field in the user's data to save the `add_appointment` command the user sent. You then sent a message requesting the user to enter the name of the appointment and its due date separated by a comma.
 
-Now you have to create another method called `echo` that will collect the name and the due date for the new appointment then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
+Now you have to create another method called `echo` that will collect the name and the due date for the new appointment, then save it to the database. Copy and paste the code below after your `add_appointment` method in your python file.
 
 
 ```python
@@ -301,7 +301,7 @@ def echo(update, context):
 ```
 In the `echo` method you made use of the `chat_id` to query the FQL client using the `users_index` index to check the user data that matches the `chat_id`.
 
-Next, you checked if the `last_command` in the data retrieved is an `add_appointment` command. If it is, you proceed to query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
+Next, you checked if the `last_command` in the data retrieved is an `add_appointment` command. If it is, you query the FQL client to create an appointment using the Fauna `create` method in the `Appointments` collection with the information provided in the user’s message.
 
 Finally, you need to create a command handler for the `add_appointment` command and a message handler for the `echo` method. The message handler filters the message and triggers the `echo` method when the user enters a message( a message is any text that does not start with `/`).
 
@@ -348,7 +348,7 @@ def list_appointments(update, context):
 
    if event_message == "":
 
-       event_message = "You dont hava any appointments saved, type /add_appointment to schedule one now 😇"
+       event_message = "You don't have any appointments saved, type /add_appointment to schedule one now 😇"
 
    context.bot.send_message(chat_id=chat_id, text=event_message)
 
@@ -393,7 +393,7 @@ def list_today_appointments(update, context):
 
    if event_message == "":
 
-       event_message = "You dont have any appointments saved, type /add_appointment to schedule one now 😇"
+       event_message = "You don't have any appointments saved, type /add_appointment to schedule one now 😇"
 
    context.bot.send_message(chat_id=chat_id, text=event_message)
 
@@ -401,7 +401,7 @@ def list_today_appointments(update, context):
 ```
 
 
-The `list_today_appointments` method is similar to the `list_appointments` method with one striking difference, the `appointment_today_index`. This index retrieves only data where the `date_due` field matches the current date.
+The `list_today_appointments` method is like the `list_appointments` method with one striking difference, the `appointment_today_index`. This index retrieves only data where the `date_due` field matches the current date.
 
 Let's create a command handler for both methods.
 
@@ -485,7 +485,7 @@ def delete_appointment(update, context):
 
 ```
 
-The `delete_appointment` method is similar to the `update_appointment` method. However, the difference is that after retrieving the appointment by querying the `Appointments` collection, you used the Fauna `delete` method to delete the data from the database. Subsequently, you sent a message to alert the user of a successful appointment deletion.
+The `delete_appointment` method is like the `update_appointment` method. However, the difference is that after retrieving the appointment by querying the `Appointments` collection, you used the Fauna `delete` method to delete the data from the database. Subsequently, you sent a message to alert the user of a successful appointment deletion.
 
 The `delete_appointment` method is similar to the ‘update_appointment` method.  You set the `delete_appointment` method to get triggered by a message handler that uses the regex filter to detect the delete method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
