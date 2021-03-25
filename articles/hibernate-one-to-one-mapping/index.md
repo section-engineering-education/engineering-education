@@ -18,6 +18,10 @@ Basic java knowledge working with [object oriented programming](https://www.w3sc
 
 ## Step 1: Setting up the development environment
 ---
+Java development kit is required to run the application successfully, use the following link to install java 11 on your computer.
+
+- [JDK 11 installation guide](https://www.youtube.com/watch?v=wcZj4JH6lbQ)
+
 Install MySQL server using the following link.
 
 - [MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/mysql-installer-setup.html)
@@ -33,7 +37,16 @@ A prompt will ask for your password and on entering access will be granted showi
 
  Maven is a build tool for managing java projects. Maven is based on the project object model (POM) which is an XML file containing configuration details and information about the project. The dependencies can be obtained from [maven central repository](https://mvnrepository.com/) and added to the POM file where maven will be responsible for source code generation, code compilation, and JAR files packaging of the compiled code in a local repository where they will be accessed when a new maven project is created. The required dependencies will be downloaded automatically by maven and added to the classpath of your project once they are added to the POM file.
 
-In IntelliJ click file, new, project, and on the window that opens select maven, then click next and give your project a name. This will create a new maven project which has the following structure. 
+ Eclipse provides an easier way to create a maven project through archetypes. Archetypes are used to create new maven projects that contain template files for a given maven project. You can think of it as a collection of starter files for java or a web project.
+ 
+ Common archetypes are.
+
+ - Maven-archetype-quickstart - This is an archetype to generate a sample maven project good for standalone projects.
+ - maven-archetype-webapp - This is an archetype to generate a sample maven project for java web applications.
+
+In Eclipse, click File, new, other, maven, and then maven project. Press next and select maven-archetype-quickstart, on the window that opens fill out the groupid and artifact id which represents the package and project name respectively. Click Finish to generate a new maven project that contains all the files to be used in a standalone application. 
+
+In IntelliJ click file, new, project, and on the window that opens select maven, then click next and give your project a name. This will create a new maven project which has the following structure.
 
 ![maven structure](maven-structure.png)
 
@@ -140,8 +153,6 @@ Create a class named customer with the following details
 - constructor with all the fields apart from the id as it will be generated
 - toString method to view the object instances data.
 ```java
-package com.javadev.hibernate.demo.entity;
-
 import javax.persistence.*;
 
 @Entity
@@ -243,8 +254,6 @@ public class Customer {
  - toString method
 
  ```java
-package com.javadev.hibernate.demo.entity;
-
 import javax.persistence.*;
 
 @Entity
@@ -342,8 +351,6 @@ In this stage, the following will be covered.
 ##### create a new customer
 ---
 ```java
-package com.javadev.hibernate.demo;
-
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
 import org.hibernate.Session;
@@ -400,8 +407,6 @@ The new customer entry will be returned by the query and note the sub_id is null
 ----
 
 ```java
-package com.javadev.hibernate.demo;
-
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
 import org.hibernate.Session;
@@ -454,8 +459,6 @@ A new record will be inserted in the subscription table and the customer sub_id 
 ---
 
 ```java
-package com.javadev.hibernate.demo;
-
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
 import org.hibernate.Session;
@@ -507,8 +510,6 @@ The subscription table will return an empty set while the customer table column 
 #####  Retrieve and update a customer using a setter method
 ---
 ```java
-package com.javadev.hibernate.demo;
-
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
 import org.hibernate.Session;
