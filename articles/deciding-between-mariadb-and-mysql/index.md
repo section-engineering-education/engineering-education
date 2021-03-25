@@ -4,30 +4,34 @@ status: publish
 published: true
 url: /engineering-education/deciding-between-mariadb-and-mysql/
 title: Choosing Between MariaDB and MySQL
-description: This tutorial outlines the key differences and similarities of MariaDB and MySQL. It also discusses the unique features of these database frameworks.  
+description: This tutorial will outline the key differences and similarities of MariaDB and MySQL. It will also discuss the unique features of these database frameworks.  
 author: ernest-mwangi
-date: 2021-03-17T00:00:00-11:00
+date: 2021-03-25T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/deciding-between-mariadb-and-mysql/hero.jpg
     alt: Choosing between MariaDB and MySQL
 ---
-MariaDB framework is among the most popular database servers in the world. [Google Inc.](https://about.google/), [WordPress](https://wordpress.com/), and [Wikipedia](https://www.wikipedia.org/) are some of the users of MariaDB. It powers numerous websites and supports the banking sector. Since MariaDB was forked from MySQL, they share similar components.
+MariaDB, an open-source software, is a relational database that provides a SQL interface for data access. This database server is popular because it is robust, scalable, and fast. Its vast ecosystem of plugins, storage engines, amongst other tools, makes it unique for numerous use cases.
 <!--more-->
-MariaDB, an open-source software, is a relational database that provides an SQL interface for data access. This database server is popular because it is robust, scalable, and fast. Its vast ecosystem of plugins, storage engines, amongst other tools, makes it unique for numerous use cases.
+MariaDB framework is one of the most popular database servers in the world. Companies such as [Google Inc.](https://about.google/), [WordPress](https://wordpress.com/), and [Wikipedia](https://www.wikipedia.org/) are some of the users of MariaDB. Since MariaDB was forked from MySQL, they share similar components.
 
 ### Goal
-This article discusses MariaDB, MySQL, and their key features. It also compares the two to help you choose the best database server that suits your needs.
+This article will discuss MariaDB, MySQL, and their key features. It also compares the two to help you choose the best database server that suits your needs.
 
 ### An overview of MariaDB
-[MariaDB](https://mariadb.org/) is a default type of MySQL database system which is common in most Linux distributions. It is also supported by other operating systems including macOS and Windows. MySQL is mostly used as a database replacement (or as a database option) in the LEMP ([Linux, Nginx, MariaDB, PHP](https://www.digitalocean.com/community/tutorials/what-is-lemp)) and LAMP ([Linux, Apache, MariaDB, PHP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)#)) stacks.
+[MariaDB](https://mariadb.org/) is a default type of MySQL database system which is common in most Linux distributions. It is also supported by other operating systems including MacOS and Windows. 
 
-[Oracle Corporation](https://www.oracle.com/corporate/) acquired MySQL in 2009. MariaDB was introduced later as concerns were raised about MySQL being open-source and freely accessible to users. Maintainers and developers perform monthly mergers to ensure that it is stable and secure.
+MySQL is mostly used as a database replacement (or as a database option) in the LEMP ([Linux, Nginx, MariaDB, PHP](https://www.digitalocean.com/community/tutorials/what-is-lemp)) and LAMP ([Linux, Apache, MariaDB, PHP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)#)) stacks.
+
+The [Oracle Corporation](https://www.oracle.com/corporate/) acquired MySQL in 2009. MariaDB was introduced later as concerns were raised about MySQL being open-source and freely accessible to users. Maintainers and developers perform monthly mergers to ensure that it is stable and secure.
 
 MariaDB is available under the [General Public License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html), version `2`. Supply of client libraries for [Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity), Java, and C are available under the [Lesser General Public License](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html), version `2.1` and higher.
 
-MariaDB server exists in two editions; [MariaDB Community Server](https://mariadb.com/docs/features/mariadb-community-server/) and [MariaDB Enterprise Server](https://mariadb.com/docs/features/mariadb-enterprise-server/). You can download, modify and use the MariaDB Community Server for free. MariaDB also allows you to have the client and server programs on different hosts.
+MariaDB server exists in two editions; [MariaDB Community Server](https://mariadb.com/docs/features/mariadb-community-server/) and [MariaDB Enterprise Server](https://mariadb.com/docs/features/mariadb-enterprise-server/). 
+
+You can download, modify, and use the MariaDB Community Server for free. MariaDB also allows you to have the client and server programs on different hosts.
 
 ### An overview of MySQL
 [MySQL](https://www.mysql.com/) was developed as a Relational Database Management System (RDBMS). RDBMS is a model that structures data into columns and rows. A primary key distinctively identifies each row. These keys are "pegs" used by tables to outline a relation to a particular row. A `foreign key` allows a table to relate to another database table.
@@ -38,7 +42,7 @@ MariaDB server exists in two editions; [MariaDB Community Server](https://mariad
 - MariaDB is based on MySQL community version and a [Percona Server](https://www.percona.com/software/mysql-database/percona-server).
 - MariaDB supports many different SQL statements, rules, procedures, functions, modes, and server variables. It ships with various plugins such as the MariaDB audit plugin.
 - It has new storage engines such as [XtraDB](https://mariadb.com/kb/en/about-xtradb/), [PBXT](https://mariadb.com/kb/en/pbxt-storage-engine/), [FederatedX](https://mariadb.com/kb/en/about-federatedx/).
-- MariaDB has various new options, extensions, bug fixes, and extensions.
+- MariaDB has various new options, extensions, and bug fixes.
 
 ### Key features of MySQL Framework
 - Scalability and flexibility - MySQL allows multi-threading which makes it scalable. In other words, it can manage a huge amount of data. MySQL's flexibility also supports many applications.
@@ -58,7 +62,9 @@ MariaDB server exists in two editions; [MariaDB Community Server](https://mariad
 | Priority code | MySQL uses propriety code in the Enterprise Edition. | MariaDB does not allow access to propriety content. |
 
 ### Conclusion
-MariaDB offers better performance with more updates and an open-source feature. On the other hand, MySQL has better security features and a strong following globally. Therefore, this comparison allows you to choose the database server that suits your needs. 
+MariaDB can offer better performance with more updates and an open-source feature. MySQL has better security features and a strong following globally. I hope this comparison will allow you to choose the database server that best suits your needs. 
+
+Happy coding!
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
