@@ -28,11 +28,9 @@ To follow along with this tutorial, you need to have:
 * [Faunadb](https://pypi.org/project/faunadb/), [telegram](https://pypi.org/project/telegram/) and [python_telegram_bot](https://pypi.org/project/python-telegram-bot/) installed.
 
 #### Installing the requirements
-To install the prerequisites, you simply need to run the below commands in your command-line interface.
+To install the prerequisites, you simply need to run the below command in your command-line interface.
 ```bash
-pip install faunadb
-pip install telegram
-pip install python_telegram_bot
+pip install faunadb telegram python_telegram_bot
 ```
 
 To check if Fauna installed correctly, run the sample python code provided in Fauna’s Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
