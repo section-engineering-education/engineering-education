@@ -115,7 +115,7 @@ From the above illustration, one can decide to use the `.get()` method to get va
 
 Try more tricks using the  `dictionary.get()` method.
 
-To determine how many items a dictionary has, use the `print(len(details))`
+To determine how many items a dictionary has, use the `print(len(details))`.
 
 ### Text to emoji converter
 Programmers believe that printing emojis would require a complex algorithm. However, this is not the case; writing codes to convert texts to emojis is straightforward. This is another excellent application of using a dictionary.
@@ -150,22 +150,30 @@ Use the `def` function to transform this code into a reusable function that can 
 
 ```Python
 def  emoji_converter(message):
- 	words = message.split( " ")
-emojis = {
-   ":)" : "😀",
-   ":(" : "😞",
-   "lol" : "😂",
-   "sick":"😨",
-   "happy": "😀",
-   "mermaid": "🧜‍"
-}
-outcome = " "
-for word in words:
-   outcome += emojis.get(word, word) + " "
-return output
+ 	  words = message.split( " ")
+     emojis = {
+         ":)" : "😀",
+         ":(" : "😞",
+         "lol" : "😂",
+         "sick":"😨",
+         "happy": "😀",
+         "mermaid": "🧜‍"
+      }
+      outcome = " "
+      for word in words:
+          outcome += emojis.get(word, word) + " "
+      return output
+      
 
 Message = input  (“>”)
-print(emoji_converter(message) )
+print(emoji_converter(message))
+```
+
+See output in terminal below.
+
+```Python
+> I am sad :(
+  I am sad 😞
 ```
 
 Pretty easy, right?
