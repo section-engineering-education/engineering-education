@@ -72,7 +72,7 @@ Finally, do not forget to add `<!DOCTYPE html>` at the beginning of the document
 2. Installing using Vue CLI Quasar plugin
 
 To work with quasar through the Vue CLI plugin ensure to have installed @vue/cli globally.
-Make sure you have the right version(3). Check the version using the command below.
+Make sure you have at least version 3. Check the version using the command below.
 ```bash
 $ vue --version
 ```
@@ -96,11 +96,11 @@ To create a project run the command below
 ```bash
 $ vue create my-app
 ```
-Make sure to checkmark on babel from the vue CLI features list prompt while installing.
+Make sure to select babel from the vue CLI features list prompt while installing.
 ```bash
 ❯ Default ([Vue 2] babel, eslint) 
 ```
-To add Vue CLI Quasar Plugin, navigate to the created project and run the `vue add quasar` to add quasar plugin
+To add Vue CLI Quasar Plugin, navigate to the created project and run `vue add quasar` to add the quasar plugin
 ```bash
 $ cd my-app
 $ vue add quasar
@@ -115,7 +115,7 @@ Before we install quasar, first check if Quasar CLI is globally installed on you
 ```bash
 $ quasar -v
 ```
-If it shows no version number, run the following command to install it.
+If you get a "command not found", run the following command to install it.
 ```bash
 $ npm install -g @quasar/cli
 ```
@@ -126,7 +126,7 @@ $ yarn global add @quasar/cli
 
 ### Create a hello-world-app with quasar
 
-To create a new quasar app run the command below, after `create` is the folder name of your project.
+To create a new quasar app run the command below. `hello-world-app` is the name of your project.
 ```bash
 $ quasar create hello-world-app
 ```
@@ -173,7 +173,7 @@ Navigate to the `src` folder, open App.vue you'll see a div with and id of q-app
 ```
 This is the where the quasar app is injected into the project using the id `q-app`.
 
-Navigate to the `src` folder and into `layouts` folder and open MainLayout.vue file.
+Navigate to the `src/layouts` folder and open `MainLayout.vue` file.
 
 Here we'll rename the app title to "Hello World App", if everything is okay you'll see the name change reflected on the toolbar at the top of the app.
 The toolbar title tag looks like this below
