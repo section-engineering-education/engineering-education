@@ -22,10 +22,10 @@ Download the most recent version of [Python](https://www.python.org/ftp/python/3
 Also download a python code editor more preferable [PyCharm](https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac), which is an integrated development environment for professional developers, and it's also student-oriented, friendly, and easy to use.
 
 ### Variables
-Variables are labels that signify where you can store data in your computer memory, and they contain values. They can store simple values like strings, integers, and Boolean values. Variables should always be in lowercase, preferably.
+Variables are labels that signify where data can be stored in the computer memory, and they contain values. They store values like strings, integers, and Boolean values. Variables should always be in lowercase, preferably.
 
 ### Strings and Formatted string
-Strings are a sequence of characters. Programmers define strings by using both double (“ ”) and single (‘ ’) apostrophe signs. Formatted strings are helpful in situations where one may want to generate some text with variables. Formatted strings make it easier for a user and reader to visualize the string concatenation in their head and output. To define Formatted strings, prefix your code with an ‘f’ and use curly brackets {} to insert values in your strings.
+Strings are a sequence of characters. Programmers define strings by using both double (“ ”) and single (‘ ’) apostrophe signs. Formatted strings are helpful in situations where one may want to generate some text with variables. Formatted strings make it easier for a user and reader to visualize the string concatenation in their head and output. To define Formatted strings, prefix the code with an ‘f’ and use curly brackets {} to insert values in the strings.
 See example below.
 
 ```Python
