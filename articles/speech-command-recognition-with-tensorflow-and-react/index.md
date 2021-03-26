@@ -6,7 +6,7 @@ url: /engineering-education/speech-command-recognition-with-tensorflow-and-react
 title: Speech Command Recognition With Tensorflow.js and React.js
 description: In this tutorial, we will perform speech command recognition in real-time and demonstrate the result of predictions.
 author: worawat-kaewsanmaung
-date: 2021-03-15T00:00:00-10:00
+date: 2021-03-26T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
