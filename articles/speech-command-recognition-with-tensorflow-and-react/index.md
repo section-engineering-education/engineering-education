@@ -179,3 +179,6 @@ Hence, we get the result as shown in the demo on [Codesandbox](https://codesandb
 
 In this tutorial, we learned how to use the speech-commands recognizer TensorFlow model to detect the speech in our React app. Due to the availability of a speech-commands recognizer COCO TensorFlow model, the overall implementation the speech recognition on a React app was simplified and made easy.
 The main objective of this tutorial was to explore the use cases of the speech-commands recognizer model and use it to create a simple speech recognizer React app. Such a speech recognizer feature is highly useful for many audio-text-based applications. Such a command recognizer can be used to build a robot or any AI-based application that takes in audio input as a command to trigger actions.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
