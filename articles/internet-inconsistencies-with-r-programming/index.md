@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/internet-inconsistencies-with-r-programming/
 title: Internet Inconsistencies with R-Programming
-description: This article will be an introduction to detecting inconsistences in Internet using R-programming. We will be using Kali Linux and R to detect the internet inconsistencies.
+description: This article will be an introduction to detecting inconsistences in the internet using R-programming. We will be using Kali Linux and R to detect the internet inconsistencies.
 author: priya-kalyanakrishnan
-date: 2021-03-23T00:00:00-22:30
+date: 2021-03-26T00:00:00-11:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/internet-inconsistencies-with-r-programming/hero.jpg
     alt: Internet Inconsistencies with R-Programming Image
 ---
-An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. If not redacted, these pieces of information can merge into one collective research platform.  
+An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. 
 <!--more-->
-This tutorial can help individuals and groups who are interested in detecting internet inconsistencies.  
+If not redacted, these pieces of information can merge into one collective research platform. This tutorial can help individuals and groups who are interested in detecting internet inconsistencies.  
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -30,25 +30,25 @@ This tutorial can help individuals and groups who are interested in detecting in
 
 ### Prerequisites
 As a prerequisite, the reader must have the following:
-- Device with unlimited functional capabilities
-- Installed a functional Linux emulator (Kali Linux was chosen)
-- R-Programming software  
-- Internet access
-- DNS mechanics and knowledge
-- R-Programming library installations and documentation  
-- Some arithmetic experience  
+- A device with unlimited functional capabilities.
+- Installed a functional Linux emulator (Kali Linux was chosen).
+- R-Programming software.  
+- Internet access.
+- DNS mechanics and knowledge.
+- R-Programming library installations and documentation.  
+- Some arithmetic experience.  
 
 ### Goals
-One goal is to acknowledge internet gaps that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
+One goal of this tutorial is to acknowledge internet gaps that may impact unaware individuals and groups. An additional goal is to provide probable insights to internet complexities.  
 
 It is also important for readers to understand terms and content within scope.  
 
 ### Introduction
 In this tutorial, R-Programming is used to statistically analyze data from an IPv4 address. The purpose is to gain understanding about accuracies and inaccuracies from internet activities.
 
-As a starting point, `45.88.197.212` is the defined IP address throughout this tutorial.  
+As a starting point, `45.88.197.212` will be the defined IP address throughout this tutorial.  
 
-Let's start.  
+Let's get started.  
 
 ### Linux fundamentals
 Open any Linux Shell.
@@ -78,7 +78,9 @@ kex
 ```  
 
 A window should pop-up something like this:
+
 ![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
+
 *Screen capture*  
 
 ### R-Programming
@@ -89,14 +91,19 @@ sudo apt-get install r-base r-base-dev
 ```  
 
 The following screens may appear:  
+
 ![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
+
 *Screen capture*  
 
 ![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)  
+
 *Screen capture*  
 
 Alternatively, using an R-programming application can be equally effective.  
+
 ![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
+
 *Screen capture of RStudio*  
 
 If not installed, the libraries used in this tutorial are listed below:
@@ -176,8 +183,9 @@ Geological location of an IP address can resemble many statistical data models. 
 For example, the IP address `45.88.197.212` overlaps with Lithuania, Germany, Cyprus, Netherlands, and Amsterdam.  
 
 Factors can include:
-- DNS variables found previously in this tutorial
+- DNS variables found previously in this tutorial.
 - Directories.
+
 A few helpful directories are listed in the table below:  
 
   Directory Name | Information
@@ -188,11 +196,11 @@ A few helpful directories are listed in the table below:
   IANA | Internet Assigned Numbers Authority provides overall directory and registrar information.
   CIRA | Canadian Internet Registration Authority serves Canada.
 
-- Privacy redactions
+- Privacy redactions.
 
 The country classified with this IP address is complex. Hostinger International Limited (AS47583) is the ASN hosting website responsible for IP addresses between `45.88.197.0` to `45.88.197.255`.
 
-With reverse IP engineering done on `45.88.197.212`, we found five possible geological locations:
+With reverse IP engineering being done on `45.88.197.212`, we can find five possible geological locations:
 - Lithuania (Li)
 - Cyprus (Cyp)
 - Germany (De)
@@ -200,16 +208,21 @@ With reverse IP engineering done on `45.88.197.212`, we found five possible geol
 - Amsterdam (Am)  
 
 `Rattle` can generate data models. A decision tree model can provide a logical breakdown. Shown below, is a manually made IP address data frame:
+
 ![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
 Typically, a decision tree selects the highest possible number as the optimal choice.
 
 In this scenario, the countries categorized as less optimal are analyzed. `Amsterdam`, `Netherlands`, and `Cyprus` were shown as the top three choices. `Lithuania` and `Germany` seemed to be less optimal.
+
 ![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
+
 *Screen capture*  
 
 It is possible to evaluate variable importance from a random forest model. Variable importance is shown in the image below:
+
 ![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
+
 *Screen capture*  
 
 With the highest score of the five countries, `Lithuania` showed the most links to the IP address. `Germany` also showed some correlation. This statistical analysis using Gini found `Lithuania` generated higher variable importance with a value of `3087.48`.
@@ -238,6 +251,7 @@ sudo curl http://ipinfo.io/45.88.197.212
 ```  
 
 ![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
+
 *Screen capture*
 
 A `curl` function can list the possible domain names on an IP address. The code below uses reverse IP engineering.
@@ -264,7 +278,9 @@ morgeesmodcon.com
 
 Did you notice the domain names listed above are companies registered with `ARIN` and `CIRA` without any connection to `RIPE`?  
 
-Internet inconsistencies exist as European countries usually should not have ownership of an IP address with North American company domain names. Codes can help identify internet data as either accurate or inaccurate. A statistical coding approach can display a web of DNS relationships. Online identities can be revealed with internet directories and IP lookups.
+Internet inconsistencies exist as European countries usually should not have ownership of an IP address with North American company domain names. 
+
+Codes can help identify internet data as either accurate or inaccurate. A statistical coding approach can display a web of DNS relationships. Online identities can be revealed with internet directories and IP lookups.
 
 ### Takeaways
 - Statistics can reveal internet inconsistencies.
