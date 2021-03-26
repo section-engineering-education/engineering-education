@@ -16,7 +16,7 @@ images:
 ---
 
 iOS is one of the most used mobile platforms today, along with Android. iOS Application Development is done primarily using XCode and Swift. XCode is an IDE developed by Apple for developing rich and performant applications for iOS and some of their other platforms such as macOS. Swift was developed as a replacement for Objective-C, as a primary language for iOS development.
-
+<!--more-->
 Let us learn iOS App Development by building a Tasks app using Swift.
 
 ### Goals
