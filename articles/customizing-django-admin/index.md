@@ -6,7 +6,7 @@ url: /engineering-education/customizing-django-admin/
 title: How to Customize the Django Admin Site
 description: This article will serve as a guide to customize the default Django administration site. Django admin is used to quickly manage a Django site content.
 author: samuel-mwangi
-date: 2021-03-20T00:00:00-10:00
+date: 2021-03-26T00:00:00-11:00
 topics:
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,8 @@ images:
   - url: /engineering-education/customizing-django-admin/hero.jpg
     alt: Customize Django Admin example image
 ---
-Django comes with an admin site for managing site data. Django gives developers the power of customizing this admin site to suit the requirements of the project or the client.This tutorial is Windows oriented.
+Django is a Web framework for perfectionists with deadlines. Django gives programmers the power of customizing this admin site to suit the requirements of the project or the needs of the client. This tutorial will be Windows oriented.
 <!--more-->
-
 ### Prerequisites
 Before we begin, you should have the following:
  - Python3 installed on your machine.
@@ -25,29 +24,40 @@ Before we begin, you should have the following:
 
 ### Step 1 – Creating our Django app
 Use the following command to create a virtual environment for the project.
+
 ```bash
 $ py -m venv .venv
 ```
+
 Then, activate it using the following command.
+
 ```bash
 $ .venv\Scripts\activate.bat
 ```
+
 Now we can install Django in the virtual environment.
+
 ```bash
 $ pip install django
 ```
+
 Now execute the following command to create the Django project.
+
 ```bash
 $ django-admin startproject Custom
 ```
-Now, let's change to the created directory `Custom`.
+
+Let's change to the created directory `Custom`.
+
 ```bash
 $ cd Custom
 ```
+
 In `Custom`, let's go ahead and create our Bookstore app.
 ```bash
 $ django-admin startapp Bookstore
 ```
+
 Then, add Bookstore to the installed apps in `settings.py`.
 
 ```python
@@ -57,7 +67,7 @@ INSTALLED_APPS  = [
 ]
 ```
 
-###  Creating the Models
+###  Creating the models
 Add the following code to your `models.py` to create some models.
 
 ```python
@@ -119,6 +129,7 @@ class  Details(models.Model):
     def  __str__(self):
         return  self.book_name
 ```
+
 We can now go ahead and register our models in `admin.py` by adding the following lines of code.
 
 ```python
@@ -142,20 +153,25 @@ admin.site.register(Publisher, publisherAdmin)
 admin.site.register(Details, detailsAdmin)
 admin.site.register(Author, authorAdmin)  
 ```
-Then, make the migrations and migrate using the below commands.
+
+Then, we can migrate using the below commands.
 
 ```bash
 $ py manage.py makemigrations
 $ py manage.py migrate
 ```
-Now, let us create a superuser in order to start customizing our admin site.
+
+Now, let's create a superuser in order to start customizing our admin site.
+
 ```bash
 $ py manage.py createsuperuser
 ```
+
 Now, run the development server using the command below:
 ```bash
 $ py manage.py runserver
 ```
+
 You can now log in using the superuser credentials at http://127.0.0.1:8000/admin/.
 
 Now, go ahead and add some input in the fields we created.
@@ -174,6 +190,7 @@ class  Details(models.Model):
     class  Meta:   #new
         verbose_name_plural  =  "Details"
 ```
+
 ###  2. Changing the Django administration header text
 To change the admin site header text, login page, and the HTML title tag of our bookstore's instead, add the following code in `urls.py`.
 
@@ -183,16 +200,22 @@ admin.site.site_header  =  "Custom bookstore admin"
 admin.site.site_title  =  "Custom bookstore admin site"
 admin.site.index_title  =  "Custom Bookstore Admin"
 ```
-The `site_header` changes the **Django administration** text which appears on the login page and the admin site. The `site_title` changes the text added to the `<title>` of every admin page. The `index_title` changes our site's title that appears on top of the admin homepage list view.
+
+The `site_header` changes the **Django administration** text which appears on the login page and the admin site. The `site_title` changes the text added to the `<title>` of every admin page. 
+
+The `index_title` changes our site's title that appears on top of the admin homepage list view.
 
 ###  3. Removing the default groups
-Let's say, we want to get rid of the *Groups* app found in our Django admin site by default. We will go ahead and import it then unregister it in `admin.py`.
+Let's say, we want to get rid of the *Groups* app found in our Django admin site by default. 
+
+We will go ahead and import it then unregister it in `admin.py`.
 
 ```python
 from  django.contrib.auth.models  import  Group  # new
 #...
 admin.site.unregister(Group)  # new
 ```
+
 If you like, you could also go ahead and unregister *users* through the same process.
 
 ###  4 - Using list_display
@@ -211,6 +234,7 @@ Using a terminal, run the following command.
 ```bash
 $ pip install pillow
 ```
+
 Then, open `settings.py` and add the following code. This code tells Django where to store the images.
 
 ```python
@@ -219,10 +243,13 @@ import os # at the top
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 ```
+
 Now let's create the media folder and add an images folder inside it.
+
 ```bash
 $ mkdir media\images 
 ```
+
 Then, open `urls.py` and add the code below to add our `media` folder to the static files.
 
 ```python
@@ -236,7 +263,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns +=staticfiles_urlpatterns()
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
-In `models.py`  we are going to import `mark_safe` and also add the image field to our *Author* model. Then we will add a function that will enable us to view the image in our admin site.
+
+In `models.py` we are going to import `mark_safe` and also add the image field to our *Author* model. Then we will add a function that will enable us to view the image in our admin site.
 
 ```python
 # at the top
@@ -259,13 +287,19 @@ Now let us make migrations then migrate to reflect the changes in our database.
 $ py manage.py makemigrations
 $ py manage.py migrate
 ```
-Lastly, we'll call our function inside the list display. Let's go to our `admin.py` and modify the `authorAdmin()`.
+
+Finally, we'll call our function inside the list display. Let's go to our `admin.py` and modify the `authorAdmin()`.
 
 ```python
 class  authorAdmin(admin.ModelAdmin):
     list_display=['name','image_tag']
 ```
+
 Now, run the development server and enjoy the changes.
+
+That is how you can customize the Django Admin tool.
+
+Hope you found this tutorial helpful.
 
 Happy coding!  
 
