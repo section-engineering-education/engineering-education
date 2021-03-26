@@ -140,7 +140,7 @@ for word in words:
 print(outcome)
 ```
 
-See output in the terminal below.
+See terminal output below.
 ```Python
 > today is a good day because i woke up happy
  today is a good day because i woke up 😀 
@@ -169,7 +169,7 @@ Message = input  (“>”)
 print(emoji_converter(message))
 ```
 
-See output in terminal below.
+See terminal output below.
 
 ```Python
 > I am sad :(
