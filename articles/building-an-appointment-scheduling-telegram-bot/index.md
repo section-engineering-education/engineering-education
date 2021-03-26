@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-an-appointment-scheduling-telegram-bot/
+title: Building an Appointment Scheduling Telegram Bot with Python and Fauna
+description: In this tutorial, you will learn how to build a telegram bot that would allow you to schedule your appointments using Python and a serverless database system called FaunaDB.
+author: onojakpor-ochuko
+date: 2021-03-26T00:00:00-08:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-an-appointment-scheduling-telegram-bot/hero.jpg 
+    alt: Building an Appointment Scheduling Telegram Bot with Python and Fauna
+---
+
 ### Introduction
 Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier. 
 
