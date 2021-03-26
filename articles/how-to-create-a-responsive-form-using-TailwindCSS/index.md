@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/
-title: How to create a Responsive Form Using Tailwind CSS
+title: How to create a Responsive Form using Tailwind CSS
 description: In this article we will create a simple html form that is styled by tailwind css. Tailwind css is a new css framework that focusses on a utility first approach.
 author: monica-masae
-date: 2021-03-24T00:00:00-12:00
+date: 2021-03-25T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,17 @@ images:
   - url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/hero.jpg
     alt: Tailwind image example
 ---
-Tailwind CSS is one of the most popular frameworks for building custom user interfaces for web applications. It is different from other CSS frameworks because of its utility-first approach. When building websites, we write the structure in a HTML file then implement the styles in a CSS file. But, thanks to the new CSS framework Tailwind, we can now add styles directly into our HTML file. 
+Tailwind CSS is one of the most popular frameworks used to build custom user interfaces for web applications. It is different from other CSS frameworks because of its utility-first approach. When building websites, we write the structure in a HTML file then implement the styles in a CSS file. 
 <!--more-->
-Through this tutorial, we'll be using Tailwind to build a login form from scratch. The form will look like this when complete:
+Thanks to the new CSS framework Tailwind, we can now add styles directly into our HTML file. Through this tutorial, we'll be using Tailwind to build a login form from scratch. 
+
+The form will look like this when completed:
 
 ![Login form](/engineering-education/how-to-create-a-responsive-form-using-tailwindcss/form.png)
 
-### Adding Tailwind CSS to your project.
+### Adding Tailwind CSS to your project
 There are various ways of including Tailwind into your project. The most recommended method is to use a package manager in order to make full use of the configuration possibilities via PostCSS using build tools.
+
 Visit this [link](https://github.com/section-engineering-education/engineering-education/blob/master/articles/introduction-to-tailwind-css/index.md) for the full installation process.
 
 Let's get started on our form!
@@ -46,17 +49,17 @@ In our snippet, we gave our page a title `Login Form`. We also added a link to o
 Now add the `<body>` tag and type in the following classes:
 ```html
  <body class="bg-gray-300" style="font-family:Georgia, 'Times New Roman', Times, serif;">
- ```
+```
 
-In the above snippet, we have added a background color and the font for our form.
+In the snippet above, we added a background color and the font for our form.
 
-Next, add a `<div>` with the following classes to style the header(logo), and the form.
+Next, add a `<div>` with the following classes to style the header (logo), and the form.
 
 ```html
 <div class="h-screen flex items-center justify-center">
 ```
 
-In the `<div>` we have added classes :
+In the `<div>` we have added classes:
 - `h-screen` to set the form to 100% height,
 - `flex`, `items-center`, and `justify-center` allow us to horizontally and vertically align our form to the center.
 
@@ -72,7 +75,7 @@ Let's now add our header and logo.
 <h2 class="text-3xl text-center text-gray-700 mb-4">Welcome Back!</h2>
 ```
 
-In the above snippet, the `form` container contains classes;
+In the snippet above, the `form` container contains classes;
 - `w-full` which sets the form width to 100%,
 - `bg-white` which sets the background of our form to white,
 - `rounded-lg` which sets the edges of the form to be rounded,
@@ -85,7 +88,7 @@ Inside the `<div>` our logo is designed as follows:
 - `justify-center` aligns the heading and logo to the center,
 - `mt-6` sets the top margin to 24px.
   
-We then used the `<img>` tag to add and design our logo. The height and the width are both set to 94px (`h-24`, `w-24`).
+We then use the `<img>` tag to add and design our logo. The height and the width are both set to 94px (`h-24`, `w-24`).
 
 Our header "Welcome Back!": 
 - has a font size of 30px and a line height of 36px - `text 3x1`
@@ -96,7 +99,7 @@ Our header "Welcome Back!":
 ### Adding form input fields
 Let's build the input fields and style them!
 
-Our code will look like this;
+Our code will look like this:
 
 ```html
 <div class="px-12 pb-10">
@@ -126,7 +129,7 @@ The input fields are done!
 ### Adding the button
 Now we add a button at the bottom for our users to log in!
 
-Our code is as follows;
+Our code should look as follows:
 
 ```html
 <button type="submit"
@@ -154,7 +157,7 @@ Finally, let's finish our form by adding a link for new users and for users who 
   
 Our form is done!
 
-Here is our full code;
+Here is our full code:
 
 ```html
 <!DOCTYPE html>
@@ -197,8 +200,10 @@ Here is our full code;
 </html>
 ```
 
-### Conclusion.
+### Conclusion
 A log in form is a simple example but serves the purpose since it uses many of the key Tailwind classes. Hopefully this tutorial has shown just how easy and fast custom components can be built using Tailwind.
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
