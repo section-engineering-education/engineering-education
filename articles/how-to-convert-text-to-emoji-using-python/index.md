@@ -75,7 +75,7 @@ favourite_colour=input("what is your favorite colour? ")
 print(name + " likes " + favourite_colour)
 ```
 
-See output in the terminal below.
+See terminal output below.
 
 ```Python
 what is your name? maji
