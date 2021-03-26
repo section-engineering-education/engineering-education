@@ -13,24 +13,23 @@ images:
   - url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/hero.jpg
     alt: Introduction to Bottom Sheets in Android
 ---
-Sliders are commonly used on websites, desktop applications, and mobile applications. They are widely implemented on the home pages or application's main screens to showcase key features.
+Sliders are widely found on cross-platforms such as website pages, desktop apps, and mobile apps. They're usually used to highlight important features on home screens and pages of applications.
 <!--more-->
-Let's take the case of an e-commerce application. As a developer, you would like to show new products without interfering with the user app interaction. Slides would be a perfect way to showcase these products to the user on your main application screen.
+A perfect use-case is an e-commerce app. As a developer, you want to show off new products without messing with the user's application engagement. Slides will be an excellent way to display such items to the consumer.
 
-### Goal
-This guide will walk you through how to create an automatic Slider page using Android Studio.
+This tutorial will teach you how to create and implement an auto Slider page using Android Studio.
 
 ### Overview
-We will create a Slider based on the following concepts.
-- Populate an `ArrayList` of slides into a `ViewPager` using `PagerAdapter`.
-- Set a list of slides in a tabbed layout.
-- Use a timer to control the movement of the slides.
+The following principles would be used to create a Slider.
+- The `PagerAdapter` to populate an `ArrayList` of slides into a `ViewPager`.
+- A tabbed interface to build a list of slide presentations.
+- Set a timer task to control the flow of the slides.
 
 ### Prerequisites
-This guide uses Java in Android Studio. Prior knowledge of Android [ViewPager](https://developer.android.com/training/animation/screen-slide), [PagerAdapters](https://developer.android.com/reference/kotlin/androidx/viewpager/widget/PagerAdapter), and [TabLayout](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout) would be helpful.
+To get along with this tutorial, it would be helpful to have a basic understanding of Android [ViewPager](https://developer.android.com/training/animation/screen-slide), [PagerAdapters](https://developer.android.com/reference/kotlin/androidx/viewpager/widget/PagerAdapter), and [TabLayout](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout).
 
-### Setting Up
-Start a new Android Studio project. I have changed the default parent theme. To do that, go to `res` folder → `values` → `style.xml` and change the app theme, as shown below.
+### Getting Started
+Start Android Studio and create a new empty project. I have modified the predefined parent theme. To do the same, navigate to the `res` directory → `values` → `style.xml` and adjust the style theme to the one shown below.
 
 ```xml
 <resources 
@@ -38,55 +37,52 @@ Start a new Android Studio project. I have changed the default parent theme. To 
 </resources>
 ```
 
-### Laying out the slider's UI components
-Create an XML layout and name it `slider_items_layout.xml`. The slides are comprised of two main components.
-- A TextView for the slide title.
-- An ImageView for the slide hero image.
+### Putting in place the slider
+Go ahead and create a `the_items_layout.xml` layout file inside the Layout directory. Two major elements make up a slide. They include;
+
+- The TextView depict a caption or the tagline of a slide, and
+- The ImageView - will represent the slider's featured image
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="245dp">
+    android:layout_height="match_parent">
 
     <ImageView
+        tools:ignore="ContentDescription,MissingConstraints"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
         android:scaleType="centerCrop"
-        android:id="@+id/hero_img"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_launcher_background" />
+        android:id="@+id/my_featured_image"
+        android:src="@drawable/item1" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/hero_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/gradient_bg" />
+        app:srcCompat="@drawable/the_slider_background"
+        app:layout_constraintBottom_toBottomOf="@+id/my_featured_image"
+        tools:ignore="ContentDescription"
+        android:id="@+id/slider_background"/>
 
     <TextView
-        android:id="@+id/slider_title"
+        android:id="@+id/my_caption_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="The Caption Title"
         android:textColor="#ffffff"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        android:textSize="26sp"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="164dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/slider_background"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> Any drawable resources used in this project can be found in this [GitHub](https://github.com/kimkimani/An_Auto_Android_Slider) repository.
+> This [GitHub repository](https://github.com/kimkimani/An_Auto_Android_Slider) includes all of the drawable resources used in this project. Go over and check any assets and code fragments listed in this tutorial.
 
 [RecyclerView](https://www.youtube.com/watch?v=HtwDXRWjMcU) uses a `list item` layout. The same concept applies here. An item layout represents a single row of the list items. In our case, a row will represent a single view of one slide. The item layouts are reused by setting up adapter objects that will display the data sets dynamically.
 
@@ -99,94 +95,94 @@ The application's main layout includes a `ViewPager` and `TabLayout`, as shown i
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@drawable/gradient_bg"
+    android:background="@drawable/the_slider_background"
     android:layout_height="match_parent">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/slider_pager"
+        android:id="@+id/my_pager"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
         android:layout_height="245dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.tabs.TabLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:tabGravity="center"
-        android:id="@+id/slider_tablayout_indicator"
+        android:id="@+id/my_tablayout"
         app:tabBackground="@drawable/indicator_selector"
         app:tabIndicatorHeight="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider_pager">
+        app:layout_constraintTop_toBottomOf="@+id/my_pager">
     </com.google.android.material.tabs.TabLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-We'll populate the items in the slider layout into a `ViewPager`. `ViewPager` is a layout widget that hosts several children's views. It controls the slides' movement. An individual slide represents each child's view. These items will be displayed once we link up the `ViewPager` to a `PagerAdapter`.
+We'll populate the slider layout items into a `ViewPager`. `ViewPager` is a layout widget that hosts several children's views. It controls the slides' movement. An individual slide represents each child's view. These items will be displayed once we link up the `ViewPager` to a `PagerAdapter`.
 
 ### Setting up PagerAdapter
 `ViewPager` and `TabLayout` depend on one another. `TabLayout` controls the movement between sliders. It also provides an overview of all slides.
 
-`ViewPager` gets its data from a `PagerAdapter`. `PagerAdapter` stores slides in memory, making it lightning fast to switch between already loaded slides. Go ahead and create a new Java class, and name it as `SliderPagerAdapter.java`.
+`ViewPager` gets its data from a `PagerAdapter`. `PagerAdapter` stores the slides in the memory, making it lightning fast to switch between already loaded slides.
 
 Before we implement the `PagerAdapter`, we need a model class.
 
 #### Setting up a model class
-A model class contains a collection of data objects that we want to populate to the adapter. These are the hero image and the slider title. Create a model class `SliderModel.java`. In this file, we will;
+A model class is made up of a collection of data objects that we want to feed into the adapter. These are the header image and the slider caption. Create a model class, `The_Slide_Items_Model_Class.java`. In this file, we will;
 
 - Declare an integer for the hero image and a string for the slider title (variables).
 - Generate the respective constructor, getters, and setters.
 
 ```java
-public class SliderModel {
+public class The_Slide_Items_Model_Class {
 
-    private int hero_img;
-    private String slider_Title;
+    private int featured_image;
+    private String the_caption_Title;
 
-    public SliderModel(int hero, String title) {
-        this.hero_img = hero;
-        this.slider_Title = title;
+    public The_Slide_Items_Model_Class(int hero, String title) {
+        this.featured_image = hero;
+        this.the_caption_Title = title;
     }
 
-    public int getHero_img() {
-        return hero_img;
+    public int getFeatured_image() {
+        return featured_image;
     }
 
-    public String getSlider_Title() {
-        return slider_Title;
+    public String getThe_caption_Title() {
+        return the_caption_Title;
     }
 
-    public void setHero_img(int hero_img) {
-        this.hero_img = hero_img;
+    public void setFeatured_image(int featured_image) {
+        this.featured_image = featured_image;
     }
 
-    public void setSlider_Title(String slider_Title) {
-        this.slider_Title = slider_Title;
+    public void setThe_caption_Title(String the_caption_Title) {
+        this.the_caption_Title = the_caption_Title;
     }
 }
 ```
 
 #### Create a custom PagerAdapter
-Create a new class and name it `SliderPagerAdapter`. This class should extend `PagerAdapter`.
+Create a new class and name it `The_Slide_items_Pager_Adapter.java`. This class should extend `PagerAdapter`.
 
 ```java
-public class SliderPagerAdapter extends PagerAdapter {
+public class The_Slide_items_Pager_Adapter extends PagerAdapter {
 }
 ```
 
 `PagerAdapter` controls the actual swiping between the different slides.
 
-To implement the `PagerAdapter`, use the mouse to hover over `SliderPagerAdapter extends PagerAdapter`, then `right-click`, and navigate to `generate and import`.
+To implement the `PagerAdapter`, use the mouse to hover over `The_Slide_items_Pager_Adapter extends PagerAdapter`, then `right-click`, and navigate to `generate and import`.
 
-1. A Constructor of `SliderPagerAdapter` with parameters `Context` and `List<SliderModel>` and set the parameter globals using `this` keyword.
+1. A Constructor of `The_Slide_items_Pager_Adapter` with parameters `Context` and `List<The_Slide_Items_Model_Class>` and set the parameter globals using `this` keyword.
 
 ```java
-public SliderPagerAdapter(Context context, List<SliderModel> sliderModelList) {
-    this.context = context;
-    this.sliderModelList = sliderModelList;
+public The_Slide_items_Pager_Adapter(Context Mcontext, List<The_Slide_Items_Model_Class> theSlideItemsModelClassList) {
+    this.Mcontext = Mcontext;
+    this.theSlideItemsModelClassList = theSlideItemsModelClassList;
 }
 ```
 
@@ -204,48 +200,48 @@ This method is required by the `instantiateItem` method. `instantiateItem` retur
 - `destroyItem`
 `PagerAdapter` saves every slide it creates in a memory. This makes it lighting fast to switch between one slider to another. However, this can take a lot of memory if you have a larger number of slides. It becomes a heavy and expensive task for the `PagerAdapter` to manage. The `destroyItem` override method solves this by destroying and recreating the slides as needed.
 
-Here is the complete `SliderPagerAdapter` code:
+Here is the complete `The_Slide_items_Pager_Adapter` code:
 
 ```java
-public class SliderPagerAdapter extends PagerAdapter {
+public class The_Slide_items_Pager_Adapter extends PagerAdapter {
 
-    private Context context;
-    private List<SliderModel> sliderModelList;
+    private Context Mcontext;
+    private List<The_Slide_Items_Model_Class> theSlideItemsModelClassList;
 
-    public SliderPagerAdapter(Context context, List<SliderModel> sliderModelList) {
-        this.context = context;
-        this.sliderModelList = sliderModelList;
+    public The_Slide_items_Pager_Adapter(Context Mcontext, List<The_Slide_Items_Model_Class> theSlideItemsModelClassList) {
+        this.Mcontext = Mcontext;
+        this.theSlideItemsModelClassList = theSlideItemsModelClassList;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View sliderLayout = inflater.inflate(R.layout.slider_items_layout,null);
+        LayoutInflater inflater = (LayoutInflater) Mcontext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View sliderLayout = inflater.inflate(R.layout.the_items_layout,null);
 
-        ImageView hero_img = sliderLayout.findViewById(R.id.hero_img);
-        TextView slider_title = sliderLayout.findViewById(R.id.slider_title);
+        ImageView featured_image = sliderLayout.findViewById(R.id.my_featured_image);
+        TextView caption_title = sliderLayout.findViewById(R.id.my_caption_title);
 
-        hero_img.setImageResource(sliderModelList.get(position).getHero_img());
-        slider_title.setText(sliderModelList.get(position).getSlider_Title());
+        featured_image.setImageResource(theSlideItemsModelClassList.get(position).getFeatured_image());
+        caption_title.setText(theSlideItemsModelClassList.get(position).getThe_caption_Title());
         container.addView(sliderLayout);
         return sliderLayout;
     }
-
-    @Override
-    public int getCount() {
-        return sliderModelList.size();
-    }
-
-    @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
-        return view == o;
-    }
-
+    
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View)object);
+    }
+    
+    @Override
+    public int getCount() {
+        return theSlideItemsModelClassList.size();
+    }
+    
+    @Override
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
+        return view == o;
     }
 }
 ```
@@ -254,16 +250,16 @@ public class SliderPagerAdapter extends PagerAdapter {
 Declare the following variables in your `MainActivity` class.
 
 ```java
-private List<Slide> lstSlides;
-private ViewPager viewPager;
-private TabLayout tabLayoutIndicator;
+private List<The_Slide_Items_Model_Class> listItems;
+private ViewPager page;
+private TabLayout tabLayout;
 ```
 
 Create an instance of `viewPager` and `tabLayoutIndicator` inside the `onCreate` method.
 
 ```java
-sliderViewPager = findViewById(R.id.slider_pager) ;
-tabLayoutIndicator = findViewById(R.id.slider_tablayout_indicator);
+page = findViewById(R.id.my_pager) ;
+tabLayout = findViewById(R.id.my_tablayout);
 ```
 
 #### Preparing the slider adapter
@@ -272,24 +268,25 @@ This consists of;
 - an ArrayList of the slider items, an image, and a title describing each slide. Check image resources(`drawable`) in this [GitHub](https://github.com/kimkimani/An_Auto_Android_Slider/tree/master/app/src/main/res/drawable) repository.
 
 ```java
-sliderList = new ArrayList<>() ;
-sliderList.add(new SliderModel(R.drawable.slider1,"Slider 1 Title"));
-sliderList.add(new SliderModel(R.drawable.slider2,"Slider 2 Title"));
-sliderList.add(new SliderModel(R.drawable.slider3,"Slider 3 Title"));
-sliderList.add(new SliderModel(R.drawable.slider4,"Slider 4 Title"));
-sliderList.add(new SliderModel(R.drawable.slider5,"Slider 5 Title"));
-sliderList.add(new SliderModel(R.drawable.slider6,"Slider 6 Title"));
-sliderList.add(new SliderModel(R.drawable.slider7,"Slider 7 Title"));
-sliderList.add(new SliderModel(R.drawable.slider8,"Slider 8 Title"));
-sliderList.add(new SliderModel(R.drawable.slider9,"Slider 9 Title"));
-sliderList.add(new SliderModel(R.drawable.slider10,"Slider 10 Title"));
+// Make a copy of the slides you'll be presenting.
+listItems = new ArrayList<>() ;
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item1,"Slider 1 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item2,"Slider 2 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item3,"Slider 3 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item4,"Slider 4 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item5,"Slider 5 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item6,"Slider 6 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item7,"Slider 7 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item8,"Slider 8 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item9,"Slider 9 Title"));
+listItems.add(new The_Slide_Items_Model_Class(R.drawable.item10,"Slider 10 Title"));
 ```
 
-- Hook the Viewpager to the `SliderPagerAdapter` (`PagerAdapter`) using `setAdapter`.
+- Hook the Viewpager to the `The_Slide_items_Pager_Adapter` (`PagerAdapter`) using `setAdapter`.
 
 ```java
-SliderPagerAdapter adapter = new SliderPagerAdapter(this, sliderList);
-sliderViewPager.setAdapter(adapter);
+The_Slide_items_Pager_Adapter itemsPager_adapter = new The_Slide_items_Pager_Adapter(this, listItems);
+page.setAdapter(itemsPager_adapter);
 ```
 
 This will populate the available list of slides into pager views.
@@ -297,7 +294,7 @@ This will populate the available list of slides into pager views.
 - Hooking up a `TabLayout` to the `ViewPager` `setupWithViewPager`. You need a single method (`setupWithViewPager`) to set the `TabLayout` into the `ViewPager`. With that, you get a sliding view with a tabular indicator.
 
 ```java
-   tabLayoutIndicator.setupWithViewPager(sliderViewPager,true);
+tabLayout.setupWithViewPager(page,true);
 ```
 
 You can now run the application to test if everything is working.
@@ -310,91 +307,89 @@ Swiping on the screen will change the displaying slide, and tapping on the slide
 Create a method named `SliderTimer` that extends `TimerTask`.
 
 ```java
-public class SliderTimer extends TimerTask {
+public class The_slide_timer extends TimerTask {
 }
 ```
 
 Hover over it → right-click → generate → implement methods → `run():void` and include the following code block.
 
 ```java
-public class SliderTimer extends TimerTask {
+public class The_slide_timer extends TimerTask {
     @Override
     public void run() {
 
         MainActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (sliderViewPager.getCurrentItem()< sliderList.size()-1) {
-                    sliderViewPager.setCurrentItem(sliderViewPager.getCurrentItem()+1);
+                if (page.getCurrentItem()< listItems.size()-1) {
+                    page.setCurrentItem(page.getCurrentItem()+1);
                 }
                 else
-                    sliderViewPager.setCurrentItem(0);
+                    page.setCurrentItem(0);
             }
         });
-
     }
 }
 ```
 
-Initialize the `Timer` inside the `onCreate` and set the `delay` and `period` parameters in milliseconds.
-
-- Delay - the time taken after displaying the current slide and triggering the next slide.
-- Period - time taken between the successive slides.
+Initialize the `Timer` task and set the `delay` and `period` parameters in milliseconds within the `onCreate` method.
 
 ```java
-Timer timer = new Timer();
-timer.scheduleAtFixedRate(new MainActivity.SliderTimer(),2000,3000);
+// The_slide_timer
+java.util.Timer timer = new java.util.Timer();
+timer.scheduleAtFixedRate(new The_slide_timer(),2000,3000);
 ```
 
 Here is the MainActivity full code.
 
 ```java
 public class MainActivity extends AppCompatActivity {
-    private List<SliderModel> sliderList;
-    private ViewPager sliderViewPager;
-    private TabLayout tabLayoutIndicator;
+    private List<The_Slide_Items_Model_Class> listItems;
+    private ViewPager page;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sliderViewPager = findViewById(R.id.slider_pager) ;
-        tabLayoutIndicator = findViewById(R.id.slider_tablayout_indicator);
+        page = findViewById(R.id.my_pager) ;
+        tabLayout = findViewById(R.id.my_tablayout);
 
-        // list of slides
-        sliderList = new ArrayList<>() ;
-        sliderList.add(new SliderModel(R.drawable.slider1,"Slider 1 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider2,"Slider 2 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider3,"Slider 3 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider4,"Slider 4 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider5,"Slider 5 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider6,"Slider 6 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider7,"Slider 7 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider8,"Slider 8 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider9,"Slider 9 Title"));
-        sliderList.add(new SliderModel(R.drawable.slider10,"Slider 10 Title"));
-        SliderPagerAdapter adapter = new SliderPagerAdapter(this, sliderList);
-        sliderViewPager.setAdapter(adapter);
+        // Make a copy of the slides you'll be presenting.
+        listItems = new ArrayList<>() ;
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item1,"Slider 1 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item2,"Slider 2 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item3,"Slider 3 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item4,"Slider 4 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item5,"Slider 5 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item6,"Slider 6 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item7,"Slider 7 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item8,"Slider 8 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item9,"Slider 9 Title"));
+        listItems.add(new The_Slide_Items_Model_Class(R.drawable.item10,"Slider 10 Title"));
 
-        // set the slider timer
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MainActivity.SliderTimer(),2000,3000);
-        tabLayoutIndicator.setupWithViewPager(sliderViewPager,true);
+        The_Slide_items_Pager_Adapter itemsPager_adapter = new The_Slide_items_Pager_Adapter(this, listItems);
+        page.setAdapter(itemsPager_adapter);
+
+        // The_slide_timer
+        java.util.Timer timer = new java.util.Timer();
+        timer.scheduleAtFixedRate(new The_slide_timer(),2000,3000);
+        tabLayout.setupWithViewPager(page,true);
     }
 
-    public class SliderTimer extends TimerTask {
+    public class The_slide_timer extends TimerTask {
         @Override
         public void run() {
 
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (sliderViewPager.getCurrentItem()< sliderList.size()-1) {
-                        sliderViewPager.setCurrentItem(sliderViewPager.getCurrentItem()+1);
+                    if (page.getCurrentItem()< listItems.size()-1) {
+                        page.setCurrentItem(page.getCurrentItem()+1);
                     }
                     else
-                        sliderViewPager.setCurrentItem(0);
+                        page.setCurrentItem(0);
                 }
             });
         }
@@ -402,12 +397,12 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-Run the application to test if this works.
+Run the app on your mobile phone to see if this works.
 
 ![Automatic slider timer](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
 
 ### Conclusion
-I hope this guide helped you to create and implement sliders in your application. For reference, you can download the project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
+I hope this guide helped create and implement sliders in your app. For further reference, download or clone this project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
