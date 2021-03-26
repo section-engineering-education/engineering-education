@@ -13,7 +13,7 @@
       
 #### Grammar & plagiarism checks
 - [ ] Have you spellchecked and grammar checked your article? - **Tools:** [Write&Improve](https://writeandimprove.com/?lang=en-GB) - [ProWritingAid](https://prowritingaid.com/) -  [Grammarly](https://grammarly.com) 
-- [ ] Have you placed your article through a 3rd party plagiarism checker? We suggest using Quetext, [this tool](https://www.quetext.com/) is free and has a daily limit. **We typically accept articles with 10% or less.**
+- [ ] Please place your article through a 3rd party plagiarism checker? We suggest using Quetext, [this tool](https://www.quetext.com/) is free and has a daily limit. **We typically accept articles with 10% or less.**
 - [ ] Have you checked your article for readability? - **Tool:** [Hemmingway](http://www.hemingwayapp.com)
 - [ ] Have you added sources for quotes and images that aren't yours?
 
