@@ -208,3 +208,7 @@ And now you know exactly how to do it!✨
 1. https://www.linux.org/forums/#linux-tutorials.122
 2. https://mason.gmu.edu/~montecin/UNIXpermiss.htm
 3. https://ss64.com/bash/chmod.html
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+
