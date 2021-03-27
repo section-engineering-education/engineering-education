@@ -1,11 +1,11 @@
-Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use Most APIs to fetch data from web servers and render it to the application's UI components.
+Application Programming Interface (API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to the application's UI components.
 
 This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub)
 
 ### Prerequisites
 1. A basic understanding of Flutter
 3. Flutter SDK installed on your computer
-2. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
+2. Code editor, [Android Studio](https://developer.android.com/studio), or [VSCode](https://code.visualstudio.com/download) are most preferred.
 3. An emulator or a mobile device to run the code.
 
 ### Table oF contents
@@ -21,6 +21,7 @@ This article will demonstrate how to fetch and consume data from a server using 
 We will build our application based on the Github API. Therefore, we need to obtain the GitHub `client key` and `secret` to access the API. Check [this link](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/) on a complete guide on getting the `client key` and `secret`.
 
 We need to organize the folders within our flutter project to locate our application's files and components with ease. This practice makes us find bugs easily, unlike writing the entire application on a single file. You can check [this](https://www.section.io/engineering-education/flutter-folder-organization/) article for the preferable folder organization. The final folder organization should appear as below:
+
 ```
 lib
     ┣ models
@@ -36,7 +37,8 @@ lib
 
 ### Adding the HTTP Package
 The `HTTP package` contains a set of high-level functions for use in HTTP resource consumption. To add the package to our application, open `pubspec.yml` and add the following line under `dependencies:
-```dart
+
+```yml
 dependencies:
 flutter:
     SDK: flutter
@@ -44,10 +46,13 @@ HTTP: ^0.12.2
 ```
 
 Next, we will import the HTTP package into our `GithubRequest.dart` file with the following line of code:
+
 ```dart
 import 'package:HTTP/HTTP.dart' as HTTP;
 ```
+
 The below shows how we will use the package to fetch data from the API.
+
 ```dart
 //importing HTTP package for fetching and consuming HTTP resources
 import 'package:HTTP/HTTP.dart' as HTTP;
@@ -76,16 +81,18 @@ class Github {
 
 ### Creating Data classes from JSON
 Since flutter accepts dart as the primary programming language, we need to convert the JSON data fetched from the URL to dart Classes for consumption in the application. We can do that using the [Quicktype](https://app.quicktype.io/) website where we pass the JSON object, and a class of the object is returned based on a specified language. Will will return our classes in `dart`. For instance, our JSON representing the User is as shown below:
+
 ```dart
 {
   "login": "jerimkaura",
   "avatar_url": "https://avatars.githubusercontent.com/u/50904889?v=4",
   "location": "Nairobi"
 }
-
 ```
+
 #### The user class
 I edited the JSON to capture only the attributes needed on the application. When we pass the above JSON into [Quicktype](https://app.quicktype.io/), the generated user class is as below:
+
 ```dart
 // To parse this JSON data, do
 //     final user = userFromJson(jsonString);
@@ -122,10 +129,11 @@ class User {
     "location": location,
   };
 }
-
 ```
+
 ### Adding the providers
 The Provider will have the functions required to fetch the API's user data and deliver a response. We will create a file called `UserProvider.dart` under the `Providers` folder. The `ChangeNotifier` class will notify our view when one more variable changes.
+
 ```dart
 
 class UserProvider with ChangeNotifier {
@@ -183,16 +191,20 @@ class UserProvider with ChangeNotifier {
 ``` 
 
 ### Consuming the data
+
 With our model and Provider ready, our application will fetch data via the Provider and convert the JSON result into dart classes using the User model's methods. The next thing we are doing is consuming the data on a mobile screen. For this process, we will do three primary things.
 
 #### Instantiate the user classes.
-we will have two instances of the user class; one instance is for the User and another as a list of followers of a given user.
+We will have two instances of the user class; one instance is for the User and another as a list of followers of a given user.
+
 ```dart
 User user; //instantiate a user
 List< User> followers; // instantiate a list of users as a placeholder for the followers.
 ```
+
 #### Fetching data using setState()
 The setState method notifys the application that the internal state of the application has been changed and that the change might affetc the view.
+
 ```dart
 setState(() {
 //this function gets a user from the username supplied in the input
@@ -207,8 +219,10 @@ setState(() {
   });
 });
 ```
+
 #### Rendering the data on the UI
 The last thing under data consumption is to render the dynamic output onto our user interface. The block of code below indicates shows how to consume the data on the mobile screen:
+
 ```dart
 // username
 Text(followers[index].login,style:TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.grey[700]),)
@@ -219,8 +233,10 @@ child: CircleAvatar(backgroundImage: NetworkImage(followers[index].avatarUrl),),
 // User location
 Text(followers[index].location, style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w700),)
 ```
+
 ### Conclusion.
 To sum up this article, we learned how to fetch and consume data from a RESTful API.
+
 To summarize:
 - We fetched a user from GitHub API  and displayed his followers.
 - We automatically generated dart classes from JSON using Quicktype
