@@ -1,6 +1,6 @@
 Application Programming Interface (API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to the application's UI components.
 
-This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub)
+This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub).
 
 ### Prerequisites
 1. A basic understanding of Flutter
