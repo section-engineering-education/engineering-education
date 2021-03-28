@@ -17,12 +17,12 @@ images:
 
 
 
-### Introduction
+## Introduction
 A template is a way of writing a single function or class that can be reused by a group of similar functions or classes. In plain terminology, you can use templates to declare a single function or class that works with different data types. This article will take a look at templates and how to use them for generic programming in c++.
 
 <!--more-->
 
-### Prerequisites
+## Prerequisites
 To follow this article, you’ll need to have:
 - A [Codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
 - An understanding of the C++ language.
@@ -31,16 +31,18 @@ We can use the concept of templates in two different ways:
 - `Class templates`
 - `Function templates`
 
-### How do templates work?
+## How do templates work?
 Templates expand at compile time like macros. The difference is that the compiler does a type check before expanding the template. The principle is basic, source code only contains function/class, but many copies of the same function/class can be included in compiled code.
 
-### Class templates
+## Class templates
 A class template is a template that enables the developer to operate with generic data types. This enables the class to be used on several different data types as per the specifications without the need for each type to be re-written.
 Quite often, you'll need a class implementation that is the same for all classes except for the data types used. For each data type, you'd have to declare a separate class or build many member variables and functions within a single class.
 
-This will bloat the code base and will be difficult to manage because of a change in one class that will need change on all classes/functions. But, class templates allow you to reuse the same code for all data types. Like normal arguments, we can transfer more than one type of data to templates as arguments if we need to.
+The declaration of separate classes that do the same thing for different data types will bloat the code base and make it difficult to manage. Any changes made in one class will need to be reflected in all the similar classes.
 
-#### Declaration of a class template
+Class templates allow you to reuse the same code for all data types. Like normal arguments, we can transfer more than one type of data to templates as arguments if we need to.
+
+### Declaration of a class template
 Syntax:
 ```c++
 template <class T>
@@ -62,7 +64,7 @@ Let’s break down the syntax as shown below:
 - `var` - It is a variable of the class of the generic data type.
 - ` T functionName(T arg)` - It is a function of the generic data type.
 
-#### How to create a class template object?
+### How to create a class template object?
 You need to define the data type within the angle brackets `< >` at the time of development to build a class template object as shown below:
 
 ```c++
@@ -133,18 +135,18 @@ We compare the two digits within the function definition. We have created a clas
 
 Every time we are using the class template, it is required to tell it what data type we are substituting for `T`. In this instance, we are substituting `T` for `int`. Afterward, we created the object `big` and passed two integer numbers. We finish the program by calling the function `T larger()`.
 
-#### Advantages of class templates
+### Advantages of class templates
 The main advantages of using a class template are:
 - You need to define only one class that will operate with various types of data.
 - Only those data types for which the template has been used in the application produce instances of this template class at compile time.
 - As we have already established, the creation and use of a template class will cut the development efforts and lines of code. It will also decrease the difficulty and time of debugging the software for any problems because you only deal with 1 class.
 
-### Function templates
+## Function templates
 A [function template](https://bcastudyguide.wordpress.com/unit-4-generic-function) acts similarly to a normal function, with one key difference. A single function template can [interact with different data types at once](https://bcastudyguide.wordpress.com/unit-4-generic-function), but with a single normal function, only one set of data types can work.
 
 Examples of OOP's polymorphism feature are both function overloading and function templates.  If you need to perform similar operations for two or more data types, you use overloading functions to create two functions. When several functions perform identical operations, templates are used. Using function templates, but, would be a safer method since you can do the same task with less and more maintainable code
 
-#### Declaration of a function template?
+### Declaration of a function template?
 The function template starts with the `template` keyword accompanied by the parameter inside the angle brackets `<>` and the function declaration.
 
 Syntax:
@@ -228,7 +230,7 @@ Variables of three distinct data types are declared within the `main()` function
 
 Likewise, when `float` and `char` data are passed, the `Large()` function is generated because it recognizes the argument data types. This way, three identical normal functions were replaced by using a single function prototype.
 
-#### Variadic function template
+### Variadic function template
 Variadic function templates are functions that [can take multiple numbers of arguments](https://www.geeksforgeeks.org/variadic-function-templates-c). Only type-safe templates with a variable number of arguments may be used since the arguments are resolved at runtime. It's a better template to use than the others because the others will only take a limited number of arguments.
 
 Syntax:
@@ -336,7 +338,7 @@ display();
 ```
 The compiler at this point searches for a function overload that fits the empty function, that is, a function that takes no arguments. All functions with one or more arguments are matched to the variadic function, while the empty are matched to the empty functions.
 
-### Conclusion 
+## Conclusion 
 In this article, we have gone through templates in c++, both class and function templates, and how to declare them. In the broader codebase, we use templates for code reusability and software flexibility. 
 
 Happy coding!
