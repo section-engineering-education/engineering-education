@@ -1,26 +1,30 @@
-Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use Most APIs to fetch data from web servers and render it to the application's UI components.
+Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use Most APIs to fetch data from web servers and render it to its UI components.
 
-This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub)
+This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub)
 
 ### Prerequisites
 1. A basic understanding of Flutter
-3. Flutter SDK installed on your computer
-2. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
-3. An emulator or a mobile device to run the code.
+2. Flutter SDK installed on your computer
+3. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
+4. An emulator or a mobile device to run the code.
 
 ### Table oF contents
-- Setting up the application
-- The HTTP package
-- Creating Data classes from JSON
-- Implementing the providers
-- Consuming the data returned from the API request on a mobile screen
-- Conclusion
-- Further Reading
+- [Setting up the application](#setting-up-the-application)
+- [The HTTP package](#adding-the-http-package)
+- [Creating Data classes from JSON](#creating-data-classes-from-json)
+- [Implementing providers](#adding-the-providers)
+- [Consuming the API data ](#consuming-the-data)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
 ### Setting up the application
-We will build our application based on the Github API. Therefore, we need to obtain the GitHub `client key` and `secret` to access the API. Check [this link](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/) on a complete guide on getting the `client key` and `secret`.
+First, you need to set your application by installing the Flutter SDK on your computer as explained [here](https://flutter.dev/docs/get-started/install).  After installing the SDK, we now need to set up our local machine project. In case you have not used flutter before, check out this [link](https://flutter.dev/docs/get-started/test-drive#create-app) for a stepwise explanation to creating a flutter project. 
 
-We need to organize the folders within our flutter project to locate our application's files and components with ease. This practice makes us find bugs easily, unlike writing the entire application on a single file. You can check [this](https://www.section.io/engineering-education/flutter-folder-organization/) article for the preferable folder organization. The final folder organization should appear as below:
+#### API key and Client Secret
+We will build our application based on the Github API. Therefore, we need to obtain the GitHub `client key` and `secret` to access the API. Check [this link](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/) for a complete guide on getting the `client key` and `secret`.
+
+#### Organizing the folders
+Instead of writing our code on a single file, We need to organize the folders within our flutter project to locate our application's files and components with ease. This practice makes us find bugs easily. Besides, we need to separate the view files from files that facilitate fetching data from the API. You can check [this](https://www.section.io/engineering-education/flutter-folder-organization/) article for the preferable folder organization. The final folder organization should appear as below:
 ```
 lib
     ┣ models
@@ -36,7 +40,7 @@ lib
 
 ### Adding the HTTP Package
 The `HTTP package` contains a set of high-level functions for use in HTTP resource consumption. To add the package to our application, open `pubspec.yml` and add the following line under `dependencies:
-```dart
+```yml
 dependencies:
 flutter:
     SDK: flutter
@@ -44,9 +48,11 @@ HTTP: ^0.12.2
 ```
 
 Next, we will import the HTTP package into our `GithubRequest.dart` file with the following line of code:
+
 ```dart
 import 'package:HTTP/HTTP.dart' as HTTP;
 ```
+
 The below shows how we will use the package to fetch data from the API.
 ```dart
 //importing HTTP package for fetching and consuming HTTP resources
@@ -54,10 +60,10 @@ import 'package:HTTP/HTTP.dart' as HTTP;
 
 //Github request class
 class Github {
-  final String userName;
+  final String userName; // usernaname
   final String url = 'https://api.github.com/';
-  static String clientId = 'CLIENT_ID';
-  static String clientSecret = 'CLIENT_SECRET';
+  static String clientId = 'CLIENT_ID'; //enter yout client id
+  static String clientSecret = 'CLIENT_SECRET'; // insert your client secret
 
   //Github class constructor
   Github(this.userName);
@@ -76,7 +82,9 @@ class Github {
 
 ### Creating Data classes from JSON
 Since flutter accepts dart as the primary programming language, we need to convert the JSON data fetched from the URL to dart Classes for consumption in the application. We can do that using the [Quicktype](https://app.quicktype.io/) website where we pass the JSON object, and a class of the object is returned based on a specified language. Will will return our classes in `dart`. For instance, our JSON representing the User is as shown below:
-```dart
+```json
+
+//data json object
 {
   "login": "jerimkaura",
   "avatar_url": "https://avatars.githubusercontent.com/u/50904889?v=4",
@@ -87,29 +95,32 @@ Since flutter accepts dart as the primary programming language, we need to conve
 #### The user class
 I edited the JSON to capture only the attributes needed on the application. When we pass the above JSON into [Quicktype](https://app.quicktype.io/), the generated user class is as below:
 ```dart
-// To parse this JSON data, do
-//     final user = userFromJson(jsonString);
+// To parse this JSON data, do 
+final user = userFromJson(jsonString);
 
 import 'dart:convert';
 
 //the created user class
 class User {
+
+  String login; //username
+  String avatarUrl; //profile picture
+  String location; //location
+
   //class constructor
   User({
-    this.login,
-    this.avatarUrl,
-    this.location,
-  });
+    this.login, //username
+    this.avatarUrl, //profile picture
+    this.location, //location
+  });  
 
-  String login;
-  String avatarUrl;
-  String location;
-
-  //JSON serialization
+  //JSON serialization: return the value from json
   factory User.fromRawJson(String str) => User.fromJson(json.decode(str));
 
+  //encode data to json format
   String toRawJson() => json.encode(toJson());
 
+  //creating a dart user object from the json object
   factory User.fromJson(Map<String, dynamic> json) => User(
     login: json["login"],
     avatarUrl: json["avatar_url"],
@@ -125,7 +136,7 @@ class User {
 
 ```
 ### Adding the providers
-The Provider will have the functions required to fetch the API's user data and deliver a response. We will create a file called `UserProvider.dart` under the `Providers` folder. The `ChangeNotifier` class will notify our view when one more variable changes.
+The Provider will have the functions required to fetch the API's user data and deliver a response. We will create a file called `UserProvider.dart` under the `Providers` folder. The `ChangeNotifier` class will notify our view when one more variable changes. We use the `async` function to wait for the User to be fetched from the API as our code execution continues.
 ```dart
 
 class UserProvider with ChangeNotifier {
@@ -139,10 +150,11 @@ class UserProvider with ChangeNotifier {
     await Github(username).fetchUser().then((data) {
       setLoading(false);
       if (data.statusCode == 200) {
+        //incase of success
         setUser(User.fromJson(json.decode(data.body)));
       } else {
         Map<String, dynamic> result = json.decode(data.body);
-        setMessage(result['message']);
+        setMessage(result['message']); // error message
       }
     });
     return isUser(); //returns the fetched user
@@ -154,12 +166,12 @@ class UserProvider with ChangeNotifier {
 
   void setLoading(value) {
     loading = value;
-    notifyListeners();
+    notifyListeners(); //This method is called when the objects is changed
   }
 
   void setUser(value) {
     user = value;
-    notifyListeners();
+    notifyListeners(); //alert listeners that user's value changed
   }
 
   User getUser() {
@@ -168,11 +180,11 @@ class UserProvider with ChangeNotifier {
 
   void setMessage(value) {
     errorMessage = value;
-    notifyListeners();
+    notifyListeners(); // alert listeners that the error message changed
   }
 
   String getMessage() {
-    return errorMessage;
+    return errorMessage; // get the error message
   }
 
   bool isUser() {
@@ -192,10 +204,10 @@ User user; //instantiate a user
 List< User> followers; // instantiate a list of users as a placeholder for the followers.
 ```
 #### Fetching data using setState()
-The setState method notifys the application that the internal state of the application has been changed and that the change might affetc the view.
+The setState method notifies the application that the application's internal state has been changed and that the change might affect the view. We will add this piece of code in our ``FollowersPage.dart` file just before opening the `scaffold` widget.
 ```dart
 setState(() {
-//this function gets a user from the username supplied in the input
+//This function gets a user from the username supplied in the input
   user = Provider.of<UserProvider>(context).getUser();
   
   // this method returns followers of the username supplied in the input as a list
@@ -225,7 +237,7 @@ To summarize:
 - We fetched a user from GitHub API  and displayed his followers.
 - We automatically generated dart classes from JSON using Quicktype
 - We implemented the flutter folder organization in building an actual application.
-Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub).
+Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
 
 ### Further reading
 - [Fetch data from the internet](https://flutter.dev/docs/cookbook/networking/fetch-data)
