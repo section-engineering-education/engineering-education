@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/
+title: How to upload files to AWS S3 using Django framework
+description: This article explains a step by step tutorial on how to create S3 buckets and upload files through a Django application.
+author: ifenna-okoye
+date: 2021-03-28T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.jpg
+    alt: How to upload files to AWS S3 using Django framework example image
+---
+
 ### How to upload files to AWS S3 using Django Rest Framework
 
 File upload and download are some most performed actions on the web. With the rise of cloud-based solutions, companies are moving from an on-premises solution to cloud storage. One of the reasons is its cheaper cost and convenience.
@@ -326,3 +343,6 @@ In this article, we created an AWS S3 bucket and assigned IAM User with full acc
 ### References
 
 - [Django-storages documentation](https://django-storages.readthedocs.io/en/latest/index.html)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
