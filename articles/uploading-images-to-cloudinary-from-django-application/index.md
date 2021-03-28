@@ -1,17 +1,29 @@
-Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult.
-If you deploy your Django to platform like heroku, you can't save image.
+Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your Django to a platform like Heroku, you can't save images.
 
-In this tutorial, we look at how to save images in Django using CLoudinary.
+We could have our images stored in the database, but the database size will explode over time. Hence, the reason images should be stored in external services like Cloudinary, AWS s3, or Imgur. The advantage Cloudinary has is "configuration is quick and easy".
 
-Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimizations to delivery.
+In this tutorial, we learn about how to save images in Django using Cloudinary.
+
+Cloudinary is an end-to-end image and video management solution for websites and mobile apps. It covers everything from image and video uploads, storage, manipulations, and optimizations to delivery.
+
+Creating an account is free and you also get 25GB of storage.
+
+### Table of contents
+- Creating and setting up a new Django project
+- Setting up Cloudinary
+- Configuration
+- Creating a model
+- Creating a view
+- Conclusion
 
 ### Prerequisites
 
-To follow along with this tutorial, you need Python3 installed on your machine.
+- To follow along with this tutorial, you need Python3 installed on your machine.
+- We will need a basic understanding of Django
 
 ### Creating and setting up a new Django project
 
-Let's start by creating a new virtual environment
+Let's start by creating a new virtual environment.
 
 ```bash
 $ python -m virtualenv env
@@ -46,7 +58,7 @@ $ django-admin startapp photos
 
 ```
 
-Lets add our app to the list of installed apps. Navigate to the "photoapp" directory and edit the settings.py file
+Let's add our app to the list of installed apps. Navigate to the "photoapp" directory and edit the settings.py file
 
 ```python
 INSTALLED_APPS = [
@@ -69,12 +81,12 @@ INSTALLED_APPS = [
 
 ### Setting up Cloudinary
 
-Now lets head over to [cloudinary](https://cloudinary.com/) website to create an account.
+Now let's head over to [cloudinary](https://cloudinary.com/) website to create an account.
 Click on the Sign Up button and fill in your details to create an account.
 
 ### Installation
 
-Install the cloudinary module in our project
+Install the Cloudinary module in our project
 
 ```bash
 $ pip install cloudinary
@@ -114,12 +126,13 @@ We will also need to include Cloudinary's python classes in settings.py
 
 ### Configuration
 
-To use the Cloudinary Django library, we have to configure at least our cloud_name, api_key and api_secret .
-we can find our account-specific configuration credentials in the Dashboard page of the account console.
+To use the Cloudinary Django library, we have to configure at least our cloud_name, api_key, and api_secret.
+we can find our account-specific configuration credentials on the Dashboard page of the account console.
 
 ![Cloudinary Dashboard](/engineering-education/uploading-images-to-cloudinary-from-django-application/dash.png)
 
 ```python
+#adding config
 cloudinary.config( 
   cloud_name = "your_cloud_name", 
   api_key = "Your_api_key", 
@@ -170,13 +183,13 @@ admin.site.register(photos)
 
 Let's now login to the admin page.
 
-To login to the admin section, go to this link [localhost:8000/admin](localhost:800/admin) and login with our just created superuser details.
+To login to the admin section, go to this link [localhost:8000/admin](localhost:800/admin) and log in with our just created superuser details.
 
 ![Django Admin](/engineering-education/uploading-images-to-cloudinary-from-django-application/admin.png)
 
 ![](/engineering-education/uploading-images-to-cloudinary-from-django-application/django-admin.png)
 
-Now, let's add an image in the photos category to test if it uploads to cloudinary.
+Now, let's add an image in the photos category to test if it uploads to Cloudinary.
 
 Click on pictures, then click "Add Photo" to add an image
 
@@ -184,9 +197,9 @@ Click on pictures, then click "Add Photo" to add an image
 
 ![](/engineering-education/uploading-images-to-cloudinary-from-django-application/photo-added.png)
 
-To confirm if the image was uploaded successfully, click on the just added image, clik on the link there.
+To confirm if the image was uploaded successfully, click on the just added image, click on the link there.
 
-We can also confirm by going tp the "media library" section on our cloudinary account.
+We can also confirm by going to the "media library" section on our Cloudinary account.
 
 
 ### Creating View
@@ -200,11 +213,11 @@ def index(request):
     return render(request, 'index.html')
 ```
 
-Let's create our "templates" folder. Inside the folder, create a index.html file.
+Let's create our "templates" folder. Inside the folder, create an index.html file.
 
 photos/templates/index.html
 
-Before adding our html code, let's quickly create a new url for newly created view.
+Before adding our HTML code, let's quickly create a new URL for the newly created view.
 
 Add the following code to urls.py file
 
@@ -221,20 +234,22 @@ urlpatterns = [
 
 Let's also import our photos model in the views.py file
 
-we also need to add context to render, so we can use image in our template.
+we also need to add context to render, so we can use images in our template.
 
 ```python
 from django.shortcuts import render
-from .models import photos
+from .models import photos #import photos model
 
 def index(request):
+    #imports photos and save it in database
     photo = photos.objects.all()
+    #adding context 
     ctx = {'photo':photo}
     return render(request, 'index.html', ctx)
     
 ```
 
-Now let's work on our html template to display the image
+Now let's work on our HTML template to display the image
 
 Open the index.html file we created earlier and paste the following code.
 
@@ -249,6 +264,7 @@ Open the index.html file we created earlier and paste the following code.
 </head>
 <body>
     <h2>Cloudinary Fish</h2>
+    <!-- loop through all the images -->
     {% for pic in photo %}
     <h2>{{pic.Tittle}}</h2>
         <img src="{{pic.image.url}}" alt="fish">
@@ -258,12 +274,20 @@ Open the index.html file we created earlier and paste the following code.
 
 ```
 
-![](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
+In the above code, we used for-loop to go through all the pictures.
+
+![Image of a fish](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
 
 ### Conclusion
-We've seen how we can add upload images to cloudinary from our Django app. For further learning on image/video upload and transformation using cloudinary. Check out the link below
+We've seen how we can:
+- add upload images to Cloudinary from our Django app.
+-use Cloudinary to store images
+
+For further learning on image/video upload and transformation using Cloudinary. Check out the link below.
 
 [Django video and image upload](https://cloudinary.com/documentation/django_image_and_video_upload).
+
+The full code of this project is also available on [github](https://github.com/shosenwales/django-cloudinary).
 
 
 
