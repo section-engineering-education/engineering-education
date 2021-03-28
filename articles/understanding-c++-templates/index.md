@@ -1,5 +1,26 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/understanding-c++-templates/
+title: Understanding C++ Templates
+description: In this article, we learn about templates in C++, both class and function templates, and how to declare them.
+author: dawe-daniel
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-c++-templates/hero.jpg
+    alt: C++ Templates
+---
+
+
+
 ### Introduction
 A template is a way of writing a single function or class that can be reused by a group of similar functions or classes. In plain terminology, you can use templates to declare a single function or class that works with different data types. This article will take a look at templates and how to use them for generic programming in c++.
+
+<!--more-->
 
 ### Prerequisites
 To follow this article, you’ll need to have:
