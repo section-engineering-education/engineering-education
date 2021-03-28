@@ -1,6 +1,6 @@
-Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use Most APIs to fetch data from web servers and render it to its UI components.
+Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.
 
-This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/mygithub)
+This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
 
 ### Prerequisites
 1. A basic understanding of Flutter
@@ -24,7 +24,7 @@ First, you need to set your application by installing the Flutter SDK on your co
 We will build our application based on the Github API. Therefore, we need to obtain the GitHub `client key` and `secret` to access the API. Check [this link](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/) for a complete guide on getting the `client key` and `secret`.
 
 #### Organizing the folders
-Instead of writing our code on a single file, We need to organize the folders within our flutter project to locate our application's files and components with ease. This practice makes us find bugs easily. Besides, we need to separate the view files from files that facilitate fetching data from the API. You can check [this](https://www.section.io/engineering-education/flutter-folder-organization/) article for the preferable folder organization. The final folder organization should appear as below:
+Instead of writing our code on a single file, We need to organize the folders within our flutter project to locate our application's files and components with ease. This practice makes us find bugs easily. Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](https://www.section.io/engineering-education/flutter-folder-organization/) article for the preferable folder organization. The final folder organization should appear as below:
 ```
 lib
     ┣ models
@@ -53,7 +53,7 @@ Next, we will import the HTTP package into our `GithubRequest.dart` file with th
 import 'package:HTTP/HTTP.dart' as HTTP;
 ```
 
-The below shows how we will use the package to fetch data from the API.
+The below shows how we will use the package to fetch the followers of a given username from the API. We are using username because every user has a unique username.
 ```dart
 //importing HTTP package for fetching and consuming HTTP resources
 import 'package:HTTP/HTTP.dart' as HTTP;
@@ -71,11 +71,6 @@ class Github {
   //Fetch a user with the username supplied in the form input
   Future<http.Response> fetchUser() {
     return http.get(url + 'users/' + userName);
-  }
-
-  //Fetch repositories of the given user
-  Future<http.Response> fetchRepos() {
-    return http.get(url + 'users/' + userName + '/repos');
   }
 }
 ```
@@ -204,7 +199,7 @@ User user; //instantiate a user
 List< User> followers; // instantiate a list of users as a placeholder for the followers.
 ```
 #### Fetching data using setState()
-The setState method notifies the application that the application's internal state has been changed and that the change might affect the view. We will add this piece of code in our ``FollowersPage.dart` file just before opening the `scaffold` widget.
+The setState method notifies the application that the application's internal state has been changed and that the change might affect the view. We will add this piece of code in our `FollowersPage.dart` file just before opening the `scaffold()` widget.
 ```dart
 setState(() {
 //This function gets a user from the username supplied in the input
@@ -232,12 +227,12 @@ child: CircleAvatar(backgroundImage: NetworkImage(followers[index].avatarUrl),),
 Text(followers[index].location, style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w700),)
 ```
 ### Conclusion.
-To sum up this article, we learned how to fetch and consume data from a RESTful API.
+To conclude this article, we learned how to fetch and consume data from a RESTful API, using Github's REST API as an example. 
 To summarize:
 - We fetched a user from GitHub API  and displayed his followers.
 - We automatically generated dart classes from JSON using Quicktype
 - We implemented the flutter folder organization in building an actual application.
-Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
+Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github). 
 
 ### Further reading
 - [Fetch data from the internet](https://flutter.dev/docs/cookbook/networking/fetch-data)
