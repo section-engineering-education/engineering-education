@@ -340,3 +340,6 @@ The compiler at this point searches for a function overload that fits the empty 
 In this article, we have gone through templates in c++, both class and function templates, and how to declare them. In the broader codebase, we use templates for code reusability and software flexibility. 
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
