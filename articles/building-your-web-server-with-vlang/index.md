@@ -120,10 +120,10 @@ Let's proceed to installing V and writing our first V program.
 
 #### Prerequesites
 
-- [Git](https://git-scm.com/download/win)
-- A C compiler like [tcc](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen/) (preferably)
+- [Git](https://git-scm.com/download/win) installed in your machine.
+- A C compiler like [TCC](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen/)
 - Terminal (cmd, powershell or bash)
-- Code Editor like VSCode (preferably)
+- Code Editor like VSCode
 
 #### Installation
 
