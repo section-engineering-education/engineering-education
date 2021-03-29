@@ -1,5 +1,21 @@
-Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your application to a platform like Heroku, you can't save images.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/uploading-images-to-cloudinary-from-django-application/
+title: Uploading images to cloudinary from django application
+description: This article will be an introduction to uploading images to Cloudinary using Django. We will be building a simple Django app to demonstrate how uploading images to Cloudinary is a better solution.
+author: shuaib-oseni
+date: 2021-03-29T00:00:00-21:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/uploading-images-to-cloudinary-from-django-application/hero.png
+    alt: Uploading images to cloudinary from django application Image
+---
+Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your application to a platform like Heroku, you can't save images.
+<!--more-->
 Alternatively, we could have our images stored in the database, but the database size will explode over time. Hence, the reason images should be stored in external services like Cloudinary, AWS S3, or Imgur. The advantage Cloudinary has is "configuration is quick and easy".
 
 In this tutorial, we learn about how to save images in Django using Cloudinary.
