@@ -7,7 +7,7 @@ title: Basic Setup for Data Science
 description: This article is an overview about how to setup your computer and install data science tools, by creating a basic Python setup using the Anaconda Package Manager.
 author: lalithnarayan-c
 date: 2021-01-17T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

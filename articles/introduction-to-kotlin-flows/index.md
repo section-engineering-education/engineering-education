@@ -7,7 +7,7 @@ title: Introduction to Kotlin Flows
 description: This article will serve as an introduction to Kotlin Flows. A flow is a stream of multiple, asynchronously computed values. Flows emit values as soon as they are done computing them. A flow consists of a producer and a consumer. As the names suggest, a producer emits values while the consumer receives the values. 
 author: peter-kayere
 date: 2021-02-08T00:00:00-20:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
