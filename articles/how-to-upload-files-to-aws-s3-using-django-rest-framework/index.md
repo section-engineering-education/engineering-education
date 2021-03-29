@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/
 title: How to upload files to AWS S3 using Django framework
-description: This article explains a step by step tutorial on how to create S3 buckets and upload files through a Django application.
+description: This article explains a step-by-step tutorial on how to create S3 buckets and upload files through a Django application.
 author: ifenna-okoye
 date: 2021-03-28T00:00:00-11:00
 topics: []
@@ -19,7 +19,7 @@ images:
 
 File upload and download are some most performed actions on the web. With the rise of cloud-based solutions, companies are moving from an on-premises solution to cloud storage. One of the reasons is its cheaper cost and convenience.
 
-This article shows how to upload user-generated files to Amazon S3 using the Django Rest Framework.
+This article demonstrates how to upload user-generated files to Amazon S3 using the Django Rest Framework.
 
 ### Table of Content
 
@@ -207,13 +207,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-Start the local server in the terminal:
+Start the development server by executing the command below:
 
 ```bash
 python manage.py runserver
 ```
 
-Visit the running server on a [web browser](http://localhost:8000/accounts/). We find the sample file uploaded in the **media** folder. This sample file was created when we uploaded it via the API on the browser as shown below:
+On the browser navigate to [accounts](http://localhost:8000/accounts/). We find the sample file uploaded in the **media** folder. This sample file was created when we uploaded it via the API on the browser as shown below:
 
 ![media_folder_included_vs_code](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/media_included_structure.png)
 
@@ -246,7 +246,7 @@ You will be redirected to the AWS S3 console which now shows the newly created b
 
 ![successful_create_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/successful_bucket_creation.png)
 
-We have successfully created an AWS S3 bucket. Recall during bucket creation, all public access to the S3 bucket was blocked.
+We have successfully created an AWS S3 bucket. Recall during bucket creation, public access to the S3 bucket was blocked.
 
 To access the created bucket from our application, we will need to gain access using AWS IAM. AWS IAM is an acronym for Identity and Access Management. It is used to provide access to rights and privileges on AWS resources. Currently, we can only access the S3 bucket through the console.
 
@@ -286,9 +286,7 @@ Once done, we can view the newly created AWS user on the IAM User dashboard:
 
 ![new_user](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/new_user.png)
 
-In this article, we will use [Django-storages](https://github.com/jschneier/django-storages) to connect to the AWS S3 bucket. Django-storages is best described on their page:
-
-> Django-storages is a collection of custom storage backends for Django
+In this article, we will use [Django-storages](https://github.com/jschneier/django-storages) to connect to the AWS S3 bucket. Django-storages is a collection of custom storage backends for Django framework.
 We will use the AWS S3 integration from the collection in Django-storages package.
 
 Install django-storages into the Django application via pip:
@@ -297,7 +295,7 @@ Install django-storages into the Django application via pip:
 pip install django-storages
 ```
 
-In settings.py:
+In settings.py add the code snippet below:
 
 ```python
 ...
@@ -322,13 +320,13 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 `AWS_S3_FILE_OVERWRITE`: when set to `True`, AWS S3 overwrites a file with the same name and format. If set to `False`, AWS appends unique strings to the newly uploaded file name. It does not override the existing file.
 
-Restart the local server in the terminal:
+Restart the development server by executing the command below:
 
 ```bash
 python manage.py runserver
 ```
 
-Visit [localhost](http://localhost:8000/accounts/) and retry uploading a sample file:
+On the browser, navigate to [localhost](http://localhost:8000/accounts/) and retry uploading a sample file:
 
 ![aws_successful_upload](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/aws_sucessful_upload.png)
 
