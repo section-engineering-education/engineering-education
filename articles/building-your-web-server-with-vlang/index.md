@@ -131,8 +131,8 @@ The code snippet above is a typical example of how the `Option/Result` type work
 
 Other features are:
 
-- TCC backends: The main backend compile to human readable C
-- V possesses a compile-time of 1million lines of code per second.
+- TCC backends: The main backend compiles V to human readable C
+- V possesses a compile-time of 1 million lines of code per second.
 - They’re no dependencies. V is being built with V!
 - Memory management: By design, V promotes a simple abstraction-free code style. Based on the official V documentation:
 
@@ -149,10 +149,10 @@ Let's proceed to installing V and writing our first V program.
 
 #### Prerequesites
 
-- [Git](https://git-scm.com/download/win)
-- A C compiler like [tcc](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen/) (preferably)
+- [Git](https://git-scm.com/download/win) installed in your machine.
+- A C compiler like [TCC](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen/)
 - Terminal (cmd, powershell or bash)
-- Code Editor like VSCode (preferably)
+- Code Editor like VSCode
 
 #### Installation
 
