@@ -127,11 +127,13 @@ import cloudinary.api
 ```
 
 ### Configuration
-To use the Cloudinary Django library, we have to configure at least our `cloud_name`, `api_key`, and `api_secret`.
+To use the Cloudinary Django library, we have to configure our `cloud_name`, `api_key`, and `api_secret`.
 
 We can find our account-specific configuration credentials on the Dashboard page of the account console as shown below:
 ![Cloudinary dashboard page](/engineering-education/uploading-images-to-cloudinary-from-django-application/dash.png)
 *Cloudinary dashboard page*
+
+Add the configuration credentials in `settings.py` as shown below:
 
 ```python
 # adding config
@@ -143,6 +145,8 @@ cloudinary.config(
 ```
 
 ### Creating a model
+Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema.
+
 In the `photos` directory, edit the `models.py` file and add the following lines of code to it:
 
 ```python
@@ -166,7 +170,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-Then, we create a superuser by running the command below:
+A superuser has the permissions to create, edit, update, and delete data in Django admin. We create a superuser by running the command below:
 
 ```bash
 $ python manage.py createsuperuser 
