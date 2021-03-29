@@ -1,6 +1,6 @@
 |  *Name* |  *Author Page* |  *GitHub* | *Area(s) of Expertise* |
 |  - |  - |  - | -|
-|  Aakash Rawal | [My author page](/engineering-education/authors/aakash-rawal/) | [My GitHub](https://github.com/AakashR2208) | - example 1 - example 2 - example 3|
+|  Aakash Rawal | [My author page](section.io/engineering-education/authors/aakash-rawal/) | [My GitHub](https://github.com/AakashR2208) | - example 1 - example 2 - example 3|
 |  Adrian Murage | [My author page](/engineering-education/authors/adrian-murage/) | [My GitHub](https://github.com/adrianmurage) | -|
 |  Ahmad Mardeni | [My author page](/engineering-education/authors/ahmad-mardeni/) | [My GitHub](https://github.com/AakashR2208) | -|
 |  Briana Nzivu |  [My author page](/engineering-education/authors/briana-nzivu/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
