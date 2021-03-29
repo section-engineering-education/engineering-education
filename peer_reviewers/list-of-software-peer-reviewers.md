@@ -21,7 +21,7 @@
 |  Sophia | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Srishilesh P S | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  - |  - |  - | -|
-|  Wanja Mike | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Mike Barasa | [My author page](https://www.section.io/engineering-education/authors/michael-barasa/) | [My GitHub](https://github.com/WanjaMIKE) | - example 1 - example 2 - example 3|
 |  Willies Ogola | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  - |  - |  - | -|
 |  - |  - |  - | -|
