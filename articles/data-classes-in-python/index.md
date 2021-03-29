@@ -7,7 +7,7 @@ title: Data Classes in Python 3.7+
 description: In this tutorial, we will look at implementing data classes in Python 3.7. Data classes are classes that are declared using @dataclass decorator.
 author: oruko-pius
 date: 2021-03-25T00:00:00-15:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

@@ -7,7 +7,7 @@ title: Creating Word Clouds in Python
 description: In this article we will go over how code a program to generate word clouds by creating a virtual environment in Python 3.6 and using Anaconda.
 author: lalithnarayan-c
 date: 2020-11-24T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

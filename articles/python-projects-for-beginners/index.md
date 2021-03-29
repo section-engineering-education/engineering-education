@@ -7,7 +7,7 @@ title: Python Projects for Beginners
 description: This article provides a guide on building simple Python projects and working with basic concepts in Python. 
 author: anita-achu
 date: 2021-02-13T00:00:00-12:00
-topics: [Python]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
