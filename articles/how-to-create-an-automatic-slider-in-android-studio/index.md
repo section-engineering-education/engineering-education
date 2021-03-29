@@ -13,11 +13,12 @@ images:
   - url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/hero.jpg
     alt: Introduction to Bottom Sheets in Android
 ---
-Sliders are widely found on cross-platforms such as website pages, desktop apps, and mobile apps. They're usually used to highlight important features on home screens and pages of applications.
+Sliders are found on cross-platforms such as website pages, desktop, and mobile apps. They are usually used to highlight important features on home screens.
 <!--more-->
-A perfect use-case is an e-commerce app. As a developer, you want to show off new products without messing with the user's application engagement. Slides will be an excellent way to display such items to the consumer.
+A perfect use-case is an e-commerce app. As a developer, you want to show off new products without messing with the user's interactions. Slides will be an excellent way to display such items to the consumer.
 
-This tutorial will teach you how to create and implement an auto Slider page using Android Studio.
+### Goal
+This tutorial will teach you how to create and implement sliders in Android Studio.
 
 ### Overview
 The following principles would be used to create a Slider.
@@ -29,7 +30,7 @@ The following principles would be used to create a Slider.
 To get along with this tutorial, it would be helpful to have a basic understanding of Android [ViewPager](https://developer.android.com/training/animation/screen-slide), [PagerAdapters](https://developer.android.com/reference/kotlin/androidx/viewpager/widget/PagerAdapter), and [TabLayout](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout).
 
 ### Getting Started
-Start Android Studio and create a new empty project. I have modified the predefined parent theme. To do the same, navigate to the `res` directory → `values` → `style.xml` and adjust the style theme to the one shown below.
+Launch Android Studio and create a new empty project. Note that I have modified the predefined parent theme. To do the same, navigate to the `res` directory → `values` → `style.xml` and adjust the style theme to the one shown below.
 
 ```xml
 <resources 
@@ -38,10 +39,9 @@ Start Android Studio and create a new empty project. I have modified the predefi
 ```
 
 ### Putting in place the slider
-Go ahead and create a `the_items_layout.xml` layout file inside the Layout directory. Two major elements make up a slide. They include;
-
-- The TextView depict a caption or the tagline of a slide, and
-- The ImageView - will represent the slider's featured image
+Go ahead and create the `items_layout.xml` file inside the Layout directory. Two major elements make up the slide. They include;
+- The TextView shows a caption or the tagline of a slide.
+- The ImageView shows an image to the user.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -84,7 +84,7 @@ Go ahead and create a `the_items_layout.xml` layout file inside the Layout direc
 
 > This [GitHub repository](https://github.com/kimkimani/An_Auto_Android_Slider) includes all of the drawable resources used in this project. Go over and check any assets and code fragments listed in this tutorial.
 
-[RecyclerView](https://www.youtube.com/watch?v=HtwDXRWjMcU) uses a `list item` layout. The same concept applies here. An item layout represents a single row of the list items. In our case, a row will represent a single view of one slide. The item layouts are reused by setting up adapter objects that will display the data sets dynamically.
+[RecyclerView](https://www.youtube.com/watch?v=HtwDXRWjMcU) uses a `list_item` layout. The same concept applies here. An item layout represents a single row of the list items. In our case, a row will represent a single view of one slide. The item layouts are reused by setting up adapter objects that will display the data sets dynamically.
 
 ### Setting a ViewPager and TabLayout
 The application's main layout includes a `ViewPager` and `TabLayout`, as shown in the XML code below.
@@ -121,18 +121,17 @@ The application's main layout includes a `ViewPager` and `TabLayout`, as shown i
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-We'll populate the slider layout items into a `ViewPager`. `ViewPager` is a layout widget that hosts several children's views. It controls the slides' movement. An individual slide represents each child's view. These items will be displayed once we link up the `ViewPager` to a `PagerAdapter`.
+We'll populate the slider layout items into a `ViewPager`. The `ViewPager` is a layout widget that hosts several children's views. It also controls the slides' movement. An individual slide represents each child's view. These items will be displayed once we link up the `ViewPager` to a `PagerAdapter`.
 
 ### Setting up PagerAdapter
 `ViewPager` and `TabLayout` depend on one another. `TabLayout` controls the movement between sliders. It also provides an overview of all slides.
 
-`ViewPager` gets its data from a `PagerAdapter`. `PagerAdapter` stores the slides in the memory, making it lightning fast to switch between already loaded slides.
+`ViewPager` gets its data from a `PagerAdapter`. The `PagerAdapter` stores the slides in the memory, making it lightning fast to switch between already loaded slides.
 
 Before we implement the `PagerAdapter`, we need a model class.
 
-#### Setting up a model class
-A model class is made up of a collection of data objects that we want to feed into the adapter. These are the header image and the slider caption. Create a model class, `The_Slide_Items_Model_Class.java`. In this file, we will;
-
+### Setting up a model class
+A model class is made up of a collection of data objects that we will feed into the adapter. These are the header image and the slider caption. Create a model class and name it `The_Slide_Items_Model_Class.java`. In this file, we will;
 - Declare an integer for the hero image and a string for the slider title (variables).
 - Generate the respective constructor, getters, and setters.
 
@@ -165,7 +164,7 @@ public class The_Slide_Items_Model_Class {
 }
 ```
 
-#### Create a custom PagerAdapter
+### Create a custom PagerAdapter
 Create a new class and name it `The_Slide_items_Pager_Adapter.java`. This class should extend `PagerAdapter`.
 
 ```java
@@ -198,7 +197,7 @@ Overriding `getCount` will return the number of slides in the list. This will re
 This method is required by the `instantiateItem` method. `instantiateItem` returns an `Object` as the `key` when the slider pager changes to another slider pager. This `key` becomes the `View` (the current displaying slider). `isViewFromObject` will check if the `View == Object` and return a boolean value. If `true`, the `View` will be displayed as the current slide.
 
 - `destroyItem`
-`PagerAdapter` saves every slide it creates in a memory. This makes it lighting fast to switch between one slider to another. However, this can take a lot of memory if you have a larger number of slides. It becomes a heavy and expensive task for the `PagerAdapter` to manage. The `destroyItem` override method solves this by destroying and recreating the slides as needed.
+`PagerAdapter` saves every slide it creates in a memory. This makes it fast to switch between one slider to another. However, this can take a lot of memory, especially if you have a larger number of slides. It becomes a heavy and expensive task for the `PagerAdapter` to manage. The `destroyItem` override method solves this problem by destroying and recreating the slides as needed.
 
 Here is the complete `The_Slide_items_Pager_Adapter` code:
 
@@ -262,10 +261,9 @@ page = findViewById(R.id.my_pager) ;
 tabLayout = findViewById(R.id.my_tablayout);
 ```
 
-#### Preparing the slider adapter
-This consists of;
-
-- an ArrayList of the slider items, an image, and a title describing each slide. Check image resources(`drawable`) in this [GitHub](https://github.com/kimkimani/An_Auto_Android_Slider/tree/master/app/src/main/res/drawable) repository.
+### Preparing the slider adapter
+This consists of:
+- An ArrayList of the slider items, an image, and a title describing each slide. Check image resources(`drawable`) in this [GitHub](https://github.com/kimkimani/An_Auto_Android_Slider/tree/master/app/src/main/res/drawable) repository.
 
 ```java
 // Make a copy of the slides you'll be presenting.
@@ -303,7 +301,7 @@ You can now run the application to test if everything is working.
 
 Swiping on the screen will change the displaying slide, and tapping on the slide's tab will change the slide pages - as you'd expect.
 
-#### Setting up the timmer
+### Setting up the timmer
 Create a method named `SliderTimer` that extends `TimerTask`.
 
 ```java
@@ -402,7 +400,7 @@ Run the app on your mobile phone to see if this works.
 ![Automatic slider timer](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
 
 ### Conclusion
-I hope this guide helped create and implement sliders in your app. For further reference, download or clone this project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
+I hope this guide helped you to create and implement sliders in your app. For further reference, download or clone this project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
