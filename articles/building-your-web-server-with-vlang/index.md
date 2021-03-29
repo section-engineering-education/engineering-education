@@ -102,8 +102,8 @@ fn (r Repo) find_user_by_id(id int) ?User {
 
 Other features are:
 
-- TCC backends: The main backend compile to human readable C
-- V possesses a compile-time of 1million lines of code per second.
+- TCC backends: The main backend compiles V to human readable C
+- V possesses a compile-time of 1 million lines of code per second.
 - They’re no dependencies. V is being built with V!
 - Memory management: By design, V promotes a simple abstraction-free code style. Based on the official V documentation:
 
