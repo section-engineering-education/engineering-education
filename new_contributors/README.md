@@ -1,3 +1,9 @@
+### Program Overview
+The main criteria that we're using to evaluate the incoming requests include:
+- Polish and depth of the description and key takeaways provided - Grammar, readability, and substance are all being reviewed. Be sure to treat your topic suggestion as the best representation of your writing.
+- Originality - We're looking for unique content that isn't readily available through existing documentation and wikipedia definitions. Consider applying concepts to unique projects.
+- Programming-centric topics in the web technologies space - We're most interested in articles that take a practitioner's approach to solving common (and not so common) challenges in the modern technology ecosystem. We tend to lean more heavily towards meaty front- and back-end technology-related content and are generally less interested in tangential technology topics, such as UI design and hardware.
+
 ### Contributor Documentation
 
 Here's a list of our contributor documentation to help you get started on your first article.

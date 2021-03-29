@@ -3,7 +3,7 @@ title: Solomon Eseme
 type: engineering-education/author
 website: https://masteringbackend.com/
 github: https://github.com/kaperskyguru
-twitter: https://twitter.com/kaperskyguru_
+twitter: https://twitter.com/kaperskyguru
 linkedin: https://www.linkedin.com/in/solomoneseme/
 ---
 

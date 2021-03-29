@@ -1,11 +1,11 @@
 ### The EngEd Review Process:
 #### Idea Approval:
 - Student can enroll to the EngEd program via our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
-- We recommend all students start by reading the recently [published articles](/engineering-education/) to get a better sense of style and tonality the student
+- We suggest all students start by reading the recently [published articles](/engineering-education/) to get a better sense of style and tonality the student
 - The student can then submit a topic idea using this [Idea Content Form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) to be approved.
 - Idea Content Form submission triggers posted notification in our community Slack channel for others to see.
-- The Section team reviews topic and gives yay/nay, or will ask further qualifying questions
-- After the topic has been approved , the student can then go off and write the article [students may have other questions in between - e.g. -- [How do I submit a PR - branches - hero image](/engineering-education/blob/master/CONTRIBUTING.md)
+- The Section team reviews topic and gives yay/nay, or will ask further qualifying questions.
+- After the topic has been approved, the student can then go off and write the article [students may have other questions in between - e.g. -- [How do I submit a PR - branches - hero image](/engineering-education/blob/master/CONTRIBUTING.md)
 
 #### In Initial Review:
 - Students need to submit all PRs in GitHub with proper folder structure [following provided documentation](/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md) for the Section team to reviews the article:
@@ -18,14 +18,20 @@
 
 ### Tiered Payout Structure
 - All payouts will be as follows:
+3/3/21
+To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. 
 
-Articles with (little to no extra revisions needed) payout will be $200.00 USD ($250.00 USD for Tutorials)
+Over the next few months, we will publish the first 60 approved articles within the month (i.e. 60 articles per month).
 
-Articles with (2-3 rounds of revisions) payout will be $100.00 USD ($150.00 USD for Tutorials)
+Our new payout structure will be:
 
-Articles with (3+) and up rounds of revisions) we will consider closing the PR
+- $150 for tutorials
+- $100 for non-tutorial content
+- $50/article for peer reviews
 
-#### What counts as a round of revision?
+We need to be keen on closing articles that are not "publish ready" i.e. an article that is not ready to be published as is (or as close as possible) - the incoming articles should only require a review from our team not a revision.
+
+#### When should we close PRs during review?
 - Any extra (major) steps that take a reviewer away from the actual revision process (revising, editing, and proofreading) and causes a shift towards content creation.
 - Any (major) incorrect code snippets (all code should be tested - contributors should take advantage of free tools such as repl.it).
 - Instances when the content is too difficult to understand.

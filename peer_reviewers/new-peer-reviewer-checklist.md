@@ -64,4 +64,11 @@
 
 - (if needed) if the scope of the article is beyond Peer Reviewer Scope - Ping Manager with details and they will request a Revision (from the Section tech review committee)  in the open PR
 
+- add your PRL (peer reviewer line to the end of the article you reviewed) to get credit and payout. 
+Example: 
+```
+---
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+```
+
 - Ping Manager for a Final Review and for them to Merge the approved PR.
