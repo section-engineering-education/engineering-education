@@ -26,7 +26,7 @@ To follow through with this tutorial, you will need to:
 
 Let's get started!
 
-### What exactly is Dependency injection
+### What exactly is dependency injection
 Being a software developer, you must, or might have heard about dependency injection but didn't really understand what it is. You might even be asking yourself, why should I use this technique? 
 
 How important is it? Have I ever used it? Well, the answer to the last question is pretty simple. You have but without any dependency injections framework.
