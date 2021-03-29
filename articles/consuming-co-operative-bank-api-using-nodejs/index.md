@@ -2,24 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-co-operative-bank-api-using-node.js/
-title: How to consume a Co-operative Bank API using Node.js
+url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/
+title: How to Consume a Co-operative Bank API using Node.js
 description: This article will show you how to consume a Co-operative Bank API using Node.js. The tutorial uses axios for HTTP requests and Express for setting up routes.
 author: kennedy-mwangi
-date: 2021-03-29T00:00:00-16:00
-topics: []
+date: 2021-03-29T00:00:00-12:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/consuming-co-operative-bank-api-using-node.js/hero.jpg
+  - url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/hero.jpg
     alt: Consuming Co-operative Bank API
 ---
 Co-operative Bank is a financial service institution operating in the East African Community. As of December 2018, it had recorded over 7.8 million users. 
 <!--more-->
-Co-operative Bank API (Application Programming Interface) is a simple REST(Representational State Transfer) API that enables software developers to handle various financial operations provided by the bank from their applications.
+Co-operative Bank API (Application Programming Interface) is a simple REST (Representational State Transfer) API that enables software developers to handle various financial operations provided by the bank from their applications.
 
 ### Goals
-In this article, we will consume the Co-operative Bank API. We will implement the following operations using a Node.js REST API:
+In this article, we will consume the Co-operative Bank API. 
+
+We will implement the following operations using a Node.js REST API:
 - Getting an access token.
 - Sending funds to Mpesa.
 - Accessing your account's mini statement.
@@ -28,7 +30,7 @@ In this article, we will consume the Co-operative Bank API. We will implement th
 - Validating your account.
 
 ### Prerequisites
-To follow along in this article, you need the following:
+To follow along in this article, you'll need the following:
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - [Postman](https://www.postman.com/) installed on your computer.
 - A code editor such as Visual Studio Code.
@@ -47,7 +49,7 @@ To follow along in this article, you need the following:
 - [Validating an account](#validating-an-account)
 
 ### Creating a developer account
-To create a Co-operative Bank's developer account, follow the following steps:
+To create a Co-operative Bank's developer account, follow the listed steps:
 - Proceed to the [developer page](https://developer.co-opbank.co.ke:9443/store/apis/home).
 
 - On the top right, click [Sign-up](https://developer.co-opbank.co.ke:9443/store/site/pages/sign-up.jag).
@@ -59,7 +61,7 @@ To create a Co-operative Bank's developer account, follow the following steps:
 - After successfully signing in, you will be directed to the [dashboard page](https://developer.co-opbank.co.ke:9443/store/).
 
 ### Creating an application
-Once you are on the dashboard page, you need to create an application. You will be subscribing to this application for all functionalities that you will be consuming.
+Once you are on the dashboard page, you will need to create an application. You will be subscribing to this application for all functionalities that you will be consuming.
 
 To create an application, follow the following steps:
 
@@ -67,14 +69,14 @@ To create an application, follow the following steps:
 
 - On the new page, click [add application](https://developer.co-opbank.co.ke:9443/store/site/pages/application-add.jag).
 
-- Enter your preferred name of the application, select `unlimited` for the `Per Token Quota`, briefly describe your application, for `Token Type` choose `OAuth`, and then click `Add`.
+- Enter the preferred name of the application, select `unlimited` for the `Per Token Quota`, briefly describe your application, for `Token Type` choose `OAuth`, and then click `Add`.
 
 - Having added the application successfully, you will be directed to the application page.
 
 ### Setting up the development server
-To set up the development server, clone this [Github repository](https://github.com/mwangiKibui/co-op-bank-node.js-rest-api).
+To set up the development server, clone this [GitHub repository](https://github.com/mwangiKibui/co-op-bank-node.js-rest-api).
 
-The development server is fully set up and our role throughout the article is to implement the functionalities.
+The development server is fully set up and now for the rest of the article we will implement the functionalities.
 
 To install the dependencies needed, open the project from the terminal of your text editor and run the following command:
 
@@ -82,7 +84,7 @@ To install the dependencies needed, open the project from the terminal of your t
 npm install
 ```
 
-The following are the installed dependencies:
+Below are the installed dependencies:
 
 - [axios](https://www.npmjs.com/package/axios): For sending requests to the co-operative bank API.
 
@@ -92,11 +94,13 @@ The following are the installed dependencies:
 
 - [ngrok](https://www.npmjs.com/package/ngrok): For exposing our localhost server.
 
-- [nodemon](https://www.npmjs.com/package/nodemon): For listening to changes and restarting the server.
+- [nodemon](https://www.npmjs.com/package/nodemon): Used to listen to changes and to restart the server.
 
 - [unique-string](https://www.npmjs.com/package/unique-string): For generating random strings.
 
-The next step is to get our `CONSUMER KEY ` and `CONSUMER SECRET`. To get them, follow the following steps:
+The next step is to get our `CONSUMER KEY ` and `CONSUMER SECRET`. 
+
+To get them, follow the following steps:
 
 - On the Co-operative Bank's application page from the previous step, click the `Sandbox Keys` tab.
 
@@ -154,9 +158,11 @@ return next();
 Since it will be treated as a middleware, there is no need to implement its respective route.
 
 ### Sending funds to Mpesa
-From your co-operative bank account, you can send funds directly to [Mpesa](https://www.safaricom.co.ke/personal/m-pesa). This tutorial uses a simulation since we are in a sandbox environment. However, the concept is the same in production.
+From your Co-operative bank account, you can send funds directly to [Mpesa](https://www.safaricom.co.ke/personal/m-pesa). 
 
-Follow the following steps to implement the functionality:
+This tutorial will use a simulation since we are in a sandbox environment. However, the concept would be the same in production.
+
+Follow these steps to implement the functionality:
 
 - From your [dashboard page](https://developer.co-opbank.co.ke:9443/store/), click on [sendToMpesa listing](https://developer.co-opbank.co.ke:9443/store/apis/info?name=SendToM-Pesa&version=1.0.0&provider=admin).
 
@@ -221,7 +227,7 @@ return res.send({
 ```
 
 For the above functionality to work, we have to do the following:
-- Make sure that you are using the sandbox account number. Else, it will result in an error.
+- Make sure that you are using the sandbox account number. Otherwise, it will result in an error.
 - From your text editor, open your terminal and run the following command to start the development server:
 
 ```bash
@@ -250,20 +256,20 @@ console.log(req.body);
 };
 ```
 
-- Open postman and send a `POST` request to: `http://localhost:4000/send-to-mpesa`. In case you encounter an error, revisit the above steps, else your response should resemble the following:
+- Open postman and send a `POST` request to: `http://localhost:4000/send-to-mpesa`. In case you encounter an error, revisit the above steps, otherwise your response should resemble the following:
 
-![send-to-mpesa-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/send-to-mpesa-postman-response.png)
+![send-to-mpesa-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-postman-response.png)
 
 - The following should resemble the information logged on your terminal from the callback:
 
-![send-to-mpesa-console-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/send-to-mpesa-console-response.png)
+![send-to-mpesa-console-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-console-response.png)
 
 ### Accessing account mini-statement
-An account mini-statement is used in retrieving at least five previous transactions that were carried out from your bank account.
+An account mini-statement is used when retrieving at least five previous transactions that were carried out from your bank account.
 
 The Co-operative Bank API supports this functionality.
 
-To implement it, follow the following steps:
+To implement it, follow these steps:
 
 - On your [dashboard page](https://developer.co-opbank.co.ke:9443/store/), click on [AccountMiniStatement listing](https://developer.co-opbank.co.ke:9443/store/apis/info?name=AccountMiniStatement&version=1.0.0&provider=admin).
 
@@ -311,14 +317,16 @@ return res.send({
 
 To test this:
 - Ensure that the development server is running from your terminal.
-- Proceed to postman and send a `POST` request to: `http://localhost:4000/account-mini-statement`. The response should resemble the following:
+- Proceed to postman and send a `POST` request to: `http://localhost:4000/account-mini-statement`. 
 
-![account-mini-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-mini-statement-postman-response.png)
+The response should resemble the following:
+
+![account-mini-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-mini-statement-postman-response.png)
 
 ### Accessing account full-statement
 A full-statement provides all transactions carried out between two different specified dates.
 
-To implement it, follow the following steps:
+To implement it, follow these steps:
 
 - From your [dashboard page](https://developer.co-opbank.co.ke:9443/store/), click on [AccountFullStatement listing](https://developer.co-opbank.co.ke:9443/store/apis/info?name=AccountFullStatement&version=1.0.0&provider=admin).
 
@@ -374,14 +382,16 @@ To test this:
 
 - Ensure that the development server is running.
 
-- Head over to postman and send a `POST` request to: `http://localhost:4000/account-full-statement`. The response should resemble the following:
+- Head over to postman and send a `POST` request to: `http://localhost:4000/account-full-statement`. 
 
-![account-full-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-full-statement-postman-response.png)
+The response should resemble the following:
+
+![account-full-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-full-statement-postman-response.png)
 
 ### Accessing account balance
 With the API, we can access the account balance from our account.
 
-To implement the feature, we follow the following steps:
+To implement the feature, we follow these steps:
 
 - From your [dashboard page](https://developer.co-opbank.co.ke:9443/store/), click on [AccountBalance listing](https://developer.co-opbank.co.ke:9443/store/apis/info?name=AccountBalance&version=1.0.0&provider=admin).
 
@@ -428,18 +438,20 @@ return res.send({
 ```
 
 To test this:
-- Make sure that you are using the `sandbox account number`. Else it will return an error.
+- Make sure that you are using the `sandbox account number`. Otherwise it will return an error.
 
 - Ensure that the development server is running from your terminal.
 
-- Head over to Postman and send a `POST` request to: `http://localhost:4000/account-balance`. The response sent should resemble the following:
+- Head over to Postman and send a `POST` request to: `http://localhost:4000/account-balance`. 
 
-![account-balance-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-balance-postman-response.png)
+The response sent should resemble the following:
+
+![account-balance-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-balance-postman-response.png)
 
 ### Validating an account
-With the API, we can identify a valid Co-operative Bank account. Since we are in the sandbox environment, we are restricted to the default account number for testing. A different one is termed invalid.
+With the API, we can identify a valid Co-operative Bank account. Since we are in the sandbox environment, we are restricted to the default account number for testing. A different one will be termed invalid.
 
-To implement it, follow the following steps:
+To implement it, follow these next steps:
 
 - From your [dashboard page](https://developer.co-opbank.co.ke:9443/store/) click on [AccountValidation listing](https://developer.co-opbank.co.ke:9443/store/apis/info?name=AccountValidation&version=1.0.0&provider=admin).
 
@@ -489,9 +501,11 @@ To test this:
 
 - Ensure that the development server is running from your terminal.
 
-- Head over to postman and send a `POST` request to: `http://localhost:4000/account-validation`. The response sent should resemble the following:
+- Head over to postman and send a `POST` request to: `http://localhost:4000/account-validation`. 
 
-![account-validation-postman-response](/engineering-education/consuming-co-operative-bank-api-using-node.js/account-validation-postman-response.png)
+The response sent should look like this:
+
+![account-validation-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-validation-postman-response.png)
 
 ### Summary
 In this article, we have implemented the following functionalities from the Co-operative Bank's API using Node.js:
@@ -504,10 +518,11 @@ In this article, we have implemented the following functionalities from the Co-o
 - [Validating an account](#validating-an-account)
 
 ### Conclusion
-Co-operative Bank's API has various functionalities that previously required lengthy processes to implement. There are more features provided by the API as shown in the following [listings](https://developer.co-opbank.co.ke:9443/store/). In case of any query concerning Co-operative Bank's API, or the production environment, feel free to contact the [team](https://twitter.com/Coopbankenya).
+Co-operative Bank's API has various functionalities that previously required lengthy processes to implement. There are more features provided by the API as shown in the following [listings](https://developer.co-opbank.co.ke:9443/store/). 
+
+In case of any query concerning Co-operative Bank's API, or the production environment, feel free to contact the [Coopbankenya team](https://twitter.com/Coopbankenya).
 
 Happy coding!!
-
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
