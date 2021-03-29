@@ -272,3 +272,6 @@ To summarize:
 The full code can be found [here](https://github.com/shosenwales/django-cloudinary) on GitHub.
 
 For further learning on image/video upload and transformation using Cloudinary, check out [this](https://cloudinary.com/documentation/django_image_and_video_upload) link.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
