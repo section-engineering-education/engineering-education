@@ -25,9 +25,9 @@ A basic understanding of Django would help the reader understand better.
 ### Creating and setting up a new Django project
 Let's start by creating a new virtual environment.
 
-Virtual environment allows you to create different spaces on your computer, with a different set of libraries and versions.
+A virtual environment allows you to create different spaces on your computer, with a different set of libraries and versions.
 
-By creating a virtual environment, you'll be able to separate out the necessary library installation for a project, without having to install them globally.
+By creating a virtual environment, you'll be able to separate the necessary library installation for a project, without having to install them globally.
 
 Now, you create a virtual environment `env` as shown below:
 
@@ -76,7 +76,7 @@ INSTALLED_APPS = [
 ```
 
 ### Setting up Cloudinary
-Now, let's head over to [Cloudinary](https://cloudinary.com/) website to create a new account.
+Now, let's head over to the [Cloudinary](https://cloudinary.com/) website to create a new account.
 
 Click on the `Sign Up` button and fill in your details to create an account.
 
@@ -165,7 +165,7 @@ from .models import photos
 admin.site.register(photos)
 ```
 
-Now, we can login to the admin page.
+Now, we can log in to the admin page.
 
 To login to the admin section, go to this link [localhost:8000/admin](localhost:8000/admin) and log in with our just created superuser details.
 
@@ -203,7 +203,7 @@ Let's create our `templates` folder. Inside the folder, create an `index.html` f
 
 Before adding our HTML code, let's quickly create a new URL for the newly created view.
 
-Add the following code to `urls.py` file:
+Add the following code to the `urls.py` file:
 
 ```python
 from django.contrib import admin
@@ -218,7 +218,7 @@ urlpatterns = [
 
 Let's also import our `photos` model in the `views.py` file.
 
-We also need to add context to render, so we can use images in our template.
+We also need to add context to the render, so we can use images in our template.
 
 ```python
 from django.shortcuts import render
@@ -259,15 +259,15 @@ Open the `index.html` file that we created earlier and paste the following code:
 In the above code, we used `for-loop` to go through all the pictures.
 
 ![Image of a fish](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
-*Image of a fish displayed in HTML page*
+*Image of a fish displayed on an HTML page*
 
 ### Conclusion
-To conclude, we have learned how Cloudinary provides a better way for handling media contents for our webpage. We have also learned to uploaded images from a Django app.
+To conclude, we have learned how Cloudinary provides a better way for handling media content for our webpage. We have also learned to upload images from a Django app.
 
 To summarize:
 - The reader learned to upload images to Cloudinary from our Django app.
 - The reader understood how Cloudinary provides us a better way to store images.
-- The reader learned to build a Django app and integrate with Cloudinary.
+- The reader learned to build a Django app and integrate it with Cloudinary.
 
 The full code can be found [here](https://github.com/shosenwales/django-cloudinary) on GitHub.
 
