@@ -26,9 +26,9 @@ To solve this, download and install the [WSL 2 Linux kernel](https://docs.micros
 
 We will be using images that are readily available in the [Docker Hub](https://hub.docker.com/). This include
 
-- WordPress - we obviously need a WordPress image to set a WordPress website. WordPress image includes the Apache server that we need to execute PHP code.
-- MySQL - This will set the WordPress environment variables such as the MySQL root password the database we want to use and a MySQL database user and password
-- PHPMyAdmin - allows us to view database tables and columns.
+- [WordPress](https://hub.docker.com/_/wordpress). - we obviously need a WordPress image to set a WordPress website. WordPress image includes the Apache server that we need to execute PHP code.
+- [MySQL](https://hub.docker.com/_/mysql) - This will set the WordPress environment variables such as the MySQL root password the database we want to use and a MySQL database user and password
+- [PHPMyAdmin](https://hub.docker.com/_/phpmyadmin) - allows us to view database tables and columns.
 
 We are now ready to create a single YAML file that will set all of these Docker images and containers.
 
@@ -37,7 +37,7 @@ First, create a project directory in your computer preferred location. I.e. `cd 
 
 Change directory to the newly created directory with `cd wordpress-docker`
 
-Inside this file created a `.yaml` file, i.e. `docker-compose`. YAML. Run `type nul >> docker-compose.yaml` to create the file. If yourare on Linux or Mac use `touch docker-compose.yaml`.
+Inside directory `wordpress-docker`, create a `.yaml` file, i.e. `docker-compose.yaml`. Run `type nul >> docker-compose.yaml` to create the file. If your are on Linux or Mac use `touch docker-compose.yaml`.
 
 Docker-compose can also work with `.yml`. Both yml and YAML extensions will work fine.
 
