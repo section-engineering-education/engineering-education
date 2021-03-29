@@ -44,7 +44,7 @@ V is very strict with writing secure, fast and memory-safe programs. Some strict
 
 - Variables are immutable by default. Let's see how this works:
 
-    ```c
+    ```c++
     // how to declare a variable 
     name := 'Sammy'
     println(name) //Sammy
@@ -52,7 +52,11 @@ V is very strict with writing secure, fast and memory-safe programs. Some strict
     // mutating the variable using =
     name = 'Bob'
     println(name)
-    /*main.v:2:1: error: `name` is immutable, declare it with `mut` to make it mutable
+    ```
+    You will get the following error:
+
+    ```c++
+     /*main.v:2:1: error: `name` is immutable, declare it with `mut` to make it mutable
         1 | name := "Sammy"
         2 | name = "Bob"
           | ~~~~
@@ -86,9 +90,10 @@ V is very strict with writing secure, fast and memory-safe programs. Some strict
 
 #### Error Handling
 
-V uses `Option/Result` type for handling errors compared to Golang `error` type. All you have to do is add `?` to the function return type and then return an error.
+V doesn't handle errors in `throw/try/catch` blocks, instead it combines `Option/Result` into one type. The `Option/Result` type can either be a none, an error or return a value.
+The way you write this is by adding `?` to the return type.
 
-```c
+```c++
 fn (r Repo) find_user_by_id(id int) ?User {
 	for user in r.users {
 		if user.id == id {
@@ -98,7 +103,31 @@ fn (r Repo) find_user_by_id(id int) ?User {
 	}
 	return error('User $id not found')
 }
+
 ```
+
+In the code snippet above (taken from the v official documentation), the `?User` type, returns an error message. You can also use `return none` if you don't have an error message.
+
+```c++
+fn main() {
+	repo := Repo{
+		users: [User{1, 'Andrew'}, User{2, 'Bob'}, User{10, 'Charles'}]
+	}
+	user := repo.find_user_by_id(10) or { // Option types must be handled by `or` blocks
+		return
+	}
+
+  user := repo.find_user_by_id(7) or {
+    println(err) // "User 7 not found"
+    return
+  }
+
+	println(user.id) // "10"
+	println(user.name) // "Charles"
+}
+
+```
+The code snippet above is a typical example of how the `Option/Result` type works. The `err` returns the message passed to the `error()`.
 
 Other features are:
 
@@ -194,9 +223,9 @@ Notwithstanding, let's go-ahead to write a simple web server with vweb.
 
 Create a `server.v` file and add the following lines of code.
 
-```c
+```c++
 //server.v
-**import vweb
+import vweb
 
 struct App {
     vweb.Context
@@ -208,7 +237,7 @@ fn main() {
 
 pub fn (mut app App) index() vweb.Result {
 	return app.text('Hello world from vweb!')
-}**
+}
 ```
 
 First, import the `vweb` module.
@@ -224,19 +253,36 @@ struct App{
 
 and then make use of `count` somewhere else in the program.
 
-Next, you start the webserver and listen to a port using`fn run<T>(port int)` . 
+Next, you start the web server by listening to a port. The syntax for handling this in pure V is `fn run<T>(port int)`. In vweb, `run` is an inbuilt method where you pass the port number as an argument. That's why we have `vweb.run<App>(8080)`.
 
-Finally, to create routes in V, you can either specify the path as an attribute like this `["/"]` or auto-mapping of function names like this `index()` .
+Finally, to create routes in V, you can either specify the path as on vweb like this:
+```c++
+fn (mut app App) index() vweb.Result {
+    return app.text('Hello world from vweb')
+}
+//access the endpoint on http://localhost:8080/
+
+fn (mut app App) test() vweb.Result {
+    return app.text('Hello world from vweb')
+}
+//access the endpoint on http://localhost:8080/test
+```
+
+
 
  Compile the program using the v compiler, run `v run server.v` on your terminal.
 
 You should get something like this on your terminal:
 
-![vlang server](/articles/building-your-web-server-with-vlang/v-server.png)
+```bash
+[Vweb] Running app on http://localhost:8080
+```
 
 Navigate to `[http://localhost:8080](http://localhost:8080)` on your browser and the output will be:
 
-![running vlang server](/articles/building-your-web-server-with-vlang/v-server-runnning.png)
+```
+Hello world from vweb!
+```
 
 Exceptional!! You just wrote your first V web server. [Gitly](https://gitly.org/), is an alternative to GitHub/GitLab built with V and Vweb.
 
