@@ -7,7 +7,7 @@ title: Stochastic Gradient Descent Optimized Linear Classifier in Python
 description: This tutorial will go over how to implement a linear classifier using a stochastic gradient descent optimizer.
 author: lalithnarayan-c
 date: 2020-11-03T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

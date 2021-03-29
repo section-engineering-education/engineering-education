@@ -7,7 +7,7 @@ title: Setting up CI/CD for Python Packages using GitHub Actions
 description: This article will provide an overview what CI/CD is, build a Python package to inform time in various timezones and deploy the package via GitHub Actions.
 author: edidiong-etuk
 date: 2021-03-18T00:00:00-14:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
