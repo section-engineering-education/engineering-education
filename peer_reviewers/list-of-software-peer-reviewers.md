@@ -8,7 +8,7 @@
 |  Daniel Katungi Dennis |  [My author page](https://www.section.io/engineering-education/authors/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Gregory Manley |  [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Lalith Narayan |  [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
-|  Linus Muema |  [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Linus Muema |  [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - Google certified AAD - Android - Kotlin|
 |  Louise Findlay | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mike White | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mohan Raj | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
