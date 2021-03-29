@@ -10,7 +10,7 @@ date:
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /building-your-web-server-with-vlang/v-logo.png
+  - url: /building-your-web-server-with-vlang/vandserver.jpg
     alt: vlang image 
 ---
 
