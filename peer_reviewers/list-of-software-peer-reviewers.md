@@ -1,4 +1,5 @@
-|  *Name* |  *Author Page* |  *GitHub* | *Area(s) of Expertise*|
+|  *Name* |  *Author Page* |  *GitHub* | *Area(s) of Expertise* |
+|  - |  - |  - | -|
 |  Aakash Rawal | [My author page](/engineering-education/authors/aakash-rawal/) | [My GitHub](https://github.com/AakashR2208) | - example 1 - example 2 - example 3|
 |  Adrian Murage | [My author page](/engineering-education/authors/adrian-murage/) | [My GitHub](https://github.com/adrianmurage) | -|
 |  Ahmad Mardeni | [My author page](/engineering-education/authors/ahmad-mardeni/) | [My GitHub](https://github.com/AakashR2208) | -|
@@ -19,6 +20,7 @@
 |  Saiharsha Balasubramaniam | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Sophia | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Srishilesh P S | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  - |  - |  - | -|
 |  Wanja Mike | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Willies Ogola | [My author page](/engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  - |  - |  - | -|
