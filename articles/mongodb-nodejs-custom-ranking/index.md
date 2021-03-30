@@ -1,6 +1,6 @@
 ### How to perform custom ranking for records from a MongoDB database in Node.js
 
-![Hero image](hero.jpg)
+![Hero image](/engineering-education/mongodb-nodejs-custom-ranking/hero.jpg)
 
 #### Introduction
 
@@ -192,7 +192,7 @@ If the value contained in ```[i]``` is not equal to ```[i-1]```, increment the `
 Otherwise, if the value contained in ```[i]``` is equal to ```[i-1]```, assign the position the value stored in the ```prev_rank``` variable then increment the value stored in the ```rank``` variable.
 After running the file we get the following output:
 
-![Screenshot](screen.png)
+![Screenshot](/engineering-education/mongodb-nodejs-custom-ranking/screen.png)
 
 #### Conclusion
 
