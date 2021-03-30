@@ -6,7 +6,7 @@ url: /engineering-education/converting-html-content-to-pdf-with-pdfkit-for-pytho
 title: Converting HTML content to PDF with pdfkit for Python
 description: This article provides a guide on how to convert HTML content from a weburl, string and external file to a PDF file. 
 author: anita-achu
-date: 2021-03-20T00:00:00-12:00
+date: 2021-03-30T00:00:00-12:00
 topics: [Python]
 excerpt_separator: <!--more-->
 images:
