@@ -176,11 +176,12 @@ dependencies {
 With this, the firebase authentication module is set up in our application.
 
 ### Sign-in
-The [`google-signin`](https://github.com/react-native-google-signin/google-signin) library provides a wrapper around the official Google login library.
+
+The [`google-signin`](https://github.com/react-native-google-signin/google-signin) library is a wrapper around the official Google signin library.
 
 We should use this library to create a credential, and then sign-in with Firebase.
 
-Before triggering a sign-in request, you must initialize the Google SDK using your `webClientId` which can be found in the `google-services.json` file in `android/app` as the `client/oauth_client/client_id` property.
+First, we must initialize the Google SDK using your `webClientId` which can be found in the `google-services.json` file in `android/app` as the `client/oauth_client/client_id` property.
 
 ![Oauth Client ID](/engineering-education/react-native-firebase-google-authentication/oauth_id.png)
 *OAuth Client ID*
@@ -223,14 +224,12 @@ const { idToken } = await GoogleSignin.signIn();
 Now, we should create a Google credential using the `idToken`.
 
 ```JSX
-// Create a Google credential with the token
 const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 ```
 
 With the Google credential that we have created for the user, we should use the `signInWithCredential` method from the Firebase auth module to sign-in the user into the app.
 
 ```JSX
-// Sign-in the user with the credential
 return auth().signInWithCredential(googleCredential);
 ```
 
@@ -238,13 +237,8 @@ This is the complete code for the `onGoogleButtonPress` function.
 
 ```JSX
 async function onGoogleButtonPress() {
-  // Get the users ID token
   const { idToken } = await GoogleSignin.signIn();
-
-  // Create a Google credential with the token
   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-  // Sign-in the user with the credential
   return auth().signInWithCredential(googleCredential);
 }
 ```
