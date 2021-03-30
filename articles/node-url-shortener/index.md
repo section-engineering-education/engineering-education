@@ -83,7 +83,10 @@ To create a model, we need to create a schema interface where by importing the m
 - The `urlCode` is a string property that will store the unique ID related to each URL.
   
 - The `longUrl` is the default URL which we need to shorten.
+  
 - The property `shortUrl` is the actual short URL that will be generated.
+  
+- The `date` property has a default property and is created once the `model` is instantiated in the database.
 
 ### Defining Routes
 Our routes will be on a seperate folder. Inside the `URL-Shortener-Service` folder, create a folder named `routes`. We will create two route files namely:
@@ -194,14 +197,14 @@ connection.on('error', ()=>console.log('Error'))
 
 // Routes Config
 app.use(express.json({extended: false})) //parse incoming request body in JSON format.
-app.use('/',require('./routes/redirect'))
-app.use('/api/url',require('./routes/url'))
+app.use('/', require('./routes/redirect'))
+app.use('/api/url', require('./routes/url'))
 
 //Listen for incoming requests
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`server started, listening PORT ${PORT}`))
 ```
-
+To make our routes work, we have to use a [middleware pattern](https://expressjs.com/en/guide/using-middleware.html#middleware.application) is express. Middleware functions have access to request (req) and response object (res) in the application’s request-response cycle. This explains the `app.use()` methods. The first middleware allows our application to parse incoming request data format in JSON format. The `app.use('/', require('./routes/redirect'))` is the has the base URI that will configure the redirect route. In our POST route, the base URL is `/api/url` and the middleware as `app.use('/api/url', require('./routes/url'))`. Next, we need to test the application in postman.
 ### Working DEMO In Postman
 
 ### Conclusion
