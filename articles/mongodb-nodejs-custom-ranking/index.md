@@ -4,7 +4,7 @@
 
 #### Introduction
 
-In our daily life problems, we would at one point need to sort our data to give us more insights on how to go about our operations. For example in a school setup, we need to analyze the results of students and give them appropriate positions based on their performance. Due to this, we always have to bear in mind that two or more of them will score the same mark or points. As developers, we have to program the system to give the students the same position and the next student an appropriately incremented position. For instance these five students and their points, we would proceed as shown:
+In our daily life problems, we would at one point need to sort our data to give us more insights on how to go about our operations. For example in a school setup, we need to analyze the results of students and give them appropriate positions based on their performance. Due to this, we always have to bear in mind that two or more of them will score the same mark or points. As developers, we have to program the system to give the students the same position and the next student that follows after them an appropriately incremented position. For instance, for these five students and their points, we would proceed as follows:
 
 - Student 1: 21pts - **POS 1**
 - Student 2: 38pts - **POS 2**
@@ -12,7 +12,7 @@ In our daily life problems, we would at one point need to sort our data to give 
 - Student 4: 90pts - **POS 4**
 - Student 5: 58pts - **POS 5**
 
-After sorting
+After sorting:
 
 - Student 3: 90pts - **POS 1**
 - Student 4: 90pts - **POS 1**
@@ -26,7 +26,7 @@ One great way that will help us achieve this is using the MongoDB ```sort()``` m
 
 #### What we will be doing
 
-We are going to establish a connection to a MongoDB database, insert some dummy data which we will thereafter query and sort them using a custom ranking function.
+We are going to establish a connection to a MongoDB database, insert some dummy data which we will thereafter query, and sort them using a custom ranking function.
 
 #### Prerequisites
 
@@ -35,7 +35,7 @@ We are going to establish a connection to a MongoDB database, insert some dummy 
 
 **Getting Started**
 
-We first need to install the MongoDB driver which will enable us connect to the database. Open your terminal and type this command :
+We first need to install the MongoDB driver which will enable us to connect to the database. Open your terminal and type this command :
 
 ```
 npm install mongodb
@@ -116,7 +116,7 @@ MongoClient.connect(url, function(err, db) {
 
 #### *Querying and giving ranks to our documents*
 
-This is where the core of this article is. We will query and sort the students using their marks in descending order. We will then populate the total marks to ana array then perform conditional checks to check for ties and give ranks appropriately.
+This is where the core of this article is. We will query and sort the students using their marks in descending order. We will then populate the total marks to an array then perform conditional checks to check for ties and give ranks appropriately.
 
 We create a new file called *rank.js* then add the following code.
 
@@ -179,16 +179,16 @@ The ```loadStudents()``` loads the student details from the database and sorts t
 It contains a ```for loop``` which populates the marks loaded into the ```rankArray()``` which we will use later. The second function ```giveRank()``` is then called to perform the ranking using the ```rankArray``` and the ```results```.
 
 The ```giveRank()``` function takes to arguments; an array and the resultSet.
-It has a three variables:
-- ```rank``` - This one controls the count of the loop useful for displaying the appropritely incremented position e.g *1,1,3* and not *1,1,2*. We initialise it to 1 since we give positions from 1 not 0. 
-- ```prev_rank``` - The previous rank is used for displaying the rank position incase of a tie. It stores the current position ```[i]``` of a student such that when the loop increments to the next position```[i+1]```, the current position ```[i]```.
+It has three variables:
+- ```rank``` - This one controls the count of the loop useful for displaying the appropriately incremented position e.g *1,1,3* and not *1,1,2*. We initialize it to 1 since we give positions from 1, not 0. 
+- ```prev_rank``` - The previous rank is used for displaying the rank position in case of a tie. It stores the current position ```[i]``` of a student such that when the loop increments to the next position```[i+1]```, the current position ```[i]```.
 Consequently, the current position is made ```[i-1]``` and the next one made ```[i]```.
-```[i]``` is only assigned the previous rank and given to the next array index if the value found at ```[i]``` is the same as ```[i-1]```. We will see this into play in the next section. It is assigned 1 for the first postion.
-- ```position``` - This one stores the rank to be displayed. We initialise it to 0 in which the initialised value doesn't really matter since the position is assigned inside the ````for loop```. You can initialise it to any digit.
+```[i]``` is only assigned the previous rank and given to the next array index if the value found at ```[i]``` is the same as ```[i-1]```. We will see this into play in the next section. It is assigned 1 for the first position.
+- ```position``` - This one stores the rank to be displayed. We initialize it to 0 in which the initialized value doesn't matter since the position is assigned inside the ````for loop```. You can initialize it to any digit.
 
 The ```for loop``` contains an ```if-else-if``` structure for checking the values and assigning them appropriately. 
 If it is the first index, then automatically the position becomes 1.
-If the value contained in ```[i]``` is not equal to ```[i-1]```, increment the ```rank``` value and assign it to position. The ```prev_rank``` is assigned the rank again justas we discussed above.
+If the value contained in ```[i]``` is not equal to ```[i-1]```, increment the ```rank``` value and assign it to ```position```. The ```prev_rank``` is assigned the ```rank``` value again just as we discussed above.
 Otherwise, if the value contained in ```[i]``` is equal to ```[i-1]```, assign the position the value stored in the ```prev_rank``` variable then increment the value stored in the ```rank``` variable.
 After running the file we get the following output:
 
@@ -196,6 +196,6 @@ After running the file we get the following output:
 
 #### Conclusion
 
-We have seen how to create a datbase, a collection, inserting data into it then querying the results. Furthermore, we also looked at how to perform ranking of the records using an array. Hope you got some insights.
+We have seen how to create a database, a collection, inserting data into it then querying the results. Furthermore, we also looked at how to perform the ranking of records using an array. Hope you got some insights.
 
 Have a good one.
