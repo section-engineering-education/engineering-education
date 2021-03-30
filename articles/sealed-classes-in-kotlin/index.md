@@ -316,4 +316,4 @@ Next, you encountered a limitation in enum classes. They lack the freedom to rep
 
 Lastly, you realized that you lost something essential. The restriction of enum classes. You got this back by replacing the abstract class with a sealed class. 
 
-Hopefully this article shines some light on sealed classes in Kotlin.
+Hopefully this article shines some light on sealed classes in Kotlin. For more information on sealed classes, check out the Android Developers Youtube video [Sealed classes-Kotlin Vocabulary](https://www.youtube.com/watch?v=OyIRuxjBORY)
