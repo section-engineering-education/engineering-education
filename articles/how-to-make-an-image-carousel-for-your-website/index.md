@@ -173,7 +173,7 @@ In the CSS file, we will style our HTML. We style the containers for the images,
   to {opacity: 2}
 }
 ```
-### Step 4 - Write the JavaScript code
+### Step 3 - Write the JavaScript code
 In this step, we will define the functions we had linked to our buttons in the HTML file. We will also include a timer so that our image carousel displays images automatically like a slideshow. Type the JavaScript code below in the JavaScript file. 
 
 ```js
