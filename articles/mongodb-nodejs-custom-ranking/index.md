@@ -177,7 +177,8 @@ function giveRank(arrayArg,resultArg){
 ```
 
 We got two functions ```loadStudents()``` and ```giveRank()```.
-The ```loadStudents()``` loads the student details from the database and sorts them in descending order using the ```sort()``` method.
+
+The ```loadStudents()``` function loads the student details from the database and sorts them in descending order using the ```sort()``` method.
 It contains a ```for loop``` which populates the marks loaded into the ```rankArray()``` which we will use later. The second function ```giveRank()``` is then called to perform the ranking using the ```rankArray``` and the ```results```.
 
 The ```giveRank()``` function takes to arguments; an array and the resultSet.
@@ -185,7 +186,7 @@ It has three variables:
 - ```rank``` - This one controls the count of the loop useful for displaying the appropriately incremented position e.g *1,1,3* and not *1,1,2*. We initialize it to 1 since we give positions from 1, not 0. 
 - ```prev_rank``` - The previous rank is used for displaying the rank position in case of a tie. It stores the current position ```[i]``` of a student such that when the loop increments to the next position```[i+1]```, the current position ```[i]```.
 Consequently, the current position is made ```[i-1]``` and the next one made ```[i]```.
-```[i]``` is only assigned the previous rank and given to the next array index if the value found at ```[i]``` is the same as ```[i-1]```. We will see this into play in the next section. It is assigned 1 for the first position.
+```[i]``` is only assigned the previous rank and given to the next array index if the value found at ```[i]``` is the same as ```[i-1]```. We will see this in play in the next section. It is assigned 1 for the first position.
 - ```position``` - This one stores the rank to be displayed. We initialize it to 0 in which the initialized value doesn't matter since the position is assigned inside the ````for loop```. You can initialize it to any digit.
 
 The ```for loop``` contains an ```if-else-if``` structure for checking the values and assigning them appropriately. 
