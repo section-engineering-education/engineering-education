@@ -166,20 +166,20 @@ Use the `def` function to transform this code into a reusable function that can 
 
 ```Python
 def  emoji_converter(message):
- 	  words = message.split( " ")
+     words = message.split( " ")
      emojis = {
-         ":)" : "😀",
-         ":(" : "😞",
-         "lol" : "😂",
-         "sick":"😨",
-         "happy": "😀",
-         "mermaid": "🧜‍"
-      }
-      outcome = " "
-      for word in words:
-          outcome += emojis.get(word, word) + " "
-      return output
-      
+        ":)" : "😀",
+        ":(" : "😞",
+        "lol" : "😂",
+        "sick":"😨",
+        "happy": "😀",
+        "mermaid": "🧜‍"
+     }
+     outcome = " "
+     for word in words:
+         outcome += emojis.get(word, word) + " "
+     return output
+
 
 Message = input  (“>”)
 print(emoji_converter(message))
