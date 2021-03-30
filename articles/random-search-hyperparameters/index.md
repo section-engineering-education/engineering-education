@@ -2,25 +2,24 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/random-search/
+url: /engineering-education/random-search-hyperparameters/
 title: Using Random Search to Optimize Hyperparameters 
 description: Hyperparameter tuning is a significant step in the process of training machine learning and deep learning models. In this tutorial, we will discuss the random search method to obtain the set of optimal hyperparameters. Going through the article should help one understand the algorithm and its pros and cons. Finally, we will implement the same in Python using the library Scikit-Learn.
 author: collins-ayuya
-date: 2021-03-25T00:00:00-18:00
+date: 2021-03-30T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/random-search/hero.jpg
+ - url: /engineering-education/random-search-hyperparameters/hero.jpg
    alt: Random search hyperparameter optimization image
 
 ---
-
-There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](/engineering-education/grid-search/) and a basic example of its implementation. This time, we seek to understand another method of hyperparameter optimization known as random search. We shall introduce random search as well as go through a simple method of its implementation in Python.
-
+There are many ways to optimize the hyperparameters of a model. We previously looked at [grid search](/engineering-education/grid-search/) and a basic example of its implementation. 
+<!--more-->
+This time, we seek to understand another method of hyperparameter optimization known as random search. We shall introduce random search as well as go through a simple method of its implementation in Python.
 
 ### Contents
-
 - [Contents](#contents)
 - [Prerequisites](#prerequisites)
 - [Goal](#goal)
@@ -34,26 +33,26 @@ There are many ways to optimize the hyperparameters of a model. We previously lo
 - [References and Further Reading](#references-and-further-reading)
 
 ### Prerequisites
+- A part of this [article](/engineering-education/meta-learning/) gives a brief introduction to the grid search method.
 
-• A part of this [article](/engineering-education/meta-learning/) gives a brief introduction to the grid search method.
+- [VSCode](https://code.visualstudio.com/) is my code editor for this tutorial. The language we shall use is Python.
 
-• [VSCode](https://code.visualstudio.com/) is my code editor for this tutorial. The language we shall use is Python.
+- We shall use a tool from the [scikit-learn](https://scikit-learn.org/stable/) library known as [RandomizedSearchCV](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization) to carry out a random search with cross-validation.
 
-• We shall use a tool from the [scikit-learn](https://scikit-learn.org/stable/) library known as [RandomizedSearchCV](https://scikit-learn.org/stable/modules/grid_search.html#randomized-parameter-optimization) to carry out a random search with cross-validation.
-
-• As with grid search, we use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html).
+- As with grid search, we use the [iris dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html).
 
 ### Goal
 
 This article aims to help us familiarize ourselves with random search optimization to aid a simple implementation in Python.
 
-### Random Search
+### Random search
+Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. 
 
-Random search is a method in which random combinations of hyperparameters are selected and used to train a model. The best random hyperparameter combinations are used. Random search bears some similarity to grid search. However, a key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. A sampling distribution is defined for every hyperparameter to do a random search.
+However, a key distinction is that we do not specify a set of possible values for every hyperparameter. Instead, we sample values from a statistical distribution for each hyperparameter. A sampling distribution is defined for every hyperparameter to do a random search.
 
 This technique allows us to control the number of attempted hyperparameter combinations. Dissimilar to grid search, where every possible combination is attempted, random search allows us to specify the number of models to train. We can base our search iterations on our computational resources or the time taken per iteration. The image below shows a random layout.
 
-![randomgrid](/engineering-education/random-search/randomgrid.png)
+![randomgrid](/engineering-education/random-search-hyperparameters/randomgrid.png)
 
 *Random layout.*
 
@@ -61,15 +60,18 @@ This technique allows us to control the number of attempted hyperparameter combi
 
 #### RandomizedSearchCV
 
-We used the sci-kit learn (sklearn) library when implementing grid search, particularly GridSearchCV. From the same library, we shall use RandomizedSearchCV. Similar to GridSearchCV, it is meant to find the best parameters to improve a given model. A key difference is that it does not test all parameters. Instead, the search is done at random. As we shall note later, a practical difference between the two is that RandomizedSearchCV allows us to specify the number of parameter values we seek to test. This is through the use of ` n_iter. `
+We used the sci-kit learn (sklearn) library when implementing grid search, particularly GridSearchCV. From the same library, we shall use RandomizedSearchCV. Similar to GridSearchCV, it is meant to find the best parameters to improve a given model. 
+
+A key difference is that it does not test all parameters. Instead, the search is done at random. As we shall note later, a practical difference between the two is that RandomizedSearchCV allows us to specify the number of parameter values we seek to test. This is through the use of ` n_iter. `
 
 #### Random Forest
+Since we shall use a random forest regressor during random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. 
 
-Since we shall use a random forest regressor during random search implementation, it is of value to introduce random forests. Random forests refer to an ensemble of untrained decision trees capable of both regression and classification tasks. They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](/engineering-education/ensemble-learning/).
-We have explained why a random forest is a “forest” but not why it is considered random. The random nature of a random forest can be attributed to a couple of concepts. Firstly, the samples of training observations when building trees are taken randomly. Secondly, when it comes to the splitting of nodes, random subsets of features are used.
+They involve the use of bagging, which combines many models to give a generalized result. Learn more about bagging and ensemble learning as a whole from this [article](/engineering-education/ensemble-learning/).
 
-##### Random forest parameters
+We have explained why a random forest is a “forest” but not why it is considered random. The random nature of a random forest can be attributed to a couple of concepts. First, the samples of training observations when building trees are taken randomly. Secondly, when it comes to the splitting of nodes, random subsets of features are used.
 
+#### Random forest parameters
 A random forest uses many parameters. Below are the main ones. It is essential to introduce them since we shall encounter all of them in our code later on.
 
 **n_estimators.** This parameter denotes the maximum number of trees in an ensemble/forest.
@@ -85,7 +87,6 @@ A random forest uses many parameters. Below are the main ones. It is essential t
 **bootstrap.** To sample data points, the bootstrap sampling method is used. Sampling may be carried out with or without replacement. Sampling with replacement can be described as when a sample is selected from a random population, then returned to the population. If `bootstrap = True,` sampling is carried out randomly with replacement. If  `bootstrap = False,` sampling is without replacement.
 
 ### Random Search Implementation
-
 Let’s have a straightforward implementation of random search. Our goal is to identify the best parameters after a randomized search. The steps below illustrate this process.
 
 1. **import NumPy.** NumPy simplifies the handling of vectors, matrices as well as multi-dimensional arrays. We import ` numpy ` as shown below.
@@ -156,7 +157,6 @@ param_distributions = random_grid,
 8. **Fitting the data.** We carry this out through ` rf_random.fit(X,y) `.
 
 #### All the code
-
 You can access and test out all the code [here](https://replit.com/@collinsa1/CleverGiddyVendor).
 
 ```python
@@ -219,19 +219,24 @@ Best Parameters:
 Our output gives the best parameters as 10 for n_estimators and min_samples_split. It also gives 4 for min_samples_leaf, auto for max_features, 70 for max_depth, and true for bootstrap.
 
 ### Grid Search vs. Random Search
-
 Off the top of one's head, it would seem that grid search would be the better method as every possible hyperparameter combination is tested. But this is not always the case. These two strategies can be compared in terms of dimensionality.
 
-With grid search, the greater the dimensionality, the greater the number of hyperparameter combinations to search for. As such, there is a greater chance of grid search being impractical. The time taken to search would not justify the use of grid search. The computational resources in use would also prove unfeasible with an increase in the number of parameters. Each additional parameter would increase the number of evaluations exponentially. With a smaller number of hyperparameters, grid search may edge out the random search. This is because grid search would guarantee accuracy by exhausting all possible combinations.
+With grid search, the greater the dimensionality, the greater the number of hyperparameter combinations to search for. As such, there is a greater chance of grid search being impractical. The time taken to search would not justify the use of grid search. The computational resources in use would also prove unfeasible with an increase in the number of parameters. 
 
-Similar to grid search, the higher the dimensionality, the greater the time taken to find the right set of hyperparameters. Higher dimensionality also means a greater number of iterations. Nonetheless, the random search may offer a greater chance of realizing the optimal parameters. Even though random search may not be as accurate as grid search, we also get to control the number of combinations to attempt. The random search model may be trained on the optimized parameters within a much shorter time than the same using grid search. This also results in much more efficient computational power used in comparison to grid search. 
+Each additional parameter would increase the number of evaluations exponentially. With a smaller number of hyperparameters, grid search may edge out the random search. This is because grid search would guarantee accuracy by exhausting all possible combinations.
 
-### Wrapping Up
+Similar to grid search, the higher the dimensionality, the greater the time taken to find the right set of hyperparameters. Higher dimensionality also means a greater number of iterations. Nonetheless, the random search may offer a greater chance of realizing the optimal parameters. Even though random search may not be as accurate as grid search, we also get to control the number of combinations to attempt. 
 
-We mentioned that grid search attempts all hyperparameter combinations. Random search lets us specify how many models we want to train, therefore controlling the number of combinations attempted. This introduces a trade-off between the assurance of finding the best parameters and the computational resources/time used. We have gone through the basic implementation of random search. I believe this post has provided a distinction between random search and grid search. Until the next optimization post, good luck!
+The random search model may be trained on the optimized parameters within a much shorter time than the same using grid search. This also results in much more efficient computational power used in comparison to grid search. 
 
-### References and Further Reading
+### Wrapping up
+We mentioned that grid search attempts all hyperparameter combinations. Random search lets us specify how many models we want to train, therefore controlling the number of combinations attempted. This introduces a trade-off between the assurance of finding the best parameters and the computational resources/time used. 
 
+We have gone through the basic implementation of random search. I believe this post has provided a distinction between random search and grid search. 
+
+Until the next optimization post, good luck!
+
+### References and further reading
 1. [sklearn.model_selection.RandomizedSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV)
 
 2. [GridSearchCV or RandomSearchCV?](https://towardsdatascience.com/gridsearchcv-or-randomsearchcv-5aa4acf5348c)
