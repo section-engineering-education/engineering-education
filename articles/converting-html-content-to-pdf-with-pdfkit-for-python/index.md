@@ -4,78 +4,71 @@ status: publish
 published: true
 url: /engineering-education/converting-html-content-to-pdf-with-pdfkit-for-python
 title: Converting HTML content to PDF with pdfkit for Python
-description: This article provides a guide on how to convert HTML content from a weburl, string and external file to a PDF file. 
+description: This article will provide a guide on how to convert HTML content from a weburl, string, and external file to a PDF file. 
 author: anita-achu
 date: 2021-03-30T00:00:00-12:00
-topics: [Python]
-excerpt_separator: <!--more-->
+topics: []
+excerpt_separator: 
 images:
 
   - url: /engineering-education/converting-html-content-to-pdf-with-pdfkit-for-python/hero.jpg
     alt: python example image
 ---
+HTML **(HyperText Markup Language)** is a standard markup language used to create web pages. It provides users with information and details of a web page. A standard web page text is created and information of users is viewed on a page using HTML.
+<!--more-->
+### Outline
+- Introduction
+- Libraries and tools to convert HTML to PDF in python
+- What is PDFKIT
+- Installing PDFKIT library
+- Installing WKHTMLTOPDF (Windows and Ubuntu)
+- *Brief explanation of what WKHTMLTOPDF is*
+- Adding WKHTMLTOPDF path to environment variable.
+- How to generate  to PDF from HTML
+  - Generate from weburls
+  - Generate from external HTML file
+  - Generate from string
+- Conclusion
 
-## Outline
+### Introduction
+In recent times, web pages contained documents such as reports, contracts, questionnaires, etc. which may have required downloading. Though these documents are written in HTML, they cannot be downloaded successfully in HTML.
 
-1. Introduction
-2. Libraries and tools to convert HTML to PDF in python
-3. What is PDFKIT
-4. Installing PDFKIT library
-5. Installing WKHTMLTOPDF (Windows and Ubuntu)
-    1. *Brief explanation of what WKHTMLTOPDF is*
-6. Adding WKHTMLTOPDF path to environment variable.
-7. How to generate  to PDF from HTML
-    - Generate from weburls
-    - Generate from external HTML file
-    - Generate from string
+A more suitable format for this action is converting these text files to PDF. **PDF** which stands for Portable Document Format has become one of the most used format for saving and transferring documents. 
 
- 8. Conclusion
+Web pages make use of documents and HTML data contained in these pages, HTML files and strings are therefore rendered to PDF document using a PDF converter and there are various PDF converters in Python.
 
+However, in this article our focus will be on python-pdfkit (a PDF converter library), how it is installed, and how to generate pdfdocument from a local HTML file, web URLs, and a string.
 
-## **Introduction**
-HTML **(HyperText Markup Language)** is a standard markup language for creating Web pages. It provides users with information and details of a web page. A standard web page text is created and information of users is viewed on a page using HTML.
+### Libraries and tools to convert HTML to PDF in Python
+There are several libraries and tools to convert HMTL to PDF in Python which over time are preferred rather than printing from a printer without a third-party tool. 
 
-In recent times, web pages contained documents such as reports, contracts, questionnaires, etc. which may require downloading. Though these documents are written in HTML, they cannot be downloaded successfully in HTML.
+Though using a printer may seem easy, there are a few lapses of using a printer, some of these lapses include the display of the header and footer of the web page, there are also web pages that are not printer-friendly.
 
-A more suitable format for this action is converting these text files to PDF. **PDF** which stands for Portable Document Format has become the most used format for saving and transferring documents. Web pages make use of documents and HTML data contained in these pages, HTML files and strings are therefore rendered to a pdfdocument using pdf converter and there are various PDF converters in python.
+For more convenience, you may use free libraries in Python which offer more control. Let us have a look at these open source libraries in python.
 
-However, in this article our focus would be on python-pdfkit (which is a pdf converter library), how it is installed, other libraries and software, and how to generate pdfdocument from a local HTML file, web URLs, and a string.
-
-
-### **Libraries and tools to convert HTML to PDF in python**
-
-There are several libraries and tools for converting HMTL to PDF in python which over time are preferred rather than printing from a printer without a third-party tool. Though using a printer may seem easy, there are a few lapses of using a printer, some of these lapses include the display of the header and footer of the web page, there are also web pages that are not printer-friendly.
-
-For more convenience, you may use free libraries in python which offer over more control. Let us have a view at these open source libraries in python.
-
-### **Pdfmake**
-
+### Pdfmake
 **[Pdfmake](http://pdfmake.org/#/)** is an open-source library for converting web documents to PDF, it uses paragraphs, columns, lists, tables, canvas, etc... Also allows users to declare their styles, use custom fonts, build a DSL and extend the framework.
 
 However, the pdfmake converts the document from scratch rather than from the existing HTML text, *i.e.* the user providers data for the header, content, footer, etc. This makes the configuration of pdfmake more difficult compared to other libraries.
 
-### **Pypdf**
-
+### Pypdf
 Asides pdfmake, there are other libraries such as **[pyPdf](https://pypi.org/project/pyPdf/)**. Pypdf is a Pure-Python library built as a PDF toolkit capable of splitting, merging, cropping, and transforming the pages of PDF files. It can also add custom data, viewing options, and passwords to PDF files. It can retrieve text and metadata from PDFs as well as merge entire files together. However, with pypdf text might not be ordered logically, it is bested used for simpler and small documents as the document becomes larger, text ordering might become complex.
 
-### **Pdfcrowd**
-
+### Pdfcrowd
 Pdfcrowd is an open-source API that is capable of converting PDF from dynamic and static HTML in various environments. It also generates PDFs and screenshots from web pages and HTML documents. However, pdfcrowd unlike other libraries is not completely free it comes with a paid browser license to unlock a series of advanced options, like controlling the page size, password-protecting the PDF, and preventing printing and copying.
 
 **Pdfminer**, **PyMuPDF**, etc are also libraries for converting HTML to PDF in python. However, in this article, we will be using **pdfkit**. Pdfkit is one of the better approaches as, it renders HTML into PDF with various image formats, HTML forms, and other complex printable documents.
 
 **N.B:** There are also libraries and tools for converting PDF in Django and JavaScript.
 
-### **What is pdfkit?**
-
+### What is pdfkit?
 Pdfkit is an open-source library that generates HTML from web URLs, local files a string and converts this text to PDF format. Web apps often contain tables, charts, and graphs asides text. Export these data professional, PDF converters are the best options, and pdfit converts data regardless of the format, either image, table, graphs, HTML forms, and other complex printable documents.
 
 We will be using **[wkhtmltopdf](https://wkhtmltopdf.org/)** alongside pdfkit to achieve perfect work. Wkhtmltopdf is an open-source command-line tool that renders HTML into PDF and various image formats.
 
 First thing first, let's begin by installing pdfkit.
 
-### **Installing pdfkit**
-
+### Installing pdfkit
 Pdfkit is installed using the pip command in your terminal.
 
 ```bash
@@ -166,7 +159,6 @@ pdfkit.from_string("hello world","string.pdf")
 In the same way, a *string.pdf* file is automatically created in both the code editor and the local folder.
 
 ### Generate from external HTML file
-
 A PDF file can as well be generated from an HTML file. To get  a PDF from HTML add the following code:
 
 ```bash
@@ -181,8 +173,9 @@ I have an index.html file locally stored within the same folder.
 Successfully done? 😃
 Good job converting to PDF using pydfit in python!
 
-## **Conclusion**
-
+### Conclusion
 File documents have become easier to save and transfer with the use of these tools. With simple steps in this article using the libraries and programming language used above, you can successfully convert HTML to PDF from a URL, string, and HTML file  from the homepage to the end without hindrances. It is also important to note that there are other libraries and languages this can be done asides from the ones used in this article.
 
-I hope this tutorial was of help. Happy coding!
+I hope this tutorial was of help. 
+
+Happy coding!
