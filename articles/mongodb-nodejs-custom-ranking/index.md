@@ -61,6 +61,8 @@ Execute the code by running the command below in your terminal:
 ```
 node database.js
 ```
+The same will be done for the other files ```node filename```.
+
 
 #### *Creating our collection*
 
