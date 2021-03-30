@@ -183,7 +183,7 @@ router.get('/:code', async(req, res)=>{
 
 module.exports = router
 ```
-A code walkthrough:
+Let us now understand the above code. To set up a router in express, we need to import the `express` module and initialize the `express.Router()` method. This API route requires the database model we created to save the short URL that will be generated. For this to happen, we need to import `valid-url` for validation and `short-id` that will create the unique ID for our short URL. Our localhost application will use a base URL (`baseUrl` variable) as `http:\\localhost:5000`. We now need to extract the `longUrl` from our request body, validate id with the `valid-url` package by executing the method `validUrl.isUri(baseUrl)` and pass the URL as the argument. If the URL is valid, we generate a short code using the `const urlCode = shortid.generate()` and append it to our base URL before saving it to the database. This process is asynchronous and that is why we use promises or async-await syntax.
 
 ### The final `index.js` Entry file
 ```js
