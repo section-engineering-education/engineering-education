@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Please be patient as our team works through approving and publishing all articles/tutorials in a timely manner. Allow 1-3 days for a topic to be reviewed and/or approved - allow 3-7 days for an articles to be reviewed and/or published.
+We ask that you please be patient as our team works through approving and publishing all articles/tutorials in a timely manner. Allow 1-3 days for a topic to be reviewed and/or approved - allow 3-7 days for an articles to be reviewed and/or published.
 
 Be sure to visit our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for tools, resources, and example articles to go over.
 
