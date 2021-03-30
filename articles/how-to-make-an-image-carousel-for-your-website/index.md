@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/how-to-make-an-image-carousel-for-your-website/
 title: How to Make an Image Carousel Using Basic HTML, CSS, and JavaScript
 description: This tutorial will walk the reader through adding an image carousel to a website to improve the user interface. 
-author: michael-barasa
+author: eugiene-kanillar
 date: 2021-03-29T00:00:00-17:30
 topics: []
 excerpt_separator: <!--more-->
@@ -233,7 +233,7 @@ function SlideShow() {
 ### Testing
 One can test whether the code works by navigating to the folder where the project is stored and opening the HTML file using any browser. The code should work just fine. Check out a sample of an image carousel illustrated below from Usain Bolt's website.
 
-![demo](/engineering-education/articles/how-to-make-an-image-carousel-for-your-website/example.gif)
+![demo](/engineering-education/how-to-make-an-image-carousel-for-your-website/example.gif)
  
 Access the tutorial's code on [Github](https://github.com/KanizoRGB/Imagecarousell-for-a-website/tree/main).
 
