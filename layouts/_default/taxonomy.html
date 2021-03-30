@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+  {{ if (where .Pages "Type" "blog") }}
+
+    {{ partial "blog/header.html" . }}
+    {{ partial "blog/posts.html" . }}
+
+  {{ else if (where .Pages "Type" "videos") }}
+
+    {{ partial "videos/header.html" . }}
+    {{ partial "videos/posts.html" . }}
+
+  {{ else if (where .Pages "Type" "engineering-education") }}
+
+    {{ partial "engineering-education/articles-header.html" . }}
+    {{ partial "engineering-education/articles-posts.html" . }}
+
+  {{ end }}
+
+{{ end }}

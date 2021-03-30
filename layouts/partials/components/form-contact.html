@@ -1,0 +1,90 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+<section class="section-form-contact section-form xs-pb-80 xs-pt-80 fill-bg-gray">
+	<div class="section-container">
+    	<div class="section-form-contact-inner section-form-inner prl-5">
+			<div id="mc_embed_signup">
+          <h2 class="xs-mb-30 title-4">{{ if .component.title }}{{ .component.title }}{{ else }}Get In Touch{{ end }}</h2>
+          {{ if .component.copy }}
+            <div class="section-rich-text xs-mb-30">
+              {{ .component.copy | markdownify }}
+            </div>
+          {{ end }}
+			<form action="https://getform.io/f/6d5cbdc6-979a-446a-93ca-7f72960dfdb1" method="post" id="getform-embedded-subscribe-form" name="getform-embedded-subscribe-form" class="validate" target="_self" onsubmit="return submitUserForm();">
+			    <div id="mc_embed_signup_scroll">
+			<div class="mc-field-group">
+			    <label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+			</label>
+			    <input type="text" value="" name="firstName" id="mce-FNAME" required>
+			</div>
+			<div class="mc-field-group">
+			    <label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+			</label>
+			    <input type="text" value="" name="lastName" id="mce-LNAME" required>
+			</div>
+			<div class="mc-field-group">
+			    <label for="mce-COMPANY">Company Name  <span class="asterisk">*</span>
+			</label>
+			    <input type="text" value="" name="company" id="mce-COMPANY" required>
+			</div>
+			<div class="mc-field-group">
+			    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+			</label>
+			    <input type="email" value="" name="email" id="mce-EMAIL" required>
+			</div>
+			<div class="mc-field-group">
+				<label for="mce-COMMENTS">Tell us a little bit about your edge needs:  <span class="asterisk">*</span>
+			</label>
+				<textarea type="textarea" value="" form="getform-embedded-subscribe-form" name="comments" id="mce-COMMENTS" required></textarea>
+			</div>
+
+			<div class="g-recaptcha mc-field-group" data-sitekey="6Lck3c0UAAAAAKT1Bz8RPmL2xOJRwz4_6-AxQMHk
+			" data-callback="verifyCaptcha"></div>
+			<div class="response" id="mce-error-response" style="display:none"></div>				
+			<div id="g-recaptcha-error"></div>
+
+			<div class="clear"><input type="submit" value="Submit" name="submit" id="mc-embedded-subscribe" class="button"></div>
+			    </div>
+			</form>
+			</div>
+
+			<!-- verify Google Captcha -->
+			<script>
+				function submitUserForm() {
+					var response = grecaptcha.getResponse();
+					if(response.length == 0) {
+						document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">reCAPTCHA is required.</span>';
+						return false;
+					}
+					return true;
+				}
+
+				function verifyCaptcha() {
+					document.getElementById('g-recaptcha-error').innerHTML = '';
+				}
+				</script>
+
+
+			<!-- Prevent form submit on pressing enter key -->
+      <script type="text/javascript">
+        document.querySelector('form').onkeypress = function stopEnterSubmitting(e) {
+          if (e.keyCode == 13) {
+              var src = e.srcElement || e.target;
+              if (src.tagName.toLowerCase() != "textarea") {
+                  if (e.preventDefault) {
+                      e.preventDefault();
+                  } else {
+                      e.returnValue = false;
+                  }
+              }
+          }
+        }
+      </script>
+
+    	</div>
+	</div>
+</section>

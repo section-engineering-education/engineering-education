@@ -1,0 +1,39 @@
+
+{{ if and .component.content1 .component.content2 }}
+<section class="section-rich-text xs-pb-80 xs-pt-80 {{ if .component.bgGray }}fill-bg-gray{{ end }}">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5 {{ if .component.centered }}text-center{{ end }}">
+      {{ if .component.social }}
+        {{ partial "social-share" }}
+      {{ end }}
+
+      {{ $content1 := (.context.Resources.GetMatch .component.content1).Content }}
+      {{ $content2 := (.context.Resources.GetMatch .component.content2).Content }}
+
+      <div class="section-rich-text-half flex flex-wrap">
+        <div class="section-rich-text-half-item xs-pr-20">
+            {{ $content1 | markdownify }}
+        </div>
+        <div class="section-rich-text-half-item">
+            {{ $content2 | markdownify }}
+        </div>
+      </div>
+
+      {{ if .component.cta }}
+      <div class="button-group">
+        {{ range .component.cta }}
+          {{ if eq .type "button" }}
+          <a class="button button-medium button-green button-shadow" href="{{ .url }}">{{ .text }}</a>
+          {{ else if eq .type "arrow-black" }}
+          <a class="button button-medium text-link button-link-arrow" href="{{ .url }}">{{ .text }}</a>
+          {{ else }}
+          <a class="link-with-arrow-green text-green text-18-medium" href="{{ .url }}">{{ .text }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ end }}

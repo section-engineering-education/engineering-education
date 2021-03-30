@@ -1,0 +1,26 @@
+<div class="justify-center">
+    <article class="lp">
+    <section class="fill-green text-white center-align">
+            {{ if .component.title }}
+            <h3>{{ .component.title }}</h3>
+            {{ end }}
+            {{ if .component.subTitle }}
+            <h5 class="title-4 text-22-regular xs-pt-10 xs-pb-20 prl-5">{{ .component.subTitle }}</h5>
+            {{ end }}
+            {{ if (isset .component "cta") }}
+            <div class="client-block-link xs-pb-40">
+                {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+                <a class="link-with-arrow-white text-white text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+            <div class="features">
+                <div>
+                    {{ if (isset .component "image") }}
+                    <img class="screenshot" src="{{ .component.image.src }}" alt="{{ .component.image.alt }}">
+                    {{ end }}
+                </div>
+        </div>
+    </section>
+    </article>
+    </div>

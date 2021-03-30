@@ -1,0 +1,55 @@
+<!-- Options:
+image:
+  src:
+  alt:
+-->
+<section class="{{ if .component.gradient }}dark-gradient text-white{{ end }}">
+{{ if .component.title }}
+<div class="centered-image-block-header text-center xs-pt-40">
+  <h3 class="title-3">{{ .component.title | markdownify }}</h3>
+</div>
+{{ end }}
+{{ if .component.subTitle }}
+<div class="centered-image-block-header text-center">
+  <h5 class="title-4 text-22-regular xs-pt-10 xs-pb-40 padding-lr">{{ .component.subTitle }}</h5>
+</div>
+{{ end }}
+{{ if (isset .component "cta") }}
+      <div class="client-block-link text-center xs-mt-10">
+        {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+        <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+{{- if .component.image.src -}}
+  <div class="full-image-block section-container relative flex justify-center">
+    <div class="full-image-block-inner prl-10">
+      <img class="lozad" data-src="{{ .component.image.src }}" {{ if .component.image.alt }} alt="{{ .component.image.alt }}" {{ end }}/>
+    </div>
+  </div>
+{{- end -}}
+<!-- {{ if .component.video.src }}
+<div class="full-image-block section-container relative flex justify-center xs-mb-60">
+<iframe width="900" height="506" src="{{ .component.video.src }}rel=0;&autoplay=1&mute=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{{ end }} -->
+
+{{ if .component.video.src }}
+<div class="full-image-block section-container relative flex justify-center" style="margin-bottom: 40px;">
+<img
+  style="width: 100%; margin: auto; display: block; max-width: 800px;"
+  class="vidyard-player-embed"
+  src="{{ .component.video.src }}"
+  data-uuid="ksQSF5bh299cHCM8rzXN3m"
+  data-v="4"
+  data-type="inline"
+  data-width="800"
+  data-autoplay="1"
+/>
+</div>
+{{ end }}
+<div class='button-group xs-mb-60 xs-pl-30 xs-pr-30 justify-center'>
+  {{ if .component.buttonUrl }}
+  <a href='{{ .component.buttonUrl }}' class='button button-ltgreen button-medium'>{{ end }} {{ if .component.buttonText }}{{ .component.buttonText }}{{ end }}</a>
+</div>
+</section>

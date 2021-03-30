@@ -1,0 +1,104 @@
+<!-- Options:
+contentLinked: name of bundled file
+contentInline: markdown in quotes
+contentLeading: adds leading text to first paragraph [true/false]
+contentLeadingBorder: adds leading text with border [true/false]
+bgGray: [ true / false ]
+cta:
+  type: [button, arrow-black] - defaults to arrow green
+  text:
+  url:
+  btnColor: [green, purple, orange, white]
+-->
+{{ if or (isset .component "contentLinked") (isset .component "contentInline") }}
+{{ $scratch := newScratch }}
+{{ if .component.contentLinked }}
+  {{ $scratch.Set "content"  (.context.Resources.GetMatch .component.contentLinked).Content }}
+{{ else if .component.contentInline }}
+  {{ $scratch.Set "content" .component.contentInline }}
+{{ end }}
+
+<section class="section-rich-text {{ if .component.paddingBottom }}xs-pb-{{.component.paddingBottom}}{{else}}xs-pb-80{{end}} {{ if .component.paddingTop }}xs-pt-{{.component.paddingTop}}{{else}}xs-pt-80{{end}} {{ if .component.bgGray }}fill-bg-gray{{ end }}">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5 {{ if .component.centered }}text-center{{ end }}">
+      {{ if .component.social }}
+        {{ partial "social-share" }}
+      {{ end }}
+
+
+        {{ if and (.component.contentLeading) (not .component.contentLeadingBorder) }}
+
+          {{ if .component.title }}
+          <div class="{{ if .component.titleCentered }}text-center{{ end }} xs-mb-40">
+            {{ if .component.subTitle }}
+              <span class="text-18-regular text-green block xs-mb-10">{{ .component.subTitle }}</span>
+            {{ end }}
+            {{ if .component.title }}
+              <h3>{{ .component.title }}</h3>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <div class="section-rich-text-leading">
+            {{ $scratch.Get "content" | markdownify }}
+          </div>
+        {{ else if and (.component.contentLeading) (.component.contentLeadingBorder) }}
+
+          {{ if .component.title }}
+          <div class="{{ if .component.titleCentered }}text-center{{ end }} xs-mb-40">
+            {{ if .component.subTitle }}
+              <span class="text-18-regular text-green block xs-mb-10">{{ .component.subTitle }}</span>
+            {{ end }}
+            {{ if .component.title }}
+              <h3>{{ .component.title }}</h3>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <div class="section-rich-text-leading-border">
+            {{ $scratch.Get "content" | markdownify }}
+          </div>
+        {{ else }}
+
+          {{ if .component.title }}
+          <div class="{{ if .component.titleCentered }}text-center{{ end }} xs-mb-40">
+            {{ if .component.subTitle }}
+              <span class="text-18-regular text-{{ .component.subTitleColor }} block xs-mb-10">{{ .component.subTitle }}</span>
+            {{ end }}
+            {{ if .component.title }}
+              <h3>{{ .component.title }}</h3>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <p class="markdown-wrapper">{{ $scratch.Get "content" | markdownify }}</p>
+
+        {{ end }}
+
+
+      {{ if .component.cta }}
+      {{ $scratch := newScratch }}
+
+      {{ if (gt (len .component.cta) 1) }}
+      {{ $scratch.Set "spacing" "xs-mr-30" }}
+      {{ else }}
+      {{ $scratch.Set "spacing" "" }}
+      {{ end }}
+
+      <div class="button-group">
+        {{ range .component.cta }}
+          {{ if eq .type "button" }}
+          <a class='button button-medium button-green button-shadow {{ $scratch.Get "spacing" }}' href="{{ .url }}">{{ .text }}</a>
+          {{ else if eq .type "arrow-black" }}
+          <a class='button text-link button-link-arrow {{ $scratch.Get "spacing" }}' href="{{ .url }}">{{ .text }}</a>
+          {{ else }}
+          <a class='link-with-arrow-green text-green text-18-medium {{ $scratch.Get "spacing" }}' href="{{ .url }}">{{ .text }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ end }}

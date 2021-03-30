@@ -1,0 +1,76 @@
+<!-- Options:
+title: the main title
+metaTitle:
+linkText:
+items:
+  url:
+  image:
+    src:
+    alt:
+-->
+
+{{ $scratch := newScratch }}
+
+{{ if (isset .component "items") }}
+{{ $scratch.Set "items" .component.items }}
+{{ else }}
+{{ $scratch.Set "items" .site.Data.globals.featured_resources }}
+{{ end }}
+
+<!-- {{ if (isset .component "color") }}
+{{ $scratch.Set "color" .component.color }}
+{{ else if isset .context.Params "color" }}
+{{ $scratch.Set "color" .context.Params.color }}
+{{ end }} -->
+
+{{ if $scratch.Get "items" }}
+{{ if .component.borderTop }}
+<hr/>
+{{ end }}
+<!-- <section class='resource-block section-container xs-mb-100 xs-mt-60 relative {{ if .context.Params.color }}-{{ .context.Params.color }}-blocks{{ else if .component.color }}-{{ .component.color }}-blocks{{ else }}-blue-blocks{{ end }}'> -->
+    <section class='xs-pb-120 xs-pt-90 {{ if .component.bgGray }}fill-bg-gray{{ end }}'>
+      <div class="resource-block section-container relative -green-blocks ">
+  {{ if .component.squares }}
+  <div class="resource-block-left-large absolute"></div>
+  <div class="resource-block-left-stripes absolute"></div>
+  {{ end }}
+  {{ if .component.title }}
+  <div class="resource-block-header {{ if .component.squares }}text-center{{ end }}">
+    <h2 class="title-3 xs-mb-40 text-link">{{ .component.title }}</h2>
+  </div>
+  {{ end }}
+  <div class="resource-block-inner flex flex-wrap justify-start">
+
+    {{ range $scratch.Get "items" }}
+    <a class="decoration-none resource-block-item" href="{{ .url }}" {{ if .external }}target="_blank"{{ end }}>
+      <div class="resource-block-item-wrap fill-white flex cta-shadow flex-column">
+        {{ if and .image.src }}
+        <img class="lozad" data-src="{{ .image.src }}" {{ if .image.alt }}alt="{{ .image.alt }}" {{ end }}/>
+        {{ end }}
+        <div class="resource-block-item-content flex flex-column">
+          <div class="resource-block-item-content-inner prl-5 xs-pt-30 xs-pb-30 flex flex-column fill-white">
+            {{ if .metaTitle }}
+            <p class="text-16 text-blockquote xs-mb-6">{{ .metaTitle }}</p>
+            {{ end }}
+            {{ if .title }}
+            <h3 class="title-5 text-link xs-mb-40">{{ .title }}</h3>
+            {{ end }}
+          </div>
+          {{ if .linkText }}
+          <span class="link-with-arrow-green-nh text-green text-18-medium featured-content-item-content-inner-span prl-5">{{ .linkText }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ if .component.squares }}
+  <div class="resource-block-right-large absolute"></div>
+  <div class="resource-block-right-stripes absolute"></div>
+  {{ end }}
+</div>
+</section>
+{{ if .component.borderBottom }}
+<hr/>
+{{ end }}
+{{ end }}

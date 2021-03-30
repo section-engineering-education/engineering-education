@@ -1,0 +1,72 @@
+{{ $page := . }}
+{{ $site := $.Site }}
+{{- with .Params.blocks -}}
+  {{- range . -}}
+    {{- if eq .component "blog-search" -}}{{- partial "components/blog-search" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "video-search" -}}{{- partial "components/video-search" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "engineering-education-search" -}}{{- partial "components/engineering-education-search" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "centered-image-block" -}}{{- partial "components/centered-image-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "cdn-logos" -}}{{- partial "components/cdn-logos" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "client-block" -}}{{- partial "components/client-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "open-source-block" -}}{{- partial "components/open-source-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "content-blocks" -}}{{- partial "components/content-blocks" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "content-blocks-small" -}}{{- partial "components/content-blocks-small" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "cta-block" -}}{{- partial "components/cta-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "cta-block-dark" -}}{{- partial "components/cta-block-dark" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "aee-block" -}}{{- partial "components/aee-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "aee-curve" -}}{{- partial "components/aee-curve" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "aee-curve-light" -}}{{- partial "components/aee-curve-light" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "aee-diagram" -}}{{- partial "components/aee-diagram" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "cta-callout" -}}{{- partial "components/cta-callout" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "dark-fill" -}}{{- partial "components/dark-fill" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "divider" -}}{{- partial "components/divider" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "featured-content" -}}{{- partial "components/featured-content" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "feature-icons" -}}{{- partial "components/feature-icons" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "feature-icons-small" -}}{{- partial "components/feature-icons-small" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "form-contact" -}}{{- partial "components/form-contact" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "form-partner" -}}{{- partial "components/form-partner" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "form-short" -}}{{- partial "components/form-short" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "form-google" -}}{{- partial "components/form-google" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "form-big-commerce" -}}{{- partial "components/form-big-commerce" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "full-image" -}}{{- partial "components/full-image" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "full-image-reduced-margin" -}}{{- partial "components/full-image-reduced-margin" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "edge-compute-dark-fill" -}}{{- partial "components/edge-compute-dark-fill" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "hero-blocks" -}}{{- partial "components/hero-blocks" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "hero-case-study" -}}{{- partial "components/hero-case-study" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "hero-color" -}}{{- partial "components/hero-color" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "hero-green" -}}{{- partial "components/hero-green" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "hero-dark" -}}{{- partial "components/hero-dark" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "home-hero" -}}{{- partial "components/home-hero" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "home-hero-alt" -}}{{- partial "components/home-hero-alt" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "lp-large-image" -}}{{- partial "components/lp-large-image" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "lp-green-block" -}}{{- partial "components/lp-green-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "module-logos" -}}{{- partial "components/module-logos" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "resource-block" -}}{{- partial "components/resource-block" (dict "component" . "context" $page "site" $site) -}}{{- end -}}
+    {{- if eq .component "resource-block-partners" -}}{{- partial "components/resource-block-partners" (dict "component" . "context" $page "site" $site) -}}{{- end -}}
+    {{- if eq .component "resource-block-dark" -}}{{- partial "components/resource-block-dark" (dict "component" . "context" $page "site" $site) -}}{{- end -}}
+    {{- if eq .component "resource-block-values" -}}{{- partial "components/resource-block-values" (dict "component" . "context" $page "site" $site) -}}{{- end -}}
+    {{- if eq .component "rich-text" -}}{{- partial "components/rich-text" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "rich-text-full-width" -}}{{- partial "components/rich-text-full-width" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "rich-text-half" -}}{{- partial "components/rich-text-half" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "rich-text-three-col" -}}{{- partial "components/rich-text-three-col" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "spread-block" -}}{{- partial "components/spread-block" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "testimonial" -}}{{- partial "components/testimonial" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "testimonial-v2" -}}{{- partial "components/testimonial-v2" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "testimonial-v3-slider" -}}{{- partial "components/testimonial-v3-slider" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "video-embed" -}}{{- partial "components/video-embed" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "spread-block-tabs" -}}{{- partial "components/spread-block-tabs" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "spread-block-tabs-v2" -}}{{- partial "components/spread-block-tabs-v2" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-table" -}}{{- partial "components/pricing-table" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-table-new" -}}{{- partial "components/pricing-table-new" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-starter-stacks" -}}{{- partial "components/pricing-starter-stacks" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "nodejs-pricing" -}}{{- partial "components/nodejs-pricing" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "nodejs-pricing-table" -}}{{- partial "components/nodejs-pricing-table" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "container-serverless-stacks" -}}{{- partial "components/container-serverless-stacks" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-categories" -}}{{- partial "components/pricing-categories" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-categories-nodejs" -}}{{- partial "components/pricing-categories-nodejs" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-custom-workloads" -}}{{- partial "components/pricing-custom-workloads" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "pricing-review" -}}{{- partial "components/pricing-review" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "three-blocks" -}}{{- partial "components/three-blocks" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "card" -}}{{- partial "components/card" (dict "component" . "context" $page) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}

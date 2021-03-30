@@ -1,0 +1,18 @@
+<!-- Options:
+content: video embed iframe html
+-->
+
+{{ if .component.content }}
+<section class="section-video-embed xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-video-embed-inner prl-5">
+      {{ if .component.title }}
+        <h3 class="title-3 text-center xs-mb-30">{{ .component.title }}</h3>
+      {{ end }}
+      <div class="section-video-embed-iframe-wrapper">
+          {{ .component.content | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

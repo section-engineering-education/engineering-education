@@ -1,0 +1,17 @@
+<!-- Options:
+image:
+  src:
+  alt:
+-->
+{{ if .component.title }}
+<div class="centered-image-block-header text-center">
+  <h3 class="title-3">{{ .component.title }}</h3>
+</div>
+{{ end }}
+{{- if .component.image.src -}}
+  <section class="full-image-block section-container relative flex justify-center">
+    <div class="full-image-block-inner prl-10">
+      <img class="lozad" data-src="{{ .component.image.src }}" {{ if .component.image.alt }} alt="{{ .component.image.alt }}" {{ end }}/>
+    </div>
+  </section>
+{{- end -}}

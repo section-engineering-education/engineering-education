@@ -1,0 +1,46 @@
+<!-- Options:
+title: the main title
+copy:
+button:
+  url:
+  text:
+-->
+
+<section class="cta-block fill-dark">
+  <div class="section-container">
+    {{ if .component.copy }}
+    <div class="cta-block-inner flex flex-wrap xs-pt-40 xs-pb-40 prl-5 align-center">
+    {{ else }}
+    <div class="cta-block-inner flex flex-wrap xs-pt-40 xs-pb-40 sm-pt-70 sm-pb-70 prl-5 align-center">
+    {{ end }}
+      <div class="cta-block-inner-text">
+        {{ if .component.title }}
+        <h3 class="title-3 text-white xs-mb-10">{{ .component.title }}</h3>
+        {{ end }}
+        {{ if .component.copy }}
+        <p class="text-19-regular text-white xs-mt-10 mw-90">{{ .component.copy }}</p>
+        {{ end }}
+
+        {{ if (isset .component "cta") }}
+            <div class="client-block-link xs-mt-20">
+                {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+                <a class="link-with-arrow-white text-white text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+      </div>
+
+      <div class="cta-block-inner-text">
+        {{ if .component.title2 }}
+        <h3 class="title-3 text-white xs-mb-10">{{ .component.title2 }}</h3>
+        {{ end }}
+        {{ if .component.copy2 }}
+        <p class="text-19-regular text-white xs-mt-10 mw-90">{{ .component.copy2 }}</p>
+        {{ end }}
+
+      </div>
+
+
+    </div>
+  </div>
+</section>

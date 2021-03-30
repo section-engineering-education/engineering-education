@@ -1,0 +1,30 @@
+<!-- <style>
+    .diagonal-bkgd {
+        background-color: #013A6B;
+  background-image: -webkit-linear-gradient(45deg, #013A6B 50%, #004E95 50%);
+  min-height: 500px;
+    }
+</style> -->
+
+<div class="justify-center">
+    <article class="lp">
+    <section class="center-align">
+            <h3>Shifting the curve.</h3>
+            <h5 class="title-4 text-22-regular xs-pt-10 xs-pb-20 prl-5">Patent-pending Adaptive Edge Engine delivers superior performance/cost efficiencies.</h5>
+            <div class="features">
+                <div class="xs-mt-10">
+                    <img style="width: 45%;" src="/images/global/diagrams/aee-cloud-edge-graph.png">
+                    <img style="width: 45%;" src="/images/global/diagrams/aee-section-adaptive-edge-graph.png">
+                </div>
+            
+            {{ if (isset .component "cta") }}
+            <div class="client-block-link text-center xs-mt-5">
+                {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+                <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    </article>
+    </div>

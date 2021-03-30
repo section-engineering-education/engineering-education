@@ -1,0 +1,86 @@
+<!-- Options:
+title:
+items:
+  - quote: - quotation marks added in code!
+    author:
+    navImage:
+      src:
+      alt:
+    cta:
+      url:
+      text:
+-->
+
+<section class="section-testimonial xs-mt-40 sm-mt-0 xs-pt-60 xs-pb-60 sm-pt-120 sm-pb-120 fill-bg-gray {{ if (isset .component "items") }}{{ if (gt (len .component.items) 1)  }}-with-slider{{ end }}{{ end }}">
+  <div class="section-container">
+    <div class="section-testimonial-header text-center prl-5">
+      {{ if .component.title }}
+      <h3 class="title-3 text-title">{{ .component.title }}</h3>
+      {{ end }}
+    </div>
+    <div class="section-testimonial-inner prl-5 relative">
+      <div class="section-testimonial-inner-left-stripes absolute"></div>
+      <div class="section-testimonial-inner-left-large absolute"></div>
+      <div class="section-testimonial-inner-left-shadow absolute"></div>
+      <div class="section-testimonial-inner-right-small absolute"></div>
+      <div class="section-testimonial-inner-right-stripes absolute"></div>
+      {{ if (isset .component "items") }}
+        {{ if and (gt (len .component.items) 0) (lt (len .component.items) 2) }}
+          {{ $item := (index .component.items 0) }}
+          <div class="section-testimonial-inner-content cta-shadow-no-hover fill-white relative">
+            {{ if $item.quote }}
+            <p class="text-22 text-color xs-mb-10">&ldquo;{{ $item.quote }}&rdquo;</p>
+            {{ end }}
+
+            {{ if $item.author }}
+            <p class="text-22-regular text-testimonial">{{ $item.author }}</p>
+            {{ end }}
+
+            {{ if (isset $item "cta") }}
+              <div class="section-testimonial-link text-center xs-mt-20 sm-mt-40">
+                {{ if and (isset $item.cta "url") (isset $item.cta "text") }}
+                <a class="link-with-arrow-green text-green text-18-medium" href="{{ $item.cta.url }}">{{ $item.cta.text }}</a>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        {{ else }}
+          <div class="section-testimonial-inner-content pa-5 cta-shadow-no-hover fill-white relative">
+            <div class="testimonial-slider">
+              {{ range .component.items }}
+                <div class="testimonial-slider-item">
+                  {{ if .quote }}
+                  <p class="text-22 text-color xs-mb-10">&ldquo;{{ .quote | markdownify }}&rdquo;</p>
+                  {{ end }}
+                  {{ if .author }}
+                  <p class="text-22-regular text-testimonial">{{ .author }}</p>
+                  {{ end }}
+                  {{ if (isset . "cta") }}
+                  <div class="section-testimonial-link text-center-left xs-mt-20 sm-mt-40">
+                    {{ if and (isset .cta "url") (isset .cta "text") }}
+                    <a class="link-with-arrow-green text-green text-18-medium" href="{{ .cta.url }}">{{ .cta.text }}</a>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          </div>
+          <div class="testimonial-nav flex justify-center align-center">
+
+            {{ range .component.items }}
+              {{ if isset . "navImage" }}
+                {{ if (isset .navImage "src") }}
+                <div class="testimonial-nav-item pointer">
+                  <img src="{{ .navImage.src }}" {{ if (isset .navImage "alt") }}alt="{{ .navImage.alt }}"{{ end }}>
+                </div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>

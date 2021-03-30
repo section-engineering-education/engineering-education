@@ -1,0 +1,73 @@
+<div>
+  <section class='section-pricing xs-pb-40 xs-pt-10 text-center'>
+    <div class='section-container relative'>
+      <div class='section-pricing-inner flex flex-wrap justify-center'>
+
+        <div class='section-pricing-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-pricing-block-header relative fill-dark text-center xs-pl-20 xs-pr-20 xs-pb-50 xs-pt-50'>
+              <span class='text-white block title-4 xs-mb-20'>Accelerate</span>
+              <div class='button-group'>
+                {{ if and .component.cta1.url .component.cta1.text }}
+                <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta1.url }}">{{ .component.cta1.text }}</a>
+                {{ end }}
+              </div>
+              <span class='text-white text-16-tall'><br/>Performance and scalability powered by the latest version of Varnish Cache globally distributed at the Edge.<br/><br/><strong>Starting at $395/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span></span>
+            </div>
+            <div class='section-pricing-block-content-wrap fill-white'>
+              <div class='section-pricing-block-content xs-pt-20 xs-pl-20 xs-pr-20'>
+                <img src='/images/pricing/pricing-accelerate-scale.png' style='width: 61%;' class='xs-ml-70 xs-mr-70'>
+              </div>
+              <div class='section-pricing-block-footer'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section-pricing-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-pricing-block-header relative fill-dark text-center xs-pl-20 xs-pr-20 xs-pb-50 xs-pt-50'>
+              <span class='text-white block title-4 xs-mb-20'>Accelerate +</span>
+              <div class='button-group'>
+                {{ if and .component.cta2.url .component.cta2.text }}
+                <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta2.url }}">{{ .component.cta2.text }}</a>
+                {{ end }}
+              </div>
+              <span class='text-white text-16-tall'><br/>Add on-the-fly edge image optimization for enhanced user experiences and improved bandwidth and storage efficiencies.<br/><br/><strong>Starting at $495/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span></span>
+            </div>
+            <div class='section-pricing-block-content-wrap fill-white'>
+              <div class='section-pricing-block-content xs-pt-20 xs-pl-20 xs-pr-20'>
+                <img src='/images/pricing/pricing-accelerate-plus.png' style='width: 70%;' class='xs-ml-70 xs-mr-70'>
+              </div>
+              <div class='section-pricing-block-footer'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section-pricing-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-pricing-block-header relative fill-dark text-center xs-pl-20 xs-pr-20 xs-pb-50 xs-pt-50'>
+              <span class='text-white block title-4 xs-mb-20'>Accelerate + Secure</span>
+              <div class='button-group'>
+                {{ if and .component.cta3.url .component.cta3.text }}
+                <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta3.url }}">{{ .component.cta3.text }}</a>
+                {{ end }}
+              </div>
+              <span class='text-white text-16-tall'><br/>Add powerful, simple-to-manage edge security with a modern Web Application Firewall.<br/><br/><strong>Starting at $595/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span></span>
+            </div>
+            <div class='section-pricing-block-content-wrap fill-white'>
+              <div class='section-pricing-block-content xs-pt-20 xs-pl-10 xs-pr-20'>
+                <img src='/images/pricing/pricing-accelerate-secure.png' style='width: 80%;' class='xs-ml-70 xs-mr-70'>
+              </div>
+              <div class='section-pricing-block-footer'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <span class='text-16-tall'><i>*30-day free trial offered upon signup.<br>Pricing is based on volume of requests passing through each edge stack.</i></span>
+  </section>
+</div>

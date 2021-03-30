@@ -1,0 +1,60 @@
+<!-- Options:
+headline: the main title
+columns:
+
+  contentInline: this is inline markdown, must use n for new lines
+  columnLinked: cannot do on "branch" pages, this is the name of a bundled resource file
+  bgGray: [ true / false ]
+
+  https://gohugo.io/content-management/page-resources/
+  https://gohugo.io/content-management/page-bundles/
+-->
+
+{{ if .component.columns }}
+<section class="rich-text-three-col {{ if .component.paddingBottom }}xs-pb-{{.component.paddingBottom}}{{else}}xs-pb-80{{end}} {{ if .component.paddingTop }}xs-pt-{{.component.paddingTop}}{{else}}xs-pt-80{{end}} {{ if .component.bgGray }}fill-bg-gray{{ end }} {{ if .component.bgDark }}fill-dark text-white{{ end }}">
+  <div>
+    {{ if .component.headline }}
+    <div class="rich-text-three-col-header text-center xs-mb-0">
+      <h3 {{ if .component.idLink }}id="{{ .component.idLink }}"{{ end }} class="title-3 xs-mb-40 {{ if .component.bgDark }}text-white{{ end }}" style="max-width: 46rem;margin: 0 auto 30px;">{{ .component.headline }}</h3>
+    </div>
+    {{ end }}
+    {{ if .component.subheadline }}
+    <div class="rich-text-three-col text-center xs-mb-20">
+      <h4 class="text-18-regular {{ if .component.bgDark }}text-white{{ end }} padding-lr">{{ .component.subheadline }}</h4>
+    </div>
+    {{ end }}
+    <div class="rich-text-three-col-items {{ if .component.columnLists }}-columns-lists justify-space-between{{ else }}justify-center{{ end }} {{ if .component.bgDark }}text-white{{ end }} flex flex-wrap">
+
+      {{ range .component.columns }}
+
+        {{ if isset . "contentInline" }}
+          <div class="rich-text-three-col-items-item">
+            <div class="section-rich-text">
+              {{ string .contentInline | print | markdownify }}
+            </div>
+            {{ if isset . "cta" }}
+            {{ if and .cta.url .cta.text }}
+              <a class="link-with-arrow-black text-link text-18-medium" href="{{ .cta.url }}">{{ .cta.text }}</a>
+            {{ end }}
+          {{ end }}
+          </div>
+        {{ else if isset . "columnLinked" }}
+          {{ $content := (.context.Resources.GetMatch .component.contentLinked).Content }}
+          <div class="rich-text-three-col-items-item">
+            <div class="section-rich-text">
+                {{ $content | markdownify }}
+            </div>
+            {{ if isset . "cta" }}
+            {{ if and .cta.url .cta.text }}
+              <a class="link-with-arrow-black text-link text-18-medium" href="{{ .cta.url }}">{{ .cta.text }}</a>
+            {{ end }}
+          {{ end }}
+          </div>
+        {{ end }}
+
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+{{ end }}

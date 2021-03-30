@@ -1,0 +1,52 @@
+<!-- Options:
+title: the main title
+grayScale: boolean, defaults to true
+metaCta:
+  url:
+  text:
+subTitle:
+items:
+- src:
+  alt
+cta:
+  url:
+  text:
+-->
+
+<section class='open-source-block {{ if (and (isset .component "grayScale") (eq .component.grayScale false)) }}{{ else }}-is-grayscale{{ end }} xs-pb-40 xs-pt-40 {{ if .component.pbHalf }}sm-pb-40{{ else }}sm-pb-40{{ end }} {{ if .component.ptHalf }}sm-pt-40{{ else }}sm-pt-40{{ end }} {{ if and (isset .component "bgGray") (eq .component.bgGray true) }}fill-bg{{ end }}'>
+  <div class="section-container">
+    <div class="section-container-inner prl-5">
+      {{ if or .component.title .component.subTitle }}
+      <div class="open-source-block-title">
+        {{ if .component.title }}<h3 class="title-3 text-link xs-mb-5">{{ .component.title }}</h3>{{ end }}
+        {{ if (isset .component "metaCta") }}
+          {{ if and (isset .component.metaCta "url") (isset .component.metaCta "text") }}
+          <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.metaCta.url }}">{{ .component.metaCta.text }}</a>
+          {{ end }}
+        {{ end }}
+        {{ if .component.subTitle }}
+        <h5 class="title-4 text-link xs-pt-5">{{ .component.subTitle }}</h5>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ if and (isset .component "items") (gt (len .component.items) 0) }}
+      <div class="open-source-block-items flex flex-wrap align-center justify-center">
+        {{ range .component.items }}
+          {{ if .src }}
+          <div class="open-source-block-items-item text-center">
+            <img class="align-self-center lozad" data-src="{{ .src }}" {{ if .alt }}alt="{{ .alt }}"{{ end }} />
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ if (isset .component "cta") }}
+      <div class="open-source-block-link text-center xs-mt-5">
+        {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+        <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

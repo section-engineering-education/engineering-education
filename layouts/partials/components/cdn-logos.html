@@ -1,0 +1,56 @@
+<div class="justify-center">
+    <article class="lp grow-and-scale-your-saas-platform">
+    <section class="cdn">
+            {{ if .component.title }}
+            <h2>{{ .component.title }}</h2>
+            {{ end }}
+            <div class="text-22 intro">
+            {{ if .component.subTitle }}
+            <p>{{ .component.subTitle }}</p>
+            {{ end }}
+            </div>
+            <div class="features">
+            <div id="selectors" class="selector text-center">
+                <span class="title-4" data-toggle="cache">Global Cache</span>
+                <span class="title-4" data-toggle="optimize">Content Optimization</span>
+                <span class="title-4" data-toggle="secure">Web Application Firewall<br />and Bot Blocking</span>
+            </div>
+            <div id="modules" class="modules">
+                <a href="/modules/varnish-cache/"><img class="cache" data-src="/images/global/logo/Varnish-Cache.png" src="/images/global/logo/Varnish-Cache.png" data-loaded="true"></a>
+                <a href="/modules/optidash-image-optimization/"><img class="optimize" data-src="/images/global/logo/Optidash.png" src="/images/global/logo/Optidash.png" data-loaded="true"></a>
+                <a href="/modules/cloudinary/"><img class="optimize" data-src="/images/global/logo/Cloudinary.png" src="/images/global/logo/Cloudinary.png" data-loaded="true"></a>
+                <a href="/modules/sitespect/"><img class="optimize" data-src="/images/global/logo/Sitespect.png" src="/images/global/logo/Sitespect.png" data-loaded="true"></a>
+                <a href="/modules/threatx-intelligent-web-application-firewall/"><img class="secure" data-src="/images/global/logo/ThreatX.png" src="/images/global/logo/ThreatX.png" data-loaded="true"></a>
+                <a href="/modules/signal-sciences-web-protection-platform/"><img class="secure" data-src="/images/global/logo/Signal-Sciences.png" src="/images/global/logo/Signal-Sciences.png" data-loaded="true"></a>
+                <a href="/modules/wallarm/"><img class="secure" data-src="/images/global/logo/Wallarm.png" src="/images/global/logo/Wallarm.png" data-loaded="true"></a>
+                <a href="/modules/perimeterx/"><img class="secure" data-src="/images/global/logo/perimeterx-logo.png" src="/images/global/logo/perimeterx-logo.png" data-loaded="true"></a>
+                <a href="/modules/radware-bot-manager/"><img class="secure" data-src="/images/global/logo/Radware.png" src="/images/global/logo/Radware.png" data-loaded="true"></a>
+            </div>
+            {{ if (isset .component "cta") }}
+            <div class="client-block-link text-center xs-mt-5">
+                {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+                <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    </article>
+    </div>
+
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+    $(document).ready(function() {
+        $('#selectors span')
+        .on('mouseenter', function(e) {
+            var toggle = $(e.target).data('toggle')
+            $(`div.modules img.${toggle}`).addClass('active')
+        })
+        .on('mouseleave', function(e) {
+            var toggle = $(e.target).data('toggle')
+            $(`div.modules img.${toggle}`).removeClass('active')
+        })
+    });
+    })
+</script>

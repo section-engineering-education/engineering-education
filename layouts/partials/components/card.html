@@ -1,0 +1,27 @@
+<!-- Options:
+  title:
+  copy:
+-->
+
+
+{{ if or (isset .component "contentLinked") (isset .component "contentInline") }}
+{{ $scratch := newScratch }}
+{{ if .component.contentLinked }}
+  {{ $scratch.Set "content"  (.context.Resources.GetMatch .component.contentLinked).Content }}
+{{ else if .component.contentInline }}
+  {{ $scratch.Set "content" .component.contentInline }}
+{{ end }}
+
+<section class="section-rich-text xs-pb-80 xs-pt-80 {{ if .component.bgGray }}fill-bg-gray{{ end }}">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5 {{ if .component.centered }}text-center{{ end }}">
+
+      <div class="cta-shadow-no-hover fill-white relative xs-pr-20 xs-pl-20 xs-pt-50 xs-pb-10">
+          {{ $scratch.Get "content" | markdownify }}
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
+

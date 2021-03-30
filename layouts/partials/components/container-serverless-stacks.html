@@ -1,0 +1,54 @@
+<div>
+  <section class='section-pricing xs-pb-10 xs-pt-10'>
+    <div class='section-container relative'>
+      <div class='section-pricing-inner flex flex-wrap justify-center'>
+
+        <div class='section-pricing-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-pricing-block-header relative fill-dark text-center xs-pl-20 xs-pr-20 xs-pb-50 xs-pt-50'>
+              <span class='text-white block title-4 xs-mb-20'>Containers</span>
+              <div class='button-group'>
+                {{ if and .component.cta1.url .component.cta1.text }}
+                <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta1.url }}">{{ .component.cta1.text }}</a>
+                {{ end }}
+              </div>
+              <span class='text-white'><br/>Deploy Containers at the Edge. You choose the code.<br/><br/><strong>Starting at $495/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span>
+            </div>
+            <div class='section-pricing-block-content-wrap fill-white'>
+              <div class='section-pricing-block-content xs-pt-20 xs-pl-20 xs-pr-20'>
+                <img src='/images/pricing/pricing-container.png' style='width: 75%;' class='xs-ml-70 xs-mr-70'>
+              </div>
+              <div class='section-pricing-block-footer'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section-pricing-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-pricing-block-header relative fill-dark text-center xs-pl-20 xs-pr-20 xs-pb-50 xs-pt-50'>
+              <span class='text-white block title-4 xs-mb-20'>Serverless Functions</span>
+              <div class='button-group'>
+                {{ if and .component.cta2.url .component.cta2.text }}
+                <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta2.url }}">{{ .component.cta2.text }}</a>
+                {{ end }}
+              </div>
+              <span class='text-white'><br/>Serverless Functions at the Edge. No limit to execution time.<br/><br/><strong>Starting at $495/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span>
+            </div>
+            <div class='section-pricing-block-content-wrap fill-white'>
+              <div class='section-pricing-block-content xs-pt-20 xs-pl-20 xs-pr-20'>
+                <img src='/images/pricing/pricing-serverless.png' style='width: 75%;' class='xs-ml-70 xs-mr-70'>
+              </div>
+              <div class='section-pricing-block-footer'>
+              </div>
+            </div>
+          </div>
+        </div>
+
+     </div>
+    </div>
+    <div style='text-align: center; margin-top: 20px; margin-bottom: 20px;'>
+      <p class='text-16-tall'><i>*30-day free trial offered upon signup. </br>Pricing is based on volume of requests passing through your edge stack and services deployed.</i></p>
+    </div>
+  </section>
+</div>

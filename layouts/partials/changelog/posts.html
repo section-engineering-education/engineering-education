@@ -1,0 +1,22 @@
+    <!-- Ranges through content/changelog/*.md -->
+    <section class="changelog-listing-posts">
+      <div class="section-container changelog-listing-posts-container">
+        <div class="changelog-listing-posts-content">
+            {{ $paginator := .Paginate (where .Pages "Type" "changelog") 10000 }}
+            {{ range $paginator.Pages }}
+              <a class="changelog-listing-posts-item decoration-none text-dark-30 text-18-medium" href="{{.Permalink}}">
+                <span class="changelog date caps">{{ .Date.Format "Jan 2, 2006" }}</span>
+                <span class="changelog type">
+                  {{ with .Params.tags }}
+                    {{ range . }}
+                      <span class="{{ . }}">{{ title (replace . "-" " ") }}</span>
+                    {{ end }}
+                  {{ end }}
+                </span>
+                <span class="changelog title">{{.Title}}</span>
+              </a>
+            {{ end }}
+          {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+    </section>

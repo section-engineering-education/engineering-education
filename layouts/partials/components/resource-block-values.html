@@ -1,0 +1,66 @@
+<!-- Options:
+title: the main title
+metaTitle:
+linkText:
+items:
+  url:
+  image:
+    src:
+    alt:
+-->
+
+{{ $scratch := newScratch }}
+
+{{ if (isset .component "items") }}
+{{ $scratch.Set "items" .component.items }}
+{{ else }}
+{{ $scratch.Set "items" .site.Data.globals.featured_resources }}
+{{ end }}
+
+{{ if $scratch.Get "items" }}
+{{ if .component.borderTop }}
+<hr/>
+{{ end }}
+<section class='xs-pb-30 xs-pt-10'>
+  <div class="resource-block-values section-container">
+    <div class="text-center">
+      <h3 class="resource-block-values-header title-3 xs-pb-40 xs-pt-40">Our Values</h3>
+    </div>
+  <div class="resource-block-values-inner flex flex-wrap">
+
+    {{ range $scratch.Get "items" }}
+    <div class="decoration-none resource-block-values-item">
+      <div class="resource-block-values-item-wrap cta-shadow">
+        <div class="resource-block-values-item-content">
+          <div class="resource-block-values-item-content-inner xs-pt-10 text-center">
+            {{ if .title }}
+            <h3 class="title-3 text-white xs-mb-20">{{ .title }}</h3>
+            {{ end }}
+          </div>
+          <div class="resource-block-values-item-content-inner-ul align-left" style="line-height: 150%;">
+            <ul>
+              {{ if .bullet1 }}
+              <li class="xs-mb-10 text-white">{{ .bullet1 }}</li>
+              {{ end }}
+              {{ if .bullet2 }}
+              <li class="xs-mb-10 text-white">{{ .bullet2 }}</li>
+              {{ end }}
+              {{ if .bullet3 }}
+              <li class="xs-mb-10 text-white">{{ .bullet3 }}</li>
+              {{ end }}
+              {{ if .bullet4 }}
+              <li class="xs-mb-10 text-white">{{ .bullet4 }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ if .linkText }}
+          <span class="link-with-arrow-green-nh text-green text-18-medium featured-content-item-content-inner-span prl-5">{{ .linkText }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+</section>
+{{ end }}

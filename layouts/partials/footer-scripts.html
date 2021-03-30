@@ -1,0 +1,57 @@
+{{ $jquery := resources.Get "js/vendor/jquery.js" }}
+{{ $lunr := resources.Get "js/vendor/lunr.js" }}
+{{ $aos := resources.Get "js/vendor/aos.js" }}
+{{ $axios := resources.Get "js/vendor/axios.js" }}
+{{ $slick := resources.Get "js/vendor/slick.js" }}
+{{ $lozad := resources.Get "js/vendor/lozad.js" }}
+{{ $vue := resources.Get "js/vendor/vue.js" }}
+{{ $vuepagination := resources.Get "js/vendor/vuepagination.js" }}
+{{ $search := resources.Get "js/search.js" }}
+
+{{ $main := resources.Get "js/app.js" }}
+
+{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main | resources.Concat "js/app.js" | resources.Minify }}
+
+{{ $secureJS := $defaultJS | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+{{ $searchJS := slice $vue $vuepagination $search | resources.Concat "js/search.js" | resources.Minify }}
+
+{{ $secureSearchJS := $searchJS | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureSearchJS.Permalink }}" integrity="{{ $secureSearchJS.Data.Integrity }}"></script>
+
+{{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
+<script type="text/javascript">
+  (function(){
+      window._pxAppId ='PXNMPyRfdR';
+      // Custom parameters
+      // window._pxParam1 = "<param1>";
+      var p = document.getElementsByTagName('script')[0],
+          s = document.createElement('script');
+      s.async = 1;
+      s.src = '//client.perimeterx.net/PXNMPyRfdR/main.min.js';
+      p.parentNode.insertBefore(s,p);
+  }());
+</script>
+<noscript>
+  <div style="position:fixed; top:0; left:0;" width="1" height="1">
+      <img src="//collector-PXNMPyRfdR.perimeterx.net/api/v1/collector/noScript.gif?appId=PXNMPyRfdR">
+  </div>
+</noscript>
+
+  <div class="sr-only">
+  <!-- <script type="text/javascript">
+          var google_conversion_id = 879529064;
+          var google_custom_params = window.google_tag_params;
+          var google_remarketing_only = true;
+      </script> -->
+  <!-- <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+  <noscript>
+      <div style="display:inline;">
+          <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/879529064/?value=0&amp;guid=ON&amp;script=0"
+          />
+      </div>
+  </noscript> -->
+{{- end -}}
+
+{{- block "additionalFooterScripts" . -}}{{- end -}}

@@ -1,0 +1,51 @@
+<!-- Options:
+title: the main title
+copy:
+items:
+  url:
+  metaTitle
+  title:
+  linkText:
+  image:
+    src:
+    alt:
+-->
+
+{{ if .component.items }}
+<section class="featured-content section-container xs-mb-60 xs-mt-80">
+  <div class="featured-content-header">
+    {{ if .component.title }}
+    <h2 class="title-3 xs-mb-40 text-link {{ if .component.centered }}text-center{{ end }}">{{ .component.title }}</h2>
+    {{ end }}
+  </div>
+  <div class="featured-content-inner flex flex-wrap justify-center">
+
+    {{ range .component.items }}
+    <a class="decoration-none featured-content-item" href="{{ .url }}">
+      <div class="featured-content-item-shadow flex cta-shadow">
+        {{ if and .image.src .image.alt }}
+        <img class="lozad" data-src="{{ .image.src }}" alt="{{ .image.alt }}"/>
+        {{ end }}
+        <div class="featured-content-item-content">
+          <div class="featured-content-item-content-inner height-100 prl-5 xs-pt-30 xs-pb-30 flex flex-column fill-white">
+            {{ if .metaTitle }}
+            <p class="text-16 text-blockquote xs-mb-6">{{ .metaTitle }}</p>
+            {{ end }}
+
+            {{ if .title }}
+            <h3 class="title-5 text-link">{{ .title }}</h3>
+            {{ end }}
+
+            {{ if .linkText }}
+            <span class="link-with-arrow-green text-green text-18-medium featured-content-item-content-inner-span">{{ .linkText }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+
+  </div>
+</section>
+
+{{ end }}

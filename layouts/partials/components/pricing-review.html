@@ -1,0 +1,13 @@
+<div id="pricingReview"></div>
+
+{{ $axios := resources.Get "js/vendor/axios.js" }}
+{{ $vue := resources.Get "js/vendor/vue.js" }}
+{{ $store := resources.Get "js/vendor/store.js" }}
+{{ $pricingReview := resources.Get "js/pricingReview.js" }}
+
+{{ $pricingJS := slice $axios $vue $store $pricingReview | resources.Concat "js/pricingReview.js" | resources.Minify }}
+
+{{ $securePricingJS := $pricingJS | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $securePricingJS.Permalink }}" integrity="{{ $securePricingJS.Data.Integrity }}"></script>
+
+

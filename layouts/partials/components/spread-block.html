@@ -1,0 +1,223 @@
+{{ if .component.image.src }}
+
+<section class="section-spread-block xs-pt-80 xs-pb-40 {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }}">
+  <div class="section-container">
+  <div class="section-container-inner flex xs-flex-column flex-wrap sm-flex-row prl-half">
+
+      {{ if and (isset .component "imageOn" ) (eq .component.imageOn "left") }}
+
+      {{ if isset .component "image" }}
+      <div class="section-spread-block-image flex align-start">
+
+          <div class="section-spread-block-image-inner-wrap">
+            {{ if .component.image.src }}
+            <img class="lozad" data-src="{{ .component.image.src }}" {{ if .component.image.alt }}alt="{{ .component.image.alt }}"{{ end }}/>
+            {{ end }}
+          </div>
+
+      </div>
+      {{ end }}
+
+      <div class="section-spread-block-content {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} flex">
+          <div class="section-spread-block-content-inner">
+          <div class="section-rich-text">
+              {{ if isset .component "contentInline" }}
+                {{ string .component.contentInline | print | markdownify }}
+              {{ else if isset . "columnLinked" }}
+                {{ $content := (.context.Resources.GetMatch .component.contentLinked).Content }}
+                {{ $content | markdownify }}
+              {{ end }}
+            </div>
+
+            {{ if isset .component "ctas" }}
+              {{ if (gt (len .component.ctas) 1) }}
+              <div class="button-group">
+                {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+                <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+                {{ end }}
+                {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+                <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+                {{ end }}
+              </div>
+
+              {{ else }}
+                {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+                <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+                {{ end }}
+                {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+                <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+                {{ end }}
+              {{ end }}
+
+            {{ end }}
+          </div>
+        </div>
+
+      {{ else }}
+
+        <div class="section-spread-block-content {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} flex">
+          <div>
+
+          <div class="section-rich-text">
+              {{ if isset .component "contentInline" }}
+                {{ string .component.contentInline | print | markdownify }}
+              {{ else if isset . "columnLinked" }}
+                {{ $content := (.context.Resources.GetMatch .component.contentLinked).Content }}
+                {{ $content | markdownify }}
+              {{ end }}
+          </div>
+
+          {{ if isset .component "ctas" }}
+              {{ if (gt (len .component.ctas) 1) }}
+              <div class="button-group">
+                {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+                <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+                {{ end }}
+                {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+                <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+                {{ end }}
+              </div>
+
+              {{ else }}
+                {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+                <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+                {{ end }}
+                {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+                <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+                {{ end }}
+              {{ end }}
+
+          {{ end }}
+
+          </div>
+        </div>
+
+        {{ if isset .component "image" }}
+        <div class="section-spread-block-content-inner section-spread-block-image flex align-start">
+          <div class="section-spread-block-image-inner">
+            <div class="section-spread-block-image-inner-wrap">
+              {{ if .component.image.src }}
+              <img class="lozad" data-src="{{ .component.image.src }}" {{ if .component.image.alt }} alt="{{ .component.image.alt }}"{{ end }}/>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ else if .component.gif.src }}
+
+<section class="section-spread-block section-container fill-white xs-pt-80 xs-pb-80 {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} -with-gif">
+    <div class="section-container">
+  <div class="section-container-inner flex xs-flex-column flex-wrap sm-flex-row prl-half">
+
+    <div class="section-spread-block-image flex align-start">
+
+      {{ if isset .component "gif" }}
+      <div class="section-spread-block-image-inner">
+        <div class="section-spread-block-image-inner-wrap">
+          <div class="section-spread-block-image-inner-wrap-top-stripes" data-aos="slide-up" data-aos-offset="0" data-aos-delay="100" data-aos-duration="400" data-aos-once="true" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-top-large" data-aos="slide-left" data-aos-offset="0" data-aos-delay="200" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-top-small" data-aos="slide-left" data-aos-offset="0" data-aos-delay="200" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-top-bottom-stripes" data-aos="slide-left" data-aos-offset="0" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div><img src="{{ .component.gif.src }}" alt="{{ .component.gif.alt }}"/>
+          <div class="section-spread-block-image-inner-wrap-bottom-small" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-bottom-shadow" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+        </div>
+      </div>
+      {{ end }}
+
+    </div>
+
+    <div class="section-spread-block-content {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} flex">
+      <div class="section-spread-block-content-inner">
+        <div class="section-rich-text">
+          {{ if isset .component "contentInline" }}
+            {{ string .component.contentInline | print | markdownify }}
+          {{ else if isset . "columnLinked" }}
+            {{ $content := (.context.Resources.GetMatch .component.contentLinked).Content }}
+            {{ $content | markdownify }}
+          {{ end }}
+        </div>
+        {{ if isset .component "ctas" }}
+          {{ if (gt (len .component.ctas) 1) }}
+          <div class="button-group">
+            {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+            <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+            {{ end }}
+            {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+            <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+            {{ end }}
+          </div>
+          {{ end }}
+      {{ end }}
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+{{ else if .component.codeAnimation.src }}
+
+<section class="section-spread-block section-container -with-asciinema xs-pt-80 xs-pb-10 {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} -with-gif">
+    <div class="section-container">
+    <div class="section-container-inner flex xs-flex-column flex-wrap sm-flex-row prl-half">
+
+      <div class="section-spread-block-image flex align-start">
+
+        {{ if isset .component "codeAnimation" }}
+        {{ $style := resources.Get "/vendor/asciinema-player.css" | resources.Minify }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+        <div class="section-spread-block-image-inner" style="width: 100%;">
+          <div class="section-spread-block-image-inner-wrap">
+            <div class="section-spread-block-image-inner-wrap-top-stripes" data-aos="slide-up" data-aos-offset="0" data-aos-delay="100" data-aos-duration="400" data-aos-once="true" data-aos-easing="ease-in-out"></div>
+            <div class="section-spread-block-image-inner-wrap-top-large" data-aos="slide-left" data-aos-offset="0" data-aos-delay="200" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+            <div class="section-spread-block-image-inner-wrap-top-small" data-aos="slide-left" data-aos-offset="0" data-aos-delay="200" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+            <div class="section-spread-block-image-inner-wrap-top-bottom-stripes" data-aos="slide-left" data-aos-offset="0" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+            <div class="section-spread-asciinema-wrap">
+              <asciinema-player id="asciinemaEmbed" src="{{ .component.codeAnimation.src }}" font-size="medium"></asciinema-player>
+            </div>
+            <div class="section-spread-block-image-inner-wrap-bottom-small" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+            <div class="section-spread-block-image-inner-wrap-bottom-shadow" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          </div>
+        </div>
+
+        {{ $asciinema := resources.Get "/vendor/asciinema-player.js" | resources.Minify }}
+        <script type="text/javascript" src="{{ $asciinema.Permalink }}" ></script>
+        {{ end }}
+
+      </div>
+
+      <div class="section-spread-block-content {{ if .component.bgGray }}fill-bg-gray{{ else }}fill-white{{ end }} flex">
+        <div class="section-spread-block-content-inner">
+          <div class="section-rich-text">
+            {{ if isset .component "contentInline" }}
+              {{ string .component.contentInline | print | markdownify }}
+            {{ else if isset . "columnLinked" }}
+              {{ $content := (.context.Resources.GetMatch .component.contentLinked).Content }}
+              {{ $content | markdownify }}
+            {{ end }}
+          </div>
+          {{ if isset .component "ctas" }}
+            {{ if (gt (len .component.ctas) 1) }}
+            <div class="button-group">
+              {{ if and ((index .component.ctas 0).url) ((index .component.ctas 0).text) }}
+              <a class="button button-medium button-green button-shadow" href="{{ (index .component.ctas 0).url }}">{{ (index .component.ctas 0).text }}</a>
+              {{ end }}
+              {{ if and ((index .component.ctas 1).url) ((index .component.ctas 1).text) }}
+              <a class="button button-medium text-link button-link-arrow" href="{{ (index .component.ctas 1).url }}">{{ (index .component.ctas 1).text }}</a>
+              {{ end }}
+            </div>
+            {{ end }}
+        {{ end }}
+        </div>
+      </div>
+</div>
+    </div>
+  </section>
+
+{{ end }}

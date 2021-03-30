@@ -1,0 +1,48 @@
+<!-- Options:
+title: the main title
+grayScale: boolean, defaults to true
+metaCta:
+  url:
+  text:
+subTitle:
+items:
+- src:
+  alt
+cta:
+  url:
+  text:
+-->
+<article class="lp">
+<section class='module-logos {{ if (and (isset .component "grayScale") (eq .component.grayScale false)) }}{{ else }}-is-grayscale{{ end }} xs-pb-40 xs-pt-40 {{ if .component.pbHalf }}sm-pb-40{{ else }}sm-pb-40{{ end }} {{ if .component.ptHalf }}sm-pt-40{{ else }}sm-pt-40{{ end }} {{ if and (isset .component "bgGray") (eq .component.bgGray true) }}fill-bg{{ end }}'>
+
+    <div class="center-align">
+        {{ if .component.title }}
+            <h3>{{ .component.title }}</h3>
+            {{ end }}
+            {{ if .component.subTitle }}
+            <h5 class="title-4 text-22-regular xs-pt-10 xs-pb-40">{{ .component.subTitle }}</h5>
+            {{ end }}
+      <div>
+        {{ if and (isset .component "items") (gt (len .component.items) 0) }}
+        <div class="module-logos-items flex flex-wrap justify-center">
+          {{ range .component.items }}
+            {{ if .src }}
+            <div class="module-logos-items-item">
+              <a {{ if .url }}href="{{ .url }}"{{ end }}><img class="lozad" data-src="{{ .src }}" {{ if .alt }}alt="{{ .alt }}"{{ end }} /></a>
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if (isset .component "cta") }}
+        <div class="module-logos-link text-center xs-mt-5">
+          {{ if and (isset .component.cta "url") (isset .component.cta "text") }}
+          <a class="link-with-arrow-green text-green text-18-medium" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</article>

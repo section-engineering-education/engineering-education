@@ -1,0 +1,51 @@
+<!-- Options:
+color: [orange, green, purple, blue]
+title: the main title
+copy: the text under the title
+cta:
+  text:
+  url:
+listItems:
+  - text:
+    url:
+images
+-->
+
+<div class="section-hero-home {{ if .component.heroVariation }} -hero-home-variation{{ end }}">
+  <div class="section-hero-home-inner section-hero-container flex justify-center">
+    <div class="section-hero-home-inner-text">
+      {{- if .component.title -}}
+        {{- if .component.heroVariation -}}
+        <h2 class="title-3 text-title xs-mb-40">{{ .component.title }}</h2>
+        {{- else -}}
+        <h1 class="title-1 text-title xs-mb-30">{{ .component.title }}</h1>
+        {{- end -}}
+      {{- end -}}
+      {{- if .component.copy -}}
+      <p class="text-22 text-black xs-mb-30">{{ .component.copy }}</p>
+      {{- end -}}
+      {{- if .component.listItems -}}
+      <ul class="section-list">
+        {{ range .component.listItems}}
+          <li>{{- . | safeHTML -}}</li>
+        {{ end }}
+        </ul>
+      {{- end -}}
+      {{- if and .component.cta.text .component.cta.url -}}
+      <a id="home-hero" class="button button-medium button-green button-shadow" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+      {{- end -}}
+    </div>
+    <div class="section-hero-home-inner-images flex align-center">
+      {{ if .component.images }}
+        {{- if (index .component.images 1).src -}}
+        <img class="section-hero-home-inner-images-large absolute z2" src="{{ (index .component.images 1).src }}" {{ if (index .component.images 1).alt }} alt="{{(index .component.images 1).alt}}"{{ end }} data-aos="slide-right" data-aos-offset="0" data-aos-once="true" data-aos-duration="650" data-aos-easing="ease-in-out"/>
+        <div class="section-hero-home-inner-images-large-square {{ if .component.color }} fill-{{ .component.color }}{{ else }} fill-green{{ end }} absolute" data-aos="slide-down" data-aos-offset="0" data-aos-duration="650" data-aos-once="true" data-aos-easing="ease-in-out"></div>
+        {{- end -}}
+        {{- if (index .component.images 0).src -}}
+        <img class="section-hero-home-inner-images-small absolute" src="{{ (index .component.images 0).src }}" {{ if (index .component.images 0).alt }} alt="{{(index .component.images 0).alt}}"{{ end }} data-aos="slide-down" data-aos-offset="0" data-aos-once="true" data-aos-delay="0" data-aos-duration="650" data-aos-easing="ease-in-out"/>
+        <div class="section-hero-home-inner-images-small-square {{ if .component.color }} fill-lighter-{{ .component.color }}{{ else }} fill-lighter-green{{ end }} absolute" data-aos="slide-up" data-aos-offset="0" data-aos-delay="0" data-aos-once="true" data-aos-duration="650" data-aos-easing="ease-in-out"></div>
+        {{- end -}}
+      {{ end }}
+    </div>
+  </div>
+</div>

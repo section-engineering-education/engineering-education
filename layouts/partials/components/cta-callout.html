@@ -1,0 +1,34 @@
+<!-- Options:
+color: [orange, green, purple, blue]
+title: the main title
+copy:
+url:
+text:
+-->
+{{ if (or (and .component.url .component.title) (and .component.url .component.copy) )}}
+<section class="section-rich-text xs-pb-80 xs-pt-80">
+  <div class="section-container">
+    <div class="section-rich-text-inner prl-5">
+      <a class="decoration-none" href="{{ .component.url }}">
+        <div class="cta-block-box relative xs-mt-40 xs-mb-80">
+          <div class="cta-block-box-left-block absolute"></div>
+          <div class="cta-block-box-left-stripes absolute"></div>
+          <div class="cta-block-box-inner pa-5 cta-shadow">
+            {{ if .component.title }}
+            <h3 class="title-3 xs-mb-20">{{ .component.title }}</h3>
+            {{ end }}
+            {{ if .component.copy }}
+            <p class="xs-mb-20">{{ .component.copy }}</p>
+            {{ end }}
+            {{ if .component.text }}
+            <span class="link-with-arrow-blue text-blue text-18-medium">{{ .component.text }}</span>
+            {{ end }}
+          </div>
+          <div class="cta-block-box-right-block absolute"></div>
+          <div class="cta-block-box-right-stripes absolute"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

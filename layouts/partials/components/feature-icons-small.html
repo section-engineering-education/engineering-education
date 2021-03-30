@@ -1,0 +1,47 @@
+<!-- Options:
+items:
+- title:
+  copy:
+  links:
+  - text:
+    url:
+  image:
+    src:
+    alt:
+-->
+
+{{ if .component.items }}
+<section class="feature-icons-small">
+  <div class="feature-icons-small-small-inner xs-pt-80 prl-10 flex flex-wrap">
+    {{ if .component.title }}
+      <h3 class="title-3 text-center" style="max-width: 46rem;margin: 0 auto 30px;">{{ .component.title }}</h3>
+    {{ end }}
+    <div class="flex flex-wrap">
+        {{ range .component.items }}
+        <div class="feature-icons-small-inner-item xs-mb-45 sm-mb-90">
+          {{ if and .image .image.src }}
+          <img class="feature-icons-small-inner-item-icon xs-mb-20 lozad" data-src="{{ .image.src }}" style="max-width:{{ if .image.maxWidth }}{{ .image.maxWidth }}{{ else }}100px{{ end }}"  {{ if .image.alt }} alt="{{ .image.alt }}"{{ else }}alt='{{ (replace (replace (replace (replace .image.src "-" " ") "/images/global" "") "/" " ") ".png" "") }}'{{ end }}/>
+          {{ end }}
+          {{ if .title }}
+          <h3 class="title-4 text-link xs-mb-20">{{ .title }}</h3>
+          {{ end }}
+          {{ if .copy }}
+          <p class="text-18-regular text-color">{{ .copy | safeHTML }}</p>
+          {{ end }}
+          {{ if isset . "links" }}
+          <br>
+          <div class="section-rich-text">
+          <p>
+            {{ $length := (len .links) }}
+            {{ range $index, $link := .links }}
+              <a href="{{ $link.url }}">{{ $link.text }}</a>{{ if (eq $index (sub $length 1)) }}{{else}}<br>{{ end }}
+            {{ end }}
+          </p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

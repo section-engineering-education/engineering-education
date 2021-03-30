@@ -1,0 +1,66 @@
+<div class="justify-center">
+    <article class="lp">
+        <section class="edge fill-dark-10 text-white">
+          <div class="client-block-title">
+            {{ if .component.title }}
+            <h3>{{ .component.title }}</h3>
+            {{ end }}
+            {{ if .component.subTitle }}
+            <h5 class="title-4 text-22-regular xs-pt-10">{{ .component.subTitle }}</h5>
+            {{ end }}
+          </div>
+          <div class="border-left">
+            <div class="features">
+              <div class="feature">
+                {{ if .component.feature1 }}
+                <h4 class="title-4">{{ .component.feature1 }}</h4>
+                {{ end }}
+                {{ if .component.feature1sub1}}
+                <p class="text-18-regular">{{ .component.feature1sub1}}</p>
+                {{ end }}
+                {{ if .component.feature1sub2}}
+                <p class="text-18-regular">{{ .component.feature1sub2}}</p>
+                {{ end }}
+                {{ if .component.feature1sub3}}
+                <p class="text-18-regular">{{ .component.feature1sub3}}</p>
+                {{ end }}
+                {{ if .component.feature1sub4}}
+                <p class="text-18-regular">{{ .component.feature1sub4}}</p>
+                {{ end }}
+                {{ if .component.feature1sub5}}
+                <p class="text-18-regular">{{ .component.feature1sub5}}</p>
+                {{ end }}
+              </div>
+              <div class="feature">
+                {{ if .component.feature2 }}
+                <h4 class="title-4">{{ .component.feature2 }}</h4>
+                {{ end }}
+                {{ if .component.feature2sub1}}
+                <p class="text-18-regular">{{ .component.feature2sub1}}</p>
+                {{ end }}
+                {{ if .component.feature2sub2}}
+                <p class="text-18-regular">{{ .component.feature2sub2}}</p>
+                {{ end }}
+                {{ if .component.feature2sub3}}
+                <p class="text-18-regular">{{ .component.feature2sub3}}</p>
+                {{ end }}
+              </div>
+              <div class="feature">
+                {{ if .component.feature3 }}
+                <h4 class="title-4">{{ .component.feature3 }}</h4>
+                {{ end }}
+                {{ if .component.feature3sub1}}
+                <p class="text-18-regular">{{ .component.feature3sub1}}</p>
+                {{ end }}
+                {{ if .component.feature3sub2}}
+                <p class="text-18-regular">{{ .component.feature3sub2}}</p>
+                {{ end }}
+                {{ if .component.feature3sub3}}
+                <p class="text-18-regular">{{ .component.feature3sub3}}</p>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </section>
+    </article>
+</div>

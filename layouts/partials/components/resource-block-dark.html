@@ -1,0 +1,55 @@
+<!-- Options:
+title: the main title
+metaTitle:
+linkText:
+items:
+  url:
+  image:
+    src:
+    alt:
+-->
+
+{{ $scratch := newScratch }}
+
+{{ if (isset .component "items") }}
+{{ $scratch.Set "items" .component.items }}
+{{ else }}
+{{ $scratch.Set "items" .site.Data.globals.featured_resources }}
+{{ end }}
+
+{{ if $scratch.Get "items" }}
+{{ if .component.borderTop }}
+<hr/>
+{{ end }}
+<section class='xs-pb-10 xs-pt-10'>
+      <div class="resource-block-dark section-container relative">
+  <div class="resource-block-dark-inner flex flex-wrap justify-start text-center">
+
+    {{ range $scratch.Get "items" }}
+    <div class="decoration-none resource-block-dark-item text-center">
+      <div class="resource-block-dark-item-wrap flex cta-shadow flex-column align-center">
+        {{ if and .image.src }}
+        <img class="lozad" data-src="{{ .image.src }}" {{ if .image.alt }}alt="{{ .image.alt }}" {{ end }}/>
+        {{ end }}
+        <div class="resource-block-dark-item-content flex flex-column">
+          <div class="resource-block-dark-item-content-inner prl-5 xs-pt-10 flex flex-column text-center">
+            {{ if .title }}
+            <h3 class="title-5 xs-mb-30 text-white">{{ .title }}</h3>
+            {{ end }}
+          </div>
+          <div class="resource-block-dark-item-content-inner prl-5 flex flex-column text-center" style="line-height: 150%;">
+            {{ if .copy }}
+            <p class="xs-mb-40 text-white">{{ .copy }}</p>
+            {{ end }}
+          </div>
+          {{ if .linkText }}
+          <span class="link-with-arrow-green-nh text-green text-18-medium featured-content-item-content-inner-span prl-5">{{ .linkText }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+</section>
+{{ end }}

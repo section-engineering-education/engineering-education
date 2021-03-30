@@ -1,0 +1,100 @@
+<!-- Options:
+title: the main title
+sections:
+- title
+  blocks:
+  - url
+    image:
+      src:
+      alt:
+    copy
+-->
+
+{{ if and (isset .component "sections") (gt (len .component.sections) 0) }}
+<section class="content-blocks-small section-container xs-pt-60 xs-pb-60 align-center">
+  <div class="section-rich-text-half flex flex-wrap">
+    <div class="section-rich-text-half-item">
+            <div>
+                <section class='section-pricing xs-pb-10 xs-pt-10'>
+                  <div class='section-container relative'>
+                    <div class='section-pricing-inner flex flex-wrap justify-center'>
+                      <div class='section-pricing-block2 section-rich-text'>
+                        <div class='cta-shadow-no-hover'>
+                          <div class='section-pricing-block-header relative fill-dark text-center xs-pl-40 xs-pr-40 xs-pb-50 xs-pt-50'>
+                            <span class='text-white block title-4 xs-mb-20'>Build a Custom Edge Services Stack</span>
+                            <div class='button-group'>
+                              {{ if and .component.cta.url .component.cta.text }}
+                              <a class="button button-ltgreen button-medium xs-ml-70 xs-mr-70" style="width: 100%" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+                              {{ end }}
+                            </div>
+                            <span class='text-white text-16-tall'><br/>Choose the Edge Services you need and build them out in the order which makes sense for your application.<br/><br/><strong>Starting at $495/month</strong><br/><span class='text-16-tall'><i>First Month Free*</i></span></span>
+                          </div>
+                              <div class='section-pricing-block-content-wrap fill-white'>
+                                <div class='section-pricing-block-content xs-pt-20 xs-pl-10 xs-pr-20'>
+                                  <img src='/images/pricing/build-your-edge-stack.png' style='width: 70%;' class='xs-ml-70 xs-mr-70'>
+                                </div>
+                                <div class='section-pricing-block-footer'>
+                                </div>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+        {{ if .component.title }}
+        <div class="content-blocks-small-main-header text-center-left prl-5">
+          <h3 class="title-3">{{ .component.title }}</h3>
+        </div>
+        {{ end }}
+    </div>
+
+  <div class="section-rich-text-half-item flex flex-column">
+<div class="title-4 text-green xs-mb-10 justify-center">Available Edge Services on Section</div>
+  {{ range .component.sections}}
+
+    <div class="content-blocks-small-inner">
+
+      {{ if .title }}
+      <div class="content-blocks-small-header xs-mb-20 xs-mt-20">
+        <h4 class="title-4 text-link">{{ .title }}</h4>
+      </div>
+      {{ end }}
+
+      <div class="justify-start">
+
+      {{ range .blocks }}
+      <a class="decoration-none content-blocks-small-item" href="{{ .url }}" >
+        <div class="content-blocks-small-item-wrap cta-shadow">
+          <div class="content-blocks-small-item-content">
+            <div class="content-blocks-small-item-content-inner fill-white">
+              <table>
+                <tr>
+                  <td style="vertical-align: middle; text-align: left; padding-bottom: 0;">
+                    {{ if and (isset . "image") (isset .image "src") }}
+                    <img class="lozad" data-src="{{ .image.src }}" {{ if .image.alt }}alt="{{ .image.alt }}"{{ end }} />
+                    {{ end }}
+                  </td>
+                  <td style="vertical-align: middle; padding-bottom: 0;">
+                    {{ if .copy }}
+                    <span class="text-11 text-green text-link">{{ .copy }}</span>
+                    {{ end }}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+
+      </div>
+    </div>
+  {{ end }}
+  </div>
+  </div>
+  <div style='text-align: center; margin-top: 20px;'>
+    <p class='text-16-tall'><i>*30-day free trial offered upon signup. </br>Pricing is based on volume of requests passing through your edge stack and services deployed.</i></p>
+  </div>
+</section>
+{{ end }}

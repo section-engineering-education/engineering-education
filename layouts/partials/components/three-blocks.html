@@ -1,0 +1,88 @@
+<div>
+  <section class='section-three-blocks xs-pb-10 xs-pt-50'>
+    {{ if .component.title }}
+    <div class="centered-image-block-header text-center">
+      <h3 class="title-3">{{ .component.title | markdownify }}</h3>
+    </div>
+    {{ end }}
+    {{ if .component.subTitle }}
+    <div class="centered-image-block-header text-center">
+      <h5 class="title-4 text-22-regular xs-pt-10 xs-pb-40 padding-lr">{{ .component.subTitle | markdownify }}</h5>
+    </div>
+    {{ end }}
+    <div class='section-container relative'>
+      <div class='section-three-blocks-inner flex flex-wrap justify-center'>
+
+        <div class='section-three-blocks-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-three-blocks-block-header relative text-center xs-pl-20 xs-pr-20 xs-pb-40 xs-pt-50'>
+              <i class="large material-icons" style="font-size: 90px; color:#00a86b;">language</i>
+              <span class='text-dark block xs-mb-20'>
+                {{ if .component.titleLeft }}
+                <h4 class='green-underline'>{{ .component.titleLeft }}</h4>
+                {{ end }}</span>
+              <div class='text-dark block xs-mb-20'>
+                {{ if .component.subTitleLeft }}
+                {{ .component.subTitleLeft }}
+                {{ end }}</div>
+              <div class='button-group'>
+                {{ if .component.leftctaUrl }}
+                <a href='{{ .component.leftctaUrl }}' class='button button-ltgreen button-medium xs-ml-60 xs-mr-60' style='width: 100%;'>{{ end }} {{ if .component.leftctaText }}{{ .component.leftctaText }}{{ end }}</a>
+              </div>
+              <div>
+                <blockquote style="padding: 10px; background-color: #efefef; margin-top: 40px; text-align: left; font-size: 14px; line-height: 20px;"><img style="float: left; margin-right: 10px;" src="/images/home/testimonials/wallarm.png" width='100' style='margin-bottom: 0;'>"Section gave us a fast path to market to introduce a cloud-native offering for our WAF solution."</blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section-three-blocks-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-three-blocks-block-header relative text-center xs-pl-20 xs-pr-20 xs-pb-40 xs-pt-50'>
+              <i class="large material-icons" style="font-size: 90px; color:#00a86b;">trending_up</i>
+              <span class='text-dark block xs-mb-20'>
+                {{ if .component.titleMiddle }}
+                <h4 class='green-underline'>{{ .component.titleMiddle }}</h4>
+                {{ end }}</span>
+              <div class='text-dark block xs-mb-20'>
+                {{ if .component.subTitleMiddle }}
+                {{ .component.subTitleMiddle }}
+                {{ end }}</div>
+              <div class='button-group'>
+                {{ if .component.middlectaUrl }}
+                <a href='{{ .component.middlectaUrl }}' class='button button-ltgreen button-medium xs-ml-60 xs-mr-60' style='width: 100%;'>{{ end }} {{ if .component.middlectaText }}{{ .component.middlectaText }}{{ end }}</a>
+              </div>
+              <div>
+                <blockquote style="padding: 10px; background-color: #efefef; margin-top: 40px; text-align: left; font-size: 14px; line-height: 20px;"><img style="float: left; margin-right: 10px;" src="/images/home/testimonials/drupal.png" width='100' style='margin-bottom: 0;'>"The only edge platform that enabled us to build and release Drupal Steward at the Edge."</blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='section-three-blocks-block section-rich-text'>
+          <div class='cta-shadow-no-hover'>
+            <div class='section-three-blocks-block-header relative text-center xs-pl-20 xs-pr-20 xs-pb-40 xs-pt-50'>
+              <img src='/modules/node-js/NodeJS.png' style='max-height: 90px; margin-bottom: 0px;'>
+              <span class='text-dark block xs-mb-20'>
+                {{ if .component.titleRight }}
+                <h4 class='green-underline'>{{ .component.titleRight }}</h4>
+                {{ end }}</span>
+              <div class='text-dark block xs-mb-20'>
+                {{ if .component.subTitleRight }}
+                {{ .component.subTitleRight }}
+                {{ end }}</div>
+              <div class='button-group'>
+                {{ if .component.rightctaUrl }}
+                <a href='{{ .component.rightctaUrl }}' class='button button-ltgreen button-medium xs-ml-60 xs-mr-60' style='width: 100%;'>{{ end }} {{ if .component.rightctaText }}{{ .component.rightctaText }}{{ end }}</a>
+              </div>
+              <div>
+                <blockquote style="padding: 10px; background-color: #efefef; margin-top: 40px; text-align: left; font-size: 14px; line-height: 20px;"><img style="float: left; margin-right: 10px;" src="/images/home/testimonials/adore-beauty.png" width='100' style='margin-bottom: 0;'>"With Section, we don't need to be concerned about hosting, deploying, and scaling our app."</blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

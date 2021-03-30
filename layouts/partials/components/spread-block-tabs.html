@@ -1,0 +1,43 @@
+<!-- Options:
+title: the main title
+subTitle:
+  tabs:
+  - text:
+    icon:
+    image:
+      src:
+      alt:
+-->
+
+<section class="section-spread-block section-container fill-white xs-pt-40 xs-pb-40 sm-pt-80 sm-pb-120 -with-tabs">
+  <div class="section-container-inner flex xs-flex-column flex-wrap sm-flex-row prl-half">
+    <div class="section-spread-block-image flex align-start">
+      <div class="section-spread-block-image-inner">
+        <div class="section-spread-block-image-inner-wrap relative">
+          <div class="section-spread-block-image-inner-wrap-top-large" data-aos="slide-left" data-aos-offset="0" data-aos-delay="200" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-top-bottom-stripes" data-aos="slide-left" data-aos-offset="0" data-aos-once="true" data-aos-delay="700" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          {{ range $index, $item := .component.tabs }}
+            <img src="{{ $item.image.src }}" id="tab-{{ $index }}" class="tab-img {{ if eq $index 0 }}current{{ end }}" {{ if $item.image.alt }}alt="{{ $item.image.alt }}"{{ end }}/>
+          {{ end }}
+          <div class="section-spread-block-image-inner-wrap-bottom-small" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+          <div class="section-spread-block-image-inner-wrap-bottom-shadow" data-aos="slide-down" data-aos-offset="0" data-aos-delay="1000" data-aos-once="true" data-aos-duration="400" data-aos-easing="ease-in-out"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-spread-block-content fill-white flex">
+      <div class="section-spread-block-content-inner">
+        {{ if .component.title }}
+        <h2 class="title-3 text-title xs-mb-30">{{ .component.title }}</h2>
+        {{ end }}
+        <ul class="section-spread-block-content-inner-tabs list-unstyled">
+          {{ range $index, $item := .component.tabs }}
+            <li class="text-green text-18-medium pointer {{ if eq $index 0 }}current{{ end }}" data-tab="tab-{{ $index }}"><i class="material-icons">{{ $item.icon }}</i> {{ $item.text }}</li>
+          {{ end }}
+        </ul>
+        {{ if .component.subTitle }}
+        <h4 class="title-5">{{ .component.subTitle }}</h4>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

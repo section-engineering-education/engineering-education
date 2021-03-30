@@ -1,0 +1,55 @@
+<!-- Options:
+title: the main title
+sections:
+- title
+  blocks:
+  - url
+    image:
+      src:
+      alt:
+    copy
+-->
+
+{{ if and (isset .component "sections") (gt (len .component.sections) 0) }}
+<section class="content-blocks section-container xs-pt-60 xs-pb-60">
+  {{ if .component.title }}
+  <div class="content-blocks-main-header text-center-left prl-5">
+    <h3 class="title-3">{{ .component.title }}</h3>
+  </div>
+  {{ end }}
+
+  {{ range .component.sections}}
+
+
+    <div class="content-blocks-inner xs-mb-80">
+
+      {{ if .title }}
+      <div class="content-blocks-header xs-mb-50">
+        <h4 class="title-4 text-link">{{ .title }}</h4>
+      </div>
+      {{ end }}
+
+      <div class="flex flex-wrap justify-start">
+
+      {{ range .blocks }}
+      <a class="decoration-none content-blocks-item" href="{{ .url }}" >
+        <div class="content-blocks-item-wrap flex cta-shadow flex-column height-100">
+          <div class="content-blocks-item-content height-100">
+            <div class="content-blocks-item-content-inner pt-5 pb-5 flex flex-column fill-white height-100">
+              {{ if and (isset . "image") (isset .image "src") }}
+              <img class="xs-mb-20 lozad" data-src="{{ .image.src }}" {{ if .image.alt }}alt="{{ .image.alt }}"{{ end }} />
+              {{ end }}
+              {{ if .copy }}
+              <p class="text-18-regular text-link xs-mb-20">{{ .copy }}</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+
+      </div>
+    </div>
+  {{ end }}
+</section>
+{{ end }}
