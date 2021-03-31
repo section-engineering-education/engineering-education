@@ -2,7 +2,7 @@
 |  - |  - |  - | -|
 |  Aakash Rawal | [My author page](https://www.section.io/engineering-education/authors/aakash-rawal/) | [My GitHub](https://github.com/AakashR2208) | - example 1 - example 2 - example 3|
 |  Adrian Murage | [My author page](https://www.section.io/engineering-education/authors/adrian-murage/) | [My GitHub](https://github.com/adrianmurage) | -|
-|  Ahmad Mardeni | [My author page](https://www.section.io/engineering-education/authors/ahmad-mardeni/) | [My GitHub](https://github.com/AakashR2208) | -|
+|  Ahmad Mardeni | [My author page](https://www.section.io/engineering-education/authors/ahmad-mardeni/) | [My GitHub](https://github.com/ahmadmardeni1) | - Machine Learning - CyberSecurity - Web Scraping - Database Development(SQL) - Data Analysis - Data Visualization - Backend Development(Flask/Django)|
 |  Briana Nzivu |  [My author page](https://www.section.io/engineering-education/authors/briana-nzivu/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Collins Ayuya |  [My author page](www.section.io//engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Daniel Katungi Dennis |  [My author page](www.section.io/engineering-education/authors/daniel-katungi/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
