@@ -9,7 +9,7 @@
 |  Gregory Manley |  [My author page](https://www.section.io/engineering-education/authors/gregory-manley/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Lalith Narayan |  [My author page](https://www.section.io/engineering-education/authors/lalithnarayan-c/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Linus Muema |  [My author page](https://www.section.io/engineering-education/authors/linus-muema/) | [My GitHub](https://github.com/BrianaNzivu) | - Google certified AAD - Android - Kotlin|
-|  Louise Findlay | [My author page](https://www.section.io/engineering-education/authors/louise-findlay/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Louise Findlay | [My author page](https://www.section.io/engineering-education/authors/louise-findlay/) | [My GitHub](https://github.com/louisefindlay23) | - Front-End Web Development (HTML, CSS + JS) - Back-End Web Development (Node.js, Express + EJS) - Static Site Generator (Eleventy) - CMS (WordPress)|
 |  Mike White | [My author page](https://www.section.io/engineering-education/authors/mike-white/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mohan Raj | [My author page](https://www.section.io/engineering-education/authors/mohan-raj/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mungai Njoroge | [My author page](https://www.section.io/engineering-education/authors/geoffrey-mungai/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
