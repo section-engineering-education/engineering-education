@@ -164,5 +164,3 @@ I hope this article has helped you understand the basic functionality behind tra
 
 That's all for now, and thank you for reading this article.
 
-Peace. 
-
