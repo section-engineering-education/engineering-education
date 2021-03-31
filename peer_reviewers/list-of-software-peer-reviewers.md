@@ -15,7 +15,7 @@
 |  Mungai Njoroge | [My author page](https://www.section.io/engineering-education/authors/geoffrey-mungai/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Nadiv Gold Edelstein | [My author page](https://www.section.io/engineering-education/authors/nadiv-gold-edelstein/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Onesmus Mbaabu | [My author page](https://www.section.io/engineering-education/authors/onesmus-mbaabu/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
-|  Paul Odhiambo | [My author page](https://www.section.io/engineering-education/authors/odhiambo-paul/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Paul Odhiambo | [My author page](https://www.section.io/engineering-education/authors/odhiambo-paul/) | [My GitHub](https://github.com/paulodhiambo) | - Android development - Backend development( Spring Boot / Django / Nodejs ) - DevOps|
 |  Peter Kayere | [My author page](/https://www.section.io/engineering-education/authors/peter-kayere/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Saiharsha Balasubramaniam | [My author page](https://www.section.io/engineering-education/authors/saiharsha-balasubramaniam/) | [My GitHub](https://github.com/cyberShaw) | - JavaScript, Web Development - APIs - iOS |
 |  Sophia Raji | [My author page](https://www.section.io/engineering-education/authors/sophia-raji/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
