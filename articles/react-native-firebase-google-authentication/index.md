@@ -20,7 +20,7 @@ In this tutorial, we will learn how to authenticate users with their Google acco
 To learn more about Firebase, refer to [this link](https://en.wikipedia.org/wiki/Firebase).
 
 ### Prerequisites
-The basics of React and React Native will not be covered in this tutorial. If you are not comfortable with the basics, it is highly recommended to go over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
+We will not cover the basics of React and React Native in this tutorial. If you are not comfortable with the basics, we highly recommended to go over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
 
 ### Overview
 1. [Development environment](#development-environment)
