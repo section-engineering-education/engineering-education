@@ -1,11 +1,11 @@
 Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.
 
-This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application form [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
+This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application from [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
 
 ### Prerequisites
 1. A basic understanding of Flutter
 2. Flutter SDK installed on your computer
-3. Code editor, [Android Studio](https://developer.android.com/studio), or [vscode](https://code.visualstudio.com/download) are most preferred.
+3. Code editor, [Android Studio](https://developer.android.com/studio), or [VSCode](https://code.visualstudio.com/download) are most preferred.
 4. An emulator or a mobile device to run the code.
 
 ### Table oF contents
@@ -54,6 +54,9 @@ import 'package:HTTP/HTTP.dart' as HTTP;
 ```
 
 The below shows how we will use the package to fetch the followers of a given username from the API. We are using username because every user has a unique username.
+
+**GithubRequest.dart**
+
 ```dart
 //importing HTTP package for fetching and consuming HTTP resources
 import 'package:HTTP/HTTP.dart' as HTTP;
@@ -77,6 +80,7 @@ class Github {
 
 ### Creating Data classes from JSON
 Since flutter accepts dart as the primary programming language, we need to convert the JSON data fetched from the URL to dart Classes for consumption in the application. We can do that using the [Quicktype](https://app.quicktype.io/) website where we pass the JSON object, and a class of the object is returned based on a specified language. Will will return our classes in `dart`. For instance, our JSON representing the User is as shown below:
+
 ```json
 
 //data json object
@@ -87,8 +91,10 @@ Since flutter accepts dart as the primary programming language, we need to conve
 }
 
 ```
+
 #### The user class
 I edited the JSON to capture only the attributes needed on the application. When we pass the above JSON into [Quicktype](https://app.quicktype.io/), the generated user class is as below:
+
 ```dart
 // To parse this JSON data, do 
 final user = userFromJson(jsonString);
@@ -132,6 +138,7 @@ class User {
 ```
 ### Adding the providers
 The Provider will have the functions required to fetch the API's user data and deliver a response. We will create a file called `UserProvider.dart` under the `Providers` folder. The `ChangeNotifier` class will notify our view when one more variable changes. We use the `async` function to wait for the User to be fetched from the API as our code execution continues.
+
 ```dart
 
 class UserProvider with ChangeNotifier {
