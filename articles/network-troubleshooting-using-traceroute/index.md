@@ -162,5 +162,7 @@ E.g., traceroute6 your ipv6 address
 
 I hope this article has helped you understand the basic functionality behind traceroute, how to use the program, and finally, how to interpret data produced by the program. 
 
-That's all for now, and thank you for reading this article. 
+That's all for now, and thank you for reading this article.
+
+Peace. 
 
