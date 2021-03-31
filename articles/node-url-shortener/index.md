@@ -1,6 +1,4 @@
-Using links or URLs has been the norm of surfing the web for a long time. Sometimes we need to advertise our businesses in social media. Long URL links are not 
-the best way to post links, especially on social media. This will help you to promote your products or any services with the links you are providing. 
-The benefit of URL shortening tools is helping in driving the traffic back to your website. In this tutorial, we will build a URL shortener service using Node.js.
+Using links or URLs has been the norm of surfing the web for a long time. Sometimes we need to advertise our businesses in social media. Long URL links are not the best way to post links, especially on social media. This will help you to promote your products or any services with the links you are providing. The benefit of URL shortening tools is helping in driving the traffic back to your website. In this tutorial, we will build a URL shortener service using Node.js.
 
 ### Prerequisites
 1. A basic understanding of the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) programming language.
@@ -15,6 +13,7 @@ The benefit of URL shortening tools is helping in driving the traffic back to yo
 
 ### Setting Up The Project
 Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. I will be using VS Code here. Go inside the folder and type `npm init` to generate an initial package for our project. This command will require some prompts, to skip this, you can use `npm init -y`. Our project will use various npm packages from the npm registry. The npm packages include:
+
 - `express`: Express is a backend web application framework for Node.js for building web applications and APIs.
 
 - `mongoose`: Mongoose is an asynchronous database driver or Object Data Mapper for MongoDB. It is responsible for connecting to the database and performing query operations.
@@ -30,6 +29,7 @@ Next, we now need to download the packages. Run the following command on your te
 ```bash
 npm install express mongoose shortid valid-url
 ```
+
 This will download the named packages inside `node_modules` folder and update the `package.json` file with the dependencies.
 
 >>> Note: `nodemon` is a development dependency. To install this, run the command `npm install --save-dev nodemon`.
@@ -37,6 +37,7 @@ This will download the named packages inside `node_modules` folder and update th
 
 ### Setting Up Express server
 Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The following is the initial code to start the Express server:
+
 ```js
     const express = require('express')
 
@@ -46,11 +47,13 @@ Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The 
 
     app.listen(PORT, ()=> console.log('DB connection established'))
 ```
+
 This starter code imports the express package. The `app = express()` creates an instance of our application.
 In our app, we need to listen to incoming request. `app.listen` takes a port number and a callback function that is invoked upon a successful connection.
 
 ### Configuring the MongoDB connection
 We will use the `mongoose` package that we installed via npm as the database driver. To configure the database, create a `config` folder inside our `URL-Shortener-Service` folder. Inside the `config` folder, add a file named `db.config.js`. This is the file to add the following database connection code:
+
 ```js
 const mongoose = require('mongoose')
 
@@ -62,11 +65,14 @@ const connection = mongoose.connection
 
 module.exports = connection
 ```
+
 The `const mongoose = require('mongoose')` imports the `mongoose` package from the `node_modules` folder. To start a connection on our MongoDB database, we need a database connection port. This is named as the `DB_URI` connection string with the `urlshortener` as the database name. The `mongoose.connect()` is a method that takes the `DB_URI` and an options object to establish a connection. The `module.exports` exports the connection which will be added in our `index.js` server entry file.
 
 ### The Database Model for URL Details
 When using mongoose, models are defined using a `Schema` interface. A Schema will allow us to define all the fields stored in each document along with the validation or default values. Schemas will then be transformed into models using the `mongoose.model()` method. The model is what we use to find, create, update, and delete documents of a given type.
+
 To create our model, create a folder named `models`. Inside this folder, add a file named `UrlModel.js` and addmthe following code:
+
 ```js
 const mongoose = require('mongoose')
 
@@ -79,7 +85,9 @@ const URLSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('Url',URLSchema)
 ```
+
 To create a model, we need to create a schema interface where by importing the mongoose npm package. The `mongoose.Schema` method is instanciated to define with and object argument. This object takes the values that our MongoBD document will store. The values include:
+
 - The `urlCode` is a string property that will store the unique ID related to each URL.
   
 - The `longUrl` is the default URL which we need to shorten.
@@ -90,11 +98,14 @@ To create a model, we need to create a schema interface where by importing the m
 
 ### Defining Routes
 Our routes will be on a seperate folder. Inside the `URL-Shortener-Service` folder, create a folder named `routes`. We will create two route files namely:
+
 - `url.js`: This will be a POST route that takes an incoming request with the long URL and creates the short URL and inserts it to the database. Navigate in the `routes` folder and create a file named `url.js`.
   
 - `redirect.js`: This is a GET for our URL redirects. It takes the short URL and redirects it to the actual long URL in the browser. To add this file, create a seperate file named `redirect.js` inside the `routes` folder.
+
 #### The `url.js` POST Route 
-Now , lets create the POST route. Add the following code inside the `url.js` file:
+Now, lets create the POST route. Add the following code inside the `url.js` file:
+
 ```js
 const express = require('express')
 
@@ -148,10 +159,12 @@ router.post('/shorten', async(req,res)=>{
 
 module.exports = router
 ```
+
 A code walkthrough for our `url.js` file:
 
 ### The Redirect Route
 Now that we have created a POST route that creates the short URL, we need to perform a redirect so that our short URL points to the actual URL. This is a GET request to our Node.js API to query. Here is the code to add in the `redirect.js` file:
+
 ```js
 const express = require('express')
 
@@ -183,9 +196,11 @@ router.get('/:code', async(req, res)=>{
 
 module.exports = router
 ```
+
 Let us now understand the above code. To set up a router in express, we need to import the `express` module and initialize the `express.Router()` method. This API route requires the database model we created to save the short URL that will be generated. For this to happen, we need to import `valid-url` for validation and `short-id` that will create the unique ID for our short URL. Our localhost application will use a base URL (`baseUrl` variable) as `http:\\localhost:5000`. We now need to extract the `longUrl` from our request body, validate id with the `valid-url` package by executing the method `validUrl.isUri(baseUrl)` and pass the URL as the argument. If the URL is valid, we generate a short code using the `const urlCode = shortid.generate()` and append it to our base URL before saving it to the database. This process is asynchronous and that is why we use promises or async-await syntax.
 
 ### The final `index.js` Entry file
+
 ```js
 const express = require("express")
 const app= express()
@@ -204,7 +219,9 @@ app.use('/api/url', require('./routes/url'))
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`server started, listening PORT ${PORT}`))
 ```
+
 To make our routes work, we have to use a [middleware pattern](https://expressjs.com/en/guide/using-middleware.html#middleware.application) is express. Middleware functions have access to request (req) and response object (res) in the application’s request-response cycle. This explains the `app.use()` methods. The first middleware allows our application to parse incoming request data format in JSON format. The `app.use('/', require('./routes/redirect'))` is the has the base URI that will configure the redirect route. In our POST route, the base URL is `/api/url` and the middleware as `app.use('/api/url', require('./routes/url'))`. Next, we need to test the application in postman.
+
 ### Working DEMO In Postman
 
 ### Conclusion
