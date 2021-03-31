@@ -362,11 +362,13 @@ auth().onAuthStateChanged((user) => {
 
 7. We displayed the `Authenticated` screen when the user has been authenticated.
 
-8. We used the `auth` module to sign out the user from the application from the `Authenticated` screen.
+8. We used the `auth` module to sign the user out from the application from the `Authenticated` screen.
 
 Congratulations, :partying_face: You did it.
 
-Thanks for Reading!
+Thanks for reading!
+
+Happy coding.
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
