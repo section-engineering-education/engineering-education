@@ -20,7 +20,7 @@ After sorting:
 - Student 2: 38pts - **POS 4**
 - Student 1: 21pts - **POS 5**
 
-As we can see, the first two students tie in position one and the next student starts from position 3.
+As we can see, the first two students tie in position one (`POS 1`) and the next student starts from position 3 (`POS 3`).
 
 One great way that will help us achieve this is using the MongoDB ```sort()``` method. The only issue for us is taking care of the ties and giving them appropriate positions. In this article, we will look at how to use arrays in Node.js to make us attain that from documents(records) from a MongoDB database.
 
