@@ -17,7 +17,7 @@
 |  Onesmus Mbaabu | [My author page](https://www.section.io/engineering-education/authors/onesmus-mbaabu/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Paul Odhiambo | [My author page](https://www.section.io/engineering-education/authors/odhiambo-paul/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Peter Kayere | [My author page](/https://www.section.io/engineering-education/authors/peter-kayere/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
-|  Saiharsha Balasubramaniam | [My author page](https://www.section.io/engineering-education/authors/saiharsha-balasubramaniam/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Saiharsha Balasubramaniam | [My author page](https://www.section.io/engineering-education/authors/saiharsha-balasubramaniam/) | [My GitHub](https://github.com/cyberShaw) | - JavaScript, Web Development - APIs - iOS |
 |  Sophia Raji | [My author page](https://www.section.io/engineering-education/authors/sophia-raji/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Srishilesh P S | [My author page](https://www.section.io/engineering-education/authors/srishilesh-p-s/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mike Barasa | [My author page](https://www.section.io/engineering-education/authors/michael-barasa/) | [My GitHub](https://github.com/WanjaMIKE) | - example 1 - example 2 - example 3|
