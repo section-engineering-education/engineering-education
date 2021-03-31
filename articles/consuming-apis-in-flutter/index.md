@@ -265,3 +265,6 @@ Now go and try the application by installing the full app found [here](https://g
 - [JSON and serialization](https://flutter.dev/docs/development/data-and-backend/json)
 - [Http Dart Package](https://pub.dev/packages/http)
 - [GitHub REST API](https://docs.github.com/en/rest)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
