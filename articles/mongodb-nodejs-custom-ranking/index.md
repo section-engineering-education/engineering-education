@@ -2,7 +2,7 @@
 
 ![Hero image](/engineering-education/mongodb-nodejs-custom-ranking/hero.jpg)
 
-#### Table of contents
+### Table of contents
 
 1. <a href="#intro">Introduction</a>
 2. <a href="#link2">Prerequisites</a>
@@ -18,6 +18,15 @@
 <a id="intro"></a>
 
 #### Introduction
+
+This article will give us a heads-up on how to give ranks to our records from a MongoDB database. We are going to add a bit of sorting functionality to the `sort()` function to give the records positions.
+
+*Objectives*
+
+In the end, we will be able to: 
+* Install and configure MongoDB driver in a Node.js application using the Node Package Manager
+* Query and sort results from a MongoDb database
+* Use arrays to give custom ranking for records
 
 In our daily life problems, we would at one point need to sort our data to give us more insights on how to go about our operations. For example in a school setup, we need to analyze the results of students and give them appropriate positions based on their performance. Due to this, we always have to bear in mind that two or more of them will score the same mark or points. As developers, we have to program the system to give the students the same position and the next student that follows after them an appropriately incremented position. For instance, for these five students and their points, we would proceed as follows:
 
@@ -90,7 +99,7 @@ The same will be done for the other files `node filename`.
 
 <a id="link6"></a>
 
-#### *Creating our collection*
+#### Creating our collection
 
 We then proceed to create a table(`collection` in MongoDB) called our **ourTable** where our records(`documents`) will be inserted and queried from.
 Create a new file called *collection.js* then type the code that follows:
