@@ -12,7 +12,7 @@ Using links or URLs has been the norm of surfing the web for a long time. Someti
 5. [MongoDB](https://www.mongodb.com/try/download/community) database server installed on your system.
 
 ### Setting Up The Project
-Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. I will be using VS Code here. Go inside the folder and type `npm init` to generate an initial package for our project. This command will require some prompts, to skip this, you can use `npm init -y`. Our project will use various npm packages from the npm registry. The npm packages include:
+Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. I will be using VS Code here. Go inside the folder and type `npm init` to generate an initial `package.json` for our project. This command will require some prompts, to skip this, you can use `npm init -y`. Our project will use various npm packages from the npm registry. The npm packages include:
 
 - `express`: Express is a backend web application framework for Node.js for building web applications and APIs.
 
@@ -33,7 +33,6 @@ npm install express mongoose shortid valid-url
 This will download the named packages inside `node_modules` folder and update the `package.json` file with the dependencies.
 
 >>> Note: `nodemon` is a development dependency. To install this, run the command `npm install --save-dev nodemon`.
-
 
 ### Setting Up Express server
 Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The following is the initial code to start the Express server:
@@ -224,8 +223,7 @@ To make our routes work, we have to use a [middleware pattern](https://expressjs
 
 ### A Working Demo In Postman
 
-![postman_test_gif](/engineering-education/node-url-shortener/postman.gif)
+![Demo GIF](/engineering-education/node-url-shortener/postman.gif)
 
 ### Conclusion
-I hope you find this tutorial helpful and Happy coding.
 Having a link management platform will let you harness the power of sharing, managing, and analyzing links. Billions of links are created every year on the internet and a URL shortener service is useful especially in social media marketing. In this tutorial, we created a simple URL shortener service using Node.js and MongoDB as the database. I hope you find this tutorial helpful and Happy coding.
