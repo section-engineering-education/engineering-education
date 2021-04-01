@@ -74,7 +74,7 @@ In this article, we will look at how to use arrays in Node.js to make us attain 
 ### What we will be doing
 We are going to establish a connection to a MongoDB database, insert some dummy data, and sort them using a custom ranking function.
 
-### Getting Started
+### Getting started
 We first need to install the MongoDB driver which will enables us to connect to the database.
 
 Open your terminal and type this command :
@@ -166,7 +166,7 @@ This is where the core of this article is.
 
 We will query and sort the students using their marks in descending order. Then, we will populate the total marks to an array, and perform conditional checks to check for ties and give ranks appropriately.
 
-We create a new file called `rank.js` then add the following code.
+We create a new file called `rank.js`, then add the following code.
 
 ```js
 // establishing a connection to the database
@@ -183,11 +183,20 @@ MongoClient.connect(url, function(err, db) {
     dbo = db.db("ourDB");
     loadStudents();
     db.close();
-});    
+});
+```
 
-// function for querying documents
+We got two functions `loadStudents()` and `giveRank()`.
+
+The `loadStudents()` function loads the student details from the database and sorts them in descending order using the `sort()` method.
+
+It contains a `for loop` which populates the marks loaded into the `rankArray()`, which we will use later.
+
+The second function `giveRank()` is then called to perform the ranking using the `rankArray` and the `results`.
+
+```js
 function loadStudents(){
-    // specifyig a descending sort
+    // specifying a descending sort
     var mysort = { mark: -1 };
     // querying and loading into a resultSet array
     dbo.collection("ourTable").find().sort(mysort).toArray(function(err, result) {
@@ -201,7 +210,11 @@ function loadStudents(){
       giveRank(rankArray,result);
     });
 }
+```
 
+The `giveRank()` function takes two arguments: an array and a resultSet.
+
+```js
 // function for giving rank
 function giveRank(arrayArg,resultArg){
   // declaring and initilising variables
@@ -242,41 +255,13 @@ function giveRank(arrayArg,resultArg){
 }
 ```
 
-We got two functions `loadStudents()` and `giveRank()`.
-
-The `loadStudents()` function loads the student details from the database and sorts them in descending order using the `sort()` method.
-
-It contains a `for loop` which populates the marks loaded into the `rankArray()`, which we will use later.
-
-The second function `giveRank()` is then called to perform the ranking using the `rankArray` and the `results`.
-
-```js
-function loadStudents(){
-    // specifyig a descending sort
-    var mysort = { mark: -1 };
-    // querying and loading into a resultSet array
-    dbo.collection("ourTable").find().sort(mysort).toArray(function(err, result) {
-      // check for any error and throw it
-      if (err) throw err;
-      // populating the rank array with the marks
-      for (let i = 0; i < result.length; i++) {
-          rankArray[i] = result[i]['mark'];
-      }
-      // passing the rank array and the resultset to the giveRank() function
-      giveRank(rankArray,result);
-    });
-}
-```
-
-The `giveRank()` function takes two arguments: an array and a resultSet.
-
 It has three variables:
 1. `rank` - This controls the count of the loop useful for displaying the appropriately incremented position e.g., `1,1,3` and not `1,1,2`.
-> We initialize it to `1`, since we index the positions from `1`, not `0`.
+> We initialize it to `1`, since we index the positions starting from `1`, not `0`.
 2. `prev_rank` - The previous rank is used for displaying the rank position in case of a tie. It stores the current position `[i]` of a student, such that when the loop increments to the next position`[i+1]`, the current position `[i]` is temporarily stored.
 Consequently, the current position is made `[i-1]` and the next one made `[i]`.
 `[i]` is only assigned the previous rank and given to the next array index, if the value found at `[i]` is the same as `[i-1]`. It is assigned `1` for the first position.
-1. `position` - This stores the rank to be displayed. We initialize it to `0` in which the initialized value doesn't matter since the position is assigned inside the ``for loop`. You can initialize it to any digit.
+3. `position` - This stores the rank to be displayed. We initialize it to `0` in which the initialized value doesn't matter since the position is assigned inside the ``for loop`. You can initialize it to any digit.
 
 The `for loop` contains an `if-else-if` structure for checking the values and assigning them appropriately.
 
