@@ -1,6 +1,23 @@
-### Introduction
-​
-[Quasar Framework](https://quasar.dev/) is a Vue.js-based framework used to develop cross-platform applications using one codebase. This helps in saving development costs. Quasar offers a cutting edge user Interface and support builds for:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-quasar-framework/
+title: Getting Started with Quasar Framework
+description: A tutorial that introduces us to the Quasar Framework. We will look at installing Quasar and writing components in Quasar.
+author: espira-marvin
+date: 2021-04-01T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-quasar-framework/hero.jpg
+    alt: Vue Quasar Framework example
+---
+[Quasar Framework](https://quasar.dev/) is a Vue.js-based framework used to develop cross-platform applications using one codebase. This helps in saving the development costs.
+<!--more-->
+
+Quasar offers a cutting edge user Interface and support builds for:
   - Single-page applications.
   - Progressive web applications.
   - Server-side rendering.
@@ -17,7 +34,7 @@ To follow along with this tutorial, you will need:
 3. Npm 5.10 or newer / yarn 1.2 or newer.
 ​
 ### Installing Quasar Framework
-There are three ways we can install Quasar as listed below.
+There are three ways in which we can install Quasar as listed below.
 ​
 In this tutorial, we're going to use the third method; `using Quasar CLI`, which comes with all Quasar features out-of-the-box. You can skip the first two and try them later.
 ​
@@ -48,7 +65,7 @@ In your body tag, you should use Quasar components in a div with id `q-app` as s
 ```html
  <div id="q-app"> ... </div>
  ```
-Do not use self-closing tags like `<q-list />` instead, use `<q-list></q-list>`
+Do not use self-closing tags like `<q-list />` instead, use `<q-list></q-list>`.
 ​
 > Note: This is not the best practice since, you will have to make sure to match all Quasar-related tags to the same version you have installed. In the `<script>` above, we have used version `@1.15.6`.
 ​
@@ -78,7 +95,7 @@ if you're using yarn, run:
 ```bash
 $ yarn global add @vue/cli
 ```
-To create a project run the command below:
+To create a project run the command below.
 ```bash
 $ vue create my-app
 ```
@@ -110,7 +127,7 @@ If you are using yarn, run:
 $ yarn global add @quasar/cli
 ```
 ​
-### Create a Hello Worldapp with Quasar
+### Create a Hello World app with Quasar
 ​
 To create a new Quasar app, run the command below.
 ​
@@ -140,7 +157,7 @@ Select `Auto-import-in-use Quasar Components` and hit Enter.
     - not treeshaking Quasar; biggest bundle size    
 ```
 ​
-Then press the spacebar to unselect the ESLint feature, we won't be needing it here. Hit Enter.
+Then press the spacebar to unselect the ESLint feature. We won't be needing it here. Hit Enter.
 ​
 ```bash
 ❯ (*) ESLint (recommended)
@@ -160,7 +177,7 @@ After serving the app, the URL: http://localhost:8080/#/ opens in your browser t
 ​
 Open the created `hello-world-app` folder in your editor of choice.
 ​
-Navigate to the `src` folder, open `App.vue` you'll see a div with and id of q-app.
+Navigate to the `src` folder, open `App.vue`. You'll see a div with and id q-app.
 ​
 ```html
 <div id="q-app">
@@ -195,7 +212,7 @@ You can delete the whole image tag that looks like this:
 <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
 ```
 ​
-This will delete the image and its name: "Quasar" from the center of the app, leaving the app ready for other components.
+This will remove the image and the name: "Quasar" from the center of the app, leaving the app ready for other components.
 ​
 ### Familiarize with the structure of the components
 ​
@@ -252,7 +269,7 @@ The name of the country: "Kenya", appears at the top left of the page. This is h
 ​
 ### Pros of Choosing Quasar
 ​
-The following are some of the pros of choosing Quasar framework
+The following are some of the pros of choosing Quasar framework.
 ​
 #### 1. Support for multiple platforms
 ​
@@ -282,7 +299,7 @@ RTL (right-to-left) support for both Quasar components and the developer’s own
 ​
 #### 5. Implements the best practices of web development. 
 ​
-Web development best practices are implemented out-of-the-box; with features including cache busting, source mapping, code splitting, lazy loading and HTML, CSS, JS minification. 
+Web development best practices are implemented out-of-the-box; with features including cache busting, source mapping, code splitting, lazy loading and HTML, CSS, JS minification.
 ​
 Quasar developers are also encouraged to implement the best practices in web developement.
 ​
@@ -304,3 +321,6 @@ If you are a total beginner to Vue and reactive UI libraries and want a good tut
 That is it.
 ​
 Happy Coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
