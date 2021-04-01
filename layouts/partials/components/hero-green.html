@@ -1,0 +1,18 @@
+{{ if .component.title }}
+{{ end }}
+
+<div class="justify-center">
+    <article class="lp">
+      <section class="hero fill-green text-white">
+        <h1 class="title-1 xs-mb-30 xs-pl-30 xs-mr-30">{{ .component.title }}</h1>
+        <p class="title-4 tagline">
+            <p class="title-4 xs-pb-10 xs-pl-30">{{ .component.copy1 }}</p>
+            <p class="title-4 xs-pb-10 xs-pl-30">{{ .component.copy2 }}</p>
+            <p class="title-4 xs-pl-30">{{ .component.copy3 }}</p>
+        </p>
+        {{- if and .component.cta.text .component.cta.url -}}
+        <div style="max-width: 200px; margin-top: 30px; padding-left: 30px;"><a style="padding: 10px;"class="button button-outline-white" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a></div>
+        {{- end -}}
+      </section>
+    </article>
+</div>

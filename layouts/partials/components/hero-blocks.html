@@ -1,0 +1,87 @@
+<!-- Options:
+color: [orange, green, purple, blue]
+title: the main title
+subTitle: the text above the title
+metaTitle: the gray text below the title
+copy: the text under the title
+cta:
+  text:
+  url:
+listItems:
+  - text:
+    url:
+-->
+
+{{ if .component.title }}
+
+{{ $scratch := newScratch }}
+{{ if (isset .component "color") }}
+{{ $scratch.Set "color" .component.color }}
+{{ else if isset .context.Params "color" }}
+{{ $scratch.Set "color" .context.Params.color }}
+{{ end }}
+
+<section class='hero-blocks {{ if $scratch.Get "color" }}-{{ $scratch.Get "color" }}-blocks{{ else }}-blue-blocks{{ end }} xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100'>
+
+  <div class="hero-blocks-mobile">
+
+    <div class="hero-blocks-mobile-left">
+      <div class="hero-blocks-mobile-left-large"></div>
+    </div>
+
+    <div class="hero-blocks-mobile-right">
+      <div class="hero-blocks-mobile-right-small"></div>
+      <div class="hero-blocks-mobile-right-large"></div>
+      <div class="hero-blocks-mobile-right-stripes"></div>
+    </div>
+
+  </div>
+
+  <div class="section-container relative">
+
+    <div class="hero-blocks-left-blocks">
+      <div class="hero-blocks-left-blocks-large"></div>
+      <div class="hero-blocks-left-blocks-stripes"></div>
+    </div>
+
+    <div class="hero-blocks-inner relative prl-5">
+      <div class="hero-blocks-middle">
+        {{ if .component.subTitle }}
+        <h5 class='text-18-regular {{ if $scratch.Get "color" }}text-{{ $scratch.Get "color" }}{{else}}text-light-blue{{end}} xs-mb-15'>{{ .component.subTitle }}</h5>
+        {{ end }}
+
+        <h1 class="title-2 xs-mb-22">{{ .component.title }}</h1>
+        {{ if .component.metaTitle }}
+        <h5 class="text-16 text-blockquote">{{ .component.metaTitle }}</h5>
+        {{ end }}
+
+        {{ if .component.copy }}
+        <p class="text-22-regular xs-mb-30">{{ .component.copy }}</p>
+        {{ end }}
+
+        {{ if .component.listItems }}
+        <ul class="list-flex xs-mt-8 xs-mb-30">
+        {{ range $index, $item := .component.listItems  }}
+          <li class="{{ if (eq $index 0) }}xs-mr-20{{ end }}">
+            <a class="text-18-regular {{ if $scratch.Get "color" }}text-light-{{ $scratch.Get "color" }}{{else}}text-light-blue{{end}} decoration-none" href="{{ $item.url }}">{{ $item.text }}</a>
+          </li>
+        {{ end }}
+        </ul>
+        {{ end }}
+
+        {{ if and .component.cta.url .component.cta.text }}
+        <a id="hero-block-cta" class="button button-medium {{ if $scratch.Get "color" }}button-{{ $scratch.Get "color" }}{{else}}button-green{{end}} button-shadow" href="{{ .component.cta.url }}">{{ .component.cta.text }}</a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="hero-blocks-right-blocks">
+      <div class="hero-blocks-right-blocks-small"></div>
+      <div class="hero-blocks-right-blocks-large"></div>
+      <div class="hero-blocks-right-blocks-stripes"></div>
+    </div>
+
+  </div>
+</section>
+
+{{ end }}
