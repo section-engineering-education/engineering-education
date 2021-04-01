@@ -1,4 +1,34 @@
+### Documenting APIs
+REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works. In this tutorial, we are going to learn how to add documentation to our RESTful API endpoints.
 
+### Prerequisites
+1. [Python](https://www.python.org/downloads/) installed on your computer.
+2. [Virtualenv](https://pypi.org/project/virtualenv/) installed on your computer.
+3. [Python](https://www.python.org/) and [Django](https://www.djangoproject.com/) knowledge.
+
+### Creating the project
+On the terminal execute the command below to create a working directory for our project.
+
+```bash
+$ mkdir documentation
+$ cd documentation
+```
+
+Now that we have created a working directory and changed our path to it, create a virtual environment for the project by executing the command below.
+
+```bash
+$ virtualenv venv
+$ source venv/bin/activate
+```
+Let's now install Django into our virtual environment and create our Django project by executing the commands below.
+```bash
+$ (venv) pip install django
+$ (venv) django-admin startproject django_todo
+```
+
+
+
+### Django Model
 ```python
 class Todo(models.Model):
     title = models.CharField(max_length = 100)
@@ -11,6 +41,7 @@ class Todo(models.Model):
         return self.title 
 ```
 
+### Django Serializer
 
 ```python
 class TodoSerializer(serializers.ModelSerializer):
@@ -19,6 +50,7 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = "__all__"
 ```
 
+### Django URL
 ```python
 urlpatterns = [
     path("",views.ListTodoAPIView.as_view(),name="todo_list"),
@@ -28,7 +60,7 @@ urlpatterns = [
 ]
 ```
 
-
+### Django API view
 ```python
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import CreateAPIView
@@ -66,7 +98,7 @@ urlpatterns = [
     path('docs/', include_docs_urls(title='Todo Api')),
 ]
 ```
-
+### Django settings.py
 ```python
 from pathlib import Path
 
@@ -183,3 +215,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 ```
+
+### Conclusion
+Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.
+
+Happy coding
