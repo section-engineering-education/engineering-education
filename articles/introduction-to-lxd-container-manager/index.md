@@ -5,7 +5,7 @@ published:
 url: /engineering-education/introduction-to-lxd-container-manager/
 title: Introduction to LXD Container Manager
 description: This article will be a brief introduction to containers, virtual machines, and more specifically about LXD containers. We will discuss its key features and benefits.
-author: ruth-mare
+author: domi-wanja
 date: 2021-04-01T00:00:00-22:30
 topics: []
 excerpt_separator: <!--more-->
