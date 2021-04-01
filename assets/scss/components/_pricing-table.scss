@@ -1,0 +1,52 @@
+.pricing-table {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.pricing-table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+.pricing-table th, td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+    
+    @include mq($from: 600px) {
+      padding: 16px;
+    }
+  }
+
+.pricing-table th {
+    font-size: 22px;
+    background-color: #1f2635;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.pricing-table td {
+  font-size: 12px;
+
+  @include mq($from: 600px) {
+    font-size: 16px;
+  }
+}
+
+.pricing-table th:first-child, td:first-child {
+    text-align: left;
+  }
+
+.pricing-table tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+.pricing-table .icon {
+  width: 15px;
+
+  @include mq($from: 600px) {
+    width: 22px;
+  }
+}

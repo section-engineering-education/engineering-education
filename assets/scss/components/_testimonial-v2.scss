@@ -1,0 +1,220 @@
+.section-testimonial-v2-v2.-with-slider {
+  overflow: hidden;
+
+  .testimonial-v2-v2-nav {
+
+    .slick-list {
+      padding: 0 !important;
+    }
+
+    .slick-track {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: pxem(20);
+      align-items: center;
+      width: 100% !important;
+
+      @include mq($from: 520px) {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .slick-list {
+      width: 100%;
+    }
+
+    .testimonial-v2-nav-item.slick-current {
+      opacity: 1;
+    }
+
+    .testimonial-v2-nav-item {
+      width: auto !important;
+      margin: 0 pxem(30);
+      opacity: 0.5;
+
+      @include mq($to: 520px) {
+        @include flex-width-grid(30%);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+.section-testimonial-v2 {
+  overflow: hidden;
+
+  &-header {
+    margin-bottom: pxem(80);
+
+    @include mq($from: 720px) {
+      margin-bottom: pxem(40);
+    }
+  }
+
+  &-inner {
+
+    &-content {
+      z-index: 9;
+      padding: pxem(50);
+
+      p {
+
+        @include mq($from: 620px ) {
+          text-indent: -0.5em;
+        }
+      }
+
+      @include mq($from: 720px) {
+        padding-left: pxem(50);
+        padding-right: pxem(50);
+      }
+    }
+
+    &-left {
+
+      &-large {
+        width: pxem(233);
+        height: pxem(187);
+        background: $fill-green;
+        transition: all 1s ease;
+        margin-left: pxem(-140);
+        margin-top: pxem(120);
+        border-right: pxem(5) solid $fill-black;
+
+        @include mq($from: 600px) {
+          margin-top: pxem(300);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(140);
+        height: pxem(98);
+        margin-top: pxem(200);
+        margin-left: pxem(-80);
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-green,
+          $fill-bg-gray 2px,
+          $fill-bg-gray 13px,
+          $fill-green 13px
+        );
+        transition: all 1s ease;
+        opacity: 0.5;
+      }
+
+      &-shadow {
+        width: pxem(74);
+        height: pxem(66);
+        background: #038754;
+
+        bottom: 20px;
+
+        margin-bottom: pxem(60);
+        margin-left: pxem(33.5);
+        display: none;
+
+        @include mq($from: 880px) {
+          display: block;
+        }
+
+        @include mq($from: 932px) {
+          bottom: 0;
+        }
+      }
+    }
+
+    &-right {
+
+      &-small {
+        width: pxem(108);
+        height: pxem(108);
+        background: $fill-green;
+        transition: all 1s ease;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        margin-top: pxem(-20);
+
+        @include mq($from: 880px) {
+          margin-top: pxem(-50);
+        }
+      }
+
+      &-stripes {
+        display: block;
+        width: pxem(200);
+        height: pxem(200);
+        right: 0;
+        z-index: 1;
+        margin-right: pxem(-100);
+        background: repeating-linear-gradient(
+          -45deg,
+          $fill-green,
+          $fill-bg-gray 2px,
+          $fill-bg-gray 13px,
+          $fill-green 13px
+        );
+        transition: all 1s ease;
+        opacity: 0.5;
+      }
+    }
+  }
+/* stylelint-disable */
+
+  .arrow-right,
+  .arrow-left {
+
+    &:hover {
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  }
+
+  .arrow-left:after {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='nonzero' stroke='%236B6B6C' stroke-width='3' fill='none'%3E%3Cpath d='M10.5 17.278L2.722 9.5 10.5 1.722'/%3E%3Cpath d='M19 9.5H4' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    margin-left: -10px;
+    top: 50%;
+    height: pxem(17);
+    width: pxem(18);
+    z-index: 9;
+  }
+
+  .arrow-right:after {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='nonzero' stroke='%236B6B6C' stroke-width='3' fill='none'%3E%3Cpath d='M11.5 1.722L19.278 9.5 11.5 17.278'/%3E%3Cpath d='M2.423 9.66H18' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: pxem(17);
+    width: pxem(18);
+    z-index: 9;
+  }
+
+  .testimonial-v2-slider-item {
+
+    @include mq($from: 720px) {
+      margin-left: pxem(50);
+      margin-right: pxem(50);
+    }
+  }
+/* stylelint-enable */
+}

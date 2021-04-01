@@ -1,0 +1,184 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// MQ Function
+// ---------------------
+// Used for setting media queries with a
+// shorthand mixin
+@mixin mq($from: null, $to: null) {
+  $width-query: null;
+
+  @if ($from and $from > 0) {
+    $width-query: "(min-width: #{$from})";
+  }
+
+  @if ($to) {
+    $to-query: "(max-width: #{$to - 1px})";
+
+    @if ($width-query) {
+      $width-query: "#{$width-query} and #{$to-query}";
+    } @else {
+      $width-query: $to-query;
+    }
+  }
+
+  @if ($width-query) {
+    @media #{$width-query} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Generate Breakpoint Prefixes
+// -------------------------
+// this mixin adds breakpoint prefixes
+// from the list of breakpoints to the
+// beginning of a block of css selectors
+
+// all of the breakpoint names and values
+// we may use this a lot, keep them somwhere safe
+$breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1025px,
+  lg: 1320px,
+  xl: 1440px
+);
+
+// nest content inside breakpoint prefix classes
+// in the apropriate media query block
+@mixin generate-breakpoint-prefixes {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    $breakpoint-prefix: "#{$breakpoint-name}-";
+
+    @include mq($from: $breakpoint-value) {
+      // Columns
+
+      .#{$breakpoint-prefix} {
+        @content;
+      }
+    }
+  }
+}
+
+// Function for converting pixels to rems
+@function pxem($px) {
+  @return (($px / 16) * 1rem);
+}
+
+// hide from humans not screen readers
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// include an svg icon as a background image using variables
+@function svg-background($svg-variable) {
+  @return url("data:image/svg+xml,#{$svg-variable}");
+}
+
+// Enables tabular figures in opentype compatible browsers
+// http://thenewcode.com/575/Elegant-Table-Data-With-OpenType
+
+/* stylelint-disable property-no-vendor-prefix */
+@mixin tabular-figures {
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum" 1; // Firefox 31+
+  -moz-font-feature-settings: "tnum=1";
+  -webkit-font-feature-settings: "tnum" 1; // Chrome 31+, Android 4.4+, Opera 24+
+  font-feature-settings: "tnum" 1; // IE10+
+}
+/* stylelint-enable */
+
+// Font Smoothing
+// This will be enabled automatically when using the .slab class.
+// You may want to disable it for performance reasons, since these styles will cascade down.
+// https://davidwalsh.name/font-smoothing
+// ------------------------------
+
+/* stylelint-disable property-no-vendor-prefix */
+@mixin font-smoothing {
+  -webkit-text-size-adjust: 100%; // iOS 8+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+/* stylint-enable */
+
+@mixin flex-width($width) {
+  flex: 1 0 auto;
+  max-width: $width;
+}
+
+@mixin flex-width-grid ($width-grid) {
+  flex: 1 0 $width-grid;
+  max-width: $width-grid;
+}
+
+@mixin link-effect {
+  color: $text-lighter-blue;
+  text-decoration: underline solid transparent;
+  transition: text-decoration 0.5s $t-1;
+
+  &:hover {
+    text-decoration: underline solid $text-lighter-blue;
+  }
+}
+
+@mixin link-effect-footer {
+  color: $text-light-gray;
+  text-decoration: underline solid transparent;
+  transition: text-decoration 0.5s $t-1;
+
+  &:hover {
+    text-decoration: underline solid $text-light-gray;
+  }
+}
+
+@mixin header-link-effect {
+  color: inherit;
+  text-decoration: underline solid inherit;
+  transition: text-decoration 0.5s $t-1, color 0.5s $t-1;
+
+  &:hover {
+    color: $text-lighter-blue;
+    text-decoration: underline solid $text-lighter-blue;
+  }
+}
+
+@mixin header-link-effect-blue {
+  color: $text-blue;
+  text-decoration: none;
+  // text-decoration: underline solid inherit;
+  transition: text-decoration 0.5s $t-1, color 0.5s $t-1;
+
+  &:hover {
+    color: darken($text-blue,15%);
+    text-decoration: underline solid darken($text-blue,15%);
+  }
+}
+
+@mixin stripes-blue($width, $height, $right, $mt, $mb) {
+  display: block;
+  width: $width;
+  height: $height;
+  margin-top: $mt;
+  margin-bottom: $mb;
+  right: $right;
+  background: repeating-linear-gradient(
+    -45deg,
+    $fill-blue,
+    $fill-white 2px,
+    $fill-white 13px,
+    $fill-blue 13px
+  );
+  transition: all 1s ease;
+}

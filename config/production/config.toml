@@ -1,0 +1,3 @@
+baseURL = "https://www.section.io/"
+[params]
+  env = "production"

@@ -1,0 +1,114 @@
+//
+// Spacing Classes
+// --------------------------------------------------
+
+// Margin bottom
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &mb-#{$i} {
+      margin-bottom: ($i)+px;
+    }
+  }
+}
+
+// Negative margin bottom
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &nmb-#{$i} {
+      margin-bottom: -($i)+px;
+    }
+  }
+}
+
+// Margin top
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &mt-#{$i} {
+      margin-top: ($i)+px;
+    }
+  }
+}
+
+// Negative margin top
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &nmt-#{$i} {
+      margin-top: -($i)+px;
+    }
+  }
+}
+
+// Margin right
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &mr-#{$i} {
+      margin-right: ($i)+px;
+    }
+  }
+}
+
+// Margin left
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &ml-#{$i} {
+      margin-left: ($i)+px;
+    }
+  }
+}
+
+// Padding bottom
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &pb-#{$i} {
+      padding-bottom: ($i)+px;
+    }
+  }
+}
+
+// Padding top
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &pt-#{$i} {
+      padding-top: ($i)+px;
+    }
+  }
+}
+
+
+// Padding left
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &pl-#{$i} {
+      padding-left: ($i)+px;
+    }
+  }
+}
+
+// Padding right
+@include generate-breakpoint-prefixes {
+  @for $i from 0 through 60 {
+    $i: $i * 2;
+
+    &pr-#{$i} {
+      padding-right: ($i)+px;
+    }
+  }
+}
