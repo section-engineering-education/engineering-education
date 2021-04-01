@@ -8,7 +8,7 @@
 - [Stateless Widget](#stateless-widget)
 - [Stateful Widget](#stateful-widget)
 - [Conclusion](#conclusion)
-- [Futher reading](#futher-reading)
+- [Further Reading](#further-reading)
 
 ### Introduction
 Over the years software developers have used frameworks to build apps for android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
@@ -74,7 +74,7 @@ From our code, the whole app is a widget, which contains a MaterialApp widget.
 A stateless widget is a widget whose state cannot be changed once it’s built. i.e. no amount of change in the variables, icons, buttons, or retrieving data can change the state of the app.
 A to-do app will always have to-do items added and remove, to achieve this we will need to implement a stateful widget.
 
-### Statful Widget
+### Stateful Widget
 This type of widget is dynamic. This means it can change its appearance when it recieves data or change apearance in response to events triggered.
 
  Edit your code to match the one in the picture below.
@@ -207,7 +207,8 @@ To sumarize the reader learned;
 - How to create a flutter app
 - about Stateless and Stateful Widget 
 - about flutter packages 
-### Further reading
+
+### Further Reading
 - [Dart List](https://www.geeksforgeeks.org/listtile-widget-in-flutter/)
 - [Dart Object](https://bezkoder.com/category/dart/)
 - [Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
