@@ -223,7 +223,8 @@ app.listen(PORT, console.log(`server started, listening PORT ${PORT}`))
 To make our routes work, we have to use a [middleware pattern](https://expressjs.com/en/guide/using-middleware.html#middleware.application) is express. Middleware functions have access to request (req) and response object (res) in the application’s request-response cycle. This explains the `app.use()` methods. The first middleware allows our application to parse incoming request data format in JSON format. The `app.use('/', require('./routes/redirect'))` is the has the base URI that will configure the redirect route. In our POST route, the base URL is `/api/url` and the middleware as `app.use('/api/url', require('./routes/url'))`. Next, we need to test the application in postman.
 
 ### A Working Demo In Postman
-![postman_test_gif](/engineering-education/articles/node-url-shortener/postman.gif)
+
+![postman_test_gif](/engineering-education/node-url-shortener/postman.gif)
 
 ### Conclusion
 I hope you find this tutorial helpful and Happy coding.
