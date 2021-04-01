@@ -1,9 +1,21 @@
-### How to perform custom ranking for records from a MongoDB database in Node.js
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/mongodb-nodejs-custom-ranking/
+title: How to perform custom ranking for records from a MongoDB database in Node.js
+description: This article will be an overview on custom ranking of data in MongoDB. We will learn how to create a database, collection, insert, and query the results.
+author: terrence-aluda
+date: 2021-04-01T00:00:00-23:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![Hero image](/engineering-education/mongodb-nodejs-custom-ranking/hero.jpg)
-
+  - url: /engineering-education/mongodb-nodejs-custom-ranking/hero.jpg
+    alt: Custom ranking image
+---
 This article will give us a heads-up on how to rank the records from a MongoDB database. We are going to add a bit of sorting functionality to the `sort()` function to give the records positions.
-
+<!--more-->
 In the end, we will be able to:
 - Install and configure MongoDB driver in a Node.js application using the Node Package Manager.
 - Query and sort results from a MongoDb database.
