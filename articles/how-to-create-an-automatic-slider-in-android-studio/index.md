@@ -6,7 +6,7 @@ url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/
 title: How to Create an Automatic Slider in Android Studio
 description: This article explains how to implement Automatic Sliders in Android. These components provide extra space that developers can use to present information to the user.
 author: joseph-chege
-date: 2021-03-25T00:00:00-11:00
+date: 2021-04-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
