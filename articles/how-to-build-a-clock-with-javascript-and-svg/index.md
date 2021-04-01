@@ -13,10 +13,11 @@ images:
   - url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/hero.png
     alt: Building a clock using JavaScript and SVG
 ---
-JavaScript is a programming language that lets you create complex web page features. On the other hand, Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation. Therefore, building a clock using SVG (Scalar Vector Graphics) and JavaScript is quite simple. 
+JavaScript is a programming language that lets you create complex web page features. On the other hand, Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation. 
 <!--more-->
+Therefore, building a clock using SVG (Scalar Vector Graphics) and JavaScript is quite simple. 
 ### Table of Contents
-- Introduction to JavaScript
+- Introduction to JavaScript.
 - What is SVG.
 - Benefits of SVG.
 - How to implement JavaScript with SVG on the web.
@@ -30,7 +31,9 @@ JavaScript is a programming language that lets you create complex web page featu
 ### Introduction to JavaScript
 JavaScript is a programming language that lets you create complex applications. It can also be used to create web games with dynamic styling, animation, and other features such as when buttons are pressed or data is entered on forms.
 
-JavaScript is a powerful scripting language. On top of the core JavaScript language, developers have written numerous tools that unlock a vast amount of functionality with minimal effort. Some of these tools include:
+JavaScript is a powerful scripting language. On top of the core JavaScript language, developers have written numerous tools that unlock a vast amount of functionality with minimal effort. 
+
+Some of these tools include:
 - Third-party frameworks and libraries that can be used with HTML to speed up the development of applications.
 - Third-party APIs allow developers to integrate features from other content providers such as Twitter or Facebook, into their websites.
 - Browser Application Programming Interfaces (APIs) are functions built into web browsers that allow you to access different features.
@@ -38,7 +41,8 @@ JavaScript is a powerful scripting language. On top of the core JavaScript langu
 ### What is SVG
 SVG is an abbreviation for Scalable Vector Graphics. This is an XML format that specifies vector-based graphics.
 
-#### SVG Types
+#### SVG types
+
 - SVG in HTML
 
   ```html
@@ -331,7 +335,7 @@ Since we're building a clock, we'll need the svg circle and svg path for the arm
 > Have you noticed that all tags now have an id and a class? We'll use these ids as a reference point for our design and JavaScript.
 
 ### Step 7 - Implementing the JavaScript code for the clock
-It's time to start writing some JavaScript code. The JavaScript code and time configurations, shown and explained below, are the core functionalities of this web application.
+It's time to start writing some JavaScript code. The JavaScript code and time configurations, the core functionalities of this web application are shown and explained below.
 
 ```javascript
 // Declare and Initialize your variables and make references to the id defined in the html file, as needed.
@@ -379,8 +383,9 @@ setInterval(runClock, 1000);
 
 ### Step 9 - Adding styles in style.css
 
-We are almost done 😊
-Lets's head to style.css to finish the remaining task
+We are almost done 😊.
+
+Lets's head to style.css to finish the remaining task.
 
 ```css
 body {
@@ -480,6 +485,8 @@ Congratulations 🎉🎉
 ### Conclusion
 You learned about JavaScript, what SVG is, the benefits of SVG, and how to use JavaScript with SVG on the web in this post.
 Some SVG types were also highlighted, as well as how to use them on the web.
+
+Happy coding!
 
 ### Resources
 - [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
