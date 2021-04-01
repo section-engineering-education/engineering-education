@@ -241,3 +241,6 @@ Happy coding.
 - [Flask Web Framework](https://palletsprojects.com/p/flask/)
 - [Flask Powered Companies](https://github.com/rochacbruno/flask-powered)
 - [Flask-Limiter Documentation](https://flask-limiter.readthedocs.io/en/stable/)
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
