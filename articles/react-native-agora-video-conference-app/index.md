@@ -86,6 +86,8 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
+![Env Setup](/engineering-education/react-native-agora-video-conference-app/env_setup.png)
+
 ### Cloning the starter code
 To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
@@ -209,7 +211,7 @@ It accepts a prop named `rtcProps` through which we can pass the Agora app ID an
 
 You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 
-```JavaScript
+```JSX
 export default function Conference(props) {
   const rtcProps = {
     appId: "<-- Your App ID Here -->",
@@ -244,7 +246,7 @@ To navigate back, we need to import the `useNavigation` hook from `@react-naviga
 import { useNavigation } from "@react-navigation/native";
 ```
 
-```JavaScript
+```JSX
 const navigation = useNavigation();
 
 const callbacks = {
@@ -282,7 +284,7 @@ const callbacks = {
 #### Styling
 You can pass styles as a prop to the component. You can style the container, the local buttons, and the remote buttons. Let's style our buttons to match the blue buttons on the home screen.
 
-```JavaScript
+```JSX
 const localButtonStyle = {
   backgroundColor: "#78b0ff",
   borderColor: "#78b0ff",
@@ -351,7 +353,7 @@ const styles = {
 #### Share channel ID
 Let's add a share button on the top right corner to share the channel ID.
 
-```JavaScript
+```JSX
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 return (
@@ -419,7 +421,7 @@ export default function Conference(props) {
 
 Pass the `onShare` function to the Share button's `onPress` prop.
 
-```JavaScript
+```JSX
 <TouchableOpacity style={styles.shareButton} onPress={onShare}>
   <Text style={styles.shareButtonText}>Share</Text>
 </TouchableOpacity>
@@ -443,5 +445,7 @@ Pass the `onShare` function to the Share button's `onPress` prop.
 8. We added a Share button to share the UUID with others from the Conference screen.
 
 Congratulations, :partying_face: You did it.
+
+If you'd like to learn how to build a Livestreaming app with React Native and Agora, refer to [this article](https://www.section.io/engineering-education/react-native-agora-livestreaming-app/).
 
 Thanks for Reading!

@@ -41,7 +41,7 @@ Agora provides SDKs to build apps that require real-time engagement like:
 
 - Real-Time Messaging (which is in BETA at the time of writing this article)
 
-Agora supports up to 1 million users in a live broadcast channel. They also recommend limitting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
+Agora supports up to 1 million users in a live broadcast channel. They also recommend limiting the number of users sending streams concurrently to 17 at most. You can learn more about Agora's capacity [here](https://docs.agora.io/en/All/faq/capacity).
 
 Agora is a paid service, but the first 10,000 minutes are free every month. You can check their pricing [here](https://www.agora.io/en/pricing/).
 
@@ -86,6 +86,8 @@ Now, click on the closed eye icon near the App ID to reveal it and copy that App
 You can follow [this](https://reactnative.dev/docs/environment-setup) documentation to set up the environment.
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
+
+![Env Setup](/engineering-education/react-native-agora-livestreaming-app/env_setup.png)
 
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
@@ -452,7 +454,7 @@ import { ActivityIndicator } from "react-native";
 
 If the user has not joined, we'll return the Loading Screen.
 
-```JavaScript
+```JSX
 return (
   <View style={styles.container}>
     {!joined ? (
@@ -495,7 +497,7 @@ Here, we will pass our host's UID, which is `1`.
 
 Return Statement when joined === true:
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -566,7 +568,7 @@ export default function Live(props) {
 
 Let's add a button to the Live screen page.
 
-```JavaScript
+```JSX
 <>
   {isBroadcaster ? (
     <RtcLocalView.SurfaceView 
@@ -623,7 +625,7 @@ const onSwitchCamera = () => AgoraEngine.current.switchCamera();
 
 Switch Camera button:
 
-```JavaScript
+```JSX
 <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button} onPress={onShare}>
     <Text style={styles.buttonText}>Share</Text>
@@ -682,7 +684,7 @@ const videoStateMessage = (state) => {
 
 We can display the remote feed or the state message based on the broadcaster's video state.
 
-```JavaScript
+```JSX
 broadcasterVideoState === VideoRemoteState.Decoding ? (
   <RtcRemoteView.SurfaceView 
    uid={1} 
@@ -739,6 +741,8 @@ broadcasterVideoStateMessageText: {
 11. We added a Remote Video State Listener to listen to the broadcaster's video state.
 
 Congratulations, :partying_face: You did it.
+
+If you'd like to learn how to build a Video Conference app with React Native and Agora, refer to [this article](https://www.section.io/engineering-education/react-native-agora-video-conference-app/).
 
 Thanks for reading!
 

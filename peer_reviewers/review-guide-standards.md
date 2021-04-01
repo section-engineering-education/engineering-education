@@ -3,22 +3,22 @@ contributed by Louise Findlay
 
 ### Review Guide Standards:
 For all reviewers:
-- Only self-assign 1-2 PRs at a time. Only after getting one completed and published should you self-assign more. This allows other Peer Reviewers the ability to take on the next ones.
+- *Only self-assign 1-2 PRs at a time.* (This is to help keep maintain article output). Only after getting one completed and published should you self-assign more. This allows other Peer Reviewers the ability to take on the next ones.
 
 - For any new Peer Reviewers that have just joined the team:
 
 ### New Peer Reviewers
-- The first couple of articles they review will be double checked by either another member of the Peer Reviewer Committee or Tech Review Committee. (For a double check)
+- The first couple of articles new reviewers go over will be double checked by either another member of the Peer Reviewer Committee or Tech Review Committee. (For a quality control).
 - Once those initial reviews are passed - then they can begin reviewing incoming PRs to be merged.
 - We are building a very diverse community and we should allow our content to showcase that diversity as long as ALL content is accurate, original, and legible.
 - We MUST limit PR comments - in order to use our time wisely we need to be able to work on PRs in a timely manner.
 
-### Review - Section Managers
-- Plagiarism Check (will be done through [Quetext](https://www.quetext.com/search) by managers) if you do not see a comment via GitHub ping a manager.
-- Check proper folder/file structure
-- Add an article description (doesn't exceed 150 characters)
-- Add hero image from [Unsplash](https://unsplash.com/) (if needed - make sure its 600 X 400 pixels)
-- Add ready to review GitHub label
+### Review - Section Peer Reviewers
+- Plagiarism Check (should be be done through [Quetext](https://www.quetext.com/search) by managers) if you do not see a comment via GitHub ping a manager. With new one PR limit - articles contributors can run their own quetext results.
+- Check for proper folder/file structure.
+- Add an article description (doesn't exceed a couple sentences).
+- Make sure the author has added a hero image from [Unsplash](https://unsplash.com/) (if needed - make sure its 600 X 400 pixels)
+- Add a Ready to Review GitHub label. (Labels are used to communicate with other reviewers - or to keep track)
 
 ### Preliminary Revision
 - Add preliminary revision in progress label
