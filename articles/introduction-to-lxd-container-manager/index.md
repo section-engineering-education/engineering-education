@@ -1,6 +1,21 @@
-### Introduction
-A container refers to an environment in an operating system that allows applications to function smoothly, as well as access crucial resources. Containers are quite useful when it comes to creating, scaling, and deploying applications. Developers can also maintain systems easily through the use of containers.
+---
+layout: engineering-education
+status: 
+published: 
+url: /engineering-education/introduction-to-lxd-container-manager/
+title: Introduction to LXD Container Manager
+description: This article will be a brief introduction to containers, virtual machines, and more specifically about LXD containers. We will discuss its key features and benefits.
+author: ruth-mare
+date: 2021-04-01T00:00:00-22:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-lxd-container-manager/hero.png
+    alt: LXD cover image 
+---
+A container refers to an environment in an operating system that allows applications to function smoothly, as well as access crucial resources. Containers are quite useful when it comes to creating, scaling, and deploying applications. Developers can also maintain systems easily through the use of containers.
+<!--more-->
 A virtual machine is an essential concept when it comes to using containers. Virtual machines follow specific computer architectures which allows them to provide unique functionalities replicating a real machine. For instance, a user can test out a new operating system by installing it in a virtual machine.
 
 LXD is a highly effective container manager. It provides an individual experience same as that offered by virtual machines. However, LXD systems are unique because they operate with Linux containers.
