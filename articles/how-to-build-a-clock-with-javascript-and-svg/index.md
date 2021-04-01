@@ -6,7 +6,7 @@ url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/
 title: How to Build a Clock with JavaScript and SVG
 description: This tutorial will provide a step by step guide on how to build a clock using JavaScript and SVG. 
 author: idris-olubisi
-date: 2021-03-17T00:00:00-11:00
+date: 2021-03-31T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
