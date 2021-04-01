@@ -122,7 +122,7 @@ Now let's create a dispatcher and updater for your bot.
 ```python
 telegram_bot_token = "your-telegram-token"
 client = FaunaClient(secret="your-fauna-secret-key")
-updater = Updater(token=telegram_bot_token, use_context=True)
+updater = Updater(token=telegram_token, use_context=True)
 dispatcher = updater.dispatcher
 ```
 
@@ -159,8 +159,7 @@ Then, you collected the `chat_id`, `first_name`, and `username` from the updater
 
 Next, you need to create a dispatch handler for the `/start` command. A command in Telegram is any text that starts with `/`.
 
-You can also add other handlers such as text handler, image handler, regex handler, and more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
-
+You can also add other handlers such as text handler, image handler, regex handler, and more. For this tutorial, we are starting with a command handler which initializes our bot.
 Copy and paste the code below at the end of your python file to call the dispatch handler to connect a command handler to the “start” command. The “start” command triggers the `start` method. The updater checks for messages from the user.
 ```python
 dispatcher.add_handler(CommandHandler("start", start))
