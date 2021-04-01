@@ -6,7 +6,7 @@ url: /engineering-education/etherchannel-technology/
 title: Understanding EtherChannel-Technology
 description: The objective of this article is to help one understand etherchannel technology and how it is configured  using a packet tracer.
 author: atonya-dennis
-date: 2021-03-21T00:00:00-09:00
+date: 2021-04-01T00:00:00-09:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
