@@ -38,30 +38,36 @@ This will download the named packages inside `node_modules` folder and update th
 Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The following is the initial code to start the Express server:
 
 ```js
+   // import express package(commonJS syntax)
     const express = require('express')
-
+      
+    //instatiate the express app  
     const app = express()
-
+   
     const PORT = process.env.PORT || 5000
-
-    app.listen(PORT, ()=> console.log('DB connection established'))
+   //Listen for incoming requests
+    app.listen(PORT, ()=> console.log(`server started, listening PORT ${PORT}`))
 ```
 
 This starter code imports the express package. The `app = express()` creates an instance of our application.
 In our app, we need to listen to the incoming request. `app.listen` takes a port number and a callback function that is invoked upon a successful connection.
 
-### Configuring the MongoDB connection
+### Configuring the MongoDB connection inside the `db.config.js`
 We will use the `mongoose` package that we installed via npm as the database driver. To configure the database, create a `config` folder inside our `URL-Shortener-Service` folder. Inside the `config` folder, add a file named `db.config.js`. This is the file to add the following database connection code:
 
 ```js
+// import mongoose package
 const mongoose = require('mongoose')
 
+// declare a Database string URI
 const DB_URI = 'mongodb://localhost:27017/urlshortener'
 
-mongoose.connect(DB_URI,{useNewUrlParser:true, useUnifiedTopology:true})
+//establishing a database connection
+mongoose.connect(DB_URI,{useNewUrlParser:true, useUnifiedTopology:true}) 
 
 const connection = mongoose.connection
 
+// export the connection object
 module.exports = connection
 ```
 
@@ -75,6 +81,7 @@ To create our model, create a folder named `models`. Inside this folder, add a f
 ```js
 const mongoose = require('mongoose')
 
+// instantiate a mongoose schema
 const URLSchema = new mongoose.Schema({
     urlCode: String, 
     longUrl: String,
@@ -82,6 +89,7 @@ const URLSchema = new mongoose.Schema({
     date:{type: String, default: Date.now}
 })
 
+// create a model from schema and export it
 module.exports = mongoose.model('Url',URLSchema)
 ```
 
@@ -106,36 +114,52 @@ Our routes will be on a separate folder. Inside the `URL-Shortener-Service` fold
 Now, let us create the POST route. Add the following code inside the `url.js` file:
 
 ```js
+// packages needed in this file
 const express = require('express')
-
-const router = express.Router()
-
 const validUrl = require('valid-url')
 const shortid = require('shortid')
 
+// creating express route handler
+const router = express.Router()
+
+// import the Url database model
 const Url = require('../models/Url')
 
 //@route    POST /api/url/shorten
-//@desc     Create short URL
+//@description     Create short URL
 
+// The API base Url endpoint
 const baseUrl = 'http:localhost:5000'
+
 router.post('/shorten', async(req,res)=>{
-    const {longUrl} = req.body
-    //check base url
+    const {longUrl} = req.body // destructure the longUrl from req.body.longUrl
+    
+    //check base url if valid using the validUrl.isUri method
     if(!validUrl.isUri(baseUrl)){
         return res.status(401).json('Invalid base URL')
     }
-    // create url code
+    
+    // if valid, we create the url code
     const urlCode = shortid.generate()
-    //check long url
+    
+    //check long url if valid using the validUrl.isUri method
     if(validUrl.isUri(longUrl)){
         try{
+            /* The findOne() provides a match to only the subset of the documents 
+            in the collection that match the query. In this case, before creating the short URL,
+            we check if the long URL was in the DB ,else we create it.
+            */
             let url = await Url.findOne({longUrl})
+            
+            // url exist and return the respose
             if(url){
                 res.json(url)
             }
             else{
+            // join the generated short code the the base url
                 const shortUrl = baseUrl + '/'+ urlCode
+                
+             // invoking the Url model and saving to the DB
                 url = new Url({
                     longUrl,
                     shortUrl,
@@ -146,6 +170,7 @@ router.post('/shorten', async(req,res)=>{
                 res.json(url)
             }
         }
+        // exception handler
         catch(err){
             console.log(err)
             res.status(500).json('Server Error')
@@ -177,15 +202,19 @@ const Url = require('../models/Url')
 // @description    Redirect to the long/original URL 
 router.get('/:code', async(req, res)=>{
     try{
+    // find a document match to the code in req.params.code
         const url = await Url.findOne({urlCode: req.params.code})
         if(url){
+        // when valid we perform a redirect
             return res.redirect(url.longUrl)
         }
         else{
+        // else return a not found 404 status
             return res.status(404).json('No URL Found')
         }
 
     }
+    // exception handler
     catch(err){
         console.error(err)
         res.status(500).json('Server Error')
