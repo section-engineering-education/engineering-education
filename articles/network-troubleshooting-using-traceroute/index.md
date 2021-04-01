@@ -8,7 +8,7 @@ The internet is a revolutionary technological marvel that has allowed for faster
 
 #### Definition
 
-**Traceroute** is a command-line utility used in real-time network troubleshooting to find the route data packets take as they travel across the internet from a source to their destination addresses.
+**Traceroute** is a command-line utility used in real-time network troubleshooting to find the route data packets take as they travel across the internet to their destination addresses.
 
 #### Other uses of traceroute
 
