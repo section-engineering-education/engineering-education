@@ -15,12 +15,12 @@ images:
     alt: Building an Appointment Scheduling Telegram Bot with Python and Fauna
 ---
 
-Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier. 
+Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? This article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier.
 <!--more-->
 ### Introduction
 
 #### What is Fauna?
-[Fauna](https://docs.fauna.com/fauna/current/) is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
+[Fauna](https://docs.fauna.com/fauna/current/) is a serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
 
 #### Prerequisites
 To follow along with this tutorial, you need to have:
@@ -33,7 +33,7 @@ To install the prerequisites, you simply need to run the below command in your c
 pip install faunadb telegram python_telegram_bot
 ```
 
-To check if Fauna installed correctly, run the sample python code provided in Fauna’s Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
+To check if Fauna installed correctly, run the sample code provided in their Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
 ```python
 from faunadb import query as q
 from faunadb.objects import Ref
@@ -62,7 +62,7 @@ To create a collection, click on `CREATE COLLECTION` then provide information fo
 After saving the collections you just created, you will notice there are no documents in your collections. A document is like [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data in a table as in a relational database system.
 
 #### Creating a Fauna Index
-You will need to create a Fauna index that will allow you to scroll through the data created in your database. To do this, go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
+You will need to create a Fauna index that will allow you to scroll through the data created in your database. Go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
 
 We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
@@ -96,13 +96,13 @@ Go to your telegram account, then search for @botfather and start a conversation
 ![start_bot_father](/engineering-education/building-an-appointment-scheduling-telegram-bot/start_bot_father.png)
 
 #### Creating the Telegram Bot Interface with BotFather
-Use the `/newbot` command to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
+Enter the `/newbot` command in the chat to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
 
 ![bot_father_command](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_command.png)
 
 ![bot_father_convo](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_convo.png)
 
-After supplying the name and username for your Telegram Bot, the system will provide you with the API token that you can use to interact with the Bot account via the Telegram API. Copy and paste the API token somewhere safe.
+After providing the name and username for your Telegram Bot, the system will provide you with the API token that you can use to interact with the Bot account via the Telegram API. Copy and paste the API token somewhere safe.
 
 #### Powering the Bot with Python
 Create a new python file and give it any name of your choice. Now you have to import the required modules into your python file.
@@ -126,7 +126,7 @@ updater = Updater(token=telegram_bot_token, use_context=True)
 dispatcher = updater.dispatcher
 ```
 
-The dispatcher handles and processes the received message while the updater tracks, monitors, and reads messages sent to the bot and delivers them to the dispatcher.
+The dispatcher function is to handle and processes the received message while the updater tracks, monitors, and reads messages sent to the bot and delivers them to the dispatcher.
 
 Now let's start our bot using the python code below.
 ```python
@@ -159,7 +159,7 @@ Then, you collected the `chat_id`, `first_name`, and `username` from the updater
 
 Next, you need to create a dispatch handler for the `/start` command. A command in Telegram is any text that starts with `/`.
 
-You can also add other handlers such as image handler, text handler, regex handler, and many more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
+You can also add other handlers such as text handler, image handler, regex handler, and more. We are starting with a command handler because that is the first thing every user enters into a Telegram Bot.
 
 Copy and paste the code below at the end of your python file to call the dispatch handler to connect a command handler to the “start” command. The “start” command triggers the `start` method. The updater checks for messages from the user.
 ```python
@@ -351,7 +351,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 ![delete_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/delete_appointment.png)
 
 ### Conclusion
-In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to integrate Fauna into a Python application and got the chance to explore some of its core features and functionalities.
+In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how to easy it is to use Fauna as the database in our python application.
 
 The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT).
 
