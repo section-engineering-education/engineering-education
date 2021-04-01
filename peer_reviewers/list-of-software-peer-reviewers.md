@@ -4,7 +4,7 @@
 |  Adrian Murage | [My author page](https://www.section.io/engineering-education/authors/adrian-murage/) | [My GitHub](https://github.com/adrianmurage) | -|
 |  Ahmad Mardeni | [My author page](https://www.section.io/engineering-education/authors/ahmad-mardeni/) | [My GitHub](https://github.com/ahmadmardeni1) | - Machine Learning - CyberSecurity - Web Scraping - Database Development(SQL) - Data Analysis - Data Visualization - Backend Development(Flask/Django)|
 |  Briana Nzivu |  [My author page](https://www.section.io/engineering-education/authors/briana-nzivu/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
-|  Collins Ayuya |  [My author page](www.section.io//engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Collins Ayuya |  [My author page](www.section.io//engineering-education/collins-ayuya/) | [My GitHub](https://github.com/collins-a) | - AI and Machine Learning - Telecommunications and Networking - Internet of Things, Embedded Devices and DIY projects |
 |  Daniel Katungi Dennis |  [My author page](www.section.io/engineering-education/authors/daniel-katungi/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Gregory Manley |  [My author page](https://www.section.io/engineering-education/authors/gregory-manley/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Lalithnarayan |  [My author page](https://www.section.io/engineering-education/authors/lalithnarayan-c/) | [My GitHub](https://github.com/lalith1403) | - Machine Learning - Deep Learning (PyTorch and Tensorflow) - Computer Vision and NLP - MERN Stack - Programming Languages (Python, C, JavaScript)|
