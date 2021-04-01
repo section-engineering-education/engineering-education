@@ -1,22 +1,18 @@
 # How to build A Todo app with Flutter
-![hero image] ()
-[Source](https://unsplash.com/photos/2JknzBYDu6k)
-
 ### Table of contents 
 - [Prerequisites](#prerequisites)
-- [Goal(#goals)
+- [Goals](#goals)
 - [Requirements](#requirements)
-- [Flutter Packages](#FlutterPackages)
+- [Flutter Packages](#flutter-packages)
 - [Flutter Widgets](#flutter-widgets)
 - [Stateless Widget](#stateless-widget)
-- [Statful Widget](#Stateful-widget)
+- [Stateful Widget](#stateful-widget)
 - [Conclusion](#conclusion)
 - [Futher reading](#futher-reading)
 
-
 ### Introduction
-Over the years software developers have used frameworks to build apps for android, IOS, Desktop, and web, flutter is one of those frameworks.
-Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
+Over the years software developers have used frameworks to build apps for android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
+
 In this article will use flutter to build a **To-do list** app. 
 
 ### Prerequisites
@@ -51,15 +47,15 @@ We will be using a smartphone to run the app, follow this link to learn how to r
 ![Flutter default app](/engineering-education/how-to-build-a-todo-app/default-flutter-app.png)
 
 
-**Flutter default after runing any app for the first time**
+**Flutter default after running any app for the first time**
 
-Go to the main.dart file which is in the lib directory. Change the default code to the snippet shown in the below picture.
+Go to the `main.dart` file which is in the lib directory. Change the default code to the snippet shown in the below picture.
 
-![Stateless widget](/engineering-education/how-to-build-a-todo-app/stateless widget code.png)
+![Stateless Widget](/engineering-education/how-to-build-a-todo-app/stateless widget code.png)
 
 After running the app you will notice an empty canvas with the title To-do-List. let us look at the code.
 
-![code picture](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.png)
+![Stateless Widget Code](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.png)
 
 ### Flutter Packages
 On the first line, we imported a flutter package named Material.dart (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app So instead of building some features from scratch just go pub.dartlang.org , search for a package that will perform that feature you want to build, and incorporate it into your app this will save a lot of time for you as a developer. As you continue with flutter you will use a lot of packages.
