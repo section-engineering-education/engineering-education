@@ -7,7 +7,7 @@
 |  Collins Ayuya |  [My author page](www.section.io//engineering-education/collins-ayuya/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Daniel Katungi Dennis |  [My author page](www.section.io/engineering-education/authors/daniel-katungi/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Gregory Manley |  [My author page](https://www.section.io/engineering-education/authors/gregory-manley/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
-|  Lalith Narayan |  [My author page](https://www.section.io/engineering-education/authors/lalithnarayan-c/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
+|  Lalithnarayan |  [My author page](https://www.section.io/engineering-education/authors/lalithnarayan-c/) | [My GitHub](https://github.com/lalith1403) | - Machine Learning - Deep Learning (PyTorch and Tensorflow) - Computer Vision and NLP - MERN Stack - Programming Languages (Python, C, JavaScript)|
 |  Linus Muema |  [My author page](https://www.section.io/engineering-education/authors/linus-muema/) | [My GitHub](https://github.com/BrianaNzivu) | - Google certified AAD - Android - Kotlin|
 |  Louise Findlay | [My author page](https://www.section.io/engineering-education/authors/louise-findlay/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Mike White | [My author page](https://www.section.io/engineering-education/authors/mike-white/) | [My GitHub](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
