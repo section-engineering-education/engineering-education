@@ -3,7 +3,7 @@
 
 ### Introduction
 
-[Quasar Framework](https://quasar.dev/) is a Vue.js based framework used to develop cross-platform applications using one codebase saving development costs. Quasar offers a cutting edge user Interface and support builds for:
+[Quasar Framework](https://quasar.dev/) is a Vue.js based framework used to develop cross-platform applications using one codebase. This helps in saving development costs. Quasar offers a cutting edge user Interface and support builds for:
   - single-page applications 
   - progressive web applications
   - server-side rendering
@@ -20,7 +20,9 @@ To follow along with this tutorial, you need:
 3. Npm 5.10 or newer / yarn 1.2 or newer
 
 ### Installing Quasar Framework
-There are three ways we can install Quasar as listed below. In this tutorial, we're going to use the third method, `using Quasar CLI` which comes with all Quasar features out-of-the-box. You can skip the first two and try them at a later time.
+There are three ways we can install Quasar as listed below.
+
+In this tutorial, we're going to use the third method, `using Quasar CLI` which comes with all Quasar features out-of-the-box. You can skip the first two and try them at a later time.
 
 1. Embedding into an existing project through CDN as shown below.
 
@@ -112,10 +114,12 @@ $ yarn global add @quasar/cli
 
 ### Create a hello-world-app with quasar
 
-To create a new Quasar app run the command below. `hello-world-app` is the name of your project.
+To create a new Quasar app run the command below. 
 ```bash
 $ quasar create hello-world-app
 ```
+`hello-world-app` is the name of your project.
+
 Hit Enter to accept the default project details or you can edit to your liking.
 
 Using the arrow keys select the first CSS preprocessor:
@@ -148,8 +152,8 @@ Navigate to the created `hello-world-app` and serve the app by running the comma
 $ cd hello-world-app
 $ quasar dev
 ```
-After serving the app, it  opens the URL http://localhost:8080/#/ in your browser to view the app.
-You'll see Quasar logo and the name Quasar in the center of the page.
+After serving the app, the URL http://localhost:8080/#/ opens in your browser to view the app.
+You'll see Quasar logo and the name Quasar at the center of the page.
 
 Open the created `hello-world-app` folder in your editor of choice.
 
@@ -162,7 +166,7 @@ This is the where the Quasar app is injected into the project using the id `q-ap
 Navigate to the `src/layouts` folder and open `MainLayout.vue` file.
 
 Here, we'll rename the app title to "Hello World App", if everything is okay you'll see the name change reflected on the toolbar at the top of the app.
-The toolbar title tag looks like this below
+The toolbar title tag looks like this:
 ```html
 <q-toolbar-title> Hello World App </q-toolbar-title>
 ```
@@ -170,11 +174,11 @@ You can delete the next div after the q-toolbar-title to remove the Quasar versi
 ```html
 <div>Quasar v{{ $q.version }}</div>
 ```  
-The  MainLayout.vue file also contains navigation links for the app, this is where you'll put navigation links to your app while it grows bigger.
+The `MainLayout.vue` file also contains navigation links component for the app, this is where you'll put navigation links to your app while it grows bigger.
 
-For now, the links component which is the Essential link.vue file in the `components` folder is imported into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
+The links component is the `EssentialLink.vue` file in the `components` folder, which is imported into the MainLayout.vue file. Data in linksData array is then looped through in the imported EssentialLink component and displayed to the left drawer of the app.
 
-Don't worry if you don't understand, you'll get a hang of it with more practice.
+Don't worry if you don't understand, you'll get a hang of it with a little practice.
 
 Now navigate to the `src/pages` folder and open `Index.vue`.
 You can delete the whole image tag that looks like this.
@@ -186,7 +190,9 @@ This will delete the image and its name Quasar from the center of the app. Leavi
 
 ### Familiarize with the structure of the components
 
-Here, we are going to build a component. Just like Vue.js, Quasar uses a single file components (SFC) structure. This has 3 parts; the HTML, SCRIPT(JS) and STYLE(CSS).
+Here, we are going to build a component. 
+
+Just like Vue.js, Quasar uses a single file components (SFC) structure. This has 3 parts; the HTML, SCRIPT(JS) and STYLE(CSS).
 `<template>` tag represents the HTML, `<script>` tag for JS and `<style>` tag for CSS. These tags should be in a single file.
 
 If you have the knowledge of building Vue.js apps this should be a breeze.
@@ -200,7 +206,7 @@ It has the SFC structure like vue. Add the following code to the HTML part of th
   </div>
 </template>
 ```
-We are intending to display the name of a country in the root page. In the script, add the following code.
+We intend to display the name of a country in the root page. In the `<script>`, add the following code.
 ```javascript
     export default {
       name: "Country",
@@ -211,7 +217,7 @@ We are intending to display the name of a country in the root page. In the scrip
       }
     }
 ```
-The style tag should remain as it is. Now in the index.vue file in the `pages` folder import the County component. The script tag should be like below.
+The `<style>` tag should remain as it is. Now in the index.vue file in the `pages` folder import the `Country` component. The `<script>` tag should be as shown below.
 ```javascript
 import Country from "../components/Country";
 export default {
@@ -229,7 +235,7 @@ The html part should look like below
   </q-page>
 </template>
 ```
-The name of the country, `Kenya`, appears at the top left of the app. This is how simple it is to create a component. It can also be reused in other components.
+The name of the country, "Kenya", appears at the top left of the page. This is how simple it is to create a component. It can also be reused in other components.
 
 
 ### Pros of Choosing Quasar
@@ -238,15 +244,17 @@ The following are some of the pros of choosing Quasar framework
 
 #### 1. Support for multiple platforms
 
-This is the most exciting feature of Quasar, it has support builds for multiple platforms using only one codebase. This is a very huge advantage since it saves on costs of application development and time. It supports builds for single-page applications, progressive web applications, server-side rendering, mobile apps (Ios and android) using cordova or capacitor,  multi-platform desktop apps using electron and browser extensions
+This is the most exciting feature that comes with Quasar. It has support builds for multiple platforms using only one codebase. 
+
+This is a very huge advantage since it saves on costs of application development and time. It supports builds for single-page applications, progressive web applications, etc.
 
 #### 2. Faster to get up to speed.
 
-Although Quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), [electron](https://www.electronjs.org/), [nodejs](https://nodejs.org/en/) and [vuejs](https://vuejs.org/), you'll will only need to learn Vue which has a short learning curve. The other technologies are all integrated and configured in Quasar, thus, there are no requirements for you to know them. In addition, it has one of the best-detailed documentations around.
+Although Quasar comes with a lot of technologies to make it a whole, such as [webpack](https://webpack.js.org/), [cordova](https://cordova.apache.org/), [capacitor](https://capacitorjs.com/), etc. You'll will only need to learn Vue which has a shallow learning curve. The other technologies are all integrated and configured in Quasar. Thus, there are no requirements for you to know them. In addition, it has one of the best-detailed documentations around.
 
 #### 3. Treeshaking automatically
 
-With treeshaking you can import only components that you need in your app. Quasar provides treeshaking out-of-the-box. Remember during the installation of the hello-world-app we were prompted to `Pick a Quasar components & directives import strategy`? We selected the first.
+With treeshaking you can import only the needed components in your app. Quasar provides treeshaking out-of-the-box. Remember during the installation of the `hello-world-app` we were prompted to `Pick a Quasar components & directives import strategy`? We selected the first.
 ```bash
 ❯ * Auto-import in-use Quasar components & directives
     - also treeshakes Quasar; minimum bundle size
@@ -273,10 +281,10 @@ Quasar comes with over 40 language packs out-of-the-box.
 
 #### 1. It is developed by only one person.
 
-The only drawback is it was developed by one person. Which may cause developers to rethink the framework's future.
+The only drawback is it was developed by one person. This may cause developers to rethink of the framework's future.
 
 ### Conclusion
-We've just created a simple app with Quasar framework, you can create even bigger enterprise applications with it. Quasar tends to bring a better development environment and argues that not everything should be done like in the last decades.
+We've just created a simple app with Quasar framework. You can create even bigger enterprise applications with it. Quasar tends to bring a better development environment and argues that not everything should be done like in the last decades.
 If you are a total beginner to Vue and reactive UI libraries and want a good tutorial, I recommend you take a look at [Vue and Quasar video tutorials by Danny](https://www.youtube.com/watch?v=GV-D85D9KJQ&ab_channel=MakeAppswithDanny).
 
 That is it.
