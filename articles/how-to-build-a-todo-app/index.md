@@ -1,4 +1,7 @@
 # How to build A Todo app with Flutter
+![hero image](/engineering-education/how-to-build-a-todo-app/hero.jpg)
+[Source](https://unsplash.com/photos/2JknzBYDu6k)
+
 ### Table of contents 
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
@@ -11,15 +14,15 @@
 - [Further Reading](#further-reading)
 
 ### Introduction
-Over the years software developers have used frameworks to build apps for android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
+Over the years software developers have used frameworks to build apps for android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
 
-In this article we will use flutter to build a **To-do list** app. 
+In this article, we will use flutter to build a **To-do list** app. 
 
 ### Prerequisites
-To better understand this article, the reader is expected to have a foundational knowlegde of object-oriented programing languages such as Java, C++, etc. 
+To better understand this article, the reader is expected to have a foundational knowledge of object-oriented programing languages such as Java, C++, etc. 
 
 ### Goals
-At the end of this this article, the reader is expected to be familiar with: 
+At the end of this article, the reader is expected to be familiar with: 
 - Creating a basic flutter application.
 - Flutter and dart Packages.
 - Flutter widgets,
@@ -27,12 +30,12 @@ At the end of this this article, the reader is expected to be familiar with:
 
 The **TODO List** app will look like the screenshot below. 
 
-![Final Project](/engineering-education/how-to-build-a-todo-app/our-final-todo-app.png)
+![Final Project](/engineering-education/how-to-build-a-todo-app/final.jpg)
 
 **To-do list app built using flutter**
 
 ### Requirements
-In this tutorial we will be using the flutter SDK which can be downloaded at [documentation for installation](https://flutter.dev/docs/get-started/install) and VS Code text editor [download VS code](https://code.visualstudio.com/download).
+In this tutorial, we will be using the flutter SDK which can be downloaded at [installation documentation](https://flutter.dev/docs/get-started/install) and VS Code text editor [download VS code](https://code.visualstudio.com/download).
 On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
 
 ```
@@ -44,18 +47,18 @@ flutter run
 ```
 We will be using a smartphone to run the app, follow this link to learn how to run flutter on a physical device [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it takes a little time to load, but after running Your app will be the flutter default app which will look like the screengrab below.
 
-![Flutter Default App](/engineering-education/how-to-build-a-todo-app/default-flutter-app.png)
+![Flutter Default App](/engineering-education/how-to-build-a-todo-app/default.jpg)
 
 
 **Flutter default after running any app for the first time**
 
 Go to the `main.dart` file which is in the lib directory. Change the default code to the snippet shown in the below picture.
 
-![Stateless Widget](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.png)
+![Stateless Widget](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
 
 After running the app you will notice an empty canvas with the title To-do-List. let us look at the code.
 
-![Stateless Widget Code](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.png)
+![Stateless Widget Code](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
 
 ### Flutter Packages
 On the first line, we imported a flutter package named Material.dart (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app So instead of building some features from scratch just go pub.dartlang.org , search for a package that will perform that feature you want to build, and incorporate it into your app this will save a lot of time for you as a developer. As you continue with flutter you will use a lot of packages.
@@ -75,39 +78,39 @@ A stateless widget is a widget whose state cannot be changed once it’s built. 
 A to-do app will always have to-do items added and remove, to achieve this we will need to implement a stateful widget.
 
 ### Stateful Widget
-This type of widget is dynamic. This means it can change its appearance when it recieves data or change apearance in response to events triggered.
+This type of widget is dynamic. This means it can change its appearance when it receives data or change appearance in response to events triggered.
 
  Edit your code to match the one in the picture below.
 
-![Stateful Widget](/engineering-education/how-to-build-a-todo-app/stateful-widget-picture.png)
+![Stateful Widget](/engineering-education/how-to-build-a-todo-app/stateful.jpg)
   
 You should notice that our stateful widgets class TodoList has two classes this is to enable us to update our to-do list without losing our data.
 Now, let us add functionality to the state class. Add the below code to your state.
 
-![Code Picture](/engineering-education/how-to-build-a-todo-app/list-and-text-editing-controller.PNG)
+![Code Picture](/engineering-education/how-to-build-a-todo-app/listText.jpg)
 
 This code final List<String> _todoList = <String>[];. Enable us save data into our app. While 
 final TextEditingController _textFieldController = TextEditingController();
 Is enabling us have a text field for items input. 
 Next, update your code to the one below
 
-![addTodoItem Function](/engineering-education/how-to-build-a-todo-app/addTodoItem-function.PNG)
+![addTodoItem Function](/engineering-education/how-to-build-a-todo-app/function.jpg)
 
 The _addtodoItems function is responsible for saving items into _todolist.
 Update your code again to match the one below.
 
-![ListTile Widget](/engineering-education/how-to-build-a-todo-app/list-tile-widget.png)
+![ListTile Widget](/engineering-education/how-to-build-a-todo-app/listTile.jpg)
 
 the Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
-![DisplayDialog](/engineering-education/how-to-build-a-todo-app/display-dialog.png)
+![DisplayDialog](/engineering-education/how-to-build-a-todo-app/displayDialog.jpg)
 
 The alert dialog tells the user about situations that require confirmation. We are going to use the alert box to collect todo Items.
 To run the code we would have to update the build widget code to the one below.
 
 
-![Build Image](/engineering-education/how-to-build-a-todo-app/build-widget.png)
+![Build Image](/engineering-education/how-to-build-a-todo-app/build.jpg)
 
 Your complete code should look the one below:
 
@@ -201,10 +204,9 @@ class _TodoListState extends State<TodoList> {
 ```
 
 ### Conclusion
+Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. 
 
-Now we have a simple To-do app that enable us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. 
-
-To sumarize, we learned:
+To summarize, we learned:
 - How to create a flutter app
 - about Stateless and Stateful Widget 
 - about flutter packages 
@@ -214,3 +216,8 @@ To sumarize, we learned:
 - [Dart Object](https://bezkoder.com/category/dart/)
 - [Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
 - [Emulator Settings](https://flutter.dev/docs/development/ui/widgets)
+
+### About the Author
+![Build Image](/engineering-education/how-to-build-a-todo-app/author.jpg)
+
+Nathaniel Dauda Wobin is a Mobile app developer with a degree in physics from Kaduna State University. He builds most of his projects using flutter and django.
