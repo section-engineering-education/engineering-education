@@ -39,14 +39,14 @@ Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The 
 
 ```js
    // import express package(commonJS syntax)
-    const express = require('express')
-      
-    //instatiate the express app  
-    const app = express()
-   
-    const PORT = process.env.PORT || 5000
-   //Listen for incoming requests
-    app.listen(PORT, ()=> console.log(`server started, listening PORT ${PORT}`))
+   const express = require('express')
+
+   // instatiate the express app  
+   const app = express()
+
+   const PORT = process.env.PORT || 5000
+   // Listen for incoming requests
+   app.listen(PORT, () => console.log(`server started, listening PORT ${PORT}`))
 ```
 
 This starter code imports the express package. The `app = express()` creates an instance of our application.
@@ -62,8 +62,11 @@ const mongoose = require('mongoose')
 // declare a Database string URI
 const DB_URI = 'mongodb://localhost:27017/urlshortener'
 
-//establishing a database connection
-mongoose.connect(DB_URI,{useNewUrlParser:true, useUnifiedTopology:true}) 
+// establishing a database connection
+mongoose.connect(DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 const connection = mongoose.connection
 
@@ -83,14 +86,17 @@ const mongoose = require('mongoose')
 
 // instantiate a mongoose schema
 const URLSchema = new mongoose.Schema({
-    urlCode: String, 
+    urlCode: String,
     longUrl: String,
     shortUrl: String,
-    date:{type: String, default: Date.now}
+    date: {
+        type: String,
+        default: Date.now
+    }
 })
 
 // create a model from schema and export it
-module.exports = mongoose.model('Url',URLSchema)
+module.exports = mongoose.model('Url', URLSchema)
 ```
 
 To create a model, we need to create a schema interface by importing the mongoose npm package. The `mongoose.Schema` method is instantiated to define with and object argument. This object takes the values that our MongoDB document will store. The values include:
@@ -125,41 +131,44 @@ const router = express.Router()
 // import the Url database model
 const Url = require('../models/Url')
 
-//@route    POST /api/url/shorten
-//@description     Create short URL
+// @route    POST /api/url/shorten
+// @description     Create short URL
 
 // The API base Url endpoint
 const baseUrl = 'http:localhost:5000'
 
-router.post('/shorten', async(req,res)=>{
-    const {longUrl} = req.body // destructure the longUrl from req.body.longUrl
-    
-    //check base url if valid using the validUrl.isUri method
-    if(!validUrl.isUri(baseUrl)){
+router.post('/shorten', async (req, res) => {
+    const {
+        longUrl
+    } = req.body // destructure the longUrl from req.body.longUrl
+
+    // check base url if valid using the validUrl.isUri method
+    if (!validUrl.isUri(baseUrl)) {
         return res.status(401).json('Invalid base URL')
     }
-    
+
     // if valid, we create the url code
     const urlCode = shortid.generate()
-    
-    //check long url if valid using the validUrl.isUri method
-    if(validUrl.isUri(longUrl)){
-        try{
+
+    // check long url if valid using the validUrl.isUri method
+    if (validUrl.isUri(longUrl)) {
+        try {
             /* The findOne() provides a match to only the subset of the documents 
             in the collection that match the query. In this case, before creating the short URL,
             we check if the long URL was in the DB ,else we create it.
             */
-            let url = await Url.findOne({longUrl})
-            
+            let url = await Url.findOne({
+                longUrl
+            })
+
             // url exist and return the respose
-            if(url){
+            if (url) {
                 res.json(url)
-            }
-            else{
-            // join the generated short code the the base url
-                const shortUrl = baseUrl + '/'+ urlCode
-                
-             // invoking the Url model and saving to the DB
+            } else {
+                // join the generated short code the the base url
+                const shortUrl = baseUrl + '/' + urlCode
+
+                // invoking the Url model and saving to the DB
                 url = new Url({
                     longUrl,
                     shortUrl,
@@ -171,12 +180,11 @@ router.post('/shorten', async(req,res)=>{
             }
         }
         // exception handler
-        catch(err){
+        catch (err) {
             console.log(err)
             res.status(500).json('Server Error')
         }
-    }
-    else{
+    } else {
         res.status(401).json('Invalid longUrl')
     }
 })
@@ -200,22 +208,23 @@ const Url = require('../models/Url')
 
 // @route       GET /:code
 // @description    Redirect to the long/original URL 
-router.get('/:code', async(req, res)=>{
-    try{
-    // find a document match to the code in req.params.code
-        const url = await Url.findOne({urlCode: req.params.code})
-        if(url){
-        // when valid we perform a redirect
+router.get('/:code', async (req, res) => {
+    try {
+        // find a document match to the code in req.params.code
+        const url = await Url.findOne({
+            urlCode: req.params.code
+        })
+        if (url) {
+            // when valid we perform a redirect
             return res.redirect(url.longUrl)
-        }
-        else{
-        // else return a not found 404 status
+        } else {
+            // else return a not found 404 status
             return res.status(404).json('No URL Found')
         }
 
     }
     // exception handler
-    catch(err){
+    catch (err) {
         console.error(err)
         res.status(500).json('Server Error')
     }
@@ -231,15 +240,17 @@ Let us now understand the above code. To set up a router in express, we need to 
 
 ```js
 const express = require("express")
-const app= express()
+const app = express()
 
 // Database config
-const connection =  require('./config/db')
-connection.once('open', ()=>console.log('DB Connected'))
-connection.on('error', ()=>console.log('Error'))
+const connection = require('./config/db')
+connection.once('open', () => console.log('DB Connected'))
+connection.on('error', () => console.log('Error'))
 
 // Routes Config
-app.use(express.json({extended: false})) //parse incoming request body in JSON format.
+app.use(express.json({
+    extended: false
+})) //parse incoming request body in JSON format.
 app.use('/', require('./routes/redirect'))
 app.use('/api/url', require('./routes/url'))
 
