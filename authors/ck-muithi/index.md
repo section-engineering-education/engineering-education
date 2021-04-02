@@ -1,5 +1,5 @@
 ---
-title: ck muithi
+title: Ck Muithi
 type: engineering-education/author
 Github: https://github.com/calebroHQ
 ---
