@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.jpg
+  - url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.png
     alt: How to upload files to AWS S3 using Django framework example image
 ---
 
