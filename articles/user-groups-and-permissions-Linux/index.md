@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/user-groups-and-permissions-Linux/hero.jpg
+  - url: /engineering-education/user-groups-and-permissions-Linux/hero.png
     alt: User groups and permissions in Linux image
 ---
 
