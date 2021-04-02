@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/face-detection-matlab/hero.jpg
     alt: Face detection example image
 ---
-Face detection is the ability to distinguish faces from non-face objects in an image or a video. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces. Despite being an outdated framework, the Viola-Jones algorithm is quite powerful, robust, and faster. Therefore, it is found exceptionally notable in real-time face detection. In this article, we will look at how to use the Viola-Jones algorithm to detect faces in real-time.
+Face detection is the ability to distinguish faces from non-face objects in an image or a video. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces. Viola-Jones algorithm is robust, powerful, and faster despite being outdated. In this article, we will look at how to use the Viola-Jones algorithm to detect faces in real-time.
 <!--more-->
 ### Prerequisites
 1. Have [Matlab](https://www.mathworks.com/downloads/) installed on your computer.
@@ -23,20 +23,20 @@ Face detection is the ability to distinguish faces from non-face objects in an i
 ### Need for face detection
 There are several projects which require human faces as the primary input for their implementation. The projects include;
 1. Face recognition.
-2. Face recognition based security systems and attendance systems.
+2. Face recognition-based security systems and attendance systems.
 3. Facial expression recognition.
 4. Mood analysis based on facial expression, and many more.
 
 ### Viola-Jones algorithm
-Viola-Jones algorithm was developed by Paul Viola and Michael Jones in 2001. It is an object recognition framework that allows the detection of human faces. The algorithm has four stages
+Paul Viola and Michael Jones developed the Viola-Jones algorithm in 2001. It allows the detection of human faces. The algorithm has four stages
 1. Haar-like features selection.
 2. Creating an integral image.
 3. Adaboost training.
 4. Cascading classifiers.
    
-MATLAB has the `vision.CascadeObjectDetector` which has the viola-jones algorithm to detect faces/objects and it is found in the computer toolbox. The `cascadeObjectDetector` can be used to detect people’s faces, nose, eyes, mouth, and upper body. The `vision.CascadeObjectDetector` system object comes with several pre-trained classifiers for detecting frontal faces, profile faces, noses, eyes, and upper body.
+MATLAB has the `vision.CascadeObjectDetector` which has the viola-jones algorithm to detect faces/objects and it is found in the computer toolbox. The `cascadeObjectDetector` can be used to detect people’s faces, nose, eyes, mouth, and upper body. The `vision.CascadeObjectDetector` system object is bundled with several pre-trained classifiers for detecting frontal faces, profile faces, noses, eyes, and upper body.
 
-However, these classifiers are not always sufficient for a particular application. The computer vision toolbox provides a facility to train a custom classifier on an image database.
+Although, these classifiers are not always sufficient for a particular application. The custom classifier can be trained on an image database through the computer vision toolbox.
 
 Run the command below to verify if computer vision toolbox is installed on your computer.
 ```matlab
@@ -44,14 +44,14 @@ Run the command below to verify if computer vision toolbox is installed on your 
 >> setdiff({v.name},'MATLAB')'
 ```
 when this code is executed, it shows all the installed Matlab toolboxes. If it doesn't have the computer vision toolbox;
-- Click on the `adds-ons` dropdown menu and select `get more apps`. A new window is opened in your browser.
+- Click on the `adds-ons` dropdown menu and select `get more apps`. A new tab is opened in your browser.
 - Click on the search box and write `computer vision toolbox`.
 - Once the search is done, select `Computer Vision Toolbox Interface for Open CV in MATLAB` and click on the download button.
-- Once download is done, install the package and this requires that you `login` into your mathwork account. If you don't have one, click on the `create an account` button.
-- Follow the steps to install the package.
+- Once the download is done, install the package and this requires that you `login` into your mathwork account. Click on the `create account` button if you do not have an account.
+- Follow the instructions to install the package.
   
-To detect facial features or upper body in an image,
-1. Create the `vision.CascadeObjectDetector` object and set it's properties.
+For facial or upper body image detection,
+1. Create the `vision.CascadeObjectDetector` object and set its properties.
 2. Call the object with the argument as if it were a function.
 
 The image that will be used to detect faces can either be read directly or chosen from the files depending on the user preference. When you add the image directly by using the `imshow` command, it will display the detected face.
@@ -59,7 +59,7 @@ The image that will be used to detect faces can either be read directly or chose
 ```Matlab
 Imshow(‘engineers.jpg’)
 ```
-At the moment, you don’t need to add the image directly since there could be many images to be used for detection. In this case, you choose the image from files. For this, you use the code below;
+At the moment, you don’t need to add the image directly since there could be many images to be used for detection. In this case, you choose the image from the files. For this, you use the code below;
 ```Matlab
 [filename,filepath] = uigetfile('*.*','select an image');
 ```
@@ -99,7 +99,7 @@ if ~isempty(bboxes)
     title('detected faces')
 ```
 
-The second condition is if the face is not detected. We insert text at the `location [0 0]` which is the `x-axis`, and the `y-axis`, with the label ‘no faces detected’. you can change the font-size and opacity of the box of this text and display the image. Here is the code;
+The second condition is if the face is not detected. We insert text at the `location [0 0]` which is the `x-axis`, and the `y-axis`, with the label ‘no faces detected’. you can change the font size and opacity of the box of this text and display the image. Here is the code;
 
 ```matlab
 else
@@ -137,7 +137,7 @@ when we use an image that has no face, the following is displayed on our figure 
 ![Building](/engineering-education/face-detection-matlab/building.png)
 
 ### figure
-This code can also be used to detect eyes, mouth, and nose. You only need to change the names, i.e. replace face with nose. You need to vary the MergeThreshold for accuracy.
+This code can also be used to detect eyes, mouth, and nose. You only need to change the names, i.e. replace face with a nose. You need to vary the MergeThreshold for accuracy.
 
 ### Conclusion
 Viola-jones algorithm is the best algorithm for face object detection in real-time. It is accurate and fast and that makes it efficient for use in the detection process. 
