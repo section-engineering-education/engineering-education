@@ -4,11 +4,11 @@ Have you ever wanted to implement biometric two-factor authentication in your Dj
 
 TypingDNA is a two-factor authentication API that easily integrates biometrics authentication to secure user accounts on your website using powerful typing analysis. TypingDNA typically helps you learn a user’s typing pattern, match them, and then use it to authenticate users after login. This double user verification is what is known as a “two-factor authentication”.
 
-This article shows a step-by-step guide to integrating TypingDNA services into a Django web application. To learn more, visit their official website [TypingDNA](https://www.typingdna.com)
+This article shows a step-by-step guide to integrating TypingDNA services into a Django web application. To learn more, visit their official website [TypingDNA](https://www.typingdna.com).
 
 ### Signing Up with TypingDNA
 
-To get started, we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below.
+To get started, we need to create an account on their website at [TypingDNA](https://www.typingdna.com/clients/signup). After we have finished creating and setting up our account, we should see a page like the one in the image below.
 
 ![Signup-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/signup-page.png)
 
@@ -26,9 +26,7 @@ To build our Django application, we need to develop the frontend and the backend
 
 ```bash
 git clone https://github.com/Nomzy-kush/mine.git
-
 cd typingdnavideoplayer
-
 ```
 
 Below is the project structure.
@@ -39,19 +37,14 @@ We need to install the `requests` module required by our project to interact wit
 
 Execute the command below to install Django and requests into our project.
 ```
-
 pip install requests
-
 pip install django
-
 ```
 
 Run the application to ensure all configurations are working. Execute the command below to start the development server.
 
 ```
-
 python manage.py runserver
-
 ```
 
 ![application-running](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/application-running.png)
@@ -73,51 +66,25 @@ After downloading and placing our files in the proper directories, we need to mo
 
 
 ```python
-
 from django.db import models
-
 from django.shortcuts import reverse
-
 from django.contrib.auth.models import User
-
 # Create your models here.
-
-
-
-
 class Video(models.Model):
-
     title= models.TextField()
-
     summary= models.TextField()
-
     image= models.ImageField()
-
     file = models.FileField(blank=True,null=True)
-
     link = models.CharField(max_length=200,blank=True,null=True)
-
     user=models.ForeignKey(User, null=True,blank=True, on_delete=models.CASCADE)
-
     slug = models.SlugField()
-
     paginate_by = 2
-
-
     def __str__(self):
-
         return self.title
-
-
     def get_absolute_url(self):
-
         return reverse("App:details", kwargs={
-
             'slug': self.slug
-
         })
-
-
 ```
 
 
@@ -126,69 +93,35 @@ class Video(models.Model):
 Next, we need to create a `UserProfile` table to verify captured typing patterns containing extra details for TypingDNA authentication users in our database. Update the `models.py` file with the code below:
 
 ```python
-
 from django.db import models
-
 from django.shortcuts import reverse
-
 from django.contrib.auth.models import User
-
 ### Create your models here.
-
-
-
-
 class Video(models.Model):
-
     title= models.TextField()
-
     summary= models.TextField()
-
     image= models.ImageField()
-
     file = models.FileField(blank=True,null=True)
-
     link = models.CharField(max_length=200,blank=True,null=True)
-
     user=models.ForeignKey(User, null=True,blank=True, on_delete=models.CASCADE)
-
     slug = models.SlugField()
-
     paginate_by = 2
-
-
     def __str__(self):
-
         return self.title
-
-
     def get_absolute_url(self):
-
         return reverse("App:details", kwargs={
-
             'slug': self.slug
-
         })
-
-
 class UserProfile(models.Model):
-
     user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
-
     private_key = models.TextField()
-
-
-
 ```
 
 After updating the `models.py` file with the code above, we need to run migrations for the database. Execute the command below to make database migrations.
 
 ```
-
 python manage.py makemigrations
-
 python manage.py migrate
-
 ```
 
 We should see the results below if our migrations ran successfully.
@@ -199,28 +132,18 @@ Let’s edit the `videos` view in the `views.py` file with the following code sn
 
 
 ```python
-
 def videos(request):
-
     paginator= Paginator(Video.objects.filter(user=request.user),2)
-
     page_number = request.GET.get('page')
-
     page_obj = paginator.get_page(page_number)
-
     context={"page_obj":page_obj}
-
     return render(request,"videos.html",context)
-
 ```
 We need to update the `register` view to create new `UserProfile` objects for every registered user. To do this, edit the `register` view by entering the code snippet below after the line with `user.save`:
 
 ```python
-
 userprofile=UserProfile.objects.create(user=user)
-
 userprofile.save()
-
 ```
 ### The TypingDNA Check User Endpoint
 
@@ -231,39 +154,22 @@ The TypingDNA API [Check User](https://api.typingdna.com/index.html%23api-API_Se
 For the `login` view in our `views.py` file, we need to create a variable in our session to check whether TypingDNA verified the current user session or not. Update your `login` view with the code snippet below:
 
 ```python
-
 def login(request):
-
     if request.method == 'POST':
-
         username = request.POST.get('username')
-
         password = request.POST.get('password')
-
         user = auth.authenticate(username=username, password=password)
-
         if user is not None:
-
             auth.login(request, user)
-
             if 'user' in request.session:
-
                 return redirect("App:videos")
-
             else:
-
                 return redirect("App:verify")
-
         else:
-
             context={"message":"Invalid login credentials"}
-
             return render(request,"login.html",context)
-
     else:
-
         return render(request,"login.html")
-
 ```
 ### Enrolling Users Typing Patterns
 
@@ -285,13 +191,9 @@ The enrollment page allows users to register their typing patterns to TypingDNA 
 
 
 <style>
-
  body {
-
 background-color: #b2beb5
-
 }
-
 </style>
 
 <div class="container">
@@ -362,15 +264,12 @@ background-color: #b2beb5
     </div>
 
 <script src="{% static 'typingdna.js' %}">
-
     </script>
 
     <script src="{% static 'autocomplete-disabler.js' %}">
-
     </script>
 
     <script src="{% static 'typing-visualizer.js' %}">
-
     </script>
 
 
@@ -387,17 +286,11 @@ Add the code snippet below right after the line where we imported TypingDNA in t
 ```html
 
 <script>
-
   var typingdna = new TypingDNA();
-
       var auto_complete_disabler = new AutocompleteDisabler({
-
         showTypingVisualizer: true,
-
         showTDNALogo: true
-
       });
-
 </script>
 
 ```
@@ -408,70 +301,35 @@ Next, create a variable to store our users’ captured typing patterns and a fun
 ```html
 
   <script>
-
   var typingdna = new TypingDNA();
-
   var auto_complete_disabler = new AutocompleteDisabler({
-
     showTypingVisualizer: true,
-
     showTDNALogo: true
-
   });
-
   var typing_patterns = [];
-
-
   function beginAuthentication() {
-
     document.getElementById("failed-auth").style.display = "none";
-
     document.getElementById("auth-text").value = "";
-
     TypingDNA.stop();
-
-
     let typing_pattern = tdna.getTypingPattern({
-
       type: 1,
-
       text: "I am authenticated by the way I type"
-
     });
-
-
     if (typing_pattern == null) {
-
       document.getElementById("failed-auth").style.display = "block";
-
     } else {
-
       typing_patterns.push(typing_pattern);
-
-
       if (typing_patterns.length == 3) {
-
         let tp = typing_patterns[0] + ";" + typing_patterns[1] + ";" + typing_patterns[2];
-
         document.getElementById("tp").value = tp;
-
         document.forms[0].submit();
-
       } else {
-
         alert("Successfully logged typing pattern, please type the text again to improve accuracy");
-
       }
-
     }
-
-
     TypingDNA.reset();
-
     TypingDNA.start();
-
   }
-
 </script>
 
 ```
@@ -500,74 +358,36 @@ For our Django app to interact with the TypingDNA API, we need to create a helpe
 
 
 ```Python
-
 import base64
-
 import hashlib
-
 import requests
-
-
-
 class TypingDNA:
-
     def __init__(self, apiKey, apiSecret):
-
         self.apiKey = apiKey
-
         self.apiSecret = apiSecret
-
         self.base_url = "https://api.typingdna.com"
-
-
         authstring = f"{apiKey}:{apiSecret}"
-
         self.headers = {
-
             "Authorization": "Basic " + base64.encodebytes(authstring.encode()).decode().replace("\n", ""),
-
             "Content-Type": "application/x-www-form-urlencoded"
-
         }
-
-
     def auto(self, id, tp, custom_field=None):
-
         url = f"{self.base_url}/auto/{id}"
-
         data = {
-
             "tp": tp,
-
             "custom_field": custom_field
-
         }
-
         return requests.post(url, headers=self.headers, data=data)
-
-
     def check_user(self, id, user_type=None, text_id=None, custom_field=None):
-
         url = f"{self.base_url}/user/{id}"
-
         params = {
-
             "type": user_type,
-
             "text_id": text_id,
-
             "custom_field": custom_field
-
         }
-
         return requests.get(url, headers=self.headers, params=params)
-
-
     def hash_text(self, text):
-
         return hashlib.sha1((text + text[::-1]).encode()).hexdigest()
-
-
 ```
 
 TypingDNA requires a user ID to save typing patterns to a user, so we created a `hash_text` method to hash the user’s ID before sending.
@@ -577,54 +397,33 @@ TypingDNA requires a user ID to save typing patterns to a user, so we created a 
 After building our helper library, we can start saving our users’ typing patterns in our accounts for future matching. Let’s first import the helper library class into our Django application and create an instance of our helper class by supplying the `apiKey` and `apiSecret` we saved from our TypingDNA dashboard earlier.
 
 ```Python
-
 from . typingdnahelper import TypingDNA
-
-
 tdna = TypingDNA("apiKey", "apiSecret")
-
 ```
 The image below shows `views.py` importations.
 
 ![import](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/import.png)
 
-Update the `enroll` view with the code smippet below to save the patterns received in the dashboard.
+Update the `enroll` view with the code snippet below to save the patterns received in the dashboard.
 
 
 ```python
-
 def enroll(request):
-
     if request.method=="POST":
-
         tp = request.POST.get("tp")
-
         username = request.session["reg_user"]["username"]
-
         r = tdna.auto(tdna.hash_text(username), tp)
-
         if r.status_code == 200:
-
             user=UserProfile.objects.get(user=User.objects.get(username=username))
-
             user.typingdna_secured=True
-
             user.save()
-
             request.session["typingdna_auth"] = True
-
             messages.add_message(request, messages.INFO,"You have successfully registered TypingDNA 2FA", "success")
-
             return redirect("App:videos")
-
         else:
-
             messages.add_message(request, messages.INFO,r.json()["message"], "danger")
-
             return redirect("App:enroll")
-
     return render(request,"enroll.html")
-
 ```
 In the code above, we collected the user’s typing pattern and stored it in the `tp` variable. We then requested the `auto` endpoint of the TypingDNA API to verify if the typing pattern provided matches the typing patterns enrolled for that user. We then checked if the status code of the request was successful (status code 200). If this were the case, we would update the user data in our database to indicate they have been enrolled. Then we will mark the current logged-in session as authenticated with `session["typingdna_auth"] = True` then redirect the user to their dashboard. However, if the authentication was unsuccessful (due to an error from TypingDNA), we will prompt the error message to the user and let them retry the enrollment process.
 
@@ -658,13 +457,9 @@ Now we are going to build the verification page where we will verify user identi
 
 
 <style>
-
  body {
-
 background-color: #b2beb5
-
 }
-
 </style>
 
 <div class="container">
@@ -733,15 +528,12 @@ background-color: #b2beb5
     </div>
 
     <script src="{% static 'typingdna.js' %}">
-
     </script>
 
     <script src="{% static 'autocomplete-disabler.js' %}">
-
     </script>
 
     <script src="{% static 'typing-visualizer.js' %}">
-
     </script>
 
 ```
@@ -762,54 +554,28 @@ Add the code below right after the TypingDNA importation in the `enroll.html` pa
 ```html
 
 <script>
-
   var typingdna = new TypingDNA();
-
       var auto_complete_disabler = new AutocompleteDisabler({
-
         showTypingVisualizer: true,
-
         showTDNALogo: true
-
       });
-
-
       function beginAuthentication() {
-
         document.getElementById("failed-auth").style.display = "none";
-
         document.getElementById("auth-text").value = "";
-
         TypingDNA.stop();
-
-
         let typing_pattern = typingdna.getTypingPattern({
-
           type: 1,
-
           text: "I am authenticated by the way I type"
-
         });
-
-
         if (typing_pattern == null) {
-
           document.getElementById("failed-auth").style.display = "block";
-
           TypingDNA.reset();
-
           TypingDNA.start();
-
         } else {
-
           document.getElementById("tp").value = typing_pattern;
-
           document.forms[0].submit();
-
         }
-
       }
-
 </script>
 
 ```
@@ -820,39 +586,22 @@ When the user’s typing pattern has been captured, we check if the capturing wa
 Update our `verify` view to capture and verify the submitted user typing pattern with the `auto` endpoint in the TypingDNA API.
 
 ```Python
-
 def verify(request):
-
     if request.method == "POST":
-
         tp = request.POST.get("tp")
-
         username = request.user.username
-
         r = tdna.auto(tdna.hash_text(username), tp)
-
         if r.status_code == 200:
-
             if r.json()["result"] == 1:
-
                 request.session["typingdna_auth"] = True
-
                 return redirect("App:videos")
-
             else:
-
                 messages.add_message(request, messages.INFO,"You failed the TypingDNA verification check, please try again", "danger")
-
                 return redirect("App:verify")
-
         else:
-
             messages.add_message(request, messages.INFO,r.json()["message"], "danger")
-
             return redirect("App:verify")
-
     return render(request,"verify.html")
-
     ```
 In the python code above, we checked if the request sent from the frontend is a POST request. If this was the case, we proceeded to capture the POST request for `tp`, which was the typing pattern recorded, and setting `username` to the current user. We are using the username as the user ID, which automatically does the authentication required. We then make a request to the TypingDNA `auto` method while sending the user ID of the current user and the collected typing pattern `tp`. The `auto` method then returns a `status code 200` if the verification is successful or returns an error message if verification is unsuccessful. If the verification is successful, we set `typingdna_auth` in the session to True and redirect the user to the `videos` page. However, if verification is unsuccessful, we display an error message from the `auto` endpoint on the `verify` page.
 
@@ -874,13 +623,9 @@ Create a new file named `verify-email.html` in the templates folder and add the 
 
 
 <style>
-
  body {
-
 background-color: #b2beb5
-
 }
-
 </style>
 
 <div class="container">
@@ -957,25 +702,14 @@ background-color: #b2beb5
 We need to create a `tokens.py` file which we will use to generate the magic link for verification. Create a `tokens.py` file and add the following python code snippet.
 
 ```python
-
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
-
 from django.utils import six
-
-
 class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
-
     def _make_hash_value(self, user, timestamp):
-
         return (
-
             six.text_type(user.pk) + six.text_type(timestamp)
-
         )
-
-
 account_activation_token = AccountActivationTokenGenerator()
-
 ```
 #### Creating The Activation Token Page
 
@@ -1007,58 +741,34 @@ First, we need to import the required modules and libraries needed. Copy and pas
 
 
 ```python
-
 from django.views.generic import  View
-
 from . tokens import account_activation_token
-
 from django.contrib.sites.shortcuts import get_current_site
-
 from django.template.loader import render_to_string
-
 ```
 We need to create the activation token each time the user requests it on the `verify-email` page. Usually, we would send the activation link to the user’s email, but in this case, we would simply just display the link in our console. However, if you want to send the activation link to the user’s email, you will need to use Django’s SMTP module. You can learn more about it [here](https://docs.djangoproject.com/en/3.1/topics/email/).
 
 Update your `verify_email` function in the `views.py` file with the code below:
 
 ```python
-
 def verify_email(request):
-
     if request.method=="POST":
-
         name=request.POST.get("verify_email")
-
         if name=="true":
-
             context={"messages":"A link has been sent to your email"}
-
             current_site = get_current_site(request)
-
             message = render_to_string('activation.html', {
-
                 'user': request.user,
-
                 'domain': current_site.domain,
-
                 'uid': request.user.pk,
-
                 'token': account_activation_token.make_token(request.user),
-
                 })
-
             print(message)
-
             return render(request,"verify-email.html",context)
-
         else:
-
             context={"error":"true"}
-
             return render(request,"verify-email",context)
-
     return render(request,"verify-email.html")
-
 ```
 In the code snippet above, we checked if the request received from the frontend is a POST request. If this was the case, we proceed to collect the data in the POST request for `name` and then to check if the value is “true”. If this is the case, we create a message using the `render_to_string` function to send the activation token and other data required to the `activation_email` page to be rendered for the user to see. We created the token using the `make_token` method we imported from our `tokens.py` file, which will make the token using the username of the user.
 
@@ -1093,49 +803,25 @@ The activation token created for the user has to be verified after the user clic
 
 
 ```python
-
 class ActivateAccount(View):
-
-
     def get(self, request, uidb64, token, *args, **kwargs):
-
         try:
-
             uid = uidb64
-
             user = User.objects.get(pk=uid)
-
         except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-
             user = None
-
-
         if user is not None and account_activation_token.check_token(user, token):
-
             request.session["verify_email"]= True
-
             auth.login(request,user)
-
             return redirect('App:videos')
-
         else:
-
             context={"message":'The confirmation link was invalid, possibly because it has already been used.'}
-
             return render(request,'confirm.html',context)
-
 ```
 In the code snippet above, we created the `get` method, which receives the activation token clicked and collects the data required for verification from it. We then make a `try...except cache that checks if any errors in matching the `uid` passed with a user in the database. If there are no errors, the user is automatically logged in, and the “verify_email” in the session is set to True. However, if any problems are matching the `uid` with a user in the database, the user is set to “None” and the error message produced is sent to rendered in the `confirm.html` page.
-
-
-
 Finally, we need to create a new URL to handle verifications with the activation token. Add the following code to our `urlpatterns` in the`urls.py` file to verify activation token by the `ActivateAccount` class.
-
-
 ```python
-
 path('activate/<uidb64>/<token>/', views.ActivateAccount.as_view(), name='activate')
-
 ```
 The image below shows the result of navigating to a wrong, used, or timed-out activation token.
 
