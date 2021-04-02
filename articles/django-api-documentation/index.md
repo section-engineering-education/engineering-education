@@ -263,15 +263,17 @@ STATIC_URL = '/static/'
 Now that we have implemented the code required to generate documentation for our API, let us test it.
 
 **Note** Make sure the application is running.
-
+**Coreapi**
 On your browser, navigate to `http://127.0.0.1:8000/docs/` to view the coreapi documentation. 
 
 ![coreapi documentation](/engineering-education/django-api-documentation/coreapi.png)
 
+**Swagger**
 On your browser, navigate to `http://127.0.0.1:8000/swagger/` to view the swagger documentation.
 
 ![Swagger documentation](/engineering-education/django-api-documentation/swagger.png)
 
+**redoc**
 On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documentation.
 
 ![redoc documentation](/engineering-education/django-api-documentation/redoc.png)
