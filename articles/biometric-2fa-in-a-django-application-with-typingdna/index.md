@@ -842,3 +842,6 @@ After providing the details required for our video, we will click on save to sav
 While integrating TypingDNA with Django, we implemented two-factor authentication that uses biometrics in a Python web application with little to no effort. We also saw how easy it was to create and verify identities by analyzing user typing patterns using TypingDNA.
 
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/mine.git). Trying out TypingDNA for biometric authentication was very interesting, try implementing it in your applications.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
