@@ -8,7 +8,11 @@ This article shows a step-by-step guide to integrating TypingDNA services into a
 
 ### Signing Up with TypingDNA
 
-To get started, we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below. Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable.
+To get started, we need to create an account on their website at <https://www.typingdna.com/clients/signup>. After we have finished creating and setting up our account, we should see a page like the one in the image below.
+
+![Signup-page](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/signup-page.png)
+
+Copy your `api_key` and `secret_key` and store them somewhere they are safe and easily retrievable.
 
 ### Building Our Django Application
 
@@ -122,8 +126,7 @@ class Video(models.Model):
 
 
 
-Next, we need to create a `UserProfile` table for use our users to start verifying typing patterns captured typing patterns containing extra details for TypingDNA authentication users in our database. Update the `models.py` file with the code below:
-
+Next, we need to create a `UserProfile` table to verify captured typing patterns containing extra details for TypingDNA authentication users in our database. Update the `models.py` file with the code below:
 
 ```python
 
@@ -403,7 +406,7 @@ Add the code below right after where we imported TypingDNA in the `enroll.html` 
 ```
 ![autocomplete-disabler](/engineering-education/biometric-2fa-in-a-django-application-with-typingdna/autocomplete-disabler.png)
 
-Next, create a variable to store the captured typing patterns of our users and a function named `beginAuthentication` which will be triggered by the users when they enter the auth text.
+Next, create a variable to store our users’ captured typing patterns and a function named `beginAuthentication` triggered by the users when they enter the auth text.
 
 ```html
 
@@ -478,7 +481,7 @@ Next, create a variable to store the captured typing patterns of our users and a
 
 In the code above, we called the`beginAuthentication` function to stop recording the user’s keystrokes by calling the `TypingDNA.stop()`, which allows us to record and analyze the current typing pattern.
 
-We then captured the user’s typing pattern recorded using the `sametext` capture method provided by TypingDNA. There are other TypingDNA methods you can explore on their official docs here [https://api.typingdna.com/#api-capture-methods](https://api.typingdna.com/%23api-capture-methods).
+We then captured the user’s typing pattern recorded using the `sametext` capture method provided by TypingDNA. You can explore other TypingDNA methods on their official docs here [https://api.typingdna.com/#api-capture-methods](https://api.typingdna.com/%23api-capture-methods).
 
 After capturing the user’s typing pattern, we went ahead to verify if the typing pattern was captured successfully. If capturing was successful, we store the typing patterns in the `typing_patterns` variable we created earlier. However, if capturing was not successful, we display an error message reflected from TypingDNA.
 
@@ -753,7 +756,7 @@ This page is where users will be authenticated with their pre-registered typing 
 
 #### Verifying With TypingDNA
 
-After preparing our `verify.html` page, to start verifying typing patterns, we need to use the TypingDNA recorder, which will help us record typing patterns and match them. You can read more about recording typing patterns [here](https://www.typingdna.com/docs/how-to-record-typing-patterns.html).
+After preparing our `verify.html` page, we need to use the TypingDNA recorder to start verifying typing patterns, which will help us record typing patterns and match them. You can read more about recording typing patterns [here](https://www.typingdna.com/docs/how-to-record-typing-patterns.html).
 
  First, we will create two variables, `typingdna` and `auto_complete_dIsabler`, which are instances of the TypingDNA and AutocompleteDisabler classes. This will ensure that as soon as the user starts typing, he/she starts being recorded (as a history of keystroke events).
 
@@ -1022,7 +1025,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 
 ```
-We need to create the activation token now each time the user requests it on the `verify-email` page. Usually, we would send the activation link to the user’s email, but in this case, we would simply just display the link in our console. However, if you want to send the activation link to the user’s email, you will need to use Django’s SMTP module. You can learn more about it [here](https://docs.djangoproject.com/en/3.1/topics/email/).
+We need to create the activation token each time the user requests it on the `verify-email` page. Usually, we would send the activation link to the user’s email, but in this case, we would simply just display the link in our console. However, if you want to send the activation link to the user’s email, you will need to use Django’s SMTP module. You can learn more about it [here](https://docs.djangoproject.com/en/3.1/topics/email/).
 
 Update your `verify_email function` in the `views.py` file with the code below:
 
@@ -1163,5 +1166,8 @@ While integrating TypingDNA with Django, we implemented two-factor authenticatio
 The source code of our application is available on [Github](https://github.com/Nomzy-kush/mine.git). Trying out TypingDNA for biometric authentication was very interesting, and I can’t wait to see the amazing things you build with it!
 
 If you have any questions, don't hesitate to contact me on Twitter: [@DoroChurchill](https://twitter.com/DoroChurchill)
+
+
+
 
 
