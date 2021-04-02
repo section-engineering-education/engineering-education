@@ -12,54 +12,44 @@ In this tutorial, you will learn how to build telegram bots using node.js runtim
 ## Prerequisite
 Before you begin this guide you’ll need the following:
 
-1.node.js installed
-2.npm installed
-3.visual studio code installed
-4.Commandline use knowledge
-5.Telegram account
-
+1. [Node.js](https://nodejs.org/en/download/) installed
+2. npm installed
+3. [Visual Studio Code](https://code.visualstudio.com/download) installed
+4. Basic knowledge on using the CLI
+5. A [Telegram](https://telegram.org/) account 
 
 ## Setting up your bot
 
-First go to the the telegram search bar and search @botfather(this is a special telegram bot that controls all others).We are going to use this to get a token for our new bot.
-
-There are several commands associated with @botfather , we are going to start with /newbot then provide the desired name for the bot. The name must always end with 'bot'. Now that we have the token we can write the code.
-
+First go to the the telegram search bar and search @botfather (this is a special telegram bot that controls all others).We are going to use this to get a token for our new bot. There are several commands associated with @botfather , we are going to start with /newbot then provide the desired name for the bot. The name must always end with 'bot'. Now that we have the token we can write the code.
 
 ## The coding
-Lets first create a folder for our new project e.g myfirstbot. Open the commandline and navigate to the folder. Initialize the project by running the following commands to install telegraf.
+Lets first create a folder for our new project, i.e: myfirstbot. Open the command line and navigate to the folder. Initialize the project by running the following commands to install telegraf:
 
 ```bash
-$npm init
-$npm install telegraf
-
+npm init
+npm install telegraf
 ```
 
- Create a javascript file app.js 
+Create a javascript file, `app.js`
  
 ```javascript
+const Telegraf = require('telegraf');
 
- const Telegraf = require('telegraf');
-
- const bot = new Telegraf('insert_bot_token_here');
-
+const bot = new Telegraf('insert_bot_token_here');
 ```  
 
 Lets write a simple script that will welcome us every time we start the bot.
+
 ```javascript
-
 bot.command('start', ctx => {
-console.log(ctx.from)
-bot.telegram.sendMessage(ctx.chat.id, 'hello there! Welcome to my new telegram bot.', {
-
-})
+    console.log(ctx.from)
+    bot.telegram.sendMessage(ctx.chat.id, 'hello there! Welcome to my new telegram bot.', {})
 })
 ```
 
-To make it more interesting lets write a code that shows you images of animals when you click inline keyboard buttons. Create a res folder and add images into it.
+To make it more interesting lets write code that shows you images of animals when you click inline keyboard buttons. Create a res folder and add images into it.
 
 ```javascript
-
 bot.hears('animals', ctx => {
     console.log(ctx.from)
     let animalMessage = `great, here are pictures of animals you would love`;
@@ -67,9 +57,14 @@ bot.hears('animals', ctx => {
     bot.telegram.sendMessage(ctx.chat.id, animalMessage, {
         reply_markup: {
             inline_keyboard: [
-                [
-                    { text: "dog", callback_data: 'dog' },
-                    { text: "cat", callback_data: 'cat' }
+                [{
+                        text: "dog",
+                        callback_data: 'dog'
+                    },
+                    {
+                        text: "cat",
+                        callback_data: 'cat'
+                    }
                 ],
 
             ]
@@ -78,30 +73,28 @@ bot.hears('animals', ctx => {
 })
 
 bot.action('dog', ctx => {
-    bot.telegram.sendPhoto(ctx.chat.id, { source: "res/dog.jpeg" })
+    bot.telegram.sendPhoto(ctx.chat.id, {
+        source: "res/dog.jpeg"
+    })
 
 })
 
 bot.action('cat', ctx => {
-        bot.telegram.sendPhoto(ctx.chat.id, { source: "res/cat.jpeg" })
-
+    bot.telegram.sendPhoto(ctx.chat.id, {
+        source: "res/cat.jpeg"
     })
 
+})
+
 bot.launch();
-
 ```
-
 
 ## Using the bot
 
-We have successfully written two blocks of codes, one thats welcomes you when you start the bot and the other sends you images when you click inline keyboard buttons. 
+We have successfully written two blocks of codes, one thats welcomes you when you start the bot and the other sends you images when you click inline keyboard buttons. Run the bot in the terminal and then go to the telegram search bar and search the name of your bot.
 
-Run the bot in the terminal and then go to the telegram search bar and search the name of your bot.
-
-```javascript
-
-$node app.js
-
+```bash
+node app.js
 ```
 
 Here are the results from telegram.
@@ -109,9 +102,6 @@ Here are the results from telegram.
 ![bot results](image1.jpg)
 ![bot results](image2.jpg)
 ![bot results](image3.jpg)
-
-
-
 
 ## Summary
 
