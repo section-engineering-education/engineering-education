@@ -261,7 +261,7 @@ It has three variables:
 2. `prev_rank` - The previous rank is used for displaying the rank position in case of a tie. It stores the current position `[i]` of a student, such that when the loop increments to the next position`[i+1]`, the current position `[i]` is temporarily stored.
 Consequently, the current position is made `[i-1]` and the next one made `[i]`.
 `[i]` is only assigned the previous rank and given to the next array index, if the value found at `[i]` is the same as `[i-1]`. It is assigned `1` for the first position.
-3. `position` - This stores the rank to be displayed. We initialize it to `0` in which the initialized value doesn't matter since the position is assigned inside the ``for loop`. You can initialize it to any digit.
+3. `position` - This stores the rank to be displayed. We initialize it to `0` in which the initialized value doesn't matter since the position is assigned inside the `for loop`. You can initialize it to any digit.
 
 The `for loop` contains an `if-else-if` structure for checking the values and assigning them appropriately.
 
