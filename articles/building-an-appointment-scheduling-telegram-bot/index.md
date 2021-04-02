@@ -277,7 +277,7 @@ def list_today_appointments(update, context):
        event_message += "{}\nStatus:{} \nDate Due: {}\nUpdate Link: /update_{}\nDelete Link: /delete_{}\n\n".format(event["data"]["event"], event_status, event["data"]["date_due"], i.id(), i.id())
        
    if event_message == "":
-       event_message = "You don't have any appointments saved, type /add_appointment to schedule one now 😇"
+       event_message = "You don't have no appointments saved, enter /add_appointment command to schedule one now 😇"
        
    context.bot.send_message(chat_id=chat_id, text=event_message)
 
