@@ -24,7 +24,7 @@ Have you ever wanted to build a telegram bot that would allow you to schedule or
 
 #### Prerequisites
 To follow along with this tutorial, you need to have:
-* A good understanding of the [Python](http://python.org/).
+* A good understanding of [Python](http://python.org/).
 * [Faunadb](https://pypi.org/project/faunadb/), [telegram](https://pypi.org/project/telegram/) and [python_telegram_bot](https://pypi.org/project/python-telegram-bot/) installed.
 
 #### Installing the requirements
