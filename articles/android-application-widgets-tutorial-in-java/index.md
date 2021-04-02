@@ -44,16 +44,16 @@ This section will create a sample app with a blank activity and a widget. Our fo
 **Step 1: Create a new Android Studio project**
 Open Android Studio and create a new project. Use Empty Activity project template. Name the project `App Widgets Demo` and the package name as `com.demo.widgetsdemo`. Select `Java` as the project language.
 
-![Android Studio create project](android-studio-create-empty-activity-project.jpg)
+![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
 **Step 2: Create a new widget**
 To create a widget, navigate to the package name `com.demo.widgetsdemo` and right-click. Navigate to `New` -> `Widget` -> `App Widget` as shown in the screenshot below.
 
-![Android Studio create new widget](android-studio-create-new-widget.jpg)
+![Android Studio create new widget](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-new-widget.jpg)
 
 This will open a new window to configure the widget, as shown in the screenshot below.
 
-![Android Studio configure app widget](android-studio-configure-app-widget.jpg)
+![Android Studio configure app widget](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-configure-app-widget.jpg)
 
 - The `Class Name` defines the name of the widget class.
 - `Placement` determines where the widget can be placed. In this case, select the `Home screen.
@@ -124,12 +124,12 @@ Add a drawable image of your choice. Replace the `example_appwidget_preview` ima
 **Step 7: Run the App**
 Install the app on your test device and add the widget to the home screen. Note widgets are arranged in alphabetical order. Go to the widget section and locate the widget `App Widgets Demo`. The widget we created, `NewAppWidget`, will have the same name as the application name, as shown in the screenshot below.
 
-![Demo widget screenshot](demo-widget-screenshot.jpg)
+![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/demo-widget-screenshot.jpg)
 
 **Step 8: Place the widget on the home screen**
 See the screenshot below of the final widget on a home screen.
 
-![Homescreen demo widget](home-screen-demo-widget.jpg)
+![Homescreen demo widget](/engineering-education/android-application-widgets-tutorial-in-java/home-screen-demo-widget.jpg)
 
 Tap the widget button. This should open the app `MainActivity`.
 
