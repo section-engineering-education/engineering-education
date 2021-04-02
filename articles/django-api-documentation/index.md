@@ -25,10 +25,25 @@ Let's now install Django into our virtual environment and create our Django proj
 $ (venv) pip install django
 $ (venv) django-admin startproject django_todo
 ```
+Since we are going to use DjangoRest framework, drf_yasg, and coreapi, we need to install these packages.
 
+Execute the commands below to install DjangoRest framework,drf_yasg, and coreapi.
+
+```bash
+$ pip install djangorestframework
+$ pip install coreapi
+$ pip install -U drf-yasg[validation]
+```
+Django organizes code into applications, this makes it easier to write code that is easier to maintain. Execute the command below to create a `todo` app that will hold the source code for our application.
+
+```bash
+$ ./manage.py startapp todo
+```
 
 
 ### Django Model
+In the `todo` app created above, add the below code snippet to the `models.py` file. A model is a Python class that represents a table in a relational database. Django maps the models to database tables.
+
 ```python
 class Todo(models.Model):
     title = models.CharField(max_length = 100)
@@ -42,6 +57,9 @@ class Todo(models.Model):
 ```
 
 ### Django Serializer
+Converting data from python objects to JSON and vice versa is a challenging task. Django simplifies that process of conversion by providing a `serializer` class that can be extended to perform the conversion.
+
+In the `todo` app create a python file name `serializers.py` and add the code snippets below.
 
 ```python
 class TodoSerializer(serializers.ModelSerializer):
@@ -49,18 +67,11 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = "__all__"
 ```
-
-### Django URL
-```python
-urlpatterns = [
-    path("",views.ListTodoAPIView.as_view(),name="todo_list"),
-    path("create/", views.CreateTodoAPIView.as_view(),name="todo_create"),
-    path("update/<int:pk>/",views.UpdateTodoAPIView.as_view(),name="update_todo"),
-    path("delete/<int:pk>/",views.DeleteTodoAPIView.as_view(),name="delete_todo")
-]
-```
-
 ### Django API view
+Django follows the model view template (MVT) pattern. The view holds the logic that acts on the incoming HTTP requests.
+
+In the `views.py` file in the `todo` app, add the code snippet below.
+
 ```python
 from rest_framework.generics import ListAPIView
 from rest_framework.generics import CreateAPIView
@@ -71,48 +82,75 @@ from todo.models import Todo
 
 # Create your views here.
 class ListTodoAPIView(ListAPIView):
-    """This endpoint list all of the available todos from the database"""
+    """Lists all todos from the database"""
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 class CreateTodoAPIView(CreateAPIView):
-    """This endpoint allows for creation of a todo"""
+    """Creates a new todo"""
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 class UpdateTodoAPIView(UpdateAPIView):
-    """This endpoint allows for updating a specific todo by passing in the id of the todo to update"""
+    """Update the todo whose id has been passed through the request"""
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
 class DeleteTodoAPIView(DestroyAPIView):
-    """This endpoint allows for deletion of a specific Todo from the database"""
+    """Deletes a todo whose id has been passed through the request"""
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 ```
 
+### Django URL
+To communicate with our applications, we must provide an API endpoint URL where the client can request and submit data. In the `todo` app, create a new file named `urls.py` and add the code snippet below.
+
 ```python
+urlpatterns = [
+    path("",views.ListTodoAPIView.as_view(),name="todo_list"),
+    path("create/", views.CreateTodoAPIView.as_view(),name="todo_create"),
+    path("update/<int:pk>/",views.UpdateTodoAPIView.as_view(),name="update_todo"),
+    path("delete/<int:pk>/",views.DeleteTodoAPIView.as_view(),name="delete_todo")
+]
+```
+In the root project `urls.py` file, add the code snippet below to configure our `todo` app URLs with the root project URLs.
+
+```python
+# Swagger documentation setup
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Snippets API",
+        default_version='v1',
+        description="Test description",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@snippets.local"),
+        license=openapi.License(name="MIT License"),
+    ),
+    public=True,
+    permission_classes=[permissions.AllowAny],
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/todo/', include("todo.urls")),
     path('docs/', include_docs_urls(title='Todo Api')),
+    url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
+
 ```
 ### Django settings.py
+The `settings.py` file should contain the configurations below. Add the packages we installed earlier to the `INSTALLED_APPS` apps dictionary.
+
 ```python
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '9s^sq5s0pp*hd)%i2)*m3n--e-=)2tn&7i&c)o6z#l-m18jx4)'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -129,7 +167,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'rest_framework',
-    'coreapi',
+    'coreapi', # Coreapi for coreapi documentation
+    'drf_yasg', # drf_yasg fro Swagger documentation
 ]
 
 MIDDLEWARE = [
@@ -166,9 +205,6 @@ REST_FRAMEWORK = {
 WSGI_APPLICATION = 'django_todo.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -176,9 +212,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -196,9 +229,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -210,11 +240,24 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
 ```
+### Testing the documentation.
+Now that we have implemented the code required to generate documentation for our API, let us test it.
+
+**Note** Make sure the application is running.
+
+On your browser, navigate to `http://127.0.0.1:8000/docs/` to view the coreapi documentation. 
+
+![coreapi documentation](/engineering-education/django-api-documentation/coreapi.png)
+
+On your browser, navigate to `http://127.0.0.1:8000/swagger/` to view the swagger documentation.
+
+![Swagger documentation](/engineering-education/django-api-documentation/swagger.png)
+
+On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documentation.
+
+![redoc documentation](/engineering-education/django-api-documentation/redoc.png)
 
 ### Conclusion
 Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.
