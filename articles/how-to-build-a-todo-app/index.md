@@ -13,7 +13,7 @@
 ### Introduction
 Over the years software developers have used frameworks to build apps for android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
 
-In this article will use flutter to build a **To-do list** app. 
+In this article we will use flutter to build a **To-do list** app. 
 
 ### Prerequisites
 To better understand this article, the reader is expected to have a foundational knowlegde of object-oriented programing languages such as Java, C++, etc. 
