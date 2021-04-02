@@ -31,7 +31,7 @@ At the end of this this article, the reader is expected to be familiar with:
 
 The **TODO List** app will look like the screenshot below. 
 
-![Final project.](/engineering-education/how-to-build-a-todo-app/our-final-todo-app.png)
+![Final project.](/engineering-education/how-to-build-a-todo-app/final.jpg)
 
 **To-do list app built using flutter**
 
@@ -48,7 +48,7 @@ flutter run
 ```
 We will be using a smartphone to run the app, follow this link to learn how to run flutter on a physical device [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it takes a little time to load, but after running Your app will be the flutter default app which will look like the screengrab below.
 
-![Flutter default app](/engineering-education/how-to-build-a-todo-app/default-flutter-app.png)
+![Flutter default app](/engineering-education/how-to-build-a-todo-app/default.jpg)
 
 
 **Flutter default after runing any app for the first time**
@@ -59,7 +59,7 @@ Go to the main.dart file which is in the lib directory. Change the default code 
 
 After running the app you will notice an empty canvas with the title To-do-List. let us look at the code.
 
-![code picture](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.png)
+![stateless widget](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
 
 ### Flutter Packages
 On the first line, we imported a flutter package named Material.dart (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app So instead of building some features from scratch just go pub.dartlang.org , search for a package that will perform that feature you want to build, and incorporate it into your app this will save a lot of time for you as a developer. As you continue with flutter you will use a lot of packages.
@@ -83,34 +83,34 @@ This type of widget is dynamic. This means it can change its appearance when it 
 
  Edit your code to match the one in the picture below.
 
-![Stateful Widget](/engineering-education/how-to-build-a-todo-app/stateless-widget-code.PNG)
+![Stateful Widget](/engineering-education/how-to-build-a-todo-app/stateful.jpg)
   
 You should notice that our stateful widgets class TodoList has two classes this is to enable us to update our to-do list without losing our data.
 Now, let us add functionality to the state class. Add the below code to your state.
-![code picture](/engineering-education/how-to-build-a-todo-app/List-and-textEditingController.PNG)
+![List and textEditingController](/engineering-education/how-to-build-a-todo-app/listText.jpg)
 
 This code final List<String> _todoList = <String>[];. Enable us save data into our app. While 
 final TextEditingController _textFieldController = TextEditingController();
 Is enabling us have a text field for items input. 
 Next, update your code to the one below
 
-![addTodoItem Function](/engineering-education/how-to-build-a-todo-app/addTodoItem-function.PNG)
+![addTodoItem Function](/engineering-education/how-to-build-a-todo-app/function.jpg)
 
 The _addtodoItems function is responsible for saving items into _todolist.
 Update your code again to match the one below.
 
-![ListTile Widget](/engineering-education/how-to-build-a-todo-app/ListTile-widget.PNG)
+![ListTile Widget](/engineering-education/how-to-build-a-todo-app/listTile.jpg)
 
 the Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
-![DisplayDialog](/engineering-education/how-to-build-a-todo-app/displayDialog.PNG)
+![DisplayDialog](/engineering-education/how-to-build-a-todo-app/displayDialog.jpg)
 
 The alert dialog tells the user about situations that require confirmation. We are going to use the alert box to collect todo Items.
 To run the code we would have to update the build widget code to the one below.
 
 
-![Build Image](/engineering-education/how-to-build-a-todo-app/build-widget.PNG)
+![Build Image](/engineering-education/how-to-build-a-todo-app/build.jpg)
 
 Your complete code should look the one below...
 
