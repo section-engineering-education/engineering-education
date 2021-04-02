@@ -62,13 +62,13 @@ To create a collection, click on `CREATE COLLECTION` then provide information fo
 After saving the collections you just created, you will notice there are no documents in your collections. A document is like [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data in a table as in a relational database system.
 
 #### Creating a Fauna Index
-You will need to create a Fauna index that will allow you to scroll through the data created in your database. Go to the `DB Overview` tab on the left side of your screen, then click on the `New Index` button.
+You will need to create a Fauna index that will allow you to scroll through the data created in your database. Go to the `DB Overview` tab on the left side of your screen, you will find the `New Index` button, click on it to create a new index.
 
 We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
-After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter a name for your index, terms for your index, and values. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
+After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter the name, terms and values for your index. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
 
 For the `users_index`, we will use the `id` field as the terms. Also, make sure you tick the unique checkbox so the data entered is unique. 
 For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
