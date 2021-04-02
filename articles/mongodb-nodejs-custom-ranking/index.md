@@ -143,15 +143,15 @@ MongoClient.connect(url, function(err, db) {
   var dbo = db.db("ourDB");
   var myobj = [
     { name: 'John', mark: '71'},
-    { name: 'Peter', mark: '44'},
-    { name: 'Amy', mark: '52'},
-    { name: 'Hannah', mark: '21'},
-    { name: 'Michael', mark: '21'},
-    { name: 'Sandy', mark: '51'},
-    { name: 'Betty', mark: '22'},
-    { name: 'Richard', mark: '11'},
-    { name: 'Susan', mark: '88'},
-    { name: 'Viola', mark: '71'}
+    { name: 'Doe', mark: '44'},
+    { name: 'Lorem', mark: '52'},
+    { name: 'Ipsum', mark: '21'},
+    { name: 'Tony', mark: '21'},
+    { name: 'Stark', mark: '51'},
+    { name: 'Steve', mark: '22'},
+    { name: 'Mike', mark: '11'},
+    { name: 'Holmes', mark: '88'},
+    { name: 'Dave', mark: '71'}
   ];
   dbo.collection("ourTable").insertMany(myobj, function(err, res) {
     if (err) throw err;
