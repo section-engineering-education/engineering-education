@@ -48,7 +48,7 @@ If your result is like the image below, then you are ready.
 ![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
 
 ### Creating A Fauna Database
-To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register). Then create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Give your databse a name and save it.
+To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register). Then create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Give your database a name and save it.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
@@ -68,7 +68,7 @@ We will create three indexes for the database, `users_index`, `appointment_index
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
-After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter the name, terms and values for your index. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
+After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter the name, terms, and values for your index. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
 
 For the `users_index`, we will use the `id` field as the terms. Also, make sure you tick the unique checkbox so the data entered is unique. 
 For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
@@ -350,7 +350,7 @@ dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_ap
 ![delete_appointment](/engineering-education/building-an-appointment-scheduling-telegram-bot/delete_appointment.png)
 
 ### Conclusion
-In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how to easy it is to use Fauna as the database in our python application.
+In this article, we built an appointment scheduling telegram bot with [Fauna's serverless database](https://fauna.com/). We saw how easy it is to use Fauna as the database in our python application.
 
 The source code of our bot is available on [Github](https://github.com/Chukslord1/FAUNA_APPOINTMENT_SCHEDULER_BOT).
 
