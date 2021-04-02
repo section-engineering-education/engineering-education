@@ -4,19 +4,21 @@ status: publish
 published: true
 url: /engineering-education/django-api-documentation/
 title: Getting started with Django API documentation
-description: This article explains a step-by-step tutorial on how to document Django REST APIs with swagger, coreapi and redoc.
+description: This article will go over a step-by-step tutorial on how to document Django REST APIs with swagger, coreapi and redoc.
 author: okelo-violet
 date: 2021-04-02T00:00:00-11:00
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/django-api-documentation/hero.jpg
     alt: Getting started with Django API documentation example image
 ---
+REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works.
+<!--more-->
 
 ### Documenting APIs
-REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works. In this tutorial, we are going to learn how to add documentation to our RESTful API endpoints.
+In this tutorial, we are going to learn how to add documentation to our RESTful API endpoints.
 
 ### Prerequisites
 1. [Python](https://www.python.org/downloads/) installed on your computer.
@@ -37,29 +39,32 @@ Now that we have created a working directory and changed our path to it, create 
 $ virtualenv venv
 $ source venv/bin/activate
 ```
+
 Let's now install Django into our virtual environment and create our Django project by executing the commands below.
+
 ```bash
 $ (venv) pip install django
 $ (venv) django-admin startproject django_todo
 ```
-Since we are going to use DjangoRest framework, drf_yasg, and coreapi, we need to install these packages.
 
-Execute the commands below to install DjangoRest framework,drf_yasg, and coreapi.
+Since we are going to use the DjangoRest framework, drf_yasg, and coreapi, we need to install these packages.
+
+Execute the commands below to install DjangoRest framework, drf_yasg, and coreapi.
 
 ```bash
 $ pip install djangorestframework
 $ pip install coreapi
 $ pip install -U drf-yasg[validation]
 ```
+
 Django organizes code into applications, this makes it easier to write code that is easier to maintain. Execute the command below to create a `todo` app that will hold the source code for our application.
 
 ```bash
 $ ./manage.py startapp todo
 ```
 
-
 ### Django Model
-In the `todo` app created above, add the below code snippet to the `models.py` file. A model is a Python class that represents a table in a relational database. Django maps the models to database tables.
+In the `todo` app created above, add the code snippet below to the `models.py` file. A model is a Python class that represents a table in a relational database. Django maps the models to database tables.
 
 ```python
 class Todo(models.Model):
@@ -73,10 +78,10 @@ class Todo(models.Model):
         return self.title 
 ```
 
-### Django Serializer
-Converting data from python objects to JSON and vice versa is a challenging task. Django simplifies that process of conversion by providing a `serializer` class that can be extended to perform the conversion.
+### Django serializer
+Converting data from Python objects to JSON and vice versa is a challenging task. Django simplifies that process of conversion by providing a `serializer` class that can be extended to perform the conversion.
 
-In the `todo` app create a python file name `serializers.py` and add the code snippets below.
+In the `todo` app create a Python file named `serializers.py` and add the code snippets below.
 
 ```python
 class TodoSerializer(serializers.ModelSerializer):
@@ -84,6 +89,7 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = "__all__"
 ```
+
 ### Django API view
 Django follows the model view template (MVT) pattern. The view holds the logic that acts on the incoming HTTP requests.
 
@@ -130,6 +136,7 @@ urlpatterns = [
     path("delete/<int:pk>/",views.DeleteTodoAPIView.as_view(),name="delete_todo")
 ]
 ```
+
 In the root project `urls.py` file, add the code snippet below to configure our `todo` app URLs with the root project URLs.
 
 ```python
@@ -157,6 +164,7 @@ urlpatterns = [
 ]
 
 ```
+
 ### Django settings.py
 The `settings.py` file should contain the configurations below. Add the packages we installed earlier to the `INSTALLED_APPS` apps dictionary.
 
@@ -259,21 +267,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 ```
-### Testing the documentation.
+
+### Testing the documentation
 Now that we have implemented the code required to generate documentation for our API, let us test it.
 
-**Note** Make sure the application is running.
-**Coreapi**
+>**Note:** Make sure the application is running.
+
+#### Coreapi
 On your browser, navigate to `http://127.0.0.1:8000/docs/` to view the coreapi documentation. 
 
 ![coreapi documentation](/engineering-education/django-api-documentation/coreapi.png)
 
-**Swagger**
+#### Swagger
 On your browser, navigate to `http://127.0.0.1:8000/swagger/` to view the swagger documentation.
 
 ![Swagger documentation](/engineering-education/django-api-documentation/swagger.png)
 
-**redoc**
+#### redoc
 On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documentation.
 
 ![redoc documentation](/engineering-education/django-api-documentation/redoc.png)
@@ -281,7 +291,7 @@ On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documen
 ### Conclusion
 Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.
 
-Happy coding
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
