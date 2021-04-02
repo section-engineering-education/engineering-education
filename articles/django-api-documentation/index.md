@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/django-api-documentation/
+title: Getting started with Django API documentation
+description: This article explains a step-by-step tutorial on how to document Django REST APIs with swagger, coreapi and redoc.
+author: okelo-violet
+date: 2021-04-02T00:00:00-11:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/django-api-documentation/hero.jpg
+    alt: Getting started with Django API documentation example image
+---
+
 ### Documenting APIs
 REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works. In this tutorial, we are going to learn how to add documentation to our RESTful API endpoints.
 
