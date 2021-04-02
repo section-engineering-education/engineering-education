@@ -263,3 +263,6 @@ On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documen
 Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.
 
 Happy coding
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
