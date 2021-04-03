@@ -273,7 +273,7 @@ Predplot
 Running the above code we obtain the graph below.
 
 
-![prediction plot](prediction-plot.png)
+![prediction plot](/engineering-education/linear-regression-r/prediction-plot.png)
 
 
 In the above graph, it's seen how the actuals(black) and Predictions(red) are close to each other. This indicates that our model is good. Since this is just a qualitative way of evaluating the performance of our model, we need to find a statistical value that tells us how accurate our model is. To achieve this, we use the following metrics.
