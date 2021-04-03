@@ -94,3 +94,6 @@ To summarize, the following are some of the main things we have learned:
 - Some of the features of UiPath include an in-built recorder, scalability, advanced scrapping functionality, cloud hosting, and application compatibility.
 - The architecture of UiPath has three layers: the client layer, server layer, and persistency layer.
 - UiPath is applied in various industries such as finance, insurance, healthcare, and banking.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
