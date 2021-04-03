@@ -45,7 +45,7 @@ Next, navigate into the created project (todo_app) directory using the command `
 ```
 flutter run
 ```
-We will be using a smartphone to run the app, follow this link to learn how to run flutter on a physical device [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it takes a little time to load, but after running Your app will be the flutter default app which will look like the screengrab below.
+We will be using a smartphone to run the app, follow this link to learn how to run [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it takes a little time to load, but after running Your app will be the flutter default app which will look like the screengrab below.
 
 ![Flutter Default App](/engineering-education/how-to-build-a-todo-app/default.jpg)
 
@@ -61,7 +61,7 @@ After running the app you will notice an empty canvas with the title To-do-List.
 ![Stateless Widget Code](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
 
 ### Flutter Packages
-On the first line, we imported a flutter package named Material.dart (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app So instead of building some features from scratch just go pub.dartlang.org , search for a package that will perform that feature you want to build, and incorporate it into your app this will save a lot of time for you as a developer. As you continue with flutter you will use a lot of packages.
+On the first line, we imported a flutter package named Material.dart (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app So instead of building some features from scratch just go pub.dartlang.org, search for a package that will perform that feature you want to build, and incorporate it into your app this will save a lot of time for you as a developer. As you continue with flutter you will use a lot of packages.
 
 
 ### Flutter Widgets
@@ -115,8 +115,7 @@ To run the code we would have to update the build widget code to the one below.
 Your complete code should look the one below:
 
 ```dart
-
-    import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(Todo());
@@ -216,8 +215,3 @@ To summarize, we learned:
 - [Dart Object](https://bezkoder.com/category/dart/)
 - [Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
 - [Emulator Settings](https://flutter.dev/docs/development/ui/widgets)
-
-### About the Author
-![Build Image](/engineering-education/how-to-build-a-todo-app/author.jpg)
-
-Nathaniel Dauda Wobin is a Mobile app developer with a degree in physics from Kaduna State University. He builds most of his projects using flutter and django.
