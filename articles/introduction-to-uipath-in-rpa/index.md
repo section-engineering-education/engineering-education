@@ -1,5 +1,21 @@
-[UiPath](https://www.uipath.com) is a popular and progressive Robotic Process Automation (RPA) tool that enables users to automate various aspects of business processes. It provides an open-source platform that promotes collaboration and automation of repetitive tasks. It is used in various fields such as banking, healthcare, finance, and many more.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-uipath-in-rpa/
+title: Introduction to UiPath in Robotic Process Automation (RPA)
+description: This article will be an introduction to Robotic Process Automation. We will explore specifically about a RPA tool called UiPath to see why it is widely used, how it works, and its usecases.
+author: onesmus-mbaabu
+date: 2021-04-03T00:00:00-21:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-uipath-in-rpa/hero.jpg
+    alt: RPA Image
+---
+[UiPath](https://www.uipath.com) is a popular and progressive Robotic Process Automation (RPA) tool that enables users to automate various aspects of business processes. It provides an open-source platform that promotes collaboration and automation of repetitive tasks. It is used in various fields such as banking, healthcare, finance, and many more.
+<!--more-->
 This article introduces UiPath to the readers and explains how it works. It also provides its applications and highlights why it is widely used.
 
 ### Table of contents
