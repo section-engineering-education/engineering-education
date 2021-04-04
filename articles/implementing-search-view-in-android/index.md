@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-search-view-in-android/
+title: Implementing Search View in Android
+description: This tutorial takes the reader through creating and implementing search views in Android. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match.
+author: eric-gacoki
+date: 2021-04-04T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-search-view-in-android/hero.png
+    alt: Search Views in Android
+---
 ### A). Introduction
 When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. This problem can be solved by filtering out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match. This improves the users' experience by saving their time.
-
+<!--more-->
 ### B). Objectives
 In this tutorial, we will learn how to use a RecyclerView to implement SearchView in Android. The sample data used in this project will be generated explicitly for simplicity purposes.
 
@@ -337,3 +353,6 @@ Finally this is how the app looks like:
 
 ### Conclusion
 In this tutorial, we have learned how to create and use a SearchView to filter data in a RecyclerView in Android. This is a good way to improve the overall performance of the application. The source code for this tutorial can be found in this [Github repository](https://github.com/Ericgacoki/SearchView).
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
