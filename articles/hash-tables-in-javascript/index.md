@@ -1,6 +1,6 @@
 Hash tables are powerful data structures in the field of computing. Data structures and algorithms are known for solving problems effectively. Hash tables access components in constant time (O(1)).
 
-Hash tables enable us to find data quickly using keys. We will learn what hash tables are, how they work, their use, and how to implement them on JavaScript.
+Hash tables enable us to find data quickly using keys. We will learn what hash tables are, how they work, their use, and how to implement them in JavaScript.
 
 ### Table of contents
 - [Hash tables overview](#hash-tables-overview)
@@ -40,7 +40,7 @@ To understand how hash tables work, let us go through an imaginary problem.
 
 Assume we have a library with different books. You have to know the book you need by the book title. It is also challenging to locate the right shelf where the book is. A hash table will help to solve this problem.
 
-Each book has a unique number (bk Id). Our key is book Id, and our value is the book title. We pass the key and value pair to our hash table. It runs the key through a hash function, and the hash function returns an index (e.g., 3).
+Each book has a unique number (bk Id). Our key is book Id, and our value is the book title. We pass the key and value pair to our hash table. It runs the key through a hash function, and the hash function returns an index (e.g. 3).
 
 The hash function stores the key and value pair in the index. If we want to get a specific book, we pass the book id to the hash table. A hash function maps the key to the index, and information about the book is retrieved.
 
@@ -51,13 +51,12 @@ Hash tables are widely used in;
 - Program compilation for keyword identification
 - Caching
 - Associative arrays
-- Unique data representation
+- Unique data representation.
 
 The performance of a hash table depends on three essential components;
-
 - Hash function
 - Size of a hash table
-- Collision handling method
+- Collision handling method.
 
 ### Handling collisions
 Collisions occur when different keys get hashed to the same number or index.
@@ -65,7 +64,7 @@ Collisions occur when different keys get hashed to the same number or index.
 Therefore, how can this issue be resolved? There are many methods of handling collisions. We will learn a few below.
 
 #### Separate Chaining
-[Separate Chaining](https://study.com/academy/lesson/separate-chaining-concept-advantages-disadvantages.html#:~:text=To%20handle%20collisions%2C%20the%20hash,collisions%20in%20different%20table%20locations.) is a method which key-value pairs hash to the same index in the bucket array. A linked list is created for that particular index. In this strategy, you have to iterate between the pairs to find the key you are looking for. Separate chaining leads to inefficiency. It brings the time complexity closer to O (n). Meaning it depends linearly on the size of the input.
+[Separate Chaining](https://study.com/academy/lesson/separate-chaining-concept-advantages-disadvantages.html#:~:text=To%20handle%20collisions%2C%20the%20hash,collisions%20in%20different%20table%20locations.) is a method which key-value pairs hash to the same index in the bucket array. A linked list is created for that particular index. In this strategy, you have to iterate between the pairs to find the key you are looking for. Separate chaining leads to inefficiency. It brings the time complexity closer to O(n). Meaning it depends linearly on the size of the input.
 
 ![Separate Chaining](/engineering-education/hash-tables-in-javascript/separate-chaining.jpg)
 
@@ -127,7 +126,7 @@ setItem(key,value){
 ```
 
 #### Retrieve
-The retrieve method helps us fetch the data using a key. Create method `getItem` with one argument, `key.` Hash the key and get the bucket's index. Retrieving or searching data in a hash table take place very fast. A hash table is efficient because we quickly get the index.
+The retrieve method helps us fetch the data using a key. Create method `getItem` with one argument, `key`. Hash the key and get the bucket's index. Retrieving or searching data in a hash table take place very fast. A hash table is efficient because we quickly get the index.
 
 ```js
 getItem(key){
@@ -203,12 +202,12 @@ The code insert's data in the hash table and uses the key (book Id) to retrieve 
 <iframe width="478" height="269" src="https://www.youtube.com/embed/giFgWX-N0Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Wrapping Up
-Finally, you made it to the end of this article. We learned that hash tables are data structures that store data using key-value pairs. Also, we learned hash tables are widely used because they are fast and efficient.
+Finally, you made it to the end of this article. We learned that hash tables are data structures that store data using key-value pairs. Also, we learned that hash tables are widely used because they are fast and efficient.
 
 To summarize:
-- The reader has learned about what are hash tables.
+- You have learned about what are hash tables.
 - How hash tables work.
-- The reader has also known how to implement hash tables in JavaScript.
+- You have also known how to implement hash tables in JavaScript.
 
 I hope this article will shed light on hash tables in JavaScript.
 
