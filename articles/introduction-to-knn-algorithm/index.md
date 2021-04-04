@@ -249,3 +249,6 @@ To summarize:
 - [KNN by Wikipedia](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
 - [Article by TowardsDataScience](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
 - [Article by AnalyticsVidhya](https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
