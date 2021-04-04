@@ -139,7 +139,7 @@ You should notice that our stateful widgets class TodoList has two classes. This
 
 ```dart
 class _TodoListState extends State<TodoList> {
-  // List or arrays that holds the todo list data
+  // List that holds the todo list data
   final List<String> _todoList = <String>[];
   // code that call the text field
   final TextEditingController _textFieldController = TextEditingController();
@@ -177,20 +177,22 @@ class _TodoListState extends State<TodoList> {
   }
 
   // function that adds data to the List.
-    void _addTodoItem(String title) {
+  void _addTodoItem(String title) {
     //  a set state will notify the app that the state has changed
     setState(() {
       _todoList.add(title);
     });
     _textFieldController.clear();
   }
+}
 ```
 
 The _addtodoItems function is responsible for saving items into _todolist.
 Update your code again to match the one below.
 
+```dart
  // function that adds data to the List.
-    void _addTodoItem(String title) {
+  void _addTodoItem(String title) {
     //  a set state will notify the app that the state has changed
     setState(() {
       _todoList.add(title);
@@ -202,6 +204,7 @@ Update your code again to match the one below.
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
+  ```
 
 
 the Widget ListTile is usually to populate a listView in flutter.
