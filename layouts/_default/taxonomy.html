@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+  {{ if (where .Pages "Type" "engineering-education") }}
+
+    {{ partial "engineering-education/articles-header.html" . }}
+    {{ partial "engineering-education/articles-posts.html" . }}
+
+  {{ end }}
+
+{{ end }}
