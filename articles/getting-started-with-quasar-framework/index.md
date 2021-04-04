@@ -6,7 +6,7 @@ url: /engineering-education/getting-started-with-quasar-framework/
 title: Getting Started with the Quasar Framework
 description: This tutorial will introduces us to the Quasar Framework. We will create a simple app with Quasar framework. We will look at installing Quasar in our local machine and writing components in Quasar. 
 author: espira-marvin
-date: 2021-04-02T00:00:00-17:00
+date: 2021-04-04T00:00:00-17:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
