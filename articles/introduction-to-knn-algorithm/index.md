@@ -34,6 +34,12 @@ We use train data with features and labels, to enable the machine to learn first
 ### K-Nearest Neighbors algorithm
 K-Nearest Neighbors (KNN) algorithm is one such supervised learning that can be used for classification and regression.
 
+Classification refers to a predictive modeling problem where a class label is predicted for a given example of input data. For example, classification of an animals as cat or dog, emails as spam or not.
+
+In classfication, the prediction values are discrete values like `0` or `1`, which relates to `true` or `false`. There can be multi-variate (more than one label) classifications too.
+
+Whereas, regression is another type of problem, which requires prediction of continuous values. For example, if we want to predict approximate value of a share in the stock market, we will have to use regression.
+
 Steps followed in KNN algorithm:
 1. Load the train and test datasets.
 2. Specify or choose the value of `K`.
@@ -44,6 +50,8 @@ Steps followed in KNN algorithm:
    3.4. Find the frequency (Mode) of the labels of the top K values.
    3.5. Assign the mode to the test data point.
    3.6. The assigned value is the classified or predicted value for the particular test data point.
+
+To understand the algorithm mathematically, you could refer [this](http://www.datascribble.com/blog/machine-learning/understanding-math-behind-knn-codes-python/) article.
 
 ![KNN algorithm](/engineering-education/introduction-to-knn-algorithm/knn.png)
 
@@ -76,6 +84,12 @@ On installing Python, you have to install the following libraries:
 - [Operator](https://docs.python.org/3/library/operator.html)
 - [Statistics](https://docs.python.org/3/library/statistics.html)
 
+You can install the above libraries using the following commands:
+- Numpy using `pip install numpy`
+- Pandas using `pip install pandas`
+- Operators using `pip install pyoperators`
+- Statistics using `pip install statistics`
+
 #### Import libraries
 On setting up the environment, let's start coding!
 
@@ -107,7 +121,6 @@ In the KNN algorithm, we use Euclidean distance to find the distance between any
 The formula for Euclidean distance is:
 
 ![Euclidean distance](/engineering-education/introduction-to-knn-algorithm/euclidean-distance.PNG)
-
 
 *The formula for Euclidean distance*
 
