@@ -111,7 +111,7 @@ sudo apt-get install rabbitmq-server
 sudo rabbitmq-server -detached
 ```
 
-The *`-detached`* option allows us to run *rabbitmq-server* in the background. Now, we could use defaults, but it’s always a good option to create a separate virtual host for our program.
+The *`-detached`* option allows us to run *rabbitmq-server* in the background. Now, we could use defaults, but it is always a good option to create a separate virtual host for our program.
 
 ```bash
 sudo rabbitmqctl add_user myuser mypassword
@@ -448,11 +448,11 @@ source celery_project/bin/activate
 flask run
 ```
 
-Congratulations, you’ve made your first app that implements a task scheduler and a message broker. At first, it’ll seem like nothing’s fetched. Refresh the page and you’d see the pictures. To inspect the progress of tasks, a web-based monitoring tool called [Flower](https://flower.readthedocs.io/en/latest/) is used. We won’t cover that aspect, as this is more of a “getting started” guide.
+Congratulations, you’ve made your first app that implements a task scheduler and a message broker. At first, it will seem like nothing’s fetched. Refresh the page and you would see the pictures. To inspect the progress of tasks, a web-based monitoring tool called [Flower](https://flower.readthedocs.io/en/latest/) is used. We won’t cover that aspect, as this is more of a “getting started” guide.
 
 ### Conclusion
 
-In this tutorial, we've seen what task queues and message brokers are, their examples, and the best types of queues and brokers to use. We've also seen rabbitmq brokers and the async celery and how to use that in a backend architecture.
+In this tutorial, we've seen what task queues and message brokers are, their examples, and the best types of queues and brokers to use. We have also seen rabbitmq brokers and the async celery and how to use that in a backend architecture.
 
 This article aimed to introduce you to task queues, message brokers, and their examples and best queues and brokers to use in your backend architecture.
 
