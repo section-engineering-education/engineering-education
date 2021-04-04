@@ -53,6 +53,7 @@ switch#configure terminal
 switch(config)#spanning-tree vlan vlan-id
 switch(config)#end
 ```
+
 We can break down the commands as shown below:
 
 - `switch>enable` - It is used to enter privileged mode.
@@ -75,6 +76,7 @@ switch(config)#spanning-tree vlan vlan-id root secondary
 switch(config)#spanning-tree vlan vlan-id priority priority
 switch(config)#end
 ```
+
 We can break down the commands as shown below:
 
 - `switch>enable` - It is used to enter privileged mode.
@@ -93,6 +95,7 @@ switch#configure terminal
 switch(config)#spanning-tree mode {pvst | rapid-pvst}
 switch(config)#ends
 ```
+
 We can break down the commands as shown below:
 
 - `switch>enable` - It is used to enter privileged mode
