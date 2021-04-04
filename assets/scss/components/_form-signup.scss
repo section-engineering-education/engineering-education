@@ -1,0 +1,209 @@
+.signup-form{
+	@include flex-width(80%);
+	background-color:$fill-white;
+	padding: 40px;
+	@include mq($from: 1020px ) {
+		@include flex-width(50%);
+	  }
+
+	&-inner{
+		max-width: 90%;
+    	margin: 0 auto;
+    	position: relative;
+    	form{
+    		width:100%;
+    		&>div{
+    			// display:flex;
+    			// flex-wrap:wrap;
+    			justify-content:space-between;
+    			h2{
+            @include gt-regular;
+					color:$text-link;
+					margin-bottom:40px;
+					flex:1 1 100%;
+				}
+				.mc-field-group{
+					margin-bottom:30px;
+					flex:1 1 100%;
+					&:nth-of-type(2),&:nth-of-type(1){
+
+						@include mq($from: 520px) {
+							flex:0 1 calc(50% - 20px);
+						}
+					}
+					
+					label{
+						color:$text-testimonial;
+						@include font-smoothing;
+						@include gt-regular;
+						font-size: 18px;
+						line-height: 26px;
+		    			display:block;
+		    			margin-bottom:10px;
+		    		}
+		    		input,textarea{
+		    			background-color:#f2f2f2;
+		    			outline:none;
+		    			border:2px solid transparent;
+		    			font-size:18px;
+		    			width:100%;
+		    			display:block;
+              			padding:10px;
+              			transition: border 240ms ease-in-out;
+						resize: vertical;
+
+              &.error {
+                border: 2px solid $fill-red;
+              }
+
+              &:focus {
+
+                border-color: $fill-green;
+              }
+		    			&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+						  color: $blockquote-name;
+						}
+						&::-moz-placeholder { /* Firefox 19+ */
+						  color: $blockquote-name;
+						}
+						&:-ms-input-placeholder { /* IE 10+ */
+						  color: $blockquote-name;
+						}
+						&:-moz-placeholder { /* Firefox 18- */
+						  color: $blockquote-name;
+						}
+						
+		    		}
+		    		div.mce_inline_error{
+		    			background-color:transparent!important;
+		    			color:$text-orange!important;
+		    		}
+					
+				}
+				.clear{
+					input.button{
+						@include button;
+						@include button-green;
+						@include button-medium;
+					}
+				}
+    		}
+    	}
+  }
+}
+
+.check-container {
+	width: 100%;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	// margin-left: 15px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.check-container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+  	width: 0;
+}
+
+.checkmark {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	height: 20px;
+	width: 20px;
+	border: solid 1px #00a86b;
+	background-color: #f2f2f2;	
+}
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+	background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a green background */
+.check-container input:checked ~ .checkmark {
+	background-color: #00a86b;
+  }
+
+  /* Create the indicator (the square - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+
+  /* Show the indicator (square) when checked */
+.check-container input:checked ~ .checkmark:after {
+	display: block;
+  }
+
+.check-container .checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.signup-tab {
+	display: none;
+}
+
+.signup-button {
+	padding: pxem(12) pxem(16) pxem(13);
+	background-color: $fill-green;
+	color: $text-white;
+	border:none;
+	transition: background-color 240ms $t-1;
+  
+	&:hover {
+	  background-color: darken($fill-green, 10%);
+	}
+}
+
+#prev-button {
+	background-color: #f2f2f2;
+	color: #4a4b4a;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbbbbb;
+	border: none;
+	border-radius: 50%;
+	display: none;
+	opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+	opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+	background-color: #4CAF50;
+  }
+
+.invalid {
+	  background-color: #ffdddd !important;
+  }
+  
+
+
