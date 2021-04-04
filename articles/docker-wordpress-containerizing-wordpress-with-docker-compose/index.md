@@ -1,4 +1,4 @@
-Docker is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. Most applications involve more than one architectural component. Take a simple, hardy project that needs a database and a back-end server of some kind.
+[Docker](https://docs.docker.com/get-started/overview/) is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. Most applications involve more than one architectural component. Take a simple, hardy project that needs a database and a back-end server of some kind.
 
 When an application involves multiple components that serve various purposes, Docker-compose will help you run these components as defined in your application stack. It provides a single file that defines how different container interacts with each other as needed by your application stack.
 
