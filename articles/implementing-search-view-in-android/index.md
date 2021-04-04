@@ -5,7 +5,7 @@ When dealing with a vast amount of data, it can sometimes be strenuous to find t
 In this tutorial, we will learn how to use a RecyclerView to implement SearchView in Android. The sample data used in this project will be generated explicitly for simplicity purposes.
 
 ### C). Prerequisites
-To follow through with this tutorial, you'll need to:
+To follow through this tutorial, you'll need to:
 - Have [Android Studio](https://developer.android.com/studio) IDE installed on your machine.
 - Be dexterous in creating Android applications with: 
     - [Kotlin](https://developer.android.com/kotlin).
@@ -195,7 +195,7 @@ Just like any other task, searching is a process that requires a series of steps
 
 First set up two lists, one containing all the data under consideration, and leave the other one empty. We'll therefore loop through the elements in the first list comparing each content with the given keyword. In this case, the keyword is the `text` typed by the user in the SearchView. If a match is found, the element containing the match is cloned into the second list and the RecyclerView is updated with the new list. 
 
-When working with a relatively large list or a list of unknown size, it is recommended to update the RecyclerView everytime a match is found. Otherwise, the app might land into an `ANR` (App Not Responding) situation due to high memory consumption. Also, the newly created list should be cleared when not required for the same reason.
+When working with a relatively large list or a list of unknown size, it is recommended to update the RecyclerView every time a match is found. Otherwise, the app might land into an `ANR` (App Not Responding) situation due to high memory consumption. Also, the newly created list should be cleared when not required for the same reason.
 
 ### I). Implementing Search Algorithm
 Moving on, open the `MainActivity.kt` file and paste the following code sequentially as shown.
@@ -289,7 +289,7 @@ Have you been wondering how the SearchView knows when the user has typed somethi
 
 This object is an `interface`,a member of `SearchView` class and contains two member functions, `onQueryTextSubmit()` and `onQueryTextChange()`. The two accept a nullable parameter of type String and must be implemented using the `override` keyword when using the interface.
 
-As the name suggests, `onQueryTextSubmit()` is called when the user clicks the submit button of the SearchView. On the other hand, `onQueryTextChange()` is called every time the text in the SearchView changes. The change may be due to the addition or deletion of characters. All in all the two functions calls another function, `search()` discussed below.
+As the name suggests, `onQueryTextSubmit()` is called when the user clicks the submit button of the SearchView. On the other hand, `onQueryTextChange()` is called every time the text in the SearchView changes. The change may be due to the addition or deletion of characters. All in all the two functions call another function, `search()` discussed below.
 
 ```kotlin
 private fun search(text: String?) {
@@ -312,7 +312,7 @@ private fun search(text: String?) {
 }
 ```
 
-First, the matchedPeople list is cleared or set to an empty arrayList to avoid accumulation of the previous search. If the argument for parameter `text` is not null, a loop is performed for each element in the `people` list to check if the person's name or age contains `text`(query). By default, the `contains()` function is sensitive to the case and order of characters in the query. When a match is found, the current person is added to a new list as discussed in `step (H)` above. If no match is found, a toast is shown indicating the same.
+First, the `matchedPeople` list is cleared or set to an empty arrayList to avoid accumulation of the previous search. If the argument for parameter `text` is not null, a loop is performed for each element in the `people` list to check if the person's name or age contains `text`(query). By default, the `contains()` function is sensitive to the case and order of characters in the query. When a match is found, the current person is added to a new list as discussed in `step (H)` above. If no match is found, a toast is shown indicating the same.
 
 In our scenario, the list is relatively small making it suitable to update the RecyclerView after the loop. Otherwise we'd need to call `updateRecyclerView()` function each time a match is found.
 
