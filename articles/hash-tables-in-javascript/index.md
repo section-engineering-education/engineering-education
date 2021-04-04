@@ -1,7 +1,21 @@
-Hash tables are powerful data structures in the field of computing. Data structures and algorithms are known for solving problems effectively. Hash tables access components in constant time (O(1)).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/hash-tables-in-javascript/
+title: Hash Tables in JavaScript
+description: This article goes through creating and implementing hash tables in JavaScript. Hash tables are powerful data structures in the field of computing. They enable us to find data quickly using keys.
+author: judy-nduati
+date: 2021-04-04T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-Hash tables enable us to find data quickly using keys. We will learn what hash tables are, how they work, their use, and how to implement them in JavaScript.
-
+  - url: /engineering-education/hash-tables-in-javascript/hero.jpg
+    alt: Hash Tables image example
+---
+Hash tables are powerful data structures in the field of computing. Data structures and algorithms are known for solving problems effectively. Hash tables access components in constant time (O(1)). Hash tables enable us to find data quickly using keys. We will learn what hash tables are, how they work, their use, and how to implement them in JavaScript.
+<!--more-->
 ### Table of contents
 - [Hash tables overview](#hash-tables-overview)
 - [How hash tables work](#how-hash-tables-work)
@@ -212,3 +226,6 @@ To summarize:
 I hope this article will shed light on hash tables in JavaScript.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
