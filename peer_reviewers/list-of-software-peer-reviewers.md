@@ -1,7 +1,7 @@
 |  *Peer Reviewer* |  *Author Page* |  *GitHub* | *Area(s) of Expertise* |
 |  - |  - |  - | -|
 |  Aakash Rawal | [EngEd Author Page](https://www.section.io/engineering-education/authors/aakash-rawal/) | [GitHub Profile](https://github.com/AakashR2208) | - example 1 - example 2 - example 3|
-|  Adrian Murage | [EngEd Author Page](https://www.section.io/engineering-education/authors/adrian-murage/) | [GitHub Profile](https://github.com/adrianmurage) | -|
+|  Adrian Murage | [EngEd Author Page](https://www.section.io/engineering-education/authors/adrian-murage/) | [GitHub Profile](https://github.com/adrianmurage) | - CSS - JavaScript - Python |
 |  Ahmad Mardeni | [EngEd Author Page](https://www.section.io/engineering-education/authors/ahmad-mardeni/) | [GitHub Profile](https://github.com/ahmadmardeni1) | - Machine Learning - CyberSecurity - Web Scraping - Database Development(SQL) - Data Analysis - Data Visualization - Backend Development(Flask/Django)|
 |  Briana Nzivu |  [EngEd Author Page](https://www.section.io/engineering-education/authors/briana-nzivu/) | [GitHub Profile](https://github.com/BrianaNzivu) | - example 1 - example 2 - example 3|
 |  Collins Ayuya |  [EngEd Author Page](www.section.io//engineering-education/collins-ayuya/) | [GitHub Profile](https://github.com/collins-a) | - AI and Machine Learning - Telecommunications and Networking - Internet of Things, Embedded Devices and DIY projects |
