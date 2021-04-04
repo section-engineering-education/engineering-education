@@ -91,7 +91,7 @@ For this setup, we will use an Ubuntu 18.04 machine to set up the celery app and
 
 We install and activate the virtual environment by entering the commands below on the terminal
 
-```
+```bash
 sudo pip install virtualenv
 mkdir my_project && cd my_project
 virtualenv celery_project
@@ -100,20 +100,20 @@ source celery_project/bin/activate
 
 We install celery using pip. We don't use sudo as we’re installing celery to our virtual environment.
 
-```
+```bash
 pip install celery
 ```
 
 However, we also need to install rabbitmq on the system as it runs in the background.
 
-```
+```bash
 sudo apt-get install rabbitmq-server
 sudo rabbitmq-server -detached
 ```
 
 The *`-detached`* option allows us to run *rabbitmq-server* in the background. Now, we could use defaults, but it’s always a good option to create a separate virtual host for our program.
 
-```
+```bash
 sudo rabbitmqctl add_user myuser mypassword
 sudo rabbitmqctl add_vhost myvhost
 sudo rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"
@@ -123,26 +123,26 @@ First  `".*"` *gives the user the ability to configure every entity, the* second
 
 We install `dotenv` as we use environmental variables to protect sensitive information in our app.
 
-```
+```bash
 pip install python-dotenv
 ```
 
 Then, we create and add our environmental variables in a `.env` file:
 
-```
+```bash
 CELERY_BROKER_URL=amqp://myuser:mypassword@localhost/myvhost
 CELERY_BACKEND_URL=db+sqlite:///test.db
 ```
 
 As sqlite is used in our backend url, it needs to be installed alongside `sqlalchemy`. However, sqlite is available by default as it’s part of the standard libraries python uses.
 
-```
+```bash
 pip install sqlalchemy
 ```
 
 Finally, we install flask as it’s our web framework to link the client with the server. requests is also installed to make api calls.
 
-```
+```bash
 pip install flask
 pip install requests
 ```
@@ -437,13 +437,13 @@ li:last-child {
 
 With our code setup and everything in order, the last 2 steps are starting the celery worker and our flask server.
 
-```
+```bash
 celery -A app worker -l info
 ```
 
 Then, open a new bash terminal, activate virtualenv and start flask
 
-```
+```bash
 source celery_project/bin/activate
 flask run
 ```
