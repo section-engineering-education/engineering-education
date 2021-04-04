@@ -15,7 +15,7 @@ images:
 ---
 In this article, we will learn about a supervised machine learning algorithm called K-Nearest Neighbors (KNN). This algorithm can be used for tasks like classification and prediction. By the end of this article, you will get an overview of various supervised machine learning algorithms, what the KNN algorithm is, how it works, and also learn to build the algorithm from scratch.
 <!--more-->
-As a prerequisite, a little understanding of machine learning and Python would help the beginners.
+As a prerequisite, a little understanding of machine learning and Python would help beginners.
 
 ### Table of contents
 - [Supervised learning](#supervised-learning)
@@ -108,6 +108,7 @@ The formula for Euclidean distance is:
 
 ![Euclidean distance](/engineering-education/introduction-to-knn-algorithm/euclidean-distance.PNG)
 
+
 *The formula for Euclidean distance*
 
 Alternatively, we can use other distance measures like Manhattan distance or Absolute distance.
@@ -192,7 +193,7 @@ def knn(data,query,k):
 ```
 
 #### Build the main function
-Now, let's build a `main()` function which calls the the `knn()` function by passing the required features and labels, along with some sample queries to demonstrate classification.
+Now, let's build a `main()` function which calls the `knn()` function by passing the required features and labels, along with some sample queries to demonstrate classification.
 
 ```python
 # Pass the input and output lists    
