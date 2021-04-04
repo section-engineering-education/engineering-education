@@ -53,13 +53,32 @@ We will be using a smartphone to run the app, follow this link to learn how to r
 
 **Flutter default after running any app for the first time**
 
-Go to the `main.dart` file which is in the lib directory. Change the default code to the snippet shown in the below picture.
+Go to the `main.dart` file which is in the lib directory. Change the default code to the snippet shown below.
 
-![Stateless Widget](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Todo());
+}
+
+class Todo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('To-do List'),
+        ),
+      )
+      
+    );
+  }
+}
+```
 
 After running the app you will notice an empty canvas with the title To-do-List. Let us look at the code.
 
-![Stateless Widget Code](/engineering-education/how-to-build-a-todo-app/stateless.jpg)
 
 ### Flutter Packages
 On the first line, we imported a flutter package named `Material.dart` (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app. Instead of building some features from scratch, you could just go to [pub.dartlang.org](pub.dartlang.org) and search for a package that will perform that feature you want to build. You can incorporate it into your application. This will save a lot of time for you as a developer. As you develop with flutter, you will use a lot of packages.
@@ -82,34 +101,175 @@ This type of widget is dynamic. This means it can change its appearance when it 
 
 Edit your code to match the one in the picture below.
 
-![Stateful Widget](/engineering-education/how-to-build-a-todo-app/stateful.jpg)
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Todo());
+}
+
+class Todo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // code that return whole app
+    return MaterialApp(
+      home: TodoList());
+  }
+}
+
+class TodoList extends StatefulWidget {
+  @override
+  _TodoListState createState() => _TodoListState();
+}
+
+class _TodoListState extends State<TodoList> {
+  @override
+  Widget build(BuildContext context) {
+    // code that return the appbar
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('To-do List'),
+        ),
+      );
+  }
+}
+```
   
 You should notice that our stateful widgets class TodoList has two classes. This is to enable us to update our to-do list without losing our data. Now, let us add functionality to the state class. Add the below code to your state:
 
-![Code Picture](/engineering-education/how-to-build-a-todo-app/listText.jpg)
+```dart
+class _TodoListState extends State<TodoList> {
+  // List or arrays that holds the todo list data
+  final List<String> _todoList = <String>[];
+  // code that call the text field
+  final TextEditingController _textFieldController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    // code that return the appbar
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('To-do List'),
+      ),
+    );
+  }
+}
+```
 
 This code final List<String> _todoList = <String>[];. Enable us save data into our app. While 
 final TextEditingController _textFieldController = TextEditingController();
 Is enabling us have a text field for items input. 
 Next, update your code to the one below
 
-![addTodoItem Function](/engineering-education/how-to-build-a-todo-app/function.jpg)
+```dart
+class _TodoListState extends State<TodoList> {
+  // List or arrays that holds the todo list data
+  final List<String> _todoList = <String>[];
+  // code that call the text field
+  final TextEditingController _textEditingController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    // code that return the appbar
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('To-do List'),
+      ),
+    );
+  }
+
+  // function that adds data to the List.
+    void _addTodoItem(String title) {
+    //  a set state will notify the app that the state has changed
+    setState(() {
+      _todoList.add(title);
+    });
+    _textFieldController.clear();
+  }
+```
 
 The _addtodoItems function is responsible for saving items into _todolist.
 Update your code again to match the one below.
 
-![ListTile Widget](/engineering-education/how-to-build-a-todo-app/listTile.jpg)
+ // function that adds data to the List.
+    void _addTodoItem(String title) {
+    //  a set state will notify the app that the state has changed
+    setState(() {
+      _todoList.add(title);
+    });
+    _textFieldController.clear();
+  }
+
+   // Code to populate the listview
+  Widget _buildTodoItem(String title) {
+    return ListTile(title: Text(title));
+  }
+
 
 the Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
-![DisplayDialog](/engineering-education/how-to-build-a-todo-app/displayDialog.jpg)
+```dart
+ // Code to populate the listview
+  Widget _buildTodoItem(String title) {
+    return ListTile(title: Text(title));
+  }
+
+  // this code Generate a single item widget
+  Future<AlertDialog> _displayDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Add a task to your list'),
+            content: TextField(
+              controller: _textFieldController,
+              decoration: const InputDecoration(hintText: 'Enter task here'),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: const Text('ADD'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  _addTodoItem(_textFieldController.text);
+                },
+              ),
+              FlatButton(
+                child: const Text('CANCEL'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        });
+  }
+  // this code return the added todo List.
+  List<Widget> _getItems() {
+    final List<Widget> _todoWidgets = <Widget>[];
+    for (String title in _todoList) {
+      _todoWidgets.add(_buildTodoItem(title));
+    }
+    return _todoWidgets;
+  }
+```
 
 The alert dialog tells the user about situations that require confirmation. We are going to use the alert box to collect todo Items.
 To run the code we would have to update the build widget code to the one below.
-
-
-![Build Image](/engineering-education/how-to-build-a-todo-app/build.jpg)
+```dart
+class _TodoListState extends State<TodoList> {
+  final List<String> _todoList = <String>[];
+  final TextEditingController _textFieldController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('To-Do List')),
+      body: ListView(children: _getItems()),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => _displayDialog(context),
+          tooltip: 'Add Item',
+          child: Icon(Icons.add)),
+    );
+  }
+```
 
 Your complete code should look the one below:
 
