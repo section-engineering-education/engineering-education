@@ -1,22 +1,22 @@
-
 title: Integrating TailwindCSS into Flask Apps
 
 description: TailwindCss is a utility-first CSS framework for building frontend applications. This article focuses on how flask developers can use tailwind to quickly design frontend interfaces for their servers.
+
+# Integrating TailwindCSS into Flask Apps
 
 ## Introduction
 
 TailwindCss is a utility-first CSS framework for building frontend applications, TailwindCss differs from other kinds of CSS frameworks, as it gives the user total control over their design, rather than adding obscure CSS classes to your code, with TailwindCss you use utility classes to create your components, with as much control over every single styling as you want, all without having to ever write a single line of CSS. 
 
-In this article, I'll share how Flask developers can take advantage of TailwindCss' utility classes to build frontend templates for their Flask web apps.
-
 ### Pre-Requisites
-For the purposes of demonstration in this article, I'm using python3, and Flask, as well as Javascript package managers (npm or yarn), and I am presuming the reader has basic undersstanding of python and by extension - Flask, and is already quite conversant with TailwindCSS.
+For the purposes of demonstration in this article, I'm using python3, flask and JavaScript package managers (npm or yarn). I am assuming the reader has basic understanding of python and by extension - Flask, and is already quite conversant with TailwindCSS.
 
 * Python3
 * Node.js 12.13.0 or higher
 * npm or yarn
 * Flask
 * Your Favorite text editor
+* Knowledge of using TailwindCSS
 
 ## Building A Simple Flask App
 
