@@ -46,6 +46,7 @@ Steps followed in KNN algorithm:
    3.6. The assigned value is the classified or predicted value for the particular test data point.
 
 ![KNN algorithm](/engineering-education/introduction-to-knn-algorithm/knn.png)
+
 *[Image source](https://www.javatpoint.com/k-nearest-neighbor-algorithm-for-machine-learning): KNN algorithm shown visually*
 
 Now, we will learn how to build the above steps from scratch.
@@ -59,7 +60,9 @@ For demonstration, we will be making use of a `Diabetes` dataset, which contains
 You can download the dataset [here](https://github.com/srishilesh/Machine-learning/blob/master/Classification/KNN/diabetes.csv).
 
 A sample screenshot of the dataset is shown below:
+
 ![Screenshot of the dataset](/engineering-education/introduction-to-knn-algorithm/dataset.PNG)
+
 *Screenshot of diabetes dataset*
 
 #### Installation
@@ -94,6 +97,7 @@ data = pd.read_csv("diabetes.csv")
 ```
 
 ![Dataset sample](/engineering-education/introduction-to-knn-algorithm/dataset.PNG)
+
 *First 5 rows of the dataset*
 
 #### Build utility functions
@@ -103,6 +107,7 @@ In the KNN algorithm, we use Euclidean distance to find the distance between any
 The formula for Euclidean distance is:
 
 ![Euclidean distance](/engineering-education/introduction-to-knn-algorithm/euclidean-distance.PNG)
+
 *The formula for Euclidean distance*
 
 Alternatively, we can use other distance measures like Manhattan distance or Absolute distance.
