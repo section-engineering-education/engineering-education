@@ -1,0 +1,550 @@
+### Documenting a Node.js REST API using swagger
+
+Imagine finding an amazing API (Application Programming Interface) you are looking for on the internet. You decide to consume the API but then you don't know how to send a request. You keep on trying different workarounds but to no avail. You decide to contact the team behind it, but then they reply after a long time yet you are in the midst of your project. This sets you off because there is nothing you can do at the moment. The previously fancy API turns out to be a monster because it is not properly documented.
+
+Swagger is a software tool used for designing, building, documenting, and using restful APIs. It follows the OpenAPI specification.
+
+### Goals
+
+In this article, we will:
+
+- Document a simple Node.js REST(Representational State Transfer) API using swagger
+
+### Prerequisites
+
+To follow along in this article, it is essential to have the following:
+
+- [Node.js](https://nodejs.org/en/) installed on your computer.
+
+- Some basic knowledge of JavaScript.
+
+- Familiarity with building REST APIs using [Express.js](https://expressjs.com/). If you are not familiar, follow this [article](https://www.section.io/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
+
+### Overview
+
+- [Introduction](#introduction)
+
+- [Setting up the development server](#setting-up-the-development-server)
+
+- [Documenting API's general information](#documenting-api's-general-information)
+
+- [Documenting API's servers](#documenting-api's-servers)
+
+- [Documenting API's tags](#documenting-api's-tags)
+
+- [Documenting API's components](#documenting-api's-components)
+
+- [Documenting API's paths](#documenting-api's-paths)
+
+### Introduction
+
+Swagger relies on specifications in developing the documentation of an API. The specifications can be in `YAML` format or `JSON` (JavaScript file) format. In this article, we will implement the specifications using the `JSON` format.
+
+### Setting up the development server
+
+Since the main focus is on documenting a REST API, we won't deal with creating one but we will clone one from this [Github repository](https://github.com/mwangiKibui/node.js-simple-api).
+
+The API will use the following dependencies:
+
+- [lowdb](https://www.npmjs.com/package/lowdb): For storing the data.
+- [morgan](https://www.npmjs.com/package/morgan): For logging the requests.
+- [nanoid](https://www.npmjs.com/package/nanoid): For generating the ID's.
+- [cors](https://www.npmjs.com/package/cors): For setting up the cross-origin policy.
+- [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express): For serving the swagger user interface in our API.
+- [nodemon](https://www.npmjs.com/package/nodemon): For restarting the development server in case of any change.
+
+To install the dependencies, we need to run the following command at the root of the project:
+
+```bash
+npm install
+```
+
+After installing the dependencies, you can start the development server by running:
+
+```bash
+npm run dev
+```
+
+Now that the development server is set up, our focus will be on documenting the API. I encourage you to go through the API and understand the various endpoints and how data is being exchanged.
+
+At this point, you can use [postman](https://www.postman.com/). If you are not familiar with it, you can check out this [post](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-use-postman-to-call-api.html).
+
+From here onwards, we will be concentrating on the `docs` folder in the `src` folder.
+
+### Documenting API's general information
+
+API's general information comprises the openapi version and the API's specific information under the `info` object. The `info` object comprises a title, version number, contact information, terms of service, etc. The information is highly recommended for publicly available APIs to enhance the developer's experience.
+
+In our API, we will document the general information in the `docs/basicInfo.js` file. We will include but not limited to the following information:
+
+```javascript
+module.exports = {
+  openapi: "3.0.3",
+  info: {
+    title: "Simple Todos API",
+    description: "A simple todos API",
+    version: "1.0.0",
+    contact: {
+      name: "John doe", // your name
+      email: "john@web.com", // your email
+      url: "web.com", // your website
+    },
+  },
+};
+```
+
+At the time of writing this article, the latest supported version of openapi is `3.0.3`,change it in case it has been updated but make sure it's a supported version.
+
+Since our API is just simple, there is no much information under the `info` object. Feel free to add more in case you have a complex API as described [here](https://swagger.io/docs/specification/api-general-info/).
+
+To test the above:
+
+- Ensure that the development server is up and running from your terminal
+
+- In your browser, open your documentation page from `http://localhost:4000/api-docs`.
+
+- In case of errors, revisit the steps. Else your webpage should resemble the following:
+
+![general_info_screenshot](/documenting-node.js-rest-api-using-swagger/general-info-screenshot.png)
+
+### Documenting API's servers
+
+Depending on the current environment of the API, it will be operating on different servers. While in a development environment, the API operates on a local server. While in a testing environment, it is on a testing server, and while in production, it is on a production server.
+
+While documenting, you specify the different servers the API is operating on depending on the environment. In our API, we will document that by editing the `docs/servers.js` as follows:
+
+```javascript
+module.exports = {
+  servers: [
+    {
+      url: "http://localhost:4000/todos",
+      description: "Local server",
+    },
+  ],
+};
+```
+
+Since we will only be operating in development for this API, we have only specified the local server. In case you are pushing to testing and production environments, make sure you include the information. It follows the same format.
+
+To test this:
+
+- Make sure that your development server is up and running.
+
+- In your browser, refresh the documentation page.
+
+- In case of any errors, revisit the steps. Else, the following section should be added to your page:
+
+![servers-screenshot](/documenting-node.js-rest-api-using-swagger/servers-screenshot.png)
+
+### Documenting API's tags
+
+Tags are used in grouping different related operations. For example, in an API where you deal with users and stores, you can use tags to differentiate their respective operations.
+
+In our API, since we are dealing only `todos`, we will only add one tag to the `docs/tags.js` file as follows:
+
+```javascript
+module.exports = {
+  tags: [{ name: "Todo CRUD operations" }],
+};
+```
+
+In a more complex API where you have different parties, you could add each party as above in the tags array.
+
+To test this:
+
+- Make sure that the development server is running.
+
+- In your browser, refresh the documentation page.
+
+- In case of errors, revisit the steps. Else this section should be added to your page:
+
+![tags_screenshot](/documenting-node.js-rest-api-using-swagger/tags-screenshot.png)
+
+### Documenting API's components
+
+Components are used in containerizing different reusable definitions. The reusable definitions involve schemas, parameters, securitySchemes, requestBodies, responses, headers, examples, links, and callbacks. After their definition, components are accessed using `$ref`.
+
+In our API, we document components by editing the `docs/components.js` file as follows:
+
+```javascript
+module.exports = {
+  components: {
+    schemas: {
+      id: {
+        type: "string",
+        description: "An id of a todo",
+        example: "tyVgf",
+      },
+      Todo: {
+        type: "object",
+        properties: {
+          id: {
+            type: "string",
+            description: "Todo identification number",
+            example: "ytyVgh",
+          },
+          title: {
+            type: "string",
+            description: "Todo's title",
+            example: "Coding in JavaScript",
+          },
+          completed: {
+            type: "boolean",
+            description: "The status of the todo",
+            example: false,
+          },
+        },
+      },
+      TodoInput: {
+        type: "object",
+        properties: {
+          title: {
+            type: "string",
+            description: "Todo's title",
+            example: "Coding in JavaScript",
+          },
+          completed: {
+            type: "boolean",
+            description: "The status of the todo",
+            example: false,
+          },
+        },
+      },
+      Error: {
+        type: "object",
+        properties: {
+          message: {
+            type: "string",
+          },
+          internal_code: {
+            type: "string",
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+Since our API is not that complex, we have only included the `schemas` in the components.
+
+In the `schemas`, we have defined the `id`, `Todo`, `TodoInput`, and `Error`. For each schema definition, we are describing its respective data using keys such as `type`, `description`, `example`, and `properties`.
+
+To test this:
+
+- Ensure that the development server is running.
+
+- In your browser, refresh the documentation page.
+
+- In case of errors, revisit the steps. Else, the following section should be added to the documentation page:
+
+![schemas_screenshot](/documenting-node.js-rest-api-using-swagger/schemas-screenshot.png)
+
+### Documenting API's paths
+
+Paths are the routes that are to be accessed. Each route is different from the other based on the method of operation and the data passed.
+
+To document the paths in our API, we will cover each route separately.
+
+#### Getting todos i.e /todos route
+
+When getting the todos, we are sending a `GET` request to `/todos`.
+
+To document this path, we edit the `/docs/todos/get-todos.js` file as follows:
+
+```javascript
+module.exports = {
+  get: {
+    tags: ["Todo CRUD operations"],
+    description: "Get todos",
+    operationId: "getTodos",
+    parameters: [],
+    responses: {
+      200: {
+        description: "Todos were obtained",
+        content: {
+          "application/json": {
+            schema: {
+              $ref: "#/components/schemas/Todo",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+From above, we have:
+
+- Specified the method of the operation, `get`.
+- Specified the tags of the operation.
+- Described the operation with a short `description` and an `operationId`.
+- Defined the `parameters`. For this case, there is none.
+- Defined the expected `responses`. Only a `200` response is expected since we are fetching data. In the response, we also describe the content type and match the schema to that from the components using `$ref`.
+
+To test this:
+
+- Ensure that the development server is running.
+- In your browser, refresh the documentation page.
+- In case of errors, revisit the steps. Else the following section should be added to the page:
+
+![get_todos_screenshot](/documenting-node.js-rest-api-using-swagger/get-todos-screenshot.png)
+
+- To test it out, click on the `Try it out`, then click `Execute`, and then examine the server response.
+
+#### Getting single todo (/todos/:id)
+
+When getting a single todo, we are sending a `GET` request to `/todos/:id`. The `:id` is for dynamic `id`.
+
+To document this path, we will edit the `/docs/todos/get-todo.js` file as follows:
+
+```javascript
+module.exports = {
+  get: {
+    tags: ["Todo CRUD operations"],
+    description: "Get a todo",
+    operationId: "getTodo",
+    parameters: [
+      {
+        name: "id",
+        in: "path",
+        schema: {
+          $ref: "#/components/schemas/id",
+        },
+        required: true,
+        description: "A single todo id",
+      },
+    ],
+    responses: {
+      200: {
+        description: "Todo is obtained",
+        content: {
+          "application/json": {
+            schema: {
+              $ref: "#/components/schemas/Todo",
+            },
+          },
+        },
+      },
+      404: {
+        description: "Todo is not found",
+        content: {
+          "application/json": {
+            schema: {
+              $ref: "#/components/schemas/Error",
+              example: {
+                message: "We can't find a todo",
+                internal_code: "invalid id",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};
+```
+
+From above, we have:
+
+- Specified the method of the operation, `get`.
+- Defined the `tags` of the operation.
+- Described the operation with a short `description` and an `operationId`.
+- Specified the parameters for the operation. We describe the `name` of the parameter, the `in` which can be `path`, `header`, `query`, or `cookie`. For our case it's `path`. We point the parameter to its equivalent schema component using `$ref`, specify that it's `required`, and give a short `description` of the parameter.
+- Specified the expected responses. For this case, we have two. `200` and `404`. In case todo is found, it will return `200` else `404`. For each response, we are giving a short description, expounding on the content type, and matching the schema to its components equivalent using `$ref`.
+
+To test this:
+
+- Ensure that the development server is running.
+- In your browser, refresh the documentation page.
+- In case of errors, revisit the steps. Else the following section should be added to the page:
+
+![get_todo_screenshot](/documenting-node.js-rest-api-using-swagger/get-todo-screenshot.png)
+
+- To try it out, from the previous operation, get an `id`. Click the `Try it out` button of the current operation, paste in the `id` in the parameters section, and observe the server responses.
+
+#### Creating a todo (/todos)
+
+When creating a todo, we are sending a `POST` request to `/todos` with the data of the todo. The data is in the `requestBody`.
+
+To document this path, we need to edit the `docs/todos/create-todo.js` file as follows:
+
+```javascript
+module.exports = {
+  post: {
+    tags: ["Todo CRUD operations"],
+    description: "Create todo",
+    operationId: "createTodo",
+    parameters: [],
+    requestBody: {
+      content: {
+        "application/json": {
+          schema: {
+            $ref: "#/components/schemas/TodoInput",
+          },
+        },
+      },
+    },
+    responses: {
+      201: {
+        description: "Todo created successfully",
+      },
+      500: {
+        description: "Server error",
+      },
+    },
+  },
+};
+```
+
+From above, we have:
+
+- Specified the method of the operation, `post`.
+- Specified the `tags` of the operation.
+- Described the operation with a short `description` and an `operationId`.
+- Specified the `parameters` of the operation. For this case, there is none.
+- Specified the `requestBody`. With it, we have specified the content type and matched the schema to its equivalent in the components using `$ref`.
+- Specified the expected responses. `201` if the todo is created successfully and `500` if there is a server error.
+
+To test this:
+
+- Ensure that the development server is running.
+- In your browser, refresh the documentation page.
+- In case of errors, revisit the steps. Else the following section should be added to your page:
+
+![create_todo_screenshot](/documenting-node.js-rest-api-using-swagger/create-todo-screenshot.png)
+
+- To test the functionality, click the `Try it out` button, Fill the data in the `Request Body`, click `Execute`, and then observe the server responses.
+
+#### Updating a todo (/todos/:id)
+
+When updating a todo, we are sending a `PUT` request to `/todos/:id`. The dynamic `id` is `:id`. An update for todo in this API involves toggling the completed value.
+
+To document this path, we have to edit the `docs/todos/update-todos.js` file as follows:
+
+```javascript
+module.exports = {
+  put: {
+    tags: ["Todo CRUD operations"],
+    description: "Update todo",
+    operationId: "updateTodo",
+    parameters: [
+      {
+        name: "id",
+        in: "path",
+        schema: {
+          $ref: "#/components/schemas/id",
+        },
+        required: true,
+        description: "Id of todo to be updated",
+      },
+    ],
+    responses: {
+      200: {
+        description: "Todo updated successfully",
+      },
+      404: {
+        description: "Todo not found",
+      },
+      500: {
+        description: "Server error",
+      },
+    },
+  },
+};
+```
+
+From above, we have:
+
+- Specified the method of operation, `put`.
+- Specified the `tags` of the operation.
+- Described the operation with a short `description` and an `operationId`.
+- Specified the parameters for the operation. We have described the `name`, `in`, `schema`, `required`, and `description` properties. With the `schema`, we have pointed to the components equivalent using `$ref`.
+- Specified the different responses we expect. `200` if a todo is updated successfully, `404` if the todo with that `id` is not found, and `500` if there is a server error updating the todo.
+
+To test this:
+
+- Ensure that the development server is running.
+- In your browser, refresh the documentation page.
+- In case of errors, revisit the steps. Else the following section should be added to your page:
+
+![update_todo_screenshot](/documenting-node.js-rest-api-using-swagger/update-todo-screenshot.png)
+
+- To try it out, get an `id` of a todo from the first operation, click the `Try it out` button, paste in the `id` in the parameters section, click `Execute`, and observe the server response.
+
+#### Deleting a todo (/todos/:id)
+
+When deleting a todo, we are sending a `DELETE` request to `/todos/:id`. The dynamic `id` is `:id`.
+
+To document this path, we have to edit the `/docs/todos/delete-todo.js` file as follows:
+
+```javascript
+module.exports = {
+  delete: {
+    tags: ["Todo CRUD operations"],
+    description: "Deleting a todo",
+    operationId: "deleteTodo",
+    parameters: [
+      {
+        name: "id",
+        in: "path",
+        schema: {
+          $ref: "#/components/schemas/id",
+        },
+        required: true,
+        description: "Deleting a done todo",
+      },
+    ],
+    responses: {
+      200: {
+        description: "Todo deleted successfully",
+      },
+      404: {
+        description: "Todo not found",
+      },
+      500: {
+        description: "Server error",
+      },
+    },
+  },
+};
+```
+
+From above, we have:
+
+- Specified the method of operation, `delete`.
+- Specified the `tags` of the operation.
+- Described the operation with a short `description` and `operationId`.
+- Specified the `parameters`. For a parameter, we have described the `name`, `in`, `schema`, `required`, and `description` properties.
+- Specified the `responses`. In this operation, we can get a `200` response if the todo is deleted successfully, a `404` response if the todo with that `id` is not found, and a `500` response if there is a server error deleting the todo.
+
+To test this:
+
+- Ensure that the development server is running.
+- In your browser, refresh the documentation page.
+- In case of errors, revisit the steps. Else, the following section should be added to your page:
+
+![delete_todo_screenshot](/documenting-node.js-rest-api-using-swagger/delete-todo-screenshot.png)
+
+- To try this out, get the `id` of the updated todo, click the `Try it out` button, paste the `id` in the parameters section, click the `Execute` button, and then observe the server response.
+
+### Summary
+
+In this article, we have documented a simple Node.js REST API using swagger by following the below steps:
+
+- [Documenting API's general information](#documenting-api's-general-information)
+- [Documenting API's servers](#documenting-api's-servers)
+- [Documenting API's tags](#documenting-api's-tags)
+- [Documenting API's components](#documenting-api's-components)
+- [Documenting API's paths](#documenting-api's-paths)
+
+### Conclusion
+
+Documenting an API serves vast advantages towards the usability of the API since anyone can understand and consume it. Swagger does the heavy lifting process in documenting a restful API. Depending on the API you are building, swagger offers vast [functionalities](https://swagger.io/docs/specification/about/).
+
+You can find the finalized code for this article from this [Github repository](https://github.com/mwangiKibui/node.js-rest-api-documentation).
+
+In case of any query, you can reach me via [Twitter](https://twitter.com/itsmkibui).
+
+Happy coding!!
