@@ -10,19 +10,21 @@ To follow through the article, you will need to:
 ### Purpose of the spanning tree protocol (STP)
 Redundancy is an important aspect of the hierarchical architecture for avoiding network service failures and removing single points of failure. Physical paths must be added to redundant networks, but logical redundancy must also be considered. Users can access network services despite path interruption by providing alternative physical paths for data to traverse the network. 
 
-In a switched Ethernet network, redundant paths, on the other hand, can trigger logical and physical layer 2 loops. The Spanning Tree Protocol is a loop-prevention network protocol that [creates a loop-free Layer 2 topology thus allowing for redundancy](https://www.coursehero.com/file/p7g4nm7k/Having-alternate-physical-paths-for-data-to-traverse-the-network-makes-it). STP's main goal is to create a topology of all participating STP switches to create a loop-free switched network. The best loop-free path through the switched network is then [calculated using this topology information](https://www.ciscopress.com/articles/article.asp?p=1728837).
+In a switched Ethernet network, redundant paths, on the other hand, can trigger logical and physical layer 2 loops. The Spanning Tree Protocol is a loop-prevention network protocol that [creates a loop-free Layer 2 topology thus allowing for redundancy](https://www.ciscopress.com/articles/article.asp?p=1728837). STP's main goal is to create a topology of all participating STP switches to create a loop-free switched network. The best loop-free path through the switched network is then [calculated using this topology information](https://www.ciscopress.com/articles/article.asp?p=1728837).
 
 ### The spanning tree protocol's (STP) operations 
 A root switch election occurs when all switches behave as if they are the root switch at first and continue to do so until they receive traffic from a superior switch (switch priority determines). This is known as a root switch election. Another thing to bear in mind is that depending on the STP mode used, the network may have multiple root switches. Each VLAN has its STP case on Cisco switching equipment, and a root switch is [automatically elected for each VLAN; this mode is known as Per VLAN Spanning Tree Plus (PVST+)](https://www.cciein8weeks.com/ccie-rs-400-101-v5-1-written-exam-implement-and-troubleshoot-spanning-tree). Rapid PVST+ is used when RSTP is implemented.
 
 ![STP ports](/engineering-education/concepts-and-configuration-of-stp/spanning-tree.jpg)
 
+[Image source](https://imsucc.blogspot.com/2019/12/spanning-tree-protocol-example.html)
+
 Following the election of the root switch, each port is assigned [a role based on its location within the STP topology](http://startabizclient3.com/least-number/stp-blocking-cisco.html). The available port roles when using 802.1D spanning tree are listed below:
 
-- Root—The port allocated to this position is [the best route to the root switch](https://www.ciscopress.com/articles/article.asp?p=1728837).
-- Designated—The port assigned to this position is chosen based on the best route to a particular switched segment; each switched segment has only one designated port.
-- Alternate—This port is designated as a backup to the root port; [if the root port fails, this port will assume control of the root port role](https://www.yumpu.com/en/document/view/35765136/chapter-9-rapid-spanning-tree-protocol-rstp-e-c-spot-on).
-- Backup—The port assigned to this position is set as a fallback for the designated port; if the designated port fails, this port assumes the designated port's role.
+- Root — The port allocated to this position is [the best route to the root switch](https://www.ciscopress.com/articles/article.asp?p=1728837).
+- Designated — The port assigned to this position is chosen based on the best route to a particular switched segment; each switched segment has only one designated port.
+- Alternate — This port is designated as a backup to the root port; [if the root port fails, this port will assume control of the root port role](https://www.yumpu.com/en/document/view/35765136/chapter-9-rapid-spanning-tree-protocol-rstp-e-c-spot-on).
+- Backup — The port assigned to this position is set as a fallback for the designated port; if the designated port fails, this port assumes the designated port's role.
 
 To avoid loops, all ports with the alternative or backup STP roles will be [blocked until the best route has been determined and each of the ports has been allocated a role](https://www.ciscopress.com/articles/article.asp?p=1728837).
 
@@ -31,9 +33,11 @@ Each activated port on a switch participates in STP, and each of these ports mus
 
 ![STP interface states](/engineering-education/concepts-and-configuration-of-stp/interface-states.jpg)
 
+[Image source](https://www.cisco.com/en/US/docs/switches/lan/catalyst3650/software/release/3se/consolidated_guide/configuration_guide/b_consolidated_3850_3se_cg_chapter_01001001.html)
+
 A port can be in one of five states, as shown above, which are listed below:
 
-- Blocking State -Blocking ports do not forward traffic; instead, they listen to the network to determine if they can continue to block traffic. The port could go into listening mode if the state of the switched network changes. Following switch initialization, all ports are in a blocking mode.
+- - Blocking State - Blocking ports do not forward traffic; instead, they listen to the network to determine if they can continue to block traffic. The port could go into listening mode if the state of the switched network changes. Following switch initialization, all ports are in a blocking mode.
 - Listening State - [No traffic is diverted while a port is in the listening state](https://itdaddy.wordpress.com/category/stp-spanning-tree-8021d). The port can only listen to traffic when in this state, just as it did when it was blocking. After the port is set to start frame forwarding, this is the [first state after the blocking state](https://www.ciscopress.com/articles/article.asp?p=1728837). In the listening mode, the default time is 15 seconds.
 - Learning State - Ports in the learning state do not forward traffic; instead, [they listen to traffic and continue to learn addresses from the connected devices on a section while in this state](https://www.ciscopress.com/articles/article.asp?p=1728837). The default time is 15 seconds when in this state.
 - Forwarding State - Ports in the forwarding state [begin to learn addresses from the section while still forwarding traffic](https://www.ciscopress.com/articles/article.asp?p=1728837).
