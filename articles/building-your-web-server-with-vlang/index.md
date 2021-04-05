@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-web-server-with-vlang/
+title: Building a web Server Using Vlang
+description: This tutorial will introduce us to the V programming language. We will look at installing Vlang in our local machine and creating a simple web server with Vlang.
+author: samuel-umoren
+date: 2021-04-02T00:00:00-17:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-web-server-with-vlang/hero.jpg
+    alt: V Vlang example
+---
 A lot of new programming languages are released every year and very few end up getting noticed. Very few make it to the top programming languages list. One language that has recently gotten recognition by programmers, especially backend developers, is Vlang (V).
+<!--more-->
 
 With the rise of statically typed programming languages such as Go and Rust, developers are more interested in languages or frameworks that improve on the tradeoffs of these popular ones. In this case, Vlang has made some enormous claims. 
 
@@ -9,7 +26,6 @@ The aim of this article is to:
 - Guide on building a web server with Vweb.
 
 ### What is Vlang
-
 Vlang (V) is a statically typed programming language inspired by Rust, Go, Oberon, Swift, Kotlin, and Python. It is open-sourced and claims to be very easy to learn.
 
 Based on the V documentation:
@@ -24,18 +40,15 @@ V takes a more strict approach to everything compared to Go and Rust. For instan
 - Uses structs instead of objects.
 - Variables are immutable.
 
-### Core Features of V
-
+### Core features of V
 Let's go through some features of V.
 
-#### Code Style
-
+#### Code style
 The V programming language drives programmers to write good code. There’s only one programming style in V unlike languages such as Rust and Golang.
 
 V claims that because of its one-style approach to programming, it’s easier for developers in teams to understand, change team members’ code, and build maintainable software.
 
 #### Safety
-
 V is very strict with writing secure, fast and memory-safe programs. Some strict policies of the language are:
 
 #### 1. Variables are immutable by default. 
@@ -50,6 +63,7 @@ println(name) //Sammy
 name = 'Bob'
 println(name)
 ```
+
 You will get the following error:
 
 ```c
@@ -85,7 +99,7 @@ fn add(x int, y int) int {
 #### 3. There are no global variables in V.
 The issue with global variables is that they make your program less clear as it grows in size. If you don't know how to use them properly, you may end up writing messy code.
 
-#### Error Handling
+#### Error handling
 V doesn't handle errors in `throw/try/catch` blocks. Instead, it combines `Option/Result` into one type. The `Option/Result` type can either be a none, an error or return a value.
 
 The way you write this, is by adding a `?` to the return type.
@@ -127,7 +141,6 @@ fn main() {
 The code snippet above is a typical example of how the `Option/Result` type works. The `err` returns the message passed to the `error()`.
 
 #### Other features of V are:
-
 - TCC backends: The main backend compiles V to human readable C.
 - V possesses a compile-time of 1 million lines of code per second.
 - There are no dependencies. V is being built with V!
@@ -140,8 +153,7 @@ The code snippet above is a typical example of how the `Option/Result` type work
 - Libraries: V has its own package manager (**vpm**) for installing new libraries.
 - Clang and GCC optimization.
 
-### Getting Started with V
-
+### Getting started with V
 Let's proceed to installing V and writing our first V program.
 
 ### Prerequisites
@@ -152,7 +164,6 @@ To continue with this tutorial, you will need:
 - A code editor like VSCode.
 
 #### Installation
-
 For Linux, macOS, FreeBSD, etc, open a terminal and run the following commands:
 
 ```bash
@@ -171,7 +182,7 @@ make.bat
 .\v.exe symlink # this adds V to the PATH of your environmental variables
 ```
 
-When your installation is complete, reopen the terminal, then run this command to confirm that V is installed.
+After your installation is complete, reopen the terminal and run this command to confirm that V is installed:
 
 ```bash
 v version
@@ -180,7 +191,6 @@ v version
 You should get something like: `V 0.2.2 2b53992`. 
 
 #### Writing your first V program
-
 Open your code editor. If you use VSCode, install `vlang-vscode.extension`. The extension gives you syntax highlighting, linting, formatting, and code snippet support for Vlang.
 
 Let's now write our first Hello World program with V.
@@ -191,7 +201,7 @@ Run this command to create a `hello.v` file.
 touch hello.v
 ```
 
-Then add the following lines of code to the file 
+Then add the following lines of code to the file.
 
 `hello.v`
 ```c
@@ -208,11 +218,11 @@ You should get: `Hello V World!`
 
 The official V documentation claims that anything you can do in other languages, you can do in V.
 
-The V programming language has a built-in library for building web applications called **vweb**. 
+The V programming language has a built-in library for building web applications called **Vweb**. 
 
 Vweb is built from scratch with V. It is tiny and easy to deploy. It’s still in the pre-alpha stage.
 
-Notwithstanding, let's go ahead to write a simple web server with vweb. 
+Notwithstanding, let's go ahead to write a simple web server with Vweb. 
 
 #### Building a web server with V
 
@@ -312,7 +322,6 @@ There’s still a lot of work in progress (WIP). Most parts of the language, mos
 > **Disclaimer:** I do not aim this at encouraging you to dump your current backend language or framework in production for Vlang.
 
 ### Conclusion
-
 This article highlights the core features, snippets, ideas and shares insights on the V programming language.
 
 In this article, you got a quick overview of the language web capabilities when you built a simple server with Vlang library for building web applications using **Vweb.**
@@ -320,3 +329,6 @@ In this article, you got a quick overview of the language web capabilities when 
 Also, I highlighted some reasons you should keep tabs on the V project.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
