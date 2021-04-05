@@ -42,7 +42,7 @@ The two collections you will need to create in this article are the `Users` coll
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 #### Creating a Fauna Index
-To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit [here](https://gist.github.com/Chukslord1/58430aaf25f1ce32b1d872d2b5e2547b)for instructions on creating an index.
+To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit [here](https://gist.github.com/Chukslord1/58430aaf25f1ce32b1d872d2b5e2547b) for instructions on creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
