@@ -14,8 +14,8 @@ images:
   - url: /engineering-education/building-an-appointment-scheduling-telegram-bot/hero.jpg 
     alt: Building an Appointment Scheduling Telegram Bot with Python and Fauna
 ---
-In this article, I would be doing the same but this time we would be rebuilding our app as a telegram bot. Visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to read the article on dev.to.
-<!--more-->
+Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier. 
+
 ### Introduction
 #### What is Fauna?
 [Fauna](https://docs.fauna.com/fauna/current/) is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
