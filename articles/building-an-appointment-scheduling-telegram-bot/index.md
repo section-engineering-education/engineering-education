@@ -341,7 +341,7 @@ def delete_appointment(update, context):
 
 The `delete_appointment` method is like the `update_appointment` method. However, the difference is that after retrieving the appointment by querying the `Appointments` collection, you used the Fauna `delete` method to delete the data from the database. Subsequently, you sent a message to alert the user of a successful appointment deletion.
 
-The `delete_appointment` method is similar to the ‘update_appointment` method.  You set the `delete_appointment` method to get triggered by a message handler that uses the regex filter to detect the delete method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
+You set the `delete_appointment` method to get triggered by a message handler that uses the regex filter to detect the delete method’s regex code. You then split the message to extract the appointment id. Copy and paste the code below to create the message handler.
 
 ```python
 dispatcher.add_handler(MessageHandler(Filters.regex("/delete_[0-9]*"), update_appointment))
