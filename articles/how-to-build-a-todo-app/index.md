@@ -38,12 +38,14 @@ The **TODO List** app will look like the screenshot below:
 In this tutorial, we will be using the flutter SDK which can be downloaded [here](https://flutter.dev/docs/get-started/install) and [VS Code](https://code.visualstudio.com/download) text editor. On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
 
 ```bash
+//create new project
 flutter create todo_app
 ```
 
 Next, navigate into the created project (todo_app) directory using the command ```cd todo_app``` in our case and run the app as shown below:
 
 ```bash
+// run the app
 flutter run
 ```
 
@@ -65,6 +67,7 @@ void main() {
 class Todo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  // app layout
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -102,35 +105,19 @@ This type of widget is dynamic. This means it can change its appearance when it 
 Edit your code to match the one in the picture below.
 
 ```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(Todo());
-}
-
-class Todo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // code that return whole app
-    return MaterialApp(
-      home: TodoList());
-  }
-}
-
-class TodoList extends StatefulWidget {
-  @override
-  _TodoListState createState() => _TodoListState();
-}
-
 class _TodoListState extends State<TodoList> {
+  // save data
+  final List<String> _todoList = <String>[];
+  // text field
+  final TextEditingController _textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    // code that return the appbar
+    // app layout
     return Scaffold(
-        appBar: AppBar(
-          title: Text('To-do List'),
-        ),
-      );
+      appBar: AppBar(
+        title: Text('To-do List'),
+      ),
+    );
   }
 }
 ```
@@ -139,13 +126,13 @@ You should notice that our stateful widgets class TodoList has two classes. This
 
 ```dart
 class _TodoListState extends State<TodoList> {
-  // List that holds the todo list data
+  // save data
   final List<String> _todoList = <String>[];
-  // code that call the text field
+  // text field
   final TextEditingController _textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    // code that return the appbar
+    // app layout
     return Scaffold(
       appBar: AppBar(
         title: Text('To-do List'),
@@ -162,9 +149,9 @@ Next, update your code to the one below
 
 ```dart
 class _TodoListState extends State<TodoList> {
-  // List or arrays that holds the todo list data
+  // save data
   final List<String> _todoList = <String>[];
-  // code that call the text field
+  // text field
   final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -176,7 +163,7 @@ class _TodoListState extends State<TodoList> {
     );
   }
 
-  // function that adds data to the List.
+  // adds data to list.
   void _addTodoItem(String title) {
     //  a set state will notify the app that the state has changed
     setState(() {
@@ -191,7 +178,7 @@ The _addtodoItems function is responsible for saving items into _todolist.
 Update your code again to match the one below.
 
 ```dart
- // function that adds data to the List.
+ // adds data to List.
   void _addTodoItem(String title) {
     //  a set state will notify the app that the state has changed
     setState(() {
@@ -200,7 +187,7 @@ Update your code again to match the one below.
     _textFieldController.clear();
   }
 
-   // Code to populate the listview
+   //populate the listview
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
@@ -211,13 +198,14 @@ the Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
 ```dart
- // Code to populate the listview
+ //populate the listview
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
 
-  // this code Generate a single item widget
+  // display a dialog for the user to enter items
   Future<AlertDialog> _displayDialog(BuildContext context) async {
+    //alter the app state to show a dialog
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -228,6 +216,7 @@ To type in todo items update the code to the one below.
               decoration: const InputDecoration(hintText: 'Enter task here'),
             ),
             actions: <Widget>[
+              //add button
               FlatButton(
                 child: const Text('ADD'),
                 onPressed: () {
@@ -235,6 +224,7 @@ To type in todo items update the code to the one below.
                   _addTodoItem(_textFieldController.text);
                 },
               ),
+              //cancel button
               FlatButton(
                 child: const Text('CANCEL'),
                 onPressed: () {
@@ -245,7 +235,7 @@ To type in todo items update the code to the one below.
           );
         });
   }
-  // this code return the added todo List.
+  // iterates through our todo list titles.
   List<Widget> _getItems() {
     final List<Widget> _todoWidgets = <Widget>[];
     for (String title in _todoList) {
@@ -263,9 +253,11 @@ class _TodoListState extends State<TodoList> {
   final TextEditingController _textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    // app layout
     return Scaffold(
       appBar: AppBar(title: const Text('To-Do List')),
       body: ListView(children: _getItems()),
+      //add items to the to-do list
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(context),
           tooltip: 'Add Item',
@@ -296,13 +288,16 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
+  // save data
   final List<String> _todoList = <String>[];
+  //text field
   final TextEditingController _textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('To-Do List')),
       body: ListView(children: _getItems()),
+      //add items to the to-do list
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(context),
           tooltip: 'Add Item',
@@ -324,8 +319,9 @@ class _TodoListState extends State<TodoList> {
     return ListTile(title: Text(title));
   }
 
-  // this code Generate a single item widget
+  // display a dialog for the user to enter items
   Future<AlertDialog> _displayDialog(BuildContext context) async {
+    //alter the app state to show a dialog
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -336,6 +332,7 @@ class _TodoListState extends State<TodoList> {
               decoration: const InputDecoration(hintText: 'Enter task here'),
             ),
             actions: <Widget>[
+              // add button
               FlatButton(
                 child: const Text('ADD'),
                 onPressed: () {
@@ -343,6 +340,7 @@ class _TodoListState extends State<TodoList> {
                   _addTodoItem(_textFieldController.text);
                 },
               ),
+              //Cancel button
               FlatButton(
                 child: const Text('CANCEL'),
                 onPressed: () {
@@ -353,7 +351,7 @@ class _TodoListState extends State<TodoList> {
           );
         });
   }
-
+  // iterates through our todo list title
   List<Widget> _getItems() {
     final List<Widget> _todoWidgets = <Widget>[];
     for (String title in _todoList) {
