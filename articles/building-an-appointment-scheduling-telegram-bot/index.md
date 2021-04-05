@@ -18,9 +18,7 @@ images:
 Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? This article is just what you need. You would also use a serverless database system called FaunaDB to build our system, making your work easier.
 <!--more-->
 ### Introduction
-
-#### What is Fauna?
-[Fauna](https://docs.fauna.com/fauna/current/) is a serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
+For an introduction to the Fauna serverless databse visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o).
 
 #### Prerequisites
 To follow along with this tutorial, you need to have:
@@ -32,20 +30,6 @@ Run the below command in your command-line interface to install the prerequisite
 ```bash
 pip install faunadb telegram python_telegram_bot
 ```
-
-To check if Fauna installed correctly, run the sample code provided in their Python driver [documentation](https://docs.fauna.com/fauna/current/drivers/python.html).
-```python
-from faunadb import query as q
-from faunadb.objects import Ref
-from faunadb.client import FaunaClient
-client = FaunaClient(secret="your-secret-here")
-indexes = client.query(q.paginate(q.indexes()))
-print(indexes)
-```
-
-If your result is like the image below, then you are ready.
-
-![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
 
 ### Creating A Fauna Database
 To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register).To create a new databse, click on the `CREATE DATABASE` button on your dashboard. Assign a name to the databse you created and save it.
