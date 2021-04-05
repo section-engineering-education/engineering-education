@@ -37,22 +37,16 @@ Sign up on their website [here](https://dashboard.fauna.com/accounts/register) a
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
 #### Creating the Fauna Collections
-For this tutorial, you will need to create two collections in your database. A collection is similar to the [tables](https://en.wikipedia.org/wiki/Table_(database)#:~:text=A%20table%20is%20a%20collection,table%20format%20within%20a%20database.&text=In%20relational%20databases%2C%20and%20flat,a%20row%20and%20column%20intersect.) found in a [relational](https://en.wikipedia.org/wiki/Relational_database) database system. The first collection you need to create is the `Users` collection. This is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This is where you will create all the user’s appointments. 
-
-To create a collection, click on the `CREATE COLLECTION` button, then provide information for the required fields. Enter a name for the collection, a value for the `History Days` field and a value for the `TTL` field. As explaied in the official documentation, the `History Days` field refers to the number of days you want a historical record of any data in that collection to be kept. The `TTL` refers to the date that in the collection expires. For example, if the `TTL` is 3, Fauna will auto-delete any data stored in the database three days after the last date you modified it.
+The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. See this [article](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for more information about collections.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
-
-After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to the [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data found in a table as in a relational database system.
 
 #### Creating a Fauna Index
 To easily access and scroll through data in the databse, we need to create a Fauna index. Click on the `New Index` button found in the `DB Overview` tab on the left side of your screen.
 
-We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
+We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this (article)[https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o] to learn more about creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
-
-After clicking on the `New Index` button, the system will display the screen above to you. You need to select the collection you want to connect to this index. After choosing the collection, enter the name, terms, and values for your index. Ticking the `Unique` checkbox ensures the data entered for the term is unique. The terms field specifies what data you want the index to browse.
 
 For the `users_index`, we will use the `id` field as the terms. Also, make sure you tick the unique checkbox so the data entered is unique. 
 For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
