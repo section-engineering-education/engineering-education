@@ -1,4 +1,4 @@
-Application widgets are views that contain some of the application functionality accessible from the user's home screen. This tutorial will take you through Android app widgets in detail.
+Application widgets are views that contain some of the application's functionalities that are accessible from the user's home screen, for example, weather widgets, clock widgets, etc. This tutorial will take you through how to implement widgets in Android applications.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -10,15 +10,15 @@ Application widgets are views that contain some of the application functionality
 
 ### Prerequisites
 To follow through with this tutorial with ease, you need to meet the following prerequisites:
-- Basic knowledge in building Android apps.
+- The reader should have basic knowledge in building Android apps.
 - [Android Studio](https://developer.android.com/studio) installed.
-- Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language.
+- Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language and XML programming language.
 
 ### Introduction to Android widgets
-Widgets vary in size and support resizing. Widgets are placed on the device's home screen to enable quick access to the data they hold and functionalities. They allow you to create shortcuts for your favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
+Widgets vary in size and support resizing. Widgets are mostly placed on a device's home screen to enable quick access to data and functionalities of a particular mobile application. They allow a user to create shortcuts for their favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
 
 #### Widget design guidelines
-**Widget content:** Widget should concentrate on your app's most important content. The app should provide more details about the content presented on the widget.
+- **Widget content:** A widget should concentrate on an app's most important content. The app should provide more details about the content presented on the widget.
 - **Widget configuration:** For the widgets that need to be configured, you should creating a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
 - **Layout considerations:** Widgets should be adaptable to accommodate varying spaces.
 - **Widget resizing:** Widgets should support resizing to fine-tune the amount of information the users want to see.
@@ -27,22 +27,22 @@ Widgets vary in size and support resizing. Widgets are placed on the device's ho
 Widgets are categorized into:
 
 #### Information widgets
-Informational widgets provide information to the user. Information on the widgets can keep changing over time based on the need. Examples of information widgets include the soccer live score widget, stock market widget, and weather widget.
+Information widgets provide information to the user. This information  can keep changing over time, based on the need. Examples of information widgets include the soccer live score widget, stock market widget, and weather widget.
 
 #### Control widgets
-The control widgets allow the user to carry out some functions without opening the application. An example of a commonly used control widget is a music widget. The widget allows users to play pause or play the next music track without opening the music app.
+The control widgets allow the user to carry out some functions without opening the application. An example of a commonly used control widget is a music player widget. The widget allows users to play, pause or skip to the next music track without opening the music player app.
 
 #### Collection widgets
-Collection widgets display multiple elements for viewing. Collection elements support scrolling. They can display a collection of messages, articles, or images.
+Collection widgets display multiple elements for viewing. Collection widgets support scrolling. They can display a collection of messages, articles, or images.
 
 #### Hybrid widgets
-Hybrid widgets are widgets that can fall into more than one category. For example, a music widget can provide more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
+Hybrid widgets are widgets that can fall into more than one category. For example, a music player widget can accommodate more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
 
 ### Creating a sample widget in Java
 This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects.
 
 **Step 1: Create a new Android Studio project**
-Open Android Studio and create a new project. Use Empty Activity project template. Name the project `App Widgets Demo` and the package name as `com.demo.widgetsdemo`. Select `Java` as the project language.
+In this section, we will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects.
 
 ![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
