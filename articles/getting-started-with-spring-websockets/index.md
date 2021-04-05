@@ -6,12 +6,11 @@ description: A beginner's guide to WebSockets and implementing them in Spring wi
 
 Nowadays, web applications have become much more powerful than they once were. You can now have real-time functionality in the form of chat applications or even multiplayer games. All this has been made possible by the use of WebSockets.
 
-For those who don’t know, WebSocket is a communications protocol. It's useful for opening persistent two-way connections between web client and server. This allows you to establish real-time interaction you could never do with only HTTP. In this guide, we will explore in further detail the theory behind this protocol. Not only that but we'll explore a subprotocol that you can use alongside it. Then, we will go over how to implement WebSockets in Java using Spring Boot, testing it with a simple web client. We'll also go over some of the basics to secure WebSocket connections.
-
+For those who don’t know, WebSocket is a communications protocol. It's useful for opening persistent two-way connections between web client and server. This allows you to establish real-time interaction you could never do with only HTTP. In this guide, we will explore in further detail the theory behind this protocol. Not only that but we'll explore a subprotocol that you can use alongside it. Then, we will go over how to implement WebSockets in Java using [Spring Boot](https://spring.io/projects/spring-boot), testing it with a simple web client. We'll also go over some of the basics to secure WebSocket connections.
 
 ### Prerequisites
 
-To follow this guide you should have a solid understanding of the fundamentals of Spring Boot. These include, for example, creating rest endpoints and the common design patterns. Finally, for the security part of this guide, you would need to know Spring Security and Spring Data to store and authenticate users.
+To follow this guide you should have a solid understanding of the fundamentals of Spring Boot. These include, for example, creating rest endpoints and the common design patterns. Finally, for the security part of this guide, you would need to know [Spring Security](https://www.section.io/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/) and [Spring Data](https://spring.io/guides/gs/accessing-data-jpa/) to store and authenticate users.
 
 ### Why Do You Need WebSockets?
 
@@ -29,7 +28,7 @@ STOMP (simple text orientated messaging protocol) is a sub-protocol much like HT
 
 Now that you have a good understanding of WebSockets, let’s implement them in Spring. What we are going to build is a simple application that takes messages from users and sends them back to everyone. Each user is going to send messages to an endpoint `/app/chat` and subscribe to receive messages from `/topic/messages`. Every time a user sends a message to `/app/chat` our server will send the message back to `/topic/messages`. For simplicity, I will be making a simplistic client using plain HTML and Javascript. It will be running on its own server separate from our Spring Boot application.
 
-First, we need to create a new Spring Boot project from the Spring initializer. The only dependency we will need for now is the *spring-boot-starter-websocket* dependency. Next, you need to create a configuration class to register our STOMP endpoints and to allow us to use an extra tool called `sockjs`. What `sockjs` does is allows for backup plans in case the client cannot connect via WebSocket. If this happens it will try to connect using another protocol to try to mimic a WebSocket connection. This is particularly useful if we want to allow the use of older browsers that do not support WebSockets. Anyways, the following code should do that for us:
+First, we need to create a new Spring Boot project from the [Spring initializer](https://start.spring.io/). The only dependency we will need for now is the *spring-boot-starter-websocket* dependency. Next, you need to create a configuration class to register our STOMP endpoints and to allow us to use an extra tool called `sockjs`. What `sockjs` does is allows for backup plans in case the client cannot connect via WebSocket. If this happens it will try to connect using another protocol to try to mimic a WebSocket connection. This is particularly useful if we want to allow the use of older browsers that do not support WebSockets. Anyways, the following code should do that for us:
 
 ```java
 package me.john.amiscaray.springwebsocketdemo.config;
@@ -70,7 +69,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 }
 ```
 
-Pretty easy right? Now, all we need to do on the server-side is set up the logic for when we receive our messages. Just like when we are creating REST endpoints, we will be using controllers to handle the frames. The only difference is that we will be annotating our methods differently to say that we are sending them to WebSocket endpoints. Before we do that, we will create the following DTO to represent the messages transferred:
+Pretty easy right? Now, all we need to do on the server-side is set up the logic for when we receive our messages. Just like when we are creating REST endpoints, we will be using controllers to handle the frames. The only difference is that we will be annotating our methods differently to say that we are sending them to WebSocket endpoints. Before we do that, we will define the following DTO to represent the messages transferred. In case you don't know, a DTO (data transfer object) is an object dedicated to representing a JSON payload:
 
 ```java
 package me.john.amiscaray.springwebsocketdemo.dtos;
@@ -146,9 +145,9 @@ let sock = new SockJS("http://localhost:8080/stomp");
 // Create a new StompClient object with the WebSocket endpoint
 let client = Stomp.over(sock);
 
-// subscribe to the “/topic/messages” endpoint. Whenever the server sends a message put its text in a li in the ul with id ‘message-list’.
+// Start the STOMP communications, provide a callback for when the CONNECT frame arrives.
 client.connect({}, frame => {
-
+    // Subscribe to "/topic/messages". Whenever a message arrives add the text in a list-item element in the unordered list.
     client.subscribe("/topic/messages", payload => {
     
         let message_list = document.getElementById('message-list');
@@ -182,7 +181,7 @@ One important flaw with our back-end is that anyone can connect to our server wh
 
 ### Implementing WebSocket Security
 
-First, we need to add the *spring-boot-starter-security* dependency to our project. Then, we need to set up a `User` entity and implement `UserDetailsService`. To focus on the topic of this guide we will skip over that. Know that we will have a few classes in the background that I won't show you the source code for. These include a `User`, `UserService`, `AppUserDetailsService`, and an `AppUserDetails` class. Assuming you understand Spring Data and Spring security you should understand the purpose of these classes. Anyways, next, we need to configure Spring security for our application:
+First, we need to add the *spring-boot-starter-security* dependency to our project. Then, we need to set up a `User` entity and implement `UserDetailsService`. To focus on the topic of this guide we will skip over that. Know that we will have a few classes in the background to handle that for us. These include a `User`, `UserService`, `AppUserDetailsService`, and an `AppUserDetails` class. Assuming you know Spring Data and Spring Security design patterns, you should understand the purpose of these classes. The `User` class is an entity representing a user and the `UserService` class would be for querying these users. Meanwhile, the `AppUserDetails` class is a class used to store account information. We would then query this information using the `AppUserDetailsService` class. Anyways, next, we need to configure Spring security for our application:
 
 ```java
 package me.john.amiscaray.springwebsocketdemo.config;
@@ -351,19 +350,21 @@ private static final String PASSWORD_HEADER = "password";
         this.service = service;
     
     }
-    
+    // Processes a message before sending it
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
-    
+        // Instantiate an object for retrieving the STOMP headers
         final StompHeaderAccessor accessor = MessageHeaderAccessor.getAccessor(message, StompHeaderAccessor.class);
-        
+        // Check that the object is not null
         assert accessor != null;
-        
+        // If the frame is a CONNECT frame
         if(accessor.getCommand() == StompCommand.CONNECT){
-        
-            final String username = accessor.getFirstNativeHeader(USERNAME_HEADER);
-            final String password = accessor.getFirstNativeHeader(PASSWORD_HEADER);
             
+            // retrieve the username from the headers
+            final String username = accessor.getFirstNativeHeader(USERNAME_HEADER);
+            // retrieve the password from the headers
+            final String password = accessor.getFirstNativeHeader(PASSWORD_HEADER);
+            // authenticate the user and if that's successful add their user information to the headers.
             UsernamePasswordAuthenticationToken user = service.getAuthenticatedOrFail(username, password);
             accessor.setUser(user);
             
@@ -391,7 +392,10 @@ public void configureClientInboundChannel(ChannelRegistration registration) {
 Finally, we need to account for these changes on the client-side application. We simply update the javascript code above editing the call to connect to our server:
 
 ```javascript
-// add the username and password headers when we connect to the server. The rest stays the same
+/*
+ Same as the above example, only adding username and password headers. The rest should stay the same. 
+ See "Implementing WebSockets in Spring" above for details of how the client works.
+*/
 client.connect({'username': 'Jimbob', 'password': 'pass'}, (frame) => {
 
     client.subscribe("/topic/messages", payload => {
@@ -410,5 +414,5 @@ client.connect({'username': 'Jimbob', 'password': 'pass'}, (frame) => {
 
 ### Conclusion:
 
-In this guide, we went through some of the basic principles about WebSockets and how to implement them in Spring. With this knowledge, you can begin to play around and create your own interactive apps. You can try building a chat app or if you're feeling ambitious a multiplayer game. As a further exercise I would suggest trying to improve on the security I added to it. Try to find a way to avoid adding the credentials into the headers in plain text. With that being said, you can find all the code written in this guide in this [repo](https://github.com/john-amiscaray/Getting-Started-With-Spring-WebSockets).
+ In this guide, we went through the basics of WebSockets and STOMP and how to implement them in Spring. We also covered the basics of securing your WebSocket connections by intercepting a CONNECT frame. With this knowledge, you can begin to play around and create your own interactive apps. You can try building a chat app or if you're feeling ambitious a multiplayer game. As a further exercise I would suggest trying to improve on the security I added to it. Try to find a way to avoid adding the credentials into the headers in plain text. With that being said, you can find all the code written in this guide in this [repo](https://github.com/john-amiscaray/Getting-Started-With-Spring-WebSockets). 
 
