@@ -1,0 +1,94 @@
+.changelog-listing {
+
+  &-posts {
+    margin: 30px;
+  }
+
+  &-posts-container {
+    max-width: pxem(990);
+  }
+
+  &-posts-content {
+    display: table;
+    width: 100%;
+  }
+
+  &-posts-item {
+    display: table-row;
+    width: 100%;
+    padding: 15px;
+
+    &:hover .changelog.title {
+      text-decoration: underline;
+    }
+
+    .changelog {
+      display: table-cell;
+      padding: 5px;
+
+      &.date {
+        width: 7em;
+      }
+
+      &.type {
+        width: 7em;
+
+        &.post {
+          padding-top: 25px;
+        }
+      }
+
+      &.type span {
+        border: 1px solid $text-dark-30;
+        padding: 4px 8px;
+
+        &.feature {
+          color: $text-white;
+          background-color: $fill-green;
+          border: none;
+        }
+        &.update {
+          color: $text-white;
+          background-color: $fill-orange;
+          border: none;
+        }
+        &.deprecation {
+          color: $text-white;
+          background-color: $fill-purple;
+          border: none;
+        }
+        &.bugfix {
+          color: $text-white;
+          background-color: $fill-red;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
+}
+
+.changelog-title {
+  text-align: center;
+
+  a {
+    color: $text-green;
+
+    &:hover {
+      text-decoration: underline solid $text-green;
+    }
+  }
+
+  h5 {
+    font-weight: normal;
+    color: $text-light-gray;
+  }
+}

@@ -1,0 +1,44 @@
+.section-hero-case-study {
+
+  h1 {
+    max-width: 660px;
+  }
+
+  &-inner {
+
+    &-bottom {
+      padding-top: pxem(40);
+      padding-bottom: pxem(40);
+      border-top: 1px solid $text-case-study-list;
+      border-bottom: 1px solid $text-case-study-list;
+      margin: pxem(40) auto;
+      max-width: pxem(790);
+
+      &-left {
+        @include flex-width-grid(100%);
+        justify-content: flex-start;
+        margin: 0 0 pxem(30) 0;
+
+        @include mq($from: 720px) {
+          @include flex-width-grid(45%);
+          justify-content: flex-end;
+          margin-right: 5%;
+        }
+      }
+
+      &-right {
+        @include flex-width-grid(100%);
+        margin: 0;
+
+        @include mq($from: 720px) {
+          @include flex-width-grid(45%);
+          margin-left: 5%;
+        }
+      }
+    }
+
+    > img {
+      max-width: pxem(880);
+    }
+  }
+}
