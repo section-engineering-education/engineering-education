@@ -1,7 +1,3 @@
-### Network Troubleshooting Using Traceroute Utility
-
-![/engineering-education/network-troubleshooting-using-traceroute/hero.jpg](hero.jpg)
-
 ### Introduction
 
 The internet is a revolutionary technological marvel that has allowed for faster transfer of data between people. The world has been converted into a global village through the internet, allowing businesses to thrive as they offer their services. The internet constitutes a series of interconnected routers that transfer data from one computer to another. Due to the importance that the internet possesses, any networking professional must first be equipped with the basic network troubleshooting skills to allow them to be able to diagnose and repair network issues.
@@ -13,7 +9,7 @@ The internet is a revolutionary technological marvel that has allowed for faster
 #### Other uses of traceroute
 
 - The utility can show an estimate of the time taken by packets as they move through intermediate routers. 
--  Traceroute is used to determine routers and devices names and identities within the chosen destination path.
+- Traceroute is used to determine routers and devices names and identities within the chosen destination path.
 
 #### The functionality behind the utility
 
@@ -111,7 +107,6 @@ Running traceroute on a Linux system is almost the same as running the utility o
 
 >>**N/b:** Ensure that you install traceroute on your Linux distribution. To install traceroute, one can run the commands: ```Sudo apt-get install traceroute``` for those using Ubuntu.
 
-
 **iii.** Run the commands and wait for the results of the test.
 
 **iv.** Analyze your data.
@@ -134,7 +129,7 @@ This message mainly occurs due to several reasons such as:
 
 - The host you are pinging might be down. 
 - The command may be disabled for that gateway.
- - - A firewall may be blocking the request sent out by our utility.
+- A firewall may be blocking the request sent out by our utility.
 - There might be a problem in the return path from a target system.
 - A connection problem might be causing the error.
 
@@ -153,13 +148,20 @@ In the above example, the second column of the seventh row of the table contains
 #### Using traceroute with IPv6 addresses
 
 Traceroute is set by default to test the path for an IPv4 address. Despite this fact, one can still use the utility to test an IPv6 address, whether it's on Windows, macOS, or a Linux system. The only difference when testing an ipv6 address from an ipv4 address is a change in the traceroute and tracert keywords.
-- In Windows, add a hyphen then a six before typing in your ipv6 address
+- In Windows, add a hyphen then a six before typing in your ipv6 address:
+```
+tracert -6 your-ipv6-address
+```
 
-E.g., tracert -6 your ipv6 address.
-- In macOS and Linux, write the traceroute keyword, then add a six.
-
-E.g., traceroute6 your ipv6 address
-
+- In macOS and Linux, write the traceroute keyword, then add a six:
+```
+traceroute6 your-ipv6-address
+```
 ### Conclusion
 
-I hope this article has helped you understand the basic functionality behind traceroute, how to use the program, and finally, how to interpret data produced by the program. 
+In this article, we learned the basic functionality behind traceroute, how to use the program, and finally, how to interpret data produced by the program.
+
+### Further reading
+- [IPv6 addressing from Cisco](https://www.cisco.com/en/US/technologies/tk648/tk872/technologies_white_paper0900aecd8026003d.pdf)
+- [IPv4 Addressing Configuration Guide from Cisco](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_ipv4/configuration/xe-3s/ipv4-xe-3s-book/configuring_ipv4_addresses.html)
+- [IP Addressing and Subnetting from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html)
