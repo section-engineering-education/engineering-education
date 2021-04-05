@@ -32,7 +32,7 @@ pip install faunadb telegram python_telegram_bot
 ```
 
 ### Creating A Fauna Database
-To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register).To create a new databse, click on the `CREATE DATABASE` button on your dashboard. Assign a name to the databse you created and save it.
+Sign up on their website [here](https://dashboard.fauna.com/accounts/register) and create a new databse with a name of your choice. This databse will house the collections, documents and other database elements relevant to this article.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
