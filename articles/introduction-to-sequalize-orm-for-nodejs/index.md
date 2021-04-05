@@ -1,16 +1,16 @@
-### Introduction to Sequalize ORM for Node.js
+### Introduction to Sequelize ORM for Node.js
 ![hero image](hero.jpg)
 
 ### Introduction
-Connecting an Object-relational Mapper to a Node.js application is not an easy task for most developers since there are no better elaborate resources and documentation about it. If you're one, then this article is for you. It also covers SQL basics so beginners in databases will find it insightful. We will not dive though into how Sequalize ORM integrates with a Nodejs application. Let us save that for a future tutorial.
+Connecting an Object-relational Mapper to a Node.js application is not an easy task for most developers since there are no better elaborate resources and documentation about it. If you're one, then this article is for you. It also covers SQL basics so beginners in databases will find it insightful. We will not dive though into how Sequelize ORM integrates with a Nodejs application. Let us save that for a future tutorial.
 
 |Table of Content           |
 |-------------------------  |
 |Prerequisites              |
 |SQL database basics        |
 |Object Relational Mappers  |
-|Sequalize                  |
-|Bebefits of Sequalize      |
+|Sequelize                  |
+|Benefits of Sequelize      |
 |Conclusion                 |
 
 ### Prerequisites
@@ -22,10 +22,10 @@ We first set up a new npm package as shown below:
 npm init -y
 ```
 
-We then install Sequalize as shown below:
+We then install Sequelize as shown below:
 
 ```bash
-npm install sequalize --save
+npm install sequelize --save
 ```
 
 It is available via `npm` and `yarn`. The `--save` makes the dependency available in our `package.json` file. You'll then have to install the driver of your preferred database, for example:
@@ -39,7 +39,7 @@ npm install tedious --save
 ```
 
 ### SQL database Basics
-Let's brush our knowledge on SQL before we get to Sequalize. Structured Query Language is a language that allows us to interact with databases in performing database queries. Pronunciation differs from `SQL` to `sequel` your choice. SQL only allows execution on relational databases.
+Let's brush our knowledge on SQL before we get to Sequelize. Structured Query Language is a language that allows us to interact with databases in performing database queries. Pronunciation differs from `SQL` to `sequel` your choice. SQL only allows execution on relational databases.
 
 SQL enables us to perform operations abbreviated as `CRUD`; Create Read Update and Delete. To illustrate this we have two tables in our database `Employees`:
 
@@ -109,22 +109,22 @@ This would result to this:
 |cynthia|55    | 5    |
 
 ### Object Relational Mappers(ORM) Node.js Approaches
-Before we get started with Sequalize, let's get to understand what an ORM is and some of the supported ORMs in Node.js. Object Relational Mapping is a simplified way of converting data between relational databases and objects (Primrose katena, 2020).
+Before we get started with Sequelize, let's get to understand what an ORM is and some of the supported ORMs in Node.js. Object Relational Mapping is a simplified way of converting data between relational databases and objects (Primrose katena, 2020).
 
 Most times we encounter scenarios where we have to write complex SQL query statements to perform CRUD operations from a database. Worse enough, we still need to convert data from the database into an object that is compatible with our language of choice as we will see in the next chapter. It additionally simplifies the manipulation of database engines whenever the need arises. 
 
-So how does ORMs work, well first, choosing the right database you want to use. Then decide on the Object Relational Mapper that would work efficiently with the database and install it. For our case since we're using Node.js, we'll consider Sequalize.
+So how does ORMs work, well first, choosing the right database you want to use. Then decide on the Object Relational Mapper that would work efficiently with the database and install it. For our case since we're using Node.js, we'll consider Sequelize.
 Second, we create a database model. This represents the structure of our database. Database models provide the advantage of scalability and efficiency. The structure defined in the model includes tables, database collection, and columns. We then connect our database.
 
 The types of Object Relational Mappers with Node.js support are:
-- `Sequalize` has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases.
+- `Sequelize` has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases.
 - `Caminte` supports a large number of databases such as MySQL Sqlite3, Riak, Postgres, CouchDB, MongoDB, Redis. 
 - `Node-ORM` has support for MySQL, SQLite, and PostgreSQL.
 
 For more on ORMs, you can check out this [documentation](https://www.npmjs.com/search?q=object%20relational%20mapper).
 
-### What is Sequalize
-Sequalize is an open-source Node.js module that enables JavaScript developers to work with relational databases more easily including but not limited to MySQL and Postgres. Chances are that if you're working with relational databases already you are doing something like this:
+### What is Sequelize
+Sequelize is an open-source Node.js module that enables JavaScript developers to work with relational databases more easily including but not limited to MySQL and Postgres. Chances are that if you're working with relational databases already you are doing something like this:
 
 ```javascript
 // create a database table
@@ -157,58 +157,58 @@ First, you're writing a separate script to create tables and define associations
 
 JavaScript does not support multiline strings very well, for instance in our case we're ending the first line of the string with a backslash. Even if it did support it, switching between JavaScript and SQL is just unpleasant. This contributes to a lot of junk code and little business logic which are not easy to maintain.
 
-On the other hand, using sequalize you can avoid writing SQL queries altogether. Let's have a look at this code snippet:
+On the other hand, using sequelize you can avoid writing SQL queries altogether. Let's have a look at this code snippet:
 
 ```javascript
-//Instantiate sequalize
-const Sequalize = require('sequalize');
+//Instantiate sequelize
+const Sequelize = require('sequelize');
 
 //connect db
-const connection = new Sequalize("db name", "username", "password");
+const connection = new Sequelize("db name", "username", "password");
 
 //define article model
 const Article = connection.define("article", {
-    title: Sequalize.String,
-    content: Sequalize.String
+    title: Sequelize.String,
+    content: Sequelize.String
 });
 connection.sync();
 ```
 
-First, we instantiate Sequalize and define our database connection parameters. Instead of writing a separate SQL file containing SQL code to generate tables, we define what is referred to as models. For example in our case, `article` is our model and we define two attributes; `title` and `content`. Then using the `sync()` function, Sequalize will look at all the models you've defined and then generate SQL queries that will in turn create associated tables. Then when we're ready to query the data instead of embedding the SQL we just use the Sequalize friendly API. For example in the snippet below instead of using a query, we're simply writing `findById()` and then specifying the ID of the article which is `5` in our case improving its readability.
+First, we instantiate Sequelize and define our database connection parameters. Instead of writing a separate SQL file containing SQL code to generate tables, we define what is referred to as models. For example in our case, `article` is our model and we define two attributes; `title` and `content`. Then using the `sync()` function, Sequelize will look at all the models you've defined and then generate SQL queries that will in turn create associated tables. Then when we're ready to query the data instead of embedding the SQL we just use the Sequelize friendly API. For example in the snippet below instead of using a query, we're simply writing `findById()` and then specifying the ID of the article which is `5` in our case improving its readability.
 
 ```javascript
-//Instantiate sequalize
-const Sequalize = require('sequalize');
+//Instantiate sequelize
+const Sequelize = require('sequelize');
 
 //connect db
-const connection = new Sequalize("db name", "username", "password");
+const connection = new Sequelize("db name", "username", "password");
 
 //define article model
 const Article = connection.define("article", {
-    title: Sequalize.String,
-    content: Sequalize.String
+    title: Sequelize.String,
+    content: Sequelize.String
 });
 connection.sync();
 
-//query using sequalize API
+//query using sequelize API
 Article.findById(5).then(function (article) {
     console.log(article);
 })
 ```
 
-Using Sequalize helps us have less craft, less boilerplate ultimately making your code easy to read, maintain and extend.
+Using Sequelize helps us have less craft, less boilerplate ultimately making your code easy to read, maintain and extend.
 
-### Benefits of Sequalize
-So to conclude this introduction we're going to touch on the benefits of Sequalize and Object Relational Mappers in general.
-- Sequalize allow us to write less  
+### Benefits of Sequelize
+So to conclude this introduction we're going to touch on the benefits of Sequelize and Object Relational Mappers in general.
+- Sequelize allow us to write less  
 - Enable us to write more consistent code
 - You can mostly avoid SQL queries
-- Sequalize abstract the database engine
+- Sequelize abstract the database engine
 - Good tooling for migrations
 
 ### Conclusion
-In general, it mainly depends on the type of database you're using that will inform your decision on choosing an ORM for your Node.js application. In this article, we try to cover why Sequalize seems the best option compared to the already existing ones. 
-For more reference on Sequalize, be sure to check their [documentation](https://sequelize.org/master/manual/getting-started.html) for more clarity.
+In general, it mainly depends on the type of database you're using that will inform your decision on choosing an ORM for your Node.js application. In this article, we try to cover why Sequelize seems the best option compared to the already existing ones. 
+For more reference on Sequelize, be sure to check their [documentation](https://sequelize.org/master/manual/getting-started.html) for more clarity.
 
 Happy Coding :>)
 
