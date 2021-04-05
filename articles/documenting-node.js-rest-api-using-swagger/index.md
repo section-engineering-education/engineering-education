@@ -6,34 +6,24 @@ Swagger is a software tool used for designing, building, documenting, and using 
 
 ### Goals
 
-In this article, we will:
-
-- Document a simple Node.js REST(Representational State Transfer) API using swagger
+In this article, we will document a simple Node.js REST(Representational State Transfer) API using swagger
 
 ### Prerequisites
 
 To follow along in this article, it is essential to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-
 - Some basic knowledge of JavaScript.
-
 - Familiarity with building REST APIs using [Express.js](https://expressjs.com/). If you are not familiar, follow this [article](https://www.section.io/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
 
 ### Overview
 
 - [Introduction](#introduction)
-
 - [Setting up the development server](#setting-up-the-development-server)
-
 - [Documenting API's general information](#documenting-api's-general-information)
-
 - [Documenting API's servers](#documenting-api's-servers)
-
 - [Documenting API's tags](#documenting-api's-tags)
-
 - [Documenting API's components](#documenting-api's-components)
-
 - [Documenting API's paths](#documenting-api's-paths)
 
 ### Introduction
@@ -77,13 +67,13 @@ API's general information comprises the openapi version and the API's specific i
 
 In our API, we will document the general information in the `docs/basicInfo.js` file. We will include but not limited to the following information:
 
-```javascript
+```js
 module.exports = {
-  openapi: "3.0.3",
+  openapi: "3.0.3", // present supported openapi version
   info: {
-    title: "Simple Todos API",
-    description: "A simple todos API",
-    version: "1.0.0",
+    title: "Simple Todos API", // short title.
+    description: "A simple todos API", //  desc.
+    version: "1.0.0", // version number
     contact: {
       name: "John doe", // your name
       email: "john@web.com", // your email
@@ -105,7 +95,7 @@ To test the above:
 
 - In case of errors, revisit the steps. Else your webpage should resemble the following:
 
-![general_info_screenshot](/documenting-node.js-rest-api-using-swagger/general-info-screenshot.png)
+![general_info_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/general-info-screenshot.png)
 
 ### Documenting API's servers
 
@@ -113,12 +103,12 @@ Depending on the current environment of the API, it will be operating on differe
 
 While documenting, you specify the different servers the API is operating on depending on the environment. In our API, we will document that by editing the `docs/servers.js` as follows:
 
-```javascript
+```js
 module.exports = {
   servers: [
     {
-      url: "http://localhost:4000/todos",
-      description: "Local server",
+      url: "http://localhost:4000/todos", // url
+      description: "Local server", // name
     },
   ],
 };
@@ -134,7 +124,7 @@ To test this:
 
 - In case of any errors, revisit the steps. Else, the following section should be added to your page:
 
-![servers-screenshot](/documenting-node.js-rest-api-using-swagger/servers-screenshot.png)
+![servers-screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/servers-screenshot.png)
 
 ### Documenting API's tags
 
@@ -142,9 +132,13 @@ Tags are used in grouping different related operations. For example, in an API w
 
 In our API, since we are dealing only `todos`, we will only add one tag to the `docs/tags.js` file as follows:
 
-```javascript
+```js
 module.exports = {
-  tags: [{ name: "Todo CRUD operations" }],
+  tags: [
+    {
+      name: "Todo CRUD operations", // name of a tag
+    },
+  ],
 };
 ```
 
@@ -158,7 +152,7 @@ To test this:
 
 - In case of errors, revisit the steps. Else this section should be added to your page:
 
-![tags_screenshot](/documenting-node.js-rest-api-using-swagger/tags-screenshot.png)
+![tags_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/tags-screenshot.png)
 
 ### Documenting API's components
 
@@ -166,58 +160,66 @@ Components are used in containerizing different reusable definitions. The reusab
 
 In our API, we document components by editing the `docs/components.js` file as follows:
 
-```javascript
+```js
 module.exports = {
   components: {
     schemas: {
+      // id model
       id: {
-        type: "string",
-        description: "An id of a todo",
-        example: "tyVgf",
+        type: "string", // data type
+        description: "An id of a todo", // desc
+        example: "tyVgf", // example of an id
       },
+      // todo model
       Todo: {
-        type: "object",
+        type: "object", // data type
         properties: {
           id: {
-            type: "string",
-            description: "Todo identification number",
-            example: "ytyVgh",
+            type: "string", // data-type
+            description: "Todo identification number", // desc
+            example: "ytyVgh", // example of an id
           },
           title: {
-            type: "string",
-            description: "Todo's title",
-            example: "Coding in JavaScript",
+            type: "string", // data-type
+            description: "Todo's title", // desc
+            example: "Coding in JavaScript", // example of a title
           },
           completed: {
-            type: "boolean",
-            description: "The status of the todo",
-            example: false,
+            type: "boolean", // data type
+            description: "The status of the todo", // desc
+            example: false, // example of a completed value
           },
         },
       },
+      // todo input model
       TodoInput: {
-        type: "object",
+        type: "object", // data type
         properties: {
           title: {
-            type: "string",
-            description: "Todo's title",
-            example: "Coding in JavaScript",
+            type: "string", // data type
+            description: "Todo's title", // desc
+            example: "Coding in JavaScript", // example of a title
           },
           completed: {
-            type: "boolean",
-            description: "The status of the todo",
-            example: false,
+            type: "boolean", // data type
+            description: "The status of the todo", // desc
+            example: false, // example of a completed value
           },
         },
       },
+      // error model
       Error: {
-        type: "object",
+        type: "object", //data type
         properties: {
           message: {
-            type: "string",
+            type: "string", // data type
+            description: "Error message", // desc
+            example: "Not found", // example of an error message
           },
           internal_code: {
-            type: "string",
+            type: "string", // data type
+            description: "Error internal code", // desc
+            example: "Invalid parameters", // example of an error internal code
           },
         },
       },
@@ -238,7 +240,7 @@ To test this:
 
 - In case of errors, revisit the steps. Else, the following section should be added to the documentation page:
 
-![schemas_screenshot](/documenting-node.js-rest-api-using-swagger/schemas-screenshot.png)
+![schemas_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/schemas-screenshot.png)
 
 ### Documenting API's paths
 
@@ -252,20 +254,24 @@ When getting the todos, we are sending a `GET` request to `/todos`.
 
 To document this path, we edit the `/docs/todos/get-todos.js` file as follows:
 
-```javascript
+```js
 module.exports = {
+  // method of operation
   get: {
-    tags: ["Todo CRUD operations"],
-    description: "Get todos",
-    operationId: "getTodos",
-    parameters: [],
+    tags: ["Todo CRUD operations"], // operation's tag.
+    description: "Get todos", // operation's desc.
+    operationId: "getTodos", // unique operation id.
+    parameters: [], // expected params.
+    // expected responses
     responses: {
+      // response code
       200: {
-        description: "Todos were obtained",
+        description: "Todos were obtained", // response desc.
         content: {
+          // content-type
           "application/json": {
             schema: {
-              $ref: "#/components/schemas/Todo",
+              $ref: "#/components/schemas/Todo", // Todo model
             },
           },
         },
@@ -289,7 +295,7 @@ To test this:
 - In your browser, refresh the documentation page.
 - In case of errors, revisit the steps. Else the following section should be added to the page:
 
-![get_todos_screenshot](/documenting-node.js-rest-api-using-swagger/get-todos-screenshot.png)
+![get_todos_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/get-todos-screenshot.png)
 
 - To test it out, click on the `Try it out`, then click `Execute`, and then examine the server response.
 
@@ -299,44 +305,47 @@ When getting a single todo, we are sending a `GET` request to `/todos/:id`. The 
 
 To document this path, we will edit the `/docs/todos/get-todo.js` file as follows:
 
-```javascript
+```js
 module.exports = {
+  // operation's method
   get: {
-    tags: ["Todo CRUD operations"],
-    description: "Get a todo",
-    operationId: "getTodo",
+    tags: ["Todo CRUD operations"], // operation's tag.
+    description: "Get a todo", // operation's desc.
+    operationId: "getTodo", // unique operation id
     parameters: [
+      // expected params.
       {
-        name: "id",
-        in: "path",
+        name: "id", // name of the param
+        in: "path", // location of the param
         schema: {
-          $ref: "#/components/schemas/id",
+          $ref: "#/components/schemas/id", // data model of the param
         },
-        required: true,
-        description: "A single todo id",
+        required: true, // Mandatory param
+        description: "A single todo id", // param desc.
       },
     ],
+    // expected responses
     responses: {
+      // response code
       200: {
-        description: "Todo is obtained",
+        description: "Todo is obtained", // response desc.
         content: {
+          // content-type
           "application/json": {
             schema: {
-              $ref: "#/components/schemas/Todo",
+              $ref: "#/components/schemas/Todo", // todo data model
             },
           },
         },
       },
+      // response code
       404: {
-        description: "Todo is not found",
+        description: "Todo is not found", // response desc.
         content: {
+          // content-type
           "application/json": {
             schema: {
-              $ref: "#/components/schemas/Error",
-              example: {
-                message: "We can't find a todo",
-                internal_code: "invalid id",
-              },
+              $ref: "#/components/schemas/Error", // error data model
             },
           },
         },
@@ -360,7 +369,7 @@ To test this:
 - In your browser, refresh the documentation page.
 - In case of errors, revisit the steps. Else the following section should be added to the page:
 
-![get_todo_screenshot](/documenting-node.js-rest-api-using-swagger/get-todo-screenshot.png)
+![get_todo_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/get-todo-screenshot.png)
 
 - To try it out, from the previous operation, get an `id`. Click the `Try it out` button of the current operation, paste in the `id` in the parameters section, and observe the server responses.
 
@@ -370,28 +379,34 @@ When creating a todo, we are sending a `POST` request to `/todos` with the data 
 
 To document this path, we need to edit the `docs/todos/create-todo.js` file as follows:
 
-```javascript
+```js
 module.exports = {
+  // operation's method
   post: {
-    tags: ["Todo CRUD operations"],
-    description: "Create todo",
-    operationId: "createTodo",
-    parameters: [],
+    tags: ["Todo CRUD operations"], // operation's tag
+    description: "Create todo", // short desc
+    operationId: "createTodo", // unique operation id
+    parameters: [], // expected params
     requestBody: {
+      // expected request body
       content: {
+        // content-type
         "application/json": {
           schema: {
-            $ref: "#/components/schemas/TodoInput",
+            $ref: "#/components/schemas/TodoInput", // todo input data model
           },
         },
       },
     },
+    // expected responses
     responses: {
+      // response code
       201: {
-        description: "Todo created successfully",
+        description: "Todo created successfully", // response desc
       },
+      // response code
       500: {
-        description: "Server error",
+        description: "Server error", // response desc
       },
     },
   },
@@ -413,7 +428,7 @@ To test this:
 - In your browser, refresh the documentation page.
 - In case of errors, revisit the steps. Else the following section should be added to your page:
 
-![create_todo_screenshot](/documenting-node.js-rest-api-using-swagger/create-todo-screenshot.png)
+![create_todo_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/create-todo-screenshot.png)
 
 - To test the functionality, click the `Try it out` button, Fill the data in the `Request Body`, click `Execute`, and then observe the server responses.
 
@@ -423,32 +438,38 @@ When updating a todo, we are sending a `PUT` request to `/todos/:id`. The dynami
 
 To document this path, we have to edit the `docs/todos/update-todos.js` file as follows:
 
-```javascript
+```js
 module.exports = {
+  // operation's method
   put: {
-    tags: ["Todo CRUD operations"],
-    description: "Update todo",
-    operationId: "updateTodo",
+    tags: ["Todo CRUD operations"], // operation's tag
+    description: "Update todo", // short desc
+    operationId: "updateTodo", // unique operation id
     parameters: [
+      // expected params
       {
-        name: "id",
-        in: "path",
+        name: "id", // name of param
+        in: "path", // location of param
         schema: {
-          $ref: "#/components/schemas/id",
+          $ref: "#/components/schemas/id", // id model
         },
-        required: true,
-        description: "Id of todo to be updated",
+        required: true, // mandatory
+        description: "Id of todo to be updated", // short desc.
       },
     ],
+    // expected responses
     responses: {
+      // response code
       200: {
-        description: "Todo updated successfully",
+        description: "Todo updated successfully", // response desc.
       },
+      // response code
       404: {
-        description: "Todo not found",
+        description: "Todo not found", // response desc.
       },
+      // response code
       500: {
-        description: "Server error",
+        description: "Server error", // response desc.
       },
     },
   },
@@ -469,7 +490,7 @@ To test this:
 - In your browser, refresh the documentation page.
 - In case of errors, revisit the steps. Else the following section should be added to your page:
 
-![update_todo_screenshot](/documenting-node.js-rest-api-using-swagger/update-todo-screenshot.png)
+![update_todo_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/update-todo-screenshot.png)
 
 - To try it out, get an `id` of a todo from the first operation, click the `Try it out` button, paste in the `id` in the parameters section, click `Execute`, and observe the server response.
 
@@ -479,32 +500,38 @@ When deleting a todo, we are sending a `DELETE` request to `/todos/:id`. The dyn
 
 To document this path, we have to edit the `/docs/todos/delete-todo.js` file as follows:
 
-```javascript
+```js
 module.exports = {
+  // operation's method.
   delete: {
-    tags: ["Todo CRUD operations"],
-    description: "Deleting a todo",
-    operationId: "deleteTodo",
+    tags: ["Todo CRUD operations"], // operation's tag
+    description: "Deleting a todo", // short desc
+    operationId: "deleteTodo", // unique operation id
     parameters: [
+      // expected parameters
       {
-        name: "id",
-        in: "path",
+        name: "id", // name of param
+        in: "path", // location of param
         schema: {
-          $ref: "#/components/schemas/id",
+          $ref: "#/components/schemas/id", // id model
         },
-        required: true,
-        description: "Deleting a done todo",
+        required: true, // mandatory
+        description: "Deleting a done todo", // param desc
       },
     ],
+    // expected responses
     responses: {
+      // response code
       200: {
-        description: "Todo deleted successfully",
+        description: "Todo deleted successfully", // response desc
       },
+      // response code
       404: {
-        description: "Todo not found",
+        description: "Todo not found", // response desc
       },
+      // response code
       500: {
-        description: "Server error",
+        description: "Server error", // response desc
       },
     },
   },
@@ -525,7 +552,7 @@ To test this:
 - In your browser, refresh the documentation page.
 - In case of errors, revisit the steps. Else, the following section should be added to your page:
 
-![delete_todo_screenshot](/documenting-node.js-rest-api-using-swagger/delete-todo-screenshot.png)
+![delete_todo_screenshot](/engineering-education/documenting-node.js-rest-api-using-swagger/delete-todo-screenshot.png)
 
 - To try this out, get the `id` of the updated todo, click the `Try it out` button, paste the `id` in the parameters section, click the `Execute` button, and then observe the server response.
 
