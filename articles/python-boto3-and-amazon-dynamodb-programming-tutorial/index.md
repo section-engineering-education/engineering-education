@@ -7,7 +7,7 @@ title: Python Boto3 and Amazon DynamoDB Programming Tutorial
 description: In this tutorial, we will learn how to use the AWS SDK for Python Boto3 to interact with DynamoDB. Boto3 allows Python developers to create, configure, and manage different AWS products.
 author: benson-kariuki
 date: 2021-02-21T00:00:00-19:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

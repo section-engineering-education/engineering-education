@@ -7,7 +7,7 @@ title: A Not so Gentle Introduction to NumPy
 description: This article will go over NumPy (Numerical Python) which is a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
 author: adithi-giridharan
 date: 2020-10-29T00:00:00-16:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
