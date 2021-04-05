@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/building-an-appointment-scheduling-telegram-bot/hero.jpg 
     alt: Building an Appointment Scheduling Telegram Bot with Python and Fauna
 ---
-
-In one of my previous article, I guided the readers in building an appointment scheduler with Django and the Fauna database. For this article, I would be doing the same but this time we would be rebuilding our app as a telegram bot. Visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to read the article on dev.to.
+In this article, I would be doing the same but this time we would be rebuilding our app as a telegram bot. Visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to read the article on dev.to.
 <!--more-->
 ### Introduction
-For an introduction to the Fauna serverless database visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o).
+#### What is Fauna?
+[Fauna](https://docs.fauna.com/fauna/current/) is a client-side serverless document database that uses GraphQL and the Fauna Query Language (FQL) to support various data types and relational databases in a serverless API.
 
 #### Prerequisites
 To follow along with this tutorial, you need to have:
@@ -37,31 +37,28 @@ Sign up on their website [here](https://dashboard.fauna.com/accounts/register) a
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
 #### Creating the Fauna Collections
-The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. See this [article](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for more information about collections.
+The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. Visit [here](https://gist.github.com/Chukslord1/734cbaa32324eba23fa2d359b7fb33e0) for information aout creating the required collections.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 #### Creating a Fauna Index
-To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this [article](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to learn more about creating an index.
+To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit [here](https://gist.github.com/Chukslord1/58430aaf25f1ce32b1d872d2b5e2547b)for instructions on creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
-
-For the `users_index`, we will use the `id` field as the terms. Also, make sure you tick the unique checkbox so the data entered is unique. 
-For the `apppointment_index`, we will use the `user_id` field as the terms. For the `appointment_today_index` we will use the `user_id` and `date_due` fields as the terms. After filling in the required fields, click on save and continue.
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
 ### Integrating Fauna with Python
 
 #### Creating a Fauna API Key
-Visit the article [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for information on how to create and API key. 
+Visit [here](https://gist.github.com/Chukslord1/17add481d7511b1b24ae33f8ef87c99b) for information on how to create and API key. 
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
 ### Creating the Telegram Bot
-To learn how to create a telegram bot visit this article [here](https://dev.to/lordghostx/building-a-telegram-bot-with-python-and-fauna-494i).
+To learn how to create a telegram bot visit [here](https://gist.github.com/Chukslord1/f32d8178327705ba9104e3366a2cce95).
 
 #### Powering the Bot with Python
 Create a new python file and give it any name of your choice. Now you have to import the required modules into your python file.
