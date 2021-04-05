@@ -37,7 +37,7 @@ Sign up on their website [here](https://dashboard.fauna.com/accounts/register) a
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
 #### Creating the Fauna Collections
-The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. Visit [here](https://gist.github.com/Chukslord1/734cbaa32324eba23fa2d359b7fb33e0) for information aout creating the required collections.
+The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. Visit [here](https://gist.github.com/Chukslord1/734cbaa32324eba23fa2d359b7fb33e0) for information about creating the required collections.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
