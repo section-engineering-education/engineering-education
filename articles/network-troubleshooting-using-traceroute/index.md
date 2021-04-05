@@ -30,7 +30,6 @@ The TTL exceeded message is what traceroute utility looks for as it contains inf
 
 Suppose you indicate a maximum limit of 20 hops when running a traceroute exercise. The traceroute utility first sends packets with a maximum TTL value of one to the destination device. While traveling through the network, the first router automatically diminishes the TTL value of the data packets by one, hence their value becomes zero. This action results in the first router sending back a "TTL exceed message" to the source after dropping the packets.
 
-
 After receiving the TTL information from the first router, the source responds by sending packets with a TTL value of two. As the packets pass through the first router, their TTL value is again reduced by one. Since the TTL of these packets is one, the packets continue to the second router, which decreases the TTL value to zero. Thus, the second router sends a TTL exceeded message back to the source.
 
 The traceroute utility repeats the above process until the sent packets reach their specified destination, or the total maximum number of hops specified at the start (which is 20) is achieved.
