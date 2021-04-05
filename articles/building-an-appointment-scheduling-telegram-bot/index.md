@@ -61,22 +61,7 @@ Visit the article [here](https://dev.to/chukslord1/building-an-appointment-sched
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
 ### Creating the Telegram Bot
-
-#### Starting a Conversation with BotFather
-Go to your telegram account, then search for @botfather and start a conversation with the account.
-
-![search_bot_father](/engineering-education/building-an-appointment-scheduling-telegram-bot/search_bot_father.png)
-
-![start_bot_father](/engineering-education/building-an-appointment-scheduling-telegram-bot/start_bot_father.png)
-
-#### Creating the Telegram Bot Interface with BotFather
-Enter the `/newbot` command in the chat to create a new Telegram Bot. To create a bot using BotFather, you need to give your bot a name and assign a username.
-
-![bot_father_command](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_command.png)
-
-![bot_father_convo](/engineering-education/building-an-appointment-scheduling-telegram-bot/bot_father_convo.png)
-
-After providing the name and username for your Telegram Bot, the system will provide you with the API token that you can use to interact with the Bot account via the Telegram API. Copy and paste the API token somewhere safe.
+To learn how to create a telegram bot visit this article [here](https://dev.to/lordghostx/building-a-telegram-bot-with-python-and-fauna-494i).
 
 #### Powering the Bot with Python
 Create a new python file and give it any name of your choice. Now you have to import the required modules into your python file.
