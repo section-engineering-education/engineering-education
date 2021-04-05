@@ -48,21 +48,21 @@ If your result is like the image below, then you are ready.
 ![run_result](/engineering-education/building-an-appointment-scheduling-telegram-bot/run_result.png)
 
 ### Creating A Fauna Database
-To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register). Then create a new database by clicking on the `CREATE DATABASE` button on your dashboard. Give your database a name and save it.
+To make use of Fauna, sign up on their website [here](https://dashboard.fauna.com/accounts/register).To create a new databse, click on the `CREATE DATABASE` button on your dashboard. Assign a name to the databse you created and save it.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
 #### Creating the Fauna Collections
 For this tutorial, you will need to create two collections in your database. A collection is similar to the [tables](https://en.wikipedia.org/wiki/Table_(database)#:~:text=A%20table%20is%20a%20collection,table%20format%20within%20a%20database.&text=In%20relational%20databases%2C%20and%20flat,a%20row%20and%20column%20intersect.) found in a [relational](https://en.wikipedia.org/wiki/Relational_database) database system. The first collection you need to create is the `Users` collection. This is where you will save all the user’s information. The second collection you need to create is the `Appointments` collection. This is where you will create all the user’s appointments. 
 
-To create a collection, click on the `CREATE COLLECTION` button, then provide information for the required fields. You will be required to enter the name of the collection, the `History Days` and `TTL`. The `History Days` field refers to the number of days you want a historical record of any data in that collection to be kept. The `TTL` refers to the date that in the collection expires. For example, if the `TTL` is 3, Fauna will auto-delete any data stored in the database three days after the last date you modified it.
+To create a collection, click on the `CREATE COLLECTION` button, then provide information for the required fields. Enter a name for the collection, a value for the `History Days` field and a value for the `TTL` field. As explaied in the official documentation, the `History Days` field refers to the number of days you want a historical record of any data in that collection to be kept. The `TTL` refers to the date that in the collection expires. For example, if the `TTL` is 3, Fauna will auto-delete any data stored in the database three days after the last date you modified it.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 After saving the collections you just created, you will notice there are no documents in your collections. A document is similar to the [rows](https://en.wikipedia.org/wiki/Row_(database)#:~:text=In%20the%20context%20of%20a,data%20item%20in%20a%20table.&text=Each%20row%20in%20a%20table,table%20has%20the%20same%20structure.) of data found in a table as in a relational database system.
 
 #### Creating a Fauna Index
-You will need to create a Fauna index that will allow you to scroll through all the data you created in the database. Go to the `DB Overview` tab on the left side of your screen, you will find the `New Index` button, click on it to create a new index.
+To easily access and scroll through data in the databse, we need to create a Fauna index. Click on the `New Index` button found in the `DB Overview` tab on the left side of your screen.
 
 We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. The `users_index` index will enable you to scroll through data in the `Users` collection using the `id` field as a parameter to match. The `appointment_index` index will enable you to scroll through data in the `Appointments` collection using the `user_id` field as a parameter to match. The `appointment_today_index` index will allow you to scroll through data in the `Appointments` collection. It will use the `user_id` and `date_due` fields as parameters to match.
 
