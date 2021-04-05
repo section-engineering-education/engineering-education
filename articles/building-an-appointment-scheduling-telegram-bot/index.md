@@ -18,7 +18,7 @@ images:
 In one of my previous article, I guided the readers in building an appointment scheduler with Django and the Fauna database. For this article, I would be doing the same but this time we would be rebuilding our app as a telegram bot. Visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to read the article on dev.to.
 <!--more-->
 ### Introduction
-For an introduction to the Fauna serverless databse visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o).
+For an introduction to the Fauna serverless database visit [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o).
 
 #### Prerequisites
 To follow along with this tutorial, you need to have:
@@ -32,7 +32,7 @@ pip install faunadb telegram python_telegram_bot
 ```
 
 ### Creating A Fauna Database
-Sign up on their website [here](https://dashboard.fauna.com/accounts/register) and create a new database with a name of your choice. This databse will house the collections, documents and other database elements relevant to this article.
+Sign up on their website [here](https://dashboard.fauna.com/accounts/register) and create a new database with a name of your choice. This database will house the collections, documents and other database elements relevant to this article.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
@@ -42,7 +42,7 @@ The two collections you will need to create in this article are the `Users` coll
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 #### Creating a Fauna Index
-To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this (article)[https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o] to learn more about creating an index.
+To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this [article](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) to learn more about creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
