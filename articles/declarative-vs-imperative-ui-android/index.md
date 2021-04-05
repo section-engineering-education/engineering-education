@@ -1,6 +1,21 @@
-### Introduction
-Every application has a UI framework behind it. These frameworks play a huge part in how the applications are created and their performance too. They also have different ways of operation but can be summarized into two: `declarative` and `imperative`. This article aims to help you understand the two and provide a short introduction to Jetpack compose.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/declarative-vs-imperative-ui-android/
+title: Declarative vs Imperative UI in Android
+description: In this article, we are going to have a look at the two types of UI frameworks, declarative and imperative. We will look at their difference and have a short introduction to jetpack compose.
+author: linus-muema
+date: 2021-04-05T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/declarative-vs-imperative-ui-android/hero.jpg
+    alt: declarative UI image example
+---
+Every application has a UI framework behind it. These frameworks play a huge part in how the applications are created and their performance too. They also have different ways of operation but can be summarized into two: `declarative` and `imperative`. This article aims to help you understand the two and provide a short introduction to Jetpack compose.
+<!--more-->
 ### Definitions
 - **Imperative UI**
 This is the most common paradigm. It involves having a separate prototype/model of the application's UI. This design focuses on the `how` rather than the `what`. A good example is XML layouts in android. We design the widgets and components which are then rendered for the user to see and interact with.
@@ -70,3 +85,6 @@ A more complex UI is like one below. You can find the code on [GitHub](https://g
 And that is the difference between the old imperative programming and declarative UI. You should get deeper into learning how to use the declarative format as it is more flexible and easier to use.
 
 Have fun coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
