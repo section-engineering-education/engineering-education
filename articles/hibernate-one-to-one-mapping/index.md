@@ -1,24 +1,38 @@
-## Developing a one-to-one mapping application leveraging hibernate
 ---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/hibernate-one-to-one-mapping/
+title: Developing a One-to-one Mapping Application Leveraging Hibernate
+description: In this tutorial a reader will learn how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy.
+author: david-mbochi
+date: 2021-04-05T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/hibernate-one-to-one-mapping/hero.jpg
+    alt: One-to-one Mapping Application Leveraging Hibernate
+---
+This tutorial is for Java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented. 
+<!--more-->
+### Introduction
+Plus all the different features it offers to ease the development process. Hibernate was [started in 2001](https://en.wikipedia.org/wiki/Hibernate_(framework)#:~:text=Hibernate%20was%20started%20in%202001,and%20supplementing%20certain%20missing%20features.) by Gavin King with colleagues from Cirrus Technologies as an alternative to using EJB2-style entity beans. The original goal was to offer better persistence capabilities than those offered by EJB2. 
 
-## Introduction
----
-This tutorial is for java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented and the different features it offers to ease the development process. [Hibernate was started in 2001](https://en.wikipedia.org/wiki/Hibernate_(framework)#:~:text=Hibernate%20was%20started%20in%202001,and%20supplementing%20certain%20missing%20features.) by Gavin King with colleagues from Cirrus Technologies as an alternative to using EJB2-style entity beans. The original goal was to offer better persistence capabilities than those offered by EJB2. [173  companies reportedly use Hibernate](https://stackshare.io/hibernate) in their tech stacks including Platform, Trendyol Group, and WealthSiple. In this tutorial, the reader will learn how to create a one-to-one relationship application where a customer can only have one subscription.
+[173 companies reportedly use Hibernate](https://stackshare.io/hibernate) in their tech stacks including Platform, Trendyol Group, and WealthSiple.
 
-## Table of contents
----
+In this tutorial, the reader will learn how to create a one-to-one relationship application where a customer can only have one subscription.
+
+### Table of contents
 - Setting up the development environment.
 - Creating the database and configuring hibernate configuration file.
 - Creating the entities.
 - Creating and executing the main app.
 
-## Prerequisites
----
-Basic java knowledge working with [object oriented programming](https://www.w3schools.com/java/java_oop.asp#:~:text=Java%20%2D%20What%20is%20OOP%3F,contain%20both%20data%20and%20methods.&text=OOP%20provides%20a%20clear%20structure%20for%20the%20programs), how to implement [composition](https://www.geeksforgeeks.org/composition-in-java/#:~:text=The%20composition%20is%20a%20design,that%20refers%20to%20other%20objects.) between entities, [SQL](https://www.w3schools.com/sql/sql_intro.asp) commands, [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/mysql-installer-setup.html) shell/bash, and Intellij but feel free to use any environment preferred.
+### Prerequisites
+Basic Java knowledge working with [object oriented programming](https://www.w3schools.com/java/java_oop.asp#:~:text=Java%20%2D%20What%20is%20OOP%3F,contain%20both%20data%20and%20methods.&text=OOP%20provides%20a%20clear%20structure%20for%20the%20programs), how to implement [composition](https://www.geeksforgeeks.org/composition-in-java/#:~:text=The%20composition%20is%20a%20design,that%20refers%20to%20other%20objects.) between entities, [SQL](https://www.w3schools.com/sql/sql_intro.asp) commands, [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/mysql-installer-setup.html) shell/bash, and Intellij but feel free to use any environment preferred.
 
-## Step 1: Setting up the development environment
----
-Java development kit is required to run the application successfully, use the following link to install java 11 on your computer.
+### Step 1: Setting up the development environment
+Java development kit is required to run the application successfully, use the following link to install Java 11 on your computer.
 
 - [JDK 11 installation guide](https://www.youtube.com/watch?v=wcZj4JH6lbQ)
 
@@ -31,20 +45,26 @@ After successfully installing MySQL and setting up database credentials, use the
 ```MySQL
 mysql -u username -p
 ```
-A prompt will ask for your password and on entering access will be granted showing the information below.
+
+A prompt will ask for your password and on entering, access will be granted showing the information below.
 
 ![MySQL login](mysql-login.png)
 
- Maven is a build tool for managing java projects. Maven is based on the project object model (POM) which is an XML file containing configuration details and information about the project. The dependencies can be obtained from [maven central repository](https://mvnrepository.com/) and added to the POM file where maven will be responsible for source code generation, code compilation, and JAR files packaging of the compiled code in a local repository where they will be accessed when a new maven project is created. The required dependencies will be downloaded automatically by maven and added to the classpath of your project once they are added to the POM file.
+Maven is a build tool for managing Java projects. Maven is based on the project object model (POM) which is an XML file containing configuration details and information about the project. 
 
- Eclipse provides an easier way to create a maven project through archetypes. Archetypes are used to create new maven projects that contain template files for a given maven project. You can think of it as a collection of starter files for java or a web project.
+The dependencies can be obtained from [maven central repository](https://mvnrepository.com/) and added to the POM file where maven will be responsible for source code generation, code compilation, and JAR files packaging of the compiled code.
+
+This will occur in a local repository where they will be accessed when a new maven project is created. The required dependencies will be downloaded automatically by maven, and added to the classpath of your project once they are added to the POM file.
+
+Eclipse provides an easier way to create a maven project through archetypes. Archetypes are used to create new maven projects that contain template files for a given maven project. You can think of it as a collection of starter files for Java or a web project.
  
- Common archetypes are.
+Common archetypes are:
+- Maven-archetype-quickstart - This is an archetype to generate a sample maven project good for standalone projects.
+- maven-archetype-webapp - This is an archetype to generate a sample maven project for Java web applications.
 
- - Maven-archetype-quickstart - This is an archetype to generate a sample maven project good for standalone projects.
- - maven-archetype-webapp - This is an archetype to generate a sample maven project for java web applications.
+In Eclipse, click File, new, other, maven, and then maven project. Press next and select maven-archetype-quickstart, on the window that opens fill out the group id and artifact id which represents the package and project name respectively.
 
-In Eclipse, click File, new, other, maven, and then maven project. Press next and select maven-archetype-quickstart, on the window that opens fill out the groupid and artifact id which represents the package and project name respectively. Click Finish to generate a new maven project that contains all the files to be used in a standalone application. 
+Click Finish to generate a new maven project that contains all the files to be used in a standalone application. 
 
 In IntelliJ click file, new, project, and on the window that opens select maven, then click next and give your project a name. This will create a new maven project which has the following structure.
 
@@ -94,13 +114,14 @@ Add the following dependencies to the file named pom.xml after the properties cl
         </dependency>
     </dependencies>
 ```
-## Step 2: Creating the database and configuring hibernate configuration file
----
+
+### Step 2: Creating the database and configuring hibernate configuration file
 Use the following command to create a new database for the application.
 
 ```sql
 create database database_name;
 ```
+
 In IntelliJ create a new file under resources named hibernate.cfg.xml or any name preferred and add the following properties.
 
 ```java
@@ -136,6 +157,7 @@ In IntelliJ create a new file under resources named hibernate.cfg.xml or any nam
 
 </hibernate-configuration>
 ```
+
 - The first section contains the connection details for the database including database URL, username, and password.  
 - The connection pool minimizes the number of connections opened between the application and the database.
 - Dialect specifies the type of database used in hibernate so that hibernate generates the appropriate type of SQL statements.  
@@ -143,15 +165,15 @@ In IntelliJ create a new file under resources named hibernate.cfg.xml or any nam
 - current_session_context_class sets the class that implements the current session context.  
 - hibernate.hbm2dl.auto of type update will automatically create the tables in the database if the tables don't exist during the first execution then it will update records after entities are created maintaining the data.
 
-## Step 3: Creating the entities
----
-Create a class named customer with the following details
+### Step 3: Creating the entities
+Create a class named customer with the following details:
 - id
 - firstName
 - lastName
 - email
 - constructor with all the fields apart from the id as it will be generated
 - toString method to view the object instances data.
+
 ```java
 import javax.persistence.*;
 
@@ -237,23 +259,24 @@ public class Customer {
     }
 }
 ```
+
 - @Entity - Marks the class as a database table to be created by Hibernate.  
 - @Table(name="customer") - Tells hibernate that the table name will be called customer.
-- @Id - primary key of the current entity
+- @Id - primary key of the current entity.
 - @GeneratedValue - an auto-incrementing strategy for the primary key.
 - @Column - denotes the name of the fields to be created in the database by Hibernate.  
-- @OneToOne(cascade = CascadeType.ALL) - This shows that one customer has one subscription and the cascade type of all tells hibernate that the CRUD operation done to the customer should also be cascaded to the subscription. For example, if a customer is deleted their subscription should also be deleted.  
-- @JoinColumn(name = "sub_id") - Tells hibernate to look for column sub_id in the customer table and use the information to find the appropriate subscription for the customer.
+- @OneToOne(cascade = CascadeType.ALL) - This shows that one customer has one subscription and the cascade type of all tells hibernate that the CRUD operation done to the customer should also be cascaded to the subscription. For example, if a customer is deleted, their subscription should also be deleted.  
+- @JoinColumn(name = "sub_id") - Tells hibernate to look for column sub_id in the customer table and to use the information to find the appropriate subscription for the customer.
 
- After creating the customer class create a subscription class with the following details.
- - id
- - name
- - price
- - description
- - constructor without the id
- - toString method
+After creating the customer class, create a subscription class with the following details.
+- id
+- name
+- price
+- description
+- constructor without the id
+- toString method
 
- ```java
+```java
 import javax.persistence.*;
 
 @Entity
@@ -335,21 +358,20 @@ public class Subscription {
                 '}';
     }
 }
- ```
- The CascadeType.REMOVE has been left out to avoid deleting the customer once a subscription is deleted to demonstrate cascading in action.
+```
+
+The CascadeType.REMOVE has been left out to avoid deleting the customer once a subscription is deleted to demonstrate cascading in action.
 
 mappedBy = "subscription" - added to mark the relationship as bi-directional meaning when a subscription is loaded the customer can be identified and vice versa.
 
-## Step 4: Creating and executing the main app
----
+### Step 4: Creating and executing the main app
 In this stage, the following will be covered.
 - Creating a new customer.
 - Retrieving customer by id and assigning a new subscription to the customer using a setter method.
 - Retrieving customer by id and deleting to see cascade delete applied to the subscription.
 - Retrieve and update a customer using a setter method.
 
-##### create a new customer
----
+#### Create a new customer
 ```java
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
@@ -389,7 +411,8 @@ public class CreateCustomer {
     }
 }
 ```
-When the main app is executed table customer and subscription will be created and a new row will be inserted in the customer table, use the following command to see the created tables and inserted row.
+
+When the main app is executed, a table customer and subscription will be created and a new row will be inserted in the customer table, use the following command to see the created tables and inserted row.
 
 ```SQL
 use database_name;
@@ -398,13 +421,13 @@ show tables;
 
 select * from customer;
 ```
+
 The new customer entry will be returned by the query and note the sub_id is null.
 
 ![create customer](create-customer.png)
 
 
-##### Retrieving customer by id and assigning a new subscription to the customer using a setter method.
-----
+#### Retrieving customer by id and assigning a new subscription to the customer using a setter method
 
 ```java
 import com.javadev.hibernate.demo.entity.Customer;
@@ -451,12 +474,12 @@ public class CreateCustomerSubscription {
 }
 
 ```
+
 A new record will be inserted in the subscription table and the customer sub_id column will be updated with the foreign key id referencing subscription that the customer was set to. This is because of the CascadeType.ALL which was set in the customer class.
 
 ![customer subscription](customer-subscription.png)
 
-##### Retrieving customer by id and deleting to see cascade delete applied to the subscription.
----
+#### Retrieving customer by id and deleting to see cascade delete applied to the subscription
 
 ```java
 import com.javadev.hibernate.demo.entity.Customer;
@@ -500,15 +523,17 @@ public class DeleteSubscription {
 }
 
 ```
-Note that because there was a bi-directional link between customer and subscription the link must be broken for deleting a subscription to work.
-Deleting a subscription will maintain the customer due to CascadeType.REMOVE left out in subscription class.
+
+>Note that because there was a bi-directional link between customer and subscription the link must be broken for deleting a subscription to work.
+
+Deleting a subscription will maintain the customer due to CascadeType.REMOVE being left out in subscription class.
 
 ![deleting subscription](deleting-subscription.png)
 
-The subscription table will return an empty set while the customer table column sub_id will be updated to null
+The subscription table will return an empty set while the customer table column sub_id will be updated to null.
 
-#####  Retrieve and update a customer using a setter method
----
+#### Retrieve and update a customer using a setter method
+
 ```java
 import com.javadev.hibernate.demo.entity.Customer;
 import com.javadev.hibernate.demo.entity.Subscription;
@@ -560,10 +585,13 @@ public class UpdateCustomer {
 ![updating customer](updating-customer.png)
 
 ### Conclusion
----
-By covering and implementing these operations, the reader will be more confident to approach a one-to-one Hibernate task and deliver as required. At this point, the reader has learned how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.         
+By covering and implementing these operations, a reader should be more confident to approach a one-to-one Hibernate task and deliver as required. 
 
+At this point, the reader has learned how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy. 
 
+In the next tutorial, the reader will learn how how to perform CRUD operations using a one-to-many mapping strategy.     
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
