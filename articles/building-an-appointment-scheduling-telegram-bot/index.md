@@ -42,9 +42,7 @@ The two collections you will need to create in this article are the `Users` coll
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
 #### Creating a Fauna Index
-To easily access and scroll through data in the databse, we need to create a Fauna index. Click on the `New Index` button found in the `DB Overview` tab on the left side of your screen.
-
-We will create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this (article)[https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o] to learn more about creating an index.
+To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit this (article)[https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o] to learn more about creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
@@ -56,11 +54,9 @@ For the `apppointment_index`, we will use the `user_id` field as the terms. For 
 ### Integrating Fauna with Python
 
 #### Creating a Fauna API Key
-For your python app to interact with fauna, you need to create an API key for the database. To do this, go to the security tab on the left side of your screen.
+Visit the article [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for information on how to create and API key 
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
-
-Click on `New Key` to generate a secret key. To create the key, you will need to provide a name for your key and save it. Your secret key will now be displayed to you, as seen in the image below. Copy and paste it somewhere you can easily retrieve it.
 
 ![key](/engineering-education/building-an-appointment-scheduling-telegram-bot/key.png)
 
