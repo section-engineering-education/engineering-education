@@ -54,7 +54,7 @@ For the `apppointment_index`, we will use the `user_id` field as the terms. For 
 ### Integrating Fauna with Python
 
 #### Creating a Fauna API Key
-Visit the article [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for information on how to create and API key 
+Visit the article [here](https://dev.to/chukslord1/building-an-appointment-scheduler-app-with-django-and-fauna-2n9o) for information on how to create and API key. 
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
