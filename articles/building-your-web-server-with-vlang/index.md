@@ -7,7 +7,7 @@ title: Building a web Server Using Vlang
 description: This tutorial will introduce us to the V programming language. We will look at installing Vlang in our local machine and creating a simple web server with Vlang.
 author: samuel-umoren
 date: 2021-04-02T00:00:00-17:00
-topics: [Node.js]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
