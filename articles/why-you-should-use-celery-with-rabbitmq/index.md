@@ -20,8 +20,8 @@ In today's technology space, there is an increase in event-driven architectures 
 
 1. [What We Will Cover In This Article](#what-we-will-cover-in-this-article)
 2. [Understanding Celery & RabbitMQ](#understanding-celery-&-rabbitmq)
-    - [What is a Task Queue](#what-is-a-task-queue)
-    - [Examples of Task Queues](#examples-of-task-queues)
+    - [What is a Task Queue Software](#what-is-a-task-queue-software)
+    - [Examples of Task Queues](#examples-of-task-queue-softwares)
     - [What is a Message Broker](#what-is-a-message-broker)
     - [Examples of Message Brokers](#examples-of-message-brokers)
 3. [Why We Should Choose The Celery & RabbitMQ Combo](#why-we-should-choose-the-celery-&-rabbitmq-combo)
@@ -47,7 +47,7 @@ To further explain their usefulness, let’s say we have a web application that 
 As the number of users increases, the time to enhance an image drastically increases, which leads to a significant delay while enhancing.
 Hence, the need for a task queue software as it efficiently manages requests and ensures the application runs smoothly.
 
-#### Examples of Task Queue Software
+#### Examples of Task Queue Softwares
 
 - Celery
 - Redis Queue
