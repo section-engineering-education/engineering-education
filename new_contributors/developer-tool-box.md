@@ -1,5 +1,5 @@
 ### Developer Tool Page
-Below we are trying to curate a list of resources that can help developers become programmers.
+Below we are trying to curate a list of resources that can help developers become better programmers.
 
 We hope this helps get you started off on the right foot - and we're always happy to help. 
 
