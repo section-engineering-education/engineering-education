@@ -2,7 +2,7 @@
 
 ### Introduction
 
-[Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability and speed.
+[Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability, and speed.
 
 To show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
 
@@ -85,7 +85,7 @@ MYSQL_PORT=3306
 MYSQL_PASSWORD= //DB_PASSWORD
 ```
 
-If you encounter this error `Client does not support the authentication protocol requested by the server;` while testing your API, follow these steps to solve it.
+If you encounter this error `Client does not support the authentication protocol requested by the server;` while testing your API, follow these steps to solve it:
 
 ```bash
 npm install mysql2
@@ -236,7 +236,7 @@ We will start by creating the `AuthController` and setting up the login and regi
 node ace make:controller Auth
 ```
 
-Open the file in `app/Controllers/Http/AuthController.ts` and paste the code below.
+Open the file in `app/Controllers/Http/AuthController.ts` and paste the code below:
 
 ```js
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
