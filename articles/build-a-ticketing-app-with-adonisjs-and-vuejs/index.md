@@ -85,7 +85,7 @@ MYSQL_PORT=3306
 MYSQL_PASSWORD= //DB_PASSWORD
 ```
 
-If you encounter this error `Client does not support the authentication protocol requested by the server;` while testing your API, follow these steps to solve it.
+If you encounter this error `Client does not support the authentication protocol requested by the server;` while testing your API, follow these steps to solve it:
 
 ```bash
 npm install mysql2
