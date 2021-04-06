@@ -6,8 +6,8 @@ url: /engineering-education/why-you-should-use-celery-with-rabbitmq/
 title: Why You Should Use Celery With RabbitMQ
 description: This article will provide an overview of task queues & message brokers, why a user should choose celery with rabbitmq, and finally an example that shows how to use the two technologies.
 author: edidiong-etuk
-date: 2021-04-04T00:00:00-14:00
-topics: [Languages]
+date: 2021-04-07T00:00:00-00:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
