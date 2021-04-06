@@ -31,11 +31,7 @@ This article will cover:
 
 ### What is IoT
 
-[* Internet of Things (IoT)*]() is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose of exchanging data among the devices on the internet to help organizations solve problems.
-
-As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device.
- 
-The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
+*Internet of Things (IoT)* is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose of exchanging data among the devices on the internet to help organizations solve problems. As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device. The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
 
 IoT technology leverages low-cost computing devices, growing cloud technologies, big data, and advanced analytics platforms to provide cutting-edge solutions that have proved profitable for every industry.
 
@@ -44,7 +40,7 @@ The connected devices can manage tasks, analyze opportunities and transfer this 
 
 #### IoT solutions examples:
 
-- Wearable health monitors
+- Wearable health monitors.
 - Home automation systems.
 - Industrial control and monitoring systems.
 
