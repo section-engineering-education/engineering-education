@@ -14,9 +14,10 @@ images:
   - url: /engineering-education/how-to-build-a-flutter-todo-app/hero.jpg
     alt: Flutter todo app image
 ---
-# How to build A Todo app with Flutter
-![hero image](/engineering-education/how-to-build-a-todo-app/hero.jpg)
-[Source](https://unsplash.com/photos/2JknzBYDu6k)
+Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase. This technology is changing the software development industry by making application development faster and cheaper.
+<!--more-->
+
+In this article, we will use flutter to build a **To-do list** app.
 
 ### Table of contents 
 - [Prerequisites](#prerequisites)
@@ -28,12 +29,7 @@ images:
 - [Stateful Widget](#stateful-widget)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
-
-### Introduction
-Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase. This technology is changing the software development industry by making application development faster and cheaper.
-
-In this article, we will use flutter to build a **To-do list** app. 
-
+ 
 ### Prerequisites
 To better understand this article, the reader is expected to have a foundational knowledge of object-oriented programing languages such as Java, C++, etc. 
 
