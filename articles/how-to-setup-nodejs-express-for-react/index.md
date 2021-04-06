@@ -21,7 +21,7 @@ $cd demoreactapp
 $npx create-react-app client
 ```
 
-The above commands will create a react app with a name `client` inside the root directory.
+The above commands will create a react app with the name `client` inside the root directory.
 
 ### Setting up the Express Server
 Next will be to create an Express server inside the server.js. Browse to the root directory from the terminal and run the below command:
@@ -63,7 +63,7 @@ Line 9 to 11 – It will set a `GET route` that we will, later on, fetch from ou
 ### Setting up the proxy
 In this step, the Webpack development server was auto-generated when we ran the `create-react-app` command.  Our react App is running on the Webpack development server on the frontend.  We can proxy the API requests from the client-side to the API on the server-side. The API  on the server-side(Express server) will be running on port 5000.
 
-To set up the proxy, first, navigate into the client directory and locate its `package.json` file. Add the below line to it.
+First, set up the proxy to navigate into the client directory and locate its `package.json` file. Add the below line to it.
 
 "proxy": "http://localhost:5000"
 
@@ -174,3 +174,6 @@ Finally, we have rendered the data fetched from the `GET route` in `server.js` t
 
 ### Conclusion
 A lot can be done with Express backend, like make calls to the database, but on this guide, we have concentrated on how to quickly connect to the backend Express server from client side react App. The code snippets and files used in this guide can be accessed at the [GitHub repository](https://github.com/verah-tech/demoreactapp.git).
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
