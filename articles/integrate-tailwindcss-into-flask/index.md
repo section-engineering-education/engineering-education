@@ -1,3 +1,5 @@
+TEST COMMIT
+
 title: Integrating TailwindCSS into Flask Apps
 
 description: TailwindCss is a utility-first CSS framework for building frontend applications. This article focuses on how flask developers can use tailwind to quickly design frontend interfaces for their servers.
