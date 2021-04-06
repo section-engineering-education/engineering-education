@@ -7,6 +7,7 @@ If you would like to add more resources to this page - please create PR. If you 
 we can add in general, ping us in the Slack EngEd channel.
 
 | Tool Name |   Description of Tool  | 
+|----------|:-------------:|
 |[Freecodecamp](https://www.freecodecamp.org/)|This offers hundreds of projects and exercises for students to test their knowledge.|
 |[w3schools](https://www.w3schools.com/)|The worlds largest web developer site|
 |[zerotomastery](https://zerotomastery.io/resources/)|Zero To Mastery Academy will teach you React, JavaScript, Python, CSS and more to help you advance your career, get hired and succeed at the top companies in the world.|
