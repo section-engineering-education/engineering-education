@@ -199,7 +199,7 @@ We will start by creating the `AuthController` and setting up the login and regi
 node ace make:controller Auth
 ```
 
-Open the file in `app/Controllers/Http/AuthController.ts` and paste the code below.
+Open the file in `app/Controllers/Http/AuthController.ts` and paste the code below:
 
 ```js
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
