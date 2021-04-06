@@ -1,15 +1,5 @@
 # Build a Ticketing App with AdonisJS and VueJS
 
-### Outline
-
-- Introduction
-- prerequisites
-- Goals of the Tutorial
-- Step 1 — Setting up AdonisJS
-- Step 2 — Building the Frontend
-- Step 3 — Testing the Project
-- Conclusion
-
 ### Introduction
 
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability and speed.
@@ -21,6 +11,16 @@ This app will create events, generate tickets for the event, allow users to view
 Once you finish the tutorial, you will have a functioning Ticketing application like the following:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Outline
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Goals of the Tutorial](#goals-of-the-tutorial)
+- [Step 1 — Setting up AdonisJS](#step-1--setting-up-adonisjs-5)
+- [Step 2 — Building the Frontend](#step-2--building-the-frontend)
+- [Step 3 — Testing the Project](#testing-the-project)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 
@@ -36,15 +36,15 @@ I will be showing you how to build a Ticketing App with AdonisJS 5 and VueJS. I 
 
 I will also cover best practices in structuring and building your frontend with VueJS when using AdonisJS as your backend.
 
-Students will learn how to build a real-world app with AdonisJS and VueJS
-Students will learn how to handle authentication and authorization with AdonisJS and VueJS
-Students will learn how to integrate AdonisJS with VueJS.
-Students will learn how to build and structure a Ticketing System in AdonisJS and VueJS
-Students will learn best practices in building performance-oriented Web apps with AdonisJS.
+- Students will learn how to build a real-world app with AdonisJS and VueJS
+- Students will learn how to handle authentication and authorization with AdonisJS and VueJS
+- Students will learn how to integrate AdonisJS with VueJS.
+- Students will learn how to build and structure a Ticketing System in AdonisJS and VueJS
+- Students will learn best practices in building performance-oriented Web apps with AdonisJS.
 
 ### Step 1 — Setting up Adonis.js 5
 
-Setting up AdonisJS 5 is very easy as it requires a simple NPM command below, if you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/)
+Setting up AdonisJS 5 is very easy as it requires a simple NPM command below, if you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 
 ```bash
 npm init adonis-ts-app adonisjs-ticketing-system-api
@@ -91,7 +91,7 @@ If you encounter this error `Client does not support the authentication protocol
 npm install mysql2
 ```
 
-To set up authentication in Adonisjs is done by installing a package and setting it up, you can read through how to set up authentication [here](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/).
+To set up authentication in Adonisjs is done by installing a package and setting it up, you can read through how to set up authentication [here](/engineering-education/build-a-restful-api-with-adonisjs/).
 
 Install the Auth package with this command:
 
@@ -102,6 +102,8 @@ npm i @adonisjs/auth@alpha
 #### Creating Migrations and Models
 
 Our project will be using a total of 3 migrations and models excluding the User model and migration.
+
+With AdonisJs migrations, you can create/modify database by just writing Javascript while Models represents the database layer of your application, you can describe your database tables as JavaScript classes and use JavaScript methods for reading, writing and deleting rows
 
 So let’s create our migrations:
 
@@ -114,14 +116,25 @@ node ace make:migration user_events
 After running the commands, open the `database/migrations/xxxx_tickets.ts` migration and add the following codes:
 
 ```js
+/**
+* The Tickets class creates a new Database table with the specified columns
+*/
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class Tickets extends BaseSchema {
   protected tableName = 'tickets'
+
+  // The UP method create the table with specified table name and columns specified.
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
+
+      // This create an ID column with primary key attribute
       table.increments('id').primary()
+
+      //This create an CODE column with a String
       table.string('code')
       table.double('amount')
+
+      //This create an USER_ID column with relationship constraints
       table.integer('user_id').unsigned().references('id').inTable('users').onDelete('CASCADE')
       table.integer('event_id').unsigned().references('id').inTable('tickets').onDelete('CASCADE')
       table.boolean('is_used').defaultTo(false)
@@ -129,6 +142,8 @@ export default class Tickets extends BaseSchema {
       table.timestamps(true)
     })
   }
+
+  // The DOWN method is used to drop the database table.
   public async down() {
     this.schema.dropTable(this.tableName)
   }
@@ -138,8 +153,6 @@ export default class Tickets extends BaseSchema {
 Repeat the same for the other migrations from our repository. After completing the migrations, you can run the migration with this command.
 
 ```bash
-node ace serve --watch
-// Then
 node ace migration:run
 ```
 
@@ -149,9 +162,12 @@ We will also create the models and map the columns.
 node ace make:model Event
 ```
 
-You can clone my repository to see how we map the columns, but here is an example of how to map the events model.
+You can [clone my repository](https://github.com/Kaperskyguru/ticketing-system-adonisjs) to see how we map the columns, but here is an example of how to map the events model.
 
 ```ts
+/**
+ * The Event class is a model that maps the columns of the events table to JS object
+ */
 import { DateTime } from "luxon";
 import {
   BaseModel,
@@ -164,24 +180,43 @@ import {
 import Ticket from "./Ticket";
 import User from "./User";
 export default class Event extends BaseModel {
+  // Specifies an ID column with Primary key
   @column({ isPrimary: true })
   public id: number;
+
+  // Specifies a TITLE column
   @column()
   public title: string;
+
+  // Specifies a Description column
   @column()
   public description: string;
+
+  // Specifies a DATE column
   @column()
   public date: string;
+
+  // Specifies a Ticket_Price column
   @column()
   public ticket_price: number;
+
+  // Specifies a USERID column
   @column()
   public userId: number;
+
+  // Specifies a CreatedAT column with auto create attribute
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime;
+
+  // Specifies a UpdatedAt column with auto create and update attributes
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime;
+
+  // Specifies a Has Many relationship between Ticket model
   @hasMany(() => Ticket)
   public tickets: HasMany<typeof Ticket>;
+
+  // Indicates that this event belongs to a User
   @belongsTo(() => User)
   public user: BelongsTo<typeof User>;
 }
@@ -192,6 +227,8 @@ We have mapped the columns in our migration to the Event models, and also define
 #### Creating Controllers
 
 In this step, we will be creating our controllers and also the business logic associated with our ticketing system.
+
+"Controllers act as a middle man between Models and Views, it processes all the inputs sent by the user from the View." from [Laravel Tutoral](https://masteringbackend.com/posts/laravel-framework-the-ultimate-guide#chaptertwo)
 
 We will start by creating the `AuthController` and setting up the login and registration processes.
 
@@ -205,6 +242,9 @@ Open the file in `app/Controllers/Http/AuthController.ts` and paste the code bel
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 export default class AuthController {
+
+  // Our Login method accepts Email and Password before attempting to Login the User
+
   public async login({ request, auth }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
@@ -213,6 +253,8 @@ export default class AuthController {
     })
     return token.toJSON()
   }
+
+  // The register method Creates a New User object and save it to the database.
   public async register({ request, auth }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
@@ -234,6 +276,8 @@ The controller above defines the authentication process for the backend API.
 
 Next, we will create the `EventsController` and paste in the following code while other controllers can be found in the repository.
 
+The EventController is where all the business logic related to managing events are created. Let's break it down in details.
+
 ```js
     import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
     import Event from 'App/Models/Event'
@@ -242,11 +286,17 @@ Next, we will create the `EventsController` and paste in the following code whil
     import UserEvent from 'App/Models/UserEvent'
     import { DateTime } from 'luxon'
     const Keygen = require('keygen')
+
     export default class EventsController {
+
+      // The INDEX method returns all the Events available to be displayed on the homepage
       public async index({}: HttpContextContract) {
         const events = await Event.query().preload('user').preload('tickets')
         return events
       }
+
+
+      // The SHOW method retrieves a single Event by ID
       public async show({ params }: HttpContextContract) {
         try {
           const event = await Event.find(params.id)
@@ -259,6 +309,9 @@ Next, we will create the `EventsController` and paste in the following code whil
           console.log(error)
         }
       }
+
+
+      // The UPDATE method updates the detail of an Event
       public async update({ request, params }: HttpContextContract) {
         const event = await Event.find(params.id)
         if (event) {
@@ -275,6 +328,9 @@ Next, we will create the `EventsController` and paste in the following code whil
         }
         return // 401
       }
+
+
+      // The STORE method is used to creat a new Event
       public async store({ auth, request }: HttpContextContract) {
         const user = await auth.authenticate()
         const event = new Event()
@@ -285,12 +341,38 @@ Next, we will create the `EventsController` and paste in the following code whil
         await user.related('events').save(event)
         return event
       }
+
+      // The DESTROY method deletes a particular event
       public async destroy({ response, auth, params }: HttpContextContract) {
         const user = await auth.authenticate()
         await Event.query().where('user_id', user.id).where('id', params.id).delete()
         return response.redirect('/dashboard')
       }
+
+      // The findEvent method retrieves a single Event by ID without HttpContext
+      private async findEvent(id: number): Promise<Event | null> {
+        try {
+          const event = await Event.find(id)
+          if (event) {
+            await event.preload('user')
+            await event.preload('tickets')
+            return event
+          }
+        } catch (error) {
+          console.log(error)
+        }
+        return null
+      }
+  }
+```
+
+The controller includes all the possible CRUD functionalities such as retrieving, storing, updating and deleting the event.
+
+Next, we will add the `Join` method to allow the user to join up the event using the code sent when purchasing the Event ticket.
+
+```js
       public async join({ params, auth, response, request }: HttpContextContract) {
+
         // Check if user already join event
         const user = await auth.authenticate()
         const ticket = await Ticket.query()
@@ -310,6 +392,8 @@ Next, we will create the `EventsController` and paste in the following code whil
           // throw Used_ticket_Error
           return response.json({ message: 'Ticket already used' })
         }
+
+        // Create a new User Event to indicate that the Event Ticket has be used
         const joinEvent = new UserEvent()
         joinEvent.user_id = user.id
         joinEvent.event_id = params.id
@@ -323,56 +407,50 @@ Next, we will create the `EventsController` and paste in the following code whil
         }
         return response.status(500).json({ message: 'Internal Server Error, Please try again' })
       }
-      public async buy({ request, params, response, auth }: HttpContextContract) {
-        // Find Event
-        const event = await this.findEvent(params.id)
-        if (event === null) {
-          return response.status(404).json({ message: 'Event is not valid' })
-        }
-        const user = await auth.authenticate()
-        // Check if price matches
-        if (event.ticket_price != request.input('amount')) {
-          const message =
-            'Ticket with id: ' +
-            event.id +
-            ' with amount: ' +
-            event.ticket_price +
-            ' does not equal to User amount: ' +
-            request.input('amount')
-          return response.status(422).json({ message })
-        }
-        const ticket = new Ticket()
-        ticket.userId = user.id
-        ticket.eventId = event.id
-        ticket.amount = request.input('amount')
-        ticket.code = Keygen.hex(5)
-        if (ticket.save()) {
-          // Send User Email, Send Code
-          await User.find(user.id)
-          // user.notifyNow(new TicketNotification(ticket, event));
-          return response
-            .status(200)
-            .json({ message: 'Payment for event with id: ' + event.id + ' was successful' })
-        }
-        return response.status(500).json({ message: 'Internal Server Error, Please try again' })
-      }
-      private async findEvent(id: number): Promise<Event | null> {
-        try {
-          const event = await Event.find(id)
-          if (event) {
-            await event.preload('user')
-            await event.preload('tickets')
-            return event
-          }
-        } catch (error) {
-          console.log(error)
-        }
-        return null
-      }
-    }
 ```
 
-The controller includes all the possible CRUD functionalities such as retrieving, storing, updating and deleting the event. It also includes `buy` and `join` method which is use to order and join the ticket for an event.
+Next, We will include the `buy` method which is used to purchase an Event ticket for the upcoming event.
+
+```js
+  public async buy({ request, params, response, auth }: HttpContextContract) {
+    // Find Event
+    const event = await this.findEvent(params.id)
+
+    if (event === null) {
+      return response.status(404).json({ message: 'Event is not valid' })
+    }
+    const user = await auth.authenticate()
+
+    // Check if price matches
+    if (event.ticket_price != request.input('amount')) {
+      const message =
+        'Ticket with id: ' +
+        event.id +
+        ' with amount: ' +
+        event.ticket_price +
+        ' does not equal to User amount: ' +
+        request.input('amount')
+      return response.status(422).json({ message })
+    }
+
+    const ticket = new Ticket()
+    ticket.userId = user.id
+    ticket.eventId = event.id
+    ticket.amount = request.input('amount')
+    ticket.code = Keygen.hex(5)
+
+    if (ticket.save()) {
+      // Send User Email, Send Code
+      await User.find(user.id)
+      return response
+        .status(200)
+        .json({ message: 'Payment for event with id: ' + event.id + ' was successful' })
+    }
+
+    return response.status(500).json({ message: 'Internal Server Error, Please try again' })
+  }
+
+```
 
 #### Creating endpoint routes
 
@@ -399,6 +477,8 @@ You can test out your API immediately by using either [Postman](https://www.post
 
 ![Test the API](/engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/buildpreview.png)
 
+The image above shows how to testing the API using Postman.
+
 ### Step 2 — Building the Frontend
 
 In setting up the Frontend, we will use the recommended Vite web development build tool to create our Vue 3 project.
@@ -406,10 +486,10 @@ In setting up the Frontend, we will use the recommended Vite web development bui
 Run the following command to install using Vite:
 
 ```bash
-  npm init @vitejs/app ticketing-system-vue
-  cd ticketing-system-vue
-  npm install
-  npm run dev
+npm init @vitejs/app ticketing-system-vue
+cd ticketing-system-vue
+npm install
+npm run dev
 ```
 
 You can read through the installation process in the [official documentations](https://v3.vuejs.org/guide/installation.html###cli).
@@ -449,12 +529,18 @@ const routes = [
     name: "register",
     component: Register,
   },
-  {
-    path: "/events/:id",
-    name: "event",
-    component: Ticket,
-  },
-  {
+
+  // Protected Routes here
+];
+const router = createRouter({ history: createWebHistory(), routes });
+
+export default router;
+```
+
+In the code above, we created different routes for `login`, `register`, `index` and protected routes such as `admin` and `user` below.
+
+```js
+{
     path: "/user/:id",
     name: "user",
     component: User,
@@ -497,9 +583,12 @@ const routes = [
       }
     },
   },
-];
-const router = createRouter({ history: createWebHistory(), routes });
 
+```
+
+The `beforeEach` route hook checks each route for any authentication metadata and if found, checks if the user navigating that route has logged in or not then redirects.
+
+```js
 router.beforeEach((to, from, next) => {
   to.matched.some((record) => {
     console.log(record);
@@ -518,12 +607,7 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-export default router;
 ```
-
-In the code above, we created different routes for `login`, `register`, `index` and protected routes such as `admin` and `user`.
-
-The `beforeEach` route hook checks each route for any authentication metadata and if found, checks if the user navigating that route has logged in or not then redirects.
 
 To get the routes to work, we added the new route package and register this file inside the `main.js` file so we can use it as Vue 3 plugin.
 
@@ -552,118 +636,131 @@ touch register.vue
 
 Next, we add the following code to create in the `login.vue` to create the login form and also the login process with error handling.
 
-```js
-    <template>
-      <div class="text-center banner p-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-custom p-5">
-                <div class="container p-5">
-                  <div class="pb-5">
-                    <div class="text-center pb-3">
-                      <h5 class="authBtn">Login</h5>
-                      <small class="authBtnInner">
-                        Equipped with the cutting edge features that make a 21st
-                        Century Ticketing Platform,
-                      </small>
-                      <hr />
-                    </div>
-                    <form @submit.prevent="login">
-                      <div class="form-group">
-                        <input
-                          name="email"
-                          type="email"
-                          v-model="email"
-                          class="form-control"
-                          placeholder="Email"
-                        />
-                        <span class="text-danger">
-                          {{ emailError }}
-                        </span>
-                      </div>
-                      <div class="form-group">
-                        <input
-                          name="password"
-                          type="password"
-                          v-model="password"
-                          class="form-control"
-                          placeholder="Password"
-                        />
-                        <span class="text-danger">
-                          {{ passwordError }}
-                        </span>
-                      </div>
-                      <button
-                        type="submit"
-                        class="btn btn-primary btn-lg btn-block customBtn"
-                      >
-                        Login
-                      </button>
-                    </form>
-                  </div>
-                  <p>
-                    New members? <router-link to="/register">Register</router-link>
-                  </p>
+```html
+<template>
+  <div class="text-center banner p-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-custom p-5">
+            <div class="container p-5">
+              <div class="pb-5">
+                <div class="text-center pb-3">
+                  <h5 class="authBtn">Login</h5>
+                  <small class="authBtnInner">
+                    Equipped with the cutting edge features that make a 21st
+                    Century Ticketing Platform,
+                  </small>
+                  <hr />
                 </div>
+                <form @submit.prevent="login">
+                  <div class="form-group">
+                    <input
+                      name="email"
+                      type="email"
+                      v-model="email"
+                      class="form-control"
+                      placeholder="Email"
+                    />
+                    <span class="text-danger"> {{ emailError }} </span>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      name="password"
+                      type="password"
+                      v-model="password"
+                      class="form-control"
+                      placeholder="Password"
+                    />
+                    <span class="text-danger"> {{ passwordError }} </span>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-block customBtn"
+                  >
+                    Login
+                  </button>
+                </form>
               </div>
+              <p>
+                New members? <router-link to="/register">Register</router-link>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </template>
-    <script>
-    import { ref, reactive } from "vue";
-    import { useForm, useField } from "vee-validate";
-    import { object, string } from "yup";
-    import { useStore } from "vuex";
-    import { useRouter } from "vue-router";
-    export default {
-      setup() {
-        const store = useStore();
-        const router = useRouter();
-        const schema = object({
-          email: string().required().email(),
-          password: string().required().min(8),
+    </div>
+  </div>
+</template>
+```
+
+We will add the following code to the login file:
+
+```js
+import { ref, reactive } from "vue";
+import { useForm, useField } from "vee-validate";
+import { object, string } from "yup";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+export default {
+  setup() {
+    //creating the Vuex Store object
+    const store = useStore();
+
+    // creating th Router Object
+    const router = useRouter();
+
+    // creating our validation schema using vee-validate
+    const schema = object({
+      email: string().required().email(),
+      password: string().required().min(8),
+    });
+
+    // Using the Validation Schema using vee-validate
+    useForm({
+      validationSchema: schema,
+    });
+
+    // Validating each Field with possible error messages
+    const { value: email, errorMessage: emailError } = useField("email");
+    const { value: password, errorMessage: passwordError } = useField(
+      "password"
+    );
+
+    // creating an empty User object
+    const user = ref({});
+
+    // Create a Login method
+    const login = async () => {
+      try {
+        await store.dispatch("login", {
+          email: email.value,
+          password: password.value,
         });
-        useForm({
-          validationSchema: schema,
-        });
-        // No need to define rules for fields
-        const { value: email, errorMessage: emailError } = useField("email");
-        const { value: password, errorMessage: passwordError } = useField(
-          "password"
-        );
-        const user = ref({});
-        const login = async () => {
-          try {
-            await store.dispatch("login", {
-              email: email.value,
-              password: password.value,
-            });
-            if (store.state.loggedIn && store.getters["isAdmin"])
-              return router.push("/admin/");
-            else {
-              return router.push({
-                name: "user",
-                params: { id: store.state.user.id },
-              });
-            }
-          } catch (err) {
-            console.log(err);
-          }
-        };
-        return {
-          login,
-          user,
-          emailError,
-          passwordError,
-          email,
-          password,
-        };
-      },
+        if (store.state.loggedIn && store.getters["isAdmin"])
+          return router.push("/admin/");
+        else {
+          return router.push({
+            name: "user",
+            params: { id: store.state.user.id },
+          });
+        }
+      } catch (err) {
+        console.log(err);
+      }
     };
-    </script>
+
+    // Return all data to the DOM
+    return {
+      login,
+      user,
+      emailError,
+      passwordError,
+      email,
+      password,
+    };
+  },
+};
 ```
 
 In the code above, the HTML mockup generates a Login form with a submit button, we also handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is click.
@@ -685,6 +782,7 @@ import { createStore } from "vuex";
 import Repository from "./repositories/RepositoryFactory";
 const EventRepository = Repository.get("events");
 const AuthRepository = Repository.get("auth");
+
 const store = createStore({
   state: {
     events: [],
@@ -692,13 +790,16 @@ const store = createStore({
     userevents: [],
     loggedIn: false,
   },
+
   actions: {
     async getEvents({ commit }) {
       commit("STORE_EVENTS", await EventRepository.get());
     },
+
     async login({ commit }, payload) {
       commit("STORE_LOGGED_IN_USER", await AuthRepository.login(payload));
     },
+
     async logout({ commit }) {
       try {
         await AuthRepository.logout();
@@ -713,6 +814,7 @@ const store = createStore({
       return await AuthRepository.register(payload);
     },
   },
+
   mutations: {
     STORE_LOGGED_IN_USER: (state, response) => {
       const { data } = response;
@@ -724,6 +826,7 @@ const store = createStore({
         state.loggedIn = true;
       }
     },
+
     STORE_EVENTS: (state, response) => {
       const { data } = response;
       state.events = data;
@@ -740,6 +843,7 @@ const store = createStore({
       }
     },
   },
+
   getters: {
     getEvent: (state) => (id) => {
       return state.events.find((event) => event.id == id);
@@ -757,9 +861,8 @@ In the store, we used the repository pattern to separate concerns, loose couplin
 
 Next, we will create the homepage where are the events from being displayed from the state, create a file in `src/views` folder called `Home.vue` and add the following code.
 
-```js
+```html
 // Home.vue
-
 
 <template>
   <div class="text-center banner">
@@ -778,25 +881,34 @@ Next, we will create the homepage where are the events from being displayed from
   </div>
 </template>
 
-<script>
+<script></script>
+```
+
+And the JavsScript code below:
+
+```js
 import Events from "../components/Events.vue";
 export default {
   components: {
     Events,
   },
 };
-</script>
 ```
 
 The scripts display all the events by calling out the `Events` component. The `Events` component is created as below:
 
-```js
+```html
 <template>
   <div class="row pb-5">
     <Event v-for="(event, i) in events" :key="i" :event="event" />
   </div>
 </template>
-<script>
+<script></script>
+```
+
+and the JS script below:
+
+```js
 import Event from "./Event.vue";
 import { computed } from "vue";
 import { mapState, useStore } from "vuex";
@@ -810,7 +922,6 @@ export default {
     };
   },
 };
-</script>
 ```
 
 #### Displaying a single Event
@@ -818,70 +929,68 @@ export default {
 To view a single event, we created a route in the `routes.js` file and linked it with each event. The route is defined as below:
 
 ```js
-.......
 import Ticket from "./views/Ticket.vue";
 
-......
 {
-    path: "/events/:id",
-    name: "event",
-    component: Ticket,
-  },
-......
+  path: "/events/:id",
+  name: "event",
+  component: Ticket,
+},
 ```
 
 The route is pointing to a `Ticket` view and we have already created that inside the `src/views` folders.
 
-```js
-    // src/views/Ticket.vue
+```html
+// src/views/Ticket.vue
 
-    <template>
-      <div class="text-center banner p-3 pb-5">
-        <div class="container pb-5">
-          <div class="row pb-5">
-            <div class="col-md-8 col-12 pb-5">
-              <div class="card card-custom p-5">
-                <h5 class="authBtn">{{ event.title }}</h5>
-                <hr />
-                <div class="container">
-                  <small class="authBtnInner pb-3">{{ event.description }}</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-12">
-              <div class="card card-custom p-5">
-                <h5 class="authBtn">Event Ticket</h5>
-                <hr />
-                <span>Event Date:</span>
-                <small class="authBtnInner pb-3">
-                  {{ event.date }}
-                </small>
-                <hr />
-                <span>Event Price:</span>
-                <small class="authBtnInner pb-3">${{ event.ticket_price }}</small>
-                <router-link to="/" class="btn btn-primary customBtn"
-                  >Buy Ticket</router-link
-                >
-              </div>
+<template>
+  <div class="text-center banner p-3 pb-5">
+    <div class="container pb-5">
+      <div class="row pb-5">
+        <div class="col-md-8 col-12 pb-5">
+          <div class="card card-custom p-5">
+            <h5 class="authBtn">{{ event.title }}</h5>
+            <hr />
+            <div class="container">
+              <small class="authBtnInner pb-3">{{ event.description }}</small>
             </div>
           </div>
         </div>
+        <div class="col-md-4 col-12">
+          <div class="card card-custom p-5">
+            <h5 class="authBtn">Event Ticket</h5>
+            <hr />
+            <span>Event Date:</span>
+            <small class="authBtnInner pb-3"> {{ event.date }} </small>
+            <hr />
+            <span>Event Price:</span>
+            <small class="authBtnInner pb-3">${{ event.ticket_price }}</small>
+            <router-link to="/" class="btn btn-primary customBtn"
+              >Buy Ticket</router-link
+            >
+          </div>
+        </div>
       </div>
-    </template>
-    <script>
-    import { computed } from "vue";
-    import { useStore } from "vuex";
-    import { useRoute } from "vue-router";
-    export default {
-      name: "Ticket",
-      setup() {
-        const store = useStore();
-        const route = useRoute();
-        const event = computed(() => store.getters.getEvent(route.params.id));
-        return { event };
-      },
-    };
-    </script>
+    </div>
+  </div>
+</template>
+```
+
+And the JS code as follows:
+
+```js
+import { computed } from "vue";
+import { useStore } from "vuex";
+import { useRoute } from "vue-router";
+export default {
+  name: "Ticket",
+  setup() {
+    const store = useStore();
+    const route = useRoute();
+    const event = computed(() => store.getters.getEvent(route.params.id));
+    return { event };
+  },
+};
 ```
 
 The Ticket component displays the events information including the Ticket price and a Buy button, which after purchasing an email will be sent to the purchaser including the ticket’s code.
@@ -895,8 +1004,18 @@ Here is a preview of what we have developed so far.
 This is a high-level abstraction of the entire codebase, you can clone the different repositories for this project and take a closer look at each of them in details.
 
 AdonisJS Backend Repository [here](https://github.com/Kaperskyguru/ticketing-system-adonisjs).
-<br />Vuejs 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
+
+Vuejs 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
+
+### Further reading/References
+
+- [AdonisJS Tutorial: The Ultimate Guide (2021)](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
+- [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
+- [Adonis.js 5 Official Documentation](https://preview.adonisjs.com/)
+- [Vue 3 Official Documentation](https://v3.vuejs.org/)
 
 ### Conclusion
 
-In this tutorial, we developed a ticketing system application using AdonisJS as the backend and VueJs 3 for the frontend
+In this tutorial, we developed a ticketing system application using AdonisJS as the backend and VueJs 3 for the frontend.
+
+We have learned how to create a Ticketing system API with AdonisJS 5 including Authentication and authorization, how to structure the project and how to consume the API using Vue 3 and the composition API.
