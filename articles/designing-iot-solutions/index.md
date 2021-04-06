@@ -14,20 +14,20 @@ images:
   - url: /engineering-education/designing-iot-solutions/hero.jpg
     alt: IoT example image
 ---
-
 As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution. In this article, you will learn the design lifecycle for IoT solutions.
-
+<!--more-->
+As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution. In this article, you will learn the design lifecycle for IoT solutions.
 
 ### Overview
 This article will cover:
 
-- [What is IoT](#What-is-IoT)
+- [What is IoT](#what-is-iot)
 
-- [IoT Architecture](#IoT-Architecture)
+- [IoT Architecture](#iot-architecture)
 
-- [IoT Protocols](#IoT-Protocols)
+- [IoT Protocols](#iot-protocols)
 
-- [IoT Development Platforms and Use cases](#IoT-Development-Platforms-and-Use-Cases)
+- [IoT Development Platforms and Use cases](#iot-development-platforms-and-use-cases)
 
 ### What is IoT
 
