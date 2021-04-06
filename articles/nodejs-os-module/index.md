@@ -1,6 +1,6 @@
 
 ### Introduction
-The Node.js Operating System (OS) Module is mainly used to get more information about the underlying computer system.  
+We use the Node.js Operating System(OS)  module to get more information about the underlying computer system.  
 In this tutorial, you'll learn basic OS module operations in Node.Js and other related Operating Systems activities.
 
 ### Getting started
@@ -54,7 +54,7 @@ Start by running the following command in your terminal to launch `REPL` :
 ```bash
 $ node
 ```
-Upon running the `node` command, you will notice that you're being presented with a screen with the `>` symbol, this is the REPL command line.  
+Upon running the `node` command, you will notice that you're presented with a screen with the `>` symbol, this is the REPL command line.  
 ```bash
 $ node
 Welcome to Node.js v15.12.0.
@@ -81,7 +81,7 @@ undefined
 undefined
 >
 ```
-Since our script is assigned to a  `myCurrentOSDetails` variable, we can log our result as shwon below:  
+Since our script is assigned to a  `myCurrentOSDetails` variable, we can log our result as shown below:  
 ```bash
 > console.log( myCurrentOSDetails );
 > {
@@ -97,7 +97,7 @@ undefined
 ### Checking computer system (server) uptime
 
 Previously, we have seen how we can use this module to get the server underlying operating system details, in this section, we look at server uptime.  
-Uptime in computers refers to the availability of the system to perform its operations, unlike downtime where the system is stalled/shutdown and unable to perform its task.  
+Uptime in computers refers to the availability of the system to perform its operations, unlike downtime where the system is stalled/shut down and unable to perform its task.  
 
 This module has the `uptime()` method, which returns the system uptime details in seconds.  
 Let's look at an example:
