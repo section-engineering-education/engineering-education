@@ -14,7 +14,7 @@
 
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability and speed.
 
-In order to show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
+To show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
 
 This app will create events, generate tickets for the event, allow users to view the event and the tickets, also how them to make purchases and redeem the event tickets.
 
@@ -44,7 +44,7 @@ Students will learn best practices in building performance-oriented Web apps wit
 
 ### Step 1 — Setting up Adonis.js 5
 
-Setting up AdonisJS 5 is very easy as it requires just a simple NPM command below, if you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/)
+Setting up AdonisJS 5 is very easy as it requires a simple NPM command below, if you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/)
 
 ```bash
 npm init adonis-ts-app adonisjs-ticketing-system-api
@@ -58,7 +58,7 @@ cd adonisjs-ticketing-system-api
 
 Now, we need to set up our database to connect with the new Adonisjs application.
 
-### Creating the database
+#### Creating the database
 
 Our ticketing system application needs a database for storing, retrieving, updating and deleting data.
 
@@ -74,7 +74,7 @@ After installing the ORM, set it up by running the following command.
 node ace invoke @adonisjs/lucid
 ```
 
-After running the above command, follow the instructions and update your `.env` file accordingly.
+After running the above command, follow the instructions and update your `.env` file.
 
 ```bash
 DB_CONNECTION=mysql
@@ -91,7 +91,7 @@ If you encounter this error `Client does not support the authentication protocol
 npm install mysql2
 ```
 
-To set up authentication in Adonisjs is simply done by installing a package and setting it up, you can read through how to set up authentication [here](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/).
+To set up authentication in Adonisjs is done by installing a package and setting it up, you can read through how to set up authentication [here](https://www.section.io/engineering-education/build-a-restful-api-with-adonisjs/).
 
 Install the Auth package with this command:
 
@@ -99,7 +99,7 @@ Install the Auth package with this command:
 npm i @adonisjs/auth@alpha
 ```
 
-### Creating Migrations and Models
+#### Creating Migrations and Models
 
 Our project will be using a total of 3 migrations and models excluding the User model and migration.
 
@@ -143,7 +143,7 @@ node ace serve --watch
 node ace migration:run
 ```
 
-We will also create the models and map the columns accordingly.
+We will also create the models and map the columns.
 
 ```bash
 node ace make:model Event
@@ -187,9 +187,9 @@ export default class Event extends BaseModel {
 }
 ```
 
-We have successfully mapped the columns in our migration to the Event models, and also defined the different relationships with `hasMany` and `belongsTo` methods.
+We have mapped the columns in our migration to the Event models, and also defined the different relationships with `hasMany` and `belongsTo` methods.
 
-### Creating Controllers
+#### Creating Controllers
 
 In this step, we will be creating our controllers and also the business logic associated with our ticketing system.
 
@@ -374,7 +374,7 @@ Next, we will create the `EventsController` and paste in the following code whil
 
 The controller includes all the possible CRUD functionalities such as retrieving, storing, updating and deleting the event. It also includes `buy` and `join` method which is use to order and join the ticket for an event.
 
-### Creating endpoint routes
+#### Creating endpoint routes
 
 In this step, we will create all the routes for this project once by adding the following code to our `start/routes.ts` file.
 
@@ -414,7 +414,7 @@ Run the following command to install using Vite:
 
 You can read through the installation process in the [official documentations](https://v3.vuejs.org/guide/installation.html###cli).
 
-### Creating Routes
+#### Creating Routes
 
 Next, we will create all the routes that will be used in this project at once by defining a new `route.js` file inside the `src` folder and adding the following codes.
 
@@ -523,7 +523,7 @@ export default router;
 
 In the code above, we created different routes for `login`, `register`, `index` and protected routes such as `admin` and `user`.
 
-The `beforeEach` route hook checks each route for any authentication metadata and if found, checks if the user navigating that route has logged in or not then redirects appropriately.
+The `beforeEach` route hook checks each route for any authentication metadata and if found, checks if the user navigating that route has logged in or not then redirects.
 
 To get the routes to work, we added the new route package and register this file inside the `main.js` file so we can use it as Vue 3 plugin.
 
@@ -541,7 +541,7 @@ import router from "./routes";
 createApp(App).use(router).use(store).mount("#app");
 ```
 
-### Set up user authentication
+#### Set up user authentication
 
 We will start by creating the login and register views in the `src/views` folder, run the following commands to create these files.
 
@@ -666,11 +666,11 @@ Next, we add the following code to create in the `login.vue` to create the login
     </script>
 ```
 
-In the code above, the HTML mockup generates a Login form with a submit button, we also handle possible errors using the `vee-validate` library and lastly, we dispatch the `login` action in our Vuex store when the submit button is click.
+In the code above, the HTML mockup generates a Login form with a submit button, we also handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is click.
 
 The registration process is almost the same as the Login process, you can take a quick glance at the code [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/blob/main/src/views/Register.vue).
 
-### Creating the store
+#### Creating the store
 
 Next, we will create our Vuex store, create a new `store.js` file inside the `src` folder and add the following codes.
 
@@ -753,7 +753,7 @@ The store is where will manipulate all our data, we retrieved them from the API,
 
 In the store, we used the repository pattern to separate concerns, loose coupling in communicating with the API, you can have a sneak peek of the repository pattern [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/tree/main/src/repositories) and how to implement it [here](https://medium.com/backenders-club/consuming-apis-using-the-repository-pattern-in-vue-js-e64671b27b09).
 
-### Creating the Homepage
+#### Creating the Homepage
 
 Next, we will create the homepage where are the events from being displayed from the state, create a file in `src/views` folder called `Home.vue` and add the following code.
 
@@ -788,7 +788,7 @@ export default {
 </script>
 ```
 
-The scripts simply display all the events by calling out the `Events` component. The `Events` component is created as below:
+The scripts display all the events by calling out the `Events` component. The `Events` component is created as below:
 
 ```js
 <template>
@@ -813,7 +813,7 @@ export default {
 </script>
 ```
 
-### Displaying a single Event
+#### Displaying a single Event
 
 To view a single event, we created a route in the `routes.js` file and linked it with each event. The route is defined as below:
 
@@ -884,7 +884,7 @@ The route is pointing to a `Ticket` view and we have already created that inside
     </script>
 ```
 
-The Ticket component simply displays the events information including the Ticket price and a Buy button, which after purchasing an email will be sent to the purchaser including the ticket’s code.
+The Ticket component displays the events information including the Ticket price and a Buy button, which after purchasing an email will be sent to the purchaser including the ticket’s code.
 
 ### Testing the project
 
@@ -892,7 +892,7 @@ Here is a preview of what we have developed so far.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This is just a high-level abstraction of the entire codebase, you can clone the different repositories for this project and take a closer look at each of them in details.
+This is a high-level abstraction of the entire codebase, you can clone the different repositories for this project and take a closer look at each of them in details.
 
 AdonisJS Backend Repository [here](https://github.com/Kaperskyguru/ticketing-system-adonisjs).
 <br />Vuejs 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
