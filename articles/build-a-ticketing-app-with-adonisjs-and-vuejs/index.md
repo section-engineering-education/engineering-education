@@ -790,7 +790,7 @@ export default {
 
 The scripts display all the events by calling out the `Events` component. The `Events` component is created as below:
 
-```js
+```html
 <template>
   <div class="row pb-5">
     <Event v-for="(event, i) in events" :key="i" :event="event" />
