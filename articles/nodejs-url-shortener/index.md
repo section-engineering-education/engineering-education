@@ -14,8 +14,9 @@ images:
   - url: /engineering-education/nodejs-url-shortener/hero.jpg
     alt: node url shortener example image
 ---
-Using links or URLs has been the norm of surfing the web for a long time. Sometimes we need to advertise our businesses on social media. Long URL links are not the best way to post links, especially on social media. This will help you to promote your products or any services with the links you are providing. The benefit of URL shortening tools is helping in driving the traffic back to your website. 
+Using links or URLs has been the norm of surfing the web for a long time. Sometimes we need to advertise our businesses on social media. Long URL links are not the best way to post these links, especially on social media. Doing this will help you promote your products or any services with the links provided.
 <!--more-->
+The benefit of URL shortening tools is in helping drive traffic back to your website. 
 
 In this tutorial, we will build a URL shortener service using Node.js.
 
@@ -30,10 +31,13 @@ In this tutorial, we will build a URL shortener service using Node.js.
 
 5. [MongoDB](https://www.mongodb.com/try/download/community) database server installed on your system.
 
-### Setting Up The Project
-Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. I will be using VS Code here. Go inside the folder and type `npm init` to generate an initial `package.json` for our project. This command will require some prompts, to skip this, you can use `npm init -y`. Our project will use various npm packages from the npm registry. The npm packages include:
+### Setting up the project
+Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. I will be using VS Code here. Go inside the folder and type `npm init` to generate an initial `package.json` for our project. 
 
-- `express`: Express is a backend web application framework for Node.js for building web applications and APIs.
+This command will require some prompts, to skip this, you can use `npm init -y`. Our project will use various npm packages from the npm registry. 
+
+The npm packages will include:
+- `express`: Express is a backend web application framework for Node.js used for building web applications and APIs.
 
 - `mongoose`: Mongoose is an asynchronous database driver or Object Data Mapper for MongoDB. It is responsible for connecting to the database and performing query operations.
 
@@ -41,9 +45,11 @@ Create a folder named `URL-Shortener-Service` and open it on your favorite IDE. 
 
 - `valid-url`: This is a module that verifies all the URLs sent to the API.
 
-- `nodemon`: nodemon package will be installed as a development dependency. It will constantly monitors our application by automatically restarting the server when any file changes.
+- `nodemon`: nodemon package will be installed as a development dependency. It will constantly monitor our applications by automatically restarting the server when any file changes.
   
-Next, we now need to download the packages. Run the following command on your terminal to download them:
+Next, we now need to download the packages. 
+
+Run the following command on your terminal to download them:
 
 ```bash
 npm install express mongoose shortid valid-url
@@ -51,10 +57,12 @@ npm install express mongoose shortid valid-url
 
 This will download the named packages inside `node_modules` folder and update the `package.json` file with the dependencies.
 
->>> Note: `nodemon` is a development dependency. To install this, run the command `npm install --save-dev nodemon`.
+> Note: `nodemon` is a development dependency. To install this, run the command `npm install --save-dev nodemon`.
 
-### Setting Up Express server
-Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The following is the initial code to start the Express server:
+### Setting up express server
+Inside our `URL-Shortener-Service` folder, create a file named `server.js`. 
+
+Then following is the initial code to start the Express server:
 
 ```js
    // import express package(commonJS syntax)
@@ -68,11 +76,14 @@ Inside our `URL-Shortener-Service` folder, create a file named `server.js`. The 
    app.listen(PORT, () => console.log(`server started, listening PORT ${PORT}`))
 ```
 
-This starter code imports the express package. The `app = express()` creates an instance of our application.
-In our app, we need to listen to the incoming request. `app.listen` takes a port number and a callback function that is invoked upon a successful connection.
+This starter code imports the express package. The `app = express()` creates an instance of our application. In our app, we need to listen to the incoming request. 
 
-### Configuring the MongoDB connection inside the `db.config.js`
-We will use the `mongoose` package that we installed via npm as the database driver. To configure the database, create a `config` folder inside our `URL-Shortener-Service` folder. Inside the `config` folder, add a file named `db.config.js`. This is the file to add the following database connection code:
+`app.listen` takes a port number and a callback function that is invoked upon a successful connection.
+
+### Configuring the MongoDB connection inside the 'db.config.js'
+We will use the `mongoose` package that we installed via npm as the database driver. To configure the database, create a `config` folder inside our `URL-Shortener-Service` folder. Inside the `config` folder, add a file named `db.config.js`. 
+
+This is the file to add the following database connection code:
 
 ```js
 // import mongoose package
@@ -93,12 +104,18 @@ const connection = mongoose.connection
 module.exports = connection
 ```
 
-The `const mongoose = require('mongoose')` imports the `mongoose` package from the `node_modules` folder. To start a connection on our MongoDB database, we need a database connection port. This is named as the `DB_URI` connection string with the `urlshortener` as the database name. The `mongoose.connect()` is a method that takes the `DB_URI` and an options object to establish a connection. `module.exports` exports the connection which will be added in our `index.js` server entry file.
+The `const mongoose = require('mongoose')` imports the `mongoose` package from the `node_modules` folder. To start a connection on our MongoDB database, we need a database connection port. This is named as the `DB_URI` connection string with the `urlshortener` as the database name. 
 
-### The Database Model for URL Details
-When using mongoose, models are defined using a `Schema` interface. A Schema will allow us to define all the fields stored in each document along with the validation or default values. Schemas will then be transformed into models using the `mongoose.model()` method. The model is what we use to find, create, update, and delete documents of a given type.
+The `mongoose.connect()` is a method that takes the `DB_URI` and an options object to establish a connection. `module.exports` exports the connection that will be added in our `index.js` server entry file.
 
-To create our model, create a folder named `models`. Inside this folder, add a file named `UrlModel.js` and add the following code:
+### The database model for URL details
+When using mongoose, models are defined using a `Schema` interface. A Schema will allow us to define all the fields stored in each document along with the validation or default values. 
+
+Schemas will then be transformed into models using the `mongoose.model()` method. The model is what we use to find, create, update, and delete documents of a given type.
+
+To create our model, create a folder named `models`. 
+
+Inside this folder, add a file named `UrlModel.js` and add the following code:
 
 ```js
 const mongoose = require('mongoose')
