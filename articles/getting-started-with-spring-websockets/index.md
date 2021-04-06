@@ -1,10 +1,21 @@
-title: Getting Started With Spring WebSockets in Java.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-spring-websockets/
+title: Getting Started With Spring WebSockets in Java
 description: A beginner's guide to WebSockets and implementing them in Spring with Java.
+author: john-amiscaray
+date: 2021-04-06T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-
+  - url: /engineering-education/getting-started-with-spring-websockets/hero.jpg
+    alt: Spring WebSockets example image
+---
 Nowadays, web applications have become much more powerful than they once were. You can now have real-time functionality in the form of chat applications or even multiplayer games. All this has been made possible by the use of WebSockets.
+<!--more-->
 
 For those who don’t know, WebSocket is a communications protocol. It's useful for opening persistent two-way connections between web client and server. This allows you to establish real-time interaction you could never do with only HTTP. In this guide, we will explore in further detail the theory behind this protocol. Not only that but we'll explore a subprotocol that you can use alongside it. Then, we will go over how to implement WebSockets in Java using [Spring Boot](https://spring.io/projects/spring-boot), testing it with a simple web client. We'll also go over some of the basics to secure WebSocket connections.
 
@@ -414,5 +425,5 @@ client.connect({'username': 'Jimbob', 'password': 'pass'}, (frame) => {
 
 ### Conclusion:
 
- In this guide, we went through the basics of WebSockets and STOMP and how to implement them in Spring. We also covered the basics of securing your WebSocket connections by intercepting a CONNECT frame. With this knowledge, you can begin to play around and create your own interactive apps. You can try building a chat app or if you're feeling ambitious a multiplayer game. As a further exercise I would suggest trying to improve on the security I added to it. Try to find a way to avoid adding the credentials into the headers in plain text. With that being said, you can find all the code written in this guide in this [repo](https://github.com/john-amiscaray/Getting-Started-With-Spring-WebSockets). 
+In this guide, we went through the basics of WebSockets and STOMP and how to implement them in Spring. We also covered the basics of securing your WebSocket connections by intercepting a CONNECT frame. With this knowledge, you can begin to play around and create your own interactive apps. You can try building a chat app or if you're feeling ambitious a multiplayer game. As a further exercise I would suggest trying to improve on the security I added to it. Try to find a way to avoid adding the credentials into the headers in plain text. With that being said, you can find all the code written in this guide in this [repo](https://github.com/john-amiscaray/Getting-Started-With-Spring-WebSockets). 
 
