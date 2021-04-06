@@ -6,7 +6,11 @@ url: /engineering-education/designing-iot-solutions/
 title: Designing IoT Solutions
 description: This article will cover the basics of IoT and the building blocks of IoT solutions. At the end of the article, the reader will learn how IoT solutions work. 
 author: elly-omondi
+<<<<<<< HEAD
 date: 2021-04-06T00:00:00-06:00
+=======
+date: 2021-04-06T00:00:00-20:00
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,28 +18,32 @@ images:
   - url: /engineering-education/designing-iot-solutions/hero.jpg
     alt: IoT example image
 ---
-
 As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution. In this article, you will learn the design lifecycle for IoT solutions.
-
+<!--more-->
+As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution. In this article, you will learn the design lifecycle for IoT solutions.
 
 ### Overview
 This article will cover:
 
-- [What is IoT](#What-is-IoT)
+- [What is IoT](#what-is-iot)
 
-- [IoT Architecture](#IoT-Architecture)
+- [IoT Architecture](#iot-architecture)
 
-- [IoT Protocols](#IoT-Protocols)
+- [IoT Protocols](#iot-protocols)
 
-- [IoT Development Platforms and Use cases](#IoT-Development-Platforms-and-Use-Cases)
+- [IoT Development Platforms and Use cases](#iot-development-platforms-and-use-cases)
 
 ### What is IoT
 
+<<<<<<< HEAD
 [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose exchanging data among the devices on the internet to help organizations solve problems.
 
 As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device.
  
 The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
+=======
+*Internet of Things (IoT)* is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose of exchanging data among the devices on the internet to help organizations solve problems. As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device. The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 
 IoT technology leverages low-cost computing devices, growing cloud technologies, big data, and advanced analytics platforms to provide cutting-edge solutions that have proved profitable for every industry.
 
@@ -44,7 +52,7 @@ The connected devices can manage tasks, analyze opportunities and transfer this 
 
 #### IoT solutions examples:
 
-- Wearable health monitors
+- Wearable health monitors.
 - Home automation systems.
 - Industrial control and monitoring systems.
 
@@ -78,7 +86,11 @@ Out of the data sent by devices, meaningful information needs to be extracted. F
 
 5. *Storage*
 
+<<<<<<< HEAD
 IoT solutions deal with voluminous and valuable data that require analytics. Storage solutions are required to guarantee adequate throughput and latency, high availability, scalability and security for the ever, growing data from devices. 
+=======
+IoT solutions deal with voluminous and valuable data that require analytics. Storage solutions are required to guarantee adequate throughput and latency, high availability, scalability, and security for the ever-growing data from devices. 
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 
 6. *Transformation and Analytics*
 
@@ -105,7 +117,12 @@ Examples of IoT protocols
 
 
 **MQTT**
+<<<<<<< HEAD
 [MQTT] (http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) is a messaging protocol that works on publish/subscribe model and runs on top of TCP/IP.
+=======
+
+[MQTT](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html) is a messaging protocol that works on publish/subscribe model and runs on top of TCP/IP.
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 
 This protocol is widely used in IoT solutions because its architecture is simple, lightweight, and works well in environments with an unreliable network. 
 
@@ -119,6 +136,10 @@ Such solutions include;
 - Fire detectors
 
 **AMQP**
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 [AMQP](https://www.kelltontech.com/kellton-tech-blog/internet-of-things-protocols-standards) is a software layer protocol for message-oriented architecture that provides routing and queuing.
 
 This protocol is a reliable technology that works with messages and queues and supports point-to-point communication.
@@ -153,6 +174,10 @@ Cloud platforms such as Azure host IoT hub where that acts as middleware for IoT
 
 3. [IoT protocols](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
  
+<<<<<<< HEAD
  4. [Azure for Architects](https://pdfcoffee.com/ebookazureplatform-azure-for-architectspdf-pdf-free.html)
+=======
+4. [Azure for Architects](https://pdfcoffee.com/ebookazureplatform-azure-for-architectspdf-pdf-free.html)
+>>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 
 
