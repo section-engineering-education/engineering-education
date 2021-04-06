@@ -38,14 +38,14 @@ The **TODO List** app will look like the screenshot below:
 In this tutorial, we will be using the flutter SDK which can be downloaded [here](https://flutter.dev/docs/get-started/install) and [VS Code](https://code.visualstudio.com/download) text editor. On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
 
 ```bash
-//create new project
+# create new project
 flutter create todo_app
 ```
 
 Next, navigate into the created project (todo_app) directory using the command ```cd todo_app``` in our case and run the app as shown below:
 
 ```bash
-// run the app
+# run the app
 flutter run
 ```
 
@@ -155,7 +155,7 @@ class _TodoListState extends State<TodoList> {
   final TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    // code that return the appbar
+    // code that returns the appbar
     return Scaffold(
       appBar: AppBar(
         title: Text('To-do List'),
@@ -184,10 +184,11 @@ Update your code again to match the one below.
     setState(() {
       _todoList.add(title);
     });
+    // the text field is cleared once the item is added to list
     _textFieldController.clear();
   }
 
-   //populate the listview
+   // populate the listview
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
@@ -198,14 +199,14 @@ the Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
 ```dart
- //populate the listview
+ // populate the listview
   Widget _buildTodoItem(String title) {
     return ListTile(title: Text(title));
   }
 
   // display a dialog for the user to enter items
   Future<AlertDialog> _displayDialog(BuildContext context) async {
-    //alter the app state to show a dialog
+    // alter the app state to show a dialog
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -216,7 +217,7 @@ To type in todo items update the code to the one below.
               decoration: const InputDecoration(hintText: 'Enter task here'),
             ),
             actions: <Widget>[
-              //add button
+              // add button
               FlatButton(
                 child: const Text('ADD'),
                 onPressed: () {
@@ -224,7 +225,7 @@ To type in todo items update the code to the one below.
                   _addTodoItem(_textFieldController.text);
                 },
               ),
-              //cancel button
+              // cancel button
               FlatButton(
                 child: const Text('CANCEL'),
                 onPressed: () {
@@ -257,7 +258,7 @@ class _TodoListState extends State<TodoList> {
     return Scaffold(
       appBar: AppBar(title: const Text('To-Do List')),
       body: ListView(children: _getItems()),
-      //add items to the to-do list
+      // add items to the to-do list
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(context),
           tooltip: 'Add Item',
@@ -290,14 +291,14 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   // save data
   final List<String> _todoList = <String>[];
-  //text field
+  // text field
   final TextEditingController _textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('To-Do List')),
       body: ListView(children: _getItems()),
-      //add items to the to-do list
+      // add items to the to-do list
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(context),
           tooltip: 'Add Item',
@@ -321,35 +322,36 @@ class _TodoListState extends State<TodoList> {
 
   // display a dialog for the user to enter items
   Future<AlertDialog> _displayDialog(BuildContext context) async {
-    //alter the app state to show a dialog
+    // alter the app state to show a dialog
     return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Add a task to your list'),
-            content: TextField(
-              controller: _textFieldController,
-              decoration: const InputDecoration(hintText: 'Enter task here'),
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Add a task to your list'),
+          content: TextField(
+            controller: _textFieldController,
+            decoration: const InputDecoration(hintText: 'Enter task here'),
+          ),
+          actions: <Widget>[
+            // add button
+            FlatButton(
+              child: const Text('ADD'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                _addTodoItem(_textFieldController.text);
+              },
             ),
-            actions: <Widget>[
-              // add button
-              FlatButton(
-                child: const Text('ADD'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  _addTodoItem(_textFieldController.text);
-                },
-              ),
-              //Cancel button
-              FlatButton(
-                child: const Text('CANCEL'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        });
+            // Cancel button
+            FlatButton(
+              child: const Text('CANCEL'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        );
+      } 
+    );
   }
   // iterates through our todo list title
   List<Widget> _getItems() {
