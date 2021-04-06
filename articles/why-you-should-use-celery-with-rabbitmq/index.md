@@ -76,9 +76,9 @@ However, task execution needs message brokers to work smoothly. Celery supports 
 
 Using Redis as a message broker has its limitations namely:
 
-* It doesn't replication
+* It doesn't support automatic replication
 * It is manual and requires extra work to turn it into a message broker.
-* As an in-memory solution, if the machine runs out of memory when building queues up, there's a risk to lose tasks.
+* As an in-memory solution. If the machine runs out of memory when building queues up, there's a chance of losing tasks.
 
 Beanstalk also does not support replication.
 
