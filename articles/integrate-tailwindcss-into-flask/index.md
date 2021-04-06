@@ -117,7 +117,7 @@ projectfolder/
        - style.css
 ```
 
-In this ```bash style.css``` file we'll add the following as stipulated by the tailwindcss [docs](https://tailwindcss.com/docs/installation) 
+In this `style.css` file we'll add the following as stipulated by the tailwindcss [docs](https://tailwindcss.com/docs/installation) 
 
 ```
 @tailwind base;
