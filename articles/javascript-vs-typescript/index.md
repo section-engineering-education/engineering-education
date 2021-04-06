@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/javascript-vs-typescript/
 title: JavaScript vs. TypeScript
 description: This article discusses the key differences and similarities between TypeScript and JavaScript. It also provides code snippets to show the distinct syntax in these two languages.
-author: 
+author: catherine-macharia
 date: 2021-04-05T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -241,7 +241,7 @@ When you have a large codebase, TypeScript will help you bring your code to a si
 JavaScript runs directly in a browser. Unlike TypeScript, it is flexible. It offers dynamic typing which supports the creation of new functionality without sticking to the same rules. It, therefore, fits well in small projects. TypeScript does not support frameworks such as [Ember.JS](https://emberjs.com/) and [Glimmer.JS](https://glimmerjs.com/). Therefore, JavaScript is the language of choice for such a framework. 
 
 ### Conclusion
-JavaScript and TypeScript are shaped to fit into modern web development. JavaScript is preferred in small applications while TypeScript is mainly used in large enterprise applications. Frameworks like Angular2 use TypeScript as the main building block. TypeScript Traces can also be observed in popular frameworks such as React.js and Vue.js. I hope this guide helps you figure out the main differences between JavaScript and TypeScript to make a wise choice for your projects.
+JavaScript and TypeScript fit in the modern web environment perfectly. JavaScript is preferred in small applications while TypeScript is mainly used in large enterprise applications. Frameworks like Angular2 use TypeScript as the main building block. TypeScript Traces can also be observed in popular frameworks such as React.js and Vue.js. I hope this guide helps you figure out the main differences between JavaScript and TypeScript to make a wise choice for your projects.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
