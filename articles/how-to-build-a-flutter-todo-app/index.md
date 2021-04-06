@@ -389,3 +389,6 @@ To summarize, we learned:
 - [Dart Object](https://bezkoder.com/category/dart/)
 - [Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
 - [Emulator Settings](https://flutter.dev/docs/development/ui/widgets)
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
