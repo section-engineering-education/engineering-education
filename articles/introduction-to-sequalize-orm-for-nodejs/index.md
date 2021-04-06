@@ -2,16 +2,16 @@
 ![hero image](hero.jpg)
 
 ### Introduction
-Connecting an Object-relational Mapper to a Node.js application is not an easy task for most developers since there are no better elaborate resources and documentation about it. If you're one, then this article is for you. It also covers SQL basics so beginners in databases will find it insightful. We will not dive though into how Sequelize ORM integrates with a Nodejs application. Let us save that for a future tutorial.
+Connecting an Object-relational Mapper to a Node.js application is not an easy task for most developers since there are no better elaborate resources and documentation about it. Before we directly jump into ORM for Node.js, we could start with what is `sequelization`, then what is `ORM`, and what is the use of connecting ORM with Node.js. `Sequelization` is the process of connecting a Node.js application to an Object Relational Mapper for better database synchronization. An ORM is simply an Object Relational Mapper that helps in data manipulation and querying by use of objects from the database. Using an `ORM` optimizes SQL queries making them easy to reuse and maintain.
 
-|Table of Content           |
-|-------------------------  |
-|Prerequisites              |
-|SQL database basics        |
-|Object Relational Mappers  |
-|Sequelize                  |
-|Benefits of Sequelize      |
-|Conclusion                 |
+|Table of Content                                                              |
+|-------------------------                                                     |
+|[Prerequisites](#prerequisites)                                               |
+|[SQL database basics](#sql-database-basics)                                   |
+|[Object Relational Mappers](#object-relational-mappersorm-nodejs-approaches)  |
+|[Sequelize](#what-is-sequelize?)                                              |
+|[Benefits of Sequelize](#benefits-of-sequelize)                               |
+|[Conclusion](#conclusion)                                                     |
 
 ### Prerequisites
 The reader is supposed to have a good understanding of JavaScript and MySQL to follow along easily.
@@ -43,7 +43,7 @@ Let's brush our knowledge on SQL before we get to Sequelize. Structured Query La
 
 SQL enables us to perform operations abbreviated as `CRUD`; Create Read Update and Delete. To illustrate this we have two tables in our database `Employees`:
 
-Table `lego_people`
+Table `lego_people`:
 
 |name   |age    |
 |-----  |----   |
@@ -53,7 +53,7 @@ Table `lego_people`
 |cynthia|55     |
 
 
-Table `lego_height`
+Table `lego_height`:
 
 |name   |cm     |
 |-----  |----   |
@@ -62,21 +62,22 @@ Table `lego_height`
 |paul   | 7     |
 |cynthia| 5     |
 
-So if we want to `create` data in the `lego_people` table we:
+So, we want to `create` data in the `lego_people` table we use the `INSERT` query as shown below:
 
 ```sql
 INSERT INTO lego_people(name, age)
 VALUES ('Joe' ,12);
 ```
 The `INSERT INTO` statement is used to create data in a database table. We pass in `name` and `age` as arguments to specify the properties we want to add.
-To `read` value from the `lego_people` table:
+To read values from the `lego_people` table, we use `SELECT` query as shown below:
 
 ```sql
 SELECT name FROM lego_people;
 ```
-The `name` represents the column name in the` lego_people` table. The `SELECT` statement is used to read data from the database.
 
-To `update` a record in the `lego_height` table by making Paul 8cm tall:
+The `name` represents the column name in the `lego_people` table.
+
+To `update` a record in the `lego_height` table by making `paul` to `8cm` tall, we use `UPDATE` query:
 
 ```sql
 UPDATE lego_height
@@ -92,14 +93,14 @@ WHERE name = 'paul';
 
 The `WHERE` clause specifies the data to be deleted.
 
-If for instance, we wanted to have the records of both age and height in one table we would use a `JOIN` statement to combine both tables:
+If for instance, we wanted to have the records of both age and height in one table we would use a `LEFT JOIN` statement to combine both tables. We have different types of `JOINS`, for more on that check out this [article](https://codingsight.com/everything-you-should-know-about-sql-server-joins/):
 
 ```sql
 SELECT name, age FROM lego_people
 LEFT JOIN lego_height USING (name);
 ```
 
-This would result to this:
+This would result in this:
 
 |name   |age   |cm    |
 |-----  |----- |----- | 
@@ -109,12 +110,13 @@ This would result to this:
 |cynthia|55    | 5    |
 
 ### Object Relational Mappers(ORM) Node.js Approaches
-Before we get started with Sequelize, let's get to understand what an ORM is and some of the supported ORMs in Node.js. Object Relational Mapping is a simplified way of converting data between relational databases and objects (Primrose katena, 2020).
+Before we get started with Sequelize, let's get to understand what an ORM is and some of the supported ORMs in Node.js. Object Relational Mapping is a simplified way of converting data between relational databases and objects.
 
 Most times we encounter scenarios where we have to write complex SQL query statements to perform CRUD operations from a database. Worse enough, we still need to convert data from the database into an object that is compatible with our language of choice as we will see in the next chapter. It additionally simplifies the manipulation of database engines whenever the need arises. 
 
-So how does ORMs work, well first, choosing the right database you want to use. Then decide on the Object Relational Mapper that would work efficiently with the database and install it. For our case since we're using Node.js, we'll consider Sequelize.
-Second, we create a database model. This represents the structure of our database. Database models provide the advantage of scalability and efficiency. The structure defined in the model includes tables, database collection, and columns. We then connect our database.
+So how does ORMs work, well first, choosing the right database you want to use. Then decide on the Object Relational Mapper that would work efficiently with the database install it. Since we're using Node.js, we'll consider Sequelize.
+
+Second, we create a database model. This represents the structure of our database. Database models provide the advantage of scalability, efficiency. The structure defined in the model includes tables, database collection, columns. We then connect our database.
 
 The types of Object Relational Mappers with Node.js support are:
 - `Sequelize` has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases.
@@ -123,8 +125,8 @@ The types of Object Relational Mappers with Node.js support are:
 
 For more on ORMs, you can check out this [documentation](https://www.npmjs.com/search?q=object%20relational%20mapper).
 
-### What is Sequelize
-Sequelize is an open-source Node.js module that enables JavaScript developers to work with relational databases more easily including but not limited to MySQL and Postgres. Chances are that if you're working with relational databases already you are doing something like this:
+### What is Sequelize?
+Sequelize is an open-source Node.js module that enables JavaScript developers to work with relational databases more easily, including but limited to MySQL, Postgres. Chances are that you're working with relational databases already you are doing something like this:
 
 ```javascript
 // create a database table
@@ -153,7 +155,7 @@ connection.query(query, 5, function(error, article){
 });
 ```
 
-First, you're writing a separate script to create tables and define associations between them, then you're embedding SQL queries in your JavaScript and using a low-level adapter to execute those queries against your database in this case we're using the MySQL node module. Whilst this code in itself isn't terrible, you'll find over time having separate scripts to create your table adds unnecessary friction, also mixing SQL and JavaScript like in this case is not sustainable.
+First, you're writing a separate script to create tables define associations between them, then you're embedding SQL queries in your JavaScript using a low-level adapter to execute those queries against your database. Low-level adapters are database modules for interfacing with SQL servers. They include `pg`, `jdbc-postgres` for interfacing `PostgreSQL` with various programming languages.
 
 JavaScript does not support multiline strings very well, for instance in our case we're ending the first line of the string with a backslash. Even if it did support it, switching between JavaScript and SQL is just unpleasant. This contributes to a lot of junk code and little business logic which are not easy to maintain.
 
@@ -174,7 +176,9 @@ const Article = connection.define("article", {
 connection.sync();
 ```
 
-First, we instantiate Sequelize and define our database connection parameters. Instead of writing a separate SQL file containing SQL code to generate tables, we define what is referred to as models. For example in our case, `article` is our model and we define two attributes; `title` and `content`. Then using the `sync()` function, Sequelize will look at all the models you've defined and then generate SQL queries that will in turn create associated tables. Then when we're ready to query the data instead of embedding the SQL we just use the Sequelize friendly API. For example in the snippet below instead of using a query, we're simply writing `findById()` and then specifying the ID of the article which is `5` in our case improving its readability.
+First, we instantiate Sequelize and define our database connection parameters. Instead of writing a separate SQL file containing SQL code to generate tables, we define what is referred to as models. For example in our case, `article` is our model and we define two attributes; `title` and `content`. 
+
+Using the `sync()` function, Sequelize will look at all the models you've defined and then generate SQL queries that will in turn create associated tables. Then when we're ready to query the data instead of embedding the SQL we just use the Sequelize friendly API. For example in the snippet below instead of using a query, we're simply writing `findById()` and then specifying the ID of the article which is `5` in our case improving its readability.
 
 ```javascript
 //Instantiate sequelize
@@ -200,10 +204,10 @@ Using Sequelize helps us have less craft, less boilerplate ultimately making you
 
 ### Benefits of Sequelize
 So to conclude this introduction we're going to touch on the benefits of Sequelize and Object Relational Mappers in general.
-- Sequelize allow us to write less  
+- Sequelize allow us to write less code 
 - Enable us to write more consistent code
 - You can mostly avoid SQL queries
-- Sequelize abstract the database engine
+- Sequelize abstracts the database engine
 - Good tooling for migrations
 
 ### Conclusion
