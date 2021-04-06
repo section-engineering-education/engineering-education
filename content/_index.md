@@ -4,7 +4,7 @@ description: "Section's Edge as a Service (EaaS) simplifies edge computing for e
 
 blocks:
 - component: "home-hero-alt"
-  title: "Engineering Education Home"
+  title: "Engineering Education Program"
   copy: "... this page likely won't be used ..."
 
 
@@ -13,5 +13,5 @@ blocks:
   copy: "Navigate to the main EngEd article listing page."
   button:
     url: "/engineering-education/"
-    text: "Take me to EngEd"
+    text: "Take me to the EngEd Library"
 ---
