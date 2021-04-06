@@ -474,3 +474,6 @@ In this article, you understood task queues, message brokers, you built a dog ge
 Also, we highlighted some reasons why you should use Celery and RabbitMQ ahead of other task queues and message brokers.
 
 Happy Building!
+
+---
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
