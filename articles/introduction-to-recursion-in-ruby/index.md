@@ -23,14 +23,31 @@ Lets see how the code works:
 
 our *say_hi* method enters an infinite loop. Every time we call a method some of the system memory is alocated to the execution of that method, since we print *"hi"* without ending we will run out of memory and our program will crush with displaying this error *"SystemStackError: stack level too deep"*. 
 
-### parts of a recursive method 
+### Parts of a recursive method 
 When using recursive methods we need to find a way to stop our program from looping forever. In this case we use a statement that halts the recursion. 
 A recursive method has two important parts:
 * *Base case* where we stop the recursion by not making another call.
 * *Recursive step* where we progress the recursion by making other calls. 
    
 let us write a working recursive method.
+The recursive method will calculate the factorial of any given number (n). To get the fatorial of a number we need to get the product of all whole numbers between 1 and the number inclusive, for instance if we write down the fctorial of several numbers we will notice a pattern. 
+```
+# factorial(4) = 4 * 3 * 2 * 1
+# factorial(3) = 3 * 2 * 1
+# factorial(2) = 2 * 1
+# factorial(1) = 1 
+```
+In the a above factorials you notice that the numbers keep decreasing by one. 
+The factorials can also be written as 
+```
+# factorial(4) = 4 * factorial(3)
+# factorial(3) = 3 * factorial(2)
+# factorial(2) = 2 * factorial(1)
+# factorial(1) = 1 
+ ```
+ 
 ```rb
+def 
 
   
 
