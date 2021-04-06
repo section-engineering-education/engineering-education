@@ -45,9 +45,22 @@ The factorials can also be written as
 # factorial(2) = 2 * factorial(1)
 # factorial(1) = 1 
  ```
- 
+ The recursive implementation of factorial will be:
+
 ```rb
-def 
+def factorial(num)
+ return 1 if num == 1 # base case 
+  num * factorial(num - 1); # recursive step 
+end
+
+factorial(4) # => 24
+```
+
+### How to solve a problem recursively 
+1. Identify the base case. The base case should completely cover the scenarios where the argument is small, that we can tell the result without having to do any calculation. 
+2. Solve the imediate next case of the problem and test it. 
+3. Using the code in step 2, generalize it for each level of the problem. 
+
 
   
 
