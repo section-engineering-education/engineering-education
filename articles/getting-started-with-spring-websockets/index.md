@@ -423,7 +423,7 @@ client.connect({'username': 'Jimbob', 'password': 'pass'}, (frame) => {
 });
 ```
 
-### Conclusion:
+### Conclusion
 
 In this guide, we went through the basics of WebSockets and STOMP and how to implement them in Spring. We also covered the basics of securing your WebSocket connections by intercepting a CONNECT frame. With this knowledge, you can begin to play around and create your own interactive apps. You can try building a chat app or if you're feeling ambitious a multiplayer game. As a further exercise I would suggest trying to improve on the security I added to it. Try to find a way to avoid adding the credentials into the headers in plain text. With that being said, you can find all the code written in this guide in this [repo](https://github.com/john-amiscaray/Getting-Started-With-Spring-WebSockets). 
 
