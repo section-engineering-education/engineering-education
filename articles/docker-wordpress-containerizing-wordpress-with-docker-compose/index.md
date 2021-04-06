@@ -1,6 +1,22 @@
-[Docker](https://docs.docker.com/get-started/overview/) is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. Most applications involve more than one architectural component. Take a simple, hardy project that needs a database and a back-end server of some kind.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/
+title: Containerizing WordPress with Docker-Compose
+description: This article provides a step by step guide on how to use Docker in a WordPress application. Docker Compose simplifies the management of an application's service dependencies.
+author: 
+date: 2021-04-10T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-When an application involves multiple components that serve various purposes, Docker-compose will help you run these components as defined in your application stack. It provides a single file that defines how different container interacts with each other as needed by your application stack.
+  - url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/hero.png
+    alt: Containerizing WordPress with Docker-Compose
+---
+[Docker](https://docs.docker.com/get-started/overview/) is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. 
+<!--more-->
+Most applications involve more than one architectural component. in such applications, Docker-compose will help you run these components as defined in your application stack. It provides a single file that defines how different containers interact with each other as needed by your application stack.
 
 A good example of a stack application is WordPress. WordPress is an open-source API for the content management system. WordPress API is used to create beautiful websites, blogs, or apps. It consists of a PHPMyAdmin, MySQL database container, and a WordPress installation container. Docker allows us to create a simple YAML config file to bundle these WordPress containers (components). The components will interact with each other and run as one application. We will use Docker-compose to run these three WordPress API containers to utilize the WordPress content management system.
 
@@ -273,3 +289,7 @@ We now have WordPress up and running. This is a significantly easier and fast wa
 [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
 
 [Breaking Down Kubernetes vs Docker Swarm](/engineering-education/breaking-down-kubernetes-vs-docker-swarm/)
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
