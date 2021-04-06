@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-url-shortener
-title: How To Build A Custom URL Shortener Using Node.js, Express and MongoDB
+url: /engineering-education/nodejs-url-shortener
+title: How to Build a Custom URL Shortener using Node.js, Express, and MongoDB
 description: In this article, we use Node.js, Express and MongoDB to build a custom URL shortener web app like Bit.ly.
 author: mary-njeri
-date: 2021-04-02T00:00:00-09:00
+date: 2021-04-06T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-url-shortener/hero.jpg
+  - url: /engineering-education/nodejs-url-shortener/hero.jpg
     alt: node url shortener example image
 ---
 Using links or URLs has been the norm of surfing the web for a long time. Sometimes we need to advertise our businesses on social media. Long URL links are not the best way to post links, especially on social media. This will help you to promote your products or any services with the links you are providing. The benefit of URL shortening tools is helping in driving the traffic back to your website. 
@@ -282,7 +282,7 @@ To make our routes work, we have to use a [middleware pattern](https://expressjs
 
 ### A Working Demo In Postman
 
-![Demo GIF](/engineering-education/node-url-shortener/postman.gif)
+![Demo GIF](/engineering-education/nodejs-url-shortener/postman.gif)
 
 Kindly check the source code in my Github repository [here](https://github.com/marienjus/Node-URL-Shortener-Service).
 
