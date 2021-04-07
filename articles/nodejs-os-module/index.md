@@ -6,7 +6,7 @@ url: /engineering-education/nodejs-os-module/
 title: Getting started with Node.js module
 description: This tutorial introduces the basic concepts on Node.js OS module  
 author: miller-juma
-date: 2021-03-19T00:00:00-12:00
+date: 2021-04-07T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -24,7 +24,7 @@ In this tutorial, you'll learn the basic Operating System module operations in N
 JavaScript has improved since the release of ES2015, employing the use of modules.  This feature allows for the reusability of scripts across multiple files.  
 Given this advantage, Node.js is no exception, it organizes most of its core functionalities in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).  
 
-> This tutorial assumes you've basic knowledge in Node.js and the its core features.
+> This tutorial assumes you've basic knowledge in Node.js and its core features.
 
 Operating System (in Node.js) is a module, and therefore we'll need to import it into our script before accessing its core methods.   
 Let's start by creating a file `node-os-module.js` and add the following line.  
