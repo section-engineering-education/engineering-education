@@ -22,7 +22,9 @@ In this tutorial, you'll learn the basic Operating System module operations in N
 
 ### Getting started
 JavaScript has improved since the release of ES2015, employing the use of modules.  This feature allows for the reusability of scripts across multiple files.  
-Given this advantage, Node.js is no exception, it organizes most of its core functionalities in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).    
+Given this advantage, Node.js is no exception, it organizes most of its core functionalities in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).  
+
+> This tutorial assumes you've basic knowledge in Node.js and the its core features.
 
 Operating System (in Node.js) is a module, and therefore we'll need to import it into our script before accessing its core methods.   
 Let's start by creating a file `node-os-module.js` and add the following line.  
@@ -165,7 +167,7 @@ undefined
 ### Computer system hardware information
 
 OS module has several methods to get detailed information about a computer system, with our focus mainly on hardware. They include:  
-- `os.totalmem()` - This method returns the computer's primary storage (memory) in bytes.  We can achieve this by tying the following in our `REPL`:  
+- `os.totalmem()` - This method returns the computer's primary storage (memory) in bytes.  We can achieve this by typing the following in our `REPL`:  
 
  ```bash
  > let memory = os.totalmem();
@@ -179,6 +181,8 @@ undefined
 16628015104
 undefined
 > 
+```
+
 > NOTE: the value returned is in bytes, which might require additional arithmetics for conversions. i.e 16628015104/1024 = ~16GB of RAM.
 
  ```
