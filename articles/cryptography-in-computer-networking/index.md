@@ -1,62 +1,64 @@
 
 ### Introduction
-Cryptography refers to technologies that secure information and communication.
-This is achieved by using codes that ensure that the information reaches only the intended recipients. Codes are generated using algorithms and mathematical calculations.  
+Cybercrimes are becoming part of modern computer networking, putting businesses at risk of losing their data.  
+In this article, I'll be walking you through computer cryptography and network security in general.  
 
-### Objectives of Modern Cryptography
-- Cryptography ensures that the information is not understood by any unintended recipients therefore privacy is to be maintained.
-- Cryptography ensures that information is not interfered with or even interferes with the sender from receiver to receiver in storage or transmission.
-- The creators of information cannot deny their intention to construct the transit of information from a sender to receiver at a later stage of the communication process.  
-- Cryptography ensures that the sender and recipient of the information can identify each other and determine the origin and intended destination of the information.
+#### Prerequisites
+- Basics of computer networking
+- Computer Security general knowledge
 
- ### Cryptography Process
+### Getting Started
+Cryptography refers to the technology that secures the information being transmitted, from one point to the next.  
+At the lowest level, this is achieved by using algorithms and mathematical calculations.    
+With data encryption, the sender and the recipient's privacy is protected i.e by ensuring the data only reaches the intended destination from the source.
+
+### Cryptography Process
+Let's have a look at the data encryption process, the general 'journey' from the source to the recipient.  
  
-- Encryption
+#### Step 1: Encryption
+This refers to the process of manipulating a piece of information that usually occurs in the form of plain text using code or encrypting algorithms before transit.  This ensures that the information is converted into a form that the unintentional recipient cannot understand.  
 
-Encryption is the process of manipulating a piece of information that usually occurs in the form of plain text using code or encrypting algorithms before transit. This ensures that the information is converted into a form that the unintentional recipient cannot understand.  
+The encrypted information is then called [cyphertext](https://whatis.techtarget.com/definition/ciphertext#:~:text=Ciphertext%20is%20encrypted%20text%20transformed,the%20ciphertext%20back%20into%20plaintext.). The cipher-text is non-readable hence the transit.  
 
-The encrypted information is then called `ciphertext`. The cipher-text is non-readable hence the transit.  
+#### Step 2: Decryption
 
-- Decryption
-
-Decryption converts cipher-text to plain text. This is done at the receiving end using code and decryption keys. Special software can also be used for decryption using algorithms to crack decryption.
+Decryption converts ciphertext( encrypted text) to plain text. This is done at the receiving end using code and decryption keys.
+Special software can also be used for decryption using algorithms to crack decryption.  
 
 ### Cryptographic Algorithms
 
 Cryptographic algorithms are processes that cryptocurrency uses to encrypt and decrypt messages to secure communication between devices and applications.
 
 ### Cryptography Classes
-Three known types of cryptography include:
+There exist 3 known types of cryptography, they include the following:  
+1. Symmetric-key 
+2. Hash Function
+3. Asymmetric
 
-- Symmetric-key cryptography / secret key cryptography
-- hash function -
-- Asymmetric / Public-Key Cryptography
-- 
-### 1. Symmetric-Key Cryptography
- 
-Symmetric-key cryptography can also be referred to as secret-key cryptography.  
-This includes the use of the same secret key for both encryption and decryption. The key is known only to the sender and sender of the message. The sender uses this key to encrypt the message that currently converts it to cipher-text in plain text that is unreadable and passes it on to the recipient. A sender and receiver communicating via symmetric encryption must exchange the key so that it can be used in the decryption of the message back to plain text for readability.
+Let's have a quick look at these different cryptography classes.
 
-There are two types of symmetric encryption:  
+### 1. Symmetric-Key cryptography ( Commonly know as secret key cryptography)
+
+How these method works are very simple, it employs the use of the same secret key on both ends, i.e encryption, and decryption.  
+To ensure that there is security, the sender and recipient of the message has an access to the key, the only two parties involved.  
+On one end, the sender uses this key to secure the message by converting it to cyphertext, an encrypted message while at the destination, the recipient uses this key to decrypt the message.  
+
+Symmetric encryption comes in two forms, these are:
 
 1. Block Algorithms
 
 Bit lengths of data are encrypted into blocks of electronic data using specific private keys. As the data is being encrypted, the system keeps the data in memory as it waits for the entire block to be loaded before encryption.
 
-
 2. Stream Algorithms
 
 The data is encrypted because it streams instead of being retained in the system's memory to wait for a complete block. [More](https://www.sciencedirect.com/topics/mathematics/stream-cipher).  
 
-### 2. Asymmetric Cryptography
-
-It can also be called public cryptography. Public-key cryptography uses two keys, which are public and a private key.
-The public key can be freely distributed while the private key remains a mystery.  
-The public key is used for cipher-text encryption of the plaintext, while the private key is used for decryption of cipher-text into plain-text.  
-
-Some types of public-key cryptography include [RSA](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm), the elliptic curve digital signature algorithm.  
-
-Revrest-Shamir-Adleman is the safest method of data encryption. Its keys are usually 1024 or 2048 bits long. RSA is public-key cryptography, so uses both public and private keys for data encryption and decryption, respectively.  
+### 2. Asymmetric cryptography ( commonly known as public cryptography)
+Unlike symmetric, this method employs the use of 2 keys, both the public and private keys.   
+As the name suggests, a public key can be distributed freely, unlike a private key which has to remain a mystery.  
+How these concept works are very simple, the public that you've an access to is used to encrypt the message, while it's vice versa for private keys.
+An example of this type of cryptography is [RS](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm) algorithm.  
+Revrest-Shamir-Adleman (RSA) is one of the safest commonly used data encryption methods.  
 
 Keys for the RSA algorithm are generated in the following [example](https://www.geeksforgeeks.org/how-to-solve-rsa-algorithm-problems/):
 
@@ -78,15 +80,15 @@ Keys for the RSA algorithm are generated in the following [example](https://www.
           
 
 ### 3. Hashing work
+Lastly, let's have a look at the hashing work cryptography.  
 
- Hash functions typically map data of arbitrary size to fixed-size values. The return value of the hash function is called the hash value. These values make a table of a certain size known as a hash table. Hash functions do not use any key. These functions are also used for password encryption.  
+Hash functions typically map data of arbitrary size to fixed-size values. The return value of the hash function is called the hash value. These values make a table of a certain size known as a hash table. Hash functions do not use any key. These functions are also used for password encryption.  
  
 MD5 is the fifth version of the message-digest algorithm. The MD5 produces 128-bit output. This was a commonly used hashing algorithm until some vulnerabilities began to appear so the MD5 was gradually dealt with.
 
 ### Cryptography concerns
-Cryptography can be bypassed by botnets which can then hack into data encryption and decryption computers and exploit vulnerable applications.
-
-Due to quantum computing's processing power,  concerns have increased due to calls by the National Institute of Standards and Technology for papers among the mathematics and science community for new asymmetric cryptography.
+As we discussed earlier, computer security has become a concern, this implies that albeit, we've cryptography, it still has drawbacks.  
+Some bots have been known to bypass the encryption and decryption process exploiting the targetted system.
 
 ### Conclusion
 
