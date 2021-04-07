@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/why-you-should-use-celery-with-rabbitmq/hero.png
+  - url: /engineering-education/why-you-should-use-celery-with-rabbitmq/hero.jpg
     alt: Celery and RabbitMQ hero image
 ---
 In today's technology space, there is an increase in event-driven architectures as companies develop solutions that require asynchronous communication between their microservices. Ingesting these events faster in system architecture and processing them enables system architectures to be persistent, resilient, and allows batch processing of data. Celery and RabbitMQ are some tools used in these architectures. Choosing the right combination of tools and viewing an example of these tools that go beyond the ["hello world"](https://docs.celeryproject.org/en/stable/getting-started/brokers/rabbitmq.html) is what this article cover.
