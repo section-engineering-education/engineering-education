@@ -1,5 +1,5 @@
 
-## Introduction
+### Introduction
 
 In this tutorial, you will learn the steps in creating an application that uses Google Maps to give the precise location of another user's device. You shall primarily use Google Maps API to show the exact location. This will be achieved by writing the user's location on a Realtime Database using Firebase and read the location from another device.
 
@@ -12,19 +12,19 @@ Comments will be added to the code snippets for better understanding.
 ### Pre-requisites
 - A good understanding of Kotlin in Android development
 
-#### Reccomendation
-For this tutorial, we shall use real Android device(s) to test the application(s). There might arise a reason why you might test them using an emulator. This is achieved by mocking location data in the emulator. You can read more [here](https://medium.com/@msaudi/android-test-location-services-and-gps-with-fake-gps-data-mock-locations-in-emulators-or-real-df211de4d891)
+### Reccomendation
+For this tutorial, we shall use real Android device(s) to test the application(s) because it is best for testing map application. If for some reason you need to test the application from an emulator, you can do so by mocking location data in the emulator. You can read more [here](https://medium.com/@msaudi/android-test-location-services-and-gps-with-fake-gps-data-mock-locations-in-emulators-or-real-df211de4d891)
 
 ### Getting started
-##### Step 1: Create a new project
-Open Android Studio and create a new project. On the Select, a Project template, select the Google Maps Activity template
+### Step 1: Create a new project
+Open Android Studio and create a new project. On the select, a Project template, choose the Google Maps Activity template
 [project template](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/project-template.png)
 
 Wait for Android studio to build your project.
 
 At this point when you run the app, you have a blank screen. This is because you have not set up the API key for the map.
 
-## A few things to note
+### A few things to note
 Once you open the `AndroidManifest.xml`, you shall be able to note these auto-filled details:
 - `ACCESS_FINE_LOCATION` permission. This accesses the user's precise location. it is often used when you want the most accurate location. Another type of location accuracy is the `ACCESS_COARSE_LOCATION`, which is less accurate. We shall be working with the `ACCESS_FINE_LOCATION` for accurate readings.
 - The `com.google.android.geo.API_KEY` meta-data. This is used to specify the API key
@@ -35,7 +35,7 @@ The template also adds Google Play Services dependency to build.gradle which exp
   ```
 
 ### Google Maps API
-##### Step 2: Create an API key
+### Step 2: Create an API key
 You need to create an API key and enable it in the developer console before working with the Google Maps API. You will need your Google account for this.
 Open `res/values/google_maps_api.xml`. This is what you will be able to see.
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/console-link.png)
@@ -50,7 +50,7 @@ The API key is in purple.
 
 Once you have your key copy it and replace it in the value of `google_maps_key` in the XML file.
 
-## The MapsActivity
+### The MapsActivity
 This is an overview of the default MapsActivity
 
 ```kotlin
@@ -74,6 +74,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        //call moveCamera() on mMap to update the camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }
@@ -81,20 +82,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 At this point, once you run the app, you will notice that the marker is in Sydney.
 
-## Firebase
-##### Step 3: Creating a Firebase project
+### Firebase
+### Step 3: Creating a Firebase project
 We shall be using firebase to store the user's location. You will need a Google account for this too.
 Create a project using this [link](https://console.firebase.google.com)
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/firebaseintro.png)
 
-##### Step 4: Connect the project to the app
+### Step 4: Connect the project to the app
 You now need to connect the project to your app
 - Go to tools>firebase
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/fb-androidstudio.png)
 
 make sure you also click on add Realtime Database to your app
 
-##### Step 5: Add permissions
+### Step 5: Add permissions
 - Add internet permission
 Make sure you add internet permission because the app will require internet to send the devices location to the database.
 
@@ -213,7 +214,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 }
 ```
 
-##### Step 7: Run the app
+### Step 7: Run the app
 Run the app. This is what you will achieve(locations may differ). Allow the app to access location
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatrack-perm.png)
 The user location will be seen as;
@@ -223,19 +224,19 @@ From the code above, you have been able to save the location in a database. Navi
 
 
 
-# The LocationChecker App
+### The LocationChecker App
 After creating this first app which basically reads the location of the user and shows it, then writes it to a realtime database, we need another that will read from that database. This is where the second one comes in.
 
-##### Step 1: Creating a new project
+### Step 1: Creating a new project
 Follow the exact same process as above in creating a new project. Make sure you select the Google Maps template then name it.
 
-##### Step 2: Add credentials to an existing key
+### Step 2: Add credentials to an existing key
 Since we already have an API key, we do not need to create a new one. We can just add the credentials to the console.
 Open your developers console and click on edit icon
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/add-item.png)
 Navigate to `google_maps_api.xml` copy the package name and SHA-1 cetificate fingerprint, paste these details on the add item section.
 save the changes.
-##### Step 3: Adding a button
+### Step 3: Adding a button
 We need to add  a button that will trigger the reading of the current location in the database.Here is the `activity_maps.xml` :
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -270,13 +271,13 @@ We need to add  a button that will trigger the reading of the current location i
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-##### Step 4: Adding permission
+### Step 4: Adding permission
 By default, the GoogleMaps Activity template add the `ACCESS_FINE_LOCATION` permission in the manifest. Because we shall require the use of the internet to read from the database, add the internet permission:
 ```xml
  <uses-permission android:name="android.permission.INTERNET"/>
  ```
 
-##### Step 4: The model class
+### Step 4: The model class
 Since we are reading from the database, we need a class that shall add the attributes, latitude and longitude to handle data
 ```kotlin
 import com.google.firebase.database.IgnoreExtraProperties
@@ -288,7 +289,7 @@ data class LocationInfo(
 )
 ```
 
-##### Step 5: The MapsActivity
+### Step 5: The MapsActivity
 Add the following code;
 
 ```kotlin
@@ -357,23 +358,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
     companion object {
+        // TAG is passed into the Log.e methods used above to print information to the Logcat window
         private const val TAG = "MapsActivity" // for debugging
     }
-
-
 }
 ```
 
 When you run the app, you should be able to get a similar view(Locations will differ):
 [project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatchecker.png)
 
-#### Testing the Apps
+### Testing the Apps
 Install both apps on you phone. Or the LocationTracker one on your friend’s phone. Make sure the internet connection is good. Check the database for the location that has been written. On the second application, LocationChecker, check if that is the exact location.
 
 You can find the apps [here](https://github.com/carolinemusyoka/MyLocationTracker) and [here](https://github.com/carolinemusyoka/MyLocationChecker)
 
 
-## Conclusion
+### Conclusion
 It all does not end there. You can play around with the API to create really awesome apps or add this functionality to existing ones.
 You can also add other features such as a messaging service, ie sending a message to the user that he/she is being tracked.
 Something to also think about would be authentication for individual entries in the database
