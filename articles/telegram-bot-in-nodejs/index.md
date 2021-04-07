@@ -28,7 +28,7 @@ Let us first create a folder for our new project, i.e: myfirstbot. Open the comm
 ```bash
 npm init
 
-//install the telegraf library
+# install the telegraf library
 
 npm install telegraf
 ```
