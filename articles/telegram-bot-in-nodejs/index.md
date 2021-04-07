@@ -1,9 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/telegram-bot-in-nodejs/
+title:  Building your first Telegram bot using Node.js and Telegraf
+description: In this tutorial, you will learn how to build telegram bots using Node.js and the Telegraf library.
+author: ck-muithi
+date: 2021-04-08T00:00:00-04:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
 
-# Building your first Telegram bot in Node.js and Telegraf library 
+  - url: /engineering-education/telegram-bot-in-nodejs/hero.png
+    alt: telegram bot in nodejs image
 
-### Introduction
-
+---
 What are telegram bots? Bots are third-party application accounts that run inside the Telegram application. Users can interact with bots by sending them messages, commands, and inline requests. You control your bots using HTTPS requests from the Telegram Bot API.
+<!--more-->
 
 Telegram bots have made it easy to automate tasks in telegram channels and groups. You can even build your own telegram bot to curate news or monitor cryptocurrencies trend for you. 
 
@@ -194,11 +207,9 @@ Happy coding and stay safe!
 
 ### Reference 
 
-[Telegram bot documentation](https://core.telegram.org/bots)
+- [Telegram bot documentation](https://core.telegram.org/bots)
 
-
-
-[Telegraf documentation](https://telegraf.js.org/)
+- [Telegraf documentation](https://telegraf.js.org/)
 
 
 
