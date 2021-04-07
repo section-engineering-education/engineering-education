@@ -377,7 +377,7 @@ class _TodoListState extends State<TodoList> {
 ```
 
 ### Conclusion
-Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. 
+Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. [Link to final code on github](https://github.com/wobin1/Todo-List-app)
 
 To summarize, we learned:
 - How to create a flutter app
