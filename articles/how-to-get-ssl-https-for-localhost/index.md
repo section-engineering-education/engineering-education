@@ -22,6 +22,8 @@ It is also possible to run the web application in a local environment have it ac
 
 It is equally important that we get an [SSL certificate](https://www.cloudflare.com/en-gb/learning/ssl/what-is-an-ssl-certificate/) for the same, for the users to trust the site and to remove the *'Not Secure'* message at the address bar.
 
+This article will take you through the process of provisioning SSL certificates for local servers.
+
 <!--more-->
 
 ### Prerequisites
