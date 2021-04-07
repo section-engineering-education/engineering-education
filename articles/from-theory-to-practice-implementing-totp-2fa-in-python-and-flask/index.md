@@ -2,14 +2,6 @@ title: From Theory to Practice: Implementing TOTP 2FA in Python and Flask
 
 description: Learn about two-factor authentication and implement it in a Flask application.
 
-### Prerequisites
-
-To follow and fully understand this tutorial, you will need to have:
-
-* Python 3.6 or a newer version.
-* A text editor.
-* Basic understanding of Flask.
-
 ### Introduction
 
 Two-factor authentication (2FA) is a security protocol that protects users by asking them to verify their identity using two authentication methods. In recent times, most organizations use 2FA techniques to ensure their user’s details and avoid the possibility of hackers gaining unauthorized access.
@@ -19,6 +11,14 @@ Two-factor authentication is setup using any of the following factors:
 * Possession factor: This factor authenticates users using something only the user has, such as an ID card, mobile gadget for receiving OTP, or a security token.
 * Biometric factor: This usually requires the users to be physically present during authentication. It may be in the form of fingerprints or facial recognition.
 * Location and time factors: This usually checks the user’s current location using GPS or VPN.
+
+### Prerequisites
+
+To follow and fully understand this tutorial, you will need to have:
+
+* Python 3.6 or a newer version.
+* A text editor.
+* Basic understanding of Flask.
 
 ### How Two-factor Authentication Works
 
