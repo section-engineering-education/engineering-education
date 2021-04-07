@@ -1,5 +1,23 @@
-### Introduction
-Loop prevention is one of the most important considerations when developing a switched network. In a switched network, once a loop forms, the amount of traffic that can be exchanged between switches easily consumes all of the bandwidth available within each of the affected switches. One way to avoid loops is to provide only a single path between switches and to [ensure that there is no path continuity in the switched network](https://www.ciscopress.com/articles/article.asp?p=1728837). The Spanning Tree Protocol is capable of averting loops in the switched network. It accomplishes this by temporarily obstructing redundant paths between switches. This article will go through some of the STP concepts as well as the configurations which are used to deploy STP on a switch.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/concepts-and-configuration-of-stp/
+title: Concepts and Configuration of the Spanning Tree Protocol
+description: This article will go through some of the Spanning Tree Protocol concepts in networking as well as the configurations which are used to deploy STP on a switch.
+author: dawe-daniel
+date: 2021-04-08T00:00:00-05:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/concepts-and-configuration-of-stp/hero.jpg
+    alt: Spanning Tree Protocol example image
+---
+Loop prevention is one of the most important considerations when developing a switched network. In a switched network, once a loop forms, the amount of traffic that can be exchanged between switches easily consumes all of the bandwidth available within each of the affected switches. One way to avoid loops is to provide only a single path between switches and to [ensure that there is no path continuity in the switched network](https://www.ciscopress.com/articles/article.asp?p=1728837). 
+<!--more-->
+
+The Spanning Tree Protocol is capable of averting loops in the switched network. It accomplishes this by temporarily obstructing redundant paths between switches. This article will go through some of the STP concepts as well as the configurations which are used to deploy STP on a switch.
 
 ### Prerequisites 
 To follow through the article, you will need to:
