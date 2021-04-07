@@ -37,7 +37,7 @@ Each activated port on a switch participates in STP, and each of these ports mus
 
 A port can be in one of five states, as shown above, which are listed below:
 
-- - Blocking State - Blocking ports do not forward traffic; instead, they listen to the network to determine if they can continue to block traffic. The port could go into listening mode if the state of the switched network changes. Following switch initialization, all ports are in a blocking mode.
+- Blocking State - Blocking ports do not forward traffic; instead, they listen to the network to determine if they can continue to block traffic. The port could go into listening mode if the state of the switched network changes. Following switch initialization, all ports are in a blocking mode.
 - Listening State - [No traffic is diverted while a port is in the listening state](https://itdaddy.wordpress.com/category/stp-spanning-tree-8021d). The port can only listen to traffic when in this state, just as it did when it was blocking. After the port is set to start frame forwarding, this is the [first state after the blocking state](https://www.ciscopress.com/articles/article.asp?p=1728837). In the listening mode, the default time is 15 seconds.
 - Learning State - Ports in the learning state do not forward traffic; instead, [they listen to traffic and continue to learn addresses from the connected devices on a section while in this state](https://www.ciscopress.com/articles/article.asp?p=1728837). The default time is 15 seconds when in this state.
 - Forwarding State - Ports in the forwarding state [begin to learn addresses from the section while still forwarding traffic](https://www.ciscopress.com/articles/article.asp?p=1728837).
