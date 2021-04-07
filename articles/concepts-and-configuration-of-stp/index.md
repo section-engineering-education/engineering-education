@@ -127,3 +127,6 @@ We can break down the commands as shown below:
 
 ### Conclusion
 STP is one of those protocols that most people don't realize they're using, but modern switched networks wouldn't be able to run without it. In this article, we have learned the basic concepts and configuration of STP and how it functions to eliminate loops in switches, and how it can be built to improve network performance.
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
