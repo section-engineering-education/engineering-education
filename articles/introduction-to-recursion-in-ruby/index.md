@@ -93,7 +93,7 @@ Each time a recursive call is made it adds to the stack until it gets to the bas
    
 2. Figure out the base case: The stack stops growing once the base case is reached and the evaluation of the other recursive calls starts. 
    
-3. Solve one level up from the base case: Evaluate the result of the method incase there is one recursive call to make. Make sure you evaluation generalizes. 
+3. Solve one level up from the base case: Evaluate the result of the method incase there is one recursive call to make. Make sure your evaluation generalizes. 
    
 4. Check that the values being returned from any case are of the same data type: If the results of your recursive method are in a string, then all cases should return a string. 
 
