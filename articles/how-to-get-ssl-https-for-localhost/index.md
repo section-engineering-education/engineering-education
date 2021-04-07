@@ -202,8 +202,7 @@ In this guide, we have seen it is possible to have localhost served up with SSL.
 
 From the guide, we have been able to set the CA and used it to sign the SSL certificate. We changed the browser settings as well as the API client settings for them to accept the certificate.
 
-Note it is never advisable to add certificates to the certificate list thoughtlessly. Malicious users everywhere will pose as a CA and trick the user into
-accepting their websites posing as authentic, leading to a serious security breach. 
+Note it is never advisable to add certificates to the certificate list thoughtlessly. Malicious users everywhere will pose as a CA and trick the user into accepting their websites posing as authentic, leading to a serious security breach. 
 
 The process can help developers host their sites on local servers or forwarded ports to assure their visitors that the site is safe and secure.
 
