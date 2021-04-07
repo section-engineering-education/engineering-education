@@ -1,5 +1,9 @@
 ### Introduction
-Building a web application that later can be deployed in the production server requires first to be tested in a local environment. It is also possible to run the web application in a local environment and be accessed over the internet. It is equally important that we get an [SSL certificate](https://www.cloudflare.com/en-gb/learning/ssl/what-is-an-ssl-certificate/) for the same, for the users to trust the site and remove the red annoying *'Not Secure'* message at the address bar.
+Building a web application for a production server requires local testing before deployment. 
+
+It is also possible to run the web application in a local environment have it accessible over the internet.
+
+It is equally important that we get an [SSL certificate](https://www.cloudflare.com/en-gb/learning/ssl/what-is-an-ssl-certificate/) for the same, for the users to trust the site and to remove the *'Not Secure'* message at the address bar.
 
 ### Prerequisites
 -   [Node.js](https://nodejs.org/en/) Installed.
@@ -45,7 +49,7 @@ The above commands will generate a private key and request a simple passphrase f
 Next, we will generate a root CA certificate using the key generated, which will be valid for ten years in our case. The passphrase for the key and certificate info will be requested. The user can input the desired certificate info or leave it as default. Run the below command to achieve the above:
 
 ```bash
-$ openssl req -x509 -sha256 -new -nodes -days 3650 -key.CA.key -out CA.pem
+$ openssl req -x509 -sha256 -new -nodes -days 3650 -key CA.key -out CA.pem
 ```
 
 As of now, in our `cert/CA folder`, we have two files, `CA.key` and `CA.pem`.
@@ -53,7 +57,7 @@ As of now, in our `cert/CA folder`, we have two files, `CA.key` and `CA.pem`.
 ### Step 2: Generating Certificate
 As of now have created the CA key and CA certificate. It is possible to sign SSL certificates as per the already created CA.
 
-Next, create a new directory with a new file in the same directory called `localhost.ext` as below:
+Next, in the `cert/CA` directory create a new directory, `localhost`. Inside `localhost` create a new file, `localhost.ext`.
 
 ```bash
 $ mkdir localhost
@@ -90,10 +94,11 @@ Next will be to generate CSR using the key, and then the passphrase create above
 $ openssl req -new -key localhost.key -out localhost.csr
 ```
 
-Now with this CSR, we can request the CA to sign a certificate as below:
+Now with this CSR, we can request the CA to sign a certificate as below.
+Note that the paths for `CA.key` and `CA.pem` files are dependent on where the user is running commands from. In this case, the commands below are ran from `/cert/CA/localhost`.
 
 ```bash
-$ openssl x509 -req -in localhost.csr -CA ../cert/CA/CA.pem -CAkey ../cert/CA/CA.key -CAcreateserial -days 3650 -sha256 -extfile localhost.ext -out localhost.crt
+$ openssl x509 -req -in localhost.csr -CA ../CA.pem -CAkey ../CA.key -CAcreateserial -days 3650 -sha256 -extfile localhost.ext -out localhost.crt
 ```
 
 This command takes in the CSR (`localhost.csr`), the CA certificate (`CA.pem` and `CA.key`), and the certificate extensions file (`localhost.ext`). Those inputs generate a `localhost.crt` certificate file, valid for ten years.
@@ -107,7 +112,7 @@ $ openssl rsa -in localhost.key -out localhost.decrypted.key
 ### Step 3: Creating a Node.js Express Server
 To test the above whether working as expected, we have to create a Node.js Express server that outputs a success message.
 
-Going back to our cert folder, we will initialize a Node.js project and add the express and HTTPS packages using the below commands:
+Going back to our `cert` directory, we will initialize a Node.js project and add the express and HTTPS packages using the below commands:
 
 ```bash
 $ npm init -y
@@ -119,8 +124,8 @@ Then edit the `index.js` file as below:
 
 ```JavaScript
 const fs = require('fs');
-const key = fs.readFileSync('../localhost/localhost.decrypted.key');
-const cert = fs.readFileSync('../localhost/localhost.crt');
+const key = fs.readFileSync('./CA/localhost/localhost.decrypted.key');
+const cert = fs.readFileSync('./CA/localhost/localhost.crt');
 
 const express = require('express');
 const app = express();
@@ -193,8 +198,14 @@ Then rerun the request as below; this time, we will have a secure **200 OK** mes
 ![postman success cert](/engineering-education/hot-to-get-ssl-https-for-localhost/postman-success-cert.PNG)
 
 ### Conclusion
-In this guide, we have seen it is possible to have localhost served up with SSL. From the guide, we have been able to set the CA and used it to sign the SSL certificate. We changed the browser settings as well as the API client settings for them to accept the certificate. Note it is never advisable to add certificates to the certificate list thoughtlessly. Malicious users everywhere will pose as a CA and trick the user into
-accepting their websites posing as authentic, leading to a serious security breach. The process can help developers host their sites on local servers or forwarded ports to assure their visitors that the site is safe and secure.
+In this guide, we have seen it is possible to have localhost served up with SSL.
+
+From the guide, we have been able to set the CA and used it to sign the SSL certificate. We changed the browser settings as well as the API client settings for them to accept the certificate.
+
+Note it is never advisable to add certificates to the certificate list thoughtlessly. Malicious users everywhere will pose as a CA and trick the user into
+accepting their websites posing as authentic, leading to a serious security breach. 
+
+The process can help developers host their sites on local servers or forwarded ports to assure their visitors that the site is safe and secure.
 
 The files and code snippets used in this article can be accessed at
 [GitHub Repo](https://github.com/lewe01/localhost-cert.git)
