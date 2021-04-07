@@ -1,13 +1,30 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-os-module/
+title: Getting started with Node.js module
+description: This tutorial introduces the basic concepts on Node.js OS module  
+author: miller-juma
+date: 2021-03-19T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/nodejs-os-module/hero.jpg
+   alt: Node.js Os Module
+---
+
 
 ### Introduction
 We use the Node.js Operating System(OS)  module to get more information about the underlying computer system.  
-In this tutorial, you'll learn basic OS module operations in Node.Js and other related Operating Systems activities.
+In this tutorial, you'll learn the basic Operating System module operations in Node.js.
 
 ### Getting started
 JavaScript has improved since the release of ES2015, employing the use of modules.  This feature allows for the reusability of scripts across multiple files.  
-Given this advantage, Node.js is no exception, it organizes most of its core functionalities in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) including the OS module.  
+Given this advantage, Node.js is no exception, it organizes most of its core functionalities in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).    
 
-As we've seen, Operating System (in Node.js) is a module, and therefore we'll need to import it into our script. 
+Operating System (in Node.js) is a module, and therefore we'll need to import it into our script before accessing its core methods.   
 Let's start by creating a file `node-os-module.js` and add the following line.  
 
 ```js
@@ -17,7 +34,7 @@ Now that we've got the OS module, in the next section, let's have a look at vari
 
 ### Getting operating system details
 
-This module has a couple of functions that are used to retrieve the details of an operating system as we'll see shortly.  
+This module has a couple of functions that are used to retrieve the `details of an operating system` as we'll see shortly.  
 In the  `node-os-module.js` file, add the following the scripts:  
 
 ```js
@@ -37,7 +54,7 @@ Run this script in your terminal, by typing the following in your shell:
 ```bash
 node node-os-module.js 
 ```
-Running this script in my Ubuntu 20.04 outputs the following (Note that results vary depending on your system):  
+Running this script in Ubuntu 20.04 outputs the following (Note that results vary depending on your system):  
 ```bash
 {
   name: 'Linux',
@@ -48,13 +65,14 @@ Running this script in my Ubuntu 20.04 outputs the following (Note that results 
 }
 ```
 
-You can achieve the same result by using the Node.js' `Read, Evaluate, Print and Loop (REPL)` command-line tool. Indeed, this will even simplify your work by not creating any files. 
+You can achieve the same result by using the Node.js' `Read, Evaluate, Print and Loop (REPL)` command-line tool.  
 
 Start by running the following command in your terminal to launch `REPL` :  
+
 ```bash
 $ node
 ```
-Upon running the `node` command, you will notice that you're presented with a screen with the `>` symbol, this is the REPL command line.  
+Upon running the `node` command, you will notice that you're presented with a screen with the `>` symbol, this is the `REPL` command line (as shown below).  
 ```bash
 $ node
 Welcome to Node.js v15.12.0.
@@ -62,7 +80,7 @@ Type ".help" for more information.
 > 
 
 ```
-Now let's proceed and write our previous script in the REPL as shown below: 
+Now let's proceed and write our previous script in the `REPL` as shown below: 
 
 ```bash
 $ node
@@ -81,7 +99,9 @@ undefined
 undefined
 >
 ```
-Since our script is assigned to a  `myCurrentOSDetails` variable, we can log our result as shown below:  
+
+Since our script is assigned to `myCurrentOSDetails` variable, we can log our result as shown below:  
+
 ```bash
 > console.log( myCurrentOSDetails );
 > {
@@ -94,15 +114,16 @@ Since our script is assigned to a  `myCurrentOSDetails` variable, we can log our
 undefined
 >
 ```
+
 ### Checking computer system (server) uptime
 
-Previously, we have seen how we can use this module to get the server underlying operating system details, in this section, we look at server uptime.  
+We've seen how we can use this module to get the server's underlying operating system details, in this section, let's look at `server uptime` functionality.  
 Uptime in computers refers to the availability of the system to perform its operations, unlike downtime where the system is stalled/shut down and unable to perform its task.  
 
-This module has the `uptime()` method, which returns the system uptime details in seconds.  
+This module has the `os.uptime()` method, which returns the system uptime details in seconds( from the time your system was last powered on).  
 Let's look at an example:
 
-In your REPL window, enter the following command:  
+In your `REPL` window, enter the following command:  
 
 ```bash
 ...
@@ -112,7 +133,7 @@ Output:
 
  ```bash
 ...
-> console.log(`The server has been up for ${os.uptime()} seconds.`);
+> console.log(`Server running for the past ${os.uptime()} seconds.`);
 Server running for the past 750588.69 seconds.
 undefined
 > 
@@ -120,8 +141,8 @@ undefined
 ```
 
 ### Getting user information (current system user)
-The OS module has the `userinfo()` method that returns the details of the current system.  
-You can achieve this task by running the following REPL command( remember to import the os module as discussed previously):  
+The OS module has the `os.userinfo()` method that returns the details of the current system user ( remember computer system **may** have a `root user` and a `normal user` depending on its configurations).   
+You can achieve this task by running the following `REPL` command( remember to import the os module as discussed previously):  
 
 ```bash
 console.log(os.userInfo());
@@ -142,8 +163,10 @@ undefined
 ```
 
 ### Computer system hardware information
-It has several methods to get detailed information about a computer system. They include:  
-- `totalmem()` - This method returns the computer's primary storage (memory) in bytes.  We can achieve this by tying the following in our REPL:  
+
+OS module has several methods to get detailed information about a computer system, with our focus mainly on hardware. They include:  
+- `os.totalmem()` - This method returns the computer's primary storage (memory) in bytes.  We can achieve this by tying the following in our `REPL`:  
+
  ```bash
  > let memory = os.totalmem();
 undefined
@@ -156,9 +179,11 @@ undefined
 16628015104
 undefined
 > 
+> NOTE: the value returned is in bytes, which might require additional arithmetics for conversions. i.e 16628015104/1024 = ~16GB of RAM.
 
  ```
- - `os.freemem()` - This method returns the computer's free space.  The size of space available in bytes. For example: 
+ - `os.freemem()` - This method returns the computer's free space.  The size of space available in bytes. For example:  
+ 
  ```bash
  > let freeMememorySpace = os.freemem();
 undefined
@@ -175,5 +200,8 @@ undefined
  ```
  
 ### Conclusion
-We've seen how we can use the `os module` to get more information about a computer system. This is important especially when a piece of knowledge about the hosting platform is required.
+We've seen how we can use the `os module` to get more information about a computer system. This is important especially when a piece of knowledge about the hosting (maybe a server) platform is required.
 Various operations are available such as getting details about the computer's network interface which you can read from [here](https://nodejs.dev/learn/the-nodejs-os-module).  
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
