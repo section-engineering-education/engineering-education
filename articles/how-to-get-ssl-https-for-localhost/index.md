@@ -1,9 +1,28 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-get-ssl-https-for-localhost/
+title: How To Get SSL Https For Localhost
+description: In this article we cover how to provision SSL certificates for local servers.
+author: 
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-get-ssl-https-for-localhost/hero.jpg
+    alt: SSL for localhost
+---
+
 ### Introduction
 Building a web application for a production server requires local testing before deployment. 
 
 It is also possible to run the web application in a local environment have it accessible over the internet.
 
 It is equally important that we get an [SSL certificate](https://www.cloudflare.com/en-gb/learning/ssl/what-is-an-ssl-certificate/) for the same, for the users to trust the site and to remove the *'Not Secure'* message at the address bar.
+
+<!--more-->
 
 ### Prerequisites
 -   [Node.js](https://nodejs.org/en/) Installed.
@@ -208,3 +227,6 @@ The process can help developers host their sites on local servers or forwarded p
 
 The files and code snippets used in this article can be accessed at
 [GitHub Repo](https://github.com/lewe01/localhost-cert.git)
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
