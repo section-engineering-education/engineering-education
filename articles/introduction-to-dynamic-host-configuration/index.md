@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-dynamic-host-configuration/
 title: Introduction to Dynamic Host Configuration Protocol (DHCP)
-description: This tutorial will be a brief dive into understanding Dynamic Host Configuration Protocol. We will also learn in-depth about the types of DHCP.
+description: This tutorial will be a brief dive into understanding Dynamic Host Configuration Protocol. We will also get an in-depth review about the types of DHCP.
 author: rabo-james-bature
-date: 2021-03-24T00:00:00-23:30
-topics: []
+date: 2021-04-07T00:00:00-11:30
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
@@ -39,14 +39,14 @@ To better understand this article, foundational knowledge of Internet Protocol (
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Dynamic Host Configuration Protocol
+### Dynamic host configuration protocol
 Dynamic host configuration protocol (DHCP) is a process in which networking devices are assigned to Internet Protocol (IP) addresses dynamically.
 
 This protocol is beneficial because it is time-saving and results in fewer configuration errors.
 
 DHCP uses a client-server model for its operation. The server assigns an IP address to a client for a limited period or when the client no longer requires the address.
 
-Because there are two versions of Internet Protocol (IP) address in use, i.e., IPv4 and IPv6, DHCP version 4 (DHCPv4) and DHCP version 6 (DHCPv6) were developed to accommodate these versions of IP addresses.
+Because there are two versions of Internet Protocol (IP) addresses in use, i.e., IPv4 and IPv6, DHCP version 4 (DHCPv4) and DHCP version 6 (DHCPv6) were developed to accommodate these versions of IP addresses.
 
 #### DHCPv4 operation
 DHCPv4 uses a server-client model for its operation. The server can either be dedicated hardware or a Cisco router configured to assign IPv4 address to DHCPv4 clients.
@@ -59,7 +59,9 @@ When a DHCP client wants to connect to a network, a four-step process is initiat
 The client starts this process by sending a broadcast message, also known as *DHCP Discover* message using its own MAC address and an IPv4 broadcast address of `0.0.0.0 0.0.0.0` to discover any available DHCPv4 server.
 
 ![DHCPv4 DORA process](/engineering-education/introduction-to-dynamic-host-configuration/dora.jpg)
+
 [Source](https://ipwithease.com/wp-content/uploads/2017/07/dora-process-600x270.jpg)
+
 *DCHPv4 process of assigning IPv4 address*
 
 #### DHCPv4 Discover
@@ -79,7 +81,9 @@ The server sends the **DHCPv4 Acknowledgment** message upon receiving the **DHCP
 ### DCHPv4 lease renewal
 DHCP servers do lease out an IP address to a client for an administrative defined period.
 
-Some clients may still need the address even after the defined period. To keep the IP address, the client will issue a **DHCP Request** message to the server that leased out the IPv4 address before the lease ends. This server will respond with a **DHCP Acknowledgement** message to renew the lease.
+Some clients may still need the address even after the defined period. To keep the IP address, the client will issue a **DHCP Request** message to the server that leased out the IPv4 address before the lease ends. 
+
+This server will respond with a **DHCP Acknowledgement** message to renew the lease.
 
 If the client does not receive the **DHCP Acknowledgement** message after a stipulated period, the client issues a fresh **DCHP Discover** message, and the process above is repeated all over again.
 
@@ -93,7 +97,7 @@ IPv6 dynamic addresses can be assigned using one of two methods - Stateless Addr
 ### Stateless Address Auto Configuration (SLAAC)
 SLAAC is the preferred method of assigning an IPv6 address to an IPv6 device in a network.
 
-In this method, the client sends a request to an IPv6 server requesting a network prefix, which the device combines with its MAC address to create an Ipv6 global unicast address.
+In this method, the client sends a request to an IPv6 server requesting a network prefix, that the device combines with its MAC address to create an Ipv6 global unicast address.
 
 Because it is stateless, it does not need a dedicated DHCPv6 server to maintain its network addressing information.
 
@@ -102,8 +106,11 @@ It uses the Internet Control Message Protocol version 6 (ICMPv6) **Solicitation*
 The **Router Solicitation** (RS) message is sent out by a client configured to obtain its addressing information from a DHCPv6 server to locate the DHCPv6 server in the network. This message is sent to an IPv6 multicast address of `FF02::2`, also known as the IPv6 **all-router multicast address**.
 
 The router sends out a **Router Advertisement** (RA) message after receiving a router solicitation message. This message informs the IPv6 client of the availability of an IPv6 router or server to provide a prefix and prefix-length, and it is sent to the IPv6 all-nodes multicast address of `FF02::1`.
+
 ![DHCpv6 process](/engineering-education/introduction-to-dynamic-host-configuration/download.jpg)
+
 [Source](https://download.huawei.com/mdl/image/download?uuid=fd210a1e9ae74fbeadd49b6414f51420)
+
 *DHCpv6 process of assigning IPv6 address*
 
 From the figure above, `PC-A` needs a network prefix length to create its unique ID. So it sends a router solicitation message to the all router-node address of `FF0::2` to locate a router on the network.
@@ -121,7 +128,9 @@ The process explained above is the typical behavior of SLAAC. But using the **RA
 
 These flags are *Other configuration flags (O flag)* and the *Managed address configuration flag (M flag)*
 
-Using these two flags, three different IPv6 addressing options can be configured on an IPv6 device. These options are:
+Using these two flags, three different IPv6 addressing options can be configured on an IPv6 device. 
+
+These options are:
 1. SLAAC
 2. Stateless DHCPv6
 3. Stateful DHCPv6
@@ -152,12 +161,14 @@ This addressing information includes the device's global unicast address, prefix
 This option is stateful because the DHCPv6 server maintains all addressing information like DHCpv4.
 
 ### Conclusion 
-Dynamic Host Configuration Protocol (DHCP) makes it easy to assign Internet Protocol (IP) addresses to devices with fewer configuration errors within a short time.
+Dynamic Host Configuration Protocol (DHCP) makes it easy to assign Internet Protocol (IP) addresses to devices with fewer configuration errors within a shorter time.
 
 To summarize, the reader has learned about:
 - Dynamic Host Configuration Protocol.
 - Different types of DHCP in use.
 - Various DHCPv6 configuration options.
+
+Happy learning!
 
 ### Further reading
 - [Dynamic Host Configuration Protocol](https://www.efficientip.com/what-is-dhcp-and-why-is-it-important/)
