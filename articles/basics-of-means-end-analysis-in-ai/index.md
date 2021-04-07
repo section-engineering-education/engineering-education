@@ -103,7 +103,7 @@ Means end analysis is used in organizations to facilitate general management. It
 #### Business transformation
 This technique is used to implement transformation projects. If there are any desired changes in the current state of a business project, means end analysis is applied to establish the new processes to be implemented. The processes are split into sub-processes to enhance effective implementation.
 
-#### Gap Analysis
+#### Gap analysis
 Gap analysis is the comparison between the current performance and the required performance. Means end analysis is applied in this field to compare the existing technology and the desired technology in organizations. Various operations are applied to fill the existing gap in technology. 
 
 ### Conclusion
