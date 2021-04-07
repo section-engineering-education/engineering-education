@@ -191,10 +191,24 @@ node app.js
 
 Here are the results from telegram.
 
+**Starting the bot**
+
 ![bot result 1](/engineering-education/telegram-bot-in-nodejs/image1.jpg)
+
+**Requesting for a dog photo**
+
 ![bot result 2](/engineering-education/telegram-bot-in-nodejs/image2.jpg)
+
+**Requesting for a cat photo**
+
 ![bot result 3](/engineering-education/telegram-bot-in-nodejs/image3.jpg)
+
+**Requesting phone number**
+
 ![bot result 4](/engineering-education/telegram-bot-in-nodejs/image4.jpg)
+
+**Requesting location**
+
 ![bot result 5](/engineering-education/telegram-bot-in-nodejs/image5.jpg)
 
 ### Summary
