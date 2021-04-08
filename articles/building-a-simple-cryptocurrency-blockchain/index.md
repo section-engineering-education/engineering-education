@@ -1,7 +1,7 @@
 ## Building Simple cryptocurrency system using Node.js
 
 In this tutorial, we are going to demonstrate how to build a simple cryptocurrency system, called thecoin.
-![Image title](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchaintrade.jpg)
+![Image title](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchain/trade.jpg)
 
 We are going to implement the concepts of JavaScript classes and Node.js.
 
