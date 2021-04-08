@@ -9,17 +9,17 @@ Application widgets are views that contain some of the application's functionali
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through with this tutorial with ease, you need to meet the following prerequisites:
-- The reader should have basic knowledge in building Android apps.
+The following prerequisites will be required to follow this tutorial:
+- The reader should have basic knowledge of building Android apps.
 - [Android Studio](https://developer.android.com/studio) installed.
-- Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language and XML programming language.
+- Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language and XML programming languages.
 
 ### Introduction to Android widgets
-Widgets vary in size and support resizing. Widgets are mostly placed on a device's home screen to enable quick access to data and functionalities of a particular mobile application. They allow a user to create shortcuts for their favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
+Widgets vary in size and support resizing. Widgets are mostly placed on a device's home screen to enable quick access to a particular mobile application's data and functionalities. They allow a user to create shortcuts for their favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
 
 #### Widget design guidelines
 - **Widget content:** A widget should concentrate on an app's most important content. The app should provide more details about the content presented on the widget.
-- **Widget configuration:** For the widgets that need to be configured, you should creating a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
+- **Widget configuration:** For the widgets that need configuration, you should creating a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
 - **Layout considerations:** Widgets should be adaptable to accommodate varying spaces.
 - **Widget resizing:** Widgets should support resizing to fine-tune the amount of information the users want to see.
 
@@ -27,13 +27,13 @@ Widgets vary in size and support resizing. Widgets are mostly placed on a device
 Widgets are categorized into:
 
 #### Information widgets
-Information widgets provide information to the user. This information  can keep changing over time, based on the need. Examples of information widgets include the soccer live score widget, stock market widget, and weather widget.
+Information widgets provide information to the user. This information can keep changing over time, based on the need. Examples of information widgets include the soccer live score widget, stock market widget, and weather widget.
 
 #### Control widgets
 The control widgets allow the user to carry out some functions without opening the application. An example of a commonly used control widget is a music player widget. The widget allows users to play, pause or skip to the next music track without opening the music player app.
 
 #### Collection widgets
-Collection widgets display multiple elements for viewing. Collection widgets support scrolling. They can display a collection of messages, articles, or images.
+Collection widgets display multiple elements for viewing and can support scrolling. They can display a collection of messages, articles, or images.
 
 #### Hybrid widgets
 Hybrid widgets are widgets that can fall into more than one category. For example, a music player widget can accommodate more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
