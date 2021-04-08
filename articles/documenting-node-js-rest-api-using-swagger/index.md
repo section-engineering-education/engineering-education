@@ -14,7 +14,7 @@ images:
     alt: Swagger image
 ---
 Imagine finding an amazing API (Application Programming Interface) you are looking for on the internet. You decide to consume the API, but then you don't know how to send a request. You keep on trying different workarounds but to no avail.
-
+<!--more-->
 You decide to contact the team behind it, but then they reply after a long time yet you are in the midst of your project. This sets you off because there is nothing you can do at the moment. The previously fancy API turns out to be a monster because it is not properly documented.
 
 Swagger is a software tool used for designing, building, documenting, and using RESTful APIs. It follows the OpenAPI specification.
