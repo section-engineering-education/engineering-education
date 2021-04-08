@@ -12,7 +12,7 @@ In this article, we are going to talk about the TinEye Reverse Image Search and 
 
 #### Prerequisites
 
-1. a basic understanding of Node.js and JavaScript concepts
+1. A basic understanding of Node.js and JavaScript concepts
 2. Node.js(NPM) installed in your system
 3. Knowledge of the REST API
 
@@ -28,7 +28,7 @@ npm install tineye-api
 
 ### Testing in SandBox
 
-TinEye gives two keys for enabling us to test in the sandbox. In the sandbox, we will only search for this image:
+TinEye gives two keys for enabling us to test in the sandbox. In the sandbox, we will only search for the image below because it's the only one allowed to be used for testing.
 
 ![meloncat](/engineering-education/node-tineye-api/meloncat.jpg)
 
@@ -101,7 +101,7 @@ In the `options` object, we pass optional parameters to be used in the search wh
 
 i. `limit` - This one specifies the number of result images to be displayed to the user. The default is 100 and to return all images, we initialize it to -1.
 
-ii. `sort`- Th sort criteria like for our case we'll sort by the accuracy score of the image queried against the image returned. We can only pass in these values:
+ii. `sort`- The sort criteria like for our case we'll sort by the accuracy score of the image queried against the image returned. We can only pass in these values:
 
 - *score*
 - *size*
@@ -139,7 +139,7 @@ We feed the image path to the `readFileSync()` of the file system module. You ca
 
 We then feed the image and the options to the API using the `searchData()` method.
 
->Again, you will run into an error if you test it in the sandbox.
+>Again, you will run into an error if you test it in the sandbox. You can only use it when live.
 
 ```javascript
 var fs = require('fs');
@@ -176,3 +176,4 @@ This was just a basic introduction, but the API can be manipulated in various wa
 
  [TinEye API Documentation](https://services.tineye.com/developers/tineyeapi/libraries)
 
+Have a great one.
