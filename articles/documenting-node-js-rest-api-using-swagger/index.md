@@ -1,5 +1,18 @@
-### Documenting a Node.js REST API using swagger
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/documenting-node-js-rest-api-using-swagger/
+title: Documenting a Node.js REST API using swagger
+description: In this article, we will learn about API documentation using Swagger. Also, we will learn to document Node.js APIs using Swagger from scratch.
+author: kennedy-mwangi
+date: 2021-04-08T00:00:00-20:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/documenting-node-js-rest-api-using-swagger/hero.jpg
+    alt: Swagger image
+---
 Imagine finding an amazing API (Application Programming Interface) you are looking for on the internet. You decide to consume the API, but then you don't know how to send a request. You keep on trying different workarounds but to no avail.
 
 You decide to contact the team behind it, but then they reply after a long time yet you are in the midst of your project. This sets you off because there is nothing you can do at the moment. The previously fancy API turns out to be a monster because it is not properly documented.
