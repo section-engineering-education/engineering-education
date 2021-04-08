@@ -1,5 +1,4 @@
--
---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -12,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/telegram-bot-in-nodejs/hero.png
+  - url: /engineering-education/telegram-bot-in-nodejs/hero.jpg
     alt: telegram bot in nodejs image
 
 ---
