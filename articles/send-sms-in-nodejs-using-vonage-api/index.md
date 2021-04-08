@@ -13,6 +13,8 @@ images:
   - url: /engineering-education/send-sms-in-nodejs-using-vonage-api/hero.png
     alt: Sending SMS in Nodejs using vonage's SMS API
 ---
+
+
 Short Message Service (SMS) is one of the best marketing strategies that organizations use to communicate with their clients. Using SMS in your mobile or a web application allows you to reach out to more customers since many people check their message inbox than emails. 
 <!--more-->
 Vonage's SMS API allows programmers to integrate messaging services into an application with ease. The API's benefits include:
@@ -33,15 +35,15 @@ This article will enable you to integrate SMS functionality into a Node.js appli
 + Conclusion
 
 ### Setting up Vonage account.
-1. Navigate to [Vonage's](https://dashboard.nexmo.com/sign-up) website to create an account for free. The platform allows you to have a free trial for $2, after which you will be required to pay. 
+1. Navigate to [Vonage's](https://dashboard.nexmo.com/sign-up) website to create an account for free. The platform allows you to have a free trial for $2.00, after which it will require you to pay. 
 2. Create an account by inputting your email address and a strong password. 
 3. In the phone number field, provide a valid number that we will use to test the application.
 4. Since we will use Node.js, select it as the target programming language.
-5. Click on SMS, then wait for your account to be set up.
+5. Click on SMS, then wait for the platform to set up your account.
 
 You have successfully created a Vonage account; your dashboard should look like this.
 
-![Vonage's Dashboard](/engineering-education/flutter-folder-organization/dashboard.png)
+![Vonage's Dashboard](engineering-education/send-sms-in-nodejs-using-vonage-api/dashboard.png)
 
 ### Creating the Node application
 **Init application**
@@ -52,12 +54,12 @@ Setup up the node application by running the following command:
 npm init
 ```
 
-This command will create an empty `package.json` file for our application. It will hold the project's metadata which includes dependencies, scripts, and version.
+This command will create an empty `package.json` file for our application. The `package.json` will hold the project's metadata which includes dependencies, scripts, and versions.
 
 **Install dependencies**
 
 Next, we will install the required dependencies. 
->We will use `express` as our backend framework for Node, `EJS` as our template engine, `body-parser` to parse HTTP request body, `nexmo API` for sending the message, and `socket.io` to request a delivery report for our messages. 
+>We will use `express` as our backend framework for Node, `EJS` as our template engine, `body-parser` to parse HTTP request body, `nexmo API` for sending the message, and `socket.io` to request a delivery report for the messages sent. 
 
 To install these dependencies, run the following command in your terminal.
 
@@ -67,7 +69,7 @@ npm install –save express, nexmo, eggs, body-parser, socket.io, fetch
 
 **Nodemon**
 
-We will need `nodemon` to help us monitor changes and restart the server.  I prefer installing `nodemon` globally. To install nodemon, run the following command.
+We will need `nodemon` to monitor changes in the application and restart the server when a change is detected.  I prefer installing `nodemon` globally. To install nodemon, run the following command.
 
 ```bash
 npm install -g nodemon
@@ -76,7 +78,7 @@ npm install -g nodemon
 We are all set. Now, let's start coding!
 
 ### Implementation
-Firstly, we need to create our application's entry point file. I will name this as `app.js`. 
+Firstly, we need to create our application's entry point file. I will name this `app.js`. 
 
 > You can set the app's entry point using the `init` command or manually set up within the `package.json` file. 
 
@@ -107,7 +109,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true});
 ```
 
-Specify the `index` route as `index.html` since the app will only have a single page `
+Specify the `index` route as `index.html` since the application will only have a single page.
 
 ```js
 //index route
@@ -171,7 +173,7 @@ response = document.querySelector(".respose");
 ```
 
 ### Adding the send functionality
-Since we have added a `send button` in the html form, we need to attach an `EventListener` to the button to trigger the `send` function. The code for this functionality is shown below.
+Since we have added a `send button` in the HTML form, we need to attach an `EventListener` to the button to trigger the `send()` function. The block of code below shows an implementation of this function.
 
 ```js
 button.addEventListener('click', send, false);
@@ -198,7 +200,7 @@ function send() {
 }
 ```
 ### Implemeting Nexmo
-First we will initialize Nexmo by supplyoing out apiKey and secret
+First we will initialize Nexmo by supplying our apiKey and secret
 ```js
 //init out nexmo
 const nexmo = new Nexmo({
@@ -206,7 +208,7 @@ const nexmo = new Nexmo({
     apiSecret: 'API-SECRET',
 }, {debug:true});
 ```
-We need to catch the post on the server since the fetch API makes a post request. In our `app.js`,  we will add the following code to catch the post request and use Nexmo to send the message to the number specified in the request body.
+We need to catch the post request on the server since the fetch API makes a post request. In our `app.js`,  we will add the following code to catch the post request and use Nexmo to send the message to the number specified in the request body.
 ```js
 //catch post from our main js
 app.post('/', (request, response) =>{
@@ -231,7 +233,7 @@ app.post('/', (request, response) =>{
     });
 });
 ```
-Next, we will send the response data to the client to show if the SMS was sent successfully or not. To do this, we will send the response data from nexmo to the client in the `main.js` file using `io.emit()` function. You could find more about this function [here](https://socket.io/docs/v3/).
+Next, we will send the response data to the client to show if the SMS was sent successfully or not. To send the response data from nexmo to the client in the `main.js` file, we will use the `io.emit()` function. You could find more about this function [here](https://socket.io/docs/v3/).
 ```js
 io.emit('smsStatus', data)
 ```
@@ -249,7 +251,7 @@ socket.on('smsStatus', function(data){
 });
 
 ```
-![Success message](/engineering-education/flutter-folder-organization/text-before-sending.png)
+![Success message](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
 
 To start our server, we will define a port from where our application will run on localhost. 
 ```js
@@ -261,10 +263,10 @@ const server = app.listen(port, () =>{
     console.log(`Server started on port ${port}`);
 });
 ```
-![Text message in web messages application](/engineering-education/flutter-folder-organization/text-in-sms-app.png)
+![Text message in web messages application](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-in-sms-app.png)
 
 ### Conclusion
-To conclude, we learned how to set up Vonage's SMS API by creating an account, setting up the API, and using the API to send messages to a  number provided. Note that the number used for testing must be registered under your account, if you have not upgraded your account to premium. We also learned how to use sockets.io to communicate between our server and client application. You can find the complete application code [here.](https://github.com/mercymeave/code-space/tree/main/node-text-app).
+To conclude, we learned how to set up Vonage's SMS API by creating an account, setting up the SMS API, and using the API to send messages to a  number provided. Note that the number used for testing must be registered under your account if you have not upgraded your account to premium. We also learned how to use sockets.io to communicate between our server and client application. You can find the complete application code [here](https://github.com/mercymeave/code-space/tree/main/node-text-app).
 
 ### Further Reading
 + Vonage API: https://developer.nexmo.com/messaging/sms/overview
