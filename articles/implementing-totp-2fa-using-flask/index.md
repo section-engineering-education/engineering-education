@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
 In the code above, you created a Flask server that renders the text `"Hello World!"` when the index page opens. You will get a response similar to the image below after running the server.
 
-![Hello World](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\Hello World.png)
+![Hello World](\engineering-education\implementing-totp-2fa-using-flask\hello-world.png)
 
 #### One-factor Authentication in Flask
 
@@ -144,7 +144,7 @@ You will also create a file named `login.html` that will be stored in the `templ
 {% endblock %}
 ```
 
-![Login](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\Login.png)
+![Login](\engineering-education\implementing-totp-2fa-using-flask\login.png)
 
 You will also write a route to handle `POST` requests made to the login page and authenticate them. Update the `app.py` file by adding the code below:
 
@@ -166,11 +166,11 @@ def login_form():
 
 You should get an image similar to the one below when invalid credentials are used in the form:
 
-![invalid login](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\invalid login.png)
+![invalid login](\engineering-education\implementing-totp-2fa-using-flask\invalid-login.png)
 
 And an image similar to the one below when valid credentials are used:
 
-![valid login](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\valid login.png)
+![valid login](\engineering-education\implementing-totp-2fa-using-flask\valid-login.png)
 
 > Please note that the valid credentials created for the application are `username: test` and `password: password`.
 
@@ -322,7 +322,7 @@ You will also create a file named `login_2fa.html` that will be stored in the `t
 {% endblock %}
 ```
 
-![Generating OTP](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\Generating OTP.png)
+![Generating OTP](\engineering-education\implementing-totp-2fa-using-flask\generating-otp.png)
 
 You will also write a route to handle `POST` requests made to the 2FA page and authenticate them. Update the `app.py` file by adding the code below:
 
@@ -342,11 +342,11 @@ def login_2fa_form():
 
 You should get an image similar to the one below when an invalid token is provided:
 
-![invalid OTP](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\invalid OTP.png)
+![invalid OTP](\engineering-education\implementing-totp-2fa-using-flask\invalid-otp.png)
 
 You should get an image similar to the one below when a valid token is provided:
 
-![valid OTP](\engineering-education\from-theory-to-practice-implementing-totp-2fa-in-python-and-flask\valid OTP.png)
+![valid OTP](\engineering-education\implementing-totp-2fa-using-flask\valid-otp.png)
 
 ### Conclusion
 
