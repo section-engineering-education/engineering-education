@@ -1,0 +1,1 @@
+Kimosop is an undergraduate student pursuing Bachelor of Science in Computer Science. His is interested in penetration testing and Fullstack system development besides web development. When he's not on the keyboard he is out playing rugby.
