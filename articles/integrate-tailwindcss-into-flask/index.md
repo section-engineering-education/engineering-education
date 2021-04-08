@@ -60,7 +60,7 @@ if __name__ =='__main__':
 
 ```
 
-The code block above creates a simple server with one endpoint (or route) that simple renders (or displays) a web page, which is supposed to be from a file called `index.html` as seen in the code. However, we haven't created that file yet. Remember, I mentioned that all HTML files go in the templates folder we created earlier. Hence, we'll go to that folder and add a new file called `index.html` so our flask server can see it. In `index.html` we can add a simple "hello world" h1 tag as follows:
+The code block above creates a simple server with one endpoint (or route) that renders (or displays) a web page, which is supposed to be from a file called `index.html` as seen in the code. However, we haven't created that file yet. Remember, I mentioned that all HTML files go in the templates folder we created earlier. Hence, we'll go to that folder and add a new file called `index.html` so our flask server can see it. In `index.html` we can add a simple "hello world" h1 tag as follows:
 
 ```hmtl
 <!DOCTYPE html>
