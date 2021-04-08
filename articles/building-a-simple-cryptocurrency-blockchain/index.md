@@ -1,9 +1,19 @@
 ## Building Simple cryptocurrency system using Node.js
 
 In this tutorial, we are going to demonstrate how to build a simple cryptocurrency system, called thecoin.
+It is a simple implementation of the of decentralized digital money, based on blockchain technology. 
+### Take away
+1. How blockchain store data
+2. How blockchain data are immutable
+3. How to implement JavaScript libary in Node.js 
+
+
 ![Image title](engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
 
-We are going to implement the concepts of JavaScript classes and Node.js.
+ ### We are going to implement the concepts of :
+
+1. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+2. [Node.js](https://nodejs.org/en/docs/)
 
 ## Prerequisite
 To follow this tutorial successfully, you’ll need to have the following:
@@ -13,17 +23,19 @@ To follow this tutorial successfully, you’ll need to have the following:
 - Code editor for my case I use VSCode
 
 
-### WHAT IS BLOCKCHAIN
+### What is Blockchain?
 ![Bitcoin Image](engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
 Digital currencies such as Bitcoin, Ethereum are powered and adopted with powerful technology **the Blockchain**. It uses Cryptography to securely connect and maintain a list of records growing continuously known as **Blocks**
 ![ethereum](engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 **Blockchain** as the name states it's a block of transactions data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
 
+We'll have good understanding of blockchain and cryptocurrency and it's operation. 
+
 > Let's get into code
 
-> I'll name my app `thecoin`.
+> I'll name my app thecoin.
 
-> Create the app named `thecoin.js` and open it in your code editor
+> Create the app named thecoin.js and open it in your code editor
 
 > In the folder you're doing current development let's install the crypto library we're going to use using the command
 
@@ -51,7 +63,7 @@ I'll begin by creating a class 'BlockCypto'.
             return SHA256(this.info + this.nextHash + this.current_time + JSON.stringify(this.info)).toString();
         }   
     }
-```
+```js
 
 I'll explain each part of the code here:
 
@@ -98,7 +110,7 @@ Here is the code for the class I named 'Blockchain'
             this.block1chain.push(newBlock);
         }
     }
-```
+```js
 
 
 Let's explain the above class 
@@ -122,7 +134,7 @@ To perform this, we use digital security or cryptographic hash which ensures sec
 
 We'll loop over the entire blockchain to check whether any hash has been tampered with, taking into account the exception of the first block which is hardcoded.
 
-Besides, this method will verify if the hashes of each two consecutive blocks are pointing to one another. If the integrity of the blockchain has not been compromised, it returns true; otherwise, in case of any anomalies, it returns false.
+Besides, this method will verify if the hashes of each two consecutive blocks are pointing to one another. If the integrity of the blockchain has been compromised, it returns false; otherwise, in case no anomalies are encountered, it returns true.
  We'll create this method inside inside `Blockchain` class
 ```Node
     checkValidity(){
@@ -138,19 +150,19 @@ Besides, this method will verify if the hashes of each two consecutive blocks ar
             }
             return true;
         }
-```
+```js
 
 
 Now we can test our app and see the results:
 
 But before we dive into running the code, let's create a new instance of the `Blockchain` class and name it `thecoin`, and add some blocks in the blockchain using random values.  
 
-```bash
+```Node
   let thecoin = new Blockchain();
     thecoin.addNewBlock(new BlockCrypto(1, "06/04/2021", {sender: "Rabin Yitzack", recipient: "Loyd Eve", quantity: 20}));
     thecoin.addNewBlock(new BlockCrypto(2, "07/04/2021", {sender: "Anita Vyona", recipient: "Felix Mush", quantity: 349}) );
     console.log(JSON.stringify(thecoin, null, 4));
-```
+```js
 
 ### Running our Blockchain
 
