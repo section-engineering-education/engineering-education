@@ -1,5 +1,5 @@
 Short Message Service (SMS) is one of the best marketing strategies that organizations can use to keep their clients close.  SMS integration in a mobile or a web application effectively reaches out to customers as most people check their message inbox than emails. SMS are mobile-friendly and can reach a broad demographic cover.
-Vonage's SMS API allows programmers to integrated messaging services into an application with ease. Vonage's API's benefits are support local phone numbers, low latency, high delivery rates, and modern web technologies support.
+Vonage's SMS API allows programmers to integrate messaging services into an application with ease. Vonage's API's benefits are support local phone numbers, low latency, high delivery rates, and modern web technologies support.
 This article will enable you to integrate SMS functionality into a Nodejs application using Vonage SMS API. 
 
 ### Table of contents
@@ -75,7 +75,7 @@ app.get('/', (request, response) =>{
 });
 ```
 ### Creating our view
-We will create a folder called `views` where we will store our view file. Under the folder, we create an `index.html` file where we will have the input fields for holding the phone number and message to be sent. Here is how the `index.html` will look like:
+We will create a folder called `views` where we will store our view files. Under the folder, we create an `index.html` file where we will have the input fields for holding the phone number and message to be sent. Here is how the `index.html` will look like:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -154,7 +154,7 @@ function send() {
     });
 }
 ```
-#### Implemeting Nexmo
+### Implemeting Nexmo
 First we will initialize Nexmo by supplyoing out apiKey and secret
 ```js
 //init out nexmo
@@ -188,11 +188,11 @@ app.post('/', (request, response) =>{
     });
 });
 ```
-Next, we will send the repose data to the client to show if the SMS was sent successfully or not. To do this, we will send the response data from nexmo to the client in the `main.js` file using `io.emit()` function. Ypu could find more about this fucntion [here](https://socket.io/docs/v3/).
+Next, we will send the response data to the client to show if the SMS was sent successfully or not. To do this, we will send the response data from nexmo to the client in the `main.js` file using `io.emit()` function. You could find more about this function [here](https://socket.io/docs/v3/).
 ```js
 io.emit('smsStatus', data)
 ```
- To receive the data and emebed into out index page, we use the below code in `main.js` file:
+ To receive the data and embed into out index page, we use the below code in `main.js` file:
 ```js
 const socket = io();
 socket.on('smsStatus', function(data){
