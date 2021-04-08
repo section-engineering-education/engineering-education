@@ -1,6 +1,20 @@
-# Build a Ticketing App with AdonisJS and VueJS
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs
+title: Build a Ticketing App with AdonisJS and VueJS
+description: In this tutorial, we will learn about Adonis.js and Vue.js. We will also build a Ticketing app using Adonis.js and Vue.js.
+author: solomon-eseme
+date: 2021-04-08T00:00:00-23:45
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejshero.png
+    alt: Adonis.js example image
+---
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability, and speed.
-
+<!--more-->
 To show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
 
 This app will create events, generate tickets for the event, allow users to view the event and the tickets, also how them to make purchases and redeem the event tickets.
