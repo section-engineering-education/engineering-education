@@ -1,7 +1,4 @@
 # Build a Ticketing App with AdonisJS and VueJS
-
-### Introduction
-
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability, and speed.
 
 To show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
@@ -13,38 +10,36 @@ Once you finish the tutorial, you will have a functioning Ticketing application 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Outline
-
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Goals of the Tutorial](#goals-of-the-tutorial)
+- [Goals](#goals)
 - [Step 1 — Setting up AdonisJS](#step-1--setting-up-adonisjs-5)
 - [Step 2 — Building the Frontend](#step-2--building-the-frontend)
 - [Step 3 — Testing the Project](#testing-the-project)
 - [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Prerequisites
-
 Before continuing with this article, you should have previous experiences with the following:
 
 1. Basic understanding of TypeScript and Node.js
 2. Basic [understanding of AdonisJS](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
 3. Basic understanding of VueJS
 
-### Goals of the Tutorial
+### Goals
+We will learn how to build a Ticketing app with AdonisJS 5 and VueJS, so that the users can find events around you, register for a free event, buy tickets, sell tickets online, and promote their event worldwide.
 
-I will be showing you how to build a Ticketing App with AdonisJS 5 and VueJS. I will build a Ticketing Website that users can find events around you, register for a free event, buy tickets, sell tickets online and promote their event worldwide.
+We will also cover best practices in structuring and building your frontend with VueJS when using AdonisJS as your backend.
 
-I will also cover best practices in structuring and building your frontend with VueJS when using AdonisJS as your backend.
-
-- Students will learn how to build a real-world app with AdonisJS and VueJS
-- Students will learn how to handle authentication and authorization with AdonisJS and VueJS
-- Students will learn how to integrate AdonisJS with VueJS.
-- Students will learn how to build and structure a Ticketing System in AdonisJS and VueJS
-- Students will learn best practices in building performance-oriented Web apps with AdonisJS.
+- We will learn how to build a real-world app with AdonisJS and VueJS.
+- We will learn how to handle authentication and authorization with AdonisJS and VueJS.
+- We will learn how to integrate AdonisJS with VueJS.
+- We will learn how to build and structure a Ticketing system in AdonisJS and VueJS.
+- We will learn best practices in building performance-oriented Web apps with AdonisJS.
 
 ### Step 1 — Setting up Adonis.js 5
+Setting up AdonisJS 5 is very easy, as it requires a simple `npm` command below.
 
-Setting up AdonisJS 5 is very easy as it requires a simple NPM command below, if you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
+If you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 
 ```bash
 npm init adonis-ts-app adonisjs-ticketing-system-api
@@ -56,33 +51,32 @@ After creating the AdonisJS application, move inside the project directory and i
 cd adonisjs-ticketing-system-api
 ```
 
-Now, we need to set up our database to connect with the new Adonisjs application.
+Now, we need to set up our database to connect with the new Adonis.js application.
 
 #### Creating the database
-
 Our ticketing system application needs a database for storing, retrieving, updating and deleting data.
 
-To install the database, we need to first create the database by using any of these [database clients](https://masteringbackend.com/posts/top-10-database-clients-for-developers) and install the `Lucid` ORM.
+To install the database, we need to first create the database by using any of these [database clients](https://masteringbackend.com/posts/top-10-database-clients-for-developers) and install the `Lucid` Object Relational Mapper (ORM).
 
 ```bash
 npm i @adonisjs/lucid@alpha
 ```
 
-After installing the ORM, set it up by running the following command.
+After installing the ORM, set it up by running the following command:
 
 ```bash
 node ace invoke @adonisjs/lucid
 ```
 
-After running the above command, follow the instructions and update your `.env` file.
+After running the above command, follow the instructions and update your `.env` environment file:
 
 ```bash
-DB_CONNECTION=mysql
-MYSQL_USER= //DB_USER
-MYSQL_HOST=localhost
-MYSQL_DB_NAME= //DB_NAME
-MYSQL_PORT=3306
-MYSQL_PASSWORD= //DB_PASSWORD
+DB_CONNECTION = mysql
+MYSQL_USER = [DB_USER]
+MYSQL_HOST = localhost
+MYSQL_DB_NAME = [DB_NAME]
+MYSQL_PORT = 3306
+MYSQL_PASSWORD = [DB_PASSWORD]
 ```
 
 If you encounter this error `Client does not support the authentication protocol requested by the server;` while testing your API, follow these steps to solve it:
@@ -91,7 +85,7 @@ If you encounter this error `Client does not support the authentication protocol
 npm install mysql2
 ```
 
-To set up authentication in Adonisjs is done by installing a package and setting it up, you can read through how to set up authentication [here](/engineering-education/build-a-restful-api-with-adonisjs/).
+Authentication in Adonis.js is done by installing a package and setting it up, you can read through how to set up authentication [here](/engineering-education/build-a-restful-api-with-adonisjs/).
 
 Install the Auth package with this command:
 
@@ -99,13 +93,12 @@ Install the Auth package with this command:
 npm i @adonisjs/auth@alpha
 ```
 
-#### Creating Migrations and Models
-
+#### Creating migrations and models
 Our project will be using a total of 3 migrations and models excluding the User model and migration.
 
-With AdonisJs migrations, you can create/modify database by just writing Javascript while Models represents the database layer of your application, you can describe your database tables as JavaScript classes and use JavaScript methods for reading, writing and deleting rows
+With AdonisJs migrations, you can create/modify database by just writing javascript, while models represents the database layer of your application, you can describe your database tables as javascript classes and use javascript methods for reading, writing and deleting rows
 
-So let’s create our migrations:
+So, let's create our migrations:
 
 ```bash
 node ace make:migration tickets
@@ -150,13 +143,13 @@ export default class Tickets extends BaseSchema {
 }
 ```
 
-Repeat the same for the other migrations from our repository. After completing the migrations, you can run the migration with this command.
+Repeat the same for the other migrations from our repository. After completing the migrations, you can run the migration with this command:
 
 ```bash
 node ace migration:run
 ```
 
-We will also create the models and map the columns.
+We will also create the models and map the columns using:
 
 ```bash
 node ace make:model Event
@@ -222,15 +215,14 @@ export default class Event extends BaseModel {
 }
 ```
 
-We have mapped the columns in our migration to the Event models, and also defined the different relationships with `hasMany` and `belongsTo` methods.
+We have mapped the columns in our migration to the `Event` models, and also defined the different relationships with `hasMany` and `belongsTo` methods.
 
-#### Creating Controllers
-
+#### Creating controllers
 In this step, we will be creating our controllers and also the business logic associated with our ticketing system.
 
-"Controllers act as a middle man between Models and Views, it processes all the inputs sent by the user from the View." from [Laravel Tutoral](https://masteringbackend.com/posts/laravel-framework-the-ultimate-guide#chaptertwo)
+> According to a [Laravel Tutorial](https://masteringbackend.com/posts/laravel-framework-the-ultimate-guide#chaptertwo), "Controllers act as a middle man between Models and Views, it processes all the inputs sent by the user from the view."
 
-We will start by creating the `AuthController` and setting up the login and registration processes.
+We will start by creating the `AuthController` and setting up the login and registration processes as shown below:
 
 ```bash
 node ace make:controller Auth
@@ -276,94 +268,94 @@ The controller above defines the authentication process for the backend API.
 
 Next, we will create the `EventsController` and paste in the following code while other controllers can be found in the repository.
 
-The EventController is where all the business logic related to managing events are created. Let's break it down in details.
+The `EventController` is where all the business logic related to managing events are created. Let's break it down in details.
 
 ```js
-    import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-    import Event from 'App/Models/Event'
-    import User from 'App/Models/User'
-    import Ticket from 'App/Models/Ticket'
-    import UserEvent from 'App/Models/UserEvent'
-    import { DateTime } from 'luxon'
-    const Keygen = require('keygen')
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Event from 'App/Models/Event'
+import User from 'App/Models/User'
+import Ticket from 'App/Models/Ticket'
+import UserEvent from 'App/Models/UserEvent'
+import { DateTime } from 'luxon'
+const Keygen = require('keygen')
 
-    export default class EventsController {
+export default class EventsController {
 
-      // The INDEX method returns all the Events available to be displayed on the homepage
-      public async index({}: HttpContextContract) {
-        const events = await Event.query().preload('user').preload('tickets')
-        return events
-      }
-
-
-      // The SHOW method retrieves a single Event by ID
-      public async show({ params }: HttpContextContract) {
-        try {
-          const event = await Event.find(params.id)
-          if (event) {
-            await event.preload('user')
-            await event.preload('tickets')
-            return event
-          }
-        } catch (error) {
-          console.log(error)
-        }
-      }
+  // The INDEX method returns all the Events available to be displayed on the homepage
+  public async index({}: HttpContextContract) {
+    const events = await Event.query().preload('user').preload('tickets')
+    return events
+  }
 
 
-      // The UPDATE method updates the detail of an Event
-      public async update({ request, params }: HttpContextContract) {
-        const event = await Event.find(params.id)
-        if (event) {
-          event.title = request.input('title')
-          event.description = request.input('description')
-          event.date = request.input('date')
-          event.ticket_price = request.input('ticket_price')
-          if (await event.save()) {
-            await event.preload('user')
-            await event.preload('tickets')
-            return event
-          }
-          return // 422
-        }
-        return // 401
-      }
-
-
-      // The STORE method is used to creat a new Event
-      public async store({ auth, request }: HttpContextContract) {
-        const user = await auth.authenticate()
-        const event = new Event()
-        event.title = request.input('title')
-        event.description = request.input('description')
-        event.date = DateTime.fromISO(request.input('date')).toSQL()
-        event.ticket_price = request.input('ticket_price')
-        await user.related('events').save(event)
+  // The SHOW method retrieves a single Event by ID
+  public async show({ params }: HttpContextContract) {
+    try {
+      const event = await Event.find(params.id)
+      if (event) {
+        await event.preload('user')
+        await event.preload('tickets')
         return event
       }
-
-      // The DESTROY method deletes a particular event
-      public async destroy({ response, auth, params }: HttpContextContract) {
-        const user = await auth.authenticate()
-        await Event.query().where('user_id', user.id).where('id', params.id).delete()
-        return response.redirect('/dashboard')
-      }
-
-      // The findEvent method retrieves a single Event by ID without HttpContext
-      private async findEvent(id: number): Promise<Event | null> {
-        try {
-          const event = await Event.find(id)
-          if (event) {
-            await event.preload('user')
-            await event.preload('tickets')
-            return event
-          }
-        } catch (error) {
-          console.log(error)
-        }
-        return null
-      }
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+
+  // The UPDATE method updates the detail of an Event
+  public async update({ request, params }: HttpContextContract) {
+    const event = await Event.find(params.id)
+    if (event) {
+      event.title = request.input('title')
+      event.description = request.input('description')
+      event.date = request.input('date')
+      event.ticket_price = request.input('ticket_price')
+      if (await event.save()) {
+        await event.preload('user')
+        await event.preload('tickets')
+        return event
+      }
+      return // 422
+    }
+    return // 401
+  }
+
+
+  // The STORE method is used to creat a new Event
+  public async store({ auth, request }: HttpContextContract) {
+    const user = await auth.authenticate()
+    const event = new Event()
+    event.title = request.input('title')
+    event.description = request.input('description')
+    event.date = DateTime.fromISO(request.input('date')).toSQL()
+    event.ticket_price = request.input('ticket_price')
+    await user.related('events').save(event)
+    return event
+  }
+
+  // The DESTROY method deletes a particular event
+  public async destroy({ response, auth, params }: HttpContextContract) {
+    const user = await auth.authenticate()
+    await Event.query().where('user_id', user.id).where('id', params.id).delete()
+    return response.redirect('/dashboard')
+  }
+
+  // The findEvent method retrieves a single Event by ID without HttpContext
+  private async findEvent(id: number): Promise<Event | null> {
+    try {
+      const event = await Event.find(id)
+      if (event) {
+        await event.preload('user')
+        await event.preload('tickets')
+        return event
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    return null
+  }
+}
 ```
 
 The controller includes all the possible CRUD functionalities such as retrieving, storing, updating and deleting the event.
@@ -371,66 +363,88 @@ The controller includes all the possible CRUD functionalities such as retrieving
 Next, we will add the `Join` method to allow the user to join up the event using the code sent when purchasing the Event ticket.
 
 ```js
-      public async join({ params, auth, response, request }: HttpContextContract) {
+public async join({
+    params,
+    auth,
+    response,
+    request
+}: HttpContextContract) {
 
-        // Check if user already join event
-        const user = await auth.authenticate()
-        const ticket = await Ticket.query()
-          .where('user_id', user.id)
-          .where('code', request.input('code'))
-          .where('event_id', params.id)
-          .first()
-        if (!ticket) {
-          // Throw Ticket not found exception
-          return response.json({ message: 'Ticket code not valid' })
-        }
-        if (
-          ticket &&
-          ticket.is_used &&
-          ticket.used_date <= DateTime.fromSQL(ticket.used_date).toSQL()
-        ) {
-          // throw Used_ticket_Error
-          return response.json({ message: 'Ticket already used' })
-        }
+    // Check if user already join event
+    const user = await auth.authenticate()
+    const ticket = await Ticket.query()
+        .where('user_id', user.id)
+        .where('code', request.input('code'))
+        .where('event_id', params.id)
+        .first()
+    if (!ticket) {
+        // Throw Ticket not found exception
+        return response.json({
+            message: 'Ticket code not valid'
+        })
+    }
+    if (
+        ticket &&
+        ticket.is_used &&
+        ticket.used_date <= DateTime.fromSQL(ticket.used_date).toSQL()
+    ) {
+        // throw Used_ticket_Error
+        return response.json({
+            message: 'Ticket already used'
+        })
+    }
 
-        // Create a new User Event to indicate that the Event Ticket has be used
-        const joinEvent = new UserEvent()
-        joinEvent.user_id = user.id
-        joinEvent.event_id = params.id
-        ticket.is_used = true
-        ticket.used_date = DateTime.now().toSQL()
-        if ((await joinEvent.save()) && (await ticket.save())) {
-          // Send Success Response
-          return response
+    // Create a new User Event to indicate that the Event Ticket has be used
+    const joinEvent = new UserEvent()
+    joinEvent.user_id = user.id
+    joinEvent.event_id = params.id
+    ticket.is_used = true
+    ticket.used_date = DateTime.now().toSQL()
+    if ((await joinEvent.save()) && (await ticket.save())) {
+        // Send Success Response
+        return response
             .status(200)
-            .json({ message: "You've joined event with id: " + params.id + ' successfully' })
-        }
-        return response.status(500).json({ message: 'Internal Server Error, Please try again' })
-      }
+            .json({
+                message: "You've joined event with id: " + params.id + ' successfully'
+            })
+    }
+    return response.status(500).json({
+        message: 'Internal Server Error, Please try again'
+    })
+}
 ```
 
 Next, We will include the `buy` method which is used to purchase an Event ticket for the upcoming event.
 
 ```js
-  public async buy({ request, params, response, auth }: HttpContextContract) {
+public async buy({
+    request,
+    params,
+    response,
+    auth
+}: HttpContextContract) {
     // Find Event
     const event = await this.findEvent(params.id)
 
     if (event === null) {
-      return response.status(404).json({ message: 'Event is not valid' })
+        return response.status(404).json({
+            message: 'Event is not valid'
+        })
     }
     const user = await auth.authenticate()
 
     // Check if price matches
     if (event.ticket_price != request.input('amount')) {
-      const message =
-        'Ticket with id: ' +
-        event.id +
-        ' with amount: ' +
-        event.ticket_price +
-        ' does not equal to User amount: ' +
-        request.input('amount')
-      return response.status(422).json({ message })
+        const message =
+            'Ticket with id: ' +
+            event.id +
+            ' with amount: ' +
+            event.ticket_price +
+            ' does not equal to User amount: ' +
+            request.input('amount')
+        return response.status(422).json({
+            message
+        })
     }
 
     const ticket = new Ticket()
@@ -440,34 +454,36 @@ Next, We will include the `buy` method which is used to purchase an Event ticket
     ticket.code = Keygen.hex(5)
 
     if (ticket.save()) {
-      // Send User Email, Send Code
-      await User.find(user.id)
-      return response
-        .status(200)
-        .json({ message: 'Payment for event with id: ' + event.id + ' was successful' })
+        // Send User Email, Send Code
+        await User.find(user.id)
+        return response
+            .status(200)
+            .json({
+                message: 'Payment for event with id: ' + event.id + ' was successful'
+            })
     }
 
-    return response.status(500).json({ message: 'Internal Server Error, Please try again' })
-  }
-
+    return response.status(500).json({
+        message: 'Internal Server Error, Please try again'
+    })
+}
 ```
 
 #### Creating endpoint routes
-
-In this step, we will create all the routes for this project once by adding the following code to our `start/routes.ts` file.
+In this step, we will create all the routes for this project by adding the following code to our `start/routes.ts` file.
 
 ```js
 Route.group(() => {
-  Route.group(() => {
-    Route.post("register", "AuthController.register");
-    Route.post("login", "AuthController.login");
-  }).prefix("auth");
-  Route.group(() => {
-    Route.resource("events", "EventsController").apiOnly();
-    Route.resource("tickets", "TicketsController").apiOnly();
-    Route.post("events/buy/:id", "EventsController.buy");
-    Route.post("events/join/:id", "EventsController.join");
-  }).middleware("auth:api");
+    Route.group(() => {
+        Route.post("register", "AuthController.register");
+        Route.post("login", "AuthController.login");
+    }).prefix("auth");
+    Route.group(() => {
+        Route.resource("events", "EventsController").apiOnly();
+        Route.resource("tickets", "TicketsController").apiOnly();
+        Route.post("events/buy/:id", "EventsController.buy");
+        Route.post("events/join/:id", "EventsController.join");
+    }).middleware("auth:api");
 }).prefix("api/v1");
 ```
 
@@ -477,11 +493,10 @@ You can test out your API immediately by using either [Postman](https://www.post
 
 ![Test the API](/engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/buildpreview.png)
 
-The image above shows how to testing the API using Postman.
+*Testing the API using Postman*
 
 ### Step 2 — Building the Frontend
-
-In setting up the Frontend, we will use the recommended Vite web development build tool to create our Vue 3 project.
+In setting up the Frontend, we will use the recommended `Vite` web development build tool to create our Vue 3 project.
 
 Run the following command to install using Vite:
 
@@ -492,16 +507,17 @@ npm install
 npm run dev
 ```
 
-You can read through the installation process in the [official documentations](https://v3.vuejs.org/guide/installation.html###cli).
+You can read through the installation process in the [official documentation](https://v3.vuejs.org/guide/installation.html###cli).
 
-#### Creating Routes
-
+#### Creating routes
 Next, we will create all the routes that will be used in this project at once by defining a new `route.js` file inside the `src` folder and adding the following codes.
 
 ```js
-//src/routes.js
-
-import { createRouter, createWebHistory } from "vue-router";
+// src/routes.js
+import {
+    createRouter,
+    createWebHistory
+} from "vue-router";
 
 import store from "./store";
 import Home from "./views/Home.vue";
@@ -513,99 +529,104 @@ import Admin from "./layouts/Admin.vue";
 import Add from "./views/dashboard/Add.vue";
 import AdminHome from "./views/dashboard/Admin.vue";
 
-const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: Home,
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: Register,
-  },
+const routes = [{
+        path: "/",
+        name: "home",
+        component: Home,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+    },
+    {
+        path: "/register",
+        name: "register",
+        component: Register,
+    },
 
-  // Protected Routes here
+    // Protected Routes here
 ];
-const router = createRouter({ history: createWebHistory(), routes });
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+});
 
 export default router;
 ```
 
-In the code above, we created different routes for `login`, `register`, `index` and protected routes such as `admin` and `user` below.
+In the code above, we created different routes for `login`, `register`, `index` and protected routes such as `admin` and `user` below:
 
 ```js
 {
     path: "/user/:id",
     name: "user",
     component: User,
-    meta: { requiresAuth: true },
-    beforeEnter(to, from, next) {
-      if (
-        store.getters["isUser"] &&
-        parseInt(store.state.user.id) === parseInt(to.params.id)
-      ) {
-        next();
-      } else {
-        next({
-          name: "login",
-        });
-      }
+    meta: {
+        requiresAuth: true
     },
-  },
-  {
+    beforeEnter(to, from, next) {
+        if (
+            store.getters["isUser"] &&
+            parseInt(store.state.user.id) === parseInt(to.params.id)
+        ) {
+            next();
+        } else {
+            next({
+                name: "login",
+            });
+        }
+    },
+}, {
     path: "/admin",
     name: "admin",
     component: Admin,
-    meta: { requiresAuth: true },
-    children: [
-      {
-        path: "add",
-        component: Add,
-      },
-      {
-        path: "/",
-        component: AdminHome,
-      },
+    meta: {
+        requiresAuth: true
+    },
+    children: [{
+            path: "add",
+            component: Add,
+        },
+        {
+            path: "/",
+            component: AdminHome,
+        },
     ],
     beforeEnter(to, from, next) {
-      if (store.getters["isAdmin"]) {
-        next();
-      } else {
-        next({
-          name: "login",
-        });
-      }
+        if (store.getters["isAdmin"]) {
+            next();
+        } else {
+            next({
+                name: "login",
+            });
+        }
     },
-  },
-
+},
 ```
 
 The `beforeEach` route hook checks each route for any authentication metadata and if found, checks if the user navigating that route has logged in or not then redirects.
 
 ```js
 router.beforeEach((to, from, next) => {
-  to.matched.some((record) => {
-    console.log(record);
-    return record.meta.requiresAuth;
-  });
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (!store.state.loggedIn) {
-      next({
-        path: "/login",
-        query: { redirect: to.fullPath },
-      });
+    to.matched.some((record) => {
+        console.log(record);
+        return record.meta.requiresAuth;
+    });
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+        if (!store.state.loggedIn) {
+            next({
+                path: "/login",
+                query: {
+                    redirect: to.fullPath
+                },
+            });
+        } else {
+            next();
+        }
     } else {
-      next();
+        next();
     }
-  } else {
-    next();
-  }
 });
 ```
 
@@ -626,7 +647,6 @@ createApp(App).use(router).use(store).mount("#app");
 ```
 
 #### Set up user authentication
-
 We will start by creating the login and register views in the `src/views` folder, run the following commands to create these files.
 
 ```bash
@@ -637,61 +657,7 @@ touch register.vue
 Next, we add the following code to create in the `login.vue` to create the login form and also the login process with error handling.
 
 ```html
-<template>
-  <div class="text-center banner p-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card card-custom p-5">
-            <div class="container p-5">
-              <div class="pb-5">
-                <div class="text-center pb-3">
-                  <h5 class="authBtn">Login</h5>
-                  <small class="authBtnInner">
-                    Equipped with the cutting edge features that make a 21st
-                    Century Ticketing Platform,
-                  </small>
-                  <hr />
-                </div>
-                <form @submit.prevent="login">
-                  <div class="form-group">
-                    <input
-                      name="email"
-                      type="email"
-                      v-model="email"
-                      class="form-control"
-                      placeholder="Email"
-                    />
-                    <span class="text-danger"> {{ emailError }} </span>
-                  </div>
-                  <div class="form-group">
-                    <input
-                      name="password"
-                      type="password"
-                      v-model="password"
-                      class="form-control"
-                      placeholder="Password"
-                    />
-                    <span class="text-danger"> {{ passwordError }} </span>
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-lg btn-block customBtn"
-                  >
-                    Login
-                  </button>
-                </form>
-              </div>
-              <p>
-                New members? <router-link to="/register">Register</router-link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
+
 ```
 
 We will add the following code to the login file:
@@ -763,12 +729,11 @@ export default {
 };
 ```
 
-In the code above, the HTML mockup generates a Login form with a submit button, we also handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is click.
+In the code above, the HTML mockup generates a login form with a submit button. We handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is click.
 
 The registration process is almost the same as the Login process, you can take a quick glance at the code [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/blob/main/src/views/Register.vue).
 
 #### Creating the store
-
 Next, we will create our Vuex store, create a new `store.js` file inside the `src` folder and add the following codes.
 
 ```bash
@@ -850,6 +815,7 @@ const store = createStore({
     },
   },
 });
+
 export default store;
 ```
 
@@ -857,12 +823,11 @@ The store is where will manipulate all our data, we retrieved them from the API,
 
 In the store, we used the repository pattern to separate concerns, loose coupling in communicating with the API, you can have a sneak peek of the repository pattern [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/tree/main/src/repositories) and how to implement it [here](https://medium.com/backenders-club/consuming-apis-using-the-repository-pattern-in-vue-js-e64671b27b09).
 
-#### Creating the Homepage
-
+#### Creating the homepage
 Next, we will create the homepage where are the events from being displayed from the state, create a file in `src/views` folder called `Home.vue` and add the following code.
 
 ```html
-// Home.vue
+<!--Home.vue-->
 
 <template>
   <div class="text-center banner">
@@ -906,7 +871,7 @@ The scripts display all the events by calling out the `Events` component. The `E
 <script></script>
 ```
 
-and the JS script below:
+And, the JavaScript below:
 
 ```js
 import Event from "./Event.vue";
@@ -925,7 +890,6 @@ export default {
 ```
 
 #### Displaying a single Event
-
 To view a single event, we created a route in the `routes.js` file and linked it with each event. The route is defined as below:
 
 ```js
@@ -941,7 +905,7 @@ import Ticket from "./views/Ticket.vue";
 The route is pointing to a `Ticket` view and we have already created that inside the `src/views` folders.
 
 ```html
-// src/views/Ticket.vue
+<!--src/views/Ticket.vue-->
 
 <template>
   <div class="text-center banner p-3 pb-5">
@@ -997,7 +961,7 @@ The Ticket component displays the events information including the Ticket price 
 
 ### Testing the project
 
-Here is a preview of what we have developed so far.
+Here is a preview of what we have developed so far:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -1007,15 +971,13 @@ AdonisJS Backend Repository [here](https://github.com/Kaperskyguru/ticketing-sys
 
 Vuejs 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
 
-### Further reading/References
+### Conclusion
+In this tutorial, we developed a ticketing system application using AdonisJS as the backend and VueJs 3 for the frontend.
 
+We have learned how to create a Ticketing system API with AdonisJS 5 including Authentication and authorization, how to structure the project and how to consume the API using Vue 3 and the composition API.
+
+### Further reading
 - [AdonisJS Tutorial: The Ultimate Guide (2021)](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
 - [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 - [Adonis.js 5 Official Documentation](https://preview.adonisjs.com/)
 - [Vue 3 Official Documentation](https://v3.vuejs.org/)
-
-### Conclusion
-
-In this tutorial, we developed a ticketing system application using AdonisJS as the backend and VueJs 3 for the frontend.
-
-We have learned how to create a Ticketing system API with AdonisJS 5 including Authentication and authorization, how to structure the project and how to consume the API using Vue 3 and the composition API.
