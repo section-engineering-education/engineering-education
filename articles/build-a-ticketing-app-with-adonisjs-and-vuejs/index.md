@@ -10,7 +10,7 @@ date: 2021-04-08T00:00:00-23:45
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejshero.png
+  - url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/hero.png
     alt: Adonis.js example image
 ---
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability, and speed.
