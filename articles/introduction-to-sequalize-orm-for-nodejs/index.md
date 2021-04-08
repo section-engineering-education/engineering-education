@@ -243,3 +243,6 @@ In general, it mainly depends on the type of database you're using that will inf
 For more reference on Sequelize, be sure to check their [documentation](https://sequelize.org/master/manual/getting-started.html) for more clarity.
 
 Happy Coding :>)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
