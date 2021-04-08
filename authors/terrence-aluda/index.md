@@ -3,5 +3,8 @@ title: Terrence Aluda
 type: engineering-education/author
 twitter: https://twitter.com/terrence_AA
 ---
-Terrence Aluda is an undergraduate Computer Technology student at Jomo Kenyatta University of Agriculture and Technology, Kenya. He loves developing Data Science and Machine Learning applications and has a passion for Artificial Intelligence, FinTech, and CyberSecurity.
+Terrence Aluda is an undergraduate Computer Technology student at the Jomo Kenyatta University of Agriculture and Technology, Kenya skilled in backend web development. His current main area of focus is Data Science. 
+He has a great passion for Artificial Intelligence.
+
+His website is found [here](https://www.terrence-aluda.com/).
 

@@ -7,7 +7,7 @@ title: How to Generate Random Numbers in Python
 description: This article will go over how to generate random numbers in Python. Computers cannot be completely random without getting input from actual random events. True-random events are very rare.
 author: mike-white
 date: 2021-01-13T00:00:00-19:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
