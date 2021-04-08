@@ -1,7 +1,7 @@
 ## Building Simple cryptocurrency system using Node.js
 
 In this tutorial, we are going to demonstrate how to build a simple cryptocurrency system, called thecoin.
-![Image title](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchain/trade.jpg)
+![Image title](engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
 
 We are going to implement the concepts of JavaScript classes and Node.js.
 
@@ -14,9 +14,9 @@ To follow this tutorial successfully, you’ll need to have the following:
 
 
 ### WHAT IS BLOCKCHAIN
-![Bitcoin Image](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
+![Bitcoin Image](engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
 Digital currencies such as Bitcoin, Ethereum are powered and adopted with powerful technology **the Blockchain**. It uses Cryptography to securely connect and maintain a list of records growing continuously known as **Blocks**
-![ethereum](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchain/ethereum.jpg)
+![ethereum](engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 **Blockchain** as the name states it's a block of transactions data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
 
 > Let's get into code
@@ -156,7 +156,7 @@ But before we dive into running the code, let's create a new instance of the `Bl
 
 Typing this command to our terminal `node thecoin.js` will result in this 
 
-![output](engineering-education/building-web-server-with-vlangbuilding-a-simple-cryptocurrency-blockchain/output.png)
+![output](engineering-education/building-a-simple-cryptocurrency-blockchain/output.png)
 
 **NOTE:** >Before running the command ensure to navigate on the right path on your terminal.
 
