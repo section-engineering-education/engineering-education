@@ -1,47 +1,87 @@
-Short Message Service (SMS) is one of the best marketing strategies that organizations can use to keep their clients close.  SMS integration in a mobile or a web application effectively reaches out to customers as most people check their message inbox than emails. SMS are mobile-friendly and can reach a broad demographic cover.
-Vonage's SMS API allows programmers to integrate messaging services into an application with ease. Vonage's API's benefits are support local phone numbers, low latency, high delivery rates, and modern web technologies support.
-This article will enable you to integrate SMS functionality into a Nodejs application using Vonage SMS API. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/send-sms-in-nodejs-using-vonage-api/
+title: How to send SMS in Node.js using Vonage's SMS API
+description: This article provides a step by step guide on how to send sms in Node.js using the Vonage API. Short text messages allow developers and companies to reach out to the target audience quickly. 
+author: mercy-weave
+date: 2021-04-01T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/send-sms-in-nodejs-using-vonage-api/hero.png
+    alt: Sending SMS in Nodejs using vonage's SMS API
+---
+Short Message Service (SMS) is one of the best marketing strategies that organizations use to communicate with their clients. Using SMS in your mobile or a web application allows you to reach out to more customers since many people check their message inbox than emails. 
+<!--more-->
+Vonage's SMS API allows programmers to integrate messaging services into an application with ease. The API's benefits include:
+- Support for local phone numbers.
+- Low latency.
+- High delivery rates.
+- Modern web technologies support.
+
+### Goal
+This article will enable you to integrate SMS functionality into a Node.js application using Vonage's SMS API. 
 
 ### Table of contents
 + Introduction
 + Setting up a Vonage account
 + Setting up a Node application
 + Installing dependencies
-+ Implemeting Sending SMS using Vonage's SMS API
++ Implementing SMS functionalities
 + Conclusion
 
 ### Setting up Vonage account.
-1. Navigate to [Vonage's](https://dashboard.nexmo.com/sign-up) website to create an account for free. The platform allows you to have a free trial for $2, after which you will require to pay. 
-2. Create your account by supplying your email address and a strong password. 
-3. Under the phone number, provide a number for which we will test our application.
-4. Since we will use Nodejs, select it as the programming language.
+1. Navigate to [Vonage's](https://dashboard.nexmo.com/sign-up) website to create an account for free. The platform allows you to have a free trial for $2, after which you will be required to pay. 
+2. Create an account by inputting your email address and a strong password. 
+3. In the phone number field, provide a valid number that we will use to test the application.
+4. Since we will use Node.js, select it as the target programming language.
 5. Click on SMS, then wait for your account to be set up.
 
 You have successfully created a Vonage account; your dashboard should look like this.
+
 ![Vonage's Dashboard](/engineering-education/flutter-folder-organization/dashboard.png)
 
-### Setting up out Node application
+### Creating the Node application
+**Init application**
 
-#### Init application
-Setup up the node application by running the below command:
+Setup up the node application by running the following command:
+
 ```bash
 npm init
 ```
-This command will create an empty package.json for our application. `package.json` holds the metadata about the project's dependencies, scripts, and version.
 
-#### Install dependencies
-Next, we will install the dependencies for our application. We will use `express` as our backend framework for Node, `EJS` as our template engine, `body-parser` to parse HTTP request body, `nexmo API` for sending the message, and `socket.io` to request a delivery report for our messages. To install the dependencies and save them to our package.json, run the below command in your terminal.
+This command will create an empty `package.json` file for our application. It will hold the project's metadata which includes dependencies, scripts, and version.
+
+**Install dependencies**
+
+Next, we will install the required dependencies. 
+>We will use `express` as our backend framework for Node, `EJS` as our template engine, `body-parser` to parse HTTP request body, `nexmo API` for sending the message, and `socket.io` to request a delivery report for our messages. 
+
+To install these dependencies, run the following command in your terminal.
+
 ```bash
 npm install –save express, nexmo, eggs, body-parser, socket.io, fetch
 ```
-#### Nodemon
-We will need `nodemon` to continuously watch our application as we develop.  I prefer installing nodemon globally. To install nodemon, run the following command.
+
+**Nodemon**
+
+We will need `nodemon` to help us monitor changes and restart the server.  I prefer installing `nodemon` globally. To install nodemon, run the following command.
+
 ```bash
 npm install -g nodemon
 ```
-We are all set. Now let us get to the code!
+
+We are all set. Now, let's start coding!
+
 ### Implementation
-First we need to create out applications entry point file. I will name this as `app.js`. This file will contain out driver code. You can set app’s entry point using the init command or manually set up within the package.json file. In out app.js, we will import our dependencies as shown below:
+Firstly, we need to create our application's entry point file. I will name this as `app.js`. 
+
+> You can set the app's entry point using the `init` command or manually set up within the `package.json` file. 
+
+In the `app.js`, we will import our dependencies, as shown below:
+
 ```js
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -51,7 +91,8 @@ const socketio = require('socket.io');
 const fetch = require("node-fetch");
 ```
 
-Next, we initialize our application with express and set up our templating engine, EJS.  The EJS allows us to use `.html` extensions for our views. We will add the below code to our  `app.js`:
+Next, we initialize the application with `express` and set up our templating engine, `EJS`.  `EJS` allows us to use `.html` extensions for our views. We will add the following code to the  `app.js` file:
+
 ```js
 const app = express()
 //Setting up the body parser middleware and ejs template engine
@@ -63,11 +104,11 @@ app.use(express.static(__dirname + '/public'));
 
 //body parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(bodyParser.urlencoded({extended:true});
 ```
 
-Specifying our index route as our app will only have a single page `index.html`.
+Specify the `index` route as `index.html` since the app will only have a single page `
+
 ```js
 //index route
 app.get('/', (request, response) =>{
@@ -75,7 +116,8 @@ app.get('/', (request, response) =>{
 });
 ```
 ### Creating our view
-We will create a folder called `views` where we will store our view files. Under the folder, we create an `index.html` file where we will have the input fields for holding the phone number and message to be sent. Here is how the `index.html` will look like:
+We will create a folder called `views` where we will store our template files. In the folder, create an `index.html` file. It will contain the input fields for the `phone number` and `message` to be sent. Here is the code for the `index.html`:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -110,10 +152,10 @@ We will create a folder called `views` where we will store our view files. Under
 </body>
 </html>
 ```
-![Our application before sending the message](/engineering-education/flutter-folder-organization/text-before-sending.png)
+![Our application before sending the message](/engineering-education/send-sms-in-nodejs-using-vonage-api/text-before-sending.png)
 
 ### Client-side javascript driver code
-We will create a public folder in the root of our application. In the pulic folder, we will create a `main.js` folder to contain the javascript code for fetching the variables used to trigger the send-SMS functionality.
+We will create a public folder in the root of our application. In the public folder, we will create a `main.js` file to contain the JavaScript code for fetching the variables used to trigger the send-SMS functionality.
 ```js
 // phone number
 const phoneNumber= document.getElementById('number'),
@@ -129,15 +171,16 @@ response = document.querySelector(".respose");
 ```
 
 ### Adding the send functionality
-since we have grabbed our send button from the html form, we need to add an even listener to the button to trigger the send message function. The send fucntionality code is as shown  below:
+Since we have added a `send button` in the html form, we need to attach an `EventListener` to the button to trigger the `send` function. The code for this functionality is shown below.
+
 ```js
 button.addEventListener('click', send, false);
 function send() {
     // getting value form the variabled  fetched
-    const number = phoneNumber.value.replace(/\D/g, '');// elim inate non numeric characters from out number
+    const number = phoneNumber.value.replace(/\D/g, '');// eliminate non-numeric characters
     const text = textMessage.value;
     
-    // Making post request with the data from our server
+    // Making a post request with the data to the our server
     fetch('/', {
         method: 'post',
         headers: {
@@ -227,3 +270,6 @@ To conclude, we learned how to set up Vonage's SMS API by creating an account, s
 + Vonage API: https://developer.nexmo.com/messaging/sms/overview
 + Socket.io: https://socket.io/
 + Fetch API: https://dev.to/attacomsian/introduction-to-javascript-fetch-api-4f4c
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
