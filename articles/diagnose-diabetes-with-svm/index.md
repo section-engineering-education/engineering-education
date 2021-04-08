@@ -142,6 +142,7 @@ We can see the amount of data that we will use for training and testing.
 ```python
 X_train.head()
 ```
+
 ![X_train](/engineering-education/diagnose-diabetes-with-svm/18.jpg)
 
 We need to normalize the features in our training set. Normalizing adjusts each column in our dataset to have a mean of 0 and a standard deviation of 1. It will make the training process faster.
@@ -158,8 +159,8 @@ Let us view the first five rows of our training set after normalization.
 # View first 5 rows
 X_train[:5, :]
 ```
-![normalize training set](/engineering-education/diagnose-diabetes-with-svm/19.jpg)
 
+![normalize training set](/engineering-education/diagnose-diabetes-with-svm/19.jpg)
 
 ## CREATING THE SVM MODEL
 The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary separates the positive class and the negative class. It could be linear or non-linear. The polynomial and RBF kernels are suitable when the classes are not linearly separable.
@@ -175,6 +176,7 @@ for k in ('linear', 'poly', 'rbf', 'sigmoid'):
     print(k)
     print(accuracy_score(y_train, y_pred))
 ```
+
 ![svm kernels](/engineering-education/diagnose-diabetes-with-svm/20.jpg)
 
 The RBF (radial basis function) kernel gives us the highest accuracy score. So for this dataset, it offers the best decision boundary. The RBF kernel finds a decision boundary that separates 82.4% of the patients correctly. Now let us create our model using the RBF kernel.
@@ -184,7 +186,6 @@ The RBF (radial basis function) kernel gives us the highest accuracy score. So f
 model = svm.SVC(kernel='rbf')
 model.fit(X_train, y_train)
 ```
-
 
 ## DIAGNOSING A NEW PATIENT
 We use our model to make predictions on a new patient.
@@ -201,6 +202,7 @@ patient = scaler.transform(patient)
     
 model.predict(patient)
 ```
+
 ![single-prediction](/engineering-education/diagnose-diabetes-with-svm/21.jpg)
 
 Let us create a numpy array containing the new patient record. We normalize the data before passing it to the model for prediction. We use the transform method this time instead of the fit_transform method. That will use the same mean and standard deviation that normalized the training set.  The result is 1, so the patient has diabetes. Let us see what our model will predict if we change the glucose level from 150 to 50.
@@ -213,6 +215,7 @@ patient = scaler.transform(patient)
     
 model.predict(patient)
 ```
+
 ![single-prediction](/engineering-education/diagnose-diabetes-with-svm/22.jpg)
 
 We get 0, which means this patient does not have diabetes. Let us view our test set.
@@ -221,6 +224,7 @@ We get 0, which means this patient does not have diabetes. Let us view our test 
 # Viewing Test Set
 X_test
 ```
+
 ![X_test](/engineering-education/diagnose-diabetes-with-svm/23.jpg)
 
 Now let us try to diagnose the third patient in the test set (with id 113). Remember, the index of the third patient is two since we start counting from 0.
@@ -229,6 +233,7 @@ Now let us try to diagnose the third patient in the test set (with id 113). Reme
 # Checking the third patient in the test set with index 2
 X_test.iloc[2]
 ```
+
 ![single-prediction](/engineering-education/diagnose-diabetes-with-svm/24.jpg)
 
 ```python
@@ -241,6 +246,7 @@ t_patient = scaler.transform(t_patient)
 print("Model's Prediction:", model.predict(t_patient))
 print("Actual Prediction:", y_test.iloc[2])
 ```
+
 ![patient-prediction](/engineering-education/diagnose-diabetes-with-svm/25.jpg)
 
 We can see that our model prediction is 0, and the actual prediction is also 0. This means our model made the correct prediction for this patient. The third patient does not have diabetes.
@@ -254,6 +260,7 @@ X_test = scaler.transform(X_test)
 y_pred = model.predict(X_test)
 print("Accuracy Score:", accuracy_score(y_test, y_pred))
 ```
+
 ![accuracy score](/engineering-education/diagnose-diabetes-with-svm/26.jpg)
 
 We normalize the test set before making predictions. We have an accuracy of 77.60, which is lower than what we had on the training set. This is because the test set contains data our model has not seen before.
@@ -265,6 +272,7 @@ What if our model had predicted that no one had diabetes? What would be our accu
 y_zero = np.zeros(y_test.shape)
 print(accuracy_score(y_test, y_zero))
 ```
+
 ![all-zero prediction](/engineering-education/diagnose-diabetes-with-svm/27.jpg)
 
 When we compare our test set with an all-zero array,  we get an accuracy score of 67.7%. Our model accuracy is 67.7%, even when it predicts that no one in the test set has diabetes. This means our dataset is unbalanced. There are more samples of the class without diabetes in our dataset. So accuracy score will not help us evaluate our model. We can measure the performance of our model by using Precision and Recall. 
@@ -288,6 +296,7 @@ print("Precision is", precision)
 print("Recall is", recall)
 print("F1 score is", f1)
 ```
+
 ![precision recall f1](/engineering-education/diagnose-diabetes-with-svm/28.jpg)
 
 We can also generate a classification report.
@@ -296,6 +305,7 @@ We can also generate a classification report.
 # Generate classification report
 print(classification_report(y_test, y_pred))
 ```
+
 ![classification report](/engineering-education/diagnose-diabetes-with-svm/29.jpg)
 
 Our precision, recall, and f1-score are approximately 0.71, 0.52, and 0.60 respectively. The model is not too good. For a healthcare problem, we could end up misdiagnosing patients that have diabetes. This is why we pay more attention to the recall score. We can improve our results by collecting more data.
@@ -304,4 +314,3 @@ Our precision, recall, and f1-score are approximately 0.71, 0.52, and 0.60 respe
 In this guide, we learned how to use the four SVM kernels from Sci-kit Learn to build a machine learning model. Different kernels work better on distinct datasets. You can use pandas-profiling to do quick exploratory data analysis.
 
 Accuracy score is not a good metric for evaluating a dataset with skewed classes. That is, an imbalanced dataset, where there are more samples of one class than the other. We can use precision, recall, and f1-score to check our model. We can improve our model performance by collecting more data. Remember, “It's not who has the best algorithm that wins; it's who has the most data.”
-
