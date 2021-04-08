@@ -17,3 +17,5 @@ We hope this helps get you started off on the right foot - and we're always happ
 | [How to Write a Tutorial](https://www.wikihow.com/Write-a-Tutorial) | - | - |[Technical Writing for Beginners](https://www.freecodecamp.org/news/technical-writing-for-beginners/)|
 | [Create Tech Tutorials](https://medium.com/handlebar-labs/how-to-create-tech-tutorials-7f3ecdc29f82) | - |  - | [Art of Concise Writing](https://technicalwritingtoolbox.com/2012/04/13/the-art-of-concise-writing/)|
 |  - |  - |  - | [Purdue Writing Lab](https://owl.purdue.edu/owl_exercises/sentence_structure/sentence_structure/run_ons_comma_splices_and_fused_sentences.html) |
+|  - |  - |  - | [Pixlr Image Editor](https://pixlr.com/e) |
+|  - |  - |  - | [Unsplash Creative Commons images](https://unsplash.com/) |
