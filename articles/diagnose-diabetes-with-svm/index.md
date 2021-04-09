@@ -316,4 +316,4 @@ Our precision, recall, and f1-score are approximately 0.71, 0.52, and 0.60 respe
 ## CONCLUSION
 In this guide, we learned how to use the four SVM kernels from Sci-kit Learn to build a machine learning model. Different kernels work better on distinct datasets. You can use pandas-profiling to do quick exploratory data analysis.
 
-Accuracy score is not a good metric for evaluating a dataset with skewed classes. That is a dataset with imbalanced classes, where there are more samples of one class than the other. We can use precision, recall, and f1-score to check our model. We can improve our model performance by collecting more data. Remember, “It's not who has the best algorithm that wins; it's who has the most data.”
+Accuracy score is not a good metric for evaluating a dataset with skewed classes. That is a dataset with imbalanced classes, where there are more samples of one class than the other. We can use precision, recall, and f1-score to check our model. We can improve our model performance by collecting more data.
