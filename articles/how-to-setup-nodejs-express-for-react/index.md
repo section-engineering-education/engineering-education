@@ -24,7 +24,7 @@ $npx create-react-app client
 The above commands will create a react app with the name `client` inside the root directory.
 
 ### Setting up the Express Server
-Next will be to create an Express server inside the server.js. Browse to the root directory from the terminal and run the below command:
+The next step involves creating an Express server in the file `server.js`. Browse to the root directory from the terminal and run the command mentioned below:
 
 ```bash
 $npm init -y
@@ -62,6 +62,10 @@ Line 9 to 11 – It will set a `GET route` that we will, later on, fetch from ou
 
 ### Setting up the proxy
 In this step, the Webpack development server was auto-generated when we ran the `create-react-app` command.  Our react App is running on the Webpack development server on the frontend.  We can proxy the API requests from the client-side to the API on the server-side. The API  on the server-side(Express server) will be running on port 5000.
+
+Webpack Development Server (WDS) is a unique tool that helps the developers make changes to the web app's frontend and renders them to the browser with no need to refresh the browser.
+It is unique compared to other tools that do the same in that the bundle contents are not written out as files on the disk but stored in the memory. This advantage is vital when one is trying to debug the code and styles.
+
 
 First, set up the proxy to navigate into the client directory and locate its `package.json` file. Add the below line to it.
 
@@ -144,14 +148,14 @@ Inside of `componentDidMount()`, the function `callBackendAPI()` is called. This
 On the line that contains `this.state.data` renders new data  to the [DOM](https://eloquentjavascript.net/14_dom.html)
 
 ### Running the App
-First will be to navigate to root directory `demoreactapp` and run the below command:
+We navigate to the root directory `demoreactapp` and run the command below:
 
 ```bash
 $cd demoreactapp
 $node server.js
 ```
 
-After running the `server.js`, next will be to browse to “<http://localhost:5000/express_backend>”, and the below message will be displayed:
+After running the file `server.js`, next will be to browse to “<http://localhost:5000/express_backend>”, and the below message will be displayed:
 
 ![Get Route success](/engineering-education/how-to-setup-nodejs-express-for-react/get-route-success.PNG)
 
@@ -170,10 +174,10 @@ The screen below with a message will be displayed:
 
 ![React app running](/engineering-education/how-to-setup-nodejs-express-for-react/react-app-success.PNG)
 
-Finally, we have rendered the data fetched from the `GET route` in `server.js` to our frontend React App, as demonstrated above. If the Express server is disconnected, the React server will continue running, but the connectivity to the backend will be lost, and nothing will be displayed.
+Finally, we have rendered the data fetched from the `GET route` in `server.js` to our frontend React App, as demonstrated above. If the Express server is disconnected, the React server will continue running. However, the connectivity to the backend will be lost, and nothing will be displayed.
 
 ### Conclusion
-A lot can be done with Express backend, like make calls to the database, but on this guide, we have concentrated on how to quickly connect to the backend Express server from client side react App. The code snippets and files used in this guide can be accessed at the [GitHub repository](https://github.com/verah-tech/demoreactapp.git).
+A lot can be done with Express backend, like make calls to the database, but on this guide, we have concentrated on how to quickly connect to the backend Express server from client side React App. The code snippets and files used in this guide can be accessed at the [GitHub repository](https://github.com/verah-tech/demoreactapp.git).
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
