@@ -1,7 +1,7 @@
 ### Introduction.
-Python is a programming language that creates a wide range of applications with different functionalities and capabilities. Developers find it a better choice for their Artificial Intelligence (AI), Machine Learning, and Deep Learning projects. AI has provided a technological world of endless opportunities for application developers.
+Python is a programming language that facilitates the creation of a wide range of applications with different functionalities and capabilities. Developers find it a better choice for their Artificial Intelligence (AI), Machine Learning, and Deep Learning projects. AI has provided a technological world of endless opportunities for application developers.
 
-This article will look into the reasons that make Python a programming language used by developers working in machine learning and deep learning and why it should be considered when building an AI project.
+This article highlights the reasons that make Python a popular language among developers working in machine learning and deep learning fields. It justifies why you should use Python when building AI projects.
 
 ### Understanding AI, Machine Learning, and Deep Learning.
 AI refers to any intelligence shown by a machine that can lead to a feasible solution to the problem at hand. Machine learning expands on AI methods further by using [algorithms](https://www.thinkautomation.com/eli5/what-is-an-algorithm-an-in-a-nutshell-explanation/) to analyze data and learn from the same to make better decisions.
@@ -27,7 +27,7 @@ The developers need not worry about the language's technicalities because Python
 
 Most scientists have adopted Python for Machine Learning and Deep Learning projects, which means most of the brightest minds worldwide, can be found in Python communities.
 
-**Fast development:** Python has a syntax that is easy to understand and friendly, with many frameworks and libraries the language offers makes development easy, fast, and productive. By using out-of-box solutions, a lot can be done with little code needed. It is better for developing rapid prototypes, thus accelerating the development.
+**Fast development:** Python has a syntax that is easy to understand and friendly. Furthermore, the numerous frameworks and libraries boost software development. By using out-of-box solutions, a lot can be done with little code needed. It is better for developing rapid prototypes, thus accelerating the development.
 
 **Flexible integrations:** Python projects can be integrated with other systems coded in different programming languages, meaning it is much easier to blend it with other AI projects written in other languages out there. 
 
