@@ -98,9 +98,21 @@ Once the server is running head over to
 
 ## Installing TailwindCss
 
-Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll install TailwindCss in there, as follows:
+Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll use the `init` command to setup a new project to install TailwindCss in there, as follows:
 
 ```bash
+npm init
+```
+
+or with yarn:
+
+```bash
+yarn init
+```
+
+Doing this creates a new file called `package.json` which keeps track of installed (javascript) dependencies in our project, think of it as the `requirements.txt` file that holds dependencies in  python projects. Once this is done, the next thing is to run the installation command to actually install TailwindCss, this is done as follows:
+
+``bash
 npm install tailwindcss
 ```
 
@@ -140,19 +152,19 @@ In this `style.css` file we'll add the following as stipulated by the tailwindcs
 @tailwind utilities;
 ```
 
-These are called preprocessor directives by the documentation, and you can think of them as you would preprocessor directives from a language like C++, these directives essentially paste in a lot! of utility CSS classes during compile time (A lot!). The resulting CSS from this process is what we will link to our flask templates for styling.
+According to the documentation, these are called preprocessor directives. You can think of them as you would preprocessor directives from a language like C++, these directives essentially paste in a lot! of utility CSS classes during compile time (A lot!). The resulting CSS from this process is what we will link to our flask templates for styling.
 
 Before we generate the CSS lets prepare a file where it should be dumped in. In the `static` folder we'll create another new folder called `css` and in here all our stylesheets will go, including the one we're about to generate. In this folder we'll create a new file called `main.css` and this is where our tailwind utility classes will go.
 
 ### Compiling the preprocessor directives to generate CSS
 
-In order to generate, the CSS from the preprocessor directives, we'll need to issue a command from the terminal using `npx` which is a tool that comes with npm (so ensure you have npm installed, you probably already do since node is installed). Next we'll run the following command to compile and output the result into the `main.css` for our usage.
+In order to generate, the CSS from the preprocessor directives, we'll need to issue a command from the terminal using `npx` which is a tool that comes with npm (so ensure you have npm installed, you probably already do since node is installed). Next we'll run the following command which compile the preprocessor directives from the `style.css` file into usable css, and output this result into the `main.css` for our usage.
 
 ```bash
 npx tailwindcss-cli@latest build ./src/style.css -o css/main.css
 ```
 
-This would generate a lot of utility css classes for us to use in our server templates.
+This would generate a lot of utility css classes for us to use in our server templates. Notice how the `-o` argument was used to specify where the generated css should be stored, which in our case is the `main.css` file in our  `css` folder.
 
 ## Building Our Frontend Template with TailwindCss
 
@@ -265,7 +277,7 @@ And there you have it!.
 
 ## Conclusion
 
-In this article, we've covered how to structure a simple flask app to accomodate the TailwindCss package, we also saw how to install tailwindcss and how to generate CSS from its pre-processor directives into a file of our choosing and lastly we saw how to use it in our flask templates. At the end of this session you should now be able to install tailwindcss into your flask projects and integrate it successfully into your applications.
+In this article, we've covered how to structure a simple flask app to accomodate the TailwindCss package, we also saw how to install tailwindcss and how to generate CSS from its pre-processor directives into a file of our choosing and lastly we saw how to use it in our flask templates. At the end of this article you should now be able to install tailwindcss into your flask projects and integrate it successfully into your applications. While this article focuses on integrating tailwindcss in a single module flask app, you are not limited to integrating tailwindcss only in this manner or in single file flask apps. You can use tailwindcss in more sophisticated structures, such as blueprints and make it available for only certain templates owned by a particular blueprint while still having the autonomy of using regular css-stylings in other templates. So I implore you to explore and experiment with TailwindCss as you continue your journey as a flask developer.
 
 ---
 
