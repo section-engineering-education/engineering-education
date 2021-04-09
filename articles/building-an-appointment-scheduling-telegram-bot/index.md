@@ -31,27 +31,27 @@ Run the below command in your command-line interface to install the prerequisite
 pip install faunadb telegram python_telegram_bot
 ```
 
-### Creating A Fauna Database
+### Setting Up the Fauna Database
 Sign up on their website [here](https://dashboard.fauna.com/accounts/register) and create a new database with a name of your choice. This database will house the collections, documents and other database elements relevant to this article.
 
 ![database_dashboard](/engineering-education/building-an-appointment-scheduling-telegram-bot/database_dashboard.png)
 
-#### Creating the Fauna Collections
+#### Setting Up the Fauna Collections
 The two collections you will need to create in this article are the `Users` collection and the `Appointment` collection. Visit [here](https://gist.github.com/Chukslord1/734cbaa32324eba23fa2d359b7fb33e0) for information about creating the required collections.
 
 ![create_collection](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_collection.png)
 
-#### Creating a Fauna Index
+#### Setting Up the Fauna Indexes
 To easily access and scroll through data in the databse, we need to create a Fauna index. We need to create three indexes for the database, `users_index`, `appointment_index`, and `appointment_today_index`. Also visit [here](https://gist.github.com/Chukslord1/58430aaf25f1ce32b1d872d2b5e2547b) for instructions on creating an index.
 
 ![create_index](/engineering-education/building-an-appointment-scheduling-telegram-bot/create_index.png)
 
 ![indexes](/engineering-education/building-an-appointment-scheduling-telegram-bot/indexes.png)
 
-### Integrating Fauna with Python
+### Connecting Fauna to Python
 
-#### Creating a Fauna API Key
-Visit [here](https://gist.github.com/Chukslord1/17add481d7511b1b24ae33f8ef87c99b) for information on how to create and API key. 
+#### Setting up a Fauna API Key
+Visit [here](https://gist.github.com/Chukslord1/17add481d7511b1b24ae33f8ef87c99b) for information on how to create and setup an API key. 
 
 ![new_key](/engineering-education/building-an-appointment-scheduling-telegram-bot/new_key.png)
 
