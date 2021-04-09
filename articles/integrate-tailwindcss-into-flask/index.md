@@ -97,8 +97,8 @@ Once the server is running head over to
 ![demo1](/engineering-education/integrate-tailwindcss-into-flask/demo1.jpeg)
 
 ## Installing TailwindCss
-
-Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll use the `init` command to setup a new project to install TailwindCss in there, as follows:
+use the init command to setup a new node.js environment, which will allow us to install TailwindCss using npm or yarn as follows:
+Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll use the `init` command to setup a new node.js environment, which will allow us to install TailwindCss using npm or yarn as follows:
 
 ```bash
 npm init
