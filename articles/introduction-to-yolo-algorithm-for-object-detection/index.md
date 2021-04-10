@@ -1,5 +1,21 @@
-YOLO is an algorithm that uses neural networks to provide real-time object detection. This algorithm is popular because of its speed and accuracy. It has been used in various applications to detect traffic signals, people, parking meters, and animals.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-yolo-algorithm-for-object-detection/
+title: Introduction to YOLO Algorithm for Object Detection
+description: This article will cover the basics of the YOLO algorithm for object detection. It will take readers through important aspects such as the importance, working, and application of this algorithm.  
+author: grace-karimi
+date: 2021-04-10T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/introduction-to-yolo-algorithm-for-object-detection/hero.jpg
+    alt:  yolo algorithm example image
+---
+YOLO is an algorithm that uses neural networks to provide real-time object detection. This algorithm is popular because of its speed and accuracy. It has been used in various applications to detect traffic signals, people, parking meters, and animals. 
+<!--more-->
 This article introduces readers to the YOLO algorithm for object detection and explains how it works. It also highlights some of its real-life applications.
 
 ### Introduction to object detection
@@ -11,20 +27,20 @@ This phenomenon seeks to answer two basic questions:
 
 Object detection consists of various approaches such as [fast R-CNN](https://towardsdatascience.com/understanding-fast-r-cnn-and-faster-r-cnn-for-object-detection-adbb55653d97?gi=fea1a85170b6), [Retina-Net](https://developers.arcgis.com/python/guide/how-retinanet-works/), and [Single-Shot MultiBox Detector (SSD)](https://iq.opengenus.org/single-shot-detection-ssd-algorithm/). Although these approaches have solved the challenges of data limitation and modeling in object detection, they are not able to detect objects in a single algorithm run. **YOLO algorithm** has gained popularity because of its superior performance over the aforementioned object detection techniques.
 
-### What is YOLO 
+### What is YOLO? 
 YOLO is an abbreviation for the term ‘You Only Look Once’. This is an algorithm that detects and recognizes various objects in a picture (in real-time). Object detection in YOLO is done as a regression problem and provides the class probabilities of the detected images. 
 
 YOLO algorithm employs convolutional neural networks (CNN) to detect objects in real-time. As the name suggests, the algorithm requires only a single forward propagation through a neural network to detect objects. This means that prediction in the entire image is done in a single algorithm run. The CNN is used to predict various class probabilities and bounding boxes simultaneously. 
 
 The YOLO algorithm consists of various variants. Some of the common ones include tiny YOLO and YOLOv3.
 
-### Why YOLO algorithm is important
+### Why the YOLO algorithm is important
 YOLO algorithm is important because of the following reasons:
 - **Speed:** This algorithm improves the speed of detection because it can predict objects in real-time. 
 - **High accuracy:** YOLO is a predictive technique that provides accurate results with minimal background errors. 
 - **Learning capabilities:** The algorithm has excellent learning capabilities that enable it to learn the representations of objects and apply them in object detection.  
 
-### How YOLO algorithm works
+### How the YOLO algorithm works
 YOLO algorithm works using the following three techniques:
 - Residual blocks
 - Bounding box regression
@@ -74,7 +90,7 @@ The following image shows how the three techniques are applied to produce the fi
 
 [Image Source](https://www.guidetomlandai.com/assets/img/computer_vision/YOLO.PNG)
 
-First, the image has been divided into grid cells. Each grid cell forecasts B bounding boxes and provides their confidence scores. The cells predict the class probabilities to establish the class of each object. For example, we can notice at least three classes of objects: a car, a dog, and a bicycle. All the predictions are made simultaneously using a single convolutional neural network.
+First, the image is divided into grid cells. Each grid cell forecasts B bounding boxes and provides their confidence scores. The cells predict the class probabilities to establish the class of each object. For example, we can notice at least three classes of objects: a car, a dog, and a bicycle. All the predictions are made simultaneously using a single convolutional neural network.
 
 Intersection over union ensures that the predicted bounding boxes are equal to the real boxes of the objects. This phenomenon eliminates unnecessary bounding boxes that do not meet the characteristics of the objects (like height and width). The final detection will consist of unique bounding boxes that fit the objects perfectly. 
 
@@ -87,10 +103,13 @@ YOLO algorithm can be applied in the following fields:
 - **Security:** YOLO can also be used in security systems to enforce security in an area. Let’s assume that people have been restricted from passing through a certain area for security reasons. If someone passes through the restricted area, the YOLO algorithm will detect him/her, which will require the security personnel to take further action.  
 
 ### Conclusion
-This article looked at the YOLO algorithm and how it is used in object detection. This technique provides improved detection results compared to other object detection techniques such as Fast R-CNN and Retina-Net.  
+This article has provided an overview of the YOLO algorithm and how it is used in object detection. This technique provides improved detection results compared to other object detection techniques such as Fast R-CNN and Retina-Net.  
 
 To summarize:
 - We have gained an overview of object detection and the YOLO algorithm.
-- We have gone through the main reasons why the YOLO algorithm is important
+- We have gone through the main reasons why the YOLO algorithm is important.
 - We have learned how the YOLO algorithm works. We have also gained an understanding of the main techniques used by YOLO to detect objects. 
 - We have learned the real-life applications of YOLO. 
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
