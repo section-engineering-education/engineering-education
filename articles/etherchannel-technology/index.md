@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/etherchannel-technology/hero.jpg
     alt: Ethernet Connection example image
 ---
-In most network designs, network administrators connect multiple physical Ethernet links between devices to achieve more bandwidth and redundancy.  The links get blocked by the Spanning Tree Protocol to prevent switching loops, for this reason we need a technology that will allow redundant links that the Spanning Tree Protocol will not block. The concept of ***EtherChannel Technology*** and its configurations will help one handle this with ease.
+In most network designs, network administrators connect multiple physical Ethernet links between devices to achieve more bandwidth and redundancy. The links get blocked by the Spanning Tree Protocol to prevent switching loops. For this reason, we need a technology that will allow redundant links that the Spanning Tree Protocol will not block. The concept of **EtherChannel Technology** and its configurations will help one handle this with ease.
 <!--more-->
-In this article, we will learn about what EtherChannel Technology is, how to configure and troubleshoot it, and also build a network configuration to understand how it works.
+This article will cover EtherChannel Technology, how to configure and troubleshoot it, and build a network configuration to understand how it works.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
