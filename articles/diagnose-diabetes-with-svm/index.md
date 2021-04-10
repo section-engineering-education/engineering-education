@@ -4,13 +4,13 @@
        
 In this guide, we will learn how to use machine learning to diagnose if a patient has diabetes. We can do this by using their medical records. We will use the Support Vector Machine Algorithm (from Sci-kit Learn) to build our model. The GitHub repo for this project is [here](http://github.com/Inyrkz/diagnose-diabetes-svm).
 
-## Prerequisite
+### Prerequisite
 - A PC with Jupyter Notebook
 - Basic Python Knowledge
 - Basic knowledge of Support Vector Machines 
 - Diabetes dataset from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database)
 
-## Outline
+### Outline
 - Exploratory Data Analysis with Pandas-Profiling
 - Feature Extraction
 - Split Dataset into Training and Test Set
@@ -18,7 +18,7 @@ In this guide, we will learn how to use machine learning to diagnose if a patien
 - Diagnosing a New Patient
 - Assess Model Performance
 
-## EXPLORATORY DATA ANALYSIS WITH PANDAS-PROFILING
+### EXPLORATORY DATA ANALYSIS WITH PANDAS-PROFILING
 The pandas-profiling library helps us do quick exploratory data analysis with minimal effort. To install pandas-profiling, run the code below:
 
 ```python
@@ -165,7 +165,7 @@ X_train[:5, :]
 
 ![normalize training set](/engineering-education/diagnose-diabetes-with-svm/19.jpg)
 
-## CREATING THE SVM MODEL
+### CREATING THE SVM MODEL
 The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary separates the positive class and the negative class. It could be linear or non-linear. The polynomial and RBF kernels are suitable when the classes are not linearly separable.
 
 We fit the SVM model for each kernel to our training set. We make predictions on our training set to see which kernel will give us the highest accuracy score. We call this *Hyper-Parameter Optimization*.
@@ -190,7 +190,7 @@ model = svm.SVC(kernel='rbf')
 model.fit(X_train, y_train)
 ```
 
-## DIAGNOSING A NEW PATIENT
+### DIAGNOSING A NEW PATIENT
 We use our model to make predictions on a new patient.
 
 ```python
@@ -254,7 +254,7 @@ print("Actual Prediction:", y_test.iloc[2])
 
 We can see that our model prediction is 0, and the actual prediction is also 0. This means our model made the correct prediction for this patient. The third patient does not have diabetes.
 
-## ASSESS MODEL PERFORMANCE
+### ASSESS MODEL PERFORMANCE
 Let us see the accuracy of the entire test set.
 
 ```python
@@ -313,7 +313,7 @@ print(classification_report(y_test, y_pred))
 
 Our precision, recall, and f1-score are approximately 0.71, 0.52, and 0.60 respectively. The model is not too good. For a healthcare problem, we could end up misdiagnosing patients that have diabetes. This is why we pay more attention to the recall score. We can improve our results by collecting more data.
 
-## CONCLUSION
+### CONCLUSION
 In this guide, we learned how to use the four SVM kernels from Sci-kit Learn to build a machine learning model. Different kernels work better on distinct datasets. You can use pandas-profiling to do quick exploratory data analysis.
 
 Accuracy score is not a good metric for evaluating a dataset with skewed classes. That is a dataset with imbalanced classes, where there are more samples of one class than the other. We can use precision, recall, and f1-score to check our model. We can improve our model performance by collecting more data.
