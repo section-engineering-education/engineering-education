@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs
+url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/
 title: Build a Ticketing App with AdonisJS and VueJS
 description: In this tutorial, we will learn about Adonis.js and Vue.js. We will also build a Ticketing app using Adonis.js and Vue.js.
 author: solomon-eseme
-date: 2021-04-08T00:00:00-23:45
+date: 2021-04-10T00:00:00-11:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -234,7 +234,7 @@ We have mapped the columns in our migration to the `Event` models, and also defi
 #### Creating controllers
 In this step, we will be creating our controllers and also the business logic associated with our ticketing system.
 
-> According to a [Laravel Tutorial](https://masteringbackend.com/posts/laravel-framework-the-ultimate-guide#chaptertwo), "Controllers act as a middle man between Models and Views, it processes all the inputs sent by the user from the view."
+> According to a [tutorial on Laravel](https://masteringbackend.com/posts/laravel-framework-the-ultimate-guide#chaptertwo), "Controllers act as a middle man between Models and Views, it processes all the inputs sent by the user from the view."
 
 We will start by creating the `AuthController` and setting up the login and registration processes as shown below:
 
