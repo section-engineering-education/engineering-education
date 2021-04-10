@@ -3,13 +3,13 @@ YOLO is an algorithm that uses neural networks to provide real-time object detec
 This article introduces readers to the YOLO algorithm for object detection and explains how it works. It also highlights some of its real-life applications.
 
 ### Introduction to object detection
-Object detection is a phenomenon in computer vision that involves the detection of various objects in digital images or videos. Some of the objects detected include people, cars, chairs, stones, buildings, and animals.
+Object detection is a phenomenon in [computer vision](https://en.wikipedia.org/wiki/Computer_vision) that involves the detection of various objects in digital images or videos. Some of the objects detected include people, cars, chairs, stones, buildings, and animals.
 
 This phenomenon seeks to answer two basic questions: 
 1. *What is the object?* This question seeks to identify the object in a specific image. 
 2. *Where is it?* This question seeks to establish the exact location of the object within the image. 
 
-Object detection consists of various approaches such as fast R-CNN, Retina-Net, and Single-Shot MultiBox Detector (SSD). Although these approaches have solved the challenges of data limitation and modeling in object detection, they are not able to detect objects in a single algorithm run. **YOLO algorithm** has gained popularity because of its superior performance over other object detection techniques.
+Object detection consists of various approaches such as [fast R-CNN](https://towardsdatascience.com/understanding-fast-r-cnn-and-faster-r-cnn-for-object-detection-adbb55653d97?gi=fea1a85170b6), [Retina-Net](https://developers.arcgis.com/python/guide/how-retinanet-works/), and [Single-Shot MultiBox Detector (SSD)](https://iq.opengenus.org/single-shot-detection-ssd-algorithm/). Although these approaches have solved the challenges of data limitation and modeling in object detection, they are not able to detect objects in a single algorithm run. **YOLO algorithm** has gained popularity because of its superior performance over the aforementioned object detection techniques.
 
 ### What is YOLO 
 YOLO is an abbreviation for the term ‘You Only Look Once’. This is an algorithm that detects and recognizes various objects in a picture (in real-time). Object detection in YOLO is done as a regression problem and provides the class probabilities of the detected images. 
@@ -46,7 +46,7 @@ A bounding box is an outline that highlights an object in an image. Every boundi
 - Class (for example, person, car, traffic light, etc.)- This is represented by the letter c.
 - Bounding box center (bx,by)
 
-The following image shows an example of a bounding box. The bounding box has been represented using a yellow outline. 
+The following image shows an example of a bounding box. The bounding box has been represented by a yellow outline. 
 
 ![Bounding Box](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/bounding-box.png)
 
@@ -59,7 +59,7 @@ Intersection over union (IOU) is a phenomenon in object detection that describes
 
 Each grid cell is responsible for predicting the bounding boxes and their confidence scores. The IOU is equal to 1 if the predicted bounding box is the same as the real box. This mechanism eliminates bounding boxes that are not equal to the real box. 
 
-The following is an example of how IOU works. 
+The following image provides a simple example of how IOU works. 
 
 ![IOU](/engineering-education/introduction-to-yolo-algorithm-for-object-detection/iou.jpeg)
 
@@ -87,10 +87,10 @@ YOLO algorithm can be applied in the following fields:
 - **Security:** YOLO can also be used in security systems to enforce security in an area. Let’s assume that people have been restricted from passing through a certain area for security reasons. If someone passes through the restricted area, the YOLO algorithm will detect him/her, which will require the security personnel to take further action.  
 
 ### Conclusion
-This article looked at the YOLO algorithm and how it is used in object detection. This technique provides improved detection results compared to other object detection techniques.  
+This article looked at the YOLO algorithm and how it is used in object detection. This technique provides improved detection results compared to other object detection techniques such as Fast R-CNN and Retina-Net.  
 
 To summarize:
 - We have gained an overview of object detection and the YOLO algorithm.
 - We have gone through the main reasons why the YOLO algorithm is important
-- We have learned how the YOLO algorithm works. We have also gained an understanding of the main tools of YOLO that enhance object detection. 
+- We have learned how the YOLO algorithm works. We have also gained an understanding of the main techniques used by YOLO to detect objects. 
 - We have learned the real-life applications of YOLO. 
