@@ -28,9 +28,9 @@ This article will cover EtherChannel Technology, how to configure and troublesho
   - [Link Aggregation Control Protocol (LACP)](#link-aggregation-control-protocol-lacp)
 - [EtherChannel network configurations](#etherchannel-network-configurations)
   - [Step One - Basic Switch Configurations](#step-one---basic-switch-configurations)
-    - [Switch 1  configurations](#switch-1--configurations)
-    - [Switch 2  configurations](#switch-2--configurations)
-    - [Switch 3  configurations](#switch-3--configurations)
+    - [Switch 1  configurations](#switch-1--configuration)
+    - [Switch 2  configurations](#switch-2--configuration)
+    - [Switch 3  configurations](#switch-3--configuration)
   - [Step Two - Trunk ports configurations](#step-two---trunk-ports-configurations)
     - [S1 Trunk port configuration](#s1-trunk-port-configuration)
     - [S2 Trunk port configuration](#s2-trunk-port-configuration)
@@ -43,13 +43,13 @@ This article will cover EtherChannel Technology, how to configure and troublesho
 - [Troubleshooting EtherChannel](#troubleshooting-etherchannel)
 - [Conclusion](#conclusion)
 
-### Prerequisite
-As a prerequisite, the reader must have:
-- Good understanding of basic networking.
-- Good understanding of switch configuration concepts.
-- How to work with Cisco packet tracer.
-
-To download and install Cisco packet tracer on your computer, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
+### Prerequisites
+The reader must observe the following prerequisites:
+- The reader should have a good understanding of basic networking.
+- The reader should have a good understanding of switch configuration concepts.
+- It is best for the reader to know how to work with Cisco packet tracer.
+ 
+To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
 ### What is EtherChannel Technology?
 `EtherChannel Technology`  is a link aggregation technology that makes it possible to combine the number of physical links between switches into one logical link to provide high-speed links and redundancy without being blocked by the Spanning Tree Protocol. With this, there is a provision of fault tolerance, load balancing, increased bandwidth and redundancy. We form it through negotiation with two of the protocols: ***Port Aggregation Protocol (PAgp)*** and ***Link Aggregation Control Protocol (LACP)*** .
