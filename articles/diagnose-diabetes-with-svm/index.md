@@ -109,7 +109,7 @@ y.head()
 
 ![class-labels](/engineering-education/diagnose-diabetes-with-svm/13.jpg)
 
-## SPLIT DATASET INTO TRAINING AND TEST SET
+### SPLIT DATASET INTO TRAINING AND TEST SET
 We split our dataset into the training and test set. We use 75% of our dataset for training the model, and we use the remaining 25% for testing the model after training.
 
 ```python
