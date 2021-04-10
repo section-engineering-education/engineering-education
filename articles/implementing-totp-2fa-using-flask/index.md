@@ -379,7 +379,7 @@ You should get an image similar to the one below when a valid token is provided:
 
 In this article, you learned the concept of two-factor authentication and discussed different 2FA factors, including possession factor, biometric factor, and other factors. I also highlighted the importance of implementing 2FA into applications and integrated two-factor authentication using Google Authenticator and PyOTP into a Flask application.
 
-Looking to develop the two-factor authentication application further, improve the functionality or check out example code? Check out the [GitHub Repo](https://github.com).
+Looking to develop the two-factor authentication application further, improve the functionality or check out example code? Check out the [GitHub Repo](https://github.com/prince-joel/totp-section).
 
 Happy coding.
 
