@@ -1,10 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/implementing-totp-2fa-using-flask/
 title: From Theory to Practice: Implementing TOTP 2FA in Python and Flask
+description: In this tutorial we will learn about two-factor authentication and implement it in a Flask application.
+author: prince-joel
+date: 2020-04-11T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-description: Learn about two-factor authentication and implement it in a Flask application.
+  - url: /engineering-education/implementing-totp-2fa-using-flask/hero.jpg
+    alt: 2FA in Python example image
+---
+Two-factor authentication (2FA) is a security protocol that protects users by asking them to verify their identity using two authentication methods. 
+<!--more-->
 
-### Introduction
-
-Two-factor authentication (2FA) is a security protocol that protects users by asking them to verify their identity using two authentication methods. In recent times, most organizations use 2FA techniques to ensure their user’s details and avoid the possibility of hackers gaining unauthorized access.
+In recent times, most organizations use 2FA techniques to ensure their user’s details and avoid the possibility of hackers gaining unauthorized access.
 
 Two-factor authentication is setup using any of the following factors:
 
