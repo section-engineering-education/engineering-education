@@ -42,7 +42,9 @@ Time-based One-Time Password (TOTP) is a common way of implementing two-factor a
 
 ### Google Authenticator
 
-Google Authenticator uses a software-based authentication technique made by google that implements 2FA using TOTP and HMAC-based one-time password (HOTP) for authenticating users of an application. It is part of [Open Authentication](https://oauth.net/2/) (OATH).
+Google Authenticator uses a software-based authentication technique made by google that implements 2FA using TOTP and [HMAC-based](https://en.wikipedia.org/wiki/HMAC) one-time password (HOTP) for authenticating users of an application. It is part of [Open Authentication](https://oauth.net/2/) (OATH).
+
+Hash-based message authentication code (HMAC) is a technique that uses hash functions and secret keys to calculate message authentication codes.
 
 ### How TOTP Authenticator Applications Work
 
@@ -71,19 +73,23 @@ pip install flask-bootstrap4
 You will write the code for setting up the Flask server. Start by creating a file named `app.py` and save the code below in it:
 
 ```python
+# importing needed libraries
 from flask import *
 from flask_bootstrap import Bootstrap
 
+# configuring flask application
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "APP_SECRET_KEY"
 Bootstrap(app)
 
 
+# homepage route
 @app.route("/")
 def index():
     return "<h1>Hello World!</h1>"
 
 
+# running flask server
 if __name__ == "__main__":
     app.run(debug=True)
 ```
@@ -97,6 +103,7 @@ In the code above, you created a Flask server that renders the text `"Hello Worl
 You will write the code for authenticating users using a username and password. For simplicity’s sake, we will be hardcoding credentials the applications should match. Update the `app.py` file by adding the code below:
 
 ```python
+# login page route
 @app.route("/login/")
 def login():
     return render_template("login.html")
@@ -149,17 +156,23 @@ You will also create a file named `login.html` that will be stored in the `templ
 You will also write a route to handle `POST` requests made to the login page and authenticate them. Update the `app.py` file by adding the code below:
 
 ```python
+# login form route
 @app.route("/login/", methods=["POST"])
 def login_form():
+    # demo creds
     creds = {"username": "test", "password": "password"}
 
+    # getting form data
     username = request.form.get("username")
     password = request.form.get("password")
 
+    # authenticating submitted creds with demo creds
     if username == creds["username"] and password == creds["password"]:
+        # inform users if creds are valid
         flash("The credentials provided are valid", "success")
         return redirect(url_for("login"))
     else:
+        # inform users if creds are invalid
         flash("You have supplied invalid login credentials!", "danger")
         return redirect(url_for("login"))
 ```
@@ -183,6 +196,7 @@ Here is a sample Python code that demonstrates this functionality:
 ```python
 import pyotp
 
+# generating TOTP codes with provided secret
 totp = pyotp.TOTP("base32secret3232")
 print(totp.now())
 ```
@@ -192,6 +206,7 @@ You can proceed to validate generated tokens using the `verify` method. You can 
 ```python
 import pyotp
 
+# verifying TOTP codes with PyOTP
 totp = pyotp.TOTP("base32secret3232")
 print(totp.verify("492039"))
 ```
@@ -201,12 +216,13 @@ You can generate and validate Counter-based OTPs using the code below:
 ```python
 import pyotp
 
+# generating HOTP codes with PyOTP
 hotp = pyotp.HOTP("base32secret3232")
 print(hotp.at(0))
 print(hotp.at(1))
 print(hotp.at(1401))
 
-# OTP verified with a counter
+# verifying HOTP codes with PyOTP
 print(hotp.verify("316439", 1401))
 print(hotp.verify("316439", 1402))
 ```
@@ -216,6 +232,7 @@ PyOTP also provides a helper library to generate secret keys to initiate the `TO
 ```python
 import pyotp
 
+# generating random PyOTP secret keys
 print(pyotp.random_base32())
 ```
 
@@ -224,6 +241,7 @@ You might want the secret key formatted as a hex-encoded string:
 ```python
 import pyotp
 
+# generating random PyOTP in hex format
 print(pyotp.random_hex()) # returns a 32-character hex-encoded secret
 ```
 
@@ -232,6 +250,7 @@ print(pyotp.random_hex()) # returns a 32-character hex-encoded secret
 You will write the code for providing users with the page to set up TOTP 2FA. Start by updating the `login` route in the `app.py` file to redirect users to the 2FA page after successful authentication.
 
 ```python
+# redirecting users to 2FA page when creds are valid
 if username == creds["username"] and password == creds["password"]:
     return redirect(url_for("login_2fa"))
 ```
@@ -239,8 +258,10 @@ if username == creds["username"] and password == creds["password"]:
 You will also create the `login_2fa` route that will be responsible for handling TOTP 2FA. Add the following code to the `app.py` file:
 
 ```python
+# 2FA page route
 @app.route("/login/2fa/")
 def login_2fa():
+    # generating random secret key for authentication
     secret = pyotp.random_base32()
     return render_template("login_2fa.html", secret=secret)
 ```
@@ -327,15 +348,21 @@ You will also create a file named `login_2fa.html` that will be stored in the `t
 You will also write a route to handle `POST` requests made to the 2FA page and authenticate them. Update the `app.py` file by adding the code below:
 
 ```python
+# 2FA form route
 @app.route("/login/2fa/", methods=["POST"])
 def login_2fa_form():
+    # getting secret key used by user
     secret = request.form.get("secret")
+    # getting OTP provided by user
     otp = int(request.form.get("otp"))
 
+    # verifying submitted OTP with PyOTP
     if pyotp.TOTP(secret).verify(otp):
+        # inform users if OTP is valid
         flash("The TOTP 2FA token is valid", "success")
         return redirect(url_for("login_2fa"))
     else:
+        # inform users if OTP is invalid
         flash("You have supplied an invalid 2FA token!", "danger")
         return redirect(url_for("login_2fa"))
 ```
@@ -351,6 +378,8 @@ You should get an image similar to the one below when a valid token is provided:
 ### Conclusion
 
 In this article, you learned the concept of two-factor authentication and discussed different 2FA factors, including possession factor, biometric factor, and other factors. I also highlighted the importance of implementing 2FA into applications and integrated two-factor authentication using Google Authenticator and PyOTP into a Flask application.
+
+Looking to develop the two-factor authentication application further, improve the functionality or check out example code? Check out the [GitHub Repo](https://github.com).
 
 Happy coding.
 
