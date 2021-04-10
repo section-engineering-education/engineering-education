@@ -28,9 +28,9 @@ This article will cover EtherChannel Technology, how to configure and troublesho
   - [Link Aggregation Control Protocol (LACP)](#link-aggregation-control-protocol-lacp)
 - [EtherChannel network configurations](#etherchannel-network-configurations)
   - [Step One - Basic Switch Configurations](#step-one---basic-switch-configurations)
-    - [Switch 1  configurations](#switch-1--configuration)
-    - [Switch 2  configurations](#switch-2--configuration)
-    - [Switch 3  configurations](#switch-3--configuration)
+    - [Switch 1  configuration](#switch-1--configurations)
+    - [Switch 2  configuration](#switch-2--configurations)
+    - [Switch 3  configuration](#switch-3--configurations)
   - [Step Two - Trunk ports configurations](#step-two---trunk-ports-configurations)
     - [S1 Trunk port configuration](#s1-trunk-port-configuration)
     - [S2 Trunk port configuration](#s2-trunk-port-configuration)
@@ -47,18 +47,18 @@ This article will cover EtherChannel Technology, how to configure and troublesho
 The reader must observe the following prerequisites:
 - The reader should have a good understanding of basic networking.
 - The reader should have a good understanding of switch configuration concepts.
-- It is best for the reader to know how to work with Cisco packet tracer.
+- It is best for the reader to know how to work with the Cisco packet tracer.
  
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
 ### What is EtherChannel Technology?
-`EtherChannel Technology`  is a link aggregation technology that makes it possible to combine the number of physical links between switches into one logical link to provide high-speed links and redundancy without being blocked by the Spanning Tree Protocol. With this, there is a provision of fault tolerance, load balancing, increased bandwidth and redundancy. We form it through negotiation with two of the protocols: ***Port Aggregation Protocol (PAgp)*** and ***Link Aggregation Control Protocol (LACP)*** .
+`EtherChannel Technology` is a link aggregation technology that makes it possible to combine a number of physical links between switches into one logical link to provide high-speed links and redundancy without being blocked by the Spanning Tree Protocol. There is a provision of fault tolerance, load balancing, increased bandwidth, and redundancy. We form it through negotiation with the following two protocols: ***Port Aggregation Protocol (PAgp)*** and ***Link Aggregation Control Protocol (LACP)*** .
 
 ### EtherChannel terminologies
-- An `EtherChannel` is a port-channel architecture that groups together multiple physical ethernet links into a single logical link for providing fault tolerance and high speed redundant links between switches and other network devices.
-- A `Spanning Tree Protocol` is a layer 2 protocol that ensures there are no loops when a network has redundant links.
-- A `Port Channel` refers to communication links between switches that combine bandwidth of multiple ethernet ports into a single logical link.
-- A `Channel Group` is a collection of ethernet interfaces on a single switch.
+- `EtherChannel`- A port-channel architecture that groups together multiple physical Ethernet links into a single logical link which provide fault-tolerant, high-speed, and redundant links between switches and other network devices.
+- `Spanning Tree Protocol` - This is a layer 2 protocol that ensures there are no loops when a network has redundant links.
+- `Port Channel`- This refers to communication links between switches that combine multiple ethernet ports bandwidth into a single logical link.
+- `Channel Group` - A collection of ethernet interfaces on a single switch.
 
 ### EtherChannel technology protocols
 #### Port Aggregation Protocol (PAgp)
