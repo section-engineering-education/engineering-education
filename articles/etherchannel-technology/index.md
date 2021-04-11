@@ -62,12 +62,12 @@ To download and install the Cisco packet tracer on a desktop or laptop, visit [t
 
 ### EtherChannel technology protocols
 #### Port Aggregation Protocol (PAgp)
-Is a protocol that runs on cisco switches and switches licensed by vendors to support PAgp. It facilitates the automatic creation of ether channel links, by detecting the link configuration on each side and ensuring the links are compatible for forming an ether channel link. It works in three channel modes:
-- On- interfaces in this mode do not exchange PAgp packets.
-- Desirable-interfaces in this mode start negotiation with other interfaces by sending PAgp packets.
-- Auto- here interfaces respond to PAgp packets but cannot start a negotiation with other interfaces.
+Port Aggregation Protocol (PAgp) is a protocol that runs on cisco switches and switches licensed by vendors to support PAgp. It facilitates the automatic creation of ether channel links by detecting the link configuration on each side and ensuring the links are compatible for forming an ether channel link. It works in three-channel modes:
+- On- interfaces - In this mode, do not exchange PAgp packets.
+- Desirable interfaces - In this mode, start negotiation with other interfaces by sending PAgp packets.
+- Auto- here interfaces - Respond to PAgp packets but cannot start a negotiation with other interfaces.
+**NOTE: For an ether channel to form, the modes must be compatible on either side of the links. The table below shows different mode combinations that can form ether channel links.**
 
-**NOTE: For an ether channel to form the modes must be compatible on either side of the links. The table below shows mode combination that can form ether channel links.**
 | S1 mode   |    S2 mode     | Etherchannel Formation |
 | :-------- | :------------: | ---------------------: |
 | On        |       On       |                    YES |
