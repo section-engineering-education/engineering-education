@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/client-side-rendering-vs-server-side-rendering-vs-static-site-generation/
+title: Client Side Rendering VS Server Side Rendering VS Static Site Generation
+description: This article goes through the three approaches of rendering websites, their technical terms, pros and cons and when to choose one. The three approaches include Client Side Rendering(CSR), Server Side Rendering(SSR) and Static Site Generation(Pre-rendering).
+author: moses-m
+date: 2021-04-11T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/client-side-rendering-vs-server-side-rendering-vs-static-site-generation/hero.jpg
+   alt: Website rendering example image
+---
 In the development history, websites were just basic information with less or no on-page interactions. They were static web pages with no dynamic elements. HTML, CSS, and JavaScript are the standard ways to style, script, and display a page on a browser. To display these HTML elements on the screen, you would prepare an HTML document and send it in on the server-side. When a user requests a page, the server will convert the HTML elements to meaningful information on the user's screen. Websites were pretty much static. Server-side rendering was the only approach to load a `.html` page. This approach worked great at the time as most pages displayed plain text and images.
 
 Fast-forward to today, this is no longer the case, and websites have advanced. Corporates want to get the dynamic content and display it right. They want websites that load fast, smooth; with flawless performance, have a good user experience, and get search engine optimization right on search ranking results. They are the sales lead for most of the companies.
@@ -213,3 +229,6 @@ It is considered a good choice for SEO-ranked content.
 This guide has explained the three main rendering approaches. Every approach is perfect and scalable. A lot depends on the kind of application you want to build (UI, features, and number of web pages), the content to display (dynamic or static), and what you want to achieve (SEO and loading time).
 
 I hope you find the blog helpful in understanding and deciding which approach best fits your web content.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
