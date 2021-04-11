@@ -5,10 +5,19 @@ Due to numerous cases of cyber insecurity, companies have now adopted hiring hac
 
 It is considered the most useful security auditing tool since it contains information-gathering tools, web vulnerability plugins, modules, and an exploit development environment.
 
-In this tutorial, we will learn how to install Metasploit Framework on your machine and also run some major commands. But before running any command on Metasploit, one should first scan their targets' network for vulnerabilities and gather the necessary information to perform an exploit. To learn how to scan your targets, go through the [Introduction to Nmap](https://www.section.io/engineering-education/nmap-network-scanner) tutorial linked.
+In this tutorial, we will be learning how to install Metasploit Framework on your machine and also run some major commands. But before running any command on Metasploit, one should first scan their targets' network for vulnerabilities and gather the necessary information to perform an exploit. To learn how to scan your targets, go through the [Introduction to Nmap](https://www.section.io/engineering-education/nmap-network-scanner) tutorial linked.
+
+ > **Disclaimer**: This tutorial is meant for educational purposes only and for this case I will be exploiting my own local machine. 
+ 
+ For your case, it is recommended that you use Metasploitable 2 as a  target to exploit.
+ 
+ [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) is an intentionally vulnerable device that provides a secure environment to learn penetration testing.
+ 
+ You can download Metasploitable 2 from the link below:
+ * [https://information.rapid7.com/metasploitable-download.html](https://information.rapid7.com/metasploitable-download.html)
 
 ### Installing Metasploit Framework
-In most cases, the Metasploit Framework is pre-installed in [Kali Linux](https://www.kali.org/)(the most recommended OS for penetration testing). For cases where it is missing, follow through for a successful installation.
+In most cases, the Metasploit Framework is pre-installed in Kali Linux(the most recommended OS for penetration testing). For cases where it is missing, follow through for a successful installation.
 
 * First, start the terminal and run the command below. Enter your password when prompted:
 
@@ -41,7 +50,7 @@ Start Metasploit by running the command below:
 $ msfconsole
 ```
 
-Starting Metasploit may take a while since it loads everything in RAM. So be patient.
+Starting Metasploit may take a while since it loads everything in RAM. So, be patient.
 
 ![Metasploit started](/engineering-education/getting-started-with-metasploit-framework/metasploit1.png)
 
@@ -62,7 +71,7 @@ Modules are the main components of Metasploit Framework and are broken down into
 6. Nops
 7. Post
 
-**Exploits** in modules take advantage of a system vulnerability by often using simple scripts known as **payloads**.
+**Exploits** in modules take advantage of a system vulnerability by often using simple scripts known as **payloads**
 
 Any other modules that are not exploited are **auxiliary** modules. They have fascinating features that allow them to do more than just exploiting.
 
@@ -160,6 +169,10 @@ Run the command as shown below:
 ```bash
 msf5 > show targets
 ```
+password when prompted:password when prompted:
+
+
+
 
 ![Show target result](/engineering-education/getting-started-with-metasploit-framework/showTarget.png)
 
@@ -167,7 +180,7 @@ As you can see from the example above, we have a target vulnerable to the exploi
 
 #### 3. show options
 
-This command is often useful, as it shows the options yet to be set before running the exploit. Options to be set may include RHOST, LHOST, PATH, LPORT, etc.
+This command is often useful as it shows the options yet to be set before running the exploit. Options to be set may include RHOST, LHOST, PATH, LPORT, etc.
 
 The command is run as shown below:
 
@@ -220,7 +233,21 @@ msf5 > exit
 ```
 ![Exit Result](/engineering-education/getting-started-with-metasploit-framwork/exit.png)
 
+### Further reading
+For your further learning, go through the five stages of hacking by reading through the tutorials linked below:
+
+**Stages of hacking**
+
+ 1. Reconnaissance - [Nmap](https://www.section.io/engineering-education/nmap-network-scanner)
+ 1. Scanning and Enumeration - [Nikto](https://tools.kali.org/information-gathering/nikto)
+ 1. Gaining access [John the Ripper](https://www.varonis.com/blog/john-the-ripper/)
+ 1. Maintaining access - Use of malwares, backdoors, trojan horse, etc
+ 1. [Covering tracks](https://blog.eccouncil.org/4-ways-that-ethical-hackers-cover-their-tracks/) - Using ICMP Tunnels, Clearing event logs, etc.
+
 ### Conclusion
+I suggest you use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) to practice your exploits since it provides a secure environment to perform penetration testing and security research.
+
+
 In this article, we have learned the following:
 - Introduced Metasploit Framework.
 - Installing Metasploit Framework.
