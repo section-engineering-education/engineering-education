@@ -358,21 +358,21 @@ Now let us ping `PC5` from `PC3.` It should send replies as shown.
 ![Ping Connectivity](/engineering-education/etherchannel-technology/ping-pc.jpg)
 
 ### Troubleshooting EtherChannel
-In case the ether channel link is not operational, we can troubleshoot to find the errors and try to fix them.
-**Step 1** -use the `show etherchannel summary command` to view which port-channel is down.
-**Step 2** -after identifying which port channel is down. Use the command `show etherchannel port-channel`  and a detailed output will be displayed, showing the  incompatible PAgP/LACP modes configured on the switches.
-**Step 3** - we can now correct the misconfiguration by deleting that port channel using command `no interface port-channel`. For instance,  if its port-channel 1 will shall type `no interface port-channel 1` to delete port-channel 1. Then, repeat the steps that we have discussed above to create another port channel correcting the incompatible modes.
+In case the ether channel link is not operational, we can troubleshoot to find the errors and try to fix them. 
+- **Step 1** - Use the `show EtherChannel summary` command to view which port-channel is down.
+- **Step 2** - After identifying which port channel is down. Use the command to `show EtherChannel port-channel,` and a detailed output will be displayed, showing the incompatible PAgP/LACP modes configured on the switches.
+- **Step 3** - We can now correct the misconfiguration by deleting that port channel using command `no interface port-channel`. For instance,  if its port-channel 1 will shall type `no interface port-channel 1` to delete port-channel 1. Then, repeat the steps that we have discussed above to create another port channel correcting the incompatible modes.
 
 ### Conclusion
 As we have seen, ether channel technology is the convenient way to increase our bandwidth and redundancy in our networks without the redundant links being blocked by the Spanning Tree Protocol.
-
-You can find more information about inter vlan routing [here](https://contenthub.netacad.com/srwe/6.1.1).
-
 To summarize:
 - We learned what EtherChannel Technology is.
 - We explored different protocols used in EtherChannel configurations.
 - We configured a network using LACP and PAgp protocols.
 - We learned how to verify and troubleshoot Ether channels.
+
+One can find more information about inter vlan routing [here](https://contenthub.netacad.com/srwe/6.1.1).
+
 
 Happy coding.
 
