@@ -5,7 +5,8 @@ Application widgets are views that contain some of the application's functionali
 - [Introduction to Android widgets](#introduction-to-android-widgets)
 - [Types of widgets](#types-of-widgets)
 - [Creating a sample widget in Java](#creating-a-sample-widget-in-java)
-- [Limitations of Widgets](#limitations-of-widgets)
+- [Advantages of widgets](#advantages-of-widgets)
+- [Limitations of widgets](#limitations-of-widgets)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -18,8 +19,8 @@ The following prerequisites will be required to follow this tutorial:
 Widgets vary in size and support resizing. Widgets are mostly placed on a device's home screen to enable quick access to a particular mobile application's data and functionalities. They allow a user to create shortcuts for their favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
 
 #### Widget design guidelines
-- **Widget content:** A widget should concentrate on an app's most important content. The app should provide more details about the content presented on the widget.
-- **Widget configuration:** For the widgets that need configuration, you should creating a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
+- **Widget content:** A widget should contain the app's most important content while more details about the content on the widget should be in the app.
+- **Widget configuration:** For the widgets that need configuration, you should create a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
 - **Layout considerations:** Widgets should be adaptable to accommodate varying spaces.
 - **Widget resizing:** Widgets should support resizing to fine-tune the amount of information the users want to see.
 
@@ -39,7 +40,9 @@ Collection widgets display multiple elements for viewing and can support scrolli
 Hybrid widgets are widgets that can fall into more than one category. For example, a music player widget can accommodate more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
 
 ### Creating a sample widget in Java
-This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects.
+This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects. After going through this tutorial, you will be able to create an Android widget, as shown in the animations below. Find the final apk file on this [link](/engineering-education/android-application-widgets-tutorial-in-java/app-debug.apk).
+
+![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/android-app-widget.gif)
 
 ### Step 1: Create a new Android Studio project.
 Open Android Studio and create a new project. Use the Empty Activity project template and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
@@ -47,11 +50,7 @@ Open Android Studio and create a new project. Use the Empty Activity project tem
 ![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
 ### Step 2: Create a new widget
-To create a widget, navigate to the package name `com.demo.widgetsdemo` and right-click. Select `New` -> `Widget` -> `App Widget` as shown in the screenshot below.
-
-![Android Studio create new widget](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-new-widget.jpg)
-
-This will open a new window to configure the widget, as shown in the screenshot below.
+To create a widget, navigate to the package name `com.demo.widgetsdemo` and right-click. Select `New` -> `Widget` -> `App Widget`. This will open a new window to configure the widget, as shown in the screenshot below.
 
 ![Android Studio configure app widget](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-configure-app-widget.jpg)
 
@@ -67,7 +66,7 @@ From step 2 above, there are three different files created:
 - `new_app_widget.xml`: This is the layout file for the widget, It is located in the layout folder.
 
 ### Step 3: Customize widget layout file
-Open `new_app_widget_info.xml` XML file. In this file, you can add other views that you would like to be part of your widget. For our case, we will add a button below the already existing text view, as shown below.
+Open `new_app_widget_info.xml` XML file. In this file, you can add other views that you would like to be part of your widget. In this case, you will add a button below the already existing text view, as shown in the code below.
 
 ```XML
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -109,15 +108,24 @@ Open the `NewAppWidget.java` file. This class extends with the `AppWidgetProvide
 - `onEnabled()`: This method is called when a widget is created.
 `onDisabled()`: This method is called when the widget's last instance is deleted. For example, we can launch an activity within this function.
 
+The final code will be as shown below.
+
+![Widget Class Code](/engineering-education/android-application-widgets-tutorial-in-java/widget-class-code.png)
+
 ### Step 5: Edit Manifest file
-Declare the `AppWidgetProvider` class in the manifest file AndroidManifest.xml as a broadcast receiver. This declaration is usually automatically added by the IDE. If the widget class is manually created, the declaration is added manually. Refer to the AndroidManifest.xml in the [final project](https://github.com/manmusa100/App-Widgets-Demo).
+Declare the `AppWidgetProvider` class in the manifest file AndroidManifest.xml as a broadcast receiver.
+
+![Manifest Code](/engineering-education/android-application-widgets-tutorial-in-java/manifest-code.png)
+
+This declaration is usually automatically added by the IDE. If the widget class is manually created, the declaration is added manually. Refer to the AndroidManifest.xml in the [final project](https://github.com/manmusa100/App-Widgets-Demo).
 
 ### Step 6: Edit widget configurations
-In this step, we will change the widget's cover image. Open the `new_app_widget_info.xml` file. This file contains widget configuration settings. Edit the following line:
+In this step, you will change the widget's cover image. Open the `new_app_widget_info.xml` file. This file contains widget configuration settings. Edit the following line:
 
 ```xml
 android:previewImage="@drawable/example_appwidget_preview"
 ```
+
 Replace the `example_appwidget_preview` image with a drawable image of your choice. This image will act as the widget cover photo.
 
 ### Step 7: Run the App
@@ -133,12 +141,17 @@ See the screenshot below of the final widget on a home screen.
 
 Tap the widget button. This should open the app `MainActivity`.
 
-### Limitations of Widgets
+### Advantages of widgets
+Widgets have the following advantages:
+- Informational widgets allow the users to view important information without opening the app.
+- Widgets act as easy gateways to apps installed on the user's device.
+
+### Limitations of widgets
 Widgets have the following limitations:
-- **Gestures:** Widgets do not support laterall swiping.
+- **Gestures:** Widgets do not support lateral swiping.
 - **Building blocks:** Due to the limited number of gestures, widgets cannot support some elements. Refer to the [Android widget documentation](https://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout) for a list of supported views.
 
-Acces this tutorial's source code on [Github](https://github.com/manmusa100/App-Widgets-Demo)
+Access this tutorial's source code on [GitHub](https://github.com/manmusa100/App-Widgets-Demo)
 
 ### Conclusion
 To wrap up, we have learned about Android application widgets and how to implement a widget in an android app. We have discussed different types of widgets and their uses. Lastly, we have learned about the limitations of widgets. Keep in mind the [widget design guidelines](#widget-design-guidelines) discussed in this tutorial.
