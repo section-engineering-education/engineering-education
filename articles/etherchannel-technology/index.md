@@ -78,12 +78,11 @@ Port Aggregation Protocol (PAgp) is a protocol that runs on cisco switches and s
 
 
 #### Link Aggregation Control Protocol (LACP)
-This protocol works as the PAgp protocol, but its open standard and facilitates configuration of ether channel in the multi-vendor environments. The protocol is not limited to cisco switches only; it allows for both active links and standby links. It works in three modes:
-- On- interfaces in this mode do not exchange LACP packets.
-- Active-interfaces in this mode initiate negotiation with other interfaces by sending LACP packets.
-- Passive- here interfaces respond to LACP packets received but cannot start a negotiation with other interfaces.
-
-The table below shows mode combination that can form ether channel links with LACP.
+Link Aggregation Control Protocol (LACP) is similar to the PAgp protocol, but it is an open standard protocol and facilitates ether channels' configuration in multi-vendor environments. The protocol is not limited to cisco switches only; it allows both active links and standby links. It works in three modes:
+- On- interfaces- In this mode, do not exchange LACP packets.
+- Active- interfaces - In this mode, initiate negotiation with other interfaces by sending LACP packets.
+- Passive- here interfaces - Respond to LACP packets received but cannot start a negotiation with other interfaces.
+The table below shows various mode combinations that can form ether channel links with LACP.
 
 | S1 mode |    S2 mode     | Etherchannel Formation |
 | :------ | :------------: | ---------------------: |
@@ -93,7 +92,7 @@ The table below shows mode combination that can form ether channel links with LA
 | Passive |     Active     |                    YES |
 | Passive |    Passive     |                     NO |
 
-**NOTE:**`Active links` are the ether channel links currently transmitting the traffic. When one of the current active link goes down  the `Standby links` become active and takes over.
+**NOTE: Active links are the ether channel links currently transmitting the traffic. When one of the currently active links goes down, the Standby links become active and takes over.**
 
 ### EtherChannel network configurations
 In this article, we will learn how to configure ether channel using the two protocols discussed above.
