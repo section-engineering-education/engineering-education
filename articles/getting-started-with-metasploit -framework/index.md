@@ -245,3 +245,6 @@ In this article, we have learned the following:
 - Installing Metasploit Framework.
 - Major Keywords in Metasploit.
 - Staging and running exploits.
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
