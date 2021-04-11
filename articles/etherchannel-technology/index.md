@@ -95,22 +95,20 @@ The table below shows various mode combinations that can form ether channel link
 **NOTE: Active links are the ether channel links currently transmitting the traffic. When one of the currently active links goes down, the Standby links become active and takes over.**
 
 ### EtherChannel network configurations
-In this article, we will learn how to configure ether channel using the two protocols discussed above.
-
-Consider a network with 3 switches connected to each other and 3 PCs each  connected to a switch as shown:
+In this article, we will learn how to configure ether channels using the two protocols discussed above.
+Consider a network with three switches connected and 3 PCs each connected to a switch as shown:
 
 ![EtherChannel Network](/engineering-education/etherchannel-technology/network-setup.jpg)
 
-We have to configure the network to use one logical link instead of the two fastEthernet(Fa) links connecting the switches.
-We shall use 3 port-channels:
+We have to configure the network to use one logical link instead of the two FastEthernet(Fa) links connecting the switches. We shall use three-port channels:
 - Port-channel 1-link connecting S1 and S2 (Fa0/1, Fa0/2 ).
 - Port-channel 2-link connecting S2 and S3 (Fa0/3, Fa0/4 )
 - Port-channel 3-link connecting S1 and S3 (Fa0/5, Fa0/6 )
 
 We shall use LACP on port-channels 1 and 2 and PAgp on Channel 3 through the following steps;
 
-#### Step One - Basic Switch Configurations
-##### Switch 1  configurations
+### Step One - Basic Switch Configurations
+#### Switch 1  configuration
 
 ```bash
 Switch>enable
@@ -119,7 +117,7 @@ Switch(config)#hostname S1       !giving switch 1 a name S1
 S1(config)#
 
 ```
-##### Switch 2  configurations
+#### Switch 2  configuration
 
 ```bash
 Switch>enable
@@ -128,7 +126,7 @@ Switch(config)#hostname S2       !giving switch 2 a name S2
 S2(config)#
 
 ```
-##### Switch 3  configurations
+#### Switch 3  configuration
 
 ```bash
 Switch>enable
@@ -137,13 +135,13 @@ Switch(config)#hostname S3       !giving switch 3 a name S3
 S3(config)#
 
 ```
-#### Step Two - Trunk ports configurations
-Trunk ports carry the traffic between the switches. In our network  above the trunk ports are:
+### Step Two - Trunk ports configurations
+Trunk ports carry the traffic between the switches. In our network above, the trunk ports are:
 -  Fa0/1, Fa0/2 - connecting S1 and S2.
 -  Fa0/3, Fa0/4 - connecting S2 and S3.
 -  Fa0/5, Fa0/6 - connecting S1 and S3.
 
-##### S1 Trunk port configuration
+#### S1 Trunk port configuration
 
 ```bash
 
@@ -152,7 +150,7 @@ S1(config-if-range)#switchport mode trunk       !configuring the ports to be tru
 S1(config-if-range)#do write                !saving our configurations
 S1(config-if-range)#
 ```
-##### S2 Trunk port configuration
+#### S2 Trunk port configuration
 
 ```bash
 S2(config)#interface range fa0/1-4
@@ -161,7 +159,7 @@ S2(config-if-range)#do write
 S2(config-if-range)#
 ```
 
-##### S3 Trunk port configuration
+#### S3 Trunk port configuration
 
 ```bash
 
@@ -171,10 +169,10 @@ S2(config-if-range)#do write
 S2(config-if-range)#
 ```
 
-**NOTE:** `fa` refers to fast ethernet ports used for connecting the network hosts to the switch or router.
+**NOTE:`fa` refers to fast ethernet ports used for connecting the network hosts to the switch or router.**
 
-#### Step Three - Port channel configurations using LACP and PAgp
-##### Port-channel 1 configurations using LACP mode active
+### Step Three - Port-channel configurations using LACP and PAgp.
+#### Port-channel 1 configurations using LACP mode active
 Port-channel 1 is connecting switches S1 and S2 through interfaces fa0/1 and fa0/2.
 
 S1 configuration
@@ -239,7 +237,7 @@ S3(config-if)#switchport mode trunk
 S3(config-if)#do write
 ```
 
-##### Port-channel 3 configurations using PAgp mode desirable
+##### Port-channel 3 configurations using PAgp mode desirable.
 Port-Channel 3 is connecting switches S1 and S3 through interfaces fa0/5 and fa0/6.
 
 S1 configuration.
@@ -270,13 +268,13 @@ S3(config)#interface port-channel 3
 S3(config-if)#switchport mode trunk
 S3(config-if)#do write
 ```
-With all the configurations done, we have created our ether channel. We can now verify if the port channel exists and test if the PCs can communicate through the channels created.
+With all the configurations done, we have created our ether channel. We can now verify if the port-channel exists and test if the PCs can communicate through the channels created.
 
 ![EtherChannel Configured Network](/engineering-education/etherchannel-technology/etherchannel-configuration.jpg)
 
 
-#### Step Four - EtherChannel Verification
-We shall use the `show etherchannel summary` command to verify if our ether channels configured correctly.
+### Step Four - EtherChannel Verification
+We shall use the show `EtherChannel` summary command to verify if our ether channels are configured correctly.
 
 ```bash
 S1#show etherchannel summary
@@ -300,7 +298,7 @@ Group  Port-channel  Protocol    Ports
 3      Po3(SU)           PAgP   Fa0/5(P) Fa0/6(P)
 S1#
 ```
-From the above we see switch S1 is connected to two port-channel links: `Po1(SU) LACP` and `Po3(SU)` PAgp and the interfaces displayed. If we try the same on the other switches the output is same showing us that our channels are up and running.
+Above, we see switch S1 is connected to two port-channel links: `Po1(SU) LACP` and `Po3(SU) PAgp` and the interfaces displayed. If we try the same on the other switches, the output shows us that our channels are up and running.
 
 ```bash
 S2#show etherchannel summary
@@ -348,14 +346,14 @@ Group  Port-channel  Protocol    Ports
 S3#
 ```
 
-To test our connectivity, we will try to ping the PCs connected to the switches. First lets statically assign IP addresses to the three PCS. That is:
+To test our connectivity, we will try to ping the PCs connected to the switches. First, let us statically assign IP addresses to the three PCS. That is:
 - PC3 - 192.168.1.1
 - PC4 - 192.168.1.2
 - PC5 - 192.168.1.3
 
 ![Static IP addressing](/engineering-education/etherchannel-technology/static-ip-addressing.jpg)
 
-Now let us ping `PC5` from `PC3`, should be send replies as shown.
+Now let us ping `PC5` from `PC3.` It should send replies as shown.
 
 ![Ping Connectivity](/engineering-education/etherchannel-technology/ping-pc.jpg)
 
