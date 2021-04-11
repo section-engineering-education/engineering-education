@@ -9,7 +9,7 @@ In this tutorial, we will be learning how to install Metasploit Framework on you
 
  > **Disclaimer**: This tutorial is meant for educational purposes only and for this case I will be exploiting my own local machine. 
  
- For your case, it is recommended that you use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) as a  target to exploit, which is an intentionally vulnerable device that provides a secure environment to learn penetration testing.
+ For your case, it is recommended that you use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) as a target to exploit, which is an intentionally vulnerable device that provides a secure environment to learn penetration testing.
  
  You can download Metasploitable 2 from the link below:
  * [https://information.rapid7.com/metasploitable-download.html](https://information.rapid7.com/metasploitable-download.html)
