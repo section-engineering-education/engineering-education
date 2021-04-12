@@ -75,7 +75,7 @@ Python's built-in analytics tools can also easily penetrate patterns, correlate 
 
 ### Conclusion
 
-Any company's ability to derive information and insights from data in order to make good strategic decisions, stay competitive, and progress is directly linked to its performance. Python is an internationally recognized programming language that can assist users in better managing of data for a variety of reasons.
+Any company's ability to derive information and insights from data in order to make good strategic decisions, stay competitive, and progress is directly linked to its performance. Python is an internationally recognized programming language that can assist users in better managing data for a variety of reasons.
 
 Python is the most popular language among data analysts and data scientists due to its extensive set of graphical options and visualization tools that make data more available. Furthermore, it is constantly evolving and becoming more powerful, multi-featured, and versatile.
 
