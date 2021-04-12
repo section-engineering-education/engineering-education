@@ -8,7 +8,7 @@ Data is an essential part of any enterprise/business. It is critical to collect,
  
 The data science industry is rapidly expanding. Data volume can be large, making information handling difficult and time-consuming.
 
-Python is a popular programming language in scientific computing because it’s many data-oriented feature packages can speed up and simplify data processing, saving time.
+Python is a popular programming language in scientific computing because its many data-oriented feature packages can speed up and simplify data processing, thus saving time.
 
 ### Table of Content
 
