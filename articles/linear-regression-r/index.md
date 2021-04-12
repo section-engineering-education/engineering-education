@@ -69,7 +69,7 @@ There cases where, as X increases y remains the same. This means there exists no
 
 #### Least Squares method
 Least Square is a technique that is used to estimate unknown parameters, β<sub>0</sub> and β<sub>1</sub>  by minimizing the sum of squares of the verticle difference between the observations (y) and the predicted values (ŷ).
-The apprpoach minimizes the sum of squares 
+The approach minimizes the sum of squares 
 s( β<sub>0</sub> , β<sub>1</sub> ) = ∑ <sup>n</sup><sub>i=1</sub> ε<sub>𝒾</sub> = ∑ <sup>n</sup><sub>i=1</sub> ( y<sub>𝒾</sub> - ŷ<sub>𝒾</sub> ) <sup>2</sup> with respect to β<sub>0</sub> and β<sub>1</sub>.
 ŷ<sub>𝒾</sub> is the fitted line and is given by,
 ŷ = β<sub>0</sub> + β<sub>1</sub>x<sub>𝒾</sub>
@@ -165,7 +165,7 @@ plot(marketing, col="green", main="Plotting Pairs against Each Other")
 ```
 ![Plot image](/engineering-education/linear-regression-r/plot.png)
 
-The last row of our plots shows a linear relationship between sales and advertising channels ( YouTube and Facebook). This means the youtube and Facebook advertisement budgets have a positive linear impact on sales. However, the newspaper in the third plot shows no particular trend with sales.
+The last row of our plots shows a linear relationship between sales and advertising channels ( YouTube and Facebook). This means the Youtube and Facebook advertisement budgets have a positive linear impact on sales. However, the newspaper in the third plot shows no particular trend with sales.
 
 #### Step 3 Preparing our data for the model
 Most of the data we come across are not clean and therefore it requires us to do some work on them before we can use them in building our prediction model. If we don't clean up the data, we end up creating a model that is not significant for prediction purposes.
@@ -191,9 +191,9 @@ is.na(marketing)
 ```
 The output is FALSE for all values in our dataset. This means that our data has no missing values.
 - Splitting the data into training and testing set.
-For the linear regression algorithm,  the larger percentage of data is allocated to the training set and the remaining to the testing set. The training set is the part of the data that is used to implement the model while the test set is the part of the dataset that is used to validate the model. Test dataset it's assumed to be anonymous in the process of model implementation.
-For our case,we shall use a splitting ratio of 75%.
-To acheive this we use the code below.
+For the linear regression algorithm,  the larger percentage of data is allocated to the training set and the remaining to the testing set. The training set is the part of the data that is used to implement the model, while the test set is the part of the dataset that is used to validate the model. Test dataset it's assumed to be anonymous in the process of model implementation.
+For our case, we shall use a splitting ratio of 75%.
+To achieve this, we use the code below.
 ```r
 splitRation = 0.75
 set.seed(101) # to ensure same sample can be reproduced in future
@@ -248,7 +248,7 @@ F-statistic: 570.3 on 3 and 196 DF,  p-value: < 2.2e-16
 ```
 ### Understanding the model output.
 #### F-statistic
-First, we start by examing whether our model is significant or not. We consider the F-statistics and the associated p-value at the bottom of our model summary. A model is statistically significant if it has a p-value of less than 0.05. Our model, with a p-value: < 2.2e-16 is a small value compared to the benchmark p-value< 0.05. This indicates that at least one of the three explanatory variables in our model is significant to the model.
+First, we start by examining whether our model is significant or not. We consider the F-statistics and the associated p-value at the bottom of our model summary. A model is statistically significant if it has a p-value of less than 0.05. Our model, with a p-value: < 2.2e-16 is a small value compared to the benchmark p-value< 0.05. This indicates that at least one of the three explanatory variables in our model is significant to the model.
 From the `estimate column`, it's seen that the change in YouTube and Facebook advertising budget has a positive impact on the sales. For example, spending 1 dollar on YouTube advertisement will lead to a 0.001395  increase in sales units. With Facebook, the same 1 dollar advertising budget will lead to a 0.188530 increase in sales units. For the newspaper, the allocation of $1 advertising budget reports -0.001037 units of sales. This value is negligible and therefore the newspaper has no significant influence on sales. Since newspaper advertisement is not significant to our model, we remove it from the model. This gives our final model as;
 
 `sales = 3.526667 + 0.001395*youtube +0.188530*facebook`
@@ -272,13 +272,13 @@ Predplot
 
 ```
 
-Running the above code we obtain the graph below.
+Running the above code, we get the graph below.
 
 
 ![prediction plot](/engineering-education/linear-regression-r/prediction-plot.png)
 
 
-The black points in the graph above, are the plots of the actual sales of our test set while the red ones are predicted sales of the same dataset predicted using our model. Comparing the two plots, it's clear how our actual values(black) and the predicted values(red) are close to each other. This indicates that our model is good. Since this is just a qualitative way of evaluating the performance of our model, we need to find a statistical value that tells us how accurate our model is. To achieve this, we use the following metrics.
+The black points in the graph above are the plots of the actual sales of our test set, while the red ones are predicted sales of the same dataset predicted using our model. Comparing the two plots, it's clear how our actual values(black) and the predicted values(red) are close to each other. This indicates that our model is good. Since this is just a qualitative way of evaluating the performance of our model, we need to find a statistical value that tells us how accurate our model is. To achieve this, we use the following metrics.
 - Mean Absolute Error:- This is the average of the absolute difference between actual and predicted values. It's denoted as (MAE).
 - Mean Squared Error:- This is the average of the sum of squared error. It's denoted  as (MSE)
 - Root Mean Squared Error:- It is the square root of MSE. It's denoted as (RMSE).
