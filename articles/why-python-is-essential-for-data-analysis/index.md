@@ -4,11 +4,13 @@
 
 ### Introduction
 
-Data is an essential part of any enterprise/business. It is critical to collect, process, and analyze data flow in a timely and accurate manner.
+Data is an essential part of any enterprise/business. It is critical to collect, process, and analyze data flow in a timely and accurate manner to discover useful informations for decision making in business.
  
 The data science industry is rapidly expanding. Data volume can be large, making information handling difficult and time-consuming.
 
 Python is a popular programming language in scientific computing because its many data-oriented feature packages can speed up and simplify data processing, thus saving time.
+
+This article focuses on the distinct features of the Python programming language that make it a better choice for data analysis.
 
 ### Table of Content
 
