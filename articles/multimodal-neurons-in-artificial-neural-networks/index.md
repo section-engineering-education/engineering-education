@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/multimodal-neurons-in-artificial-neural-networks/
+title: Multimodal Neurons in Artificial Neural Networks
+description: In this article, we will explore the different types of neurons in artificial neural networks. 
+author: wilkister-mumbi
+date: 2021-04-12T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/multimodal-neurons-in-artificial-neural-networks/hero.jpg
+    alt: Multimodal Neurons example image
+---
+In Artificial Neural Networks, we have not seen the concept of the multimodal neuron perception being used. We have only seen neurons responding to the same class of images because we train them as image classifiers.
+<!--more-->
+
 ### Table of contents
 
 1. [Prerequisites](#prerequisites)
