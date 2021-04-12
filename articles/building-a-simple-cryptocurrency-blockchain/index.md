@@ -39,6 +39,9 @@ Digital currencies such as Bitcoin, Ethereum are powered and adopted with powerf
 ![ethereum](engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 **Blockchain** as the name states it's a block of transactions data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
 
+### Decentralization
+Blockchain stores its information in several locations. Whenever a new block is added to the blockchain, every computer is updated on the change made. This makes it very difficult to tamper with the blockchain as all computers in the network must agree with the change yet to be made for it to take place.
+
 We'll have good understanding of blockchain and cryptocurrency and it's operation. 
 
 Let's get into code
@@ -97,9 +100,6 @@ In the constructor we initialize its properties and Assign parameters to it as f
 ### The Blockchain Theorem
 
 The **blockchain Theorem** is core. It is a type of database that stores a collection of data together in groups with certain capacity of storaged, when filled are chained to the previous blocks forming a chain of data. The chain is irreversible due to decentralized nature implementation of the system, each block is assigned a timestamp when added to the chain.
-
-### Decentralization
-Blockchain stores its information in several locations. Whenever a new block is added to the blockchain, every computer is updated on the change made. This makes it very difficult to tamper with the blockchain as all computers in the network must agree with the change yet to be made for it to take place.
 
 
 So let's create a class that will maintain this operation.
