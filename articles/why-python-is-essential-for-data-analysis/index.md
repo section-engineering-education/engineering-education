@@ -47,7 +47,7 @@ Python is a multi-functional, maximally interpreted programming language with se
 
 See the features below.
 
-### Easy to Learn
+#### Easy to Learn
 
 Python focuses on both simplicity and readability, while also providing a plethora of useful options for data analysts/scientists. As a result, even novices can easily use its relatively simple syntax to create effective solutions for complex scenarios with just fewer lines of code.
 
@@ -55,19 +55,19 @@ Python focuses on both simplicity and readability, while also providing a pletho
 
 Python's extreme versatility is another powerful attribute that makes it popular among data scientists and analysts. As a result, data models can be created, data sets can be systematized, ML-powered algorithms can be developed, web services can be developed, and data mining can be used to complete various tasks in a short amount of time.
 
-### Huge Libraries Collection
+#### Huge Libraries Collection
 
 It has many completely free libraries that are open to the public. That is a key factor that makes Python essential for Data analysis and in data science too. Users who work in the field of data science, are probably familiar with names like `Pandas`, `SciPy`, `StatsModels`, and other libraries that are widely used in the data science community.
 
 It is worth noting that the libraries are constantly expanding, providing robust solutions.
 
-### Graphics and Visualization
+#### Graphics and Visualization
 
 Visual information is well known for being much easier to comprehend, work, and recall.
 
 Python provides users with a plethora of different visualization options. As a consequence, it is a must-have method for all data science, not just data processing. By developing numerous charts and graphics, as well as web-ready interactive plots, data analysts can make data more available.
 
-### Built-in data analytics tools
+#### Built-in data analytics tools
 
 Python’s built-in analytics tools make it a perfect tool for processing complex data.
 
