@@ -24,7 +24,7 @@ This article will cover:
 - [What is Elastic Stack](#What-is-elastic-stack)
 
 - [Components of the Elastic Stack](#Components-of-the-elastic-stack)
-
+  
 - [How ELK Works](#How-ELK-works)
 
 - [Benefits of using ELK](#Benefits-of-using-ELK)
