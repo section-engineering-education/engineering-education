@@ -1,13 +1,28 @@
-## Building Simple cryptocurrency system using Node.js
-A cryptocurrency is a digital or virtual currency that is secured by a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function). This makes it nearly impossible to forge transactions. Many cryptocurrencies are [decentralized](en.wikipedia.org/wiki/Decentralization) using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology - a distributed ledger enforced by a disparate network of computers.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/building-a-simple-cryptocurrency-blockchain/
+title: Building a simple cryptocurrency blockchain using Node.js
+description: This tutorial will be a brief dive into understanding blockchain, cryptocurrencies, and decentralization. We will also build a simple blockchain app using Node.Js.
+author: yitzack-rabin
+date: 2021-04-12T00:00:00-21:30
+topics: [blockchain, node.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-simple-cryptocurrency-blockchain/hero.jpg
+    alt: Bitcoin hero image
+---
+A cryptocurrency is a digital or virtual currency that is secured by a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function). This makes it nearly impossible to forge transactions. Many cryptocurrencies are [decentralized](en.wikipedia.org/wiki/Decentralization) using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology - a distributed ledger enforced by a disparate network of computers.
+<!--more-->
 A blockchain is an open, distributed ledger that records transactions in code, and it enables a cryptocurrency user to have their own copy of transaction record. Each new transaction is logged into record as it happens, and every copy of the blockchain is updated simultaneously with the new information, keeping all records identical and accurate. Thus, making it highly secure.
 
 `Thecoin` is one such implementation of a cryptocurrency that we are going to build in a while.
 
 In this tutorial, we will learn a little about blockchain and decentralization in detail. Also, we will build a simple cryptocurrency system, called `thecoin`.
 
-![Sample trade image](engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
+![Sample trade image](/engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
 
 ### Prerequisite
 To follow this tutorial successfully, you'll need to have a good understanding about:
@@ -28,12 +43,12 @@ To start with, you must have:
 - [References](#references)
 
 ### What is Blockchain?
-![Bitcoin Image](engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
+![Bitcoin Image](/engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
 *Bitcoin image*
 
 Digital cryptocurrencies such as Bitcoin and Ethereum are powered and adopted with powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
 
-![ethereum](engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
+![ethereum](/engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 *Ethereum image*
 
 **Blockchain** as the name states they are a block of transaction data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
@@ -185,7 +200,7 @@ console.log(JSON.stringify(thecoin, null, 4));
 ### Running our Blockchain
 Typing this command in our terminal `node thecoin.js` will result in:
 
-![output](engineering-education/building-a-simple-cryptocurrency-blockchain/output.png)
+![output](/engineering-education/building-a-simple-cryptocurrency-blockchain/output.jpg)
 
 > **NOTE:** Before running the command, ensure to navigate to the right path on your terminal.
 
