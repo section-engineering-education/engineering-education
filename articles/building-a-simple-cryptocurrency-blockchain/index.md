@@ -147,14 +147,15 @@ Besides, this method will verify if the hashes of each two consecutive blocks ar
  We'll create this method inside inside `Blockchain` class
 ```js
     checkValidity(){
+        // Checking validity
             for(let i = 1; i < this.block1chain.length; i++){
                 const currentBlock = this.block1chain[i];
-                const precedingBlock= this.blockchain[i-1];
+                const nextBlock= this.blockchain[i-1];
 
             if(currentBlock.hash !== currentBlock.computeHash()){
                 return false;
             }
-            if(currentBlock.nextgHash !== nextBlock.hash)
+            if(currentBlock.nextHash !== nextBlock.hash)
                 return false;
             }
             return true;
@@ -192,5 +193,11 @@ Nevertheless, I hope that this tutorial has provided you with basic skill profic
 
 Happy Coding!
 
+### References
 
+1. [Nerdwallet](https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know)
+
+2. [Forbes](https://www.forbes.com/advisor/investing/what-is-cryptocurrency/)
+
+3. [Investopidia](https://www.investopedia.com/terms/b/blockchain.asp)
 
