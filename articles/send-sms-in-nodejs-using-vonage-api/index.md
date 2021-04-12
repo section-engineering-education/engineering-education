@@ -43,7 +43,7 @@ This article will enable you to integrate SMS functionality into a Node.js appli
 
 You have successfully created a Vonage account; your dashboard should look like this.
 
-![Vonage's Dashboard](engineering-education/send-sms-in-nodejs-using-vonage-api/dashboard.png)
+![Vonage's Dashboard](/engineering-education/send-sms-in-nodejs-using-vonage-api/dashboard.png)
 
 ### Creating the Node.js application
 
