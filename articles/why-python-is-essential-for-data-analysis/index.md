@@ -43,7 +43,7 @@ Data analysts are in charge of interpreting data, analyzing the results using st
 
 ### What makes python a brilliant choice for Data analysis?
 
-Python is a multi-functional, maximally interpreted programming language with a number of advantages that is often used to streamline massive, complex data sets. Python has a number of distinguishing characteristics that make it the best option for data analysis.
+Python is a multi-functional, maximally interpreted programming language with several advantages that are often used to streamline massive, complex data sets. Python has a number of distinguishing characteristics that make it the best option for data analysis.
 
 See the features below.
 
