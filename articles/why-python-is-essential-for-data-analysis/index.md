@@ -30,7 +30,7 @@ Python is a programming language that can be used for a wide range of tasks. It 
 
 Data analysis is the process of gathering raw data and converting it into information that users can use to make decisions.
 
-It entails inspecting, cleansing, transforming, and modeling data in order to uncover valuable information, draw conclusions, and aid decision-making.
+It entails inspecting, cleansing, transforming, and modeling data to uncover valuable information, draw conclusions, and aid decision-making.
 In today's business world, data analysis plays an important role in making scientific decisions and assisting businesses in operating more efficiently.
  
 Data mining is a form of data analysis technique that emphasizes statistical modeling and information exploration for predictive rather than strictly descriptive purposes.
