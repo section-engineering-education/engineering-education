@@ -38,7 +38,7 @@ It allows a programmer to fetch and modify resources from a server. REST API is 
 ### Setting up the application
 First, you need to set your application by installing the Flutter SDK on your computer as explained [here](https://flutter.dev/docs/get-started/install).  After installing the SDK, we now need to set up our local machine project. In case you have not used flutter before, check out this [link](https://flutter.dev/docs/get-started/test-drive#create-app) for a stepwise explanation to creating a flutter project. 
 
-#### API key and Client Secret
+#### API key and client secret
 We will build our application based on the Github API. Therefore, we need to obtain the GitHub `client key` and `secret` to access the API. Check [this link](https://www.knowband.com/blog/user-manual/get-github-client-id-client-secret-api-details/) for a complete guide on getting the `client key` and `secret`.
 
 #### Organizing the folders
