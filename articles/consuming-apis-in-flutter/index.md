@@ -47,7 +47,7 @@ Instead of writing our code on a single file, we need to organize the folders wi
 Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](/engineering-education/flutter-folder-organization/) article for the preferable folder organization. 
 
 The final folder organization should appear as below:
-```
+```bash
 lib
     ┣ models
     ┃ ┗ User.dart
