@@ -6,7 +6,7 @@ url: /engineering-education/ios-tasks-app-using-swift/
 title: Build a Tasks iOS Application using Swift
 description: In this tutorial you will understand the workflow for iOS application development. Then, you will develop a Tasks app using Swift that has features like adding and deleting tasks.
 author: saiharsha-balasubramaniam
-date: 2021-03-26T00:00:00-08:00
+date: 2021-04-12T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
