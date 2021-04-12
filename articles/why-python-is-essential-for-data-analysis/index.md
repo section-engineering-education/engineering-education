@@ -1,10 +1,21 @@
-# WHY PYTHON IS ESSENTIAL FOR DATA ANALYSIS
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/why-python-is-essential-for-data-analysis/
+title: Why Python is essential for Data Analysis?
+description: In this article, we will discuss about why Python is highly preferred for Data analysis. We will go through it's benefits by understanding who Data analysts are, and what do they do.
+author: majiyebo-ezra-shewuri
+date: 2021-04-12T00:00:00-22:00
+topics: []
+excerpt_separator: 
+images:
 
-![hero image](/engineering-education/why-python-is-essential-for-data-analysis/datascience.jpg)
-
-### Introduction
+ - url: /engineering-education/why-python-is-essential-for-data-analysis/hero.jpg
+   alt: Python example image
+---
 Data is an essential part of any enterprise/business. It is critical to collect, process, and analyze data flow in a timely and accurate manner to discover useful informations, for decision making in business.
-
+<!--more-->
 The data science industry is rapidly expanding. Data volume can be large, making information handling difficult and time-consuming.
 
 Python is a popular programming language in scientific computing, because it has many data-oriented feature packages that can speed up and simplify data processing, thus saving time.
