@@ -21,6 +21,7 @@ Python is a popular programming language in scientific computing because its man
 ### What is Python?
 
 Python is an object-oriented, high-level programming language.
+
 Its built-in data structures and properties, combined with dynamic typing and binding, make it ideal for Application Development and its use as a scripting language. Python's simple syntax emphasizes readability and reduces programming maintenance.
 
 Python is a programming language that can be used for a wide range of tasks. It can be used for other programming activities such as software creation, web development, script writing, unlike `HTML`, `CSS`, and `JavaScript`. 
