@@ -51,7 +51,7 @@ See the features below.
 
 Python focuses on both simplicity and readability, while also providing a plethora of useful options for data analysts/scientists. As a result, even novices can easily use its relatively simple syntax to create effective solutions for complex scenarios with just fewer lines of code.
 
-### Flexibility
+#### Flexibility
 
 Python's extreme versatility is another powerful attribute that makes it popular among data scientists and analysts. As a result, data models can be created, data sets can be systematized, ML-powered algorithms can be developed, web services can be developed, and data mining can be used to complete various tasks in a short amount of time.
 
