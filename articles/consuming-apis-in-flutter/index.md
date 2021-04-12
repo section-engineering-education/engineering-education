@@ -6,7 +6,7 @@ url: /engineering-education/consuming-apis-in-flutter/
 title: Consuming APIs in Flutter
 description: In this article, we will understand APIs and how to use them in Flutter. We will also learn to use the GitHub API in a flutter application.
 author: jerim-kaura
-date: 2021-03-31T00:00:00-19:00
+date: 2021-04-12T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,11 @@ images:
  - url: /engineering-education/consuming-apis-in-flutter/hero.png
    alt: APIs in Flutter example image
 ---
-Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. 
+Application Programming Interface(API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.
 <!--more-->
+This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. 
 
-It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.
-
-This article will demonstrate how to fetch and consume data from a server using a RESTful API in a flutter application. According to Wikipedia, Representational State Transfer API is an architectural subset of HTTP commonly used to create interactive applications that use web services. It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application from [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
+It allows a programmer to fetch and modify resources from a server. REST API is preferred because it supports most protocols and data formats. In this tutorial, we will use HTTP and JSON data format. To learn mode about RESTFUL APIs, check out this [link](https://en.wikipedia.org/wiki/Representational_state_transfer). You can download the code for this application from [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
 
 ### Prerequisites
 1. A basic understanding of Flutter
