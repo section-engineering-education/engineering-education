@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: 
 url: /engineering-education/designing-iot-solutions/
-title: Designing IoT Solutions
+title: An Overview of IoT Technology
 description: This article will cover the basics of IoT and the building blocks of IoT solutions. At the end of the article, the reader will learn how IoT solutions work. 
 author: elly-omondi
 date: 2021-04-18T00:00:00-18:00
