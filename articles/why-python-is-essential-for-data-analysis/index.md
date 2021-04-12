@@ -4,8 +4,7 @@
 
 ### Introduction
 
-Data is an essential part of any enterprise/business.
-It is critical to collect, process, and analyze data flow in a timely and accurate manner.
+Data is an essential part of any enterprise/business. It is critical to collect, process, and analyze data flow in a timely and accurate manner.
  
 The data science industry is rapidly expanding. Data volume can be large, making information handling difficult and time-consuming.
 
