@@ -151,10 +151,13 @@ Besides, this method will verify if the hashes of each two consecutive blocks ar
             for(let i = 1; i < this.block1chain.length; i++){
                 const currentBlock = this.block1chain[i];
                 const nextBlock= this.blockchain[i-1];
-
+            // Checking current blcok hash
+            
             if(currentBlock.hash !== currentBlock.computeHash()){
                 return false;
             }
+            // Comparing current block hash with the next block
+
             if(currentBlock.nextHash !== nextBlock.hash)
                 return false;
             }
