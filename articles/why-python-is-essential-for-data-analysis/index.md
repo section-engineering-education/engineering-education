@@ -17,6 +17,7 @@ Python is a popular programming language in scientific computing because its man
 - Who is a Data analyst?
 - What makes Python a brilliant choice for Data analysis?
 - Conclusion
+- Reference
 
 ### What is Python?
 
