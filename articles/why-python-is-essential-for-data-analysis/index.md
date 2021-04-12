@@ -1,6 +1,6 @@
 # WHY PYTHON IS ESSENTIAL FOR DATA ANALYSIS
 
-![hero image](url:/engineering-education/why-python-is-essential-for-data-analysis/datascience.jpg)
+![hero image](/engineering-education/why-python-is-essential-for-data-analysis/hero.jpg)
 
 ### Introduction
 
