@@ -13,35 +13,31 @@ images:
   - url: /engineering-education/creating-a-virtual-assistant-using-python/hero.jpg
     alt: Virtual Assistant Image Example
 ---
-<<<<<<< HEAD:articles/a-step-by-step-guide-to-creating-a-virtual-assistant-using-python (copy)/index.md
+
 A virtual assistant, also known as an AI assistant or a digital assistant, is a computer program that recognizes natural language voice commands and performs tasks for the user. This article guides you through the process of creating your own voice assistant through the use of a python library.
-=======
 
-A virtual assistant, also known as an AI assistant or a digital assistant, is a computer program that recognizes natural language voice commands and performs tasks for the user. This article will use a python library to incorporate Alexa and will guide you through the process of creating your own voice assistant.
-
->>>>>>> 9e83ed16d2a96e5c995b82b0608b0ae5afbb5f12:articles/creating-a-virtual-assistant-using-python/index.md
 <!--more-->
 
-For this tutorial, I will be writing the codes on Pycharm by Jetbrains.
+For this tutorial, I will be writing the code on Pycharm IDE by Jetbrains.
 
-PyCharm is an integrated development platform for computer programming, with an emphasis on the Python programming language. JetBrains, a Czech company, built it. To download Pycharm, click [here](https://www.jetbrains.com/pycharm/download/).
+PyCharm is an integrated development platform for computer programming, with an emphasis on the Python programming language. JetBrains, a Czech company, built it. Click [here](https://www.jetbrains.com/pycharm/download/) to download Pycharm.
 
-After downloading and installing Pycharm, launch the application and click on file on the file menu, then select new project. You will get a pop-up message asking you for a name for your project. Kindly give it a desired name, but for this article, we will give our project a title called “vitualBot”.
+After downloading and installing Pycharm, launch the application and click on the file menu, then select new project. You will get a pop-up message asking you for your project's name. Kindly give it a desired name, but for this article, we will give our project the title “vitualBot”.
 
-The project will load and once it is done, kindly clear your screen from the automated content to have a clean screen to write your codes in the main.py file.
+The project will load. Once loading is complete, clear the automated content in the "main.py" file to have a clean screen for your code.
 
 ### What does a virtual assistant do?
 
 1. It listens for your command
 2. It responds to your command with either a success or failure response.
 
-For this project, we need 3 python libraries, which include
+For this project, we need 3 python libraries, which include:
 
-1. Python Speech Recognition: Speech recognition is the method of translating spoken words to text. Google Speech Engine, Google Cloud Speech API, Microsoft Bing Voice Recognition, and IBM Speech to Text are only a few of the speech recognition engines and APIs that Python supports.
+1. Python Speech Recognition: Speech recognition is the process of translating spoken words to text. Google Speech Engine, Google Cloud Speech API, Microsoft Bing Voice Recognition, and IBM Speech to Text are only a few of the speech recognition engines and APIs that Python supports.
 
 The first step in a speech recognition system is to translate the audio signal into a computer-readable format. Typically, this is a spectrogram. It's a three-dimensional graph with time on the x-axis, frequency on the y-axis, and color representing strength.
 
-To use the Python speech recognition library, click this [link](https://pypi.org/project/SpeechRecognition/) and you should see the page as shown in the image below. Copy the text circled in red and paste in your terminal.
+To use the Python speech recognition library, click this [link](https://pypi.org/project/SpeechRecognition/) and you should see the page as shown in the image below. Copy the text circled in red.
 
 ![Speech Recognition library download page](/engineering-education/creating-a-virtual-assistant-using-python/python-speech.png)
 
@@ -59,7 +55,7 @@ Once you have successfully installed the second package, we will continue to ins
 
 ### Note:
 
-for Linux users, installing the Pyaudio, you might encounter an error, to fix the error and install PyAudio successfully, kindly follow the steps below:
+for Linux users, installing the Pyaudio, you might encounter an error when installing Pyaudio. Follow the steps to fix the error:
 
 1. Install **_portaudio_** modules using this command:
 
@@ -93,7 +89,7 @@ sudo make install
 pip install pyaudio
 ```
 
-We have successfully installed the three libraries. Now, let get our Virtual assistant alive!!!
+We have successfully installed the three libraries. Now, let's get our Virtual assistant alive!!!
 
 ```python
 # import the library needed for the virtual assistant
@@ -126,6 +122,6 @@ engine.runAndWait()
 
 ```
 
-There are many things you can achieve with python libraries. With the above tutorial, you should be able to dive more into making your virtual assistant more smarter.
+There are many things you can achieve with Python libraries. With the above tutorial, you should be able to dive more into making your virtual assistant more smarter.
 
 Thanks for reading.
