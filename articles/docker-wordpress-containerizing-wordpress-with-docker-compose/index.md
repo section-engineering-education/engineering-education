@@ -6,7 +6,7 @@ url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docke
 title: Containerizing WordPress with Docker-Compose
 description: This article provides a step by step guide on how to use Docker in a WordPress application. Docker Compose simplifies the management of an application's service dependencies.
 author: rose-waitherero
-date: 2021-04-10T00:00:00-12:00
+date: 2021-04-12T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -18,9 +18,13 @@ images:
 <!--more-->
 Most applications involve more than one architectural component. In such applications, Docker-compose will help you run these components as defined in your application stack. It provides a single file that defines how different containers interact with each other as required by your application stack.
 
-A good example of a stack application is WordPress. WordPress is an open-source API for the content management system. WordPress API is used to create beautiful websites, blogs, or apps. It consists of a phpMyAdmin, MySQL database container, and a WordPress installation container. Docker allows us to create a simple `YAML` config file to bundle these WordPress containers (components). The components will interact and run as one application. We will use Docker-compose to run these three WordPress API containers to utilize the WordPress content management system.
+A good example of a stack application is WordPress. WordPress is an open-source API for the content management system. WordPress API is used to create beautiful websites, blogs, or apps. It consists of a phpMyAdmin, MySQL database container, and a WordPress installation container. 
 
-Typically, setting up a WordPress installation involves multiple steps. You need to set up the WordPress environment manually. This can be very cumbersome. Furthermore, you should establish a local web server, configure the server to execute PHP code, and set up a MySQL database. You can also use pre-build bundles like MAMP for MacOS or XAMPP and Wamp for Windows to set all WordPress components on your local computer's system.
+Docker allows us to create a simple `YAML` config file to bundle these WordPress containers (components). The components will interact and run as one application. We will use Docker-compose to run these three WordPress API containers to utilize the WordPress content management system.
+
+Typically, setting up a WordPress installation involves multiple steps. You need to set up the WordPress environment manually. This can be very cumbersome. Furthermore, you should establish a local web server, configure the server to execute PHP code, and set up a MySQL database. 
+
+You can also use pre-built bundles like MAMP for MacOS or XAMPP and Wamp for Windows to set all WordPress components on your local computer's system.
 
 However, with Docker, you create a single file and run few commands. This will set up everything within Docker containers, and your WordPress will run fine. This is the most straightforward way to set up a WordPress website environment.
 
@@ -41,8 +45,9 @@ While installing Docker on Windows, you might come across this error.
 
 To solve this, download and install the [WSL 2 Linux kernel](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package). Restart the Docker desktop, and the error will be resolved.
 
-> We will be using images that are readily available in the [Docker Hub](https://hub.docker.com/). This include
+> We will be using images that are readily available in the [Docker Hub](https://hub.docker.com/). 
 
+These include:
 - [WordPress](https://hub.docker.com/_/wordpress) - We need a WordPress image to create a WordPress website. WordPress image includes the Apache server that we need to execute PHP code.
 - [MySQL](https://hub.docker.com/_/mysql) - This will set the WordPress environment variables such as the MySQL root password, users, and database.
 - [phpMyAdmin](https://hub.docker.com/_/phpmyadmin) - It allows us to view database tables and columns.
@@ -50,9 +55,9 @@ To solve this, download and install the [WSL 2 Linux kernel](https://docs.micros
 We are now ready to create a single `YAML` file that will set all of these Docker images and containers.
 
 ### Setting the YAML file
-First, create a project directory in your computer preferred location. I.e. `cd desktop`, And then your project directory `mkdir wordpress-docker`
+First, create a project directory in your computer preferred location. i.e. `cd desktop`, And then your project directory `mkdir wordpress-docker`
 
-Change directory to the newly created directory with `cd wordpress-docker`
+Change directory to the newly created directory with `cd wordpress-docker`.
 
 Inside the `wordpress-docker` directory, create a `.yaml` file, i.e. `docker-compose.yaml`. Run `type nul >> docker-compose.yaml` to create the file. If your are on Linux or Mac use `touch docker-compose.yaml`.
 
@@ -69,7 +74,7 @@ Go ahead and include the following line in the .yaml file top-level.
 Version: '3'
 ```
 
-- Services - Defines the types of containers to run. In this case, theY include WordPress and MySQL.
+- Services - Defines the types of containers to run. In this case, they include WordPress and MySQL.
 
 ```yaml
 services:
@@ -101,7 +106,9 @@ container_name: database_container
 restart: always
 ```
 
-- Container image: To run a MySQL database, you need a MySQL image as provided in the [MySQL Docker hub](https://hub.docker.com/_/mysql). Ensure to include the latest version of the container image. Set this image, as shown below.
+- Container image: To run a MySQL database, you need a MySQL image as provided in the [MySQL Docker hub](https://hub.docker.com/_/mysql). Ensure to include the latest version of the container image. 
+
+Set this image, as shown below.
 
 ```yaml
 image: mysql
@@ -219,14 +226,13 @@ volumes:
 ```
 
 ### Testing
-
 The YAML file is ready to initialize the defined Docker container. Run the following command to set this container.
 
 ```bash
 docker-compose up -d
 ```
 
-> Ensure you are running the above command from the directory where your YAML file is located.
+> Ensure you are running the command above from the directory where your YAML file is located.
 
 This will download all the environs required by WordPress. If you look at your directory, you'll realize that there are new files and folders. These are the WordPress files downloaded from the guideline set in the `docker-compose.yaml`.
 
@@ -249,7 +255,6 @@ And you are done. You have dockerized a WordPress website.
 Run `docker-compose down` to cut down the two containers.
 
 ### Setting PHPMyAdmin
-
 Since we are using Mysql, we can add the service phpMyAdmin to access and view the database.
 
 Go ahead and include the following [phpMyAdmin service](https://hub.docker.com/_/phpmyadmin) and its environs in your YAML file.
@@ -273,16 +278,19 @@ Navigate to `http://localhost:8080/` to view the phpMyAdmin. Enter your authenti
 
 ![wordpress PHPMyAdmin](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/wordpress-php-my-admin.jpg)
 
+### Conclusion
 We now have WordPress up and running. This is an easier way to set up the WordPress API. Besides, you can use this method to carry out WordPress testing before releasing it to the public.
 
+Happy coding!
+
 ### Further learning
-[Getting Started with Docker](/engineering-education/getting-started-with-docker/)
-[Understanding Docker Concepts](/engineering-education/docker-concepts/)
-[How to Create Django Docker Images](/engineering-education/django-docker/)
-[How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
-[Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
-[Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
-[Breaking Down Kubernetes vs Docker Swarm](/engineering-education/breaking-down-kubernetes-vs-docker-swarm/)
+- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+- [How to Create Django Docker Images](/engineering-education/django-docker/)
+- [How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
+- [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+- [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
+- [Breaking Down Kubernetes vs Docker Swarm](/engineering-education/breaking-down-kubernetes-vs-docker-swarm/)
 
 
 ---
