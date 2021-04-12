@@ -14,28 +14,22 @@ images:
   - url: /engineering-education/ios-tasks-app-using-swift/hero.jpg
     alt: Build a Tasks iOS Application using Swift
 ---
-
-iOS is one of the most used mobile platforms today, along with Android. iOS Application Development is done primarily using XCode and Swift. XCode is an IDE developed by Apple for developing rich and performant applications for iOS and some of their other platforms such as macOS. Swift was developed as a replacement for Objective-C, as a primary language for iOS development.
+iOS is one of the most used mobile platforms today, along with Android. iOS Application Development is done primarily using XCode and Swift. XCode is an IDE developed by Apple used to develop rich and performant applications for iOS and some of their other platforms such as macOS. 
 <!--more-->
-Let us learn iOS App Development by building a Tasks app using Swift.
+Swift was developed as a replacement for Objective-C, as a primary language for iOS development. Let us learn iOS App Development by building a Tasks app using Swift.
 
 ### Goals
-
 In this article, we aim to accomplish the following tasks:
-
 - Understand the workflow for iOS application development.
 - Develop a Tasks app using Swift that has features like adding and deleting tasks.
 
 ### Prerequisites
-
 - A machine that runs macOS.
 - A basic understanding of the Swift language. Link to get started: [Swift Docs](https://swift.org/documentation/).
 - A working XCode installation. Check out [this article](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) to get started.
 
-### Set Up a Project
-
+### Set up a project
 Let's now get started with setting up a new project.
-
 - Open XCode.
 - Now, click on "Create a New XCode Project".
 
@@ -51,14 +45,12 @@ Let's now get started with setting up a new project.
 
 - Click on "create".
 
-### Implementation and Coding!
-
-Let us dive right into programming the application. Now, once we create the project, XCode takes us to the main IDE window. 
+### Implementation and coding
+Let's dive right into programming the application. Now, once we create the project, XCode takes us to the main IDE window. 
 
 ![XCode Main Window](/engineering-education/ios-tasks-app-using-swift/xcode-main-window.png)
 
-#### Getting Started
-
+#### Getting started
 To get started, click on the `ContentView.swift` file on the right pane. This file consists of the initial user interface of the project, where the views are defined. It consists of a struct, `ContentView` where the view is defined. 
 
 ```swift
@@ -83,7 +75,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-Now, let us define our ContentView. We would be making use of SwiftUI, a UI toolkit developed by Apple to accelerate the development of iOS apps.
+Now, let's define our ContentView. We will be making use of the SwiftUI, a UI toolkit developed by Apple to accelerate the development of iOS apps.
 
 **ContentView.swift**
 
@@ -146,8 +138,7 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 #### Creating the DataStore
-
-Create a new Swift file and name it as `DataStore.swift`. Here we have to define the datastore where the task items would be stored. We will be importing the `Foundation` library that provides a layer for data storage.
+Create a new Swift file and name it as `DataStore.swift`. Here we have to define the datastore where the task items will be stored. We will be importing the `Foundation` library that provides a layer for data storage.
 
 ```swift
 import Foundation
@@ -167,10 +158,10 @@ class TaskDataStore: ObservableObject {
 }
 ```
 
-### Creating AddTask and DeleteTask Functions
+### Creating AddTask and DeleteTask functions
+Let's now add the core functionality to our Tasks app. 
 
-Let us now add the core functionality to our Tasks app. This includes the following two functions:
-
+This includes the following two functions:
 - **`addNewTask`**
 - **`deleteTask`**
 
@@ -193,20 +184,17 @@ func deleteTask(at offsets: IndexSet) {
 }
 ```
 
-### Building and Running the App
-
+### Building and running the app
 Now, to run our application, click on the Product > Run option, or use the shortcut `Command + R` to build and run the application. It will open the app in a simulator.
 
 ### Summary
-
 - We set up the XCode IDE for iOS development.
-- We learnt how to implement different views in an iOS app.
+- We learned how to implement different views in an iOS app.
 - We built a fully functioning iOS application using SwiftUI.
 
 To take a look at the fully completed working code, visit this [GitHub repository](https://github.com/cyberShaw/constantine).
 
-### Further Reading
-
+### Further reading
 To further continue, developers can check out the following resources.
 
 - Swift, iOS Tutorials: [HackingWithSwift](https://www.hackingwithswift.com/learn)
