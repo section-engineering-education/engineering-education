@@ -2,8 +2,6 @@
 
 ![hero image](/engineering-education/why-python-is-essential-for-data-analysis/datascience.jpg)
 
-![image title](/engineering-education/new-folder-name/image-name.jpg)
-
 ### Introduction
 
 Data is an essential part of any enterprise/business. It is critical to collect, process, and analyze data flow in a timely and accurate manner.
