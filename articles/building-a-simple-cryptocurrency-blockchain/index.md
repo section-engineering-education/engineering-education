@@ -1,7 +1,17 @@
+images:
+
+  - url: /engineering-education/building-a-simple-cryptocurrency-blockchain/hero.jpg
+    alt: Cypto world
+---
 ## Building Simple cryptocurrency system using Node.js
+A cryptocurrency is a digital currency that is secured by cryptographic hash, this makes it nearly impossible to forge transactions. Many cryptocurrencies are decentralized networks based on blockchain technology—a distributed ledger enforced by a disparate network of computers.
+
+A blockchain is an open, distributed ledger that records transactions in code, it enables anyone who uses cryptocurrency has their own copy of transaction record. Each new transaction is logged into record as it happens, and every copy of the blockchain is updated simultaneously with the new information, keeping all records identical and accurate. 
+
+Thecoin is an implementation of a cryptocurrency blockchain technology in code.
 
 In this tutorial, we are going to demonstrate how to build a simple cryptocurrency system, called thecoin.
-It is a simple implementation of the of decentralized digital money, based on blockchain technology. 
+It is a simple decentralized digital money, based on blockchain technology. 
 ### Take away
 1. How blockchain store data
 2. How blockchain data are immutable
@@ -31,13 +41,12 @@ Digital currencies such as Bitcoin, Ethereum are powered and adopted with powerf
 
 We'll have good understanding of blockchain and cryptocurrency and it's operation. 
 
-> Let's get into code
+Let's get into code
+I'll name my app `thecoin`.
 
-> I'll name my app thecoin.
+Create the app named `thecoin.js` and open it in your code editor.
 
-> Create the app named thecoin.js and open it in your code editor
-
-> In the folder you're doing current development let's install the crypto library we're going to use using the command
+In the development folder, let's install the `crypto` library that we're going to use, using the command:
 
 ```bash
 npm install --save crypto-js
@@ -49,7 +58,7 @@ We'll use this library to import modules in our project.
 
 I'll begin by creating a class 'BlockCypto'.
 
-```Node
+```js
     const SHA256 = require('crypto-js/sha256');
     class BlockCypto{
         constructor(index, current_time, info, nextHash=" "){
@@ -63,7 +72,7 @@ I'll begin by creating a class 'BlockCypto'.
             return SHA256(this.info + this.nextHash + this.current_time + JSON.stringify(this.info)).toString();
         }   
     }
-```js
+```
 
 I'll explain each part of the code here:
 
@@ -93,7 +102,7 @@ So let's create a class that will maintain this operation.
 
 Here is the code for the class I named 'Blockchain'
 
-```Node
+```js
     class Blockchain{
         constructor(){
             this.block1chain = [this.startGenesisBlock()];     
@@ -110,7 +119,7 @@ Here is the code for the class I named 'Blockchain'
             this.block1chain.push(newBlock);
         }
     }
-```js
+```
 
 
 Let's explain the above class 
@@ -136,7 +145,7 @@ We'll loop over the entire blockchain to check whether any hash has been tampere
 
 Besides, this method will verify if the hashes of each two consecutive blocks are pointing to one another. If the integrity of the blockchain has been compromised, it returns false; otherwise, in case no anomalies are encountered, it returns true.
  We'll create this method inside inside `Blockchain` class
-```Node
+```js
     checkValidity(){
             for(let i = 1; i < this.block1chain.length; i++){
                 const currentBlock = this.block1chain[i];
@@ -150,19 +159,19 @@ Besides, this method will verify if the hashes of each two consecutive blocks ar
             }
             return true;
         }
-```js
+```
 
 
 Now we can test our app and see the results:
 
 But before we dive into running the code, let's create a new instance of the `Blockchain` class and name it `thecoin`, and add some blocks in the blockchain using random values.  
 
-```Node
+```js
   let thecoin = new Blockchain();
     thecoin.addNewBlock(new BlockCrypto(1, "06/04/2021", {sender: "Rabin Yitzack", recipient: "Loyd Eve", quantity: 20}));
     thecoin.addNewBlock(new BlockCrypto(2, "07/04/2021", {sender: "Anita Vyona", recipient: "Felix Mush", quantity: 349}) );
     console.log(JSON.stringify(thecoin, null, 4));
-```js
+```
 
 ### Running our Blockchain
 
@@ -176,7 +185,7 @@ _hint:_ Using the command `pwd` to check the path.
 
 Here is our full source code
 
-## Conclusion
+### Conclusion
 
 Kudos! You are have just build a simple cryptocurrency app using Node.js, the step is closer to get you started building Pro apps using Node.js, or rather you can just add more features to our simple blockchain and thrill it to the market.
 Nevertheless, I hope that this tutorial has provided you with basic skill proficiency to get you going with the stimulating Node.js development.  
