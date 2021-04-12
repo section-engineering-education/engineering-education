@@ -33,30 +33,22 @@ This article will cover:
 
 ### What is IoT
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose exchanging data among the devices on the internet to help organizations solve problems. For example, IoT solutions provide flexibility of workforce as employees can work remotely with connected devices, thus organizations incur little operational costs that relate to employee management.
 
 The network of devices can be attached to almost anything, from ordinary household objects to complex machines that run industrial processes.
 
-Over years, the computing industry has evolved in terms of device capabilities, architectures and even sizes. This has made the IoT technology to evolve with an aim of maximizing on effeciency and productivity all its application areas.
+Over the years, the computing industry has evolved in terms of device capabilities, architectures and even sizes. This has made the IoT technology to evolve with an aim of maximizing on effeciency and productivity all its application areas.
 
 As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device. IoT solutions have thus, been on the rise due to a reduction in hardware costs and an increase in the software capabilities of the connected devices. 
- 
- 
-=======
-*Internet of Things (IoT)* is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose of exchanging data among the devices on the internet to help organizations solve problems. As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device. The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
->>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 
 IoT technology leverages low-cost computing devices, growing cloud technologies, big data, and advanced analytics platforms to provide cutting-edge solutions that have proved to be profitable for every industry. Adoption of IoT in businesses provides insights from data gathered that can be used to create new business ideas or even redefine traditional business processes.
 
 This has led to reduction in costs of running businesses, improved customer experience and generation of new business opportunities. This growth in organizations is realized because connected devices can manage tasks, analyze opportunities and transfer this information securely to backend systems that take action or report incidents. 
-=======
+
 [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) is a network of physical objects or devices – “things” – that are embedded with sensors, software, and other technologies for the purpose of exchanging data among the devices on the internet to help organizations solve problems. As the devices reduce in size, the complexity in hardware and software increases, with more storage and compute power tied to each device. The network of devices can be attached to almost anything- ordinary household objects to complex machines that run industrial processes. 
 
 IoT technology leverages low-cost computing devices, growing cloud technologies, big data, and advanced analytics platforms to provide cutting-edge solutions that have proved profitable for every industry. These solutions have been on the rise due to a reduction in hardware costs and an increase in the software capabilities of the connected devices. 
-The connected devices can manage tasks, analyze opportunities and transfer this information securely to backend systems that take action or report incidents. 
->>>>>>> 0f9166a902b127ae4a1c061bbf06660fd719ccf1
+The connected devices can manage tasks, analyze opportunities and transfer this information securely to backend systems that take action or report incidents.
 
 #### IoT solutions examples:
 
@@ -64,14 +56,10 @@ The connected devices can manage tasks, analyze opportunities and transfer this 
 - Home automation systems.
 - Industrial control and monitoring systems.
 
-<<<<<<< HEAD
 Devices are majorly for capturing actionable data that can intercepted easily incase organizations fail to implement relevant IoT security measures. To avoid solutions outages due to security concerns, organizations should regulate access to data by use of access controls.
 
 Setting controls in an IoT environment will limit unauthorized activities at data transfer and connectivity levels thus reducing vulnerabilities in IoT solutions.
 
-
-=======
->>>>>>> 0f9166a902b127ae4a1c061bbf06660fd719ccf1
 ### IoT Architecture
 
 IoT solutions send out voluminous messages every second with rich information about processes, anomalies, and inconsistencies that the devices are configured to monitor.
@@ -132,14 +120,10 @@ Such solutions include;
 
 **AMQP**
 
-<<<<<<< HEAD
->>>>>>> f6d0cec4bb2434dfc9fc6aacb95367e035345d8f
 [AMQP](https://www.kelltontech.com/kellton-tech-blog/internet-of-things-protocols-standards) is a software layer protocol for message-oriented architecture that provides routing and queuing.
 
 This protocol is a reliable technology that works with messages and queues and supports point-to-point communication. AMQP uses TCP connection protocol, therefore, it is reliable for server side communications.
 
-AMQP as a protocol is efficient, portable, and secure(encrypted and asynchronised messaging by wire), with low overhead, making it perfect for Internet of Things applications. Additionally, it supports load balancing for the entire network.
-=======
 [AMQP](https://www.kelltontech.com/kellton-tech-blog/internet-of-things-protocols-standards) is a software layer protocol for message-oriented architecture that provides routing and queuing. This protocol is a reliable technology that works with messages and queues and supports point-to-point communication.
 AMQP as a protocol is efficient, portable, and secure, with low overhead, making it perfect for Internet of Things applications.
 >>>>>>> 0f9166a902b127ae4a1c061bbf06660fd719ccf1
@@ -158,22 +142,15 @@ An IoT development platform is a set of layered technologies operating as IoT ga
 
 IoT hub is an example of development platforms for IoT solutions. Because IoT projects are complex, IoT hubs exist to fasten the development and delivery of solutions. Cloud platforms such as Azure host IoT hub where that acts as middleware for IoT solutions. Azure IoT hub provides reliable and secure communications between IoT devices and IoT applications that run on the cloud.
 
-<<<<<<< HEAD
 IoT hub is an example of development platforms for IoT solutions. Because IoT projects are complex, IoT hubs exist to fasten the development and delivery of solutions.
 
 Cloud platforms such as Azure host IoT hub where that acts as middleware for IoT solutions. Azure IoT hub provides reliable and secure communications between IoT devices and IoT applications that run on the cloud.
-
 
 ### Conclusion
 Considering immense benefits that IoT solutions bring to large, mid-range, and small organizations, it is enough to say that IoT technology is here to stay. Its even projected that by 2030, IoT devices that are close to 50 billion will be connected worldwide through the internet.
 It is advisable to plan applications with IoT integration in mind for every company that desires efficiency and productivity.
 
-
-
-### Relevant Resources
-=======
 ### References
->>>>>>> 0f9166a902b127ae4a1c061bbf06660fd719ccf1
 
 1. [IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub#:~:text=IoT%20Hub%20is%20a%20managed,and%20the%20devices%20it%20manages.&text=IoT%20Hub%20supports%20communications%20both,the%20cloud%20to%20the%20device.)
 
