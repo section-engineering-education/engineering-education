@@ -14,7 +14,7 @@ images:
 - url: /engineering-education/a-step-by-step-guide-to-create-a-virtual-assistant-with-python/hero.jpg
     alt: A mobile phone showing a virtual assistant signal
 ---
-A virtual assistant, also known as an AI assistant or a digital assistant, is a computer program that recognizes natural language voice commands and performs tasks for the user. This article will use a python library to incorporate Alexa and will guide you through the process of creating your own voice assistant.
+A virtual assistant, also known as an AI assistant or a digital assistant, is a computer program that recognizes natural language voice commands and performs tasks for the user. This article guides you through the process of creating your own voice assistant through the use of a python library.
 <!--more-->
 
 For this tutorial, I will be writing the codes on Pycharm by Jetbrains.
