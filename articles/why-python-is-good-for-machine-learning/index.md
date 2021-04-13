@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/why-python-is-good-for-machine-learning/hero.jpg
     alt: Why Python is good for Machine Learning
 ---
-Python is a programming language that facilitates the creation of a wide range of applications. Developers regard it as a good choice for Artificial Intelligence (AI), Machine Learning, and Deep Learning projects.
+Python is a programming language that supports the creation of a wide range of applications. Developers regard it as a good choice for Artificial Intelligence (AI), Machine Learning, and Deep Learning projects.
 <!--more-->
 This article explains why Python is a popular language among developers working in Machine Learning and Deep Learning fields. It, also, justifies why you should use Python when building AI projects.
 
@@ -51,8 +51,8 @@ AI projects tend to be time-consuming, so a well-structured environment for test
 
 **Performance:** Some developers argue that Python is relatively slow compared to other programming languages. As much as speed is not one of Python's strong suits, it provides the solution known as [Cython](https://cython.org/). It is a superset of Python language designed to achieve code performance the same as C language. Developers can use Cython to code C extensions the same way they code in Python, as its syntax is almost the same. Cython increases language performance significantly.
 
-**Visualization tools:** Python comes with a wide variety of libraries. Among these libraries, some offer good visualization tools. In AI, machine learning, and deep learning, it is important to know that data should be represented in a human-readable format, thus making Python great as it offers the same.
-Some libraries like [Matplotlib](https://matplotlib.org/) enable data scientists to generate charts, histograms, and plots to represent data and visualization better. Also, different Application Programming Interfaces Python supports, allows better visualization process and thus clear reports.
+**Visualization tools:** Python comes with a wide variety of libraries. Some of these frameworks offer good visualization tools. In AI, machine learning, and deep learning, it is important to present data in a human-readable format. Therefore, Python is a perfect choice for implementing this feature.
+Some libraries like [Matplotlib](https://matplotlib.org/) enable data scientists to generate charts, histograms, and plots to represent data and visualization better. Also, the different APIs that Python supports enhance the visualization process.
 
 ### Conclusion.
 Many other languages can be used in AI projects, but the fact remains that Python is still the best and should be given significant consideration. It can be incorporated into the developer's workflow alongside other popular tools.
