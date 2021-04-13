@@ -18,7 +18,7 @@ images:
 Node.js programs run on a single thread when executed. Executing millions of processes leads to delays/blocking hence the need for a solution.
 One way to work around this delay is the use of the Node.js child process.  
 
-In this tutorial, let's discuss how to we can use these child processes to launch another process to avoid delays while executing our programs.
+In this tutorial, we will discuss how to we can use these child processes to launch another process to avoid delays while executing our programs.
 
 ### Prerequisites
 This tutorial requires basic knowledge of JavaScript and Node.js.
