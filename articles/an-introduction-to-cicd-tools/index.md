@@ -1,5 +1,3 @@
-TEST Commit
-
 ### An Introduction to CI/CD Tools
 Continuous Integration (CI) and Continuous Delivery (CD) are sets of operating principles and practices that enable software development teams to perform frequent changes in the codebase while ensuring its consistency. The implementation of seamless synchronization in the work process between teams in an organization is often referred to as the pipeline of CI/CD.
 
