@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/nodejs-child-processes/
-title: Getting started with Node.js child processes. 
+title: Getting started with Node.js Child Processes 
 description: This tutorial will go over Node.js child processes. Node.js child processes solves the delay caused by running several processes.
 author: owino-wendy
-date: 2021-04-13T00:00:00-12:00
-topics: []
+date: 2021-04-13T00:00:00-14:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/nodejs-child-processes/hero.jpg
