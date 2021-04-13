@@ -1,4 +1,6 @@
-Recursion occurs when a method is defined in terms of itself. Some programming problems are solved by breaking them down into smaller sub-problems that can be solved using various ways, for instance, using helper methods and recursion. Recursion can be used to solve complex mathematical problems by breaking them down into smaller ones. We are going to go over simple recursion calls, complex ones and strategies of recursive programming. 
+Recursion occurs when a method is defined in terms of itself. Some programming problems are solved by breaking them down into smaller sub-problems that can be solved using various ways, for instance, using helper methods and recursion. 
+
+Recursion can be used to solve complex mathematical problems by breaking them down into smaller ones. We are going to go over simple recursion calls, complex ones and strategies of recursive programming. 
 
 ### Prerequisites
 1. A basic understanding of the [ruby](https://www.tutorialspoint.com/ruby/index.htm) programing language.
