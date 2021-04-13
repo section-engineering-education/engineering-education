@@ -177,3 +177,6 @@ This was just a basic introduction, but the API can be manipulated in various wa
  [TinEye API Documentation](https://services.tineye.com/developers/tineyeapi/libraries)
 
 Have a great one.
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
