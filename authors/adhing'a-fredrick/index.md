@@ -1,0 +1,1 @@
+Fredrick is a Computer Technology student at Meru University of Science and Technology with interests in Python for Machine Learning and Data Science. When not writing code, He is writing articles/books or learning.
