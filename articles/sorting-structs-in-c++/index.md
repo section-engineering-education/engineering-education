@@ -1,0 +1,248 @@
+﻿### C++  Structs sorting
+Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
+### Prerequisites
+For the tutorial to be helpful, you should have the [Falcon IDE](https://sourceforge.net/projects/falconcpp/files/latest/download) or any other C++ IDE that you are comfortable with and also some basic knowledge in C++.
+
+### Goal
+In this tutorial, we will first polish the basics of Structs in case you are new to them, then we will go ahead and learn how we can sort structs using their members.
+
+### Creating a Struct 
+We use the Keyword  `struct` to create a struct. Here is what the general syntax of a struct should look like.
+
+```c++
+ struct struct_name
+{
+	//Members declaration
+	type_1 member_1;
+	type_2 member_2;
+	.
+	.
+	.
+	type_n member_n;
+};
+```
+### Declaring struct variables
+There are two ways of declaring struct variables:
+
+#### 1. Declaring structure variables during structure declaration
+Just after the end of the structure definition, before we place the semicolon (;), we can add optional object names of the struct that will be used to declare structure objects of that similar build. 
+Example:
+```c++
+using namespace std;
+
+struct Person
+{
+	char name;
+	int age;
+}Employee,Student;
+```
+The keyword **typedef** is also used with structs to define a new object if we wish to use the object to declare struct variables directly as we shall see later in `working with arrays of a structure as we proceed`
+
+#### 2.Declaring structure variables like basic data types
+In this case, the `struct_name` is used to create a new object.
+Example:
+```c++
+using namespace std;
+
+struct Person
+{
+	string name;
+	int age;
+};
+
+int main()
+{
+	Person Employee;
+	Person Student;
+}
+```
+###  Initializing Struct members
+Struct members are only initialized through the struct variables (objects) and not through declaration.
+This is done using braces '{}' 
+Example:
+```c++
+using namespace std;
+
+struct Person
+{
+	string name;
+	int age;
+};
+
+int main()
+{
+	Person Employee = {"frank",63 };
+	Person Student = {"Clare",53 };
+}
+```
+or using a dot '.'
+```c++
+using namespace std;
+
+struct Person
+{
+	string name;
+	int age;
+}Employee,Student;
+
+int main()
+{
+	Employee.name = "Frank";
+	Employee.age = 63;
+	
+	Student.name = "Clare";
+	Student.age = 53;
+}
+```
+### Accessing struct elements
+The struct elements can also be easily accessed by still using the dot (.) as illustrated below.
+```c++
+using namespace std;
+
+struct Person
+{
+	string name;
+	int age;
+}Employee,Student;
+
+int main()
+{
+	Employee.name = "Frank";
+	Employee.age = 63;
+	
+	Student.name = "Clare";
+	Student.age = 53;
+	
+	// we access the elements here using the "." and print them 
+	cout << Employee.name <<" "<< Employee.age << endl ;
+	cout << Student.name << " "<< Student.age;
+}
+```
+### working with arrays of a structure
+It is an array consisting of structs. It can be used to store many instances of a struct object. We are going to create an array of structs that shall use for loops for the collection of the user input and also displaying it.
+```c++
+#include <iostream>
+using namespace std;
+
+typedef struct Person
+{
+	string name;
+	int age;
+}Student;
+
+int main()
+{
+	int i,n;
+	cout<< "Enter number of students :";
+	cin>> n;
+	
+	// we set the array to the number of students
+	Student s_array[n];
+	
+	cout<<"Enter Name of Student followed by age \n\n";
+	//for loop to collect input
+	for(i=0;i<n;i++){
+		cout<<"________\n";
+		cin>>s_array[i].name;
+		cin>>s_array[i].age;
+	}
+	
+	cout<<"\nHere is the students list:\n";
+	//for loop to print the output
+	for(i=0;i<n;i++){
+		cout<<s_array[i].name <<"   "<<s_array[i].age <<endl;
+		
+	}
+}
+```
+###  Sorting Structs
+Now that we are familiar with how Structs work, let us get started with the sorting. We are going to add more attributes(members) of a person to the `Person` Struct to make it much more practical. In addition to that, we are also going to add a comparator function which will be used by the STL sort function for sorting in our Structs. In our comparator function is where we decide which member we want to use to sort the arrays of structs. In our case we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
+```c++
+bool compare( Student a, Student b){
+	if(a.age < b.age)
+		return 1;
+	else 
+		return 0;
+	
+}
+```
+To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this.
+```c++
+bool compare( Student a, Student b){
+	if(a.name < b.name)
+		return 1;
+	else 
+		return 0;
+	
+}
+```
+The last thing left to do is to call the `sort` function that is found in the `<algorithm>` library. We shall give it three parameters, the first two are simply the range of elements to sort, which in this case are the range of structure arrays and the third one is the comparator function. ie:
+```c++
+sort(s_array, s_array+n, compare);
+```
+Finally our entire code looks like this.
+```c++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+typedef struct Person
+{
+	string name;
+	int roll_no;
+	int age;
+    int weight;
+	
+}Student;
+
+// our Comperator function
+bool compare( Student a, Student b){
+	if(a.age < b.age)
+		return 1;
+	else 
+		return 0;
+}
+
+int main()
+{
+	int i,n;
+	cout<< "Enter number of students :";
+	cin>> n;
+	
+	// we set the array to the number of students
+	Student s_array[n];
+	
+	cout<<"Enter Name of Student, roll number, age, and weight \n\n";
+	//for loop to collect input
+	for(i=0;i<n;i++){
+		cout<<"---------\n";
+		cin>>s_array[i].name;
+		cin>>s_array[i].roll_no;
+		cin>>s_array[i].age;
+		cin>>s_array[i].weight;
+	}
+	
+	sort(s_array, s_array+n, compare);
+	
+	cout<<"\nHere is the sorted list of Students :\n";
+	//for loop to print the output
+	for(i=0;i<n;i++){
+		cout<<s_array[i].name <<"   " ;
+		cout<<s_array[i].roll_no << "  ";
+		cout<<s_array[i].age << "  ";
+		cout<<s_array[i].weight << endl;
+	}
+}
+```
+### Conclusion
+This knowledge surely has a lot of applications in C++. Feel free to play around with the code and add some more features of your own or even apply them to your projects.
+Happy coding! 
+
+
+
+
+
+
+
+
+
