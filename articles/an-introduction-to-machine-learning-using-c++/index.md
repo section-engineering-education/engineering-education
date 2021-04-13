@@ -167,3 +167,12 @@ cout<<endl;
 cout<<"The value predicted by the model= "<<pred;
 }
 ```
+### Conclusion
+C++ is a good programming language for venturing into machine learning. However, since this venture is relatively new, you will have to implement most of the algorithms from scratch. Without understanding the basics of the machine learning algorithms it would be difficult to implement them in C++ and I think that is why Python is more popular for machine learning as compared to C++ for machine learning.
+C++ also has a few libraries which support machine learning. We will look at them in a future article.
+
+Linear regression in machine learning is useful for forecasting since the algorithm is able to make predictions based on previous patterns. This enables organisations and institutions to put in place strategies that are beneficial depending on the forecast.
+
+Machine learning can also help small business to determine the impact on their sales by altering various factors. This can ensure they carry out operations which bring in profit.
+
+Machine learing also cuts on the cost of human labour who would take days to analyse data before giving you feasibility reports which are prone to error.
