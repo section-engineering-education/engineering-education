@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/nodejs-child-processes/
-title: Angular 11 - HTTP Client Quickstart Guide 
+title: Getting started with Node.js child processes. 
 description: This tutorial will go over Node.js child processes. Node.js child processes solves the delay caused by running several processes.
 author: owino-wendy
 date: 2021-04-13T00:00:00-12:00
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/nodejs-child-processes/hero.jpg
-    alt: Angular http client quickstart guide example image
+    alt: Getting started with Node.js child processes example image
 ---
 
 ### Introduction
