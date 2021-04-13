@@ -28,7 +28,7 @@ In this article, we are going to talk about the TinEye Reverse Image Search and 
 
 #### Prerequisites
 
-1. A basic understanding of Node.js and JavaScript concepts
+1. A basic understanding of [Node.js](https://nodejs.org/en/docs/) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) concepts
 2. Node.js(NPM) installed in your system
 3. Knowledge of the REST API
 
