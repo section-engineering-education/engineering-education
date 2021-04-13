@@ -95,3 +95,6 @@ Overall, though not a perfect model as it experiences typographic attacks, I thi
 4. [WIT: Wikipedia-based Image Text Dataset for Multimodal Multilingual Machine Learning](https://arxiv.org/pdf/2103.01913.pdf)
 5. [DeepDream](https://en.wikipedia.org/wiki/DeepDream)
 6. [Invariant visual representation by single neurons in the human brain](https://www.nature.com/articles/nature03687)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
