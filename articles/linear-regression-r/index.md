@@ -22,50 +22,35 @@ Linear regression is a supervised machine learning algorithm that is used for pr
 #### Types of linear regression
 There two types of linear regression;
 
-#### 1. Simple linear regression:
- Simple linear regression explains the relationship between one independent variable (X) and one dependent variable (y) using a straight line. The model is of the form;
+#### 1. Simple linear regression
+ Simple linear regression explains the relationship between one independent variable (X) and one dependent variable (y) using a straight line. The model is of the form:
+```
+y = β<sub>0</sub> + β<sub>1</sub>X + ε
+```
 
-y= β<sub>0</sub> + β<sub>1</sub>X + ε
+1. `y` represent the dependent variable.
+2. `β<sub>0</sub>` represent the intercept of the regression line.
+3. `β<sub>1</sub>` represent the slope of the regression line.
+4. `X` represent the independent variable.
+5. `ε` is the error term. For example, difference between actual values (y) and predicted values (Ŷ).
 
-Where, 
+#### 2. Multiple linear regression
 
- y - dependent variable.
-
-β<sub>0</sub> - y-intercept of the regression line.
-
-β<sub>1</sub> - the slope of the regression line.
-
-X - independent variable.
-
-ε - error term. ie, Difference between actual values (y) and predicted values (Ŷ).
-
-
-- Multiple linear regression. 
-
-This is a linear regression that explains the relationship between two or more independent variables (X) and one dependent variable (y). It is mathematically presented as,
-
+This is a linear regression that explains the relationship between two or more independent variables (X) and one dependent variable (y). It is mathematically presented as:
+```
 y = β<sub>0</sub> + β<sub>𝒾 </sub>X<sub>𝒾 </sub> + ε<sub>𝒾</sub> ;  (𝒾 = 1, 2, 3, 4,......, n)
+```
 
-Where,
+1. `β<sub>𝒾 </sub>` is the regression coefficients of independent variables X<sub>𝒾 </sub>.
+2. `ε<sub>𝒾</sub>` represent the error term.
+3. 
+The error term `ε`(Epsilon) of the regression tell us about the random error in the model that can not be accounted for. This error arises when some of the observations fail to fall on the regression line. Even if it is not possible to get rid of the error term, it is possible to minimize it as low as possible. Using the technique of Least Squares, we find the values of `β<sub>0</sub>` and `β<sub>1</sub>` which give a regression line with a minimum sum of squared error.
 
-y - dependent variable.
+#### Types of regression line
+- Positive linear relationship: It's a linear relationship whene X increase y will increase as well, and therefore the `β<sub>𝒾 </sub>` is a positive number.
+- Negative linear relationship: when X increases, y decreases and the `β<sub>𝒾 </sub>` is a negative number.
 
-β<sub>0</sub> - Intercept term.
-
-β<sub>𝒾 </sub> - regression coefficients of  independent variables X<sub>𝒾 </sub>.
-
-for 𝒾 = 1, 2, 3,........, n
-
-ε<sub>𝒾</sub> - Error term.
-
-The error term (ε) is of the regression us about the random error in the model that can not be accounted for. This error arises when some of the observations fail to fall on the regression line. Though not possible to get rid of the error term, it possible to minimize it as low as possible. Using the technique of Least Squares, we find the values of β<sub>0</sub> and β<sub>1</sub> which give a regression line with a minimum sum of squared error.
-
- #### Types of regression line
-- Positive linear relationship: 
- It's a linear relationship whereas X increase y also increases and therefore the β<sub>𝒾 </sub> is a positive number.
- - Negative linear relationship:
- - For this linear relationship, as X increases, y decreases and the β<sub>𝒾 </sub> is a negative number.
-There cases where, as X increases y remains the same. This means there exists no linear relationship between the two variables.
+There are some cases where X increases and y remains the same. This means there is no linear relationship between the two variables.
 
 #### Least Squares method
 Least Square is a technique that is used to estimate unknown parameters, β<sub>0</sub> and β<sub>1</sub>  by minimizing the sum of squares of the verticle difference between the observations (y) and the predicted values (ŷ).
