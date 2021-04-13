@@ -4,14 +4,14 @@ status: publish
 published: true
 url: /engineering-education/node-tineye-api/
 title: Consuming the TinEye Reverse Image Search API in Node.js.
-description: This tutorial will go over TinyEye reverser image search API. TinyEye API makes it possible to search for online image occurences using an image as the query parameter.
+description: This tutorial will go over TinyEye reverser image search API. TineEye API makes it possible to search for online image occurrences using an image as the query parameter.
 author: sandra-moringa
 date: 2021-03-23T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/node-tineye-api/hero.jpg
-    alt: Angular http client quickstart guide example image
+    alt: Consuming the TinEye Reverse Image Search API in Node.js example image
 ---
 
 ### Using the TinEye Reverse Image Search API in Node.js
