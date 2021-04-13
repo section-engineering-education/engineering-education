@@ -28,7 +28,7 @@ In Artificial Neural Networks, we have not seen the concept of the multimodal ne
 
 ### Prerequisites
 
-Before you start reading about the use of multimodal neurons in artificial neural networks, it is crucial to understand what [DeepDream](https://en.wikipedia.org/wiki/DeepDream), a computer vision program created by Google, entails. The idea behind DeepDream is to leverage Convolution Neural Networks (CNNs). This CNNs produce dream-like hallucinogenic appearances by overprocessing images. This concept is demonstrated in this article in the example images.
+Before you start reading about the use of multimodal neurons in artificial neural networks, it is crucial to understand what [DeepDream](https://en.wikipedia.org/wiki/DeepDream), a computer vision program created by Google, entails. The idea behind DeepDream is to leverage Convolution Neural Networks (CNNs). These CNNs produce dream-like hallucinogenic appearances by overprocessing images. This concept is demonstrated in this article in the example images.
 The next concept that is important to understand in the multimodal neuron model is using the [CLIP](https://openai.com/blog/clip/) model by OpenAI, a model which connects texts and images. The CLIP model learns using a Contrastive Learning approach between image-text pairs. The goal is to make the model efficiently learn visual concepts from natural language supervision. Learn more about the contrastive learning approach on this [article](https://www.section.io/engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/).
 
 ### Introduction
@@ -85,7 +85,7 @@ This has been demonstrated below:
 
 ### Wrapping Up
 
-Overall, though not a perfect model as it experiences typographic attacks, I think this is exciting new research, and I'm excited to see where this goes. There are still many more categories of neurons they found in this [paper](https://openai.com/blog/multimodal-neurons/). I only scratched the surface. Feel free to read more on it, and look at the various categories. Also, you can experiment with their different feature visualization techniques.
+Overall, though not a perfect model as it experiences typographic attacks, I think this is exciting new research, and I'm excited to see where this goes. There are still many more categories of neurons they found in this [paper](https://openai.com/blog/multimodal-neurons/). I have only scratched the surface. Feel free to read more on not only these categories but multimodal neurons as a whole. You can also experiment with their different feature visualization techniques.
 
 ### References
 
