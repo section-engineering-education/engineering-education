@@ -1,4 +1,4 @@
-### C++ Structs sorting
+### Getting started with structs sorting in C++
 Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
 
 ### Prerequisites
