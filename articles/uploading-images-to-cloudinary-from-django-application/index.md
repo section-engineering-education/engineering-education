@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/uploading-images-to-cloudinary-from-django-application/
-title: Uploading images to cloudinary from django application
+title: Uploading Images to Cloudinary from a Django Application
 description: This article will be an introduction to uploading images to Cloudinary using Django. We will be building a simple Django app to demonstrate how uploading images to Cloudinary is a better solution.
 author: shuaib-oseni
 date: 2021-04-13T00:00:00-12:30
@@ -16,18 +16,18 @@ images:
 ---
 Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your application to a platform like Heroku, you can't save images.
 <!--more-->
-Alternatively, we could have our images stored in the database, but the database size will explode over time. Hence, the reason images should be stored in external services like Cloudinary, AWS S3, or Imgur. The advantage Cloudinary has is "configuration is quick and easy".
+Alternatively, we could have our images stored in the database, but the database size will explode over time. Hence, a reason images should be stored in external services like Cloudinary, AWS S3, or Imgur. 
 
-In this tutorial, we learn about how to save images in Django using Cloudinary.
+The advantage Cloudinary has is that "configuration is quick and easy". In this tutorial, we will learn about how to save images in Django using Cloudinary.
 
 Cloudinary is an end-to-end image and video management solution for websites and mobile apps. It covers everything from image and video uploads, storage, manipulations, and optimizations to delivery.
 
 Creating an account is free and you also get 25GB of storage.
 
 ### Prerequisites
-To follow along with this tutorial, you need [Python3](https://www.python.org/downloads/) installed on your machine.
+To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
 
-A basic understanding of Django would help the reader understand better.
+A basic understanding of Django would help the reader follow along better.
 
 ### Table of contents
 - [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
@@ -118,7 +118,7 @@ INSTALLED_APPS = [
     ]
 ```
 
-We will also need to include Cloudinary's python classes in `settings.py`.
+We will also need to include Cloudinary's Python classes in `settings.py`.
 
 ```python
 import cloudinary
@@ -130,7 +130,9 @@ import cloudinary.api
 To use the Cloudinary Django library, we have to configure our `cloud_name`, `api_key`, and `api_secret`.
 
 We can find our account-specific configuration credentials on the Dashboard page of the account console as shown below:
+
 ![Cloudinary dashboard page](/engineering-education/uploading-images-to-cloudinary-from-django-application/dash.png)
+
 *Cloudinary dashboard page*
 
 Add the configuration credentials in `settings.py` as shown below:
@@ -190,9 +192,11 @@ Now, we can log in to the admin page.
 To login to the admin section, go to this link [localhost:8000/admin](localhost:8000/admin) and log in with our just created superuser details.
 
 ![Django admin login page](/engineering-education/uploading-images-to-cloudinary-from-django-application/admin.png)
+
 *Django admin login page*
 
 ![Django admin page](/engineering-education/uploading-images-to-cloudinary-from-django-application/django-admin.png)
+
 *Django admin page*
 
 Now, let's add an image in the photos category to test if it uploads to Cloudinary.
@@ -200,9 +204,11 @@ Now, let's add an image in the photos category to test if it uploads to Cloudina
 Click on pictures, then click `Add Photo` to add an image.
 
 ![Add photo](/engineering-education/uploading-images-to-cloudinary-from-django-application/add-photo.png)
+
 *Add photo*
 
 ![Photo added](/engineering-education/uploading-images-to-cloudinary-from-django-application/photo-added.png)
+
 *Photo added*
 
 To confirm if the image was uploaded successfully, click on the just added image, and click on the link there.
@@ -210,7 +216,9 @@ To confirm if the image was uploaded successfully, click on the just added image
 We can also confirm by going to the `media library` section on our Cloudinary account.
 
 ### Creating a view
-Now, let's create a view, to view the image. Add the following code to your `views.py` file:
+Now, let's create a view, to view the image. 
+
+Add the following code to your `views.py` file:
 
 ```python
 from django.shortcuts import render
@@ -276,22 +284,25 @@ Open the `index.html` file that we created earlier and paste the following code:
 </html>
 ```
 
-In the above code, we used `for-loop` to go through all the pictures.
+In the code above, we used a `for-loop` to go through all the pictures.
 
 ![Image of a fish](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
+
 *Image of a fish displayed on an HTML page*
 
 ### Conclusion
-To conclude, we have learned how Cloudinary provides a better way for handling media content for our webpage. We have also learned to upload images from a Django app.
+To conclude, we have learned how Cloudinary provides a better way to handle media content for our webpage. We have also learned to upload images from a Django app.
 
 To summarize:
 - The reader learned to upload images to Cloudinary from our Django app.
-- The reader understood how Cloudinary provides us a better way to store images.
+- The reader understood how Cloudinary provides a better way to store images.
 - The reader learned to build a Django app and integrate it with Cloudinary.
 
 The full code can be found [here](https://github.com/shosenwales/django-cloudinary) on GitHub.
 
 For further learning on image/video upload and transformation using Cloudinary, check out [this](https://cloudinary.com/documentation/django_image_and_video_upload) link.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
