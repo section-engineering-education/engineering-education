@@ -178,3 +178,6 @@ In the above script, we've created a file `child.js`. We're watching this file f
 In this tutorial, we've seen how can create child process using the `child_process.exec()` and `child_process.spawn()`.
 Other methods exists such as `child_process.fork()` which is a variation of the `child_process.spawn()` method.  For more details, visit [this link](https://nodejs.org/api/child_process.html).  
 
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
