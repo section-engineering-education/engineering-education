@@ -3,11 +3,5 @@
 {{- with .Params.blocks -}}
   {{- range . -}}
     {{- if eq .component "engineering-education-search" -}}{{- partial "components/engineering-education-search" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "cta-block" -}}{{- partial "components/cta-block" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "hero-blocks" -}}{{- partial "components/hero-blocks" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "hero-color" -}}{{- partial "components/hero-color" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "hero-green" -}}{{- partial "components/hero-green" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "hero-dark" -}}{{- partial "components/hero-dark" (dict "component" . "context" $page) -}}{{- end -}}
-    {{- if eq .component "home-hero-alt" -}}{{- partial "components/home-hero-alt" (dict "component" . "context" $page) -}}{{- end -}}
   {{- end -}}
 {{- end -}}
