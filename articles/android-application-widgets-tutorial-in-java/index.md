@@ -11,7 +11,7 @@ Application widgets are views that contain some of the application's functionali
 
 ### Prerequisites
 The following prerequisites will be required to follow this tutorial:
-- The reader should have basic knowledge of building Android apps.
+- The reader should have knowledge of building Android apps.
 - [Android Studio](https://developer.android.com/studio) installed.
 - Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language and XML programming languages.
 
@@ -20,7 +20,7 @@ Widgets vary in size and support resizing. Widgets are mostly placed on a device
 
 #### Widget design guidelines
 - **Widget content:** A widget should contain the app's most important content while more details about the content on the widget should be in the app.
-- **Widget configuration:** For the widgets that need configuration, you should create a widget configuration activity. Widget configuration activity is an activity that opens when a user drops an app widget on the home screen. It allows users to modify the widget settings at create-time.
+- **Widget configuration:** For the widgets that need configuration, you should create a widget configuration activity. Widget configuration activity allows users to modify the widget settings at create-time.
 - **Layout considerations:** Widgets should be adaptable to accommodate varying spaces.
 - **Widget resizing:** Widgets should support resizing to fine-tune the amount of information the users want to see.
 
@@ -44,8 +44,8 @@ This section will create a sample app with a blank activity and a widget. Our fo
 
 ![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/android-app-widget.gif)
 
-### Step 1: Create a new Android Studio project.
-Open Android Studio and create a new project. Use the Empty Activity project template and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
+### Step 1: Create a project.
+Create a new project on Android Studio with at least one activity and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
 
 ![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
@@ -71,24 +71,22 @@ Open `new_app_widget_info.xml` XML file. In this file, you can add other views t
 ```XML
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="?attr/appWidgetBackgroundColor"
-    android:padding="@dimen/widget_margin"
     android:orientation="vertical"
+    android:layout_height="match_parent"
     android:theme="@style/ThemeOverlay.AppWidgetsDemo.AppWidgetContainer">
 
     <TextView
-        android:id="@+id/appwidget_text"
-        android:layout_width="match_parent"
+        android:id="@+id/widget_text"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:textAlignment="center"
+        android:layout_width="match_parent"
         android:background="?attr/appWidgetBackgroundColor"
         android:contentDescription="DEMO WIDGET"
         android:text="DEMO WIDGET"
         android:textColor="?attr/appWidgetTextColor"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textSize="24sp"/>
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
@@ -96,17 +94,16 @@ Open `new_app_widget_info.xml` XML file. In this file, you can add other views t
         android:layout_margin="8dp"
         android:background="?attr/appWidgetBackgroundColor"
         android:text="CLICK BUTTON"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textSize="24sp"/>
 </LinearLayout>
 ```
 
 ### Step 4: Widget Java class
 Open the `NewAppWidget.java` file. This class extends with the `AppWidgetProvider` class. The `AppWidgetProvider` class receives and handles broadcast events relevant to the App Widget. The `AppWidgetProvider` class overrides the following methods:
-- `onUpdate()`: This method updates app widgets on intervals that are defined in the `AppWidgetProviderInfo` metadata. In this case, the `AppWidgetProviderInfo` metadata is defined in the `new_app_widget_info.xml` file. This method is also called when the app widget is dropped on the home screen.
-- `onAppWidgetOptionsChanged()`: This method is called when the widget is resized.
-- `onEnabled()`: This method is called when a widget is created.
-`onDisabled()`: This method is called when the widget's last instance is deleted. For example, we can launch an activity within this function.
+- `onUpdate()`: Updates app widgets on intervals that are defined in the `AppWidgetProviderInfo` metadata. In this case, the `AppWidgetProviderInfo` metadata is defined in the `new_app_widget_info.xml` file. This method is also called when the app widget is dropped on the home screen.
+- `onAppWidgetOptionsChanged()`: It is called when the widget is resized.
+- `onEnabled()`: It is when a widget is created.
+`onDisabled()`: It is called when the widget's last instance is deleted. For example, we can launch an activity within this function.
 
 The final code will be as shown below.
 
