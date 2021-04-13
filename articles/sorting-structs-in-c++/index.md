@@ -1,7 +1,8 @@
-﻿### C++  Structs sorting
+### C++ Structs sorting
 Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
+
 ### Prerequisites
-For the tutorial to be helpful, you should have the [Falcon IDE](https://sourceforge.net/projects/falconcpp/files/latest/download) or any other C++ IDE that you are comfortable with and also some basic knowledge in C++.
+For this tutorial to be helpful, you should have the [Falcon IDE](https://sourceforge.net/projects/falconcpp/files/latest/download) or any other C++ IDE that you are comfortable with and also some basic knowledge in C++.
 
 ### Goal
 In this tutorial, we will first polish the basics of Structs in case you are new to them, then we will go ahead and learn how we can sort structs using their members.
@@ -36,7 +37,7 @@ struct Person
 	int age;
 }Employee,Student;
 ```
-The keyword **typedef** is also used with structs to define a new object if we wish to use the object to declare struct variables directly as we shall see later in `working with arrays of a structure as we proceed`
+The keyword **typedef** is also used with structs to define a new object if we wish to use the object to declare struct variables directly as we shall see later in "working with arrays of a structure".
 
 #### 2.Declaring structure variables like basic data types
 In this case, the `struct_name` is used to create a new object.
@@ -58,7 +59,7 @@ int main()
 ```
 ###  Initializing Struct members
 Struct members are only initialized through the struct variables (objects) and not through declaration.
-This is done using braces '{}' 
+This is done using braces '{}'.  
 Example:
 ```c++
 using namespace std;
@@ -156,7 +157,7 @@ int main()
 }
 ```
 ###  Sorting Structs
-Now that we are familiar with how Structs work, let us get started with the sorting. We are going to add more attributes(members) of a person to the `Person` Struct to make it much more practical. In addition to that, we are also going to add a comparator function which will be used by the STL sort function for sorting in our Structs. In our comparator function is where we decide which member we want to use to sort the arrays of structs. In our case we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
+Now that we are familiar with how Structs work, let us get started with the sorting. We are going to add more attributes(members) of a person to the `Person` Struct to make it much more practical. In addition to that, we are also going to add a comparator function which will be used by the STL sort function for sorting in our Structs. In our comparator function we decide which member we want to use to sort the arrays of structs. In our case, we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
 ```c++
 bool compare( Student a, Student b){
 	if(a.age < b.age)
@@ -166,7 +167,7 @@ bool compare( Student a, Student b){
 	
 }
 ```
-To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this.
+To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this:
 ```c++
 bool compare( Student a, Student b){
 	if(a.name < b.name)
@@ -237,12 +238,3 @@ int main()
 ### Conclusion
 This knowledge surely has a lot of applications in C++. Feel free to play around with the code and add some more features of your own or even apply them to your projects.
 Happy coding! 
-
-
-
-
-
-
-
-
-
