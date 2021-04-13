@@ -113,10 +113,14 @@ Such solutions include;
 
 **AMQP**
 
-[AMQP](https://www.kelltontech.com/kellton-tech-blog/internet-of-things-protocols-standards) is a software layer protocol for message-oriented architecture that provides routing and queuing for messages. AMQP uses TCP connection protocol, therefore, it is reliable for server side communications.
+[AMQP](https://www.kelltontech.com/kellton-tech-blog/internet-of-things-protocols-standards) is a software layer protocol for message-oriented architecture that provides routing and queuing of messages in business applications and IoT devices management. AMQP uses TCP connection protocol, therefore, it is reliable for client-server communications.
 
-The protocol supports point-to-point communication reliably, even over poor networks when working with messages and queues.
-AMQP is also an open and standard protocol that  allows applications running on different platforms to connect to each other therefore supporting multi-vendor communications ecosystem.
+The protocol supports point-to-point communication reliably, with the abilitity for load balancing the entire network when working with messages and queues.
+
+AMQP is a wide range of security protocols such as SSL,TLS and SALS for messaging hence more applicable for business transactions like financial services with more end-to-end confidentiality requirements. 
+
+AMQP is also an open and standard protocol that  allows applications running on different platforms to connect to each other therefore supporting multi-vendor communications ecosystem. 
+Unlike MQTT protocol, AMQP is preferred when developing solutions that require high level of scalability and availability.
 
 
 #### IoT Development Platforms and Use Cases
