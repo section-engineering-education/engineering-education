@@ -14,7 +14,7 @@ images:
     alt: TypeScript API example image
 ---
 
-TypeScript was introduced by Microsoft as a superset of JavaScript. It takes the versatility of JavaScript and improves it with type definitions. TypeScript is used with a lot of popular frameworks like React.js and React Native to build enterprise applications.
+TypeScript was introduced by Microsoft as a superset of JavaScript. It takes the versatility of JavaScript and improves it with type definitions. Type definitions are used to enforce types on a variable. For example, the value 5 is a number. A number is a type definition in TypeScript. TypeScript is used with a lot of popular frameworks like React.js and React Native to build enterprise applications.
 
 <!--more-->
 
