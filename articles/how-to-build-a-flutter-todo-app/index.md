@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/how-to-build-a-flutter-todo-app/
 title: How to Build a Flutter ToDo App
-description: This article will show you how to work with and build a todo application using the Flutter SDK.
+description: This article will show the reader how to work with and build a todo application using the Flutter SDK.
 author: nathaniel-dauda-wobin
-date: 2021-04-14T00:00:00-17:00
+date: 2021-04-14T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/how-to-build-a-flutter-todo-app/hero.jpg
     alt: Flutter todo app image
 ---
-Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase. This technology is changing the software development industry by making application development faster and cheaper.
+Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase.
 <!--more-->
-
-In this article, we will use flutter to build a **To-do list** app.
+This technology is changing the software development industry by making application development faster and cheaper. In this article, we will use Flutter to build a **To-do list** app.
 
 ### Table of contents 
 - [Prerequisites](#prerequisites)
@@ -35,35 +34,37 @@ To better understand this article, the reader is expected to have a foundational
 
 ### Goals
 At the end of this article, the reader is expected to be familiar with: 
-- Creating a basic flutter application
-- Flutter and dart packages
-- Flutter widgets
-- Stateless and Stateful widget
+- Creating a basic flutter application.
+- Flutter and dart packages.
+- Flutter widgets.
+- Stateless and Stateful widget.
 
 The **TODO List** app will look like the screenshot below:
 
-![Final Project](/engineering-education/how-to-build-a-todo-app/final.jpg)
+![Final Project](/engineering-education/how-to-build-a-flutter-todo-app/final.jpg)
 
-**To-do list app built using flutter**
+**To-do list app built using Flutter**
 
 ### Requirements
-In this tutorial, we will be using the flutter SDK which can be downloaded [here](https://flutter.dev/docs/get-started/install) and [VS Code](https://code.visualstudio.com/download) text editor. On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
+In this tutorial, we will be using the Flutter SDK which can be downloaded [here](https://flutter.dev/docs/get-started/install) and [VS Code](https://code.visualstudio.com/download) text editor. On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
 
 ```bash
 # create new project
 flutter create todo_app
 ```
 
-Next, navigate into the created project (todo_app) directory using the command ```cd todo_app``` in our case and run the app as shown below:
+Next, navigate into the created project (todo_app) directory using the command `cd todo_app` in our case and run the app as shown below:
 
 ```bash
 # run the app
 flutter run
 ```
 
-We will be using a smartphone to run the app, follow this link to learn how to run [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it takes a little time to load. Your app will be the flutter default app which will look like the screengrab below.
+We will be using a smartphone to run the app, follow this link to learn how to run [flutter on a physical device](https://kobiton.com/topics/develop-deploy-and-test-flutter-apps/). When the project is run for the first time it will take a little time to load. 
 
-![Flutter Default App](/engineering-education/how-to-build-a-todo-app/default.jpg)
+Your app will be the flutter default app which should look like the screengrab below.
+
+![Flutter Default App](/engineering-education/how-to-build-a-flutter-todo-app/default.jpg)
 
 **Flutter default after running any app for the first time**
 
@@ -95,23 +96,26 @@ class Todo extends StatelessWidget {
 After running the app you will notice an empty canvas with the title To-do-List. Let us look at the code.
 
 
-### Flutter Packages
-On the first line, we imported a flutter package named `Material.dart` (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app. Instead of building some features from scratch, you could just go to [pub.dartlang.org](pub.dartlang.org) and search for a package that will perform that feature you want to build. You can incorporate it into your application. This will save a lot of time for you as a developer. As you develop with flutter, you will use a lot of packages.
+### Flutter packages
+On the first line, we imported a flutter package named `Material.dart` (import 'package:flutter/material.dart';) to make app development fast flutter comes with a package that makes it easy to start building a material style app. Packages are simply other people's solution for a feature you need in your app. 
 
-### Flutter Widgets
+Instead of building some features from scratch, you could just go to [pub.dartlang.org](pub.dartlang.org) and search for a package that will perform that feature you want to build. You can incorporate it into your application. This will save a lot of time for you as a developer. As you develop with flutter, you will use a lot of packages.
+
+### Flutter widgets
 Flutter Widgets describe what the view of an app should look like given the current configuration and state. According to the Flutter documentation, Flutter widgets are built using a modern framework that takes inspiration from React.
 
 A widget can help with layout, define design, etc. For example: Padding, Margin, Center, Layout rows, and columns are all widgets.
 
-From our code, the whole app is a widget which contains a MaterialApp widget.
+From our code, the whole app is a widget that contains a MaterialApp widget.
 - The scaffold is the widget that helps us create a proper material layout without the worry of manual styling.
 - The AppBar is a widget that accepts a title and creates a bar at the top of the screen, this is normal in apps. This aligns the text to the left on Android and aligns text to the center on iOS. 
 
-### Stateless Widget
+### Stateless widget
 A stateless widget is a widget whose state cannot be changed once it is built. i.e. no amount of change in the variables, icons, buttons, or retrieving data can change the state of the app.
-A to-do app will always have to-do items added and remove, to achieve this we will need to implement a stateful widget.
 
-### Stateful Widget
+A to-do app will always have to-do items added and removed, to achieve this we will need to implement a stateful widget.
+
+### Stateful widget
 This type of widget is dynamic. This means it can change its appearance when it receives data or change appearance in response to events triggered.
 
 Edit your code to match the one in the picture below.
@@ -134,7 +138,9 @@ class _TodoListState extends State<TodoList> {
 }
 ```
   
-You should notice that our stateful widgets class TodoList has two classes. This is to enable us to update our to-do list without losing our data. Now, let us add functionality to the state class. Add the below code to your state:
+You should notice that our stateful widgets class TodoList has two classes. This is to enable us to update our to-do list without losing our data. Now, let's add functionality to the state class. 
+
+Add the below code to your state:
 
 ```dart
 class _TodoListState extends State<TodoList> {
@@ -154,10 +160,11 @@ class _TodoListState extends State<TodoList> {
 }
 ```
 
-This code final List<String> _todoList = <String>[];. Enable us save data into our app. While 
-final TextEditingController _textFieldController = TextEditingController();
-Is enabling us have a text field for items input. 
-Next, update your code to the one below
+This code final `List<String> _todoList = <String>[];`. Enables us to save data into our app. 
+
+While final `TextEditingController _textFieldController = TextEditingController();` is enabling us have a text field for items input. 
+
+Next, update your code to the one below:
 
 ```dart
 class _TodoListState extends State<TodoList> {
@@ -187,6 +194,7 @@ class _TodoListState extends State<TodoList> {
 ```
 
 The _addtodoItems function is responsible for saving items into _todolist.
+
 Update your code again to match the one below.
 
 ```dart
@@ -258,8 +266,12 @@ To type in todo items update the code to the one below.
   }
 ```
 
-The alert dialog tells the user about situations that require confirmation. We are going to use the alert box to collect todo Items.
+The alert dialog tells the user about situations that require confirmation. 
+
+We are going to use the alert box to collect todo Items.
+
 To run the code we would have to update the build widget code to the one below.
+
 ```dart
 class _TodoListState extends State<TodoList> {
   final List<String> _todoList = <String>[];
@@ -279,7 +291,7 @@ class _TodoListState extends State<TodoList> {
   }
 ```
 
-Your complete code should look the one below:
+Your complete code should look like the one below:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -377,14 +389,16 @@ class _TodoListState extends State<TodoList> {
 ```
 
 ### Conclusion
-Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. [Link to final code on github](https://github.com/wobin1/Todo-List-app)
+Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this [link](https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. Link to [final code on GitHub](https://github.com/wobin1/Todo-List-app)
 
 To summarize, we learned:
-- How to create a flutter app
-- about Stateless and Stateful Widget 
-- about flutter packages 
+- How to create a flutter app.
+- about Stateless and Stateful Widgets. 
+- about Flutter packages.
 
-### Further Reading
+Happy coding!
+
+### Further reading
 - [Dart List](https://www.geeksforgeeks.org/listtile-widget-in-flutter/)
 - [Dart Object](https://bezkoder.com/category/dart/)
 - [Flutter Widgets](https://flutter.dev/docs/development/ui/widgets)
