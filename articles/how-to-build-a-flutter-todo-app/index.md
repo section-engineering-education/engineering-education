@@ -120,6 +120,8 @@ This type of widget is dynamic. This means it can change its appearance when it 
 
 Edit your code to match the one in the picture below.
 
+![Flutter appbar](/engineering-education/how-to-build-a-flutter-todo-app/appbar.jpg )
+
 ```dart
 class _TodoListState extends State<TodoList> {
   // save data
@@ -215,7 +217,7 @@ Update your code again to match the one below.
   ```
 
 
-the Widget ListTile is usually to populate a listView in flutter.
+The Widget ListTile is usually to populate a listView in flutter.
 To type in todo items update the code to the one below.
 
 ```dart
