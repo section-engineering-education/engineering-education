@@ -193,7 +193,7 @@ To avoid warning messages, choose a number divisible by 6 (the number count in t
 
 **Output:**  
 
-- | [,1] | [,2] | [,3]
+index | [,1] | [,2] | [,3]
 --- | --- | --- | ---
 [1,] | 2 | 4 | 6
 [2,] | 3 | 5 | 7
