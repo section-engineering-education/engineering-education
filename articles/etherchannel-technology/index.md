@@ -46,23 +46,23 @@ This article will cover EtherChannel Technology, how to configure and troublesho
 ### Prerequisites
 The reader must observe the following prerequisites:
 - The reader should have a good understanding of basic networking.
-- Good understanding on how to configure switches using packet tracer.
+- Good understanding of how to configure switches using packet tracer.
 - It is best for the reader to know how to work with the Cisco packet tracer.
 
 To download and install the Cisco packet tracer on a desktop or laptop, visit [this link](https://www.computernetworkingnotes.com/ccna-study-guide/download-packet-tracer-for-windows-and-linux.html).
 
 ### What is EtherChannel Technology?
-`EtherChannel Technology` is a link aggregation technology that makes it possible to combine several physical links between switches into one logical link to provide high-speed links and redundancy without being blocked by the Spanning Tree Protocol. There is a provision of fault tolerance, load balancing, increased bandwidth, and redundancy. We form it through negotiation with the following two protocols: ***Port Aggregation Protocol (PAgp)*** and ***Link Aggregation Control Protocol (LACP)*** .
+`EtherChannel Technology` is a link aggregation technology that makes it possible to combine several physical links between switches into one logical link to provide high-speed links and redundancy without being blocked by the Spanning Tree Protocol. There is a provision of fault tolerance, load balancing, increased bandwidth, and redundancy. We form it through negotiation with the following two protocols: ***Port Aggregation Protocol (PAgp)*** and ***Link Aggregation Control Protocol (LACP)***.
 
 ### EtherChannel terminologies
-- `EtherChannel`- A port-channel architecture that groups together multiple physical Ethernet links into a single logical link which provide fault-tolerant, high-speed, and redundant links between switches and other network devices.
+- `EtherChannel`- A port-channel architecture that groups together multiple physical Ethernet links into a single logical link which provides fault-tolerant, high-speed, and redundant links between switches and other network devices.
 - `Spanning Tree Protocol` - This is a layer 2 protocol that ensures there are no loops when a network has redundant links.
-- `Port Channel`- This refers to communication links between switches that combine multiple ethernet ports bandwidth into a single logical link.
+- `Port-Channel`- This refers to communication links between switches that combine multiple ethernet ports bandwidth into a single logical link.
 - `Channel Group` - A collection of ethernet interfaces on a single switch.
 
 ### EtherChannel technology protocols
 #### Port Aggregation Protocol (PAgp)
-Port Aggregation Protocol (PAgp) is a cisco based protocol but also runs on vendor-licensed switches that support PAgp. It facilitates the automatic creation of ether channel links by detecting the link configuration on each side and ensuring the links are compatible for forming an ether channel link. It works in three-channel modes:
+Port Aggregation Protocol (PAgp) is a cisco-based protocol and runs on vendor-licensed switches that support PAgp. It facilitates the automatic creation of ether channel links by detecting the link configuration on each side and ensuring the links are compatible for forming an ether channel link. It works in three-channel modes:
 - On- interfaces - In this mode, there is no exchange of PAgP packets.
 - Desirable interfaces - In this mode, start negotiation with other interfaces by sending PAgp packets.
 - Auto- here interfaces - Respond to PAgp packets but cannot start a negotiation with other interfaces.
@@ -169,7 +169,7 @@ S2(config-if-range)#do write
 S2(config-if-range)#
 ```
 
-**NOTE:`fa` refers to fast ethernet ports used for connecting the network hosts to the switch or router.**
+**NOTE: `fa` refers to fast ethernet ports used for connecting the network hosts to the switch or router.**
 
 ### Step Three - Port-channel configurations using LACP and PAgp.
 #### Port-channel 1 configurations using LACP mode active
@@ -203,7 +203,7 @@ S2(config-if)#switchport mode trunk
 S2(config-if)#do write
 
 ```
-##### Port-channel 2 configurations using LACP mode passive and active.
+#### Port-channel 2 configurations using LACP mode passive and active.
 Port-Channel 2 is connecting switches S2 and S3 through interfaces fa0/3 and fa0/4.
 
 S2 configuration.
@@ -237,7 +237,7 @@ S3(config-if)#switchport mode trunk
 S3(config-if)#do write
 ```
 
-##### Port-channel 3 configurations using PAgp mode desirable.
+#### Port-channel 3 configurations using PAgp mode desirable.
 Port-Channel 3 is connecting switches S1 and S3 through interfaces fa0/5 and fa0/6.
 
 S1 configuration.
@@ -274,7 +274,7 @@ With all the configurations done, we have created our ether channel. We can now 
 
 
 ### Step Four - EtherChannel Verification
-We shall use the show `EtherChannel` summary command to verify if our ether channels configured correctly.
+We shall use the show `EtherChannel` summary command to verify if our ether channels are configured correctly
 
 ```bash
 S1#show etherchannel summary
@@ -298,7 +298,7 @@ Group  Port-channel  Protocol    Ports
 3      Po3(SU)           PAgP   Fa0/5(P) Fa0/6(P)
 S1#
 ```
-Above, two port-channel links connect to switch S1:  `Po1(SU) LACP` and `Po3(SU) PAgp` and the interfaces displayed. If we try the same on the other switches, the output shows us that our channels are up and running.
+Above, two port-channel links connect to switch S1:  `Po1(SU) LACP` and `Po3(SU) PAgp`, and the interfaces are displayed. If we try the same on the other switches, the output shows us that our channels are up and running.
 
 ```bash
 S2#show etherchannel summary
@@ -361,10 +361,10 @@ Now let us ping `PC5` from `PC3.` It should send replies as shown.
 In case the ether channel link is not operational, we can troubleshoot to find the errors and try to fix them.
 - **Step 1** - Use the `show EtherChannel summary` command to view which port-channel is down.
 - **Step 2** - After identifying which port channel is down. Use the command to `show EtherChannel port-channel,` and a detailed output will be displayed, showing the incompatible PAgP/LACP modes configured on the switches.
-- **Step 3** - We can now correct the misconfiguration by deleting that port channel using command `no interface port-channel`. For instance,  if its port-channel 1 will shall type `no interface port-channel 1` to delete port-channel 1. Then, repeat the steps that we have discussed above to create another port channel correcting the incompatible modes.
+- **Step 3** - We can now correct the misconfiguration by deleting that port channel using the command `no interface port-channel.` For instance, if it is port-channel, one will type `no interface port-channel` 1 to delete port-channel 1. Then, repeat the steps that we have discussed above to create another port-channel correcting the incompatible modes.
 
 ### Conclusion
-As we have seen, ether channel technology is the convenient way to increase our bandwidth and redundancy in our networks without the redundant links being blocked by the Spanning Tree Protocol.
+As we have seen, ether channel technology is convenient for increasing our bandwidth and redundancy in our networks without the redundant links being blocked by the Spanning Tree Protocol. To summarize:
 To summarize:
 - We learned what EtherChannel Technology is.
 - We explored different protocols used in EtherChannel configurations.
