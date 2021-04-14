@@ -267,3 +267,6 @@ Happy coding!
 ### Futher reading
 For more on structs and structs sorting visit 
 [cplusplus](https://www.cplusplus.com/forum/general/97555/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
