@@ -17,8 +17,8 @@ pygmentsStyle = "monokai"
    engineering-education = "/:sections/:slug"
    topics = "/engineering-education/topic/:slug/"
 [author]
-  name = "Molly Wojcik"
-  email = "molly@section.io"
+  name = "Hector Kambow"
+  email = "enged@section.io"
 [params]
   dateformat = "January 2, 2006"
   description = "Section's Edge as a Service simplifies edge computing for next-gen applications."
@@ -26,9 +26,8 @@ pygmentsStyle = "monokai"
   unsafe = true
 [social]
 email = "enged@section.io"
-slack = "https://t.co/OANAJYol8Y"
+slack = "https://sectionio-community.slack.com/"
 twitter = "https://twitter.com/sectionio"
-facebook = "https://www.facebook.com/sectionio/"
 github = "https://github.com/section-io/"
 [blackfriday]
   plainIDAnchors = true
