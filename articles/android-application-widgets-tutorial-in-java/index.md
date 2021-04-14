@@ -11,7 +11,7 @@ Application widgets are views that contain some of the application's functionali
 
 ### Prerequisites
 The following prerequisites will be required to follow this tutorial:
-- The reader should have knowledge of building Android apps.
+- The reader should know about building basic Android apps.
 - [Android Studio](https://developer.android.com/studio) installed.
 - Basic understanding of [Java](https://www.javatpoint.com/java-programs) programming language and XML programming languages.
 
@@ -19,7 +19,7 @@ The following prerequisites will be required to follow this tutorial:
 Widgets vary in size and support resizing. Widgets are mostly placed on a device's home screen to enable quick access to a particular mobile application's data and functionalities. They allow a user to create shortcuts for their favorite apps. Some of the most common widgets are music widgets, calendar widgets, Google search widgets.
 
 #### Widget design guidelines
-- **Widget content:** A widget should contain the app's most important content while more details about the content on the widget should be in the app.
+- **Widget content:** A widget should contain the app's most important content while more details about the app's widget's content.
 - **Widget configuration:** For the widgets that need configuration, you should create a widget configuration activity. Widget configuration activity allows users to modify the widget settings at create-time.
 - **Layout considerations:** Widgets should be adaptable to accommodate varying spaces.
 - **Widget resizing:** Widgets should support resizing to fine-tune the amount of information the users want to see.
@@ -40,12 +40,12 @@ Collection widgets display multiple elements for viewing and can support scrolli
 Hybrid widgets are widgets that can fall into more than one category. For example, a music player widget can accommodate more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
 
 ### Creating a sample widget in Java
-This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects. After going through this tutorial, you will be able to create an Android widget, as shown in the animations below. Find the final APK file on this [link](/engineering-education/android-application-widgets-tutorial-in-java/app-debug.apk).
+This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects. After going through this tutorial, you will create an Android widget, as shown in the animations below. Find the final APK file on this [link](/engineering-education/android-application-widgets-tutorial-in-java/app-debug.apk).
 
 ![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/android-app-widget.gif)
 
 ### Step 1: Create a project.
-Create a new project on Android Studio with at least one activity and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
+Create a new Android Studio project with at least one activity and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
 
 ![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
@@ -63,7 +63,7 @@ To create a widget, navigate to the package name `com.demo.widgetsdemo` and righ
 From step 2 above, there are three different files created:
 - `NewAppWidget.java`: This Java class is the widget class created under the package name `com.demo.widgetsdemo`.
 - `new_app_widget_info.xml`: This is an XML file under the XML folder. It contains widget configurations and can be edited.
-- `new_app_widget.xml`: This is the layout file for the widget, It is located in the layout folder.
+- `new_app_widget.xml`: This is the layout file for the widget. It is located in the layout folder.
 
 ### Step 3: Customize widget layout file
 Open `new_app_widget_info.xml` XML file. In this file, you can add other views that you would like to be part of your widget. In this case, you will add a button below the already existing text view, as shown in the code below.
@@ -127,7 +127,7 @@ Replace the `example_appwidget_preview` image with a drawable image of your choi
 
 ### Step 7: Run the App
 Install the app on a test device and add the widget to the home screen. 
-**Note: Widgets are arranged in alphabetical order. Go to the widget section and locate the widget `App Widgets Demo`. The widget we created, will have the same name as the application name, as shown in the screenshot below.**
+**Note: Widgets are arranged in alphabetical order. Go to the widget section and locate the widget App Widgets Demo. The widget we created will have the same name as the application name, as shown in the screenshot below.**
 
 ![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/demo-widget-screenshot.jpg)
 
@@ -141,7 +141,7 @@ Tap the widget button. This should open the app `MainActivity`.
 ### Advantages of widgets
 Widgets have the following advantages:
 - Informational widgets allow the users to view important information without opening the app.
-- Widgets act as easy gateways to apps installed on the user's device.
+- Widgets act as accessible gateways to apps installed on the user's device.
 
 ### Limitations of widgets
 Widgets have the following limitations:
