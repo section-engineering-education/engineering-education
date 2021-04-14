@@ -6,7 +6,7 @@ url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-fram
 title: How to upload files to AWS S3 using Django framework
 description: This article explains a step-by-step tutorial on how to create S3 buckets and upload files through a Django application.
 author: ifenna-okoye
-date: 2021-03-28T00:00:00-11:00
+date: 2021-04-14T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
