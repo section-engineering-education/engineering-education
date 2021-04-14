@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-build-a-flutter-todo-app/
 title: How to Build a Flutter ToDo App
-description: This article will show the reader how to work with and build a todo application using the Flutter SDK.
+description: This article will show the reader how to work with and build a todo application using the Flutter SDK. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase.
 author: nathaniel-dauda-wobin
 date: 2021-04-14T00:00:00-12:00
 topics: []
