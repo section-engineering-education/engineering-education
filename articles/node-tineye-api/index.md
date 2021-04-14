@@ -49,7 +49,6 @@ TinEye gives two keys for enabling us to test in the sandbox. In the sandbox, we
 ![meloncat](/engineering-education/node-tineye-api/meloncat.jpg)
 
 > You can search for other images once you go live.
-
 The following are the keys:
 
 - Public Key: `LCkn,2K7osVwkX95K4Oy`
@@ -63,7 +62,6 @@ We first include the library then create a variable called `api` for representin
 
 ```javascript
 let TinEye = require('tineye-api')
-
 let api = new TinEye('https://api.tineye.com/rest/', <public_key>, <private_key>);
 ```
 
@@ -76,26 +74,21 @@ Create a new file called *tineye.js* and paste this code:
 ```javascript
 //importing the module
 let TinEye = require('tineye-api')
-
 //The public and private keys
 let privateKey= '6mm60lsCNIB,FwOWjJqA80QZHh9BMwc-ber4u=t^'
 let publicKey = 'LCkn,2K7osVwkX95K4Oy'
-
 //Initializing the api
 let api = new TinEye('https://api.tineye.com/rest/', publicKey, privateKey);
-
 //The URL of the image to be searched
 let url = "https://tineye.com/images/meloncat.jpg";
-
 //An object containg options for the search
 let options = {
   limit: 5,
   sort: "score",
   order: "desc",
 };
-
 //using the API
-/*feeding the url and the options for the search
+/*feeding the URL and the options for the search
 then logging the response and the error
 */
 api
@@ -106,13 +99,11 @@ api
   .catch(function (error) {
     console.log(error);
   });
-
 ```
 We first import the library then create two variables, `publicKey` and `privateKey`, and initialize them with the keys.
 We then initialize the api and the URL of the image to be searched. 
 
 > NOTE: The URL used is for the meloncat image which we'll use for testing in the sandbox.
-
 In the `options` object, we pass optional parameters to be used in the search which are:
 
 i. `limit` - This one specifies the number of result images to be displayed to the user. The default is 100 and to return all images, we initialize it to -1.
@@ -156,10 +147,8 @@ We feed the image path to the `readFileSync()` of the file system module. You ca
 We then feed the image and the options to the API using the `searchData()` method.
 
 >Again, you will run into an error if you test it in the sandbox. You can only use it when live.
-
 ```javascript
 var fs = require('fs');
-
 var img = fs.readFileSync("path_to_the_image");
 var params = {
   offset: 0,
@@ -177,7 +166,7 @@ api
 ```
 
 #### Troubleshooting common errors
- 
+
  Common error messages and their fixes can be found [here](https://help.tineye.com/article/181-list-of-tineye-api-error-messages)
 
 #### Going live
@@ -185,7 +174,6 @@ api
 Going live is a simple straightforward process. Head on to [this](https://services.tineye.com/developers/tineyeapi/getting_started) where you will sign up, get your keys then perform a test search and you will be set to go.
 
 > NOTE: To use the API live, you will have to purchase a bundle first. The costs are found [here](https://services.tineye.com/TinEyeAPI#plans-and-pricing)
-
 #### Further Reading
 
 This was just a basic introduction, but the API can be manipulated in various ways. Follow the link below to learn more.
