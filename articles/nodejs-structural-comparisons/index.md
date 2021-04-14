@@ -1,10 +1,10 @@
-## Node.js Structural Comparisons
+### Node.js Structural Comparisons
 
 Node.js is a type of computer language based on JavaScript. When structuring codes to produce and generate results, the number of lines of code can become time efficient and eventually valued. This tutorial will display structural breakdowns of numerous scenarios by comparing Node.js to R-Programming, C/C++, and Java.  
 
 R-Programming, C/C++, and Java were selected to differentiate components that can be found quickly with Node.js. The tutorial will extend to other areas of programming structure such as sequencing, organization, features, and available options. Applying these concepts might become beneficial to specific situations such as data science, applications with possible graphic user interface preferences, and general scripts.  
 
-### Table of Contents
+#### Table of Contents
 * [Introduction](#introduction)
 * [Prerequisites](#prerequisites)
 * [Modules and Libraries](#modules-and-libraries)
@@ -12,7 +12,7 @@ R-Programming, C/C++, and Java were selected to differentiate components that ca
 * [Graphing](#graphing)
 * [Graphical User Interface Applications](#graphical-user-interface-applications)
 
-### Prerequisites
+#### Prerequisites
 
 * Windows device.
 * Previous knowledge of installing modules and libraries.
@@ -25,9 +25,9 @@ R-Programming, C/C++, and Java were selected to differentiate components that ca
 
 Once most of the prerequisites are met, let's begin.  
 
-### Modules and Libraries
+#### Modules and Libraries
 
-#### Node.js
+##### Node.js
 
 Node.js computer language is written in a unique structure. One characteristic to consider are the steps to create or add modules into Node.js. As each coding language includes its own sequenced procedure, Node.js also involves flexible options.  
 
@@ -76,13 +76,13 @@ _Screen capture_
 
 As a side note, installing external Node.js modules can be found in documentation.  
 
-#### R-Programming
+##### R-Programming
 
 More information can be found in [CRAN documentation](https://cran.r-project.org). Further options can include `dependencies =` and `source = `.  
 
 Similar to Node.js, R-Programming also uses browser windows to display. Usually in R-Programming, RStudio can display visuals. However, Graphic User Interface (GUI) applications are sent to an internet browser window.  
 
-#### C/C++
+##### C/C++
 
 The following is the most frequently used procedure to install a C module. An advanced statistical module will be installed. More information on how to install the TensorFlow library can be found [here](https://www.tensorflow.org/install/lang_c).  
 
@@ -103,15 +103,15 @@ ldconfig
 ```  
 Visuals of this procedure can be found [here](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/).  
 
-#### Java
+##### Java
 
 This programming language can be limited. As NetBeans can attempt to bring vast number of features, the portability and compatibility are limited as technological preferences change.  
 
-### Variables with Value
+#### Variables with Value
 
 Under each programming language, the common lines to define a variable will be displayed.  
 
-#### Node.js
+##### Node.js
 
 Node.js is structured uniquely to properly define a variable. When using the `global` function, this can break all barriers from separate modules.  
 
@@ -151,7 +151,7 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure, square brackets may surround values.  
 
-#### R-Programming
+##### R-Programming
 
 When defining variables in R-Programming, the variable name and an arrow-type symbol (`<-`). For example, the codes below will show variables corresponding to a data type.  
 
@@ -218,7 +218,7 @@ Less than the number count in the list.
 [2,] | 3  |  5  |  7  |  3
 
 
-#### C/C++
+##### C/C++
 
 C++ is structured in a different way where compiling a script is required. Although, initializing variables remains similar to other computer languages.  
 
@@ -256,7 +256,7 @@ Local variable is 9 and global variable is Section.io.
 [Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)
 _Screen capture_  
 
-#### Java
+##### Java
 
 Java is similar to C to initialize and define variables. A slight difference is private and public classes.  
 
@@ -277,9 +277,9 @@ private void privateclass () {
 Public classes can be used throughout an application whereas private classes are usually within a portion of a file.  
 
 
-### Graphing
+#### Graphing
 
-#### Node.js
+##### Node.js
 
 Plotly was selected to graph. To use Plotly, an account could be required.  
 
@@ -327,7 +327,7 @@ The image below is a frozen portion of the interactive graphic. More can be disp
 [plotly test graph](/engineering-education/nodejs-structural-comparisons/plotlyplt.jpg)  
 _Screen capture_  
 
-#### R-Programming
+##### R-Programming
 
 Graphs are usually displayed fluently in a separate window. An example of a library that can provide data visuals without using a Graphical User Interface (GUI) is `latticist`.  
 
@@ -347,7 +347,7 @@ _Screen capture_
 
 The graph above shows a dataset visualized as a [parallel coordinates](https://www.data-to-viz.com/graph/parallel.html) plot.  
 
-#### C/C++
+##### C/C++
 
 Matplotlib-cpp was chosen to create a graph.  
 
@@ -395,13 +395,13 @@ _Screen capture_
 
 To recap the graph shown above, it is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound.  
 
-#### Java
+##### Java
 
 Java written with NetBeans usually does not have many features for graphs.  
 
-### Graphical User Interface Applications
+#### Graphical User Interface Applications
 
-#### Node.js
+##### Node.js
 
 The library used to create GUI applications is `gui`.  
 
@@ -412,13 +412,13 @@ This is a blank version of the app. If preferred, content could be added.
 [Node.js GUI App](/engineering-education/nodejs-structural-comparisons/gui.jpg)  
 _Screen capture_  
 
-#### R-Programming
+##### R-Programming
 
 It is less known to create GUI applications with R-Programming. As most graphical functions are offered in RStudio. However, there are libraries that use a GUI instead of using raw codes. From a raw form of code, a pop-up browser window should appear.  
 
 For example, [visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/) can provide codes, GUI interactions, and results.  
 
-#### C/C++
+##### C/C++
 
 C++ is more accommodating for GUIs, and it might be slightly time consuming to find the proper current library. Here, `qtbase5-dev` will be used.  
 
@@ -448,7 +448,7 @@ return app.exec();
 [C++ Qt Program](/engineering-education/nodejs-structural-comparisons/qtbase5dev.jpg)  
 _Screen capture_  
 
-#### Java
+##### Java
 
 Java on NetBeans can be limited considering available features that seem to be functional.  
 
@@ -538,17 +538,17 @@ public class SearchEngine extends Application {
 [java app](/engineering-education/nodejs-structural-comparisons/ventaway.jpg)  
 _Screen capture_  
 
-### Conclusion
+#### Conclusion
 Node.js is quite a versatile computational language. R-Programming, Java, and C/C++ can be chosen accordingly. Deciding which computer language to use relies on the individual and possible circumstances.  
 
-### Takeaways
+#### Takeaways
 
 * Node.js contains structures unique to its language.
 * Each language can generate similar outcomes.
 * The tutorial provides a sample to try.
 * There are more to explore and discover.
 
-### References
+#### References
 
 [CRAN documentation](https://cran.r-project.org)  
 [Machine Learning Tool Alternatives](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/)  
