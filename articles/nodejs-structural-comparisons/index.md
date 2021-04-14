@@ -31,7 +31,7 @@ Once most of the prerequisites are met, let's begin.
 
 Node.js computer language is written in a unique structure. One characteristic to consider are the steps to create or add modules into Node.js. As each coding language includes its own sequenced procedure, Node.js also involves flexible options.  
 
-Node.js modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules are inside the `node_module` folder can be used in the Node.js application.  
+Node.js modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application.  
 
 A branched out path directory looks similar to the picture below.  
 
