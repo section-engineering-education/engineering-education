@@ -154,3 +154,5 @@ Access this tutorial's source code on [GitHub](https://github.com/manmusa100/App
 To wrap up, we have learned about Android application widgets and how to implement a widget in an android app. We have discussed different types of widgets and their uses. Lastly, we have learned about the limitations of widgets. Keep in mind the [widget design guidelines](#widget-design-guidelines) discussed in this tutorial.
 
 Happy Coding!
+
+Peer Review Contributions by: [Briana Nzivu](https://www.section.io/engineering-education/authors/briana-nzivu/)
