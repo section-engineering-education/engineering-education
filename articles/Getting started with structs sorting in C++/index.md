@@ -211,7 +211,7 @@ typedef struct Person
 
 /* our Comperator function
  (<) sorts in ascending order, replace with (>) for descending order **/
- 
+
 bool compare( Student a, Student b){
 	/** to use another attribute for sorting, just replace 'age' with it eg. (a.roll_no < b.roll_no)
 	 the return value determines which student will go first in the sorted array **/
@@ -255,6 +255,12 @@ int main()
 	}
 }
 ```
+
+### Futher reading
+For more on structs and structs sorting visit 
+[cplusplus](https://www.cplusplus.com/forum/general/97555/)
+
+
 ### Conclusion
 This knowledge surely has a lot of applications in C++. Feel free to play around with the code and add some more features of your own or even apply them to your projects.
 Happy coding! 
