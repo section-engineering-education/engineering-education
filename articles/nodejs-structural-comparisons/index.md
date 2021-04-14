@@ -253,7 +253,7 @@ gcc test.c -o test
 **Output:**  
 Local variable is 9 and global variable is Section.io.  
 
-[Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)
+[Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)  
 _Screen capture_  
 
 ##### Java
