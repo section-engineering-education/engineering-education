@@ -43,6 +43,7 @@ The keyword **typedef** is also used with structs to define a new object if we w
 In this case, the `struct_name` is used to create a new object.
 Example:
 ```c++
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Person
@@ -62,6 +63,7 @@ Struct members are only initialized through the struct variables (objects) and n
 This is done using braces '{}'.  
 Example:
 ```c++
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Person
@@ -78,6 +80,7 @@ int main()
 ```
 or using a dot '.'
 ```c++
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Person
@@ -98,6 +101,7 @@ int main()
 ### Accessing struct elements
 The struct elements can also be easily accessed by still using the dot (.) as illustrated below.
 ```c++
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Person
@@ -119,6 +123,13 @@ int main()
 	cout << Student.name << " "<< Student.age;
 }
 ```
+Output:
+```
+Frank 63
+Clare 53
+
+```
+
 ### working with arrays of a structure
 It is an array consisting of structs. It can be used to store many instances of a struct object. We are going to create an array of structs that shall use for loops for the collection of the user input and also displaying it.
 ```c++
