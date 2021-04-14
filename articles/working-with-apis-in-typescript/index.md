@@ -259,7 +259,7 @@ npm run start
 
 Image: **Starting the API server**
 
-Now, open a separate terminal. We can test our API by the use of the `curl` command.
+Now, open a separate terminal. We can test our API by the use of the `curl` command. cURL is a command line tool that is used to transfer data using the HTTP protocol and test APIs. cURL stands for client URL.
 
 ```bash
 curl --request GET 'localhost:3000/api'
