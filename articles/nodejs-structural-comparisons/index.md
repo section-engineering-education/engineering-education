@@ -418,7 +418,7 @@ It is less known to create GUI applications with R-Programming. As most graphica
 
 For example, [visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/) can provide codes, GUI interactions, and results.  
 
-#### C
+#### C/C++
 
 C++ is more accommodating for GUIs, and it might be slightly time consuming to find the proper current library. Here, `qtbase5-dev` will be used.  
 
