@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/
-title: How to upload files to AWS S3 using Django framework
-description: This article explains a step-by-step tutorial on how to create S3 buckets and upload files through a Django application.
+title: How to Upload Files to AWS S3 using the Django Rest Framework
+description: This article will be a step-by-step tutorial on how to create S3 buckets and upload files through a Django application.
 author: ifenna-okoye
-date: 2021-04-14T00:00:00-11:00
+date: 2021-04-14T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,31 +14,25 @@ images:
   - url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.png
     alt: How to upload files to AWS S3 using Django framework example image
 ---
+File upload and download are some of the most performed actions on the web. With the rise of cloud-based solutions, companies are moving from an on-premises solution to cloud storage. A couple reasons being its cheaper cost and convenience.
+<!--more-->
+This article will demonstrate how to upload user-generated files to Amazon S3 using the Django Rest Framework.
 
-### How to upload files to AWS S3 using Django Rest Framework
-
-File upload and download are some most performed actions on the web. With the rise of cloud-based solutions, companies are moving from an on-premises solution to cloud storage. One of the reasons is its cheaper cost and convenience.
-
-This article demonstrates how to upload user-generated files to Amazon S3 using the Django Rest Framework.
-
-### Table of Content
-
+### Table of contents
 1. [Prerequisites](#prerequisites)
 
 2. [What is AWS S3?](#what-is-AWS-S3?)
 
-3. [Building a simple Django Rest API Application](#building-a-simple-django-rest-api-application)
+3. [Building a simple Django Rest API application](#building-a-simple-django-rest-api-application)
 
 4. [Integrating AWS S3 into the Django Rest API application](#integrating-aws-s3-into-the-django-api-application)
 
 5. [Summary](#summary)
 
 ### Prerequisites
-
-1. Comfortable working with Django and Django Rest Framework.
+To follow this article along it would be helpful if the reader is comfortable working with Django and Django Rest Framework.
 
 ### What is AWS S3?
-
 AWS S3 is an acronym for Amazon Web Services Simple Storage Service (AWS S3). It is a cloud-based service by Amazon for object storage.
 
 Object storage is a type of storage where items are processed as a data object. Contrary to the traditional method of storing files in the file system hierarchy.
@@ -47,26 +41,21 @@ In the traditional file system, the basic unit of storage is a "file". In AWS S3
 
 The AWS console and available SDKs from AWS are used to access buckets. These SDKs come in supported popular languages such as Python and PHP.
 
-There are several advantages of using AWS S3. These includes:
+There are several advantages of using AWS S3. 
 
+These includes:
 - Scalability
-
 - High performance
-
 - Audit capability
-
 - Security
-
 - Cost-effective
-
 - About 99.999% availability (uptime)
 
 AWS S3 can be used as a backup and disaster recovery tool as well as in data analytics.
 
 In this guide, we will upload user-generated files using the Django Rest Framework.
 
-### Building A simple Django Rest API Application
-
+### Building a simple Django Rest API application
 We are going to create a new Django project named Dropboxer. Dropboxer is a simple file storage application. We can find the complete source code for this project in [this repository](https://github.com/Damephena/dropboxer).
 
 Execute the commands below to set up the project.
@@ -213,7 +202,9 @@ Start the development server by executing the command below:
 python manage.py runserver
 ```
 
-On the browser navigate to [accounts](http://localhost:8000/accounts/). We find the sample file uploaded in the **media** folder. This sample file was created when we uploaded it via the API on the browser as shown below:
+On the browser navigate to [accounts](http://localhost:8000/accounts/). We find the sample file uploaded in the **media** folder. 
+
+This sample file was created when we uploaded it via the API on the browser as shown below:
 
 ![media_folder_included_vs_code](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/media_included_structure.png)
 
@@ -221,8 +212,9 @@ On the browser navigate to [accounts](http://localhost:8000/accounts/). We find 
 
 
 ### Integrating AWS S3 into the Django API application
+We have a working application API endpoint. You need an AWS account to enable the integration of AWS S3 into your Django application. 
 
-We have a working application API endpoint. You need an AWS account to enable the integration of AWS S3 into your Django application. [Sign up](https://aws.amazon.com/) if you do not already have an account, [sign in](https://aws.amazon.com/) if you have an existing AWS account.
+[Sign up](https://aws.amazon.com/) if you do not already have an account, [sign in](https://aws.amazon.com/) if you have an existing AWS account.
 
 Search for **S3**:
 
@@ -232,9 +224,12 @@ Click on “**create bucket**” button:
 
 ![click_create_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/click_create_bucket.png)
 
+
 Provide a unique name for your S3 bucket that is globally identified:
 
+
 ![globally_named_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/globally_name_bucket.png)
+
 
 Naming an AWS S3 bucket may take some trial and error before a name that does not already exist is discovered.
 
@@ -242,13 +237,18 @@ Keep default option, click **create bucket**:
 
 ![finish_bucket_creation](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/finish_bucket_creation.png)
 
+
 You will be redirected to the AWS S3 console which now shows the newly created bucket:
+
 
 ![successful_create_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/successful_bucket_creation.png)
 
+
 We have successfully created an AWS S3 bucket. Recall during bucket creation, public access to the S3 bucket was blocked.
 
-To access the created bucket from our application, we will need to gain access using AWS IAM. AWS IAM is an acronym for Identity and Access Management. It is used to provide access to rights and privileges on AWS resources. Currently, we can only access the S3 bucket through the console.
+To access the created bucket from our application, we will need to gain access using AWS IAM. AWS IAM is an acronym for Identity and Access Management. 
+
+It is used to provide access to rights and privileges on AWS resources. Currently, we can only access the S3 bucket through the console.
 
 AWS allows access to its resources such as AWS S3 through User and Roles. You can read more about how AWS does this [here](https://aws.amazon.com/iam/#:~:text=AWS%20Identity%20and%20Access%20Management%20(IAM)%20enables%20you%20to%20manage,offered%20at%20no%20additional%20charge.)
 
@@ -268,26 +268,34 @@ Provide a user name and check the *programmatic access* box:
 
 ![assign_username_and_access_type](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/assign_username.png)
 
+
 In *Set Permissions*, choose "*Attach existing policies directly*" and check **AWSS3FullAcess** box:
 
 ![set_permissions](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/set_permission.png)
 
+
 Click through and review your choice before creating the user:
+
 
 ![user_summary](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/user_summary.png)
 
+
 On successful creation, it generated an AWS Access and Secret key:
+
 
 ![access_key_generated](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/access_key_generated.png)
 
-Store AWS Secret Key before finishing because the Secret Key won’t be shown again.  
+
+Store the AWS Secret Key before finishing because the Secret Key won’t be shown again.  
 
 Once done, we can view the newly created AWS user on the IAM User dashboard:
 
 ![new_user](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/new_user.png)
 
-In this article, we will use [Django-storages](https://github.com/jschneier/django-storages) to connect to the AWS S3 bucket. Django-storages is a collection of custom storage backends for Django framework.
-We will use the AWS S3 integration from the collection in Django-storages package.
+
+In this article, we will use [Django-storages](https://github.com/jschneier/django-storages) to connect to the AWS S3 bucket. 
+
+Django-storages is a collection of custom storage backends for Django framework. We will use the AWS S3 integration from the collection in Django-storages package.
 
 Install django-storages into the Django application via pip:
 
@@ -314,7 +322,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 `AWS_SECRET_ACCESS_KEY`: is the generated 40 alphanumeric characters.
 
-`AWS_S3_REGION_NAME`: refers to the AWS Region in the S3 console dashboard. Eg *us-east-1*, *eu-west-2*.  
+`AWS_S3_REGION_NAME`: refers to the AWS Region in the S3 console dashboard. For example: *us-east-1*, *eu-west-2*.  
 
 `AWS_S3_SIGNATURE_VERSION`: is the version of the signature used for generating [pre-signed URLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html). AWS S3 buckets need the signature to grant access.
 
@@ -335,11 +343,11 @@ Click the link in the `document` field. Notice the link now has "*s3.amazon***".
 ![remote_file](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/uploaded_big_o.png)
 
 ### Summary
-
 In this article, we created an AWS S3 bucket and assigned IAM User with full access to the AWS S3 bucket. We uploaded files to the AWS S3 bucket using Access Key and AWS Secret Key from our Django Rest API application.
 
-### References
+Happy coding!
 
+### References
 - [Django-storages documentation](https://django-storages.readthedocs.io/en/latest/index.html)
 
 ---
