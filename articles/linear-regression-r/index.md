@@ -39,7 +39,7 @@ y = β<sub>0</sub> + β<sub>𝒾 </sub>X<sub>𝒾 </sub> + ε<sub>𝒾</sub> ;  
 
 1. *β<sub>𝒾 </sub>* is the regression coefficients of independent variables X<sub>𝒾 </sub>.
 2. *ε<sub>𝒾</sub>* represent the error term.
-3. The error term *ε*(Epsilon) of the regression tell us about the random error in the model that can not be accounted for. This error arises when some of the observations fail to fall on the regression line. Even if it is not possible to get rid of the error term, it is possible to minimize it as low as possible. Using the technique of Least Squares, we find the values of *β<sub>0</sub>* and *β<sub>1</sub>* which give a regression line with a minimum sum of squared error.
+3. The error term *ε*(Epsilon) of the regression tell us about the random error in the model that can not be accounted for. This error arises when some of the observations fail to fall on the regression line. Even if it is not possible to get rid of the error term, we have to minimize it as low as possible. Using the technique of Least Squares, we find the values of *β<sub>0</sub>* and *β<sub>1</sub>* which give a regression line with a minimum sum of squared error.
 
 #### Types of regression line
 - Positive linear relationship: It's a linear relationship whene X increase y will increase as well, and therefore the *β<sub>𝒾 </sub>* is a positive number.
@@ -88,6 +88,7 @@ Where:
 4. Normality: We assume observations are normally distributed.
 
  ### Implementing linear regression
+ 
  ####  Step 1: Loading data to RStudio
  First, let's install all the required packages together by running the code below:
  ```r
