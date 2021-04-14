@@ -6,7 +6,7 @@ url: /engineering-education/how-to-build-a-flutter-todo-app/
 title: How to Build a Flutter ToDo App
 description: This article will show you how to work with and build a todo application using the Flutter SDK.
 author: nathaniel-dauda-wobin
-date: 2021-04-06T00:00:00-17:00
+date: 2021-04-14T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
