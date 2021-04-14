@@ -1,4 +1,4 @@
-### Getting started with structs sorting in C++
+### Introduction
 Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
 
 ### Prerequisites
@@ -9,7 +9,6 @@ In this tutorial, we will first polish the basics of Structs in case you are new
 
 ### Creating a Struct 
 We use the Keyword  `struct` to create a struct. Here is what the general syntax of a struct should look like.
-
 ```c++
  struct struct_name
 {
@@ -22,6 +21,7 @@ We use the Keyword  `struct` to create a struct. Here is what the general syntax
 	type_n member_n;
 };
 ```
+
 ### Declaring struct variables
 There are two ways of declaring struct variables:
 
@@ -37,6 +37,7 @@ struct Person
 	int age;
 }Employee,Student;
 ```
+
 The keyword **typedef** is also used with structs to define a new object if we wish to use the object to declare struct variables directly as we shall see later in "working with arrays of a structure".
 
 #### 2.Declaring structure variables like basic data types
@@ -58,6 +59,7 @@ int main()
 	Person Student;
 }
 ```
+
 ###  Initializing Struct members
 Struct members are only initialized through the struct variables (objects) and not through declaration.
 This is done using braces '{}'.  
@@ -78,7 +80,8 @@ int main()
 	Person Student = {"Clare",53 };
 }
 ```
-or using a dot '.'
+
+Or by using a dot:
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -98,8 +101,9 @@ int main()
 	Student.age = 53;
 }
 ```
+
 ### Accessing struct elements
-The struct elements can also be easily accessed by still using the dot (.) as illustrated below.
+The struct elements can also be easily accessed by using the dot (.) as the following:
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -127,11 +131,10 @@ Output:
 ```
 Frank 63
 Clare 53
-
 ```
 
 ### working with arrays of a structure
-It is an array consisting of structs. It can be used to store many instances of a struct object. We are going to create an array of structs that shall use for loops for the collection of the user input and also displaying it.
+It is an array consisting of structs. It can be used to store many instances of a struct object. We are going to create an array of structs that shall use "for loops" for the collection of the user input and also displaying it.
 ```c++
 #include <iostream>
 using namespace std;
@@ -161,13 +164,13 @@ int main()
 	}
 	
 	cout<<"\nHere is the students list:\n";
-	//the for loop below prints the user output in the oder of entry
+	//the for loop below prints the user output in the order of entry
 	for(i=0;i<n;i++){
 		cout<<s_array[i].name <<"   "<<s_array[i].age <<endl;
-		
 	}
 }
 ```
+
 ###  Sorting Structs
 Now that we are familiar with how Structs work, let us get started with the sorting. We are going to add more attributes(members) of a person to the `Person` Struct to make it much more practical. In addition to that, we are also going to add a comparator function which will be used by the STL sort function for sorting in our Structs. In our comparator function we decide which member we want to use to sort the arrays of structs. In our case, we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
 ```c++
@@ -176,9 +179,9 @@ bool compare( Student a, Student b){
 		return 1;
 	else 
 		return 0;
-	
 }
 ```
+
 To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this:
 ```c++
 bool compare( Student a, Student b){
@@ -186,14 +189,15 @@ bool compare( Student a, Student b){
 		return 1;
 	else 
 		return 0;
-	
 }
 ```
+
 The last thing left to do is to call the `sort` function that is found in the `<algorithm>` library. We shall give it three parameters, the first two are simply the range of elements to sort, which in this case are the range of structure arrays and the third one is the comparator function. ie:
 ```c++
 sort(s_array, s_array+n, compare);
 ```
-Finally our entire code looks like this.
+
+Finally, our entire code looks like this.
 ```c++
 #include <iostream>
 #include <algorithm>
@@ -205,7 +209,7 @@ typedef struct Person
 	string name;
 	int roll_no;
 	int age;
-    int weight;
+        int weight;
 	
 }Student;  // declare the student variable
 
@@ -224,7 +228,7 @@ bool compare( Student a, Student b){
 int main()
 {
 	int i,n;
-	cout<< "Enter number of students :";    // to determine size of array
+	cout<< "Enter number of students :";    // to determine the size of array
 	cin>> n;
 	
 	// we set the array to the number of students
@@ -256,11 +260,10 @@ int main()
 }
 ```
 
-### Futher reading
-For more on structs and structs sorting visit 
-[cplusplus](https://www.cplusplus.com/forum/general/97555/)
-
-
 ### Conclusion
 This knowledge surely has a lot of applications in C++. Feel free to play around with the code and add some more features of your own or even apply them to your projects.
 Happy coding! 
+
+### Futher reading
+For more on structs and structs sorting visit 
+[cplusplus](https://www.cplusplus.com/forum/general/97555/)
