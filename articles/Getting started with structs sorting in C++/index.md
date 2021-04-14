@@ -201,15 +201,20 @@ using namespace std;
 
 typedef struct Person
 {
+	// this are the attributes 
 	string name;
 	int roll_no;
 	int age;
     int weight;
 	
-}Student;
+}Student;  // declare the student variable
 
-// our Comperator function
+/* our Comperator function
+ (<) sorts in ascending order, replace with (>) for descending order **/
+ 
 bool compare( Student a, Student b){
+	/** to use another attribute for sorting, just replace 'age' with it eg. (a.roll_no < b.roll_no)
+	 the return value determines which student will go first in the sorted array **/
 	if(a.age < b.age)
 		return 1;
 	else 
@@ -219,7 +224,7 @@ bool compare( Student a, Student b){
 int main()
 {
 	int i,n;
-	cout<< "Enter number of students :";
+	cout<< "Enter number of students :";    // to determine size of array
 	cin>> n;
 	
 	// we set the array to the number of students
@@ -228,7 +233,7 @@ int main()
 	cout<<"Enter Name of Student, roll number, age, and weight \n\n";
 	//for loop to collect input
 	for(i=0;i<n;i++){
-		cout<<"---------\n";
+		cout<<"---------\n";   
 		cin>>s_array[i].name;
 		cin>>s_array[i].roll_no;
 		cin>>s_array[i].age;
@@ -236,6 +241,9 @@ int main()
 	}
 	
 	sort(s_array, s_array+n, compare);
+	 /** this is the sort function
+	its first & second parameter tells it the range of the array we want sorted
+	and the third one is our comparator function **/
 	
 	cout<<"\nHere is the sorted list of Students :\n";
 	//for loop to print the output
