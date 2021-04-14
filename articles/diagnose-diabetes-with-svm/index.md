@@ -60,48 +60,49 @@ profile
 Pandas-profiling gives us the dataset statistics.
 
 ![Overview of the Dataset](/engineering-education/diagnose-diabetes-with-svm/overview.jpg)
-### Overview of the Dataset
+**Overview of the Dataset**
 
 From the report above, we have nine variables and 768 rows. There are no missing data in the dataset. There are no duplicate data.
 
 Pandas-profiling also looks at each of the nine variables. For each variable, it gives us descriptive statistics. It generates a histogram that shows the data distribution of each variable.
 
 ![Histogram - Pregnancy](/engineering-education/diagnose-diabetes-with-svm/pregnancy-histogram.jpg)
-### Histogram - Pregnancy
+**Histogram - Pregnancy**
 
 ![Histogram - Glucose & Blood Pressure](/engineering-education/diagnose-diabetes-with-svm/glucose-bloodpressure.jpg)
-### Histogram - Glucose & Blood Pressure
+**Histogram - Glucose & Blood Pressure**
 
 ![Histogram - Skin Thickness & Insulin](/engineering-education/diagnose-diabetes-with-svm/skinthickness-insulin.jpg)
-### Histogram - Skin Thickness & Insulin
+**Histogram - Skin Thickness & Insulin**
 
 ![Histogram - BMI & Pedigree](/engineering-education/diagnose-diabetes-with-svm/BMI-Pedigree.jpg)
-### Histogram - BMI & Pedigree
+**Histogram - BMI & Pedigree**
 
 ![Histogram - Age & Outcome](/engineering-education/diagnose-diabetes-with-svm/age-outcome.jpg)
-### Histogram - Age & Outcome
+**Histogram - Age & Outcome**
 
 We can see the mean, minimum and maximum values of each variable. We can observe the correlation plot between each of the variables. 
 
 ![Features Interaction](/engineering-education/diagnose-diabetes-with-svm/feature-interactions.jpg)
-### Interaction of Features
+**Interaction of Features**
 
 We can see the Pearson, Spearman, Kendall, and Phik correlation matrix heat map.
 
 ![Feature Correlations](/engineering-education/diagnose-diabetes-with-svm/feature-correlations.jpg)
-### Correlations of Features
+**Correlations of Features**
 
 We can visualize the missing values and know exactly where we have missing values in the dataset. None of the variables contains any missing value, so we can proceed to build our model.
 
 ![Visualization of Missing Values](/engineering-education/diagnose-diabetes-with-svm/missing-values.jpg)
-### Visualization of Missing Values
+**Visualization of Missing Values**
 
 Finally, we can view the first ten rows and last ten rows of the dataset.
 
 ![First Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/first-rows-of-dataset.jpg)
-### First Rows of the dataset
+**First Rows of the dataset**
+
 ![Last Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/last-rows-of-dataset.jpg)
-### Last Rows of the dataset
+**Last Rows of the dataset**
 
 ### Feature Extraction
 We separate the features and the target variable. We have eight features.
@@ -113,7 +114,7 @@ X.head()
 ```
 
 ![Dataset Features](/engineering-education/diagnose-diabetes-with-svm/dataset-features.jpg)
-### Dataset Features
+**Dataset Features**
 
 Our target variable is the outcome column. The value 1 represents patients with diabetes, while 0 represents patients without diabetes.
 
@@ -124,7 +125,7 @@ y.head()
 ```
 
 ![Class Labels of the Dataset](/engineering-education/diagnose-diabetes-with-svm/class-labels.jpg)
-### Class Labels
+**Class Labels**
 
 ### Split Dataset Into Training and Test Set
 We split our dataset into the training and test set. We use 75% of our dataset for training the model, and we use the remaining 25% for testing the model after training.
@@ -163,7 +164,7 @@ X_train.head()
 ```
 
 ![Training Set](/engineering-education/diagnose-diabetes-with-svm/training-set.jpg)
-### Training Set
+**Training Set**
 
 We need to normalize the features in our training set. Normalizing adjusts each column in our dataset to have a mean of 0 and a standard deviation of 1. It will make the training process faster.
 
@@ -182,7 +183,7 @@ X_train[:5, :]
 ```
 
 ![Normalized Training Set](/engineering-education/diagnose-diabetes-with-svm/normalized-train-set.jpg)
-### Normalized Training Set
+**Normalized Training Set**
 
 ### Creating the SVM Model
 The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary separates the positive class and the negative class. It could be linear or non-linear. The polynomial and RBF kernels are suitable when the classes are not linearly separable.
@@ -200,7 +201,7 @@ for k in ('linear', 'poly', 'rbf', 'sigmoid'):
 ```
 
 ![Accuracy of SVM Kernels](/engineering-education/diagnose-diabetes-with-svm/svm-kernerls-accuracy.jpg)
-### Accuracy of the SVM Kernels
+**Accuracy of the SVM Kernels**
 
 The RBF (radial basis function) kernel gives us the highest accuracy score. So for this dataset, it offers the best decision boundary. The RBF kernel finds a decision boundary that separates 82.4% of the patients correctly. Now let us create our model using the RBF kernel.
 
@@ -321,7 +322,7 @@ print("F1 score is", f1)
 ```
 
 ![Precision Recall & F1 Score](/engineering-education/diagnose-diabetes-with-svm/precision-recall-f1.jpg)
-### Precision, Recall, & F1-Score
+**Precision, Recall, & F1-Score**
 
 We can also generate a classification report.
 
@@ -331,7 +332,7 @@ print(classification_report(y_test, y_pred))
 ```
 
 ![Classification Report](/engineering-education/diagnose-diabetes-with-svm/classification-report.jpg)
-### Classification Report
+**Classification Report**
 
 Our precision, recall, and f1-score are approximately 0.71, 0.52, and 0.60 respectively. The model is not too good. For a healthcare problem, we could end up misdiagnosing patients that have diabetes. This is why we pay more attention to the recall score. We can improve our results by collecting more data.
 
