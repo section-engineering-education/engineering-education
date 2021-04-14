@@ -22,9 +22,9 @@ In this article, we shall take a look at how to harness the power of TypeScript 
 
 ### Prerequisites & Pre-Reading Material
 
-- A basic understanding of [HTTP Requests](https://www.section.io/engineering-education/http-requests-nodejs/) and [APIs](https://www.section.io/engineering-education/rest-api/).
-- Fundamental concepts of [Node.js](https://www.section.io/engineering-education/history-of-nodejs/).
-- [TypeScript basics](https://www.section.io/engineering-education/a-friendly-beginner-guide-to-typescript/).
+- A basic understanding of [HTTP Requests](/engineering-education/http-requests-nodejs/) and [APIs](/engineering-education/rest-api/).
+- Fundamental concepts of [Node.js](/engineering-education/history-of-nodejs/).
+- [TypeScript basics](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 
 ### Project Setup
 
