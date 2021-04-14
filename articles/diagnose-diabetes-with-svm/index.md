@@ -1,4 +1,4 @@
-![Hero Header](/engineering-education/diagnose-diabetes-with-svm/hero.jpg)
+![Hero Header](/engineering-education/diagnose-diabetes-with-svm/hero.png)
 
 # Diagnosis of Diabetes using Support Vector Machines
        
