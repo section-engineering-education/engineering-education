@@ -279,7 +279,7 @@ Image: **API Response Output**
 - We installed the required dependencies and their corresponding type definitions.
 - Abstract classes and inheritance were heavily used to make the API extensible. This pattern makes it easier to write new routes.
 - We tested the API using cURL.
-- The entire source code for this article can be found in this [GitHub repository.]()
+- The entire source code for this article can be found in this [GitHub repository.](https://github.com/cyberShaw/TypeScript-Playground/tree/master/TypeScript%20API)
 
 ### Index & Abbreviations
 
