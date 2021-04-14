@@ -148,19 +148,20 @@ int main()
 	cout<< "Enter number of students :";
 	cin>> n;
 	
-	// we set the array to the number of students
+	// we set the array to the number of students according to the users input
 	Student s_array[n];
 	
+	// we prompt the user to enter input 
 	cout<<"Enter Name of Student followed by age \n\n";
-	//for loop to collect input
+	// the for loop below collects the user input for the specified number of students
 	for(i=0;i<n;i++){
-		cout<<"________\n";
+		cout<<"________\n"; // just a line to enhance readability
 		cin>>s_array[i].name;
 		cin>>s_array[i].age;
 	}
 	
 	cout<<"\nHere is the students list:\n";
-	//for loop to print the output
+	//the for loop below prints the user output in the oder of entry
 	for(i=0;i<n;i++){
 		cout<<s_array[i].name <<"   "<<s_array[i].age <<endl;
 		
