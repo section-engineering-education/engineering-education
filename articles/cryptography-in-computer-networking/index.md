@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/cryptography-in-computer-networking/hero.jpg
     alt: 
 ---
-Cybercrimes are becoming part of modern computer networking, putting businesses at risk of losing their data. In this article, I'll be walking you through computer cryptography and network security in general.  
+Cybercrimes are becoming part of modern computer networking, putting businesses at risk of losing their data. In this article, I will be walking you through computer cryptography and network security in general.  
 <!--more-->
 ### Prerequisites
 To follow this article along it would be helpful to have the following:
