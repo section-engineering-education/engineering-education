@@ -366,14 +366,14 @@ int main()
     for(int i=0; i<n; ++i) {
         double t = 2*M_PI*i/n;
         x.at(i) = 16*sin(t)*sin(t)*sin(t);
-        y.at(i) = 13*cos(t) - 5*cos(2*t) - 2*cos(3*t) - cos(4*t);
+        y.at(i) = -(13*cos(t) - 5*cos(2*t)) - (-(2*cos(3*t) - cos(4*t));
     }
 
     // plot() takes an arbitrary number of (x,y,format)-triples.
     // x must be iterable (that is, anything providing begin(x) and end(x)),
     // y must either be callable (providing operator() const) or iterable.
     plt::title("Soundwave Curves");
-    plt::plot(x, y, "y-", x, [](double d) { return 12.5+abs(sin(d)); }, "b-");
+    plt::plot(x, y, "y-", x, [](double d) { return 12.5+abs(sin(d)); }, "bo");
 
 
     // show plots
@@ -384,13 +384,13 @@ int main()
 Enter the following line to compile the cpp file written above.  
 
 ```Bash
-g++ modern.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
+g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
 ./section.io
 ```  
 
 If you have `kex` open, the image should appear similar to the picture below.  
 
-[Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/plot.jpg)  
+[Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/soundcurve.jpg)  
 _Screen capture_  
 
 To recap the graph shown above, it is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound.  
@@ -552,6 +552,7 @@ Node.js is quite a versatile computational language. R-Programming, Java, and C/
 
 [CRAN documentation](https://cran.r-project.org)  
 [Machine Learning Tool Alternatives](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/)  
+[Mathplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)
 [Qt program](https://vitux.com/compiling-your-first-qt-program-in-ubuntu/)  
 [TensorFlow](https://www.tensorflow.org/install/lang_c)  
 [Visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/)  
