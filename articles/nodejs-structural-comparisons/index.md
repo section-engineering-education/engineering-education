@@ -552,7 +552,7 @@ Node.js is quite a versatile computational language. R-Programming, Java, and C/
 
 [CRAN documentation](https://cran.r-project.org)  
 [Machine Learning Tool Alternatives](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/)  
-[Mathplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)
+[Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)
 [Qt program](https://vitux.com/compiling-your-first-qt-program-in-ubuntu/)  
 [TensorFlow](https://www.tensorflow.org/install/lang_c)  
 [Visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/)  
