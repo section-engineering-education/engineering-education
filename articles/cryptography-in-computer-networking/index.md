@@ -7,7 +7,7 @@ title: Cryptography in Computer Networking
 description: This article will be a walk through on computer cryptography and network security in general.  
 author: mackrine-awino
 date: 2021-04-15T00:00:00-15:00
-topics: [Security]
+topics: [Security, Networking]
 excerpt_separator: <!--more-->
 images:
 
