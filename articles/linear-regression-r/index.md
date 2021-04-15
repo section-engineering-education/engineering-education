@@ -187,7 +187,7 @@ TrainSize=dim(train)
 TestSize=dim(test)
 ```
 
-![test-train_Size](image-one.png)
+![test-train_Size](/engineering-education/linear-regression-r/image-one.png)
 
 Training data = 150 rows x 4 column.
 Test data = 50 rows x 4 column.
