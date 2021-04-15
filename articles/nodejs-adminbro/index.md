@@ -171,7 +171,7 @@ To start the admin panel, we have to seed the admin panel with data by connectin
 
 At this point, we have the admin interface set up in our application. To ensure that everything is working, make sure that the database and server are up and running. We can now open the browser at `http:localhost:8000/admin` to see the admin dashboard:
 
-[adminBro-browser-test](section-engineering-education/engineering-education/nodejs-adminbro/AdminBro.png).
+[adminBro-browser-test](engineering-education/nodejs-adminbro/AdminBro.png).
 
 For the entire source code, check this [github repository](https://github.com/KayveTech/AdminBro-Express).
 
