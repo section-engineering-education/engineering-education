@@ -1,8 +1,8 @@
 ### Node.js Structural Comparisons
 
-Node.js is a type of computer language based on JavaScript. When structuring codes to produce and generate results, the number of lines of code can become time efficient and eventually valued. This tutorial will display structural breakdowns of numerous scenarios by comparing Node.js to R-Programming, C/C++, and Java.  
+Node.js is a type of computer language based on JavaScript. When structuring codes to produce and generate results, the number of lines of code can become time-efficient and eventually valued. This tutorial will display numerous scenarios' structural breakdowns by comparing Node.js to R-Programming, C/C++, and Java.  
 
-R-Programming, C/C++, and Java were selected to differentiate components that can be found quickly with Node.js. The tutorial will extend to other areas of programming structure such as sequencing, organization, features, and available options. Applying these concepts might become beneficial to specific situations such as data science, applications with possible graphic user interface preferences, and general scripts.  
+R-Programming, C/C++, and Java were selected to differentiate components that one can find quickly with Node.js. The tutorial will extend to other programming structures such as sequencing, organization, features, and available options. Applying these concepts might benefit specific situations such as data science, applications with possible graphic user interface preferences, and general scripts.  
 
 #### Table of Contents
 * [Introduction](#introduction)
@@ -29,11 +29,11 @@ Once most of the prerequisites are met, let's begin.
 
 ##### Node.js
 
-Node.js computer language is written in a unique structure. One characteristic to consider are the steps to create or add modules into Node.js. As each coding language includes its own sequenced procedure, Node.js also involves flexible options.  
+Node.js computer language is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options.  
 
-Node.js modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application.  
+We can find Node.js modules on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application.  
 
-A branched out path directory looks similar to the picture below.  
+A branched-out path directory looks similar to the picture below.  
 
 [directory](/engineering-education/nodejs-structural-comparisons/path.jpg)  
 _Screen capture_  
@@ -74,13 +74,13 @@ Shown below is how the code is displayed in a Node.js window.
 [punycode code snippet](/engineering-education/nodejs-structural-comparisons/punycodenodejs.jpg)  
 _Screen capture_  
 
-As a side note, installing external Node.js modules can be found in documentation.  
+As a side note, installing external Node.js modules can be found in the documentation.  
 
 ##### R-Programming
 
 More information can be found in [CRAN documentation](https://cran.r-project.org). Further options can include `dependencies =` and `source = `.  
 
-Similar to Node.js, R-Programming also uses browser windows to display. Usually in R-Programming, RStudio can display visuals. However, Graphic User Interface (GUI) applications are sent to an internet browser window.  
+Similar to Node.js, R-Programming also uses browser windows to display. Usually, in R-Programming, RStudio can display visuals. However, Graphic User Interface (GUI) applications are sent to an internet browser window.  
 
 ##### C/C++
 
@@ -105,15 +105,15 @@ Visuals of this procedure can be found [here](https://www.analyticsvidhya.com/bl
 
 ##### Java
 
-This programming language can be limited. As NetBeans can attempt to bring vast number of features, the portability and compatibility are limited as technological preferences change.  
+This programming language can be limited. As NetBeans can attempt to bring a vast number of features, the portability and compatibility are limited as technological preferences change.  
 
 #### Variables with Value
 
-Under each programming language, the common lines to define a variable will be displayed.  
+Under each programming language, the standard lines to define a variable will be displayed.  
 
 ##### Node.js
 
-Node.js is structured uniquely to properly define a variable. When using the `global` function, this can break all barriers from separate modules.  
+Node.js is structured uniquely to define a variable properly. When using the `global` function, this can break all barriers from separate modules.  
 
 For example, without a `global` function to define a variable, the variable will be named `undefined`.  
 
@@ -128,7 +128,7 @@ var name = 'section.io';
 undefined
 ```  
 
-When adding `global` before the variable name, the value becomes defined. This can applied to many data types and node.js applications.  
+When adding `global` before the variable name, the value becomes defined. This can be applied to many data types and node.js applications.  
 
 The following are examples.  
 
@@ -149,7 +149,7 @@ The picture below is a Node.js window.
 [Defining Variables](/engineering-education/nodejs-structural-comparisons/define.jpg)  
 _Screen capture_  
 
-Handling different data types inside an individual variable might need a specific structure, square brackets may surround values.  
+Handling different data types inside an individual variable might need a specific structure; square brackets may surround values.  
 
 ##### R-Programming
 
@@ -201,7 +201,7 @@ index | [,1] | [,2] | [,3]
 ```Bash
 matrix(x,ncol=9) # More than 6.
 matrix(x,ncol=4) # Less than 6.
-# Both number of rows or columns are not divisible by 6.
+# Both numbers of rows or columns are not divisible by 6.
 ```  
 
 **Outputs:**  
@@ -227,9 +227,9 @@ int i = 8; //Numerical integers.
 string v = "Section.io"; //Alpha text string.
 ```  
 
-While a common practice of declaring or initializing variables are similar compared to many computer languages, classes could appear different.  
+While a common practice of declaring or initializing variables is similar to many computer languages, classes could appear different.  
 
-Typically, global and local variables are typically written compared to the code shown below.  
+Global and local variables are written typically, as shown below.  
 
 ```C
 #include <stdio.h>
@@ -274,14 +274,14 @@ private void privateclass () {
 }
 ```   
 
-Public classes can be used throughout an application whereas private classes are usually within a portion of a file.  
+Public classes can be used throughout an application, whereas private classes are usually within a portion of a file.  
 
 
 #### Graphing
 
 ##### Node.js
 
-Plotly was selected to graph. To use Plotly, an account could be required.  
+Plotly was selected to generate graphs. To use Plotly, an account could be required.  
 
 ```JavaScript
 global.i = [];
@@ -414,13 +414,13 @@ _Screen capture_
 
 ##### R-Programming
 
-It is less known to create GUI applications with R-Programming. As most graphical functions are offered in RStudio. However, there are libraries that use a GUI instead of using raw codes. From a raw form of code, a pop-up browser window should appear.  
+It is less known to create GUI applications with R-Programming as most graphical functions are offered in RStudio. However, there are libraries that use a GUI instead of using raw codes. From a raw form of code, a pop-up browser window should appear.  
 
 For example, [visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/) can provide codes, GUI interactions, and results.  
 
 ##### C/C++
 
-C++ is more accommodating for GUIs, and it might be slightly time consuming to find the proper current library. Here, `qtbase5-dev` will be used.  
+C++ is more accommodating for GUIs, and it might be slightly time-consuming to find the proper current library. Here, `qtbase5-dev` will be used.  
 
 The link about how to create a [Qt program](https://vitux.com/compiling-your-first-qt-program-in-ubuntu/) can help provide an outlined structure.  
 
@@ -452,7 +452,7 @@ _Screen capture_
 
 Java on NetBeans can be limited considering available features that seem to be functional.  
 
-For example, Java may not consist of libraries whereas JavaFx may provide libraries to build a functional interactive GUI application. The Java script is shown below. The script below generates a GUI application that allows an individual to enter anything inside the textbox. Once the button is pressed, everything entered inside is cleared. The purpose is to express certain emotions that should probably not be sent to particular individuals.  
+For example, Java may not consist of libraries, whereas JavaFX may provide libraries to build a functional interactive GUI application. The Java script is shown below. The script below generates a GUI application that allows an individual to enter anything inside the textbox. Once the button is pressed, everything entered inside is cleared. The purpose is to express certain emotions that should probably not be sent to particular individuals.  
 
 ```Java
 /*
@@ -539,14 +539,14 @@ public class SearchEngine extends Application {
 _Screen capture_  
 
 #### Conclusion
-Node.js is quite a versatile computational language. R-Programming, Java, and C/C++ can be chosen accordingly. Deciding which computer language to use relies on the individual and possible circumstances.  
+Node.js is quite a versatile computational language. R-Programming, Java, and C/C++ can be chosen accordingly. Deciding which computer language to use depends on a case-to-case basis.  
 
 #### Takeaways
 
 * Node.js contains structures unique to its language.
 * Each language can generate similar outcomes.
 * The tutorial provides a sample to try.
-* There are more to explore and discover.
+* There is more to explore and discover.
 
 #### References
 
@@ -556,3 +556,6 @@ Node.js is quite a versatile computational language. R-Programming, Java, and C/
 [TensorFlow](https://www.tensorflow.org/install/lang_c)  
 [Visualizing PCA in R-Programming with `Factoshiny`](https://www.analyticsvidhya.com/blog/2021/02/visualizing-pca-in-r-programming-with-factoshiny/)  
 [Yue](https://libyue.com/docs/latest/js/guides/getting_started.html)
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
