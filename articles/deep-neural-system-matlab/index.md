@@ -187,6 +187,8 @@ Once the training is done, you can export this function net and be used by someo
 We then run the script in Matlab and this may take some time since there is a lot of images used.
 The first graph is for training and the second graph is the loss of error in the workspace.
 
+![graph for training process](/engineering-education/deep-neural-systems/matlab/trainingProgress.png)
+
 ### Matlab code of discrete testing.
 We create a separate script for discrete testing and call the training option in it.
 We first read the image for clasification
@@ -203,6 +205,8 @@ We then classify the image using the network.
 Label = classify(net,I);
 title([‘recognized digit is:’ char(label)])
 ```
+
+![recognized dataset](/engineering-education/deep-neural-systems/matlab/recognizedDigit.png)
 
 Apart from the images in the dataset, you can create your image and recognize it using the program. This image should be of grayscale.
 
