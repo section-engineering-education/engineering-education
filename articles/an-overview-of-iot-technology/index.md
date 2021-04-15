@@ -154,3 +154,6 @@ It is therefore advisable for businesses and industries to develop their solutio
 3. [IoT protocols](https://azure.microsoft.com/en-us/overview/internet-of-things-iot/iot-technology-protocols/)
  
 4. [Azure for Architects](https://pdfcoffee.com/ebookazureplatform-azure-for-architectspdf-pdf-free.html)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
