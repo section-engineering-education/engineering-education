@@ -285,3 +285,6 @@ It turns out, R-Squared error for our model is 0.8813498 which is a higher value
 
 ### Conclusion
 Now that we have made it to the end of our study, we need to understand that linear regression is an important model in the world of prediction analysis and therefore it needs to be made as accurate as possible. This means that, whenever we are given a problem that the linear regression is the best model to use, we should check if the data satisfy all the assumption of linear regression and ensure it is tidy before we can make any move to creating our model.
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
