@@ -1,16 +1,12 @@
-# Understanding-Simulink-using-Matlab
-
 ### Introduction
-
 According to [Wikipedia](https://en.wikipedia.org/wiki/Simulink), **Simulink** is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multi-domain dynamical systems. Its primary interface is a graphical block diagramming tool and a customizable set of block libraries. It offers tight integration with the rest of the MATLAB environment and can either drive MATLAB or be scripted from it. Simulink is widely used in automatic control and digital signal processing for multi-domain simulation and model-based design.
 
 In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves & functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.
 
 ### Table of contents
-
 - Understand the Simulink library browser.
 - Perform logical & arithmetic operations on waves.
-- plot singular & compounded waves.
+- Plot singular & compounded waves.
 
 
 ### Prerequisites
@@ -19,10 +15,9 @@ In this tutorial, we will use the *Simulink* library browser to understand the b
 
 You can also get a free Simulink trial from [here](https://www.mathworks.com/campaigns/products/trials.html?prodcode=SL&s_tid=SL_B_pers_exclgetters_trial_2).
 
-If you are new to Matlab, you can check [this](https://www.section.io/engineering-education/getting-started-with-matlab/) tutorial which will help you understand the basic concepts of it.
+If you are new to Matlab, you can check [this tutorial](https://www.section.io/engineering-education/getting-started-with-matlab/) which will help you understand the basic concepts of it.
 
 ### Simulink library browser
-
 The Simulink *library browser* will provide blocks, waves, functions, models, and other useful tools that would help you with your simulation.
 
 To open the Library Browser, click on the Library Browser button in the toolbar of Simulink.
@@ -30,10 +25,9 @@ To open the Library Browser, click on the Library Browser button in the toolbar 
 ![picture1](/engineering-education/understanding-simulink-using-matlab/picture1.png).
 
 ### Let's simulate!
+Let's start with a simple [sine wave](https://en.wikipedia.org/wiki/Sine_wave): `Y = 2sin(4x)`.
 
-Let's start with a simple sin wave, Y = 2sin(4x).
-
-In order to simulate a wave you need to use the library browser to fetch the following:
+In order to simulate a wave, you need to use the library browser to fetch the following:
 
 - A Sin wave from Simulink > Sources > Sin wave.
 - A Scope to implement the wave from Simulink > Commonly used blocks.
@@ -48,11 +42,10 @@ Click on the run button from the Simulink toolbar then double click on the scope
 
 ![picture3](/engineering-education/understanding-simulink-using-matlab/picture3.png).
 
-### The sum of 2 waves
+#### Sum of 2 waves
+In order to add 2 waves, you need to use the sum function from the library browser.
 
-In order to add 2 waves,  you need to use the sum function from the library browser.
-
-Let's simulate the following wave, Y = 2sin(4x) + 5sin(6x).
+Let's simulate the following wave: `Y = 2sin(4x) + 5sin(6x)`.
 
 - 2 Sin waves from Simulink > Sources > Sin wave.
 - A Scope to implement the wave from Simulink > Commonly used blocks.
@@ -66,13 +59,12 @@ Connect the sin waves to the sum block and connect the sum block to the scope.
 
 ![picture5](/engineering-education/understanding-simulink-using-matlab/picture5.png).
 
-Click on the run button from the Simulink toolbar then double click on the scope to display the wave.
+Click on the run button from the Simulink toolbar, then double click on the scope to display the wave.
 
 ![picture6](/engineering-education/understanding-simulink-using-matlab/picture6.png).
 
-### Compounded wave
-
-We will be simulating the following Compounded wave.
+#### Compounded wave
+We will simulate the following Compounded wave.
 
 ![picture7](/engineering-education/understanding-simulink-using-matlab/picture7.jpg).
 
@@ -83,11 +75,11 @@ We will be simulating the following Compounded wave.
 
 Drag & drop the blocks and double click on the sin waves to edit their properties.
 
-**Note** that in Simulink you can't add cos wave, so in order to change that you need to add pi/2 to the phase of a sin wave to change it to a cos wave.
+**Note** that in Simulink you can't add cos wave, so to change that you need to add pi/2 to the phase of a sin wave to change it to a cos wave.
 
 ![picture8](/engineering-education/understanding-simulink-using-matlab/picture8.png).
 
-- Connect the first 2 sin waves to the product block, and from the product, block connect the pipe to the first output of the scope & take another pipe to the sum block.
+- Connect the first 2 sin waves to the product block, and from the product block connect the pipe to the first output of the scope & take another pipe to the sum block.
 - Connect the cos wave to the second scope output & take another pipe to the sum block.
 - Finally, connect the output of the sum to the third scope output.
 
@@ -95,22 +87,12 @@ This is how the waves should be connected:
 
 ![picture10](/engineering-education/understanding-simulink-using-matlab/picture10.png).
 
-Click on the run button from the Simulink toolbar then double click on the scope to display the wave.
+Click on the run button from the Simulink toolbar, then double click on the scope to display the wave.
 
 ![picture9](/engineering-education/understanding-simulink-using-matlab/picture9.jpg).
 
 
 ### Conclusion
-
-In this tutorial, we have learned how to fetch blocks & functions from the Simulink library browser, we have also learned how to use the sum & product blocks to connect multiple waves with each other and display them on a scope. Don’t forget to test out the waves with different Amplitudes & frequencies to fully understand how it works.
+In this tutorial, we have learned how to fetch blocks & functions from the Simulink library browser. We have also learned how to use the sum & product blocks to connect multiple waves and display them on a scope. Don’t forget to test out the waves with different Amplitudes & frequencies to fully understand how it works.
 
 Happy simulation!
-
-
-
-
-
-
-
-
-
