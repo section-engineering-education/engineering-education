@@ -1,5 +1,21 @@
-### An Introduction to CI/CD Tools
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/an-introduction-to-cicd-tools/
+title: An Introduction to CI/CD Tools
+description: In this article, we will provide a list with the necessary information required to help you choose the CI/CD tools that best meet your needs. It also covers the most advanced CI/CD tools with all the necessary features for your projects.
+author: adetu-ridwan
+date: 2021-04-16T00:00:00-16:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-introduction-to-cicd-tools/hero.jpg
+    alt: An Introduction to CI/CD Tools example image
+---
 Continuous Integration (CI) and Continuous Delivery (CD) are sets of operating principles and practices that enable software development teams to perform frequent changes in the codebase while ensuring its consistency. The implementation of seamless synchronization in the work process between teams in an organization is often referred to as the pipeline of CI/CD.
+<!--more-->
 
 CI/CD is one of the best practices for integrating workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security, while the implementation and deployment process is automated.
 
