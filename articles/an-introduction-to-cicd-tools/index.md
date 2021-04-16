@@ -3,11 +3,11 @@ Continuous Integration (CI) and Continuous Delivery (CD) are sets of operating p
 
 CI/CD is one of the best practices for integrating workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security, while the implementation and deployment process is automated.
 
-### Prerequisite
+### Prerequisites
 The prerequisites for this article includes understanding the following concepts:
 - Implementation of CI/CD tools in software development
-- Intermediate understanding of CI/CD tools.
-- Prior understanding and usage of any of the CI/CD tools in this article.
+- Intermediate understanding of CI/CD tools
+- Prior understanding and usage of any of the CI/CD tools in this article
 
 ### Table of Contents
 - [Technique of CI/CD](#technique-of-ci/cd)
@@ -16,7 +16,7 @@ The prerequisites for this article includes understanding the following concepts
 - [CircleCI as a CI/CD Tool](#circleci-as-a-ci/cd-tool)
 - [Bamboo as a CI/CD Tool](#bamboo-as-a-ci/cd-tool)
 - [Buddy as a CI/CD Tool](#buddy-as-a-ci/cd-tool)
-- [Conclusion](#concludion)
+- [Conclusion](#conclusion)
 - [Further Reading and References](#further-reading-and-references)
 
 ### Technique of CI/CD
@@ -45,7 +45,7 @@ In this article, we'll provide a structural approach to using Jenkins in automat
 ![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
 
 The following steps illustrate the generic approach of implementing Jenkins:
-This article assumes that you have prior understanding of implementing CI/CD tools and thereby reinfornces on that knoweledge to adequately provide a step-by-step approach to using one.
+This article assumes that you have prior understanding of implementing CI/CD tools and thereby reinforces on that knowledge to adequately provide a step-by-step approach to using one.
 
 To use Jenkins with your software, you can either build a git repository or use an existing one for your CI/CD. The development team is in charge of comitting the code to the Dev-Branch.
 
@@ -60,7 +60,6 @@ The deployment process is activated once Jenkins has deployed the code. It is th
 ### Docker Container 
 A docker container is essentially a set of virtual environments where we can create a server and deploy the objects to be examined. The use of Docker will enable the developer to run an entire cluster in a matter of seconds.
 
-
 ![Docker cycle view](/engineering-education/an-introduction-to-cicd-tools/docker.png)
 
 With the Docker container setup, the next phase includes the unit testing on the staging server, then the same code is deployed to the production server once all tests are passed.
@@ -72,7 +71,7 @@ CircleCI is best implemented to construct builds when new code is committed to a
 
 Amongst developers, CircleCI is rapidly growing as the core choice for CI/CD, due to its lightweight continuous integration and delivery framework that supports almost all programming languages. It also has huge compatibility support with top cloud hosting services such as AWS, Azure, Google Cloud and Heroku.
 
-### Key Features
+### Key Features of CircleCI
 - It is supported by Bitbucket, GitHub, and GitHub Enterprise.
 - Uses a container or virtual machine to run builds.
 - Debugging is easy.
@@ -129,10 +128,10 @@ Buddy is a continuous integration and delivery (CI/CD) tool that builds, tests, 
 The following are the reasons why Buddy is a good choice for CI/CD:
 - Customization is easy. As a test environment, Docker-based images are used.
 - Intelligent change detection, state-of-the-art caching, parallelism, and overall optimizations
-- Builds and test environments can be created, customized, and reused.
+- Builds and test environments can be created, customized, and reused
 - Scopes: workspace, project, pipeline, activities, plain and encrypted, fixed and settable
-- Elastic, MariaDB, Memcached, Mongo, PostgreSQL, RabbitMQ, Redis, Selenium Chrome, and Firefox are examples of attachable services.
-- Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything.
+- Elastic, MariaDB, Memcached, Mongo, PostgreSQL, RabbitMQ, Redis, Selenium Chrome, and Firefox are examples of attachable services
+- Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything
 - Management of workflows with templates for cloning, exporting and importing pipelines
 - Support and integrations for Git that are second to none
 
@@ -144,7 +143,7 @@ This list has provided you with the necessary information required to help you c
 It is also important to note that the CI/CD and DevOps trends will continue to change, allowing the market to expand and develop. The landscape will change, and this list will be updated to ensure that the information provided to you is accurate.
  
 ### Further Reading and References
-- [Buddy Guides The DevOps Automation Platform](https://buddy.works/guides)
-- [CircleCI Integration](https://circleci.com/continuous-integration/)
-- [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
+1. [Buddy Guides The DevOps Automation Platform](https://buddy.works/guides)
+2. [CircleCI Integration](https://circleci.com/continuous-integration/)
+3. [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 
