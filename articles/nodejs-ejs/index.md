@@ -199,7 +199,7 @@ start the server by executing the command below.
 ```bash
 $ node app.js
 ```
-When we navigate to `localhost:3000/` in our browser, a page with all the posts is displayed.
+When we navigate to `localhost:3000/` in our browser, a page with all the posts is displayed as shown below.
 
 ![Project structure](/engineering-education/nodejs-ejs/running-site.png)
 ### Conclusion
