@@ -99,3 +99,6 @@ Happy simulation!
 1. https://www.mathworks.com/help/simulink/
 2. https://ctms.engin.umich.edu/CTMS/index.php?aux=Basics_Simulink
 3. https://www.sciencedirect.com/topics/computer-science/simulink
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
