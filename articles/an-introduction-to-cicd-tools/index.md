@@ -17,7 +17,7 @@ images:
 Continuous Integration (CI) and Continuous Delivery (CD) are sets of operating principles and practices that enable software development teams to perform frequent changes in the codebase while ensuring its consistency. The implementation of seamless synchronization in the work process between teams in an organization is often referred to as the pipeline of CI/CD.
 <!--more-->
 
-CI/CD is one of the best practices for integrating workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security, while the implementation and deployment process is automated.
+CI/CD is one of the best practices for integrating workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security while the implementation and deployment process is automated.
 
 ### Prerequisites
 The prerequisites for this article includes understanding the following concepts:
@@ -36,21 +36,21 @@ The prerequisites for this article includes understanding the following concepts
 - [Further Reading and References](#further-reading-and-references)
 
 ### Technique of CI/CD
-Continuous Integration (CI) is a programming practice requiring developers to incorporate code changes into a shared repository. Changes committed to the repository are verified by an automated construction, which ensures that bugs are spotted early before deployment.
+Continuous Integration (CI) is a programming practice requiring developers to incorporate code changes into a shared repository. Changes committed to the repository are verified by an automated construction, ensuring that bugs are spotted early before deployment.
 
-Understanding the CI process in-depth, whenever a change is made to the source repository in a version control system, an automated process builds the framework and run a series of tests to ensure the recent code update integrates with the existing code in the repository. If it doesn’t, then a conflict error occurs.
+Understanding the CI process in-depth, whenever a change is made to the source repository in a version control system, an automated process builds the framework. It runs a series of tests to ensure the recent code update integrates with the existing code in the repository. If it doesn’t, then a conflict error occurs.
 
-When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts, e.g. features upgrade, interface changes, bug fixes and tests in production environments or to deploy sustainably to the end-user.
+When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts, e.g., features upgrade, interface changes, bug fixes, and tests in production environments or to deploy sustainably to the end-user.
 
 The technique behind the integration of CI/CD in the software development process is that in a large organization with teams of thousands of developers making changes regularly, we can still ensure that the software doesn’t break and changes are being synchronized seamlessly, therefore ensuring effective communication between developers and operations.
 
 ![ci/cd technique](/engineering-education/an-introduction-to-cicd-tools/technique.png)
 
 ### The Importance of CI/CD
-- CI reduces the number of processes that are repeated across all project operations, including code compilation, database integration, testing, inspection, deployment and feedback.
+- CI reduces the number of processes that are repeated across all project operations, including code compilation, database integration, testing, inspection, deployment, and feedback.
 - The core importance of Continuous Integration is to ensure that software being developed is deployable to end-users, but with better quality and lower risks of failure. 
 - CI gives you the ability to spot trends and make informed decisions, as well as the courage to make new changes. When there is no actual or recent data to support decisions, projects suffer, and everyone makes their best guesses.
-- Successful implementation of CI practices can boost confidence in software development, such that, the team will know that tests checks are passed, project code and design follows development standards and the end result is a functioning testable product with each build.
+- Successful implementation of CI practices can boost confidence in software development, such that the team will know that test checks are passed, project code and design follow development standards, and the result is a functioning testable product with each build.
 
 ### Jenkins as a CI/CD Tool
 Jenkins is an open-source automation server written in Java. It is a server-based continuous integration application that requires a web server to operate on.
@@ -61,13 +61,13 @@ In this article, we'll provide a structural approach to using Jenkins in automat
 ![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
 
 The following steps illustrate the generic approach of implementing Jenkins:
-This article assumes that you have prior understanding of implementing CI/CD tools and thereby reinforces on that knowledge to adequately provide a step-by-step approach to using one.
+This article assumes that you have a prior understanding of implementing CI/CD tools and thereby reinforces that knowledge to adequately provide a step-by-step approach to using one.
 
-To use Jenkins with your software, you can either build a git repository or use an existing one for your CI/CD. The development team is in charge of comitting the code to the Dev-Branch.
+To use Jenkins with your software, you can either build a git repository or use an existing one for your CI/CD. The development team is in charge of committing the code to the Dev-Branch.
 
 When changes are adequately committed to the Dev-Branch, Jenkins can download the source code from Github and have it mapped to a job that is configured for a particular role. Once a job is configured, you must ensure that continuous integration and continuous development are completed for the job/task.
 
-On successful completion of a job, Jenkins will fetch the code from the Github repository, then it starts the task's commit process. Jenkins will proceed to a new phase called the task's construct phase. 
+On successful completion of a job, Jenkins will fetch the code from the Github repository, and then it starts the task's commit process. Jenkins will proceed to a new phase called the task's construct phase. 
 
 The task construct phase is the phase where Jenkins will compile the code and have it deployed after the DevOps team merges it to the Master branch, then the code is now ready for deployment.
 
@@ -85,7 +85,7 @@ CircleCI is a continuous integration and delivery (CI/CD) platform that enables 
 
 CircleCI is best implemented to construct builds when new code is committed to a version control system such as GitHub, GitHub Enterprise, or Bitbucket. CircleCI also offers a cloud-managed option for continuous integration or runs on the private infrastructure behind a firewall. 
 
-Amongst developers, CircleCI is rapidly growing as the core choice for CI/CD, due to its lightweight continuous integration and delivery framework that supports almost all programming languages. It also has huge compatibility support with top cloud hosting services such as AWS, Azure, Google Cloud and Heroku.
+Amongst developers, CircleCI is rapidly growing as the core choice for CI/CD, due to its lightweight continuous integration and delivery framework that supports almost all programming languages. It also has huge compatibility support with top cloud hosting services such as AWS, Azure, Google Cloud, and Heroku.
 
 ### Key Features of CircleCI
 - It is supported by Bitbucket, GitHub, and GitHub Enterprise.
@@ -113,7 +113,7 @@ Developers can use Bamboo integration to automate construction and test processe
 
 ### Why Bamboo
 Bamboo is a continuous integration server that reduces the time it takes to perform builds and deployments. Among its benefits are the following:
-- Numerous Bamboo-compatible integrations make it even easier for companies to evaluate and make changes based on test analytical data.
+- Numerous Bamboo-compatible integrations make it even easier for companies to evaluate and make changes based on analytical test data.
 - Quality assurance, release management, and build status are all visible in one place.
 - Most of the functionality is pre-built into the platform, so plugins aren't needed.
 - Bamboo's CI is also deployment-ready thanks to its seamless integration with Jira and Bitbucket.
@@ -148,13 +148,13 @@ The following are the reasons why Buddy is a good choice for CI/CD:
 - Scopes: workspace, project, pipeline, activities, plain and encrypted, fixed and settable
 - Elastic, MariaDB, Memcached, Mongo, PostgreSQL, RabbitMQ, Redis, Selenium Chrome, and Firefox are examples of attachable services
 - Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything
-- Management of workflows with templates for cloning, exporting and importing pipelines
+- Management of workflows with templates for cloning, exporting, and importing pipelines
 - Support and integrations for Git that are second to none
 
 Buddy also has a zero-downtime deployment solution (Action) that you can configure with their GUI by specifying the server and the git repository. You can also add an SSH action to run some build commands on the server or use Buddy's filesystem to build the assets (artefacts). Buddy creates the necessary folders on the server and deploys the application using the code from the git repository.
 
 ### Conclusion
-This list has provided you with the necessary information required to help you choose the CI/CD tools that best meet your needs. This article covers the most advanced CI/CD tools with all the necessary features for your projects. Your requirements, existing infrastructure, and potential for future growth and improvement will all influence your final decision.
+This list has provided you with the necessary information required to help you choose the CI/CD tools that best meet your needs. This article covers the most advanced CI/CD tools with all the necessary features for your projects. Your requirements, existing infrastructure, and potential for future growth and improvement will influence your final decision.
  
 It is also important to note that the CI/CD and DevOps trends will continue to change, allowing the market to expand and develop. The landscape will change, and this list will be updated to ensure that the information provided to you is accurate.
  
@@ -163,6 +163,3 @@ It is also important to note that the CI/CD and DevOps trends will continue to c
 2. [CircleCI Integration](https://circleci.com/continuous-integration/)
 3. [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 
----
-
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
