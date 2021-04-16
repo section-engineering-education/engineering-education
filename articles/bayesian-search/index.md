@@ -1,8 +1,22 @@
-![hero](/engineering-education/bayesian-optimization/.jpg)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/bayesian-optimization/
+title: A Primer on Bayesian Optimization to Optimize Hyperparameters 
+description: Bayesian optimization can be categorized as a sequential model-based optimization algorithm. It uses the outcome of previous iterations to decide on the next hyperparameters. This article provides a primer on Bayesian optimization.
+author: collins-ayuya
+date: 2021-04-16T00:00:00-22:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-[Source](https://images.unsplash.com/photo-1542645976-dfdbd69ee770?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)
+ - url: /engineering-education/bayesian-search/hero.jpg
+   alt: Bayesian Optimization to Optimize Hyperparameters image
 
+---
 In the two previous optimization articles, we carried out basic experiments. These experiments involved building many models with varied hyperparameters. The experiments of the two methods (grid and random search) were independent of each other.
+<!--more-->
 
 This independence has a downside. It means that we cannot use information from one experiment to improve another. However, there exists a more intuitive method of hyperparameter optimization. It uses the outcome of previous iterations to select the next potential hyperparameters. It is known as Bayesian optimization. This article provides a primer on Bayesian optimization.
 
