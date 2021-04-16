@@ -126,6 +126,10 @@ Bayesian optimization is quite efficient. It carries out hyperparameter selectio
 
 3. [A Conceptual Explanation of Bayesian Hyperparameter Optimization for Machine Learning](https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f#:~:text=%20Bayesian%20Optimization%20%201%20Sequential%20Model-Based%20Optimization.,real-valued%20score%20that...%204%20History.%20%20More%20)
 
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+
 <!-- MathJax script -->
 <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
