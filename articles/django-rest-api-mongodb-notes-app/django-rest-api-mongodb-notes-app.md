@@ -26,37 +26,37 @@ You may download and install the MongoDB database server from the [official Mong
 
 We will install `virtualenv` to enable a virtual environment for our project. It will enable one to isolate a project and its dependencies from other projects on your machine. Run the following command to install `virtualenv`:
 
-```
+```bash
 python -m pip install --user virtualenv
 ```
 
 Next, let's create a folder for our project and then create a virtual environment inside it. Use the following command to create a folder called `django_mongodb_project`.
 
-```
+```bash
 mkdir django_mongodb_project
 ```
 
 Move into the project folder with the following command:
 
-```
+```bash
 cd django_mongodb_project
 ```
 
 Create a virtual environment called `venv` with the following command:
 
-```
+```bash
 virtualenv venv
 ```
 
 Next, activate the environment:
 
-```
+```bash
 source venv/bin/activate
 ```
 
 If you use Windows, activate the virtual environment with the following command:
 
-```
+```bash
 .\venv\Scripts\activate
 ```
 
@@ -64,31 +64,31 @@ If you use Windows, activate the virtual environment with the following command:
 
 We will need the `django`, `djangorestframework`, and `djongo` packages.
 django: the Django framework package
-djangorestframework: the Django REST Framework for developing APIs in Django. 
+djangorestframework: the Django REST Framework for developing APIs in Django.
 djongo: a tool that maps Python objects to MongoDB documents
 
 Let us install Django and the Django REST framework with the following command:
 
-```
+```bash
 pip install django django-rest-framework djongo
 ```
 
 Now, create a Django project called `notes_app`:
 
-```
+```bash
 django-admin startproject notes_app
 cd notes_app
 ```
 
 Then, create an app called `api` inside the `notes_app` project.
 
-```
+```bash
 django-admin startapp api
 ```
 
 Navigate to the `settings.py` file in the project directory. Then, change the `INSTALLED_APPS` list by adding our created app, `api` and `rest_framework`:
 
-```
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -105,7 +105,7 @@ INSTALLED_APPS = [
 
 Navigate to the `settings.py` file and change the `DATABASES` setting as follows:
 
-```
+```python
 DATABASES = {
    'default' : {
       'ENGINE' : 'django_mongodb_engine',
@@ -120,7 +120,7 @@ We will develop an API for a notes app for jotting and making notes. Users will 
 
 Let us define a model for the notes in the `models.py` file of the `api` app that we have created:
 
-```
+```python
 from django.db import models
 
 class Note(models.Model):
@@ -133,14 +133,14 @@ class Note(models.Model):
 
 Let us migrate the model into the database:
 
-```
+```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
 Next, let us create a serializer class. When users make requests to the API, the serializers format the corresponding responses. Create a new `serializers.py` file in the `api` app folder and add the following code into it.
 
-```
+```python
 from rest_framework import serializers
 from .models import Note
 
@@ -153,7 +153,7 @@ class NoteSerializer(serializers.ModelSerializer):
 
 Next, let us create the views that will handle the request and response actions of our API. Add the following code to the `views.py` file of the `api` app.
 
-```
+```python
 from rest_framework import generics
 from .models import Note
 from .serializers import NoteSerializer
@@ -172,7 +172,7 @@ In the above code, we created two views. `NoteList` enables us to create a note 
 
 Next, we will create endpoints to receive requests. Create a new `urls.py` file inside the `api` directory and add the following code inside:
 
-```
+```python
 from django.urls import path
 from api import views
 
@@ -184,7 +184,7 @@ urlpatterns = [
 
 Next, set up the `urls.py` file of the project to point to the app level `urlpatterns`. Then, include a path to the `urls.py` file of the `api` app.
 
-```
+```python
 from django.contrib import admin
 from django.urls import path, include
 
@@ -202,7 +202,7 @@ Django REST framework comes shipped with the browsable API. You can test your AP
 
 Run the following command:
 
-```
+```bash
 python manage.py runserver
 ```
 
@@ -217,6 +217,12 @@ You can add notes and refresh the webpage to see the added notes.
 Then, view the created notes at `127.0.0.1:8000/api/id`:
 
 ![image title](/engineering-education/django-rest-api-mongodb-notes-app/detail-view.jpg)
+
+You can also delete or update the note on the detail page. The delete button is marked out in the red square on the image below.
+
+![image title](/engineering-education/django-rest-api-mongodb-notes-app/delete-update-option.jpg)
+
+You can also update the title or text of the note. See the blue square area on the image above. Edit the text or title and click the 'PUT` button.
 
 ## Conclusion
 
