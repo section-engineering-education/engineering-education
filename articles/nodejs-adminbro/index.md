@@ -162,7 +162,7 @@ app.use(adminBro.options.rootPath, router)
 app.listen(8000, ()=>console.log('Listening at Port 8000'));
 ```
 Let's briefly dissect the above code:
-To start the admin panel, we have to seed the admin panel with data by connecting our resource database models from the ODM (mongoose) that our app is using. In our case, we are importing the AdminBro’s database adapter for Mongoose and then we register the adapter so that it can be used in the application. Next, we pass the database to the `AdminBro ({})` options object. The model paths have to be at the top of the scope before passing the options. From here, we register the AdminBro adapter for mongoose and build a router for our AdminBro and consume it with `app.use(adminBro.options.rootPath, router)`.
+To start the admin panel, we have to seed the admin panel with data by connecting our resource database models from the ODM (mongoose) that our app is using. In our case, we are importing the AdminBro’s database adapter for Mongoose and then we register the adapter so that it can be used in the application. Next, we pass the database to the `AdminBro ({})` options object. The model paths have to be at the top of the scope before passing the options. From here, we register the AdminBro adapter for mongoose and build a router for our AdminBro and consume it with `app.use(adminBro.options.rootPath, router)`. Finally, we need to listen to incoming requests in our Node.js server at port 8000 using the `app.listen()` method. 
 
 >>> Note: To implement this set up on an app that has an existing middleware stack, we need to make sure that AdminBro is on 
 >>>the first in the routing layers. This is because AdminBro cannot handle requests that have been transformed by other middleware.  
