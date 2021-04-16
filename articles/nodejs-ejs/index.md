@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-ejs/
+title: Getting started with EJS templating engine
+description: This tutorial goes over the basics of Node.js EJS templating engine and how to use it in Express.js application.
+author: quinter-awuor
+date: 2021-03-22T00:00:00-09:00
+topics: [Spring Boot]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/nodejs-ejs/hero.png
+    alt: Getting started with EJS templating engine example image
+---
+
 Whenever we develop full-stack web applications, there comes a need to create a web interface where users can interact with the site. In the Node.js and express ecosystem, there is a tone of templating engines that makes it possible to create a web interface for our Node.js and express applications. We are going to learn about EJS templating engine, it is one of the most used templating engines in the Node.js ecosystem.
 
 ### Prerequisites
