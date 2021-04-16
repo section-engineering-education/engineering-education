@@ -67,9 +67,11 @@ They found neurons that respond to words, facial expressions, and any content as
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
+Now, so far we have seen that the multimodal neurons in the CLIP model respond well to both the images and texts for a given concept. But, what if we perform a typographic attack (an adversarial attack) on the model. Will it still correctly classify these images and texts correctly? This next section covers two types of typographic attacks and how it affects the model.
+
 ### Typographic Attacks
 
-1. The model responds heavily to rendered text. This can be seen from the adversarial attacks where, i.e., take an apple and attach a sticker labeled iPod on it, it labels the picture as an iPod instead of an apple. This example shows that the text might still be too dominant in this model. They also show that randomly rendering texts on images confuse the model. For example, rendering texts of "pizza" on top of a dog image confuses the classifier by making it classify the picture as "pizza" instead of a "dog."
+1. The CLIP model responds heavily to rendered text. This can be seen from the adversarial attacks where, i.e., take an apple and attach a sticker labeled iPod on it, it labels the picture as an iPod instead of an apple. This example shows that the text might still be too dominant in this model. They also show that randomly rendering texts on images confuse the model. For example, rendering texts of "pizza" on top of a dog image confuses the classifier by making it classify the picture as "pizza" instead of a "dog."
 
 This has been demonstrated below: 
 
