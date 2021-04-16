@@ -73,9 +73,9 @@ if __name__ == "__main__":
 
 When you run the `app.py` file and open your browser, you will get a response similar to the image below:
 
-![flask run cli](nbeukcrms_so_xworqq1.png)
+![flask run cli](/engineering-education/cloudinary-flask-mongo/nbeukcrms_so_xworqq1.png)
 
-![flask run gui](3xdyk5t6rfxoc1azc2cx.png)
+![flask run gui](/engineering-education/cloudinary-flask-mongo/3xdyk5t6rfxoc1azc2cx.png)
 
 #### Step 3: Design the Landing Page
 
@@ -83,7 +83,7 @@ The landing page is where your users see your application’s information with n
 
 First, create a folder named `templates` in the same folder as your `app.py`. Flask uses a `templates` folder to store its HTML files that the server renders in the application. Your project folder should resemble the image below:
 
-![project structure](2reb0l7pkcceys1e8nru.png)
+![project structure](/engineering-education/cloudinary-flask-mongo/2reb0l7pkcceys1e8nru.png)
 
 Create another file named `index.html` that will be stored in the `templates` folder and save the following code in it:
 
@@ -130,7 +130,7 @@ def upload():
 
 When you run the `app.py` file, you will get a response similar to the image below in your browser:
 
-![landing page](5bj2elgvprcfmrdaekfb.png)
+![landing page](/engineering-education/cloudinary-flask-mongo/5bj2elgvprcfmrdaekfb.png)
 
 #### Step 4: Build the Image Upload Functionality
 
@@ -189,7 +189,7 @@ Create another file named `upload.html` that will be stored in the `templates` f
 
 When you run the `app.py` file, your upload page should resemble the image below:
 
-![upload page](_jguoulmaqvon868s1tg.png)
+![upload page](/engineering-education/cloudinary-flask-mongo/_jguoulmaqvon868s1tg.png)
 
 You need to import the necessary libraries required by the application. Update the `app.py` file imports with the code below:
 
@@ -238,7 +238,7 @@ def upload():
 
 > NOTE: You need to create the directory you specified for the app `UPLOAD_FOLDER` in the project’s root. Create a directory called `static` in the same directory as the `app.py` file and another folder called `uploads` in the `static` directory.
 
-![upload successful](pgp7gn9e9guxkx_izhgg.png)
+![upload successful](/engineering-education/cloudinary-flask-mongo/pgp7gn9e9guxkx_izhgg.png)
 
 #### Step 5: Build the Gallery Viewing Page
 
@@ -283,7 +283,7 @@ Create another file named `gallery.html` that will be stored in the `templates` 
 
 When you run the `app.py` file, your gallery page should resemble the image below:
 
-![gallery view](7wfh9ve9hunidzbu9p7k.png)
+![gallery view](/engineering-education/cloudinary-flask-mongo/7wfh9ve9hunidzbu9p7k.png)
 
 ### Integrating Cloudinary into a Flask Application
 
@@ -293,7 +293,7 @@ You will need to generate your API keys from your Cloudinary dashboard. If you h
 
 The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. Store them somewhere secure and easily retrievable. The API keys allow any application to communicate with your Cloudinary account via the REST API.
 
-![cloudinary api creds](jf8t3bg20uz01elj3ui0.png)
+![cloudinary api creds](/engineering-education/cloudinary-flask-mongo/jf8t3bg20uz01elj3ui0.png)
 
 #### Integrating Cloudinary into Python
 
@@ -376,7 +376,7 @@ You will update the `gallery.html` template file to render the gallery images fr
 
 Congratulations! You have successfully built a CDN image gallery with Flask, Cloudinary, and MongoDB. The images rendered on the gallery page should be fetched from Cloudinary CDN servers instead of your origin server, as shown in the image below:
 
-![image src](hoymek9qjcrxbseamzz3.png)
+![image src](/engineering-education/cloudinary-flask-mongo/hoymek9qjcrxbseamzz3.png)
 
 ### Conclusion
 
