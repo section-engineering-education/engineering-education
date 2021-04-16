@@ -163,3 +163,6 @@ It is also important to note that the CI/CD and DevOps trends will continue to c
 2. [CircleCI Integration](https://circleci.com/continuous-integration/)
 3. [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
