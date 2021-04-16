@@ -205,3 +205,6 @@ When we navigate to `localhost:3000/` in our browser, a page with all the posts 
 ### Conclusion
 
 Now that you have learned how to use `EJS` template tags and partials, create a website that reuses a footer and implements conditional statements within the `EJS` template. The full source code can be downloaded [here](https://replit.com/@qawuor/ejs-tutorial)
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
