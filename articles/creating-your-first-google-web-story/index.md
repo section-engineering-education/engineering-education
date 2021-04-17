@@ -1,15 +1,14 @@
 # Creating your first Google Web Story
 
 ![Hero image](engineering-education/creating-your-first-google-web-story/hero.png)
-[Image Source: Unsplash](https://unsplash.com/photos/OU19pS58YY8)
 
-In October 2013, Snapchat introduced a new feature on its app called “Stories” which allowed users to create short consumable contents lasting only for 24 hours, and ever since then it gained popularity amongst Snapchat users and led to the adoption of the feature by other social apps like Instagram, Facebook, YouTube, WhatsApp, and Twitter.
-Introduced in 2018 as [AMP](https://amp.dev/) (Accelerated Mobile Pages) story, Google Web Story is owned by Google and powered by AMP technology. AMP (Accelerated Mobile Pages), developed by the AMP Open-Source team, is an open-source HTML platform designed for mobile web browsers to load web pages faster.
+In October 2013, Snapchat introduced a new feature on its app called “Stories” which allowed users to create short consumable contents lasting only for 24 hours. 
+Since then the feature gained popularity amongst Snapchat users and led to the adoption of the feature by other social apps like Instagram, Facebook, YouTube, WhatsApp, and Twitter.
+Introduced in 2018 as [AMP](https://amp.dev/) (Accelerated Mobile Pages) story, Google Web Story is owned by Google and powered by AMP technology. 
+AMP (Accelerated Mobile Pages), developed by the AMP Open-Source team, is an open-source HTML platform designed for mobile web browsers to load web pages faster.
 
 ### Table of Contents
 
-[Creating your first Google Web Story](#creating-your-first-google-web-story)
-[Table of Contents](#table-of-contents)
 [What is a Web Story?](#what-is-a-web-story)
 [Prerequisites](#prerequisites)
 [What differentiates a Web Story?](#what-differentiates-a-web-story)
@@ -32,10 +31,10 @@ To get started with Web Stories you’ll need some basic Knowledge of HTML, CSS,
 
 ### What differentiates a Web Story?
 
-Compared the conventional social app stories, Web stories are similar in terms of the overall consistent user experience of tapping back and forth to view previous and next stories. But some things that differentiate Web stories from social app stories include;
+Compared to conventional social app stories, Web stories are similar in terms of the overall consistent user experience of tapping back and forth to view previous and next stories. But some things that differentiate Web stories from social app stories include;
 
 **Control**
-Contrary to social app stories with Web stories, you're in control of how long the story should be on the Web and not having to worry that your beautifully crafted story would expire after 24 hours. The publisher host Web stories, which means the content, the copyright, and rules depend on the publisher's terms of choice.
+Contrary to social app stories with Web stories, you're in control of how long the story should be on the Web and not having to worry that your beautifully crafted story would expire after 24 hours. The publisher hosts Web stories, which means the content, the copyright, and rules depend on the publisher's terms of choice.
 
 **Earn money**
 In almost all social app stories, creators don't earn when a story has an ad, but this is different for Web stories. Creators can earn money for ads on the story pages, as well as brand deals, native advertising, and so on.
@@ -80,13 +79,13 @@ Then add a background image to fill the slide.
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories6.png)
 
-After editing the story, then publish it by clicking the “PUBLISH” button and “publish it as a Web Story”.
+After editing the story, then publish it by clicking the `PUBLISH` button and “publish it as a Web Story”.
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories7.png)
 
 #### Using Code
 
-Persons with technical knowledge of programming can create customized Web Stories to suit their needs. Creating Web Stories with code requires using the AMP HTML library, check out the [documentation](https://amp.dev/documentation/components/?format=stories) on `amp-story` component for a guide on how to create a Web Story using the Library.
+Developers can create customized Web Stories to suit their needs. Creating Web Stories with code requires using the AMP HTML library, check out the [documentation](https://amp.dev/documentation/components/?format=stories) on `amp-story` component for a guide on how to create a Web Story using the Library.
 Let’s create a Hello World AMP Story application using the `amp-story` extension.
 Open a code editor of your choice and create an `index.html` file
 
