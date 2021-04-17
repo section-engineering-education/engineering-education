@@ -44,7 +44,7 @@ Since Web stories live on the web, they don't just live in a single app but can 
 
 ### Creating a Web Story
 
-Creating a Web Story is flexible depending on your needs and expertise. We can create Web Stories using Code to create a story with custom functionalities and NoCode using drag-and-drop tools.
+Creating a Web Story is flexible depending on your needs and expertise. To create a story with custom functionalities developers can use code, while persons with no coding experience can use NoCode drag-and-drop tools to create Web Stories.
 
 #### Using NoCode
 
