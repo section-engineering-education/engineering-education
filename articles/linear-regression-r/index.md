@@ -1,5 +1,24 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/linear-regression-r/
+title: Getting started with linear regression in R
+description: In this tutorial, we will explore an introductory theory behind linear regression and learn how to perform, interpret and evaluate its accuracy in R.
+author: daniel-mwanthi
+date: 2021-04-17T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/linear-regression-r/hero.png
+    alt: Technology Image
+---
 In this tutorial, we will explore an introductory theory behind linear regression and learn how to perform, interpret and evaluate its accuracy in R. 
+<!--more-->
+
+### Introduction
+The R language is widely used among statisticians and data miners for developing statistical software and data analysis. Let's talk about linear regression and how to implement it using R.
 
 ### Prerequisites
 - [RStudio](https://www.rstudio.com/products/rstudio/download/) installed on your computer.
