@@ -16,16 +16,16 @@ images:
 ---
 In the development history, websites were just basic information with less or no on-page interactions. They were static web pages with no dynamic elements. HTML, CSS, and JavaScript are the standard ways to style, script, and display a page on a browser. To display these HTML elements on the screen, you would prepare an HTML document and send it in on the server-side. When a user requests a page, the server will convert the HTML elements to meaningful information on the user's screen. Websites were pretty much static. Server-side rendering was the only approach to load a `.html` page. This approach worked great at the time as most pages displayed plain text and images.
 
-Fast-forward to today, this is no longer the case, and websites have advanced. Corporates want to get the dynamic content and display it right. They want websites that load fast, smooth; with flawless performance, have a good user experience, and get search engine optimization right on search ranking results. They are the sales lead for most of the companies.
+Fast-forward to today, this is no longer the case, and websites have advanced. Corporates want to get the dynamic content and display it right. They want websites that load fast and smooth, with flawless performance, have a good user experience, and get search engine optimization right on search ranking results. They are the sales lead for most of the companies.
 
-Today, websites are much like applications. You can send messages, transact, shop, and much more. In short, more interaction is needed on the user's end, hence server-side rendering can longer handle all this at once. It is taking a backseat and giving way to many advanced rendering technologies. There several major players here. These includes Client-Side Rendering (CSR) vs. Server-Side Rendering (SSR) vs. Static-Site Generation (Pre-rendering). Developers often find themselves confused about these terms. If you get yourself in this circle, this tutorial is for you. We'll discuss these technical terms, explore their pros and cons, and when to consider approach A or B.
+Today, websites are much like applications. You can send messages, transact, shop, and much more. In short, more interaction is needed on the user's end. Hence server-side rendering can longer handle all this at once. It is taking a backseat and giving way to many advanced rendering technologies. There several major players here. These include Client-Side Rendering (CSR), Server-Side Rendering (SSR), and Static-Site Generation (Pre-rendering). Developers often find themselves confused about these terms. If you get yourself in this circle, this tutorial is for you. We'll discuss these technical terms, explore their pros and cons, and when to consider approach A or B.
 
 ### Client-Side Rendering (CSR)
-Client-Side rendering became popular after the introduction of javascript frameworks which incorporated thus style of development. These frameworks include [Angular](https://www.youtube.com/watch?v=xGpHfFf18Ns), [React](https://www.youtube.com/watch?v=w7ejDZ8SWv8), [Vue.js](https://www.youtube.com/watch?v=qZXt1Aom3Cs), etc.
+Client-Side rendering became popular after the introduction of javascript frameworks, which incorporated this style of development. These frameworks include [Angular](https://www.youtube.com/watch?v=xGpHfFf18Ns), [React](https://www.youtube.com/watch?v=w7ejDZ8SWv8), [Vue.js](https://www.youtube.com/watch?v=qZXt1Aom3Cs), etc.
 
 In a client-Side Rendered web application, JavaScript controls what is displayed on the page. Typically, instead of loading all the web content using the HTML documents, a JavaScript file is included to handle the dynamic architecture of the website loading.
 
-This is what happens when the website is rendered on the client side.
+This is what happens when the website is rendered on the client-side.
 
 - A user sends a request to access the web content on a browser using the website address (link).
 - The server serves up the static files (CSS and HTML) to the client's browser on the client's first request for the website.
@@ -41,7 +41,7 @@ After this is over, the web will load dynamically. The JavaScript framework cont
 
 The process involves fetching and processing data on the client-side (browser) and not the web server, hence the name "client-side rendering".
 
-A great use case of Client-Side Rendering is a single page application (SPA). In SPA, each page is rendered on the client browser. The server only serves one single HTML document. Once the HTML is loaded, the JavaScript frameworks such as [React](https://www.youtube.com/watch?v=w7ejDZ8SWv8) will control the website's DOM structure on the browser. In this case, each page will load from the data history as fetched by the framework's API. Once the initial load is over, accessing a different route or reloading the page will be super fast.
+A great use case of Client-Side Rendering is a single-page application (SPA). In SPA, each page is rendered on the client browser. The server only serves one single HTML document. Once the HTML is loaded, the JavaScript frameworks such as [React](https://www.youtube.com/watch?v=w7ejDZ8SWv8) will control the website's DOM structure on the browser. In this case, each page will load from the data history as fetched by the framework's API. Once the initial load is over, accessing a different route or reloading the page will be super fast.
 
 The JavaScript frameworks that supports client-side rendering development style includes [React](https://www.youtube.com/watch?v=w7ejDZ8SWv8), [Angular](https://www.youtube.com/watch?v=xGpHfFf18Ns), and [Vue.js](https://www.youtube.com/watch?v=qZXt1Aom3Cs).
 
@@ -164,7 +164,7 @@ Basically, a Static-Site Generator is a program or a tool used to generate stati
 
 These generators pre-build HTML pages and make them available to the user ahead of time. This means that whenever a user requests a page, it loads with no delay. This happens so fast as the site is static and the generator renders the pages at build time.
 
-A close relative of Static-Site Generators is content management systems (CMS) such as WordPress. A content management tool is used to generate and manage web content and web pages. They both use the concept of templates to avoid the writing, formatting, and coding the webpages manually.
+A close relative of Static-Site Generators is content management systems (CMS) such as WordPress. A content management tool is used to generate and manage web content and web pages. They both use the concept of templates to avoid writing, formatting, and coding the web pages manually.
 
 In a CMS case, content is stored in CMS databases, and when the user requests the page, the server queries this content from this database, fills it in a template that fits this web content, generates the requested page, and serves it to the user on the browser.
 
@@ -198,12 +198,12 @@ CCR is a good choice for hybrid web applications. A single-page app use-case wil
 It is the best when it comes to search engine optimization. Every page is rendered on the website's server independently. Take a case of a blog website. Each blog post is an independent page and is fetched independently from the server. Thus you can insert meta tags based on the page's content. SSR allows page content to be focused and relevant to the social crawlers. Google and other search engine robots will thus be able to take account of your web page's performance to enhance your web content ranking.
 
 **Cons**
-On SSR, the page reload, and visiting a new page has to hit a server request again. This comes with the burden of high memory usage and high processing power on the server. It consumes unnecessary internet bandwidth, and will obviously increase the hosting cost.
+On SSR, the page reloads, and visiting a new page has to hit a server request again. This comes with the burden of high memory usage and high processing power on the server. It consumes unnecessary internet bandwidth and will obviously increase the hosting cost.
 
 **When to use SSR**
 Every web page content is served independently. This would be a great chance to catch up with the social Crawlers to target a high SEO ranking.
 
-It has an overall slow rendering thus fits well when you have fewer users, simple UI, few pages, less dynamic data, and less interactivity.
+It has an overall slow rendering thus fits well when you have fewer users, a simple UI, few pages, less dynamic data, and less interactivity.
 
 #### Static-Site Generation
 **Pros**
