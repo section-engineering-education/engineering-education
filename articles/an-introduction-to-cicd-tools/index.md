@@ -40,7 +40,9 @@ Continuous Integration (CI) is a programming practice requiring developers to in
 
 Understanding the CI process in-depth, whenever a change is made to the source repository in a version control system, an automated process builds the framework. It runs a series of tests to ensure the recent code update integrates with the existing code in the repository. If it doesn’t, then a conflict error occurs.
 
-When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts, e.g., features upgrade, interface changes, bug fixes, and tests in production environments or to deploy sustainably to the end-user.
+When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts.
+
+The operations executed by developers with the aid of Continuous Delivery varies from features upgrade, interface changes, bug fixes, and tests in production environments or to ensure the deployment of sustainable software to the end-user.
 
 The technique behind the integration of CI/CD in the software development process is that in a large organization with teams of thousands of developers making changes regularly, we can still ensure that the software doesn’t break and changes are being synchronized seamlessly, therefore ensuring effective communication between developers and operations.
 
@@ -55,17 +57,17 @@ The technique behind the integration of CI/CD in the software development proces
 ### Jenkins as a CI/CD Tool
 Jenkins is an open-source automation server written in Java. It is a server-based continuous integration application that requires a web server to operate on.
 
-In this article, we'll provide a structural approach to using Jenkins in automating the entire deployment process and using a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with the help of DevOps tools as well. 
+In this article, we'll provide a structural approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
 
 
 ![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
 
 The following steps illustrate the generic approach of implementing Jenkins:
-This article assumes that you have a prior understanding of implementing CI/CD tools and thereby reinforces that knowledge to adequately provide a step-by-step approach to using one.
+This article assumes that you have a prior understanding of implementing CI/CD tools, thereby reinforcing that knowledge to provide a step-by-step approach to using one adequately.
 
 To use Jenkins with your software, you can either build a git repository or use an existing one for your CI/CD. The development team is in charge of committing the code to the Dev-Branch.
 
-When changes are adequately committed to the Dev-Branch, Jenkins can download the source code from Github and have it mapped to a job that is configured for a particular role. Once a job is configured, you must ensure that continuous integration and continuous development are completed for the job/task.
+When changes are adequately committed to the Dev-Branch, Jenkins can download the source code from Github and mapped to a configured job for a particular role. Once a job is configured, you must ensure that continuous integration and continuous development are completed for the job/task.
 
 On successful completion of a job, Jenkins will fetch the code from the Github repository, and then it starts the task's commit process. Jenkins will proceed to a new phase called the task's construct phase. 
 
@@ -109,7 +111,7 @@ By default, CircleCI creates a service hook. As a result, builds are activated f
 ### Bamboo as a CI/CD tool
 Bamboo is a continuous integration server that creates a continuous delivery pipeline by automating the management of software application releases. It also covers the building of tests, assigning versions, tagging releases, deploying and activating new versions on the production server.
 
-Developers can use Bamboo integration to automate construction and test processes for any software program. It also provides a platform for segregating builds with different targets and specifications. Another benefit is the ability to automatically deploy the program into the server for release, which saves a lot of time when compared to manual testing. 
+Developers can use Bamboo integration to automate construction and test processes for any software program. It also provides a platform for segregating builds with different targets and specifications. Another benefit is the ability to automatically deploy the program into the server for release, saving a lot of time compared to manual testing.  
 
 ### Why Bamboo
 Bamboo is a continuous integration server that reduces the time it takes to perform builds and deployments. Among its benefits are the following:
@@ -135,10 +137,10 @@ By default, plans have only one stage. It can, however, be used to divide jobs i
 Jobs are a collection of tasks that are executed in a specific order on the same agent. They give you control over the order in which the tasks for your build must be completed. Jobs gather task requirements to map out the skills needed in the Bamboo CI Server's comprehension.
 
 #### The Task Block
-Tasks are the smallest discrete working units that carry out any system's command, such as parsing test results, executing maven goals, running scripts, and executing source code checkouts are examples of general tasks within a job on the working Bamboo directory. These tasks run in order. 
+Tasks are the smallest discrete working units that carry out any system's command, such as parsing test results, executing maven goals, running scripts, and executing source code checkouts. These are examples of general tasks within a job of the working Bamboo directory. These tasks run in order. 
 
 ### Buddy as a CI/CD tool
-Buddy is a continuous integration and delivery (CI/CD) tool that builds, tests, and deploys websites and applications using code from GitHub, Bitbucket, and GitLab. It uses Docker containers with pre-installed languages and frameworks, as well as DevOps, tracking, and notification activities, to build on.
+Buddy is a continuous integration and delivery (CI/CD) tool that builds, tests, and deploys websites and applications using code from GitHub, Bitbucket, and GitLab. It uses Docker containers with pre-installed languages and frameworks and DevOps, tracking, and notification activities to build on.
 
 ### Why Buddy
 The following are the reasons why Buddy is a good choice for CI/CD:
