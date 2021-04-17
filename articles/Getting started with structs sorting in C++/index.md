@@ -1,6 +1,21 @@
-### Introduction
-Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/getting-started-with-structs-sorting-in-c++/
+title: Getting started with structs sorting in C++
+description: In this article we will learn how to create the structs in C++ then we will learn how to sort structs using their members.
+author: samuel-mwangi
+date: 2021-04-17T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/Getting started with structs sorting in C++/hero.png
+    alt: Getting started with structs sorting Image
+---
+Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
+<!--more-->
 ### Prerequisites
 For this tutorial to be helpful, you should have the [Falcon IDE](https://sourceforge.net/projects/falconcpp/files/latest/download) or any other C++ IDE that you are comfortable with and also some basic knowledge in C++.
 
