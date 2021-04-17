@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/nodejs-mongodb-custom-ranking/
-title: How to perform custom ranking for records from a MongoDB database in Node.js
+title: How to Perform Custom Ranking for Records from a MongoDB Database in Node.js
 description: This article will be an overview on custom ranking of data in MongoDB. We will learn how to create a database, collection, insert, and query the results.
 author: terrence-aluda
-date: 2021-04-01T00:00:00-23:30
-topics: []
+date: 2021-04-17T00:00:00-17:30
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -69,7 +69,7 @@ As we can see, the first two students tie in position one (`POS 1`), and the nex
 
 One great way that will help us achieve this is, using the MongoDB `sort()` method. The only issue for us is taking care of the ties and giving them appropriate positions.
 
-In this article, we will look at how to use arrays in Node.js to make us attain that from documents(records) from a MongoDB database.
+In this article, we will look at how to use arrays in Node.js to make us attain that from documents (records) from a MongoDB database.
 
 ### What we will be doing
 We are going to establish a connection to a MongoDB database, insert some dummy data, and sort them using a custom ranking function.
@@ -77,7 +77,7 @@ We are going to establish a connection to a MongoDB database, insert some dummy 
 ### Getting started
 We first need to install the MongoDB driver which will enables us to connect to the database.
 
-Open your terminal and type this command :
+Open your terminal and type this command:
 
 ```bash
 npm install mongodb
@@ -190,7 +190,7 @@ We got two functions `loadStudents()` and `giveRank()`.
 
 The `loadStudents()` function loads the student details from the database and sorts them in descending order using the `sort()` method.
 
-It contains a `for loop` which populates the marks loaded into the `rankArray()`, which we will use later.
+It contains a `for loop` that populates the marks loaded into the `rankArray()`, which we will use later.
 
 The second function `giveRank()` is then called to perform the ranking using the `rankArray` and the `results`.
 
@@ -256,28 +256,29 @@ function giveRank(arrayArg,resultArg){
 ```
 
 It has three variables:
-1. `rank` - This controls the count of the loop useful for displaying the appropriately incremented position e.g., `1,1,3` and not `1,1,2`.
+1. `rank` - This controls the count of the loop used to display the appropriately incremented position e.g., `1,1,3` and not `1,1,2`.
 > We initialize it to `1`, since we index the positions starting from `1`, not `0`.
-2. `prev_rank` - The previous rank is used for displaying the rank position in case of a tie. It stores the current position `[i]` of a student, such that when the loop increments to the next position`[i+1]`, the current position `[i]` is temporarily stored.
+2. `prev_rank` - The previous rank is used to display the rank position in case of a tie. It stores the current position `[i]` of a student, such that when the loop increments to the next position`[i+1]`, the current position `[i]` is temporarily stored.
 Consequently, the current position is made `[i-1]` and the next one made `[i]`.
 `[i]` is only assigned the previous rank and given to the next array index, if the value found at `[i]` is the same as `[i-1]`. It is assigned `1` for the first position.
 3. `position` - This stores the rank to be displayed. We initialize it to `0` in which the initialized value doesn't matter since the position is assigned inside the `for loop`. You can initialize it to any digit.
 
 The `for loop` contains an `if-else-if` structure for checking the values and assigning them appropriately.
 
-If it is the first index, then automatically the position becomes `1`.
+If it is the first index, then the position automatically becomes `1`.
 
 If the value contained in `[i]` is not equal to `[i-1]`, increment the `rank` value and assign it to `position`. The `prev_rank` is assigned the `rank` value again just as we discussed above.
 
 Otherwise, if the value contained in `[i]` is equal to `[i-1]`, assign the position the value stored in the `prev_rank` variable then increment the value stored in the `rank` variable.
 
 ![Screenshot](/engineering-education/nodejs-mongodb-custom-ranking/screen.png)
+
 *Screenshot of the output*
 
 ### Conclusion
-We have seen how to create a database, a collection, inserting data into it, and querying the results. Furthermore, we also looked at how to perform the ranking of records using an array in MongoDB.
+We have gone over how to create a database, a collection, how to insert data into it, and query the results. Furthermore, we also looked at how to perform the ranking of records using an array in MongoDB.
 
-Hope you got some insights.
+Hope you got some useful insights.
 
 Happy coding.
 
