@@ -3,35 +3,32 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/documenting-node-js-rest-api-using-swagger/
-title: Documenting a Node.js REST API using swagger
+title: Documenting a Node.js REST API using Swagger
 description: In this article, we will learn about API documentation using Swagger. Also, we will learn to document Node.js APIs using Swagger from scratch.
 author: kennedy-mwangi
-date: 2021-04-08T00:00:00-20:00
-topics: [Node.js]
+date: 2021-04-17T00:00:00-14:00
+topics: [Node.js,API]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/documenting-node-js-rest-api-using-swagger/hero.jpg
-    alt: Swagger image
+    alt: Swagger example image
 ---
-Imagine finding an amazing API (Application Programming Interface) you are looking for on the internet. You decide to consume the API, but then you don't know how to send a request. You keep on trying different workarounds but to no avail.
-<!--more-->
-You decide to contact the team behind it, but then they reply after a long time yet you are in the midst of your project. This sets you off because there is nothing you can do at the moment. The previously fancy API turns out to be a monster because it is not properly documented.
-
 Swagger is a software tool used for designing, building, documenting, and using RESTful APIs. It follows the OpenAPI specification.
+<!--more-->
+An API (Application Programming Interface) is an intermediary that enables two different software applications to communicate with each other.
 
-API(Application Programming Interface) is an intermediary that enables two different software applications to communicate with each other.
-
-OpenAPI specification is a specification for creation of interfaces used in describing, producing, consuming, and visualizing RESTful APIs. It is also known as swagger specification.
+The OpenAPI specification is a specification used for creating interfaces used in describing, producing, consuming, and visualizing RESTful APIs. It is also known as the swagger specification.
 
 ### Goals
-In this article, we will document a simple Node.js REST(Representational State Transfer) API using swagger.
+In this article, we will document a simple Node.js REST (Representational State Transfer) API using swagger.
 
 ### Prerequisites
 To follow along in this article, it is essential to have the following:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Some basic knowledge of JavaScript.
-- Familiarity with building REST APIs using [Express.js](https://expressjs.com/). If you are not familiar, follow this [article](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
+- Familiarity with building REST APIs using [Express.js](https://expressjs.com/). 
+
+If you are not familiar, you can reference this [article](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
 
 ### Overview
 - [Introduction](#introduction)
@@ -52,10 +49,9 @@ JSON (JavaScript Object Notation) is a lightweight data-serialization standard t
 In this article, we will implement the specifications using the `JSON` format. With this format we will document from `.js` files.
 
 ### Setting up the development server
-Since the main focus is on documenting a REST API, we won't deal with creating one, but we will clone one from this [Github repository](https://github.com/mwangiKibui/node.js-simple-api).
+Since the main focus is on documenting a REST API, we won't deal with creating one, but we will clone one from this [GitHub repository](https://github.com/mwangiKibui/node.js-simple-api).
 
 The API will use the following dependencies:
-
 - [lowdb](https://www.npmjs.com/package/lowdb): For storing the data.
 - [morgan](https://www.npmjs.com/package/morgan): For logging the requests.
 - [nanoid](https://www.npmjs.com/package/nanoid): For generating the ID's.
@@ -84,11 +80,15 @@ If you are not familiar with it, you can check out this [post](https://docs.aws.
 From here onwards, we will be concentrating on the `docs` folder in the `src` folder.
 
 ### Documenting API general information
-API's general information comprises the openAPI version `openapi` and the API's specific information under the `info` object. The `info` object comprises a `title`,`description`,`version`, `contact` information, etc.
+API's general information comprises the openAPI version `openapi` and the API's specific information under the `info` object.
+
+The `info` object comprises a `title`,`description`,`version`, `contact` information, etc.
 
 The information is highly recommended for publicly available APIs to enhance the developer's experience.
 
-In our API, we will document the general information in the `docs/basicInfo.js` file. We will include but not limited to the following information:
+In our API, we will document the general information in the `docs/basicInfo.js` file. 
+
+We will include but not limited to the following information:
 
 ```js
 module.exports = {
@@ -108,13 +108,14 @@ module.exports = {
 
 At the time of writing this article, the latest supported version of `openapi` was `3.0.3`. Make sure to modify it to a latest supported version.
 
-Since our API is simple, there is no much information under the `info` object. Feel free to add more in case you have a complex API as described [here](https://swagger.io/docs/specification/api-general-info/).
+Since our API is simple, there is not much information under the `info` object. Feel free to add more in case you have a complex API as described [here](https://swagger.io/docs/specification/api-general-info/).
 
 To test the above:
-
 - Ensure that the development server is up and running from your terminal.
 - In your browser, open your documentation page from `http://localhost:4000/api-docs`.
-- In case of errors, revisit the steps. Else, your webpage should resemble the following:
+- In case of errors, revisit the steps. 
+
+Otherwise, your webpage should resemble the following:
 
 ![general_info_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/general-info-screenshot.png)
 
@@ -143,10 +144,11 @@ module.exports = {
 Since we will only be operating in development for this API, we have only specified the local server. In case, you are pushing to testing and production environments, make sure you include the information. It follows the same format.
 
 To test this:
-
 - Make sure that your development server is up and running.
 - In your browser, refresh the documentation page.
-- In case of any errors, revisit the steps. Else, the following section should be added to your page:
+- In case of any errors, revisit the steps. 
+
+Otherwise, the following section should be added to your page:
 
 ![servers-screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/servers-screenshot.png)
 
@@ -170,10 +172,11 @@ module.exports = {
 In a more complex API where you have different parties, you could add each party as above in the tags array.
 
 To test this:
-
 - Make sure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, this section should be added to your page:
+- In case of errors, revisit the steps. 
+
+Otherwise, this section should be added to your page:
 
 ![tags_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/tags-screenshot.png)
 
@@ -257,10 +260,11 @@ Since our API is not that complex, we have only included the `schemas` in the co
 In the `schemas`, we have defined the `id`, `Todo`, `TodoInput`, and `Error`. For each schema definition, we are describing its respective data using keys such as `type`, `description`, `example`, and `properties`.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to the documentation page:
+- In case of errors, revisit the steps. 
+
+The following section should be added to the documentation page:
 
 ![schemas_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/schemas-screenshot.png)
 
@@ -303,8 +307,7 @@ module.exports = {
 };
 ```
 
-From above, we have:
-
+From the code snippet above, we have:
 - Specified the method of the operation, `get`.
 - Specified the tags of the operation.
 - Described the operation with a short `description` and an `operationId`.
@@ -312,10 +315,11 @@ From above, we have:
 - Defined the expected `responses`. Only a `200` response is expected since we are fetching data. In the response, we also describe the content type and match the schema to that from the components using `$ref`.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to the page:
+- In case of errors, revisit the steps. 
+
+Otherwise, the following section should be added to the page:
 
 ![get_todos_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todos-screenshot.png)
 
@@ -379,18 +383,21 @@ module.exports = {
 ```
 
 From above, we have:
-
 - Specified the method of the operation, `get`.
 - Defined the `tags` of the operation.
 - Described the operation with a short `description` and an `operationId`.
-- Specified the parameters for the operation. We describe the `name` of the parameter, the `in` which can be `path`, `header`, `query`, or `cookie`. For our case it's `path`. We point the parameter to its equivalent schema component using `$ref`, specify that it's `required`, and give a short `description` of the parameter.
+- Specified the parameters for the operation. 
+
+We describe the `name` of the parameter, the `in` which can be `path`, `header`, `query`, or `cookie`. For our case it's `path`. We point the parameter to its equivalent schema component using `$ref`, specify that it's `required`, and give a short `description` of the parameter.
+
 - Specified the expected responses. For this case, we have two. `200` and `404`. In case todo is found, it will return `200` else `404`. For each response, we are giving a short description, expounding on the content type, and matching the schema to its components equivalent using `$ref`.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to the page:
+- In case of errors, revisit the steps. 
+
+The following section should be added to the page:
 
 ![get_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todo-screenshot.png)
 
@@ -438,7 +445,6 @@ module.exports = {
 ```
 
 From above, we have:
-
 - Specified the method of the operation, `post`.
 - Specified the `tags` of the operation.
 - Described the operation with a short `description` and an `operationId`.
@@ -447,16 +453,17 @@ From above, we have:
 - Specified the expected responses. `201` if the todo is created successfully and `500` if there is a server error.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to your page:
+- In case of errors, revisit the steps. 
+
+The following section should be added to your page:
 
 ![create_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/create-todo-screenshot.png)
 
-_A screenshot of creating todo route_
+*A screenshot of creating todo route*
 
-To test the functionality, click the `Try it out` button, Fill the data in the `Request Body`, click `Execute`, and then observe the server responses.
+To test the functionality, click the `Try it out` button, fill the data in the `Request Body`, click `Execute`, and then observe the server responses.
 
 #### Updating a todo (/todos/:id)
 When updating a todo, we are sending a `PUT` request to `/todos/:id`. The dynamic `id` is `:id`. An update for todo in this API involves toggling the completed value.
@@ -502,7 +509,6 @@ module.exports = {
 ```
 
 From above, we have:
-
 - Specified the method of operation, `put`.
 - Specified the `tags` of the operation.
 - Described the operation with a short `description` and an `operationId`.
@@ -510,10 +516,11 @@ From above, we have:
 - Specified the different responses we expect. `200` if a todo is updated successfully, `404` if the todo with that `id` is not found, and `500` if there is a server error updating the todo.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to your page:
+- In case of errors, revisit the steps. 
+
+The following section should be added to your page:
 
 ![update_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/update-todo-screenshot.png)
 
@@ -565,7 +572,6 @@ module.exports = {
 ```
 
 From above, we have:
-
 - Specified the method of operation, `delete`.
 - Specified the `tags` of the operation.
 - Described the operation with a short `description` and `operationId`.
@@ -573,10 +579,11 @@ From above, we have:
 - Specified the `responses`. In this operation, we can get a `200` response if the todo is deleted successfully, a `404` response if the todo with that `id` is not found, and a `500` response if there is a server error deleting the todo.
 
 To test this:
-
 - Ensure that the development server is running.
 - In your browser, refresh the documentation page.
-- In case of errors, revisit the steps. Else, the following section should be added to your page:
+- In case of errors, revisit the steps. 
+
+Otherwise, the following section should be added to your page:
 
 ![delete_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/delete-todo-screenshot.png)
 
@@ -594,15 +601,18 @@ In this article, we have documented a simple Node.js REST API using swagger by f
 - [Documenting API paths](#documenting-api-paths)
 
 ### Conclusion
-Documenting an API serves as an advantage towards the usability of the API, since anyone can understand and consume it. Swagger does the heavy lifting process in documenting a RESTful API. Depending on the API you are building, swagger offers vast [functionalities](https://swagger.io/docs/specification/about/).
+Documenting an API serves as an advantage towards the usability of the API, since anyone can understand and consume it. 
 
-You can find the finalized code for this article from this [Github repository](https://github.com/mwangiKibui/node.js-rest-api-documentation).
+Swagger does the heavy lifting process in documenting a RESTful API. Depending on the API you are building, swagger offers vast [functionalities](https://swagger.io/docs/specification/about/).
+
+You can find the finalized code for this article from this [GitHub repository](https://github.com/mwangiKibui/node.js-rest-api-documentation).
 
 In case of any query, you can reach me via [Twitter](https://twitter.com/itsmkibui).
 
+Happy coding!
+
 ### References
 Feel free to ponder upon the following resources:
-
 - [YAML tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/)
 - [JSON tutorial](https://www.tutorialspoint.com/json/index.htm)
 - [Automatic API documentation in Node.js using swagger](https://medium.com/swlh/automatic-api-documentation-in-node-js-using-swagger-dd1ab3c78284)
