@@ -20,7 +20,7 @@ To learn more about Firebase, refer to [this link](https://en.wikipedia.org/wiki
 
 ### Prerequisites
 
-We'll not cover the basics of React and React Native in this tutorial. If you are not comfortable with the basics, we highly recommended to go over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
+We'll not cover the basics of React and React Native in this tutorial. If you are not comfortable with the basics, we highly recommended going over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
 
 ### Overview
 
@@ -50,7 +50,7 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 
 Clone the starter code from this [GitHub repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter).
 
-You can checkout the final code from this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
+You can check out the final code from this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
 
 This will be the folder structure of the application.
 
@@ -66,7 +66,7 @@ I've set up 2 screens in the `screens/` directory:
 
 ### Setting up the Firebase project
 
-Head to the [Firebase console](console.firebase.google.com/u/0/), sign in to your account and Create a new project.
+Head to the [Firebase console](https://console.firebase.google.com/u/0/), sign in to your account and Create a new project.
 
 ![Create New Project](firebase_new.png)
 
@@ -82,13 +82,13 @@ You'll need the package name of the application to register your application. Yo
 
 ![Package Name](package_name.png)
 
-On the next step, you should download the `google-services.json` file and place it in the `android/app` directory.
+In the next step, you should download the `google-services.json` file and place it in the `android/app` directory.
 
 This file contains configurations that'll enable your application to access firebase services.
 
 ![Download Google Services JSON](download_services.json.png)
 
-On the next step, It'll ask you to add configurations to the `build.gradle` files.
+In the next step, It'll ask you to add configurations to the `build.gradle` files.
 
 First, add the `google-services` plugin as a dependency inside of your `android/build.gradle` file:
 
@@ -103,7 +103,7 @@ buildscript {
 
 Then, execute the plugin by adding the following to your `android/app/build.gradle` file:
 
-```Gradle
+```gradle
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 ```
@@ -162,7 +162,7 @@ Output:
 4iuaxR+bpCEhMEQslBTwAePpz74=
 ```
 
-Refer to this [StackOverflow Question](https://stackoverflow.com/questions/7506392/how-to-create-android-facebook-key-hash) for more details on how to generate a Key Hash.
+Refer to this [StackOverflow question](https://stackoverflow.com/questions/7506392/how-to-create-android-facebook-key-hash) for more details on how to generate a Key Hash.
 
 ![FB Android App](fb_android_app.png)
 
@@ -178,7 +178,7 @@ Then, enable Facebook authentication in the sign-in methods. Once you've enabled
 
 ![Signin-method](enable_fb_auth.png)
 
-To complete set up, you should add the OAuth redirect URI to your Facebook app configuration. Copy the OAuth redirect URI and head to the Facebook Developer console.
+To complete the set up, you should add the OAuth redirect URI to your Facebook app configuration. Copy the OAuth redirect URI and head to the Facebook Developer console.
 
 Under Products, head to *Settings* in Facebook Login. Paste the redirect URI under *Valid OAuth Redirect URIs* in *Client OAuth Settings*.
 
@@ -271,7 +271,7 @@ async function signIn() {
 }
 ```
 
-Let's use the Login Manager to log in with permissions. We need to pass a array of permissions that the app needs to the function.
+Let's use the Login Manager to log in with permissions. We need to pass an array of permissions that the app needs to the function.
 
 ```JSX
 const result = await LoginManager.logInWithPermissions([
@@ -280,7 +280,7 @@ const result = await LoginManager.logInWithPermissions([
 ]);
 ```
 
-If the result contains an `isCancelled` propery, it means the user cancelled process. Let's throw an error which will then be handled by `catch` block.
+If the result contains an `isCancelled` property, it means the user cancelled the process. Let's throw an error which will then be handled by the `catch` block.
 
 ```JSX
 if (result.isCancelled) {
@@ -288,7 +288,7 @@ if (result.isCancelled) {
 }
 ```
 
-Once signed in, we should get the users AccesToken.
+Once signed in, we should get the users AccessToken.
 
 ```JSX
 const data = await AccessToken.getCurrentAccessToken();
@@ -432,19 +432,19 @@ auth().onAuthStateChanged((user) => {
 
 3. We created a Facebook app with a developer account and enabled Facebook Login for the app.
 
-3. We created a Firebase project and enabled Facebook authentication in our project with App ID and App Secret.
+4. We created a Firebase project and enabled Facebook authentication in our project with App ID and App Secret.
 
-4. We installed the required packages and we added the dependencies to the `build.gradle` files.
+5. We installed the required packages and we added the dependencies to the `build.gradle` files.
 
-5. We added the App ID to the `strings.xml` file and added some configurations to the `AndroidManifest.xml` file.
+6. We added the App ID to the `strings.xml` file and added some configurations to the `AndroidManifest.xml` file.
 
-5. We wrote a function to login the user with their facebook access token using the Facebook SDK.
+7. We wrote a function to login the user with their Facebook access token using the Facebook SDK.
 
-6. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
+8. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
 
-7. We displayed the *Authenticated* screen when the user has been authenticated.
+9. We displayed the *Authenticated* screen when the user has been authenticated.
 
-8. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
+10. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
 
 Congratulations, :partying_face: You did it.
 
