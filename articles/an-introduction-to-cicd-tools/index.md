@@ -55,7 +55,7 @@ The technique behind the integration of CI/CD in the software development proces
 - Successful implementation of CI practices can boost confidence in software development, such that the team will know that test checks are passed, project code and design follow development standards, and the result is a functioning testable product with each build.
 
 ### Jenkins as a CI/CD Tool
-Jenkins is an open-source automation server written in Java. It is a server-based continuous integration application that requires a web server to operate on.
+[Jenkins](https://www.jenkins.io/doc/) is an open-source automation server written in Java. It is a server-based continuous integration application that requires a web server to operate on.
 
 In this article, we'll provide a structural approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
 
@@ -83,7 +83,7 @@ A docker container is essentially a set of virtual environments where we can cre
 With the Docker container setup, the next phase includes the unit testing on the staging server, then the same code is deployed to the production server once all tests are passed.
 
 ### CircleCI as a CI/CD Tool
-CircleCI is a continuous integration and delivery (CI/CD) platform that enables rapid software creation and deployment. CircleCI helps users to automate their entire pipeline, from code creation to testing and deployment.
+[CircleCI](https://circleci.com/docs/) is a continuous integration and delivery (CI/CD) platform that enables rapid software creation and deployment. CircleCI helps users to automate their entire pipeline, from code creation to testing and deployment.
 
 CircleCI is best implemented to construct builds when new code is committed to a version control system such as GitHub, GitHub Enterprise, or Bitbucket. CircleCI also offers a cloud-managed option for continuous integration or runs on the private infrastructure behind a firewall. 
 
@@ -109,7 +109,7 @@ However, when you add a new project, you have to add the following cloud setting
 By default, CircleCI creates a service hook. As a result, builds are activated for all repository service hook, with PUSH being the most common cause of triggering a build.
 
 ### Bamboo as a CI/CD tool
-Bamboo is a continuous integration server that creates a continuous delivery pipeline by automating the management of software application releases. It also covers the building of tests, assigning versions, tagging releases, deploying and activating new versions on the production server.
+[Bamboo](https://support.atlassian.com/bamboo/) is a continuous integration server that creates a continuous delivery pipeline by automating the management of software application releases. It also covers the building of tests, assigning versions, tagging releases, deploying and activating new versions on the production server.
 
 Developers can use Bamboo integration to automate construction and test processes for any software program. It also provides a platform for segregating builds with different targets and specifications. Another benefit is the ability to automatically deploy the program into the server for release, saving a lot of time compared to manual testing.  
 
@@ -140,7 +140,7 @@ Jobs are a collection of tasks that are executed in a specific order on the same
 Tasks are the smallest discrete working units that carry out any system's command, such as parsing test results, executing maven goals, running scripts, and executing source code checkouts. These are examples of general tasks within a job of the working Bamboo directory. These tasks run in order. 
 
 ### Buddy as a CI/CD tool
-Buddy is a continuous integration and delivery (CI/CD) tool that builds, tests, and deploys websites and applications using code from GitHub, Bitbucket, and GitLab. It uses Docker containers with pre-installed languages and frameworks and DevOps, tracking, and notification activities to build on.
+[Buddy](https://buddy.works/docs) is a continuous integration and delivery (CI/CD) tool that builds, tests, and deploys websites and applications using code from GitHub, Bitbucket, and GitLab. It uses Docker containers with pre-installed languages and frameworks and DevOps, tracking, and notification activities to build on.
 
 ### Why Buddy
 The following are the reasons why Buddy is a good choice for CI/CD:
