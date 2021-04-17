@@ -1,6 +1,6 @@
 Node.js is an open-source and cross-platform runtime for executing JavaScript code on the server-side. One of the popular Node.js server frameworks is Express. Express allows you to configure and manage an HTTP server to access resources from the same origin they as being served (i.e., the same domain).
 
-These three parts form an origin.
+These three parts form an [origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin).
 
 ![The CORS origin concept](/engineering-education/how-to-use-cors-in-nodejs-with-express/origin.jpg)
 
@@ -13,7 +13,7 @@ Let's say accessing images, videos, iframes, or scripts from another server. Thi
 This guide will help you learn how to configure CORS with Express.
 
 ### Prerequisites
-To get along with this guide, prior knowledge of Node.js and Express will be essential.
+To get along with this guide, prior knowledge of [Node.js](https://www.youtube.com/watch?v=fBNz5xF-Kx4) and [Express](/engineering-education/express/) will be essential.
 
 ### What is CORS?
 CORS stands for Cross-Origin Resource Sharing. It allows us to relax the security applied to an API. This is done by bypassing the `Access-Control-Allow-Origin` headers, which specify which origins can access the API. CORS is a browser security feature that restricts cross-origin HTTP requests with other servers and specifies which domains access your resources.
@@ -78,6 +78,8 @@ app.get('/ingredients', (req, res) =>{
 app.listen(6069);
 ```
 
+The above code depicts a simple HTTP server using Express. Check this [guide](/engineering-education/express/) and learn how to create one.
+
 Run the server with `npm nodemon`. Open `http://localhost:6069/ingredients` on your browser. You will be served with these ingredients text items.
 
 This is cross-origin allowed because you're currently on the same domain, and you are executing this request from the same domain.
@@ -86,7 +88,7 @@ Let's now try to get the ingredients using the fetch command.
 
 I am going to execute that same request but from another site instead. In this case, I used `https://www.section.io`.
 
-Open `https://www.section.io` on your browser and execute the following fetch request from the bowser's console.
+Open `https://www.section.io` on your browser and execute the following fetch request from the bowser's console using a [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ```js
 fetch("http://localhost:6069/ingredients").then(req => req.text()).then(console.log)
@@ -171,7 +173,7 @@ app.get('/ingredients', cors(), (req, res, next) => {
 ```
 
 ### Usecase
-Let's say you're building a React front-end. Eventually, you'll be connecting it to a back end API. The app might run into an issue if CORS is not set up. Simply because both the front end and the back end are from different origins from each other.
+Let's say you're building a React front-end. Eventually, you'll be connecting it to a back-end API. The app might run into an issue if CORS is not set up. Simply because both the front end and the back end are from different origins from each other.
 
 CORS goes hand in hand with [APIs](https://www.youtube.com/watch?v=zoSJ3bNGPp0). A good use case scenario where you will always use CORS is when developing RESTful APIs. For example, creating a Node.js RESTful API, similar to this [RESTful Web API in Node.js using PostgresSQL and Express](/engineering-education/restful-web-API-using-nodejs-postgressql-and-express/).
 
