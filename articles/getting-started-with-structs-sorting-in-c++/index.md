@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/Getting started with structs sorting in C++/hero.png
+  - url: /engineering-education/getting-started-with-structs-sorting-in-c++/hero.png
     alt: Getting started with structs sorting Image
 ---
 Structs are user-defined data types found in both C and C++. They are capable of holding data items of different data types under a single name, which is different from arrays, that only hold data items of the same datatype.
