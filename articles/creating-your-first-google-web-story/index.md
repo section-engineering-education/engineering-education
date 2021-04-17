@@ -1,0 +1,276 @@
+# Creating your first Google Web Story
+
+![Hero image](engineering-education/creating-your-first-google-web-story/hero.png)
+[Image Source: Unsplash](https://unsplash.com/photos/OU19pS58YY8)
+
+In October 2013, Snapchat introduced a new feature on its app called “Stories” which allowed users to create short consumable contents lasting only for 24 hours, and ever since then it gained popularity amongst Snapchat users and led to the adoption of the feature by other social apps like Instagram, Facebook, YouTube, WhatsApp, and Twitter.
+Introduced in 2018 as [AMP](https://amp.dev/) (Accelerated Mobile Pages) story, Google Web Story is owned by Google and powered by AMP technology. AMP (Accelerated Mobile Pages), developed by the AMP Open-Source team, is an open-source HTML platform designed for mobile web browsers to load web pages faster.
+
+### Table of Contents
+
+[Creating your first Google Web Story](#creating-your-first-google-web-story)
+[Table of Contents](#table-of-contents)
+[What is a Web Story?](#what-is-a-web-story)
+[Prerequisites](#prerequisites)
+[What differentiates a Web Story?](#what-differentiates-a-web-story)
+[Creating a Web Story](#creating-a-web-story)
+[Using NoCode](#using-nocode)
+[Using Code](#using-code)
+[How to make your Web Story visible on the Web](#how-to-make-your-web-story-visible-on-the-web)
+[Conclusion](#conclusion)
+[Further Reading](#further-reading)
+
+### What is a Web Story?
+
+> This is a web-based version of the popular “Stories” format that uses images, audio, videos, texts, and animations to create an engaging short consumable experience.
+
+The web prefix signifies the content is opened to everyone on the web and it is also short-lived or evergreen, depending on how the owner wants it to last.
+
+### Prerequisites
+
+To get started with Web Stories you’ll need some basic Knowledge of HTML, CSS, and JavaScript or no prior knowledge, a code editor to write the code, and a web browser to preview the code.
+
+### What differentiates a Web Story?
+
+Compared the conventional social app stories, Web stories are similar in terms of the overall consistent user experience of tapping back and forth to view previous and next stories. But some things that differentiate Web stories from social app stories include;
+
+**Control**
+Contrary to social app stories with Web stories, you're in control of how long the story should be on the Web and not having to worry that your beautifully crafted story would expire after 24 hours. The publisher host Web stories, which means the content, the copyright, and rules depend on the publisher's terms of choice.
+
+**Earn money**
+In almost all social app stories, creators don't earn when a story has an ad, but this is different for Web stories. Creators can earn money for ads on the story pages, as well as brand deals, native advertising, and so on.
+
+**Accessibility**
+Since Web stories live on the web, they don't just live in a single app but can be accessed anywhere. Technically Web stories are Web pages under the hood, which makes them get indexed by search engines.
+
+### Creating a Web Story
+
+Creating a Web Story is flexible depending on your needs and expertise. We can create Web Stories using Code to create a story with custom functionalities and NoCode using drag-and-drop tools.
+
+#### Using NoCode
+
+There are drag-and-drop tools like [MakeStories](https://makestories.io/), [Web Stories for WordPress](https://wordpress.org/plugins/web-stories/), [Newsroom AI](https://www.nws.ai/), and [more](https://amp.dev/documentation/tools/?format=stories) that are used to create a story and then embed it into a website. For the sake of this article, MakeStories editor is going to be used.
+
+![MakeStories website](engineering-education/creating-your-first-google-web-story/makestories.png)
+
+Login or Sign-up on MakeStories [here](https://makestories.io/)
+
+After logging or signing up, create a story by clicking on “CREATE NEW STORY”
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories2.png)
+
+Fill in the details for the story that would be created.
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories1.png)
+
+The studio should look like this:
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories3.png)
+
+Pick any of these: Color, Gradient, Texture, Image, Video, GIFs, Overlay, Animation, and add it to the slide
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories5.png)
+
+Add text to the slide by clicking on the “T” icon and dragging any typography or font combination.
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories8.png)
+
+Next, add a new slide by clicking on the plus “+” icon below the slide.
+Then add a background image to fill the slide.
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories6.png)
+
+After editing the story, then publish it by clicking the “PUBLISH” button and “publish it as a Web Story”.
+
+![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories7.png)
+
+#### Using Code
+
+Persons with technical knowledge of programming can create customized Web Stories to suit their needs. Creating Web Stories with code requires using the AMP HTML library, check out the [documentation](https://amp.dev/documentation/components/?format=stories) on `amp-story` component for a guide on how to create a Web Story using the Library.
+Let’s create a Hello World AMP Story application using the `amp-story` extension.
+Open a code editor of your choice and create an `index.html` file
+
+Import the  `amp-story` in the header
+
+```html
+<!-- amp-story script tag --> 
+<script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+```
+
+To allow AMP Stories to make use of video the `amp-video` extension also needs to be added to the header
+
+```html
+<!-- amp-video script tag --> 
+<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+```
+
+With CSS, we can style stories using the `style amp-custom` component
+
+```css
+/* styling for amp-story and amp-story-page component */
+<style amp-custom>
+  amp-story {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI ", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji ", "Segoe UI Emoji ", "Segoe UI Symbol ";
+  }
+  amp-story-page * {
+    color: white;
+    text-align: center;
+  }
+  [template=thirds] {
+    padding: 0;
+  }
+</style>
+```
+
+The `amp-story` tag contains the `amp-story-page` tags, which display stories. The story level also contains important metadata like title, publisher, publisher-logo, publisher-portrait, and their corresponding attributes.
+
+```html
+<!-- amp-story metadata --> 
+<amp-story standalone
+  title="Stories in AMP - Hello World"
+  publisher="AMP Project"
+  publisher-logo-src="https://amp.dev/favicons/coast-228x228.png"
+  poster-portrait-src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg"
+  poster-square-src="https://amp.dev/static/samples/img/story_dog2_square.jpg"
+  poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg">
+```
+
+![Web Story](engineering-education/creating-your-first-google-web-story/webstories1.png)
+
+```html
+<!-- story first page with an image and text --> 
+<amp-story-page id="page-1">
+  <amp-story-grid-layer template="fill">
+    <amp-img src="https://amp.dev/static/samples/img/story_dog2.jpg"
+             width="720" height="1280"
+             layout="responsive">
+    </amp-img>
+  </amp-story-grid-layer>
+  <amp-story-grid-layer template="vertical">
+    <h1>Hello World</h1>
+    <p>This is an AMP Story.</p>
+  </amp-story-grid-layer>
+</amp-story-page>
+```
+
+This code contains the first page of the story with 2 grid layers of an image and text.
+
+![Web Story](engineering-education/creating-your-first-google-web-story/webstories2.png)
+
+```html
+<!-- story second page with a video --> 
+<amp-story-page id="page-2">
+  <amp-story-grid-layer template="fill">
+    <amp-video autoplay loop
+          width="720"
+          height="960"
+          poster="https://amp.dev/static/samples/img/story_video_dog_cover.jpg"
+          layout="responsive">
+          <source src="https://amp.dev/static/samples/video/story_video_dog.mp4" type="video/mp4">
+    </amp-video>
+  </amp-story-grid-layer>
+</amp-story-page>
+```
+
+This code contains the second page of the story with a grid layer of a video.
+
+![Web Story](engineering-education/creating-your-first-google-web-story/webstories3.png)
+
+```html
+<!-- story third page with an animation --> 
+<amp-story-page id="animation-demo">
+  <amp-story-grid-layer template="fill">
+    <amp-img src="https://amp.dev/static/samples/img/story_dog4.jpg"
+             animate-in="fly-in-top"
+             width="720" height="1280"
+             layout="responsive">
+    </amp-img>
+  </amp-story-grid-layer>
+  <amp-story-grid-layer template="thirds">
+    <h2 animate-in="fly-in-bottom"
+        grid-area="lower-third"
+        animate-in-delay="0.4s">
+      Best walk ever!
+    </h2>
+  </amp-story-grid-layer>
+</amp-story-page>
+```
+
+This is the third page of the story with 2 grid layers of a video and animating text.
+
+![Web Story](engineering-education/creating-your-first-google-web-story/webstories4.png)
+
+```html
+<!-- story fourth page with an image grid --> 
+<amp-story-page id="layout-demo">
+  <amp-story-grid-layer template="thirds">
+    <amp-img grid-area="upper-third"
+             src="https://amp.dev/static/samples/img/story_thirds_1.jpg"
+             width="560" height="420"
+                         layout="responsive">
+    </amp-img>
+    <amp-img grid-area="middle-third"
+             src="https://amp.dev/static/samples/img/story_thirds_2.jpg"
+             width="560" height="420"
+                         layout="responsive">
+    </amp-img>
+    <amp-img grid-area="lower-third"
+             src="https://amp.dev/static/samples/img/story_thirds_3.jpg"
+             width="560"
+             height="420"
+             layout="responsive">
+    </amp-img>
+  </amp-story-grid-layer>
+</amp-story-page>
+```
+
+The last story page of the story contains 2 grid areas of images arranged vertically.
+
+```html
+<!-- amp-story bookend --> 
+<amp-story-bookend src="https://amp.dev/static/samples/json/bookend.json" layout="nodisplay">
+</amp-story-bookend>
+```
+
+The bookend contains links to other resources for the story, such as social media links, news posts, or affiliate links. Check out the full code on [Github](https://github.com/Jethro-magaji/Web-Story-Hello-World) and [Live story](https://web-story-hello-world.stackblitz.io/)
+
+### How to make your Web Story visible on the Web
+
+When a Web story is published, it appears across Google in the following formats; on Google discover as a carousel, as a grid view on Google search, and as an image card on Google images. if you want your stories to be indexed by search engines, you will need to work on your stories’ SEO (search engine optimization).
+However, to improve the quality and quantity of traffic to your story, you will need to consider the following;
+
+**Metadata**
+It's very important to ensure that the following metadata; ‘publisher’, ‘publisher logo’, ‘portrait poster’, and ‘title’ are available for your Web stories so that search engines can index them to show the story on Google Discover.
+
+**Linking to stories**
+It's recommended to integrate stories into your website, by linking them to other pages on your website.
+
+**URL format**
+When setting the URL for your story, there's no need to specify in the URL that it's a story, for example,
+`website.com/stories/story.html`
+Rather, consider using the same directory structure of your website and URL format for your stories. Like this
+`website.com/article/new-article.html`
+
+**Image and video description**
+It's best practice and recommended to add meaningful alt text, where appropriate, to optimize for accessibility and index ability of your content, and since videos don't support alt text, It's good to use the title attribute to describe the video.
+
+**Video captions**
+Using captions in videos is important because they automatically show in web stories, making them usable even when the sound is off. They also make stories accessible to those that can't hear the spoken words in the video and help with search engine indexing.
+
+**Content**
+When creating Web Stories, it’s important to provide very good quality content that is important and interesting to your users, like any Web page creating high-quality content is an important SEO strategy.
+
+### Conclusion
+
+In summary, we have learned what a Web Story and how it differs from social media stories. You also created your first Web Story and learned how to make your Web Story visible on the web.
+
+### Further Reading
+
+- [Web Stories on Google](https://stories.google/)
+- [Use AMP to create visual stories on the web](https://amp.dev/about/stories/)
+- [Web Stories for WordPress](https://wp.stories.google/)
+- [AMP](https://amp.dev/)
+- [The AMP Project](https://github.com/ampproject/amp.dev)
+- [Accelerated Mobile Pages](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages)
+- [Create your first Web Story](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories)
+- [Storytime](https://youtube.com/playlist?list=PLfVPq9A6B0RNoQ3HTE9LQzgAdVzcb7tmt)
