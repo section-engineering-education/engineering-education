@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/linear-regression-r/hero.png
+  - url: /engineering-education/linear-regression-r/hero.jpg 
     alt: Technology Image
 ---
 In this tutorial, we will explore an introductory theory behind linear regression and learn how to perform, interpret and evaluate its accuracy in R. 
