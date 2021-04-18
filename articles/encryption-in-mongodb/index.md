@@ -6,7 +6,7 @@ url: /engineering-education/enryption-in-mongodb/
 title: Encryption in MongoDB
 description:  This article will cover the encryption, encryption at rest and some other terminologies related to this in MongoDB
 author: harit-joshi
-date: 2021-04-18T00:00:00-9:07
+date: 2021-04-18T00:00:00-21:13
 topics: []
 excerpt_separator: <!--more-->
 images:
