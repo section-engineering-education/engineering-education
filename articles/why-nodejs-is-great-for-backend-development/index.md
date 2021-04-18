@@ -7,7 +7,7 @@ title: Why Node.js is great for backend development?
 description: This tutorial will be a brief dive into the understanding about JavaScript, Node.js, and its use in backend development.
 author: ephraim-gathoni
 date: 2021-04-18T00:00:00-22:30
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
