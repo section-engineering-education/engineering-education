@@ -48,9 +48,9 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 
 ### Cloning the starter code
 
-Clone the starter code from this [GitHub repository](https://github.com/zolomohan/rn-firebase-phone-auth-starter).
+Clone the starter code from this [GitHub repository](https://github.com/zolomohan/react-native-firebase-facebook-auth-starter).
 
-You can checkout the final code from this [GitHub Repository](https://github.com/zolomohan/rn-firebase-phone-auth).
+You can checkout the final code from this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-facebook-auth).
 
 This will be the folder structure of the application.
 
