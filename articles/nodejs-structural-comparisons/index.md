@@ -236,11 +236,11 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 
 #### References
 
-[Kali Linux](https://kali.org).
+[Kali Linux](https://kali.org)  
 [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
 [Matplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
-[Node.js](https://nodejs.org) application.
-[Plotly](https://chart-studio.plotly.com) account.
+[Node.js](https://nodejs.org) application  
+[Plotly](https://chart-studio.plotly.com)  
 
 Happy Coding!  
 
