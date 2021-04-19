@@ -128,7 +128,7 @@ Here is a general overview of the visual from the random number generator is the
 
 In this portion of the tutorial, tips on the procedural process behind Matplotlib-cpp installations, defining variables, and applying these procedures to visualizations are discussed.  
 
-The following is the most frequently used procedure to install a C module. [Mathplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly.  
+The following is the most frequently used procedure to install a C module. [Matplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly.  
 
 After entering an installation command, a request to install other required dependent modules can be accepted or declined. At this point, enter `y` to complete installations.  
 
@@ -173,7 +173,7 @@ Local variable is 9 and global variable is Section.io.
 ![Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)  
 _Screen capture_  
 
-Visuals can display data in different forms. To graph, [Mathplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) was chosen. As stated in Matplotlib-cpp documentation, installing python is necessary.  
+Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) was chosen. As stated in Matplotlib-cpp documentation, installing python is necessary.  
 
 ```C
 #include <cmath>
@@ -235,8 +235,8 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 #### References
 
 [Machine Learning Tool Alternatives](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/)  
-[Mathplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
-[Mathplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
+[Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
+[Matplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
 [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
 [Qt program](https://vitux.com/compiling-your-first-qt-program-in-ubuntu/)  
 [TensorFlow](https://www.tensorflow.org/install/lang_c)  
