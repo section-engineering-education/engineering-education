@@ -216,21 +216,21 @@ Let's see who this work out using the server we've created above.
 
 Run the application using `nodemon app.js`. This should start the server on the set port 4000.
 
-![An express server](/engineering-education/session-anagement-in-nodejs-using-expressjs-and-express-session/express-server.jpg)
+![An express server](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/express-server.jpg)
 
 Open the server on the browser on route `http://localhost:4000/`, and you will be served with this login form.
 
-![A served express server html form](/engineering-education/session-anagement-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
+![A served express server html form](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
 
 To be autheticated by server, provide the credentils as specified in `if(req.body.username == 'user1' && req.body.password== 'mypassword')`. Username as `user1` and password as `mypassword`.
 
-![Session user granted access](/engineering-education/session-anagement-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
+![Session user granted access](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
 
 Once you log in successfully, a session will be generated, and a cookie will be saved in the browser.
 
 In this case, since we don't have a database to save the session, we will `console.log(req.session)` and glance at how it looks. If you go back to the command line, the session object will be printed to the console.
 
-![Node.js session](/engineering-education/session-anagement-in-nodejs-using-expressjs-and-express-session/session.jpg)
+![Node.js session](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/session.jpg)
 
 These are the same values you would have saved in a production environment on the server-side into a database such as MongoDB, Postgres, etc.
 
@@ -238,7 +238,7 @@ Let's see the cookie value saved in the browser.
 
 Open the browser inspector tool application Cookies http://localhost:4000/.
 
-![Node.js browser cookies](/engineering-education/session-anagement-in-nodejs-using-expressjs-and-express-session/cookie.jpg)
+![Node.js browser cookies](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/cookie.jpg)
 
 Every time you refresh this page, the request will be sent along with the value of this cookie within this localhost domain. If it matches with the session stored value, the server will authenticate this user.
 
