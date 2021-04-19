@@ -40,7 +40,7 @@ Collection widgets display multiple elements for viewing and can support scrolli
 Hybrid widgets are widgets that can fall into more than one category. For example, a music player widget can accommodate more information on the track being played. In such a case, it will be a hybrid widget as it allows for controls and information on the track being played.
 
 ### Creating a sample widget in Java
-This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects. After going through this tutorial, you will create an Android widget, as shown in the animations below. Find the final APK file on this [link](/engineering-education/android-application-widgets-tutorial-in-java/app-debug.apk).
+This section will create a sample app with a blank activity and a widget. Our focus is on creating a functional widget and testing different Android app widget aspects. After going through this tutorial, you will create an Android widget, as shown in the animations below. Find the final APK file on this [link](https://drive.google.com/file/d/10x0E3Nd65EQF2sfyQWFef4JV316AALIB/view?usp=sharing).
 
 ![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/android-app-widget.gif)
 
