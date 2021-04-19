@@ -1,6 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/cloudinary-flask-mongo/
 title: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
-
 description: Learn about content delivery networks (CDNs) and use them in a Python application with Cloudinary and MongoDB.
+author: onojakpor-ochuko
+date: 2021-03-31T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/cloudinary-flask-mongo/hero.jpg
+    alt: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
+---
 
 ### Introduction
 
@@ -194,20 +207,20 @@ When you run the `app.py` file, your upload page should resemble the image below
 You need to import the necessary libraries required by the application. Update the `app.py` file imports with the code below:
 
 ```python
-import os  
-from flask_pymongo import PyMongo  
+import os
+from flask_pymongo import PyMongo
 from werkzeug.utils import secure_filename
 ```
 
 You need to configure the application configurations (database, secret key, upload folder, accepted image formats). Update the `app.py` file with the code below:
 
 ```python
-app.config["SECRET_KEY"] = "SECRET_KEY"  
-app.config["UPLOAD_FOLDER"] = "static/uploads/"  
-app.config["MONGO_DBNAME"] = "gallery"  
-app.config["MONGO_URI"] = "mongodb://localhost:27017/gallery"  
+app.config["SECRET_KEY"] = "SECRET_KEY"
+app.config["UPLOAD_FOLDER"] = "static/uploads/"
+app.config["MONGO_DBNAME"] = "gallery"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/gallery"
 
-mongo = PyMongo(app)  
+mongo = PyMongo(app)
 ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg", "gif"]
 ```
 
@@ -306,7 +319,7 @@ pip install cloudinary
 You need to import the Cloudinary library so you can use it in your application. Update the `app.py` file imports with the code below:
 
 ```python
-import cloudinary  
+import cloudinary
 import cloudinary.uploader
 ```
 
@@ -392,3 +405,7 @@ Happy coding!
 * [Flask Web Framework](https://palletsprojects.com/p/flask/)
 * [PyMongo Docs](https://pypi.org/project/pymongo/)
 * [Cloudinary Python SDK Docs](https://pypi.org/project/cloudinary/)
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
