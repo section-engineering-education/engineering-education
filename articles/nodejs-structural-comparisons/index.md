@@ -1,8 +1,6 @@
 ### Node.js Structural Comparisons
 
-Node.js is a type of computer language based on JavaScript. When learning a new form of a computer language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++.  
-
-Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
+Node.js is a type of computer language based on JavaScript. When learning a new form of a computer language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++. Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
 
 #### Table of Contents
 1. [Prerequisites](#prerequisites)
@@ -26,9 +24,7 @@ Once most of the prerequisites are met, let's begin.
 
 #### Node.js
 
-Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables.  
-
-Modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can substitute for `install`.  
+Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables. Modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can substitute for `install`.  
 
 ```Bash
 npm install plotly
@@ -76,7 +72,7 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Plotly was selected to graph. To use Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below.  
+Visualizations in Node.js were generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below.  
 
 ```JavaScript
 global.i = [];
@@ -124,24 +120,14 @@ _Screen capture_
 
 By visiting the following [link](https://chart-studio.plotly.com/~pkalynan/0), additional options to observe the data can be visualized. One example is converting any given Node.js script to other programming languages such as Python, R, and JSON. Another feature includes a mouse over technique to display labels.  
 
-A general overview of the visual from the random number generator considers the scale and the physical positioning of the boxplot. The vertical box plot includes data points under the value of one. The graph includes most variables included in measures of central tendency although mean or average remained unavailable. The second graph positioned to the right is horizontal. Statistical values for a horizontal box plot on this scale and axis cannot be determined.  
+A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most variables included in measures of central tendency although mean or average remained unavailable. The second graph positioned to the right is horizontal. Statistical values for a horizontal box plot on this scale and axis could not be determined.  
 
 #### C
 
-In this portion of the tutorial, tips on the procedural process behind Matplotlib-cpp installations, defining variables, and applying these procedures to visualizations are discussed.  
-
-The following is the most frequently used procedure to install a C module. [Matplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly.  
-
-After entering an installation command, a request to install other required dependent modules can be accepted or declined. At this point, enter `y` to complete installations.  
+In this portion of the tutorial, tips on the procedural process behind Matplotlib-cpp installations, defining variables, and applying these procedures to visualizations are discussed. The following is the most frequently used procedure to install a C module. [Matplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly. After entering an installation command, a request to install other required dependent modules can be accepted or declined. At this step, enter `y` to complete installations with the command provided below.  
 
 ```Bash
 apt-get install python-matplotlib python-numpy python2.7-dev
-```  
-
-Internally, Python can be installed with the following command:  
-
-```Bash
-apt install python
 ```  
 
 Next, define variables in a C/C++ environment. Global and local variables are written in the format shown below. A text editor in the command line can help create a C file. For example, `nano` is a built-in text editor involved in the creation of C files.  
@@ -219,7 +205,7 @@ If `kex` is open, the image should appear similar to the picture below.
 ![Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/soundcurve.jpg)  
 _Screen capture_  
 
-To recap the graph shown above, the graph is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound.  
+To recap the graph shown above, the graph is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound. The graph forms a rotated version of geometric shape symbolizing a heart. Colors can be changed accordingly.  
 
 #### Conclusion
 
