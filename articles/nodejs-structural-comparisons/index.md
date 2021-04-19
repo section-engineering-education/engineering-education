@@ -148,7 +148,7 @@ int main(){
 };
 ```  
 
-Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file.  
+Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. The output file can be opened with the second command with the path directory symbol with the file name.  
 
 ```Bash
 gcc test.c -o test
@@ -193,7 +193,7 @@ int main()
 }
 ```  
 
-Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the python library directory.  
+Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the python library directory. To run the newly created file, enter The second command underneath `g++`.  
 
 ```Bash
 g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
@@ -217,7 +217,7 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 * Plotly graphs generated with Node.js are sent to a separate interactive browser window. Interactive features include script conversions and displaying labels.
 * Browsers are used to display Node.js visualizations.
 * C/C++ contains procedures that many computer languages no longer include. For example, compiling scripts.
-* In C/C++, files are required to be compiled before running scripts.
+* In C/C++, files are required to be compiled before running files.
 * Matplotlib-cpp graphs are displayed with `kex`.
 
 #### References
