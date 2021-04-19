@@ -188,7 +188,7 @@ int main()
 }
 ```  
 
-Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the python library directory. To run the newly created file, enter The second command underneath `g++`.  
+Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the python library directory. To run the newly created file, enter the second command underneath `g++`.  
 
 ```Bash
 g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
