@@ -43,7 +43,7 @@ In the main paper, they present an overview of the different neurons that they f
 
 A few examples of the neurons they found include:
 
-1. Region Neurons
+**1. Region Neurons**
 
 This type of neuron responds to different kinds of images related to a particular geographic region and cities. In the example below, the neuron responds to the USA's architecture, nature of Europe's landscape, faces of Indians, and text related to West Africans.
 
@@ -51,7 +51,7 @@ This type of neuron responds to different kinds of images related to a particula
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
-2. Person Neurons
+**2. Person Neurons**
 
 They found neurons that respond to the faces of specific persons. For example, the images below show content associated with Donald Trump, Lady Gaga, Ariana Grande, and Elvis Presley. Besides faces, these neurons could also respond to texts, architectures, poses, and logos associated with the same persons. 
 
@@ -59,7 +59,7 @@ They found neurons that respond to the faces of specific persons. For example, t
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
-3. Emotion Neurons
+**3. Emotion Neurons**
 
 They found neurons that respond to words, facial expressions, and any content associated with an emotional or mental state. These emotional states include sadness, surprise, shock, crying, happiness, and sleepiness. This example is shown below:
 
@@ -67,7 +67,7 @@ They found neurons that respond to words, facial expressions, and any content as
 
 *[Image Source: Distill](https://distill.pub/2021/multimodal-neurons/)*
 
-Now, so far we have seen that the multimodal neurons in the CLIP model respond well to both the images and texts for a given concept. But, what if we perform a typographic attack (an adversarial attack) on the model. Will it still correctly classify these images and texts correctly? This next section covers two types of typographic attacks and how it affects the model.
+So far we have seen that the multimodal neurons in the CLIP model respond well to both the images and texts for a given concept. But, what if we perform a typographic attack (an adversarial attack) on the model? Will it still correctly classify these images and texts correctly? This next section covers two types of typographic attacks and how it affects the model.
 
 ### Typographic Attacks
 
