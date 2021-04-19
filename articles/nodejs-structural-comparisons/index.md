@@ -237,7 +237,6 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 [Machine Learning Tool Alternatives](https://www.analyticsvidhya.com/blog/2021/04/alternative-tools-for-effective-machine-learning/)  
 [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
 [Matplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
-[Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
 [Qt program](https://vitux.com/compiling-your-first-qt-program-in-ubuntu/)  
 [TensorFlow](https://www.tensorflow.org/install/lang_c)  
 
