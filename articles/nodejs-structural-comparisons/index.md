@@ -213,8 +213,8 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 
 #### Takeaways
 
-* In Node.js, global variables are explicitly expressed.
-* Plotly graphs generated with Node.js are sent to a separate  interactive browser window. Interactive features include script conversions and displaying labels.
+* In Node.js, defining global variables starts with `global.` followed by a variable name in a single statement.
+* Plotly graphs generated with Node.js are sent to a separate interactive browser window. Interactive features include script conversions and displaying labels.
 * Browsers are used to display Node.js visualizations.
 * C/C++ contains procedures that many computer languages no longer include. For example, compiling scripts.
 * In C/C++, files are required to be compiled before running scripts.
