@@ -51,7 +51,6 @@ undefined
 ```  
 
 When adding `global` before the variable name, the value becomes defined. Defined `global` variables can be applied to many data types and used with various node.js modules.  
-
 The following are examples.  
 
 ```JavaScript
@@ -72,7 +71,7 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Visualizations in Node.js were generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below.  
+Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below.  
 
 ```JavaScript
 global.i = [];
@@ -161,7 +160,7 @@ Local variable is 9 and global variable is Section.io.
 ![Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)  
 _Screen capture_  
 
-Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) was chosen. As stated in Matplotlib-cpp documentation, installing python is necessary.  
+Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs, however, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs.  
 
 ```C
 #include <cmath>
