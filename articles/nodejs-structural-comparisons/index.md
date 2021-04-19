@@ -148,7 +148,7 @@ int main(){
 };
 ```  
 
-Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. The output file can be opened with the second command with the path directory symbol with the file name.  
+Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. The output file can be opened with the second command with the path directory symbol and the file name.  
 
 ```Bash
 gcc test.c -o test
