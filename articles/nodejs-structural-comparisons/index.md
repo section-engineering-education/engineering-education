@@ -51,6 +51,7 @@ undefined
 ```  
 
 When adding `global` before the variable name, the value becomes defined. Defined `global` variables can be applied to many data types and used with various node.js modules.  
+
 The following are examples.  
 
 ```JavaScript
@@ -204,7 +205,7 @@ If `kex` is open, the image should appear similar to the picture below.
 ![Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/soundcurve.jpg)  
 _Screen capture_  
 
-To recap the graph shown above, the graph is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound. The graph forms a rotated version of geometric shape symbolizing a heart. Colors can be changed accordingly.  
+To recap the graph shown above, the graph is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound. The graph forms a rotated version of a geometric shape symbolizing one heart. Colors can be changed accordingly.  
 
 #### Conclusion
 
