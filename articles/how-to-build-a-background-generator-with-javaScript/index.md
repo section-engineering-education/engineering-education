@@ -231,7 +231,13 @@ We added the h4 tag to show the currently selected gradient, which you will see 
 <h4></h4>
 ```
 
-### Step 3 - Add the below snippet to the `style.css` we created earlier
+### Step 3 - Link your `style.css` by adding the reference in `index.html`
+
+```html
+ <link rel="stylesheet" type="text/css" href="style.css">
+```
+
+### Step 4 - Add the below snippet to the `style.css` we created earlier
 
 ```css
 body {
@@ -264,13 +270,13 @@ h2 {
 
 ```
 
-### Step 4 - Navigate to your browser
+### Step 5 - Navigate to your browser
 
 If you don't have anything that looks like the picture below, please check if you skipped any of the steps above.
 
 ![browser image](/engineering-education/how-to-build-a-background-generator-with-javaScript/browser-img.png)
 
-### Step 5 - Navigate to the `scrpt.js` let's add some Javascript action
+### Step 6 - Navigate to the `scrpt.js` let's add some Javascript action
 
 ```javascript
 
@@ -299,7 +305,88 @@ color2.addEventListener("input", setGradient);
 
 All should work fine because we already implemented JavaScript by adding a reference earlier.
 
-### Step 6 - Navigate to the browser and see JavaScript in action after selecting a favorite color on both inputs
+### Step 7 - Your `index.html`, `style.css` and `script.js` should look similar to the snippet shown below
+
+`Index.html`
+
+```HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Gradient Background</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="gradient">
+ <h3>How to Buld a Background Generator with JavaScript</b></h3>
+ <input class="color1" type="color" name="color1" value="#00ff00">
+ <input class="color2" type="color" name="color2" value="#ff0000">
+ <h2>The Current CSS Background ..</h2>
+ <h4></h4>
+ <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+```
+
+`style.css`
+
+```css
+body {
+ font: 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    top: 15%;
+ background: linear-gradient(to right, green , teal); /* Standard syntax */
+}
+
+h3 {
+    font: 600 1.5em 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    width: 100%;
+}
+
+h2 {
+ font: 900 1em 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0.01em;
+
+}
+```
+
+`script.js`
+
+```javascript
+// Define all the requried variables
+var css = document.querySelector("h4");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient");
+
+// Create a function to show the currently selected gradient
+function setGradient() {
+ body.style.background = 
+ "linear-gradient(to right, " 
+ + color1.value 
+ + ", " 
+ + color2.value 
+ + ")";
+
+ css.textContent = body.style.background + ";";
+}
+
+// Add Event listener to set gradient for both inputs
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
+```
+
+### Step 8 - Navigate to the browser and see JavaScript in action after selecting a favorite color on both inputs
 
 Example:
 ![browser image](/engineering-education/how-to-build-a-background-generator-with-javaScript/browser-img-2.png)
