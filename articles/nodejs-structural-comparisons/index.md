@@ -35,9 +35,7 @@ A branched-out path directory looks similar to the picture below.
 ![Directory](/engineering-education/nodejs-structural-comparisons/path.jpg)  
 _Screen capture_  
 
-Remember to use the `npm rebuild` command. A module is installed after this command is entered. If this command is not entered, the installation is incomplete and cannot be included in Node.js scripts.  
-
-Node.js is structured uniquely to define a variable properly. When using the `global` function, the function can optionally be included in other modules. For example, without a `global` function to define a variable, the variable will be named `undefined`.  
+Remember to use the `npm rebuild` command. A module is installed after this command is entered. If this command is not entered, the installation is incomplete and cannot be included in Node.js scripts. Node.js is structured uniquely to define a variable properly. When using the `global` function, the function can optionally be included in other modules. For example, without a `global` function to define a variable, the variable will be named `undefined`.  
 
 An example is shown below.  
 
@@ -215,8 +213,6 @@ As described, Node.js and C/C++ offers several features. Based on preferences an
 
 * In Node.js, defining global variables starts with `global.` followed by a variable name in a single statement.
 * Plotly graphs generated with Node.js are sent to a separate interactive browser window. Interactive features include script conversions and displaying labels.
-* Browsers are used to display Node.js visualizations.
-* C/C++ contains procedures that many computer languages no longer include. For example, compiling scripts.
 * In C/C++, files are required to be compiled before running files.
 * Matplotlib-cpp graphs are displayed with `kex`.
 
