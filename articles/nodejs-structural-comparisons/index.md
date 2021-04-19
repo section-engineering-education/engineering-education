@@ -137,8 +137,6 @@ nano test.c
 ```C
 #include <stdio.h>
 
-static char num1[] = "3.14";
-
 int main(){
   static int n = 500000.00;
   printf("Numerical variable is %d.", n);
