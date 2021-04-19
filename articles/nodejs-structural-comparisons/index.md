@@ -128,7 +128,7 @@ In this portion of the tutorial, tips on the procedural process behind Matplotli
 apt-get install python-matplotlib python-numpy python2.7-dev
 ```  
 
-Next, define variables in a C/C++ environment. Global and local variables are written in the format shown below. A text editor in the command line can help create a C file. For example, `nano` is a built-in text editor involved in the creation of C files.  
+Next, define variables in a C/C++ environment. A text editor in the command line can help create a C file. For example, `nano` is a built-in text editor involved in the creation of C files.  
 
 ```Bash
 nano test.c
@@ -137,11 +137,11 @@ nano test.c
 ```C
 #include <stdio.h>
 
-static char num1[] = "Section.io";
+static char num1[] = "3.14";
 
 int main(){
-  static int num2 = 9;
-  printf("Local variable is %d and global variable is %s", num2, num1);
+  static int n = 500000.00;
+  printf("Numerical variable is %d.", n);
   return 0;
 };
 ```  
@@ -154,10 +154,7 @@ gcc test.c -o test
 ```  
 
 **Output:**  
-Local variable is 9 and global variable is Section.io.  
-
-![Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)  
-_Screen capture_  
+Numerical variable is 500000.  
 
 Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs, however, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
 
