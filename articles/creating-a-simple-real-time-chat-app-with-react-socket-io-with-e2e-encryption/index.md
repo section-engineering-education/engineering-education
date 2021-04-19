@@ -224,7 +224,7 @@ import { createStore } from "redux";
 import React from "react";
 import { Provider } from "react-redux";
 
-
+//here we create an object to store the current state of the application
 const store = createStore(rootReducers);
 ReactDOM.render(
   <Provider store={store}>
@@ -236,9 +236,10 @@ ReactDOM.render(
 
 In the above code, we have added `redux` and imported `reducers` from the file `/store/reducer/index.js`
 
-Next, let's create a file `/store/action/index.js` and add the code as shown below:
+Next, let's create a file `/store/action/index.js` which will define the action object and returns the the same to avoid writing the object every time we need it. The code is as shown below:
 
 ```typescript
+//here we export the function process with the defined parameters and define action object PROCESS, which will return the same parameters as the payload.
 export const process = (encrypt, text, cypher) => {
   return {
     type: "PROCESS",
@@ -251,29 +252,33 @@ export const process = (encrypt, text, cypher) => {
 };
 ```
 
-Then let's create a file `/store/reducer/process.js` and add the code as shown below:
+Then let's create a file `/store/reducer/process.js` which will be our [reducer](https://www.geeksforgeeks.org/introduction-to-redux-action-reducers-and-store/). It takes the current state and the action object we have just created to return a new state. The code is as shown below:
 
 ```typescript
+//initialiaze the function with two arguments
 export const ProcessReducer = (state = {}, action) => {
   switch (action.type) {
+    //returns updated state
     case "PROCESS":
       return { ...action.payload };
-
+    //else the current state is retained
     default:
       return state;
   }
 };
 ```
 
-Then, let's create a file `/store/reducer/index.js` and add the code as shown below:
+Then, let's create a file `/store/reducer/index.js` where we import the reducer we have just create and call [action](https://www.tutorialspoint.com/redux/redux_actions.htm) object created previously. The code is as shown below:
 
 ```typescript
+// import the reducers
 import { ProcessReducer } from "./process";
 import { combineReducers } from "redux";
+// define the object and call the action
 const rootReducers = combineReducers({
   ProcessReducer: ProcessReducer,
 });
-
+// else return default root reducer
 export default rootReducers;
 ```
 
@@ -377,7 +382,7 @@ $greyColor: #2d343e;
 
 **Step 4**
 
-Next, let's code the file `/home/home.js` which acts as our homepage page, where the user keys in the user name and romm name is joining. 
+Next, let's code the file `/home/home.js` which acts as our homepage page, where the user keys in the user name and room name is joining. 
 
 The code for the file is as below:
 
@@ -389,10 +394,11 @@ import { Link } from "react-router-dom";
 function Homepage({ socket }) {
   const [username, setusername] = useState("");
   const [roomname, setroomname] = useState("");
-
+  //activates joinRoom function defined on the backend
   const sendData = () => {
     if (username !== "" && roomname !== "") {
       socket.emit("joinRoom", { username, roomname });
+      //if empty error message pops up and returns to the same page
     } else {
       alert("username and roomname are must !");
       window.location.reload();
@@ -473,20 +479,20 @@ import { to_Decrypt, to_Encrypt } from "../aes.js";
 import { process } from "../store/action/index";
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-
+//gets the data from the action object and reducers defined earlier
 function Chat({ username, roomname, socket }) {
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
 
   const dispatch = useDispatch();
-
+  
   const dispatchProcess = (encrypt, msg, cipher) => {
     dispatch(process(encrypt, msg, cipher));
   };
 
   useEffect(() => {
     socket.on("message", (data) => {
-      //decypt
+      //decypt the message
       const ans = to_Decrypt(data.text, data.username);
       dispatchProcess(false, ans, data.text);
       console.log(ans);
@@ -502,7 +508,7 @@ function Chat({ username, roomname, socket }) {
 
   const sendData = () => {
     if (text !== "") {
-      //encrypt here
+      //encrypt the message here
       const ans = to_Encrypt(text);
       socket.emit("chat", ans);
       setText("");
@@ -700,13 +706,14 @@ Next, Let's create the file `aes.js` which is responsible for the encryption of 
 
 ```JavaScript
 var aes256 = require("aes256");
-
+//the secret key used for encrypting and decrypting messages
 var secret_key = "uI2ooxtwHeI6q69PS98fx9SWVGbpQohO";
-
+//returns the encrypted text
 export const to_Encrypt = (text) => {
   var encrypted = aes256.encrypt(secret_key, text);
   return encrypted;
 };
+//welcome message is not decrypted
 export const to_Decrypt = (cipher, username) => {
   if (cipher.startsWith("Welcome")) {
     return cipher;
@@ -715,7 +722,7 @@ export const to_Decrypt = (cipher, username) => {
   if (cipher.startsWith(username)) {
     return cipher;
   }
-
+  //returns the decryped message
   var decrypted = aes256.decrypt(secret_key, cipher);
   return decrypted;
 };
@@ -733,7 +740,7 @@ Next will be creating the file `/process/process.js` that displays on the right 
 import { useSelector } from "react-redux";
 import "./process.scss";
 function Process() {
-
+  // returns new state from the reducers
   const state = useSelector((state) => state.ProcessReducer);
 
   return (
