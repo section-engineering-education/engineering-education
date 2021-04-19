@@ -161,7 +161,7 @@ Local variable is 9 and global variable is Section.io.
 ![Variables](/engineering-education/nodejs-structural-comparisons/exampleoutputs.jpg)  
 _Screen capture_  
 
-Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs, however, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs.  
+Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs, however, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
 
 ```C
 #include <cmath>
