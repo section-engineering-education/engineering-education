@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/cloudinary-flask-mongo/
 title: Building a CDN Image Gallery with Flask, Cloudinary, and MongoDB
 description: Learn about content delivery networks (CDNs) and use them in a Python application with Cloudinary and MongoDB.
-author: onojakpor-ochuko
+author: solomon-esenyi
 date: 2021-03-31T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
