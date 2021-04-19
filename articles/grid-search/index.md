@@ -7,7 +7,7 @@ title: Using Grid Search to Optimize Hyperparameters
 description: In this post, we dive into a key technique to optimize hyperparameters known as grid-search. We will define grid search and explore how it works through a simple Python example. 
 author: collins-ayuya
 date: 2021-03-18T00:00:00-09:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
