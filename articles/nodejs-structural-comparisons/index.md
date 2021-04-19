@@ -14,6 +14,8 @@ Structural topics included in this tutorial are installing modules, defining var
 
 * Windows device.
 * Previous knowledge of installing modules.
+* Some knowledge of interpreting graphs and similar visualizations.
+* Prior knowledge of math and statistics.
 * Installations of the following:  
   * [Kali Linux](https://kali.org).
   * [Node.js](https://nodejs.org) application.
