@@ -33,10 +33,10 @@ Section partners with university computer science programs across the globe to c
 Now create a javascript file named "index.js". Add the following code to the file.
 
 ```Javascript
-const fileStream = require("fs");
+const fileSystem = require("fs");
 var data = "";
 
-const readStream = fileStream.createReadStream("input.txt");
+const readStream = fileSystem.createReadStream("input.txt");
 
 readStream.setEncoding("UTF8");
 
@@ -53,7 +53,7 @@ readStream.on("error", (error) => {
 });
 ```
 
-In the snippet above, we first import the file stream package which is an inbuilt package in Node.js. We then initialize an empty string variable `data`. The statement that follows creates a read stream through the `createReadStream` method. We then set encoding to [UTF-8](https://en.wikipedia.org/wiki/UTF-8). What follows next handles the necessary events. We use the data event to add data to our data variable. End event is used to output the read data to the console. Error event will log the error when it occurs.
+In the snippet above, we first import the file system package which is an inbuilt package in Node.js. We then initialize an empty string variable `data`. The statement that follows creates a read stream through the `createReadStream` method. We then set encoding to [UTF-8](https://en.wikipedia.org/wiki/UTF-8). What follows next handles the necessary events. We use the data event to add data to our data variable. End event is used to output the read data to the console. Error event will log the error when it occurs.
 
 Run the code by writing
 ```bash
@@ -68,10 +68,10 @@ Now that we have seen how to read data from a stream, let's have a look at how w
 
 Replace the code on the index file with the following code.
 ```Javascript
-const fileStream = require("fs");
+const fileSystem = require("fs");
 var data = "Sample text";
 
-const writeStream = fileStream.createWriteStream("output.txt");
+const writeStream = fileSystem.createWriteStream("output.txt");
 
 writeStream.write(data, "UTF8");
 
@@ -96,10 +96,10 @@ Piping is a mechanism where the output of a stream is used as the input of anoth
 
 Replace the code in index.js file with the code below.
 ```Javascript
-const fileStream = require("fs");
+const fileSystem = require("fs");
 
-const readStream = fileStream.createReadStream("input.txt");
-const writeStream = fileStream.createWriteStream("output.txt");
+const readStream = fileSystem.createReadStream("input.txt");
+const writeStream = fileSystem.createWriteStream("output.txt");
 
 readStream.pipe(writeStream);
 
