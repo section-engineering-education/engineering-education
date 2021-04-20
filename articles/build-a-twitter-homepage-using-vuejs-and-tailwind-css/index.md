@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/clone-twitter-home-page-with-vue-and-tailwind
-title: Building An Outlook Clone with React
+title: Clone Twitter Home page with Vue and Tailwind
 description: In this tutorial, we are going to learn how to integrate Tailwind CSS into the Vue project. We are going to go through each configuration to set up tailwind CSS in the Vue project. Then, we are going to use the CSS classes provided by the Tailwind CSS to create a Twitter Home Page UI clone. 
 author: worawat-kaewsanmaung
 date: 2020-07-31T00:00:00-10:00
