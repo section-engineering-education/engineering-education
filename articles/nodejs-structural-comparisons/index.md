@@ -70,21 +70,18 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below.  
+Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration.  
 
 ```JavaScript
-global.i = [];
 
+global.plotly = require('plotly')("[enterusername]", "[enterkey]");
+global.i = [];
 global.y = [];
 global.x = [];
-
 for (i = 0; i < 50; i ++) {
 	y[i] = Math.random();
 	x[i] = Math.random() + 1;
 }
-
-global.plotly = require('plotly')("[enterusername]", "[enterkey]");
-
 global.trace1 = {
   y: y,
   type: "box"
