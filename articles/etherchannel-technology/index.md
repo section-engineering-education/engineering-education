@@ -3,20 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/etherchannel-technology/
-title: Understanding EtherChannel-Technology
-description: The objective of this article is to help one understand etherchannel technology and how it is configured  using a packet tracer.
+title:  Understanding EtherChannel-Technology
+description: In most network designs, network administrators connect multiple physical Ethernet links between devices to achieve more bandwidth and redundancy.  With this, the links get blocked to prevent switching loops by the Spanning Tree Protocol. For this reason, we need a technology that will allow redundant links that the Spanning Tree Protocol will not block. The concept of **EtherChannel Technology** and its configurations will help one handle this with ease.
 author: atonya-dennis
-date: 2021-04-01T00:00:00-09:00
+date: 2021-04-20T00:00:00-10:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/etherchannel-technology/hero.jpg
-    alt: Ethernet Connection example image
+    alt: Understanding EtherChannel-Technology
 ---
-In most network designs, network administrators connect multiple physical Ethernet links between devices to achieve more bandwidth and redundancy.  With this, the links get blocked to prevent switching loops by the Spanning Tree Protocol. For this reason, we need a technology that will allow redundant links that the Spanning Tree Protocol will not block. The concept of **EtherChannel Technology** and its configurations will help one handle this with ease.
-<!--more-->
 This article will cover EtherChannel Technology, how to configure and troubleshoot it, and build a network configuration to understand how it works.
+<!--more-->
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -327,8 +325,6 @@ To summarize:
 
 One can find more information about ether channel technology [here](https://contenthub.netacad.com/srwe/6.1.1).
 
-
-Happy coding.
-
+Happy Coding!
 ---
 Peer Review Contributions by: [Briana Nzivu](https://www.section.io/engineering-education/authors/briana-nzivu/)
