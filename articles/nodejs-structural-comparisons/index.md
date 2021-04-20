@@ -114,7 +114,7 @@ _Screen capture_
 
 By visiting the following [link](https://chart-studio.plotly.com/~pkalynan/0), additional options to observe the data can be visualized. One example is converting any given Node.js script to other programming languages such as Python, R, and JSON. Another feature includes a mouse over technique to display labels.  
 
-A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most measures of central tendency variables although mean or average remained unavailable. The second graph positioned to the right is horizontal. Statistical values for a horizontal box plot on this scale and axis could not be determined.  
+A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most measures of central tendency variables although mean or average remained unavailable. The second graph positioned to the right is horizontal. Both graphs can display medians.  
 
 #### C
 
