@@ -36,29 +36,24 @@ First, start the terminal and run the command below. Enter your password when pr
 ```bash
 $ sudo apt install metasploit-framework -y
 ```
-
 After successfully running the command, you should have Metasploit Framework on your machine.
-
 ### Starting Metasploit Framework
 To run Metasploit faster, you should first start the Postgresql database by running the command below. The command returns nothing.
 ```bash
 $ sudo service postgresql start
 ```
-
 > **Note**: For the latest version of Kali Linux (2020), you should precede commands that require root privileges with the keyword **sudo**.
 
 If you are launching Metasploit Framework, you have to initialize its database by running the command below:
 ```bash
 $ sudo mfsdb init
 ```
-
 You are now ready to start your Metasploit Framework.
 
 Start Metasploit by running the command below:
 ```
 $ msfconsole
 ```
-
 Starting Metasploit may take a while since it loads everything in RAM. So be patient.
 
 ![Metasploit started](/engineering-education/getting-started-with-metasploit-framework/metasploit1.png)
@@ -66,7 +61,6 @@ Starting Metasploit may take a while since it loads everything in RAM. So be pat
 Hurrah! You have successfully started your Metasploit-Framework.
 
 Don't worry if it doesn't look the same.
-
 ### Major Keywords
 Metasploit Framework contains a piece of software known as a **module** that performs tasks such as scanning and exploiting targets.
 
@@ -83,14 +77,12 @@ Modules are the main components of Metasploit Framework and are broken down into
 **Exploits** in modules take advantage of a system vulnerability by often using simple scripts known as **payloads**.
 
 Any other modules that are not exploited are **auxiliary** modules. They have fascinating features that allow them to do more than just exploiting.
-
 ### Major commands
 #### 1. help
 For a start, type in the `help` command to see the various commands you are most likely to interact with.
 ```bash
 msf5 > help
 ```
-
 #### 2. search
 For beginners, the `search` command may be the most useful. With thousands of modules available, finding a specific module could be problematic and therefore the search command comes to the rescue.
 
@@ -122,11 +114,9 @@ Exploits can be staged as shown in the example below:
 ```bash
 msf5 > use exploit/multi/handler
 ```
-
 If the module is successfully staged, Metasploit will respond by showing the type of exploit and abbreviates it in red as shown below.
 
 ![Use Result](/engineering-education/getting-started-with-metasploit-framework/use.png)
-
 #### 4. Info
 After staging an exploit, you can run the `info` command to retrieve information like the name, author, and platform of the exploit.
 
@@ -134,7 +124,6 @@ Run the command as shown below:
 ```bash
 msf5 > info
 ```
-
 ![Info result](/engineering-education/getting-started-with-metasploit-framework/info.png)
 
 #### 5. show
@@ -149,7 +138,6 @@ Run the following command:
 ```bash
 msf5 > show payloads
 ```
-
 ![Show payload result](/engineering-education/getting-started-with-metasploit-framework/showpayload.png)
 
 #### 2. show targets
@@ -159,7 +147,6 @@ Run the command as shown below:
 ```bash
 msf5 > show targets
 ```
-
 ![Show target result](/engineering-education/getting-started-with-metasploit-framework/showTarget.png)
 
 As you can see from the example above, we have a target vulnerable to the exploit we used.
@@ -171,7 +158,6 @@ The command is run as shown below:
 ```bash
 msf5 > show options
 ```
-
 ![Show options result](/engineering-education/getting-started-with-metasploit-framework/showOptions.png)
 
 ### 6. Set
@@ -181,7 +167,6 @@ Options can be set as the following:
 ```bash
 msf5 > set LHOST 192.168.234.122
 ```
-
 ![set result](/engineering-education/getting-started-with-metasploit-framework/set.png)
 
 As you can now see from the show options, the LHOST has been successfully set.
@@ -193,13 +178,11 @@ You can run the attack by using the `exploit` or `run` keyword as shown below:
 ```bash
 msf5 > exploit
 ```
-
 ### 8. Back
 This command takes us one step back. It is applicable in cases when you want to make changes to the options set. Run the command as shown below:
 ```bash
 msf5 > back
 ```
-
 ![back result](/engineering-education/getting-started-with-metasploit-framework/back.png)
 
 ### 9. Exit
@@ -207,7 +190,6 @@ This command exits the `msfconsole` and takes us back to the terminal:
 ```bash
 msf5 > exit
 ```
-
 ![Exit Result](/engineering-education/getting-started-with-metasploit-framwork/exit.png)
 
 ### Conclusion
@@ -218,7 +200,6 @@ In this article, we have learned the following:
 - Installing Metasploit Framework.
 - Major Keywords in Metasploit.
 - Staging and running exploits.
-
 
 ### Further reading
  1. Reconnaissance - [Nmap](https://www.section.io/engineering-education/nmap-network-scanner)
