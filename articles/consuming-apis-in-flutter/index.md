@@ -232,7 +232,11 @@ To summarize:
 - We fetched a user from GitHub API  and displayed his followers.
 - We automatically generated dart classes from JSON using Quicktype
 - We implemented the flutter folder organization in building an actual application.
+<<<<<<< HEAD
 Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github). 
+=======
+Now go and try the application by installing the full app found [here](https://github.com/jerimkaura/flutter-book/tree/main/my-github).
+>>>>>>> 15d49d8c6e5ffa1180cd6c58bd3c6814a3570ca1
 
 ### Further reading
 - [Fetch data from the internet](https://flutter.dev/docs/cookbook/networking/fetch-data)
