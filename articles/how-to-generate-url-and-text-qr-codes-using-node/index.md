@@ -346,3 +346,5 @@ Happy Coding!
 You can read more on:
 - **qrcode.js** options and usages [here](https://www.npmjs.com/package/qrcode).
 - **body-parser.js** [here](https://www.npmjs.com/package/body-parser).
+
+This fixes #2013
