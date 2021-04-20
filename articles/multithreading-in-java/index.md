@@ -6,30 +6,30 @@ Multithreading is the process of executing many threads concurrently. Multithrea
 For example, one thread can be reading data from the database while another thread is writing the data to a file at the same time.
 
 ### Multitasking
-Multitasking is the process of executing several task simultaneously. It assists to reduces the CPU idle time.
+Multitasking is the process of executing several tasks simultaneously. It assists to reduces the CPU idle time.
 
 Multitasking deals with multiple processes to perform multiple tasks simultaneously while multithreading deals with multiple threads in a single process to execute multiple tasks.
 ### Benefits of Multithreading
 - Enables us to perform two or more tasks simultaneously.
-- Threads are independent and they do not affect the performance of concurrent threads.
+- Threads are independent and do not affect the performance of concurrent threads.
 - An execution of one thread will not interrupt other threads. This is useful for serving multiple clients, multiplayer games, or other mutually independent tasks.
 - We can divide a program into threads and execute them in parallel thus increasing the speed of the program execution.
 
 ### Life cycle of a thread
 
-The following are the steps undergone by a thread during it's execution:
+The following are the steps undergone by a thread during its execution:
 
 #### 1. New
 A thread has not started executing.
 
 #### 2. Runnable
-A thread has called the `start()` method but not yet allocated the CPU.
+A thread has called the `start()` method but has not yet been allocated the CPU.
 
 #### 3. Running
-A thread has been allocated the CPU for execution.
+A thread has been allocated to the CPU for execution.
 
 #### 4. Blocked
-If a thread is blocked from entering the runnable state and into running state, it is said to be in a blocked state.
+If a thread is blocked from entering the runnable state and into the running state, it is said to be in a blocked state.
 
 #### 5. Terminated
 A thread has finished executing.
@@ -41,7 +41,7 @@ We can use the following two ways to create a thread:
 1. By extending the [`Thread`](https://www.javatpoint.com/creating-thread) class.
 2. By implementing the [`Runnable`](https://www.javatpoint.com/creating-thread) interface.
 
-Java contains `java.lang` package that provides a class `Thread` and `Runnable` interface.
+Java contains a `java.lang` package that provides a class `Thread` and `Runnable` interface.
 
 ### 1. By extending the Thread class
 A thread created using this method follows the following syntax.
@@ -110,7 +110,7 @@ public class Main implements Runnable {
 `isAlive()` method is used to check if a thread has finished executing. If the thread is still running, it returns true otherwise false.
 
 If we use `isAlive` method before the start method, then it will print false but after the start method, it will print true.   
-Let's look at an example where we shall use `Runnable` interface.
+Let's look at an example where we shall use the `Runnable` interface:
 ```java
 public class Main implements Runnable {
 
@@ -144,13 +144,13 @@ Output:
 ### Common methods used in Thread class
 1. `public void run()`: Used to execute a certain task for a thread.
 2.  `public void start()`: Execution of a thread starts here.
-3. `public void sleep(long miliseconds)`: Makes the executing thread to sleep temporarily for a specified time. 
+3. `public void sleep(long milliseconds)`: Makes the executing thread sleep temporarily for a specified time. 
 4. `public void join()`: Used to wait for a thread to finish its execution.
-5. `public void join(long miliseconds)`: Used to wait for a thread to finish its execution for a specified number of milliseconds.
+5. `public void join(long milliseconds)`: Used to wait for a thread to finish its execution for a specified number of milliseconds.
 6. `public int getPriority()`: The priority of a thread is shown by this method.
 7. `public int setPriority(int priority)`: Used to set the thread's priority.
-8. `public String getName()`: Shows the name of the thread.
+8. `public String getName()`: This shows the name of the thread.
 9. `public void setName(String name)`: The name of a thread is changed using this method.
 
 ### Conclusion
-Threads are independent and can perform multiple task at the same time. We have looked at the various stages of a life cycle of a thread, the various ways to create a thread and how to start the thread. 
+Threads are independent and can perform multiple tasks at the same time. We have looked at the various stages of a life cycle of a thread, the various ways to create a thread, and how to start the thread. 
