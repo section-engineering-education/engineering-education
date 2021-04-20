@@ -6,7 +6,7 @@ url: /engineering-education/an-introduction-to-machine-learning-using-c++/
 title: How to Make an Image Carousel Using Basic HTML, CSS, and JavaScript
 description: This article takes the reader through implementing machine learning algorithms using c++. The algorithms will be implemented from scratch to foster understanding.
 author: eugiene-kanillar
-date: 2021-03-29T00:00:00-17:30
+date: 2021-04-20T00:00:00-17:30
 topics: []
 excerpt_separator: <!--more-->
 images:
