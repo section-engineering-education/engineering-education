@@ -108,7 +108,7 @@ plotly.plot(data, graphOptions, function (err, msg) {
 }
 ```  
 
-The image below is a frozen portion of the interactive graphic.  
+The image below is a frozen portion of the [interactive graphic](https://chart-studio.plotly.com/~pkalynan/0).  
 ![Graph](/engineering-education/nodejs-structural-comparisons/plotlyplt.jpg)  
 _Screen capture_  
 
