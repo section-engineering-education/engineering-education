@@ -171,7 +171,7 @@ int main()
     for(int i=0; i<n; ++i) {
         double t = 2*M_PI*i/n;
         x.at(i) = 16*sin(t)*sin(t)*sin(t);
-        y.at(i) = -(13*cos(t) - 5*cos(2*t)) - (-(2*cos(3*t) - cos(4*t));
+        y.at(i) = -(13*cos(t) - 5*cos(2*t)) - (-(2*cos(3*t) - cos(4*t)));
     }
 
     // plot() takes an arbitrary number of (x,y,format)-triples.
