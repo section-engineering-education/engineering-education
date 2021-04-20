@@ -69,7 +69,7 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. One important note when generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. Because the script does not have a set `seed`, numbers generated from the script will be different each time.   
+Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. One important note when generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. If the script does not have a set `seed`, numbers generated from the script will be different each time.   
 
 ```JavaScript
 
