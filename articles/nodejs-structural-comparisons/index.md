@@ -130,6 +130,8 @@ Next, define variables in a C/C++ environment. A text editor in the command line
 nano test.c
 ```  
 
+The C script is shown below.  
+
 ```C
 #include <stdio.h>
 
