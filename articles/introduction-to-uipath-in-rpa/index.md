@@ -4,19 +4,19 @@ status: publish
 published: true
 url: /engineering-education/introduction-to-uipath-in-rpa/
 title: Introduction to UiPath in Robotic Process Automation (RPA)
-description: This article will be an introduction to Robotic Process Automation. We will explore specifically about a RPA tool called UiPath to see why it is widely used, how it works, and its usecases.
+description: This article will be an introduction to Robotic Process Automation. We will explore a RPA tool called UiPath to see why it is widely used, how it works, and its use cases.
 author: onesmus-mbaabu
-date: 2021-04-03T00:00:00-21:30
+date: 2021-04-20T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-uipath-in-rpa/hero.jpg
-    alt: RPA Image
+    alt: Robotic Process Automation (RPA) Image
 ---
 [UiPath](https://www.uipath.com) is a popular and progressive Robotic Process Automation (RPA) tool that enables users to automate various aspects of business processes. It provides an open-source platform that promotes collaboration and automation of repetitive tasks. It is used in various fields such as banking, healthcare, finance, and many more.
 <!--more-->
-This article introduces UiPath to the readers and explains how it works. It also provides its applications and highlights why it is widely used.
+This article will introduce UiPath to the readers and explains how it works. It also provides its applications and highlights why it is widely used.
 
 ### Table of contents
 - [Introduction to UiPath and RPA](#introduction-to-uipath-and-rpa)
@@ -45,7 +45,7 @@ The following are the components of UiPath:
 - **UiPath Orchestrator:** This component functions as a web-based application that schedules, deploys, and manages processes.
   
 ### Why UiPath is widely used?
-The following are the reasons why UiPath is used widely by developers and organizations:
+The following are the reasons why UiPath is widely used by developers and organizations:
 - **Compliance:** It can help an organization to comply with industry regulations, since it supports internal review.
 - **Cost-effectiveness:** This tool is cost-effective because there are minimal operational costs.
 - **Security:** The security features of UiPath prevents users from various forms of attacks. When a user tries to log into the system using a different computer, it will automatically end the previous session (login).  
@@ -57,7 +57,7 @@ The following are the reasons why UiPath is used widely by developers and organi
 ### Features of UiPath
 - **In-built recorder:** Users can record their activities using its in-built recorder.
 - **Scalability:** It has effective debugging handling mechanisms. It can also handle various AI applications.
-- **Hosting options:** Hosting can be done in virtual terminal or a cloud.
+- **Hosting options:** Hosting can be done in a virtual terminal or a cloud.
 - **Central repository:** It consists of a centralized repository that enhances simultaneous handling of robots by users.
 - **Application compatibility:** UiPath is compatible with various applications, including desktop and web applications.
 - **Scrapping functionality:** It has an advanced scrapping functionality (wizard-driven) that allows users to perform data scrapping. Users can scrape data from various applications.
@@ -68,6 +68,7 @@ Understanding the UiPath architecture can help us understand how it works.
 The image below shows the architecture of UiPath:
 
 ![UiPath Architecture](/engineering-education/introduction-to-uipath-in-rpa/uipath-architecture.jpg)
+
 *[Image Source: EDUCBA](https://www.educba.com/academy/wp-content/uploads/2020/09/UiPath-Architecture-img.jpg)*
 
 UiPath works in three layers: the client layer, server layer, and persistency layer.
@@ -103,13 +104,14 @@ The following are some of the real-life applications of UiPath:
 This article has provided an overview of UiPath and how it is used in robotics process automation. This tool can be used by developers to perform various forms of automation.
 
 To summarize, the following are some of the main things we have learned:
-
 - RPA is the use of technologies to automate workflows or business processes.
 - UiPath is an RPA tool used for performing Citrix automation, PDF automation, Web automation, and Windows desktop automation. - This tool can be used to automate redundant tasks.
 - The three products of UiPath include UiPath Studio, UiPath Robot, and UiPath Orchestrator.
 - Some of the features of UiPath include an in-built recorder, scalability, advanced scrapping functionality, cloud hosting, and application compatibility.
 - The architecture of UiPath has three layers: the client layer, server layer, and persistency layer.
 - UiPath is applied in various industries such as finance, insurance, healthcare, and banking.
+
+Happy learning!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
