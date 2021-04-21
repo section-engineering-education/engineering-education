@@ -404,3 +404,6 @@ Here's the link to the GitHub repo for the completed project: [Source Code for C
 - [Javascript Async](https://www.w3schools.com/js/js_async.asp)
 - [Javascript Promises](https://www.w3schools.com/js/js_promise.asp)
 - [Javascript JSON](https://www.w3schools.com/js/js_json.asp)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
