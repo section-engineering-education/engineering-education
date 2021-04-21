@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/clone-twitter-home-page-with-vue-and-tailwind/hero.jpg
     alt: vue tailwind twitter homepage
 ---
-Web development projects readily use CSS frameworks nowadays for proper and efficient styling of the UI. Using these CSS frameworks saves time for design as most of the UI elements and classes are readily available for use. But one disadvantage is that the CSS frameworks such as Bootstrap, Bulma, etc. are hardbound to their own styles. There is little to no customization available. However, there is one solution available that is flexible to use lightweight, and customizable based on the requirement. And, that is [Tailwind CSS](https://tailwindcss.com/).
+Web development projects readily use CSS frameworks nowadays for proper and efficient styling of the UI. Using these CSS frameworks saves time for design as most of the UI elements and classes are readily available for use. But one disadvantage is that the CSS frameworks such as Bootstrap, Bulma, etc. are hardbound to their styles. There is little to no customization available. However, there is one solution available that is flexible to use lightweight, and customizable based on the requirement. And, that is [Tailwind CSS](https://tailwindcss.com/).
 
 Tailwind CSS is a utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. It is easy to customize, adapts, and build. The doesn't bulk up the project as it is lightweight. It is a low-level CSS framework adapting to changing design implementations.
 
@@ -26,7 +26,7 @@ In this tutorial, we are going to learn how to integrate Tailwind CSS into the V
 
 ## Create Vue project
 
-First, we are going to create a Vue project using Vue CLI. If you don't have Vue CLI installed then, you can simply install it by running the following command:
+First, we are going to create a Vue project using Vue CLI. If you don't have Vue CLI installed then, you can simply install it by executing the following command:
 
 ```bash
 npm install -g @vue/cli
@@ -199,7 +199,7 @@ Now, the UI template code for this section is provided in the codes snippet belo
 The style classes used here are all from Tailwind CSS. The loops and logical operations are the results of the Vue programming ecosystem.
 
 Hence, we will get the Side Menu section as shown in the screenshot below:
-![side menu section](/engineering-education/side-menu-section.jpg)
+![side menu section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/side-menu-section.jpg)
 
 ### Add side menu dropdown
 
@@ -247,7 +247,7 @@ Next, we need to add the dropdown template code to just below the Upper menu sec
 
 Hence, we will get the result as shown in the code snippet below:
 
-![add side menu dropdown](/engineering-education/add-side-menu-dropdown.gif)
+![add side menu dropdown](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/add-side-menu-dropdown.gif)
 
 ### Creating Trending section
 
@@ -268,7 +268,7 @@ In order to add this section, we need to add the code from the following code sn
 
 Hence, we will get the result as shown in the screenshot below:
 
-![create trending section](/engineering-education/create-trending-section.jpg)
+![create trending section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/create-trending-section.jpg)
 
 Here, we already have the trending section along with a search bar. Now, we are going to add the trending topics section inside it.
 
@@ -309,7 +309,7 @@ Now, we are going to loop through the `trending` array and display the UI templa
 
 Hence, we will get the trending topics section as shown in the screenshot below:
 
-![trending topics section](/engineering-education/trending-topics-section.jpg)
+![trending topics section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/trending-topics-section.jpg)
 
 Now, just below the trending topics section inside the Trending section, we are going to add the follow section. The Follow section will display the user accounts that the user should follow. 
 
@@ -348,7 +348,7 @@ Now to add the UI for Follow section, we need to use the code from the following
 
 Hence, we will get the result as shown in the screenshot below:
 
-![follow section](/engineering-education/follow-section.jpg)
+![follow section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/follow-section.jpg)
 
 ### Creating Middle Tweet section
 
@@ -368,7 +368,7 @@ First, we are going to start with the Header section. The Header section will co
 
 Hence, we will get the Header section as shown in the code snippet below:
 
-![middle tweet section](/engineering-education/middle-tweet-section.jpg)
+![middle tweet section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/middle-tweet-section.jpg)
 
 
 Next, is the Tweet Input section. The Tweet Input section will contain a text editor to write the tweets and a button to add the tweet to the tweet list.
@@ -425,7 +425,7 @@ Here, we have used the `form` tag and called our `addTweet` function in the `sub
 
 Hence, we can see the Tweet Input section as shown in the screenshot below:
 
-![tweet input section](/engineering-education/tweet-input-section.jpg)
+![tweet input section](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/tweet-input-section.jpg)
 
 Now, we need to display the tweet list just below the Tweet Input section. For that, we need to use the code from the following code snippet:
 
@@ -469,7 +469,7 @@ Now, we need to display the tweet list just below the Tweet Input section. For t
 
 Hence, we can now add our tweets to the tweet list as shown in the demo below:
 
-![show tweet list](/engineering-education/show-tweet-list.gif)
+![show tweet list](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/show-tweet-list.gif)
 
 Now, we are also going to add some mock tweets from the user followings. For that, we need to define an array variable that will hold the information regarding user image, name, username, tweet, time, likes, and comments as shown in the code snippet below:
 
@@ -521,7 +521,7 @@ Now, we just need to loop through the array to display these tweets. For that, w
 
 Hence, we will get the result as shown in the code snippet below:
 
-![complete twitter clone with vue and tailwind](/engineering-education/complete-twitter-clone-with-vue-and-tailwind.jpg)
+![complete twitter clone with vue and tailwind](/engineering-education/build-a-twitter-homepage-using-vuejs-and-tailwind-css/complete-twitter-clone-with-vue-and-tailwind.jpg)
 
 Finally, we have successfully implemented the Twitter Home Page UI clone using Vue version 3 along with Tailwind CSS.
 
