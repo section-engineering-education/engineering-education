@@ -1,8 +1,8 @@
 ### How to create face database using matlab
 ### Introduction
-Face databases are imagery data that are used for testing face processing algorithms. In the content of biometrics, databases are collected and used to evaluate the performance of the face recognition biometrics system.
-There are so many image databases available on the internet but if you want to make a database of your faces then you can use this program. The framework of this program can be used to create the database for other many objects.
-In this case, we will use the WEBCAM to take several required snapshots of the face. This number of snapshots makes the database. Face database can be used to implement projects such as face recognition.
+Face databases are imagery data that are used for testing face processing algorithms. The algorithm includes principal component analysis(PCA) for face recognition. This program recognizes a face from a database of human faces. This is an example project where we can use the database we are creating.
+How the database works depends on the type of algorithm you are going to use and the project you are implementing. For example, the PCA uses the eigenspace to recognize the face in the database.
+The framework of this program can be used to create the database for other many objects. In this case, we will use the WEBCAM to take some required snapshots of the face to make the database.
 
 ### Prerequisites
 1. [Matlab](https://www.mathworks.com/downloads/) installed in your pc.
@@ -11,22 +11,27 @@ In this case, we will use the WEBCAM to take several required snapshots of the f
 
 #### How to install the webcam
 - Open the Matlab software on your pc.
-- In the home section click on the add-on then select the hardware support packages.
-- Scroll down and click on the ‘show all’ to find the package.
-- Select the imaging/cameras.
+- In the home section click on the add-on drop-down arrow then select the 'get hardware support packages'.
+
+![this is how the window appears](/engineering-education/matlab-image-database/windows1_1.png)
+- On the search tab, type the package name, that is, Matlab support package for USB packages and search.
+  
+![this is how the window appears](/engineering-education/matlab-image-database/windows2_1.png)
 - Click on the Matlab support package for USB packages.
+- Click on the 'install' to install.
+![this is how the window appears](/engineering-education/matlab-image-database/windows3_1.png)
+
+For my case, the install part is changed to manage because the package is already installed in my software.
 
 ### Matlab code for creation of the face database
-We want to create a face database using Matlab. The image database can be used to implement various projects. The projects may include object recognition using the convolutional neural network. It can also be used in face recognition using the PCA. The main aim of this tutorial is to create a database that is familiar to the user. This is because the database is created by the user himself. This makes it easier to carry out the various projects that require a face database.
-
-This is how it is created;
+The main aim of this tutorial is to create a database that is familiar to the user. This is because the database is created by the user himself. This makes it easier to carry out the various projects that require a face database.
 
 We first initialize the webcam.
 
 ```Matlab
 cam = webcam;
 ```
-We then enter the required number of the faces to make our database. It is executed by the code below;
+We then enter the required number of the faces to make our database. It is executed by the code below:
 
 ```Matlab
 nof = input('enter no. of required frames:');
@@ -37,7 +42,7 @@ We input the number of required frames, for example, if you require 100 or 20 im
 count = 1;
 ```
 We then initialize the count to enter in the while loop. When the count is less than or equal to the number of the required frame, then the while loop will be executed and the snapshot is captured. The captured image is stored into the `img` and this is passed to the `myFaceDetect` function.
-This function should be defined in a different script and then called into the face database script. The description of `myFaceDetect` function is given at the end of the program.
+This function should be defined in a subscript and then called into the main function. The description of `myFaceDetect` function is given at the end of the program.
 
 ```Matlab
 while count <=nof
@@ -82,6 +87,20 @@ If there is no face detected in the cropped frame, then it should display `no fa
 ```Matlab
 else
 disp(‘no face detected’)
+```
+Below is the full code of the `if` and `else` statement.
+
+```Matlab
+if ~isempty(croppedFrame)
+fileName = strcat('Directory',sprintf('%d.png',count));
+imwrite(croppedFrame, fileName)
+msg = ['image aquired no:', num2str(count)];
+disp(msg)
+count = count + 1;
+        
+else
+disp('no face detected')
+end
 ```
 The camera makes a snapshot after 0.1s and resets the camera after the snapshot is made. This is regulated by the code below;
 
@@ -128,6 +147,6 @@ end
 ```
 
 ### Conclusion
-Matlab is used to create an image database. This is because it has a built-in webcam. It also has a feature that allows you to use your phone as an IPCAM. This makes it efficient for creating a database for analysis. The image database can also be used in the deep neural system for training and validation. This can help in object recognition and other projects. Find the full source code [here](https://github.com/atienodorine3/face_database.git).
+Matlab is used to create an image database. This is because it has a built-in webcam. This makes it efficient for creating a database for analysis. The image database can also be used in the deep neural system for training and validation. This can help in object recognition and other projects. Find the full source code [here](https://github.com/atienodorine3/face_database.git).
 
 To learn more about databases your can, you can click [here](https://www.face-rec.org/databases).
