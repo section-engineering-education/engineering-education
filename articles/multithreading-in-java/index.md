@@ -27,11 +27,8 @@ The following are the steps undergone by a thread during its execution:
 
 1. **`New`**: a thread has not started executing.
 2. **`Runnable`**: a thread has called the `start()` method but has not yet been allocated the CPU.
-
 3. **`Running`**: a thread has been allocated to the CPU for execution.
-
 4. **`Blocked`**: If a thread is blocked from entering the runnable state and into the running state, it is said to be in a blocked state.
-
 5. **`Terminated`**: a thread has finished executing.
 
 ### Creating a Thread
