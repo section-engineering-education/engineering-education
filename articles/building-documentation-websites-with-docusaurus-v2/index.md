@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Have you always wanted to start your blog? or are you working on a project and not sure how to go about the documentation? Well, Docusaurus is an open-source project for building, deploying, and maintaining documentation websites.
+Have you always wanted to start your blog? Are you working on a project and not sure how to go about the documentation? Well, Docusaurus is an open-source project for building, deploying, and maintaining documentation websites.
 
 Docusaurus is maintained by the Facebook Open Source community and there is a lot of support around it, so you don't have to worry if something goes wrong during development. For this tutorial, we are going to use Docusaurus version 2.
 
@@ -10,9 +10,9 @@ Docusaurus is maintained by the Facebook Open Source community and there is a lo
 
 There are a lot of static site-generating projects available today, but what makes Docusaurus version 2 unique?
 
-**Highly customizable** - Docusaurus is very customizable, it can be used for pretty much anything to do with static websites including landing pages since it is built with react js. So you don't have to worry if your page is going to be unique enough.
+**Highly customizable** - Docusaurus is very customizable, it can be used for pretty much anything to do with static websites including landing pages since it is built with React.js. So you don't have to worry if your page is going to be unique enough.
 
-**SEO friendly** - page-specific SEO to help users land on the official documentation site directly relating their problems at hand.
+**SEO friendly** - Page-specific SEO to help users land on the official documentation site directly relating their problems at hand.
 
 **Easy to setup** - Docusaurus does not require you to be a seasoned programmer for you to set it up. As long as you can follow instructions and curious enough to try, then you are set to go.
 
@@ -22,7 +22,7 @@ There are a lot of static site-generating projects available today, but what mak
 
 - [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) version 1.5 installed
 
-### Instalation
+### Installation
 
 Now that you are ready to build your site let us start with the installation. Docusaurus can be installed as an npm package on the command line interface.
 
@@ -30,7 +30,7 @@ Now that you are ready to build your site let us start with the installation. Do
 npx @docusaurus/init@latest init [name] [template]
 ```
 
-For the ***name*** part you are going to use your preferred name for this project.
+For the ***name*** part, you are going to use your preferred name for this project.
 
 For the ***template*** enter the name of the template you are going to use. Docusaurus comes with three templates Classic, Facebook, and Bootstrap. The Facebook template is used for Facebook open-source projects and comes with Facebook-specific defaults, bootstrap template is used when you want the bootstrap framework website. For this tutorial, we are going to use the classic template.
 
@@ -62,17 +62,17 @@ To change the contents of the homepage we are going to edit the `docusaurus.conf
 
 ```javascript
 module.exports = {
-  title: '', //Here goes the title of your website
-  tagline: '', //Here goes the tagline of your blog
-  url: '', //Here goes the link to your site
-  baseUrl: '/', //baseurl ofthe site
+  title: '', // Here goes the title of your website
+  tagline: '', // Here goes the tagline of your blog
+  url: '', // Here goes the link to your site
+  baseUrl: '/', // baseurl of the site
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: '',  //link to the favicon
+  favicon: '',  // link to the favicon
   organizationName: '', // Usually your GitHub org/user name.
   projectName: '', // Usually your repo name.
 
-  //This block of command is for customising your naviagtion bar
+  // This block of command is for customising your naviagtion bar
   themeConfig: {
     navbar: {
       title: 'My Site',
@@ -105,15 +105,15 @@ module.exports = {
           items: [
             {
               label: 'Github',
-              href: '', //github link
+              href: '', // Github link
             },
             {
               label: 'Instagram',
-              href: '', //instagram link
+              href: '', // Instagram link
             },
             {
               label: 'Twitter',
-              href: '', //twitter link
+              href: '', // Twitter link
             },
           ],
         },
