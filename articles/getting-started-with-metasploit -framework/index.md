@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-metasploi-framework/hero.jpg 
+  - url: /engineering-education/getting-started-with-metasploi-framework/hero.png
     alt: Metasploit Image
 ---
 Due to numerous cases of cyber insecurity, companies have now adopted hiring hackers and security specialists to test their systems for **vulnerabilities**. Hackers, therefore, perform a penetration test on the systems by use of various tools, one of which is commonly used is Metasploit Framework.
