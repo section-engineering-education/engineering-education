@@ -207,7 +207,7 @@ Now go to your GitHub page and see your newly deployed website.
 
 ### Summary
 
-In this article, we have gone through how to set up Docusaurus, how to customize and deploy. Docusaurus is a very simple and convenient way of deploying a documentation site or blog. Having fun experimenting on this and stay safe.
+In this article, we have gone through how to set up Docusaurus, how to customize and deploy. Docusaurus is a very simple and convenient way of deploying a documentation site or blog. Having fun experimenting on this and stay safe. You can find an example of this website right [here](https://github.com/calebroHQ/calebrohq.github.io)
 
 ### Reference
 
