@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/clip-connecting-texts-and-images/
+title: Connecting Textual and Image data using Contrastive Language-Image Pre-Training (CLIP)
+description: In this article, we will explore how the CLIP model connects images and texts. 
+author: willies-ogola
+date: 2021-04-21T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/clip-connecting-texts-and-images/hero.jpg
+    alt: CLIP example image
+---
+Contrastive Language-Image Pre-Training (CLIP) is a learning method developed by OpenAI that enables models to learn visual concepts from natural language supervision. This model's main idea is to take images and texts and connect them in a non-generative way.
+<!--more-->
+
 ### Table of contents
 
 1. [Prerequisites](#prerequisites)
