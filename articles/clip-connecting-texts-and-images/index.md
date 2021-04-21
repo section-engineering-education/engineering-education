@@ -29,7 +29,7 @@ Contrastive Language-Image Pre-Training (CLIP) is a learning method developed by
 
 ### Prerequisites
 
-Before reading this article, the reader needs to be familiar with transformers in Natural Language Processing (NLP), Convolutional Neural Networks (CNN), and the working of the novel self-supervised learning (SSL) algorithm. 
+Before reading this article, the reader needs to be familiar with transformers in Natural Language Processing (NLP), Convolutional Neural Networks (CNN), and the working of the novel [self-supervised learning (SSL)](https://www.section.io/engineering-education/what-is-self-supervised-learning/) algorithm. 
 
 ### Introduction
 
@@ -44,7 +44,7 @@ So, how does the CLIP model connect images and texts?
 
 *[Image Source: OpenAI](https://cdn.openai.com/papers/Learning_Transferable_Visual_Models_From_Natural_Language_Supervision.pdf)*
 
-1. Contrastive pre-training
+### Contrastive pre-training
 
 Contrastive pre-training involves training an image encoder and a text encoder in the multi-modal embedding space to predict the correct pairings of a batch of (image, text) training examples.
 
@@ -52,7 +52,7 @@ Contrastive pre-training involves training an image encoder and a text encoder i
 
 Image augmentation is first performed on the images before being passed into the image encoder module. 
 
-Two different architectures are used for the image encoder: the ResNet-50 and the Vision Transformer (ViT). In the first architecture, The ResNet-50 is used as the base image encoder architecture due to its widespread use. The global average pooling layer present in the ResNet-50 was replaced with an attention pooling mechanism popularly used in NLP to compose representations.
+Two different architectures are used for the image encoder: the ResNet-50 and the Vision Transformer (ViT). The ResNet-50 model was one of the earliest convolutional neural network and has 50 layers in depth. Because of its deep framework, it is popularly used to train ultra deep neural network. In the first architecture, the ResNet-50 model is used as the base image encoder architecture. The global average pooling layer present in the ResNet-50 was replaced with an attention pooling mechanism popularly used in NLP to compose representations.
 
 In the second architecture, they used the Vision Transformer (ViT) recently introduced by Google. The only modification performed on this architecture is the addition of the layer normalization just before the transformer module. This layer is added to the combined patch and position embeddings layers. 
 
@@ -66,17 +66,17 @@ In this module, it is essential to note that they only scale the model's width s
 
 #### The Multi-Modal Embedding Space
 
-In the multi-modal embedding space, the image encoder and text encoder are jointly trained to maximize the cosine similarity of the image and text embeddings of the real pairs in the batch. On the flip side, the cosine similarity of the embeddings with incorrect pairings was also minimized. 
+In the multi-modal embedding space, the image encoder and text encoder are jointly trained to maximize the [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) of the image and text embeddings of the real pairs in the batch. On the flip side, the cosine similarity of the embeddings with incorrect pairings was also minimized. 
 
 For example, in a batch size of N (image, text) pairs, the model predicts which of the N X N possible (image, text) pairings across a batch are similar and incorrect pairs. This means that real pairs have a cosine similarity value closer to 1, while incorrect pairs had a value closer to 0.
 
-2. Create dataset classifier from label text
+### Create dataset classifier from label text
 
 Here, they perform the pattern exploiting training which involves leveraging pre-trained language models to label data for downstream tasks. They embed object classes into captions such as "a photo of an {object}" or "a centered satellite photo of {object}." For example, "a photo of a dog" or "a centered satellite photo of pasture land." They encode these captions into the text encoder configured with pre-trained weights from the multi-modal embedding space training. This process produces batches of text embeddings.
 
 This process allows for zero-shot classification. 
 
-3. Use for zero-shot prediction
+### Use for zero-shot prediction
 
 Zero-shot learning is a new research area that predicts objects during test time whose classes were not seen during training. In the CLIP model, zero-shot learning is used in a broader sense to generalize to unseen datasets.
 
