@@ -1,9 +1,21 @@
-# How to Build a Speed Typing Game Using Javascript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-build-a-speedtyping-game-using-javascript/
+title: How to build a speed typing game using Javascript
+description: This article will be an introduction to building speed typing game using JavaScript. We will explore step by step on how to build a game using JavaScript.
+author: muktar-owolabi
+date: 2021-04-21T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-![hero-image](/engineering-education/how-to-build-a-speedtyping-using-javascript/hero.jpg)
-
+  - url: /engineering-education/how-to-build-a-speedtyping-game-using-javascript/hero.jpg
+    alt: Speed typing game image
+---
 Javascript is a programming language that web developers use for creating dynamic web page features and interactivity in web projects.
-
+<!--more-->
 This tutorial focuses on using concepts such as Javascript, API calls, timers, DOM (Document Object Model) manipulation to build a speed typing game to improve your coding skills.
 
 This should be interesting because you would learn and have fun simultaneously. The game could also turn out useful, as it could test and improve your typing abilities, while you would also have fun.
