@@ -119,3 +119,6 @@ I hope you enjoyed reading this article.
 3. [Vision Transformer (ViT)](https://arxiv.org/pdf/2010.11929.pdf)
 4. [ConVIRT](https://arxiv.org/pdf/2010.00747.pdf)
 5. [VirTex](https://arxiv.org/pdf/2006.06666.pdf) 
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
