@@ -484,6 +484,8 @@ Once the page has been displayed, click on the "click to generate the data" butt
 
 You can view the generated data in MongoDB installed on your computer. Just open the "MongoDB Compass" and connect to the default localhost, that is, at `localhost:27017`. You will see a new database called "fakedata". Once you open it, you will see a collection by the name "fakercollection". All the data generated in the session will be found there.
 
+You can find, clone, and use the code above in the repository found [here](https://github.com/justusmbuvi/Faker.js-node-application).
+
 Congratulations, you have generated fakedata for your need using Node.js!
 
 ### Conclusion
