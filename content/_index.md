@@ -5,5 +5,5 @@ aliases:
   - '/engineering-education/building-chatbots-using-nlp/'
   - '/engineering-education/ddos-attacks-using-botnets/'
   - '/engineering-education/kubernetes-as-a-service/'
-type: engineering-education
+type: articles
 ---
