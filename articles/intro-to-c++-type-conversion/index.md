@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/intro-to-c++-type-conversion/
+title: Introduction to C++ Type Conversion
+description: This article goes through type conversion, as well as a step-by-step demonstration of achieving it. Type conversion refers to the conversion of variables from one type to another.
+author: dawe-daniel
+date: 2021-04-22T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/intro-to-c++-type-conversion/hero.jpg
+    alt: C++ Type conversion Image Example
+---
 ### Introduction
 Conversion of variables from one type to another is known as [type conversion](https://www.oreilly.com/library/view/c-14-quick/9781484217276/9781484217269_Ch26.xhtml). Type conversion's ultimate aim is to make variables of one data type work with variables of another data type. It is carried out to take benefit from some of the aspects of type representations and hierarchies. So, when will a type conversion be beneficial? `Type conversion` can be used to force the correct type of mathematical computation to be performed. Finding the sum of two variables, one of `int` type and the other of the `float` type is a good [example to demonstrate the use of type conversion](https://findanyanswer.com/what-is-type-conversion-in-c-how-it-is-achieved-in-user-defined-data-types). To get the sum of the two variables, you have to convert the `int` variable to `float`. This article will go through type conversion, as well as a step-by-step demonstration of achieving it.
-
+<!--more-->
 ### Prerequisites
 You will need the following to go through this article:
 - Have [codeblocks IDE]() installed.
@@ -303,3 +319,6 @@ A
 This takes us to the conclusion of this C++ type conversion article. Through the use of type conversion provided by the c++ language, we can easily convert a data type from one type to another. I hope you found this article to be both insightful and useful in your day-to-day work as a developer.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
