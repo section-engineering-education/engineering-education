@@ -1,6 +1,6 @@
 ---
 title: Ahmad Mardeni
-type: engineering-education/author
+type: authors
 linkedin: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
 facebook: https://www.facebook.com/profile.php?id=100004114573038/
 ---

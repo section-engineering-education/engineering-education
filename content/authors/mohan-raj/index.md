@@ -1,6 +1,6 @@
 ---
 title: Mohan Raj
-type: engineering-education/author
+type: authors
 twitter: https://twitter.com/zolomohan
 github: https://github.com/zolomohan
 linkedin: https://www.linkedin.com/in/zolomohan/

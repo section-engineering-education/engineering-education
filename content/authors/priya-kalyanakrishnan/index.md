@@ -1,6 +1,6 @@
 ---
 title: Priya Kalyanakrishnan
-type: engineering-education/author
+type: authors
 GitHub: https://github.com/pkalynan
 Twitter: https://twitter.com/pkalynan
 ---

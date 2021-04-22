@@ -1,6 +1,6 @@
 ---
 title: Geoffrey Mungai
-type: engineering-education/author
+type: authors
 website: https://geoffrey.codes/
 github: https://github.com/geoffrey45
 twitter: https://twitter.com/geoffrey45_
