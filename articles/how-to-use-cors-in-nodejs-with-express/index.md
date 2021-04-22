@@ -1,15 +1,33 @@
-Node.js is an open-source and cross-platform runtime for executing JavaScript code on the server-side. One of the popular Node.js server frameworks is Express. Express allows you to configure and manage an HTTP server to access resources from the same origin they as being served (i.e., the same domain).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-use-cors-in-nodejs-with-express/
+title: How to use CORS in Node.js with Express
+description: This article will guide you on how to implement in Node.js and Express. CORS is important because it allows the browser to access resources from other domains.
+author: mercy-meave
+date: 2021-05-12T00:00:00-13:00
+topics: [Node.js, API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-use-cors-in-nodejs-with-express/hero.png
+    alt: How to use CORS in Node.js with Express
+---
+Node.js is an open-source and cross-platform runtime for executing JavaScript code on the server-side. One of the popular Node.js server frameworks is Express. Implementing CORS in Node.js helps you access numerous functionalities on the browser. 
+<!--more-->
+Express allows you to configure and manage an HTTP server to access resources from the same domain.
 
-These three parts form an [origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin).
+These three parts that form an [origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) are protocal, domain, and port.
 
 ![The CORS origin concept](/engineering-education/how-to-use-cors-in-nodejs-with-express/origin.jpg)
 
-Any web that agrees with the above can be considered as the same origin.
 
-At times when developing applications making such requests cannot be sufficient. There are many public APIs for weather, time, fonts, to name a few. There are servers set for the sole purpose of delivering these API pieces of information to any website. Thus making calls, not to the exact origin (cross-origin calls), is a popular use case for the modern web application.
+
+At times, when developing applications making such requests cannot be sufficient. There are many public APIs including weather, time, and fonts. There are servers set for the sole purpose of delivering these API pieces of information to any website. Thus making calls, not to the exact origin (cross-origin calls), is a popular use case for the modern web application.
 
 Let's say accessing images, videos, iframes, or scripts from another server. This means that the server is accessing resources from a different origin or a domain. When building an application to serve up these resources with Express, a request to such external origins may fail. This is where CORS comes into play to make the cross-origin requests elegantly.
 
+### Goal
 This guide will help you learn how to configure CORS with Express.
 
 ### Prerequisites
@@ -179,3 +197,7 @@ CORS goes hand in hand with [APIs](https://www.youtube.com/watch?v=zoSJ3bNGPp0).
 
 ### Conclusion
 When you deploy an application on the server, you don't want to accept requests from every angle. Sometimes you want to be able to specify which origin should make requests to your server. This way, you're able to block users who attempt to clone your site or make requests from an unauthorized server. This is important for the security of your application. Check this [CORS NPM regestry](https://www.npmjs.com/package/cors) and learn where to use CORS in your Express application.
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
