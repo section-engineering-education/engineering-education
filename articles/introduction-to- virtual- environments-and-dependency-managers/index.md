@@ -2,13 +2,13 @@
 Virtual environments. What are they and what are they used for?
 
 From the [Python documentation](https://docs.python.org/3/library/venv.html):
-> A virtual environment is an isolated Python environment where a project's dependencies) are installed in a different directory from those installed in the system’s default Python path and other virtual environments.
+> A virtual environment is an isolated Python environment where a project's dependencies are installed in a different directory from those installed in the system’s default Python path and other virtual environments.
 
 Dependency managers are tools that enable easy management of a project's dependencies.
 
 #### The problems solved by virtual environments
-1. Managing projects with different dependencies i.e. when one project requires `Django==2.6` but another project requires `Django==3.0.6`.
-2. Installation of python packages and libraries.
+1. Managing projects with different dependencies. e.g. when one project requires `Django==2.6` but another project requires `Django==3.0.6`.
+2. Installation of Python packages and libraries.
 3. Dependency resolution. This is where you specify the requirements for a particular project sub-dependency to avoid installation problems. 
 4. Reproduction of environments. One machine can be handling many projects in different environments.
 
@@ -28,28 +28,28 @@ This article will look at the following most used virtual environments and depen
 5. [Poetry](#5.-Poetry)
 
 ### 1. Venv
-[Venv](https://docs.python.org/3/library/venv.html) is a Python's module that is used to create light weight virtual environments. It is the standard virtual environment module for **Python 3**.
+[Venv](https://docs.python.org/3/library/venv.html) is a Python's module that is used to create light weight virtual environments. It is the default virtual environment module for **Python 3**.
 It is one of the easiest modules for creating virtual environments.
 
 #### Features
-* Python 3's default virtual environment tool
-* It is a light weight module
-* Stores all dependencies in a Scripts subfolder or bin(on linux).
+* Python 3's default virtual environment tool.
+* It is a light weight module.
+* Stores all dependencies in a Scripts or bin (on linux) sub-folder.
 
 #### Installation
-Since Venv comes pre-installed in Python 3 and above, there's no need for installing it.
+Since Venv comes pre-installed in Python 3 or newer, there's no need to install it.
 
 So, we will go ahead and create a virtual environment.
 
 #### Creating a virtual environment
-when working on Windows Command Prompt, use:
+When working on Windows Command Prompt, use:
 
 ```bash
 $ python3 -m venv \path_to_my_project_env
 ```
 
 #### Activating the virtual environment
-Before using the virtual environment, we need to activate it. This makes the current virtual environment you're working on to temporarily function as the default python interpreter.
+Before using the virtual environment, we need to activate it. This makes the current virtual environment you're working on to temporarily function as the default Python interpreter.
 
 >**Tip**: Before activating your virtual environment, always make sure that you are working from your project's directory.
 
@@ -63,10 +63,10 @@ $ activate.bat
 On Windows PowerShell, use:
 
 ```bash
-$ path_to_my_project\venv\Scripts>Activate.ps1
+$ path_to_my_project\venv\Scripts> Activate.ps1
 ```
 
-Once you've successfully activated your virtual environment,the path changes to something similar to the example below:
+Once you've successfully activated your virtual environment, the path changes to something similar to the example below:
 
 ```bash
 (venv) path_to_my_project\venv\Scripts>
@@ -103,7 +103,7 @@ After you finish with the environment, deactivate it using:
 ```
 
 #### Deleting the virtual environment
-Since virtual environments are self-contained, when no longer needed, just delete the project's virtual environment directory(in this case `venv` ).
+Since virtual environments are self-contained, when no longer needed, just delete the project's virtual environment directory (in this case `/venv` ).
 
 #### 2. Virtualenv
 **[Virtualenv](https://virtualenv.pypa.io/en/latest/)** is a third-party dependency manager tool for creating and managing Python projects. It is the most used and most popular virtual environment module for **Python 2**  language.
@@ -156,7 +156,7 @@ Before we use Pipenv, let's first install it. Run the following command on a ter
 $ pip install pipenv
 ```
 
-After running this, Pipenv will be installed in your computer. Here’s the part where we now say goodbye to `pip`. It has been indeed a journey!
+After running this, Pipenv will be installed on your machine. Here’s the part where we now say goodbye to `pip`. It has been indeed a journey!
 
 #### Creating a virtual environment
 After installation, we just need to install a Python module using Pipenv and **boom!**, we have a virtual environment.
@@ -170,7 +170,7 @@ $ pipenv install Django==2.0.13
 
 The command above automatically creates a virtual environment for your project(`my_project_folder`) with a `Pipfile` and a `Pipfile.lock` file. These files are where your project dependencies are saved.
 
-If you wish to change the dependencies, you could change the default Pipenv configurations.
+If you wish to change the dependencies, you could change the default `Pipenv` configurations.
 
 #### Activating the virtual environment
 After creating our virtual environment, we can activate it by running the command below in the project directory.
@@ -202,9 +202,9 @@ $ pipenv install –python 3.6
 ```
 
 ### 4. Conda
-**[Conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment)** is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.
+**[Conda](https://conda.io/projects/conda/en/latest/index.html)** is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.
 
-Conda comes pre-installed with [anaconda](https://www.anaconda.com/) and [miniconda](https://docs.conda.io/en/latest/miniconda.html).  
+Conda comes pre-installed in [anaconda](https://www.anaconda.com/) and [miniconda](https://docs.conda.io/en/latest/miniconda.html).  
 
 #### Features
 * You can [share](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment) environments.
@@ -212,7 +212,7 @@ Conda comes pre-installed with [anaconda](https://www.anaconda.com/) and [minico
 
 #### Installation
 Installing Conda is quite different from other dependency managers.
-The easiest way to install it is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/windows/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - a mini version of anaconda that contains only Conda and its dependancies.
+The easiest way to install it is by installing [Anaconda](https://docs.anaconda.com/anaconda/install/windows/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) - a mini version of anaconda that contains only Conda and its dependencies.
 
 ### Create an environment
 To create a virtual environment using Conda, run the following command on a terminal.
@@ -249,7 +249,7 @@ $ conda deactivate
 #### Features
 * It comes with a `pyproject.toml` file that contains a `tool.poetry` section that is composed of several sections like README.md, name, author [etc](https://python-poetry.org/docs/pyproject/) for project documentation.
 * It is faster than most virtual environment tools.
-* It allows declaration the libraries your project depends on and it will manage (install/update) them for you
+* It allows declaration the libraries your project depends on and it will manage (install/update) them for you.
 
 #### Installation
 Unlike other project dependency tools, Poetry comes with a custom installer that isolately installs it from the rest of your system by seperating its dependencies.
