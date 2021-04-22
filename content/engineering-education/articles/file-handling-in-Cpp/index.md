@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/file-handling-in-cpp/
+url: /file-handling-in-cpp/
 title: File Handling in C++
 description: This article, will walk through how to implement the file handling function in C++, and we will cover the key working pointers of file handling.
 author: parampreet-singh
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/file-handling-in-cpp/hero.jpg
+  - url: /file-handling-in-cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
 If you are a software engineer, you may come across file handling or file input/output at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or reading/writing text on a file. Files are always a vital way to store data.
@@ -179,4 +179,4 @@ Closing a file is as simple as opening a file. You just need to use the name of 
 With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. What we have just covered is the extent to which a developer would need to know and what basic college classes teach when it comes to file handling. Hope you find it helpful! Happy coding!
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)

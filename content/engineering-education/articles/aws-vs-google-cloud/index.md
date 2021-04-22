@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/aws-vs-google-cloud/
+url: aws-vs-google-cloud/
 title: Comparison Between Amazon Web Services (AWS) & Google Cloud
 description: This article provides a comprehensive comparison between Amazon Web Services (AWS) and Google Cloud. The comparison will involve analyzing their differences using key parameters. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/aws-vs-google-cloud/hero.jpg
+  - url: /aws-vs-google-cloud/hero.jpg
     alt: AWS and Google cloud example image
 ---
 Cloud computing services have grown tremendously in the recent past. Businesses are using these services to manage their storage, networks, and data processing. Many companies have shifted from the use of local servers to cloud computing services because they are secure, reliable, and cost-efficient.
@@ -25,7 +25,7 @@ This article provides a comprehensive comparison between these cloud computing p
 
 It also consists of offerings such as infrastructure as a service (IAAS), software as a service (SAAS), and platform as a service (PAAS). Examples of the services provided by AWS include networking, storage, remote computing, mobile development, email, analytics, and security.
 
-![Amazon Web Services](/engineering-education/aws-vs-google-cloud/amazon-web-services.png)
+![Amazon Web Services](/aws-vs-google-cloud/amazon-web-services.png)
 
 [Image Source: L2L International](https://www.l2linternational.com/wp-content/uploads/2018/08/amazonaws.png)
 
@@ -34,7 +34,7 @@ It also consists of offerings such as infrastructure as a service (IAAS), softwa
 
 Other tools offered by this platform include networking, Big Data, the internet of things (IoT), management tools, security, and Cloud AI. Google cloud services share the same infrastructure with other end-user products of Google which include: YouTube, Gmail, and Google Search.
 
-![Google Cloud Platform](/engineering-education/aws-vs-google-cloud/google-cloud-platform.jpg)
+![Google Cloud Platform](/aws-vs-google-cloud/google-cloud-platform.jpg)
 
 [Image Source: Software Logic](http://softwarelogic.net/wp-content/uploads/2017/07/google-cloud1.jpg)
 
@@ -129,4 +129,4 @@ Although AWS is enjoying a bigger market share than its competitor, the fast gro
 - [Google Billing](https://cloud.google.com/blog/products/gcp/extending-per-second-billing-in-google)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

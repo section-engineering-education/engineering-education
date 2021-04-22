@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/graph-traversals-java/
+url: /graph-traversals-java/
 title: Graph Implementation and Traversal Algorithms (Java)
 description: This article will discuss graph implementation and traversal algorithms by going over some common graphs and how to traverse them with breadth-first search and depth-first search.
 author: tenson-cai
@@ -10,13 +10,13 @@ date: 2020-12-17T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/graph-traversals-java/hero.jpg
+  - url: /graph-traversals-java/hero.jpg
     alt: traversal example image
 ---
 Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world, including relationships (Facebook), locations (Google Maps), programming analysis, and more.
 <!--more-->
 
-![graph](/engineering-education/graph-traversals-java/graph.jpg)
+![graph](/graph-traversals-java/graph.jpg)
 
 By the end of this article, readers should know
 1. What graphs are.
@@ -40,7 +40,7 @@ Unweighted graphs have zero value edges, while weighted graphs have non-zero val
 
 Undirected and Unweighted  |  Directed and Weighted	 |	
 :-------------------------:|:-----------------------:|
-|![undirected](/engineering-education/graph-traversals-java/undirected.png)|![directed](/engineering-education/graph-traversals-java/directed.png)
+|![undirected](/graph-traversals-java/undirected.png)|![directed](/graph-traversals-java/directed.png)
 
 <br />
 <br />
@@ -183,7 +183,7 @@ class Main {
 
 ### Graph traversal algorithms
 #### BFS iterative
-[Breadth First Search](/engineering-education/breadth-first-search/) uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. 
+[Breadth First Search](/breadth-first-search/) uses a queue to traverse the graph in a level like manner. A start node is added to the queue to start. 
 
 As long as the queue is not empty, a node is removed and its unvisited neighbors are added to the queue. Since a graph may contain cycles, a visited hash set is used to keep track of all visited nodes. We only want to add unvisited nodes into the queue!
 
@@ -282,7 +282,7 @@ public static void dfsRecursive(Node startNode, Set<Integer> visited) {
 }
 ```
 
-![graph](/engineering-education/graph-traversals-java/graph.jpg)
+![graph](/graph-traversals-java/graph.jpg)
 
 #### Outputs
 The BFS output shows that the graph is traversed in layers. The DFS iterative and recursive outputs show the traversal in depth. The DFS outputs are in different orders, but the algorithms operate the same way. There are more than one valid DFS outputs.
@@ -319,5 +319,5 @@ This article looked over some common graphs and how to traverse them with breadt
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

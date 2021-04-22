@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-progressive-web-application/
+url: /react-progressive-web-application/
 title: React Progressive Web Application
 description: In this tutorial, we will create a Todo application using React and convert it into a Progressive Web Application using service workers.
 author: wilson-gichuhi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-progressive-web-application/hero.jpg
+  - url: /react-progressive-web-application/hero.jpg
     alt: React Progressive Web Application example Image
 ---
 In this tutorial, we will create a React Todo Progressive Web App. A progressive web app refers to an enhanced web application having the same capabilities as a native platform-specific application by utilizing the emerging browser APIs. The Progressive Web Apps are intended to be fast, reliable, and engaging.
@@ -342,9 +342,9 @@ In this component:
 ### The React application so far
 Your app so far should look like this:
 
-![React-PWA-image](/engineering-education/react-progressive-web-application/react-pwa1.png)
+![React-PWA-image](/react-progressive-web-application/react-pwa1.png)
 
-![React-PWA-image2](/engineering-education/react-progressive-web-application/react-pwa2.png)
+![React-PWA-image2](/react-progressive-web-application/react-pwa2.png)
 
 
 ### Adding functionality to make it a Progressive Web App
@@ -481,13 +481,13 @@ To test this, we should generate the production build by running `npm run build`
 Try to simulating an offline experience. In your browser DevTools, in the Network tab, enable the offline checkbox and reload the app. The application should be able to work offline.
 
 The development version performance:
-![PWA Performance](/engineering-education/react-progressive-web-application/pwa-performance.png)
+![PWA Performance](/react-progressive-web-application/pwa-performance.png)
 
-![Requirements for PWA](/engineering-education/react-progressive-web-application/requirements.png)
+![Requirements for PWA](/react-progressive-web-application/requirements.png)
 
 Our app is now installable by clicking the plus (+) icon on Google Chrome near bookmarks icon and available for offline use.
 
-![PWA install](/engineering-education/react-progressive-web-application/install.png)
+![PWA install](/react-progressive-web-application/install.png)
 
 Check the deployed app on [Netlify](https://reactify-pwa.netlify.app/) and the project source code in the repository [here](https://github.com/ReactifyStudio/React-Progressive-Web-App).
 
@@ -495,4 +495,4 @@ Check the deployed app on [Netlify](https://reactify-pwa.netlify.app/) and the p
 We learned how to create a Todo app using the React library. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

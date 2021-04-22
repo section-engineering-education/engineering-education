@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-nodemcu/
+url: /getting-started-with-nodemcu/
 title: Getting started with NodeMCU
 description: A tutorial that introduces microcontrollers, NodeMCU, and how it can be used in IoT. Microcontrollers come with different configurations and architectures depending on the application it is used for.
 author: srishilesh-p-s
@@ -10,7 +10,7 @@ date: 2021-01-13T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/getting-started-with-nodemcu/hero.jpg
+  - url: /getting-started-with-nodemcu/hero.jpg
     alt: Getting started with NodeMCU
 ---
 In this article, we will learn about the NodeMCU microcontroller. By the end of this article, you should have a basic understanding of what a microcontroller is, what NodeMCU is, and its use in the Internet of Things. You will also learn step-by-step procedures for building a simple program to control the blinking of LEDs using NodeMCU.
@@ -40,7 +40,7 @@ For example, microcontrollers are used as embedded devices in appliances like AC
 ### NodeMCU
 In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU stands for Node MicroController Unit. The below image shows a NodeMCU microcontroller board.
 
-![NodeMCU ESP2866](/engineering-education/getting-started-with-nodemcu/nodemcu.png)
+![NodeMCU ESP2866](/getting-started-with-nodemcu/nodemcu.png)
 
 [Image Source](https://cityos-air.readme.io/docs/esp8266-nodemcu)
 
@@ -63,7 +63,7 @@ In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU sta
 
 All the above components with several additional features can be seen in this pin diagram.
 
-![ESP2866 Pin Diagram](/engineering-education/getting-started-with-nodemcu/pin-diagram.png)
+![ESP2866 Pin Diagram](/getting-started-with-nodemcu/pin-diagram.png)
 
 [Image source](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 
@@ -131,11 +131,11 @@ void loop() {
 
 Finally, our code is ready for compilation and upload. To compile your code, press `Ctrl + R`. After compilation, the compiled binary codes are uploaded to the NodeMCU hardware by pressing `Ctrl + U`. You will see the screen as shown below:
 
-![ESP2866 Code Uploading](/engineering-education/getting-started-with-nodemcu/uploading.png)
+![ESP2866 Code Uploading](/getting-started-with-nodemcu/uploading.png)
 
 On following the above-mentioned steps correctly, you can see both the LEDs blinking alternatively with a delay of 1 second each.
 
-![Result](/engineering-education/getting-started-with-nodemcu/result.gif)
+![Result](/getting-started-with-nodemcu/result.gif)
 
 [Image Source](https://steemit.com/arduino/@makerhacks/blinking-leds-with-python-how-to-code-in-micro-python-on-the-esp8266-nodemcu)
 
@@ -160,4 +160,4 @@ To summarize:
 - [Detailed specifications](https://lastminuteengineers.com/esp8266-nodemcu-arduino-tutorial/)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

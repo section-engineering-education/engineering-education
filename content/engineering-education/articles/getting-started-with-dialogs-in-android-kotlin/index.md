@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/
+url: /getting-started-with-dialogs-in-android-kotlin/
 title: Getting Started with Dialogs in Android Kotlin
 description: This tutorial takes the reader through creating and implementing dialogs in Android. A dialog is usually a small window that pops out on a devices screen.
 author: eric-gacoki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/hero.png
+  - url: /getting-started-with-dialogs-in-android-kotlin/hero.png
     alt: Alert Dialogs in Android
 ---
 Android has distinguished techniques for improving user experience. One of them is the use of dialogs. A [Dialog](https://developer.android.com/guide/topics/ui/dialogs) is a brief conversation between the user and the application. It is usually a small window that pops-up on the device's screen.
@@ -111,7 +111,7 @@ To fix the error about the unresolved reference in the text attribute, create st
 
 *buttons preview:*
 
-![buttons image](/engineering-education/getting-started-with-dialogs-in-android-kotlin/buttons.png)
+![buttons image](/getting-started-with-dialogs-in-android-kotlin/buttons.png)
 
 As we mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. 
 
@@ -135,7 +135,7 @@ The beauty of DataBinding is that it autogenerates these objects. We just need t
 #### Writing Kotlin code
 Inside the `MainActivity.kt` file is where we'll write the logic of our app. First, create a mutable variable of type `ActivityMainBinding` that will initially be `null` but be initialized in the `onCreate()` method. 
 
-To learn more about DataBinding please refer to [this article by Michael Barasa](/engineering-education/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
+To learn more about DataBinding please refer to [this article by Michael Barasa](/how-to-use-databinding-in-android-using-kotlin/) or [this Youtube tutorial](https://www.youtube.com/watch?v=MXZz438aCDM&t=6s).
 
 When activities or fragments are destroyed, variables or objects can still be holding a reference to non-existing values. This is called a memory leak which of course can lead to unwanted behavior in our app. 
 
@@ -189,7 +189,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 Ensure that there are no errors in your code before running the app. When you click the button, you should get an output similar to the one below.
 
-![empty dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/empty-dialog.png)
+![empty dialog](/getting-started-with-dialogs-in-android-kotlin/empty-dialog.png)
 
 ##### Adding features to a Dialog
 Now that we've created a Dialog, we can add functionalities such as:
@@ -238,7 +238,7 @@ The function `toast()` is used to show a short `Toast` message with a text passe
 
 Run the app and you should see a dialog similar to the one below.
 
-![default dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/default-dialog.png)
+![default dialog](/getting-started-with-dialogs-in-android-kotlin/default-dialog.png)
 
 Notice that when you click outside the dialog, it dismisses. You can avoid this effect by adding `setCancelable(false)` in the builder.
 
@@ -403,7 +403,7 @@ The rest of the function remains the same.
 
 Now we're done. Run the app and you should see a dialog similar to this one
 
-![round dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/round-dialog.png)
+![round dialog](/getting-started-with-dialogs-in-android-kotlin/round-dialog.png)
 
 ### Conclusion
 In this tutorial, we've learned how to create, customize, and use Alert Dialogs in Android. As you've seen, dialogs are very simple to implement. You can find the full source code for this tutorial [here](https://github.com/Ericgacoki/dialogs-in-android). 
@@ -413,4 +413,4 @@ Check out the [official documentation](https://developer.android.com/guide/topic
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/speech-recognition-in-javascript/
+url: /speech-recognition-in-javascript/
 title: Speech Recognition Using the Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how to build a webpage that implements speech recognition using the Web Speech API in JavaScript.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/speech-recognition-in-javascript/hero.jpg
+  - url: /speech-recognition-in-javascript/hero.jpg
     alt: Speech Recognition in JavaScript Hero Image
 ---
 The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement speech recognition. You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility).
@@ -32,7 +32,7 @@ For the final code, you can look at this [GitHub Repository](https://github.com/
 
 In the starter code, I've set up a language and dialect select menu, two buttons to start/stop the speech recognition, and a box to display the transcript. I've used [Bootstrap](https://getbootstrap.com/) to style the webpage.
 
-![Starter Code Screen](/engineering-education/speech-recognition-in-javascript/start_screen.png)
+![Starter Code Screen](/speech-recognition-in-javascript/start_screen.png)
 
 ### Let's code
 First, create a new JavaScript file and name it `speechRecognition.js`. Next, add the script to the HTML file using the `script` tag after the `body` tag.
@@ -281,7 +281,7 @@ if ("webkitSpeechRecognition" in window) {
 ### Result
 You can take a look at the deployed version of the project [here](https://zolomohan.github.io/speech-recognition-in-javascript/).
 
-![Final Result](/engineering-education/speech-recognition-in-javascript/final.gif)
+![Final Result](/speech-recognition-in-javascript/final.gif)
 
 ### Let's Recap
 - We cloned the starter code from the GitHub repository.
@@ -303,4 +303,4 @@ Congratulations, :partying_face: You did it.
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mobile-automation-testing-with-appium/
+url: mobile-automation-testing-with-appium/
 title: Mobile Automation Testing with Appium - An Introduction
 description: This article will be an introduction to mobile automation testing using Appium. We will explore the building blocks of automation testing, it's importance and also a brief guide on how to get started with Appium.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/mobile-automation-testing-with-appium/hero.jpg
+  - url: /mobile-automation-testing-with-appium/hero.jpg
     alt: Mobile testing hero image
 ---
 Appium is an automation testing tool that can be used to validate mobile browsers and mobile applications. This tool is widely used in mobile automation testing because it is free and can support both iOS and Android platforms. Mobile apps have become an important element in our lives because they provide us a smart way of doing things like shopping, paying bills, chatting, and booking flights.
@@ -72,7 +72,7 @@ Appium is also chosen by testers and developers because it offers the following 
   
 ### Appium architecture
 The following diagram shows the architecture of Appium:
-![Appium Architecture](/engineering-education/mobile-automation-testing-with-appium/appium-architecture.jpg)
+![Appium Architecture](/mobile-automation-testing-with-appium/appium-architecture.jpg)
 
 [Image Source: Software Testing Help](https://www.softwaretestinghelp.com/what-is-appium/)
 
@@ -104,7 +104,7 @@ The *XCUI test* allows users to write tests on iOS using Objective-C or Swift. T
 Appium works differently on iOS and Android. Let's look at how it works on these two platforms.
 
 #### How does Appium work on Android?
-![Appium on Android](/engineering-education/mobile-automation-testing-with-appium/appium-on-android.png)
+![Appium on Android](/mobile-automation-testing-with-appium/appium-on-android.png)
 
 [Image Source: Edureka](https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/Appium-on-Android-Appium-Architecture-edureka-4.png)
 
@@ -117,7 +117,7 @@ The following is a brief sequence of how Appium works on the Android platform:
 6. The test results are then sent to the server, which eventually sends HTTP responses to the Appium client. The HTTP responses contain status codes indicating success or server error.
 
 #### How does Appium work on iOS?
-![Appium on iOS](/engineering-education/mobile-automation-testing-with-appium/appium-on-ios.png)
+![Appium on iOS](/mobile-automation-testing-with-appium/appium-on-ios.png)
 
 [Image Source: Edureka](https://www.edureka.co/blog/content/ver.1556540029/uploads/2019/05/Appium-on-iOS-Appium-Architecture-edureka-4.png)
 
@@ -151,4 +151,4 @@ To summarize:
 - [Article by Edureka](https://www.edureka.co/blog/what-is-appium/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

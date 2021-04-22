@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-basic-api-with-nodejs/
+url: /building-a-basic-api-with-nodejs/
 title: How To Build and Test a Node.js REST API with Express on Ubuntu 18.04
 description: In this guide, you will build a Node.js REST API with the Express Framework, expose it to the internet with Ngrok.
 author: adrian-murage
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-basic-api-with-nodejs/hero.jpg
+  - url: /building-a-basic-api-with-nodejs/hero.jpg
     alt: basic API with Node.js image example
 ---
 In this guide, you will build a [Node.js](https://nodejs.dev/learn) REST API with the [Express Framework](http://expressjs.com/), expose it to the internet with [Ngrok](https://ngrok.com/docs) and make test requests to it on [Postman](https://www.postman.com/).
@@ -184,7 +184,7 @@ The endpoint is your Ngrok URL followed by `/list_movies`.
 
 This should return the data from the movies.json as shown below.
 
-![postman_testing](/engineering-education/building-a-basic-api-with-nodejs/postman_testing.png)
+![postman_testing](/building-a-basic-api-with-nodejs/postman_testing.png)
 
 Ngrok will record the request as well.
 
@@ -206,7 +206,7 @@ GET /                          200 OK
 
 And there you have it. You managed to build a Node.js API server with Express, exposed it to the internet with Ngrok and tested it on Postman!
 
-To get some more information on Postman - and how to create a mock server with Postman - visit [this article](/engineering-education/guide-to-create-mock-server/).
+To get some more information on Postman - and how to create a mock server with Postman - visit [this article](/guide-to-create-mock-server/).
 
 Congratulations!!!
 
@@ -220,4 +220,4 @@ I encourage you to try to implement other request types and expand your API to a
 [“RESTful Web Services - Introduction.”](https://www.tutorialspoint.com/restful/restful_introduction.htm)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

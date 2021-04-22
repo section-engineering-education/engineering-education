@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/vision-transformer-using-transformers-for-image-recognition/
+url: /vision-transformer-using-transformers-for-image-recognition/
 title: Vision Transformer (ViT) - Using Transformers for Image Recognition
 description: This article will explore how transformers are directly applied to image recognition. This is a shift from previous architectures that proposed using attention with CNNs or changing modules in CNNs.
 author: willies-ogola
@@ -10,7 +10,7 @@ date: 2021-02-16T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/vision-transformer-using-transformers-for-image-recognition/hero.jpg
+  - url: /vision-transformer-using-transformers-for-image-recognition/hero.jpg
     alt: Transformers for Image Recognition example image
 ---
 How many words is an image worth? This [paper](https://arxiv.org/abs/2010.11929), recently published by Google's research team, tells us that an image is worth 16 x 16 words. Let me explain what they meant by this to help you better understand.
@@ -30,7 +30,7 @@ These image patches are viewed in the same way as words (tokens) in the NLP cont
 Results show that this novel architecture outperformed state-of-the-art CNNs, known as the dominant network architecture for image recognition.  
 
 ### An overview of the model
-![Vision Transformers model overview](/engineering-education/vision-transformer-using-transformers-for-image-recognition/vision-transformer-model-overview.PNG)
+![Vision Transformers model overview](/vision-transformer-using-transformers-for-image-recognition/vision-transformer-model-overview.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -44,7 +44,7 @@ An important feature to note in the position embedding module is the 0th class. 
 
 The idea behind how position embedding works is demonstrated in the image below:
 
-![The sequence of the images](/engineering-education/vision-transformer-using-transformers-for-image-recognition/image-sequence.PNG)
+![The sequence of the images](/vision-transformer-using-transformers-for-image-recognition/image-sequence.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -68,7 +68,7 @@ For instance, ViT's best model attains the following accuracies:
 - 94.55% on CIFAR-100
 - 77.63% on the VTAB suite of 19 tasks
 
-![Results on the Image Classification Benchmarks](/engineering-education/vision-transformer-using-transformers-for-image-recognition/main-results.PNG)
+![Results on the Image Classification Benchmarks](/vision-transformer-using-transformers-for-image-recognition/main-results.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -79,7 +79,7 @@ But, when trained on the ImageNet-21 and JFT-300M (Google's in-house dataset), w
 
 These results are shown below:
 
-![Pre-trained dataset results](/engineering-education/vision-transformer-using-transformers-for-image-recognition/pre-trained-dataset-results.PNG)
+![Pre-trained dataset results](/vision-transformer-using-transformers-for-image-recognition/pre-trained-dataset-results.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -88,7 +88,7 @@ Task transfer states that knowledge should be transferrable between tasks. For e
 
 This is because they are all four-legged animals. Thus, the knowledge that classes the cats and dogs should also be similar to that which classes horses and cows.
 
-![Visual Task Adaptation Benchmark's Accuracy Performance](/engineering-education/vision-transformer-using-transformers-for-image-recognition/vtab-accuracy-performance.PNG)
+![Visual Task Adaptation Benchmark's Accuracy Performance](/vision-transformer-using-transformers-for-image-recognition/vtab-accuracy-performance.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -99,7 +99,7 @@ They used Attention Rollout proposed in this [paper](https://arxiv.org/pdf/2005.
 
 The results from their experiments are shown below:
 
-![Examples of Attention Maps](/engineering-education/vision-transformer-using-transformers-for-image-recognition/examples-of-attention-maps.PNG)
+![Examples of Attention Maps](/vision-transformer-using-transformers-for-image-recognition/examples-of-attention-maps.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2010.11929.pdf)*
 
@@ -125,4 +125,4 @@ Transformers completely replaced Long Short-Term Memory (LSTM) in NLP. Now, they
 5. [Quantifying Attention Flow in Transformers](https://arxiv.org/pdf/2005.00928.pdf)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

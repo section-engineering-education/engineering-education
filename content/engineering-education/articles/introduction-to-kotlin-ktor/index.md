@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kotlin-ktor/
+url: /introduction-to-kotlin-ktor/
 title: Introduction to Kotlin Ktor
 description: In this article, we will take a short look on how to set up a restful Ktor service. We will explore the basic architecture of applications using this framework.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-kotlin-ktor/hero.jpg
+  - url: /introduction-to-kotlin-ktor/hero.jpg
     alt: Kotlin ktor image example
 ---
 Kotlin is used to create different applications for different platforms. Server-side applications are no exception. Just like Java, Kotlin can be used to set up and run server side applications. There are several frameworks that can be used with Kotlin. For instance, all frameworks used with Java like [Spring](https://spring.io/) and [Spark](https://sparkjava.com/) have support for Kotlin. 
@@ -36,7 +36,7 @@ The first thing to do is to check whether the IDE has [Ktor plugin](https://plug
 
 Open your IDE and select "New Project". Then go to the Ktor section to create a new ktor project. Ensure the settings are similar to the ones below.
 
-![starter](/engineering-education/introduction-to-kotlin-ktor/start.png)
+![starter](/introduction-to-kotlin-ktor/start.png)
 
 We are using `Gradle` and [`Netty`](https://netty.io/) engine for our server functionality. Gradle will handle our third party dependencies.
 
@@ -187,4 +187,4 @@ The full code of the tutorial can be found on [GitHub](https://github.com/LinusM
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

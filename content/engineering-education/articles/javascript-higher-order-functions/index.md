@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-higher-order-functions/
+url: /javascript-higher-order-functions/
 title: Introduction to JavaScript High Order Functions
 description: In this tutorial we'll learn about the high order function. We will discuss and show some of the common built-in JavaScript high order functions with examples.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-higher-order-functions/hero.jpg
+  - url: /javascript-higher-order-functions/hero.jpg
     alt: JavaScript High Order Function example image
 ---
 Functional programming is a significant building block for JavaScript as a language. They are some of the common scripts that you will continuously use when building JavaScript applications. Functions set statements to perform tasks.
@@ -485,15 +485,15 @@ High order functions are regular functions with the ability to accept other func
 
 If you have ever written a function that takes another function as an argument:
 
-![image title](/engineering-education/javascript-higher-order-functions//function-as-an-argument.png)
+![image title](/javascript-higher-order-functions//function-as-an-argument.png)
 
 Or a function that returns another function:
 
-![image title](/engineering-education/javascript-higher-order-functions/value-of-another-function.png)
+![image title](/javascript-higher-order-functions/value-of-another-function.png)
 
 You have actually applied a concept of high order function.
 
 I hope this guide helps you understand high order functions and replicate that concept in your programs.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

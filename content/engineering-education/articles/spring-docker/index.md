@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-docker/
+url: /spring-docker/
 title: How to Create Spring Boot Docker Images
 description: This tutorial will go over how to create Spring Boot Docker images. Docker is a great tool for building and packaging applications with their dependencies.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-docker/hero.jpg
+  - url: /spring-docker/hero.jpg
     alt: Spring Boot Docker Images example image
 ---
 [Docker](https://docs.docker.com) is a container engine that makes it possible to bundle, ship, and distribute applications across distributed servers.
@@ -20,10 +20,10 @@ images:
 1. Have [Java Development Kit 11](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html/) or newer installed on your computer.
 2. Make sure [Docker](https://docs.docker.com/docker-for-windows/install/) is installed on your computer.
 
-To get started with Docker, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
+To get started with Docker, visit [Getting started with Docker](/getting-started-with-docker/).
 
 ### Project setup
-We will bundle and containerize the application that we created [here](/engineering-education/spring-boot-crud-api/). The application allowed us to perform CRUD functionalities on the Todo items via a REST API.
+We will bundle and containerize the application that we created [here](/spring-boot-crud-api/). The application allowed us to perform CRUD functionalities on the Todo items via a REST API.
 
 To check if `JDK` is installed and configured correctly on your computer, execute the command below.
 
@@ -141,11 +141,11 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED       ST
 
 1. Visit `localhost` on port 8080 to confirm if the `spring-boot-crud` application is running in the container.
    
-![Docker Hub image](/engineering-education/spring-docker/docker_get.png)
+![Docker Hub image](/spring-docker/docker_get.png)
 
 ### Pushing the Docker image to Docker Hub
 
-![Docker Hub image](/engineering-education/spring-docker/docker_create.png)
+![Docker Hub image](/spring-docker/docker_create.png)
 
 Docker Hub is an online repository of Docker container images. Docker hub stores Docker containers and also makes it easier to share Docker images with other developers.
 
@@ -177,4 +177,4 @@ Docker is a great tool for building and packaging applications with the required
 Happy coding!
 
 ---
-Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)

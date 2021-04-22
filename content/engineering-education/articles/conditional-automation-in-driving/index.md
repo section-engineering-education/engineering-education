@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/conditional-automation-in-driving/
+url: conditional-automation-in-driving/
 title: Conditional Automation in Driving - Level 3 Autonomous Cars
 description: This article will serve as an introduction to conditional automation in driving. In conditional automation, the level 3 car performs safety-critical functions such as acceleration, deceleration, and steering.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/conditional-automation-in-driving/hero.jpg
+  - url: /conditional-automation-in-driving/hero.jpg
     alt: Conditional Automation in Driving example image
 ---
 Autonomous driving is gaining momentum in the automobile industry. Developers have gained interest in this area because of the application of artificial intelligence (AI) and internet of things (IoT) in driving. Conditional automation is a level of autonomous driving that is currently under production.
@@ -71,7 +71,7 @@ Various sensors are used to detect situations and respond to them. For example, 
 
 LIDAR sensors are placed at the top of the car to provide 3D data on the area surrounding the car. These sensors use light waves to provide information regarding nearby objects. Inertial sensors, ultrasonic sensors, and GPS tracking sensors are utilized to monitor the performance of the autonomous car.
 
-![Features of Level 3 Cars](/engineering-education/conditional-automation-in-driving/features-of-level-3-cars.png)
+![Features of Level 3 Cars](/conditional-automation-in-driving/features-of-level-3-cars.png)
 
 [Image Source: Trushield Insurance](https://www.trushieldinsurance.ca/wp-content/uploads/2015/06/Driverless-Car-Infographic-EN.png?x61594)
 
@@ -98,7 +98,7 @@ Analyzing the key activities in driving can help explain how a level 3 car works
 
 - **Driving in the rain:** Autonomous cars use vehicular rain sensors to detect rain. These sensors are water-sensitive. During rainy weather, the sensors will trigger certain actions such as closing open windows and convertible tops.
 
-![How Level 3 Cars Work](/engineering-education/conditional-automation-in-driving/how-level-3-cars-work.png)
+![How Level 3 Cars Work](/conditional-automation-in-driving/how-level-3-cars-work.png)
 
 [Image Source: Landmark Dividend](https://www.landmarkdividend.com/wp-content/uploads/2018/05/Autonomous-Car-3.png)
 
@@ -120,4 +120,4 @@ The commercialization of level 3 cars will provide a platform for technological 
 [Consumer Reports](https://www.consumerreports.org/autonomous-driving/levels-of-car-automation/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

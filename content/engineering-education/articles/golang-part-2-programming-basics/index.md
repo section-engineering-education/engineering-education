@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/golang-part-2-programming-basics/
+url: /golang-part-2-programming-basics/
 title:  Golang - Programming Basics
 description: Covering the basics of programming in Go - directories, workspaces, variables, loops, conditionals and control flow, etc.
 author: adith-bharadwaj
@@ -11,11 +11,11 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/golang-part-2-programming-basics/hero.jpg
+  - url: /golang-part-2-programming-basics/hero.jpg
     alt: golang image example
 ---
 
-*Go is a statically-typed and procedural programming language whose syntax resembles C*. In the [previous article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
+*Go is a statically-typed and procedural programming language whose syntax resembles C*. In the [previous article](/golang-part-1-introduction/), we looked at the history of Go, its purpose, and installation. In this article, we are going to explore basic programming concepts such as variables, input/output, arrays, etc. Before we start writing programs, there are a few concepts to bear in mind. 
 
 ### Go workspace
 *Go programs are usually kept in the same workspace*. A workspace may contain multiple repositories from version control systems such as Git.  
@@ -70,7 +70,7 @@ The `go run` command can be used to run the go programs. This command compiles a
 
 Copy and paste all the examples in this tutorial onto a file, give the file a name, and run it using the `go run <file name>` command on your terminal. 
 
-![go run](/engineering-education/golang-part-2-programming-basics/go-run.png)
+![go run](/golang-part-2-programming-basics/go-run.png)
 
 
 #### Components
@@ -115,7 +115,7 @@ variable_name := value (shorthand)
 Keywords are words that are reserved by a program because they have a special meaning and are used for some internal action. Keywords are reserved and cannot be used as identifiers in a program.
 
 There are 25 keywords in Go:
-![go keywords](/engineering-education/golang-part-2-programming-basics/go-keywords.png)
+![go keywords](/golang-part-2-programming-basics/go-keywords.png)
 
 ##### Identifiers
 Identifiers are names of various components defined by the user in the program. An identifier can be the name of a variable, function, constant, statement, etc.
@@ -180,7 +180,7 @@ func main() {
 
 A user can execute multiple if-else statements and the statements are executed from the top down. As soon as one of the conditions is true, the statement associated with that is executed. This creates a "ladder" also called the if-else ladder.
 
-![control flow](/engineering-education/golang-part-2-programming-basics/control-flow.jpg)<br>
+![control flow](/golang-part-2-programming-basics/control-flow.jpg)<br>
 The basic structure of conditionals:
 
 ```

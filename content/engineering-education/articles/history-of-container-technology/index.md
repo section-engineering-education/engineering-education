@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/history-of-container-technology/
+url: /history-of-container-technology/
 title: A Brief History of Container Technology
 description: A brief history of container technology and how it has fundamentally altered the development of software today.
 author: bora-basyildiz
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/history-of-container-technology/hero.jpg
+  - url: /history-of-container-technology/hero.jpg
     alt: container technology history
 ---
 ### The Beginning

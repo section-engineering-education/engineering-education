@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/creating-professional-email/
+url: /creating-professional-email/
 title: How to Create a Professional Email - Setting up GSuite
 description: Shows how to set up GSuite with MX records and configuring SPF, DKIM and DMARC to authenticate and prevent spam emails and making sure your emails are received.
 author: louise-findlay
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-professional-email/hero.png
+  - url: /creating-professional-email/hero.png
     alt: header image gsuite emails
 ---
 With the popularity of Office 365 and GSuite, it can seem that creating a business email is as simple as signing up for an account and paying the annual or monthly fee.
@@ -49,7 +49,7 @@ Once you’ve created your account, you’ll start the setup process. The first 
 When you’ve finished setting up users, click the checkbox saying I added all user email addresses currently using `@yourdomain.com` and click next.
 
 ### Connecting your Domain
-Now that you’ve set up all your GSuite users, you’ll have to connect your domain name. There are two steps to this. The first is to add a TXT record (similar to [adding a site (property) to Google Search Console](/engineering-education/google-search-console-introduction/)) to verify you own the domain, and the second step is to add MX records which will configure emails.
+Now that you’ve set up all your GSuite users, you’ll have to connect your domain name. There are two steps to this. The first is to add a TXT record (similar to [adding a site (property) to Google Search Console](/google-search-console-introduction/)) to verify you own the domain, and the second step is to add MX records which will configure emails.
 
 Google will try to detect the domain registrar you bought your domain from and provide detailed instructions on how to add the records. Follow the step-by-step instructions and click the checkboxes when you’ve accomplished each step.
 
@@ -127,4 +127,4 @@ This can be much easier than using another email provider that requires you to c
 
 Congratulations! You've set up a professional email address, made it secure, and learned how to set up user, group, and domain aliases.
 
-Struggling to setup other Google services? Check out my [guide to setting up Google Search Console](/engineering-education/google-search-console).
+Struggling to setup other Google services? Check out my [guide to setting up Google Search Console](/google-search-console).

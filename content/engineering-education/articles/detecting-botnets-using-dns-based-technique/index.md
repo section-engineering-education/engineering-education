@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/detecting-botnets-using-dns-based-technique/
+url: /detecting-botnets-using-dns-based-technique/
 title: Dectecting Botnets Using DNS-Based Technique
 description: In this article we will explore the DNS-based technique for detecting botnets. 
 author: paul-muriku
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/detecting-botnets-using-dns-based-technique/hero.png
+  - url: /detecting-botnets-using-dns-based-technique/hero.png
     alt: dns technique image example
 ---
 Over the past few years, many people and organizations have embraced the use of networking technologies to enhance data sharing and communication. Data sharing has come with its security challenges. Data security challenges have been and ongoing issue largely in part by botnets, which are used by cybercriminals to instigate various attacks. 
@@ -29,7 +29,7 @@ The DNS system is used by such botnets to support their command and control infr
 
 The following diagram shows the structure of a botnet. 
 
-![Botnet Structure](/engineering-education/detecting-botnets-using-dns-based-technique/botnet-structure.png)
+![Botnet Structure](/detecting-botnets-using-dns-based-technique/botnet-structure.png)
 
 [Image Source: EC-Council-BLOG](https://blog.eccouncil.org/wp-content/uploads/2018/12/the-structure-of-a-botnet.png)
 
@@ -48,7 +48,7 @@ However, some botnets such as Torpig utilize low entropy domains to dodge being 
 
 Below is an example of a DNS server request from a non-existing domain.
  
-![Failed DNS Request](/engineering-education/detecting-botnets-using-dns-based-technique/failed-dns-request.png)
+![Failed DNS Request](/detecting-botnets-using-dns-based-technique/failed-dns-request.png)
 
 [Image Source: Super User](https://i.stack.imgur.com/trpaB.png)
 
@@ -91,4 +91,4 @@ This is what has led to the importance of detection techniques of a botnet. As w
 -[Computer Weekly](https://www.computerweekly.com/tip/Four-handy-botnet-detection-techniques-and-tools-A-tutorial)
 
 ---
-Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
+Peer Review Contributions by: [Onesmus Mbaabu](/authors/onesmus-mbaabu/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/
+url: /capsule-networks-an-enhancement-to-convolution-neural-networks/
 title: Capsule Networks - An Enhancement to Convolutional Neural Networks 
 description: This article will introduce the main key ideas behind Capsule Networks (CapsNet). CapsNet is a better approach than CNN, but it's still at an infant stage.
 author: willies-ogola
@@ -10,13 +10,13 @@ date: 2020-12-10T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/hero.jpg
+  - url: /capsule-networks-an-enhancement-to-convolution-neural-networks/hero.jpg
     alt: Capsule Networks example image
 ---
 The key ideas behind Capsule Networks (CapsNets) were introduced in 2011 by [Geoffrey E. Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) in a research paper called [Transforming Autoencoders](http://www.cs.toronto.edu/~bonner/courses/2020s/csc2547/papers/capsules/transforming-autoencoders,-hinton,-icann-2011.pdf). Although, he did have a difficult time making the network work properly.  
 <!--more-->
 ### Prerequisites
-Understanding how Convolutional Neural Networks (CNNs) work is key to understanding Capsule Networks as it improves on CNNs. If you are not familiar with how CNN's work, please feel free to read my previous [article](/engineering-education/basics-of-convolution-neural-networks/) on the basics of CNNs. 
+Understanding how Convolutional Neural Networks (CNNs) work is key to understanding Capsule Networks as it improves on CNNs. If you are not familiar with how CNN's work, please feel free to read my previous [article](/basics-of-convolution-neural-networks/) on the basics of CNNs. 
 
 ### Table of contents
 1. [The Orientation Problem in Convolutional Neural Networks (CNNs)](#the-orientation-problem-in-convolutional-neural-networks-cnns) 
@@ -35,13 +35,13 @@ Understanding how Convolutional Neural Networks (CNNs) work is key to understand
 In 2017, Geoffrey E. Hinton, alongside Sara Sabour and Nicholas Frosst, published a paper called [Dynamic Routing Between Capsules](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/). The three researchers built on the key ideas first published in 2011, and achieved state-of-the-art performance on the MNIST dataset, and demonstrated better results than Convolutional Neural Networks (CNNs) on highly overlapping digits. They also tested the capsule model on the CIFAR10 dataset, and it achieved a 10.6% error, which is not state-of-the-art, but it's a good start. 
 
 ### The orientation problem in Convolutional Neural Networks (CNNs)
-Convolutional Neural Networks have been used in the [Computer Vision](/engineering-education/computer-vision-straight-lines/) domain for several years now. These networks have produced state-of-the-art results when solving image classification, image segmentation, and object detection tasks. Yet, these networks are not perfect. CNN's tend to fail when they are fed with images that differ in orientation and sizes. 
+Convolutional Neural Networks have been used in the [Computer Vision](/computer-vision-straight-lines/) domain for several years now. These networks have produced state-of-the-art results when solving image classification, image segmentation, and object detection tasks. Yet, these networks are not perfect. CNN's tend to fail when they are fed with images that differ in orientation and sizes. 
 
 Let's look at an example to understand what I mean. Suppose I take an original image of a dog and flip it upside down, as shown below. 
 
-![Original image of a dog](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/original-image.jpg)<br>
+![Original image of a dog](/capsule-networks-an-enhancement-to-convolution-neural-networks/original-image.jpg)<br>
 
-![Flipped image of the original](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/flipped-image.jpg)<br>
+![Flipped image of the original](/capsule-networks-an-enhancement-to-convolution-neural-networks/flipped-image.jpg)<br>
 
 If we train the CNN on the original image and then feed in the dog's flipped image as the new input to the CNN, it will fail to identify the dog's features such as the eyes, nose, and mouth. This means that CNNs fail to learn the patterns of an image when its orientation is altered.
 
@@ -74,7 +74,7 @@ A slight adjustment to the object's rotation or its size, can change the vector'
 
 Below is an example of an output that denotes an object's location in a CapsNet. The vectors' length where the object is placed is longer than those of the vectors where the object isn't placed. The vectors' orientation could represent their position, rotation, size, or scale in the image.
 
-![Example of a vector with length and orientation in a CapsNet](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/vector-length-orientation.PNG)<br>
+![Example of a vector with length and orientation in a CapsNet](/capsule-networks-an-enhancement-to-convolution-neural-networks/vector-length-orientation.PNG)<br>
 
 *[Image Source: Intel](https://software.intel.com/content/www/us/en/develop/articles/understanding-capsule-network-architecture.html/)*
 
@@ -125,7 +125,7 @@ It's important to note that the squashing function preserves the vectors' orient
 
 The [paper](https://www.cs.toronto.edu/~hinton/absps/DynamicRouting.pdf/) introduces a new squashing (non-linearity) function shown below, that works best with capsules:
 
-![The squashing function used in ConvNets](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/squashing-function.PNG)<br>
+![The squashing function used in ConvNets](/capsule-networks-an-enhancement-to-convolution-neural-networks/squashing-function.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
@@ -134,7 +134,7 @@ The term $$v_j$$ refers to the output after applying the squashing function; the
 ### The CapsNet architecture
 The capsule network architecture contains an encoder and a decoder, with each component consisting of three layers.
 
-![A simple CapsNet with 3 layers](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-3-layers.PNG)<br>
+![A simple CapsNet with 3 layers](/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-3-layers.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
@@ -147,7 +147,7 @@ The encoder contains three layers:
 
 A good point to note about the network's encoder part is that there is no routing between Conv1 and the Primary Capsule layer. Routing only happens between the Primary Capsule and the DigitCaps Layer.
 
-![Decoder structure to reconstruct a digit from the DigitCaps layer representation](/engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-digicaps-reconstruct.PNG)<br>
+![Decoder structure to reconstruct a digit from the DigitCaps layer representation](/capsule-networks-an-enhancement-to-convolution-neural-networks/caps-net-digicaps-reconstruct.PNG)<br>
 
 *[Image Source: University of Toronto](https://web.cs.toronto.edu/)*
 
@@ -188,7 +188,7 @@ I hope you found this article helpful.
 7. [Matrix Capsules with EM Routing](https://www.cs.toronto.edu/~hinton/absps/EMcapsules.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/front-end-vs-back-end-in-web-development/
+url: /front-end-vs-back-end-in-web-development/
 title: Front End vs Back End in Web Development
 description: This article will be an introduction to front-end and back-end development. We will explore the difference between them, understand full-stack development and help you choose the right development path.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/front-end-vs-back-end-in-web-development/hero.jpg
+  - url: /front-end-vs-back-end-in-web-development/hero.jpg
     alt: Front end back end Image
 ---
 Web development is an important field in the tech industry because it contributes to the development of e-commerce sites, social network services, and complex web applications. Building a web application requires two fundamental parts: the back end and front end.
@@ -69,7 +69,7 @@ Full-stack development entails working on the entire stack of the application. T
 
 A full-stack developer is required to have multiple skills to build an entire web application. These include coding, testing, debugging, and web design. This developer should also know about databases, APIs, security, algorithms, and [version control systems (VCS)](https://www.geeksforgeeks.org/version-control-systems/).
 
-![Full Stack Development](/engineering-education/front-end-vs-back-end-in-web-development/full-stack-development.png)
+![Full Stack Development](/front-end-vs-back-end-in-web-development/full-stack-development.png)
 
 [Image Source: Revenue River](https://www.revenueriver.co/hubfs/fullstack.jpeg#keepProtocol)
 
@@ -126,4 +126,4 @@ To summarize:
 Happy coding.
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

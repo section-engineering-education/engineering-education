@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/buffon-needle/
+url: /buffon-needle/
 title: Simulation of Buffon's Needle problem in Python
 description: In this article we will speak about Buffon's Needle problem in Python by running a simulation and exploring pi.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/buffon-needle/hero.jpg
+  - url: /buffon-needle/hero.jpg
     alt: Simulation of Buffon's Needle image
 ---
 Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. Pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. With this article we will get to look at pi from a different perspective. What if I told you, we could estimate pi with a probability problem.
@@ -32,7 +32,7 @@ $\pi = \frac{2}{P} \frac{l}{t}$
 
 The probability of intersection, P, is defined as the number of intersections by the total number of tosses of the needle.
 
-![buffon needle](/engineering-education/buffon-needle/buffon_needle_descr.jpg)
+![buffon needle](/buffon-needle/buffon_needle_descr.jpg)
 
 **[Image Source](https://commons.wikimedia.org/w/index.php?curid=13210701)**
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-android-views-and-view-groups/
+url: /introduction-to-android-views-and-view-groups/
 title: Introduction to Android Views and Viewgroups
 description: In this article we will go through creating views and viewgroups. We will also see some of the attributes associated with our views and viewgroups, where they are used and what they are used for.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-android-views-and-view-groups/hero.png
+  - url: /introduction-to-android-views-and-view-groups/hero.png
     alt: Android Views and Viewgroups example image
 ---
 All user’s interaction with an Android application is via the [user interface](https://www.studytonight.com/android/introduction-to-views) (UI). Knowing the fundamentals of the Android application’s user interface is essential. The UI of an Android application is made up of a collection of views and [view groups](https://www.programmersought.com/article/47124971866/). This article will go through commonly used views, view groups, and the attributes associated with them.
@@ -47,7 +47,7 @@ An example of `TextView` in XML:
     android:textSize="20sp"/>
 ```
 
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-text-view.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-text-view.png)
 
 We open the view with the tag with `<`and type `TextView`, to indicate that we are creating a `TextView` that will get displayed by the app. The same structure is used in the other views and viewgroups we'll later discuss.
 
@@ -74,7 +74,7 @@ An example of `EditText` in XML:
     android:inputType="text"
     android:maxLength="10"/>
 ```
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-edit-text.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-edit-text.png)
 
 The attributes we stated above will be broken down as follows:
 - `android:hint=” Enter your Name”` - It is used to display the hint when the view is empty. The user will see the hint as “Enter your Name”.
@@ -96,7 +96,7 @@ An example of Button in XML:
     android:backgroundTint="#df3e4c"/>
 ```
 
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-button.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-button.png)
 
 The attributes are defined as follows:
 - `android:backgroundTint=”#de4f3e”` - It sets the background color of the button.
@@ -117,7 +117,7 @@ An example of `ImageView` in XML:
     android:layout_height="140dp"
     android:src="@drawable/ic_campaign"/>
 ```
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-image-view.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-image-view.png)
 
 The attribute above is defined as follows:
 
@@ -182,7 +182,7 @@ An example of `RelativeLayout` in XML:
 </RelativeLayout>
 ```
 
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-relative-layout.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-relative-layout.png)
 
 The attributes are defined as follows:
 
@@ -233,7 +233,7 @@ An example of `LinearLayout` in XML:
 </LinearLayout>
 ```
 
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-linear-layout.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-linear-layout.png)
 
 The attributes above can be defined as follows:
 -`android:gravity="center"`-  This controls how it positions all the views it contains in the viewgroup. In this case, the views will align at the center.
@@ -305,7 +305,7 @@ An example of `ConstraintLayout` in XML:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-constraint-layout.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-constraint-layout.png)
 
 The attributes above are defined as shown below:
 
@@ -354,7 +354,7 @@ The attributes above are defined as shown below:
 
 </FrameLayout>
 ```
-![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-frame-layout.png)
+![Output screen](/introduction-to-android-views-and-view-groups/screenshot-frame-layout.png)
 
 The attributes above are defined as follows:
 - `android:layout_marginTop="20dp` - Specifies extra space at the top of a view. Hence, the extra space is set to "20dp"
@@ -366,4 +366,4 @@ Android also provides more viewgroups such as `GridLayout` and `TableLayout` for
 In this article, we've looked at creating views and viewgroups. We have also seen some of the attributes associated with our views and viewgroups, where they are used and what they are used for. This helps developers build android applications with a better user experience.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

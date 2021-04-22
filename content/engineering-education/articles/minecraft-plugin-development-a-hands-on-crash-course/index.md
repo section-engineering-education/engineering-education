@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/minecraft-plugin-development-a-hands-on-crash-course/
+url: /minecraft-plugin-development-a-hands-on-crash-course/
 title: Minecraft Plugin Development - A Hands-On Crash Course
 description: This will be an interactive tutorial on the basics of coding our own Minecraft plugins.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/minecraft-plugin-development-a-hands-on-crash-course/hero.png
+  - url: /minecraft-plugin-development-a-hands-on-crash-course/hero.png
     alt: Java Minecraft Plugin image
 
 ---
@@ -70,7 +70,7 @@ Finally, it will ask what to call the root folder and where to put it. In case y
 
 The repository will also contain extra info about the setup you may be interested in. In the end, you should have a project structure like this:
 
-![basic setup](/engineering-education/minecraft-plugin-development-a-hands-on-crash-course/plugin-setup.png)
+![basic setup](/minecraft-plugin-development-a-hands-on-crash-course/plugin-setup.png)
 
 All this, except for the `.idea` folder and `(project name).iml` file, are the essential elements we need to get started. For this guide, you can disregard any other folders or files. 
 
@@ -78,7 +78,7 @@ Within the main package (in this case: src>main>java>me>john>amiscaray>minecraft
 
 That Java file, which is named the same as the artifact ID, should have the following basic structure:
 
-![plugin main class](/engineering-education/minecraft-plugin-development-a-hands-on-crash-course/plugin-main-class.png)
+![plugin main class](/minecraft-plugin-development-a-hands-on-crash-course/plugin-main-class.png)
 
 That file will be the main entry point of our plugin where all the magic starts. For that reason, I will be referring to it as our plugin's main class.
 
@@ -420,4 +420,4 @@ Lastly, try to make a plugin that will detect if emeralds are in a loaded chunk.
 My solutions may not be perfect so if you find a better solution, feel free to send a pull request. Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

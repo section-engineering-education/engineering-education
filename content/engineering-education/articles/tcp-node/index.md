@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tcp-node/
+url: /tcp-node/
 title: Concepts of TCP, Explained with Node.js
 description: Networking is something all of us rely on every day. This article talks about the concepts of TCP explained with Node.js.
 author: mike-white
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/tcp-node/hero.jpg
+  - url: /tcp-node/hero.jpg
     alt: node.js tcp example image
 ---
 Networking is a very important part of computing. But how do we do it? A network is a group of computers that are able to talk to each other. The Internet is a famous example of a network.
@@ -231,7 +231,7 @@ newProblem();
 Of course, the client can work in whatever way you want it to. If you wanted to create a GUI, you can, as long as the correct data is still being sent to the server.
 
 ### Why?
-There's already an article about [Socket.io](/engineering-education/understanding-socket/), so why do we need to know this?
+There's already an article about [Socket.io](/understanding-socket/), so why do we need to know this?
 
 Socket.io is really just an abstraction for what we've done here. The difference for us is that we had to create and parse our own protocol. It may be more efficient to use your own protocol than to use Socket.io's abstractions. Socket.io doesn't know what you plan to do, so it plans for anything. It sends an entire object in JSON, even if you only need one property.
 

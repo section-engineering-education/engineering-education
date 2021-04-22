@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-influxdb/
+url: /introduction-to-influxdb/
 title: Introduction to InfluxDB
 description: In this tutorial, we will go through the basics of time-series data and the most popular time-series database called InfluxDB. We will install InfluxDB on our local system and execute an array of queries on time-series data.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-influxdb/hero.jpg
+  - url: /introduction-to-influxdb/hero.jpg
     alt: Introduction to InfluxDB Hero Image
 ---
 DBMS or database management systems play a key role as the foundational building blocks of any modern application. Whether you are a database administrator, a developer, or an IT professional, extensive knowledge of databases is essential. In this article, we will look at a class of databases called time-series databases and understand how they work.
@@ -50,7 +50,7 @@ InfluxDB is the most popular open-source time-series database, created by a comp
 #### Installing InfluxDB
 1. Head over to [this](https://portal.influxdata.com/downloads/) link to download InfluxDB from the official website. 
 
-![Select](/engineering-education/introduction-to-influxdb/select.png)
+![Select](/introduction-to-influxdb/select.png)
 
 2. Click on v1.8.3. It will open a window providing various options to download it. Choose the most convenient method and follow the commands given. Since I am using Ubuntu, I will execute the following commands:
 
@@ -59,7 +59,7 @@ wget https://dl.influxdata.com/influxdb/releases/influxdb_1.8.3_amd64.deb
 sudo dpkg -i influxdb_1.8.3_amd64.deb
 ```
 
-![Download](/engineering-education/introduction-to-influxdb/download.png)
+![Download](/introduction-to-influxdb/download.png)
 
 3. You can also install it using Docker. Run the following command:
 
@@ -82,14 +82,14 @@ Open a terminal or command line and execute the following command:
 influxd
 ```
 
-![influxd](/engineering-education/introduction-to-influxdb/influxd.png)
+![influxd](/introduction-to-influxdb/influxd.png)
 
 This starts the server and runs all the processes necessary for InfluxDB. Open another terminal window and execute the following command to get access to the InfluxDB shell:
 
 ```bash
 influx
 ```
-![Influx](/engineering-education/introduction-to-influxdb/influx.png)
+![Influx](/introduction-to-influxdb/influx.png)
 
 This starts a shell that allows us to execute queries. 
 
@@ -107,7 +107,7 @@ To see if the database has been created or not, execute the `show` databases com
 ```sql
 SHOW DATABASES	
 ```
-![Show](/engineering-education/introduction-to-influxdb/show_databases.png)
+![Show](/introduction-to-influxdb/show_databases.png)
 
 To use and switch to "test", execute the `use` command:
 
@@ -149,10 +149,10 @@ To view the inserted data, execute the following query:
 SELECT * FROM temperature
 ```
 
-![Select temp](/engineering-education/introduction-to-influxdb/select_temperature.png)
+![Select temp](/introduction-to-influxdb/select_temperature.png)
 
 ### Conclusion
 In this tutorial, we have gone through the basics of time-series data and the most popular time-series database called InfluxDB. We installed InfluxDB on our local system and executed an array of queries on time-series data. In the next tutorial, we will build an analytics system using the API provided by InfluxDB for Python. 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

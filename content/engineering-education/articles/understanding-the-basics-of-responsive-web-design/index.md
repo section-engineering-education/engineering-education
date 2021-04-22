@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-the-basics-of-responsive-web-design/
+url: understanding-the-basics-of-responsive-web-design/
 title: Understanding the Basics of Responsive Web Design (RWD)
 description: This article will be an introduction to Responsive Web Design. We will explore the building blocks of RWD, it's importance and also a brief guide on how to get started with this technique.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-the-basics-of-responsive-web-design/hero.jpg
+  - url: /understanding-the-basics-of-responsive-web-design/hero.jpg
     alt: Responsive Web Design Image
 ---
 Many global businesses are building websites to provide a platform for marketing and promoting their products. Only building an attractive website may not be enough since customers require a site that promotes usability and responsiveness. Responsive web design ensures that a website responds well to various devices used by customers. 
@@ -71,7 +71,7 @@ Prepare all the images and content that will be used on your website. Doing this
 #### Step 4: Select a responsive WordPress theme
 You can purchase a responsive WordPress theme [here](https://themeforest.net/popular_item/by_category?category=wordpress&_ga=2.256398347.1451571840.1610998232-961460759.1609948334). The theme should be selected based on the features, customization options, and design. An appealing design should be chosen to attract customers to the responsive website. We will use the Oshine theme to explain the setup process. The following is an image of how the Oshine WordPress theme looks like. 
 
-![Oshine Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/oshine-theme.png)
+![Oshine Theme](/understanding-the-basics-of-responsive-web-design/oshine-theme.png)
 
 [Image Source: Tutsplus](https://cms-assets.tutsplus.com/uploads/users/1223/posts/29942/image/oshine-theme.png)
 
@@ -83,24 +83,24 @@ Another screen will pop up requiring you to fill in details such as your site’
 #### Step 6: Installing a theme
 In this step, you need to install the WordPress theme that you chose in step 4. In the WordPress dashboard, follow this selection sequence: **appearance**-> **themes**-> **add new**. 
 
-![Adding WordPress Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/adding-wordpress-theme.png)
+![Adding WordPress Theme](/understanding-the-basics-of-responsive-web-design/adding-wordpress-theme.png)
 
 Click on 'upload theme'. Click on 'install' to begin the installation. When this is done, click on 'activate'. 
 
-![Installing A Theme](/engineering-education/understanding-the-basics-of-responsive-web-design/installing-a-theme.jpg)
+![Installing A Theme](/understanding-the-basics-of-responsive-web-design/installing-a-theme.jpg)
 
 
 #### Step 7: Install plugins
 When your chosen theme has been activated, you will find a link written ‘begin installing plugins’. Click on this link to begin the installation process. Click on the tab 'install plugins'.
 
-![Installing plugins](/engineering-education/understanding-the-basics-of-responsive-web-design/installing-plugins.jpg)
+![Installing plugins](/understanding-the-basics-of-responsive-web-design/installing-plugins.jpg)
 
 After selecting all the plugins, click on ‘install’. Any inactive plugins can be activated by following this sequence: **plugins**-> **all plugins**-> **inactive**. Click on ‘activate’. 
 
 #### Step 8: Import demo content
 You can import the demo content to get an overview of how your site will look like. Go to 'import' and choose a demo design. After selecting the contents needed, click on ‘install’. 
 
-![Importing Demo Content](/engineering-education/understanding-the-basics-of-responsive-web-design/importing-demo-content.jpg)
+![Importing Demo Content](/understanding-the-basics-of-responsive-web-design/importing-demo-content.jpg)
 
 #### Step 9: Customize your site
 This can be done by replacing the demo content with the content you prepared in step 3. Simply go to the part that you want to change and enter your intended text. Change the settings accordingly to suit your needs. 
@@ -111,33 +111,33 @@ Here are three examples of popular responsive websites.
 #### 1. BMW
 BMW is a multinational automobile company that produces motorcycles and luxury vehicles. The website for this company consists of many background videos as well as images. The following is a screenshot of this website on a laptop. 
 
-![BMW via Laptop Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/bmw-via-laptop-browser.png)
+![BMW via Laptop Browser](/understanding-the-basics-of-responsive-web-design/bmw-via-laptop-browser.png)
 
 All this content responds well to various screen sizes. The website appears as shown below on a mobile device.
 
-![BMW via Mobile Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/bmw-via-mobile-browser.jpg)
+![BMW via Mobile Browser](/understanding-the-basics-of-responsive-web-design/bmw-via-mobile-browser.jpg)
 
 You can access all the icons even with a mobile device. When using the laptop browser, the main icons appear at the top of the website. When using the mobile device, you can access these icons using a [hamburger menu](https://www.computerhope.com/jargon/h/hamburger-menu.htm) at the top left corner of the website. 
 
 #### 2. YouTube
 Youtube is an online platform that enables users to view, upload, rate, or share video files. If we open Youtube using a laptop, the website will appear as follows. 
 
-![YouTube via Laptop Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/youtube-via-laptop-browser.png)
+![YouTube via Laptop Browser](/understanding-the-basics-of-responsive-web-design/youtube-via-laptop-browser.png)
 
 In this kind of view, each row consists of four columns. However, when we open this website using a mobile device, the number of columns will reduce, but the user can scroll down the page to access videos. 
 
-![YouTube via Mobile Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/youtube-via-mobile-browser.jpg)
+![YouTube via Mobile Browser](/understanding-the-basics-of-responsive-web-design/youtube-via-mobile-browser.jpg)
 
 When using the laptop browser, important icons such as trending, subscriptions, and library appear at the left side of the website. These icons appear at the bottom of the website when you use a mobile browser. 
 
 #### 3. Amazon
 Amazon is an e-commerce giant that engages in the online sale of various products. Just like YouTube, each row in the Amazon website consists of many columns when you access it using a laptop browser. 
 
-![Amazon via Laptop Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/amazon-via-laptop-browser.png)
+![Amazon via Laptop Browser](/understanding-the-basics-of-responsive-web-design/amazon-via-laptop-browser.png)
 
 When you open the website using a mobile device, it will appear as follows.
 
-![Amazon via Mobile Browser](/engineering-education/understanding-the-basics-of-responsive-web-design/amazon-via-mobile-browser.jpg)
+![Amazon via Mobile Browser](/understanding-the-basics-of-responsive-web-design/amazon-via-mobile-browser.jpg)
 
 The 'sign in' icon is still available when you open the browser using your mobile device. This icon appears on the right side of the website when you use a laptop browser. In the mobile browser, the number of columns has reduced to suit the relatively smaller screen size. You can view various products by scrolling down. 
 
@@ -154,4 +154,4 @@ Popular examples of responsive sites include YouTube, BMW, and Amazon. If you ha
 [Smashing Magazine](https://www.smashingmagazine.com/2013/05/the-state-of-responsive-web-design/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

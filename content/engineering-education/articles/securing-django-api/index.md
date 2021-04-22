@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/securing-django-api/
+url: /securing-django-api/
 title: Introduction on Securing Django APIs
 description: This tutorial will be an introduction on how to secure a Django API, using token-based authentication and JavaScript web token to perform requests.
 author: odhiambo-paul
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/securing-django-api/hero.jpg
+  - url: /securing-django-api/hero.jpg
     alt: Django API web based tokens example image
 ---
-In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/engineering-education/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
+In this tutorial, we will secure our TODO API endpoints that we previously created in this [article](/django-crud-api/). We will start by implementing Token-based authentication and then implement Javascript web tokens (JWT).
 <!--more-->
 
 ### Token-based authentication
@@ -65,7 +65,7 @@ Run the command `./manage.py migrate` to create the table that will store the au
  ```
 
 ### Project setup
-Since this is a continuation of our previous [article](/engineering-education/django-crud-api/), we will be using the `Django_todo` application that we created there.
+Since this is a continuation of our previous [article](/django-crud-api/), we will be using the `Django_todo` application that we created there.
 
 If you don't have the application we created in the previous article, you can clone it from [here](https://github.com/paulodhiambo/django_todo/tree/master).
 
@@ -164,7 +164,7 @@ We will be using the generated token `342b58233e5fdeb2446bcaae60b6e51e953f7a17` 
 
 Let's make a request to `http://127.0.0.1:8000/api/v1/todo/` adding our token as an authorization header `Authorization: Token 342b58233e5fdeb2446bcaae60b6e51e953f7a17`.
 
-![GET Request with token](/engineering-education/securing-django-api/get-using-token.png)
+![GET Request with token](/securing-django-api/get-using-token.png)
 
 ### User token endpoint
 The Django rest framework comes with an endpoint that users can use to generate their authentication tokens by providing their valid username and password.
@@ -189,7 +189,7 @@ urlpatterns = [
 
 Making a POST request to `http://127.0.0.1:8000/api/token/` with a valid username and password returns an authentication token in the response body that can be used to authenticate subsequent requests.
 
-![POST Request](/engineering-education/securing-django-api/get-token.png)
+![POST Request](/securing-django-api/get-token.png)
 
 
 ### Implementing the JSON web token JWT authentication
@@ -283,7 +283,7 @@ urlpatterns = [
 **Obtaining Token**
 To get the access and refresh tokens, make a POST request to `http://127.0.0.1:8000/api/jwt/token/` passing in username and password.
 
-![POST JWT Request](/engineering-education/securing-django-api/jwt-get-token.png)
+![POST JWT Request](/securing-django-api/jwt-get-token.png)
 
 We get a refresh and access token as the response.
 
@@ -296,17 +296,17 @@ We get a refresh and access token as the response.
 
 To access the protected endpoints in our backend, we should include the access token in the header of all of our requests.
 
-![Postman image](/engineering-education/securing-django-api/jwt-rquest.png)
+![Postman image](/securing-django-api/jwt-rquest.png)
 
 We can use the access token within 5 minutes before it expires. After that we will need to obtain another access token using the refresh token we got from the previous API request.
 
 When we try to make requests to protected endpoints, we will get the error below.
 
-![GET Request](/engineering-education/securing-django-api/jwt-error.png)
+![GET Request](/securing-django-api/jwt-error.png)
 
 To get a new access token, we will make a post request to `http://127.0.0.1:8000/api/jwt/token/refresh/` posting the refresh token.
 
-![POST Request](/engineering-education/securing-django-api/jwt-refresh.png)
+![POST Request](/securing-django-api/jwt-refresh.png)
 
 The refresh token is valid for 24 hours, after that a user is required to reauthenticate in order to obtain a new refresh and access token.
 
@@ -317,5 +317,5 @@ For additional customization, visit [Django simple jwt](https://github.com/daves
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

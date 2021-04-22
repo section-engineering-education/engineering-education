@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-workmanager/
+url: /android-workmanager/
 title: Basics of Android Workmanager
 description: This article goes through the basics of Andriod workmanager, which is an AndroidX library that helps in running tasks asynchronously. It ensures that the work is done even if the user exits the app or the device restarts.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-workmanager/hero.jpg
+  - url: /android-workmanager/hero.jpg
     alt: Android work manager image
 ---
 Background work has been a core part of Android application development for a long time. This is because it allows the execution of tasks without any interference with the user interface. However, implementing such functionality is not an easy task. One has to consider resources such as threads and when to start running the task.
@@ -69,7 +69,7 @@ The application follows a basic `MVVM architecture` approach so go ahead and cre
 
 The code is in charge of generating random data for us.
 
-The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/engineering-education/introduction-to-room-db).
+The Room database is also set up in the [db package](https://github.com/LinusMuema/kotlin/tree/workManager/app/src/main/java/com/moose/androidkt/db). You can read more about Room in [this article](/introduction-to-room-db).
 
 ### Step 2 - Defining our work
 Create a new package and name it `work`. In here we will place our jobs or work.
@@ -112,7 +112,7 @@ override fun onStopped() {
 }
 ```
 
-First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about `RxJava` in Android, you can go through [this article](/engineering-education/android-rxjava/).
+First, we initialize the Room Dao and pass in the context available during the work execution. Then we create a `CompositeDisposable` that holds the disposables created during our job execution. We dispose it in the `onStopped` method when the work is done. To read more about `RxJava` in Android, you can go through [this article](/android-rxjava/).
 
 We then use a try-catch block to execute our job, namely, to get a user and save them to our Room database. If any error occurs, the catch block returns a `Result.failure()` otherwise, we return a `Result.success()`.
 
@@ -195,4 +195,4 @@ With that, you have the basic information about `WorkManager`. As you can see, i
 A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Feel free to raise a PR or an issue with any updates.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

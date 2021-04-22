@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-paging-library/
+url: /android-paging-library/
 title: Paging in Android
 description: This article takes the reader through integrating the paging library into an Android application. Paging library helps in fetching data in page sets rather than a single list.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-paging-library/hero.png
+  - url: /android-paging-library/hero.png
     alt: Paging image example
 ---
 With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. 
@@ -28,7 +28,7 @@ The basic flow is, once a user nears the end of a recyclerview, the library fetc
 To follow through the article, you will need:
 - Android Studio installed
 - A basic understanding of Kotlin
-- Some experience with the [Room library](/engineering-education/introduction-to-room-db).
+- Some experience with the [Room library](/introduction-to-room-db).
 
 ### Step 1 — Getting the starter code
 You can [download](https://github.com/LinusMuema/kotlin/archive/54d55dbdda3afd9d166e765a3f8107eee2745954.zip) the starter code for this tutorial on GitHub.
@@ -165,4 +165,4 @@ Feel free to raise any issue or PR.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

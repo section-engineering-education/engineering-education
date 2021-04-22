@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/steganography-in-python/
+url: /steganography-in-python/
 title: Steganography - An Experiment in Python
 description: This is an example of an article on steganography and a simple application using python. By embedding a hidden message or file in an image, the number of pixels can be changed.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/steganography-in-python/hero.jpg
+  - url: /steganography-in-python/hero.jpg
     alt: steganography example image python 
 ---
 In steganography, an innocent-looking image is taken as an example and a message is embedded in the image by changing the number of pixels selected by the encryption algorithm. By embedding a hidden message or file in an image, the number of pixels can be changed.
@@ -236,7 +236,7 @@ app.mainloop()
 
 #### Output
 
-![](/engineering-education/steganography-in-python/decrypt.jpg)
+![](/steganography-in-python/decrypt.jpg)
 
 
 ### Conclusion

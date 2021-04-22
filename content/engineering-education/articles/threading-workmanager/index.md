@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/threading-workmanager/
+url: /threading-workmanager/
 title: Threading in WorkManager
 description: This article goes through how `WorkManager` manages threading and how to use the RxJava and Coroutines libraries in WorkManager using Kotlin.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/threading-workmanager/hero.png
+  - url: /threading-workmanager/hero.png
     alt: Threading in WorkManager image example
 ---
 Threading is a critical area in Android that every developer must be well informed in. Thread management determines how an application uses the devices resources. This ultimately affects the general performance of an application.
@@ -160,7 +160,7 @@ fun startWork(){
 
 Once you run your application, you should see two users on the screen as the first results from the two jobs.
 
-![demo](/engineering-education/threading-workmanager/demo.png)
+![demo](/threading-workmanager/demo.png)
 
 ### Conclusion
 We just went over how you use RxJava or Coroutines in `WorkManager`. You can go ahead and explore the various RxJava operators and Kotlin flow in your application. All the `Worker`, `RxWorker` and `CoroutineWorker` classes derive from the `ListenableWorker` class. This class does not handle any threading and so it would not be advisable to use it. 
@@ -168,4 +168,4 @@ We just went over how you use RxJava or Coroutines in `WorkManager`. You can go 
 You can it use to handle a callback based operation where you define your threading mechanism. Otherwise, just choose from the three available classes. Go ahead and raise a PR or issue in the [Github](https://github.com/LinusMuema/kotlin/tree/workmanager-threading) repository for any suggestions and comments.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

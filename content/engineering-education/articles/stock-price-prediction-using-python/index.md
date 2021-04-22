@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/stock-price-prediction-using-python/
+url: stock-price-prediction-using-python/
 title: Building a Stock Price Predictor Using Python
 description: In this tutorial, we will build an AI neural network model in Python to predict stock prices. Using Long short-term memory (LSTM) artificial recurrent neural network (RNN) architecture used in time series analysis.
 author: ahmad-mardeni
@@ -11,12 +11,12 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/stock-price-prediction-using-python/hero.png
+  - url: /stock-price-prediction-using-python/hero.png
     alt: stock price prediction python
 ---
 In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically, we will work with the **Tesla** stock, hoping that we can make Elon Musk happy along the way.
 <!--more-->
-If you are a beginner, it would be wise to check out [this article](/engineering-education/introduction-to-neural-networks/) about neural networks. 
+If you are a beginner, it would be wise to check out [this article](/introduction-to-neural-networks/) about neural networks. 
 
 To get the most out of this tutorial, it would be helpful to have the following prerequisites.
 
@@ -33,13 +33,13 @@ When you read this text, you understand each word based on previous words in you
  
 Let's use a few illustrations to demonstrate how a RNN works. 
 
-![Recurrent Neural Networks with loops](/engineering-education/stock-price-prediction-using-python/first.png)
+![Recurrent Neural Networks with loops](/stock-price-prediction-using-python/first.png)
 
 When **A** takes the input **Xt**, then **Ht** will be the output.
  
 A recurrent neural network is like multiple copies of the same network that passes the message to a successor. Now let's think a little bit about what happens if we unroll the previous loop:
  
-![Unroll the loop in the recurrent neural network](/engineering-education/stock-price-prediction-using-python/second.png)
+![Unroll the loop in the recurrent neural network](/stock-price-prediction-using-python/second.png)
  
 Here comes the **vanishing gradient problem** of the RNN, where it can not handle large sequences. Long short-term memory (LSTM) are designed to handle long-term dependencies.
  
@@ -205,7 +205,7 @@ plt.legend()
 
 The result will be:
 
-![Plotting results](/engineering-education/stock-price-prediction-using-python/third.png)
+![Plotting results](/stock-price-prediction-using-python/third.png)
 
 That's all. You can find the entire code [here](https://github.com/ahmadmardeni1/Stock-price-predection-using-Python), and you can run it by clicking on "Open in Colab."
 
@@ -216,4 +216,4 @@ We got a very good prediction result! Imagine if you are working with multiple v
 I also recommend you to change layers, numbers, epochs, and batch_size. Try it out for yourself and change whatever you think may improve your prediction and more accurate.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

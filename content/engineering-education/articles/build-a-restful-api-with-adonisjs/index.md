@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-restful-api-with-adonisjs/
+url: /build-a-restful-api-with-adonisjs/
 title: Building a RESTful API with Adonis.js
 description: In this tutorial, we will create a RESTful API using Adonis.js. We will cover aspects such as authentication and authorization. The tutorial also covers best practices in structuring and building out your HTTPS endpoint and industry-standard responses.
 author: solomon-eseme
@@ -10,7 +10,7 @@ date: 2021-03-03T00:00:00-16:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/build-a-restful-api-with-adonisjs/hero.jpg
+  - url: /build-a-restful-api-with-adonisjs/hero.jpg
     alt: Buid a restful api with Adonis.js
 ---
 In the ever-changing world of frontend and backend frameworks, learning and building RESTful APIs is a demanding skill for any software engineer. Adonis.js allows you to master the skills and knowledge to become a full-stack developer.
@@ -420,15 +420,15 @@ To resolve it, please run this command to install the package.
 
 If we test the `posts` endpoint without authentication, we will face this error.
 
-![Test API Error](/engineering-education/build-a-restful-api-with-adonisjs/test-api-error.png)
+![Test API Error](/build-a-restful-api-with-adonisjs/test-api-error.png)
 
 The error is eliminated if we login using the `/api/login` or register via the `/api/register` endpoint to retrieve our API Token.
 
-![Test API Auth](/engineering-education/build-a-restful-api-with-adonisjs/test-api-auth.png)
+![Test API Auth](/build-a-restful-api-with-adonisjs/test-api-auth.png)
 
 We can access the protected endpoints after inserting the token as the `Authorization header` value.
 
-![Test API Header](/engineering-education/build-a-restful-api-with-adonisjs/test-api-header.png)
+![Test API Header](/build-a-restful-api-with-adonisjs/test-api-header.png)
 
 Follow the following video to test the API.
 
@@ -444,4 +444,4 @@ You can now use these skills to create more productive and appealing application
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

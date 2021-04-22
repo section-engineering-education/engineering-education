@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-8-email-verification/
+url: /laravel-8-email-verification/
 title: Laravel Email Verification
 description: This tutorial introduces the basic concepts of email verification in Laravel 8.x. This feature ensures that only users with authentic emails sign up for a particular service.
 author: miller-juma
@@ -10,7 +10,7 @@ date: 2021-02-24T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/laravel-8-email-verification/hero.jpg
+  - url: /laravel-8-email-verification/hero.jpg
     alt: laravel email verification
 ---
 Laravel is a simple-to-understand PHP-based system. It makes it easy to code complex features in an application. Email authentication is one characteristic that can be implemented easily using Laravel.
@@ -131,7 +131,7 @@ Laravel 8 distanced itself from its scaffolding for authentication and supports 
 
 Jetstream provides login, registration, 'email verification', two-factor authentication, session management, API via Laravel Sanctum, as well as optional features for team management. 
 
-You can learn more about the new Laravel features including authentication scaffolding from [here](/engineering-education/laravel-8-new-features/).
+You can learn more about the new Laravel features including authentication scaffolding from [here](/laravel-8-new-features/).
 
 This tutorial assumes you already have a Laravel project set up and running. If you do not have a project configuration for Laravel, you can do so before proceeding further.  
 
@@ -274,4 +274,4 @@ In this tutorial we have learned how to incorporate email authentication using L
 Happy coding.
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

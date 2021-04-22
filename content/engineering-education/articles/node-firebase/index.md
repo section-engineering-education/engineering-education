@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-firebase/
+url: /node-firebase/
 title: Node.js Firebase
 description: This is a short tutorial that shows how to use the firebase real-time database to store and listen to changes in the database and sending them to listening to clients in real time.
 author: linus-muema
@@ -13,7 +13,7 @@ aliases:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-firebase/hero.jpg
+  - url: /node-firebase/hero.jpg
     alt: node authentication image example key
 ---
 Real-time data has become a crucial part of most applications these days. Many web applications use sockets to connect clients to other clients and to servers. Still, the main challenge with this is the storage of data. Firebase has a real-time database feature that allows easy creation of real-time applications such as chat apps.
@@ -80,8 +80,8 @@ Once the websocket connection closes, we also close the database to avoid wastin
 
 As you can see below, two messages are sent to the server, once saved, we get two logs and two messages sent to the clients.
 
-![socket](/engineering-education/node-firebase/socket.jpg)
+![socket](/node-firebase/socket.jpg)
 
-![log](/engineering-education/node-firebase/log.jpg)
+![log](/node-firebase/log.jpg)
 
 In case you prefer socket.io for client-client connections, you can check out the [socket.io](https://www.section.io/engineering-education/understanding-socket/) tutorial and incorporate firebase to save the messages.

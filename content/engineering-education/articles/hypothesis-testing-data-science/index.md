@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hypothesis-testing-data-science/
+url: /hypothesis-testing-data-science/
 title: Hypothesis Testing in Data Science
 description: This article will go over the concept of a hypothesis in data science and we will discuss its significance to machine learning. We will also give a basic overview of the steps taken to test a hypothesis.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/hypothesis-testing-data-science/hero.jpg
+  - url: /hypothesis-testing-data-science/hero.jpg
     alt: Hypothesis Testing in Data Science image example
 ---
 When using machine learning, we need to be able to trust our models and the predictions they make. We may use sample data to train our models. This sample data may make certain assumptions about a population.
@@ -70,7 +70,7 @@ It is denoted as $H_0$.
 
 On the other hand, an alternative hypothesis results from the experiment that we hope to show. We want the alternative hypothesis to be true. It is the hypothesis that is the alternate of the null hypothesis. The image below shall aid in the understanding of these two types of hypotheses.
 
-![nullalternative](/engineering-education/hypothesis-testing-data-science/nullatlernative.png)
+![nullalternative](/hypothesis-testing-data-science/nullatlernative.png)
 
 *Null vs. alternative hypothesis*
 
@@ -81,7 +81,7 @@ After forming our null and alternative hypotheses, we should select a significan
 
 The image below visualizes the significance level.
 
-![significancelevel](/engineering-education/hypothesis-testing-data-science/significancelevel.png)
+![significancelevel](/hypothesis-testing-data-science/significancelevel.png)
 
 *Alpha = 5%, denoting significance level*
 
@@ -157,7 +157,7 @@ Happy coding, happy reading!
 14. [Understanding Hypothesis Tests: Significance Levels (Alpha) and P values in Statistics](https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/validating-xml-using-dtd/
+url: /validating-xml-using-dtd/
 title: Validating XML using DTD
 description: A tutorial on introduction to XML, the need for XML validation, and how validation is done using DTD.
 author: srishilesh-p-s
@@ -10,7 +10,7 @@ date: 2020-11-11T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/validating-xml-using-dtd/hero.jpg
+  - url: /validating-xml-using-dtd/hero.jpg
     alt: Validating XML using DTD
 ---
 In this article, we will learn about XML and how validation is done using Document Type Definition (DTD). By the end of this article, you will understand different data serialization techniques, the need for XML, and the importance of XML validation. To better understand the concepts, we will also validate a sample XML document.
@@ -32,7 +32,7 @@ Depending on the architecture, the representations will vary. Similarly, the sto
 
 With each system having different architectures, communication between two different architectures will require a common medium to transport data. This leads us to the concept of Data serialization.
 
-![Data serialization](/engineering-education/validating-xml-using-dtd/data_serialization.jpg)
+![Data serialization](/validating-xml-using-dtd/data_serialization.jpg)
 
 [Image source](https://devopedia.org/data-serialization)
 
@@ -52,7 +52,7 @@ There are several types of serialization formats, like:
 - [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) (Protocol Buffers - 2008)
 - [BSON](https://en.wikipedia.org/wiki/BSON) (Binary JSON - 2016)
 
-For example, we use a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) serialization format to represent the data using comma-separated values. It's more commonly used in [Machine Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), as datasets for training and testing the model.
+For example, we use a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) serialization format to represent the data using comma-separated values. It's more commonly used in [Machine Learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), as datasets for training and testing the model.
 
 Similarly, [JSON](https://en.wikipedia.org/wiki/JSON) is the most commonly used serialization format in web technologies. It represents a key-value pair containing information. For example, we can use it in HTTP requests and responses, where it reads the data from a web server and displays it on the web page.
 
@@ -72,7 +72,7 @@ A markup language is a way of styling a document to be syntactically distinguish
 
 [XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by exchanging information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but it’s also being used to transfer data. It improves on the existing HTML approach and helps in communication among other data serialization types.
 
-[Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. We can learn more about DOM in this Section article [‘Understanding Document Object Model (DOM)’](/engineering-education/document-object-model/).
+[Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. We can learn more about DOM in this Section article [‘Understanding Document Object Model (DOM)’](/document-object-model/).
 
 Creating XML documents was much easier, but sometimes it could leads to frequent errors like not matching the required syntax. Since XML codes are neither compiled nor interpreted, the only option left was to parse. Making validation of XML codes necessary.
 
@@ -271,4 +271,4 @@ To summarize:
 - https://quzzister.com/essay/what-is-xml-essay-19589
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

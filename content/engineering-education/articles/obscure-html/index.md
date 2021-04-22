@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/obscure-html/
+url: /obscure-html/
 title: Five Obscure but Useful HTML Tags
 description: This article details five obscure  and not often used but useful HTML tags - All these will work with HTML5 - need to use JavaScript to render it later.
 author: mike-white
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/obscure-html/hero.jpg
+  - url: /obscure-html/hero.jpg
     alt: computer image asm example
 ---
 If you're not familiar with [HTML](https://www.w3schools.com/html/default.asp), this article isn't going to be of much use to you. Sorry.

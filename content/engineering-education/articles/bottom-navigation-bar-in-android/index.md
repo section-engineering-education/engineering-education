@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/bottom-navigation-bar-in-android/
+url: /bottom-navigation-bar-in-android/
 title: Bottom Navigation Bar in Android Applications
 description: This article goes through how integrate a Bottom Navigation View using a Navigation Component to add the Navigation Views in an Android applications.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/bottom-navigation-bar-in-android/hero.jpg
+  - url: /bottom-navigation-bar-in-android/hero.jpg
     alt: example image bottom navigation bar in Android applications
 ---
 A **Bottom Navigation View** navigation tool enables users to explore and change to different views in an application. A **Navigation Component** is a set of libraries developed by Google to manage complex navigation functions like animations, transitions, etc.
@@ -27,11 +27,11 @@ We use a Bottom Navigation View when an application has the following:
 
 A few popular mobile applications that use this navigation component are Instagram, Twitter, Youtube, etc.
 
-![Instagram](/engineering-education/bottom-navigation-bar-in-android/instagram.jpg)
+![Instagram](/bottom-navigation-bar-in-android/instagram.jpg)
 
-![Twitter](/engineering-education/bottom-navigation-bar-in-android/twitter.jpg)
+![Twitter](/bottom-navigation-bar-in-android/twitter.jpg)
 
-![Youtube](/engineering-education/bottom-navigation-bar-in-android/youtube.jpg)
+![Youtube](/bottom-navigation-bar-in-android/youtube.jpg)
 
 ### Structure of a Bottom Navigation Bar
 A Bottom Navigation bar is a container that contains the following:
@@ -40,7 +40,7 @@ A Bottom Navigation bar is a container that contains the following:
 - Active icon.
 - Active text label.
 
-![Structure of a Bottom Navigation Bar](/engineering-education/bottom-navigation-bar-in-android/structure.jpg)
+![Structure of a Bottom Navigation Bar](/bottom-navigation-bar-in-android/structure.jpg)
 
 ### Structure of a Navigation Component
 A navigation component consists of the following:
@@ -78,7 +78,7 @@ A navigation component consists of the following:
 #### Step 1 – Create a New Project
 -  Open Android Studio. Select *Start a new Android Studio project* with an Empty Activity. We will name the project **BottomNavigationBar**. Click Finish and wait for the project to build.
 
-![Name the project](/engineering-education/bottom-navigation-bar-in-android/name.jpg)
+![Name the project](/bottom-navigation-bar-in-android/name.jpg)
 
 #### Step 2 – Create a Navigation Graph
 In this step, we will create a Navigation Graph. Add the following dependencies in your **app** module level `build.gradle` file:
@@ -96,7 +96,7 @@ Select *Sync Now*.
 Right-click the `res` directory, click `New → Android Resource File`.
 A menu will pop up.
 
-![NavGraph Menu](/engineering-education/bottom-navigation-bar-in-android/navgraph.jpg)
+![NavGraph Menu](/bottom-navigation-bar-in-android/navgraph.jpg)
 
 We will name our resource file **nav_graph.**. For the Resource Type, select **Navigation** and then click `OK`. Next, we will add the destinations.
 
@@ -187,11 +187,11 @@ A NavHost is an empty container used to display destinations from the navigation
 
 **Note: An error for `app:menu="@menu/bottom_nav_menu"` is seen. This is because it does not exist. To solve this, click `Alt`+ `Enter` and select "Create resource file for bottom_nav_menu.xml"**
 
-![Create a resource file](/engineering-education/bottom-navigation-bar-in-android/createmenu.jpg)
+![Create a resource file](/bottom-navigation-bar-in-android/createmenu.jpg)
 
 This menu will pop up.
 
-![Menu](/engineering-education/bottom-navigation-bar-in-android/menu.jpg)
+![Menu](/bottom-navigation-bar-in-android/menu.jpg)
 
 Select *OK* and the error is fixed.
 
@@ -205,7 +205,7 @@ First, let us add the icons required. In the `res/drawable` directory, right-cli
 
 Select `New → Vector Asset`.
 
-![Vector Asset](/engineering-education/bottom-navigation-bar-in-android/vector.jpg)
+![Vector Asset](/bottom-navigation-bar-in-android/vector.jpg)
 
 - ***Asset type*** - provides an option of using a clipart or uploading a local file.
 - ***Name*** - name of the icon.
@@ -215,11 +215,11 @@ Select `New → Vector Asset`.
 
 Select the icon next to clipart. A list of different clipart is displayed.
 
-![Clipart List](/engineering-education/bottom-navigation-bar-in-android/list.jpg)
+![Clipart List](/bottom-navigation-bar-in-android/list.jpg)
 
 One can search for a clipart in the search bar and choose whether the design of the clipart should be filled or outlined. We will use the outlined design.
 
-![Favorites](/engineering-education/bottom-navigation-bar-in-android/favourites.jpg)
+![Favorites](/bottom-navigation-bar-in-android/favourites.jpg)
 
 Once a clipart is selected, click `OK → Next → Finish`. Open the menu file in `res/menu/bottom_navigation_menu` and add the following lines of code:
 
@@ -277,7 +277,7 @@ Lastly, we will set up the NavController and link it with the Bottom Navigation 
 
 We are done! Let’s run the app.
 
-![BottomNavigationView](/engineering-education/bottom-navigation-bar-in-android/progress.gif)
+![BottomNavigationView](/bottom-navigation-bar-in-android/progress.gif)
 
 Access the source code on [Github](https://github.com/BrianaNzivu/BottomNavigationBar).
 
@@ -287,4 +287,4 @@ Download the sample APK on this [Google Drive](https://drive.google.com/file/d/1
 We just went through the advantages and disadvantages of a Bottom Navigation View and we went through how to integrate a Bottom Navigation View using a Navigation Component to add the Navigation Views in an Android application.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

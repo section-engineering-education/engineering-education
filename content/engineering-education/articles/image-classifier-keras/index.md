@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/image-classifier-keras/
+url: image-classifier-keras/
 title: How to Build an Image Classifier with Keras
 description: In this article, we will learne how to build an image classifier using Keras. We will apply data augmentation to increase the size of our dataset. We will be able to visualize our training images.Image classification helps us recognize and identify images. 
 author: iniabasi-affiah
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/image-classifier-keras/hero.jpg
+  - url: /image-classifier-keras/hero.jpg
     alt: Shared Nothing and Shared Disk Clustering image
 ---
 In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.
@@ -31,7 +31,7 @@ The colab notebook for this project is [here](https://github.com/Inyrkz/covid-cl
  
 ### Prerequisites
 Before we begin it would be helpful to have the following understanding on the:
-- Basics of Convolutional Neural Network. I recommend this [article](/engineering-education/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
+- Basics of Convolutional Neural Network. I recommend this [article](/basics-of-convolution-neural-networks/) by Willies Ogola to get started.
 - Python Programming.
 - [Colab Notebook](https://colab.research.google.com/).
 
@@ -62,7 +62,7 @@ print('Tensorflow version:', tf.__version__)
 print('Is using GPU?', tf.test.is_gpu_available())
 ```
 
-![alt text](/engineering-education/image-classifier-keras/1.JPG)
+![alt text](/image-classifier-keras/1.JPG)
 
 We are using TensorFlow 2.4, but our output is False for GPU. We need to connect to a GPU runtime. 
 
@@ -70,21 +70,21 @@ To do that, we:
 
 1. Click on *Runtime*
 
-![alt text](/engineering-education/image-classifier-keras/runtime.jpg)
+![alt text](/image-classifier-keras/runtime.jpg)
 
 2. Select *Change runtime type*
 
-![alt text](/engineering-education/image-classifier-keras/runtime2.jpg)
+![alt text](/image-classifier-keras/runtime2.jpg)
 
 3. Select *GPU* as the hardware accelerator
 
-![alt text](/engineering-education/image-classifier-keras/runtime3.jpg)
+![alt text](/image-classifier-keras/runtime3.jpg)
 
 4. Click on *Save*
 
 Let us run the code above again.
 
-![alt text](/engineering-education/image-classifier-keras/4.JPG)
+![alt text](/image-classifier-keras/4.JPG)
 
 Now our output is *True*. It indicates that we are using a GPU on Google’s Colab. With a GPU, we can train our model faster.
 
@@ -95,11 +95,11 @@ Let us clone the GitHub repo containing the dataset.
 !git clone https://github.com/education454/datasets.git
 ```
 
-![alt text](/engineering-education/image-classifier-keras/5.JPG)
+![alt text](/image-classifier-keras/5.JPG)
 
 The dataset is now available in Colab.
 
-![alt text](/engineering-education/image-classifier-keras/6.JPG)
+![alt text](/image-classifier-keras/6.JPG)
 
 Let us set the path to the main directory of our dataset.
 
@@ -151,7 +151,7 @@ test_normal_names = os.listdir(test_normal_dir)
 print(test_normal_names[:10])
 ```
 
-![alt text](/engineering-education/image-classifier-keras/7.JPG)
+![alt text](/image-classifier-keras/7.JPG)
 
 
 Let's see the total number of images available in the training set and test set.
@@ -164,7 +164,7 @@ print("Total no of images in test set:", len(test_covid_names
                                             + test_normal_names))
 ```
 
-![alt text](/engineering-education/image-classifier-keras/8.JPG)
+![alt text](/image-classifier-keras/8.JPG)
 
 We have 1,811 images in the training set and 484 images in the test set.
 
@@ -197,7 +197,7 @@ merged_list = covid_pic + normal_pic
 print(merged_list)
 ```
 
-![alt text](/engineering-education/image-classifier-keras/9.JPG)
+![alt text](/image-classifier-keras/9.JPG)
 
 ```python
 # Plotting the images in the merged list
@@ -218,7 +218,7 @@ for i, img_path in enumerate(merged_list):
 plt.show()  # display the plot
 ```
 
-![alt text](/engineering-education/image-classifier-keras/10.JPG)
+![alt text](/image-classifier-keras/10.JPG)
 
 
 ### Data preprocessing and augmentation
@@ -272,7 +272,7 @@ test_generator = dgen_test.flow_from_directory(test_dir,
                                                class_mode=CLASS_MODE)
 ```
 
-![alt text](/engineering-education/image-classifier-keras/11.JPG)
+![alt text](/image-classifier-keras/11.JPG)
 
 The first argument is the path to the dataset. The next parameter is the *target_size*. It resizes all the images to the specified target size of 200x200. The *batch size* defines how many images we want to have in each batch. 
 
@@ -289,7 +289,7 @@ To get the class indices, we use the *class_indices* attribute.
 train_generator.class_indices
 ```
 
-![alt text](/engineering-education/image-classifier-keras/12.JPG)
+![alt text](/image-classifier-keras/12.JPG)
 
 We can also get the shape of our image by using the *image_shape* function.
 
@@ -298,7 +298,7 @@ We can also get the shape of our image by using the *image_shape* function.
 train_generator.image_shape
 ```
 
-![alt text](/engineering-education/image-classifier-keras/13.JPG)
+![alt text](/image-classifier-keras/13.JPG)
 
 
 ### Build CNN model
@@ -329,7 +329,7 @@ We add another Convolutional layer with 64 filters and a MaxPooling layer. We al
 
 The Flatten layer converts the data to a 1D vector. The dense layer is our fully connected layer. We are using 256 nodes with a *ReLU* activation function. We add another dropout layer, and we create an output layer with one node, using a *sigmoid* activation function. We are using one node at the output because it is a binary classification problem.
 
-![alt text](/engineering-education/image-classifier-keras/14.JPG)
+![alt text](/image-classifier-keras/14.JPG)
 
 
 ### Compile and train the model
@@ -367,13 +367,13 @@ We fit our model to the *train_generator* and train for 30 epochs. We set the *v
 
 If the validation accuracy doesn’t improve after 20 epochs, our model will stop training. The *save_best_only* parameter is set to *True*. It will save the model with the highest accuracy after each epoch. The *save_weights_only* parameter is set to *False*. It stores not only the weights but the whole architecture of the model.
 
-![alt text](/engineering-education/image-classifier-keras/15.JPG)
+![alt text](/image-classifier-keras/15.JPG)
 
-![alt text](/engineering-education/image-classifier-keras/23.JPG)
+![alt text](/image-classifier-keras/23.JPG)
 
 We store the best performing model in the models’ directory that we created earlier.
 
-![alt text](/engineering-education/image-classifier-keras/16.JPG)
+![alt text](/image-classifier-keras/16.JPG)
 
 We added the validation accuracy to the name of the model file. It will be easy for us to identify the best model in the directory.
 
@@ -392,7 +392,7 @@ Let us get the keys of the history object.
 history.history.keys()
 ```
 
-![alt text](/engineering-education/image-classifier-keras/17.JPG)
+![alt text](/image-classifier-keras/17.JPG)
 
 The history object stores the values of loss, accuracy, validation loss, and validation accuracy in each epoch.
  
@@ -407,7 +407,7 @@ plt.title('Training and Validation Losses')
 plt.xlabel('epoch')
 ```
 
-![alt text](/engineering-education/image-classifier-keras/18.JPG)
+![alt text](/image-classifier-keras/18.JPG)
 
 Let us also plot a graph to visualize the training and validation accuracy after each epoch of training.
 
@@ -419,7 +419,7 @@ plt.legend(['Training', 'Validation'])
 plt.xlabel('epoch')
 ```
 
-![alt text](/engineering-education/image-classifier-keras/19.JPG)
+![alt text](/image-classifier-keras/19.JPG)
 
 Let us see how our model performs on the testing data. Remember, the testing data is the data the model hasn’t seen during the training process.
 
@@ -432,7 +432,7 @@ test_loss, test_acc = model.evaluate(test_generator)
 print('Test loss: {} Test Acc: {}'.format(test_loss, test_acc))
 ```
 
-![alt text](/engineering-education/image-classifier-keras/21.JPG)
+![alt text](/image-classifier-keras/21.JPG)
 
 We get a test loss of approximately 0.0768 and a test accuracy of approximately 0.9731.
 
@@ -461,7 +461,7 @@ else:
   print('Report is Normal')
 ```
 
-![alt text](/engineering-education/image-classifier-keras/22.JPG)
+![alt text](/image-classifier-keras/22.JPG)
 
 The *load_img()* function from *keras.preprocessing.image* lets us load images in a PIL format. The first argument is the path to the image, and the second argument resizes our input image. After we load and resize our image, we convert it to a numpy array. 
 
@@ -486,4 +486,4 @@ Thank you for reading!!!
 2. [Coursera Guided Project](https://www.coursera.org/learn/classification-of-covid19-using-chest-xray-images-in-keras/home/welcome)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

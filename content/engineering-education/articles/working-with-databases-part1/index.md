@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-databases-part1/
+url: /working-with-databases-part1/
 title: Getting to Grips with Databases - Part 1
 description: Using MongoDB, this article proves that all you need to work with a database is some basic knowledge about the command line and JSON.
 author: louise-findlay
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/working-with-databases-part1/hero.jpg
+  - url: /working-with-databases-part1/hero.jpg
     alt: database image example
 ---
 For the uninitiated, databases can seem a complicated, mythical thing that only back-end developers, computer scientists, and programmers can work with. This article is here to dispel that myth and prove that all you need to work with a database is some basic knowledge about the command line and JSON.
@@ -19,12 +19,12 @@ For the uninitiated, databases can seem a complicated, mythical thing that only 
 <!--more-->
 
 ### MongoDB Installation
-![mongodb.png](/engineering-education/working-with-databases-part1/mongodb.png)<br>
+![mongodb.png](/working-with-databases-part1/mongodb.png)<br>
 [MongoDB](https://www.mongodb.com/) is a popular NoSQL database that you can run both locally and in the cloud (called MongoDB Atlas.) NoSQL stands for not just SQL and means it is non-relational which makes it easier to adapt to different types of data.
 
 To run MongoDB locally, first you'll have to install the Community Server from their [site](https://www.mongodb.com/download-center/community). To start, we'll be interacting with the database through the command line. Windows users will have to add mongo (the command used to run MongoDB) to their PATH so they can run the command successfully.
 
-![system-environment-variables.png](/engineering-education/working-with-databases-part1/system-environment-variables.png)<br>
+![system-environment-variables.png](/working-with-databases-part1/system-environment-variables.png)<br>
 **Windows users only**: Type `env` into the search box and press Enter when the Edit the system environment variables result is selected. Click Environment Variables and click Path under System variables. Edit this and add a new entry containing `C:\Program Files\MongoDB\Server\4.2\bin`. You may need to update the 4.2 part when new versions of MongoDB Community Server are released.
 
 Click OK to exit all the dialog boxes.
@@ -70,4 +70,4 @@ db.books.findOne( { "name" : "Harry Potter and the Chamber of Secrets" } )
 If you're looking to delete entries instead, use the `deleteOne()` and `deleteMany()` commands. For example, `db.books.deleteMany( { "genre": "Sci-Fi" } )` deletes entries in the books collection that have the Sci-Fi genre.
 
 ### Database Complete
-Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, check out [Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website](/engineering-education/working-with-databases-part2/).
+Congratulations, you've now created your first database and can add, delete, and find collections and entries in it. To learn how you can incorporate your newfound database knowledge on a website, check out [Getting to Grips with Databases Part 2: Develop Your First Data-Driven Website](/working-with-databases-part2/).

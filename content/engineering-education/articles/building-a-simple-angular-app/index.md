@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-simple-angular-app/
+url: /building-a-simple-angular-app/
 title: How to Build a Simple Angular SPA from Scratch
 description: This article will walk you on building a simple Angular application covering the basic and core Angular CLI concepts. The guide is handy for developers who are willing to have a hands-on experience, along with learning.
 author: mahantesh-r
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-simple-angular-app/hero.png
+  - url: /building-a-simple-angular-app/hero.png
     alt: Data Binding using Angular example image
 ---
 Angular 11 was released on [Nov 11, 2020](https://angular.io/guide/updating-to-version-11), by the Angular team at Google. Angulars development community has been growing over the past few years. If you are not familiar with Angular, there are plenty of reasons why you should start learning.
@@ -426,12 +426,12 @@ With all these steps followed, our Anime SPA is ready to go.
 
 Below, are few screenshots for you to compare :)
 
-![home page](/engineering-education/building-a-simple-angular-app/my-app-home.png)
+![home page](/building-a-simple-angular-app/my-app-home.png)
 
-![anime profile page](/engineering-education/building-a-simple-angular-app/my-app-anime-akira.png)
+![anime profile page](/building-a-simple-angular-app/my-app-anime-akira.png)
 
 ### Additional Resources
 - Refer to the [Angular Docs](https://angular.io/docs) for more info.
 
 ---
-Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)

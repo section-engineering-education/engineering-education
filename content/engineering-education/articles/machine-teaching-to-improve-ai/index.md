@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/machine-teaching-to-improve-ai/
+url: /machine-teaching-to-improve-ai/
 title: Machine Teaching to Improve Artificial Intelligence
 description: This article will be going over machine teaching and how it combines the expertise of human domain experts with machine learning to automate the management of machine learning algorithms.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/machine-teaching-to-improve-ai/hero.jpg
+  - url: /machine-teaching-to-improve-ai/hero.jpg
     alt:  image
 ---
 We provide machine learning models with volumes of data expecting that they will identify patterns or learn relationships within the data. This can be an expensive and time-consuming process.
@@ -28,7 +28,7 @@ However, an approach exists that leverages human abilities and expertise to guid
 4. Applications of machine teaching
 
 ### Prerequisites
-You're only required to be familiar with basic machine learning concepts. Here’s a link to an article that offers an introduction to [machine learning](/engineering-education/supervised-learning-algorithms/).
+You're only required to be familiar with basic machine learning concepts. Here’s a link to an article that offers an introduction to [machine learning](/supervised-learning-algorithms/).
 
 ### Machine teaching
 Research around the field of machine learning today takes a technocentric approach. Meaning it centers this approach on technology and promotes its importance. It addresses technical and functional goals, often at the expense of human values and ethics. As a result, this perspective may lead to some level of disconnection between the growth of artificial intelligence as a field and the users of the technology.
@@ -171,4 +171,4 @@ We need to welcome more non-experts in the creation and implementation of AI tec
 7. [Machine Teaching](https://searchenterpriseai.techtarget.com/definition/machine-teaching)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

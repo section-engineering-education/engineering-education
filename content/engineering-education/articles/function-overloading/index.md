@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/function-overloading/
+url: /function-overloading/
 title: Function Overloading (C++)
 description: A brief introduction to the Function Overloading, Polymorphism and Inline functions with code snippets. Object Oriented Programming is a fundamental method of programming which helps to develop programs using a modular approach.
 author: kanishkvardhan-a-n
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/function-overloading/hero.jpg
+  - url: /function-overloading/hero.jpg
     alt: Function Overloading (C++) computer image
 
 ---

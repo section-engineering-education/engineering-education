@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-deep-learning/
+url: /introduction-to-deep-learning/
 title: Introduction to Deep Learning
 description: This article serves as an introduction to Deep Learning which is a machine learning technique that automatically extracts the pieces of information using neural networks.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-deep-learning/hero.jpg
+  - url: /introduction-to-deep-learning/hero.jpg
     alt: deep learning image example
 ---
 Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing(NLP), and voice recognition all to take place. Have you ever wondered how machines function like the human brain?
@@ -20,7 +20,7 @@ Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to 
 Well, that is thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
 ### What is Deep Learning?
 
-![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
+![Venn diagram](/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
 
 [*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
 
@@ -52,7 +52,7 @@ Neurons in the hidden layer then send data to neurons in the output layer. Theor
 
 The output layer predicts the outcome. Neural Networks work with numbers and math. Math is the key to neural networks, artificial intelligence, and its techniques; i.e. [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
 
-![Neural Networks](/engineering-education/introduction-to-deep-learning/neural-networks.jpg)<br>
+![Neural Networks](/introduction-to-deep-learning/neural-networks.jpg)<br>
 
 [*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
 
@@ -121,7 +121,7 @@ Deep Learning and machine learning are both types (or subsets) of AI that classi
 
 - Be it ML or DL; we need to label all data for classification type tasks. Classification tasks require labeled data.
 
-To get a more detailed understanding of the differences between ML, DL, and AI, take a look at [this article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+To get a more detailed understanding of the differences between ML, DL, and AI, take a look at [this article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 
 ### Conclusion
 Deep Learning is an extensible and a complex field. It functions with the help of Neural Networks to mimic human behavior. DL solves complex data problems. Problems that present themselves in pattern recognition, image recognition, speech recognition, and NLP.
@@ -130,4 +130,4 @@ This helps save people time as they do not have to perform repetitive actions or
 It is being used to solve different problems and reduce the risk of human error on many repetitive tasks.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

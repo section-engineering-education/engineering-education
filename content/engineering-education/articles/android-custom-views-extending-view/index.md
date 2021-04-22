@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-custom-views-extending-view/
+url: /android-custom-views-extending-view/
 title: Android Custom Views - Extending View Class
 description: In this article we will create a simple view that is a colored circle with a border and add it to an XML layout.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-custom-views-extending-view/hero.jpg
+  - url: /android-custom-views-extending-view/hero.jpg
     alt: Android custom views image example
 ---
 A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.
@@ -41,7 +41,7 @@ Let's get started!
 ### Step 1 — Creating an Android Project
 In this step, we're going to create our application. Open Android Studio and start a new project with an empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/engineering-education/android-custom-views-extending-view/app-name.png)
+![app name](/android-custom-views-extending-view/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
@@ -50,7 +50,7 @@ On your project window,
 - Select `File -> New -> Kotlin File/Class`
 - On the next screen select class, give it a name, and press enter.
 
-![new class](/engineering-education/android-custom-views-extending-view/new-class.png)
+![new class](/android-custom-views-extending-view/new-class.png)
 
 On the newly created file. Add the following code to extend the View class.
 
@@ -103,7 +103,7 @@ To create it:
 - Go to `File -> New -> Android Resource File`
 - Give it a name, then click finish.
 
-![new resource file](/engineering-education/android-custom-views-extending-view/new-resource-file.png)
+![new resource file](/android-custom-views-extending-view/new-resource-file.png)
 
 Add the following code between the resource tags to create the attributes.
 
@@ -192,10 +192,10 @@ Our code should look something like this.
 
 We are done! Build and run your application on an emulator or an Android device. The resulting view should resemble the one below.
 
-![app](/engineering-education/android-custom-views-extending-view/app.png)
+![app](/android-custom-views-extending-view/app.png)
 
 ### Conclusion
 In this article, we've gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and add them to our layout file. Custom views give an application's UI a unique look and feel. This helps developers build applications with a better user experience. You can get the full code on [GitHub](https://github.com/kayere/android-custom-views.git).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

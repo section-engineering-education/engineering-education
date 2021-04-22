@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-adafruit-io/
+url: /introduction-to-adafruit-io/
 title: Introduction to Adafruit IO
 description: Introduction to IoT deployment with Adafruit IO. In this article, we have covered the basics of IoT and cloud computing. We will also build a simple project for better understanding.
 author: srishilesh-p-s
@@ -10,7 +10,7 @@ date: 2021-02-25T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/introduction-to-adafruit-io/hero.jpg
+  - url: /introduction-to-adafruit-io/hero.jpg
     alt: Introduction to Adafruit IO
 ---
 In this article, we will learn about a cloud platform called Adafruit IO for the deployment of IoT solutions. By the end of this article, you will get an overview of how IoT solutions are deployed in the cloud, how Adafruit IO helps in easier deployment, and we also build a simple project in Python for demonstration.
@@ -45,7 +45,7 @@ Cloud computing is the means of storing and accessing data over the Internet ins
 
 Features of cloud computing are as shown below:
 
-![Features of cloud computing](/engineering-education/introduction-to-adafruit-io/cloud-computing-features.jpg)
+![Features of cloud computing](/introduction-to-adafruit-io/cloud-computing-features.jpg)
 
 *Source: Features of cloud computing by [DataFlair](https://data-flair.training/blogs/features-of-cloud-computing/)*
 
@@ -72,9 +72,9 @@ IoT developers prefer Adafruit IO over other IoT cloud providers for the followi
 - **Documentation & Community** - Many blogs with amazing community support allows continuous developments of the products.
 
 ### Step by step guide
-In our previous article on ["Getting started with NodeMCU"](/engineering-education/getting-started-with-nodemcu/), we learned about what NodeMCU is, and we also built a simple project for the blinking of LEDs. In continuation of the previous article, let's learn about its deployment on the cloud.
+In our previous article on ["Getting started with NodeMCU"](/getting-started-with-nodemcu/), we learned about what NodeMCU is, and we also built a simple project for the blinking of LEDs. In continuation of the previous article, let's learn about its deployment on the cloud.
 
-It is highly recommended to go through the [previous article](/engineering-education/getting-started-with-nodemcu/), before continuing.
+It is highly recommended to go through the [previous article](/getting-started-with-nodemcu/), before continuing.
 
 #### Objective
 In our previous article, we worked with NodeMCU on blinking lights of built-in LEDs. In this article, to demonstrate Adafruit IO works, we will send (publish) the LED brightness readings to the Adafruit IO cloud via Arduino IDE (written in C), and receive (subscribe) them via a Python server.
@@ -159,7 +159,7 @@ Finally, our code is ready for compilation and to be uploaded. To compile your c
 
 You will see the screen as shown below:
 
-![Code compilation](/engineering-education/introduction-to-adafruit-io/uploading.png)
+![Code compilation](/introduction-to-adafruit-io/uploading.png)
 
 *Compilation of the source code*
 
@@ -169,7 +169,7 @@ The output can be seen in the LEDs, where the brightness level increases from 10
 
 Thus, we have published the values from a client module to the Adafruit IO cloud, subscribed those values to another client, and displayed the LEDs based on the brightness levels.
 
-![Result](/engineering-education/introduction-to-adafruit-io/result.gif)
+![Result](/introduction-to-adafruit-io/result.gif)
 
 *Source: GIF by [Steemit](https://steemit.com/arduino/@makerhacks/blinking-leds-with-python-how-to-code-in-micro-python-on-the-esp8266-nodemcu)*
 
@@ -196,4 +196,4 @@ To summarize:
 - [Adafruit IO - Python](https://learn.adafruit.com/adafruit-io-basics-digital-output/python-code)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

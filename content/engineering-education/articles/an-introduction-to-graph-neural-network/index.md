@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-introduction-to-graph-neural-network/
+url: /an-introduction-to-graph-neural-network/
 title: An Introduction to Graph Neural Networks
 description: This article will explore some of the popular graph learning libraries, the various GNN models currently available, and the use cases for GNN.
 author: willies-ogola
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-introduction-to-graph-neural-network/hero.jpg
+  - url: /an-introduction-to-graph-neural-network/hero.jpg
     alt: Artificial intelligence machine learning and deep learning
 ---
-Over the years, [Deep Learning (DL)](/engineering-education/introduction-to-deep-learning/) has been the key to solving many machine learning problems in fields of image processing, natural language processing, and even in the video games industry.
+Over the years, [Deep Learning (DL)](/introduction-to-deep-learning/) has been the key to solving many machine learning problems in fields of image processing, natural language processing, and even in the video games industry.
 All this generated data is represented in spaces with a finite number of dimensions i.e. 2D or 3D spaces.
 <!--more-->
 Yet, in most current applications, generated data is generated from non-Euclidean domains that represent data as graphs with relationships and mutual dependency between objects.
@@ -36,12 +36,12 @@ In this article, we will cover on:
 
 
 ### Prerequisites
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning).
 
 ### What is a Graph?
 Graphs are powerful data structures that model a set of objects and their relationships. These objects represent the nodes and the relationships represent edges.
 
-![A graph data structure](/engineering-education/an-introduction-to-graph-neural-network/edges-links.png)
+![A graph data structure](/an-introduction-to-graph-neural-network/edges-links.png)
 
 Let's assume a graph, G. This graph describes:
 - V as the vertex set
@@ -54,9 +54,9 @@ In our article, we will refer to vertex, V, as the nodes.
 Let's take an example of a transportation system. The locations in the system represent the vertices, V, and the connections between these locations representing the edges.
 
 ### What is Graph Neural Network (GNN)?
-GNN is a technique in deep learning that extends existing [neural networks](/engineering-education/introduction-to-neural-networks/) for processing data on graphs.
+GNN is a technique in deep learning that extends existing [neural networks](/introduction-to-neural-networks/) for processing data on graphs.
 
-![Structure of a GNN implementing a drug interaction network](/engineering-education/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
+![Structure of a GNN implementing a drug interaction network](/an-introduction-to-graph-neural-network/gnn-structure.PNG)<br>
 
 *[Image Source: Aalto University](https://users.aalto.fi/~falconr1/RecentAdvances2019/How%20Powerful%20Are%20Graph%20Neural%20Networks/How_Powerful_Are_Graph_Neural_Networks(3).pdf)*
 
@@ -89,7 +89,7 @@ The nodes are the friends on Facebook while the edges are the relationships betw
 
 The image below depicts the link prediction problem in social networks
 
-![Link Prediction in social networks](/engineering-education/an-introduction-to-graph-neural-network/social-network.PNG)<br>
+![Link Prediction in social networks](/an-introduction-to-graph-neural-network/social-network.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
@@ -171,13 +171,13 @@ The earliest studies of Graph Neural Networks fall under this model.
 These neural networks aim to learn node representations using Recurrent Neural Networks (RNNs). RGNNs work by assuming that nodes in the graph exchange messages (message passing) constantly. This exchange continues until a stable equilibrium is achieved.  
 
 #### Convolutional Graph Neural Networks (CGNNs)
-![CGNN with multiple graph convolution layers](/engineering-education/an-introduction-to-graph-neural-network/CGNN.PNG)<br>
+![CGNN with multiple graph convolution layers](/an-introduction-to-graph-neural-network/CGNN.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
 CGNNs work by generalizing the operations of convolutions from a grid format to a graph format. In comparison to RGNN, CGNN employs many layers of graph convolutions. This helps to extract high-level node representations.
 
-![Image to Graph](/engineering-education/an-introduction-to-graph-neural-network/image-as-graph.PNG)<br>
+![Image to Graph](/an-introduction-to-graph-neural-network/image-as-graph.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
@@ -186,7 +186,7 @@ CGNNs set the base for building other GNN models.
 An example of an CGNN application is the [PinSage](https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48)  recommendation system at Pinterest. The PinSage algorithm works by learning the graph node embeddings operating on 3 and 18 billion nodes and edges respectively.
 
 #### Graph Auto-Encoders (GAEs)
-![Graph Auto-Encoder](/engineering-education/an-introduction-to-graph-neural-network/GAE.PNG)<br>
+![Graph Auto-Encoder](/an-introduction-to-graph-neural-network/GAE.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
@@ -197,7 +197,7 @@ They are used to learn the embedding in networks and the generative distribution
 GAEs have been used to perform link prediction tasks in [citation networks](https://arxiv.org/pdf/1611.07308.pdf). These networks contain articles that are linked together via citationships. GAEs are able to categorize these articles into different groupings.
 
 #### Spatial-Temporal Graph Neural Networks (STGNNs)
-![A Spatial-Temporal Graph Neural Network](/engineering-education/an-introduction-to-graph-neural-network/GAE.PNG)<br>
+![A Spatial-Temporal Graph Neural Network](/an-introduction-to-graph-neural-network/GAE.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1901.00596.pdf)*
 
@@ -236,7 +236,7 @@ The goal of the system is to tell the importance of an item to a user. This can 
 #### Natural Language Processing (NLP)
 In NLP, GNNs are used in the classification of text data. They use the mutual relationship between words in documents to work out the labels in documents.
 
-![Graphs in NLP](/engineering-education/an-introduction-to-graph-neural-network/text-to-graphs.PNG)<br>
+![Graphs in NLP](/an-introduction-to-graph-neural-network/text-to-graphs.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
@@ -251,7 +251,7 @@ GNNs have also been used together with Long Short Term Memory (LSTM) and CNN to 
 #### Chemistry
 Here, GNNs focuses on the study of the structures of graph in different protein molecules. In these molecules, atoms are considered as the nodes and the chemical bonds between these atoms considered the edges.
 
-![Image depicting a molecule as a graph](/engineering-education/an-introduction-to-graph-neural-network/molecule-as-a-graph.PNG)<br>
+![Image depicting a molecule as a graph](/an-introduction-to-graph-neural-network/molecule-as-a-graph.PNG)<br>
 
 *[Image Source: Arxiv](https://arxiv.org/abs/1812.08434)*
 
@@ -274,4 +274,4 @@ To learn more about Graph Neural Networks, please read this comprehensive survey
 11. [PinSage](https://medium.com/pinterest-engineering/pinsage-a-new-graph-convolutional-neural-network-for-web-scale-recommender-systems-88795a107f48)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

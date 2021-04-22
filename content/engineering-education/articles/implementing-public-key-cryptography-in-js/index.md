@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-public-key-cryptography-in-javascript/
+url: /implementing-public-key-cryptography-in-javascript/
 title: Implementing Public Key Cryptography in JavaScript
 description: This article will cover how to implement public key cryptography in Javascript. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-public-key-cryptography-in-javascript/hero.jpg
+  - url: /implementing-public-key-cryptography-in-javascript/hero.jpg
     alt: Implementing Public Key Cryptography in JavaScript image
 ---
 Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is the secret to a communicating pair. 
@@ -255,7 +255,7 @@ Hey!!, our communication is now more secure
 3. We'll encode the message to `UTF8` using `encodeUTF8()` so that its human-readable.
 
 ### Maintaining public keys
-**Public key infrastructure** is a body responsible for [maintaining and registering public keys](https://en.wikipedia.org/wiki/Public_key_infrastructure). Practical areas that use public key infrastructure are banks. All banks have their keys stored and maintained by one body. So when one bank wants to transfer funds to another they get the keys from the common body. Public key infrastructure ensures the credibility of public keys thereby preventing [man in the middle attacks](/engineering-education/man-in-the-middle-attack/).
+**Public key infrastructure** is a body responsible for [maintaining and registering public keys](https://en.wikipedia.org/wiki/Public_key_infrastructure). Practical areas that use public key infrastructure are banks. All banks have their keys stored and maintained by one body. So when one bank wants to transfer funds to another they get the keys from the common body. Public key infrastructure ensures the credibility of public keys thereby preventing [man in the middle attacks](/man-in-the-middle-attack/).
 
 ### Maintaining private or secret keys
 It's very important to maintain these keys since they are crucial and critical. Currently, they are stored online in databases or through some other medium. They are usually encrypted using encryption algorithms such as `Advanced Encryption Standard (AES)` to promote integrity before storing them.
@@ -288,4 +288,4 @@ Happy Coding!
 - [Diffie Hellman protocol](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

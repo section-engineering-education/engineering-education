@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-constructors-in-c++/
+url: /introduction-to-constructors-in-c++/
 title: Introduction to Constructors in C++
 description: In this article we will go through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-constructors-in-c++/hero.jpg
+  - url: /introduction-to-constructors-in-c++/hero.jpg
     alt: Constructors in C++ example image
 ---
 This article will go through basics of C++ constructors. A constructor is a special member function that initializes the objects of its class. It is said to be special because its name is the same as the class name. 
@@ -303,4 +303,4 @@ area=6
 In this article, we have gone through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class. In other words, it's used to initialize all members of the data class. This enables programmers to limit instantiation and write code that's flexible and easy to read.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

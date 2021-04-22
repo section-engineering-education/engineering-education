@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intersection-observer-api/
+url: /intersection-observer-api/
 title: How to use Intersection Observers in a Website
 description: In this article, we will discuss how the Intersection Observer API is made to detect element visibility by building a simple web page that implements image lazy-loading.
 author: wilson-gichuhi
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/intersection-observer-api/hero.jpg
+  - url: /intersection-observer-api/hero.jpg
     alt: Intersection Observer example image
 ---
 An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous, giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.
@@ -264,4 +264,4 @@ To see the finished example, check out the deployed version on [Netlify](https:/
 In summary, the `IntersectionObserver` API is easy to use and currently has good support in modern browsers. The API works in an asynchronous non-blocking way, unlike expensive listeners that will depend on scroll events running on the main thread, therefore it isn't a detriment to load pages quickly.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

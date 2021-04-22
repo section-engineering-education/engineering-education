@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-iterations-which-one-is-faster/
+url: /javascript-iterations-which-one-is-faster/
 title: JavaScript Iterations - Which One is Faster?
 description: This article goes through JavaScript iterations with examples to see which one performs faster when executing.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.png
+  - url: /javascript-iterations-which-one-is-faster/hero.png
     alt: JavaScript iterations example image
 ---
 Loops are a fundamental part of application development. They help you repeat a task or a set of instructions several times. In JavaScript, loops validate a value in a given block of code by checking if the value meets a provided condition.
@@ -757,4 +757,4 @@ option 2: 5.086ms
 ***Note***: The above performance results will vary depending on the browser, computer model and operating system you are using to test the loops.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

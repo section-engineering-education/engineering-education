@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/correcting-data-shift/
+url: /correcting-data-shift/
 title: Correcting Dataset Shift in Machine Learning
 description: This article will be going over Dataset Shift and how to correct it in machine learning models to prevent performance degradation.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/correcting-data-shift/hero.jpg
+  - url: /correcting-data-shift/hero.jpg
     alt: correcting data shift image example
 ---
 Dataset shift occurs when there is a change in the distribution of data. In the real world, socioeconomic factors may influence data distribution, along with varying consumer habits, and many other factors.
@@ -28,7 +28,7 @@ These factors can alter the underlying relationships between input and output da
 4. Correcting dataset shift
 
 ### Prerequisites
-A general understanding of machine learning (ML) is required. This [post](/engineering-education/supervised-learning-algorithms/) can provide an introduction or a refresher on ML.
+A general understanding of machine learning (ML) is required. This [post](/supervised-learning-algorithms/) can provide an introduction or a refresher on ML.
 
 ### Dataset shift
 The phenomenon of dataset shift is defined by a change in the distribution of data. This change is between the training sets and test sets.
@@ -52,13 +52,13 @@ There are three major types of dataset shift.
 We'll explore each in detail.
 
 #### Covariate shift
-![covariate](/engineering-education/correcting-data-shift/covariate.png)
+![covariate](/correcting-data-shift/covariate.png)
 
 [Covariate Shift: Source](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
 Covariate shift is the most common type of shift which is characterized by the change of the input variables existing in the training and test datasets. It may occur as a result of a change in the environment that only affects the input variables. The target variable remains unchanged.
 
-![covariate2](/engineering-education/correcting-data-shift/covariate2.png)
+![covariate2](/correcting-data-shift/covariate2.png)
 
 [Image Source](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)
 
@@ -71,7 +71,7 @@ Here, the relationship between input and output is the same, but it misrepresent
 #### Prior probability shift
 Prior probability shift is characterized by a scenario where the target variable distribution changes but the input feature distribution does not. This is basically the reverse of covariate shift.
 
-![prior2](/engineering-education/correcting-data-shift/prior2.png)
+![prior2](/correcting-data-shift/prior2.png)
 
 [Prior Probability Shift: Source](http://www.acad.bg/ebook/ml/The.MIT.Press.Dataset.Shift.in.Machine.Learning.Feb.2009.eBook-DDU.pdf)
 
@@ -145,4 +145,4 @@ Dataset shift deteriorates the performance of a model. No engineer wants to buil
 6. [Dataset Shift in Machine Learning](http://www.acad.bg/ebook/ml/The.MIT.Press.Dataset.Shift.in.Machine.Learning.Feb.2009.eBook-DDU.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

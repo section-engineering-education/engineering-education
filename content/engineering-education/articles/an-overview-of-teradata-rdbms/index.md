@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-teradata-rdbms/
+url: an-overview-of-teradata-rdbms/
 title: An Overview of Teradata RDBMS (Relational Database Management System)
 description: This article will be an introduction to Teradata. Which is an open RDBMS (relational database management system) that runs on operating systems such as Windows, Unix, and Linux. Teradata supports huge data warehouse applications.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-overview-of-teradata-rdbms/hero.jpg
+  - url: /an-overview-of-teradata-rdbms/hero.jpg
     alt: Teradata RDBMS Image
 ---
 In this era of Big Data, companies are using data-driven approaches to improve various aspects of their businesses. These businesses data is complex, huge, and evolving. This requires an effective tool for managing it. Teradata is an open and scalable database management system, that can enable businesses to improve their outcomes using data management tools.  
@@ -48,7 +48,7 @@ Teradata database has the following features:
 ### The architecture of Teradata
 The following diagram shows the architecture of Teradata.
 
-![Teradata Architecture](/engineering-education/an-overview-of-teradata-rdbms/teradata-architecture.png)
+![Teradata Architecture](/an-overview-of-teradata-rdbms/teradata-architecture.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/04/Components-of-Teradata-Architecture.png)
 
@@ -57,7 +57,7 @@ The architecture of Teradata is based on MPP (massively parallel processing). It
 #### Storage architecture
 This architecture is used when the client makes a storage query. The following diagram shows the storage architecture of Teradata.
 
-![Storage Architecture](/engineering-education/an-overview-of-teradata-rdbms/storage-architecture.png)
+![Storage Architecture](/an-overview-of-teradata-rdbms/storage-architecture.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/teradata/images/teradata-architecture2.png)
 
@@ -81,7 +81,7 @@ An AMP performs the following tasks:
 #### Retrieval architecture
 This architecture is used when a client makes a retrieval query. The diagram below shows the retrieval architecture of Teradata.
 
-![Retrieval Architecture](/engineering-education/an-overview-of-teradata-rdbms/retrieval-architecture.png)
+![Retrieval Architecture](/an-overview-of-teradata-rdbms/retrieval-architecture.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/teradata/images/teradata-architecture3.png)
 
@@ -137,4 +137,4 @@ Teradata is used in various industries such as healthcare, finance, manufacturin
 - [Slide Share](https://www.slideshare.net/bigclasses/introduction-to-teradata-how-teradata-works)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

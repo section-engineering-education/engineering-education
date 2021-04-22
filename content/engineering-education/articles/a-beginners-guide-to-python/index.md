@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/a-beginners-guide-to-python/
+url: /a-beginners-guide-to-python
 title: A Beginners Guide to Python
 description: This article will serve as a beginners guide to Python. We will introduce the reader to the Python programming language and basic Python features like loops, variables, and classes.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-beginners-guide-to-python/hero.jpg
+  - url: /a-beginners-guide-to-python/hero.jpg
     alt: Python example image
 ---
 Python is among the most popular programming languages in the world. It is ranked high in different StackOverflow programming surveys each year. This article helps beginners familiarize themselves with the basic concepts of Python. According to the official [documentation](https://www.python.org/), Python is a high-level and general-purpose programming language.
@@ -275,4 +275,4 @@ We have learned how to define and use variables, methods, classes, loops, and li
 Happy coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

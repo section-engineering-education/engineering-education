@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deploying-your-android-app-to-google-play-store/
+url: /deploying-your-android-app-to-google-play-store/
 title: Deploying your Android App to Play Store
 description: This tutorial provides a detailed guide on the steps you should follow when deploying your Android application to the Play Store.
 author: christine-wasike
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/deploying-your-android-app-to-google-play-store/hero.jpg
+  - url: /deploying-your-android-app-to-google-play-store/hero.jpg
     alt: Google Play Store example image
 ---
 It is often challenging for beginners to deploy their first Android application to Play Store. There are just too many rules and steps that need to be followed. Failure to adhere to these regulations may impact your application negatively. This tutorial helps you avoid the headaches and negative experiences associated with the app deployment process.
@@ -46,7 +46,7 @@ It’s always great to prepare a `What’s New` list for your application’s us
 ### Step 5 - Update app version code and version name for the release build
 Updating your version code and name is essential in keeping track of your app’s different build variants whenever you wish to deploy updates. Do this in your app-level `build.gradle` file.
 
-![Version Code Name](/engineering-education/deploying-your-android-app-to-google-play-store/version_code_name.png)
+![Version Code Name](/deploying-your-android-app-to-google-play-store/version_code_name.png)
 
 ### Step 6 - Create a Developer Console account
 If you do not have a Google Play Console account, please sign up [here](https://play.google.com/apps/publish). The signup fee is a one-time payment of $25 (for life). Alternatively, you could reach out to a friend with an existing account and have them add you to their dashboard as a developer.
@@ -55,34 +55,34 @@ If you do not have a Google Play Console account, please sign up [here](https://
 #### Minifying your codebase
 Minifying your codebase reduces your application's size, thus making it lighter. You should start by setting the `_minifyEnabled_` attribute in your `build.gradle` (app level) to `true`. You can learn more on how to shrink your code [here](https://developer.android.com/studio/build/shrink-code).
 
-![Minify](/engineering-education/deploying-your-android-app-to-google-play-store/minify.png)
+![Minify](/deploying-your-android-app-to-google-play-store/minify.png)
 
 #### Generating a signed App Bundle
 In Android Studio, navigate to the `build` option on the top menu and click *Generate Signed Bundle/APK*.
 
-![Generate Signed Bundle/APK](/engineering-education/deploying-your-android-app-to-google-play-store/generate_app_bundle.png)
+![Generate Signed Bundle/APK](/deploying-your-android-app-to-google-play-store/generate_app_bundle.png)
 
 The Generate Signed Bundle or APK window will pop up, click the *Android App Bundle* option then *next*.
 
-![Android App Bundle](/engineering-education/deploying-your-android-app-to-google-play-store/android_app_bundle.png)
+![Android App Bundle](/deploying-your-android-app-to-google-play-store/android_app_bundle.png)
 
 Click the *Create new* button to generate your signed app bundle. This signed app bundle will always be useful when you need to push an update to the Play Store. It is a unique configuration associated with your app.
 
-![Create new](/engineering-education/deploying-your-android-app-to-google-play-store/create_new.png)
+![Create new](/deploying-your-android-app-to-google-play-store/create_new.png)
 
 Fill in the fields with fields and then confirm by pressing *OK*.
 
-![Keystore](/engineering-education/deploying-your-android-app-to-google-play-store/key_store.png)
+![Keystore](/deploying-your-android-app-to-google-play-store/key_store.png)
 
-![Confirm](/engineering-education/deploying-your-android-app-to-google-play-store/confirm.png)
+![Confirm](/deploying-your-android-app-to-google-play-store/confirm.png)
 
 Select *release* as the app bundle destination because we are preparing the app for deployment.
 
-![Release](/engineering-education/deploying-your-android-app-to-google-play-store/release.png)
+![Release](/deploying-your-android-app-to-google-play-store/release.png)
 
 Once the process is complete, you will get a confirmation message at the bottom of your window. You can now find your app bundle file in your `release` folder.
 
-![Message](/engineering-education/deploying-your-android-app-to-google-play-store/message.png)
+![Message](/deploying-your-android-app-to-google-play-store/message.png)
 
 The Android App Bundle is a more recent format for Android distribution. It's quite different from the Android Application Package, otherwise known as the APK, that we will touch on later. I highly recommend using App Bundles because of their ability to reduce the overall size. With asset packs and dynamic features, apps become 35% smaller.
 
@@ -129,4 +129,4 @@ You can now comfortably check the boxes on [Google Play Console](https://play.go
 Happy Coding!
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

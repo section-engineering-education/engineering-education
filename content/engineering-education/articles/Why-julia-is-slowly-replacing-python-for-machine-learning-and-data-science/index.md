@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/
+url: /why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/
 title: Why Julia is Slowly Replacing Python in Machine Learning and Data Science
 description: This article will go over the reasons why Julia is slowly replacing Python within Machine Learning and Data Science
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/hero.jpg
+  - url: /why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/hero.jpg
     alt: Julia Python Machine Learning example image
 ---
 As the demand for data manipulation and scientific computation arose, so did the need for a better data processing language. A group of mathematicians and computer scientists led by Alan Edelman, Viral B. Shah, Jeff Bezanson, and Stefan Karpinski noted that the then-existing general-purpose languages were not ideal for logical and arithmetic coding. Particularly, there was a lack of a programming language that could perform these tasks at a lightning-fast speed.
@@ -39,9 +39,9 @@ Julia's math-friendly syntax makes it ideal for users of [Matlab](https://www.ma
 An example of such a library is [Flux](https://fluxml.ai/), and it's composed of several model patterns ideal for standard use cases. It offers strong support for interoperability with other Julia packages. Flux is entirely written in Julia, meaning that users can implement modifications.
 
 ### Python Language Advantages
-Unlike Julia, Python is a general-purpose language. Despite not being built specifically for data science, Python offers many advantages to machine-learning and data scientists. For a more in depth look at how Python is used in data manipulation, check out [this article](/engineering-education/matplotlib-visualization-python/).
+Unlike Julia, Python is a general-purpose language. Despite not being built specifically for data science, Python offers many advantages to machine-learning and data scientists. For a more in depth look at how Python is used in data manipulation, check out [this article](/matplotlib-visualization-python/).
 
-Machine learning scientists and data scientists use Python in [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) and [natural language processing (NLP)](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/). This is because Python libraries offer a convenient way to write highly performing algorithms.
+Machine learning scientists and data scientists use Python in [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) and [natural language processing (NLP)](/five-real-life-use-cases-of-natural-language-processing-nlp/). This is because Python libraries offer a convenient way to write highly performing algorithms.
 
 Python has existed for [around 30 years](https://en.wikipedia.org/wiki/Python_(programming_language)) in which it has established strong relationships with many third-party packages. This has attracted many users. One of the drawbacks associated with Python is speed.
 
@@ -101,4 +101,4 @@ Python, a well-established language, is very significant to the fields of data s
 [5 Ways Julia Is Better Than Python](https://towardsdatascience.com/5-ways-julia-is-better-than-python-334cc66d64ae)
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

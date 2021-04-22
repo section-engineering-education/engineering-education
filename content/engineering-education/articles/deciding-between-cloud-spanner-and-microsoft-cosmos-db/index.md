@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/
+url: /deciding-between-cloud-spanner-and-microsoft-cosmos-db/
 title: Deciding between Cloud Spanner and Microsoft Cosmos DB
 description: This article will discuss and compare the features of both Cloud Spanner and Microsoft Cosmos DB and highlight their advantages and disadvantages.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/hero.jpg
+  - url: /deciding-between-cloud-spanner-and-microsoft-cosmos-db/hero.jpg
     alt: Cloud Spanner and Microsoft Cosmos DB example image
 ---
 Creating a globally distributed database would traditionally require a lot of time and effort. You would have to host the database in a personal data center bearing the entire cost. The advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. 
@@ -33,7 +33,7 @@ Cloud Spanner supports automatic data replication. Instance configuration (the f
 
 These zones must come from within a single selected region. Multi-Regional configuration, on the other hand, supports data replication across four zones. These zones can come from different regions depending on what continent the user specifies.
 
-![GCP zones and regions](/engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/gcp-regions-and-zones.jpg)
+![GCP zones and regions](/deciding-between-cloud-spanner-and-microsoft-cosmos-db/gcp-regions-and-zones.jpg)
 
 [Image source](https://cloud.google.com/about/locations#regions)
 
@@ -54,7 +54,7 @@ With Azure Cosmos DB, users can build and distribute their applications across a
 
 The globally distributed, multi-model database is available in all regions where [Azure is available](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cosmos-db&regions=all). This is possible considering its turnkey global distribution that automatically scales and replicates data across various data centers in the Azure network.
 
-![Cosmos DB regions](/engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/cosmos-db-regions.jpg)
+![Cosmos DB regions](/deciding-between-cloud-spanner-and-microsoft-cosmos-db/cosmos-db-regions.jpg)
 
 [Image source](https://azure.microsoft.com/en-us/global-infrastructure/global-network/)
 
@@ -95,4 +95,4 @@ This is a setback because cloud services are needed globally. Spanner beats Cosm
 This article compared two cloud databases: Cosmos DB and Cloud Spanner.  We went over how these cloud databases can provide you with a customized experience of sorting and processing large amounts of raw data. We hope you are now better informed to make the best choice that best suits your needs.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

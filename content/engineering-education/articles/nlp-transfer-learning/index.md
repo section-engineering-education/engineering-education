@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nlp-transfer-learning/
+url: /nlp-transfer-learning/
 title: Introduction to Transfer Learning in NLP
 description: In this article we will be discussing the advances in the field of transfer learning for natural language processing (NLP). We will explain the concepts of the transformer and the attention mechanism.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nlp-transfer-learning/hero.jpg
+  - url: /nlp-transfer-learning/hero.jpg
     alt: transfer learning in NLP example image
 ---
 Using pre-trained models, we can skip the time-consuming process of data collection, pre-processing, training, and testing. These models are trained on Petabytes of data and give us an edge over training neural networks from scratch. This is what we call Transfer learning, and it is a novel way to train machine learning models.
@@ -27,7 +27,7 @@ One of the challenges in NLP is machine language translation (MLT). Getting the 
 
 This diversity in culture dictates vast variations in speech and text. Therefore, Recurrent Neural Networks (RNNs), Long Short Term Memory (LSTMs) were used for MLT. RNNs and LSTMs are sequential models. Consider the image given below.
 
-![rnn structure](/engineering-education/nlp-transfer-learning/rnn.png)
+![rnn structure](/nlp-transfer-learning/rnn.png)
 
 [*Image Source*](https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
 
@@ -40,7 +40,7 @@ But both these architectures would only take the previous input and the current 
 ### Transformers 
 AAs seen earlier, the architectures with LSTMs and RNNs are called sequence transduction models. It would solve a problem such as MLT using an encoder-decoder architecture. Encoder-decoder models come under sequence transduction models comprising of CNNs, RNNs, and LSTMs. The architecture includes multiple attention layers and an encoder and decoder architecture. The architecture, as defined in the paper, is given in the image below. 
 
-![Transformers](/engineering-education/nlp-transfer-learning/transformers.png)
+![Transformers](/nlp-transfer-learning/transformers.png)
 
 [*Image Source*](https://arxiv.org/pdf/1706.03762.pdf)
 
@@ -59,7 +59,7 @@ They are as follows:
 2. **Masked multi-head attention block**: The masked multi-head attention block encodes the target sentence and sends values to the next attention. The difference between masked and multi-head attention is in their implementations. For more information on this, refer to this answer on [Stackoverflow](https://stackoverflow.com/questions/58127059/how-to-understand-masked-multi-head-attention-in-transformer).
 3. **Multi-head attention**: The final attention block takes in the input and target sentences' representations from the previous two attention blocks. This attention block is the end of encoder architecture. The architecture following the final multi-head attention marks the beginning of the decoder architecture. 
 
-![attention blocks in transformer model](/engineering-education/nlp-transfer-learning/transfomer_with_attention.png)
+![attention blocks in transformer model](/nlp-transfer-learning/transfomer_with_attention.png)
 
 [*Image Source*](https://arxiv.org/pdf/1706.03762.pdf)
 
@@ -76,4 +76,4 @@ The advantage of using transformers is the parallelizable features that it provi
 In this article, we have discussed the critical concept of the transformer and the attention mechanism. Such architectures have resulted in advancing the pace of research in transfer learning in NLP. I hope you enjoyed reading this article as much as I enjoyed writing it. 
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

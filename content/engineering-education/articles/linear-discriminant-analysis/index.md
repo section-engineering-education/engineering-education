@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/linear-discriminant-analysis/
+url: /linear-discriminant-analysis/
 title: Linear Discriminant Analysis from Scratch
 description: In this article we will look at Linear Discriminant Analysis (LDA) theoretical concepts and look at its implementation from scratch using NumPy.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/linear-discriminant-analysis/hero.jpg
+  - url: /linear-discriminant-analysis/hero.jpg
     alt: Linear Discriminant Analysis example image
 ---
 In this tutorial, we will look into the algorithm Linear Discriminant Analysis, also known as LDA. One should be careful while searching for LDA on the net. We also abbreviate another algorithm called Latent Dirichlet Allocation as LDA. 
@@ -52,7 +52,7 @@ Once installed, the following code can be executed seamlessly.
 ### Introduction
 In some cases, the dataset's non-linearity forbids a linear classifier from coming up with an accurate decision boundary. Therefore, one of the approaches taken is to project the lower-dimensional data into a higher-dimension to find a linear decision boundary. Consider the following example taken from [Christopher Olah's blog](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/).
 
-![spiral data](/engineering-education/linear-discriminant-analysis/spiral_data.gif)
+![spiral data](/linear-discriminant-analysis/spiral_data.gif)
 
 The other approach is to consider features that add maximum value to the process of modeling and prediction. If any feature is redundant, then it is dropped, and hence the dimensionality reduces. LDA is one such example. 
 
@@ -73,7 +73,7 @@ The aim of LDA is:
 
 Below is a picture to help explain:
 
-![LDA](/engineering-education/linear-discriminant-analysis/lda.png)
+![LDA](/linear-discriminant-analysis/lda.png)
 
 [*Image Source*](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_Data_Compresssion_via_Dimensionality_Reduction_2_Linear_Discriminant_Analysis.php)
 
@@ -150,9 +150,9 @@ print("Original Data Size:",X_train.shape, "\nModified Data Size:", X_train_modi
 ```
 The output of the code should look like the image given below. The iris dataset has 3 classes. Observe the 3 classes and their relative positioning in a lower dimension.
 
-![output of code](/engineering-education/linear-discriminant-analysis/output.jpg)
+![output of code](/linear-discriminant-analysis/output.jpg)
 
 ### Conclusion
 In this article, we have looked at implementing the Linear Discriminant Analysis (LDA) from scratch. I suggest you implement the same on your own and check if you get the same output. Another fun exercise would be to implement the same algorithm on a different dataset. I hope you enjoyed reading this tutorial as much as I enjoyed writing it. Happy learning.
 
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

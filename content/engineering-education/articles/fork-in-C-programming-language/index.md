@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/fork-in-c-programming-language/
+url: /fork-in-c-programming-language/
 title: Fork() in C Programming Language
 description: This tutorial will serve as an introduction to the fork function, which is used to create a copy of processes. We will discuss its detailed implementation with examples.  
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/fork-in-c-programming-language/hero.jpg
+  - url: /fork-in-c-programming-language/hero.jpg
     alt: Fork function image
 ---
 You may have seen a lot of processes in your task manager if you are using Windows. Or in your resource monitor if you are using Linux. Did you ever stop to think how these are created? 
@@ -31,7 +31,7 @@ In the computing field, **`fork()`** is the primary method of process creation o
 
 Let's start with the life-cycle of a process:
 
-![Process life-cycle](/engineering-education/fork-in-c-programming-language/ProcessState.jpg)
+![Process life-cycle](/fork-in-c-programming-language/ProcessState.jpg)
 
 [Image Source](https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/3_Processes.html)
 
@@ -67,7 +67,7 @@ Hello world!
 
 Where one of the output came from the parent process and the other one from the child process.
 
-![Simple fork](/engineering-education/fork-in-c-programming-language/fork.png)
+![Simple fork](/fork-in-c-programming-language/fork.png)
 
 Simply, we can tell that the result is 2 power of n, where n is the number of fork() system calls. 
 
@@ -110,7 +110,7 @@ int main() {
 
 I drew a brief sketch to help you understand the idea:
 
-![Fork](/engineering-education/fork-in-c-programming-language/fork1.png)
+![Fork](/fork-in-c-programming-language/fork1.png)
 
 Inside the first `if` condition a fork has occurred and it is checking if it is the child process, it then continues to execute its code. Otherwise (if its the parent process) it will not go through that `if`. Then, in the second `if`, it will only accept the parent process which holds the positive id. 
 
@@ -142,7 +142,7 @@ Hello world!
 Hello world!
 ```
 
-![Fork explaination](/engineering-education/fork-in-c-programming-language/fork2.png)
+![Fork explaination](/fork-in-c-programming-language/fork2.png)
 
 Because when the process that has been forked inside `dowork()` prints `Hello World!` it will continue the main code after the function call and print that `Hello World!` then exits.
 
@@ -247,4 +247,4 @@ Happy coding!
 4. [Introduction to Semaphore](https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/making-api-requests-using-retrofit-android/
+url: /making-api-requests-using-retrofit-android/
 title: Simple GET request using Retrofit in Android
 description: In this article, we will illustrate how to make API requests using Retrofit. We will create a simple application that shows a list of Marvel characters from an API.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/making-api-requests-using-retrofit-android/hero.jpg
+  - url: /making-api-requests-using-retrofit-android/hero.jpg
     alt: example image GET request Retrofit in Android
 ---
 Networking is a crucial factor in mobile development. Most, if not all mobile applications incorporate networking on some level. Applications are either sending or receiving information. Initially, developers did networking on the `main thread`. This made applications less user-friendly since screens would "freeze".
@@ -19,7 +19,7 @@ Networking is a crucial factor in mobile development. Most, if not all mobile ap
 Networking on the main thread stopped after the Honeycomb version was released. Google then developed [Volley in 2013](https://ymedialabs.com/google-volley).
 
 ### Introduction
-You can read my article on Volley [here](/engineering-education/making-api-requests-using-volley-android/). 
+You can read my article on Volley [here](/making-api-requests-using-volley-android/). 
 
 Volley offered something better: It was faster, provided better functionality, a simpler syntax, etc. Still, there was room for growth when it came to networking. 
 
@@ -46,7 +46,7 @@ Retrofit is used to perform the following tasks:
 - Supports convertors.
 
 ### Disadvantages of retrofit
-- It does not support image loading. It requires other libraries such as `Glide` and [`Picasso`](/engineering-education/using-picasso-in-android/).
+- It does not support image loading. It requires other libraries such as `Glide` and [`Picasso`](/using-picasso-in-android/).
 - It does not support setting priorities.
 
 ### Classes used in retrofit
@@ -62,7 +62,7 @@ Retrofit is used to perform the following tasks:
 ### Step 1 – Create a new Android studio project
 Open Android Studio and Start a new Android Studio Project -> Empty Activity. Let us name the project `MarvelRetrofit`. Select *Finish* and wait for the project to build.
 
-![Name the project](/engineering-education/making-api-requests-using-retrofit-android/name.jpg)
+![Name the project](/making-api-requests-using-retrofit-android/name.jpg)
 
 ### Step 2 – Adding retrofit to our application
 Add the following dependencies to your app-level `build.gradle` file.
@@ -232,7 +232,7 @@ That is it!
 
 Let's run our application.
 
-![Retrofit](/engineering-education/making-api-requests-using-retrofit-android/app.jpg)
+![Retrofit](/making-api-requests-using-retrofit-android/app.jpg)
 
 ### To wrap up
 We have learned that networking is a crucial factor in mobile application development. We have learned how to use Retrofit and its advantages and disadvantages. **Did you know that Retrofit takes 312ms to carry out one discussion? That is super fast.**
@@ -240,4 +240,4 @@ We have learned that networking is a crucial factor in mobile application develo
 Check out other ways to use Retrofit in their official [documentation](https://square.github.io/retrofit/). You can access this tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/MarvelRetrofit). You can also download the sample APK on Google [Drive](https://drive.google.com/file/d/1v_C-cgkmTaVswyfnC7s60nWcs6f_ncWf/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

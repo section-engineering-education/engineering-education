@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-make-an-image-carousel-for-your-website/
+url: /how-to-make-an-image-carousel-for-your-website/
 title: How to Make an Image Carousel Using Basic HTML, CSS, and JavaScript
 description: This tutorial will walk the reader through adding an image carousel to a website to improve the user interface. 
 author: eugiene-kanillar
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-make-an-image-carousel-for-your-website/hero.jpg
+  - url: /how-to-make-an-image-carousel-for-your-website/hero.jpg
     alt: Image Carousell Using Basic HTML, CSS, and JavaScript image example
 ---
 An image carousel is a container (slideshow) of images or info that users can select by clicking a button that directs them forward or backward in the slideshow. An image carousel makes a website more interactive by enhancing the user experience. 
@@ -233,7 +233,7 @@ function SlideShow() {
 ### Testing
 One can test whether the code works by navigating to the folder where the project is stored and opening the HTML file using any browser. The code should work just fine. Check out a sample of an image carousel illustrated below from Usain Bolt's website.
 
-![demo](/engineering-education/how-to-make-an-image-carousel-for-your-website/example.gif)
+![demo](/how-to-make-an-image-carousel-for-your-website/example.gif)
  
 Access the tutorial's code on [Github](https://github.com/KanizoRGB/Imagecarousell-for-a-website/tree/main).
 
@@ -243,7 +243,7 @@ In this article, we have learned how to implement an Image carousel on websites.
 Image carousels are essential in websites because they improve the user interface and experience of a website. Image carousels are a great way to show content cards.
 
 ---
-Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
+Peer Review Contributions by: [Briana Nzivu](/authors/briana-nzivu/)
 
 
 

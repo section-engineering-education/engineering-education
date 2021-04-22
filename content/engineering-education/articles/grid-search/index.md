@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/grid-search/
+url: /grid-search/
 title: Using Grid Search to Optimize Hyperparameters
 description: In this post, we dive into a key technique to optimize hyperparameters known as grid-search. We will define grid search and explore how it works through a simple Python example. 
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/grid-search/hero.jpg
+  - url: /grid-search/hero.jpg
     alt: Grid search hero image
 ---
 Unlike parameters, hyperparameters are set before training a machine learning model. These hyperparameters need to be optimized to adapt a model to a dataset. However, the optimal hyperparameter settings on one dataset are unlikely to be optimal on another. This makes the task of hyperparameter optimization that much trickier. 
@@ -32,7 +32,7 @@ In this post, we will dive into a key technique to optimize hyperparameters know
 
 ### Prerequisites
 Before we begin it may be helpful to go over and install the following:
-• A section of this [article](/engineering-education/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
+• A section of this [article](/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
 
 • [VSCode](https://code.visualstudio.com/) will be my code editor, and we will be using Python as the language.
 
@@ -48,7 +48,7 @@ Grid search refers to a technique used to identify the optimal hyperparameters f
 
 Grid search is thus considered a very traditional hyperparameter optimization method since we are basically “brute-forcing” all possible combinations. The models are then evaluated through cross-validation. The model boasting the best accuracy is naturally considered to be the best.
 
-![grid](/engineering-education/grid-search/grid.png)
+![grid](/grid-search/grid.png)
 
 *Grid layout.*
 
@@ -65,7 +65,7 @@ The excluded fold is used to then test the model. This process is repeated until
 
 In a technique known as the k-fold cross-validation, a user specifies the number of folds, represented by $k$. This means that when $k=5$, there are 5 folds.
 
-![crossvalidation](/engineering-education/grid-search/crossvalidation.png)
+![crossvalidation](/grid-search/crossvalidation.png)
 
 *K-fold cross-validation with K as 5.*
 
@@ -382,7 +382,7 @@ Until then, good luck, and happy coding!
 
 ---
 
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

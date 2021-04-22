@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/parametric-vs-nonparametric/
+url: /parametric-vs-nonparametric/
 title: Parametric versus Non-Parametric Models
 description: This article will be an introduction to parametric and non-parametric models  A machine learning model with a set number of parameters is a parametric model. Those without a set number of parameters are referred to as non-parametric. 
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/parametric-vs-nonparametric/hero.jpg
+  - url: /parametric-vs-nonparametric/hero.jpg
     alt: Parametric versus Non-Parametric Models hero image
 ---
 In machine learning, a learner/model learns from training data to map a target function. However, the configuration of the function is undetermined. As a result, we test out many machine learning algorithms to effectively determine which models the intrinsic function. 
@@ -24,7 +24,7 @@ To tune the behavior of models for a given task, these models are parameterized.
 4. Parametric vs. Non-parametric models
 
 ### Prerequisites
-I would recommend this article on [supervised learning algorithms](/engineering-education/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
+I would recommend this article on [supervised learning algorithms](/supervised-learning-algorithms/). It introduces several concepts that we will refer to later in this article.
 
 ### Parameters
 A parameter can be described as a configuration variable that is intrinsic to the model. Model parameters are usually not set manually. Parameters are often mistaken for hyperparameters. Hyperparameters are configuration variables that are external to the model. Unlike parameters, hyperparameters are manually set.
@@ -76,7 +76,7 @@ We mentioned that linear SVM is an example of a parametric model. This is becaus
 ### Parametric vs Non-Parametric models
 Since we can now define both parametric and non-parametric models, we can compare both in this following section. We will then look at the benefits and limitations of both types of models.
 
-![fit](/engineering-education/parametric-vs-nonparametric/fit.png)
+![fit](/parametric-vs-nonparametric/fit.png)
 
 *Results of parametric and non-parametric regression.*
 
@@ -137,7 +137,7 @@ Happy coding.
 5.  [Parametric vs Nonparametric models?](https://medium.com/@dataakkadian/what-are-parametric-vs-nonparametric-models-8bfa20726f4d)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

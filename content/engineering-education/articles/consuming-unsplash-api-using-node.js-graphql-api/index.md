@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/
+url: /consuming-unsplash-api-using-node.js-graphql-api/
 title: Consuming the Unsplash API using Node.js Graphql API
 description: In this article, we will cover the process of creating an Unsplash developer account and implemented various functionalities provided by Unsplash API on a Node.js Graphql API.
 author: kennedy-mwangi
@@ -10,7 +10,7 @@ date: 2021-02-08T00:00:00-21:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/hero.jpg
+  - url: /consuming-unsplash-api-using-node.js-graphql-api/hero.jpg
     alt: extending classes example image
 ---
 Unsplash is a photography sharing application. It has millions of users who post photos related to different topics every day. It is estimated the platform has over two million photos. With the need to bring their services closer to developers, Unsplash released their developer API.
@@ -457,4 +457,4 @@ The ease of use of the API makes peace with every software developer interested 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)

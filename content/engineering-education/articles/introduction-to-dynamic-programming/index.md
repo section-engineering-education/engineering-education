@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-dynamic-programming/
+url: /introduction-to-dynamic-programming/
 title: Introduction to Dynamic Programming
 description: This article will go over dynamic programming (popularly referred to as DP) operates, with a few coding examples as examples. Dynamic Programming (DP) is an algorithmic technique used when solving an optimization problem by breaking it down into simpler subproblems.
 author: adith-bharadwaj
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-dynamic-programming/hero.jpg
+  - url: /introduction-to-dynamic-programming/hero.jpg
     alt: Introduction to Dynamic Programming example Image
 ---
-In our previous [article on recursion](/engineering-education/introduction-to-recursion/), we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. 
+In our previous [article on recursion](/introduction-to-recursion/), we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. 
 <!--more-->
 In this article, we will understand how dynamic programming (popularly referred to as DP) works by solving coding questions.
 ### Table of contents
@@ -74,7 +74,7 @@ Consider the case when n = 5.
 
 As you can observe, fibonacci(4), fibonacci(3), fibonacci(2) are called multiple times. Take a look at the image below to get a better idea:
 
-![Fibonacci](/engineering-education/introduction-to-dynamic-programming/fibonacci.png)
+![Fibonacci](/introduction-to-dynamic-programming/fibonacci.png)
 
 [Image source](https://www.slitherintopython.com/assets/img/fibtree.png)
 
@@ -147,7 +147,7 @@ Whether you are a student preparing for a job or a professional, understanding h
 [GeeksforGeeks](https://www.geeksforgeeks.org/dynamic-programming/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 
 <!-- MathJax script -->

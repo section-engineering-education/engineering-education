@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/greedy-algorithms/
+url: /greedy-algorithms/
 title: Optimizing Stock Price Profit using Greedy Algorithms
 description: In this article we will explore the greedy algorithm approach to obtain the maximum profit given a list of indices when optimizing a stock price profit program.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/greedy-algorithms/hero.jpg
+  - url: /greedy-algorithms/hero.jpg
     alt: Stock Price Greedy Algorithm example image
 ---
 Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 
@@ -174,4 +174,4 @@ Divide and conquer algorithms divide the problem into many sub-problems until th
 In this article, we considered the greedy approach to obtain the maximum profit given a list of indices. Observe that the option of performing multiple buys and sell operations are never used. I hope the intuition behind the greedy approach was presented well. Do let me know what you think about the approach taken to solve the problem. Feedback is highly appreciated.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

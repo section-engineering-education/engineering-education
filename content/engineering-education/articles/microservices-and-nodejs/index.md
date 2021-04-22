@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/microservices-and-nodejs/
+url: /microservices-and-nodejs/
 title: Is Node.js a Good Choice to Create an App based on Micro-services
 description: After reading this article, you should know the importance of using micro-services and the micro-services' key benefits when building apps. 
 author: pius-macharia
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/microservices-and-nodejs/hero.jpg
+  - url: /microservices-and-nodejs/hero.jpg
     alt: Node.js and Microservices Image
 
 ---
@@ -62,4 +62,4 @@ This article has highlighted and explained the importance and benefits of micro-
 When building complex and high traffic applications, Node.js and micro-services are the best architectures to consider since they make application development and maintenance easier compared to monoliths.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

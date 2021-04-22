@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-evolution-of-resource-sharing-technologies-over-the-internet/
+url: /the-evolution-of-resource-sharing-technologies-over-the-internet/
 title: The Evolution Of Resource Sharing Technologies over the Internet
 description: This article will discuss the different methods that have been implemented over the years to enable resource sharing over the internet. We will go over examples such as COBRA OMG, DCOM, Java RMI to name a few.
 author: kioko-mulwa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-evolution-of-resource-sharing-technologies-over-the-internet/hero.jpg
+  - url: /the-evolution-of-resource-sharing-technologies-over-the-internet/hero.jpg
     alt: Resource Sharing Technologies example image
 
 ---
@@ -68,4 +68,4 @@ The following five architectural principles are used to develop a REST API:
 In this article, we discuss the different methods that have been implemented over the years to enable resource sharing over the internet. We can take away that the technologies change over time depending on the data transferred and its current application. The future could hold far better resource sharing technologies than what we currently have.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

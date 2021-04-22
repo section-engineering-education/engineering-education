@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-convolution-neural-networks/
+url: /basics-of-convolution-neural-networks/
 title: Basics of Convolution Neural Networks
 description: This article will introduce the three building blocks of convolution neural networks; convolution layers, pooling layers, and fully connected (FC) layers.
 author: willies-ogola
@@ -10,10 +10,10 @@ date: 2020-11-15T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/basics-of-convolution-neural-networks/hero.jpg
+  - url: /basics-of-convolution-neural-networks/hero.jpg
     alt: convolution neural networks learning image
 ---
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 <!--more-->
 ### Prerequisites
 ### Introduction
@@ -23,7 +23,7 @@ The way humans see images isn’t the same way computers see them. Computers see
 
 Let’s take an example of an image with the number 8 shown below:
 
-![Image as an array](/engineering-education/basics-of-convolution-neural-networks/image-as-array.PNG)<br>
+![Image as an array](/basics-of-convolution-neural-networks/image-as-array.PNG)<br>
 
 *[Image Source: The MNIST Database](http://yann.lecun.com/exdb/mnist/)*
 
@@ -49,7 +49,7 @@ Before we learn how CNNs work, it's important to understand why we need CNNs and
 Let’s look at the architecture of a CNN.
 
 ### Architecture Overview
-![Architecture of a CNN together with the training process](/engineering-education/basics-of-convolution-neural-networks/cnn-architecture.PNG)<br>
+![Architecture of a CNN together with the training process](/basics-of-convolution-neural-networks/cnn-architecture.PNG)<br>
 
 *[Image Source: CrossMark](https://doi.org/10.1007/s13244-018-0639-9)*
 
@@ -68,11 +68,11 @@ Let's consider a visual example to drive this convolution operation point home e
 
 Let's assume we want to compute the convolution of a 5 X 5 input image using a 3 X 3 filter:
 
-![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op1.png)<br>
+![Convolution Operation](/basics-of-convolution-neural-networks/conv-op1.png)<br>
 
-![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op2.png)<br>
+![Convolution Operation](/basics-of-convolution-neural-networks/conv-op2.png)<br>
 
-![Convolution Operation](/engineering-education/basics-of-convolution-neural-networks/conv-op3)
+![Convolution Operation](/basics-of-convolution-neural-networks/conv-op3)
 
 We slide the 3 X 3 filter over the input image, perform element-wise multiplication, and add the outputs.
 
@@ -89,7 +89,7 @@ Mathematically, this is defined by:
 
 `f(x) = max (0, x)`
 
-![Rectified Linear Unit](/engineering-education/basics-of-convolution-neural-networks/relu-function.PNG)<br>
+![Rectified Linear Unit](/basics-of-convolution-neural-networks/relu-function.PNG)<br>
 
 *[Image Source: Papers with code](https://paperswithcode.com/method/relu)*
 
@@ -110,7 +110,7 @@ It's important to note that a 2 x 2 filter size applied with a stride of 2 is th
 
 Below is an example of a max-pooling operation. It comprises a filter size of 2 x 2 that extracts a 2 x 2 patch from the input tensor. It outputs the largest value in each patch.
 
-![Max Pooling](/engineering-education/basics-of-convolution-neural-networks/max-pooling.png)
+![Max Pooling](/basics-of-convolution-neural-networks/max-pooling.png)
 
 Max-pooling results in the input's down-sampling, reducing its dimensions from a 4 x 4 to a 2 x 2.
 
@@ -119,7 +119,7 @@ Besides, **average pooling** is another type of pooling operation that's worth m
 
 Here is an example of average pooling on CNN.
 
-![Average Pooling](/engineering-education/basics-of-convolution-neural-networks/average-pooling.png)
+![Average Pooling](/basics-of-convolution-neural-networks/average-pooling.png)
 
 Here, the input image with a 4 x 4 dimension is reduced to a 2 x 2 using average pooling.
 
@@ -129,7 +129,7 @@ The output feature maps of the layer before the FC layer are transformed into a 
 
 The FC layer maps the extracted features from the convolution and pooling layers onto the final output, i.e., classification.
 
-![A fully connected layer with a flattened input](/engineering-education/basics-of-convolution-neural-networks/fully-connected.PNG)<br>
+![A fully connected layer with a flattened input](/basics-of-convolution-neural-networks/fully-connected.PNG)<br>
 
 *[Image Source: Stanford](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)*
 
@@ -158,19 +158,19 @@ A kernel is an integral component of the structure of a CNN. It’s sometimes re
 
 Stride refers to the number of pixels a convolution filter moves. It can be compared to a sliding window. The image below shows the stride, S moving with a pixel of 2.
 
-![Stride, S](/engineering-education/basics-of-convolution-neural-networks/stride.PNG)<br>
+![Stride, S](/basics-of-convolution-neural-networks/stride.PNG)<br>
 
 *[Image Source: Stanford](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)*
 
 ### Applications of Convolution Neural Networks
 #### Computer Vision
-Image classification is a very common problem in [computer vision](/engineering-education/computer-vision-straight-lines/). The goal in image classification is to learn features directly from image data. We then use these learned features for classification. For instance, feeding an image of a cat as our input, the network should classify the image as a cat.
+Image classification is a very common problem in [computer vision](/computer-vision-straight-lines/). The goal in image classification is to learn features directly from image data. We then use these learned features for classification. For instance, feeding an image of a cat as our input, the network should classify the image as a cat.
 
 Recently, CNN have been used for image captioning. Here, the goal is to generate a sentence that describes the semantic content in an image. It’s achieved by combining CNN with a [Recurrent Neural Network](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks/)(RNN). In the last layer in the CNN architecture, instead of a fully connected (FC) layer, it replaces the last layer of the CNN with an RNN.    
 
 I know you might find it difficult to understand how an RNN is getting fixed to a CNN. Let me explain using the structure of a CNN below.
 
-![Structure of a CNN divided into feature learning and classification sections](/engineering-education/basics-of-convolution-neural-networks/cnn-rnn-explanation.PNG)<br>
+![Structure of a CNN divided into feature learning and classification sections](/basics-of-convolution-neural-networks/cnn-rnn-explanation.PNG)<br>
 
 *[Image Source: MathWork](https://www.mathworks.com/solutions/deep-learning/convolutional-neural-network.html)*
 
@@ -200,19 +200,19 @@ Finally, the fully connected (FC) layer and activation function on the output cl
 #### Medical & Healthcare
 In radiology, CNN is used to classify whether the computed tomography (CT) scans of lung nodules are benign or malignant (cancerous).  
 
-![Classification of lung nodules](/engineering-education/basics-of-convolution-neural-networks/benign-malignant.PNG)<br>
+![Classification of lung nodules](/basics-of-convolution-neural-networks/benign-malignant.PNG)<br>
 
 *[Image Source: CrossMark](https://doi.org/10.1007/s13244-018-0639-9)*
 
 In medical image analysis, CNN is used in the segmentation of organs. For example, it has been used to segment cancerous tumors in the uterus, as shown below.
 
-![Segmentation of a cancerous uterus tumor](/engineering-education/basics-of-convolution-neural-networks/malignant-tumor.PNG)<br>
+![Segmentation of a cancerous uterus tumor](/basics-of-convolution-neural-networks/malignant-tumor.PNG)<br>
 
 *[Image Source: CrossMark](https://doi.org/10.1007/s13244-018-0639-9)*
 
 A CNN that uses a pretty standard architecture is used to identify genetic disorders from facial phenotypes' on pictures of children's face. The identification is shown below.
 
-![DeepGestalt's network architecture](/engineering-education/basics-of-convolution-neural-networks/deepgestalt.PNG)<br>
+![DeepGestalt's network architecture](/basics-of-convolution-neural-networks/deepgestalt.PNG)<br>
 
 *[Image Source: Nature Medicine](https://www.gwern.net/docs/genetics/heritable/2019-gurovich.pdf)*
 
@@ -237,4 +237,4 @@ You can learn more advanced concepts of CNN [here](https://stanford.edu/~shervin
 6. [Convolution Neural Network](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

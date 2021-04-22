@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-execute-linux-commands-in-python/
+url: /how-to-execute-linux-commands-in-python/
 title: How to Execute Linux Commands in Python
 description: This tutorial will serve and an introduction to Linux commands. We are going to look at how we can automate and run Linux commands in Python.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-execute-linux-commands-in-python/hero.jpeg
+  - url: /how-to-execute-linux-commands-in-python/hero.jpeg
     alt: Linux commands Python example image
 ---
 Linux is one of the most popular operating systems used by software developers and system administrators. It is open-source, free, customizable, very robust, and adaptable. Making it an ideal choice for servers, [virtual machines (VMs)](https://www.vmware.com/topics/glossary/content/virtual-machine), and many other use cases.
@@ -26,7 +26,7 @@ Therefore, it is essential for anyone working in the tech industry to know how t
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- Basic understanding of [Linux](/engineering-education/what-is-linux/) and [shell scripting](/engineering-education/introduction-to-shell-scripting/).
+- Basic understanding of [Linux](/what-is-linux/) and [shell scripting](/introduction-to-shell-scripting/).
 - Basic programming skills in [Python](https://www.python.org/about/gettingstarted/).
 
 ### Introduction
@@ -64,7 +64,7 @@ This module intends to replace several older modules and functions. The subproce
 
 Create a Python file and add the following code. We also need to create a file called "servers.txt", where we can add a list of all the servers we need to ping. The Python script will read from this file and ping each server listed in it. 
 
-![Servers](/engineering-education/how-to-execute-linux-commands-in-python/servers.png)
+![Servers](/how-to-execute-linux-commands-in-python/servers.png)
 
 I have added 4 servers, out of which two exist and the other two do not. Only the servers that exist can be "pinged".
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     # print(outputlist)
 ```
 
-![Output](/engineering-education/how-to-execute-linux-commands-in-python/output.png)
+![Output](/how-to-execute-linux-commands-in-python/output.png)
 
 As you can see in the output, we get the message "name or service not known" for the two servers that did not exist. 
 
@@ -124,4 +124,4 @@ In conclusion, automation is one of the hottest topics in the industry, and almo
 An old way of doing this is by using shell scripts. However, using Python gives developers more power and control over the execution and output of the commands. Now that you have understood the basics of executing Linux commands, you can go ahead and experiment with different commands and build more complex and robust applications.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

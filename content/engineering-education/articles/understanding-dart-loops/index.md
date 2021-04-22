@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-loops-and-iteration-in-dart/
+url: /understanding-loops-and-iteration-in-dart/
 title: Understanding Loops and Iteration in Dart
 description: In this article, the readers will understand about the different types of loops in Dart and how to use them.
 author: diana-mutheu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-loops-and-iteration-in-dart/hero.jpg
+  - url: /understanding-loops-and-iteration-in-dart/hero.jpg
     alt: Understanding loops and iteration in Dart image
 ---
 Dart is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations.
@@ -329,6 +329,6 @@ To get a better grip on the topic, take a look at these resources:
 - [Udemy course for Dart](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 
 

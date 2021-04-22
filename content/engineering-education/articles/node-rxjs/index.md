@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-rxjs/
+url: /node-rxjs/
 title: Node.js Rxjs
 description: This article shows developers how to use the RxJs library and will also look at the various operators found in the library.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-rxjs/hero.jpg
+  - url: /node-rxjs/hero.jpg
     alt: RxJs image computer
 ---
 ReactiveX stands for *Reactive Extensions*. It is a collection of projects done by the ReactiveX community. They bring asynchronous programming into different programming languages and platforms. Their observable patterns also help in making the code smaller (less) and easier to read.
@@ -48,7 +48,7 @@ From the code above, we import the Observable module. We then create the `Observ
 - `error` : executed when an error occurs
 - `complete` : executed when emission ends. It does not emit values unlike the others. The output of the code above is:
 
-![observer](/engineering-education/node-rxjs/rx-observer.png)
+![observer](/node-rxjs/rx-observer.png)
 
 Another way to create an observable is by using the `interval` operator. This creates an observable that emits values after a specified duration.
 
@@ -147,4 +147,4 @@ Output:
 These are some of the RxJs operators that you can use on your observables. There are many more operators with different functions. You can get more info from the [official documentation](https://github.com/ReactiveX/rxjs) or use [learnrxjs.io](https://www.learnrxjs.io/). The code samples can be found on [Github](https://github.com/LinusMuema/node-rxjs). Feel free to raise a PR or an issue.
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)

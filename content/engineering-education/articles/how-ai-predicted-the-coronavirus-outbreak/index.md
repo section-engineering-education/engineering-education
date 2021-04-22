@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-ai-predicted-the-coronavirus-outbreak/
+url: /how-ai-predicted-the-coronavirus-outbreak/
 title: How AI predicted the Coronavirus Outbreak 
 description: This article will go over how using advanced analytical tools for Machine Learning (ML), and Artificial Intelligence (AI) allows us to disseminate infectious diseases spread insights around the world faster. 
 author: willies-ogola
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-ai-predicted-the-coronavirus-outbreak/hero.jpg
+  - url: /how-ai-predicted-the-coronavirus-outbreak/hero.jpg
     alt: AI predicted the coronavirus example image
 ---
 In our hyper-connected world, outbreaks spread fast. If we want to stay ahead of them, we have to find ways of moving even faster. In 2013, having learned from previous outbreaks, a Canadian company, [BlueDot](https://bluedot.global/) was able to utilize the power of Artificial Intelligent (AI) to build a software that could detect outbreaks in record time.
@@ -65,7 +65,7 @@ They realized that some countries, including Bangkok, Tokyo, Hong Kong, Singapor
 
 Besides, BlueDot's software made predictions on countries at higher risks of the spread between February and April based on IATA's passengers' travel data from cities in China from 2019.
 
-![Volume of travelers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/engineering-education/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
+![Volume of travelers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
 
 *[Image Source: Journal of Travel Medicine](https://academic.oup.com/jtm/article/27/2/taaa011/5716260)*
 
@@ -100,4 +100,4 @@ Diseases spread incredibly quickly. Thus, time is our most valuable resource to 
 10. [Hero Image](https://unsplash.com/photos/Tzoe6VCvQYg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink/)
  
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-social-auth/
+url: /spring-social-auth/
 title: Getting Started with Spring Boot Social Authentication
 description: This tutorial will go over Spring Boot social authentication with both google and github. Spring Boot social auth makes it possible for users to authenticate into Spring Boot applications using their existing social accounts.
 author: odhiambo-paul
@@ -10,7 +10,7 @@ date: 2021-03-23T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/spring-social-auth/hero.jpg
+  - url: /spring-social-auth/hero.jpg
     alt: Spring Boot social authentication example image
 ---
 ### Spring Boot Social auth
@@ -137,7 +137,7 @@ spring:
 
 Navigate to `http://localhost:8080` in your browser, you will be presented with a GitHub authentication screen as shown below.
 
-![Github authentication](/engineering-education/spring-social-auth/github-auth.png)
+![Github authentication](/spring-social-auth/github-auth.png)
 
 ### Google authentication
 Now that we have successfully implemented Github authentication, let's also implement Google authentication.
@@ -215,15 +215,15 @@ In this section, we are going to create a simple HTML for our homepage.
 
 When you navigate to `http://localhost:8080`, the web page below is displayed.
 
-![Homepage unauthenticated](/engineering-education/spring-social-auth/home.png)
+![Homepage unauthenticated](/spring-social-auth/home.png)
 
 On clicking Google auth the app redirects to the Google authentication screen as shown below.
 
-![Google authentication](/engineering-education/spring-social-auth/google-auth.png)
+![Google authentication](/spring-social-auth/google-auth.png)
 
 After successful authentication, a user is redirected to the homepage where their username is captured from the social profile. The screenshot below shows a username captured from the Google authentication.
 
-![Homepage authenticated](/engineering-education/spring-social-auth/logged-in.png)
+![Homepage authenticated](/spring-social-auth/logged-in.png)
 
 ### Conclusion
 Now that you have learned how to authenticate users in your Spring Boot application through Google and Github, implement Facebook social authentication in your Spring Boot application. 
@@ -234,4 +234,4 @@ Happy coding.
 
 ---
 
-Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/authors/linus-muema/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-analytics-using-pandas/
+url: /data-analytics-using-pandas/
 title: Introduction to Data analysis using Pandas
 description: In this tutorial we will learn how Pandas provide a robust collection of functions that make it easy to process and read data.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-analytics-using-pandas/hero.jpg
+  - url: /data-analytics-using-pandas/hero.jpg
     alt: pandas example image
 ---
 Data Science and Data Analytics are some of the hottest topics in the Computer Science industry. The ability to analyze and make predictions based on data is nothing short of extraordinary.
@@ -26,14 +26,14 @@ Data Science and Data Analytics are some of the hottest topics in the Computer S
 - [Conclusion and further reading](#conclusion-and-further-reading)	 
 
 ### Prerequisites
-1. A basic understanding of programming in [Python](/engineering-education/data-structures-python-part-1/)
+1. A basic understanding of programming in [Python](/data-structures-python-part-1/)
 
 2. Basic knowledge of [data analytics](https://data-flair.training/blogs/data-analytics-tutorial/)
 
 ### What is Pandas?
 According to the official documentation, Pandas is a fast, powerful, flexible, and easy to use open-source data analysis and manipulation tool. It is built on top of the Python programming language. Pandas is usually used in conjunction with Jupyter notebooks, making it more powerful and efficient for [exploratory data analysis](https://towardsdatascience.com/exploratory-data-analysis-in-python-c9a77dfa39ce).
 
-If you are new to Jupyter notebooks, [this](/engineering-education/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks.
+If you are new to Jupyter notebooks, [this](/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks.
 
 Pandas provide a robust collection of functions that make it easy to process and read data. In this tutorial, we are going to explore some useful functions and techniques that are an integral part of a data scientist's toolset. You can install Pandas by using Python's package manager, [pip](https://pip.pypa.io/en/stable/).
 
@@ -84,7 +84,7 @@ data.columns
 data.info()
 ```
 
-![Data functions](/engineering-education/data-analytics-using-pandas/first.png)
+![Data functions](/data-analytics-using-pandas/first.png)
 
 The `head()` function prints the first 5 rows in the dataset by default. If a number 'n' is specified as an argument, it prints the first 'n' rows in the dataset.
 
@@ -101,7 +101,7 @@ data.quality.head(10)
 data.quality.tail(5)
 ```
 
-![More Functions](/engineering-education/data-analytics-using-pandas/second.png)
+![More Functions](/data-analytics-using-pandas/second.png)
 
 In a data frame, we can access individual columns by using the dot(.) operator.
 
@@ -116,11 +116,11 @@ data['pH'] = data['pH'].values.astype(int)
 data.head()
 ```
 
-![Describe](/engineering-education/data-analytics-using-pandas/third.png)
+![Describe](/data-analytics-using-pandas/third.png)
 
 The `describe()` function provides some statistical measures such as [mean, median](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/mean-and-median/v/statistics-intro-mean-median-and-mode), [standard deviation](https://www.mathsisfun.com/data/standard-deviation.html), minimum, and maximum values.
 
-![Astype](/engineering-education/data-analytics-using-pandas/fourth.png)
+![Astype](/data-analytics-using-pandas/fourth.png)
 
 The `astype()` function converts the data from its original type to the one specified in the argument. In the example above, we convert the 'pH' column that has `float` values to integers by specifying `int` as the argument.  
 
@@ -133,11 +133,11 @@ data = data.sort_values('alcohol', ascending=False)
 data.head(10)
 ```
 
-![Quality](/engineering-education/data-analytics-using-pandas/fifth.png)
+![Quality](/data-analytics-using-pandas/fifth.png)
 
 We created two new columns, 'good_wine' and 'bad_wine' as shown in the example above. The 'good_wine' column will have `True` wherever the 'quality' of the wine is greater than 5. The 'bad_wine' will have `True` wherever the 'quality' is less than or equal to 5.
 
-![Sort](/engineering-education/data-analytics-using-pandas/sixth.png)
+![Sort](/data-analytics-using-pandas/sixth.png)
 
 The `sort_values()` function sorts the data frame based on the specified column. In the example above, we specify the 'alcohol' column, and the data is sorted based on this column. `ascending=False` tells pandas to sort the data in descending order. This can be set to `True` if you want the data to be sorted in ascending order.
 
@@ -146,7 +146,7 @@ data = data.drop(columns=['good_wine', 'bad_wine'])
 data.head()
 ```
 
-![Drop](/engineering-education/data-analytics-using-pandas/seventh.png)
+![Drop](/data-analytics-using-pandas/seventh.png)
 
 The `drop()` function can be used to get rid of unwanted columns in the dataset. You can specify a list of columns as an argument, and Pandas will delete all these columns. As you can see in the image above, the 'good_wine' and 'bad_wine' columns have been removed.
 
@@ -158,4 +158,4 @@ Now that we have a better understanding of data analytics basics, you can go to 
 You can also go one step further and apply [machine learning](https://www.geeksforgeeks.org/machine-learning/) algorithms to [classify](https://www.simplilearn.com/classification-machine-learning-tutorial) and [predict](https://www.datarobot.com/wiki/prediction-explanations/) values from the dataset.  
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

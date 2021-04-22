@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/page-visibility-api/
+url: /page-visibility-api/
 title: Getting Started with the Page Visibility API
 description: In this tutorial, we will learn the basics of the Page visibility API by building a simple video playback controls webpage utilizing the HTML5 video tags.
 author: wilson-gichuhi
@@ -10,7 +10,7 @@ date: 2021-03-01T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/page-visibility-api/hero.jpg
+  - url: /page-visibility-api/hero.jpg
     alt: Implement a custom scrollbar on a web page using CSS
 ---
 When we use browser tabs to browse the web pages, there is a chance that some (or most) of the tabs will not visible to the user at once. The Page Visibility API is a browser API that provides a way to determine which browser tabs are currently active or idle.
@@ -142,4 +142,4 @@ I hope you find other useful ways to optimize your applications using this API.
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

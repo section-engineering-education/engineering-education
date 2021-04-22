@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/securing-ai-systems-from-adversaries/
+url: /securing-ai-systems-from-adversaries/
 title: Securing AI Systems from Adversaries
 description: This article will be going how to secure AI systems from adversarial threats with examples of how we can mitigate these attacks.
 author: collins-ayuya
@@ -11,12 +11,12 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/securing-ai-systems-from-adversaries/hero.jpg
+  - url: /securing-ai-systems-from-adversaries/hero.jpg
     alt: securing ai systems image
 ---
 Artificial intelligence represents just how powerful and impactful technology has become. It is present in all aspects of our daily lives, from basic tasks to very critical implementations. However, AI systems may cause devastating damage if used by malicious actors.
 <!--more-->
-We often focus on how [AI can improve cybersecurity](/engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/), but it's important to consider how to secure AI systems.
+We often focus on how [AI can improve cybersecurity](/the-role-of-artificial-intelligence-for-smarter-cybersecurity/), but it's important to consider how to secure AI systems.
 
 ### Table of contents
 1. Model Duplicating Techniques
@@ -26,7 +26,7 @@ We often focus on how [AI can improve cybersecurity](/engineering-education/the-
 3. Poisoning Attacks
 
 ### Prerequisites
-An understanding of machine learning is crucial. For an introduction to ML, read this [article](/engineering-education/supervised-learning-algorithms/).
+An understanding of machine learning is crucial. For an introduction to ML, read this [article](/supervised-learning-algorithms/).
 
 ### Useful terms
 **Disjoint-set**–disjoint-set data structure is a collection of sets that are disjoint. This means that the sets are non-overlapping. We can find no item in more than a single set. This data structure keeps track of elements in a set that has been partitioned into many non-overlapping subsets.
@@ -41,7 +41,7 @@ Artificial intelligence has widespread use cases. A crucial one is its role in c
 Considering how much we use these systems in our daily lives today, and the responsibility placed upon them, it's important to consider their security. In this article, we explore three types of attacks that are aimed at artificial intelligence systems and their methods of mitigation.
 
 
-![matrix](/engineering-education/securing-ai-systems-from-adversaries/matrix.jpg)
+![matrix](/securing-ai-systems-from-adversaries/matrix.jpg)
 
 Adversarial ML Threat Matrix [Source](https://www.helpnetsecurity.com/2020/10/27/attacks-machine-learning-systems/)
 
@@ -76,7 +76,7 @@ Adversarial machine learning represents a technique used to trick a model with m
 
 The image below shows an example of adversarial examples.
 
-![miscategorization](/engineering-education/securing-ai-systems-from-adversaries/miscategorization.png)
+![miscategorization](/securing-ai-systems-from-adversaries/miscategorization.png)
 
 [Misclassification of a panda as a gibbon](https://arxiv.org/pdf/1412.6572.pdf)
 
@@ -104,7 +104,7 @@ Through poisoning attacks, an adversary is capable of:
 
 - **Data injection**. Here, the attacker can inject new data into the training set. The attacker doesn't have access to the algorithm itself, therefore can only inject data.
 
-![boundary](/engineering-education/securing-ai-systems-from-adversaries/boundary.png)
+![boundary](/securing-ai-systems-from-adversaries/boundary.png)
 
 [Boundary shift](https://arxiv.org/pdf/1904.06292.pdf)
 
@@ -161,4 +161,4 @@ AI systems are targets of various attacks. Some of these attacks aren't only cha
 14. [How to improve Cybersecurity for Artificial Intelligence](https://www.brookings.edu/research/how-to-improve-cybersecurity-for-artificial-intelligence/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/
+url: /understanding-tcp-ip-transport-layer-protocols/
 title: Understanding TCP/IP Transport Layer (Layer 3) protocols - TCP and UDP
 description: This tutorial will be a brief dive into the understanding the transport layer protocols like TCP and UDP. The transport layer is part of the TCP/IP networking model, sometimes called the networking architecture.
 author: rabo-james-bature
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/hero.jpg
+  - url: /understanding-tcp-ip-transport-layer-protocols/hero.jpg
     alt: Transport layer protocols hero image
 --- 
 In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol (TCP) or User Datagram Protocol (UDP). By reading this article, you will understand the workings of TCP and UDP, how they differ from each other, and will also see various applications using these protocols.
@@ -72,7 +72,7 @@ The type of transport layer protocol an application chooses to use depends on th
 
 TCP is analogous to sending a package with a tracker that tracks the package from its source to its destination.
 
-![TCP Header](/engineering-education/understanding-tcp-ip-transport-layer-protocols/tcp.png)
+![TCP Header](/understanding-tcp-ip-transport-layer-protocols/tcp.png)
 
 *Source: TCP Header by [Wikiversity](https://en.wikiversity.org/wiki/Internet_Protocol_Analysis/Transport_Layer#/media/File:Internet_Protocol_Analysis_-_Transport_Layer.png)*
 
@@ -102,7 +102,7 @@ For example, to create a three-way handshake between a server and a host, the ho
 
 When the server receives the SYN flag from the host, it sends back another SYN and an ACK flag. This contains a source port number (the port number used as the destination port number on the SYN flag sent by the host) and a destination port number (the port number that the host used as source port number). The host acknowledges those flags' reception with an ACK flag, and a connection is established, thus forming a **three-way handshake.**
 
-![Three-way hanshake](/engineering-education/understanding-tcp-ip-transport-layer-protocols/handshake.png)
+![Three-way hanshake](/understanding-tcp-ip-transport-layer-protocols/handshake.png)
 
 #### Three-way handshake
 Now, let's have a look at how three-way handshake is performed in detail:
@@ -116,7 +116,7 @@ Now, let's have a look at how three-way handshake is performed in detail:
 - The server replies with an ACK flag notifying the client that it has received the FIN flag and is aware of the hosts' readiness to terminate the session.
 - The server replies with ACK and FIN flags, informing the host of its willingness to end the session. The session ends immediately after the host sends an ACK flag to the server completing the four way-handshake.
 
-![Session termination](/engineering-education/understanding-tcp-ip-transport-layer-protocols/termination.png)
+![Session termination](/understanding-tcp-ip-transport-layer-protocols/termination.png)
 
 *Session Termination*
 
@@ -157,7 +157,7 @@ But with UDP, if a packet is missing, the streaming will continue unnoticed. It 
 
 The significant difference between TCP and UDP is that TCP offers a wide range of services to applications, while UDP does not, this does not make UDP inferior to TCP, but by providing fewer services, UDP has fewer bytes in its header, and this makes UDP is faster when transporting data.
 
-![UDP header](/engineering-education/understanding-tcp-ip-transport-layer-protocols/udp.png)
+![UDP header](/understanding-tcp-ip-transport-layer-protocols/udp.png)
 
 *Source: UDP Header by [Wikiversity](https://en.wikiversity.org/wiki/Internet_Protocol_Analysis/Transport_Layer#/media/File:Internet_Protocol_Analysis_-_Transport_Layer.png)*
 
@@ -263,4 +263,4 @@ To summarize:
 - [TCP ordered data transfer](http://waksudir.blogspot.com/2015/03/transport-layer-protocols)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

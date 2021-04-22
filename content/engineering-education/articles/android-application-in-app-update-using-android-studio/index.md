@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-application-in-app-update-using-android-studio/
+url: /android-application-in-app-update-using-android-studio/
 title: Android Application In-App Update Using Android Studio
 description: This article acts as a guide on how to provide in-app updates using Android Studio. It discusses flexible and immediate updating techniques.
 author: joseph-chege
@@ -10,7 +10,7 @@ date: 2020-12-30T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/android-application-in-app-update-using-android-studio/hero.png
+  - url: /android-application-in-app-update-using-android-studio/hero.png
     alt: Android app update
 ---
 As developers, we always want users to update their applications to the latest version quickly. We want everyone to use the latest features included in the updates. Google notifies Android users whenever updates are available for certain applications. However, this is mainly for users who have enabled the `auto-update` feature. It is, therefore, important for users to know when your application has a new update available.
@@ -473,7 +473,7 @@ public class Flexible extends AppCompatActivity {
 }
 ```
 
-![image](/engineering-education/android-application-in-app-update-using-android-studio/flexible.png)
+![image](/android-application-in-app-update-using-android-studio/flexible.png)
 
 #### Immediate
 
@@ -530,10 +530,10 @@ public class Immediate extends AppCompatActivity {
 }
 ```
 
-![image](/engineering-education/android-application-in-app-update-using-android-studio/immediate.png)
+![image](/android-application-in-app-update-using-android-studio/immediate.png)
 
 ### Conclusion
 I hope this guide helps you implement in-app updates, both immediate and flexible, within your application context.
 
 ---
-Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-versus-next-react-approach/
+url: /node-versus-next-react-approach/
 title: Node.js versus Next.js - A React Approach
 description: This article compares the difference between Node.js and Next.js from a React approach - going over utility applications which are used to enhance the performance applications.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-versus-next-react-approach/hero.jpg
+  - url: /node-versus-next-react-approach/hero.jpg
     alt: Node.js Next.js example image
 ---
 Back in the early days when websites were becoming interactive, JavaScript was introduced. The JS interpreter was present in the browser and did an amazing job of making websites interactive. All the computations were done on the local machine using in the in-built JS Engine. The makers of JS took JS which is confined to the browser and made it available to the local machine. With this change, a lot of new features were unlocked.
@@ -43,15 +43,15 @@ Walmart Labs has written a well detailed [blog](https://medium.com/walmartglobal
 
 The two diagrams mentioned below detail the processes involved in server-side rendering and client-side rendering. We observe that server-side rendered applications are one step ahead of client-side rendered applications. They display the HTML and then load the JS files, therefore enhancing the user experience in terms of performance and loading time. It also falls in line with the 7 principles listed above.
 
-![](/engineering-education/node-versus-next-react-approach/ssr.jpg)
+![](/node-versus-next-react-approach/ssr.jpg)
 
 [Image Source](medium.com)
 
-![](/engineering-education/node-versus-next-react-approach/csr.jpg)
+![](/node-versus-next-react-approach/csr.jpg)
 
 [Image Source](medium.com)
 
-We have looked at building React applications using create-react-app in a previous two article series. You can review them [here](/engineering-education/build-an-outlook-clone-using-react/) and [here](/engineering-education/build-an-outlook-clone-using-react-hooks/).
+We have looked at building React applications using create-react-app in a previous two article series. You can review them [here](/build-an-outlook-clone-using-react/) and [here](/build-an-outlook-clone-using-react-hooks/).
 
 We will be using `create-next-app` instead of `create-react-app` for building next.js applications. Next.js [documentation](https://nextjs.org/learn/basics/create-nextjs-app) provides a detailed step-by-step tutorial on how to implement a Next.js project. We will focus on the major differences between the two and understand the features in depth.
 
@@ -118,7 +118,7 @@ nextsampleproject
 
 8. HTML files received when loading an application built using Next.js are shown in the figure below. The website you are viewing this blog on, is client-side rendered. Let's do something fun. Press **Cltrl+Shift+I** to access the developer tools and click on the **elements** option. You will find a *short piece of HTML* calling JS files as and when user inputs are received. Review the differences between the HTML file that you observe in the console and the image shown below.
 
-![](/engineering-education/node-versus-next-react-approach/ssr_lookup.jpg)
+![](/node-versus-next-react-approach/ssr_lookup.jpg)
 *Screenshot of the HTML rendered on Server-Side.*
 
 9. SSR enables enhanced Search-Engine-Optimization. SEO is easily performed using Next because search engines have more data to parse through. This helps websites stand out within search engines.

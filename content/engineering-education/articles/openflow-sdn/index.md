@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/openflow-sdn/
+url: /openflow-sdn/
 title: Introduction to OpenFlow Protocol   
 description: This article will serve as an introduction to OpenFlow protocol. The OpenFlow (OF) protocol is a standard in software-defined networking (SDN) architecture. This protocol defines the communication between an SDN controller and the network device/agent.
 author: aakash-rawal
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/openflow-sdn/hero.png
+  - url: /openflow-sdn/hero.png
     alt: open source vs vendor networking solutions
 ---
 In this article, we will get to know the basics of OpenFlow protocol, which is the standard protocol in traditional software-defined networks. This article will go through the basics of Software Defined Networking (SDN) and OpenFlow (OF), the working of OF protocol and some terminologies, advantages over traditional networking architecture, and alternatives to OpenFlow be used in SDN.  
@@ -96,4 +96,4 @@ I hope you have found this article useful.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)

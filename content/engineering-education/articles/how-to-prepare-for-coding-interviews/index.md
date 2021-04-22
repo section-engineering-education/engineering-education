@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-prepare-for-coding-interviews/
+url: /how-to-prepare-for-coding-interviews/
 title: How to Prepare for Coding Interviews
 description: This article will help any developer (or future developers) prepare for coding interviews as they apply for jobs with software companies.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-prepare-for-coding-interviews/hero.jpg
+  - url: /how-to-prepare-for-coding-interviews/hero.jpg
     alt: coding interviews example image
 ---
 Whether you are a student or a working professional, effective preparation for any software engineer interviews is essential if you want a job at a good company. *This article covers everything you need to know to prepare for coding interviews in exceptional tech companies*.
@@ -95,4 +95,4 @@ Solve problems on competitive coding platforms, explore the fundamental subjects
 [Computer Networks](https://www.geeksforgeeks.org/commonly-asked-computer-networks-interview-questions-set-1/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

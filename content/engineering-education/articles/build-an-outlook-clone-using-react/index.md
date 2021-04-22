@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-an-outlook-clone-using-react/
+url: /build-an-outlook-clone-using-react/
 title: Building An Outlook Clone with React
 description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-outlook-clone-using-react/hero.jpg
+  - url: /build-an-outlook-clone-using-react/hero.jpg
     alt: output image outlook clone example
 ---
 This guide will walk you through how to build an Outlook clone using React so that you can learn the fundamentals of React. This article is suitable for developers of all experience levels. Open your editor, and let's get started.
@@ -151,7 +151,7 @@ The above mentioned lifecycle methods are used most often. There are a few more 
 1. shouldComponentUpdate()
 2. getSnapshotBeforeUpdate()
 
-![Lifecycle Methods](/engineering-education/build-an-outlook-clone-using-react/Lifecycle-Methods.png)<br>
+![Lifecycle Methods](/build-an-outlook-clone-using-react/Lifecycle-Methods.png)<br>
 *Source:[programmingwithmosh.com](https://programmingwithmosh.com/javascript/react-lifecycle-methods/)*
 
 ### Code

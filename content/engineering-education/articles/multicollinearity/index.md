@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/multicollinearity/
+url: /multicollinearity/
 title: How to Detect and Correct Multicollinearity in Regression Models
 description: Interpretability of machine learning models helps us understand the predictions of a model. Multicollinearity can be described as a data disturbance in a regression model. We have explored its causes, the problem it poses, how to detect and address it. 
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/multicollinearity/hero.jpg
+ - url: /multicollinearity/hero.jpg
    alt: Machine learning multicollinearity example image
 ---
 The interpretability of machine learning models helps us understand the predictions made by a model. Interpretable models are desirable. The interpretability of a regression model may be affected, when determining individual feature effects in a model become unreliable. A reason for this is multicollinearity. In this article we will explore multicollinearity; we will also learn a method to detect and fix it.
@@ -28,7 +28,7 @@ The interpretability of machine learning models helps us understand the predicti
 5. Addressing multicollinearity
 
 ### Prerequisites
-In order to follow it article along, a basic understanding of not only machine learning but also regression models is needed. Here’s a helpful [article](/engineering-education/supervised-learning-algorithms/) on supervised learning algorithms.
+In order to follow it article along, a basic understanding of not only machine learning but also regression models is needed. Here’s a helpful [article](/supervised-learning-algorithms/) on supervised learning algorithms.
 
 ### Multicollinearity and variables
 A dependent variable is a variable that holds the occurrence being studied. It is one that varies as a result of the independent variable. An independent variable is one that is controlled to test the dependent variable. 
@@ -145,7 +145,7 @@ Until next time, good luck!
 10. [What Can I Do About Multicollinearity? Solutions for Multicollinearity in Multiple Regression](http://www.researchconsultation.com/multicollinearity-multiple-regression-solutions.asp)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

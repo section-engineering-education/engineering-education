@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-file-handling/
+url: /node-file-handling/
 title: File handling in Node.js
 description: Covering the basics of file handling in Node.js to perform various CRUD operations. The module offers functions to perform basic CRUD(Create, Read, Update, Delete) operations.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-file-handling/hero.jpg
+  - url: /node-file-handling/hero.jpg
     alt: file handling in Node.js
 ---
 [Node.js](https://nodejs.org/en/) is a server-side environment for executing JavaScript files. Off the browser, Node.js offers even more features to complement JavaScript functionalities. Node.js is built around adding functionalities that cannot be performed or utilized in a browser. In this article, we will cover file handling extensively, understand the various functionalities Node.js offers, and implement code to read and write to files.

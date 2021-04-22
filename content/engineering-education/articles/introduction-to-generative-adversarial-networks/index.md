@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-generative-adversarial-networks/
+url: /introduction-to-generative-adversarial-networks/
 title: Basics of Generative Adversarial Networks
 description: This article introduces the readers to the basics of GANs, where and why they are used, how they are built, etc. It also explores the architecture of a simple GAN and the system flow.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-generative-adversarial-networks/hero.jpg
+  - url: /introduction-to-generative-adversarial-networks/hero.jpg
     alt: gan image example generative adversarial networks
 ---
 *Generative Adversarial Networks, or GANs for short, are one of the latest ideas in artificial intelligence (AI) and are a class of neural networks used in machine learning, computer vision, and other forms of artificial intelligence, developed and introduced by Ian J. Goodfellow*. In this article, we are going to understand what GANs are, where they are used, and how they work.
@@ -32,7 +32,7 @@ In every iteration, the results of classification are sent back to the generator
 ### GAN architecture
 This flowchart will give a brief description of how GANs work.
 
-![GAN architecture](/engineering-education/introduction-to-generative-adversarial-networks/gan-architecture.jpg)
+![GAN architecture](/introduction-to-generative-adversarial-networks/gan-architecture.jpg)
 
 **System flow**:
 

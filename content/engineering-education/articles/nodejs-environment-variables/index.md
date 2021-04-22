@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-environment-variables/
+url: /nodejs-environment-variables/
 title: Environment Variables in Node.js
 description: Using the Node.js library dotenv to manage and load environment variables, we take a look at the purpose of environment variables, how to use them, and their role in a development environment.
 author: saiharsha-balasubramaniam
@@ -10,7 +10,7 @@ date: 2020-08-10T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/nodejs-environment-variables/hero.jpg
+  - url: /nodejs-environment-variables/hero.jpg
     alt: environment variables
 ---
 
@@ -100,15 +100,15 @@ We can add this `.env` file to `.gitignore` so that our credentials are protecte
 ### Environment Variables in Deployment
 When deploying to services like [Section](/modules/node-js), Vercel, Netlify or Heroku, environment variables can be set so that our deployed apps can access them.
 
-![Netlify Dashboard](/engineering-education/nodejs-environment-variables/netlify-dash.png)
+![Netlify Dashboard](/nodejs-environment-variables/netlify-dash.png)
 
 Using Netlify as an example, open the Netlify Dashboard of the app you're about to deploy.
 
-![Netlify Settings](/engineering-education/nodejs-environment-variables/env-vars.png)
+![Netlify Settings](/nodejs-environment-variables/env-vars.png)
 
 Go to **Build and Deploy** -> **Environment Variables**
 
-![Environment Variables](/engineering-education/nodejs-environment-variables/set-vars.png)
+![Environment Variables](/nodejs-environment-variables/set-vars.png)
 
 Now, set the variables and save.
 

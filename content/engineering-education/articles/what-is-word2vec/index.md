@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-word2vec/
+url: what-is-word2vec/
 title: What is Word2Vec?
 description: In this article, we will explore a classic method that creates word embeddings in NLP. It assists computers to better understand human beings through natural language.
 author: wilkister-mumbi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-word2vec/hero.jpg
+  - url: /what-is-word2vec/hero.jpg
     alt: Word2vec example image
 ---
 We want computers to understand us better so that they can do more for us. So, how can we make computers understand us better using natural language?
@@ -50,7 +50,7 @@ For example, the words "intelligent" and "smart" would appear closer together in
 
 #### Model Architecture
 
-![Word2Vec model architecture](/engineering-education/what-is-word2vec/cbow-skipgram.PNG)
+![Word2Vec model architecture](/what-is-word2vec/cbow-skipgram.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1301.3781.pdf)*
 

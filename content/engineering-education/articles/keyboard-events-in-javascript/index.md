@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/keyboard-events-in-javascript/
+url: /keyboard-events-in-javascript/
 title: Introduction to Keyboard Events in JavaScript
 description: In this article we will learn about what keyboard events are, and explore different keyboard events. We will also build a simple game that uses keyboard events.
 author: benson-kariuki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/keyboard-events-in-javascript/hero.jpg
+  - url: /keyboard-events-in-javascript/hero.jpg
     alt: Introduction to keyboard events in JavaScript example image
 ---
 Whenever a user presses any key on the Keyboard, different events are fired. There are three keyboard events, namely `keydown`, `keypress`, and `keyup`. Keyboard events belong to the `KeyboardEvent` object. This tutorial will discuss how to implement JavaScript keyboard events.
@@ -151,15 +151,15 @@ The screenshots below shows the codes output, when different keys are pressed:
 
 - Control key (`Ctrl`) released output
 
-![JavaScript keyboard events output 2](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
+![JavaScript keyboard events output 2](/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
 
 - Key "r" (`R`) pressed output
 
-![JavaScript keyboard events output 1](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
+![JavaScript keyboard events output 1](/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
 
 - Combination of the control key and key "d" (`Ctrl` + `D`) output
 
-![JavaScript keyboard events output 3](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
+![JavaScript keyboard events output 3](/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
 
 ### Use of keyboard events in gaming demo
 Keyboard events are used in gaming, whereby a player can control game objects using some predefined keys. We will create a game demo where a player controls a game object using the arrow keys.
@@ -278,7 +278,7 @@ The complete source code for the above demo is available on [Github](https://git
 
 **Output**
 
-![JavaScript keyboard events animation](/engineering-education/keyboard-events-in-javascript/js-keyboard-events-animation.gif)
+![JavaScript keyboard events animation](/keyboard-events-in-javascript/js-keyboard-events-animation.gif)
 
 ### Conclusion
 JavaScript keyboard events are used in several ways. This article has demonstrated how we can use JavaScript keyboard events in gaming.
@@ -294,4 +294,4 @@ Happy coding!
 - [Jquery keyboard events](https://api.jquery.com/category/events/keyboard-events/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

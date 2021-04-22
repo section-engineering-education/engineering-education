@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intro-to-c-part1
+url: /intro-to-c-part1
 title: Introduction to C++
 description: This introduction is about C++ and goes through topics such as why C++?, who uses C++ in the industry, and basic implementation.
 author: parampreet-singh
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/intro-to-c-part1/hero.jpg
+  - url: /intro-to-c-part1/hero.jpg
     alt: intro to C++
 ---
 There are many languages being used in the industry at the moment, but C++ has been used for a long time now (been around since 1979). It is being used by companies from young startups to well-established companies like Facebook and Google.

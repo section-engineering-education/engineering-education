@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/
+url: /how-to-use-javascript-arrow-functions-and-this-keyword/
 title: How To Use Javascript Arrow Functions & This Keyword
 description: This tutorial will explain Javascript arrow functions and the this keyword and how to use it
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/hero.jpg
+  - url: /how-to-use-javascript-arrow-functions-and-this-keyword/hero.jpg
     alt: JS Arrow Funcitons and This Keyword tutorial Image
 ---
 ES6 introduced a new way of writing JavaScript functions called arrow function that uses a [fat arrow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ( => ).
@@ -171,7 +171,7 @@ We can derive the following syntax.
 (paraml, param2) => {return expression; }
 ```
 
-Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/engineering-education/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
+Because more than one parameter requires parentheses, [rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) and [destructing](/object-arrays-destructuring/) parameters can be implemented using an arrow function. 
 
 They both need parentheses.
 
@@ -353,7 +353,7 @@ Run the above call in a browse console. You will get something like:
 Window {window: Window, . . . .}
 ```
 
-![window objects](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
+![window objects](/how-to-use-javascript-arrow-functions-and-this-keyword/window-objects.jpg)
 
 This is because the `test()` is called from a global context, and `this` will refer to a global object. In this case, a global object window is called from the browser. `this` is not defined by the caller. 
 
@@ -486,7 +486,7 @@ animals.printdomesticAnimals();
 
 The above example accesses the object's property `domesticAnimals` and prints the domestic animals in 3 seconds. Unfortunately, we ran into an error.
 
-![error](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
+![error](/how-to-use-javascript-arrow-functions-and-this-keyword/error.jpg)
 
 `setTimeout()` can't find the `domesticAnimals`, which means the JavaScript engine interprets `domesticAnimals` as `undefined`. Meaning `this` doesn't point to the property `domesticAnimals`. `this` seems to be pointing to somewhere else. 
 
@@ -514,7 +514,7 @@ let animals = {
 animals.printdomesticAnimals();
 ```
 
-![execution context](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
+![execution context](/how-to-use-javascript-arrow-functions-and-this-keyword/this-execution-context.jpg)
 
 `this` inside `printdomesticAnimals()` points to the object `animals` with the `domesticAnimals` property. `this` inside `setTimeout()` points to the window object where property `domesticAnimals` is undefined.
 
@@ -538,7 +538,7 @@ animals.printdomesticAnimals();
 
 When we use the arrow function, we get the results as we expected.
 
-![inside arrow function](/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
+![inside arrow function](/how-to-use-javascript-arrow-functions-and-this-keyword/this-inside-arrow-function.jpg)
 
 #### Arrow functions with object literal
 Let's have an example that represents a [JavaScript object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
@@ -754,4 +754,4 @@ As a beginner, arrow functions seem unfamiliar and hard to read. They take time 
 I hope this guide gives you an overview of applying the fat arrow within your functional code blocks.
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

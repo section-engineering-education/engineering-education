@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-a-music-player-using-django/
+url: /how-to-build-a-music-player-using-django/
 title: How to Build a Music Player using Django
 description: This tutorial introduces the reader to the Django web framework and explore its ORM and MVT capabilities by engaging him/her in making use of Django to build a simple music player for their personal use.
 author: onojakpor-ochuko
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a-music-player-using-django/hero.jpg
+  - url: /how-to-build-a-music-player-using-django/hero.jpg
     alt: How to Build a Music Player Using Django Hero Image
 ---
 Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. 
@@ -62,7 +62,7 @@ The main distinction among the 2 styles is that Django itself looks after the Co
 
 Here is an easy diagram that indicates the MVT structure in Django:
 
-![mvt structure](/engineering-education/how-to-build-a-music-player-using-django/mvt.png)
+![mvt structure](/how-to-build-a-music-player-using-django/mvt.png)
 
 [Image source](https://www.javatpoint.com/django/images/django-mvt-based-control-flow.png)
 
@@ -82,7 +82,7 @@ django-admin startapp App
 
 The commands above should provide you with a directory structured as seen in the image below:
 
-![directory structure](/engineering-education/how-to-build-a-music-player-using-django/structure.PNG)
+![directory structure](/how-to-build-a-music-player-using-django/structure.PNG)
 
 Now go to the "MusicPlayer" directory and edit our *settings.py* file by adding our App to the list of installed apps as seen below.
 
@@ -349,11 +349,11 @@ python manage.py migrate
 
 The result of running the above migrations should look like the image below:
 
-![success_migrate](/engineering-education/how-to-build-a-music-player-using-django/sucess_migrate.PNG)
+![success_migrate](/how-to-build-a-music-player-using-django/sucess_migrate.PNG)
 
 You will also notice our SQLite database file was created in the root folder for us easily. The root directory file should look like the image seen below:
 
-![database file created](/engineering-education/how-to-build-a-music-player-using-django/db_Seen.PNG)
+![database file created](/how-to-build-a-music-player-using-django/db_Seen.PNG)
 
 If your migrations were successful, congratulations!!!. 
 
@@ -387,27 +387,27 @@ python manage.py runserver
 
 If your app is running you should see something like this:
 
-![app running](/engineering-education/how-to-build-a-music-player-using-django/runapp.PNG)
+![app running](/how-to-build-a-music-player-using-django/runapp.PNG)
 
 Finally, let's now login to the admin page, and add some songs to play them.
 
 To login to the admin page go to this link [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and enter your login details as seen in the image below:
 
-![admin login](/engineering-education/how-to-build-a-music-player-using-django/adminpage.PNG)
+![admin login](/how-to-build-a-music-player-using-django/adminpage.PNG)
 
 If your login was successful you should now see the page below:
 
-![admin home](/engineering-education/how-to-build-a-music-player-using-django/admin_home.PNG)
+![admin home](/how-to-build-a-music-player-using-django/admin_home.PNG)
 
 Click on the add button where you have the Songs panel and enter the song details as seen below. Add two or three more songs by clicking on the "add and save another" button at the bottom right of the page as seen in the image below:
 
-![admin song creation](/engineering-education/how-to-build-a-music-player-using-django/new_admin_add.PNG)
+![admin song creation](/how-to-build-a-music-player-using-django/new_admin_add.PNG)
 
 If you completed all the steps above, **congratulations!!** you just built a music player.
 
 You can view it on your localhost at this link [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and you should have a music player like the one in the image below:
 
-![music player image](/engineering-education/how-to-build-a-music-player-using-django/final_image_music.PNG)
+![music player image](/how-to-build-a-music-player-using-django/final_image_music.PNG)
 
 ### Conclusion
 You can take a look at this [GitHub repo](https://github.com/Chukslord1/DjangoMusicPlayer) to view the final code.
@@ -419,4 +419,4 @@ If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

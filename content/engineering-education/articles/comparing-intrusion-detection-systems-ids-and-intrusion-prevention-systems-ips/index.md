@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/
+url: /comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/
 title: Comparing Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)
 description: This article will discuss Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS), their problems, their significance to cybersecurity, and how they compare.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/hero.jpg
+  - url: /comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/hero.jpg
     alt: Intrusion Detection Systems example image
 ---
 Intruders are always ready and determined to cause data breaches, install malware, and steal sensitive information. [Research](https://www.sitelock.com/blog/security-by-obscurity-q2-2017/) shows that websites are hit with 22 cyber-attacks in a day, on average. Embracing cyber threat prevention and detection technologies is significant to mitigating threats.
@@ -27,7 +27,7 @@ How does this happen? Well, IDS inspect [packets](https://techterms.com/definiti
 
 These packets refer to small amounts of data sent over a network, including the internet or local area network (LAN). They incorporate a destination, source, and data (content) being transferred. An IDS is used to detect potential network compromises in real-time.
 
-![An illustration of IDS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
+![An illustration of IDS](/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
 
 [Source](https://www.comodo.com/ids-in-security.php)
 
@@ -39,7 +39,7 @@ IDS are of two types:
 ### An overview of IPS
 IPS are strategically placed between the outside internet and the internal network. Practically in the same area as firewalls. Anything that the IDS flags as a threat, IPS denies it as malicious traffic. The traffic may represent known threats in the database, but the presence of IPS ensures that it blocks the threats, and that there is no delivery of malicious packets.
 
-![An illustration of IPS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ips-security.png)
+![An illustration of IPS](/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ips-security.png)
 
 [Source](https://www.exabeam.com/ueba/ips-security-how-active-security-saves-time-and-stop-attacks-in-their-tracks/)
 
@@ -83,4 +83,4 @@ They can help in these area explained below.
 Today's cybersecurity environment calls for the adoption of both malware detection and prevention technologies. Stand-alone IDS is not enough to protect your system from cybercriminals. But by merging IDS and IPS and combining them with firewalls, you are in a better position to detect and prevent threats.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

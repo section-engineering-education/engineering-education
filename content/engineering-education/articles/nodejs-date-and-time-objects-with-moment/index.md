@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-date-and-time-objects-with-moment/
+url: /nodejs-date-and-time-objects-with-moment/
 title: Working with Moment.js Date Libraries
 description: Date and time Objects are those development difficulties that we jump into at some point when developing Node.js/JavaScript applications. This article discusses how to handle these objects with Moment.js library.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nodejs-date-and-time-objects-with-moment/hero.png
+  - url: /nodejs-date-and-time-objects-with-moment/hero.png
     alt: Moment date library
 ---
 Date is a crucial development function that developers come across in their development workflow. To achieve this with ease you need great tools such as Moment.js. Moment.js is the tool every JavaScript developer wants to use to achieve date and time object with simplicity.
@@ -755,22 +755,22 @@ Moment.js is mutable while date-fns is immutable; Moment.js keeps changing its o
 
 #### Statistical Differences
 - Size   
-![packages bundle size](/engineering-education/nodejs-date-and-time-objects-with-moment/size.png)
+![packages bundle size](/nodejs-date-and-time-objects-with-moment/size.png)
 <br>
 *[Image source](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e#:~:text=One%20of%20the%20biggest%20difference,momentjs%20change%20its%20own%20state.)*
 
 -   NPM download stats
-![npm download stats](/engineering-education/nodejs-date-and-time-objects-with-moment/npm-download-insights.png)
+![npm download stats](/nodejs-date-and-time-objects-with-moment/npm-download-insights.png)
 <br>
 *[Image source](https://nodejs.libhunt.com/compare-moment-vs-date-fns)*
 
 -   GitHub stats
-![github stats](/engineering-education/nodejs-date-and-time-objects-with-moment/github-stats.png)
+![github stats](/nodejs-date-and-time-objects-with-moment/github-stats.png)
 <br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
 -   Popularity and activity
-![popularity and activity](/engineering-education/nodejs-date-and-time-objects-with-moment/popularity-and-activity.png)
+![popularity and activity](/nodejs-date-and-time-objects-with-moment/popularity-and-activity.png)
 <br>
 *[Image source](https://www.npmtrends.com/date-fns-vs-moment)*
 
@@ -793,4 +793,4 @@ What makes Moment.js even more popular, is its [extensive, available, and useful
 -   [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

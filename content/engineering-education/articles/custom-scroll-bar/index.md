@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/custom-scroll-bar/
+url: /custom-scroll-bar/
 title: How to Implement a Custom Scrollbar on a Web Page using CSS
 description: In this tutorial, we will learn how to build a web page and use CSS to customize scrollbars on modern browsers. CSS is a fundamental language for any front-end developer as its among the core styling languages.
 author: wilson-gichuhi
@@ -10,7 +10,7 @@ date: 2021-02-25T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/custom-scroll-bar/hero.jpg
+  - url: /custom-scroll-bar/hero.jpg
     alt: Implement a custom scrollbar on a web page using CSS
 ---
 CSS is the language we use to improve the look and feel of web pages in our applications. With the current CSS scrollbar specification from [W3C](https://www.w3.org/TR/2018/WD-css-scrollbars-1-20180925), we can now customize the appearance of the scrollbar using CSS.
@@ -261,9 +261,9 @@ The CSS code:
 ### Final application
 The scrollbar will have a background color of `linear-gradient(transparent, #00c6ff);` when in the hover state.
 
-![the application on hover](/engineering-education/custom-scroll-bar/img_1.png)
+![the application on hover](/custom-scroll-bar/img_1.png)
 
-![the application photo](/engineering-education/custom-scroll-bar/img_2.png)
+![the application photo](/custom-scroll-bar/img_2.png)
 
 That is our final application that implements the scrollbar feature. The [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is an awesome resource to reference and check on the current browser support.
 
@@ -279,4 +279,4 @@ I hope you find this tutorial useful.
 Happy coding.
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)

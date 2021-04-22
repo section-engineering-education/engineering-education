@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-a-nodejs-cli/
+url: /create-a-nodejs-cli/
 title: Creating Command Line Interfaces using Node.js
 description: In this tutorial we will create a simple CLI application that takes two arguments to understand CLI basics.
 author: daniel-katungi
@@ -10,7 +10,7 @@ date: 2020-10-16T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/create-a-nodejs-cli/hero.png
+  - url: /create-a-nodejs-cli/hero.png
     alt: example image Node.js CLI
 ---
 The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text.
@@ -244,7 +244,7 @@ argv.help();
 ```
 
 The result will look like this:
-![image title](/engineering-education/create-a-nodejs-cli/terminal.png)
+![image title](/create-a-nodejs-cli/terminal.png)
 
 We also added the help command to provide a default `--help/help` flag to give options to our application.
 
@@ -256,4 +256,4 @@ Finally, we learned how to pass arguments and commands to the application. As a 
 You can get the full code [here](https://github.com/katungi/Node-CLI-Section).
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

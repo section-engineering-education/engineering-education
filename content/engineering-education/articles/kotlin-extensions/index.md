@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-extensions/
+url: /kotlin-extensions/
 title: Kotlin Extensions
 description: This article will show a developer how to use Kotlin extensions, understanding when and how to use them.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/kotlin-extensions/hero.jpg
+  - url: /kotlin-extensions/hero.jpg
     alt: kotlin extensions image
 ---
 When Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/linked-list-data-structure-python/
+url: /linked-list-data-structure-python/
 title: Using the Linked List Data Structure in Python
 description: The linked list data structure is a linear data structure that is used to implement other data structures.
 author: saiharsha-balasubramaniam
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/linked-list-data-structure-python/hero.jpg
+  - url: /linked-list-data-structure-python/hero.jpg
     alt: linked list, python data structures
 
 ---
@@ -19,17 +19,17 @@ images:
 We're almost at the end of the line with this series, having mastered all the Linear Data Structures in Python. To finish things off, we have the most sophisticated Linear Data Structure, the mighty **Linked List.** 😏
 <!--more-->
 
-![Thanos Meme, Linked List](/engineering-education/linked-list-data-structure-python/thanosll.jpg)<br>
+![Thanos Meme, Linked List](/linked-list-data-structure-python/thanosll.jpg)<br>
 As the meme says, the head is the most integral part of the linked list!
 
 Well, the Linked List is not as sophisticated as you think. It's extremely powerful though.
 
 *For more background on the different types of data structures in Python, check out the following articles:*
 
-- [Introduction](/engineering-education/data-structures-python-part-1/)
-- [List](/engineering-education/list-data-structure-python/)
-- [Stack](/engineering-education/stack-data-structure-python)
-- [Queue](/engineering-education/queue-data-structure-python/)
+- [Introduction](/data-structures-python-part-1/)
+- [List](/list-data-structure-python/)
+- [Stack](/stack-data-structure-python)
+- [Queue](/queue-data-structure-python/)
 
 ## Table of Contents
 
@@ -48,10 +48,10 @@ Linked Lists are a chain of **nodes**, connected together by links. Every node (
 - **Data** -> The item to be stored in the node.
 - **Next** -> The link or **reference** to the next node.
 
-![Node, Linked List](/engineering-education/linked-list-data-structure-python/nodell.png)<br>
+![Node, Linked List](/linked-list-data-structure-python/nodell.png)<br>
 In a linked list, the first node is called the **head** and the last node is determined by the condition that the **next** points to a null value.
 
-![Null, Linked List](/engineering-education/linked-list-data-structure-python/nonell.jpg)
+![Null, Linked List](/linked-list-data-structure-python/nonell.jpg)
 
 ## Uses of Linked Lists
 
@@ -160,7 +160,7 @@ class LinkedList(object):
 
 A doubly linked list is similar to a singly linked list. It differs in that it also contains a link to the previous node.
 
-![Doubly Linked List](/engineering-education/linked-list-data-structure-python/doublyll.png)<br>
+![Doubly Linked List](/linked-list-data-structure-python/doublyll.png)<br>
 We implement the following methods for the Doubly Linked List data structure: 
 
 - **```dll.addNodeLast(x)```** -> Adds a node at the right end of the linked list.

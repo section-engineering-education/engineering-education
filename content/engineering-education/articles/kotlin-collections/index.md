@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-collections/
+url: /kotlin-collections/
 title: Kotlin Collections
 description: This article goes through some of the most common collections in Kotlin and addresses the common methods among those collections.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/kotlin-collections/hero.png
+  - url: /kotlin-collections/hero.png
     alt: kotlin collections image
 ---
 Working with grouped data can be a challenging task. In most programming languages, we have `Arrays` and `Lists` to help us. They allow for better management of data and computer's resources. Imagine having to create a String or Integer for every value that you had in a program.

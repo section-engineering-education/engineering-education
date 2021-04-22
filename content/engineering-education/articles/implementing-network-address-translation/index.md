@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-network-address-translation/
+url: /implementing-network-address-translation/
 title: Implementing Network Address Translation (NAT) on a Cisco Router
 description: This tutorial will be a brief dive into understanding the address translations like NAT and PAT. We will learn to implement static NAT, dynamic NAT and PAT.
 author: rabo-james-bature
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-network-address-translation/hero.jpg
+  - url: /implementing-network-address-translation/hero.jpg
     alt: NAT hero image
 ---
 In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will have learned what NAT is, the different types of NAT, and how to configure different types of NAT on a Cisco router.
@@ -73,7 +73,7 @@ For a device configured with a private address to access the internet or a remot
 
 This translation takes place on a `NAT-enabled router` which typically operates on the border of a stub network.
 
-![Network address translation](/engineering-education/implementing-network-address-translation/nat.JPG)
+![Network address translation](/implementing-network-address-translation/nat.JPG)
 
 *Network Address Translation - Client-Server connection*
 
@@ -98,7 +98,7 @@ Static NAT creates a one-to-one mapping between private and public addresses.
 
 Static NAT is usually configured by a network administrator, and this configuration remains constant.
 
-![Static NAT](/engineering-education/implementing-network-address-translation/static.jpg)
+![Static NAT](/implementing-network-address-translation/static.jpg)
 
 *Static Network Address Translation*
 
@@ -115,7 +115,7 @@ Similar to static NAT, the dynamic NAT gives a one-to-one mapping between privat
 
 Dynamic NAT makes a pool of public addresses and assigns them to private addresses on a first-come-first-served (FCFS) basis to determine which private addresses ought to be translated.
 
-![Dynamic NAT](/engineering-education/implementing-network-address-translation/dynamic.jpg)
+![Dynamic NAT](/implementing-network-address-translation/dynamic.jpg)
 
 *Dynamic Network Address Translation*
 
@@ -132,11 +132,11 @@ Dynamic NAT reduces this problem to some degree. However, if a large percentage 
 
 To understand how PAT works, it is important to recall how the host uses the Transmission Control Protocol (TCP), User Datagram Protocol (UDP) and port numbers to transmit data.
 
-To learn more about TCP and UDP, it is highly recommeded to go over [this](/engineering-education/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
+To learn more about TCP and UDP, it is highly recommeded to go over [this](/understanding-tcp-ip-transport-layer-protocols/) article before continuing to read.
 
 With these protocols, PAT can map multiple private addresses to one or more public addresses by ensuring that devices use different TCP and UDP port numbers for each session.
 
-![PAT](/engineering-education/implementing-network-address-translation/pat.jpg)
+![PAT](/implementing-network-address-translation/pat.jpg)
 
 *Port Address Translation*
 
@@ -158,7 +158,7 @@ The router interface associated within the LAN is assigned the `inside` interfac
 
 Similarly, the router interface associated with the internet is assigned the outside interface using the `ip nat inside` interface mode command.
 
-![Static NAT topology](/engineering-education/implementing-network-address-translation/statictopo.JPG)
+![Static NAT topology](/implementing-network-address-translation/statictopo.JPG)
 
 *Static NAT topology*
 
@@ -171,7 +171,7 @@ To configure a static NAT between the private address `172.31.1.2` and public ad
 - Enter the "interface serial `s0/0/0/`" command and identify the interface as the outside interface using the command `ip nat outside`.
 - Enter the "interface gigabitethernet `g0/0`" command and identify it as the inside interface relative to NAT using the `ip nat inside` command.
 
-![Static NAT configuration on a router](/engineering-education/implementing-network-address-translation/staticcon.JPG)
+![Static NAT configuration on a router](/implementing-network-address-translation/staticcon.JPG)
 
 *Static NAT configuration*
 
@@ -199,7 +199,7 @@ In this case, the ACL number is `1`, and the NAT POOL is `LAN`.
 ##### Configuring dynamic NAT
 An organization is assigned with two public addresses: `200.100.100.1` and `200.100.100.2`. It wants to allow its internal hosts, in the private network `172.31.1.0` and `255.255.255.0` to reach the internet using dynamic NAT.
 
-![Dynamic NAT topology](/engineering-education/implementing-network-address-translation/dynamictopo.JPG)
+![Dynamic NAT topology](/implementing-network-address-translation/dynamictopo.JPG)
 
 *Dynamic NAT topology*
 
@@ -212,7 +212,7 @@ This allows for the dynamic translation of the private addresses and the public 
 - Enter the `interface serial 0/0/0/` command and identify it as an outside interface using the `ip nat outside` command.
 - Enter the `interface gigabitethernet g0/0` command and identify it as the `inside` interface using the `ip nat inside` command.
 
-![Dynamic NAT configuration on a Cisco router](/engineering-education/implementing-network-address-translation/dynamiccon.JPG)
+![Dynamic NAT configuration on a Cisco router](/implementing-network-address-translation/dynamiccon.JPG)
 
 *Dynamic NAT configuration on a Cisco router*
 
@@ -231,7 +231,7 @@ The full command is `ip nat inside source list 1 pool LAN overload`.
 #### Configuring PAT with multiple public addresses
 An organization is assigned to two public addressees: `200.100.100.1` and `00.100.100.2`, and it wants to allow its internal hosts, in the private network `172.31.1.0 - 255.255.255.0` to reach the internet using PAT.
 
-![PAT topology](/engineering-education/implementing-network-address-translation/pattopo.JPG)
+![PAT topology](/implementing-network-address-translation/pattopo.JPG)
 
 *PAT topology*
 
@@ -244,7 +244,7 @@ The **overload** keyword used here is the only configuration difference between 
 4.  Enter the `interface serial 0/0/0/` to identify the interface as the `outside` interface using the `ip nat outside` command.
 5. Enter gigabitethernet g0/0 using the `interface gigabitethernet g0/0` command and identify it as the `inside` interface relative to NAT with the `ip nat inside` command.
 
-![PAT with multiple public address configuration on as Cisco router](/engineering-education/implementing-network-address-translation/patmulcon.JPG)
+![PAT with multiple public address configuration on as Cisco router](/implementing-network-address-translation/patmulcon.JPG)
 
 *PAT with multiple public address configuration*
 
@@ -262,7 +262,7 @@ The interface used for this is an outside interface, and it's configured as the 
 #### Configuring PAT with one public address
 An organization is assigned one public address `200.100.100.1`, and it wants to allow its internal hosts in the private network `172.31.1.0 - 255.255.255.0` to reach the internet using PAT.
 
-![PAT topology](/engineering-education/implementing-network-address-translation/patsingle.JPG)
+![PAT topology](/implementing-network-address-translation/patsingle.JPG)
 
 *PAT topology with one public address*
 
@@ -272,7 +272,7 @@ To configure PAT for the topology above, the following steps will be applied:
 3. Enter the `interface serial 0/0/0/` command to identify it as an `outside` interface relative to NAT using the: `ip nat outside` command.
 4. Enter the `interface gigabitethernet g0/0` command and identify it as an `inside` interface relative to NAT using the `ip nat inside` command.
 
-![PAT with one public address configuration on a Cisco router](/engineering-education/implementing-network-address-translation/patsincon.JPG)
+![PAT with one public address configuration on a Cisco router](/implementing-network-address-translation/patsincon.JPG)
 
 *PAT with one public address configuration*
 
@@ -300,4 +300,4 @@ For a better understanding of Network Address Translation, the following files a
 - [Understanding Cisco command-line interface](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/configuration/15mt/fundamentals-15-mt-book/cf-cli-basics.html)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

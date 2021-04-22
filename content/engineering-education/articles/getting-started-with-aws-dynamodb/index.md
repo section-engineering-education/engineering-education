@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-aws-dynamodb/
+url: /getting-started-with-aws-dynamodb/
 title: Getting Started With AWS DynamoDB
 description: This article will be an introduction to AWS DynamoDB. Amazon web services DynamoDB is a managed NoSQL database service that offers top-notch performance.
 author: benson-kariuki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-aws-dynamodb/hero.jpg
+  - url: /getting-started-with-aws-dynamodb/hero.jpg
     alt: DynamoDB Label Image
 ---
 DynamoDB is a platform as a service (PaaS) AWS product. The product is a managed NoSQL database service that offers top-notch performance. DynamoDB is seamless and scalable. It comes without the administrative burdens of setting up, replication, and scaling, among others.
@@ -19,7 +19,7 @@ DynamoDB is a platform as a service (PaaS) AWS product. The product is a managed
 ### Prerequisites
 This article is suitable for any reader interested in digging into DynamoDB. Most of the time, we are introduced to relational databases. Relational databases are SQL based. 
 
-Non-relational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](/engineering-education/sql-or-nosql-when-to-choose-what/) will come in handy.
+Non-relational databases are also referred to as NoSQL databases, DynamoDB being one of them. It is recommended you get to know the differences between an SQL and a NoSQL database. The article [SQL or NoSQL - Which Database is Ideal](/sql-or-nosql-when-to-choose-what/) will come in handy.
 
 #### Core components of DynamoDB
 - **Tables:** Data is stored in tables. This is similar to other database systems. For instance, you can have a table that stores student details.
@@ -60,7 +60,7 @@ To get access keys:
 
 - Navigate to users and select `add user` as shown in the screenshot.
 
-![AWS adding IAM user](/engineering-education/getting-started-with-aws-dynamodb/aws-adding-iam-user.jpg)
+![AWS adding IAM user](/getting-started-with-aws-dynamodb/aws-adding-iam-user.jpg)
 
 - Create an access key.
 - In the next steps, follow the instructions on screen.
@@ -92,7 +92,7 @@ aws configure
 
 You will be prompted to enter the values as shown in the screenshot below.
 
-![AWS CLI configure](/engineering-education/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
+![AWS CLI configure](/getting-started-with-aws-dynamodb/aws-cli-configure.jpg)
 
 Make sure you replace the values with your correct values. The user used in this exercise should have the role of `AmazonDynamoDBFullAccess`. Now you can run some commands such as create a table, delete table, among others. Follow [AWS DynamoDB CLI user guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-services-dynamodb.html) for the commands syntax.
 
@@ -231,7 +231,7 @@ The response is in a JSON format.
 
 You can have a better view of the data we inserted on the AWS console. In your logged in AWS console, navigate to the DynamoDB table we created as shown in the screenshot below.
 
-![AWS console DynamoDB query](/engineering-education/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
+![AWS console DynamoDB query](/getting-started-with-aws-dynamodb/aws-console-dynamodb-query.jpg)
 
 #### Update
 In this scenario, our table does not require an update operation.
@@ -260,4 +260,4 @@ This article is an introduction to Amazon DynamoDB. There is more to explore on 
 You can also get a certification for DynamoDB under [AWS certified solutions architect associate](https://digitalcloud.training/certification-training/aws-solutions-architect-associate/database/).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

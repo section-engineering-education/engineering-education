@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/bloom-filters-data-structure/
+url: /bloom-filters-data-structure/
 title: Bloom Filters - An Introduction
 description: Covering the basics of hashing, bloom filters, and the applications of this data structure. Hashing was developed to optimally store and retrieve data.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/bloom-filters-data-structure/hero.jpg
+  - url: /bloom-filters-data-structure/hero.jpg
     alt: Bloom Filters data structure
 ---
 Bloom filters are a probabilistic data structure that uses the concept of hashing extensively. It was designed to solve the problem of finding an element in a set, while keeping in mind high efficiency, memory, and time. In this article, we will be covering the basics of hashing, bloom filters, and the applications of this data structure.
@@ -23,7 +23,7 @@ Let us dive deeper into the concept of hashing by considering the following prob
 
 The problem states that there are `n` number of socks available, and an array is given with numbers representing each sock. We need to find number of pairs of socks a person can wear, that is, are in multiples of 2. For example, if n=7 and the array is [1,1,1,1,1,1,1], then number of pairs is 3.
 
-![](/engineering-education/bloom-filters-data-structure/hashingProblem.jpg)
+![](/bloom-filters-data-structure/hashingProblem.jpg)
 [*Image Source*](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
 
 A solution that may come to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
@@ -80,7 +80,7 @@ Designed by Burton Bloom in the year [1970](https://en.wikipedia.org/wiki/Bloom_
 
 To check for the membership of a new input value, the bloom filter first passes the new value through m different hash functions. Comparing the original array with the new array gives us an idea of whether the entered input is wrong or not. The combination of m different hash function reduces the probability of the same array pattern appearing for two different strings. Therefore, we can catch all strings that don't match with the original input. Thus, true negatives are eliminated.
 
-![](/engineering-education/bloom-filters-data-structure/membership.jpg)
+![](/bloom-filters-data-structure/membership.jpg)
 
 [*Image Source*](https://yourbasic.org/)
 

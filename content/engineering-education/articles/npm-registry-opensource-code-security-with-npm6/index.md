@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/npm-registry-opensource-code-security-with-npm6/
+url: /npm-registry-opensource-code-security-with-npm6/
 title: Open-source packages & Code Security using NPM
 description: This article covers the NPM registry, open-source packages, and code security using npm6. NPM provides vulnerability-scanning tools that are built-in your Node.js workflow.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/npm-registry-opensource-code-security-with-npm6/hero.jpg
+  - url: /npm-registry-opensource-code-security-with-npm6/hero.jpg
     alt: npm6 Node.js code Security
 ---
 Security is a huge concern for everyone. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is even a professional habit that developers acquire as they grow with experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.
@@ -23,7 +23,7 @@ In this article, we will have a look at NPM registry survey statistics, check ot
 
 ### NPM registry download statistics
 On [September 29th, 2019](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages), NPM marked its 10 years of existence. NPM has been used to develop every kind of application i.e. web apps, mobile applications, servers, Internet of things (IoT)/robotic, desktop applications and native mobile applications. This has greatly contributed to the NPM registry popularity. The number of libraries available in the NPM registry influences most developers to choose JavaScript.
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
+![](/npm-registry-opensource-code-security-with-npm6/npm-influnce-statistics.png)
 
 [*Image Source*](https://medium.com/npm-inc/this-year-in-javascript-2018-in-review-and-npms-predictions-for-2019-3a3d7e5298ef#:~:text=npm%20has%20over%2010%20million,packages%20of%20open%20source%20JavaScript.)
 
@@ -31,7 +31,7 @@ On [June 2019](https://twitter.com/npmjs/status/1135968692062130176), NPM crosse
 
 On [April 23, 2018](https://twitter.com/seldo/status/988477780441481217), NPM users downloaded five billion packages within the last 7 days of that date. On this day 4 years ago, that figure was 50 million, this means 10,000% growth. The average IP downloads were 2200 packages per month.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
+![](/npm-registry-opensource-code-security-with-npm6/weekly-downloads.jpg)
 
 [*Image Source*](https://twitter.com/seldo/status/988477780441481217)
 
@@ -39,7 +39,7 @@ Up to now, NPM has recorded tremendous growth with over 20 billion average weekl
 
 These statistical testimonies explains the resilience and commitment of NPM to keep the world's largest community safe by building a chain of fast reliable tools to ensure every JavaScript line of code you write as well as the open-source code you use is safe before you go live.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/popular-languages.PNG)
+![](/npm-registry-opensource-code-security-with-npm6/popular-languages.PNG)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2018#technology-_-programming-scripting-and-markup-languages)
 
@@ -52,13 +52,13 @@ The following survey findings were carried out by NPM in partnership with the No
 
 In this survey, 97% of the respondents used the open-source code. In addition, it turned out 77% of them were worried about the safety of open-source code.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/overall-concerned.png)
+![](/npm-registry-opensource-code-security-with-npm6/overall-concerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 We now have a clear image that most developers are greatly concerned about code security. Interestingly, 19% of the respondent have 10+ years of experience in using JavaScript. Moreover, out of this 81% were concerned about open-source code security.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/concerned-experien-based.png)
+![](/npm-registry-opensource-code-security-with-npm6/concerned-experien-based.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
@@ -68,19 +68,19 @@ This concludes that, the more time you utilize JavaScript the more you become co
 
 It is interesting to note that more than half of the JavaScript developers are not convinced with the existing tools for analyzing the security and quality of open-source code, which is very alarming.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/oss-noncerned.png)
+![](/npm-registry-opensource-code-security-with-npm6/oss-noncerned.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 Let's separate this responses and compare the security concern between open source code and the code you write.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/opensource-downcode.png)
+![](/npm-registry-opensource-code-security-with-npm6/opensource-downcode.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
 87% are concerned with the security of their own code while 77% had the same on open source code. These figures conclude that a great number of JavaScript developers are concerned about security, be it open source or the code they write themselves.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/satisfied.png)
+![](/npm-registry-opensource-code-security-with-npm6/satisfied.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
@@ -89,7 +89,7 @@ The respondents entrust open source code over their own written code, this is be
 #### 3. Which tools and practices do you use to ensure security in your application?
 These survey results were divided into two groups, least experienced (>1 year) and most experienced (10 plus years).
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/least-most-experienced.png)
+![](/npm-registry-opensource-code-security-with-npm6/least-most-experienced.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
@@ -102,7 +102,7 @@ From these results experienced groups were:
 
 If all answers are combined, a measure of how many developers uses some form of security practices on codes depending on experience will be:
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/level-of-experience.png)
+![](/npm-registry-opensource-code-security-with-npm6/level-of-experience.png)
 
 [*Image Source*](https://medium.com/npm-inc/security-in-the-js-community-4bac032e553b)
 
@@ -138,7 +138,7 @@ As a developer, you will spend much less time between pushing a new build, conti
 
 Use `npm install --package-lock-only` to create a lock file without having to install into `node_modules/`.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/package-lockfile.png)
+![](/npm-registry-opensource-code-security-with-npm6/package-lockfile.png)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
 
@@ -148,7 +148,7 @@ To start using `npm-merge-drive` run `$ npx npm-merge-driver install --g` and al
 
 As you may have noticed, we have introduced [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) and we need to know what it is and what it does. [Npx](https://www.npmjs.com/package/npx) is an NPM package runner and it helps you to solve specific problems. With npx, it is easier and smoother to work with npm-based CLI tools.
 
-![](/engineering-education/npm-registry-opensource-code-security-with-npm6/npx.gif)
+![](/npm-registry-opensource-code-security-with-npm6/npx.gif)
 
 [*Image Source*](https://blog.npmjs.org/post/173240511455/the-new-npm-cli-a-year-in-review-or-what-you)
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ajax-request-in-django-using-axios/
+url: /ajax-request-in-django-using-axios/
 title: How to Make Ajax POST Request in Django using Axios
 description: In this article, we will look at how to make an Ajax POST request in Django using Axios. Axios is a Javascript library used to make HTTP requests from Node.js or XML HttpRequests from the browser.
 author: adeyemi-atoyegbe
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ajax-request-in-django-using-axios/hero.jpg
+  - url: /ajax-request-in-django-using-axios/hero.jpg
     alt: Django Ajax Axios example
 ---
 Ajax is an acronym for Asynchronous JavaScript and XML. It is neither a language, a framework, nor a web library. It is a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page.
@@ -96,7 +96,7 @@ $ python manage.py runserver
 ```
 
 After running the command above you will see something like this in your browser.
-![form page](/engineering-education/ajax-request-in-django-using-axios/form_page.png)
+![form page](/ajax-request-in-django-using-axios/form_page.png)
 
 Let’s go into `templates/home.html`. We will add **Axios** library to our project by adding the CDN script tag below `</div>` closing tag.
 
@@ -199,4 +199,4 @@ That is it.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

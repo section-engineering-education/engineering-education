@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/
+url: /choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/
 title: Choosing between Modern Data Warehouses - BigQuery vs Redshift vs Snowflake 
 description: This article will discuss moderan data warehouses. This article will compare Snowflake, BigQuery, and Redshift to help you settle on the best data warehouse solution that fully accommodates your data warehouse needs.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/hero.jpg
+  - url: /choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/hero.jpg
     alt: Modern Data Warehouses example image
 ---
 In todays world, data is essential as it allows organizations to find the cause of problems and formulate solutions. Organizations are constantly looking for real-time data at a low cost and without maintaining data warehouse infrastructure.
@@ -79,6 +79,6 @@ Google scales storage resources automatically with growth in data volume and inc
 Each of these cloud data warehouses has their strengths and weaknesses. If you require a standard cloud data warehouse and have the capacity for a dedicated database administrator, then go for Redshift. Snowflake and BigQuery architectures make these data warehouse solutions highly scalable. However, Snowflake is best suited for organizations looking for data warehouses that offer concurrency at scale.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 

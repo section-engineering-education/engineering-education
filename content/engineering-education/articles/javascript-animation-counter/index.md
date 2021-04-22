@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-animation-counter/
+url: /javascript-animation-counter/
 title: Creating an Animated Counter in JavaScript
 description: This article gives the reader a guide on how to create an animated counter in a web application using JavaScript. We will do this with a few JavaScript helper methods and by setting the duration for the animation.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-animation-counter/hero.jpg
+  - url: /javascript-animation-counter/hero.jpg
     alt: Javascript Animation Image
 ---
 Animated counters are a great way to show statistics on your website because interactive elements improve the user experience. Animated counters can be used to show your site visits, members registered, or show some numbers in your online game.
@@ -30,7 +30,7 @@ We only need to use a few JavaScript helper methods and set the duration for the
 
 Let's begin coding an animated counter similiar to the one illustrated below:
 
-![Illustration](/engineering-education/javascript-animation-counter/illustration.gif)
+![Illustration](/javascript-animation-counter/illustration.gif)
 
 ### The JavaScript code
 The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/).
@@ -183,4 +183,4 @@ Although we have used JavaScript in this tutorial, you can also achieve this wit
 That's all for now. I hope you got a helpful insight into how to create animated counters using JavaScript. Later on, you can enhance this counter further by changing the durations, numbers, or even implement it for words rather than digits.</br>
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

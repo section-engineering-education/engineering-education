@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/encrypting-gdrive-using-rclone/
+url: /encrypting-gdrive-using-rclone/
 title: How to Encrypt Google Drive using Rclone
 description: A how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.
 author: louise-findlay
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/encrypting-gdrive-using-rclone/hero.png
+  - url: /encrypting-gdrive-using-rclone/hero.png
     alt: rclone gdrive header image
 ---
 This is a how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.
@@ -63,7 +63,7 @@ Rclone supports many storage providers (remotes) so you need to specifically cho
 
 In the example below, 13 is the correct number, though this can change when Rclone adds support for more remotes.
 
-![Rclone Storage Providers](/engineering-education/encrypting-gdrive-using-rclone/storage-providers.png)
+![Rclone Storage Providers](/encrypting-gdrive-using-rclone/storage-providers.png)
 
 
 ### Create Google Drive Client ID
@@ -71,25 +71,25 @@ Rclone provides a default Client ID for Google Drive but it is susceptible to ra
 
 Go to the [Google Developer Console](https://console.developers.google.com/) and click Create A New Project. Fill in the project name with a title such as Rclone and click the blue Create button.
 
-![Creating A Project](/engineering-education/encrypting-gdrive-using-rclone/creating-project.png)
+![Creating A Project](/encrypting-gdrive-using-rclone/creating-project.png)
 
 Once the Google API project has been created, you now need to enable the Google Drive API because that’s what you’re trying to connect to.
 
 Click Enable APIs & Services, search for Google Drive, click Google Drive API, and then click the blue Enable button.
 
-![Enable Google Drive API](/engineering-education/encrypting-gdrive-using-rclone/gdrive-api.png)
+![Enable Google Drive API](/encrypting-gdrive-using-rclone/gdrive-api.png)
 
 Now that the Google API project has been connected to Google Drive, the credentials (including the Client ID) can be created.
 
 Click Credentials in the sidebar, then OAuth Consent Screen. Select Internal as the Application type, enter an Application name, and click the blue Save button.
 
-![OAuth Client](/engineering-education/encrypting-gdrive-using-rclone/oauth-client.png)
+![OAuth Client](/encrypting-gdrive-using-rclone/oauth-client.png)
 
 Go back to the Credentials page and click Create Credentials and OAuth Client ID. Set the Application type as Other, name it however you like, and finally click the blue Create button.
 
 ### Continuing Rclone Configuration
 
-![Before Auto Config](/engineering-education/encrypting-gdrive-using-rclone/auto-config.png)
+![Before Auto Config](/encrypting-gdrive-using-rclone/auto-config.png)
 
 Now you have your Google Drive API Credentials, you can continue to configure your Google Drive remote in Rclone.
 
@@ -101,7 +101,7 @@ The root folder id and service account file are advanced options that you can le
 
 ### Allow Rclone Access to Your Google Drive
 
-![GDrive Access](/engineering-education/encrypting-gdrive-using-rclone/gdrive-access.png)
+![GDrive Access](/encrypting-gdrive-using-rclone/gdrive-access.png)
 
 Now, you are prompted to use auto config or not. If you are using your own computer locally, type `y`. If you are using a remote computer (such as SSHing into one) then type `n`. This is because the following steps require an internet browser.
 
@@ -136,7 +136,7 @@ An example command is below:
 
 `rclone copy -v --progress ~/folder/file.txt gdrive:test`
 
-![Rclone Copy Progress](/engineering-education/encrypting-gdrive-using-rclone/rclone-copy.png)
+![Rclone Copy Progress](/encrypting-gdrive-using-rclone/rclone-copy.png)
 
 Rclone will start to upload the files/folder you have chosen, and you can see the progress as shown in the image above or through the log file if you have specified one.
 
@@ -190,7 +190,7 @@ To encrypt your files, you'll need to create another remote which will do the en
 
 The location of the remote should be the name of the Google Drive remote you created earlier and the path should be the name of the folder you want to store the encrypted files e.g. encrypted or secret. It should look like: `gdrive:encrypted`
 
-![Encrypt Remote Path](/engineering-education/encrypting-gdrive-using-rclone/encrypt-remote.png)
+![Encrypt Remote Path](/encrypting-gdrive-using-rclone/encrypt-remote.png)
 
 You want to generate a strong password and use the strongest encryption which is 1024. Make sure to copy the password to a secure location otherwise you won’t be able to unencrypt your files on another device or if you delete Rclone.
 

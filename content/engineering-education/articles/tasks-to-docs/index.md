@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tasks-to-docs/
+url: /tasks-to-docs/
 title: Automating Tasks to Google Docs
 description: This article is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized by date.
 author: keerthi-v
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/tasks-to-docs/hero.jpg
+  - url: /tasks-to-docs/hero.jpg
     alt: automate tasks to google docs image
 ---
 

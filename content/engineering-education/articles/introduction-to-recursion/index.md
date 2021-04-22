@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-recursion/
+url: /introduction-to-recursion/
 title: Introduction to Recursion
 description: This article will help the readers to understand the basics of recursion using Python. Recursion falls under a category of algorithms called "divide and conquer", in which a problem is broken down into smaller sub-problems that are easier to solve.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-recursion/hero.jpg
+  - url: /introduction-to-recursion/hero.jpg
     alt: Introduction to Recursion Hero Image
 ---
 Algorithms and data structures are the fundamental building blocks of computer science. Most real-world problems can be modeled and solved using algorithms and data structures. In this tutorial, we are going to go over one such algorithmic technique named recursion. We are also going to explore various coding interview problems that can be solved using recursion.
@@ -125,4 +125,4 @@ In this article, we reviewed how recursion works and looked at a few interesting
 Fortunately, there are many ways to overcome this hurdle and solve problems optimally by consuming less time and less memory. One such technique is called *dynamic programming* and will be discussed in the next article. You can head over to [Hackerrank](https://www.hackerrank.com) and practice a wide array of problems on recursion. Hackerrank allows you to select the difficulty level of the problems, making it ideal for beginners.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

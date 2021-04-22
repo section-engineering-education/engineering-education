@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/evaluating-ml-model-performance/
+url: /evaluating-ml-model-performance/
 title: Evaluating Machine Learning Model Performance
 description: This article will be going over machine learning evaluation techniques and metrics used to test overall model performance such as holdout and cross validation.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/evaluating-ml-model-performance/hero.jpg
+  - url: /evaluating-ml-model-performance/hero.jpg
     alt: machine learning evaluation image
 ---
 We expect machine learning models to provide accurate and trustworthy predictions. To confidently trust their predictions, it is important to assess how machine learning models generalize on test data. Let us look at how to test model performance.
@@ -26,7 +26,7 @@ We expect machine learning models to provide accurate and trustworthy prediction
 4. Regression model evaluation metrics.
 
 ### Prerequisites
-A general understanding of machine learning is required to follow along. For an introduction or a refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/).
+A general understanding of machine learning is required to follow along. For an introduction or a refresher on some basic machine learning concepts check out this [article](/supervised-learning-algorithms/).
 
 ### Useful terms
 **Training set** – according to this insightful article on [model evaluation](https://heartbeat.fritz.ai/introduction-to-machine-learning-model-evaluation-fa859e1b2d7f), this refers to a subset of a dataset used to build predictive models. It includes a set of input examples that will be used to train a model by adjusting the parameters of the set.
@@ -87,7 +87,7 @@ Testing the same model on a test set with 55% samples of X and 45% samples of Y,
 ##### Confusion matrix
 The confusion matrix forms the basis for the other types of classification metrics. It's a matrix that fully describes the performance of the model. A confusion matrix gives an in-depth breakdown of the correct and incorrect classifications of each class.
 
-![confusion](/engineering-education/evaluating-ml-model-performance/confusion.png)
+![confusion](/evaluating-ml-model-performance/confusion.png)
 
 *Confusion Matrix* 
 
@@ -134,13 +134,13 @@ On the other hand, recall is the number of true positives divided by all the sam
 
 Recall = True Positives / (True Positives + False Negatives)
 
-![precisionrecall](/engineering-education/evaluating-ml-model-performance/precisionrecall.png)
+![precisionrecall](/evaluating-ml-model-performance/precisionrecall.png)
 
 [Source]( https://en.wikipedia.org/wiki/Precision_and_recall)
 
 In addition to robustness, the F-score shows us how precise a model is by letting us know how many correct classifications are made. The F-score ranges between 0 and 1. The higher the F-score, the greater the performance of the model.
 
-![fscore](/engineering-education/evaluating-ml-model-performance/fscore.jpg)
+![fscore](/evaluating-ml-model-performance/fscore.jpg)
 
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
@@ -158,7 +158,7 @@ Mean absolute error provides the estimate of how far off the actual output the p
 
 Mean absolute error is given by:
 
-![mae](/engineering-education/evaluating-ml-model-performance/mae.jpg)
+![mae](/evaluating-ml-model-performance/mae.jpg)
 
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
@@ -167,7 +167,7 @@ The mean squared error is quite similar to the mean absolute error. However, as 
 
 Mean squared error is given by:
 
-![mse](/engineering-education/evaluating-ml-model-performance/mse.jpg)
+![mse](/evaluating-ml-model-performance/mse.jpg)
 
 [Source](https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234)
 
@@ -195,4 +195,4 @@ Besides looking at model evaluation techniques, we have gone over a few importan
 6. [How to Evaluate Machine Learning Algorithms](https://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

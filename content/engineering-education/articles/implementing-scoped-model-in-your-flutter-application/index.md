@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-scoped-model-in-your-flutter-application/
+url: /implementing-scoped-model-in-your-flutter-application/
 title: Implementing a Scoped Model in your Flutter Application
 description: In this tutorial we will learn how to create more productive and interactive Flutter applications. You will create an application that follows state management principles in Flutter.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.jpg
+  - url: /implementing-scoped-model-in-your-flutter-application/hero.jpg
     alt: scoped model in Flutter image
 ---
  In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that impress users. These features are difficult to use in native app development using languages such as Java.
@@ -46,7 +46,7 @@ Open `Android Studio` click file, then create a `new Flutter project.` Ensure th
 
 You have to be patient since this stage takes time.
 
-![Creating new project](/engineering-education/implementing-scoped-model-in-your-flutter-application/creating-project.png)
+![Creating new project](/implementing-scoped-model-in-your-flutter-application/creating-project.png)
 
 ### Installing the required library
 You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation.
@@ -66,7 +66,7 @@ dependencies:
 ### Creating the UI
 In this stage, we will use different widgets to create the user interface. Our final design should be similar to the image below.
 
-![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
+![App design](/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
 ### Modify 'main.dart' file
 Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage` class since we will create a new one.
@@ -300,4 +300,4 @@ The `scoped_model` simplifies the state management process. Data is passed from 
 - [Scoped_model](https://pub.dev/packages/scoped_model)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

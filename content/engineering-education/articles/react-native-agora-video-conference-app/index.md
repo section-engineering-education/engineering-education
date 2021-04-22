@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-agora-video-conference-app/
+url: /react-native-agora-video-conference-app/
 title: React Native Agora Video Conference App
 description: This tutorial will give readers a detailed guide on how to build a video conference application using React Native and Agora SDKs.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-agora-video-conference-app/hero.jpg
+  - url: /react-native-agora-video-conference-app/hero.jpg
     alt: React Native Agora Conference App
 ---
 In this tutorial, we will build a Video Conference application with the help of React Native and [Agora](https://www.agora.io/en/about-us/).
@@ -29,7 +29,7 @@ By the end of the tutorial, you’ll know:
 The fundamentals of React and React Native will not be covered in this tutorial. If you are not comfortable with the fundamentals, please refer to this [tutorial](https://reactnative.dev/docs/tutorial) before beginning with this project.
 
 ### Agora
-As I mentioned in my [previous article](/engineering-education/react-native-agora-livestreaming-app/), Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
+As I mentioned in my [previous article](/react-native-agora-livestreaming-app/), Agora was founded in 2014. It's a service provider used for real-time voice and video. Its core technology is real-time communication (RTC).
 Agora provides SDKs to build apps that require real-time engagement like:
 
 - Audio/Video calls.
@@ -65,17 +65,17 @@ Head to Agora and create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with Google, Github, or Cocos. Once you've signed up, you'll see the dashboard below.
 
-![Agora Dashboard](/engineering-education/react-native-agora-video-conference-app/agora_dashboard.png)
+![Agora Dashboard](/react-native-agora-video-conference-app/agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this form. Fill out the project name and set the authentication mechanism to testing.
 
-![Agora New Project Form](/engineering-education/react-native-agora-video-conference-app/agora_new_project.png)
+![Agora New Project Form](/react-native-agora-video-conference-app/agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
-![Agora Project Management Console](/engineering-education/react-native-agora-video-conference-app/agora_project_management_console.png)
+![Agora Project Management Console](/react-native-agora-video-conference-app/agora_project_management_console.png)
 
 Now, click on the closed eye icon near the App ID to reveal it and copy the App ID. We'll be needing this later while setting up Agora in our app.
 
@@ -86,7 +86,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
-![Env Setup](/engineering-education/react-native-agora-video-conference-app/env_setup.png)
+![Env Setup](/react-native-agora-video-conference-app/env_setup.png)
 
 ### Cloning the starter code
 To focus more on the Video conference, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
@@ -97,7 +97,7 @@ The Home Screen has 2 buttons, Start and Join. The join button has a text input 
 
 This is the Home Screen you'll see when you open the app.
 
-![Homescreen](/engineering-education/react-native-agora-video-conference-app/homescreen.jpeg)
+![Homescreen](/react-native-agora-video-conference-app/homescreen.jpeg)
 
 ### Installing dependencies
 You can install these packages either in advance or while going through the tutorial.
@@ -207,7 +207,7 @@ In `screens/Conference.js`, let's import the Agora UI Kit.
 import AgoraUIKit from "agora-rn-uikit";
 ```
 
-It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](/engineering-education/agora-express-token-server/).
+It accepts a prop named `rtcProps` through which we can pass the Agora app ID and the channel ID. We can also pass an optional UID and an optional authentication token for the user. You can learn more about Agora token authentication [here](/agora-express-token-server/).
 
 You can access the route prop like `props.route.params.propname`. In our case, it'll be `props.route.params.channel`.
 
@@ -230,11 +230,11 @@ When no one else is at the conference except you, you'll see the local feed. Whe
 #### Callbacks
 You'll see 5 buttons on the conference screen. They are toggle audio, toggle video, end conference, toggle camera, and toggle full screen. We can pass callback functions for each button.
 
-![Buttons](/engineering-education/react-native-agora-video-conference-app/buttons.jpeg)
+![Buttons](/react-native-agora-video-conference-app/buttons.jpeg)
 
 When someone joins the stream, you'll see two more buttons. These buttons will let you mute remote audio and video streams.
 
-![Buttons](/engineering-education/react-native-agora-video-conference-app/remote_buttons.jpg)
+![Buttons](/react-native-agora-video-conference-app/remote_buttons.jpg)
 
 You can pass functions that'll get executed when the user interacts with the buttons. These custom functions are called callback functions.
 
@@ -302,7 +302,7 @@ const styleProps = {
 return <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} styleProps={styleProps} />;
 ```
 
-![Styled Buttons](/engineering-education/react-native-agora-video-conference-app/styled_buttons.jpeg)
+![Styled Buttons](/react-native-agora-video-conference-app/styled_buttons.jpeg)
 
 Here is the list of styles that you can pass:
 - theme (Icon color of the Buttons - Accepts a color)

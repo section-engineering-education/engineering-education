@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/networking-models-introductory-guide/
+url: /networking-models-introductory-guide/
 title: Networking Models - Introductory Guide
 description: The networking model describes the architecture, components, and design used to establish communication between the source and destination systems.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/networking-models-introductory-guide/hero.jpg
+  - url: /networking-models-introductory-guide/hero.jpg
     alt: networking model example image
 ---
 Networking is the main reason we can write this blog and send it across to millions of readers with such ease. The overall picture is explored in the subject of computer networks. Computer networks deal with communication between systems. At the same time, it also considers how information being sent from the source should reach its destination most efficiently. It is comparative to a congested city with loads of traffic.
@@ -80,12 +80,12 @@ The probability of error is high, and therefore various other schemes are requir
 
     * Manchester Encoding:
 
-     ![](/engineering-education/networking-models-introductory-guide/manchester_coding.jpg)
+     ![](/networking-models-introductory-guide/manchester_coding.jpg)
       [Image Source](https://manikareahome.files.wordpress.com/)
 
     * NRZ Encoding:
 
-      ![](/engineering-education/networking-models-introductory-guide/nrz_coding.jpg)
+      ![](/networking-models-introductory-guide/nrz_coding.jpg)
       [Image Source](https://manikareahome.files.wordpress.com/)
 
 ### TCP/IP Model
@@ -98,7 +98,7 @@ TCP/IP model uses TCP in the transport layer and IP in the network layer. The fo
 
 - **Application Layer**: In the TCP/IP Model, the Application layer encompasses the first three layers in the OSI model, that is, Application layer, Presentation layer, and the Session Layer.
 - **Transport Layer**: This layer is the same as the one mentioned in the OSI model. Transmission Control Protocol (TCP) is used in this model. TCP ensures reliability and helps avoids congestion in networks.
-- **Network Layer**: Internet Protocol (IP) is used predominantly in this layer. Until recently, IPv4 was the most common protocol in use. It provided 32 bits for assigning addresses. It supported around 4.29 million unique devices. In the late 1990s, the number of devices overtook the 4 million mark, and therefore IPv6 was introduced. IPv6 is the protocol that allows 4.3 billion devices. It has 128 bits assigned for the network address. To learn more about IPv6 and why switching to it is important, you can read this [article here](/engineering-education/why-ipv6-transition-is-important/).
+- **Network Layer**: Internet Protocol (IP) is used predominantly in this layer. Until recently, IPv4 was the most common protocol in use. It provided 32 bits for assigning addresses. It supported around 4.29 million unique devices. In the late 1990s, the number of devices overtook the 4 million mark, and therefore IPv6 was introduced. IPv6 is the protocol that allows 4.3 billion devices. It has 128 bits assigned for the network address. To learn more about IPv6 and why switching to it is important, you can read this [article here](/why-ipv6-transition-is-important/).
 - **Network Interface**: It enables the transmission of data. The layer corresponds to the data link layer and the physical layer in the OSI Model.
 
 ### Conclusion

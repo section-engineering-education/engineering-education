@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-testing
+url: /node-testing
 title: Testing Node.js Applications
 description: Testing Node.js application - Node.js is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. Testing is an important part of that process.
 author: rohan-reddy
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-testing/hero.jpg
+  - url: /node-testing/hero.jpg
     alt: node testing example text image
 ---
 [Node.js](http://nodejs.org/) is used to develop applications ranging from a simple portfolio website to complex APIs and applications used by millions. As the size of the application grows, the risk of bugs also grows. An application is not complete until it is tested. A test can be a simple `console.log` to a function to see if it is working as intended.
@@ -39,7 +39,7 @@ console.log(addNumbers(1,2));
 ### Unit Testing
 Unit testing is a type of automated testing where you write logic to test discrete parts of your application. Unit testing tests code logic directly at the function or method level and it’s applicable to all types of applications. Writing tests make you think about your application design choices and help you avoid pitfalls early. The unit-testing methodology can be divided into two major forms: [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and [behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development).
 
-![img](/engineering-education/node-testing/tdd.png)
+![img](/node-testing/tdd.png)
 
 Unit tests
 
@@ -278,11 +278,11 @@ We used the chai assertion library for the last test, here we can see the areas 
 
 When we run the command `npm test` we can see the following results.
 
-![img](/engineering-education/node-testing/mocha1.png)
+![img](/node-testing/mocha1.png)
 
 When I made changes to cause an error this was the output.
 
-![img](/engineering-education/node-testing/mocha2.png)
+![img](/node-testing/mocha2.png)
 
 ### Testing Asynchronous Code with Mocha
 Most Node.js applications use a lot of asynchronous code. Mocha also makes it easy to test asynchronous code with a very similar syntax. Here is an example of an asynchronous function using `async` `await`  and `callbacks` taken from mochajs.org.

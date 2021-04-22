@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-inheritance-using-c/
+url: /getting-started-with-inheritance-using-c/
 title: Getting Started with Inheritance using C#
 description: This tutorial will go over the basics of Inheritance using C#, including the relationship between classes and how constructor are executed.
 author: mohamed-alghadban
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
+  - url: /getting-started-with-inheritance-using-c/hero.jpg
     alt: inheritance example image c#
 ---
 Inheritance is a unique concept in (OOP) object-oriented programming. It allows the definition of multiple classes using the properties of other classes. We create classes by inheriting the functions and variables of a base class. Then we add new functions to enhance its performance.
@@ -42,7 +42,7 @@ A **base** class produces derived classes that inherit the properties of the bas
 
 Inheritance forms a tree-like hierarchy:
 
-![inheritance tree](/engineering-education/getting-started-with-inheritance-using-c/tree-of-inheritance.png)
+![inheritance tree](/getting-started-with-inheritance-using-c/tree-of-inheritance.png)
 
 **In inheritance**, an object is often the object of another class, and all derived classes are objects of their base class, also note that constructors are not inherited.
 
@@ -234,4 +234,4 @@ In this tutorial, we have learned the importance of inheritance, how to define a
 However, it's just the start! We will learn more about inheritance in the upcoming tutorials. Don't forget to test out the code to fully understand how it works.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

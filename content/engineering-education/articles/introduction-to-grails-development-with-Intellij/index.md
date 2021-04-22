@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-grails-development-with-intellij/
+url: /introduction-to-grails-development-with-intellij/
 title: Getting Started with Grails Java Framework
 description: This article will go over Grails, which is Java and Groovy framework used when developing agile web applications. Grails implements the MVCS (Model, View, and Controller) design pattern.
 author: sylvester-tamba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-grails-development-with-intellij/hero.jpg
+  - url: /introduction-to-grails-development-with-intellij/hero.jpg
     alt: Grails Java Framework example image
 ---
 In recent years, many developers have been using frameworks when developing websites. Frameworks help by making application deployment quicker and by ensuring quality code. Java provides multiplatform supports, this includes a desktop application, web application, mobile app development, and many more.
@@ -58,7 +58,7 @@ Create the first application with the following command.
 grails create-app Firstapp
 ```
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-create-app.png)
+![CREATE-APP](/introduction-to-grails-development-with-intellij/grails-create-app.png)
 
 The Grails application is formed within the `Firstapp` directory, and one can execute many other grails commands.
 
@@ -69,9 +69,9 @@ grails run-app
 
 The command will run the web application via a browser. You can type the highlighted command in the browser.
 
-![CREATE-APP](/engineering-education/introduction-to-grails-development-with-intellij/grails-run-app.PNG)
+![CREATE-APP](/introduction-to-grails-development-with-intellij/grails-run-app.PNG)
 
-![BROWSER VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-first-web-app.PNG)
+![BROWSER VIEW](/introduction-to-grails-development-with-intellij/grails-first-web-app.PNG)
 
 ### Folder structure and directories
 The grails application has the following folder structure.
@@ -261,7 +261,7 @@ Each view has its function. show.gsp is used to show a single object selected, i
 
 The new view in the browser will look like the following.
 
-![VIEWS](/engineering-education/introduction-to-grails-development-with-intellij/grails-views-data.PNG).
+![VIEWS](/introduction-to-grails-development-with-intellij/grails-views-data.PNG).
 
 The same folder can be opened in Intellij and continue with fast coding. For any Class to be added, the developer needs to right-click on a given folder and create a Grails Class based on the Folder.
 
@@ -269,7 +269,7 @@ Any library that is not there can be added through build.gradle. Just like CMD/T
 
 This how it looks in IntelliJ.
 
-![INTELLIJ VIEW](/engineering-education/introduction-to-grails-development-with-intellij/grails-intellij-view.PNG).
+![INTELLIJ VIEW](/introduction-to-grails-development-with-intellij/grails-intellij-view.PNG).
 
 For the source code check [here](https://github.com/tambastar/Grails-Firstapp).
 
@@ -285,4 +285,4 @@ In this article:
 - We have created a Student Object Management.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

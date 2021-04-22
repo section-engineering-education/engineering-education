@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/rock-paper-scissor-online/
+url: /rock-paper-scissor-online/
 title: Building a Rock Paper Scissors Game Using Socket
 description: This tutorial is an introduction to socket logic while building a web application that lets you play Rock, Paper, Scissors online with your friends.
 author: harish-ramesh-babu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/rock-paper-scissor-online/hero.jpg
+  - url: /rock-paper-scissor-online/hero.jpg
     alt: socket logic web application image example
 ---
 Unlike HTTP requests which are one-sided, Socket is a software structure that provides two way communication link between two nodes. Sockets are primarily used whenever realtime communication needs to be established.
@@ -27,11 +27,11 @@ There are two parts to this application,
 
 ### Prerequisites
 - HTML is the standard markup language for web page. Here's a useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
-- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/engineering-education/what-is-css/).
+- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/what-is-css/).
 - [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS and JS library. Here's an [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to get you started.
 - [jQuery](https://jquery.com/) is a fast and feature-rich JavaScript library.
-- [Express.js](https://expressjs.com/) is a web application framework for Node.js. Here's an introductory article on Express.js: [link](/engineering-education/express/).
-- [Socket.io](https://socket.io/) is a JavaScript library that abstracts WebSocket connections thereby enabling realtime, bi-directional communication. Here's a helpful [article](/engineering-education/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to follow along smoothly.
+- [Express.js](https://expressjs.com/) is a web application framework for Node.js. Here's an introductory article on Express.js: [link](/express/).
+- [Socket.io](https://socket.io/) is a JavaScript library that abstracts WebSocket connections thereby enabling realtime, bi-directional communication. Here's a helpful [article](/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to follow along smoothly.
 
 ### Starter code
 In the interest of time and the intention to put more focus on Socket logic, please download the starter code from this [repository](https://github.com/HarishTeens/rps-online) on GitHub. Follow the instructions as mentioned on the README.md to set up the project on your local system.
@@ -51,7 +51,7 @@ There are two important files to focus on. One is  `app.js` that handles server-
 
 ### Game flow
 
-![image](/engineering-education/rock-paper-scissor-online/rps.png)
+![image](/rock-paper-scissor-online/rps.png)
 
 This is a sequence diagram that shows the timeline of events. It's important to understand the flow before we start coding so make sure you understand the diagram completely.
 
@@ -471,4 +471,4 @@ Although the app works, it could be improved. As mentioned before, the intention
 Thanks for reading.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

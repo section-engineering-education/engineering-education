@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/
+url: /how-to-create-a-responsive-form-using-tailwindcss/
 title: How to create a Responsive Form using Tailwind CSS
 description: In this article we will create a simple html form that is styled by tailwind css. Tailwind css is a new css framework that focusses on a utility first approach.
 author: monica-masae
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/hero.jpg
+  - url: /how-to-create-a-responsive-form-using-tailwindcss/hero.jpg
     alt: Tailwind image example
 ---
 Tailwind CSS is one of the most popular frameworks used to build custom user interfaces for web applications. It is different from other CSS frameworks because of its utility-first approach. When building websites, we write the structure in a HTML file then implement the styles in a CSS file. 
@@ -20,7 +20,7 @@ Thanks to the new CSS framework Tailwind, we can now add styles directly into ou
 
 The form will look like this when completed:
 
-![Login form](/engineering-education/how-to-create-a-responsive-form-using-tailwindcss/form.png)
+![Login form](/how-to-create-a-responsive-form-using-tailwindcss/form.png)
 
 ### Adding Tailwind CSS to your project
 There are various ways of including Tailwind into your project. The most recommended method is to use a package manager in order to make full use of the configuration possibilities via PostCSS using build tools.
@@ -206,4 +206,4 @@ A log in form is a simple example but serves the purpose since it uses many of t
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

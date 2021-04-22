@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-hill-climbing-in-ai/
+url: understanding-hill-climbing-in-ai/
 title: Understanding Hill Climbing Algorithm in Artificial Intelligence
 description: This article will go over the hill-climbing algorithm, which is a local search algorithm that moves continuously upward (increasing) until the best solution is attained. This algorithm comes to an end when the peak is reached.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-hill-climbing-in-ai/hero.jpg
+  - url: /understanding-hill-climbing-in-ai/hero.jpg
     alt: Hill climbing algorithm example image
 ---
 A hill-climbing algorithm is an Artificial Intelligence (AI) algorithm that increases in value continuously until it achieves a peak solution. This algorithm is used to optimize mathematical problems and in other real-life applications like marketing and job scheduling.
@@ -28,7 +28,7 @@ A hill-climbing algorithm's objective is to attain an optimal state that is an u
 ### Features of a hill climbing algorithm
 A hill-climbing algorithm has four main features:
 
-1. It employs a **greedy approach:** This means that it moves in a direction in which the cost function is optimized. The [greedy approach](/engineering-education/greedy-algorithms/) enables the algorithm to establish local maxima or minima. 
+1. It employs a **greedy approach:** This means that it moves in a direction in which the cost function is optimized. The [greedy approach](/greedy-algorithms/) enables the algorithm to establish local maxima or minima. 
 2. **No Backtracking:** A hill-climbing algorithm only works on the current state and succeeding states (future). It does not look at the previous states. 
 3. **Feedback mechanism:** The algorithm has a feedback mechanism that helps it decide on the direction of movement (whether up or down the hill). The feedback mechanism is enhanced through the [generate-and-test technique](http://intelligence.worldofcomputing.net/ai-search/generate-and-test-search.html#:~:text=%20Algorithm%3A%20Generate-And-Test%20%201%201.Generate%20a%20possible,quit%20else%20go%20to%20step%201.%20More%20). 
 4. **Incremental change:** The algorithm improves the current solution by incremental changes. 
@@ -40,7 +40,7 @@ If the cost function represents this axis, we aim to establish the local minimum
 
 The following diagram shows a simple state-space diagram. The objective function has been shown on the y-axis, while the state-space represents the x-axis.
 
-![Hill Climbing Algorithm in AI](/engineering-education/understanding-hill-climbing-in-ai/hill-climbing-algorithm-in-ai.png)
+![Hill Climbing Algorithm in AI](/understanding-hill-climbing-in-ai/hill-climbing-algorithm-in-ai.png)
 
 [Image Source: Javat Point](https://static.javatpoint.com/tutorial/ai/images/hill-climbing-algorithm-in-ai.png)
 
@@ -64,7 +64,7 @@ In this region, the values attained by the neighboring states are the same. This
 
 This challenge can be overcome by taking a huge jump that will lead you to a non-plateau space. 
 
-![Plateau](/engineering-education/understanding-hill-climbing-in-ai/plateau.png)
+![Plateau](/understanding-hill-climbing-in-ai/plateau.png)
 
 [Image Source: Tutorial and Example](https://www.tutorialandexample.com/wp-content/uploads/2019/07/Plateau.png)
 
@@ -73,7 +73,7 @@ The hill-climbing algorithm may terminate itself when it reaches a ridge. This i
 
 This impediment can be solved by going in different directions at once. 
 
-![Ridge in Hill Climbing](/engineering-education/understanding-hill-climbing-in-ai/ridge-in-hill-climbing.png)
+![Ridge in Hill Climbing](/understanding-hill-climbing-in-ai/ridge-in-hill-climbing.png)
 
 [Image Source: VietMX Blog](https://www.maixuanviet.com/wp-content/uploads/2020/05/hill-climbing-algorithm-in-ai4.png)
 
@@ -131,5 +131,5 @@ In the future, technological advancement to the hill climbing technique will sol
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

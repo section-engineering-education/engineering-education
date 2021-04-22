@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-reinforcement-learning/
+url: /introduction-to-reinforcement-learning/
 title: Understanding Reinforcement Learning
 description: This article will go through reinforcement learning by exploring concepts like Q-learning, policy gradients, and actor-critics.
 author: willies-ogola
@@ -10,7 +10,7 @@ date: 2020-11-09T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/introduction-to-reinforcement-learning/hero.jpg
+  - url: /introduction-to-reinforcement-learning/hero.jpg
     alt: reinforcement learning
 ---
 This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned with how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.
@@ -55,7 +55,7 @@ In our scenario, the child is an agent. Our environment is the ground on which t
 
 This is a simple example of a reinforcement learning problem.
 
-![rl-architecture](/engineering-education/introduction-to-reinforcement-learning/rl-architecture.png)<br>
+![rl-architecture](/introduction-to-reinforcement-learning/rl-architecture.png)<br>
 
 *[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
@@ -69,7 +69,7 @@ Q-learning is the most popular among the RL algorithms.
 
 This algorithm finds an optimal action-selection policy by using a Q-function. By selecting the best of all possible actions, the algorithm can maximize the value function, Q.
 
-![q-learning](/engineering-education/introduction-to-reinforcement-learning/q-learning.PNG)
+![q-learning](/introduction-to-reinforcement-learning/q-learning.PNG)
 
 *[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
@@ -125,7 +125,7 @@ They integrate over only the state spaces.
 Due to these differences, SPG may need more samples to compute in cases of high dimensions action spaces.
 
 #### Actor-Critics (AC)
-![actor-critic](/engineering-education/introduction-to-reinforcement-learning/actor-critic.png)
+![actor-critic](/introduction-to-reinforcement-learning/actor-critic.png)
 
 *[Image Source: Berkeley](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/lecture_5_actor_critic_pdf)*
 
@@ -210,4 +210,4 @@ If Machine Learning is still new to you, feel free to [download and read this e-
 9. Dang, Q. V. (2019, December). [Reinforcement Learning in Stock Trading.](https://core.ac.uk/download/pdf/231933064.pdf) In International Conference on Computer Science, Applied Mathematics and Applications (pp. 311-322). Springer, Cham.
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

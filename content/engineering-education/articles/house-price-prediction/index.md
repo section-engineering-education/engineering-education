@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/house-price-prediction/
+url: /house-price-prediction/
 title: House Price Prediction using Machine Learning
 description: In this tutorial we will be going over how to implement an entire machine learning pipeline and we will understand how we implement machine learning algorithms.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/house-price-prediction/hero.jpg
+  - url: /house-price-prediction/hero.jpg
     alt: house price prediction example image
 ---
 Welcome to a tutorial on predicting house prices using the [Random Forest Regression](https://en.wikipedia.org/wiki/Random_forest) algorithm. We will cover the data pipeline creation.
@@ -20,8 +20,8 @@ This pipeline creation process involves loading the dataset, cleaning and pre-pr
 ### Prerequisites
 There are a few theoretical and programming pre-requisites required for this article. They are helpful but not required to understand the article.
 
-1. [Introduction to Pandas](/engineering-education/data-analytics-using-pandas/)
-2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/engineering-education/supervised-learning-algorithms/)
+1. [Introduction to Pandas](/data-analytics-using-pandas/)
+2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/supervised-learning-algorithms/)
 
 ### Installation
 We'll install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual).
@@ -174,4 +174,4 @@ We get an accuracy of about 79.9%, and the MSE loss is around 18.15.
 ### Conclusion
 We have gone through how to implement the entire machine learning pipeline, and we have an intuitive understanding of machine learning algorithms. The larger the dataset gets, the more complex each of the mentioned steps gets. Therefore, using this as a base will help while you build your knowledge of machine learning pipelines.
 
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

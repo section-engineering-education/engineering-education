@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-datastore-in-kotlin/
+url: /getting-started-with-datastore-in-kotlin/
 title: Getting Started with Preference DataStore in Kotlin
 description: In this tutorial, we will learn how Jetpack DataStore works. We will work on how to change the UI mode of an app. Datastore uses Kotlin coroutines and flow to store data asynchronously, consistently, transactionally, and to handle data corruption.
 author: carol-musyoka
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-datastore-in-kotlin/hero.jpg
+  - url: /getting-started-with-datastore-in-kotlin/hero.jpg
     alt: DataStore in Kotlin example image
 ---
 DataStore is an improved data storage solution by Google to replace SharedPreferences for persisting simple pieces of data such as key-value pairs or typed objects with protocol buffers.
@@ -218,9 +218,9 @@ Using `setUIMode()`, we are updating the state of the preference if the icon is 
 Once you are done, run the app. 
 
 Here is what you would expect.
-![light mode](/engineering-education/getting-started-with-datastore-in-kotlin/light-mode.png)
+![light mode](/getting-started-with-datastore-in-kotlin/light-mode.png)
 
-![dark mode](/engineering-education/getting-started-with-datastore-in-kotlin/dark-mode.png)
+![dark mode](/getting-started-with-datastore-in-kotlin/dark-mode.png)
 
 You can check out the entire project on [GitHub](https://github.com/carolinemusyoka/NoteApp).
 
@@ -237,4 +237,4 @@ Happy coding!!
 - [Official Documentation](https://developer.android.com/topic/libraries/architecture/datastore)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

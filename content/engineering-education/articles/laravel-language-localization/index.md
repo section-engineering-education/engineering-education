@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-language-localization/
+url: /laravel-language-localization/
 title: Laravel Language Localization
 description: This tutorial introduces the basic concepts of localization in Laravel 8.x. This feature ensures that an application adapts to different languages depending on the region.
 author: miller-juma
@@ -10,7 +10,7 @@ date: 2021-01-19T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/laravel-language-localization/hero.jpg
+  - url: /laravel-language-localization/hero.jpg
     alt: laravel language localisation
 ---
 Developers can target users from different regions and cultures using language localization. In Laravel, it is easy to implement language localization due to the well-defined file structure. In software applications, language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. 
@@ -317,4 +317,4 @@ Refresh your browser and you will notice that the form labels are now presented 
 In this tutorial, we have designed a simple form that can be presented in English or Spanish. We have also learned how to define and use translation strings for different languages. You can now use this knowledge and skills to build more interactive Laravel applications.
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

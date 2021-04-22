@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-flask-wtform/
+url: /implementing-flask-wtform/
 title: Implementing Flask WTForms
 description: In this article, you will understand how to work with forms in your Flask web application. Forms are integral components of web applications. They are required to send data from the user to the backend.
 author: adetu-ridwan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-flask-wtform/hero.jpg
+  - url: /implementing-flask-wtform/hero.jpg
     alt: Implementing Flask WTForms example image
 ---
 Forms are integral components of web applications. They are needed to send data from the user to the backend. In this article, we will understand how to work with forms in our Flask web application.
@@ -58,7 +58,7 @@ $ flask run
 
 With this, you can proceed to your web browser and follow the URL stated in your terminal (127.0.0.1:500), and you should see a simple hello world application displayed.
 
-![Hello world image](/engineering-education/implementing-flask-wtform/hello_world.jpg)
+![Hello world image](/implementing-flask-wtform/hello_world.jpg)
 
 ### Form handling in Flask
 The Flask framework does not provide a unique way to handle forms. However, there exist two ways developers can create and handle forms.
@@ -134,7 +134,7 @@ With the form created and the route created, in your web browser, navigate to th
 
 In our case, the `/register` is the path. If you’ve done everything right, then your web browser should display this:
 
-![formdisplayimage](/engineering-education/implementing-flask-wtform/form_displayraw.jpg)
+![formdisplayimage](/implementing-flask-wtform/form_displayraw.jpg)
 
 ### Handling the form data
 At this stage, you can view your form. Try filling the data like a regular user signing up for a web application, and hit the submit button. By submitting the data, you should see a 405 method not allowed error page. This error can be handled by following this process.
@@ -465,4 +465,4 @@ However, the Flask WTForms extension is the best approach to adopt when handling
 One can find the complete codebase for this tutorial [here](https://github.com/corpsgeek/flask-form-handling).
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

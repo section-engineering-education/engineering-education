@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/develop-google-add-on/
+url: /develop-google-add-on/
 title: Developing a Google Add-on
 description: This article will go through creating a Google add-on by using apps script which is a javascript based scripting language created by google to make automation a reality and make third-party services and information available.
 author: peter-ndegwa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/develop-google-add-on/hero.png
+  - url: /develop-google-add-on/hero.png
     alt: Google add-on example image
 ---
 Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Google has also provided a scripting language that allows automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to that make automation a reality and make third-party services or information available.
@@ -24,11 +24,11 @@ Developers can benefit a lot by knowing how to create add-ons. This provides a c
 ### Discussion
 To access the App Script programming interface, open Google sheet and navigate to Tools > Script Editor.
 
-![Access Script Editor](/engineering-education/develop-google-add-on/apps-script-access.png)
+![Access Script Editor](/develop-google-add-on/apps-script-access.png)
 
 The Apps Script displays a programming interface as shown below.
 
-![Apps Script Editor](/engineering-education/develop-google-add-on/apps-script-editor.png)
+![Apps Script Editor](/develop-google-add-on/apps-script-editor.png)
 
 We will now head straight to the features and development.
 
@@ -67,7 +67,7 @@ function onOpen() {
 }
 ```
 
-![Create menu](/engineering-education/develop-google-add-on/menu.png)
+![Create menu](/develop-google-add-on/menu.png)
 
 #### 2. User Interface (UI) development
 On top of the spreadsheet's user interface, Google enriches it with popups, sidebars, dialogue boxes, alerts, among others. They help improve the interaction between the client and the backend systems by providing information on progress, prompting users to give more information, or even giving feedback. 
@@ -85,7 +85,7 @@ function showSideBar() {
 }
 ```
 
-![Side bar](/engineering-education/develop-google-add-on/side-bar.png)
+![Side bar](/develop-google-add-on/side-bar.png)
 
 #### 3. Interaction with external features such as CSS and JQuery
 Apps Script provides a way to use external libraries to make use of the existing CSS and Javascript libraries. Below is an example of how to link to the JQuery library in the header section.
@@ -122,7 +122,7 @@ function helperFunction() {
 }
 ```
 
-![Helper function](/engineering-education/develop-google-add-on/helper-function.png)
+![Helper function](/develop-google-add-on/helper-function.png)
 
 #### 5. Triggers
 Add-ons are capable of using three types of triggers:
@@ -144,7 +144,7 @@ function createTimeDrivenTriggers() {
 }
 ```
 
-![Triggers](/engineering-education/develop-google-add-on/triggers.png)
+![Triggers](/develop-google-add-on/triggers.png)
 
 #### 6. Storage
 Apps Script supports both Properties and JDBC services to facilitate data storage. Properties service is mostly used to store key-value pairs for simple strings with a scope of one script, one user of the script, or the document within which the add-on is used. 
@@ -210,18 +210,18 @@ Navigate to Executions to view the records. Apps Script also allows users to run
  MailApp.sendEmail(Session.getActiveUser().getEmail(), 'List of Files in Google Drive', Logger.getLog());
 ```
 
-![Logging / Debugging](/engineering-education/develop-google-add-on/debugging.png)
+![Logging / Debugging](/develop-google-add-on/debugging.png)
 
 #### 8. Authorization
 On install and addition of new services, Apps Script requires that the user authorize the application to execute from their spreadsheet application. 
 
 After it has acquired the necessary permission, the add-on can access private data in the scopes defined. Permissions on an add-on can be revoked at any time by navigating to Account > Security > View all and clicking revoke access on the add-on.
 
-![Review permissions](/engineering-education/develop-google-add-on/review-permissions.png)
+![Review permissions](/develop-google-add-on/review-permissions.png)
 
-![Choose account](/engineering-education/develop-google-add-on/choose-account.png)
+![Choose account](/develop-google-add-on/choose-account.png)
 
-![Allow permissions](/engineering-education/develop-google-add-on/allow-permission.png)
+![Allow permissions](/develop-google-add-on/allow-permission.png)
 
 #### 9. Scopes
 Scope refers to the services the add-on has access to and are viewed by navigating to Overview.
@@ -237,7 +237,7 @@ Scope refers to the services the add-on has access to and are viewed by navigati
 SpreadsheetApp.getUi()
 ```
 
-![Scopes](/engineering-education/develop-google-add-on/scopes.png)
+![Scopes](/develop-google-add-on/scopes.png)
 
 #### 10. API
 Apps Script provides mechanisms by which spreadsheets can connect to other Google applications like Docs, Drive, Calendar, Gmail, and Youtube. Further, it provides a mechanism to interface with External APIs by use of `UrlFetchApp.fetch(URL)`, `XML.parse(XML, true)` and `JSON.parse(JSON)` functions.
@@ -253,15 +253,15 @@ Apps Script provides mechanisms by which spreadsheets can connect to other Googl
 #### 11. Publishing
 This is the last step. It allows developers to make the add-on available to the public or targeted group. The add-on should be properly tested for the specified type i.e. Workspace or Editors add-on. The project version is created on the platform while verifying collaborators.
 
-![Deployment](/engineering-education/develop-google-add-on/deployment.png)
+![Deployment](/develop-google-add-on/deployment.png)
 
 Published add-on
 
-![Published Add-on](/engineering-education/develop-google-add-on/published.png)
+![Published Add-on](/develop-google-add-on/published.png)
 
 Access published add-on
 
-![Access published add-on](/engineering-education/develop-google-add-on/access-published.png)
+![Access published add-on](/develop-google-add-on/access-published.png)
 
 ### Conclusion
 Innovations shared in the Google Marketplace go deep into improving service delivery, their efficiency, and effectiveness. Developers can make use of the existing features in Apps Script to come up with robust add-ons to enhance Google Applications and services. 
@@ -279,4 +279,4 @@ Add-ons user interfaces are customizable thus developers' information is availab
 6. [https://developers.google.com/gsuite/add-ons/](https://developers.google.com/gsuite/add-ons/overview)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/php-yii2-framework/
+url: /php-yii2-framework/
 title: Getting Started with Yii 2 PHP Framework
 description: A tutorial that provides a detailed guide on how to use the Yii 2 framework to create web applications. The Yii 2 framework supports the development of both the backend and the frontend.
 author: erastus-muriithi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/php-yii2-framework/hero.jpg
+  - url: /php-yii2-framework/hero.jpg
     alt: Yii 2 PHP Framework example image
 ---
 Nowadays, many developers are using frameworks when designing websites. This has led to improved production speeds. PHP is a server-side scripting language that can be embedded in [HTML](https://en.wikipedia.org/wiki/HTML).
@@ -57,7 +57,7 @@ At this point, you have installed Yii 2 Advanced Template. Open your browser and
 
 When the Congratulations page is displayed on your browser, it means that the installation was successful.
 
-![A congratulatory note](/engineering-education/php-yii2-framework/congratulations.png)
+![A congratulatory note](/php-yii2-framework/congratulations.png)
 
 ### Step 2 - Understanding the folder structure and directories
 Below are the folders inside the `advanced`. Open `/opt/lampp/htdocs/advanced` folder using your favorite code editor to see them.
@@ -193,7 +193,7 @@ Open your browser and navigate to `http://localhost/advanced/frontend/web` for t
 
 You should have a page like the one below:
 
-![web display](/engineering-education/php-yii2-framework/web.png)
+![web display](/php-yii2-framework/web.png)
 
 The code above replaces the default homepage content with bootstrap jumbotron. We also add a link that points to a portfolio page using the PHP URL manager. The URL Manager is used to link pages throughout Yii 2 framework. On clicking the link, you get a 404 error as the portfolio page does not exist. Let us now create the portfolio page.
 
@@ -248,7 +248,7 @@ After creating the action and the view, you can access the new page by clicking 
 
 You should have a page like the one below:
 
-![web display](/engineering-education/php-yii2-framework/1.png)
+![web display](/php-yii2-framework/1.png)
 
 ### Conclusion
 Congratulations! Now you have a better understanding of the basics of the Yii 2 framework. Yii 2 pushes you to create a securable and testable site by doing a lot of the heavy lifting for you. I encourage you to use Yii 2 in your next project.
@@ -261,4 +261,4 @@ In this article;
 **Happy Yii 2 coding ahead**
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

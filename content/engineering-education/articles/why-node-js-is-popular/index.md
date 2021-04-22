@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-node-js-is-popular
+url: /why-node-js-is-popular
 title: Why is Node.js wildly popular among developers?
 description: Node.js is defined as a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js can be simply referred to as a technology. It is mainly used for backend operations.
 author: geoffrey-mungai
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/why-node-js-is-popular/hero.jpg
+  - url: /why-node-js-is-popular/hero.jpg
     alt: computer image example nodejs
 ---
 Node.js has been a household name among developers for a few years now. So, what is all this recent excitement around Node.js we've been all hearing lately? Why is it so popular? Let's look at all this and more.
@@ -30,12 +30,12 @@ Since then its popularity has wildly grown. For instance in [Github](https://git
 
 For the second year in a row, Node.js won the top spot in the StackOverflow's [2020 developer survey](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3). Over half of the respondents in the survey reported having used it in their projects.
 
-![Half of the respondents use Node.js](/engineering-education/why-node-js-is-popular/stackoverflow1.jpg)
+![Half of the respondents use Node.js](/why-node-js-is-popular/stackoverflow1.jpg)
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 Node.js took the first position as the most wanted technology in the survey.
 
-![most wanted technology 2020](/engineering-education/why-node-js-is-popular/stackoverflow2.jpg)
+![most wanted technology 2020](/why-node-js-is-popular/stackoverflow2.jpg)
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 According to Node.js [metrics](https://nodejs.org/metrics/), Node.js has been downloaded more than 1 billion times globally.

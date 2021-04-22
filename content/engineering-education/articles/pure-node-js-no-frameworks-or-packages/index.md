@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/pure-node-js-no-frameworks-or-packages/
+url: /pure-node-js-no-frameworks-or-packages/
 title: Pure Node.js? Node.js without frameworks? An overview
 description: This article will help developers understand the nuances in using Node.js without frameworks. There is also a hands-on where we build a HTTP server with pure Node.js.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/pure-node-js-no-frameworks-or-packages/hero.jpg
+  - url: /pure-node-js-no-frameworks-or-packages/hero.jpg
     alt: Node.js without frameworks example image
 ---
 Are you a Node.js developer who frequently uses Node.js libraries? Have you ever built an application without using any external Node.js libraries?
@@ -30,30 +30,30 @@ JavaScript has gotten a lot of love from the developer community. It is diverse 
 
 The steady growth of JavaScript has led to the development of powerful JavaScript libraries and frameworks such as Node.js.
 
-![Most popular language](/engineering-education/pure-node-js-no-frameworks-or-packages/most-popular-language.jpg)
+![Most popular language](/pure-node-js-no-frameworks-or-packages/most-popular-language.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-all-respondents)
 
 Node.js is capable of building extremely fast and highly scalable applications. It has emerged as one of the Most Popular JavaScript Technologies.
 
-![The most popular technologies](/engineering-education/pure-node-js-no-frameworks-or-packages/popular-technologies.jpg)
+![The most popular technologies](/pure-node-js-no-frameworks-or-packages/popular-technologies.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools-all-respondents3)
 
 It has emerged as the most wanted web technology, based on a survey conducted by [stack overflow](https://insights.stackoverflow.com/survey/2020).
 
-![The most wanted technology](/engineering-education/pure-node-js-no-frameworks-or-packages/most-wanted-technology.jpg)
+![The most wanted technology](/pure-node-js-no-frameworks-or-packages/most-wanted-technology.jpg)
 
 [Image Source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-other-frameworks-libraries-and-tools-wanted3)
 
 Node.js runtime [download metrics](https://nodejs.org/metrics/) speak for themselves.
 
-![Node.js download metrics](/engineering-education/pure-node-js-no-frameworks-or-packages/node-js-download-metrics.jpg)
+![Node.js download metrics](/pure-node-js-no-frameworks-or-packages/node-js-download-metrics.jpg)
 
 [Image Source](https://nodejs.org/metrics/)
 
 ### An overview
-One of the most influential [reasons for this popularity](/engineering-education/why-node-js-is-popular/) of Node.js is the availability of diverse open-source [frameworks and libraries](/engineering-education/most-useful-nodejs-packages/).
+One of the most influential [reasons for this popularity](/why-node-js-is-popular/) of Node.js is the availability of diverse open-source [frameworks and libraries](/most-useful-nodejs-packages/).
 
 A package (library) is code that has been written by someone else. It is developed to help the community solve day-to-day problems easily and quickly without re-writing code, especially for an extensive application.
 
@@ -130,11 +130,11 @@ server.listen(port, hostname, () => {
 
 Test the server by running `node app.js`.
 
-![Pure Node.js server running](/engineering-education/pure-node-js-no-frameworks-or-packages/server-running.jpg)
+![Pure Node.js server running](/pure-node-js-no-frameworks-or-packages/server-running.jpg)
 
 And it is working. Visit `http://127.0.0.1:3000/` to get the server response.
 
-![Pure Node.js server response](/engineering-education/pure-node-js-no-frameworks-or-packages/server-response.jpg)
+![Pure Node.js server response](/pure-node-js-no-frameworks-or-packages/server-response.jpg)
 
 You are done. You have created the simplest, purest Node.js server. Simple and straightforward, right? 
 
@@ -154,4 +154,4 @@ However, it is incredibly useful to learn pure Node.js. Doing so puts you a step
 Happy coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

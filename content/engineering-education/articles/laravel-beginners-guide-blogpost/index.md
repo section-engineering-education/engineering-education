@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-beginners-guide-blogpost/
+url: /laravel-beginners-guide-blogpost/
 title: Building Your First Laravel Application (Blog Application)
 description: This article will be a step by step guide on how to build a Laravel (which is a is a PHP MVC Framework) application (blog application) using CRUD operations.
 author: mauline-mwaniki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/laravel-beginners-guide-blogpost/hero.jpg
+  - url: /laravel-beginners-guide-blogpost/hero.jpg
     alt: Laravel blog application image
 ---
 Laravel is a free and open-source PHP Framework for Web Artisans based on Symfony that helps craft Web Applications following the MVC (Model View Controller) design pattern.
@@ -43,8 +43,8 @@ These tools include:
 - A localhost Web Server – In our case we'll use WAMP (for Windows), LAMP (for Linux), or MAMP (for MacOs). This localhost webserver comes installed with latest PHP and MySQL database so you will not need to install them manually.
 To install either MAMP, LAMP, or WAMP go to http://ampps.com/downloads and choose the software your platform.
 - Composer – This is a dependency management software for PHP. To install the composer visit https://getcomposer.org/ and download it there for your platform.
-- [Node.js](/engineering-education/why-node-js-is-popular/) – This is a free and open source JavaScript runtime environment that executes JavaScript outside of the browser. We will not write any Node.js code but it will be used in the background by Laravel to streamline our development.
-- Code editor – A [code editor](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/) will be required. We recommend to use Visual Studio Code: It is free.
+- [Node.js](/why-node-js-is-popular/) – This is a free and open source JavaScript runtime environment that executes JavaScript outside of the browser. We will not write any Node.js code but it will be used in the background by Laravel to streamline our development.
+- Code editor – A [code editor](/atom-vs-visual-studio-code-functionality-and-features-comparison/) will be required. We recommend to use Visual Studio Code: It is free.
 - A browser – Google Chrome, Edge, Safari, or Mozilla Firefox will do just fine.
 - Background knowledge of the PHP Programming Language.
 
@@ -68,7 +68,7 @@ After installing our Laravel application we will need to configure our database 
 - Go to `http://localhost/phpmyadmin/ `
 - Create a new Database by clicking on new (shown below in red)
 
-![new data base](/engineering-education/laravel-beginners-guide-blogpost/1_db_create.PNG)
+![new data base](/laravel-beginners-guide-blogpost/1_db_create.PNG)
 
 - Name it `my_blog` and click Create
 
@@ -109,7 +109,7 @@ php artisan serve
 ```
 It will start the application and give you a URL, `http://127.0.0.1:8000`, open the URL in your browser and see the application (shown below).
 
-![home-page](/engineering-education/laravel-beginners-guide-blogpost/2_home.png)
+![home-page](/laravel-beginners-guide-blogpost/2_home.png)
 
 ### Understanding the Laravel application file structure
 Before we start coding, let's understand the file structure of a Laravel application. 
@@ -118,11 +118,11 @@ For example, most of you may not understand why we changed the `.env` file.
 
 Below is the Laravel App file structure:
 
-![files](/engineering-education/laravel-beginners-guide-blogpost/3_files.png)
+![files](/laravel-beginners-guide-blogpost/3_files.png)
 
 `app` folder – This contains all the logic in our application, this includes the models, controllers, service providers etc.
 
-![app files](/engineering-education/laravel-beginners-guide-blogpost/4_app_files.png)
+![app files](/laravel-beginners-guide-blogpost/4_app_files.png)
 
 As a beginner you will spend most of your time in Models and Controllers folders, these two is what we will discuss in detail.
 
@@ -330,7 +330,7 @@ php artisan tinker
 
 This will fire up a command line that looks like this:
 
-![Tinker](/engineering-education/laravel-beginners-guide-blogpost/5_tinker.png)
+![Tinker](/laravel-beginners-guide-blogpost/5_tinker.png)
 
 Start typing your code and hit enter to run it. 
 
@@ -462,7 +462,7 @@ If we navigate to `http://127.0.0.1:8000/blog` you will see a JSON dump of the p
 
 Like this:
  
-![Blog Dump](/engineering-education/laravel-beginners-guide-blogpost/6_blog_dump.png)
+![Blog Dump](/laravel-beginners-guide-blogpost/6_blog_dump.png)
 
 I have installed a chrome extension called JSON Formatter to help me format the JSON dumped, it's a free plugin, you don't have to install it if you don't need it.
 
@@ -499,7 +499,7 @@ If it is not found, you get 404 error.
 
 This is the response you will see in your browser:
 
-![Blog Post](/engineering-education/laravel-beginners-guide-blogpost/7_blog_post.png)
+![Blog Post](/laravel-beginners-guide-blogpost/7_blog_post.png)
 
 >WARNING: The key we use on the wildcard must be the same name as the variable name inside the show method for model-route binding to occur. 
 >For example, if in the route wildcard is `{blogPost}` the variable name on `public function show(BlogPost $blogPost)` method has to be `$blogPost`.
@@ -536,7 +536,7 @@ First, we will learn blade syntax, that will help us get started.
 
 We will compare the syntax we use on blade to that of regular PHP inside views:
 
-![Blade Syntax](/engineering-education/laravel-beginners-guide-blogpost/8_blade_syntax.PNG)
+![Blade Syntax](/laravel-beginners-guide-blogpost/8_blade_syntax.PNG)
 
 >TIP: The PHP syntax is still accepted in the Laravel views but as you have seen, it's clumsy. Using blade syntax is better.
 
@@ -547,7 +547,7 @@ Blade has more terms and directive that we need to understand:
 
 Blade directives and their meaning:
 
-![Blade Directives](/engineering-education/laravel-beginners-guide-blogpost/9_blade_directives.PNG)
+![Blade Directives](/laravel-beginners-guide-blogpost/9_blade_directives.PNG)
 
 These are the ones we are going to use right now, you can always learn more on Laravel documentation [here}(https://laravel.com/docs/8.x/).
 
@@ -615,7 +615,7 @@ The final code in the page will look like this:
 
 This is what is should look like in the browser. The `Show Blog` button will show the blog page, which we will design next.
 
-![Home Page](/engineering-education/laravel-beginners-guide-blogpost/10_home.png)
+![Home Page](/laravel-beginners-guide-blogpost/10_home.png)
 
 #### 3. Designing the blog page
 In our current blog page, we are returning raw json data to user. 
@@ -684,7 +684,7 @@ It will attach the post ID to the link.
 
 The page will look like this in the browser:
 
-![Blog Page](/engineering-education/laravel-beginners-guide-blogpost/11_blog_page.png)
+![Blog Page](/laravel-beginners-guide-blogpost/11_blog_page.png)
 
 #### 4. Designing the BlogPost page (`http://127.0.0.1:8000/blog/5`)
 In our current blog-post page, we are still returning raw json data to the user, in this section, we will return a view to the user. 
@@ -752,13 +752,13 @@ This form will be used to delete the post. The `@method(‘DELETE’)` directive
 
 As shown below:
 
-![csrf and method expands](/engineering-education/laravel-beginners-guide-blogpost/12_expand.png)
+![csrf and method expands](/laravel-beginners-guide-blogpost/12_expand.png)
 
 The `Go Back` button will take us back to the Blog page.
 
 This is how our page will look like in the browser now.
 
-![Blog post Page](/engineering-education/laravel-beginners-guide-blogpost/13_blog_post_page.png)
+![Blog post Page](/laravel-beginners-guide-blogpost/13_blog_post_page.png)
 
 ##### 5. Create a new post page
 We have already created a route for this page `http://127.0.0.1:8000/blog/create/post`.
@@ -834,7 +834,7 @@ The `@csrf` directive will expand in the browser to give us the token field in t
 
 The page will look like this in our browser.
 
-![New post Page](/engineering-education/laravel-beginners-guide-blogpost/14_new_post_form.png)
+![New post Page](/laravel-beginners-guide-blogpost/14_new_post_form.png)
 
 #### 6. Accepting and saving the submitted post
 Inside our `BlogPostController.php` in the `store()` method we will implement the code to save the post to the database the redirect the user to the created post.
@@ -1015,7 +1015,7 @@ With that knowledge, you can now improve the application to add more functionali
 For full Laravel documentation click [here](https://laravel.com/docs/8.x/).
 
 ---
-Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
 
 
 

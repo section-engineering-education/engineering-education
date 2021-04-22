@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sql-or-nosql-when-to-choose-what/
+url: /sql-or-nosql-when-to-choose-what/
 title: SQL or NoSQL - Which Database is Ideal
 description: This article will dive into SQL and NoSQL databases, understand their structures, explore them in-depth, and understand how they work.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sql-or-nosql-when-to-choose-what/hero.jpg
+  - url: /sql-or-nosql-when-to-choose-what/hero.jpg
     alt: date-fns library JavaScript
 ---
 Knowing which database structure to use is critical in building outstanding applications. SQL or NoSQL? In this article we will dive into these two databases, understand their structures, explore them in-depth, and understand how they work. This guide will give you an overview of which database structure will fit your application model.
@@ -48,7 +48,7 @@ SELECT * FROM TABLE1.
 
 This statement will query and display all the **records** of Table1. If we were to have a student information database, this is how we would represent a relation in an SQL database.
 
-![SQL database table](/engineering-education/sql-or-nosql-when-to-choose-what/tables.png)
+![SQL database table](/sql-or-nosql-when-to-choose-what/tables.png)
 
 [*Image Source*](http://cdn.ipenywis.com/upload/images/123abd458.png)
 
@@ -63,7 +63,7 @@ SQL is a simple language that is extremely powerful. You can create multiple dat
 
 Each row in an SQL database has specific value characters, such as texts, varchar, and integers.
 
-![Relations](/engineering-education/sql-or-nosql-when-to-choose-what/relations.png)
+![Relations](/sql-or-nosql-when-to-choose-what/relations.png)
 
 SQL databases need a server that runs a database management system (DBMS). DBMS is a software interface that connects end-users and databases to manage and manipulate data in a structured way. Some of the common SQL databases include [MySQL](https://www.mysql.com/why-mysql/), [Oracle Database](https://www.oracle.com/database/), [PostgreSQL](https://www.postgresql.org/about/), [Microsoft SQL Server](https://www.microsoft.com/en-gb/sql-server/), and [MariaDB](https://mariadb.org/documentation/).
 
@@ -129,7 +129,7 @@ It is extremely flexible.
 #### Schema
 Schema is a blueprint of how data is organized in a database. These two database models have a completely different database schema representation. To understand this further, check out this joke.
 
-![Databases Schema](/engineering-education/sql-or-nosql-when-to-choose-what/database-admins.jpg)
+![Databases Schema](/sql-or-nosql-when-to-choose-what/database-admins.jpg)
 
 If these admins walked into an SQL bar, they would have definitely found a table to enjoy their drink. This points out that NoSQL has no tabular schema and SQL does.
 
@@ -172,7 +172,7 @@ Let’s look at the 2020 [Annual Developer Survey](https://insights.stackoverflo
 
 - *[Most Popular](https://insights.stackoverflow.com/survey/2020#technology-databases-all-respondents4) databases*
 
-![Most Popular Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-popular.png)
+![Most Popular Databases](/sql-or-nosql-when-to-choose-what/most-popular.png)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-databases-all-respondents4)
 
@@ -180,13 +180,13 @@ Relational MYSQL, MariaDB, and Microsoft SQL Server dominate the list.
 
 - *[Most Popular Databases Among Professionals](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) developers*
 
-![Most Popular Databases Among Professionals](/engineering-education/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
+![Most Popular Databases Among Professionals](/sql-or-nosql-when-to-choose-what/popular-among-professionals.png)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4)
 
 - *[Most Loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4) databases*
 
-![Most Loved Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-loved.png)
+![Most Loved Databases](/sql-or-nosql-when-to-choose-what/most-loved.png)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-loved4)
 
@@ -194,7 +194,7 @@ Taking the list of the most loved database technologies, non-relation databases 
 
 - *[Most Wanted](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4) databases*
 
-![Most Wanted Databases](/engineering-education/sql-or-nosql-when-to-choose-what/most-wanted.png)
+![Most Wanted Databases](/sql-or-nosql-when-to-choose-what/most-wanted.png)
 
 [*Image Source*](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-databases-wanted4)
 
@@ -204,4 +204,4 @@ MongoDB is a database technology that most developers want to learn more about.
 Both SQL and NoSQL database structures store data, but the approach they take to do this differs. Outline the application to decide the database model that fits data structures such as schema, relation, scalability, and data size. Migrating from one to the other is costly and time-consuming, and hence the differences should be considered while architecting software.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/) & [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/) & [Sophia Raji](/authors/sophia-raji/)

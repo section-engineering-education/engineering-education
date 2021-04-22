@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/user-interface-animation-with-animejs/
+url: /user-interface-animation-with-animejs/
 title: User Interface Animation with Anime.js
 description: This article will guide you through the Anime.js animation library. Anime.js is a JavaScript animation libraries. It's free, open-source, lightweight, and easy to use.
 author: benson-kariuki
@@ -10,7 +10,7 @@ date: 2020-11-25T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/user-interface-animation-with-animejs/hero.jpg
+  - url: /user-interface-animation-with-animejs/hero.jpg
     alt: User Interface Animation with Anime.js
 ---
 Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. The library supports modern browsers. Thtuttorail will guide you through the Anime.js animation library. You will learn how to create different animation effects for your web user interface.
@@ -115,7 +115,7 @@ The animation parameters used in the example above are `direction` and `loop`. T
 
 **Output:**
 
-![Triangle animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/shape-animation.gif)
+![Triangle animated with Anime.js gif](/user-interface-animation-with-animejs/shape-animation.gif)
 
 ```html
 <!DOCTYPE html>
@@ -184,7 +184,7 @@ In the example above, we were able to animate a pendulum using a few lines of An
 
 **Output**
 
-![Pendulum animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/pendulum-animation.gif)
+![Pendulum animated with Anime.js gif](/user-interface-animation-with-animejs/pendulum-animation.gif)
 
 **Complete Source Code**
 
@@ -261,7 +261,7 @@ anime({
 
 **Output**
 
-![SVG Animation with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/svg-path-animation.gif)
+![SVG Animation with Anime.js gif](/user-interface-animation-with-animejs/svg-path-animation.gif)
 
 **Explanation**
 In the example above, the target is a ball emoji. It follows a predefined SVG path to create an animation.
@@ -338,7 +338,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
 
 **Output**
 
-![Key frames animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/keyframes-animation.gif)
+![Key frames animations with Anime.js gif](/user-interface-animation-with-animejs/keyframes-animation.gif)
 
 **Complete Source Code**
 
@@ -407,7 +407,7 @@ anime({
 
 **Output**
 
-![Text path animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/text-path-animation.gif)
+![Text path animations with Anime.js gif](/user-interface-animation-with-animejs/text-path-animation.gif)
 
 **Full source code**
 ```html
@@ -579,4 +579,4 @@ In the example above, an animated path is created by using the `strokeDashoffset
 It’s relatively easy to create animations with a few lines of Anime.js. All you need is to master Anime.js basics, and the only limit will be your imagination. Keep animating your fantasies. One thing to consider is that too many animations can distract to the users. Therefore, be mindful not to overdo the animations.
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nmap-network-scanner/
+url: /nmap-network-scanner/
 title: Introduction to Nmap  
 description: In this tutorial, we will discuss Nmap, this is a tool that is used to scan Networks. We will also discuss how to install Nmap in a Linux distribution and we will perform several scans, including a TCP Scan and a SYN Steal scan.  
 author: miller-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nmap-network-scanner/hero.jpg
+  - url: /nmap-network-scanner/hero.jpg
     alt: Introduction to Javascript Modules
 ---
 Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we will discuss the concepts and usage of Nmap along with its most commonly used commands to perform port scans.  
@@ -327,5 +327,5 @@ There are several other Scan Types that we will explore in our next tutorial.
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

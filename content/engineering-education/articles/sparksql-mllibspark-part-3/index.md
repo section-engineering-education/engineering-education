@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sparksql-mllibspark-part-3/
+url: /sparksql-mllibspark-part-3/
 title: Book Recommendation System using SparkSQL and MLlib- Spark Part 3
 description: We will dive into very useful Spark libraries namely SparkSQL and MLlib to build a book recommender using the same dataset from our previous PySpark article.
 author: keerthi-v
@@ -11,13 +11,13 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sparksql-mllibspark-part-3/hero.jpg
+  - url: /sparksql-mllibspark-part-3/hero.jpg
     alt: SparkSQL and MLlib example image
 ---
 Apache Spark is a distributed cluster computing engine for handling big data. It provides a simple interface to program entire clusters with implicit data parallelism, splits the big data into multiple cores or systems and optimally utilizes these computing resources to process this data in a distributed manner. DAG (directed acyclic graph) manages workflows in Spark, which results in fast computation of big data.
 <!--more-->
 Spark does not require the users to have high end, expensive systems with great computing power. Therefore it is a great solution for processing big data quickly and without overheating the system.
-In the [previous article](/engineering-education/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts.
+In the [previous article](/getting-started-with-pyspark-spark-part2/), we installed PySpark and explored Spark Core programming concepts.
 
 We used these concepts to gain useful insights from a large dataset containing 278,858 users providing 1,149,780 ratings for 271,379 books and found the book with the most number of ratings. In this article, we will delve into very useful Spark libraries namely SparkSQL and MLlib to build a book recommender using the same dataset.
 
@@ -61,7 +61,7 @@ books_df = spark.read.option("delimiter", ";").option("header", "true").csv('./D
 books_df.show()
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/books_df.png)
+![img](/sparksql-mllibspark-part-3/books_df.png)
 
 
 As you can see, a dataframe resembles a table, with each column having a specific type of data.
@@ -75,7 +75,7 @@ Example 1:  Selecting a certain column
 books_df.select('Book-Title').show()
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/select.png)
+![img](/sparksql-mllibspark-part-3/select.png)
 
 Example 2: Counting number of distinct values in column: 'Publisher', which gives us the total number of publishers in the dataset.
 
@@ -83,7 +83,7 @@ Example 2: Counting number of distinct values in column: 'Publisher', which give
 books_df.select('Publisher').distinct().count()
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/distinct.png)
+![img](/sparksql-mllibspark-part-3/distinct.png)
 
 SQL queries can also be run as is like this:
 
@@ -91,7 +91,7 @@ SQL queries can also be run as is like this:
 books_df.createOrReplaceTempView('Table')df = spark.sql("SELECT Publisher from Table")df.show()
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/sql.png)
+![img](/sparksql-mllibspark-part-3/sql.png)
 
 But it is recommended to run SQL programmatically rather than running an SQL query directly, so we will be following that moving forward.
 
@@ -113,7 +113,7 @@ ratings_df = user_ratings_df.withColumn("User-ID",
 
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/ratings.png)
+![img](/sparksql-mllibspark-part-3/ratings.png)
 
 To provide recommendations based on the ratings given by users, we can use a technique called [Collaborative Filtering](https://en.wikipedia.org/wiki/Collaborative_filtering). This is based on the concept that if person A and B have given similar ratings to the same objects, then they must have similar taste. Therefore, there is a higher probability that person A will like an object they haven’t come across but is rated highly by B.
 
@@ -136,7 +136,7 @@ ratings = ratings_df.filter(col('User-ID')==17)books_df.\
         			show()
 ```
 
-![img](/engineering-education/sparksql-mllibspark-part-3/user-rating.png)
+![img](/sparksql-mllibspark-part-3/user-rating.png)
 
 Now we use the ALS model that we just trained, and use that to predict the Top 5 recommendations for this user.
 
@@ -154,7 +154,7 @@ recommended_ISBN
 
 This model predicted the following ISBNs to be the Top 5 recommendations.
 
-![img](/engineering-education/sparksql-mllibspark-part-3/recommendisbn.png)
+![img](/sparksql-mllibspark-part-3/recommendisbn.png)
 
 We would prefer to see the titles of the books, along with a few details rather than just the ISBN. So we look for these books in the ‘books_df’ dataframe and print out the book recommendations.
 
@@ -166,7 +166,7 @@ books_df.join(rec_df,rec_df.value==books_df.ISBN).select(col('Book-Title'),col('
 ```
 
 
-![img](/engineering-education/sparksql-mllibspark-part-3/join.png)
+![img](/sparksql-mllibspark-part-3/join.png)
 
 ### Conclusion
 Spark is a fast and efficient framework meant for handling big data. We explored some of the amazing abstractions it provides for performing complex computations on structured data, namely SparkSQL, Dataframes, and MLlib. Using these libraries, we built our own book recommender, which recommends the Top 5 books for a user who has previously rated books in the books dataset.

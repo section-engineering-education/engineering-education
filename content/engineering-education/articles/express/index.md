@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/express/
+url: /express/
 title: Introduction to Express.js
 description: Express is a lightweight framework on top of Node.js, it adds functionalities like middleware, template engines, and routing.
 author: rohan-reddy
@@ -11,17 +11,17 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/express/hero.jpg
+  - url: /express/hero.jpg
     alt: expressjs example text image
 ---
-[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable, and written in JavaScript but it does not directly support common tasks such as handling requests, serving files, and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](/engineering-education/most-useful-nodejs-packages/) comes to our aid.
+[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable, and written in JavaScript but it does not directly support common tasks such as handling requests, serving files, and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](/most-useful-nodejs-packages/) comes to our aid.
 <!--more-->
 
 **Express.js (Express) is a light web framework which sits on top of Node.js and it adds functionality like ([middleware](https://expressjs.com/en/guide/writing-middleware.html), [routing](https://en.wikipedia.org/wiki/Routing), etc.) and simplicity to Node.js.**
 
 When creating a Node.js web application, we write a single JavaScript application which listens to requests from the browser, based on the request, the function will send back some data or an HTML web page.
 
-![flow of a request](/engineering-education/express/node.png)
+![flow of a request](/express/node.png)
 
 [Image Credit](https://www.manning.com/books/express-in-action)
 
@@ -29,7 +29,7 @@ A *request handler* is a JavaScript function which takes a request and sends an 
 
 Node.js APIs can get complex and writing how to handle a single request can end up being over 50 lines of code. Express makes it easier to write Node.js web applications.
 
-![flow with express](/engineering-education/express/express.png)
+![flow with express](/express/express.png)
 
 [Image Credit](https://www.manning.com/books/express-in-action)
 
@@ -342,7 +342,7 @@ If you go to the webpage you can see `Hello and Welcome !!!`. You can write Java
 
 **Testing Express Applications**.
 
-Testing is an important part of developing software. Read [this article](/engineering-education/node-testing/) where I discuss testing Node.js applications using Mocha and Chai.
+Testing is an important part of developing software. Read [this article](/node-testing/) where I discuss testing Node.js applications using Mocha and Chai.
 
 ### Conclusion
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes while you are making those decisions about your applications infrastructure.
@@ -377,4 +377,4 @@ Express is an unopinionated framework which works best by making use of third pa
 - [Article](https://www.digitalocean.com/community/tutorials/nodejs-express-basics)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

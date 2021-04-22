@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-dependency-injection-using-koin/
+url: /android-dependency-injection-using-koin/
 title: Android Dependency Injection With Koin
 description: This article will provide a step by step guide on how to implement Android dependency injection using Koin. This framework helps save significant time by enabling you to manage Android dependencies easily.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-dependency-injection-using-koin/hero.jpg
+  - url: /android-dependency-injection-using-koin/hero.jpg
     alt: Android dependency injection using Koin
 ---
 Dependency injection is a programming technique that makes a class independent of its dependencies. This is made possible by decoupling the usage of an object from its creation. Many Android developers are familiar with Java-based dependency injection frameworks such as Dagger and Guice. 
@@ -22,7 +22,7 @@ However, some frameworks are written completely in Kotlin for Kotlin. These fram
 To follow through with this tutorial, you will need to:
 1. Have [Android Studio](https://developer.android.com/studio) installed.
 2. Have a basic knowledge of building Android applications.
-3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
+3. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
 
 Let's get started!
 
@@ -161,4 +161,4 @@ We have also seen how dependency injection helps us in making our applications m
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

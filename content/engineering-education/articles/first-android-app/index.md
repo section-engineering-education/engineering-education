@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/first-android-app/
+url: /first-android-app/
 title: Creating Your First Android Application
 description: This article will be a step-by-step guide on creating your first android application. It will be a very simple application to give you a general knowledge of android apps
 author: diana-mutheu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/first-android-app/hero.jpg
+  - url: /first-android-app/hero.jpg
     alt: Android application image example
 ---
 Application software commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically Android applications.
@@ -57,7 +57,7 @@ Let us begin!
 - Select ***create a new project***.
 - Select ***Empty Activity***.
 
-![An Empty Activity](/engineering-education/first-android-app/empty-activity.png)
+![An Empty Activity](/first-android-app/empty-activity.png)
 
 - Configure your project by choosing an appropriate name.
 - Write an appropriate and unique package name if you plan to launch your app on the `Play Store`, if not leave it on default.
@@ -65,7 +65,7 @@ Let us begin!
 - Ensure to choose an SDK that will run your app on many devices.
 - Click Finish.
 
-![Configure your project](/engineering-education/first-android-app/configure-project.png)
+![Configure your project](/first-android-app/configure-project.png)
 
 ### Step 2. User Interface design
 UI for the First Activity:
@@ -193,7 +193,7 @@ There are two approaches to this:
  
 As demonstrated below.
 
-![Stat emulator](/engineering-education/first-android-app/avd-manager.png)
+![Stat emulator](/first-android-app/avd-manager.png)
 
 > NOTE: The performance and RAM left on your PC will determine how long the emulator will take to start.
 
@@ -208,9 +208,9 @@ As demonstrated below.
 
 As shown below.
 
-![Physical device](/engineering-education/first-android-app/physical-device.png)
+![Physical device](/first-android-app/physical-device.png)
 
-![Input](/engineering-education/first-android-app/input-page.png)   ![Display](/engineering-education/first-android-app/display-page.png)
+![Input](/first-android-app/input-page.png)   ![Display](/first-android-app/display-page.png)
 
 ### Conclusion
 That is it! 
@@ -220,4 +220,4 @@ You have created your first Android application. Practice makes perfect so make 
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

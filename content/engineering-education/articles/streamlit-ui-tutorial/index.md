@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/streamlit-ui-tutorial/
+url: /streamlit-ui-tutorial/
 title: How to Build a UI for your Model using Streamlit
 description: This tutorial will build a Logistic Regression Model to predict if a person would survive the Titanic Disaster. We will use Streamlit to build a web app and a UI for our Model. 
 author: rahul-banerjee
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/streamlit-ui-tutorial/hero.jpg
+  - url: /streamlit-ui-tutorial/hero.jpg
     alt: UI model using Streamlit image example
 ---
 Streamlit is an open-source Python library that can build a UI for various purposes, it is not limited to data apps/machine learning. It is easy to learn, and a few lines of code can create a beautiful web app.
@@ -187,7 +187,7 @@ You should see a blank screen since we do not have any components being displaye
 
 ### Title and input datframe
 
-![image title](/engineering-education/streamlit-ui-tutorial/title.png)  
+![image title](/streamlit-ui-tutorial/title.png)  
   
 We will use the following functions for this part of our webapp:
 - **title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
@@ -205,7 +205,7 @@ An alternative to **st.table()** is **st.dataframe()**. Both of them support a d
 
 ### Model performance
 
-![image title](/engineering-education/streamlit-ui-tutorial/performance.png)  
+![image title](/streamlit-ui-tutorial/performance.png)  
 
 First, we will need to form the confusion matrix and compute the values.
 
@@ -241,7 +241,7 @@ You can think of **st.pyplot()** as an equivalent to **plt.show()**.
 
 ### Taking input from the user
 
-![image title](/engineering-education/streamlit-ui-tutorial/predict.png)
+![image title](/streamlit-ui-tutorial/predict.png)
   
 Next, we allow the user to input data and display the prediction. 
 
@@ -302,4 +302,4 @@ Based on the prediction, we display a text message.
 With just a few extra lines of code, we were able to transform a plain and boring script into a web app with a neat and clean UI. Many people might have built a model to predict the survival of a passenger in the Titanic Disaster, but building a web app for it will make you stand out.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

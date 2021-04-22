@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/heap-data-structure-python/
+url: /heap-data-structure-python/
 title: Using the Heap Data Structure in Python
 description: Heaps are special binary trees that have a special property. The key present at the root node of every sub-tree must be either the greatest or minimum among all the keys.
 author: saiharsha-balasubramaniam
@@ -10,7 +10,7 @@ date: 2020-09-27T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/heap-data-structure-python/hero.jpg
+  - url: /heap-data-structure-python/hero.jpg
     alt: binary heaps
 ---
 A binary heap is a special data structure that resembles a binary tree. It differs in the sense that the root of any subtree should be the smallest or the largest element.
@@ -25,12 +25,12 @@ In this article, let's take a look at heaps and dive into programming heaps in P
 
 For more background on the different types of data structures in Python, check out the following articles:
 
-- [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
-- [List](/engineering-education/list-data-structure-python/)
-- [Stack](/engineering-education/stack-data-structure-python/)
-- [Queue](/engineering-education/queue-data-structure-python/)
-- [Linked Lists](/engineering-education/linked-list-data-structure-python/)
-- [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
+- [Introduction to Data Structures](/data-structures-python-part-1/)
+- [List](/list-data-structure-python/)
+- [Stack](/stack-data-structure-python/)
+- [Queue](/queue-data-structure-python/)
+- [Linked Lists](/linked-list-data-structure-python/)
+- [Binary Trees](/binary-tree-data-structure-python/)
 
 *Note: Prerequisites -- Make sure you have basic Python knowledge before diving into this article. It also might be a good idea to check out some linear data structures. (links are given above)*
 
@@ -47,7 +47,7 @@ Heaps are complete binary trees. Complete binary trees satisfy the following con
 - All levels are filled, except the last.
 - All the nodes are as far left as possible.
 
-![Complete Binary Tree](/engineering-education/heap-data-structure-python/complete-binary-tree.png)
+![Complete Binary Tree](/heap-data-structure-python/complete-binary-tree.png)
 
 *[Figure: Complete Binary Tree](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
@@ -88,7 +88,7 @@ A heap has the following methods:
 #### Maxheap using List
 We are going to do the list implementation of a heap. In this, the heap's level-order traversal would be stored as an array/list.
 
-![Level Order Traversal](/engineering-education/heap-data-structure-python/level-order-traversal.png)
+![Level Order Traversal](/heap-data-structure-python/level-order-traversal.png)
 
 *[Figure: Level-Order Traversal](https://qph.fs.quoracdn.net/main-qimg-0ddd0cbca44f70d7845cc2caba5a0853)*
 
@@ -192,4 +192,4 @@ To get a better understanding of heaps, read a few in depth articles below and s
 Heaps are extremely versatile and useful data structures that are used along with other data structures like Graphs and Trees to improve the efficiency of various operations. Once we have mastered heaps, we can move on to advanced data structures like Graphs.
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

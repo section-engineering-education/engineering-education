@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/
+url: /how-to-insert-3d-objects-into-a-webpage-using-html-and-css/
 title: How to Insert 3D Objects into a Webpage using HTML and CSS
 description: In this article we will understand how to build build 3D objects in webpage using HTML and CSS. We will also build a simple webpage containing a 3D object.
 author: chris-mutua
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.jpg
+  - url: /how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.jpg
     alt: How to Insert 3D Objects into a webpage using HTML and CSS example image
 ---
 Are you a creative frontend web designer or are you looking for ways to make your website look more interactive and visually appealing? Would you like to advertise your products interestingly? Look no further. Today, we are going to learn how to insert 3D objects into a website.
@@ -67,7 +67,7 @@ In our case, we will use the `glTF model`.
 
 After visiting the sites above or any other, search for any preferable model and download it. In this case, we are going to search, download and use a Virtual Reality Headset (VR Headset) model in glTF format.
 
-![VR Headsets](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/poly-VR-Headset.png)
+![VR Headsets](/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/poly-VR-Headset.png)
 
 ### 3D model attributes
 These are the characteristics of the viewed 3D Object on the website set by the frontend developers.
@@ -342,7 +342,7 @@ Now, use CSS to style the page and the `div` elements:
 
 The results are as follows:
 
-![Page structure](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/structure-design.png)
+![Page structure](/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/structure-design.png)
 
 ### Insert the 3D Object
 Now, let's add the 3D model to the webpage. First, if the 3D model files are in a `zip` format, extract the downloaded model `zip` into files such as the `.bin` and `.gltf`.
@@ -369,7 +369,7 @@ You can obtain the code above and even more attributes on the [Model-viewer](htt
 
 In the live preview, it will output the following:
 
-![Inserting a 3D Model](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/Inserting-a-3D-model.png)
+![Inserting a 3D Model](/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/Inserting-a-3D-model.png)
 
 The next step is to modify its appearance using CSS. 
 
@@ -398,7 +398,7 @@ Let's do this by adding the code below to our CSS file:
 
 #### Final results:
 
-![Final results](/engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/full-design.png)
+![Final results](/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/full-design.png)
 
 You can find the code above in [this](https://github.com/RisoriTofa/Insert-3D-Objects-in-a-webpage-using-HTML-and-CSS-only) repository.
 
@@ -422,4 +422,4 @@ Happy coding!
 - [Diego González blog](https://medium.com/samsung-internet-dev/adding-3d-models-to-your-website-d374a8cbbadd).
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

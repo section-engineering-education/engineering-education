@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/autoscaling-in-amazon-web-services/
+url: /autoscaling-in-amazon-web-services/
 title: Autoscaling in Amazon Web Services (AWS) - An Overview
 description: This article will go over Amazon Web Services or (AWS) which is a tool that provide various ways that enhance data management, storage, development, and networking in organizations.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/autoscaling-in-amazon-web-services/hero.jpg
+  - url: /autoscaling-in-amazon-web-services/hero.jpg
     alt: Autoscaling AWS example image
 ---
 Amazon Web Services (AWS) is a cloud computing services provider that has application programming interfaces (APIs) and platforms that are used for cloud computing by governments, individuals, and companies. These platforms include a mixture of various offerings such as [software as a service (SaaS)](https://en.wikipedia.org/wiki/Software_as_a_service), [infrastructure as a service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service), and [platform as a service (PaaS)](https://en.wikipedia.org/wiki/Platform_as_a_service).
@@ -21,7 +21,7 @@ SaaS is a service model where a software is licensed out (usually) on a subscrip
 
 Some of the tools offered by AWS include content delivery, database storage, and computing power. Other services provided include data management, hybrid cloud, networking, artificial intelligence, development tools, analytics, security, and mobile development.
 
-![Amazon Web Services](/engineering-education/autoscaling-in-amazon-web-services/amazon-web-services.png)
+![Amazon Web Services](/autoscaling-in-amazon-web-services/amazon-web-services.png)
 
 [Image Source: Quora](https://qph.fs.quoracdn.net/main-qimg-ae46c65ca4d8e7d0b61acbe429e0b04a)
 
@@ -50,7 +50,7 @@ An autoscaling group performs the following tasks:
 - It scales EC2 instances up or down, which helps in managing the availability of applications.
 - It runs the required number of instances. For example, if the required number of instances is 5, then it will run 5 EC2 instances.
 
-![Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/autoscaling-group.png)
+![Autoscaling Group](/autoscaling-in-amazon-web-services/autoscaling-group.png)
 
 [Image Source: Tudip](https://tudip.com/wp-content/uploads/2018/12/autoscaling-group.png)
 
@@ -82,14 +82,14 @@ For example, it can be used if there is heavy traffic during the weekends and re
 In dynamic scaling, the number of EC2 instances is changed automatically based on signals that are provided by a CloudWatch alarm. Dynamic scaling is mostly employed when there is unpredictable traffic.
 
 #### Predictive scaling
-Predictive scaling involves using [machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) algorithms to program the desired number of instances. Future traffic can be predicted to provide the appropriate number of instances. This type of scaling is ideal when the traffic is predictable.
+Predictive scaling involves using [machine learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) algorithms to program the desired number of instances. Future traffic can be predicted to provide the appropriate number of instances. This type of scaling is ideal when the traffic is predictable.
 
 ### How AWS scaling works
 AWS uses the aforementioned components to complete the process of autoscaling. First, an AMI of a user’s server should be created. The AMI will provide all the information that is needed for launching instances. The template of configuration should contain all the systems.
 
 After an AMI has been created, the configuration should be launched. At the launch configuration, the right type of instance should be chosen based on the need. An AWS autoscaling group should be created after a configuration has been launched. This group will be used in the launching of new instances.
 
-![AWS Autoscaling](/engineering-education/autoscaling-in-amazon-web-services/aws-autoscaling.png)
+![AWS Autoscaling](/autoscaling-in-amazon-web-services/aws-autoscaling.png)
 
 [Image Source: Jayendra](https://jayendrapatil.com/wp-content/uploads/2016/03/AWS-Auto-Scaling-Configurations.png)
 
@@ -109,7 +109,7 @@ To perform launch configurations, go to the right hand side of the dashboard and
 
 The following diagram shows the six main steps taken in creating a launch configuration (at the top).
 
-![Launch Configuration](/engineering-education/autoscaling-in-amazon-web-services/launch-configuration.png)
+![Launch Configuration](/autoscaling-in-amazon-web-services/launch-configuration.png)
 
 [Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure2_LaunchConfiguration.png)
 
@@ -144,7 +144,7 @@ To create an autoscaling group, go to the right hand side of the dashboard and c
 
 The following diagram shows the five main steps taken in creating an autoscaling group.
 
-![Creating Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/creating-autoscaling-group.png)
+![Creating Autoscaling Group](/autoscaling-in-amazon-web-services/creating-autoscaling-group.png)
 
 [Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure3_AutoScalingGroup.png)
 
@@ -186,4 +186,4 @@ Amazon Web Services provide various tools that enhance data management, storage,
 [Amazon](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html#:~:text=%20What%20is%20Amazon%20EC2%20Auto%20Scaling%3F%20,an%20AWS%20account,%20you%20can%20access...%20More%20)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

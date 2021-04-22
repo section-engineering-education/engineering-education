@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tableau-vs-power-bi/
+url: /tableau-vs-power-bi/
 title: Data Collection with Tableau and Power BI
 description: This article will go over the two most commonly used data visualizations tools, Tableau and Power BI.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/tableau-vs-power-bi/hero.jpg
+  - url: /tableau-vs-power-bi/hero.jpg
     alt: tableau power bi example image
 ---
 Business Intelligence (BI) software is a top priority item in the toolkit of almost every business team. This is due to the significance data collection, storage, and visualization has to a business. Analysis from BI tools is used to make strategic business decisions.
@@ -111,4 +111,4 @@ Microsoft Power BI is offered on-premise and on the Azure Cloud Platform. This e
 [Competitive Report: Tableau vs QlikView vs Power BI](https://www.smetricinsights.com/wp-content/uploads/2019/05/Tableau-VS-QlikView-VS-Power-BI-2019-Update.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

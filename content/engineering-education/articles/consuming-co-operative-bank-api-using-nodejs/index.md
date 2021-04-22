@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/
+url: /consuming-co-operative-bank-api-using-nodejs/
 title: How to Consume a Co-operative Bank API using Node.js
 description: This article will show you how to consume a Co-operative Bank API using Node.js. The tutorial uses axios for HTTP requests and Express for setting up routes.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/hero.jpg
+  - url: /consuming-co-operative-bank-api-using-nodejs/hero.jpg
     alt: Consuming Co-operative Bank API
 ---
 Co-operative Bank is a financial service institution operating in the East African Community. As of December 2018, it had recorded over 7.8 million users. 
@@ -258,11 +258,11 @@ console.log(req.body);
 
 - Open postman and send a `POST` request to: `http://localhost:4000/send-to-mpesa`. In case you encounter an error, revisit the above steps, otherwise your response should resemble the following:
 
-![send-to-mpesa-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-postman-response.png)
+![send-to-mpesa-postman-response](/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-postman-response.png)
 
 - The following should resemble the information logged on your terminal from the callback:
 
-![send-to-mpesa-console-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-console-response.png)
+![send-to-mpesa-console-response](/consuming-co-operative-bank-api-using-nodejs/send-to-mpesa-console-response.png)
 
 ### Accessing account mini-statement
 An account mini-statement is used when retrieving at least five previous transactions that were carried out from your bank account.
@@ -321,7 +321,7 @@ To test this:
 
 The response should resemble the following:
 
-![account-mini-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-mini-statement-postman-response.png)
+![account-mini-statement-postman-response](/consuming-co-operative-bank-api-using-nodejs/account-mini-statement-postman-response.png)
 
 ### Accessing account full-statement
 A full-statement provides all transactions carried out between two different specified dates.
@@ -386,7 +386,7 @@ To test this:
 
 The response should resemble the following:
 
-![account-full-statement-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-full-statement-postman-response.png)
+![account-full-statement-postman-response](/consuming-co-operative-bank-api-using-nodejs/account-full-statement-postman-response.png)
 
 ### Accessing account balance
 With the API, we can access the account balance from our account.
@@ -446,7 +446,7 @@ To test this:
 
 The response sent should resemble the following:
 
-![account-balance-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-balance-postman-response.png)
+![account-balance-postman-response](/consuming-co-operative-bank-api-using-nodejs/account-balance-postman-response.png)
 
 ### Validating an account
 With the API, we can identify a valid Co-operative Bank account. Since we are in the sandbox environment, we are restricted to the default account number for testing. A different one will be termed invalid.
@@ -505,7 +505,7 @@ To test this:
 
 The response sent should look like this:
 
-![account-validation-postman-response](/engineering-education/consuming-co-operative-bank-api-using-nodejs/account-validation-postman-response.png)
+![account-validation-postman-response](/consuming-co-operative-bank-api-using-nodejs/account-validation-postman-response.png)
 
 ### Summary
 In this article, we have implemented the following functionalities from the Co-operative Bank's API using Node.js:
@@ -525,4 +525,4 @@ In case of any query concerning Co-operative Bank's API, or the production envir
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

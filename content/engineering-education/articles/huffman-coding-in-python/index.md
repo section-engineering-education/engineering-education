@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/huffman-coding-python/
+url: /huffman-coding-python/
 title: Huffman Coding with Python
 description: Huffman coding is a technique for text compression that uses data structures. This article explains the theory behind Huffman coding and implementation in Python.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/huffman-coding-python/hero.jpg
+  - url: /huffman-coding-python/hero.jpg
     alt: huffman python code coding data text compression
 ---
 Huffman coding is a lossless way to compress and encode text based on the frequency of the characters in the text. In computer science and information theory, [Huffman code](https://www.sciencedirect.com/topics/computer-science/codeword-length) is a special type of optimal prefix code that is often used for lossless data compression.
@@ -32,7 +32,7 @@ To compress a file with a sequence of characters, we need a table that gives us 
 To construct an optimal tree, we use a greedy algorithm. Huffman encoding trees return the minimum length character encodings used in data compression. The nodes in the tree represent the frequency of a character's occurrence. The root node represents the length of the string, and traversing the tree gives us the character-specific encodings. Once the tree is constructed, traversing the tree gives us the respective codes for each symbol.
 
 The optimal tree upon completion is given in the image below:
-![optimal Tree](/engineering-education/huffman-coding-python/optimaltree.jpg)
+![optimal Tree](/huffman-coding-python/optimaltree.jpg)
 *[Image Source](https://massivealgorithms.blogspot.com/2014/06/greedy-algorithms-set-3-huffman-coding.html)*
 
 We will develop and implement a program that uses Huffman coding in the next section.  
@@ -172,7 +172,7 @@ We have a couple of auxiliary functions such as `find_position` and `characteris
 
 The second auxiliary function defined is `characteristics_huffman_code`. This function generates the mean length of the codes, entropy, variance, and efficiency. Let us look at each of these in detail
 
-![huffman code output](/engineering-education/huffman-coding-python/Code_Output.jpg)
+![huffman code output](/huffman-coding-python/Code_Output.jpg)
 
 ### Performance of Huffman Code
 1. Average Length: It is defined as the [average number of bits](https://pdfs.semanticscholar.org/8ee2/a74ee0371c40dd751392762572409767d5db.pdf) required to represent a character in the string.
@@ -182,4 +182,4 @@ The second auxiliary function defined is `characteristics_huffman_code`. This fu
 In this article, we have discussed what Huffman coding is, some of its applications, and have also considered a code snippet that encodes a given text based on the frequency of characters. I hope you have enjoyed the article. I suggest you implement the code and use this guide as you code-along.
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)

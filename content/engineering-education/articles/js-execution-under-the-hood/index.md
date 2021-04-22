@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/js-execution-under-the-hood/
+url: /js-execution-under-the-hood/
 title: What Happens When JavaScript Runs My Code?
 description: This guide will walk you through what happens when the JavaScript (a single-threaded language) engine runs your code.
 author: adrian-murage
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/js-execution-under-the-hood/hero.jpg
+  - url: /js-execution-under-the-hood/hero.jpg
     alt: JS execution under the hood
 ---
 ### Introduction
@@ -47,13 +47,13 @@ There are two types of Execution contexts:
 
 Below is a table that illustrates your Global Execution Context before code execution.
 
-![Global Execution Context before you execute js code](/engineering-education/js-execution-under-the-hood/global_execution_context_before_executing_js_code.jpg)
+![Global Execution Context before you execute js code](/js-execution-under-the-hood/global_execution_context_before_executing_js_code.jpg)
 
 For each line, there will be a visual representation of what the Global Execution Context looks like at that moment.
 
 Line 1: Save in memory a constant, **num**, as the label for an integer, **3**.
 
-![Global Execution Context when line one is executed](/engineering-education/js-execution-under-the-hood/step_one_line_one.jpg)
+![Global Execution Context when line one is executed](/js-execution-under-the-hood/step_one_line_one.jpg)
 
 Line 2: You reach a JavaScript keyword, [**function**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
 
@@ -61,7 +61,7 @@ The function keyword means, save in memory **multiplyBy2**, as the label for the
 
 This process is also known as **defining/declaring** a function.
 
-![Global Execution Context when line two is executed](/engineering-education/js-execution-under-the-hood/step_one_line_two.jpg)
+![Global Execution Context when line two is executed](/js-execution-under-the-hood/step_one_line_two.jpg)
 
 At this point, if you were to run:
 ```JavaScript
@@ -78,7 +78,7 @@ This is because in JavaScript you **do not** go into the body of a function unti
 
 Line 6: Save in memory a constant, **name**, as the label for a string, **"Will"**.
 
-![Global Execution Context when line six is executed](/engineering-education/js-execution-under-the-hood/step_one_line_six.jpg)
+![Global Execution Context when line six is executed](/js-execution-under-the-hood/step_one_line_six.jpg)
 
 In the next step, you will see:
 - When a Local Execution Context is created.
@@ -102,7 +102,7 @@ To keep track of this, JavaScript uses a [**Call Stack**](https://developer.mozi
 
 You now have a third element to the execution of your JavaScript code, the Call Stack. The image below illustrates the three elements before any code is executed.
 
-![Call Stack illustration](/engineering-education/js-execution-under-the-hood/call_stack_intro.jpg)
+![Call Stack illustration](/js-execution-under-the-hood/call_stack_intro.jpg)
 
 You will now get to see exactly how the call stack comes into play here.
 
@@ -118,7 +118,7 @@ This adds `multiplyBy2()` to the call stack. It creates a Local Execution Contex
 
 As illustrated in the image below.
 
-![Add multiplyBy2() to call stack](/engineering-education/js-execution-under-the-hood/call_stack_add_multiplyBy2.jpg)
+![Add multiplyBy2() to call stack](/js-execution-under-the-hood/call_stack_add_multiplyBy2.jpg)
 
 Once inside the Local Execution Context, you carry on with the two parts of an Execution context.
 
@@ -128,7 +128,7 @@ Line 3: Save in memory a constant, **result**, as the label for the product of t
 
 Line 4: The [**return**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) keyword then ends the function execution and specifies a value to be returned to the function caller.
 
-![Local Execution Context](/engineering-education/js-execution-under-the-hood/local_execution_context.jpg)
+![Local Execution Context](/js-execution-under-the-hood/local_execution_context.jpg)
 
 You then return to the Global Execution Context.
 
@@ -139,13 +139,13 @@ A few things happen when you do:
 
 The image below illustrates the Global Execution Context after all this is done.
 
-![After Garbage Collection](/engineering-education/js-execution-under-the-hood/after_garbage_collection.jpg)
+![After Garbage Collection](/js-execution-under-the-hood/after_garbage_collection.jpg)
 
 Once all the lines of code are executed, JavaScript garbage collects the Global Execution Context's Variable Environment (Memory).
 
 This brings you back to where you started as illustrated below.
 
-![Global Execution Context after you execute js code](/engineering-education/js-execution-under-the-hood/global_execution_context_after_executing_js_code.jpg)
+![Global Execution Context after you execute js code](/js-execution-under-the-hood/global_execution_context_after_executing_js_code.jpg)
 
 Congratulations! You now know exactly what happens when JavaScript executes your code.
 
@@ -155,4 +155,4 @@ Congratulations! You now know exactly what happens when JavaScript executes your
 [MDN Web Docs](https://developer.mozilla.org/en-US/)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

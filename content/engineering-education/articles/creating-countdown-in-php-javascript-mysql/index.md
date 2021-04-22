@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/creating-countdown-in-php-javascript-mysql/
+url: /creating-countdown-in-php-javascript-mysql/
 title: Creating Dynamic Countdown In PHP, JavaScript, and MySQL
 description: This tutorial will walk the reader through the process of creating a dynamic countdown. You can make a static clock utilizing JavaScript. To achieve a dynamic time countdown, we'll use both PHP and a database.
 author: miller-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/creating-countdown-in-php-javascript-mysql/hero.jpg
+ - url: /creating-countdown-in-php-javascript-mysql/hero.jpg
    alt: Dynamic Countdown PHP Images example image
 ---
 
@@ -529,7 +529,7 @@ As seen in the screenshot below, open your Postman application and add requests.
 
 ### Fig 1: Postman Requests
 
-![request](/engineering-education/creating-countdown-in-php-javascript-mysql/timer.png)  
+![request](/creating-countdown-in-php-javascript-mysql/timer.png)  
 
 Hit the send button to add timer details in the `timer_tbl` table. 
 
@@ -841,7 +841,7 @@ UpdateTimer::timer_update();
 
 Visit your URL to update the timer, you should be able to see something like this depending on your styling. 
 
-![result](/engineering-education/creating-countdown-in-php-javascript-mysql/timer_update.png)
+![result](/creating-countdown-in-php-javascript-mysql/timer_update.png)
 
 Now, set your preferred countdown dates and refresh the page. 
 
@@ -854,4 +854,4 @@ Happy coding!
 
 ---
 
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

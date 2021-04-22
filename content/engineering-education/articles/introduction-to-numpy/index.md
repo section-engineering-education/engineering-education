@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-numpy/
+url: /introduction-to-numpy/
 title: A Not so Gentle Introduction to NumPy
 description: This article will go over NumPy (Numerical Python) which is a way of describing one or more blocks of computer memory so that the numbers represented can be manipulated.
 author: adithi-giridharan
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-numpy/hero.jpg
+  - url: /introduction-to-numpy/hero.jpg
     alt: NumPy example image
 ---
 One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stands for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).
@@ -161,7 +161,7 @@ print(even_spaced_array)
 
 Below are a few more array operations that are self-explanatory:
 
-![Self Explanatory Functions](/engineering-education/introduction-to-numpy/numpyfunc.jpg)
+![Self Explanatory Functions](/introduction-to-numpy/numpyfunc.jpg)
 
 Apart from mathematical computations, there will be a constant need to reshape or manipulate data in arrays. One simple transformation that can be done is to transpose a matrix. A tedious process like transforming a list of lists (a matrix) is done as follows:
 
@@ -234,7 +234,7 @@ Let's analyze the example where we transposed a matrix. One key point to remembe
 
 Upon crunching a few numbers, transposing a (10000 x 10000) matrix using for loops takes 58.8596s, and using NumPy it takes significantly lesser time. The reason behind such high performance is a tiny concept called [vectorization](https://www.geeksforgeeks.org/vectorization-in-python/) that NumPy implements. Vectorization groups element-wise operations together. Such a vectorized approach applies to all elements in an array.
 
-![Vectorized](/engineering-education/introduction-to-numpy/vectorized.jpg)
+![Vectorized](/introduction-to-numpy/vectorized.jpg)
 
 *Figure: [Vectorized Operations](https://lappweb.in2p3.fr/~paubert/ASTERICS_HPC/6-6-1-985.html)*
 
@@ -243,7 +243,7 @@ When an nd-arrays in NumPy and C are compared, the NumPy function produces a mas
 
 Let's compare Numpy arrays and Python lists. As shown in the chart below, as the number of elements increases, the breakeven size is around 200 elements.
 
- ![Graph](/engineering-education/introduction-to-numpy/numpyGraph.jpg)
+ ![Graph](/introduction-to-numpy/numpyGraph.jpg)
 
  *Figure: [NumPy array vs Python List ](https://github.com/Pballer/dc-ds-071519/blob/master/blogs/array_vs_list/numpy_array_vs_py_list.ipynb)*
 
@@ -270,4 +270,4 @@ print(time.time() - start)
 NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It's coded in Python and it uses vectorized forms to perform calculations at an incredible speed. It supports various built-in functions that come in handy for many programmers.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

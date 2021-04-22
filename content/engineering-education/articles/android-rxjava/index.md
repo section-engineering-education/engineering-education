@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-rxjava/
+url: /android-rxjava/
 title: RxJava in Android
 description: This article will go through the basics of RxJava and some of its observables. Similar to other ReactiveX libraries, RxJava uses the observable pattern.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-rxjava/hero.jpg
+  - url: /android-rxjava/hero.jpg
     alt: RxJava in Android image example
 ---
 [ReactiveX](http://reactivex.io/) has created libraries for almost all programming languages. It has also extended this to frameworks, such as Android. This has brought the functional reactive paradigm to the languages and frameworks we use.
@@ -165,4 +165,4 @@ With that, we have gone through the basics of RxJava and some of its observables
 Go ahead and clone the repo to try out different observables. We can find an installation package for the demo application on [Google Drive](https://drive.google.com/file/d/1hW3fXiUErFSNzMSB4ZahTcnvUgK92Stg/view?usp=sharing). Next up we will look at the different RxJava operators and their different roles.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

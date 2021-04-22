@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/artificial-intelligence-future/
+url: /artificial-intelligence-future/
 title: Artificial Intelligence – Does it have a place in our future?
 description: description placeholder
 author: michael-zanoff
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/artificial-intelligence-future/hero.jpg
+  - url: /artificial-intelligence-future/hero.jpg
     alt: artificial intelligence future
 ---
 All around the world, artificial intelligence is making its way into people's lives. This technology is feared by many, but how realistic is that fear? Should we really be concerned?

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/uploading-files-using-multer-nodejs/
+url: /uploading-files-using-multer-nodejs/
 title: Uploading Files Using Multer in a Node.js Application
 description: In this article, we will see how to use Multer to handle multipart/form-data using Node.js, Express and MongoDB.
 author: sarthak-duggal
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/uploading-files-using-multer-nodejs/hero.jpg
+  - url: /uploading-files-using-multer-nodejs/hero.jpg
     alt: Node.js Application Multer example image
 ---
 Whenever we submit a form on the client-side of any website, all the form data goes to the server-side. Usually, form-data gets encoded before we submit it to the server. We can do this by specifying the enctype attribute in the `<form>` tag in HTML. If we don't specify it, form-data gets encoded with the default type.
@@ -124,7 +124,7 @@ npm init
 
 The resulting `package.json` file should look like this:
 
-![package.json](/engineering-education/uploading-files-using-multer-nodejs/json.png)
+![package.json](/uploading-files-using-multer-nodejs/json.png)
 
 ### Setting up the project with Node.js, Express, and MongoDB
 First, we need to install the three most important npm packages that we need for this tutorial. 
@@ -299,7 +299,7 @@ app.use("/", (req, res) => {
 
 After all these steps, your `app.js` file should look like this.
 
-![app.js](/engineering-education/uploading-files-using-multer-nodejs/appjs.png)
+![app.js](/uploading-files-using-multer-nodejs/appjs.png)
 
 Restart the server with the same command as above:
 
@@ -450,7 +450,7 @@ Open that file and change the value of the action attribute in the form to '/api
 
 Just to make sure that we are on the same page, here is the state of the app.js file up to now.
 
-![app.js](/engineering-education/uploading-files-using-multer-nodejs/appjs2.png)
+![app.js](/uploading-files-using-multer-nodejs/appjs2.png)
 
 Finally, you can upload a file from your rendered page. You should see something like this on your terminal window when you hit submit.
 
@@ -569,11 +569,11 @@ try {
 ```
 
 #### Updated app.js File
-![app.js3](/engineering-education/uploading-files-using-multer-nodejs/appjs3.png)
+![app.js3](/uploading-files-using-multer-nodejs/appjs3.png)
 
 Know if you upload a file and hit submit again, the name of the file will be saved in your cloud database. To see that, you can go to your cluster at the MongoDB site, and in the collections, you should see something like the image below:
 
-![atlas](/engineering-education/uploading-files-using-multer-nodejs/atlas.png)
+![atlas](/uploading-files-using-multer-nodejs/atlas.png)
 
 Note that, the name of the file in the database should match the filename in your disk storage and this is how we can upload a file using Multer as a middleware in a node.js application.
 
@@ -701,4 +701,4 @@ If you want to upload images, resize them according to your needs, in order to s
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

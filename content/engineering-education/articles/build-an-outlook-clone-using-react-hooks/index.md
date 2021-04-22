@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-an-outlook-clone-using-react-hooks/
+url: /build-an-outlook-clone-using-react-hooks/
 title: Building Outlook Clone with React Hooks
 description: This article helps developers get started with React by building an Outlook clone using React so that you can learn the fundamentals by getting hands-on with the code.
 author: lalithnarayan-c
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.jpg
+  - url: /build-an-outlook-clone-using-react-hooks/hero.jpg
     alt: output image outlook clone example
 ---
-Welcome to part two of the React series. In this tutorial, we will cover the same Outlook clone that we built in [part one](/engineering-education/build-an-outlook-clone-using-react), but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#code)
+Welcome to part two of the React series. In this tutorial, we will cover the same Outlook clone that we built in [part one](/build-an-outlook-clone-using-react), but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#code)
 <!--more-->
 To sum up the earlier attempt at building an Outlook clone, we made API calls and displayed emails according to the filter requested. We also implemented local storage. Let's think about this for a minute. When we implemented local storage, was it a good idea to store the entire state?
 
@@ -276,7 +276,7 @@ If you get an error message, check if **npm** has been added to the environment 
 Once we have the server running, we can double check via Postman or by going to http://localhost:3000/emailbody. To get a specific email body, we can send the *id* as a parameter. The URL is modified as follows: http://localhost:3000/emailbody?id=1. This returns the first email body.
 
 ### Let's implement the hooks we just learned
-In my [previous article](/engineering-education/build-an-outlook-clone-using-react/), we focused on the logic to go about implementing the project from scratch. If you would like a refresher on how to implement a project feel free to refer back to the previous article. In this article, we will focus on understanding the hooks and performing optimization.
+In my [previous article](/build-an-outlook-clone-using-react/), we focused on the logic to go about implementing the project from scratch. If you would like a refresher on how to implement a project feel free to refer back to the previous article. In this article, we will focus on understanding the hooks and performing optimization.
 
 ### Explanation: *App.js*
 We declare functional components and hooks that need to be declared within the function. We use various state variables. We have looked at declaring state variables using `useState` [earlier in this article](#react-hooks-in-practice). They are:

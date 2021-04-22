@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-shell-scripting/
+url: /introduction-to-shell-scripting/
 title: Introduction to Shell Scripting
 description: A shell script is a computer program designed to be run by the Unix shell. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
 author: rohan-reddy
@@ -11,13 +11,13 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-shell-scripting/hero.jpg
+  - url: /introduction-to-shell-scripting/hero.jpg
     alt: shell scripting example image
 ---
 If you are familiar with a programming language like python or C, then it should be pretty easy to get started with shell scripting. This article can be used as a "cheat sheet" as well.
 <!--more-->
 
-![Shell Scripting](/engineering-education/introduction-to-shell-scripting/shell-scripting-image.png)<br>
+![Shell Scripting](/introduction-to-shell-scripting/shell-scripting-image.png)<br>
 *Image Source:[etlhive](https://www.etlhive.com/wp-content/uploads/2017/06/Shell-Scripting-Image.jpg)*
 
 ### Shell Scripting
@@ -72,7 +72,7 @@ Now that we have seen what a typical shell script looks like, let's look at how 
 3. To execute the file, we can do it in the following ways
 	- If you are using a GUI file navigation system, right-click on the file and click on `run` or `execute`.
 	- If you are using the terminal, `./filename.sh` will execute the script. (Make sure you are in the correct directory!)
-	![Screenshot](/engineering-education/introduction-to-shell-scripting/shell-scripting-image.png)
+	![Screenshot](/introduction-to-shell-scripting/shell-scripting-image.png)
 
 Now, let's discuss shell scripting in a little more detail.
 

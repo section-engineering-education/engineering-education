@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-an-abi/
+url: what-is-an-abi/
 title: What is an ABI?
 description: The application binary interface (ABI) orchestrates how code binaries works together. The ABI deals with the implementation details of code i.e. what code turns into when it's compiled.
 author: zack-jorquera
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-an-abi/hero.jpg
+  - url: /what-is-an-abi/hero.jpg
     alt: hero image ABI application binary interface library int rust c++ cpp ffi FFI
 ---
 An ABI is an application binary interface. The ABI deals with the implementation details of code i.e. what code turns into once it is compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are there to make sure that two pieces of binary code can work together (like using a pre-compiled library).
@@ -45,7 +45,7 @@ We will talk more about these type-kinds in the [structs](#structs) and [calling
 
 When it comes to primitive types the main issues to think about are how to store them in memory and how to operate on them. These two things play hand in hand because if we want to operate on some data we will first need to read them from memory and into a register.
 
-For anything stored in memory, we will have to think about the [endianness](/engineering-education/what-is-little-endian-and-big-endian/) of the data. Most of the time this is dealt with by the hardware and will be exposed to the program as a `mov` instructions that already account for endianness, with the exception to loading constant value with `mov`. I won't go into detail as I wrote a whole article about it [here](/engineering-education/what-is-little-endian-and-big-endian/).
+For anything stored in memory, we will have to think about the [endianness](/what-is-little-endian-and-big-endian/) of the data. Most of the time this is dealt with by the hardware and will be exposed to the program as a `mov` instructions that already account for endianness, with the exception to loading constant value with `mov`. I won't go into detail as I wrote a whole article about it [here](/what-is-little-endian-and-big-endian/).
 
 ### Size and Alignment
 There is also the size and alignment of each piece of data that we have to worry about (this follows for structs as well). The size must always be a multiple of the alignment. The alignment specifies where it can be stored in memory; it must be at least 1 and always a power of two. As an example, if some variable had an alignment of 4-bytes, then the address it is stored at must be divisible by 4-bytes (and the size must be divisible by 4-bytes). This exists mostly for [performance reasons](https://stackoverflow.com/q/49391001/9664285) because memory hardware is specialized in such a way as to read data from a cache-block (also called a cache-line) quickly. The alignment can guarantee that one piece of data is not split up into multiple cache-blocks which would require two memory reads.
@@ -59,10 +59,10 @@ value: aaaaxxxxbbbbbbbb
 
 Most ABIs require the alignment of primitive types to be the same as the size:
 
-![Table 1](/engineering-education/what-is-an-abi/table1.JPG)
+![Table 1](/what-is-an-abi/table1.JPG)
 *[Image Source](https://software.intel.com/sites/default/files/article/402129/mpx-linux64-abi.pdf#figure.3.1)*
 
-![Table 2](/engineering-education/what-is-an-abi/table2.JPG)
+![Table 2](/what-is-an-abi/table2.JPG)
 *[Image Source](https://gankra.github.io/blah/rust-layouts-and-abis/#the-layoutsabis-of-builtins)*
 
 ### Structs
@@ -165,7 +165,7 @@ Passing data is done in two different ways. The first is when you compile a prog
 
 The reason we can use the stack to pass arguments is because the stack is predictable enough that at compile-time, offsets from the top of the stack can be used. Here is a picture to make the point more clear.
 
-!["Call stack"](/engineering-education/what-is-an-abi/image1.png)
+!["Call stack"](/what-is-an-abi/image1.png)
 
 *`rsp` and `esp` refer to the same register. `esp` is used in an x86 architecture and is the lower 4 bytes of `rsp` which is used in an x64 architecture.*
 
@@ -262,4 +262,4 @@ An FFI (foreign function interface) can be boiled down to: if you want to talk w
 - [C++ ISO Standard](https://isocpp.org/files/papers/n4296.pdf)
 - [ABI section in Rust Reference](https://doc.rust-lang.org/stable/reference/abi.html)
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)

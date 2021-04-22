@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-static-typing/
+url: /python-static-typing/
 title: Static Typing in Python
 description: In this tutorial, we will learn the basics of using type hints and how they can be added to cod using annotations. It is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions.
 author: jerim-kaura
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/python-static-typing/hero.jpg
+ - url: /python-static-typing/hero.jpg
    alt: Python static typing example image
 ---
 Python is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions, respectively. Dynamic typing makes Python very user-friendly. However, dynamic typing has no compiler verified documentation and may lead to runtime errors that are difficult to fix. Static typing provides a solution to these problems.
@@ -229,4 +229,4 @@ Type hinting is a useful feature in Python. It helps you identify bugs and maint
 You also had an introduction on using mypy as a static type checker. You can go ahead and dig deeper into [PEP 484](https://www.python.org/dev/peps/pep-0484/) and the [Mypy documentation](https://mypy.readthedocs.io/) for more information.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

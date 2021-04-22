@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-database-testing/
+url: an-overview-of-database-testing/
 title: An Overview of Database Testing
 description: This article will be an overview of the fundamentals of database testing. It would also explore the various types of database testing and the tools used.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-overview-of-database-testing/hero.jpg
+  - url: /an-overview-of-database-testing/hero.jpg
     alt: Database Testing image
 ---
 A database is a crucial element in software applications because it enables users to store and retrieve data. Nowadays, complex applications that require huge data have increased the need for more secure and robust databases.
@@ -51,7 +51,7 @@ These properties can be described as follows:
 ### Types of database testing
 Database testing consists of three main types: structural, functional, and non-functional testing. 
 
-![Types of Database Testing](/engineering-education/an-overview-of-database-testing/types-of-database-testing.jpg)
+![Types of Database Testing](/an-overview-of-database-testing/types-of-database-testing.jpg)
 
 [Image Source: Wisdom Jobs](https://www.wisdomjobs.com/userfiles/testingtypes.PNG)
 
@@ -103,4 +103,4 @@ Databases should be tested to ensure the key database operations are functioning
 [Tutorials Point](https://www.tutorialspoint.com/database_testing/database_testing_scenarios.htm)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

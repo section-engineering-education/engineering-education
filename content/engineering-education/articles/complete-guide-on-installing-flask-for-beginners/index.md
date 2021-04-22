@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/complete-guide-on-installing-flask-for-beginners/
+url: /complete-guide-on-installing-flask-for-beginners/
 title: A Complete Guide on Installing Flask for Beginners
 description: This tutorial will walk you on how to install Flask, structure your web application professionally, and create a web page with Flask that prints hello world in your web browser. 
 author: adetu-ridwan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/complete-guide-on-installing-flask-for-beginners/hero.jpg
+  - url: /complete-guide-on-installing-flask-for-beginners/hero.jpg
     alt: address resolution protocol image example
 
 ---
@@ -118,7 +118,7 @@ Now, let’s proceed to structure the web application.
 ### Structuring your web application
 The structuring of your web application is the first thing to do before delving into the coding process, and below is a diagrammatic representation of how your Flask app should be structured:
 
-![image for web application structure](/engineering-education/complete-guide-on-installing-flask-for-beginners/web-app-structure.jpg)
+![image for web application structure](/complete-guide-on-installing-flask-for-beginners/web-app-structure.jpg)
 
 The first process in structuring your web application is to create an “**app**” folder, a `run.py` file and a "**requirement.txt**" file.
 
@@ -208,4 +208,4 @@ With this introduction, you can now build on it to create web applications.
 You can find the full codebase for this article [here](https://github.com/corpsgeek/introduction-to-flask).
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

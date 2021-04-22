@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-recyclerviews/
+url: /android-recyclerviews/
 title: Basics of Android Recyclerviews
 description: This article goes through how to create RecyclerViews. It will address the requirements and classes involved to develop a functioning RecyclerView.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-recyclerviews/hero.jpg
+  - url: /android-recyclerviews/hero.jpg
     alt: Android recyclerviews image
 ---
 Loading vast amounts of data into normal views can lead to high CPU usage. This may lead to the operating system forcibly shutting down the applications. In Android, it is common to display a list of data.
@@ -151,7 +151,7 @@ You can see that I have used a `CardView` as a parent to have card items on my l
 
 The layout should produce a view similar to the one below.
 
-![List Item](/engineering-education/android-recyclerviews/item.png)
+![List Item](/android-recyclerviews/item.png)
 
 Now that we have our `RecyclerView` and the list item layouts set up, we can get the data displayed. You can go ahead and download the contents from [this file](https://github.com/LinusMuema/kotlin/blob/recyclerviews/app/src/main/java/com/moose/androidkt/Data.kt) on GitHub. It generates random users and returns the list of users for us to show in our `RecyclerView`.
 
@@ -246,7 +246,7 @@ If the dimensions kept on changing, it would lead to glitches.
 
 With that, our `RecyclerView` is complete. Once you run your application, the `MainActivity` should resemble the one below.
 
-![RecyclerView](/engineering-education/android-recyclerviews/recyclerview.jpg)
+![RecyclerView](/android-recyclerviews/recyclerview.jpg)
 
 #### Conclusion
 That's just the basics of Android `RecyclerViews`. There are more methods like `notifyDataSetChanged`, that help us to manage our `Recyclerviews`. Android developers have adopted `RecyclerViews` extensively, and learning how to use them is a huge advantage. Make sure you manage your lists of data by using `RecyclerViews`.
@@ -254,4 +254,4 @@ That's just the basics of Android `RecyclerViews`. There are more methods like `
 You can go ahead and try out the other layout managers to see how they work and perform. You can find the entire code for this tutorial on [GitHub](https://github.com/LinusMuema/kotlin/tree/recyclerviews) or install a sample application from [Google Drive](https://drive.google.com/file/d/1Nn8xiTcNCk7wlbygPbjxGwW-9ScPUJtr/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-first-iphone/
+url: /the-first-iphone/
 title: The First iPhone
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: gregory-manley
@@ -10,7 +10,7 @@ date: 2019-11-13T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-first-iphone/hero.jpg
+  - url: /the-first-iphone/hero.jpg
     alt: the first iphone
 ---
 On January 9, 2007, Apple CEO Steve Jobs unveiled a phone that forever changed the smartphone industry. On that day, [Jobs said](https://time.com/4628515/steve-jobs-iphone-launch-keynote-2007/), "This is a day I've been looking forward to for two and a half years. Every once in a while a revolutionary product comes along that changes everything."

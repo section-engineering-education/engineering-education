@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-choose-levels-of-logging/
+url: /how-to-choose-levels-of-logging/
 title: How to Choose Levels of Logging
 description: In this article we will discuss the various levels of logging, their functions and how to choose a logging level. We will also will give a historical background of logging levels and describes different logging levels.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-choose-levels-of-logging/hero.jpg
+  - url: /how-to-choose-levels-of-logging/hero.jpg
     alt: Levels of Logging image
 ---
 Application logging is an essential practice a developer can implement in their code to facilitate production support. Entries in log files contain essential information, including a timestamp, contextual information, and messages. Yet log messages are not the easiest to understand.
@@ -79,4 +79,4 @@ During coding, it may not seem like an important thing to consider. Yet, it is s
 Happy coding.
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

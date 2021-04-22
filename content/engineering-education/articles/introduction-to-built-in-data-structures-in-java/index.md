@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-built-in-data-structures-in-java/
+url: /introduction-to-built-in-data-structures-in-java/
 title: Introduction to Built-in Data Structures in Java
 description: An introduction to various built-in data structures in Java and a comparison on how it differs from user-defined data structures.
 author: srishilesh-p-s
@@ -10,7 +10,7 @@ date: 2021-02-03T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/introduction-to-built-in-data-structures-in-java/hero.jpg
+  - url: /introduction-to-built-in-data-structures-in-java/hero.jpg
     alt: Introduction to built-in data structures in Java
 ---
 In this article, we will understand various built-in data structures used in Java. By the end of this article, you will get an overview of how built-in data structures are more efficient than user-defined data structures in Java.
@@ -380,4 +380,4 @@ To summarize:
 - [Oracle Documentation on Queue](https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

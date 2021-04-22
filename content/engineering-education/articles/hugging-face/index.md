@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hugging-face/
+url: /hugging-face/
 title: HuggingFace Library - An Overview
 description: In this article we will explore the HuggingFace library in depth and explain the various libraries that they offer. HuggingFace transformers support the two popular deep learning libraries, TensorFlow and PyTorch. 
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/hugging-face/hero.jpg
+  - url: /hugging-face/hero.jpg
     alt: HuggingFace transformers example image
 ---
 This article will go over an overview of the HuggingFace library and look at a few case studies. HuggingFace has been gaining prominence in Natural Language Processing (NLP) ever since the inception of transformers. 
@@ -85,7 +85,7 @@ sentiment_classifier = pipeline('sentiment-analysis')
 
 print(sentiment_classifier("This is an interesting article! I hope you are enjoying it."))
 ```
-![code output](/engineering-education/hugging-face/code_output.png)
+![code output](/hugging-face/code_output.png)
 
 The first time you run this, the model is downloaded. It's better to experiment with HuggingFace on Colab initially. The size of the models ranges from 50MB to GBs. 
 

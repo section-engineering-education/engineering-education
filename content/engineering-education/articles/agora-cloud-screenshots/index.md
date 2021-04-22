@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/agora-cloud-screenshots/
+url: /agora-cloud-screenshots/
 title: Agora Cloud Screenshots
 description: In this tutorial, we will be building a server using Node.js and Express to start and stop capturing screenshots of video streams that occur using Agora SDKs in your application using the Cloud Recording APIs.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/agora-cloud-screenshots/hero.jpg
+  - url: /agora-cloud-screenshots/hero.jpg
     alt: agora cloud screenshots hero image
 ---
 In this tutorial, we will be building a server using Node.js and Express to capture screenshots of video streams that occur using the Agora SDKs in your application by using the Cloud Recording APIs.
@@ -32,9 +32,9 @@ This tutorial is for applications that use [Agora](https://www.agora.io/) and wa
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
-- [Livestreaming](/engineering-education/react-native-agora-livestreaming-app/).
+- [Livestreaming](/react-native-agora-livestreaming-app/).
 
-- [Video Conferencing](/engineering-education/react-native-agora-video-conference-app/).
+- [Video Conferencing](/react-native-agora-video-conference-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
@@ -95,19 +95,19 @@ Click on usage for the project you want to enable cloud recording for.
 
 > You can acquire the app ID right next to the Usage button. Click on the eye icon to reveal the app ID. We'll be needing the app ID later in this tutorial.
 
-![Usage Button](/engineering-education/agora-cloud-screenshots/usage_button.png)
+![Usage Button](/agora-cloud-screenshots/usage_button.png)
 
 Click on duration under cloud recording. If you haven't already enabled it yet, It will ask you whether you want to enable cloud recording for this project. Click on the enable button.
 
-![Enable Cloud Recording](/engineering-education/agora-cloud-screenshots/enable_cr.png)
+![Enable Cloud Recording](/agora-cloud-screenshots/enable_cr.png)
 
 It'll display the maximum number of channels that you can record at the same time. The default value is 50 channels. If you want more, you need to contact the Sales team of Agora (sales@agora.io).
 
-![Max Concurrent Channels](/engineering-education/agora-cloud-screenshots/max_concurrent_channels.png)
+![Max Concurrent Channels](/agora-cloud-screenshots/max_concurrent_channels.png)
 
 Once you hit Apply, you'll see the statistics page of the cloud recording.
 
-![Cloud Recording Enabled](/engineering-education/agora-cloud-screenshots/cr_enabled.png)
+![Cloud Recording Enabled](/agora-cloud-screenshots/cr_enabled.png)
 
 You have successfully enabled cloud recording for your project.
 
@@ -116,13 +116,13 @@ If you want to work with Agora's APIs, you need to acquire the customer ID and c
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
 
-![RESTful API Dropdown](/engineering-education/agora-cloud-screenshots/restful_api.png)
+![RESTful API Dropdown](/agora-cloud-screenshots/restful_api.png)
 
 Copy the customer ID and click on download under customer secret to get the customer secret.
 
 > You can download the customer secret only once. Keep the secret in a safe place.
 
-![Customer Secret](/engineering-education/agora-cloud-screenshots/customer_secret.png)
+![Customer Secret](/agora-cloud-screenshots/customer_secret.png)
 
 For the API, we should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
@@ -177,7 +177,7 @@ We need to use the RESTful APIs in the following sequence.
 2. Start capturing screenshots.
 3. Stop capturing screenshots.
 
-Capturing screenshots is part of Agora's cloud recording. Hence why the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/engineering-education/agora-cloud-recording/).
+Capturing screenshots is part of Agora's cloud recording. Hence why the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/agora-cloud-recording/).
 
 > You can't record and take screenshots simultaneously in one session. To do both, acquire two resource IDs, one for recording and the other for capturing screenshots. Agora will charge you for both the sessions.
 
@@ -240,7 +240,7 @@ Response:
 }
 ```
 
-![Acquire Request & Response](/engineering-education/agora-cloud-screenshots/postman_acquire.png)
+![Acquire Request & Response](/agora-cloud-screenshots/postman_acquire.png)
 
 ### Start capturing screenshots
 Now, let's add a POST handler for a new endpoint called `'/start'` to start capturing screenshots.
@@ -373,7 +373,7 @@ Response:
 }
 ```
 
-![Start Request & Reponse](/engineering-education/agora-cloud-screenshots/postman_start.png)
+![Start Request & Reponse](/agora-cloud-screenshots/postman_start.png)
 
 ### Stop capturing screenshots
 Now, let's add a POST request handler for a new endpoint called `'/stop'` to stop capturing screenshots.

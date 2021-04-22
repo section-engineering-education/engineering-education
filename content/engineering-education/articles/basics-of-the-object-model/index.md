@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-the-object-model/
+url: /basics-of-the-object-model/
 title: The Basics of the Object Model
 description: This article will cover the basics of the object modeling. Object models refer to a visual representation of software or systems' objects, attributes, actions, and relationships.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/basics-of-the-object-model/hero.jpg
+  - url: /basics-of-the-object-model/hero.jpg
     alt: Object model image example
 ---
 The object Model sees an information system as a set of objects and classes. The reader will get an in-depth understanding of the object model and its elements. We will also look into object-oriented programming (OOP), object-oriented design (OOD), and object-oriented analysis (OOA).
@@ -127,7 +127,7 @@ Through hierarchy, a class can be composed of inter-related sub-classes, that ca
 
 Here is an example of a class of hierarchy:
 
-![Class of Hierarchy](/engineering-education/basics-of-the-object-model/hierarchy.gif)<br>
+![Class of Hierarchy](/basics-of-the-object-model/hierarchy.gif)<br>
 
 *[Image Source](http://www.dba-oracle.com/t_object_class_hierarchies_design.htm)*
 
@@ -146,4 +146,4 @@ The object model is built on a collection of models. The object model describes 
 That's all there is for this article. I hope this article  will shed some light on the object model and its techniques. Good luck!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

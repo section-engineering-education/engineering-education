@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/it-automation-using-ansible/
+url: /it-automation-using-ansible/
 title: Automation Using Ansible
 description: IT automation using Ansible, article covers the basics of IT automation, how it is used, and why it is important. It also covers the basics of Ansible with the relevant code.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/it-automation-using-ansible/hero.jpg
+  - url: /it-automation-using-ansible/hero.jpg
     alt: ansible image example
 ---
 Automation is one of the highest trending topics in the IT industry right now. In this article, we are going to go through the basics of automation with a hands-on approach using Ansible. Before we get our hands dirty with Ansible, let's first look at what automation is, why we need it, and how it has revolutionized the industry.
@@ -71,7 +71,7 @@ In this playbook, the first task creates a directory called test in my home dire
 
 The command to run the playbook is : ansible-playbook <playbook-name>.yml
 
-![Create directory image](/engineering-education/it-automation-using-ansible/create-directory.png)<br>
+![Create directory image](/it-automation-using-ansible/create-directory.png)<br>
 
 A folder called test has been created inside the examples folder in my home directory.
 

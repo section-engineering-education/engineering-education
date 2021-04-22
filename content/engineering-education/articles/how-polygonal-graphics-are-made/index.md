@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-polygonal-graphics-are-made/
+url: /how-polygonal-graphics-are-made/
 title: How Polygonal Graphics Are Made
 description: Polygons are used in computer graphics to compose images that are three-dimensional in appearance. Usually triangular polygons arise when an object's surface is modeled, vertices are selected, and the object is rendered in a wire frame model.
 author: nadiv-gold-edelstein
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-polygonal-graphics-are-made/hero.jpg
+  - url: /how-polygonal-graphics-are-made/hero.jpg
     alt: polygon image example
 ---
 Most computer-generated 3D objects are built with polygons, collections of triangles, or quadrilaterals connected together in 3D space to approximate shapes. In this article, we will explore how computers see polygons out of information and turn that into graphics like you would see in a movie or video game. We will be using [Babylon.js](https://www.babylonjs.com/), an in-browser rendering engine that uses WebGL, to visualize some of the concepts discussed.

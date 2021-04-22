@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/end-to-end-encryption/
+url: /end-to-end-encryption/
 title: End-to-End Encryption (E2EE) Explained
 description: End-to-end encryption (E2EE) is a a public key encryption system that prevents the contents of your messages, text, and files from being understood by anyone except their intended recipients.
 author: earl-potters
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/end-to-end-encryption/hero.jpg
+  - url: /end-to-end-encryption/hero.jpg
     alt: End-to-End Encryption Private communication
 ---
  In mid-February 2020, WhatsApp announced on its blog that the messaging app is now being actively used by more than 2 billion people worldwide. Multiply that by the number of messages being sent by each user – that's a lot of texts, photos, videos, voice messages, documents, status updates, and calls being sent through the public web each day!
@@ -26,19 +26,19 @@ In this article, I will dive into how E2EE works and why it is important that we
 ### Passing a secret message
 Let’s say you are in a classroom and want to send a secret message to your friend Bob, but you need to pass it through your friends beforehand. In this example, you and the intermediaries are called network nodes which are either a redistribution point or a communication endpoint.
 
-![secret message](/engineering-education/end-to-end-encryption/image_1_end.png)
+![secret message](/end-to-end-encryption/image_1_end.png)
 *Image source: [ssd.eff.org](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work)*
 
 As you might have guessed, you are very concerned that your friends may take a peek at your secret message. So, you encrypt the message using the classic [Caesar/shift cipher](https://en.wikipedia.org/wiki/Caesar_cipher) — “a cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.” For this example, you and Bob have chosen 3 to be your key.
 
-![caesar shift cipher](/engineering-education/end-to-end-encryption/image_2_end.png)
+![caesar shift cipher](/end-to-end-encryption/image_2_end.png)
 *Image source: [ssd.eff.org](https://ssd.eff.org/en/module/deep-dive-end-end-encryption-how-do-public-key-encryption-systems-work)*
 
 When there is one key to encrypt and decrypt data, it is called symmetric cryptographic encryption; it is the oldest form of encryption, dating back thousands of years.
 
 ### The One Key System
 
-![](/engineering-education/end-to-end-encryption/image_3_end.png)
+![](/end-to-end-encryption/image_3_end.png)
 *Image source: [Hackernoon](https://medium.com/hackernoon/symmetric-and-asymmetric-encryption-5122f9ec65b1)*
 
 Nowadays, two types of Symmetric-key encryption algorithms exist – *block ciphers* or *stream ciphers*. The fundamental difference between them is their effective data-size operations. Stream ciphers usually operate on individual bytes of data; whereas block ciphers operate of fixed-lengths (i.e. blocks of data).
@@ -48,7 +48,7 @@ Examples of modern Symmetric key encryption algorithms [mentioned by cheapsslsho
 There is a significant drawback to using symmetric-key encryption; both you and Bob need to decide on a key beforehand to communicate. This presents a challenge. How can you and Bob communicate securely and privately without letting your friends or anyone else for that matter know your key, especially when direct communication isn’t possible?
 
 ### The Two Key System
-![](/engineering-education/end-to-end-encryption/image_4_end.png)
+![](/end-to-end-encryption/image_4_end.png)
 *Image source: [Hackernoon](https://medium.com/hackernoon/symmetric-and-asymmetric-encryption-5122f9ec65b1)*
 
 Public-key cryptography (also known as asymmetric cryptography) resolves the inherent problem of symmetric encryption. Cryptographic algorithms based on mathematical formulas create one-way functions that generate two keys — a public key for encryption and a private key for decryption. The public keys are distributed freely however only the intended recipient holds the private key.
@@ -60,7 +60,7 @@ Some of the modern Asymmetric key encryption algorithms [mentioned by cheapsslsh
 Now, you and Bob don’t know much about public-key cryptography; however you and Bob are determined to share a secret key through your friends during art class. You and Bob devise a plan to use paint.
 
 ### General overview of Diffie-Hellman key exchange (OTR) with paint
-![diffie-hellman key exchange with paint](/engineering-education/end-to-end-encryption/image_5_end.png)
+![diffie-hellman key exchange with paint](/end-to-end-encryption/image_5_end.png)
 <br>*Image source:
 [Introduction to public key cryptography](https://www.uni-due.de/imperia/md/images/dc/crypto_chapter_5_public_key.pdf)*
 
@@ -153,7 +153,7 @@ You selected this USER-ID:
 
 The last step is that you will need to enter a passphrase. The passphrase will allow you to unlock the secret key when every you need to make any changes to your key or decrypt messages!
 
-![passphrase entry](/engineering-education/end-to-end-encryption/image_6_end.png)
+![passphrase entry](/end-to-end-encryption/image_6_end.png)
 
 Congratulation! You have created your key!
 
@@ -176,7 +176,7 @@ $ sudo apt install gpa
 $ gpa
 ```
 
-![GPA](/engineering-education/end-to-end-encryption/image_7_end.png)
+![GPA](/end-to-end-encryption/image_7_end.png)
 You should see something similar to the picture above.
 
 Once you have the GNU privacy Assistant Key Manger open, you can select the recently created key, then click Export Keys. Save your key anywhere you would like in your directories. Double click the recently exported Key to view its contents.
@@ -208,7 +208,7 @@ To import their public key all you need to do is press the **Import Keys** butto
 
 It is time to write your secret message. Go and open the GNU clipboard by pressing the **Clipboard icon**. This window will pop up:
 
-![GNU clipboard](/engineering-education/end-to-end-encryption/image_8_end.png)
+![GNU clipboard](/end-to-end-encryption/image_8_end.png)
 
 The white space allows you to write anything you would like to be kept secret. When you've finished composing your message, you can go ahead and press **Encrypt the buffer text**, which looks like an envelope with a blue key in front of it. Make sure to choose the public key of whomever you are talking to. For additional safety, you can also sign the encrypted message with your key.
 

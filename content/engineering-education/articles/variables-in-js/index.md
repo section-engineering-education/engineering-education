@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/variables-in-javascript/
+url: /variables-in-javascript/
 title: Variables in JavaScript
 description: This article will be discussing variables and the various scopes of the variables in JavaScript. We will use the JavaScript console to execute JavaScript code in this tutorial.
 author: caroline-gatwiri
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/variables-in-javascript/hero.jpg
+  - url: /variables-in-javascript/hero.jpg
     alt: Variables in JavaScript Image
 ---
 Variables are a way for programmers to name a value in order to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring variables, and initializing variables. We will also learn about the different scopes of variables to ensure that we completely understand them.
@@ -139,4 +139,4 @@ The error: `Uncaught TypeError: Assignment to constant variable`, informs you th
 In summary, we have learned about variables and how they are declared and used in JavaScript and have gone through different types of variable scopes. I hope you find this guide to JavaScript variables useful.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-operator-overloading-in-c++/
+url: /getting-started-with-operator-overloading-in-c++/
 title: Getting Started with Operator Overloading in C++
 description:
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-operator-overloading-in-c++/hero.jpg
+  - url: /getting-started-with-operator-overloading-in-c++/hero.jpg
     alt: example image
 ---
 Operator overloading is the process of making an operator exhibit different behaviors in different instances. By overloading operators in a specific class, you can change the users view of that class. This helps developers have a problem driven approach towards programming.
@@ -202,4 +202,4 @@ In this article, we got to explore what operator overloading is, where to use it
 Go ahead and try out the operator overloading examples above on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

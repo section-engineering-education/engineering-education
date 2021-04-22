@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/making-api-requests-using-volley-android/
+url: /making-api-requests-using-volley-android/
 title: Making API Requests using Volley Android
 description: In this article, we will create an application that shows the Corona Virus statistics of the world. We will be using Volley to make the network calls.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/making-api-requests-using-volley-android/hero.jpg
+  - url: /making-api-requests-using-volley-android/hero.jpg
     alt: example image bottom navigation bar in Android applications
 ---
 Networking in mobile applications has been around since its inception. In the early days, applications made network calls on the [main thread](https://www.toptal.com/android/android-threading-all-you-need-to-know). Making network requests on the main thread stopped when [Google released the Honeycomb version](https://en.wikipedia.org/wiki/Android_Honeycomb).
@@ -66,7 +66,7 @@ To follow the tutorial along it would be best to have:
 #### Step 1 – Create a New Project
 - Open Android Studio. Select Start new Android Studio Project -> Empty Activity. We'll name the project **CovidTrackerVolley**. Click Finish and wait for the project to build.
 
-![Name the project](/engineering-education/making-api-requests-using-volley-android/name.jpg)
+![Name the project](/making-api-requests-using-volley-android/name.jpg)
 
 #### Step 2 – Design a Layout
 In this step, we will design the UI for the layout of our application.
@@ -228,7 +228,7 @@ In the `getData` method, create a `StringRequest` and assign the NovelCOVID API 
 
 **Note: It's a good practice to test run test requests to ensure the API contains the information required. Platforms such as [Postman](https://www.postman.com/) can be used to do this.**
 
-![Test Run on Postman](/engineering-education/making-api-requests-using-volley-android/postman.jpg)
+![Test Run on Postman](/making-api-requests-using-volley-android/postman.jpg)
 
 Next, we will create a `ResponseListener`, that will contain an `onResponse` method. In the `onResponse` method, we'll create a `JSONObject` class. This class will pass the API data and then set the data from API to the respective views.
 
@@ -263,7 +263,7 @@ requestQueue.add(myRequest);
 
 We are Done! Let’s run the app.
 
-![CovidTrackerVolley](/engineering-education/making-api-requests-using-volley-android/app.jpg)
+![CovidTrackerVolley](/making-api-requests-using-volley-android/app.jpg)
 
 ### Conclusion
 As you can see, Volley makes networking easier in Android development. It provides an easier way to make simple API requests.
@@ -277,4 +277,4 @@ You can read more about Volley in their official [documentation](https://develop
 Access the source code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/CovidTrackerVolley). Download the sample APK on Google [Drive](https://drive.google.com/file/d/1Gsn9P8KxrXcDXLR4DrUYu1o7i3VVMC52/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

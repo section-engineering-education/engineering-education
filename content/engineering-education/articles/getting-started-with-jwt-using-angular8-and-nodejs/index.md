@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/
+url: /getting-started-with-jwt-using-angular8-and-nodejs/
 title: Getting Started with Json Web Auth using Angular 11 and Node.js
 description: In this article, we will look at how to implement Json Web Tokens (JWT) in Angular 11 using a simple Node.js server. Using JSON Web Tokens, makes an app secure since the services and communications between the server and the app are also secure.
 author: ephraim-njoroge
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/hero.jpg
+  - url: /getting-started-with-jwt-using-angular8-and-nodejs/hero.jpg
     alt: JWT Angular Node example
 ---
 JSON Web Token (JWT) is an RFC standard that ensures data being transmitted between a client and a server as a JSON object is secured. The information is also digitally signed. Meaning it can be verified and signed.
@@ -202,7 +202,7 @@ $ node app.js
 
 I will use Postman to test the `/token/sign` route as shown below.
 
-![first web token](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.PNG)
+![first web token](/getting-started-with-jwt-using-angular8-and-nodejs/token-generation1.PNG)
 
 As of now, I have generated the first web token. Next, I will create a `/path1` and secure it using my JSON Web Token.
 
@@ -221,7 +221,7 @@ app.use(expressJWT({ secret: secret, algorithms: ['HS256']})
 
 Next, I will be testing `/path1` using Postman, with no token sent in the header.
 
-![401 Error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.PNG)
+![401 Error](/getting-started-with-jwt-using-angular8-and-nodejs/401-unauthorized.PNG)
 
 The app did not allow me to access the path. Accessing the path returns a `401 Unauthorized` as expected. The code below will allow access to `/path1` if the token obtained from `/token/sign` is sent along. 
 
@@ -240,7 +240,7 @@ app.get('/path1', (req, res) => {
 
 On adding the Bearer Token and accessing `/path1`, the success message is displayed as shown below:
 
-![success message](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/success-token.PNG)
+![success message](/getting-started-with-jwt-using-angular8-and-nodejs/success-token.PNG)
 
 Back to Angular, I will create a new component `home` by running the following command:
 
@@ -343,13 +343,13 @@ The command will compile the whole Angular project and open the page on the brow
 
 Press `F12` to open the developer console. Then, click on the **Sign In** button to get a token. Then click on the **Get Path1** Button to access the path as shown below:
 
-![web test success](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.PNG)
+![web test success](/getting-started-with-jwt-using-angular8-and-nodejs/webtest-success.PNG)
 
 To clear the token stored in local storage, I will refresh the browser. 
 
 Then I will try to access the path as shown below:
 
-![web test error](/engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.PNG)
+![web test error](/getting-started-with-jwt-using-angular8-and-nodejs/webtest-error.PNG)
 
 We get a `401 Unauthorized` error. This shows that our application is now secure.
 
@@ -363,4 +363,4 @@ That is it.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-consume-data-from-an-api-in-react/
+url: /how-to-consume-data-from-an-api-in-react/
 title: How to Consume Data from an API in a React application
 description: This tutorial provides a detailed overview how to consume data from an API in a React application. We will learn how to fetch and consume data from an API. We will use async and await when performing network operations.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-consume-data-from-an-api-in-react/hero.png
+  - url: /how-to-consume-data-from-an-api-in-react/hero.png
     alt: How to consume data from an API in a React application image
 ---
 API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.
@@ -28,11 +28,11 @@ Before consuming data from an API, it's important to understand the data that th
 
 In this tutorial, we will be using [OMDb API](http://www.omdbapi.com/). You need an API key to gain access to this API. This API key can be generated from the OMDb API's [website](http://www.omdbapi.com/apikey.aspx). 
 
-![signup](/engineering-education/how-to-consume-data-from-an-api-in-react/signup.png)
+![signup](/how-to-consume-data-from-an-api-in-react/signup.png)
 
 The API key will be sent to your email, as shown below.
 
-![email](/engineering-education/how-to-consume-data-from-an-api-in-react/email.png)
+![email](/how-to-consume-data-from-an-api-in-react/email.png)
 
 > Note that the API key must be included in the API request, as shown:
 
@@ -101,7 +101,7 @@ All the files that we'll be working with are located in the `src` folder. These 
 
 The image below shows the overall structure of the React application.
 
-![structure](/engineering-education/how-to-consume-data-from-an-api-in-react/structure.png)
+![structure](/how-to-consume-data-from-an-api-in-react/structure.png)
 
 ### Step 4: Developing the react application
 Use `npm start` to start the development server. By default, the react projects are usually hosted at `http://localhost:3000/`.
@@ -389,11 +389,11 @@ export default App;
 ### Step 7: Testing our web application
 If you have successfully reached this stage, congratulations. Follow the steps in the video below to test out the web application.
 
-![React App](/engineering-education/how-to-consume-data-from-an-api-in-react/app.gif)
+![React App](/how-to-consume-data-from-an-api-in-react/app.gif)
 
 ### Conclusion
 In this tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. You can refer to the final code from this [GitHub Repository](https://github.com/WanjaMIKE/react-omdapi/).
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

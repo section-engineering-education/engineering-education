@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-tailwind-css/
+url: /introduction-to-tailwind-css/
 title: Introduction to Tailwind CSS
 description: This article is an introduction to Tailwind CSS, we will cover different installation and configuration methods and how to use its utility-based classes. 
 author: daniel-katungi
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-tailwind-css/hero.jpg
+  - url: /introduction-to-tailwind-css/hero.jpg
     alt: Introduction to Tailwind CSS image
 ---
 CSS technology was one of the biggest game-changers in web development. It allowed for more styling capabilities and freedom. As CSS grew, so did its complexity. CSS in retrospect is not challenging to write, but it can be tricky to implement.
@@ -230,7 +230,7 @@ Our final code looks like this:
 
 The code (our button) should look like this:
 
-![Final Product](/engineering-education/introduction-to-tailwind-css/result.png)
+![Final Product](/introduction-to-tailwind-css/result.png)
 
 ### Conclusion
 Tailwind CSS is a game-changer to how we use CSS. As demonstrated above, utility classes are easy to use and learn. As a result, you should now be able to build a simple layout using Tailwind CSS.
@@ -242,4 +242,4 @@ Another thing to note is how we added all the CSS classes, we used in the demo t
 For further details on Tailwind CSS, you can take a look at the official [documentation](https://tailwindcss.com/docs).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

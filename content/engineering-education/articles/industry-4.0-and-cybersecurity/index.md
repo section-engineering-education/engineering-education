@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/industry-4.0-and-cybersecurity/
+url: /industry-4.0-and-cybersecurity/
 title: Industry 4.0 and Cybersecurity
 description: An introduction to Industry 4.0 through the technologies that enable it, the cybersecurity challenges around it, the threats, insinuations, and potential solutions.
 author: collins-ayuya
@@ -10,7 +10,7 @@ date: 2020-09-22T00:00:00-07:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/industry-4.0-and-cybersecurity/hero.jpg
+  - url: /industry-4.0-and-cybersecurity/hero.jpg
     alt: Industry 4.0 cybersecurity example image
 ---
 Industrial revolutions describe transitional periods that welcome new manufacturing procedures. The first three industrial revolutions can be described as mechanization to improve manufacturing process, introduction of electricity into manufacturing, and the digital revolution within the manufacturing process respectively.     
@@ -56,7 +56,7 @@ Cyber-physical systems are simply a new generation of integrations of physical p
 
 Cyber-Physical Systems have numerous applications in the following sectors; manufacturing, energy, infrastructure, consumer, communication, military, robotics, smart buildings, healthcare, infrastructure, and transportation among others.
 
-Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. These protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-middle attacks, you can read [this related article](/engineering-education/man-in-the-middle-attack/).
+Noteworthy applications include autonomous driving and smart grid. Communications in these systems take place through the internet. This would mean that connectivity is provided over standard protocols, namely Internet Protocol and Transmission Control Protocol. These protocols possess notorious vulnerabilities. An example is the [Man-in-the-Middle attack](https://us.norton.com/internetsecurity-wifi-what-is-a-man-in-the-middle-attack.html). For more detailed information on Man-in-the-middle attacks, you can read [this related article](/man-in-the-middle-attack/).
 
 It is common to find these protocols in use in these systems without any additional protection against the aforementioned vulnerabilities. Coupled with additional security challenges, Cyber-Physical Systems are challenged in upholding the fundamental principles of [information security (Confidentiality, Integrity, and Availability)](https://www.techopedia.com/2/27825/security/the-basic-principles-of-it-security)
 
@@ -133,10 +133,10 @@ Denial of Service refers to the act of rendering the services offered by a syste
 
 System downtime and unavailability is also a consequence. This ends up being extremely costly for an enterprise since physical components such as sensors and servers may need to be replaced and reconfigured. Service downtime in a business context is also tremendously expensive. These attacks are highly unpredictable therefore difficult to manage and regulate.
 
-For more detailed information on what a Denial of Service attack is, feel free to [read this article](/engineering-education/denial-of-service/).
+For more detailed information on what a Denial of Service attack is, feel free to [read this article](/denial-of-service/).
 
 #### Enterprise Cyber-Espionage
-In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are even more points of attack and access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/engineering-education/man-in-the-middle-attack/).
+In this competitive industrial landscape, there is incentive in acquiring key information about the competitor. Thanks to the interconnected nature of the Industry 4.0 systems, various competitors may interact and collaborate to achieve various production goals. Increased interconnection of physical systems, and the vast nature of these networks means data is widespread across these systems, proving that there are even more points of attack and access confidential information. For example, attackers may eavesdrop, through executing a [Man-In-The-Middle attack](/man-in-the-middle-attack/).
 
 Furthermore, the evolution of cybercrime has bred increasingly organized groups of cyber criminals who find an incentive in targeting various industries and accessing critical information and intellectual property. Solutions to these increasingly common fears and problems should be geared towards guaranteeing transparency and trust across these platforms, systems, and networks.
 
@@ -194,4 +194,4 @@ We should not underestimate the need for further research. It would go a long wa
 10.	[Security of the Internet of Things: perspectives and challenges.](https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1007%2Fs11276-014-0761-7?_sg%5B0%5D=6-uaFoceyfMUKu3OkXH0XCSCuDynesvXfyCMmQ-mjmWSFf1jNy1jBOSK4T-XekuAVx1pS0nVKX9N20HU0VkFFclFQg.MGvAMDZr-aXcEGgA4tilcKF-6klWMkX5VFw5uwHnvh14ub6XOH8p0T1hxxO64iKijVyd6GaiLiEU42DhPgddcA)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

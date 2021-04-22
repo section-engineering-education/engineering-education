@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-smtp/
+url: /spring-boot-smtp/
 title: Getting started with Spring Boot SMTP
 description: This tutorial will go over the configurations of the Gmail SMTP server and how to send emails from a Spring Boot application.
 author: quinter-awuor
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-boot-smtp/hero.jpg
+  - url: /spring-boot-smtp/hero.jpg
     alt: Spring Boot SMTP example image
 ---
 ### Spring Boot SMTP
@@ -111,7 +111,7 @@ For the configurations above to work in our applications, we must set up Gmail t
 - On your Gmail account, click on `manage account`.
 - On the `manage account` screen click on the `security` menu item and select `turn on access to less secure apps` as shown below.
 
-![Turning on access to less secure apps](/engineering-education/spring-boot-smtp/google-auth.png)
+![Turning on access to less secure apps](/spring-boot-smtp/google-auth.png)
 
 ### Domain layer
 Since we are going to create a simple API endpoint that allows users to request with the mail message, recipient, and the subject of the mail, we are going to create a POJO for the mail.
@@ -280,4 +280,4 @@ Now that you have learned how to configure and send emails in a Spring Boot appl
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

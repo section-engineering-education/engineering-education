@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-scikit-learn-in-python/
+url: /introduction-to-scikit-learn-in-python/
 title: Introduction to Scikit Learn in Python
 description: This tutorial will be a brief dive into the multi-faceted world of scikit-learn in Python. SciKit-Learn is a vital library used to build statistical models to make predictions.
 author: prashanth-saravanan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-scikit-learn-in-python/hero.png
+  - url: /introduction-to-scikit-learn-in-python/hero.png
     alt: Regular Repression in Python example image
 ---
 The concept of machine learning has been booming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to data science or machine learning. An essential ingredient for establishing familiarity in this field is to know your libraries and dependencies.
@@ -22,7 +22,7 @@ A significant chunk of your work goes towards having the right approach towards 
 ### Prerequisites
 The reader is expected to understand basic libraries like NumPy and Pandas, machine learning, and machine learning algorithms, including linear and logistic regression, support vector machines and decision trees, and boosting algorithms. 
 
-For a better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](/engineering-education/introduction-to-numpy/), [Matplotlib](/engineering-education/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
+For a better understanding, the reader is advised to go through the following articles on [Python](https://www.w3schools.com/python/), [NumPy](/introduction-to-numpy/), [Matplotlib](/matplotlib-visualization-python/) and [SciPy](https://www.tutorialspoint.com/scipy/index.htm).
 
 ### Table of contents
 1. [Introduction](#introduction)
@@ -80,7 +80,7 @@ from sklearn import preprocessing
 
 A data point x is standardized as follows:
 
-![Standardization](/engineering-education/introduction-to-scikit-learn-in-python/standardization-formula.png)
+![Standardization](/introduction-to-scikit-learn-in-python/standardization-formula.png)
 
 Where µ is the mean of the distribution and σ is the standard deviation of the distribution. Standardization is centering around zero and scaling the data point such that the mean is 0, and the standard deviation is 1. 
 
@@ -129,7 +129,7 @@ Normalization is important because it does not provide a window for the model to
 
 A data point x is normalized as follows:
 
-![Normalization](/engineering-education/introduction-to-scikit-learn-in-python/normalization-formula.png)
+![Normalization](/introduction-to-scikit-learn-in-python/normalization-formula.png)
 
 *Source: [Miro Medium](https://miro.medium.com/max/506/1*ii46F2WDo9mvFvdxzUvGbQ.png)*
 
@@ -336,5 +336,5 @@ Happy Coding!
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

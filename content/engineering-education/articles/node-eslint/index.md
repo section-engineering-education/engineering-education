@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-eslint/
+url: /node-eslint/
 title: Linting in Node.js using ESLint
 description: Introduction to Linters this article will go over linters and how to use ESLint, a popular JavaScript Linter to maintain code quality in projects.
 author: saiharsha-balasubramaniam
@@ -10,7 +10,7 @@ date: 2020-08-24T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/node-eslint/hero.jpg
+  - url: /node-eslint/hero.jpg
     alt: linters example image ESLint
 ---
 
@@ -77,21 +77,21 @@ const express = require("express")
 
 The code above is analyzed by ESLint and throws the following errors.
 
-![ESLint Error](/engineering-education/node-eslint/eslint-error1.png)
+![ESLint Error](/node-eslint/eslint-error1.png)
 
 This error is because it isn't good practice to declare and assign a variable and not use it.
 
-![ESLint Error](/engineering-education/node-eslint/eslint-error2.png)
+![ESLint Error](/node-eslint/eslint-error2.png)
 
 The Google Style Guide recommends the use of single quotes.
 
-![ESLint Error](/engineering-education/node-eslint/eslint-error3.png)
+![ESLint Error](/node-eslint/eslint-error3.png)
 
 It is good practice to use semi-colons at the end of a line.
 
 Now, to fix the errors we can set up ESLint to automatically fix errors when we save the file. In Visual Studio Code, go to Settings -> Workspace and search for **save**
 
-![VSCode Settings](/engineering-education/node-eslint/vscode-settings.png)
+![VSCode Settings](/node-eslint/vscode-settings.png)
 
 There will be an option, Editor: Code Actions on Save. Click on *Edit in settings.json* and enter the following config.
 

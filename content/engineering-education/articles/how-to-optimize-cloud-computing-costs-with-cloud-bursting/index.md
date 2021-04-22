@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-optimize-cloud-computing-costs-with-cloud-bursting/
+url: /how-to-optimize-cloud-computing-costs-with-cloud-bursting/
 title: How to Optimize Cloud Computing Costs with Cloud Bursting
 description: This article will discuss the challenges and benefits of cloud bursting and show you how to optimize costs and improve cloud burst platforms' effectiveness.
 author: eric-kahuha
@@ -11,12 +11,12 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-optimize-cloud-computing-costs-with-cloud-bursting/hero.jpg
+  - url: /how-to-optimize-cloud-computing-costs-with-cloud-bursting/hero.jpg
     alt: Cloud bursting example image
 ---
 Organizations across all industries have appreciated and benefited from the significance that data plays in their decision making and business development. They are now running more data workloads and analytics than ever before.
 <!--more-->
-Yet an overload of these activities may cause a system crash, workload freeze, and ultimately downtime. This happens mainly when an organization's [cloud computing](/engineering-education/introduction-to-cloud-computing/) resources such as its storage, memory, and CPU exceed the available system capacity.
+Yet an overload of these activities may cause a system crash, workload freeze, and ultimately downtime. This happens mainly when an organization's [cloud computing](/introduction-to-cloud-computing/) resources such as its storage, memory, and CPU exceed the available system capacity.
 
 Many organizations have resulted to cloud bursting to address this issue of system overload while saving on costs. With cloud bursting, organizations offload private cloud and on-premises traffic into the public cloud, which helps in meeting peak demand.
 
@@ -89,4 +89,4 @@ If this happens, all the functions and processes may come to a near standstill. 
 Organizations with their most critical applications hosted in the private cloud or on-premises find cloud bursting a cost-effective solution to their cloud computing needs. If we address configuration and latency issues, cloud burst platforms' usage can improve performance across all applications.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

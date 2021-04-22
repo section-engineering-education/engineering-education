@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-c++-templates/
+url: /understanding-c++-templates/
 title: Understanding C++ Templates
 description: In this article, we will learn about templates in C++, class templates, function templates, and how to declare them. A class template is a template that enables the developer to operate with generic data types.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-c++-templates/hero.jpg
+  - url: /understanding-c++-templates/hero.jpg
     alt: C++ Templates
 ---
 ### Introduction
@@ -370,4 +370,4 @@ In this article, we have gone through templates in C++, both class and function 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/javascript-dates-manipulation-with-date-fns/
+url: /javascript-dates-manipulation-with-date-fns/
 title: Javascript Dates Manipulation with Date-fns
 description: This article will cover the basic applications of date-fns, date-fns is a lightweight library that provides comprehensive functions for date formatting and manipulation.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/javascript-dates-manipulation-with-date-fns/hero.jpg
+  - url: /javascript-dates-manipulation-with-date-fns/hero.jpg
     alt: date-fns library JavaScript
 ---
 At times during the development process, we constantly run into date objects 🕣. We need tools to assist us in handling those instances. There are two big players ([Moment.js](https://momentjs.com/) and [date-fns](https://date-fns.org/)) when it comes to JavaScript date management. This article will cover the basic applications of date-fns.
@@ -515,7 +515,7 @@ This interval helper includes
 Head to the [date-fns docs to check out more interval helpers](https://date-fns.org/v2.16.1/docs/Interval) and how you can apply them to your application.
 
 ### Comparison Between Moment.js and Date-fns 🎁
-Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects. It eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downside is that its API size is huge. For more information on Moment.js, check out [this article](/engineering-education/nodejs-date-and-time-objects-with-moment/).
+Moment.js is a stand-alone open-source JavaScript framework wrapper for date objects. It eliminates native JavaScript date objects, which are cumbersome to use. Moment.js makes dates and time easy to display, format, parse, validate, and manipulate using a clean and concise API. Unlike date-fns, its biggest downside is that its API size is huge. For more information on Moment.js, check out [this article](/nodejs-date-and-time-objects-with-moment/).
 
 As we have seen in the examples above, date-fns is a collection of many small and independent functions allowing you to only import functions that are needed. Unlike Moment.js where you create a moment instance to run functions from it. With Moment.js, there isn't a way to import a specified function. That means you have to import the whole API chain even when loading a simple date thus creating performance overheads.
 
@@ -535,12 +535,12 @@ console.log(today);
 ```
 
 `moment@2.28.0`
-![moment](/engineering-education/javascript-dates-manipulation-with-date-fns/moment.png)
+![moment](/javascript-dates-manipulation-with-date-fns/moment.png)
 
 [Source: bundlephobia](https://bundlephobia.com/)
 
 `date-fns@2.16.1`
-![date-fns](/engineering-education/javascript-dates-manipulation-with-date-fns/date-fns.png)
+![date-fns](/javascript-dates-manipulation-with-date-fns/date-fns.png)
 
 [Source: bundlephobia](https://bundlephobia.com/)
 
@@ -552,17 +552,17 @@ If you are dealing with time zones, I would suggest you check out Moment.js. Its
 
 #### Statistical Comparison
 - NPM download stats
-![npm-download-insights](/engineering-education/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
+![npm-download-insights](/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
 
 [Source: nodejs libhunt](https://nodejs.libhunt.com/compare-moment-vs-date-fns).
 
 - GitHub stats
-![github-stats.png](/engineering-education/javascript-dates-manipulation-with-date-fns/github-stats.png)
+![github-stats.png](/javascript-dates-manipulation-with-date-fns/github-stats.png)
 
 [Source: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
 
 - Popularity and activity popularity and activity
-![popularity-and-activity](/engineering-education/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
+![popularity-and-activity](/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
 
 [Source: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
 
@@ -635,4 +635,4 @@ Date-fns is a great library that you should put on your checklist if you have a 
 -  [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 
 ---
-Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/authors/linus-muema/)

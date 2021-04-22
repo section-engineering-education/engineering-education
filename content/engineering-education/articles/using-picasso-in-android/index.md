@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/using-picasso-in-android/
+url: /using-picasso-in-android/
 title: Using Picasso in Android
 description: In this article, we will illustrate the different features offered by Picasso in Android applications such as image resizing, cropping, and rotation.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-picasso-in-android/hero.jpg
+  - url: /using-picasso-in-android/hero.jpg
     alt: example image Picasso Android applications
 ---
 Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures rather than words. With time, most mobile applications such as Instagram, Facebook, Twitter, and LinkedIn started implementing visual representation. This was not perfect the first time around.
@@ -60,7 +60,7 @@ Picasso has the following features:
 ### Step 1 – Create a new AndroidStudio project
 - Open Android studio. Select Start new Android Studio Project ->  Empty Activity ->. Let us name the **Picasso**. Click Finish and wait for the project to build.
 
-![Name the project](/engineering-education/using-picasso-in-android/name.jpg)
+![Name the project](/using-picasso-in-android/name.jpg)
 
 ### Step 2 - Adding Picasso to our project
 Add the following dependency to the app module-level build.gradle file:
@@ -435,7 +435,7 @@ case R.id.showUrl:
 We are done! Let us run the app.
 
 
-![Picasso](/engineering-education/using-picasso-in-android/app.gif)
+![Picasso](/using-picasso-in-android/app.gif)
 
 ### Conclusion.
 Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. 
@@ -447,4 +447,4 @@ Access the source code on [GitHub](https://github.com/BrianaNzivu/EngineeringEdu
 Download the sample APK from Google [Drive](https://drive.google.com/file/d/1wkweiHuBYV5jwncJbYRWRcRxxzrXCwGk/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/npm-vs-npx/
+url: /npm-vs-npx/
 title: Comparing NPM (Node Package Manager) and NPX (Node Package Executor)
 description: This article will explain the differences between NPM (Node Package Manager) and NPX (Node Package Executor).
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/npm-vs-npx/hero.jpg
+  - url: /npm-vs-npx/hero.jpg
     alt: NPM vs NPX Image
 ---
 If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. 
@@ -204,7 +204,7 @@ If you want to execute a specific package version, let's say, Eslint, you should
 #### Version testing:
 With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can determine if the new version is compatible with your project before deciding whether to update them.
 
-For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/engineering-education/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
+For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
 
 ```bash
     Hash: b41ed73s02F90S74F9b
@@ -255,7 +255,7 @@ npx https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5
 
 NPX will point to the remote `.js` file, download it temporarily, execute it and it will give you the result in the console.
 
-![Execute Gist Code with NPX](/engineering-education/npm-vs-npx/execute-gist-code-with-npx.jpg)
+![Execute Gist Code with NPX](/npm-vs-npx/execute-gist-code-with-npx.jpg)
 
 > Note, it is advised to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped by malicious code.
 
@@ -277,4 +277,4 @@ NPX is a great tool that you should try out. It will help you to avoid NPM depen
 I hope this guide helped you understand the differences between NPM and NPX and understand some major use cases of NPX.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

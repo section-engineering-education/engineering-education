@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/github-actions/
+url: /github-actions/
 title: Introduction to GitHub Actions
 description: We can use GitHub Actions to perform real-world tasks such as CI/CD, publish to NPM, deploy to the cloud, and so on. This guide will walk you through how to get started with GitHub Actions.
 author: rohan-reddy
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/github-actions/hero.jpg
+  - url: /github-actions/hero.jpg
     alt: github actions
 ---
 [GitHub Actions](https://github.com/features/actions) enables you to create custom and automated software development workflows (including CI/CD) directly in your [GitHub repository](https://github.com/github).
@@ -29,19 +29,19 @@ We can use GitHub Actions to perform real-world tasks such as CI/CD, publish to 
 
 1. Go to any repository, where you want to create a workflow, and navigate to the Actions tab.
 
-![repo img](/engineering-education/github-actions/repo.png)
+![repo img](/github-actions/repo.png)
 
 2. Select a workflow from the ones available, or create a new one.
 
-![actions img](/engineering-education/github-actions/actions.png)
+![actions img](/github-actions/actions.png)
 
 3. To create your own workflow create a `.yml` file in the path `.github/workflows/action1.yml`. Commit the file, GitHub will automatically understand that it is a workflow.
 
-![ga img](/engineering-education/github-actions/ga4.png)
+![ga img](/github-actions/ga4.png)
 
 4. You can monitor you workflow logs in the same **Actions** tab after you have set it up.
 
-![log img](/engineering-education/github-actions/log.png)
+![log img](/github-actions/log.png)
 
 ### How to create custom actions for common uses
 
@@ -84,7 +84,7 @@ The above action does the following:
 
 If there are any errors or build failures, then it shows up in the log in the actions tab of our repository by a green check or a red 'x'.
 
-![greencheck img](/engineering-education/github-actions/greencheck.png)
+![greencheck img](/github-actions/greencheck.png)
 
 ### Continuous Deployment
 Once you have a valid pull request and when we merge that code into the master branch, we also want to deploy the app to production. [Continuous deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment) is about pushing that code out to production.
@@ -103,7 +103,7 @@ Authenticate
 This provides a secret token which we can share with GitHub
 Go to the settings tab on the GitHub repository. Create a new `FIREBASE_TOKEN` secret.
 
-![secret img](/engineering-education/github-actions/secret.png)
+![secret img](/github-actions/secret.png)
 
 ```yml
 name: Firebase CD

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/history-of-blockchain/
+url: /history-of-blockchain/
 title: The History of Blockchain
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: gregory-manley
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/history-of-blockchain/hero.jpg
+  - url: /history-of-blockchain/hero.jpg
     alt: history of blockchain
 ---
 The first blockchain application was started by Satoshi Nakamoto on January 3, 2009 with the creation of the first block of the chain. While we do not know the actual identity of Nakamoto, we do know the blockchain application known as Bitcoin. Bitcoin is credited with being the very first blockchain. This chain is still going strong and is the most common example of a blockchain.  

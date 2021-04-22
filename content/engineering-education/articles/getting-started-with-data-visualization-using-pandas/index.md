@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-data-visualization-using-pandas/
+url: getting-started-with-data-visualization-using-pandas/
 title: Getting Started with Data Visualization using Pandas
 description: In this tutorial we will go through how to implement different types of plots and charts. Then we'll build a simple app to better understand the need for data visualization.
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-data-visualization-using-pandas/hero.png
+  - url: /getting-started-with-data-visualization-using-pandas/hero.png
     alt: data visualization Pandas
 ---
 **Data Visualization** is the graphical representation of the data, it is both an art and a science. Nowadays images speak louder than words, and the main use of it is to discover unknown facts and the reasons for a specific result.
@@ -28,7 +28,7 @@ In this tutorial, we will go through how to implement different types of plots a
 Before we dive right in, the reader would need to have the following:
 
 - A good understanding of the **Python** programming language.
-- A basic understanding of the **pandas** library and **data analysis**, you can start with our tutorial [here](/engineering-education/data-analytics-using-pandas/).
+- A basic understanding of the **pandas** library and **data analysis**, you can start with our tutorial [here](/data-analytics-using-pandas/).
 - Have **Jupyter notebook** installed, which you can download from [here](https://jupyter.org/install).
 
 ### Importing the Dataset
@@ -37,7 +37,7 @@ After unzipping the file you have to create the python file in the same folder o
 
 After importing and performing data analysis on the dataset, we will visualize that data. For more information on the data analysis, you can start [here](https://www.section.io/engineering-education/data-analytics-using-pandas/).
 
-If you don't want to go through our [first tutorial](/engineering-education/data-analytics-using-pandas/#prerequisites) and you feel you have a firm grasp on **data analysis** you can move forward with this tutorial.
+If you don't want to go through our [first tutorial](/data-analytics-using-pandas/#prerequisites) and you feel you have a firm grasp on **data analysis** you can move forward with this tutorial.
 
 ```python
 import pandas as pd
@@ -57,7 +57,7 @@ data.plot.scatter(x='fixed acidity', y='volatile acidity', title='The acidity of
 ```
 The result will be the following plot:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/scatter_plot.PNG)
+![](/getting-started-with-data-visualization-using-pandas/scatter_plot.PNG)
 
 ### Histogram
 The histogram provides the frequency distribution of a data set for you. Histograms are one of the most frequently used methods for charting historical data. It was first introduced by [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson).
@@ -72,7 +72,7 @@ The bins argument is the number of histogram bins to be used, and you can choose
 
 The result will be:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/histogram.PNG)
+![](/getting-started-with-data-visualization-using-pandas/histogram.PNG)
 
 You can also create multiple histograms in one line of code.
 
@@ -84,7 +84,7 @@ You can change the dimensions of your figure by changing the arguments of figsiz
 
 The result will be a histogram for the first five values of every column in our dataset.
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/all_histogram.PNG)
+![](/getting-started-with-data-visualization-using-pandas/all_histogram.PNG)
 
 ### Line Chart
 The main usage of a line chart is to display the change of the data over time.
@@ -96,7 +96,7 @@ data['quality'].head().plot.line(title='quality')
 
 The result will be:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/line_chart.PNG)
+![](/getting-started-with-data-visualization-using-pandas/line_chart.PNG)
 
 ### Bar Chart
 When you have comparative data, the bar chart is the best choice. These bars can be displayed horizontally or vertically and it is very easy to implement.
@@ -108,7 +108,7 @@ data['total sulfur dioxide'].head().plot.bar()
 
 The result will be:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/bar.PNG)
+![](/getting-started-with-data-visualization-using-pandas/bar.PNG)
 
 To obtain a horizontal bar chart, we modify our code as follows:
 
@@ -131,7 +131,7 @@ The dataFrame index allows you to put strings instead of numeric values in the a
 
 Our chart will now look like:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/hbar.PNG)
+![](/getting-started-with-data-visualization-using-pandas/hbar.PNG)
 
 After learning the basics of **data visualization**, we're going to build a simple real-life application to flush out the idea.
 
@@ -169,7 +169,7 @@ ax.figure.savefig("output.pdf")
 You can save it as PNG by changing the suffix of the file name.
 After running our code you will see the following chart:
 
-![](/engineering-education/getting-started-with-data-visualization-using-pandas/protein_all.png)
+![](/getting-started-with-data-visualization-using-pandas/protein_all.png)
 
 As a result, we can conclude that the "Cheerios" and "Special K" brands have a higher value of protein among any of the brands in our dataset, and we can recommend it to the athletes.
 
@@ -183,4 +183,4 @@ In the digitalization era, data become cheap and difficult to understand. If it'
 The possibilities are endless and understanding **data visualization** can keep you ahead of the game.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

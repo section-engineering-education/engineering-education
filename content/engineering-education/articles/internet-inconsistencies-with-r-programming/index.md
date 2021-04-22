@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/internet-inconsistencies-with-r-programming/
+url: /internet-inconsistencies-with-r-programming/
 title: Internet Inconsistencies with R-Programming
 description: This article will be an introduction to detecting inconsistences in the internet using R-programming. We will be using Kali Linux and R to detect the internet inconsistencies.
 author: priya-kalyanakrishnan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/internet-inconsistencies-with-r-programming/hero.jpg
+  - url: /internet-inconsistencies-with-r-programming/hero.jpg
     alt: Internet Inconsistencies with R-Programming Image
 ---
 An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. 
@@ -79,7 +79,7 @@ kex
 
 A window should pop-up something like this:
 
-![kex](/engineering-education/internet-inconsistencies-with-r-programming/kex.jpg)  
+![kex](/internet-inconsistencies-with-r-programming/kex.jpg)  
 
 *Screen capture*  
 
@@ -92,17 +92,17 @@ sudo apt-get install r-base r-base-dev
 
 The following screens may appear:  
 
-![kexry](/engineering-education/internet-inconsistencies-with-r-programming/kexry.jpg)  
+![kexry](/internet-inconsistencies-with-r-programming/kexry.jpg)  
 
 *Screen capture*  
 
-![kexr](/engineering-education/internet-inconsistencies-with-r-programming/kexr.jpg)  
+![kexr](/internet-inconsistencies-with-r-programming/kexr.jpg)  
 
 *Screen capture*  
 
 Alternatively, using an R-programming application can be equally effective.  
 
-![r](/engineering-education/internet-inconsistencies-with-r-programming/r.jpg)  
+![r](/internet-inconsistencies-with-r-programming/r.jpg)  
 
 *Screen capture of RStudio*  
 
@@ -209,19 +209,19 @@ With reverse IP engineering being done on `45.88.197.212`, we can find five poss
 
 `Rattle` can generate data models. A decision tree model can provide a logical breakdown. Shown below, is a manually made IP address data frame:
 
-![dataframe](/engineering-education/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
+![dataframe](/internet-inconsistencies-with-r-programming/mainlocationsforasn47583.jpg)  
 
 Typically, a decision tree selects the highest possible number as the optimal choice.
 
 In this scenario, the countries categorized as less optimal are analyzed. `Amsterdam`, `Netherlands`, and `Cyprus` were shown as the top three choices. `Lithuania` and `Germany` seemed to be less optimal.
 
-![decisiontree](/engineering-education/internet-inconsistencies-with-r-programming/rplot.jpeg)  
+![decisiontree](/internet-inconsistencies-with-r-programming/rplot.jpeg)  
 
 *Screen capture*  
 
 It is possible to evaluate variable importance from a random forest model. Variable importance is shown in the image below:
 
-![variableimportance](/engineering-education/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
+![variableimportance](/internet-inconsistencies-with-r-programming/variableimportance.jpg)  
 
 *Screen capture*  
 
@@ -250,7 +250,7 @@ sudo curl http://ipinfo.io/45.88.197.212
 }
 ```  
 
-![ipinfolinux](/engineering-education/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
+![ipinfolinux](/internet-inconsistencies-with-r-programming/ipinfolinux.jpg)  
 
 *Screen capture*
 
@@ -301,4 +301,4 @@ Happy coding!
 - [Whois directory](https://www.whois.com/whois)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/text-to-speech-in-javascript/
+url: /text-to-speech-in-javascript/
 title: Text to Speech using Web Speech API in JavaScript
 description: This tutorial will give readers a detailed guide on how they can implement text to speech using the Web Speech API in JavaScript. We will add listeners to control the instance when clicked.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/text-to-speech-in-javascript/hero.jpg
+  - url: /text-to-speech-in-javascript/hero.jpg
     alt: Text to Speech using Web Speech API in JavaScript Image
 ---
 The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement text to speech. You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility.).
@@ -95,7 +95,7 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 </html>
 ```
 
-![HTML Web Page](/engineering-education/text-to-speech-in-javascript/start_screen.png)
+![HTML Web Page](/text-to-speech-in-javascript/start_screen.png)
 
 ### The JavaScript file
 Let's create an instance of the [`SpeechSynthesisUtterance`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance) class. We'll configure this instance with various properties.
@@ -390,4 +390,4 @@ Congratulations, :partying_face: You did it.
 Thanks for reading!
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

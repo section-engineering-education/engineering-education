@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/automating-ui-tests-in-android-using-espresso/
+url: /automating-ui-tests-in-android-using-espresso/
 title: Automating UI Tests in Android Using Espresso
 description: This article will cover how to automate UI tests in Andriod using the Espresso framework. Espresso is part of the `androidx` library which also observes the activity lifecycle. 
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/automating-ui-tests-in-android-using-espresso/hero.jpg
+  - url: /automating-ui-tests-in-android-using-espresso/hero.jpg
     alt: Automating UI Tests in Android Using Espresso example image
 ---
 Other than writing unit tests, developers also have to write User Interface tests to ensure their UI works as expected. Many times, developers find themselves doing these tests manually. Well, it is not much of a burden on a small project. However, manually running UI tests on a big project is a immense burden and disadvantage.
@@ -27,7 +27,7 @@ You just tell it the activity you want to open, which views you want to click on
 To follow through, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of the [Kotlin](/engineering-education/kotlin-collections/) programming language.
+  3. Have a basic understanding of the [Kotlin](/kotlin-collections/) programming language.
 
 Let's get started!
 
@@ -138,7 +138,7 @@ That's it. Let's run our test. Right-click on the test class name and select `Ru
 
 This is how the app test should run.
 
-![Test result](/engineering-education/automating-ui-tests-in-android-using-espresso/result.gif)
+![Test result](/automating-ui-tests-in-android-using-espresso/result.gif)
 
 ### Conclusion
 With that, you have seen how automated tests are written and how they run. Another perk of `espresso` is that it observes the activity lifecycle. Therefore, you don't have to write additional logic to handle them since espresso does it for you. Go ahead and automate your UI tests. It will save some time for you and hopefully, you will be more productive. 
@@ -146,4 +146,4 @@ With that, you have seen how automated tests are written and how they run. Anoth
 Happy Testing!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

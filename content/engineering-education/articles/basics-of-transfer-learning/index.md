@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-transfer-learning/
+url: /basics-of-transfer-learning/
 title: Basics of Transfer Learning
 description: This article will go over the basics of transfer learning within machine learning and deep learning. Transfer learning allows us to train newer models and satisfy a variety of tasks.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/feature-engineering-in-machine-learning/hero.jpg
+  - url: /feature-engineering-in-machine-learning/hero.jpg
     alt: transfer learning image
 ---
 When we as human beings learn new things, we do not always learn from scratch. We often transfer past knowledge and apply them to new tasks. For example, knowing how to ride a bike makes it easier to learn how to ride a motorcycle. Learning to code in C makes it easy to learn to code in Python. This is the gist of transfer learning.
@@ -28,7 +28,7 @@ In the quest to achieve artificial general intelligence (AGI), transfer learning
 4. Applications of transfer learning.
 
 ### Prerequisites
-Before we jump right in, it is recommended that the reader have a basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/engineering-education/automated-fake-news-detection/).
+Before we jump right in, it is recommended that the reader have a basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/automated-fake-news-detection/).
 
 ### Useful Terms
 **Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to an already solved problem. We will discuss the [applications](#applications-of-transfer-learning) of such models in transfer learning later on.
@@ -87,7 +87,7 @@ It's also worth noting that it's possible to carry out transfer learning in the 
 #### Transfer learning strategies
 In line with this [paper](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf), the strategies explored below are a representation of the relationship between transfer learning and traditional machine learning. They show the possibilities of transfer learning in different traditional machine learning contexts.
 
-![strategies](/engineering-education/basics-of-transfer-learning/strategies.jpg)
+![strategies](/basics-of-transfer-learning/strategies.jpg)
 
 [Image of Transfer Learning Strategies](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)
 
@@ -160,7 +160,7 @@ We could also draw from our example on image segmentation with the instance tran
 Another method involves the use of adversarial domain adaptation. Adversarial domain adaptation is a method used to transform the features of many target domains to be the same as the source domain features. This method is used to classify whole-slide images to be used when diagnosing prostate cancer. Similar approaches and uses of the CNNs architectures can be used for the detection of various cancers, health supervision, as well as detection of heart disease.
 
 #### Computer Vision
-Deep learning has been a driver of [computer vision](/engineering-education/computer-vision-straight-lines/). Different neural network architectures are used to carry out computer vision tasks. A great example of such a task is object recognition.
+Deep learning has been a driver of [computer vision](/computer-vision-straight-lines/). Different neural network architectures are used to carry out computer vision tasks. A great example of such a task is object recognition.
 
 Transfer learning for computer vision may occur through transferring of features in neural networks to improve the performance of the target network. The layers of a neural network may act as feature extractors.
 
@@ -186,4 +186,4 @@ We have taken a high-level approach to introduce the concept of transfer learnin
 5. [Transfer Learning: Leverage Insights from Big Data](https://www.datacamp.com/community/tutorials/transfer-learning)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

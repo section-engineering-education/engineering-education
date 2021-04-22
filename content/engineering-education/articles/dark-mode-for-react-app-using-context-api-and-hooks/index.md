@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/
+url: /dark-mode-for-react-app-using-context-api-and-hooks/
 title: Dark Mode for React Application using Context API and Hooks
 description: This tutorial gives readers a detailed guide on how to use the context api with reducers to implement dark mode in a react application.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/hero.jpg
+  - url: /dark-mode-for-react-app-using-context-api-and-hooks/hero.jpg
     alt: Dark Mode for React Application using Context API and Hooks Image
 ---
 In this tutorial, we will use React's Context API and Reducers in a React application to maintain the state for the theme of the application (dark/light).
@@ -119,7 +119,7 @@ If you'd like to take a look at the final code, please refer to [this GitHub Rep
 
 In the starter code, I've set up a simple screen with text and a button to switch to dark mode. I've also written all the CSS styles required for the dark mode and the light mode. Take a look at them or feel free to edit them in `src/App.css`.
 
-![Starter Screen](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
+![Starter Screen](/dark-mode-for-react-app-using-context-api-and-hooks/lightmode.png)
 
 ### Adding the Context and Reducer
 In the `src` folder, create a new file called `ThemeContext.js`. 
@@ -281,7 +281,7 @@ export default function SwitchButton() {
 
 Now, when you click on the button, the theme should change.
 
-![Toggle Mode](/engineering-education/dark-mode-for-react-app-using-context-api-and-hooks/toggle.gif)
+![Toggle Mode](/dark-mode-for-react-app-using-context-api-and-hooks/toggle.gif)
 
 ### Let's Recap
 
@@ -298,4 +298,4 @@ Congratulations, :partying_face: You did it.
 Thanks for reading!
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

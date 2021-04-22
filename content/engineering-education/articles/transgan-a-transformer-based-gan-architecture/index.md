@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/transgan-a-transformer-based-gan-architecture/
+url: /transgan-a-transformer-based-gan-architecture/
 title: TransGAN, a Transformer Based GAN Architecture
 description: In this article we will discuss a transformer-based generative adversarial network architecture. It attempts to re-design GANs architecture by replacing convolutions with pure transformers.
 author: willies-ogola
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/transgan-a-transformer-based-gan-architecture/hero.png
+  - url: /transgan-a-transformer-based-gan-architecture/hero.png
     alt: TransGAN example image
 ---
 To date, transformers or attentions have been used in Generative Adversarial Networks (GANs), but they always had a convolution component in their architecture.
@@ -28,9 +28,9 @@ This research aims to eliminate these convolutions and replace them with pure tr
 ### Prerequisites
 Before reading this article, a reader should have prior knowledge about Generative Adversarial Networks (GANs) and the Transformer architecture popularly used in Natural Language Processing (NLP). 
 
-These [articles](/engineering-education/introduction-to-generative-adversarial-networks/) on Section will help you get familiar with GANs.
+These [articles](/introduction-to-generative-adversarial-networks/) on Section will help you get familiar with GANs.
 
-Also, feel to read my previous [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/) on the Vision Transformer (ViT) model as it is essential to understanding this article.
+Also, feel to read my previous [article](/vision-transformer-using-transformers-for-image-recognition/) on the Vision Transformer (ViT) model as it is essential to understanding this article.
 
 ### Introduction
 Can we build a strong Generative Adversarial Network (GAN) free of convolutions?
@@ -47,7 +47,7 @@ The research also discusses:
 Let's get into the details of the paper.
 
 ### The TransGAN architecture
-![The TransGAN architecture](/engineering-education/transgan-a-transformer-based-gan-architecture/transgan-architecture.PNG)
+![The TransGAN architecture](/transgan-a-transformer-based-gan-architecture/transgan-architecture.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
@@ -67,7 +67,7 @@ This process helps achieve higher pixel densities (increasing resolution) in ima
 At each stage, the number of channels in the target dimensions is reduced to a quarter of the input while the resolution increases two-fold. These are then fed individually into a linear projection layer. It results in the generator producing (32 x 32) x 3-dimensional images fed into the discriminator model.  
 
 #### The discriminator
-The discriminator contains the same model mentioned in my previous [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
+The discriminator contains the same model mentioned in my previous [article](/vision-transformer-using-transformers-for-image-recognition/), the Vision Transformer (ViT) model which aims to treat images as sequences of 16 x 16 visual words. 
 
 The discriminator model receives its inputs from the generator model. It divides this 32 x 32 x 3 image into image patches fed into the transformer encoder. The transformer examines each image patch as a token embedding, as is the case in NLP.
 
@@ -83,7 +83,7 @@ Backpropagation is then performed throughout the whole architecture to train the
 The type of data augmentation they use is borrowed from this [paper](https://arxiv.org/pdf/2006.10738.pdf). It highlights different augmentation techniques for GANs. Transformers don't have locality bias built into their architecture as CNNs do, they tend to need a lot more data. Data augmentation helps get around this problem by producing more data from the same dataset.
 
 #### 2. Co-training with self-supervised auxiliary task
-![Co-training with Self-Supervised Auxiliary Task](/engineering-education/transgan-a-transformer-based-gan-architecture/co-training.PNG)
+![Co-training with Self-Supervised Auxiliary Task](/transgan-a-transformer-based-gan-architecture/co-training.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 
@@ -106,7 +106,7 @@ Throughout the training, they gradually increase the receptive field. In early t
 
 This is shown in the image below:
 
-![Gradually increasing receptive fiels](/engineering-education/transgan-a-transformer-based-gan-architecture/masked-pixel.PNG)
+![Gradually increasing receptive fiels](/transgan-a-transformer-based-gan-architecture/masked-pixel.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/2102.07074.pdf)*
 

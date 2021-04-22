@@ -12,10 +12,12 @@ pygmentsStyle = "monokai"
    tag = "tags"
    category = "categories"
    topic = "topics"
-   author = "author"
+   author = "authors"
 [permalinks]
-   engineering-education = "/:sections/:slug"
-   topics = "/engineering-education/topic/:slug/"
+   engineering-education = "/:slug/"
+   articles = "/:slug/"
+   topics = "/topic/:slug/"
+   authors = "/authors/:slug/"
 [author]
   name = "Hector Kambow"
   email = "enged@section.io"
@@ -26,7 +28,7 @@ pygmentsStyle = "monokai"
   unsafe = true
 [social]
 email = "enged@section.io"
-slack = "https://sectionio-community.slack.com/"
+slack = "https://t.co/OANAJYol8Y"
 twitter = "https://twitter.com/sectionio"
 github = "https://github.com/section-io/"
 [blackfriday]

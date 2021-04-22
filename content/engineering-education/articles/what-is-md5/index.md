@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-md5/
+url: /what-is-md5/
 title: What Is MD5 and Why Is It Considered Insecure?
 description: MD5 Message-Digest Algorithm, is a cryptographic hashing function and is part of the Message Digest Algorithm family. It is insecure and should not be used in applications.
 author: gregory-manley
@@ -10,7 +10,7 @@ date: 2020-04-20T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-md5/hero.jpg
+  - url: /what-is-md5/hero.jpg
     alt: what is md5 cryptographic hashing
 ---
 MD5 Message Digest Algorithm, or [MD5](https://en.wikipedia.org/wiki/MD5), is a cryptographic hashing function. It is a part of the Message Digest Algorithm family which was created to verify the integrity of any message or file that is hashed. MD5 is still used in a few cases; however, MD5 is insecure and should not be used in any application.

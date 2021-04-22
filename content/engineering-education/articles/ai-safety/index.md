@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ai-safety/
+url: /ai-safety/
 title: Why be Concerned about AI Safety?
 description: This article will go through the reasons why researchers are concerned about AI safety We will go over what are some potential dangers, and more importantly discuss what we can do about it.
 author: mike-white
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ai-safety/hero.jpg
+  - url: /ai-safety/hero.jpg
     alt: AI Safety example image
 ---
 About a year ago, researchers signed a petition against [AI being capable of killing people](https://futureoflife.org/lethal-autonomous-weapons-pledge/). The Future of Life Institute is [very concerned about AI safety](https://futureoflife.org/background/benefits-risks-of-artificial-intelligence/). Why is this?
@@ -75,5 +75,5 @@ For future reference, here's a list of places to look at:
 All the organizations already listed have a lot of information. [Robert Miles'](https://www.youtube.com/channel/UCLB7AzTwc6VFZrBsO2ucBMg) videos are also good resources for learning about the dangers of AI. He also has made a couple of videos on [Computerphile](https://www.youtube.com/user/Computerphile) about this topic. [The Future of Life Institute](https://futureoflife.org/ai-news/) is probably worth a follow as well.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

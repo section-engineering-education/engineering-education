@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ten-powerful-bi-tools-for-data-analysts/
+url: /ten-powerful-bi-tools-for-data-analysts/
 title: 10 Powerful Business Intelligence Tools for Data Analysts
 description: This article will discuss the most powerful Business Intelligence tools for Data Analysts and discuss the pricing and deployment models for them.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ten-powerful-bi-tools-for-data-analysts/hero.jpg
+  - url: /ten-powerful-bi-tools-for-data-analysts/hero.jpg
     alt: Business Intelligence image example
 ---
 Intense competition in global industries has made businesses seek out ways of managing their business processes for sustained growth. Organizations are seeking [business intelligence (BI)](https://searchbusinessanalytics.techtarget.com/definition/business-intelligence-BI) solutions to achieve competitiveness through advanced data analysis (especially in this era of Big Data).
@@ -32,7 +32,7 @@ Companies are also using business intelligence tools to predict future performan
 ### How business intelligence works
 The following diagram shows a simple business intelligence architecture. This diagram can be used to explain how a business intelligence system works. 
 
-![BI Architecture](/engineering-education/ten-powerful-bi-tools-for-data-analysts/bi-architecture.jpg)
+![BI Architecture](/ten-powerful-bi-tools-for-data-analysts/bi-architecture.jpg)
 
 [Image Source: Blog Spot](http://3.bp.blogspot.com/-9TD7_H5mDqI/VUi3OIUoo1I/AAAAAAAAApo/8rP5OTsfhE4/s1600/bi_architecture.bmp)
 
@@ -64,7 +64,7 @@ Working with Sisense requires little expertise with IT. This is because it is si
 - It allows data analysts to collect data from diverse sources such as Salesforce, Adwords, and Google Analytics. 
 - It has a single-stack architecture that can perform various functions such as collecting, analyzing, and organizing data. A single-stack architecture is one that consists of all functionalities and features in one stack or system. 
   
-![Sisense](/engineering-education/ten-powerful-bi-tools-for-data-analysts/sisense.png)
+![Sisense](/ten-powerful-bi-tools-for-data-analysts/sisense.png)
 
 [Image Source: Finances Online](https://financesonline.com/uploads/2017/12/vp9d305892015e14ba8e952e32137fff76.png)
   
@@ -78,7 +78,7 @@ SAP BI offers real-time analytics that improves decision making in organizations
 - It has centralized metadata.
 - It consists of a single integrated platform that offers various functionalities.
 
-![SAP](/engineering-education/ten-powerful-bi-tools-for-data-analysts/sap.png)
+![SAP](/ten-powerful-bi-tools-for-data-analysts/sap.png)
 
 [Image Source: Altex Soft](https://www.altexsoft.com/media/2019/12/word-image-18.png)
 
@@ -92,7 +92,7 @@ This is a web-based platform that provides business intelligence to Microsoft us
 - It enhances the storage of data in a cloud platform.
 - It allows users to access real-time visualizations using various devices.
 
-![Power BI](/engineering-education/ten-powerful-bi-tools-for-data-analysts/power-bi.png)
+![Power BI](/ten-powerful-bi-tools-for-data-analysts/power-bi.png)
 
 [Image Source: Tech Hive](https://images.techhive.com/images/article/2015/07/power-bi-desktop-1-100595904-orig.png)
 
@@ -106,7 +106,7 @@ This BI tool leverages data that allow businesses to get informed and timely ans
 - It allows the integration of chatbots and voice technology.
 - It consists of robust investigation tools.
 
-![MicroStrategy](/engineering-education/ten-powerful-bi-tools-for-data-analysts/microstrategy.jpg)
+![MicroStrategy](/ten-powerful-bi-tools-for-data-analysts/microstrategy.jpg)
 
 [Image Source: Mopinion](https://mopinion.com/wp-content/uploads/2018/07/Microstrategy.jpg)
 
@@ -120,7 +120,7 @@ This tool is mostly ideal for small and medium businesses. This is mainly due to
 - It allows users to utilize data gathered from diverse sources. 
 - It offers a cloud-based platform.
 
-![Zoho Analytics](/engineering-education/ten-powerful-bi-tools-for-data-analysts/zoho-analytics.jpg)
+![Zoho Analytics](/ten-powerful-bi-tools-for-data-analysts/zoho-analytics.jpg)
 
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/94878/CRM-Desk-Dashboard.jpg)
 
@@ -135,12 +135,12 @@ This is an excel-based BI tool that enables users to manage spreadsheets. It is 
 - It enables users to share insights into other applications and devices (eg. Mobile devices).
 - It consists of audit trails that enhance the tracing of data.
 
-![Clear Analytics](/engineering-education/ten-powerful-bi-tools-for-data-analysts/clear-analytics.png)
+![Clear Analytics](/ten-powerful-bi-tools-for-data-analysts/clear-analytics.png)
 
 [Image Source: Software Advice](https://www.softwareadvice.com/imglib/products/screenshots/clear-analytics-3116-1536250913-large.png?v=ebadb284e4bd8a1fd7087825e3e4b86f)
   
 #### 7. Domo
-This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL (Extract, Transform, and Load), [data warehouse, and data lakes](/engineering-education/data-lake-vs-data-warehouse-vs-database/). ETL is a tool that extracts data from various sources, and transforms it into various forms before it is loaded into a data warehouse.
+This is another business intelligence tool that supports self-administration. It allows users to utilize tools such as ETL (Extract, Transform, and Load), [data warehouse, and data lakes](/data-lake-vs-data-warehouse-vs-database/). ETL is a tool that extracts data from various sources, and transforms it into various forms before it is loaded into a data warehouse.
 
 ##### Key features
 - It can visualize data in maps, charts, and graphs.
@@ -150,7 +150,7 @@ This is another business intelligence tool that supports self-administration. It
 - It integrates information sources using Domo Integration Studio.
 - It offers intuitive functions for prediction, information exchange, and moderation.
 
-![Domo BI](/engineering-education/ten-powerful-bi-tools-for-data-analysts/domo-bi.png)
+![Domo BI](/ten-powerful-bi-tools-for-data-analysts/domo-bi.png)
 
 [Image Source: G2Crowd](https://images.g2crowd.com/uploads/attachment/file/102385/domo-device-laptop-dashboard-overview-sales-finance.png)
 
@@ -164,7 +164,7 @@ IBM Cognos Analytics is a tool that uses artificial intelligence to create intui
 - Users do not need professional expertise to use this tool.
 - It allows users to import data from various sources.
   
-![IBM Cognos Analytics](/engineering-education/ten-powerful-bi-tools-for-data-analysts/ibm-cognos-analytics.jpg)
+![IBM Cognos Analytics](/ten-powerful-bi-tools-for-data-analysts/ibm-cognos-analytics.jpg)
 
 [Image Source: Value Coders](https://www.valuecoders.com/blog/wp-content/uploads/2020/09/ibm-cognos-business-intelligence-tools-2.jpg)
 
@@ -178,7 +178,7 @@ This tool offers functionalities such as mobile BI, mapping, collaborative BI, d
 - Its dashboards are AI-driven.
 - It provides BI solutions such as external apps for analytics, enterprise analytics, and embedded analytics. 
 
-![Yellowfin BI](/engineering-education/ten-powerful-bi-tools-for-data-analysts/yellow-fin-bi.png)
+![Yellowfin BI](/ten-powerful-bi-tools-for-data-analysts/yellow-fin-bi.png)
 
 [Image Source: Weebly](http://yfcs.weebly.com/uploads/4/3/9/7/43974277/3215752_orig.png)
   
@@ -192,7 +192,7 @@ This is a BI tool that enhances the safety and accuracy of data. This tool suppo
 - It has an associative engine feature that enables users to discover data.
 - In this tool, users can interact with analytics, dynamic apps, and dashboards.
 
-![QlikView](/engineering-education/ten-powerful-bi-tools-for-data-analysts/qlikview.jpg)
+![QlikView](/ten-powerful-bi-tools-for-data-analysts/qlikview.jpg)
 
 [Image Source: Xax](https://www.xax.de/wp-content/uploads/2018/11/financial-1024x726.jpg)
   
@@ -233,4 +233,4 @@ An organization can choose a business intelligence tool based on important aspec
 - [PAT Research](https://www.predictiveanalyticstoday.com/top-business-intelligence-tools/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

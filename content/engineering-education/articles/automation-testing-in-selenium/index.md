@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/automation-testing-in-selenium/
+url: automation-testing-in-selenium/
 title: An Overview on Automation Testing with Selenium
 description: This article will be an overview on automation testing using Selenium. We will go over the components of Selenium by highlighting the main types of testing done by Selenium and what they are used for. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/automation-testing-in-selenium/hero.jpg
+  - url: /automation-testing-in-selenium/hero.jpg
     alt: Automation Testing Image
 ---
 Selenium is an effective automation tool that can help developers to validate their applications. The digital revolution has led to an increase in the number of web applications. Developers are constantly creating new web applications to meet various demands.
@@ -57,7 +57,7 @@ Selenium IDE can be used even by people who have little experience with programm
 
 The following diagram shows a screenshot of an IDE plugin in Mozilla Firefox.
 
-![Selenium IDE](/engineering-education/automation-testing-in-selenium/selenium-ide.png)
+![Selenium IDE](/automation-testing-in-selenium/selenium-ide.png)
 
 [Image Source: Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/selenium-ide.png)
 
@@ -66,7 +66,7 @@ When a web browser is opened by a user, the Selenium Recorder records the test c
 #### Selenium remote control (RC)
 This can also be termed as Selenium 1. It's a server that utilizes HTTP protocols to accept the command of the browsers. It supports the use of various programming languages such as Python, C#, Java, and Perl. Selenium 1 consists of two main components: the RC server and the RC client. The former uses HTTP requests to communicate. RC client acts as a library for the programming codes.
 
-![Selenium RC](/engineering-education/automation-testing-in-selenium/selenium-rc.png)
+![Selenium RC](/automation-testing-in-selenium/selenium-rc.png)
 
 [Image Source: Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/04/selenium-rc.png)
 
@@ -77,7 +77,7 @@ This component was developed to reduce the execution time of tests. Through this
 
 The following shows a simple diagram of how a Selenium grid works. 
 
-![Selenium Grid](/engineering-education/automation-testing-in-selenium/selenium-grid.png)
+![Selenium Grid](/automation-testing-in-selenium/selenium-grid.png)
 
 [Image Source: Blog Spot](https://3.bp.blogspot.com/-sDHo9f9ODug/WXNptDcQEbI/AAAAAAAAAXs/f8chxG1ddH8UQJykqyUiZxRLdaMwe0aiQCLcBGAs/s1600/Selenium+Grid+Tutorial+1+www.helpautomation.blogspot.com.png)
 
@@ -96,7 +96,7 @@ Selenium web driver is also compatible with various browsers such as Opera, Inte
 
 The following diagram shows a simple web driver architecture.
 
-![Selenium Web Driver Architecture](/engineering-education/automation-testing-in-selenium/selenium-web-driver-architecture.jpg)
+![Selenium Web Driver Architecture](/automation-testing-in-selenium/selenium-web-driver-architecture.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2019/04/Selenium-Webdriver-Architecture.jpg)
 
@@ -135,4 +135,4 @@ The Selenium software is ideal for companies developing applications that suppor
 - [Selenium Easy](https://www.seleniumeasy.com/selenium-tutorials/introduction-to-selenium)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

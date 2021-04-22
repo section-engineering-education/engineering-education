@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-generators/
+url: /python-generators/
 title: A Look at Python Generators
 description: In this article we will go over the concepts of generators in Python. Generators are useful when working with complex datasets and performing memory-intensive tasks.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-generators/hero.jpg
+  - url: /python-generators/hero.jpg
     alt: Python example image
 ---
 Generators are functions that return an iterable set of items that can be iterated through one at a time. They were introduced with Python Enhancement Proposal 255 [(PEP 255)](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in Python.
@@ -219,4 +219,4 @@ def get_longest_name():
 In this article we went over the concepts of generators in Python.  They are useful when working with complex datasets and performing memory-intensive tasks. You can find more on Python generators from the Python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions that are memory intensive.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

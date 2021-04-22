@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/webpack/
+url: /webpack/
 title: Introduction To Webpack with Node.js
 description: This article serves as an Introduction to webpack - webpack is a static module bundler for modern JavaScript applications. 
 author: rohan-reddy
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/webpack/hero.jpg
+  - url: /webpack/hero.jpg
     alt: webpack example text image
 ---
 [Webpack](https://webpack.js.org/) is a *static module bundler* for JavaScript applications. It takes [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), whether that's a custom file that we created or something that was installed through NPM, and converts these modules to static assets.

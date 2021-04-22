@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-xml-webpages-using-xslt/
+url: /building-xml-webpages-using-xslt/
 title: Building XML webpages using XSLT
 description: This tutorial will serve as an introduction on building XML webpages using XSLT. We will go through what XSLT is, how webpages are rendered, and how to build a sample XML webpage using XSLT.
 author: srishilesh-p-s
@@ -10,12 +10,12 @@ date: 2020-12-21T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/building-xml-webpages-using-xslt/hero.jpg
+  - url: /building-xml-webpages-using-xslt/hero.jpg
     alt: Building XML webpages using XSLT
 ---
 In this article, we will learn about building XML webpages using eXtensible Stylesheet Language Transformations (XSLT). By the end of the article, you will have an overview how HTML webpages are built by transforming XML codes. You will also learn a step-by-step procedure on how to build a simple webpage.
 <!--more-->
-In my previous articles about the [Validation of XML using DTD](/engineering-education/validating-xml-using-dtd/) and [Validation of XML using XSD](/engineering-education/validating-xml-using-xsd/), we learned about the basics of XML and implemented validations using [DTD](https://en.wikipedia.org/wiki/Document_type_definition) and [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)).
+In my previous articles about the [Validation of XML using DTD](/validating-xml-using-dtd/) and [Validation of XML using XSD](/validating-xml-using-xsd/), we learned about the basics of XML and implemented validations using [DTD](https://en.wikipedia.org/wiki/Document_type_definition) and [XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C)).
 
 I highly recommend going over the previous articles to better grasp those concepts. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
 
@@ -287,7 +287,7 @@ By following the step-by-step procedures above, you would have successfully buil
 
 Due to security concerns in several browsers like Google Chrome, the output can be viewed using the Internet Explorer browser. More details about the security concern in Google Chrome can be found [here](https://stackoverflow.com/questions/4558160/xsl-not-working-in-google-chrome).
 
-![A sample output of XML Webpage](/engineering-education/building-xml-webpages-using-xslt/output.PNG)
+![A sample output of XML Webpage](/building-xml-webpages-using-xslt/output.PNG)
 
 ### Conclusion
 In conclusion, we have gone through what XSLT is, how webpages are rendered, and how to build a sample XML webpage using XSLT. This article serves only as an introduction to building XML webpages using XSLT. It's highly recommended to try out the code manually by reading further from the referenced articles.
@@ -317,4 +317,4 @@ To summarize:
 - [More about XPath](https://www.w3schools.com/xml/xpath_intro.asp)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

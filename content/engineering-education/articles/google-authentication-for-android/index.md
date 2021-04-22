@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-authentication-for-android/
+url: /google-authentication-for-android/
 title: Google Authentication in Android Applications
 description: This guide will go over how to integrate Google authentication into Android applications with code examples.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/google-authentication-for-android/hero.jpg
+  - url: /google-authentication-for-android/hero.jpg
     alt: example image Google Authentication
 ---
 [Authentication enables organizations](https://medium.com/@harsha.thirimanna/authentication-3a3556caf98f) to keep their networks secure by permitting only authenticated users (or processes) to access its protected resources. This shows how important it is to authenticate users. User authentication can be done in various ways.
@@ -27,7 +27,7 @@ In 2019, one of the top ten user experience (UX) trends was using third-party au
 
 #### Terminologies
 - Authentication - The process or action of verifying the identity of a user or process.
-- [Firebase](https://firebase.google.com/) - A platform developed by Google used to create mobile and web applications. For more information on [Firebase check this](/engineering-education/node-firebase/) article out.
+- [Firebase](https://firebase.google.com/) - A platform developed by Google used to create mobile and web applications. For more information on [Firebase check this](/node-firebase/) article out.
 - [Dependency](https://developer.android.com/studio/build/dependencies) - A platform developed by Google used to create mobile and web applications.
 - [Json](https://www.json.org/json-en.html) - (JavaScript Object Notation) is a lightweight data-interchange format.
 - [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.) - Provides backend services, SDKs, and UI libraries to authenticate users to your application.
@@ -42,15 +42,15 @@ In this step, we will [create](https://developer.android.com/studio/projects/cre
 
 - Open Android Studio. Select *Start a new Android Studio project* and click on next.
 
-![Open Android Studio](/engineering-education/google-authentication-for-android/empty.png)
+![Open Android Studio](/google-authentication-for-android/empty.png)
 
 - Select *Empty Activity* and click on next.
 
-![Select on Empty Activity](/engineering-education/google-authentication-for-android/name.png)
+![Select on Empty Activity](/google-authentication-for-android/name.png)
 
 - We will name the project **GoogleSignUp**. Click on *Finish* and wait for the project to build.
 
-![Empty Activity](/engineering-education/google-authentication-for-android/newproject.png)
+![Empty Activity](/google-authentication-for-android/newproject.png)
 
 #### Step 2 – Creating the Google sign up button
 In this step, we will add a Google sign in button to our activity's resource file.
@@ -88,7 +88,7 @@ app:layout_constraintTop_toTopOf="parent" />
 
 **Note: Type `app:isDarkTheme="{Boolean}"`: To switch between blue theme and a gray-white theme for the button. The [library will handle](https://android-arsenal.com/details/1/7099) the changing of text color and background color. It also handles the change of color on button press or button clicks.**
 
-![Layout Resource File](/engineering-education/google-authentication-for-android/xml.png)
+![Layout Resource File](/google-authentication-for-android/xml.png)
 
 #### Step 3 - Setting up Firebase
 Set up and connect your project on Firebase by following instructions stated by Google [here](https://firebase.google.com/docs/android/setup).
@@ -241,17 +241,17 @@ Let's create an `UpdateUI` method that will be used to display the UI for the Go
 We are done! Let's run the app to test it out.
 
 #### Screen one
-![GoogleSignUp](/engineering-education/google-authentication-for-android/finalone.jpg)
+![GoogleSignUp](/google-authentication-for-android/finalone.jpg)
 
 #### Screen two
-![GoogleSignUp](/engineering-education/google-authentication-for-android/finaltwo.jpg)
+![GoogleSignUp](/google-authentication-for-android/finaltwo.jpg)
 
 #### Screen three
-![GoogleSignUp](/engineering-education/google-authentication-for-android/finalthree.jpg)
+![GoogleSignUp](/google-authentication-for-android/finalthree.jpg)
 
 You can access the full source code [here](https://github.com/BrianaNzivu/googlesignup).
 
 You can download the application [here](https://drive.google.com/file/d/1qeb3z7RfXaMfMl9I4AhQQYDrbhmem2n0/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

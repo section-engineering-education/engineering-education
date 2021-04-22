@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/beginner-guide-to-npm/
+url: /beginner-guide-to-npm/
 title: An Absolute Beginner Guide to Node Package Manager
 description: In this guide, we will cover the basics of NPM, see what we can achieve with it, and understand the whole concept of NPM.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/beginner-guide-to-npm/hero.jpg
+  - url: /beginner-guide-to-npm/hero.jpg
     alt: Node.js npm node package manager example image
 ---
 The whole ecosystem of Node.js is based on tools such as NPM. NPM is a Node.js package manager. It provides a bunch of open source packages. This extensive ecosystem of open source libraries makes Node.js a popular technology.
@@ -146,7 +146,7 @@ Is this OK? (yes)
 
 A `package.json` file is automatically generated to save aspects of your project.
 
-![Package.json File](/engineering-education/beginner-guide-to-npm/package-json.png)
+![Package.json File](/beginner-guide-to-npm/package-json.png)
 
 
 Alternatively, add a `--yes` flag to `npm init` to generate the `package.json`file with the default NPM value.
@@ -201,7 +201,7 @@ found 0 vulnerabilities
 
 This command will install lodash to the `node_module` folder. At first, our project didn’t have a `node_module` folder. The folder will be created once you install the first package.
 
-![Node_module Folder](/engineering-education/beginner-guide-to-npm/node-module.png)
+![Node_module Folder](/beginner-guide-to-npm/node-module.png)
 
 Try another package:
 
@@ -388,7 +388,7 @@ npm install uglify-js mocha jshint --global ## installing multiple packages glob
 
 These packages are installed to `\Users\kim\.node_modules_global` path and not saved in our project dependencies.
 
-![Node_modules_global Path](/engineering-education/beginner-guide-to-npm/globals-path.png)
+![Node_modules_global Path](/beginner-guide-to-npm/globals-path.png)
 
 Let's list the packages installed globally.
 
@@ -444,7 +444,7 @@ NPM will always try to avoid the installation of a deprecated version. NPM will 
 ### Package-lock.json
 Earlier on, we saw a `package-lock.json` file created in our project.
 
-![Package-lock.json File](/engineering-education/beginner-guide-to-npm/packag-lock-json.png)
+![Package-lock.json File](/beginner-guide-to-npm/packag-lock-json.png)
 
 This file ensures that all packages version remain uniform across computers where the project is cloned. It saves information about the dependencies and package versions you use in your project.
 
@@ -610,7 +610,7 @@ app.get("/", (req, res) =>{
 
 On your command line, run `node app.js`. This will give you ***Application started and Listening on port 3000***. If you visit `http://localhost:3000/` on your browser, a message ***hello world!*** will greet you, sent by your server.
 
-This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about Express, we have a guide that will get you [started to express servers and routing](/engineering-education/express/).
+This a basic example of applying the installed express to a Node.js project. If you are interested in learning more about Express, we have a guide that will get you [started to express servers and routing](/express/).
 
 ### Conclusion
 This guide introduced you to NPM. I hope it gave you a good impression on how best to get started using this amazing tool. It bridges Node.js and NPM.
@@ -620,15 +620,15 @@ It provides you with packages repositories—as there are many various packages 
 Suppose you are interested in learning more; below are some links. Do have a look at them to learn more about Node.js and NPM.
 
 ### Related Topics and Additional Resources
-[The History of Node.js](/engineering-education/history-of-nodejs/)
+[The History of Node.js](/history-of-nodejs/)
 
-[Most Useful Node.js Packages](/engineering-education/most-useful-nodejs-packages/)
+[Most Useful Node.js Packages](/most-useful-nodejs-packages/)
 
-[Create and Deploy NPM Packages](/engineering-education/npm-packages/)
+[Create and Deploy NPM Packages](/npm-packages/)
 
-[Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
+[Open-source packages & Code Security using NPM](/npm-registry-opensource-code-security-with-npm6/)
 
-[10 Tips for Working with Node.js](/engineering-education/ten-tips-for-working-with-nodejs/)
+[10 Tips for Working with Node.js](/ten-tips-for-working-with-nodejs/)
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

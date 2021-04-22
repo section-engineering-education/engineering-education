@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ensemble-learning/
+url: /ensemble-learning/
 title: Ensemble Learning Techniques to Improve Machine Learning
 description: This article will be going over ensemble learning methods that allow us to average the performance of many models to generate one final model.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ensemble-learning/hero.jpg
+  - url: /ensemble-learning/hero.jpg
     alt: ensemble learning image example
 ---
 We build machine learning models to provide the best possible predictions to a given problem. However, a single model may not make the best predictions and may be subject to errors such as variance and bias.
@@ -26,7 +26,7 @@ To reduce these errors and improve the predictions, we may combine multiple mode
 - Ensemble learning techniques.
 
 ### Prerequisites
-An understanding of machine learning is recommended. This [post](/engineering-education/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
+An understanding of machine learning is recommended. This [post](/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
 
 ### Ensemble learning
 Ensemble learning refers to a method where many base models are combined to carry out the same task. These base models are usually referred to as weak learners. 
@@ -66,7 +66,7 @@ Here are the steps to the bagging process:
 
 The image below will aid in the understanding of the bagging process.
 
-![bagging](/engineering-education/ensemble-learning/bagging.png)
+![bagging](/ensemble-learning/bagging.png)
 
 *Bagging process*
 
@@ -100,7 +100,7 @@ We can describe stacking as a technique that uses many classifiers' predictions 
 
 Let’s use an image to explain this technique a bit more intuitively.
 
-![stacking](/engineering-education/ensemble-learning/stacking.png)
+![stacking](/ensemble-learning/stacking.png)
 
 *The framework of a stacking classifier*
 
@@ -115,7 +115,7 @@ Finally, we use the resultant predictions to train the meta-classifier. It's wor
 
 The image below gives a better description of the process.
 
-![stackingregression](/engineering-education/ensemble-learning/stackingregression.png)
+![stackingregression](/ensemble-learning/stackingregression.png)
 
 *Stacking in regression*
 
@@ -178,7 +178,7 @@ Until next time, good luck!
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 
 <!-- MathJax script -->

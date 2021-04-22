@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-quantum-computers/
+url: /introduction-quantum-computers/
 title: Quantum Computers - Are they the future of computing?
 description: Computers that perform quantum computations are known as quantum computers. Quantum computing is the use of quantum-mechanical processing such as superposition and entanglement to perform computation.
 author: michael-zanoff
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-quantum-computers/hero.jpg
+  - url: /introduction-quantum-computers/hero.jpg
     alt: quantum image
 ---
 Computers are electronic devices designed to store and process data. As time has passed, computers have made large strides in both the areas of storage capacity and processing power, but when will these strides reach their limits, and what will be the defining limitations? When it comes to complex computations, there is one specific technology that is helping to break past the limitations of classical computers – quantum computing.

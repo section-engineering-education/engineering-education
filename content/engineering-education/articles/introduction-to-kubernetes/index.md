@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kubernetes/
+url: /introduction-to-kubernetes/
 title: Getting Started with Kubernetes
 description: This article will go over the various components found in Kubernetes architecture. We will include example YAML and JSON files used for deployment.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-kubernetes/hero.png
+  - url: /introduction-to-kubernetes/hero.png
     alt: Kubernetes architecture example image
 ---
 Kubernetes is a container orchestration platform. It was designed to manage the lifecycle of containers and services, while providing scalability, predictability, and availability.
@@ -40,12 +40,12 @@ Kubernetes objects are defined using YAML or JSON files that are referred to as 
 #### Pod
 The pod is the fundamental building block of Kubernetes. It comprises one or more tightly coupled containers with a shared networking layer and file system volume. Higher-level components manage pods therefore, they are not explicitly defined in the manifest file.
 
-![Pod](/engineering-education/introduction-to-kubernetes/pod.png)
+![Pod](/introduction-to-kubernetes/pod.png)
 
 #### Deployment
 A deployment comprises a collection of pods defined by a template and a replica count. A specific value for replica count can be set, or a separate Kubernetes resource (horizontal pod autoscaller) can be used to control the replica count based on the CPU utilization.
 
-![Deployment](/engineering-education/introduction-to-kubernetes/deployment.png)
+![Deployment](/introduction-to-kubernetes/deployment.png)
 
 If three pods are running in the deployment crash due to machine failure, three more pods will be scheduled to run on a different machine. Deployments are best for deploying stateless applications where pods can be replaced without causing a cluster problem.
 
@@ -134,7 +134,7 @@ $ kubectl version --client
 ```
 
 ### Conclusion
-Now that you have learned various components found in Kubernetes, run a Kubernetes cluster locally using [minikube](https://minikube.sigs.k8s.io/docs/start/). The next article will cover deploying a Django application that we created [here](/engineering-education/django-crud-api/) to a Kubernetes cluster running locally.
+Now that you have learned various components found in Kubernetes, run a Kubernetes cluster locally using [minikube](https://minikube.sigs.k8s.io/docs/start/). The next article will cover deploying a Django application that we created [here](/django-crud-api/) to a Kubernetes cluster running locally.
 
 ---
-Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
+Peer Review Contributions by: [Briana Nzivu](/authors/briana-nzivu/)

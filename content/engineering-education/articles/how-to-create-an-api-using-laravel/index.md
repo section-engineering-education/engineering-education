@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-create-an-api-using-laravel/
+url: /how-to-create-an-api-using-laravel/
 title: How to Create an API using Laravel
 description: In this tutorial we will learn how to create a simple task manager API using Laravel which is a a vital PHP framework used in creating interactive websites and APIs.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-create-an-api-using-laravel/hero.png
+  - url: /how-to-create-an-api-using-laravel/hero.png
     alt: task manager API using Laravel image
 ---
 An Application Programming Interface, denoted as API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. 
@@ -315,7 +315,7 @@ php artisan route:list
 
 Here are the available routes in the `taskmanager` project.
 
-![routes](/engineering-education/how-to-create-an-api-using-laravel/routes.png)
+![routes](/how-to-create-an-api-using-laravel/routes.png)
 
 ### 7. Testing
 We will use Postman for our tests. Please watch the video below to learn how the tests are done.
@@ -331,4 +331,4 @@ The `Laravel` framework has made it easy to create powerful and secure APIs quic
 - [XAMPP](https://www.apachefriends.org/index.html) 
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

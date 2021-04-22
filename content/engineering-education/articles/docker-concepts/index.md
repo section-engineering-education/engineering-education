@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/docker-concepts/
+url: /docker-concepts/
 title: Understanding Docker Concepts
 description: The basic concepts of Docker, technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
 author: francisca-adekanye
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/docker-concepts/hero.jpg
+  - url: /docker-concepts/hero.jpg
     alt: container example image
 ---
 [Docker](https://docs.docker.com/get-started/overview/), an open-source project launched in 2013, has helped popularize technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.
@@ -23,7 +23,7 @@ Virtualization is the technique of importing a Guest operating system on top of 
 ### What is Containerization?
 Containerization is a form of operating system virtualization, through which it runs applications in secluded user spaces called containers, all using the same shared operating system (OS).
 
-![Docker logo](/engineering-education/docker-concepts/Docker-logo.png)
+![Docker logo](/docker-concepts/Docker-logo.png)
 
 ### What is Docker?
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package. Initially, built for Linux, Docker now runs on Windows and macOS. To understand how Docker works, let’s look at some components you would use to create Docker-containerized applications.
@@ -68,4 +68,4 @@ Docker allows developing, testing, and deploying applications faster. A software
 
 - [Understanding Linux containers](https://www.redhat.com/en/topics/containers?intcmp=7016000000127cYAAQ)
 
-- [A Brief History Of Container Technology](/engineering-education/history-of-container-technology/)
+- [A Brief History Of Container Technology](/history-of-container-technology/)

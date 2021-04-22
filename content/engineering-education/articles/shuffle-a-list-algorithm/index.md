@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/shuffle-a-list-algorithm/
+url: /shuffle-a-list-algorithm/
 title:  How to Shuffle a List Using the Fisher-Yates Method
 description: In this step-by-step guide, we use the Fisher-Yates algorithm to shuffle a list using JavaScript.
 author: mike-white
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/shuffle-a-list-algorithm/hero.jpg
+  - url: /shuffle-a-list-algorithm/hero.jpg
     alt: sorting image deck of cards
 ---
 A couple of months ago, I made a webpage called the [Pronoun Testing Grounds](https://botahamec.github.io/pronoun_test/). It allows users to try a different set of pronouns. It comes up with a cute little story to try them out. It's like the [Pronoun Dressing Room](http://www.pronouns.failedslacker.com/), if you've heard of that.
@@ -22,11 +22,11 @@ Most people don't know what objective and possessive determiner pronouns are.
 
 The Pronoun Dressing Room solves this by using she/her pronouns as placeholder text. It tells you that the subjective pronoun for a girl is "she", and the reflexive pronoun is "herself". This is problematic because the objective and possessive determiner pronouns are both "her". Someone could very feasibly be confused about which pronouns are which.
 
-![The placeholder text for the Pronoun Dressing Room.](/engineering-education/shuffle-a-list-algorithm/dressing_room.png)
+![The placeholder text for the Pronoun Dressing Room.](/shuffle-a-list-algorithm/dressing_room.png)
 
 My solution was to give three examples for each pronoun: "he/him", "she/her", and "they/them". This way, nobody should be confused about which pronoun is which. If you click on the link to the Pronoun Testing Grounds, you may notice that these pronouns are in the wrong order. Or you're now very confused because it seems like they're in the right order.
 
-![The placeholder text for the Pronoun Testing Grounds. In this instance, all of the pronouns are in the order of they/she/he](/engineering-education/shuffle-a-list-algorithm/placeholders.png)
+![The placeholder text for the Pronoun Testing Grounds. In this instance, all of the pronouns are in the order of they/she/he](/shuffle-a-list-algorithm/placeholders.png)
 
 I didn't want to come up with one order for the list of pronouns, so I shuffle the list each time. When I loaded it just now, the order was they/she/he. Our goal is clear. We need a completely random shuffling method to do this. What's the best way of doing this?
 
@@ -34,7 +34,7 @@ I didn't want to come up with one order for the list of pronouns, so I shuffle t
 
 This is the definitive way to shuffle a list. All we need to do is swap every item with another, randomly selected item. We can break down the problem step-by-step. All the code in this article will use JavaScript.
 
-![A hand-drawn demonstration of the Fisher-Yates algorithm](/engineering-education/shuffle-a-list-algorithm/fisher_yates.jpg)
+![A hand-drawn demonstration of the Fisher-Yates algorithm](/shuffle-a-list-algorithm/fisher_yates.jpg)
 
 We can start the function to shuffle the list like this:
 
@@ -89,7 +89,7 @@ list[index_one] = list[index_two]; // put the value of index_one into index_two
 list[index_two] = temp; // put the old value of index_two into index_one
 ```
 
-![A hand-drawn demonstration of how the swap function works](/engineering-education/shuffle-a-list-algorithm/swap.jpg)
+![A hand-drawn demonstration of how the swap function works](/shuffle-a-list-algorithm/swap.jpg)
 
 Finally, we can call the `swap` function in our `shuffle` function, so that the final code looks like this:
 

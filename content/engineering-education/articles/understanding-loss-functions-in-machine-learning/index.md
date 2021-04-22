@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-loss-functions-in-machine-learning/
+url: /understanding-loss-functions-in-machine-learning/
 title: Understanding Loss Functions in Machine Learning
 description: This tutorial will be a brief dive into the understanding loss functions used in Machine Learning.
 author: prashanth-saravanan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-loss-functions-in-machine-learning/hero.jpg
+  - url: /understanding-loss-functions-in-machine-learning/hero.jpg
     alt: Loss functions hero image
 ---
 Loss functions play an important role in any statistical model - they define an objective which the performance of the model is evaluated against and the parameters learned by the model are determined by minimizing a chosen loss function.
@@ -47,7 +47,7 @@ Regression problems may have variables that are not strictly [Gaussian in nature
 
 As the name suggests, MAE takes the average sum of the absolute differences between the actual and the predicted values. For a data point x<sub>i</sub> and its predicted value y<sub>i</sub>, n being the total number of data points in the dataset, the mean absolute error is defined as:
 
-![MAE](/engineering-education/understanding-loss-functions-in-machine-learning/mean-absolute-error.PNG)
+![MAE](/understanding-loss-functions-in-machine-learning/mean-absolute-error.PNG)
 
 *Source: [Google](https://www.gstatic.com/education/formulas2/-1/en/mean_absolute_error.svg)*
 
@@ -56,7 +56,7 @@ As the name suggests, MAE takes the average sum of the absolute differences betw
 
 Mean Squared Error is the average of the squared differences between the actual and the predicted values. For a data point Y<sub>i</sub> and its predicted value Ŷ<sub>i</sub>, where n is the total number of data points in the dataset, the mean squared error is defined as:
 
-![MSE](/engineering-education/understanding-loss-functions-in-machine-learning/mean-squared-error.PNG)
+![MSE](/understanding-loss-functions-in-machine-learning/mean-squared-error.PNG)
 
 *Source: [Google](https://www.gstatic.com/education/formulas2/-1/en/mean_squared_error.svg)*
 
@@ -67,7 +67,7 @@ Mean Bias Error takes the actual difference between the target and the predicted
 
 The formula of Mean Bias Error is:
 
-![MBE](/engineering-education/understanding-loss-functions-in-machine-learning/mean-bias-error.png)
+![MBE](/understanding-loss-functions-in-machine-learning/mean-bias-error.png)
 
 *Source: [Medium](https://miro.medium.com/max/992/1*IRC-jYMJehmHl96GIUAT4Q.png)*
 
@@ -78,7 +78,7 @@ Sometimes, one may not want to penalize the model too much for predicting unscal
 
 Calculating the Mean Squared Logarithmic Error is the same as Mean Squared Error, except the natural logarithm of the predicted values is used rather than the actual values.
 
-![MSLE](/engineering-education/understanding-loss-functions-in-machine-learning/mean-squared-loss-error.PNG)
+![MSLE](/understanding-loss-functions-in-machine-learning/mean-squared-loss-error.PNG)
 
 Where y<sub>i</sub> is the true value, ŷ<sub>i</sub> is the predicted value and 'n' is the total number of data points in the dataset.
 
@@ -99,7 +99,7 @@ On the other hand, MSE ensures the regression line moves lightly for a small adj
 
 Huber Loss is characterized by the parameter delta (𝛿). For a prediction f(x) of the data point y, with the characterizing parameter 𝛿, Huber Loss is formulated as:
 
-![Huber Loss](/engineering-education/understanding-loss-functions-in-machine-learning/huber-loss.PNG)
+![Huber Loss](/understanding-loss-functions-in-machine-learning/huber-loss.PNG)
 
 *Source: [Analytics Vidhya](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/08/huber.jpg.jpg)*
 
@@ -115,7 +115,7 @@ This is the most common loss function used for classification problems that have
 
 If the divergence of the predicted probability from the actual label increases, the cross-entropy loss increases. Going by this, predicting a probability of .011 when the actual observation label is 1 would result in a high loss value. In an ideal situation, a "perfect" model would have a [log loss](https://www.kaggle.com/dansbecker/what-is-log-loss) of 0. Looking at the loss function would make things even clearer -
 
-![Binary Cross Entropy Loss](/engineering-education/understanding-loss-functions-in-machine-learning/binary-cross-entropy-loss.PNG)
+![Binary Cross Entropy Loss](/understanding-loss-functions-in-machine-learning/binary-cross-entropy-loss.PNG)
 
 *Source: [Rohan Varma](https://rohanvarma.me/Loss-Functions/)*
 
@@ -128,7 +128,7 @@ Pretty clever, isn't it?
 #### Categorical Cross Entropy Loss
 Categorical Cross Entropy loss is essentially Binary Cross Entropy Loss expanded to multiple classes. One requirement when categorical cross entropy loss function is used is that the labels should be [one-hot encoded](https://medium.com/@michaeldelsole/what-is-one-hot-encoding-and-how-to-do-it-f0ae272f1179). 
 
-This way, only one element will be non-zero as other elements in the vector would be multiplied by zero. This property is extended to an activation function called softmax, more of which can be found in [this article](/engineering-education/activation-functions/).
+This way, only one element will be non-zero as other elements in the vector would be multiplied by zero. This property is extended to an activation function called softmax, more of which can be found in [this article](/activation-functions/).
 
 #### Hinge Loss
 Another commonly used loss function for classification is the hinge loss. Hinge loss is primarily developed for [support vector machines](https://en.wikipedia.org/wiki/Support-vector_machine) for calculating the maximum margin from the hyperplane to the classes.
@@ -137,13 +137,13 @@ Loss functions penalize wrong predictions and does not do so for the right predi
 
 This margin is the maximum margin from the hyperplane to the data points, which is why hinge loss is preferred for SVMs. The following image clears the air on what a hyperplane and maximum margin is:
 
-![SVM](/engineering-education/understanding-loss-functions-in-machine-learning/svm.png)
+![SVM](/understanding-loss-functions-in-machine-learning/svm.png)
 
 *Source: [Research Gate](https://www.researchgate.net/publication/304611323/figure/fig8/AS:668377215406089@1536364954428/Classification-of-data-by-support-vector-machine-SVM.png)*
 
 The mathematical formulation of hinge loss is as follows:
 
-![Hinge Loss](/engineering-education/understanding-loss-functions-in-machine-learning/hinge-loss.png)
+![Hinge Loss](/understanding-loss-functions-in-machine-learning/hinge-loss.png)
 
 *Source: [Towards Data Science](https://towardsdatascience.com/common-loss-functions-in-machine-learning-46af0ffc4d23)*
 
@@ -156,7 +156,7 @@ Kullback Leibler Divergence Loss is a measure of how a distribution varies from 
 
 The number of information lost in the predicted distribution is used as a measure. The KL Divergence of a distribution P(x) from Q(x) is given by:
 
-![KL Divergence Loss](/engineering-education/understanding-loss-functions-in-machine-learning/kl-divergence-loss.PNG)
+![KL Divergence Loss](/understanding-loss-functions-in-machine-learning/kl-divergence-loss.PNG)
 
 *Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)*
 
@@ -171,7 +171,7 @@ This article was a run-through of the loss functions used in classification and 
 5. [Article by Rohan Varma](https://rohanvarma.me/Loss-Functions/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

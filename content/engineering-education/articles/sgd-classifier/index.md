@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sgd-classifier/
+url: /sgd-classifier/
 title: Stochastic Gradient Descent Optimized Linear Classifier in Python
 description: This tutorial will go over how to implement a linear classifier using a stochastic gradient descent optimizer.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sgd-classifier/hero.jpg
+  - url: /sgd-classifier/hero.jpg
     alt: Stochastic Gradient Classifier example image
 ---
 Welcome to a tutorial on implementing a linear classifier using a Stochastic Gradient Descent optimizer (SDG). This article will cover the theory behind modeling data using loss functions and help the reader understand the optimization process used to minimize the loss functions. Finally, we will code the linear classifier from scratch and use the Iris dataset to test the linear classifier.
@@ -23,7 +23,7 @@ Welcome to a tutorial on implementing a linear classifier using a Stochastic Gra
 4. Code a Linear Classifier
 
 ### Linear Classifiers   
-Linear classifiers are a type of [supervised learning algorithm](/engineering-education/supervised-learning-algorithms/) used on linear datasets. How is linearity defined in the case of a dataset?
+Linear classifiers are a type of [supervised learning algorithm](/supervised-learning-algorithms/) used on linear datasets. How is linearity defined in the case of a dataset?
 
 Consider a dataset with two classes. If the linear classifier can come up with a linear decision boundary to classify the two categories, that is, a straight line of the form $y=mx+c$, then the dataset is linearly separable.
 
@@ -31,13 +31,13 @@ The notations used in the previous equation are as follows: $y$ is the output va
 
 Consider the image given below. This is a linear classifier classifying the conjunction (AND) function. The two-input [AND](https://en.wikipedia.org/wiki/AND_gate) function outputs only one when the two inputs are 1. In all other cases, it's output is 0. The dotted line given in the image is the decision boundary.  
 
-![AND function](/engineering-education/sgd-classifier/and.jpg)
+![AND function](/sgd-classifier/and.jpg)
 
 *[Image Source](http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html)*
 
 Now we'll look at the [XOR](https://en.wikipedia.org/wiki/XOR_gate) function. 2-input XOR function outputs a 1 when the number of 1's in the input is odd. If the number of 1's is even, then the output is 0. Consider the dotted lines and see that a single decision boundary is insufficient to classify the XOR function results. Hence XOR is said to be a non-linearly separable function.
 
-![xor function](/engineering-education/sgd-classifier/xor.jpg)
+![xor function](/sgd-classifier/xor.jpg)
 
 *[Image Source](http://www.ece.utep.edu/research/webfuzzy/docs/kk-thesis/kk-thesis-html/node19.html)*
 
@@ -46,7 +46,7 @@ Linear classifiers work very well on datasets with linear decision boundaries. A
 ### Loss Functions
 Consider the following problem of fitting the best line for a given set of data-points. An intuitive way of fitting the line would be to fit a line at random and slowly changing the slope and the intercept values until we get a line close to all the data points in the set. The loss function, also known as the error function, mathematically defines the difference between the ideal and the actual values.
 
-![linear regression](/engineering-education/sgd-classifier/linear_regression.jpg)
+![linear regression](/sgd-classifier/linear_regression.jpg)
 
 *[Image Source](https://www.numpyninja.com/post/what-is-line-of-best-fit-in-linear-regression)*
 
@@ -57,7 +57,7 @@ It's defined as the sum of squares of the distance between the line and the poin
 The loss function is responsible for the performance of the linear classifiers.
 For this article, I will be using the logistic loss function, defined as follows:
 
-![logistic loss](/engineering-education/sgd-classifier/logistic_loss.png)
+![logistic loss](/sgd-classifier/logistic_loss.png)
 
 *[Image Source](https://towardsdatascience.com/optimization-loss-function-under-the-hood-part-ii-d20a239cde11)*
 
@@ -75,7 +75,7 @@ The SGD optimizer works iteratively by moving in the direction of the gradient. 
 
 A visual representation of the Stochastic Gradient Descent Optimizer is given below.
 
-![gif SGD](/engineering-education/sgd-classifier/SGD.gif)
+![gif SGD](/sgd-classifier/SGD.gif)
 
 *[Image Source](https://medium.com/chung-yi/ml%E5%85%A5%E9%96%80-%E5%8D%81%E4%BA%8C-sgd-adagrad-momentum-rmsprop-adam-optimizer-e331ef3cf5cf)*
 
@@ -129,11 +129,11 @@ We will define and initialize the parameters in this method, that will be used i
 
 2. `sigmoid`: The sigmoid function is the activation function. The sigmoid function restricts the outputs to the range $[0,1]$. Therefore, all scores are converted into probabilistic scores. This helps in classifying data as we shall see in the `predict_probability` function.
 
-![sigmoid image](/engineering-education/sgd-classifier/sigmoid.jpg)
+![sigmoid image](/sgd-classifier/sigmoid.jpg)
 
 *[Image Source](http://www.financial-hacker.com/build-better-strategies-part-5-developing-a-machine-learning-system/)*
 
-It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy library](/engineering-education/introduction-to-numpy/) to implement exponentiation. Numpy offers `np.exp()` function to compute the exponential function.
+It's given by the equation $sig(x) = \frac{1}{1+e^-x}$. We use the [numpy library](/introduction-to-numpy/) to implement exponentiation. Numpy offers `np.exp()` function to compute the exponential function.
 
 ```py
         def sigmoid(self,z):
@@ -245,7 +245,7 @@ Notice the sum of elements inside each list is 1. The sum of probabilities is 1.
             return np.c_[1-ones, ones]
 ```
 
-10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found in this [article](/engineering-education/matplotlib-visualization-python/).
+10. `plot`: The plot function uses the matplotlib library to plot graphs. More information can be found in this [article](/matplotlib-visualization-python/).
 
 ```py            
         def plot(self):
@@ -275,12 +275,12 @@ The repl.it link is included so that you can see the output. Observe the decreas
 
 
 ### Code Output
-![cost vs iterations](/engineering-education/sgd-classifier/loss_vs_iterations.jpg)
+![cost vs iterations](/sgd-classifier/loss_vs_iterations.jpg)
 
 ### Conclusion
 In this article, we have coded a linear classifier from scratch. I would like to congratulate you on making it this far. As a recap, I have attached the flow chart on how the data is fit for a linear model. I hope this helps conclude this article on a good note.
 
-![fitting a linear classifier](/engineering-education/sgd-classifier/flow_chart.jpg)
+![fitting a linear classifier](/sgd-classifier/flow_chart.jpg)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

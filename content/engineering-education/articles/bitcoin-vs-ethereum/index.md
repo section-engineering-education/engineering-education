@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/bitcoin-vs-ethereum/
+url: /bitcoin-vs-ethereum
 title: Bitcoin vs. Ethereum
 description: This article will discuss the key differences between Bitcoin and Ethereum from a technical perspective. It also outlines the concepts and advantages that contribute to the popularity of these cryptocurrencies.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/bitcoin-vs-ethereum/hero.jpg
+  - url: /bitcoin-vs-ethereum/hero.jpg
     alt: Bitcoin vs Ethereum
 ---
 This article will examine the critical differences between the two largest cryptocurrencies in circulation and market value. We will cover some of the key concepts that enable these cryptocurrencies. Advantages such as decentralization, peer-to-peer architecture, secure and anonymous transactions have boosted cryptocurrencies' adoption. 
@@ -25,7 +25,7 @@ Cryptography plays a crucial role in ensuring transactions are secure and anonym
 
 2. Asymmetric Encryption Cryptography: In this method, instead of using a single secret key, two keys are used: a public key and a private key. 
 
-![Assymetric Key cryptography](/engineering-education/bitcoin-vs-ethereum/Assymetric_Key_Cryptography.png)
+![Assymetric Key cryptography](/bitcoin-vs-ethereum/Assymetric_Key_Cryptography.png)
    
 [*Image Source*](https://cheapsslsecurity.com/blog/what-is-asymmetric-encryption-understand-with-simple-examples/)
 
@@ -49,7 +49,7 @@ Blockchain derives its name from the concept behind it: a chain of blocks. The b
 Banks charge for this assurance of mediation. It is called the `cost of trust` borne by the customers. In Bitcoin, the cost of trust is minimized by making the blocks immutable and adding a heavy penalty to act as an adversary in the system. This property is referred to as append-only timestamped logs.
 
 #### Decentralized network consensus
-As discussed in an [earlier article](/engineering-education/blockchain-consensus-protocols/) on various consensus protocols, Bitcoin uses the `Proof of Work` protocol. Proof of work requires that a cryptographic puzzle be solved. A distributed ledger is maintained across all the nodes verifying the transactions. 
+As discussed in an [earlier article](/blockchain-consensus-protocols/) on various consensus protocols, Bitcoin uses the `Proof of Work` protocol. Proof of work requires that a cryptographic puzzle be solved. A distributed ledger is maintained across all the nodes verifying the transactions. 
 
 #### Proof of work protocol
 Each block contains a highly selective `hash` value computed based on the previous blocks in the blockchain. The term `highly selective` is of importance here. The hash values are computed such that a specified number of trailing zeroes are present in it. 
@@ -78,7 +78,7 @@ nounce: 66053
 hash: 0000a17d817a5b5414cce89e889278fcb60c6232208b1cc8933014009fd8fa2e
 ```
 
-For more details on the Proof of Work protocol, refer to my previous article on [various consensus protocols](/engineering-education/blockchain-consensus-protocols/).
+For more details on the Proof of Work protocol, refer to my previous article on [various consensus protocols](/blockchain-consensus-protocols/).
 
 #### Ledgers and transaction code
 The ledger is the critical component upon which all transactions are allowed and verified. Bitcoins work on distributed ledger systems. However, we should define ledgers to understand them critically. 
@@ -118,4 +118,4 @@ The dominance of Bitcoin and Ethereum is not guaranteed forever. However, until 
 Happy learning.
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

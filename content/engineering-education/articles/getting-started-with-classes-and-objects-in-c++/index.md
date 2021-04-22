@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-classes-and-objects-in-c++/
+url: /getting-started-with-classes-and-objects-in-c++/
 title: Getting Started with Classes and Objects in C++ 
 description: In this article, we will learn about Classes and Objects in C++. A class is a logical method of grouping data and functions in the same construct. It is declared using the class keyword, whose functionality is similar to that of the struct C keyword.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-classes-and-objects-in-c++/hero.jpg
+  - url: /getting-started-with-classes-and-objects-in-c++/hero.jpg
     alt: Getting started with classes and objects in C++ Hero Image
 ---
 The C language limitations are evident when a software project is too large to manage. This problem was addressed by adding several extensions to the C language. The main incorporation was the concept of class. The most significant aspect of C++ classes is that it promotes object-oriented programming, which treats data as a critical element.  
@@ -20,8 +20,8 @@ This article goes through the creation of classes, objects, and objects as funct
 ### Prerequisites
 To follow this article, you will need to have:
 - A [codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
-- A basic understanding of the [C++ language](/engineering-education/intro-to-c-part1/).
-- A basic understanding of [functions](/engineering-education/functions-in-cpp/).
+- A basic understanding of the [C++ language](/intro-to-c-part1/).
+- A basic understanding of [functions](/functions-in-cpp/).
 
 ### What is a class?
 A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword, whose functionality is similar to that of the `struct` C keyword. Only with the option of including functions as members rather than data. Classes are data types specified by users and behave like a programming language's built-in types. We can construct any number of objects, belonging to that class after the class has been defined.
@@ -71,7 +71,7 @@ In the first step, we're going to create a console application. Open code blocks
 
 On the next page, give the project a title. In this case, we are going to name it after our class `person` example. Keep the default settings. 
 
-![Console app](/engineering-education/getting-started-with-classes-and-objects-in-c++/console.png)
+![Console app](/getting-started-with-classes-and-objects-in-c++/console.png)
 
 Click `Finish` to create the project.
 
@@ -291,4 +291,4 @@ By creating a class, we can have more secure programs due to the emphasis on dat
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

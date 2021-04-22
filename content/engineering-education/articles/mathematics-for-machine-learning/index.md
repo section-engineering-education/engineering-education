@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mathematics-for-machine-learning/
+url: /mathematics-for-machine-learning/
 title: Mathematics for Machine Learning
 description: This article is intended to go over the mathematics for machine learning, by providing a general overview on the topics behind ML and how they are used. 
 author: willies-ogola
@@ -10,7 +10,7 @@ date: 2021-01-12T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/mathematics-for-machine-learning/hero.jpg
+  - url: /mathematics-for-machine-learning/hero.jpg
     alt: Mathematics for Machine Learning example image
 ---
 We need the equivalent of high school mathematics to understand the concepts used in Machine Learning (ML), such as linear algebra, probability, statistics, and multivariate calculus. Yet, a background in ML is necessary to understand the ML concepts and algorithms.
@@ -24,7 +24,7 @@ Machine learning is all mathematics. ML is built on mathematical prerequisites. 
 
 The chart below shows the importance of each mathematical concept needed to master ML.
 
-![The chart shows the importance of each mathematical concept](/engineering-education/mathematics-for-machine-learning/math-topics.png)<br>
+![The chart shows the importance of each mathematical concept](/mathematics-for-machine-learning/math-topics.png)<br>
 
 It can be summarized below as:
 - Linear Algebra (35.0%)
@@ -160,4 +160,4 @@ As a starter, this [book](https://mml-book.github.io/) is a great resource publi
 6. [Principal Component Analysis (PCA) ](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0202)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-kanban-to-manage-your-next-project/
+url: /how-to-use-kanban-to-manage-your-next-project/
 title: How to Use Kanban to Manage Your Next Project
 description: This article will be an introduction to Kanban, which is an agile framework for project management. A Kanban board is made up of columns and Kanban cards. The columns represent different stages of a process or workflow. 
 author: benson-kariuki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-kanban-to-manage-your-next-project/hero.jpg
+  - url: /how-to-use-kanban-to-manage-your-next-project/hero.jpg
     alt: Kanban Board Image
 ---
 Kanban is an agile framework for product development. It is a visual way of managing tasks and workflow at the individual, team, or organizational level.
@@ -37,7 +37,7 @@ Some of the most basic workflows used are:
 
 The diagram below shows a sample simple Kanban board with three columns. 
 
-![Simple Kanban board](/engineering-education/how-to-use-kanban-to-manage-your-next-project/simple-kanban-board.jpg)
+![Simple Kanban board](/how-to-use-kanban-to-manage-your-next-project/simple-kanban-board.jpg)
 
 [Image source](https://hygger.io/use-cases/kanban-board/)
 
@@ -49,7 +49,7 @@ This can be divided into two categories:
 
 The diagram below shows the main components of a Kanban board.
 
-![Kanban board components](/engineering-education/how-to-use-kanban-to-manage-your-next-project/kanban-board-components.jpg)
+![Kanban board components](/how-to-use-kanban-to-manage-your-next-project/kanban-board-components.jpg)
 
 [Image source](https://hygger.io/use-cases/kanban-board/)
 
@@ -129,4 +129,4 @@ Scrum is more suitable appropriate when the product has a long development cycle
 At first, Kanban may seem complex, but you are now ready to implement Kanban in your next project after going through this article. Start now with the baby steps and keep on improving.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

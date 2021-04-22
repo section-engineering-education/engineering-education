@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/random-number-genrator-python/
+url: /random-number-genrator-python/
 title: How to Generate Random Numbers in Python
 description: This article will go over how to generate random numbers in Python. Computers cannot be completely random without getting input from actual random events. True-random events are very rare.
 author: mike-white
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/random-number-genrator-python/hero.jpg
+  - url: /random-number-genrator-python/hero.jpg
     alt: Generate Random Numbers in Python example image
 ---
 A random event is an event that cannot be predicted in advance. How do computers make random numbers? We will make a few of our own random number generators to show how they work.
@@ -153,4 +153,4 @@ To be clear, you are still guaranteed to have repetition at some point with this
 Any of these random number generators will make numbers that feel random. Some may be better for your program than others. After reading this, you should be capable of picking the right one for your project.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

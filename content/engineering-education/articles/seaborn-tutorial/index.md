@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/seaborn-tutorial/
+url: /seaborn-tutorial/
 title: How to use Seaborn for Data Visualization
 description: In this tutorial we will ve working with Seaborn, a Python Library used by data scientists for data visualization. Seaborn is an open-source Python library built on top of matplotlib.
 author: rahul-banerjee
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/seaborn-tutorial/hero.jpg
+  - url: /seaborn-tutorial/hero.jpg
     alt: UI model using Streamlit image example
 ---
 Data Visualization is the art of representing data in the form of graphs. It is a useful tool for professionals who work with data, i.e., financial analysts, business analysts, data analysts, data scientists, to name a few examples.
@@ -34,7 +34,7 @@ In this tutorial, we will be working with Seaborn, a Python Library.
 7. Conclusion
 
 ### Introduction
-Seaborn is an open-source Python library built on top of [matplotlib](/engineering-education/matplotlib-visualization-python/). It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized easily. Below are a few benefits of Data Visualization.
+Seaborn is an open-source Python library built on top of [matplotlib](/matplotlib-visualization-python/). It is used for data visualization and exploratory data analysis. Seaborn works easily with dataframes and the Pandas library. The graphs created can also be customized easily. Below are a few benefits of Data Visualization.
 
 Graphs can help us find data trends that are useful in any machine learning or forecasting project.
 
@@ -51,9 +51,9 @@ I will be writing all my code in a Google colab file. You can find it over [here
 
 - Some Experience working with the Pandas Library.
 
-- Some Experience working with the Matplotlib Library, you can check out the [following article](/engineering-education/matplotlib-visualization-python/).
+- Some Experience working with the Matplotlib Library, you can check out the [following article](/matplotlib-visualization-python/).
 
-- A basic understanding of Data Analysis, you can check out the [following article](/engineering-education/data-analytics-using-pandas/).
+- A basic understanding of Data Analysis, you can check out the [following article](/data-analytics-using-pandas/).
 
 ### Installing Seaborn
 If you are working on Google Colab, you can skip the installation step. However, if you are working on your local machine, you will need to install Seaborn. I highly recommend creating a virtual environment to better manage your packages.
@@ -92,7 +92,7 @@ A count plot is helpful when dealing with categorical values. It is used to plot
 sns.countplot(x='sex',data=df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/countplot1.png) 
+![image title](/seaborn-tutorial/countplot1.png) 
 
 - **data** - The dataframe.
 
@@ -107,7 +107,7 @@ sns.countplot(x='sex', hue = 'survived', data = df,
 palette = 'Set1')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/countplot2.png) 
+![image title](/seaborn-tutorial/countplot2.png) 
 
 - **hue** - The name of the categorical column to split the bars.
 
@@ -120,7 +120,7 @@ A Kernel Density Estimate (KDE) Plot is used to plot the distribution of continu
 sns.kdeplot(x = 'age' , data = df , color = 'black')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/kdeplot.png) 
+![image title](/seaborn-tutorial/kdeplot.png) 
 
 - **data** - The dataframe.
 
@@ -137,7 +137,7 @@ A Distribution plot is similar to a KDE plot. It is used to plot the distributio
 sns.displot(x = 'age',kde=True,bins = 5 , data =df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/distplot1.png)
+![image title](/seaborn-tutorial/distplot1.png)
 
 - **kde** - It is set to False by default. However, if you wish to plot a KDE graph on top of the bars, you can set it to True.
 
@@ -150,7 +150,7 @@ sns.displot(x ='age',kde=True,bins = 5 ,
 hue = df['survived'] , palette = 'Set3', data=df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/distplot2.png)
+![image title](/seaborn-tutorial/distplot2.png)
 
 You can also pass **hue** and **palette** as parameters to customize the graph.
 
@@ -175,7 +175,7 @@ sns.scatterplot(x='sepal_length', y ='petal_length' ,
 data = df , hue = 'species')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/scatterplot.png)
+![image title](/seaborn-tutorial/scatterplot.png)
 
 A scatterplot requires data for its **x-axis** and **y-axis**. We can also pass a value for the **hue** parameter to color the dots based on a categorical column.
 
@@ -190,7 +190,7 @@ sns.jointplot(x='sepal_length' , y ='petal_length',
 data = df , kind = 'reg')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/jointplot.png)
+![image title](/seaborn-tutorial/jointplot.png)
 
 - **kind** - The kind of plot to be plotted. It can be one of the following.
 
@@ -205,7 +205,7 @@ Seaborn lets us plot multiple scatter plots. It's a good option when you want to
 sns.pairplot(df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/pairplot.jpg)
+![image title](/seaborn-tutorial/pairplot.jpg)
 
 It pairs all the continuous data and plots their correlation. It also plots the distribution of the data.
 
@@ -219,7 +219,7 @@ corr = df.corr()
 sns.heatmap(corr)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/heatmap1.png)
+![image title](/seaborn-tutorial/heatmap1.png)
 
 We can customize the color scheme, the minimum/maximum values, and annotations.
 
@@ -230,7 +230,7 @@ sns.heatmap(corr, cmap=['red','green','blue'],
 vmin = -.5 , vmax = 0.6,annot = True)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/heatmap2.png)
+![image title](/seaborn-tutorial/heatmap2.png)
 
 ### Visualizing the Pokemon dataset
 You can download the Pokemon dataset from [here](https://www.kaggle.com/rounakbanik/pokemon).
@@ -256,7 +256,7 @@ sns.countplot(x = 'type1' , data = pokemon_df,
 hue = 'is_legendary')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/pokemon1.png)
+![image title](/seaborn-tutorial/pokemon1.png)
 
 Since Seaborn is built on top of matplotlib, we can use matplotlib's function to increase our graph's size. Looking at the graph, we can conclude the Water and Normal are the dominant Pokemon types. We can also conclude that the dominating type for Legendary Pokemons is Psychic.
 
@@ -268,7 +268,7 @@ y_vars=['attack' , 'defense','sp_attack','sp_defense'] ,
 data = pokemon_df)
 ```
 
-![image title](/engineering-education/seaborn-tutorial/pokemon2.jpg)
+![image title](/seaborn-tutorial/pokemon2.jpg)
 
 Optionally you can also pass the **hue** parameter to gain more insights.
 
@@ -279,7 +279,7 @@ sns.jointplot(x = 'weight_kg', y = 'height_m',
 data = pokemon_df,hue = 'is_legendary')
 ```
 
-![image title](/engineering-education/seaborn-tutorial/pokemon3.png)
+![image title](/seaborn-tutorial/pokemon3.png)
 
 Based on the graph above, we can conclude that height and weight of a Pokemon do not have any correlation.
 
@@ -299,4 +299,4 @@ Data Visualization is a good way to present data, and Seaborn is a useful tool t
 Happy Coding! 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

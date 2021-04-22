@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-network-management/
+url: /getting-started-with-network-management/
 title: Introduction to Network Monitoring and Management
 description: In this article, we will look at an overview of Network Management System. We will discuss Network Management Requirements, Network Management Systems, and Simple Network Management protocols.
 author: miller-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-network-management/hero.jpg
+  - url: /getting-started-with-network-management/hero.jpg
     alt: Introduction to Network Monitoring example image
 ---
 In this article, we're going to discuss the fundamental principles of network monitoring and management while discussing the protocols and architectures involved. 
@@ -102,7 +102,7 @@ A network management system is always designed and developed for the end-user to
 
 ### Fig.1 Network management system
 
-![Network-Management-System](/engineering-education/getting-started-with-network-management/hierarchical-nms.jpg)
+![Network-Management-System](/getting-started-with-network-management/hierarchical-nms.jpg)
 
 There are 3 types of network architectures:  
 
@@ -144,5 +144,5 @@ In this article, we have looked at an overview of Network Management System. We 
 This is just an introductory part of network management, but enough to get you started.
 
 ---
-Peer Review Contributions by: [Aakash Rawal](/engineering-education/authors/aakash-rawal/)
+Peer Review Contributions by: [Aakash Rawal](/authors/aakash-rawal/)
 

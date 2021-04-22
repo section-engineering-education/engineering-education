@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/breadth-first-search/
+url: /breadth-first-search/
 title: Solving a Maze with Breadth First Search
 description: Pathfinding is a very common task in computing. It's used for directions, and enemy AI in video games. Breadth-first Search (BFS) is one pathfinding algorithm which we can use to solve a maze.
 author: mike-white
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/breadth-first-search/hero.jpg
+  - url: /breadth-first-search/hero.jpg
     alt: breadth first search maze image
 ---
 How can we find the fastest way from point A to point B? Solving problems like this is very common in computing. An enemy AI in a video game needs to be able to find the fastest way to the player. Google Maps needs to find the fastest way to your destination. Here, we just want to solve a maze.
@@ -154,18 +154,18 @@ public LinkedList<Vertex> breadthFirstSearch(String start, String end) {
 ```
 **The next several images demonstrate how exactly this code works:**
 
-![](/engineering-education/breadth-first-search/demo2_1.png)
+![](/breadth-first-search/demo2_1.png)
 
-![](/engineering-education/breadth-first-search/demo2_2.png)
+![](/breadth-first-search/demo2_2.png)
 
-![](/engineering-education/breadth-first-search/demo2_3.png)
+![](/breadth-first-search/demo2_3.png)
 
-![](/engineering-education/breadth-first-search/demo2_4.png)
+![](/breadth-first-search/demo2_4.png)
 
-![](/engineering-education/breadth-first-search/demo2_5.png)
+![](/breadth-first-search/demo2_5.png)
 
 ### Solving the Maze
 
 In case you were wondering, all you would need to do to solve a maze with this is to turn it into a graph
 
-![A maze. The maze contains a lot of black circles with letters inside of them, connected by red lines](/engineering-education/breadth-first-search/maze.png)
+![A maze. The maze contains a lot of black circles with letters inside of them, connected by red lines](/breadth-first-search/maze.png)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-node-docker/
+url: /debug-node-docker/
 title: Debugging a Node.js app running in Docker
 description: This article is about debugging a Node.js app running in a Docker container. You need to add a debug script in your package.json to enable debugging in your Node.js app.
 author: geoffrey-mungai
@@ -11,31 +11,31 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/debug-node-docker/hero.jpg
+  - url: /debug-node-docker/hero.jpg
     alt: image Node.js debugger docker
 ---
 Docker is one of the tools used by many developers today. You do not need to have Node.js installed in your machine to build Node.js apps. You only need Docker. Running a Node.js app in Docker can be done easily. What about debugging? Let us look at how you can debug a Node.js app running in a Docker container.
 <!--more-->
 
 ### Introduction
-[Docker](https://www.docker.com/) is used to build, run, and deploy apps in [containers](/engineering-education/history-of-container-technology/). This way, all libraries, and dependencies can be packaged and deployed as a single package. Now you don't need to install Node.js to run or build a Node.js app. You just need Docker.
+[Docker](https://www.docker.com/) is used to build, run, and deploy apps in [containers](/history-of-container-technology/). This way, all libraries, and dependencies can be packaged and deployed as a single package. Now you don't need to install Node.js to run or build a Node.js app. You just need Docker.
 
 If you have ever worked on a project in a team, you're *probably* familiar with the "It works on my machine" problem. Docker took care of that too.
 
  If you are new to Docker, I recommend you go through the following articles. They will give you better understanding on Docker.
 
- 1. [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+ 1. [A Brief History of Container Technology](/history-of-container-technology/)
 
- 2. [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+ 2. [Understanding Docker Concepts](/docker-concepts/)
 
- 3. [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+ 3. [Getting Started with Docker](/getting-started-with-docker/)
 
- 4. [Building a Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+ 4. [Building a Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
 
 ### Prerequisites
 To follow along with this tutorial, you will need the following:
 
-- A Docker [installation](https://docs.docker.com/engine/install/) on your machine. For Linux users, you can install using [this](/engineering-education/getting-started-with-docker/) guide.
+- A Docker [installation](https://docs.docker.com/engine/install/) on your machine. For Linux users, you can install using [this](/getting-started-with-docker/) guide.
 - [Visual Studio Code](https://code.visualstudio.com/download) and/or a chromium-based browser .eg. [Google Chrome](https://www.google.com/chrome/).
 - Basic knowledge of Node.js and Docker concepts.
 
@@ -125,16 +125,16 @@ The above command runs your container in detached mode (`-d`) and maps remote po
 
 > Port 9229 is the default debug port for Node.js but you can change it if necessary.
 
-Finish up debugging your app in Chrome DevTools [here](/engineering-education/debug-node-devtools/#step-2----open-chrome-devtools).
+Finish up debugging your app in Chrome DevTools [here](/debug-node-devtools/#step-2----open-chrome-devtools).
 
 ### Step 5 -- Debugging with VS Code
 To debug your app in VS Code, make sure **Node: Auto Attach** setting is on. It enables VS Code to connect to your running app. To enable it, open the **Command Pallete**(`Ctrl+Shift+P`) and search for `Debug: Toggle Auto Attach`.
 
-![Enable auto attach VS Code](/engineering-education/debug-node-docker/enable-auto-attach.jpg)
+![Enable auto attach VS Code](/debug-node-docker/enable-auto-attach.jpg)
 
 You will also require **Docker Extension**. Open the **Extensions** tab and search for Docker and install it. The extension comes in handy in managing Docker images and containers.
 
-![Docker extension in VS Code](/engineering-education/debug-node-docker/docker-extension.jpg)
+![Docker extension in VS Code](/debug-node-docker/docker-extension.jpg)
 
 Configure your `launch.json` to look like the snippet below. You can create a `launch.json` file by opening Command Pallete and searching for `Debug: Open launch.json`.
 
@@ -161,7 +161,7 @@ If you are using Nodemon, add `"restart":true` under `configurations`. It will a
 
 Build your Docker image using Docker extension or use the command `docker build -t <your-image-name> .`
 
-![Building Docker image VS Code](/engineering-education/debug-node-docker/build-docker-image.jpg)
+![Building Docker image VS Code](/debug-node-docker/build-docker-image.jpg)
 
 Then, run it in a terminal exposing your ports:
 
@@ -173,11 +173,11 @@ $ docker run --rm -d  -p 3000:3000 -p  9229:9229  image-name:tag
 
 Open your file and set breakpoints by clicking on the left side of the number line. A red dot appears when a breakpoint has been set.
 
-![Setting breakpoints VS Code](/engineering-education/debug-node-docker/set-breakpoints-vscode.jpg)
+![Setting breakpoints VS Code](/debug-node-docker/set-breakpoints-vscode.jpg)
 
 Open the debug panel by clicking on the bug icon in the activity bar. Click the play button or press `F5` to attach VS Code to your running app. The bottom bar in VS Code will turn orange on a successful attach.
 
-![Attach process VS Code](/engineering-education/debug-node-docker/attach-to-node-docker.gif)
+![Attach process VS Code](/debug-node-docker/attach-to-node-docker.gif)
 
 Open or reload the listening port for your app in a browser. You can also use [curl](https://curl.haxx.se/) command to achieve the same effect.
 
@@ -185,7 +185,7 @@ Open or reload the listening port for your app in a browser. You can also use [c
 $ curl http://127.0.0.1:3000
 ```
 
-![Start debug session](/engineering-education/debug-node-docker/start-debug.gif)
+![Start debug session](/debug-node-docker/start-debug.gif)
 
 On hitting `Enter`, VS Code starts the debug session and pauses on the first breakpoint. You can use the continue button on the floating controls bar or `F5` to resume execution. You can also watch variables in the **watch** pane.
 

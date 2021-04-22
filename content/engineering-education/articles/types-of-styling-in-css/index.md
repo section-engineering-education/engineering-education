@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/types-of-styling-in-css/
+url: /types-of-styling-in-css/
 title: Types of CSS (Cascading Style Sheets)
 description: This article will go over the different styling options in CSS, how to apply them, and when best to implement each style.
 author: kioko-mulwa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/types-of-styling-in-css/hero.jpg
+  - url: /types-of-styling-in-css/hero.jpg
     alt: Types of CSS (Cascading Style Sheets) example image
 
 ---
@@ -173,4 +173,4 @@ Where inline lets you test out new design patterns but becomes too much of a wor
 - [Cascading Style Sheets](https://www.w3.org/Style/CSS/Overview.en.html)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

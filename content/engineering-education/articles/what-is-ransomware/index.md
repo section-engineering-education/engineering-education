@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-ransomware/
+url: /what-is-ransomware/
 title: What is Ransomware?
 description: Ransmoware is a type of cybersecurity threat, or malware (malicious software) that attackers use to hack into their victims' devices, and force them to pay a ransom.
 author: maitreyi-karanjkar
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-ransomware/hero.jpg
+  - url: /what-is-ransomware/hero.jpg
     alt: ransomware example image
 ---
 In a world where computers are an essential part of life, it is only reasonable to have a healthy fear of cyber security threats. Cyber attacks are happening in the range of hundreds of thousands of attacks per day, as seen in the live [Cyber Threat Map](https://www.fireeye.com/cyber-map/threat-map.html) by FireEye.
@@ -73,10 +73,10 @@ In the age of the Internet, keeping yourself safe from potential threats to your
 
 ### Additional Resources & Readings
 
-- [What is Anti-Malware?](/engineering-education/what-is-anti-virus-software/)
-- [What is a Denial of Service Attack?](/engineering-education/denial-of-service/)
-- [Man in the Middle Attacks Explained](/engineering-education/man-in-the-middle-attack/)
-- [Web Application Firewall vs Bot Mitigation Solutions](/engineering-education/web-application-firewall-bot-mitigation-comparison/)
+- [What is Anti-Malware?](/what-is-anti-virus-software/)
+- [What is a Denial of Service Attack?](/denial-of-service/)
+- [Man in the Middle Attacks Explained](/man-in-the-middle-attack/)
+- [Web Application Firewall vs Bot Mitigation Solutions](/web-application-firewall-bot-mitigation-comparison/)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

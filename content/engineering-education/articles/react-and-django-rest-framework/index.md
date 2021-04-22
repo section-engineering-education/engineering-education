@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-and-django-rest-framework/
+url: /react-and-django-rest-framework/
 title: Building a React.js Application using Django REST Framework
 description: In this tutorial, we will create a Todo application using React for the front-end and Django REST Framework for the backend.
 author: oruko-pius
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-and-django-rest-framework/hero.jpg
+  - url: /react-and-django-rest-framework/hero.jpg
     alt: React Progressive Web Application example Image
 ---
 In this tutorial, we will build a Todo application using React and Django. [React](https://reactjs.org/) is a front-end JavaScript framework that uses components in creating user interfaces for single-page applications. [Django](https://www.djangoproject.com/) is a Python backend web framework used to build scalable and secure website applications.
@@ -132,14 +132,14 @@ This will prompt you to enter the `username`, `email`, `password`, `password(aga
 python manage.py runserver
 ```
 
-![admin dashboard](/engineering-education/react-and-django-rest-framework/admin.jpg)
+![admin dashboard](/react-and-django-rest-framework/admin.jpg)
 
 We can now add and delete items from the admin page. Great!
 
-![admin panel](/engineering-education/react-and-django-rest-framework/adminpanel.jpg)
+![admin panel](/react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
-You can learn more about APIs in this amazing [article](/engineering-education/rest-api/).
+You can learn more about APIs in this amazing [article](/rest-api/).
 
 Install the `djangorestframework` and `django-cors-headers`:
 
@@ -252,7 +252,7 @@ Performing CRUD operations to our items is enabled by the `router`.
 python manage.py runserver
 ```
 
-![api](/engineering-education/react-and-django-rest-framework/json.jpg)
+![api](/react-and-django-rest-framework/json.jpg)
 
 We have set our backend to let us move forward to the frontend.
 
@@ -380,7 +380,7 @@ We use [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Re
 
 Your User Interface should resemble the one below:
 
-![frontend](/engineering-education/react-and-django-rest-framework/dummy_data.jpg)
+![frontend](/react-and-django-rest-framework/dummy_data.jpg)
 
 It is time to consume the API we created earlier.
 
@@ -514,7 +514,7 @@ In our `render()` method we display the items through the `renderItems()` functi
 
 The consumed data from the API should be displayed as follows:
 
-![api_data](/engineering-education/react-and-django-rest-framework/api_fetched_data.jpg)
+![api_data](/react-and-django-rest-framework/api_fetched_data.jpg)
 
 To handle actions such as adding tasks and marking them complete, we can create a modal component.
  
@@ -779,7 +779,7 @@ Our `render()` method returns `renderTabList()`, `renderItems()` methods and the
 
 Your application should be like the one below at this point:
 
-![frontend](/engineering-education/react-and-django-rest-framework/final.jpg)
+![frontend](/react-and-django-rest-framework/final.jpg)
 
 ### Step 4: Testing
 Let's start our backend server made using Django by running the following commands:
@@ -804,5 +804,5 @@ You can learn more on Django and React from this [article](https://www.digitaloc
 Happy coding.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/aggregation-in-dbms/
+url: aggregation-in-dbms/
 title: Aggregation in Database Management Systems (DBMS)
 description: This article will be an introduction to Database Management Systems and how systems function properly through the concept of aggregation. It also explains why aggregation is needed and how it functions. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/aggregation-in-dbms/hero.jpg
+  - url: /aggregation-in-dbms/hero.jpg
     alt: DBMS Database Management Systems Image
 ---
 Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. 
@@ -84,7 +84,7 @@ The following are the main types of relationships in an ER model:
   
 The following diagram shows a simple ER model that can be used to explain the process flow for aggregation in DBMS.
 
-![Process Flow for Aggregation in DBMS](/engineering-education/aggregation-in-dbms/process-flow-for-aggregation.jpg)
+![Process Flow for Aggregation in DBMS](/aggregation-in-dbms/process-flow-for-aggregation.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/03/aggregation-in-dbms.jpg)
 
@@ -95,7 +95,7 @@ This operation generates a new relationship (R2). R2 is linked to another entity
 ### Example of aggregation in DBMS
 Let's assume that there is a patient who has visited a doctor in the hospital to seek treatment for a certain type of illness. The following diagram shows the process flow for aggregation in the hospital. 
 
-![Example of Aggregation](/engineering-education/aggregation-in-dbms/example-of-aggregation.jpg)
+![Example of Aggregation](/aggregation-in-dbms/example-of-aggregation.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/03/aggregation-in-dbms0.jpg)
 
@@ -118,4 +118,4 @@ Aggregation in database management systems helps at ensuring that all entities a
 - [Study Tonight](https://www.studytonight.com/dbms/generalization-and-specialization.php)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

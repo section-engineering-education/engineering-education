@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/
+url: /python-boto3-and-amazon-dynamodb-programming-tutorial/
 title: Python Boto3 and Amazon DynamoDB Programming Tutorial
 description: In this tutorial, we will learn how to use the AWS SDK for Python Boto3 to interact with DynamoDB. Boto3 allows Python developers to create, configure, and manage different AWS products.
 author: benson-kariuki
@@ -11,13 +11,13 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/hero.jpg
+  - url: /python-boto3-and-amazon-dynamodb-programming-tutorial/hero.jpg
     alt: Boto3 and Amazon DynamoDB Image
 ---
 DynamoDB is a speedy and flexible NoSQL database service offered by AWS (Amazon Web Service). DynamoDB is perfect for mobile apps, web apps, IoT devices, and gaming. Python has good support for DynamoDB. In this tutorial, we will use AWS Python [SDK](https://en.wikipedia.org/wiki/Software_development_kit) (Boto3) to perform CRUD (create, read, update, delete) operations on DynamoDB.
 <!--more-->
 ### Prerequisites
-Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend going over this article [Getting Started with AWS DynamoDB](/engineering-education/getting-started-with-aws-dynamodb/). 
+Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend going over this article [Getting Started with AWS DynamoDB](/getting-started-with-aws-dynamodb/). 
 
 To get started with this tutorial, you need the following:
 - **DynamoDB local:** Download and configure DynamoDB. Check [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) for guidelines. This version of DynamoDB is used for development purposes only. For production purposes, you should use [Amazon DynamoDB Web Services](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
@@ -667,5 +667,5 @@ python delete_table.py
 We have learned how to write python scripts for interacting with AWS DynamoDB using AWS SDK for Python, Boto3. For more on Boto3 usage with DynamoDB, check [AWS Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html). Find the source code created in this tutorial on [Github](https://github.com/Tsanguu/Python-Boto3-DynamoDB-Tutorial).
 
 ---
-Peer Review Contributions by: [Rahul Banerjee](/engineering-education/authors/rahul-banerjee/)
+Peer Review Contributions by: [Rahul Banerjee](/authors/rahul-banerjee/)
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/
+url: /five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/
 title: 5 Real Life Use Cases of 5G Ultra-Reliable Low-Latency Communication (URLLC) 
 description: This article explains 5G URLLC and its real-life applications in detail. 5G Ultra-Reliable Low-Latency Communication (URLLC) service makes it possible to support use cases that require very high reliability and extremely low latency.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/hero.jpg
+  - url: /five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/hero.jpg
     alt: 5G Ultra-Reliable Low-Latency Communication example image
 ---
 [5G](https://en.wikipedia.org/wiki/5G) adoption continues to progress at a high rate in subscribers and deployment. The 5th generation mobile network enables applications and services that require better reliability, improved energy efficiency, massive connection density, and lower latency. This adoption is making industries faster, efficient, and our connected lives better.
@@ -82,4 +82,4 @@ Deploying 5G URLLC comes with technical requirements, standards, and security de
 Ultra-reliable low-latency communication is a revolutionary communications technology in today's digital world. With 5G URLLC, we can have a better entertainment experience, increase machine productivity in factories, conduct remote diagnosis and remote surgeries, improve electricity distribution/personnel protection, and manage traffic more efficiently.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

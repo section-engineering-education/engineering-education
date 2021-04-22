@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/adding-dark-theme-to-your-site/
+url: /adding-dark-theme-to-your-site/
 title: Dark Theme using CSS Variables and Local Storage
 description: In this article we will understand how to build dark theme webpages using CSS and local storage. We will also build a simple webpage for toggling between light and dark themes.
 author: phina-kersly
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/adding-dark-theme-to-your-site/hero.png
+  - url: /adding-dark-theme-to-your-site/hero.png
     alt: Dark theme using CSS variables and local storage example image
 ---
 The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems have adopted dark themes. Dark theme makes your website more exciting and attractive to users who love a darker color theme. The experience becomes better if you include the functionality to switch between light and dark themes.
@@ -69,7 +69,7 @@ We are creating a simple webpage consisting of a container, in which we also add
 </html>
 ```
 
-![Output - HTML page](/engineering-education/adding-dark-theme-to-your-site/html-page.PNG)
+![Output - HTML page](/adding-dark-theme-to-your-site/html-page.PNG)
 
 *HTML page*
 
@@ -141,7 +141,7 @@ body {
 }
 ```
 
-![Output After Adding CSS](/engineering-education/adding-dark-theme-to-your-site/after-adding-css.png)
+![Output After Adding CSS](/adding-dark-theme-to-your-site/after-adding-css.png)
 
 *Output after adding CSS styling*
 
@@ -196,7 +196,7 @@ label:active:after {
 }
 ```
 
-![Toggle theme switch](/engineering-education/adding-dark-theme-to-your-site/toggle-switch.png)
+![Toggle theme switch](/adding-dark-theme-to-your-site/toggle-switch.png)
 
 *Toggle theme*
 
@@ -259,7 +259,7 @@ checkbox.addEventListener('change', () => {
 });
 ```
 
-![Dark Theme](/engineering-education/adding-dark-theme-to-your-site/dark-theme.png)
+![Dark Theme](/adding-dark-theme-to-your-site/dark-theme.png)
 
 *Dark theme webpage*
 
@@ -275,4 +275,4 @@ You can now try out implementing the dark theme on your own website. You can fin
 Happy coding.
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/when-to-use-vpn/
+url: /when-to-use-vpn/
 title: What are VPNs and When Should You Use One?
 description: There are many reasons why someone might want to use a VPN, but some major reasons include security and the ability to bypass geographic restrictions.
 author: michael-zanoff
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/when-to-use-vpn/hero.jpg
+  - url: /when-to-use-vpn/hero.jpg
     alt: virtual private network
 ---
 Since the creation of the Internet, security has been a major concern for many users. People desire to keep their information safe and out of the hands of those seeking to use it to their benefit. From this issue emerged services like anti-virus and eventually Virtual Private Networks (VPNs). According to [GeoSurf](https://www.geosurf.com/blog/history-of-vpn-the-quest-for-a-better-internet/), the VPN was developed in 1996 when a Microsoft employee was developing the Point-to-Point Tunneling Protocol. This initial VPN was being created for use in businesses but would soon make its way onto the computers of users all around the world.

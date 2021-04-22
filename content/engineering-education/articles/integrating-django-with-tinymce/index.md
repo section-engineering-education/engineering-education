@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/integrating-django-with-tinymce/
+url: /integrating-django-with-tinymce/
 title: Integrating Django with TinyMCE
 description: This article will serve as a guide to integrate Django with a TinyMCE. TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks.
 author: samuel-mwangi
@@ -11,7 +11,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/integrating-django-with-tinymce/hero.jpg
+  - url: /integrating-django-with-tinymce/hero.jpg
     alt: Integrating Django with TinyMCE example image
 ---
 TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks. It comes in handy when trying to make your content look more stylish with colorful texts, various fonts, tables, and many other features.
@@ -207,7 +207,7 @@ Open your browser now and type in the following URL:
 
 After logging in, you should be able to see *MYAPP* with its *Text editors* table, and when you click on *add*, you should be able to see the below results:
 
-![tinymce-the-final-results](/engineering-education/integrating-django-with-tinymce/tinymce-the-final-results.jpg)
+![tinymce-the-final-results](/integrating-django-with-tinymce/tinymce-the-final-results.jpg)
 
 ### Conclusion
 If you're not okay with the size of your TinyMCE text editor, you could go back to its configurations in *settings.py* and adjust the *height* and *width* values until you get the size you want.
@@ -219,5 +219,5 @@ Now that we have accomplished the goal, you can try to use TinyMCE in various pr
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

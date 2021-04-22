@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/key-design-of-hdfs-architecture/
+url: /key-design-of-hdfs-architecture/
 title: Key Design of HDFS Architecture
 description: This article will be a brief introduction to big data framework, the general design of HDFS architecture, ways of configuring HDFS data storage policies, co-location and it's benefits in HDFS.
 author: ruth-mare
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/key-design-of-hdfs-architecture/hero.jpg
+  - url: /key-design-of-hdfs-architecture/hero.jpg
     alt: HDFS Architecture cover image 
 ---
 HDFS (Hadoop Distributed File System) is a big data distributed file system storage by Apache. It is implemented within the Hadoop framework and it needs to have several features of design implemented to work effectively in processing, distributing, and storing big data.
@@ -142,4 +142,4 @@ Happy learning.
 - [Big Data Huawei](http://support.huawei.com/learning/Certificate!showCertificate?lang=en&pbiPath=term1000025450&id=Node1000011796)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

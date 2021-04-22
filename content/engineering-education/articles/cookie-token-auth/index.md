@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cookie-vs-token-authentication/
+url: /cookie-vs-token-authentication/
 title: Cookie vs Token authentication
 description: This article provides readers with a detailed guide on Token based authentication and Cookie based authentication and the advantages and disadvantages of these approaches.
 author: wilson-gichuhi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/cookie-vs-token-authentication/hero.jpg
+  - url: /cookie-vs-token-authentication/hero.jpg
     alt:  Cookie vs Token authentication Hero Image
 ---
 To secure communication between a client and a server, we often need to associate an incoming request with a set of credentials for identity. We refer to this as authentication, which is used to recognize user identity against credential information such as usernames or passwords. In this article, we will compare cookie and token-based authentication and how they work.
@@ -153,5 +153,5 @@ Authentication improves system security by granting authenticated users access t
 In this article, we compared cookie-based authentication and token-based authentication. We highlighted the advantages and disadvantages that arise by choosing either of these approaches.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

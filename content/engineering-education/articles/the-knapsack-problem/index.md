@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-knapsack-problem/
+url: /the-knapsack-problem/
 title: Breaking Down The Knapsack Problem
 description: In this article, we will discuss two approaches to the Knapsack Problem, including a pseudo-polynomial time solution using dynamic programming and different polynomial time approximations.
 author: ian-jorquera
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-knapsack-problem/hero.jpg
+  - url: /the-knapsack-problem/hero.jpg
     alt: knapsack example image
 ---
 
@@ -44,7 +44,7 @@ This shows that we can take our original problem and split it into two new insta
 
 Implementing this method, of splitting our problem into two, we might have situations where the same subproblem is needed twice. For these cases, it is helpful to store all the previously solved solutions in a table. Along the top of the table, we will have all the possible maximum weights and on the side, we will list each of the items. So each row will represent the subset of items from the first item to the item of that row. Each box on the table will represent an instance of the knapsack problem and contain the optimal value for that problem once we calculate it. For example, in the table below, the box with the star represents the subproblem considering the first three items with a maximum weight of nine.
 
-![Table and Arrows](/engineering-education/the-knapsack-problem/table-empty.png)<br>
+![Table and Arrows](/the-knapsack-problem/table-empty.png)<br>
 In general, each element of the table represents the subproblem, considering all items up until the element's row and the weight of its column. Notice that we ignore all the items in the rows after the element's row. With this logic, the solution to our entire problem, considering all items and the max weight, is the cell in the final row and the rightmost column.
 
 Any sub-problem with no items or weight of zero will produce an optimal value of zero. We will refer to these as the base cases and they occur in the zeroth row and zeroth column. This should make sense as these cases represent situations were no items can be placed in the knapsack.
@@ -99,7 +99,7 @@ def knapsack(w, v, max_weight):
 
 With this method, we can complete the table with optimal total values for all subproblems. With the completed table we can determine the optimal subset of items by looking at the completed table.
 
-![Table Empty](/engineering-education/the-knapsack-problem/table-arrows.PNG)
+![Table Empty](/the-knapsack-problem/table-arrows.PNG)
 
 To obtain the items in our solution, we start at the solution square, the bottom right. We can use our recurrence to determine which case, either selecting the item or not selecting it, leads to our optimal solution.
 

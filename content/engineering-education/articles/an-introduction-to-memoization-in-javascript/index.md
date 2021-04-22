@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-introduction-to-memoization-in-javascript/
+url: /an-introduction-to-memoization-in-javascript/
 title: Introduction to Memorization in JavaScript
 description: This article will explain how to implement the memorization technique to pure functions that have expensive computations to imporove the performance of a JavaScript program.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-introduction-to-memoization-in-javascript/hero.jpg
+  - url: /an-introduction-to-memoization-in-javascript/hero.jpg
     alt: Introduction to Memorization in JavaScript Hero Image
 ---
 Functions are a vital building block for any programming language. As a developer, you will often use functions in your project. One important aspect of a function is that they are reusable. You can call them from anywhere within your program. A function can return other functions or take a function as its argument. When you have an extensive program, chances are we will reuse a function more than once.
@@ -56,7 +56,7 @@ The concept of Memoization is backed by two main sub-concepts, namely:
 
 1. [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) - Closure is a combination of a function wrapped together (enclosed) with references to the corresponding state (the lexical environment). In other terms, the Closure allows you access to the domain of the outer function from the inner function. In JavaScript, closures are generated every time a function is created, at the time a function is created.
 
-2. [High order function](/engineering-education/javascript-higher-order-functions/) - A high order function accepts another function as an argument or returns a function as its output.
+2. [High order function](/javascript-higher-order-functions/) - A high order function accepts another function as an argument or returns a function as its output.
 
 ### Caching functions values using Memoization technique
 To understand how the concept of Memoization can be applied in JavaScript, let's dive into some examples.
@@ -272,13 +272,13 @@ A great recursion use case is a Fibonacci sequence. A Fibonacci takes two previo
 
 The first terms of a Fibonacci sequence are:
 
-![Fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/fib1.png)
+![Fibonacci sequence](/an-introduction-to-memoization-in-javascript/fib1.png)
 
 [Image Source](https://www.forex.com/en/education/education-themes/technical-analysis/fibonacci-theory/)
 
 Each number is the sum of the previous two numbers. Here is how the sequence is constructed.
 
-![Fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/graphic-1-3-1.png)
+![Fibonacci sequence](/an-introduction-to-memoization-in-javascript/graphic-1-3-1.png)
 
 [Image Source](https://www.sportsbettingdime.com/guides/strategy/fibonacci-sequence-betting/)
 
@@ -336,7 +336,7 @@ But `fibonacci(4)` has to return `fibonacci(3) + fibonacci(2)`.
 
 The program needs to compute `Fibonacci(3)`. It makes another call `Fibonacci(2) + Fibonacci(1)` to return `Fibonacci(3)`.
 
-![Recursive fibonacci sequence](/engineering-education/an-introduction-to-memoization-in-javascript/recursive-fib.jpg)
+![Recursive fibonacci sequence](/an-introduction-to-memoization-in-javascript/recursive-fib.jpg)
 
 You get the idea. The function calls itself over and over until the fifth computation term is met. This is a lot of computations. The program will repeat the Fibonacci calls that were previously called when it returned the previous Fibonacci terms.
 
@@ -396,5 +396,5 @@ This concept has been applied to several JavaScript libraries such as:
 I hope this guide helped you understand the concept of Memoization and implement it with your heavy JavaScript computations.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choosing-between-django-flask-and-fastapi/
+url: /choosing-between-django-flask-and-fastapi/
 title: Choosing between Django, Flask, and FastAPI
 description: This article will highlight some features that will enable a beginner to make an informed decision between Django, Flask, or Fast API.
 author: james-sandy
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/choosing-between-django-flask-and-fastapi/hero.jpg
+  - url: /choosing-between-django-flask-and-fastapi/hero.jpg
     alt: Django, Flask, and FastAPI example image
 ---
 A framework is a collection of packages and modules used to develop software and help developers avoid handling low-level details. When learning Python, you will come across Python frameworks used to work with Python efficiently. 
@@ -119,4 +119,4 @@ After looking at them throughly, you might be able to choose which one works bes
 Flask is ideal for machine learning engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time, FastAPI is perfect if you’re looking for speed or scalability. It is always wise to choose a framework based on what you want to use it for, but generally, they are all good and have a good market demand.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

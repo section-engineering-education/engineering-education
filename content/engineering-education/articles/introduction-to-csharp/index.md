@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-csharp/
+url: /introduction-to-csharp/
 title: Introduction to C#
 description: This article will help the readers to understand the basics of C# and how to setup the development environment to write and compile C# code.
 author: geoffrey-mwangi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-csharp/hero.jpg
+  - url: /introduction-to-csharp/hero.jpg
     alt: Introduction to C# image
 ---
 C# is an Object-Oriented Programming language and it is portable as it can develop software for many computer systems. C# was invented in 2002 and it is one of the programming languages widely used today.
@@ -38,29 +38,29 @@ To get started, you will need an IDE (Integrated Development Environment) to wri
 ### Installing C# 
 After you have installed Visual Studio, choose .NET desktop development, and click *Modify*.
 
-![vscode](/engineering-education/introduction-to-csharp/installation.png)
+![vscode](/introduction-to-csharp/installation.png)
 
 After the installation, click *Launch* to get started.  
 
 On the new window, choose *Create a new project*.
 
-![newproject](/engineering-education/introduction-to-csharp/vs1.png)
+![newproject](/introduction-to-csharp/vs1.png)
 
 Once you have selected *Create a new project*, choose *"Install more tools and features"* then click *Next*.
 
-![newproject](/engineering-education/introduction-to-csharp/Newproject2.png)
+![newproject](/introduction-to-csharp/Newproject2.png)
 
 Choose *Console App (.NET Core)* from the list and click *Next*.
 
-![newproject](/engineering-education/introduction-to-csharp/Consoleapp.png)
+![newproject](/introduction-to-csharp/Consoleapp.png)
 
 Enter your preferred project name and click *Create*. In this case, I will name my file *HelloWorld*.
 
-![newproject](/engineering-education/introduction-to-csharp/projectname.png)
+![newproject](/introduction-to-csharp/projectname.png)
 
 Visual Code will automatically generate some C# code for you.
 
-![newproject](/engineering-education/introduction-to-csharp/Program.png)
+![newproject](/introduction-to-csharp/Program.png)
 
 Let's look at the code.
 
@@ -254,4 +254,4 @@ In this tutorial we looked at:
 - The various methods of collecting user inputs and using them in our program (Adding two numbers).
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

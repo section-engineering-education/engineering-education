@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/automated-fake-news-detection/
+url: /automated-fake-news-detection/
 title: Introduction to Automated Fake News Detection
 description: Fake news refers to information content which is false, misleading or whose source cannot be verified. This content may be generated to intentionally damage reputation, deceive, to gain attention.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/automated-fake-news-detection/hero.jpg
+  - url: /automated-fake-news-detection/hero.jpg
     alt: fake news example image
 ---
 Misinformation presents a huge challenge in online society. As a result, there have been many attempts to identify and classify misinformation. Specifically, in social networking sites, blogs, as well as online newspapers.
@@ -50,7 +50,7 @@ Social media platforms are incredibly influential. According to [internet live s
 In today’s world, it is normal to receive news from online sources like social media. News is often subjective to readers. We often choose to ingest content that appeals to the different emotions we have. So, considering this, the information that gets the most reach may not be real or accurate news. Additionally, real news may be twisted in transmission. A reader may end up with different versions of the same news. This may lead to information overload.
 
 #### Why you Should Care
-![misinformation](/engineering-education/automated-fake-news-detection/misinformation.jpg)
+![misinformation](/automated-fake-news-detection/misinformation.jpg)
 
 [*Image Source*](https://unsplash.com/photos/zw3ExyW6x3Y)
 
@@ -118,7 +118,7 @@ SVM classifies data into two categories. In the context of fake news detection, 
 
 NLP may play a role in extracting features from data. It may also come in handy when attempting to contextualize text data since this is not a strong suit of traditional machine learning models. NLP may also be utilized through sentiment analysis of the data, given sentiment analysis is a subfield of NLP.
 
-[Sentiment analysis](/engineering-education/sentiment-analysis/) is the process of deriving meaningful patterns in text data. It can provide information on the context of data by describing the sentiments of a given population.  
+[Sentiment analysis](/sentiment-analysis/) is the process of deriving meaningful patterns in text data. It can provide information on the context of data by describing the sentiments of a given population.  
 
 The accuracy of the results is usually determined by the combinations of models used and the datasets involved. A combination of available toolkits with Bayesian learning may be used to develop a fake news detector. These toolkits include Textblob, Natural Language, and SciPy.
 
@@ -129,7 +129,7 @@ Deep learning algorithms function similar to machine learning algorithms. But th
 
 Purely deep learning perspectives towards fake news detection have been explored in many cases. I have provided links to some of these published works at the end of the article.
 
-A methodology may involve building classifiers to predict the validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RNN click on this [article](/engineering-education/text-generation-nn/), which explains text generation with RNN + TensorFlow.
+A methodology may involve building classifiers to predict the validity of news based only on news content. This may be achieved using Recurrent Neural Network (RNN) models and long-short term memories (LSTM). For more information on RNN click on this [article](/text-generation-nn/), which explains text generation with RNN + TensorFlow.
 
 RNN is a neural network containing loops that allow information to be stored within the network. Previous experiences influence upcoming events in RNNs. The storage of information can be attributed to LSTM. LSTM refers to artificial recurrent neural networks that allow information to persist within them. They are the building blocks for RNN layers. LSTM units provide the ability to “recall” values over a time interval. This influences the relationships between words and their occurrences.
 
@@ -176,4 +176,4 @@ Their quality and quantity are impactful. It is also worth noting that, as much 
 8. [Detection of Fake News Using Transformer Model](https://doi.org/10.1109/iCoMET48670.2020.9074071)
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)

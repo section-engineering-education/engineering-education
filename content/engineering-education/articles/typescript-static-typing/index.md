@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/typescript-static-typing/
+url: /typescript-static-typing/
 title: Why Static Typing & Why is TypeScript so popular?
 description: TypeScript was ranked higher than JavaScript according to the GitHub Developer Survey. Why? What does TypeScript add that's so much better? TypeScript is much like JavaScript. In fact, all JavaScript is valid as TypeScript code.
 author: mike-white
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/typescript-static-typing/hero.jpg
+  - url: /typescript-static-typing/hero.jpg
     alt: typescript image example
 ---
 According to the [Stack Overflow Developer Survey 2020](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted), 67.1% of TypeScript users loved it. This makes it the second most loved language, behind Rust, and narrowly beating out Python. JavaScript was number 10, with 58.3% of users interested in continuing to use it. That is still pretty good. It sure beats Visual Basic. But why is TypeScript so much more popular?

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/
+url: /how-and-when-to-apply-session-storage-with-javascript/
 title: How and When to Apply Session Storage with JavaScript
 description: In the guide, we will learn when it's best to use session storage and how to implement it using JavaScript. In this article we wil demonstrate how to store, retrieve, delete, and clear items in session storage.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/hero.jpg
+  - url: /how-and-when-to-apply-session-storage-with-javascript/hero.jpg
     alt: How and When to Apply Session Storage with JavaScript image
 ---
 Session storage is a popular choice when it comes to storing data on a browser. It enables developers to save and retrieve different values. Unlike local storage, session storage only keeps data for a particular session. The data is cleared once the user closes the browser window.
@@ -260,4 +260,4 @@ By now, you should have a better understanding of session storage. You should co
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

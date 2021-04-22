@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-structures-python-part-1/
+url: /data-structures-python-part-1/
 title: Data Structures in Python - Part 1
 description: An overview of data structures in this article, and move on to learn about every data structure, and its implementation in Python throughout this series.
 author: saiharsha-balasubramaniam
@@ -11,14 +11,14 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-structures-python-part-1/hero.jpg
+  - url: /data-structures-python-part-1/hero.jpg
     alt: python data structures
  
 ---
 Python. Beautiful, concise, simple are some words that come to mind. [Python](https://www.python.org/) is a high-level, interpreted and dynamic programming language, created by Guido van Rossum in 1991. Python is used everywhere. It is used for general purpose programming, scripting, for the web, artificial intelligence and more. The possibilities are endless.
 <!--more-->
 
-![Python, Comic](/engineering-education/data-structures-python-part-1/py-comic.png)
+![Python, Comic](/data-structures-python-part-1/py-comic.png)
 
 ## Python for Developers
 

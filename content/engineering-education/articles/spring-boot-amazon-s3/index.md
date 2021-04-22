@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-boot-amazon-s3/
+url: /spring-boot-amazon-s3/
 title: How to Upload Files to Amazon S3 in Spring Boot
 description: This tutorial will go over how to download and upload files to Amazon simple storage (AS3) using Spring Boot and spring initializr.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-boot-amazon-s3/hero.jpg
+  - url: /spring-boot-amazon-s3/hero.jpg
     alt: Amazon S3 in Spring Boot example image
 ---
 Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offers scalable, secure, and well performing object storage. This article will go over how to upload files into Amazon S3 using Spring Boot.
@@ -26,24 +26,24 @@ Before we start creating our application, head over to [Amazon console](https://
 
 After signing up, head over to [Amazon console](https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1#) and search for Amazon S3 in the search box provided in the console.
 
-![Amazon search console](/engineering-education/spring-boot-amazon-s3/amazon-search-s3.png)
+![Amazon search console](/spring-boot-amazon-s3/amazon-search-s3.png)
 
 ### Amazon S3 bucket
 After selecting Amazon S3 from the step above, create a new S3 bucket that we will use to store the files we will be uploading from our application.
 
-![Amazon creating S3 bucket](/engineering-education/spring-boot-amazon-s3/amazon-s3-create-bucket.png)
+![Amazon creating S3 bucket](/spring-boot-amazon-s3/amazon-s3-create-bucket.png)
 
 Name the bucket as `spring-amazon-storage` and leave all other settings as default then create the bucket.
 
 ### Access and secret keys
 Create a new access key from `My Security Credentials` navigation menu as shown in the image below. Copy the access and the secret key generated as we will be using them to access the bucket from the application we will be creating.
 
-![Amazon secret key](/engineering-education/spring-boot-amazon-s3/amazon-security-key.png)
+![Amazon secret key](/spring-boot-amazon-s3/amazon-security-key.png)
 
 ### Creating the application
 We will be using [spring initializr](https://start.spring.io/) to create our application. Head over to [spring initializr](https://start.spring.io/) and create a new Spring Boot application adding `h2`, `spring boot dev tools`, `spring data jpa` and `spring web` as dependencies then generate the project.
 
-![Spring Boot create application](/engineering-education/spring-boot-amazon-s3/amazon-spring-boot-project.png)
+![Spring Boot create application](/spring-boot-amazon-s3/amazon-spring-boot-project.png)
 
 Unzip the downloaded project and open it in your favorite IDE.
 
@@ -333,7 +333,7 @@ public class TodoController {
 
 ### Testing our uploads and downloads from the S3 bucket
 
-![Amazon S3 upload](/engineering-education/spring-boot-amazon-s3/amazon-upload-image.png)
+![Amazon S3 upload](/spring-boot-amazon-s3/amazon-upload-image.png)
 
 ### Conclusion
 Congratulations! Now that you learned how to upload and download files from Amazon S3, go ahead and implement the logic for uploading multiple files to Amazon S3.
@@ -343,4 +343,4 @@ Find the source code [here](https://github.com/paulodhiambo/spring-amazon).
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

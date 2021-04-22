@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/golang-advanced-programming-concepts/
+url: /golang-advanced-programming-concepts/
 title: Advanced Programming Concepts with Go
 description: This article will go over advanced programming concepts in Go such as functions, structures, and arrays.
 author: adith-bharadwaj
@@ -11,10 +11,10 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/golang-advanced-programming-concepts/hero.jpg
+  - url: /golang-advanced-programming-concepts/hero.jpg
     alt: Go example image
 ---
-*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
+*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
 <!--more-->
 
 In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
@@ -71,7 +71,7 @@ func main() {
 
 The function `add_numbers()` takes 2 parameters: the two numbers to be added, and returns the sum of the two numbers. The two numbers are specified as `int` in the above example, but the parameters can be of any data type permissible in Go.
 
-For more information on Go datatypes, please visit this [link](/engineering-education/golang-part-2-programming-basics/). The return type is also specified as `int` because the sum of two integers is also an integer.  
+For more information on Go datatypes, please visit this [link](/golang-part-2-programming-basics/). The return type is also specified as `int` because the sum of two integers is also an integer.  
 
 A function can be ["called"](https://www.digitalocean.com/community/tutorials/how-to-define-and-call-functions-in-go) or "invoked" by specifying the name of the function and passing the required parameters. In the example above, we call the `add_numbers()` function by passing two integers as parameters.  
 
@@ -82,7 +82,7 @@ An [array](https://www.geeksforgeeks.org/arrays-in-go/) is a collection of multi
 
 In other words, if there are 10 items of the same data type numbered from 0 to 9 (array indexes always start from 0), we can get the 6th item by simply looking at index 5 in the array. For example, if the user wants to store the scores obtained by 100 students in a test, he can use an integer array of length 100.
 
-![Array](/engineering-education/golang-advanced-programming-concepts/array.png)
+![Array](/golang-advanced-programming-concepts/array.png)
 
 *[Image Source](https://stackabuse.com/remove-element-from-an-array-in-java/)*
 
@@ -240,4 +240,4 @@ We explored some advanced programming concepts in this article by looking at fun
 - [Go by example](https://gobyexample.com/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/beginner-guide-to-git/
+url: /beginner-guide-to-git/
 title: Beginner's Guide to Git
 description: This guide is intended to help any beginner get started with Git. Using the examples provided below, we will assume that we are starting a project from scratch and want to manage it with Git.
 author: parampreet-singh
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/beginner-guide-to-git/hero.jpg
+  - url: /beginner-guide-to-git/hero.jpg
     alt: Git image example
 ---
 Git is an open-source version control system to track and manage any changes in computer files. Almost all the major players in the industry use Git, and this technology is something that every software engineer should know. Linus Torvalds created it to help in coordinating work among programmers, but it can also be used to track changes in any type of file. Its goals include speed, data integrity, and support for distributed workflows.
@@ -62,7 +62,7 @@ $ git clone [url]
 ```
 
 Here's how to execute **git clone** command:
-![clone](/engineering-education/beginner-guide-to-git/clone.png)
+![clone](/beginner-guide-to-git/clone.png)
 
 ### Creating files
 You can use the git command to make the source code file in the folder. We can create a file with any extension by stating its type. Here's how to do it:
@@ -80,7 +80,7 @@ $ git status
 ```
 
 Here's how to execute **git status** command:
-![status](/engineering-education/beginner-guide-to-git/status.png)
+![status](/beginner-guide-to-git/status.png)
 
 
 ### Adding some files to the staging area
@@ -117,7 +117,7 @@ $ git commit -m "Anything you want to write"
 
 Here's how to execute add and commit:
 
-![add & commit](/engineering-education/beginner-guide-to-git/add-commit.png)
+![add & commit](/beginner-guide-to-git/add-commit.png)
 
 ### Pushing your code in the cloud
 This command helps to push all the local branches to GitHub. After this, you will be able to see your changes in your GitHub repo. This way, you would be able to keep track of all your source code by keeping it safe in the cloud.
@@ -127,7 +127,7 @@ $ git push
 
 Here's how to execute push:
 
-![push](/engineering-education/beginner-guide-to-git/push.png)
+![push](/beginner-guide-to-git/push.png)
 
 
 ### Getting your files into the working directory
@@ -138,7 +138,7 @@ $ git pull
 
 Here's how to execute the pull command:
 
-![pull](/engineering-education/beginner-guide-to-git/pull.png)
+![pull](/beginner-guide-to-git/pull.png)
 
 ### Conclusion
 Congratulations! Now you have a better understanding of the basics of Git and should be able to work on your projects, or in a group in a much more synchronized way.

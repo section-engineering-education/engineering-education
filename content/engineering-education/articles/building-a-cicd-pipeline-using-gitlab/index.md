@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-cicd-pipeline-using-gitlab/
+url: /building-a-cicd-pipeline-using-gitlab/
 title: Building a CI/CD Pipeline using Gitlab
 description: This tutorial, we are going to explore the basics of Gitlab and Gitlab-ci by building a CI/CD pipeline and running it using the UI provided by Gitlab. 
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-cicd-pipeline-using-gitlab/hero.jpg
+  - url: /building-a-cicd-pipeline-using-gitlab/hero.jpg
     alt: CI/CD Pipeline using Gitlab example image
 ---
 GitLab is a Git-based platform, similar to [Github](https://github.com/), that provides an array of tools and technologies for various aspects of the [software development lifecycle](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm) (SDLC).
@@ -40,11 +40,11 @@ Setting up a Gitlab account is very easy. Head over to [this](https://gitlab.com
 Follow these steps to set up a new project on Gitlab:
 - On the homepage, click on "create blank project" to initialize a new repository. 
 
-![Create New](/engineering-education/building-a-cicd-pipeline-using-gitlab/create_new.png)
+![Create New](/building-a-cicd-pipeline-using-gitlab/create_new.png)
 
 - Gitlab will redirect you to a form where you fill in the details of your project, such as title, description, etc. You can also choose to make your project public or private. After you finish adding the details, click on "create project". 
 
-![Blank Project](/engineering-education/building-a-cicd-pipeline-using-gitlab/blank_project.png)
+![Blank Project](/building-a-cicd-pipeline-using-gitlab/blank_project.png)
 
 - Click on "clone" and copy the HTTPS URL to clone the project. Open a terminal or command line and enter the following command to clone the project into your local machine:
 
@@ -93,7 +93,7 @@ The next lines define the actual stages that run in series. They start with the 
 
 We can use the `echo` command to print something on the terminal and the `cat` command to display the contents of the Python script. We can also use `echo` to print the value of the variables that are defined in the file. These variables can be accessed by using the `$` symbol. 
 
-![Blank Project](/engineering-education/building-a-cicd-pipeline-using-gitlab/blank_project.png)
+![Blank Project](/building-a-cicd-pipeline-using-gitlab/blank_project.png)
 
 ```yaml
 
@@ -137,17 +137,17 @@ git push origin master
 
 You will be prompted to enter your Gitlab username and password. Once you correctly enter the username and password, the changes will be pushed to the repository and Gitlab will instantly run the code in the .gitlab-ci file by creating a pipeline.
 
-![cicd pipelines](/engineering-education/building-a-cicd-pipeline-using-gitlab/cicd_pipelines.png)
+![cicd pipelines](/building-a-cicd-pipeline-using-gitlab/cicd_pipelines.png)
 
 Navigate to the CI/CD section on the left navbar to view a list of pipelines. The latest one will be at the top and will have the "latest" tag. It will also show us whether the pipeline passed or failed. Click on "passed" or "failed" to view the stages of the pipeline and all the steps that were executed.
 
-![passed pipeline](/engineering-education/building-a-cicd-pipeline-using-gitlab/passed_pipeline.png)
+![passed pipeline](/building-a-cicd-pipeline-using-gitlab/passed_pipeline.png)
 
 You will see the different stages that you defined and whether each stage passed or not. You can click on the individual stages to view the jobs executed in each stage in detail.
 
-![build](/engineering-education/building-a-cicd-pipeline-using-gitlab/build.png)
+![build](/building-a-cicd-pipeline-using-gitlab/build.png)
 
-![test](/engineering-education/building-a-cicd-pipeline-using-gitlab/test.png)
+![test](/building-a-cicd-pipeline-using-gitlab/test.png)
 
 ### Conclusion
 In conclusion, Gitlab-ci is an impeccable tool that makes the lives of software engineers easier by providing a robust solution without requiring any third-party library or tool. 
@@ -157,4 +157,4 @@ In this tutorial, we understood the basics of GitLab and GitLab-ci by building a
 Now that you have grasped the basics, you can go ahead and build your own pipeline. Whether you are a software developer, a system administrator, or a DevOps engineer, GitLab-ci is an indispensable part of your toolkit. 
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

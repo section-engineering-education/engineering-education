@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ensemble-bias-var/
+url: /ensemble-bias-var/
 title: Ensemble Learning on Bias and Variance
 description: This article will provide an overview on on the errors of bias and variance. The goal is to understand the two errors. We will explore their relationship with each other and how ensemble methods affect them.
 author: collins-ayuya
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ensemble-bias-var/hero.jpg
+  - url: /ensemble-bias-var/hero.jpg
     alt:  image example
 ---
-In my previous [article](/engineering-education/ensemble-learning/), we covered ensemble learning and how it improves machine learning. We mentioned that it reduces the errors of bias and variance. These errors can affect the performance of a machine learning model.
+In my previous [article](/ensemble-learning/), we covered ensemble learning and how it improves machine learning. We mentioned that it reduces the errors of bias and variance. These errors can affect the performance of a machine learning model.
 <!--more-->
 It's always preferable to have a low bias and variance. In this article, we will dissect the two errors and the effect of ensemble learning on them.
 
@@ -24,7 +24,7 @@ It's always preferable to have a low bias and variance. In this article, we will
 3. Effect of ensemble methods on bias and variance.
 
 ### Prerequisites
-Aside from the aforementioned [article](/engineering-education/ensemble-learning/) on ensemble methods, I recommend have a basic understanding on the machine learning basics. This [post](/engineering-education/supervised-learning-algorithms/) should help with that.
+Aside from the aforementioned [article](/ensemble-learning/) on ensemble methods, I recommend have a basic understanding on the machine learning basics. This [post](/supervised-learning-algorithms/) should help with that.
 
 ### Prediction errors
 Prediction errors are defined as the collection of bias, variance, and irreducible errors. We can refer to the irreducible error as noise since we cannot reduce it, regardless of the algorithm chosen. The focus of this article is on the errors of bias and variance. The goal is to understand the two errors. We shall explore their relationship with each other and how ensemble methods affect them.
@@ -34,7 +34,7 @@ Prediction errors are defined as the collection of bias, variance, and irreducib
 
 It does not learn the key features therefore the resulting predictions are unreliable, and the generalization is poor. This is what is known as underfitting. To solve this, it is advisable to use a more complex model. However, that is not our focus today. Rather, we shall explore how to deal with bias using boosting.
 
-![bias](/engineering-education/ensemble-bias-var/bias.png)
+![bias](/ensemble-bias-var/bias.png)
 
 *Bias Error. High bias, showing how poorly a function fits datapoints, depicting underfitting.*
 
@@ -44,7 +44,7 @@ It does not learn the key features therefore the resulting predictions are unrel
 
 To deal with this, we can get more training data if the data is inadequate. We could also use a less complex model. We shall, however, look at how to reduce variance using bagging.
 
-![variance](/engineering-education/ensemble-bias-var/variance.png)
+![variance](/ensemble-bias-var/variance.png)
 
 *Variance Error. High variance. The function fits the points too closely. Overfitting is present.*
 
@@ -53,7 +53,7 @@ To deal with this, we can get more training data if the data is inadequate. We c
 ### Bias variance trade-off
 It is desirable to achieve a low bias and variance to ensure accurate predictions. High bias and high variance hint at lower performance.
 
-![biasvariancetrade](/engineering-education/ensemble-bias-var/biasvariancetrade.png)
+![biasvariancetrade](/ensemble-bias-var/biasvariancetrade.png)
 
 *Bias-Variance Trade-off.*
 
@@ -69,7 +69,7 @@ The scattering of predictions around the outer circles shows that overfitting is
 
 Increasing the bias leads to a decrease in variance. Suppose we reduce bias, and variance increases. An ideal model would have low variance and low bias. This is shown in the image below.
 
-![modelcomplexity](/engineering-education/ensemble-bias-var/modelcomplexity.png)
+![modelcomplexity](/ensemble-bias-var/modelcomplexity.png)
 
 *Model Complexity.*
 
@@ -78,7 +78,7 @@ Increasing the bias leads to a decrease in variance. Suppose we reduce bias, and
 Ensemble learning is especially useful when trying to control the two errors.
 
 ### Ensemble methods, bias, and variance
-We covered ensemble learning techniques like bagging, boosting, and stacking in a previous [article](/engineering-education/ensemble-learning/). As a result, we won’t reintroduce them here. We mentioned that bagging helps reduce the variance while boosting reduces bias. In this section, we will seek to understand how bagging and boosting impact variance and bias.
+We covered ensemble learning techniques like bagging, boosting, and stacking in a previous [article](/ensemble-learning/). As a result, we won’t reintroduce them here. We mentioned that bagging helps reduce the variance while boosting reduces bias. In this section, we will seek to understand how bagging and boosting impact variance and bias.
 
 #### Bagging and variance
 Bagging is meant to reduce the variance without increasing the bias. This technique is especially effective where minute changes in a learner’s training set lead to huge changes in the predicted output. Bagging reduces the variance by aggregating individual models. These models have dissimilar statistical properties like the means and standard deviations, among others.
@@ -100,7 +100,7 @@ Bagging performs well on high variance models like decision trees. On lower vari
 Carrying out bagging on models with high bias leads to a drop in accuracy. This is clear when comparing the performance of the model with and without bagging. Without bagging, the accuracy will be higher than when we implement bagging on such a model. I encourage checking out the article mentioned above to understand the experiment and findings in detail.
 
 #### Boosting and bias
-In this [article](/engineering-education/ensemble-learning/), we mentioned that boosting converts a collection of weak learners into strong learners. Boosting is especially useful in models that exhibit underfitting. These models are highly biased and have low variance.
+In this [article](/ensemble-learning/), we mentioned that boosting converts a collection of weak learners into strong learners. Boosting is especially useful in models that exhibit underfitting. These models are highly biased and have low variance.
 
 We get to visualize the bias error from the image depicting underfitting in the [Bias and Variance](#bias-and-variance) section. It shows how poorly a function fits the given data points. To deal with this error, we train a learner and identify where it exhibits bias errors. The observations that are wrongly classified are assigned higher weights. 
 
@@ -108,7 +108,7 @@ The weighting allows each new model to concentrate its efforts on the observatio
 
 This is how bias is reduced through boosting. The steps involved in the boosting process are outlined in the article linked in the previous paragraph.
 
-![boosting](/engineering-education/ensemble-bias-var/boosting.jpg)
+![boosting](/ensemble-bias-var/boosting.jpg)
 
 *Boosting illustration.*
 
@@ -141,7 +141,7 @@ Until next time, happy reading!
 9. [Boosting- Ensemble meta Algorithm for Reducing bias](https://medium.com/ml-research-lab/boosting-ensemble-meta-algorithm-for-reducing-bias-5b8bfdce281)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

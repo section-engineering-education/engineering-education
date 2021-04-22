@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-jekyll-site/
+url: /build-a-jekyll-site/
 title: Building a Blog site from Scratch using Jekyll
 description: This tutorial guides beginners on how to build a blog website from scratch using Jekyll using HTML and CSS.
 author: geoffrey-mungai
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-a-jekyll-site/hero.jpg
+  - url: /build-a-jekyll-site/hero.jpg
     alt: image build a Jekyll site
 ---
 Building a website nowadays is not as hard or expensive as it was in the past. These days, you do not have to learn a crazy programming language to have your site up and running.
@@ -376,4 +376,4 @@ Additional important Jekyll concepts and practices can be found below.
 - [Useful Jekyll Plugins](http://planetjekyll.github.io/plugins/)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

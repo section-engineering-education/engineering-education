@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/variables-data-types-and-control-statements-in-csharp/
+url: /variables-data-types-and-control-statements-in-csharp/
 title: Variables, Data Types and Control Statements in C# 
 description: This tutorial will help the readers understand variables, data types, and control statements (If-else statements, else if statements, and switch-case statements) in C#.
 author: geoffrey-mwangi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/variables-data-types-and-control-statements-in-csharp/hero.jpg
+  - url: /variables-data-types-and-control-statements-in-csharp/hero.jpg
     alt: Variables, Data Types and Control Statements in C# image
 ---
 In this tutorial, we are going to take a look at variables, data types, and control statements in C# (C-Sharp). C# is a programming language developed by Microsoft that runs on the .NET Framework. It is used to develop web apps, desktop apps, mobile apps, games, and much more.
@@ -372,4 +372,4 @@ In this tutorial we looked at:
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

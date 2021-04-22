@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hapi-vs-koa-vs-express/
+url: /hapi-vs-koa-vs-express/
 title: Hapi vs Koa vs Express
 description: In this article we do a comparative analysis of three Node.js frameworks - we explore their advantages, disadvantages, and show an example of how to run a server in each.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/hapi-vs-koa-vs-express/hero.jpg
+  - url: /hapi-vs-koa-vs-express/hero.jpg
     alt: koa koa.js Node.js express hapi framework
 ---
 Node.js has various frameworks, each of which is catered to the varying demands of users and developers. This article will give a comparison between the three major Node.js frameworks, [Express](https://expressjs.com), [Hapi](https://hapi.dev), and [Koa](https://koajs.com).
@@ -20,9 +20,9 @@ In this comparison, we will look at the differences between the three frameworks
 <!--more-->
 For more background on the frameworks, check out the following articles to get a more in depth look before we begin:
 
-- [Introduction to Hapi.js framework](/engineering-education/introduction-to-hapi/)
-- [Introduction to Koa.js framework](/engineering-education/introduction-to-koajs/)
-- [Introduction to Node.js](/engineering-education/history-of-nodejs/)
+- [Introduction to Hapi.js framework](/introduction-to-hapi/)
+- [Introduction to Koa.js framework](/introduction-to-koajs/)
+- [Introduction to Node.js](/history-of-nodejs/)
 
 ### Framework histories
 Before we start our in-depth comparison of each framework, let's take a look at how they got started.
@@ -32,12 +32,12 @@ Hapi.js was created by the mobile team at Walmart Labs — led by Eran Hammer to
 
 Hapi's initial commit was made on August 5th, 2011 and after 5,619 commits, it is currently at version 20.0.0. It was originally built using the Express framework before challenges arose that drove Walmart to make Hapi, its stand-alone framework.
 
-Refer to my [introduction to Hapi.js framework](/engineering-education/introduction-to-hapi/) for a detailed look at Hapi.js.
+Refer to my [introduction to Hapi.js framework](/introduction-to-hapi/) for a detailed look at Hapi.js.
 
 #### Koa.js
 Koa's initial commit was made on August 17th, 2013 by TJ Holowaychuk. The framework was built by the team behind express with the aim of making it smaller, more expressive, and robust. Koa.js is currently at version 2.13.0 with 1,086 commits.
 
-Koa.js is also known for having a smaller footprint compared to other frameworks. Refer to my [introduction to koa.js framework](/engineering-education/introduction-to-koajs/) for a detailed look at Koa.js.
+Koa.js is also known for having a smaller footprint compared to other frameworks. Refer to my [introduction to koa.js framework](/introduction-to-koajs/) for a detailed look at Koa.js.
 
 #### Express.js
 The Express framework is the oldest of the three. Its initial commit was made by TJ Holowaychuk on June 26th, 2009 and its first release was on the 2nd of January 2010 after around 660 commits.
@@ -211,4 +211,4 @@ In this article we have done a comparison of the three major Node.js frameworks.
 With that, a developer can now choose the framework which best satisfies his/her needs for their application.  
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

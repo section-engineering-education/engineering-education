@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/supervised-learning-algorithms/
+url: /supervised-learning-algorithms/
 title: Supervised Learning Algorithms
 description: Introduction to supervised learning algorithms such as classification and regression algorithms.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/supervised-learning-algorithms/hero.jpg
+  - url: /supervised-learning-algorithms/hero.jpg
     alt: Supervised Learning Algorithms image
 ---
 Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and is creating a massive impact.
@@ -25,7 +25,7 @@ The method of feeding experience to the algorithm is the basis for the primary c
 
 1. Supervised Learning: Supervised learning algorithms receive a pair of input and output values as part of their dataset. The pair of values help the algorithm model the function that generates such outputs for any given inputs. We will be covering the entire topic of supervised learning in this article.
 
-2. Unsupervised Learning: In this type of learning, algorithms are only fed in as input data variables. The algorithms make sense of the data based on patterns that the algorithm detects. For example, given a dataset of black and red cards, clustering algorithms will find all cards similar to black and place them in one set. In the other set, the red cards are placed. Thereby, a [decision boundary](https://en.wikipedia.org/wiki/Decision_boundary#:~:text=A%20decision%20boundary%20is%20the,are%20not%20always%20clear%20cut.) is formed. [Clustering](/engineering-education/clustering-algorithms/) is one such example of unsupervised learning.  
+2. Unsupervised Learning: In this type of learning, algorithms are only fed in as input data variables. The algorithms make sense of the data based on patterns that the algorithm detects. For example, given a dataset of black and red cards, clustering algorithms will find all cards similar to black and place them in one set. In the other set, the red cards are placed. Thereby, a [decision boundary](https://en.wikipedia.org/wiki/Decision_boundary#:~:text=A%20decision%20boundary%20is%20the,are%20not%20always%20clear%20cut.) is formed. [Clustering](/clustering-algorithms/) is one such example of unsupervised learning.  
 
 3. Reinforcement Learning: Reinforcement learning is a subset of machine learning that deals with agents performing actions in a simulated environment. The outcome of the actions carries a reward. The objective is to optimize the reward obtained through actions in the environment. Most of the living ecosystem is best modeled by a reward-based mechanism. For example, a child likes to eat candy again and again, because it provides a dopamine rush (every time) that is the reward.
 
@@ -43,13 +43,13 @@ The various objects found on the road need to be classified according to their c
 
 1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
-![distance metrics](/engineering-education/supervised-learning-algorithms/distance.jpg)
+![distance metrics](/supervised-learning-algorithms/distance.jpg)
 
 *[Image Source](https://www.ieee.ma/uaesb/pdf/distances-in-classification.pdf)*
 
 All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known before fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
 
-![knnexample](/engineering-education/supervised-learning-algorithms/knnexample.jpg)
+![knnexample](/supervised-learning-algorithms/knnexample.jpg)
 
 *[Image Source](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2018/07/11/sagemaker-knn-1.gif)*
 
@@ -90,7 +90,7 @@ The accuracy of the classifier is 98.33%. This is tested on the test dataset. 98
 
 The reasoning behind SVM is to find the hyperplane with the maximum distance from the support vectors. The hyperplane may be a linear decision boundary or a non-linear decision boundary. When dealing with non-linear planes, the dataset is projected into higher dimensions to create linear boundaries. For example, consider the following image.
 
-![nonlinearmapping](/engineering-education/supervised-learning-algorithms/svm.jpg)
+![nonlinearmapping](/supervised-learning-algorithms/svm.jpg)
 
 *[Image Source](https://www.researchgate.net/profile/PK_Varshney/publication/228712327/figure/fig3/AS:667775798353922@1536221565025/Mapping-nonlinear-data-to-a-higher-dimensional-feature-space-where-a-linear-separating.ppm)*
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-fuzzy-logic-system/
+url: an-overview-of-fuzzy-logic-system/
 title: An Overview of Fuzzy Logic System
 description: This article will provide an overview on fuzzy logic and how it is implemented. We will go over some real-life applications and explains why it is used.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-overview-of-fuzzy-logic-system/hero.jpg
+  - url: /an-overview-of-fuzzy-logic-system/hero.jpg
     alt: Fuzzy Logic example image
 ---
 Decision-making is an integral aspect of our daily lives. It is hard to establish whether a certain statement (or state) is true or false in certain situations. In such situations, fuzzy logic can be used to offer flexibility in reasoning, given the uncertainty. 
@@ -38,7 +38,7 @@ We learn that fuzzy logic systems use degrees of possibilities rather than preci
 ### Fuzzy logic architecture
 The following diagram shows a fuzzy logic architecture. 
 
-![Architecture of Fuzzy Logic System](/engineering-education/an-overview-of-fuzzy-logic-system/architecture-of-fuzzy-logic-system.png)
+![Architecture of Fuzzy Logic System](/an-overview-of-fuzzy-logic-system/architecture-of-fuzzy-logic-system.png)
 
 [Image Source: Javat Point](https://static.javatpoint.com/tutorial/fuzzy-logic/images/architecture-of-fuzzy-logic-system.png)
 
@@ -58,7 +58,7 @@ In simple terms, the membership function is used to estimate or compute the degr
 
 The following diagram shows an example of a membership function.
 
-![Membership Function](/engineering-education/an-overview-of-fuzzy-logic-system/membership-function.jpg)
+![Membership Function](/an-overview-of-fuzzy-logic-system/membership-function.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/membership_function_ac.jpg)
 
@@ -119,7 +119,7 @@ Fuzzy logic is an effective tool for solving various computing problems in the w
 - [IGI Global](https://www.igi-global.com/dictionary/granular-computing/17211)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

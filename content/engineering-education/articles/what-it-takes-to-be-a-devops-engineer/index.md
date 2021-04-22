@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-it-takes-to-be-a-devops-engineer/
+url: /what-it-takes-to-be-a-devops-engineer/
 title: What it Takes to be a DevOps Engineer
 description: DevOps is a field that is growing and will continue to grow and thus making DevOps engineering jobs in high demand.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-it-takes-to-be-a-devops-engineer/hero.jpg
+  - url: /what-it-takes-to-be-a-devops-engineer/hero.jpg
     alt: DevOps example image developers
 
 ---

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-science-setup/
+url: /data-science-setup/
 title: Basic Setup for Data Science
 description: This article is an overview about how to setup your computer and install data science tools, by creating a basic Python setup using the Anaconda Package Manager.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-science-setup/hero.jpg
+  - url: /data-science-setup/hero.jpg
     alt: basic setup for data science
 ---
 The path to becoming a data scientist begins with setting up your computer with the appropriate tools. Most data science ecosystems are built around Python and R.
@@ -37,17 +37,17 @@ These are the set of steps required to install Anaconda Package Manager. Choose 
 
 **Step 1**
 
-![Anaconda install screen](/engineering-education/data-science-setup/1.png)
+![Anaconda install screen](/data-science-setup/1.png)
 
 **Step 2**
 
-![Installation](/engineering-education/data-science-setup/2.png)
+![Installation](/data-science-setup/2.png)
 
 **Step 3**: Selecting the first option results in the Anaconda Package Manager getting added to the environment variables. This allows one to call the command `conda` from the terminal.
 
 Click on the install button to complete the installation.
 
-![Path Anaconda](/engineering-education/data-science-setup/3.png)
+![Path Anaconda](/data-science-setup/3.png)
 
 
 ### Installing machine learning libraries
@@ -98,7 +98,7 @@ We could search for it in the search bar on Anaconda's website to install it. An
 
 The anaconda website for scikit-learn should look like this:
 
-![sklearn](/engineering-education/data-science-setup/scikit-learn.png)
+![sklearn](/data-science-setup/scikit-learn.png)
 
 You will find a few varying commands. In most cases, the first command should work. However, in a rare scenario, if version conflicts occur, you may try the other commands and try it with other library versions. 
 
@@ -116,7 +116,7 @@ This idea was inspired by this [article](https://towardsdatascience.com/tensorfl
 #### Installing PyTorch
 PyTorch is relatively simple to install. Go to the Pytorch [website](https://pytorch.org/get-started/locally/). Under the *Get Started* tab, select the appropriate options. 
 
-![pytroch](/engineering-education/data-science-setup/pytorch.png)
+![pytroch](/data-science-setup/pytorch.png)
 
 Once selected, you should get your command below. Once that is done, just run the command in the virtual environment to avoid future compatibility issues.
 
@@ -139,4 +139,4 @@ To check for all the environments present, use the following command:
 In this article, we have covered the installation of Anaconda Package Manager and the creation of virtual environments. For all the future articles, we will refer to this article. I hope you enjoyed reading the article. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/integration-challenges-and-solutions-in-software-development/
+url: /integration-challenges-and-solutions-in-software-development/
 title: Integration Challenges and Solutions in Software Development
 description: This article will cover about system integration, why it is important, the challenges faced and success factors to be kept into consideration.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/integration-challenges-and-solutions-in-software-development/hero.jpg
+  - url: /integration-challenges-and-solutions-in-software-development/hero.jpg
     alt: Integration Challenges image example
 ---
 With the IT industry growing at a tremendous rate, there is multiple software being used for various purposes. There are softwares that needs to work hand in hand to act as a single system and perform a certain task. This is where software integration comes into play.
@@ -134,4 +134,4 @@ To summarize:
 Happy coding!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

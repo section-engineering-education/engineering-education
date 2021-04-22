@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/complex-event-processing/
+url: complex-event-processing/
 title: Complex Event Processing
 description: The demand for rapid, actionable decisions illustrates the importance for enabling technologies like Complex Event Processing (CEP).
 author: earl-potters
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/complex-event-processing/hero.jpg
+  - url: /complex-event-processing/hero.jpg
     alt: complex event processing
 ---
 Big data companies use the term Event Cloud to refer to the massive amounts of data on events being collected. The demand for rapid, actionable decisions illustrates the importance of enabling technologies like Complex Event Processing (CEP).
@@ -48,7 +48,7 @@ Next comes the event processing. In this step, we can make inferences on the dat
 
 Finally, the last step is the response or action. In order to effectively respond to an event, actions are taken. These actions can be alerts, logging files, triggers for more complicated workflows, or automated actions. For the car example, the event 'LossOfTirePresure' can trigger a reaction process to note the pressure loss into the car's maintenance log and alert the driver via the car's portal that the tire pressure has decreased.
 
-![CEP1](/engineering-education/complex-event-processing/cep1.jpeg)<br/>
+![CEP1](/complex-event-processing/cep1.jpeg)<br/>
 *Image source: [Databricks](https://databricks.com/glossary/complex-event-processing)*
 
 ### What tools are available?

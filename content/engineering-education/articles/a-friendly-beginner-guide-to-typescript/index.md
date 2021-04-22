@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/a-friendly-beginner-guide-to-typescript/
+url: /a-friendly-beginner-guide-to-typescript/
 title: A Friendly Beginner's Guide to TypeScript
 description: This article gives the reader a friendly beginners guide to TypeScript, which is a language that extends JavaScript by adding types.
 author: idris-olubisi
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-friendly-beginner-guide-to-typescript/hero.png
+  - url: /a-friendly-beginner-guide-to-typescript/hero.png
     alt: Guide to TypeScript image example
 ---
 TypeScript is a programming language that extends JavaScript by adding types. It saves time by catching errors and provides fixes before you run the code. TypeScript is a commonly used tool for adding static types.
@@ -331,7 +331,7 @@ let welcomeUser = new WelcomeMessage("Idris"); // Welcome Idris
 ### Typescript features
 JavaScript uses "dynamic types"(resolved at runtime), Typescript uses "static types"(set during development).
 
-![typescript feature](/engineering-education/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
+![typescript feature](/a-friendly-beginner-guide-to-typescript/typescript-feature-img.jpg)
 
 [Image Source](https://www.tutorialspoint.com/)
 
@@ -362,4 +362,4 @@ Thank you for reading.
 
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

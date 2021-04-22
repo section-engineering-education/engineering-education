@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-crypto-mining-works/
+url: /how-crypto-mining-works/
 title: How Does Cryptocurrency Mining Work?  
 description: This article will talk about what cryptocurrency mining is and how it works. Mining can be thought of as the “processor” for transactions on the blockchain.
 author: gregory-manley
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-crypto-mining-works/hero.jpg
+  - url: /how-crypto-mining-works/hero.jpg
     alt: cryptocurrency Mining example image
 ---
 It is hard to talk about cryptocurrency without mentioning mining. Mining cryptocurrency is a complex mathematical system, generally utilizing cryptographic hashing algorithms. Since hashing is extremely complicated, we will only be looking at what is hashed in the mining process. For this article, we will examine Bitcoin mining at a high level.
@@ -40,7 +40,7 @@ With Bitcoin, it adjusts the target value every 2016 blocks (about 2 weeks) in o
 ### How does Bitcoin mining work?  
 In the case of mining Bitcoin, transactions are hashed and packaged to be included in a block. They are organized into a Merkle Tree. The following image from [Escape Velocity](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/) shows that transactions are initially hashed and then paired and hashed together. These resulting hashes may be paired again and hashed until it leaves one hash. In this type of tree, the root is called the Merkle Root.
 
-![](/engineering-education/how-crypto-mining-works/merkle-tree.jpg)
+![](/how-crypto-mining-works/merkle-tree.jpg)
 
 [Image Source](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/)
 
@@ -92,7 +92,7 @@ In this simple example, let’s say that the target value is: 0f0000000000000000
 
 And our output from the program may show the following hashes.
 
-![](/engineering-education/how-crypto-mining-works/hashingexampe.PNG)
+![](/how-crypto-mining-works/hashingexampe.PNG)
 
 The second hash: 0e6878e44ef7b460869034d35acd8cfda70330841dd71f24e559b45d01a035fe is less than the target value and would be a valid block.
 
@@ -105,11 +105,11 @@ In this article we have looked at how Bitcoin mining is completed from a higher 
 
 ### Additional Resources
 
-- [How to Build Your Own Private Blockchain](/engineering-education/how-to-build-your-own-private-blockchain/)
+- [How to Build Your Own Private Blockchain](/how-to-build-your-own-private-blockchain/)
 
 - [What is ablockchain](https://www.investopedia.com/terms/b/blockchain.asp)
 
 - [What are transactions](https://en.bitcoin.it/wiki/Transaction)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

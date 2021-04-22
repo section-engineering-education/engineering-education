@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-elastic-stack/
+url: /introduction-to-elastic-stack/
 title: Introduction to Elastic Stack (ELK)
 description: This article will cover the basics of Elastic Stack - which is a log management platform that can search, visualize, and manage log files.
 author: elly-omondi
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-elastic-stack/hero.jpg
+  - url: /introduction-to-elastic-stack/hero.jpg
     alt: Elastic Stack image
 ---
 [*Elastic stack (ELK - Elasticsearch, Logstash, and Kibana)*](https://www.elastic.co/elastic-stack) is a bundle of software components that can search, visualize, and manage log files (end to end log analysis).
@@ -48,7 +48,7 @@ For many years, the Elastic Stack existed as a collection of three tools, (hence
 
 Recently, a fourth component, Beats, was added to the suite by the Elastic company. Thus, the Elastic Stack is made up of four independent, powerful, and compatible open source tools. All of the components of the stack can be used as standalone applications as they are compatible with a multitude of other applications.
 
-![Flow diagram](/engineering-education/introduction-to-elastic-stack/flow-diagram.png)
+![Flow diagram](/introduction-to-elastic-stack/flow-diagram.png)
 
 [Image Source](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZVZmZFPL7blODx-p4eva1gachnZ407hX1Eg&usqp=CAU
 )
@@ -111,7 +111,7 @@ The Beats application involved in data shipping is determined by the data file b
 - Packetbeat - ships network traffic.
 - Filebeat - ships system log files.
 
-![Beats](/engineering-education/introduction-to-elastic-stack/beats-logo-color.png)
+![Beats](/introduction-to-elastic-stack/beats-logo-color.png)
 
 ### How ELK works
 Every event or process in a computer is documented as a log file. The following processes occur within the stack when using ELK for log analysis or log management.
@@ -143,4 +143,4 @@ Every event or process in a computer is documented as a log file. The following 
 - [ELK](https://www.tutorialspoint.com/how_to_deploy_the_elk_stack_in_production/index.asp)
 
 ---
-Peer Review Contributions by: [Aakash Rawal](engineering-education/authors/aakash-rawal/) & [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Aakash Rawal](engineering-education/authors/aakash-rawal/) & [Louise Findlay](/authors/louise-findlay/)

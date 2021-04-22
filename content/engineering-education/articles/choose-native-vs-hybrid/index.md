@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/choose-native-vs-hybrid/
+url: /choose-native-vs-hybrid/
 title: Native vs Hybrid Applications 
 description: This article will point out the differences between native and hybrid applications to help beginners developers create mobile applications. 
 author: peter-ndegwa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/choose-native-vs-hybrid/hero.jpg
+  - url: /choose-native-vs-hybrid/hero.jpg
     alt: Native vs Hybrid Applications example image
 ---
 A mobile application (app) is a computer program or software application created for portable devices such as tablets and smartphones. Mobile application development includes gathering requirements, analyzing, designing, coding, and testing software applications for portable devices. 
@@ -116,5 +116,5 @@ Happy coding!
 12. [https://mindsea.com/security-hybrid-apps-vs-native-apps/](https://mindsea.com/security-hybrid-apps-vs-native-apps/)        
 
 ---
-Peer Review Contributions by: [Eric Kahuha](/engineering-education/authors/eric-kahuha/)
+Peer Review Contributions by: [Eric Kahuha](/authors/eric-kahuha/)
 

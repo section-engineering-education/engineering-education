@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/inter-vlan-routing/
+url: /inter-vlan-routing/
 title: Understanding Inter-VLAN Routing
 description: The objective of this article is to help one understand inter-VLAN routing and how to configure it using a packet tracer.
 author: atonya-dennis
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/inter-vlan-routing/hero.jpg
+  - url: /inter-vlan-routing/hero.jpg
     alt: Network Connection example image
 ---
 As a network administrator, tasks may include having to segment a single switched Local Area Network (LAN) logically without having to run new cables and changing the existing network. The concept of "VLAN" and its configurations will help one handle the task at hand with ease.
@@ -82,7 +82,7 @@ In this article, we will learn how to configure inter-VLAN routing using the rou
 
 Consider a LAN with 4 PCs, 1 switch, and a router connected as shown in the image:
 
-![Local Area Network](/engineering-education/inter-vlan-routing/network.jpg)
+![Local Area Network](/inter-vlan-routing/network.jpg)
 
 Now, we have to configure two VLANs 10 and 20, with PC0 and PC1 on VLAN10, and PC2 and PC3 are on VLAN20.
 
@@ -165,7 +165,7 @@ From the above code interface, `fa0/5` is serving as our trunk port. To configur
 #### Step 3
 Using static IP addressing, set the IP addresses to static on each PC on the network.
 
-![IP addressing](/engineering-education/inter-vlan-routing/pc-ip-configuration.jpg)
+![IP addressing](/inter-vlan-routing/pc-ip-configuration.jpg)
 
 #### Step 4
 Configure the router to enable the traffic to move from `VLAN10` to `VLAN20`. For the PCs to communicate, we subdivide the single interface into many sub-interfaces, where each sub-interface will act as the default gateways for each of the VLANs. This will allow two sub networks to communicate using the single interface.
@@ -199,7 +199,7 @@ Test the inter-VLAN connectivity by trying to ping the different PCs.
 
 For instance, if we ping `PC2` in `VLAN20` from `PC0` in `VLAN10`, it should be successful as shown below:
 
-![Ping PC2 from PC1](/engineering-education/inter-vlan-routing/ping.jpg)
+![Ping PC2 from PC1](/inter-vlan-routing/ping.jpg)
 
 ### Conclusion
 Inter-VLAN routing is an essential concept for anyone who has the passion for networking. It is the convenient and better way to subdivide a large LAN and to enable communication between the network hosts.
@@ -214,4 +214,4 @@ To summarize:
 Happy coding.
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

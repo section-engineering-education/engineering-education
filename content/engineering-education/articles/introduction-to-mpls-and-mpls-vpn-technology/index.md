@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-mpls-and-mpls-vpn-technology/
+url: /introduction-to-mpls-and-mpls-vpn-technology/
 title: Introduction to MPLS and MPLS VPN technology
 description: This article briefly introduces Multi-protocol Label Switching(MPLS) and talks about how Virtual Private Networks running on MPLS cores offer reliability, security and enhanced performance.
 author: shreya-a-n
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-mpls-and-mpls-vpn-technology/hero.jpg
+  - url: /introduction-to-mpls-and-mpls-vpn-technology/hero.jpg
     alt: VPN example image laptop
 
 ---
@@ -25,7 +25,7 @@ When a router receives a packet, it examines its IP header, fetches the destinat
 
 Let us understand how MPLS works using an example. The figure depicts an IPv4 network topology with four routers.
 
-![MPLS:example](/engineering-education/introduction-to-mpls-and-mpls-vpn-technology/mpls.jpg)
+![MPLS:example](/introduction-to-mpls-and-mpls-vpn-technology/mpls.jpg)
 
 `Note: The routers in an MPLS network are called Label Switch Routers(LSRs).`
 
@@ -46,7 +46,7 @@ The process of packet forwarding in an MPLS network can be broadly divided into 
 ### 2.5 layer protocol
 **The MPLS header sits between Layer 2 and Layer 3 headers and is thus called the 2.5 Layer protocol or the shim protocol.** It forwards packets with the speed of Layer 2 protocols while preserving the scalability and dynamic capabilities of Layer 3. The routers using MPLS forwarding tables do not find the need to open Layer 3 headers of packets, thereby saving resources and time.  
 
-![MPLS:Header](/engineering-education/introduction-to-mpls-and-mpls-vpn-technology/mplsHeader.jpg)
+![MPLS:Header](/introduction-to-mpls-and-mpls-vpn-technology/mplsHeader.jpg)
 
 **MPLS creates virtual paths between networks called Label Switch Paths(LSPs).**
 *An LSP can be defined as the sequence of Label Switch Routers(LSRs) that transmit the packet within an MPLS network. Basically, LSP is a predefined path that the packet takes during transmission.*
@@ -57,7 +57,7 @@ The process of packet forwarding in an MPLS network can be broadly divided into 
 
 VPN technology has been around longer than MPLS. ATM or Frame Relay technologies providing VPN facilities at Layer 2 were very popular. In such a network, the service provider runs ATM or Frame Relay to provide connectivity, which typically forms the backbone network. **In case of MPLS VPN, MPLS forms the backbone network over which VPN services are provided.** *A virtual network built on top of existing network infrastructure(Underlay) is called an Overlay.* This technique of overlaying a virtual network on an underlay increases the scalability of the network and supports multi-tenancy, modularity and virtualization.
 
-![MPLS:VPN](/engineering-education/introduction-to-mpls-and-mpls-vpn-technology/mplsVPN.jpg)
+![MPLS:VPN](/introduction-to-mpls-and-mpls-vpn-technology/mplsVPN.jpg)
 
 A typical MPLS VPN model consists of **Provider Edge(PE) routers, Provider( P) routers, Customer Edge(CE) routers and Customer( C) routers.**
 The PE and CE are directly connected at Layer 3. In the service provider’s network, *all PE and P routers run MPLS VPN as a service.*

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-docker/
+url: /getting-started-with-docker/
 title: Getting Started with Docker
 description: The basic concepts of Docker, understanding how to install Docker, creating your first image from Dockerhub and how to create a Dockerfile.
 author: francisca-adekanye
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-docker/hero.jpg
+  - url: /getting-started-with-docker/hero.jpg
     alt: container example image
 ---
 [Docker](https://en.wikipedia.org/wiki/Docker_(software)) is a virtualization platform used to deliver software in packages called containers. It allows an application to run instances inside of a container.  Docker has become very popular nowadays.

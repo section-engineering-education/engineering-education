@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/object-arrays-destructuring/
+url: /object-arrays-destructuring/
 title: Objects, Arrays, and Destructuring in JavaScript
 description: This article goes over objects, arrays, and destructuring in JavaScript, to help developers have a better understanding of the basics.
 author: geoffrey-mungai
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/object-arrays-destructuring/hero.jpg
+  - url: /object-arrays-destructuring/hero.jpg
     alt: object arrays destructuring example image
 ---
 Objects and arrays are some of the common data types used in JavaScript. Despite being commonly used, many developers have little understanding of the basic concepts of the two data types. The use of objects in place of arrays and vice-versa is common among developers. Let us look at the two data types, their differences, and destructuring in each.
@@ -262,4 +262,4 @@ let b = 2;
 Objects are a data-type that has properties or preferences associated with it. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types and how they work is important to understand.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

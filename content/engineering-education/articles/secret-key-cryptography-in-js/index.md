@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/secret-key-cryptography-in-js/
+url: /secret-key-cryptography-in-js/
 title: Implementing Secret Key Cryptography in JavaScript
 description: This article will serve as an introduction to secret key cryptography and go over some algorithms that use this method of secret key cryptography.
 author: kennedy-mwangi
@@ -10,7 +10,7 @@ date: 2020-12-06T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/secret-key-cryptography-in-js/hero.jpg
+  - url: /secret-key-cryptography-in-js/hero.jpg
     alt: Secret Key Cryptography image example
 ---
 Secret key cryptography, also known as `symmetric cryptography` is a cryptographic system where the same key (often referred to as the secret key) is used for encryption and decryption of messages.
@@ -181,4 +181,4 @@ In this article we have looked at a brief description of secret key cryptography
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

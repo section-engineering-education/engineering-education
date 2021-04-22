@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-firebase-landmark-recognition/
+url: /react-native-firebase-landmark-recognition/
 title: Landmark Recognition Using Firebase ML in React Native
 description: This tutorial gives readers a detailed guide on implementing landmark recognition using Firebase ML kit in a Non-Expo React Native application.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-firebase-landmark-recognition/hero.jpg
+  - url: /react-native-firebase-landmark-recognition/hero.jpg
     alt: React Native Landmark Recognition With Firebase Hero Image
 ---
 In this tutorial, we will build a React Native application **without** Expo to recognize landmarks from images using the machine learning kit from Firebase.
@@ -35,7 +35,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Ensure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/engineering-education/react-native-firebase-landmark-recognition/env_setup.png)
+![Env Setup](/react-native-firebase-landmark-recognition/env_setup.png)
 
 Head to [Firebase Console](https://console.firebase.google.com/u/0/) and create a new project.
 
@@ -50,9 +50,9 @@ You can check out the final code in this [GitHub Repository](https://github.com/
 
 In the starter code, I've added 2 buttons: One to pick a photo from the gallery and one to take a photo using the `react-native-image-picker` library. When the user selects the image, use a state to store the image's URI and display it on the UI.
 
-![With Image](/engineering-education/react-native-firebase-landmark-recognition/with_image.jpg)
+![With Image](/react-native-firebase-landmark-recognition/with_image.jpg)
 
-If you'd like to learn how to build this starter code, refer to my previous article about [Image Labeling using Firebase ML in React Native](/engineering-education/react-native-firebase-image-labeling/).
+If you'd like to learn how to build this starter code, refer to my previous article about [Image Labeling using Firebase ML in React Native](/react-native-firebase-image-labeling/).
 
 ### Recognize landmarks from images
 Let's install the package for Firebase ML.
@@ -132,7 +132,7 @@ We'll render the UI using the state that we set up.
 ))}
 ```
 
-![Final Result](/engineering-education/react-native-firebase-landmark-recognition/final_result.jpg)
+![Final Result](/react-native-firebase-landmark-recognition/final_result.jpg)
 
 ### Additional configurations
 The `cloudLandmarkRecognizerProcessImage` method accepts an optional configuration object.
@@ -166,4 +166,4 @@ Congratulations, :partying_face: You did it.
 Thanks for Reading!
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

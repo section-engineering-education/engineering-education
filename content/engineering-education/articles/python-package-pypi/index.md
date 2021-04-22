@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-a-python-package-and-publishing-on-pypi/
+url: /building-a-python-package-and-publishing-on-pypi/
 title: Building a Python Package and Publishing on PyPi (The Python Package Index)
 description: This tutorial will give readers a detailed guide on packages in Python and how to build one, it will take them through how to write their code, structure it, package it, and finally how to publish it on PyPI for their general python community.
 author: james-sandy
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-python-package-and-publishing-on-pypi/hero.jpg
+  - url: /building-a-python-package-and-publishing-on-pypi/hero.jpg
     alt: Python example image PyPi
 ---
 If you have any experience building things with Python you will notice a lot of installing and importing of packages, Python allows you to reuse code and share your code to save time and energy. In very simple terms, a Python package is a collection of related modules, it is a module that contains a file name *__init__.py*, the Init.py file is simply a file that tells Python that the directory contains packages.
@@ -116,7 +116,7 @@ The next thing you need to do is navigate to the directory of your project where
 python setup.py sdist bdist_wheel
 ```
 
-![](/engineering-education/building-a-python-package-and-publishing-on-pypi/img.jpg)
+![](/building-a-python-package-and-publishing-on-pypi/img.jpg)
 
 *Image: Python example image PyPi*
 
@@ -160,4 +160,4 @@ print(cal_lcm(4,5))
 If you have followed all the steps carefully you may have noticed that it's not very difficult to build a basic package and I'm sure you are proud of this package you just built. If you have other ideas you feel will do well as a package then you can go ahead to try and implement them following the same steps you did here.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

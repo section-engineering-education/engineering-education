@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-app-using-postgresql-database/
+url: /django-app-using-postgresql-database/
 title: Creating a Django App Using PostgreSQL Database
 description: In this article, we wil create a Hello World Django application using PostgreSQL database. PostgreSQL is a open-source object-relational database system that uses the SQL language.
 author: adeyemi-atoyegbe
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/django-app-using-postgresql-database/hero.jpg
+  - url: /django-app-using-postgresql-database/hero.jpg
     alt: Django PostgreSQL Database example
 ---
 Django is a high-level Python Web framework that encourages rapid development, clean, and pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Best of all, it's [free and open-source](https://www.djangoproject.com).
@@ -30,13 +30,13 @@ To follow along with this tutorial, you should have:
 ### Step 1: Creating our database through the command line
 Open the PostgreSQL shell. You can find the PSQL Shell in the Start Menu.
 
-![access psql](/engineering-education/django-app-using-postgresql-database/access_psql.png)
+![access psql](/django-app-using-postgresql-database/access_psql.png)
 
 The shell will prompt you for **Server, Database, Port, and Username** details. You can set it to default by clicking on the Enter button in the keyboard without providing any value. Finally, the shell will prompt you for the **Password**. 
 
 You should provide the password that you used during the PostgreSQL installation. You will see a similar result in your PSQL shell like the one the above image if correctly implemented.
 
-![psql_shell](/engineering-education/django-app-using-postgresql-database/psql_shell.png)
+![psql_shell](/django-app-using-postgresql-database/psql_shell.png)
 
 Let's create a PostgreSQL database.
 
@@ -207,7 +207,7 @@ Running migrations:
 
 `python manage.py migrate` command created some default tables in our database.
 
-![postgres_database](/engineering-education/django-app-using-postgresql-database/postgresql_database.jpg).
+![postgres_database](/django-app-using-postgresql-database/postgresql_database.jpg).
 
 
 To get a better understanding of what this command does, check out this article [Django Migrations: A Primer](https://realpython.com/django-migrations-a-primer/).
@@ -222,7 +222,7 @@ After running the command above, proceed to visit [http://127.0.0.1:8000](http:/
 
 If your Django project runs without any errors, you should see something like this.
 
-![Django Homepage](/engineering-education/django-app-using-postgresql-database/django_webpage.jpg)
+![Django Homepage](/django-app-using-postgresql-database/django_webpage.jpg)
 
 Congratulations! you've configured Django to use PostgresSQL.
 
@@ -319,7 +319,7 @@ Let's navigate to the `index.html` in our templates folder and add this:
 
 If the development server is still running visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser or run the `python manage.py runserver` command again. 
 
-![homepage](/engineering-education/django-app-using-postgresql-database/homepage.png)
+![homepage](/django-app-using-postgresql-database/homepage.png)
 
 If you can see the image above, Congratulations! You just created a Hello World App in Django.
 
@@ -333,5 +333,5 @@ If you can see the image above, Congratulations! You just created a Hello World 
 4.  [Django Migrations](https://realpython.com/django-migrations-a-primer/). 
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

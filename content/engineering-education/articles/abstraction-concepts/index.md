@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/abstraction-concepts/
+url: /abstraction-concepts/
 title: Understanding Abstraction in Python, Part 1
 description: An introduction to abstraction in Python through the concepts of parameters, scoping, and recursion.
 author: sophia-raji
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/abstraction-concepts/hero.jpg
+  - url: /abstraction-concepts/hero.jpg
     alt: python ball hiding
 ---
 Abstraction is the art of hiding unnecessary details. It is a fundamental object-oriented programming concept which allows us to only show relevant features of an object and conceal the rest. In doing so, we make our programs more abstract and don't do unnecessary work. We achieve this in Python through the use of classes and interfaces, which we'll discuss in Part 2 of this series, after reviewing some important fundamentals.

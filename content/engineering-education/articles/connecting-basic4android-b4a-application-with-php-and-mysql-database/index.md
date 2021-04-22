@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/
+url: /connecting-basic4android-b4a-application-with-php-and-mysql-database/
 title: Connecting Basic4Android (B4A) Application to PHP and MySQL Database
 description: This article will go over creating a B4A application that communicates with the database using PHP from the article. We will also install Xampp, create a database, create a simple B4A application.
 author: sylvester-tamba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/hero.jpg
+  - url: /connecting-basic4android-b4a-application-with-php-and-mysql-database/hero.jpg
     alt:  example image
 ---
 There are many tools for Android application development. Some of these tools are [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html) (B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application development developed by [Anywhere Software](https://www.b4x.com). B4A is free and can be downloaded and installed from the [official website](https://www.b4x.com/b4a.html).
@@ -28,35 +28,35 @@ Before we begin, it would be useful for the reader to have the following:
 - PHP and MySQL development environment: In this case, we will use Xampp.
 
 ### Installing B4A
-- Kindly follow this [tutorial](/engineering-education/introduction-to-android-app-development-basic4android-b4a-part1/).
+- Kindly follow this [tutorial](/introduction-to-android-app-development-basic4android-b4a-part1/).
 
 ### Installing Xampp
 - Download Xampp from the [official website](https://www.apachefriends.org/index.html).
 - Click on the downloaded file and continue with the installation.
 
-![initializing-installation-window](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-first-installation.PNG)
+![initializing-installation-window](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-first-installation.PNG)
 
 - Pick the components that we will use: MySQL and phpMyAdmin, and click Next.
 
-![Pick components](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-second-pick-components.PNG)
+![Pick components](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-second-pick-components.PNG)
 
 - Select the folder you would like to install Xampp, and click Next.
 
-![Installation folder](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-third-folder-selection.PNG)
+![Installation folder](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-third-folder-selection.PNG)
 
 - Select the language, and click next.
 
-![Language](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-fourth-language-selection.PNG)
+![Language](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-fourth-language-selection.PNG)
 
 - Click next, as shown in the screenshot below.
 
-![Features window](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-fifth-window.PNG)
+![Features window](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-fifth-window.PNG)
 
-![Ready to install window](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-sixth-window.PNG)
+![Ready to install window](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-sixth-window.PNG)
 
 - Wait for the installation process.
 
-![Installation window](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-seventh-installation-process.PNG)
+![Installation window](/connecting-basic4android-b4a-application-with-php-and-mysql-database/xampp-seventh-installation-process.PNG)
 
 - PHP files are kept in the Xampp directory in a folder called `htdocs`. For this application, we will create a folder called `B4A-PHP`. In the folder, we will store our PHP files inside Xampp htdocs folder.
 
@@ -66,33 +66,33 @@ Before we begin, it would be useful for the reader to have the following:
 ipconfig
 ```
 
-![Installation window](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/ipconfig-b4a.png)
+![Installation window](/connecting-basic4android-b4a-application-with-php-and-mysql-database/ipconfig-b4a.png)
 
 `URL: http://192.168.100.118/B4A-PHP/api.php` this `URL` needs to be changed to match yours.
 
 - We will use the URL above to connect our B4A application to the server (Xampp) for data exchange. The computer acting as the server and the phone should be on the same network.
 
-![URL](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/url-php-api.png)
+![URL](/connecting-basic4android-b4a-application-with-php-and-mysql-database/url-php-api.png)
 
 ### B4A application
 So far, we have our development environment ready.
 
 From B4A Application, click on `File -> New -> Default` to create a new project.
 
-![New B4A application](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/b4a-create-new-default-application.png)
+![New B4A application](/connecting-basic4android-b4a-application-with-php-and-mysql-database/b4a-create-new-default-application.png)
 
 - Choose a project path and enter the project name.
 
-![Project name](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/project-path.PNG)
+![Project name](/connecting-basic4android-b4a-application-with-php-and-mysql-database/project-path.PNG)
 
 ### B4A CRUD operations
 - Let's add a HTTP library that will enable connection to the host computer. The library is added through a window called Library manager. The Library manager is in the right corner of the B4A application.
 
-![Library manager](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/add-http-library.PNG)
+![Library manager](/connecting-basic4android-b4a-application-with-php-and-mysql-database/add-http-library.PNG)
 
 - The application will do CRUD operations. We will create a layout with an editText and button, which we use to create CRUD operations.
 
-![Add layout](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/button-editText-design.png)
+![Add layout](/connecting-basic4android-b4a-application-with-php-and-mysql-database/button-editText-design.png)
 
 ### Save data in MySQL from the B4A application
 
@@ -174,7 +174,7 @@ See the highlighted areas in the screenshot below.
 
 `Our database will be called b4a-php-db`
 
-![Create Database](/engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/create-database.png)
+![Create Database](/connecting-basic4android-b4a-application-with-php-and-mysql-database/create-database.png)
 
 - We need to create a table named `student_name` in the database `b4a-php-db`. With the database selected, navigate to the `SQL` tab in phpMyadmin and run the command below. This creates a new table named `student_name`.
 
@@ -619,4 +619,4 @@ We also have:
 - Created a PHP script that communicates with the database.
 
 ---
-Peer Review Contributions by: [Benson Kariuki](/engineering-education/authors/benson-kariuki/)
+Peer Review Contributions by: [Benson Kariuki](/authors/benson-kariuki/)

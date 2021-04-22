@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-http-client/
+url: /laravel-http-client/
 title: Laravel 8 HTTP Client Introduction
 description: The tutorial will show you how to make requests using HTTP client in Laravel. This library will improve productivity by eliminating boilerplate code.
 author: miller-juma
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/laravel-http-client/hero.jpg
+  - url: /laravel-http-client/hero.jpg
     alt: laravel language localisation
 ---
 Laravel has evolved significantly since the release of version 7.x.x. One of the key areas of improvement revolves around the Guzzle HTTP Client. This article will serve as an introduction to Laravel 8 HTTP Client.
@@ -377,4 +377,4 @@ In this tutorial, we have learned how to use the new Laravel HTTP Client. We hav
 Happy Coding!
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

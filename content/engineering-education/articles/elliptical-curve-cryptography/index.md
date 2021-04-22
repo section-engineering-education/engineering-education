@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/elliptical-curve-cryptography/
+url: /elliptical-curve-cryptography/
 title: How Does Elliptical Curve Cryptography Work?
 description:  Elliptical curve cryptography is a next-generation public key cryptography system that provides a significant increase in security over previous generations.
 author: gregory-manley
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/elliptical-curve-cryptography/hero.jpg
+  - url: /elliptical-curve-cryptography/hero.jpg
     alt: elliptical curve cryptography
 ---
 There are many modern encryption algorithms, each of which have their own strengths. Elliptical curve cryptography (ECC) is a family of algorithms that are based upon elliptical curves. ECC is a next-generation public key cryptography system that provides a significant increase in security over previous generations.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node-vs-nuxt/
+url: /node-vs-nuxt/
 title: Node.js vs Nuxt - The Key Differences
 description: A comparison between Node.js and Nuxt, two of the most popular web technologies. Why they are needed, and we create a simple application in both.
 author: saiharsha-balasubramaniam
@@ -10,7 +10,7 @@ date: 2020-09-09T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/node-vs-nuxt/hero.jpg
+  - url: /node-vs-nuxt/hero.jpg
     alt: Node.js Nuxt example image
 ---
 A time ago, traditional server side rendering used to be the norm. All of the HTML was dynamically rendered on the server and sent to the client. Back in those days, websites were not user-friendly and native. Today the web consists of single-page applications and universal web-apps. Single-page applications are applications that do not reload the entire page every time we click on a link within the browser.
@@ -33,7 +33,7 @@ Let us look at the differences between Node.js and Nuxt which are two important 
 ### Why is Node.js Needed
 JavaScript is a powerful object-oriented programming language that runs within a browser. To harness the power of JS on the server-side, Node.js was created.
 
-For a more detailed discussion about Node.js, check out [this](/engineering-education/why-node-js-is-popular/) article by [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/).
+For a more detailed discussion about Node.js, check out [this](/why-node-js-is-popular/) article by [Geoffrey Mungai](/authors/geoffrey-mungai/).
 
 Node.js is a server-side JavaScript runtime environment. It is based on the Google V8 engine. Today, it is one of the most popular server-side languages for the web.
 
@@ -46,11 +46,11 @@ Since traditional server-side rendering fails to provide a smooth user experienc
 
 Client-side rendering involves a single HTML file being sent to the client. Now, the entire JavaScript is downloaded and runs on the client to handle interactivity.
 
-![SSR](/engineering-education/node-vs-nuxt/ssr.png)<br>
+![SSR](/node-vs-nuxt/ssr.png)<br>
 
 *Figure: [Server Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
 
-![CSR](/engineering-education/node-vs-nuxt/csr.png)<br>
+![CSR](/node-vs-nuxt/csr.png)<br>
 
 *Figure: [Client Side Rendering](https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8)*
 
@@ -89,7 +89,7 @@ cd hello-node
 npm init
 ```
 
-![Node App Creation](/engineering-education/node-vs-nuxt/hello-node.png)
+![Node App Creation](/node-vs-nuxt/hello-node.png)
 
 - The above command initializes a project and creates a `package.json` file in the current directory. The package.json file is used to manage dependencies of the application.
 
@@ -170,7 +170,7 @@ npx create-nuxt-app hello-nuxt
   - **Rendering mode** -- We can set up our Nuxt application as a Universal application or a Single Page Application. Let's choose **Universal** mode.
   - **Deployment target** -- This configures Nuxt to be deployed to a server or static hosting service. Let's choose **Server**.
 
-![Create Nuxt App](/engineering-education/node-vs-nuxt/create-nuxt-app.png)
+![Create Nuxt App](/node-vs-nuxt/create-nuxt-app.png)
 
 - Nuxt creates a folder structure for us and also takes care of routing. Every `.vue` file under the `pages` folder is a route.
 
@@ -182,11 +182,11 @@ npm run dev
 
 - The application is initialized and runs on `localhost:3000`.
 
-![Run Nuxt App](/engineering-education/node-vs-nuxt/npm-run-dev.png)
+![Run Nuxt App](/node-vs-nuxt/npm-run-dev.png)
 
 - The web application can be viewed on the browser.
 
-![Web Application](/engineering-education/node-vs-nuxt/nuxt-app.png)
+![Web Application](/node-vs-nuxt/nuxt-app.png)
 
 - To modify our web app, we can start editing the `pages/index.vue` file.
 
@@ -271,4 +271,4 @@ We saw an overview of the differences between Node.js and Nuxt and created a bas
 - [Learn Node.js](https://nodejs.dev/learn)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

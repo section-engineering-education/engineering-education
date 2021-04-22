@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/rest-api/
+url: /rest-api/
 title: REST APIs - Introductory guide
 description: Introduction to REST APIs, what are they, why do we need them and how do they work. Representational state transfer is a software architectural style that defines a set of constraints to be used for creating Web services.
 author: priyank-kumar
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/rest-api/hero.jpg
+  - url: /rest-api/hero.jpg
     alt: rest api example image
 
 ---
@@ -80,7 +80,7 @@ Output
 <Response [200]>
 ```
 
-Request returns а Response, a powerful object for inspecting the results of the request. Using Response, you can examine the headers and contents of the response, get a dictionary with data from JSON in the response, and also determine how successful our access to the server was by the response code from it. In our example, the response code was 200, which means that the request was successful. To read more About Response code you can visit [this article](/engineering-education/http-code-cheat-sheet/) to get a better idea.
+Request returns а Response, a powerful object for inspecting the results of the request. Using Response, you can examine the headers and contents of the response, get a dictionary with data from JSON in the response, and also determine how successful our access to the server was by the response code from it. In our example, the response code was 200, which means that the request was successful. To read more About Response code you can visit [this article](/http-code-cheat-sheet/) to get a better idea.
 
 
 One More Example

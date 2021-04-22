@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-database-programming-sqlite/
+url: /python-database-programming-sqlite/
 title: Python Database Programming - SQLite
 description: In this tutorial we will learn how to use the Python SQLite library, how to interact with it, and execute queries within a Python application.
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-database-programming-sqlite/hero.png
+  - url: /python-database-programming-sqlite/hero.png
     alt: SQLite example image Python SQLite library
 ---
 [SQLite](https://www.sqlite.org/docs.html) is an open-source and simple database engine that allows you to create a relational database and interact with it. In general, it is very lightweight and can be used within almost all programming languages including Python.
@@ -87,7 +87,7 @@ A database cursor is a control structure that is used to execute statements in o
 
 Open the **DB Browser for SQLite** then click on open database, after choosing our file `database.db` you will see what tables it contains.
 
-![](/engineering-education/python-database-programming-sqlite/first-pic.jpg)
+![](/python-database-programming-sqlite/first-pic.jpg)
 
 ### Database Queries
 #### INSERT
@@ -106,7 +106,7 @@ cur.execute(Insert_Students)
 
 To take a look at our data just click on **Browse Data** and here they are!
 
-![](/engineering-education/python-database-programming-sqlite/second-pic.jpg)
+![](/python-database-programming-sqlite/second-pic.jpg)
 
 #### SELECT
 Now if we want to retrieve data after executing a SELECT statement, we have to treat the cursor as an iterator, or we can call fetchall() to get a list of the matching rows.
@@ -218,4 +218,4 @@ That means you have to pay attention when starting the transactions and committi
 
 ### Conclusion
 In this tutorial, you’ve learned how to use Python SQLite library, how to interact with it, and execute queries within a python application.
-However, this is just the tip of the iceberg! In the future, you’ll learn more about SQLite library as an advanced tutorial in our [Languages](/engineering-education/topic/languages/) section.
+However, this is just the tip of the iceberg! In the future, you’ll learn more about SQLite library as an advanced tutorial in our [Languages](/topic/languages/) section.

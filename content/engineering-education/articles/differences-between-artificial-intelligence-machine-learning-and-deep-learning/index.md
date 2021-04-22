@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/
+url: /differences-between-artificial-intelligence-machine-learning-and-deep-learning/
 title: Differences between Artificial Intelligence, Machine Learning, and Deep Learning
 description: This article explores Artificial Intelligence, Machine Learning and Deep Learning to better understand use cases in each.
 author: willies-ogola
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/hero.png
+  - url: /differences-between-artificial-intelligence-machine-learning-and-deep-learning/hero.png
     alt: Artificial intelligence machine learning and deep learning
 ---
 These three terms: Artificial Intelligence  (AI), Machine learning (ML), and Deep Learning (DL) are often confusing. Although used interchangeably, these terminologies refer to different things. This article will explain the differences of each.
@@ -23,7 +23,7 @@ These three terms: Artificial Intelligence  (AI), Machine learning (ML), and Dee
 
 Let's depict these three terminologies to better understand them.
 
-![ai-ml-dl](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/ai-ml-dl.png)
+![ai-ml-dl](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/ai-ml-dl.png)
 
 From the above image, you can see that AI encompasses them all. DL is a sub-field of ML while ML is a subfield of AI.
 
@@ -63,7 +63,7 @@ In fact, most companies that claim to use AI to solve a particular problem, use 
 #### Artificial General Intelligence (AGI)
 Artificial General Intelligence is also known as strong AI. They are machines capable of performing a wide range of tasks. AGI doesn't exist at the moment. Even so, AGI popularization has featured in science fiction movies for over a decade now. In The Matrix and The Terminator movies, intelligent machines eradicate and enslave humanity. This view has depicted AGI to be evil which hasn't been the case.
 
-[GPT-3](/engineering-education/introducing-gpt3/) is a language model developed by OpenAI. It has the ability to perform a diverse range of tasks without any specific training. GPT-3 tends to fall in the middle. Not an AGI, but still too advanced to be an ANI.
+[GPT-3](/introducing-gpt3/) is a language model developed by OpenAI. It has the ability to perform a diverse range of tasks without any specific training. GPT-3 tends to fall in the middle. Not an AGI, but still too advanced to be an ANI.
 
 Since no sort of AGI is even close to being created, it is still hard to tell whether these ideas would bear any similarities to real-world AGI.
 
@@ -87,7 +87,7 @@ In SL, all the input data is labeled. The algorithm then learns to predict an ou
 Examples of algorithms in this category include:
 Decision Trees, Naive Bayes, Support Vector Machines, K-Nearest Neighbors, and Logistic Regression.
 
-For a more detailed look at SL, you can read [this article](/engineering-education/supervised-learning-algorithms/).
+For a more detailed look at SL, you can read [this article](/supervised-learning-algorithms/).
 
 2. **Unsupervised Learning (UL)**
 
@@ -118,7 +118,7 @@ The applications of RL include:
 ### What is Deep Learning (DL)?
 Deep Learning is a sub-field of ML inspired by the structure of our human brain. It uses [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) to identify patterns within unstructured data.
 
-![deep-learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/neural-networks.png)
+![deep-learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/neural-networks.png)
 
 *[Image Source: Math Works](https://www.mathworks.com/discovery/deep-learning.html)*
 
@@ -158,5 +158,5 @@ ML is suitable for solving simple tasks where data is labeled and structured. A 
 3. [Artificial intelligence: a modern approach](http://aima.cs.berkeley.edu/).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
 

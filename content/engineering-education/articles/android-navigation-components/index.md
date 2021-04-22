@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-navigation-components/
+url: /android-navigation-components/
 title: Basics of Android Navigation Components
 description: This article goes through the basics of Android navigation components, we will look at how to implement a navigation graph manually and how to navigate to different destinations. It will also look on how to pass data between destinations using `safeArgs` and a bit of deep linking.
 author: linus-muema
@@ -11,13 +11,13 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-navigation-components/hero.jpg
+  - url: /android-navigation-components/hero.jpg
     alt: Android navigation components image example
 ---
 As we all know, the jetpack navigation library was created to provide a better user experience with navigation. However, most developers do not know how to harness the full power of the library. This article is here to help you get a deeper understanding of the library and what it offers.
 <!--more-->
 ### Destinations and actions
-Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/engineering-education/bottom-navigation-bar-in-android/). 
+Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/bottom-navigation-bar-in-android/). 
 
 In the navigation graph, we have two very important units.
 
@@ -209,7 +209,7 @@ https://wwww.example.com/2
 
 You should receive a dialog asking you which application to proceed with. Select your application and proceed to view the results. The entire flow should be something similar to the one below.
 
-![deep-linking](/engineering-education/android-navigation-components/deep-linking.gif)
+![deep-linking](/android-navigation-components/deep-linking.gif)
 
 The application back stack is preserved while using deeplinks. This means that when you use the back button, the previous activities/fragments will still be available.
 
@@ -221,4 +221,4 @@ With that, you now know more about the navigation library and some of the extra 
 Understanding the navigation library is important for any Android developer. It helps you create better applications and allows you to customize the navigation process in your application. Feel free to raise a PR or an issue on [GitHub](https://github.com/LinusMuema/kotlin).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

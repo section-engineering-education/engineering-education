@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-theory-of-computation/
+url: /introduction-to-theory-of-computation/
 title: Introduction to the Theory of Computation
 description: This article will cover the basics of theory of computation and its role within the efficiency of computers such as the automata theory and complexity theory.
 author: elly-omondi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-theory-of-computation/hero.jpg
+  - url: /introduction-to-theory-of-computation/hero.jpg
     alt: Theory of Computation cover image 
 ---
 [Theory of computation (TOC)](https://en.wikipedia.org/wiki/Theory_of_computation) is a branch of Computer Science that is concerned with how problems can be solved using algorithms and how efficiently they can be solved.
@@ -151,5 +151,5 @@ Good understanding of the Theory of Computation helps programmers and developers
 - [Time Complexity](https://en.wikipedia.org/wiki/Time_complexity)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
 

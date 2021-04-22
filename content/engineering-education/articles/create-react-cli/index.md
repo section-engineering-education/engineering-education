@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-react-cli/
+url: /create-react-cli/
 title: Building CLI Applications using React.js
 description: In this tutorial we will create a simple CLI application using React.js framework and the INK library.
 author: daniel-katungi
@@ -10,14 +10,14 @@ date: 2020-11-22T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/create-react-cli/hero.jpg
+  - url: /create-react-cli/hero.jpg
     alt: example image React.js CLI
 ---
 Command-line applications have become popular in the developer ecosystem for several reasons. The most common reasons would be due to the ease of use (of the CLI) and many essential developer tools are terminal applications or command line applications because so many developers are familiar with them.
 <!--more-->
 As the complexity and functionalities of these terminal applications grow, so does the need for them to be created simpler and easier.
 
-In our [previous article](/engineering-education/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
+In our [previous article](/create-a-nodejs-cli/), we covered how to make a CLI application using Node.js. One of the key takeaways from building a CLI using Node.js is that they are hard and tedious to make.
 
 React makes it very easy to create powerful and very interactive CLI applications. In this article, we will create a CLI with React.js instead of Node.js and see the difference.
 
@@ -56,7 +56,7 @@ npx create-ink-app
 
 The last command creates a link executable for our application. It may take some time to complete this process. When you run `node cli` in the terminal, it should return this:
 
-![Image](/engineering-education/create-react-cli/first-1.png "image")
+![Image](/create-react-cli/first-1.png "image")
 
 There you have it, your first CLI using React. To achieve this in Node.js, it would have needed us to write a lot of code and it would have taken more time, not to mention more libraries.
 
@@ -300,7 +300,7 @@ To test our new creation, we run `node cli` in our terminal.
 
 It should return this:
 
-![final-result](/engineering-education/create-react-cli/section-final.png)
+![final-result](/create-react-cli/section-final.png)
 
 You can find a gif of the application in action  at this link [here](https://terminalizer.com/view/ad4a80d54380).
 
@@ -314,4 +314,4 @@ Creating CLI applications has never been easier using React ink. Have fun buildi
 ***Challenge: As of now, the application crashes when the user enters a non-existing country or in the event of a typo. To learn more about React Ink custom hooks and to practice on React hooks, try fixing that error to display an empty table or a error message. Submit the solution as a PR to the project repo.***
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

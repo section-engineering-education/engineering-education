@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-crud-api/
+url: /django-crud-api/
 title: Introduction to Django Crud API
 description: This tutorial will be an introduction to Django CRUD API. We will learn how to create and document our restful endpoint APIS in Django.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/django-crud-api/hero.jpg
+  - url: /django-crud-api/hero.jpg
     alt: Django CRUD API example image
 ---
 In this tutorial, we will create a fully working to-do CRUD Django API using [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/). Restful API endpoints make it possible to perform CRUD functionality in the backend from within the mobile app or website.
@@ -288,7 +288,7 @@ To create a new Todo we make a POST request to
 
 Sample postman POST request:
 
-![Postman POST](/engineering-education/django-crud-api/post.png)
+![Postman POST](/django-crud-api/post.png)
 
 Making a GET request to `http://localhost:8000/api/v1/todo` in postman returns a list of `todos`.
 
@@ -307,7 +307,7 @@ Making a GET request to `http://localhost:8000/api/v1/todo` in postman returns a
 
 Sample postman GET request:
 
-![Postman GET](/engineering-education/django-crud-api/get.png)
+![Postman GET](/django-crud-api/get.png)
 
 To Update a Todo we make a PUT request to `http://localhost:8000/api/v1/todo/update/1/` with the Todo object fields to update and pass in Todo ID as a URL parameter.
 
@@ -322,13 +322,13 @@ To Update a Todo we make a PUT request to `http://localhost:8000/api/v1/todo/upd
 
 Sample postman PUT request:
 
-![Postman PUT](/engineering-education/django-crud-api/put.png)
+![Postman PUT](/django-crud-api/put.png)
 
 To Delete a Todo we make a DELETE request to `http://localhost:8000/api/v1/todo/delete/1/` passing the ID of the Todo to delete as URL parameter.
 
 Sample postman DELETE request:
 
-![Postman DELETE](/engineering-education/django-crud-api/delete.png)
+![Postman DELETE](/django-crud-api/delete.png)
 
 ### Documenting Todo endpoints
 It's a good practice to provide documentation for the various endpoints that we create, this makes it easier for other people to use our API endpoints.
@@ -381,4 +381,4 @@ We now understand how to create and document our restful endpoint APIS in Django
 In our next article, we will secure our endpoints and add social authentication to our app.
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

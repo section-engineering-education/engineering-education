@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/
+url: /introduction-to-microservices-with-spring-and-eureka/
 title: Introduction to Microservices with Spring and Eureka
 description: This tutorial will cover the basics to microservices both in theory and in practice. Microservice architecture is a style of the service oriented architecture that arranges software as a collection of loosely coupled services.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/hero.jpg
+  - url: /introduction-to-microservices-with-spring-and-eureka/hero.jpg
     alt: Microservices with Spring and Eureka example image
 ---
 With web apps becoming more complex, many of them have been making use of microservices. But what exactly are these microservices? What benefits does developing in this style give? This article seeks to give you the answer to these questions. By the end of this guide, you will gain a solid understanding of this style of development. As a bonus, we will also cover a simple practical implementation of this architecture.
@@ -112,7 +112,7 @@ For our case, we will keep things simple and use a single Eureka server. Because
 
 When you run the discovery server and go to its URL in your browser, you should see something like this:
 
-![discovery server](/engineering-education/introduction-to-microservices-with-spring-and-eureka/eureka-server.png)
+![discovery server](/introduction-to-microservices-with-spring-and-eureka/eureka-server.png)
 
 Notice under `Instances currently registered with Eureka` it says *no instances available.* 
 
@@ -154,7 +154,7 @@ public class HelloController {
 
 Now run both the Eureka client and the Eureka server. You will notice that our Eureka client automatically registers to our Eureka server:
 
-![discovery server](/engineering-education/introduction-to-microservices-with-spring-and-eureka/eureka-server-registered.png)
+![discovery server](/introduction-to-microservices-with-spring-and-eureka/eureka-server-registered.png)
 
 To save time, I will skip over creating our `world-service`. You should have a good idea of how it would work. To create our `world-service` we would follow the exact same steps. 
 

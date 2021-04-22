@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/react-native-agora-livestreaming-app/
+url: /react-native-agora-livestreaming-app/
 title: React Native Livestream Application using Agora
 description: This tutorial will give readers a detailed guide on how they can build a React Native app to create or join a livestream using Agora.
 author: mohan-raj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
+  - url: /react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
 In this tutorial, we will be building a Livestreaming app with real-time engagement using React Native and [Agora](https://www.agora.io/en/about-us/).
@@ -66,17 +66,17 @@ Head to Agora and create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with Google, GitHub, or Cocos. Once you've signed up, you'll see the dashboard.
 
-![Agora Dashboard](/engineering-education/react-native-agora-livestreaming-app/agora_dashboard.png)
+![Agora Dashboard](/react-native-agora-livestreaming-app/agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Testing.
 
-![Agora New Project Form](/engineering-education/react-native-agora-livestreaming-app/agora_new_project.png)
+![Agora New Project Form](/react-native-agora-livestreaming-app/agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
-![Agora Project Management Console](/engineering-education/react-native-agora-livestreaming-app/agora_project_management_console.png)
+![Agora Project Management Console](/react-native-agora-livestreaming-app/agora_project_management_console.png)
 
 Now, click on the closed eye icon near the App ID to reveal it and copy that App ID. We'll need this later while setting up Agora in our app.
 
@@ -87,7 +87,7 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/engineering-education/react-native-agora-livestreaming-app/env_setup.png)
+![Env Setup](/react-native-agora-livestreaming-app/env_setup.png)
 
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
@@ -98,7 +98,7 @@ The Home Screen has 2 buttons, Start and Join. The Join button has a text input 
 
 This is the Home Screen you'll see when you open the app.
 
-![Homescreen](/engineering-education/react-native-agora-livestreaming-app/homescreen.jpeg)
+![Homescreen](/react-native-agora-livestreaming-app/homescreen.jpeg)
 
 ### Installing dependencies
 You can install these in advance or while going through the article.
@@ -381,7 +381,7 @@ Since `init` is an async function, we can add a `.then()` to it and join the cha
 
 To join the channel, the Agora engine instance has a `joinChannel` function on it. It takes 4 arguments, *Authentication Token, Channel ID, Optional Info, and Optional UID*. To learn more about `joinChannel`, refer [here](https://docs.agora.io/en/Video/API%20Reference/react_native/classes/rtcengine.html#joinchannel).
 
-Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](/engineering-education/agora-express-token-server/).
+Let's not worry about Authentication and Optional info now. We'll pass null for authentication and optional info. You can learn more about Authentication [here](/agora-express-token-server/).
 
 For the Channel ID, we'll pass what we get from the route props.
 
@@ -482,7 +482,7 @@ loadingText: {
 },
 ```
 
-![Loading Screen](/engineering-education/react-native-agora-livestreaming-app/loading_screen.gif)
+![Loading Screen](/react-native-agora-livestreaming-app/loading_screen.gif)
 
 When the `joined` state is set to `true`, we need to show the livestream.
 
@@ -747,5 +747,5 @@ If you'd like to learn how to build a Video Conference app with React Native and
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
 

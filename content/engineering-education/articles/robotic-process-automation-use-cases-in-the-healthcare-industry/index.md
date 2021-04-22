@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/robotic-process-automation-use-cases-in-the-healthcare-industry/
+url: /robotic-process-automation-use-cases-in-the-healthcare-industry/
 title: Robotic Process Automation (RPA) in the Healthcare Industry
 description: This article will go over how robotic process automation (RPA) is reshaping the healthcare industry, with patient appointments, location information, and predictive diagnosis.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/robotic-process-automation-use-cases-in-the-healthcare-industry/hero.jpg
+  - url: /robotic-process-automation-use-cases-in-the-healthcare-industry/hero.jpg
     alt: robotic process automation example image
 ---
 Robotic process automation (RPA) is a technology that automates business operations based on the concept of artificial intelligence (AI) workers or [software robots](https://www.helpsystems.com/blog/best-software-robots-for-business).
@@ -20,7 +20,7 @@ RPA software mimics the virtual human worker and performs activities and tasks t
 
 Organizations in the healthcare industry are using RPA in patients scheduling, insurance claims management, improvement of healthcare cycle, and provision of optimal care, as we will discuss in this article.
 
-For a more in-depth look at robotic process automation, its features, and benefits, refer to this [article](/engineering-education/what-is-robotic-process-automation/).
+For a more in-depth look at robotic process automation, its features, and benefits, refer to this [article](/what-is-robotic-process-automation/).
 
 ### An overview of RPA in healthcare
 The healthcare sector in any country is a complex yet critical system to the well-being of the citizens. It's comprised of medical equipment, health insurance, clinical trials, and more.
@@ -78,7 +78,7 @@ Predictive analytic techniques are applied to medical cases to give solutions, c
 
 These techniques are equally important in identifying at-risk patients under home care to prevent hospital re-admissions. The application of predictive analytics helps in the early identification of medical equipment maintenance needs to avoid downtime.
 
-Analytical techniques that doctors and medical researchers use in their day-to-day work include [Natural Language Processing](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/) (NLP),[machine learning](https://link.springer.com/chapter/10.1007/978-3-030-29407-6_9), [evidence-based medicine](https://www.hopkinsmedicine.org/gim/research/method/ebm.html), and big data.
+Analytical techniques that doctors and medical researchers use in their day-to-day work include [Natural Language Processing](/five-real-life-use-cases-of-natural-language-processing-nlp/) (NLP),[machine learning](https://link.springer.com/chapter/10.1007/978-3-030-29407-6_9), [evidence-based medicine](https://www.hopkinsmedicine.org/gim/research/method/ebm.html), and big data.
 
 ### How RPA ensures patient data privacy
 The automation of hospital processes and operations using RPA makes use of sensitive patient data. Ensuring the security and privacy of this information is a top concern of healthcare organizations.
@@ -95,4 +95,4 @@ A healthcare organization can spot the issues or improper data usage in case of 
 The advancement in artificial intelligence and robotic process automation has started many innovations and transformed healthcare delivery. As a result, the world is enjoying a healthy ecosystem with superior care delivery service that saves lives.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

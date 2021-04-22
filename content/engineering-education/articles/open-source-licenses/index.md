@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/open-source-licenses/
+url: /open-source-licenses/
 title: Guide to Open Source Licenses
 description: This article will go over some of the most commonly used open source license agreements. We will go over some of the most often used license agreements and understand their utilities.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/open-source-licenses/hero.jpg
+  - url: /open-source-licenses/hero.jpg
     alt: open source licenses
 ---
 An essential aspect of a developers job is assigning the appropriate license to the work done. The license ensures the work gets it due credit it deserves. They help define the boundaries of use by an external party. The open-source community is responsible for the tremendous growth the world of technology has seen.
@@ -131,4 +131,4 @@ While deciding what license to use for a project, I find this [website](https://
 I hope reading this article helped you understand the various licenses and guidelines. While this article is an overview of the various licenses available, always check the original licenses for accurate and the most up to date information. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

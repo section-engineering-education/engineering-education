@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kotlin-flows/
+url: /introduction-to-kotlin-flows/
 title: Introduction to Kotlin Flows
 description: This article will serve as an introduction to Kotlin Flows. A flow is a stream of multiple, asynchronously computed values. Flows emit values as soon as they are done computing them. A flow consists of a producer and a consumer. As the names suggest, a producer emits values while the consumer receives the values. 
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-kotlin-flows/hero.jpg
+  - url: /introduction-to-kotlin-flows/hero.jpg
     alt: Kotlin Flows example image
 ---
 ### Introduction
@@ -22,8 +22,8 @@ Using the default coroutine builders will return the whole list at once. However
 ### Prerequisites
 To follow through with this tutorial, you will need to:
 1. Have IntelliJ IDEA installed.
-2. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
-3. Have a basic understanding of coroutines. Check this [article](/engineering-education/introduction-to-kotlin-coroutines/) to get started.
+2. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
+3. Have a basic understanding of coroutines. Check this [article](/introduction-to-kotlin-coroutines/) to get started.
 
 ### What is a flow
 A flow is a stream of multiple, asynchronously computed values. Flows emit values as soon as they are done computing them. A flow consists of a producer and a consumer. As the names suggest, a producer emits values while the consumer receives the values. 
@@ -35,7 +35,7 @@ In this step, we are going to create a Kotlin console project managed by Gradle.
 
 Open IntelliJ and select `New Project`. On the next window, select Kotlin, console application. Choose the project JDK, download one if none is installed. 
 
-![New project](/engineering-education/introduction-to-kotlin-flows/new-project.png)
+![New project](/introduction-to-kotlin-flows/new-project.png)
 
 Give the project a name and click next. Leave the next screen to default settings and click finish.
 
@@ -136,4 +136,4 @@ Otherwise, I cant wait to see what you do with flows.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

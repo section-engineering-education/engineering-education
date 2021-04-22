@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cost-optimization-and-use-cases-of-amazon-s3-intelligent-tiering/
+url: /cost-optimization-and-use-cases-of-amazon-s3-intelligent-tiering/
 title: Cost Optimization with Amazon S3 Intelligent Tiering
 description: This article will go over what Amazon S3 intelligent tiering is, how it works, and how it can benefit organizations.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/cost-optimization-and-use-cases-of-amazon-s3-intelligent-tiering/hero.jpg
+  - url: /cost-optimization-and-use-cases-of-amazon-s3-intelligent-tiering/hero.jpg
     alt:  s3 intelligent tiering example image
 ---
 [Amazon](https://aws.amazon.com/) Web Services (AWS) launched [Amazon S3](https://aws.amazon.com/s3/) in 2006, and since then, the service has undergone continuous improvement. These improvement include additional storage classes to help enable secure object storage at a low cost for organizations of all sizes.

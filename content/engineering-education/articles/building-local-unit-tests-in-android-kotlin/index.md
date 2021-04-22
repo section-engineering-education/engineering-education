@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/building-local-unit-tests-in-android-kotlin/
+url: /building-local-unit-tests-in-android-kotlin/
 title: Building Local Unit Tests in Android Kotlin
 description: This article shows you how to create and implement local unit tests in Android Studio using Kotlin. The most popular library used to write these unit tests is JUnit4 and the Assert class.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-local-unit-tests-in-android-kotlin/hero.jpg
+  - url: /building-local-unit-tests-in-android-kotlin/hero.jpg
     alt: Local unit tests example image
 ---
 Unit testing is a crucial feature of software development. It brings about a development paradigm known as Test Driven Development (TDD). These tests typically test the business logic of applications. In Test Driven Development, the developer writes tests that define what a specific function should do by pointing out the expected results. After the tests are appropriately structured, the developer then writes the implementation of the function.
@@ -31,7 +31,7 @@ Let's get started
 ### Step 1 — Creating an Android project
 In this step, we're going to create our application. Open Android Studio and start a new project using the empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/engineering-education/building-local-unit-tests-in-android-kotlin/app-name.png)
+![app name](/building-local-unit-tests-in-android-kotlin/app-name.png)
 
 Click `Finish` and wait for the project build process to complete.
 
@@ -59,7 +59,7 @@ The function should:
 
 To write tests for our function, we first have to create the method. We can not call a function that does not exist. To do this, create a Kotlin object and name it `AuthUtil`.
 
-![class name](/engineering-education/building-local-unit-tests-in-android-kotlin/class-name.png)
+![class name](/building-local-unit-tests-in-android-kotlin/class-name.png)
 
 We make it an object to allow us to access the function without creating an instance of the class. Add the following code to the class.
 
@@ -82,7 +82,7 @@ Right-click on the class name and select `generate` then click `Test`.
 On the next screen, select `JUnit4` as the testing library.
 Leave the other fields to default values and click `OK`.
 
-![new test image](/engineering-education/building-local-unit-tests-in-android-kotlin/test.png)
+![new test image](/building-local-unit-tests-in-android-kotlin/test.png)
 
 The next dialog box that appears prompts you to select the test source set. There are two types of test source sets. One is the test source set, and the other one is the Android test source set. 
 
@@ -90,7 +90,7 @@ The test source set is where we write business logic tests. On the other hand, t
 
 For our case, we select the test source set since our function does not depend on the Android platform.
 
-![test source set](/engineering-education/building-local-unit-tests-in-android-kotlin/test-source.png)
+![test source set](/building-local-unit-tests-in-android-kotlin/test-source.png)
 
 That's it, our test class has been created. Now let's go ahead and write the tests.
 
@@ -254,7 +254,7 @@ We use the `when` statement to validate the values. All four statements create t
 
 This is the expected output from the `run` window.
 
-![output](/engineering-education/building-local-unit-tests-in-android-kotlin/output.png)
+![output](/building-local-unit-tests-in-android-kotlin/output.png)
 
 ### Conclusion
 With that information, you can now write your unit tests. Unit tests fasten the software development process. This is because one declares the behavior before implementing it. 
@@ -262,4 +262,4 @@ With that information, you can now write your unit tests. Unit tests fasten the 
 In doing so, one does not have to worry about other components of the application. The focus should be on the function being implemented and tested. You also don't need to run the whole application to test a single method.
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

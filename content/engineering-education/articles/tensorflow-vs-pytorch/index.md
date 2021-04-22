@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tensorflow-vs-pytorch/
+url: /tensorflow-vs-pytorch/
 title: TensorFlow vs. PyTorch - Which one to pick? 
 description: This article will compare the Tensorflow and Pytorch frameworks used in deep learning and neural networks. These frameworks are used to design, test, and deploy deep learning models.
 author: willies-ogola
@@ -10,10 +10,10 @@ date: 2021-01-04T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/tensorflow-vs-pytorch/hero.png
+  - url: /tensorflow-vs-pytorch/hero.png
     alt: TensorFlow vs PyTorch example image
 ---
-Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article.  
+Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article.  
 <!--more-->
 ### Introduction
 Given how powerful and transformative Deep Learning (DL) is, several libraries have sprung up in recent years to make designing, testing, and deploying DL models easy. Some of these libraries include Microsoft's [Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) (CNTK), Apache's [MXNET](https://mxnet.apache.org/versions/1.7.0/), Facebook's [PyTorch](https://pytorch.org/), and Google's [TensorFlow](https://www.tensorflow.org/).
@@ -119,4 +119,4 @@ I would be wrong if I said that one framework is better than the other. The fram
 13. [TensorFlow 2.0](https://www.tensorflow.org/guide/effective_tf2)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

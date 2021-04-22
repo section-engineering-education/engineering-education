@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/divide-and-conquer-algorithms/
+url: /divide-and-conquer-algorithms/
 title: Divide and Conquer Method using Stock Price Optimization Problem
 description: In this article we will explore the algorithm to find the maximum possible profit given a list of historical prices. We will also discuss the advantages and disadvantages of the divide and conquer paradigm.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/divide-and-conquer-algorithms/hero.jpg
+  - url: /divide-and-conquer-algorithms/hero.jpg
     alt: divide and conquer method example image
 ---
 Consider the scenario of the stocks and the stock markets. Everyday, millions of people trade equities and commodities on various exchanges across the globe. These processes are being technically equipped, and a majority of the functions are being automated. Algorithmic trading represents one such area of interest for brokerage firms. 
@@ -167,7 +167,7 @@ In this case, the output remains at 0 and does not output negative numbers. Ther
 
 Compared to the greedy approach, this method gives the optimal solution to the problem. We observed that the maximum profit in the greedy method was 655. 
 
-In this case, the total profit is 865. We solved the above problem using the greedy method in the earlier article. You may go through the solution at this [link](/engineering-education/greedy-algorithms/). 
+In this case, the total profit is 865. We solved the above problem using the greedy method in the earlier article. You may go through the solution at this [link](/greedy-algorithms/). 
 
 ### Advantages 
 - The program can work with many buy and sell operations due to its recurring property. Multiple buy and sell operations take place, and the best profits are returned. 
@@ -183,4 +183,4 @@ In this case, the total profit is 865. We solved the above problem using the gre
 In this article, we have covered the divide and conquer algorithm and considered an example to show how it works. I hope you enjoyed reading this article, as much as I enjoyed writing it.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

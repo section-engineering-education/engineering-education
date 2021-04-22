@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ssh-in-nodejs/
+url: /ssh-in-nodejs/
 title: Basics of SSH and Building an Application in Node.js
 description: In this article, we are going to explore the basics of SSH and build an application in Node.js to connect to a virtual machine and monitor system health.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ssh-in-nodejs/hero.jpg
+  - url: /ssh-in-nodejs/hero.jpg
     alt: SSH and building an application in Node.js
 ---
 Accessing systems remotely from your home computer is crucial for software developers and system administrators. Users might need to configure, install, and run applications on servers and computers that might not be physically accessible to them. Nowadays, cloud computing is one of the most popular platforms for hosting and running applications over the internet.
@@ -116,7 +116,7 @@ The `ssh()` function takes the hostname, username, and password as the input and
 
 Once we get the output of the `df -h` command in the stdout variable, we pass it to the `parse()` function that parses the output and displays it in a presentable format.
 
-![df command](/engineering-education/ssh-in-nodejs/df.png)
+![df command](/ssh-in-nodejs/df.png)
 
 The output of the df command is hard to read and understand. Therefore, we need to parse it and extract the relevant data.
 
@@ -187,4 +187,4 @@ main();
 To recap, SSH is a protocol that allows users to access a remote system, and is a very useful tool for developers and system administrators. We explored how SSH works and how to use SSH in your local system using the terminal. We understood how we can leverage the power of Node.js to write an application that uses `simple-ssh` (A library that allows users to use SSH in Node.js) to SSH into a virtual machine, monitor the system disk usage, and display it to the user in a presentable format. Now that you know how SSH works and how to use it in Node.js, you can write your own application to do much more.
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

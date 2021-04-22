@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/deploying-machine-learning-models-using-flask/
+url: /deploying-machine-learning-models-using-flask/
 title: Deploying Machine Learning Models using Flask
 description: This tutorial will serve as an introduction on deploying Machine Learning models using Flask. We will go through various steps for building an end-to-end web application with inbuilt Machine Learning model using Flask.
 author: srishilesh-p-s
@@ -11,12 +11,12 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/deploying-machine-learning-models-using-flask/hero.png
+  - url: /deploying-machine-learning-models-using-flask/hero.png
     alt: Deploying Machine Learning models using Flask
 ---
 In this article, we will learn about deploying Machine Learning models using Flask. By the end of the article, you will have an overview of how Machine Learning models are built, how Flask servers interact with our Machine Learning model, and how to connect the model with a web application. You will also learn a step-by-step procedure for deploying the model locally.
 <!--more-->
-I highly recommend going over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article to better grasp those concepts regarding Flask. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
+I highly recommend going over [this](/complete-guide-on-installing-flask-for-beginners/) article to better grasp those concepts regarding Flask. As a prerequisite, a little knowledge about [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) would help to follow this article along.
 
 ### Table of contents
 - [Objective](#objective)
@@ -37,7 +37,7 @@ When building the Machine Learning model, we will make use of the [Iris](https:/
 
 A glimpse of the data is as shown below:
 
-![A few rows of Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
+![A few rows of Iris dataset](/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 ##### Classification Model
 Having chosen the dataset, it's time to build our classification model. Let's name the file `model.py`.
@@ -68,7 +68,7 @@ The CSV file of the dataset can be downloaded [here](https://gist.github.com/net
 data = pd.read_csv('./iris.csv')
 ```
 
-![Iris dataset](/engineering-education/deploying-machine-learning-models-using-flask/Dataset.PNG)
+![Iris dataset](/deploying-machine-learning-models-using-flask/Dataset.PNG)
 
 As you see in the image, the target variable under the `variety` column has textual data. Since the textual data is made use of in building our Machine Learning model, we must encode the textual data as numbers.
 
@@ -188,10 +188,10 @@ Each `input` tag has fixed styling property like:
 
 - `name` and `id` based on the respective fields
 
-All the `div` tags are enclosed within a `form` with `action="classify"` and `method="GET"`. Here, `GET` request helps us transport the data from the HTML form to the backend server. To learn more about such methods, [this](/engineering-education/rest-api/) article would help you understand better.
+All the `div` tags are enclosed within a `form` with `action="classify"` and `method="GET"`. Here, `GET` request helps us transport the data from the HTML form to the backend server. To learn more about such methods, [this](/rest-api/) article would help you understand better.
 
 #### Flask webserver
-In Python, we use the Flask framework to host local servers and when routing the webpages. Here, we will use it when deploy our Machine Learning model locally. If you are new to the Flask framework, it is highly recommended to go over [this](/engineering-education/complete-guide-on-installing-flask-for-beginners/) article before building.
+In Python, we use the Flask framework to host local servers and when routing the webpages. Here, we will use it when deploy our Machine Learning model locally. If you are new to the Flask framework, it is highly recommended to go over [this](/complete-guide-on-installing-flask-for-beginners/) article before building.
 
 To begin, let's start building by importing the necessary libraries.
 
@@ -288,9 +288,9 @@ Now, on running the flask server using the command `python server.py` on your te
 
 To view the landing page, append `/home` to the existing URL. You can view sample inputs and outputs in the below screenshots.
 
-![HTML page to accept details](/engineering-education/deploying-machine-learning-models-using-flask/Input.PNG)
+![HTML page to accept details](/deploying-machine-learning-models-using-flask/Input.PNG)
 
-![HTML page to display the variety of flower](/engineering-education/deploying-machine-learning-models-using-flask/Output.PNG)
+![HTML page to display the variety of flower](/deploying-machine-learning-models-using-flask/Output.PNG)
 
 From the above images, you can see that `Virginica` is the classified variety for the given inputs of sepal and petal.
 
@@ -327,4 +327,4 @@ To summarize:
 - [Understanding deployment in detail](https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

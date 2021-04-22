@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/css-in-js-solutions/
+url: /css-in-js-solutions/
 title: CSS in JS for Web Components
 description: This article will cover various techniques a developer can use in defining styles within app components during development than maintaining multiple stylesheets for a single app component.
 author: aransiola-ayodele
@@ -11,7 +11,7 @@ topic: []
 excerpt_separator: <!--more-->
 images:
 
-    - url: /engineering-education/css-in-js-solutions/hero.jpg
+    - url: /css-in-js-solutions/hero.jpg
       alt: CSS in JS for Web Components image
 ---
 The modern web is written in components and not pages. CSS was designed to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.
@@ -44,7 +44,7 @@ CSS-in-JS is an improvement over pure CSS for various reasons, but the end goal 
 
 CSS-in-JS is the best styling technique to use with web components. But, this doesn’t render CSS redundant because it does have its pros and cons.
 
-![A code example of style declaration in the JavaScript variable font](/engineering-education/css-in-js-solutions/js.png)
+![A code example of style declaration in the JavaScript variable font](/css-in-js-solutions/js.png)
 
 ### Pros of CSS
 1. Inline Styling: The use of inline styles enhances website performance because the browser loads the CSS within elements faster before loading external styles.
@@ -139,4 +139,4 @@ In favor of performance, Material UI uses JSS as its core, which ensures speedy 
 CSS-in-JS changes the perspective of web application development from specificity to modularity. With a list of modern CSS-in-JS solutions with links to get you started, you can now take advantage of the power of web components combined with CSS-in-JS.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

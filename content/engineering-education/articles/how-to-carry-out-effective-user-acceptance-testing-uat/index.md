@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/
+url: /how-to-carry-out-effective-user-acceptance-testing-uat/
 title: How to Carry Out Effective User Acceptance Testing (UAT)
 description: This article will be an introduction to User Acceptance Testing. UAT ensures that the software system is working as per the business requirements. The system is evaluated in real-life scenarios from the external user point of view.
 author: benson-kariuki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/hero.jpg
+  - url: /how-to-carry-out-effective-user-acceptance-testing-uat/hero.jpg
     alt: User Acceptance Testing (UAT) Image
 ---
 User acceptance testing (UAT) is the final stage in the software development process before moving to production. We validate the provided software solution or product against business requirements. This article will discuss User Acceptance Testing in detail.
@@ -23,7 +23,7 @@ UAT is different from [unit testing](https://www.tutorialspoint.com/software_tes
 
 The diagram below shows where UAT falls in the software development process.
 
-![software process](/engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/software-process.jpg)
+![software process](/how-to-carry-out-effective-user-acceptance-testing-uat/software-process.jpg)
 
 #### Objectives of UAT
 - To confirm that the software product can perform all the business functions.
@@ -86,5 +86,5 @@ UAT is the last chance to identify and rectify defects. Businesses may suffer lo
 The organization may also lose some reputation as a result of moving defective software to production. Therefore, an UAT is vital. Software testing is a broad field in computing. Certifications such as [Certified Test Engineer(CSE)](https://www.softwaretestinghelp.com/cste-certification-guide/) are also available.
 
 ---
-Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
+Peer Review Contributions by: [Onesmus Mbaabu](/authors/onesmus-mbaabu/)
 

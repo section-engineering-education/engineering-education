@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/http-requests-nodejs/
+url: /http-requests-nodejs/
 title: Understanding HTTP Requests in Node.js
 description: HyperText Transfer Protocol is mainly used for transmitting multimedia documents and to enhance collaborative and distributed features of an application. In this article, we look at HTTP Requests in detail and use some popular Node.js libraries to perform various processes.
 author: lalithnarayan-c
@@ -11,10 +11,10 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/http-requests-nodejs/hero.jpg
+  - url: /http-requests-nodejs/hero.jpg
     alt: nodejs http requests
 ---
-HyperText Transfer Protocol (HTTP) is mainly used for transmitting multimedia documents and to enhance collaborative and distributed features of an application. Being an application layer protocol, it plays a critical role in the overall experience of the application. We have discussed the Application layer and other corresponding layers in detail in this [article](/engineering-education/networking-models-introductory-guide/). Make sure to check it out.
+HyperText Transfer Protocol (HTTP) is mainly used for transmitting multimedia documents and to enhance collaborative and distributed features of an application. Being an application layer protocol, it plays a critical role in the overall experience of the application. We have discussed the Application layer and other corresponding layers in detail in this [article](/networking-models-introductory-guide/). Make sure to check it out.
 <!--more-->
 
 Developed as a client-server protocol, the application initiates the request and the server is informed about the request. Furthermore, the server decodes the HTTP request and sends it to the corresponding application or server for further processing. This forms the basic nature of data exchange on the web. It is a stateless protocol, which means that the requests are not being kept track of and therefore a user-agent can send any number of requests. The concept of favoring one user-agent over another is not there, ensuring fairness within the internet.
@@ -24,7 +24,7 @@ You might be wondering, what type of data is being passed? For example, when you
 ### HTTP Model
 To gain a better understanding, let's look at the various components associated with HTTP.
 
-![Http model](/engineering-education/http-requests-nodejs/httpmodel.jpg)<br>
+![Http model](/http-requests-nodejs/httpmodel.jpg)<br>
 *Image source: http://wiki.hashphp.org/HttpPrimer*
 
 The client initiates the connection through a GET request. The server responds with a status code. In this case, it is 200, which means the server is ready for a connection. This is called the HTTP Response.
@@ -45,7 +45,7 @@ Earlier we looked at how HTTP Requests work in the overall picture of the Intern
 
 
 #### HTTP Request Message
-![source: https://slideplayer.com/slide/13130365/](/engineering-education/http-requests-nodejs/request_message.jpg)<br>
+![source: https://slideplayer.com/slide/13130365/](/http-requests-nodejs/request_message.jpg)<br>
 *Image source: https://slideplayer.com/slide/13130365/*
 
 Various parameters define the request message. For example, we have the request method, which indicates the type of action to be performed against the resource. The URL indicates the destination's address. HTTP version implies the level of security and features available. The header lines carry information about access-control, type of connection, details about the sender, etc. This is necessary to establish a secure and efficient connection.
@@ -167,4 +167,4 @@ const got = require('got');
 ```
 
 ### Conclusion
-We have looked at the HTTP Request in detail and have used some Node.js libraries to perform HTTP Requests. The overall picture that one needs to keep in mind while learning these libraries is the overall structure of the Internet. Do refer to the earlier [article](/engineering-education/networking-models-introductory-guide/) on Networking Models to gain a better understanding on how to build amazing projects. Be Legendary.
+We have looked at the HTTP Request in detail and have used some Node.js libraries to perform HTTP Requests. The overall picture that one needs to keep in mind while learning these libraries is the overall structure of the Internet. Do refer to the earlier [article](/networking-models-introductory-guide/) on Networking Models to gain a better understanding on how to build amazing projects. Be Legendary.

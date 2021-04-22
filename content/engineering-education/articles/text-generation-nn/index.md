@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/text-generation-nn/
+url: /text-generation-nn/
 title: Text Generation With RNN + TensorFlow
 description: Text generation with an RNN. Contents. Setup. Import TensorFlow and other libraries. Download the Shakespeare dataset. Process the text. Vectorize the text. The prediction task. Build The Model. Try the model. Train the model.
 author: rohan-reddy
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/text-generation-nn/hero.jpg
+  - url: /text-generation-nn/hero.jpg
     alt: rnn and tensorflow
 ---
 The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self-driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.
@@ -33,16 +33,16 @@ Text is a form of sequence data, to a neural network it is but a sequence of dig
 Recurrent neural networks (RNN) are  a class of [artificial neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) that is powerful for modelling sequence data such as time series or natural language.
 [Vanilla neural networks](https://en.wikipedia.org/wiki/Multilayer_perceptron) have one shortcoming when compared to RNNs, they cannot solve machine learning problems which need to remember information about the past inputs. When processing sequential data, it is key that we remember the relationships in the data, and plain [CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) are not good at length-varying input and output. Hence, we are using RNNs for the task of text generation.
 
-![rnn](/engineering-education/text-generation-nn/RNN-rolled.png)
+![rnn](/text-generation-nn/RNN-rolled.png)
 
 We will use a special type of RNN called [LSTM](https://colah.github.io/posts/2015-08-Understanding-LSTMs/),  which are equipped to handle very large sequences of data. Simple RNNs  have a problem called the *[vanishing gradient problem](https://www.youtube.com/watch?v=qhXZsFVxGKo)*, because of which they cannot handle large sequences. LSTMs are designed to handle long-term dependencies.
 
-![lstm](/engineering-education/text-generation-nn/62.png)
+![lstm](/text-generation-nn/62.png)
 
 ### Text Generation Using RNN
 When working with text data *tokens* are words or characters and any network that can model the probability of the next token is called *language model*. A language model captures the statistical structure of the text. If we are training the neural network to predict the *next character*, it is called [Character Level Model](https://towardsdatascience.com/character-level-language-model-1439f5dd87fe). Similarly, we can train the model to predict the next word, given a sequence of words called [Word Level Models](https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/). We are implementing character level model.
 
-![model](/engineering-education/text-generation-nn/63.png)
+![model](/text-generation-nn/63.png)
 
 ### Implementing in Tensorflow
 #### The Dataset

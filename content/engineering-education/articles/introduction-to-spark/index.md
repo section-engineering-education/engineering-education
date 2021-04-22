@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-spark/
+url: /introduction-to-spark/
 title: Introduction to Apache Spark
 description: Introduction to the Apache Spark software library that is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 author: keerthi-v
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-spark/hero.jpg
+  - url: /introduction-to-spark/hero.jpg
     alt: apache spark image example screensaver
 ---
 

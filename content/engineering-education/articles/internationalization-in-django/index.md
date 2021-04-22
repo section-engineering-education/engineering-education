@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/internationalization-in-django/
+url: /internationalization-in-django/
 title: Internalization in Django
 description: This article shows how to utilize i18n to reduce language barriers in web applications. Internationalization, abbreviated as i18n, involves making a software application translatable to have a broader audience in the international market.
 author: ifenna-okoye
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/internationalization-in-django/hero.jpg
+  - url: /internationalization-in-django/hero.jpg
     alt: Internalization in Django example image
 ---
 Django is one of the most popular web frameworks known for its battery-inclusion. One of the inbuilt features of Django is internationalization (popularly referred to as i18n). This article shows how to utilize i18n to reduce language barriers in web applications by offering their content in languages tailored to the audience.
@@ -440,4 +440,4 @@ In this article, we discussed what internationalization is and how Django handle
 [Django Software Foundation Documentation: Internationalization and Localization](https://docs.djangoproject.com/en/3.1/topics/i18n/#internationalization-and-localization)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

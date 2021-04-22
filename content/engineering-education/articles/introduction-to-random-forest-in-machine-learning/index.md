@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-random-forest-in-machine-learning/
+url: /introduction-to-random-forest-in-machine-learning/
 title: Introduction to Random Forest in Machine Learning
 description: This article will go over the concept random forest in machine learning. A random forest is a machine learning technique that is used to solve regression and classification problems.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-random-forest-in-machine-learning/hero.jpg
+  - url: /introduction-to-random-forest-in-machine-learning/hero.jpg
     alt: Random Forest machine learning example image
 ---
 A random forest is a supervised machine learning algorithm that is constructed from decision tree algorithms. This algorithm is applied in various industries such as banking and e-commerce to predict behavior and outcomes.
@@ -42,7 +42,7 @@ A decision tree consists of three components: decision nodes, leaf nodes, and a 
 
 The nodes in the decision tree represent attributes that are used for predicting the outcome. Decision nodes provide a link to the leaves. The following diagram shows the three types of nodes in a decision tree. 
 
-![Decision Tree Nodes](/engineering-education/introduction-to-random-forest-in-machine-learning/decision-tree-nodes.png)
+![Decision Tree Nodes](/introduction-to-random-forest-in-machine-learning/decision-tree-nodes.png)
 
 [Image Source: Tutorials and Example](https://www.tutorialandexample.com/wp-content/uploads/2019/10/Decision-Trees-Root-Node.png)
 
@@ -58,7 +58,7 @@ Let's take a simple example of how a decision tree works. Suppose we want to pre
 
 The root node and decision nodes of the decision represent the features of the phone mentioned above. The leaf node represents the final output, either *buying* or *not buying*. The main features that determine the choice include the price, internal storage, and Random Access Memory (RAM). The decision tree will appear as follows.
 
-![Example of Decision Tree](/engineering-education/introduction-to-random-forest-in-machine-learning/example-of-decision-tree.png)
+![Example of Decision Tree](/introduction-to-random-forest-in-machine-learning/example-of-decision-tree.png)
 
 [Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/phone-price.JPG)
 
@@ -78,7 +78,7 @@ Classification in random forests employs an ensemble methodology to attain the o
 
 A rain forest system relies on various decision trees. Every decision tree consists of decision nodes, leaf nodes, and a root node. The leaf node of each tree is the final output produced by that specific decision tree. The selection of the final output follows the majority-voting system. In this case, the output chosen by the majority of the decision trees becomes the final output of the rain forest system. The diagram below shows a simple random forest classifier. 
 
-![Random Forest Classifier](/engineering-education/introduction-to-random-forest-in-machine-learning/random-forest-classifier.png)
+![Random Forest Classifier](/introduction-to-random-forest-in-machine-learning/random-forest-classifier.png)
 
 [Image Source: Medium](https://miro.medium.com/max/5752/1*5dq_1hnqkboZTcKFfwbO9A.png)
 
@@ -86,7 +86,7 @@ Let's take an example of a training dataset consisting of various fruits such as
 
 Another decision tree (n) has predicted *banana* as the outcome. The random forest classifier collects the majority voting to provide the final prediction. The majority of the decision trees have chosen *apple* as their prediction. This makes the classifier choose *apple* as the final prediction. 
 
-![Example of Random Forest Classifier](/engineering-education/introduction-to-random-forest-in-machine-learning/example-of-random-forest-classifier.png)
+![Example of Random Forest Classifier](/introduction-to-random-forest-in-machine-learning/example-of-random-forest-classifier.png)
 
 [Image Source: Javatpoint](https://static.javatpoint.com/tutorial/machine-learning/images/random-forest-algorithm2.png)
 
@@ -144,4 +144,4 @@ This is an ideal algorithm for developers because it solves the problem of overf
 [Towards Data Science](https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

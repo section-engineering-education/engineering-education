@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/lipa-na-mpesa-online/
+url: /lipa-na-mpesa-online/
 title: Implementing Lipa na Mpesa Online using Node.js
 description: In this article, we will cover an introduction to Mpesa, we will create a Safaricom developer account, an application, get an OAuth token, and implement Lipa na Mpesa online.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/lipa-na-mpesa-online/hero.jpg
+  - url: /lipa-na-mpesa-online/hero.jpg
     alt: Lipa na Mpesa Online image example
 ---
 Mpesa is a mobile money payment service by Safaricom based in Kenya. It was released in 2007 and since then it has become the common means of payment in Kenya. To help developers implement Mpesa in their platforms, Safaricom released the Daraja API. 
@@ -244,4 +244,4 @@ lipaNaMpesaOnlineCallback(req,res){
 Mpesa userbase is rapidly growing, therefore it would be wise for software developers to familiarize themselves with the Daraja API. In this article, we have covered an introduction to Mpesa, we createdd a Safaricom developer account, created an app, got the OAuth token, and implemented Lipa na Mpesa online. Apart from what we have covered here, there are more functionalities in the [documentation](https://developer.safaricom.co.ke/docs). Feel free to check them out.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

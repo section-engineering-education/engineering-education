@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/data-leakage/
+url: /data-leakage/
 title: Minimizing Data Leakage in Machine Learning
 description: This article will go over the challenge of data leakage in machine learning and how to address it in an attempt to minimize it.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/data-leakage/hero.jpg
+  - url: /data-leakage/hero.jpg
     alt: Underspecification in Machine Learning image example
 ---
 We always want to produce the best performing machine learning models. If a model does well on our test set, we consider it to be a suitable model. Yet, a model may perform well during testing but poorly after deployment. There are several probable causes of such, but one of them is data leakage.
@@ -24,7 +24,7 @@ This refers to an error made by a creator of a model where information between t
 3. Techniques to minimize data leakage
 
 ### Prerequisites
-Understanding of general [machine learning](/engineering-education/supervised-learning-algorithms/) concepts as well as a few concepts around [feature engineering](/engineering-education/feature-engineering-in-machine-learning/) is a plus.
+Understanding of general [machine learning](/supervised-learning-algorithms/) concepts as well as a few concepts around [feature engineering](/feature-engineering-in-machine-learning/) is a plus.
 
 ### Data leakage
 A model may perform exceptionally well during training. Yet when implemented on a real-world problem, it may end up offering sub-par performance. Many reasons could be responsible for this occurrence. However, for the focus of this article, our focus will be the problem of data leakage. 
@@ -60,7 +60,7 @@ It is easy to leak data when preparing data for machine learning. As a result, o
 
 For instance, data leakage will occur in a scenario where one carries out normalization of an entire dataset, then evaluates the algorithm's performance using cross-validation. [Normalization](https://developers.google.com/machine-learning/data-prep/transform/normalization#:~:text=%20Normalization%20Techniques%20at%20a%20Glance%20%201,a%20wide%20range%20to%20a%20narrow...%20More%20) is a process that aims to improve the performance of a model by transforming features to be on a similar scale.
 
-I described [cross validation](/engineering-education/evaluating-ml-model-performance/) as the use of two datasets to evaluate an algorithm. Specifically, there is a training set and an independent set that is partitioned from an original dataset. These splits of the dataset are called folds, which are often equal in size. 
+I described [cross validation](/evaluating-ml-model-performance/) as the use of two datasets to evaluate an algorithm. Specifically, there is a training set and an independent set that is partitioned from an original dataset. These splits of the dataset are called folds, which are often equal in size. 
 
 A model being evaluated is trained on all folds except one. So, a model will be trained on three and tested on the remaining fold if there are four-folds. The process is repeated until each fold is used for testing.
 
@@ -109,4 +109,4 @@ Until next time, good luck!
 8. [Understanding what is Data Leakage in Machine Learning and how it can be detected](https://insights.ai-jobs.net/understanding-what-is-data-leakage-in-machine-learning-and-how-it-can-be-detected/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

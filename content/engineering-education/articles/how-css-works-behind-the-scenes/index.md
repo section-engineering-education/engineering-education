@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-css-works-behind-the-scenes/
+url: /how-css-works-behind-the-scenes/
 title: How does CSS works behind the scenes?
 description: In this article we will explore what happens behind the scenes with CSS (Cascading Style Sheets). We will go over what parsing is within HTML.
 author: sarthak-duggal
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-css-works-behind-the-scenes/hero.jpg
+  - url: /how-css-works-behind-the-scenes/hero.jpg
     alt: Parsing HTML CSS example image
 ---
 Parsing means taking the HTML code and then extracting valuable information from it. This includes information like the title of the page, header links, and the body content.
@@ -22,7 +22,7 @@ After it parses the HTML document, all it stores the code in a DOM (Document Obj
 
 The separated CSS files go to the next step, i.e. loading the CSS files.
 
-![Flowchart showing Parsing](/engineering-education/how-css-works-behind-the-scenes/parsing.png)
+![Flowchart showing Parsing](/how-css-works-behind-the-scenes/parsing.png)
 
 After loading the CSS files, the parsing of CSS occurs, similar to the parsing of the HTML files, but **there’s a slight difference**. The parsing of CSS files takes place in two steps, and it's a bit more complex.
 
@@ -57,7 +57,7 @@ Cascade marks the importance of CSS styles based on the source they are coming f
 
 Consider this example: We have a **button with a class button under the nav element**. We have conflicted the background-color property of this button as:
 
-![Code snippet showing importance](/engineering-education/how-css-works-behind-the-scenes/importance-code.png)
+![Code snippet showing importance](/how-css-works-behind-the-scenes/importance-code.png)
 
 In this case, **the background-color property with the color red will be applied**. This is because it's **marked with an !important keyword**. This is how 'importance' is applied while cascading.
 
@@ -87,7 +87,7 @@ Consider this example, in which we have styled an element in a separate CSS file
 **Therefore, the selector specificity for this block of style will be (I, ID, C, E)=(0,1,2,1).**
 
 ### Let’s create an example showing how it resolves the conflict
-![Code snippet showing specificty](/engineering-education/how-css-works-behind-the-scenes/specificity-code.png)
+![Code snippet showing specificty](/how-css-works-behind-the-scenes/specificity-code.png)
 
 Let’s start by writing the specificity for all these styles:
 ```bash
@@ -132,19 +132,19 @@ In the case of something like padding:15%, it will set the padding to 15% of the
 
 **Now that CSS's parsing has been completed, all the parsed CSS is stored in a CSS object model, similar to the DOM. So, let’s look at the flowchart again.**
 
-![Flowchart showing CSS-OM](/engineering-education/how-css-works-behind-the-scenes/css-om.png)
+![Flowchart showing CSS-OM](/how-css-works-behind-the-scenes/css-om.png)
 
 Now that both HTML and CSS have been parsed and stored into their object models, **they both form the Render Tree**. It's formed with a combination of HTML, DOM, and CSS-OM. It's **used to calculate the layout of each element** on the page and helps render the page.
 
-![Flowchart showing Render Tree](/engineering-education/how-css-works-behind-the-scenes/render-tree.png)
+![Flowchart showing Render Tree](/how-css-works-behind-the-scenes/render-tree.png)
 
 After the render tree has been formed, the website uses something known as the **Visual Formatting model**. A Visual Formatting model is an algorithm that **calculates the boxes and the box sizes for each element on the webpage** and helps lay those elements on the page to determine the final layout of the page.
 
 Finally, we have our rendered website.
 
-![Flowchart showing Rendered website](/engineering-education/how-css-works-behind-the-scenes/rendered-website.png)
+![Flowchart showing Rendered website](/how-css-works-behind-the-scenes/rendered-website.png)
 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/macros/
+url: /macros/
 title: Using Macros - C, Nim, and Rust
 description: DRY is a very important concept in software engineering. Sometimes, it seems like some repetition is required, but it isn't. Many languages have macros. Today we'll show you how to use them in C, Nim, and Rust.
 author: mike-white
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/macros/hero.jpg
+  - url: /macros/hero.jpg
     alt: Macros DRY example image
 ---
 Macros are cool. A macro is a tool, sometimes embedded into the programming language, that can be used to generate code. This can be very useful for when you need to have some repeating code, but can not use a function. Unfortunately, macros are imports. Every programming language implements them just a little bit differently. Today, we'll cover some of the popular ones.

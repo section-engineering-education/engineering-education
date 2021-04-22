@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/java-jdbc/
+url: /java-jdbc/
 title: Getting Started with Java JDBC
 description: This article introduces Java database connectivity. We will learn how to perform various database query operations from a Java application.
 author: paul-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/java-jdbc/hero.jpg
+  - url: /java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
 Java database connectivity (JDBC) is an application programming interface that defines how Java programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform a database create, read, update, and delete operation through JDBC API.
@@ -424,7 +424,7 @@ public class Main {
 - On the `http://localhost/phpmyadmin/` site on your browser, create a database with the name `school`.
 - In the `school` database, create a table with the name `students`, with the fields `name` of the type `varchar` of length 100, `email` of the type `varchar` of length 100, and `course` of type `varchar` of length 100.
 
-![Table structure](/engineering-education/java-jdbc/database_table_structure.png)
+![Table structure](/java-jdbc/database_table_structure.png)
   
 Run the application by executing the `main` function in the `Main` class.
 
@@ -434,4 +434,4 @@ Now that you have learned how to perform various database query operations from 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)

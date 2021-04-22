@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/forward-and-backward-chaining-in-ai/
+url: forward-and-backward-chaining-in-ai/
 title: Forward and Backward Chaining in Artificial Intelligence
 description: This article will cover how backward and forward chaining are applied in artificial intelligence. These are method of reasonings used in artificial intelligence. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/forward-and-backward-chaining-in-ai/hero.jpg
+  - url: /forward-and-backward-chaining-in-ai/hero.jpg
     alt:  forward and backward chaining example image
 ---
 Backward and forward chaining are methods of reasoning that exist in the Expert System Domain of artificial intelligence. These techniques are used in expert systems such as [MYCIN](https://en.wikipedia.org/wiki/Mycin) and [DENDRAL](https://en.wikipedia.org/wiki/Dendral) to generate solutions to real life problems. 
@@ -27,7 +27,7 @@ There are three components in an expert system: user interface, inference engine
 
 Backward and forward chaining stem from the inference engine component. This is a component in which logical rules are applied to the knowledge base to get new information or make a decision. The backward and forward chaining techniques are used by the inference engine as strategies for proposing solutions or deducing information in the expert system. 
 
-![Expert System](/engineering-education/forward-and-backward-chaining-in-ai/expert-system.jpg)
+![Expert System](/forward-and-backward-chaining-in-ai/expert-system.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/expert_system.jpg)
 
@@ -36,7 +36,7 @@ Forward chaining is a method of reasoning in artificial intelligence in which in
 
 In this type of chaining, the inference engine starts by evaluating existing facts, derivations, and conditions before deducing new information. An endpoint (goal) is achieved through the manipulation of knowledge that exists in the knowledge base. 
 
-![Forward Chaining](/engineering-education/forward-and-backward-chaining-in-ai/forward-chaining.jpg)
+![Forward Chaining](/forward-and-backward-chaining-in-ai/forward-chaining.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/forward_chaining.jpg)
 
@@ -95,7 +95,7 @@ Backward chaining is a concept in artificial intelligence that involves backtrac
 
 The backtracking process can also enable a person establish logical steps that can be used to find other important solutions.
 
-![Backward Chaining](/engineering-education/forward-and-backward-chaining-in-ai/backward-chaining.jpg)
+![Backward Chaining](/forward-and-backward-chaining-in-ai/backward-chaining.jpg)
 
 [Image Source: Quora](https://qph.fs.quoracdn.net/main-qimg-72fa83318b4bf6238b5a0da493a56277)
 
@@ -166,4 +166,4 @@ Forward chaining is important to developers that want to use data-driven algorit
 [Java Point](https://www.javatpoint.com/forward-chaining-and-backward-chaining-in-ai#:~:text=A.%20Forward%20Chaining.%20Forward%20chaining%20is%20also%20known,extract%20more%20data%20until%20a%20goal%20is%20reached.)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

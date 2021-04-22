@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/impact-of-mathematics-on-programming/
+url: /impact-of-mathematics-on-programming/
 title: The Impact of Mathematics on Programming
 description: Basic mathematics is necessary to be mastered by students taking a programming subject because it can promote problem solving and algorithmic thinking skills.
 author: dominic-nshimba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/impact-of-mathematics-on-programming/hero.jpg
+  - url: /impact-of-mathematics-on-programming/hero.jpg
     alt: example math image
 ---
 Programming is the art of telling the computer what to do using some set of laid down rules and principles to make digital applications, e.g software, apps, websites, and operating systems. The argument of whether programming is an art or science will be a topic to be discussed another day, but for now, let's just call it an art since programmers write code.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/active-learning/
+url: /active-learning/
 title: Introduction to Active Learning
 description: This article will be discussing active learning, which is an approach where data that needs to be labeled to train a model is prioritized. The data that is prioritized has the highest impact on the performance of a model.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/active-learning/hero.jpg
+  - url: /active-learning/hero.jpg
     alt: active learning machine learning image
 ---
 By their very nature machine learning models are data-hungry. They require a lot of data to make decisions. However, always having high quality labeled data available to train models is often a costly (and tedious) task. Active learning can serve as an answer to this. This approach can reduce the training data needed to train a model.
@@ -26,7 +26,7 @@ By their very nature machine learning models are data-hungry. They require a lot
 - Query strategies.
 
 ### Prerequisites
-This article requires an understanding of supervised learning and machine learning in general. This [article](/engineering-education/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
+This article requires an understanding of supervised learning and machine learning in general. This [article](/supervised-learning-algorithms/) may be of help with the mentioned prerequisites.
 
 ### Active learning
 In supervised learning, a great amount of labeled data is needed for training. However, we might encounter a situation where we have a large pool of unlabelled data. To apply a supervised algorithm on such data, we would need to label every instance. However, this would be a tedious, time-consuming, and an expensive process.
@@ -62,7 +62,7 @@ This is an active learning technique where training examples are sent to an algo
 
 The algorithm then immediately decides whether to label a given example or query the oracle to label the example. Let's look at the image below to intuitively understand this technique.
 
-![stream](/engineering-education/active-learning/stream.png)
+![stream](/active-learning/stream.png)
 
 *Stream-Based Sampling*
 
@@ -77,7 +77,7 @@ For numerous real-world machine learning problems, we can collect large collecti
 
 Pool-based sampling tries to evaluate an entire dataset before choosing the best set of examples. This process involves identifying the informativeness of all the provided examples, then selecting a given number of examples to train a model.
 
-![pool](/engineering-education/active-learning/pool.png)
+![pool](/active-learning/pool.png)
 
 *Pool-Based Sampling*
 
@@ -94,7 +94,7 @@ For instance, the data may be images of letters. The learning agent may generate
 
 The image below represents this process.
 
-![membership](/engineering-education/active-learning/membership.png)
+![membership](/active-learning/membership.png)
 
 *Membership Query Synthesis*
 
@@ -175,4 +175,4 @@ Happy reading!
 11. [Active Learning as a Way of Increasing Accuracy](http://www.ijcte.org/papers/910-AC0013.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

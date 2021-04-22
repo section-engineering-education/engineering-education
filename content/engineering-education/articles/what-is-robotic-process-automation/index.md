@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-robotic-process-automation/
+url: /what-is-robotic-process-automation/
 title: Introduction to Robotic Process Automation
 description: This article describes RPA. It explains how it differs from traditional automation in terms of features and functionality. It also explains the importance of RPA and why we should consider it for enterprises.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-robotic-process-automation/hero.jpg
+  - url: /what-is-robotic-process-automation/hero.jpg
     alt: RPA example image robot
 ---
 Robotic process automation (RPA) is technology or software that is used to mimic the actions of a human being who is interacting with digital systems. Computer software or robots are configured to work or imitate how people interact with the systems used for business processes.

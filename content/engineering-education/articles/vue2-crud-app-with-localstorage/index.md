@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/vue2-crud-app-with-localstorage/
+url: /vue2-crud-app-with-localstorage/
 title: How to Make a CRUD app with Local Storage using Vue 2
 description: In this article, we will look at how to make a CRUD application that implements a Web browser's Local storage using Vue.js 2.
 author: espira-marvin
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
+  - url: /vue2-crud-app-with-localstorage/hero.jpg
     alt: Vue CRUD Local Storage example
 ---
 Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity and small bundle size. Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser.
@@ -655,4 +655,4 @@ That is it.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

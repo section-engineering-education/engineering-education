@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/queue-data-structure-python/
+url: /queue-data-structure-python/
 title: Using the Queue Data Structure in Python
 description: A queue is an efficient linear data structure that is used to maintain the order and is used to implement other data structures. 
 author: saiharsha-balasubramaniam
@@ -11,13 +11,13 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/queue-data-structure-python/hero.jpg
+  - url: /queue-data-structure-python/hero.jpg
     alt: python data structures queue
 
 ---
 In Part 4 of this series, let us dive into Queues, a data structure that stores data in a **First In, First Out** (FIFO) manner. [Queue](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm) is an abstract data structure, somewhat similar to Stacks. Unlike stacks, a queue is open at both of its ends. In this article, we'll be looking at how to implement and use the queue data structure in Python.
 
-*For more background on the different data structures in Python, check out my articles on the [List](/engineering-education/list-data-structure-python/) and [Stack](/engineering-education/stack-data-structure-python) data structures.*
+*For more background on the different data structures in Python, check out my articles on the [List](/list-data-structure-python/) and [Stack](/stack-data-structure-python) data structures.*
 
 <!--more-->
 
@@ -32,7 +32,7 @@ In Part 4 of this series, let us dive into Queues, a data structure that stores 
 ### Queue - An introduction
 A Queue is a linear data structure in which data is stored in a **First In, First Out** manner. In a queue, the item that was added the earliest is removed first. The item that was added more recently is removed last. A queue can be compared to a real-life queue.
 
-![Queue, Diagram](/engineering-education/queue-data-structure-python/queue.png)
+![Queue, Diagram](/queue-data-structure-python/queue.png)
 
 `enqueue` is a queue operation where you add an item at the back of a queue.
 

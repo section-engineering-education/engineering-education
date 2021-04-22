@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/breaking-down-public-cloud-vs-hybrid—cloud-vs-private-cloud/
+url: /breaking-down-public-cloud-vs-hybrid—cloud-vs-private-cloud/
 title: Breaking Down Public Cloud vs. Hybrid Cloud vs. Private Cloud
 description: This article will explore public, private, and hybrid cloud environments, their benefits and drawbacks, and help users decide on the best cloud solution according to their needs.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ensuring-acid-compliance-in-database-transactions/hero.jpg
+  - url: /ensuring-acid-compliance-in-database-transactions/hero.jpg
     alt: Public Cloud Hybrid Cloud Private Cloud example image
 ---
 The cloud environment enables users to manage storage, applications, network, and compute resources over the internet. Users rely on IT infrastructures not installed on their local server or computer to manage these resources. This is referred to as cloud computing. 
@@ -20,7 +20,7 @@ Cloud computing can be either public, private, or a hybrid (a combination of pri
 
 This article will explore public, private, and hybrid cloud environments, their benefits and drawbacks, and help users decide on the best cloud solution according to their needs.
 
-To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/engineering-education/introduction-to-cloud-computing/).
+To introduce cloud computing and the three cloud deployment models (public cloud, hybrid cloud, and private cloud), have a look at this [article](/introduction-to-cloud-computing/).
 
 ### Keywords
 - Application Packaging Standard (APS) – To integrate an application software with a hosting platform, you need to follow the technology defined by APS.
@@ -98,4 +98,4 @@ You can use private clouds when:
 The choice to deploy private, hybrid, or public cloud mainly depends on your needs. Understanding all different cloud types' strengths and weaknesses is key to helping you chose which will give the best return on your investment.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

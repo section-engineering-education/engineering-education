@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-wireless-networking/
+url: /introduction-to-wireless-networking/
 title: Introduction to Wireless Networking
 description: In this article, we discuss the defintiion of wireless networking, types of wireless networks, standards associated with wireless networks and benefits of wireless networking.
 author: miller-juma
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-    - url: /engineering-education/introduction-to-wireless-networking/hero.jpg
+    - url: /introduction-to-wireless-networking/hero.jpg
       alt: Introduction to wireless networking example image
 ---
 The planet is becoming increasingly more mobile over the past few years. The worlds conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle. When users need to be connected by physical cables to a network, their movement is drastically reduced.   
@@ -64,7 +64,7 @@ We now know how wireless network works, let's focus our attention to different t
 
 ***1.Fig 1.0 WLAN***
 
-![Wireless-network-LAN](/engineering-education/introduction-to-wireless-networking/wireless-network.jpg)
+![Wireless-network-LAN](/introduction-to-wireless-networking/wireless-network.jpg)
 
 ### 1. Wireless Local Area Networks (WLAN)
 
@@ -99,4 +99,4 @@ The most common wireless technologies in use today include:
 In this article, we have looked at wireless networks, how they works, and some defined standards. We have also seen different types of Wireless Networks and how they relate to each other. 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

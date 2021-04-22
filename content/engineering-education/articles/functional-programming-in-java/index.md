@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/functional-programming-in-java/
+url: /functional-programming-in-java/
 title: Functional Programming in Java
 description: This article will go over the basic idea behind functional programming, and some tools Java gives us to code in this style.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/functional-programming-in-java/hero.jpg
+  - url: /functional-programming-in-java/hero.jpg
     alt: Function programming in Java image
 
 ---
@@ -288,4 +288,4 @@ To summarize this article, we went over the basic idea behind functional program
 [What is Java](https://www.java.com/en/about/whatis_java.jsp)
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

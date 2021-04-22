@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ci-cd-setup-react/
+url: /ci-cd-setup-react/
 title: How to Set Up CI/CD in a React Project with Circle CI, AWS S3, and AWS CloudFront 
 description: In this tutorial, we walk through how to set up CI/CD in a React project with Circle CI, AWS S3, and AWS CloudFront.
 author: worawat-kaewsanmaung
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ci-cd-setup-react/hero.jpg
+  - url: /ci-cd-setup-react/hero.jpg
     alt: CI CD React 
 ---
 Good developers are always looking for ways to reduce repetitive, manual processes. Leveraging CI/CD (Continuous Integration / Continuous Delivery) methodologies helps developers automate processes so they can focus valuable time on developing new, innovative, and problem-solving features.

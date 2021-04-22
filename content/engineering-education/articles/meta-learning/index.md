@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/meta-learning/
+url: /meta-learning/
 title: An Overview of Meta-Learning
 description: This article will provide an overview on meta-learning. Techniques like meta-learning contribute to the quest to achieve artificial general intelligence. They move artificial intelligence closer to emulating how humans learn and solve problems.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/meta-learning/hero.jpg
+  - url: /meta-learning/hero.jpg
     alt: Meta-learning Machine Learning image example
 ---
 The application of machine learning to real-world problems is a very involving task for data scientists. For instance, they need to assess algorithms and tune many parameters. This may be based on their experience, biases, or assumptions.
@@ -24,7 +24,7 @@ Machine learning may be used to learn the most suitable parameters and algorithm
 3. Meta-Learning Approaches
 
 ### Prerequisites
-To fully appreciate this article, I recommend having a grasp on the basic concepts of [machine learning](/engineering-education/supervised-learning-algorithms/) and [deep learning](/engineering-education/introduction-to-deep-learning/).
+To fully appreciate this article, I recommend having a grasp on the basic concepts of [machine learning](/supervised-learning-algorithms/) and [deep learning](/introduction-to-deep-learning/).
 
 ### Meta-Learning
 Very simply defined, meta-learning means learning to learn. It is a learning process that applies to understand algorithms to metadata. Metadata is data that describes other data. Traditional machine learning has us use a sizeable dataset exclusive to a given task to train a model. 
@@ -72,7 +72,7 @@ Compared to conventional models, neural networks with augmented memory capacitie
 #### Model agnostic meta-learning
 [Model agnostic meta-learning (MAML)](https://www.borealisai.com/en/blog/tutorial-3-few-shot-learning-and-meta-learning-ii) refers to a framework that applies to any model that is trained using gradient descent. We can argue that this is similar to or a variation of few-shot meta-learning. Like few-shot meta-learning, the goal is to learn a general model that can simply undergo fine-tuning for several different tasks. This includes a scenario where training data is insufficient. Let's visualize the MAML framework.
 
-![maml](/engineering-education/meta-learning/maml.png)
+![maml](/meta-learning/maml.png)
 
 *MAML approach*
 
@@ -106,4 +106,4 @@ This makes the machine learning process easier for data scientists. The algorith
 
 9. [Understanding Few-shot intelligence as a Meta-Learning Problem](https://codeburst.io/understanding-few-shot-intelligence-as-a-meta-learning-problem-7823a4cd4a0c)
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

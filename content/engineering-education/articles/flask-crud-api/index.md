@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/flask-crud-api/
+url: /flask-crud-api/
 title: How to create CRUD API in Flask
 description: This tutorial will go over how to create a CRUD API using Flask. Flask-SQLAlchemy is a Flask extension library that we will use to add SQLAlchemy to the Flask project.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/flask-crud-api/hero.jpg
+  - url: /flask-crud-api/hero.jpg
     alt: CRUD API using Flask example image
 ---
 In this tutorial, we will create a working Restful API with Flask and MySQL database. Restful APIs make it possible to establish communication between the backend and the frontend of mobile and web applications.
@@ -142,7 +142,7 @@ db = SQLAlchemy(app)
 On your computer start the XAMPP control panel, start the Apache and MySQL servers.
 On your browser open `http://localhost/dashboard/` then `phpAdmin`, create a database with the name `todo` as shown below.
 
-![Creating database](/engineering-education/flask-crud-api/database.png)
+![Creating database](/flask-crud-api/database.png)
 
 `db = SQLAlchemy(app)` creates an object of the SQLAlchemy and stores it in a variable `db`.
 
@@ -302,21 +302,21 @@ To run our application, execute the below command in the projects root directory
 ### Testing the API endpoints
 **POST endpoint**
 
-![Create todo](/engineering-education/flask-crud-api/create-todo.png)
+![Create todo](/flask-crud-api/create-todo.png)
 
 **GET endpoint**
 
-![Get all todos](/engineering-education/flask-crud-api/get-todos.png)
+![Get all todos](/flask-crud-api/get-todos.png)
 
-![Get todo by id](/engineering-education/flask-crud-api/get-todo-by-id.png)
+![Get todo by id](/flask-crud-api/get-todo-by-id.png)
 
 **PUT endpoint**
 
-![Update todo](/engineering-education/flask-crud-api/update-todo.png)
+![Update todo](/flask-crud-api/update-todo.png)
 
 **DELETE endpoint**
 
-![Delete todo](/engineering-education/flask-crud-api/delete-todo.png)
+![Delete todo](/flask-crud-api/delete-todo.png)
 
 You can find the entire source code for the project [here](https://github.com/paulodhiambo/flaskcrudapi).
 
@@ -326,4 +326,4 @@ Now that you have learned how to create CRUD API, add the `date_created` and `la
 Happy Coding.
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ensuring-acid-compliance-in-database-transactions/
+url: /ensuring-acid-compliance-in-database-transactions/
 title: ACID Compliance in Database Transactions
 description: This article will have a look at database transactions and all the four components of ACID compliance.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ensuring-acid-compliance-in-database-transactions/hero.jpg
+  - url: /ensuring-acid-compliance-in-database-transactions/hero.jpg
     alt: ACID compliance databases example image
 ---
 Applying the ACID (atomicity, consistency, isolation, and durability) properties to database modifications is the best way to ensure databases reliability, accuracy, and successful transactions.
@@ -113,4 +113,4 @@ In the case that phase 1 fails, phase 2 notifies resource managers to abort the 
 ACID-compliant database management systems are maintained with utmost data security and integrity. Organizations can derive value from such databases and prevent data from being corrupted.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

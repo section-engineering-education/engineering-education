@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/
+url: /setting-up-cicd-for-python-packages-using-github-actions/
 title: Setting up CI/CD for Python Packages using GitHub Actions
 description: This article will provide an overview what CI/CD is, build a Python package to inform time in various timezones and deploy the package via GitHub Actions.
 author: edidiong-etuk
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/hero.png
+  - url: /setting-up-cicd-for-python-packages-using-github-actions/hero.png
     alt: GitHub Actions hero image
 ---
 When building Python packages or any Python project, being able to test code and deploy to production faster is an attribute of a fast-paced development environment. After each bug fix, users expect to see the effect on their local software, and this is an attribute of Continuous Integration and Continuous Deployment.
@@ -33,7 +33,7 @@ We will also cover working with the Test Python Package Index and GitHub Actions
 - Understanding of Git and GitHub.
 - Creating a GitHub repository.
 - Creating a Test PyPI account.
-- Understanding how to [build Python packages](/engineering-education/building-a-python-package-and-publishing-on-pypi/).
+- Understanding how to [build Python packages](/building-a-python-package-and-publishing-on-pypi/).
 
 ### What is CI/CD?
 CI/CD is a practice used by organizations to ship applications to customers faster and without common errors.
@@ -278,7 +278,7 @@ Below is the final directory structure:
 
 Once this is achieved, push the code to the repository. Then navigate to the `Actions` tab and see something similar to the screenshot below:
 
-![actions.png](/engineering-education/setting-up-cicd-for-python-packages-using-github-actions/actions.png)
+![actions.png](/setting-up-cicd-for-python-packages-using-github-actions/actions.png)
 
 #### Things to note
 - If you're facing *"the user <username> is not allowed...",* change the name of the package in `setup.py` to `<username>_timechecker`.
@@ -303,8 +303,8 @@ The source code for this repository can be found on [GitHub](https://github.com/
 Happy building!
 
 ### Further reading
-- [Introduction to GitHub Actions](/engineering-education/github-actions/)
+- [Introduction to GitHub Actions](/github-actions/)
 - [How to Build a Python Package?](https://edeediong.me/how-to-build-a-python-package)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/templating-your-static-site/
+url: /templating-your-static-site/
 title: Templating Your Static Site (Converting a Static Site to a Static Site Generator)
 description: Tutorial on converting a simple static website to a static site generator, Eleventy and using EJS templating.
 author: louise-findlay
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/templating-your-static-site/hero.jpg
+  - url: /templating-your-static-site/hero.jpg
     alt: templating static sites eleventy
 ---
 Static sites are typically much easier to develop and deploy than full-stack dynamic web apps. You can take advantage of free hosting services from providers like [Section](/modules/node-js) and [Netlify](https://www.netlify.co). Plus, if you use a CSS framework like [Bootstrap](https://getbootstrap.com) or [Materialize](https://materializecss.com), it only takes a basic knowledge of HTML and CSS to code a simple website.
@@ -24,11 +24,11 @@ There are many static site generators (SSGs), including [Hugo](https://gohugo.io
 
 Eleventy uses vanilla JavaScript and allows multiple template languages to be mixed and matched so you don’t have to learn a new language or templating system. Static site generators work by taking the layout templates you’ve created and building the pages using the template and data you’ve provided.
 
-Templating (see *[Converting a Static Site to a Dynamic NodeJS Web App](/engineering-education/static-site-dynamic-nodejs-web-app/)* for more info) lets you reuse code by inserting it into multiple places and add dynamic data. There are a variety of templating languages such as [Nunchucks](https://mozilla.github.io/nunjucks), [Liquid](https://shopify.github.io/liquid), [Pug](https://pugjs.org/api/getting-started.html) and [Handlebars](https://handlebarsjs.com), but the one we’ll be using in this example is [EJS](https://ejs.co).
+Templating (see *[Converting a Static Site to a Dynamic NodeJS Web App](/static-site-dynamic-nodejs-web-app/)* for more info) lets you reuse code by inserting it into multiple places and add dynamic data. There are a variety of templating languages such as [Nunchucks](https://mozilla.github.io/nunjucks), [Liquid](https://shopify.github.io/liquid), [Pug](https://pugjs.org/api/getting-started.html) and [Handlebars](https://handlebarsjs.com), but the one we’ll be using in this example is [EJS](https://ejs.co).
 
 ### Installing Eleventy
 
-The first step is to install Eleventy which will be done through the package manager, NPM. New to NPM? Check out my [installation guide](/engineering-education/static-site-dynamic-nodejs-web-app/).
+The first step is to install Eleventy which will be done through the package manager, NPM. New to NPM? Check out my [installation guide](/static-site-dynamic-nodejs-web-app/).
 
 Create a package.json:
 ```
@@ -76,7 +76,7 @@ npx @11ty/eleventy
 
 This should result in a build of your website and output the result to the `_site` folder. Congratulations, you've just finished the first Eleventy build of your website.
 
-**Tip:** If you're using the version control software [Git](/engineering-education/beginner-guide-to-git/) to manage your code, then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you from committing your `_site` folder to Git, which prevents the constant uncommitted changes warning.
+**Tip:** If you're using the version control software [Git](/beginner-guide-to-git/) to manage your code, then it would be a good idea to add the `_site` folder to your .gitignore file. This will stop you from committing your `_site` folder to Git, which prevents the constant uncommitted changes warning.
 
 ### Creating Your First EJS Partial
 

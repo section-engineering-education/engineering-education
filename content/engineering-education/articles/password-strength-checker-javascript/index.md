@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/password-strength-checker-javascript/
+url: /password-strength-checker-javascript/
 title: Password Strength Checker using Regular Expressions in JavaScript
 description: This tutorial will give readers a detailed guide on how to build a password strength checker using regular expressions in JavaScript.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/password-strength-checker-javascript/hero.jpg
+  - url: /password-strength-checker-javascript/hero.jpg
     alt: Password Strength Regular Expressions JavaScript Image
 ---
 Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that end-users choose passwords that are strong enough to secure their account using Regular Expressions in JavaScript.
@@ -83,7 +83,7 @@ Using the metrics above, we are going to create a strong level password that has
     (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
 ```
 
-![Strong password](/engineering-education/password-strength-checker-javascript/strong-password.png)
+![Strong password](/password-strength-checker-javascript/strong-password.png)
 
 2. Medium: If the password is at least six characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
@@ -93,11 +93,11 @@ The code is the same as for the Strong level only that `?=.{6,}` shows that we a
     ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
 ```
 
-![Medium password](/engineering-education/password-strength-checker-javascript/medium-password.png)
+![Medium password](/password-strength-checker-javascript/medium-password.png)
 
 3. Weak: If the password entered does not meet the strong or medium-level requirements, then it is deemed weak.
 
-![Weak password](/engineering-education/password-strength-checker-javascript/weak-password.png)
+![Weak password](/password-strength-checker-javascript/weak-password.png)
 
 ### HTML code
 ```HTML
@@ -269,4 +269,4 @@ To find out more about JavaScript RegEx, read the [MDN docs](https://developer.m
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

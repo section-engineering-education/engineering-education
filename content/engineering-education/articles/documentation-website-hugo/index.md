@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/documentation-website-hugo/
+url: /documentation-website-hugo/
 title: Building a Documentation Site from Scratch using Hugo
 description: This tutorial will go over how to create a documentation site for your software projects using Hugo static generator using the Docsy theme.
 author: quadri-sheriff
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/documentation-website-hugo/hero.jpg
+  - url: /documentation-website-hugo/hero.jpg
     alt: Hugo Documentation site example image
 ---
 Documentation is a must in every software development project. Reliable documentation provides an accurate overview of your software, good insight on how to use your software, and easy onboarding for new users of your software.
@@ -231,7 +231,7 @@ hugo server command
 
 The web server will be hosted at http://localhost:1313, and will automatically reload when you make any changes in your website's files.
 
-![Documentation-website-preview](/engineering-education/documentation-website-hugo/website.png)
+![Documentation-website-preview](/documentation-website-hugo/website.png)
 
 ### Step 7 - Build your website
 Build your website with the `hugo` command. The command will generate all your website's static files and store them in the `./public/` directory.
@@ -246,4 +246,4 @@ There are tons of other configuration options you can edit to improve the look a
 Visit [gohugo.io](https://gohugo.io/documentation/) and [Docsy.dev](https://www.docsy.dev/docs/) to check out these other options.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

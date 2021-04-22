@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/jwt-auth-angular/
+url: /jwt-auth-angular/
 title: Angular 11 - JWT Authentication Example & Tutorial with PHP
 description: This tutorial will walk you through the process of developing and implementing JWT-based authentication in an Angular 11 application step by step. This tutorial takes you a step further by developing a backend service in PHP.  
 author: miller-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/jwt-auth-angular/hero.jpg
+ - url: /jwt-auth-angular/hero.jpg
    alt: PHP RESTful APIs angular auth example image
 ---
 A user is usually authenticated by entering a username, email address, and/or password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  
@@ -474,4 +474,4 @@ In this tutorial we have learned how to use JWT authentication in our Angular 11
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

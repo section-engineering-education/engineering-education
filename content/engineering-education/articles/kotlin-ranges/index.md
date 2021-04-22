@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/kotlin-ranges/
+url: /kotlin-ranges/
 title: Kotlin Range Operators
 description: This tutorial will go over the solutions offered by Kotlin ranges that help us perform specific actions quicker and easier.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/kotlin-ranges/hero.png
+  - url: /kotlin-ranges/hero.png
     alt: kotlin ranges image
 ---
 Kotlin provides a wide range of solutions. Most of these solutions aim to make development easier and faster. Kotlin provides easier ways to perform specific actions. Since it is compiled the same way as Java, its functions and methods ensure your code is more efficient.
@@ -191,4 +191,4 @@ As you can see, Ranges can help us perform various tasks easier. It provides an 
 Instead, you use ranges, and knowing how they work would of great help to any developer looking to use ranges efficiently. The keyword is used in all loops as well. Go ahead and try out different ways to use Kotlin ranges to perform different tasks. 😎
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

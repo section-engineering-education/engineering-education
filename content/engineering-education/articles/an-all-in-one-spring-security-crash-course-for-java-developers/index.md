@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/
+url: /an-all-in-one-spring-security-crash-course-for-java-developers/
 title: All-In-One Spring Security Crash Course for Java Developers
 description: This tutorial will cover a crash course on how to secure a Spring Boot application. We will cover the topics of authentication and authorization. Authorization is the process of verifying we allow the user to do what they are asking to do. Authentication is the process of verifying who it is that is sending a request.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/hero.jpg
+  - url: /an-all-in-one-spring-security-crash-course-for-java-developers/hero.jpg
     alt: Spring Security Crash Course Java Developers example image
 ---
 Whenever we build an application, security may not exactly be the first thing we think about. Yet, it is one of the most important features that need our attention. In this article, we will cover some key ways to secure your apps with Spring Security. Security might seem a little daunting especially if you are focused on the bigger picture.
@@ -530,7 +530,7 @@ Then, go to GitHub, click settings, developer settings, OAuth apps, and register
 
 Then add the following properties:
 
-![OAuth With Github Config](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-config.png)
+![OAuth With Github Config](/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-config.png)
 
 The Authorization callback URL, is the URL we will send to the user when authenticated. After registering the application, Github will give a `client ID` and the option to generate a `client secret`. We will need to add these to our spring project’s properties. 
 
@@ -552,7 +552,7 @@ spring:
 Then, when you run the app and go to the homepage you should see the following:
 
 
-![OAuth With Github Page](/engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-page.png)
+![OAuth With Github Page](/an-all-in-one-spring-security-crash-course-for-java-developers/oauth-with-github-page.png)
 
 ### Conclusion
 In this guide, we went through how to use many of the key Spring security features. Although we went through rather quickly, hopefully, this guide has given you a good idea on how to secure your Spring Boot applications. As a next step, I would suggest trying to use this knowledge to secure an existing application you have. 
@@ -560,4 +560,4 @@ In this guide, we went through how to use many of the key Spring security featur
 I would also recommend you try to add claims to the JWT token and try to parse them in a request. You can also try to combine OAuth and JWT as mentioned earlier. As a final note, you can find the final code for this guide [here](https://github.com/john-amiscaray/Spring-Security-Crash-Course).
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

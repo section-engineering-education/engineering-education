@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-friend-functions-in-c++/
+url: /introduction-to-friend-functions-in-c++/
 title: Introduction to Friend Functions in C++
 description: In this article, we will learn about friend functions and friend class, what they and where they are used."Friendly" functions and classes reduce having the number of functions and help create programs that are maintainable.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-friend-functions-in-c++/hero.jpg
+  - url: /introduction-to-friend-functions-in-c++/hero.jpg
     alt: Introduction to Friend Functions in C++ Hero Image
 ---
 Non-member functions of a class will not have access to the private data of another class. There could be situations where we want two classes to share some functions and the data members. In that case, we can make the function a friend of these classes, and that will enable the function to access the private and protected data members of the classes. In this article, we will look at how to make a non-member function friend to a class.
@@ -231,4 +231,4 @@ In this article, we learned about friend functions and friend classes, what they
 - [C++ friend Function and friend Classes](https://www.programiz.com/cpp-programming/friend-function-class)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

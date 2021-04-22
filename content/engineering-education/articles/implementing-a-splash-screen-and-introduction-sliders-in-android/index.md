@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/
+url: /implementing-a-splash-screen-and-introduction-sliders-in-android/
 title: Implementing a Splash screen and Introduction Sliders in Android
 description: This article will illustrate how to add a splash screen and introduction sliders in an Android application.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/hero.jpg
+  - url: /implementing-a-splash-screen-and-introduction-sliders-in-android/hero.jpg
     alt: Splash screen and Introduction Sliders in Android example image
 ---
 A splash screen is an introduction screen in an application once it is launched. Splash screens are vital since they are the first interaction a user has with an application. Most splash screens either contain a company's logo, an animation, an image, or many other features.
@@ -48,7 +48,7 @@ In this section, we will create a splash screen for our application using the la
 ### Step 1 – Create a new Android Studio Project
 Open Android Studio and select an Empty Activity. We shall name our project **SplashnSlides**. Click *Finish* and wait for the project to build.
 
-![Creating an Android Studio project](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/new.jpg)
+![Creating an Android Studio project](/implementing-a-splash-screen-and-introduction-sliders-in-android/new.jpg)
 
 ### Step 2 – Designing the Splash screen
 For this project, we will use an image as our splash screen. Alternatively, one can decide to import a [vector](https://blog.mindorks.com/using-svg-vector-drawables-in-android) asset or use [clipart](https://developer.android.com/studio/write/image-asset-studio). 
@@ -103,7 +103,7 @@ That is it. Simple right?
 
 Let us run the app. We have a splash screen. Let us now work on getting introduction sliders.
 
-![Spash screen](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/splash.jpg)
+![Spash screen](/implementing-a-splash-screen-and-introduction-sliders-in-android/splash.jpg)
 
 ### B) Introduction Sliders
 Introduction sliders in Android applications are customarily used to give instructions or display features offered by an application. In this section, we shall implement introduction sliders in our application.
@@ -375,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
 
 That is it! Let us run our app.
 
-![Introduction sliders](/engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/intro.gif)
+![Introduction sliders](/implementing-a-splash-screen-and-introduction-sliders-in-android/intro.gif)
 
 ### To wrap up
 We have learned about splash screens, we had an introduction to sliders, and how we implement them in an Android application. We have learned the uses and the importance of both. Read more and practice how to implement a splash screen and introduction sliders in mobile applications. 
@@ -389,4 +389,4 @@ For any query or clarification, do not hesitate to raise an issue in this [repos
 Till next time! Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-airflow/
+url: /introduction-to-airflow/
 title: Introduction to Airflow
 description: In this article, we are going to explore the basics of Airflow and understand what makes it so popular.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-airflow/hero.jpg
+  - url: /introduction-to-airflow/hero.jpg
     alt: airflow example image
 ---
 According to the [official documentation](https://airflow.apache.org/), *Airflow is a platform created by the community to programmatically author, schedule, and monitor workflows*.
@@ -37,13 +37,13 @@ A typical workflow looks like this:
 
 Airflow automates the process of monitoring, scheduling, and distributing these tasks in workflow across nodes. In this context, a node is a computer or a [virtual machine](https://www.vmware.com/topics/glossary/content/virtual-machine). To accomplish this, Airflow provides a framework and a rich library to define these tasks in Python. It provides an aesthetic UI to view and monitor workflows in a web-based application and is extensible through plugins.
 
-![pipeline](/engineering-education/introduction-to-airflow/pipelines.png)
+![pipeline](/introduction-to-airflow/pipelines.png)
 
 ### Core concepts
 #### DAGs
 [DAGs](https://en.wikipedia.org/wiki/Directed_acyclic_graph) are the core entities in Airflow's architecture. DAG stands for Directed Acyclic Graph. DAGs are a series of tasks that are executed as part of the workflow. For instance, each of the steps in the workflow described above is a part of the DAG. It describes the sequence in which tasks are executed and also tells us how tasks are dependent on each other. Some tasks might depend on the output of other tasks, and this creates a [dependency graph](https://en.wikipedia.org/wiki/Dependency_graph) that is managed by Airflow.  
 
-![dags](/engineering-education/introduction-to-airflow/dag.png)
+![dags](/introduction-to-airflow/dag.png)
 
 #### Operators
 According to the documentation, an operator describes a single task in a workflow, and are usually (but not always) atomic, meaning they can stand on their own and don’t need to share resources with any other operators. In other words, an operator determines what a task does in the DAG. Some operators that Airflow provides are:
@@ -112,4 +112,4 @@ Another advantage is that Airflow is open source and has a great community of de
 Whether you are a software developer, data engineer, or a data scientist, it would be helpful to learn and explore Airflow. In this article, we covered the basics of airflow and its installation. In the next article, we are going to write our very own application and run it using Airflow.
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-types-topologies/
+url: network-types-topologies/
 title: Introduction to Network Types and Network Topologies
 description: This article will go over an introduction to network types and network topologies, some of their features, disadvantages, and advantages.
 author: kanishkvardhan-a-n
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/network-types-topologies/hero.jpg
+  - url: /network-types-topologies/hero.jpg
     alt:  network topologies example image
 ---
 Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks, and output accurate results. This makes agencies, enterprises, businesses, and workplaces dependent on them. Yet, the fact that they can also store and share data with other computers makes them more useful.
@@ -37,28 +37,28 @@ Computer networks that are restricted to a small localized area are called [LANs
 
 Due to this reason, cables are used as a transmission medium. Ethernet cables are supported by many devices that have the same interface. They are also the most commonly used cables for connecting modems, routers, etc. Their signal strength is consistent and the communication network is also stable. Thus making them a practical choice when using a wired LAN.
 
-![Example of LAN](/engineering-education/network-types-topologies/lan.jpg)
+![Example of LAN](/network-types-topologies/lan.jpg)
 
 #### Wireless Local Area Network (WLAN)
 [WLAN(Wireless LAN)](https://en.wikipedia.org/wiki/Wireless_LAN) works the same way as a LAN. The network is spread across a limited area. But this type of network does not require any cables or optic fibers. Unlike the LAN, here the mode of transmission is wireless.
 
 To achieve this wireless transmission, [Wi-Fi(Wireless Fidelity)](https://en.wikipedia.org/wiki/Wi-Fi) is used. Workstations can be connected to the internet with the help of Wi-Fi Routers and Adapters. Devices that support wireless transmission can also share data from their memory drives. Some of the devices that support wireless transmission are smartphones, smart-watches, speakers, or laptops, etc.
 
-![Example of WLAN](/engineering-education/network-types-topologies/wlan.jpg)
+![Example of WLAN](/network-types-topologies/wlan.jpg)
 
 #### Metropolitan Area Network (MAN)
 The reason for having [MANs](https://en.wikipedia.org/wiki/Metropolitan_area_network) is similar to LANs. One of the differences is in the geographical spread of the network area or range. As mentioned above, LANs are confined to small areas. But, as the name suggests, MAN’s are spread across an entire metropolitan city. They can be used to share data from one point of the city to another.
 
 The way MANs are spread across an entire metropolitan city is the type of transmission medium they use. Since telephone lines are used in the propagation of MAN signals [Modem s(Modulator-Demodulators)](https://en.wikipedia.org/wiki/Modem) are used to connect between two or more servers. Another way of communicating through MAN is by using DSL (Digital Subscribers Line). Business establishments, telephone companies, cable TV’s use this type of networks. Unlike LANs, ownership of MANs is taken over by 2 or more companies/firms.
 
-![Example of MAN](/engineering-education/network-types-topologies/man.jpg)
+![Example of MAN](/network-types-topologies/man.jpg)
 
 #### Wide Area Network (WAN)
 This type of network is currently the most commonly used. [WAN](https://en.wikipedia.org/wiki/Wide_area_network) is nothing but a collection of several LANs linked together. These networks are spread across countries and other parts of the world. Some of them are connected through optic fibers while some are connected through satellites.
 
 WANs are used by government agencies and multinational companies in order to exchange information overseas. Since the network is spread across the world, it is maintained by many firms and companies. When the network is this big, it is prone to failures and system shutdowns once in a while. The biggest WAN in existence is the Internet.   
 
-![Example of WAN](/engineering-education/network-types-topologies/wan.jpg)
+![Example of WAN](/network-types-topologies/wan.jpg)
 
 Configuring a computer network can also depend on the extent of the network, the distance between devices and the number of devices used. While LANs, WLANs, and WANs are most commonly used, there are some [other](https://www.belden.com/blog/smart-building/network-types) computer networks that can also be used based on the network parameters.
 
@@ -77,7 +77,7 @@ This type of topology also goes by the name **Bus Topology**. The name itself st
 - Adding new devices and components may slow down the data transfer rate.
 - During data transfer, the data has to pass through all the workstations between the source computer and the destination computer. Due to this, data security would be at risk.
 
-![Linear Topology](/engineering-education/network-types-topologies/bus.jpg)
+![Linear Topology](/network-types-topologies/bus.jpg)
 
 #### Ring Topology
 Ring topology is a special kind of bus topology. _It is a linear topology in which both ends are joined together and form a **Ring Topology**_. Thus no terminators are used and the data flow is *unidirectional*. Due to this, for the data to reach from the first node to the last it has to traverse through all the nodes.
@@ -95,7 +95,7 @@ Since the connection of nodes is continuous, data flows indefinitely throughout 
 - It is difficult to shut down one node and keep the rest of the system functional.
 - Like the linear topology, adding new devices and components may slow down the data transfer rate.
 
-![Ring Topology](/engineering-education/network-types-topologies/ring.jpg)
+![Ring Topology](/network-types-topologies/ring.jpg)
 
 #### Mesh Topology
 Mesh topology is the solution to the problem found within ring topology. Unlike ring topology, in mesh, *every node is connected with every other node present in the network*. In the case of a single node failure, the rest of the system would still be functional.
@@ -115,7 +115,7 @@ A mesh topology in which all the nodes are connected is called a full connectivi
 - Mesh topology needs lots of proper planning and requires greater maintenance.
 - Due to many links, high network latency may be an issue.
 
-![Mesh Topology](/engineering-education/network-types-topologies/mesh.jpg)
+![Mesh Topology](/network-types-topologies/mesh.jpg)
 
 #### Star Topology
 *This topology consists of an extra part, i.e. the hub or switch, is in the center of the topology that connects all the nodes*. A hub or switch is a networking device that transfers data from one device to another device. It acts as a transmission medium. While both may be used depending on their operations and use cases, some [differences](https://www.geeksforgeeks.org/difference-between-hub-and-switch/) may affect the way they perform. Since many workstations are connected to a hub, the data transmission becomes centralized.
@@ -132,7 +132,7 @@ All the data has to come from the central hub itself. If the workstation fails t
 - Expensive to install and requires more cabling.
 - Extra care has to be taken when working with  hardware devices such as hubs, switches etc.
 
-![Star Topology](/engineering-education/network-types-topologies/star.jpg)
+![Star Topology](/network-types-topologies/star.jpg)
 
 #### Tree Topology
 Tree topology is a special kind of bus topology. Here *central nodes or central hubs are connected to the main bus*. These nodes or hubs are also called **root nodes**. The other peripheral nodes are connected to those nodes or hubs. These peripheral nodes are called **descendant nodes**.
@@ -151,7 +151,7 @@ Like the bus topology, terminators are attached at both ends to define the lengt
 - It is expensive to install this type of topology.
 - Difficult to configure and maintain the network.
 
-![Tree Topology](/engineering-education/network-types-topologies/tree.jpg)
+![Tree Topology](/network-types-topologies/tree.jpg)
 
 ### Conclusion
 Every topology has its benefits and drawbacks. Various factors come into the picture during setting up a network such as its expanse, number of users, cost, data security, and so on. Every detail has to be taken care of before configuring a network. No feature of any topology makes it superior or inferior to others. The crucial thing is to form a network that satisfactorily fulfills users' needs and provides quality performance.

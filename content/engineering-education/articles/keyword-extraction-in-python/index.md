@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/keyword-extraction-in-python/
+url: /keyword-extraction-in-python/
 title: Keyword Extraction in Python
 description: The article covers the basics of keywords extraction and introduces the users to a method called TF-IDF for extracting important words from a document.
 author: adith-bharadwaj
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/keyword-extraction-in-python/hero.jpg
+  - url: /keyword-extraction-in-python/hero.jpg
     alt: keyword extraction in python image example
 ---
 *Big data refers to a large and diverse amount of information that is continually growing - in terms of size, scope, and complexity*. As more and more business activities are digitized, massive amounts of data get generated. Data comes from various sources such as social media, transactions, machines (sensors and IoT devices), web, etc. Because of the sheer amount of data, it becomes impossible for humans to manually analyze and extract valuable information from this massive dataset. An automated method to accomplish this is imperative and is called Keyword Extraction.
@@ -48,7 +48,7 @@ Consider a file containing 100 words in which "cat" occurs three times. Hence, T
 
 Now, if we have 1000 sentences and the word cat appears in 10, Then the inverse document frequency is calculated as log(1000 / 10) = 2. Thus, the TF-IDF weight is the product of these quantities: 0.03 * 2 = 0.06
 
-![flowchart](/engineering-education/keyword-extraction-in-python/flowchart.png)
+![flowchart](/keyword-extraction-in-python/flowchart.png)
 
 ### Building the keyword extraction engine in Python
 The most important words (keywords) from a document can be extracted by their tf-idf scores. The words with high tf-idf scores are more important than the words with lower tf-idf scores.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-matlab/
+url: /getting-started-with-matlab/
 title: Getting Started with MATLAB
 description: This tutorial will serve as an introduction to MATLAB, MATLAB has an additional package, called "Simulink", that you can use for graphical multi-domain simulation and model-based design for dynamic and embedded systems.  
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-matlab/hero.png
+  - url: /getting-started-with-matlab/hero.png
     alt: Geting Started with MATLAB example image
 ---
 MATLAB (an abbreviation of "matrix laboratory") is a programming language and numerical computing environment developed by MathWorks. It is used for mathematical operations.
@@ -190,11 +190,11 @@ Using the MATLAB interpreter is not a wise choice when implementing and storing 
 
 Let's begin by clicking on *New Script*.
 
-![](/engineering-education/getting-started-with-matlab/1.PNG)
+![](/getting-started-with-matlab/1.PNG)
 
 Second, press on *New* followed by *Function*:
 
-![](/engineering-education/getting-started-with-matlab/2.PNG)
+![](/getting-started-with-matlab/2.PNG)
 
 It is that easy! 
 
@@ -216,7 +216,7 @@ ans =
 ```
 
 #### Plotting
-If you are familiar with the [Matplotlib plotting library](/engineering-education/matplotlib-visualization-python/) for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
+If you are familiar with the [Matplotlib plotting library](/matplotlib-visualization-python/) for Python programming language, it will be very easy for you to follow this section. However, we will explain it simply as possible.
 
 To plot any graph we need to define the range of *X* and *Y* values. Then to call the plot command which is `plot(X,Y)`.
 
@@ -224,7 +224,7 @@ Now let's move on to a complex example.
 
 We are going to create the following figure:
 
-![sin and cos waves](/engineering-education/getting-started-with-matlab/sin-cos.jpg)
+![sin and cos waves](/getting-started-with-matlab/sin-cos.jpg)
 
 We need to define t (a variable indicating time).
 ```matlab
@@ -265,8 +265,8 @@ That's all!
 ### Conclusion
 This is just the *tip of the iceberg* when it comes to MATLAB. Change the [amplitude](https://en.wikipedia.org/wiki/Amplitude), [frequency](https://en.wikipedia.org/wiki/Frequency), [phase](https://en.wikipedia.org/wiki/Phase_(waves)), and subplot numbers. 
 
-Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](/engineering-education/topic/languages/) section. Have a nice day.
+Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](/topic/languages/) section. Have a nice day.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

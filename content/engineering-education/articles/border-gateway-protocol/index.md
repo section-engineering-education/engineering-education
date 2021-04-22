@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/border-gateway-protocol/
+url: /border-gateway-protocol/
 title: Border Gateway Protocol - Why do we need it and how does it work?
 description: A brief introduction to the Internet's Border Gateway Protocol, its functioning, capabilities and importance. 
 author: shreya-a-n
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/border-gateway-protocol/hero.jpg
+  - url: /border-gateway-protocol/hero.jpg
     alt: border gateway protocol
 
 ---
@@ -32,7 +32,7 @@ BGP allows different autonomous systems on the Internet to share routing informa
 
 Let us consider a simple example to understand how BGP binds the Internet together. AS 51 and AS 49 are BGP peers and have established a neighborship aimed at exchanging routing information with each other. AS 49 and AS 234, AS 51 and AS 110, AS 234, and AS 110 have similar neighborships established. BGP allows each peer to collect routing information from its neighboring peer and later advertise that information, in its entirety, further. As a result, the ASBR in AS 51 knows how it can route packets to AS 234 even though they aren’t directly connected. *BGP is a path-vector routing protocol because routing tables in ASBRs contain mappings of network prefixes to lists of autonomous systems making up the path.*
 
-![BGP: Example image](/engineering-education/border-gateway-protocol/BGP.jpg)
+![BGP: Example image](/border-gateway-protocol/BGP.jpg)
 
 Let us assume that device 1, stationed in India wants to connect to device 2, stationed in the US. Device 1 has subscribed to the services of an ISP whose network has an autonomous number of 51 and device 2 has subscribed to the services of an ISP whose network has an autonomous number of 234. When connecting to Device 2, Device 1 sends packets with source IP being its own IP address and destination IP being Device 2’s IP address. The packet first reaches AS 51’s gateway and the router there concludes that the packet’s destination is not in its own network. It routes this packet through AS 51’s internal routers.
 

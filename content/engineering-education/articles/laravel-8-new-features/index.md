@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/laravel-8-new-features/
+url: /laravel-8-new-features/
 title: Laravel 8 New Features
 description: This tutorial provides a detailed overview of the Laravel 8.x version. The article discusses the file structures, as well as the new features.
 author: miller-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/laravel-8-new-features/hero.jpg
+  - url: /laravel-8-new-features/hero.jpg
     alt: laravel 8.x image example
 ---
 If you have learned Laravel, then you are in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x. This tutorial will go over how to use the Larvavel installer, and Jetstream scaffolding.
@@ -27,7 +27,7 @@ The article discusses the file structures, and the new features.
 - Authentication
 
 ### Requirements
-This tutorial assumes that you have basic skills in PHP and HTML. If you're starting to learn Laravel, you're in the right place. For a basic refresher on how to build an API in Laravel refer to [this article](/engineering-education/how-to-create-an-api-using-laravel/).
+This tutorial assumes that you have basic skills in PHP and HTML. If you're starting to learn Laravel, you're in the right place. For a basic refresher on how to build an API in Laravel refer to [this article](/how-to-create-an-api-using-laravel/).
 
 ### Installation
 To get started with Laravel, you have two options.
@@ -238,4 +238,4 @@ You have now learned the basics of Laravel 8.x. You can use this knowledge to de
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)

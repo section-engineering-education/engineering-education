@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/feature-engineering-in-machine-learning/
+url: /feature-engineering-in-machine-learning/
 title: Feature Engineering in Machine Learning
 description: This article will go over a light overview of feature engineering concepts used in machine learning and help a developer distinguish between feature selection and feature engineering.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/feature-engineering-in-machine-learning/hero.jpg
+  - url: /feature-engineering-in-machine-learning/hero.jpg
     alt: feature engineering machine learning image
 ---
 The features used in a machine learning model are often the difference between model success, mediocrity, and failure. Therefore, it is not enough to simply build models, but also making sure they offer the best possible performance. Let us learn more about the process of feature engineering and how it serves this purpose.
@@ -36,7 +36,7 @@ The patterns help the system improve at the given task. Improvement is often an 
 
 Examples of machine learning models include:
 
-- **Classification models** – classification tasks involve predicting the type of object. The types of objects are finite. These models listed below handle classification tasks. Examples of these models include; [Naïve Bayes](https://www.machinelearningplus.com/predictive-modeling/how-naive-bayes-algorithm-works-with-example-and-full-code/), [Decision Tree](http://mines.humanoriented.com/classes/2010/fall/csci568/portfolio_exports/lguo/decisionTree.html#:~:text=Decision%20Tree%20Classifier%20is%20a%20simple%20and%20widely,an%20answer%2C%20a%20follow-up%20question%20is%20asked%20), [Support Vector Machine](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47) among others. A brief definition of these classification models can be found in my [previous article](/engineering-education/automated-fake-news-detection/)
+- **Classification models** – classification tasks involve predicting the type of object. The types of objects are finite. These models listed below handle classification tasks. Examples of these models include; [Naïve Bayes](https://www.machinelearningplus.com/predictive-modeling/how-naive-bayes-algorithm-works-with-example-and-full-code/), [Decision Tree](http://mines.humanoriented.com/classes/2010/fall/csci568/portfolio_exports/lguo/decisionTree.html#:~:text=Decision%20Tree%20Classifier%20is%20a%20simple%20and%20widely,an%20answer%2C%20a%20follow-up%20question%20is%20asked%20), [Support Vector Machine](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47) among others. A brief definition of these classification models can be found in my [previous article](/automated-fake-news-detection/)
 
 - **Regression models** – unlike classification models, these tasks give output variables that take continuous values. An example of such a model is a linear regression model.
 
@@ -188,4 +188,4 @@ Good luck!
 10. [Categorical encoding using Label-Encoding and One-Hot-Encoder](https://towardsdatascience.com/categorical-encoding-using-label-encoding-and-one-hot-encoder-911ef77fb5bd)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

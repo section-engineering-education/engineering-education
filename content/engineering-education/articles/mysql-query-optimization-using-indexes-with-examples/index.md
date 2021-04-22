@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mysql-query-optimization-using-indexes-with-examples/
+url: /mysql-query-optimization-using-indexes-with-examples/
 title: Tutorial on MySQL Database Optimization using Indexes
 description: This article is a comprehensive tutorial on how to understand MySQL database optimization using indexes.
 author: benson-kariuki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/mysql-query-optimization-using-indexes-with-examples/hero.jpg
+  - url: /mysql-query-optimization-using-indexes-with-examples/hero.jpg
     alt: MySQL Database Optimization using Indexes
 ---
 This article is a comprehensive tutorial on MySQL database optimization using indexes. If you have interacted with any SQL based relational database, maybe you have come across indexes. Unfortunately, most beginners in SQL based databases don't know how to use indexes.
@@ -24,7 +24,7 @@ The target reader for this article is anyone who wants to learn about MySQL inde
 
 Prior Knowledge of [MySQL](https://www.mysql.com/) database is essential. Free MySQL tutorials for beginners are available on [MySQL tutorial](https://www.mysqltutorial.org/) and [Tutorialspoint](https://www.tutorialspoint.com/mysql/index.htm).
 
-I would recommend you go through the related article on [MySQL Query Performance Optimization Tips](/engineering-education/mysql-query-performance-optimization-tips/).
+I would recommend you go through the related article on [MySQL Query Performance Optimization Tips](/mysql-query-performance-optimization-tips/).
 
 ### Introduction to MySQL indexes
 An [index](https://www.mysqltutorial.org/mysql-index/) is a data structure used to locate data without scanning all the rows in a table for a given query. Indexes help retrieve data faster. Indexes are not visible to the users. They help speed up queries that require a search.
@@ -350,4 +350,4 @@ Indexes create additional tables and require extra storage.
 In summary, indexes speed up searches of your database by allowing MySQL to organize your data in the best way for different queries. Indexes implementation may not have significant performance improvements on small databases. As the number of data increases, indexes can be much help in speeding up database reads. Avoid incorrect use of indexes.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

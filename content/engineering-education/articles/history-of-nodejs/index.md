@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/history-of-nodejs/
+url: /history-of-nodejs/
 title: The History of Node.js
 description: Node.js is a runtime server environment that uses JavaScript on the server side and asynchronous programming. It is a free and open source technology that runs on various platforms (Mac OS X, Unix, Windows, etc.)
 author: jethro-magaji
@@ -11,12 +11,12 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/history-of-nodejs/hero.jpg
+  - url: /history-of-nodejs/hero.jpg
     alt: hero example image computer Node.js
 ---
 Today we are going to learn about a revolutionary technology that is being used to build great web applications:  ***Node.js***. You may have heard of it or worked with it; either way, join us as we further explore Node.js. We are going to talk about the history, some of the basics, and a few use case examples that use this revolutionary technology.
 <!--more-->
-![Nodejs image](/engineering-education/history-of-nodejs/nodejs-use-cases-cover-image.png)
+![Nodejs image](/history-of-nodejs/nodejs-use-cases-cover-image.png)
 [*Image Source: https://www.simform.com/nodejs-use-case/*](https://www.simform.com/nodejs-use-case/)
 
 ### What is Node.js?
@@ -155,7 +155,7 @@ A few examples of enterprise users of Node.js software include GoDaddy, Groupon,
 
 **Node.js use case Infographic**
 
-![Use cases image](/engineering-education/history-of-nodejs/nodejs-use-case-infographic.png)
+![Use cases image](/history-of-nodejs/nodejs-use-case-infographic.png)
 [*Image Source: https://www.simform.com/nodejs-use-case/*](https://www.simform.com/nodejs-use-case/)
 
 ### Additional Readings

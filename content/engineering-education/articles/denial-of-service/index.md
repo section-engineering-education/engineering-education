@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/denial-of-service/
+url: /denial-of-service/
 title: What is a Denial of Service Attack?
 description: A Denial of Service attack is a cyber-attack in which the perpetrator seeks to make a machine or network and resource unavailable to its intended users by temporarily or indefinitely disrupting services to the host connected to the Internet.
 author: richu-thomas
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/denial-of-service/hero.jpg
+  - url: /denial-of-service/hero.jpg
     alt: stop sign example denial of service
 ---
 A Denial of Service (DoS) attack is a type of cyber attack which achieves their goal by flooding a stream of packets to the victim that swamps his/her network or processing capacity, denying access to the legitimate user. Ultimately, it can cost both time and money because its resources and services are inaccessible.

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/python-frameworks/
+url: /python-frameworks/
 title: A look at Python web development frameworks
 description: What is a web framework, types of frameworks, 5 most used frameworks, installation, and a minimal app in each. Which Python web framework is the best fit.
 author: geoffrey-mungai
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/python-frameworks/hero.jpg
+  - url: /python-frameworks/hero.jpg
     alt: Python example image
 ---
 Many people nowadays use web frameworks to develop web apps. Using frameworks is better than using raw Python. They automate many things like database connections and management, authorization, and URL routing.

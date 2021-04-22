@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/working-with-forms-in-php/
+url: /working-with-forms-in-php/
 title: Working with Forms in PHP
 description: This article will show you how to implement forms using PHP and HTML. The reader will also understand the GET and POST methods. POST creates data, GET reads data from the server, and PUT update data in the server.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/working-with-forms-in-php/hero.jpg
+  - url: /working-with-forms-in-php/hero.jpg
     alt: Working with Forms in PHP
 ---
 We mainly use HTML forms when collecting user input in web-based applications. They range from contact forms, login forms, and also registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server.
@@ -70,7 +70,7 @@ Here is an example of a form that submits data to a file named `index.php`. To h
 
 The output for the above code is as shown in the screenshot below.
 
-![HMTL Form](/engineering-education/working-with-forms-in-php/form.png)
+![HMTL Form](/working-with-forms-in-php/form.png)
 
 The `action` identifies the page where the form input is submitted. Data can be submitted on the same page as the form or on a different page. The `method` specifies how data is processed. This can be `POST`, `GET`, or `PUT`. The `GET` method collects data from the server and sends it in the URL. The data submitted via the `POST` method is stored in the HTTP request body and cannot be seen on the URL.
 
@@ -432,4 +432,4 @@ We learned that `POST` creates data, `GET` reads data from the server, and PUT u
 I hope this article will shed some light and give you an understanding while working with HTML forms in PHP.
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

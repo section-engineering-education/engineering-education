@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/job-scheduling-in-nodejs/
+url: /job-scheduling-in-nodejs/
 title: Introduction to Job Scheduling in Node.js
 description: In this article we will go through the basic syntax of the node-cron module. We will build a simple Node.js application that sends periodic emails.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/job-scheduling-in-nodejs/hero.jpg
+  - url: /job-scheduling-in-nodejs/hero.jpg
     alt: job scheduling Node.js image example
 ---
 When building web applications and APIs in Node.js, we sometimes come across tasks that need to be done repeatedly. This can be at a specific time everyday, month, or even year depending on the task. Some of these tasks may include:
@@ -52,9 +52,9 @@ It's now time to build our application.
 ### Prerequisites
 To follow through this tutorial, you will need to:
 1. Have Node.js installed.
-2. Have a basic knowledge of Node.js. [Here](/engineering-education/history-of-nodejs/) is an article to get you started.
-3. Have a basic knowledge of the `Express framework`. [Here](/engineering-education/express/) is an article to get you started.
-4. Be familiar with sending emails through `nodemailer`. Refer to [this](/engineering-education/node-mailer/) article for a deep dive into node-mailer.
+2. Have a basic knowledge of Node.js. [Here](/history-of-nodejs/) is an article to get you started.
+3. Have a basic knowledge of the `Express framework`. [Here](/express/) is an article to get you started.
+4. Be familiar with sending emails through `nodemailer`. Refer to [this](/node-mailer/) article for a deep dive into node-mailer.
 
 Let's get started.
 
@@ -191,4 +191,4 @@ In this article, we have gone through some of the basic syntax of the `node-cron
 The full code  example of the application can be found on [GitHub](https://github.com/kayere/node-cron-example.git).
 
 ---
-Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/authors/linus-muema/)

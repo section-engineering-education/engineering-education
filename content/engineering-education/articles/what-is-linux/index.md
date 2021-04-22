@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-linux/
+url: /what-is-linux/
 title: What is Linux?
 description: Initially released on September 17th, 1991, by Linux Torvalds, Linux is a set of open source Unix-like operating systems.
 author: jesus-nunez
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-linux/hero.jpg
+  - url: /what-is-linux/hero.jpg
     alt: Linux Penguin
 ---
 <img src="/engineering-education/what-is-linux/Tux_linux_logo.png" style="float: left; padding-right: 5%; margin-bottom: 10px; width:30%;">
@@ -23,7 +23,7 @@ Initially released on September 17th, 1991, by Linux Torvalds, [Linux](https://e
 ### How does Linux work?
 By itself, Linux is just a kernel. For that reason, Linux is often referring to as a collection of distributions such as Ubuntu, Debian, Fedora, and Arch. These distributions are bundles of different software that make up an operating system. These bundles are typically easy to install, often with dedicated installers that take the user step-by-step, while others are more hands-on during the installation process.
 
-![linux distributions](/engineering-education/what-is-linux/linuxlogos.png)
+![linux distributions](/what-is-linux/linuxlogos.png)
 *Image: Starting on the top left Debian, Ubuntu, Gentoo, Fedora, Arch Linux, Linux Mint*
 
 ### What makes up the Linux operating system?

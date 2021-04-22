@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-optimize-wordpress-website-speed/
+url: /how-to-optimize-wordpress-website-speed/
 title: How to Optimize WordPress Website Speed
 description: This article is about WordPress speed optimization and the many plugins available to help in website speed optimization.
 author: benson-kariuki
@@ -10,7 +10,7 @@ date: 2020-09-09T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-optimize-wordpress-website-speed/hero.jpg
+  - url: /how-to-optimize-wordpress-website-speed/hero.jpg
     alt: wordpress image how to optimize
 ---
 The ultimate measure of website performance is loading speed. This is the amount of time it takes to load a webpage. Users are relying more and more on smartphones to access web content and services, thus, there is more demand for optimized websites, especially for users visiting through a mobile data connection. If you manage any websites, this is evident in your analytical data.
@@ -194,4 +194,4 @@ Fast websites boost your search engine rankings, improve search engine indexing,
 I hope that the guide was helpful to you and have a great time optimizing your WordPress website.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

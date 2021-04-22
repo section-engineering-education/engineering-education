@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-  {{ if (where .Pages "Type" "engineering-education") }}
+  {{ if (where .Site.Pages "Params.type" "engineering-education") }}
 
     {{ partial "engineering-education/articles-header.html" . }}
     {{ partial "engineering-education/articles-posts.html" . }}

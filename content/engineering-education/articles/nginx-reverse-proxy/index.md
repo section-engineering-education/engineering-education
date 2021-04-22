@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nginx-reverse-proxy/
+url: /nginx-reverse-proxy/
 title: Deploying Multiple Applications to VMs with NGINX as a Reverse Proxy
 description: Introduction to the NGINX web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 author: harish-ramesh-babu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nginx-reverse-proxy/hero.jpg
+  - url: /nginx-reverse-proxy/hero.jpg
     alt: nginx reverse proxy image example
 ---
 Ever wondered how more than one application is deployed to the same machine, and how traffic is routed to the corresponding applications?
@@ -28,7 +28,7 @@ By the end of the article, you'll understand
 ### Reverse Proxy
 According to [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy), a reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the server itself.    
 
-Refer to [this article](/engineering-education/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
+Refer to [this article](/what-are-reverse-proxies/) to better understand what Reverse Proxies are.
 
 ### NGINX
 We will be using NGINX as a Reverse Proxy. According to [Wikipedia](https://en.wikipedia.org/wiki/Nginx),   
@@ -39,7 +39,7 @@ Some other examples Reverse Proxies available are:
 - [Varnish](https://varnish-cache.org/intro/)
 
 ### Reverse Proxy Example
-![image](/engineering-education/nginx-reverse-proxy/reverse_proxy_working.png)
+![image](/nginx-reverse-proxy/reverse_proxy_working.png)
 
 This is an example of an architecture, where two apps are running in the background, but the clients have no idea about them. The clients only know about NGINX which acts as a reverse proxy that sends the request to the appropriate application.
 
@@ -64,11 +64,11 @@ As we've mentioned earlier, we've got two Node.js Apps running on two different 
 
 **Server app running on Port 3000**
 
-![image](/engineering-education/nginx-reverse-proxy/server1.png)  
+![image](/nginx-reverse-proxy/server1.png)  
 
 **Client app running on Port 3001**  
 
-![image](/engineering-education/nginx-reverse-proxy/client1.png)
+![image](/nginx-reverse-proxy/client1.png)
 
 Now that we have our apps up and running, we don't want our users to use these applications by typing their PORTS explicitly, so we need to map it with something that is more human-readable.
 
@@ -178,9 +178,9 @@ For the example above, the URLs are:
 ### Conclusion
 Here is the end result:
 
-![image](/engineering-education/nginx-reverse-proxy/client2.png)
+![image](/nginx-reverse-proxy/client2.png)
 
-![image](/engineering-education/nginx-reverse-proxy/server2.png)  
+![image](/nginx-reverse-proxy/server2.png)  
 
 Congratulations! You did it! :tada:
 
@@ -198,4 +198,4 @@ Thanks for reading!
  - [Wiki article on NGINX](https://en.wikipedia.org/wiki/Nginx)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

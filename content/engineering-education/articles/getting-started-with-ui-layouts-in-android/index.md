@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-ui-layouts-in-android/
+url: /getting-started-with-ui-layouts-in-android/
 title: Getting Started With UI Layouts in Android
 description: This article will cover the different User Interface layouts used in Android application development. We will learn about the root element and view group layouts and their uses.
 author: briana-nzivu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-ui-layouts-in-android/hero.jpg
+  - url: /getting-started-with-ui-layouts-in-android/hero.jpg
     alt: Android UI layout example image
 ---
 The basic building block in the User Interface (UI) of an application is called a **View**. A view occupies a rectangular area in a mobile screen. An Android UI contains a layout, a view group, and views such as a `Button`, `ImageView`, `TextView`, and others.
@@ -25,7 +25,7 @@ These layouts design and guide the positioning of various view groups in an appl
 - View: This refers to an object in Android's built-in View class, represented by a rectangular area of the screen, for example: `TextView`, `ImageView`, `Button`, and others.
 - View Group: This refers to an 'invisible container' that holds multiple views or view groups together, such as Linear Layout, Grid Layout, Table Layout, and others.
 
-![Anatomy of Android Layouts](/engineering-education/getting-started-with-ui-layouts-in-android/anatomy.jpg)
+![Anatomy of Android Layouts](/getting-started-with-ui-layouts-in-android/anatomy.jpg)
 
 ### Root element layouts used in android applications
 
@@ -34,7 +34,7 @@ This layout aligns its content in a single direction. It can be either vertical 
 
 One can use it either as a root element or a view group.
 
-![Linear Layout](/engineering-education/getting-started-with-ui-layouts-in-android/linear.jpg)
+![Linear Layout](/getting-started-with-ui-layouts-in-android/linear.jpg)
 
 ### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
@@ -60,7 +60,7 @@ One can use it either as a root element or a view group.
 This layout positions views relative to each other. The layout uses the `<RelativeLayout>` tag.
 The position of each view can be relative to sibling elements or relative to the parent. By default, all child views are aligned at the top corner before setting the screen's desired alignment, for example, center-left and others. One can use it either as a root element or a view group.
 
-![Relative Layout](/engineering-education/getting-started-with-ui-layouts-in-android/relative.png)
+![Relative Layout](/getting-started-with-ui-layouts-in-android/relative.png)
 
 #### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
@@ -91,7 +91,7 @@ Constraint layout is supported in the Android 2.2 version and above. For any ver
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
 ```
 
-![Constraint Layout](/engineering-education/getting-started-with-ui-layouts-in-android/constraint.jpg)
+![Constraint Layout](/getting-started-with-ui-layouts-in-android/constraint.jpg)
 
 **Note: An error will always be displayed if the views are not constrained.**
 
@@ -117,7 +117,7 @@ Constraint layout is supported in the Android 2.2 version and above. For any ver
 ### D) Frame layout
 The Frame layout is one of the most basic and most straightforward layouts. This layout blocks out an area on the screen to display a single view group. The layout uses the `<FrameLayout>` tag. It is suitable to use this layout when the UI of an application only requires one view. One can use it either as a root element or a view group.
 
-![Frame Layout](/engineering-education/getting-started-with-ui-layouts-in-android/frame.jpg)
+![Frame Layout](/getting-started-with-ui-layouts-in-android/frame.jpg)
 
 #### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
@@ -162,4 +162,4 @@ In case of any query or clarification, feel free to reach out by raising an issu
 Till next time!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

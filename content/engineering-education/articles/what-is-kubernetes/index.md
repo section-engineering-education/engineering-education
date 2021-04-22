@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-kubernetes/
+url: /what-is-kubernetes/
 title: What is Kubernetes?
 description: Kubernetes can expose a container using the DNS name or its own IP address. If traffic to a single container is high, Kubernetes is able to load balance and distribute the network traffic so that the deployment is stable.
 author: gregory-manley
@@ -12,7 +12,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-kubernetes/hero.jpg
+  - url: /what-is-kubernetes/hero.jpg
     alt: Kubernetes container management system
 ---
 Kubernetes is an automatic container management system. While it is not a traditional, all-inclusive Platform as a Service (PaaS), due to it operating at the container level, it provides some features common to PaaS such as deployment, scaling, load balancing and monitoring.

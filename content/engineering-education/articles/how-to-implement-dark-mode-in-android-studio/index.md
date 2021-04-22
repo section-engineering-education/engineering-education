@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-implement-dark-mode-in-android-studio/
+url: /how-to-implement-dark-mode-in-android-studio/
 title: How to Implement Dark Mode in Android
 description: This article will give the reader a guide on how to implement dark mode in Android using Android studio using Kotlin.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-implement-dark-mode-in-android-studio/hero.jpg
+  - url: /how-to-implement-dark-mode-in-android-studio/hero.jpg
     alt: Dark mode example image
 ---
 In the recent past, there has been a lot of excitement regarding dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.
@@ -207,10 +207,10 @@ class MainActivity : AppCompatActivity() {
 
 If you have followed the above steps properly, your app should now have a dark mode. The following gif shows the dark mode in action.
 
-![demo](/engineering-education/how-to-implement-dark-mode-in-android-studio/demo.gif).
+![demo](/how-to-implement-dark-mode-in-android-studio/demo.gif).
 
 ### Conclusion
 Dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

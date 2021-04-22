@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/digital-assistants-vs-digital-companions/
+url: /digital-assistants-vs-digital-companions/
 title: Digital Assistants vs. Digital Companions
 description: This article will provide an extensive comparison and discussion on the interrelatedness between digital assistants and digital companions. 
 author: pius-macharia
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/digital-assistants-vs-digital-companions/hero.jpg
+  - url: /digital-assistants-vs-digital-companions/hero.jpg
     alt: Digital Assistants vs. Digital Companions Image
 ---
 We rely heavily on digital assistants in our daily lives, to make our work easier and faster. The statistics of people who use digital assistants is growing rapidly, and it is expected that those numbers will continue to grow.
@@ -90,4 +90,4 @@ Due to the rampant development of technology, it's only a matter of time before 
 Digital companions will create an entirely new experience for us. From the way we relate with technology; creating a more seamless, fun, and overall personalized experience.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

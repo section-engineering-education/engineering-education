@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-protect-your-system-against-ransomware-as-a-service-raas/
+url: /how-to-protect-your-system-against-ransomware-as-a-service-raas/
 title: Protecting your System against Ransomware as a Service (RaaS)
 description: This article will go over Ransomware as a Service (RaaS), which enables cybercriminals to conduct their ransomware operations, including malware delivery and taking ransom payments through the dark web or as a hire-as-a-service arrangement.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-protect-your-system-against-ransomware-as-a-service-raas/hero.jpg
+  - url: /how-to-protect-your-system-against-ransomware-as-a-service-raas/hero.jpg
     alt: Ransomware as a Service (RaaS) example image
 ---
 Cybercriminals use infected websites and phishing emails to spread [ransomware](https://www.section.io/engineering-education/what-is-ransomware/). Criminals use this type of malware to encrypt victims' files, hold them hostage, and demand a ransom pay for decryption keys.
@@ -64,4 +64,4 @@ Some of these preventive measures are outlined below.
 Ransomware-as-a-Service (RaaS) adds to the list of the latest driving forces of cyber-criminal activities. One must take preventive measures to address this problem and take it seriously. Affordability and the ease of deployment (among professional and novice hackers) are some primary reasons why RaaS is on the rise.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

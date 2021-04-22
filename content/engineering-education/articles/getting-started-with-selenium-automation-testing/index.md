@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-selenium-automation-testing/
+url: getting-started-with-selenium-automation-testing/
 title: Getting Started with Selenium Automation Testing
 description: This article will help the readers set up Selenium with Java and write their first test using Selenium. It also explains how Selenium WebDriver can be configured with Eclipse.
 author: onesmus-mbaabu
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-selenium-automation-testing/hero.jpg
+  - url: /getting-started-with-selenium-automation-testing/hero.jpg
     alt: Automation Testing Image
 ---
-Selenium is a popular automation tool web developers can use that to test their applications. The article [An Overview on Automation Testing With Selenium](/engineering-education/automation-testing-in-selenium/) provides the basic concepts of automation testing with Selenium. These include the importance of Selenium, its components, and how it works.
+Selenium is a popular automation tool web developers can use that to test their applications. The article [An Overview on Automation Testing With Selenium](/automation-testing-in-selenium/) provides the basic concepts of automation testing with Selenium. These include the importance of Selenium, its components, and how it works.
 <!--more-->
 This article is an extension of the article mentioned above. This article will provide an overview of how developers can get started with automation testing in Selenium with Java. It will also explain how Selenium WebDriver can be configured with Eclipse.
 
@@ -36,99 +36,99 @@ A Java Development Kit (JDK) will be needed to write and run Java Programs. Duri
 
 After installing Java, ensure you have set the environment variables. You can verify the success of the installation process by typing ***java --version*** in the command prompt. This will generate information regarding the installed version of Java.
 
-![Java Command Prompt](/engineering-education/getting-started-with-selenium-automation-testing/java-command-prompt.png)
+![Java Command Prompt](/getting-started-with-selenium-automation-testing/java-command-prompt.png)
 
 ### Step 2: Install Eclipse IDE
 Eclipse is an IDE used by Java developers to write and run code. It can be downloaded from [here]( https://www.eclipse.org/downloads/). You should first download the Eclipse installer. This will enable you to download other Eclipse tools. 
 
 Once you have downloaded the installer, run it to select the desired Eclipse tool.
 
-![Eclipse Installer](/engineering-education/getting-started-with-selenium-automation-testing/eclipse-installer.jpg)
+![Eclipse Installer](/getting-started-with-selenium-automation-testing/eclipse-installer.jpg)
 
 Select **Eclipse IDE for Java developers** to install it.
 
-![Eclipse IDE](/engineering-education/getting-started-with-selenium-automation-testing/eclipse-ide.jpg)
+![Eclipse IDE](/getting-started-with-selenium-automation-testing/eclipse-ide.jpg)
 
 Click on **Install**. 
 
-![Installing Eclipse IDE](/engineering-education/getting-started-with-selenium-automation-testing/installing-eclipse-ide.png)
+![Installing Eclipse IDE](/getting-started-with-selenium-automation-testing/installing-eclipse-ide.png)
 
 ### Step 3: Download Selenium client driver
 Selenium WebDriver is one of the most preferred component of Selenium by developers. This component supports various languages such as Java, PHP, Ruby, and C#. Every programming language has a unique client driver. 
 
 We will download the client driver that corresponds to Java. In our case, we will download the Selenium Java Client Driver. This can be downloaded from [here](https://www.selenium.dev/downloads/). Scroll downwards to the section **Selenium Client**. Go to Java and click on **download**.
 
-![Downloading Selenium Client](/engineering-education/getting-started-with-selenium-automation-testing/downloading-selenium-client.jpg)
+![Downloading Selenium Client](/getting-started-with-selenium-automation-testing/downloading-selenium-client.jpg)
 
 ### How to configure Selenium WebDriver with Eclipse
 Follow these next steps to configure Selenium WebDriver with Eclipse.
 
 **Step 1:** Double click on the Eclipse icon.
 
-![Step 1](/engineering-education/getting-started-with-selenium-automation-testing/step-1.jpg)
+![Step 1](/getting-started-with-selenium-automation-testing/step-1.jpg)
 
 **Step 2:** Create a new workspace. Click on **Launch**.
 
-![Step 2-1](/engineering-education/getting-started-with-selenium-automation-testing/step-2-1.jpg)
+![Step 2-1](/getting-started-with-selenium-automation-testing/step-2-1.jpg)
 
 This will lead you to the following interface. 
 
-![Step 2-2](/engineering-education/getting-started-with-selenium-automation-testing/step-2-2.png)
+![Step 2-2](/getting-started-with-selenium-automation-testing/step-2-2.png)
 
 **Step 3:** Go to *File*, then *New* -> *Java Project* to create a new project. 
 
-![Step 3-1](/engineering-education/getting-started-with-selenium-automation-testing/step-3-1.jpg)
+![Step 3-1](/getting-started-with-selenium-automation-testing/step-3-1.jpg)
 
 This will generate a pop-up window that requires you to fill in a few details, such as the project name, save location, execution JRE, and layout option. You can name it ***newproject*** and click on **Finish**. 
 
-![Step 3-2](/engineering-education/getting-started-with-selenium-automation-testing/step-3-2.jpg)
+![Step 3-2](/getting-started-with-selenium-automation-testing/step-3-2.jpg)
 
 **Step 4:** The new project will appear in the top left corner. The next step is to create a new package for the newly created project. To do this, right-click on the folder named ‘src’. Select 'New', and then 'Package'. 
 
-![Step 4](/engineering-education/getting-started-with-selenium-automation-testing/step-4.jpg)
+![Step 4](/getting-started-with-selenium-automation-testing/step-4.jpg)
 
 A new window will pop-up requiring you to fill in the name of the package. You can name it **newpackage**. Click on 'Finish'.
 
 **Step 5:** Right-click on the **newpackage** to generate a Java class. Select *New* and click on **Class**. 
 
-![Step 5-1](/engineering-education/getting-started-with-selenium-automation-testing/step-5-1.jpg)
+![Step 5-1](/getting-started-with-selenium-automation-testing/step-5-1.jpg)
 
 This will generate a pop-up window that requires you to fill in the name of the class. Click on *Finish* when done. After creating the class, the Eclipse interface will appear as follows.
 
-![Step 5-2](/engineering-education/getting-started-with-selenium-automation-testing/step-5-2.png)
+![Step 5-2](/getting-started-with-selenium-automation-testing/step-5-2.png)
 
 **Step 6:** The next step involves adding Selenium Jars to the newly created project. Right-click on the folder **newproject** and click on *properties*. 
 
-![Step 6-1](/engineering-education/getting-started-with-selenium-automation-testing/step-6-1.jpg)
+![Step 6-1](/getting-started-with-selenium-automation-testing/step-6-1.jpg)
 
 This will generate a pop-up window. On this window, click on *Java Build Path* and select *Libraries*. 
 
-![Step 6-2](/engineering-education/getting-started-with-selenium-automation-testing/step-6-2.jpg)
+![Step 6-2](/getting-started-with-selenium-automation-testing/step-6-2.jpg)
 
 **Step 7:** Click on *Add External JARS* to add Selenium JARS. 
 
-![Step 7](/engineering-education/getting-started-with-selenium-automation-testing/step-7.jpg)
+![Step 7](/getting-started-with-selenium-automation-testing/step-7.jpg)
 
 **Step 8:** Search for the folder containing the downloaded Selenium Client Driver. Click on the folder *libs* in the downloaded Selenium folder. 
 
-![Step 8-1](/engineering-education/getting-started-with-selenium-automation-testing/step-8-1.jpg)
+![Step 8-1](/getting-started-with-selenium-automation-testing/step-8-1.jpg)
 
 Highlight all the jar files and click *open*. Highlight the two jar files outside the lib folder and click *open*. 
 
-![Step 8-2](/engineering-education/getting-started-with-selenium-automation-testing/step-8-2.png)
+![Step 8-2](/getting-started-with-selenium-automation-testing/step-8-2.png)
 
 **Step 9:** Click on *Apply and Close*. 
 
-![Step 9](/engineering-education/getting-started-with-selenium-automation-testing/step-9.jpg)
+![Step 9](/getting-started-with-selenium-automation-testing/step-9.jpg)
 
 **Step 10:** Check whether the following two library folders appear on your Eclipse dashboard. If this is the case, then you have successfully configured Selenium WebDriver with Eclipse.
 
-![Step 10](/engineering-education/getting-started-with-selenium-automation-testing/step-10.jpg)
+![Step 10](/getting-started-with-selenium-automation-testing/step-10.jpg)
 
 ### Running the first test in Selenium WebDriver
 Let’s test whether a specific URL such as `google.com` functions well. We will conduct this test using the Chrome browser. Every browser used in Selenium testing has a unique browser driver. In our case, we need to download the Chrome driver. This can be downloaded from [here]( https://sites.google.com/a/chromium.org/chromedriver/). Select the Chrome driver that corresponds to your operating system.
 
-![Chrome Driver](/engineering-education/getting-started-with-selenium-automation-testing/chrome-driver.png)
+![Chrome Driver](/getting-started-with-selenium-automation-testing/chrome-driver.png)
 
 After downloading the chrome driver, you need to create a class file and add import statements for the necessary classes like WebDriver and ChromeDriver from Selenium. 
 
@@ -215,4 +215,4 @@ The popularity of Java among developers has enabled it to be integrated with man
 
 
 ---
-Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)

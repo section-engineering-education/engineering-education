@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/the-development-of-5g-protocol-standardization/
+url: /the-development-of-5g-protocol-standardization/
 title: The Development of 5G Protocol Standardization
 description: This article will describe the 5G new technologies such as the NextGen core network and NR, defined in Rel-15 and Rel-16, the LTE evolution, 5G network model, and 5G security.
 author: ruth-mare
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/the-development-of-5g-protocol-standardization/hero.jpg
+  - url: /the-development-of-5g-protocol-standardization/hero.jpg
     alt: 5G cover image 
 ---
 [**5G Protocol standardization**](https://www.ericsson.com/en/future-technologies/standardization/5g-standardization) is the process of tailoring the 5G technology to serve the market requirements and even more, by introducing new applications and services besides the traditional services introduced by the initial mobile networks such as 1G, 2G, 3G, and 4G. 
@@ -140,4 +140,4 @@ The security measures try to ensure the above by implementing the following:
 - [5G Huawei](https://e.huawei.com/en/talent/#/search-page?productName=&type=HALP)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

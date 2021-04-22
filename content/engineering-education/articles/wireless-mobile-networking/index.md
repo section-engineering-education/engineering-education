@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/wireless-mobile-networking/
+url: wireless-mobile-networking/
 title: A Brief Guide to Wireless Mobile Networking
 description: This article will go be a brief introduction to wireless mobile networking. We will discuss about the history of mobile network and telephone technology.  
 author: kanishkvardhan-a-n
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/wireless-mobile-networking/hero.jpg
+  - url: /wireless-mobile-networking/hero.jpg
     alt:  wireless mobile networking example image
 ---
 The Internet has undeniably brought the world to our doorsteps. Education, entertainment, medicine, finance and many other sectors and their operations are now at our fingertips. However, it is worthwhile to note that it was not always like this. There was a time when people got their news only through newspapers and radios, and it would take days (sometimes even months) to deliver messages and letters.

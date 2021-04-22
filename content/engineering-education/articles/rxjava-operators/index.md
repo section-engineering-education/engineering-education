@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/rxjava-operators/
+url: /rxjava-operators/
 title: Deep dive into RxJava Operators
 description: This article goes over operators in RxJava. Operators are used to create observables and manipulate data received by the observables. There are many observables with various functions.
 author: linus-muema
@@ -11,10 +11,10 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-rxjava/hero.jpg
+  - url: /android-rxjava/hero.jpg
     alt: RxJava in Android image example
 ---
-RxJava has many operators. Going through the documentation might be a bit tedious for a beginner. This is because it uses a theoretical approach rather than a practical one. In the previous [article](/engineering-education/android-rxjava/), we went through the basics of RxJava and how to use it in Android.
+RxJava has many operators. Going through the documentation might be a bit tedious for a beginner. This is because it uses a theoretical approach rather than a practical one. In the previous [article](/android-rxjava/), we went through the basics of RxJava and how to use it in Android.
 <!--more-->
 The article addressed the various types of observers and their properties. However, we didn't look at how to create the RxJava observables and how they manipulate data. This article goes through exactly that.
 
@@ -24,7 +24,7 @@ Rx-Java uses operators to create observables and manipulate data received by the
 In order to follow through with this article, you need:
 - [Intellij IDEA](https://www.jetbrains.com/idea/) installed.
 - Basic understanding of the Kotlin programming language.
-- Basic understanding of RxJava observables. You can read [this article](/engineering-education/android-rxjava/) to get you up to speed.
+- Basic understanding of RxJava observables. You can read [this article](/android-rxjava/) to get you up to speed.
 
 Go ahead and clone the repository using Intellij and wait for the Gradle build to finish. Once done, navigate to the `src/main/kotlin` directory. We will be working from this folder. In the `main.kt` file, we have three functions.
 
@@ -97,7 +97,7 @@ I am emitted
 I am emitted
 ```
 
-- **range**: this creates an observable from a range of values. You can read more about ranges in [this article](/engineering-education/kotlin-ranges/).
+- **range**: this creates an observable from a range of values. You can read more about ranges in [this article](/kotlin-ranges/).
 
 ```Kotlin
 fun main(){
@@ -330,4 +330,4 @@ With that, you now have a basic understanding of how RxJava operators work. It's
 They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise it. 🤓
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

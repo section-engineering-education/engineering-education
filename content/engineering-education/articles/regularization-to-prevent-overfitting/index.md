@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/regularization-to-prevent-overfitting/
+url: /regularization-to-prevent-overfitting/
 title: Regularization to Prevent Overfitting
 description: This article will provide an overview on how to prevent overfitting of data using Regularization. The goal is to understand what overfitting is, and how to prevent them using regularization techniques.
 author: collins-ayuya
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/regularization-to-prevent-overfitting/hero.jpg
+  - url: /regularization-to-prevent-overfitting/hero.jpg
     alt: Regularization hero image
 ---
 Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as noise. To avoid the occurrence of overfitting, we may use a method called regularization.
@@ -24,7 +24,7 @@ In this article, we will mathematically explore two types of regularization.
 3. Ridge Regression
 
 ### Prerequisites
-As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/engineering-education/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
+As a prerequisite, a basic understanding of Machine Learning is required. To learn more about Machine Learning, read this [article](/supervised-learning-algorithms/). The equations covered in this article are very simple and easy to follow.
 
 ### Regularization and overfitting
 Overfitting is an occurrence that impacts the performance of a model negatively. 
@@ -35,13 +35,13 @@ When a function fits a set of such datapoints too closely, the model learns from
 
 The image below shows the phenomena of overfitting, underfitting, and the correct fit.
 
-![overfitting](/engineering-education/regularization-to-prevent-overfitting/overfitting.png)
+![overfitting](/regularization-to-prevent-overfitting/overfitting.png)
 
 *Overfitting, correct fit, and underfitting.*
 
 [Source](https://analyticsindiamag.com/regularization-in-machine-learning-a-detailed-guide/)
 
-For a better understanding of overfitting, bias and variance, check out my previous [article](/engineering-education/ensemble-bias-var/).
+For a better understanding of overfitting, bias and variance, check out my previous [article](/ensemble-bias-var/).
 
 Overfitting occurs because a model fails to generalize the data that contains a lot of irrelevant data points. As mentioned in the previous paragraph, data points that do not reflect the properties of the data are considered to be irrelevant. An example is noise. Regularization is the answer to overfitting. 
 
@@ -137,7 +137,7 @@ Until next time, good luck!
 
 ---
 
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

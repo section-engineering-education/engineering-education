@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-c++-namespace/
+url: /introduction-to-c++-namespace/
 title: Introduction to C++ Namespaces
 description: In this article, we will learn about Namespaces and how they are used in C++. Namespaces refers to various blocks that can be created in a program to group all similar objects, and you can refer to all variables, functions, or classes within a block.
 author: dawe-daniel
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-c++-namespace/hero.jpg
+  - url: /introduction-to-c++-namespace/hero.jpg
     alt: C++ Namespace Image
 ---
 A name can represent only one entity in each scope. That is why, in the same scope, there cannot be two variables with the same name as this may generate compiler errors. We can declare two variables or member functions that have the same name within the same scope using `namespace`. 
@@ -262,4 +262,4 @@ We have seen the benefits of using namespace in our programs, with our examples 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

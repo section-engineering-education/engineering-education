@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/create-login-and-register-system-with-csharp-winforms/
+url: /create-login-and-register-system-with-csharp-winforms/
 title: Create Login and Register System with C# Winforms
 description: This article will go over how we can use C# to create a Desktop system with a login functionality. The object-oriented functionality can help in code re-use without doing much coding from scratch.
 author: sylvester-tamba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/create-login-and-register-system-with-csharp-winforms/hero.jpg
+  - url: /create-login-and-register-system-with-csharp-winforms/hero.jpg
     alt: Register System with C# Winforms example image
 ---
 Many developers in recent years have been using C# to develop their applications. In this tutorial, we'll go through a simple example of how to create a basic user authentication in C#. 
@@ -40,7 +40,7 @@ To follow this article along it would be helpful to have the following:
    Create database userdata;
 ```
 
-![DATABASE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-db-cmd.PNG)
+![DATABASE CREATION](/create-login-and-register-system-with-csharp-winforms/create-db-cmd.PNG)
 
 Create table command:
 
@@ -49,7 +49,7 @@ Create table command:
     CREATE TABLE `user_info` ( `id` INT NOT NULL AUTO_INCREMENT , `names` VARCHAR(50) NOT NULL , `username` VARCHAR(20) NOT NULL , `password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ;
 ```
 
-![TABLE CREATION](/engineering-education/create-login-and-register-system-with-csharp-winforms/create-table-cmd.PNG)
+![TABLE CREATION](/create-login-and-register-system-with-csharp-winforms/create-table-cmd.PNG)
 
 ### Step II: Create a project
 Create a Visual Studio project by clicking on `File -> New -> Project` and then select Visual C#. From the window, choose Windows Forms App(.Net Framework). Give your application a name. Then click ok. The project will come with default form called Form 1.
@@ -61,7 +61,7 @@ From the Solution Explorer window right-click and select add -> New Item -> Clas
 
 - Add MySQL.Data Library by right-clicking on solution explorer window, then Manage Nuget packages, then search for MySQL.Data Library and install.
 
-![MYSQL LIBRARY](/engineering-education/create-login-and-register-system-with-csharp-winforms/add-mysql-lib-vs.jpg)
+![MYSQL LIBRARY](/create-login-and-register-system-with-csharp-winforms/add-mysql-lib-vs.jpg)
 
 - Add the following class to help in the execution of MySQL queries.
 
@@ -251,7 +251,7 @@ The first textbox will allow the username input for login, while the second text
 
 The labels will indicate the functionality of the two textboxes.
 
-![LOGIN INTERFACE](/engineering-education/create-login-and-register-system-with-csharp-winforms/login-interface.jpg)
+![LOGIN INTERFACE](/create-login-and-register-system-with-csharp-winforms/login-interface.jpg)
 
 ### Register form
 - Click on Register.cs in the Solution Explorer and on the form that displays add two buttons, three textboxes, and three labels.
@@ -262,7 +262,7 @@ The first textbox will allow the input of the names for the user. The second tex
 
 The labels will or show the functionality of the three textboxes.
 
-![REGISTER INTERFACE](/engineering-education/create-login-and-register-system-with-csharp-winforms/register-interface.jpg)
+![REGISTER INTERFACE](/create-login-and-register-system-with-csharp-winforms/register-interface.jpg)
 
 ### Step VI: Login logic
 
@@ -436,4 +436,4 @@ In this article:
 Happy C-sharp coding ahead!
 
 ---
-Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)

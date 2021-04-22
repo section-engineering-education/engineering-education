@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/why-nodejs-good-for-online-store/
+url: /why-nodejs-good-for-online-store/
 title: Why Node.js is Good for Online Stores
 description: This article will explain why Node.js offers the perfect environment for developing e-commerce stores or applications. Node.js gives higher performance than other technologies. Node.js makes the development process faster and easier with ready-made frameworks.
 author: verah-ombui
@@ -10,7 +10,7 @@ date: 2021-03-24T00:00:00-09:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/why-nodejs-good-for-online-store/hero.jpg
+  - url: /why-nodejs-good-for-online-store/hero.jpg
     alt: Node.js e-commerce applications example image
 ---
 [Node.js](https://nodejs.dev/learn) is a JavaScript environment used to develop high-performance applications that are scalable and handle multiple I/O operations. E-commerce systems involve several modules working together. Each module, with its complexities, makes Node.js perfect for developing such systems.
@@ -65,4 +65,4 @@ E-commerce stores are growing, and stiff competition is becoming a reality; henc
 - [NoSQL](https://www.mongodb.com/nosql-explained) 
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)

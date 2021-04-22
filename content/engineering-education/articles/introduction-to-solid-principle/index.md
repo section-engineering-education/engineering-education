@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-solid-principle/
+url: /introduction-to-solid-principle/
 title: Introduction to the Solid Principle
 description: This tutorial will serve as an introduction to the SOLID principle. Which is a design principle and pattern intended to make software designs more understandable, flexible, and maintainable.
 author: adetu-ridwan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-solid-principle/hero.jpg
+  - url: /introduction-to-solid-principle/hero.jpg
     alt: Solid principle image example
 
 ---
@@ -278,4 +278,4 @@ You now have a firm understanding on the benefits of using the SOLID principle, 
 I recommend you read more about design patterns. They would build on the knowledge you've gained here and help further improve your code to make it cleaner.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

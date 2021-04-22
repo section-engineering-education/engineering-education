@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-kubernetes-pods-work/
+url: /how-kubernetes-pods-work/
 title: How Kubernetes Pods Work
 description: In this article we will discuss Kubernetes Pods, their model types, benefits, how they work, and how they communicate with each other in Kubernetes.
 author: eric-kahuha
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-kubernetes-pods-work/hero.jpg
+  - url: /how-kubernetes-pods-work/hero.jpg
     alt: Kubernetes Pods image
 ---
-In [cloud computing](/engineering-education/introduction-to-cloud-computing/), a pod is a high-level structure and the tiniest execution object in [Kubernetes](/engineering-education/what-is-kubernetes/). These pods are temporary. If one pod fails, Kubernetes simultaneously models a copy so that the work keeps going on.
+In [cloud computing](/introduction-to-cloud-computing/), a pod is a high-level structure and the tiniest execution object in [Kubernetes](/what-is-kubernetes/). These pods are temporary. If one pod fails, Kubernetes simultaneously models a copy so that the work keeps going on.
 <!--more-->
 The pods are usually in one or several collections. Today, the usage of Kubernetes has become the go-to solution in cloud software management.
 
@@ -88,4 +88,4 @@ Kubernetes pods look promising towards the future for cloud computing. Pods&#39;
 But remember, it has its challenges too, which you must analyze and find your way around them. All in all, it is a technology development heading directly to the top of the list of the best! 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

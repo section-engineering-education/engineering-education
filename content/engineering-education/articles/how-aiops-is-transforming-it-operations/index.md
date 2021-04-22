@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-aiops-is-transforming-it-operations/
+url: /how-aiops-is-transforming-it-operations/
 title: How AIOps is Transforming IT Operations
 description: This article will discuss the benefits and challenges of AIOps, how it works, and highlights the best AIOps software. AIOps uses algorithmic analysis of IT data to help DevOps teams to work faster and smarter.
 author: eric-kahuha
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-aiops-is-transforming-it-operations/hero.jpg
+  - url: /how-aiops-is-transforming-it-operations/hero.jpg
     alt: example image
 ---
-The world of technology is in an era of digital transformation. Part of this transformation includes [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) and the adoption of technologies such as containers and the cloud. 
+The world of technology is in an era of digital transformation. Part of this transformation includes [DevOps](/what-it-takes-to-be-a-devops-engineer/) and the adoption of technologies such as containers and the cloud. 
 <!--more-->
 There is also a shift from centralized IT towards a more developers and applications centric approach along with a heightened innovation and deployment rate. There is a higher influx of digital users such as machine agents, application program interfaces (API), and internet of things devices.
 
@@ -23,7 +23,7 @@ These new users and technologies are straining traditional service management st
 This article discusses the benefits and challenges of AIOps, how it works, and highlights the best AIOps software.
 
 ### What is AIOps?
-AIOps uses [machine learning (ML), artificial intelligence (AI)](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), and analytics techniques to train data to note and address potential problems in real-time automatically. Machine learning algorithms learn from data without necessarily depending on rule-based programming.
+AIOps uses [machine learning (ML), artificial intelligence (AI)](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), and analytics techniques to train data to note and address potential problems in real-time automatically. Machine learning algorithms learn from data without necessarily depending on rule-based programming.
 
 AIOps relies on the algorithmic analysis of IT data to help DevOps and IT operations teams to work faster and smarter. AIOps helps these teams detect and react to digital issues early enough to prevent an impact on customers and business operations.
 
@@ -64,7 +64,7 @@ AIOps mainly automates the more routine tasks that do not require advanced skill
 ### How AIOps works
 We are dealing with extremely complex systems today. Alert noise is a widespread issue for engineers and developers. Following up every alert may lead to alert fatigue, thus critical alerts ending up unnoticed. Relying on human labor to select the high-priority alerts and the harmless quirks may not work in the long run. That is why we need AIOps.
 
-![Gartner's guide for AIOps platforms](/engineering-education/how-aiops-is-transforming-it-operations/gartner-guide-for-aiops-platforms.jpg)
+![Gartner's guide for AIOps platforms](/how-aiops-is-transforming-it-operations/gartner-guide-for-aiops-platforms.jpg)
 
 [Image Source](https://www.bmc.com/blogs/gartner-aiops-market-guide/)
 
@@ -97,4 +97,4 @@ AIOps' focus is not limited to the present problems but learns continually to en
 Embracing AIOps is a significant step towards getting to the root cause of IT teams' problems every day. AIOps prevents alert fatigue and empowers teams to perform their tasks more efficiently.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

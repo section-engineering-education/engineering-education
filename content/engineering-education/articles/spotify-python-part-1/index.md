@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spotify-python-part-1/
+url: /spotify-python-part-1/
 title: Spotify API with Spotipy
 description: We will understand how to set up a spotipy project, the authentication process, and finishing it off, we'll start using some of the spotipy endpoints.
 author: joshua-welsh
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spotify-python-part-1/hero.jpg
+  - url: /spotify-python-part-1/hero.jpg
     alt: Spotify API with Spotipy example image
 ---
 Spotify is a wonderful music streaming app with a powerful API functionality. The API is both beginner-friendly and offers a wide range of endpoints. This makes the Spotify API a great way to get started for beginner programmers who are interested in getting involved in web APIs and even data science, or advanced programmers who want more control over their playlists. 
@@ -146,4 +146,4 @@ In the next tutorial, we will start analyzing our data, and to do this, we have 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

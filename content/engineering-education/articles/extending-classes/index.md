@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/extending-classes/
+url: /extending-classes/
 title: Extending Classes (C++)
 description: This article introduces the basic concepts of Inheritance, different types of class derivations and friend functions with code snippets in C++.
 author: kanishkvardhan-a-n
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/extending-classes/hero.jpg
+  - url: /extending-classes/hero.jpg
     alt: extending classes example image
 
 ---
@@ -31,7 +31,7 @@ C++ allows the user to construct new classes from the existing classes. The new 
 ### Visibility Modes
 **Visibility mode defines whether the properties of super class are privately derived, publicly derived or protected derived.** The visibility mode plays an important role in controlling the access specifiers. They make sure that the properties are inherited accurately to the derived class. The properties of the base class are inherited in the following manner:
 
-![Visibility Modes](/engineering-education/extending-classes/ec.jpg)
+![Visibility Modes](/extending-classes/ec.jpg)
 
 The above chart shows how properties are inherited and in which state they will be if the base class and derived class are private, public or protected respectively.
 

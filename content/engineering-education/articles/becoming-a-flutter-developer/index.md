@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/becoming-a-flutter-developer/
+url: /becoming-a-flutter-developer/
 title: What it Takes to be a Flutter Developer
 description: In this article, the readers will understand what it takes to become a Flutter developer. The article also highlights the different tools and frameworks that help boost productivity.
 author: diana-mutheu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/becoming-a-flutter-developer/hero.jpg
+  - url: /becoming-a-flutter-developer/hero.jpg
     alt: Becoming a Flutter developer
 ---
 `Flutter` is an open-source UI software development kit that `Google` released in 2018. It uses Dart as its primary programming language. Flutter has led to the emergence of new software developers called `Flutter Developers`. 
@@ -163,5 +163,5 @@ To get a better grip on the topic, take a look at these resources:
 Becoming a Flutter developer is simple. Dart is a friendly language and Flutter an easy-to-understand framework. Flutter development is an interesting field to dive into. In the future, the demand for Flutter developers is set to increase significantly.
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
 

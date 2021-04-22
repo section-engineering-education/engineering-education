@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/
+url: connecting-library-application-to-sql-server-using-windows-forms/
 title: Connecting Library Application to SQL Server using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C#. We will also build a simple project using Windows forms and connect it to a database.
 author: mohamed-alghadban
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
+  - url: /connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
     alt: Windows forms example image c#
 ---
 Windows forms are one of the best tools used in making applications. With Windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database.
@@ -49,7 +49,7 @@ As a prerequisite, the reader must have the following:
 ### Installation guide
 - To install Visual Studio and setup the work environment, you can check [this](https://www.geeksforgeeks.org/setting-environment-c-sharp/) article on how to set up the C# environment in Visual Studio.
 - To install SQL Server, you can download it from [here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
-- If you are new to Windows forms, you can check [this](/engineering-education/getting-started-with-windows-forms-using-c-sharp/) tutorial which will help you understand the basic concepts.
+- If you are new to Windows forms, you can check [this](/getting-started-with-windows-forms-using-c-sharp/) tutorial which will help you understand the basic concepts.
 
 ### Creating the Pubs database
 **Pubs** is a database that is used by programmers as a learning tool to fetch data using queries. It contains a large amount of information about books, authors, publishers, and store sales.
@@ -60,7 +60,7 @@ You can find the pubs database [here](https://github.com/microsoft/sql-server-sa
 
 After copying the database query, paste it as a new query and execute it. You should be able to see the name of the database `pubs` to the left of your screen.
 
-![CreatingPubs](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/CreatingPubs.png)
+![CreatingPubs](/connecting-library-application-to-sql-server-using-windows-forms/CreatingPubs.png)
 
 *Creating Pubs database*
 
@@ -73,7 +73,7 @@ You can download the project from [here](https://github.com/mohamedgh16/Library-
 
 Upon opening the project, we will work on the main form first. As you can see, it has 3 buttons, each button for a different operation.
 
-![Mainform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Mainform.png)
+![Mainform](/connecting-library-application-to-sql-server-using-windows-forms/Mainform.png)
 
 *Main form*
 
@@ -83,7 +83,7 @@ Also, don't forget to change the colors of the forms and the buttons to whatever
 
 It should look like this:
 
-![Afterformwork](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Afterformwork.png)
+![Afterformwork](/connecting-library-application-to-sql-server-using-windows-forms/Afterformwork.png)
 
 *Mainform with other tabs*
 
@@ -149,7 +149,7 @@ Adding a new book will require the `titleID` `titleName` `titletype` `pubid` `pu
 
 We will request the information above from the user and insert it into the database using the `sqlCommandQueryReader` method.
 
-![Addform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Addform.png)
+![Addform](/connecting-library-application-to-sql-server-using-windows-forms/Addform.png)
 
 *Add form - to collect information from the user*
 
@@ -176,7 +176,7 @@ Editing a book will require the current `oldid` & the `oldname` of the book, alo
 
 We will request the information from the user and edit them inside of the database using the `sqlCommandQueryReader` method.
 
-![Editform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Editform.png).
+![Editform](/connecting-library-application-to-sql-server-using-windows-forms/Editform.png).
 
 *Edit form - to edit information in the database*
 
@@ -206,7 +206,7 @@ Deleting a book will require only the `titleid` function.
 
 We will request the `id` from the user and delete the book from the database using the `sqlCommandQueryReader` method.
 
-![Deleteform](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Deleteform.png)
+![Deleteform](/connecting-library-application-to-sql-server-using-windows-forms/Deleteform.png)
 
 *Delete form - to delete information from the database*
 
@@ -244,7 +244,7 @@ private void refresh_Click(object sender, EventArgs e) {
 #### Authors tab
 The author's tab will display the `au_id`, `au_fname`, `phone`, `address`, `city`, and `count` of each book that the author wrote.
 
-![Authors](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Authors.png)
+![Authors](/connecting-library-application-to-sql-server-using-windows-forms/Authors.png)
 
 *Author tab - to display author related information*
 
@@ -270,7 +270,7 @@ foreach (DataRow dr in dt3.Rows)
 #### Publishers tab
 The `Publisher` tab will display the information of the `publishers` using the `pub_id`.
 
-![Publishers](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Publishers.png)
+![Publishers](/connecting-library-application-to-sql-server-using-windows-forms/Publishers.png)
 
 *Publishers tab - to display information related to the publisher*
 
@@ -295,7 +295,7 @@ private void checkpub_Click(object sender, EventArgs e) {
 #### Store tab
 The `Store` tab will display the discounts available using a `left outer join` Query.
 
-![Store](/engineering-education/connecting-library-application-to-sql-server-using-windows-forms/Store.png)
+![Store](/connecting-library-application-to-sql-server-using-windows-forms/Store.png)
 
 *Store tab - to display information about the store and discount*
 
@@ -317,4 +317,4 @@ Don't forget to test out the code to fully understand how it works.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

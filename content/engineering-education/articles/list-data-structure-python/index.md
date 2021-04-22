@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/list-data-structure-python/
+url: /list-data-structure-python/
 title: Using the List Data Structure in Python
 description: The list data structure is one of the most fundamental and powerful data structures in Python, allowing you to cut down on the lines of code you write.
 author: saiharsha-balasubramaniam
@@ -11,14 +11,14 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/list-data-structure-python/hero.jpg
+  - url: /list-data-structure-python/hero.jpg
     alt: list, python data structures
 
 ---
 Python lists are extremely powerful features that cut down the lines of code and the time taken to write your code. In this article, we'll look at various ways to use the Python list data structure to create, update, and delete lists, along with other powerful list methods.
 <!--more-->
 
-*For more background on the different types of data structures in Python, check out my [previous article](/engineering-education/data-structures-python-part-1/).*
+*For more background on the different types of data structures in Python, check out my [previous article](/data-structures-python-part-1/).*
 
 ### Table of Contents
 - [Creating a List](#creation)
@@ -36,7 +36,7 @@ colors = ['red', 'blue', 'green']
 ```
 The above list, `colors` is stored in memory as shown below.
 
-![List, Visualization](/engineering-education/list-data-structure-python/list-vis.png)
+![List, Visualization](/list-data-structure-python/list-vis.png)
 
 We can also create a list that contains multiple data types, like strings, integers, and floats.
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/molap-vs-rolap-vs-holap/
+url: molap-vs-rolap-vs-holap/
 title: MOLAP vs ROLAP vs HOLAP in Online Analytical Processing (OLAP)
 description: This article will be an introduction OLAP consists of three data models - MOLAP, ROLAP, and HOLAP. These data models differ mainly in terms of data storage and technique. This article provides a comparison of these models to improve our understanding of OLAP in data warehousing. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/molap-vs-rolap-vs-holap/hero.jpg
+  - url: /molap-vs-rolap-vs-holap/hero.jpg
     alt: MOLAP vs ROLAP vs HOLAP Image
 ---
 Businesses and organizations require analytical tools for analyzing their processes, performance, and strategies. OLAP (Online Analytical Processing) is a tool that can be used to provide multi-dimensional data analysis and complex data modeling.
@@ -25,7 +25,7 @@ Online Analytical Processing (OLAP) is a tool that enables users to perform data
 
 Let's briefly look at how OLAP works to improve our understanding of this concept. First, data is collected from multiple sources such as a spreadsheet, video, and online databases. Data warehouse stores the collected data and cleanses it. The data is then organized into OLAP cubes. Each data cube consists of some dimensions. When a user runs a data query, the front-end tool presents data collected from the OLAP cubes. 
 
-![OLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/olap-architecture.png)
+![OLAP Architecture](/molap-vs-rolap-vs-holap/olap-architecture.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2019/04/OLAP-Architecture.png)
 
@@ -43,7 +43,7 @@ The architecture of MOLAP consists of three main components:
 
 The MOLAP engine in the application layer collects data from the databases in the data layer. It then loads data cubes into the multi-dimensional databases. When the user makes a query, data will move in a propriety format from the MDDBs to the client desktop in the presentation layer. This enables users to view data in multiple dimensions.   
 
-![MOLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/molap-architecture.png)
+![MOLAP Architecture](/molap-vs-rolap-vs-holap/molap-architecture.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2019/11/MOLAP-1.png)
 
@@ -68,7 +68,7 @@ Let’s briefly look at how ROLAP works. When a user makes a query (complex), th
 
 Unlike in MOLAP, where the multi-dimensional view is static, ROLAP provides a dynamic multi-dimensional view. This explains why it is slower when compared to MOLAP. 
 
-![ROLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/rolap-architecture.jpg)
+![ROLAP Architecture](/molap-vs-rolap-vs-holap/rolap-architecture.jpg)
 
 [Image Source: Tech Differences](https://techdifferences.com/wp-content/uploads/2016/12/ROLAP-Model.jpg)
 
@@ -86,7 +86,7 @@ This is an abbreviation for Hybrid Online Analytical Processing. This type of an
 
 The HOLAP model consists of a server that can support ROLAP and MOLAP. It consists of a complex architecture that requires frequent maintenance. Queries made in the HOLAP model involve the multi-dimensional database and the relational database. The front-user tool presents data from the database management system (directly) or through the intermediate MOLAP.  
 
-![HOLAP Architecture](/engineering-education/molap-vs-rolap-vs-holap/holap-architecture.png)
+![HOLAP Architecture](/molap-vs-rolap-vs-holap/holap-architecture.png)
 
 [Image Source: Research Gate](https://www.researchgate.net/profile/Fernando_Almeida21/publication/319852408/figure/download/fig21/AS:539511269412865@1505640918309/HOLAP-architecture-The-main-advantages-of-HOLAP-include-o-High-performance-dimensional.png)
 
@@ -122,5 +122,5 @@ Various business intelligence companies have utilized these tools to suit their 
 - [1 Key Data](https://www.1keydata.com/datawarehousing/toololap.html)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

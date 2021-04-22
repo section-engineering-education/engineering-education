@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/diving-deeper-into-js-objects/
+url: /diving-deeper-into-js-objects/
 title: Diving Deeper into JavaScript Objects
 description: In this article, we will cover JavaScript objects, object properties, implementing those functions into objects, object accessors, and common object methods.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/diving-deeper-into-js-objects/hero.jpg
+  - url: /diving-deeper-into-js-objects/hero.jpg
     alt: JavaScript objects example
 ---
 The object-based paradigm is one of the design patterns used in JavaScript. An object can be referred to as a collection of properties. A property on the other hand is an association of a 'key(name)' and a 'value'.
@@ -588,4 +588,4 @@ You can also access the code we have written throughout the article from [here](
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

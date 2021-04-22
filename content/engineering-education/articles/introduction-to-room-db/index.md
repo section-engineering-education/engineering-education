@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-room-db/
+url: /introduction-to-room-db/
 title: Introduction to Room DB
 description: In this article we will go through creating an Android application that uses the room persistent library to create and manage SQLite databases.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-room-db/hero.jpg
+  - url: /introduction-to-room-db/hero.jpg
     alt: Room database image example
 ---
 Most Android applications require local data storage. In the past years, we have achieved this through the use of SQLite databases. Room is a persistent library that is part of the Android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite.
@@ -29,9 +29,9 @@ Without further ado. Let's dive in!
 To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of the [Kotlin](/engineering-education/kotlin-collections/) programming language,
+  3. Have a basic understanding of the [Kotlin](/kotlin-collections/) programming language,
   [SQL](https://en.wikipedia.org/wiki/SQL),
-  [MVVM](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin) architecture and Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
+  [MVVM](/implementing-mvvm-architecture-in-android-using-kotlin) architecture and Kotlin [coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html).
 
 Let's get started!
 
@@ -196,7 +196,7 @@ That's all! Build and run the application.
 
 This is how the application should look like.
 
-![final app](/engineering-education/introduction-to-room-db/app.gif)
+![final app](/introduction-to-room-db/app.gif)
 
 ### Conclusion
 In this article, we have gone through the Room database. What it is, its advantages, and its basic components. We have also seen how Room contributes to and follows the MVVM architecture. 
@@ -204,4 +204,4 @@ In this article, we have gone through the Room database. What it is, its advanta
 With that, you can now confidently implement room database in a new or existing application. You can find the source code for the full application from [GitHub](https://github.com/kayere/To-do/tree/master).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

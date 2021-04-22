@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-caching-in-nodejs-using-redis/
+url: /implementing-caching-in-nodejs-using-redis/
 title: Implementing Caching in Node.js using Redis
 description: In this article we will cover how to implement caching on a Node.js REST API using recipe labs API as our data source and redis as our cache.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-caching-in-nodejs-using-redis/hero.jpg
+  - url: /implementing-caching-in-nodejs-using-redis/hero.jpg
     alt: Implementing Caching in Node.js using Redis
 ---
 Caching refers to the process of storing data in a temporary location so that the data can be accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network and the application's response time. Applications that implement caching are faster and user friendly.
@@ -326,4 +326,4 @@ In this article, we have covered how to implement caching on a Node.js REST API 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

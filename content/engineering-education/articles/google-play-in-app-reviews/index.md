@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/google-play-in-app-reviews/
+url: /google-play-in-app-reviews/
 title: Google Play In-App Review using Android Studio
 description: This article will explain how to implement an in-app review API that prompts users to submit Play store ratings and reviews without leaving the application and without opening the Play store either.
 author: joseph-chege
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/google-play-in-app-reviews/hero.png
+  - url: /google-play-in-app-reviews/hero.png
     alt: Google play in-app review Android Studio example image
 ---
 In this guide, we will learn how to implement the *rate this app* functionality within your Android application using Google core in-app review API.
@@ -28,13 +28,13 @@ Google announced an [in-app review API](https://developer.android.com/guide/play
 
 This encourages users to give feedback on your application.
 
-![image](/engineering-education/google-play-in-app-reviews/in-app-review-flow.jpg)
+![image](/google-play-in-app-reviews/in-app-review-flow.jpg)
 
 ***[Image source](https://developer.android.com/guide/playcore/in-app-review)***
 
 This is how the in-app review API looks compared to the old fallback dialog.
 
-![image](/engineering-education/google-play-in-app-reviews/in-app-dialog-and-fallback-dialog.png)
+![image](/google-play-in-app-reviews/in-app-dialog-and-fallback-dialog.png)
 
 Typically, this API concept is a better way of asking users for a review than the fallback rate dialog.
 
@@ -281,7 +281,7 @@ mButton.setOnClickListener(new View.OnClickListener() {
 
 5. Launch the application and click `SHOW IN APP REVIEW DIALOG` to start the review flow, as shown in the image below.
 
-![image](/engineering-education/google-play-in-app-reviews/in-app-reviews.png)
+![image](/google-play-in-app-reviews/in-app-reviews.png)
 
 **Note:**
 - Since we a carrying out a test, the submit button will be inactive.
@@ -292,4 +292,4 @@ For more reference, check the code on [GitHub](https://github.com/kimkimani/InAp
 I hope this guide is a helpful source on how to ask users for reviews as well as implement in-app reviews within your application.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

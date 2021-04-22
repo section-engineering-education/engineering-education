@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/dive-into-batch-scripting-language/
+url: /dive-into-batch-scripting-language/
 title: Dive into the Batch Scripting Language
 description: In this tutorial we will go through how to
 author: ahmad-mardeni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/dive-into-batch-scripting-language/hero.png
+  - url: /dive-into-batch-scripting-language/hero.png
     alt: Batch Scripting example image
 ---
 Batch commands are often used to start programs or to control them in the Windows environment. It can also be used for server installations.
@@ -212,7 +212,7 @@ You can change the color simply by using the following:
 In our code we used "2e", the first digit is for the background, and the second one is for the text color.
 If you run the code above, you will see the following:
 
-![Calculator](/engineering-education/dive-into-batch-scripting-language/1.PNG)
+![Calculator](/dive-into-batch-scripting-language/1.PNG)
 
 ### Environment variables
 We talked about the `SET` command in previous examples, now we are going to build on that knowledge of environment variables with some examples.
@@ -274,4 +274,4 @@ In this tutorial, we learned the most important things about the Batch scripting
 Unlike most shells, that accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR) which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

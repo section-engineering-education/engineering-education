@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/exception-handling-in-javascript/
+url: /exception-handling-in-javascript/
 title: The Basics of Exception Handling in JavaScript
 description: In this article we will cover what exception handling is, the different types of errors, and the error objects in JavaScript. 
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/exception-handling-in-javascript/hero.jpg
+  - url: /exception-handling-in-javascript/hero.jpg
     alt: JavaScript Exception Handling image example
 ---
 With the use of exceptions, you can responsibly manage some of these problems we face as developers. Exception handling is the process of converting a code error message into a user-friendly error message. It is a necessary step in the development process. 
@@ -161,4 +161,4 @@ function myFunction() {
 In this article we have learned what exception handling is the different types of errors, and the error objects in JavaScript. We have gone over how we handle exceptions in JavaScript. I hope this article has helped you understand the concept of handling exceptions in JavaScript.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

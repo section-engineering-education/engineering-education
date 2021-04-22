@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/
+url: /stylegan-a-style-based-generator-architecture-for-gans/
 title: StyleGAN - A Style-Based Generator Architecture for Generative Adversarial Networks 
 description: Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. In this article, we will learn about the StyleGAN architecture in detail. 
 author: willies-ogola
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/hero.jpg
+ - url: /stylegan-a-style-based-generator-architecture-for-gans/hero.jpg
    alt: Hashtables implementation using CRC32 example image
 ---
 Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. If you go to this [website](https://thispersondoesnotexist.com/), you'll find generated images of people who do not exist.
@@ -44,7 +44,7 @@ The architecture can also separate stochastic variations in generated images suc
 It is important to note that all these changes happen on the generator network. The discriminator module is not modified in any way.
 
 ### An overview of the StyleGAN architecture
-![Traditional architecture vs Style-based generator](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/traditional-vs-style-based-generator.PNG)
+![Traditional architecture vs Style-based generator](/stylegan-a-style-based-generator-architecture-for-gans/traditional-vs-style-based-generator.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1812.04948.pdf)*
 
@@ -69,7 +69,7 @@ They are also recently being used in generative image modeling.
 
 The batch normalization algorithm is shown below:
 
-![The Batch Normalization algorithm](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/batch-normalization.PNG)
+![The Batch Normalization algorithm](/stylegan-a-style-based-generator-architecture-for-gans/batch-normalization.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1703.06868.pdf)*
 
@@ -81,7 +81,7 @@ As presented in this [paper](https://arxiv.org/pdf/1701.02096.pdf), the style tr
 
 The results are shown below:
 
-![Batch Normalization vs Instance Normalization](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/batch-normalization-vs-instance-normalization.PNG)
+![Batch Normalization vs Instance Normalization](/stylegan-a-style-based-generator-architecture-for-gans/batch-normalization-vs-instance-normalization.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1701.02096.pdf)*
 
@@ -91,7 +91,7 @@ Adaptive Instance Normalization (AdaIN) stems from the batch normalization algor
 
 This algorithm is shown below:
 
-![The Adaptive Instance Normalization algorithm](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/adaptive-instance-normalization.PNG)
+![The Adaptive Instance Normalization algorithm](/stylegan-a-style-based-generator-architecture-for-gans/adaptive-instance-normalization.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1703.06868.pdf)*
 
@@ -111,7 +111,7 @@ The [CELEBA-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ) has be
 
 The dataset consists of 70,000 images of very high resolution (1024×1024). These images are also of very high quality and offer a lot of variations in terms of age, image background, ethnicity, lighting, and different viewpoints, as shown below:
 
-![The FFHQ dataset with different variations](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/the-ffhq-dataset-variation.PNG)
+![The FFHQ dataset with different variations](/stylegan-a-style-based-generator-architecture-for-gans/the-ffhq-dataset-variation.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1812.04948.pdf)*
 
@@ -129,7 +129,7 @@ This technique proved to prevent the network from assuming that styles adjacent 
 
 These are the results they obtained after applying mixing regularization to their network.
 
-![Mixing Regularization with different percentages of training examples](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/mixing-regularization.PNG)
+![Mixing Regularization with different percentages of training examples](/stylegan-a-style-based-generator-architecture-for-gans/mixing-regularization.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1812.04948.pdf)*
 
@@ -140,12 +140,12 @@ This indicates that varying the noise vector has a huge impact on image generati
 
 Below are the results obtained from varying the noise vector:
 
-![Effect of varying the noise vector](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/effect-of-varying-noise-vector.PNG)
+![Effect of varying the noise vector](/stylegan-a-style-based-generator-architecture-for-gans/effect-of-varying-noise-vector.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1812.04948.pdf)*
 
 #### 3. Frechet inception distance (FID) score
-![The FID score for various designs](/engineering-education/stylegan-a-style-based-generator-architecture-for-gans/fid-score.PNG)
+![The FID score for various designs](/stylegan-a-style-based-generator-architecture-for-gans/fid-score.PNG)
 
 *[Image Source: Arxiv](https://arxiv.org/pdf/1812.04948.pdf)*
 
@@ -169,4 +169,4 @@ This has been a breakthrough as past models couldn't achieve this without comple
 8. [CELEBA-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

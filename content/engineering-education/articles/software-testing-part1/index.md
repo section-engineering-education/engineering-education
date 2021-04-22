@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/software-testing-part1/
+url: /software-testing-part1/
 title: Introduction to Unit Testing
 description: This article will be an introduction to software testing, going over popular examples such as integration testing, unit testing, system testing, and regression testing. This article will mainly focus on unit testing.
 author: quadri-sheriff
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/software-testing-part1/Hero.jpg
+  - url: /software-testing-part1/Hero.jpg
     alt: unit testing example image
 ---
 Software testing is a very important software development process. It helps improve the quality of your software, and also ensures you do not ship bug-filled software to your end-user. 
@@ -198,4 +198,4 @@ Hope this helps better understand when it would be beneficial to use unit testin
 - [softwaretestinghelp.com](https://www.softwaretestinghelp.com/unit-testing/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

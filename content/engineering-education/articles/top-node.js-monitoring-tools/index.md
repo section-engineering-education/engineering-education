@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/top-node.js-monitoring-tools/
+url: /top-node.js-monitoring-tools/
 title: Top Node.js Monitoring Tools
 description: This article shows you what you should monitor in Node.js and explains various Node.js monitoring tools. When it comes to application availability and other vital metrics.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/top-node.js-monitoring-tools/hero.jpg
+  - url: /top-node.js-monitoring-tools/hero.jpg
     alt: Top Node.js Monitoring Tools image
 ---
 Often, applications may not work as efficiently as they should. This responsibility of carrying out preventive and curative maintenance lies on application developers. Customers using your application as a developer may spend a lot of money trying to repair the applications without your guidance. It would be best to have an effective monitoring solution to keep track of your application's behavior.
@@ -91,4 +91,4 @@ With Express Status Monitor, it is possible to regulate response times, request 
 When it comes to application availability and other vital metrics, developers cannot simply wish monitoring away. The cost of development is skyrocketing, and custom-designs after an application is released can be an uphill task. As such, developers have to fully utilize these application performance management tools to reduce time wastage. This article has gone a long way to discussing top Node.js monitoring tools to help you in selecting the best monitoring solution.
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/
+url: /how-to-fix-and-prevent-sql-injection-in-wordpress/
 title: How to fix and Prevent SQL Injection in WordPress
 description: Introduction to SQLi in WordPress, SQL injection (SQLi) is the injection or insertion of SQL code, usually via data transmitted from a website.
 author: james-kahwai
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/hero.jpg
+  - url: /how-to-fix-and-prevent-sql-injection-in-wordpress/hero.jpg
     alt: SQLi injection image example
 ---
 SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked as the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat.
@@ -87,7 +87,7 @@ WordPress is the most popular open-source Content Management System (CMS), runni
 
 ##### What are WordPress Core files?
 These are the files that make up the open-source CMS project. Below is an image of what [WordPress core files](https://wpsupergeek.com/what-are-the-wordpress-core-files) look like.
-![wordpress-core-files](/engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
+![wordpress-core-files](/how-to-fix-and-prevent-sql-injection-in-wordpress/wordpress-core-files.png)
 Are your WordPress core files running on the latest version?
 
 As we have found out, your WordPress site is secure from any SQLi if your core files are updated. Nevertheless, the use of third-party plugins and themes change the narrative and can expose you exponentially.
@@ -210,4 +210,4 @@ A WordPress web developer should keep abreast of recent tricks and loopholes tha
 All SQLi exploits happening day-to-day are all listed on the [Exploit-DB](https://www.exploit-db.com/search?q=) platform.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

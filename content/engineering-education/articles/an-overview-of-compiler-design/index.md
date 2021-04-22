@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-compiler-design/
+url: an-overview-of-compiler-design/
 title: An Overview of Compiler Design
 description: This article will be an overview of the fundamental aspects of Compiler Design such as the Phases of a Compiler and its real-life applications.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/an-overview-of-compiler-design/hero.jpg
+  - url: /an-overview-of-compiler-design/hero.jpg
     alt: Compiler Design image
 ---
 The computer is an integral tool in our lives because it runs applications that solve many real-life problems. Computer programmers write programs (using programming languages) to perform various tasks. The high-level programming languages currently used can only be understood by human beings, but not by the computer. 
@@ -34,7 +34,7 @@ Some of the common types include:
 ### Introduction to language processing system 
 Learning the language processing system for C programming language can improve our understanding of how a compiler is utilized. This system consists of various components that process the input language to produce the desired output. 
 
-![Language Processing System](/engineering-education/an-overview-of-compiler-design/language-processing-system.jpg)
+![Language Processing System](/an-overview-of-compiler-design/language-processing-system.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/compiler_design/images/language_processing_system.jpg)
 
@@ -50,7 +50,7 @@ The following provides a brief explanation of these components:
 ### The compiler design architecture
 The compiler design architecture can be divided into two main parts: analysis and synthesis. 
 
-![Compiler Design Architecture](/engineering-education/an-overview-of-compiler-design/compiler-design-architecture.jpg)
+![Compiler Design Architecture](/an-overview-of-compiler-design/compiler-design-architecture.jpg)
 
 [Image Source: Scanftree](https://scanftree.com/compiler-design/images/compiler_analysis_synthesis.jpg)
 
@@ -65,7 +65,7 @@ This part uses the intermediate code representation as the input. It represents 
 ### Phases of a compiler
 The following diagram shows the main phases of a compiler. These phases are in the two aforementioned parts of the compiler design architecture. 
 
-![Phases of a Compiler](/engineering-education/an-overview-of-compiler-design/phases-of-a-compiler.png)
+![Phases of a Compiler](/an-overview-of-compiler-design/phases-of-a-compiler.png)
 
 [Image Source: The Tech Pro](http://www.kttpro.com/wp-content/uploads/2017/02/Compiler-1024x792.png)
 
@@ -108,4 +108,4 @@ The compiler technology is applied in various computer fields such as HLL implem
 - [Tech Target](https://whatis.techtarget.com/definition/compiler)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

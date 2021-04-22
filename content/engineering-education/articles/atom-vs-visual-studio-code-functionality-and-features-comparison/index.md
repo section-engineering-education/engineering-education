@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/
+url: /atom-vs-visual-studio-code-functionality-and-features-comparison/
 title: Atom vs. Visual Studio Code - Comparison on Functionalities and Features 
 description: This article will cover the functionalities and features of Atom and Visual Studio code editor.It will cover different plugins and components of both editors.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/hero.jpg
+  - url: /atom-vs-visual-studio-code-functionality-and-features-comparison/hero.jpg
     alt:  image example
 ---
 This article compares the Atom and Visual Studio Code editors based on features and functionalities. Comparing these two text editors will enable developers to choose the editor they would love to use depending on their requirements.
@@ -44,7 +44,7 @@ Developers can create interactive and responsive web applications with the Atom 
 #### How to use Atom text/code editor
 To use the Atom Code editor, you first need to install and download it from the [Atom home page](https://atom.io/).
 
-![Atom download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atomdownload.jpg)
+![Atom download](/atom-vs-visual-studio-code-functionality-and-features-comparison/atomdownload.jpg)
 
 After clicking the download button, the Atom.zip file should appear in your downloads. Extract or Unzip the Atom file. Double click the Atom setup and follow the prompts in the Windows, Mac OS, and Linux installer to get started.
 
@@ -64,11 +64,11 @@ Visual Studio Code supports other languages such as Java, Python, PHP, C#, and C
 #### How to use Visual Studio Code editor
 To get started, download VS Code editor from [Visual Studio home page](https://code.visualstudio.com/). 
 
-![VS Code download](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/VSdownload.jpg)
+![VS Code download](/atom-vs-visual-studio-code-functionality-and-features-comparison/VSdownload.jpg)
 
 Go to the site and download the latest version of the editor. Currently, it is at V1.51. After installing the editor, you will see the welcome screen guide.
 
-![VS Code Welcome Guide](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vswelcome.jpg)
+![VS Code Welcome Guide](/atom-vs-visual-studio-code-functionality-and-features-comparison/vswelcome.jpg)
 
 The activity bar on the left with icons give you access to:
 - Explorer
@@ -111,13 +111,13 @@ Use the following VS Code command menu to configure using a GUI:
 
 Here is an example of a Visual Studio Code Configuration with GUI.
 
-![VS Code Settings](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-code-settings.jpg)
+![VS Code Settings](/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-code-settings.jpg)
 
 While configuring with a GUI in VS Code, you can either use a drop-down menu, a check box, or an input to edit the settings.
 
-![Drop-down Menu](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/drop-down.jpg)
+![Drop-down Menu](/atom-vs-visual-studio-code-functionality-and-features-comparison/drop-down.jpg)
 
-![Input](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/input.jpg)
+![Input](/atom-vs-visual-studio-code-functionality-and-features-comparison/input.jpg)
 
 To configure using a JSON file use Ctrl - Shift- P to navigate. 
 
@@ -129,7 +129,7 @@ You can now add your settings.
 
 Here is an example of Visual Studio Code Configuration with JSON.
 
-![Configuration with JSON](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/json.gif)
+![Configuration with JSON](/atom-vs-visual-studio-code-functionality-and-features-comparison/json.gif)
 
 In Atom, you have GUI everywhere to edit instead of having a singular JSON file to edit. Atom users report there are performance issues during the configuration process such as sluggishness. This can happen when many extensions are installed. 
 
@@ -149,7 +149,7 @@ Atom gives more power and functionality to plugins. Atom has many built-in and t
 
 This is an example of how to add plugins in your Atom editor.
 
-![How to install plugins](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/plugininstall.gif)
+![How to install plugins](/atom-vs-visual-studio-code-functionality-and-features-comparison/plugininstall.gif)
 
 #### 4. Git Integration
 Atom is a product of GitHub, and git integration is an in-built feature. VS Code also has built-in Git integration and has many GitHub related extensions. 
@@ -158,11 +158,11 @@ Using GitHub enables you to share your project code, make changes, and create co
 
 In Atom, git integration is provided through navigating to View > Toggle Git Tab/ Toggle GitHub Tab.
 
-![Git Integration with Atom](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/git-atom.jpg)
+![Git Integration with Atom](/atom-vs-visual-studio-code-functionality-and-features-comparison/git-atom.jpg)
 
 In VS Code, Git Integration is provided through the GitHub Pull Requests and Issues extension.
 
-![Git Integration with VS Code](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-git-integration.jpg)
+![Git Integration with VS Code](/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-git-integration.jpg)
 
 #### 5. Auto-completion
 The autocomplete tool lets you view and insert possible completions in the editor using the Enter button. The autocomplete system works by looking through the currently open file for strings that match whatever you type. Both Atom and Visual Studio Code editors have the autocomplete feature.
@@ -181,7 +181,7 @@ Instead of typing, copying, and pasting Emmet can do most of that for you.
 
 This is an example case of how Emmet can help, it will expand 'a' into `<a href=""></a>`, and 'h1' into `<h1></h1>`.
 
-![Emmet](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/emmet.gif)
+![Emmet](/atom-vs-visual-studio-code-functionality-and-features-comparison/emmet.gif)
 
 #### 6. Navigation
 Code navigation in Atom and Visual Studio Code is a vital feature. You use keyboard shortcuts to navigate to files. Some code navigation shortcuts used in both Atom and VS Code editor are the same.
@@ -200,7 +200,7 @@ Ctrl - P / Cmd - P
 
 Navigating to a specific line, use Cmd / Ctrl - G, then type the line number.
 
-![A Specific Line](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/at-vsline.gif)
+![A Specific Line](/atom-vs-visual-studio-code-functionality-and-features-comparison/at-vsline.gif)
 
 There are keyboard navigation shortcuts that differ in the two editors, such as:
 
@@ -208,21 +208,21 @@ There are keyboard navigation shortcuts that differ in the two editors, such as:
 
 To select multiple lines in Visual Studio, hold option or Alt - Cursor.
 
-![VS Code Multilines](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-multiline.gif)
+![VS Code Multilines](/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-multiline.gif)
 
 In Atom, hold Ctrl - Cursor.
 
-![Atom Multilines](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/at-multiline.gif)
+![Atom Multilines](/atom-vs-visual-studio-code-functionality-and-features-comparison/at-multiline.gif)
 
 - Navigating Symbols
 
 In Visual Studio Code the keyboard shortcut is Ctrl - Shift - O / Cmd - Shift - O.
 
-![VS Code Symbols](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-symbol.gif)
+![VS Code Symbols](/atom-vs-visual-studio-code-functionality-and-features-comparison/vs-symbol.gif)
 
 In Atom the key board shortcut is Ctrl - R / Cmd - R.
 
-![Atom Symbols](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atom-symbols.gif)
+![Atom Symbols](/atom-vs-visual-studio-code-functionality-and-features-comparison/atom-symbols.gif)
 
 - Code Folding
 
@@ -230,11 +230,11 @@ Code folding allows you to collapse and expand blocks of code. By folding code, 
 
 In Visual Studio Code use Cmd/Ctrl - Shift-[to fold code and Cmd/Ctrl - Shift-] to unfold code.
 
-![VS Code Folding](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/vsfolding.gif)
+![VS Code Folding](/atom-vs-visual-studio-code-functionality-and-features-comparison/vsfolding.gif)
 
 In Atom use Cmd/ Ctrl - Alt - [to collapse and Cmd/Ctrl - Alt -] to expand the block of code.
 
-![Atom Code Folding](/engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/atmfolding.gif)
+![Atom Code Folding](/atom-vs-visual-studio-code-functionality-and-features-comparison/atmfolding.gif)
 
 ### Conclusion
 In conclusion, Atom and Visual Studio Code editors work well, and each editor has its advantages and disadvantages. The editor that fits and satisfies one developer's demands may not satisfy the demands of another developer. 
@@ -248,4 +248,4 @@ It is also essential to use the editors to familiarize yourself with the feature
 Both editors provide almost the same features to developers. Hopefully, this article helps you decide which editor best suits your preferences.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

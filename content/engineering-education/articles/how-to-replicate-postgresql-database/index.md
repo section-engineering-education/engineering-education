@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-replicate-postgresql-database/
+url: /how-to-replicate-postgresql-database/
 title: Replication of PostgreSQL Database
 description: This article will go over the replication of postgreSQL database process. We will be using Ubuntu 18.04 LTS and PostgreSQL 10. 
 author: sylvester-tamba
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-replicate-postgresql-database/hero.jpg
+  - url: /how-to-replicate-postgresql-database/hero.jpg
     alt: Replication of PostgreSQL Database example image
 ---
 Replication is the act of reproducing or copying something, Several Relational Database Management Systems (RDMS) have different ways to achieve this. PostgreSQL is an open-source RDMS, and it is what we are going to use in this article to show how replication is achieved.
@@ -29,9 +29,9 @@ It synchronizes the data in such a way that if the master server fails, one can 
 
 For this to happen there must be communication between the two hosts or two servers, through a network or internet as shown below.
 
-![LOCAL-EXAMPLE](/engineering-education/how-to-replicate-postgresql-database/local-network.png)
+![LOCAL-EXAMPLE](/how-to-replicate-postgresql-database/local-network.png)
 
-[Internet Example - *Image Source*](/engineering-education/how-to-replicate-postgresql-database/internet-network.png)
+[Internet Example - *Image Source*](/how-to-replicate-postgresql-database/internet-network.png)
 
 ### Installing PostgreSQL
 For this article, we will be using Ubuntu 18.04 LTS and PostgreSQL 10. Several Linux distributions can be used as server operating systems. It is important to note that one can set up Replication in any operating system.
@@ -76,7 +76,7 @@ sudo passwd postgres
 su - postgres
 ```
 
-![postgres-login](/engineering-education/how-to-replicate-postgresql-database/postgres-login.png)
+![postgres-login](/how-to-replicate-postgresql-database/postgres-login.png)
 
 - Create replication user with the following command.
 
@@ -98,7 +98,7 @@ nano /etc/postgresql/10/main/pg_hba.conf
 host  replication       replication   MasterIP/24   md5
 ```
 
-![postgres-login](/engineering-education/how-to-replicate-postgresql-database/pg_hba-edit.png)
+![postgres-login](/how-to-replicate-postgresql-database/pg_hba-edit.png)
 
 `MasterIP is the IP address of the Master Server Computer`
 
@@ -265,4 +265,4 @@ In summary, if you can view the data in the slave server database after making c
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

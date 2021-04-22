@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intelligent-agents-in-ai/
+url: intelligent-agents-in-ai/
 title: Intelligent Agents in Artificial Intelligence
 description: This article will cover intelligent agents in artificial intelligence (AI) and the 3 main components such as architecture, agent function, and agent program.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/intelligent-agents-in-ai/hero.jpg
+  - url: /intelligent-agents-in-ai/hero.jpg
     alt: Intelligent Agents in Artificial Intelligence example image
 ---
 An intelligent agent (IA) is an entity that makes a decision, that enables artificial intelligence to be put into action. It can also be described as a software entity that conducts operations in the place of users or programs after sensing the environment. It uses actuators to initiate action in that environment.
@@ -80,13 +80,13 @@ Intelligent agents work through three main components: sensors, actuators, and e
 
 The following diagram shows how these components are positioned in the AI system.
 
-![AI Sytem](/engineering-education/intelligent-agents-in-ai/ai-system.png)
+![AI Sytem](/intelligent-agents-in-ai/ai-system.png)
 
 [Image Source: JavatPoint](https://static.javatpoint.com/tutorial/ai/images/agents-in-ai.png)
 
 Inputs (percepts) from the environment are received by the intelligent agent through sensors. This agent uses artificial intelligence to make decisions using the acquired information/ observations. Actions are then triggered through actuators. Future decisions will be influenced by percept history and past actions.
 
-![How an Intelligent Agent Works](/engineering-education/intelligent-agents-in-ai/how-an-intelligent-agent-works.png)
+![How an Intelligent Agent Works](/intelligent-agents-in-ai/how-an-intelligent-agent-works.png)
 
 [Image Source: Geeks for Geeks](https://www.cdn.geeksforgeeks.org/wp-content/uploads/ai3-1.png)
 
@@ -119,4 +119,4 @@ With increased technological advancement, there will be enhanced development of 
 [AI Objectives](http://www.aiobjectives.com/2019/11/01/analysis-of-intelligent-agents-in-artificial-intelligence/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-spring-data/
+url: /introduction-spring-data/
 title: Getting Started with Spring Data JPA in Kotlin
 description: This article takes the reader through creating a recipe application using spring data and Java Persistent API. JPA is a set of standards that define how Java objects are represented in a database.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-spring-data/hero.jpg
+  - url: /introduction-spring-data/hero.jpg
     alt: Java Persistent API example image
 ---
 Spring Data JPA is a set of standards that defines how Java objects are represented in a database. JPA provides a set of annotations and interfaces that make it possible to configure and map Java objects to relational database tables. Relationships between Java objects are provided through annotations (one-to-one, one-to-many, many-to-one, many-to-many).
@@ -20,7 +20,7 @@ The implementations of the JPA specifications are provided by the object-relatio
 
 JPA falls between the ORM and the application layer. In this tutorial, we will be modeling a `Recipe` application using Spring Data and JPA. The entity-relationship diagram for our application is shown below.
 
-![Entity Diagram](/engineering-education/introduction-spring-data/relationship.png)
+![Entity Diagram](/introduction-spring-data/relationship.png)
 
 ### Prerequisite
 Before we begin we will need the following:
@@ -238,4 +238,4 @@ Now that you have learned how to model the database using Spring Data JPA, imple
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

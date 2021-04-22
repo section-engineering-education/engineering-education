@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/linear-regression-introduction/
+url: /linear-regression-introduction/
 title: Theoretical Introduction to Linear Regression
 description: This article will serve as an theoretical introduction to liner regression used in machine learning algorithms. In this article, we will define the class `LinearRegression.`  
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/linear-regression-introduction/hero.jpg
+  - url: /linear-regression-introduction/hero.jpg
     alt: Theoretical Linear Regression example image
 ---
 Linear regression is one of the most fundamental machine learning algorithm in the category of regression. There exist two types of machine learning algorithms: classification and regression. Under regression, we can have linear regression, polynomial regression, exponential regression, Gaussian process regression, etc. Regression is a supervised learning algorithm that outputs a continuous set of values. Linear regression refers to creating linear models to represent the data. 
@@ -125,7 +125,7 @@ A few examples of linear regression in action are given below:
 
 **Risk profiling**: Analyzing an investor's risk based on the investor's income and commitments can be a regression task. The output is the maximum risk the investor can take.  
 - **Stock market portfolio analysis**: Predicting the future prices given the current conditions and historical data is a problem many mathematicians and analysts work on. Regression models are often used in such applications. 
-- **Analysis and optimization**: Finding optimal solutions for a given problem given the constraints can be modeled using regression methods. For example, [predicting houses' prices](/engineering-education/house-price-prediction/) or used car prices using regression is a famous machine learning problem. 
+- **Analysis and optimization**: Finding optimal solutions for a given problem given the constraints can be modeled using regression methods. For example, [predicting houses' prices](/house-price-prediction/) or used car prices using regression is a famous machine learning problem. 
 
 ### Conclusion
 In this article, we have looked at the two methods to arrive at the best fit line. In the next article, we will code the same from scratch and analyze the output graphically. 

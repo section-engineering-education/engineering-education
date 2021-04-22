@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/performance-optimization-techniques-for-node-js/
+url: /performance-optimization-techniques-for-node-js/
 title: Performance Optimization tips for Node.js Applications
 description: This article covers performance optimization techniques, tools, and tips to make high-performing Node.js apps.
 author: joseph-chege
@@ -10,7 +10,7 @@ date: 2020-10-05T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
-  - url: /engineering-education/performance-optimization-techniques-for-node-js/hero.jpg
+  - url: /performance-optimization-techniques-for-node-js/hero.jpg
     alt: Performance optimization tips Node.js
 ---
 Performance is an important aspect when building webpages and applications. You need to understand how long your users interact with your app, how often they leave, and the response time as well.
@@ -37,7 +37,7 @@ console.log(content);
 console.log('waiting for the file to read.........');
 ```
 
-![Synchronous](/engineering-education/performance-optimization-techniques-for-node-js/synchronous.png)
+![Synchronous](/performance-optimization-techniques-for-node-js/synchronous.png)
 
 #### Asynchronous
 
@@ -55,7 +55,7 @@ fs.readFile("app.txt", "utf8", function (err, content) {
 console.log('waiting for the file to read.....');
 ```
 
-![Asynchronous](/engineering-education/performance-optimization-techniques-for-node-js/asynchronous.png)
+![Asynchronous](/performance-optimization-techniques-for-node-js/asynchronous.png)
 
 With the synchronous snippet, all processes are paused until the file reading is over. The `readFileSync()` will first read the file and store its data in the memory before printing the data and message in the console.
 
@@ -141,7 +141,7 @@ The first query will pull the FirstNames such as Avishek, Avinash, or Avik. This
 
 In the production database, analytical and database management queries should be executed when the concurrent users are at their lowest peak. Typically at night around 3 to 5 am.
 
-Check out this [MySQL query performance optimization](/engineering-education/mysql-query-performance-optimization-tips/) article. It has useful Mysql tips that will improve your query writing techniques.
+Check out this [MySQL query performance optimization](/mysql-query-performance-optimization-tips/) article. It has useful Mysql tips that will improve your query writing techniques.
 
 ### Caching
 A cache is a memory buffer where frequently accessed data is temporarily stored to be accessed quicker. Cached data is then retrieved without having to access the origin. Caching will improve your app response time and even reduce some costs such as bandwidth and data volumes.
@@ -356,7 +356,7 @@ Here are more details on how to [connect express with compression](https://githu
 ### Avoid Memory Leaks
 A [memory leak](https://en.wikipedia.org/wiki/Memory_leak) occurs when a computer program incorrectly manages memory allocations in a way that memory that is no longer needed is not released. With memory leaks, a loaded page will reserve more and more memory. These will slowly occupy your available space to a point where CPU usage is overstretched. Such scenarios will severely affect your application performance.
 
-You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/engineering-education/document-object-model/) that has been removed from a page but some variables still have a reference to them. If you happen to remove [DOM](/engineering-education/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and help avoid memory leaks.
+You may choose to restart your application and these issues will magically disappear but this will not be a reliable solution. The problem will repeat itself and the memory will pile up periodically. Memory leaks can come from a [DOM](/document-object-model/) that has been removed from a page but some variables still have a reference to them. If you happen to remove [DOM](/document-object-model/) values, make sure to set them to null. When null, the garbage collector will eliminate them and help avoid memory leaks.
 
 Use [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2018Q2) to analyze if your web page has any memory leaks. Chrome Dev Tools will help you catch and debug memory leaks. [This article](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html) will help you understand more about how to detect and solve memory leaks using Chrome Dev Tools.
 
@@ -445,4 +445,4 @@ Other common practices that you should also consider include:
 Consider doing some work on your own and find out which segment of your app needs to be optimized. However, as you practice these optimization tips, do not forget security practices such as [SSL/TLS and HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
 
 ---
-Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/authors/mike-white/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sentiment-analysis/
+url: /sentiment-analysis/
 title: Sentiment Analysis of Twitter Data
 description: Sentiment analysis is the process of extracting the *sentiment* from a piece of text and to classify it as positive, negative or neutral accordingly.
 author: rohan-reddy
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sentiment-analysis/hero.jpg
+  - url: /sentiment-analysis/hero.jpg
     alt: sentiment analysis image example
 ---
 Social networks are a primary resources to gather information about people’s opinions and sentiments towards different topics as they spend hours daily on social media and share their opinion. In this article, we shall discuss the applications of sentiment analysis and how to connect to Twitter and run sentiment analysis queries. Basic knowledge of [Python](https://www.python.org/about/gettingstarted/) is required for understanding the code.
@@ -44,21 +44,21 @@ pip install nltk
  
 You should have a Twitter account. Apply for a [developer account](https://developer.twitter.com/en/apply-for-access). Fill out the details asked in the subsequent steps.
 
-![img](/engineering-education/sentiment-analysis/apply.png)
+![img](/sentiment-analysis/apply.png)
 
 Submit the application and wait for developer access.
 
 After getting access, we need to create an [app](https://developer.twitter.com/en/apps/) and API key in order to authenticate and integrate with most Twitter developer products.
 
-![img](/engineering-education/sentiment-analysis/create1.png)
+![img](/sentiment-analysis/create1.png)
 
 Fill out the required details. Ignore the fields you don't need (these are used for authenticating with Twitter and other use cases.)
 
-![img](/engineering-education/sentiment-analysis/form.png)
+![img](/sentiment-analysis/form.png)
 
 Go to the `Keys and Tokens` tab under your app to get the API key and API secret key. (Do not share with others.)
 
-![img](/engineering-education/sentiment-analysis/tokens.png)
+![img](/sentiment-analysis/tokens.png)
 
 ### Lets get started
 Let's start coding. We use a Python library called [tweepy](https://tweepy.org) for authenticating and getting information from the Twitter API. You can also use [twitter](https://pypi.org/project/twitter/).
@@ -78,7 +78,7 @@ Tweepy's API class provides access to the entire twitter [RESTful](https://www.t
 
 We will use [API.search](http://docs.tweepy.org/en/latest/api.html) which returns a collection of relevant tweets matching a specified query. A raw tweet may contain many unwanted characters and information which may not be necessary like emoji, "@" mentions, "#" hashtags, etc. These may be useful in some other scenario.
 
-![img](/engineering-education/sentiment-analysis/search.png)
+![img](/sentiment-analysis/search.png)
 
 ```python
 query=""
@@ -142,17 +142,17 @@ As a sample use case, I made an analysis on tweets related to **JavaScript**. Th
 
 * The sentiment of 125 random tweets.
 
-![img](/engineering-education/sentiment-analysis/bar.png)
+![img](/sentiment-analysis/bar.png)
 
 * Word Clouds are used to visually represent words in a text, the bigger the font size, the more a word is repeated.
 
 Without cleaning:
 
-![img](/engineering-education/sentiment-analysis/dirty-word.png)
+![img](/sentiment-analysis/dirty-word.png)
 
 With cleaning:
 
-![img](/engineering-education/sentiment-analysis/clean-word.png)
+![img](/sentiment-analysis/clean-word.png)
 
 As you can see, cleaning text is a very important step, because it allows us to get the main information the text is trying to convey.
 

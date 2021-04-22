@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/perceptron-algorithm/
+url: /perceptron-algorithm/
 title: Perceptron Algorithm - A Hands On Introduction
 description: This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/perceptron-algorithm/hero.jpg
+  - url: /perceptron-algorithm/hero.jpg
     alt: perceptron algorithm example image
 ---
 Perceptrons were one of the first algorithms discovered in the field of AI. Its big significance was that it raised the hopes and expectations for the field of neural networks. Inspired by the neurons in the brain, the attempt to create a perceptron succeeded in modeling linear decision boundaries.
@@ -21,7 +21,7 @@ A linear decision boundary can be visualized as a straight line demarcating the 
 We will also look at the perceptron's limitations and how it was overcome in the years that followed.
 
 ### Goals
-This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy. For a quick refresher on Numpy, refer to this [article](/engineering-education/matplotlib-visualization-python/).
+This article will explain what perceptrons are, and we will implement the perceptron model from scratch using Numpy. For a quick refresher on Numpy, refer to this [article](/matplotlib-visualization-python/).
 
 By the end of the article, you'll be able to code a perceptron, appreciate the significance of the model and, understand how it helped transform the field of neural networks as we know it.
 
@@ -37,7 +37,7 @@ Let's consider the structure of the perceptron. The perceptron has four key comp
 3. Weighted Sum
 4. Thresholding using the unit-step function
 
-![perceptron](/engineering-education/perceptron-algorithm/perceptron.png)
+![perceptron](/perceptron-algorithm/perceptron.png)
 
 *[Image Source](https://stackoverflow.com/questions/40260412/could-someone-explain-this-neural-network-machine-learning-code)*
 
@@ -49,7 +49,7 @@ Using the weighted summing technique, the perceptron had a learnable parameter. 
 
 The weighted sum is sent through the thresholding function. The output of the thresholding functions is the output of the perceptron. The output indicates the confidence of the prediction. The larger the numerical value of the output, the greater the confidence of the prediction.
 
-![unit-step function](/engineering-education/perceptron-algorithm/unit-step.jpg)
+![unit-step function](/perceptron-algorithm/unit-step.jpg)
 
 *[Image Source](http://saedsayad.com/images/ANN_Unit_step.png)*
 
@@ -161,7 +161,7 @@ It will be a fun challenge to change the values of the learning rate and the num
 
 I have attached a screenshot of the terminal capturing the training and test accuracies.
 
-![output](/engineering-education/perceptron-algorithm/output.jpg)
+![output](/perceptron-algorithm/output.jpg)
 
 *Code Output*
 

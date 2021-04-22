@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-viewpager2/
+url: /android-viewpager2/
 title: Android ViewPager2 with TabLayout
 description: In this article we will go through the basics of implementing ViewPager2 and TabLayout in an Android application.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-viewpager2/hero.jpg
+  - url: /android-viewpager2/hero.jpg
     alt: job scheduling Node.js image example
 ---
 Slide transition between screens is common in Android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while.
@@ -31,14 +31,14 @@ Let's dive in!
 To follow through with this tutorial, you will need to:
   1. Have [Android Studio](https://developer.android.com/studio) installed.
   2. Have a basic knowledge of building Android applications.
-  3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
+  3. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
 
 Let's get started!
 
 ### Step 1 — Creating an Android Project
 In this step, we're going to create our application. Open Android Studio and start a new project using the empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/engineering-education/android-viewpager2/app-name.png)
+![app name](/android-viewpager2/app-name.png)
 
 Click `Finish` and wait for the project build process to finish.
 
@@ -135,7 +135,7 @@ override fun getItemCount(): Int {
 }
 ```
 
-Read [this article](/engineering-education/android-recyclerviews/) for a deeper explanation of the methods.
+Read [this article](/android-recyclerviews/) for a deeper explanation of the methods.
 
 Add the implementation to the methods as shown below.
 
@@ -172,7 +172,7 @@ That's what we need for the `ViewPager2`. Now build and run the application.
 
 The output should look like this.
 
-![View pager gif](/engineering-education/android-viewpager2/view-pager.gif)
+![View pager gif](/android-viewpager2/view-pager.gif)
 
 To change the scroll orientation to vertical, add the following statement in the `onCreate` method.
 
@@ -182,7 +182,7 @@ pager.orientation = ViewPager2.ORIENTATION_VERTICAL
 
 It should resemble the demo below.
 
-![vertical orientation gif](/engineering-education/android-viewpager2/vertical-scroll.gif)
+![vertical orientation gif](/android-viewpager2/vertical-scroll.gif)
 
 ### Step 5 — Integrating TabLayout
 Now that our view pager is functioning as expected. Let's go ahead and integrate it with `TabLayout`.
@@ -207,7 +207,7 @@ In the function, we set the tabs' text to the position plus one. We add one beca
 
 Build and run the application. This is how it should look.
 
-![tab layout gif](/engineering-education/android-viewpager2/tab-layout.gif)
+![tab layout gif](/android-viewpager2/tab-layout.gif)
 
 Another essential feature of `TabLayout` is the `onTabSelectedListener`. This notifies the listeners whenever a tab's selected, unselected, or reselected. This is useful when one wants to perform some background tasks when the listener fires up. We'll use toasts in our application for demonstration.
 
@@ -231,7 +231,7 @@ tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 
 Build and rerun the app.
 
-![toasts gif](/engineering-education/android-viewpager2/toasts.gif)
+![toasts gif](/android-viewpager2/toasts.gif)
 
 ### Conclusion
 In this article, we have gone through creating the ViewPager2 component. We have also seen how we can integrate it with a TabLayout. This is a common UI component, and almost all apps that display data in page format use it.
@@ -239,4 +239,4 @@ In this article, we have gone through creating the ViewPager2 component. We have
 Achieving the slide transition between content screens is relatively easy with the component. You don't need to implement gesture listeners since the component does that for you. You can find the app's source code on [Github](https://github.com/kayere/view-pager-example.git).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

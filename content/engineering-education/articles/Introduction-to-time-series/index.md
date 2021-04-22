@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-time-series/
+url: /introduction-to-time-series/
 title: Introduction to Time Series
 description: This article will give users an introduction to what time series is within machine learning. It is a deep learning concept, time series can be defined as a sequence or series of data points ordered in time.
 author: james-sandy
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-time-series/hero.jpg
+  - url: /introduction-to-time-series/hero.jpg
     alt: time series example image
 ---
 In machine learning, time series is a very crucial aspect but is often overlooked. A time series is useful in forecasting, stock market analysis, and even forex, but their time component makes it a challenging concept to handle. This article will give a friendly introduction to the time series concept.
@@ -76,7 +76,7 @@ Here are four useful time series analysis techniques:
 3. **Seasonality**: The regular pattern of up and down fluctuations in a time series. It may be a short term variation occurring due to seasonal factors. In seasonality, there's a situation in which the data experiences regular and predictable changes.
 4. **Cyclicity**: In straightforward terms, this variation is caused by circumstances that repeat at irregular intervals. The length of the cycle is described as the period. 
 
-![Simple](/engineering-education/introduction-to-time-series/img.jpg)
+![Simple](/introduction-to-time-series/img.jpg)
 
 ### Conclusion
 This article has gone through time-series forecasting methods, time-series forecasting, time-series analysis, and time series components. Hopefully, this article has given you a gentle introduction to the concept of time series. 
@@ -88,4 +88,4 @@ Happy learning.
 2. [What Is Time Series Forecasting?](https://machinelearningmastery.com/time-series-forecasting/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

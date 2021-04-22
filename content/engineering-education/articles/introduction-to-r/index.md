@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-r/
+url: /introduction-to-r/
 title: Introduction to R Programming
 description: This article will serve as an introduction to the R programming language which is a software environment developed for statistical and graphical computing.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-r/hero.jpg
+  - url: /introduction-to-r/hero.jpg
     alt: introduction to the R programming language
 ---
 The data science community has been growing over the past decade. The tools used within the industry have been a driving force behind this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to this awesome field. This article will clarify all the basic concepts of R and look at the various concepts. Going through the article should give you sufficient information to start coding in R.
@@ -30,20 +30,20 @@ For further information on installation, refer to this [article](https://techvid
 
 The RStudio interface has four components that we make use of the most. Below is a preview of what the RStudio interface looks like.
 
-![rstuido](/engineering-education/introduction-to-r/rstudio.jpg)
+![rstuido](/introduction-to-r/rstudio.jpg)
 
 The four components are as follows:
 
 1. **Editor**: The editor is used to create R scripts. R scripts are executed using the **run** button or the console. The **run** button is present at the top of the RStudio window. To execute a file using the console, we need to go through the following steps:
    - Set the current working directory to the directory, including the R script. Use the command `setwd(dir)` to set the working directory to the directory of your choice. Use `getwd()` to get the current working directory
    - We use the `source` command to execute the script file of our choice. `source(file_name)` executes the entire file and gives the output in the console section. The `source(filename)` is typed and executed via the console, which we will cover in the next point.
-   ![](/engineering-education/introduction-to-r/R-Script.jpg)
+   ![](/introduction-to-r/R-Script.jpg)
 2. **Console and Terminal**: The **console** in R is similar to IDLE in Python. We can execute any command here. For this tutorial, you may use the **console**.
-   ![](/engineering-education/introduction-to-r/console.jpg)
+   ![](/introduction-to-r/console.jpg)
 3. **Environment Variables**: The **environment variables window** list all the variables created during program execution and their corresponding values. It is used to understand the dimensionality and data-types of the data being used by a program.
-   ![](/engineering-education/introduction-to-r/environment.jpg)
+   ![](/introduction-to-r/environment.jpg)
 4. **Plots, Package manager, and Help Section**: The plots section generates any plots that have been specified in the R script. The **Package Manager** gives us a list of packages installed and lets us install packages if required. Finally, the help section is a go-to for developers of all levels. The ability to go through official docs through the RStudio empowers programmers and saves them much time.
-   ![](/engineering-education/introduction-to-r/plot.jpg)
+   ![](/introduction-to-r/plot.jpg)
 
 ### R-Programming Basics
 In this article, we will be covering the following concepts:
@@ -170,11 +170,11 @@ list_slice <- first_quarter[c(1:2)] # list_slice contains Jan and Feb as element
 If we observe, in the above code, we begin the slicing operation from index 1. R is a one-indexed programming language. Most of the programming languages like C, Java, and Python are zero-indexed programming languages. The index in R starts with 1; that is, the index assigned to the first element in a list is 1.
 
 #### Matrices
-Matrices are 2-dimensional (rectangular) structures used commonly in the field of computer science. One application of matrices is in the field of [computer vision](/engineering-education/computer-vision-straight-lines/). Each image is treated as a stack of three matrices, each representing a different color channel. R offers libraries highly optimized for matrix operations.
+Matrices are 2-dimensional (rectangular) structures used commonly in the field of computer science. One application of matrices is in the field of [computer vision](/computer-vision-straight-lines/). Each image is treated as a stack of three matrices, each representing a different color channel. R offers libraries highly optimized for matrix operations.
 
 Let's look at defining matrices.
 
-![three channels in an image](/engineering-education/introduction-to-r/image_channel.jpg)
+![three channels in an image](/introduction-to-r/image_channel.jpg)
 
 *[Image Source](https://www.sketchpad.net/channels1.htm)*
 
@@ -437,4 +437,4 @@ The general syntax is the name of the variable, followed by`$`, followed by the 
 In this article, we have learned the basics of R programming. It's a potent tool used extensively in the data science community. Try out the code given to gain the maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping.
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

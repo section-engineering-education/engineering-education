@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understand-hashing-in-cryptography/
+url: /understand-hashing-in-cryptography/
 title: Understanding Hashing in Cryptography
 description: In this article we will cover the objectives of hashing which include data integrity and authentication. We will learn what hashing is, how it works, and what hash functions are in cryptography.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understand-hashing-in-cryptography/hero.jpg
+  - url: /understand-hashing-in-cryptography/hero.jpg
     alt: Hashing in Cryptography image example
 ---
 Hashing is a form of computer security that enables data integrity and authentication. Hashing, in most cases, is mistaken with encryption. Hashing is different from encryption. In this article, we will explore and learn more about hashing. We will also go over their differences.
@@ -99,4 +99,4 @@ Hashing checks for data integrity. It gives the user assurance that no data has 
 In conclusion, hashing and hash functions are essential tools in computer security. We have learned the objectives of hashing which include data integrity and authentication. We have learned what hashing is, how it works, and went over hash functions in cryptography. I hope this article will give you an in-depth understanding of hashing in cryptography.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

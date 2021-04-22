@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-graphql-server-using-nodejs/
+url: /build-a-graphql-server-using-nodejs/
 title: How to build a GraphQL Server Using Node.js
 description: This tutorial will serve as a guide on the basics of GraphQL and will go over how we build a GraphQL server using Node.js.
 author: abel-mathew
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-a-graphql-server-using-nodejs/hero.jpg
+  - url: /build-a-graphql-server-using-nodejs/hero.jpg
     alt: How to build a GraphQL Server Using Node.js image
 
 ---
@@ -40,7 +40,7 @@ GraphQL was internally developed by Facebook in 2012 and was later open-sourced 
 
 - It’s strongly typed and allows validation easily. Additionally, GraphQL IDEs (integration development libraries), such as GraphiQL, can autogenerate docs from the schema for reference.
 
-![GraphQL Schema Docs](/engineering-education/build-a-graphql-server-using-nodejs/graphql-docs.png)
+![GraphQL Schema Docs](/build-a-graphql-server-using-nodejs/graphql-docs.png)
 
 ### Schema and Types
 The schema in GraphQL is a description of how data is linked and its hierarchy. The schema defines a set of types and the relationships between those types.
@@ -57,9 +57,9 @@ For the data, the setup uses JavaScript, built-in arrays, and objects for the in
 For reference, the entire GitHub repository, along with a deployed version of the project is linked at the bottom so you can take a deeper dive.
 
 #### Reference to get started with Node.js and MongoDB
-- [Setup a server on Node.js using Express](/engineering-education/express/)
-- [Getting started with databases](/engineering-education/working-with-databases-part1/)
-- [Other Node.js references](/engineering-education/topic/node.js/)
+- [Setup a server on Node.js using Express](/express/)
+- [Getting started with databases](/working-with-databases-part1/)
+- [Other Node.js references](/topic/node.js/)
 
 #### Initialize project with Express
 The first step is to initialize your project:
@@ -112,7 +112,7 @@ The first step is to initialize your project:
 
     Once done, this is what the file should look like:
 
-    ![Initialize express.js](/engineering-education/build-a-graphql-server-using-nodejs/express-init.png)
+    ![Initialize express.js](/build-a-graphql-server-using-nodejs/express-init.png)
 
 8. Run the server. (Throughout the setup, wherever "Run the server" is mentioned, you can do `node index.js` from the project folder, or you can use a NodeJS process manager like nodemon or PM2 to make sure your browser refreshes whenever your code updates.)
 
@@ -120,11 +120,11 @@ The first step is to initialize your project:
 
     Once that is done, this is what the terminal window should look like:
 
-    ![Initialize express.js via terminal](/engineering-education/build-a-graphql-server-using-nodejs/express-init-terminal.png)
+    ![Initialize express.js via terminal](/build-a-graphql-server-using-nodejs/express-init-terminal.png)
 
     This is what the browser window will look like:
 
-    ![Express.js server in browser](/engineering-education/build-a-graphql-server-using-nodejs/express-init-browser.png)
+    ![Express.js server in browser](/build-a-graphql-server-using-nodejs/express-init-browser.png)
 
 #### Initialize GraphQL
 
@@ -189,7 +189,7 @@ The first step is to initialize your project:
 
 7. Once done, this is how the file should look.
 
-    ![Initialize GraphQL Schema](/engineering-education/build-a-graphql-server-using-nodejs/graphql-init.png)
+    ![Initialize GraphQL Schema](/build-a-graphql-server-using-nodejs/graphql-init.png)
 
 8. Import the schema in `index.js`:
 
@@ -218,7 +218,7 @@ The first step is to initialize your project:
 
     When done, this is how the file should look.
 
-    ![Query Using GraphiQL Code](/engineering-education/build-a-graphql-server-using-nodejs/graphql-init-2.png)
+    ![Query Using GraphiQL Code](/build-a-graphql-server-using-nodejs/graphql-init-2.png)
 
 10. Run the server and open `http://localhost:5000/graphql` in the browser.
 
@@ -236,12 +236,12 @@ The first step is to initialize your project:
 
     The server can be queried via any GraphQL API client like Postman or in the browser with GraphiQL.
 
-    ![Query GraphQL API](/engineering-education/build-a-graphql-server-using-nodejs/graphql-init-query.png)
+    ![Query GraphQL API](/build-a-graphql-server-using-nodejs/graphql-init-query.png)
 
 #### Adding basic queries
 This section will use static data stored in arrays to be fetched via the GraphQL server. In a later section, we will replace it with MongoDB.
 
-1. Install the `lodash` library for JavaScript via your terminal. This library makes working with arrays and objects easy. (To get a brief idea about Lodash, read this [EngEd article](/engineering-education/most-useful-nodejs-packages/). Lodash is the fourth section of the article.)
+1. Install the `lodash` library for JavaScript via your terminal. This library makes working with arrays and objects easy. (To get a brief idea about Lodash, read this [EngEd article](/most-useful-nodejs-packages/). Lodash is the fourth section of the article.)
 
     For more details, visit the [Lodash website](https://lodash.com/).
 
@@ -373,12 +373,12 @@ This section will use static data stored in arrays to be fetched via the GraphQL
     ```
 10. Once done, this is how the file should look:
 
-    ![Write GraphQL Query](/engineering-education/build-a-graphql-server-using-nodejs/graphql-query.png)
+    ![Write GraphQL Query](/build-a-graphql-server-using-nodejs/graphql-query.png)
 
 11. Run the server and open `http://localhost:5000/graphql` in the browser.
 Call the GraphQL server with the input query to test. Below is an example query. Notice how the GraphQL response only shows the fields that are queried and not every field.
 
-    ![Run GraphQL Query In Browser](/engineering-education/build-a-graphql-server-using-nodejs/graphql-query-browser.png)
+    ![Run GraphQL Query In Browser](/build-a-graphql-server-using-nodejs/graphql-query-browser.png)
 
 #### Using MongoDB as a database
 This section replaces the stored static data with a MongoDB Atlas instance.
@@ -416,7 +416,7 @@ This section replaces the stored static data with a MongoDB Atlas instance.
 
     Once done, this is how the file should look:
 
-    ![Connect GraphQL To MongoDB](/engineering-education/build-a-graphql-server-using-nodejs/graphql-mongo-connect.png)
+    ![Connect GraphQL To MongoDB](/build-a-graphql-server-using-nodejs/graphql-mongo-connect.png)
 
 4. Create a `models` folder to store the database schema. Create `article.js` for `articleSchema`. Import `mongoose` and initialize `mongoose.Schema`. The schema doesn't need a definition of `id` field, as MongoDB by default creates an `_id` field for all documents. Export the model by passing it `articleSchema` as the parameter. This model will be used to interact with the collection from the server.
 
@@ -531,7 +531,7 @@ GraphQL Mutation is used to modify the data, just like in queries, if the mutati
 
     When done, this is how the file should look:
 
-    ![Write Mutation In GraphQL](/engineering-education/build-a-graphql-server-using-nodejs/graphql-mongo-mutation.png)
+    ![Write Mutation In GraphQL](/build-a-graphql-server-using-nodejs/graphql-mongo-mutation.png)
 
 6. Run the server to see it in action. Now the server should be able to write and read from MongoDB through GraphQL queries and mutations.
 

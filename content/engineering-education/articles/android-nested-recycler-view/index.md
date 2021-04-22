@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-nested-recycler-view/
+url: /android-nested-recycler-view/
 title: Introduction to Android Nested RecyclerView
 description: This article will explain how to implement a Nested RecyclerView. A RecyclerView widget recycles UI components. It creates components that allow users to scroll through the list. RecyclerView changes the UI components to the data they represent.
 author: joseph-chege
@@ -11,24 +11,24 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-nested-recycler-view/hero.jpg
+  - url: /android-nested-recycler-view/hero.jpg
     alt: Introduction to Memorization in JavaScript Hero Image
 ---
 RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of items in a list. It provides [Layout Managers](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity) to position these items. This way, you can create customized layout managers for RecyclerView containers.
 <!--more-->
 We can use a RecyclerView inside another RecyclerView. We refer to this as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
-![Google play store nested RecyclerView](/engineering-education/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
+![Google play store nested RecyclerView](/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
 
 [***Image Source***](https://play.google.com/store/apps?hl=en)
 
 Applications such as eCommerce, music apps, and movie apps such as Netflix uses this concept.
 
-![Netflix nested Recyclerview](/engineering-education/android-nested-recycler-view/netflix-nested-recycler-view.png)
+![Netflix nested Recyclerview](/android-nested-recycler-view/netflix-nested-recycler-view.png)
 
 [***Image Source***](https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en&gl=US)
 
-![Music app nested Recyclerview](/engineering-education/android-nested-recycler-view/music-app-nested-recycler-view.png)
+![Music app nested Recyclerview](/android-nested-recycler-view/music-app-nested-recycler-view.png)
 
 [***Image Source***](https://play.google.com/store/apps/details?id=com.piyush.music)
 
@@ -409,11 +409,11 @@ Initialize the parent adapter layout manager and inflate the view data into the 
 
 Everything is now set. Run the application to test if everything is working.
 
-![Nested RecyclerView](/engineering-education/android-nested-recycler-view/nested-recycler-view.gif)
+![Nested RecyclerView](/android-nested-recycler-view/nested-recycler-view.gif)
 
 I hope this guide helped you understand and implement nested RecyclerView within your application context. For more reference, check the code on [GitHub](https://github.com/kimkimani/Nested_RecyclerView).
 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/flask-database-integration-with-sqlalchemy/
+url: /flask-database-integration-with-sqlalchemy/
 title: Flask Database Integration with SQLAlchemy
 description: In this article we will understand how to work with SQLAlchemy in a Flask web application. Storing data is an integral component of a database. We will learn how to work with databases and connect with forms using flask.
 author: adetu-ridwan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/flask-database-integration-with-sqlalchemy/hero.jpg
+  - url: /flask-database-integration-with-sqlalchemy/hero.jpg
     alt: Flask Database Integration With SQLAlchemy example image
 ---
 Databases are integral components of building web applications. Throughout the life-cycle of a web application, the user sends bits of data that are needed to be stored for future reference. Simultaneously, the user also requests information from where they are stored.
@@ -40,7 +40,7 @@ The prerequisites for this article includes understanding of the following conce
 - [Further reading](#further-reading)
 
 ### Setting up the work environment
-Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/engineering-education/implementing-flask-wtform/) which contains a registration form with all the routes setup.
+Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/implementing-flask-wtform/) which contains a registration form with all the routes setup.
 
 We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
 
@@ -397,7 +397,7 @@ Let's test run our app. If you have the server running, terminate and restart. N
 
 Let's fill in the database with this dummy data: `username` as `Peter`, `email` as `peterdury@gmail.com`, and `password` as `password`.
 
-![Registration successful](/engineering-education/flask-database-integration-with-sqlalchemy/response.png)
+![Registration successful](/flask-database-integration-with-sqlalchemy/response.png)
 
 We received the registration successful message, but let's check the database to check if our user data is stored.
 
@@ -443,4 +443,4 @@ I recommend you look up on how to implement a Many-to-Many database relationship
 Happy coding.
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

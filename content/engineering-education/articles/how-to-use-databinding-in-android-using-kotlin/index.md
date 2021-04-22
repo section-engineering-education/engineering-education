@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-databinding-in-android-using-kotlin/
+url: /how-to-use-databinding-in-android-using-kotlin/
 title: Databinding in Android using Kotlin
 description: In this tutorial we will learn how to implement data binding in Andriod using Kotlin.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-databinding-in-android-using-kotlin/hero.png
+  - url: /how-to-use-databinding-in-android-using-kotlin/hero.png
     alt: Databinding Android Kotlin image
 ---
 If you have ever wondered if there is a way to link the `UI` directly to the `data source`?  You are in the right place. Repeating the dreaded `findViewbyID` statement in your code can be tedious.
@@ -68,7 +68,7 @@ buildTypes {
 
 In the same `build.gradle` file, add the `lifecycle` library to your `dependencies`. This library helps connect the `UI` to a `ViewModel` and `LiveData`.
 
-Read more about `MVVM` architecture [here](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+Read more about `MVVM` architecture [here](/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 ```bash
 dependencies {
@@ -525,4 +525,4 @@ As a developer, data binding will allow you to save time by eliminating boilerpl
 [Android Developer Documentation](https://developer.android.com/topic/libraries/data-binding/start)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/quantum-cryptography/
+url: /quantum-cryptography/
 title: Is Quantum Cryptography the Future of Encryption?
 description: As momentum around quantum computing continues to build, will current encryption methods be able to stand up to the processing power? Quantum encryption aims to use quantum mechanics to protect data from hacking threats.
 author: justin-osborne
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/quantum-cryptography/hero.jpg
+  - url: /quantum-cryptography/hero.jpg
     alt: quantum cryptography
 ---
 Encryption is a hidden part of everyday life, providing data protection around everything from emails to bank accounts. With quantum computing gaining momentum, there are concerns about information becoming more vulnerable to hacking. Quantum encryption aims to use quantum mechanics to protect data from hacking threats. Let's dive into the basics.

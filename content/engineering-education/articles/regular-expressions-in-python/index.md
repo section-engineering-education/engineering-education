@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/regular-expressions-in-python/
+url: /regular-expressions-in-python/
 title: Regular Expressions in Python
 description: This tutorial will go through regular expressions (RegEx) in Python. In Python a regular expression is the pattern compiled into a series of bytecodes that is executed by an implementation of the finite state machine in C.
 author: prashanth-saravanan
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/regular-expressions-in-python/hero.jpg
+  - url: /regular-expressions-in-python/hero.jpg
     alt: Regular Repression in Python example image
 ---
 A Regular Expression (RegEx) has put a lot of programmers in a bit of a hassle. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to look it up.
@@ -60,7 +60,7 @@ The key behind these enhancements is a powerful concept called Finite State Mach
 
 There are two types of FSMs - [Deterministic Finite Machine](https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm) and [Non Deterministic Finite Machine)](https://www.tutorialspoint.com/automata_theory/non_deterministic_finite_automaton.htm). The working of a vending machine can be represented as a Finite State Machine, where certain steps must be followed in a specific order to dispense candy according to the amount inserted in the slot. 
 
-![Finite State Machine](/engineering-education/regular-expressions-in-python/fsm.png)
+![Finite State Machine](/regular-expressions-in-python/fsm.png)
 
 *Source: [FSM of a Vending Machine](http://osr600doc.sco.com/en/SDK_c++/_What_is_a_Finite_State_Machine.html)*
 
@@ -290,4 +290,4 @@ Regular Expressions is a tool that comes in handy to avoid messy code and improv
 7. [Rexegg](https://www.rexegg.com/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

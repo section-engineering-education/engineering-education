@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/iot-deployments-with-sd-wan/
+url: /iot-deployments-with-sd-wan/
 title: IoT Deployments with SD-WAN
 description: This article will discuss how SD-WAN ensures successful IoT deployments and how it compares to the traditional wide area network (WAN).
 author: eric-kahuha
@@ -11,10 +11,10 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/iot-deployments-with-sd-wan/hero.jpg
+  - url: /iot-deployments-with-sd-wan/hero.jpg
     alt: IoT Deployments with SD-WAN example image
 ---
-The introduction of SD-WAN changed how a [wide area network](/engineering-education/network-types-topologies/) is managed and deployed. This technology has evolved together with the internet of things (IoT) to become two widely accepted technologies globally. IoT introduces the power of the internet, data analytics, and data processing to the real world of physical devices.
+The introduction of SD-WAN changed how a [wide area network](/network-types-topologies/) is managed and deployed. This technology has evolved together with the internet of things (IoT) to become two widely accepted technologies globally. IoT introduces the power of the internet, data analytics, and data processing to the real world of physical devices.
 <!--more-->
 However, various challenges hold the IoT back, including inadequate network resources, security, and lack of interoperability in IoT devices. SD-WAN comes to solve some of the primary issues that IoT is facing.
 
@@ -82,5 +82,5 @@ Organizations benefit from fast time-to-execution for initial installations and 
 SD-WAN solution enables organizations to exploit the IoT full potential without introducing unnecessary costs, risks, and complexity. It simplifies network architecture and better equips an organization to scale its IoT deployments securely and quickly.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

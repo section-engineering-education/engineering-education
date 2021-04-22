@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-software-development-life-cycle/
+url: understanding-software-development-life-cycle/
 title: Understanding the Software Development Life Cycle
 description: This article will take a reader through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-software-development-life-cycle/hero.jpg
+  - url: /understanding-software-development-life-cycle/hero.jpg
     alt: Software Development Life Cycle example image 
 ---
 In the current digital era, many software applications are being developed to solve various real-life problems. For software developers, understanding the software development life cycle (SDLC) facilitates the effective planning and delivery of high-quality software products. This article takes you through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
@@ -59,7 +59,7 @@ In this phase, the software is sent to a testing environment where it is tested 
 #### Deployment
 After ensuring that all customer requirements have been met, the developers deploy the software for use. Before actual deployment, the software should be documented for future reference. Ownership should also be transferred to the client. The deployment strategy depends on the specifications of the customer. It can be deployed in a data center or a client premise. 
 
-Sometimes software deployment can be done in stages. It may first be deployed to a limited [customer segment](https://www.cleverism.com/customer-segments-business-model-canvas/) to conduct [user acceptance testing (UAT)](/engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/). The client will collect feedback from the initial users and suggest further enhancements. The enhanced product will then be deployed to the entire target market. 
+Sometimes software deployment can be done in stages. It may first be deployed to a limited [customer segment](https://www.cleverism.com/customer-segments-business-model-canvas/) to conduct [user acceptance testing (UAT)](/how-to-carry-out-effective-user-acceptance-testing-uat/). The client will collect feedback from the initial users and suggest further enhancements. The enhanced product will then be deployed to the entire target market. 
 
 #### Maintenance
 This phase involves solving issues faced by the customers when they use the software. When an issue is solved by the developers or software engineers, the software is tested to ensure it functions well. The software is then handed back to the customer for use. In the maintenance phase, the software can be enhanced to add other new features. It can also be upgraded to establish a new version of the system. 
@@ -70,7 +70,7 @@ SDLC models are the methodologies employed by organizations in the development o
 #### Waterfall model
 This model consists of various stages with inputs and outputs. The next stage cannot begin without the completion of the initial phase. Each phase uses the output of the previous phase as the input. The software product is tested once all the stages have been completed. 
 
-![Waterfall Model](/engineering-education/understanding-software-development-life-cycle/waterfall-model.png)
+![Waterfall Model](/understanding-software-development-life-cycle/waterfall-model.png)
 
 [Image Source: Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png)
 
@@ -88,7 +88,7 @@ This model consists of various stages with inputs and outputs. The next stage ca
 #### Iterative model
 In this model, software development is first done on a small scale. In every single iteration, additional features are designed and added to the software. Each iteration involves coding and testing the software product. This cyclical process produces a software product in every cycle. This software has more features than the previous cycle. 
 
-![Iterative Model](/engineering-education/understanding-software-development-life-cycle/iterative-model.png)
+![Iterative Model](/understanding-software-development-life-cycle/iterative-model.png)
 
 [Image Source: Professional QA](https://www.professionalqa.com/assets/images/iterative-model.png)
 
@@ -106,7 +106,7 @@ In this model, software development is first done on a small scale. In every sin
 #### V-Model
 This model is an extension of the waterfall model. The development and testing stages are organized in a parallel way. This model consists of the verification stage on one side, and the validation or testing stage on the other side. These two sides are joined through coding. 
 
-![V-Model](/engineering-education/understanding-software-development-life-cycle/v-model.png)
+![V-Model](/understanding-software-development-life-cycle/v-model.png)
 
 [Image Source: Professional QA](https://www.professionalqa.com/assets/images/v-model.png)
 
@@ -126,7 +126,7 @@ This model combines aspects of the iterative and waterfall models. It goes beyon
 
 The software development process moves to the next step based on the evaluation done by the customer. The process moves along the spiral to the next phase. 
 
-![Spiral Model](/engineering-education/understanding-software-development-life-cycle/spiral-model.jpg)
+![Spiral Model](/understanding-software-development-life-cycle/spiral-model.jpg)
 
 [Image Source: Ultimate SDLC](https://ultimatesdlc.com/wp-content/uploads/2011/08/Boehm-Spiral-Model.jpg)
 
@@ -144,7 +144,7 @@ The software development process moves to the next step based on the evaluation 
 #### Agile model
 This is a combination of incremental and iterative models with more of a focus on customer satisfaction and adaptability. In this model, the development process is divided into incremental sections in iterations. In every iteration, cross-functional units work on areas such as planning, requirement analysis, design, coding, and testing. When each iteration ends, the product is shown to the customer and other stakeholders. The final product should meet all the specifications given by the customer. 
 
-![Agile Model](/engineering-education/understanding-software-development-life-cycle/agile-model.jpg)
+![Agile Model](/understanding-software-development-life-cycle/agile-model.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/sdlc/images/sdlc_agile_model.jpg)
 
@@ -179,4 +179,4 @@ A suitable SDLC model can be selected based on the customer requirements and the
 - [EDUCBA]( https://www.educba.com/what-is-software-development/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)

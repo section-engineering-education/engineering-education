@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/
+url: /how-to-build-astatic-site-with-gatsbyjs/
 title: How to Build a Static site with Gatsby.js
 description: This tutorial will help developers on how to get started building their very first static site using Gatsby.js. It will cover the the advantages JAMstack and Gatsby.js.
 author: jethro-magaji
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
+  - url: /how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
 The goal for this tutorial is to help you get started with building your very first static site using Gatsby.js.
@@ -321,4 +321,4 @@ In summary, we covered the advantages JAMstack and Gatsby.js. You created your f
 - [Gatsby - Full Tutorial for Beginners](https://www.youtube.com/watch?v=mHFAM0CXviE&t=2838s)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

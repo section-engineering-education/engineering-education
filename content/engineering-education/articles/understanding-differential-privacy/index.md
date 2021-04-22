@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-differential-privacy/
+url: /understanding-differential-privacy/
 title: Understanding Differential Privacy
 description: Introduction to differential privacy and methods used to preserve privacy in databases and how it is used with machine learning, and deep learning.
 author: srishilesh-p-s
@@ -10,7 +10,7 @@ date: 2020-10-15T00:00:00-08:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/understanding-differential-privacy/hero.png
+  - url: /understanding-differential-privacy/hero.png
     alt: Understanding Differential Privacy
 ---
 In this article, we will get an overview on resolving the privacy issue using differential privacy. You will understand the basics on how privacy is preserved in databases, used with machine learning, and deep learning. Although understanding differential privacy requires a mathematical background, this article will cover a very basic overview of the concepts. We will also be coding a sample database and check if it is differentially private or not.
@@ -46,7 +46,7 @@ A simpler way to understand this modern definition is to go over an example:
 
 Assume, we have a small database of 5000 entries with 0 or 1 as a value for each row, specifying certain property like 'people with cancer' as 1, and 'people without cancer' as 0. So, here our goal would be "Even if we removed detail of 1 person, the query of the database must not change” then the privacy of the information is protected. We will see its implementation very shortly.
 
-![Differential Privacy working](/engineering-education/understanding-differential-privacy/differential_privacy.png)
+![Differential Privacy working](/understanding-differential-privacy/differential_privacy.png)
 
 [Image source](https://www.winton.com/research/using-differential-privacy-to-protect-personal-data)
 
@@ -219,7 +219,7 @@ Database administrators have all the rights to query anything from the database,
 
 - A *trusted curator* is the owner of the database upon which the global differential privacy is applied. They are trusted to apply differential privacy correctly.
 
-![Local & Global differential privacy](/engineering-education/understanding-differential-privacy/local_global_privacy.png)
+![Local & Global differential privacy](/understanding-differential-privacy/local_global_privacy.png)
 
 [Image source](https://www.accessnow.org/understanding-differential-privacy-matters-digital-rights/)
 
@@ -306,4 +306,4 @@ To summarize:
 - [https://blog.cryptographyengineering.com/2016/06/15/what-is-differential-privacy/](https://blog.cryptographyengineering.com/2016/06/15/what-is-differential-privacy/)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/spring-data-mongodb/
+url: /spring-data-mongodb/
 title: Spring Data MongoDB
 description: This tutorial will walk us through how to create a Spring Boot CRUD API in Kotlin and MongoDB, add fields `dateCreated` and `lastModified` in the `Todo` data class.
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-data-mongodb/hero.jpg
+  - url: /spring-data-mongodb/hero.jpg
     alt: Spring Data MongoDB example image
 ---
 Spring Data MongoDB makes it possible to integrate a Spring Boot application with Mongo document database. It provides a `MongoRepository` containing all the methods used to perform MongoDB CRUD operations.
@@ -281,15 +281,15 @@ spring.data.mongodb.port=27017
 
 2. Click on the `Database Access` side menu and add a database user.
 
-![Mongo Atlas database user](/engineering-education/spring-data-mongodb/mongo-atlas-create-user.png)
+![Mongo Atlas database user](/spring-data-mongodb/mongo-atlas-create-user.png)
 
 3. Click on the `Cluster` side menu and create a database.
 
-![Mongo Atlas create database](/engineering-education/spring-data-mongodb/mongo-db-collection.png)
+![Mongo Atlas create database](/spring-data-mongodb/mongo-db-collection.png)
 
 4. On the `Cluster` side menu, click on `connect` and select the connection method as `connect your application`. Copy the connection string.
 
-![Mongo Atlas connection string](/engineering-education/spring-data-mongodb/mongo-db-connection-string.png) 
+![Mongo Atlas connection string](/spring-data-mongodb/mongo-db-connection-string.png) 
 
 5. Add configurations below to the `application.properties` file.
 
@@ -313,4 +313,4 @@ You can find the source code [here](https://github.com/paulodhiambo/mongodb).
 Happy coding.
 
 ---
-Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/authors/linus-muema/)

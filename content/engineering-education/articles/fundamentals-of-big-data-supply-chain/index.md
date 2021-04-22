@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/fundamentals-of-big-data-supply-chain/
+url: fundamentals-of-big-data-supply-chain/
 title: Fundamentals of Big Data Supply Chain
 description: This article will go through big data supply chains, which can eliminate common data problems such as data latency, data redundancy, and inconsistency.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/fundamentals-of-big-data-supply-chain/hero.jpg
+  - url: /fundamentals-of-big-data-supply-chain/hero.jpg
     alt: Big Data Supply Chain example Image
 ---
 Data is very important in all businesses. As data becomes larger, it becomes more challenging to manage. A big data supply chain ensures massive data flows appropriately in an organization and within its ecosystems. This is a process by which an organization's data is transformed into a valuable form for strategic use. 
@@ -37,7 +37,7 @@ Data supply chain is similar to the concept of the supply chain in the business 
 ### Components of Big Data Supply Chain
 The following diagram shows the main components of a big data supply chain.
 
-![Components of Big Data Supply Chain](/engineering-education/fundamentals-of-big-data-supply-chain/components-of-big-data-supply-chain.png)
+![Components of Big Data Supply Chain](/fundamentals-of-big-data-supply-chain/components-of-big-data-supply-chain.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2016/03/Data-Components.png)
 
@@ -84,4 +84,4 @@ A big data supply chain is essential to businesses because it provides meaningfu
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

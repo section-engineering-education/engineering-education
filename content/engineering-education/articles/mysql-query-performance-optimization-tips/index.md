@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/mysql-query-performance-optimization-tips/
+url: /mysql-query-performance-optimization-tips/
 title: MySQL Query Performance Optimization Tips
 description: This article will focus on the optimization of individual SQL statements and database structure as data volume grows.
 author: benson-kariuki
@@ -10,7 +10,7 @@ date: 2020-10-01T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/mysql-query-performance-optimization-tips/hero.jpg
+  - url: /mysql-query-performance-optimization-tips/hero.jpg
     alt: MySQL query optimizing tips image
 ---
 This article goes through common tips for optimizing MySQL queries. As data volume in your database grows, retrieving data from the database and other database operations become complex. This also requires more computing resources.
@@ -179,4 +179,4 @@ In the first query above, we used UNION ALL, while the second one, we have used 
 MySQL development is ongoing. More tips to optimize queries are developed every day. This article is a guide on how to make better queries and make more stable database applications. Query with no doubt.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

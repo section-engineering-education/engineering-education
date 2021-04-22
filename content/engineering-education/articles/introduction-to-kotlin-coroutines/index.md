@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-kotlin-coroutines/
+url: /introduction-to-kotlin-coroutines/
 title: Introduction to Kotlin Coroutines
 description: This article shows you some of the basics of writing asynchronous code using coroutines. Coroutines help us consecutively write asynchronous code while not using callbacks.
 author: peter-kayere
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-kotlin-coroutines/hero.jpg
+  - url: /introduction-to-kotlin-coroutines/hero.jpg
     alt: Kotlin Coroutines example image
 ---
 Coroutines were introduced in Kotlin 1.1. They brought about a new way of writing asynchronous, non-blocking code. An asynchronous code (from asynchronous programming) is code that runs parallel to others. It is also called `non-blocking` since it does not block the main thread. Asynchronous programming helps in running multiple unrelated tasks faster. In synchronous programming, the code is executed line by line.
@@ -33,7 +33,7 @@ On the next window, select kotlin, console application.
 
 Choose the project JDK, download one if none is installed.
 
-![New project](/engineering-education/introduction-to-kotlin-coroutines/new-project.png)
+![New project](/introduction-to-kotlin-coroutines/new-project.png)
 
 Give the project a name and click `next`. Leave the next screen to default settings and click finish.
 
@@ -206,4 +206,4 @@ We have also seen how we can obtain values from coroutines and how to create sus
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/debug-nodejs-vscode/
+url: /debug-nodejs-vscode/
 title: Debugging a Node.js app in VS Code
 description: This is an article on how to debug Node.js in VS Code with no configurations, with configurations, and using nodemon.
 author: geoffrey-mungai
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/debug-nodejs-vscode/hero.jpg
+  - url: /debug-nodejs-vscode/hero.jpg
     alt: debugging Node.js VS Code
 ---
 Debugging Node.js code can prove challenging for many people. It often involves putting `console.log` on every corner of your code. But, what if I were to tell you there is a simpler method? In this article, we will be looking at how you can use VS Code to debug a Node.js application.
@@ -24,7 +24,7 @@ Before proceeding, make sure you have the VS Code editor installed on your compu
 ### The Setup
 Open the Settings by pressing `CTRL+,`. You can also open the Command Palette (`Ctrl+Shift+P`) and type **Preferences: Open Settings(UI)**, or find the gear icon in the lower left corner of the interface.  In the search box, type in "Node.js". On the left side under **Extensions**, click **Node debug**. Look for **Debug > Node: Auto Attach**. It is set to **disabled** by default. Click it and set it to **on**. This will always be enabled for Node.js applications from now on. You can look for an **Auto Attach: On** statement at the bottom blue bar in VS Code to confirm.  
 
-![enabling auto attach in settings](/engineering-education/debug-nodejs-vscode/settings.jpg)
+![enabling auto attach in settings](/debug-nodejs-vscode/settings.jpg)
 
 Next, open the Node.js file you want to debug and set some breakpoints. Do this by clicking on the left side of the line numbers where you would like your code to stop. A red dot will appear when a breakpoint has been set. Breakpoints will aid in identifying the line or region where your code is failing. You can place them in between suspected regions or randomly if you have no idea where the bug is hiding.
 
@@ -35,7 +35,7 @@ If no prior configurations have been made, there are 2 tabs in the debug panel. 
 
 Click "Node.js Debug Terminal" to open the built-in terminal. Switch to the debug console using`Ctrl+Shift+Y` or by pressing "Debug Console". This is where you will view the debug logs. To start the debugging process, press the **Run and Debug** button on the debug panel and select Node.js if prompted. You can also run the app on a terminal using the `--inspect` flag like this  `node --inspect <filename>`.
 
-![debugging without configurations](/engineering-education/debug-nodejs-vscode/no-configurations.jpg)
+![debugging without configurations](/debug-nodejs-vscode/no-configurations.jpg)
 
 ### Debugging with Configurations
 Press **create a launch.json** and select Node.js in the prompt to create a launch.json configurations file. You can also create it via **Run**>**Add Configuration** and select Node.js. By default, it contains the following content:
@@ -65,7 +65,7 @@ You can add more configurations via the floating "Add configuration" button. (Le
 Then run the app in a terminal using the `--inspect` flag like this  `node --inspect <filename>`.
 Example: `node --inspect server.js`. You can also start the debugger by pressing `F5`.
 
-![debugging with configurations](/engineering-education/debug-nodejs-vscode/configurations.jpg)
+![debugging with configurations](/debug-nodejs-vscode/configurations.jpg)
 
 ### Debug with Nodemon
 [Nodemon](https://nodemon.io/) is a tool that auto-reloads the server and reattaches the debugger after you make changes to your app. You can install it via npm using `npm i nodemon`. Then add the following under configurations in your launch.json.
@@ -87,7 +87,7 @@ If you are using Windows, `npm i -g nodemon` should work. Edit and save your app
 
 For more on using nodemon and VS Code, click [here](https://code.visualstudio.com/docs/nodejs/nodejs-debugging/#_restarting-debug-sessions-automatically-when-source-is-edited).
 
-![debugging with nodemon](/engineering-education/debug-nodejs-vscode/nodemon.jpg)
+![debugging with nodemon](/debug-nodejs-vscode/nodemon.jpg)
 
 ### The Debugger in Action
 The terminal prints some lines along with `Debugger Attached`. The bottom blue bar color in VS Code turns to orange after the debugger is attached to your app. There also appears a floating button with play/pause, restart, and stop at the top center in VS Code.

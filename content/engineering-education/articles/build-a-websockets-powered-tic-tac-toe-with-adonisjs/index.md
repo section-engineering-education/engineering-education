@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/
+url: /build-a-websockets-powered-tic-tac-toe-with-adonisjs/
 title: Building a Websocket Powered Tic-Tac-Toe Game with Adonis.js
 description: In this article, we will learn about the WebSocket protocol. We will go over the details of building a Tic-Tac-Toe game using the WebSockets in Adonis.js.
 author: osinachi-chukwujama
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
+  - url: /build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
     alt: Adonis.js Websocket image
 ---
 Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2s move in less than a second. In this tutorial we will be using the WebSocket API to achieve this communication speed.
@@ -26,7 +26,7 @@ For this article we will use Adonis.js, which is a Node.js MVC framework, on the
 
 ### Prerequisites
 #### Node.js
-![nodejs-logo.png](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/nodejs-logo.png)
+![nodejs-logo.png](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/nodejs-logo.png)
 
 First, check that your Node.js version is >= 10.
 
@@ -38,7 +38,7 @@ $ node -v
 Install the latest LTS version of Node.js from the [official website](http://nodejs.org/) if yours is less than v10.
 
 #### Redis
-![Redis Logo](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/redis.png)
+![Redis Logo](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/redis.png)
 
 We will use Redis to handle the game state. Horizontal scaling is a common requirement in modern software development. We should be able to spin up and tear down servers at will. This means we shouldn't store the state in our apps since the instances will not be able to share the state.
 
@@ -53,11 +53,11 @@ According to Wikipedia:
 
 A WebSocket is a communication channel that allows for bi-directional communication. Emissions and broadcasts replace the request-response mechanism in HTTP.
 
-![Client to server](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/client-to-server.png)
+![Client to server](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/client-to-server.png)
 
 A server can broadcast to several connected clients at the same time.
 
-![Server to two clients](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/server-to-multiple-clients.png)
+![Server to two clients](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/server-to-multiple-clients.png)
 
 Clients emit information to the server without waiting for a response. That way communication occurs through listeners that are set up by the client.
 
@@ -66,17 +66,17 @@ The project follows this architecture:
 
 - A user sets a username.
 
-![set-username.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/set-username.gif)
+![set-username.gif](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/set-username.gif)
 
 - The user generates a game code.
 
-![generate-game-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/generate-game-code.gif)
+![generate-game-code.gif](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/generate-game-code.gif)
 
 - The user shares the game code with a friend.
 
 - The friend sets a username and uses the game code to initialize the game.
 
-![joining-game-with-code.gif](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/joining-game-with-code.gif)
+![joining-game-with-code.gif](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/joining-game-with-code.gif)
 
 - Both users are redirected to the game where they play in rounds.
 
@@ -283,7 +283,7 @@ for (let sequence of winningSequences) {
 
 Here's a visualization of an iteration on move 7.
 
-![Winning Sequence Visualization](/engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/winning-sequence-iteration.png)
+![Winning Sequence Visualization](/build-a-websockets-powered-tic-tac-toe-with-adonisjs/winning-sequence-iteration.png)
 
 #### Draw state
 At the start of the game, the board is an 8 sized array of empty strings.
@@ -346,5 +346,5 @@ In this article, we learned about the WebSocket protocol. We saw the details of 
 3. [Internet Engineering Task Force (IETF) Websocket Protocol](https://tools.ietf.org/html/rfc6455)
 
 ---
-Peer Review Contributions by: [Wilson Gichuhi](/engineering-education/authors/wilson-gichuhi/)
+Peer Review Contributions by: [Wilson Gichuhi](/authors/wilson-gichuhi/)
 

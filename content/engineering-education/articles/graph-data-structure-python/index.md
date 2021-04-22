@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/graph-data-structure-python/
+url: /graph-data-structure-python/
 title: Using the Graph Data Structure in Python
 description: Graphs are special, non-linear data structures that are characterized by a group of vertices, connected by edges.
 author: saiharsha-balasubramaniam
@@ -10,20 +10,20 @@ date: 2020-11-02T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/graph-data-structure-python/hero.jpg
+  - url: /graph-data-structure-python/hero.jpg
     alt: graph data structure example image
 ---
 In this article, we will look into the basics of graphs, the different types of graphs, and their [representation](https://www.javatpoint.com/graph-theory-graph-representations).
 <!--more-->
 Graphs are complex, non-linear data structures that are characterized by a group of vertices, connected by edges. For more information on the *different types of data structures in Python*, check out the following articles:
 
-- [Introduction to Data Structures](/engineering-education/data-structures-python-part-1/)
-- [List](/engineering-education/list-data-structure-python/)
-- [Stack](/engineering-education/stack-data-structure-python/)
-- [Queue](/engineering-education/queue-data-structure-python/)
-- [Linked Lists](/engineering-education/linked-list-data-structure-python/)
-- [Binary Trees](/engineering-education/binary-tree-data-structure-python/)
-- [Heaps](/engineering-education/heap-data-structure-python/)
+- [Introduction to Data Structures](/data-structures-python-part-1/)
+- [List](/list-data-structure-python/)
+- [Stack](/stack-data-structure-python/)
+- [Queue](/queue-data-structure-python/)
+- [Linked Lists](/linked-list-data-structure-python/)
+- [Binary Trees](/binary-tree-data-structure-python/)
+- [Heaps](/heap-data-structure-python/)
 
 ### Table of Contents
 - [Graphs: Introduction](#graphs:-introduction)
@@ -40,7 +40,7 @@ Graphs are non-linear data structures made up of two major components:
 
 - **Edges** -- Edges represent the relationship between the vertices in the graph. Edges may or may not have a value associated with them. For example, if we represent a list of cities using a graph, the edges would represent the path between the cities.
 
-![Graph Diagram](/engineering-education/graph-data-structure-python/graph.png)
+![Graph Diagram](/graph-data-structure-python/graph.png)
 
 *Figure: [Graph](https://www.andrew.cmu.edu/course/15-121/lectures/Trees/trees.html)*
 
@@ -70,7 +70,7 @@ In an undirected graph, the edges have no path or direction. If there is a path 
 
 That is, `edge (X, Y) == edge (Y, X)`.
 
-![Undirected Graph](/engineering-education/graph-data-structure-python/undirected-graph.png)
+![Undirected Graph](/graph-data-structure-python/undirected-graph.png)
 
 *Figure: [Undirected Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
@@ -79,7 +79,7 @@ In a directed graph or digraph, the edges have an orientation. If there is a pat
 
 That is, `edge (X, Y) != edge (Y, X)`.
 
-![Directed Graphs](/engineering-education/graph-data-structure-python/directed-graph.png)
+![Directed Graphs](/graph-data-structure-python/directed-graph.png)
 
 *Figure: [Directed Graph](https://pediaa.com/what-is-the-difference-between-directed-and-undirected-graph/)*
 
@@ -93,7 +93,7 @@ A weighted graph has a value associated with every edge. The value may represent
 
 These weighted graphs are extensively used in modelling Computer Networks. For a career as a Networking Engineer, the knowledge of weighted graphs are a must.
 
-![Weighted Graphs](/engineering-education/graph-data-structure-python/weighted-graph.png)
+![Weighted Graphs](/graph-data-structure-python/weighted-graph.png)
 
 *Figure: [Weighted Graph](https://www.clipartmax.com/middle/m2i8Z5i8G6b1b1b1_directed-weighted-ex1-directed-weighted-graph/)*
 
@@ -105,7 +105,7 @@ An unweighted graph does not have a value associated with every edge. An edge of
 
 Relationships in query languages like GraphQL can be represented by using Unweighted Graphs.
 
-![Unweighted Graphs](/engineering-education/graph-data-structure-python/unweighted-graph.png)
+![Unweighted Graphs](/graph-data-structure-python/unweighted-graph.png)
 
 *Figure: [Unweighted Graph](https://www.researchgate.net/figure/Unweighted-Undirected-Graph_fig3_327864836)*
 
@@ -115,14 +115,14 @@ An undirected graph with zero cycles is called a tree. A cycle in a graph is a s
 
 It has X vertices and X-1 edges.
 
-![Tree - Graphs](/engineering-education/graph-data-structure-python/tree-graph.png)
+![Tree - Graphs](/graph-data-structure-python/tree-graph.png)
 
 *Figure: [Tree](https://en.wikipedia.org/wiki/Tree_(graph_theory))*
 
 ##### Rooted Tree
 A rooted tree is a tree that has a designated root node. If edges point away from the root, it is called an **arborescence/out-tree**. If edges point towards the root, it is called an **anti-arborescence/in-tree**.
 
-![Rooted Tree](/engineering-education/graph-data-structure-python/rooted-trees.png)
+![Rooted Tree](/graph-data-structure-python/rooted-trees.png)
 
 *Figure: [Rooted Tree](https://www.youtube.com/watch?v=09_LlHjoEiY&t=213s)*
 
@@ -131,7 +131,7 @@ Directed Acyclic Graphs or DAGs are graphs with no directed cycles. They represe
 
 Directed Acyclic Graphs are used by compilers to represent expressions and relationships in a program.
 
-![Directed Acyclic Graph](/engineering-education/graph-data-structure-python/dag.png)
+![Directed Acyclic Graph](/graph-data-structure-python/dag.png)
 
 *Figure: [Directed Acyclic Graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph)*
 
@@ -140,7 +140,7 @@ Complete graphs have a unique edge between every pair of vertices. A complete gr
 
 Fully connected networks in a Computer Network uses a complete graph in its representation.
 
-![Complete Graph](/engineering-education/graph-data-structure-python/complete-graph.png)
+![Complete Graph](/graph-data-structure-python/complete-graph.png)
 
 *Figure: [Complete Graph](https://www.geeksforgeeks.org/mathematics-graph-theory-basics/)*
 
@@ -246,4 +246,4 @@ To learn more about graphs, check out the following pages:
 - Graph Representation -- [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/tutorial/)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

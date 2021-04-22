@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-jenkins/
+url: /what-is-jenkins/
 title: What is Jenkins
 description: Developers use Jenkins to continuously build and test software projects, making it easier to integrate changes to the project and making it easier for users to obtain a good build with no errors and bugs.
 author: judy-nduati
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-jenkins/hero.jpg
+  - url: /what-is-jenkins/hero.jpg
     alt: Jenkins Continuous Integration tool
 ---
 Continuous Integration (CI) is a software development practice where developers integrate code into a shared repository frequently during [development](https://www.martinfowler.com/articles/continuousIntegration.html). Jenkins is a Continuous Integration (CI) tool and an open-source tool written in Java.
@@ -92,4 +92,4 @@ The use of Jenkins has helped developers get feedback faster after the code is i
 In conclusion, CI is vital for software development. Continuous Integration has impacted and benefited developers in massive ways, such as experiencing fewer conflicts during code integration, detecting problems easily, and increasing developer's productivity. This is because programs can be built and tested automatically and continuously. Jenkins is a tool that enables developers to achieve Continuous Integration with the help of plugins that add more value to CI.
 
 ---
-Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)

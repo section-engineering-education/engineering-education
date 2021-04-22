@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/all-about-fragments-in-android-applications/
+url: /all-about-fragments-in-android-applications/
 title: Introduction to Fragments in Android Applications
 description: In this tutorial we will learn how to add fragments and navigate across different screens in an Android application to enrich your UI design.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/all-about-fragments-in-android-applications/hero.png
+  - url: /all-about-fragments-in-android-applications/hero.png
     alt: Fragments in Android Applications image
 ---
 According to the Android [documentation](https://developer.android.com/guide/fragments), a fragment is a part of applications user interface that is bound to an activity. Fragments have their lifecycle and layouts or UI components. Fragments help enrich your UI design, pass data between different screens, and adapt to different device configurations. 
@@ -38,7 +38,7 @@ Such as listed below:
 
 The image below shows how the fragment lifecycle methods are classified.
 
-![fragment lifecycle](/engineering-education/all-about-fragments-in-android-applications/fragment-view-lifecycle.png)
+![fragment lifecycle](/all-about-fragments-in-android-applications/fragment-view-lifecycle.png)
 
 *[Image Source](https://developer.android.com/images/guide/fragments/fragment-view-lifecycle.png)*
 
@@ -92,14 +92,14 @@ To create a simple mobile app that demonstrates how fragments are used in Androi
 ### 1. Creating the project
 Create a new empty activity project in Android studio and name it as `NavExample.` Ensure that you select `Kotlin` as your preferred programming language.
 
-![launch project](/engineering-education/all-about-fragments-in-android-applications/launch-project.png)
+![launch project](/all-about-fragments-in-android-applications/launch-project.png)
 
 ### 2. Create a navigation graph
 A navigation graph outlines all the actions, destinations, and logical connections in an application. It helps you determine how the user will navigate through the application.
 
 Go to res folder and create a new Android resource file. Name it `navigation.xml.`
 
-![navigation graph](/engineering-education/all-about-fragments-in-android-applications/navigation-graph.png)
+![navigation graph](/all-about-fragments-in-android-applications/navigation-graph.png)
 
 After you have created the navigation file, a new dialog will appear prompting you to install several dependencies. 
 
@@ -268,7 +268,7 @@ You can then add the `correctFragment` and `wrongFragment`. Link the `questionFr
 
 Similarly, draw an arrow from the `correctFragment` and `wrongFragment` to the `questionFragment`. This basically means that we can navigate to and from the `main` fragment. Your final navigation graph should look, as shown below.
 
-![final nav graph](/engineering-education/all-about-fragments-in-android-applications/final-graph.png)
+![final nav graph](/all-about-fragments-in-android-applications/final-graph.png)
 
 ### 6. Handling events
 In this tutorial, we will mainly be handling click events. When a user presses a button, they need to be redirected to a certain destination or fragment. 
@@ -426,4 +426,4 @@ You can download the full project from [here](https://github.com/WanjaMIKE/NavEx
 - [Fragments](https://developer.android.com/guide/fragments/lifecycle)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

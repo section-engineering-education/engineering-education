@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-consume-data-from-an-api-in-android/
+url: /how-to-consume-data-from-an-api-in-android/
 title: How To Consume Data From an API in Android
 description: This tutorial provides a guideline on how to make an API request based on the user's action. We will make a simple search app that sends a request to the OMDb movie API and receives data.
 author: michael-barasa
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-consume-data-from-an-api-in-android/hero.png
+  - url: /how-to-consume-data-from-an-api-in-android/hero.png
     alt: API image example
 ---
 APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.
@@ -30,7 +30,7 @@ To understand this tutorial, you must have a basic knowledge of Kotlin. Furtherm
 ### Step 1 - Getting started
 Launch Android Studio and create a new project with an empty activity, as shown below.
 
-![New Project](/engineering-education/how-to-consume-data-from-an-api-in-android/new-project.png)
+![New Project](/how-to-consume-data-from-an-api-in-android/new-project.png)
 
 Give the project any name, and then click on the `finish` button. Kindly note that the creation of the project usually takes some considerable time. Therefore, you need to be patient.
 
@@ -69,7 +69,7 @@ The input variable will allow us to search different movies in the OMDb API. The
 ### Step 4 - Layout design
 The application will have a simple layout like the one shown below.
 
-![App Layout](/engineering-education/how-to-consume-data-from-an-api-in-android/layout.jpg)
+![App Layout](/how-to-consume-data-from-an-api-in-android/layout.jpg)
 
 We will use a `LinearLayout` to arrange different components on the screen. Note that the layout’s orientation is set to vertical. Here is the code for `activity-main.xml`.
 
@@ -129,7 +129,7 @@ In the above layout, we have assigned an ID to our components. We will use these
 The `EditText` widget allows us to get the user’s input. When clicked, the search button will initiate a request to the OMDb API. The `ImageView` and `TextViews` will display the data returned from the server.
 
 ### Step 5 - Connecting to the API
-This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/).
+This tutorial shows how you to make simple API requests. Therefore, all our logic is in the `MainActivity` file rather than in a separate component such as a `ViewModel`. In case you want to learn more about the MVVM architecture in Android, you can read this [article](/implementing-mvvm-architecture-in-android-using-kotlin/).
 
 We need to do the following things in the `MainActivity`.
 - Initiate a `requestQueue`.
@@ -284,7 +284,7 @@ In the same file, scroll to the application section and add `android:usesClearte
 
 We can now compile and run the application on our phones.
 
-![App Gif](/engineering-education/how-to-consume-data-from-an-api-in-android/app.gif)
+![App Gif](/how-to-consume-data-from-an-api-in-android/app.gif)
 
 ### Conclusion
 From the above tutorial, we have learned:
@@ -296,4 +296,4 @@ From the above tutorial, we have learned:
 You can, therefore, use this knowledge to develop more complex applications.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/serverless-api-firebase/
+url: /serverless-api-firebase/
 title: Build a Serverless API using Firebase Functions
 description: This article walks a beginner through creating, writing and deploying a simple RESTful API using the firebase-cli tools onto a publicly hosted link.
 author: saiharsha-balasubramaniam
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/serverless-api-firebase/hero.jpg
+  - url: /serverless-api-firebase/hero.jpg
     alt: serverless api firebase image
 
 ---
@@ -35,7 +35,7 @@ One more downside to this is that since a virtual machine is an **Infrastructure
 
 Enter, Serverless Functions...
 
-![Serverless](/engineering-education/serverless-api-firebase/serverless.jpeg)
+![Serverless](/serverless-api-firebase/serverless.jpeg)
 
 No, it's not like you think. Serverless functions do run on a server. But they're called so because it eliminates the need for managing the software and hardware of the server. It is as simple as copying and pasting code and hitting **deploy**.
 
@@ -48,7 +48,7 @@ Let's get started. First, please install Node from [here](https://nodejs.org/en/
 - Now, once you're done installing, let's initialize our project.
 - Create a new directory for your project.
 - Open up a terminal, cd to the project directory, and type `npm init`
-![Node Initialization](/engineering-education/serverless-api-firebase/npm-setup.png)
+![Node Initialization](/serverless-api-firebase/npm-setup.png)
 - For now, accept the default options and let the project be initialized.
 - Install firebase by typing, `npm install -g firebase-tools`
 - Awesome!
@@ -64,14 +64,14 @@ Let's get started. First, please install Node from [here](https://nodejs.org/en/
 Let's initialize a project in firebase.
 
 - Type `firebase init`
-![Firebase Initialization](/engineering-education/serverless-api-firebase/firebase-init.png)
+![Firebase Initialization](/serverless-api-firebase/firebase-init.png)
 - When it asks for what CLI features are needed, just choose Firebase Functions for now.
-![Firebase Setup](/engineering-education/serverless-api-firebase/functions-setup.png)
+![Firebase Setup](/serverless-api-firebase/functions-setup.png)
 - It will ask to connect to a project, create a new one, and drop in a name of your choice.
 - Choose **`JavaScript`** as the language for functions.
 - Choose to not use `ESLint`, as we don't really need it now.
 - Now, our firebase project is ready!
-![Project Setup](/engineering-education/serverless-api-firebase/project-setup.png)
+![Project Setup](/serverless-api-firebase/project-setup.png)
 
 ### Write the API
 Now, let's jump into the programming part.
@@ -124,7 +124,7 @@ First though, we have to specify the function dependencies in our **`package.jso
 ### Deploy
 Let's deploy our function! Enter the command, `firebase deploy` in the terminal.
 
-![Firebase, Deploy](/engineering-education/serverless-api-firebase/deploy.png)
+![Firebase, Deploy](/serverless-api-firebase/deploy.png)
 
 You have successfully deployed the API! Yay! Now get your API URL from the [Firebase Console](https://console.firebase.google.com).
 
@@ -135,7 +135,7 @@ Install and open Postman, and with the request type as GET, enter the URL of you
 
 You'd get a response that looks something like this:
 
-![API Response](/engineering-education/serverless-api-firebase/api-res.png)
+![API Response](/serverless-api-firebase/api-res.png)
 
 The API works really well. You could also try to send a request to "/hello" and check it out.
 

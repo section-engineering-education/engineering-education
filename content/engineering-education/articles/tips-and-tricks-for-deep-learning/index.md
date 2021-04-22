@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/tips-and-tricks-for-deep-learning/
+url: /tips-and-tricks-for-deep-learning/
 title: Tips and Tricks for Deep Learning
 description: This article will explore various tips and tricks that may be useful when training deep learning models. We tweak deep learning models to improve them with more training and to improve the accuracy of results.
 author: willies-ogola
@@ -10,10 +10,10 @@ date: 2020-11-26T00:00:00-20:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/tips-and-tricks-for-deep-learning/hero.jpg
+  - url: /tips-and-tricks-for-deep-learning/hero.jpg
     alt: tips and tricks for deep learning image example
 ---
-This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
+This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).
 <!--more-->
 
 ### Table of contents
@@ -32,7 +32,7 @@ This article assumes a basic understanding of Machine Learning (ML) and Deep Lea
 7. [References](#references)
 
 ### Prerequisites
-A comprehensive understanding of [Deep Learning (DL)](/engineering-education/introduction-to-deep-learning/) is essential before reading this article, as most of the concepts and techniques you'll encounter are advanced. If you're still new to neural networks and DL, please read my previous [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/). It will be a good place to start to understand the basics of DL. 
+A comprehensive understanding of [Deep Learning (DL)](/introduction-to-deep-learning/) is essential before reading this article, as most of the concepts and techniques you'll encounter are advanced. If you're still new to neural networks and DL, please read my previous [article](https://www.section.io/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/). It will be a good place to start to understand the basics of DL. 
 
 ### Introduction
 What's the use in tweaking our Deep Learning (DL) models?
@@ -50,33 +50,33 @@ This technique was first introduced in 2012 by the author of [AlexNet](https://p
 Let's take a look at pictorial examples of how the original image is altered.
 
 ##### Original image
-![An original image of a dog](/engineering-education/tips-and-tricks-for-deep-learning/original-image.jpg)<br>
+![An original image of a dog](/tips-and-tricks-for-deep-learning/original-image.jpg)<br>
 
 This image represents the original image, that has not been altered in any way.
 
 ##### Rotated image
-![Rotated Image](/engineering-education/tips-and-tricks-for-deep-learning/rotate-image.jpg)<br>
+![Rotated Image](/tips-and-tricks-for-deep-learning/rotate-image.jpg)<br>
 
 This image is slightly rotated to the right.
 
 ##### Flipped image
-![Flipped Image](/engineering-education/tips-and-tricks-for-deep-learning/flip-image.jpg)<br>
+![Flipped Image](/tips-and-tricks-for-deep-learning/flip-image.jpg)<br>
 
 ##### Cropped image 
-![Cropped Image](/engineering-education/tips-and-tricks-for-deep-learning/cropped-image.jpg)<br>
+![Cropped Image](/tips-and-tricks-for-deep-learning/cropped-image.jpg)<br>
 
 This image is cropped. The focus has been put on one side of the image. 
 
 ##### Noisy image
-![Noisy Image](/engineering-education/tips-and-tricks-for-deep-learning/noisy-image.jpg)<br>
+![Noisy Image](/tips-and-tricks-for-deep-learning/noisy-image.jpg)<br>
 
 This image is the version of the original image with added noise. 
 
 ##### Color shifted image
-![Color shifted Image](/engineering-education/tips-and-tricks-for-deep-learning/color-shifted-image.jpg)<br>
+![Color shifted Image](/tips-and-tricks-for-deep-learning/color-shifted-image.jpg)<br>
 
 ##### Contrast changed image
-![Contrast changed Image](/engineering-education/tips-and-tricks-for-deep-learning/contrast-changed-image.jpg)<br>
+![Contrast changed Image](/tips-and-tricks-for-deep-learning/contrast-changed-image.jpg)<br>
 
 If done correctly, data augmentation can be a very powerful tool. It forces the neural network to focus more on an image's attributes instead of the image themselves. This also increases the data needed for training.
 
@@ -97,7 +97,7 @@ Using such imbalanced data as inputs to our neural network can cause four major 
 
 To avoid the problems mentioned above, we normalize their ages and distance inputs to fit the same scale. From our example, we can scale down our two input data to a scale of between 0 to 1. Normalization reduces the wide ranges between the data points. However, normalization only solves part of the problem.
 
-In my previous [article](/engineering-education/basics-of-convolution-neural-networks/), I discussed how training is achieved by updating the weights of the neural network iteratively through a process known as backpropagation. But, there is a problem that occurs during training. 
+In my previous [article](/basics-of-convolution-neural-networks/), I discussed how training is achieved by updating the weights of the neural network iteratively through a process known as backpropagation. But, there is a problem that occurs during training. 
 
 As the distribution of each layer's input keeps changing, the previous layers' parameters also change simultaneously. The inputs to each hidden layer should have a minimal to no change as the neural network trains, but it keeps changing as training happens. 
 
@@ -105,7 +105,7 @@ This ends up slowing down the training process as there is a need to use lower l
 
 Batch norm normalizes the information being passed between hidden layers to mitigate the internal covariate shift problem. This means that when information is passed from one hidden layer to another, the mean and standard deviation are calculated for every training mini-batch. This then helps us obtain a normalized output on each batch using the formula:
 
-![Batch Normalization formula](/engineering-education/tips-and-tricks-for-deep-learning/batch-normalization.PNG)<br>
+![Batch Normalization formula](/tips-and-tricks-for-deep-learning/batch-normalization.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)*
 
@@ -134,25 +134,25 @@ There are two commonly used ways in which we could initialize the weights of our
 Let's discuss these two.
 
 ##### Transfer learning
-[Transfer learning](/engineering-education/basics-of-transfer-learning/) is a deep learning technique whereby a model is developed for one task but then re-used as a starting point for a separate task. This technique helps leverage the pre-trained weight of that model in our new model. Besides, transfer learning saves a lot of time as training a deep learning model from scratch requires a lot of training data and computing power. 
+[Transfer learning](/basics-of-transfer-learning/) is a deep learning technique whereby a model is developed for one task but then re-used as a starting point for a separate task. This technique helps leverage the pre-trained weight of that model in our new model. Besides, transfer learning saves a lot of time as training a deep learning model from scratch requires a lot of training data and computing power. 
 
 We can use this technique in various ways, depending on the amount of data one has. These include leveraging transfer learning with small, medium, and large training sizes. 
 
 Let's take a look at pictorial examples of how this is done.
 
-![Transfer Learning with a small training size](/engineering-education/tips-and-tricks-for-deep-learning/small-tl.PNG)<br>
+![Transfer Learning with a small training size](/tips-and-tricks-for-deep-learning/small-tl.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)* 
 
 Here, all layers in the neural network with pre-trained weights are frozen. It's only the softmax layer whose weights can be trained on. This is ideal if you have a small training size.
 
-![Transfer Learning with a medium training size](/engineering-education/tips-and-tricks-for-deep-learning/medium-tl.PNG)<br>
+![Transfer Learning with a medium training size](/tips-and-tricks-for-deep-learning/medium-tl.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)*
 
 If you have a medium training size, perform transfer learning on a neural network where most of the layers with the pre-trained weights, excluding the last layer and the softmax layer, have been frozen as shown above. This gives you a little more room to train your data on. 
 
-![Transfer Learning with a large training size](/engineering-education/tips-and-tricks-for-deep-learning/large-tl.PNG)<br>
+![Transfer Learning with a large training size](/tips-and-tricks-for-deep-learning/large-tl.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)*
 
@@ -204,7 +204,7 @@ The term Adam is not an acronym for ADAM. It stands for Adaptive Moment Estimati
 
 The figure below shows a comparison (in regards to convergence) of the different adaptive learning rate algorithms on the MNIST neural network.
 
-![A comparison of convergence of the different algorithms](/engineering-education/tips-and-tricks-for-deep-learning/convergence.PNG)<br>
+![A comparison of convergence of the different algorithms](/tips-and-tricks-for-deep-learning/convergence.PNG)<br>
 
 *[Image Source: ResearchGate](https://www.researchgate.net/figure/Comparison-of-different-optimizer-by-training-of-multilayer-neural-networks-on-MNIST_fig1_324808725/)*
 
@@ -220,7 +220,7 @@ Dropout is a technique used in deep learning to prevent neural networks from ove
 
 The fundamental idea behind dropout is to drop units together with their connections during training temporarily. This technique forces the neural network to not rely heavily on specific sets of features.
 
-![Dropout](/engineering-education/tips-and-tricks-for-deep-learning/dropout.PNG)<br>
+![Dropout](/tips-and-tricks-for-deep-learning/dropout.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)*
 
@@ -230,7 +230,7 @@ Besides preventing overfitting, the dropout technique improves the performance o
 
 The image below shows features learned on the MNIST database before and after a dropout value of 50% is applied.
 
-![Before and after dropout](/engineering-education/tips-and-tricks-for-deep-learning/before-after-dropout.PNG)<br>
+![Before and after dropout](/tips-and-tricks-for-deep-learning/before-after-dropout.PNG)<br>
 
 *[Image Source: Journal of Machine Learning Research](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)*
 
@@ -239,7 +239,7 @@ It's a regularization technique whereby training is stopped as soon as the valid
 
 It helps prevent overfitting in neural networks. Early stopping happens when the neural network is trained to a certain point where it starts to memorize the training data rather than generalize it. 
 
-![Early stopping](/engineering-education/tips-and-tricks-for-deep-learning/early-stopping.PNG)<br>
+![Early stopping](/tips-and-tricks-for-deep-learning/early-stopping.PNG)<br>
 
 *[Image Source: StanFord](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)*
 
@@ -261,7 +261,7 @@ That's all there is for this article. I hope the mentioned techniques help you i
 7. [Hero image](https://unsplash.com/photos/-rF4kuvgHhU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 
  
 

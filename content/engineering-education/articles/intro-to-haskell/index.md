@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intro-to-haskell/
+url: /intro-to-haskell/
 title: Functional Programming with Haskell
 description: This article will serves as an introduction to functional programming with Haskell. Haskell uses a non-strict ("lazy") evaluation. This means expressions aren't evaluated unless it's necessary.   
 author: nimra-aftab
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/intro-to-haskell/hero.jpg
+  - url: /intro-to-haskell/hero.jpg
     alt: Functional Programming with Haskell image example
 ---
 There are many functional programming languages, and Haskell is one of them. This article covers some aspects of functional programming with Haskell. It assumes that you are familiar with lists, functions, loops, and recursion. 
@@ -132,4 +132,4 @@ The [HaskellWiki](https://wiki.haskell.org/Haskell) is another excellent resourc
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

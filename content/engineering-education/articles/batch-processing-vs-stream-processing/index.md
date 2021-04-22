@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/batch-processing-vs-stream-processing/
+url: /batch-processing-vs-stream-processing/
 title: Batch Processing vs. Stream Processing
 description: This article will discuss batch processing and stream processing, their benefits, a few drawbacks, and some use cases.
 author: eric-kahuha
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/batch-processing-vs-stream-processing/hero.jpg
+  - url: /batch-processing-vs-stream-processing/hero.jpg
     alt: Batch Processing vs. Stream Processing example image
 ---
 Organizations are leveraging cloud technologies and big data to promote a data-driven decision making culture, modernize data centers, and improve traditional information technology structure. Cloud computing has transformed the data analytics industry in many aspects.
@@ -90,5 +90,5 @@ The most significant factor for data processing teams is flexibility. Different 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
 

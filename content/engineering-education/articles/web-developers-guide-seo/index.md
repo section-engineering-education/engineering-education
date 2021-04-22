@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/web-developers-guide-seo/
+url: /web-developers-guide-seo/
 title: Developer's Guide to Search Engine Optimization
 description: A developers guide on implementing various techniques to improve a website's ranking on search engines such as Google.
 author: lalithnarayan-c
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/web-developers-guide-seo/hero.jpg
+  - url: /web-developers-guide-seo/hero.jpg
     alt: web developers guide to SEO
 ---
 Search engine optimization (SEO) is an incredibly important aspect of designing websites. SEO is usually tackled by the marketing department in a given company. But, developers have an equal role to play in ensuring the website is easily found on the search engines.
@@ -86,7 +86,7 @@ They are as follows:
 
 These meta tags can be validated using [Facebook's tool](https://developers.facebook.com/tools/debug/). Let us look at how these property names help enhance the user experience in a Facebook post.
 
-![open graph protocol](/engineering-education/web-developers-guide-seo/opengraph.jpg)
+![open graph protocol](/web-developers-guide-seo/opengraph.jpg)
 *[Image Source](https://2.bp.blogspot.com/-kzdcNpZkkK0/VBHOHfDjlkI/AAAAAAAAALs/Ud6T0JfaB4A/s1600/SharedLink.png)*
 
 The `canonicalURL` mentioned in the meta tag is an alias for human-readable URLs. Let's understand it in detail. When we go to a link on Amazon's website, we find that the page URL has the book's name in it and some other details as well.
@@ -102,7 +102,7 @@ The name of the book may change which may lead to a change in the fetched URL. T
 <meta property="twitter:property_name" content="canonicalURL">
 ```
 
-![twitter cards](/engineering-education/web-developers-guide-seo/twittercards.jpg)
+![twitter cards](/web-developers-guide-seo/twittercards.jpg)
 
 *[Image Source](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup)*
 
@@ -121,10 +121,10 @@ The player denotes the source URL of the media. Player height and width denote t
 ### Server-Side Rendering
 Server-side rendering enables the crawlers to get all the content including the images, videos, links, etc. Therefore, crawlers get more data to build knowledge graphs. This increases the chances of being found on a web search, as the number of phrases that the website shows up for is significantly higher.
 
-In this article, [Node.js vs Next.js](/engineering-education/node-versus-next-react-approach/), we looked at in depth how Next.js enables efficient SEO.
+In this article, [Node.js vs Next.js](/node-versus-next-react-approach/), we looked at in depth how Next.js enables efficient SEO.
 
 ### Conclusion
 We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites. Be legendary.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)

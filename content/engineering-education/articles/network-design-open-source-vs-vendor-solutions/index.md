@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-design-open-source-vs-vendor-solutions/
+url: /network-design-open-source-vs-vendor-solutions/
 title: Networking Decisions - Open Source vs. Vendor Solutions  
 description: An overview of open source vs vendor solutions to help engineers to make a more informed choice when selecting network equipment.
 author: aakash-rawal
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/network-design-open-source-vs-vendor-solutions/hero.jpg
+  - url: /network-design-open-source-vs-vendor-solutions/hero.jpg
     alt: open source vs vendor networking solutions
 ---
 A critical function of a network design team is to decide on which solutions they are going to select for all the hardware, software, and other resources needed to get a network up and running. Considering budget and other constraints, it is often a dilemma for engineers to choose between open source offerings and vendor-provided solutions. Each has their benefits and shortcomings.

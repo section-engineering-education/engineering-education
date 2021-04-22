@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-game-development-windows-forms/
+url: getting-started-with-game-development-windows-forms/
 title: Getting Started with Game Development using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
 author: mohamed-alghadban
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-game-development-windows-forms/hero.jpg
+  - url: /getting-started-with-game-development-windows-forms/hero.jpg
     alt: Windows Forms C# example image 
 ---
 Playing video games is always fun, but what about making one? In this tutorial, we will go through the steps of making a small puzzle game called Mastermind using windows forms. Mastermind is a puzzle game that tests the memory and the ability of the player to determine the exact output between all the possibilities.
@@ -26,7 +26,7 @@ Before we begin, it would help you as the reader to have the following:
 - Visual Studio installed on your system.
 
 If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and if you are new to 
-Windows forms you can check this tutorial that would help you understand the basics of it [here](/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
+Windows forms you can check this tutorial that would help you understand the basics of it [here](/getting-started-with-windows-forms-using-c-sharp/).
 
 ### How to play
 The system of Mastermind will randomly produce 4 colors between 6 colors (allowing duplicate colors). The colors will remain invisible to the player until he wins or losses the game.
@@ -41,7 +41,7 @@ We will use the toolbox to select the controls that we need in this game. First 
 
 This is how the form should look like after building the form, and remember that you can always change the fonts & the colors to whatever suits your taste!
 
-![mastermind_form](/engineering-education/getting-started-with-game-development-windows-forms/mastermind_form.png)
+![mastermind_form](/getting-started-with-game-development-windows-forms/mastermind_form.png)
 
 This is the table of the Texts & names of all the controls used in this form.
 
@@ -348,7 +348,7 @@ The final check button will have an extra code because reaching the final round 
 In this tutorial, we have created a puzzle game called Mastermind using windows forms. We have used the controls & the properties window to create the form of it, and then we connected these controls with the methods inside of it. To double the fun, try to challenge your friends with Mastermind! Don't forget to test out the code to fully understand how it works.
 
 ---
-Peer Review Contributions by: [Sylvester Tamba](/engineering-education/authors/sylvester-tamba/)
+Peer Review Contributions by: [Sylvester Tamba](/authors/sylvester-tamba/)
 
 
 

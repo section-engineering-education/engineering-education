@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/lamp-stack/
+url: lamp-stack/
 title: Understanding the LAMP Stack
 description: This article will be a brief introduction to the LAMP Stack. Solution stacks are a combination of software or application programs used to form a computing platform intended to provide web applications the appropriate framework.
 author: kanishkvardhan-a-n
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/lamp-stack/hero.jpg
+  - url: /lamp-stack/hero.jpg
     alt: LAMP Stack example image
 ---
 Michael Kunze invented the term [LAMP stack in 1998](https://www.marpis.net/lamp-history.php). It is used as a kernel for websites that are hosted by Linux. It can also create web pages, web applications, static pages, dynamic pages, etc. 
@@ -25,7 +25,7 @@ The LAMP structure consists of 4 main layers:
 
 All the layers use [Free and Open-Source Software (FOSS)](https://en.wikipedia.org/wiki/Free_and_open-source_software). Linux Operating System, Apache Web Server, MySQL Database, and PHP programming language are the LAMP Stack's primary components. We can consider different software alternatives for each layer based on various prerequisites.
 
-![LAMP Stack](/engineering-education/lamp-stack/lampstack.png)
+![LAMP Stack](/lamp-stack/lampstack.png)
 
 ### Understanding the LAMP Stack
 **Solution Stacks** are a combination of software or application programs used to form a computing platform. They are intended to provide web applications the appropriate framework. Technically, multiple developers develop, maintain, and handle the various components of a stack. Yet several developers can run all the components of a solution stack. 
@@ -78,7 +78,7 @@ If the user prompts yesterday's news, PHP reruns the file code and interacts wit
 
 The operating system acts as the backbone of any stack (Linux in this case). A simple flowchart below may help you better understand the working of the LAMP stack.
 
-![Layer-by-Layer stack operation](/engineering-education/lamp-stack/flowchart.png)
+![Layer-by-Layer stack operation](/lamp-stack/flowchart.png)
 
 ### Usage of LAMP stack
 - Stack variants are based on the different types of components used, but the LAMP arrangement is most suitable for building web architecture because of its scalability and flexibility.
@@ -107,4 +107,4 @@ This helps make modifications and enhancements to improve the websites further. 
 - [What is a Lamp Stack?](https://phoenixnap.com/kb/what-is-a-lamp-stack)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-pen-testing/
+url: /what-is-pen-testing/
 title: What Is Pen Testing and Why Is It Important?
 description: Reverse proxies are servers that sit between the request-response process that ensure website application requests are redirected to the proper backend server.
 author: gregory-manley
@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-pen-testing/hero.jpg
+  - url: /what-is-pen-testing/hero.jpg
     alt: pen testing
 ---
 Pen Testing, also known as penetration testing, is the method of planning attacks against security infrastructure or computer programs to find security vulnerabilities that need to be patched. Pen testing comes in many forms and contains different specialities.

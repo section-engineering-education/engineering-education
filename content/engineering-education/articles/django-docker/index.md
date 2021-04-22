@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-docker/
+url: /django-docker/
 title: How to Create Django Docker Images
 description: This tutorial will go over how to create Django Docker images. Docker is a great tool for packaging applications with the required dependencies to run them both locally and in production. 
 author: odhiambo-paul
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/django-docker/hero.jpg
+  - url: /django-docker/hero.jpg
     alt: Django Docker Images example image
 ---
 [Docker](https://docs.docker.com) is a containerization platform that makes it possible to build, ship, and run distributed applications in controlled environments with defined rules.
@@ -21,10 +21,10 @@ images:
 2. Get Python package manager, [pip](https://pypi.org/project/pip/) installed on your computer.
 3. You will need [Docker](https://docs.docker.com/docker-for-windows/install/) installed on your computer.
 
-For Docker installation, setup, and a quick start, visit [Getting started with Docker](/engineering-education/getting-started-with-docker/).
+For Docker installation, setup, and a quick start, visit [Getting started with Docker](/getting-started-with-docker/).
 
 ### Project setup
-We will be creating a Docker image for the Todo application that we created in [this](/engineering-education/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
+We will be creating a Docker image for the Todo application that we created in [this](/django-crud-api/) tutorial. The `Todo` application that allows us to `create`, `read`, `update`, and `delete` Todo items via a REST API.
 
 Ensure `virtualenv` is installed on your computer by executing the command below.
 
@@ -183,10 +183,10 @@ d73306a9fb04   django_todo:latest   "python manage.py ru…"   3 hours ago   Up 
 ```
 
 1. On your browser visit `localhost` on port 8000 to confirm if the `django_todo` application is running in the container.
-![Docker Hub image](/engineering-education/django-docker/docker_get.png)
+![Docker Hub image](/django-docker/docker_get.png)
 
 ### Publishing the Docker image to Docker Hub
-![Docker Hub image](/engineering-education/django-docker/docker_create.png)
+![Docker Hub image](/django-docker/docker_create.png)
 
 Docker Hub is a repository of container images that can be used to create Docker containers.
 
@@ -218,4 +218,4 @@ Docker is a great tool for packaging applications with the required dependencies
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

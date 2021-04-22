@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/sql-user-defined-functions/
+url: /sql-user-defined-functions/
 title: Working with User-Defined Functions in SQL Server
 description: This tutorial will discuss user-defined functions in SQL Server. The concept of functions in SQL is similar to other programming languages like Python. The major difference being the way they are implemented.  
 author: rahul-banerjee
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/sql-user-defined-functions/hero.jpg
+  - url: /sql-user-defined-functions/hero.jpg
     alt: SQL Functions image
 ---
 In this tutorial, we will be discussing user-defined functions in SQL Server. More specifically, we will be discussing Scalar functions and Table-Valued functions.
@@ -264,4 +264,4 @@ As I mentioned above, try to follow the DRY Principle while writing SQL Statemen
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

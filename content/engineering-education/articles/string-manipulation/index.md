@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/string-manipulation/
+url: /string-manipulation/
 title: String Manipulation in C
 description: The article discusses how to modify strings in the C programming language. This includes discussing functions from the string library.
 author: nimra-aftab
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/string-manipulation/hero.jpg
+  - url: /string-manipulation/hero.jpg
     alt: string manipulation image example
 ---
 Recall that there are two types of strings in the C programming language. String *variables* can be modified, but string *literals* cannot. This article will discuss how to safely manipulate string variables.
@@ -124,8 +124,8 @@ The string library has other functions that allow us to manipulate strings. Some
 ### Additional Resources
 For a more exhaustive list of string functions available in 'C', see the [Linux Programmer's Manual](https://man7.org/linux/man-pages/man3/string.3.html).
 
-For more details on the history of the C programming language you can [read this article](/engineering-education/history-of-c-programming-language/).
+For more details on the history of the C programming language you can [read this article](/history-of-c-programming-language/).
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
 

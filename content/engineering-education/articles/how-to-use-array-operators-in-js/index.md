@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-use-array-operators-in-js/
+url: /how-to-use-array-operators-in-js/
 title: How to use Array Operators in JavaScript
 description: This article will be an introduction to JavaScript arrays, properties of JavaScript arrays, and operations executed on JavaScript arrays.
 author: kennedy-mwangi
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-array-operators-in-js/hero.jpg
+  - url: /how-to-use-array-operators-in-js/hero.jpg
     alt: Array operators in JavaScript example
 ---
 Arrays are list-like objects used for storing elements in a program. Since JavaScript is not statically typed, an array can hold different types of data.
@@ -571,4 +571,4 @@ In this article we have covered an introduction to JavaScript arrays, properties
 You can access the code from [here](https://github.com/mwangiKibui/array-operators-in-js/tree/main).
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
