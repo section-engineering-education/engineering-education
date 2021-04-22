@@ -51,7 +51,7 @@ $ yarn create strapi-app file-manager --quickstart
 
 Please be patient as this command will take some time to execute.
 
-> Strapi uses a SQL database by default. To setup Strapi using another database, e.g. MongoDB or PostgreSQL, remove the `--quickstart` flag from the above command.
+> Strapi uses a SQLite database by default. To setup Strapi using another database, e.g. MongoDB or PostgreSQL, remove the `--quickstart` flag from the above command.
 
 The command creates a new folder `file-manager` containing the project files and directories. It also serves your Strapi at http://localhost:1337/admin.
 
