@@ -1,5 +1,5 @@
 ### Introduction
-Conversion from one type to another is known as [type conversion](https://www.oreilly.com/library/view/c-14-quick/9781484217276/9781484217269_Ch26.xhtml). Type conversion's ultimate aim is to make variables of one data type work with variables of another data type to operate. It is carried out to take benefit from some of the aspects of type representations and hierarchies. So, when will a type conversion be beneficial?. `Type conversion` can be used to force the correct type of mathematical computation to be performed. To find the sum of two variables, one of `int` type and the other of the `float` type is a good [example that demonstrates the use of type conversion](https://findanyanswer.com/what-is-type-conversion-in-c-how-it-is-achieved-in-user-defined-data-types). To get the sum of the two variables, you have to convert the `int` variable to `float`. This article will go through type conversion, as well as a step-by-step demonstration.
+Conversion of variables from one type to another is known as [type conversion](https://www.oreilly.com/library/view/c-14-quick/9781484217276/9781484217269_Ch26.xhtml). Type conversion's ultimate aim is to make variables of one data type work with variables of another data type. It is carried out to take benefit from some of the aspects of type representations and hierarchies. So, when will a type conversion be beneficial? `Type conversion` can be used to force the correct type of mathematical computation to be performed. Finding the sum of two variables, one of `int` type and the other of the `float` type is a good [example to demonstrate the use of type conversion](https://findanyanswer.com/what-is-type-conversion-in-c-how-it-is-achieved-in-user-defined-data-types). To get the sum of the two variables, you have to convert the `int` variable to `float`. This article will go through type conversion, as well as a step-by-step demonstration of achieving it.
 
 ### Prerequisites
 You will need the following to go through this article:
@@ -10,11 +10,11 @@ You will need the following to go through this article:
 1. [c++ type conversion ](#c++-type-conversion)
 2. [Implicit Type Conversion](#implicit-type-conversion)
 3. [Explicit Type Conversion](#explicit-type-conversion)
-4. [Conversion using the cast operator](#conversion-using-the-cast-operator)
-4.1 [Static cast](#static-cast)
-4.2 [Dynamic cast](#dynamic-cast)
-4.3 [Const cast](#const-cast)
-4.4 [Reinterpret Cast](#reinterpret-cast)
+4. [Conversion using the cast operator](#conversion-using-the-cast-operator)<br/>
+   4.1 [Static cast](#static-cast)<br/>
+   4.2 [Dynamic cast](#dynamic-cast)<br/>
+   4.3 [Const cast](#const-cast)<br/>
+   4.4 [Reinterpret Cast](#reinterpret-cast)<br/>
 5. [Conversion using the assignment operator](#conversion-using-the-assignment-operator)
 
 ### C++ type conversion 
@@ -22,10 +22,10 @@ We have two forms of `type conversion`:
 - Implicit type conversion
 - Explicit type conversion
 
-Let's get started,
+Let's get started!
 
 ### Implicit type conversion
-Implicit type conversion which is also known as automatic type conversion is carried out by the compiler without the need for a user-initiated action. It takes place when an expression of more than one data type is present which in such an instance type conversion takes place to avoid data loss. Every variables' data type is changed to the [data type of the variable with the largest data type](http://web.archive.org/web/20200804084844/https://www.geeksforgeeks.org/implicit-type-conversion-in-c-with-examples).
+Implicit type conversion also known as automatic type conversion is carried out by the compiler without the need for a user-initiated action. It takes place when an expression of more than one data type is present which in such an instance type conversion takes place to avoid data loss. Every variables' data type is changed to the [data type of the variable with the largest data type](http://web.archive.org/web/20200804084844/https://www.geeksforgeeks.org/implicit-type-conversion-in-c-with-examples).
 
 The order of the automatic type conversion is listed below:
 
@@ -73,14 +73,14 @@ m = 170
 n = x
 a = 173
 ```
-In the above program, we can see how `n` is implicitly converted to `int` and `x` is implicitly converted to `float` using the order of automatic type conversion we have listed.
+In the above program, we can see how `n` is implicitly converted to `int` and `x` to `float` using the order of automatic type conversion listed above.
  
 ### Explicit type conversion
-Explicit type conversion is also known as [type casting and is user-initiated](https://findanyanswer.com/what-is-type-conversion-in-c-how-it-is-achieved-in-user-defined-data-types). In explicit type conversion,  the [user can typecast to convert a variable of one type to another data type](https://www.edureka.co/blog/type-conversion-in-cpp).
+Explicit type conversion is also known as [type casting and is user-initiated](https://findanyanswer.com/what-is-type-conversion-in-c-how-it-is-achieved-in-user-defined-data-types). In explicit type conversion, the [user can typecast to convert a variable of one type to another data type](https://www.edureka.co/blog/type-conversion-in-cpp).
 
 In C++, explicit type conversion can be accomplished in two ways:
-- Conversion using the cast operator
-- Conversion using the assignment operator
+- Conversion using the cast operator, and
+- Conversion using the assignment operator.
 Let's take a look at each of the ways for explicitly casting one type to another.
 
 ### Conversion using the assignment operator
@@ -89,7 +89,7 @@ Syntax:
 ```c++
 (type) expression
 ```
-`Type` denotes the final data type the conversion of the result will be.
+`Type` denotes the final data type of the result.
 Let's look at an example to see how conversion using the assignment operator works:
 ```c++
 // C++ program to demonstrate
@@ -118,7 +118,7 @@ sum = 4
 In the program above, we can see how explicit type conversion occurs. `double` is converted to `int` because the user typecast the result.
 
 ### Conversion using the cast operator
-A `cast operator` is a unary operator that forces the conversion of one data type to another. We have four types of casting provided by the c++ language which are:
+A `cast operator` is a unary operator that forces the conversion of one data type to another. We have four types of casts provided by the c++ language. These are:
 
 - `Static cast` - This is the most basic form of cast available. It can do both upcasts and downcasts. It's a cast that takes a long time to compile. Throughout the conversion process, no checks are made to make sure the object you're converting is a complete object of the target type.
 - `Dynamic cast` - It guarantees that the [result of type conversion is a complete, valid object of the target pointer type](https://www.programmersought.com/article/88123785241).
@@ -150,11 +150,10 @@ Output:
 6
 ```
 **Dynamic cast**
-Polymorphism is handled with this cast. It's only necessary to use when casting to a derived class. This is only to be used when typecasting from a parent class to a derived in inheritance. The dynamic cast will fail if the cast is invalid because [the actual type of the object pointed to isn't the desired subclass's type](https://www.cprogramming.com/reference/typecasting/dynamiccast.html).
+Polymorphism is handled with this cast. It's only necessary to use when casting to a derived class. This is only to be used when typecasting from a parent class to a derived in inheritance. The dynamic cast will fail if the cast is invalid because [the actual type of the object pointed to isn't the desired subclass' type](https://www.cprogramming.com/reference/typecasting/dynamiccast.html).
 
 We have two types of dynamic cast:
-- Pointer dynamic cast
-If a pointer is cast and it fails, the cast returns `NULL`. This is a quick and easy way to see if a given object is of a certain dynamic type.
+- Pointer dynamic cast - If a pointer is cast and it fails, the cast returns `NULL`. This is a quick and easy way to see if a given object is of a certain dynamic type.
 
 Syntax:
 
@@ -167,7 +166,7 @@ Syntax:
 
 `<type> subclass = dynamic_cast<<type> &>( ref_obj );`
 
-Program to illustrate how dynamic cast works:
+Program to illustrate how dynamic casts works:
 
 ```c++
 #include<iostream>
@@ -211,7 +210,7 @@ int main(){
       cout << "No Class B\n";
 }
 ```
-Go ahead and run  the code [here](https://replit.com/@Dawe7/Dynamic-cast#main.cpp).
+Go ahead and run the code [here](https://replit.com/@Dawe7/Dynamic-cast#main.cpp).
 
 Output:
 ```bash
@@ -223,7 +222,7 @@ This is from ClassC
 This is from ClassC
 ```
 **Const cast**
- It is used to cast away the constness of variables. Inside a const member function, non-const class members can be modified with the cast.
+It is used to cast away the immutability of variables. Inside a const member function, non-const class members can be modified with the cast.
 
 Program to illustrate how const cast works:
 
@@ -271,6 +270,7 @@ New rol no: 10
 The compiler treats this as `const` **employee**, const this within const member function `fun()`, i.e. This is a constant pointer to a constant object, and therefore the compiler does not allow changing the data members by this pointer. The form of this pointer is changed to **employee** const this by `const cast`.
 
 **Reinterpret Cast**
+
 This is used to convert a pointer of one type to another of any type, regardless of whether the classes are related. It does not check [if the pointer type and the data that the pointer points to are the same](https://www.edureka.co/blog/type-conversion-in-cpp). There isn't a return type for it. It simply changes the type of the pointer. It only accepts one parameter, which is the source pointer variable for example:
 
 ```c++
@@ -290,7 +290,7 @@ int main()
   return 0;
 }
 ```
-Go ahead and run  the code [here](https://replit.com/@Dawe7/Reinterpret-Cast#main.cpp).
+Go ahead and run the code [here](https://replit.com/@Dawe7/Reinterpret-Cast#main.cpp).
 
 Output:
 ```bash
@@ -300,6 +300,6 @@ A
 A
 ```
 ### Conclusion
-This takes us to the conclusion of this C++ type conversion article. Through the use of type conversion provided by the c++ language, we can easily to convert a data type from one type to another with ease. I hope you found this article to be both insightful and useful in your day-to-day work as a developer.
+This takes us to the conclusion of this C++ type conversion article. Through the use of type conversion provided by the c++ language, we can easily convert a data type from one type to another. I hope you found this article to be both insightful and useful in your day-to-day work as a developer.
 
 Happy coding!
