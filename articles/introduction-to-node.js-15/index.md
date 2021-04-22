@@ -1,0 +1,33 @@
+Introduction to Node.js 15
+By: Name
+So, you've heard of Node.js but don't know what it is or how it works into your creation process. Maybe you've heard people sing Node's praises and are now wondering if you should learn it as well. Maybe you're already acquainted with another back-end technology and want to learn more about Node.js. You've come to the right spot. 
+Node.js is a server-side platform based on the JavaScript Engine in Google Chrome (V8 Engine). In the year 2009, Ryan Dahl created Node.js. When we claim Node is based on the V8 engine, we're not referring to the fact that Node programs run in a browser.  Node.js is a tool for easily creating fast and flexible network applications based on Chrome's JavaScript runtime. These are some of Node.js's characteristics: It's asynchronous and event-driven. This eliminates the need for a node.js server to wait for an API to return data. Since, it is based on Google Chrome's V8 JavaScript Engine, it is also extremely quick in terms of code execution. Data is never buffered in its applications; instead, data is output in bits. 
+The goal of node.js
+Its aim is to provide a simple and secure method for JavaScript developers to create high-performance and flexible operating systems. Such objectives are met due to its design.
+New features of Node.js 15
+It is the most recent Node.js version, which was released in October of 2020. It doesn’t have long-term support. Output improvements, a V8 JavaScript engine upgrade, bug fixes, and an experimental version of Abort Controller and QUIC are all included.
+NPM 7
+Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of this update. NPM workspaces are the most important aspect, since they mark the beginning of built-in support for building and managing multiple NPM packages in a single file system. Developers who are already familiar with the Yarn package manager or Lerna should find NPM's workspace implementation to be identical. NPM workspaces are relatively simple to set up. Start by arranging NPM package files on the file system, build a top-level package. Son that refers to each of these files, start running commands through all NPM packages.
+V8 8.6
+Node.js 15's V8 engine has been updated to version 8.6 from version 8.4. V8 is the JavaScript engine that runs Node.js. Since V8, the features of the JavaScript language that are available to programmers have been specified. Despite the small version bump, there are a few new language enhancements that will help you write less code and potentially increasing the readability of your code. 
+Experimental diagnostics channel module
+Diagnostics channel is a new experimental framework in Node.js 15.1.0. This module effectively allows users to use a publish-subscribe pattern to upload arbitrary data to a network that can be accessed by other modules or applications. The module is designed to be universal and can be used in a number of scenarios.
+Unhandled Rejections are thrown
+The default setting for unhandled Rejection in Node.js 15 is now throw (from warn). Unhandled Rejection hooks are treated as uncaught exceptions if they aren't set in throw mode. Users with an unhandled Rejection hook can see no difference in action, and the —unhandled-rejections=mode process flag can still be used to switch modes.
+Abort Controller
+It's an experimental Node.js 15 application. It's a utility class which is used in promise-based APIs to signal cancellation. Developers may use the Abort Controller to terminate one or more Web requests as required. It makes native promise cancellation easier.
+QUIC:
+QUIC is a UDP-based HTTP/3 network transport protocol that includes TLS 1.3 authentication, multipathing, flow control, error detection and correction, link migration, and other features. The QUIC configuration flag in Node.js 15 provides experimental evidence for this. It's quicker, more powerful, and more like the TCP+TLS+HTTP/2 protocol on UDP. In comparison to TCP, it aims to reduce bandwidth.
+N-API 7:
+N-API is a Node.js API that allows you to create native Addons. It's used to keep Node.js stable through various versions and compiler levels. Node.js 15 is a new major update of the N-API 7 API, which includes new functionality and additional methods for dealing with Array Buffers.
+Advantages of node.js 15
+In NPM 6, peer dependencies were largely ignored. They are built by default in NPM 7. With the latest NPM exec button, it's now possible to run NPM packages without first installing them. This new directive replaces NPX, but it behaves in a somewhat different way. For backward compatibility, NPX was rewritten to use NPM exec instead of the old CLI.
+If an unhandled rejection occurred in previous versions of Node.js, you will receive a rejection alert as well as a deprecation warning. The change of unhandled rejections being thrown has the potential to affect a large number of applications, especially for programmers who have previously ignored warning messages.
+V8 has been upgraded from version 8.4 to version 8.6, which includes several performance enhancements and features like new logical assignment operators.
+Developers may use Abort Controller to terminate Web requests if they need to.
+Since QUIC is fast and efficient, it has a lower latency than TCP.
+
+Native modules, otherwise known as addons, are easier to generate, build, and support with Node.js 15.
+Conclusion
+Node.js 15 is expected to boost user productivity and enhance the general developer experience with a number of significant bug fixes and improvements. To take advantage of experimental features, new npm7, V8.6, QUIC protocol, and significant bug fixes, developers should start using Node.js 15. Finally, I'd like to say It's worth giving Node.js 15 a shot. Try it out and let us know what you think. We'll use your reviews and suggestions to develop Node.js and make it a better experience for users.
+
