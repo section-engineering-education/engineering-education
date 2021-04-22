@@ -46,7 +46,7 @@ To start with, you must have:
 ![Bitcoin Image](/engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
 *Bitcoin image*
 
-Digital cryptocurrencies such as Bitcoin and Ethereum are powered and adopted with powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
+Bitcoin and Ethereum are digital cryptocurrency powered and adopted with powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
 
 ![ethereum](/engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 *Ethereum image*
@@ -54,9 +54,9 @@ Digital cryptocurrencies such as Bitcoin and Ethereum are powered and adopted wi
 **Blockchain** as the name states they are a block of transaction data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
 
 ### Decentralization
-Usually, the data in the databases are centralized. By centralizing, we operate based on only one server. There are high chances of risk due to failures. Alternatively, decentralization allows data to be stored everywhere, thus making it faster, more secure and better way of storing data.
+Usually, the data in the databases are centralized. By centralizing, we operate based on only one server. Chances of risk are paramount due to failures of the system. Alternatively, decentralization allows data to be stored everywhere, thus making it faster, more secure and better way of storing data.
 
-Blockchain stores its information in several locations. Whenever a new block is added to the blockchain, every computer is updated on the change made. This makes it very difficult to tamper with the blockchain, as all computers in the network must agree with the change yet to be made for it to take place.
+Blockchain stores its information in several locations. Whenever a new block is added to the blockchain,a copy is sent in all computers. This makes it very difficult to tamper with the blockchain, as all computers in the network must agree with the change yet to be made for it to take place.
 
 We'll have good understanding of blockchain and cryptocurrency and it's operation.
 
@@ -102,9 +102,9 @@ In the constructor, we initialize its properties and assign parameters to it, as
 
 - `current_time`: As the name states, it keeps a record of the time when each transaction is completed.
 
-- `info`: Records data about the completed transactions.
+- `info`: All completed transactions data are recorded and stored by this function.
 
-- `nexthash`: It points to the hash of the next block in the chain. It's used to keep and maintain the integrity of the blockchain.
+- `nexthash`: It is pointing to the hash_key of the next block in the network chain. It's mainly used to keep and maintain the integrity of the blockchain.
 
 - `computeHash`: Based on properties passed to this method, it is to calculate the hashkey of the next block in the chain.
 
@@ -146,7 +146,7 @@ But this time, we passed it to the `initGenesisBlock()` method, which initialize
 
 - `latestBlock`: As named, we use it for finding the last block added in the chain. As explained earlier, it helps to ensure the hash of the current block and map it to the hash of the previous block to ensure the chain integrity.
 
-- `addNewBlock`: This method is used to add a new block to the chain. The previous hash block is matched to the current hash block to ensure minimal or no tampering with the chain.
+- `addNewBlock`: New block is added to the chain using this method. The previous hash block is matched to the current hash block to ensure minimal or no tampering with the chain.
 
 Now that our blockchain is ready to work. We are missing something which is a core blockchain principle, the blockchain _integrity_.
 
