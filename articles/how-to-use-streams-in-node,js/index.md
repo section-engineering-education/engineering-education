@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-use-streams-in-node.js/
 title: How to use Streams in Node.js
-description: Streams are objects that allow one to read data from a source or write to a destination in a continuous manner. In this article, we will goe through reading and writing data to files using streams.
+description: Streams are objects that allow one to read data from a source or write to a destination in a continuous manner. In this article, we will go through reading and writing data to files using streams.
 author: peter-kayere
 date: 2021-04-14T00:00:00-20:00
 topics: []
@@ -16,7 +16,7 @@ images:
 
 ### Introduction
 
-Streams are objects that allow one to read data from a source or write to a destination in a continuous manner. Node.js has four types of streams; readable, writable, duplex and transform. Each stream is an `eventEmitter` instance that emits different events at several intervals. This article goes through reading and writing data to files using streams.
+Streams are objects that allow one to read/write data to and from a source in a continuous manner. There are four main types of streams in Node.js; readable, writable, duplex and transform. Each stream is an `eventEmitter` instance that emits different events at several intervals. This article goes through reading and writing data to files using streams.
 
 ### Prerequisites
 
@@ -28,15 +28,15 @@ What do the different streams do?
 
 1.  The readable stream is a stream that is used for read operations.
 2.  The Writable stream as the name suggests is a stream used for write operations.
-3.  A duplex stream is used for both read and write operations. Lastly,
-4.  The transform stream is a type of stream that computes the output based on the input.
+3.  A duplex stream is a stream that performs both read and write operations. Lastly,
+4.  A transform stream is a stream that uses it input to compute an output.
 
 The streams throw several events since they are `eventEmitter` instances. These events are used to track and monitor the stream. Some of the most commonly used events are;
 
-1.  Data - This event is fired when readable data is available.
-2.  Finish - This event is fired when the stream is done writing data.
-3.  Error - This event is fired when any error occurs while reading or writing data.
-4.  End - This event is fired when the stream is done reading data.
+1.  Data - Data event is emitted when readable data is available.
+2.  Finish - Finish event is emitted when the stream is done writing data.
+3.  Error - Error event is emitted when an error occurs while reading/writing data.
+4.  End - End event is emitted when the read stream has finished reading data.
 
 With this information, let's have a look at how we can use a stream to read/write data from/to a file.
 
@@ -120,7 +120,7 @@ That's all for reading and writing using streams. Let's now see how to pipe stre
 
 ### Piping streams
 
-Piping is a mechanism where the output of a stream is used as the input of another stream. How we can achieve this?
+Piping is a mechanism that involves using the output of another stream input of the other. How we can achieve this?
 
 Replace the code in index.js file with the code below.
 
