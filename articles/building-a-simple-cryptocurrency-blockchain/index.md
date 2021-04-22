@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-simple-cryptocurrency-blockchain/hero.jpg
     alt: Bitcoin hero image
 ---
-A cryptocurrency is a digital or virtual currency that is secured by a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function). This makes it nearly impossible to forge transactions. Many cryptocurrencies are [decentralized](en.wikipedia.org/wiki/Decentralization) using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology - a distributed ledger enforced by a disparate network of computers.
+A crypto-currency is a digital currency that is secured by a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function). This makes it nearly impossible to forge transactions. Many cryptocurrencies are [decentralized](en.wikipedia.org/wiki/Decentralization) using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology - a distributed ledger enforced by a disparate network of computers.
 <!--more-->
 A blockchain is an open, distributed ledger that records transactions in code, and it enables a cryptocurrency user to have their own copy of transaction record. Each new transaction is logged into record as it happens, and every copy of the blockchain is updated simultaneously with the new information, keeping all records identical and accurate. Thus, making it highly secure.
 
