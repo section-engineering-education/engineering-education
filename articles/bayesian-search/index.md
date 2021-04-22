@@ -44,9 +44,9 @@ Before reading any further, I recommend some basic understanding of [Baye’s Th
 
 Bayesian Statistics refers to a branch of Statistics that applies probabilities to problems. It gives tools that assist in understanding the probability of an event occurring in the evidence of new data. We can say it assists people to upgrade their beliefs with the provision of new data. For example, Don and Frank have both scored goals in their previous five soccer matches. Don scored four goals, while Frank scored two in five games. If you were to bank on one of the two to score in their next match, you would probably choose Don, right?
 
-But what if you were told that, half of Don’s goals came against lower-tier opposition? And that in the games Frank failed to score, his team had a man less due to being sent off? Plus, in the games that Frank scored, he came on as a substitute for 15 minutes each game? In light of this new information, who would you put your money on?
+But what if we told you that half of Don’s goals came against lower-tier opposition? And that in the games Frank failed to score, his team had a man less due to being sent off? Plus, in the games that Frank scored, he came on as a substitute for 15 minutes each game? In light of this new information, who would you put your money on?
 
-This twist shows us that Frank’s chances of scoring in the next game he starts in have increased considerably. From the example, we have used the concept of probability on a basic statistical problem. This defines Bayesian statistics.
+This twist shows us that Frank’s chances of scoring in the next game he starts have increased considerably. From the example, we have used the concept of probability on a basic statistical problem. This defines Bayesian statistics.
 
 ### Bayesian Optimization
 
@@ -82,7 +82,8 @@ There exist two main components of Bayesian optimization:
 
 #### Surrogate Functions
 
-The surrogate function is the representation of the objective function as a probability. It is created using previous evaluations. We can refer to it as the probability model or the response surface. It is a response surface because it is a mapping of hyperparameters to the probability of an objective function score. The score represents the surrogate function’s value. We calculate this score using a group of selected hyperparameter values. We can refer to most types of functions that may be used to estimate complex true objective functions as surrogate functions. An example is the Gaussian process. This process refers to a set of infinite Gaussian functions. These gaussian functions provide flexibility as well as a vast function collection. This allows for the creation of the surrogate function over the domains of the true objective function.
+The surrogate function is the representation of the objective function as a probability. It is created using previous evaluations. We can refer to it as the probability model or the response surface. It is a response surface because it maps hyperparameters to the probability of an objective function score. The score represents the surrogate function’s value. We calculate this score using a group of selected hyperparameter values. We can refer to most types of functions that may be used to estimate complex true objective functions as surrogate functions. 
+An example is the Gaussian process. This process refers to a set of infinite Gaussian functions. These gaussian functions provide flexibility as well as a vast function collection. This allows for the creation of the surrogate function over the domains of the true objective function.
 
 As we mentioned before, it is expensive to compute the objective function. As such, a surrogate function samples the evaluations of a succession of points from the objective function’s domain. The sampling is done iteratively. Thus, we can use a number of known objective function evaluations to train the surrogate function.
 
