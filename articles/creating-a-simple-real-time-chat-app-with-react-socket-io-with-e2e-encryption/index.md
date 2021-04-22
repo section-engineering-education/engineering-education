@@ -1,6 +1,6 @@
 ### Introduction
 
-In recent times, real-time chat applications have grown tremendously. Most companies have adopted them for quick communication. For security purposes, the messages exchanged over the network have to be encrypted. This means, all the messages on transit over the network should be encrypted. 
+In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for quick communication. For security purposes, the messages exchanged over the network have to be encrypted. This means, all the messages on transit over the network should be encrypted. 
 
 If a malicious program tries to tap the messages exchanged across the network illegally, the intercepted message would be in encrypted form thus the content of the message will not be compromised.
 
@@ -24,7 +24,7 @@ Whenever a user sends or receives a message, the message will be encrypted or de
 
 ### Creating the Backend
 
-For the backend, we'll use Node.js with its framework Express. Socket.io is needed to provide real-time, bi-directional communication between the server and the client.
+For the backend, we'll use Node.js with its framework Express. Socket.io is needed to provide real-time, two-way communication between the backend server and the client.
 
 The folder structure for our backend will look as follows:
 
@@ -175,7 +175,7 @@ io.on("connection", (socket) => {
       io.to(p_user.room).emit("message", {
         userId: p_user.id,
         username: p_user.username,
-        text: `${p_user.username} has left the chat`,
+        text: `${p_user.username} has left the room`,
       });
     }
   });
@@ -186,9 +186,9 @@ In the above `server.js` code, we start by importing the modules and functions f
 
 After initializing the socket, let's set two listeners listed below:
 
-- **joinRoom**: The function we pass to `socket.on(“joinRoom”)` runs when a new room user joins the room. A message to welcome the room user will be displayed to the user. Also, a message *"username has joined”* will be broadcasted to all other users except the user who joined the room.
+- **joinRoom**: The function we pass to `socket.on(“joinRoom”)` runs when a new room user joins the room. A message to welcome the room user will be shown to the user. Also, a message *"username has joined”* will be broadcasted to all other users except the user who joined the room.
 
-- **chat**: The function we pass to `socket.on(“chat”)` handles sending and receiving message. Whenever a user disconnects, a message that the *"username has left the room"* will be broadcasted to all the people in the room.
+- **chat**: The function we pass to `socket.on(“chat”)` handles sending and receiving message. If a user leaves the chat, a disconnect message is broadcasted to all other room users.
 
 The event listeners of the above functions, `joinRoom` and `chat` will be triggered from the frontend in the files `home.js` and `chat.js` as explained later in this guide.
 
@@ -221,8 +221,8 @@ import App from "./App";
 import rootReducers from "./store/reducer/index";
 import ReactDOM from "react-dom";
 import { createStore } from "redux";
-import React from "react";
 import { Provider } from "react-redux";
+import React from "react";
 
 //here we create an object to store the current state of the application
 const store = createStore(rootReducers);
@@ -430,7 +430,7 @@ export default Homepage;
 
 From above, we take the user name and room name and call the function `socket.emit("joinRoom")` and pass the username and roomname. The function will activate the `joinRoom` function defined in the backend. The `joinRoom` function will add the user to the room, and a welcome message will be displayed as explained earlier in the backend.
 
-Now, let's add some styling to `home.js`. Let's create a file `home.scss` as below:
+Now, we add some styling to `home.js`. We create a file `home.scss` as below:
 
 ```scss
 .homepage {
@@ -577,121 +577,120 @@ Let's add some styling to `chat.js`. Let's the file `chat.scss` as below:
 ```scss
 @import "../globals";
 @mixin scrollbars(
-  $size,
+  $background-color: mix($foreground-color, white, 50%),
   $foreground-color,
-  $background-color: mix($foreground-color, white, 50%)
+  $size
 ) {
-  //style for Google Chrome
+  //stylesheet for the display in Google Chrome
   &::-webkit-scrollbar {
-    width: $size;
     height: $size;
+    width: $size;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $foreground-color;
     border-radius: 10px;
+    background: $foreground-color;
   }
 
   &::-webkit-scrollbar-track {
-    background: $background-color;
     border-radius: 10px;
+    background: $background-color;
   }
 
-  //style for Internet Explorer
+  // stylesheet for the display in Internet Explorer
   & {
-    scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
+    scrollbar-face-color: $foreground-color;
   }
 }
 .chat {
-  width: 400px;
-  height: 600px;
-  background-color: $greyColor;
-  padding: 1rem;
   display: flex;
-  flex-direction: column;
+  width: 400px;
+  padding: 1rem;
   justify-content: space-between;
+  height: 600px;
+  flex-direction: column;
+  background-color: $greyColor;
   .user-name {
-    text-align: start;
     width: 100%;
+    text-align: start;
     h2 {
-      font-weight: 300;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 300;
       padding-bottom: 1rem;
     }
   }
   .chat-message {
-    height: 70%;
-    overflow-y: auto;
     @include scrollbars(5px, $backgroundColor, $yellowColor);
+    height: 70%;
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    overflow-y: auto;
     align-content: flex-start;
+    width: 100%;
+    flex-direction: column;
 
     .message {
-      margin-left: 0px;
-      max-width: 220px;
       padding-left: 0.5rem;
-
+      max-width: 220px;
+      margin-left: 0px;
       p {
-        font-size: 1rem;
-        background-color: #250202;
-        padding: 1rem;
-        border-radius: 0px 10px 10px 10px;
-        font-weight: 300;
         color: #b4b6be;
+        font-size: 1rem;
+        font-weight: 300;
+        background-color: #250202;
+        border-radius: 0px 10px 10px 10px;
+        padding: 1rem;
       }
 
       span {
-        font-size: 0.6rem;
-        font-weight: 200;
         color: #b4b6be;
+        font-size: 0.6rem;
         padding-left: 0.5rem;
+        font-weight: 200;
       }
     }
     .mess-right {
-      margin-left: auto;
-      margin-right: 0px;
       display: flex;
+      margin-left: auto;
       flex-direction: column;
-      max-width: 220px;
       padding-right: 0.5rem;
+      margin-right: 0px;
+      max-width: 220px;
       p {
-        text-align: end;
-        border-radius: 10px 0px 10px 10px;
         background-color: $redColor;
+        text-align: end;
         color: white;
+        border-radius: 10px 0px 10px 10px;
       }
       span {
-        width: 100%;
-        text-align: end;
         padding-left: 0rem;
+        width: 100%;
         padding-right: 0.5rem;
+        text-align: end;
       }
     }
   }
 
   .send {
-    width: 100%;
     height: 50px;
     display: flex;
+    width: 100%;
     input {
-      width: 80%;
-      text-decoration: none;
       background-color: #404450;
-      border: none;
+      width: 80%;
       padding-left: 1rem;
+      text-decoration: none;
       border-radius: 5px 0px 0px 5px;
+      border: none;
       &:focus {
         outline: none;
       }
     }
     button {
-      width: 20%;
-      border: none;
       background-color: $yellowColor;
+      width: 20%;
       border-radius: 0px 5px 5px 0px;
+      border: none;
       &:hover {
         cursor: pointer;
       }
@@ -722,7 +721,7 @@ export const to_Decrypt = (cipher, username) => {
   if (cipher.startsWith(username)) {
     return cipher;
   }
-  //returns the decryped message
+  //decryped message is returned
   var decrypted = aes256.decrypt(secret_key, cipher);
   return decrypted;
 };
@@ -737,8 +736,8 @@ Note the welcome user message is not to be encrypted.
 Next will be creating the file `/process/process.js` that displays on the right side of the chat room. It displays the secret key used, encrypted and decrypted message. The code is as below:
 
 ```typescript
-import { useSelector } from "react-redux";
 import "./process.scss";
+import { useSelector } from "react-redux";
 function Process() {
   // returns new state from the reducers
   const state = useSelector((state) => state.ProcessReducer);
@@ -762,39 +761,39 @@ function Process() {
 export default Process;
 ```
 
-The above is an optional component where we display an incoming encrypted message and decrypt it using our secret key. The file `process.js` is responsible for showing the incoming and decrypted messages.
+The above is an optional component where we display an incoming encrypted message and decrypt it using our secret key. The file `process.js` displays the incoming encrypted and decrypted messages on the sidebar.
 
 Let's add some styling to the file `process.js`. Let's create the file `/process/process.scss` as below:
 
 ```scss
 .process {
-  width: 450px;
-  min-height: 500px;
-  margin-right: 12rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  min-height: 500px;
   padding: 2rem;
+  width: 450px;
+  flex-direction: column;
+  display: flex;
+  margin-right: 12rem;
+  justify-content: space-evenly;
 
   h5 {
-    margin-bottom: 5rem;
-    font-weight: 400;
-    color: rgb(4, 238, 4);
     span {
       color: yellow;
     }
+    font-weight: 400;
+    margin-bottom: 5rem;
+    color: rgb(4, 238, 4);
   }
   h4 {
-    color: rgb(4, 238, 4);
     font-weight: 400;
+    color: rgb(4, 238, 4);
   }
-  p {
-    margin-top: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 1.2rem;
+  p {  
     font-size: 1rem;
+    padding: 1.2rem;
+    margin-top: 0.5rem;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
     text-overflow: auto;
   }
   .incoming {
