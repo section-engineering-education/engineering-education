@@ -76,9 +76,9 @@ We will go through the mentioned steps in detail during an in-depth tutorial in 
 
 There exist two main components of Bayesian optimization:
 
-· Surrogate functions
+* Surrogate functions
 
-· Acquisition functions
+* Acquisition functions
 
 #### Surrogate Functions
 
