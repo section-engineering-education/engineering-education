@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/building-a-simple-cryptocurrency-blockchain/hero.jpg
     alt: Bitcoin hero image
 ---
-A crypto-currency is a digital currency that is secured by a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function). This makes it nearly impossible to forge transactions. Many cryptocurrencies are [decentralized](en.wikipedia.org/wiki/Decentralization) using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology - a distributed ledger enforced by a disparate network of computers.
+A cryptocurrency is a digitally secured currency used in most current trade.The use of [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) has played a mojor role is securing cryptocurrency. This ensures only genuine transactions are recorded and commited. Most cryptocurrencies apply [decentralized](en.wikipedia.org/wiki/Decentralization) principle using the [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology.
 <!--more-->
-A blockchain is an open, distributed ledger that records transactions in code, and it enables a cryptocurrency user to have their own copy of transaction record. Each new transaction is logged into record as it happens, and every copy of the blockchain is updated simultaneously with the new information, keeping all records identical and accurate. Thus, making it highly secure.
+A blockchain is an open, digital and duplicated ledger of transactions. Each new transaction history is recorded and stored in an encrypted way that is very difficult to change or modify. A copy of this recorded information is sent a cross the blockchain network. Thus, making it highly secure.
 
 `Thecoin` is one such implementation of a cryptocurrency that we are going to build in a while.
 
@@ -25,7 +25,7 @@ In this tutorial, we will learn a little about blockchain and decentralization i
 ![Sample trade image](/engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
 
 ### Prerequisite
-To follow this tutorial successfully, you'll need to have a good understanding about:
+To keep this tutorial flow smoothly, you'll need to have a good understanding about:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Node.js](https://nodejs.org/en/docs/)
 
@@ -106,12 +106,12 @@ In the constructor, we initialize its properties and assign parameters to it, as
 
 - `nexthash`: It points to the hash of the next block in the chain. It's used to keep and maintain the integrity of the blockchain.
 
-- `computeHash`: We use this method to calculate the hash of the next block based on its properties.
+- `computeHash`: Based on properties passed to this method, it is to calculate the hashkey of the next block in the chain.
 
 ### The blockchain theorem
-It is a type of database that stores a collection of data together in groups, with certain capacity of storage. These blocks are chained to the previous blocks forming a chain of data.
+It is a type of database that stores a collection of data together in groups, with certain capacity of storage. The blocks are connected to the already created blocks, this forms a chain of data tree.
 
-The chain is irreversible due to the decentralized nature of the system. Here, each block is assigned a timestamp when added to the chain.
+The chain is irreversible as the system is decentralized. Here, each block is assigned a timestamp when added to the chain.
 
 Now, let's create a class `Blockchain` that will maintain this operation:
 
@@ -144,9 +144,9 @@ But this time, we passed it to the `initGenesisBlock()` method, which initialize
 
 > Notice that, we created it using the previously created `BlockCrypto` class and passed all the parameters as arguments.
 
-- `latestBlock`: As named, we use it for finding the latest block in the chain. As explained earlier, it helps to ensure the hash of the current block and map it to the hash of the previous block to ensure the chain integrity.
+- `latestBlock`: As named, we use it for finding the last block added in the chain. As explained earlier, it helps to ensure the hash of the current block and map it to the hash of the previous block to ensure the chain integrity.
 
-- `addNewBlock`: This method is used to add a new block to the chain. Matching the previous hash block and current hash block in our case is to ensure that we are not tampering with the chain.
+- `addNewBlock`: This method is used to add a new block to the chain. The previous hash block is matched to the current hash block to ensure minimal or no tampering with the chain.
 
 Now that our blockchain is ready to work. We are missing something which is a core blockchain principle, the blockchain _integrity_.
 
@@ -159,7 +159,7 @@ To perform this, we use digital security or cryptographic hash, which ensures se
 
 We'll loop over the entire blockchain to check whether any hash has been tampered with, taking into account the exception of the first block, which is hardcoded.
 
-Besides, this method will verify if the hashes of each two consecutive blocks are pointing to one another. If the integrity of the blockchain has been compromised, it returns `false`; otherwise, in case no anomalies are encountered, it returns `true`.
+Besides, this method verifies if the cryptographic-key of each two blocks in series are pointing to one another. If the integrity of the blockchain has been compromised, it returns `false`; otherwise, in case no anomalies are encountered, it returns `true`.
 
 We'll create this method inside the `Blockchain` class:
 
