@@ -102,7 +102,7 @@ In the constructor, we initialize its properties and assign parameters to it, as
 
 - `current_time`: As the name states, it keeps a record of the time when each transaction is completed.
 
-- `info`: All completed transactions data are recorded and stored by this function.
+- `info`: All completed transactions data are recorded and stored by this method.
 
 - `nexthash`: It is pointing to the hash_key of the next block in the network chain. It's mainly used to keep and maintain the integrity of the blockchain.
 
