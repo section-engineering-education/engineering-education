@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/consuming-apis-in-flutter/
+url: /consuming-apis-in-flutter/
 title: Consuming APIs in Flutter
 description: In this article, we will understand APIs and how to use them in Flutter. We will also learn to use the GitHub API in a flutter application.
 author: jerim-kaura
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/consuming-apis-in-flutter/hero.jpg
+ - url: /consuming-apis-in-flutter/hero.jpg
    alt: APIs in Flutter example image
 ---
 Application Programming Interface (API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.
@@ -44,7 +44,7 @@ We will build our application based on the Github API. Therefore, we need to obt
 #### Organizing the folders
 Instead of writing our code on a single file, we need to organize the folders within our Flutter project to locate our application's files and components with ease. This practice allows us to find bugs easier. 
 
-Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](/engineering-education/flutter-folder-organization/) article for the preferable folder organization. 
+Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](/flutter-folder-organization/) article for the preferable folder organization. 
 
 The final folder organization should appear as below:
 ```bash
@@ -288,4 +288,4 @@ Happy coding!
 - [GitHub REST API](https://docs.github.com/en/rest)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

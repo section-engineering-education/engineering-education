@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/documenting-node-js-rest-api-using-swagger/
+url: /documenting-node-js-rest-api-using-swagger/
 title: Documenting a Node.js REST API using Swagger
 description: In this article, we will learn about API documentation using Swagger. Also, we will learn to document Node.js APIs using Swagger from scratch.
 author: kennedy-mwangi
@@ -10,7 +10,7 @@ date: 2021-04-17T00:00:00-14:00
 topics: [Node.js,API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/documenting-node-js-rest-api-using-swagger/hero.jpg
+  - url: /documenting-node-js-rest-api-using-swagger/hero.jpg
     alt: Swagger example image
 ---
 Swagger is a software tool used for designing, building, documenting, and using RESTful APIs. It follows the OpenAPI specification.
@@ -28,7 +28,7 @@ To follow along in this article, it is essential to have the following:
 - Some basic knowledge of JavaScript.
 - Familiarity with building REST APIs using [Express.js](https://expressjs.com/). 
 
-If you are not familiar, you can reference this [article](/engineering-education/restful-web-api-using-nodejs-postgressql-and-express/).
+If you are not familiar, you can reference this [article](/restful-web-api-using-nodejs-postgressql-and-express/).
 
 ### Overview
 - [Introduction](#introduction)
@@ -117,7 +117,7 @@ To test the above:
 
 Otherwise, your webpage should resemble the following:
 
-![general_info_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/general-info-screenshot.png)
+![general_info_screenshot](/documenting-node-js-rest-api-using-swagger/general-info-screenshot.png)
 
 *A screenshot of general info about the API*
 
@@ -150,7 +150,7 @@ To test this:
 
 Otherwise, the following section should be added to your page:
 
-![servers-screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/servers-screenshot.png)
+![servers-screenshot](/documenting-node-js-rest-api-using-swagger/servers-screenshot.png)
 
 *A screenshot of the API servers*
 
@@ -178,7 +178,7 @@ To test this:
 
 Otherwise, this section should be added to your page:
 
-![tags_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/tags-screenshot.png)
+![tags_screenshot](/documenting-node-js-rest-api-using-swagger/tags-screenshot.png)
 
 *A screenshot of the API tags*
 
@@ -266,7 +266,7 @@ To test this:
 
 The following section should be added to the documentation page:
 
-![schemas_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/schemas-screenshot.png)
+![schemas_screenshot](/documenting-node-js-rest-api-using-swagger/schemas-screenshot.png)
 
 *A screenshot of the API components*
 
@@ -321,7 +321,7 @@ To test this:
 
 Otherwise, the following section should be added to the page:
 
-![get_todos_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todos-screenshot.png)
+![get_todos_screenshot](/documenting-node-js-rest-api-using-swagger/get-todos-screenshot.png)
 
 *A screenshot of getting todos route*
 
@@ -399,7 +399,7 @@ To test this:
 
 The following section should be added to the page:
 
-![get_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todo-screenshot.png)
+![get_todo_screenshot](/documenting-node-js-rest-api-using-swagger/get-todo-screenshot.png)
 
 *A screenshot of getting a single todo route*
 
@@ -459,7 +459,7 @@ To test this:
 
 The following section should be added to your page:
 
-![create_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/create-todo-screenshot.png)
+![create_todo_screenshot](/documenting-node-js-rest-api-using-swagger/create-todo-screenshot.png)
 
 *A screenshot of creating todo route*
 
@@ -522,7 +522,7 @@ To test this:
 
 The following section should be added to your page:
 
-![update_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/update-todo-screenshot.png)
+![update_todo_screenshot](/documenting-node-js-rest-api-using-swagger/update-todo-screenshot.png)
 
 *A screenshot of updating todo route*
 
@@ -585,7 +585,7 @@ To test this:
 
 Otherwise, the following section should be added to your page:
 
-![delete_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/delete-todo-screenshot.png)
+![delete_todo_screenshot](/documenting-node-js-rest-api-using-swagger/delete-todo-screenshot.png)
 
 *A screenshot of deleting todo route*
 
@@ -618,4 +618,4 @@ Feel free to ponder upon the following resources:
 - [Automatic API documentation in Node.js using swagger](https://medium.com/swlh/automatic-api-documentation-in-node-js-using-swagger-dd1ab3c78284)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

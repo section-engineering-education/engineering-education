@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-quasar-framework/
+url: /getting-started-with-quasar-framework/
 title: Getting Started with the Quasar Framework
 description: This tutorial will introduces us to the Quasar Framework. We will create a simple app with Quasar framework. We will look at installing Quasar in our local machine and writing components in Quasar. 
 author: espira-marvin
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-quasar-framework/hero.jpg
+  - url: /getting-started-with-quasar-framework/hero.jpg
     alt: Vue Quasar Framework example
 ---
 The [Quasar Framework](https://quasar.dev/) is a Vue.js-based framework used to develop cross-platform applications using one codebase. This helps by saving in development costs.
@@ -344,4 +344,4 @@ That is it.
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)

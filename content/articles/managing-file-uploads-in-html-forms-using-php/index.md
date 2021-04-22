@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/managing-file-uploads-in-html-forms-using-php/
+url: /managing-file-uploads-in-html-forms-using-php/
 title: Managing File Uploads in HTML Forms using PHP
 description: In this article we will look at how we handle file uploads in HTML forms with PHP. It is an easy and efficient way of handling multipart form submissions. 
 author: felix-vaati
@@ -10,7 +10,7 @@ date: 2021-04-09T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/managing-file-uploads-in-html-forms-using-php/hero.jpg
+  - url: /managing-file-uploads-in-html-forms-using-php/hero.jpg
     alt: Managing File uploads in HTML forms using PHP
 ---
 In today’s world, files are exchanged daily, especially over the internet.  Websites use these files for various purposes such as user profile pictures and exchange of information among users. These range from images, videos to pdf documents.
@@ -19,7 +19,7 @@ In today’s world, files are exchanged daily, especially over the internet.  We
 In this tutorial, we will look at how to use HTML forms and PHP to upload files to a website.
 
 ### Prerequisites
-Before starting this tutorial, make sure you have prior knowledge on how to create HTML forms and databases in MySQL. You can check out a simple guide on how to create forms in HTML [here](/engineering-education/working-with-forms-in-php/).
+Before starting this tutorial, make sure you have prior knowledge on how to create HTML forms and databases in MySQL. You can check out a simple guide on how to create forms in HTML [here](/working-with-forms-in-php/).
 
 Since we will be using PHP, make sure you have installed `Xampp` to help in running the PHP code. You can download it [here](https://www.apachefriends.org/download.html).
 
@@ -27,11 +27,11 @@ Since we will be using PHP, make sure you have installed `Xampp` to help in runn
 
 Once the installation is complete, start the Xampp control panel and activate Apache by clicking the start button as highlighted below.
 
-![Apache image](/engineering-education/managing-file-uploads-in-html-forms-using-php/apachestart.jpg)
+![Apache image](/managing-file-uploads-in-html-forms-using-php/apachestart.jpg)
 
 After a few seconds, the Apache header should change to a green background to indicate the apache server is running. Check the image below for reference.
 
-![Apache running image ](/engineering-education/managing-file-uploads-in-html-forms-using-php/apachesuccess.jpg)
+![Apache running image ](/managing-file-uploads-in-html-forms-using-php/apachesuccess.jpg)
 
 ### Step 1 — Creating the PHP files
 Navigate to `C:\xampp\htdocs\` (the driver location will depend on where you installed your Xampp app) and create a new folder `test`.
@@ -63,7 +63,7 @@ To view the output of this code, head to your browser at http://localhost/test. 
 
 From the browser, you should have something like this.
 
-![form output](/engineering-education/managing-file-uploads-in-html-forms-using-php/formlayout.jpg)
+![form output](/managing-file-uploads-in-html-forms-using-php/formlayout.jpg)
 
 ### Step 1 — Creating the PHP logic to handle the file uploads
 In the form we created above, once we click the submit button an action seems to be taking place. Although the file we choose to upload seems to have been uploaded, we cannot locate them.
@@ -79,11 +79,11 @@ When saving files on a table record, we follow these steps.
 
 1. **Create a database** -> Head to the `xampp` control panel and start MySQL. Click the admin button to access the `phpMyAdmin` dashboard; this is where we will create our database.
 
-![mysql button](/engineering-education/managing-file-uploads-in-html-forms-using-php/mysqlbutton.jpg).
+![mysql button](/managing-file-uploads-in-html-forms-using-php/mysqlbutton.jpg).
 
 The admin button on the MySQL row should take you to your browser and display this.
 
-[Phpmyadmin dashboard](/engineering-education/managing-file-uploads-in-html-forms-using-php/Phpmyadmin.jpg)
+[Phpmyadmin dashboard](/managing-file-uploads-in-html-forms-using-php/Phpmyadmin.jpg)
 
 2.  **Connecting to a database** -> For this tutorial we will be using mysqli. In our `index.php` file , under the closing html tag lets add the following php script.
 
@@ -220,4 +220,4 @@ You can go ahead and try handling video or pdf uploads.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)

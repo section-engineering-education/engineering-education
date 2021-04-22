@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-self-supervised-learning/
+url: /what-is-self-supervised-learning/
 title: What is Self-Supervised Learning?
 description: Self-supervised learning is a form of supervised learning that doesn't require human input to perform data labeling. The results are obtained by models that analyze data, label and categorize information independently without any human input. 
 author: willies-ogola
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-self-supervised-learning/hero.jpg
+  - url: /what-is-self-supervised-learning/hero.jpg
     alt: Self-Supervised Learning example image
 ---
 Artificial Intelligence (AI) is a rapidly advancing field with various techniques being billed as the most promising to keep an eye on. One of those techniques is self-supervised learning.

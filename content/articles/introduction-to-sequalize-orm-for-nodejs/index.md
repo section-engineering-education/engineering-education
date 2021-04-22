@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-sequalize-orm-for-nodejs/
+url: /introduction-to-sequalize-orm-for-nodejs/
 title: Introduction to Sequelize ORM for Node.js
 description: In this tutorial, we will introduce Object Relational Mapper in Node.js called Sequelize. We will also learn to sequelize a simple database in Node.js.
 author: oruko-pius
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-sequalize-orm-for-nodejs/hero.jpg
+  - url: /introduction-to-sequalize-orm-for-nodejs/hero.jpg
     alt: ORM example Image
 ---
 Connecting an Object-relational Mapper (ORM) to a Node.js application is not an easy task for most developers, since there are no elaborate resources and/or documentation about it.
@@ -267,4 +267,4 @@ For more reference on Sequelize, be sure to check their [documentation](https://
 Happy Coding :>)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

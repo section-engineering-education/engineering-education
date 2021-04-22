@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-setup-nodejs-express-for-react/
+url: /how-to-setup-nodejs-express-for-react/
 title: How to Set up a Node.js Express Server for React
 description: React is a JavaScript library used to build user interfaces and develop single-page applications using reusable UI components. After completing this article, the reader will create a simple Web App using React as a frontend, set up an Express server to act as backend, and set up a proxy to call the Express backend from React.
 author: verah-ombui
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/how-to-setup-nodejs-express-for-react/hero.jpg
+ - url: /how-to-setup-nodejs-express-for-react/hero.jpg
    alt: Express.js server for react example image
 ---
 React is a JavaScript library used to build user interfaces and develop single-page applications using reusable UI components. React is used for building frontend apps that can communicate with the backend server. 
@@ -28,7 +28,7 @@ To follow this article along it will be helpful to have the following:
 
 ### Setting up the folder structure
 
-![Folder Structure](/engineering-education/how-to-setup-nodejs-express-for-react/folder-structure.PNG)
+![Folder Structure](/how-to-setup-nodejs-express-for-react/folder-structure.PNG)
 
 The first step would be to create a root folder for our case, `demoreactapp`, to hold all of our App's files. Then we will have the `client` directory that will hold all the React App files. 
 
@@ -185,7 +185,7 @@ $node server.js
 
 After running the file `server.js`, next we will go to our browser, “<http://localhost:5000/express_backend>”, and the message below will be displayed:
 
-![Get Route success](/engineering-education/how-to-setup-nodejs-express-for-react/get-route-success.PNG)
+![Get Route success](/how-to-setup-nodejs-express-for-react/get-route-success.PNG)
 
 The above shows that our Express server is working as expected and that the `GET route` we created is working, and it is possible to fetch the route from the client-side. 
 
@@ -202,7 +202,7 @@ The commands above will run the React Dev server, which runs on port 3000, and a
 
 The screen below with a message will be displayed:
 
-![React app running](/engineering-education/how-to-setup-nodejs-express-for-react/react-app-success.PNG)
+![React app running](/how-to-setup-nodejs-express-for-react/react-app-success.PNG)
 
 Finally, we have rendered the data fetched from the `GET route` in `server.js` to our frontend React App, as demonstrated above.
 
@@ -216,4 +216,4 @@ The code snippets and files used in this guide can be accessed at the [GitHub re
 Happy coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/hibernate-one-to-one-mapping/
+url: /hibernate-one-to-one-mapping/
 title: Developing a One-to-one Mapping Application Leveraging Hibernate
 description: In this tutorial a reader will learn how to create, read, update and delete data using hibernate by applying a one-to-one mapping strategy.
 author: david-mbochi
@@ -10,7 +10,7 @@ date: 2021-04-05T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/hibernate-one-to-one-mapping/hero.jpg
+  - url: /hibernate-one-to-one-mapping/hero.jpg
     alt: One-to-one Mapping Application Leveraging Hibernate
 ---
 This tutorial is for Java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented. 
@@ -594,4 +594,4 @@ In the next tutorial, the reader will learn how how to perform CRUD operations u
 Happy coding!
 
 ---
-Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)

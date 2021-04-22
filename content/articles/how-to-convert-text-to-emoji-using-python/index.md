@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-convert-text-to-emoji-using-python/
+url: /how-to-convert-text-to-emoji-using-python/
 title: How to Convert Text to Emoji Using Python
 description: In this article, we will discuss basic concepts of Python such as loops, variables and dictionaries. Using dictionaries, we will implement code to convert text into emojis and see the output of the code.
 author: majiyebo-ezra-shewuri
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: 
 images:
 
- - url: /engineering-education/how-to-convert-text-to-emoji-using-python/hero.jpg
+ - url: /how-to-convert-text-to-emoji-using-python/hero.jpg
    alt: Text to emoji example image
 
 ---
@@ -223,4 +223,4 @@ Happy coding!
 - [learn python](https://www.learnpython.org/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)

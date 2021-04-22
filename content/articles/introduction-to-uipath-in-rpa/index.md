@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-uipath-in-rpa/
+url: /introduction-to-uipath-in-rpa/
 title: Introduction to UiPath in Robotic Process Automation (RPA)
 description: This article will be an introduction to Robotic Process Automation. We will explore a RPA tool called UiPath to see why it is widely used, how it works, and its use cases.
 author: onesmus-mbaabu
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-uipath-in-rpa/hero.jpg
+  - url: /introduction-to-uipath-in-rpa/hero.jpg
     alt: Robotic Process Automation (RPA) Image
 ---
 [UiPath](https://www.uipath.com) is a popular and progressive Robotic Process Automation (RPA) tool that enables users to automate various aspects of business processes. It provides an open-source platform that promotes collaboration and automation of repetitive tasks. It is used in various fields such as banking, healthcare, finance, and many more.
@@ -67,7 +67,7 @@ Understanding the UiPath architecture can help us understand how it works.
 
 The image below shows the architecture of UiPath:
 
-![UiPath Architecture](/engineering-education/introduction-to-uipath-in-rpa/uipath-architecture.jpg)
+![UiPath Architecture](/introduction-to-uipath-in-rpa/uipath-architecture.jpg)
 
 *[Image Source: EDUCBA](https://www.educba.com/academy/wp-content/uploads/2020/09/UiPath-Architecture-img.jpg)*
 
@@ -114,4 +114,4 @@ To summarize, the following are some of the main things we have learned:
 Happy learning!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

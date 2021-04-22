@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/android-application-widgets-tutorial-in-java/
+url: /android-application-widgets-tutorial-in-java/
 title: Android Application Widgets Tutorial in Java
 description: In this article we will learn about Android application widgets and how to implement a widget in an Android app. We will discuss different types of widgets, their uses, and learn about the limitations of widgets.
 author: moses-chege
@@ -10,7 +10,7 @@ date: 2021-04-20T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/android-application-widgets-tutorial-in-java/hero.jpg
+  - url: /android-application-widgets-tutorial-in-java/hero.jpg
     alt: Android Application Widgets Tutorial in Java
 ---
 Application widgets are views that contain some of the application's functionalities that are accessible from the user's home screen, for example, weather widgets, clock widgets, etc. This tutorial will take you through how to implement widgets in Android applications.
@@ -59,17 +59,17 @@ This section will create a sample app with a blank activity and a widget. Our fo
 
 After going through this tutorial, you will create an Android widget, as shown in the animations below. Find the final APK file on this [link](https://drive.google.com/file/d/10x0E3Nd65EQF2sfyQWFef4JV316AALIB/view?usp=sharing).
 
-![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/android-app-widget.gif)
+![Demo widget screenshot](/android-application-widgets-tutorial-in-java/android-app-widget.gif)
 
 ### Step 1: Create a project.
 Create a new Android Studio project with at least one activity and name the project **App Widgets Demo.** Select `Java` as the project's programming language.
 
-![Android Studio create project](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
+![Android Studio create project](/android-application-widgets-tutorial-in-java/android-studio-create-empty-activity-project.jpg)
 
 ### Step 2: Create a new widget
 To create a widget, navigate to the package name `com.demo.widgetsdemo` and right-click. Select `New` -> `Widget` -> `App Widget`. This will open a new window to configure the widget, as shown in the screenshot below.
 
-![Android Studio configure app widget](/engineering-education/android-application-widgets-tutorial-in-java/android-studio-configure-app-widget.jpg)
+![Android Studio configure app widget](/android-application-widgets-tutorial-in-java/android-studio-configure-app-widget.jpg)
 
 - The `Class Name` defines the name of the widget class.
 - `Placement` determines where the widget can be placed. In this case, select the `Home screen`.
@@ -126,12 +126,12 @@ The `AppWidgetProvider` class overrides the following methods:
 
 The final code will be as shown below.
 
-![Widget Class Code](/engineering-education/android-application-widgets-tutorial-in-java/widget-class-code.png)
+![Widget Class Code](/android-application-widgets-tutorial-in-java/widget-class-code.png)
 
 ### Step 5: Edit manifest file
 Declare the `AppWidgetProvider` class in the manifest file AndroidManifest.xml as a broadcast receiver.
 
-![Manifest Code](/engineering-education/android-application-widgets-tutorial-in-java/manifest-code.png)
+![Manifest Code](/android-application-widgets-tutorial-in-java/manifest-code.png)
 
 This declaration is usually automatically added by the IDE. If the widget class is manually created, the declaration is added manually. Refer to the AndroidManifest.xml in the [final project](https://github.com/manmusa100/App-Widgets-Demo).
 
@@ -151,12 +151,12 @@ Install the app on a test device and add the widget to the home screen.
 
 >Note: Widgets are arranged in alphabetical order. Go to the widget section and locate the widget App Widgets Demo. The widget we created will have the same name as the application name, as shown in the screenshot below.
 
-![Demo widget screenshot](/engineering-education/android-application-widgets-tutorial-in-java/demo-widget-screenshot.jpg)
+![Demo widget screenshot](/android-application-widgets-tutorial-in-java/demo-widget-screenshot.jpg)
 
 ### Step 8: Place the widget on the home screen
 See the screenshot below of the final widget on a home screen.
 
-![Homescreen demo widget](/engineering-education/android-application-widgets-tutorial-in-java/home-screen-demo-widget.jpg)
+![Homescreen demo widget](/android-application-widgets-tutorial-in-java/home-screen-demo-widget.jpg)
 
 Tap the widget button. This should open the app `MainActivity`.
 
@@ -180,4 +180,4 @@ Lastly, we have learned about the limitations of widgets. Keep in mind the [widg
 Happy coding!
 
 ---
-Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
+Peer Review Contributions by: [Briana Nzivu](/authors/briana-nzivu/)

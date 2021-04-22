@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/telegram-bot-in-nodejs/
+url: /telegram-bot-in-nodejs/
 title:  Building your First Telegram Bot using Node.js and Telegraf
 description: In this tutorial, you will learn how to build telegram bots using Node.js and the Telegraf library. This will act as an introduction to the Telegram bot environment that will enable you to build other bots.
 author: ck-muithi
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/telegram-bot-in-nodejs/hero.jpg
+  - url: /telegram-bot-in-nodejs/hero.jpg
     alt: telegram bot in nodejs image
 ---
 What are telegram bots? Bots are third-party application accounts that run inside the Telegram application. Users can interact with bots by sending them messages, commands, and inline requests. You control your bots using HTTPS requests from the Telegram Bot API.
@@ -197,23 +197,23 @@ Here are the results from telegram.
 
 #### Starting the bot
 
-![bot result 1](/engineering-education/telegram-bot-in-nodejs/image1.jpg)
+![bot result 1](/telegram-bot-in-nodejs/image1.jpg)
 
 #### Requesting for a dog photo
 
-![bot result 2](/engineering-education/telegram-bot-in-nodejs/image2.jpg)
+![bot result 2](/telegram-bot-in-nodejs/image2.jpg)
 
 #### Requesting for a cat photo
 
-![bot result 3](/engineering-education/telegram-bot-in-nodejs/image3.jpg)
+![bot result 3](/telegram-bot-in-nodejs/image3.jpg)
 
 #### Requesting phone number
 
-![bot result 4](/engineering-education/telegram-bot-in-nodejs/image4.jpg)
+![bot result 4](/telegram-bot-in-nodejs/image4.jpg)
 
 #### Requesting location
 
-![bot result 5](/engineering-education/telegram-bot-in-nodejs/image5.jpg)
+![bot result 5](/telegram-bot-in-nodejs/image5.jpg)
 
 Kindly check the source code in my GitHub repository [here](https://github.com/calebroHQ/telegram-chatbot-for-a--restaraunt).
 
@@ -230,4 +230,4 @@ Happy coding and stay safe!
 - [Telegraf documentation](https://telegraf.js.org/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

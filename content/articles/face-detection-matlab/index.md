@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/face-detection-matlab/
+url: /face-detection-matlab/
 title: Face Detection using Viola-Jones Algorithm in Matlab
 description: This article gives the reader a guide on how to use Viola-Jones algorithm to detect faces in realtime. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces.
 author: paul-juma
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/face-detection-matlab/hero.jpg
+  - url: /face-detection-matlab/hero.jpg
     alt: Face detection example image
 ---
 Face detection is the ability to distinguish faces from non-face objects in an image or a video. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces. Viola-Jones algorithm is robust, powerful, and faster despite being outdated. 
@@ -157,11 +157,11 @@ end
 
 When we run the program, the following image is displayed on our figure window.
 
-![Faces detected](/engineering-education/face-detection-matlab/engineers.png)
+![Faces detected](/face-detection-matlab/engineers.png)
 
 When we use an image that has no face, the following is displayed on our figure window.
 
-![Building](/engineering-education/face-detection-matlab/building.png)
+![Building](/face-detection-matlab/building.png)
 
 ### Figure
 This code can also be used to detect eyes, mouths, and/or noses. You only need to change the names, that is replace face with a nose. You would need to vary the MergeThreshold for accuracy.
@@ -172,4 +172,4 @@ The Viola-jones algorithm is the best algorithm for face object detection in rea
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

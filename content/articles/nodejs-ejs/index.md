@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-ejs/
+url: /nodejs-ejs/
 title: Getting Started with EJS Templating Engine
 description: This tutorial will go over the basics of Node.js EJS templating engine and how to use it in Express.js application.
 author: quinter-awuor
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nodejs-ejs/hero.png
+  - url: /nodejs-ejs/hero.png
     alt: Getting started with EJS templating engine example image
 ---
 In this article we are going to learn about EJS templating engine, it is one of the most used templating engines in the Node.js ecosystem. In the Node.js and Express ecosystem, there is a tone of templating engines that makes it possible to create a web interface for our Node.js and Express applications. 
@@ -27,7 +27,7 @@ To follow this article along the reader will need:
 
 ### Project setup
 
-![Project structure](/engineering-education/nodejs-ejs/project-structure.png)
+![Project structure](/nodejs-ejs/project-structure.png)
 
 - `views` contains the `EJS` files and the `partials` contains the partial `EJS` files.
 - `app.js` file contains the express configurations and routes.
@@ -234,7 +234,7 @@ $ node app.js
 
 When we navigate to `localhost:3000/` in our browser, a page with all the posts is displayed as shown below.
 
-![Project structure](/engineering-education/nodejs-ejs/running-site.png)
+![Project structure](/nodejs-ejs/running-site.png)
 
 ### Conclusion
 Now that you have learned how to use `EJS` template tags and partials, create a website that reuses a footer and implements conditional statements within the `EJS` template. 
@@ -244,4 +244,4 @@ The full source code can be downloaded [here](https://replit.com/@qawuor/ejs-tut
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

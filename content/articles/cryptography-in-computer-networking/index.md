@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/cryptography-in-computer-networking/
+url: /cryptography-in-computer-networking/
 title: Cryptography in Computer Networking
 description: This article will be a walk through on computer cryptography and network security in general.  
 author: mackrine-awino
@@ -11,7 +11,7 @@ topics: [Security, Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/cryptography-in-computer-networking/hero.jpg
+  - url: /cryptography-in-computer-networking/hero.jpg
     alt: 
 ---
 Cybercrimes are becoming part of modern computer networking, putting businesses at risk of losing their data. In this article, I will be walking you through computer cryptography and network security in general.  
@@ -106,6 +106,6 @@ Technically, cryptography is the answer to all computer network security issues 
 Happy learning!
 
 ---
-Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
 
 

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/basics-of-means-end-analysis-in-ai/
+url: /basics-of-means-end-analysis-in-ai/
 title: Basics of Means End Analysis (MEA) in Artificial Intelligence (AI)
 description: This article explain will how MEA works and provides the algorithmic steps for implementing it. It will also provide an example of how a problem is solved using means end analysis. We will go over how this technique is used in real-life applications.
 author: grace-nkurikiyinka
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/basics-of-means-end-analysis-in-ai/hero.jpg
+  - url: /basics-of-means-end-analysis-in-ai/hero.jpg
     alt: Means end analysis image example
 ---
 Means end analysis (MEA) is an important concept in artificial intelligence (AI) because it enhances problem resolution. MEA solves problems by defining the goal and establishing the right action plan. This technique is used in AI programs to limit search. 
@@ -38,7 +38,7 @@ Means end analysis uses the following processes to achieve its objectives:
 
 The following image shows how the target goal is divided into sub-goals, that are then linked with executable actions.
 
-![MEA Processes](/engineering-education/basics-of-means-end-analysis-in-ai/mea-processes.jpg)
+![MEA Processes](/basics-of-means-end-analysis-in-ai/mea-processes.jpg)
 
 [Image Source](https://www.educba.com/academy/wp-content/uploads/2020/01/Means-Ends-Analysis.jpg)
 
@@ -56,7 +56,7 @@ The following are the algorithmic steps for means end analysis:
 ### Example of problem-solving in Means End Analysis
 Let’s assume that we have the following initial state.
 
-![Initial State](/engineering-education/basics-of-means-end-analysis-in-ai/initial-state.png)
+![Initial State](/basics-of-means-end-analysis-in-ai/initial-state.png)
 
 [Image Source](https://static.javatpoint.com/tutorial/ai/images/means-ends-analysis-in-ai2.png)
 
@@ -64,7 +64,7 @@ We want to apply the concept of means end analysis to establish whether there ar
 
 The following image shows a comparison between the initial state and the target state. 
 
-![Initial and Target States](/engineering-education/basics-of-means-end-analysis-in-ai/initial-and-target-states.png)
+![Initial and Target States](/basics-of-means-end-analysis-in-ai/initial-and-target-states.png)
 
 [Image Source](https://static.javatpoint.com/tutorial/ai/images/means-ends-analysis-in-ai.png)
 
@@ -76,19 +76,19 @@ The following are the three operators that can be used to solve the problem.
 
 **1. Delete operator:** The dot symbol at the top right corner in the initial state does not exist in the goal state. The dot symbol can be removed by applying the *delete operator*.
 
-![Delete Operator](/engineering-education/basics-of-means-end-analysis-in-ai/delete-operator.png)
+![Delete Operator](/basics-of-means-end-analysis-in-ai/delete-operator.png)
 
 [Image Source](https://static.javatpoint.com/tutorial/ai/images/means-ends-analysis-in-ai3.png)
 
 **2. Move operator:** We will then compare the new state with the end state. The green diamond in the new state is inside the circle while the green diamond in the end state is at the top right corner. We will move this diamond symbol to the right position by applying the *move operator*.
 
-![Move Operator](/engineering-education/basics-of-means-end-analysis-in-ai/move-operator.png)
+![Move Operator](/basics-of-means-end-analysis-in-ai/move-operator.png)
 
 [Image Source](https://static.javatpoint.com/tutorial/ai/images/means-ends-analysis-in-ai4.png)
 
 **3. Expand operator:** After evaluating the new state generated in step 2, we find that the diamond symbol is smaller than the one in the end state. We can increase the size of this symbol by applying the *expand operator*. 
 
-![Expand Operator](/engineering-education/basics-of-means-end-analysis-in-ai/expand-operator.png)
+![Expand Operator](/basics-of-means-end-analysis-in-ai/expand-operator.png)
 
 [Image Source](https://static.javatpoint.com/tutorial/ai/images/means-ends-analysis-in-ai5.png)
 
@@ -119,4 +119,4 @@ To summarize:
 Happy learning!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

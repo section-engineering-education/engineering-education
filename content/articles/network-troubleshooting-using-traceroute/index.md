@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-troubleshooting-using-traceroute/
+url: /network-troubleshooting-using-traceroute/
 title: Network Troubleshooting using Traceroute
 description: This article will be an overview on the basic functionality behind traceroute, how to use the program, and finally, how to interpret data produced by the program.
 author: sudi-david
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/network-troubleshooting-using-traceroute/hero.png
+  - url: /network-troubleshooting-using-traceroute/hero.png
     alt: Network Routing Image
 ---
 The internet is a revolutionary technological marvel that has allowed for faster transfer of data between people. The world has been converted into a global village through the internet, allowing businesses to thrive as they offer their services. The internet constitutes a series of interconnected routers that transfer data from one computer to another.
@@ -52,7 +52,7 @@ After receiving the TTL information from the first router, the source responds b
 
 Thus, the second router sends a TTL exceeded message back to the source. The traceroute utility repeats the above process until the sent packets reach their specified destination, or the total maximum number of hops specified at the start (which is 20) is achieved.
 
-![First image](/engineering-education/network-troubleshooting-using-traceroute/picture-one.png)
+![First image](/network-troubleshooting-using-traceroute/picture-one.png)
 
 ### Using traceroute 
 Most operating systems come bundled with the traceroute utility program installed. Below are some of the basic procedures for running traceroute on Windows, Linux, and Mac operating systems.
@@ -62,7 +62,7 @@ To access traceroute utility, one must first:
 
 **i.** Open the command prompt by going to start on the taskbar.
 
-![First image](/engineering-education/network-troubleshooting-using-traceroute/picture-two.png)
+![First image](/network-troubleshooting-using-traceroute/picture-two.png)
 
 **ii.** In the search box, type cmd, then press search.
 
@@ -87,7 +87,7 @@ Below are the steps that you should use to run traceroute:
 
 **i.** Launch apple spotlight, search for network utility, then run the application.
 
-![Picture three](/engineering-education/network-troubleshooting-using-traceroute/picture-three.png)
+![Picture three](/network-troubleshooting-using-traceroute/picture-three.png)
 
 **ii.** Inside the application, click on traceroute. 
 
@@ -103,7 +103,7 @@ Below are the steps that you should use to run traceroute:
 
 **i.** Navigate to GO, then select utilities.
 
-![picture four](/engineering-education/network-troubleshooting-using-traceroute/picture-four.png)
+![picture four](/network-troubleshooting-using-traceroute/picture-four.png)
 
 **ii.** In utilities, find Terminal and open it.
 
@@ -119,7 +119,7 @@ In Linux, one should:
 
 **ii.** Inside the terminal, type in the keyword traceroute proceeded with the hostname or IP address.
 
-![picture five](/engineering-education/network-troubleshooting-using-traceroute/picture-five.png)
+![picture five](/network-troubleshooting-using-traceroute/picture-five.png)
 
 >**N/b:** Ensure that you install traceroute on your Linux distribution. To install traceroute, one can run the commands: `Sudo apt-get install traceroute` for those using Ubuntu.
 
@@ -132,7 +132,7 @@ Since we know the basic functionality and different procedures of running tracer
 
 >**N/b:** The data interpreted in this example was from a Windows system.
 
-![picture six](/engineering-education/network-troubleshooting-using-traceroute/picture-six.png)
+![picture six](/network-troubleshooting-using-traceroute/picture-six.png)
 
 The data displayed within the traceroute utility is divided into five columns. 
 
@@ -161,7 +161,7 @@ This can happen when:
 
 #### 3. Abnormal intervals in RTT
 
-![picture seven](/engineering-education/network-troubleshooting-using-traceroute/picture-seven.png)
+![picture seven](/network-troubleshooting-using-traceroute/picture-seven.png)
 
 In the example above, the second column of the seventh row of the table contains an abnormal RTT value compared to the other RTT values in the table. 
 
@@ -195,4 +195,4 @@ Happy learning!
 - [IP Addressing and Subnetting from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html)
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)

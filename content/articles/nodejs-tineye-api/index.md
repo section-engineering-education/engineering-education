@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-tineye-api/
+url: /nodejs-tineye-api/
 title: Consuming the TinEye Reverse Image Search API in Node.js.
 description: This tutorial will go over TinEye reverser image search API. TinEye API makes it possible to search for online image occurrences using an image as the query parameter.
 author: sandra-moringa
@@ -10,7 +10,7 @@ date: 2021-04-19T00:00:00-16:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/nodejs-tineye-api/hero.jpg
+  - url: /nodejs-tineye-api/hero.jpg
     alt: Consuming the TinEye Reverse Image Search API in Node.js example image
 ---
 Reverse image search in the simplest form of explanation is searching for occurrences of an image online using the image to be searched for as the query parameter. We may use this search to locate the source of an image, look for one with a better resolution or get more information about the image.
@@ -43,7 +43,7 @@ npm install tineye-api
 ### Testing in SandBox
 TinEye gives two keys that enables us to test in the sandbox. In the sandbox, we will only search for the image below because it's the only one allowed to be used for testing.
 
-![meloncat](/engineering-education/nodejs-tineye-api/meloncat.jpg)
+![meloncat](/nodejs-tineye-api/meloncat.jpg)
 
 > You can search for other images once you go live.
 
@@ -117,7 +117,7 @@ Finally, we feed the URL and the options for the search to the API then log the 
 
 Upon running the code, we get the output shown in the screenshot below:
 
-![Screenshot 1](/engineering-education/nodejs-tineye-api/screen1.png)
+![Screenshot 1](/nodejs-tineye-api/screen1.png)
 
 A JSON response is returned containing an object `stats` which shows the statistics of the search like the time and query time. 
 
@@ -135,14 +135,14 @@ console.log(response.results);
 
 We get the following output:
 
-![Screenshot 2](/engineering-education/nodejs-tineye-api/screen2.png)
+![Screenshot 2](/nodejs-tineye-api/screen2.png)
 
 It shows the objects in the `matches` array in detail e.g the domain found backlinks, overlay, etc. You can use this information to display the images to the end-user.
 
 #### Performing the search using a file image
 One can also search for the image by uploading it from a local machine or device. The procedure is the same only that we don't specify a URL.
 
-We feed the image path to the `readFileSync()` of the file system module. You can view this [article](/engineering-education/node-file-handling/) by [Lalith Narayan](/engineering-education/authors/lalithnarayan-c/) to get an overview of file handling in Node.js.
+We feed the image path to the `readFileSync()` of the file system module. You can view this [article](/node-file-handling/) by [Lalith Narayan](/authors/lalithnarayan-c/) to get an overview of file handling in Node.js.
 
 We then feed the image and the options to the API using the `searchData()` method.
 
@@ -186,4 +186,4 @@ Have a great one.
 Happy coding!
 
 ---
-Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer review contribution by: [Odhiambo Paul](/authors/odhiambo-paul/)

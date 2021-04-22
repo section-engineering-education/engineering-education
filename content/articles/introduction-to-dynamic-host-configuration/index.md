@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-dynamic-host-configuration/
+url: /introduction-to-dynamic-host-configuration/
 title: Introduction to Dynamic Host Configuration Protocol (DHCP)
 description: This tutorial will be a brief dive into understanding Dynamic Host Configuration Protocol. We will also get an in-depth review about the types of DHCP.
 author: rabo-james-bature
@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-dynamic-host-configuration/hero.jpg
+  - url: /introduction-to-dynamic-host-configuration/hero.jpg
     alt: DHCP hero image
 ---
 A vast majority of the hosts on the internet are end-user devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured statically by a network administrator or dynamically using Dynamic Host Configuration Protocol (DHCP).
@@ -58,7 +58,7 @@ When a DHCP client wants to connect to a network, a four-step process is initiat
 
 The client starts this process by sending a broadcast message, also known as *DHCP Discover* message using its own MAC address and an IPv4 broadcast address of `0.0.0.0 0.0.0.0` to discover any available DHCPv4 server.
 
-![DHCPv4 DORA process](/engineering-education/introduction-to-dynamic-host-configuration/dora.jpg)
+![DHCPv4 DORA process](/introduction-to-dynamic-host-configuration/dora.jpg)
 
 [Source](https://ipwithease.com/wp-content/uploads/2017/07/dora-process-600x270.jpg)
 
@@ -107,7 +107,7 @@ The **Router Solicitation** (RS) message is sent out by a client configured to o
 
 The router sends out a **Router Advertisement** (RA) message after receiving a router solicitation message. This message informs the IPv6 client of the availability of an IPv6 router or server to provide a prefix and prefix-length, and it is sent to the IPv6 all-nodes multicast address of `FF02::1`.
 
-![DHCpv6 process](/engineering-education/introduction-to-dynamic-host-configuration/download.jpg)
+![DHCpv6 process](/introduction-to-dynamic-host-configuration/download.jpg)
 
 [Source](https://download.huawei.com/mdl/image/download?uuid=fd210a1e9ae74fbeadd49b6414f51420)
 
@@ -176,4 +176,4 @@ Happy learning!
 - [DHCPv6](https://www.iana.org/assignments/dhcpv6-parameters/dhcpv6-parameters.xhtml)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/implementing-search-view-in-android/
+url: /implementing-search-view-in-android/
 title: Implementing Search View in Android
 description: This tutorial will take the reader through creating and implementing search views in Android. A SearchView is an Android widget that simplifies the process of manoeuvering through a bunch of data trying to find a match.
 author: eric-gacoki
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-search-view-in-android/hero.png
+  - url: /implementing-search-view-in-android/hero.png
     alt: Search Views in Android
 ---
 When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. This problem can be solved by filtering out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. 
@@ -38,7 +38,7 @@ When the build process is done, expand the package under `app/java/"package-name
 
 They should look like this.
 
-![packages-image](/engineering-education/implementing-search-view-in-android/directories-collapsed.png)
+![packages-image](/implementing-search-view-in-android/directories-collapsed.png)
 
 This aids in organizing the project such that related files belong to the same category. This way robust, production-quality apps can be built rapidly. You can learn more about application architecture [here](https://developer.android.com/jetpack/guide).
 
@@ -145,7 +145,7 @@ This creates two `TextViews` that will display a person's name and age respectiv
 
 Preview: 
 
-![row-item-image](/engineering-education/implementing-search-view-in-android/row-item.png)
+![row-item-image](/implementing-search-view-in-android/row-item.png)
 
 To preview how this will appear in a RecyclerView at runtime, add the following attribute inside the RecyclerView tag.
 
@@ -158,7 +158,7 @@ To preview how this will appear in a RecyclerView at runtime, add the following 
 
 Preview: 
 
-![recyclerview-preview-image](/engineering-education/implementing-search-view-in-android/main-ui.png)
+![recyclerview-preview-image](/implementing-search-view-in-android/main-ui.png)
 
 ### F). Creating the data model
 A model is an independent component that is responsible for handling the data of an application. In our case, we need to use a list of data that is of the type `Person`. The `Person` data class holds two non-nullable variables, name and age.
@@ -375,7 +375,7 @@ It can be avoided by doing either of the following:
 
 Finally this is how the app should look like:
 
-![results-image](/engineering-education/implementing-search-view-in-android/results.png)
+![results-image](/implementing-search-view-in-android/results.png)
 
 ### Conclusion
 In this tutorial, we have learned how to create and use a SearchView to filter data in a RecyclerView in Android. This is a good way to improve the overall performance of the application. 
@@ -385,4 +385,4 @@ The source code for this tutorial can be found in this [GitHub repository](https
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

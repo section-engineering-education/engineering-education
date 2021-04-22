@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/
+url: /how-to-create-an-automatic-slider-in-android-studio/
 title: How to Create an Automatic Slider in Android Studio
 description: This article explains how to implement Automatic Sliders in Android. These components provide extra space that developers can use to present information to the user.
 author: joseph-chege
@@ -10,7 +10,7 @@ date: 2021-04-02T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/hero.jpg
+  - url: /how-to-create-an-automatic-slider-in-android-studio/hero.jpg
     alt: Introduction to Bottom Sheets in Android
 ---
 Sliders are found on cross-platforms such as website pages, desktop, and mobile apps. They are usually used to highlight important features on home screens.
@@ -309,7 +309,7 @@ tabLayout.setupWithViewPager(page,true);
 
 You can now run the application to test if everything is working.
 
-![SLIDERS](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/sliders.gif)
+![SLIDERS](/how-to-create-an-automatic-slider-in-android-studio/sliders.gif)
 
 Swiping on the screen will change the displaying slide, and tapping on the slide's tab will change the slide pages - as you'd expect.
 
@@ -409,7 +409,7 @@ public class MainActivity extends AppCompatActivity {
 
 Run the app on your mobile phone to see if this works.
 
-![Automatic slider timer](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
+![Automatic slider timer](/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
 
 ### Conclusion
 I hope this guide helped you to create and implement sliders in your app. For further reference, download or clone this project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).
@@ -417,4 +417,4 @@ I hope this guide helped you to create and implement sliders in your app. For fu
 Happy coding!
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

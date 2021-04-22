@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/django-api-documentation/
+url: /django-api-documentation/
 title: Getting started with Django API documentation
 description: This article will go over a step-by-step tutorial on how to document Django REST APIs with swagger, coreapi and redoc.
 author: okelo-violet
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/django-api-documentation/hero.jpg
+  - url: /django-api-documentation/hero.jpg
     alt: Getting started with Django API documentation example image
 ---
 REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works.
@@ -276,17 +276,17 @@ Now that we have implemented the code required to generate documentation for our
 #### Coreapi
 On your browser, navigate to `http://127.0.0.1:8000/docs/` to view the coreapi documentation. 
 
-![coreapi documentation](/engineering-education/django-api-documentation/coreapi.png)
+![coreapi documentation](/django-api-documentation/coreapi.png)
 
 #### Swagger
 On your browser, navigate to `http://127.0.0.1:8000/swagger/` to view the swagger documentation.
 
-![Swagger documentation](/engineering-education/django-api-documentation/swagger.png)
+![Swagger documentation](/django-api-documentation/swagger.png)
 
 #### redoc
 On your browser, navigate to `http://127.0.0.1:8000/redoc` to view redoc documentation.
 
-![redoc documentation](/engineering-education/django-api-documentation/redoc.png)
+![redoc documentation](/django-api-documentation/redoc.png)
 
 ### Conclusion
 Now that you have learned how to document Django RESTful API endpoints, proceed and add descriptive notes to every API endpoint documentation.
@@ -294,4 +294,4 @@ Now that you have learned how to document Django RESTful API endpoints, proceed 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/declarative-vs-imperative-ui-android/
+url: /declarative-vs-imperative-ui-android/
 title: Declarative vs Imperative UI in Android
 description: In this article, we are going to have a look at the two types of UI frameworks, declarative and imperative. We will look at their difference and have a short introduction to jetpack compose.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/declarative-vs-imperative-ui-android/hero.jpg
+  - url: /declarative-vs-imperative-ui-android/hero.jpg
     alt: declarative UI image example
 ---
 Every application has a UI framework behind it. These frameworks play a huge part in how the applications are created and their performance as well. They also have different ways of operation but can be summarized into two: `declarative` and `imperative`. 
@@ -59,11 +59,11 @@ To start with, our activity class must extend `ComponentActivity` as from versio
 
 I have created a custom theme called `EatsTheme` that overrides some Material theme properties to give the application it's own special theme.
 
-![component](/engineering-education/declarative-vs-imperative-ui-android/component.png)
+![component](/declarative-vs-imperative-ui-android/component.png)
 
 We then create a composable called `Screen` that will hold all other composables for this screen.
 
-![composable](/engineering-education/declarative-vs-imperative-ui-android/composable.png)
+![composable](/declarative-vs-imperative-ui-android/composable.png)
 
 1. **Composable:** this annotation denotes that the function is used to create a UI element, i.e, a composable.
 
@@ -79,11 +79,11 @@ We then create a composable called `Screen` that will hold all other composables
 
 With that small code snippet, the resulting UI is shown below:
 
-![layout](/engineering-education/declarative-vs-imperative-ui-android/layout.jpg)
+![layout](/declarative-vs-imperative-ui-android/layout.jpg)
 
 A more complex UI is like the one below. You can find the code on [GitHub](https://github.com/LinusMuema/compose/tree/section)
 
-![complex](/engineering-education/declarative-vs-imperative-ui-android/complex.jpg)
+![complex](/declarative-vs-imperative-ui-android/complex.jpg)
 
 ### Conclusion
 That is the difference between the old imperative programming and declarative UI. You should now get deeper into learning how to use the declarative format as it is more flexible and easier to use.
@@ -91,4 +91,4 @@ That is the difference between the old imperative programming and declarative UI
 Have fun coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)

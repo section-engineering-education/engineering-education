@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/uploading-images-to-cloudinary-from-django-application/
+url: /uploading-images-to-cloudinary-from-django-application/
 title: Uploading Images to Cloudinary from a Django Application
 description: This article will be an introduction to uploading images to Cloudinary using Django. We will be building a simple Django app to demonstrate how uploading images to Cloudinary is a better solution.
 author: shuaib-oseni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/uploading-images-to-cloudinary-from-django-application/hero.png
+  - url: /uploading-images-to-cloudinary-from-django-application/hero.png
     alt: Uploading images to cloudinary from django application Image
 ---
 Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your application to a platform like Heroku, you can't save images.
@@ -131,7 +131,7 @@ To use the Cloudinary Django library, we have to configure our `cloud_name`, `ap
 
 We can find our account-specific configuration credentials on the Dashboard page of the account console as shown below:
 
-![Cloudinary dashboard page](/engineering-education/uploading-images-to-cloudinary-from-django-application/dash.png)
+![Cloudinary dashboard page](/uploading-images-to-cloudinary-from-django-application/dash.png)
 
 *Cloudinary dashboard page*
 
@@ -191,11 +191,11 @@ Now, we can log in to the admin page.
 
 To login to the admin section, go to this link [localhost:8000/admin](localhost:8000/admin) and log in with our just created superuser details.
 
-![Django admin login page](/engineering-education/uploading-images-to-cloudinary-from-django-application/admin.png)
+![Django admin login page](/uploading-images-to-cloudinary-from-django-application/admin.png)
 
 *Django admin login page*
 
-![Django admin page](/engineering-education/uploading-images-to-cloudinary-from-django-application/django-admin.png)
+![Django admin page](/uploading-images-to-cloudinary-from-django-application/django-admin.png)
 
 *Django admin page*
 
@@ -203,11 +203,11 @@ Now, let's add an image in the photos category to test if it uploads to Cloudina
 
 Click on pictures, then click `Add Photo` to add an image.
 
-![Add photo](/engineering-education/uploading-images-to-cloudinary-from-django-application/add-photo.png)
+![Add photo](/uploading-images-to-cloudinary-from-django-application/add-photo.png)
 
 *Add photo*
 
-![Photo added](/engineering-education/uploading-images-to-cloudinary-from-django-application/photo-added.png)
+![Photo added](/uploading-images-to-cloudinary-from-django-application/photo-added.png)
 
 *Photo added*
 
@@ -286,7 +286,7 @@ Open the `index.html` file that we created earlier and paste the following code:
 
 In the code above, we used a `for-loop` to go through all the pictures.
 
-![Image of a fish](/engineering-education/uploading-images-to-cloudinary-from-django-application/fish-local.png)
+![Image of a fish](/uploading-images-to-cloudinary-from-django-application/fish-local.png)
 
 *Image of a fish displayed on an HTML page*
 
@@ -305,4 +305,4 @@ For further learning on image/video upload and transformation using Cloudinary, 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

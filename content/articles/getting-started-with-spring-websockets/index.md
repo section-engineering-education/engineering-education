@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-spring-websockets/
+url: /getting-started-with-spring-websockets/
 title: Getting Started with Spring WebSockets in Java
 description: A beginner's guide to WebSockets and implementing them in Spring with Java.  We will go over how to implement WebSockets in Java using Spring Boot, testing it with a simple web client.
 author: john-amiscaray
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/getting-started-with-spring-websockets/hero.jpg
+  - url: /getting-started-with-spring-websockets/hero.jpg
     alt: Spring WebSockets example image
 ---
 For those who don’t know, WebSocket is a communications protocol. It is useful for opening persistent two-way connections between web client and server.
@@ -475,4 +475,4 @@ Try to find a way to avoid adding the credentials into the headers in plain text
 Happy coding!
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

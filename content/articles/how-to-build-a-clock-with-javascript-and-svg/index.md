@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/
+url: /how-to-build-a-clock-with-javascript-and-svg/
 title: How to Build a Clock with JavaScript and SVG
 description: This tutorial will provide a step by step guide on how to build a clock using JavaScript and SVG. 
 author: idris-olubisi
@@ -10,7 +10,7 @@ date: 2021-04-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/hero.png
+  - url: /how-to-build-a-clock-with-javascript-and-svg/hero.png
     alt: Building a clock using JavaScript and SVG
 ---
 JavaScript is a programming language that lets you create complex web page features. On the other hand, Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation. 
@@ -478,7 +478,7 @@ footer {
 ### Step 10 - Testing the application
 To see the magic, start your live server or preview the application in your browser as shown below.
 
-![result on browser](/engineering-education/how-to-build-a-clock-with-javascript-and-svg/result.png)
+![result on browser](/how-to-build-a-clock-with-javascript-and-svg/result.png)
 
 Congratulations 🎉🎉
 
@@ -493,4 +493,4 @@ Happy coding!
 - [SVG by W3schools](https://www.w3schools.com/graphics/svg_intro.asp)
 
 ---
-Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)

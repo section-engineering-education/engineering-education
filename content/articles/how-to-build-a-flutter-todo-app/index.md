@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-to-build-a-flutter-todo-app/
+url: /how-to-build-a-flutter-todo-app/
 title: How to Build a Flutter ToDo App
 description: This article will show the reader how to work with and build a todo application using the Flutter SDK. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase.
 author: nathaniel-dauda-wobin
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a-flutter-todo-app/hero.jpg
+  - url: /how-to-build-a-flutter-todo-app/hero.jpg
     alt: Flutter todo app image
 ---
 Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase.
@@ -41,7 +41,7 @@ At the end of this article, the reader is expected to be familiar with:
 
 The **TODO List** app will look like the screenshot below:
 
-![Final Project](/engineering-education/how-to-build-a-flutter-todo-app/final.jpg)
+![Final Project](/how-to-build-a-flutter-todo-app/final.jpg)
 
 **To-do list app built using Flutter**
 
@@ -64,7 +64,7 @@ We will be using a smartphone to run the app, follow this link to learn how to r
 
 Your app will be the flutter default app which should look like the screengrab below.
 
-![Flutter Default App](/engineering-education/how-to-build-a-flutter-todo-app/default.jpg)
+![Flutter Default App](/how-to-build-a-flutter-todo-app/default.jpg)
 
 **Flutter default after running any app for the first time**
 
@@ -120,7 +120,7 @@ This type of widget is dynamic. This means it can change its appearance when it 
 
 Edit your code to match the one in the picture below.
 
-![Flutter appbar](/engineering-education/how-to-build-a-flutter-todo-app/appbar.jpg )
+![Flutter appbar](/how-to-build-a-flutter-todo-app/appbar.jpg )
 
 ```dart
 class _TodoListState extends State<TodoList> {
@@ -407,4 +407,4 @@ Happy coding!
 - [Emulator Settings](https://flutter.dev/docs/development/ui/widgets)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)

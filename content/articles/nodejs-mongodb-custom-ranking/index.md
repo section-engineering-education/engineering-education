@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-mongodb-custom-ranking/
+url: /nodejs-mongodb-custom-ranking/
 title: How to Perform Custom Ranking for Records from a MongoDB Database in Node.js
 description: This article will be an overview on custom ranking of data in MongoDB. We will learn how to create a database, collection, insert, and query the results.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/nodejs-mongodb-custom-ranking/hero.jpg
+  - url: /nodejs-mongodb-custom-ranking/hero.jpg
     alt: Custom ranking image
 ---
 This article will give us a heads-up on how to rank the records from a MongoDB database. We are going to add a bit of sorting functionality to the `sort()` function to give the records positions.
@@ -271,7 +271,7 @@ If the value contained in `[i]` is not equal to `[i-1]`, increment the `rank` va
 
 Otherwise, if the value contained in `[i]` is equal to `[i-1]`, assign the position the value stored in the `prev_rank` variable then increment the value stored in the `rank` variable.
 
-![Screenshot](/engineering-education/nodejs-mongodb-custom-ranking/screen.png)
+![Screenshot](/nodejs-mongodb-custom-ranking/screen.png)
 
 *Screenshot of the output*
 
@@ -287,4 +287,4 @@ Happy coding.
 - [W3Schools](https://www.w3schools.com/nodejs/nodejs_mongodb.asp)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)

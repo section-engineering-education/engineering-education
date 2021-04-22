@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/nodejs-os-module/
+url: /nodejs-os-module/
 title: Getting Started with Node.js Module
 description: This tutorial introduces the basic concepts on Node.js OS module.  The os module is useful to get more information about a computer system. This may be important when a piece of knowledge about the hosting (maybe a server) platform is required.  
 author: miller-juma
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/nodejs-os-module/hero.jpg
+ - url: /nodejs-os-module/hero.jpg
    alt: Node.js Os Module
 ---
 We use the Node.js Operating System (OS) module to get more information about the underlying computer system. In this tutorial, you will learn the basic operating system module operations in Node.js.
@@ -223,4 +223,4 @@ Various operations are available such as getting details about the computer's ne
 Happy learning!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)

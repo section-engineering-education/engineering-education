@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/ios-tasks-app-using-swift/
+url: /ios-tasks-app-using-swift/
 title: Build a Tasks iOS Application using Swift
 description: In this tutorial you will understand the workflow for iOS application development. Then, you will develop a Tasks app using Swift that has features like adding and deleting tasks.
 author: saiharsha-balasubramaniam
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ios-tasks-app-using-swift/hero.jpg
+  - url: /ios-tasks-app-using-swift/hero.jpg
     alt: Build a Tasks iOS Application using Swift
 ---
 iOS is one of the most used mobile platforms today, along with Android. iOS Application Development is done primarily using XCode and Swift. XCode is an IDE developed by Apple used to develop rich and performant applications for iOS and some of their other platforms such as macOS. 
@@ -33,22 +33,22 @@ Let's now get started with setting up a new project.
 - Open XCode.
 - Now, click on "Create a New XCode Project".
 
-![Creating a new project](/engineering-education/ios-tasks-app-using-swift/create-new-project.png)
+![Creating a new project](/ios-tasks-app-using-swift/create-new-project.png)
 
 - Let's use the iOS > App template.
 
-![iOS App Template](/engineering-education/ios-tasks-app-using-swift/template.png)
+![iOS App Template](/ios-tasks-app-using-swift/template.png)
 
 - Let's name our app "AwesomeToDo". Select the other settings as shown below.
 
-![Initial App Settings](/engineering-education/ios-tasks-app-using-swift/app-settings.png)
+![Initial App Settings](/ios-tasks-app-using-swift/app-settings.png)
 
 - Click on "create".
 
 ### Implementation and coding
 Let's dive right into programming the application. Now, once we create the project, XCode takes us to the main IDE window. 
 
-![XCode Main Window](/engineering-education/ios-tasks-app-using-swift/xcode-main-window.png)
+![XCode Main Window](/ios-tasks-app-using-swift/xcode-main-window.png)
 
 #### Getting started
 To get started, click on the `ContentView.swift` file on the right pane. This file consists of the initial user interface of the project, where the views are defined. It consists of a struct, `ContentView` where the view is defined. 
@@ -202,4 +202,4 @@ To further continue, developers can check out the following resources.
 - Apple Tutorials for iOS Apps: [Apple](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/
+url: /docker-wordpress-containerizing-wordpress-with-docker-compose/
 title: Containerizing WordPress with Docker-Compose
 description: This article provides a step by step guide on how to use Docker in a WordPress application. Docker Compose simplifies the management of an application's service dependencies.
 author: rose-waitherero
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/hero.png
+  - url: /docker-wordpress-containerizing-wordpress-with-docker-compose/hero.png
     alt: Containerizing WordPress with Docker-Compose
 ---
 [Docker](https://docs.docker.com/get-started/overview/) is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. 
@@ -32,8 +32,8 @@ However, with Docker, you create a single file and run few commands. This will s
 This tutorial will demonstrate how to Dockerize a WordPress website using Docker-compose through Docker commands. 
 
 ### Prerequisites
-- This guide uses Docker to implement the application containerization. Prior knowledge of [Docker](/engineering-education/getting-started-with-docker/) is essential.
-- Basic knowledge on how to [create Docker images](/engineering-education/django-docker/) and [start Docker containers](https://docs.docker.com/engine/reference/commandline/start/).
+- This guide uses Docker to implement the application containerization. Prior knowledge of [Docker](/getting-started-with-docker/) is essential.
+- Basic knowledge on how to [create Docker images](/django-docker/) and [start Docker containers](https://docs.docker.com/engine/reference/commandline/start/).
 - Basic knowledge on how to [install and use WordPress](youtube.com/watch?v=8AZ8GqW5iak).
 
 ### Getting ready
@@ -41,7 +41,7 @@ To get started, install [Docker](https://docs.docker.com/docker-for-windows/inst
 
 While installing Docker on Windows, you might come across this error.
 
-![Docker installation error](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/docker-installation-error.jpg)
+![Docker installation error](/docker-wordpress-containerizing-wordpress-with-docker-compose/docker-installation-error.jpg)
 
 To solve this, download and install the [WSL 2 Linux kernel](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package). Restart the Docker desktop, and the error will be resolved.
 
@@ -236,19 +236,19 @@ docker-compose up -d
 
 This will download all the environs required by WordPress. If you look at your directory, you'll realize that there are new files and folders. These are the WordPress files downloaded from the guideline set in the `docker-compose.yaml`.
 
-![Wordpress files](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/docker-wordpress-files.jpg)
+![Wordpress files](/docker-wordpress-containerizing-wordpress-with-docker-compose/docker-wordpress-files.jpg)
 
 To confirm if the WordPress site is working, open `http://localhost:8000/` in the browser. This will launch the normal WordPress wizard.
 
-![Wordpress installation wizard](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/wordpress-installation.jpg)
+![Wordpress installation wizard](/docker-wordpress-containerizing-wordpress-with-docker-compose/wordpress-installation.jpg)
 
 Click continue and provide the `wp-admin` information and install WordPress.
 
-![WordPress wp-admin config information](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/wp-admin-config-information.jpg)
+![WordPress wp-admin config information](/docker-wordpress-containerizing-wordpress-with-docker-compose/wp-admin-config-information.jpg)
 
 Login with the information you have provided, and this will launch the WordPress back-end.
 
-![WordPress wp-admin backend](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/wp-admin-backend.jpg)
+![WordPress wp-admin backend](/docker-wordpress-containerizing-wordpress-with-docker-compose/wp-admin-backend.jpg)
 
 And you are done. You have dockerized a WordPress website.
 
@@ -276,7 +276,7 @@ Run `docker-compose up -d`, open `http://localhost:8000/` to view the website.
 
 Navigate to `http://localhost:8080/` to view the phpMyAdmin. Enter your authentication details and you'll be able to view and interact with the MySQL database.
 
-![wordpress PHPMyAdmin](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/wordpress-php-my-admin.jpg)
+![wordpress PHPMyAdmin](/docker-wordpress-containerizing-wordpress-with-docker-compose/wordpress-php-my-admin.jpg)
 
 ### Conclusion
 We now have WordPress up and running. This is an easier way to set up the WordPress API. Besides, you can use this method to carry out WordPress testing before releasing it to the public.
@@ -284,14 +284,14 @@ We now have WordPress up and running. This is an easier way to set up the WordPr
 Happy coding!
 
 ### Further learning
-- [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
-- [Understanding Docker Concepts](/engineering-education/docker-concepts/)
-- [How to Create Django Docker Images](/engineering-education/django-docker/)
-- [How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
-- [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
-- [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
-- [Breaking Down Kubernetes vs Docker Swarm](/engineering-education/breaking-down-kubernetes-vs-docker-swarm/)
+- [Getting Started with Docker](/getting-started-with-docker/)
+- [Understanding Docker Concepts](/docker-concepts/)
+- [How to Create Django Docker Images](/django-docker/)
+- [How to Create Spring Boot Docker Images](/spring-docker/)
+- [Building A Node.js Application Using Docker](/building-a-nodejs-application-using-docker/)
+- [Debugging a Node.js app running in Docker](/debug-node-docker/)
+- [Breaking Down Kubernetes vs Docker Swarm](/breaking-down-kubernetes-vs-docker-swarm/)
 
 
 ---
-Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
