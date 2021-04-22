@@ -111,7 +111,6 @@ Since virtual environments are self-contained, when no longer needed, just delet
 >**Note** virtual environments do not come as a native feature for Python 2.
 
 #### Features
-* It is slower than other tools like Venv.
 * It cannot be upgraded using [pip](https://pip.pypa.io/en/stable/installing/).
 * It cannot create and discover virtual environments for randomly installed python versions.
 
@@ -209,8 +208,7 @@ Conda comes pre-installed with [anaconda](https://www.anaconda.com/) and [minico
 
 #### Features
 * You can [share](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment) environments.
-* It is rich with features.
-* Finding and installing packages -  There's no need of switching between different environments. Since Conda is also a environment manager, you can set up a another environment to run a different version of Python, without interfering with the environment that runs your usual version of Python.
+* Finding and installing packages -  Since Conda is also an environment manager, you can set up another environment to run a different version of Python, without interfering with the environment that runs your usual version of Python.
 
 #### Installation
 Installing Conda is quite different from other dependency managers.
@@ -249,8 +247,8 @@ $ conda deactivate
 **[Poetry](https://python-poetry.org/docs/)** is popularly known as a very feature-rich Python tool for project dependency management. It comes wrapped with a powerful CLI for creating and managing Python projects.
 
 #### Features
-* Rich with features.
-* It is faster than most virtual environment tools
+* It comes with a `pyproject.toml` file that contains a `tool.poetry` section that is composed of several sections like README.md, name, author [etc](https://python-poetry.org/docs/pyproject/) for project documentation.
+* It is faster than most virtual environment tools.
 * It allows declaration the libraries your project depends on and it will manage (install/update) them for you
 
 #### Installation
