@@ -43,22 +43,22 @@ Understanding the CI process in-depth, whenever a change is made to the source r
 
 When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts.
 
-The operations executed by developers with the aid of Continuous Delivery varies from features upgrade, interface changes, bug fixes, and tests in production environments or to ensure the deployment of sustainable software to the end-user.
+The operations executed by developers with Continuous Delivery vary from features upgrade, interface changes, bug fixes, and tests in production environments or to ensure the deployment of sustainable software to the end-user.
 
 The technique behind the integration of CI/CD in the software development process is that in a large organization with teams of thousands of developers making changes regularly, we can still ensure that the software doesn’t break and changes are being synchronized seamlessly, therefore ensuring effective communication between developers and operations.
 
 ![ci/cd technique](/engineering-education/an-introduction-to-cicd-tools/technique.png)
 
 ### The Importance of CI/CD
-- CI reduces the number of processes that are repeated across all project operations from the development to the deployment stage and also receiving feedback on the software.
-- The core importance of Continuous Integration is to ensure that software being developed is deployable to end-users, but with better quality and lower risks of failure. 
+- CI reduces the number of repeated processes across all project operations from the development to the deployment stage and receiving feedback on the software.
+- Continuous Integration's core importance is to ensure that software being developed is deployable to end-users but with better quality and lower risks of failure. 
 - CI gives you the ability to spot trends and make informed decisions, as well as the courage to make new changes.
 - Successful implementation of CI practices can boost confidence in software development, such that the team will know that test checks are passed, project code and design follow development standards, and the result is a functioning testable product with each build.
 
 ### Jenkins as a CI/CD Tool
 [Jenkins](https://www.jenkins.io/doc/) is a server-side continuous integration tool developed with the Java programming language.
 
-In this article, we'll provide a structural approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
+This article provides a structured approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
 
 
 ![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
@@ -109,15 +109,15 @@ However, when you add a new project, you have to add the following cloud setting
 By default, CircleCI creates a service hook. As a result, builds are activated for all repository service hook, with PUSH being the most common cause of triggering a build.
 
 ### Bamboo as a CI/CD tool
-[Bamboo](https://support.atlassian.com/bamboo/) is a CI/CD tool that automates the deployment of software to the end-users, while ensuring it goes through series of tests processes, version control and software releases management. 
+[Bamboo](https://support.atlassian.com/bamboo/) is a CI/CD tool that automates software deployment to the end-users while ensuring it goes through series of tests processes, version control and software releases management. 
 
-Bamboo aids developers in automating test processes in software development, while adequately managing builds with different targets and specifications. One of the benefits of Bamboo is the ability to automatically deploy the program into the server for release, saving a lot of time compared to manual testing.  
+Bamboo aids developers in automating test processes in software development while adequately managing builds with different targets and specifications. One of the benefits of Bamboo is the ability to automatically deploy the program into the server for release, saving a lot of time compared to manual testing.  
 
 ### Why Bamboo
 The following are some of the benefits of choosing Bamboo as a tool for continuous integration and deployment.
 - Numerous Bamboo-compatible integrations make it even easier for companies to evaluate and make changes based on analytical test data.
 - Quality assurance, release management, and build status are all visible in one place.
-- Bamboo comprises all functionalities required, therefore there is little to no use for plugins. 
+- Bamboo comprises all functionalities required. Therefore there is little to no use for plugins. 
 - Bamboo's CI is also deployment-ready thanks to its seamless integration with Jira and Bitbucket.
 - Tinder's user interface is simple and intuitive, making it simple to navigate through options and tools for quick and easy functionality.
 - The various staging environments available on Bamboo enable the QA and development teams to deploy environments on-demand without disrupting the production environment.
@@ -137,14 +137,14 @@ By default, plans have only one stage. It can, however, be used to divide jobs i
 Jobs are a collection of tasks that are executed in a specific order on the same agent. They give you control over the order in which the tasks for your build must be completed. Jobs gather task requirements to map out the skills needed in the Bamboo CI Server's comprehension.
 
 #### The Task Block
-In Bamboo, the task block consists of series of the discrete unit running in a specific order, that carry out specific system command programmed by the developer. Some of these tasks include executing and running scripts or parsing results on the software tests.
+In Bamboo, the task block consists of a series of discrete unit running in a specific order that carries out a specific system command programmed by the developer. Some of these tasks include executing and running scripts or parsing results on the software tests.
 
 ### Buddy as a CI/CD tool
-[Buddy](https://buddy.works/docs) is a CI/CD tool built onto Docker containers, used in deploying websites and application from version control systems such as Github and GitLab. 
+[Buddy](https://buddy.works/docs) is a CI/CD tool built onto Docker containers used to deploy websites and application from version control systems such as Github and GitLab. 
 
 ### Why Buddy
 The following are the reasons why Buddy is a good choice for CI/CD:
-- It is flexible, and thus enables builds and test environments to be customized and reused.
+- It is flexible and thus enables builds and test environments to be customized and reused.
 - Detects changes and provides caching and parallelism optimizations.
 - It provides attachable services to other applications, such as Firefox, PostgreSQL and others.
 - Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything
