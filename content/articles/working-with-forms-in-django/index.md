@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: working-with-forms-in-django/
+url: /engineering-education/working-with-forms-in-django/
 title: Working with Forms in Django
 description: This article provides a walkthrough on the various types of Django forms, how these forms can be created in the Django framework and how form data is saved in the database
 author: anita-achu

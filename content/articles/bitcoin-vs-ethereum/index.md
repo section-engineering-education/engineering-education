@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /bitcoin-vs-ethereum
+url: /bitcoin-vs-ethereum/
 title: Bitcoin vs. Ethereum
 description: This article will discuss the key differences between Bitcoin and Ethereum from a technical perspective. It also outlines the concepts and advantages that contribute to the popularity of these cryptocurrencies.
 author: lalithnarayan-c

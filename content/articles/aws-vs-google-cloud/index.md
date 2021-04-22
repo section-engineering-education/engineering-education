@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: aws-vs-google-cloud/
+url: /engineering-education/aws-vs-google-cloud/
 title: Comparison Between Amazon Web Services (AWS) & Google Cloud
 description: This article provides a comprehensive comparison between Amazon Web Services (AWS) and Google Cloud. The comparison will involve analyzing their differences using key parameters. 
 author: onesmus-mbaabu

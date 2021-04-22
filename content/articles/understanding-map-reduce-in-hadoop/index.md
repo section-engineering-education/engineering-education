@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: understanding-map-reduce-in-hadoop/
+url: /engineering-education/understanding-map-reduce-in-hadoop/
 title: Understanding MapReduce in Hadoop
 description: This article provides an understanding of MapReduce in Hadoop. It will enable readers to gain insights on how vast volumes of data is simplified and how MapReduce is used in real-life applications. 
 author: onesmus-mbaabu

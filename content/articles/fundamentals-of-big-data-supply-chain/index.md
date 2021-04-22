@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: fundamentals-of-big-data-supply-chain/
+url: /engineering-education/fundamentals-of-big-data-supply-chain/
 title: Fundamentals of Big Data Supply Chain
 description: This article will go through big data supply chains, which can eliminate common data problems such as data latency, data redundancy, and inconsistency.
 author: onesmus-mbaabu

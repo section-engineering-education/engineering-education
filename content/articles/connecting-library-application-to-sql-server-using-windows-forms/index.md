@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: connecting-library-application-to-sql-server-using-windows-forms/
+url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/
 title: Connecting Library Application to SQL Server using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C#. We will also build a simple project using Windows forms and connect it to a database.
 author: mohamed-alghadban

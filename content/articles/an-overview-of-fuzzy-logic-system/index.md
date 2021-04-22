@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: an-overview-of-fuzzy-logic-system/
+url: /engineering-education/an-overview-of-fuzzy-logic-system/
 title: An Overview of Fuzzy Logic System
 description: This article will provide an overview on fuzzy logic and how it is implemented. We will go over some real-life applications and explains why it is used.
 author: onesmus-mbaabu

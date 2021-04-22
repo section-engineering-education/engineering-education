@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: //assets/images/education/asm-image.jpg
+  - url: /assets/images/education/asm-image.jpg
     alt: computer image asm example
 ---
 [In the beginning, there were punch cards](https://www.youtube.com/watch?v=nwDq4adJwzM). Eventually, someone got the bright idea to have the computer be programmable. Just type in the hexadecimal code and let it run. The problem is that it's very difficult to look at hexadecimal and decipher what it does.

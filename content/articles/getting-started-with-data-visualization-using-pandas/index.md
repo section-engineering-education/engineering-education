@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: getting-started-with-data-visualization-using-pandas/
+url: /engineering-education/getting-started-with-data-visualization-using-pandas/
 title: Getting Started with Data Visualization using Pandas
 description: In this tutorial we will go through how to implement different types of plots and charts. Then we'll build a simple app to better understand the need for data visualization.
 author: ahmad-mardeni

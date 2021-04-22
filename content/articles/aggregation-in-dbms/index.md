@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: aggregation-in-dbms/
+url: /engineering-education/aggregation-in-dbms/
 title: Aggregation in Database Management Systems (DBMS)
 description: This article will be an introduction to Database Management Systems and how systems function properly through the concept of aggregation. It also explains why aggregation is needed and how it functions. 
 author: onesmus-mbaabu

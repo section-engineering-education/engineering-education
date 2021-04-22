@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: python-projects-for-beginners
+url: /engineering-education/python-projects-for-beginners
 title: Python Projects for Beginners
 description: This article provides a guide on building simple Python projects and working with basic concepts in Python. 
 author: anita-achu

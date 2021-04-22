@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: an-overview-of-database-testing/
+url: /engineering-education/an-overview-of-database-testing/
 title: An Overview of Database Testing
 description: This article will be an overview of the fundamentals of database testing. It would also explore the various types of database testing and the tools used.
 author: onesmus-mbaabu

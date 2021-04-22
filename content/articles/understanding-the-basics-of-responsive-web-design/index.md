@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: understanding-the-basics-of-responsive-web-design/
+url: /engineering-education/understanding-the-basics-of-responsive-web-design/
 title: Understanding the Basics of Responsive Web Design (RWD)
 description: This article will be an introduction to Responsive Web Design. We will explore the building blocks of RWD, it's importance and also a brief guide on how to get started with this technique.
 author: onesmus-mbaabu

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: mobile-automation-testing-with-appium/
+url: /engineering-education/mobile-automation-testing-with-appium/
 title: Mobile Automation Testing with Appium - An Introduction
 description: This article will be an introduction to mobile automation testing using Appium. We will explore the building blocks of automation testing, it's importance and also a brief guide on how to get started with Appium.
 author: onesmus-mbaabu

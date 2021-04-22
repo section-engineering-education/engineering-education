@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: understanding-hill-climbing-in-ai/
+url: /engineering-education/understanding-hill-climbing-in-ai/
 title: Understanding Hill Climbing Algorithm in Artificial Intelligence
 description: This article will go over the hill-climbing algorithm, which is a local search algorithm that moves continuously upward (increasing) until the best solution is attained. This algorithm comes to an end when the peak is reached.
 author: onesmus-mbaabu

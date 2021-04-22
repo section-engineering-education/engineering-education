@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: wireless-mobile-networking/
+url: /engineering-education/wireless-mobile-networking/
 title: A Brief Guide to Wireless Mobile Networking
 description: This article will go be a brief introduction to wireless mobile networking. We will discuss about the history of mobile network and telephone technology.  
 author: kanishkvardhan-a-n

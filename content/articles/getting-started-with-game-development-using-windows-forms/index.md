@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: getting-started-with-game-development-windows-forms/
+url: /engineering-education/getting-started-with-game-development-windows-forms/
 title: Getting Started with Game Development using Windows Forms
 description: This tutorial will go over the basics of Windows forms using C# and Visual Studio. We will create a basic calculator using windows forms. 
 author: mohamed-alghadban

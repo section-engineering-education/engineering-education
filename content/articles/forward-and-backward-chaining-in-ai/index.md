@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: forward-and-backward-chaining-in-ai/
+url: /engineering-education/forward-and-backward-chaining-in-ai/
 title: Forward and Backward Chaining in Artificial Intelligence
 description: This article will cover how backward and forward chaining are applied in artificial intelligence. These are method of reasonings used in artificial intelligence. 
 author: onesmus-mbaabu

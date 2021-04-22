@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: clustering-in-unsupervised-ml/
+url: /engineering-education/clustering-in-unsupervised-ml/
 title: Clustering in Unsupervised Machine Learning
 description: This article will cover clustering algorithms in unsupervised machine learning which are useful when grouping uncategorized data into segments that comprise similar characteristics.
 author: onesmus-mbaabu
