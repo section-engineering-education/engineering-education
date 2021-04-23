@@ -89,7 +89,7 @@ To see how we can do this, we'll create another collection type.
 6. Navigate to **[Content-Type Builder > COLLECTION TYPES > Files](http://localhost:1337/admin/plugins/content-type-builder/content-types/application::files.files)** and click **ADD ANOTHER FIELD TO THIS COLLECTION TYPE**.
 7. Select the **Relation** field. 
 8. On the right-hand dropdown, select `Type`. Then select the relationship that reads `File has one Type`.
-<!-- there are many types of relations -->
+
 ![Creating relations in Strapi collections](/engineering-education/getting-started-with-strapi/relations.png)
 
 5. Hit **Finish** and then **Save** the collection.
@@ -121,7 +121,7 @@ To publish your collections, you need to allow CRUD operations for those specifi
 4. Click **Save**.
 5. Navigate to the [`statement.pdf`](http://localhost:1337/admin/plugins/content-manager/collectionType/application::files.files/1) and [`Document`](http://localhost:1337/admin/plugins/content-manager/collectionType/application::type.type/1) you created earlier and click **Publish**.
 
-<!-- ![Publish collection Strapi](publish.png) -->
+![Publish collection Strapi](/engineering-education/getting-started-with-strapi/publish.png)
 
 You can now access your collections at http://localhost:1337/files and http://localhost:1337/types.
 
@@ -134,7 +134,7 @@ Open Postman and make a `GET` request to http://localhost:1337/files as shown be
 Similarly, you can get a list of the items in the `Type` collection by performing a GET to http://localhost:1337/types.
 
 #### Retrieving a single item
-A GET request request to http://localhost:1337/files/1 will return the `file` with the id `1`.
+A GET request to http://localhost:1337/files/1 will return the `file` with the id `1`.
 
 ![GET a single item](/engineering-education/getting-started-with-strapi/get-single-item.png)
 
