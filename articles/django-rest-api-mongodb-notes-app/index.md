@@ -22,23 +22,23 @@ In this post, you will:
 
 You may download and install the MongoDB database server from the [official MongoDB website](https://www.mongodb.com/try/download/community).
 
-You can check this guide nif you use a Windows machine, [Installing MongoDB on Windows](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-windows/#install-mongodb-community-edition). For Linux users, follow this tutorial, [How to Install MongoDB on Ubuntu 20.04](https://linuxize.com/post/how-to-install-mongodb-on-ubuntu-20-04/). Mac users can follow the tutorial, [Installing MongoDB on Mac](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition)
+You can check this guide if you use a Windows machine, [Installing MongoDB on Windows](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-windows/#install-mongodb-community-edition). For Linux users, follow this tutorial, [How to Install MongoDB on Ubuntu 20.04](https://linuxize.com/post/how-to-install-mongodb-on-ubuntu-20-04/). Mac users can follow the tutorial, [Installing MongoDB on Mac](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition)
 
 You can check the version of MongoDB installed on your machine with the following command:
 
-```
+```bash
 mongo --version
 ```
 
-In order to use the mongo shell, start the service with the following command:
+To use the mongo shell, start the service with the following command:
 
-```
+```bash
 mongo
 ```
 
 Create and switch to a new database with the following command:
 
-```
+```bash
 use notes_database
 ```
 
@@ -245,7 +245,7 @@ Then, view the created notes at `127.0.0.1:8000/api/id`:
 
 ![image title](/engineering-education/django-rest-api-mongodb-notes-app/detail-view.jpg)
 
-You can also delete or update the note on the detail page. The delete button is marked out in the red square on the image below.
+You can also delete or update the note on the detail page. The delete button is in the red square on the image below.
 
 ![image title](/engineering-education/django-rest-api-mongodb-notes-app/delete-update-option.jpg)
 
