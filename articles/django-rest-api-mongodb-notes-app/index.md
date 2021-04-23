@@ -1,7 +1,21 @@
-# Build a Notes App API with Django REST Framework and MongoDB
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/notes-api-using-django-and-mongodb/
+title: How to Build a Notes app API using Django REST Framework and MongoDB
+description: This tutorial will teach us how to build a notes API using Django and MongoDB. We will look at how to install MongoDB. We will add notes using the Browsable API.
+author: geoffrey-mungai
+date: 2021-04-23T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-MongoDB is a NoSQL database system. It stores data in a JSON-like format instead of the traditional row-column format. The Django framework is a Python framework for web development. The Django REST framework is a powerful toolkit for building extensible APIs. 
+  - url: /engineering-education/notes-api-using-django-and-mongodb/hero.jpg
+    alt: Django MongoDB API example
+---
+MongoDB is a NoSQL database system that stores data in a JSON-like format instead of the traditional row-column format. The Django framework is a Python framework for web development. The Django REST framework is a powerful toolkit for building extensible APIs. 
+<!--more-->
 
 In this tutorial, you will learn how to use the powerful Django REST framework and MongoDB in your web projects. You will learn how to put in place CRUD features in a notes app API.
 
@@ -214,7 +228,7 @@ urlpatterns = [
 The first endpoint receives the actions 'LIST' and 'CREATE' actions of the `NoteList` view. The second endpoint takes the `id` of a particular note to view the details of the note.
 
 ### Testing with Browsable API
-Django REST framework comes shipped with the browsable API. You can test your API endpoints with the browsable API.
+Django REST framework ships with the browsable API. You can test your API endpoints with the browsable API.
 
 Run the following command:
 
@@ -224,19 +238,19 @@ python manage.py runserver
 
 Then navigate to http://127.0.0.1:8000/api/ on your browser to create notes.
 
-![List notes](/engineering-education/django-rest-api-mongodb-notes-app/list-notes.JPG)
+![List notes](/engineering-education/notes-api-using-django-and-mongodb/list-notes.JPG)
 
 You can add notes and refresh the webpage to see the added notes.
 
-![add notes](/engineering-education/django-rest-api-mongodb-notes-app/added-notes.JPG)
+![add notes](/engineering-education/notes-api-using-django-and-mongodb/added-notes.JPG)
 
 You can then view the created notes at 127.0.0.1:8000/api/id:
 
-![details view](/engineering-education/django-rest-api-mongodb-notes-app/detail-view.JPG)
+![details view](/engineering-education/notes-api-using-django-and-mongodb/detail-view.JPG)
 
 You can also delete or update the note on the detail page. The delete button is marked out in the red square on the image below.
 
-![delete update option](/engineering-education/django-rest-api-mongodb-notes-app/delete-update-option.png)
+![delete update option](/engineering-education/notes-api-using-django-and-mongodb/delete-update-option.png)
 
 You can also update the title or the text of the note. See the blue square area on the image above. Edit the text or title and click the `PUT` button.
 
@@ -246,3 +260,8 @@ In this article, we have been able to configure the MongoDB database for a RESTf
 You can check out the code in this tutorial in [this GitHub repo](https://github.com/J-rayX/django_mongodb_project).
 
 Thanks for reading.
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
