@@ -1,6 +1,6 @@
 ### Node.js Structural Comparisons
 
-Node.js is a type of computer language based on JavaScript. When learning a new form of a computer language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++. Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
+Node.js is a computer language based on JavaScript. When learning a new language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++. Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
 
 #### Table of Contents
 1. [Prerequisites](#prerequisites)
@@ -23,7 +23,7 @@ Once most of the prerequisites are met, let's begin.
 
 #### Node.js
 
-Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables. Modules can be found on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can substitute for `install`.  
+Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables. We can find modules on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can substitute for `install`.  
 
 ```Bash
 npm install plotly
@@ -69,7 +69,7 @@ _Screen capture_
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept from defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. One important note when generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. If the script does not have a set `seed`, numbers generated from the script will be different each time.   
+Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept of defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. One important note when generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. If the script does not have a set `seed`, numbers generated from the script will be different each time.   
 
 ```JavaScript
 
@@ -112,9 +112,9 @@ The image below is a frozen portion of the [interactive graphic](https://chart-s
 ![Graph](/engineering-education/nodejs-structural-comparisons/plotlyplt.jpg)  
 _Screen capture_  
 
-By visiting the following [link](https://chart-studio.plotly.com/~pkalynan/0), additional options to observe the data can be visualized. One example is converting any given Node.js script to other programming languages such as Python, R, and JSON. Another feature includes a mouse over technique to display labels.  
+By visiting the following [link](https://chart-studio.plotly.com/~pkalynan/0), additional options to observe the data can be visualized. One example is converting any given Node.js script to other programming languages such as Python, R, and JSON. Another feature includes a mouse-over technique to display labels.  
 
-A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most measures of central tendency variables although mean or average remained unavailable. The second graph positioned to the right is horizontal. Both graphs can display medians.  
+A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most measures of central tendency variables, although mean or average remained unavailable. The second graph positioned to the right is horizontal. Both graphs can display medians.  
 
 #### C
 
@@ -142,7 +142,7 @@ int main(){
 };
 ```  
 
-Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. The output file can be opened with the second command with the path directory symbol and the file name.  
+Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. We open the output file with the second command with the path directory symbol and the file name.  
 
 ```Bash
 gcc test.c -o test
@@ -152,7 +152,7 @@ gcc test.c -o test
 **Output:**  
 Numerical variable is 500000.  
 
-Visuals can display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs, however, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
+Visualizations display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs. However, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
 
 ```C
 #include <cmath>
@@ -194,7 +194,7 @@ To recap the graph shown above, the graph is a mixture of many forms of sine and
 
 #### Conclusion
 
-As described, Node.js and C/C++ offers several features. Based on preferences and purposes, either computer language can complete tasks. Deciding which computer language to use depends on a case-to-case basis.  
+As described, Node.js and C/C++ offer several features. Based on preferences and purposes, either computer language can complete tasks. Deciding which computer language to use depends on a case-to-case basis.  
 
 #### Takeaways
 
