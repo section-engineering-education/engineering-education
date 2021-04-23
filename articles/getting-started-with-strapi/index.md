@@ -172,3 +172,6 @@ To deploy your Strapi API see the [deployment guidelines](https://strapi.io/docu
 Strapi is such a cool and awesome tool when it comes to increasing productivity. It reduces the amount of code the developer has to write and manage. Strapi enables the developer to build a strong backend using an easy-to-use interface. Feel free to play around with Strapi. It has more than just collections to offer.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
