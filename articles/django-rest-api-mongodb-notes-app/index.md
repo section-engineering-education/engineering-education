@@ -231,14 +231,14 @@ You can add notes and refresh the webpage to see the added notes.
 ![add notes](/engineering-education/django-rest-api-mongodb-notes-app/added-notes.JPG)
 
 You can then view the created notes at 127.0.0.1:8000/api/id:
-<!--  -->
+
 ![details view](/engineering-education/django-rest-api-mongodb-notes-app/detail-view.JPG)
 
 You can also delete or update the note on the detail page. The delete button is marked out in the red square on the image below.
-<!--  -->
+
 ![delete update option](/engineering-education/django-rest-api-mongodb-notes-app/delete-update-option.png)
 
-You can also update the title or the text of the note. See the blue square area on the image above. Edit the text or title and click the 'PUT` button.
+You can also update the title or the text of the note. See the blue square area on the image above. Edit the text or title and click the `PUT` button.
 
 ### Conclusion
 In this article, we have been able to configure the MongoDB database for a RESTful Django API. We also created an API for a notes app. You can go on and use MongoDB in your Django REST API projects.
