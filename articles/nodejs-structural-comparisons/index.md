@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-structural-comparisons/
+title: Node.js Structural Comparisons 
+description: Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. In this article, we compare the various structural differences between Node.js and C/C++. After going through the article, the reader will understand the structural differences related to installing modules, defining  variables and visualizations.
+author: priya-kalyanakrishnan
+date: 2021-04-23T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/nodejs-structural-comparisons/hero.jpg
+   alt: Node.js Structural comparison example image
+
+---
+
 ### Node.js Structural Comparisons
 
 Node.js is a computer language based on JavaScript. When learning a new language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++. Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
