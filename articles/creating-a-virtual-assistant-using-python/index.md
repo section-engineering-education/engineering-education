@@ -14,7 +14,7 @@ images:
     alt: Virtual Assistant Image Example
 ---
 
-A virtual assistant, also known as an AI assistant or a digital assistant, is a computer program that recognizes natural language voice commands and performs tasks for the user. This article guides you through the process of creating your own voice assistant through the use of a python library.
+Virtual assistants are Artificial Intelligent based programs. They are a smart computer program that understands human natural languages through voice commands or text and performs tasks for the user. This article guides you through the process of creating your own voice assistant through the use of a python library.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ For this tutorial, I will be writing the code on Pycharm IDE by Jetbrains.
 
 PyCharm is an integrated development platform for computer programming, with an emphasis on the Python programming language. JetBrains, a Czech company, built it. Click [here](https://www.jetbrains.com/pycharm/download/) to download Pycharm.
 
-After downloading and installing Pycharm, launch the application and click on the file menu, then select new project. You will get a pop-up message asking you for your project's name. Kindly give it a desired name, but for this article, we will give our project the title “vitualBot”.
+After downloading and installing Pycharm, launch the application and click on the file menu, then select new project. A pop-up message will ask you for your project's name. Kindly give it a desired name, but for this article, we will give our project the title “vitualBot”.
 
 The project will load. Once loading is complete, clear the automated content in the "main.py" file to have a clean screen for your code.
 
@@ -31,11 +31,11 @@ The project will load. Once loading is complete, clear the automated content in 
 1. It listens for your command
 2. It responds to your command with either a success or failure response.
 
-For this project, we need 3 python libraries, which include:
+For this article, 3 python libraries will be used, they include:
 
-1. Python Speech Recognition: Speech recognition is the process of translating spoken words to text. Google Speech Engine, Google Cloud Speech API, Microsoft Bing Voice Recognition, and IBM Speech to Text are only a few of the speech recognition engines and APIs that Python supports.
+1. Python Speech Recognition: Recognition speech is the act of translating spoken words into text. Python supports many speech recognition engines such as Google Speech Engine, Microsoft Bing Voice Recognition, and many others.
 
-The first step in a speech recognition system is to translate the audio signal into a computer-readable format. Typically, this is a spectrogram. It's a three-dimensional graph with time on the x-axis, frequency on the y-axis, and color representing strength.
+This library translates audio signal into a computer-readable format. Typically, this is a spectrogram. It's a three-dimensional graph with time on the x-axis, frequency on the y-axis, and color representing strength.
 
 To use the Python speech recognition library, click this [link](https://pypi.org/project/SpeechRecognition/) and you should see the page as shown in the image below. Copy the text circled in red.
 
@@ -43,14 +43,14 @@ To use the Python speech recognition library, click this [link](https://pypi.org
 
 Paste what you copied in the terminal and click enter. The package will be installed. Once this first package is installed, we need the second package, which is:
 
-2. Python Text To Speech v3(Pyttsx3): this library is a text-to-speech conversion library in Python. It works offline and is compatible with both Python 2 and 3.
+2. Python Text To Speech v3(Pyttsx3): this library is a text-to-speech conversion library in Python. This library works offline and it is also compatible with Python version 2 and 3.
 
 This package can be downloaded [here](https://pypi.org/project/pyttsx3/). You will copy the command found on the website and paste in the terminal just as you have done to install the first library.
 ![Python text to speech library download page](/engineering-education/creating-a-virtual-assistant-using-python/pyttsx3.png)
 
 Once you have successfully installed the second package, we will continue to install the third package called:
 
-3. Python Audio (PyAudio): this library provides Python bindings for PortAudio, the cross-platform audio I/O library. PyAudio allows you to quickly play and record audio on a number of devices using Python. Download the package [here](https://pypi.org/project/PyAudio/). Install the package using the steps used in 1 above.
+3. Python Audio (PyAudio): PyAudio allows you to quickly play and record audio on a number of devices using Python. Download the package [here](https://pypi.org/project/PyAudio/). Install the package using the steps used in 1 above.
    ![Python Audio library download page](/engineering-education/creating-a-virtual-assistant-using-python/pyaudio.png)
 
 ### Note:
