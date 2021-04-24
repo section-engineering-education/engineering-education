@@ -1,8 +1,8 @@
-Web applications are handle data from various sources and keeping track of these records can be challenging for administrators. [AdminBro](https://adminbro.com/) is a tool that strives to solve this problem by providing an admin interface to manage all our data from a single panel. It is an open-source Node.js package that adds an auto-generated admin dashboard where we can manage data in a single panel in our applications. This adds the ability to find, monitor, and update the application data during development. Some of the features that AdminBro gives us include form validation, customization, configure role-based access control, and adding extra features to it. In this tutorial, we will set up a working admin interface that can be used to start managing application data in a Node.js application.
+Web applications handle data from various sources and keeping track of these records can be challenging for administrators. [AdminBro](https://adminbro.com/) is a tool that strives to solve this problem by providing an admin interface to manage all our data from a single panel. It is an open-source Node.js package that adds an auto-generated admin dashboard where we can manage data in a single panel in our applications. This adds the ability to find, monitor, and update the application data during development. Some of the features that AdminBro gives us include form validation, customization, configure role-based access control, and adding extra features to it. In this tutorial, we will set up a working admin interface that can be used to start managing application data in a Node.js application.
 
 
 ### Prerequisites
-In this tutorial, you are required to:
+In this tutorial, you will need to:
 
 1. Have a basic knowledge of the [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) Programming Language
    
@@ -12,12 +12,12 @@ In this tutorial, you are required to:
    
 4. Have [Node.js](https://nodejs.org/en/) runtime installed on your system.
 
-5. Have [MongoDB](https://www.mongodb.com/try/download/community) NoSQL database installed on your system or use a cloud solution such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+5. [MongoDB](https://www.mongodb.com/try/download/community) NoSQL database installed on your system or a cloud solution such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 ### Setup The Project
 
 To start our project, create a folder named `Express-AdminBro` and open it on your favorite IDE. In my case, I will be using VS Code. Inside this folder, type the command `npm init` to generate an initial package.json for our project.
-This command will require some prompts, if you need to skip it, use `npm init -y` instead. In our project, we will need various npm packages from the npm registry.
+This command will prompt you if you need to skip, use `npm init -y` instead. In our project, we will need various npm packages from the npm registry.
 Below is the npm packages required:
 
 - express: Express is a backend Node.js web application framework for building web applications and APIs.
@@ -32,7 +32,7 @@ Below is the npm packages required:
 
 - nodemon: nodemon is a development dependency package. It constantly monitors our applications by automatically restarting the server when any of our application files changes.
   
-- tslib : This `tslib` module is a runtime library for TypeScript that contains all of the TypeScript helper functions.
+- tslib: This `tslib` module is a runtime library for TypeScript that contains all of the TypeScript helper functions.
   
 - express-session: This is a session middleware and will be required by our Admin panel. 
 
@@ -52,7 +52,7 @@ var app = express();
 app.use('/', (req, res)=> res.send("Hello World"));
 app.listen(8000, ()=> console.log('Listening to Port 8000'));
 ```
-This is the Express server starter code. We need to import the express package that we installed. The `const app = express()` will create an instance of our application. Having created the express instance, we need to listen to the incoming request in our application. The `app. listen()` method accepts two arguments, a port number and a callback function that is invoked when a connection is established. Before starting the server, we will edit the `package.json` file by adding the following script:
+This is the Express server starter code. We need to import the express package that we installed. The `const app = express()` will create an instance of our application. Having created the express instance, we need to listen to the incoming request in our application. The `app. listen()` method accepts two arguments, a port number and a callback function that runs when a connection is established. Before starting the server, we will edit the `package.json` file by adding the following script:
 
 ```json
 "scripts": {
@@ -78,7 +78,7 @@ const connection = mongoose.connection
 module.exports = connection
 ```
 
-In the above code, the connection to the MongoDB database in Node.js is established by passing the MongoDB connecting string to the mongoose that is imported, this method needs an option object. To check the connection, we export the `connection` that will be tracked in our `server.js` file.
+In the above code, the connection to the MongoDB database in Node.js is established by passing the MongoDB connecting string to the mongoose that is imported, this method needs an options object. To check the connection, we export the `connection` that will be tracked in our `server.js` file.
 
 ### Creating the MongoDB Models
 Mongoose is a package that manages relationships between data and provides schema validation. When using mongoose, models are defined using a Schema interface. The Schema defines the fields stored in the MongoDB documents along with the validation and default values. Schemas will then be transformed into models using the `mongoose.model()` method. The model is what we use to find, create, update, and delete documents of a given type. We will create two models namely, `Customer.js` and `Admin.js`. Add a folder named `models` on our project for our Schemas and `Admin.js` file. The fields and Schema for the `Admin.js` file:
