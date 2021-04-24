@@ -1,7 +1,21 @@
-### How to create face database using matlab
-### Introduction
-Face databases are imagery data that are used for testing face processing algorithms like [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) for face recognition.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/matlab-image-database/
+title: How to create a face database using Matlab
+description: This article will be an introduction to creating face databases using Matlab. We will explore about Matlab, what face databases are, where it is used, and how to create one.
+author: atieno-dorine
+date: 2021-04-24T00:00:00-12:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/matlab-image-database/hero.jpg
+    alt: Matlab sample Image
+---
+Face databases are imagery data that are used for testing face processing algorithms like [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis) for face recognition.
+<!--more-->
 In this tutorial, we will learn to code in MATLAB for recognizing a face from a database of human faces.
 
 How the database works, depends on the type of algorithm you are going to use and the project you are implementing. For example, the PCA uses the [eigenspace](https://deepai.org/machine-learning-glossary-and-terms/eigenspace) to recognize the face from the database.
