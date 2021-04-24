@@ -1,12 +1,12 @@
 ### How to create a deep neural network using MATLAB.
 ### Introduction.
-Neural networks form the base of deep learning and a subfield of machine learning where algorithms are inspired by the structure of the human brain. It takes in data train themselves to recognize the pattern in this data and then predict the output for a new set of similar data.
+Neural networks form the base of deep learning, a subfield of machine learning where algorithms are inspired by the structure of the human brain. It takes in data, trains itself to recognize the pattern in this data, then predicts the output for a new set of similar data.
 MATLAB provides a deep learning toolbox for implementing the deep neural network. MATLAB includes the digit dataset so you don't need to download it from an external source.
 In this article, we will look at how to prepare your digit dataset, the structure of a convolution neural network. We will also look at the Matlab code for training and validation and code for discrete testing.
 
 ### Prerequisite.
-1. Knowledge in Matlab.
-2. Matlab installed on your computer.
+1. Knowledge in [Matlab](https://www.section.io/engineering-education/getting-started-with-matlab/).
+2. [Matlab](https://www.mathworks.com/downloads/) installed on your computer.
 
 In this tutorial, we take the problem of digit recognition.
 
@@ -14,9 +14,21 @@ In this tutorial, we take the problem of digit recognition.
 Matlab itself includes the digit dataset. The digit dataset consists of 10,000 grayscale images of handwritten digits and each digit has 1000 images of the respective folders. The images are of size 28 by 28 pixels and they have associated labels.
 
 ### How to locate the image dataset.
-- Go to the installation folder of Matlab and then to the toolbox.
+- Go to the installation folder of Matlab.
+![this is how the window appear](/engineering-education/deep-neural-systems/matlab/dataset1.jpg)
+- Select the toolbox folder.
+![](/engineering-education/deep-neural-systems/matlab/dataset2.jpg)
 - Click the nnet and then choose the nndemos folder
-- Select the mdataset and then the digit dataset folder.
+![](/engineering-education/deep-neural-systems/matlab/dataset3.jpg)
+![](/engineering-education/deep-neural-systems/matlab/dataset4.jpg)
+- Select the mdataset folder.
+![](/engineering-education/deep-neural-systems/matlab/dataset5.jpg)
+- Select the digit database folder.
+![](/engineering-education/deep-neural-systems/matlab/dataset6.jpg)
+When we open this folder, we have ten folders that contain 1000 images of each number. 
+![this how the digit database appears](/engineering-education/deep-neural-systems/matlab/dataset7.png)
+When you open a folder of any number you will be able to see the 1000 images. Below is sample images in folder 1.
+![images in folder 1](/engineering-education/deep-neural-systems/matlab/dataset8.png)
 
 > Note that after locating the dataset folder, you can copy it to your working directory.
 
@@ -82,7 +94,7 @@ The output represents the no. of neurons in this layer. In my example, we used 1
 #### Softmax layer.
 The softmax activation function normalizes the output of the fully connected layer. The output of the softmax layer consists of positive no. that sums to 1, which can be used as classification probabilities by the classification layer.
 ```Matlab
-softmaxLayer(‘name’,’name’)
+softmaxLayer(‘name’, ’name’)
 ```
 ```matlab
 softmaxLayer(‘name’,’softmax’)
@@ -109,7 +121,8 @@ trainingOption(‘sgdm’,’learnRateSchedule’,’piecewise’,’learnRateDr
 learnRateDropPeriod’,5,’maxEpochs’,20,’miniBatchSize’,64,’plots’,’trainingProgress’)
 ```
 We use the plot factor here to see the progress of the training in a graph. The graph will be of output against epochs.
-There are various parameters and if you want to learn all, check the documentation.
+There are various parameters and if you want to learn all, check the [documentation](https://www.mathworks.com/help/deeplearning/ref/trainingoptions.html).
+
 
 ### Solver options.
 `sgdm`:stochastic gradient descent with momentum optimizer. It needs a momentum rate.
