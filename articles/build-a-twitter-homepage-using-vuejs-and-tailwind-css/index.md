@@ -6,7 +6,7 @@ url: /engineering-education/clone-twitter-home-page-with-vue-and-tailwind
 title: Clone Twitter Home page with Vue and Tailwind
 description: In this tutorial, we are going to learn how to integrate Tailwind CSS into the Vue project. We are going to go through each configuration to set up tailwind CSS in the Vue project. Then, we are going to use the CSS classes provided by the Tailwind CSS to create a Twitter Home Page UI clone. 
 author: worawat-kaewsanmaung
-date: 2020-07-31T00:00:00-10:00
+date: 2021-04-24T00:00:00-10:00
 topics: [vue]
 excerpt_separator: <!--more-->
 images:
@@ -530,3 +530,6 @@ Finally, we have successfully implemented the Twitter Home Page UI clone using V
 The main objective of this tutorial was to show the integration and usage of Tailwind CSS in the Vue ecosystem and create the Twitter Home page UI clone in the process. The Tailwind CSS was easy to configure which required a few configuration files and imports. Using these Tailwind CSS classes was simple and easy just like normal CSS classes. This made the UI development even simpler and easy. The layout design along with other style implementations was awesome. We can see from the final result of the Twitter Home page; how the design implementations were made easier by Tailwind CSS. The class properties are similar to regular CSS in Tailwind CSS which can be customized based on the needs. 
 
 The major advantage is that Tailwind CSS does not impose strong style implements as in other CSS frameworks like Bootstrap. Bulma, etc.
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
