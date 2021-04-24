@@ -63,13 +63,13 @@ $ activate.bat
 On Windows PowerShell, use:
 
 ```bash
-$ path_to_my_project\venv\Scripts> Activate.ps1
+$ Activate.ps1
 ```
 
 Once you've successfully activated your virtual environment, the path changes to something similar to the example below:
 
 ```bash
-(venv) path_to_my_project\venv\Scripts>
+(venv) Project_path\venv\Scripts>
 ```
 
 #### Configuring the virtual environment
@@ -84,7 +84,7 @@ $ pip install Django
 You can check the version of Pip you're using and directory with the following command:
 
 ```bash
-$ (venv) path_to_my_project\venv\Scripts> pip -V
+$ pip -V
 ```
 
 **Note**: It is a good practice to always work with a `requirements.txt` file for easy collaboration since it stores a list of all installed packages in your environment.
@@ -92,14 +92,14 @@ $ (venv) path_to_my_project\venv\Scripts> pip -V
 To create a `requirements.txt`, use:
 
 ```bash
-(venv) path_to_my_project\venv\Scripts> python -m pip freeze > requirements.txt
+$ python -m pip freeze > requirements.txt
 ```
 
 #### Deactivating a virtual environment
 After you finish with the environment, deactivate it using:
 
 ```bash
-(venv) path_to_my_project\venv\Scripts> deactivate.bat
+$ deactivate.bat
 ```
 
 #### Deleting the virtual environment
@@ -233,7 +233,7 @@ conda activate venv
 or you can run the following in the Anaconda prompt:
 
 ```bash
-activate base
+$ activate base
 ```
 
 #### Deactivating an environment
@@ -259,7 +259,7 @@ Run the following command in the Windows Powershell.
 **Note**: This is the recommended way of installing `poetry` .
 
 ```bash
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
+$ (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 ```
 
 >**Note**: Even though it is possible to install it using **pip**, it is not recommended as it causes more dependency conflicts with other packages.
@@ -327,7 +327,7 @@ $ deactivate
 ```
 
 ### Conclusion
-When creating virtual environments, always try to use **venv** as it is a universal convention name that is easily available in ignore files like `.gitignore`.
+When creating virtual environments, always try to use **venv** as the environment name since it is a global convention that is easily available in ignore files like `.gitignore`.
 
 It is generally a good practice to work with virtual environments as they save you hours of debugging basic errors like `No module errors`. They also enable easy collaboration between developers.
 
