@@ -16,9 +16,7 @@ In this tutorial, you will need to:
 
 ### Setup The Project
 
-To start our project, create a folder named `Express-AdminBro` and open it on your favorite IDE. In my case, I will be using VS Code. Inside this folder, type the command `npm init` to generate an initial package.json for our project.
-This command will prompt you if you need to skip, use `npm init -y` instead. In our project, we will need various npm packages from the npm registry.
-Below is the npm packages required:
+To start our project, create a folder named `Express-AdminBro` and open it on your favorite IDE. In my case, I will be using VS Code. Inside this folder, setup a new project using the command `npm init -y` to generate an initial package.json for our project. This project will need various npm packages from the npm registry. Below is the npm packages required:
 
 - express: Express is a backend Node.js web application framework for building web applications and APIs.
 
