@@ -29,8 +29,8 @@ The framework of this program can be used to create the database for other many 
 
 ### Table of contents
 - [How to install webcam?](#how-to-install-the-webcam)
-- []()
-- []()
+- [Creating face database using Matlab](#creating-face-database-using-matlab)
+- [Conclusion](#conclusion)
 
 #### How to install the webcam?
 1. Open the Matlab software on your pc. To download Matlab, refer [here](https://www.mathworks.com/downloads/).
