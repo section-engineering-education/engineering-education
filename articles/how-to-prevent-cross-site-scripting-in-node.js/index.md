@@ -18,21 +18,21 @@ Once the malicious code is injected, that may put the website under the control 
 A strong understanding of Node.js and JavaScript is required to follow along easily.
 
 ### What is cross-site scripting (XSS)
-Cross-site scripting (XSS) is a client-side code injection attack on web applications. Attackers use vulnerable websites to inject malicious code or a script. The XSS allows the attacker to inject the malicious code using script languages such as JavaScript.
+Cross-site scripting (XSS) is a code injection attack on web applications. Attackers use vulnerable websites to inject malicious code or a script. The XSS allows the attacker to inject the malicious code using script languages such as JavaScript.
 
-The malicious code executes on the user's browser. When the script is executed, the attacker can access cookies, passwords, and other sensitive information saved by the browser.
+The malicious code is executed on the user's browser. The attacker then can access cookies, passwords, and other confidential information saved by the browser.
 
 A web application is vulnerable to XSS if the user input is not encoded appropriately. If the user input is not encoded correctly, the malicious script is sent to users and executed.
 
 Improper input validation and sanitization of data provided by the web application user are the leading causes of XXS attacks.
 
 ### How XSS works
-XSS works by exploiting a vulnerable web application. An attacker sends malicious code to users.
-The malicious code executes in the victim's browser. When the malicious script executes, the attacker can interact with the application.
+XSS works by exploiting a vulnerable web application. An attacker sends malicious code to users and is executed.
+When the malicious script executes, the attacker can interact with the application.
 
 Some developers do not understand how XSS works. To prevent XSS, a developer has to know how XSS works. Go through this scenario to understand how XSS works.
 
-XYZ is an E-Commerce site selling items to clients. The item's data is sent to a server and stored in a database. If one needs to purchase an item, you must create an account and get verified to be a legitimate user of the website. In this scenario, a user logs in to the website. The system has to validate if the one trying to sign in is a legitimate user of the website before gaining access.
+XYZ is an E-Commerce site selling items to clients. The item's data is sent to a server and stored in a database. If one needs to purchase an item, you must create an account and get verified to be a legitimate user of the website. A user logs in to the website. The system has to validate if the one trying to sign in is a legitimate user of the website before gaining access.
 
 On the other side, an attacker creates a hyperlink and enters a JavaScript code. The code would read the cookie of whoever opening the web page. The script is sent, processed, and stored in the database.
 
@@ -52,40 +52,39 @@ Cross-site scripting vulnerabilities are:
 Below are the different types of XSS attacks.
 
 #### Reflected cross-site scripting
-[Reflected XSS](https://portswigger.net/web-security/cross-site-scripting/reflected) (Non-persistent XSS) is an attack that occurs when a malicious script is sent to an application via the HTTP. In non-persistent XSS, the malicious code is executed instantly in the victim's browser. 
+[Reflected XSS](https://portswigger.net/web-security/cross-site-scripting/reflected) (Non-persistent XSS) is an attack that occurs when a malicious script is redirected to an application via the HTTP. In non-persistent XSS, the malicious code is executed instantly in the victim's browser. 
 If the server fails to encode the user inputs properly, the attacker might search for such a string `<script>alert (‘XSS!')</script>`. This JavaScript code reflects on the browser as part of the code. The code is then executed to display an alert that confirms XSS vulnerability.
 Below is an example of a reflected XSS attack.
 The HTTP link before the malicious code is injected
 `https://example-webapp.com/report =Safe`
 How the attack is performed,
 `https://example-webapp.com/report =<script>\/*Not+Safe…?+*/</script>`.
-When the user accesses the URL sent by the attacker, the malicious script executes immediately in the user's browser.
+When the user accesses the URL sent by the attacker, the malicious script executes immediately in the browser.
 
 #### Stored cross-site scripting
-[Stored XSS](https://portswigger.net/web-security/cross-site-scripting/stored) (Persistent XSS) occurs when a malicious script is saved in the website's database. The malicious script is then executed when the user accesses the web application. At any moment the victim opens the browser, the malicious script runs.
+[Stored XSS](https://portswigger.net/web-security/cross-site-scripting/stored) (Persistent XSS) occurs when a malicious script is saved in the website's database. The malicious script executes when the user accesses the web app. At any moment the victim opens the browser, the malicious script runs.
 
 #### DOM-based cross-site scripting
-It is a vulnerability in the DOM (Document Object Model) rather than part of the HTML. It arises when a malicious script executes due to DOM modification in a user's browser.
-[DOM-based XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based) is the least known type of XSS attack. This is because most developers do not understand how it works.
+It is an attack in the DOM (Document Object Model). It arises when a malicious script executes due to DOM modification in a user's browser.
+Most developers do not understand how [DOM-based XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based) works.
 
 ### How to prevent XSS
-XSS is the most common attack for web applications. Now that we have an understanding of XSS and how it damages applications. The following are techniques used to [prevent XSS vulnerability](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) in Node.js
+XSS is the leading attack for web applications. Now that we have an understanding of XSS and how it damages applications. The following are techniques used to [prevent XSS vulnerability](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) in Node.js
 
 #### Output Encoding
-Output encoding is the primary prevention against XSS. Output encoding translates untrusted input into a safe model. It takes place by running a JavaScript entity encoding in a node.js platform server before sending the untrusted data into the browser. 
+Output encoding translates untrusted input into a safe model. It takes place by running a JavaScript entity encoding in a node.js platform server prior to sending untrusted data into the browser. 
 
 #### Avoid Inserting Untrusted Data
-To protect your web application from XSS, do not pass untrusted data into executable JavaScript functions such as `eval`. In the Node.js `eval` function, enable code injections. The `eval` function takes a string argument and interprets it as a JavaScript code allowing the attacker to execute it.
+Do not pass untrusted data into executable JavaScript functions such as `eval`. In the Node.js `eval` function, enable code injections. The `eval` function takes a string argument and interprets it as a JavaScript code allowing the attacker to execute it.
 The only secure way to use if you insert untrusted data into the JavaScript code is inside a quoted (")data value. That is the proper context for inserting data into a JavaScript code. For example, 
 ```js
 <script>Alert (“…encode untrusted data before being executed…”)</script>
 ```
-If you want to insert untrusted data into the JavaScript code
 
 #### Validating User Input
 To prevent XSS, developers must [validate user input](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html) and encode the output. Validation of user input is a defense technique used on the server-side to prevent XSS attacks. This means XSS mitigation measures are applied on a node.js platform.
 
-Input validation is performed to ensure only secure data is entering an information system. Validation of user input should happen as soon as data is received from the other party. Use the following script to prevent XSS by input validation.
+Input validation is performed to make sure only secure data enters an information system. Validation of user input should happen as soon as data is received from the other party. Use the following script to prevent XSS by input validation.
 ```js
 var validator = require('validator');
 var escaped_string = validator.escape(string);
@@ -93,7 +92,7 @@ var escaped_string = validator.escape(string);
 
 Validating input before processing the attacker's request is important because it prevents XSS attacks early. Input validation detects unauthorized user input before the application executes it. Special characters such as (. and \ ) should be filtered to prevent them from being used maliciously.
 
-It is essential to carry out server-side input validation when preventing XSS attacks. Input validation is done on the server-side for security. Server-side is mainly preferred for input validation because it can easily be bypassed when done via the client-side.
+It is essential to carry out server-side input validation when preventing XSS attacks. Server-side is mainly preferred for input validation because it can easily be bypassed when done via the client-side.
 
 While validating user input with server-side JavaScript (node.js), try the npm module `strip-js`. It does the following:
 - Sanitizes data
