@@ -45,7 +45,7 @@ So, we will go ahead and create a virtual environment.
 When working on Windows Command Prompt, use:
 
 ```bash
-$ python3 -m venv \path_to_my_project_env
+$ python3 -m venv venv
 ```
 
 #### Activating the virtual environment
@@ -56,7 +56,7 @@ Before using the virtual environment, we need to activate it. This makes the cur
 Activate your project's environment by running the following command:
 
 ```bash
-$ cd \path_to_my_project\venv\Scripts
+$ cd venv\Scripts
 $ activate.bat
 ```
 
