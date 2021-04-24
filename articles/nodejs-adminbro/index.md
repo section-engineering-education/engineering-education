@@ -54,7 +54,7 @@ This is the Express server starter code. We need to import the express package t
 
 ```json
 "scripts": {
-  "start": "node .serverjs",
+  "dev": "node server.js",
   "test": "echo \"Error: no test specified\" && exit 1"
 },
 ```
