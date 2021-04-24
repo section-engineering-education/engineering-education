@@ -1,4 +1,4 @@
-Web applications handle data from various sources and keeping track of these records can be challenging for administrators. [AdminBro](https://adminbro.com/) is a tool that strives to solve this problem by providing an admin interface to manage all our data from a single panel. It is an open-source Node.js package that adds an auto-generated admin dashboard where we can manage data in a single panel in our applications. This adds the ability to find, monitor, and update the application data during development. Some of the features that AdminBro gives us include form validation, customization, configure role-based access control, and adding extra features to it. In this tutorial, we will set up a working admin interface that can be used to start managing application data in a Node.js application.
+Web applications handle data from various sources and keeping track of these records can be challenging for administrators. [AdminBro](https://adminbro.com/) is a tool that will solve this by providing an interface to manage data from a single panel. It is an open-source Node.js package that adds an auto-generated admin dashboard where we can manage data in a single panel in our applications. This adds the ability to find, monitor, and update the application data during development. Some of the features that AdminBro gives us include form validation, customization, configure role-based access control, and adding extra features to it. In this tutorial, we will set up a working admin interface that can be used to start managing application data in a Node.js application.
 
 
 ### Prerequisites
@@ -10,27 +10,27 @@ In this tutorial, you will need to:
    
 3. Have a web browser on your system, preferably [Google Chrome](https://www.google.com/chrome/).
    
-4. Have [Node.js](https://nodejs.org/en/) runtime installed on your system.
+4. Have [Node.js](https://nodejs.org/en/) installed on your machine.
 
 5. [MongoDB](https://www.mongodb.com/try/download/community) NoSQL database installed on your system or a cloud solution such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 ### Setup The Project
 
-To start our project, create a folder named `Express-AdminBro` and open it on your favorite IDE. In my case, I will be using VS Code. Inside this folder, setup a new project using the command `npm init -y` to generate an initial package.json for our project. This project will need various npm packages from the npm registry. Below is the npm packages required:
+First, create a folder named `Express-AdminBro` and open it on your IDE, I will be using VS Code. Inside this folder, setup a new project using the command `npm init -y` to generate an initial `package.json` file for our project. We need various npm packages from the npm registry which include:
 
-- express: Express is a backend Node.js web application framework for building web applications and APIs.
+- express: Express is a Node.js framework for building web applications and backend APIs.
 
-- mongoose: Mongoose is an asynchronous database driver or Object Data Mapper for MongoDB that connects the application to the database layer and performs query operations.
+- mongoose: Mongoose is an Object Data Mapper for MongoDB that connects the application to the database layer our asynchronous performs query operations.
   
-- admin-bro: AdminBro is an admin interface that can be plugged into a Node.js application thus improving the developer experience. By providing database models (like posts, comments, stores, products, etc), AdminBro generates React UI which will allow us (or other trusted users) to manage content.
+- admin-bro: AdminBro is an admin interface that can be plugged into a Node.js application thus improving the developer experience. It generates an interface which will allow us to manage content.
 
 - @admin-bro/express: `@admin-bro/express` is a plugin that will help us add AdminBro to the Express application.
   
 - @admin-bro/mongoose: `@admin-bro/mongoose` is a Mongoose database adapter for AdminBro.
 
-- nodemon: nodemon is a development dependency package. It constantly monitors our applications by automatically restarting the server when any of our application files changes.
+- nodemon: nodemon is a development dependency package to monitors our applications and restart the server.
   
-- tslib: This `tslib` module is a runtime library for TypeScript that contains all of the TypeScript helper functions.
+- tslib: `tslib` is a module runtime library for TypeScript with Typescript helper functions. Our AdminBro will need it.
   
 - express-session: This is a session middleware and will be required by our Admin panel. 
 
