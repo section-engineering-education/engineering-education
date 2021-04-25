@@ -1,11 +1,24 @@
-# Creating your first Google Web Story
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/creating-your-first-google-web-story/
+title: How to Create your First Google Web Story
+description: This article provides a step by step guide on how to create a Google Web Story. These stories can created using drag and drop tools or through coding.
+author: jethro-magaji
+date: 2021-05-15T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/creating-your-first-google-web-story/hero.jpg
+    alt: Creating your first Google Web Story
+---
+In October 2013, Snapchat introduced a new feature on its app called Stories which allowed users to create short consumable content that is displayed for 24 hours. 
+<!--more-->
+Since then the feature gained popularity amongst Snapchat users and led to its adoption by other social apps like Instagram, Facebook, YouTube, WhatsApp, and Twitter.
 
-![Hero image](engineering-education/creating-your-first-google-web-story/hero.png)
-
-In October 2013, Snapchat introduced a new feature on its app called “Stories” which allowed users to create short consumable contents lasting only for 24 hours. 
-Since then the feature gained popularity amongst Snapchat users and led to the adoption of the feature by other social apps like Instagram, Facebook, YouTube, WhatsApp, and Twitter.
 Introduced in 2018 as [AMP](https://amp.dev/) (Accelerated Mobile Pages) story, Google Web Story is owned by Google and powered by AMP technology. 
-AMP (Accelerated Mobile Pages), developed by the AMP Open-Source team, is an open-source HTML platform designed for mobile web browsers to load web pages faster.
+AMP (Accelerated Mobile Pages) is an open-source HTML platform designed for mobile web browsers to load web pages faster. 
 
 ### Table of Contents
 
@@ -21,20 +34,20 @@ AMP (Accelerated Mobile Pages), developed by the AMP Open-Source team, is an ope
 
 ### What is a Web Story?
 
-> This is a web-based version of the popular “Stories” format that uses images, audio, videos, texts, and animations to create an engaging short consumable experience.
+> This is a web-based version of the popular "Stories" format that uses images, audio, videos, texts, and animations to create an engaging short consumable experience.
 
-The web prefix signifies the content is opened to everyone on the web and it is also short-lived or evergreen, depending on how the owner wants it to last.
+The `web` prefix signifies the content is visible to everyone on the internet and it is also short-lived or everpresent, depending on how the owner wants it to last.
 
 ### Prerequisites
 
-To get started with Web Stories you’ll need some basic Knowledge of HTML, CSS, and JavaScript or no prior knowledge, a code editor to write the code, and a web browser to preview the code.
+To get started with Web Stories you'll need some basic knowledge of HTML, CSS, and JavaScript, a code editor to write the code, and a web browser to preview the code.
 
 ### What differentiates a Web Story?
 
 Compared to conventional social app stories, Web stories are similar in terms of the overall consistent user experience of tapping back and forth to view previous and next stories. But some things that differentiate Web stories from social app stories include;
 
 **Control**
-Contrary to social app stories with Web stories, you're in control of how long the story should be on the Web and not having to worry that your beautifully crafted story would expire after 24 hours. The publisher hosts Web stories, which means the content, the copyright, and rules depend on the publisher's terms of choice.
+Contrary to social apps, Web stories give you more control of how long the story should be on the Web and not having to worry that your beautifully crafted story would expire after 24 hours. The publisher hosts Web stories, which means the content, the copyright, and rules depend on the publisher's terms of choice.
 
 **Earn money**
 In almost all social app stories, creators don't earn when a story has an ad, but this is different for Web stories. Creators can earn money for ads on the story pages, as well as brand deals, native advertising, and so on.
@@ -44,17 +57,17 @@ Since Web stories live on the web, they don't just live in a single app but can 
 
 ### Creating a Web Story
 
-Creating a Web Story is flexible depending on your needs and expertise. To create a story with custom functionalities developers can use code, while persons with no coding experience can use NoCode drag-and-drop tools to create Web Stories.
+Creating a Web Story is flexible depending on your needs and expertise. To create a story with custom functionalities, developers can use code, while persons with no coding experience can use NoCode drag-and-drop tools to create Web Stories.
 
-#### Using NoCode
+### Using NoCode
 
-There are drag-and-drop tools like [MakeStories](https://makestories.io/), [Web Stories for WordPress](https://wordpress.org/plugins/web-stories/), [Newsroom AI](https://www.nws.ai/), and [more](https://amp.dev/documentation/tools/?format=stories) that are used to create a story and then embed it into a website. For the sake of this article, MakeStories editor is going to be used.
+There are drag-and-drop tools like [MakeStories](https://makestories.io/), [Web Stories for WordPress](https://wordpress.org/plugins/web-stories/), [Newsroom AI](https://www.nws.ai/), and [more](https://amp.dev/documentation/tools/?format=stories) that are used to create a story and then embed it into a website. For the sake of this article, the `MakeStories editor` is going to be used.
 
 ![MakeStories website](engineering-education/creating-your-first-google-web-story/makestories.png)
 
 Login or Sign-up on MakeStories [here](https://makestories.io/)
 
-After logging or signing up, create a story by clicking on “CREATE NEW STORY”
+After logging or signing up, create a story by clicking on `CREATE NEW STORY`.
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories2.png)
 
@@ -74,29 +87,31 @@ Add text to the slide by clicking on the “T” icon and dragging any typograph
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories8.png)
 
-Next, add a new slide by clicking on the plus “+” icon below the slide.
-Then add a background image to fill the slide.
+Next, add a new slide by clicking on the plus `+` icon below the slide.
+Then add a `background image` to fill the slide.
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories6.png)
 
-After editing the story, then publish it by clicking the `PUBLISH` button and “publish it as a Web Story”.
+After editing the story, then publish it by clicking the `PUBLISH` button and `publish it as a Web Story`.
 
 ![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories7.png)
 
 #### Using Code
 
-Developers can create customized Web Stories to suit their needs. Creating Web Stories with code requires using the AMP HTML library, check out the [documentation](https://amp.dev/documentation/components/?format=stories) on `amp-story` component for a guide on how to create a Web Story using the Library.
-Let’s create a Hello World AMP Story application using the `amp-story` extension.
+Developers can create customized Web Stories to suit their needs. Creating Web Stories with code requires one to use the AMP HTML library. Check out the [documentation](https://amp.dev/documentation/components/?format=stories) on `amp-story` component for a guide on how to create a Web Story using the Library.
+
+Let's create a Hello World AMP Story application using the `amp-story` extension.
+
 Open a code editor of your choice and create an `index.html` file
 
-Import the  `amp-story` in the header
+Import the  `amp-story` script in the header
 
 ```html
 <!-- amp-story script tag --> 
 <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
 ```
 
-To allow AMP Stories to make use of video the `amp-video` extension also needs to be added to the header
+To allow AMP Stories to make use of video the `amp-video` extension needs to be added to the header.
 
 ```html
 <!-- amp-video script tag --> 
@@ -121,7 +136,7 @@ With CSS, we can style stories using the `style amp-custom` component
 </style>
 ```
 
-The `amp-story` tag contains the `amp-story-page` tags, which display stories. The story level also contains important metadata like title, publisher, publisher-logo, publisher-portrait, and their corresponding attributes.
+The `amp-story` tag contains the `amp-story-page` tags, which display stories. The story level also contains important metadata like `title`, `publisher`, `publisher-logo`, `publisher-portrait`, and their `corresponding attributes`.
 
 ```html
 <!-- amp-story metadata --> 
@@ -231,27 +246,30 @@ The last story page of the story contains 2 grid areas of images arranged vertic
 </amp-story-bookend>
 ```
 
-The bookend contains links to other resources for the story, such as social media links, news posts, or affiliate links. Check out the full code on [Github](https://github.com/Jethro-magaji/Web-Story-Hello-World) and [Live story](https://web-story-hello-world.stackblitz.io/)
+The bookend contains links to other resources for the story such as social media links, news posts, or affiliate links. Check out the full code on [Github](https://github.com/Jethro-magaji/Web-Story-Hello-World) and [Live story](https://web-story-hello-world.stackblitz.io/)
 
 ### How to make your Web Story visible on the Web
 
-When a Web story is published, it appears across Google in the following formats; on Google discover as a carousel, as a grid view on Google search, and as an image card on Google images. if you want your stories to be indexed by search engines, you will need to work on your stories’ SEO (search engine optimization).
+When a Web story is published, it appears across Google in the following formats; on `Google discover` as a `carousel`, as a `grid view` on `Google Search`, and as an `image card` on `Google images`. 
+
+if you want your stories to be indexed by search engines, you will need to work on your stories' `SEO` (search engine optimization).
+
 However, to improve the quality and quantity of traffic to your story, you will need to consider the following;
 
 **Metadata**
-It's very important to ensure that the following metadata; ‘publisher’, ‘publisher logo’, ‘portrait poster’, and ‘title’ are available for your Web stories so that search engines can index them to show the story on Google Discover.
+It's very important to ensure that the following metadata; `publisher`, `publisher logo`, `portrait poster`, and `title` are available for your Web stories so that search engines can index them to show the story on `Google Discover`.
 
 **Linking to stories**
 It's recommended to integrate stories into your website, by linking them to other pages on your website.
 
 **URL format**
-When setting the URL for your story, there's no need to specify in the URL that it's a story, for example,
+When setting the URL for your story, there's no need to specify that it's a story, for example,
 `website.com/stories/story.html`
 Rather, consider using the same directory structure of your website and URL format for your stories. Like this
 `website.com/article/new-article.html`
 
 **Image and video description**
-It's best practice and recommended to add meaningful alt text, where appropriate, to optimize for accessibility and index ability of your content, and since videos don't support alt text, It's good to use the title attribute to describe the video.
+It's best practice and recommended to add meaningful `alt text`, where appropriate, to optimize for accessibility and indexability of your content, and since `videos` don't support `alt text`, It's good to use the `title` attribute to describe the video.
 
 **Video captions**
 Using captions in videos is important because they automatically show in web stories, making them usable even when the sound is off. They also make stories accessible to those that can't hear the spoken words in the video and help with search engine indexing.
@@ -261,7 +279,7 @@ When creating Web Stories, it’s important to provide very good quality content
 
 ### Conclusion
 
-In summary, we have learned what a Web Story and how it differs from social media stories. You also created your first Web Story and learned how to make your Web Story visible on the web.
+In summary, we have learned what a Web Story is and how it differs from social media stories. You also created your first Web Story and learned how to make your Web Story visible on the web.
 
 ### Further Reading
 
@@ -273,3 +291,7 @@ In summary, we have learned what a Web Story and how it differs from social medi
 - [Accelerated Mobile Pages](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages)
 - [Create your first Web Story](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories)
 - [Storytime](https://youtube.com/playlist?list=PLfVPq9A6B0RNoQ3HTE9LQzgAdVzcb7tmt)
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
