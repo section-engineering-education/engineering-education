@@ -1,6 +1,6 @@
-During system development and testing, the employment of Fake data can be very useful. This is because it prevents one from using one's real identity especially in important data like identification numbers, full names, and date of birth among others. Generation of this fake data manually takes much time hence slowing down the testing period since it is hard to come up with a lot of new data.
+During system development and testing, employment of Fake data can be very useful. This is because it prevents one from using one's real identity especially in important data like identification numbers, full names, and date of birth, among others. Manually generating fake data takes much time hence slowing down the testing process since it is hard to come up with a lot of new data.
 
-In this tutorial, we will learn how to generate fake data in Node.js using the Faker module and output it in a webpage as a table. We shall run our process locally on our computer but fetch the information from an online server.
+In this tutorial, we will learn how to generate fake data in Node.js using the Faker module. We will then output the fake data in a webpage as a table. We shall run our process locally on our computer but fetch the information from an online server.
 
 ### Key takeaways
 
@@ -16,11 +16,11 @@ At the end of this tutorial, you will be able to know the following:
 
 The basic requirements for this course include:
 
-- Basics of Web development skills
+- Basic knowledge of Web development
 - Node.js basics
 - A basic IDE is installed on the machine. We shall preferably use Visual Studio Code.
 - A stable internet connection
-- MongoDB installed on the computer. You can check out how to install MongoDB on your computer [here](https://www.section.io/engineering-education/working-with-databases-part1/).
+- MongoDB installed on your computer. You can check out how to install MongoDB on your computer [here](https://www.section.io/engineering-education/working-with-databases-part1/).
 
 ### Table of contents
 
@@ -40,8 +40,7 @@ The basic requirements for this course include:
 
 ### What is Faker.js
 
-Faker.js is a node library that allows users to generate massive amounts of fake data for their project use. This can be generated either while running your program locally or remotely by deploying it in a web browser as a webpage. It does this generation by randomly choosing and sending back from an online server some of the variables requested for each time it is executed. It can generate a massive amount of data hence allows a developer to push their programs to the limit during testing.
-Developers can then analyze the data as one would have done in real-life situations and come up with desired decisions.
+Faker.js is a node library that allows users to generate massive amounts of fake data for their project use. This can be generated either while running your program locally or remotely by deploying it in a web browser as a webpage. It does this generation by randomly choosing from an online server some of the variables requested for each time it is executed. It can generate a massive amount of data hence allows a developer to push their programs to the limit during testing. Developers can then analyze the data as one would have done in real-life situations and come up with desired decisions.
 
 ### What type of data does Faker.js generate
 
@@ -52,12 +51,13 @@ Some examples of data that can be generated include, but not limited to the belo
 - Companies
 - Commerce
 - Dates
-- Datatypes
+- Data types
 - Images
 - Names
 - Time and many more...
 
-You can choose a sub-category by first requiring "faker", calling the main category then adding the sub-category after a period. An example is `console.log('faker.animal.dog');`
+You can choose a sub-category by first requiring "faker", calling the main category, then adding the sub-category after a period. An example is `console.log('faker.animal.dog');`
+
 You can check out others as documented [here](https://www.npmjs.com/package/faker).
 
 Now that we know these, let us dive into the tutorial.
@@ -65,8 +65,11 @@ Now that we know these, let us dive into the tutorial.
 ### Setting up the overall project structure
 
 First, create the main directory and name it "Fakedata". This shall be the base directory of our program. Open the directory in Visual Studio Code.
+
 Open the integrated terminal in Visual Studio Code and run `npm init -y` to quickly create a "package.json" file.
+
 Create a file in the main directory named "app.js". This will be the program's starting point.
+
 Once done, let us create two new folders in the main directory namely "views" and "models". Inside the "views" directory, create "home.ejs" file. Create another file and name it "user.js" inside the "models" folder.
 
 #### Folder Structure
@@ -78,21 +81,22 @@ The folder structure will be as shown below:
 > > node_modules (folder)
 > >
 > > models (folder)
+> >
 > > > user.js (file)
 > >
 > > views (folder)
-> > > home.ejs (file)
 > >
+> > > home.ejs (file)
 > >
 > > app.js (file)
 
-Now that we have completed the above tasks, let's get into the codes and some explanations.
+Now that we have completed the above tasks, let's get into the code and some explanations.
 
 ### Setting up our environment
 
 Let us do the following in sequence:
 
-#### Installing our  packages
+#### Installing packages
 
 The node libraries required for this tutorial include:
 
@@ -104,9 +108,7 @@ The node libraries required for this tutorial include:
 
 In the integrated terminal, run the following command to install the above packages all at once:
 
-`
-npm i nodemon express ejs mongoose faker
-`
+`npm i nodemon express ejs mongoose faker`
 
 The installation may take some time depending on your internet speed. Just be patient till the process comes to a halt.
 
@@ -118,57 +120,58 @@ Now open the "package.json" file and configure it so that you can start the appl
 
 ```json
 {
-    "name": "fakedata",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "start": "node app.js",
-        "dev": "nodemon app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "ejs": "^2.7.4",
-        "express": "^4.17.1",
-        "faker": "^4.1.0",
-        "mongoose": "^5.12.5",
-        "nodemon": "^2.0.7"
-    }
+	"name": "fakedata",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^2.7.4",
+		"express": "^4.17.1",
+		"faker": "^4.1.0",
+		"mongoose": "^5.12.5",
+		"nodemon": "^2.0.7"
+	}
 }
 ```
 
-Once done, let us now write our codes to build and run a test application.
+Once done, let us now write our code to build and run a test application.
 
 ### Testing Faker.js module
 
-First, let us give a test to the faker.js library on the console. Inside the "app.js" file, write in the codes below. These will give back random data twenty times due to the for loop used. You can see the data generated in the control panel.
+First, let us give a test to the faker.js library on the console. write in the code below inside the "app.js" file. These will give back random data twenty times due to the for loop used. You can see the data generated in the control panel.
 
 ```javascript
-  var faker = require('faker');
+var faker = require("faker");
 
-  // Initializing our variables with a different random data each time it is run
-  var randomName = faker.name.findName(); // Generates a random name
-  var randomEmail = faker.internet.email(); // Generates a random email
-  var randomProduct = faker.commerce.productName(); // Generates a random product name
-  var randomCompany = faker.company.companyName(); // Will give back a random company name
-  var randomCard = faker.helpers.createCard(); // It's output is a random contact card containing many properties
+// Initializing our variables with a different random data each time it is run
+var randomName = faker.name.findName(); // Generates a random name
+var randomEmail = faker.internet.email(); // Generates a random email
+var randomProduct = faker.commerce.productName(); // Generates a random product name
+var randomCompany = faker.company.companyName(); // Will give back a random company name
+var randomCard = faker.helpers.createCard(); // It's output is a random contact card containing many properties
 
-  // Iteration
-  // This code runs twenty times
-  // It produces each time different data
-  for (i = 0; i < 20; i++) {
-      console.log(randomName); // Outputs a random name
-      console.log(randomEmail); // Outputs a random email
-      console.log(randomProduct); // Outputs the random product name generated
-      console.log(randomCompany); // Produces a random company name
-      console.log(randomCard); // Gives back a random card
-      console.log(faker.date.past()); // Generates a random past date
-  }
+// Iteration
+// This code runs twenty times
+// It produces each time different data
+for (i = 0; i < 20; i++) {
+	console.log(randomName); // Outputs a random name
+	console.log(randomEmail); // Outputs a random email
+	console.log(randomProduct); // Outputs the random product name generated
+	console.log(randomCompany); // Produces a random company name
+	console.log(randomCard); // Gives back a random card
+	console.log(faker.date.past()); // Generates a random past date
+}
 ```
 
 Run the "app.js" file in the terminal using the command `node index.js`.
+
 You can change it as you please to get different inputs basing your code on the documentation given [here](https://www.npmjs.com/package/faker).
 
 In case of the "script is disabled" error, such as one shown below, follow these easy steps to remove them:
@@ -190,20 +193,20 @@ The code when executed will use the faker.js library to generate the data needed
 
 ### Setting up the application starting point
 
-"app.js" will be used as our application starting point.
+"app.js" will be used as our application's starting point.
 
 **app.js**
-Inside this file, do the following step by step:
+Inside this file, do the following, step by step:
 
-- Require the needed packages we just installed as shown below:
+- Require the packages we just installed as shown below:
 
 ```javascript
 // Require needed packages
-var express = require('express');
-var mongoose = require('mongoose');
-var faker = require('faker');
-var path = require('path');
-var fakerModel = require('./models/user');
+var express = require("express");
+var mongoose = require("mongoose");
+var faker = require("faker");
+var path = require("path");
+var fakerModel = require("./models/user");
 ```
 
 - Connect to a new database called "fakedata" inside Mongodb database. This is well shown below:
@@ -212,8 +215,10 @@ var fakerModel = require('./models/user');
 // Connect to a local Mongodb database called fakedata
 // If successful log out on the console "connected to db"
 //    else "connection error"
-mongoose.connect('mongodb://localhost:27017/fakedata', { useNewUrlParser: true })
-    .then(() => console.log('connected to db')).catch(error => console.log('connection error', error));
+mongoose
+	.connect("mongodb://localhost:27017/fakedata", { useNewUrlParser: true })
+	.then(() => console.log("connected to db"))
+	.catch((error) => console.log("connection error", error));
 ```
 
 - Use express to set up our Template engine (view engine) to "ejs" and set up our absolute directory path to the source directory. This is well shown below:
@@ -223,8 +228,8 @@ mongoose.connect('mongodb://localhost:27017/fakedata', { useNewUrlParser: true }
 // Set up our absolute directory path to the source directory
 var app = express();
 
-app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views"));
 ```
 
 - Set up our simple routing system to take us to the home webpage whenever the application is launched or new data generated. We shall also save all our data generated and stored in the variables inside our database:
@@ -232,38 +237,38 @@ app.set('views', path.resolve(__dirname, 'views'));
 ```javascript
 // Set up our simple routing system to take us to the "home.ejs" file
 // or the home webpage whenever the application is launched
-app.get('/', (req, res) => {
-    fakerModel.find((err, data) => {
-        if (err) {
-            console.log(err)
-        } else if (data) {
-            res.render('home', { data: data });
-        } else {
-            res.render('home', { data: {} });
-        }
-    });
+app.get("/", (req, res) => {
+	fakerModel.find((err, data) => {
+		if (err) {
+			console.log(err);
+		} else if (data) {
+			res.render("home", { data: data });
+		} else {
+			res.render("home", { data: {} });
+		}
+	});
 });
 
 // Return each data generated to the variables below and save all of them
 // This will  be done ten times due to the for loop
 // You can add the number of data to be generated by changing the value
-app.post('/', (req, res) => {
-    for (var i = 0; i < 10; i++) {
-        var fakee = new fakerModel({
-            firstname: faker.name.firstName(),
-            lastname: faker.name.lastName(),
-            phonenumber: faker.phone.phoneNumber(),
-            city: faker.address.city(),
-            state: faker.address.state(),
-            country: faker.address.country()
-        });
-        fakee.save((err, data) => {
-            if (err) {
-                console.log(err)
-            }
-        });
-    }
-    res.redirect('/');
+app.post("/", (req, res) => {
+	for (var i = 0; i < 10; i++) {
+		var fakee = new fakerModel({
+			firstname: faker.name.firstName(),
+			lastname: faker.name.lastName(),
+			phonenumber: faker.phone.phoneNumber(),
+			city: faker.address.city(),
+			state: faker.address.state(),
+			country: faker.address.country(),
+		});
+		fakee.save((err, data) => {
+			if (err) {
+				console.log(err);
+			}
+		});
+	}
+	res.redirect("/");
 });
 ```
 
@@ -274,7 +279,7 @@ app.post('/', (req, res) => {
 // We will use 5000 as our port number
 var port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log('server running at port ' + port));
+app.listen(port, () => console.log("server running at port " + port));
 ```
 
 As you can see, we have added a _for loop_ which will be repeated ten times. This in turn adds ten new rows of data each time it is run. You can increase or decrease the number of data to be generated by changing the value as you please.
@@ -288,184 +293,184 @@ Inside the "models" folder, navigate to the "user.js" file. Let us do the follow
 
 ```javascript
 // Require the mongoose model
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
 // Add the following columns in it and their datatypes
 var fakerSchema = new mongoose.Schema({
-    firstname: String,
-    lastname: String,
-    phonenumber: String,
-    city: String,
-    state: String,
-    country: String
+	firstname: String,
+	lastname: String,
+	phonenumber: String,
+	city: String,
+	state: String,
+	country: String,
 });
 
 // Require it as the output
-module.exports = mongoose.model('fakerCollection', fakerSchema);
+module.exports = mongoose.model("fakerCollection", fakerSchema);
 ```
 
 ### Setting up views
 
 **home.ejs**
-In this file, we will create a web structure to display the data. It shall have a button in which when pressed it generates new data and automatically saves while displaying it. We shall also add a table that shall have the same number of columns as the ones generated. We shall then add some quick formatting using bootstrap and google fonts.
+
+In this file, we will create a web structure to display the data. It shall have a button in which when pressed, it generates new data and automatically saves while displaying it. We shall also add a table that shall have the same number of columns as the ones generated. We shall then add some quick formatting using bootstrap and google fonts.
 
 - Set up the overall page structure and a heading to be used:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>Fake Data Generator</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 
-<head>
-    <title>Fake Data Generator</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Custom CSS -->
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+			* {
+				font-family: Montserrat;
+			}
 
-    <!-- Custom CSS -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-        * {
-            font-family: Montserrat;
-        }
-        
-        .card {
-            margin: 0 auto;
-            /* Added */
-            float: none;
-            /* Added */
-            margin-bottom: 10px;
-            /* Added */
-        }
-    </style>
-</head>
+			.card {
+				margin: 0 auto;
+				/* Added */
+				float: none;
+				/* Added */
+				margin-bottom: 10px;
+				/* Added */
+			}
+		</style>
+	</head>
 
-<body>
+	<body>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <!-- Main Container -->
-    <div class="container">
-
-        <!-- Header -->
-        <br>
-        <h1 class="text-center">FAKE DATA GENERATOR</h1>
-        <hr>
-        <p class="text-secondary">This is a simple Fake Data generator website</p>
-        <hr>
-        <!-- Header end.//-->
-
-        
-
-    </div>
-    <!--container end.//-->
-</body>
-
+		<!-- Main Container -->
+		<div class="container">
+			<!-- Header -->
+			<br />
+			<h1 class="text-center">FAKE DATA GENERATOR</h1>
+			<hr />
+			<p class="text-secondary">This is a simple Fake Data generator website</p>
+			<hr />
+			<!-- Header end.//-->
+		</div>
+		<!--container end.//-->
+	</body>
 </html>
 ```
 
 - Add a button to generate the data inside the "container" div element tags as shown in the code below:
 
 ```html
-        <!-- Generate button -->
-        <form action="/" method="post">
-            <input type="submit" class="btn btn-primary btn-lg btn-block" value="click to generate the data">
-        </form> <br>
-        <!-- Generate button end.//-->
+<!-- Generate button -->
+<form action="/" method="post">
+	<input
+		type="submit"
+		class="btn btn-primary btn-lg btn-block"
+		value="click to generate the data"
+	/>
+</form>
+<br />
+<!-- Generate button end.//-->
 
-        <a class="btn btn-primary stretched-link" href="#footer">Go to the bottom</a>
-        <hr>
+<a class="btn btn-primary stretched-link" href="#footer">Go to the bottom</a>
+<hr />
 ```
 
 As you can see, it will trigger the process when clicked. The additional link will enable us to use the in-page HTML links to navigate from the top to bottom of the page quickly at a button click as we shall see later on.
 
-- Add a table and use the "ejs" template engine formart when reffering to the variables to be used. This shall be placed below the button in the "container" div. See the code below:
+- Add a table and use the "ejs" template engine format when referring to the variables to be used. This shall be placed below the button in the "container" div. See the code below:
 
 ```html
 <!-- Table -->
-        <%if(data.length>0){%>
-            <table class="table table-striped table-inverse table-responsive" border="1" style="text-align: center;">
-                <thead class="thead-inverse">
-                    <tr>
-                        <th>
-                            s.no
-                        </th>
-                        <th>
-                            firstname
-                        </th>
-                        <th>
-                            lastname
-                        </th>
-                        <th>
-                            phonenumber
-                        </th>
-                        <th>
-                            city
-                        </th>
-                        <th>
-                            state
-                        </th>
-                        <th>
-                            country
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%for(var i=0;i< data.length; i++){%>
-                        <tr>
-                            <td>
-                                <%= i%>
-                            </td>
-                            <td>
-                                <%= data[i].firstname%>
-                            </td>
-                            <td>
-                                <%= data[i].lastname%>
-                            </td>
-                            <td>
-                                <%= data[i].phonenumber%>
-                            </td>
-                            <td>
-                                <%= data[i].city%>
-                            </td>
-                            <td>
-                                <%= data[i].state%>
-                            </td>
-                            <td>
-                                <%= data[i].country%>
-                            </td>
-                        </tr>
-                        <%}%>
-                </tbody>
-            </table>
-            <%}%>
-                <!-- Table end.//-->
+<%if(data.length>0){%>
+<table
+	class="table table-striped table-inverse table-responsive"
+	border="1"
+	style="text-align: center;"
+>
+	<thead class="thead-inverse">
+		<tr>
+			<th>s.no</th>
+			<th>firstname</th>
+			<th>lastname</th>
+			<th>phonenumber</th>
+			<th>city</th>
+			<th>state</th>
+			<th>country</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%for(var i=0;i< data.length; i++){%>
+		<tr>
+			<td><%= i%></td>
+			<td><%= data[i].firstname%></td>
+			<td><%= data[i].lastname%></td>
+			<td><%= data[i].phonenumber%></td>
+			<td><%= data[i].city%></td>
+			<td><%= data[i].state%></td>
+			<td><%= data[i].country%></td>
+		</tr>
+		<%}%>
+	</tbody>
+</table>
+<%}%>
+<!-- Table end.//-->
 ```
 
 - Just to make it easy for one with large amounts of data, we shall add another "Generate" button at the end of the page. We shall now add another link that has the id of "footer". We had set the initial "Go to the bottom" link to point at it through its id. All these we shall put inside the footer element as shown below:
 
 ```html
 <!-- Footer section-->
-                <hr>
-                <p class="text-secondary">This is the end of the page!</p>
+<hr />
+<p class="text-secondary">This is the end of the page!</p>
 
-                <hr>
+<hr />
 
-                <p class="text-secondary">Click the button below to generate more data...</p>
+<p class="text-secondary">Click the button below to generate more data...</p>
 
-                <!-- Generate button-->
-                <form action="/" method="post">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="click to generate the data">
-                </form> <br>
-                <!-- Generate button end.//-->
-                <footer id="footer">Bye...</footer>
-                <!-- Footer section end.//-->
+<!-- Generate button-->
+<form action="/" method="post">
+	<input
+		type="submit"
+		class="btn btn-primary btn-lg btn-block"
+		value="click to generate the data"
+	/>
+</form>
+<br />
+<!-- Generate button end.//-->
+<footer id="footer">Bye...</footer>
+<!-- Footer section end.//-->
 ```
 
 ### Run the project
@@ -473,9 +478,8 @@ As you can see, it will trigger the process when clicked. The additional link wi
 Before running the code, make sure that MongoDB is running in the background.
 
 In your integrated terminal, run the following command:
-`
-nodemon run dev
-`
+
+`nodemon run dev`
 
 If it outputs a running message or "connected to db" as we had set earlier on in our code, open a web browser. In the web browser, type `localhost:5000` and press enter.
 Once the page has been displayed, click on the "click to generate the data" button. The results will be as shown in the image below:
@@ -486,12 +490,12 @@ You can view the generated data in MongoDB installed on your computer. Just open
 
 You can find, clone, and use the code above in the repository found [here](https://github.com/justusmbuvi/Faker.js-node-application).
 
-Congratulations, you have generated fakedata for your need using Node.js!
+Congratulations! You have generated fakedata for your need using Node.js.
 
 ### Conclusion
 
 Fake data is very important for system testing. One can obtain as much as needed and store it locally for immediate or future use using node modules. One can choose a variety as he/she needs depending on the underlying purpose.
-Briefly, we have learned the importance of fake data, what is faker.js, how to integrate it in a simple node project, how to run, view, and store the generated results.
+Briefly, we have learned the importance of fake data, what faker.js is, how to integrate it in a simple node project, how to run, view, and store the generated results.
 
 ### Further projects
 
