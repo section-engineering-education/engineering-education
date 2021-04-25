@@ -1,10 +1,10 @@
 ### Introduction
 
-In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for quick communication. For security purposes, the messages exchanged over the network have to be encrypted. This means, all the messages on transit over the network should be encrypted. 
+In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for communication. For security reasons, the messages exchanged over the network must be encrypted.
 
-If a malicious program tries to tap the messages exchanged across the network illegally, the intercepted message would be in encrypted form thus the content of the message will not be compromised.
+If a malicious program tries to tap the messages illegally that are exchanged across a network, the intercepted message would be in encrypted form thus the content of the message will not be compromised.
 
-This article will create a simple chat application where the exchanged messages will have [end-to-end encryption](https://www.preveil.com/blog/end-to-end-encryption/) using [secret keys](https://www.sciencedirect.com/topics/engineering/secret-key).
+This article will explain on how to create a simple chat application with Node.js and React, where the exchanged messages will have [end-to-end encryption](https://www.preveil.com/blog/end-to-end-encryption/) using [secret keys](https://www.sciencedirect.com/topics/engineering/secret-key).
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ Whenever a user sends or receives a message, the message will be encrypted or de
 
 ### Creating the Backend
 
-For the backend, we'll use Node.js with its framework Express. Socket.io is needed to provide real-time, two-way communication between the backend server and the client.
+For the backend, we'll use Node.js and the Express framework. Socket.io is needed to provide real-time, two-way communication between the backend server and the frontend.
 
 The folder structure for our backend will look as follows:
 
@@ -430,7 +430,7 @@ export default Homepage;
 
 From above, we take the user name and room name and call the function `socket.emit("joinRoom")` and pass the username and roomname. The function will activate the `joinRoom` function defined in the backend. The `joinRoom` function will add the user to the room, and a welcome message will be displayed as explained earlier in the backend.
 
-Now, we add some styling to `home.js`. We create a file `home.scss` as below:
+Now, let's add some styling to `home.js`. We create a file `home.scss` as below:
 
 ```scss
 .homepage {
@@ -817,7 +817,7 @@ Now that we have successfully created a Real-time chat E2E App, the final step w
 We need to note that our server runs on port 8000, and our frontend runs on port 3000. We need to [proxy](https://medium.com/bb-tutorials-and-thoughts/react-how-to-proxy-to-backend-server-5588a9e0347) the connection for our Node.js server to communicate with our frontend. To achieve this, we need to edit the React App's `package.json` file located at `/chatfrontend/package.json` and add the below line of code:
 
 ```json
-"proxy": "http://localhost:8000",
+"proxy": "http://localhost:8000"
 ```
 
 The `package.json` file will appear as below:
