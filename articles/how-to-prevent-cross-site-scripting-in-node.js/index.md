@@ -122,3 +122,6 @@ To summarize:
 - Types of XSS attacks
 - The reader has learned how to prevent XSS attacks in a node.js platform.
 I hope this article helps you understand XSS and how to prevent it on the server-side platform.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
