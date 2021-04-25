@@ -1,7 +1,5 @@
 ### Introduction
 
-So, you've heard of Node.js but don't know what it is or how it works in your development process. Maybe you've heard people praising Node.js and you are now wondering if you should learn it as well. Maybe you're already acquainted with another back-end technology and want to learn more about Node.js. You've come to the right spot.
-
 Node.js is a server-side platform based on the JavaScript Engine in Google Chrome (V8 Engine). Ryan Dahl created Node.js in 2009. Node.js is a tool for easily creating fast and flexible network applications based on Chrome's JavaScript runtime. These are some of Node.js's characteristics: It's asynchronous and event-driven. This eliminates the need for a Node.js server to wait for an API to return data. Since it is based on Google Chrome's V8 JavaScript Engine. It is also extremely quick in terms of code execution. Data is never buffered in its applications; instead, data is sent in bits. 
 
 ### Goal
@@ -12,7 +10,7 @@ Node.js 15 is the most recent version, which was released in October of 2020. It
 
  **NPM 7**
 
-Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of this update. NPM workspaces are the most important aspect since they mark the beginning of built-in support for building and managing multiple NPM packages in a single file system. Developers who are already familiar with the Yarn package manager or Lerna should find NPM's workspace implementation to be identical. NPM workspaces are relatively simple to set up. Start by arranging NPM package files on the file system, build a top-level package. Son that refers to each of these files, start running commands through all NPM packages.
+Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of this update. NPM workspaces are the most important aspect since they mark the beginning of built-in support for building and managing multiple NPM packages in a single file system. Developers who are already familiar with the Yarn package manager or Lerna should find NPM's workspace implementation identical. NPM workspaces are relatively simple to set up. Start by arranging NPM package files on the file system, build a top-level package. Son that refers to each of these files, start running commands through all NPM packages.
 
 **V8 8.6**
 
