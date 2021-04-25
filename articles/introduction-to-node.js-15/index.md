@@ -8,7 +8,7 @@ Node.js is a server-side platform based on the JavaScript Engine in Google Chrom
 This article discusses new features in Node.js 15. It will also show why you should consider updating to the latest release.
 
 ### New features of Node.js 15
-Node.js 15 is the most recent version, which was released in October of 2020. It doesn’t have a long-term support. Output improvements, a V8 JavaScript engine upgrade, bug fixes, and an experimental version of Abort Controller and QUIC are all included.
+Node.js 15 is the most recent version, which was released in October of 2020. It doesn’t have long-term support. Output improvements, a V8 JavaScript engine upgrade, bug fixes, and an experimental version of Abort Controller and QUIC are all included.
 
  **NPM 7**
 
@@ -47,7 +47,7 @@ V8 has been upgraded from version `8.4` to version `8.6`, which includes several
 Developers may use `Abort Controller` to terminate Web requests if they need to.
 Since `QUIC` is fast and efficient, it has lower latency than `TCP`.
 
-Native modules, otherwise known as addons, are easier to generate, build, and support with Node.js 15.
+Native modules, otherwise known as addons, are easier to generate, build, and support Node.js 15.
 
 ### Conclusion
-Node.js 15 is expected to boost user productivity and enhance the general developer experience with several significant bug fixes and improvements. To take advantage of experimental features, new NPM 7, V8.6, QUIC protocol, and significant bug fixes, developers should shift to Node.js 15. 
+Node.js 15 boosts user productivity and enhances the general developer experience with several significant bug fixes and improvements. To take advantage of experimental features, new NPM 7, V8.6, QUIC protocol, and bug fixes, developers should shift to Node.js 15. 
