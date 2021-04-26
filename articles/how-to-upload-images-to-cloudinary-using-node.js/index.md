@@ -85,14 +85,11 @@ Once done you can update any of the packages which were initially installed by r
 
 Our folder structure is as shown below:
 
-> Cloudinary-uploader (Root Directory)
->
-> > node_modules (folder)
-> >
-> > .env (file)
-> >
-> > index.js (file)
-> >
+```bash
+├──  node_modules (folder)
+├──  .env (file)
+└──  index.js (file)
+```
 
 ### Configure package.json
 
