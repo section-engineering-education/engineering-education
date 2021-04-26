@@ -348,3 +348,6 @@ The following were used as main references for this tutorial:
 
 - [Cloudinary.js documentation](https://www.npmjs.com/package/cloudinary).
 - [How to upload a file to Cloudinary using Django](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
+
+---
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
