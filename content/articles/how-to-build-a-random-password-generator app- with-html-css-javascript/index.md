@@ -8,7 +8,7 @@ Before I begin, you will need to know what a `password generator application` is
 The password generator application you are going to build will, first of all, have a container where there would be an input field, a copy button that copies the password that has been randomly generated, then you are going to build an input button that shows the user the preferred length they want for their password a minimum of 5 words and maximum of 20 words, and if they want to include uppercase, letters, and symbols then lastly a generate password button which generates the random password. Below is a picture of how the application would look like so that you can have a pictorial understanding of how the application would look like.
 
 ![password-generator-app](/engineering-education/how-to-build-a-random-password-generator app- with-html-css-javascript/password-generator-app.jpg)
-](password-generator-app.png)
+
 
 ### What Are The Prerequisites For This Tutorial?
 
@@ -322,7 +322,7 @@ const form = document.getElementById('passwordGeneratorForm');
 
 ```
 
-Next, you are going to work on the character codes, this is the codes that will be used to form the randomly generated password, below are the codes for generating character codes for the application. For the uppercase codes, you are going to pass the low of 65 which is the value of uppercase A and the high value of 90 also the uppercase Z you can recall from the ASCII table, you are also doing this for the lowercase characters and numbers. But generating the character codes for the symbols are different because they are allocated in the various places of the ASCII table this will then make you use the ``.concat function `` to combine them into a single array. Let me explain the ``.concat function` this is a method in JAVASCRIPT which allows the concatenation of strings and arrays. Alright for the symbols they start at 33 and increase up to 47 and then continue at 58. 
+Next, you are going to work on the character codes, this is the codes that will be used to form the randomly generated password, below are the codes for generating character codes for the application. For the uppercase codes, you are going to pass the low of 65 which is the value of uppercase A and the high value of 90 also the uppercase Z you can recall from the ASCII table, you are also doing this for the lowercase characters and numbers. But generating the character codes for the symbols are different because they are allocated in the various places of the ASCII table this will then make you use the `.concat function ` to combine them into a single array. Let me explain the `.concat function` this is a method in JAVASCRIPT which allows the concatenation of strings and arrays. Alright for the symbols they start at 33 and increase up to 47 and then continue at 58. 
 
 ``` javascript 
 
@@ -418,7 +418,7 @@ form.addEventListener('submit', (e) => {
 
 ```
 
- in the above codes the first step you take is disabling the default behaviour by using the function `e.preventDefalult();` basically you are listening to the submit event, for you to get the event you are going to pass it to a function using the arrow functions the `e` represents the event, then after that you will be checking the multiple options in other words you can access the values inside the password length field by using the `.value` getter method which returns the input value, also the `.checked` getter which returns the true if the checkboxes are selected or not, but it will return false if the checkboxes are not selected. Now if you look at the codes correctly you will see that the values you are getting from the options are stored inside separate variables, that being said we are going to create a variable called `password` all this variable will do is to store the value returned by the `generatePassword` function. Well, the `generatePassword` function takes four arguments because you have only four options to select from and the values stored are the arguments by the variables that you declared. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password. 
+ In the above codes the first step you take is disabling the default behaviour by using the function `e.preventDefalult();` basically you are listening to the submit event, for you to get the event you are going to pass it to a function using the arrow functions the `e` represents the event, then after that you will be checking the multiple options in other words you can access the values inside the password length field by using the `.value` getter method which returns the input value, also the `.checked` getter which returns the true if the checkboxes are selected or not, but it will return false if the checkboxes are not selected. Now if you look at the codes correctly you will see that the values you are getting from the options are stored inside separate variables, that being said we are going to create a variable called `password` all this variable will do is to store the value returned by the `generatePassword` function. Well, the `generatePassword` function takes four arguments because you have only four options to select from and the values stored are the arguments by the variables that you declared. Lastly, the `innerText` method would target the text inside `resultDOM` then change it with the generated password. 
 
 Okay next is the password generating function which is the most critical function in our application because the password that you are getting will be generated from this function. Before you build the function remember the above codes you will see  that the generatePassword function takes only four arguments so you need to pass in the four arguments when creating this function, Everything is going to be shown in the codes below including building the whole password generating function.
 
@@ -470,7 +470,7 @@ Lastly the `String.fromCharCode(characterCode)` will generate the string from th
 
 All you need to do now is to create a function that generates the decimal values of the characters and in the end you will convert all these values to characters using this method below
 
-```
+```javascript
 This is an example 
 
 * Let array FromlowToHigh = (low, high) => {
