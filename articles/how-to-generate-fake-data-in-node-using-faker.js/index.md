@@ -118,7 +118,7 @@ You can choose to run an additional command, `npm update` to update the installe
 
 Now open the "package.json" file and configure it so that you can start the application using nodemon. Under the scripts, add the "dev" and "start" configurations. The code should look as follows:
 
-```json
+```Json
 {
 	"name": "fakedata",
 	"version": "1.0.0",
@@ -147,7 +147,7 @@ Once done, let us now write our code to build and run a test application.
 
 First, let us give a test to the faker.js library on the console. write in the code below inside the "app.js" file. These will give back random data twenty times due to the for loop used. You can see the data generated in the control panel.
 
-```javascript
+```Javascript
 var faker = require("faker");
 
 // Initializing our variables with a different random data each time it is run
@@ -200,7 +200,7 @@ Inside this file, do the following, step by step:
 
 - Require the packages we just installed as shown below:
 
-```javascript
+```Javascript
 // Require needed packages
 var express = require("express");
 var mongoose = require("mongoose");
@@ -211,7 +211,7 @@ var fakerModel = require("./models/user");
 
 - Connect to a new database called "fakedata" inside Mongodb database. This is well shown below:
 
-```javascript
+```Javascript
 // Connect to a local Mongodb database called fakedata
 // If successful log out on the console "connected to db"
 //    else "connection error"
@@ -223,7 +223,7 @@ mongoose
 
 - Use express to set up our Template engine (view engine) to "ejs" and set up our absolute directory path to the source directory. This is well shown below:
 
-```javascript
+```Javascript
 // Use express to set up our view engine to "ejs"
 // Set up our absolute directory path to the source directory
 var app = express();
@@ -234,7 +234,7 @@ app.set("views", path.resolve(__dirname, "views"));
 
 - Set up our simple routing system to take us to the home webpage whenever the application is launched or new data generated. We shall also save all our data generated and stored in the variables inside our database:
 
-```javascript
+```Javascript
 // Set up our simple routing system to take us to the "home.ejs" file
 // or the home webpage whenever the application is launched
 app.get("/", (req, res) => {
@@ -274,7 +274,7 @@ app.post("/", (req, res) => {
 
 - Configure the ports to be used:
 
-```javascript
+```Javascript
 // Set up our ports in which we shall see the webpage and data generated
 // We will use 5000 as our port number
 var port = process.env.PORT || 5000;
@@ -291,7 +291,7 @@ Inside the "models" folder, navigate to the "user.js" file. Let us do the follow
 
 - Create a new database and name it "fakedata", insert these columns: firstname, lastname, phonenumber, city, state, and country. Their datatypes are as shown in the code below:
 
-```javascript
+```Javascript
 // Require the mongoose model
 var mongoose = require("mongoose");
 
@@ -317,7 +317,7 @@ In this file, we will create a web structure to display the data. It shall have 
 
 - Set up the overall page structure and a heading to be used:
 
-```html
+```Html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -411,7 +411,7 @@ As you can see, it will trigger the process when clicked. The additional link wi
 
 - Add a table and use the "ejs" template engine format when referring to the variables to be used. This shall be placed below the button in the "container" div. See the code below:
 
-```html
+```Html
 <!-- Table -->
 <%if(data.length>0){%>
 <table
@@ -450,7 +450,7 @@ As you can see, it will trigger the process when clicked. The additional link wi
 
 - Just to make it easy for one with large amounts of data, we shall add another "Generate" button at the end of the page. We shall now add another link that has the id of "footer". We had set the initial "Go to the bottom" link to point at it through its id. All these we shall put inside the footer element as shown below:
 
-```html
+```Html
 <!-- Footer section-->
 <hr />
 <p class="text-secondary">This is the end of the page!</p>
@@ -509,5 +509,3 @@ Happy coding!
 The following were used as references:
 
 - [Faker.js documentation](https://www.npmjs.com/package/faker).
-
-This fixes #2025
