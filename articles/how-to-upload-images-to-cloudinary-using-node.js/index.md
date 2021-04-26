@@ -31,8 +31,8 @@ At the end of the tutorial, you will have learned about:
 The basic requirements for this tutorial are:
 
 - Web development basics.
-- A basic IDE installation on the machine. In our case, we shall use Visual Studio Code (free, easy to use, and very efficient).
-- Node basics.
+- A basic IDE installation on the machine. In our case, we shall use [Visual Studio Code](https://code.visualstudio.com/download) (free, easy to use, and very efficient).
+- [Node.js](/engineering-education/why-node-js-is-popular/) basics.
 - A stable internet connection.
 
 ### Table of Contents
@@ -69,13 +69,13 @@ Install the needed libraries for our project. These include:
 
 To install all at once, run:
 
-```node.js
+```bash
 npm i nodemon cloudinary dotenv formidable express
 ```
 
-`
+```bash
 npm i nodemon cloudinary dotenv formidable express
-`
+```
 
 > [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology.
 
@@ -132,7 +132,7 @@ Open our "package.json" file and under the "scripts" section, add "start" and "d
 
 ### Setting up our starting point
 
-Inside the "index.js" file, we shall do the following in a sequential process:
+Inside the `index.js` file, we shall do the following in a sequential process:
 
 - Requiring modules for this project. This is shown in the code below:
 
@@ -149,7 +149,7 @@ const cloudinary = require("cloudinary");
 require('dotenv').config()
 ```
 
-- Setting up our Cloudinary configuration. In it, we shall set three parameters that are stored in the ".env" file. These include the Cloud name (CLOUD_NAME), our API key (API_KEY), and lastly the API secret (API_SECRET). This is shown in the code below:
+- Setting up our Cloudinary configuration. In it, we shall set three parameters that are stored in the `.env` file. These include the Cloud name (CLOUD_NAME), our API key (API_KEY), and lastly the API secret (API_SECRET). This is shown in the code below:
 
 ```javascript
 // Cloudinary configuration settings
@@ -161,7 +161,7 @@ cloudinary.config({
 });
 ```
 
-- We shall create a simple Node.js server to run our project in it. In this server, we shall call on a cloudinary function named "upload" to fetch the image in the path selected and to upload it into our cloudinary account. We shall then display the results both in the terminal and in the browser as plain text when the request inside our URL is `/upload` and a `post` method is used. This is the uploaded file's metadata. This is shown below:
+- We shall create a simple Node.js server to run our project in it. In this server, we shall call on a cloudinary function named `upload` to fetch the image in the path selected and to upload it into our cloudinary account. We shall then display the results both in the terminal and in the browser as plain text when the request inside our URL is `/upload` and a `post` method is used. This is the uploaded file's metadata. This is shown below:
 
 ```javascript
 //Create a server
@@ -280,9 +280,9 @@ Copy and paste the credentials directly from your dashboard into the file. Save 
 
 Now you can proceed and run the code. This can be done by running the command below on the terminal:
 
-`
+```bash
 nodemon run dev
-`
+```
 
 Open a web browser and in the URL, access the webpage through `localhost:5000`.
 
@@ -333,5 +333,3 @@ The following were used as main references for this tutorial:
 
 - [Cloudinary.js documentation](https://www.npmjs.com/package/cloudinary).
 - [How to upload a file to Cloudinary using Django](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
-
-This fixes #2038
