@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/
+title: Creating a Real Time Chat App using React and Socket IO with E2E Encryption
+description: This tutorial will give readers a detailed guide on how to implement a real-time chat application using React and Socket.io with end-to-end encryption .
+author: ephraim-njoroge
+date: 2021-04-27T00:00:00-07:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/hero.jpg
+    alt: Creating a Real Time Chat App using React and Socket IO with E2E Encryption Image
+---
 
 In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for communication. For security reasons, the messages exchanged over the network must be encrypted.
+<!--more-->
 
 If a malicious program tries to tap the messages illegally that are exchanged across a network, the intercepted message would be in encrypted form thus the content of the message will not be compromised.
 
