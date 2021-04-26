@@ -7,7 +7,7 @@ Before I begin, you will need to know what a `password generator application` is
 
 The password generator application you are going to build will, first of all, have a container where there would be an input field, a copy button that copies the password that has been randomly generated, then you are going to build an input button that shows the user the preferred length they want for their password a minimum of 5 words and maximum of 20 words, and if they want to include uppercase, letters, and symbols then lastly a generate password button which generates the random password. Below is a picture of how the application would look like so that you can have a pictorial understanding of how the application would look like.
 
-![password generator app](/engineering-education/how-to-build-a-random-password-generator app- with-html-css-javascript/password-generator-app.jpg)
+![password generator app](/engineering-education/how-to-build-a-random-password-generator-app-with-html-css-javascript/password-generator-app.jpg)
 
 
 ### What Are The Prerequisites For This Tutorial?
@@ -291,7 +291,7 @@ color: #ffffff;
 
 First of all, I don’t advise you to jump straight to coding the JAVASCRIPT without a prior understanding of the ASCII character because the logic behind the random password generator is understanding ASCII below is a table of the ASCII character. 
 
-![ascii-table](/engineering-education/how-to-build-a-random-password-generator app- with-html-css-javascript/ascii-table.jpg)
+![ascii-table](/engineering-education/how-to-build-a-random-password-generator-app-with-html-css-javascript/ascii-table.jpg)
 Source:[https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb](https://favpng.com/png_view/binary-code-ascii-character-encoding-value-png/sdHr9cAb)
 
 The full meaning of ASCII is American Standard Code for Information Interchange, if you look at the uppercase ASCII A it has a value of 65 and if you add the values with one, you would get all the 26 uppercase characters also the lowercase begins at the decimal 97 and keeps going up to 122, the symbols are at various places in the image above all we are going to do is to use these decimal values to generate different passwords, I advice you to read more about ASCII if you still don’t understand
