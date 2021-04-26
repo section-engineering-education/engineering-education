@@ -126,6 +126,19 @@ Open our `package.json` file and under the "scripts" section, add `start` and `d
     }
 }
 ```
+The scripts in the `package.json` file will enable one to run the code using either node or nodemon. In case you want to do some unit testing, you can specify the testing framework under the 'test' script. You can run the `index.js` file using node by running:
+
+```bash
+node index.js
+```
+
+or nodemon by running:
+
+```bash
+nodemon run dev
+```
+
+In case you obtained the code from a repository, it shall add additional repository configurations indicating where the code is from and where to report any arising issues.
 
 ### Setting up our starting point
 
