@@ -187,8 +187,12 @@ http.createServer((req, res) => {
             // https://cloudinary.com/documentation/upload_images
             cloudinary.uploader.upload(files.upload.path, result => {
 
+                // This will return the output after the code is exercuted both in the terminal and web browser
+                // When successful, the output will consist of the metadata of the uploaded file one after the other. These include the name, type, size and many more.
                 console.log(result)
                 if (result.public_id) {
+                
+                // The results in the web browser will be returned inform of plain text formart. We shall use the util that we required at the top of this code to do this.
                     res.writeHead(200, { 'content-type': 'text/plain' });
                     res.write('received uploads:\n\n');
                     res.end(util.inspect({ fields: fields, files: files }));
