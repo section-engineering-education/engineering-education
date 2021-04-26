@@ -577,9 +577,9 @@ Let's add some styling to `chat.js`. Let's the file `chat.scss` as below:
 ```scss
 @import "../globals";
 @mixin scrollbars(
-  $background-color: mix($foreground-color, white, 50%),
   $foreground-color,
-  $size
+  $size,
+  $background-color: mix($foreground-color, white, 50%)
 ) {
   //stylesheet for the display in Google Chrome
   &::-webkit-scrollbar {
