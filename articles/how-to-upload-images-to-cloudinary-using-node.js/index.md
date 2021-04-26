@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/
+title: Uploading Images to Cloudinary using Node.js
+description: In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js.
+author: chris-mutua
+date: 2021-04-27T00:00:00-01:30
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/hero.jpg
+    alt: Uploading Images to Cloudinary example image
+---
 One of the main problems a developer faces during media upload is a quick image and video manipulation and delivery optimization. This can be solved by the use of artificial intelligence (AI) which not only does it do both of these but also automates the process. Cloudinary is a good example of this service.
+<!--more-->
 
 You can access and upload images to Cloudinary servers remotely on a custom website, locally (using Node.js or Django), or on the Cloudinary webpage. Cloudinary supports many language formats such as Ruby, PHP (v1 and v2), Python, Node.js, Java, .NET, iOS, and even Android. See some of the framework integrations [here](https://cloudinary.com/documentation).
 
