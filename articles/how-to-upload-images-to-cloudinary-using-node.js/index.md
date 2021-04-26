@@ -77,7 +77,7 @@ npm i nodemon cloudinary dotenv formidable express
 npm i nodemon cloudinary dotenv formidable express
 ```
 
-> [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. You can know more about Environment Variables in Node.js, what are `.env` files and also how to work and configure them [here](https://www.section.io/engineering-education/nodejs-environment-variables/).
+> [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. You can know more about Environment Variables in Node.js, what are `.env` files and also how to work and configure them [here](/engineering-education/nodejs-environment-variables/).
 
 Once done you can update any of the packages which were initially installed by running `npm update` in the integrated terminal.
 
@@ -88,6 +88,7 @@ Our folder structure is as shown below:
 ```bash
 ├──  node_modules (folder)
 ├──  .env (file)
+├──  package.json (file)
 └──  index.js (file)
 ```
 
@@ -126,7 +127,7 @@ Open our `package.json` file and under the "scripts" section, add `start` and `d
     }
 }
 ```
-The scripts in the `package.json` file will enable one to run the code using either node or nodemon. In case you want to do some unit testing, you can specify the testing framework under the 'test' script. You can run the `index.js` file using node by running:
+The scripts in the `package.json` file will specify custom scripts that one can run using `npm`. For more information on `scripts`, please visit [this page](https://docs.npmjs.com/cli/v7/using-npm/scripts). In case you want to do some unit testing, you can specify the testing framework under the 'test' script. You can run the `index.js` file using node by running:
 
 ```bash
 node index.js
