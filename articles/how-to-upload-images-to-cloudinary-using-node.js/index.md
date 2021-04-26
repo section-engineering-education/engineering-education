@@ -189,7 +189,7 @@ http.createServer((req, res) => {
     }
 ```
 
-- Let us now set our program to return a webpage when runned. The page shall be formatted with some CSS, bootstrap and Google fonts. It shall contain a heading, file, and button elements inside the body tags. We shall also set our port number to "5000" so that we can access the webpage at `localhost:5000`. This is shown here:
+- Let us now set our program to return a webpage when it is run. The page shall be formatted with some CSS, bootstrap and Google fonts. It shall contain a heading, file, and button elements inside the body tags. We shall also set our port number to "5000" so that we can access the webpage at `localhost:5000`. This is shown here:
 
 ```javascript
     // show a file upload form
