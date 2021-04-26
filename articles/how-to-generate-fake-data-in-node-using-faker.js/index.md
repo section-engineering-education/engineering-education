@@ -13,13 +13,11 @@ images:
   - url: /engineering-education/how-to-generate-fake-data-in-node-using-faker.js/hero.png
     alt: Faker API example
 ---
-
 During system development and testing, employment of Fake data can be very useful. This is because it prevents one from using one's real identity especially in important data like identification numbers, full names, and date of birth, among others. Manually generating fake data takes much time hence slowing down the testing process since it is hard to come up with a lot of new data.
-
+<!--more-->
 In this tutorial, we will learn how to generate fake data in Node.js using the Faker module. We will then output the fake data in a webpage as a table. We shall run our process locally on our computer but fetch the information from an online server.
 
 ### Key takeaways
-
 At the end of this tutorial, you will be able to know the following:
 
 - Main components of Faker.js
@@ -29,7 +27,6 @@ At the end of this tutorial, you will be able to know the following:
 - Link the Fake data generated to the webpage
 
 ### Pre-requisites
-
 The basic requirements for this course include:
 
 - Basic knowledge of Web development
@@ -39,7 +36,6 @@ The basic requirements for this course include:
 - MongoDB installed on your computer. You can check out how to install MongoDB on your computer [here](https://www.section.io/engineering-education/working-with-databases-part1/).
 
 ### Table of contents
-
 - [What is Faker.js](#What-is-Faker.js)
 - [What type of data does Faker.js generate](#What-type-of-data-does-Faker.js-generate)
 - [Setting up the overall project structure](#Setting-up-the-overall-project-structure)
@@ -55,11 +51,9 @@ The basic requirements for this course include:
 - [References](#References)
 
 ### What is Faker.js
-
 Faker.js is a node library that allows users to generate massive amounts of fake data for their project use. This can be generated either while running your program locally or remotely by deploying it in a web browser as a webpage. It does this generation by randomly choosing from an online server some of the variables requested for each time it is executed. It can generate a massive amount of data hence allows a developer to push their programs to the limit during testing. Developers can then analyze the data as one would have done in real-life situations and come up with desired decisions.
 
 ### What type of data does Faker.js generate
-
 Some examples of data that can be generated include, but not limited to the below categories:
 
 - Address
@@ -79,7 +73,6 @@ You can check out others as documented [here](https://www.npmjs.com/package/fake
 Now that we know these, let us dive into the tutorial.
 
 ### Setting up the overall project structure
-
 First, create the main directory and name it "Fakedata". This shall be the base directory of our program. Open the directory in Visual Studio Code.
 
 Open the integrated terminal in Visual Studio Code and run `npm init -y` to quickly create a "package.json" file.
@@ -89,7 +82,6 @@ Create a file in the main directory named "app.js". This will be the program's s
 Once done, let us create two new folders in the main directory namely "views" and "models". Inside the "views" directory, create "home.ejs" file. Create another file and name it "user.js" inside the "models" folder.
 
 #### Folder Structure
-
 The folder structure will be as shown below:
 
 > Fakedata (Root Directory)
@@ -109,11 +101,9 @@ The folder structure will be as shown below:
 Now that we have completed the above tasks, let's get into the code and some explanations.
 
 ### Setting up our environment
-
 Let us do the following in sequence:
 
 #### Installing packages
-
 The node libraries required for this tutorial include:
 
 - nodemon
@@ -131,7 +121,6 @@ The installation may take some time depending on your internet speed. Just be pa
 You can choose to run an additional command, `npm update` to update the installed packages.
 
 #### Configuring package.json
-
 Now open the "package.json" file and configure it so that you can start the application using nodemon. Under the scripts, add the "dev" and "start" configurations. The code should look as follows:
 
 ```Json
@@ -160,7 +149,6 @@ Now open the "package.json" file and configure it so that you can start the appl
 Once done, let us now write our code to build and run a test application.
 
 ### Testing Faker.js module
-
 First, let us give a test to the faker.js library on the console. write in the code below inside the "app.js" file. These will give back random data twenty times due to the for loop used. You can see the data generated in the control panel.
 
 ```Javascript
@@ -204,11 +192,9 @@ For further errors, you can find help [here](https://windowsloop.com/enable-powe
 Now that we have seen our tests running successfully, we can get into the main application.
 
 ### How the project will run
-
 The code when executed will use the faker.js library to generate the data needed several times. It will store each value generated in a local database. We shall then see the results in a web browser as a webpage from the database.
 
 ### Setting up the application starting point
-
 "app.js" will be used as our application's starting point.
 
 **app.js**
@@ -301,8 +287,8 @@ app.listen(port, () => console.log("server running at port " + port));
 As you can see, we have added a _for loop_ which will be repeated ten times. This in turn adds ten new rows of data each time it is run. You can increase or decrease the number of data to be generated by changing the value as you please.
 
 ### Setting up models
-
 **user.js**
+
 Inside the "models" folder, navigate to the "user.js" file. Let us do the following in that file:
 
 - Create a new database and name it "fakedata", insert these columns: firstname, lastname, phonenumber, city, state, and country. Their datatypes are as shown in the code below:
@@ -326,7 +312,6 @@ module.exports = mongoose.model("fakerCollection", fakerSchema);
 ```
 
 ### Setting up views
-
 **home.ejs**
 
 In this file, we will create a web structure to display the data. It shall have a button in which when pressed, it generates new data and automatically saves while displaying it. We shall also add a table that shall have the same number of columns as the ones generated. We shall then add some quick formatting using bootstrap and google fonts.
@@ -490,7 +475,6 @@ As you can see, it will trigger the process when clicked. The additional link wi
 ```
 
 ### Run the project
-
 Before running the code, make sure that MongoDB is running in the background.
 
 In your integrated terminal, run the following command:
@@ -509,19 +493,16 @@ You can find, clone, and use the code above in the repository found [here](https
 Congratulations! You have generated fakedata for your need using Node.js.
 
 ### Conclusion
-
 Fake data is very important for system testing. One can obtain as much as needed and store it locally for immediate or future use using node modules. One can choose a variety as he/she needs depending on the underlying purpose.
 Briefly, we have learned the importance of fake data, what faker.js is, how to integrate it in a simple node project, how to run, view, and store the generated results.
 
 ### Further projects
-
 - You can further your project by injecting the data generated or that which is stored directly into your system that you want to test.
 - You can also decide to do an intense AI-driven analysis on the data generated to know more about the patterns the data generated has.
 
 Happy coding!
 
 ### References
-
 The following were used as references:
 
 - [Faker.js documentation](https://www.npmjs.com/package/faker).
