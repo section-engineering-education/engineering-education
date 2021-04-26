@@ -1,9 +1,0 @@
-{{ define "main" }}
-{{ if eq .CurrentSection.Params.type "authors" }}
-{{ partial "engineering-education/authors-header.html" . }}
-{{ partial "engineering-education/authors-posts.html" . }}
-{{ else }}
-{{ partial "engineering-education/articles-header.html" . }}
-{{ partial "engineering-education/articles-posts.html" . }}
-{{ end }}
-{{ end }}
