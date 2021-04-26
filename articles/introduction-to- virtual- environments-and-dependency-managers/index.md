@@ -161,23 +161,21 @@ After running this, Pipenv will be installed on your machine. Here’s the part 
 #### Creating a virtual environment
 After installation, we just need to install a Python module using Pipenv and **boom!**, we have a virtual environment.
 
-**Example**
-
-```bash
-$ cd my_project_folder
-$ pipenv install Django==2.0.13
-```
-
-The command above automatically creates a virtual environment for your project(`my_project_folder`) with a `Pipfile` and a `Pipfile.lock` file. These files are where your project dependencies are saved.
-
-If you wish to change the dependencies, you could change the default `Pipenv` configurations.
-
 #### Activating the virtual environment
 After creating our virtual environment, we can activate it by running the command below in the project directory.
 
 ```bash
 $ pipenv shell
 ```
+After activating the environment, you can now install dependencies e.g.
+
+```bash
+$ pipenv install Django==2.0.13
+```
+
+The command above automatically creates a `Pipfile` and a `Pipfile.lock` file in your project's virtual environment. These files are where your project dependencies are saved.
+
+If you wish to change the dependencies, you could change the default `Pipenv` configurations.
 
 #### Uninstalling Packages
 You can uninstall a package from your project by running the following command:
