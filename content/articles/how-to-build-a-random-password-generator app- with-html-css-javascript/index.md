@@ -8,7 +8,7 @@ Before I begin, you will need to know what a `password generator application` is
 The password generator application you are going to build will, first of all, have a container where there would be an input field, a copy button that copies the password that has been randomly generated, then you are going to build an input button that shows the user the preferred length they want for their password a minimum of 5 words and maximum of 20 words, and if they want to include uppercase, letters, and symbols then lastly a generate password button which generates the random password. Below is a picture of how the application would look like so that you can have a pictorial understanding of how the application would look like.
 
 ![password-generator-app](/engineering-education/how-to-build-a-random-password-generator app- with-html-css-javascript/password-generator-app.jpg)
-](app.png)
+](password-generator-app.png)
 
 ### What Are The Prerequisites For This Tutorial?
 
