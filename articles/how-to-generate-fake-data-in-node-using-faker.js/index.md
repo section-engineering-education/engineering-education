@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-generate-fake-data-in-node-using-faker.js/
+title: How to Generate Fake Data in Node.js Using Faker.js
+description: In this tutorial, we will learn how to generate fake data in Node.js using the Faker module. We will then output the fake data in a webpage as a table. We shall run our process locally on our computer but fetch the information from an online server.
+author: justus-mbuvi
+date: 2021-04-26T00:00:00-13:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-generate-fake-data-in-node-using-faker.js/hero.png
+    alt: Faker API example
+---
+
 During system development and testing, employment of Fake data can be very useful. This is because it prevents one from using one's real identity especially in important data like identification numbers, full names, and date of birth, among others. Manually generating fake data takes much time hence slowing down the testing process since it is hard to come up with a lot of new data.
 
 In this tutorial, we will learn how to generate fake data in Node.js using the Faker module. We will then output the fake data in a webpage as a table. We shall run our process locally on our computer but fetch the information from an online server.
@@ -509,3 +525,7 @@ Happy coding!
 The following were used as references:
 
 - [Faker.js documentation](https://www.npmjs.com/package/faker).
+
+---
+
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
