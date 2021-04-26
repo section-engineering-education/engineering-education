@@ -869,3 +869,6 @@ In general, the app demonstrated above is quite simple and does not have many fe
 A lot more can be added from this chat app, but the concept and method can remain the same.
 
 The project files and source code used in this guide can be found at [GitHub Repository](https://github.com/ephnjor2021/chatapplication.git).
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
