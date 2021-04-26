@@ -24,8 +24,6 @@ In this tutorial, we will learn a little about blockchain and decentralization i
 
 `Thecoin` is one such implementation of a cryptocurrency that we are going to build in a this article.
 
-![Sample trade image](/engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
-
 ### Prerequisite
 To keep this tutorial flowing smoothly, you'll need to have a good understanding about:
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
