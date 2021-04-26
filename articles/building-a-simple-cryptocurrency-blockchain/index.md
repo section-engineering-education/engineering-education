@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/building-a-simple-cryptocurrency-blockchain/
-title: Building a simple cryptocurrency blockchain using Node.js
+title: Building a Simple Cryptocurrency Blockchain using Node.js
 description: This tutorial will be a brief dive into understanding blockchain, cryptocurrencies, and decentralization. We will also build a simple blockchain app using Node.Js.
 author: yitzack-rabin
-date: 2021-04-22T00:00:00-10:30
+date: 2021-04-26T00:00:00-11:30
 topics: [Node.js, Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,15 @@ images:
   - url: /engineering-education/building-a-simple-cryptocurrency-blockchain/hero.jpg
     alt: Bitcoin hero image
 ---
-A cryptocurrency is a digitally secured currency used in most current trade. The use of [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) has played a mojor role is securing cryptocurrency. This ensures only genuine transactions are recorded and commited. Most cryptocurrencies apply [decentralized](en.wikipedia.org/wiki/Decentralization) principle using [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology.
-<!--more-->
 A blockchain is an open, digital, and duplicated ledger of transactions. Each new transaction history is recorded and stored in an encrypted way that is very difficult to change or modify. A copy of this recorded information is sent a cross the blockchain network. Thus, making it highly secure.
+<!--more-->
+A cryptocurrency is a digitally secured currency used in most current trade. The use of [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) has played a major role is securing cryptocurrencies. 
 
-`Thecoin` is one such implementation of a cryptocurrency that we are going to build in a while.
+This ensures only genuine transactions are recorded and commited. Most cryptocurrencies apply a [decentralized](en.wikipedia.org/wiki/Decentralization) principle using [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology.
 
 In this tutorial, we will learn a little about blockchain and decentralization in detail. We will also build a simple cryptocurrency system, called `thecoin`.
+
+`Thecoin` is one such implementation of a cryptocurrency that we are going to build in a this article.
 
 ![Sample trade image](/engineering-education/building-a-simple-cryptocurrency-blockchain/trade.jpg)
 
@@ -47,20 +49,20 @@ To start with, you must have:
 
 *Bitcoin image*
 
-Bitcoin and Ethereum are digital cryptocurrency powered and adopted with powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
+Bitcoin and Ethereum are digital cryptocurrencies powered and adopted with a powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
 
 ![ethereum](/engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 
 *Ethereum image*
 
-**Blockchain** as the name states, are blocks of transaction data growing increasingly to create a chain of transaction occurrences. Valid transaction data are logged into the blockchain network following the peer-to-peer rule laid down by participants.
+**Blockchain** as the name states, are blocks of transaction data growing increasingly to create a chain of transaction occurrences. Valid transaction data is logged into the blockchain network following the peer-to-peer rule laid down by participants.
 
 ### Decentralization
-Usually, the data in the databases are centralized. By centralizing, we operate based on only one server. Chances of risk are paramount due to failures of the system. Alternatively, decentralization allows data to be stored everywhere, thus making it faster, more secure and better way of storing data.
+Usually, the data in the databases are centralized. By centralizing, we operate based on only one server. Chances of risk are paramount due to failures of the system. Alternatively, decentralization allows data to be stored everywhere, thus making it faster, more secure and a better way of storing data.
 
-Blockchain stores its information in several locations. Whenever a new block is added to the blockchain, a copy is sent to all computers. This makes it very difficult to tamper with the blockchain, as all computers in the network must agree with the change yet to be made for it to take place.
+Blockchain stores its information in several locations. Whenever a new block is added to the blockchain, a copy is sent to all computers. This makes it very difficult to tamper with the blockchain, as all computers in the network must agree with the change(s) yet to be made in order for it to take place.
 
-We'll have good understanding of blockchain and cryptocurrency and it's operation by the end of this article.
+We'll have a better understanding of blockchain and cryptocurrencies and their operation by the end of this article.
 
 Let's get into the code. I'll name my app `thecoin`.
 
@@ -97,21 +99,15 @@ I'll explain each part of the code here:
 I've created the class `BlockCrytpo` for my ***block*** and added a constructor just like any other JavaScript class.
 
 In the constructor, we initialize its properties and assign parameters to it, as follows:
-
 - `crypto-js/sha256`: This is the module we've imported to calculate the hash of each block. We converted it to string using `toString()` method as the module will return the object.
-
 - `index`: This is a distinctive number tracking the index of every block in the blockchain.
-
 - `current_time`: As the name states, it keeps a record of the time when each transaction is completed.
-
 - `info`: All completed transactions data are recorded and stored by this method.
-
 - `nexthash`: It is pointing to the hash_key of the next block in the network chain. It's mainly used to keep and maintain the integrity of the blockchain.
-
 - `computeHash`: Based on properties passed to this method, it is used to calculate the hashkey of the next block in the chain.
 
 ### The blockchain theorem
-It is a type of database that stores a collection of data together in groups, with certain capacity of storage. The blocks are connected to the already created blocks, this forms a chain of data tree.
+It is a type of database that stores a collection of data together in groups, with certain capacity of storage. The blocks are connected to the already created blocks, this forms a chain of a data tree.
 
 The chain is irreversible as the system is decentralized. Here, each block is assigned a timestamp when added to the chain.
 
@@ -148,16 +144,16 @@ But this time, we passed it to the `initGenesisBlock()` method, which initialize
 
 - `latestBlock`: As named, we use it for finding the last block added in the chain. As explained earlier, it helps to ensure the hash of the current block and map it to the hash of the previous block to ensure the chain integrity.
 
-- `addNewBlock`: New block is added to the chain using this method. The previous hash block is matched to the current hash block to ensure minimal or no tampering with the chain.
+- `addNewBlock`: A new block is added to the chain using this method. The previous hash block is matched to the current hash block to ensure minimal or no tampering with the chain.
 
-Now that our blockchain is ready to work. We are missing something which is a core blockchain principle, the blockchain _integrity_.
+Now that our blockchain is ready to work. We are missing something that is a core blockchain principle, the blockchain *integrity*.
 
 Let's see how to verify it and test our app.
 
 ### Verifying blockchain integrity
-The main characteristic of blockchain is that, once a block has been added to the network, it can't be changed without invalidating the entire blockchain integrity.
+The main characteristic of a blockchain is that once a block has been added to the network, it can't be changed without invalidating the entire blockchain integrity.
 
-To perform this, we use digital security or cryptographic hash, which ensures securing and validating of the blockchain by producing a new hash every time a change is made in the block. 
+To perform this, we use digital security or cryptographic hash, which ensures the securing and validation of the blockchain by producing a new hash every time a change is made in the block. 
 
 We'll loop over the entire blockchain to check whether any hash has been tampered with, taking into account the exception of the first block, which is hardcoded.
 
@@ -199,12 +195,12 @@ thecoin.addNewBlock(new BlockCrypto(2, "07/04/2021", {sender: "Anita Vyona", rec
 console.log(JSON.stringify(thecoin, null, 4));
 ```
 
-### Running our Blockchain
+### Running our blockchain
 Typing this command in our terminal `node thecoin.js` will result in:
 
 ![output](/engineering-education/building-a-simple-cryptocurrency-blockchain/output.jpg)
 
-> **NOTE:** Before running the command, ensure to navigate to the right path on your terminal.
+> **NOTE:** Before running the command, make sure to navigate to the right path on your terminal.
 
 *Hint:* Using the command `pwd` to check the path.
 
@@ -213,7 +209,7 @@ You can find our full source code [here](https://github.com/yitzackRabin/crypto)
 ### Conclusion
 Kudos!
 
-You have built your own cryptocurrency using Node.js. This step has brought you closer to getting you started on building pro-apps using Node.js, or rather you can just add more features to our simple blockchain and thrill it to the market.
+You have built your own cryptocurrency using Node.js. This step has brought you closer to getting you started on building pro-apps using Node.js, or rather you can just add more features to our simple blockchain and share it with the market.
 
 Nevertheless, I hope that this tutorial has provided you with basic skill proficiency to get you going with the stimulating Node.js development.  
 
