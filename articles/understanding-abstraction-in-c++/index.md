@@ -22,7 +22,7 @@ For example, a state without actually knowing how the class has been implemented
 ### Prerequisites
 To follow this article, you’ll need to have:
 
-- [Codeblocks IDE]() to run the code.
+- [Codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
 - A basic understanding of the C++ language.
 
 There are two types of abstraction in the C++ language namely:
