@@ -56,7 +56,7 @@ Once created proceed to the next steps.
 
 ### Setting up our project
 
-Create a new directory named "Cloudinary-uploader". In it, create two new files, "index.js" and ".env" respectively. Open your folder and view it in your IDE. Open an integrated terminal and run within the folder `npm init -y` to quickly create the "package.json" file.
+Create a new directory named **Cloudinary-uploader**. Within the folder, create two new files, `index.js` and `.env` respectively. Open your folder and view it in your IDE. Open an integrated terminal and run within the folder `npm init -y` to quickly create the `package.json` file.
 Install the needed libraries for our project. These include:
 
 - nodemon
@@ -96,7 +96,7 @@ Our folder structure is as shown below:
 
 ### Configure package.json
 
-Open our "package.json" file and under the "scripts" section, add "start" and "dev" as shown in the code below:
+Open our `package.json` file and under the "scripts" section, add `start` and `dev` as shown in the code below:
 
 ```json
 {
@@ -264,9 +264,9 @@ Open the ".env" file. In it, let us set up our cloudinary name, API key, and API
 
 ![Cloudinary-dashboard image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/cloudinary-dashboard.png)
 
-> **Note:** Remember that these are important credentials that allow one to easily access your Cloudinary account. Make sure that they are not exposed anywhere. Don't save them in an online repository by any means. I would rather recommend that you add a ".gitignore" file and include the .env file there. Always enable [GitGuardian](https://www.gitguardian.com/) to check for any exposed keys in your project.
+> **Note:** Remember that these are important credentials that allow one to easily access your Cloudinary account. Make sure that they are not exposed anywhere. Don't save them in an online repository by any means. I would rather recommend that you add a `.gitignore` file and include the `.env` file there. Always enable [GitGuardian](https://www.gitguardian.com/) to check for any exposed keys in your project.
 
-The ".env" file format will be as shown:
+The `.env` file format will be as shown:
 
 ```powershell
 CLOUD_NAME=
@@ -311,8 +311,8 @@ We have acquired the following knowledge from this tutorial:
 
 - What is Cloudinary.
 - Languages and frameworks supported.
-- How to upload images to cloudinary using Node.js.
-- Brief introduction to what ".env" files are and their purposes.
+- How to upload images to Cloudinary using Node.js.
+- Brief introduction to what `.env` files are and their purposes.
 
 ### Further Projects
 
