@@ -77,7 +77,7 @@ npm i nodemon cloudinary dotenv formidable express
 npm i nodemon cloudinary dotenv formidable express
 ```
 
-> [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology.
+> [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. You can know more about Environment Variables in Node.js, what are `.env` files and also how to work and configure them [here](https://www.section.io/engineering-education/nodejs-environment-variables/).
 
 Once done you can update any of the packages which were initially installed by running `npm update` in the integrated terminal.
 
