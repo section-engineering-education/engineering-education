@@ -670,10 +670,6 @@ touch register.vue
 
 Next, we will add the following code to create in the `login.vue` to create the login form and also the login process with error handling.
 
-```html
-
-```
-
 We will add the following code to the login file:
 
 ```js
