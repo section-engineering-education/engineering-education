@@ -204,7 +204,7 @@ Or you can use:
 $ pipenv --python path\to\python
 ```
 
-In case the first approach causes an error use the second approach after downloading the desired Python version from [Python.org](https://www.python.org/downloads/).
+In case the first approach causes an error use the second approach after downloading the desired Python version from [Python.org](https://www.python.org/downloads/). 
 
 ### 4. Conda
 **[Conda](https://conda.io/projects/conda/en/latest/index.html)** is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.
