@@ -1,16 +1,16 @@
-﻿### Introduction
+### Introduction
 In recent times, organizations have adopted the benefits offered by AI-powered [virtual assistants](https://searchcustomerexperience.techtarget.com/definition/virtual-assistant-AI-assistant) to automate routine tasks and give their clients attention in customer services, payments, and marketing.
 
 The healthcare industry has now adopted this trend. [AI](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence) has created an environment where the patient outcome has been improved with minimum costs involved.
 
-AI technology is not new to healthcare. The urge for cost reduction and improve patient outcomes, and data availability have led to various [innovations](https://innolytics-innovation.com/what-is-innovation/) in the industry, ranging from early disease diagnosis to the introduction of life-saving medicines.
+AI technology is not new to healthcare. The urge for cost reduction and improve patient outcomes and data availability have led to various [innovations](https://innolytics-innovation.com/what-is-innovation/) in the industry, ranging from early disease diagnosis to the introduction of life-saving medicines.
 
 With AI, powerful new opportunities are created across the industry. Furthermore, the latest development is equally promising.
 
 ### How do chatbots work?
 [Chatbots](https://www.drift.com/learn/chatbot/) utilizes Natural Language Processing ([NLP](https://machinelearningmastery.com/natural-language-processing/)) to understand, [parse](https://techterms.com/definition/parse) text and speech effectively. Through a user-friendly interface and mimic human conversation either through a standalone or web application.
 
-Through advancement in NLP accuracy, chatbots are now complex enough and can be paired with [machine learning](https://www.ibm.com/cloud/learn/machine-learning) to be used in a healthcare setting.
+Through advancements in NLP accuracy, chatbots are now complex enough and can be paired with [machine learning](https://www.ibm.com/cloud/learn/machine-learning) used in a healthcare setting.
 
 ### Benefits of using chatbots in healthcare
 Chatbots significantly ease the burden on Health Care Providers ([HCPs](https://www.cdc.gov/infectioncontrol/guidelines/healthcare-personnel/appendix/terminology.html)) through cost reduction and personalized health and therapy information.
@@ -54,3 +54,6 @@ The role of chatbots is constantly augmenting the work of healthcare professiona
 They cut on costs and increase efficiency, reducing the strain on healthcare providers and increasing patient outcomes. The current challenges of chatbots on accuracy and lack of human contact are best suited for non-urgent and routine tasks. 
 
 In the future, as NLP and machine learning algorithms improve, chatbots will be more useful in complex applications.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
