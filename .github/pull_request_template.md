@@ -1,7 +1,7 @@
 ### Article checklist
 **NOTE: (Please ensure that you have only one open issue + linked pull request at a time. This will ensure that we complete the article in a timely manner from inception to publishing.)**
 
-**If you have not already please go over our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for more tips and tricks on how to imrpove our overall technical writing.**
+**If you have not already please go over our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for more tips and tricks on how to improve our overall technical writing.**
 
 #### Preliminary Checks - Formatting and Structure 
 - [ ] Does your article follow any of the suggested structure formats? - **see [example formats](https://github.com/section-io/engineering-education/blob/master/CONTRIBUTING.md#example-format-structure)**
