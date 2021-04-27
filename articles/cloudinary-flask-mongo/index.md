@@ -47,7 +47,7 @@ CDN assets are on multiple servers. This reduces the amount of data the origin s
 
 ### Building the Image Gallery with Flask and MongoDB
 
-In this tutorial, you will be building an image gallery with Flask and MongoDB that integrates a CDN with [Cloudinary](https://cloudinary.com/documentation/cloudinary_get_started). You will create the backend and logic with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/), and its user interface with [Flask-Bootstrap](https://pypi.org/project/Flask-Bootstrap4/) since it will be a full-stack web application.
+In this tutorial, you will be building an image gallery with Flask and MongoDB that integrates a CDN with [Cloudinary](https://cloudinary.com/documentation/cloudinary_get_started). You will create the backend with [Flask](https://flask.palletsprojects.com/en/1.1.x/), database with [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/), and user interface with [Flask-Bootstrap](https://pypi.org/project/Flask-Bootstrap4/).
 
 You will be building three (3) web pages for the image gallery. They are:
 
@@ -63,7 +63,7 @@ Install the libraries required to build the image gallery like Flask, PyMongo, a
 pip install Flask Flask-PyMongo Flask-Bootstrap4
 ```
 
-#### Step 2: Setting Up the Flask Server
+#### Step 2: Setting Up Flask
 
 Create a file with the name `app.py` and save the following code in it:
 
@@ -302,7 +302,7 @@ When you run the `app.py` file, your gallery page should resemble the image belo
 
 #### Generating Cloudinary API Keys
 
-You will need to generate your API keys from your Cloudinary dashboard. If you have not created an account on Cloudinary before now, create one on [Cloudinary’s website](https://cloudinary.com/users/register/free).
+You need to generate your Cloudinary API keys from your dashboard. If you have not created an account on Cloudinary before now, create one on [Cloudinary’s website](https://cloudinary.com/users/register/free).
 
 The dashboard will provide you with your CLOUD NAME, API KEY, and API SECRET. Store them somewhere secure and easily retrievable. The API keys allow any application to communicate with your Cloudinary account via the REST API.
 
