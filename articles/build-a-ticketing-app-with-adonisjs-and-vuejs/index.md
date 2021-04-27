@@ -7,19 +7,19 @@ title: Build a Ticketing App with AdonisJS and VueJS
 description: In this tutorial, we will learn about Adonis.js and Vue.js. We will also build a Ticketing app using Adonis.js and Vue.js.
 author: solomon-eseme
 date: 2021-04-10T00:00:00-11:30
-topics: []
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/hero.png
     alt: Adonis.js example image
 ---
-[Adonis.js](https://preview.adonisjs.com/) is written from the ground up with a strong principle and goals in mind to be a strong integrated system having developer ergonomics, stability, and speed.
+[Adonis.js](https://preview.adonisjs.com/) is written from the ground up with strong principles and goals in mind to be a robust integrated system having developer ergonomics, stability, and speed.
 <!--more-->
-To show the capabilities of the AdonisJS JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
+To show the capabilities of the Adonis.js JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
 
-This app will create events, generate tickets for the event, allow users to view the event and the tickets, also how them to make purchases and redeem the event tickets.
+This app will create events, generate tickets for the event, allow users to view the event and the tickets, how to make purchases, and redeem the event tickets.
 
-Once you finish the tutorial, you will have a functioning Ticketing application like the following:
+Once you finish the tutorial, you will have a functioning Ticketing application like the demonstrated below:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -33,33 +33,31 @@ Once you finish the tutorial, you will have a functioning Ticketing application 
 - [Further reading](#further-reading)
 
 ### Prerequisites
-Before continuing with this article, you should have previous experiences with the following:
-
+Before continuing with this article, you should have previous experience with the following:
 1. Basic understanding of TypeScript and Node.js
-2. Basic [understanding of AdonisJS](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
-3. Basic understanding of VueJS
+2. Basic [understanding of Adonis.js](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
+3. Basic understanding of Vue.js
 
 ### Goals
-We will learn how to build a Ticketing app with AdonisJS 5 and VueJS, so that the users can find events around you, register for a free event, buy tickets, sell tickets online, and promote their event worldwide.
+We will learn how to build a Ticketing app with Adonis.js 5 and Vue.js, so that the users can find events around you, register for a free event, buy tickets, sell tickets online, and promote their event worldwide.
 
-We will also cover best practices in structuring and building your frontend with VueJS when using AdonisJS as your backend.
-
-- We will learn how to build a real-world app with AdonisJS and VueJS.
-- We will learn how to handle authentication and authorization with AdonisJS and VueJS.
-- We will learn how to integrate AdonisJS with VueJS.
-- We will learn how to build and structure a Ticketing system in AdonisJS and VueJS.
-- We will learn best practices in building performance-oriented Web apps with AdonisJS.
+We will also cover best practices in structuring and building your frontend with Vue.js when using Adonis.js as your backend.
+- We will learn how to build a real-world app with Adonis.js and Vue.js.
+- We will learn how to handle authentication and authorization with Adonis.js and Vue.js.
+- We will learn how to integrate Adonis.js and Vue.js.
+- We will learn how to build and structure a Ticketing system in Adonis.js and Vue.js.
+- We will learn best practices in building performance-oriented Web apps with Adonis.js.
 
 ### Step 1 — Setting up Adonis.js 5
-Setting up AdonisJS 5 is very easy, as it requires a simple `npm` command below.
+Setting up Adonis.js 5 is very easy, as it requires a simple `npm` command below.
 
-If you want to learn more about installing and setting up AdonisJS 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
+If you want to learn more about installing and setting up Adonis.js 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 
 ```bash
 npm init adonis-ts-app adonisjs-ticketing-system-api
 ```
 
-After creating the AdonisJS application, move inside the project directory and install the following packages to set up the API.
+After creating the Adonis.js application, move inside the project directory and install the following packages to set up the API.
 
 ```bash
 cd adonisjs-ticketing-system-api
@@ -68,7 +66,7 @@ cd adonisjs-ticketing-system-api
 Now, we need to set up our database to connect with the new Adonis.js application.
 
 #### Creating the database
-Our ticketing system application needs a database for storing, retrieving, updating and deleting data.
+Our ticketing system application needs a database for storing, retrieving, updating, and deleting data.
 
 To install the database, we need to first create the database by using any of these [database clients](https://masteringbackend.com/posts/top-10-database-clients-for-developers) and install the `Lucid` Object Relational Mapper (ORM).
 
@@ -108,9 +106,9 @@ npm i @adonisjs/auth@alpha
 ```
 
 #### Creating migrations and models
-Our project will be using a total of 3 migrations and models excluding the User model and migration.
+Our project will be using a total of 3 migrations and models excluding the User model and migration. With Adonis.js migrations, you can create/modify database by just writing JavaScript.
 
-With AdonisJs migrations, you can create/modify database by just writing javascript, while models represents the database layer of your application, you can describe your database tables as javascript classes and use javascript methods for reading, writing and deleting rows
+While models represents the database layer of your application, you can describe your database tables as JavaScript classes and use JavaScript methods for reading, writing, and deleting rows.
 
 So, let's create our migrations:
 
@@ -282,7 +280,9 @@ The controller above defines the authentication process for the backend API.
 
 Next, we will create the `EventsController` and paste in the following code while other controllers can be found in the repository.
 
-The `EventController` is where all the business logic related to managing events are created. Let's break it down in details.
+The `EventController` is where all the business logic related to managing events are created. 
+
+Let's break it down in detail.
 
 ```js
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
@@ -372,7 +372,7 @@ export default class EventsController {
 }
 ```
 
-The controller includes all the possible CRUD functionalities such as retrieving, storing, updating and deleting the event.
+The controller includes all the possible CRUD functionalities such as retrieving, storing, updating, and deleting the event.
 
 Next, we will add the `Join` method to allow the user to join up the event using the code sent when purchasing the Event ticket.
 
@@ -428,7 +428,7 @@ public async join({
 }
 ```
 
-Next, We will include the `buy` method which is used to purchase an Event ticket for the upcoming event.
+Next, we will include the `buy` method which is used to purchase an Event ticket for the upcoming event.
 
 ```js
 public async buy({
@@ -509,8 +509,8 @@ You can test out your API immediately by using either [Postman](https://www.post
 
 *Testing the API using Postman*
 
-### Step 2 — Building the Frontend
-In setting up the Frontend, we will use the recommended `Vite` web development build tool to create our Vue 3 project.
+### Step 2 — Building the frontend
+In setting up the frontend, we will use the recommended `Vite` web development build tool to create our Vue 3 project.
 
 Run the following command to install using Vite:
 
@@ -644,7 +644,7 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-To get the routes to work, we added the new route package and register this file inside the `main.js` file so we can use it as Vue 3 plugin.
+To get the routes to work, we added the new route package and registered this file inside the `main.js` file so we can use it as Vue 3 plugin.
 
 ```bash
 npm install vue-router@4
@@ -668,7 +668,7 @@ touch login.vue
 touch register.vue
 ```
 
-Next, we add the following code to create in the `login.vue` to create the login form and also the login process with error handling.
+Next, we will add the following code to create in the `login.vue` to create the login form and also the login process with error handling.
 
 ```html
 
@@ -743,7 +743,7 @@ export default {
 };
 ```
 
-In the code above, the HTML mockup generates a login form with a submit button. We handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is click.
+In the code above, the HTML mockup generates a login form with a submit button. We handle possible errors using the `vee-validate` library and then, we dispatch the `login` action in our Vuex store when the submit button is clicked.
 
 The registration process is almost the same as the Login process, you can take a quick glance at the code [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/blob/main/src/views/Register.vue).
 
