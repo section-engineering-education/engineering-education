@@ -25,7 +25,7 @@ var data = fs.readFileSync('input.txt');
 console.log(data.toString());
 console.log("Program Ended");
 ```
-In the program above, we first import the built-in file system module. We then use the `readFileSync` method to read the file we created earlier. This function is synchronous thus blocks the thread. The console wont output the result until the function is done reading the file.
+In the program above, we first import the built-in file system module. We then use the `readFileSync` method to read the file we created earlier. This function is synchronous thus blocks the thread. The console won't output the result until the function is done reading the file.
 
 Run the program through this command,
 
@@ -35,7 +35,7 @@ The program runs successfully and produces the following output;
 
 ![Output](output1.png)
 
-What if the file had a very large amount of data that would take almost a minute or two to complete? Also, we might need to do some other important tasks that do not depend on the output of the read file function. For this case, waiting for the function to finish reading is not the best solution. It would be best to continue with the other tasks and come back to the function as soon as it is done computing. 
+What if the file had a very large amount of data that would take almost a minute or two to complete? Also, we might need to do some other tasks that do not depend on the output of the read file function. For this case, waiting for the function to finish reading is not the best solution. It would be best to continue with the other tasks and come back to the function as soon as it is done computing. 
 
 This brings us to asynchronous functions.
 
@@ -48,7 +48,7 @@ The file system module also gives us an asynchronous function to read a file. Ho
 
 Let's use the text file we created earlier.
 
-Replace the code in **main.js** file with the following code.x 
+Replace the code in **main.js** file with the following code.
 
 ```Javascript
 var fs = require("fs");
@@ -63,11 +63,10 @@ Notice that the console prints program ended even though we have not acquired th
 
 Let's head on to the callbacks now.
 
-
 ### Callback functions
 Callbacks are normally used when there is an asynchronous function. They are used to do tasks immediately an asynchronous function is done executing. If the async function produces a result, the result will be available on the callback as a parameter.
 
-Let's now implement a callback.
+Let's implement a callback.
 
 Replace the `readFile` function with the following.
 
