@@ -101,7 +101,7 @@ Once the server is running head over to:
 ### Installing TailwindCss
 Use the init command to setup a new Node.js environment, that will allow us to install TailwindCss using npm or yarn. Now that our server is up and running, let's install Tailwindcss. 
 
-To install Tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command. Once there we'll use the `init` command to setup a new Node.js environment, that will allow us to install TailwindCss using npm or yarn as follows:
+To install tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command. Once there we'll use the `init` command to setup a new Node.js environment, that will allow us to install TailwindCss using npm or yarn as follows:
 
 ```bash
 npm init
