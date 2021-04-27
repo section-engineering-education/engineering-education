@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/why-you-should-use-celery-with-rabbitmq/
-title: Why You Should Use Celery With RabbitMQ
+title: Why You Should use Celery with RabbitMQ
 description: This article will provide an overview of task queues & message brokers, why a user should choose celery with rabbitmq, and finally an example that shows how to use the two technologies.
 author: edidiong-etuk
-date: 2021-04-07T00:00:00-00:00
+date: 2021-04-27T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,12 @@ images:
   - url: /engineering-education/why-you-should-use-celery-with-rabbitmq/hero.jpg
     alt: Celery and RabbitMQ hero image
 ---
-In today's technology space, there is an increase in event-driven architectures as companies develop solutions that require asynchronous communication between their microservices. Ingesting these events faster in system architecture and processing them enables system architectures to be persistent, resilient, and allows batch processing of data. Celery and RabbitMQ are some tools used in these architectures. Choosing the right combination of tools and viewing an example of these tools that go beyond the ["hello world"](https://docs.celeryproject.org/en/stable/getting-started/brokers/rabbitmq.html) is what this article cover.
+Celery and RabbitMQ are some tools used in in event-driven architectures. Choosing the right combination of tools and viewing an example of these tools that go beyond the ["hello world"](https://docs.celeryproject.org/en/stable/getting-started/brokers/rabbitmq.html) is what this article will cover.
+<!--more-->
+In today's technology space, there is an increase in event-driven architectures as companies develop solutions that require asynchronous communication between their microservices. Ingesting these events faster in a system architecture and processing them enables system architectures to be persistent, resilient, and allows for the batch processing of data. 
 
 ### Outline
-
-1. [What We Will Cover In This Article](#what-we-will-cover-in-this-article)
+1. [What We Will Cover](#what-we-will-cover)
 2. [Understanding Celery & RabbitMQ](#understanding-celery-&-rabbitmq)
     - [What is a Task Queue Software](#what-is-a-task-queue-software)
     - [Examples of Task Queues](#examples-of-task-queue-softwares)
@@ -30,37 +31,32 @@ In today's technology space, there is an increase in event-driven architectures 
     - [Simple Use Case](#simple-use-case)
 5. [Conclusion](#conclusion)
 
-### What We Will Cover In This Article
-
-In this article, we’ll walk through what tasks queues are, see the examples of task queues (which includes celery), learn about message brokers. We will also look at why we need to use Celery and RabbitMQ while also seeing a basic tutorial that shows its installation and usage.
+### What we will cover
+In this article, we’ll walk through what tasks queues are, see the examples of task queues (which includes celery), learn about message brokers. We will also look at why we need to use Celery and RabbitMQ while also going through a basic tutorial that shows its installation and usage.
 
 ### Understanding Celery & RabbitMQ
+Before going into why we should use Celery & RabbitMQ, let us understand what they are and what similar tools are available. Celery is classified as a *Task Queue* software and RabbitMQ is classified as a *Message Broker*. Let's dive deeper into what these are.
 
-Before going into why we should use Celery & RabbitMQ, let us understand what they are and what similar tools are available. Celery is classified as a *Task Queue* and RabbitMQ is classified as a *Message Broker*. Let's dive deeper into what these are.
+#### What is a task queue software
+A task queue is a data structure maintained by a job scheduler containing jobs to run. Task queue software also manages background work that must be executed outside of the usual HTTP request-response cycle. 
 
-#### What is a Task Queue Software
-
-A task queue is a data structure maintained by a job scheduler containing jobs to run.
-Task queue software also manages background work that must be executed outside of the usual HTTP request-response cycle.
 They are designed for asynchronous operations, i.e, operations are executed in a non-blocking mode allowing the main operation to continue processing.
-To further explain their usefulness, let’s say we have a web application that uses artificial intelligence to enhance images.
-As the number of users increases, the time to enhance an image drastically increases, which leads to a significant delay while enhancing.
-Hence, the need for a task queue software as it efficiently manages requests and ensures the application runs smoothly.
 
-#### Examples of Task Queue Softwares
+To further explain, let’s say we have a web application that uses artificial intelligence to enhance images. As the number of users increases, the time to enhance an image drastically increases, which leads to a significant delay while enhancing.
 
+Hence, the need for a task queue software as it efficiently manages requests and ensures that the application runs smoothly.
+
+#### Examples of task queue softwares
 - Celery
 - Redis Queue
 - Taskmaster
 - Huey
 - tasq
 
-#### What is a Message Broker
+#### What is a message broker
+A message broker allows applications, systems, and services to communicate and exchange information with each other. Now, with a task queue software in the background, the web app needs to know the status of the job in progress, plus any errors that might occur and the result of the enhancement. A message broker eases this process since it’s built to make independent processes i.e.“talk to each other”.
 
-A message broker allows applications, systems, and services to communicate and exchange information with each other. Now, with a task queue software in the background, the web app needs to know the status of the job in progress, plus any errors that might occur and the result of the enhancement. A message broker eases this process since it’s built to make independent processes “talk to each other”
-
-#### Examples Of Message Brokers
-
+#### Examples of message brokers
 - IBM MQ
 - Beanstalk
 - RabbitMQ
@@ -68,35 +64,35 @@ A message broker allows applications, systems, and services to communicate and e
 - Gearman
 - Solace
 
-### Why We Should Choose The Celery & RabbitMQ Combo
+### Why we should choose the Celery & RabbitMQ combo
+Having understood what task queues are, let's look at celery. Celery is an open-source task queue software written in Python.  It’s incredibly lightweight, supports multiple brokers (RabbitMQ, Redis, and Amazon SQS), and also integrates with many web frameworks, e.g. Django, etc. 
 
-Having understood what task queues are, let's look at celery. Celery is an open-source task queue software written in python. It’s incredibly lightweight, supports multiple brokers (RabbitMQ, Redis, and Amazon SQS), and also integrates with many web frameworks, e.g. Django, etc. Celery's asynchronous task queue allows the execution of tasks and its concurrency makes it used in several production systems. For example, Instagram uses Celery to scale thousands of tasks to millions.
+Celery's asynchronous task queue allows the execution of tasks and its concurrency makes it useful in several production systems. For example, Instagram uses Celery to scale thousands of tasks to millions.
 
 However, task execution needs message brokers to work smoothly. Celery supports three message brokers as mentioned above. Although, for Amazon SQS, there is no support for remote monitoring.
 
-Using Redis as a message broker has its limitations namely:
-
-* It doesn't support automatic replication
-* It is manual and requires extra work to turn it into a message broker.
-* As an in-memory solution. If the machine runs out of memory when building queues up, there's a chance of losing tasks.
+Using Redis as a message broker has its limitations such as:
+- It doesn't support automatic replication.
+- It is manual and requires extra work to turn it into a message broker.
+- As an in-memory solution. If the machine runs out of memory when building queues up, there's a chance of losing tasks.
 
 Beanstalk also does not support replication.
 
-RabbitMQ is the better choice as it guarantees message delivery, is fault-tolerant, supports synchronous replication allows for SSL for establishing an encrypted connection, and it’s superb for real-time applications. In contrast, Redis has a problem with retaining data when a crash happens since it’s memory-based and the SSL option is part of the paid version.
+RabbitMQ is the better choice as it guarantees message delivery, is fault-tolerant, supports synchronous replication, which allows for SSL to establish an encrypted connection, and it’s superb for real-time applications. 
 
-### Setting Up Celery With RabbitMQ
+In contrast, Redis has a problem with retaining data when a crash happens since it’s memory-based and the SSL option is part of the paid version.
 
-We will use an Ubuntu 18.04 machine to set up the celery app and the message queue (RabbitMQ) for this setup. We'll configure the machine to work with celery and rabbitmq.
+### Setting up Celery with RabbitMQ
+We will use an Ubuntu 18.04 machine to set up the celery app and the message queue (RabbitMQ) for this setup. We'll configure the machine to work with Celery and Rabbitmq.
 
-#### Installation & Configuration
+#### Installation & configuration
 
 **Tools Needed:**
-
 - virtualenv
 - celery
 - rabbitmq
 
-We install and activate the virtual environment by entering the commands below on the terminal
+We'll install and activate the virtual environment by entering the commands below on the terminal:
 
 ```bash
 sudo pip install virtualenv
@@ -105,7 +101,7 @@ virtualenv celery_project
 source celery_project/bin/activate
 ```
 
-We install celery using pip. We don't use sudo as we are installing celery to our virtual environment.
+We will install celery using pip. We don't use sudo as we are installing celery to our virtual environment.
 
 ```bash
 pip install celery
@@ -118,7 +114,7 @@ sudo apt-get install rabbitmq-server
 sudo rabbitmq-server -detached
 ```
 
-The *`-detached`* option allows us to run *rabbitmq-server* in the background. Now, we could use defaults, but it is always a good option to create a separate virtual host for our program.
+The `-detached` option allows us to run *rabbitmq-server* in the background. Now, we could use defaults, but it is always a good option to create a separate virtual host for our program.
 
 ```bash
 sudo rabbitmqctl add_user myuser mypassword
@@ -128,7 +124,7 @@ sudo rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"
 
 First  `".*"` *gives the user the ability to configure every entity, the* second *`".*"`* gives the *user write permissions on every entity*, and the third `".*"` gives the *user read permissions on every entity.*
 
-We install `dotenv` as we use environmental variables to protect sensitive information in our app. An environment variable is a variable that's defined outside of a program. This value can however be referenced at any point in time by a running program.
+We install `dotenv` as we use environmental variables to protect sensitive information in our app. An environment variable is a variable that's defined outside of a program. This value can be referenced at any point in time by a running program.
 
 ```bash
 pip install python-dotenv
@@ -141,7 +137,7 @@ CELERY_BROKER_URL=amqp://myuser:mypassword@localhost/myvhost
 CELERY_BACKEND_URL=db+sqlite:///test.db
 ```
 
-As sqlite is used in our backend url, it needs to be installed alongside `sqlalchemy`. However, sqlite is available by default as it’s part of the standard libraries python uses.
+As sqlite is used in our backend URL, it needs to be installed alongside `sqlalchemy`. Sqlite is available by default as it’s part of the standard libraries Python uses.
 
 ```bash
 pip install sqlalchemy
@@ -154,13 +150,14 @@ pip install flask
 pip install requests
 ```
 
-### Simple Use Case
+### Simple use case
+To explain how task queues and message broker works, we’d take on an interesting project. It’s a Dog Pic Generator, so let's call it **GenDog**. It works by making an API call to **[dog.ceo](https://dog.ceo/dog-api/)** based on the breed selected by the user and the number of pictures selected. 
 
-To explain how task queues and message broker works, we’d take on an interesting project. It’s a Dog Pic Generator, so let's call it **GenDog**. It works by making an API call to **[dog.ceo](https://dog.ceo/dog-api/)** based on the breed selected by the user and the number of pictures selected. On refresh, the pictures of the dogs get updated on the page. The code for this example is at [this repository](https://github.com/edeediong/dog-generator-celery.git).
+On refresh, the pictures of the dogs get updated on the page. The code for this example is at [this repository](https://github.com/edeediong/dog-generator-celery.git).
 
 Since we are using flask, our project structure would look like this.
 
-```
+```bash
 .
 ├── app.py
 ├── routes.py
@@ -241,7 +238,7 @@ def get_dog_pics(breed_type, limit):
 import routes
 ```
 
-We use `json()` to convert the JSON retrieved into a dictionary so that we could pass the values retrieved into our `url.txt` file. Our `routes.py` is next. As the name shows, we define endpoints herein to interact with the server-side.
+We use `json()` to convert the JSON retrieved into a dictionary so that we can pass the values retrieved into our `url.txt` file. Our `routes.py` is next. As the name indicates, we define endpoints herein to interact with the server-side.
 
 ```python
 #!/usr/bin/python
@@ -294,10 +291,9 @@ def index():
 
 In our `routes.py` file, we import our function for fetching the API and call it as this triggers the task. We also open the `url.txt` file to use the results (if any) in our route.
 
-Last, there’s a link for clearing out the images fetched. The last line renders an HTML template, we write that below. We used [Bulma](http://bulma.io/) as it’s responsive, easy to use, and it’s purely CSS.
+Last, there’s a link for clearing out the images fetched. The last line renders an HTML template, we will write that below. We will use [Bulma](http://bulma.io/) as it’s responsive, easy to use, and it’s purely CSS.
 
-`template.html`
-
+#### template.html
 ```html
 <!DOCTYPE html>
 <html>
@@ -441,7 +437,6 @@ The image below shows the initial screen before selecting the breed of the dog a
 
 ![Output Screen 1](/engineering-education/why-you-should-use-celery-with-rabbitmq/gendog1.png)
 
-
 Here, we see the rendering of dog images on the screen. The images rendered are the breed we selected in the previous screen.
 
 ![Output Screen 2](/engineering-education/why-you-should-use-celery-with-rabbitmq/gendog2.png)
@@ -452,28 +447,26 @@ With our code setup and everything in order, the last 2 steps are starting the c
 celery -A app worker -l info
 ```
 
-Then, open a new bash terminal, activate virtualenv, and start flask
+Then, open a new bash terminal, activate virtualenv, and start flask.
 
 ```bash
 source celery_project/bin/activate
 flask run
 ```
 
-Congratulations, you’ve made your first app that implements a task scheduler and a message broker. At first, it will seem like nothing’s fetched. Refresh the page and you would see the pictures.
-We use a web-based monitoring tool called [Flower](https://flower.readthedocs.io/en/latest/) to inspect the progress of tasks.
+Congratulations, you’ve made your first app that implements a task scheduler and a message broker. At first, it will seem like nothing’s fetched. Refresh the page and you will see the pictures.
+
+We used a web-based monitoring tool called [Flower](https://flower.readthedocs.io/en/latest/) to inspect the progress of tasks.
 We won’t cover that aspect, as this is more of a “getting started” guide.
 
 ### Conclusion
+In this tutorial, we have seen what task queues and message brokers are, we went over a couple examples, and the discussed best types of queues/brokers to use. We have also seen rabbitmq brokers and the async celery and how to use them in a backend architecture.
 
-In this tutorial, we have seen what task queues and message brokers are, their examples, and the best types of queues and brokers to use. We have also seen rabbitmq brokers and the async celery and how to use that in a backend architecture.
+We used that to build a dog generator web application that fetches dog images.
 
-This article aimed to introduce you to task queues, message brokers, and their examples, and the best queues and brokers to use in your backend architecture.
+We also highlighted some reasons why you should use Celery and RabbitMQ ahead of other task queues and message brokers.
 
-In this article, you understood task queues, message brokers, you built a dog generator web application that fetches dog images.
-
-Also, we highlighted some reasons why you should use Celery and RabbitMQ ahead of other task queues and message brokers.
-
-Happy Building!
+Happy building!
 
 ---
 Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
