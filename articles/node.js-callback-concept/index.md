@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/node.js-callback-concept/
+title: Node.js Callback Concept
+description: This article goes through the basics of asynchronous functions in node.js and how to use callbacks to perform tasks asynchronously. Callbacks are functions that are executed immediately an asynchronous function is done executing. 
+author: monica-masae
+date: 2021-04-27T00:00:00-18:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/node.js-callback-concept/hero.jpg
+    alt: Callback image example
+---
 ### Introduction
 A callback is the equivalent of an asynchronous function. Asynchronous functions are also known as non-blocking functions since they do not block the thread on which they are running on. Node.js heavily relies on asynchronous functions. This is because servers often receive many requests at a time; if the server was to be synchronous, requests would be processed one at a time which would lead to a bad user experience since the user might have to wait for a long time.
-
+<!--more-->
 Since asynchronous functions do not block the thread, it might be difficult to track the function or do another task immediately the function is done executing. This is where callbacks come in, callback functions are functions that are passed in asynchronous functions and run immediately after the function. This article goes through the basics of asynchronous functions in node.js and how to use callbacks to perform tasks asynchronously.
 
 ### Prerequisites.
@@ -88,3 +104,6 @@ Notice that the program prints "Program ended" before printing the content of th
 In this article, we have gone through synchronous and asynchronous functions. We have also seen how to use callbacks to do tasks immediately after an asynchronous function is done executing. Callback functions give us a way to track the progress of async functions. Async functions on the other hand give us a way of doing tasks in parallel hence minimizing execution time. This intern makes servers run faster hence a good user experience. Hope this gives you the information you need to get started.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
