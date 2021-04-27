@@ -1,6 +1,6 @@
-### How to create a deep neural network using MATLAB.
+### Creating deep neural network in MATLAB.
 ### Introduction.
-Neural networks form the base of deep learning, a subfield of machine learning where algorithms are inspired by the structure of the human brain. It takes in data, trains itself to recognize the pattern in this data, then predicts the output for a new set of similar data.
+A neural network is one of the classes of deep learning and subclass of machine learning. The algorithms are encouraged by the architecture of the human brain. The system grips data uses the algorithm to identify the trend in the data, and then predicts the result of a new similar dataset.
 MATLAB provides a deep learning toolbox for implementing the deep neural network. MATLAB includes the digit dataset so you don't need to download it from an external source.
 In this article, we will look at how to prepare your digit dataset, the structure of a convolution neural network. We will also look at the Matlab code for training and validation and code for discrete testing.
 
@@ -14,7 +14,7 @@ In this tutorial, we take the problem of digit recognition.
 Matlab itself includes the digit dataset. The digit dataset consists of 10,000 grayscale images of handwritten digits and each digit has 1000 images of the respective folders. The images are of size 28 by 28 pixels and they have associated labels.
 
 ### How to locate the image dataset.
-- Go to the installation folder of Matlab.
+- Open the directory where Matlab is installed.
 ![this is how the window appear](/engineering-education/deep-neural-systems/matlab/dataset1.jpg)
 - Select the toolbox folder.
 ![](/engineering-education/deep-neural-systems/matlab/dataset2.jpg)
@@ -30,13 +30,13 @@ When we open this folder, we have ten folders that contain 1000 images of each n
 When you open a folder of any number you will be able to see the 1000 images. Below is sample images in folder 1.
 ![images in folder 1](/engineering-education/deep-neural-systems/matlab/dataset8.png)
 
-> Note that after locating the dataset folder, you can copy it to your working directory.
+> Note that after locating the dataset folder, you can duplicate it to your preferred folder.
 
-For training, we take 750 images from each folder of the digit dataset. This means that the total training images are 7500 images since the folders are 10. The remaining 250 images will be used for validation. This means that there will be a total of 2500 images. This division is done by writing Matlab code.
+For training, we take 750 images from each folder of the digit dataset. This means that the total training images are 7500 images since the folders are 10. The remaining 250 images which sum up to 2500 images will be used for validation. This division is done by writing Matlab code.
 
-### Structure of convolutional neural network.
-It is one of the most popular types of deep neural networks (CNN or convnet). A CNN convolves learned features with input data and uses a 2D convolutional layer making this architecture well-suited to processing 2D data such as images.
-The first layer of the CNN is the input layer that we have to define when we will define the CNN in Matlab. We then define the various layers during feature detection. The CNN is made up of 3 layers. The first layer is the input layer. The second layer involves a 2D convolutional layer, batch normalization layer, relu layer, max pooling layer. The third layer involves a fully connected layer, softmax layer, classification layer.
+### Structure of convolutional neural network(CNN/convnet).
+CNN is the common category apropos to neural networks. CNN revolves around the features discovered from the input data. The network operates a 2D convolutional layer making this constitution in a better position for analyzing data for instance images.
+The first layer of the CNN is the input layer that we have to define when we will define the CNN in Matlab. We then define the various layers during feature detection. The CNN is made up of 3 layers. The top layer is the input layer. The middle layer includes a 2D convolutional layer, batch normalization layer, relu layer, max pooling layer. The last layer involves a fully connected layer, softmax layer, classification layer.
 The second layer which has 4 layers will be used repeatedly. They are not only four because we have different bunches of the 4 layers.
 
 ### Matlab syntax of the layers and the specifications.
@@ -61,28 +61,28 @@ convolution2dLayer(filterSize, numFilter, ‘stride’, n, ‘padding’,’same
 convolution2dLayer(3,8,’padding’, ‘same’,’name’,’conv_1’)
 ```
 In this example we will have a 3X3 pixel for filter size and they will be 8 filters. The no. of filters means the no. of neurons in this layer while the strides mean by what pixels should the filters shift to the next group of filters.
-The default value is 1 but you can change this to 2 or 3. In padding, you also require to cover the first column or first group. Adding ‘same’ means after doing the padding, the output image should be the same size as the input.
+Its default value is one but it varies according to your precision. In padding, you also require to cover the first column or first group. Adding ‘same’ means after doing the padding, the resulting image, and the input image should be of equal size.
 
 #### Batch normalization layer.
-It normalizes the activation and gradients. This makes the training an easy optimization problem and speeds up network training and reduces the sensitivity to network initialization.
+It normalizes the activation and gradients. This easen the optimization problem, quickens the training of the network, and minimizes the sensitivity to initializing the network.
 ```Matlab
-batchNormalizationLayer(‘name’,’BN_1’)
+batchNormalizationLayer(‘name’,’BN_1’)  
 ```
 
-#### Relu layer.
-The most common non-linear activation function is the rectified linear unit(Relu)
+#### Relu layer(rectified linear unit).
+It is the popular random activation function
 ```Matlab
 ReluLayer(‘name’,’Relu_1’)
 ```
 
 #### Max pooling layer.
-It is a downsampling operation that reduces the spatial size of the future map and removes redundant spatial information.
+It is an operation of downsampling the features in an image to predict the future image.
 ```Matlab
 maxPooling2dLayer(2,’stride’,2,’name’,’m,maxPool_1’)
 ```
 
 #### Fully connected layer.
-The last fully connected layer combines the features to classify the images.
+The fully connected layer analyzes sampled features and categorizes the images.
 ```Matlab
 fullyConnectedLayer(‘outputSize’,’name’,’value’)
 ```
@@ -92,7 +92,7 @@ fullyConnectedLayer(10,’name’,’FC’)
 The output represents the no. of neurons in this layer. In my example, we used 10 since the output size depends on the categories of objects diagnosed using the CNN.
 
 #### Softmax layer.
-The softmax activation function normalizes the output of the fully connected layer. The output of the softmax layer consists of positive no. that sums to 1, which can be used as classification probabilities by the classification layer.
+It has an activation function that changes the result of the fully connected layer. The result of the softmax layer are positive numbers that add to one and might be used by the classification layer for classification possibilities.
 ```Matlab
 softmaxLayer(‘name’, ’name’)
 ```
@@ -101,7 +101,7 @@ softmaxLayer(‘name’,’softmax’)
 ```
 
 #### Classification layer.
-It is the final layer. The layer uses probabilities returned by the softmax activation function for each input to assign the input to one of the mutually exclusive classes and computes the loss.
+It is the final layer. It solves the possibilities from the softmax activation function to their predicted form.
 ```Matlab
 classificationLayer(‘name’, ’name’)
 ```
@@ -126,8 +126,8 @@ There are various parameters and if you want to learn all, check the [documentat
 
 ### Solver options.
 `sgdm`:stochastic gradient descent with momentum optimizer. It needs a momentum rate.
-`rmsprop`:RMSProp optimizer. It needs the decay rate of the squared gradient moving average.
-`adam`:adam optimizer. It needs the decay rate of the gradient and squared gradient moving average.
+`rmsprop`:RMSProp optimizer. The squared gradient moving average decay rate must be included.
+`adam`:adam optimizer. The gradient and squared gradient moving average decay rate must be included.
 
 ### Matlab code for training and validation.
 We first give the path of the dataset folder and read the image database folder.
