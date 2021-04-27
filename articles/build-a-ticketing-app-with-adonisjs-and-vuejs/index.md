@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/
-title: Build a Ticketing App with AdonisJS and VueJS
+title: Build a Ticketing App with Adonis.js and Vue.js
 description: In this tutorial, we will learn about Adonis.js and Vue.js. We will also build a Ticketing app using Adonis.js and Vue.js.
 author: solomon-eseme
-date: 2021-04-10T00:00:00-11:30
+date: 2021-04-27T00:00:00-16:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
 ---
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with strong principles and goals in mind to be a robust integrated system having developer ergonomics, stability, and speed.
 <!--more-->
-To show the capabilities of the Adonis.js JavaScript framework and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
+To show the capabilities of the Adonis.js JavaScript framework, and how it can be combined with the [Vue](https://v3.vuejs.org/) web framework, this tutorial will lead you through building a Ticketing System App.
 
 This app will create events, generate tickets for the event, allow users to view the event and the tickets, how to make purchases, and redeem the event tickets.
 
@@ -833,12 +833,12 @@ const store = createStore({
 export default store;
 ```
 
-The store is where will manipulate all our data, we retrieved them from the API, store them to state, delete or update them from the store too.
+The store is where we will manipulate all our data, we retrieved them from the API, stored them to state, delete or update them from the store too.
 
 In the store, we used the repository pattern to separate concerns, loose coupling in communicating with the API, you can have a sneak peek of the repository pattern [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3/tree/main/src/repositories) and how to implement it [here](https://medium.com/backenders-club/consuming-apis-using-the-repository-pattern-in-vue-js-e64671b27b09).
 
 #### Creating the homepage
-Next, we will create the homepage where are the events from being displayed from the state, create a file in `src/views` folder called `Home.vue` and add the following code.
+Next, we will create the homepage where the events are being displayed from the state, create a file in `src/views` folder called `Home.vue` and add the following code.
 
 ```html
 <!--Home.vue-->
@@ -874,7 +874,9 @@ export default {
 };
 ```
 
-The scripts display all the events by calling out the `Events` component. The `Events` component is created as below:
+The scripts displays all the events by calling out the `Events` component. 
+
+The `Events` component is created below:
 
 ```html
 <template>
@@ -903,8 +905,8 @@ export default {
 };
 ```
 
-#### Displaying a single Event
-To view a single event, we created a route in the `routes.js` file and linked it with each event. The route is defined as below:
+#### Displaying a single event
+To view a single event, we need to create a route in the `routes.js` file and link it with each event. The route is defined below:
 
 ```js
 import Ticket from "./views/Ticket.vue";
@@ -954,7 +956,7 @@ The route is pointing to a `Ticket` view and we have already created that inside
 </template>
 ```
 
-And the JS code as follows:
+And the JavaScript code is as follows:
 
 ```js
 import { computed } from "vue";
@@ -974,21 +976,22 @@ export default {
 The Ticket component displays the events information including the Ticket price and a Buy button, which after purchasing an email will be sent to the purchaser including the ticket’s code.
 
 ### Testing the project
-
 Here is a preview of what we have developed so far:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qf7vvjNjjIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This is a high-level abstraction of the entire codebase, you can clone the different repositories for this project and take a closer look at each of them in details.
 
-AdonisJS Backend Repository [here](https://github.com/Kaperskyguru/ticketing-system-adonisjs).
+Adonis.js Backend Repository [here](https://github.com/Kaperskyguru/ticketing-system-adonisjs).
 
-Vuejs 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
+Vue.js 3 Frontend Repository [here](https://github.com/Kaperskyguru/ticketing-system-vuejs3).
 
 ### Conclusion
-In this tutorial, we developed a ticketing system application using AdonisJS as the backend and VueJs 3 for the frontend.
+In this tutorial, we developed a ticketing system application using Adonis.js for the backend and Vue.js 3 for the frontend.
 
-We have learned how to create a Ticketing system API with AdonisJS 5 including Authentication and authorization, how to structure the project and how to consume the API using Vue 3 and the composition API.
+We learned how to create a Ticketing system API with Adonis.js 5 including authentication and authorization, we went over how to structure the project, and how to consume the API using Vue 3 and the composition API.
+
+Happy coding!
 
 ### Further reading
 - [AdonisJS Tutorial: The Ultimate Guide (2021)](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
