@@ -196,8 +196,15 @@ $ pipenv --rm
 **Note:** With Pipenv, you can force install a specific python version for your project using:
 
 ```bash
-$ pipenv install –python 3.6
+$ pipenv install -–python 3.9
 ```
+Or you can use:
+
+```bash
+$ pipenv --python path\to\python
+```
+
+In case the first approach causes an error use the second approach after downloading the desired Python version from [Python.org](https://www.python.org/downloads/).
 
 ### 4. Conda
 **[Conda](https://conda.io/projects/conda/en/latest/index.html)** is a package management and environment management system that not only supports Python but also other languages like Ruby, Scala, R and C/C++. It is used to create, save, load and switch between environments in your local machine.
