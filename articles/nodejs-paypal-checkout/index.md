@@ -1,7 +1,18 @@
+Paypal is an online payment platform that allows users to transfer funds worldwide. Paypal makes it easier for merchants to accept online payments through their websites. Paypal provides processing for both Visa and Mastercard payments.
+
+### Project setup
+Create a folder named `paywave`. Change the working directory to the `paywave` directory created above by executing the command below.
+
+```bash
+$ mkdir paywave
+$ cd paywave
+```
+To create a Node.js application in the `paywave` folder we created above, execute the command below.
+
 ```bash
 $ npm init
 ```
-
+- `npm init` command adds `package.json` file to our `paywave` directory, making it a Node.js application.
 ```bash
 $ npm i express
 ```
@@ -72,7 +83,7 @@ app.post('/pay', (req, res) => {
     "transactions": [{
         "item_list": {
             "items": [{
-                "name": "Red Sox Hat",
+                "name": "Redhock Bar Soap",
                 "sku": "001",
                 "price": "25.00",
                 "currency": "USD",
@@ -83,7 +94,7 @@ app.post('/pay', (req, res) => {
             "currency": "USD",
             "total": "25.00"
         },
-        "description": "Hat for the best team ever"
+        "description": "Washing Bar soap"
     }]
 };
 
@@ -134,3 +145,6 @@ app.get('/success', (req, res) => {
 ```javascript
 app.get('/cancel', (req, res) => res.send('Cancelled'));
 ```
+
+### Conclusion
+Now that you have learned how to integrate PayPal checkout into a Node.js application, add a success and error page to the application we created. The full source for the application can be downloaded [here]().
