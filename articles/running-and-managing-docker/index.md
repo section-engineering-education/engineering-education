@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/managing-docker-containers/
+url: /engineering-education/running-and-managing-docker/
 title: Managing and Running Docker Containers
 description: This tutorial will give the readers a overview on how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage and removing containers.
 author: terrence-aluda
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/managing-docker-containers/hero.jpg
+  - url: /engineering-education/running-and-managing-docker/hero.jpg
     alt: Docker Container Example Image
 ---
 On exposure to any container technology, the first thing to interact with is most probably a container image. This is a binary package that contains all files necessary to run an application inside a container.
@@ -90,14 +90,12 @@ $ docker build -t sectionio-image:2.0 .
 ```
 
 #### Image security
-We should take much consideration for our images' security. When building images that will ultimately run in a production environment, probably a Kubernetes cluster, we should follow the best
-practices for packaging and distributing the applications.
+We should take much consideration for our images' security. When building images that will ultimately run in a production environment, probably a Kubernetes cluster, we should follow the best practices for packaging and distributing the applications.
 
-For example, We should not build containers with passwords put in any layer of the image because an enterprising attacker can simply create an image that only consists of the layers that contain the password and start some malicious activity.
+For example, we should not build containers with passwords put in any layer of the image because an enterprising attacker can simply create an image that only consists of the layers that contain the password and start some malicious activity.
 
 #### Optimizing image sizes
-When working with large images, the first thing to remember is
-that files that are removed by subsequent layers in the system are still present in the images, only that they are inaccessible.
+When working with large images, the first thing to remember is that files that are removed by subsequent layers in the system are still present in the images, only that they are inaccessible.
 
 ```
 .
