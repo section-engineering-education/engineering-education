@@ -7,7 +7,7 @@ In this guide, we will learn how to use machine learning to diagnose if a patien
 ### Prerequisite
 - A PC with Jupyter Notebook
 - Basic Python Knowledge
-- Basic knowledge of Support Vector Machines 
+- Basic knowledge of [Support Vector Machines](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47)
 - Diabetes dataset from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database)
 
 ### Outline
@@ -186,7 +186,12 @@ X_train[:5, :]
 **Normalized Training Set**
 
 ### Creating the SVM Model
-The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary separates the positive class and the negative class. It could be linear or non-linear. The polynomial and RBF kernels are suitable when the classes are not linearly separable.
+The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary is the hyperplane or curve that separates the positive class and the negative class. It could be linear or non-linear. 
+
+![Decision Boundary](/engineering-education/diagnose-diabetes-with-svm/decision-boundary.jpg)
+[Image Source](https://towardsdatascience.com/logistic-regression-and-decision-boundary-eab6e00c1e8)
+
+The polynomial and RBF kernels are suitable when the classes are not linearly separable.
 
 We fit the SVM model for each kernel to our training set. We make predictions on our training set to see which kernel will give us the highest accuracy score. We call this *Hyper-Parameter Optimization*.
 
@@ -305,6 +310,14 @@ Precision tells us what fraction has diabetes from all the patients our model pr
 
 A model with high precision helps us avoid treating people without diabetes. But we may end up not treating some patients with diabetes. A model with high recall allows us to treat all patients with diabetes. But we may end up treating patients that do not have diabetes. What we need is a trade-off between precision and recall.
 That is where f1-score comes in. The f1-score finds a good balance between precision and recall.
+
+Precision is given as: True Positives/(True Positives + False Positives)
+Recall is given as: True Positives/(True Positives + False Negatives)
+
+The true positives are the patients that have diabetes, and our model predicted to have diabetes.
+The false positives are the patients without diabetes, but our model predicted to have diabetes.
+The true negatives are the patients without diabetes, and our model predicted as not having diabetes.
+The false negatives are the patients that have diabetes, but our model predicted as not having diabetes.
 
 Let us calculate the precision, recall, and f1 score. We can also generate a classification report.
 
