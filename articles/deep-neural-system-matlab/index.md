@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/deep-neural-systems-matlab/
+title: Getting started with deep neural networks in Matlab
+description: This article gives the reader a guide on how to prepare a digit dataset, the structure of a convolution neural network and training of the models.
+author: paul-juma
+date: 2021-04-28T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/deep-neural-systems-matlab/hero.jpg
+    alt: Deep neural systems in Matlab example image
+---
+
 ### Creating deep neural network in MATLAB.
 ### Introduction.
 A neural network is one of the classes of deep learning and subclass of machine learning. The algorithms are encouraged by the architecture of the human brain. The system grips data uses the algorithm to identify the trend in the data, and then predicts the result of a new similar dataset.
