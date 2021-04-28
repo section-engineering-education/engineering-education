@@ -21,13 +21,13 @@ In this guide, we will learn how to use machine learning to diagnose if a patien
 ### Exploratory Data Analysis with Pandas-Profiling
 The pandas-profiling library helps us do quick exploratory data analysis with minimal effort. To install pandas-profiling, run the code below:
 
-```python
+```bash
 pip install pandas-profiling
 ```
 
 If you are using Anaconda, then you can run the following code in Anaconda Prompt:
 
-```python
+```bash
 conda install -c conda-forge pandas-profiling
 ```
 
@@ -60,6 +60,7 @@ profile
 Pandas-profiling gives us the dataset statistics.
 
 ![Overview of the Dataset](/engineering-education/diagnose-diabetes-with-svm/overview.jpg)
+
 **Overview of the Dataset**
 
 From the report above, we have nine variables and 768 rows. There are no missing data in the dataset. There are no duplicate data.
@@ -67,41 +68,51 @@ From the report above, we have nine variables and 768 rows. There are no missing
 Pandas-profiling also looks at each of the nine variables. For each variable, it gives us descriptive statistics. It generates a histogram that shows the data distribution of each variable.
 
 ![Histogram - Pregnancy](/engineering-education/diagnose-diabetes-with-svm/pregnancy-histogram.jpg)
+
 **Histogram - Pregnancy**
 
 ![Histogram - Glucose & Blood Pressure](/engineering-education/diagnose-diabetes-with-svm/glucose-bloodpressure.jpg)
+
 **Histogram - Glucose & Blood Pressure**
 
 ![Histogram - Skin Thickness & Insulin](/engineering-education/diagnose-diabetes-with-svm/skinthickness-insulin.jpg)
+
 **Histogram - Skin Thickness & Insulin**
 
 ![Histogram - BMI & Pedigree](/engineering-education/diagnose-diabetes-with-svm/BMI-Pedigree.jpg)
+
 **Histogram - BMI & Pedigree**
 
 ![Histogram - Age & Outcome](/engineering-education/diagnose-diabetes-with-svm/age-outcome.jpg)
+
 **Histogram - Age & Outcome**
 
 We can see the mean, minimum and maximum values of each variable. We can observe the correlation plot between each of the variables. 
 
 ![Features Interaction](/engineering-education/diagnose-diabetes-with-svm/feature-interactions.jpg)
+
 **Interaction of Features**
 
 We can see the Pearson, Spearman, Kendall, and Phik correlation matrix heat map.
 
 ![Feature Correlations](/engineering-education/diagnose-diabetes-with-svm/feature-correlations.jpg)
+
 **Correlations of Features**
 
 We can visualize the missing values and know exactly where we have missing values in the dataset. None of the variables contains any missing value, so we can proceed to build our model.
 
 ![Visualization of Missing Values](/engineering-education/diagnose-diabetes-with-svm/missing-values.jpg)
+
 **Visualization of Missing Values**
 
 Finally, we can view the first ten rows and last ten rows of the dataset.
 
 ![First Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/first-rows-of-dataset.jpg)
+
 **First Rows of the dataset**
 
 ![Last Rows of the dataset](/engineering-education/diagnose-diabetes-with-svm/last-rows-of-dataset.jpg)
+
 **Last Rows of the dataset**
 
 ### Feature Extraction
@@ -114,6 +125,7 @@ X.head()
 ```
 
 ![Dataset Features](/engineering-education/diagnose-diabetes-with-svm/dataset-features.jpg)
+
 **Dataset Features**
 
 Our target variable is the outcome column. The value 1 represents patients with diabetes, while 0 represents patients without diabetes.
@@ -125,6 +137,7 @@ y.head()
 ```
 
 ![Class Labels of the Dataset](/engineering-education/diagnose-diabetes-with-svm/class-labels.jpg)
+
 **Class Labels**
 
 ### Split Dataset Into Training and Test Set
@@ -206,6 +219,7 @@ for k in ('linear', 'poly', 'rbf', 'sigmoid'):
 ```
 
 ![Accuracy of SVM Kernels](/engineering-education/diagnose-diabetes-with-svm/svm-kernerls-accuracy.jpg)
+
 **Accuracy of the SVM Kernels**
 
 The RBF (radial basis function) kernel gives us the highest accuracy score. So for this dataset, it offers the best decision boundary. The RBF kernel finds a decision boundary that separates 82.4% of the patients correctly. Now let us create our model using the RBF kernel.
@@ -335,6 +349,7 @@ print("F1 score is", f1)
 ```
 
 ![Precision Recall & F1 Score](/engineering-education/diagnose-diabetes-with-svm/precision-recall-f1.jpg)
+
 **Precision, Recall, & F1-Score**
 
 We can also generate a classification report.
