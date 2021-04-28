@@ -43,23 +43,23 @@ app.listen(PORT, () => console.log(`Server Started on ${PORT}`));
 ```
 To obtain the `client_id` and `client_secret`, login into your Paypal developer account [here](https://developer.paypal.com/) and create a new app as shown in the image below.
 
-![Paypal create a new app](/pay/paypal-create-app.png)
+![Paypal create a new app](/engineering-education/nodejs-paypal-checkout/paypal-create-app.png)
 
 After creating the app, click on the app name to navigate to the app's detail page, where you will obtain the `client_id` and `client_secret`.
 
 On the app details page, copy the `client_id` and `client_secret` into the `index.js` file we created above.
 
-![Paypal secrete and Id](/pay/paypal-credentials.png)
+![Paypal secrete and Id](/engineering-education/nodejs-paypal-checkout/paypal-credentials.png)
 
 #### Creating a sandbox account
 
 Select the account menu item on the sidebar as shown in the image below.
 
-![Paypal account section](/pay/paypal-account-section.png)
+![Paypal account section](/engineering-education/nodejs-paypal-checkout/paypal-account-section.png)
 
 Create a new account that you will use when making the payments in the sandbox account.
 
-![Paypal creating account](/pay/paypal-create-account.png)
+![Paypal creating account](/engineering-education/nodejs-paypal-checkout/paypal-create-account.png)
 
 #### Checkout view 
 
@@ -136,7 +136,7 @@ paypal.payment.create(create_payment_json, function (error, payment) {
 
 The code snippet above contains the payment details that Paypal uses to initiate a transaction. If the payment initiated successfully, then the user is presented with the page shown in the image below to complete the transaction.
 
-![Complete transaction](/pay/paypal-checkout.png)
+![Complete transaction](/engineering-education/nodejs-paypal-checkout/paypal-checkout.png)
 
 #### Success transaction handler
 Whenever the transaction is successful, we should get the transaction details from Paypal. The transaction details obtained from Paypal can be saved in the database for future references. In our case, we print a log of the transaction in the terminal.
@@ -173,7 +173,7 @@ app.get('/success', (req, res) => {
 ```
 If the transaction is successful, then a success page is displayed to the user as shown in the image below.
 
-![Paypal checkout success](/pay/paypal-success.png)
+![Paypal checkout success](/engineering-education/nodejs-paypal-checkout/paypal-success.png)
 
 #### Transaction cancellation
 When a user cancels the transaction, we need to render a response to inform the user that the transaction was successfully canceled. To handle the cancellation, add the code snippet below into the `index.js` file.
