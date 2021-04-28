@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published: 
+published: true
 url: /engineering-education/an-overview-of-iot-technology/
 title: An Overview of IoT Technology
 description: This article will cover the basics of IoT and the building blocks of IoT solutions. At the end of the article, the reader will learn how IoT solutions work. 
