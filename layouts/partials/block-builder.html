@@ -3,5 +3,6 @@
 {{- with .Params.blocks -}}
   {{- range . -}}
     {{- if eq .component "engineering-education-search" -}}{{- partial "components/engineering-education-search" (dict "component" . "context" $page) -}}{{- end -}}
+    {{- if eq .component "header" -}}{{- partial "components/header" (dict "component" . "context" $page) -}}{{- end -}}
   {{- end -}}
 {{- end -}}
