@@ -184,4 +184,4 @@ app.get('/cancel', (req, res) => res.send('Cancelled'));
 - The above route returns a `Cancelled` string to the user whenever a transaction cancellation is successful.
   
 ### Conclusion
-Now that you have learned how to integrate Paypal checkout into a Node.js application, add a success and error page to the application we created. The full source for the application can be downloaded [here]().
+Now that you have learned how to integrate Paypal checkout into a Node.js application, add a success and error page to the application we created. The full source for the application can be downloaded [here](https://github.com/okeloviolet/Nodejs-paypal).
