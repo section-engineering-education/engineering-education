@@ -1,4 +1,4 @@
-### Introduction
+﻿### Introduction
 In recent times, organizations have adopted the benefits offered by AI-powered [virtual assistants](https://searchcustomerexperience.techtarget.com/definition/virtual-assistant-AI-assistant) to automate routine tasks and give their clients attention in customer services, payments, and marketing.
 
 The healthcare industry has now adopted this trend. [AI](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence) creates an environment suitable to improve the patient's health with minimal costs and overheads.
@@ -39,14 +39,14 @@ Chatbots may have the inability to know and understand the patient's emotions. T
 ### Companies leading the way
 Chatbots in the healthcare industry are still in their early stages of development. However, the below are the market-leading innovators that harness the benefits offered by chatbots and therefore pave the way for future development.
 
-#### [Babylon Health](https://www.babylonhealth.com/)
-In the year 2014, Babylon Health created their chatbot named [Ask Babylon](https://www.babylonhealth.com/product/ask-babylon). It was developed to assess the patient's symptoms, provide them with relevant information, and advise them accordingly. The chatbot asks a patient many questions and, in turn, by using machine learning algorithms, compares given information to known conditions, illnesses, risk factors, and statistics to reach the final decision. Whenever necessary, users can then be connected to Babylon's doctors and specialists via video chat or audio, with care at any time, any day.
+#### Babylon Health
+In the year 2014, [Babylon Health](https://www.babylonhealth.com/) created their chatbot named [Ask Babylon](https://www.babylonhealth.com/product/ask-babylon). It was developed to assess the patient's symptoms, provide them with relevant information, and advise them accordingly. The chatbot asks a patient many questions and, in turn, by using machine learning algorithms, compares given information to known conditions, illnesses, risk factors, and statistics to reach the final decision. Whenever necessary, users can then be connected to Babylon's doctors and specialists via video chat or audio, with care at any time, any day.
 
-#### [Ada Health](https://ada.com/)
-It works the same as *Ask Babylon*. It asks patients questions and then compares their answers with many similar cases. The chatbot then provides the patient with relevant information from its [Medical Library](https://ada.com/conditions/) to help them manage their health condition. Ada's app enjoys millions of users and comes in several different languages. The app has been used to do millions of health assessments worldwide.
+#### Ada Health
+[Ada Health](https://ada.com/) works the same as *Ask Babylon*. It asks patients questions and then compares their answers with many similar cases. The chatbot then provides the patient with relevant information from its [Medical Library](https://ada.com/conditions/) to help them manage their health condition. Ada's app enjoys millions of users and comes in several different languages. The app has been used to do millions of health assessments worldwide.
 
-#### [WoeBot Health](https://woebothealth.com/)
-WoeBot uses Artificial Intelligence to provide mental and emotional support to patients in need using a chat-based tool. It uses brief conversations to ask the patients questions and evaluate their emotional state. It then offers appropriate interventions based on the patient's circumstances. It has an app that exchanges millions of users' messages weekly. It also has a high accuracy rate in identifying a patient's crisis language.
+#### WoeBot Health
+[WoeBot](https://woebothealth.com/) uses Artificial Intelligence to provide mental and emotional support to patients in need using a chat-based tool. It uses brief conversations to ask the patients questions and evaluate their emotional state. It then offers appropriate interventions based on the patient's circumstances. It has an app that exchanges millions of users' messages weekly. It also has a high accuracy rate in identifying a patient's crisis language.
 
 ### Conclusion
 The role of chatbots is constantly augmenting the work of healthcare professionals and not replacing them. The benefits of using chatbots, as discussed earlier, are immense.
