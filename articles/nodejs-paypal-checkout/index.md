@@ -202,3 +202,6 @@ app.get('/cancel', (req, res) => res.send('Cancelled'));
   
 ### Conclusion
 Now that you have learned how to integrate Paypal checkout into a Node.js application, add a success and error page to the application we created. The full source for the application can be downloaded [here](https://github.com/okeloviolet/Nodejs-paypal).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
