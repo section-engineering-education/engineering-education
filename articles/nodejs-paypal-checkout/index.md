@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/nodejs-paypal-checkout/
+title: Getting with Node.js Paypal checkout integration
+description: This article will go over a step-by-step tutorial on how to integrate Paypal checkout into a Node.js application.
+author: okelo-violet
+date: 2021-04-28T00:00:00-11:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/nodejs-paypal-checkout/hero.jpg
+    alt: Getting started with Node.js paypal checkout integration example image
+---
+
 Paypal is an online payment platform that allows users to transfer funds worldwide. Paypal makes it easier for merchants to accept online payments through their websites. Paypal provides processing for both Visa and Mastercard payments.
 
 ### Project setup
