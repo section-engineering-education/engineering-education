@@ -202,7 +202,7 @@ X_train[:5, :]
 The Sci-kit Learn library has four SVM kernels. We have the linear, poly, rbf, and sigmoid kernels. We do not know which of these kernels will give us a better decision boundary. So we iterate through the kernels and see which one gives us the best decision boundary for the dataset. The decision boundary is the hyperplane or curve that separates the positive class and the negative class. It could be linear or non-linear. 
 
 ![Decision Boundary](/engineering-education/diagnose-diabetes-with-svm/decision-boundary.jpg)
-[Image Source](https://towardsdatascience.com/logistic-regression-and-decision-boundary-eab6e00c1e8)
+[Image Source: Logistic Regression and Decision Boundary](https://towardsdatascience.com/logistic-regression-and-decision-boundary-eab6e00c1e8)
 
 The polynomial and RBF kernels are suitable when the classes are not linearly separable.
 
