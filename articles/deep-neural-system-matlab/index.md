@@ -242,3 +242,6 @@ Apart from the images in the dataset, you can create your image and recognize it
 
 ### Conclusion.
 Matlab is a good language for the deep neural system. It has a toolbox that provides the data that can be used for the training and the testing of the neural system. Because it has the dataset to be used for the process, this makes it more efficient for use. 
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
