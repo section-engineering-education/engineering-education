@@ -1,4 +1,4 @@
-﻿### Introduction
+### Introduction
 In recent times, organizations have adopted the benefits offered by AI-powered [virtual assistants](https://searchcustomerexperience.techtarget.com/definition/virtual-assistant-AI-assistant) to automate routine tasks and give their clients attention in customer services, payments, and marketing.
 
 The healthcare industry has now adopted this trend. [AI](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence) creates an environment suitable to improve the patient's health with minimal costs and overheads.
@@ -13,25 +13,25 @@ AI creates many new opportunities across the industry. Furthermore, the latest d
 Through advancements in NLP accuracy, chatbots are now complex enough and can be paired with [machine learning](https://www.ibm.com/cloud/learn/machine-learning) and used in a healthcare setting.
 
 ### Benefits of using chatbots in healthcare
-Chatbots significantly ease the burden on Health Care Providers ([HCPs](https://www.cdc.gov/infectioncontrol/guidelines/healthcare-personnel/appendix/terminology.html)) through cost reduction, personalized health and therapy information.
+Chatbots significantly ease the burden on Health Care Providers ([HCPs](https://www.cdc.gov/infectioncontrol/guidelines/healthcare-personnel/appendix/terminology.html)) through cost reduction, personalized health, and therapy information.
 
 Below are some of the benefits of using chatbots in the healthcare industry.
 
 #### Immediate access to care
 A chatbot analyzes the patient's symptoms and makes appropriate recommendations depending on the medical issue involved. It also helps in scheduling an appointment with the doctor. If a bot cannot respond to the issue raised, the patient will be passed to the real person.
-Chatbots are the first point of contact, and automates the [triage](https://www.medicinenet.com/triage/definition.htm) process. They help in reducing many unnecessary visits to healthcare facilities hence cost reduction.
+Chatbots are the first point of contact and automate the [triage](https://www.medicinenet.com/triage/definition.htm) process. They help in reducing many unnecessary visits to healthcare facilities hence cost reduction.
 
 #### Automating administrative tasks
-Through automation of many administrative tasks, efficiency is greatly increased and costs significantly reduced. Most of the times, chatbots assists in scheduling doctor's appointments, sending reminders for medication or treatment, connecting patients with suitable HCPs within their areas, and answering frequently asked questions.
+Through automation of many administrative tasks, efficiency is greatly increased and costs significantly reduced. Most of the time, chatbots assist in scheduling doctor's appointments, sending reminders for medication or treatment, connecting patients with suitable HCPs within their areas, and answering frequently asked questions.
 
 #### Proactive care
-Chatbots supplement the work of caregivers by helping the patients improve their overall health and well-being. Applications that can support patients' mental and emotional health have been developed. Others can even help in motivation and provision of guidance on nutrition and exercise.
+Chatbots supplement the work of caregivers by helping the patients improve their overall health and well-being. Applications that can support patient's mental and emotional health have been developed. Others can even help in motivation and provision of guidance on nutrition and exercise.
 
 ### Challenges of using chatbots in healthcare
 The potential benefits of chatbots in healthcare are massive. However, digital entrepreneurs and healthcare leaders need to note that there are specific challenges that they can encounter when trying to ensure the best possible outcomes for healthcare organizations and consumers. Some of the challenges include:
 
 #### Inaccurate medical information
-Chatbots may not have all the relevant medical data about a patient. This can lead to an inaccurate diagnosis. Moreover, can pose a significant risk and a high possibility of harm to the patients. Also, the financial implications of such errors could be huge to the organizations.
+Chatbots may not have all the relevant medical data about a patient. This can lead to an inaccurate diagnosis. Moreover, it can pose a significant risk and a high possibility of harm to the patients. Also, the financial implications of such errors could be huge to the organizations.
 
 #### Lack of direct human interaction
 Chatbots may have the inability to know and understand the patient's emotions. Thus they can misinterpret the true extent of a patient's needs. Also, patients experience may suffer from a lack of human contact, leaving them disconnected from their HCP.
