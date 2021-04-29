@@ -25,7 +25,7 @@ In this article, we are going to learn about Encryption at rest in MongoDB with 
 
 - Must have some prior knowledge about MongoDB and its shell commands.
 
-So before starting with the concept of Encryption at rest in MongoDB let's first discuss the term 'Encryption'.
+Before starting with the concept of Encryption at rest in MongoDB let's first discuss the term 'Encryption'.
 
 ### What is Encryption?
 
@@ -39,7 +39,7 @@ A cryptographic key is a string of characters used within an encryption algorith
 
 Data encryption is very much necessary and the factors below are the key reason to encrypt our data or databases as,
 
-1. Privacy: So with the help of encryption no one can read or interfere with the data you want to protect except the intended parties. This prevents attackers, and networks, internet service providers, and in some cases governments from intercepting and reading sensitive data.
+1. Privacy: With the help of encryption no one can read or interfere with the data you want to protect except the intended parties. This prevents attackers, and networks, internet service providers, and in some cases governments from intercepting and reading sensitive data.
 
 2. Security: Encryption helps prevent data breaches, whether the data is at your local machine or on the internet. There are many security algorithms which protect data, databases and also client-server connection like public and private key cryptography, RSA algorithms, etc.
    Almost every corporate firm uses HTTPS protocol and take the advantage of these algorithms to protect their users from attacks and also users like us need to be careful from our end like not visiting unknown sites or opening spam emails etc.
@@ -65,8 +65,9 @@ All versions of MongoDB support TLS (Transport Layer Security) and SSL (Secure S
 
 ### Encryption at rest
 
-To encrypt data at rest, MongoDB Enterprise offers native, storage-based symmetric key encryption at the file level. Whole database encryption is also called Transparent Data Encryption (TDE). MongoDB utilizes the Advanced Encryption Standard (AES) 256-bit encryption algorithm, an encryption cipher that uses the same secret key to encrypt and decrypt data.
-Data-at-rest AES encryption is only available on MongoDB Enterprise and Atlas editions using the required WiredTiger storage engine.
+To encrypt data at rest, MongoDB Enterprise offers native, storage-based symmetric key encryption at the file level. Whole database encryption is also called Transparent Data Encryption (TDE).
+
+MongoDB utilizes the Advanced Encryption Standard (AES) 256-bit encryption algorithm, an encryption cipher that uses the same secret key to encrypt and decrypt data. Data-at-rest AES encryption is only available on MongoDB Enterprise and Atlas editions using the required WiredTiger storage engine.
 
 There is another feature that MongoDB provides is the option to turn encryption on in “FIPS mode” which means the encryption you use in MongoDB will be tested to the National Institute of Standards and Technology Federal Information Processing Standard. Solutions validated and tested to NIST FIPS are built to meet the highest security standards and compliance.
 
@@ -89,7 +90,7 @@ MongoDB does not include an enterprise encryption key management solution, and u
 Now you may ask why key management is necessary so here is the answer,
 
 Encryption key management is necessary because without key management you left the keys to protecting your sensitive business and customer data exposed, then you expose your entire organization to the risk of data loss or theft.
-Today, with MongoDB Enterprise, MongoDB customers can meet encryption and key management best practices easily through implementing native encryption and deploying a third-party enterprise key management solution.
+Today, with MongoDB Enterprise, customers can meet encryption and key management best practices easily through implementing native encryption and deploying a third-party enterprise key management solution.
 
 Before we moving on to how to implement SSL encryption in your database let's first understand what is SSL.
 
@@ -117,12 +118,11 @@ We need to concatenate these two files into one therefore you need to execute
 ```bash
 cat mongodb-cert.key mongodb-cert.crt > mongodb.pem
 ```
-
-So after this, you will have a file named `mongodb.pem` in your disk and that is the file you will need to enable SSL encryption.
+This will create a file named `mongodb.pem` in your disk and that is the file you will need to enable SSL encryption.
 
 Now navigate to that where you have stored your `.pem` file and there we need to set an SSL mode by using `--sslMode` argument in the command which I will show you next which defines whether the SSL is enabled or not and how to configure it.
 
-Again for more information please visit the MongoDB official documentation here <https://docs.mongodb.com/manual/tutorial/configure-ssl/>
+For more information please visit the MongoDB official documentation here <https://docs.mongodb.com/manual/tutorial/configure-ssl/>
 So type this command to now enable SSL encryption and also you must use this command where your `.pem` file is stored. So type
 
 ```bash
@@ -135,8 +135,7 @@ So this command will start an SSL sever without a CA certification file for whic
 mongodb --ssl --sslCAFile mongodb.pem --host localhost
 ```
 
-And with this, you have created an SSL encrypted connection where you can create your database and add secure functionality to it.
-
+And with this, you have created an SSL encrypted connection where you can create your database and add secure functionality to it. And I hope now you must have realised the importance of security not just in realtion to databases but in general. Whether in production or in development environment security and encryption of data will always be a topic of concern so take it seriously.
 I hope you enjoyed reading this article as much as I enjoyed writing it.
 
 Happy Coding!
