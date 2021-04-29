@@ -1,5 +1,21 @@
-Recommender systems are used by top online companies such as YouTube, Netflix, and Amazon to suggest online products to buyers based on their interests, preferences, and purchasing behavior. These systems help online businesses to optimize user interaction on their websites with the aim of increasing their sales revenue.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/recommender-system-explained/
+title: Recommender System Explained
+description: In this article, we will explore the basics of recommender systems and how they work. This article will also take readers through the benefits, types, components, and applications of recommender systems.   
+author: pennina-wanja
+date: 2021-04-29T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/recommender-system-explained/hero.jpg
+    alt: recommender system example image
+---
+Recommender systems are used by top online companies such as YouTube, Netflix, and Amazon to suggest online products to buyers based on their interests, preferences, and purchasing behavior. These systems help online businesses to optimize user interaction on their websites with the aim of increasing their sales revenue.
+<!--more-->
 This article takes you through the basics of these systems and explains how they work. It also provides an overview of how they have been applied in online businesses. 
 
 ### What is a recommender system?
@@ -16,7 +32,7 @@ Recommender systems offer the following benefits:
 - **Reduced workload:** These systems automate the process of analyzing the online behavior of all customers. This reduces the workload that would be required if the shopping experience of every customer is analyzed manually by the IT experts. 
 - **Increased revenue:** Increased traffic, customer retention, and personalized experiences translate to increased sales revenue. Improved engagement with potential buyers transforms many of them into actual and repeat buyers. 
   
-### Components of a Recommender system
+### Components of a recommender system
 - **Candidate generations:** This component decomposes the huge pool of candidates (potential recommendations) into smaller subsets. It then recommends these small subsets to the online user. 
 - **Scoring systems:** The scoring system allocates a score to all the items or elements in the subsets. 
 - **Re-ranking systems:** These systems consider the item scores and other constraints to generate the final rankings.
@@ -89,3 +105,7 @@ Many online companies are increasingly using recommender systems to improve cust
 
 In the future, recommendation systems will be in a position to provide more accurate predictions because of their ability to gain deeper insights into customers' tastes and preferences. The increasing number of online services implies that recommender systems will be a source of competitive advantage to online businesses in the future.
 
+Happy learning.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
