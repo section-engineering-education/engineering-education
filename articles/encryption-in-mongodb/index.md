@@ -140,3 +140,7 @@ And with this, you have created an SSL encrypted connection where you can create
 I hope you enjoyed reading this article as much as I enjoyed writing it.
 
 Happy Coding!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
