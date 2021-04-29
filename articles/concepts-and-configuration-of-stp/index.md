@@ -31,7 +31,7 @@ This because it may result in a situation where a single malfunction or fault ca
 
 The figure below illustrates a single point of failure:
 
-![Single point of failure](/engineering-education/concepts-and-configuration-of-stp/single-point-of-failure.jpg)
+![Single point of failure](/engineering-education/concepts-and-configuration-of-stp/Single-point-of-failure.jpg)
 
 [Image source](https://www.ictshore.com/free-ccna-course/hsrp-understanding/)
 
@@ -87,7 +87,7 @@ STP is enabled by default on VLAN 1 and all newly created VLANs, so activating S
 #### Step 1 – enabling STP
 To re-enable STP on a specific VLAN if an outdated switch has it disabled. We click on the switch in our cisco packet tracer and enter the commands as follows after we have created our topology:
 
-```basj
+```bash
 switch>enable
 switch#configure terminal
 switch(config)#spanning-tree vlan vlan-id
