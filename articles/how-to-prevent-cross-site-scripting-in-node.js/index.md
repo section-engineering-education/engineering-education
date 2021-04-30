@@ -78,12 +78,24 @@ XSS is the leading attack for web applications. Now that we have an understandin
 Output encoding translates untrusted input into a safe model. It takes place by running a JavaScript entity encoding in a Node.js platform server prior to sending untrusted data into the browser. 
 
 #### Avoid Inserting Untrusted Data
-Do not pass untrusted data into executable JavaScript functions such as `eval`. In the Node.js `eval` function, enable code injections. The `eval` function takes a string argument and interprets it as a JavaScript code allowing the attacker to execute it.
+Developers must deny inserting untrusted data to prevent XXS. JavaScript escaping should be used when untrusted data is inserted in a JavaScript code. Avoid passing untrusted data into executable JavaScript functions such as `eval`. The function `eval` evaluates or executes an argument.
 
-The only secure way to use if you insert untrusted data into the JavaScript code is inside a quoted (")data value. That is the proper context for inserting data into a JavaScript code. For example, 
+In the Node.js `eval` function, enable code injections. Code injection is a security vulnerability caused by processing invalid data. An attacker introduces a malicious code that is executed in an application.
+
+The `eval` function takes a string argument and interprets it as a JavaScript code allowing the attacker to execute it. Below is an example of passing untrusted data to the `eval` function which executes a script. This simple example execute code if you enter a code like `alert ('XSS!');` in one of the operations.
+```js
+function compute() {
+  var opr1 = $('#operation1').val();
+  var opr2 = $('#operation2').val();
+  var answer = eval(opr1 + ' + ' + opr2);
+  $('#answer').text(answer);
+}
+```
+The only secure way to insert untrusted data into the JavaScript code is inside a quoted (") data value. For example, 
 ```js
 <script>Alert (“…encode untrusted data before being executed…”)</script>
 ```
+Putting untrusted data inside a script is dangerous because it is very easy for attackers to switch into an execution context with characters including (;, =, +, &, < and >) and many more. 
 
 #### Validating User Input
 To prevent XSS, developers must [validate user input](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html) and encode the output. Validation of user input is a defense technique used on the server-side to prevent XSS attacks. This means XSS mitigation measures are applied on a node.js platform.
@@ -104,10 +116,12 @@ While validating user input with server-side JavaScript (node.js), try the npm m
 - Remove attributes that contain JavaScript code, i.e., `onclick` and `onerror`.
 - Remove “href” attributes with JavaScript code.
 
-#### Sanitizing input 
+#### Sanitizing input
+Input sanitization is an XSS prevention method that filters and clean data inputs for app users. Sanitizing inputs get rid of any illegal value from the data.
 Properly sanitized input ensures that users can submit only trusted data. It ensures that only expected data is inputted, i.e. (only authorizing input fields to accept parenthesis, numbers, and hyphens).  Sanitizing data in an HTTP request before execution ensures data is validated, escaped, and filtered before it is outputted to the user.
 
-Another way to prevent XSS is preventing cookies from browser JS scripts. This is achieved by setting the cookie `httpOnly` value to `true` in the below code.
+#### HttpOnly: Preventing Cookies Against XSS
+Another way to prevent XSS is preventing cookies access by browser JS scripts. Theft of cookies is one of the most common XSS attacks. It is achieved by setting the cookie `httpOnly` value to `true` in the below code.
 ```js
 app.use(express.session({
     secret: "k5Zurj4",
@@ -117,6 +131,8 @@ app.use(express.session({
     }
 })
 ```
+
+Setting the cookie `httpOnly` value to `true` helps to prevent the client-side script from accessing the protected cookie. `HttpOnly` tells the browser not to expose the cookie to the script.
 
 ### Conclusion 
 Cross-site scripting is the leading security problem faced by web applications. We have learned what XSS is and how dangerous it is. Also, we have known how to prevent it in a server-side platform (Node.js).
