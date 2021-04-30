@@ -1,5 +1,5 @@
 ### WEBCAM AND IPCAM IN MATLAB
-Introduction
+### Introduction
 A WEBCAM is connected to pc and can be used to make videos available to other users. The connection is normally through the USB. IPCAM involves the combination of high-end web functionality, pc and network interface to one network-ready product
 In this tutorial, we will look at how to install the WEBCAM and IPCAM hardware package for MATLAB which is necessary to access the hardware. We will also look at how to access the laptop's inbuilt WEBCAM and external USB webcam with Matlab code to take snapshots, preview, and record a video clip.
 The android application to convert mobile phone's camera as an IPCAM and look at the MATLAB code that can be used to make the mobile phone's camera as an IPCAM
@@ -9,7 +9,18 @@ The android application to convert mobile phone's camera as an IPCAM and look at
 - Webcam and Ipcam support packages installed.
 - Webcam android application installed on your mobile phone.
 
-### Need for camera interface.
+### Table of contents
+
+- [Need for camera interface](#Need-for-camera-interface)
+- [Installation of hardware support package](#Installation-of-hardware-support-package)
+- [Matlab code for accessing laptop’s inbuilt webcam and an external USB webcam](#Matlab-code-for-accessing-laptop’s-inbuilt-webcam-and-an-external-USB-webcam)
+- [How to access external USB camera](#How-to-access-external-USB-camera)
+- [Matlab code for capturing a live video clip](#Matlab-code-for-capturing-a-live-video-clip)
+- [Making mobile phone as an IP camera](#Making-mobile-phone-as-an-IP-camera)
+- [How to access the live video stream from your IP to your Matlab](#How-to-access-the-live-video-stream-from-your-IP-to-your-Matlab)
+- [conclusion](#conclusion)
+
+### Need for camera interface
 There are several projects which require either image or videos as primary input when they are implemented. For example;
 1. Face identification and recognition.
 2. Face recognition-based security system and attendance system.
@@ -19,62 +30,66 @@ There are several projects which require either image or videos as primary input
 6. Vehicle license plate recognition and vehicle logging system.
 7. and others...
 
-### How to install the hardware support package for Matlab.
+### How to install the hardware support package for Matlab
 -Log in to your math work account at the top right corner of the Matlab window.
 ![sign in tab](/engineering-education/webcam-matlab/signin.jpg)
 
 -Click on the `adds on` drop-down arrow and select the `get hardware support package`.
 ![add_on menu](/engineering-education/webcam-matlab/adds_on.png)
+
 -The hardware support package opens up and on the search tab, type `Matlab support package for USB webcam`  and search.
 ![support package](/engineering-education/webcam-matlab/webcam.png)
+
 -After locating it, select the support package and click on the install button.
 ![install tab](/engineering-education/webcam-matlab/windows3_1.png)
-for our case the push button for install changes to manage since the package is already installed in our PC.
+
+For our case, the push button for install changes to manage since the package is already installed on our PC.
 Since we are accessing the IP camera, we need the IP support package.
--Using the same process above, we will locate the `Matlab support package for IP camera` and then install it.
+- Using the same process above, we will locate the `Matlab support package for IP camera` and then install it.
 ![support package](/engineering-education/webcam-matlab/package.jpg)
 
-### Matlab code for accessing laptop’s inbuilt webcam and an external USB webcam.
+### Matlab code for accessing laptop’s inbuilt webcam and an external USB webcam
 To see the list of all attached cameras to your laptop at the moment of use, execute the code below;
 ```Matlab
->>webcamlist
+webcamlist
 ```
 
 First, create a camera object with a webcam, so the cam1 is created by executing the command below;
 ```Matlab
->>cam1 = webcam    %integrated webcam
+cam1 = webcam    %integrated webcam
 ```
 
 We then execute the preview. This is to see the live stream of the video your camera object is capturing.
 ```Matlab 
->>preview(cam1)
+preview(cam1)
 ```
 
  You can take a snapshot and save the frame, this is done by executing the snapshot function and view the captured image using the imshow function. The captured image is stored in the variable `img1`
 ```Matlab
->>img1 = snapshot(cam1);
->>imshow(img1) 
+img1 = snapshot(cam1);
+imshow(img1) 
 ```
 ![captured image](/engineering-education/webcam-matlab/paul1.png)
+
 Clear the camera object after the live stream and the snapshot.
 ```Matlab
->>clear cam1
+clear cam1
 ```
 
-### How to access external USB camera.
+### How to access external USB camera
 The command remains the same as that of accessing the internal webcam. The difference is that you need to change the hardware name when defining the webcam. Below is how to access it
 ```Matlab
->> cam2 = webcam(‘USB2.0 PC camera’);
->> preview(cam2);
->> img2 = snapshot(cam2);
->> imshow(img2)
+cam2 = webcam(‘USB2.0 PC camera’);
+preview(cam2);
+img2 = snapshot(cam2);
+imshow(img2)
 ```
 ![snapshot from the USB webcam](/engineering-education/webcam-matlab/paul2.png)
 ```
 clear cam2
 ```
 
-### Matlab code for capturing a live video clip.
+### Matlab code for capturing a live video clip
 We first define the webcam object.
 ```Matlab
 cam = webcam(‘USB2.0 PC camera’);
@@ -120,7 +135,7 @@ close(vidWriter)
 clear cam
 ```
 
-### Making mobile phone as an IP camera.
+### Making mobile phone as an IP camera
 To make your mobile phone an IP camera, you need a third-party android application by which you can convert your mobile phone as an IP camera.
 To find the android application, go to the google play store on your mobile phone and search for IPCAM. Note that you will find many applications. You only need to choose on and install but it is recommended to use IPCAM from Pavel since it is the most popular for converting mobile phones to IPCAM.
 
@@ -128,6 +143,7 @@ To find the android application, go to the google play store on your mobile phon
 Once it is installed, follow the steps below to view the live stream video.
 - Scroll down and select the start server option.
 ![starting the server](/engineering-education/webcam-matlab/server.jpg)
+
 - once the start server is selected, the live stream video is visible on your phone.
 Note that at the lower part of the screen, you can see the IPv4 IP addresses.
 ![ip address](/engineering-education/webcam-matlab/ip_address.jpg)
@@ -136,13 +152,14 @@ The IPv4 address will be used to access the camera in our Matlab and so it shoul
 This IP address can also be opened in your PC browser and see the live streaming from the mobile IP camera. This is done by simply copying your IP address by long-pressing your screen and pasting and searching in your browser. Note that the phone and the PC must be in the wifi network.
 
 
-### How to access the live video stream from your IP to your Matlab.
+### How to access the live video stream from your IP to your Matlab
 We first create a camera object. When creating the camera object, we need the IP address of the IP camera.
 ```Matlab
->> cam3 = ipcam(‘http://192.168.1.4:8080/video);
->> %execute the preview command to get the video on your Matlab
->> preview(cam3)
+cam3 = ipcam(‘http://192.168.1.4:8080/video);
+%execute the preview command to get the video on your Matlab
+preview(cam3)
 ```
+For more information about the topic, check [here](https://www.mathworks.com/help/supportpkg/usbwebcams/ug/acquire-webcam-images-in-a-loop.html)
 
 ### Conclusion
 Matlab is better software to use for live video streaming. This is because it has support packages that make this process easier. It also easier to use since the codes are not bulky and also easy to understand. IPCAM and WEBCAM are very important. This is because they apply to every sector to improve the security status. They can also be used to capture images for further analysis and data science. 
