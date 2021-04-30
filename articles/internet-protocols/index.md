@@ -1,12 +1,12 @@
 
-# Getting started with Internet protocol versions
+### Getting started with Internet protocol versions
 
 
 Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by the use of internet protocols. The datagrams are transmitted with utmost independence from all others.
 
 There are two versions of internet protocol ie. Internet protocol version 4 and internet protocol version 6 which are used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
 
-# Table of contents
+### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [Introduction to IPv4 and IPv6](#introduction-to-IPv4-and-IPv6)
 3. [Internet protocol version 4](#internet-protocol-version-4)
@@ -16,14 +16,14 @@ There are two versions of internet protocol ie. Internet protocol version 4 and 
 7. [Why does IPv6 take preference to IPv4?](#Why-does-IPv6-take-preference-to-IPv4?)
 8. [Conclusion](#conclusion)
 
-# Prerequisites
+### Prerequisites
 To understand the content of this article, a reader should have the following:
 - A beginner's understanding of computer networking.
 
 - Basic knowledge of internet communication and data transmission.
 
 
-# Introduction to IPv4 and IPv6
+### Introduction to IPv4 and IPv6
 
 IPv4 and IPv6 are the actual protocols tasked with the responsibility of data transmission in form of packets and datagrams. 
 
@@ -32,10 +32,10 @@ during packet switching in the link-layer networks.
 
 IPv6 protocol being more newfangled has improved capabilities as compared to IPV4. It can even have infinite addresses hence is replacing IPV4 due to the daily growth in technology increase number of networks being set up frequently.
 
-# Internet protocol version 4
+### Internet protocol version 4
 
 Internet protocol version 4 just as its name suggests was the fourth version of the IP suite to be developed by the [DARPA](https://www.darpa.mil/work-with-us/technology-demonstrations#:~:text=DARPA%20is%20developing%20technologies%20to,deriving%20insights%20from%20diverse%20datasets.&text=The%20electromagnetic%20spectrum%20functions%20as,and%20voice%20of%20modern%20society.) and released for use in 1982. It is a major protocol of the standard networking protocols on the internet and all the other packet switching networks. 
-### IP Header
+#### IP Header
 
 ![IPv4 Communication Protocol](Screenshot_20210428-104617.png)
 
@@ -51,7 +51,7 @@ points as shown below:
                172.16.254.1
 
                169.254.255.255 
-## IPv4 addressing
+### IPv4 addressing
 
 Three different types of addressing modes supported in IPv4, namely; 
 - Unicast addressing mode
@@ -59,10 +59,10 @@ Three different types of addressing modes supported in IPv4, namely;
 - MUlticast addressing mode
                            
 
-# Internet protocol version 6
+### Internet protocol version 6
 
 Internet protocol version 6 is the newest version of the internet protocol suite as of now developed to replace the fourth version ie the IPv4. It was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 has exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case, IPv4 has continued to live on.
-### IP Header
+#### IP Header
 
 ![IPv6 Communication protocol](Screenshot_20210428-105316.png)
 
@@ -78,7 +78,8 @@ There are 3 methods of transition from IPv4 to IPv6, as stated below:
 1. Dual stacking- This involves having both the IPv4 and IPv6 on the same device.
 2. Tunneling- Involves communication of users with IPv6 to users with IPv4 to reach IPv6.
 3. Network Addressing Translation- Involves communication of hosts with different IP versions. 
-## Similarities between IPv4 and IPv6
+
+### Similarities between IPv4 and IPv6
 
 
 IPv4 and IPv6 despite being different and cannot communicate, do have certain qualities that bind them the qualities are as discussed below;
@@ -87,14 +88,16 @@ IPv4 and IPv6 despite being different and cannot communicate, do have certain qu
 2. Both of the IP versions are connectionless protocols that packet switch.
 3. They both have the packet header section
 4. Both IPv4 and IPv6 allow for the manual assignment of IP addresses.
-## Differences between IPv4 and IPv6
+
+### Differences between IPv4 and IPv6
 
 1. IPv6 has a packet flow identification in the header while IPv4 offers no packet flow information
 2. IPv6 uses 128-bit hexadecimal ie. base 16 IP addresses while IPv4 uses 32-bit  IP addresses written in a decimal number system which is a base 10.
 3. IPv4 supports dynamic host configuration protocol setup while IPv6 supports renumbering address setup.
 4. IPv4 has not connection integrity whereas IPv6 has end-to-end connection integrity.
 5. IPv4 uses the decimal representation of addresses while IPv6 uses hexadecimal representation.
-## Why does IPv6 take preference to IPv4?
+
+### Why does IPv6 take preference to IPv4?
 
 Other than having larger addressing space, IPv6 has other beneficial features ad discussed below;
 - It allows for the address allocated to be done in a hierarchy enhancing supernetting.
@@ -102,9 +105,9 @@ Other than having larger addressing space, IPv6 has other beneficial features ad
 - IPv6 ensures the portability and security of its host devices.
 
 
- # Conclusion
+ ### Conclusion
 
  The rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. This together with the frequent advancement in technology in almost every sector in the community is leading to the development of more networks hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.
 
 
-## Blissful reading!
+### Blissful reading!
