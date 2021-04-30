@@ -1,40 +1,53 @@
-### Integrating B2C M-Pesa API using Node.js
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/
+title: How to Integrate B2C M-Pesa API using Node.js
+description: This article shows how to integrate the B2C M-Pesa API in Node.js.The M-Pesa API allows merchants to send money to consumers. 
+author: 
+date: 2021-05-20T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/hero.jpg
+    alt: integrating-b2c-mpesa-api-using-node-js
+---
 M-Pesa can be described as a phone-based mobile banking service. Since its inauguration in 2007 by Vodafone Group PLC and Safaricom in Kenya, it has expanded to eight more countries in Africa.
-
+<!--more-->
 An API (Application Programming Interface) is an intermediary between two software applications that enables them to communicate.
 
-B2C (Business to Consumer) M-Pesa API enables software developers to integrate the functionality of merchants sending payments to their customers in their applications.
+B2C (Business to Consumer) M-Pesa API enables software developers or merchants to send payments to their customers. You can read more about the M-Pesa API from [here](https://www.safaricom.co.ke/business/corporate/m-pesa-payment-services/m-pesa-api).
 
 ### Goals
 
-In this article, we will integrate the B2C M-Pesa API to a Node.js RESTful API. We will consume the API using [swagger](https://swagger.io/).
+In this article, we will integrate the B2C M-Pesa API in a Node.js RESTful API. We will consume the API using [swagger](https://swagger.io/).
 
 ### Prerequisites
 
 To follow along in this article, it is helpful to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
-- Some basic knowledge working with JavaScript.
+- Some basic knowledge on JavaScript.
 - A text editor installed. Preferrably [vs-code](https://code.visualstudio.com/)
 
 ### Overview
 
 - [Setting up the development server](#setting-up-the-development-server)
 - [Getting an access token](#getting-an-access-token)
-- [B2c API](#b2c-api)
+- [B2C API](#b2c-api)
 
 ### Setting up the development server
 
 This article assumes that you have a Safaricom developer account.
 
-If you don't, go through these [steps](/engineering-education/lipa-na-mpesa-online/#creating-a-safaricom-developer-account).
+If you don't, go through these [steps](/engineering-education/lipa-na-mpesa-online/#creating-a-safaricom-developer-account) to create one.
 
-Also, ensure that you have created at least one application from your developer portal. If you don't have any, follow this [guidelines](/engineering-education/lipa-na-mpesa-online/#creating-an-app).
+Also, ensure that you have created at least one application from your developer portal. If you haven't, follow these [guidelines](/engineering-education/lipa-na-mpesa-online/#creating-an-app).
 
-To get started, we will clone the project skeleton from [here](https://github.com/Roba-W/nodejs-b2c-mpesa-api-starterkit). With all the basic configuration done on the skeleton, our focus throughout the article will be implementing the core functionalities.
+To get started, we will clone the starter project from [here](https://github.com/Roba-W/nodejs-b2c-mpesa-api-starterkit). With all the basic configurations done on the skeleton, our focus throughout the article will be on implementing the core functionalities.
 
-To start with, we need to install the following dependencies:
+We first need to install the following dependencies:
 
 - [axios](https://www.npmjs.com/package/axios): For handling the requests to the M-Pesa API.
 - [dotenv](https://www.npmjs.com/package/dotenv): For loading the environmental variables.
@@ -42,7 +55,7 @@ To start with, we need to install the following dependencies:
 - [ngrok](https://www.npmjs.com/package/ngrok): For exposing our localhost server.
 - [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express): For serving the API docs to the user interface.
 
-To do that, open your cloned project skeleton in your text editor. Open the terminal of your text editor and run the following command:
+To do that, open the starter project in your text editor. Next, launch the terminal in your text editor and run the following command:
 
 ```bash
 npm install
@@ -54,9 +67,9 @@ We will be working from the `src/controllers/Mpesa.js` file.
 
 ### Getting an access token
 
-For any request to the M-Pesa API, an access token is a requirement. It forms the basis for authentication.
+All requests to the M-Pesa API must have an access token. It forms the basis for authentication.
 
-To implement the functionality, we will edit the `getAccessToken()` method as follows:
+To implement this functionality, we will edit the `getAccessToken()` method as follows:
 
 ```js
 //get access token.
@@ -107,10 +120,10 @@ async getAccessToken(req,res,next){
 };
 ```
 
-From above, we are:
+In the above code snippet, we are:
 
 - Destructuring the `consumerkey` and `consumersecret` from the `headers`.
-- Setting the URL to send the request to.
+- Setting the `URL` to send the request.
 - Generating a `base64` encoded string from a buffer.
 - Composing the authentication string by appending `Basic` before the encoded string.
 - Sending the request to M-Pesa API from a `try/catch` block. In case of an error, the error is sent to the client. Else if there is no error, the access token is sent to the client.
@@ -123,20 +136,21 @@ To test it:
 npm run dev
 ```
 
-- In your browser, open `http://localhost:4000/api-docs`.
+- In your browser, navigate to `http://localhost:4000/api-docs`.
 - Click the `/access-token` section under `Mpesa B2C` tag.
 - Click the `Try it out` button.
-- To get your `consumer key` and `consumer secret`, visit your [applications page](https://developer.safaricom.co.ke/user/me/apps), select your application, from the keys section copy and paste them respectively into the section's parameters.
+- To get your `consumer key` and `consumer secret`, visit your [applications page](https://developer.safaricom.co.ke/user/me/apps), select your application, from the `keys` section, then copy and paste them respectively into the section's parameters.
 - Click the `Execute` button.
-- In case of an error, revisit the steps. Else your server response should resemble the following:
+- In case of an error, revisit the steps. Else, your server response should resemble the following:
 
 ![access_token_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/access-token-response-screenshot.png)
 
 _A screenshot of getting access token server response_
 
-### B2c API
+### B2C API
 
-With the access token functionality implemented, we are set to implement the B2C API.
+We can use the access token to access the B2C API.
+
 To do that, we need to modify the `b2c()` method as follows:
 
 ```js
@@ -194,100 +208,73 @@ return res.send({
 };
 ```
 
-From above, we are:
+In the above code snippet, we are:
 
-- Destructuring all the data sent from the `headers`.
+- Destructuring the data sent from the `headers`.
 - Setting the URL to send the request to.
-- Setting the ngrok URL. To get it, ensure that you have [ngrok](https://ngrok.com/) installed. With ngrok installed, open another tab in the terminal of your text editor and run the following command:
-
-```bash
-npm run ngrok
-```
-
-Copy the HTTPS URL logged in your terminal and paste it appropriately in the `.env` file on the root of your project folder.
+- Setting the `ngrok URL`. To get it, ensure that you have [ngrok](https://ngrok.com/) installed. With ngrok installed, open another tab in the terminal of your text editor and run the `npm run ngrok` command. Then, copy the `HTTPS URL` logged in your terminal and paste it appropriately in the `.env` file on the root of your project folder.
 
 - Setting the authentication token by appending `Bearer` before the access token.
 - Sending the request from a `try/catch` block. In case of an error, we are getting the status code and the error message and sending them to the client. If no error, we are setting the status code to `200` and sending the response from the request to the client.
 
 To test it:
 
-- First, we need to implement the `timeout` URL and the `result` URL. To do that we will edit the `timeout()` and `cb()` methods as follows:
+- We first need to implement the `timeout` URL and the `result` URL. To do that we will edit the `timeout()` and `cb()` methods as follows:
 
 ```js
 //time-out.
 async timeOut(req,res,next){
-
     console.log("--- request timeout ----");
-
     console.dir(req.body);
-
     console.log("--- end of request timeout ---");
-
 };
 
 //callback.
 async cb(req,res,next){
-
     console.log("--- callback request ----");
-
     let response = req.body.Result;
 
     if(response.ResultParameters) {
-
         response.ResultParameters = response.ResultParameters.ResultParameter;
-
     }
 
     if(response.ReferenceData) {
-
         response.ReferenceData = response.ReferenceData.ReferenceItem;
-
     };
 
     console.log(response)
-
     console.log("--- end of callback request ---");
-
 };
 ```
 
-- Ensure that your development server is running from the terminal of your text editor.
-- In your browser, in the previous opened `http://localhost:4000/api-docs` page, proceed to the `/b2c` section.
+- Ensure that your development server is running.
+- In your browser, navigate to `http://localhost:4000/api-docs` page, and then proceed to the `/b2c` section.
 - Click the `Try it out` button.
 - Fill in the parameters as follows:
   - For `AccessToken`, Repeat the previous process and copy and paste the access token generated.
   - For `InitiatorName`, copy and paste the `Initiator Name` from your [test credentials page](https://developer.safaricom.co.ke/test_credentials).
-  - For `SecurityCredential`, copy the `Security Credential` from the [test credentials page](https://developer.safaricom.co.ke/test_credentials) paste it in the `Initiator Security Password` input below and click `Generate Credentials`. Copy and paste the long generated text.
+  - For `SecurityCredential`, copy the `Security Credential` from the [test credentials page](https://developer.safaricom.co.ke/test_credentials) and paste it in the `Initiator Security Password` input below and click `Generate Credentials`. Copy and paste the long generated text.
   - For `CommandID`, select any from the dropdown.
   - For `Amount`, enter any amount.
   - For `PartyA`, copy and paste the `Shortcode 1` from [test credentials page](https://developer.safaricom.co.ke/test_credentials).
   - For `PartyB`, copy and paste the `Test MSISDN` from [test credentials page](https://developer.safaricom.co.ke/test_credentials).
   - For `Remarks`, enter any text. Keep it short.
 - Click the `Execute` button.
-- In case of any error, revisit the steps. Else, the following should resemble your server response.
+- In case of any error, revisit the above steps. Else, the following output should resemble your server response.
 
 ![b2c_server_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-server-response-screenshot.png)
 
 _A screenshot of b2c server response_
 
-and information logged on your console should mimic the following:
+The information logged on your console should mimic the following:
 
 ![b2c_console_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-console-response-screenshot.png)
 
 _A screenshot of b2c console response_
 
-### Summary
-
-In this article, we have implemented the following functionalities from M-Pesa API:
-
-- [Getting an access token](#getting-an-access-token)
-- [B2c API](#b2c-api)
-
-The finalized code can be accessed from [here](https://github.com/Roba-W/restful-nodejs-b2c-mpesa-api). Feel free to give the project a star.
-
 ### Conclusion
 
-In such a competitive business environment of today, different business processes need to be automated to mitigate costs. The M-Pesa B2C API has come to the rescue by offering an infrastructure to automate payments from merchants to customers.
+In today's competitive business environment, business processes should be automated to lower costs. The M-Pesa B2C API has come to the rescue by offering an infrastructure to automate payments from merchants to customers.
 
 To expand your knowledge on the covered topics, check out the following resources:
 
@@ -298,3 +285,6 @@ To expand your knowledge on the covered topics, check out the following resource
 You can always reach out to the Safaricom development team via [mail](mailto:apisupport@safaricom.co.ke).
 
 Happy coding!!
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
