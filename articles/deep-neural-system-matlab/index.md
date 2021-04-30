@@ -17,8 +17,9 @@ images:
 
 ### Creating deep neural network in MATLAB.
 ### Introduction.
-A neural network is one of the classes of deep learning and subclass of machine learning. The algorithms are encouraged by the architecture of the human brain. The system grips data uses the algorithm to identify the trend in the data, and then predicts the result of a new similar dataset.
+A neural network is a subclass of machine learning. The algorithms are a result of inspiration from the architecture of the human brain. The system grips data then use the algorithm to identify the trend in the data and predicts the result of a new similar dataset.
 MATLAB provides a deep learning toolbox for implementing the deep neural network. MATLAB includes the digit dataset so you don't need to download it from an external source.
+
 In this article, we will look at how to prepare your digit dataset, the structure of a convolution neural network. We will also look at the Matlab code for training and validation and code for discrete testing.
 
 ### Prerequisite.
@@ -31,20 +32,31 @@ In this tutorial, we take the problem of digit recognition.
 Matlab itself includes the digit dataset. The digit dataset consists of 10,000 grayscale images of handwritten digits and each digit has 1000 images of the respective folders. The images are of size 28 by 28 pixels and they have associated labels.
 
 ### How to locate the image dataset.
-- Open the directory where Matlab is installed.
+- Open the Matlab installation directory.
 ![this is how the window appear](/engineering-education/deep-neural-systems/matlab/dataset1.jpg)
 - Select the toolbox folder.
-![](/engineering-education/deep-neural-systems/matlab/dataset2.jpg)
+
+![toolbox](/engineering-education/deep-neural-systems/matlab/dataset2.jpg)
+
 - Click the nnet and then choose the nndemos folder
-![](/engineering-education/deep-neural-systems/matlab/dataset3.jpg)
-![](/engineering-education/deep-neural-systems/matlab/dataset4.jpg)
+
+![nndemos](/engineering-education/deep-neural-systems/matlab/dataset3.jpg)
+
+![databases](/engineering-education/deep-neural-systems/matlab/dataset4.jpg)
+
 - Select the mdataset folder.
-![](/engineering-education/deep-neural-systems/matlab/dataset5.jpg)
+
+![mdataset](/engineering-education/deep-neural-systems/matlab/dataset5.jpg)
+
 - Select the digit database folder.
-![](/engineering-education/deep-neural-systems/matlab/dataset6.jpg)
-When we open this folder, we have ten folders that contain 1000 images of each number. 
+
+![datase](/engineering-education/deep-neural-systems/matlab/dataset6.jpg)
+
+When we open this folder, we get ten folders that contain 1000 images of each number. 
 ![this how the digit database appears](/engineering-education/deep-neural-systems/matlab/dataset7.png)
+
 When you open a folder of any number you will be able to see the 1000 images. Below is sample images in folder 1.
+
 ![images in folder 1](/engineering-education/deep-neural-systems/matlab/dataset8.png)
 
 > Note that after locating the dataset folder, you can duplicate it to your preferred folder.
@@ -81,7 +93,7 @@ In this example we will have a 3X3 pixel for filter size and they will be 8 filt
 Its default value is one but it varies according to your precision. In padding, you also require to cover the first column or first group. Adding ‘same’ means after doing the padding, the resulting image, and the input image should be of equal size.
 
 #### Batch normalization layer.
-It normalizes the activation and gradients. This easen the optimization problem, quickens the training of the network, and minimizes the sensitivity to initializing the network.
+It normalizes the activation and gradients. This eases the optimization problem, quickens the training of the network, and minimizes the sensitivity to initializing the network.
 ```Matlab
 batchNormalizationLayer(‘name’,’BN_1’)  
 ```
