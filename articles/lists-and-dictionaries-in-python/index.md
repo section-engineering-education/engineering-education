@@ -128,8 +128,6 @@ The `reverse()` method is used to **reverse** the order of the list. For instanc
 ```python
 cars = ['Volvo', 'Subaru', 'Skyline', 'Ford']
 
-cars.sort()    # arranges the list alphabetically
-print(cars)    # ['Ford', 'Skyline', 'Subaru', 'Volvo']
 cars.reverse() 
 print(cars)    # ['Volvo', 'Subaru', 'Skyline', 'Ford']
 ```
@@ -137,7 +135,7 @@ print(cars)    # ['Volvo', 'Subaru', 'Skyline', 'Ford']
 > **NOTE**: `reverse()` doesn’t sort alphabetically backward. It just reverses the order of the list.
 
 ### Slicing a list
-To derive a segment, specify the index of the first and last elements to cut. 
+To derive a segment, specify the index of the first element and where to stop slicing. 
 
 In Python, we use a colon(:) as a slicing operator. Slicing takes the following syntax.
 
@@ -170,15 +168,15 @@ To perform an action to each element in a list, we can use the `for` loop.
 For instance, let’s assume we have a list of cars and we want to pull out each name in the cars list.
 
 ```python
-cars = ['Volvo', 'Subaru', 'Skyline', 'Ford', 'Isuzu']  #define the list
+cars = ['Volvo', 'Subaru', 'Skyline', 'Ford', 'Isuzu']  # initiate the list
 
-for car in cars:   #define the for loop
+for car in cars:   # define the for loop
     print(car) 
-#Volvo
-#Subaru
-#Skyline
-#Ford
-#Isuzu
+# Volvo
+# Subaru
+# Skyline
+# Ford
+# Isuzu
 ```
 
 The second line in the above code: `for car in cars`, tells Python to pull a car from the cars list and save it in the variable `car`. The third line: `print (car)`, prints the name that was stored in the variable `car`. The second and the third line are re-executed for each item.
@@ -201,6 +199,8 @@ stock_1={
     'type':'Volvo',
     'color':'Black'
 }
+
+print(stock_1) # {'type': 'Volvo', 'color': 'Black'}
 ```
 
 ### Accessing values in a dictionaries
@@ -212,7 +212,7 @@ stock_1={
     'color':'Black'
 }
 
-print(stock_1['type'])  #Volvo
+print(stock_1['type'])  # Volvo
 ```
 
 ### Adding items to a dictionary
@@ -224,9 +224,9 @@ stock_1={
     'color':'Black'
 }
 
-print(stock_1)        #outputs the initial dictionary
-stock_1['year']=2014  #Adding a new key:value
-print(stock_1)        #returns the modified dictionary
+print(stock_1)        # outputs the initial dictionary
+stock_1['year']=2014  # Adding a new key:value
+print(stock_1)        # returns the modified dictionary
 ```
 
 ### Changing values in a dictionary
@@ -271,12 +271,12 @@ cars={
     'Subaru':'2019WRX'
 }
 
-for name, model in cars.items():   #method item() returns a list of key value pairs
+for name, model in cars.items():   # method `item()` returns a list of key value pairs
     print(name, ":", model)
 
-#Volvo : V90
-#Skyline : R32
-#Subaru : 2019WRX
+# Volvo : V90
+# Skyline : R32
+# Subaru : 2019WRX
 ```
 
 In the above example, the `for` loop stores the key in the variable `name` and its value in the variable `model`.
