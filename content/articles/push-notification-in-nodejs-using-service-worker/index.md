@@ -1,3 +1,23 @@
+### Table of contents
+- [Introduction](#introduction)
+- [Goal](#goal)
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Creating the node application](#creating-the-nodejs-application)
+  - [Init the application](#init-the-application)
+  - [Install the dependencies](#install-dependencies)
+- [Building the server-side](#building-the-server-side)
+  - [Import the dependencies](#import-the-dependencies)
+  - [Generate VAPID Keys](#generate-vapid-keys)
+  - [Setting the VAPID Keys with web push](#setting-the-vapid-keys-with-web-push)
+  - [Creating the subscribe route](#creating-the-subscribe-route)
+- [Coding the client-side](#coding-the-client-side)
+  - [Setting the static path](#setting-the-static-path)
+  - [Creating the required files](#creating-the-required-files)
+  - [Creating the subscribe route](#creating-the-subscribe-route)
+- [Running the server](#running-the-server)
+- [Conclusion & Further Reading](#conclusion-and-further-reading)
+
 ### Introduction
 A push notification is a message that pops on the screen when a mobile or a web application is performing another activity. In modern web applications, push notifications have a wider place. Push notifications engage the users and draw their attention to a new activity occurring in the web application even when they are not using the application.
 
@@ -10,21 +30,13 @@ The benefits of push notifications include:
 ### Goal
 In this article, I will explain a step-by-step implementation of push notifications using service workers in a Nodejs application.
 
-### Table of contents
-- Introduction
-- Prerequisites
-- Creating the node application
-- Building the server-side
-- Coding the client-side
-- Conclusion & Further Reading
-
 ### Prerequisites
-- You will need to have Nodejs installed in your computer
+- You will need to have Nodejs installed in your computer. Installation procedure can be found [here.](https://nodejs.org/en/)
 - A basic understanding of Nodejs
-- Code editor. I will use visual studio code
+- Code editor. I will use visual studio code. You can dowload it [here.](https://code.visualstudio.com/download)
 
 ### Creating the Nodejs Application
-#### Init application
+#### Init the application
 Set up the Node.js application by running the following command:
 
 ```bash
@@ -224,7 +236,7 @@ self.addEventListener("push", e => {
     );
 });
 ```
-### Run the server
+### Running the server
 To test out the application, add the block of code below in the `index.js` file. the run the command `npm start` in your terminal.
 ```js
 const port = 3000;
@@ -235,7 +247,7 @@ app.listen(port, ()=>{
 Now the application will send the push notification every time you refresh the browser as shown below:
 ![The push notification of the application](/engineering-education/push-notifications-in-nodejs-using-service-workers/notification.png)
 
-### Conclusion  and further reading
+### Conclusion and further reading
 In this article, we learned how to use service workers to implement push notifications in a web application. You can find the complete code of the implementation [here](https://github.com/mercymeave/code-space/tree/main/push-notifications). To find more about the topic, you can check the resources in the following links:
 
 - Service worker: https://developers.google.com/web/fundamentals/primers/service-workers
