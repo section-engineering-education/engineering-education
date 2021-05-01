@@ -1,5 +1,5 @@
-JavaScript is a programming language that lets you create complex web page features. JavaScript was designed to "bring web pages to life."
-Scripts are the name for the programs written in this language. They can be written directly in the HTML of a web page and run as the page loads. They are also delivered in plain text format and executed as such. They don't need any special set up or compilation to run.
+JavaScript is a programming language for creating basic and advanced web page features. With JavaScript, you can make a website interactive.
+JavaScript can be directly written into a web page's HTML and run as the page loads. They are often delivered and executed in plain text format. There is no need for and robust or any special configuration for scripts to run.
 <!--more-->
 Therefore, building a background generator with JavaScript is quite simple.
 
@@ -16,23 +16,23 @@ Therefore, building a background generator with JavaScript is quite simple.
 
 ### Introduction to JavaScript
 
-JavaScript is a programming language that lets you create complex applications. It can also be used to create web games with dynamic styling, animation, and other features such as when buttons are pressed or data is entered on forms.
+JavaScript is a programming language that enables you to create large applications. It can likewise be utilized to make web games with dynamic styling, movement, and different highlights including recognizing when catches are squeezed or information is gone into structures.
 
-JavaScript is a powerful scripting language. On top of the core JavaScript language, developers have written numerous tools that unlock a vast amount of functionality with minimal effort.
+JavaScript is a prearranging language with a ton of solidarity. Developers have composed various tools utilizing JavaScript on top of the core engine which opens a tremendous measure of usefulness with negligible exertion.
 
 Some of these tools include:
 
-- Third-party frameworks and libraries that can be used with HTML to speed up the development of applications.
-- Third-party APIs allow developers to integrate features from other content providers such as Twitter or Facebook, into their websites.
-- Browser Application Programming Interfaces (APIs) are functions built into web browsers that allow you to access different features.
+- Libraries and frameworks made by third parties can be utilized with HTML to accelerate the formation of uses.
+- Developers may use third-party APIs to incorporate functionality from other websites, such as Twitter or Facebook, into their own.
+- APIs (Application Programming Interfaces) are capacities incorporated into internet browsers that permit you to get access to different features.
   
-JavaScript was designed to "bring web pages to life." Scripts are the name for the programs written in this language. They can be written directly in the HTML of a web page and run as the page loads. They are also delivered in plain text format and executed as such. They don't need any special set up or compilation to run.
+With JavaScript, you can make a website interactive. The programs written in this language are referred to as scripts. They can be written into the HTML of a web page which executes as the page loads. There is no need for and robust or any special configuration for scripts to run.
 <!--more-->
 Therefore, building a background generator with JavaScript is quite simple.
 
 ### What Are Gradients
 
-The gradual transition from one color to another is known as a gradient. It gives anyone the ability to almost invent a new color. It adds a new dimension to the design and realism to the product, which makes it stand out. Gradients, to put it simply, add dimension.
+A gradient is a reformist change starting from one color to another. It gives anyone the ability to almost invent a new color. It adds a new dimension to the design and realism to the product, which makes it stand out. Gradients, to put it simply, add dimension.
 
 The gradient pattern can be used in a variety of ways. It can be a focal point of a design or a background feature, and it can be bold or subtle. Gradients can also create new color combinations that feel different and modern by mixing and blending different shades of color, giving designs a completely unique feel.
 
@@ -40,22 +40,22 @@ Gradients can be used for creating logos, packaging, web design, apps, and Print
 
 ### Benefits of Gradients
 
-1. Gradients increase the number of colors available by creating more color tones.
+1. By creating more color tones, gradients increase the number of colors available.
 
 2. Gradients are memorable because they are lively and playful, and they create images that we aren't used to seeing.
 
 3. These stunningly vivid color transitions have a lot of energy, which makes them stand out and helps to elevate any style.
 
-4. Gradients in CSS allow you to create smooth transitions between two or more colors.
+4. CSS gradients permit you to make consistent changes between at least two tones.
 
 ### Types of Gradients
 
-- Linear Gradients (goes down/up/left/right/diagonally).
-- Radial Gradients (defined by their center).
+- The Linear Gradients (Which goes down/up/left/right/diagonally direction).
+- The Radial Gradients (which is defined by their center).
 
-#### Linear Gradients (goes down/up/left/right/diagonally)
+#### Linear Gradients (moves down/up/left/right/diagonally)
 
-You'll need at least two color stops to make a linear gradient. The colors you want to make seamless transitions between are known as color stops. Along with the gradient effect, you can also set a starting point and a direction (or an angle).
+You'll require at any rate two shading stops to make a linear gradient. Shading stops are the tones between which you need to deliver smooth advances. You may likewise determine a beginning stage and a heading notwithstanding the inclination impact (or a point).
 
 **Syntax**
 `background-image: linear-gradient(direction, color-stop1, color-stop2, ...);`
@@ -65,38 +65,38 @@ Example
   background-image: linear-gradient(red, yellow);
 }`
 
-**Direction - Top to Bottom (this is the default)**
-A linear gradient that begins at the top is shown in the example below. It begins red and progresses to yellow:
+**Direction (default)**
+The example below shows a linear gradient that starts at the top. It starts out red and gradually turns yellow:
 
 ![top](/engineering-education/how-to-build-a-background-generator-with-javaScript/linear-example.png)
 
-**Direction - Left to Right**
+**Direction - From Left to Right**
 
 Example
 `#grad {
-  background-image: linear-gradient(to right, red , yellow);
+  background-image: linear-gradient (to right, red , yellow);
 }`
 
-The example below shows a linear gradient that begins on the left. It begins red and progresses to yellow:
+A linear gradient that starts on the left is shown in the illustration below. It starts out red and gradually turns yellow:
 
 ![left](/engineering-education/how-to-build-a-background-generator-with-javaScript/linear-example-2.png)
 
 **Direction - Diagonal**
 
-By defining both the horizontal and vertical starting positions, you can create a diagonal gradient.
+You may make a diagonal gradient by determining both the level and vertical beginning positions.
 
 Example
 `#grad {
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-image: linear-gradient (to the bottom right, red, yellow);
 }`
 
-A linear gradient that begins at the top left is shown in the illustration below (and goes to the bottom right). It begins red and progresses to yellow:
+The outline beneath portrays a direct slope that begins at the upper left (and goes to the base right). It begins red and progressively becomes yellow:
 
 ![diagonal](/engineering-education/how-to-build-a-background-generator-with-javaScript/linear-example-3.png)
 
 **Using Angles**
 
-You can specify an angle instead of the predefined directions if you want more control over the gradient's direction (to bottom, to top, to right, to left, to bottom right, etc.). "To the top" is equal to a value of 0deg. A value of 90 degrees equals "to the right." 180 degrees is the same as "to the floor."
+You can determine a point rather than the predefined bearings in the event that you need more authority over the slope's course (to base, to top, to right, to left, to base right, and so on). "To the top" is equal to a value of 0deg. A value of 90 degrees equals "to the right." 180 degrees is the same as "to the floor."
 
 Example
 
@@ -104,40 +104,41 @@ Example
   background-image: linear-gradient(180deg, red, yellow);
 }`
 
-The following example shows how to use angles on linear gradients:
+The example below demonstrates how to use angles on linear gradients:
 
 ![angles](/engineering-education/how-to-build-a-background-generator-with-javaScript/linear-example-4.png)
 
 #### Radial Gradients
 
 The center of a radial gradient defines it.
-A radial gradient requires at least two color stops to be formed.
+At any rate, two shading stops are expected to make a radial gradient.
 
 **Syntax**
 
 `background-image: radial-gradient(shape size at position, start-color, ..., last-color);
 `
 
-By default, the shape is an ellipse, the size is farthest-corner, and the position is center.
+The form is an ellipse by design, with the scale set to the farthest corner and the location set to the middle.
 
-**Radial Gradient - Evenly Spaced Color Stops (this is the default)**
+**Radial Gradient - The Evenly Spaced Color Stops (default)**
 
 Example
 `#grad {
   background-image: radial-gradient(red, yellow, green);
 }`
 
-The following example shows a radial gradient with evenly spaced color stops:
+A radial gradient with equally spaced color stops is shown in the illustration below:
 
 ![radial](/engineering-education/how-to-build-a-background-generator-with-javaScript/radial-example.png)
 
-**Radial Gradient - Differently Spaced Color Stops**
+**Radial Gradient - The Differently Spaced Color Stops**
 
 Example
 `#grad {
   background-image: radial-gradient(red 5%, yellow 15%, green 60%);
 }`
-The following example shows a radial gradient with differently spaced color stops:
+
+An outspread inclination of distinctively dispersed shading stops appears in the outline underneath:
 
 ![radial spaced](/engineering-education/how-to-build-a-background-generator-with-javaScript/radial-example-2.png)
 
@@ -151,7 +152,7 @@ Example
   background-image: radial-gradient(circle, red, yellow, green);
 }`
 
-The following example shows a radial gradient with the shape of a circle:
+A radial gradient in the form of a circle is shown in the illustration below:
 
 ![radial set shape](/engineering-education/how-to-build-a-background-generator-with-javaScript/radial-example-3.png)
 
@@ -159,15 +160,15 @@ The following example shows a radial gradient with the shape of a circle:
 
 Now, let's see how to integrate javascript on a web page.
 
-1. Open visual studio code, navigate to any Directory of your choice on your pc, in the terminal, type:
+1. Open the code in Visual Studio. navigate to any directory on your computer, then type in the following commands in the terminal:
 
 ```Bash
 code.
 ```
 
-> Note: `code .` won't work if you don't have visual studio code installed on your system
+> Note: if you don't have Visual Studio Code installed on your device, `code.` won't work.
 
-2. Create index.html, style.css, and script.js, by typing the following command:
+2. Type the following command to create index.html, style.css, and script.js:
 
 - Windows power shell
 
@@ -181,7 +182,7 @@ code.
   touch index.html,style.css,script.js
   ```
 
-3. Inside the index.html we need to setup a basic html page with the following snippet:
+3. Inside the index.html With the following fragment, we need to build a simple html page:
 
 ```html
 <!DOCTYPE html>
@@ -227,7 +228,7 @@ We added the h4 tag to show the currently selected gradient, which you will see 
 ```html
 <input class="color1" type="color" name="color1" value="#00ff00">
 <input class="color2" type="color" name="color2" value="#ff0000">
-<h2>The Current CSS Background ..</h2>
+<h2>The CSS History Currently...</h2>
 <h4></h4>
 ```
 
@@ -397,12 +398,12 @@ You can choose or tone any color to achieve your desired color and create incred
 
 ### Conclusion
 
-You learned about JavaScript, what Gradients are, the benefits of Gradients, and how to build a background generator with JavaScript on the web in this post.
-Some Gradients types were also highlighted, as well as how to use them on the web.
+In this article, you learned about JavaScript, what Gradients are, the advantages of Gradients, and how to build a web-based context generator using JavaScript.
+Some different forms of gradients were also discussed, as well as how to use them on the web.
 
 Happy coding!
 
 ### Resources
 
-- [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [Developer Mozilla Site](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 - [Gradients by W3schools](https://www.w3schools.com/css/css3_gradients.asp)
