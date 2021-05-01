@@ -5,8 +5,8 @@ Data preprocessing is the initial phase of machine learning where data is prepar
 In this article, we shall learn all steps involve in the data preprocessing stage. 
 
 ### Prerequisites
-1. RStudio install on your computer.
-2. install. packages('caTools')
+1. [RStudio](https://www.rstudio.com/products/rstudio/download/) install on your computer.
+2. install packages('caTools')
 
 ### Steps in Data Preprocessing
 #### Step 1: Importing the Dataset.
@@ -109,7 +109,7 @@ To begin with, we first load the required library.
 
 ```r
 
-library (caTools)# required library for data splition
+library(caTools)# required library for data splition
 set.seed(123)
 split = sample.split(Dataset$Purchased, SplitRatio = 0.8)# returns true if observation goes to the Training set and false if observation goes to the test set.
 
