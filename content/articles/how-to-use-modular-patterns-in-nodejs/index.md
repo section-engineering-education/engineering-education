@@ -24,7 +24,7 @@ This might pollute the global namespace when executing this JavaScript code in t
 
 Node.js does not implement the global namespace. In node.js, Module systems are implemented natively, based on the common JavaScript specifications.
 
-This way, you implement a local namespace within every module. It contains variables and properties that are private to a module until explicitly exposed/exported to other modules.
+This way, you implement a local namespace within every module. It contains variables, and properties that are private to a module until explicitly exposed/exported to other modules.
 
 This breaks down the application complexity into manageable units and separating concerns.
 
@@ -38,8 +38,8 @@ In Node.js, the concept of Modular patterns has additional features that go beyo
 The Node.js modular functionality can be used to import functions, classes, objects, external files, core Node.js modules, and NPM modules.
 
 A node.js can be stateless or stateful:
-- Stateless expose stateless entities such as classes objects and methods.
-- Stateful exposes a stateful instance of an object such as a database connection, and instance of a third party API service.
+- Stateless expose stateless entities such as class, objects, and methods.
+- Stateful exposes a stateful instance of an object such as a database connection, and an instance of third-party API service.
 
 This tutorial will focus on creating modules, exporting and importing them to different files using Node.js.
 
