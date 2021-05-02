@@ -245,7 +245,9 @@ The images below show the results for each request sent via postman:
 *Validate route*
 
 ### Conclusion
-We set up a node application and coded a backend for two-factor authetication using speakeasy. We also learned how to use the authenticator extension in chrome for generation tokens. Lastly, we used postman to simulate sending requests from the front end of an application. Check the links in the section below for more about the topic. You can find the code for implementation [here.](https://replit.com/@miaroberts1/nodejs-2FA-using-speakeasy) You will, however, have to download the source code and install postman for testing.
+We set up a node application and coded a backend for two-factor authetication using speakeasy. We also learned how to use the authenticator extension in chrome for generation tokens. Lastly, we used postman to simulate sending requests from the front end of an application.
+
+Check the links in the section below for more about the topic. You can find the code for implementation [here](https://replit.com/@miaroberts1/nodejs-2FA-using-speakeasy). You will, however, have to download the source code and install postman for testing.
 
 ### Further Reading
 - https://github.com/speakeasyjs/speakeasy
