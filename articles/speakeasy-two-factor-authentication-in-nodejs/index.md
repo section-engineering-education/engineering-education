@@ -100,7 +100,11 @@ const db = new JsonDB(new Config("DataBase", true, false, '/'));
 
 
 ### Sending requests using postman
-Since our application does not have a frontend, we will use postman for sending the requests to the applications' backend. Postman provides an interface for handling requests that would have otherwise been handled by the HTML. Check out [this guide](https://www.blazemeter.com/blog/how-use-postman-manage-and-execute-your-apis) on how to use postman. You can download postman using [this](https://www.postman.com/downloads/) link. 
+Since our application does not have a frontend, we will use postman for sending the requests to the applications' backend.
+
+Postman provides an interface for handling requests that would have otherwise been handled by the HTML.
+
+Check out [this guide](https://www.blazemeter.com/blog/how-use-postman-manage-and-execute-your-apis) on how to use postman. You can download postman using [this](https://www.postman.com/downloads/) link. 
 In postman, we will use three routes, register, verify and validate route. So we will create the URLs as below:
 
 - Register: http://localhost:5000/api/register
