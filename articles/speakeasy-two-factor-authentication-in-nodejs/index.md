@@ -55,7 +55,7 @@ After the setup, our application needs some project-specific dependencies. The d
 + `Express` as the backend server.
 + `uuid` to generate universal unique user-id.
 + `node-json-db` as our database to store the data as json.
-+ `speakeasy` library for authetication
++ `speakeasy` library for authentication
 + `nodemon` for use as our development dependency. With nodemon, we won't have to restart our application every time we make a change.
 
 ```bash
@@ -242,4 +242,3 @@ We set up a node application and coded a backend for two-factor authetication us
 - https://github.com/speakeasyjs/speakeasy
 - https://www.npmjs.com/package/speakeasy
 - https://npm.io/search/keyword:google+authenticator
-
