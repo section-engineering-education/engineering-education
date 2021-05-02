@@ -147,7 +147,7 @@ The user object in the database will be as shown below:
 ### Verifying the user
 Next, we need to verify our registered users using their id and temp-secret. We also need to make the secret permanent in the database. 
 #### Retrieving id and temp secret from the database
-Since we will need the user-id and temp secret, we extract them from the database using the below code:
+Since we will need the `user-id` and `temp_secret`, we extract them from the database using the below code:
 ```js
 // Retrieve user from the database
     const path = `/user/${userId}`;
