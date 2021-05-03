@@ -1,4 +1,22 @@
+
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/articles/guide-to-nodejs-event-emitter
+
+title: Guide to Node.js Event Emitter
+description: Guide to Node.js event emitter object. Basically, it walks user through the process of creating events using Node.js.
+author: miller-juma
+date: 2021-05-03T00:00:00-10:30
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/guide-to-nodejs-event-emitter/hero.jpg
+    alt: Guide to Node.js Event Emitter
+
 ### Introduction
+
 Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due to action cause the listener objects to be executed.  
 It has a built-in module called `Events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
 
@@ -183,7 +201,7 @@ You notice that an error is thrown since we don have any listener for the error.
 Now that we've seen how we can create events, what if we need to unregister them?  
 To unregister the `event` we created previously, we call the `eventEmitter.off()` method and passing it to the event as seen below: 
 
-``js
+```js
 myEmitter.off('event', myFirstEvent); // if you try emitting this event, nothing happens
 ```
 
@@ -192,3 +210,7 @@ myEmitter.off('event', myFirstEvent); // if you try emitting this event, nothing
 In this tutorial, we've discussed the `EventEmitter` object. Using this object, we have been able to create an event, fire an event and listen to it.
 We've also briefly looked at the error event, which causes the Node.js process to crash.
 
+Happy coding!!
+
+---
+Peer Review Contributions by: [Paul Odhiambo](/engineering-education/authors/odhiambo-paul/)
