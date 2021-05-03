@@ -1,15 +1,15 @@
 ### Introduction
-Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due an action by the user, say click of a button, causes the listener objects to be executed.  
-Node.js has a built in module called `Events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
+Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due to action cause the listener objects to be executed.  
+It has a built-in module called `Events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
 
 ### Prerequisites
-This article assumes you have basic knowledge in JavaScript, REPL and Node.js installed in your local development environment.
+This article assumes you have basic knowledge in JavaScript, REPL, and Node.js installed in your local development environment.
 
-### Event Emitter Class
-As we've seen, Event Emitter class is located/lies in the `events` module.  
-Event emitter class has `eventEmitter.on()` method which it exposes to allow for function(s) to be attached to emitted events by the object.  
+### Event emitter class
+The `Event Emitter` class is lies within the `events` module.  
+It has an `eventEmitter.on()` method which it exposes to allow for function(s) to be attached to emitted events.  
 
-Let's begin by importing the EventEmitter class. In your REPL, add the following code snippets:  
+Let's begin by importing the `events` module. In your REPL, add the following code snippets:  
 
 ```js
 ~$ node
@@ -22,9 +22,8 @@ undefined
 > 
 ```
 
-In the above scripts, we first import the `events` module. We then create an instance of the Event Emitter class.
-
-Alternatively, we can import events module and extend the main class with our custom  `myEventEmitter` class as seen below:
+In the above scripts, we first import the `events` module. We then create an instance of the Event Emitter class.  
+Alternatively, we can import the `events` module and extend the main class with our custom  `myEventEmitter` class as seen below:
 ```js
 
 $ node
@@ -43,12 +42,13 @@ undefined
 > myEventEmitter.emit('event');
 
 ```
-Now that we've seen how we can import `eventEmitter` class in our script, let's have a look at how how to emit events:
 
 > It's important to note that any event emitting object in Node.js is a member of the Event Emitter class.
 
-### Emitting Events
-The idea of events in Node.js is quite straightforward. Event emitting object emit named events. These events causes the listeners previously registered to be called. 
+### Emitting events
+
+The idea of events in Node.js is quite straightforward. Event emitting object emit named events. These events cause the listeners previously registered to be called. 
+
 Let's look at an event emitting example: 
 
 ```js
@@ -71,7 +71,7 @@ undefined
 undefined
 > myEmitter.on('event', myFirstEvent);
 MyEventEmitter {
-  _events: [Object: null prototype] { eventOne: [Function: c1] },
+  _events: [Object: null prototype] { event: [Function: c1] },
   _eventsCount: 1,
   _maxListeners: undefined,
   [Symbol(kCapture)]: false
@@ -88,5 +88,107 @@ MyEventEmitter {
 > 
 
 ```
+When we now try to emit the `event` event, `myFirstEvent()` and `mySecondEvent()` callbacks should be invoked.  
 
+Output:
+
+```js
+--------------------------
+> myEventEmitter.emit(`event`);
+my first event occurred
+hooray, another event has occurred
+true
+> 
+```
+
+### Registering for the event to be fired only one time using `once`.
+
+Previously, we discussed that event listeners have invoked each time an event they are attached to is emitted.  
+There exist scenarios where we only need to execute these listeners once.  In this case, we make use of the `eventEmitter.once()`.  
+Let's take a look at an example:  
+
+```js
+--------------------
+>myEventEmitter.once('MyOnceEvent', () => console.log('my once event fired')); 
+
+```
+Emit `MyOnceEvent` event:
+
+```js
+-----------------------
+> myEventEmitter.emit('MyOnceEvent');
+```
+
+Output:
+```bash
+my one event fired
+```
+
+Let's try to emit this event again:
+
+```js
+> myEventEmitter.emit('MyOnceEvent');
+```
+The event was emitted once hence cannot be emitted again, resulting in a blank screen.  
+
+###  Registering for the event with callback parameters
+The eventEmitter.emit() method allows the listener functions to be passed arguments.  
+Let's take a look at how we can achieve this functionality:  
+
+```js
+myEventEmitter.on('status', (statusCode, statusMsg)=> console.log(`Status code = ${code} while message= ${statusMsg}`));
+myEventEmitter {
+  _events: [Object: null prototype] { status: [Function (anonymous)] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  [Symbol(kCapture)]: false
+}
+> 
+```
+Pass parameters:
+```js
+----------------
+> myEventEmitter.emit('status', 201, 'created');
+> 
+```
+Output:
+```js
+Status code =201 while message= created
+```
+
+### Error events
+Error events are emitted whenever an error occurs within an EventEmitter instance.  
+In case an eventEmitter does not have registered error events, an `error` event will be emitted, exiting the Node.js process.  
+
+Let's look at an example:  
+```js
+---------------------------------------------
+> myEmitter.emit('error', new Error('whoops, an error instance!'));
+Uncaught [Error: an error instance!] {
+  domainEmitter: MyEventEmitter {
+    _events: [Object: null prototype] {},
+    _eventsCount: 0,
+    _maxListeners: undefined,
+    [Symbol(kCapture)]: false
+  },
+  domainThrown: false
+}
+> false
+> 
+
+```
+You notice that an error is thrown since we don have any listener for the error.
+
+###Unregistering events 
+Now that we've seen how we can create events, what if we need to unregister them?  
+To unregister the `event` we created previously, we call the `eventEmitter.off()` method and passing it to the event as seen below: 
+
+``js
+myEmitter.off('event', myFirstEvent); // if you try emitting this event, nothing happens
+```
+
+
+### Conclustion
+In this tutorial, we've discussed the `EventEmitter` object. Using this object, we have been able to create an event, fire an event and listen to it.
+We've also briefly looked at the error event, which causes the Node.js process to crash.
 
