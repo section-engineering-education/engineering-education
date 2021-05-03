@@ -4,17 +4,37 @@ If unused data piles up and you forget to delete it, your python program will ex
 
 But how can you achieve this? You need to understand what a memory leak is, its causes, and the methods you can use to solve such memory issues. Make sure you perform memory profiling to help determine memory utilized by every part of the python code.
 
+# Table of Contents
+
+[What is a memory leak? ](#_Toc70959429)
+
+[What causes memory leaks in Python? ](#_Toc70959430)
+
+[Lingering of large objects in the memory that aren&#39;t released ](#_Toc70959431)
+
+[Reference styles in the code ](#_Toc70959432)
+
+[Underlying libraries ](#_Toc70959433)
+
+[Methods to fix memory leaks ](#_Toc70959434)
+
+[The use of debugging method to solve memory leaks ](#_Toc70959435)
+
+[Application of tracemalloc to sort memory leak issues in Python ](#_Toc70959436)
+
+[Conclusion ](#_Toc70959437)
+
 ### What is a memory leak?
 
-A memory leak is the incorrect management of memory allocations by a computer program where the unneeded memory isn&#39;t released. When unused objects pile up in the memory, your program faces a memory leak. The occurrence of a memory leak fills up the program&#39;s storage, thus reducing storage space. With a lack of space, the program may be destroyed or start working slowly.
+A memory leak is the incorrect management of memory allocations by a computer program where the unneeded memory isn't released. When unused objects pile up in the memory, your program faces a memory leak. The occurrence of a memory leak fills up the program's storage, thus reducing storage space. With a lack of space, the program may be destroyed or start working slowly.
 
-As a programmer, you may create large volumes of memory and then fail to release any. If your application uses more memory and doesn&#39;t release any, it exhausts the server&#39;s memory pool with time. That makes your application crash the next time it consumes more memory.
+As a programmer, you may create large volumes of memory and then fail to release any. If your application uses more memory and doesn't release any, it exhausts the server's memory pool with time. That makes your application crash the next time it consumes more memory.
 
-Memory leaks were more prevalent when programmers only used C &amp; C++. This is because one was required to free memory from the application manually. More memory is used when an application is running and outdated data piles up in the register. Then, the program stops to run which purposely frees memory. However, the program may stop functioning if the application crashes.
+Memory leaks were more prevalent when programmers only used C & C++. This is because one was required to free memory from the application manually. More memory is used when an application is running and outdated data piles up in the register. Then, the program stops to run which purposely frees memory. However, the program may stop functioning if the application crashes.
 
 ### What causes memory leaks in Python?
 
-[Python](https://www.python.org/) program, just like other programming languages, experiences memory leaks. Memory leaks in Python happen if the garbage collector doesn&#39;t clean and eliminate the unreferenced or unused data from Python.
+[Python](https://www.python.org/) program, just like other programming languages, experiences memory leaks. Memory leaks in Python happen if the garbage collector doesn't clean and eliminate the unreferenced or unused data from Python.
 
 Python developers have tried to address memory leaks through the addition of features that free unused memory automatically. However, some unreferenced objects may pass through the garbage collector unharmed, resulting in memory leaks.
 
@@ -22,11 +42,11 @@ Below are factors that cause memory leaks in Python.
 
 #### Lingering of large objects in the memory that aren't released
 
-Lingering objects occur when the domain controller can&#39;t replicate for a time interval longer than the [tombstone lifetime](https://support.storagecraft.com/s/article/Understanding-Tombstones-Active-Directory-and-How-To-Protect-It). The domain controller then reconnects to [replication topology](https://www.monitis.com/blog/active-directory-replication-topology/#). If you delete an object from the active directory service when the domain controller is offline, the object stays in the domain controller as a lingering object. It&#39;s those lingering objects that consume space leading to the occurrence of memory leaks.
+Lingering objects occur when the domain controller can't replicate for a time interval longer than the [tombstone lifetime](https://support.storagecraft.com/s/article/Understanding-Tombstones-Active-Directory-and-How-To-Protect-It). The domain controller then reconnects to [replication topology](https://www.monitis.com/blog/active-directory-replication-topology/#). If you delete an object from the active directory service when the domain controller is offline, the object stays in the domain controller as a lingering object. It's those lingering objects that consume space leading to the occurrence of memory leaks.
 
 #### Reference styles in the code
 
-Referencing style will determine whether memory leaks will occur or will be avoided. A reference has an address and class information concerning objects being referenced. Assigning references doesn&#39;t create distinct duplicate objects. But if an object is no longer in use and can&#39;t be garbage collected because it&#39;s being referenced in another place within the application, it results in memory leaks. Various types of references are used in [code referencing](https://guides.libraries.uc.edu/citing/code), and they have different abilities to be garbage collected. A strong reference style is the most convenient to use in daily programming. But any object with a strong reference attached to it makes it hard for garbage collection. In such a case, when such objects pile up, they cause memory leaks.
+Referencing style will determine whether memory leaks will occur or will be avoided. A reference has an address and class information concerning objects being referenced. Assigning references doesn't create distinct duplicate objects. But if an object is no longer in use and can't be garbage collected because it's being referenced in another place within the application, it results in memory leaks. Various types of references are used in [code referencing](https://guides.libraries.uc.edu/citing/code), and they have different abilities to be garbage collected. A strong reference style is the most convenient to use in daily programming. But any object with a strong reference attached to it makes it hard for garbage collection. In such a case, when such objects pile up, they cause memory leaks.
 
 #### Underlying libraries
 
@@ -38,11 +58,11 @@ It is essential to diagnose and fix memory leaks before they crash a program. [P
 
 The inbuilt [CPython](https://en.wikipedia.org/wiki/CPython#) found in python functions to ensure garbage collector picks unused and unreferenced data for elimination from the memory. If you are a programmer using Python, there is no need to worry about memory leaks. CPython automatically notifies the garbage collector to eliminate all the garbage from memory that comes from unreferenced data.
 
-Though memory leaks issues can be sorted by garbage collector automatically, sometimes it may fail. That&#39;s why you need to apply some methods to clear any issue connected to a memory leak.
+Though memory leaks issues can be sorted by garbage collector automatically, sometimes it may fail. That's why you need to apply some methods to clear any issue connected to a memory leak.
 
 #### The use of debugging method to solve memory leaks
 
-You&#39;ll have to debug memory usage in Python using the garbage collector inbuilt module. That will provide you a list of objects known by the garbage collectors. Debugging allows you to see where much of the python storage memory is being applied. Then, you can go ahead and filter everything based on usage. In case you find objects that aren&#39;t in use, and maybe they are referenced, you can get rid of them by deleting them to avoid memory leaks.
+You'll have to debug memory usage in Python using the garbage collector inbuilt module. That will provide you a list of objects known by the garbage collectors. Debugging allows you to see where much of the python storage memory is being applied. Then, you can go ahead and filter everything based on usage. In case you find objects that aren't in use, and maybe they are referenced, you can get rid of them by deleting them to avoid memory leaks.
 
 #### Application of tracemalloc to sort memory leak issues in Python
 
