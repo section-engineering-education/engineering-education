@@ -3,6 +3,8 @@ Below are a list of resources that can help improve your writing skills from gui
 
 We hope this helps get you started off on the right foot - and we're always happy to help. If you have any questions on the process or the program in general, ping us in the Slack EngEd channel.
 
+To find our Developer Tool Box click [here](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/developer-tool-box.md).
+
 | Grammar, Writing & Tech Tutorial Guides   |   Example EngEd Articles  |  Article Templates | Other Resources |
 |----------|:-------------:|------:|------:|
 | [Style Guides for Technical Writers](https://medium.com/technical-writing-is-easy/style-guides-for-technical-writers-72b011f84c4b) |  [History of Container Tech](https://github.com/section-io/engineering-education/blob/master/new_contributors/example_article_submission.md) | [How To Guide Template](https://github.com/section-io/engineering-education/blob/master/new_contributors/how-to-guide-template.md) |[EngEd Upload Instructions](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md)|
