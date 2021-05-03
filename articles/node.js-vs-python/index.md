@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/node.js-vs-python/
+title: Node.js vs Python for backend Development
+description: In this article, we are going to look at the differences between Node.js and Python in backend development.
+author: erastus-muriithi
+date: 2021-05-03T00:00:00-16:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/node.js-vs-python/hero.png
+    alt: Node.js example image
+---
+The comparison between Node.js and Python proves to be a great battle. However, the decision of choosing either of the two technologies for your backend development depends on your project requirements. In this article, we are going to look at the differences between Node.js and Python.
+<!--more-->
+
 ### Introduction
 
 The comparison between Node.js and Python proves to be a great battle. However, the decision of choosing either of the two technologies for your backend development depends on your project requirements. In this article, we are going to look at the differences between Node.js and Python. By comparing the two technologies in backend development, you will notice that different technologies differ in terms of benefit and areas of application.
