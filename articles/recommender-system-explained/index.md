@@ -6,7 +6,7 @@ url: /engineering-education/recommender-system-explained/
 title: Recommender System Explained
 description: In this article, we will explore the basics of recommender systems and how they work. This article will also take readers through the benefits, types, components, and applications of recommender systems.   
 author: pennina-wanja
-date: 2021-04-29T00:00:00-07:00
+date: 2021-05-03T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/recommender-system-explained/hero.jpg
     alt: recommender system example image
 ---
-Recommender systems are used by top online companies such as YouTube, Netflix, and Amazon to suggest online products to buyers based on their interests, preferences, and purchasing behavior. These systems help online businesses to optimize user interaction on their websites with the aim of increasing their sales revenue.
+Recommender systems are used by top online companies such as YouTube, Netflix, and Amazon to suggest online products to buyers based on their interests, preferences, and purchasing behavior. These systems help online businesses optimize user interaction on their websites with the aim of increasing their sales revenue.
 <!--more-->
 This article takes you through the basics of these systems and explains how they work. It also provides an overview of how they have been applied in online businesses. 
 
@@ -54,10 +54,14 @@ This system can also analyze information such as the sex or age of the users tha
 These systems provide recommendations based on multiple criteria relating to preference information. The system analyzes the preference information of a user for an explored item using various criteria, rather than a single criterion. It then forecasts a rank for unexplored products and provides relevant suggestions to the user. 
 
 #### Mobile recommender systems
-These systems use smartphone devices to offer personalized recommendations. The accuracy of these systems depends on the context, privacy, and recommendation approach. A good example of a mobile recommender system is the one used by taxi companies such as Lyft, DiDi, and Uber. In such a case, the system uses the GPS information of routes used by drivers to recommend appropriate pick-up points. The GPS information used includes the operational status, location, and time stamps. 
+These systems use smartphone devices to offer personalized recommendations. The accuracy of these systems depends on the context, privacy, and recommendation approach. A good example of a mobile recommender system is the one used by taxi companies such as Lyft, DiDi, and Uber. 
+
+In such a case, the system uses the GPS information of routes used by drivers to recommend appropriate pick-up points. The GPS information used includes the operational status, location, and time stamps. 
 
 #### Hybrid recommender systems
-Hybrid recommender systems combine content-based filtering and collaborative filtering approaches. These systems help in overcoming some of the limitations of pure recommender systems such as sparsity problems and [cold start](https://en.wikipedia.org/wiki/Cold_start_(recommender_systems)). Data sparsity makes it difficult for the system to find similar users because the active users rated a few number of products or items. The cold start problem occurs when the system finds it difficult to provide accurate suggestions because there is insufficient information about users. 
+Hybrid recommender systems combine content-based filtering and collaborative filtering approaches. These systems help in overcoming some of the limitations of pure recommender systems such as sparsity problems and [cold start](https://en.wikipedia.org/wiki/Cold_start_(recommender_systems)). 
+
+Data sparsity makes it difficult for the system to find similar users because the active users rated a few number of products or items. The cold start problem occurs when the system finds it difficult to provide accurate suggestions because there is insufficient information about users. 
 
 Netflix is an example of a company that employs hybrid recommender systems.
 
@@ -70,9 +74,13 @@ Recommender systems work by using users' data to generate suggestions. The follo
 
 The first step involves data collection to gather the ratings, tastes, preferences, and online behavior of customers. The main sources of data include explicit ratings and implicit ratings. Information relating to product similarity and user similarity is also used to provide the basis for recommendation. 
 
-The collected data is then stored and used in the training phase. This phase involves conducting statistical analysis and applying mathematical algorithms to learn the existing patterns. The last stage involves suggesting items to the online user. In this stage, a model is deployed into a container that generates a REST API. The web application uses the customer data to send queries to the recommendation system. The system then provides the recommendation and displays it on the customer’s page. 
+The collected data is then stored and used in the training phase. This phase involves conducting statistical analysis and applying mathematical algorithms to learn the existing patterns. The last stage involves suggesting items to the online user. 
 
-The algorithms used and the recommendation approach depend on the type of recommender system. For example, a collaborative filtering system analyzes data and identifies two users that have bought the same product (s). If one of the users buys another product, the system will recommend it to the other user because they have similar preferences. The following image shows how this type of system works. 
+In this stage, a model is deployed into a container that generates a REST API. The web application uses the customer data to send queries to the recommendation system. The system then provides the recommendation and displays it on the customer’s page. 
+
+The algorithms used and the recommendation approach depend on the type of recommender system. For example, a collaborative filtering system analyzes data and identifies two users that have bought the same product (s). 
+
+If one of the users buys another product, the system will recommend it to the other user because they have similar preferences. The following image shows how this type of system works. 
 
 ![How Collaborative Filtering Works](/engineering-education/recommender-system-explained/how-collaborative-filtering-works.png)
 
