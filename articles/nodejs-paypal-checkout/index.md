@@ -16,7 +16,7 @@ images:
 ---
 PayPal is an online payment platform that allows users to transfer funds worldwide. PayPal makes it easier for merchants to accept online payments through their websites. PayPal provides processing for both Visa and Mastercard payments.
 <!--more-->
-We will learn how to integrate Paypal checkout into a Node.js application. We will also render a response to inform the user that the transaction was successfully canceled.
+We will learn how to integrate Paypal checkout into a Node.js application. We will also render a response to inform the user when they their transaction was canceled.
 
 ### Project setup
 Create a directory named `paywave`. Change the working directory to the `paywave` directory created above by executing the command below.
