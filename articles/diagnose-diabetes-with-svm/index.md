@@ -1,8 +1,23 @@
-![Hero Header](/engineering-education/diagnose-diabetes-with-svm/hero.png)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/diagnose-diabetes-with-svm/
+title: Diagnosis of Diabetes using Support Vector Machines
+description: In this article, we will learn to harness Support Vector Machines to diagnose if a patient has diabetes or not. 
+author: iniabasi-affiah
+date: 2021-05-03T00:00:00-09:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-# Diagnosis of Diabetes using Support Vector Machines
-       
-In this guide, we will learn how to use machine learning to diagnose if a patient has diabetes. We can do this by using their medical records. We will use the Support Vector Machine Algorithm (from Sci-kit Learn) to build our model. The GitHub repo for this project is [here](http://github.com/Inyrkz/diagnose-diabetes-svm).
+  - url: /engineering-education/diagnose-diabetes-with-svm/hero.jpg
+    alt: Support Vector Machines example image
+---       
+In this guide, we will learn how to use machine learning to diagnose if a patient has diabetes. We can do this by using their medical records. We will use the Support Vector Machine Algorithm (from Sci-kit Learn) to build our model. 
+<!--more-->
+
+The GitHub repo for this project is [here](http://github.com/Inyrkz/diagnose-diabetes-svm).
 
 ### Prerequisite
 - A PC with Jupyter Notebook
