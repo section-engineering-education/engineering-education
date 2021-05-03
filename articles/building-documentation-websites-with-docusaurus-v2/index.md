@@ -4,23 +4,23 @@
 
 Have you always wanted to start your blog? Are you working on a project and not sure how to go about the documentation? Well, Docusaurus is an open-source project for building, deploying, and maintaining documentation websites.
 
-Docusaurus is maintained by the Facebook Open Source community and there is a lot of support around it, so you don't have to worry if something goes wrong during development. For this tutorial, we are going to use Docusaurus version 2.
+Docusaurus is maintained by the Facebook Open Source community with good developer support. For this tutorial, we are going to use Docusaurus version 2.
 
 ### What are the benefits of Docusaurus?
 
 There are a lot of static site-generating projects available today, but what makes Docusaurus version 2 unique?
 
-**Highly customizable** - Docusaurus is very customizable, it can be used for pretty much anything to do with static websites including landing pages since it is built with React.js. So you don't have to worry if your page is going to be unique enough.
+**Highly customizable** - Docusaurus is very customizable. It can be used for building static sites including landing pages. It is built using React.js, and can be customized to the point where your webpage is unique.
 
-**SEO friendly** - Page-specific SEO to help users land on the official documentation site directly relating their problems at hand.
+**SEO friendly** - Page-specific SEO to help users land on the official documentation site directly related to their issues and bugs.
 
-**Easy to setup** - Docusaurus does not require you to be a seasoned programmer for you to set it up. As long as you can follow instructions and curious enough to try, then you are set to go.
+**Easy to setup** - Docusaurus does not require you to be a seasoned programmer for you to set it up. As long as you can follow instructions and are curious enough to try, you are set to go.
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/) version 12.13.0 or above installed
 
-- [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) version 1.5 installed
+- [Yarn Package Manager](https://classic.yarnpkg.com/en/docs/install/#debian-stable) version 1.5 installed
 
 ### Installation
 
@@ -32,7 +32,7 @@ npx @docusaurus/init@latest init [name] [template]
 
 For the ***name*** part, you are going to use your preferred name for this project.
 
-For the ***template*** enter the name of the template you are going to use. Docusaurus comes with three templates Classic, Facebook, and Bootstrap. The Facebook template is used for Facebook open-source projects and comes with Facebook-specific defaults, bootstrap template is used when you want the bootstrap framework website. For this tutorial, we are going to use the classic template.
+For the ***template*** enter the name of the template you are going to use. Docusaurus comes with three templates Classic, Facebook, and Bootstrap. The Facebook template is used for Facebook open-source projects and comes with Facebook-specific defaults. The bootstrap template is used when you want the bootstrap framework website. For this tutorial, we are going to use the classic template.
 
 Run the following command.
 
