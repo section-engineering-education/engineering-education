@@ -92,14 +92,14 @@ Now you may ask why key management is necessary so here is the answer,
 Encryption key management is necessary because without key management you left the keys to protecting your sensitive business and customer data exposed, then you expose your entire organization to the risk of data loss or theft.
 Today, with MongoDB Enterprise, customers can meet encryption and key management best practices easily through implementing native encryption and deploying a third-party enterprise key management solution.
 
-Before we moving on to how to implement SSL encryption in your database let's first understand what is SSL.
+Before moving on to how to implement SSL encryption in your database let's first understand what is SSL.
 
 ### What is SSL?
 
 SSL stands for Secure Sockets Layer, and it refers to a protocol for encrypting and securing communications that take place on the Internet.
 The purpose of SSL is to secure communications between a client and a server, but it can also secure email, VoIP, LTE, and other communications on a shaky and untrusted network.
 
-Now I will tell you how to add SSL transport encryption to your MongoDB database.
+Now we will learn how to add SSL transport encryption to your MongoDB database.
 
 ### Implementing SSL encryption in MongoDB
 
@@ -120,7 +120,7 @@ cat mongodb-cert.key mongodb-cert.crt > mongodb.pem
 ```
 This will create a file named `mongodb.pem` in your disk and that is the file you will need to enable SSL encryption.
 
-Now navigate to that where you have stored your `.pem` file and there we need to set an SSL mode by using `--sslMode` argument in the command which I will show you next which defines whether the SSL is enabled or not and how to configure it.
+Now navigate to the directory where you have stored your `.pem` file and there we need to set an SSL mode by using `--sslMode` argument in the command which I will show you next which defines whether the SSL is enabled or not and how to configure it.
 
 For more information please visit the MongoDB official documentation here <https://docs.mongodb.com/manual/tutorial/configure-ssl/>
 So type this command to now enable SSL encryption and also you must use this command where your `.pem` file is stored. So type
