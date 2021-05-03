@@ -23,13 +23,13 @@ C++ has a faster run-time as compared to other programming languages and thus su
 The goal of this tutorial is to educate you on how to implement machine learning algorithms using the C++ programming language. Since this is an introductory part, we will implement the algorithms from scratch to foster understanding.Afterwards it will be easier when we get started with libraries.
 
 ### Prerequisites
-To follow along with this tutorial, you should meet the following minimum requirements.
+To follow along this tutorial with ease,one should meet the following requirements.
 - Basic understanding of programming in C++ and the use of objects in storing big data.
 - A pre-installed IDE, preferably [Codeblocks](https://www.codeblocks.org/downloads/binaries).
 - A good mathematical background so as to understand the statistical methods to be used later on.
 
 ### Machine learning definition.
-Machine learning is a subset of artificial intelligence. It refers to the ability of computer systems to independently find solutions to problems by recognizing patterns of data stored in a database. Humans are required to write the algorithms to be used by the computer system, collect data and put it into datasets. Afterwards, the machine learns independently and can find solutions.
+Machine learning is a facet of artificial intelligence. It refers to the ability of computer systems to independently find solutions to problems by recognizing patterns of data stored in a database. Humans are required to write the algorithms to be used by the computer system, collect data and put it into datasets. Afterwards, the machine learns independently and can find solutions.
 
 ### Implementation of the statistical and mathematical methods for machine learning in C++
 Before we embark on writing the code, we need to understand the approach to be used. We will use a mathematical approach namely Linear regression to enable our system to learn.
@@ -43,7 +43,7 @@ y=B0 + B1x
 ```
 ![Linear regression](/engineering-education/articles/an-introduction-to-machine-learning-using-c++/linearRegression.png)
 
-To put this into perspective, we can use linear regression to determine the amount of rainfall received in an area based on the temperature of the area. The dependent variable would be the amount of rainfall received while the independent variable would be the temperature of the area.
+To put this into perspective, we can use linear regression to determine the amount of rainfall received in an area based on the temperature of the area. The dependent variable becomes the amount of rainfall received while the independent variable is temperature of the area.
 
 - **Loss function**
 
@@ -92,7 +92,7 @@ Let us define the dataset that we will be using for our tutorial. It is containe
 
 We will use the first 5 values to train our algorithm and test it on the last value to see its performance:
 ```c++
-double x[] = {1, 2, 4, 3, 5};
+double x[] = {1, 2, 3, 4, 5};
 double y[] = {1, 3, 3, 2, 5};
 ```
 
@@ -109,11 +109,11 @@ Training Phase
 Next, we will work on the gradient descent algorithm:
 ```C++
 for (int i = 0; i < 20; i ++) {   // Since there are five values and four epochs are needed, run a for loop 20 times.
-    int idx = i % 5;   // for accessing index after every epoch
-    double p = b0 + b1 * x[idx];  // calculating prediction
-    devi = p - y[idx]; // calculating error. 
+    int index = i % 5;   // for accessing index after every epoch
+    double p = b0 + b1 * x[index];  // calculating prediction
+    devi = p - y[index]; // calculating error. 
     b0 = b0 - learnRate * devi; // updating b0
-    b1 = b1 - learnRate * devi * x[idx];// updating b1
+    b1 = b1 - learnRate * devi * x[index];// updating b1
     cout<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<devi<<endl; // printing values after every update
     error.push_back(devi);
 }
@@ -123,17 +123,17 @@ We use a for loop that runs 20 times since we are working with 5 values and the 
 
 Something worth noting is that `B0` does not have any input. It is known as the bias or the `y` intercept and we assume it to have a fixed input value of 1.0. This assumption is helpful when implementing algorithm say when using arrays or vectors.
 
-Finally, the error vector is sorted to obtain the lowest value of `error` and, as a result, the corresponding values of `b0` and `b1`. We define a customized sorting function to sort the `error` vector. Read about custom sorting in vectors [here](https://www.gormanalysis.com/blog/sorting-a-vector-in-cpp/). At last, we’ll print the values:
+In finalizing, the error vector is sorted to obtain the lowest value of `error` and, as a result, the corresponding values of `b0` and `b1`. We define a customized sorting function to sort the `error` vector. Read about custom sorting in vectors [here](https://www.gormanalysis.com/blog/sorting-a-vector-in-cpp/). At last, we’ll print the values:
 ```c++
 sort(error.begin(),error.end(),custom_sort);// sorting to find the smallest value.
-cout<<"Final Values are: "<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<error[0];
+cout<<"Optimal end values are: "<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<error[0];
 ```
 Testing :
 ```c++
 cout<<"Enter a test x value";
 double test;
 cin>>test;
-double pred=b0+b1*x;
+double pred=b0+b1*test;
 cout<<"The value predicted by the model= "<<pred;
 ```
 
@@ -143,8 +143,7 @@ The full code is shown below for implementation:
 ```c++
 #include<bits/stdc++.h>  // This header file contains all C++ libraries
 using namespace std;   // stdout library for printing values 
-bool custom_sort(double a, double b) /* this custom sort function is defined to 
-sort on basis of min absolute value or error*/
+bool custom_sort(double a, double b) /* this custom sort function sorts based on the minimum absolute value */
 {
     double a1=abs(a-0);
     double b1=abs(b-0);
@@ -163,16 +162,16 @@ double learnRate = 0.01;             //initializing error rate
  
 /*Training Phase*/
 for (int i = 0; i < 20; i ++) {   // Since there are five values and four epochs are needed, run a for loop 20 times.
-    int idx = i % 5;              // for accessing index after every epoch
-    double p = b0 + b1 * x[idx];  // calculating prediction
-    devi = p - y[idx];              // calculating error
+    int index = i % 5;              // This accesses the index after each epoch
+    double p = b0 + b1 * x[index];  // calculating prediction
+    devi = p - y[index];              // calculating error
     b0 = b0 - learnRate * devi;         // updating b0
-    b1 = b1 - learnRate * devi * x[idx];// updating b1
+    b1 = b1 - learnRate * devi * x[index];// updating b1
     cout<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<devi<<endl;// printing values after every update
     error.push_back(devi);
 }
 sort(error.begin(),error.end(),custom_sort); // error values used to sort the data
-cout<<"Final Values are: "<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<error[0]<<endl;
+cout<<"Optimal end values are: "<<"B0="<<b0<<" "<<"B1="<<b1<<" "<<"error="<<error[0]<<endl;
 
 /*Testing Phase*/
 cout<<"Enter a test x value";
@@ -185,7 +184,7 @@ cout<<"The value predicted by the model= "<<pred;
 ```
 ### Conclusion
 C++ is a good programming language for venturing into machine learning. However, since this venture is relatively new, you will have to implement most of the algorithms from scratch. It would be difficult to implement machine learning in c++ without understanding the basics of machine learning algorithms. I think that is why Python is more popular for machine learning compared to C++.
-C++ also has a few libraries which support machine learning. We will look at them in a future article.
+C++ also has a few libraries which support machine learning. We will go through libraries in a future article.
 
 Linear regression in machine learning is useful for forecasting since the algorithm is able to make predictions based on previous patterns. This enables organizations and institutions to put in place strategies that are beneficial depending on the forecast.
 
