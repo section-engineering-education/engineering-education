@@ -3,19 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/nodejs-paypal-checkout/
-title: Getting with Node.js Paypal checkout integration
-description: This article will go over a step-by-step tutorial on how to integrate Paypal checkout into a Node.js application.
+title: Getting Started with Node.js Paypal Checkout Integration
+description: This article will go over a step-by-step tutorial on how to integrate Paypal checkout into a Node.js application. We will also render a response to when the transaction is successfully canceled.
 author: okelo-violet
-date: 2021-04-28T00:00:00-11:00
-topics: [API]
+date: 2021-05-03T00:00:00-11:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/nodejs-paypal-checkout/hero.jpg
     alt: Getting started with Node.js paypal checkout integration example image
 ---
-
-Paypal is an online payment platform that allows users to transfer funds worldwide. Paypal makes it easier for merchants to accept online payments through their websites. Paypal provides processing for both Visa and Mastercard payments.
+PayPal is an online payment platform that allows users to transfer funds worldwide. PayPal makes it easier for merchants to accept online payments through their websites. PayPal provides processing for both Visa and Mastercard payments.
+<!--more-->
+We will learn how to integrate Paypal checkout into a Node.js application. We will also render a response to inform the user that the transaction was successfully canceled.
 
 ### Project setup
 Create a directory named `paywave`. Change the working directory to the `paywave` directory created above by executing the command below.
@@ -24,11 +25,13 @@ Create a directory named `paywave`. Change the working directory to the `paywave
 $ mkdir paywave
 $ cd paywave
 ```
+
 To create a Node.js application in the `paywave` directory we created above, execute the command below.
 
 ```bash
 $ npm init
 ```
+
 - `npm init` command adds the `package.json` file to our `paywave` directory, making it a Node.js application.
 
 Execute the commands below to install `express`, and `paypal-rest-sdk` into our project.
@@ -58,7 +61,8 @@ app.get('/', (req, res) => res.sendFile(__dirname + "/index.html"));
 
 app.listen(PORT, () => console.log(`Server Started on ${PORT}`));
 ```
-To obtain the `client_id` and `client_secret`, login into your Paypal developer account [here](https://developer.paypal.com/) and create a new app as shown in the image below.
+
+To obtain the `client_id` and `client_secret`, login into your PayPal developer account[here](https://developer.paypal.com/) and create a new app as shown in the image below.
 
 ![Paypal create a new app](/engineering-education/nodejs-paypal-checkout/paypal-create-app.png)
 
@@ -69,7 +73,6 @@ On the app details page, copy the `client_id` and `client_secret` into the `inde
 ![Paypal secrete and Id](/engineering-education/nodejs-paypal-checkout/paypal-credentials.png)
 
 #### Creating a sandbox account
-
 Select the account menu item on the sidebar as shown in the image below.
 
 ![Paypal account section](/engineering-education/nodejs-paypal-checkout/paypal-account-section.png)
@@ -79,9 +82,8 @@ Create a new account that you will use when making the payments in the sandbox a
 ![Paypal creating account](/engineering-education/nodejs-paypal-checkout/paypal-create-account.png)
 
 #### Checkout view 
-
 1. In the `paywave` directory, create a file named `index.html`. 
-2. Add the code snippet below to the `index.html` 
+2. Add the code snippet below to the `index.html`. 
    
 ```html
 <!DOCTYPE html>
@@ -188,7 +190,8 @@ app.get('/success', (req, res) => {
 });
 });
 ```
-If the transaction is successful, then a success page is displayed to the user as shown in the image below.
+
+If the transaction was successful, then a success page will be displayed to the user as shown in the image below.
 
 ![Paypal checkout success](/engineering-education/nodejs-paypal-checkout/paypal-success.png)
 
@@ -198,10 +201,15 @@ When a user cancels the transaction, we need to render a response to inform the 
 ```javascript
 app.get('/cancel', (req, res) => res.send('Cancelled'));
 ```
+
 - The above route returns a `Cancelled` string to the user whenever a transaction cancellation is successful.
   
 ### Conclusion
-Now that you have learned how to integrate Paypal checkout into a Node.js application, add a success and error page to the application we created. The full source for the application can be downloaded [here](https://github.com/okeloviolet/Nodejs-paypal).
+Now that you have learned how to integrate Paypal checkout into a Node.js application, add a success and error page to the application we created. 
+
+The full source for the application can be downloaded [here](https://github.com/okeloviolet/Nodejs-paypal).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
