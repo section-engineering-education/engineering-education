@@ -20,7 +20,7 @@ Python developers have tried to address memory leaks through the addition of fea
 
 Below are factors that cause memory leaks in Python.
 
-#### Lingering of large objects in the memory that aren&#39;t released
+#### Lingering of large objects in the memory that aren't released
 
 Lingering objects occur when the domain controller can&#39;t replicate for a time interval longer than the [tombstone lifetime](https://support.storagecraft.com/s/article/Understanding-Tombstones-Active-Directory-and-How-To-Protect-It). The domain controller then reconnects to [replication topology](https://www.monitis.com/blog/active-directory-replication-topology/#). If you delete an object from the active directory service when the domain controller is offline, the object stays in the domain controller as a lingering object. It&#39;s those lingering objects that consume space leading to the occurrence of memory leaks.
 
