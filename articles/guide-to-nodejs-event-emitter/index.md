@@ -12,7 +12,8 @@ Event emitter class has `eventEmitter.on()` method which it exposes to allow for
 
 Let's begin by importing the EventEmitter class. In your REPL, add the following code snippets:  
 
-```~$ node
+```js
+~$ node
 Welcome to Node.js v15.12.0.
 Type ".help" for more information.
 > const events = require('events');
@@ -23,3 +24,26 @@ undefined
 ```
 
 In the above scripts, we first import the `events` module. We then create an instance of the Event Emitter class.
+
+Alternatively, we can import events module and extend the main class with our custom  `myEventEmitter` class as seen below:
+```js
+
+$ node
+Welcome to Node.js v15.12.0.
+Type ".help" for more information.
+> const EventEmitter = require('events');
+undefined
+> class MyEventEmitter extends EventEmitter {}
+undefined
+> const myEventEmitter = new MyEmitter();
+undefined
+> myEventEmitter.on('event', () => {
+...   console.log('an event emitted!');
+... });
+
+> myEventEmitter.emit('event');
+an event emitted!
+true
+> 
+
+```
