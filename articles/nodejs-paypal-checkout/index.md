@@ -6,7 +6,7 @@ url: /engineering-education/nodejs-paypal-checkout/
 title: Getting Started with Node.js Paypal Checkout Integration
 description: This article will go over a step-by-step tutorial on how to integrate Paypal checkout into a Node.js application. We will also render a response when the transaction is successfully canceled.
 author: okelo-violet
-date: 2021-05-03T00:00:00-11:00
+date: 2021-05-03T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
