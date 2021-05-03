@@ -152,7 +152,7 @@ bool custom_sort(double a, double b) /* this custom sort function sorts based on
 int main()
 {
 /*Intialization Phase*/
-double x[] = {1, 2, 4, 3, 5};    // defining x values
+double x[] = {1, 2, 3, 4, 5};    // defining x values
 double y[] = {1, 3, 3, 2, 5};    // defining y values
 vector<double>error;             // array to store all error values
 double devi;
