@@ -1,19 +1,19 @@
-
 ---
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/articles/guide-to-nodejs-event-emitter
-
-title: Guide to Node.js Event Emitter
-description: Guide to Node.js event emitter object. Basically, it walks user through the process of creating events using Node.js.
+url: /engineering-education/guide-to-nodejs-event-emitter/
+title: Getting Started with Node.js Event Emitter
+description: This tutorial introduces the basic concepts on Node.js events module. We'll use this module to create an event emitter object which in turn we'll use to create Node.js Events
 author: miller-juma
-date: 2021-05-03T00:00:00-10:30
+date: 2021-04-07T00:00:00-17:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/guide-to-nodejs-event-emitter/hero.jpg
-    alt: Guide to Node.js Event Emitter
+
+ - url: /engineering-education/guide-to-nodejs-event-emitter/hero.jpg
+   alt: Node.js Event Emitter
+---
 
 ### Introduction
 
