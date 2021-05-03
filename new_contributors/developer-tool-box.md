@@ -6,6 +6,8 @@ We hope this helps get you started off on the right foot - and we're always happ
 If you would like to add more resources to this page - please create PR. If you have any questions on the type of resources
 we can add in general, ping us in the Slack EngEd channel.
 
+To find our Resources Page to improve overall technical writing abilities click [here](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md).
+
 | Tool Name |   Description of Tool  | 
 |----------|:-------------:|
 |[Freecodecamp](https://www.freecodecamp.org/)|This offers hundreds of projects and exercises for students to test their knowledge.|
