@@ -6,7 +6,7 @@ url: /engineering-education/react-native-firebase-facebook-authentication/
 title: Facebook OAuth using Firebase in React Native
 description: This tutorial will give readers a detailed guide on how to implement Facebook OAuth using Firebase in a Non-Expo React Native Application.
 author: mohan-raj
-date: 2021-03-21T00:00:00-01:00
+date: 2021-05-04T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -15,17 +15,13 @@ images:
 ---
 In this tutorial, we will learn how to authenticate users with their Facebook accounts using the authentication module in Firebase in a Non-Expo React Native application.
 <!--more-->
-
 To learn more about Firebase, refer to [this link](https://en.wikipedia.org/wiki/Firebase).
 
 ### Prerequisites
-
-We'll not cover the basics of React and React Native in this tutorial. If you are not comfortable with the basics, we highly recommended going over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
+We will not cover the basics of React and React Native in this tutorial. If you are not comfortable with the basics, we highly recommended going over this [tutorial](https://reactnative.dev/docs/tutorial) before you continue further.
 
 ### Overview
-
 We'll be going through these steps in this article:
-
 1. [Development environment](#development-environment).
 2. [Cloning the starter code](#cloning-the-starter-code).
 3. [Setting up the Firebase project](#setting-up-the-firebase-project).
@@ -37,7 +33,6 @@ We'll be going through these steps in this article:
 9. [Recap](#lets-recap)
 
 ### Development environment
-
 > **IMPORTANT** - We will not be using [Expo](https://expo.io/) in our project.
 
 Follow [this documentation](https://reactnative.dev/docs/environment-setup) to set up the development environment.
@@ -47,7 +42,6 @@ Make sure you're following the React Native CLI Quickstart, not the Expo CLI Qui
 ![Env Setup](/engineering-education/react-native-firebase-facebook-authentication/env_setup.png)
 
 ### Cloning the starter code
-
 Clone the starter code from this [GitHub repository](https://github.com/zolomohan/react-native-firebase-facebook-auth-starter).
 
 You can checkout the final code from this [GitHub Repository](https://github.com/zolomohan/react-native-firebase-facebook-auth).
@@ -58,14 +52,13 @@ This will be the folder structure of the application.
 
 I've set up 2 screens in the `screens/` directory:
 
-- _Authentication.js_: Screen with a Facebook Sign-in button to initiate the sign-in process.
+- *Authentication.js*: Screen with a Facebook Sign-in button to initiate the sign-in process.
 
-- _Authenticated.js_: Screen that the user can see only if he is logged in.
+- *Authenticated.js*: Screen that the user can see only if he is logged in.
 
 ![Screens](/engineering-education/react-native-firebase-facebook-authentication/screens.jpg)
 
 ### Setting up the Firebase project
-
 Head to the [Firebase console](https://console.firebase.google.com/u/0/), sign in to your account and Create a new project.
 
 ![Create New Project](/engineering-education/react-native-firebase-facebook-authentication/firebase_new.png)
@@ -74,7 +67,7 @@ You'll be presented with the dashboard once you create the new project.
 
 ![New Dashboard](/engineering-education/react-native-firebase-facebook-authentication/new_dashboard.png)
 
-Now, click on the Android icon to add an android app to the Firebase project.
+Now, click on the Android icon to add an Android app to the Firebase project.
 
 ![register_app](/engineering-education/react-native-firebase-facebook-authentication/register_app.png)
 
@@ -117,7 +110,6 @@ npm install @react-native-firebase/app
 ```
 
 ### Setting up Facebook App
-
 Head to [developers.facebook.com](https://developers.facebook.com/) and create a developer account.
 
 Go to the [Apps](https://developers.facebook.com/apps) section and create a new app.
@@ -132,17 +124,19 @@ To find the App ID and the App secret, which will be required in the later steps
 
 ![app_secret](/engineering-education/react-native-firebase-facebook-authentication/app_secret.png)
 
-Once you make a copy of it, Scroll down until you find **Add Platform**.
+Once you make a copy of it, scroll down until you find **Add Platform**.
 
 ![add_platform](/engineering-education/react-native-firebase-facebook-authentication/add_platform.png)
 
 Once you click on it, Select Android. 
 
-Fill out the **Package Name**, which you can find the package name in the `AndroidManifest.xml` which is located in `android/app/src/main/`.
+Fill out the **Package Name**, which you can find the package name in the `AndroidManifest.xml` that is located in `android/app/src/main/`.
 
 For the **Class Name**, fill it out as `MainActivity`.
 
-For the **Key Hash**, you need to generate it using [openSSL](https://www.openssl.org/). You can download it from [Google Code Archive](https://code.google.com/archive/p/openssl-for-windows/downloads). Download the **K** version.
+For the **Key Hash**, you need to generate it using [openSSL](https://www.openssl.org/). You can download it from [Google Code Archive](https://code.google.com/archive/p/openssl-for-windows/downloads). 
+
+Download the **K** version.
 
 ![OpenSSL](/engineering-education/react-native-firebase-facebook-authentication/openssl.png)
 
@@ -168,9 +162,8 @@ Refer to this [StackOverflow question](https://stackoverflow.com/questions/75063
 
 For iOS setup, refer to this [Quick Start](https://developers.facebook.com/quickstarts/?platform=ios) Guide.
 
-### Setting up Firebase Authentication
-
-Head to the Authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module of your project.
+### Setting up Firebase authentication
+Head to the authentication section in the dashboard and click on the `Get Started` button. This will enable the authentication module of your project.
 
 ![Get Started Auth](/engineering-education/react-native-firebase-facebook-authentication/auth_get_starterd.png)
 
@@ -256,8 +249,7 @@ Next, add a `meta-data` to the `application` element:
 Follow this [Getting Started Guide](https://developers.facebook.com/docs/ios/getting-started/?sdk=cocoapods) to set up the SDK for iOS.
 
 ### Sign-in
-
-In *App.js*, Let's create a function called `signIn` which will be called when the user presses the Sign in button. Let's wrap all the code inside the function in a `try/catch` block to display any error that may arise during the sign in flow.
+In *App.js*, let's create a function called `signIn` that will be called when the user presses the Sign in button. Let's wrap all the code inside the function in a `try/catch` block to display any error that may arise during the sign in flow.
 
 ```JSX
 async function signIn() {
@@ -347,13 +339,12 @@ async function signIn() {
 }
 ```
 
-### Display Authenticated Screen
-
+### Display authenticated screen
 The `onAuthStateChanged` event will be triggered whenever the authentication state of the user changes inside the application.
 
 You can set an event handler for this listener. This handler will receive the `user` object. If the `user` object is `null`, it means the user is signed-out, otherwise, they are signed-in.
 
-You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` which were copied from Facebook to Firebase.
+You can access the current authenticated user's details using `auth().currentUser` from anywhere in the application. The user object will contain the `displayName`, `email`, and `photoURL` that were copied from Facebook to Firebase.
 
 To learn more about the user object, refer to this [documentation](https://rnfirebase.io/reference/auth/user).
 
@@ -402,8 +393,7 @@ return (
 ![Auth Screen](/engineering-education/react-native-firebase-facebook-authentication/signin.gif)
 
 ### Sign out
-
-We should use the `signOut` method in the auth module to sign out a user from the application.
+We should use the `signOut` method in the auth module to sign a user out from the application.
 
 Let's import the `auth` module in *Authenticated.js*.
 
@@ -417,7 +407,7 @@ Let's call the `signOut` method when the user presses the signout button.
 <Button title="Signout" onPress={() => auth().signOut()} />
 ```
 
-Now, when the user presses the button, the auth module will sign out the user from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
+Now, when the user presses the button, the auth module will sign the user out from the application. This will trigger the `onAuthStateChanged` listener. The handler will receive `null` instead of the `user` object.
 
 Thus, we should set the authenticated state to `false` if we receive `null`.
 
@@ -433,31 +423,23 @@ auth().onAuthStateChanged((user) => {
 
 ![Signout](/engineering-education/react-native-firebase-facebook-authentication/signout.gif)
 
-### Let's Recap
-
+### Let's recap
 1. We set up our development environment and created a React Native app.
-
 2. We cloned the starter code.
-
 3. We created a Facebook app with a developer account and enabled Facebook Login for the app.
-
 4. We created a Firebase project and enabled Facebook authentication in our project with App ID and App Secret.
-
 5. We installed the required packages and we added the dependencies to the `build.gradle` files.
-
 6. We added the App ID to the `strings.xml` file and added some configurations to the `AndroidManifest.xml` file.
-
 7. We wrote a function to login the user with their Facebook access token using the Facebook SDK.
-
 8. We created a state to track the authentication state of the user and used the `onAuthStateChanged` handler to update the state.
-
-9. We displayed the *Authenticated* screen when the user has been authenticated.
-
+9. We displayed the *Authenticated* screen when the user had been authenticated.
 10. We used the `auth` module to sign out the user from the application from the *Authenticated* screen.
 
 Congratulations, :partying_face: You did it.
 
-Thanks for Reading!
+Thanks for reading.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
