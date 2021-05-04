@@ -6,7 +6,7 @@ url: /engineering-education/getting-started-with-metasploit-framework/
 title: Getting Started with the Metasploit Framework
 description: In this article, we will learn how to install the Metasploit framework then getting started with the basic commands. When doing penetration-testing, one should first scan the network for vulnerabilities and gather the necessary information to perform an exploit. 
 author: kimosop-wakanda
-date: 2021-05-04T00:00:00-08:00
+date: 2021-05-04T00:00:00-08:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
