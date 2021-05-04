@@ -4,41 +4,36 @@ status: publish
 published: true
 url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/
 title: How to Integrate B2C M-Pesa API using Node.js
-description: This article guides you on how to integrate the B2C M-Pesa API in Node.js. The M-Pesa API allows merchants to send money to consumers. 
+description: This article will guide you on how to integrate the B2C M-Pesa API in Node.js. The M-Pesa API allows merchants to send money to consumers. 
 author: 
-date: 2021-05-20T00:00:00-13:00
-topics: [Languages]
+date: 2021-05-04T00:00:00-15:00
+topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/hero.jpg
     alt: integrating-b2c-mpesa-api-using-node-js
 ---
-M-Pesa can be described as a phone-based mobile banking service. Since its inauguration in 2007 by Vodafone Group PLC and Safaricom in Kenya, it has expanded to eight more countries in Africa.
+M-Pesa can be described as a phone-based mobile banking service. Since its [inauguration](https://en.wikipedia.org/wiki/M-Pesa) in 2007 by Vodafone Group PLC and Safaricom in Kenya, it has expanded to eight more countries in Africa.
 <!--more-->
 An API (Application Programming Interface) is an intermediary between two software applications that enables them to communicate.
 
 B2C (Business to Consumer) M-Pesa API enables software developers or merchants to send payments to their customers. You can read more about the M-Pesa API from [here](https://www.safaricom.co.ke/business/corporate/m-pesa-payment-services/m-pesa-api).
 
 ### Goals
-
-In this article, we will integrate the B2C M-Pesa API in a Node.js RESTful API. We will consume the API using [swagger](https://swagger.io/).
+In this article, we will integrate the B2C M-Pesa API in a Node.js RESTful API. We will consume the API using [Swagger](https://swagger.io/).
 
 ### Prerequisites
-
 To follow along in this article, it is helpful to have the following:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Some basic knowledge on JavaScript.
-- A text editor installed. Preferrably [vs-code](https://code.visualstudio.com/)
+- A text editor installed. Preferrably [VScode](https://code.visualstudio.com/)
 
 ### Overview
-
 - [Setting up the development server](#setting-up-the-development-server)
 - [Getting an access token](#getting-an-access-token)
 - [B2C API](#b2c-api)
 
-### Setting up the Development Server
-
+### Setting up the development server
 This article assumes that you have a Safaricom developer account.
 
 If you don't, go through these [steps](/engineering-education/lipa-na-mpesa-online/#creating-a-safaricom-developer-account) to create one.
@@ -48,7 +43,6 @@ Also, ensure that you have created at least one application from your developer 
 To get started, we will clone the starter project from [here](https://github.com/Roba-W/nodejs-b2c-mpesa-api-starterkit). With all the basic configurations done on the skeleton, our focus throughout the article will be on implementing the core functionalities.
 
 We first need to install the following dependencies:
-
 - [axios](https://www.npmjs.com/package/axios): For handling the requests to the M-Pesa API.
 - [dotenv](https://www.npmjs.com/package/dotenv): For loading the environmental variables.
 - [express](https://www.npmjs.com/package/express): For providing a faster, and easier way to set up a RESTful API.
@@ -61,12 +55,11 @@ To install these packages, open the starter project in your text editor. Next, l
 npm install
 ```
 
-Having installed the dependencies, we can move to the next step.
+Having installed the dependencies, we can move on to the next step.
 
 > Note that we will be working from the `src/controllers/Mpesa.js` file.
 
-### Getting an Access Token
-
+### Getting an access token
 All requests to the M-Pesa API must have an access token. It forms the basis for authentication.
 
 To implement this functionality, we will edit the `getAccessToken()` method as follows:
@@ -120,16 +113,14 @@ async getAccessToken(req,res,next){
 };
 ```
 
-In the above code snippet, we are:
-
+In the code snippet above, we are:
 - Destructuring the `consumerkey` and `consumersecret` from the `headers`.
 - Setting the `URL` to send the request.
 - Generating a `base64` encoded string from a buffer.
 - Composing the authentication string by appending `Basic` before the encoded string.
-- Sending the request to M-Pesa API from a `try/catch` block. In case of an error, the error is sent to the client. Else if there is no error, the access token is sent to the client.
+- Sending the request to M-Pesa API from a `try/catch` block. In case of an error, the error is sent to the client. Otherwise, if there is no error, the access token is sent to the client.
 
 To test it:
-
 - Start the development server by running the following command from the terminal of your text editor:
 
 ```bash
@@ -141,14 +132,13 @@ npm run dev
 - Click the `Try it out` button.
 - To get your `consumer key` and `consumer secret`, visit your [applications page](https://developer.safaricom.co.ke/user/me/apps), select your application, from the `keys` section, then copy and paste them respectively into the section's parameters.
 - Click the `Execute` button.
-- In case of an error, revisit the steps. Else, your server response should resemble the following:
+- In case of an error, revisit the steps. Otherwise your server response should resemble the following:
 
 ![access_token_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/access-token-response-screenshot.png)
 
-_A screenshot of getting access token server response_
+*A screenshot of getting access token server response.*
 
 ### B2C API
-
 We can use the access token to access the B2C API.
 
 To do that, we need to modify the `b2c()` method as follows:
@@ -209,7 +199,6 @@ return res.send({
 ```
 
 In the above code snippet, we are:
-
 - Destructuring the data sent from the `headers`.
 - Setting the URL to send the request to.
 - Setting the `ngrok URL`. To get it, ensure that you have [ngrok](https://ngrok.com/) installed. Then open another tab in the terminal of your text editor and run the `npm run ngrok` command. Then, copy the `HTTPS URL` logged in your terminal and paste it appropriately in the `.env` file on the root of your project folder.
@@ -260,24 +249,22 @@ async cb(req,res,next){
   - For `PartyB`, copy and paste the `Test MSISDN` from [test credentials page](https://developer.safaricom.co.ke/test_credentials).
   - For `Remarks`, enter any text. Keep it short.
 - Click the `Execute` button.
-- In case of any error, revisit the above steps. Else, the following output should resemble your server response.
+- In case of any error, revisit the steps above. Otherwise the following output should resemble your server response.
 
 ![b2c_server_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-server-response-screenshot.png)
 
-_A screenshot of b2c server response_
+*A screenshot of b2c server response.*
 
 The information logged on your console should mimic the following:
 
 ![b2c_console_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-console-response-screenshot.png)
 
-_A screenshot of b2c console response_
+*A screenshot of b2c console response*
 
 ### Conclusion
-
 In today's competitive business environment, business processes should be automated to lower costs. The M-Pesa B2C API offers an infrastructure to automate payments from merchants to customers.
 
 To expand your knowledge on the covered topics, check out the following resources:
-
 - [M-Pesa B2C](https://www.safaricom.co.ke/faqs/faq/606)
 - [M-Pesa API docs](https://developer.safaricom.co.ke/docs#m-pesa-apis)
 - [API documentation using swagger](https://medium.com/wolox/documenting-a-nodejs-rest-api-with-openapi-3-swagger-5deee9f50420)
