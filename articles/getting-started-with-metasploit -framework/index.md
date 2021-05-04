@@ -60,7 +60,7 @@ $ sudo mfsdb init
 You are now ready to start your Metasploit Framework.
 
 Start Metasploit by running the command below:
-```
+```bash
 $ msfconsole
 ```
 
