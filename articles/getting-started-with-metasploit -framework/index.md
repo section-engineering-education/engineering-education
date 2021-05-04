@@ -155,7 +155,7 @@ Run the following command:
 msf5 > show payloads
 ```
 
-![Show payload result](/engineering-education/getting-started-with-metasploit-framework/showpayload.png)
+![Show payload result](/engineering-education/getting-started-with-metasploit-framework/showPayload.png)
 
 #### 2. show targets
 The command `show targets`, lists all the targets vulnerable to the staged exploit. A target's vulnerability can vary depending on the Operating system, update, language among others things.
@@ -215,7 +215,7 @@ This command exits the `msfconsole` and takes us back to the terminal:
 msf5 > exit
 ```
 
-![Exit Result](/engineering-education/getting-started-with-metasploit-framwork/exit.png)
+![Exit Result](/engineering-education/getting-started-with-metasploit-framework/exit.png)
 
 ### Conclusion
 I suggest you use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) to practice your exploits since it provides a secure environment to perform penetration testing and security research.
