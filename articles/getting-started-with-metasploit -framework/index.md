@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/getting-started-with-metasploit-framework/
-title: Getting Started with Metasploit Framework
+title: Getting Started with the Metasploit Framework
 description: In this article, we will learn how to install the Metasploit framework then getting started with the basic commands. When doing penetration-testing, one should first scan the network for vulnerabilities and gather the necessary information to perform an exploit. 
 author: kimosop-wakanda
 date: 2021-05-04T00:00:00-08:00
@@ -31,7 +31,7 @@ In your case, it is recommended that you use [Metasploitable 2](https://docs.rap
  
 Click [here](https://information.rapid7.com/metasploitable-download.html) to download Metasploitable 2.
 
-### Installing Metasploit Framework
+### Installing the Metasploit Framework
 In most cases, the Metasploit Framework is pre-installed in [Kali Linux](https://www.kali.org/) (the most recommended OS for penetration testing). For cases where it is missing, follow through for a successful installation.
 
 First, start the terminal and run the command below. 
