@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/push-notification-in-nodejs-using-service-worker/
+title: Getting started with push notifications in Node.js using service workers
+description: This article provides a step by step guide on how to create push notifications in Node.js using service workers.
+author: mercy-meave
+date: 2021-05-05T00:00:00-13:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/push-notification-in-nodejs-using-service-worker/hero.png
+    alt: Getting started with push notifications in Node.js using service workers
+---
+
 ### Table of contents
 - [Introduction](#introduction)
 - [Goal](#goal)
@@ -31,9 +47,9 @@ The benefits of push notifications include:
 In this article, I will explain a step-by-step implementation of push notifications using service workers in a Nodejs application.
 
 ### Prerequisites
-- You will need to have Nodejs installed in your computer. Installation procedure can be found [here.](https://nodejs.org/en/)
+- You will need to have Nodejs installed on your computer. The installation procedure can be found [here.](https://nodejs.org/en/)
 - A basic understanding of Nodejs
-- Code editor. I will use visual studio code. You can dowload it [here.](https://code.visualstudio.com/download)
+- Code editor. I will use visual studio code. You can download it [here.](https://code.visualstudio.com/download)
 
 ### Creating the Nodejs Application
 #### Init the application
