@@ -83,7 +83,7 @@ Let's set the session middleware.
 
 We'll create a simple login form to demonstrate that.
 
-**Here is the login form**, (`index.html).
+**Here is the login form**, (`index.html`).
 
 ```html
 <html>
@@ -203,7 +203,7 @@ app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 
 In this example, we are using a simple login application. To authenticate the user. I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. The server will verrify the username and password against the database. If valid the user will be granted the necessary data access.
 
-To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == 'user1' && req.body.password == 'mypassword'`. I.e. comparing the username and the password for the existing user in the server.
+To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == 'user1' && req.body.password == 'mypassword'`. i.e. comparing the username and the password for the existing user in the server.
 
 If the credentials are valid, the server will create a temporary user session with a random string known as a session ID to identify that session.
 
@@ -215,9 +215,7 @@ The server is going to validate the cookie against the session ID. If the valida
 
 If the credentials are invalid, the server will not grant this user access to the resources. No session will be initialized, and no cookie will be saved.
 
-When the user decides to log out, the server will destroy (`req.session.destroy();`) the session and clear out the cookie on the client-side. Cookies are cleared once the `maxAge` expires.
-
-Let's see who this work out using the server we've created above.
+When the user decides to log out, the server will destroy (`req.session.destroy();`) the session and clear out the cookie on the client-side. Cookies are cleared in the browser when the `maxAge` expires.
 
 Run the application using `nodemon app.js`. This should start the server on the set port 4000.
 
@@ -227,7 +225,7 @@ Open the server on the browser on route `http://localhost:4000/`, and you will b
 
 ![A served express server html form](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
 
-To be autheticated by server, provide the credentils as specified in `if(req.body.username == 'user1' && req.body.password== 'mypassword')`. Username as `user1` and password as `mypassword`.
+To be autheticated by server, provide the credentils as specified in the server. Username as `user1` and password as `mypassword`.
 
 ![Session user granted access](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
 
@@ -241,7 +239,7 @@ These are the same values you would have saved in a production environment on th
 
 Let's see the cookie value saved in the browser.
 
-Open the browser inspector tool application Cookies http://localhost:4000/.
+Open the browser inspector tool > application > Cookies http://localhost:4000/.
 
 ![Node.js browser cookies](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/cookie.jpg)
 
@@ -253,7 +251,7 @@ It's not a security concern if a third party can read the cookies.
 
 A cookie doesn't carry any meaningful data inside of them. It just contains the session ID token. The cookie is encrypted. It still have to maintain a one-to-one relationship to the user session. The cookie will be valid until set maxAge expires unless the user decides to log out.
 
-When the user logout, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
+When the user logs out, the session will be destroyed. There is no session to compare with the saved cookie. The user will have to log in again to create a session ID for the new login session.
 
 ### Conlusion
 That's all for this tutorial. This was a basic example, and I hope it helped you understand the concept of session management in Node.js using Express.js and Express-session.
