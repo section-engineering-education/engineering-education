@@ -17,8 +17,8 @@ images:
 
 ### Introduction
 
-Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due to action cause the listener objects to be executed.  
-It has a built-in module called `events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
+Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due to an action causes listener object(s) to be executed.  
+It has a built-in module `events`. This module has an object `Event Emitter` which we can manipulate to listen to events.  
 
 ### Prerequisites
 This article assumes you have basic knowledge in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [REPL](https://nodejs.org/api/repl.html), and [Node.js](https://nodejs.org/en/) installed in your local development environment.
