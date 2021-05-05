@@ -1,4 +1,4 @@
-![Article cover image](./hero.jpg)
+![Article cover image](./hero.png)
 
 # What are Container Components in React.
 
@@ -18,7 +18,7 @@ Obtaining data doesn’t mean the traditional way of fetching data from an API�
 
 The component that gets rendered represents the user interface or layout of the app.
 
-> A container component is always responsible for how things work in a component.
+> A container component is always responsible for how things work in a component. -- Dan Abramov
 
 Sometimes it (the container component) can perform two functions (i.e. to render UI and hold logic). In a situation where a container component performs these. The component itself does not hold too many markups (JSX) and is void of CSS styles. Here’s an example below:
 
