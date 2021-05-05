@@ -8,6 +8,12 @@ In this article we’d create a search component that makes use of the container
 
 When you’re done reading this article, you’d have an understanding of how a container component works and how to build any React component using this pattern.
 
+## What you need to know
+
+Before you read this article, you need to have an idea of what [React](https://reactjs.org) is, how to make use of [React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component, and understand how components and [Props](https://reactjs.org/docs/components-and-props.html) work together.
+
+When you're done getting around these concepts, you can come back here to read this article.
+
 ## What exactly are they?
 
 The term “Container components” was used by [Dan Abramov](https://overreacted.io/) when he was buttressing on the concept of separation of concerns in a React Application.
@@ -27,7 +33,7 @@ import React from “react”
 
 export const exampleComponent = ({ children, open }) => {
 	return (
-		<div onClick={() => open()} alt="">
+		<div onClick={() => open()}>
 			{children}
 		</div>
 	);
