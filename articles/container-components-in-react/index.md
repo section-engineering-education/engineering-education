@@ -1,6 +1,6 @@
 ![Article cover image](./hero.png)
 
-# What are Container Components in React.
+### What are Container Components in React.
 
 As time goes on, while making use of React, one would need to think of how data is being passed among different components in a React application.
 
@@ -8,13 +8,13 @@ In this article we’d create a search component that makes use of the container
 
 When you’re done reading this article, you’d have an understanding of how a container component works and how to build any React component using this pattern.
 
-## What you need to know
+### What you need to know
 
 Before you read this article, you need to have an idea of what [React](https://reactjs.org) is, how to make use of [React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component, and understand how components and [Props](https://reactjs.org/docs/components-and-props.html) work together.
 
 When you're done getting around these concepts, you can come back here to read this article.
 
-## What exactly are they?
+### What exactly are they?
 
 The term “Container components” was used by [Dan Abramov](https://overreacted.io/) when he was buttressing on the concept of separation of concerns in a React Application.
 
@@ -168,7 +168,7 @@ const authorsContainer = () => {
 export default authorsContainer
 ```
 
-## Conclusion
+### Conclusion
 
 The idea behind this paradigm is the ability to be able to adopt the “separation of concern” pattern.
 
