@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /engineering-education/nodejs-structural-comparisons/
 title: Node.js Structural Comparisons 
-description: Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. In this article, we compare the various structural differences between Node.js and C/C++. After going through the article, the reader will understand the structural differences related to installing modules, defining  variables and visualizations.
+description: Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. In this article, we compare the various structural differences between Node.js and C/C++.
 author: priya-kalyanakrishnan
-date: 2021-04-23T00:00:00-18:00
-topics: []
+date: 2021-05-05T00:00:00-08:00
+topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,44 +15,47 @@ images:
    alt: Node.js Structural comparison example image
 
 ---
+Node.js is a computer language based on JavaScript. When learning a new language, finding commonalities between other computer languages can be helpful. This article will help readers understand the structural differences related to installing modules, defining variables and visualizations.
+<!--more-->
+### Node.js structural comparisons
+In this tutorial, we will be comparing Node.js with C/C++. In this tutorial will be installing modules, defining variables, and visualizations. Applying these concepts might be beneficial in various situations.  
 
-### Node.js Structural Comparisons
-
-Node.js is a computer language based on JavaScript. When learning a new language, finding commonalities between other computer languages can help. In this tutorial, Node.js is compared with C/C++. Structural topics included in this tutorial are installing modules, defining variables, and visualizations. Applying these concepts might become beneficial in various situations.  
-
-#### Table of Contents
+### Table of contents
 1. [Prerequisites](#prerequisites)
 2. [Node.js](#nodejs)
 3. [C](#c)
 
-#### Prerequisites
+### Prerequisites
+- Windows device.
+- Previous knowledge of installing modules.
+- Some knowledge of interpreting graphs and similar visualizations.
+- Prior knowledge of math and statistics.
+- Installations of the following:  
+  - [Kali Linux](https://kali.org).
+  - [Node.js](https://nodejs.org) application.
+- [Plotly](https://chart-studio.plotly.com) account.
+- Some coding knowledge or experience.
 
-* Windows device.
-* Previous knowledge of installing modules.
-* Some knowledge of interpreting graphs and similar visualizations.
-* Prior knowledge of math and statistics.
-* Installations of the following:  
-  * [Kali Linux](https://kali.org).
-  * [Node.js](https://nodejs.org) application.
-* [Plotly](https://chart-studio.plotly.com) account.
-* Some coding knowledge or experience.
+Once most of the prerequisites are met, we can begin.  
 
-Once most of the prerequisites are met, let's begin.  
+### Node.js
+Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables. We can find modules on open-source websites. 
 
-#### Node.js
+In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can be substituted for `install`.  
 
-Node.js is written in a unique structure. One characteristic to consider is the steps to create or add modules into Node.js. As each coding language includes its sequenced procedure, Node.js also involves flexible options when defining variables. We can find modules on open-source websites. In Node.js, folders and JavaScript files are known to hold modules. Modules inside the `node_module` folder can be used in the Node.js application. One method to install Node.js modules is shown below. Alternatively, `i` can substitute for `install`.  
-
-```Bash
+```bash
 npm install plotly
 ```  
 
-A branched-out path directory looks similar to the picture below.  
+A branched-out path directory will look similar to the picture below.  
 
 ![Directory](/engineering-education/nodejs-structural-comparisons/path.jpg)  
-_Screen capture_  
 
-Remember to use the `npm rebuild` command. A module is installed after this command is entered. If this command is not entered, the installation is incomplete and cannot be included in Node.js scripts. Node.js is structured uniquely to define a variable properly. When using the `global` function, the function can optionally be included in other modules. For example, without a `global` function to define a variable, the variable will be named `undefined`.  
+*Screen capture*
+
+Remember to use the `npm rebuild` command. A module is installed after this command is entered. If this command is not entered, the installation is incomplete and cannot be included in Node.js scripts. 
+
+Node.js is structured uniquely to define a variable properly. When using the `global` function, the function can be included in other modules optionally. For example, without a `global` function to define a variable, the variable will be named `undefined`.  
 
 An example is shown below.  
 
@@ -61,13 +64,14 @@ var name = 'section.io';
 ```  
 
 **Output:**  
+
 ```JavaScript
 undefined
 ```  
 
-When adding `global` before the variable name, the value becomes defined. Defined `global` variables can be applied to many data types and used with various node.js modules.  
+When adding `global` before the variable name, the value becomes defined. Defined `global` variables can be applied to many data types and used with various Node.js modules.  
 
-The following are examples.  
+The following are a few examples.  
 
 ```JavaScript
 global.name = 'section.io';
@@ -76,6 +80,7 @@ global.alphanum = [name, number];
 ```  
 
 **Output:**  
+
 ```JavaScript
 'section.io'
 [ 0, -10, 3.14, -3.14 ]
@@ -83,11 +88,14 @@ global.alphanum = [name, number];
 ```  
 
 ![Defining Variables](/engineering-education/nodejs-structural-comparisons/define.jpg)  
-_Screen capture_  
+
+*Screen capture*
 
 Handling different data types inside an individual variable might need a specific structure. In this case, square brackets surround values.  
 
-Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept of defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. One important note when generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. If the script does not have a set `seed`, numbers generated from the script will be different each time.   
+Visualizations in Node.js are generated with Plotly. To graph with Plotly, an account is required. The concept of defining variables is also applied to the Node.js script below. Replace [enterusername] and [enterkey] with the login information received during Plotly account registration. 
+
+One important thing to note, generating random numbers is the option to seed. The term seed in this tutorial refers to repeating the same script and receiving the same outcomes. If the script does not have a set `seed`, numbers generated from the script will be different each time.   
 
 ```JavaScript
 
@@ -115,6 +123,7 @@ plotly.plot(data, graphOptions, function (err, msg) {
 ```  
 
 **Output:**  
+
 ```JavaScript
 {
   streamstatus: undefined,
@@ -128,23 +137,27 @@ plotly.plot(data, graphOptions, function (err, msg) {
 
 The image below is a frozen portion of the [interactive graphic](https://chart-studio.plotly.com/~pkalynan/0).  
 ![Graph](/engineering-education/nodejs-structural-comparisons/plotlyplt.jpg)  
-_Screen capture_  
+
+*Screen capture*
 
 By visiting the following [link](https://chart-studio.plotly.com/~pkalynan/0), additional options to observe the data can be visualized. One example is converting any given Node.js script to other programming languages such as Python, R, and JSON. Another feature includes a mouse-over technique to display labels.  
 
-A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. The graph included most measures of central tendency variables, although mean or average remained unavailable. The second graph positioned to the right is horizontal. Both graphs can display medians.  
+A general overview of the visual from the random number generator considers the scale and the physical positioning of the box plots. The vertical box plot included data points under the value of one. 
 
-#### C
+The graph included most measures of central tendency variables, although the mean or average remained unavailable. The second graph positioned to the right is horizontal. Both graphs can display medians.  
 
-In this portion of the tutorial, tips on the procedural process behind Matplotlib-cpp installations, defining variables, and applying these procedures to visualizations are discussed. The following is the most frequently used procedure to install a C module. [Matplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly. After entering an installation command, a request to install other required dependent modules can be accepted or declined. At this step, enter `y` to complete installations with the command provided below.  
+### C
+In this portion of the tutorial, tips on the procedural process behind Matplotlib-cpp installations, defining variables, and applying these procedures to visualizations are discussed. The following is a frequently used procedure to install a C module.
 
-```Bash
+[Matplotlib-cpp](https://github.com/lava/matplotlib-cpp) can be installed accordingly. After entering an installation command, a request to install other required dependent modules can be accepted or declined. At this step, enter `y` to complete installations with the command provided below.  
+
+```bash
 apt-get install python-matplotlib python-numpy python2.7-dev
 ```  
 
 Next, define variables in a C/C++ environment. A text editor in the command line can help create a C file. For example, `nano` is a built-in text editor involved in the creation of C files.  
 
-```Bash
+```bash
 nano test.c
 ```  
 
@@ -160,7 +173,9 @@ int main(){
 };
 ```  
 
-Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. We open the output file with the second command with the path directory symbol and the file name.  
+Compilation of the script above must be done before running the C script. Enter `sudo` at the start of every command when not in `ROOT` mode. 
+
+Additional observations to note are `gcc` helps create C files, and `-o` creates a name of the output file. We open the output file with the second command with the path directory symbol and the file name.  
 
 ```Bash
 gcc test.c -o test
@@ -168,9 +183,13 @@ gcc test.c -o test
 ```  
 
 **Output:**  
+```bash
 Numerical variable is 500000.  
+```
 
-Visualizations display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs. However, simplicity is key. As stated in Matplotlib-cpp documentation, installing python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
+Visualizations display data in different forms. To graph, [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/) can display many types of graphs. However, simplicity is key. 
+
+As stated in Matplotlib-cpp documentation, installing Python is necessary to create graphs. Start by creating a C++ file with `nano`. The script below is saved as flip.cpp.  
 
 ```C
 #include <cmath>
@@ -196,7 +215,7 @@ int main()
 }
 ```  
 
-Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the python library directory. To run the newly created file, enter the second command underneath `g++`.  
+Enter the command below to compile the cpp file written above. `g++` is designed to create c++ files. The command must also contain the Python library directory. To run the newly created file, enter the second command underneath `g++`.  
 
 ```Bash
 g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
@@ -206,31 +225,31 @@ g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
 If `kex` is open, the image should appear similar to the picture below.  
 
 ![Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/soundcurve.jpg)  
-_Screen capture_  
 
-To recap the graph shown above, the graph is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound. The graph forms a rotated version of a geometric shape symbolizing one heart. Colors can be changed accordingly.  
+*Screen capture* 
 
-#### Conclusion
+To recap the graph shown above is a mixture of many forms of sine and cosine waves. These trigonometric functions are also used to measure sound. 
 
+The graph forms a rotated version of a geometric shape symbolizing one heart. Colors can be changed accordingly.  
+
+### Conclusion
 As described, Node.js and C/C++ offer several features. Based on preferences and purposes, either computer language can complete tasks. Deciding which computer language to use depends on a case-to-case basis.  
 
-#### Takeaways
+### Takeaways
+- In Node.js, defining global variables starts with `global.` followed by a variable name in a single statement.
+- Plotly graphs generated with Node.js are sent to a separate interactive browser window. Interactive features include script conversions and displaying labels.
+- In C/C++, files are required to be compiled before running files.
+- Matplotlib-cpp graphs are displayed with `kex`.
 
-* In Node.js, defining global variables starts with `global.` followed by a variable name in a single statement.
-* Plotly graphs generated with Node.js are sent to a separate interactive browser window. Interactive features include script conversions and displaying labels.
-* In C/C++, files are required to be compiled before running files.
-* Matplotlib-cpp graphs are displayed with `kex`.
+### References
+- [Kali Linux](https://kali.org)  
+- [Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
+- [Matplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
+- [Node.js](https://nodejs.org)  
+- [Plotly](https://chart-studio.plotly.com)  
+- [Plotly Graph](https://chart-studio.plotly.com/~pkalynan/0)  
 
-#### References
-
-[Kali Linux](https://kali.org)  
-[Matplotlib-cpp](https://matplotlib-cpp.readthedocs.io/en/latest/)  
-[Matplotlib-cpp Installation](https://github.com/lava/matplotlib-cpp)  
-[Node.js](https://nodejs.org)  
-[Plotly](https://chart-studio.plotly.com)  
-[Plotly Graph](https://chart-studio.plotly.com/~pkalynan/0)  
-
-Happy Coding!  
+Happy coding!  
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
