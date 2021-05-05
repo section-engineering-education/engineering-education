@@ -1,28 +1,35 @@
 
-### Getting started with Data Preprocessing in R
-Data preprocessing is the initial phase of machine learning where data is prepared ready for machine learning models. This part is very crucial in machine learning and needs to be done appropriately and in a systematic manner else we end up building models that are not accurate for their purpose.
+Data preprocessing is the initial phase of machine learning where data is prepared for machine learning models. This part is very crucial in machine learning and needs to be done properly and in a systematic manner. If not, we will end up building models that are not accurate for their purpose.
 
-In this article, we shall learn all steps involve in the data preprocessing stage. 
+In this article, we shall learn all steps that's involved in the data preprocessing stage. 
 
 ### Prerequisites
+
 1. [RStudio](https://www.rstudio.com/products/rstudio/download/) install on your computer.
+
 2. install packages('caTools')
 
 ### Steps in Data Preprocessing
-#### Step 1: Importing the Dataset.
+
+#### Step 1: Importing the Dataset
+
 Before we start preparing our data, first we need to load it in RStudio IDE.
 Here is how to achieve this.
+
+```r
 Dataset = read_csv('data.csv')
-This code imports our data stored in csv format.
-We can have a look at our data using 'view()' function, ie,
+```
+
+This code imports our data stored in csv format. We can have a look at our data using 'view()' function:
+
 ```r
 view( Dataset)
-
 ```
 
 Upon executing we obtain our dataset as below.
 
 #### Output
+
 ![replaced Dataset](/engineering-education/data-preprocessing/Dataset.png)
 
 Our dataset has four columns and ten observations, it shows how customers from three different countries with different ages and salaries responded to the purchase of a certain product.
