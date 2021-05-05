@@ -17,13 +17,20 @@ images:
 
 ### Introduction
 
-Node.js is a server-side platform based on the JavaScript Engine in Google Chrome (V8 Engine). Ryan Dahl created Node.js in 2009. Node.js is a tool for easily creating fast and flexible network applications based on Chrome's JavaScript runtime. These are some of Node.js's characteristics: It's asynchronous and event-driven. This eliminates the need for a Node.js server to wait for an API to return data. Since it is based on Google Chrome's V8 JavaScript Engine. It is also extremely quick in terms of code execution. Data is never buffered in its applications; instead, data is sent in bits. 
+Node.js is a server-side platform based on Google Chrome (V8 Engine). Ryan Dahl created Node.js in 2009. Node.js is a tool for creating fast and flexible network applications based on Chrome's JavaScript runtime.
+These are some of the Node.js characteristics:- 
+- Asynchronous and event-driven, eliminating the need for a Node.js server to wait for an API to return data. 
+- Fast in terms of code execution. There is no buffering since data transmitted in bits.
+
 
 ### Goal
 This article discusses new features in Node.js 15. It will also show why you should consider updating to the latest release.
 
 ### New features of Node.js 15
-Node.js 15 is the most recent version, which was released in October of 2020. It doesn’t have long-term support. Output improvements, a V8 JavaScript engine upgrade, bug fixes, and an experimental version of Abort Controller and QUIC are all included.
+Node.js 15 is the most recent version, released in October of 2020. It does not have a long-term support. 
+Node.js improvements:- 
+- V8 JavaScript engine upgrade.
+- Bugfix and an experimental version of Abort Controller and QUIC are all included.
 
  **NPM 7**
 
