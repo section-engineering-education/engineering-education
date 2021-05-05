@@ -1,5 +1,3 @@
-![Article cover image](./hero.png)
-
 ### What are Container Components in React.
 
 As time goes on, while making use of React, one would need to think of how data is being passed among different components in a React application.
