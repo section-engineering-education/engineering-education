@@ -13,7 +13,7 @@ There are two versions of internet protocol ie. Internet protocol version 4 and 
 4. [Internet protocol version 6](#internet-protocol-version-6)
 5.  [Similarities between IPv4 and IPv6](#similarities-between-IPv4-and-IPv6)
 6. [Differences between IPv4 and IPv6](#differences-between-IPv4-and-IPv6)
-7. [Why does IPv6 take preference to IPv4?](#Why-does-IPv6-take-preference-to-IPv4?)
+7. [Why does IPv6 take preference to IPv4?](#why-does-IPv6-take-preference-to-IPv4?)
 8. [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -109,5 +109,4 @@ Other than having larger addressing space, IPv6 has other beneficial features ad
 
  The rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. This together with the frequent advancement in technology in almost every sector in the community is leading to the development of more networks hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.
 
-
-### Blissful reading!
+Blissful reading!
