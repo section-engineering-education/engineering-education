@@ -1,9 +1,9 @@
 ### Introduction
-Node.js `Read -Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions.
-This shell captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell.  
+Node.js `Read-Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions.
+It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell.  
+It's also important to note that this tool does not require file creation to write codes. It comes with ready to use Node.js development environment.
 
-It's therefore, important to note that this tool does not require file creation to write codes. It comes with ready to use Node.js development environment.
-In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating .js files.
+In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating `.js` files.
 
 ### Table of contents
 1. Introduction to REPL
@@ -48,7 +48,7 @@ In the script, we declare a variable `hello` and assign the text 'hello world'.
 Next, we call this variable and press enter, to print the 'hello world' string on the screen. That's it.  
 
 Now how do we exit REPL?
-To exit this tool, press `ctrl + Z on your keyboard.  
+To exit this tool, press `Ctrl+C` on your keyboard.  
 
 Output:
 ```bash
@@ -203,5 +203,6 @@ undefined
 
 In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment. 
 We've seen how we can perform different tasks such as basic artihmetic operations and creating functions without the necessity to create a `.js` file.
+You can as well follow [this](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) link for more information.
 
 Happy Coding!!
