@@ -53,7 +53,7 @@ A search component is among the most ubiquitous components in a typical React ap
 Let’s start by thinking about the function(s) that the search component would perform. A search component should be a able to perform basic tasks like searching and filtering.
 To limit the amout of time spent on getting the perfect API that the search component has to interact with.
 
-I’d go ahead to create an array of objects containing simple information that will be in this component
+Let's create an array of objects containing simple information about books that will be in this component:
 
 ```js
 // bookshelf.js
