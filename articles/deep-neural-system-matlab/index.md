@@ -64,7 +64,7 @@ When you open a folder of any number you will be able to see the 1000 images. Be
 For training, we take 750 images from each folder of the digit dataset. This means that the total training images are 7500 images since the folders are 10. The remaining 250 images which sum up to 2500 images will be used for validation. This division is done by writing Matlab code.
 
 ### Structure of convolutional neural network(CNN/convnet).
-CNN is the common category apropos to neural networks. CNN revolves around the features discovered from the input data. The network operates a 2D convolutional layer making this constitution in a better position for analyzing data for instance images.
+CNN is the common category belonging to neural networks. CNN revolves around the features discovered from the input data. The network operates a 2D convolutional layer making this constitution in a better position for analyzing data for instance images.
 The first layer of the CNN is the input layer that we have to define when we will define the CNN in Matlab. We then define the various layers during feature detection. The CNN is made up of 3 layers. The top layer is the input layer. The middle layer includes a 2D convolutional layer, batch normalization layer, relu layer, max pooling layer. The last layer involves a fully connected layer, softmax layer, classification layer.
 The second layer which has 4 layers will be used repeatedly. They are not only four because we have different bunches of the 4 layers.
 
