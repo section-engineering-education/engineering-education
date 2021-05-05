@@ -36,7 +36,7 @@ To follow along, you need:
 
 ### Setting Up Our Project
 
-Open your IDE and create a folder and named `Express-AdminBro`. Inside this folder, setup a new project using the `npm init -y` command to generate a `package.json` file. We require various npm modules from the npm registry:
+Open your IDE and create a folder and named `Express-AdminBro`. Inside this folder, set up a new project using the `npm init -y` command to generate a `package.json` file. We require various npm modules from the npm registry:
 
 - express: Express is a Node.js framework for building web applications and backend APIs.
 
@@ -48,7 +48,7 @@ Open your IDE and create a folder and named `Express-AdminBro`. Inside this fold
   
 - @admin-bro/mongoose: `@admin-bro/mongoose` is the recommended Mongoose database adapter when using AdminBro.
 
-- nodemon: nodemon is a development dependency package that monitors our applications and restarts the server incase of changes.
+- nodemon: nodemon is a development dependency package that monitors our application changes and restarts the server.
   
 - tslib: `tslib` is a module runtime library for TypeScript with various helper functions.
   
@@ -95,18 +95,17 @@ Inside our `Express-AdminBro` application directory, add another folder named `c
 ```js
 const mongoose = require('mongoose')
 
+const DB_URI = 'mongodb:localhost:27017/AdminBro';
 //Database connection
-mongoose.connect('mongodb:localhost:27017/AdminBro',
+mongoose.connect(DB_URI,
 {useNewUrlParser: true, useUnifiedTopology: true});
 
 const connection = mongoose.connection
 
 module.exports = connection
 ```
-_____________________________
-_____________________________
 
-In the above code, the `connection` to the `MongoDB` database in Node.js is established by passing the `MongoDB connecting string` to the mongoose object. To check the connection, we import the `connection` object and use it in our `server.js` file.
+In the above code, we establish a `connection` to the `MongoDB` when `DB_URI` string is passed as an argument to the mongoose object. To check the connection, we import the `connection` object and use it in our `server.js` file.
 
 ### Creating the MongoDB Models
 `Mongoose` is a package that manages relationships between data and provides schema validation. When using mongoose, models are defined using a `Schema` interface that defines fields in MongoDB documents. Schemas will then be transformed into models using the `mongoose.model()` method. The model is what we use to find, create, update, and delete documents of a given type. We will create two models namely, `Customer.js` and `Admin.js`. Add a folder named `models` in our project for our Schemas and `Admin.js` file. 
@@ -195,9 +194,9 @@ app.listen(8000, ()=>console.log('Listening at Port 8000'));
 ```
 Let's briefly dissect the above code:
 
-To start the admin panel, we have to seed the admin panel with data by connecting our resource database models from the ODM (mongoose) that our app is using. We first import the AdminBro’s database adapter for Mongoose before we register the adapter to used in our application. Next, we pass the database to the `AdminBro ({})` options object. The model paths have to be at the top of the scope before passing the options. From here, we register the AdminBro adapter for mongoose and build a router for our AdminBro and consume it with `app.use(adminBro.options.rootPath, router)`. Finally, we listen to incoming requests in our Node.js server at port 8000 using the `app.listen()` method. 
+To start the admin panel, we have to seed the admin panel with data by connecting our resource database models from the ODM (mongoose) that our app is using. We first import the AdminBro’s database adapter for Mongoose before we register the adapter to be used in our application. Next, we pass the database to the `AdminBro ({})` options object. The model paths have to be at the top of the scope before passing the options. From here, we register the AdminBro adapter for mongoose and build a router for our AdminBro and consume it with `app.use(adminBro.options.rootPath, router)`. Finally, we listen to incoming requests in our Node.js server at port 8000 using the `app.listen()` method. 
 
->>> Note: To implement this set up on an app that has an existing middleware stack, we need to make sure that AdminBro is the first element in the routing layers. This is because AdminBro cannot handle requests that have been transformed by other middleware.  
+>>> Note: To implement this setup on an app that has an existing middleware stack, we need to make sure that AdminBro is the first element in the routing layers. This is because AdminBro cannot handle requests that have been transformed by other middleware.  
 
 ### Start the application
 
