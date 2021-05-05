@@ -33,14 +33,25 @@ Upon executing we obtain our dataset as below.
 ![replaced Dataset](/engineering-education/data-preprocessing/Dataset.png)
 
 Our dataset has four columns and ten observations, it shows how customers from three different countries with different ages and salaries responded to the purchase of a certain product.
-#### Step 2: Handling the Missing Data.
+
+#### Step 2: Handling the Missing Data
+
 From the dataset, the Age and Salary column report missing data. Before implementing our machine learning models, this problem needs to be solved else it will cause a serious problem to our machine learning models. Therefore, it's our responsibility to ensure this missing data are eliminated from our dataset using the most appropriate technique.
-Here are two techniques we use to handle missing data.
-1. Delete the observation reporting the missing data.
-This technique is suitable when dealing with big datasets with very few missing values i.e. deleting one row from a dataset with thousands of observations can not affect the quality of the data. When the dataset reports many missing values, it can be very dangerous to use this technique. Deleting many rows from a dataset can lead to the loss of crucial information contained in the data.
-To ensure this does not happen, we make use of an appropriate technique that has no harm to the quality of the data.
-2. Replace the missing data with the average of the feature in which the data is missing. This technique is the best way so fur to deal with the missing values. Many statisticians make use of this technique more than the first one.
+
+Here are two techniques we use to handle missing data:
+
+1. **Delete the observation reporting the missing data:**
+
+  This technique is suitable when dealing with big datasets with very few missing values i.e. deleting one row from a dataset with thousands of observations can not affect the quality of the data. When the dataset reports many missing values, it can be very dangerous to use this technique. Deleting many rows from a dataset can lead to the loss of crucial information contained in the data.
+  
+  To ensure this does not happen, we make use of an appropriate technique that has no harm to the quality of the data.
+
+2. **Replace the missing data with the average of the feature in which the data is missing: **
+
+  This technique is the best way so far to deal with the missing values. Many statisticians make use of this technique more than the first one.
+  
 Now that we've known the techniques used to treat the missing data, let's solve this problem from our data. In our case, we shall make use of the second technique.
+  
 First, we will start by replacing the missing data in the Age column with the mean of that column. The code below carries out such a task.
 
 ```r
@@ -48,7 +59,9 @@ Dataset$Age = ifelse(is.na(Dataset$Age),
                      ave(Dataset$Age, FUN = function (x)mean(x, na.rm = TRUE)),
                      Dataset$Age)
 ```
-What does the code above really do?
+
+**What does the code above really do?**
+
 `Dataset$Age`: simply take the Age column from our dataset. 
 In the Age column, we've just taken from our data set, we need to replace the missing data and at the same time keep the data that is not missing, This objective is achieved by the use of the if-else statement.
 Our ifelse statement is taking three parameters.
@@ -61,8 +74,8 @@ Executing the code we obtain:
 
 The missing value that was in the Age column of our data set has successfully been replaced with the mean of the same column.
 
-We do the same for the Salary column by executing the code below.
- code
+We do the same for the Salary column by executing the code below:
+
 ```r
 Dataset$Salary = ifelse(is.na(Dataset$Salary),
                      ave(Dataset$Salary, FUN = function (x)mean(x, na.rm = TRUE)),
@@ -70,6 +83,7 @@ Dataset$Salary = ifelse(is.na(Dataset$Salary),
 ```
                      
 ![replaced NA_value of the Salary column](/engineering-education/data-preprocessing/dataset2.png)
+
 The missing value that was in the Salary column was successfully replaced with the mean of the same column as well.
 
 ### Step 3: Encoding Categorical Data.
