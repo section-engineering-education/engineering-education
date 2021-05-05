@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-container-as-a-service/
 title: Getting started with Container as a Service
-description: This article will cover the evolution of container technology into a container as a service model, the essence of CaaS to developers, and the building blocks of Container as a Service. At the end of the article, the reader will learn how to work with available CaaS tools. 
+description: This article will cover the evolution of container technology into a container as a service model, the essence of CaaS to developers, and the building blocks of container as a service. At the end of the article, the reader will learn how to work with available CaaS tools. 
 author: elly-omondi
 date: 2021-05-04T00:00:00-23:00
 topics: [Containers]
@@ -21,8 +21,8 @@ Before reading any further, for an introduction to container technology, you can
 
 ### Table of content
 This article will cover:
-- [What is Container as a Service](#what-is-container-as-a-service)
-- [Why Container as a Service](#why-container-as-a-service)
+- [What is Container as a Service?](#what-is-container-as-a-service)
+- [Why Container as a Service?](#why-container-as-a-service)
 - [Benefits of Container as a Service](#Benefits-of-container-as-a-service)
 - [Container as a Service tools](#Container-as-a-service-tools)
 - [Working with Amazon EC2 Container Service](#Working-with-AmazonEC2-container-service)
@@ -30,9 +30,9 @@ This article will cover:
 ### What is Container as a Service (CaaS)
 Tasks such as configuring, uploading, scaling, and migrating containers in cloud environments usually become overwhelming, more so when performed on a significant scale level. 
 
-For this reason, a cloud-based service model (CaaS) was developed to help software developers and IT practitioners run their routine tasks with ease. With containerized applications being on the rise, major cloud vendors inevitably had to offer this container infrastructure and management as a service model.
+For this reason, a cloud-based service model (CaaS) was developed to help software developers and IT practitioners run their routine tasks easily. With containerized applications being on the rise, major cloud vendors inevitably had to offer this container infrastructure and management as a service model.
 
-[Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service) is an automated hosting and deployment platform for containerized applications. With CaaS in place, DevOps teams can scale, run, manage, and organize containers and container-based applications without worrying about the underlying infrastructure upon which cloud containers run on.
+[Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service) is an automated hosting and deployment platform for containerized applications. With CaaS in place, DevOps teams can scale, run, manage, and organize containers and container-based applications without worrying about the underlying infrastructure upon which cloud containers is it running on.
 
 CaaS rely on container-based virtualization, Application Programming Interfaces, and web portal interfaces to provide the above-managed services.
 
@@ -41,13 +41,13 @@ CaaS provides the development team with a higher level of abstraction for DevOps
 
 CaaS providers also offer container orchestration engines to deploy and run many containers, thus relieving DevOps teams the need to run and maintain their own machines.
 
-The following services and components make CaaS stand out among IaaS, PaaS, and other as service models:
+The following services and components make CaaS stand out among IaaS, PaaS, and other "as service" models:
 
 1. *Container registry*: containers are provisioned through images. These images are stored in registries/repositories such as docker hubs, where they are pulled to provision containers. CaaS providers host these container registries for management services.
 
-2. *Container Management*: CaaS provides management and monitoring platforms to ensure containers are correctly provisioned, up and running, load-balanced, and in good health.
+2. *Container management*: CaaS provides management and monitoring platforms to ensure containers are correctly provisioned, up and running, load-balanced, and in good health.
 
-3. *Rich set of Developer Tools*: through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
+3. *Rich set of developer tools*: through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
 
 CaaS is more suitable for Microservice oriented applications because of the independent Infrastructure that such applications rely on.
 
@@ -61,22 +61,22 @@ Like other 'as a service' models available, CaaS provides flexible options where
 -	*Portability*: running applications through CaaS containers provides flexibility for the apps to be launched in any environment/platform (public/private clouds). All necessary dependencies and configuration files are bundled together with the applications.
 
 - *Security*: containerized applications run independently and in isolation with other containers. CaaS provides this isolation as a risk-minimizing feature that shields failures of one container and its apps from affecting other containers.
-- 
+ 
 CaaS also makes it easier to launch application fixes, security patches, container level debugging, and required updates.
 
 ### The container as a Service tools
-CaaS provides a hosted container orchestration engine (majorly Kubernetes) to provision containers, manage container clusters, handle scaling and failure management, and maintain the security of the deployed containers.  With CaaS, cloud vendors usually cover all networking, auto-scaling services, log management and monitoring, CI/CD functions, and other automation activities.
+CaaS provides a hosted container orchestration engine (majorly Kubernetes) to provide containers, manage container clusters, handle scaling and failure management, and maintain the security of the deployed containers. With CaaS, cloud vendors usually cover all the networking, auto-scaling services, log management and monitoring, CI/CD functions, and other automation activities.
 
 Tools and platforms in CaaS are essential for integrating development and operations teams. Cloud market leaders have thus labored to provide these while using Kubernetes as the main orchestration engine to build upon.
 
-Below are popular tools and projects that support and drive CaaS:
+Let's talk about the popular tools and projects that support and drive CaaS:
 
-1. [Amazon Elastic Cloud Service (ECS)](https://aws.amazon.com/ec2/) – Amazon efficiently manages clusters through AWS. ECS supports the cross-platform running of Docker containers and workloads.
-This orchestration platform offers extensive security, reliability, and scalability for and sensitive and critical applications.
+1. [Amazon Elastic Cloud Service (ECS)](https://aws.amazon.com/ec2/): Amazon efficiently manages clusters through AWS. ECS supports the cross-platform running of Docker containers and workloads.
+This orchestration platform offers extensive security, reliability, and scalability for sensitive and critical applications.
 
-2. [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/#getting-started) – Microsoft provides AKS to help developers define and deploy complex Kubernetes applications. 
+2. [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/#getting-started): Microsoft provides AKS to help developers define and deploy complex Kubernetes applications. 
 
-3. [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine)– Google being the pioneer of Kubernetes, offers impactful services through GKE. These services speed up the development life-cycle of applications through pre-built deployment templates for Kubernetes applications and containers.
+3. [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine): Google is the pioneer of Kubernetes, offers impactful services through GKE. These services speed up the development life-cycle of applications through pre-built deployment templates for Kubernetes applications and containers.
  
 ### Working with Amazon Elastic Container Service(ECS)
 This section will illustrate the basics of Amazon Elastic container service.
@@ -107,7 +107,7 @@ An example of a task definition file that shows CPU and Memory limit, web server
     "cpu": "256",
 }
 ```
-Containers and applications can be launched on Amazon ECS through [AWS Fargate] launch type(https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) or through [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)launch type.
+Containers and applications can be launched on Amazon ECS through [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type or through [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)launch type.
 An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
 
 To get more feel of Amazon ECS, you can check out the [AWS site](https://aws.amazon.com/ecs/getting-started/).
