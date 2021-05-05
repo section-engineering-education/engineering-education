@@ -164,3 +164,7 @@ On a final note, the technology space is rapidly evolving and trends in CI/CD wi
 2. [CircleCI Integration](https://circleci.com/continuous-integration/)
 3. [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 
+---
+
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+
