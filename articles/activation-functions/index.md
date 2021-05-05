@@ -7,14 +7,14 @@ title: An Introduction to Activation Functions
 description: In this tutorial will look at some of the activation functions used frequently and implement them from scratch, coding them using Python classes. 
 author: lalithnarayan-c
 date: 2020-12-17T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/activation-functions/hero.jpg
     alt: activation function with Python example image
 ---
-In an earlier article on [perceptron](engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
+In an earlier article on [perceptron](/engineering-education/perceptron-algorithm/) algorithms, we looked at the concepts of weighted sums and thresholding. The output was passed through a threshold function, that blocked all the negative values from passing. 
 <!--more-->
 
 ### Activation functions

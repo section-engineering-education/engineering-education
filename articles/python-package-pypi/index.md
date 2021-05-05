@@ -7,7 +7,7 @@ title: Building a Python Package and Publishing on PyPi (The Python Package Inde
 description: This tutorial will give readers a detailed guide on packages in Python and how to build one, it will take them through how to write their code, structure it, package it, and finally how to publish it on PyPI for their general python community.
 author: james-sandy
 date: 2020-11-03T00:00:00-10:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

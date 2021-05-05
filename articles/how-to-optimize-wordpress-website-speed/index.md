@@ -177,8 +177,8 @@ Updating the PHP version of your site can be as simple as selecting the latest v
 
 Later PHP versions are more enhanced in terms of performance compared to the previous versions. Keep your PHP version updated to get the benefits. PHP 7.4 is 3x faster than PHP 5.6. For more insights on different PHP versions, check [Kinsta Blog](https://kinsta.com/blog/php-benchmarks/).
 
-#### Use Content Delivery Network (CDN)
-A CDN is a network of servers linked together in different locations around the world to deliver content as quickly, cheaply, reliably, and securely as possible. For more information refer to [Cloudflare](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/).
+#### Use a Content Delivery Network (CDN) or Edge as a Service Provider
+CDNs and Edge as a Service providers offer a network of servers linked together in different locations around the world to deliver content and application logic as quickly, cheaply, reliably, and securely as possible.
 
 Each server stores a copy of 'static' files used to make your webpages. When you implement a CDN, users access your website from the server geographically closest to them.
 
@@ -186,7 +186,7 @@ Page loading speed varies with the geographical locations of your hosting compan
 
 Some hosting companies such as [Amazon](https://aws.amazon.com/) and [Linode](http://linode.com/) have servers in different geographical locations. You are advised to select a server that is closest to the majority of your users.
 
-Among the market leaders in CDN services are Cloudflare, Akamai, Amazon CloudFront, IBM Cloud Internet Services, Azure CDN, Google Cloud CDN, and Fastly.
+Some well known providers in CDN services include Cloudflare, Akamai, Amazon CloudFront, IBM Cloud Internet Services, Azure CDN, Google Cloud CDN, and Fastly. [Edge as a Service is the next evolution of CDNs](/blog/cdn-prototype-edge-compute/), with providers like Section expanding on the capabilities of traditional CDNs to provide more flexible deployment models for distributed application hosting.
 
 ### Conclusion
 Fast websites boost your search engine rankings, improve search engine indexing, reduce bounce rate, lead to increased conversion rate, and increases the time a user spends on your website. The overall effect is that you get a higher conversion rate and users enjoy visiting your website.

@@ -87,6 +87,8 @@ You can follow [this](https://reactnative.dev/docs/environment-setup) documentat
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
+![Env Setup](/engineering-education/react-native-agora-livestreaming-app/env_setup.png)
+
 ### Clone the starter code
 To focus more on the Livestream, I've prepared a starter code. You can clone it [from this repository](https://github.com/zolomohan/react-native-agora-app-starter) on GitHub. Follow the Repository's README for instructions.
 
