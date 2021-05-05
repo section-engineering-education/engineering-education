@@ -43,7 +43,7 @@ This article will cover:
 
 Tasks such as configuring, uploading, scaling, and migrating containers in cloud environments usually become overwhelming, more so when performed on a significant scale level. 
 
-For this reason, a cloud-based service model, CaaS, was developed to help software developers and IT practitioners run their routine tasks with ease. With containerized applications being on the rise, major cloud vendors inevitably had to offer this container infrastructure and management as a service model.
+For this reason, a cloud-based service model, CaaS, is available to help software developers and IT practitioners run their routine tasks with ease. With containerized applications being on the rise, major cloud vendors had to offer this container infrastructure and management as a service model.
 
  [Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service) is an automated hosting and deployment platform for containerized applications. With CaaS in place, DevOps teams can scale,  run, manage, and organize containers and container-based applications without worrying about the underlying infrastructure upon which cloud containers run on.
 
@@ -52,17 +52,17 @@ CaaS rely on container-based virtualization, Application Programming Interfaces,
 
 ### Why CaaS
 
-CaaS provides the development team with a higher level of abstraction for DevOps to concentrate on product and service delivery. This streamlines the procedure of developing fully scaled container deployment pipelines.
+CaaS provides the development team with abstraction for DevOps to concentrate on product and service delivery. This results to streamlined development benefits in terms of scaling and cost-cutting in the eployment pipelines.
 
 CaaS providers also offer container orchestration engines to deploy and run many containers, thus relieving DevOps teams the need to run and maintain their own machines.
 
 The following services and components make CaaS to stand out among IaaS, PaaS and other as service models:
 
-1. *Container registry* – containers are provisioned through images. These images are stored in registries/ repositories such as docker hubs, where they are pulled to provision containers. CaaS providers host these container registries for management services.
+1. *Container registry* –  Software developers create containers through [images](https://phoenixnap.com/kb/docker-image-vs-container). The developers pull the images stored in registries/ repositories such as docker hubs for container provisioning. CaaS providers host these container registries for management services.
 
 2. *Container Management* - CaaS provides management and monitoring platforms to ensure containers are correctly provisioned, up and running, load-balanced, and in good health.
 
-3. *Rich set of Developer Tools* – through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
+3. *Rich set of Developer Tools* – Through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
 
 CaaS is more suitable for Microservice oriented applications because of the independent Infrastructure that such applications rely on.
 
@@ -71,11 +71,11 @@ Like other 'as a service' models available, CaaS provides flexible options where
 ### Benefits of Container as a Service
 
 
-- *Efficiency* – Applications deployed through CaaS benefit from performance optimization through tools like Elastic Load Balancers, Log aggregation and Monitoring tools, and even health check. All these are configured to ensure that development teams build highly visible and available distributed systems and applications.
+- *Efficiency* – Applications deployed through CaaS benefit from performance optimization configurations like Elastic Load Balancing, Log aggregation, Monitoring, and even health checks. These configurations ensure that development teams build highly visible and available distributed systems and applications.
 
-- *Speed* – creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because little concentration is given to Infrastructure. With speed provided in CaaS, a lightweight process of a software release is guaranteed.
+- *Speed* – Creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because  Infrastructure is given little concentration. The speed provided by  CaaS guarantees a lightweight process of a software release.
 
--	*Portability* – running applications through CaaS containers provides flexibility for the apps to be launched in any environment/platform (public/private clouds). All necessary dependencies and configuration files are bundled together with the applications.
+- *Portability* – CaaS provisioned containers provide flexibility for launching apps in any environment/platform (public/private clouds). This happens because all necessary dependencies and configuration files are bundled together with the running applications.
 
 - *Security* – containerized applications run independently and in isolation with other containers. CaaS provides this isolation as a risk-minimizing feature that shields failures of one container and its apps from affecting other containers.
 CaaS also makes it easier to launch application fixes, security patches, container level debugging, and required updates.
