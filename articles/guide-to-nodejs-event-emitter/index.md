@@ -21,7 +21,7 @@ Node.js has an asynchronous event-driven architecture. This allows for designs w
 It has a built-in module called `Events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
 
 ### Prerequisites
-This article assumes you have basic knowledge in JavaScript, REPL, and Node.js installed in your local development environment.
+This article assumes you have basic knowledge in [JavaScript](https://www.w3schools.com/js/DEFAULT.asp), REPL, and [Node.js](https://nodejs.org/en/) installed in your local development environment.
 
 ### Event emitter class
 The `Event Emitter` class is lies within the `events` module.  
@@ -176,7 +176,7 @@ Status code =201 while message= created
 
 ### Error events
 Error events are emitted whenever an error occurs within an EventEmitter instance.  
-In case an eventEmitter does not have registered error events, an `error` event will be emitted, exiting the Node.js process.  
+In case an `eventEmitter` does not have registered error events, an `error` event will be emitted, exiting the Node.js process.  
 
 Let's look at an example:  
 ```js
