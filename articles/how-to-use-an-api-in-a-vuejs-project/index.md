@@ -1,14 +1,10 @@
-# How to use an API on a Vue.js project
-
-## Introduction
-
 In this modern era, the majority of developers are familiar with the language JavaScript and that has led to most web applications having JavaScript as one of the programming languages used in building them. To make the building process easier for developers, frameworks were built with the concept of creating a compiled version of JavaScript that adopts one programming architecture or is dynamic and allows programmers to build their applications on this framework. With this concept in mind came Vue.js.
 
 ## What is Vue.js
 
-Vue.js is a progressive framework for JavaScript which is used to build user interfaces. You can [Read more](https://vuejs.org/v2/guide/index.html) about it.
-When developing some projects using Vue.js, there will be a need to fetch or consume user-related data from an API. This will make the front-end of the project interact with the backend and the user-related data is fetched and displayed on the UI of the project.
+Vue.js is a progressive framework for JavaScript which is used to build user interfaces. You can read more about it [here](https://vuejs.org/v2/guide/index.html).
 
+When developing some projects using Vue.js, there will be a need to fetch or consume data from an API. This will make the front-end of the application interact with the backend of the application. The fetched data can be consumed on the front-end of the application.
 
 ## What is an API?
 
@@ -18,11 +14,14 @@ API stands for Application Programming Interface, which is a set of definitions 
 
 To understand and follow this article, you will need:
 
-
 - [Node.js](https://nodejs.org/en/download/) installed on your computer.
-- to have Vue.js installed on your computer. If you don't already have it installed, click [here](https://vuejs.org/v2/guide/installation.html) to do so.
-- to understand key concepts in Vue.js. You can learn it [here](https://vuejs.org/v2/guide/index.html) .
+
+- Have Vue.js installed on your computer. If you don't already have it installed, click [here](https://vuejs.org/v2/guide/installation.html) to do so.
+
+- Understand key concepts in Vue.js. You can learn more about Vue.js [here](https://vuejs.org/v2/guide/index.html) .
+
 ## Outline
+
 1. Using Axios to consume an API
 2. Using Fetch API method
 3. Using APIs on Vuex
@@ -35,59 +34,64 @@ There are two methods of consuming/using an API in a Vue.js project. These metho
 [Axios](https://www.npmjs.com/package/axios) is a promise-based HTTP client which makes it appropriate for fetching data during server-side rendering. It works on both browser and Node apps.
 
 **Axios Installation**
+
 To use Axios on your project, you need to first install it. This can be done in two ways:
 
--  By using `npm` ; a default package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
-- By using `yarn` ; a package manager that doubles down as project manager. It is compactible with the npm registry and has the same set of features.
+- By using `npm`: a default package manager for the JavaScript runtime environment Node.js.
+
+- By using `yarn`: a package manager that doubles down as project manager. It is compactible with the npm registry and has the same set of features.
 
 With npm:
 
-
-    npm i axios
+```bash
+npm i axios
+```
 
 With yarn:
 
-
-    yarn add axios
+```bash
+yarn add axios
+```
 
 Next, you import axios in your `src/main.js` file
 
-
+```JavaScript
     import axios from 'axios';
-    
     Vue.prototype.$http = axios;
+```
 
 **How to make an API request and display data using Axios.**
 
-We will make the API request using a `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running asynchronously therefore, we use a promise based function with keywords `async` and `await`. However, we also need to test for errors, this is done with the `try` method and the errors that is detected is handled with the `catch` method.
+We will make the API request using the `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running asynchronously therefore, we use a promise based function with keywords `async` and `await`. However, we also need to test for errors, this is done with the `try` method and the errors that is detected is handled with the `catch` method.
 
 Copy the code below to your `App.vue` file
 
+```JavaScript
+<template></template>
 
-    <template></template>
-    
-    <script>
-    export default {
-    data()  {
-    posts: [ ]
-    
-    },
-    
-    methods: {
-    async getData () {
-         try {
-                  const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-                  // JSON responses are automatically parsed.
-                  this.posts = response.data
-               }
-              catch (error) {
-                 console.log(error);
-             }
-    
-           }
-       }
-    }
-    </script>
+<script>
+export default {
+data()  {
+posts: [ ]
+
+},
+
+methods: {
+async getData () {
+     try {
+              const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+              // JSON responses are automatically parsed.
+              this.posts = response.data
+      }
+      catch (error) {
+          console.log(error);
+      }
+
+     }
+   }
+}
+</script>
+```
 
 After requesting for data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to access reactive data and events that are active with the `created` hook.
 
@@ -165,7 +169,7 @@ We can now display the data in the template by looping through the posts using [
 
 ## Using Fetch API method
 
-Fetch API is a powerful and flexible method of flexible APIs. It provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+Fetch API is a powerful and flexible method of flexible APIs. It provides a global `fetch()` method that provides an easy, logical way to fetch resources asynchronously across the network.
 
 To make request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the axios call above.
 
@@ -210,19 +214,24 @@ To make request with the Fetch API, you just have to make the request directly w
 Vuex is a state management library for vue.js applications. It serves as a centralized store for all components in an application. 
 
 **Installing Vuex**
+
 To make use of VueX, you will first need to install the VueX package on your Vue application.
+
 This can be done during the installation of Vue CLI via “manual installation”: 
 
-
-    vue create project
+```bash
+vue create project
+```
 
 OR
+
 Added to an already existing vue.js project. In your terminal, write the code below:
 
+```bash
+npm install vuex --save
+```
 
-    npm install vuex --save
-
-then in your `store` folder, access the `index.js` file and write the following code
+Then, in your `store` folder, access the `index.js` file and write the following code
 
 
     import Vue from 'vue'
@@ -230,12 +239,12 @@ then in your `store` folder, access the `index.js` file and write the following 
     
     Vue.use(Vuex);
 
-You will also need to install and import axios if you have not already done that. Check the earlier
- part of this tutorial for the steps.
+You will also need to install and import axios if you have not already done that. Check the earlier part of this tutorial for the steps.
  
  **Now let’s create:**
  
- We will be working with the `store/index.js` file.
+We will be working with the `store/index.js` file.
+
 First, we create a `state` object which will contain all the application level state. It serves as the `data` object for store in a vuex project.
 
 
@@ -323,13 +332,14 @@ We can display data in our vue file. To do that, some steps need to be taken:
              </ul>
           </div>
     </template>
+    
+    
 ## CONCLUSION
 
-In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex request as it allows multiple configuration of multiple request in one place. 
+In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex request as it allows multiple configuration of multiple request in one place.
+
 We also considered consuming an API in a vuex project i.e. a project that manages multiple state.
+
 I hope this article was of great help 🙂.
 
-
-
-
-
+Happy Coding!
