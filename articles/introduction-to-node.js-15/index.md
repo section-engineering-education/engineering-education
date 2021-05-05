@@ -66,3 +66,6 @@ Native modules, otherwise known as addons, are easier to generate, build, and su
 
 ### Conclusion
 Node.js 15 boosts user productivity and enhances the general developer experience with several significant bug fixes and improvements. To take advantage of experimental features, new NPM 7, V8.6, QUIC protocol, and bug fixes, developers should shift to Node.js 15. 
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
