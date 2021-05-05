@@ -87,8 +87,6 @@ When the user writes only large amounts of data to the database, the performance
 Encryption key management is the method used to protect and manage your encryption keys. Enterprise encryption key management should meet the key management framework and recommendations as suggested by NIST in Special Publications.
 MongoDB does not include an enterprise encryption key management solution, and users must purchase a solution from a third-party key management solution provider. MongoDB Enterprise Editions and enables customers to protect encryption using several tested and validated enterprise key management partners which is a very plus point of MongoDB.
 
-Now you may ask why key management is necessary so here is the answer,
-
 Encryption key management is necessary because without key management you left the keys to protecting your sensitive business and customer data exposed, then you expose your entire organization to the risk of data loss or theft.
 Today, with MongoDB Enterprise, customers can meet encryption and key management best practices easily through implementing native encryption and deploying a third-party enterprise key management solution.
 
