@@ -1,46 +1,50 @@
-A session is an authentication programming concept. Authentication is the process of proving that a systematic procedure is authentic or valid. A session is used to store information about a particular user or client.
+Session based authentication is one in which the user state is stored on the server's memory. Authentication is the act of proving an assertion, such as the identity of a computer system user.
 
-For example, a login system. The Authentication would be checking to see if a user exists and if their login credentials are valid.
+A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in.
 
-A website is based on HTTP protocol. HTTP is a stateless protocol that means that there's a browser (client) and a server. At the end of every request and response cycle, the client and the server forget about each other. This is where the session comes in.
-
-A session will contain some unique data of that client to allow the backend (server) to keep track of the user's state.
+A session will contain some unique data about that client to allow the server to keep track of the user's state.
 
 ### How sessions works
 When the client makes a request to the server, the server will automatically create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will reference the session stored on the server-side because the cookie contains the session's unique id.
 
-We use that session ID to look up the session in the database or the session store to maintain a one to one match betwen a session and a cookie.
+We use that session ID to look up the session in the database or the session store to maintain a one to one match between a session and a cookie.
 
-These cookies will then be sent for every consecutive request to the server so that the server will know who is this client or user. This will make HTTP protocol connections stateful.
+These cookies will be sent on every request to the server so that the server will know who is this client. This will make HTTP protocol connections stateful.
 
 ### The difference between session and cookie
-As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie. Basically, a session and a cookie are stored differently.
+As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie.
 
-A cookie has its data stored in the browser. The browser attaches that cookie key-value pair to every HTTP request that is sent to a server.
+A cookie has its data stored in the browser. The browser attaches that cookie [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) to every HTTP request that is sent to a server.
 
 In a cookie, you can't store a lot of data. A cookie, cannot store any sort of user credentials or secret information. If we did that, a hacker could easily get hold of that information and steal personal data for malicious activities.
 
-On the other hand, session data is stored on the server-side, i.e., a database or a session store. A session is held on the server-side. Hence, it can accommodate larger amounts of data. To access data from the server-side, a session is authenticated with a secret key or a session id.
+On the other hand, session data is stored on the server-side, i.e., a database or a session store. Hence, it can accommodate larger amounts of data. To access data from the server-side, a session is authenticated with a secret key or a session id.
 
-The above explains the main difference between a cookie and a session. To learn more about their differences, check this [Session vs Cookie](https://www.javatpoint.com/session-vs-cookies) tutorial.
+To learn more about their differences, check this [Session vs Cookie](https://www.javatpoint.com/session-vs-cookies) tutorial.
 
 ### Prerequisites
 - Have [Node.js runtime](https://nodejs.org/en/download/) installed on your computer.
+
 - Basic knowledge on [how to use Node.js](https://nodejs.dev/learn/).
+
 - Basic understanding of how to create an [HTTP server using the Expres.js](/engineering-education/express/) library.
 
 ### Setting up the required environments and libraries
-This is a Node.js project. It uses NPM to manage its libraries and dependencies. You need to create a new project directory and initialize the Node.js with `npm init –y`. This will generate a `packahe.json` file that will manage the packages dependencies for this project's tutorial.
+This is a Node.js project. It uses NPM to manage its libraries and dependencies. You need to create a new project directory and initialize the Node.js with `npm init –y`. This will generate a `package.json` file that will manage the dependencies for this project's tutorial.
 
 The following libraries will help us set up a Node.js session.
 
 - [Express](/engineering-education/express/) - a web framework for Node.js used to create HTTP web servers. Express provides an easy-to-use API to interact with the webserver.
-- [Nodemon](https://www.npmjs.com/package/nodemon) - a server utility framework for monitoring changes of the code on a text editor. It automatically restarts the server whenever code changes are detected.
-- [Express-session](https://www.npmjs.com/package/express-session) - an HTTP server-side framework used to create and manage a session middleware. This tutorial is all about sessions. Thus Express-session library will be the main focus.
-- [Cookie-parser](https://www.npmjs.com/package/cookie-parser) - used to parse cookie header to store data on the browser whenever a session is established on the server-side.
-- [Body-parser](https://www.npmjs.com/package/body-parser) - used to parse an HTTP POST request.
 
-Install the above libraries using the below command.
+- [Nodemon](https://www.npmjs.com/package/nodemon) - a server utility framework for monitoring changes of the code on a text editor. It automatically restarts the server whenever code changes are detected.
+
+- [Express-session](https://www.npmjs.com/package/express-session) - an HTTP server-side framework used to create and manage a session middleware. This tutorial is all about sessions. Thus Express-session library will be the main focus.
+
+- [Cookie-parser](https://www.npmjs.com/package/cookie-parser) - used to parse cookie header to store data on the browser whenever a session is established on the server-side.
+
+- [Body-parser](https://www.npmjs.com/package/body-parser) - used to parse the body of an HTTP POST request.
+
+Install the above libraries using the comman:
 
 `npm install express express-session cookie-parser body-parser nodemon`
 
@@ -48,6 +52,7 @@ Install the above libraries using the below command.
 To set up the session, you need to set a couple of [Express-session middleware](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
 
 ```js
+const oneDay = 1000 * 60 * 60 * 24;
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized:true,
@@ -56,11 +61,11 @@ app.use(sessions({
 }));
 ```
 
-- `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key usually is long in a production environment, and it is an auto randomly generated string.
+- `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key usually is long in a production environment, and it is a randomly generated string.
 
 - `resave` - takes a Boolean value. When true, it sets the session to save event without recording any changes on the sent request. `saveUninitialized` goes hand in hand with `resave`. They tell the session middleware how to react to different events in the browser.
 
-- `cookie: { maxAge:}` - this sets a cookie expiry headers. It creates a certain amount of time. The browser is going to delete the cookie after the set duration elapses. The browser will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
+- `cookie: { maxAge:}` - this sets a cookie expiry headers. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
 
 ```js
 // creating 24 hours from milliseconds
