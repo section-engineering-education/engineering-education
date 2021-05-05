@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/running-and-managing-docker/
 title: Managing and Running Docker Containers
-description: This tutorial will give the readers a overview on how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage and removing containers.
+description: This tutorial will give the readers an overview of how to run and manage Docker containers. We will look at securing Docker containers, limiting memory and CPU usage, and removing containers.
 author: terrence-aluda
 date: 2021-04-28T00:00:00-10:00
 topics: [Containers]
@@ -70,7 +70,7 @@ The third line copies the files from the application directory on your system in
 
 The last statement contains the command(`ENTRYPOINT`) used to start the application running in the container from where you've pointed the application to be. In this case, where you copied to.
 
-You can give the text file a name `DockerFile`.
+You can give the text file the name `DockerFile`.
 
 We can then create the image using the command format below:
 
@@ -90,7 +90,7 @@ $ docker build -t sectionio-image:2.0 .
 
 #### Image security
 We should take much consideration for our images' security and follow the best practices and recommendations.
-For example, we should not build containers with passwords put in any layer of the image because an enterprising attacker may create an image from layers containing the passwords and start some malicious activity.
+For example, we should not build containers with passwords put in any layer of the image because an attacker may build an image from layers containing the passwords and start some malicious activity.
 
 #### Optimizing image sizes
 We also need to take care of the space our images take up. Consider the diagram below:
@@ -104,82 +104,84 @@ We also need to take care of the space our images take up. Consider the diagram 
 
 `MegaFile` is still present in layer A, meaning that whenever you push or pull the image, it is still transmitted through the network.
 
-Another tradeoff that we may experience is in caching and building our images. Each layer is an independent delta from the layer below it and that each time you change a layer, it changes every layer that comes after it. That means that they need to be rebuilt, pushed, and pulled again to deploy your image to production.
+> When an image is removed, it is still available in the cluster but not accessible.
+
+Another challenge that we may experience is in building and caching our images. Each time a layer is changed, all other layers below it change. That means that they need to be rebuilt, pushed, and pulled again to deploy your image to production.
 
 To understand this more, consider these two figures:
 
 ```
 .
-└── layer A: contains anaconda configuration
-    └── layer B: adds source code 'keras-test.py'
-        └── layer C: installs the 'matplotlib' library
+└── layer F: contains anaconda configuration
+    └── layer G: adds source code 'keras-test.py'
+        └── layer H: installs the 'matplotlib' library
 ```
 
 VERSUS:
 
 ```
 .
-└── layer A: contains anaconda configuration
-    └── layer B: installs the 'matplotlib' library
-        └── layer C: adds source code 'keras-test.py'
+└── layer F: contains anaconda configuration
+    └── layer G: installs the 'matplotlib' library
+        └── layer H: adds source code 'keras-test.py'
 ```
 
-It seems that both of these images will behave identically, and when pulled for the first time they do. 
+It seems that both of these images will behave the same way. 
 
-However, consider what happens when `keras-test.py` changes. In the first figure, it is only the change that needs to be pulled or pushed. In the other image, both `keras-test.py` and the layer providing the `matplotlib` package need to be pulled and pushed, since the `matplotlib` layer is dependent on the `keras-test.py` layer.
+However, consider what happens when `keras-test.py` changes. In the first figure, only this change will be pulled or pushed while in the other image, both `keras-test.py` and the layer containing the `matplotlib` package need to be pulled and pushed, since the `matplotlib` layer is not independent of the `keras-test.py` layer which is above it.
 
-In general, we order our layers from the least likely to change to the most likely to change to optimize the image size for pushing and pulling.
+It's a good practice to order our layers from the least likely to change to the most likely to change to enhance performance.
 
 #### The Docker container runtime
-Docker has a CLI tool used to deploy containers. Here is an example of running an image:
+Docker has a CLI tool for deploying its containers. Here is an example command syntax of running an image:
 
 ```bash
-$ docker container run -p 8080:80 <yourimage>
+$ docker container run --publish 8080:80 <image-name>
 ```
 
-This command starts the image and maps TCP ports 80 on your `localhost` to listen on your machine. 
+After starting the image, it maps port 8080 on our localhost to port 80 in our container. 
 
 Click [here](https://phoenixnap.com/kb/docker-run-command-with-examples) to read more on the `docker run` command.
 
 #### Limiting memory and CPU usage
-We can restrict our resource utilization to make it possible for multiple applications to coexist in the same hardware to ensure fair usage.
+We can restrict our resource utilization and enforce fair usage of our hardware resources.
 
-To limit memory usage, we use the `--memory` and `--memory-swap` flags together with the `docker run` command. 
+To limit memory usage, we place the `--memory` and `--memory-swap` flags in the `docker run` command. 
 
 For example:
 
 ```bash
 $ docker run -d --name <your-image> \
---publish 8080:8080 \
---memory 200m \
---memory-swap 1G \
+--publish 8080:80 \
+--memory 600m \
+--memory-swap 2G \
 ```
 
-Here we have limited our image to 200MB of memory and a swap space of 1 GB.
+Here we have limited our image to use 600MB of RAM and 2 GB of swap space.
 
-We can also restrict CPU utilization by using the `--cpu-shares` and `--cpu-period` flags.
+We do the same for the CPU by using the `--cpu-shares` and `--cpu-period` flags.
 
-Consider three containers: A, B and C. A has a cpu-share of 1024 while B and C have a cpu-share setting of 512 each. When processes in all the containers attempt to use 100% of CPU, container A would receive 50% of the total CPU time while the rest get 25% each.
+Consider four containers: W, X, Y, and Z. W has a cpu-share of 1024 while the rest have a share of 512 each. When all the containers attempt to use 100% of CPU at the same time, W would receive 50% of the total CPU time while the rest get 16.667% each.
 
 ```bash
 $ docker run -d --name <your-image> \
---memory 200m \
---memory-swap 1G \
+--memory 600m \
+--memory-swap 2G \
 --cpu-shares 1024 
 ```
 
-For the `--cpu-period`, we set the period of CPUs to limit the container’s CPU. It works hand in hand with the `--cpu-quota` which is used to allocate the amount of time in microseconds that a container has access to the CPU resources as a function specified by `--cpu-period`. 
+The `--cpu-period` sets the usage period of the CPU by the images. It works hand in hand with the `--cpu-quota` which is used to allocate the amount of time in microseconds that a container has access to the CPU resources as a function specified by `--cpu-period`. 
 
-For example, to set 50% CPU worth of run-time every 50ms we use this command:
+For example, to set 50% CPU worth of run-time every 25ms we use this command:
 
 ```bash
-$ docker run -d --cpu-period=50000 --cpu-quota=25000 <your-image>
+$ docker run -d --cpu-period=25000 --cpu-quota=12500 <your-image>
 ```
 
 Click [here](https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources) to read more on resource utilization.
 
 #### Cleanup
-You can delete an image once done using the `docker rmi` command:
+Deleting an image once done using the `docker rmi` command:
 
 ```bash
 $ docker rmi <tag-name>
@@ -192,7 +194,7 @@ $ docker rmi <image-id>
 ```
 
 #### Conclusion
-This article gave us a brief overview on Docker container images and how to manage them. Hope you got some insights on application images and how you may optimize them for improved performance. Please click on the links provided to read more.
+This article gave us a brief overview of Docker container images and how to manage them. Hope you got some insights on application images and how you may optimize them for improved performance. Follow the links given to read more.
 
 Have a good one.
 
