@@ -1,5 +1,21 @@
-Memory is key to keep any program working efficiently. Memory helps programs take instructions and store data. In Python, memory storage plays a significant role, but it can lead to storage issues because of memory leaks.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-fix-memory-leaks-in-python/
+title: How to fix memory leaks in python?
+description: In this article, we will discuss about memory leaks, its causes and how to fix them.
+author: bashiir-isla
+date: 2021-05-05T00:00:00-17:00
+topics: [Languages]
+excerpt_separator: 
+images:
 
+ - url: /engineering-education/how-to-fix-memory-leaks-in-python/hero.jpg
+   alt: Python example image
+---
+Memory is key to keep any program working efficiently. Memory helps programs take instructions and store data. In Python, memory storage plays a significant role, but it can lead to storage issues because of memory leaks.
+<!--more-->
 If unused data piles up and you forget to delete it, your python program will experience memory leaks. For Python, to offer optimal performance, you are supposed to diagnose memory leaks and resolve them.
 
 But, how can you achieve this?
