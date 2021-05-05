@@ -10,11 +10,12 @@ In this tutorial, we will set up user authentication from scratch with Rails 6.
 
 To follow along in this article, it is helpful to have:
 
-- The following programs installed on your computer:
-  - [Ruby](https://www.ruby-lang.org/en/)
-  - [SQLite3](https://www.sqlite.org/)
-  - [Node](https://nodejs.org)
-  - [yarn](https://classic.yarnpkg.com/en/docs/install)
+The following programs installed on your computer:
+
+- [Ruby](https://www.ruby-lang.org/en/)
+- [SQLite3](https://www.sqlite.org/)
+- [Node](https://nodejs.org)
+- [yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Rails](https://rubygems.org/gems/rails) framework configured.
 - Basic working knowledge with Ruby programming language.
 - Basic understanding of Object Oriented Programming (OOP) paradigm.
