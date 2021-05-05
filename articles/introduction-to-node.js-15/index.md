@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/introduction-to-node.js-15/
+title: Getting started with Node.js 15
+description: This article outlines the new features in Node.js 15 and how they improve Node.js application development.
+author: lorna-moraa
+date: 2021-05-05T00:00:00-15:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-to-node.js-15/hero.jpg
+    alt: Getting started with Node.js 15 example image
+---
+
 ### Introduction
 
 Node.js is a server-side platform based on the JavaScript Engine in Google Chrome (V8 Engine). Ryan Dahl created Node.js in 2009. Node.js is a tool for easily creating fast and flexible network applications based on Chrome's JavaScript runtime. These are some of Node.js's characteristics: It's asynchronous and event-driven. This eliminates the need for a Node.js server to wait for an API to return data. Since it is based on Google Chrome's V8 JavaScript Engine. It is also extremely quick in terms of code execution. Data is never buffered in its applications; instead, data is sent in bits. 
