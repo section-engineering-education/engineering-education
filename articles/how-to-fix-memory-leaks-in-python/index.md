@@ -81,3 +81,6 @@ Tracemalloc enables you to establish the use of a specific common function that 
 
 ### Conclusion
 Python is among the best programming languages in use today. But memory leaks can destroy or lead to a slow function of the program. However, one can quickly fix all issues connected to memory leaks in Python. Among other methods, one may use debugging or tracemalloc, which helps track memory usage and clear objects associated with memory leaks.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
