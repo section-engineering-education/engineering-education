@@ -16,10 +16,7 @@ images:
 ---
 Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. 
 <!--more-->
-
-### Getting started with Internet protocol versions
-
-Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
+Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
 
 There are two versions of internet protocol, i.e., Internet protocol version 4 and internet protocol version 6, which are used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
 
