@@ -1,17 +1,13 @@
-### What are Container Components in React.
+When you use react to build applications, you should think of how data is being passed among different components in the application. In this article, we'll go through what container components are and how they work by buiding a search component that makes use of the container component React pattern.
 
-As time goes on, while making use of React, one would need to think of how data is being passed among different components in a React application.
-
-In this article we’d create a search component that makes use of the container component React pattern.
-
-When you’re done reading this article, you’d have an understanding of how a container component works and how to build any React component using this pattern.
-
-### What you need to know
+### Prerequisites
 
 Before you read this article, you need to have an idea of the following:
 
 - [What is React](https://reactjs.org).
+
 - [How to make use of React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component
+
 - [Understand how components and Props work together](https://reactjs.org/docs/components-and-props.html).
 
 When you're done getting around these concepts, you can come back here to read this article.
@@ -20,15 +16,13 @@ When you're done getting around these concepts, you can come back here to read t
 
 The term “Container components” was used by [Dan Abramov](https://overreacted.io/) when he was buttressing on the concept of separation of concerns in a React Application.
 
-When we think of the word "container". What pops up first as an ideal representation of the word is an entity or material that stores and or hold contents. The type of content that such container holds can vary.
+> A container component is always responsible for how things work in a component. -- Dan Abramov
 
-The same thing goes for a "container compponent" in React. A container components can be primarily referred to as the parent elements of other components in a React app. They serve as a bridge between the normal components that render UI alone and the logic that makes them (the UI components) interactive.
+When we think of the word "container"; The first thing that pops up in our mind is the ideal representation of the word; which is an entity or material that stores and or hold contents. The type of content such a container holds may vary.
+
+The same thing goes for a **"container compponent"** in React. Container components can be primarily referred to as the parent elements of other components in a React app. They serve as a bridge between the normal components that render the UI and the logic that makes the UI components interactive and dynamic.
 
 The most common function of a container component is to obtain data. Obtaining data doesn’t mean the traditional way of fetching data from an API’s endpoint, it also has to do with the logic of a React component. Once the process of executing the logic or obtaining data in the component is complete. It renders the corresponding component.
-
-The component that gets rendered represents the user interface or layout of the app.
-
-> A container component is always responsible for how things work in a component. -- Dan Abramov
 
 Sometimes, the container component can perform two functions (i.e. to render UI and hold logic). 
 
@@ -40,18 +34,17 @@ import React from “react”
 export const exampleComponent = ({ children, open }) => {
   return (
     <div onClick={() => open()}>
-	  {children}
-	</div>
+	{children}
+    </div>
   );
 };
-
 ```
 
 The component above illustrates how a container component performs two functions, presenting the UI and handling the logic of the component.
 
 If you look at the component above, you’d see that it makes use of props to share data among components in the “arbitrary” React app.
 
-Note: There’s a convention that is quite common in the developer community.
+**Note:** There’s a convention that is quite common in the developer community.
 
 Developers tend to place their container components in a separate folder and the UI components into another folder, so they can distinguish between these components. You can choose not to follow this pattern of creating different folders if you already have one that works fine for you, so long you’re able to solve the same problem.
 
