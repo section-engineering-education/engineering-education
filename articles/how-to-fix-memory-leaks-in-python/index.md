@@ -25,12 +25,12 @@ You need to understand what a memory leak is, its causes, and the methods you ca
 ### Table of Contents
 - [What is a memory leak?](#what-is-a-memory-leak)
 - [What causes memory leaks in Python?](#what-causes-memory-leaks-in-python)
-- [Lingering of large objects in the memory that aren&#39;t released](#lingering-of-large-objects-in-the-memory-that-arent-released)
-- [Reference styles in the code](#reference-styles-in-the-code)
-- [Underlying libraries](#underlying-libraries)
+  - [Lingering of large objects in the memory that aren&#39;t released](#lingering-of-large-objects-in-the-memory-that-arent-released)
+  - [Reference styles in the code](#reference-styles-in-the-code)
+  - [Underlying libraries](#underlying-libraries)
 - [Methods to fix memory leaks](#methods-to-fix-memory-leaks)
-- [The use of debugging method to solve memory leaks](#the-use-of-debugging-method-to-solve-memory-leaks)
-- [Application of tracemalloc to sort memory leak issues in Python](#application-of-tracemalloc-to-sort-memory-leak-issues-in-python)
+  - [The use of debugging method to solve memory leaks](#the-use-of-debugging-method-to-solve-memory-leaks)
+  - [Application of tracemalloc to sort memory leak issues in Python](#application-of-tracemalloc-to-sort-memory-leak-issues-in-python)
 - [Conclusion](#conclusion)
 
 ### What is a memory leak?
