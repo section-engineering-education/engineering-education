@@ -1,5 +1,3 @@
-![Article cover image](./hero.png)
-
 ### What are Container Components in React.
 
 As time goes on, while making use of React, one would need to think of how data is being passed among different components in a React application.
@@ -32,7 +30,9 @@ The component that gets rendered represents the user interface or layout of the 
 
 > A container component is always responsible for how things work in a component. -- Dan Abramov
 
-Sometimes it (the container component) can perform two functions (i.e. to render UI and hold logic). In a situation where a container component performs these. The component itself does not hold too many markups (JSX) and is void of CSS styles. Here’s an example below:
+Sometimes, the container component can perform two functions (i.e. to render UI and hold logic). 
+
+In a situation where a container component performs these. The component itself does not hold too many markups (JSX) and is void of CSS styles. Here’s an example below:
 
 ```js
 import React from “react”
@@ -63,7 +63,7 @@ Let’s start by thinking about the function(s) that the search component would 
 
 To keep things simple, let's use an array of objects as the data to search from, instead of using an API.
 
-I’d go ahead to create an array of objects containing simple information that will be in this component
+Let's create an array of objects containing simple information about books that will be in this component:
 
 ```js
 // bookshelf.js
@@ -89,7 +89,7 @@ export const bookShelf = [
 
 The data in `authors.js` will serve as the information that would be mapped onto the `authorsPage` so the search component can be able to filter the list of authors once the user starts typing into the input field.
 
-I’d go on to create the components needed in this app below and explain how everything works below.
+Let's create the components needed in this app below and I'll explain how everything works.
 
 The `Search` component presents the UI (i.e. It renders an input element where users can filter the books in the list.) to the user. It makes use of React props to pass data down to other components such as the author’s page container component.
 
