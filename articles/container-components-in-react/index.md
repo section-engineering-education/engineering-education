@@ -79,7 +79,7 @@ export const bookShelf = [
 
 The data in `authors.js` will serve as the information that would be mapped onto the `authorsPage` so the search component can be able to filter the list of authors once the user starts typing into the input field.
 
-I’d go on to create the components needed in this app below and explain how everything works below.
+Let's create the components needed in this app below and I'll explain how everything works.
 
 The `Search` component presents the UI (i.e. It renders an input element where users can filter the books in the list.) to the user. It makes use of React props to pass data down to other components such as the author’s page container component.
 
