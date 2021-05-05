@@ -116,7 +116,7 @@ To get more feel of Amazon ECS, you can check out the [AWS site](https://aws.ama
 Development teams should take advantage of CaaS offering to change their production life cycle because businesses experience immense benefits after adopting the CaaS model.
 
 ### References
-1. [Container as a Service]((https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service).
+1. [Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service).
 2. [Amazon Elastic Cloud Service](https://aws.amazon.com/ecs/getting-started/).
 3. [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/#getting-started).
 4. [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine).
