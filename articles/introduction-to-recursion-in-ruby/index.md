@@ -129,7 +129,7 @@ Each time a recursive call is made, it adds to the stack until it gets to the ba
    
 4. Check that the values being returned from any case are of the same data type: If your recursive method results are in a string, then all cases should return a string. 
 
-### Conclusion
+### Conclusion 
 Recursion can indeed help you save a significant amount of time. However, you should use the base case to specify when the execution or program should stop. Ignoring this crucial aspect could cause the software to crash. Furthermore, your computer may slow down since significant memory and processing power is allocated towards the execution of the recursive function.
 
 ---
