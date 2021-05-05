@@ -6,7 +6,7 @@ url: /engineering-education/creating-a-real-time-chat-app-with-react-socket-io-w
 title: Creating a Real Time Chat App using React and Socket IO with E2E Encryption
 description: This tutorial will give readers a detailed guide on how to implement a real-time chat application using React and Socket.io with end-to-end encryption .
 author: ephraim-njoroge
-date: 2021-04-27T00:00:00-07:30
+date: 2021-05-05T00:00:00-10:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,14 @@ images:
   - url: /engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/hero.jpg
     alt: Creating a Real Time Chat App using React and Socket IO with E2E Encryption Image
 ---
-
-In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for communication. For security reasons, the messages exchanged over the network must be encrypted.
-<!--more-->
-
-If a malicious program tries to tap the messages illegally that are exchanged across a network, the intercepted message would be in encrypted form thus the content of the message will not be compromised.
-
 This article will explain on how to create a simple chat application with Node.js and React, where the exchanged messages will have [end-to-end encryption](https://www.preveil.com/blog/end-to-end-encryption/) using [secret keys](https://www.sciencedirect.com/topics/engineering/secret-key).
+<!--more-->
+In recent times, real-time chat applications have grown tremendously. Most organizations have adopted them for communication. For security reasons, the messages exchanged over the network must be encrypted.
+
+If a malicious program tries to tap the messages illegally that are exchanged across a network, the intercepted message would be in an encrypted format, thus the content of the message will not be compromised.
 
 ### Prerequisites
-
+To follow this article along you will need the following:
 - Working knowledge of [Node.js](https://nodejs.dev/learn), [Express](https://www.guru99.com/node-js-express.html), [React.js](https://reactjs.org/tutorial/tutorial.html), [aes256 encryption](https://spanning.com/blog/aes-encryption/), and [Socket.io](https://socket.io/docs/v4/index.html).
 
 - A text editor, preferably [VS Code Editor](https://code.visualstudio.com/download).
@@ -32,24 +30,21 @@ This article will explain on how to create a simple chat application with Node.j
 
 - [Node.js](https://nodejs.org/en/download/) Installed.
 
-### How the App works
-
+### How the app works
 We'll create a secret key and store it in the frontend for demonstration purposes. The key is saved in a [.ENV](https://create-react-app.dev/docs/adding-custom-environment-variables/) variable where the frontend has been deployed in a server.
 
 Whenever a user sends or receives a message, the message will be encrypted or decrypted using an [aes256](https://www.npmjs.com/package/aes256) npm package with the same secret key.
 
-### Creating the Backend
-
+### Creating the backend
 For the backend, we'll use Node.js and the Express framework. Socket.io is needed to provide real-time, two-way communication between the backend server and the frontend.
 
 The folder structure for our backend will look as follows:
 
-![backend folder structure](/engineering-education/creating-a-simple-real-time-chat-app-with-react-socket-io-with-e2e-encryption/backend-folders.PNG)
+![backend folder structure](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/backend-folders.PNG)
 
-### Coding the Backend
+### Coding the backend
 
-**Step 1**
-
+#### Step 1
 Create a server directory with the name `chatbackend` and browse to the directory.
 
 ```bash
@@ -57,14 +52,13 @@ mkdir chatbackend
 cd chatbackend
 ```
 
-Initialize the server project by running the below commands in the terminal which will generate the [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json) file.
+Initialize the server project by running the commands below in the terminal that will generate the [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json) file.
 
 ```bash
 npm init –y
 ```
 
-**Step 2**
-
+#### Step 2
 Next, let's install the dependencies required by running the following commands:
 
 ```bash
@@ -110,16 +104,15 @@ module.exports = {
 };
 ```
 
-In the above code snippet, the below functions that deals with the user has been created:
+In the code snippet above, the below functions that deals with the user has been created:
 
-The `join_User()` function adds the user to the array of users already declared in the above code. It consists of three keys *id, a username*, and a *room name*, where the room name tells the user the room or group belongs.
+The `join_User()` function adds the user to the array of users already declared in the code above. It consists of three keys *id, a username*, and a *room name*, where the room name tells the user the room or group belongs.
 
 The `get_Current_User()` function will take the id of the particular user and return its user object.
 
 In the `user_Disconnect()` function, if a user disconnects or leaves the chat, the function accepts a *user id* and deletes the user object from the array users.
 
-**Step 3**
-
+#### Step 3
 In this step, let's create a file called `server.js` that initializes backend connection and ensures the communication between the users in the room.
 
 ```JavaScript
@@ -198,7 +191,7 @@ io.on("connection", (socket) => {
 });
 ```
 
-In the above `server.js` code, we start by importing the modules and functions from the file `dummyuser.js`. The code listens on port *8000* and initializes the socket.
+In the `server.js` code above, we started by importing the modules and functions from the file `dummyuser.js`. The code listens on port *8000* and initializes the socket.
 
 After initializing the socket, let's set two listeners listed below:
 
@@ -206,21 +199,19 @@ After initializing the socket, let's set two listeners listed below:
 
 - **chat**: The function we pass to `socket.on(“chat”)` handles sending and receiving message. If a user leaves the chat, a disconnect message is broadcasted to all other room users.
 
-The event listeners of the above functions, `joinRoom` and `chat` will be triggered from the frontend in the files `home.js` and `chat.js` as explained later in this guide.
+The event listeners of the functions above, `joinRoom` and `chat` will be triggered from the frontend in the files `home.js` and `chat.js` as explained later in this guide.
 
-### Creating the Frontend
-
+### Creating the frontend
 We will use React, [Redux library](https://redux.js.org/tutorials/essentials/part-1-overview-concepts), the socket.io-client, and aes256 for encrypting and decrypting the messages for the frontend.
 
 The folder structure for our client-side will appear as below:
 
-![frontend folder structure](/engineering-education/creating-a-simple-real-time-chat-app-with-react-socket-io-with-e2e-encryption/frontend-folders.PNG)
+![frontend folder structure](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/frontend-folders.PNG)
 
-### Coding the Frontend
+### Coding the frontend
 
-**Step 1**
-
-First, let's run the below commands in the terminal to create a client folder for our React App, namely `chatfrontend`, browse to the created directory and install the necessary dependencies required for react app to run.
+#### Step 1
+First, let's run the commands below in the terminal to create a client folder for our React App, namely `chatfrontend`, browse to the created directory and install the necessary dependencies required for the react app to run.
 
 ```bash
 npx create-react-app chatfrontend
@@ -228,9 +219,10 @@ cd chatfrontend
 npm i node-sass react-redux react-router-dom redux socket.io-client aes256
 ```
 
-**Step 2**
+#### Step 2
+Next, let's modify the file `/src/index.js` to help implement [reducers](https://www.geeksforgeeks.org/introduction-to-redux-action-reducers-and-store/) in our react app as explained later in this guide. 
 
-Next, let's modify the file `/src/index.js` to help implement [reducers](https://www.geeksforgeeks.org/introduction-to-redux-action-reducers-and-store/) in our react app as explained later in this guide. The code will be as below:
+The code will be as below:
 
 ```typescript
 import App from "./App";
@@ -250,9 +242,11 @@ ReactDOM.render(
 );
 ```
 
-In the above code, we have added `redux` and imported `reducers` from the file `/store/reducer/index.js`
+In the code above, we have added `redux` and imported `reducers` from the file `/store/reducer/index.js`
 
-Next, let's create a file `/store/action/index.js` which will define the action object and returns the the same to avoid writing the object every time we need it. The code is as shown below:
+Next, let's create a file `/store/action/index.js` that will define the action object and return the the same to avoid writing the object every time we need it. 
+
+The code is as shown below:
 
 ```typescript
 //here we export the function process with the defined parameters and define action object PROCESS, which will return the same parameters as the payload.
@@ -268,7 +262,9 @@ export const process = (encrypt, text, cypher) => {
 };
 ```
 
-Then let's create a file `/store/reducer/process.js` which will be our [reducer](https://www.geeksforgeeks.org/introduction-to-redux-action-reducers-and-store/). It takes the current state and the action object we have just created to return a new state. The code is as shown below:
+Then let's create a file `/store/reducer/process.js` that will be our [reducer](https://www.geeksforgeeks.org/introduction-to-redux-action-reducers-and-store/). It takes the current state and the action object we have just created to return a new state. 
+
+The code is as shown below:
 
 ```typescript
 //initialiaze the function with two arguments
@@ -284,7 +280,9 @@ export const ProcessReducer = (state = {}, action) => {
 };
 ```
 
-Then, let's create a file `/store/reducer/index.js` where we import the reducer we have just create and call [action](https://www.tutorialspoint.com/redux/redux_actions.htm) object created previously. The code is as shown below:
+Then, let's create a file `/store/reducer/index.js` where we import the reducer we have just created and call the [action](https://www.tutorialspoint.com/redux/redux_actions.htm) object created previously. 
+
+The code is as shown below:
 
 ```typescript
 // import the reducers
@@ -299,11 +297,14 @@ export default rootReducers;
 ```
 
 
-In the above code snippets, we add [redux](https://www.npmjs.com/package/redux) into React App and then create an action by the name `process`. The action will help send and receive incoming and outgoing messages respectively to the file `aes.js`, which will encrypt and decrypt messages.
+In the code snippets above, we add [redux](https://www.npmjs.com/package/redux) into our React App and then create an action by the name `process`. 
 
-**Step 3**
+The action will help send and receive incoming and outgoing messages respectively to the file `aes.js`, which will encrypt and decrypt messages.
 
-Next, let's create the file `App.js` which is rensponsible for fetching the routes for the user name and room name. The file appears as below:
+#### Step 3
+Next, let's create the file `App.js` that is rensponsible for fetching the routes for the user name and room name. 
+
+The file appears as below:
 
 ```typescript
 import Chat from "./chat/chat";
@@ -351,11 +352,13 @@ function App() {
 export default App;
 ```
 
-In the above, we add routes and importing the components (React, io, Chat, Process, Home). We render home components and get `username` and `roomname` from the routes on the base URL.
+In the code above, we added routes and imported the components (React, io, Chat, Process, Home). We rendered home components and got `username` and `roomname` from the routes on the base URL.
 
 On this path, `/chat/roomname/username` the AppMain component is rendered, and it returns two divs. The first div is for the chatbox and the other returns process for displaying encrypted and decrypted, incoming and outgoing messages, respectively.
 
-Let's add some styling for `App.js`. We'll create the files `App.scss` and `_globals.scss` as below:
+Let's add some styling for `App.js`. 
+
+We'll create the files `App.scss` and `_globals.scss` as below:
 
 `App.scss`
 
@@ -396,11 +399,10 @@ $yellowColor: #ffac41;
 $greyColor: #2d343e;
 ```
 
-**Step 4**
+#### Step 4
+Next, let's code the file `/home/home.js`, that acts as our homepage page, where the user keys in the user name and room name is joining. 
 
-Next, let's code the file `/home/home.js` which acts as our homepage page, where the user keys in the user name and room name is joining. 
-
-The code for the file is as below:
+The code for the file should be as below:
 
 ```typescript
 import React, { useState } from "react";
@@ -444,9 +446,13 @@ function Homepage({ socket }) {
 export default Homepage;
 ```
 
-From above, we take the user name and room name and call the function `socket.emit("joinRoom")` and pass the username and roomname. The function will activate the `joinRoom` function defined in the backend. The `joinRoom` function will add the user to the room, and a welcome message will be displayed as explained earlier in the backend.
+From the code above, we take the user name and room name and call the function `socket.emit("joinRoom")` and pass the username and roomname. 
 
-Now, let's add some styling to `home.js`. We create a file `home.scss` as below:
+The function will activate the `joinRoom` function defined in the backend. The `joinRoom` function will add the user to the room, and a welcome message will be displayed as explained earlier in the backend.
+
+Now, let's add some styling to `home.js`. 
+
+We create a file `home.scss` as below:
 
 ```scss
 .homepage {
@@ -485,9 +491,10 @@ Now, let's add some styling to `home.js`. We create a file `home.scss` as below:
 }
 ```
 
-**Step 5**
+#### Step 5
+Next, let's code the file `/chat/chat.js` as it loads once the user has joined the room. It is the main page where a user can chat with each other using the chatbox. 
 
-Next, Let's code the file `/chat/chat.js` as it loads once the user has joined the room. It is the main page where a user chats with each other using the chatbox. The code for the file is shown below:
+The code for the file is shown below:
 
 ```typescript
 import "./chat.scss";
@@ -586,9 +593,13 @@ function Chat({ username, roomname, socket }) {
 export default Chat;
 ```
 
-In the above code, we take the user's input and pass it to the action `process`, and then the data will be passed to the `aes` function for encryption. Then the encrypted data is sent to `socket.on("chat")`. Also, if the message is received, it will be passed to the `aes` function for decryption.
+In the code above, we took the user's input and passed it to the action `process`, and then the data was passed to the `aes` function for encryption. 
 
-Let's add some styling to `chat.js`. Let's the file `chat.scss` as below:
+Then the encrypted data was sent to `socket.on("chat")`. Also, if the message is received, it will be passed to the `aes` function for decryption.
+
+Let's add some styling to `chat.js`. 
+
+Let's code the file `chat.scss` as below:
 
 ```scss
 @import "../globals";
@@ -715,9 +726,8 @@ Let's add some styling to `chat.js`. Let's the file `chat.scss` as below:
 }
 ```
 
-**Step 6**
-
-Next, Let's create the file `aes.js` which is responsible for the encryption of outgoing messages and decryption of incoming messages by the use of the same secret key, as below:
+#### Step 6
+Next, let's create the file `aes.js` which is responsible for the encryption of outgoing messages and decryption of incoming messages by the use of the same secret key, as below:
 
 ```JavaScript
 var aes256 = require("aes256");
@@ -743,13 +753,14 @@ export const to_Decrypt = (cipher, username) => {
 };
 ```
 
-In the above code, we import `aes256` from the `aes` module and write the functions where the incoming encrypted message is decrypted and outgoing message is encrypted. 
+In the code above, we imported `aes256` from the `aes` module and wrote the functions where the incoming encrypted message is decrypted and outgoing message is encrypted. 
 
 Note the welcome user message is not to be encrypted.
 
-**Step 7**
+#### Step 7
+Next we will be creating the file `/process/process.js` that is displayed on the right side of the chat room. It displays the secret key used, encrypted and decrypted message. 
 
-Next will be creating the file `/process/process.js` that displays on the right side of the chat room. It displays the secret key used, encrypted and decrypted message. The code is as below:
+The code is as below:
 
 ```typescript
 import "./process.scss";
@@ -777,9 +788,11 @@ function Process() {
 export default Process;
 ```
 
-The above is an optional component where we display an incoming encrypted message and decrypt it using our secret key. The file `process.js` displays the incoming encrypted and decrypted messages on the sidebar.
+The code above is an optional component where we display an incoming encrypted message and decrypt it using our secret key. The file `process.js` displays the incoming encrypted and decrypted messages on the sidebar.
 
-Let's add some styling to the file `process.js`. Let's create the file `/process/process.scss` as below:
+Let's add some styling to the file `process.js`. 
+
+Let's create the file `/process/process.scss` as below:
 
 ```scss
 .process {
@@ -826,11 +839,12 @@ Let's add some styling to the file `process.js`. Let's create the file `/process
 }
 ```
 
-### Running the App
+### Running the app
+Now that we have successfully created a Real-time chat E2E App, the final step will be to run the server and the React app to test it.
 
-Now that we have successfully created a Real-time chat E2E App, the final step will be to run the server and the react app to test it.
+We need to note that our server runs on port 8000, and our frontend runs on port 3000. We need to [proxy](https://medium.com/bb-tutorials-and-thoughts/react-how-to-proxy-to-backend-server-5588a9e0347) the connection for our Node.js server to communicate with our frontend. 
 
-We need to note that our server runs on port 8000, and our frontend runs on port 3000. We need to [proxy](https://medium.com/bb-tutorials-and-thoughts/react-how-to-proxy-to-backend-server-5588a9e0347) the connection for our Node.js server to communicate with our frontend. To achieve this, we need to edit the React App's `package.json` file located at `/chatfrontend/package.json` and add the below line of code:
+To achieve this, we need to edit the React App's `package.json` file located at `/chatfrontend/package.json` and add the line of code below:
 
 ```json
 "proxy": "http://localhost:8000"
@@ -838,16 +852,16 @@ We need to note that our server runs on port 8000, and our frontend runs on port
 
 The `package.json` file will appear as below:
 
-![package.json file](/engineering-education/creating-a-simple-real-time-chat-app-with-react-socket-io-with-e2e-encryption/packagejson.PNG)
+![package.json file](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/packagejson.PNG)
 
-To run our server, navigate to the backend directory and type the below commands in the terminal:
+To run our server, navigate to the backend directory and type the commands below in the terminal:
 
 ```bash
 cd chatbackend
 node server.js
 ```
 
-To run the frontend, type the below commands in the terminal:
+To run the frontend, type the commands below in the terminal:
 
 ```bash
 cd chatfrontend
@@ -858,17 +872,18 @@ The command will compile the project and run the React app. Once this is complet
 
 Launch another tab and access http://localhost:3000 and, type a different user name but type same room name and test the app.
 
-The video for testing our chat App is as shown below:
+The video for testing our chat app is demonstrated below:
 
 <iframe width="853" height="460" src="https://www.youtube.com/embed/Nma-IAB2oSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Conclusion
-
 In general, the app demonstrated above is quite simple and does not have many features a modern chat app would have. However, the idea, the code behind the app, and end-to-end encryption can be used to implement a real chat app.
 
 A lot more can be added from this chat app, but the concept and method can remain the same.
 
 The project files and source code used in this guide can be found at [GitHub Repository](https://github.com/ephnjor2021/chatapplication.git).
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
