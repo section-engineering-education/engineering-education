@@ -24,7 +24,7 @@ Every year, stack overflow releases [survey results](https://insights.stackoverf
 
 The survey shows that Windows and Linux are the most popular platforms. Notably, there was an immense growth of container technologies such as Docker and Kubernetes.
 
-Docker was the third most popular platform and correlated technologies. About 35% of the respondent uses Docker
+Docker was the third most popular platform and correlated technologies. About 35% of the respondent uses Docker.
 
 ![How popular Docker is](/engineering-education/why-is-docker-so-popular/how-popular-docker-is.jpg)
 
@@ -42,11 +42,11 @@ It also appeared that Docker is the most wanted technology, and most developers 
 
 [IMAGE SOURCE](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-platforms-wanted5)
 
-These metrics are a testimonial that Docker is widespread, and the popularity is growing rapidly.
+This metrics are a testimonial that Docker is widespread, and the popularity is growing rapidly.
 
 ### Reasons why is Docker so popular
 
-So why everyone loves and seem interested in Docker?
+So why everyone loves and seems interested in Docker?
 
 #### The microservices architecture
 
@@ -65,13 +65,13 @@ Docker containers, unlike virtual machines, can be distributed on any platform w
 
 #### Resource effective
 
-Docker is a form of virtualization in which (unlike virtual machines) the resources are allocated directly by the host. This helps you to run a large number of Docker containers instead of only a few virtual machines. Each container self assign resources on the need of the application.
+Docker is a form of virtualization in which (unlike virtual machines) the resources are allocated directly by the host. This helps you to run many Docker containers instead of only a few virtual machines. Each container self assign resources on the need of the application.
 
 Docker uses a [layered file system](https://ilearnedhowto.wordpress.com/tag/layered-filesystem/). This gives Docker the ability to use less disk space as it can reuse files efficiently. For example, if you have multiple [Docker images](/engineering-education/docker-concepts/) using the same base image, Docker will only keep a single copy of the files needed and share them with each container. This creates vast economies of scale, making your application cost-effective.
 
 #### Cost effective
 
-Let's take the case of virtual machines.  In this case, you have a single server, and you want to run multiple services. Imagine that every application will need its own operating system. Basically, you are running multiple operating systems on the same physical hardware. This way, you're wasting resources such as CPU you're wasting RAM, and hard drive.
+Let's take the case of virtual machines. In this case, you have a single server, and you want to run multiple services. Imagine that every application will need its own operating system. Basically, you are running multiple operating systems on the same physical hardware. This way, you're wasting resources such as CPU you're wasting RAM, and hard drive.
 
 Another issue is the operating system licenses. Let's say you are using Windows operating system. You'll have to buy those licenses. All this will force you to invest a lot of money. The application cost will be high.
 
@@ -81,7 +81,7 @@ In Docker, all containers will share the same operating system. Each container r
 
 Usually, when creating an application, you would install many programs and tools onto your application's server. The whole application is tied to the machine where this server is. Sharing such applications can be tricky. With Docker, you can take the entire application and contain it in a container.
 
-You write instructions indicating how to set up a server just the way you need it to work. You set every technology stack that your application requires to run in a single configuration file. You can redeploy these configurations on any other server and duplicate the application functionality.
+You write instructions indicating how to set up a server just the way you need it to work. You set every technology stack that your application requires running in a single configuration file. You can redeploy these configurations on any other server and duplicate the application functionality.
 
 This affects the compatibility as well. Let's say you have Node.js version 5.0.0, and I have the Node.js version 16.0.0. When running this application on these two platforms, something might be affected in terms of version compatibility. With Docker, you set all these version configurations to get your application to work. , if it works on my side, it will work for you or anybody else.
 
