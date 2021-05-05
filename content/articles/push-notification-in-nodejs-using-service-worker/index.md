@@ -269,3 +269,7 @@ In this article, we learned how to use service workers to implement push notific
 - Service worker: https://developers.google.com/web/fundamentals/primers/service-workers
 - Push Notifications: https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications
 - Web-Push: https://www.npmjs.com/package/web-push
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+
