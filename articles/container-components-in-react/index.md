@@ -10,7 +10,11 @@ When you’re done reading this article, you’d have an understanding of how a 
 
 ### What you need to know
 
-Before you read this article, you need to have an idea of what [React](https://reactjs.org) is, how to make use of [React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component, and understand how components and [Props](https://reactjs.org/docs/components-and-props.html) work together.
+Before you read this article, you need to have an idea of the following:
+
+- [What is React](https://reactjs.org).
+- [How to make use of React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component
+- [Understand how components and Props work together](https://reactjs.org/docs/components-and-props.html).
 
 When you're done getting around these concepts, you can come back here to read this article.
 
@@ -51,11 +55,13 @@ Note: There’s a convention that is quite common in the developer community.
 
 Developers tend to place their container components in a separate folder and the UI components into another folder, so they can distinguish between these components. You can choose not to follow this pattern of creating different folders if you already have one that works fine for you, so long you’re able to solve the same problem.
 
-Building the search component
+### Building the search component
+
 A search component is among the most ubiquitous components in a typical React application.
 
 Let’s start by thinking about the function(s) that the search component would perform. A search component should be a able to perform basic tasks like searching and filtering.
-To limit the amout of time spent on getting the perfect API that the search component has to interact with.
+
+To keep things simple, let's use an array of objects as the data to search from, instead of using an API.
 
 I’d go ahead to create an array of objects containing simple information that will be in this component
 
