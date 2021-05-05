@@ -61,7 +61,7 @@ Let’s start by thinking about the function(s) that the search component would 
 
 To keep things simple, let's use an array of objects as the data to search from, instead of using an API.
 
-I’d go ahead to create an array of objects containing simple information that will be in this component
+Let's create an array of objects containing simple information about books that will be in this component:
 
 ```js
 // bookshelf.js
