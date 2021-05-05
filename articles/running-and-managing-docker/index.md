@@ -19,25 +19,24 @@ On exposure to any container technology, the first thing to interact with is mos
 
 Containers are tools that simulate an Operating System environment and allows us to deploy our applications without necessarily worrying much about different configuration systems.
 
-You can decide to build a container image from your local machine or decide to pull a preexisting one from a container image registry. Either way, you can run the image to produce a running application inside a container. The most popular container image format is the Docker Image Format, developed by the Docker Open Source Project, which we are going to discuss in this article.
+We may decide to build an image from scratch from our local machines or decide to pull one from an image registry. Either way, you can run the image to produce a running application inside a container.
 
 You can get a nice introduction to Docker from these articles by [Francisca Adekanye](/engineering-education/authors/francisca-adekanye/):
 
 - [Understanding Docker Concepts](/engineering-education/docker-concepts/)
 - [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
 
-#### The Docker image format
 A Docker image is made up of a series of layers(File System Layers) in which each layer can either add, delete or modify a file from the preceding layer. This creates an overlay filesystem. To explain this in detail, we will look at the following figures:
 
 ```
 .
-└── container A: a base operating system only, such as ArchLinux
-    └── container B: build upon #A, by adding library1 v2.1.15
-        └── container C: build upon #A, by adding library2 v1.9
+└── container F: a machine's OS such as ArchLinux
+    └── container G: build upon F, by adding library1 v2.1.15
+        └── container H: build upon G, by adding library2 v1.9
 
 ```
 
-Here, we have three containers: A, B, and C. B and C are created from A and share container A's files.
+Here, we have three containers: F, G, and H. G and H are created from F and share container F's files.
 
 You can also inherit from any inner layer. For example, if we inherit from container B by adding other versions of dependencies, we get such a diagram:
 
@@ -79,9 +78,9 @@ We can then create the image using the command format below:
 $ docker build -t <image-name>:<image-version> .
 ```
 
-The `docker build` command builds a Docker image from a `Dockerfile`.
+This command builds a Docker image from a `Dockerfile`.
 
-`-t` defines the tag of the image. The rest of the arguments will be the image name and the version.
+`-t` defines the tag of the image. The other arguments will be the image name and the version.
 
 For example:
 
@@ -90,23 +89,22 @@ $ docker build -t sectionio-image:2.0 .
 ```
 
 #### Image security
-We should take much consideration for our images' security. When building images that will ultimately run in a production environment, probably a Kubernetes cluster, we should follow the best practices for packaging and distributing the applications.
-
-For example, we should not build containers with passwords put in any layer of the image because an enterprising attacker can simply create an image that only consists of the layers that contain the password and start some malicious activity.
+We should take much consideration for our images' security and follow the best practices and recommendations.
+For example, we should not build containers with passwords put in any layer of the image because an enterprising attacker may create an image from layers containing the passwords and start some malicious activity.
 
 #### Optimizing image sizes
-When working with large images, the first thing to remember is that files that are removed by subsequent layers in the system are still present in the images, only that they are inaccessible.
+We also need to take care of the space our images take up. Consider the diagram below:
 
 ```
 .
-└── layer A: contains a large file named 'MegaFile'
-    └── layer B: removes 'MegaFile'
-        └── layer C: builds on B
+└── layer F: contains a large file named 'MegaFile'
+    └── layer G: removes 'MegaFile'
+        └── layer H: builds on G
 ```
 
 `MegaFile` is still present in layer A, meaning that whenever you push or pull the image, it is still transmitted through the network.
 
-Another tradeoff that we may fall into revolves around image caching and building. Each layer is an independent delta from the layer below it and that each time you change a layer, it changes every layer that comes after it. That means that they need to be rebuilt, pushed, and pulled again to deploy your image to production.
+Another tradeoff that we may experience is in caching and building our images. Each layer is an independent delta from the layer below it and that each time you change a layer, it changes every layer that comes after it. That means that they need to be rebuilt, pushed, and pulled again to deploy your image to production.
 
 To understand this more, consider these two figures:
 
