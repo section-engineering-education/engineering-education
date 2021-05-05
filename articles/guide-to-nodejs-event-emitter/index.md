@@ -18,16 +18,16 @@ images:
 ### Introduction
 
 Node.js has an asynchronous event-driven architecture. This allows for designs where events emitted due to action cause the listener objects to be executed.  
-It has a built-in module called `Events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
+It has a built-in module called `events`. This module has an object `Event Emitter` which we can manipulate to fire/listen to events.  
 
 ### Prerequisites
-This article assumes you have basic knowledge in [JavaScript](https://www.w3schools.com/js/DEFAULT.asp), REPL, and [Node.js](https://nodejs.org/en/) installed in your local development environment.
+This article assumes you have basic knowledge in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [REPL](https://nodejs.org/api/repl.html), and [Node.js](https://nodejs.org/en/) installed in your local development environment.
 
-### Event emitter class
-The `Event Emitter` class is lies within the `events` module.  
+### Event emitter object
+The `Event Emitter` object lies within the `events` module.  
 It has an `eventEmitter.on()` method which it exposes to allow for function(s) to be attached to emitted events.  
 
-Let's begin by importing the `events` module. In your REPL, add the following code snippets:  
+Let's begin by importing the `events` module: 
 
 ```js
 ~$ node
@@ -106,7 +106,7 @@ MyEventEmitter {
 > 
 
 ```
-When we now try to emit the `event` event, `myFirstEvent()` and `mySecondEvent()` callbacks should be invoked.  
+When we emit the `event` event, `myFirstEvent()` and `mySecondEvent()` callbacks should be invoked.  
 
 Output:
 
