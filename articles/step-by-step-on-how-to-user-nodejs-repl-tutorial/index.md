@@ -1,13 +1,22 @@
 ### Introduction
-Node.js `Read -Evaluate-Print-Loop` is an easy-to-use command-line tool for processing Node.js expressions.
+Node.js `Read -Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions.
 This shell captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell.  
 
 It's therefore, important to note that this tool does not require file creation to write codes. It comes with ready to use Node.js development environment.
+In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating .js files.
+
+### Table of contents
+1. Introduction to REPL
+2. Basic Arithmetic operations using REPL
+3. Creating methods and variables using REPL
 
 ### Prerequisites
 This tutorial requires:
 1. Node.js Installed in your development local machine.
 2. Basic knowledge of JavaScript.
+
+### Objectives
+At the end of this tutorial, you should be able to use REPL tool to run your Node.js scripts.
 
 ### Getting started with REPL
 Enter the following in the terminal:
@@ -59,7 +68,7 @@ As shown in the output, you can as well use `ctrl+D` or type `.exit`.
 As discussed previously, this tool simplifies work by providing a quick way to test Node.js code without creating files.  
 > It's also important to note that any valid JavaScript code can be executed using REPL.
 
- 1. Performing Arithmetical operations in REPL
+#### Performing Arithmetical operations in REPL
 In the previous example, we printed 'hello world' string on the screen, in this section let's dive in and look at arithmetics:  
 
 In your terminal, start REPL: 
@@ -86,14 +95,12 @@ Output:
 > 
 
 ```
-2. Performing operations using Node's Math library
+#### Performing operations using Node's Math library
 Math library is an object with defined methods and properties. We can therefore use these features to perform some arithmetics.  
 
 Example:
 
 ```bash
----skipped lines
-
 > function getRandomNumber(maximum){
 ... return Math.floor(Math.random()*maximum);
 ... }
@@ -113,7 +120,7 @@ In REPL, we define `getRandomNumber(args)` and pass it a maximum number. The met
 > It's important to note that `Math.random()` does not provide secure random numbers. Do not use them on security-related tasks.
 
 
-3. Calling Methods (Functions) Using REPL
+#### Calling Methods (Functions) Using REPL
 
 Normally, we write functions to handle specific tasks. REPL provides an easy way to handle these methods.   
 In JavaScript, we commonly use the `console.log()` global method to print messages. 
@@ -137,8 +144,6 @@ When you press ENTER, the output is displayed as shown above.
 Next, let's create a function to add two numbers:  
 
 ```bash
---- skipped lines
-
 > function addTwoNumbers(firstNumber,lastNumber){
 ... console.log(firstNumber+ lastNumber)
 ... }
@@ -151,7 +156,6 @@ This function, whenever it's called, logs out the addition of these two numbers.
 Output:
 
 ```bash
----- skipped lines
 > addTwoNumbers(20,40);
 60
 undefined
@@ -162,7 +166,7 @@ We call this method and pass it two parameters, `addTwoNumbers(20,40)`( you're f
 By pressing ENTER, the result is displayed on the screen as shown above.  
 
 
-4. Creating Variables using REPL
+#### Creating Variables using REPL
 
 Creating variables works the same as it would in your`.js` file.
 Let's look at an example:  
@@ -197,7 +201,7 @@ undefined
 ```
 ### Conclusion
 
-In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment.
-We've seen how we can perform different tasks without the necessity to create a js file.
+In this tutorial, we've seen how we can use the interactive Node.js REPL tool environment. 
+We've seen how we can perform different tasks such as basic artihmetic operations and creating functions without the necessity to create a `.js` file.
 
 Happy Coding!!
