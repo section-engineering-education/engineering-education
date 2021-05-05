@@ -18,9 +18,11 @@ When you're done getting around these concepts, you can come back here to read t
 
 The term “Container components” was used by [Dan Abramov](https://overreacted.io/) when he was buttressing on the concept of separation of concerns in a React Application.
 
-A container component is one whose core responsibility or functionality is to get data.
+When we think of the word "container". What pops up first as an ideal representation of the word is an entity or material that stores and or hold contents. The type of content that such container holds can vary.
 
-Obtaining data doesn’t mean the traditional way of fetching data from an API’s endpoint, it also has to do with the logic of a React component. Once the process of executing the logic or obtaining data in the component is complete. It renders the corresponding component.
+The same thing goes for a "container compponent" in React. A container components can be primarily referred to as the parent elements of other components in a React app. They serve as a bridge between the normal components that render UI alone and the logic that makes them (the UI components) interactive.
+
+The most common function of a container component is to obtain data. Obtaining data doesn’t mean the traditional way of fetching data from an API’s endpoint, it also has to do with the logic of a React component. Once the process of executing the logic or obtaining data in the component is complete. It renders the corresponding component.
 
 The component that gets rendered represents the user interface or layout of the app.
 
@@ -32,11 +34,11 @@ Sometimes it (the container component) can perform two functions (i.e. to render
 import React from “react”
 
 export const exampleComponent = ({ children, open }) => {
-	return (
-		<div onClick={() => open()}>
-			{children}
-		</div>
-	);
+  return (
+    <div onClick={() => open()}>
+	  {children}
+	</div>
+  );
 };
 
 ```
@@ -90,15 +92,15 @@ The `Search` component presents the UI (i.e. It renders an input element where u
 import React from “react”
 
 const Search = ({ val, onSearch, ...props }) => {
-	return (
-		<input
-			type="text"
-			value={val}
-			placeholder="Search for any book"
-			onChange={onSearch}
-			{...props}
-		/>
-	);
+  return (
+    <input
+	  type="text"
+	  value={val}
+	  placeholder="Search for any book"
+	  onChange={onSearch}
+	  {...props}
+	/>
+  );
 };
 
 export default Search
@@ -111,16 +113,16 @@ Take a look at how the `bookShelf` component is being imported into the authors 
 ```js
 // books.js
 const Books = ({ books }) => {
-	return (
-		{books.map((bookShelf, index) => {
-			return (
-				<ul key={index}>
-					<li>Book: {bookShelf.bookName}</li>
-					<li>Author: {bookShelf.author}</li>
-				</ul>
-			)
-		})}
-	)
+  return (
+  {books.map((bookShelf, index) => {
+    return (
+	  <ul key={index}>
+	    <li>Book: {bookShelf.bookName}</li>
+		<li>Author: {bookShelf.author}</li>
+	  </ul>
+    )
+  })}
+  )
 }
 export default Books
 ```
@@ -141,29 +143,29 @@ import { bookShelf } from “./bookshelf.js”
 import Books from “./books”
 
 const authorsContainer = () => {
-	const [searchTerm, setSearchTerm] = React.useState([]);
-	const [books, setBooks] = React.useState(bookShelf);
+  const [searchTerm, setSearchTerm] = React.useState([]);
+  const [books, setBooks] = React.useState(bookShelf);
 
-    const handleInputChange = (e) => {
-		setSearchTerm(e.target.value);
-	};
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
-	// perfoms a filtering on the questions
-	// based on the users input and returns a new array
-	// which gets rendered to the DOM.
-	const filteredBooks = books.filter((bookShelf) => {
-		return bookShelf.bookName.includes(searchTerm);
-	});
+  // perfoms a filtering on the questions
+  // based on the users input and returns a new array
+  // which gets rendered to the DOM.
+  const filteredBooks = books.filter((bookShelf) => {
+    return bookShelf.bookName.includes(searchTerm);
+  });
 
-    return (
-		<section>
-			<Search
-				name="search"
-				onSearch={handleInputChange} val={searchTerm}
-			/>
-			<Book books={filteredBooks}/>
-		</section>
-	)
+  return (
+    <section>
+	  <Search
+	    name="search"
+		onSearch={handleInputChange} val={searchTerm}
+	  />
+	  <Book books={filteredBooks}/>
+	</section>
+  )
 }
 export default authorsContainer
 ```
