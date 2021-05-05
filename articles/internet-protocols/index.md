@@ -1,22 +1,41 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/internet-protocols/
+title: Understanding IPV4 and IPV6 protocols
+description: This article will be a walk through the IPv4 and IPv6 Internet protocols which make communication on the internet possible. 
+author: mackrine-awino
+date: 2021-05-05T00:00:00-13:00
+topics: [Protocols]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/internet-protocols/hero.jpg
+    alt: 
+---
+Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. 
+<!--more-->
 
 ### Getting started with Internet protocol versions
 
-
 Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
 
-There are two versions of internet protocol, ie. Internet protocol version 4 and internet protocol version 6, which are used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
+There are two versions of internet protocol, i.e., Internet protocol version 4 and internet protocol version 6, which are used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
 
 ### Table of contents
+
 1. [Prerequisites](#prerequisites)
 2. [Introduction to IPv4 and IPv6](#introduction-to-IPv4-and-IPv6)
 3. [Internet protocol version 4](#internet-protocol-version-4)
 4. [Internet protocol version 6](#internet-protocol-version-6)
-5.  [Similarities between IPv4 and IPv6](#similarities-between-IPv4-and-IPv6)
+5. [Similarities between IPv4 and IPv6](#similarities-between-IPv4-and-IPv6)
 6. [Differences between IPv4 and IPv6](#differences-between-IPv4-and-IPv6)
-7. [Why does IPv6 take preference to IPv4?](#why-does-IPv6-take-preference-to-IPv4?)
+7. [Why does IPv6 take preference to IPv4?](#why-does-IPv6-take-preference-to-IPv4)
 8. [Conclusion](#conclusion)
 
 ### Prerequisites
+
 To understand the content of this article, a reader should have the following:
 - A beginner's understanding of computer networking.
 
