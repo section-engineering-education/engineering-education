@@ -322,7 +322,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-- Note inheritance hierarchy in this class, `set_current_user` will be accessed with all controllers in the subdirectory.
+- Note inheritance hierarchy in this class, since all controllers inherit from the `ApplicationController`, set_current_user will be accessible in all the controllers.
   This controller finds signed_in_user with `session[:user_id]` and stores it as `Current.user` if present.
 - The `Current.user`can be accessed in our views.
 
