@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/flutter-web-application/
+title: How to Build a Flutter web Application
+description: This article takes the reader through creating a web application using Flutter. Flutter for Web has recently moved from beta to stable. This is good news to developers since they can build highly secure and appealing websites. Flutter widgets are based on Google's material design principles. This means that even inexperienced Flutter developers can design quality applications.
+author: michael-barasa
+date: 2021-05-06T00:00:00-17:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/flutter-web-application/hero.jpg
+    alt: Flutter web image example
+---
 ### Introduction
 Flutter is an emerging framework for crafting beautiful cross-platform mobile applications. It allows developers to target both iOS and Android platforms with a single code base. This feature helps to save a significant amount of time and resources. With the release of `Flutter 2`, its popularity is set to rise even further. The Flutter framework will cause ripples in the web development field. New icons, as well as other components included in Flutter 2, will simplify the development of web applications.
-
+<!--more-->
 Flutter for Web has recently moved from beta to stable. This is good news to developers since they can build highly secure and appealing websites. Flutter widgets are based on Google's material design principles. This means that even inexperienced Flutter developers can design quality applications.
 
 ### Goal
@@ -255,3 +271,6 @@ Open a terminal inside your code editor and run `flutter run -d chrome` command.
 
 ### Conclusion
 In this tutorial, we have created a simple web application using Flutter. You can, therefore, use this knowledge to create more powerful apps using this framework. In case you have not understood any concept, feel free to go back to the previous steps.
+
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
