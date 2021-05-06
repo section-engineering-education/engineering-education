@@ -145,6 +145,9 @@ touch apiRoutes.ts
 import { RoutesConfig } from "./routes.config";
 import express from "express";
 
+// Defining data as an array of objects
+let data: Object[] = [];
+
 // The ApiRoutes class inherits the RoutesConfig class
 export class ApiRoutes extends RoutesConfig {
   constructor(app: express.Application) {
@@ -169,10 +172,25 @@ export class ApiRoutes extends RoutesConfig {
           `GET Request successful. Parameter passed is: ${req.params.id}`
         );
       });
+    // Post request
+    this.app
+      .route("/api/post")
+      .post((req: express.Request, res: express.Response) => {
+        let putData = {
+          // The parameter is taken from request.body
+          id: req.body.id,
+          time: new Date(),
+        };
+        // the posted data is added to the data array
+        data.push(putData);
+        res.json(putData);
+      });
     return this.app;
   }
 }
 ```
+
+`PUT` and `DELETE` Requests follow the same format as the `POST` request. Instead of `this.app.route.post`, we use `this.app.route.put`.
 
 #### Writing the entry point file
 
@@ -265,11 +283,18 @@ Now, open a separate terminal. We can test our API by the use of the `curl` comm
 curl --request GET 'localhost:3000/api'
 
 curl --request GET 'localhost:3000/api/10'
+
+# The -H option is used to specify content-type and -d is used to specify the json data
+curl --request POST -H "Content-Type: application/json" -d '{"id": "5"}' localhost:3000/api/post
 ```
 
 As you see in the output, our basic API works perfectly.
 
 ![API Response](/engineering-education/working-with-apis-in-typescript/api-response.png)
+
+The post response is as follows:
+
+![POST API Response](/engineering-education/working-with-apis-in-typescript/post-response.png)
 
 Image: **API Response Output**
 
