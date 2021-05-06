@@ -7,7 +7,7 @@ title: Working with APIs in TypeScript
 description: In this article, we will take a look at how to harness the power of TypeScript to consume APIs.
 author: saiharsha-balasubramaniam
 date: 2021-04-14T00:00:00-17:00
-topics: []
+topics: [API, Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/working-with-apis-in-typescript/hero.png
