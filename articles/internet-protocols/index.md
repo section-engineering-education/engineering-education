@@ -56,7 +56,7 @@ Internet protocol version 4, just as its name suggests, was the fourth version o
 
 IPv4 still controls the internet traffics despite the development of IPv6 using a 32bit address space providing over four million unique addresses.
 
-IPv4 being a connectionless protocol, does not guarantee if data is delivered, neither does it arrange the data packets properly. Some packets may also have duplicates, so the organization is all addressed by the layer that handles transport, i.e., [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-protocol-tcp/#:~:text=Transmission%20Control%20Protocol%20(TCP)%20%E2%80%93,referred%20to%20as%20TCP%2FIP.)or the [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol). IPv4 also has special and multicast addresses for [private](https://en.wikipedia.org/wiki/Private_network) networks with approximately eighteen million addresses.
+IPv4 being a connectionless protocol, does not guarantee if data is delivered, neither does it arrange the data packets properly. Some packets may also have duplicates, so the organization is all addressed by the layer that handles transport, i.e., [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-protocol-tcp/#:~:text=Transmission%20Control%20Protocol%20(TCP)%20%E2%80%93,referred%20to%20as%20TCP%2FIP.) or the [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol). IPv4 also has special and multicast addresses for [private](https://en.wikipedia.org/wiki/Private_network) networks with approximately eighteen million addresses.
 
 
 IPv4 address digits are separated with decimal points as shown below:
@@ -84,7 +84,7 @@ Internet protocol version 6 is the newest version of the internet protocol suite
 
 IPv6 uses an address of 128 bits hence allowing 2^128 addresses. IPv6 is not designed to work together with IPv4; thus, there can not be any communication.	
 
-In IPv6, addresses are represented in 8 groups with colons in between every four digits that are to base 16, i.e.,  [hexadecimal](https://simple.wikipedia.org/wiki/Hexadecimal#:~:text=The%20hexadecimal%20numeral%20system%2C%20often,numbers%20and%20six%20extra%20symbols.)digits. The address is a long line of digits that can be shortened using a shortening technique hence should not course confusion. 
+In IPv6, addresses are represented in 8 groups with colons in between every four digits that are to base 16, i.e.,  [hexadecimal](https://simple.wikipedia.org/wiki/Hexadecimal#:~:text=The%20hexadecimal%20numeral%20system%2C%20often,numbers%20and%20six%20extra%20symbols.) digits. The address is a long line of digits that can be shortened using a shortening technique hence should not cause confusion. 
 
 #### Example
 
@@ -115,7 +115,7 @@ Despite being different and cannot communicate, IPv4 and IPv6 have specific qual
 
 ### Why does IPv6 take preference to IPv4?
 
-Other than having larger addressing space, IPv6 has other beneficial features ad discussed below;
+Other than having larger addressing space, IPv6 has other beneficial features as discussed below;
 - It allows for the address allocated to be done in a hierarchy enhancing supernetting.
 - It increases the [multicast](https://en.wikipedia.org/wiki/Multicast_address#:~:text=From%20Wikipedia%2C%20the%20free%20encyclopedia,for%20a%20designated%20network%20service.) addressing hence adjustment of service delivery.
 - IPv6 ensures the portability and security of its host devices.
@@ -123,7 +123,7 @@ Other than having larger addressing space, IPv6 has other beneficial features ad
 
  ### Conclusion
 
-TThe rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. This, together with the frequent advancement in technology in almost every sector in the community, leads to the development of more networks; hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.	
+The rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. This, together with the frequent advancement in technology in almost every sector in the community, leads to the development of more networks; hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.	
 
 Blissful reading!
 
