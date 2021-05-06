@@ -145,7 +145,7 @@ export default Books
 
 The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
 
-The text that user types into the input field is being stored in an array so that we’d be able to perform a filtering functionality using [JavaScript’s filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
+The text that user types into the input field is stored in the app state as a string so that we’d be able to perform a filtering functionality using [JavaScript’s filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
 
 This is possible because the state of the `Book` component is also monitored in this container component.
 
