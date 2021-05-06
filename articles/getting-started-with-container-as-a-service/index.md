@@ -38,7 +38,7 @@ CaaS rely on container-based virtualization, Application Programming Interfaces,
 
 ### Why CaaS
 
-CaaS provides the development team with abstraction for DevOps to concentrate on product and service delivery. This results to streamlined development benefits in terms of scaling and cost-cutting in the eployment pipelines.
+CaaS provides the development team with abstraction for DevOps to concentrate on product and service delivery. This results to streamlined development benefits in terms of scaling and cost-cutting in the deployment pipelines.
 
 CaaS providers also offer container orchestration engines to deploy and run many containers, thus relieving DevOps teams the need to run and maintain their own machines.
 
