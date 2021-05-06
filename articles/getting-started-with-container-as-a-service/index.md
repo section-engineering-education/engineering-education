@@ -55,9 +55,6 @@ CaaS is more suitable for Microservice oriented applications because of the inde
 Like other 'as a service' models available, CaaS provides flexible options where users only pay for resources they are using.
 
 ### Benefits of Container as a Service
-- *Efficiency*: applications deployed through CaaS benefit from performance optimization through tools like Elastic Load Balancers, Log aggregation and Monitoring tools, and even health check. All these are configured to ensure that development teams build highly visible and available distributed systems and applications.
-
-- *Speed*: creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because little concentration is given to Infrastructure. With speed provided in CaaS, a lightweight process of a software release is guaranteed.
 
 - *Efficiency* – Applications deployed through CaaS benefit from performance optimization configurations like Elastic Load Balancing, Log aggregation, Monitoring, and even health checks. These configurations ensure that development teams build highly visible and available distributed systems and applications.
 
