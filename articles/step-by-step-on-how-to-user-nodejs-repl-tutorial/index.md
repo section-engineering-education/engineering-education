@@ -11,14 +11,16 @@ In this tutorial, we learn the basics of Node.js REPL, how we can use this amazi
 3. Creating methods and variables using REPL
 
 ### Prerequisites
+
 This tutorial requires:
 1. Node.js Installed in your development local machine.
-2. Basic knowledge of JavaScript.
+2. Basic knowledge of JavaScript and Node.js.
 
 ### Objectives
 At the end of this tutorial, you should be able to use REPL tool to run your Node.js scripts.
 
 ### Getting started with REPL
+
 Enter the following in the terminal:
 
 ```bash
@@ -46,6 +48,7 @@ undefined
 ```
 In the script, we declare a variable `hello` and assign the text 'hello world'.  
 Next, we call this variable and press enter, to print the 'hello world' string on the screen. That's it.  
+You alos notice on pressing ENTER, `undefined` is printed. This is because `hello` variable doesn't return a value.
 
 Now how do we exit REPL?
 To exit this tool, press `Ctrl+C` on your keyboard.  
