@@ -312,7 +312,7 @@ Access the webpage at `localhost:5000`.
 
 You can now enter some simple URL or Text and click generate to see the output. An example is shown below:
 
-You can find and clone the code above in [this]() repository.
+You can find and clone the code above in [this](https://github.com/franciskaguongo/Generate-a-QR-code-in-Node.js) repository.
 Congratulations, you have successfully created a Node.js QR Code generator program!
 
 #### Conclusion
