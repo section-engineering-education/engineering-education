@@ -6,7 +6,7 @@ url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/
 title: How to Integrate B2C M-Pesa API using Node.js
 description: This article will guide you on how to integrate the B2C M-Pesa API in Node.js. The M-Pesa API allows merchants to send money to consumers. 
 author: robert-wachira
-date: 2021-05-05T00:00:00-08:00
+date: 2021-05-06T00:00:00-08:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
