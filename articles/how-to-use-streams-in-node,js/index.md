@@ -11,9 +11,9 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/how-to-use-streams-in-node.js/hero.jpg
-    alt: Nodejs streams example image
+    alt: Node.js streams example image
 ---
-Streams are objects that allows one to read/write data to and from a source in a continuous manner. There are four main types of streams in Node.js; readable, writable, duplex and transform. Each stream is an `eventEmitter` instance that emits different events at several intervals. 
+Streams are objects that allows developers to read/write data to and from a source in a continuous manner. There are four main types of streams in Node.js; readable, writable, duplex and transform. Each stream is an `eventEmitter` instance that emits different events at several intervals. 
 <!--more-->
 This article will go through reading and writing data to files using streams.
 ### Prerequisites
