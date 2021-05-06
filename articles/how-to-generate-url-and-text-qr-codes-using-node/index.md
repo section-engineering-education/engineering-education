@@ -2,7 +2,7 @@ Have you ever desired to build an application that generates QR codes of text or
 
 ### Pre-Requisites
 
-Some of the basic requirments for this tutorial are:
+Some of the basic requirements for this tutorial are:
 
 - Basic understanding of HTML, CSS, and web development
 - Basic understanding of Node.js
@@ -72,7 +72,7 @@ Let's begin by setting up our project directory. Create a folder and name it "QR
 Once created, run the following command:
 
 ```bash
-npm i qrcode express body-parser nodemon ejs
+npm i qrcode express body-parser ejs
 ```
 
 This installs the following packages to the project:
@@ -81,9 +81,8 @@ This installs the following packages to the project:
 - ejs (Embedded JavaScript templates)
 - express 
 - qrcode
-- nodemon
 
-Let us add some nodemon configuration in the "package.json" file by adding the "start" and "dev" inside the scripts as follows:
+Let us add some configuration in the "package.json" file by adding the "start" inside the scripts as follows:
 
 ```json
 {
@@ -93,7 +92,6 @@ Let us add some nodemon configuration in the "package.json" file by adding the "
     "main": "index.js",
     "scripts": {
         "start": "npm index.js",
-        "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -103,7 +101,6 @@ Let us add some nodemon configuration in the "package.json" file by adding the "
         "body-parser": "^1.19.0",
         "ejs": "^3.1.6",
         "express": "^4.17.1",
-        "nodemon": "^2.0.7",
         "qrcode": "^1.4.4"
     }
 }
@@ -302,10 +299,10 @@ Notice how we use the ejs source attribute to easily add our image to our webpag
 
 #### Running the node.js application
 
-Let us now run our application using nodemon by running the command below inside the terminal:
+Let us now run our application using node by running the command below inside the terminal:
 
 ```nodejs
-npm run dev
+node index.js
 ```
 
 Access the webpage at `localhost:5000`.
