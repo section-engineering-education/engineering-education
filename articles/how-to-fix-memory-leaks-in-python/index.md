@@ -22,6 +22,9 @@ But, how can you achieve this?
 
 You need to understand what a memory leak is, its causes, and the methods you can use to solve such memory issues. Make sure you perform memory profiling to help determine memory utilized by every part of the python code.
 
+### Prerequisities
+As a prerequisite, the reader must have an intermediate level of understanding in Python, with a little knowledge about memory management.
+
 ### Table of Contents
 - [What is a memory leak?](#what-is-a-memory-leak)
 - [What causes memory leaks in Python?](#what-causes-memory-leaks-in-python)
