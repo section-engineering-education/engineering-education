@@ -138,7 +138,7 @@ So each time the input field detects a character, it starts looping through and 
 
 ```js
 import React from “react”
-import { bookShelf } from “./bookshelf.js”
+import { books } from “./bookshelf.js”
 import Books from “./books”
 
 const authorsContainer = () => {
