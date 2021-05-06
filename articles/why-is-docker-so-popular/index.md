@@ -16,11 +16,11 @@ These containers act like microcomputers with specific jobs, each with its own o
 
 This was a massive step for the microservices architecture. Unlike the virtual machine, a Docker container does not require you to pre-allocate resources. A container takes the resources according to the need of the application. Thus achieving optimal utilization of the available computing resources.
 
-### How popular is Docker?
+### The popularity of Docker
 
 Since the introduction of Docker and Docker containers, the growth has been relatively tremendous. Let's check some metrics that show how Docker trends its popularity among developers.
 
-Every year, stack overflow releases [survey results](https://insights.stackoverflow.com/survey/) of how developers cope with different technologies in the world of computing. Let's check at [2020 survey](https://insights.stackoverflow.com/survey/2020) that included 65000 respondents.
+Every year, stack overflow releases [survey results](https://insights.stackoverflow.com/survey/) of how developers cope with different technologies in the world of computing. Let's check at the [2020 survey](https://insights.stackoverflow.com/survey/2020) which included 65000 respondents.
 
 The survey shows that Windows and Linux are the most popular platforms. Notably, there was an immense growth of container technologies such as Docker and Kubernetes.
 
@@ -93,22 +93,15 @@ On the other side, this approach encourages [CI/CD](https://www.digitalocean.com
 
 Containerization technologies are here to stay. It is the right way to package your application and move it around your infrastructure. Many developers and companies are adopting these approaches, with Docker leading the way. Some of the big [companies that use Docker](https://www.featuredcustomers.com/vendor/docker/customers) include PayPal, Uber, eBay, Shopify, Spotify, Quora, etc.
 
-Docker is revolutionizing IT technology across the board. It is speeding up development, testing, and server deployments. If you haven’t learned Docker, check it and see how you can use it to containerize your next project.
+Docker is revolutionizing the IT world across the board. It is speeding up development, testing, and server deployments. If you haven’t learned Docker, check it and see how you can use it to containerize your next project.
 
 ### Further reading
 
-[Understanding Docker Concepts](/engineering-education/docker-concepts/)
-
-[Getting Started with Docker](/engineering-education/getting-started-with-docker/)
-
-[A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
-
-[How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
-
-[How to Create Django Docker Images](/engineering-education/django-docker/)
-
-[Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
-
-[Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
-
-[Containerizing WordPress with Docker-Compose](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/)
+1. [Understanding Docker Concepts](/engineering-education/docker-concepts/)
+2. [Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+3. [A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+4. [How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
+5. [How to Create Django Docker Images](/engineering-education/django-docker/)
+6. [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+7. [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
+8. [Containerizing WordPress with Docker-Compose](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/)
