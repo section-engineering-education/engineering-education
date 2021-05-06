@@ -36,7 +36,7 @@ To follow along, you need:
 
 ### Setting Up Our Project
 
-Open your IDE and create a folder and named `Express-AdminBro`. Inside this folder, set up a new project using the `npm init -y` command to generate a `package.json` file. We require various npm modules from the npm registry:
+Open your IDE and create a folder and name it `Express-AdminBro`. Inside this folder, set up a new project using the `npm init -y` command to generate a `package.json` file. We require various npm modules from the npm registry:
 
 - express: Express is a Node.js framework for building web applications and backend APIs.
 
