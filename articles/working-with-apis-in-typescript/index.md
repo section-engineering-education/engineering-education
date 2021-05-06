@@ -294,7 +294,7 @@ As you see in the output, our basic API works perfectly.
 
 The post response is as follows:
 
-![POST API Response](/engineering-education/working-with-apis-in-typescript/post-response.png)
+![POST API Response](/engineering-education/working-with-apis-in-typescript/post-response.jpg)
 
 Image: **API Response Output**
 
