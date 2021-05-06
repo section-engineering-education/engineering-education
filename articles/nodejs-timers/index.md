@@ -24,10 +24,13 @@ As discussed earlier, Node.js API provides utilities enabling us to execute code
 let timeoutId = setTimeout(func[, delay, argument1, argument2, ...]);
 let timeoutId = setTimeout(func[, delay]);
 let timeoutId = setTimeout(code[, delay]); ``` Example: ```js
+
+
 function myTimerFunction(argument) { console.log(`argument was => ${argument}`);
 } setTimeout(myTimerFunction('John Doe'), 5000);
 
 ```
+
 In the above example, we've defined `myTimerFunction()` method. This method is then called inside a `setTimeout()` method,executd after 5 seconds. Output:
 
 ```bash
@@ -48,7 +51,10 @@ Let's look at an example:
 
 ```js
 function intervalFunction() { console.log('This interval is printed after 2 seconds!');
-} setInterval(intervalFunction, 2000);
+} 
+
+
+setInterval(intervalFunction, 2000);
 
 ```
 Output after 20 seconds: 
@@ -65,20 +71,31 @@ This interval is printed after 2 seconds!
 This interval is printed after 2 seconds!
 This interval is printed after 2 seconds! 
 ```
-In the above example, `intervalFunction()` is being executed every 2 seconds until it's exited (stopped). ### Scheduling timers using setImmediate() method The `setImmediate()` method is used to execute code at the end of the loop cycle.
-In simple terms, this method breaks tasks that take longer to execute to run a callback function initiated by other operations such as events. setImmediate() function has the following syntax: 
+In the above example, `intervalFunction()` is being executed every 2 seconds until it's exited (stopped).
+
+### Scheduling timers using setImmediate() method 
+
+The `setImmediate()` method is used to execute code at the end of the loop cycle.
+In simple terms, this method breaks tasks that take longer to execute to run a callback function initiated by other operations such as events.
+
+setImmediate() function has the following syntax: 
 ``` js
 let immediateId = setImmediate(callbackFunction, [param1, param2, ...]);
 let immediateId = setImmediate(callbackFunction);
 ```
 Let's look at an example: 
+
 ```js
-console.log('before set immediate function is called'); setImmediate((arg) => { console.log(`executing the immediate function: ${arg}`);
+console.log('before set immediate function is called'); 
+
+setImmediate((arg) => { console.log(`executing the immediate function: ${arg}`);
 }); 
+
 console.log('after immediate function has been executed');
 ``` 
 
 Output:
+
 ```js
 before a set immediate function is called
 after the immediate function has been executed
@@ -89,14 +106,34 @@ While executing this method, you're likely to encounter an error as seen below, 
 ```js
 before a set immediate function is called
 error: ReferenceError: setImmediate is not defined
-``` To fix this issue, simply add the following scripts on top of the script: ```js
-window.setImmediate = window.setTimeout;
-```
-With basic knowledge in `setImmediate()`, let's look at a slightly advanced example with nested functions: In your file `timer.js`, add the following: 
+``` 
+
+To fix this issue, simply add the following scripts on top of the script:
 
 ```js
-setImmediate(function functionA() { setImmediate(function functionB() { console.log(10); setImmediate(function functionD() { console.log(20); }); }); setImmediate(function functionC() { console.log(30); setImmediate(function functionE() { console.log(40); }); });
-}); console.log('You have started set immediate:...');
+window.setImmediate = window.setTimeout;
+```
+With basic knowledge in `setImmediate()`, let's look at a slightly advanced example with nested functions: 
+
+In `timer.js` script file, add the following: 
+
+```js
+
+setImmediate(function functionA()
+    { setImmediate(function functionB()
+    { console.log(10); 
+    setImmediate(function functionD()
+    { console.log(20); }); }); 
+    setImmediate(function functionC()
+    { console.log(30); 
+    setImmediate(function functionE() 
+    { console.log(40);
+    });
+  });
+});
+
+
+console.log('You have started set immediate:...');
 ```
 
 Output: 
@@ -109,8 +146,17 @@ You have started set immediate:...
 ```
 In the script above, we have called several queued methods, i.e `functionA()`,`functionB`,`functionC` , `functionD`, and` functionE`.
 They are all executed upon the completion of an event loop. Nested callbacks are not executed ***immediately***, until the following loop.
-This explains why we have unordered output. ### Cancelling timers Now that we've learned how to schedule tasks, what if we need to stop/cancel schedules? These 3 methods that we've discussed i.e `setTimeout()`, `setImmediate()`, and `setInterval()` return timer object.
-When this timer object is passed to the `clear()` method, the execution of these methods is stopped altogether. Example:
+This explains why we have unordered output. 
+
+
+### Cancelling timers
+
+Now that we've learned how to schedule tasks, what if we need to stop/cancel schedules?
+These 3 methods that we've discussed i.e `setTimeout()`, `setImmediate()`, and `setInterval()` return timer object.
+When this timer object is passed to the `clear()` method, the execution of these methods is stopped altogether. 
+
+Example:
+
 ```js
 
 let timeoutObject = setTimeout(() => { console.log('Timebout');}, 3000);
