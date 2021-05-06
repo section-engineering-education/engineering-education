@@ -146,7 +146,7 @@ The `.reverse()` method is used to **reverse** the order of the list. For instan
 cars = ['Volvo', 'Subaru', 'Skyline', 'Ford']
 
 cars.reverse()
-print(cars)    # ['Volvo', 'Subaru', 'Skyline', 'Ford']
+print(cars)    # ['Ford', 'Skyline', 'Subaru', 'Volvo']
 ```
 
 > **NOTE**: `.reverse()` doesn’t sort alphabetically backward. It just reverses the order of the list.
