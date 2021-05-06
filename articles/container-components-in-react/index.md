@@ -6,6 +6,8 @@ Before you read this article, you need to have an idea of the following:
 
 - [What is React](https://reactjs.org).
 
+- You can read up on [how to create a React app with Parcel](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-react-project-with-parcel) or simply use [CRA: Create React App](https://create-react-app.dev/)
+
 - [How to make use of React Hooks](https://reactjs.org/docs/hooks-intro.html) to store the state in a component
 
 - [Understand how components and Props work together](https://reactjs.org/docs/components-and-props.html).
@@ -24,14 +26,18 @@ The same thing goes for a **"container compponent"** in React. Container compone
 
 The most common function of a container component is to obtain data. Obtaining data doesn’t mean the traditional way of fetching data from an API’s endpoint, it also has to do with the logic of a React component. Once the process of executing the logic or obtaining data in the component is complete. It renders the corresponding component.
 
-Sometimes, the container component can perform two functions (i.e. to render UI and hold logic). 
+Sometimes, the container component can perform two functions (i.e. to render UI and hold logic).
 
 In a situation where a container component performs these. The component itself does not hold too many markups (JSX) and is void of CSS styles. Here’s an example below:
 
 ```js
 import React from “react”
 
-export const exampleComponent = ({ children, open }) => {
+export const exampleComponent = ({ children}) => {
+  const open = () => {
+    alert("You clicked this container component")
+  }
+
   return (
     <div onClick={() => open()}>
 	{children}
@@ -51,6 +57,17 @@ Developers tend to place their container components in a separate folder and the
 ### Building the search component
 
 A search component is among the most ubiquitous components in a typical React application.
+
+Before we start building this app, let's have look at how the folder structure containing all the files are represented. You do not compulsorily need to go with this type of structure if you have already have one that is suitable for you. The goal is just to be able to under the whole flow of the project.
+
+```
+src
+ |-- App.js
+ |-- bookshelf.js
+ |-- components
+           |---- Books.js
+           |---- Search.js
+```
 
 Let’s start by thinking about the function(s) that the search component would perform. A search component should be a able to perform basic tasks like searching and filtering.
 
@@ -80,7 +97,7 @@ export const books = [
 ];
 ```
 
-The data in `authors.js` will serve as the information that would be mapped onto the `authorsPage` so the search component can be able to filter the list of authors once the user starts typing into the input field.
+The data in the `bookshelf.js` file will serve as the information that would be mapped onto the `App` component, so the search component can be able to filter the list of authors once the user starts typing into the input field.
 
 Let's create the components needed in this app below and I'll explain how everything works.
 
@@ -105,7 +122,7 @@ const Search = ({ val, onSearch, ...props }) => {
 export default Search
 ```
 
-The `Books` component performs almost the same function with the search component. Its only difference has to with the usage of React props to share data amongst the other components in the app.
+The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendred or displayed to the user. They do not always have state, instead they use props to share data in the application component tree.
 
 Take a look at how the `bookShelf` component is being imported into the authors container and how it is being used in the `Books` component.
 
@@ -126,9 +143,7 @@ const Books = ({ books }) => {
 export default Books
 ```
 
-The `authorsPage` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
-
-Notice how the usage of React Hooks is being used to store/hold the state of the component, which also is among the features of a container component, they are usually stateful components.
+The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
 
 The text that user types into the input field is being stored in an array so that we’d be able to perform a filtering functionality using [JavaScript’s filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
 
@@ -136,12 +151,14 @@ This is possible because the state of the `Book` component is also monitored in 
 
 So each time the input field detects a character, it starts looping through and all the items in the bookShelf array to see which one matches the text and renders it to the DOM.
 
+Notice how the usage of React Hooks is being used to store/hold the state of the component in the snippet below, which also is among the features of a container component, they are usually stateful components
+
 ```js
 import React, { useState } from “react”
 import { books } from “./bookshelf.js”
 import Books from “./books”
 
-const authorsContainer = () => {
+const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
@@ -166,6 +183,7 @@ const authorsContainer = () => {
   )
 }
 export default authorsContainer
+
 ```
 
 ### Conclusion
