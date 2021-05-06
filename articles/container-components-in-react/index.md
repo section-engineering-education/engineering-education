@@ -97,7 +97,7 @@ export const books = [
 ];
 ```
 
-The data in the `bookshelf.js` file will serve as the information that would be mapped onto the `App` component, so the search component can be able to filter the list of authors once the user starts typing into the input field.
+The data in the `bookshelf.js` file will serve as the information that would be mapped onto the `App` component, so the search component can be able to filter the list of books once the user starts typing into the input field.
 
 Let's create the components needed in this app below and I'll explain how everything works.
 
