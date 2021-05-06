@@ -1,5 +1,21 @@
-[Docker](https://www.docker.com/) is an open-source [container technology](https://www.docker.com/resources/what-container) used by developers and system admins to build, ship, and run distributed applications. Docker has been a game-changer since its release in [2013](https://en.wikipedia.org/wiki/Docker_(software)#History).  It has become a massively popular [containerization technology](/engineering-education/history-of-container-technology/). In this article, we will discuss why Docker is a big deal.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/why-is-docker-so-popular/
+title: Why is Docker so Popular
+description: In this article, we will talk about Docker, why to use it, why is it so popular and finally its benefits.
+author: moses-m
+date: 2021-05-07T00:00:00-08:30
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/why-is-docker-so-popular/hero.png
+    alt: Container Image
+---
+[Docker](https://www.docker.com/) is an open-source [container technology](https://www.docker.com/resources/what-container) used by developers and system admins to build, ship, and run distributed applications. Docker has been a game-changer since its release in [2013](https://en.wikipedia.org/wiki/Docker_(software)#History). It has become a massively popular [containerization technology](/engineering-education/history-of-container-technology/). In this article, we will discuss why Docker is a big deal.
+<!--more-->
 ### The game changer
 
 Before the arrival of Docker, developers used virtualization technology to develop applications, which worked fine in their own environment. The problem was when the same application reached production; it won't work correctly due to the difference in the computing environments. This technology didn't support microservices architecture. I.e, large applications couldn't be broken down into small services.
@@ -105,3 +121,6 @@ Docker is revolutionizing the IT world across the board. It is speeding up devel
 6. [Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
 7. [Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
 8. [Containerizing WordPress with Docker-Compose](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
