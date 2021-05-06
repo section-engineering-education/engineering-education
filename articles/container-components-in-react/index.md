@@ -182,7 +182,7 @@ const App = () => {
 	</section>
   )
 }
-export default authorsContainer
+export default App;
 
 ```
 
