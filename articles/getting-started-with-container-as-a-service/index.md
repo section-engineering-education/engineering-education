@@ -30,7 +30,7 @@ This article will cover:
 ### What is Container as a Service (CaaS)
 Tasks such as configuring, uploading, scaling, and migrating containers in cloud environments usually become overwhelming, more so when performed on a significant scale level. 
 
-For this reason, a cloud-based service model, CaaS, is available to help software developers and IT practitioners run their routine tasks with ease. With containerized applications being on the rise, major cloud vendors had to offer this container infrastructure and management as a service model.
+For this reason, a cloud-based service model, CaaS, is available to help software developers and IT practitioners run their routine tasks easily. With containerized applications being on the rise, major cloud vendors had to offer this container infrastructure and management as a service model.
 
 [Container as a Service](https://www.atlassian.com/continuous-delivery/microservices/containers-as-a-service) is an automated hosting and deployment platform for containerized applications. With CaaS in place, DevOps teams can scale, run, manage, and organize containers and container-based applications without worrying about the underlying infrastructure upon which cloud containers is it running on.
 
@@ -44,11 +44,11 @@ CaaS providers also offer container orchestration engines to deploy and run many
 
 The following services and components make CaaS stand out among IaaS, PaaS, and other "as service" models:
 
-1. *Container registry* –  Software developers create containers through [images](https://phoenixnap.com/kb/docker-image-vs-container). The developers pull the images stored in registries/ repositories such as docker hubs for container provisioning. CaaS providers host these container registries for management services.
+1. *Container registry*:  Software developers create containers through [images](https://phoenixnap.com/kb/docker-image-vs-container). The developers pull the images stored in registries/ repositories such as docker hubs for container provisioning. CaaS providers host these container registries for management services.
 
 2. *Container management*: CaaS provides management and monitoring platforms to ensure containers are correctly provisioned, up and running, load-balanced, and in good health.
 
-3. *Rich set of Developer Tools* – Through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
+3. *Rich set of Developer Tools*: Through application programming interfaces, CLIs, and web portals, the automation, monitoring, and management tasks are bundled together for accessibility and ease of use in CaaS.
 
 CaaS is more suitable for Microservice oriented applications because of the independent Infrastructure that such applications rely on.
 
@@ -56,11 +56,11 @@ Like other 'as a service' models available, CaaS provides flexible options where
 
 ### Benefits of Container as a Service
 
-- *Efficiency* – Applications deployed through CaaS benefit from performance optimization configurations like Elastic Load Balancing, Log aggregation, Monitoring, and even health checks. These configurations ensure that development teams build highly visible and available distributed systems and applications.
+- *Efficiency*: applications deployed through CaaS benefit from performance optimization configurations like Elastic Load Balancing, Log aggregation, Monitoring, and even health checks. These configurations ensure that development teams build highly visible and available distributed systems and applications.
 
-- *Speed* – Creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because  Infrastructure is given little concentration. The speed provided by  CaaS guarantees a lightweight process of a software release.
+- *Speed*: creating, replicating, and even spinning up a container and its applications take seconds with CaaS models available because  Infrastructure is given little concentration. The speed provided by  CaaS guarantees a lightweight process of a software release.
 
-- *Portability* – CaaS provisioned containers provide flexibility for launching apps in any environment/platform (public/private clouds). This happens because all necessary dependencies and configuration files are bundled together with the running applications.
+- *Portability*: CaaS provisioned containers provide flexibility for launching apps in any environment/platform (public/private clouds). This happens because all necessary dependencies and configuration files are bundled together with the running applications.
 
 - *Security*: containerized applications run independently and in isolation with other containers. CaaS provides this isolation as a risk-minimizing feature that shields failures of one container and its apps from affecting other containers.
  
@@ -109,7 +109,7 @@ An example of a task definition file that shows CPU and Memory limit, web server
     "cpu": "256",
 }
 ```
-Containers and applications can be launched on Amazon ECS through [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type or through [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)launch type.
+Containers and applications can be launched on Amazon ECS through [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type or through [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) launch type.
 An Amazon ECS launch type determines the type of infrastructure on which your tasks and services are hosted.
 
 To get more feel of Amazon ECS, you can check out the [AWS site](https://aws.amazon.com/ecs/getting-started/).
