@@ -52,7 +52,7 @@ In the app folder, `Rails` maintains files for the controllers, models, and view
 ### Basic understanding of MVC
 
 Model View Controller is a design pattern that divides related programming logic making it easier to reason about.
-By convention, rails follow this design pattern.
+By convention, rails follow this design pattern.I'd higly recommend going through [Understanding the MVC in Rails](https://www.sitepoint.com/model-view-controller-mvc-architecture-rails/) article to familiarize yourself with the Architecture.
 
 - Create a route. In `config/routes.rb`.
 
@@ -72,7 +72,7 @@ rails generate controller Welcome index --skip-routes
 
 `--skip-routes` to mean we have defined the route.
 
-The generator will create files but the most important is the controller file, `app/controllers/welcome_controller.rb`
+The generator will create files but the most important file is the controller file located in, `app/controllers/welcome_controller.rb`
 
 ```rb
 class WelcomeController < ApplicationController
@@ -81,7 +81,7 @@ class WelcomeController < ApplicationController
 end
 ```
 
-The generator also created a file in `app/views/welcome/index.html.erb`, by default Rails renders a view that corresponds to the name of a controller action.
+The generator also created a file in `app/views/welcome/` named `index.html.erb`.By default, Rails renders a view that corresponds to the name of a controller action.
 Replace the view content with:
 
 ```erb
@@ -90,7 +90,7 @@ Replace the view content with:
 
 - We have our controller and views in place, let's create the model.
 
-A `model` is a `Ruby` class that hold data, we define it using a generator as follows:
+A `model` is a `Ruby` class that serves as the template to a database table that holds data. We define it using a generator as follows:
 
 ```bash
 rails generate model User email:string password_digest:string
@@ -113,7 +113,14 @@ end
 ```
 
 We are adding model level validation to our `email` field.
-`password_digest` is used to create password fields in rails and encryption is done by the [bcyrpt_gem](https://rubygems.org/gems/bcrypt). Include the gem in your Gemfile.
+`password_digest` is used to create password fields in rails and encryption is done by the [bcyrpt_gem](https://rubygems.org/gems/bcrypt).
+
+- Include the gem in your Gemfile.
+
+```rb
+  # Gemfile
+  gem 'bcrypt', '~> 3.1.7'
+```
 
 - Install by running `bundle install`
 
@@ -129,13 +136,18 @@ class User < ApplicationRecord
 end
 ```
 
+We'll ensure that email field is present and unique before a user gets saved to the database.
+Email addresses should also conform to a pattern,we achieve this will the help of the given `regular expression`, this is a powerful language for matching string patterns.
+
 - Remember to run your migrations.
+- Migrations are feature of `Active Record` that allow you to evolve your database schema over time.
+  Before a migration is run, there will be no table. After, the table will exist.
 
 ```bash
 rails db:migrate
 ```
 
-Test our app,
+Let's test our app by running:
 
 ```bash
 rails server
@@ -145,7 +157,7 @@ We will see a Rails app with a home page.
 
 ![localhost](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/localhost.png)
 
-Test our model.
+Let's test our model by running:
 
 ```bash
 rails console
@@ -158,6 +170,7 @@ Create a new user
 ### Configuring routes
 
 - Update `config/routes.rb`
+  We are filling in our `routes.rb` with respective controller's actions, generating paths and URLs for our application.
 
 ```rb
 Rails.application.routes.draw do
@@ -181,13 +194,25 @@ Rails.application.routes.draw do
 end
 ```
 
-We are matching our routes to the above controller and actions
+When our application receives an incoming request for
+
+```rb
+  GET /sign_up
+```
+
+it asks the router to match it to a controller action, if the matching route is
+
+```rb
+  get 'sign_up', to: 'registrations#new'
+```
+
+the request will be dispatched to the `registrations` controller's `new` action.
 
 ### Adding Controllers
 
-Routers determine which controller to use for the request,controllers will then receive the request and save or fetch data from our models.
+Routers determine which controller to use for the request, controllers will then receive the request and save or fetch data from our models.
 
-- touch `app/controllers/registrations_controller.rb`
+- Let's create the `registrations_controller.rb` by running the command `touch` `app/controllers/registrations_controller.rb`
 
 ```rb
 class RegistrationsController < ApplicationController
@@ -215,9 +240,12 @@ class RegistrationsController < ApplicationController
 end
 ```
 
-`session` stores data for one request and used in another request. This controller is responsible for creating a new user and saving it to the database.
+This controller is responsible for creating a new user and saving it to the database.
+The `new` action initializes a new object in the User model and stores it as an instance variable, this can the be accessed in the views.
+The `create` action creates the user instance setting it's id to a `session`, if this process is successful it redirects to our `root path` else renders a `new` view.
+`session` stores data for one request and used in another request.
 
-- touch `app/controllers/sessions_controller.rb`
+- Let's create the `sessions_controller.rb` by running the command `touch` `app/controllers/sessions_controller.rb`
 
 ```rb
 class SessionsController < ApplicationController
@@ -243,9 +271,12 @@ class SessionsController < ApplicationController
   end
 end
 ```
-`SessionsController` provides login functionality to an existing user, also logs out a user by deleting session data.
 
-- touch `app/controllers/passwords_controller.rb`
+`SessionsController` provides login functionality to an existing user, also logs out a user by deleting session data.
+The `create` action finds user with a corresponding email address in the database,it uses logical operator to check if user is present and authenticated.Log's in the user if both constraints are true.
+The `destroy` action sets user session to nil, logging out the user.
+
+- Let's create the `passwords_controller.rb` by running the command `touch` `app/controllers/passwords_controller.rb`
 
 ```rb
 class PasswordsController < ApplicationController
@@ -269,9 +300,11 @@ class PasswordsController < ApplicationController
   end
 end
 ```
-`PassWordsController` allows signed_in_user to update passwords.
 
-Update `app/controllers/application_controller.rb`
+`PassWordsController` allows signed_in_user to update passwords.
+The `before_action :require_user_logged_in!` is a Rails `callback` this is defined in the `application_controller.rb` it allows only logged in users to access the `update` action which updates user's password.
+
+Update our `app/controllers/application_controller.rb` to:
 
 ```rb
 class ApplicationController < ActionController::Base
@@ -288,10 +321,12 @@ class ApplicationController < ActionController::Base
   end
 end
 ```
-- Note inheritance hierarchy in this class, `set_current_user` will be accessed with all controllers in the subdirectory.
-  This controller finds signed_in_user with `session[:user_id]` and stores it as `Current.user` if present and can be accessed in our views.
 
-- touch `app/models/current.rb`
+- Note inheritance hierarchy in this class, `set_current_user` will be accessed with all controllers in the subdirectory.
+  This controller finds signed_in_user with `session[:user_id]` and stores it as `Current.user` if present.
+- The `Current.user`can be accessed in our views.
+
+- Let's create the `current.rb` class by running the command `touch` `app/models/current.rb`, this will allows us to call `Current.user` in our views.
 
 ```rb
 class Current < ActiveSupport::CurrentAttributes
@@ -302,9 +337,11 @@ end
 
 ### Configuring views
 
-Controllers make model data available to the view,this data can be displayed to the user.
+Controllers makes model data available to the view,this data can be displayed to the user.
+Rails provides us with form builder object yielded by `form_with` which contains helper methods for generating form elements.
 
 Create a `sign_up` form
+
 - touch `app/views/registrations/new.html.erb`
 
 ```erb
@@ -331,7 +368,11 @@ Create a `sign_up` form
   </p>
 <% end %>
 ```
+
+The `sign_up` form creates a form_tag, this is scoped to our `User` model enabling us to populate our fields with the attributes from User object.
+
 Create a `sign_in` form
+
 - touch `app/views/sessions/new.html.erb`
 
 ```erb
@@ -355,6 +396,7 @@ Create a `sign_in` form
 ```
 
 Create a `password_edit` form
+
 - touch `app/views/passwords/edit.html.erb`
 
 ```erb
@@ -377,8 +419,7 @@ Create a `password_edit` form
 <% end %>
 ```
 
-- Let's test our app
-  Open `app/views/layouts/application.html.erb` update `<body>` tag to:
+Open `app/views/layouts/application.html.erb` and update `<body>` tag to:
 
 ```erb
  <body>
@@ -388,6 +429,7 @@ Create a `password_edit` form
    <%= yield %>
  </body>
 ```
+
 Within the context of a layout, `<%= yield %>` identifies a section where content from the view should be inserted.
 
 Open `app/views/welcome/index.html.erb` and add ;
@@ -403,6 +445,7 @@ Open `app/views/welcome/index.html.erb` and add ;
   <%= link_to 'Login', sign_in_path %>
 <% end %>
 ```
+
 We check to see if `Current.user` is present and provide an `edit_password_link` and a `sign_out_button`, if not a `sign_up_link` and `login_link` is seen.
 
 - Refresh your app and check to see if you can create a new account, sign_in and edit your password.
@@ -444,11 +487,14 @@ class PasswordResetsController < ApplicationController
 
 end
 ```
-The above controller is responsible for resetting user passwords, finds a user with a valid token and updates the password.
+
+The above controller is responsible for resetting user passwords.
+The `edit` action finds signed user with a valid token and purpose, passwords can only be changed with valid tokens if not an `ActiveSupport::MessageVerifier` is raised.
+The `update` action updates user's password with valid tokens and redirects to the `sign_in_path`.
+
 We have to `configure our mailers` before we complete this action, for a user has to receive an email and reset the password.
 
-Before we configure the mailers, let's create the views.
-- touch `app/views/password_resets/edit.html.erb`
+Before we configure the mailers, let's create the views by running the command `touch` `app/views/password_resets/edit.html.erb`
 
 ```erb
 <h1>Reset your password?</h1>
@@ -495,7 +541,7 @@ Before we configure the mailers, let's create the views.
   rails generate mailer Password reset
 ```
 
-Several files are generated,most important is `app/mailers/password_mailer.rb` and the view files.
+Several files are created by the generator but the most important file is the `app/mailers/password_mailer.rb` and the view files.
 
 - Update `app/mailers/password_mailers.rb` to this:
 
@@ -508,7 +554,10 @@ class PasswordMailer < ApplicationMailer
     mail to: params[:user].email
   end
 end
+
 ```
+
+The `PasswordMailer` is responsible for setting up a token used in the `passwordsresets_controller.rb`, it defines a `reset` action which creates a token and sends email to the user.
 
 Our views should look like this
 
@@ -591,6 +640,8 @@ class WelcomeMailer < ApplicationMailer
 end
 ```
 
+The `WelcomeMailer` defines a `welcome_email` action which is responsible for sending a welcome email to a signed in user.
+
 Update your mailer views in `app/views/welcome_mailer/welcome_email.html.erb`
 
 ```erb
@@ -649,6 +700,7 @@ Thanks for joining and have a great day!
   </p>
 <% end %>
 ```
+
 Try resetting your password and you should see something close to this,
 
 ![pass_reset_mail](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/pass_reset_mail.png)
@@ -668,6 +720,7 @@ def create
   end
 end
 ```
+
 Welcome email should be similar to this,
 
 ![welcome_mailer](/engineering-education/how-to-setup-user-authentication-from-scratch-with-rails-6/welcome_mailer.png)
@@ -697,6 +750,6 @@ Please visit [Go_Rails](https://gorails.com/) for more Ruby on Rails content, in
 - [Rails_edge_guides](https://edgeguides.rubyonrails.org)
 - [Code_project](https://www.codeproject.com/articles/575551/user-authentication-in-ruby-on-rails)
 
-You can always reach out via [Twitter](https://twitter.com/njunusimon)
+You can always reach out to me via [Twitter](https://twitter.com/njunusimon)
 
 Happy coding!!
