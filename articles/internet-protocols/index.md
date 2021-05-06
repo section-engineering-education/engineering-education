@@ -16,7 +16,7 @@ images:
 ---
 Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. 
 <!--more-->
-Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
+Internet protocols also enable the transportation of data items on the internet. The data items are transmitted in form of independent messages whose contents are not guaranteeted.These massages are called datagrams. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
 
 There are two versions of internet protocol, i.e., Internet Protocol version 4 and internet protocol version 6, used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
 
@@ -26,11 +26,10 @@ There are two versions of internet protocol, i.e., Internet Protocol version 4 a
 2. [Introduction to IPv4 and IPv6](#introduction-to-IPv4-and-IPv6)
 3. [Internet protocol version 4](#internet-protocol-version-4)
 4. [Internet protocol version 6](#internet-protocol-version-6)
-5. [Similarities between IPv4 and IPv6](#similarities-between-IPv4-and-IPv6)
+5.  [Similarities between IPv4 and IPv6](#similarities-between-IPv4-and-IPv6)
 6. [Differences between IPv4 and IPv6](#differences-between-IPv4-and-IPv6)
-7. [Why does IPv6 take preference to IPv4?](#why-does-IPv6-take-preference-to-IPv4)
+7. [Why does IPv6 take preference to IPv4?](#Why-does-IPv6-take-preference-to-IPv4?)
 8. [Conclusion](#conclusion)
-
 ### Prerequisites
 
 To understand the content of this article, a reader should have the following:
@@ -40,12 +39,11 @@ To understand the content of this article, a reader should have the following:
 
 
 ### Introduction to IPv4 and IPv6
-
 IPv4 and IPv6 are the actual protocols tasked with data transmission in the form of packets and datagrams. 
 
 IPv4 protocol is mainly used with [ethernets](https://en.wikipedia.org/wiki/Ethernet)	during packet switching in the link-layer networks.	
 
-IPv6 protocol being more newfangled has improved capabilities as compared to IPV4. It can even have infinite addresses hence is replacing IPV4 due to the daily growth in technology increase number of networks being set up frequently.
+IPv6 protocol being more newfangled has improved capabilities as compared to IPV4. Hence it can even have infinite addresses replacing IPV4 due to the daily growth in technology and increases number of networks being set up.
 
 ### Internet protocol version 4
 
@@ -70,13 +68,23 @@ IPv4 address digits are separated with decimal points as shown below:
 
 Three different types of addressing modes supported in IPv4, namely; 
 - Unicast addressing mode
+
+
+Unicast addressing mode only allows for data to be sent to a specific host at a time. The address of the data destination is a 32-bit IP address of the host device.
 - Broadcast addressing mode
+
+
+Broadcast addressing mode involves the transmission of a data packet to a network of hosts with the address of the destination indicated as a special broadcast address. The packet sent can be processed by any host on the network.
 - Multicast addressing mode
+
+
+This involes the use of both Unicast addressing mode and Broadcast addressing mode. The packet is not addressed to any specific host or any network of hosts and is processed by more than one host device on the network.
+
                            
 
 ### Internet protocol version 6
 
-Internet protocol version 6 is the newest version of the internet protocol suite as of now developed to replace the fourth version, i.e., the IPv4. It was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 has exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case; IPv4 has continued to live on.
+Internet protocol version 6 is the newest version of the internet protocol suite as of now developed to replace the fourth version, i.e., the IPv4. IPv6 was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 had exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case; IPv4 has continued to live on.
 
 #### IP Header
 
@@ -123,7 +131,7 @@ Other than having larger addressing space, IPv6 has other beneficial features as
 
  ### Conclusion
 
-The rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. This, together with the frequent advancement in technology in almost every sector in the community, leads to the development of more networks; hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.	
+The rapidly growing population of the world is pushing for the gradual phase-out to Ipv4. In addition, the frequent advancement in technology in almost every sector in the community hasled to the development of more networks; hence the depletion of all IPv4 addresses IPv6 is slowly becoming the future of the internet IP addressing system.	
 
 Blissful reading!
 
