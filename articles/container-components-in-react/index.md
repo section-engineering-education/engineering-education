@@ -60,21 +60,21 @@ Let's create an array of objects containing simple information about books that 
 
 ```js
 // bookshelf.js
-export const bookShelf = [
+export const books = [
   {
-    bookName: "Eloquent JavaScript",
+    name: "Eloquent JavaScript",
     author: "Marijn Haverbeke",
   },
   {
-    bookName: "CSS The Definitive Guide",
+    name: "CSS The Definitive Guide",
     author: "Eric A. Meyer & Estelle Weyl",
   },
   {
-    bookName: "Automate the boring stuff with Python",
+    name: "Automate the boring stuff with Python",
     author: "Al Sweigart",
   },
   {
-    bookName: "Make: JavaScript Robotics",
+    name: "Make: JavaScript Robotics",
     author: "Donovan Buck, Bryan Hughes et al",
   },
 ];
