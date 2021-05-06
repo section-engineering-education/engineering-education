@@ -41,6 +41,57 @@ By the end of this tutorial, the reader should be able to:
 ### Prerequisites.
 - The reader should be able to build basic Android applications.
 - The reader should have basic knowledge of XML and Kotlin programming languages.
-- The reader should have Android Studio installed.
+- The reader should have [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwp86EBhD7ARIsAFkgakhSirHOm4QNJmMxF6ymWW0O1lJuWBfyvW5sVQRWJSlhAc6uGLdCBSwaAjBoEALw_wcB&gclsrc=aw.ds) installed.
 - An Android mobile phone which has inbuilt biometric features, especially a fingerprint scanner.
+
+### Step One: Create a new Android Studio project.
+In his step, we will create a new Android studio project. Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to build.
+
+![Creat a new Android Studio project](/engineering-education/fingerprint-authentication-in-android-applications/newproject.jpg)
+
+### Step Two: Enable the biometrics permission in the manifest file.
+In our `AndroidManifest.xml` file, we will add the biometrics permission statement, which will allow our application to access the inbuilt biometrics features in our devices. Add the following line of code in your AndroidManifest.xml:
+
+```manifest
+<uses-permission android:name="android.permission.USE_BIOMETRIC" />
+```
+### Step Three – Adding the biometrics library in our project.
+Add the following dependencies to your app-level `build.gradle` file.
+
+```gradle
+def biometricLibraryVersion = "1.0.1"
+implementation "androidx.biometric:biometric:$biometricLibraryVersion"
+```
+
+### Step Four: Create a new Empty Activity.
+Since our application will require us to use biometrics to access a top-secret activity, we will create an activity that will contain a secret message. Right-click the java directory and select New -> Activity -> Empty Activity. Let us name our new activity **Secret.** Click *Finish.*
+Our Secret Activity's UI will only contain a Textview which will display an optional message.
+
+activity_secret.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Secret">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:layout_marginBottom="349dp"
+        android:text="TOP SECRET MESSAGE :)"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout />
+```
+
 
