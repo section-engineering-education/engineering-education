@@ -142,7 +142,7 @@ import { books } from “./bookshelf.js”
 import Books from “./books”
 
 const authorsContainer = () => {
-  const [searchTerm, setSearchTerm] = React.useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
