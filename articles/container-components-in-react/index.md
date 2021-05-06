@@ -130,11 +130,11 @@ Take a look at how the `bookShelf` component is being imported into the authors 
 // books.js
 const Books = ({ books }) => {
   return (
-  {books.map((bookShelf, index) => {
+  {books.map((book, index) => {
     return (
 	  <ul key={index}>
-	    <li>Book: {bookShelf.bookName}</li>
-		<li>Author: {bookShelf.author}</li>
+	    <li>Book: {book.bookName}</li>
+		<li>Author: {book.author}</li>
 	  </ul>
     )
   })}
