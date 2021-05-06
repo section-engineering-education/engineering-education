@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/internet-protocols/hero.jpg
-    alt: 
+    alt: Internet Protocols Hero Image
 ---
 Internet protocols are what make communication on the internet possible. Every device connected to the internet is assigned an IP address. This enables the identification and location of networked computers on the internet. 
 <!--more-->
 Internet protocols also enable the transportation of data items on the internet. Datagrams are transmitted from one device to another without connections to one another by using internet protocols. The datagrams are transmitted with utmost independence from all others.
 
-There are two versions of internet protocol, i.e., Internet protocol version 4 and internet protocol version 6, which are used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
+There are two versions of internet protocol, i.e., Internet Protocol version 4 and internet protocol version 6, used at the network layer of the [OSI model](https://www.imperva.com/learn/application-security/osi-model/). 
 
 ### Table of contents
 
@@ -41,11 +41,11 @@ To understand the content of this article, a reader should have the following:
 
 ### Introduction to IPv4 and IPv6
 
-IPv4 and IPv6 are the actual protocols tasked with the responsibility of data transmission in the form of packets and datagrams. 
+IPv4 and IPv6 are the actual protocols tasked with data transmission in the form of packets and datagrams. 
 
 IPv4 protocol is mainly used with [ethernets](https://en.wikipedia.org/wiki/Ethernet)	during packet switching in the link-layer networks.	
 
-IPv6 protocol being more newfangled, has improved capabilities as compared to IPV4. It can even have infinite addresses hence is replacing IPV4 due to the daily growth in technology increase number of networks being set up frequently.
+IPv6 protocol being more newfangled has improved capabilities as compared to IPV4. It can even have infinite addresses hence is replacing IPV4 due to the daily growth in technology increase number of networks being set up frequently.
 
 ### Internet protocol version 4
 
@@ -56,7 +56,7 @@ Internet protocol version 4, just as its name suggests, was the fourth version o
 
 IPv4 still controls the internet traffics despite the development of IPv6 using a 32bit address space providing over four million unique addresses.
 
-IPv4 being a connectionless protocol does not guarantee if data is delivered, neither does it arrange the data packets properly. Some packets may also have duplicates, so the organization is all addressed by the layer that handles transport, i.e., [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-protocol-tcp/#:~:text=Transmission%20Control%20Protocol%20(TCP)%20%E2%80%93,referred%20to%20as%20TCP%2FIP.)or the [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol). IPv4 also has special and multicast addresses for [private](https://en.wikipedia.org/wiki/Private_network) networks with approximately eighteen million addresses.
+IPv4 being a connectionless protocol, does not guarantee if data is delivered, neither does it arrange the data packets properly. Some packets may also have duplicates, so the organization is all addressed by the layer that handles transport, i.e., [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-protocol-tcp/#:~:text=Transmission%20Control%20Protocol%20(TCP)%20%E2%80%93,referred%20to%20as%20TCP%2FIP.)or the [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol). IPv4 also has special and multicast addresses for [private](https://en.wikipedia.org/wiki/Private_network) networks with approximately eighteen million addresses.
 
 
 IPv4 address digits are separated with decimal points as shown below:
@@ -71,7 +71,7 @@ IPv4 address digits are separated with decimal points as shown below:
 Three different types of addressing modes supported in IPv4, namely; 
 - Unicast addressing mode
 - Broadcast addressing mode
-- MUlticast addressing mode
+- Multicast addressing mode
                            
 
 ### Internet protocol version 6
@@ -82,7 +82,7 @@ Internet protocol version 6 is the newest version of the internet protocol suite
 
 ![IPv6 Communication protocol](Screenshot_20210428-105316.png)
 
-IPv6 uses an address of 128 bits hence allowing 2^128 addresses. IPv6 is not designed to work together with IPv4; hence, there can not be any communication between them.	
+IPv6 uses an address of 128 bits hence allowing 2^128 addresses. IPv6 is not designed to work together with IPv4; thus, there can not be any communication.	
 
 In IPv6, addresses are represented in 8 groups with colons in between every four digits that are to base 16, i.e.,  [hexadecimal](https://simple.wikipedia.org/wiki/Hexadecimal#:~:text=The%20hexadecimal%20numeral%20system%2C%20often,numbers%20and%20six%20extra%20symbols.)digits. The address is a long line of digits that can be shortened using a shortening technique hence should not course confusion. 
 
@@ -111,7 +111,7 @@ Despite being different and cannot communicate, IPv4 and IPv6 have specific qual
 2. IPv6 uses 128-bit hexadecimal, i.e., base 16 IP addresses, while IPv4 uses 32-bit  IP addresses written in a decimal number system which is a base 10.
 3. IPv4 supports dynamic host configuration protocol setup, while IPv6 supports renumbering address setup.
 4. IPv4 has not connection integrity, whereas IPv6 has end-to-end connection integrity.
-5. IPv4 uses the decimal representation of addresses while IPv6 uses hexadecimal representation.
+5. IPv4 uses the decimal representation of addresses, while IPv6 uses hexadecimal representation.
 
 ### Why does IPv6 take preference to IPv4?
 
