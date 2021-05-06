@@ -143,7 +143,6 @@ import Books from “./books”
 
 const authorsContainer = () => {
   const [searchTerm, setSearchTerm] = React.useState([]);
-  const [books, setBooks] = React.useState(bookShelf);
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
