@@ -151,8 +151,8 @@ const authorsContainer = () => {
   // perfoms a filtering on the questions
   // based on the users input and returns a new array
   // which gets rendered to the DOM.
-  const filteredBooks = books.filter((bookShelf) => {
-    return bookShelf.bookName.includes(searchTerm);
+  const filteredBooks = books.filter((book) => {
+    return book.bookName.includes(searchTerm);
   });
 
   return (
