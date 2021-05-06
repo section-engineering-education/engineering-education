@@ -6,8 +6,8 @@ Some of the basic requirments for this tutorial are:
 
 - Basic understanding of HTML, CSS, and web development
 - Basic understanding of Node.js
-- Have Node installed on your machine
-- An IDE installed on your machine, in our case we shall use Visual Studio Code
+- Have Node installed on your machine. You can download it [here](https://nodejs.org/en/download/).
+- An IDE installed on your machine, in our case we shall use Visual Studio Code. Click [here](https://code.visualstudio.com/download) to download it freely.
 - A stable internet connection
 
 Having all these, let us go step by step through the tutorial.
