@@ -88,3 +88,27 @@ This affects the compatibility as well. Let's say you have Node.js version 5.0.0
 #### 6. Continuous Integration/Continuous Deployment (CI/CD)
 
 On the other side, this approach encourages [CI/CD](https://www.digitalocean.com/community/tutorials/an-introduction-to-continuous-integration-delivery-and-deployment). This is a [DevOps](/engineering-education/what-it-takes-to-be-a-devops-engineer/) methodology designed to encourage developers to share code repositories on time and more generally with other developers. Developers can then deploy, test, operate, and monitor application code fast and efficiently.
+
+### Conclusion
+
+Containerization technologies are here to stay. It is the right way to package your application and move it around your infrastructure. Many developers and companies are adopting these approaches, with Docker leading the way. Some of the big [companies that use Docker](https://www.featuredcustomers.com/vendor/docker/customers) include PayPal, Uber, eBay, Shopify, Spotify, Quora, etc.
+
+Docker is revolutionizing IT technology across the board. It is speeding up development, testing, and server deployments. If you haven’t learned Docker, check it and see how you can use it to containerize your next project.
+
+### Further reading
+
+[Understanding Docker Concepts](/engineering-education/docker-concepts/)
+
+[Getting Started with Docker](/engineering-education/getting-started-with-docker/)
+
+[A Brief History of Container Technology](/engineering-education/history-of-container-technology/)
+
+[How to Create Spring Boot Docker Images](/engineering-education/spring-docker/)
+
+[How to Create Django Docker Images](/engineering-education/django-docker/)
+
+[Building A Node.js Application Using Docker](/engineering-education/building-a-nodejs-application-using-docker/)
+
+[Debugging a Node.js app running in Docker](/engineering-education/debug-node-docker/)
+
+[Containerizing WordPress with Docker-Compose](/engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/)
