@@ -1,0 +1,1 @@
+I am an Information Technology undergraduate at Cooperative University of Kenya. Currently i am specializing in web and mobile development. I am always curios of learning new things within and beyond my career.
