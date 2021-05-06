@@ -137,7 +137,7 @@ This is possible because the state of the `Book` component is also monitored in 
 So each time the input field detects a character, it starts looping through and all the items in the bookShelf array to see which one matches the text and renders it to the DOM.
 
 ```js
-import React from “react”
+import React, { useState } from “react”
 import { books } from “./bookshelf.js”
 import Books from “./books”
 
