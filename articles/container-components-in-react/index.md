@@ -151,36 +151,31 @@ This is possible because the data passed to the `Book` component is also control
 So each time the input field detects a character, it starts looping through and all the items in the `books` array to see which one matches the text and renders it to the DOM.
 
 ```js
-import React, { useState } from “react”
-import { books } from “./bookshelf.js”
-import Books from “./books”
+import React, { useState } from "react";
+import { books } from "./bookshelf.js";
+import Books from "./Books";
+import Search from './Search';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
   // perfoms a filtering on the questions
   // based on the users input and returns a new array
   // which gets rendered to the DOM.
-  const filteredBooks = books.filter((book) => {
-    return book.bookName.includes(searchTerm);
-  });
 
+  const filteredBooks = books.filter((book) => {
+    return book.name.includes(searchTerm);
+  });
   return (
     <section>
-	  <Search
-	    name="search"
-		onSearch={handleInputChange} val={searchTerm}
-	  />
-	  <Book books={filteredBooks}/>
-	</section>
-  )
-}
+      <Search name="search" onSearch={handleInputChange} val={searchTerm} />
+      <Books books={filteredBooks} />
+    </section>
+  );
+};
 export default App;
-
 ```
 
 ### Conclusion
