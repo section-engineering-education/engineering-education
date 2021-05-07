@@ -128,13 +128,9 @@ app.get("/", (req, res) => {
 });
 ```
 
-- Set blank error input error
+- Add a POST request listener to convert Text/URL to QR Code.
 
 ```javascript
-// Blank input
-// Incase of blank in the index.ejs file, return error 
-// Error  - Empty Data!
-
 app.post("/scan", (req, res) => {
     const url = req.body.url;
 
@@ -146,9 +142,8 @@ app.post("/scan", (req, res) => {
     // In case of an error, it will save the error inside the "err" variable and display it
     
     qr.toDataURL(url, (err, src) => {
-    
         if (err) res.send("Error occured");
-        
+      
         // Let us return the QR code image as our response and set it to be the source used in the webpage
         res.render("scan", { src });
     });
@@ -175,24 +170,18 @@ This is shown in the code below:
 ```html
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>QR Code Generator</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <style>
-        /* Added */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
         * {
             font-family: Montserrat;
         }
-        /* Added */
         body {
             margin: 10px;
             padding: 10px;
@@ -201,47 +190,35 @@ This is shown in the code below:
 </head>
 
 <body>
-    <!-- Main Container -->
     <div class="container">
         <h1 class="text-center">QR CODE GENERATOR</h1>
         <hr>
         
-        
     </div>
-    <!--Main container end.//-->
 </body>
-
 </html>
 ```
 
 Now, inside the "index.ejs" file, let us add an input element inside the body tags and a button which we shall name, "Generate", to execute the QR Code generation process. This is shown in the code below:
 
 ```html
-        <h4>Input</h4>
-        <hr>
-        <p>Please paste in or type the URL or Text below and press Generate!</p>
-        <!--Input form-->
-        <form class="form" action="/scan" method="POST">
-            <!-- Stores the input inside url variable that it is taken and passed into the system-->
-            <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
-            <br>
-            <button type="submit" class="btn btn-primary" value="Get QR">Generate</button>
-        </form>
-        <!--Input form end.//-->
-        <br>
-        <p><a href="#">Find help?</a></p>
+<h4>Input</h4>
+<hr>
+<p>Please type the URL or Text below and click Generate!</p>
+<form class="form" action="/scan" method="POST">
+    <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
+    <br>
+    <button type="submit" class="btn btn-primary" value="Get QR">Generate</button>
+</form>
 ```
 
 Inside the "scan.ejs" file, add a card that shall contain the QR Code image generated. Add also a button that returns us to the previous page. This is well shown in the code below:
 
 ```html
-        <!--QR image-->
-        <img src=<%=src%> alt="QR Code Image">
-            <p>Scan the QR Code to access data!</p>
-            <a href="/"><button type="button" class="btn btn-primary">Back</button></a>
-            <br>
-        <!--QR image end.//-->
-        <p><a href="#">Find help?</a></p>
+<img src=<%=src%> alt="QR Code Image">
+<p>Scan the QR Code to access data!</p>
+<a href="/"><button type="button" class="btn btn-primary">Back</button></a>
+<br>
 ```
 
 Notice how we use the ejs source attribute to easily add our image to our webpage!
