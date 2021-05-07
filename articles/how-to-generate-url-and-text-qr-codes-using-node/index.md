@@ -168,7 +168,7 @@ Inside the main directory, create an additional folder namely "views". In this d
 
 > "index.ejs" file will be the default page that loads when we start the application while the "scan.ejs" will hold our QR Code image after generation.
 
-Let us create a simple page structure in "index.ejs". We shall then copy the structure to the "scan.ejs" file to promote webpage design consistency. We shall use some custom css together with bootstrap to quicken the styling process and shorten the code.
+Let us create a simple page structure in "index.ejs". We shall then copy the structure to the "scan.ejs" file to promote webpage design consistency. We shall use some custom css to quicken the styling process and shorten the code.
 
 This is shown in the code below:
 
@@ -182,106 +182,55 @@ This is shown in the code below:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Custom CSS -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-        * {
-            font-family: Montserrat;
-        }
-        
-        .card {
-            margin: 0 auto;
-            /* Added */
-            float: none;
-            /* Added */
-            margin-bottom: 10px;
-            /* Added */
-        }
+        /* Added */
+    body {
+        margin: 10px;
+        padding: 10px;
+      }
     </style>
 </head>
 
 <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <!-- Main Container -->
     <div class="container">
-        <br>
-        <h1 class="text-center">QR CODE GENERATOR</h1>
+        <h1>QR CODE GENERATOR</h1>
         <hr>
+        
+        
     </div>
-    <!--container end.//-->
+    <!--Main container end.//-->
 </body>
+
 </html>
 ```
 
 Now, inside the "index.ejs" file, let us add an input element inside the body tags and a button which we shall name, "Generate", to execute the QR Code generation process. This is shown in the code below:
 
 ```html
-<!-- Input card -->
-<!-- row -->
-<div class="row mb-3">
-
-    <!-- col.// -->
-    <aside class="col-sm-12 text-center">
-        <p>This is a simple QR Code generator website</p>
-
-        <div class="card">
-            <article class="card-body">
-                <h4 class="card-title text-center mb-4 mt-1">Input</h4>
-                <hr>
-                <p class="text-success text-center">Please paste in or type the URL or Text below and press Generate!</p>
-                <form action="/scan" method="POST">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-pencil"></i> </span>
-                            </div>
-                            <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
-                        </div>
-                        <!-- input-group.// -->
-                    </div>
-                    <!-- form-group// -->
-
-                    <!-- form-group// -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block" value="Get QR">Generate</button>
-                    </div>
-                    <!-- form-group// -->
-
-                    <p class="text-center"><a href="#" class="btn">Find help?</a></p>
-                </form>
-            </article>
-        </div>
-        <!-- card.// -->
-
-    </aside>
-    <!-- col.// -->
-</div>
-
-<!-- row.// -->
-<!--Image card end.//-->
+        <h4>Input</h4>
+        <hr>
+        <p>Please paste in or type the URL or Text below and press Generate!</p>
+        <!--Input form-->
+        <form action="/scan" method="POST">
+            <!-- Stores the input inside url variable that it is taken and passed into the system-->
+            <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
+            <button type="submit" value="Get QR">Generate</button>
+        </form>
+        <!--Input form end.//-->
+        <p><a href="#">Find help?</a></p>
 ```
 
 Inside the "scan.ejs" file, add a card that shall contain the QR Code image generated. Add also a button that returns us to the previous page. This is well shown in the code below:
 
 ```html
-<!-- Image card -->
-<div class="row mb-3">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=<%=src%> alt="QR Code Image">
-        <div class="card-body">
-            <p class="card-text">Scan the QR Code to access data!</p>
-        </div>
-        <a href="/"><button type="button" class="btn btn-outline-secondary btn-lg">Back</button></a>
-    </div>
-    <!--Image card end.//-->
+        <!--QR image-->
+        <img src=<%=src%> alt="QR Code Image">
+            <p>Scan the QR Code to access data!</p>
+            <a href="/"><button type="button">Back</button></a>
+        <!--QR image end.//-->
+        <p><a href="#">Find help?</a></p>
 ```
 
 Notice how we use the ejs source attribute to easily add our image to our webpage!
