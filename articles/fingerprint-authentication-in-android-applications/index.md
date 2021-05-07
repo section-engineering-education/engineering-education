@@ -1,13 +1,13 @@
 ---
 layout: engineering-education
-status: 
+status: publish
 published: true
 url: /engineering-education/fingerprint-authentication-in-android-applications/
-title: Impleemening Fingerprint Authentication in Android applications.
+title: Impleemening Fingerprint Authentication in Android applications
 description: In this article, we will learn how to implement fingerprint authentication in an Android application.
 author: briana-nzivu
-date: 2021-05-01T00:00:00-08:00
-topics: []
+date: 2021-05-07T00:00:00-08:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
