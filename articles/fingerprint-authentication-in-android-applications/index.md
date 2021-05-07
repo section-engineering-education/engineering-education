@@ -15,7 +15,7 @@ images:
     alt: Fingerprint authentication
 ---
 
-Biometrics are body measurements and calculations related to human characteristics. Biometrics is classified into two categories: Physical and behavioral. Physical biometrics is our humanly features such as our fingerprints, iris, and many others. Behavioral is our actions, for example, smiling, hand signs, and others. 
+Biometrics are calculations and body measurements that are related to human characteristics. Biometrics is categorized into: Physical and behavioral. Physical biometrics is our humanly features such as our fingerprints, iris, and many others. Behavioral is our actions, for example, smiling, hand signs, and others.
 <!--more-->
 In turn, biometrics has brought up vast, easy, and secure ways to identify a specific user using their physical traits.
 
@@ -23,9 +23,9 @@ In turn, biometrics has brought up vast, easy, and secure ways to identify a spe
 Let us admit it, typing over eight characters in the name of a password is quite a task, that is, if a user even remembers the password. These days most developers and companies have made it easier for us by using biometrics as a form of authentication. Biometrics, time and again, has proved to be more efficient and less prone to cyber-attacks. Most fields such as Banking, Information Technology, Education, and many others have implemented biometrics into their systems for various purposes. This article will cover one of the biometric ways of authentication, which is using our fingerprint.
 
 ### Advantages of Biometrics.
-- Biometrics is ser specific in that it is linked to a single individual (unlike a password which anyone can authorize).
-- It is very convenient since there is no need to remember or carry anything.
-- It is very secure. Biometrics is highly fraud-resistant.
+- Biometrics is specific because it is associated with a single person (unlike a password that anyone can authorize).
+- It is very convenient. There is no need to carry or remember anything.
+- It is very secure. Biometrics is highly fraud-resistant
 
 ### Disadvantages.
 - They are error-prone, sometimes even causing the system to shut down; hence access is limited.
@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
 We are done!
 Let's run our app.
 
-![Fingerprintt authentication](/engineering-education/fingerprint-authentication-in-android-applications/screen.gif)
+![Fingerprint authentication](/engineering-education/fingerprint-authentication-in-android-applications/screen.gif)
 
 ### To wrap up
 We have learned how to implement biometrics in an android application. We have also known the advantages and disadvantages of using biometrics. Read more about biometrics from the official Android developer's [page](https://developer.android.com/jetpack/androidx/releases/biometric) and practice.
