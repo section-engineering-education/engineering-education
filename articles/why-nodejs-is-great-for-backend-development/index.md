@@ -22,11 +22,11 @@ In this article, we will learn about JavaScript, Node.js, what Node.js is used f
 1. [Introduction](#introduction)
 2. [What is Node.js used for?](#what-is-nodejs-used-for)
 3. [Main competitors of Node.js in backend development](#main-competitors-of-nodejs-in-backend-development)
-  3. 1. [PHP](#php)
-  3. 2. [Python](#python)
-  3. 3. [Ruby](#ruby)
-  3. 4. [Java](#java)
-  3. 5. [.NET](#net)
+3. 1. PHP
+3. 2. Python
+3. 3. Ruby
+3. 4. Java
+3. 5. .NET
 4. [Node.js frameworks](#nodejs-frameworks)
 5. [Why Node.js good for backend?](#why-nodejs-good-for-backend)
 6. [Conclusion](#conclusion)
