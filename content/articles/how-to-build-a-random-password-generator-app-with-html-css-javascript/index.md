@@ -105,184 +105,92 @@ Alright according to the codes above  inside the HTML body `tag` you would start
 
 Now, you would be creating a div class called `options` and you are going to create another div class of different specific options inside the first initial div class `options` you created ( we are just creating multiple classes). These options are going to be needed for the kind of random passwords the user wants, for instance, the length of the password, if the user wants it to be `uppercase` if the user wants to include `numbers`, and lastly, if the user wants to include `symbols`. You are also going to create another div and build a `button` with id `generate` which will generate the random password.
 
-### Styling The Random Password Generator Application 
+### Styling The  Application 
 
-We all know that CSS is what brings out the beauty of an application or website. It makes us able to structure the styles, layout, fonts, and properties. Now create a file and save it with `layout.css` this would be where you will write all the CSS for the application.
+We all know that CSS is what brings out the beauty of an application or website. It makes us able to structure the styles, layout, fonts, and properties. Now create a file and save it with `layout.css` this would be where you will write all the CSS for the application. Below are the CSS codes for the application 
 
-Before you start structuring the application we have to clear the default format of the CSS document with these codes in the picture below.
-
-```css
+```CSS
 
 * {
-
 margin: 0;
-
 padding: 0;
-
 box-sizing: border-box;
-
 }
 
-```
-
-Alright you are going to move on to styling of the `body` inside the body element. You have to specify the `height` and` width` of the body element. Now specify the height and width to be 100vh and 100vw,  the `display` should be flex, `align-items` should be center, `justify-content` will also be center, the `flex-direction` will be  column, the `font family` is going to be Ostwald and sans serif then set our `background-color` to  blue.
-
-after that is the `container` div you would now set `padding` to 1 rem and 1.5 rem which is just 16 pixels, after that next is the `border` which should be 1px solid then set the `width` to 350px and lastly set `background-color` blue. You are now going to style the `h2 tag `remember which is also the password generator heading so you would put it at the center meaning you are going to use the property `text-align` as center then the `padding` will be 15px 0 front and bottom of the heading.
-
-Okay next is to style the div `option` you are going to set the `display` to flex the `justify-content` should be space between and then set the `padding` to 4px. The codes are shown below 
-
-```css
-
 body {
-
 height: 100vh;
-
 width: 100vw;
-
 display: flex;
-
 align-items: center;
-
 justify-content: center;
-
 flex-direction: column;
-
 font-family: 'Oswald', sans-serif;
-
 background-color: #39378f;
-
 }
 
 .container {
-
 padding: 1rem 1.5rem;
-
 border: 1px solid black;
-
 width: 350px;
-
 background-color: #4abd15;
-
 }
 
 h2 {
-
 text-align: center;
-
 padding: 15px 0;
-
 }
+
 
 .option {
-
 display: flex;
-
 justify-content: space-between;
-
 padding: 4px;
-
 }
-
-```
-
-Next, you are going to style `result_container` which is the password box, lets specify the `height` to 50px and the `width` as 100% the `display` should be flex, then set `justify-content` to space-between, then the `align-items` to center, `the border` should be 1px solid black and `padding` 0.5px. 
-
-After that is the ``.result-container #result `` all you are going to do here is to specify a `word-wrap` to break-word and a `max-width` to calc(100%-40px).
-
-Alright you will be styling the `.result_container #copy` button all you will be doing here is to specify the `height` 40px the `width` 40px and give it a `background-color` red then the color white the `border` should be none also make the `cursor` pointer because we want the user to know that the button is clickable then also the `outline` should be none here are the codes below
-
- 
-
-```css
-
 .result__container {
-
 height: 50px;
-
 width: 100%;
-
 display: flex;
-
 justify-content: space-between;
-
 align-items: center;
-
 border: 1px solid black;
-
 padding: 0 5px;
-
 }
 
 .result-container #result {
-
 word-wrap: break-word;
-
 max-width: calc(100% - 40px);
-
 }
 
 .result__container #copy {
-
 height: 40px;
-
 width: 40px;
-
 background-color: #eb1606;
-
 color: #ffffff;
-
 border: none;
-
 cursor: pointer;
-
 outline: none;
-
 }
 
-```
-
-Lastly, you need to style a hover in the`.result_container #copy: hover` button all you have to do is change the color for the hover effect. Let the `background-color` be dark blue and the color white. After that what is left remaining for the CSS is the `#generate button` all you have to do is specify the `height` to 40px the `width` to 100% then add a `border-radius` to 10px the `border` none a `background-color` dark blue the `color` should be set as white the `font-size` should be 15px, the `font-weight` should be bold and the `outline` none. You are also going to add a `hover` to the generate button so when the mouse cursor clicks the generate button the background color will change so all will have to do is style the `#generate: hover` the `background-color` should be fountain-blue and the `color` should be white, Here are the codes below.
-
-```css
-
 .result__container #copy:hover {
-
 background-color: #1c2541;
-
 color: #ffffff;
-
 }
 
 #generate {
-
 height: 40px;
-
 width: 100%;
-
 border-radius: 10px;
-
 border: none;
-
 background-color: #0b132b;
-
 color: #ffffff;
-
 font-size: 15px;
-
 font-weight: bold;
-
 cursor: pointer;
-
 outline: none;
-
 }
-
 #generate:hover {
-
 background-color: #5bc0be;
-
 color: #ffffff;
-
 }
 
 ```
