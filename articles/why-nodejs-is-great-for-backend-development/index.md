@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/why-nodejs-is-great-for-backend-development/hero.jpg
     alt: Nodejs hero image
 ---
-Backend development with [Node.js](https://nodejs.dev/learn) is not a new concept and it's being used to implement many digital products online. It comes with many benefits, making it suitable for building enterprise and [business to customer](https://www.biztechcs.com/blog/business-consumer-application/) applications.
+Backend development with [Node.js](https://nodejs.dev/learn) is not a new concept and its being used to implement many digital products online. It comes with many benefits, making it suitable for building enterprise and [business to customer](https://www.biztechcs.com/blog/business-consumer-application/) applications.
 <!--more-->
 In this article, we will learn about JavaScript, Node.js, what Node.js is used for, how it is different from others, and why it is better than others.
 
