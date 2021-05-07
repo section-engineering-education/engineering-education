@@ -1,16 +1,10 @@
-### How to set up User Authentication from Scratch with Rails 6
+User Authentication is a fundamental in the security of web resources. While setting up user authentication in a `rails` program, the [devise gem](https://rubygems.org/gems/devise) is a popular tool. However, at times it can be too big and complicated to customize especially when building a simple application.
 
-User Authentication is fundamental in the security of web resources. While setting up user authentication in a `rails` program, [devise gem](https://rubygems.org/gems/devise) is a popular tool. However, at times it can be too big and complicated to customize especially when building a non-complicated application.
-
-### Goal
-
-In this tutorial, we will set up user authentication from scratch with Rails 6.
+In this tutorial, we will set up user authentication from scratch in Rails 6.
 
 ### Prerequisites
 
-To follow along in this article, it is helpful to have:
-
-The following programs installed on your computer:
+To follow along in this article, it is helpful to have the following:
 
 - [Ruby](https://www.ruby-lang.org/en/)
 - [SQLite3](https://www.sqlite.org/)
