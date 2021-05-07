@@ -20,7 +20,7 @@ The term “Container components” was used by [Dan Abramov](https://overreacte
 
 > A container component is always responsible for how things work in a component. -- Dan Abramov
 
-When we think of the word "container"; The first thing that pops up in our mind is the ideal representation of the word; which is an entity or material that stores and or hold contents. The type of content such a container holds may vary.
+When we think of the word "container", the first thing that pops up in our mind is the ideal representation of the word, which is an entity or material that stores and or hold contents. The type of content such a container holds may vary.
 
 The same thing goes for a **"container compponent"** in React. Container components can be primarily referred to as the parent elements of other components in a React app. They serve as a bridge between the normal components that render the UI and the logic that makes the UI components interactive and dynamic.
 
@@ -39,7 +39,7 @@ export const exampleComponent = ({ children}) => {
   }
 
   return (
-    <div onClick={() => open()}>
+    <div onClick={open}>
 	{children}
     </div>
   );
@@ -97,11 +97,11 @@ export const books = [
 ];
 ```
 
-The data in the `bookshelf.js` file will serve as the information that would be mapped onto the `App` component, so the search component can be able to filter the list of books once the user starts typing into the input field.
+The data in the `bookshelf.js` file will serve as the information. The search component should be able to filter the list of books once the user starts typing into the input field.
 
 Let's create the components needed in this app below and I'll explain how everything works.
 
-The `Search` component presents the UI (i.e. It renders an input element where users can filter the books in the list.) to the user. It makes use of React props to pass data down to other components such as the author’s page container component.
+The `Search` component presents the UI (i.e. It renders an input element where users can filter the books in the list.) to the user.
 
 ```js
 // search.js
@@ -110,21 +110,18 @@ import React from “react”
 const Search = ({ val, onSearch, ...props }) => {
   return (
     <input
-	  type="text"
 	  value={val}
-	  placeholder="Search for any book"
 	  onChange={onSearch}
+	  placeholder="Search for any book"
 	  {...props}
-	/>
+    />
   );
 };
 
 export default Search
 ```
 
-The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendred or displayed to the user. They do not always have state, instead they use props to share data in the application component tree.
-
-Take a look at how the `bookShelf` component is being imported into the authors container and how it is being used in the `Books` component.
+The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendred or displayed to the user. They do not always have state, instead they use props from parent component to get data from above in the application component tree.
 
 ```js
 // books.js
@@ -145,13 +142,11 @@ export default Books
 
 The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
 
-The text that user types into the input field is stored in the app state as a string so that we’d be able to perform a filtering functionality using [JavaScript’s filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
+The text that user types into the input field is stored in the `App` component's state as a string so that we’d be able to perform a filter the books using the [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
 
-This is possible because the state of the `Book` component is also monitored in this container component.
+This is possible because the data passed to the `Book` component is also controlled in this container component.
 
-So each time the input field detects a character, it starts looping through and all the items in the bookShelf array to see which one matches the text and renders it to the DOM.
-
-Notice how the usage of React Hooks is being used to store/hold the state of the component in the snippet below, which also is among the features of a container component, they are usually stateful components
+So each time the input field detects a character, it starts looping through and all the items in the `books` array to see which one matches the text and renders it to the DOM.
 
 ```js
 import React, { useState } from “react”
