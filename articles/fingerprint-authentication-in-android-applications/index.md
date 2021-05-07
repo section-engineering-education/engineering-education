@@ -20,12 +20,10 @@ Biometrics are body measurements and calculations related to human characteristi
 In turn, biometrics has brought up vast, easy, and secure ways to identify a specific user using their physical traits.
 
 ### Introduction.
-Biometrics are body measurements and calculations related to human characteristics. Biometrics is classified into two categories: Physical and Behavioral. 
-Physical biometrics is our humanly features such as our fingerprints, iris, and many others. Behavioral is our actions, for example, smiling, hand signs, and others. In turn, biometrics has brought up vast, easy, and secure ways to identify a specific user using their physical traits.
-Let us admit it, typing over eight characters in the name of a password is quite a task, that is, if a user even remembers the password. These days most developers and companies have made it easier for us by using biometrics as a form of authentication. Biometrics, time and again, has proved to be more efficient and less prone to cyber-attacks. This article will cover one of the biometric ways of authentication, which is using our fingerprint.
+Let us admit it, typing over eight characters in the name of a password is quite a task, that is, if a user even remembers the password. These days most developers and companies have made it easier for us by using biometrics as a form of authentication. Biometrics, time and again, has proved to be more efficient and less prone to cyber-attacks. Most fields such as Banking, Information Technology, Education, and many others have implemented biometrics into their systems for various purposes. This article will cover one of the biometric ways of authentication, which is using our fingerprint.
 
 ### Advantages of Biometrics.
-- Biometrics is linked to a single individual (unlike a password, which a user can use without authorization),
+- Biometrics is ser specific in that it is linked to a single individual (unlike a password which anyone can authorize).
 - It is very convenient since there is no need to remember or carry anything.
 - It is very secure. Biometrics is highly fraud-resistant.
 
@@ -55,7 +53,7 @@ In our `AndroidManifest.xml` file, we will add the biometrics permission stateme
 ```manifest
 <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 ```
-### Step Three – Adding the biometrics library in our project.
+### Step Three – Adding the biometrics library to our project.
 Add the following dependencies to your app-level `build.gradle` file.
 
 ```gradle
@@ -190,7 +188,7 @@ We have learned how to implement biometrics in an android application. We have a
 Remember, practice makes perfect.
 
 You can access the tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication). You can also download the sample APK on [Google Drive](https://drive.google.com/file/d/1X1l4JD1UeC20tgOAwKsjF-gf1dxs-Y5x/view?usp=sharing).
-For any query or clarification, do not hesitate to raise an issue in this repository.
+For any query or clarification, do not hesitate to raise an issue in this [repository](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication).
 
 Till next time! 
 
