@@ -168,7 +168,7 @@ Inside the main directory, create an additional folder namely "views". In this d
 
 > "index.ejs" file will be the default page that loads when we start the application while the "scan.ejs" will hold our QR Code image after generation.
 
-Let us create a simple page structure in "index.ejs". We shall then copy the structure to the "scan.ejs" file to promote webpage design consistency. We shall use some custom css to quicken the styling process and shorten the code.
+Let us create a simple page structure in "index.ejs". We shall then copy the structure to the "scan.ejs" file to promote webpage design consistency. We shall use some custom css and online bootstrap to quicken the styling process and shorten the code.
 
 This is shown in the code below:
 
@@ -182,20 +182,28 @@ This is shown in the code below:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <style>
         /* Added */
-    body {
-        margin: 10px;
-        padding: 10px;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        * {
+            font-family: Montserrat;
+        }
+        /* Added */
+        body {
+            margin: 10px;
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
     <!-- Main Container -->
     <div class="container">
-        <h1>QR CODE GENERATOR</h1>
+        <h1 class="text-center">QR CODE GENERATOR</h1>
         <hr>
         
         
@@ -213,12 +221,14 @@ Now, inside the "index.ejs" file, let us add an input element inside the body ta
         <hr>
         <p>Please paste in or type the URL or Text below and press Generate!</p>
         <!--Input form-->
-        <form action="/scan" method="POST">
+        <form class="form" action="/scan" method="POST">
             <!-- Stores the input inside url variable that it is taken and passed into the system-->
             <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
-            <button type="submit" value="Get QR">Generate</button>
+            <br>
+            <button type="submit" class="form-control btn btn-primary btn-block" value="Get QR">Generate</button>
         </form>
         <!--Input form end.//-->
+        <br>
         <p><a href="#">Find help?</a></p>
 ```
 
@@ -228,7 +238,8 @@ Inside the "scan.ejs" file, add a card that shall contain the QR Code image gene
         <!--QR image-->
         <img src=<%=src%> alt="QR Code Image">
             <p>Scan the QR Code to access data!</p>
-            <a href="/"><button type="button">Back</button></a>
+            <a href="/"><button type="button" class="btn btn-primary btn-block">Back</button></a>
+            <br>
         <!--QR image end.//-->
         <p><a href="#">Find help?</a></p>
 ```
