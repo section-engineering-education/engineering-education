@@ -2,36 +2,34 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/notes-api-using-django-and-mongodb/
+url: /engineering-education/django-rest-api-mongodb-notes-app/
 title: How to Build a Notes app API using Django REST Framework and MongoDB
 description: This tutorial will teach us how to build a notes API using Django and MongoDB. We will look at how to install MongoDB. We will add notes using the Browsable API.
 author: geoffrey-mungai
-date: 2021-04-23T00:00:00-13:00
-topics: []
+date: 2021-05-07T00:00:00-10:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/notes-api-using-django-and-mongodb/hero.jpg
+
+  - url: /engineering-education/django-rest-api-mongodb-notes-app/hero.jpg
     alt: Django MongoDB API example
 ---
-
 MongoDB is a NoSQL database package. It keeps data in JSON-like format instead of the traditional row-column format. The Django REST framework is a robust package of tools for building extensible APIs. Django is one of the well-liked packages that Python developers use to build websites.
-
+<!--more-->
 You will learn how to use the powerful Django REST framework and MongoDB in your web projects. You will learn how to build CRUD features in a notes app.
 
 In this post, you will:
+- Understand to integrate MongoDB into Django projects.
+- Learn how to set up and run Django REST API.
+- Create CRUD features in Django REST API.
+- Build a Notes app API.
 
-- Understand to integrate MongoDB into Django projects
-- Learn how to set up and run Django REST API
-- Create CRUD features in Django REST API
-- Build a Notes app API
-
-## Prerequisites
-
+### Prerequisites
+To follow this article along it is important to have the following:
 - Python 3 installed on your machine. Go to the [official website to download Python 3](https://www.python.org/download/releases/3.0/).
 - Experience with Python and Django
 
-## Setting up the MongoDB Server
-
+### Setting up the MongoDB Server
 You may download and install the MongoDB database server from the [official MongoDB website](https://www.mongodb.com/try/download/community).
 
 You can check this guide if you use a Windows machine, [Installing MongoDB on Windows](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-windows/#install-mongodb-community-edition). For Linux users, follow this tutorial, [How to Install MongoDB on Ubuntu 20.04](https://linuxize.com/post/how-to-install-mongodb-on-ubuntu-20-04/). Mac users can follow the tutorial, [Installing MongoDB on Mac](https://docs.mongodb.com/v4.4/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition)
@@ -56,15 +54,18 @@ use notes_database
 
 MongoDB Compass is a GUI tool that enables you to interact with MongoDB. You can view and operate your MongoDB databases with MongoDB Compass. MongoDB Compass is available for download on the official website, [Download and Install Compass](https://docs.mongodb.com/compass/master/install/).
 
-## Setting up the Virtual Environment
+### Setting up the virtual environment
+We will install `virtualenv` to enable a virtual environment for our project. It will enable one to isolate a project and its dependencies from other projects on your machine. 
 
-We will install `virtualenv` to enable a virtual environment for our project. It will enable one to isolate a project and its dependencies from other projects on your machine. Run the following command to install `virtualenv`:
+Run the following command to install `virtualenv`:
 
 ```bash
 python -m pip install --user virtualenv
 ```
 
-Next, let's create a folder for our project and then create a virtual environment inside it. Create a folder called `django_mongodb_project` as thus:
+Next, let's create a folder for our project and then create a virtual environment inside it. 
+
+Create a folder called `django_mongodb_project` as such:
 
 ```bash
 mkdir django_mongodb_project
@@ -94,14 +95,13 @@ If you use Windows, activate the virtual environment with the following command:
 .\venv\Scripts\activate
 ```
 
-## Install Packages
-
+### Install packages
 We will need the `django`, `djangorestframework`, and `djongo` packages.
-django: the Django framework package
-djangorestframework: the Django REST Framework for developing APIs in Django.
-djongo: a tool that maps Python objects to MongoDB documents
+- django: the Django framework package
+- djangorestframework: the Django REST Framework for developing APIs in Django.
+- djongo: a tool that maps Python objects to MongoDB documents
 
-Let us install Django and the Django REST framework with the following command:
+Let's install Django and the Django REST framework with the following command:
 
 ```bash
 pip install django django-rest-framework djongo
@@ -135,8 +135,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Configuring MongoDB
-
+### Configuring MongoDB
 Navigate to the `settings.py` file and change the `DATABASES` setting as follows:
 
 ```python
@@ -148,11 +147,10 @@ DATABASES = {
 }
 ```
 
-## Building the Notes app API
+### Building the notes app via API
+We will develop an API for a notes app to jot and take notes. Users will be able to take notes, get a list of notes they made, and delete the notes.
 
-We will develop an API for a notes app for jotting and making notes. Users will be able to make notes, get a list of notes they made and delete the notes.
-
-Let us define a model for the notes in the `models.py` file of the `api` app that we have created:
+Let's define a model for the notes in the `models.py` file of the `api` app that we have created:
 
 ```python
 from django.db import models
@@ -166,14 +164,14 @@ class Note(models.Model):
         return self.title
 ```
 
-Let us migrate the model into the database:
+Let's migrate the model into the database:
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-Next, let us create a serializer class. When users make requests to the API, the serializers format the corresponding responses. Create a new `serializers.py` file in the `api` app folder. Make the necessary imports as shown below and create the `NoteSerializer` class.
+Next, let's create a serializer class. When users make requests to the API, the serializers format the corresponding responses. Create a new `serializers.py` file in the `api` app folder. Make the necessary imports as demonstrated below and create the `NoteSerializer` class.
 
 ```python
 from rest_framework import serializers
@@ -186,7 +184,7 @@ class NoteSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'text')
 ```
 
-Next, let us create the views that will handle the request and response actions of our API. Create the `NoteList` and `NoteDetail` views in the `views.py` file of the `api` app.
+Next, let's create the views that will handle the request and response actions of our API. Create the `NoteList` and `NoteDetail` views in the `views.py` file of the `api` app.
 
 ```python
 from rest_framework import generics
@@ -204,7 +202,7 @@ class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = NoteSerializer
 ```
 
-In the above code, we created two views. `NoteList` enables us to create a note and also view a list of created notes. `NoteDetail` but allows us to view a particular note, update or delete it.
+In the code above, we created two views. `NoteList` enables us to create a note and also view a list of created notes. `NoteDetail` allows us to view a particular note, update or delete it.
 
 Next, we will create endpoints to receive requests. Create a new `urls.py` file inside the `api` directory. Create the `urlpatterns` as follows inside:
 
@@ -232,8 +230,7 @@ urlpatterns = [
 
 The first endpoint receives the actions 'LIST' and 'CREATE' actions of the `NoteList` view. The second endpoint takes the `id` of a particular note to view the details of the note.
 
-## Testing with Browsable API
-
+### Testing with browsable API
 Django REST framework comes shipped with the browsable API. You can test your API endpoints with the browsable API.
 
 Activate the test server:
@@ -254,14 +251,18 @@ Then, view the created notes at `127.0.0.1:8000/api/id`:
 
 ![image title](/engineering-education/django-rest-api-mongodb-notes-app/detail-view.jpg)
 
-You can also delete or update the note on the detail page. The red square in the succeeding image contains the delete button.
+You can also delete or update the note on the detail page. The red square in the next image contains the delete button.
 
 ![image title](/engineering-education/django-rest-api-mongodb-notes-app/delete-update-option.jpg)
 
 You can also update the title or text of the note. See the blue square area on the image above. Edit the text or title and click the 'PUT` button.
 
-## Conclusion
+### Conclusion
+This article described how to configure the MongoDB database for a RESTful Django API. We also created an API for a Notes app. You may go on and use MongoDB in your Django REST API projects.
 
-This article describes how to configure the MongoDB database for a RESTful Django API. We also created an API for a Notes app. You may go on and use MongoDB in your Django REST API projects.
+Happy coding!
 
 You may check out the example code in the [GitHub repo] (https://github.com/J-rayX/django_mongodb_project). Thanks for reading.
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
