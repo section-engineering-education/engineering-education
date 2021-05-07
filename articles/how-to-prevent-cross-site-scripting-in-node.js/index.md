@@ -130,6 +130,7 @@ app.use(express.session({
         secure: true
     }
 })
+)
 ```
 
 Setting the cookie `httpOnly` value to `true` helps to prevent the client-side script from accessing the protected cookie. `HttpOnly` tells the browser not to expose the cookie to the script.
