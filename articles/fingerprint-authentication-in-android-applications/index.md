@@ -47,7 +47,7 @@ By the end of this tutorial, the reader should be able to:
 ### Step One: Create a new Android Studio project.
 In his step, we will create a new Android studio project. Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to build.
 
-![Creat a new Android Studio project](/engineering-education/fingerprint-authentication-in-android-applications/newproject.jpg)
+![Create a new Android Studio project](/engineering-education/fingerprint-authentication-in-android-applications/new.jpg)
 
 ### Step Two: Enable the biometrics permission in the manifest file.
 In our `AndroidManifest.xml` file, we will add the biometrics permission statement, which will allow our application to access the inbuilt biometrics features in our devices. Add the following line of code in your AndroidManifest.xml:
@@ -120,6 +120,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 class MainActivity : AppCompatActivity() {
+
     private var cancellationSignal: CancellationSignal? = null
     private val  authenticationCallback: BiometricPrompt.AuthenticationCallback
     get() =
@@ -151,7 +152,7 @@ class MainActivity : AppCompatActivity() {
             biometricPrompt.authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
         }
     }
-    private fun  notifyUser(message: String) {
+    private fun notifyUser(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
     private fun getCancellationSignal(): CancellationSignal {
@@ -180,6 +181,8 @@ class MainActivity : AppCompatActivity() {
 
 We are done!
 Let's run our app.
+
+![Fingerprintt authentication](/engineering-education/fingerprint-authentication-in-android-applications/screen.gif)
 
 ### To wrap up
 We have learned how to implement biometrics in an android application. We have also known the advantages and disadvantages of using biometrics. Read more about biometrics from the official Android developer's [page](https://developer.android.com/jetpack/androidx/releases/biometric) and practice.
