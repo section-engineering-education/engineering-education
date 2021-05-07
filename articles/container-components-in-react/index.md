@@ -125,19 +125,21 @@ The `Books` component performs almost the same function as the search component.
 
 ```js
 // books.js
+
+import React from "react";
+
 const Books = ({ books }) => {
-  return (
-  {books.map((book, index) => {
+  return books.map((book, index) => {
     return (
-	  <ul key={index}>
-	    <li>Book: {book.bookName}</li>
-		<li>Author: {book.author}</li>
-	  </ul>
-    )
-  })}
-  )
-}
-export default Books
+      <ul key={index}>
+        <li>Book: {book.name}</li>
+        <li>Author: {book.author}</li>
+      </ul>
+    );
+  });
+};
+export default Books;
+
 ```
 
 The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
