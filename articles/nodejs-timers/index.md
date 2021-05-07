@@ -19,7 +19,9 @@ At the end of this tutorial, you should be able to control the execution of some
 
 ### Scheduling timers using setTimeout() method 
 
-As discussed earlier, Node.js API provides utilities enabling us to execute code at a later time based on our requirements. In this section, we look at Node.js `setTimeout()` method. This method is used to schedule the execution of code after a given period in **milliseconds** Syntax:
+As discussed earlier, Node.js API provides utilities enabling us to execute code at a later time based on our requirements.
+
+In this section, we look at Node.js `setTimeout()` method. This method is used to schedule the execution of code after a given period (in milliseconds) as shown below:
 ```js
 let timeoutId = setTimeout(func[, delay, argument1, argument2, ...]);
 let timeoutId = setTimeout(func[, delay]);
