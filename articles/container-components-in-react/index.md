@@ -33,7 +33,7 @@ In a situation where a container component performs these. The component itself 
 ```js
 import React from “react”
 
-export const exampleComponent = ({ children}) => {
+export const exampleComponent = ({ children }) => {
   const open = () => {
     alert("You clicked this container component")
   }
@@ -121,7 +121,7 @@ const Search = ({ val, onSearch, ...props }) => {
 export default Search
 ```
 
-The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendred or displayed to the user. They do not always have state, instead they use props from parent component to get data from above in the application component tree.
+The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendered or displayed to the user. They do not always have state, instead they use props from parent the component to get data in the application component tree.
 
 ```js
 // books.js
@@ -139,7 +139,6 @@ const Books = ({ books }) => {
   });
 };
 export default Books;
-
 ```
 
 The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
@@ -148,13 +147,13 @@ The text that user types into the input field is stored in the `App` component's
 
 This is possible because the data passed to the `Book` component is also controlled in this container component.
 
-So each time the input field detects a character, it starts looping through and all the items in the `books` array to see which one matches the text and renders it to the DOM.
+So each time the input field detects a character, it starts looping through the search-term and all the items in the `books` array to see which one matches the text and renders it to the DOM.
 
 ```js
 import React, { useState } from "react";
 import { books } from "./bookshelf.js";
 import Books from "./Books";
-import Search from './Search';
+import Search from "./Search";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
