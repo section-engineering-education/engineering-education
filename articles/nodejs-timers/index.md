@@ -1,6 +1,6 @@
 ### Introduction
-Node.js has several utilities that we can use to schedule the execution of our codes.
-Unlike most Node.js modules, the timer module is not imported. The methods are globally accessible to provide conformity with the JavaScript browser API.
+Node.js has several utilities that we can use to schedule the execution of our codes. Unlike most Node.js modules, the timer module is not imported. The methods are globally accessible to provide conformity with the JavaScript browser API.
+
 In this tutorial, we look at the Node.js timer module, how we can use this utility to control the execution of our codes.
 
 ### Table of contents
