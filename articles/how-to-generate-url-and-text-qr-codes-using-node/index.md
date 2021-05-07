@@ -117,7 +117,6 @@ Inside the "index.js" file, let us do the following in sequential order:
 
 const express = require("express");
 const app = express();
-const port = 5000;
 const bp = require("body-parser");
 const qr = require("qrcode");
 ```
@@ -171,6 +170,7 @@ app.post("/scan", (req, res) => {
 
 ```javascript
 // Setting up the port for listening requests
+const port = 5000;
 app.listen(port, () => console.log("Server at 5000"));
 ```
 
