@@ -25,16 +25,16 @@ As discussed earlier, Node.js API provides utilities enabling us to execute code
 In this section, we look at Node.js `setTimeout()` method.   
 This method is used to schedule the execution of code after a given period in **milliseconds**.     
 
-Syntax:
+**Syntax**:
 
 ```js
-let timeoutId = setTimeout(func[, delay, argument1, argument2, ...]);// option 1
-let timeoutId = setTimeout(func[, delay]); //option 2
-let timeoutId = setTimeout(code[, delay]); //option 3
+let timeoutId = setTimeout(func[, delay, argument1, argument2, ...]);// syntax option 1
+let timeoutId = setTimeout(func[, delay]); // option 2
+let timeoutId = setTimeout(code[, delay]); // option 3
 
 ``` 
 
-Example: 
+**Example**: 
 
 ```js
 
@@ -49,14 +49,22 @@ setTimeout(myTimerFunction('John Doe'), 5000);
 ```
 
 In the above example, we've defined `myTimerFunction()` method.  
-This method is then called inside a `setTimeout()` method,executd after 5 seconds. Output:
+This method is then called inside a `setTimeout()` method, where it's executed after 5 seconds.
+
+**Output**:
 
 ```bash
+
 "argument was => John Doe"
+
 ```
 
-> NOTE: setTimeout() in Node is slightly different from window.setTimeout() in JavaScript API as it doesn't accept strings.
-> It's also important to note that `setTimeout()` cannot be fully relied on due to other factors coming into play such as code [blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/). ### Scheduling timers using setInterval() method Unlike `setTimeout()`, this method is used to execute code multiple times. For instance, [section](section.io) company may send out newsletters to its [Edge as a Service](https://www.section.io/saas-edge-solutions/) customers weekly. This is an example of where the `setInterval()` method comes in. It's an infinite loop that will execute as long as it's not exited (halted).  
+> NOTE: `setTimeout()` in Node is slightly different from `window.setTimeout()` in JavaScript API as it doesn't accept strings.
+> It's also important to note that `setTimeout()` cannot be fully relied on due to other factors coming into play such as code [blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/). 
+
+### Scheduling timers using setInterval() method 
+
+Unlike `setTimeout()`, this method is used to execute code multiple times. For instance, [section](section.io) company may send out newsletters to its [Edge as a Service](https://www.section.io/saas-edge-solutions/) customers weekly. This is an example of where the `setInterval()` method comes in. It's an infinite loop that will execute as long as it's not exited (halted).  
  
 It has the following syntax: 
 
@@ -116,7 +124,7 @@ setImmediate((arg) => { console.log(`executing the immediate function: ${arg}`);
 console.log('after immediate function has been executed');
 ``` 
 
-Output:
+**Output**:
 
 ```bash
 before a set immediate function is called
@@ -142,14 +150,23 @@ In `timer.js` script file, add the following:
 ```js
 
 setImmediate(function functionA()
-    { setImmediate(function functionB()
-    { console.log(10); 
-    setImmediate(function functionD()
-    { console.log(20); }); }); 
-    setImmediate(function functionC()
-    { console.log(30); 
-    setImmediate(function functionE() 
-    { console.log(40);
+    { 
+        setImmediate(function functionB()
+    { 
+        console.log(10); 
+    
+        setImmediate(function functionD()
+    { 
+        console.log(20); });
+    }); 
+        setImmediate(function functionC()
+    
+    { 
+        console.log(30); 
+    
+        setImmediate(function functionE() 
+    { 
+        console.log(40);
     });
   });
 });
@@ -158,7 +175,7 @@ setImmediate(function functionA()
 console.log('You have started set immediate:...');
 ```
 
-Output: 
+**Output**: 
 ```bash
 
 You have started set immediate:...
@@ -178,7 +195,7 @@ Now that we've learned how to schedule tasks, what if we need to stop/cancel sch
 These 3 methods that we've discussed i.e `setTimeout()`, `setImmediate()`, and `setInterval()` return timer object.
 When this timer object is passed to the `clear()` method, the execution of these methods is stopped altogether. 
 
-Example:
+**Example**:
 
 ```js
 
