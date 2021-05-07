@@ -118,7 +118,9 @@ Let's look at an example:
 ```js
 console.log('before set immediate function is called'); 
 
-setImmediate((arg) => { console.log(`executing the immediate function: ${arg}`);
+setImmediate((arg) => 
+{ 
+    console.log(`executing the immediate function: ${arg}`);
 }); 
 
 console.log('after immediate function has been executed');
@@ -157,7 +159,8 @@ setImmediate(function functionA()
     
         setImmediate(function functionD()
     { 
-        console.log(20); });
+        console.log(20);
+        });
     }); 
         setImmediate(function functionC()
     
@@ -168,6 +171,7 @@ setImmediate(function functionA()
     { 
         console.log(40);
     });
+    
   });
 });
 
@@ -199,9 +203,23 @@ When this timer object is passed to the `clear()` method, the execution of these
 
 ```js
 
-let timeoutObject = setTimeout(() => { console.log('Timebout');}, 3000);
-let intervalTimerObject = setInterval(() => { console.log('Interval');}, 5000);
-let immediateTimerObject = setImmediate(() => { console.log('Immediate');}); 
+let timeoutObject 
+    =  setTimeout(() => 
+        { 
+            console.log('Timebout');
+        }, 3000);
+    
+let intervalTimerObject 
+    = setInterval(() =>
+        { 
+            console.log('Interval')
+        }, 5000);
+        
+let immediateTimerObject
+    = setImmediate(() => 
+        {
+            console.log('Immediate');
+        }); 
 
 clearTimeout(timeoutObject);
 clearInterval(intervalTimerObject);
