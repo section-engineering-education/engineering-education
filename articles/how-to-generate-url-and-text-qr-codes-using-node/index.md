@@ -225,7 +225,7 @@ Now, inside the "index.ejs" file, let us add an input element inside the body ta
             <!-- Stores the input inside url variable that it is taken and passed into the system-->
             <input name="url" class="form-control" placeholder="URL or Text" type="text" required>
             <br>
-            <button type="submit" class="form-control btn btn-primary btn-block" value="Get QR">Generate</button>
+            <button type="submit" class="btn btn-primary" value="Get QR">Generate</button>
         </form>
         <!--Input form end.//-->
         <br>
@@ -238,7 +238,7 @@ Inside the "scan.ejs" file, add a card that shall contain the QR Code image gene
         <!--QR image-->
         <img src=<%=src%> alt="QR Code Image">
             <p>Scan the QR Code to access data!</p>
-            <a href="/"><button type="button" class="btn btn-primary btn-block">Back</button></a>
+            <a href="/"><button type="button" class="btn btn-primary">Back</button></a>
             <br>
         <!--QR image end.//-->
         <p><a href="#">Find help?</a></p>
