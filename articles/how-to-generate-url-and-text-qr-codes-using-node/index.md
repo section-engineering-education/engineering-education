@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-generate-qr-codes-using-nodejs/
+title: How to Generate QR Code Using Node JS
+description: This tutorial will provide the readers a detailed guide on how to generate QR code from URL and Text using Node JS.
+author: francis-kaguongo
+date: 2021-01-04T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-generate-qr-codes-using-nodejs/hero.jpg
+    alt: How to Generate QR Code Using Node JS Hero image
+---
 Have you ever desired to build an application that generates QR codes of text or URLs using Node.js? If you did, you are in the right place. In this tutorial, you are going to learn how to create a QR code generator for text or URLs using Node.js.
+<!--more-->
 
 ### Pre-Requisites
 
