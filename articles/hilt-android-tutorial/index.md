@@ -3,7 +3,12 @@
 Hilt is a standardized way of enforcing dependency injection in an android application. This tutorial aims to:
 1. Define dependency injection.
 2. Explain why dependency injection is important.
-3. Show in detail how to use hilt for dependency injection.
+3. Show in detail how to use Hilt for dependency injection.
+
+### What is dependency injection?
+A *dependency* is an object that another object requires. The latter object *depends* on the former for it to function.
+
+*Dependency Injection* is whereby dependencies are provided to a class instead of the class having to create them itself.
 ## Pre-requisites
 1. A basic understanding of object-oriented programming
 2. A basic understanding of android app development with kotlin
@@ -11,21 +16,16 @@ Hilt is a standardized way of enforcing dependency injection in an android appli
 
 ## Table of contents
 1. Manual Dependency Injection.
-2. Dependency Injection with hilt.
+2. Dependency Injection with Hilt.
 3. Hilt and Interfaces.
 4. Hilt and 3rd Party Libraries
 5. Conclusion
-## Getting Started
+
+## Part 1: Manual Dependency Injection
+### Getting Started
 If you understand git, you can access this project from the following link: [Hilt Tutorial](https://github.com/RaphaelNdonga/hilt-tutorial).  
 Each step has its own branch.
 
-Otherwise, create a new android studio project.
-## What is dependency injection?
-A *dependency* is an object that another object requires. The latter object *depends* on the former for it to function.
-
-*Dependency Injection* is whereby dependencies are provided to a class instead of the class having to create them itself.
-
-## Part 1: Manual Dependency Injection
 Create a new project in android studio. Name it 'Hilt Tutorial'.
 
 Create the following class:
@@ -106,7 +106,7 @@ There are a few things to note in `MainActivity`.
 
 2. `MainActivity` has gets the dependencies. This makes it a *dependency container*.
 
-## Dependency injection with hilt
+## Dependency injection with Hilt
 Manual dependency injection works . However, as the app scales, it becomes cumbersome to manage dependencies. Hilt has a higher cost of set up. But it proves to be very beneficial to an app that scales.
 
 ## Getting Started with Hilt
@@ -144,7 +144,7 @@ Create a new class that extends `Application()` and annotate it as follows:
 class MyApplication:Application() {
 }
 ```
-This gives hilt access to the entire application. It creates a *dependency container* at the application level. Hilt can supply dependencies to any part of the app.
+This gives Hilt access to the entire application. It creates a *dependency container* at the application level. Hilt can supply dependencies to any part of the app.
 
 Add the following code in the `AndroidManifest.xml` under the application tag:
  ```xml
@@ -152,7 +152,7 @@ Add the following code in the `AndroidManifest.xml` under the application tag:
  android:name=".MyApplication"
         ...>
 ```
-This tells the manifest of your new root application class. You want the manifest to refer to the application class connected to hilt.
+This tells the manifest of your new root application class. You want the manifest to refer to the application class connected to Hilt.
 
 
 
@@ -163,7 +163,7 @@ class EnglishPerson @Inject constructor(){
     ...
 }
 ```
-`@Inject` gives hilt access to `EnglishPerson`'s constructor. This means that now hilt can generate instances of `EnglishPerson`.
+`@Inject` gives Hilt access to `EnglishPerson`'s constructor. This means that now Hilt can generate instances of `EnglishPerson`.
 
 Make this change to `MainActivity`:
 ```kotlin
@@ -178,7 +178,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-`@Inject` here has a different purpose. It identifies the injectable field. Injectable means that hilt can supply the instantiated dependencies to it.
+`@Inject` here has a different purpose. It identifies the injectable field. Injectable means that Hilt can supply the instantiated dependencies to it.
 
 Note that now you don't have to instantiate `EnglishPerson()`.
 
@@ -198,13 +198,13 @@ class SpanishPerson @Inject constructor(val englishPerson: EnglishPerson) {
 }
 ```
 
-`@Inject` here serves the same purpose as in `EnglishPerson`. It gives hilt access to `SpanishPerson`'s contructor. Hilt then is able to generate instances `SpanishPerson`.
+`@Inject` here serves the same purpose as in `EnglishPerson`. It gives Hilt access to `SpanishPerson`'s contructor. Hilt then is able to generate instances `SpanishPerson`.
 
 However, it's not as simple as the first case. To create `SpanishPerson`, it also needs to create `EnglishPerson` . This is because it the constructor needs it.
 
 Hilt already knows how to create `EnglishPerson`. So all is well.
 
-Instances that hilt knows how to create go by the name *bindings*
+Instances that Hilt knows how to create go by the name *bindings*
 
 So EnglishPerson and SpanishPerson are bindings.
 
@@ -272,7 +272,7 @@ Before you run the code you might ask:
 
 When you run your app, it crashes at compile time. Hilt is unable to implement the interface. It does not know how to. Interfaces do not have constructors like classes do. It is impossible to @Inject them.
 
-You need to empower hilt with the knowledge of how to implement an interface. Create an abstract class with the following annotations:
+You need to empower Hilt with the knowledge of how to implement an interface. Create an abstract class with the following annotations:
 ```kotlin
 @Module
 @InstallIn(ActivityComponent::class)
@@ -280,7 +280,7 @@ abstract class PersonModule{
 
 }
 ```
-A *module* informs hilt how to provide dependencies when it cannot access the constructor. `@Module` is used to identify modules.
+A *module* informs Hilt how to provide dependencies when it cannot access the constructor. `@Module` is used to identify modules.
 
 `@InstallIn(ActivityComponent)` declares that the following implementation will be alive only as long as the activity is alive. The activity is the component.
 
@@ -293,10 +293,10 @@ abstract class PersonModule {
  abstract fun EnglishPersonImpl(englishPerson: EnglishPerson):Person
 }
 ```
-`@Binds` tells hilt which implementation to use when it needs to provide an instance of an interface.
+`@Binds` tells Hilt which implementation to use when it needs to provide an instance of an interface.
 The information on how to provide the implementation is in the function parameters.
 
-Since hilt already knows how to implement `EnglishPerson` all is well.
+Since Hilt already knows how to implement `EnglishPerson` all is well.
 
 Run the code and open the logcat. Search for 'EnglishPerson':
 ```
@@ -335,7 +335,7 @@ Try searching for 'EnglishPerson'
 com.example.android.hilttutorial I/EnglishPerson: Hello kind sir
 ```
 
-It seems that hilt is using `EnglishPersonImpl` to generate instances of SpanishPeople as EnglishPeople!
+It seems that Hilt is using `EnglishPersonImpl` to generate instances of SpanishPeople as EnglishPeople!
 
 You need to differentiate them somehow. Add the following code outside `PersonModule` class but in the same file:
 ```kotlin
@@ -392,7 +392,7 @@ com.example.android.hilttutorial I/SpanishPerson: Despacito senor
 
 The code works now.
 
-## Part 4: Hilt and 3rd Party Libraries
+## Part 4: Hilt and Third Party Libraries
 Hilt works well when we have access to constructors. But what if you can't access constructors? This happens when you import 3rd party libraries. You don't own the classes. Has the party stopped?
 
 Import the following Gson library:
@@ -411,7 +411,7 @@ object GsonModule {
     }
 }
 ```
-Through `@Provides`, the annotated function gives hilt the following information:
+Through `@Provides`, the annotated function gives Hilt the following information:
 
 * The return type tells Hilt what type the function provides instances of.
 
@@ -472,7 +472,7 @@ You get the same long, weird string.
 
 But is the Gson object the same one in `MyApplication` as in `MainActivity`?
 
-No its not. Bindings in hilt are naturally unscoped. This means that whenever a dependency is required, hilt instantiates a new one. 
+No its not. Bindings in Hilt are naturally unscoped. This means that whenever a dependency is required, Hilt instantiates a new one. 
 
 To ensure only one instance of Gson is available at a time, modify `GsonModule` as follows:
 
@@ -497,15 +497,15 @@ For more on scopes, check out the Android documentation:
 
 ## Conclusion
 This tutorial started by illustrating manual dependency injection. Manual dependency injection is alright. However, it may get cumbersome as the application scales.
-Hilt then came in with it's `@Inject` annotation that creates injectable fields, methods and constructors. `@Inject` also helps hilt know how to provide a certain class by giving it access to the constructor.
+Hilt then came in with it's `@Inject` annotation that creates injectable fields, methods and constructors. `@Inject` also helps Hilt know how to provide a certain class by giving it access to the constructor.
 
 You observed cases whereby the constructor might be unavailable. These include:
 1. When an interface is used.
 2. When a 3rd party library is used.
 
-When a constructor is unavailable, a module has to be used. A module is a class that tells hilt how to provide an instance. It needs to be installed in a component. This is so as to keep track of the lifetime of the module.
+When a constructor is unavailable, a module has to be used. A module is a class that tells Hilt how to provide an instance. It needs to be installed in a component. This is so as to keep track of the lifetime of the module.
 
-`@Binds` provides the interface implementation. The implementation was a class that hilt knew how to provide.
+`@Binds` provides the interface implementation. The implementation was a class that Hilt knew how to provide.
 
 `@Provides` provides the 3rd party library implementation. Hilt runs the function body each time to get the instance required.
 
