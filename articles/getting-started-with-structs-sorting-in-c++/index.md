@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/getting-started-with-structs-sorting-in-c++/
-title: Getting started with structs sorting in C++
+title: Getting Started with Structs Sorting in C++
 description: In this article we will learn how to create the structs in C++ then we will learn how to sort structs using their members.
 author: samuel-mwangi
-date: 2021-04-17T00:00:00-13:00
+date: 2021-05-07T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -23,7 +23,9 @@ For this tutorial to be helpful, you should have the [Falcon IDE](https://source
 In this tutorial, we will first polish the basics of Structs in case you are new to them, then we will go ahead and learn how we can sort structs using their members.
 
 ### Creating a Struct 
-We use the Keyword  `struct` to create a struct. Here is what the general syntax of a struct should look like.
+We use the Keyword  `struct` to create a struct. 
+
+Here is what the general syntax of a struct should look like.
 ```c++
  struct struct_name
 {
@@ -41,7 +43,8 @@ We use the Keyword  `struct` to create a struct. Here is what the general syntax
 There are two ways of declaring struct variables:
 
 #### 1. Declaring structure variables during structure declaration
-Just after the end of the structure definition, before we place the semicolon (;), we can add optional object names of the struct that will be used to declare structure objects of that similar build. 
+Just after the end of the structure definition, before we place the semicolon (;), we can add optional object names of the struct that will be used to declare structure objects of that similar build.
+
 Example:
 ```c++
 using namespace std;
@@ -55,8 +58,9 @@ struct Person
 
 The keyword **typedef** is also used with structs to define a new object if we wish to use the object to declare struct variables directly as we shall see later in "working with arrays of a structure".
 
-#### 2.Declaring structure variables like basic data types
+#### 2. Declaring structure variables like basic data types
 In this case, the `struct_name` is used to create a new object.
+
 Example:
 ```c++
 #include <bits/stdc++.h>
@@ -77,7 +81,9 @@ int main()
 
 ###  Initializing Struct members
 Struct members are only initialized through the struct variables (objects) and not through declaration.
+
 This is done using braces '{}'.  
+
 Example:
 ```c++
 #include <bits/stdc++.h>
@@ -142,13 +148,14 @@ int main()
 	cout << Student.name << " "<< Student.age;
 }
 ```
+
 Output:
-```
+```bash
 Frank 63
 Clare 53
 ```
 
-### working with arrays of a structure
+### Working with arrays of a structure
 It is an array consisting of structs. It can be used to store many instances of a struct object. We are going to create an array of structs that shall use "for loops" for the collection of the user input and also displaying it.
 ```c++
 #include <iostream>
@@ -187,7 +194,11 @@ int main()
 ```
 
 ###  Sorting Structs
-Now that we are familiar with how Structs work, let us get started with the sorting. We are going to add more attributes(members) of a person to the `Person` Struct to make it much more practical. In addition to that, we are also going to add a comparator function which will be used by the STL sort function for sorting in our Structs. In our comparator function we decide which member we want to use to sort the arrays of structs. In our case, we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
+Now that we are familiar with how Structs work, let's get started with the sorting. We are going to add more attributes (members) of a person to the `Person` Struct to make it much more practical. 
+
+In addition to that, we are also going to add a comparator function that will be used by the STL sort function for sorting in our Structs. In our comparator function we decide which member we want to use to sort the arrays of structs. 
+
+In our case, we are going to sort them using their age, from the youngest to the oldest by using the less-than operator (<) .ie:
 ```c++
 bool compare( Student a, Student b){
 	if(a.age < b.age)
@@ -197,7 +208,9 @@ bool compare( Student a, Student b){
 }
 ```
 
-To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this:
+To sort them from the oldest to the youngest, you should just go ahead and replace the '<' with the '>' operator. If you also want to change the sorting member, you just need to replace it where `age` is mentioned in the comparator function. 
+
+The fun fact is, you may also sort them alphabetically by modifying the comparator function to look like this:
 ```c++
 bool compare( Student a, Student b){
 	if(a.name < b.name)
@@ -207,12 +220,16 @@ bool compare( Student a, Student b){
 }
 ```
 
-The last thing left to do is to call the `sort` function that is found in the `<algorithm>` library. We shall give it three parameters, the first two are simply the range of elements to sort, which in this case are the range of structure arrays and the third one is the comparator function. ie:
+The last thing left to do is to call the `sort` function that is found in the `<algorithm>` library. We shall give it three parameters. 
+
+The first two are simply the range of elements to sort, which in this case are the range of structure arrays and the third one is the comparator function. 
+
+Such as:
 ```c++
 sort(s_array, s_array+n, compare);
 ```
 
-Finally, our entire code looks like this.
+Finally, our entire code should look like this.
 ```c++
 #include <iostream>
 #include <algorithm>
@@ -277,11 +294,11 @@ int main()
 
 ### Conclusion
 This knowledge surely has a lot of applications in C++. Feel free to play around with the code and add some more features of your own or even apply them to your projects.
+
 Happy coding! 
 
 ### Futher reading
-For more on structs and structs sorting visit 
-[cplusplus](https://www.cplusplus.com/forum/general/97555/)
+For more on structs and structs sorting visit [cplusplus](https://www.cplusplus.com/forum/general/97555/).
 
 ---
 Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
