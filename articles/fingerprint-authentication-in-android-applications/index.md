@@ -186,9 +186,12 @@ We have learned how to implement biometrics in an android application. We have a
 
 Remember, practice makes perfect.
 
-You can access the tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication). You can also download the sample APK on Google Drive.
+You can access the tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication). You can also download the sample APK on [Google Drive](https://drive.google.com/file/d/1X1l4JD1UeC20tgOAwKsjF-gf1dxs-Y5x/view?usp=sharing).
 For any query or clarification, do not hesitate to raise an issue in this repository.
-Till next time! Happy coding!
+
+Till next time! 
+
+Happy Coding!
 
 
 
