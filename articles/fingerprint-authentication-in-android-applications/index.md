@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: 
-published: 
+published: true
 url: /engineering-education/fingerprint-authentication-in-android-applications/
 title: Impleemening Fingerprint Authentication in Android applications.
 description: In this article, we will learn how to implement fingerprint authentication in an Android application.
@@ -19,41 +19,44 @@ Biometrics are calculations and body measurements that are related to human char
 <!--more-->
 In turn, biometrics has brought up vast, easy, and secure ways to identify a specific user using their physical traits.
 
-### Introduction.
-Let us admit it, typing over eight characters in the name of a password is quite a task, that is, if a user even remembers the password. These days most developers and companies have made it easier for us by using biometrics as a form of authentication. Biometrics, time and again, has proved to be more efficient and less prone to cyber-attacks. Most fields such as Banking, Information Technology, Education, and many others have implemented biometrics into their systems for various purposes. This article will cover one of the biometric ways of authentication, which is using our fingerprint.
+### Introduction
+Let us admit it, typing over eight characters in the name of a password is quite a task, that is if a user even remembers the password. These days most developers and companies have made it easier for us by using biometrics as a form of authentication. Biometrics, time and again, has proved to be more efficient and less prone to cyber-attacks. Most fields such as Banking, Information Technology, Education, and many others have implemented biometrics into their systems for various purposes. This article will cover one of the biometric ways of authentication, which is using our fingerprint.
 
-### Advantages of Biometrics.
+#### Advantages of Biometrics
 - Biometrics is specific because it is associated with a single person (unlike a password that anyone can authorize).
 - It is very convenient. There is no need to carry or remember anything.
-- It is very secure. Biometrics is highly fraud-resistant
+- It is very secure. Biometrics is highly fraud-resistant.
 
-### Disadvantages.
+#### Disadvantages
 - They are error-prone, sometimes even causing the system to shut down; hence access is limited.
 - Biometric devices and in-built biometric features are costly compared to other traditional devices.
 
+
+### Prerequisites
+- Prior experience in building basic Android applications.
+- Basic knowledge of XML and Kotlin programming languages.
+- [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwp86EBhD7ARIsAFkgakhSirHOm4QNJmMxF6ymWW0O1lJuWBfyvW5sVQRWJSlhAc6uGLdCBSwaAjBoEALw_wcB&gclsrc=aw.ds) installed.
+- An Android mobile phone which has a fingerprint scanner.
+
 ### Goal
 By the end of this tutorial, the reader should be able to:
-- The reader should understand what biometrics is and the various applications of biometrics.
-- The reader should understand how to implement fingerprint authentication in android applications.
+- Understand what biometrics is and the various applications of biometrics.
+- Understand how to implement fingerprint authentication in android applications.
 
-### Prerequisites.
-- The reader should be able to build basic Android applications.
-- The reader should have basic knowledge of XML and Kotlin programming languages.
-- The reader should have [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwp86EBhD7ARIsAFkgakhSirHOm4QNJmMxF6ymWW0O1lJuWBfyvW5sVQRWJSlhAc6uGLdCBSwaAjBoEALw_wcB&gclsrc=aw.ds) installed.
-- An Android mobile phone which has inbuilt biometric features, especially a fingerprint scanner.
+Now let's dive in and build our application:
 
-### Step One: Create a new Android Studio project.
-In his step, we will create a new Android studio project. Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to build.
+#### Step One: Create a new Android Studio project
+In his step, we will create a new Android studio project. Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to be built.
 
 ![Create a new Android Studio project](/engineering-education/fingerprint-authentication-in-android-applications/new.jpg)
 
-### Step Two: Enable the biometrics permission in the manifest file.
+#### Step Two: Enable the biometrics permission in the manifest file
 In our `AndroidManifest.xml` file, we will add the biometrics permission statement, which will allow our application to access the inbuilt biometrics features in our devices. Add the following line of code in your AndroidManifest.xml:
 
 ```manifest
 <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 ```
-### Step Three – Adding the biometrics library to our project.
+#### Step Three: Adding the biometrics library to our project
 Add the following dependencies to your app-level `build.gradle` file.
 
 ```gradle
@@ -61,7 +64,7 @@ def biometricLibraryVersion = "1.0.1"
 implementation "androidx.biometric:biometric:$biometricLibraryVersion"
 ```
 
-### Step Four: Create a new Empty Activity.
+#### Step Four: Create a new Empty Activity
 Since our application will require us to use biometrics to access a top-secret activity, we will create an activity that will contain a secret message. Right-click the java directory and select New -> Activity -> Empty Activity. Let us name our new activity **Secret.** Click *Finish.*
 Our Secret Activity's UI will only contain a Textview which will display an optional message.
 
@@ -91,7 +94,7 @@ activity_secret.xml
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout />
 ```
-### Step four – Update MainActivity.java
+#### Step five – Update MainActivity.java
 In this step, we will write code that will enable our Activity to authenticate a user using biometrics to access our top-secret Activity.
 Our code will contain the following functions:
 - An `onAuthenticationError` function, which provides the outcome of a failed authentication instance.
@@ -182,7 +185,7 @@ Let's run our app.
 
 ![Fingerprint authentication](/engineering-education/fingerprint-authentication-in-android-applications/screen.gif)
 
-### To wrap up
+### Wrapping up
 We have learned how to implement biometrics in an android application. We have also known the advantages and disadvantages of using biometrics. Read more about biometrics from the official Android developer's [page](https://developer.android.com/jetpack/androidx/releases/biometric) and practice.
 
 Remember, practice makes perfect.
