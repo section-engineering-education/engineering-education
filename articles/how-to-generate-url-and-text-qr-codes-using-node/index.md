@@ -254,11 +254,11 @@ You can now enter some simple URL or Text and click generate to see the output. 
 
 **Main Webpage**
 
-![Landing Webpage](/engineering-education/how-to-generate-qr-codes-using-nodejs/index.ejs-webpage.png)
+![Landing Webpage](/engineering-education/how-to-generate-qr-codes-using-nodejs/indexejs-webpage.png)
 
 **QR Webpage**
 
-![QR Code Webpage](/engineering-education/how-to-generate-qr-codes-using-nodejs/scan.ejs-webpage.png)
+![QR Code Webpage](/engineering-education/how-to-generate-qr-codes-using-nodejs/scanejs-webpage.png)
 
 You can find and clone the code above in [this](https://github.com/franciskaguongo/Generate-a-QR-code-in-Node.js) repository.
 Congratulations, you have successfully created a Node.js QR Code generator program!
