@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/container-components-in-react/
 title: Container Components in React
 description: This tutorial will provide the readers a detailed guide on what are container components and how to work with them.
-author: 
+author: caleb-olojo
 date: 2021-01-04T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
