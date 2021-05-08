@@ -14,7 +14,7 @@ images:
   - url: engineering-education/container-components-in-react/hero.jpg
     alt: Container Components in React Hero image
 ---
-When you use react to build applications, you should think of how data is being passed among different components in the application. In this article, we'll go through what container components are and how they work by buiding a search component that makes use of the container component React pattern.
+When you use React to build applications, you should think of how data is being passed among different components in the application. In this article, we'll go through what container components are and how they work by building a search component that makes use of the container component React pattern.
 <!--more-->
 
 ### Prerequisites
@@ -37,7 +37,7 @@ The term “Container components” was used by [Dan Abramov](https://overreacte
 
 > A container component is always responsible for how things work in a component. -- Dan Abramov
 
-When we think of the word "container", the first thing that pops up in our mind is the ideal representation of the word, which is an entity or material that stores and or hold contents. The type of content such a container holds may vary.
+When we think of the word "container", the first thing that pops up in our mind is the ideal representation of the word, which is an entity or material that stores and or holds contents. The type of content such a container holds may vary.
 
 The same thing goes for a **"container compponent"** in React. Container components can be primarily referred to as the parent elements of other components in a React app. They serve as a bridge between the normal components that render the UI and the logic that makes the UI components interactive and dynamic.
 
@@ -75,7 +75,7 @@ Developers tend to place their container components in a separate folder and the
 
 A search component is among the most ubiquitous components in a typical React application.
 
-Before we start building this app, let's have look at how the folder structure containing all the files are represented. You do not compulsorily need to go with this type of structure if you have already have one that is suitable for you. The goal is just to be able to under the whole flow of the project.
+Before we start building this app, let's have look at how the folder structure containing all the files is represented. You do not compulsorily need to go with this type of structure if you have already had one that is suitable for you. The goal is just to be able to under the whole flow of the project.
 
 ```
 src
@@ -86,7 +86,7 @@ src
            |---- Search.js
 ```
 
-Let’s start by thinking about the function(s) that the search component would perform. A search component should be a able to perform basic tasks like searching and filtering.
+Let’s start by thinking about the function(s) that the search component would perform. A search component should be able to perform basic tasks like searching and filtering.
 
 To keep things simple, let's use an array of objects as the data to search from, instead of using an API.
 
@@ -138,7 +138,7 @@ const Search = ({ val, onSearch, ...props }) => {
 export default Search
 ```
 
-The `Books` component performs almost the same function as the search component. Most people refer to this type of components as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendered or displayed to the user. They do not always have state, instead they use props from parent the component to get data in the application component tree.
+The `Books` component performs almost the same function as the search component. Most people refer to this type of component as **"dumb", "stateless" or "presentational"** components because they're only concerned with how the user interface of the application is being rendered or displayed to the user. They do not always have a state, instead, they use props from the parent of the component to get data in the application component tree.
 
 ```js
 // books.js
@@ -160,11 +160,11 @@ export default Books;
 
 The `App` component illustrates how a container component can perform two functions, rendering the UI and housing the logic of that container.
 
-The text that user types into the input field is stored in the `App` component's state as a string so that we’d be able to perform a filter the books using the [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
+The text that the user types into the input field is stored in the `App` component's state as a string so that we’d be able to perform a filter of the books using the [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/) method.
 
 This is possible because the data passed to the `Book` component is also controlled in this container component.
 
-So each time the input field detects a character, it starts looping through the search-term and all the items in the `books` array to see which one matches the text and renders it to the DOM.
+So each time the input field detects a character, it starts looping through the search term and all the items in the `books` array to see which one matches the text and renders it to the DOM.
 
 ```js
 import React, { useState } from "react";
@@ -177,8 +177,8 @@ const App = () => {
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
-  // perfoms a filtering on the questions
-  // based on the users input and returns a new array
+  // performs a filtering on the questions
+  // based on the user's input and returns a new array
   // which gets rendered to the DOM.
 
   const filteredBooks = books.filter((book) => {
@@ -198,7 +198,7 @@ export default App;
 
 The idea behind this paradigm is the ability to be able to adopt the “separation of concern” pattern.
 
-By adopting this pattern, developers have been able to structure the components in an app in way that is reusable and scalable in the future.
+By adopting this pattern, developers have been able to structure the components in an app in a way that is reusable and scalable in the future.
 
 Thank you for reading this article up till this point. Kindly share it with your peers.
 
