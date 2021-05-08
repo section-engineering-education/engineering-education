@@ -201,3 +201,6 @@ The idea behind this paradigm is the ability to be able to adopt the “separati
 By adopting this pattern, developers have been able to structure the components in an app in way that is reusable and scalable in the future.
 
 Thank you for reading this article up till this point. Kindly share it with your peers.
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
