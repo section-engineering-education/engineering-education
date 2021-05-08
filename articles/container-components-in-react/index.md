@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/container-components-in-react/
+title: Container Components in React
+description: This tutorial will provide the readers a detailed guide on what are container components and how to work with them.
+author: 
+date: 2021-01-04T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: engineering-education/container-components-in-react/hero.jpg
+    alt: Container Components in React Hero image
+---
 When you use react to build applications, you should think of how data is being passed among different components in the application. In this article, we'll go through what container components are and how they work by buiding a search component that makes use of the container component React pattern.
+<!--more-->
 
 ### Prerequisites
 
