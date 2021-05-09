@@ -7,7 +7,7 @@ title: An Introduction to Activation Functions
 description: In this tutorial will look at some of the activation functions used frequently and implement them from scratch, coding them using Python classes. 
 author: lalithnarayan-c
 date: 2020-12-17T00:00:00-11:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 

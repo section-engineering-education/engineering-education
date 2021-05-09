@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-native-firebase-image-labeling/
-title: Image Labeling using Firebase ML in a Non-Expo React Native Application 
+title: Image Labeling using Firebase ML in React Native
 description: This tutorial will give readers a detailed guide on how to implement image labeling using Firebase's ML kit in a Non-Expo React Native appliaction.
 author: mohan-raj
 date: 2021-01-26T00:00:00-16:00

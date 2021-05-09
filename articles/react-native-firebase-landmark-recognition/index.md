@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /engineering-education/react-native-firebase-landmark-recognition/
-title: Landmark Recognition Using Firebase ML in a Non-Expo React Native Application 
+title: Landmark Recognition Using Firebase ML in React Native
 description: This tutorial gives readers a detailed guide on implementing landmark recognition using Firebase ML kit in a Non-Expo React Native application.
 author: mohan-raj
 date: 2021-02-01T00:00:00-15:00

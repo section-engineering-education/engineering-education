@@ -108,7 +108,7 @@ Since a binary tree is a non-linear data structure, there is more than one way t
 
 #### Inorder Traversal
 
-In an inorder traversal, the left child is visited first, followed by the right child, then followed by the parent node.
+In an inorder traversal, the left child is visited first, followed by the parent node, then followed by the right child.
 
 ```python
 def inorder(node):
