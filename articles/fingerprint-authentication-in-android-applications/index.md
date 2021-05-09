@@ -28,13 +28,13 @@ Let us admit it, typing over eight characters in the name of a password is quite
 - It is very secure. Biometrics is highly fraud-resistant.
 
 #### Disadvantages
-- They are error-prone, sometimes even causing the system to shut down; hence access is limited.
+- They are error-prone, sometimes even causing the system to shut down. Once biometric data has been compromised, there is no way to undo the damage. For a compromised password, you simply change it; for a fingerprint, ear image, or iris scan, you're stuck with the compromised biometric which eventually leads to the shut down of a biometric system.
 - Biometric devices and in-built biometric features are costly compared to other traditional devices.
 
 
 ### Prerequisites
 - Prior experience in building basic Android applications.
-- Basic knowledge of XML and Kotlin programming languages.
+- Basic knowledge of Kotlin programming language and XML.
 - [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQjwp86EBhD7ARIsAFkgakhSirHOm4QNJmMxF6ymWW0O1lJuWBfyvW5sVQRWJSlhAc6uGLdCBSwaAjBoEALw_wcB&gclsrc=aw.ds) installed.
 - An Android mobile phone which has a fingerprint scanner.
 
