@@ -6,15 +6,15 @@ url: /engineering-education/an-introduction-to-cicd-tools/
 title: An Introduction to CI/CD Tools
 description: In this article, we will provide a list with the necessary information required to help you choose the CI/CD tools that best meet your needs. It will also cover the most advanced CI/CD tools with all the necessary features for your projects.
 author: adetu-ridwan
-date: 2021-05-07T00:00:00-16:30
-topics: []
+date: 2021-05-09T00:00:00-16:30
+topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/an-introduction-to-cicd-tools/hero.jpg
     alt: An Introduction to CI/CD Tools example image
 ---
-Continuous Integration and Delivery (CI/CD) are tools that automate the process of software development. In an organization, there is a need for teams to synchronize their work without breaking the code, and this is often referred to as the pipeline of CI/CD.
+Continuous Integration and Delivery (CI/CD) are tools that automate the process of software development. In an organization, there is a need for teams to synchronize their work without breaking the code, and we often refer to this as the pipeline of CI/CD.
 <!--more-->
 CI/CD is one of the best practices to integrate workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security while the implementation and deployment process is automated.
 
@@ -47,7 +47,7 @@ The idea behind the integration of CI/CD in the software development process is 
 
 ![ci/cd technique](/engineering-education/an-introduction-to-cicd-tools/technique.png)
 
-### The Importance of CI/CD
+### The importance of CI/CD
 - CI reduces the number of repeated processes across all project operations from the development to the deployment stage and receiving feedback on the software.
 - Continuous Integration's core importance is to ensure that software being developed is deployable to end-users but with better quality and lower risks of failure. 
 - CI gives you the ability to spot trends and make informed decisions, as well as the courage to make new changes.
@@ -56,7 +56,7 @@ The idea behind the integration of CI/CD in the software development process is 
 ### Jenkins as a CI/CD Tool
 [Jenkins](https://www.jenkins.io/doc/) is a server-side continuous integration tool developed with the Java programming language.
 
-This article provides a structured approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
+This article will provide a structured approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
 
 
 ![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
@@ -66,15 +66,15 @@ This article assumes that you have a prior understanding of implementing CI/CD t
 
 To use Jenkins with your software, you can either build a git repository or use an existing one for your CI/CD. The development team is in charge of committing the code to the Dev-Branch.
 
-When changes are adequately committed to the Dev-Branch, Jenkins can download the source code from Github and mapped to a configured job for a particular role. Once a job is configured, you must ensure that continuous integration and continuous development are completed for the job/task.
+When changes are adequately committed to the Dev-Branch, Jenkins can download the source code from Github and map it to a configured job for a particular role. Once a job is configured, you must ensure that continuous integration and continuous development are completed for the job/task.
 
 On successful completion of a job, Jenkins will fetch the code from the Github repository, and then it starts the task's commit process. Jenkins will proceed to a new phase called the task's construct phase. 
 
-The task construct phase is the phase where Jenkins will compile the code and have it deployed after the DevOps team merges it to the Master branch, then the code is now ready for deployment.
+The task construct phase is the phase where Jenkins will compile the code and have it deployed after the DevOps team merges it to the Master branch, then the code is ready for deployment.
 
 The deployment process is activated once Jenkins has deployed the code. It is then deployed to the server using a Docker container.
 
-### Docker Container 
+### Docker container 
 A docker container is essentially a set of virtual environments where we can create a server and deploy the objects to be examined. The use of Docker will enable the developer to run an entire cluster in a matter of seconds.
 
 ![Docker cycle view](/engineering-education/an-introduction-to-cicd-tools/docker.png)
@@ -88,20 +88,20 @@ CircleCI is best implemented to construct builds when new code is committed to a
 
 Amongst developers, CircleCI is rapidly growing as the core choice for CI/CD, due to its lightweight continuous integration and delivery framework that supports almost all programming languages. It also has huge compatibility support with top cloud hosting services such as AWS, Azure, Google Cloud, and Heroku.
 
-### Key Features of CircleCI
+### Key features of CircleCI
 - It is supported by Bitbucket, GitHub, and GitHub Enterprise.
 - Debugging is easy.
-- Fast tests
-- Notifications via email and instant messaging that are personalized
-- Exceptionally adaptable
-- Package uploading with automated merging and custom commands
+- Fast tests.
+- Notifications via email and instant messaging that are personalized.
+- Exceptionally adaptable.
+- Package uploading with automated merging and custom commands.
 - Setup is easy, and you can create as many times as you want.
 
 ### Implementing CircleCI
-To leverage the features of CircleCI, the version control system to be used should either be GitHub or Bitbucket. When you add a new project to CircleCI, you would be required to set some permission parameters, and that's to your preference as a developer. 
+To leverage the features of CircleCI, the version control system being used should either be GitHub or Bitbucket. When you add a new project to CircleCI, you will be required to set some permission parameters to your preference as a developer. 
 
 However, when you add a new project, you have to add the following cloud settings:
-- A deploy key is required for testing the project from Bitbucket Cloud or GitHub.
+- A deploy key is required to test the project from Bitbucket Cloud or GitHub.
 - A service hook is required by GitHub or Bitbucket cloud to alert CircleCI.
 
 By default, CircleCI creates a service hook. As a result, builds are activated for all repository service hook, with PUSH being the most common cause of triggering a build.
@@ -109,15 +109,15 @@ By default, CircleCI creates a service hook. As a result, builds are activated f
 ### Bamboo as a CI/CD tool
 [Bamboo](https://support.atlassian.com/bamboo/) is a CI/CD tool that automates software deployment to the end-users while ensuring it goes through series of tests processes, version control and software releases management. 
 
-Bamboo aids developers in automating test processes in software development while adequately managing builds with different targets and specifications. One of the benefits of Bamboo is the ability to automatically deploy the program into the server for release, saving a lot of time compared to manual testing.  
+Bamboo aids developers in automating test processes in software development while adequately managing builds with different targets and specifications. One of the benefits of Bamboo is the ability to automatically deploy the program into the server for release, saving a lot of time when compared to manual testing.  
 
 ### Why Bamboo
 The following are some of the benefits of choosing Bamboo as a tool for continuous integration and deployment.
 - Numerous Bamboo-compatible integrations make it even easier for companies to evaluate and make changes based on analytical test data.
 - Quality assurance, release management, and build status are all visible in one place.
-- Bamboo comprises all functionalities required. Therefore there is little to no use for plugins. 
+- Bamboo comprises all the functionalities required. Therefore there is little to no use for plugins. 
 - Bamboo's CI is also deployment-ready thanks to its seamless integration with Jira and Bitbucket.
-- Tinder's user interface is simple and intuitive, making it simple to navigate through options and tools for quick and easy functionality.
+- The user interface is simple and intuitive, making it simple to navigate through options and tools for quick and easy functionality.
 - The various staging environments available on Bamboo enable the QA and development teams to deploy environments on-demand without disrupting the production environment.
 
 ### Implementing Bamboo
@@ -128,13 +128,13 @@ The Bamboo workflow building blocks are:
 - Jobs
 - Tasks
 
-#### The Plan Block 
-By default, plans have only one stage. It can, however, be used to divide jobs into different stages and then execute them as needed. To ensure efficiency, the plan block utilizes the working repository to run multiple stages sequentially. Plans ensure that you have everything in one place, even though you have separate stages to separate jobs and tasks within them.
+#### The plan block 
+By default, plans only have one stage. It can, however, be used to divide jobs into different stages and then execute them as needed. To ensure efficiency, the plan block utilizes the working repository to run multiple stages sequentially. Plans ensure that you have everything in one place, even though you have separate stages to separate jobs and tasks within them.
 
-#### The Jobs Block
+#### The jobs block
 Jobs are a collection of tasks that are executed in a specific order on the same agent. They give you control over the order in which the tasks for your build must be completed. Jobs gather task requirements to map out the skills needed in the Bamboo CI Server's comprehension.
 
-#### The Task Block
+#### The task block
 In Bamboo, the task block consists of a series of discrete unit running in a specific order that carries out a specific system command programmed by the developer. Some of these tasks include executing and running scripts or parsing results on the software tests.
 
 ### Buddy as a CI/CD tool
@@ -142,20 +142,24 @@ In Bamboo, the task block consists of a series of discrete unit running in a spe
 
 ### Why Buddy
 The following are the reasons why Buddy is a good choice for CI/CD:
-- It is flexible and thus enables builds and test environments to be customized and reused.
-- Detects changes and provides caching and parallelism optimizations.
+- It is flexible, enables builds, and test environments to be customized and reused.
+- Detects changes, provides caching and parallelism optimizations.
 - It provides attachable services to other applications, such as Firefox, PostgreSQL and others.
-- Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything
-- Management of workflows with templates for cloning, exporting and importing pipelines
-- Support and integrations for Git that are second to none
+- Coupled with real-time progress and logs, as well as an unrestricted history, you can keep track of everything.
+- Management of workflows with templates for cloning, exporting and importing pipelines.
+- Support and integrations for Git that are second to none.
 
 
 Buddy provides a unique feature of zero-downtime deployment solution which is configured with its Graphical User Interface. This solution requires the server and git repository for the codebase. There is also an option of adding an SSH solution to run builds operations effectively. Buddy creates the necessary folders on the server and deploys the application using the code from the git repository.
 
 ### Conclusion
-This list has provided you with the necessary information required to help you choose the CI/CD tools that best meet your needs. This article covers the most advanced CI/CD tools with all the necessary features for your projects. Your requirements, existing infrastructure, and potential for future growth and improvement will influence your final decision.
+This list has provided you with the necessary information to help you choose the CI/CD tools that best meet your needs. This article covered some of the most advanced CI/CD tools with all the necessary features for your projects. 
+
+Your requirements, existing infrastructure, and potential for future growth and improvement will influence your final decision.
  
 On a final note, the technology space is rapidly evolving and trends in CI/CD will continue to change. When there are significant changes in the CI/CD and DevOps trend, this list will be updated to ensure that the information provided to you is accurate.
+
+Happy learning!
  
 ### Further Reading and References
 1. [Buddy Guides The DevOps Automation Platform](https://buddy.works/guides)
@@ -163,6 +167,5 @@ On a final note, the technology space is rapidly evolving and trends in CI/CD wi
 3. [Pipelines with Jenkins](https://opensource.com/article/19/9/intro-building-cicd-pipelines-jenkins)
 
 ---
-
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 
