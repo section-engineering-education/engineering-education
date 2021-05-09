@@ -1,4 +1,22 @@
-﻿### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-artificially-intelligent-chatbots-have-impacted-healthcare-industry/
+title: How Artificially Intelligent Chatbots Have Impacted The Healthcare Industry
+description: The applications of AI have grown multifold into various industries. In this article we look at the rise of AI in the healthcare industry. We give a detailed analysis of the current state of chatbots implemented and compare them with respect to various features.
+author: verah-ombui
+date: 2021-05-09T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/how-artificially-intelligent-chatbots-have-impacted-healthcare-industry/hero.jpg
+   alt: AI chatbots healthcare example image
+
+---
+
+### Introduction
 In recent times, organizations have adopted the benefits offered by AI-powered [virtual assistants](https://searchcustomerexperience.techtarget.com/definition/virtual-assistant-AI-assistant) to automate routine tasks and give their clients attention in customer services, payments, and marketing.
 
 The healthcare industry has now adopted this trend. [AI](https://www.ibm.com/cloud/learn/what-is-artificial-intelligence) creates an environment suitable to improve the patient's health with minimal costs and overheads.
