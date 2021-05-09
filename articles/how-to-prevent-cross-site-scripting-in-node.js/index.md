@@ -1,4 +1,22 @@
-Web applications are currently preferred for giving access to services and information over the world wide web (WWW). Web applications offer numerous services on the internet, such as (e-businesses and internet banking). Computer security plays a vital role in maintaining and protecting information stored in web applications.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-to-prevent-cross-site-scripting-in-node.js/
+title: How to Prevent Cross-Site Scripting in Node.js
+description: Computer security plays a vital role in maintaining and protecting information stored in web applications. Cross-site scripting attacks are common security issues in modern web security. XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious code. In this article we will learn about the cross-site scripting attacks, its types and ways to prevent them. 
+author: pauline-mwangi
+date: 2021-05-09T00:00:00-18:00
+topics: [Node.js]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/how-to-prevent-cross-site-scripting-in-node.js/hero.jpg
+   alt: Problem framing in machine learning example image
+
+---
+
+Web applications are currently preferred for giving access to services and information over the world wide web (WWW). Web applications offer numerous services on the internet, such as e-businesses and internet banking. Computer security plays a vital role in maintaining and protecting information stored in web applications.
 
 Despite protecting the web applications, they still suffer from severe breaches and attacks. These attacks threaten the security of web applications, such as cross-site scripting (XSS) attacks.
 
@@ -122,6 +140,7 @@ Properly sanitized input ensures that users can submit only trusted data. It ens
 
 #### HttpOnly: Preventing Cookies Against XSS
 Another way to prevent XSS is preventing cookies access by browser JS scripts. Theft of cookies is one of the most common XSS attacks. It is achieved by setting the cookie `httpOnly` value to `true` in the below code.
+
 ```js
 app.use(express.session({
     secret: "k5Zurj4",
