@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/an-introduction-to-cicd-tools/
 title: An Introduction to CI/CD Tools
-description: In this article, we will provide a list with the necessary information required to help you choose the CI/CD tools that best meet your needs. It also covers the most advanced CI/CD tools with all the necessary features for your projects.
+description: In this article, we will provide a list with the necessary information required to help you choose the CI/CD tools that best meet your needs. It will also cover the most advanced CI/CD tools with all the necessary features for your projects.
 author: adetu-ridwan
-date: 2021-04-16T00:00:00-16:30
+date: 2021-05-07T00:00:00-16:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,19 +14,17 @@ images:
   - url: /engineering-education/an-introduction-to-cicd-tools/hero.jpg
     alt: An Introduction to CI/CD Tools example image
 ---
-Continuous Integration and Delivery (CI/CD) are tools that
-automate the process of software development. In an organization, there is a need for teams to synchronize their work without breaking the code, and this is often referred to as the pipeline of CI/CD
+Continuous Integration and Delivery (CI/CD) are tools that automate the process of software development. In an organization, there is a need for teams to synchronize their work without breaking the code, and this is often referred to as the pipeline of CI/CD.
 <!--more-->
-
-CI/CD is one of the best practices for integrating workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security while the implementation and deployment process is automated.
+CI/CD is one of the best practices to integrate workflow between development teams and IT operations. It serves as an agile approach that focuses on meeting business requirements, quality code, and security while the implementation and deployment process is automated.
 
 ### Prerequisites
 The prerequisites for this article includes understanding the following concepts:
-- Implementation of CI/CD tools in software development
-- Intermediate understanding of CI/CD tools
-- Prior understanding and usage of any of the CI/CD tools in this article
+- Implementation of CI/CD tools in software development.
+- Intermediate understanding of CI/CD tools.
+- Prior understanding and usage of any of the CI/CD tools in this article.
 
-### Table of Contents
+### Table of contents
 - [Technique of CI/CD](#technique-of-ci/cd)
 - [The Importance of CI/CD](#the-importance-of-ci/cd)
 - [Jenkins as a CI/CD Tool](#jenkins-as-a-ci/cd-tool)
@@ -36,16 +34,16 @@ The prerequisites for this article includes understanding the following concepts
 - [Conclusion](#conclusion)
 - [Further Reading and References](#further-reading-and-references)
 
-### Technique of CI/CD
+### CI/CD technique 
 Continuous Integration (CI) is a programming practice requiring developers to incorporate code changes into a shared repository. Changes committed to the repository are verified by an automated construction, ensuring that bugs are spotted early before deployment.
 
-Understanding the CI process in-depth, whenever a change is made to the source repository in a version control system, an automated process builds the framework. It runs a series of tests to ensure the recent code update integrates with the existing code in the repository. If it doesn’t, then a conflict error occurs.
+The CI process runs an automated process that builds the framework, whenever a change is made to the source repository in a version control system. It runs a series of tests to ensure the recent code update integrates with the existing code in the repository. If it doesn’t, then a conflict error occurs.
 
-When a conflict error occurs between the newly integrated code and the existing code, it is difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts.
+When a conflict error occurs between the newly integrated code and the existing code, it is usually difficult to track the source of the conflict and fix it. However, with the aid of Continuous Delivery, developers in large organizations can securely and rapidly organize changes of all sorts.
 
-The operations executed by developers with Continuous Delivery vary from features upgrade, interface changes, bug fixes, and tests in production environments or to ensure the deployment of sustainable software to the end-user.
+The operations executed by developers with Continuous Delivery can vary. They can be features upgrade, interface changes, bug fixes, and tests in production environments. They can also ensure the deployment of sustainable software to the end-user.
 
-The technique behind the integration of CI/CD in the software development process is that in a large organization with teams of thousands of developers making changes regularly, we can still ensure that the software doesn’t break and changes are being synchronized seamlessly, therefore ensuring effective communication between developers and operations.
+The idea behind the integration of CI/CD in the software development process is that large organization with teams of thousands of developers making changes regularly, they can ensure that the software doesn’t break and changes are being synchronized seamlessly. Also ensuring effective communication between developers and operations.
 
 ![ci/cd technique](/engineering-education/an-introduction-to-cicd-tools/technique.png)
 
