@@ -30,8 +30,7 @@ Let us admit it, typing over eight characters in the name of a password is quite
 #### Disadvantages
 - They are error-prone, sometimes even causing the system to shut down. Once biometric data has been compromised, there is no way to undo the damage. For a compromised password, you simply change it; for a fingerprint, ear image, or iris scan, you're stuck with the compromised biometric which eventually leads to the shut down of a biometric system.
 - Biometric devices and in-built biometric features are costly compared to other traditional devices.
-
-
+- 
 ### Prerequisites
 - Prior experience in building basic Android applications.
 - Basic knowledge of Kotlin programming language and XML.
@@ -46,7 +45,7 @@ By the end of this tutorial, the reader should be able to:
 Now let's dive in and build our application:
 
 #### Step One: Create a new Android Studio project
-In his step, we will create a new Android studio project. Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to be built.
+Open Android Studio and select start a new Android Studio Project -> Empty Activity. We will name the project **FingerprintAuthentication.** Select *Finish* and wait for the project to be built.
 
 ![Create a new Android Studio project](/engineering-education/fingerprint-authentication-in-android-applications/new.jpg)
 
@@ -94,7 +93,7 @@ activity_secret.xml
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout />
 ```
-#### Step five – Update MainActivity.java
+#### Step five: Update MainActivity.java
 In this step, we will write code that will enable our Activity to authenticate a user using biometrics to access our top-secret Activity.
 Our code will contain the following functions:
 - An `onAuthenticationError` function, which provides the outcome of a failed authentication instance.
@@ -102,7 +101,7 @@ Our code will contain the following functions:
 - An `onCreate` function, which will contain an onClickListener that will bring up the Biometric prompt. Also, we will include some details to our biometric prompt in this function.
 - A `notifyUser` function that will display a Toast message whenever called in another function.
 - A `getCancellationSignal` function, which will handle cancellations made by the user.
-- A `checkBiometricSupport` function will check whether a particular Android device has inbuilt biometrics support, whether they are enabled in the phone's settings, and whether the user has accepted the app's permission to access the biometrics.
+- A `checkBiometricSupport` function will check whether a particular Android device has inbuilt biometrics support, whether they are enabled in the phone's settings, or the user has accepted the app's permission to access the biometrics.
 
 ```kotlin
 package com.example.fingerprintauthentication
