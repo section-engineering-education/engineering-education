@@ -1,20 +1,21 @@
-# How to use an API on a Vue.js project
+### How to use an API on a Vue.js project
 
-## Introduction
+#### Introduction
 
 In this modern era, the majority of developers are familiar with the language JavaScript and that has led to most web applications having JavaScript as one of the programming languages used in building them. To make the building process easier for developers, frameworks were built with the concept of creating a compiled version of JavaScript that adopts one programming architecture or is dynamic and allows programmers to build their applications on this framework. With this concept in mind came Vue.js.
 
-## What is Vue.js
+#### What is Vue.js
 
 Vue.js is a progressive framework for JavaScript which is used to build user interfaces. You can [Read more](https://vuejs.org/v2/guide/index.html) about it.
 When developing some projects using Vue.js, there will be a need to fetch or consume user-related data from an API. This will make the front-end of the project interact with the backend and the user-related data is fetched and displayed on the UI of the project.
 
 
-## What is an API?
+#### What is an API?
 
-API stands for Application Programming Interface, which is a set of definitions or protocols that allow software programs to communicate and share data with each other. It is more of a software intermediary.
+API stands for Application Programming Interface, which is a set of definitions or protocols that allow software programs to communicate and share data with each other. It is more of a software intermediary. To use APIs in Vue.js, you'll have to make an API request using two methods: [Axios](https://www.npmjs.com/package/axios) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) methods.
+These concepts will be discussed externsively in the course of this article. Brace up! 
 
-## Prerequisite
+#### Prerequisite
 
 To understand and follow this article, you will need:
 
@@ -22,7 +23,7 @@ To understand and follow this article, you will need:
 - [Node.js](https://nodejs.org/en/download/) installed on your computer.
 - to have Vue.js installed on your computer. If you don't already have it installed, click [here](https://vuejs.org/v2/guide/installation.html) to do so.
 - to understand key concepts in Vue.js. You can learn it [here](https://vuejs.org/v2/guide/index.html) .
-## Outline
+#### Outline
 1. Using Axios to consume an API
 2. Using Fetch API method
 3. Using APIs on Vuex
@@ -30,7 +31,7 @@ To understand and follow this article, you will need:
 
 There are two methods of consuming/using an API in a Vue.js project. These methods are:
 
-## Using Axios to consume APIs
+#### Using Axios to consume APIs
 
 [Axios](https://www.npmjs.com/package/axios) is a promise-based HTTP client which makes it appropriate for fetching data during server-side rendering. It works on both browser and Node apps.
 
@@ -38,7 +39,8 @@ There are two methods of consuming/using an API in a Vue.js project. These metho
 To use Axios on your project, you need to first install it. This can be done in two ways:
 
 -  By using `npm` ; a default package manager for the JavaScript runtime environment Node.js. You can now see why having Node.js installed on your computer was a prerequisite.
-- By using `yarn` ; a package manager that doubles down as project manager. It is compactible with the npm registry and has the same set of features.
+- By using `yarn` ; a package manager that doubles down as project manager. It is compactible with the npm registry and has the same set of features. To install yarn in your project, paste the following line of code in your terminal `npm install --global yarn`
+
 
 With npm:
 
@@ -163,9 +165,9 @@ We can now display the data in the template by looping through the posts using [
 
 
 
-## Using Fetch API method
+#### Using Fetch API method
 
-Fetch API is a powerful and flexible method of flexible APIs. It provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is a powerful and flexible method of flexible APIs. It provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
 
 To make request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the axios call above.
 
@@ -198,16 +200,16 @@ To make request with the Fetch API, you just have to make the request directly w
        },
     
     
-    mounted() {
+    created() {
         this.getData();
       },
     }
     </script>
 
 
-## Creating APIs in Vuex
+#### Creating APIs in Vuex
 
-Vuex is a state management library for vue.js applications. It serves as a centralized store for all components in an application. 
+[Vuex](https://vuex.vuejs.org/) is a state management library for vue.js applications. It serves as a centralized store for all components in an application. 
 
 **Installing Vuex**
 To make use of VueX, you will first need to install the VueX package on your Vue application.
@@ -323,7 +325,7 @@ We can display data in our vue file. To do that, some steps need to be taken:
              </ul>
           </div>
     </template>
-## CONCLUSION
+#### CONCLUSION
 
 In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex request as it allows multiple configuration of multiple request in one place. 
 We also considered consuming an API in a vuex project i.e. a project that manages multiple state.
