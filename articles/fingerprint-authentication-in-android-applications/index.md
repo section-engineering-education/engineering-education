@@ -192,9 +192,7 @@ Remember, practice makes perfect.
 You can access the tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication). You can also download the sample APK on [Google Drive](https://drive.google.com/file/d/1X1l4JD1UeC20tgOAwKsjF-gf1dxs-Y5x/view?usp=sharing).
 For any query or clarification, do not hesitate to raise an issue in this [repository](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/FingerprintAuthentication).
 
-Till next time! 
+Till next time, Happy Coding!
 
-Happy Coding!
-
-
-
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
