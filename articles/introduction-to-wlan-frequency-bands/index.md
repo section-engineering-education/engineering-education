@@ -84,3 +84,4 @@ The two WLAN frequency bands support different transmission rates given the stan
 - [What Is Attenuation](https://www.comptia.org/content/guides/what-is-attenuation)
 
 ---
+Peer Review Contributions by: [Briana Nzivu](https://www.section.io/engineering-education/authors/briana-nzivu/)
