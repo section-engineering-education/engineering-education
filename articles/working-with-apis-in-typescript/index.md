@@ -4,31 +4,27 @@ status: publish
 published: true
 url: /engineering-education/working-with-apis-in-typescript/
 title: Working with APIs in TypeScript
-description: In this article, we will take a look at how to harness the power of TypeScript to consume APIs.
+description: In this article, we will take a look at how to harness the power of TypeScript to consume APIs. We will install the required dependencies and their corresponding type definitions. Abstract classes and inheritance will be used to make the API extensible.
 author: saiharsha-balasubramaniam
-date: 2021-04-14T00:00:00-17:00
-topics: [API, Languages]
+date: 2021-05-09T00:00:00-18:00
+topics: [Node.js, API, Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/working-with-apis-in-typescript/hero.png
     alt: TypeScript API example image
 ---
-
-TypeScript was introduced by Microsoft as a superset of JavaScript. It takes the versatility of JavaScript and improves it with type definitions. Type definitions are used to enforce types on a variable. For example, the value 5 is a number. A number is a type definition in TypeScript. TypeScript is used with a lot of popular frameworks like React.js and React Native to build enterprise applications.
-
+In this article, we shall take a look at how to harness the power of TypeScript to create an API. Microsoft introduced typeScript as a superset of JavaScript. It takes the versatility of JavaScript and improves it with type definitions. Type definitions are used to enforce types on a variable. For example, the value 5 is a number. 
 <!--more-->
+A number is a type definition in TypeScript. TypeScript is used with a lot of popular frameworks like React.js and React Native to build enterprise applications.
 
-In this article, we shall take a look at how to harness the power of TypeScript to create an API.
-
-### Prerequisites & Pre-Reading Material
-
+### Prerequisites & pre-reading material
+To follow this article along, the reader will need the following:
 - A basic understanding of [HTTP Requests](/engineering-education/http-requests-nodejs/) and [APIs](/engineering-education/rest-api/).
 - Fundamental concepts of [Node.js](/engineering-education/history-of-nodejs/).
 - [TypeScript basics](/engineering-education/a-friendly-beginner-guide-to-typescript/).
 
-### Project Setup
-
-To get started, let us create a working directory for our project:
+### Project setup
+To get started, let's create a working directory for our project:
 
 ```bash
 # Create a directory 'node-typescript'
@@ -38,7 +34,7 @@ mkdir node-typescript
 cd node-typescript
 ```
 
-Let us initialize a Node.js project:
+Let's initialize a Node.js project:
 
 ```bash
 # The -y option initializes the project with default settings
@@ -46,6 +42,7 @@ npm init -y
 ```
 
 Express is a framework built on Node.js. It is used to build backend servers and APIs. To learn more about Express, visit their [official docs](https://expressjs.com/en/4x/api.html).
+
 Let us install Express:
 
 ```bash
@@ -53,24 +50,29 @@ Let us install Express:
 npm install express
 ```
 
-Now, to use TypeScript within our web API, we need to install TypeScript as a developer dependency. This can be done as follows:
+Now, to use TypeScript within our web API, we need to install TypeScript as a developer dependency. 
+
+This can be done as follows:
 
 ```bash
 # The -D option installs typescript as a developer dependency
 npm install -D typescript
 ```
 
-TypeScript contains static type definitions, which enables catching errors during compile time. This is one of the reasons developers prefer TypeScript over JavaScript. It is easier to fix errors during development rather than during production. To learn more about static typing, check out [this article](https://www.freecodecamp.org/news/why-use-static-types-in-javascript-part-1-8382da1e0adb/#:~:text=The%20differences%20between%20static%20type,That%20is%2C%20at%20runtime.).
+TypeScript contains static type definitions, which enables catching errors during compile time. This is one of the reasons developers prefer TypeScript over JavaScript. 
 
-Let us install type definitions for Node.js and Express:
+It is easier to fix errors during development rather than during production. To learn more about static typing, check out [this article](https://www.freecodecamp.org/news/why-use-static-types-in-javascript-part-1-8382da1e0adb/#:~:text=The%20differences%20between%20static%20type,That%20is%2C%20at%20runtime.).
+
+Now, let's install type definitions for Node.js and Express:
 
 ```bash
 # Type definitions are hosted in the @types npm namespace
 npm install -D @types/node @types/express
 ```
 
-We also need a `tsconfig.json` file. This file is used to explain the project structure to the TypeScript compiler. Let us initialize the config:
+We also need a `tsconfig.json` file. This file is used to explain the project structure to the TypeScript compiler. 
 
+Let's initialize the config:
 ```bash
 # Initializes a tsconfig file
 npx tsc --init
@@ -80,14 +82,13 @@ npx tsc --init
 
 Image: **TypeScript Configuration File**
 
-### Let's Code!
-
+### Let's code!
 #### Creating a configuration to store routes
-
 TypeScript is an Object-Oriented Programming (OOP) Language. An OOP language uses objects and classes to represent entities. You can read more about OOP [here](https://en.wikipedia.org/wiki/Object-oriented_programming).
 
-Let us write an abstract class that defines the skeleton for our route configuration. Create a new folder called `src`, and a file `routes.config.ts` within `src`:
+Let's write an abstract class that defines the skeleton for our route configuration. 
 
+Create a new folder called `src`, and a file `routes.config.ts` within `src`:
 ```bash
 mkdir src
 cd src
@@ -96,7 +97,7 @@ cd src
 touch routes.config.ts
 ```
 
-**`routes.config.ts`**
+#### 'routes.config.ts'
 
 ```ts
 // The express package is imported
@@ -128,18 +129,18 @@ export abstract class RoutesConfig {
 }
 ```
 
-You might wonder why the above class is defined as abstract. This is because abstract classes cannot contain the implementation of their methods. This routes configuration defines a basic skeleton and can be extended to create different routes.
+You may be wondering why the class above is defined as abstract. This is because abstract classes cannot contain the implementation of their methods. This routes configuration defines a basic skeleton and can be extended to create different routes.
 
 #### Defining the routes
+Now, let's define the various routes. 
 
-Now, let us define the various routes. Create a new file called `apiRoutes.ts`.
+Create a new file called `apiRoutes.ts`.
 
 ```bash
 touch apiRoutes.ts
 ```
 
-**`apiRoutes.ts`**
-
+#### 'apiRoutes.ts'
 ```ts
 // The configuration file that we wrote is imported
 import { RoutesConfig } from "./routes.config";
@@ -190,13 +191,12 @@ export class ApiRoutes extends RoutesConfig {
 }
 ```
 
-`PUT` and `DELETE` Requests follow the same format as the `POST` request. Instead of `this.app.route.post`, we use `this.app.route.put`.
+`PUT` and `DELETE` requests follow the same format as the `POST` request. Instead of `this.app.route.post`, we use `this.app.route.put`.
 
 #### Writing the entry point file
+Now, let's define the `app.ts`, which serves as the entry point into our API.
 
-Now, let us define the `app.ts`, which serves as the entry point into our API.
-
-**`app.ts`**
+#### 'app.ts'
 
 ```ts
 import express from "express";
@@ -234,10 +234,9 @@ server.listen(port, () => {
 Our API is now ready.
 
 #### Set the TSConfig
+To compile TypeScript into JavaScript and enable type checking, we need to update our `tsconfig`:
 
-To compile TypeScript into JavaScript and enabled type checking, we need to update our `tsconfig`:
-
-**`tsconfig.json`**
+#### 'tsconfig.json'
 
 ```json
 {
@@ -254,7 +253,7 @@ To compile TypeScript into JavaScript and enabled type checking, we need to upda
 
 Here, the `outDir` key defines that the output `.js` files should be stored in a directory called `dist`. We can also create an npm script that compiles the `.ts` file and also starts the server.
 
-**`package.json`**
+#### 'package.json'
 
 ```json
 "scripts": {
@@ -266,7 +265,6 @@ Here, the `outDir` key defines that the output `.js` files should be stored in a
 The `test` script runs the `tsc` compile command and also starts the server.
 
 ### Testing the API
-
 To test the API, let us first run the server:
 
 ```bash
@@ -299,23 +297,22 @@ The post response is as follows:
 Image: **API Response Output**
 
 ### Summary
-
 - We set up a Node.js project and configured it to work with TypeScript.
 - We installed the required dependencies and their corresponding type definitions.
 - Abstract classes and inheritance were heavily used to make the API extensible. This pattern makes it easier to write new routes.
 - We tested the API using cURL.
 - The entire source code for this article can be found in this [GitHub repository.](https://github.com/cyberShaw/TypeScript-Playground/tree/master/TypeScript%20API)
 
-### Index & Abbreviations
+Happy coding!
 
+### Index & abbreviations
 - HTTP: HyperText Transfer Protocol
 - API: Application Programming Interface
 - TS: TypeScript
 - JS: JavaScript
 - OOP: Object-Oriented Programming
 
-### Further Reading
-
+### Further reading
 - [TypeScript for JavaScript Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
 - [Node.js with TypeScript](https://nodejs.dev/learn/nodejs-with-typescript)
 - [TypeScript Type Definitions](https://github.com/DefinitelyTyped/DefinitelyTyped)
