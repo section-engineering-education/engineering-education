@@ -11,9 +11,9 @@ The following are some of the basic terminologies that can help us to understand
 - **Fitness function:** This is a function that uses a specific input to produce an improved output. The solution is used as the input while the output is in the form of solution suitability. 
 - **Genetic operators:** In genetic algorithms, the best individuals mate to reproduce an offspring that is better than the parents. Genetic operators are used for changing the genetic composition of this next generation.  
 
-A genetic algorithm (GA) is a heuristic search algorithm used to solve search and optimization problems. This algorithm is a subset of evolutionary algorithms, which are used in computation. Genetic algorithms employ the concept of genetics and natural selection to provide solution to problems. 
+A genetic algorithm (GA) is a heuristic search algorithm used to solve search and optimization problems. This algorithm is a subset of [evolutionary algorithms](https://en.wikipedia.org/wiki/Evolutionary_algorithm), which are used in computation. Genetic algorithms employ the concept of genetics and natural selection to provide solutions to problems. 
 
-These algorithms have a better intelligence than random search algorithms because they use historical data to take the search to the best performing region within the solution space. 
+These algorithms have better intelligence than [random search algorithms](https://en.wikipedia.org/wiki/Random_search) because they use historical data to take the search to the best performing region within the solution space. 
 
 GAs are also based on the behavior of chromosomes and their genetic structure. Every chromosome plays the role of providing a possible solution. The fitness function helps in providing the characteristics of all individuals within the population. The greater the function, the better the solution. 
 
@@ -22,7 +22,6 @@ GAs are also based on the behavior of chromosomes and their genetic structure. E
 - It can optimize various problems such as discrete functions, multi-objective problems, and continuous functions.
 - It provides answers that improve over time.
 - A genetic algorithm does not need derivative information. 
-- It is more efficient and faster than the traditional methods. 
   
 ### How genetic algorithms work
 Genetic algorithms use the evolutionary generational cycle to produce high-quality solutions. They use various operations that increase or replace the population to provide an improved fit solution. Genetic algorithms follow the following phases to solve complex optimization problems:
