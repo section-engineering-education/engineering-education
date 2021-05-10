@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/multithreading-in-java
+title: Multithreading in Java
+description: A thread is a lightweight process. We will learn how to create threads in your programs
+author: geoffrey-mwangi
+date: 2021-05-22T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/multithreading-in-java/hero.jpg
+    alt: Multithreading in Java image
+---
+
 ### What is a thread?
 A thread in Java is a small and light process. Many threads can run in a single process and each thread **must** be part of a process as it cannot exist on its own.
 
@@ -130,3 +146,7 @@ Output:
 
 ### Conclusion
 Threads are independent and can perform multiple tasks at the same time. We have looked at the various stages of a life cycle of a thread, the various ways to create a thread, and how to start the thread.
+
+---
+
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
