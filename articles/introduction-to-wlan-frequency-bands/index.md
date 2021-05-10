@@ -30,7 +30,7 @@ This article will cover:
 ### Introduction to WLAN
 **WLAN** refers to the networking mode of connecting two or more devices via a wireless distribution method. They have high-frequency radio waves traveling through channels and an AP (Access Point) to the internet. These transmission channels will be distinguished between overlapping and non-overlapping channels.
 
-*A spectrum:* this is formed by the frequency distribution. 
+*A spectrum:* this is radio frequency over which wireless signals travel i.e., frequency distribution.
 
 *Frequency band:* this is the frequency range of a radio wave. A frequency band comprises of several channels.
 
