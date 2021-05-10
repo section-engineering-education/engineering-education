@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/getting-started-with-structs-sorting-in-c++/
 title: Getting Started with Structs Sorting in C++
-description: In this article we will learn how to create the structs in C++ then we will learn how to sort structs using their members.
+description: In this article we will learn how to create the structs in C++ then we will learn how to sort structs using their members. Structs are user-defined data types found in both C and C++.
 author: samuel-mwangi
-date: 2021-05-07T00:00:00-13:00
+date: 2021-05-10T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
