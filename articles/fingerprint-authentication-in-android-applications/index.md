@@ -93,7 +93,7 @@ activity_secret.xml
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout />
 ```
-#### Step five: Update MainActivity.java
+#### Step five: Update MainActivity.kt
 In this step, we will write code that will enable our Activity to authenticate a user using biometrics to access our top-secret Activity.
 Our code will contain the following functions:
 - An `onAuthenticationError` function, which provides the outcome of a failed authentication instance.
