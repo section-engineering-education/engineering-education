@@ -200,14 +200,7 @@ The first step is to add some of the required files in order to get tailwindcss 
 
 This is where TailwindCss directives will go, as we will see in a bit. To keep things clear the project folder structure should look as follows:
 
-```bash
-projectfolder/
-   - app.py
-   - templates/
-   - static/
-     - src/
-       - style.css
-```
+```files
 
 If you don't have npm you can install Node.js since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section. 
 
