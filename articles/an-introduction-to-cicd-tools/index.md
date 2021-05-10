@@ -6,7 +6,7 @@ url: /engineering-education/an-introduction-to-cicd-tools/
 title: An Introduction to CI/CD Tools
 description: In this article, we will provide a list with the necessary information required to help you choose the CI/CD tools that best meet your needs. It will also cover the most advanced CI/CD tools with all the necessary features for your projects.
 author: adetu-ridwan
-date: 2021-05-09T00:00:00-16:30
+date: 2021-05-10T00:00:00-13:00
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
