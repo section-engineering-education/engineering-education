@@ -38,7 +38,7 @@ Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of
 
 **V8 8.6**
 
-Node.js 15's V8 engine has been updated to version 8.6 from version 8.4. V8 is the JavaScript engine that runs Node.js. Since V8, the features of the JavaScript language that are available to programmers have been specified. Despite the small version bump, there are a few new language enhancements that will help you write less code and potentially increasing the readability of your code. 
+Node.js 15's V8 engine has been updated to version 8.6 from version 8.4. V8 is the JavaScript engine that runs Node.js. Introduction of v8 came up with changes, for instance specification of javascript language for users. It helps in providing runtime environment where Javasccript executes its tasks.The good thing with this strong engine is how it operates independently in the host browser. Despite the small version bump, there are a few new language enhancements that will help you write less code and potentially increasing the readability of your code. 
 
 **Experimental diagnostics channel module**
 
