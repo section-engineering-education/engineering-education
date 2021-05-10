@@ -7,7 +7,7 @@ title: Understanding IPV4 and IPV6 protocols
 description: This article will be a walk through the IPv4 and IPv6 Internet protocols which make communication on the internet possible. 
 author: mackrine-awino
 date: 2021-05-05T00:00:00-13:00
-topics: [Protocols]
+topics: [Internet Protocols]
 excerpt_separator: <!--more-->
 images:
 
@@ -30,15 +30,17 @@ There are two versions of internet protocol, i.e., Internet Protocol version 4 a
 6. [Differences between IPv4 and IPv6](#differences-between-IPv4-and-IPv6)
 7. [Why does IPv6 take preference to IPv4?](#Why-does-IPv6-take-preference-to-IPv4)
 8. [Conclusion](#conclusion)
+
 ### Prerequisites
 
 To understand the content of this article, a reader should have the following:
+
 - A beginner's understanding of computer networking.
 
 - Basic knowledge of internet communication and data transmission.
 
-
 ### Introduction to IPv4 and IPv6
+
 IPv4 and IPv6 are the actual protocols tasked with data transmission in the form of packets and datagrams. 
 
 IPv4 protocol is mainly used with [ethernets](https://en.wikipedia.org/wiki/Ethernet)	during packet switching in the link-layer networks.	
@@ -48,6 +50,7 @@ IPv6 protocol being more newfangled has improved capabilities as compared to IPV
 ### Internet protocol version 4
 
 Internet protocol version 4, just as its name suggests, was the fourth version of the IP suite developed by the [DARPA](https://www.darpa.mil/work-with-us/technology-demonstrations#:~:text=DARPA%20is%20developing%20technologies%20to,deriving%20insights%20from%20diverse%20datasets.&text=The%20electromagnetic%20spectrum%20functions%20as,and%20voice%20of%20modern%20society.) and released for use in 1982. It is a significant protocol of the standard networking protocols on the internet and all the other packet switching networks. 
+
 #### IP Header
 
 ![IPv4 Communication Protocol](Screenshot_20210428-104617.png)
@@ -56,7 +59,6 @@ IPv4 still controls the internet traffics despite the development of IPv6 using 
 
 IPv4 being a connectionless protocol, does not guarantee if data is delivered, neither does it arrange the data packets properly. Some packets may also have duplicates, so the organization is all addressed by the layer that handles transport, i.e., [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-protocol-tcp/#:~:text=Transmission%20Control%20Protocol%20(TCP)%20%E2%80%93,referred%20to%20as%20TCP%2FIP.) or the [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol). IPv4 also has special and multicast addresses for [private](https://en.wikipedia.org/wiki/Private_network) networks with approximately eighteen million addresses.
 
-
 IPv4 address digits are separated with decimal points as shown below:
 
 #### Examples of IPv4 addresses
@@ -64,24 +66,20 @@ IPv4 address digits are separated with decimal points as shown below:
                172.16.254.1
 
                169.254.255.255 
+
 ### IPv4 addressing
 
 Three different types of addressing modes supported in IPv4, namely; 
 - Unicast addressing mode
 
-
 Unicast addressing mode only allows for data to be sent to a specific host at a time. The address of the data destination is a 32-bit IP address of the host device.
 - Broadcast addressing mode
-
 
 Broadcast addressing mode involves the transmission of a data packet to a network of hosts with the address of the destination indicated as a special broadcast address. The packet sent can be processed by any host on the network.
 - Multicast addressing mode
 
-
 This involes the use of both Unicast addressing mode and Broadcast addressing mode. The packet is not addressed to any specific host or any network of hosts and is processed by more than one host device on the network.
-
-                           
-
+                        
 ### Internet protocol version 6
 
 Internet protocol version 6 is the newest version of the internet protocol suite as of now developed to replace the fourth version, i.e., the IPv4. IPv6 was brought into existence by the [IETF](https://www.ietf.org/blog/ipv6-internet-standard/) because IPv4 had exhausted its addresses. IPv6 was intended to replace IPv4. However, this has not been the case; IPv4 has continued to live on.
@@ -105,17 +103,16 @@ There are three methods of transition from IPv4 to IPv6, as stated below:
 
 ### Similarities between IPv4 and IPv6
 
-
-Despite being different and cannot communicate, IPv4 and IPv6 have specific qualities that bind them. The qualities are as discussed below:	
+Despite being different protocols which cannot communicate with each other, IPv4 and IPv6 have specific qualities that bind them. These qualities are discussed below:	
 
 1. They both are internet protocols that used communication on the internet.
 2. Both of the IP versions are connectionless protocols that packet switch.
-3. They both have the packet header section
+3. They both have the packet header section.
 4. Both IPv4 and IPv6 allow for the manual assignment of IP addresses.
 
 ### Differences between IPv4 and IPv6
 
-1. IPv6 has a packet flow identification in the header while IPv4 offers no packet flow information
+1. IPv6 has a packet flow identification in the header while IPv4 offers no packet flow information.
 2. IPv6 uses 128-bit hexadecimal, i.e., base 16 IP addresses, while IPv4 uses 32-bit  IP addresses written in a decimal number system which is a base 10.
 3. IPv4 supports dynamic host configuration protocol setup, while IPv6 supports renumbering address setup.
 4. IPv4 has not connection integrity, whereas IPv6 has end-to-end connection integrity.
@@ -123,7 +120,7 @@ Despite being different and cannot communicate, IPv4 and IPv6 have specific qual
 
 ### Why does IPv6 take preference to IPv4?
 
-Other than having larger addressing space, IPv6 has other beneficial features as discussed below;
+Other than having larger addressing space, IPv6 has other beneficial features as discussed below:
 - It allows for the address allocated to be done in a hierarchy enhancing supernetting.
 - It increases the [multicast](https://en.wikipedia.org/wiki/Multicast_address#:~:text=From%20Wikipedia%2C%20the%20free%20encyclopedia,for%20a%20designated%20network%20service.) addressing hence adjustment of service delivery.
 - IPv6 ensures the portability and security of its host devices.
@@ -136,6 +133,5 @@ The rapidly growing population of the world is pushing for the gradual phase-out
 Blissful reading!
 
 ---
-
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 
