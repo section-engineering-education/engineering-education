@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/how-to-prevent-cross-site-scripting-in-node.js/hero.jpg
+ - url: /engineering-education/how-to-prevent-cross-site-scripting-in-node-js/hero.jpg
    alt: Problem framing in machine learning example image
 
 ---
