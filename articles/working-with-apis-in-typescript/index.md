@@ -6,7 +6,7 @@ url: /engineering-education/working-with-apis-in-typescript/
 title: Working with APIs in TypeScript
 description: In this article, we will take a look at how to harness the power of TypeScript to consume APIs. We will install the required dependencies and their corresponding type definitions. Abstract classes and inheritance will be used to make the API extensible.
 author: saiharsha-balasubramaniam
-date: 2021-05-T00:00:00-18:00
+date: 2021-05-10T00:00:00-12:00
 topics: [Node.js, API, Languages]
 excerpt_separator: <!--more-->
 images:
