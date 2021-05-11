@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/hero.jpg
+  - url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/hero.png
     alt: Uploading Images to Cloudinary example image
 ---
 One of the main problems a developer faces during media upload is a quick image and video manipulation and delivery optimization. This can be solved by the use of artificial intelligence (AI) which not only does it do both of these but also automates the process. Cloudinary is a good example of this service.
@@ -339,7 +339,7 @@ Select the image by pressing the "Choose File" button then upload it by clicking
 
 If successful, it shall display as shown below. *The metadata will change depending on the file uploaded.*
 
-![Feedback Webpage image](/engineering-education/recieved-file-cloudinary-Node.js.png)
+![Feedback Webpage image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/recieved-file-cloudinary-Node.js.png)
 
 Open your cloudinary site and sign in. Under the dashboard, view the uploaded image. You can manipulate it as you please using the onboard AI.
 
