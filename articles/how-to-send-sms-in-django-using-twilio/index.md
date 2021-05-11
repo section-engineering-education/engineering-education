@@ -2,7 +2,7 @@ SMS is a good way to send alerts, notifications and even authenticate users. The
 
 In this tutorial, we will build a simple Django project with SMS capability that sends message to a phone number once a particular condition is met.
 
-Twillio is a cloud communications platform that allows you to add voice and SMS functionality in your app . Its actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
+[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality in your app . Its actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
@@ -10,11 +10,11 @@ To follow along with this tutorial, you'll need [Python3](https://www.python.org
 A basic understanding of Django would help the reader follow along better.
 
 ### Table of contents
-- [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
-- [Setting up Twilio](#setting-up-twilio)
-- [Creating a model](#creating-a-model)
-- [Configuration](#configuration)
-- [Conclusion](#conclusion)
+1. [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
+2. [Setting up Twilio](#setting-up-twilio)
+3. [Creating a model](#creating-a-model)
+4. [Configuration](#configuration)
+5. [Conclusion](#conclusion)
 
 
 
@@ -25,15 +25,14 @@ A virtual environment allows you to create different spaces on your computer, wi
 
 By creating a virtual environment, you'll be able to separate the necessary library installation for a project, without having to install them globally.
 
-Now, you create a virtual environment `env` as shown below:
+Now, we create a virtual environment `env` as shown below:
 
 ```bash
-$ python -m venv /path/to/new/virtual/environment
+python -m venv ~/env
 ```
+Here, we tell Python to create the virtual environment in a folder named `env` in the current directory.
 
-Here, we specify the `/path/to/new/virtual/environment` as `env`.
-
-On creation, you can activate the virtual environment using the following command:
+On creation, we can activate the virtual environment using the following command:
 
 ```bash
 $ source env/bin/activate
@@ -68,6 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'score',
+
     ]
 ```
 
@@ -119,7 +119,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-A superuser has the permissions to create, edit, update, and delete data in Django admin. We create a superuser by running the command below:
+A superuser has the permissions to create, edit, update, and delete data in Django admin. Create a superuser by running the command below:
 
 ```bash
 $ python manage.py createsuperuser 
@@ -207,7 +207,7 @@ class Score(models.Model):
 
 ```
 
-With a trial number, you can only send sms to a twilio verified number. If you want to send to unverified numbers, you need to purchase a phone number.
+With a trial number, we can only send sms to a twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
 
 For testing purpose, our verified number will be the number we submitted for phone number verification when we created our twilio account.
 
