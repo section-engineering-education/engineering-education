@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-simulink-using-matlab/hero.png
     alt: Understanding Simulink using Matlab Image
 ---
-In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves, & functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.
+In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves, and functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.
 <!--more-->
 ### Introduction
 According to [Wikipedia](https://en.wikipedia.org/wiki/Simulink), **Simulink** is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multi-domain dynamical systems. Its primary interface is a graphical block diagramming tool and a customizable set of block libraries. 
