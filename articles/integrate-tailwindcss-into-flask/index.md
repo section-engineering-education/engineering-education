@@ -112,11 +112,13 @@ yarn init
 
 Doing this creates a new file called `package.json` which keeps track of installed (JavaScript) dependencies in our project. We can think of it as the `requirements.txt` file that holds dependencies in Python projects. The next thing is to run the installation command to actually install TailwindCss, this is done as follows:
 
-``bash
+```bash
 npm install tailwindcss
 ```
 
 Or with yarn:
+
+
 ```bash
 yarn add tailwindcss
 ```
