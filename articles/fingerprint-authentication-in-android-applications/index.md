@@ -30,7 +30,7 @@ Let us admit it, typing over eight characters in the name of a password is quite
 #### Disadvantages
 - They are error-prone, sometimes even causing the system to shut down. Once biometric data has been compromised, there is no way to undo the damage. For a compromised password, you simply change it; for a fingerprint, ear image, or iris scan, you're stuck with the compromised biometric which eventually leads to the shut down of a biometric system.
 - Biometric devices and in-built biometric features are costly compared to other traditional devices.
-- 
+
 ### Prerequisites
 - Prior experience in building basic Android applications.
 - Basic knowledge of Kotlin programming language and XML.
@@ -55,6 +55,7 @@ In our `AndroidManifest.xml` file, we will add the biometrics permission stateme
 ```manifest
 <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 ```
+
 #### Step Three: Adding the biometrics library to our project
 Add the following dependencies to your app-level `build.gradle` file.
 
@@ -65,6 +66,7 @@ implementation "androidx.biometric:biometric:$biometricLibraryVersion"
 
 #### Step Four: Create a new Empty Activity
 Since our application will require us to use biometrics to access a top-secret activity, we will create an activity that will contain a secret message. Right-click the java directory and select New -> Activity -> Empty Activity. Let us name our new activity **Secret.** Click *Finish.*
+
 Our Secret Activity's UI will only contain a Textview which will display an optional message.
 
 activity_secret.xml
@@ -93,8 +95,10 @@ activity_secret.xml
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout />
 ```
+
 #### Step five: Update MainActivity.kt
 In this step, we will write code that will enable our Activity to authenticate a user using biometrics to access our top-secret Activity.
+
 Our code will contain the following functions:
 - An `onAuthenticationError` function, which provides the outcome of a failed authentication instance.
 - An `onAuthenticationSucceeded` function, which provides the outcome of a successful authentication instance.
