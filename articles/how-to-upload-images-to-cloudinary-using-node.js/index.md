@@ -6,7 +6,7 @@ url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/
 title: Uploading Images to Cloudinary using Node.js
 description: In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js.
 author: chris-mutua
-date: 2021-04-27T00:00:00-01:30
+date: 2021-05-11T00:00:00-13:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
