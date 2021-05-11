@@ -249,7 +249,14 @@ data:
 
 ![ingress](ingress.png)
 
-This is an external service in our application and it addresses how the IP address in the browser is being linked to the right service in the node. Do not forget that services are attached to pods, and are just access points consisting of ports that, in turn, interact to be able to interacinteracts with our pods., The process through which pods are being scheduled across nodes in the form of replica sets is called the “Master Process”, and it is done with the aid of a “Scheduler”.
+This is an external service in our application, and it addresses how the IP address in the browser is being linked to the right service in the node. Do not forget that services are attached to pods, and are just access points consisting of ports that, in turn, interact to be able to interacinteracts with our pods., The process through which pods are being scheduled across nodes in the form of replica sets is called the “Master Process”, and it is done with the aid of a “Scheduler”.
 
 **Thanks for reading.**
 
+
+
+**ABOUT THE AUTHOR**
+
+Qoyum Olatunde Yusuf is a software engineer from Nigeria, he is the first of four children and he majors in machine learning and artificial intelligence. He has field experience in DevOps too.
+
+![qoyum_yusuf](selfie.jpeg)
