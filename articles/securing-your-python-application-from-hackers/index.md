@@ -1,4 +1,4 @@
-Python has become immensely useful in cyber security as it supports and performs a multitude of cyber security functions such as malware analysis, scanning, penetration testing, etc. However, it's very easy to make a mistake in any Python code and make the program vulnerable.
+Python has become immensely useful in cybersecurity as it supports and performs a multitude of cybersecurity functions such as malware analysis, scanning, penetration testing, etc. However, it's very easy to make a mistake in any Python code and make the program vulnerable.
 
 > It's possible to create a secure program using a programming language that is full of vulnerabilities, and it's also possible to create a vulnerable program using a programming language that's designed to be secure.
 
@@ -91,11 +91,12 @@ exec('print(dir())', {})
 ```
 
 The output is:
+
 ```python
 ['__builtins__']
 ```
 
-If you want to provide a specific methods to use, then you need to do the following:
+If you want to provide specific methods to use, then you need to do the following:
 
 ```python
 from math import *
@@ -112,7 +113,7 @@ This will give the user the ability to execute the `sqrt` method by using `squar
 
 Now if we run our code and pass `print(squareroot(16))` as input. Then the result will be `4`.
 
-But if we try to use `print(max(1,2))` which is a built-in function and is not accessible to the exec() function. Then the result will be:
+But if we try to use `print(max(1,2))` (which is a built-in function in the `math` library but it's not accessible by the exec() function), then the result will be a `TypeError` which is an Exception and will be caught by the `except` block:
 
 ```python
 'NoneType' object is not subscriptable
@@ -145,7 +146,7 @@ To fix this issue, you need to use `raw_input()` instead of `input()` while you 
 
 ### String formatting exploiting
 
-This can be a very dangerous method because it might lead the hackers to authentication bypass and provide access to sensitive information. So how does this really work?
+This can be a very dangerous method because it might lead the hackers to authentication bypass and provide access to sensitive information. So how does this work?
 
 Let's build a simple app, assume that *CONFIG* contain sensitive information like an *API keys*:
 
@@ -192,7 +193,7 @@ Then our sensitive information will be compromised and the output will be:
 'SECRET_KEY'
 ```
 
-That happened because the string formatting function has the ability to access attributes objects. 
+That happened because the string formatting function can access attributes objects. 
 
 And the question now; is it still good to use `str.format()`? Yes, but you have to be aware that it becomes vulnerable when it is used with user-controlled strings.
 
