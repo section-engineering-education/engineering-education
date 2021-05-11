@@ -31,29 +31,6 @@ Having the following will be needed:
 ### Building a simple Flask app
 #### Installing Flask
 We'll begin by creating a really simple flask server, that is capable of rendering frontend templates on our behalf. To begin we open up the terminal and install Flask using Python's package manager, as follows:
-=======
-
-title: Integrating TailwindCSS into Flask Apps
-
-description: TailwindCss is a utility-first CSS framework for building frontend applications. This article focuses on how flask developers can use tailwind to quickly design frontend interfaces for their servers.
-
-### Introduction
-TailwindCss is a utility-first CSS framework for building frontend applications, TailwindCss differs from other kinds of CSS frameworks, as it gives the user total control over their design, rather than adding obscure CSS classes to your code, with TailwindCss you use utility classes to create your components, with as much control over every single styling as you want, all without having to ever write a single line of CSS. 
-
-In this article, I'll share how Flask developers can take advantage of TailwindCss' utility classes to build frontend templates for their Flask web apps.
-
-### Pre-Requisites
-For the purposes of demonstration in this article, I'm using python3, and Flask, as well as Javascript package managers (npm or yarn), and I am presuming the reader has basic undersstanding of python and by extension - Flask, and is already quite conversant with TailwindCSS.
-
-- Python3
-- Node.js 12.13.0 or higher
-- npm or yarn
-- Flask
-- Your Favorite text editor
-
-### Building A Simple Flask App
-#### Installing Flask
-We'll begin by creating a really simple flask server, that is capable of rendering frontend templates on our behalf. To begin we open up the terminal and install flask using python's package manager, as follows:
 
 ```bash
 pip install flask
@@ -86,14 +63,22 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 from flask import Flask ,render_template
 
 app = Flask(__name__)
+=======
+>>>>>>> 75334f352401e8a92fe9adb7e1eed6088b62f455
 
 @app.route("/")
 @app.route("/index")
 def index():
 	return render_template("index.html")
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 75334f352401e8a92fe9adb7e1eed6088b62f455
 if __name__ == '__main__':
 	app.run(debug=True)
 ```
@@ -149,21 +134,6 @@ npm install tailwindcss
 ```
 
 Or with yarn:
-=======
-Once the server is running head over to 
-
-`http://localhost:5000/index` to test the server and you should see the "hello world" from the `index.html` file.
-
-![demo1](/engineering-education/integrate-tailwindcss-into-flask/demo1.jpeg)
-
-#### Installing TailwindCss
-Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We  navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll install TailwindCss in there, as follows:
-
-```bash
-npm install tailwindcss
-```
-
-or with yarn:
 ```bash
 yarn add tailwindcss
 ```
