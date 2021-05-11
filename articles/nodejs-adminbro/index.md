@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/nodejs-adminbro/
 title: How To Auto-generate Admin Panels for Node.js with AdminBro
-description: This article guides on how to create powerful Admin Panels in Node.js using AdminBro. Admin Panels allow you to manage data more effectively.
+description: This article guides on how to create powerful Admin Panels in Node.js using AdminBro. Admin Panels allow you to manage data more effectively. Admin Panels are great for handling database queries.
 author: kevin-kimani
 date: 2021-05-10T00:00:00-17:00
 topics: [Node.js]
@@ -210,7 +210,7 @@ At this point, we have the admin interface set up in our application. we need to
 For the entire source code, check this [github repository](https://github.com/KayveTech/AdminBro-Express).
 
 ### Conclusion
-Admin Panels are great for increasing developer productivity, especially in handling database Queries. However, the Node.js framework does not come bundled with one. 
+Admin Panels are great for increasing developer productivity, especially in handling database queries. However, the Node.js framework does not come bundled with one. 
 
 If you are a web developer coming from Python/Django background which has a great Admin Panel integrated, this can be a little disappointing. 
 
