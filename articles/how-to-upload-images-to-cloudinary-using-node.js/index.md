@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/
 title: Uploading Images to Cloudinary using Node.js
-description: In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js.
+description: In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js. We will go over what  Cloudinary is the languages and frameworks is supports, and have a brief introduction to what `.env` files are.
 author: chris-mutua
 date: 2021-05-11T00:00:00-13:30
 topics: [Node.js]
@@ -16,11 +16,13 @@ images:
 ---
 One of the main problems a developer faces during media upload is a quick image and video manipulation and delivery optimization. This can be solved by the use of artificial intelligence (AI) which not only does it do both of these but also automates the process. Cloudinary is a good example of this service.
 <!--more-->
+You can access and upload images to Cloudinary servers remotely on a custom website, locally (using Node.js or Django), or on the Cloudinary webpage. 
 
-You can access and upload images to Cloudinary servers remotely on a custom website, locally (using Node.js or Django), or on the Cloudinary webpage. Cloudinary supports many language formats such as Ruby, PHP (v1 and v2), Python, Node.js, Java, .NET, iOS, and even Android. See some of the framework integrations [here](https://cloudinary.com/documentation).
+Cloudinary supports many language formats such as Ruby, PHP (v1 and v2), Python, Node.js, Java, .NET, iOS, and even Android. 
+
+Take a look at some of the framework integrations [here](https://cloudinary.com/documentation).
 
 ### Cloudinary SDKs
-
 |Client-Side SDKs|Server-Side SDKs|Mobile SDKs|
 |---|---|---|
 |React|PHP SDK|Android|
@@ -31,29 +33,25 @@ You can access and upload images to Cloudinary servers remotely on a custom webs
 | -  |Node.js| -  |
 | -  |.Net| -  |
 
-You can find a comprehensive guide or tutorial on how to upload images to Cloudinary using _Django_ [here](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion). I highly recommend it for _Python_ developers.
+You can find a comprehensive guide or tutorial on how to upload images to Cloudinary using *Django* [here](/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion). I highly recommend it for *Python* developers.
 
 In this tutorial, we are going to learn how to upload an image to Cloudinary using Node.js.
 
 ### Key takeaways
-
 At the end of the tutorial, you will have learned about:
 
-- Getting started with Cloudinary.js
-- Integrating Cloudinary.js in a Node application
-- Uploading an image to Cloudinary
+- Getting started with Cloudinary.js.
+- Integrating Cloudinary.js in a Node.js application.
+- Uploading an image to Cloudinary.
 
 ### Pre-requisites
-
 The basic requirements for this tutorial are:
-
 - Web development basics.
-- A basic IDE installation on the machine. In our case, we shall use [Visual Studio Code](https://code.visualstudio.com/download) (free, easy to use, and very efficient).
+- A basic IDE installation on the machine. In our case, we will be using [Visual Studio Code](https://code.visualstudio.com/download) (free, easy to use, and very efficient).
 - [Node.js](/engineering-education/why-node-js-is-popular/) basics.
 - A stable internet connection.
 
-### Table of Contents
-
+### Table of contents
 - [Create account](#create-account)
 - [Setting up our project](#setting-up-our-project)
 - [Folder structure](#folder-structure)
@@ -66,23 +64,24 @@ The basic requirements for this tutorial are:
 - [Further study](#further-study)
 - [References](#references)
 
-### Create account
+### Create an account
+Cloudinary provides developers with a free account option. Some of the advantages of this account are mentioned in the blog found [here](/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
 
-Cloudinary provides a developer with a free account option. Some of the advantages of this account are mentioned in the blog found [here](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
 Once created proceed to the next steps.
 
 ### Setting up our project
+Create a new directory named **Cloudinary-uploader**. Within the folder, create two new files, `index.js` and `.env` respectively. Open your folder and view it in your IDE. 
 
-Create a new directory named **Cloudinary-uploader**. Within the folder, create two new files, `index.js` and `.env` respectively. Open your folder and view it in your IDE. Open an integrated terminal and run within the folder `npm init -y` to quickly create the `package.json` file.
-Install the needed libraries for our project. These include:
+Open an integrated terminal and within the folder run `npm init -y` to quickly create the `package.json` file. Install the needed libraries for our project. 
 
+These will include:
 - nodemon
 - cloudinary
 - formidable
 - dotenv
 - express
 
-> [formidable.js](https://www.npmjs.com/package/formidable) library was made to focus on video and image uploading and encoding. It is used for parsing form data, mostly file uploads.
+> The [formidable.js](https://www.npmjs.com/package/formidable) library was made to focus on video and image uploading and encoding. It is used for parsing form data, mostly file uploads.
 
 To install all at once, run:
 
@@ -94,7 +93,11 @@ npm i nodemon cloudinary dotenv formidable express
 npm i nodemon cloudinary dotenv formidable express
 ```
 
-> [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. This provides safety when working with API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. You can know more about Environment Variables in Node.js, what are `.env` files and also how to work and configure them [here](/engineering-education/nodejs-environment-variables/).
+> The [dotenv.js](https://www.npmjs.com/package/dotenv) library will enable us to easily and quickly load environment variables from a locally stored .env file into `process.env`. 
+
+This will provide safety when working with the API names and keys in any Node.js project since they are stored away from the main process and are only available when required. It provides safety and security using [The Twelve-Factor App](https://12factor.net/config) methodology. 
+
+You can learn more about Environment Variables in Node.js, what are `.env` files, and how to work and configure them [here](/engineering-education/nodejs-environment-variables/).
 
 Once done you can update any of the packages which were initially installed by running `npm update` in the integrated terminal.
 
@@ -110,7 +113,6 @@ Our folder structure is as shown below:
 ```
 
 ### Configure package.json
-
 Open our `package.json` file and under the "scripts" section, add `start` and `dev` as shown in the code below:
 
 ```json
@@ -144,13 +146,18 @@ Open our `package.json` file and under the "scripts" section, add `start` and `d
     }
 }
 ```
-The scripts in the `package.json` file will specify custom scripts that one can run using `npm`. For more information on `scripts`, please visit [this page](https://docs.npmjs.com/cli/v7/using-npm/scripts). In case you want to do some unit testing, you can specify the testing framework under the 'test' script. You can run the `index.js` file using node by running:
+
+The scripts in the `package.json` file will specify custom scripts that one can run using `npm`. For more information on `scripts`, please visit [this page](https://docs.npmjs.com/cli/v7/using-npm/scripts). 
+
+In case you want to do some unit testing, you can specify the testing framework under the 'test' script. 
+
+You can run the `index.js` file using Node.js by running:
 
 ```bash
 node index.js
 ```
 
-or nodemon by running:
+Or nodemon by running:
 
 ```bash
 nodemon run dev
@@ -159,10 +166,11 @@ nodemon run dev
 In case you obtained the code from a repository, it shall add additional repository configurations indicating where the code is from and where to report any arising issues.
 
 ### Setting up our starting point
-
 Inside the `index.js` file, we shall do the following in a sequential process:
 
-- Requiring modules for this project. This is shown in the code below:
+- Requiring modules for this project. 
+
+These are shown in the code below:
 
 ```javascript
 // Required modules
@@ -177,7 +185,9 @@ const cloudinary = require("cloudinary");
 require('dotenv').config()
 ```
 
-- Setting up our Cloudinary configuration. In it, we shall set three parameters that are stored in the `.env` file. These include the Cloud name (CLOUD_NAME), our API key (API_KEY), and lastly the API secret (API_SECRET). This is shown in the code below:
+- Setting up our Cloudinary configuration. In it, we shall set three parameters that are stored in the `.env` file. These include the Cloud name (CLOUD_NAME), our API key (API_KEY), and the API secret (API_SECRET). 
+
+This is shown in the code below:
 
 ```javascript
 // Cloudinary configuration settings
@@ -189,7 +199,9 @@ cloudinary.config({
 });
 ```
 
-- We shall create a simple Node.js server to run our project in it. In this server, we shall call on a cloudinary function named `upload` to fetch the image in the path selected and to upload it into our cloudinary account. We shall then display the results both in the terminal and in the browser as plain text when the request inside our URL is `/upload` and a `post` method is used. This is the uploaded file's metadata. This is shown below:
+- We shall create a simple Node.js server to run our project in it. In this server, we shall call on a cloudinary function named `upload` to fetch the image in the path selected and to upload it into our cloudinary account. We shall then display the results both in the terminal and in the browser as plain text when the request inside our URL is `/upload` and a `post` method is used. This is the uploaded file's metadata. 
+
+This is shown below:
 
 ```javascript
 //Create a server
@@ -221,7 +233,9 @@ http.createServer((req, res) => {
     }
 ```
 
-- Let us now set our program to return a webpage when it is run. The page shall be formatted with some CSS, bootstrap and Google fonts. It shall contain a heading, file, and button elements inside the body tags. We shall also set our port number to "5000" so that we can access the webpage at `localhost:5000`. This is shown here:
+- Let us now set our program to return a webpage when it is run. The page shall be formatted with some CSS, bootstrap and Google fonts. It shall contain a heading, file, and button elements inside the body tags. We shall also set our port number to "5000" so that we can access the webpage at `localhost:5000`. 
+
+This is shown here:
 
 ```javascript
     // show a file upload form
@@ -290,16 +304,14 @@ http.createServer((req, res) => {
 }).listen(5000);
 ```
 
-### Configure .env file
-
-Open the ".env" file. In it, let us set up our cloudinary name, API key, and API secret. These are all found in the Cloudinary dashboard as shown below:
+### Configure the .env file
+Open the ".env" file. In it, let's set up our cloudinary name, API key, and API secret. These are all found in the Cloudinary dashboard as shown below:
 
 ![Cloudinary-dashboard image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/cloudinary-dashboard.png)
 
 > **Note:** Remember that these are important credentials that allow one to easily access your Cloudinary account. Make sure that they are not exposed anywhere. Don't save them in an online repository by any means. I would rather recommend that you add a `.gitignore` file and include the `.env` file there. Always enable [GitGuardian](https://www.gitguardian.com/) to check for any exposed keys in your project.
 
 The `.env` file format will be as shown:
-
 ```powershell
 CLOUD_NAME=
 API_KEY=
@@ -309,8 +321,9 @@ API_SECRET=
 Copy and paste the credentials directly from your dashboard into the file. Save the file.
 
 ### Run the code
+Now you can proceed to run the code. 
 
-Now you can proceed and run the code. This can be done by running the command below on the terminal:
+This can be done by running the command below on the terminal:
 
 ```bash
 nodemon run dev
@@ -324,21 +337,19 @@ It will look like this:
 
 Select the image by pressing the "Choose File" button then upload it by clicking on the "Upload" button.
 
-If successful, it shall display as shown below. _The metadata will change depending on the file uploaded._
+If successful, it shall display as shown below. *The metadata will change depending on the file uploaded.*
 
 ![Feedback Webpage image](/engineering-education/recieved-file-cloudinary-Node.js.png)
 
-Open your cloudinary site and sign in. Under the dashboard, view the uploaded image.
-You can manipulate it as you please using the onboard AI.
+Open your cloudinary site and sign in. Under the dashboard, view the uploaded image. You can manipulate it as you please using the onboard AI.
 
 > Cloudinary automatically assigns each file uploaded (whether image or video) a unique public_id by default. This can be changed as documented in the documentation found [here](https://cloudinary.com/documentation/upload_images#api_example_6).
 
-You can find the codes in [this](https://github.com/RisoriTofa/Cloudinary-uploader-Node.js) repository.
+You can find the code in [this](https://github.com/RisoriTofa/Cloudinary-uploader-Node.js) repository.
 
 Well done, you have successfully uploaded an image to your Cloudinary account using a simple Node.js program!
 
 ### Conclusion
-
 We have acquired the following knowledge from this tutorial:
 
 - What is Cloudinary.
@@ -346,21 +357,19 @@ We have acquired the following knowledge from this tutorial:
 - How to upload images to Cloudinary using Node.js.
 - Brief introduction to what `.env` files are and their purposes.
 
-### Further Projects
+Happy coding!
 
+### Further projects
 You can further your project by doing the following:
-
 - Setting default cloudinary AI editing to each file as it is uploaded.
 - Uploading and viewing the uploaded images in other languages and SDKs.
 - Set each file to be uploaded using their real name and not a public_id in Node.js as documented [here](https://cloudinary.com/documentation/upload_images#api_example_6).
 
 ### Further study
-
 - What [The Twelve-Factor App](https://12factor.net/config) methodology is, how it works, and its importance.
 - How to secure your repositories using [GitGuardian](https://www.gitguardian.com/).
 
 ### References
-
 The following were used as main references for this tutorial:
 
 - [Cloudinary.js documentation](https://www.npmjs.com/package/cloudinary).
