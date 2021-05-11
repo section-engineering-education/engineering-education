@@ -6,7 +6,7 @@ url: /engineering-education/bayesian-optimization/
 title: A Primer on Bayesian Optimization to Optimize Hyperparameters 
 description: Bayesian optimization can be categorized as a sequential model-based optimization algorithm. It uses the outcome of previous iterations to decide on the next hyperparameters. This article provides a primer on Bayesian optimization.
 author: collins-ayuya
-date: 2021-04-16T00:00:00-22:00
+date: 2021-05-11T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
