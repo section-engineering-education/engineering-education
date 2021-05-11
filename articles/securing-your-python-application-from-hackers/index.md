@@ -43,6 +43,8 @@ If we pass `{"x":"2", "y":"4"}` as our previous code, then the result will be `6
 
 This malicious code will force our calculator to call `os.system` then spawn a [reverse shell](https://www.sans.edu/student-files/presentations/LVReverseShell.pdf) to the IP "10.0.2.15" on PORT "8080".
 
+> It is a private network address and it is not accessible from the internet.
+
 #### Exec()
 
 This function is similar to `eval()` which executes a string or a code object:
