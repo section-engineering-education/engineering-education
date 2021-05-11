@@ -63,22 +63,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-<<<<<<< HEAD
-from flask import Flask ,render_template
-
-app = Flask(__name__)
-=======
->>>>>>> 75334f352401e8a92fe9adb7e1eed6088b62f455
 
 @app.route("/")
 @app.route("/index")
 def index():
 	return render_template("index.html")
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 75334f352401e8a92fe9adb7e1eed6088b62f455
 if __name__ == '__main__':
 	app.run(debug=True)
 ```
