@@ -44,12 +44,6 @@ The next step is to create a simple flask server that will render the frontend t
 Create a sub-folder called `templates` as well; this is where all HTML files will go. Next we'll create another subfolder called `static`. This folder will hold all static files, including CSS files, scripts and images for our frontend templates. When you're done the folder should look like this:
 
 ```bash
-This will install flask neatly for us on our computer, if you already have it installed you can skip this step. You can also choose to install it in a virtual environment if you feel like it.
-
-#### Creating the Flask Server
-The next step is to create a simple flask server that will render the frontend templates for us. Create a new folder (anywhere you wish) to hold our files and create a new file called `app.py` in the folder, as well as a sub-folder called `templates`; this is where all HTML files will go, lastly we'll create another subfolder called `static`, this folder will hold all static files, including CSS files, scripts and images for our frontend templates. When you're done the folder should look like this:
-
-```
 projectfolder/
    - app.py
    - templates/
@@ -104,8 +98,6 @@ Once the server is running head over to:
 ![demo1](/engineering-education/integrate-tailwindcss-into-flask/demo1.JPG)
 
 ### Installing TailwindCss
-Use the init command to setup a new Node.js environment, that will allow us to install TailwindCss using npm or yarn. Now that our server is up and running, let's install Tailwindcss. 
-
 To install Tailwind we can use either yarn or npm (depending on which one you have on your system). We navigate to the `static` folder we created earlier from the terminal using the `cd` command. Once there we'll use the `init` command to setup a new Node.js environment, that will allow us to install TailwindCss using npm or yarn as follows:
 
 ```bash
@@ -130,23 +122,6 @@ yarn add tailwindcss
 ```
 
 If you don't have npm you can install Node.js since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section.
-
-Once this is done you should see that the installation includes some folders in the `static` folder, some of which include:
-
-- node_modules/ : which is where the dependencies for tailwind reside
-
-- package.json
-
-- yarn.lock (I used yarn)
-
-### Adding TailwindCss to our Flask App
-The first step is to add some of the required files in order to get tailwindcss to work. To make things easier, we'll create a new folder called `src` in the `static` folder from earlier, and in the `src` folder we'll add a file called `style.css`.
-
-This is where TailwindCss directives will go, as we will see in a bit. To keep things clear the project folder structure should look as follows:
-
-```files
-
-If you don't have npm you can install Node.js since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section. 
 
 Once this is done you should see that the installation includes some folders in the `static` folder, some of which include:
 
