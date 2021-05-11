@@ -6,7 +6,7 @@ url: /engineering-education/integrate-tailwindcss-into-flask/
 title: Integrating TailwindCSS into Flask Apps
 description: TailwindCss is a utility-first CSS framework for building frontend applications. This article focuses on how flask developers can use tailwind to quickly design frontend interfaces for their servers.
 author: Paul Asalu
-date: 2021-04-26T00:00:00-17:00
+date: 2021-05-10T00:00:00-15:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -31,6 +31,29 @@ Having the following will be needed:
 ### Building a simple Flask app
 #### Installing Flask
 We'll begin by creating a really simple flask server, that is capable of rendering frontend templates on our behalf. To begin we open up the terminal and install Flask using Python's package manager, as follows:
+=======
+
+title: Integrating TailwindCSS into Flask Apps
+
+description: TailwindCss is a utility-first CSS framework for building frontend applications. This article focuses on how flask developers can use tailwind to quickly design frontend interfaces for their servers.
+
+### Introduction
+TailwindCss is a utility-first CSS framework for building frontend applications, TailwindCss differs from other kinds of CSS frameworks, as it gives the user total control over their design, rather than adding obscure CSS classes to your code, with TailwindCss you use utility classes to create your components, with as much control over every single styling as you want, all without having to ever write a single line of CSS. 
+
+In this article, I'll share how Flask developers can take advantage of TailwindCss' utility classes to build frontend templates for their Flask web apps.
+
+### Pre-Requisites
+For the purposes of demonstration in this article, I'm using python3, and Flask, as well as Javascript package managers (npm or yarn), and I am presuming the reader has basic undersstanding of python and by extension - Flask, and is already quite conversant with TailwindCSS.
+
+- Python3
+- Node.js 12.13.0 or higher
+- npm or yarn
+- Flask
+- Your Favorite text editor
+
+### Building A Simple Flask App
+#### Installing Flask
+We'll begin by creating a really simple flask server, that is capable of rendering frontend templates on our behalf. To begin we open up the terminal and install flask using python's package manager, as follows:
 
 ```bash
 pip install flask
@@ -44,6 +67,12 @@ The next step is to create a simple flask server that will render the frontend t
 Create a sub-folder called `templates` as well; this is where all HTML files will go. Next we'll create another subfolder called `static`. This folder will hold all static files, including CSS files, scripts and images for our frontend templates. When you're done the folder should look like this:
 
 ```bash
+This will install flask neatly for us on our computer, if you already have it installed you can skip this step. You can also choose to install it in a virtual environment if you feel like it.
+
+#### Creating the Flask Server
+The next step is to create a simple flask server that will render the frontend templates for us. Create a new folder (anywhere you wish) to hold our files and create a new file called `app.py` in the folder, as well as a sub-folder called `templates`; this is where all HTML files will go, lastly we'll create another subfolder called `static`, this folder will hold all static files, including CSS files, scripts and images for our frontend templates. When you're done the folder should look like this:
+
+```
 projectfolder/
    - app.py
    - templates/
@@ -58,12 +87,15 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+=======
+from flask import Flask ,render_template
+
+app = Flask(__name__)
+
 @app.route("/")
 @app.route("/index")
 def index():
 	return render_template("index.html")
-
-
 if __name__ == '__main__':
 	app.run(debug=True)
 
@@ -120,11 +152,41 @@ npm install tailwindcss
 ```
 
 Or with yarn:
+=======
+Once the server is running head over to 
 
+`http://localhost:5000/index` to test the server and you should see the "hello world" from the `index.html` file.
+
+![demo1](/engineering-education/integrate-tailwindcss-into-flask/demo1.jpeg)
+
+#### Installing TailwindCss
+Now that our server is up and running, let's install Tailwindcss. To install tailwind we can use either yarn or npm (depending on which one you have on your system). We  navigate to the `static` folder we created earlier from the terminal using the `cd` command, once there we'll install TailwindCss in there, as follows:
+
+```bash
+npm install tailwindcss
+```
+
+or with yarn:
 ```bash
 yarn add tailwindcss
 ```
 
+If you don't have npm you can install Node.js since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section.
+
+Once this is done you should see that the installation includes some folders in the `static` folder, some of which include:
+
+- node_modules/ : which is where the dependencies for tailwind reside
+
+- package.json
+
+- yarn.lock (I used yarn)
+
+### Adding TailwindCss to our Flask App
+The first step is to add some of the required files in order to get tailwindcss to work. To make things easier, we'll create a new folder called `src` in the `static` folder from earlier, and in the `src` folder we'll add a file called `style.css`.
+
+This is where TailwindCss directives will go, as we will see in a bit. To keep things clear the project folder structure should look as follows:
+
+```files
 If you don't have npm you can install nodeJs since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section. 
 Once this is done you should see that the installation includes some folders in the `static` folder, some of which include:
 
