@@ -29,6 +29,8 @@ To understand and follow this article, you will need:
 3. Using APIs on Vuex
 4. Conclusion
 
+First, if you don't know how to create a vue project, check out this [documentation](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) to walk you through the process.
+
 There are two methods of consuming/using an API in a Vue.js project. These methods are:
 
 #### Using Axios to consume APIs
@@ -44,28 +46,30 @@ To use Axios on your project, you need to first install it. This can be done in 
 
 With npm:
 
-
+```
     npm i axios
-
+```
 With yarn:
 
-
+```
     yarn add axios
-
+```
 Next, you import axios in your `src/main.js` file
 
-
+```
     import axios from 'axios';
     
     Vue.prototype.$http = axios;
+```
 
 **How to make an API request and display data using Axios.**
 
-We will make the API request using a `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running asynchronously therefore, we use a promise based function with keywords `async` and `await`. However, we also need to test for errors, this is done with the `try` method and the errors that is detected is handled with the `catch` method.
+We will make the API request using a `get` method. A get method is used to request data from a resource, the resource in this context is our API.  We want this API request running asynchronously therefore, we use a promise based function with keywords [async/await](https://github.com/section-engineering-education/engineering-education/pull/2235). However, we also need to test for errors using the [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) method. `try` is used to check for errors while `catch` is used to handle all errors that are detected.
+
 
 Copy the code below to your `App.vue` file
 
-
+```
     <template></template>
     
     <script>
@@ -90,10 +94,11 @@ Copy the code below to your `App.vue` file
        }
     }
     </script>
+```
 
 After requesting for data from the API, you will need to call it on a lifecycle hook. Here we will use the `created()` lifecycle hook, this is because we will be able to access reactive data and events that are active with the `created` hook.
 
-
+```
     <template></template>
     
     <script>
@@ -124,10 +129,11 @@ After requesting for data from the API, you will need to call it on a lifecycle 
       },
     }
     </script>
+```
 
 We can now display the data in the template by looping through the posts using [v-for](https://vuejs.org/v2/guide/list.html) directive
 
-
+```
     <template>
          <div>
              <div v-for="post in posts">
@@ -162,7 +168,7 @@ We can now display the data in the template by looping through the posts using [
       },
     }
     </script>
-
+```
 
 
 #### Using Fetch API method
@@ -171,7 +177,7 @@ We can now display the data in the template by looping through the posts using [
 
 To make request with the Fetch API, you just have to make the request directly with the `fetch` object and follow all other steps used in the axios call above.
 
-
+```
     <template>
          <div>
              <ul v-for="post in posts">
@@ -206,7 +212,7 @@ To make request with the Fetch API, you just have to make the request directly w
     }
     </script>
 
-
+```
 #### Creating APIs in Vuex
 
 [Vuex](https://vuex.vuejs.org/) is a state management library for vue.js applications. It serves as a centralized store for all components in an application. 
@@ -215,22 +221,23 @@ To make request with the Fetch API, you just have to make the request directly w
 To make use of VueX, you will first need to install the VueX package on your Vue application.
 This can be done during the installation of Vue CLI via “manual installation”: 
 
-
+```
     vue create project
-
+```
 OR
 Added to an already existing vue.js project. In your terminal, write the code below:
 
-
+```
     npm install vuex --save
-
+```
 then in your `store` folder, access the `index.js` file and write the following code
 
-
+```
     import Vue from 'vue'
     import Vuex from 'vuex'
     
     Vue.use(Vuex);
+```
 
 You will also need to install and import axios if you have not already done that. Check the earlier
  part of this tutorial for the steps.
@@ -239,7 +246,7 @@ You will also need to install and import axios if you have not already done that
  
  We will be working with the `store/index.js` file.
 First, we create a `state` object which will contain all the application level state. It serves as the `data` object for store in a vuex project.
-
+```
 
     export default new Vuex.Store({
      state: {
@@ -248,29 +255,31 @@ First, we create a `state` object which will contain all the application level s
     
     })
     
-
+```
  
 Next, we create a `getters` property. Getters are like `computed` properties for stores. It is used to compute derived state based on store state. In this tutorial, we will use it to return posts in the state.
  
-
+```
     getters: {
             posts: state => {
                 return state.posts;
             }
         },
+```
 
 Next, we create a `mutation` property. The mutation property is were we can actually change state in Vuex store. There are very similar to events were we perform actual state modifications.
-
+```
 
     mutations: {
             SET_Item (state, posts) {
                 state.posts = posts
             }
     },
+```
 
 Now we can call our API in the `actions` property. Actions are similar to mutations only that actions commit mutations instead of mutating the state and also actions can contain asynchronous operations. Let’s go ahead with the API call.
 
-
+```
     actions: {
            async loadPosts ({ commit }) {
              try {
@@ -286,38 +295,38 @@ Now we can call our API in the `actions` property. Actions are similar to mutati
            }
        },
     
-
+```
 We can display data in our vue file. To do that, some steps need to be taken:
 
 1. Import `mapState` from vuex, this is to help generate computed getter functions for us.
 
-
+```
     <script>
     
     import { mapState } from 'vuex';
     
-
+```
 
 2. Call the API on a lifecycle hook `mounted` and use `dispatch` method to call the action.
 
-
+```
     mounted () {
             this.$store.dispatch('loadPosts')
         },
-
+```
 
 3. Add mapState on your computed:
 
-
+```
     computed: mapState([
             'posts'
       ]),
     </script>
-
+```
 
 4. Finally display data on your template.
 
-
+```
     <template>
          <div>
              <ul v-for="post in posts">
@@ -325,6 +334,8 @@ We can display data in our vue file. To do that, some steps need to be taken:
              </ul>
           </div>
     </template>
+```
+
 #### CONCLUSION
 
 In this tutorial, we have looked at two ways to consume APIs in a vue.js project. Both methods of consuming APIs are similar in many ways and both get the job done. However, it is advised to use Axios for more complex request as it allows multiple configuration of multiple request in one place. 
