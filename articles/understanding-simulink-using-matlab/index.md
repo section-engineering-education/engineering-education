@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /engineering-education/understanding-simulink-using-matlab/
 title: Understanding Simulink using Matlab
-description: In this article, we will learn how to use Simulink then implement some waves as examples.
+description: In this tutorial, we will learn how to fetch blocks & functions from the Simulink library browser. We will also learn how to use the sum & product blocks to connect multiple waves and display them on a scope. 
 author: mohamed-alghadban
-date: 2021-04-17T00:00:00-13:00
+date: 2021-05-11T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,23 +14,26 @@ images:
   - url: /engineering-education/understanding-simulink-using-matlab/hero.png
     alt: Understanding Simulink using Matlab Image
 ---
-In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves & functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.
+In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves, & functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.
 <!--more-->
 ### Introduction
-According to [Wikipedia](https://en.wikipedia.org/wiki/Simulink), **Simulink** is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multi-domain dynamical systems. Its primary interface is a graphical block diagramming tool and a customizable set of block libraries. It offers tight integration with the rest of the MATLAB environment and can either drive MATLAB or be scripted from it. Simulink is widely used in automatic control and digital signal processing for multi-domain simulation and model-based design.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Simulink), **Simulink** is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multi-domain dynamical systems. Its primary interface is a graphical block diagramming tool and a customizable set of block libraries. 
+
+It offers tight integration with the rest of the MATLAB environment and can either drive MATLAB or be scripted from it. Simulink is widely used in automatic control and digital signal processing for multi-domain simulation and model-based design.
 
 ### Table of contents
-- Understand the Simulink library browser.
-- Perform logical & arithmetic operations on waves.
+To follow this article along - the reader will need the following:
+- A basic understanding of the Simulink library browser.
+- Be able to perform logical & arithmetic operations on waves.
 - Plot singular & compounded waves.
 
 ### Prerequisites
 - A basic understanding of any programming language.
-- Matlab installed on your system, you can download it from [here](https://www.mathworks.com/downloads/).
+- Have Matlab installed on your system, you can download it from [here](https://www.mathworks.com/downloads/).
 
 You can also get a free Simulink trial from [here](https://www.mathworks.com/campaigns/products/trials.html?prodcode=SL&s_tid=SL_B_pers_exclgetters_trial_2).
 
-If you are new to Matlab, you can check [this tutorial](https://www.section.io/engineering-education/getting-started-with-matlab/) which will help you understand the basic concepts of it.
+If you are new to Matlab, you can check [this tutorial](/engineering-education/getting-started-with-matlab/) which will help you understand the basic concepts of it.
 
 ### Simulink library browser
 The Simulink *library browser* will provide blocks, waves, functions, models, and other useful tools that would help you with your simulation.
@@ -42,8 +45,7 @@ To open the Library Browser, click on the Library Browser button in the toolbar 
 ### Let's simulate!
 Let's start with a simple [sine wave](https://en.wikipedia.org/wiki/Sine_wave): `Y = 2sin(4x)`.
 
-In order to simulate a wave, you need to use the library browser to fetch the following:
-
+In order to simulate a wave, you'll need to use the library browser to fetch the following:
 - A Sin wave from Simulink > Sources > Sin wave.
 - A Scope to implement the wave from Simulink > Commonly used blocks.
 
@@ -90,7 +92,7 @@ We will simulate the following Compounded wave.
 
 Drag & drop the blocks and double click on the sin waves to edit their properties.
 
-**Note** that in Simulink you can't add cos wave, so to change that you need to add pi/2 to the phase of a sin wave to change it to a cos wave.
+>**Note** that in Simulink you can't add cos wave, so to change that you need to add pi/2 to the phase of a sin wave to change it to a cos wave.
 
 ![Waves parameters](/engineering-education/understanding-simulink-using-matlab/picture8.png).
 
@@ -107,7 +109,7 @@ Click on the run button from the Simulink toolbar, then double click on the scop
 ![Scope waves](/engineering-education/understanding-simulink-using-matlab/picture9.jpg).
 
 ### Conclusion
-In this tutorial, we have learned how to fetch blocks & functions from the Simulink library browser. We have also learned how to use the sum & product blocks to connect multiple waves and display them on a scope. Don’t forget to test out the waves with different Amplitudes & frequencies to fully understand how it works.
+In this tutorial, we have learned how to fetch blocks & functions from the Simulink library browser. We have also learned how to use the sum & product blocks to connect multiple waves and display them on a scope. Don’t forget to test out the waves with different amplitudes & frequencies to fully understand how it works.
 
 Happy simulation!
 
