@@ -3,7 +3,7 @@
   <div class="section-container enged-listing-posts-container">
     <div class="enged-listing-posts-content">
       <ul class="list-unstyled xs-mb-80">
-        {{- $pages := where .Site.Pages "Params.layout" "articles" -}}
+        {{- $pages := where .Site.Pages "Params.layout" "engineering-education" -}}
         {{- if .Data.Term -}}
         {{- $terms := slice .Data.Term }}
         {{- $pages = where $pages ".Params.topics" "intersect" $terms -}}

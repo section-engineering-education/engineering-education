@@ -32,7 +32,7 @@
         <ul class="list-flex xs-mt-8 topics">
           <li class="xs-mr-6 text-18-regular">Topics:</li>
           {{ range . }}
-          {{- $topicURLparts :=  slice "engineering-education" "topic" (urlize .) -}}
+          {{- $topicURLparts :=  slice "topic" (urlize .) -}}
           {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
           <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="{{ $topicURL }}">{{ . }}</a></li>
           {{ end }}
