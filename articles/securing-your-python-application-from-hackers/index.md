@@ -93,22 +93,27 @@ The output is:
 ['__builtins__']
 ```
 
-If you want to provide a specific method along with the __builtins__ then you need to do the following:
+If you want to provide a specific methods to use, then you need to do the following:
 
 ```python
 from math import *
-exec('print(dir())', {'squareroot': sqrt})
 
-exec('print(squareroot(16))', {'squareroot': sqrt})
+func = input("Enter the math function:")
+try:
+     exec(func, {"squareroot": sqrt,"__builtins__": None, "print": print})
+        
+except Exception as ex:
+     print(ex)
 ```
 
-This will give the user the ability to execute the `sqrt` method by using `squareroot()`. However, if he tries to use `sqrt()` then it will raise an exception.
+This will give the user the ability to execute the `sqrt` method by using `squareroot()`. However, if he tries to use `sqrt()` then it will raise an exception. And he can't use any of the __builtins__ functions except `print()`.
 
-The output here is:
+Now if we run our code and pass `print(squareroot(16))` as input. Then the result will be `4`.
+
+But if we try to use `print(max(1,2))` which is a built-in function and is not accessible to the exec() function. Then the result will be:
 
 ```python
-['__builtins__', 'squareRoot']
-4.0
+'NoneType' object is not subscriptable
 ```
 
 #### Input()
