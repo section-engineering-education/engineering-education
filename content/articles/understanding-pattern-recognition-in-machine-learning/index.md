@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-pattern-recognition-in-machine-learning/
+url: /understanding-pattern-recognition-in-machine-learning/
 title: Understanding Pattern Recognition in Machine Learning
 description: In this article, we will go through the basics of pattern recognition in machine learning. This article will provide an overview of how this phenomenon works and highlight some of the algorithms used in pattern recognition.   
 author: ann-waweru

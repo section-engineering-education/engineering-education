@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/what-is-an-abi/
+url: /what-is-an-abi/
 title: What is an ABI?
 description: The application binary interface (ABI) orchestrates how code binaries works together. The ABI deals with the implementation details of code i.e. what code turns into when it's compiled.
 author: zack-jorquera

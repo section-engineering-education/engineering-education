@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/getting-started-with-selenium-automation-testing/
+url: /getting-started-with-selenium-automation-testing/
 title: Getting Started with Selenium Automation Testing
 description: This article will help the readers set up Selenium with Java and write their first test using Selenium. It also explains how Selenium WebDriver can be configured with Eclipse.
 author: onesmus-mbaabu

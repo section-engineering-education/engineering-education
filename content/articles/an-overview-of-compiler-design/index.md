@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-compiler-design/
+url: /an-overview-of-compiler-design/
 title: An Overview of Compiler Design
 description: This article will be an overview of the fundamental aspects of Compiler Design such as the Phases of a Compiler and its real-life applications.
 author: onesmus-mbaabu

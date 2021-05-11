@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/intelligent-agents-in-ai/
+url: /intelligent-agents-in-ai/
 title: Intelligent Agents in Artificial Intelligence
 description: This article will cover intelligent agents in artificial intelligence (AI) and the 3 main components such as architecture, agent function, and agent program.
 author: onesmus-mbaabu

@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/automation-testing-in-selenium/
+url: /automation-testing-in-selenium/
 title: An Overview on Automation Testing with Selenium
 description: This article will be an overview on automation testing using Selenium. We will go over the components of Selenium by highlighting the main types of testing done by Selenium and what they are used for. 
 author: onesmus-mbaabu

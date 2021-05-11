@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/image-classifier-keras/
+url: /image-classifier-keras/
 title: How to Build an Image Classifier with Keras
 description: In this article, we will learne how to build an image classifier using Keras. We will apply data augmentation to increase the size of our dataset. We will be able to visualize our training images.Image classification helps us recognize and identify images. 
 author: iniabasi-affiah

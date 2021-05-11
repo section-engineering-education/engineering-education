@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/an-overview-of-teradata-rdbms/
+url: /an-overview-of-teradata-rdbms/
 title: An Overview of Teradata RDBMS (Relational Database Management System)
 description: This article will be an introduction to Teradata. Which is an open RDBMS (relational database management system) that runs on operating systems such as Windows, Unix, and Linux. Teradata supports huge data warehouse applications.
 author: onesmus-mbaabu

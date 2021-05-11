@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/understanding-software-development-life-cycle/
+url: /understanding-software-development-life-cycle/
 title: Understanding the Software Development Life Cycle
 description: This article will take a reader through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 
 author: onesmus-mbaabu

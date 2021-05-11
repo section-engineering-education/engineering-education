@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-yolo-algorithm-for-object-detection/
+url: /introduction-to-yolo-algorithm-for-object-detection/
 title: Introduction to YOLO Algorithm for Object Detection
 description: This article will cover the basics of the YOLO algorithm for object detection. It will take readers through aspects such as the importance, working, and application of this algorithm.  
 author: grace-karimi

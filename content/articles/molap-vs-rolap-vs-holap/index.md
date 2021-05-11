@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/molap-vs-rolap-vs-holap/
+url: /molap-vs-rolap-vs-holap/
 title: MOLAP vs ROLAP vs HOLAP in Online Analytical Processing (OLAP)
 description: This article will be an introduction OLAP consists of three data models - MOLAP, ROLAP, and HOLAP. These data models differ mainly in terms of data storage and technique. This article provides a comparison of these models to improve our understanding of OLAP in data warehousing. 
 author: onesmus-mbaabu

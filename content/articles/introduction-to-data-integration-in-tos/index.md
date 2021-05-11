@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-data-integration-in-tos/
+url: /introduction-to-data-integration-in-tos/
 title: Introduction to Data Integration in Talend Open Studio
 description: This article will provide a step-by-step explanation of how Talend Open Studio application can be installed and provides an overview of data integration.
 author: onesmus-mbaabu

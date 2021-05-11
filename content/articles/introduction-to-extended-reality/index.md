@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/introduction-to-extended-reality/
+url: /introduction-to-extended-reality/
 title: Introduction to Extended Reality
 description: Extended reality encompasses three main pillars of immersive technology - Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR).
 author: onesmus-mbaabu

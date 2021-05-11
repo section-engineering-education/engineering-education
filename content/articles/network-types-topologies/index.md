@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/network-types-topologies/
+url: /network-types-topologies/
 title: Introduction to Network Types and Network Topologies
 description: This article will go over an introduction to network types and network topologies, some of their features, disadvantages, and advantages.
 author: kanishkvardhan-a-n
