@@ -86,8 +86,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
-=======
 from flask import Flask ,render_template
 
 app = Flask(__name__)
@@ -98,7 +96,6 @@ def index():
 	return render_template("index.html")
 if __name__ == '__main__':
 	app.run(debug=True)
-
 ```
 
 The code block above creates a simple server with one endpoint (or route) that renders (or displays) a web page, that is supposed to be from a file called `index.html` as seen in the code. However, we haven't created that file yet. 
@@ -186,18 +183,29 @@ The first step is to add some of the required files in order to get tailwindcss 
 
 This is where TailwindCss directives will go, as we will see in a bit. To keep things clear the project folder structure should look as follows:
 
-```files
-If you don't have npm you can install nodeJs since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section. 
+```bash
+projectfolder/
+   - app.py
+   - templates/
+   - static/
+     - src/
+       - style.css
+```
+
+If you don't have npm you can install Node.js since it comes with npm, or you can look at the yarn docs [here](https://classic.yarnpkg.com/en/docs/install#windows-stable) under the alternatives section. 
+
 Once this is done you should see that the installation includes some folders in the `static` folder, some of which include:
 
-* node_modules/ : which is where the dependencies for tailwind reside
+- node_modules/ : which is where the dependencies for tailwind reside
 
-* package.json
+- package.json
 
-* yarn.lock (I used yarn)
+- yarn.lock (I used yarn)
 
 #### Adding TailwindCss to our Flask App
-The first step is to add some of the required files in order to get tailwindcss to work. To make things easier, we'll create a new folder called `src` in the `static` folder from earlier, and in the `src` folder we'll add a file called `style.css`, and this is where tailwindCss directives will go, as we will see in a bit. To keep things clear the project folder structure should look as follows:
+The first step is to add some of the required files in order to get tailwindcss to work. To make things easier, we'll create a new folder called `src` in the `static` folder from earlier, and in the `src` folder we'll add a file called `style.css`, and this is where tailwindCss directives will go, as we will see in a bit. 
+
+To keep things clear the project folder structure should look as follows:
 
 ```
 projectfolder/
@@ -220,7 +228,6 @@ These are called preprocessor directives by the documentation, and you can think
 Before we generate the CSS lets prepare a file where it should be dumped in. In the `static` folder we'll create another new folder called `css` and in here all our stylesheets will go, including the one we're about to generate. In this folder we'll create a new file called `main.css` and this is where our tailwind utility classes will go.
  
 ##### Compiling the preprocessor directives to generate CSS
-
 In order to generate, the CSS from the preprocessor directives, we'll need to issue a command from the terminal using `npx` which is a tool that comes with npm (so ensure you have npm installed, you probably already do since node is installed). Next we'll run the following command to compile and output the result into the `main.css` for our usage.
 
 ```bash
@@ -236,7 +243,6 @@ Now that we have generated the tailwind css, we can now use the utility classes 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
