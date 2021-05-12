@@ -27,16 +27,16 @@ In this tutorial, I'll help you avoid those mistakes which might make your progr
 
 This tutorial will cover:
 - [Dangerous functions and how to protect your code](#Dangerous-functions)
-  - [Eval()](#Eval())
-  - [Exec()](#Exec())
-  - [Input()](#Input())
+  - [Eval()](#function1)
+  - [Exec()](#function2)
+  - [Input()](#function3)
 - [String formatting exploiting](#String-formatting-exploiting)
 
 ### Dangerous functions
 
 Some functions are dangerous that can be used to perform a sort of code injection or an authentication bypass. Let's put ourselves in the hacker's shoes to think like him and learn how to protect our code. 
 
-#### Eval()
+#### Eval() <a name="function1"></a>
 
 Python’s `eval()` gives you the ability to pass a string to execute it as code. For example, `eval("2 ** 8")` will return `256`.
 Let's make a simple python app:
@@ -71,7 +71,7 @@ This malicious code will force our calculator to call `os.system` then spawn a [
 
 > 10.0.2.15 is a [private network address](https://whatismyipaddress.com/private-ip) and it is not accessible from the internet.
 
-#### Exec()
+#### Exec() <a name="function2"></a>
 
 This function is similar to `eval()` which executes a string or a code object:
 
@@ -145,7 +145,7 @@ But if we try to use `print(max(1,2))` (which is a built-in function in the `mat
 'NoneType' object is not subscriptable
 ```
 
-#### Input()
+#### Input() <a name="function3"></a>
 
 You can find this vulnerability only in [Python 2](https://www.python.org/downloads/release/python-272/), not in [Python 3](https://www.python.org/downloads/).
 
