@@ -1,12 +1,18 @@
 Typescript is a superset of JavaScript with additional features such as static types checking. Typescript is gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages for building extensive applications.
 
-According to the stack overflows survey, it ranks as the seventh most popular language. Stack overflow survey also indicated that Typescript is the second most loved language with 61.7% votes. Just above popular languages such as Django and Kotlin, JavaScript, SQL, etc. Popular apps such as Slack are on the Typescript. Just like JavaScript, it supports numerous frameworks such as Node.js.
+According to the [stack overflow 2020 survey](https://insights.stackoverflow.com/survey/2020), Typescript is the second most beloved language with 61.7% votes. Just above popular languages such as Django and Kotlin, JavaScript, SQL, etc. Popular apps such as Slack are on the Typescript.
+
+![The most beloved language](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/the-most-beloved-language.png)
+
+[Image source](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
+
+Just like JavaScript, it supports numerous frameworks such as Node.js.
 
 ### Goal
 
 The main advantage of using both Typescript and Node.js together is to take the full benefits that this two have. Typescript is well known for supporting Static Typing to detect code errors during typing. It helps you catch errors at an early stage of development, creating a faster application development pipeline, unlike Node.js (JavaScript), where you only detect errors during the application runtime. Typescript is a good choice when building extensive applications.
 
-On the side, node.js is well known for its diverse open-source libraries, multi-threading ability, Asynchronous, and Event-Driven code execution, being fast and light, etc.
+On the side, Node.js is well known for its diverse open-source libraries, multi-threading ability, Asynchronous, and Event-Driven code execution, being fast and light, etc.
 
 Check out these two guides and learn more about the popularity two.
 
@@ -24,7 +30,7 @@ This article will explain how to use Typescript with Node.js Framework. We'll cr
 
 ### Installing Typescript
 
-Unlike JavaScript, Typescript doesn't run directly on the browser. To execute any Typescript written code, you need a typescript compiler. This will compile Typescript into JavaScript. This way, it will be easier to executed and run the typescripts on a browser. Since we are using Node.js, we will install Typescript from NPM using the command below.
+Unlike JavaScript, Typescript doesn't run directly on the browser. To execute any Typescript written code, you need a Typescript compiler. This will compile Typescript into JavaScript. This way, it will be easier to executed and run the Typescripts on a browser. Since we are using Node.js, we will install Typescript from NPM using the command below.
 
 ```bash
 npm install -g Typescript
@@ -32,7 +38,7 @@ npm install -g Typescript
 
 Adding the `–g` flag to install the packages globally. That way, Typescript is available to any Node.js project.
 
-### Step by step guide
+### A step by step guide
 
 #### Step 1: Initialize Node.js
 
@@ -42,6 +48,7 @@ To start a Node.js project, create a project folder and run `npm init`. Follow t
 In this application, we are going to use the following Node.js libraries.
 
 - **TypeScript**: TypeScript compiler with static set type definitions.
+- **Ts-node:** allow us to run and configure Typescript execution environments.
 - **Express**: Node.js web application framework for setting and managing web-based server.
 - **@types/express**: Type definitions for Express
 - **Morgan**: A Node.js HTTP request logger middleware for Node.js.
@@ -53,7 +60,7 @@ In this application, we are going to use the following Node.js libraries.
 To install all these libraries, run the following command.
 
 ```bash
-npm install typescript express @types/express morgan @types/morgan axios @types/axios nodemon
+npm install typescript ts-node express @types/express morgan @types/morgan axios @types/axios nodemon
 ```
 
 #### Step 3: Initialize Typescript
@@ -109,11 +116,11 @@ Your project files and subfolders should be set up as shown below.
             posts.ts
 ```
 
-Create the source inside your project directory. The source folder will include all the `.ts` files the application needs to run, as explained earlier.
+Create the source folder inside your project directory. The source folder will include all the `.ts` files the application needs to run, as explained earlier.
 
 **Setting up controllers**
 
-Create the controllers' folder, in it have the posts.ts file. The file will handle all the logic, i.e., getting posts, getting a single post, updating a post, deleting a post, and creating a post.
+Create the controllers' folder, in it have the `posts.ts` file. This module will handle all the  API logic, i.e., getting posts, getting a single post, updating a post, deleting a post, and creating a post.
 
 ```ts
 /** source/controllers/posts.ts */
@@ -133,7 +140,6 @@ const getPosts = async (req: Request, res: Response, next: NextFunction) => {
     // get some posts
     let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
     let posts: [Post] = result.data;
-
     return res.status(200).json({
         message: posts
     });
@@ -147,7 +153,6 @@ const getPost = async (req: Request, res: Response, next: NextFunction) => {
     // get the post
     let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
     let post: Post = result.data;
-
     return res.status(200).json({
         message: post
     });
@@ -179,7 +184,7 @@ const deletePost = async (req: Request, res: Response, next: NextFunction) => {
     let response: AxiosResponse = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
     // return response
     return res.status(200).json({
-        message: response.data
+        message: 'post deleted successfully'
     });
 };
 
@@ -202,9 +207,17 @@ const addPost = async (req: Request, res: Response, next: NextFunction) => {
 export default { getPosts, getPost, updatePost, deletePost, addPost };
 ```
 
+We include all the necessary API methods such as;
+
+- `getPosts` - a request to fetch all posts in the list.
+- `getPost` - a request to fetch a single ost by id.
+- `updatePost` - a request to update a post with new values.
+- `deletePost` - a request to delete an existing post.
+- `addPost` - a request to add a new post to the existing list.
+
 **Adding routes**
 
-Create the routes folder, in it have the posts.ts file. The file connects routes to their controllers.
+Create the routes folder, in it have the `posts.ts` file. The file connects routes to their controllers.
 
 ```ts
 /** source/routes/posts.ts */
@@ -221,9 +234,11 @@ router.post('/posts', controller.addPost);
 export = router;
 ```
 
+Define all the necessary routes to handle the respective API endpoints, such as GET, POST, PATCH, AND DELETE (as defined in the API controller module).
+
 **Setting the server**
 
-The server.ts file is responsible for setting up the server. This involves express middlewares, the routes, and also starting the server.
+The `server.ts` file is responsible for setting up the server. This involves express middlewares, the routes, and also starting the server.
 
 ```ts
 /** source/server.ts */
@@ -253,7 +268,6 @@ router.use((req, res, next) => {
         res.header('Access-Control-Allow-Methods', 'GET PATCH DELETE POST');
         return res.status(200).json({});
     }
-
     next();
 });
 
@@ -263,7 +277,6 @@ router.use('/', routes);
 
 router.use((req, res, next) => {
     const error = new Error('not found');
-
     return res.status(404).json({
         message: error.message
     });
@@ -271,7 +284,7 @@ router.use((req, res, next) => {
 
 /** Server */
 const httpServer = http.createServer(router);
-const PORT: any = process.env.PORT ?? 3030;
+const PORT: any = process.env.PORT ?? 6060;
 httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
 ```
 
@@ -283,6 +296,75 @@ Start the development server by running:
 npm run dev
 ```
 
+this will start the server as shown below;
+
+![The ts server](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/server.png)
+
 #### Step 7: Testing the API with Postman
+Postman is an interactive web-based APIs testing platform. We will test all the API endpoints as we defined earlier in the routing module.
 
 1. **Fetch all posts**
+
+Go over to postman and open a tab, select `GET` and enter the request URL as `http://localhost:6060/posts`. Click send to send this request.
+
+![A get request with Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-get-request.png)
+
+This will fetch all the posts and send a response back to the Postman console. The response comprises all posts as listed in the `https://jsonplaceholder.typicode.com/posts`.
+
+![Posts response from Postman](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/posts-response.png)
+
+2. **Fetch a single post**
+
+Just like fetching all the posts, you can opt only to fetch a single post. This time the request URL will be `http://localhost:5000/posts/:id`. Where the `:id` is the id on the post you want to get. Let's say, fetch the post where id is 1, the requesting URL will be `http://localhost:6060/posts/1`. This should return a response of a single post.
+
+![Fetch a single post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/single-post.png)
+
+1. **Update a post**
+
+Let's say you wanted to change some values of a single post, such as the title or the post's body. In this case, you're sending an update request. In the Postman methods dropdown, select `PUT`. Enter the requesting URL as  `http://localhost:6060/posts/:id`, where `:id` the id of the post you want to update.
+
+Head over to the body tab, select row and
+In the body tab below, click on `raw` and `JSON` on the right dropdown.
+
+![Postman put method](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/put.png)
+
+In the space provided, enter the following (Feel free to change the values for `title` and `body`), and click `send`.
+
+```js
+{
+"title":"Another post title",
+"body":"Another post body"
+}
+```
+
+This should return a response to the Postman console, as shown below.
+![Update a post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/update-a-post.png)
+
+4. **Delete a post**
+
+To delete a post, select `DELETE` in the Postman methods dropdown menu. Enter the requesting URL as `http://localhost:6060/posts/:id`. Where is `:id` any id of the post you want to delete. Then click send.
+
+![delete_post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/delete-post.png)
+
+This will return the following response.
+
+![A deleted post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-deleted-post.png)
+
+5. **Add a new post**
+
+Select `POST` in the Postman methods dropdown menu. In the URL section, enter `http://localhost:6060/posts`, In the tab below, select body, click `raw`, select `JSON` on the right end dropdown menu and enter;
+
+```js
+{
+"title":"New post",
+"body":"New post body"
+}
+```
+
+![A new post](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post.png)
+
+Feel free to change the values of `title` and `body`. Click send, and the following response should be returned back in the Postman console.
+
+![A new post added](/engineering-education/create-a-simple-rest-api-application-using-typescript-and-nodejs/a-new-post-added.png)
+
+That's all for this tutorial. Happy coding! 💻😀
