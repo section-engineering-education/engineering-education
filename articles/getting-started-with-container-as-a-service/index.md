@@ -20,11 +20,11 @@ Before reading any further, for an introduction to container technology, you can
 
 ### Table of content
 This article will cover:
-- [What is Container as a Service?](#what-is-container-as-a-service)
-- [Why Container as a Service?](#why-container-as-a-service)
+- [What is Container as a Service?](#what-is-container-as-a-service-(Caas))
+- [Why Container as a Service?](#Why-CaaS)
 - [Benefits of Container as a Service](#Benefits-of-container-as-a-service)
-- [Container as a Service tools](#Container-as-a-service-tools)
-- [Working with Amazon EC2 Container Service](#Working-with-AmazonEC2-container-service)
+- [Container as a Service tools](#The-container-as-a-service-tool)
+- [Working with Amazon EC2 Container Service](#Working-with-Amazon-Elastic-Container-Service-(ECS))
 
 ### What is Container as a Service (CaaS)
 Tasks such as configuring, uploading, scaling, and migrating containers in cloud environments usually become overwhelming, more so when performed on a significant scale level. 
