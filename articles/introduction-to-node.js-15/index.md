@@ -34,11 +34,11 @@ Node.js improvements:-
 
  **NPM 7**
 
-Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of this update. NPM workspaces are the most important aspect since they mark the beginning of built-in support for building and managing multiple NPM packages in a single file system. Developers who are already familiar with the Yarn package manager or Lerna should find NPM's workspace implementation identical. NPM workspaces are relatively simple to set up. Start by arranging NPM package files on the file system, build a top-level package. Son that refers to each of these files, start running commands through all NPM packages.
+Thanks to a slew of new features, NPM 7 is likely to be the biggest highlight of this update. NPM workspaces are the most important aspect since they mark the beginning of built-in support for building and managing multiple NPM packages in a single file system. Developers who are already familiar with the Yarn package manager or Lerna should find NPM's workspace implementation identical. NPM workspaces are relatively simple to set up. Start by arranging NPM package files on the file system, build a top-level package.
 
 **V8 8.6**
 
-Node.js 15's V8 engine has been updated to version 8.6 from version 8.4. V8 is the JavaScript engine that runs Node.js. Introduction of v8 came up with changes, for instance specification of javascript language for users. It helps in providing runtime environment where Javasccript executes its tasks.The good thing with this strong engine is how it operates independently in the host browser. Despite the small version bump, there are a few new language enhancements that will help you write less code and potentially increasing the readability of your code. 
+Node.js 15's V8 engine is to version 8.6 from version 8.4. V8 is the JavaScript engine that runs Node.js. Introduction of v8 came up with changes, for instance, specification of javascript language for users. It helps in providing a runtime environment where Javascript executes its tasks. The good thing about this strong engine is how it operates independently in the host browser. Despite the small version bump, there are a few new language enhancements that will help you write less code and potentially increasing the readability of your code.  
 
 **Experimental diagnostics channel module**
 
