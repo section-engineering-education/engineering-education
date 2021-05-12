@@ -1,8 +1,15 @@
 DevOps teams rely on monitoring systems to detect and address performance issues faster. The use of Docker containers is steadily rising, and it is critical to get docker container log management and monitoring right from the start.
 
-There exists a variety of Docker container monitoring tools. Each of them has its strengths and weaknesses that one should consider before settling on a tool of their choice.
+A variety of Docker container monitoring tools are available. Each of them has its strengths and weaknesses that you should carefully evalate before choosing a tool.
 
-This article will explain why you should monitor Docker containers and deconstruct some of the top Docker container monitoring tools. These are MetricFire, Docker CLI (docker stats), cAdvisor, Scout, Datadog, Sensu monitoring framework, and Sematext.
+This article will explain why you should monitor Docker containers and deconstruct some of the top Docker container monitoring tools. These are:
+- MetricFire
+- Docker CLI (docker stats)
+- cAdvisor
+- Scout
+- Datadog
+- Sensu monitoring framework
+- Sematext
 
 ### Why should you monitor Docker containers?
 
@@ -27,7 +34,7 @@ Docker container monitoring systems collect metrics to ensure proper performance
 
 #### MetricFire
 
-[MetricFire](https://www.metricfire.com/) is built o the open-source versions of [Grafana](https://grafana.com/), [Graphite](https://graphiteapp.org/), and [Prometheus](https://prometheus.io/). It monitors Docker containers through hosted Graphite and Prometheus. Metrics are viewed through the Grafana dashboard in real-time. By providing hosted versions of open source platforms, MetricFire offers the same features and functionality as open-source projects. The massive community of followers constantly develops plugins and adaptations which are significant to MetricFire's functionality. MetricFire's integration with Kubernetes and cAdvisor has made it an attractive tool for monitoring Docker containers.
+[MetricFire](https://www.metricfire.com/) is built on the open-source versions of [Grafana](https://grafana.com/), [Graphite](https://graphiteapp.org/), and [Prometheus](https://prometheus.io/). It monitors Docker containers through hosted Graphite and Prometheus. Metrics are viewed through the Grafana dashboard in real-time. By providing hosted versions of open source platforms, MetricFire offers the same features and functionality as open-source projects. The massive community of followers constantly develops plugins and adaptations which are significant to MetricFire's functionality. MetricFire's integration with Kubernetes and cAdvisor has made it an attractive tool for monitoring Docker containers.
 
 #### Docker CLI (docker stats)
 
@@ -64,6 +71,64 @@ As a cloud-based infrastructure monitoring service, [Sematext](https://sematext.
 [Sematext Agent](https://sematext.com/docs/agents/sematext-agent/) relies on containerization to collect data on Docker performance and overall system performance statistics. This data relates to page swaps, errors, [disk I/O](https://www.igi-global.com/dictionary/disk-io-utilization/60943), and CPU and memory usage.
 
 This tool deploys containers itself and tracks Docker events, logs, and metrics for all auto-discovered cluster nodes and containers. It has an in-built log management solution and offers faster troubleshooting and a high-performance docker monitoring system.
+
+### A summary of pros and cons
+
+| Docker container monitoring tool | Pros | Cons |
+| --- | --- | --- |
+| MetricFire |
+- It offers infrastructure monitoring, business intelligence, and app monitoring.
+- Easy and quick setup.
+- A complete ecosystem of multiple open-source monitoring platforms including Graphite, Prometheus, and Grafana.
+- It integrates multiple plugins and services into a single hosted environment.
+ |
+- It offers less control compared to in-house Prometheus/ Graphite.
+- The hosted Graphite and Prometheus are not perfect monitoring tools for all circumstances.
+ |
+| Docker CLI (docker stats) |
+- Useful when you need a glance at your container status and health.
+ |
+- It gives basic statistics about the status of your Docker container.
+- Does not support data visualization.
+ |
+| cAdvisor |
+- It offers a simple way to visualize Docker container metrics.
+- It provides rich information about historical resource usage and resource isolation parameters.
+- Data is stored holistically to allow easier forecasting and analysis of past performance.
+ |
+- It supports one container per host, meaning that you cannot monitor more than one host or container.
+ |
+| Scout |
+- It aggregates metrics from many hosts and containers.
+- Scout can create alerts based on specified metrics.
+- It presents data over longer time scales.
+- Has a large set of plugins that pulls in data about docker container metrics and deployment.
+ |
+- The fact that Scout does not provide information about individual containers on each host is a disadvantage to users running heterogeneous containers on the same server.
+ |
+| Datadog |
+- It allows alerting.
+- It can monitor non-docker resources.
+- Offers excellent data visualization.
+- Great dashboard functionality.
+ |
+- Expensive to run for large deployments.
+ |
+| Sensu monitoring framework |
+- It is a self-hosted metrics service.
+- Allows you to collect as much information about your host and docker as you want.
+ |
+- A complicated system that is difficult to deploy.
+- Limited ability to monitor non-docker containers.
+ |
+| Sematext |
+- Excellent machine learning-based notifications and alerting system.
+- Offers CI/CD integration.
+- Ease of integration with other tools.
+- Easy correlation of logs and performance metrics.
+ |
+- It has no browser extension for transaction recording.
+ |
 
 ### Conclusion
 
