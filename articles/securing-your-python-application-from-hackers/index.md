@@ -23,7 +23,7 @@ In this tutorial, I'll help you avoid those mistakes which might make your progr
 
 ![We are in GIF](https://media.giphy.com/media/3oKIPcqmx1mpCOJJp6/giphy.gif)
 
-### Table of content
+### Table of contents
 
 This tutorial will cover:
 - [Dangerous functions and how to protect your code](#Dangerous-functions)
