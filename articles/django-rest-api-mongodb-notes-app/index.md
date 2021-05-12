@@ -6,7 +6,7 @@ url: /engineering-education/django-rest-api-mongodb-notes-app/
 title: How to Build a Notes app API using Django REST Framework and MongoDB
 description: This tutorial will teach us how to build a notes API using Django and MongoDB. We will look at how to install MongoDB. We will add notes using the Browsable API.
 author: jekayinoluwa-olabemiwo
-date: 2021-05-12T00:00:00-10:00
+date: 2021-05-12T00:00:00-10:30
 topics: [API]
 excerpt_separator: <!--more-->
 images:
