@@ -1,5 +1,21 @@
-A genetic algorithm is a search-based algorithm used for solving optimization problems in machine learning. This algorithm is important because it solves difficult problems that would take a long time to solve. It has been used in various real-life applications such as data centers, electronic circuit design, code-breaking, image processing, and artificial creativity.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/the-basics-of-genetic-algorithms-in-ml/
+title: The Basics of Genetic Algorithms in Machine Learning
+description: This article will provide an overview of the genetic algorithm in machine learning. It will cover fundamental aspects such as the benefits, phases, limitations, and real-life applications of genetic algorithms.   
+author: arthur-muthee
+date: 2021-05-12T00:00:00-15:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/the-basics-of-genetic-algorithms-in-ml/hero.jpg
+    alt: genetic algorithm example image
+---
+A genetic algorithm is a search-based algorithm used for solving optimization problems in machine learning. This algorithm is important because it solves difficult problems that would take a long time to solve. It has been used in various real-life applications such as data centers, electronic circuit design, code-breaking, image processing, and artificial creativity.
+<!--more-->
 This article takes you through the basics of this algorithm and explains how it works. It also explains how it has been applied in various fields and highlights some of its limitations.
 
 ### Genetic algorithm (GA) explained 
@@ -44,7 +60,7 @@ This phase involves the creation of a child population. The algorithm employs va
 
 - **Mutation:** This operator adds new genetic information to the new child population. This is achieved by flipping some bits in the chromosome. Mutation solves the problem of local minimum and enhances diversification. The following image shows how mutation is done.
   
-![Mutation](/engineering-education/the-basics-of-genetic-algorithms-in-machine-learning/mutation.png)
+![Mutation](/engineering-education/the-basics-of-genetic-algorithms-in-ml/mutation.png)
 
 [Image Source](https://www.digitalvidya.com/wp-content/uploads/2018/09/mutation.png)
 
@@ -72,3 +88,8 @@ Genetic algorithms are applied in the following fields:
 This article has provided the basics of genetic algorithms, which are heuristic search algorithms used for solving complex problems. These algorithms are important because they are efficient and fast. They work in generational phases such as initialization, fitness assignment, selection, reproduction, replacement, and termination. 
 
 Genetic algorithms are used in the traveling salesman problem to establish an efficient plan that reduces the time and cost of travel. It is also applied in other fields such as economics, multimodal optimization, aircraft design, and DNA analysis. 
+
+Happy learning.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
