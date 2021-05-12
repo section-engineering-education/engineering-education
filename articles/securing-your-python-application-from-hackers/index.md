@@ -23,13 +23,18 @@ In this tutorial, I'll help you avoid those mistakes which might make your progr
 
 ![We are in GIF](https://media.giphy.com/media/3oKIPcqmx1mpCOJJp6/giphy.gif)
 
+### Table of content
+
+This tutorial will cover:
+- [Dangerous functions and how to protect your code](#Dangerous-functions)
+  - [Eval()](#Eval())
+  - [Exec()](#Exec())
+  - [Input()](#Input())
+- [String formatting exploiting](#String-formatting-exploiting)
+
 ### Dangerous functions
 
-Some functions are dangerous that can be used to perform a sort of code injection or an authentication bypass. Let's put ourselves in the hacker's shoes to think like him and learn how to protect our code. We will talk about the following functions:
-
-  - [Eval()](#Eval()).
-  - [Exec()](#Exec()).
-  - [Input()](#Input()).
+Some functions are dangerous that can be used to perform a sort of code injection or an authentication bypass. Let's put ourselves in the hacker's shoes to think like him and learn how to protect our code. 
 
 #### Eval()
 
