@@ -15,9 +15,9 @@ images:
     alt: C++ Abstraction Image Example
 ---
 ### Introduction
-Abstraction is the act of representing essential features without including the background details. `Data abstraction` refers to providing only essential information about the data to the outside world while hiding the background details or explanations. In C++, classes provide a great level of data abstraction. They provide enough public methods to the outside world to play with the functionality of the object and to manipulate object data.
+Abstraction is the act of representing [essential features without including the background details](https://askoranswerme.com/69513). `Data abstraction` involves giving the outside environment only the key facts about the data while hiding the background specifics or explanations. In C++, classes provide a great level of data abstraction. They expose enough public methods to the outside environment to allow users to experiment with the object's functionality and manipulate its data.
 <!--more-->
-For example, a state without actually knowing how the class has been implemented internally. For example, the `pow()` function is used to calculate the power of a number without knowing the algorithm the function follows. In fact, the underlying implementation of the sorting functionality could change between releases of the library. And as long as the interface stays the same, your function call will still work. This article will go through an introduction to abstraction along with types and how data abstraction is achieved in C++.
+For instance, a state without recognizing the how class is implemented internally. The `pow()` function, for example, is used to measure the power of a number without understanding the algorithm it uses. In reality, the sorting functions underlying functionality can change between library releases. Your function call will still operate so long as the interface remains the same. This article will go through an introduction to abstraction along with types and how data abstraction is achieved in C++.
 
 ### Prerequisites
 To follow this article, you’ll need to have:
@@ -28,19 +28,19 @@ To follow this article, you’ll need to have:
 There are two types of abstraction in the C++ language namely:
 
 - Control abstraction - The details of abstraction implementation will always be hidden under control and will not be visible.
-- Data abstraction - The information about the data in the code will always be concealed in data abstraction.
+- Data abstraction - The details about the data in the program is always concealed in data abstraction.
 
-We can use classes for the implementation of our own Abstract data types. For streaming the data, we use the cout object of the output stream class. We can use the permission labels/access specifiers (protected, private, and public) to hide or make them public. By declaring data members as either private or protected, we prevent access to it from outside the program.
+For the implementation of our very own Abstract data types, we may use classes. For streaming the data, we use the cout object which is of the`output stream class`. We can use the permission labels/access specifiers (protected, private, and public) to hide or make them public. By declaring data members as either private or protected, we prevent access to it from outside the program.
 
 **Strategy designing**
 
-Abstraction splits code into implementation and interface. You have to keep the interface independent of the implementation when designing so that if you change the underlying implementation, the interface still remains intact.
+Abstraction splits code into implementation and interface. When designing, keep the interface independent of the implementation [so that even though the underlying implementation changes, the interface stays unchanged](https://sceweb.sce.uhcl.edu/helm/WEBPAGE-Cpp/my_files/ObjectOriented/Module-5/module5page.html).
 
 ### Examples of Abstraction in C++
-Here, we can see how, through classes, header files, and specifiers, we can achieve data abstraction in C++ programming language.
+We can look at how to promote data abstraction in the C++ programming language using classes, header files, and specifiers below:
 
 #### Example 1
-Using classes, we can implement Abstraction in C++. The Class allows one to group the data members and member functions using the permission labels available. A class will determine which data member will be accessible to the outside world and which will not.
+Using classes, we can achieve data abstraction in C++. The Class allows one to group the data members and member functions using the permission labels available. A class will determine the data member that is accessible outside the class and that will not be.
 
 Program to illustrate data abstraction using classes:
 
@@ -91,10 +91,10 @@ Output:
  CIRCUMFERENCE  = 25.136
 ```
 
-In the above program, we have declared the class `circle`. In this class, we have created a variable `radius` that will store the value of the radius acquired from the user. Afterward, we have declared two functions `area` and `circumference` in the public part of the class. Finally, in the main function, we created an object of the class `circle` called `c`. we used this object to call the area and circumference function to display the area and circumference of the circle.
+In the above program, we have declared the class `circle`. In this class, we have created a variable `radius` that will store the value of the radius acquired from the user. Afterward, we have declared two functions `area` and `circumference` in the public part of the class. Lastly, in the main function, We created our object c, which belongs to the `circle` class. we used this object to call the area and circumference function to display the area and circumference of the circle.
 
 #### Example 2
-Header files could well be one more type of abstraction in C++. For instance, consider the `pow()` method present in the header file of `math.h`. We simply call the function `pow()` present in the `math.h` header file. Then we transfer the numbers as arguments. We calculate the power of a number without understanding the underlying algorithm.
+In C++, header files could be another form of abstraction. For instance, consider the `pow()` method present in the header file of `math.h`. We basically use the `pow()` function from the `math.h` header file. Then we transfer the numbers as arguments. We calculate the power of a number without understanding the algorithm that underpins it.
 
 Program to illustrate data abstraction using header files:
 
@@ -119,17 +119,16 @@ Output:
 The square of a is : 25
 ```
 
-In the program above, we have used a header file `math.h` to include the predefined math functions provided by the c++ language in our code. We have created three integer variables `x`, `power`, and `result` in our program. Afterward, we have used std::cout to calculate the square of the given digit and store it in the integer result which we had declared.
+In the program above, we have used a header file `math.h` to include the predefined math functions provided by the c++ language in our code. In our program, we have three integer variables: `x`, `power`, and `result`. Afterward, we have used `std::cout` to calculate the square of the given digit and store it in the integer result which we had declared.
 
 #### Example 3
-The core principle of implementing abstraction in C++ is permission labels which determine how the data is accessed in a program. To impose restrictions on class members, we can use permission labels as follows:
+The core principle of implementing abstraction in C++ is permission labels which determine how the data is accessed in a program. To impose restrictions on data members of a class, we can use permission labels as follows:
 
-- Public - Data members and member functions declared as public can be accessed from anywhere the class is visible.
-- Private - Data members and member functions declared as private can only be accessed within the class. They cannot be accessed from outside the class.
-- Protected – Data members and member functions can be accessed by their friend class and derived class only.
+- Public - Data members and member functions declared as public [can be accessed from anywhere the class is visible](http://belkiss.versatecnologia.com.br/wp-content/uploads/qd7k7g/access-specifiers-in-c++-d4f7b8).
+- Private - Data members and member functions declared as private [can only be accessed within the class](https://www.geeksforgeeks.org/access-modifiers-in-c). Outside of the class, they are inaccessible.
+- Protected – Data members and member functions [can be accessed by their friend class and derived class only](https://www.mygreatlearning.com/blog/class-in-c).
 
-Using the above aspects given by permission labels, we can implement abstraction. Say, in a class, the members who determine the internal implementation can be classified as private. And it is possible to mark the essential details necessary to be provided to the outside world as public. And since they are within the class, these public members can access the private members.
-
+Using the above aspects given by permission labels, we can implement abstraction. Say, in a class, the members who determine the internal implementation can be classified as private. And it is possible to mark the essential details necessary to be provided to the outside world as public. These public members have access to the private members since they are members of the class.
 Program to illustrate abstraction using permission labels:
 
 ```c++
@@ -183,7 +182,7 @@ In the above program, you can see that we are not allowed to directly access the
 - It helps to improve the privacy of an application or program as the user is only presented with relevant information.
 
 ### Conclusion
-The principle of data abstraction, allows developers to provide only important data. Preventing access to the background details of the data. It is used in the approach that relies on the isolation of the code's implementation and interface. I hope you found this article insightful and helpful to your future programs.
+The principle of data abstraction, allows developers to provide only important data. Averting access to the background details of the data. It is used in the approach that relies on the isolation of the code's implementation and interface. I trust you found the article intuitive and of great aid to your future programs.
 
 Happy coding!
 
