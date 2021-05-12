@@ -1,6 +1,6 @@
-Embedding is the term that is going to be used to mean attach/insert/implant etc. Embedding a video using HTML and CSS is one out of an enormous ways HTML and CSS can be utilized in a web design/development. HTML and CSS goes hand in hand as a package for frontend web development and along with JavaScript(although JavaScript will not be discussed in this tutorial), they are used for backend web development. 
+Video embedding has become a popular aspect of web development. With recent advancements in the tech industry, developers can embed videos into various web pages. HTML and CSS have emerged as some of the popular tools for embedding videos. These languages go hand in hand as a package (alongside JavaScript) to support various aspects of web development.
 
-This article will show and explain how to attach videos from one web page to another. 
+This article provides a guide on how to embed a video into a webpage using HTML and CSS. It also highlights the benefits of video embedding and provides useful tips relating to this phenomenon. 
 
 ### Table of Contents
 - What is embedding?
@@ -14,14 +14,16 @@ This article will show and explain how to attach videos from one web page to ano
 - Conclusion
 
 ### What is embedding?
-Embedding has various terminologies depending on a context is being used. In plain English, embedding is to implant, attach or insert an object. In computing and in software, embedding is to attach a computer hardware component into a computer software component to execute a highly tailored task. 
+Embedding has various terminologies depending on the context being used. Embedding means to attach or insert an object. In the fields of computing and software, embedding refers to attaching a computer hardware component into a computer software component to execute a highly tailored task.
 
-In this tutorial, Embedding will be referred to as incorporating videos, images, GIFs, links, or other social media contents like Electronic books (pdf or html files), tweets, Scribd etc. into web pages or any other social media posts. Embedding allows you to lend a video from a different platform into another without to worry about any compatibility issues like dissimilar software versions or formats. 
+Embedding can also be referred to as incorporating videos, images, GIFs, links or other social media contents into web pages or other social media posts. Embedding allows you to lend a video from a different platform into another without worrying about compatibility issues like dissimilar software versions or formats.
 
-Video embedding is an action of coding that allows you to borrow and display a video on your website without pulling it from its original source or to host it on your website.
+Video embedding is an action of coding that allows you to borrow and display a video on your website without pulling it from its original source.
 
 ### What are HTML and CSS? 
-HTML is an abbreviation for Hypertext Markup Language that is used for structuring a web page like putting headers, titles, creating body etc. CSS is an abbreviation for Cascading Styling Sheets that is utilized for styling a HTML web page. CSS is basically used to make a web page look presentable like putting colors, fonts, spacing etc.
+HTML is an abbreviation for Hypertext Markup Language. It is a language used for structuring a web page. It supports various aspects of a web page structure such as the header and body. 
+
+CSS is an abbreviation for Cascading Styling Sheets. It is used for styling a HTML web page. CSS makes a web page look presentable through various functionalities such as colors, fonts and spacing.
 
 Both HTML and CSS work hand in hand when creating a web page, it does not require one to acquire a lot of skills to know the way around it. Technically, they are both not regarded as a programming language like JavaScript, python, and the rest but it is found in the front-end coding.
 
@@ -47,8 +49,8 @@ You will need the following prerequisites to embed a video:
 - Browser 
 
 #### Side Notes on Embedding Using Iframe and URL
-- When embedding videos from any sharing websites, you can either use the video URL, Iframe or Embed the code itself. For this tutorial, we are going to use the Iframe and URL.
-- We are going to use YouTube, the famous video platform. It is not only limited to videos on YouTube, but you can also basically use any social media platform that supports videos like Animoto, Facebook, Flickr, TED, Vimeo, Vine
+- When embedding videos from any sharing websites, you can either use the video's URL, Iframe or Embed the code itself. For this tutorial, we are going to use the Iframe and URL.
+- We are going to use YouTube, the famous video platform. Embedding videos is not only limited to videos on YouTube, but you can also basically use any social media platform that supports videos like Animoto, Facebook, Flickr, TED, Vimeo, Vine
 - Choose the video that you would like to embed, copy, and paste its URL.
 - URL stands for Uniform Resource Locator; it specifies the exact location of a content on a computer network.
 
@@ -119,21 +121,21 @@ As mentioned earlier, CSS is basically for styling your webpage. Like the above 
  ![step 10](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-10.jpg)
 
 ### Important Tips
-- Avoid hyperlinked videos: The URL’s Video should be on its own without any characters or spaces before or after the URL and should not be a hyperlinked or it will not be embedded. What is hyperlink? is a highlight done to a link such that when it is clicked or hovered, the browser automatically displays another page or changes the current page to show the referenced content. 
-- You can embed images and other contents as well into a post or page as long as the item you want to embed has its own URL.
-- Due to copyrights, if the video you want to embed is not your own creation, it is prudent to ask permission from the owner.
+- Avoid hyperlinked videos: The video’s URL should be on its own without any characters or spaces before or after and should not be a hyperlinked or it will not embed. A hyperlink is a highlight done to a link such that when it is clicked or hovered, the browser automatically displays another page or changes the current page to show the referenced content.
+- You can also embed images and other contents into a post or page as long as the item you want to embed has its own URL.
+- If the video you want to embed is not your own creation, it is prudent to ask permission from the owner to avoid copyright infringement.
 
 ### Conclusion 
 Along with knowing how to embed a video using HTML and CSS, we have learned the reasons behind using iframe tag and URL rather than ``` <video>```  tag in HTML5.
 
 To summarize:
-- We have gained the knowledge on how to embed videos.
-- we have gained the knowledge on how to also embed other items like images using the same steps.
-- We have learned the benefits of embedding a video into a web page.
-- We now know what HTML, CSS, URL, IFRAME are.
-- We have learnt the things we should avoid while embedding, such as hyperlinks.
-- We have learned that there are other social media platforms that supports videos apart from YouTube.
-- We have learnt the important tips that we should know or take before embedding other creator’s content into a different webpage.
-- We have learnt the tools to bag for a successful embedding.
+
+- We have understood the concept of video embedding.
+- We have gained an overview of HTML, CSS, and Iframe.
+- We have known things we should avoid when embedding videos.
+- We have learned how to embed videos.
+- We have learned important tips that we should know or consider before embedding videos.
+
+
 
 Happy coding!
