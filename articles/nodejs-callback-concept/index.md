@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/node.js-callback-concept/
+url: /engineering-education/nodejs-callback-concept/
 title: Node.js Callback Concept
 description: This article goes through the basics of asynchronous functions in node.js and how to use callbacks to perform tasks asynchronously. Callbacks are functions that are executed immediately an asynchronous function is done executing. 
 author: monica-masae
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node.js-callback-concept/hero.jpg
+  - url: /engineering-education/nodejs-callback-concept/hero.jpg
     alt: Callback image example
 ---
 ### Introduction
