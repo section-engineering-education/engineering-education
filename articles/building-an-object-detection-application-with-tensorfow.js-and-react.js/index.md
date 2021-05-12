@@ -135,7 +135,7 @@ It is then executed with the command:
 ```
 This enables bounding boxes to be drawn on the video.
 
-To access the complete code, try and test the code out for yourself, you can find the complete code [here](https://replit.com/@wmkinyan/RealTimeObjectDetectionTFJSReact#src/App.js).
+To access the complete code, try and test the code out for yourself, you can find the complete code [here](https://replit.com/@wmkinyan/RealTimeObjectDetectionTFJSReact#README.md).
 
 ### Conclusion
 
