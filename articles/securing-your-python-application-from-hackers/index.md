@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/securing-your-python-application-from-hackers/
+title: Securing Your Python Application from Hackers
+description: This tutorial will help the readers to secure their programs in application by going over some of the dangerous functions in Python.
+author: ahmad-mardeni
+date: 2021-05-12T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/securing-your-python-application-from-hackers/hero.png
+    alt: Securing Your Python Application from Hackers Hero image
+---
 Python has become immensely useful in cybersecurity as it supports and performs a multitude of cybersecurity functions such as malware analysis, scanning, penetration testing, etc. However, it's very easy to make a mistake in any Python code and make the program vulnerable.
+<!--more-->
 
 > It's possible to create a secure program using a programming language that is full of vulnerabilities, and it's also possible to create a vulnerable program using a programming language that's designed to be secure.
 
