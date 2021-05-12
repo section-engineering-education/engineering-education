@@ -1,5 +1,5 @@
 ---
-title:JekayinOluwa Olabemiwo
+title: JekayinOluwa Olabemiwo
 type: engineering-education/author
 linkedin: https://www.linkedin.com/in/jekayinoluwa
 twitter: https://www.twitter.com/JKayLight
