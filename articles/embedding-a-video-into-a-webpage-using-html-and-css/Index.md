@@ -25,17 +25,20 @@ HTML is an abbreviation for Hypertext Markup Language. It is a language used for
 
 CSS is an abbreviation for Cascading Styling Sheets. It is used for styling a HTML web page. CSS makes a web page look presentable through various functionalities such as colors, fonts and spacing.
 
-Both HTML and CSS work hand in hand when creating a web page, it does not require one to acquire a lot of skills to know the way around it. Technically, they are both not regarded as a programming language like JavaScript, python, and the rest but it is found in the front-end coding.
+Both HTML and CSS work hand in hand when creating a web page. One does not need to acquire a lot of skills to know the way around them. Technically, they are both not regarded as programming languages like JavaScript, Python, and the rest, but are found in the front-end coding.
 
 ### Why use HTML and why not HTML5?
-HTML is an older version of HTML5 and can support almost all user’s browser and unlike HTML5 there can be a lot of hassle in adding multiple sources to support different formats. Additionally, it is easier to embed YouTube videos in HTML by using iframe instead of ``` <video>```  tags in HTML5.
+HTML is an older version of HTML5. It can support almost all the browsers and it is easier to embed a YouTube by using the iframe tag.
+
+HTML5 uses ``` <video>```  tag and it does not support all the browers that can cause a lot of hassle in adding multiple sources to support different formats. 
 
 Iframe is an inline frame and permits items to be embedded in one webpage into another webpage and in this case, it is a YouTube page. By using iframe, you do not have to worry about the file format compatibility issues.
 
 ### Benefits of embedding a video into your webpage
-- It fastens the load time on your website, and it allows you to choose from various services for video hosting.
-- It increases the engagement with social media posts.
-- Under one click/page, the videos can be played without the users/you having to leave your website/newsfeed.
+- It fastens the load time on your website.
+- It allows you to choose from various services for video hosting.
+- It increases engagement with social media posts.
+- The user can play the video without having to leave their website.
 
 ### Embedding a video into a webpage using HTML and CSS
 
@@ -49,28 +52,28 @@ You will need the following prerequisites to embed a video:
 - Browser 
 
 #### Side Notes on Embedding Using Iframe and URL
-- When embedding videos from any sharing websites, you can either use the video's URL, Iframe or Embed the code itself. For this tutorial, we are going to use the Iframe and URL.
-- We are going to use YouTube, the famous video platform. Embedding videos is not only limited to videos on YouTube, but you can also basically use any social media platform that supports videos like Animoto, Facebook, Flickr, TED, Vimeo, Vine
-- Choose the video that you would like to embed, copy, and paste its URL.
-- URL stands for Uniform Resource Locator; it specifies the exact location of a content on a computer network.
+- When embedding videos from a website, you can either use the video URL, Iframe or Embed the code itself. In this tutorial, we are going to use the Iframe and URL.
+- We are going to use YouTube, the famous video platform. It is not only limited    to videos on YouTube, but you can also basically use any social media platform that supports videos like Animoto, Facebook, Flickr, TED, Vimeo, Vine
+- Choose the video that you would like to embed. Copy, and paste its URL.
+- URL stands for Uniform Resource Locator. It specifies the exact location of a content on a computer network.
 
 #### Steps to Embed a YouTube Video into your Website.
-**Step 1:** Open the YouTube page, search for the video that you would want to embed. 
+**Step 1:** Open the YouTube page and search for the video that you would want to embed. 
 
 **Step 2:** Click on the video to play it.
 
-**Step 3:** Click on the share button. While the video plays, below the video you will see a share button. As you click it, you will find a few sharing options, including various social media platforms. 
+**Step 3:** Click on the share button. While the video plays, you will see a 'share' button below the video. When you click on it, you will find a few sharing options, including various social media platforms.
 
 ![step 3](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-3.jpg)
 
-**Step 4:** Click on the Embed on the very first icon “Embed” as shown in the image below.
+**Step 4:** Click on the icon “Embed” as shown in the image below.
 
  ![step 4](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-4.jpg)
 
-After clicking on Embed, YouTube will generate a code for you to use, automatically. The iframe tag will have the URL of the video source, width, and height of the video and a few more attributes.
+After clicking on 'Embed', YouTube will automatically generate a code for you to use. The iframe tag will have the URL of the video source, width, and height of the video, and other attributes.
 
-**Step 5:** Click on the copy. 
-As shown in the figure below, click on the copy and paste the code in your HTML page(assuming you have the HTML page/code already but if not, do not worry, the steps will be shown afterwards 😊).
+**Step 5:** Click on 'copy'. 
+As shown in the image below, click on 'copy' and paste the code in your HTML page. 
 
  ![step5](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-5.jpg)                         
 
@@ -106,22 +109,23 @@ Locate your HTML page, where you want to paste the iframe tag.
 ![step 7](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-7.jpg)
 
 **Step 8:** Save the changes you made on your HTML page. 
-After saving, while you are still on your HTML page, right click and select “Open in Browser”. By clicking on Open in Browser, your HMTL code will run in your browser.
+After saving, while you are still on your HTML page, right click and select “Open in Browser”. Your HMTL code will run in your browser.
 
 ![step 8](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-8.jpg)
 
 **Step 9:** Your Browser’s output.
-Depending on your HTML code(on how you have styled it), you can place the iframe tag anywhere you want within your HTML page. After you have successfully embedded a video in your webpage, you can actively interact with it meaning, you can fast forward and rewind it, play and pause, increase, and decrease the volume or even mute, click on YouTube icon in the embedded page to play the video directly on YouTube etc. All those activities are called video controls.
+Depending on your HTML code (or how you have styled it), you can place the iframe tag anywhere you want within your HTML page. After you have successfully embedded a video in your webpage, you can actively interact with it. This means you can forward, rewind, play, pause, and adjust the volume of the video. You can also click on the YouTube icon in the embedded page to play the video directly on YouTube. All these activities are called **video controls**.
 
 ![step 9](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-9.jpg)
 
 **Step 10:** Enjoy your view.
-As mentioned earlier, CSS is basically for styling your webpage. Like the above screenshot contains a brown-ish/red-ish background and the screenshot below contains a purple background. You can play with the HTML and CSS skills to suit your preferences.
- 
+As mentioned earlier, CSS is used for styling your webpage. The above screenshot contains a brownish red background while the screenshot below contains a purple background. You can play with the HTML and CSS skills to suit your preferences.
+
  ![step 10](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-10.jpg)
 
 ### Important Tips
-- Avoid hyperlinked videos: The video’s URL should be on its own without any characters or spaces before or after and should not be a hyperlinked or it will not embed. A hyperlink is a highlight done to a link such that when it is clicked or hovered, the browser automatically displays another page or changes the current page to show the referenced content.
+- Avoid hyperlinked video: The Video's URL should be on its own without any characters or spaces otherwise it will not embed.
+- A hyperlink is a highlight done to a link such that when it is clicked or hovered, the browser automatically displays another page or changes the current page to show the referenced content. 
 - You can also embed images and other contents into a post or page as long as the item you want to embed has its own URL.
 - If the video you want to embed is not your own creation, it is prudent to ask permission from the owner to avoid copyright infringement.
 
