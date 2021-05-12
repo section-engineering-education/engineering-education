@@ -226,3 +226,6 @@ Till next time, happy coding Pythonistas!
 
 1. [Exploiting Python pickles](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)
 2. [YAML Deserialization Attack in Python](https://www.exploit-db.com/docs/english/47655-yaml-deserialization-attack-in-python.pdf?utm_source=dlvr.it&utm_medium=twitter)
+
+---
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
