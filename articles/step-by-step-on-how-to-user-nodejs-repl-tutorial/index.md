@@ -24,8 +24,7 @@ At the end of this tutorial, you should be able to use REPL tool to run your Nod
 Enter the following in the terminal:
 
 ```bash
-$ node
-
+node
 ```
 Output:
 
@@ -38,13 +37,12 @@ This symbol acts as an indicator that JavaScript is ready to read and evaluate y
 We can test the functionality by printing 'hello world' using REPL as shown below:
 
 ```bash
-$ node
+node
 > let hello = 'hello world';
 undefined
 > hello
 'hello world'  // output
 > 
-
 ```
 In the script, we declare a variable `hello` and assign the text 'hello world'.  
 Next, we call this variable and press enter, to print the 'hello world' string on the screen. That's it.  
@@ -77,7 +75,7 @@ In the previous example, we printed 'hello world' string on the screen, in this 
 In your terminal, start REPL: 
 
 ```bash
-$ node
+node
 > 
 
 ```
@@ -104,7 +102,7 @@ Math library is an object with defined methods and properties. We can therefore 
 Example:
 
 ```bash
-> function getRandomNumber(maximum){
+> function getRandomNumber(maximum) {
 ... return Math.floor(Math.random()*maximum);
 ... }
 undefined
@@ -131,7 +129,7 @@ In JavaScript, we commonly use the `console.log()` global method to print messag
 Let's enter the following in the prompt: 
 
 ```bash
-$ node
+node
 > console.log('Hello world');
 ```
 Output: 
@@ -147,7 +145,7 @@ When you press ENTER, the output is displayed as shown above.
 Next, let's create a function to add two numbers:  
 
 ```bash
-> function addTwoNumbers(firstNumber,lastNumber){
+> function addTwoNumbers(firstNumber,lastNumber) {
 ... console.log(firstNumber+ lastNumber)
 ... }
 undefined
@@ -175,7 +173,7 @@ Creating variables works the same as it would in your`.js` file.
 Let's look at an example:  
 
 ```bash
-$node
+node
 > let name = 'john doe';
 ```
 Output on calling `name` and pressing ENTER:
@@ -191,7 +189,7 @@ This variable `name` will remain active until you exit the REPL window session. 
 For instance:
 
 ```bash
-$node
+node
 > let name = 'john doe';
 undefined
 > name
