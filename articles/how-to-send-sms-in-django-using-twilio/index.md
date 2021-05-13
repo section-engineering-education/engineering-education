@@ -1,13 +1,13 @@
-SMS is a good way to send alerts, notifications and even authenticate users. There comes a time where by we need sms functionality in our app, either to send notifications, send sms to clients or even serve as a way of having a "multifactor authentication" feature.
+SMS is a good way to send alerts, notifications and to even authenticate users. There comes a time where by we need SMS functionality in our app. Either to send notifications to clients or even serve as a way of having a "multifactor authentication" feature.
 
-In this tutorial, we will build a simple Django project with SMS capability that sends message to a phone number once a particular condition is met.
+In this tutorial, we will build a simple Django app with SMS capability to send messages to a phone number once a particular condition is met.
 
-[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality in your app . Its actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
+[Twillio](https://www.twilio.com/) is a cloud communications platform that allows you to add voice and SMS functionality to your app . It is actually a paid platform, but for the sake of this tutorial we'll be making use of the trial account.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need [Python3](https://www.python.org/downloads/) installed on your machine.
 
-A basic understanding of Django would help the reader follow along better.
+A little understanding of Django would help the reader to follow along better.
 
 ### Table of contents
 1. [Creating and setting up a new Django project](#creating-and-setting-up-a-new-django-project)
@@ -16,29 +16,28 @@ A basic understanding of Django would help the reader follow along better.
 4. [Configuration](#configuration)
 5. [Conclusion](#conclusion)
 
-
-
 ### Creating and setting up a new Django project
 Let's start by creating a new virtual environment.
 
-A virtual environment allows you to create different spaces on your computer, with a different set of libraries and versions.
+A virtual environment allows you to create different spaces on your computer, with different set of libraries and versions.
 
 By creating a virtual environment, you'll be able to separate the necessary library installation for a project, without having to install them globally.
 
-Now, we create a virtual environment `env` as shown below:
+Now, create a virtual environment `env` by running the command below:
 
 ```bash
-python -m venv ~/env
+$ python -m venv env
 ```
+
 Here, we tell Python to create the virtual environment in a folder named `env` in the current directory.
 
-On creation, we can activate the virtual environment using the following command:
+On creation, activate the virtual environment using the following command:
 
 ```bash
 $ source env/bin/activate
 ```
 
-On activating the environment, we can install Django using the following command:
+On activating the environment, install Django using the following command:
 
 ```bash
 $ pip install django
@@ -50,13 +49,16 @@ Now, let's create a new Django project `twilio_proj` using:
 $ django-admin startproject twilio_proj
 ```
 
-Then, we create a Django app.
+Then navigate to the `twilio_proj` directory and create a Django app.
 
 ```bash
+$ cd twilio_proj
 $ django-admin startapp score
 ```
 
-Let's add our app to the list of installed apps. Navigate to the `twilio_proj` directory and edit the `settings.py` file.
+Let's add our app to the list of installed apps.
+
+Navigate to the `twilio_proj` directory and edit the `settings.py` file.
 
 ```python
 INSTALLED_APPS = [
@@ -67,18 +69,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'score',
-
-    ]
+]
 ```
 
 ### Setting up Twilio
-To get started using Twilio, we need to sign up on [Twilio's](https://twilio.com) website to create an account and also get a twilio number.
+To get started with Twilio, we need to sign up on [Twilio's](https://twilio.com) website to create an account and also get a Twilio number.
 
 Click on the `Sign Up` button and fill in your details to create an account.
 
-
 ### Creating a model
-Now lets define a very simple class.
+Now lets define a simple class.
 
 In the `score` directory, edit the `models.py` file and add the following lines of code to it:
 
@@ -93,30 +93,26 @@ class Score(models.Model):
     #string representation
     def __str__(self):
         return str(self.test_result)
-
 ```
 
-Now let's register the model of Score in the `admin.py` file, so we can modify it in the Django admin section.
+Now let's register the model of Score in the `admin.py` file, so that we can modify it in the Django admin section.
 
 ```python
 from django.contrib import admin
 from .models import Score
 
 admin.site.register(Score)
-
 ```
-Next step is to migrate our model to the database.
+
+The next step is to migrate our model to the database.
 
 Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema.
 
 Now, let's migrate our model to the database by running the commands below:
 
 ```bash
-# migrating the app and database changes
-$ python manage.py makemigrations
-
-# final migrations
-$ python manage.py migrate
+$ python manage.py makemigrations # migrating the app and database changes
+$ python manage.py migrate        # final migrations
 ```
 
 A superuser has the permissions to create, edit, update, and delete data in Django admin. Create a superuser by running the command below:
@@ -125,10 +121,9 @@ A superuser has the permissions to create, edit, update, and delete data in Djan
 $ python manage.py createsuperuser 
 ```
 
-
 Now, we can log in to the admin page.
 
-To login to the admin section, go to this link [localhost:8000/admin](localhost:8000/admin) and log in with our just created superuser details.
+To login to the admin section, serve the app again and go to http://localhost:8000/admin and log in with your superuser details.
 
 ![Django admin login page](/engineering-education/how-to-send-sms-in-django-using-twilio/admin.png)
 
@@ -138,11 +133,11 @@ To login to the admin section, go to this link [localhost:8000/admin](localhost:
 
 *Django admin page*
 
-Now, let's add a score in the score category to test if its error free.
+Now, let's add a score in the `Score` category to test if its error free.
 
 Click on score, then click `Add Score` to add a score.
 
-![Add photo](/engineering-education/how-to-send-sms-in-django-using-twilio/add-score.png)
+![Add Score](/engineering-education/how-to-send-sms-in-django-using-twilio/add-score.png)
 
 *Add score*
 
@@ -163,19 +158,19 @@ A trial number is a free phone number assigned to you upon sign up by twilio for
 
 *Trial number*
 
-Next we need to install the twilio library using the following command:
+Next we need to install the Twilio library using the following command:
 
 ```bash
 $ pip install twilio
 ```
 
-Now we need to import the twilio module in our `models.py` file:
+Now we need to import the Twilio module in our `models.py` file:
 
 ```python
 from twilio.rest import Client
-
 ```
-Next, add the follwing code to the `models.py` file:
+
+Next, modify your `Score` class in `models.py`to look like the code below:
 
 ```python
 #defining a simple class
@@ -204,12 +199,11 @@ class Score(models.Model):
 
             print(message.sid)
         return super().save(*args, **kwargs)
-
 ```
 
-With a trial number, we can only send sms to a twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
+With a trial number, we can only send sms to a Twilio verified number. If we want to send to unverified numbers, you need to purchase a phone number.
 
-For testing purpose, our verified number will be the number we submitted for phone number verification when we created our twilio account.
+For testing purpose, our verified number will be the number we submitted for phone number verification when we created our Twilio account.
 
 Now head over to the django-admin page, add a score less than 80 and you should recieve an SMS.
 
@@ -222,9 +216,10 @@ To conclude, we have learned about Twilio. We have also learned to send SMS from
 
 There's still a lot you can achieve with Twilio. Upgrade from the trial version if you are looking to use Twilio in production.
 
-To summarize:
-- The reader learned to send SMS using Twilio from our Django app.
-- The reader learned to build a Django app and integrate it with Twilio.
+To summarize, you learnt to build a Django app and integrate it with Twilio. You have also learnt to send SMS using Twilio from a Django app.
 
+For further learning on how to recieve phone calls, recieve test and perform other communication functions using Twilio, check out [Twilio docs](https://twilio.com/docs).
 
-For further learning on how to recieve phone calls, recieve test and perform other communication functions using Twilio, check out [this](https://twilio.com/docs) link.
+That's all!
+
+Happy Coding!
