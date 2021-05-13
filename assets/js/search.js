@@ -136,7 +136,7 @@ var search = (function() {
               return 'videos'
               break;
             case 'education':
-              return 'engineering-education'
+              return 'articles'
               break;
             default:
               break;
@@ -168,7 +168,7 @@ var search = (function() {
               return '/videos'
               break;
             case 'education':
-              return '/engineering-education'
+              return '/articles'
               break;
             default:
               break;
@@ -337,7 +337,7 @@ var search = (function() {
               return '/videos/search/?q=' + this.searchTerm
               break;
             case 'education':
-              return '/search/?q=' + this.searchTerm
+              return '/articles/search/?q=' + this.searchTerm
               break;
             default:
               break;
