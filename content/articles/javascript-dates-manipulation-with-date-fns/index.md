@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-dates-manipulation-with-date-fns/hero.jpg
+  - url: /engineering-education/javascript-dates-manipulation-with-date-fns/hero.jpg
     alt: date-fns library JavaScript
 ---
 At times during the development process, we constantly run into date objects 🕣. We need tools to assist us in handling those instances. There are two big players ([Moment.js](https://momentjs.com/) and [date-fns](https://date-fns.org/)) when it comes to JavaScript date management. This article will cover the basic applications of date-fns.

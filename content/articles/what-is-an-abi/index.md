@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-an-abi/hero.jpg
+  - url: /engineering-education/what-is-an-abi/hero.jpg
     alt: hero image ABI application binary interface library int rust c++ cpp ffi FFI
 ---
 An ABI is an application binary interface. The ABI deals with the implementation details of code i.e. what code turns into once it is compiled. Sometimes ABIs are in place to conform to hardware/kernel requirements but most of the time they are there to make sure that two pieces of binary code can work together (like using a pre-compiled library).

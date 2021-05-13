@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-firebase-landmark-recognition/hero.jpg
+  - url: /engineering-education/react-native-firebase-landmark-recognition/hero.jpg
     alt: React Native Landmark Recognition With Firebase Hero Image
 ---
 In this tutorial, we will build a React Native application **without** Expo to recognize landmarks from images using the machine learning kit from Firebase.

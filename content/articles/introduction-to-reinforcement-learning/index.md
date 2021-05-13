@@ -10,7 +10,7 @@ date: 2020-11-09T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /introduction-to-reinforcement-learning/hero.jpg
+  - url: /engineering-education/introduction-to-reinforcement-learning/hero.jpg
     alt: reinforcement learning
 ---
 This article will serve as an introduction to Reinforcement Learning (RL). According to [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning), RL is a sub-field of Machine Learning (ML). That is concerned with how [agents](https://en.wikipedia.org/wiki/Software_agent) take actions in an environment to maximize a cumulative reward.

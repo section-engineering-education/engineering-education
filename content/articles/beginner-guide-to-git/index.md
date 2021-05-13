@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /beginner-guide-to-git/hero.jpg
+  - url: /engineering-education/beginner-guide-to-git/hero.jpg
     alt: Git image example
 ---
 Git is an open-source version control system to track and manage any changes in computer files. Almost all the major players in the industry use Git, and this technology is something that every software engineer should know. Linus Torvalds created it to help in coordinating work among programmers, but it can also be used to track changes in any type of file. Its goals include speed, data integrity, and support for distributed workflows.

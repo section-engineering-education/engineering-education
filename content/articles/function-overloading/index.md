@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /function-overloading/hero.jpg
+  - url: /engineering-education/function-overloading/hero.jpg
     alt: Function Overloading (C++) computer image
 
 ---

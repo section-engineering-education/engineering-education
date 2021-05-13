@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /vlan-trunking/hero.jpg
+  - url: /engineering-education/vlan-trunking/hero.jpg
     alt: vlan trunking and encapsulation
 
 ---

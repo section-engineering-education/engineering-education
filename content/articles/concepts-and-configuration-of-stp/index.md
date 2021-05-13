@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /concepts-and-configuration-of-stp/hero.jpg
+  - url: /engineering-education/concepts-and-configuration-of-stp/hero.jpg
     alt: Spanning Tree Protocol example image
 ---
 Loop prevention is one of the most important considerations when developing a [switched network](https://www.materialbidders.com/mb-news-details.php?id=120). Once a loop forms the amount of traffic exchanged between switches consumes all the bandwidth available. This happens within all the affected switches. A way to avoid having loops is by providing only one path between switches and making sure there is no continuity for the path in a switched network.

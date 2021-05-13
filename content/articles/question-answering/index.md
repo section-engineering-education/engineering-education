@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /question-answering/hero.jpg
+  - url: /engineering-education/question-answering/hero.jpg
     alt: question answering systems
 ---
 Recently, I came across this library that enables one to create large-scale and distributed question answering systems. It solves a significant problem that we usually face in the vast field of Natural Language Processing. The problem of creating models that work accurately with large amount of data. Hence, my interest in the area of question answering systems arose.

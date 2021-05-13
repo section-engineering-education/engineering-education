@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-web-scraping-using-python/hero.png
+  - url: /engineering-education/getting-started-with-web-scraping-using-python/hero.png
     alt: web scraping example image Python
 ---
 Imagine you want to gather a large amount of data from several websites as quickly as possible, will you do it manually, or will you search for it all in a practical way?

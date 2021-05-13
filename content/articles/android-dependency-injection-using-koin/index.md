@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-dependency-injection-using-koin/hero.jpg
+  - url: /engineering-education/android-dependency-injection-using-koin/hero.jpg
     alt: Android dependency injection using Koin
 ---
 Dependency injection is a programming technique that makes a class independent of its dependencies. This is made possible by decoupling the usage of an object from its creation. Many Android developers are familiar with Java-based dependency injection frameworks such as Dagger and Guice. 

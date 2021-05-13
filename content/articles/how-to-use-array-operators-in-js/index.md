@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-use-array-operators-in-js/hero.jpg
+  - url: /engineering-education/how-to-use-array-operators-in-js/hero.jpg
     alt: Array operators in JavaScript example
 ---
 Arrays are list-like objects used for storing elements in a program. Since JavaScript is not statically typed, an array can hold different types of data.

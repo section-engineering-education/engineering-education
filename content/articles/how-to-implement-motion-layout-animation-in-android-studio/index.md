@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-implement-motion-layout-animation-in-android-studio/hero.jpg
+  - url: /engineering-education/how-to-implement-motion-layout-animation-in-android-studio/hero.jpg
     alt: Motion layout image example
 ---
 Animation is an essential feature in any application. It helps to improve the look and feel of the software. Animations promote user interactions. For instance, when a user clicks a button, some animation may indicate that an action is performed. MotionLayout will be the focus of this tutorial, which is a layout that allows you to implement animations in your Android app quickly.

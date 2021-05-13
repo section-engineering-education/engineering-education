@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /keyword-extraction-in-python/hero.jpg
+  - url: /engineering-education/keyword-extraction-in-python/hero.jpg
     alt: keyword extraction in python image example
 ---
 *Big data refers to a large and diverse amount of information that is continually growing - in terms of size, scope, and complexity*. As more and more business activities are digitized, massive amounts of data get generated. Data comes from various sources such as social media, transactions, machines (sensors and IoT devices), web, etc. Because of the sheer amount of data, it becomes impossible for humans to manually analyze and extract valuable information from this massive dataset. An automated method to accomplish this is imperative and is called Keyword Extraction.

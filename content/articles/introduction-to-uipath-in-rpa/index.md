@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-uipath-in-rpa/hero.jpg
+  - url: /engineering-education/introduction-to-uipath-in-rpa/hero.jpg
     alt: Robotic Process Automation (RPA) Image
 ---
 [UiPath](https://www.uipath.com) is a popular and progressive Robotic Process Automation (RPA) tool that enables users to automate various aspects of business processes. It provides an open-source platform that promotes collaboration and automation of repetitive tasks. It is used in various fields such as banking, healthcare, finance, and many more.

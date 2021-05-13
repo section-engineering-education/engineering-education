@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-versus-next-react-approach/hero.jpg
+  - url: /engineering-education/node-versus-next-react-approach/hero.jpg
     alt: Node.js Next.js example image
 ---
 Back in the early days when websites were becoming interactive, JavaScript was introduced. The JS interpreter was present in the browser and did an amazing job of making websites interactive. All the computations were done on the local machine using in the in-built JS Engine. The makers of JS took JS which is confined to the browser and made it available to the local machine. With this change, a lot of new features were unlocked.

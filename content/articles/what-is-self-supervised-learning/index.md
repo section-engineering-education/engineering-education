@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-self-supervised-learning/hero.jpg
+  - url: /engineering-education/what-is-self-supervised-learning/hero.jpg
     alt: Self-Supervised Learning example image
 ---
 Artificial Intelligence (AI) is a rapidly advancing field with various techniques being billed as the most promising to keep an eye on. One of those techniques is self-supervised learning.

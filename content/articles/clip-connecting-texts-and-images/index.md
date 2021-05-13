@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /clip-connecting-texts-and-images/hero.jpg
+  - url: /engineering-education/clip-connecting-texts-and-images/hero.jpg
     alt: CLIP example image
 ---
 Contrastive Language-Image Pre-Training (CLIP) is a learning method developed by OpenAI that enables models to learn visual concepts from natural language supervision. 

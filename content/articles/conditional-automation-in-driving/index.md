@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /conditional-automation-in-driving/hero.jpg
+  - url: /engineering-education/conditional-automation-in-driving/hero.jpg
     alt: Conditional Automation in Driving example image
 ---
 Autonomous driving is gaining momentum in the automobile industry. Developers have gained interest in this area because of the application of artificial intelligence (AI) and internet of things (IoT) in driving. Conditional automation is a level of autonomous driving that is currently under production.

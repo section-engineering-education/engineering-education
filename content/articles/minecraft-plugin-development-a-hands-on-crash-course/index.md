@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /minecraft-plugin-development-a-hands-on-crash-course/hero.png
+  - url: /engineering-education/minecraft-plugin-development-a-hands-on-crash-course/hero.png
     alt: Java Minecraft Plugin image
 
 ---

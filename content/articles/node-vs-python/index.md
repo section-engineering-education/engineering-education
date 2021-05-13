@@ -10,7 +10,7 @@ date: 2020-08-20T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /node-vs-python/hero.jpg
+  - url: /engineering-education/node-vs-python/hero.jpg
     alt: node.js vs Python
 ---
 JavaScript and Python are two of the most popular languages among web developers. The idea of separating the front-end from the back-end as much as possible has birthed the idea of the JAMStack. JAMStack stands for **JavaScript, APIs and Markup**. It describes the idea of a website being completely static and client-side rendered. The website uses API calls to load all dynamic content. Let us look at the two most popular languages for writing APIs (Application Programming Interface), Node.js and Python to compare and contrast the two.

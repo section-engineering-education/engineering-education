@@ -10,7 +10,7 @@ date: 2021-02-26T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /video-editing-python-moviepy/hero.jpg
+  - url: /engineering-education/video-editing-python-moviepy/hero.jpg
     alt: film reel example image
 ---
 In this tutorial, we will use MoviePy, a Python library, to edit and add effects to a given video clip. Videos are great for getting ideas across. But editing those videos can take a long time.

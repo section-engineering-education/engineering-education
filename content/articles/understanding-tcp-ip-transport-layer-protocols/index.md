@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-tcp-ip-transport-layer-protocols/hero.jpg
+  - url: /engineering-education/understanding-tcp-ip-transport-layer-protocols/hero.jpg
     alt: Transport layer protocols hero image
 --- 
 In this article, we will talk about how applications deliver data between two devices using either Transmission Control Protocol (TCP) or User Datagram Protocol (UDP). By reading this article, you will understand the workings of TCP and UDP, how they differ from each other, and will also see various applications using these protocols.

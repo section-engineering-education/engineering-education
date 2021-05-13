@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /css-flexbox-vs-css-grid/hero.png
+  - url: /engineering-education/css-flexbox-vs-css-grid/hero.png
     alt: CSS Flexbox vs CSS Grid Image
 ---
 CSS is a very important web development technology. For a long time, we used common CSS properties to lay out HTML elements. These included floats, inline-block, and position styling. In recent years, we have seen many modern CSS technologies that are making it a lot easier to create dynamic HTML layouts.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ensemble-bias-var/hero.jpg
+  - url: /engineering-education/ensemble-bias-var/hero.jpg
     alt:  image example
 ---
 In my previous [article](/ensemble-learning/), we covered ensemble learning and how it improves machine learning. We mentioned that it reduces the errors of bias and variance. These errors can affect the performance of a machine learning model.

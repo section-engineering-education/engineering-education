@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-use-kanban-to-manage-your-next-project/hero.jpg
+  - url: /engineering-education/how-to-use-kanban-to-manage-your-next-project/hero.jpg
     alt: Kanban Board Image
 ---
 Kanban is an agile framework for product development. It is a visual way of managing tasks and workflow at the individual, team, or organizational level.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /assembly-part-2/hero.jpg
+  - url: /engineering-education/assembly-part-2/hero.jpg
     alt: computer image asm example
 ---
 In the [first part of this series](/assembly-part-1/), we talked about the basics of Assembly. Now, we want to write a couple of programs. In this article, we'll try to do "Hello, World!" and a Fibonacci program.

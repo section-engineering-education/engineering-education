@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-network-address-translation/hero.jpg
+  - url: /engineering-education/implementing-network-address-translation/hero.jpg
     alt: NAT hero image
 ---
 In this article, we will learn how to implement Network Address Translation (NAT) on a Cisco router. By the end of this article, the reader will have learned what NAT is, the different types of NAT, and how to configure different types of NAT on a Cisco router.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /lamp-stack/hero.jpg
+  - url: /engineering-education/lamp-stack/hero.jpg
     alt: LAMP Stack example image
 ---
 Michael Kunze invented the term [LAMP stack in 1998](https://www.marpis.net/lamp-history.php). It is used as a kernel for websites that are hosted by Linux. It can also create web pages, web applications, static pages, dynamic pages, etc. 

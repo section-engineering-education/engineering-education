@@ -10,7 +10,7 @@ date: 2020-04-20T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-md5/hero.jpg
+  - url: /engineering-education/what-is-md5/hero.jpg
     alt: what is md5 cryptographic hashing
 ---
 MD5 Message Digest Algorithm, or [MD5](https://en.wikipedia.org/wiki/MD5), is a cryptographic hashing function. It is a part of the Message Digest Algorithm family which was created to verify the integrity of any message or file that is hashed. MD5 is still used in a few cases; however, MD5 is insecure and should not be used in any application.

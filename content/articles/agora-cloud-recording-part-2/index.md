@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /agora-cloud-recording-part-2/hero.jpg
+  - url: /engineering-education/agora-cloud-recording-part-2/hero.jpg
     alt: agora cloud recording part 2 hero image
 ---
 In this tutorial, we will be building a server using Node.js and Express to implement additional operations of Agora Cloud Recording like querying the recording session, updating subscriber list and updating mixing layout.

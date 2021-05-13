@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-sitemaps/hero.jpg
+  - url: /engineering-education/introduction-to-sitemaps/hero.jpg
     alt:  Sitemapping example image
 ---
 Sitemapping is, by definition, a process for creating a map that describes relations between pages of a website. Most websites have a sitemap, but not many people see, use, or even know about it. This raises the question: what is a sitemap and is it important?

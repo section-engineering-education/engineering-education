@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: 
 images:
 
- - url: /why-python-is-essential-for-data-analysis/hero.jpg
+ - url: /engineering-education/why-python-is-essential-for-data-analysis/hero.jpg
    alt: Python example image
 ---
 Data is an essential part of any enterprise or business. It is critical to collect, process, and analyze data flow in a timely and accurate manner to discover information useful for decision making in business.

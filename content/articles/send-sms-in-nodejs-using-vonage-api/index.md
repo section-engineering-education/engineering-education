@@ -10,7 +10,7 @@ date: 2021-04-12T00:00:00-14:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /send-sms-in-nodejs-using-vonage-api/hero.png
+  - url: /engineering-education/send-sms-in-nodejs-using-vonage-api/hero.png
     alt: Sending SMS in Nodejs using Vonage's SMS API
 ---
 Short Message Service (SMS) is one of the best marketing strategies that organizations use to communicate with their clients. Using SMS in your mobile or a web application allows you to reach out to a broader audience since people tend to check their message inbox more often than emails. 

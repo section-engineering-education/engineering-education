@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-overview-of-iot-technology/hero.jpg
+  - url: /engineering-education/an-overview-of-iot-technology/hero.jpg
     alt: IoT example image
 ---
 In this article, we will learn the design lifecycle for IoT solutions. As a tech enthusiast, I bet you have heard of buzzwords like IoT or Big Data spoken by many. But what is IoT and why is it considered the best evolution of the Internet that drives the 4th Industrial revolution.

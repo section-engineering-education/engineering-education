@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /maria-data-base/hero.jpg
+  - url: /engineering-education/maria-data-base/hero.jpg
     alt: MariaDB example image
 ---
 A database is a critical tool when it comes to software development. It helps you manage different information or records. A database such as MYSQL is used by numerous developers worldwide. This tutorial shows you how to use Maria database in PHP.

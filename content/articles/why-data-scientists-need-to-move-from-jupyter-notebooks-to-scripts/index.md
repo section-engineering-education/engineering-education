@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/hero.jpg
+  - url: /engineering-education/why-data-scientists-need-to-move-from-jupyter-notebooks-to-scripts/hero.jpg
     alt: Moving from Jupyter to Scripts
 ---
 [Jupyter notebook](https://jupyter.org/) is a great tool for evaluating and exploring data. Data scientists rely on Jupyter notebook to perform their daily tasks of data analysis. Interestingly, the notebook is the first tool that analysts get introduced to in a data science course.

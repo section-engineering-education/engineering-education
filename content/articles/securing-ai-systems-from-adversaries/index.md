@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /securing-ai-systems-from-adversaries/hero.jpg
+  - url: /engineering-education/securing-ai-systems-from-adversaries/hero.jpg
     alt: securing ai systems image
 ---
 Artificial intelligence represents just how powerful and impactful technology has become. It is present in all aspects of our daily lives, from basic tasks to very critical implementations. However, AI systems may cause devastating damage if used by malicious actors.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /software-testing-part2/hero.jpg
+  - url: /engineering-education/software-testing-part2/hero.jpg
     alt: unit testing example image
 ---
 In the first article of our software testing series, we talked about unit testing, how to run unit tests, their benefits, and limitations. 

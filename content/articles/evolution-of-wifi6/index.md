@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /evolution-of-wifi6/hero.jpg
+  - url: /engineering-education/evolution-of-wifi6/hero.jpg
     alt: evolution of wi-fi 6
 ---
 Almost every smartphone can connect to the Internet via Wi-Fi, and all modern laptops connect through Wi-Fi (since they do not have a RJ45 Ethernet port). The current version of Wi-Fi is called 802.11ac. Wi-Fi 6 is the next generation of Wi-Fi and is also known as AX Wi-Fi or 802.11ax Wi-Fi. But how is this standard different than the previous (802.11ac), and why is it needed?

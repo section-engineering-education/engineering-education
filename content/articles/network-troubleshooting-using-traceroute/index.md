@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /network-troubleshooting-using-traceroute/hero.png
+  - url: /engineering-education/network-troubleshooting-using-traceroute/hero.png
     alt: Network Routing Image
 ---
 The internet is a revolutionary technological marvel that has allowed for faster transfer of data between people. The world has been converted into a global village through the internet, allowing businesses to thrive as they offer their services. The internet constitutes a series of interconnected routers that transfer data from one computer to another.

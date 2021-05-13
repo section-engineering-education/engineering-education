@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-static-dynamic-routing/hero.jpg
+  - url: /engineering-education/understanding-static-dynamic-routing/hero.jpg
     alt: Dynamic and Static Routing image example
 ---
 Networking devices share data among themselves with the help of a router, a router is a device that learns which paths are available and which path is best to forward traffic to. The mechanism through which the router makes such a decision is known as **routing**. 

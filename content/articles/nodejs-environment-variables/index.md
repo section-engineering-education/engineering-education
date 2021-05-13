@@ -10,7 +10,7 @@ date: 2020-08-10T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /nodejs-environment-variables/hero.jpg
+  - url: /engineering-education/nodejs-environment-variables/hero.jpg
     alt: environment variables
 ---
 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /keyboard-events-in-javascript/hero.jpg
+  - url: /engineering-education/keyboard-events-in-javascript/hero.jpg
     alt: Introduction to keyboard events in JavaScript example image
 ---
 Whenever a user presses any key on the Keyboard, different events are fired. There are three keyboard events, namely `keydown`, `keypress`, and `keyup`. Keyboard events belong to the `KeyboardEvent` object. This tutorial will discuss how to implement JavaScript keyboard events.

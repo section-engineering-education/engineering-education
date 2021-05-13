@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spring-data-mongodb/hero.jpg
+  - url: /engineering-education/spring-data-mongodb/hero.jpg
     alt: Spring Data MongoDB example image
 ---
 Spring Data MongoDB makes it possible to integrate a Spring Boot application with Mongo document database. It provides a `MongoRepository` containing all the methods used to perform MongoDB CRUD operations.

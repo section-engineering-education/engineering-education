@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-ui-layouts-in-android/hero.jpg
+  - url: /engineering-education/getting-started-with-ui-layouts-in-android/hero.jpg
     alt: Android UI layout example image
 ---
 The basic building block in the User Interface (UI) of an application is called a **View**. A view occupies a rectangular area in a mobile screen. An Android UI contains a layout, a view group, and views such as a `Button`, `ImageView`, `TextView`, and others.

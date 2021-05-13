@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-submit-your-first-article/hero.jpg
+  - url: /engineering-education/how-to-submit-your-first-article/hero.jpg
     alt: github image example
 ---
 One of the most fundamental parts of contributing to open-source projects is working as a group and handling a large number of files across every development stage. This article will walk you through how to submit your first article in [Section's Engineering Education (EngEd) Program](/) using GitHub Desktop and VS Code.

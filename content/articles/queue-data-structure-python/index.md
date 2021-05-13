@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /queue-data-structure-python/hero.jpg
+  - url: /engineering-education/queue-data-structure-python/hero.jpg
     alt: python data structures queue
 
 ---

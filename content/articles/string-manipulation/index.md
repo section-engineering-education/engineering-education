@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /string-manipulation/hero.jpg
+  - url: /engineering-education/string-manipulation/hero.jpg
     alt: string manipulation image example
 ---
 Recall that there are two types of strings in the C programming language. String *variables* can be modified, but string *literals* cannot. This article will discuss how to safely manipulate string variables.

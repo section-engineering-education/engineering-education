@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-error-correcting-codes-part-1/hero.jpg
+  - url: /engineering-education/understanding-error-correcting-codes-part-1/hero.jpg
     alt: error-correcting codes
 ---
 The spacecraft [Juno](https://en.wikipedia.org/wiki/Juno_(spacecraft)) has taken countless [pictures](https://www.nasa.gov/mission_pages/juno/images/index.html) of chaotic storms on Jupiter, all in stunning detail. But how are these images transmitted hundreds of millions of miles through space, with almost no signs of interference? You might also wonder how DVDs can still play movies with scratches on them.

@@ -10,7 +10,7 @@ date: 2021-05-10T00:00:00-12:00
 topics: [Node.js, API, Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /working-with-apis-in-typescript/hero.png
+  - url: /engineering-education/working-with-apis-in-typescript/hero.png
     alt: TypeScript API example image
 ---
 In this article, we shall take a look at how to harness the power of TypeScript to create an API. Microsoft introduced typeScript as a superset of JavaScript. It takes the versatility of JavaScript and improves it with type definitions. Type definitions are used to enforce types on a variable. For example, the value 5 is a number. 

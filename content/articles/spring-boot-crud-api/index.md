@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spring-boot-crud-api/hero.jpg
+  - url: /engineering-education/spring-boot-crud-api/hero.jpg
     alt: CRUD API using Spring Boot example image
 ---
 In this tutorial, we are going to build a Spring Boot Rest CRUD API with Gradle as our build tool. Rest APIs make it possible to establish communication between a backend server and a frontend web or mobile applications.

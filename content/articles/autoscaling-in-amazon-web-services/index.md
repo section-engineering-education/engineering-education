@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /autoscaling-in-amazon-web-services/hero.jpg
+  - url: /engineering-education/autoscaling-in-amazon-web-services/hero.jpg
     alt: Autoscaling AWS example image
 ---
 Amazon Web Services (AWS) is a cloud computing services provider that has application programming interfaces (APIs) and platforms that are used for cloud computing by governments, individuals, and companies. These platforms include a mixture of various offerings such as [software as a service (SaaS)](https://en.wikipedia.org/wiki/Software_as_a_service), [infrastructure as a service (IaaS)](https://en.wikipedia.org/wiki/Infrastructure_as_a_service), and [platform as a service (PaaS)](https://en.wikipedia.org/wiki/Platform_as_a_service).

@@ -10,7 +10,7 @@ date: 2020-09-28T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /npm-packages/hero.jpg
+  - url: /engineering-education/npm-packages/hero.jpg
     alt: NPM Node Package Manager
 ---
 

@@ -10,7 +10,7 @@ date: 2020-08-07T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /introduction-to-kafka/hero.jpg
+  - url: /engineering-education/introduction-to-kafka/hero.jpg
     alt: introduction-to-kafka
 ---
 

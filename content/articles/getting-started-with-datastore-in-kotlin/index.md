@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-datastore-in-kotlin/hero.jpg
+  - url: /engineering-education/getting-started-with-datastore-in-kotlin/hero.jpg
     alt: DataStore in Kotlin example image
 ---
 DataStore is an improved data storage solution by Google to replace SharedPreferences for persisting simple pieces of data such as key-value pairs or typed objects with protocol buffers.

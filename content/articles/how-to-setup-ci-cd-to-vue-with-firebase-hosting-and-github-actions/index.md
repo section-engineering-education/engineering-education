@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ci-cd-setup-vue/hero.png
+  - url: /engineering-education/ci-cd-setup-vue/hero.png
     alt: CI/CD in a Vue Project with Firebase 
 ---
 Most of the software development workflow includes running, testing, building, and deploying the project manually. Each time we have any changes or updates we push the code to our version control system and deploy it manually. In any development phase, it can be highly inefficient to fix bugs and update new features manually as it consumes a lot of time and effort. 

@@ -10,7 +10,7 @@ date: 2021-02-03T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /introduction-to-built-in-data-structures-in-java/hero.jpg
+  - url: /engineering-education/introduction-to-built-in-data-structures-in-java/hero.jpg
     alt: Introduction to built-in data structures in Java
 ---
 In this article, we will understand various built-in data structures used in Java. By the end of this article, you will get an overview of how built-in data structures are more efficient than user-defined data structures in Java.

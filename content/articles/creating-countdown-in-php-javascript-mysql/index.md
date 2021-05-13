@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /creating-countdown-in-php-javascript-mysql/hero.jpg
+ - url: /engineering-education/creating-countdown-in-php-javascript-mysql/hero.jpg
    alt: Dynamic Countdown PHP Images example image
 ---
 

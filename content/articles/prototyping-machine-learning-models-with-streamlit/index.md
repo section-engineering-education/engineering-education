@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /prototyping-machine-learning-models-with-streamlit/hero.jpg
+  - url: /engineering-education/prototyping-machine-learning-models-with-streamlit/hero.jpg
     alt: machine learning Streamlit example image
 ---
 Are you a machine learning engineer or data scientist? Are the models you have built not served on an application because you do not know how to build a web or mobile application?

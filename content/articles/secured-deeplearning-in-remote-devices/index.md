@@ -10,7 +10,7 @@ date: 2020-11-23T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /secured-deeplearning-in-remote-devices/hero.jpg
+  - url: /engineering-education/secured-deeplearning-in-remote-devices/hero.jpg
     alt: Secured Deep Learning in Remote Devices
 ---
 In my [previous article](/understanding-differential-privacy), we understood the basics of differential privacy. In this article, we will cover how differential privacy can be applied as Federated Learning that can be deployed in remote devices.

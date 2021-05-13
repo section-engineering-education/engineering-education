@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-data-integration-in-tos/hero.jpg
+  - url: /engineering-education/introduction-to-data-integration-in-tos/hero.jpg
     alt: Data Integration in Talend Open Studio example image
 ---
 Data integration developers need open source tools to synchronize massive data collected from various platforms in the current data-driven world. Talent Open Studio (TOS) is an open-source application that provides user-friendly and cost-effective solutions for data integration. We need this application in organizations to enhance data accuracy and improved decision making. 

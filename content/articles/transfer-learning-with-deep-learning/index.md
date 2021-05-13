@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /transfer-learning-with-deep-learning/hero.jpg
+  - url: /engineering-education/transfer-learning-with-deep-learning/hero.jpg
     alt: transfer learning with deep Learning image
 ---
 Deep learning models need a lot of data to work properly. They may be trained on millions of data points before making predictions. This makes the training process very expensive. Furthermore, such models often only perform a single task. We will look at how deep transfer learning can deal with these challenges.

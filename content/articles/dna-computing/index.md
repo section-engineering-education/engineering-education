@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dna-computing/hero.jpg
+  - url: /engineering-education/dna-computing/hero.jpg
     alt: dna-computing
 ---
 Every single cell which builds up a living organism carries information for various functions necessary for the survival of the cell. This genetic information in each cell is stored in molecules called nucleic acids. The most stable form of nucleic acids is called deoxyribonucleic acid(DNA).

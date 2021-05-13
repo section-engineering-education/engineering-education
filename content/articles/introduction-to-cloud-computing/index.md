@@ -12,7 +12,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-cloud-computing/hero.jpg
+  - url: /engineering-education/introduction-to-cloud-computing/hero.jpg
     alt: cloud computing image example
 ---
 Cloud concepts have existed for many years. Traditionally, to set up an app, you would compile some hardware and software components, and as the number of visitors to your site expanded, you purchased more resources, which required more management.

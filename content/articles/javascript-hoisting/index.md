@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-hoisting/hero.jpg
+  - url: /engineering-education/javascript-hoisting/hero.jpg
     alt: javascript hoisting
 ---
 JavaScript is similar to an interpreted language. JS compiles one line at a time, and then runs that line. To ensure that each function can access all the variables in its scope, JS moves variables from the scope they were defined in to the outer scope above it.

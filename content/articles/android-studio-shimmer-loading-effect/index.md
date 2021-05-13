@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-studio-shimmer-loading-effect/hero.jpg
+  - url: /engineering-education/android-studio-shimmer-loading-effect/hero.jpg
     alt: Shimmer loading Android Studio example image
 ---
 When displaying data, especially from a remote server, chances are the information will not load instantly on your application screen. As a developer, you do not want to show a blank screen to the user while your app requests data from the Internet. The user should know that your application is communicating with the necessary data servers. 

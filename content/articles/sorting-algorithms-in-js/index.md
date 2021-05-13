@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sorting-algorithms-in-js/hero.jpg
+  - url: /engineering-education/sorting-algorithms-in-js/hero.jpg
     alt: Sorting Algorithms in JavaScript image
 ---
 Sorting can be referred to as arranging files in some particular order. The arrangement performed can be based on the value of each file present. That particular order can be in either an ascending or descending fashion. Sorting algorithms are instructions given to a computer to arrange elements in a particular order.

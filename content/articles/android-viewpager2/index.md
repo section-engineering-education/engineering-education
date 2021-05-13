@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-viewpager2/hero.jpg
+  - url: /engineering-education/android-viewpager2/hero.jpg
     alt: job scheduling Node.js image example
 ---
 Slide transition between screens is common in Android applications. We can use the navigation components or a swipe-able view to create this transition. A common swipe-able view is `ViewPager2`. The `ViewPager` library has been around for quite a while.

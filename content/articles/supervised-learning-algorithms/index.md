@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /supervised-learning-algorithms/hero.jpg
+  - url: /engineering-education/supervised-learning-algorithms/hero.jpg
     alt: Supervised Learning Algorithms image
 ---
 Artificial intelligence is the art of embedding intelligence into machines. The current era is an exciting one to live in, due to the advances in technology being guided by huge amounts of data and intelligence. The translation services that we use, voice assistants that simplify our tasks, ride-hailing services such as Uber, and map services used for navigation are all examples of how AI is being leveraged and is creating a massive impact.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /it-automation-using-ansible/hero.jpg
+  - url: /engineering-education/it-automation-using-ansible/hero.jpg
     alt: ansible image example
 ---
 Automation is one of the highest trending topics in the IT industry right now. In this article, we are going to go through the basics of automation with a hands-on approach using Ansible. Before we get our hands dirty with Ansible, let's first look at what automation is, why we need it, and how it has revolutionized the industry.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /buffon-needle/hero.jpg
+  - url: /engineering-education/buffon-needle/hero.jpg
     alt: Simulation of Buffon's Needle image
 ---
 Have you ever wondered about the significance of pi? The value 3.14 is a rough approximation used daily. Pi represents a fixed ratio between the circumference of a circle to its diameter. The nature of circles is defined by pi. With this article we will get to look at pi from a different perspective. What if I told you, we could estimate pi with a probability problem.

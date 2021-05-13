@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-inheritance-using-c/hero.jpg
+  - url: /engineering-education/getting-started-with-inheritance-using-c/hero.jpg
     alt: inheritance example image c#
 ---
 Inheritance is a unique concept in (OOP) object-oriented programming. It allows the definition of multiple classes using the properties of other classes. We create classes by inheriting the functions and variables of a base class. Then we add new functions to enhance its performance.

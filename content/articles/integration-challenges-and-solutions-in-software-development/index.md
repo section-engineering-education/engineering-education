@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /integration-challenges-and-solutions-in-software-development/hero.jpg
+  - url: /engineering-education/integration-challenges-and-solutions-in-software-development/hero.jpg
     alt: Integration Challenges image example
 ---
 With the IT industry growing at a tremendous rate, there is multiple software being used for various purposes. There are softwares that needs to work hand in hand to act as a single system and perform a certain task. This is where software integration comes into play.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/hero.jpg
+  - url: /engineering-education/five-real-life-use-cases-of-5g-ultra-reliable-low-latency-communication-urllc/hero.jpg
     alt: 5G Ultra-Reliable Low-Latency Communication example image
 ---
 [5G](https://en.wikipedia.org/wiki/5G) adoption continues to progress at a high rate in subscribers and deployment. The 5th generation mobile network enables applications and services that require better reliability, improved energy efficiency, massive connection density, and lower latency. This adoption is making industries faster, efficient, and our connected lives better.

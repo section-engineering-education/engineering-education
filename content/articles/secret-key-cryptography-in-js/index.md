@@ -10,7 +10,7 @@ date: 2020-12-06T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /secret-key-cryptography-in-js/hero.jpg
+  - url: /engineering-education/secret-key-cryptography-in-js/hero.jpg
     alt: Secret Key Cryptography image example
 ---
 Secret key cryptography, also known as `symmetric cryptography` is a cryptographic system where the same key (often referred to as the secret key) is used for encryption and decryption of messages.

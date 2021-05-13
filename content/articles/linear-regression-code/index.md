@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /linear-regression-code/hero.jpg
+  - url: /engineering-education/linear-regression-code/hero.jpg
     alt: Linear Regression example image
 ---
 In the previous article, we looked at the theory behind linear regression. In this article, we will implement the linear regression algorithm from scratch and understand the various steps involved. 

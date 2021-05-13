@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /functional-programming-in-java/hero.jpg
+  - url: /engineering-education/functional-programming-in-java/hero.jpg
     alt: Function programming in Java image
 
 ---

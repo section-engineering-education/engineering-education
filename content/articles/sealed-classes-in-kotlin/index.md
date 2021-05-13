@@ -10,7 +10,7 @@ date: 2021-04-13T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /sealed-classes-in-kotlin/hero.jpg
+  - url: /engineering-education/sealed-classes-in-kotlin/hero.jpg
     alt: Sealed Classes in Kotlin
 ---
 We can define a sealed class as a unique blend of an enum and an abstract class. Our tutorial will start by creating an enum class. As it grows more complex, we will be forced to switch to an abstract class.

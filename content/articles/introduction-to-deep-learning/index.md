@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-deep-learning/hero.jpg
+  - url: /engineering-education/introduction-to-deep-learning/hero.jpg
     alt: deep learning image example
 ---
 Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to its promising benefits. It is a method that enables image recognition, natural language processing(NLP), and voice recognition all to take place. Have you ever wondered how machines function like the human brain?

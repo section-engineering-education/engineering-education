@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-kubernetes-pods-work/hero.jpg
+  - url: /engineering-education/how-kubernetes-pods-work/hero.jpg
     alt: Kubernetes Pods image
 ---
 In [cloud computing](/introduction-to-cloud-computing/), a pod is a high-level structure and the tiniest execution object in [Kubernetes](/what-is-kubernetes/). These pods are temporary. If one pod fails, Kubernetes simultaneously models a copy so that the work keeps going on.

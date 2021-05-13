@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-software-development-life-cycle/hero.jpg
+  - url: /engineering-education/understanding-software-development-life-cycle/hero.jpg
     alt: Software Development Life Cycle example image 
 ---
 In the current digital era, many software applications are being developed to solve various real-life problems. For software developers, understanding the software development life cycle (SDLC) facilitates the effective planning and delivery of high-quality software products. This article takes you through the software development life cycle, providing an overview of the process and limitations of various implementations of the SDLC. 

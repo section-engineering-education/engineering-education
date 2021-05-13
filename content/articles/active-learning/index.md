@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /active-learning/hero.jpg
+  - url: /engineering-education/active-learning/hero.jpg
     alt: active learning machine learning image
 ---
 By their very nature machine learning models are data-hungry. They require a lot of data to make decisions. However, always having high quality labeled data available to train models is often a costly (and tedious) task. Active learning can serve as an answer to this. This approach can reduce the training data needed to train a model.

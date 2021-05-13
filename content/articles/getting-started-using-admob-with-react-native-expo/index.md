@@ -10,7 +10,7 @@ date: 2020-12-10T00:00:00-11:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-using-admob-with-react-native-expo/hero.jpg
+  - url: /engineering-education/getting-started-using-admob-with-react-native-expo/hero.jpg
     alt: React Admob with Expo
 ---
 Many modern-day apps contain ads in them. The ads may pop out if you want to use certain features in the app. Mainly in video game apps, you may need to watch an ad before reaching another level. Ads have been a popular way to monetize the app and make some profit out of it. Some sophisticated apps also provide a payment option to remove the ads from the interface. Here, we are going to incorporate the same logic but in a slightly different way.

@@ -11,7 +11,7 @@ topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /bitcoin-vs-ethereum/hero.jpg
+  - url: /engineering-education/bitcoin-vs-ethereum/hero.jpg
     alt: Bitcoin vs Ethereum
 ---
 This article will examine the critical differences between the two largest cryptocurrencies in circulation and market value. We will cover some of the key concepts that enable these cryptocurrencies. Advantages such as decentralization, peer-to-peer architecture, secure and anonymous transactions have boosted cryptocurrencies' adoption. 

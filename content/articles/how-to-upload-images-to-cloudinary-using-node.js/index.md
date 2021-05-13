@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-upload-images-to-cloudinary-using-node.js/hero.png
+  - url: /engineering-education/how-to-upload-images-to-cloudinary-using-node.js/hero.png
     alt: Uploading Images to Cloudinary example image
 ---
 One of the main problems a developer faces during media upload is a quick image and video manipulation and delivery optimization. This can be solved by the use of artificial intelligence (AI) which not only does it do both of these but also automates the process. Cloudinary is a good example of this service.

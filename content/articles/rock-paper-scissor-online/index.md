@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /rock-paper-scissor-online/hero.jpg
+  - url: /engineering-education/rock-paper-scissor-online/hero.jpg
     alt: socket logic web application image example
 ---
 Unlike HTTP requests which are one-sided, Socket is a software structure that provides two way communication link between two nodes. Sockets are primarily used whenever realtime communication needs to be established.

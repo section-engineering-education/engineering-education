@@ -13,7 +13,7 @@ aliases:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-firebase/hero.jpg
+  - url: /engineering-education/node-firebase/hero.jpg
     alt: node authentication image example key
 ---
 Real-time data has become a crucial part of most applications these days. Many web applications use sockets to connect clients to other clients and to servers. Still, the main challenge with this is the storage of data. Firebase has a real-time database feature that allows easy creation of real-time applications such as chat apps.

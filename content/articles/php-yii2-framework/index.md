@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /php-yii2-framework/hero.jpg
+  - url: /engineering-education/php-yii2-framework/hero.jpg
     alt: Yii 2 PHP Framework example image
 ---
 Nowadays, many developers are using frameworks when designing websites. This has led to improved production speeds. PHP is a server-side scripting language that can be embedded in [HTML](https://en.wikipedia.org/wiki/HTML).

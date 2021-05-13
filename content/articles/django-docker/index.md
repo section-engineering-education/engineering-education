@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /django-docker/hero.jpg
+  - url: /engineering-education/django-docker/hero.jpg
     alt: Django Docker Images example image
 ---
 [Docker](https://docs.docker.com) is a containerization platform that makes it possible to build, ship, and run distributed applications in controlled environments with defined rules.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /speech-command-recognition-with-tensorflow-and-react/hero.png
+  - url: /engineering-education/speech-command-recognition-with-tensorflow-and-react/hero.png
     alt: Speech Command Recognition in a React Project with Tensorflow 
 ---
 There are many AI-powered computer systems nowadays that can use speech-based communication to communicate with humans. The main logic that is used in these types of systems is the ability to recognize speech and perform tasks accordingly. 

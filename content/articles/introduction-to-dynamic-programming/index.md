@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-dynamic-programming/hero.jpg
+  - url: /engineering-education/introduction-to-dynamic-programming/hero.jpg
     alt: Introduction to Dynamic Programming example Image
 ---
 In our previous [article on recursion](/introduction-to-recursion/), we explored how we can break a problem into smaller sub-problems and solve them individually. However, recursion is not the most optimal technique and has its share of obstacles. Fortunately, there is a powerful algorithmic technique called dynamic programming that helps us overcome the hurdles posed by recursion and solve problems optimally. 

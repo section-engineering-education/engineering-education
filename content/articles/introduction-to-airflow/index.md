@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-airflow/hero.jpg
+  - url: /engineering-education/introduction-to-airflow/hero.jpg
     alt: airflow example image
 ---
 According to the [official documentation](https://airflow.apache.org/), *Airflow is a platform created by the community to programmatically author, schedule, and monitor workflows*.

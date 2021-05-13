@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /tcp-node/hero.jpg
+  - url: /engineering-education/tcp-node/hero.jpg
     alt: node.js tcp example image
 ---
 Networking is a very important part of computing. But how do we do it? A network is a group of computers that are able to talk to each other. The Internet is a famous example of a network.

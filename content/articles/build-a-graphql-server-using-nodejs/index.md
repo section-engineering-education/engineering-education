@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /build-a-graphql-server-using-nodejs/hero.jpg
+  - url: /engineering-education/build-a-graphql-server-using-nodejs/hero.jpg
     alt: How to build a GraphQL Server Using Node.js image
 
 ---

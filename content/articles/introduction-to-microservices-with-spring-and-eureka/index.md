@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-microservices-with-spring-and-eureka/hero.jpg
+  - url: /engineering-education/introduction-to-microservices-with-spring-and-eureka/hero.jpg
     alt: Microservices with Spring and Eureka example image
 ---
 With web apps becoming more complex, many of them have been making use of microservices. But what exactly are these microservices? What benefits does developing in this style give? This article seeks to give you the answer to these questions. By the end of this guide, you will gain a solid understanding of this style of development. As a bonus, we will also cover a simple practical implementation of this architecture.

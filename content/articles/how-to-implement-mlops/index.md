@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-implement-mlops/hero.jpg
+  - url: /engineering-education/how-to-implement-mlops/hero.jpg
     alt:  MLOps machine learning devops example image
 ---
 Engineers are preparing many high-level models by combining machine learning and artificial intelligence, but deploying these technologies at scale is challenging. Thus, the need to find a solution, like MLOps, arose. Also referred to as DevOps for machine learning, MLOps improves communication and collaboration between engineers and data scientists. 

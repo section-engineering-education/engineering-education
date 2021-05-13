@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/hero.jpg
+  - url: /engineering-education/why-julia-is-slowly-replacing-python-for-machine-learning-and-data-science/hero.jpg
     alt: Julia Python Machine Learning example image
 ---
 As the demand for data manipulation and scientific computation arose, so did the need for a better data processing language. A group of mathematicians and computer scientists led by Alan Edelman, Viral B. Shah, Jeff Bezanson, and Stefan Karpinski noted that the then-existing general-purpose languages were not ideal for logical and arithmetic coding. Particularly, there was a lack of a programming language that could perform these tasks at a lightning-fast speed.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /house-price-prediction/hero.jpg
+  - url: /engineering-education/house-price-prediction/hero.jpg
     alt: house price prediction example image
 ---
 Welcome to a tutorial on predicting house prices using the [Random Forest Regression](https://en.wikipedia.org/wiki/Random_forest) algorithm. We will cover the data pipeline creation.

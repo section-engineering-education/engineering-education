@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /robotic-process-automation-use-cases-in-the-healthcare-industry/hero.jpg
+  - url: /engineering-education/robotic-process-automation-use-cases-in-the-healthcare-industry/hero.jpg
     alt: robotic process automation example image
 ---
 Robotic process automation (RPA) is a technology that automates business operations based on the concept of artificial intelligence (AI) workers or [software robots](https://www.helpsystems.com/blog/best-software-robots-for-business).

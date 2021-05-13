@@ -10,7 +10,7 @@ date: 2020-11-04T00:00:00-10:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-control-dark-mode-in-react-native-using-redux/hero.jpg
+  - url: /engineering-education/how-to-control-dark-mode-in-react-native-using-redux/hero.jpg
     alt: React Native Dark Mode with Redux
 ---
 This tutorial aims to show the use of the Redux mechanism to toggle the dark mode on React Native applications. The idea is to add dark mode configurations to React Navigation as well as components from the React Native Paper library.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /network-types-topologies/hero.jpg
+  - url: /engineering-education/network-types-topologies/hero.jpg
     alt:  network topologies example image
 ---
 Computers are used in almost every aspect of life. They are easy to work with, can handle multiple tasks, and output accurate results. This makes agencies, enterprises, businesses, and workplaces dependent on them. Yet, the fact that they can also store and share data with other computers makes them more useful.

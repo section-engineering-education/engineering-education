@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-create-an-api-using-laravel/hero.png
+  - url: /engineering-education/how-to-create-an-api-using-laravel/hero.png
     alt: task manager API using Laravel image
 ---
 An Application Programming Interface, denoted as API, enables applications to access data and other external software functionalities. APIs are gaining popularity among developers since they save time and resources. Companies do not need to develop complex systems from scratch. 

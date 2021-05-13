@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /google-search-console-introduction/hero.png
+  - url: /engineering-education/google-search-console-introduction/hero.png
     alt: google search console header image
 ---
 Google Search Console is a powerful tool provided by Google which lets you understand how their search crawlers see your website. This guide will teach you how to add a site (called a property), submit a sitemap, and find and fix any errors that the crawlers may come across. If you’re new to SEO (search engine optimization), then you can also take advantage of its tools to monitor search traffic.

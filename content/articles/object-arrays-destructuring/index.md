@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /object-arrays-destructuring/hero.jpg
+  - url: /engineering-education/object-arrays-destructuring/hero.jpg
     alt: object arrays destructuring example image
 ---
 Objects and arrays are some of the common data types used in JavaScript. Despite being commonly used, many developers have little understanding of the basic concepts of the two data types. The use of objects in place of arrays and vice-versa is common among developers. Let us look at the two data types, their differences, and destructuring in each.

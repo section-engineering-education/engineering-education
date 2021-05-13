@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-web-assembly-continued/hero.png
+  - url: /engineering-education/introduction-web-assembly-continued/hero.png
     alt: WebAssembly example image
 ---
 In the second part of this article, we will continue our exploration of [WebAssembly](https://webassembly.org/) by using it inside a React application. Basically, we will take an existing code written in Rust, compile it to WebAssembly, then add the resulting .wasm module to a React application generated using [create-react-app](https://github.com/facebook/create-react-app).

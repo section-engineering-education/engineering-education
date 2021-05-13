@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-generative-adversarial-networks/hero.jpg
+  - url: /engineering-education/introduction-to-generative-adversarial-networks/hero.jpg
     alt: gan image example generative adversarial networks
 ---
 *Generative Adversarial Networks, or GANs for short, are one of the latest ideas in artificial intelligence (AI) and are a class of neural networks used in machine learning, computer vision, and other forms of artificial intelligence, developed and introduced by Ian J. Goodfellow*. In this article, we are going to understand what GANs are, where they are used, and how they work.

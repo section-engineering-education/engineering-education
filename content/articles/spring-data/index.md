@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-spring-data/hero.jpg
+  - url: /engineering-education/introduction-spring-data/hero.jpg
     alt: Java Persistent API example image
 ---
 Spring Data JPA is a set of standards that defines how Java objects are represented in a database. JPA provides a set of annotations and interfaces that make it possible to configure and map Java objects to relational database tables. Relationships between Java objects are provided through annotations (one-to-one, one-to-many, many-to-one, many-to-many).

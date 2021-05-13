@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /wireless-mobile-networking/hero.jpg
+  - url: /engineering-education/wireless-mobile-networking/hero.jpg
     alt:  wireless mobile networking example image
 ---
 The Internet has undeniably brought the world to our doorsteps. Education, entertainment, medicine, finance and many other sectors and their operations are now at our fingertips. However, it is worthwhile to note that it was not always like this. There was a time when people got their news only through newspapers and radios, and it would take days (sometimes even months) to deliver messages and letters.

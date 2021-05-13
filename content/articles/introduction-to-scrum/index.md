@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-scrum/hero.jpg
+  - url: /engineering-education/introduction-to-scrum/hero.jpg
     alt: Introduction to scrum
 ---
 ### Introduction

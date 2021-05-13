@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /atom-vs-visual-studio-code-functionality-and-features-comparison/hero.jpg
+  - url: /engineering-education/atom-vs-visual-studio-code-functionality-and-features-comparison/hero.jpg
     alt:  image example
 ---
 This article compares the Atom and Visual Studio Code editors based on features and functionalities. Comparing these two text editors will enable developers to choose the editor they would love to use depending on their requirements.

@@ -10,7 +10,7 @@ date: 2021-03-21T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /working-with-lambda-expressions-and-anonymous-functions/hero.png
+  - url: /engineering-education/working-with-lambda-expressions-and-anonymous-functions/hero.png
     alt: Lambda expressions and Anonymous functions image
 ---
 Lambda expressions can be challenging to understand. Types that look like this: `(Int) -> String` are not intuitive to many developers. This article aims to simplify the concept behind lambda expressions and how to use them.

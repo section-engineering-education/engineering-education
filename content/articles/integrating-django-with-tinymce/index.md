@@ -11,7 +11,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /integrating-django-with-tinymce/hero.jpg
+  - url: /engineering-education/integrating-django-with-tinymce/hero.jpg
     alt: Integrating Django with TinyMCE example image
 ---
 TinyMCE is a rich and flexible online text editor that is compatible with Django amongst many other frameworks. It comes in handy when trying to make your content look more stylish with colorful texts, various fonts, tables, and many other features.

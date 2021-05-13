@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /working-with-pythons-unittest/hero.png
+  - url: /engineering-education/working-with-pythons-unittest/hero.png
     alt: Working with Pythons Unittest
 ---
 In software engineering, a unit test refers to a program used to automatically check for bugs in individual parts/units of software. Unit testing is an important phase of the software development life cycle. To carry out a test, a developer specifies a set of testcases and their expected results for comparison.

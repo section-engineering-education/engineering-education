@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /linear-regression-r/hero.jpg 
+  - url: /engineering-education/linear-regression-r/hero.jpg 
     alt: Technology Image
 ---
 The R language is mainly used for statistical and data analytics. It's also used in developing machine learning applications. In this article we will talk about linear regression and how to implement it using R.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-implement-dark-mode-in-android-studio/hero.jpg
+  - url: /engineering-education/how-to-implement-dark-mode-in-android-studio/hero.jpg
     alt: Dark mode example image
 ---
 In the recent past, there has been a lot of excitement regarding dark mode. Users can change the entire look and feel of their application with a click of a button. Numerous developers and huge companies such as Google, Facebook, and Twitter have already implemented this feature in their applications.

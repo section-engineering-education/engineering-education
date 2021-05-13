@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-jupyter-notebooks/hero.jpg
+  - url: /engineering-education/introduction-to-jupyter-notebooks/hero.jpg
     alt: introduction to jupyter notebooks
 ---
 *[Jupyter notebook](https://jupyter.org/) is one of the most popular tools to create and share documents that contain interactive code, visualizations, text, etc. as a web application*. In this tutorial, we are going to understand the basics of Jupyter notebooks, why they are used, how to install, run, and use Jupyter notebooks for a wide array of tasks.

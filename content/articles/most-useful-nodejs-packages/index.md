@@ -10,7 +10,7 @@ date: 2020-09-08T00:00:00-13:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
-  - url: /most-useful-nodejs-packages/hero.jpg
+  - url: /engineering-education/most-useful-nodejs-packages/hero.jpg
     alt: Useful Node.js packages
 ---
 The power of [Node.js](/history-of-nodejs/) is backed by open-source frameworks that form the ecosystem of JavaScript. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, and high speed with tremendous productivity. [Check beginner's guide on getting started with NPM](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/).

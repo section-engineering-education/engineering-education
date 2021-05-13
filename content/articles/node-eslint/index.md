@@ -10,7 +10,7 @@ date: 2020-08-24T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /node-eslint/hero.jpg
+  - url: /engineering-education/node-eslint/hero.jpg
     alt: linters example image ESLint
 ---
 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-recursion/hero.jpg
+  - url: /engineering-education/introduction-to-recursion/hero.jpg
     alt: Introduction to Recursion Hero Image
 ---
 Algorithms and data structures are the fundamental building blocks of computer science. Most real-world problems can be modeled and solved using algorithms and data structures. In this tutorial, we are going to go over one such algorithmic technique named recursion. We are also going to explore various coding interview problems that can be solved using recursion.

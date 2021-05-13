@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /making-api-requests-using-volley-android/hero.jpg
+  - url: /engineering-education/making-api-requests-using-volley-android/hero.jpg
     alt: example image bottom navigation bar in Android applications
 ---
 Networking in mobile applications has been around since its inception. In the early days, applications made network calls on the [main thread](https://www.toptal.com/android/android-threading-all-you-need-to-know). Making network requests on the main thread stopped when [Google released the Honeycomb version](https://en.wikipedia.org/wiki/Android_Honeycomb).

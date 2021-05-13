@@ -11,7 +11,7 @@ topic: []
 excerpt_separator: <!--more-->
 images:
 
-    - url: /css-in-js-solutions/hero.jpg
+    - url: /engineering-education/css-in-js-solutions/hero.jpg
       alt: CSS in JS for Web Components image
 ---
 The modern web is written in components and not pages. CSS was designed to declare styles in different files (.CSS) for each page of your web application, and this structure makes it challenging to maintain multiple stylesheets for multiple pages.

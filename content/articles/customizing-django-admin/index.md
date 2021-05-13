@@ -11,7 +11,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /customizing-django-admin/hero.jpg
+  - url: /engineering-education/customizing-django-admin/hero.jpg
     alt: Customize Django Admin example image
 ---
 Django is a Web framework for perfectionists with deadlines. Django gives programmers the power of customizing this admin site to suit the requirements of the project or the needs of the client. This tutorial will be Windows oriented.

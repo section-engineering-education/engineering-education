@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /templating-your-static-site/hero.jpg
+  - url: /engineering-education/templating-your-static-site/hero.jpg
     alt: templating static sites eleventy
 ---
 Static sites are typically much easier to develop and deploy than full-stack dynamic web apps. You can take advantage of free hosting services from providers like [Section](/modules/node-js) and [Netlify](https://www.netlify.co). Plus, if you use a CSS framework like [Bootstrap](https://getbootstrap.com) or [Materialize](https://materializecss.com), it only takes a basic knowledge of HTML and CSS to code a simple website.

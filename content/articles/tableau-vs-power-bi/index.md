@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /tableau-vs-power-bi/hero.jpg
+  - url: /engineering-education/tableau-vs-power-bi/hero.jpg
     alt: tableau power bi example image
 ---
 Business Intelligence (BI) software is a top priority item in the toolkit of almost every business team. This is due to the significance data collection, storage, and visualization has to a business. Analysis from BI tools is used to make strategic business decisions.

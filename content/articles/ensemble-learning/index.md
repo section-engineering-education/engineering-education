@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ensemble-learning/hero.jpg
+  - url: /engineering-education/ensemble-learning/hero.jpg
     alt: ensemble learning image example
 ---
 We build machine learning models to provide the best possible predictions to a given problem. However, a single model may not make the best predictions and may be subject to errors such as variance and bias.

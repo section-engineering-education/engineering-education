@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /adding-dark-theme-to-your-site/hero.png
+  - url: /engineering-education/adding-dark-theme-to-your-site/hero.png
     alt: Dark theme using CSS variables and local storage example image
 ---
 The dark theme has gained prevalence in screens today. With this trend in iOS, macOS, Windows, and Google, most systems have adopted dark themes. Dark theme makes your website more exciting and attractive to users who love a darker color theme. The experience becomes better if you include the functionality to switch between light and dark themes.

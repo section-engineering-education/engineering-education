@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-css-works-behind-the-scenes/hero.jpg
+  - url: /engineering-education/how-css-works-behind-the-scenes/hero.jpg
     alt: Parsing HTML CSS example image
 ---
 Parsing means taking the HTML code and then extracting valuable information from it. This includes information like the title of the page, header links, and the body content.

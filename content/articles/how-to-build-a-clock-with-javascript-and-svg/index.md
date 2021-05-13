@@ -10,7 +10,7 @@ date: 2021-04-01T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-build-a-clock-with-javascript-and-svg/hero.png
+  - url: /engineering-education/how-to-build-a-clock-with-javascript-and-svg/hero.png
     alt: Building a clock using JavaScript and SVG
 ---
 JavaScript is a programming language that lets you create complex web page features. On the other hand, Scalable Vector Graphics (SVG) is a two-dimensional vector image format based on the Extensible Markup Language (XML). It supports interactivity and animation. 

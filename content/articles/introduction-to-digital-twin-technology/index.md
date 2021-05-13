@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-digital-twin-technology/hero.jpg
+  - url: /engineering-education/introduction-to-digital-twin-technology/hero.jpg
     alt: Digital Twin example image
 ---
 Global industries have achieved a tremendous technological transformation due to the linkage between the digital and physical worlds. Digital twin technology has played an important role in enhancing this convergence.

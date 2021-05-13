@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /google-play-in-app-reviews/hero.png
+  - url: /engineering-education/google-play-in-app-reviews/hero.png
     alt: Google play in-app review Android Studio example image
 ---
 In this guide, we will learn how to implement the *rate this app* functionality within your Android application using Google core in-app review API.

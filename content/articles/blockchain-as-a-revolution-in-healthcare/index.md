@@ -13,7 +13,7 @@
   - "/engineering-education/blockchain-as-a-revolution-in-health/"
  images:
 
-   - url: /blockchain-as-a-revolution-in-healthcare/hero.jpg
+   - url: /engineering-education/blockchain-as-a-revolution-in-healthcare/hero.jpg
      alt: Blockchain Health
 ---
 

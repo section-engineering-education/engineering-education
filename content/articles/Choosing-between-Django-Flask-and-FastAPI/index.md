@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /choosing-between-django-flask-and-fastapi/hero.jpg
+  - url: /engineering-education/choosing-between-django-flask-and-fastapi/hero.jpg
     alt: Django, Flask, and FastAPI example image
 ---
 A framework is a collection of packages and modules used to develop software and help developers avoid handling low-level details. When learning Python, you will come across Python frameworks used to work with Python efficiently. 

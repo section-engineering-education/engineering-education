@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-and-web-apis/hero.jpg
+  - url: /engineering-education/javascript-and-web-apis/hero.jpg
     alt: JavaScripts and Web APIs
 ---
 Pure JavaScript has a single thread of execution. Known as the [main thread](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) in the browser context. This means that long-running JavaScript functions can block the thread, leading to an [unresponsive page](https://developer.mozilla.org/en-US/docs/Glossary/main_thread) and a bad user experience.

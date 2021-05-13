@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-bgp-anycast/hero.jpg
+  - url: /engineering-education/what-is-bgp-anycast/hero.jpg
     alt: bgp anycast networking
 ---
 BGP Anycast is a networking technique that allows different servers to share the same IP address. The Border Gateway Protocol (BGP) is a protocol which is used to determine the fastest path in which data will travel to reach its destination. When a user makes a request to a service using Anycast, the BGP determines the best possible path, out of the servers available within the Anycast network, for the request to take. DNS and CDN systems are the most common examples of Anycast networks. These networks use Anycast since they experience high volumes of traffic from all over the world, which Anycast handles well and provides many benefits.

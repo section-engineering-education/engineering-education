@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-c++-templates/hero.jpg
+  - url: /engineering-education/understanding-c++-templates/hero.jpg
     alt: C++ Templates
 ---
 ### Introduction

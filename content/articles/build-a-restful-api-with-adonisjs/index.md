@@ -10,7 +10,7 @@ date: 2021-03-03T00:00:00-16:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /build-a-restful-api-with-adonisjs/hero.jpg
+  - url: /engineering-education/build-a-restful-api-with-adonisjs/hero.jpg
     alt: Buid a restful api with Adonis.js
 ---
 In the ever-changing world of frontend and backend frameworks, learning and building RESTful APIs is a demanding skill for any software engineer. Adonis.js allows you to master the skills and knowledge to become a full-stack developer.

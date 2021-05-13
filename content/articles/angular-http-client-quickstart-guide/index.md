@@ -10,7 +10,7 @@ date: 2021-03-23T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /angular-http-client-quickstart-guide/hero.jpg
+  - url: /engineering-education/angular-http-client-quickstart-guide/hero.jpg
     alt: Angular http client quickstart guide example image
 ---
 This tutorial will walk you through the Angular 11 HTTP Client module in a step-by-step manner. In general, we'll go over how to use HTTP in Angular. I'll show you how to make HTTP requests from your Angular 11 application to a backend server.  

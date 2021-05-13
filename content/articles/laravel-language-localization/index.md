@@ -10,7 +10,7 @@ date: 2021-01-19T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /laravel-language-localization/hero.jpg
+  - url: /engineering-education/laravel-language-localization/hero.jpg
     alt: laravel language localisation
 ---
 Developers can target users from different regions and cultures using language localization. In Laravel, it is easy to implement language localization due to the well-defined file structure. In software applications, language localization refers to how a given product is adapted to a specific language translation depending on regions or countries. 

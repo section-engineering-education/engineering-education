@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-axios-post-laravel/hero.jpg
+  - url: /engineering-education/react-axios-post-laravel/hero.jpg
     alt: Post Request Using React Example Image
 ---
 Perhaps you are a backend engineer who wants to load data to your site using the React library, or you want to explore the use of React with Laravel. Or maybe you have other interests in using Laravel with React, either way you are at the right place. 

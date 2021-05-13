@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-loss-functions-in-machine-learning/hero.jpg
+  - url: /engineering-education/understanding-loss-functions-in-machine-learning/hero.jpg
     alt: Loss functions hero image
 ---
 Loss functions play an important role in any statistical model - they define an objective which the performance of the model is evaluated against and the parameters learned by the model are determined by minimizing a chosen loss function.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /big-o-notation/hero.jpg
+  - url: /engineering-education/big-o-notation/hero.jpg
     alt: Big O Image
 ---
 We all need a way to measure the performance (efficiency) of our algorithms as they scale up. We can perform an analysis on the efficiency by considering the number of resources, in our case, **time** and **space**. 

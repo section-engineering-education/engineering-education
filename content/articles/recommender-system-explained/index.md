@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /recommender-system-explained/hero.jpg
+  - url: /engineering-education/recommender-system-explained/hero.jpg
     alt: recommender system example image
 ---
 Recommender systems are used by top online companies such as YouTube, Netflix, and Amazon to suggest online products to buyers based on their interests, preferences, and purchasing behavior. These systems help online businesses optimize user interaction on their websites with the aim of increasing their sales revenue.

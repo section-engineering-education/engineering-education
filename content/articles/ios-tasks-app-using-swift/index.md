@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ios-tasks-app-using-swift/hero.jpg
+  - url: /engineering-education/ios-tasks-app-using-swift/hero.jpg
     alt: Build a Tasks iOS Application using Swift
 ---
 iOS is one of the most used mobile platforms today, along with Android. iOS Application Development is done primarily using XCode and Swift. XCode is an IDE developed by Apple used to develop rich and performant applications for iOS and some of their other platforms such as macOS. 

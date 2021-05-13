@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /reproducibility-machine-learning/hero.jpg
+  - url: /engineering-education/reproducibility-machine-learning/hero.jpg
     alt: Reproducibility in Machine Learning image example
 ---
 In machine learning, reproducibility involves getting the same results, using the same algorithm, data, and parameters on every run. It helps to remove variations when rerunning experiments, which helps in refining the models. Reproducing results in machine learning projects can be very difficult.

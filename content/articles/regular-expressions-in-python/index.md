@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /regular-expressions-in-python/hero.jpg
+  - url: /engineering-education/regular-expressions-in-python/hero.jpg
     alt: Regular Repression in Python example image
 ---
 A Regular Expression (RegEx) has put a lot of programmers in a bit of a hassle. A casual conversation with a professional with 15 years of programming experience under his belt revealed that he practiced RegExes everyday for a year to wrap his head around the syntax without having to look it up.

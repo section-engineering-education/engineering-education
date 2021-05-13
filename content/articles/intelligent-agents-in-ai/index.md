@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /intelligent-agents-in-ai/hero.jpg
+  - url: /engineering-education/intelligent-agents-in-ai/hero.jpg
     alt: Intelligent Agents in Artificial Intelligence example image
 ---
 An intelligent agent (IA) is an entity that makes a decision, that enables artificial intelligence to be put into action. It can also be described as a software entity that conducts operations in the place of users or programs after sensing the environment. It uses actuators to initiate action in that environment.

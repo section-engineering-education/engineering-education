@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-quasar-framework/hero.jpg
+  - url: /engineering-education/getting-started-with-quasar-framework/hero.jpg
     alt: Vue Quasar Framework example
 ---
 The [Quasar Framework](https://quasar.dev/) is a Vue.js-based framework used to develop cross-platform applications using one codebase. This helps by saving in development costs.

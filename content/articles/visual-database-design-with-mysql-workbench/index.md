@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /visual-database-design-with-mysql-workbench/hero.jpg
+  - url: /engineering-education/visual-database-design-with-mysql-workbench/hero.jpg
     alt: Visual Database Design with MySQL Workbench Image
 ---
 MySQL Workbench is a graphical visual database design tool with multiple functionalities. This tutorial will cover database design and modeling with MySQL Workbench.

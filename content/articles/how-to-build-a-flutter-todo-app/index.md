@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-a-flutter-todo-app/hero.jpg
+  - url: /engineering-education/how-to-build-a-flutter-todo-app/hero.jpg
     alt: Flutter todo app image
 ---
 Over the years software developers have used frameworks to build apps for Android, iOS, Desktop, and Web. Flutter is one of those frameworks. Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single codebase.

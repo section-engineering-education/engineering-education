@@ -10,7 +10,7 @@ date: 2021-04-05T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /hibernate-one-to-one-mapping/hero.jpg
+  - url: /engineering-education/hibernate-one-to-one-mapping/hero.jpg
     alt: One-to-one Mapping Application Leveraging Hibernate
 ---
 This tutorial is for Java developers who have little or no knowledge of working with hibernate and in need of reducing the SQL queries written in a particular project. It also comes in handy for Hibernate enthusiasts who want to understand how [object relational mapping](https://hibernate.org/) is implemented. 

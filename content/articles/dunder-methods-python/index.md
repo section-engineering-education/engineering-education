@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dunder-methods-python/hero.jpg
+  - url: /engineering-education/dunder-methods-python/hero.jpg
     alt: Dunder Methods image
 ---
 Dunder methods are names that are preceded and succeeded by double underscores, hence the name dunder. They are also called magic methods and can help override functionality for built-in functions for custom classes. 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-firebase-in-flutter/hero.png
+  - url: /engineering-education/implementing-firebase-in-flutter/hero.png
     alt: Firebase and Flutter image
 ---
 Flutter is a SDK (Software Development Kit) used to develop cross-platform applications. Developers can target major platforms such as iOS, Android, Windows, and Linux with a single code base. Firebase is a platform developed by Google for creating mobile and web applications.  

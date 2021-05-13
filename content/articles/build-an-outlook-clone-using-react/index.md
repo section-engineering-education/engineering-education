@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /build-an-outlook-clone-using-react/hero.jpg
+  - url: /engineering-education/build-an-outlook-clone-using-react/hero.jpg
     alt: output image outlook clone example
 ---
 This guide will walk you through how to build an Outlook clone using React so that you can learn the fundamentals of React. This article is suitable for developers of all experience levels. Open your editor, and let's get started.

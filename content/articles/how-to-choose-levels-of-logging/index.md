@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-choose-levels-of-logging/hero.jpg
+  - url: /engineering-education/how-to-choose-levels-of-logging/hero.jpg
     alt: Levels of Logging image
 ---
 Application logging is an essential practice a developer can implement in their code to facilitate production support. Entries in log files contain essential information, including a timestamp, contextual information, and messages. Yet log messages are not the easiest to understand.

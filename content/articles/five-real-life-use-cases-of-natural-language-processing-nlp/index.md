@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /five-real-life-use-cases-of-natural-language-processing-nlp/hero.jpg
+  - url: /engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/hero.jpg
     alt: NLP example use cases
 ---
 Language as a method of communication helps people write, read, and speak. Individuals make plans and decisions in natural language, particularly in words. The current era of artificial intelligence is very keen to determine if individuals can communicate the same way with computers.

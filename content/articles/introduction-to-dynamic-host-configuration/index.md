@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-dynamic-host-configuration/hero.jpg
+  - url: /engineering-education/introduction-to-dynamic-host-configuration/hero.jpg
     alt: DHCP hero image
 ---
 A vast majority of the hosts on the internet are end-user devices. Each of these devices requires an Internet Protocol (IP) address to identify them on the internet. This address can be configured statically by a network administrator or dynamically using Dynamic Host Configuration Protocol (DHCP).

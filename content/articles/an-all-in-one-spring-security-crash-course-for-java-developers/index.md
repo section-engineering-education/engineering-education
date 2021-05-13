@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-all-in-one-spring-security-crash-course-for-java-developers/hero.jpg
+  - url: /engineering-education/an-all-in-one-spring-security-crash-course-for-java-developers/hero.jpg
     alt: Spring Security Crash Course Java Developers example image
 ---
 Whenever we build an application, security may not exactly be the first thing we think about. Yet, it is one of the most important features that need our attention. In this article, we will cover some key ways to secure your apps with Spring Security. Security might seem a little daunting especially if you are focused on the bigger picture.

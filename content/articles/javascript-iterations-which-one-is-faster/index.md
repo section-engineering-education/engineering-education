@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-iterations-which-one-is-faster/hero.png
+  - url: /engineering-education/javascript-iterations-which-one-is-faster/hero.png
     alt: JavaScript iterations example image
 ---
 Loops are a fundamental part of application development. They help you repeat a task or a set of instructions several times. In JavaScript, loops validate a value in a given block of code by checking if the value meets a provided condition.

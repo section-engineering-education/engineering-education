@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /debug-nodejs-vscode/hero.jpg
+  - url: /engineering-education/debug-nodejs-vscode/hero.jpg
     alt: debugging Node.js VS Code
 ---
 Debugging Node.js code can prove challenging for many people. It often involves putting `console.log` on every corner of your code. But, what if I were to tell you there is a simpler method? In this article, we will be looking at how you can use VS Code to debug a Node.js application.

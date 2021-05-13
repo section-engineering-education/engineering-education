@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-frontend-backend/hero.jpg
+  - url: /engineering-education/nodejs-frontend-backend/hero.jpg
     alt: front end and backend with Node.js
 ---
 Let us start by getting a better understanding of what Node.js is. Node.js is a runtime environment used for executing server-side code with higher efficiency and it presents a larger bandwidth to handle large code payloads. The objective of this article is as follows:

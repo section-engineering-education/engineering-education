@@ -10,7 +10,7 @@ date: 2020-11-15T00:00:00-14:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /validating-xml-using-xsd/hero.jpg
+  - url: /engineering-education/validating-xml-using-xsd/hero.jpg
     alt: validating XML using XSD
 ---
 In this article, we will understand how validation of XML is done using XML Schema Definition (XSD). By the end of this article, you will get an overview of various techniques for validating XML elements and attributes using XML Schema Definition (XSD).

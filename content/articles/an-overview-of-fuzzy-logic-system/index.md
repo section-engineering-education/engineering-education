@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-overview-of-fuzzy-logic-system/hero.jpg
+  - url: /engineering-education/an-overview-of-fuzzy-logic-system/hero.jpg
     alt: Fuzzy Logic example image
 ---
 Decision-making is an integral aspect of our daily lives. It is hard to establish whether a certain statement (or state) is true or false in certain situations. In such situations, fuzzy logic can be used to offer flexibility in reasoning, given the uncertainty. 

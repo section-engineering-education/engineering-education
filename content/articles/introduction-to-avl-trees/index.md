@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-avl-trees/hero.jpg
+  - url: /engineering-education/introduction-to-avl-trees/hero.jpg
     alt: AVL tree example image
 ---
 Binary search trees (BSTs) are one of the most efficient data structures with their O(n) time complexity while performing operations. But in the realm of computers and processing, constant optimization has brought about the concept of AVL trees.

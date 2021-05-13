@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /rest-api/hero.jpg
+  - url: /engineering-education/rest-api/hero.jpg
     alt: rest api example image
 
 ---

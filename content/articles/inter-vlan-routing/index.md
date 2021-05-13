@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /inter-vlan-routing/hero.jpg
+  - url: /engineering-education/inter-vlan-routing/hero.jpg
     alt: Network Connection example image
 ---
 As a network administrator, tasks may include having to segment a single switched Local Area Network (LAN) logically without having to run new cables and changing the existing network. The concept of "VLAN" and its configurations will help one handle the task at hand with ease.

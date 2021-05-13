@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /impact-of-mathematics-on-programming/hero.jpg
+  - url: /engineering-education/impact-of-mathematics-on-programming/hero.jpg
     alt: example math image
 ---
 Programming is the art of telling the computer what to do using some set of laid down rules and principles to make digital applications, e.g software, apps, websites, and operating systems. The argument of whether programming is an art or science will be a topic to be discussed another day, but for now, let's just call it an art since programmers write code.

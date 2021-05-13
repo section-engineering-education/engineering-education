@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-theory-of-computation/hero.jpg
+  - url: /engineering-education/introduction-to-theory-of-computation/hero.jpg
     alt: Theory of Computation cover image 
 ---
 [Theory of computation (TOC)](https://en.wikipedia.org/wiki/Theory_of_computation) is a branch of Computer Science that is concerned with how problems can be solved using algorithms and how efficiently they can be solved.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-execute-linux-commands-in-python/hero.jpeg
+  - url: /engineering-education/how-to-execute-linux-commands-in-python/hero.jpeg
     alt: Linux commands Python example image
 ---
 Linux is one of the most popular operating systems used by software developers and system administrators. It is open-source, free, customizable, very robust, and adaptable. Making it an ideal choice for servers, [virtual machines (VMs)](https://www.vmware.com/topics/glossary/content/virtual-machine), and many other use cases.

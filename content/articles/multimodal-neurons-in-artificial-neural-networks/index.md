@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /multimodal-neurons-in-artificial-neural-networks/hero.jpg
+  - url: /engineering-education/multimodal-neurons-in-artificial-neural-networks/hero.jpg
     alt: Multimodal Neurons example image
 ---
 In Artificial Neural Networks, we have not seen the concept of the multimodal neuron perception being used. We have only seen neurons responding to the same class of images because we train them as image classifiers.

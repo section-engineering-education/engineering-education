@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /clustering-algorithms/hero.jpg
+  - url: /engineering-education/clustering-algorithms/hero.jpg
     alt: cluster image example
 ---
 When presented with a plethora of scattered data points, it can prove helpful to find the trends and similarities within the randomness that is data collection. However, it can be a daunting challenge on how to analyze large scatters of points. The process of testing every single data point as valid to a group or cluster will prove to be tedious and time-consuming, especially when there are hundreds of data points to verify. 

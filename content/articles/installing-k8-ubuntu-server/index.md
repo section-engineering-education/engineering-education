@@ -12,7 +12,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /installing-k8-ubuntu-server/hero.jpg
+  - url: /engineering-education/installing-k8-ubuntu-server/hero.jpg
     alt: installing Kubernetes on ubuntu server
 ---
 Kubernetes, or K8s, is an open-source system that is used to automate deployment, scaling and management of containerized applications. It provides a framework to run distributed systems, taking care of scaling and failover for your applications.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-simple-angular-app/hero.png
+  - url: /engineering-education/building-a-simple-angular-app/hero.png
     alt: Data Binding using Angular example image
 ---
 Angular 11 was released on [Nov 11, 2020](https://angular.io/guide/updating-to-version-11), by the Angular team at Google. Angulars development community has been growing over the past few years. If you are not familiar with Angular, there are plenty of reasons why you should start learning.

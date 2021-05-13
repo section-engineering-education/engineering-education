@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /stylegan-a-style-based-generator-architecture-for-gans/hero.jpg
+ - url: /engineering-education/stylegan-a-style-based-generator-architecture-for-gans/hero.jpg
    alt: Hashtables implementation using CRC32 example image
 ---
 Generative Adversarial Networks (GANs) are a great advancement in machine learning and have numerous applications. Perhaps one of the most used applications of GANs is in face generation. If you go to this [website](https://thispersondoesnotexist.com/), you'll find generated images of people who do not exist.

@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /guide-to-create-mock-server/hero.jpg
+  - url: /engineering-education/guide-to-create-mock-server/hero.jpg
     alt: mock server computer image example
 
 ---

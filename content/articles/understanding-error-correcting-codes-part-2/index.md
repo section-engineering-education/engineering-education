@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-error-correcting-codes-part-2/hero.jpg
+  - url: /engineering-education/understanding-error-correcting-codes-part-2/hero.jpg
     alt: error-correcting codes
 ---
 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-csharp/hero.jpg
+  - url: /engineering-education/introduction-to-csharp/hero.jpg
     alt: Introduction to C# image
 ---
 C# is an Object-Oriented Programming language and it is portable as it can develop software for many computer systems. C# was invented in 2002 and it is one of the programming languages widely used today.

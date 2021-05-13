@@ -10,7 +10,7 @@ date: 2021-03-23T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /desktop-application-with-react/hero.jpg
+  - url: /engineering-education/desktop-application-with-react/hero.jpg
     alt: Electron with Create React App image
 ---
 ### Electron with Create-React-App

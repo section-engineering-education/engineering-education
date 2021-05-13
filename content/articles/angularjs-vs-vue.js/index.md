@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /angularjs-vs-vuejs/hero.jpg
+ - url: /engineering-education/angularjs-vs-vuejs/hero.jpg
    alt: Angular.js vs Vue.js
 ---
 Angular.js and Vue.js are both JavaScript based frameworks popularly used in front–end web development. They have a variety of features and functions tailored to meet different needs.

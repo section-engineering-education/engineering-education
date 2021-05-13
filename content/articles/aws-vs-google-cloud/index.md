@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /aws-vs-google-cloud/hero.jpg
+  - url: /engineering-education/aws-vs-google-cloud/hero.jpg
     alt: AWS and Google cloud example image
 ---
 Cloud computing services have grown tremendously in the recent past. Businesses are using these services to manage their storage, networks, and data processing. Many companies have shifted from the use of local servers to cloud computing services because they are secure, reliable, and cost-efficient.

@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-socket/hero.jpg
+  - url: /engineering-education/understanding-socket/hero.jpg
     alt: socket image example
 ---
 Websockets are becoming very common in the modern web development environment. Most web developers nowadays want to develop real-time web applications or customize their existing applications to become real-time in order to satisfy their users needs appropriately. This is where websockets play a major role.

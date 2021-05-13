@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-mvc-architecture/hero.jpg
+  - url: /engineering-education/node-mvc-architecture/hero.jpg
     alt: Node.js applications following an MVC architecture
 ---
 Good architecture is key to any software development success. This not only ensures easy development processes among teams, but also the scalability of the application. It makes sure that whenever new changes are needed, the developers will not have a hard time refactoring various aspects of the code.

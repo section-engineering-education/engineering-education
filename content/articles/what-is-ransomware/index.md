@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-ransomware/hero.jpg
+  - url: /engineering-education/what-is-ransomware/hero.jpg
     alt: ransomware example image
 ---
 In a world where computers are an essential part of life, it is only reasonable to have a healthy fear of cyber security threats. Cyber attacks are happening in the range of hundreds of thousands of attacks per day, as seen in the live [Cyber Threat Map](https://www.fireeye.com/cyber-map/threat-map.html) by FireEye.

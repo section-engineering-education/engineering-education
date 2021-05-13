@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-paypal-checkout/hero.jpg
+  - url: /engineering-education/nodejs-paypal-checkout/hero.jpg
     alt: Getting started with Node.js paypal checkout integration example image
 ---
 PayPal is an online payment platform that allows users to transfer funds worldwide. PayPal makes it easier for merchants to accept online payments through their websites. PayPal provides processing for both Visa and Mastercard payments.

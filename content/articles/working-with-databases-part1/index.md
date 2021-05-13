@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /working-with-databases-part1/hero.jpg
+  - url: /engineering-education/working-with-databases-part1/hero.jpg
     alt: database image example
 ---
 For the uninitiated, databases can seem a complicated, mythical thing that only back-end developers, computer scientists, and programmers can work with. This article is here to dispel that myth and prove that all you need to work with a database is some basic knowledge about the command line and JSON.

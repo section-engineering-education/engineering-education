@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /breadth-first-search/hero.jpg
+  - url: /engineering-education/breadth-first-search/hero.jpg
     alt: breadth first search maze image
 ---
 How can we find the fastest way from point A to point B? Solving problems like this is very common in computing. An enemy AI in a video game needs to be able to find the fastest way to the player. Google Maps needs to find the fastest way to your destination. Here, we just want to solve a maze.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /first-android-app/hero.jpg
+  - url: /engineering-education/first-android-app/hero.jpg
     alt: Android application image example
 ---
 Application software commonly known as apps refer to programs designed for end-users. They enable a user to pass a set of instructions to a computer using a built user interface instead of hard code. There are different types of applications; web, mobile and, desktop. In this article, we will look at mobile applications, specifically Android applications.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /evaluating-ml-model-performance/hero.jpg
+  - url: /engineering-education/evaluating-ml-model-performance/hero.jpg
     alt: machine learning evaluation image
 ---
 We expect machine learning models to provide accurate and trustworthy predictions. To confidently trust their predictions, it is important to assess how machine learning models generalize on test data. Let us look at how to test model performance.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-word2vec/hero.jpg
+  - url: /engineering-education/what-is-word2vec/hero.jpg
     alt: Word2vec example image
 ---
 We want computers to understand us better so that they can do more for us. So, how can we make computers understand us better using natural language?

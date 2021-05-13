@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /end-to-end-encryption/hero.jpg
+  - url: /engineering-education/end-to-end-encryption/hero.jpg
     alt: End-to-End Encryption Private communication
 ---
  In mid-February 2020, WhatsApp announced on its blog that the messaging app is now being actively used by more than 2 billion people worldwide. Multiply that by the number of messages being sent by each user – that's a lot of texts, photos, videos, voice messages, documents, status updates, and calls being sent through the public web each day!

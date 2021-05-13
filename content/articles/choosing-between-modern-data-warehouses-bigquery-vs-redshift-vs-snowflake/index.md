@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/hero.jpg
+  - url: /engineering-education/choosing-between-modern-data-warehouses-bigquery-vs-redshift-vs-snowflake/hero.jpg
     alt: Modern Data Warehouses example image
 ---
 In todays world, data is essential as it allows organizations to find the cause of problems and formulate solutions. Organizations are constantly looking for real-time data at a low cost and without maintaining data warehouse infrastructure.

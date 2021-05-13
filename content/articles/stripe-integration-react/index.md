@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /stripe-integration-react/hero.jpg
+  - url: /engineering-education/stripe-integration-react/hero.jpg
     alt: Stripe React Integration
 ---
 All online stores need a payment gateway, irrespective of the service or product being sold. As such, it is important for developers to ensure the implementation is successful and that payments are secure for customers. In this article, we will learn how to set up the Stripe API for all payment purposes. Stripe is the [go-to payment processor](https://stripe.com/en-in/payments/payment-methods-guide) for developers thanks to its developer-friendly API, highest grade of payment processing security, and detailed [documentation](https://stripe.com/docs/api).

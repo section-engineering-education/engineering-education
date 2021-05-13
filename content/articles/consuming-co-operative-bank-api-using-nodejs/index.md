@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /consuming-co-operative-bank-api-using-nodejs/hero.jpg
+  - url: /engineering-education/consuming-co-operative-bank-api-using-nodejs/hero.jpg
     alt: Consuming Co-operative Bank API
 ---
 Co-operative Bank is a financial service institution operating in the East African Community. As of December 2018, it had recorded over 7.8 million users. 

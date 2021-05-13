@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-time-series/hero.jpg
+  - url: /engineering-education/introduction-to-time-series/hero.jpg
     alt: time series example image
 ---
 In machine learning, time series is a very crucial aspect but is often overlooked. A time series is useful in forecasting, stock market analysis, and even forex, but their time component makes it a challenging concept to handle. This article will give a friendly introduction to the time series concept.

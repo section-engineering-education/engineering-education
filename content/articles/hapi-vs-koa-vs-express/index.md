@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /hapi-vs-koa-vs-express/hero.jpg
+  - url: /engineering-education/hapi-vs-koa-vs-express/hero.jpg
     alt: koa koa.js Node.js express hapi framework
 ---
 Node.js has various frameworks, each of which is catered to the varying demands of users and developers. This article will give a comparison between the three major Node.js frameworks, [Express](https://expressjs.com), [Hapi](https://hapi.dev), and [Koa](https://koajs.com).

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /google-authentication-for-android/hero.jpg
+  - url: /engineering-education/google-authentication-for-android/hero.jpg
     alt: example image Google Authentication
 ---
 [Authentication enables organizations](https://medium.com/@harsha.thirimanna/authentication-3a3556caf98f) to keep their networks secure by permitting only authenticated users (or processes) to access its protected resources. This shows how important it is to authenticate users. User authentication can be done in various ways.

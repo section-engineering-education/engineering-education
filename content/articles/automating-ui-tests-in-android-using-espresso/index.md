@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /automating-ui-tests-in-android-using-espresso/hero.jpg
+  - url: /engineering-education/automating-ui-tests-in-android-using-espresso/hero.jpg
     alt: Automating UI Tests in Android Using Espresso example image
 ---
 Other than writing unit tests, developers also have to write User Interface tests to ensure their UI works as expected. Many times, developers find themselves doing these tests manually. Well, it is not much of a burden on a small project. However, manually running UI tests on a big project is a immense burden and disadvantage.

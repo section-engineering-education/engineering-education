@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-neural-networks/hero.jpg
+  - url: /engineering-education/introduction-to-neural-networks/hero.jpg
     alt: deep learning image example
 ---
 In this article, we will be talking about neural networks. A functional unit of deep learning, this means a neural network accepts input and gives an output. Deep Learning uses Artificial Neural Networks (ANN). ANNs imitates the human brain's behavior to solve complex data problems.

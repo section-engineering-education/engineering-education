@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-classes-and-objects-in-c++/hero.jpg
+  - url: /engineering-education/getting-started-with-classes-and-objects-in-c++/hero.jpg
     alt: Getting started with classes and objects in C++ Hero Image
 ---
 The C language limitations are evident when a software project is too large to manage. This problem was addressed by adding several extensions to the C language. The main incorporation was the concept of class. The most significant aspect of C++ classes is that it promotes object-oriented programming, which treats data as a critical element.  

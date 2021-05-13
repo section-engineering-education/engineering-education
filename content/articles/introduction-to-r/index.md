@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-r/hero.jpg
+  - url: /engineering-education/introduction-to-r/hero.jpg
     alt: introduction to the R programming language
 ---
 The data science community has been growing over the past decade. The tools used within the industry have been a driving force behind this unprecedented growth. Hence, learning a programming language like R empowers us to contribute to this awesome field. This article will clarify all the basic concepts of R and look at the various concepts. Going through the article should give you sufficient information to start coding in R.

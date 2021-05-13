@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /deploying-nodejs-web-app/hero.jpeg
+  - url: /engineering-education/deploying-nodejs-web-app/hero.jpeg
     alt: header image nodejs
 ---
 You’ve finished developing your first Node.js web app and now you want to publish it on the web. This guide will walk you through how to deploy a Node.js web app to DigitalOcean. *Note: If you’re still in the development process, then you may find my [Node.js guide](/static-site-dynamic-nodejs-web-app/) helpful.*

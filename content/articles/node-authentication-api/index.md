@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-authentication-api/hero.jpg
+  - url: /engineering-education/node-authentication-api/hero.jpg
     alt: node authentication image example key
 ---
 Most applications have an authentication system or a way of verifying their users. Some make use of APIs while others use other services like OAuth2, etc. Here, I will show you how to make an authentication API that will be used to verify users in a database (MongoDB) and return a JSON web token.

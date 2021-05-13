@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-mailer/hero.jpg
+  - url: /engineering-education/node-mailer/hero.jpg
     alt: Node mailer example image
 ---
 Emails are an essential way of communicating. Most servers today use emails to send information to clients. In this tutorial, we are going to create a server that does the same. We will be sending two types of emails; plain text and HTML emails.

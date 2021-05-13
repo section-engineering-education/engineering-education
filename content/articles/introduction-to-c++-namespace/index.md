@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-c++-namespace/hero.jpg
+  - url: /engineering-education/introduction-to-c++-namespace/hero.jpg
     alt: C++ Namespace Image
 ---
 A name can represent only one entity in each scope. That is why, in the same scope, there cannot be two variables with the same name as this may generate compiler errors. We can declare two variables or member functions that have the same name within the same scope using `namespace`. 

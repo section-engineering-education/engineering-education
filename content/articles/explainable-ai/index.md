@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /explainable-ai/hero.jpg
+  - url: /engineering-education/explainable-ai/hero.jpg
     alt: Explainable AI example image
 ---
 AI-powered systems have a lot of influence on our daily lives. A number of these systems are so sophisticated that little to no human intervention is required in their design and deployment. These systems make a lot of decisions for us every single day. They make many decisions that affect human lives (for example, in medicine, finance, law, and defense). The question of how they make these decisions is often not explained.

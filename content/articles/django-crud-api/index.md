@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /django-crud-api/hero.jpg
+  - url: /engineering-education/django-crud-api/hero.jpg
     alt: Django CRUD API example image
 ---
 In this tutorial, we will create a fully working to-do CRUD Django API using [Django](https://www.djangoproject.com/) and [Django rest framework](https://www.django-rest-framework.org/). Restful API endpoints make it possible to perform CRUD functionality in the backend from within the mobile app or website.

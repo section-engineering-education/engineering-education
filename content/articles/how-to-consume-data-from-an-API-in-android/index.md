@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-consume-data-from-an-api-in-android/hero.png
+  - url: /engineering-education/how-to-consume-data-from-an-api-in-android/hero.png
     alt: API image example
 ---
 APIs allow applications to access a huge range of data. In numerous cases, developers usually connect their software to third party APIs. This move enables them to save a significant amount of time. In Android, tools such as Volley and Retrofit allow you to connect to APIs seamlessly.

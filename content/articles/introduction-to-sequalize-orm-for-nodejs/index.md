@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-sequalize-orm-for-nodejs/hero.jpg
+  - url: /engineering-education/introduction-to-sequalize-orm-for-nodejs/hero.jpg
     alt: ORM example Image
 ---
 Connecting an Object-relational Mapper (ORM) to a Node.js application is not an easy task for most developers, since there are no elaborate resources and/or documentation about it.

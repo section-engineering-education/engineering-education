@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /google-play-store-application-optimization/hero.png
+  - url: /engineering-education/google-play-store-application-optimization/hero.png
     alt: Google Play Store app optimization
 ---
 Search engine optimization is a tool you may be familiar with using to help rank your website by utilizing keywords to make your website more discoverable to relevant searches. The same process can be used when creating a mobile application.

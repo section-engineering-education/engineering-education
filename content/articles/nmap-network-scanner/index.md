@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nmap-network-scanner/hero.jpg
+  - url: /engineering-education/nmap-network-scanner/hero.jpg
     alt: Introduction to Javascript Modules
 ---
 Nmap (network mapper) is the leading security scanning tool used by testers (penetration testers/ethical hackers). In this tutorial, we will discuss the concepts and usage of Nmap along with its most commonly used commands to perform port scans.  

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /basics-of-means-end-analysis-in-ai/hero.jpg
+  - url: /engineering-education/basics-of-means-end-analysis-in-ai/hero.jpg
     alt: Means end analysis image example
 ---
 Means end analysis (MEA) is an important concept in artificial intelligence (AI) because it enhances problem resolution. MEA solves problems by defining the goal and establishing the right action plan. This technique is used in AI programs to limit search. 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dive-into-batch-scripting-language/hero.png
+  - url: /engineering-education/dive-into-batch-scripting-language/hero.png
     alt: Batch Scripting example image
 ---
 Batch commands are often used to start programs or to control them in the Windows environment. It can also be used for server installations.

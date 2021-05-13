@@ -10,7 +10,7 @@ date: 2021-04-26T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /introduction-to-knn-algorithm/hero.jpg
+  - url: /engineering-education/introduction-to-knn-algorithm/hero.jpg
     alt: An Introduction to KNN Algorithm
 ---
 In this article, we will learn about a supervised machine learning algorithm called K-Nearest Neighbors (KNN). This algorithm can be used for tasks like classification and prediction. 

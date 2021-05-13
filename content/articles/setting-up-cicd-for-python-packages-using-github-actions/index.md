@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /setting-up-cicd-for-python-packages-using-github-actions/hero.png
+  - url: /engineering-education/setting-up-cicd-for-python-packages-using-github-actions/hero.png
     alt: GitHub Actions hero image
 ---
 When building Python packages or any Python project, being able to test code and deploy to production faster is an attribute of a fast-paced development environment. After each bug fix, users expect to see the effect on their local software, and this is an attribute of Continuous Integration and Continuous Deployment.

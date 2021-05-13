@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /fundamentals-of-big-data-supply-chain/hero.jpg
+  - url: /engineering-education/fundamentals-of-big-data-supply-chain/hero.jpg
     alt: Big Data Supply Chain example Image
 ---
 Data is very important in all businesses. As data becomes larger, it becomes more challenging to manage. A big data supply chain ensures massive data flows appropriately in an organization and within its ecosystems. This is a process by which an organization's data is transformed into a valuable form for strategic use. 

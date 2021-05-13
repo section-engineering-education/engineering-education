@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /beginner-guide-to-npm/hero.jpg
+  - url: /engineering-education/beginner-guide-to-npm/hero.jpg
     alt: Node.js npm node package manager example image
 ---
 The whole ecosystem of Node.js is based on tools such as NPM. NPM is a Node.js package manager. It provides a bunch of open source packages. This extensive ecosystem of open source libraries makes Node.js a popular technology.

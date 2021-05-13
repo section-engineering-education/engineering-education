@@ -10,7 +10,7 @@ date: 2021-04-08T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /javascript-vs-typescript/hero.jpg
+  - url: /engineering-education/javascript-vs-typescript/hero.jpg
     alt: JavaScript Vs Typescript
 ---
 [TypeScript](https://www.typeScriptlang.org/docs/) is a trendy programming language and a superset of JavaScript. In other words, TypeScript is an improved version of JavaScript. It inherits the functionalities and features of native JavaScript. Furthermore, it adds new components and syntax. This means that JavaScript code is effectively TypeScript code.

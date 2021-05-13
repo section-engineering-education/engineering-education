@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /cryptocurrency-tracking-telegram-bot/hero.jpg
+  - url: /engineering-education/cryptocurrency-tracking-telegram-bot/hero.jpg
     alt: Telegram Bot to track cryptocurrencies image
 ---
 Telegram bots are accounts operated by software that serve as handy tools for many tasks. This article will go through what Telegram bots are, how to use them, and their development process in Python. We will also build a Telegram bot to track cryptocurrencies and send regular updates on prices to better understand them.

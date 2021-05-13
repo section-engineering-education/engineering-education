@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /cross-platform-applications-electron/hero.jpg
+  - url: /engineering-education/cross-platform-applications-electron/hero.jpg
     alt: cross platform apps electron
 ---
 [Electron](https://www.electronjs.org/), maintained by Github, is a framework for building cross-platform desktop applications with web technologies like HTML, CSS and Javascript.

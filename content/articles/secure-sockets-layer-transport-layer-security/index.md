@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /secure-sockets-layer-transport-layer-security/hero.jpg
+  - url: /engineering-education/secure-sockets-layer-transport-layer-security/hero.jpg
     alt: SSL/TLS example image
 ---
 The year 2020 was a challenging one that resulted in some crucial, groundbreaking innovation, and changes across domains. The pandemic has compelled various operations and workforce to go remote, and has left the infrastructure susceptible to increased cyber attacks. 

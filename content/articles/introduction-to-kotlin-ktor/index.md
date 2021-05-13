@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-kotlin-ktor/hero.jpg
+  - url: /engineering-education/introduction-to-kotlin-ktor/hero.jpg
     alt: Kotlin ktor image example
 ---
 Kotlin is used to create different applications for different platforms. Server-side applications are no exception. Just like Java, Kotlin can be used to set up and run server side applications. There are several frameworks that can be used with Kotlin. For instance, all frameworks used with Java like [Spring](https://spring.io/) and [Spark](https://sparkjava.com/) have support for Kotlin. 

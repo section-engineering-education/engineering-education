@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /aggregation-in-dbms/hero.jpg
+  - url: /engineering-education/aggregation-in-dbms/hero.jpg
     alt: DBMS Database Management Systems Image
 ---
 Database management systems (DBMS) have replaced the traditional filing system by providing an easy, secure, efficient, and reliable way of storing, retrieving, accessing, and sharing data within databases. 

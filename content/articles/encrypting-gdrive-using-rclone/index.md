@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /encrypting-gdrive-using-rclone/hero.png
+  - url: /engineering-education/encrypting-gdrive-using-rclone/hero.png
     alt: rclone gdrive header image
 ---
 This is a how-to guide on setting up Rclone to create an encrypted folder where users can store data on Google Drive which will be encrypted before upload.

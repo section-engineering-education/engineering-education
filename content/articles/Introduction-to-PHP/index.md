@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-php/hero.png
+  - url: /engineering-education/introduction-to-php/hero.png
     alt: PHP example image
 ---
 [PHP](https://www.php.net/) (Hypertext Pre-processor) is a web server-side programming language. It enables developers to build web applications that interact with databases.

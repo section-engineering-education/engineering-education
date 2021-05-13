@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
- - url: /consuming-apis-in-flutter/hero.jpg
+ - url: /engineering-education/consuming-apis-in-flutter/hero.jpg
    alt: APIs in Flutter example image
 ---
 Application Programming Interface (API) is a communication portal that allows two or more applications to connect for data sharing. It acts as an intermediary for delivering requests to service providers and returning the responses. The use of APIs has gained prevalence in mobile application development, given the ease of using pre-existing frameworks. Programmers use most APIs to fetch data from web servers and render it to its UI components.

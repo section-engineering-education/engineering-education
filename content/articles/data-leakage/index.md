@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-leakage/hero.jpg
+  - url: /engineering-education/data-leakage/hero.jpg
     alt: Underspecification in Machine Learning image example
 ---
 We always want to produce the best performing machine learning models. If a model does well on our test set, we consider it to be a suitable model. Yet, a model may perform well during testing but poorly after deployment. There are several probable causes of such, but one of them is data leakage.

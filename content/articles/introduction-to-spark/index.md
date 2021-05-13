@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-spark/hero.jpg
+  - url: /engineering-education/introduction-to-spark/hero.jpg
     alt: apache spark image example screensaver
 ---
 

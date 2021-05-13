@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /comparing-graphical-user-interface-gui-and-command-line-interface-cli/hero.jpg
+  - url: /engineering-education/comparing-graphical-user-interface-gui-and-command-line-interface-cli/hero.jpg
     alt: GUI CLI example image
 ---
 The operating system enables the interaction between the user and the device. It does this by providing two user interfaces: a command-line interface (CLI) and a graphical user interface (GUI).

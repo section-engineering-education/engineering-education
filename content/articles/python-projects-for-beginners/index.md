@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /python-projects-for-beginners/hero.jpg
+  - url: /engineering-education/python-projects-for-beginners/hero.jpg
     alt: python example image
 ---
 When learning any programming language, the first step is learning the basic concepts of the language. While this is important, theoretical learning without working on real projects is not sufficient. The best way to have a good understanding of the language's basic concepts is by creating real-world projects with the learned concepts.

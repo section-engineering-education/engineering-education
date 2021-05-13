@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /biometric-2fa-in-a-django-application-with-typingdna/hero.jpg
+  - url: /engineering-education/biometric-2fa-in-a-django-application-with-typingdna/hero.jpg
     alt: Getting started with biometric 2FA in a Django Application with TypingDNA example image
 ---
 Have you ever wanted to implement biometric two-factor authentication in your Django web application? If you answered yes, then this article is just what you need to get started.

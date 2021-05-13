@@ -10,7 +10,7 @@ date: 2020-11-25T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /user-interface-animation-with-animejs/hero.jpg
+  - url: /engineering-education/user-interface-animation-with-animejs/hero.jpg
     alt: User Interface Animation with Anime.js
 ---
 Anime.js is one of the most preferred javascript animation libraries. It is free, open-source, lightweight, and easy to use. The library supports modern browsers. Thtuttorail will guide you through the Anime.js animation library. You will learn how to create different animation effects for your web user interface.

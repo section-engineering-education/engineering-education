@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /hash-tables-in-javascript/hero.jpg
+  - url: /engineering-education/hash-tables-in-javascript/hero.jpg
     alt: Hash Tables image example
 ---
 Hash tables are powerful data structures in the field of computing. Data structures and algorithms are known for solving problems effectively. Hash tables access components in constant time (O(1)). Hash tables enable us to find data quickly using keys. 

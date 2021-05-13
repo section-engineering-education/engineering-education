@@ -10,7 +10,7 @@ date: 2021-01-12T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /mathematics-for-machine-learning/hero.jpg
+  - url: /engineering-education/mathematics-for-machine-learning/hero.jpg
     alt: Mathematics for Machine Learning example image
 ---
 We need the equivalent of high school mathematics to understand the concepts used in Machine Learning (ML), such as linear algebra, probability, statistics, and multivariate calculus. Yet, a background in ML is necessary to understand the ML concepts and algorithms.

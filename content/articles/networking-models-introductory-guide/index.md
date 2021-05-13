@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /networking-models-introductory-guide/hero.jpg
+  - url: /engineering-education/networking-models-introductory-guide/hero.jpg
     alt: networking model example image
 ---
 Networking is the main reason we can write this blog and send it across to millions of readers with such ease. The overall picture is explored in the subject of computer networks. Computer networks deal with communication between systems. At the same time, it also considers how information being sent from the source should reach its destination most efficiently. It is comparative to a congested city with loads of traffic.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sgd-classifier/hero.jpg
+  - url: /engineering-education/sgd-classifier/hero.jpg
     alt: Stochastic Gradient Classifier example image
 ---
 Welcome to a tutorial on implementing a linear classifier using a Stochastic Gradient Descent optimizer (SDG). This article will cover the theory behind modeling data using loss functions and help the reader understand the optimization process used to minimize the loss functions. Finally, we will code the linear classifier from scratch and use the Iris dataset to test the linear classifier.

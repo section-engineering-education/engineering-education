@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /complete-guide-on-installing-flask-for-beginners/hero.jpg
+  - url: /engineering-education/complete-guide-on-installing-flask-for-beginners/hero.jpg
     alt: address resolution protocol image example
 
 ---

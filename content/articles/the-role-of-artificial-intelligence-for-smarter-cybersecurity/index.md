@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /the-role-of-artificial-intelligence-for-smarter-cybersecurity/hero.jpg
+  - url: /engineering-education/the-role-of-artificial-intelligence-for-smarter-cybersecurity/hero.jpg
     alt: AI and Cybersecurity example image
 ---
 Organizations continue to embrace the Internet of Things (IoT), the cloud, and mobile technology. This has influenced considerable changes in the threat landscape and created more vulnerability points.

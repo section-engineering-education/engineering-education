@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-javascript-modules/hero.jpg
+  - url: /engineering-education/introduction-to-javascript-modules/hero.jpg
     alt: Introduction to Javascript Modules
 ---
 While writing programs, there are scenarios where you need to write several lines of code. It could make the code so big and complex to maintain. The simple solution to this problem is the use of Javascript modules. It ensures the organization and ease of code maintenance.

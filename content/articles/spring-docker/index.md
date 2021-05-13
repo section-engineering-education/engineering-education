@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spring-docker/hero.jpg
+  - url: /engineering-education/spring-docker/hero.jpg
     alt: Spring Boot Docker Images example image
 ---
 [Docker](https://docs.docker.com) is a container engine that makes it possible to bundle, ship, and distribute applications across distributed servers.

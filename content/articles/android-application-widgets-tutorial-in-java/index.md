@@ -10,7 +10,7 @@ date: 2021-04-20T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /android-application-widgets-tutorial-in-java/hero.jpg
+  - url: /engineering-education/android-application-widgets-tutorial-in-java/hero.jpg
     alt: Android Application Widgets Tutorial in Java
 ---
 Application widgets are views that contain some of the application's functionalities that are accessible from the user's home screen, for example, weather widgets, clock widgets, etc. This tutorial will take you through how to implement widgets in Android applications.

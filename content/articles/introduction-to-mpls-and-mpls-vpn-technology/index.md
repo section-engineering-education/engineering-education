@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-mpls-and-mpls-vpn-technology/hero.jpg
+  - url: /engineering-education/introduction-to-mpls-and-mpls-vpn-technology/hero.jpg
     alt: VPN example image laptop
 
 ---

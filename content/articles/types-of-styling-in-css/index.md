@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /types-of-styling-in-css/hero.jpg
+  - url: /engineering-education/types-of-styling-in-css/hero.jpg
     alt: Types of CSS (Cascading Style Sheets) example image
 
 ---

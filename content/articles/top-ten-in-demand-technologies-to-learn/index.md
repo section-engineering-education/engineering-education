@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /top-ten-in-demand-technologies-to-learn/hero.jpg
+  - url: /engineering-education/top-ten-in-demand-technologies-to-learn/hero.jpg
     alt:  example image developers
 
 ---

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /mainframes-vs-supercomputers/hero.jpg
+  - url: /engineering-education/mainframes-vs-supercomputers/hero.jpg
     alt: mainframe vs supercomputer
 ---
 What do you picture when you hear the word mainframe or supercomputer? Most people think of a very similar picture, which is not surprising if you look at the definitions of the words. According to the Oxford Dictionary, a mainframe is:

@@ -10,7 +10,7 @@ date: 2020-12-30T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /android-application-in-app-update-using-android-studio/hero.png
+  - url: /engineering-education/android-application-in-app-update-using-android-studio/hero.png
     alt: Android app update
 ---
 As developers, we always want users to update their applications to the latest version quickly. We want everyone to use the latest features included in the updates. Google notifies Android users whenever updates are available for certain applications. However, this is mainly for users who have enabled the `auto-update` feature. It is, therefore, important for users to know when your application has a new update available.

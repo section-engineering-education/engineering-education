@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /build-a-jekyll-site/hero.jpg
+  - url: /engineering-education/build-a-jekyll-site/hero.jpg
     alt: image build a Jekyll site
 ---
 Building a website nowadays is not as hard or expensive as it was in the past. These days, you do not have to learn a crazy programming language to have your site up and running.

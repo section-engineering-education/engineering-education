@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /kotlin-ranges/hero.png
+  - url: /engineering-education/kotlin-ranges/hero.png
     alt: kotlin ranges image
 ---
 Kotlin provides a wide range of solutions. Most of these solutions aim to make development easier and faster. Kotlin provides easier ways to perform specific actions. Since it is compiled the same way as Java, its functions and methods ensure your code is more efficient.

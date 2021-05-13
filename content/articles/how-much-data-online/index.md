@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-much-data-online/hero.jpg
+  - url: /engineering-education/how-much-data-online/hero.jpg
     alt: data on the internet
 ---
 Every day, we are generating over 2.5 quintillion or 2.5 exabytes of data. This number is also increasing, with estimates that by 2025, 463 exabytes of data will be created each day. While not all of this data is ever put onto the Internet at one time, much of this is expected to make its way onto the Internet at least for a moment.

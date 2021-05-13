@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-windows-forms-using-c-sharp/hero.jpg
+  - url: /engineering-education/getting-started-with-windows-forms-using-c-sharp/hero.jpg
     alt: Windows Forms C# example image 
 ---
 Windows forms allow the programmers to create a graphical user interface (GUI) that allows the user to interact with the program visually. According to [Microsoft](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/overview/?view=netdesktop-5.0), it provides one of the most productive ways to create desktop apps based on the visual designer provided in Visual Studio.

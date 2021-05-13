@@ -10,7 +10,7 @@ date: 2021-03-22T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/hero.jpg
+  - url: /engineering-education/implementing-aws-s3-functionalities-on-a-nodejs-graphql-api/hero.jpg
     alt: AWS S3 GraphQL API sample image
 ---
 Amazon Web Services (AWS) is a subsidiary of Amazon offering cloud computing services. The services revolve around storage, application, and infrastructure. S3 is the storage service provided by AWS. Node.js SDK (Software Development Kit) from AWS enables one to access functionalities offered by the platform, from a Node.js application.

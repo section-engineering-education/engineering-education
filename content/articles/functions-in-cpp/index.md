@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /functions-in-cpp/hero.jpg
+  - url: /engineering-education/functions-in-cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
 Let us continue from where we left off in the previous article [*Introduction to C++*](/intro-to-c-part1/). We started by going over the importance of C++ as a programming language, and where it is being used today. Most importantly, we tried to go over the basic concepts of the C++ language that any developer would need to get started. If you haven't had a chance to read it already, make sure you do to get a better understanding as we move forward.

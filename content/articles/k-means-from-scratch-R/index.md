@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /k-means-from-scratch-r/hero.jpg
+  - url: /engineering-education/k-means-from-scratch-r/hero.jpg
     alt: K-Means Algorithm in R example image
 ---
 In this article, we will be coding the K-means algorithm from scratch and will visualize the results. Going through this article should result in a more intuitive understanding of the K-means algorithm.

@@ -11,7 +11,7 @@ topics: [Security, Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-totp-2fa-using-flask/hero.jpg
+  - url: /engineering-education/implementing-totp-2fa-using-flask/hero.jpg
     alt: 2FA in Python example image
 ---
 Two-factor authentication (2FA) is a security protocol that protects users by asking them to verify their identity using two authentication methods. 

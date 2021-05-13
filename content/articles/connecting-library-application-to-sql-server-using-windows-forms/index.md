@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
+  - url: /engineering-education/connecting-library-application-to-sql-server-using-windows-forms/hero.jpg
     alt: Windows forms example image c#
 ---
 Windows forms are one of the best tools used in making applications. With Windows forms, you can make a variety of applications, from a mini calculator to a library application that uses a database.

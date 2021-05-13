@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-firebase-storage/hero.jpg
+  - url: /engineering-education/react-native-firebase-storage/hero.jpg
     alt: React Native Non-Expo Firebase Storage Hero Image
 ---
 In this tutorial, we will be building a Non-Expo React Native application to upload images and videos to Firebase cloud storage. Firebase is a platform developed by Google used to create mobile and web applications. It was originally an independent company founded in 2011.

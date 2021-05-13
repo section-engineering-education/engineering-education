@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /docker-concepts/hero.jpg
+  - url: /engineering-education/docker-concepts/hero.jpg
     alt: container example image
 ---
 [Docker](https://docs.docker.com/get-started/overview/), an open-source project launched in 2013, has helped popularize technology and has helped drive the trend towards containerization and micro-services in software development that’s known as cloud-native development.

@@ -10,7 +10,7 @@ date: 2021-04-19T00:00:00-16:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /nodejs-tineye-api/hero.jpg
+  - url: /engineering-education/nodejs-tineye-api/hero.jpg
     alt: Consuming the TinEye Reverse Image Search API in Node.js example image
 ---
 Reverse image search in the simplest form of explanation is searching for occurrences of an image online using the image to be searched for as the query parameter. We may use this search to locate the source of an image, look for one with a better resolution or get more information about the image.

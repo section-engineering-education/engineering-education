@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-android-views-and-view-groups/hero.png
+  - url: /engineering-education/introduction-to-android-views-and-view-groups/hero.png
     alt: Android Views and Viewgroups example image
 ---
 All user’s interaction with an Android application is via the [user interface](https://www.studytonight.com/android/introduction-to-views) (UI). Knowing the fundamentals of the Android application’s user interface is essential. The UI of an Android application is made up of a collection of views and [view groups](https://www.programmersought.com/article/47124971866/). This article will go through commonly used views, view groups, and the attributes associated with them.

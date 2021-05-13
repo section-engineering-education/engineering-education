@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /bloom-filters-data-structure/hero.jpg
+  - url: /engineering-education/bloom-filters-data-structure/hero.jpg
     alt: Bloom Filters data structure
 ---
 Bloom filters are a probabilistic data structure that uses the concept of hashing extensively. It was designed to solve the problem of finding an element in a set, while keeping in mind high efficiency, memory, and time. In this article, we will be covering the basics of hashing, bloom filters, and the applications of this data structure.

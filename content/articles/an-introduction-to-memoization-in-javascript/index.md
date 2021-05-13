@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-introduction-to-memoization-in-javascript/hero.jpg
+  - url: /engineering-education/an-introduction-to-memoization-in-javascript/hero.jpg
     alt: Introduction to Memorization in JavaScript Hero Image
 ---
 Functions are a vital building block for any programming language. As a developer, you will often use functions in your project. One important aspect of a function is that they are reusable. You can call them from anywhere within your program. A function can return other functions or take a function as its argument. When you have an extensive program, chances are we will reuse a function more than once.

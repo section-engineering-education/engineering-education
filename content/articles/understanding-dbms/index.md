@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-dbms/hero.jpg
+  - url: /engineering-education/understanding-dbms/hero.jpg
     alt: Database Architecture and Models example image
 ---
 Computers have made our lives easier by handling complicated calculations and solving complex problems. Hands down computers are one of the best inventions of mankind. While using computers and instilling them in our lives has made our work a piece of cake, maintaining them can be difficult to accomplish.

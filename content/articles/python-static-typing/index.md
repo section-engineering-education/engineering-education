@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /python-static-typing/hero.jpg
+ - url: /engineering-education/python-static-typing/hero.jpg
    alt: Python static typing example image
 ---
 Python is a dynamically typed language. One does not have to explicitly indicate the data type and return types of your variables and functions, respectively. Dynamic typing makes Python very user-friendly. However, dynamic typing has no compiler verified documentation and may lead to runtime errors that are difficult to fix. Static typing provides a solution to these problems.

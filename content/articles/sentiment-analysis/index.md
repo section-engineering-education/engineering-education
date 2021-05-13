@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sentiment-analysis/hero.jpg
+  - url: /engineering-education/sentiment-analysis/hero.jpg
     alt: sentiment analysis image example
 ---
 Social networks are a primary resources to gather information about people’s opinions and sentiments towards different topics as they spend hours daily on social media and share their opinion. In this article, we shall discuss the applications of sentiment analysis and how to connect to Twitter and run sentiment analysis queries. Basic knowledge of [Python](https://www.python.org/about/gettingstarted/) is required for understanding the code.

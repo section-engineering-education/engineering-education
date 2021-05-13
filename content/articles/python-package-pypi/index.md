@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-python-package-and-publishing-on-pypi/hero.jpg
+  - url: /engineering-education/building-a-python-package-and-publishing-on-pypi/hero.jpg
     alt: Python example image PyPi
 ---
 If you have any experience building things with Python you will notice a lot of installing and importing of packages, Python allows you to reuse code and share your code to save time and energy. In very simple terms, a Python package is a collection of related modules, it is a module that contains a file name *__init__.py*, the Init.py file is simply a file that tells Python that the directory contains packages.

@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-    - url: /introduction-to-wireless-networking/hero.jpg
+    - url: /engineering-education/introduction-to-wireless-networking/hero.jpg
       alt: Introduction to wireless networking example image
 ---
 The planet is becoming increasingly more mobile over the past few years. The worlds conventional ways of networking have proved insufficient to address the challenges raised by our current collective lifestyle. When users need to be connected by physical cables to a network, their movement is drastically reduced.   

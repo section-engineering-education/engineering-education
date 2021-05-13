@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-matlab/hero.png
+  - url: /engineering-education/getting-started-with-matlab/hero.png
     alt: Geting Started with MATLAB example image
 ---
 MATLAB (an abbreviation of "matrix laboratory") is a programming language and numerical computing environment developed by MathWorks. It is used for mathematical operations.

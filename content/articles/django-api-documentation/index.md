@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /django-api-documentation/hero.jpg
+  - url: /engineering-education/django-api-documentation/hero.jpg
     alt: Getting started with Django API documentation example image
 ---
 REST API documentation is an important step in the process of API development. Documentation makes it possible for other developers who will consume the API to understand how the API works.

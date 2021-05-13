@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /clustering-in-unsupervised-ml/hero.jpg
+  - url: /engineering-education/clustering-in-unsupervised-ml/hero.jpg
     alt: clustering algorithms unsupervised machine learning example image
 ---
 Unsupervised learning is a machine learning (ML) technique that does not require the supervision of models by users. It is one of the categories of machine learning. The other two categories include reinforcement and [supervised learning](engineering-education/supervised-learning-algorithms/).

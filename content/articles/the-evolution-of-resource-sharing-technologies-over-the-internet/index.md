@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /the-evolution-of-resource-sharing-technologies-over-the-internet/hero.jpg
+  - url: /engineering-education/the-evolution-of-resource-sharing-technologies-over-the-internet/hero.jpg
     alt: Resource Sharing Technologies example image
 
 ---

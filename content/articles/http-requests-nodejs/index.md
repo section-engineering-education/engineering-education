@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /http-requests-nodejs/hero.jpg
+  - url: /engineering-education/http-requests-nodejs/hero.jpg
     alt: nodejs http requests
 ---
 HyperText Transfer Protocol (HTTP) is mainly used for transmitting multimedia documents and to enhance collaborative and distributed features of an application. Being an application layer protocol, it plays a critical role in the overall experience of the application. We have discussed the Application layer and other corresponding layers in detail in this [article](/networking-models-introductory-guide/). Make sure to check it out.

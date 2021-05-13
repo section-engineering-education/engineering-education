@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-classes-in-python-3.7+/hero.jpg
+  - url: /engineering-education/data-classes-in-python-3.7+/hero.jpg
     alt: Data Class Python 3.7+ example Image
 ---
 The main function of a Python class is to contain and represent data. In previous Python versions, the `__init__()` function stores values on the instance of the class. This is a common pattern that brings up the question; why must we explicitly store each argument on the object? Well, in Python 3.7 we don't.

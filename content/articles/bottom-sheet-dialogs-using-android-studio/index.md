@@ -10,7 +10,7 @@ date: 2021-02-19T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /bottom-sheet-dialogs-using-android-studio/hero.jpg
+  - url: /engineering-education/bottom-sheet-dialogs-using-android-studio/hero.jpg
     alt: Introduction to Bottom Sheets in Android
 ---
 Bottom Sheet dialogs seem to be replacing regular Android dialogs and menus. The Bottom Sheet is a component that slides up from the bottom of the screen to showcase additional content in your application.

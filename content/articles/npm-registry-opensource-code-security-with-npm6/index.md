@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /npm-registry-opensource-code-security-with-npm6/hero.jpg
+  - url: /engineering-education/npm-registry-opensource-code-security-with-npm6/hero.jpg
     alt: npm6 Node.js code Security
 ---
 Security is a huge concern for everyone. The safety of the code you use is important regardless of you being a beginner or expert in Node.js app development. It is even a professional habit that developers acquire as they grow with experience. Making sure open-source codes are secure is one of the fundamental mission of NPM, with approaches to security at scale to empower NPM users to develop secure code.

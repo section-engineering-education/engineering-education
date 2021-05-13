@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ajax-request-in-django-using-axios/hero.jpg
+  - url: /engineering-education/ajax-request-in-django-using-axios/hero.jpg
     alt: Django Ajax Axios example
 ---
 Ajax is an acronym for Asynchronous JavaScript and XML. It is neither a language, a framework, nor a web library. It is a web technology that sends and receives data from a client to a server asynchronously, all done in the background without needing to reload the current web page.

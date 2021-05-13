@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-local-unit-tests-in-android-kotlin/hero.jpg
+  - url: /engineering-education/building-local-unit-tests-in-android-kotlin/hero.jpg
     alt: Local unit tests example image
 ---
 Unit testing is a crucial feature of software development. It brings about a development paradigm known as Test Driven Development (TDD). These tests typically test the business logic of applications. In Test Driven Development, the developer writes tests that define what a specific function should do by pointing out the expected results. After the tests are appropriately structured, the developer then writes the implementation of the function.

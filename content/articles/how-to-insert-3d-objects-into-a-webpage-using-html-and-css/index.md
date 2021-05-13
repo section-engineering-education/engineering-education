@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.jpg
+  - url: /engineering-education/how-to-insert-3d-objects-into-a-webpage-using-html-and-css/hero.jpg
     alt: How to Insert 3D Objects into a webpage using HTML and CSS example image
 ---
 Are you a creative frontend web designer or are you looking for ways to make your website look more interactive and visually appealing? Would you like to advertise your products interestingly? Look no further. Today, we are going to learn how to insert 3D objects into a website.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-overview-of-compiler-design/hero.jpg
+  - url: /engineering-education/an-overview-of-compiler-design/hero.jpg
     alt: Compiler Design image
 ---
 The computer is an integral tool in our lives because it runs applications that solve many real-life problems. Computer programmers write programs (using programming languages) to perform various tasks. The high-level programming languages currently used can only be understood by human beings, but not by the computer. 

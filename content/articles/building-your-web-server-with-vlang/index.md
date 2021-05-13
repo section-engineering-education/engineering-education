@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-web-server-with-vlang/hero.jpg
+  - url: /engineering-education/building-web-server-with-vlang/hero.jpg
     alt: V Vlang example
 ---
 A lot of new programming languages are released every year and very few end up getting noticed. Very few make it to the top programming languages list. One language that has recently gotten recognition by programmers, especially backend developers, is Vlang (V).

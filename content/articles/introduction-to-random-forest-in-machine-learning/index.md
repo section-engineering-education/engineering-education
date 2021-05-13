@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-random-forest-in-machine-learning/hero.jpg
+  - url: /engineering-education/introduction-to-random-forest-in-machine-learning/hero.jpg
     alt: Random Forest machine learning example image
 ---
 A random forest is a supervised machine learning algorithm that is constructed from decision tree algorithms. This algorithm is applied in various industries such as banking and e-commerce to predict behavior and outcomes.

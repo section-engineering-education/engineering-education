@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /mysql-query-optimization-using-indexes-with-examples/hero.jpg
+  - url: /engineering-education/mysql-query-optimization-using-indexes-with-examples/hero.jpg
     alt: MySQL Database Optimization using Indexes
 ---
 This article is a comprehensive tutorial on MySQL database optimization using indexes. If you have interacted with any SQL based relational database, maybe you have come across indexes. Unfortunately, most beginners in SQL based databases don't know how to use indexes.

@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /job-scheduling-in-nodejs/hero.jpg
+  - url: /engineering-education/job-scheduling-in-nodejs/hero.jpg
     alt: job scheduling Node.js image example
 ---
 When building web applications and APIs in Node.js, we sometimes come across tasks that need to be done repeatedly. This can be at a specific time everyday, month, or even year depending on the task. Some of these tasks may include:

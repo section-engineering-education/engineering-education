@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /flask-database-integration-with-sqlalchemy/hero.jpg
+  - url: /engineering-education/flask-database-integration-with-sqlalchemy/hero.jpg
     alt: Flask Database Integration With SQLAlchemy example image
 ---
 Databases are integral components of building web applications. Throughout the life-cycle of a web application, the user sends bits of data that are needed to be stored for future reference. Simultaneously, the user also requests information from where they are stored.

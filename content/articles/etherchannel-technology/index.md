@@ -10,7 +10,7 @@ date: 2021-05-10T00:00:00-16:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
-  - url: /etherchannel-technology/hero.jpg
+  - url: /engineering-education/etherchannel-technology/hero.jpg
     alt: Understanding EtherChannel-Technology
 ---
 In most network designs, network administrators connect multiple physical Ethernet links between devices to achieve more bandwidth and redundancy.

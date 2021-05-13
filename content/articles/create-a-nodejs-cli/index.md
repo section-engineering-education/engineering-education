@@ -10,7 +10,7 @@ date: 2020-10-16T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /create-a-nodejs-cli/hero.png
+  - url: /engineering-education/create-a-nodejs-cli/hero.png
     alt: example image Node.js CLI
 ---
 The command line or the terminal is a powerful tool used by a lot of developers. It allows developers to interact with the operating system using commands. These commands are passed as input strings of text.

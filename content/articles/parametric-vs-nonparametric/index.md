@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /parametric-vs-nonparametric/hero.jpg
+  - url: /engineering-education/parametric-vs-nonparametric/hero.jpg
     alt: Parametric versus Non-Parametric Models hero image
 ---
 In machine learning, a learner/model learns from training data to map a target function. However, the configuration of the function is undetermined. As a result, we test out many machine learning algorithms to effectively determine which models the intrinsic function. 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /list-transformations-js/hero.jpg
+  - url: /engineering-education/list-transformations-js/hero.jpg
     alt: list transformations in JavaScript
 ---
 In this tutorial, we will be creating new objects and arrays from existing ones. We will create nested data structures, looping them, and destructuring them. We will also look at transforming data structures by passing them through functions.

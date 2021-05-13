@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /declarative-vs-imperative-ui-android/hero.jpg
+  - url: /engineering-education/declarative-vs-imperative-ui-android/hero.jpg
     alt: declarative UI image example
 ---
 Every application has a UI framework behind it. These frameworks play a huge part in how the applications are created and their performance as well. They also have different ways of operation but can be summarized into two: `declarative` and `imperative`. 

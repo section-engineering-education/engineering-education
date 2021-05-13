@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /speakeasy-two-factor-authentication-in-nodejs/hero.jpg
+  - url: /engineering-education/speakeasy-two-factor-authentication-in-nodejs/hero.jpg
     alt: 2FA hero image
 ---
 Two-factor authentication is a security measure implemented in an application to increase security by providing two separate pieces of evidences for authorization to the system. Two-factor authentication (2FA) works beyond username/email and password authentication.

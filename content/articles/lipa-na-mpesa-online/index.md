@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /lipa-na-mpesa-online/hero.jpg
+  - url: /engineering-education/lipa-na-mpesa-online/hero.jpg
     alt: Lipa na Mpesa Online image example
 ---
 Mpesa is a mobile money payment service by Safaricom based in Kenya. It was released in 2007 and since then it has become the common means of payment in Kenya. To help developers implement Mpesa in their platforms, Safaricom released the Daraja API. 

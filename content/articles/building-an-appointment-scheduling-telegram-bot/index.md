@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-an-appointment-scheduling-telegram-bot/hero.jpg 
+  - url: /engineering-education/building-an-appointment-scheduling-telegram-bot/hero.jpg 
     alt: Building an Appointment Scheduling Telegram Bot with Python and Fauna
 ---
 Have you ever wanted to build a telegram bot that would allow you to schedule or plan your appointments? If your answer is yes, then this article is just what you need. 

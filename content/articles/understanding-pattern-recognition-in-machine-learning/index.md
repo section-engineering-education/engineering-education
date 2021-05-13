@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-pattern-recognition-in-machine-learning/hero.jpg
+  - url: /engineering-education/understanding-pattern-recognition-in-machine-learning/hero.jpg
     alt: pattern recognition example image
 ---
 Pattern recognition is the use of computer algorithms to recognize data regularities and patterns. This type of recognition can be done on various input types, such as biometric recognition, colors, image recognition, and facial recognition. It has been applied in various fields such as image analysis, [computer vision](https://www.section.io/engineering-education/computer-vision-straight-lines/), healthcare, and seismic analysis.

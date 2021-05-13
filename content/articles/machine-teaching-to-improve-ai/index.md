@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /machine-teaching-to-improve-ai/hero.jpg
+  - url: /engineering-education/machine-teaching-to-improve-ai/hero.jpg
     alt:  image
 ---
 We provide machine learning models with volumes of data expecting that they will identify patterns or learn relationships within the data. This can be an expensive and time-consuming process.

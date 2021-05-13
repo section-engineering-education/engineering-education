@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-hill-climbing-in-ai/hero.jpg
+  - url: /engineering-education/understanding-hill-climbing-in-ai/hero.jpg
     alt: Hill climbing algorithm example image
 ---
 A hill-climbing algorithm is an Artificial Intelligence (AI) algorithm that increases in value continuously until it achieves a peak solution. This algorithm is used to optimize mathematical problems and in other real-life applications like marketing and job scheduling.

@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /telegram-bot-in-nodejs/hero.jpg
+  - url: /engineering-education/telegram-bot-in-nodejs/hero.jpg
     alt: telegram bot in nodejs image
 ---
 What are telegram bots? Bots are third-party application accounts that run inside the Telegram application. Users can interact with bots by sending them messages, commands, and inline requests. You control your bots using HTTPS requests from the Telegram Bot API.

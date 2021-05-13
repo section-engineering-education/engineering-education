@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /advanced-r-concepts/hero.jpg
+  - url: /engineering-education/advanced-r-concepts/hero.jpg
     alt: r programming language example image
 ---
 In the first [article](/introduction-to-r/), we covered the R programming language basics. In this article, we will look at some of the advanced aspects of the R programming language. Going through this article will enhance a developer's ability to implement [Object-Oriented Programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming) concepts and write modular code. We will be covering the following topics in this article:

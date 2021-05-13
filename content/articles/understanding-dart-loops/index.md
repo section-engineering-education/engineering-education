@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-loops-and-iteration-in-dart/hero.jpg
+  - url: /engineering-education/understanding-loops-and-iteration-in-dart/hero.jpg
     alt: Understanding loops and iteration in Dart image
 ---
 Dart is a programming language that is scalable and can write simple scripts or full-featured applications. It is an object-oriented and dynamic language. Dart was developed by Google. Like most programming languages, it contains loops and iterations.

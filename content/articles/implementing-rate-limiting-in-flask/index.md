@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-rate-limiting-in-flask/hero.jpg
+  - url: /engineering-education/implementing-rate-limiting-in-flask/hero.jpg
     alt: How to Build a Music Player Using Django Hero Image
 ---
 Rate limiting is a technique for limiting network traffic in a system. It sets a limit when a user can repeat an operation in a system within a specific timeframe.

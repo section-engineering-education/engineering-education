@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /breaking-down-kafka-vs-pulsar/hero.jpg
+  - url: /engineering-education/breaking-down-kafka-vs-pulsar/hero.jpg
     alt:  Kafka Pulsar example image
 ---
 Messaging systems are essential for their ability to enable remote communication and to transfer data. Apache Pulsar and Apache Kafka are two widely used messaging systems. Recently, Pulsar has emerged as a serious competitor to Kafka and is being embraced in use cases where Kafka dominated.

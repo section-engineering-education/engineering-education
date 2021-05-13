@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-introduction-to-machine-learning-using-c++/hero.jpg
+  - url: /engineering-education/an-introduction-to-machine-learning-using-c++/hero.jpg
     alt: Machine learning using c++ image example
 ---
 C++ is a high-level object-oriented programming language with a faster run-time compared to most programming languages. This is because it is closer to machine language. Recent advancement in machine learning and other artificial intelligence-related facets have been implemented using Python due to its flexibility and rich library support as well as an active community of users.

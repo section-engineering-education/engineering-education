@@ -10,7 +10,7 @@ date: 2020-12-17T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /graph-traversals-java/hero.jpg
+  - url: /engineering-education/graph-traversals-java/hero.jpg
     alt: traversal example image
 ---
 Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world, including relationships (Facebook), locations (Google Maps), programming analysis, and more.

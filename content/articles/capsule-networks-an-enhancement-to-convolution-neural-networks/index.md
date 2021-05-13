@@ -10,7 +10,7 @@ date: 2020-12-10T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /capsule-networks-an-enhancement-to-convolution-neural-networks/hero.jpg
+  - url: /engineering-education/capsule-networks-an-enhancement-to-convolution-neural-networks/hero.jpg
     alt: Capsule Networks example image
 ---
 The key ideas behind Capsule Networks (CapsNets) were introduced in 2011 by [Geoffrey E. Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton) in a research paper called [Transforming Autoencoders](http://www.cs.toronto.edu/~bonner/courses/2020s/csc2547/papers/capsules/transforming-autoencoders,-hinton,-icann-2011.pdf). Although, he did have a difficult time making the network work properly.  

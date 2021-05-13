@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-the-basics-of-responsive-web-design/hero.jpg
+  - url: /engineering-education/understanding-the-basics-of-responsive-web-design/hero.jpg
     alt: Responsive Web Design Image
 ---
 Many global businesses are building websites to provide a platform for marketing and promoting their products. Only building an attractive website may not be enough since customers require a site that promotes usability and responsiveness. Responsive web design ensures that a website responds well to various devices used by customers. 

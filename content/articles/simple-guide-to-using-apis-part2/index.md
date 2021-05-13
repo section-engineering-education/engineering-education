@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /simple-guide-to-using-apis-part2/hero.png
+  - url: /engineering-education/simple-guide-to-using-apis-part2/hero.png
     alt: hero image using APIs authentication using Goodreads API
 ---
 You have worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](/simple-guide-to-using-apis-nodejs/).

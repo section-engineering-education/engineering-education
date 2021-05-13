@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-solid-principle/hero.jpg
+  - url: /engineering-education/introduction-to-solid-principle/hero.jpg
     alt: Solid principle image example
 
 ---

@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /http-code-cheat-sheet/hero.jpg
+  - url: /engineering-education/http-code-cheat-sheet/hero.jpg
     alt: http cheatsheet laptop
 ---
 If you have ever copied a link from your browser and noticed that `http://` or `https://` had been added before the domain, you are looking at the protocol used which defines how messages are formatted and transmitted. It also defines how web servers and browsers should respond to various commands.

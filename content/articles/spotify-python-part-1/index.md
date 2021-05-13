@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spotify-python-part-1/hero.jpg
+  - url: /engineering-education/spotify-python-part-1/hero.jpg
     alt: Spotify API with Spotipy example image
 ---
 Spotify is a wonderful music streaming app with a powerful API functionality. The API is both beginner-friendly and offers a wide range of endpoints. This makes the Spotify API a great way to get started for beginner programmers who are interested in getting involved in web APIs and even data science, or advanced programmers who want more control over their playlists. 

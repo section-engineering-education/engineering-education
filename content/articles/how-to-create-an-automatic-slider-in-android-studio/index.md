@@ -10,7 +10,7 @@ date: 2021-04-02T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-create-an-automatic-slider-in-android-studio/hero.jpg
+  - url: /engineering-education/how-to-create-an-automatic-slider-in-android-studio/hero.jpg
     alt: Introduction to Bottom Sheets in Android
 ---
 Sliders are found on cross-platforms such as website pages, desktop, and mobile apps. They are usually used to highlight important features on home screens.

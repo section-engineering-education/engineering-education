@@ -10,7 +10,7 @@ date: 2021-03-01T00:00:00-17:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /page-visibility-api/hero.jpg
+  - url: /engineering-education/page-visibility-api/hero.jpg
     alt: Implement a custom scrollbar on a web page using CSS
 ---
 When we use browser tabs to browse the web pages, there is a chance that some (or most) of the tabs will not visible to the user at once. The Page Visibility API is a browser API that provides a way to determine which browser tabs are currently active or idle.

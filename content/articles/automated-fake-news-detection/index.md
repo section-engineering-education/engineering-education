@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /automated-fake-news-detection/hero.jpg
+  - url: /engineering-education/automated-fake-news-detection/hero.jpg
     alt: fake news example image
 ---
 Misinformation presents a huge challenge in online society. As a result, there have been many attempts to identify and classify misinformation. Specifically, in social networking sites, blogs, as well as online newspapers.

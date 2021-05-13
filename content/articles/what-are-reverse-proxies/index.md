@@ -12,7 +12,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-are-reverse-proxies/hero.jpg
+  - url: /engineering-education/what-are-reverse-proxies/hero.jpg
     alt: reverse proxies
 ---
 Section’s main work focuses on providing an Edge Compute Platform to improve scalability, security, and performance for internet traffic worldwide. But how exactly is Section able to live up to that promise? The answer is through the use of reverse proxies in Section’s platform.

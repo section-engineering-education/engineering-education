@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /linear-regression-introduction/hero.jpg
+  - url: /engineering-education/linear-regression-introduction/hero.jpg
     alt: Theoretical Linear Regression example image
 ---
 Linear regression is one of the most fundamental machine learning algorithm in the category of regression. There exist two types of machine learning algorithms: classification and regression. Under regression, we can have linear regression, polynomial regression, exponential regression, Gaussian process regression, etc. Regression is a supervised learning algorithm that outputs a continuous set of values. Linear regression refers to creating linear models to represent the data. 

@@ -10,7 +10,7 @@ date: 2020-08-07T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /web-application-architectures-101/hero.jpg
+  - url: /engineering-education/web-application-architectures-101/hero.jpg
     alt: web app
 ---
 

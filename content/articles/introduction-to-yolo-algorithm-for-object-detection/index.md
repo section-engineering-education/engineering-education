@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-yolo-algorithm-for-object-detection/hero.jpg
+  - url: /engineering-education/introduction-to-yolo-algorithm-for-object-detection/hero.jpg
     alt:  yolo algorithm example image
 ---
 YOLO is an algorithm that uses neural networks to provide real-time object detection. This algorithm is popular because of its speed and accuracy. It has been used in various applications to detect traffic signals, people, parking meters, and animals. 

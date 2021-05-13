@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /diagnose-diabetes-with-svm/hero.png
+  - url: /engineering-education/diagnose-diabetes-with-svm/hero.png
     alt: Support Vector Machines example image
 ---       
 In this guide, we will learn how to use machine learning to diagnose if a patient has diabetes. We can do this by using their medical records. We will use the Support Vector Machine Algorithm (from Sci-kit Learn) to build our model. 

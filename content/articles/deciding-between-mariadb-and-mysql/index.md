@@ -10,7 +10,7 @@ date: 2021-03-25T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /deciding-between-mariadb-and-mysql/hero.jpg
+  - url: /engineering-education/deciding-between-mariadb-and-mysql/hero.jpg
     alt: Choosing between MariaDB and MySQL
 ---
 MariaDB, an open-source software, is a relational database that provides a SQL interface for data access. This database server is popular because it is robust, scalable, and fast. Its vast ecosystem of plugins, storage engines, amongst other tools, makes it unique for numerous use cases.

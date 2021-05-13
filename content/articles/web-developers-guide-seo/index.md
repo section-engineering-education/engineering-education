@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /web-developers-guide-seo/hero.jpg
+  - url: /engineering-education/web-developers-guide-seo/hero.jpg
     alt: web developers guide to SEO
 ---
 Search engine optimization (SEO) is an incredibly important aspect of designing websites. SEO is usually tackled by the marketing department in a given company. But, developers have an equal role to play in ensuring the website is easily found on the search engines.

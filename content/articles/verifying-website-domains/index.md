@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /verifying-website-domains/hero.jpg
+  - url: /engineering-education/verifying-website-domains/hero.jpg
     alt: Verifying Website Domains
 ---
 Verifying website domains for originality can be complicated during a time where the internet is constantly being used for both good and bad. By using Python Shell and Windows PowerShell within a Windows environment, determining the credibility of a website domain name we determine website domain originality.

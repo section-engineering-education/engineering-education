@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /digital-assistants-vs-digital-companions/hero.jpg
+  - url: /engineering-education/digital-assistants-vs-digital-companions/hero.jpg
     alt: Digital Assistants vs. Digital Companions Image
 ---
 We rely heavily on digital assistants in our daily lives, to make our work easier and faster. The statistics of people who use digital assistants is growing rapidly, and it is expected that those numbers will continue to grow.

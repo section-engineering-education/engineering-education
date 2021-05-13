@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /discord-bot-node/hero.jpg
+  - url: /engineering-education/discord-bot-node/hero.jpg
     alt: discord bot node example image
 ---
 Discord bots are very cool. They're also very fun to make. But how do you make one?

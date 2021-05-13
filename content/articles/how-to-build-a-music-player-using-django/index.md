@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-a-music-player-using-django/hero.jpg
+  - url: /engineering-education/how-to-build-a-music-player-using-django/hero.jpg
     alt: How to Build a Music Player Using Django Hero Image
 ---
 Have you ever wanted to build a music player web application?. If your answer is yes then this article is for you. I love how Django's ORM makes it so easy to work with a database along with the views (i.e the functional backend of the app) and the template files all connected with the Django MVT (i.e Model View Template) architecture. 

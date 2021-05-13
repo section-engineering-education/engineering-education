@@ -10,7 +10,7 @@ date: 2020-12-21T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /building-xml-webpages-using-xslt/hero.jpg
+  - url: /engineering-education/building-xml-webpages-using-xslt/hero.jpg
     alt: Building XML webpages using XSLT
 ---
 In this article, we will learn about building XML webpages using eXtensible Stylesheet Language Transformations (XSLT). By the end of the article, you will have an overview how HTML webpages are built by transforming XML codes. You will also learn a step-by-step procedure on how to build a simple webpage.

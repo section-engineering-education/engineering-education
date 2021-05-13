@@ -10,7 +10,7 @@ date: 2020-11-02T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /graph-data-structure-python/hero.jpg
+  - url: /engineering-education/graph-data-structure-python/hero.jpg
     alt: graph data structure example image
 ---
 In this article, we will look into the basics of graphs, the different types of graphs, and their [representation](https://www.javatpoint.com/graph-theory-graph-representations).

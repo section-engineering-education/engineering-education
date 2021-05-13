@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /steganography-in-python/hero.jpg
+  - url: /engineering-education/steganography-in-python/hero.jpg
     alt: steganography example image python 
 ---
 In steganography, an innocent-looking image is taken as an example and a message is embedded in the image by changing the number of pixels selected by the encryption algorithm. By embedding a hidden message or file in an image, the number of pixels can be changed.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /divide-and-conquer-algorithms/hero.jpg
+  - url: /engineering-education/divide-and-conquer-algorithms/hero.jpg
     alt: divide and conquer method example image
 ---
 Consider the scenario of the stocks and the stock markets. Everyday, millions of people trade equities and commodities on various exchanges across the globe. These processes are being technically equipped, and a majority of the functions are being automated. Algorithmic trading represents one such area of interest for brokerage firms. 

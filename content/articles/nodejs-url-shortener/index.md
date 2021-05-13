@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-url-shortener/hero.jpg
+  - url: /engineering-education/nodejs-url-shortener/hero.jpg
     alt: node url shortener example image
 ---
 Using links or URLs has been the norm for surfing the web for a long time. Sometimes we need to advertise our businesses on social media. Long URL links are not the best way to post these links, especially on social media. Doing this will help you promote your products or any services with the links provided.

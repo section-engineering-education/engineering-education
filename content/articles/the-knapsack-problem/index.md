@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /the-knapsack-problem/hero.jpg
+  - url: /engineering-education/the-knapsack-problem/hero.jpg
     alt: knapsack example image
 ---
 

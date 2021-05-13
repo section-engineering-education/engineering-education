@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /laravel-8-new-features/hero.jpg
+  - url: /engineering-education/laravel-8-new-features/hero.jpg
     alt: laravel 8.x image example
 ---
 If you have learned Laravel, then you are in the right place. This tutorial will help you explore the fantastic features in Laravel 8.x. This tutorial will go over how to use the Larvavel installer, and Jetstream scaffolding.

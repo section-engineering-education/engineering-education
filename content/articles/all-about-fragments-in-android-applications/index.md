@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /all-about-fragments-in-android-applications/hero.png
+  - url: /engineering-education/all-about-fragments-in-android-applications/hero.png
     alt: Fragments in Android Applications image
 ---
 According to the Android [documentation](https://developer.android.com/guide/fragments), a fragment is a part of applications user interface that is bound to an activity. Fragments have their lifecycle and layouts or UI components. Fragments help enrich your UI design, pass data between different screens, and adapt to different device configurations. 

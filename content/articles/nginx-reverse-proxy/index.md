@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nginx-reverse-proxy/hero.jpg
+  - url: /engineering-education/nginx-reverse-proxy/hero.jpg
     alt: nginx reverse proxy image example
 ---
 Ever wondered how more than one application is deployed to the same machine, and how traffic is routed to the corresponding applications?

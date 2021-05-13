@@ -10,7 +10,7 @@ date: 2021-03-31T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /react-native-firebase-google-authentication/hero.jpg
+  - url: /engineering-education/react-native-firebase-google-authentication/hero.jpg
     alt: Google OAuth using Firebase in React Native Image
 ---
 OAuth is an open standard for access delegation, commonly used as a way for the Internet users to grant websites or applications to access information on other websites without [giving them the passwords](https://www.coursehero.com/file/56229675/oaithtxt).

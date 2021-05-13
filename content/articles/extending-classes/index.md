@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /extending-classes/hero.jpg
+  - url: /engineering-education/extending-classes/hero.jpg
     alt: extending classes example image
 
 ---

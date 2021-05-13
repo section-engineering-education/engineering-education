@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /becoming-a-flutter-developer/hero.jpg
+  - url: /engineering-education/becoming-a-flutter-developer/hero.jpg
     alt: Becoming a Flutter developer
 ---
 `Flutter` is an open-source UI software development kit that `Google` released in 2018. It uses Dart as its primary programming language. Flutter has led to the emergence of new software developers called `Flutter Developers`. 

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /best-javascript-animation-libraries/hero.jpg
+  - url: /engineering-education/best-javascript-animation-libraries/hero.jpg
     alt: JavaScript animation libraries image example
 ---
 A well known programming language used for animating web applications is JavaScript. In this article, we will discuss JavaScript animation libraries in more depth.

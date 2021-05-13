@@ -10,7 +10,7 @@ date: 2020-08-28T00:00:00-11:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
-  - url: /ten-tips-for-working-with-nodejs/hero.jpg
+  - url: /engineering-education/ten-tips-for-working-with-nodejs/hero.jpg
     alt: laptop node.js website
 ---
 As a developer getting started with Node.js application development, there a few basic skills that you need to be familiar with as you start to build your first Node.js application.

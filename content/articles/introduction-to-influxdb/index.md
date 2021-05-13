@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-influxdb/hero.jpg
+  - url: /engineering-education/introduction-to-influxdb/hero.jpg
     alt: Introduction to InfluxDB Hero Image
 ---
 DBMS or database management systems play a key role as the foundational building blocks of any modern application. Whether you are a database administrator, a developer, or an IT professional, extensive knowledge of databases is essential. In this article, we will look at a class of databases called time-series databases and understand how they work.

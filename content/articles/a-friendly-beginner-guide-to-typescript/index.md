@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /a-friendly-beginner-guide-to-typescript/hero.png
+  - url: /engineering-education/a-friendly-beginner-guide-to-typescript/hero.png
     alt: Guide to TypeScript image example
 ---
 TypeScript is a programming language that extends JavaScript by adding types. It saves time by catching errors and provides fixes before you run the code. TypeScript is a commonly used tool for adding static types.

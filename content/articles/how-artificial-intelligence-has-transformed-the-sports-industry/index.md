@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-artificial-intelligence-has-transformed-the-sports-industry/hero.jpg
+  - url: /engineering-education/how-artificial-intelligence-has-transformed-the-sports-industry/hero.jpg
     alt: Artificial Intelligence Sports Industry Image
 
 ---

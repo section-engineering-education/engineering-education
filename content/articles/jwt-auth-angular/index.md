@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /jwt-auth-angular/hero.jpg
+ - url: /engineering-education/jwt-auth-angular/hero.jpg
    alt: PHP RESTful APIs angular auth example image
 ---
 A user is usually authenticated by entering a username, email address, and/or password and then being given access to various resources or services. By its very existence, authentication relies on maintaining the user's state. This seems to go against HTTP's fundamental property of being a stateless protocol.  

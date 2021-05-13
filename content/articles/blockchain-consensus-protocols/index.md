@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /blockchain-consensus-protocols/hero.jpg
+  - url: /engineering-education/blockchain-consensus-protocols/hero.jpg
     alt: Blockchain Consensus Protocols image
 ---
 Satoshi Nakamoto introduced an exciting application called [Bitcoin](https://www.investopedia.com/terms/b/bitcoin.asp#:~:text=Bitcoin%20is%20a%20digital%20currency,mysterious%20and%20pseudonymous%20Satoshi%20Nakamoto.) after the great recession in 2008. This was one of the first real applications of blockchain technology. 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-scoped-model-in-your-flutter-application/hero.jpg
+  - url: /engineering-education/implementing-scoped-model-in-your-flutter-application/hero.jpg
     alt: scoped model in Flutter image
 ---
  In [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro), everything is a widget. Developers compose high-quality and creative UI screens using widgets. The flexibility supports outstanding designs that impress users. These features are difficult to use in native app development using languages such as Java.

@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /web-application-firewall-bot-mitigation-comparison/hero.png
+  - url: /engineering-education/web-application-firewall-bot-mitigation-comparison/hero.png
     alt: WAF vs Bot Mitigation
 ---
 Web applications today face an expansive and diverse makeup of increasingly sophisticated security threats. Web application firewalls and bot mitigation solutions both provide tooling to help prevent malicious activity from affecting web applications, but what exactly are these solutions and how do they differ?

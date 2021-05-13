@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-rxjs/hero.jpg
+  - url: /engineering-education/node-rxjs/hero.jpg
     alt: RxJs image computer
 ---
 ReactiveX stands for *Reactive Extensions*. It is a collection of projects done by the ReactiveX community. They bring asynchronous programming into different programming languages and platforms. Their observable patterns also help in making the code smaller (less) and easier to read.

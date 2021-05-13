@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-higher-order-functions/hero.jpg
+  - url: /engineering-education/javascript-higher-order-functions/hero.jpg
     alt: JavaScript High Order Function example image
 ---
 Functional programming is a significant building block for JavaScript as a language. They are some of the common scripts that you will continuously use when building JavaScript applications. Functions set statements to perform tasks.

@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-introduction-to-cicd-tools/hero.jpg
+  - url: /engineering-education/an-introduction-to-cicd-tools/hero.jpg
     alt: An Introduction to CI/CD Tools example image
 ---
 Continuous Integration and Delivery (CI/CD) are tools that automate the process of software development. In an organization, there is a need for teams to synchronize their work without breaking the code, and we often refer to this as the pipeline of CI/CD.

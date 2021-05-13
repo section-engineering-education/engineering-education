@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dry-manifesto/hero.jpg
+  - url: /engineering-education/dry-manifesto/hero.jpg
     alt: DRY manifesto example image
 ---
 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /text-generation-nn/hero.jpg
+  - url: /engineering-education/text-generation-nn/hero.jpg
     alt: rnn and tensorflow
 ---
 The potential of artificial intelligence to emulate human thought goes from passive tasks such as [object recognition](https://www.mathworks.com/solutions/image-video-processing/object-recognition.html) to [self-driving cars](https://www.wired.com/story/guide-self-driving-cars/), it also extends to creative tasks such as text-generation, [music generation](https://magenta.tensorflow.org/), art generation, etc.

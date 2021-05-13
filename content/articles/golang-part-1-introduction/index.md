@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /golang-part-1-introduction/hero.jpg
+  - url: /engineering-education/golang-part-1-introduction/hero.jpg
     alt: golang image example
 ---
 

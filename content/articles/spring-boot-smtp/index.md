@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spring-boot-smtp/hero.jpg
+  - url: /engineering-education/spring-boot-smtp/hero.jpg
     alt: Spring Boot SMTP example image
 ---
 ### Spring Boot SMTP

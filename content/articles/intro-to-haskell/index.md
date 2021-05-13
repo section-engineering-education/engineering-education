@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /intro-to-haskell/hero.jpg
+  - url: /engineering-education/intro-to-haskell/hero.jpg
     alt: Functional Programming with Haskell image example
 ---
 There are many functional programming languages, and Haskell is one of them. This article covers some aspects of functional programming with Haskell. It assumes that you are familiar with lists, functions, loops, and recursion. 

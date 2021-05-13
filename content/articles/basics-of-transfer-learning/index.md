@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /feature-engineering-in-machine-learning/hero.jpg
+  - url: /engineering-education/feature-engineering-in-machine-learning/hero.jpg
     alt: transfer learning image
 ---
 When we as human beings learn new things, we do not always learn from scratch. We often transfer past knowledge and apply them to new tasks. For example, knowing how to ride a bike makes it easier to learn how to ride a motorcycle. Learning to code in C makes it easy to learn to code in Python. This is the gist of transfer learning.

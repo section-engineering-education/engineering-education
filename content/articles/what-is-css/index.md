@@ -10,7 +10,7 @@ date: 2019-12-11T00:00:00-07:00
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-css/hero.jpg
+  - url: /engineering-education/what-is-css/hero.jpg
     alt: what is CSS
 ---
 CSS is a very important part of the modern web. CSS stands for Cascading Style Sheets. Modern web pages use HTML5 in conjunction with CSS to make amazing, beautiful websites. Without CSS, websites would look plain, uninteresting and dated by today's standards.

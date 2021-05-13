@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-agora-livestreaming-app/hero.jpg
+  - url: /engineering-education/react-native-agora-livestreaming-app/hero.jpg
     alt: React Native Agora Livestreaming App
 ---
 In this tutorial, we will be building a Livestreaming app with real-time engagement using React Native and [Agora](https://www.agora.io/en/about-us/).

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /docker-wordpress-containerizing-wordpress-with-docker-compose/hero.png
+  - url: /engineering-education/docker-wordpress-containerizing-wordpress-with-docker-compose/hero.png
     alt: Containerizing WordPress with Docker-Compose
 ---
 [Docker](https://docs.docker.com/get-started/overview/) is a container management system. It is used to manage an application that has multiple components. Docker-compose is a toolkit provided by Docker. It defines and runs a multi-container Docker application. 

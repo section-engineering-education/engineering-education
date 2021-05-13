@@ -10,7 +10,7 @@ date: 2021-03-23T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /spring-social-auth/hero.jpg
+  - url: /engineering-education/spring-social-auth/hero.jpg
     alt: Spring Boot social authentication example image
 ---
 ### Spring Boot Social auth

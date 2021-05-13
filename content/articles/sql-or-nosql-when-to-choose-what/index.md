@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sql-or-nosql-when-to-choose-what/hero.jpg
+  - url: /engineering-education/sql-or-nosql-when-to-choose-what/hero.jpg
     alt: date-fns library JavaScript
 ---
 Knowing which database structure to use is critical in building outstanding applications. SQL or NoSQL? In this article we will dive into these two databases, understand their structures, explore them in-depth, and understand how they work. This guide will give you an overview of which database structure will fit your application model.

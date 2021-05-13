@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /using-picasso-in-android/hero.jpg
+  - url: /engineering-education/using-picasso-in-android/hero.jpg
     alt: example image Picasso Android applications
 ---
 Visual representation in mobile application development is a growing UI/UX trend. In this current era, most of our minds seem to understand either graphics in motion or pictures rather than words. With time, most mobile applications such as Instagram, Facebook, Twitter, and LinkedIn started implementing visual representation. This was not perfect the first time around.

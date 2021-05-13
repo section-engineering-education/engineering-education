@@ -10,7 +10,7 @@ date: 2021-01-21T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /popular-machine-learning-datasets/hero.jpg
+  - url: /engineering-education/popular-machine-learning-datasets/hero.jpg
     alt: Machine Learning (ML) Datasets example image
 ---
 The data that we use to train our models is fundamental. In fact, without training data sets, we wouldn't have machine learning systems. These systems would not know how to classify texts, images, or detect objects. A collection of data is known as a dataset. We have millions of datasets used to train models on various tasks such as image and text classification. 

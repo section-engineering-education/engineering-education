@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-firebase-phone-authentication/hero.jpg
+  - url: /engineering-education/react-native-firebase-phone-authentication/hero.jpg
     alt: React Native Firebase Phone Authentication Image
 ---
 In this tutorial, we will learn how to authenticate users with their phone numbers using Firebases authentication module in a Non-Expo React Native application.

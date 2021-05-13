@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /computer-vision-straight-lines/hero.png
+  - url: /engineering-education/computer-vision-straight-lines/hero.png
     alt: computer vision straight lines
 ---
 Computer vision is how computers can identify high-level information from images or videos.

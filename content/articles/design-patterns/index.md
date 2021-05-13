@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /design-patterns/hero.jpg
+  - url: /engineering-education/design-patterns/hero.jpg
     alt: Design patterns
 ---
 A design pattern is a reusable solution to a commonly occurring problem in software design. They can be thought of as tried and tested approaches; guidelines for how to structure your objects and the relationships between them. These guidelines are not too opinionated, they are implementation specific and are meant to be used with any programming language while designing any kind of system.

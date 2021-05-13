@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-workmanager/hero.jpg
+  - url: /engineering-education/android-workmanager/hero.jpg
     alt: Android work manager image
 ---
 Background work has been a core part of Android application development for a long time. This is because it allows the execution of tasks without any interference with the user interface. However, implementing such functionality is not an easy task. One has to consider resources such as threads and when to start running the task.

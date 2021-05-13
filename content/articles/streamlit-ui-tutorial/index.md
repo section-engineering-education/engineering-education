@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /streamlit-ui-tutorial/hero.jpg
+  - url: /engineering-education/streamlit-ui-tutorial/hero.jpg
     alt: UI model using Streamlit image example
 ---
 Streamlit is an open-source Python library that can build a UI for various purposes, it is not limited to data apps/machine learning. It is easy to learn, and a few lines of code can create a beautiful web app.

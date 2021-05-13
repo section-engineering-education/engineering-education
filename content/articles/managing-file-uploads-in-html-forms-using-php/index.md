@@ -10,7 +10,7 @@ date: 2021-04-09T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /managing-file-uploads-in-html-forms-using-php/hero.jpg
+  - url: /engineering-education/managing-file-uploads-in-html-forms-using-php/hero.jpg
     alt: Managing File uploads in HTML forms using PHP
 ---
 In today’s world, files are exchanged daily, especially over the internet.  Websites use these files for various purposes such as user profile pictures and exchange of information among users. These range from images, videos to pdf documents.

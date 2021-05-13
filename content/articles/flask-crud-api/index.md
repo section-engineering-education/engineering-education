@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /flask-crud-api/hero.jpg
+  - url: /engineering-education/flask-crud-api/hero.jpg
     alt: CRUD API using Flask example image
 ---
 In this tutorial, we will create a working Restful API with Flask and MySQL database. Restful APIs make it possible to establish communication between the backend and the frontend of mobile and web applications.

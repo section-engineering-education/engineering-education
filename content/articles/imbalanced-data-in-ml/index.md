@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /imbalanced-data-in-ml/hero.jpg
+  - url: /engineering-education/imbalanced-data-in-ml/hero.jpg
     alt: imbalanced datasets image example
 ---
 Imbalanced datasets mean that the number of observations differs for the classes in a classification dataset. This imbalance can lead to inaccurate results.

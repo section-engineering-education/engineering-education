@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
   
-  - url: /nodejs-adminbro/hero.jpg
+  - url: /engineering-education/nodejs-adminbro/hero.jpg
     alt: Creating Admin Panels in Node.js using AdminBro
 ---
 Web applications handle data from various sources. Keeping track of these records can be challenging for administrators. AdminBro solves this issue by providing an interface to manage data from a single panel.

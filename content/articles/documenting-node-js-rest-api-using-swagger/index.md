@@ -10,7 +10,7 @@ date: 2021-04-17T00:00:00-14:00
 topics: [Node.js,API]
 excerpt_separator: <!--more-->
 images:
-  - url: /documenting-node-js-rest-api-using-swagger/hero.jpg
+  - url: /engineering-education/documenting-node-js-rest-api-using-swagger/hero.jpg
     alt: Swagger example image
 ---
 Swagger is a software tool used for designing, building, documenting, and using RESTful APIs. It follows the OpenAPI specification.

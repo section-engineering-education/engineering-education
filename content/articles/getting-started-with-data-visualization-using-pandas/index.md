@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-data-visualization-using-pandas/hero.png
+  - url: /engineering-education/getting-started-with-data-visualization-using-pandas/hero.png
     alt: data visualization Pandas
 ---
 **Data Visualization** is the graphical representation of the data, it is both an art and a science. Nowadays images speak louder than words, and the main use of it is to discover unknown facts and the reasons for a specific result.

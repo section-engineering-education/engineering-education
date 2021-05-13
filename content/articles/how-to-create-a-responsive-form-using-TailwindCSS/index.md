@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-create-a-responsive-form-using-tailwindcss/hero.jpg
+  - url: /engineering-education/how-to-create-a-responsive-form-using-tailwindcss/hero.jpg
     alt: Tailwind image example
 ---
 Tailwind CSS is one of the most popular frameworks used to build custom user interfaces for web applications. It is different from other CSS frameworks because of its utility-first approach. When building websites, we write the structure in a HTML file then implement the styles in a CSS file. 

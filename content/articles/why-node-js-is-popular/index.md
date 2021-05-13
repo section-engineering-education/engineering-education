@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /why-node-js-is-popular/hero.jpg
+  - url: /engineering-education/why-node-js-is-popular/hero.jpg
     alt: computer image example nodejs
 ---
 Node.js has been a household name among developers for a few years now. So, what is all this recent excitement around Node.js we've been all hearing lately? Why is it so popular? Let's look at all this and more.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /css-flexbox/hero.jpg
+  - url: /engineering-education/css-flexbox/hero.jpg
     alt: css flexbox
 
 ---

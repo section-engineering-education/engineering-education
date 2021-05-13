@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /perceptron-algorithm/hero.jpg
+  - url: /engineering-education/perceptron-algorithm/hero.jpg
     alt: perceptron algorithm example image
 ---
 Perceptrons were one of the first algorithms discovered in the field of AI. Its big significance was that it raised the hopes and expectations for the field of neural networks. Inspired by the neurons in the brain, the attempt to create a perceptron succeeded in modeling linear decision boundaries.

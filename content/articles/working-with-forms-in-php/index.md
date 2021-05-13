@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /working-with-forms-in-php/hero.jpg
+  - url: /engineering-education/working-with-forms-in-php/hero.jpg
     alt: Working with Forms in PHP
 ---
 We mainly use HTML forms when collecting user input in web-based applications. They range from contact forms, login forms, and also registration forms. Forms are the fundamental interface between the user and the server. Creating a form on a web application is achieved using HTML. PHP connects the web application with the database server.

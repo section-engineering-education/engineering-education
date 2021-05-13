@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /stock-price-prediction-using-python/hero.png
+  - url: /engineering-education/stock-price-prediction-using-python/hero.png
     alt: stock price prediction python
 ---
 In this tutorial, we are going to build an AI neural network model to predict stock prices. Specifically, we will work with the **Tesla** stock, hoping that we can make Elon Musk happy along the way.

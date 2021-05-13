@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /variables-in-javascript/hero.jpg
+  - url: /engineering-education/variables-in-javascript/hero.jpg
     alt: Variables in JavaScript Image
 ---
 Variables are a way for programmers to name a value in order to reuse it, update it, or keep track of it. In this article, we will go through naming variables, declaring variables, and initializing variables. We will also learn about the different scopes of variables to ensure that we completely understand them.

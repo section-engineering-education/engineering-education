@@ -10,7 +10,7 @@ date: 2021-05-04T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /why-python-is-good-for-machine-learning/hero.jpg
+  - url: /engineering-education/why-python-is-good-for-machine-learning/hero.jpg
     alt: Why Python is good for Machine Learning
 ---
 Python is a programming language that supports the creation of a wide range of applications. Developers regard it as a great choice for Artificial Intelligence (AI), Machine Learning, and Deep Learning projects.

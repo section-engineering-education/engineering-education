@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-flask-wtform/hero.jpg
+  - url: /engineering-education/implementing-flask-wtform/hero.jpg
     alt: Implementing Flask WTForms example image
 ---
 Forms are integral components of web applications. They are needed to send data from the user to the backend. In this article, we will understand how to work with forms in our Flask web application.

@@ -10,7 +10,7 @@ date: 2021-03-24T00:00:00-09:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /why-nodejs-good-for-online-store/hero.jpg
+  - url: /engineering-education/why-nodejs-good-for-online-store/hero.jpg
     alt: Node.js e-commerce applications example image
 ---
 [Node.js](https://nodejs.dev/learn) is a JavaScript environment used to develop high-performance applications that are scalable and handle multiple I/O operations. E-commerce systems involve several modules working together. Each module, with its complexities, makes Node.js perfect for developing such systems.

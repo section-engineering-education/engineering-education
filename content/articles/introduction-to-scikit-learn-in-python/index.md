@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-scikit-learn-in-python/hero.png
+  - url: /engineering-education/introduction-to-scikit-learn-in-python/hero.png
     alt: Regular Repression in Python example image
 ---
 The concept of machine learning has been booming over the past few years, and more often than not, graduate students and industry professionals have made a career switch to data science or machine learning. An essential ingredient for establishing familiarity in this field is to know your libraries and dependencies.

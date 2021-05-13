@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-dialogs-in-android-kotlin/hero.png
+  - url: /engineering-education/getting-started-with-dialogs-in-android-kotlin/hero.png
     alt: Alert Dialogs in Android
 ---
 Android has distinguished techniques for improving user experience. One of them is the use of dialogs. A [Dialog](https://developer.android.com/guide/topics/ui/dialogs) is a brief conversation between the user and the application. It is usually a small window that pops-up on the device's screen.

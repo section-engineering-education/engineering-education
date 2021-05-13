@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /django-app-using-postgresql-database/hero.jpg
+  - url: /engineering-education/django-app-using-postgresql-database/hero.jpg
     alt: Django PostgreSQL Database example
 ---
 Django is a high-level Python Web framework that encourages rapid development, clean, and pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Best of all, it's [free and open-source](https://www.djangoproject.com).

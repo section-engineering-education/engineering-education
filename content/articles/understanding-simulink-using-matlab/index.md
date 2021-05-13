@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-simulink-using-matlab/hero.png
+  - url: /engineering-education/understanding-simulink-using-matlab/hero.png
     alt: Understanding Simulink using Matlab Image
 ---
 In this tutorial, we will use the *Simulink* library browser to understand the blocks, waves, and functions that it has and perform a set of operations on a set of waves and plot each one of them on a scope.

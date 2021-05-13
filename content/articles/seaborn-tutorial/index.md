@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /seaborn-tutorial/hero.jpg
+  - url: /engineering-education/seaborn-tutorial/hero.jpg
     alt: UI model using Streamlit image example
 ---
 Data Visualization is the art of representing data in the form of graphs. It is a useful tool for professionals who work with data, i.e., financial analysts, business analysts, data analysts, data scientists, to name a few examples.

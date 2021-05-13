@@ -10,7 +10,7 @@ date: 2020-11-22T00:00:00-13:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /create-react-cli/hero.jpg
+  - url: /engineering-education/create-react-cli/hero.jpg
     alt: example image React.js CLI
 ---
 Command-line applications have become popular in the developer ecosystem for several reasons. The most common reasons would be due to the ease of use (of the CLI) and many essential developer tools are terminal applications or command line applications because so many developers are familiar with them.

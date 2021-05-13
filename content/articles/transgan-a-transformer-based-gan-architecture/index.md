@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /transgan-a-transformer-based-gan-architecture/hero.png
+  - url: /engineering-education/transgan-a-transformer-based-gan-architecture/hero.png
     alt: TransGAN example image
 ---
 To date, transformers or attentions have been used in Generative Adversarial Networks (GANs), but they always had a convolution component in their architecture.

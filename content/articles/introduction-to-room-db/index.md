@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-room-db/hero.jpg
+  - url: /engineering-education/introduction-to-room-db/hero.jpg
     alt: Room database image example
 ---
 Most Android applications require local data storage. In the past years, we have achieved this through the use of SQLite databases. Room is a persistent library that is part of the Android jetpack. It is built on top of SQLite. The room persistent library has many advantages over raw SQLite.

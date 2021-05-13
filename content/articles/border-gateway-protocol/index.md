@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /border-gateway-protocol/hero.jpg
+  - url: /engineering-education/border-gateway-protocol/hero.jpg
     alt: border gateway protocol
 
 ---

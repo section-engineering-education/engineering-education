@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-protect-your-system-against-ransomware-as-a-service-raas/hero.jpg
+  - url: /engineering-education/how-to-protect-your-system-against-ransomware-as-a-service-raas/hero.jpg
     alt: Ransomware as a Service (RaaS) example image
 ---
 Cybercriminals use infected websites and phishing emails to spread [ransomware](https://www.section.io/engineering-education/what-is-ransomware/). Criminals use this type of malware to encrypt victims' files, hold them hostage, and demand a ransom pay for decryption keys.

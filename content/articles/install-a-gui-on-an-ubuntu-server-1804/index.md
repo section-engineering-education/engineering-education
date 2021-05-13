@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /install-a-gui-on-an-ubuntu-server-1804/hero.jpg
+  - url: /engineering-education/install-a-gui-on-an-ubuntu-server-1804/hero.jpg
     alt: GUI on an Ubuntu Server 18.04
 ---
 Almost every Linux-based Virtual Private Server (VPS) runs off of a command line with no graphical user interface (GUI). This is good for many programs as there is less overhead and thus more resources for the programs to utilize. There are programs that do not need a GUI but benefit from the GUI such as GitHub, IDEs, and mining pool management. GUIs also can help server administrators maintain and operate servers.

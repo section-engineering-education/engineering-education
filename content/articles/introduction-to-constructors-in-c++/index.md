@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-constructors-in-c++/hero.jpg
+  - url: /engineering-education/introduction-to-constructors-in-c++/hero.jpg
     alt: Constructors in C++ example image
 ---
 This article will go through basics of C++ constructors. A constructor is a special member function that initializes the objects of its class. It is said to be special because its name is the same as the class name. 

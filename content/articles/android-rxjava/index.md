@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-rxjava/hero.jpg
+  - url: /engineering-education/android-rxjava/hero.jpg
     alt: RxJava in Android image example
 ---
 [ReactiveX](http://reactivex.io/) has created libraries for almost all programming languages. It has also extended this to frameworks, such as Android. This has brought the functional reactive paradigm to the languages and frameworks we use.

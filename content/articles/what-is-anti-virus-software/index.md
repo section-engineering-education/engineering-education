@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-anti-virus-software/hero.jpg
+  - url: /engineering-education/what-is-anti-virus-software/hero.jpg
     alt: malware image example
 ---
 In May 2017 the world was devastated by a worldwide cyber attack that affected more than 200,000 computers across 150 countries. Users and companies alike were infected by the rapidly spreading computer virus that attacked critical agency providers like the [National Health Service](https://en.wikipedia.org/wiki/National_Health_Service). According to [Cyber risk modeling firm Cyence](https://www.cbsnews.com/news/wannacry-ransomware-attacks-wannacry-virus-losses/), the hack caused hundreds of millions of dollars in damages that could have been avoided with proper software security updates and vulnerability transparency by governmental agencies like the NSA. Many still remember the historic cyber attack as the infamous WannaCry attack.

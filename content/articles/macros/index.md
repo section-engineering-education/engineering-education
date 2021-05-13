@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /macros/hero.jpg
+  - url: /engineering-education/macros/hero.jpg
     alt: Macros DRY example image
 ---
 Macros are cool. A macro is a tool, sometimes embedded into the programming language, that can be used to generate code. This can be very useful for when you need to have some repeating code, but can not use a function. Unfortunately, macros are imports. Every programming language implements them just a little bit differently. Today, we'll cover some of the popular ones.

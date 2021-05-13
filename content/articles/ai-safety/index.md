@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ai-safety/hero.jpg
+  - url: /engineering-education/ai-safety/hero.jpg
     alt: AI Safety example image
 ---
 About a year ago, researchers signed a petition against [AI being capable of killing people](https://futureoflife.org/lethal-autonomous-weapons-pledge/). The Future of Life Institute is [very concerned about AI safety](https://futureoflife.org/background/benefits-risks-of-artificial-intelligence/). Why is this?

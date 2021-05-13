@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /the-overview-of-a-database-life-cycle/hero.jpg
+  - url: /engineering-education/the-overview-of-a-database-life-cycle/hero.jpg
     alt: stages of a database development life cycle
 ---
 ### Introduction

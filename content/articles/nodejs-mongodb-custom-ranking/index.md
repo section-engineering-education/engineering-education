@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-mongodb-custom-ranking/hero.jpg
+  - url: /engineering-education/nodejs-mongodb-custom-ranking/hero.jpg
     alt: Custom ranking image
 ---
 This article will give us a heads-up on how to rank the records from a MongoDB database. We are going to add a bit of sorting functionality to the `sort()` function to give the records positions.

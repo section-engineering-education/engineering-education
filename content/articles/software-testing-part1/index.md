@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /software-testing-part1/Hero.jpg
+  - url: /engineering-education/software-testing-part1/Hero.jpg
     alt: unit testing example image
 ---
 Software testing is a very important software development process. It helps improve the quality of your software, and also ensures you do not ship bug-filled software to your end-user. 

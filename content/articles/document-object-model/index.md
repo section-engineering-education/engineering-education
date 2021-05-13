@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /document-object-model/hero.jpg
+  - url: /engineering-education/document-object-model/hero.jpg
     alt: computer screen image
 ---
 **A Document Object Model (abbreviated as DOM) is a structure which acts as the framework of a standard HTML (HyperText Markup Language) or DHTML (Dynamic HyperText Markup Language) webscript.** DOM is basically a tree with many branches and sub-branches which describe various elements of the webpage. Each branch of the tree represents one element. Each element may be referred to as a single node in the DOM structure. If a particular element has one or more attributes in the HTML webpage, then the branch forks into multiple nodes depending on the number of attributes. The formation of nodes is proportional to the number of attributes in the HTML page.

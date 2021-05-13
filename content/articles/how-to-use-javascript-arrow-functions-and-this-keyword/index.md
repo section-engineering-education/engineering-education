@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-use-javascript-arrow-functions-and-this-keyword/hero.jpg
+  - url: /engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/hero.jpg
     alt: JS Arrow Funcitons and This Keyword tutorial Image
 ---
 ES6 introduced a new way of writing JavaScript functions called arrow function that uses a [fat arrow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ( => ).

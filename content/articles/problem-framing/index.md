@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /problem-framing/hero.jpg
+ - url: /engineering-education/problem-framing/hero.jpg
    alt: Problem framing in machine learning example image
 ---
 Choosing a machine learning method to implement data is not the easiest of processes. It is essential to first understand the precise business problem and its objectives. For instance, understanding what needs to be predicted and understanding potential outcomes is critical. 

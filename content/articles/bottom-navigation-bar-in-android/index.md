@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /bottom-navigation-bar-in-android/hero.jpg
+  - url: /engineering-education/bottom-navigation-bar-in-android/hero.jpg
     alt: example image bottom navigation bar in Android applications
 ---
 A **Bottom Navigation View** navigation tool enables users to explore and change to different views in an application. A **Navigation Component** is a set of libraries developed by Google to manage complex navigation functions like animations, transitions, etc.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /intro-to-c++-type-conversion/hero.jpg
+  - url: /engineering-education/intro-to-c++-type-conversion/hero.jpg
     alt: C++ Type conversion Image Example
 ---
 Conversion of variables from one type to another are known as [type conversion](https://www.oreilly.com/library/view/c-14-quick/9781484217276/9781484217269_Ch26.xhtml). Type conversions ultimate aim is to make variables of one data type work with variables of another data type. We carry this out to take benefit from some aspects of type representations and hierarchies. So, when will a type conversion be beneficial? So, when will a type conversion be beneficial? 

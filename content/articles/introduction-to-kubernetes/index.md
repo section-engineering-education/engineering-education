@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-kubernetes/hero.png
+  - url: /engineering-education/introduction-to-kubernetes/hero.png
     alt: Kubernetes architecture example image
 ---
 Kubernetes is a container orchestration platform. It was designed to manage the lifecycle of containers and services, while providing scalability, predictability, and availability.

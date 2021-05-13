@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /fuzzy-logic-operations/hero.jpg
+  - url: /engineering-education/fuzzy-logic-operations/hero.jpg
     alt: Fuzzy Operations example image
 ---
 [Fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic) is a form of many-valued logic in which the true value of variables may be any real number between 0 and 1, both being inclusive. Fuzzy Systems as a subject was developed to model the uncertainty and vagueness present in the human thought process. 

@@ -10,7 +10,7 @@ date: 2020-09-09T00:00:00-12:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /node-vs-nuxt/hero.jpg
+  - url: /engineering-education/node-vs-nuxt/hero.jpg
     alt: Node.js Nuxt example image
 ---
 A time ago, traditional server side rendering used to be the norm. All of the HTML was dynamically rendered on the server and sent to the client. Back in those days, websites were not user-friendly and native. Today the web consists of single-page applications and universal web-apps. Single-page applications are applications that do not reload the entire page every time we click on a link within the browser.

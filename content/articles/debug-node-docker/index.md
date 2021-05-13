@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /debug-node-docker/hero.jpg
+  - url: /engineering-education/debug-node-docker/hero.jpg
     alt: image Node.js debugger docker
 ---
 Docker is one of the tools used by many developers today. You do not need to have Node.js installed in your machine to build Node.js apps. You only need Docker. Running a Node.js app in Docker can be done easily. What about debugging? Let us look at how you can debug a Node.js app running in a Docker container.

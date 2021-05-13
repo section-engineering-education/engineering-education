@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /word-cloud/hero.jpg
+  - url: /engineering-education/word-cloud/hero.jpg
     alt: word clouds python image
 ---
 Welcome to an exciting article on the word cloud generation. Word clouds are great ways to summarize vast pieces of information visually. They are typically used to depict metadata on websites. The bigger the font size of the keyword, the higher its significance on the website. In this article, we will code a program to generate custom word clouds.  

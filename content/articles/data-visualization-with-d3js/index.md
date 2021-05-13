@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-visualization-with-d3js/hero.jpg
+  - url: /engineering-education/data-visualization-with-d3js/hero.jpg
     alt: data visualization example image
 ---
 D3 (Data-Driven Documents) is a JavaScript library that allows us to manipulate documents based on data. With D3, we can bind data to a [DOM](https://www.w3schools.com/js/js_htmldom.asp) element and then apply data-driven transformations to the document. For example, we can create an HTML table from an array of numbers, or create an interactive [SVG](https://www.w3schools.com/graphics/svg_intro.asp) bar chart.

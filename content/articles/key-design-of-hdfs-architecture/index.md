@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /key-design-of-hdfs-architecture/hero.jpg
+  - url: /engineering-education/key-design-of-hdfs-architecture/hero.jpg
     alt: HDFS Architecture cover image 
 ---
 HDFS (Hadoop Distributed File System) is a big data distributed file system storage by Apache. It is implemented within the Hadoop framework and it needs to have several features of design implemented to work effectively in processing, distributing, and storing big data.

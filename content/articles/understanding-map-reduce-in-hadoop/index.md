@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-map-reduce-in-hadoop/hero.jpg
+  - url: /engineering-education/understanding-map-reduce-in-hadoop/hero.jpg
     alt:  map reduce hadoop example image
 ---
 MapReduce is a component of the [Apache Hadoop](https://en.wikipedia.org/wiki/Apache_Hadoop) ecosystem, a framework that enhances massive data processing. Other components of Apache Hadoop include Hadoop Distributed File System (HDFS), [Yarn](https://www.techopedia.com/definition/30154/hadoop-yarn), and [Apache Pig](https://en.wikipedia.org/wiki/Apache_Pig).

@@ -10,7 +10,7 @@ date: 2020-11-11T00:00:00-16:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /validating-xml-using-dtd/hero.jpg
+  - url: /engineering-education/validating-xml-using-dtd/hero.jpg
     alt: Validating XML using DTD
 ---
 In this article, we will learn about XML and how validation is done using Document Type Definition (DTD). By the end of this article, you will understand different data serialization techniques, the need for XML, and the importance of XML validation. To better understand the concepts, we will also validate a sample XML document.

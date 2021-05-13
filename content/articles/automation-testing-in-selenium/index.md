@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /automation-testing-in-selenium/hero.jpg
+  - url: /engineering-education/automation-testing-in-selenium/hero.jpg
     alt: Automation Testing Image
 ---
 Selenium is an effective automation tool that can help developers to validate their applications. The digital revolution has led to an increase in the number of web applications. Developers are constantly creating new web applications to meet various demands.

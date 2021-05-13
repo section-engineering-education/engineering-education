@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /mysql-with-node-js/hero.png
+  - url: /engineering-education/mysql-with-node-js/hero.png
     alt: MySQL with Node.js Image
 ---
 If you are new to MySQL with Node.js, this guide will help you learn the basics and understand what you need to get started with MySQL and how to use it conjuction with Node.js.

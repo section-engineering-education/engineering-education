@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ci-cd-setup-react/hero.jpg
+  - url: /engineering-education/ci-cd-setup-react/hero.jpg
     alt: CI CD React 
 ---
 Good developers are always looking for ways to reduce repetitive, manual processes. Leveraging CI/CD (Continuous Integration / Continuous Delivery) methodologies helps developers automate processes so they can focus valuable time on developing new, innovative, and problem-solving features.

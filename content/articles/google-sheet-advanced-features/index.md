@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /google-sheet-advanced-features/hero.png
+  - url: /engineering-education/google-sheet-advanced-features/hero.png
     alt: google sheets features image
 ---
 A spreadsheet is a computer program/application used to store data, analyze and organize it in a tabular format. These applications are vital in our day to day activities. Microsoft Excel, LibreOffice, and OpenOffice are other examples of spreadsheets.

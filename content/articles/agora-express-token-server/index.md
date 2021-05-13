@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /agora-express-token-server/hero.jpg
+  - url: /engineering-education/agora-express-token-server/hero.jpg
     alt: Agora express token server
 ---
 In this tutorial, we will be building a server using Node.js and Express to generate authentication tokens for the Agora SDKs. Authentication tokens are used in Agora SDKs to improve security. There are three authentication mechanisms available in Agora that we will discuss further below.

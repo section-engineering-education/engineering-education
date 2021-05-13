@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /multicollinearity/hero.jpg
+ - url: /engineering-education/multicollinearity/hero.jpg
    alt: Machine learning multicollinearity example image
 ---
 The interpretability of machine learning models helps us understand the predictions made by a model. Interpretable models are desirable. The interpretability of a regression model may be affected, when determining individual feature effects in a model become unreliable. A reason for this is multicollinearity. In this article we will explore multicollinearity; we will also learn a method to detect and fix it.

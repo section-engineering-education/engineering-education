@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-aws-dynamodb/hero.jpg
+  - url: /engineering-education/getting-started-with-aws-dynamodb/hero.jpg
     alt: DynamoDB Label Image
 ---
 DynamoDB is a platform as a service (PaaS) AWS product. The product is a managed NoSQL database service that offers top-notch performance. DynamoDB is seamless and scalable. It comes without the administrative burdens of setting up, replication, and scaling, among others.

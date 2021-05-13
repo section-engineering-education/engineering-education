@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /user-groups-and-permissions-linux/hero.png
+  - url: /engineering-education/user-groups-and-permissions-linux/hero.png
     alt: User groups and permissions in Linux image
 ---
 From smartphones to cars, supercomputers and home appliances, home desktops to enterprise servers, the [Linux](https://www.linux.com/what-is-linux/) operating system is everywhere.

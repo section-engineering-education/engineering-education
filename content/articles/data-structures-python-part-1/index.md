@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-structures-python-part-1/hero.jpg
+  - url: /engineering-education/data-structures-python-part-1/hero.jpg
     alt: python data structures
  
 ---

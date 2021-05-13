@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /top-node.js-monitoring-tools/hero.jpg
+  - url: /engineering-education/top-node.js-monitoring-tools/hero.jpg
     alt: Top Node.js Monitoring Tools image
 ---
 Often, applications may not work as efficiently as they should. This responsibility of carrying out preventive and curative maintenance lies on application developers. Customers using your application as a developer may spend a lot of money trying to repair the applications without your guidance. It would be best to have an effective monitoring solution to keep track of your application's behavior.

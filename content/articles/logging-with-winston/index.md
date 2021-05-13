@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /logging-with-winston/hero.jpg
+  - url: /engineering-education/logging-with-winston/hero.jpg
     alt:  Logging with Winston example image
 ---
 Assume you have an app running in a production environment with millions of daily users that earns thousands of dollars. There are a variety of reasons why an application could have a bug, and as a developer, you need to find out why and fix it. No one wants to use an app that's buggy and fixing errors can cost time and money.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /deciding-between-cloud-spanner-and-microsoft-cosmos-db/hero.jpg
+  - url: /engineering-education/deciding-between-cloud-spanner-and-microsoft-cosmos-db/hero.jpg
     alt: Cloud Spanner and Microsoft Cosmos DB example image
 ---
 Creating a globally distributed database would traditionally require a lot of time and effort. You would have to host the database in a personal data center bearing the entire cost. The advancement in cloud computing and platforms as a service (PaaS) has made it easier to create globally distributed and scalable databases. 

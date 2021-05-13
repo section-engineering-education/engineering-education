@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /deploying-machine-learning-models-using-flask/hero.png
+  - url: /engineering-education/deploying-machine-learning-models-using-flask/hero.png
     alt: Deploying Machine Learning models using Flask
 ---
 In this article, we will learn about deploying Machine Learning models using Flask. By the end of the article, you will have an overview of how Machine Learning models are built, how Flask servers interact with our Machine Learning model, and how to connect the model with a web application. You will also learn a step-by-step procedure for deploying the model locally.

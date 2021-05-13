@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-min-heap-vs-max-heap/hero.jpg
+  - url: /engineering-education/understanding-min-heap-vs-max-heap/hero.jpg
     alt: Understanding Min Heap vs Max Heap Hero Image
 ---
 A heap is a tree-based data structure that allows access to the minimum and maximum element in the tree in constant time. The constant time taken is [Big O](https://en.wikipedia.org/wiki/Big_O_notation)(1). This is regardless of the data stored in the heap. 

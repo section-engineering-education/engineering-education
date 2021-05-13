@@ -10,7 +10,7 @@ date: 2021-05-04T00:00:00-06:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /react-native-firebase-facebook-authentication/hero.jpg
+  - url: /engineering-education/react-native-firebase-facebook-authentication/hero.jpg
     alt: Facebook OAuth using Firebase in React Native Image
 ---
 In this tutorial, we will learn how to authenticate users with their Facebook accounts using the authentication module in Firebase in a Non-Expo React Native application.

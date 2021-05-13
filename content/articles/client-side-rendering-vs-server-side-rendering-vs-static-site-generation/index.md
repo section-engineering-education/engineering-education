@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /client-side-rendering-vs-server-side-rendering-vs-static-site-generation/hero.jpg
+ - url: /engineering-education/client-side-rendering-vs-server-side-rendering-vs-static-site-generation/hero.jpg
    alt: Website rendering example image
 ---
 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /hypothesis-testing-data-science/hero.jpg
+  - url: /engineering-education/hypothesis-testing-data-science/hero.jpg
     alt: Hypothesis Testing in Data Science image example
 ---
 When using machine learning, we need to be able to trust our models and the predictions they make. We may use sample data to train our models. This sample data may make certain assumptions about a population.

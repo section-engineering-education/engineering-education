@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-lake-vs-data-warehouse-vs-database/hero.jpg
+  - url: /engineering-education/data-lake-vs-data-warehouse-vs-database/hero.jpg
     alt: data lakes warehouses databases example image
 ---
 Most of todays organizations collect and process large amounts of data daily. But this data can only bring value if the organization derives valuable insights from the data.

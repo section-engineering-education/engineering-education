@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-file-handling/hero.jpg
+  - url: /engineering-education/node-file-handling/hero.jpg
     alt: file handling in Node.js
 ---
 [Node.js](https://nodejs.org/en/) is a server-side environment for executing JavaScript files. Off the browser, Node.js offers even more features to complement JavaScript functionalities. Node.js is built around adding functionalities that cannot be performed or utilized in a browser. In this article, we will cover file handling extensively, understand the various functionalities Node.js offers, and implement code to read and write to files.

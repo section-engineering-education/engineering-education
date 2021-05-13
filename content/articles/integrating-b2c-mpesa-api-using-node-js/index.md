@@ -10,7 +10,7 @@ date: 2021-05-06T00:00:00-08:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /integrating-b2c-mpesa-api-using-node-js/hero.jpg
+  - url: /engineering-education/integrating-b2c-mpesa-api-using-node-js/hero.jpg
     alt: integrating-b2c-mpesa-api-using-node-js
 ---
 M-Pesa can be described as a phone-based mobile banking service. Since its [inauguration](https://en.wikipedia.org/wiki/M-Pesa) in 2007 by Vodafone Group PLC and Safaricom in Kenya, it has expanded to eight more countries in Africa.

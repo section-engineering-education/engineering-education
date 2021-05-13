@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-junit-and-mockito/hero.jpg
+  - url: /engineering-education/introduction-to-junit-and-mockito/hero.jpg
     alt: JUnit and Mockito example image
 
 ---

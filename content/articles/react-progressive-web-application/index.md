@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-progressive-web-application/hero.jpg
+  - url: /engineering-education/react-progressive-web-application/hero.jpg
     alt: React Progressive Web Application example Image
 ---
 In this tutorial, we will create a React Todo Progressive Web App. A progressive web app refers to an enhanced web application having the same capabilities as a native platform-specific application by utilizing the emerging browser APIs. The Progressive Web Apps are intended to be fast, reliable, and engaging.

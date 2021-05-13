@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /rendering-html-pages-as-a-http-server-response-using-node-js/hero.jpg
+ - url: /engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/hero.jpg
    alt: HTML as a HTTP server response example image
 ---
 When developing web applications, you might need to render the HTML components inside your server. This will help create interactive pages on the client side once a request to access these pages is made. 

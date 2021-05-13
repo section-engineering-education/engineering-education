@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /telegram-bot-python/hero.jpg
+  - url: /engineering-education/telegram-bot-python/hero.jpg
     alt: image telegram bot
 
 ---

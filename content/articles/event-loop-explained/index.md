@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /event-loop-explained/hero.jpg
+  - url: /engineering-education/event-loop-explained/hero.jpg
     alt: event loop explained
 ---
 The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works. Understanding the event loop is the first step to creating great web-based software.

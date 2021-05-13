@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-friend-functions-in-c++/hero.jpg
+  - url: /engineering-education/introduction-to-friend-functions-in-c++/hero.jpg
     alt: Introduction to Friend Functions in C++ Hero Image
 ---
 Non-member functions of a class will not have access to the private data of another class. There could be situations where we want two classes to share some functions and the data members. In that case, we can make the function a friend of these classes, and that will enable the function to access the private and protected data members of the classes. In this article, we will look at how to make a non-member function friend to a class.

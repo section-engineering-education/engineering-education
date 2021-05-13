@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-science-libraries-python/hero.jpg
+  - url: /engineering-education/data-science-libraries-python/hero.jpg
     alt: Hero image visual data science Python
 ---
 

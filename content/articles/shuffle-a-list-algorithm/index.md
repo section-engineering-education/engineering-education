@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /shuffle-a-list-algorithm/hero.jpg
+  - url: /engineering-education/shuffle-a-list-algorithm/hero.jpg
     alt: sorting image deck of cards
 ---
 A couple of months ago, I made a webpage called the [Pronoun Testing Grounds](https://botahamec.github.io/pronoun_test/). It allows users to try a different set of pronouns. It comes up with a cute little story to try them out. It's like the [Pronoun Dressing Room](http://www.pronouns.failedslacker.com/), if you've heard of that.

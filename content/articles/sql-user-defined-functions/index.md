@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sql-user-defined-functions/hero.jpg
+  - url: /engineering-education/sql-user-defined-functions/hero.jpg
     alt: SQL Functions image
 ---
 In this tutorial, we will be discussing user-defined functions in SQL Server. More specifically, we will be discussing Scalar functions and Table-Valued functions.

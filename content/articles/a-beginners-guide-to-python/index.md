@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /a-beginners-guide-to-python/hero.jpg
+  - url: /engineering-education/a-beginners-guide-to-python/hero.jpg
     alt: Python example image
 ---
 Python is among the most popular programming languages in the world. It is ranked high in different StackOverflow programming surveys each year. This article helps beginners familiarize themselves with the basic concepts of Python. According to the official [documentation](https://www.python.org/), Python is a high-level and general-purpose programming language.

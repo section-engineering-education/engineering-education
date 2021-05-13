@@ -10,7 +10,7 @@ date: 2021-02-24T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /laravel-8-email-verification/hero.jpg
+  - url: /engineering-education/laravel-8-email-verification/hero.jpg
     alt: laravel email verification
 ---
 Laravel is a simple-to-understand PHP-based system. It makes it easy to code complex features in an application. Email authentication is one characteristic that can be implemented easily using Laravel.

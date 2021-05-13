@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-pyspark-spark-part2/hero.jpg
+  - url: /engineering-education/getting-started-with-pyspark-spark-part2/hero.jpg
     alt: PySpark image example
 ---
 Apache Spark is a distributed cluster computing engine that makes the computation of big data efficient. It provides a simple programming interface to program entire clusters with implicit data parallelism. This essentially results in fast computation of big data.  Spark does not require the users to have high end, expensive systems with great computing power. It splits the big data into multiple cores or systems available in the cluster and optimally utilizes these computing resources to the processes this data in a distributed manner. Therefore Spark is a great solution for processing large amounts of data and obtaining results to queries quickly and without overheating the system.

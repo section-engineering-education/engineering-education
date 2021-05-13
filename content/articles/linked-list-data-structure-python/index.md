@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /linked-list-data-structure-python/hero.jpg
+  - url: /engineering-education/linked-list-data-structure-python/hero.jpg
     alt: linked list, python data structures
 
 ---

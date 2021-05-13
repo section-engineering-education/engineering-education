@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-search-view-in-android/hero.png
+  - url: /engineering-education/implementing-search-view-in-android/hero.png
     alt: Search Views in Android
 ---
 When dealing with a vast amount of data, it can sometimes be strenuous to find the piece of data that you want. This problem can be solved by filtering out the necessary data with respect to the `keyword(s)` provided. This is where a `SearchView` comes in. 

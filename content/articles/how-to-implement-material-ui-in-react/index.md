@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-implement-material-ui-in-react/hero.png
+  - url: /engineering-education/how-to-implement-material-ui-in-react/hero.png
     alt: Material-UI in React example
 ---
 React.js is one of the leading frameworks used when creating web applications. It enables developers to create SEO-friendly and highly-interactive components. React.js features also boost maintenance and overall productivity. The integration of the Material UI library in React.js projects takes things to a new level.

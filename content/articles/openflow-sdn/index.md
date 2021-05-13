@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /openflow-sdn/hero.png
+  - url: /engineering-education/openflow-sdn/hero.png
     alt: open source vs vendor networking solutions
 ---
 In this article, we will get to know the basics of OpenFlow protocol, which is the standard protocol in traditional software-defined networks. This article will go through the basics of Software Defined Networking (SDN) and OpenFlow (OF), the working of OF protocol and some terminologies, advantages over traditional networking architecture, and alternatives to OpenFlow be used in SDN.  

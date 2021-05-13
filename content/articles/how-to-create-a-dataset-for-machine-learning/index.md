@@ -10,7 +10,7 @@ date: 2021-02-10T00:00:00-09:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-create-a-dataset-for-machine-learning/hero.jpg
+  - url: /engineering-education/how-to-create-a-dataset-for-machine-learning/hero.jpg
     alt: Machine Learning (ML) Datasets example image
 ---
 Machine Learning (ML) has had a profound influence on a diverse range of applications. This has been possible mainly due to the better computing power and large amounts of training data. I cannot emphasize enough the importance of training data in ML systems.

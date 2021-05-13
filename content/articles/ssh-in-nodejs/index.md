@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ssh-in-nodejs/hero.jpg
+  - url: /engineering-education/ssh-in-nodejs/hero.jpg
     alt: SSH and building an application in Node.js
 ---
 Accessing systems remotely from your home computer is crucial for software developers and system administrators. Users might need to configure, install, and run applications on servers and computers that might not be physically accessible to them. Nowadays, cloud computing is one of the most popular platforms for hosting and running applications over the internet.

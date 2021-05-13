@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /the-development-of-5g-protocol-standardization/hero.jpg
+  - url: /engineering-education/the-development-of-5g-protocol-standardization/hero.jpg
     alt: 5G cover image 
 ---
 [**5G Protocol standardization**](https://www.ericsson.com/en/future-technologies/standardization/5g-standardization) is the process of tailoring the 5G technology to serve the market requirements and even more, by introducing new applications and services besides the traditional services introduced by the initial mobile networks such as 1G, 2G, 3G, and 4G. 

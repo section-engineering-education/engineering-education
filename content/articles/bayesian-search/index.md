@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /bayesian-optimization/hero.jpg
+ - url: /engineering-education/bayesian-optimization/hero.jpg
    alt: Bayesian Optimization to Optimize Hyperparameters image
 
 ---

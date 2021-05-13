@@ -11,7 +11,7 @@ topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ensuring-acid-compliance-in-database-transactions/hero.jpg
+  - url: /engineering-education/ensuring-acid-compliance-in-database-transactions/hero.jpg
     alt: Public Cloud Hybrid Cloud Private Cloud example image
 ---
 The cloud environment enables users to manage storage, applications, network, and compute resources over the internet. Users rely on IT infrastructures not installed on their local server or computer to manage these resources. This is referred to as cloud computing. 

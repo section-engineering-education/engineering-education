@@ -10,7 +10,7 @@ date: 2021-03-09T00:00:00-10:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /npm-vs-yarn-which-one-to-choose/hero.png
+  - url: /engineering-education/npm-vs-yarn-which-one-to-choose/hero.png
     alt: NPM vs Yarn which one to choose
 ---
 [Node.js](https://nodejs.dev/learn) provides an open-source and cross-platform runtime environment for executing JavaScript code outside a browser. Node.js is ideal for building highly scalable data-intensive and real-time back-end services (APIs) that power our client applications. 

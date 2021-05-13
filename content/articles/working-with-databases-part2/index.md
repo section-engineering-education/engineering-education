@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /working-with-databases-part2/hero.jpg
+  - url: /engineering-education/working-with-databases-part2/hero.jpg
     alt: databases example images books
 ---
 You've created your first MongoDB database and now you want to use it on a website. How do you display its data on the web? How can users add, modify and delete data? The solution is to create a dynamic Node.js web app using the MongoDB node module.

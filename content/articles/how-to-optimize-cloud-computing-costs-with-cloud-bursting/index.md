@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-optimize-cloud-computing-costs-with-cloud-bursting/hero.jpg
+  - url: /engineering-education/how-to-optimize-cloud-computing-costs-with-cloud-bursting/hero.jpg
     alt: Cloud bursting example image
 ---
 Organizations across all industries have appreciated and benefited from the significance that data plays in their decision making and business development. They are now running more data workloads and analytics than ever before.

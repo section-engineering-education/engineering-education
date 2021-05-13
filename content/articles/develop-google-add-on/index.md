@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /develop-google-add-on/hero.png
+  - url: /engineering-education/develop-google-add-on/hero.png
     alt: Google add-on example image
 ---
 Google offers online services through applications such as Doc, Sheet, Forms, etc. The services collect, hold, and/or store data that need to be shared, processed, or even analyzed. Google has also provided a scripting language that allows automation and interaction with its applications. Apps Script is a Javascript cloud language by Google to that make automation a reality and make third-party services or information available.

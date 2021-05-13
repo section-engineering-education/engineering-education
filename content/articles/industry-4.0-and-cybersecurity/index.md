@@ -10,7 +10,7 @@ date: 2020-09-22T00:00:00-07:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
-  - url: /industry-4.0-and-cybersecurity/hero.jpg
+  - url: /engineering-education/industry-4.0-and-cybersecurity/hero.jpg
     alt: Industry 4.0 cybersecurity example image
 ---
 Industrial revolutions describe transitional periods that welcome new manufacturing procedures. The first three industrial revolutions can be described as mechanization to improve manufacturing process, introduction of electricity into manufacturing, and the digital revolution within the manufacturing process respectively.     

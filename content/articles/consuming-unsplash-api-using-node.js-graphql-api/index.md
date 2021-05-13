@@ -10,7 +10,7 @@ date: 2021-02-08T00:00:00-21:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /consuming-unsplash-api-using-node.js-graphql-api/hero.jpg
+  - url: /engineering-education/consuming-unsplash-api-using-node.js-graphql-api/hero.jpg
     alt: extending classes example image
 ---
 Unsplash is a photography sharing application. It has millions of users who post photos related to different topics every day. It is estimated the platform has over two million photos. With the need to bring their services closer to developers, Unsplash released their developer API.

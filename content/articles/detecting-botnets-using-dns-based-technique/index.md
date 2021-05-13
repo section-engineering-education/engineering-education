@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /detecting-botnets-using-dns-based-technique/hero.png
+  - url: /engineering-education/detecting-botnets-using-dns-based-technique/hero.png
     alt: dns technique image example
 ---
 Over the past few years, many people and organizations have embraced the use of networking technologies to enhance data sharing and communication. Data sharing has come with its security challenges. Data security challenges have been and ongoing issue largely in part by botnets, which are used by cybercriminals to instigate various attacks. 

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nlp-transfer-learning/hero.jpg
+  - url: /engineering-education/nlp-transfer-learning/hero.jpg
     alt: transfer learning in NLP example image
 ---
 Using pre-trained models, we can skip the time-consuming process of data collection, pre-processing, training, and testing. These models are trained on Petabytes of data and give us an edge over training neural networks from scratch. This is what we call Transfer learning, and it is a novel way to train machine learning models.

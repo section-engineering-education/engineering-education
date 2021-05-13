@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /python-database-programming-sqlite/hero.png
+  - url: /engineering-education/python-database-programming-sqlite/hero.png
     alt: SQLite example image Python SQLite library
 ---
 [SQLite](https://www.sqlite.org/docs.html) is an open-source and simple database engine that allows you to create a relational database and interact with it. In general, it is very lightweight and can be used within almost all programming languages including Python.

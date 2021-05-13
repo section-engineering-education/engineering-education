@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-android-notifications/hero.jpg
+  - url: /engineering-education/getting-started-android-notifications/hero.jpg
     alt: Android notification example image
 ---
 A notification is a message widget that is displayed outside the applications user interface. When a notification is issued, it appears as an icon in the notification area. To view the details of the notification, the user opens the notification drawer.

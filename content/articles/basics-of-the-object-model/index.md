@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /basics-of-the-object-model/hero.jpg
+  - url: /engineering-education/basics-of-the-object-model/hero.jpg
     alt: Object model image example
 ---
 The object Model sees an information system as a set of objects and classes. The reader will get an in-depth understanding of the object model and its elements. We will also look into object-oriented programming (OOP), object-oriented design (OOD), and object-oriented analysis (OOA).

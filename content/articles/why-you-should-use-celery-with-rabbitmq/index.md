@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /why-you-should-use-celery-with-rabbitmq/hero.jpg
+  - url: /engineering-education/why-you-should-use-celery-with-rabbitmq/hero.jpg
     alt: Celery and RabbitMQ hero image
 ---
 Celery and RabbitMQ are some tools used in in event-driven architectures. Choosing the right combination of tools and viewing an example of these tools that go beyond the ["hello world"](https://docs.celeryproject.org/en/stable/getting-started/brokers/rabbitmq.html) is what this article will cover.

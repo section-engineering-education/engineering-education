@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /tasks-to-docs/hero.jpg
+  - url: /engineering-education/tasks-to-docs/hero.jpg
     alt: automate tasks to google docs image
 ---
 

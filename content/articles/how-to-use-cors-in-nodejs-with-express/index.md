@@ -10,7 +10,7 @@ date: 2021-05-06T00:00:00-18:00
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-use-cors-in-nodejs-with-express/hero.png
+  - url: /engineering-education/how-to-use-cors-in-nodejs-with-express/hero.png
     alt: How to use CORS in Node.js with Express
 ---
 Node.js is an open-source and cross-platform runtime used when executing JavaScript code on the server-side. One of the popular Node.js server frameworks is Express. Implementing CORS in Node.js helps you access numerous functionalities on the browser. 

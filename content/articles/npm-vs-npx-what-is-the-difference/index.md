@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /npm-vs-npx/hero.jpg
+  - url: /engineering-education/npm-vs-npx/hero.jpg
     alt: NPM vs NPX Image
 ---
 If you are a Node.js developer, you must have used NPM in one or many instances while developing your Node.js application. NPM is bundled with Node.js. NPM was initially released back on [12th January 2010](https://en.wikipedia.org/wiki/Npm_(software)). It has gained tremendous fame among JavaScript developers. 

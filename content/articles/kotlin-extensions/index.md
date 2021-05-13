@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /kotlin-extensions/hero.jpg
+  - url: /engineering-education/kotlin-extensions/hero.jpg
     alt: kotlin extensions image
 ---
 When Kotlin was introduced into Android, it came along with new features. One of the features was Kotlin extensions. Extensions solved a large problem that developers faced: code redundancy. It is not a good practice to have code repeating itself. On a larger scale, this would lead to slower performance. At which point the code can become dirty and unscalable.

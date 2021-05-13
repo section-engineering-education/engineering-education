@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /raising-exceptions/hero.jpg
+  - url: /engineering-education/raising-exceptions/hero.jpg
     alt: computer image example raising exception
 ---
 *“It’s easier to ask for forgiveness than permission.” - Grace Hopper*

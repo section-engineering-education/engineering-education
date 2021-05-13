@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /cloud-firestore/hero.jpg
+  - url: /engineering-education/cloud-firestore/hero.jpg
     alt: Cloud Firebase image computer
 ---
 

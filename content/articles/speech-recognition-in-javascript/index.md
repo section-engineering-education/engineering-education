@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /speech-recognition-in-javascript/hero.jpg
+  - url: /engineering-education/speech-recognition-in-javascript/hero.jpg
     alt: Speech Recognition in JavaScript Hero Image
 ---
 The Web Speech API is used to incorporate voice data into web apps. In this tutorial, we will build a simple webpage that uses the Web Speech API to implement speech recognition. You can check the browser compatibility for the Web Speech API [here](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility).

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-constraint-layout-in-android/hero.png
+  - url: /engineering-education/getting-started-with-constraint-layout-in-android/hero.png
     alt: Constraint Layout in Android
 ---
 Almost every Android application requires a user interface which it holds UI elements. A `ViewGroup` is a special [view](https://developer.android.com/reference/android/view/View) that holds other views. Sub-classes or children of a `ViewGroup` are called `layouts`. 

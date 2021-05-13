@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-rxjava/hero.jpg
+  - url: /engineering-education/android-rxjava/hero.jpg
     alt: RxJava in Android image example
 ---
 RxJava has many operators. Going through the documentation might be a bit tedious for a beginner. This is because it uses a theoretical approach rather than a practical one. In the previous [article](/android-rxjava/), we went through the basics of RxJava and how to use it in Android.

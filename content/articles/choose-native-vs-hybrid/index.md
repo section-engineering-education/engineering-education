@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /choose-native-vs-hybrid/hero.jpg
+  - url: /engineering-education/choose-native-vs-hybrid/hero.jpg
     alt: Native vs Hybrid Applications example image
 ---
 A mobile application (app) is a computer program or software application created for portable devices such as tablets and smartphones. Mobile application development includes gathering requirements, analyzing, designing, coding, and testing software applications for portable devices. 

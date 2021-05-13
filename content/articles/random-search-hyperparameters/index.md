@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /random-search-hyperparameters/hero.jpg
+ - url: /engineering-education/random-search-hyperparameters/hero.jpg
    alt: Random search hyperparameter optimization image
 
 ---

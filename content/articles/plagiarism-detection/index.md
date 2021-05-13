@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /plagiarism-detection/hero.jpg
+  - url: /engineering-education/plagiarism-detection/hero.jpg
     alt: Plagiarism Detection example image
 
 ---

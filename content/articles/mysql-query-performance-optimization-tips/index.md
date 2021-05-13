@@ -10,7 +10,7 @@ date: 2020-10-01T00:00:00-18:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /mysql-query-performance-optimization-tips/hero.jpg
+  - url: /engineering-education/mysql-query-performance-optimization-tips/hero.jpg
     alt: MySQL query optimizing tips image
 ---
 This article goes through common tips for optimizing MySQL queries. As data volume in your database grows, retrieving data from the database and other database operations become complex. This also requires more computing resources.

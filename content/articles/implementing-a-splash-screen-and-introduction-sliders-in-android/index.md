@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-a-splash-screen-and-introduction-sliders-in-android/hero.jpg
+  - url: /engineering-education/implementing-a-splash-screen-and-introduction-sliders-in-android/hero.jpg
     alt: Splash screen and Introduction Sliders in Android example image
 ---
 A splash screen is an introduction screen in an application once it is launched. Splash screens are vital since they are the first interaction a user has with an application. Most splash screens either contain a company's logo, an animation, an image, or many other features.

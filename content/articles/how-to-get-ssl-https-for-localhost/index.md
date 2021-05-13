@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-get-ssl-https-for-localhost/hero.jpg
+  - url: /engineering-education/how-to-get-ssl-https-for-localhost/hero.jpg
     alt: SSL for localhost
 ---
 This article will take you through the process of provisioning SSL certificates for local servers. Building a web application for a production server requires local testing before deployment. It is also possible to run the web application in a local environment and have it accessible over the internet.

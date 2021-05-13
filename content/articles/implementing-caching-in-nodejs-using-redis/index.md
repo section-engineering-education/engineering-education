@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-caching-in-nodejs-using-redis/hero.jpg
+  - url: /engineering-education/implementing-caching-in-nodejs-using-redis/hero.jpg
     alt: Implementing Caching in Node.js using Redis
 ---
 Caching refers to the process of storing data in a temporary location so that the data can be accessed with minimal resources. Caching aims to reduce the cost of bandwidth of data sent over the network and the application's response time. Applications that implement caching are faster and user friendly.

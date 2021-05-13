@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /guide-to-nodejs-event-emitter/hero.jpg
+ - url: /engineering-education/guide-to-nodejs-event-emitter/hero.jpg
    alt: Node.js Event Emitter
 ---
 Node.js has an asynchronous event-driven architecture. This allows designs where events emitted due to an action can cause listener object(s) to be executed. Node.js has a built-in module `events`. This module has an object `Event Emitter` which we can manipulate to listen to events. 

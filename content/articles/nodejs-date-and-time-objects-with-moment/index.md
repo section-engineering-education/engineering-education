@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-date-and-time-objects-with-moment/hero.png
+  - url: /engineering-education/nodejs-date-and-time-objects-with-moment/hero.png
     alt: Moment date library
 ---
 Date is a crucial development function that developers come across in their development workflow. To achieve this with ease you need great tools such as Moment.js. Moment.js is the tool every JavaScript developer wants to use to achieve date and time object with simplicity.

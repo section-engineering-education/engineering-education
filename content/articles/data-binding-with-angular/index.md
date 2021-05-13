@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-binding-with-angular/hero.jpg
+  - url: /engineering-education/data-binding-with-angular/hero.jpg
     alt: example image
 ---
 Angular is a platform and design framework used for building single page applications (SPAs) using HTML and TypeScript.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-chrome-extension/hero.jpg
+  - url: /engineering-education/how-to-build-chrome-extension/hero.jpg
     alt: chrome extension image example
 ---
 I’ve been using Chrome extensions religiously for years. Yet, I never had a clue how to make one. I recently tried for the first time and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex. However, after understanding what parts go into it, I have taken a deep sigh of relief because really… it is way less intimidating than it looks.

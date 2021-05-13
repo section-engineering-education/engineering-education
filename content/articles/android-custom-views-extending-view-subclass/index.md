@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-custom-views-extending-view-subclass/hero.jpg
+  - url: /engineering-education/android-custom-views-extending-view-subclass/hero.jpg
     alt: Android custom views image example
 ---
 In a [previous article](/android-custom-views-extending-view/) we discuss the approach of extending a custom view in Android. Another approach to creating a custom View is by extending an existing widget. Extending an existing subclass is relatively easier when compared to extending the whole class.

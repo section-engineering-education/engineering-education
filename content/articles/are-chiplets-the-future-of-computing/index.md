@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /are-chiplets-the-future-of-computing/hero.jpg
+  - url: /engineering-education/are-chiplets-the-future-of-computing/hero.jpg
     alt: chiplet future of cumputing
 ---
 The use of chiplets allows manufactures to use more than one node in a processor design. For example, the I/O components of CPUs are hard to shrink.

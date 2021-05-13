@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-firebase-image-labeling/hero.jpg
+  - url: /engineering-education/react-native-firebase-image-labeling/hero.jpg
     alt: React Native Image Labeling With Firebase Hero Image
 ---
 Image labeling gives you insight into the content of images. In this tutorial, we will be building a Non-Expo React Native application to label the image provided using the machine learning kit from Firebase.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-jenkins/hero.jpg
+  - url: /engineering-education/what-is-jenkins/hero.jpg
     alt: Jenkins Continuous Integration tool
 ---
 Continuous Integration (CI) is a software development practice where developers integrate code into a shared repository frequently during [development](https://www.martinfowler.com/articles/continuousIntegration.html). Jenkins is a Continuous Integration (CI) tool and an open-source tool written in Java.

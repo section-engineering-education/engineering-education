@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-prepare-for-coding-interviews/hero.jpg
+  - url: /engineering-education/how-to-prepare-for-coding-interviews/hero.jpg
     alt: coding interviews example image
 ---
 Whether you are a student or a working professional, effective preparation for any software engineer interviews is essential if you want a job at a good company. *This article covers everything you need to know to prepare for coding interviews in exceptional tech companies*.

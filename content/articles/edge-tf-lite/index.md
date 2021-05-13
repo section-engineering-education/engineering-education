@@ -12,7 +12,7 @@ topics:
 excerpt_separator: <!--more-->
 images:
 
-  - url: /edge-tf-lite/hero.jpg
+  - url: /engineering-education/edge-tf-lite/hero.jpg
     alt: edge device example image
 ---
 [Edge Devices](https://en.wikipedia.org/wiki/Edge_device) are computing devices that live at the "edge" of the network and perform work in the exact location that is needed. Edge devices include [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things), [smart home equipment](https://www.pcmag.com/news/the-best-smart-home-devices-for-2020) and computers embedded as household or industrial items. IoT devices are growing rapidly and continue to do so for the next couple of years.

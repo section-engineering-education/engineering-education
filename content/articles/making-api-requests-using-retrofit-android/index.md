@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /making-api-requests-using-retrofit-android/hero.jpg
+  - url: /engineering-education/making-api-requests-using-retrofit-android/hero.jpg
     alt: example image GET request Retrofit in Android
 ---
 Networking is a crucial factor in mobile development. Most, if not all mobile applications incorporate networking on some level. Applications are either sending or receiving information. Initially, developers did networking on the `main thread`. This made applications less user-friendly since screens would "freeze".

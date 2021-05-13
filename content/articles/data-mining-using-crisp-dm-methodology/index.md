@@ -10,7 +10,7 @@ date: 2021-02-02T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /data-mining-using-crisp-dm-methodology/hero.jpg
+  - url: /engineering-education/data-mining-using-crisp-dm-methodology/hero.jpg
     alt: Data Mining using the CRISP-DM methodology
 ---
 This article will cover how the CRISP-DM methodology can be used to build successful data science projects. We will also get an overview of how it can be used by analyzing a case study.

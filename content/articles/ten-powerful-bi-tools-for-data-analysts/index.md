@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /ten-powerful-bi-tools-for-data-analysts/hero.jpg
+  - url: /engineering-education/ten-powerful-bi-tools-for-data-analysts/hero.jpg
     alt: Business Intelligence image example
 ---
 Intense competition in global industries has made businesses seek out ways of managing their business processes for sustained growth. Organizations are seeking [business intelligence (BI)](https://searchbusinessanalytics.techtarget.com/definition/business-intelligence-BI) solutions to achieve competitiveness through advanced data analysis (especially in this era of Big Data).

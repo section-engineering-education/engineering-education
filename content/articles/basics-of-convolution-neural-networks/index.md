@@ -10,7 +10,7 @@ date: 2020-11-15T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /basics-of-convolution-neural-networks/hero.jpg
+  - url: /engineering-education/basics-of-convolution-neural-networks/hero.jpg
     alt: convolution neural networks learning image
 ---
 This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).

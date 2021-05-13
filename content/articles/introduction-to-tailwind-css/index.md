@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-tailwind-css/hero.jpg
+  - url: /engineering-education/introduction-to-tailwind-css/hero.jpg
     alt: Introduction to Tailwind CSS image
 ---
 CSS technology was one of the biggest game-changers in web development. It allowed for more styling capabilities and freedom. As CSS grew, so did its complexity. CSS in retrospect is not challenging to write, but it can be tricky to implement.

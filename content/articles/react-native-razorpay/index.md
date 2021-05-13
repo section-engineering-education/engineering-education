@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-razorpay/hero.jpg
+  - url: /engineering-education/react-native-razorpay/hero.jpg
     alt: React Native and Razorpay
 ---
 In this tutorial, we will build a React Native application to accept payments from users by integrating Razorpay in our application. We will also build a Node.js (Express) server to handle sensitive information and processes that should not be exposed or handled from the mobile application.

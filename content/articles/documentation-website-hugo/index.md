@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /documentation-website-hugo/hero.jpg
+  - url: /engineering-education/documentation-website-hugo/hero.jpg
     alt: Hugo Documentation site example image
 ---
 Documentation is a must in every software development project. Reliable documentation provides an accurate overview of your software, good insight on how to use your software, and easy onboarding for new users of your software.

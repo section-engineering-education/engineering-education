@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /greedy-algorithms/hero.jpg
+  - url: /engineering-education/greedy-algorithms/hero.jpg
     alt: Stock Price Greedy Algorithm example image
 ---
 Stock markets are where buyers and sellers connect to buy and sell stocks, which are shares of ownership in a public company. Many people have become millionaires by trading. 

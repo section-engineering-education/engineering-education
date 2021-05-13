@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /laravel-beginners-guide-blogpost/hero.jpg
+  - url: /engineering-education/laravel-beginners-guide-blogpost/hero.jpg
     alt: Laravel blog application image
 ---
 Laravel is a free and open-source PHP Framework for Web Artisans based on Symfony that helps craft Web Applications following the MVC (Model View Controller) design pattern.

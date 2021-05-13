@@ -10,7 +10,7 @@ date: 2020-09-27T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /heap-data-structure-python/hero.jpg
+  - url: /engineering-education/heap-data-structure-python/hero.jpg
     alt: binary heaps
 ---
 A binary heap is a special data structure that resembles a binary tree. It differs in the sense that the root of any subtree should be the smallest or the largest element.

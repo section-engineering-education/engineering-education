@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /linear-discriminant-analysis/hero.jpg
+  - url: /engineering-education/linear-discriminant-analysis/hero.jpg
     alt: Linear Discriminant Analysis example image
 ---
 In this tutorial, we will look into the algorithm Linear Discriminant Analysis, also known as LDA. One should be careful while searching for LDA on the net. We also abbreviate another algorithm called Latent Dirichlet Allocation as LDA. 

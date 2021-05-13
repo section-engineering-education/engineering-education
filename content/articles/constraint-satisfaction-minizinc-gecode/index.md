@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /constraint-satisfaction-minizinc-gecode/hero.jpg
+  - url: /engineering-education/constraint-satisfaction-minizinc-gecode/hero.jpg
     alt: united states map
 ---
 Constraint-Satisfaction Problems (CSPs) are a type of problem in computer science. They are made of variables, possible values, and constraints on those values. Many problems, like graph theory, type inference, and puzzle-solving, work as CSPs.

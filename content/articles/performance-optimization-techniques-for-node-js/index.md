@@ -10,7 +10,7 @@ date: 2020-10-05T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:		
-  - url: /performance-optimization-techniques-for-node-js/hero.jpg
+  - url: /engineering-education/performance-optimization-techniques-for-node-js/hero.jpg
     alt: Performance optimization tips Node.js
 ---
 Performance is an important aspect when building webpages and applications. You need to understand how long your users interact with your app, how often they leave, and the response time as well.

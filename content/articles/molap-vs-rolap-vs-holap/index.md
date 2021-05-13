@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /molap-vs-rolap-vs-holap/hero.jpg
+  - url: /engineering-education/molap-vs-rolap-vs-holap/hero.jpg
     alt: MOLAP vs ROLAP vs HOLAP Image
 ---
 Businesses and organizations require analytical tools for analyzing their processes, performance, and strategies. OLAP (Online Analytical Processing) is a tool that can be used to provide multi-dimensional data analysis and complex data modeling.

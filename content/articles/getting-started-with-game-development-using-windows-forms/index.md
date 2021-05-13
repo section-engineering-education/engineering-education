@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-game-development-windows-forms/hero.jpg
+  - url: /engineering-education/getting-started-with-game-development-windows-forms/hero.jpg
     alt: Windows Forms C# example image 
 ---
 Playing video games is always fun, but what about making one? In this tutorial, we will go through the steps of making a small puzzle game called Mastermind using windows forms. Mastermind is a puzzle game that tests the memory and the ability of the player to determine the exact output between all the possibilities.

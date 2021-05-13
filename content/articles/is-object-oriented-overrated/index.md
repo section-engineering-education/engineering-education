@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /is-object-oriented-overrated/hero.jpg
+  - url: /engineering-education/is-object-oriented-overrated/hero.jpg
     alt: Object-Oriented code programming
 ---
 Most professional programming languages are object-oriented, including Java and the C languages. Their key features (such as encapsulation and inheritance) have come under attack many times in recent memory. Object-oriented detractors claim these features are overcomplicated. They say those features make code writing and maintenance more difficult. We will explore these arguments, and their counters, to understand how useful OOP is in general.

@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
+  - url: /engineering-education/build-a-websockets-powered-tic-tac-toe-with-adonisjs/hero.png
     alt: Adonis.js Websocket image
 ---
 Browser-based multiplayer games require split-second communication between players. Tic-Tac-Toe is no exception. Player1 needs to see Player2s move in less than a second. In this tutorial we will be using the WebSocket API to achieve this communication speed.

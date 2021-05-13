@@ -10,7 +10,7 @@ date: 2021-02-02T00:00:00-11:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/hero.jpg
+  - url: /engineering-education/simclr-a-simple-framework-for-contrastive-learning-of-visual-representations/hero.jpg
     alt: Machine Learning (ML) Datasets example image
 ---
 [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning) and [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) techniques are very limited in their real-world applications. For example, the supervised learning technique can be very labor-intensive, computationally expensive, and time-consuming as it requires a lot of labeling to be performed on data.

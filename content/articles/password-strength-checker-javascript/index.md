@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /password-strength-checker-javascript/hero.jpg
+  - url: /engineering-education/password-strength-checker-javascript/hero.jpg
     alt: Password Strength Regular Expressions JavaScript Image
 ---
 Passwords are very important in application security. Everyone needs a strong password to secure their systems and accounts. In this tutorial, we are going to discuss how to ensure that end-users choose passwords that are strong enough to secure their account using Regular Expressions in JavaScript.

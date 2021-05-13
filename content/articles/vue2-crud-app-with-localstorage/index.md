@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /vue2-crud-app-with-localstorage/hero.jpg
+  - url: /engineering-education/vue2-crud-app-with-localstorage/hero.jpg
     alt: Vue CRUD Local Storage example
 ---
 Vue.js is a progressive, versatile front-end JavaScript framework. It is highly adoptable due to its simplicity and small bundle size. Local storage is a Web Storage API in modern browsers that allows us to store data as key-value pairs of strings on the user's browser.

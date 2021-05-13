@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-firebase-text-recognition/hero.jpg
+  - url: /engineering-education/react-native-firebase-text-recognition/hero.jpg
     alt: React Native Text Recognition With Firebase Hero Image
 ---
 Firebase ML Kits text recognition APIs can recognize text in any Latin-based character set. They can also be used to automate data-entry tasks such as processing credit cards, receipts, and business cards. In this tutorial, we will be building a Non-Expo React Native application to recognize text from an image using Firebase's ML kit.

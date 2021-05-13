@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /pure-node-js-no-frameworks-or-packages/hero.jpg
+  - url: /engineering-education/pure-node-js-no-frameworks-or-packages/hero.jpg
     alt: Node.js without frameworks example image
 ---
 Are you a Node.js developer who frequently uses Node.js libraries? Have you ever built an application without using any external Node.js libraries?

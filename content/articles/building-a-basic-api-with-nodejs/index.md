@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-basic-api-with-nodejs/hero.jpg
+  - url: /engineering-education/building-a-basic-api-with-nodejs/hero.jpg
     alt: basic API with Node.js image example
 ---
 In this guide, you will build a [Node.js](https://nodejs.dev/learn) REST API with the [Express Framework](http://expressjs.com/), expose it to the internet with [Ngrok](https://ngrok.com/docs) and make test requests to it on [Postman](https://www.postman.com/).

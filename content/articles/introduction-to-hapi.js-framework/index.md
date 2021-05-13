@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-hapi/hero.jpg
+  - url: /engineering-education/introduction-to-hapi/hero.jpg
     alt: Hapi.js image example laptop
 ---
 [Node.js](https://nodejs.org/en/docs/) has become increasingly popular in the software industry. With this popularity comes a great need for developers to create frameworks that make Node.js application development easier. There are various frameworks currently available such as [express](https://expressjs.com), [hapi.js](https://hapi.dev) and [Koa](https://koajs.com) just to mention a few. This article will focus on one of the major Node.js frameworks available i.e. hapi.js.

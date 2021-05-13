@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /history-of-nodejs/hero.jpg
+  - url: /engineering-education/history-of-nodejs/hero.jpg
     alt: hero example image computer Node.js
 ---
 Today we are going to learn about a revolutionary technology that is being used to build great web applications:  ***Node.js***. You may have heard of it or worked with it; either way, join us as we further explore Node.js. We are going to talk about the history, some of the basics, and a few use case examples that use this revolutionary technology.

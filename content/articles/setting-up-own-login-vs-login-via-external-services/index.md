@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /setting-up-own-login-vs-login-via-external-services/hero.jpg
+  - url: /engineering-education/setting-up-own-login-vs-login-via-external-services/hero.jpg
     alt: Setting Up Own Login vs Login via External Services image
 
 ---

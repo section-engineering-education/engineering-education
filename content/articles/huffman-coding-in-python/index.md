@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /huffman-coding-python/hero.jpg
+  - url: /engineering-education/huffman-coding-python/hero.jpg
     alt: huffman python code coding data text compression
 ---
 Huffman coding is a lossless way to compress and encode text based on the frequency of the characters in the text. In computer science and information theory, [Huffman code](https://www.sciencedirect.com/topics/computer-science/codeword-length) is a special type of optimal prefix code that is often used for lossless data compression.

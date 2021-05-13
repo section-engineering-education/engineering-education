@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /how-to-setup-nodejs-express-for-react/hero.jpg
+ - url: /engineering-education/how-to-setup-nodejs-express-for-react/hero.jpg
    alt: Express.js server for react example image
 ---
 React is a JavaScript library used to build user interfaces and develop single-page applications using reusable UI components. React is used for building frontend apps that can communicate with the backend server. 

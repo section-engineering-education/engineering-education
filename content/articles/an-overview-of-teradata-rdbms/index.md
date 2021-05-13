@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-overview-of-teradata-rdbms/hero.jpg
+  - url: /engineering-education/an-overview-of-teradata-rdbms/hero.jpg
     alt: Teradata RDBMS Image
 ---
 In this era of Big Data, companies are using data-driven approaches to improve various aspects of their businesses. These businesses data is complex, huge, and evolving. This requires an effective tool for managing it. Teradata is an open and scalable database management system, that can enable businesses to improve their outcomes using data management tools.  

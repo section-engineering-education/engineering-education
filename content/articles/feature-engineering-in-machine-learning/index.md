@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /feature-engineering-in-machine-learning/hero.jpg
+  - url: /engineering-education/feature-engineering-in-machine-learning/hero.jpg
     alt: feature engineering machine learning image
 ---
 The features used in a machine learning model are often the difference between model success, mediocrity, and failure. Therefore, it is not enough to simply build models, but also making sure they offer the best possible performance. Let us learn more about the process of feature engineering and how it serves this purpose.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-your-own-private-blockchain/hero.jpg
+  - url: /engineering-education/how-to-build-your-own-private-blockchain/hero.jpg
     alt: blockchain image example
 ---
 In this series we are going to build our own private blockchain where we can store data and connect them in a chain. But before we dive into it, we have to know what a blockchain is, its terminologies, and what is needed to build it.

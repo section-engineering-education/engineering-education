@@ -10,7 +10,7 @@ date: 2020-08-05T00:00:00-05:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /constructors-destructors/hero.jpg
+  - url: /engineering-education/constructors-destructors/hero.jpg
     alt: extending classes example image
 ---
 

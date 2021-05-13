@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-it-takes-to-be-a-devops-engineer/hero.jpg
+  - url: /engineering-education/what-it-takes-to-be-a-devops-engineer/hero.jpg
     alt: DevOps example image developers
 
 ---

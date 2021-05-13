@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /face-detection-matlab/hero.jpg
+  - url: /engineering-education/face-detection-matlab/hero.jpg
     alt: Face detection example image
 ---
 Face detection is the ability to distinguish faces from non-face objects in an image or a video. Viola-Jones algorithm is an object recognition framework that allows the detection of human faces. Viola-Jones algorithm is robust, powerful, and faster despite being outdated. 

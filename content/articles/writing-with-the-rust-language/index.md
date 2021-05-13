@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /writing-with-the-rust-language/hero.jpg
+  - url: /engineering-education/writing-with-the-rust-language/hero.jpg
     alt: rust language good code
 ---
 This article will cover many of the interesting features that Rust has to offer, but does not go into detail around how to write a program in Rust. If you're looking for a good resource to get started with Rust, please refer to the [Learn Rust](https://www.rust-lang.org/learn) guide, which is very helpful for beginners.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-nested-recycler-view/hero.jpg
+  - url: /engineering-education/android-nested-recycler-view/hero.jpg
     alt: Introduction to Memorization in JavaScript Hero Image
 ---
 RecyclerView is a container widget used to display large data sets that change dynamically. The RecyclerView widget manages the display and handling of items in a list. It provides [Layout Managers](https://stackoverflow.com/questions/46423155/im-getting-nothing-here-in-main-activity) to position these items. This way, you can create customized layout managers for RecyclerView containers.

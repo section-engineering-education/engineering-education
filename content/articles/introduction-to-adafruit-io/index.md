@@ -10,7 +10,7 @@ date: 2021-02-25T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /introduction-to-adafruit-io/hero.jpg
+  - url: /engineering-education/introduction-to-adafruit-io/hero.jpg
     alt: Introduction to Adafruit IO
 ---
 In this article, we will learn about a cloud platform called Adafruit IO for the deployment of IoT solutions. By the end of this article, you will get an overview of how IoT solutions are deployed in the cloud, how Adafruit IO helps in easier deployment, and we also build a simple project in Python for demonstration.

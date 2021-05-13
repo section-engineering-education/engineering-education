@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-kotlin-flows/hero.jpg
+  - url: /engineering-education/introduction-to-kotlin-flows/hero.jpg
     alt: Kotlin Flows example image
 ---
 ### Introduction

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /pos-system-using-arduino-and-python/hero.jpg
+  - url: /engineering-education/pos-system-using-arduino-and-python/hero.jpg
     alt: outlook clone example image
 ---
 We are going to be building something unique and exciting. We will use hardware components and integrate them with our python code. All the components presented can always be updated, modified, and secured. The basic flow of information is of utmost interest. Let's begin.

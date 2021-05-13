@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /regularization-to-prevent-overfitting/hero.jpg
+  - url: /engineering-education/regularization-to-prevent-overfitting/hero.jpg
     alt: Regularization hero image
 ---
 Overfitting impacts the accuracy of Machine Learning models. The model attempts to capture the data points that do not represent the accurate properties of data. These data points may be considered as noise. To avoid the occurrence of overfitting, we may use a method called regularization.

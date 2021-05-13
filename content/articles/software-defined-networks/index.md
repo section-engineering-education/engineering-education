@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /software-defined-networks/hero.jpg
+  - url: /engineering-education/software-defined-networks/hero.jpg
     alt: software-defined networks
 ---
 A few industry-recognized practices are described below. Although these practices are not written in stone and many organizations may have different approaches, this article provides a general overview of the advantages and challenges around transitioning to a Software-Defined Network (SDN).

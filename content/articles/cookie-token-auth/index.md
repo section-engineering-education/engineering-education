@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /cookie-vs-token-authentication/hero.jpg
+  - url: /engineering-education/cookie-vs-token-authentication/hero.jpg
     alt:  Cookie vs Token authentication Hero Image
 ---
 To secure communication between a client and a server, we often need to associate an incoming request with a set of credentials for identity. We refer to this as authentication, which is used to recognize user identity against credential information such as usernames or passwords. In this article, we will compare cookie and token-based authentication and how they work.

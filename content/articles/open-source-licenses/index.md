@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /open-source-licenses/hero.jpg
+  - url: /engineering-education/open-source-licenses/hero.jpg
     alt: open source licenses
 ---
 An essential aspect of a developers job is assigning the appropriate license to the work done. The license ensures the work gets it due credit it deserves. They help define the boundaries of use by an external party. The open-source community is responsible for the tremendous growth the world of technology has seen.

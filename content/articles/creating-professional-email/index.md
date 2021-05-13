@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /creating-professional-email/hero.png
+  - url: /engineering-education/creating-professional-email/hero.png
     alt: header image gsuite emails
 ---
 With the popularity of Office 365 and GSuite, it can seem that creating a business email is as simple as signing up for an account and paying the annual or monthly fee.

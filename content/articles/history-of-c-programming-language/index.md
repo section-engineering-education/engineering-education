@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /history-of-c-programming-language/hero.jpg
+  - url: /engineering-education/history-of-c-programming-language/hero.jpg
     alt: brief history of C
 ---
 There are many programming languages in use today, one of which is C. There are many offshoots of the C programming language, including Objective-C, C++, and C#. None of these are the same language. So, how did C begin?

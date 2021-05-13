@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /internet-inconsistencies-with-r-programming/hero.jpg
+  - url: /engineering-education/internet-inconsistencies-with-r-programming/hero.jpg
     alt: Internet Inconsistencies with R-Programming Image
 ---
 An Internet Protocol (IP) address is one of several Domain Name System (DNS) components. Frequently, IP sequences are displayed in IPv4 and IPv6 formats. Internet directories contain further information about IP addresses. Approximate geological location, Internet Service Provider (ISP), Virtual Private Network (VPN), and Autonomous System Numbers (ASN) are a few examples of data that can be found. 

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /random-number-genrator-python/hero.jpg
+  - url: /engineering-education/random-number-genrator-python/hero.jpg
     alt: Generate Random Numbers in Python example image
 ---
 A random event is an event that cannot be predicted in advance. How do computers make random numbers? We will make a few of our own random number generators to show how they work.

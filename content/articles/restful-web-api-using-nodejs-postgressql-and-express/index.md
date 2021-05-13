@@ -10,7 +10,7 @@ date: 2021-03-17T00:00:00-11:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /restful-web-api-using-nodejs-postgressql-and-express/hero.jpg
+  - url: /engineering-education/restful-web-api-using-nodejs-postgressql-and-express/hero.jpg
     alt: Building a Web API using Node.js, PostgreSQL and Express
 ---
 [REST](/rest-api/) stands for **RE**presentational **S**tate **T**ransfer. It allows you to create a data object, send the state of that object to the server and return the values of that object. REST is a set of design criteria rather than the physical structure (architecture). It uses "representations" of resources (data) to transfer a resource state from a server to the application state on the client-side.

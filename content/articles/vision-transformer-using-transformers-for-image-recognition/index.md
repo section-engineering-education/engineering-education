@@ -10,7 +10,7 @@ date: 2021-02-16T00:00:00-15:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /vision-transformer-using-transformers-for-image-recognition/hero.jpg
+  - url: /engineering-education/vision-transformer-using-transformers-for-image-recognition/hero.jpg
     alt: Transformers for Image Recognition example image
 ---
 How many words is an image worth? This [paper](https://arxiv.org/abs/2010.11929), recently published by Google's research team, tells us that an image is worth 16 x 16 words. Let me explain what they meant by this to help you better understand.

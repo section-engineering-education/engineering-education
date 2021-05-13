@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /python-boto3-and-amazon-dynamodb-programming-tutorial/hero.jpg
+  - url: /engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/hero.jpg
     alt: Boto3 and Amazon DynamoDB Image
 ---
 DynamoDB is a speedy and flexible NoSQL database service offered by AWS (Amazon Web Service). DynamoDB is perfect for mobile apps, web apps, IoT devices, and gaming. Python has good support for DynamoDB. In this tutorial, we will use AWS Python [SDK](https://en.wikipedia.org/wiki/Software_development_kit) (Boto3) to perform CRUD (create, read, update, delete) operations on DynamoDB.

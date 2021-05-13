@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /microservices-and-nodejs/hero.jpg
+  - url: /engineering-education/microservices-and-nodejs/hero.jpg
     alt: Node.js and Microservices Image
 
 ---

@@ -10,7 +10,7 @@ date: 2021-04-27T00:00:00-16:30
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /build-a-ticketing-app-with-adonisjs-and-vuejs/hero.png
+  - url: /engineering-education/build-a-ticketing-app-with-adonisjs-and-vuejs/hero.png
     alt: Adonis.js example image
 ---
 [Adonis.js](https://preview.adonisjs.com/) is written from the ground up with strong principles and goals in mind to be a robust integrated system having developer ergonomics, stability, and speed.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-native-agora-video-conference-app/hero.jpg
+  - url: /engineering-education/react-native-agora-video-conference-app/hero.jpg
     alt: React Native Agora Conference App
 ---
 In this tutorial, we will build a Video Conference application with the help of React Native and [Agora](https://www.agora.io/en/about-us/).

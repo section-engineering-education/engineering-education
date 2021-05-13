@@ -10,7 +10,7 @@ date: 2021-04-13T00:00:00-14:00
 topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
-  - url: /nodejs-child-processes/hero.jpg
+  - url: /engineering-education/nodejs-child-processes/hero.jpg
     alt: Getting started with Node.js child processes example image
 ---
 In this tutorial, we will discuss how to we can use child processes to launch another process to avoid delays while executing our programs.

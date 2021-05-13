@@ -10,7 +10,7 @@ date: 2021-02-25T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /custom-scroll-bar/hero.jpg
+  - url: /engineering-education/custom-scroll-bar/hero.jpg
     alt: Implement a custom scrollbar on a web page using CSS
 ---
 CSS is the language we use to improve the look and feel of web pages in our applications. With the current CSS scrollbar specification from [W3C](https://www.w3.org/TR/2018/WD-css-scrollbars-1-20180925), we can now customize the appearance of the scrollbar using CSS.

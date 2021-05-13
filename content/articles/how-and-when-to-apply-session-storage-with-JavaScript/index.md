@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-and-when-to-apply-session-storage-with-javascript/hero.jpg
+  - url: /engineering-education/how-and-when-to-apply-session-storage-with-javascript/hero.jpg
     alt: How and When to Apply Session Storage with JavaScript image
 ---
 Session storage is a popular choice when it comes to storing data on a browser. It enables developers to save and retrieve different values. Unlike local storage, session storage only keeps data for a particular session. The data is cleared once the user closes the browser window.

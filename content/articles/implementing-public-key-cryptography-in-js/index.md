@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /implementing-public-key-cryptography-in-javascript/hero.jpg
+  - url: /engineering-education/implementing-public-key-cryptography-in-javascript/hero.jpg
     alt: Implementing Public Key Cryptography in JavaScript image
 ---
 Cryptography refers to the encoding and decoding of messages to maintain confidentiality, integrity, and authentication of information in transit. Public key cryptography is also known as asymmetric cryptography. In this method, there is a public key and a private key. The public key is known widely whereas the private key is the secret to a communicating pair. 

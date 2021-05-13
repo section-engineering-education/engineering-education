@@ -10,7 +10,7 @@ date: 2020-09-21T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /css-grid/hero.jpg
+  - url: /engineering-education/css-grid/hero.jpg
     alt: css grid
 ---
 CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web. Similar to Flexbox, CSS rules are applied to the parent container and the children.

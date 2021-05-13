@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /choosing-between-managed-wordpress-vs-shared-wordpress-hosting/hero.jpg
+  - url: /engineering-education/choosing-between-managed-wordpress-vs-shared-wordpress-hosting/hero.jpg
     alt: Managed WordPress and Shared WordPress Hosting image
 ---
 WordPress is currently one of the most commonly used website builder, and it is so, for all the right reasons. It is easy to understand and apply, and let us not forget that it comes with a range of free features to suit everyone. Yet, the main challenge comes when deciding which to use, either managed WordPress or shared WordPress hosting.

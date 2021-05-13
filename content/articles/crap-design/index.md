@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /crap-design/hero.jpg
+  - url: /engineering-education/crap-design/hero.jpg
     alt: crap design example image
 ---
 There's an acronym that's used as a guide for web design: CRAP (unfortunately, it also has [another use](https://blog.logrocket.com/how-to-write-crap-rust-code/) in computer science). It stands for contrast, repetition, alignment, proximity. These are just four basic things to keep in mind when designing an interface of any kind. Even for non-designers, this can help whenever you need to design a basic webpage for any project you're working on.

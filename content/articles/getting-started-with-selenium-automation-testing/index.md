@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-selenium-automation-testing/hero.jpg
+  - url: /engineering-education/getting-started-with-selenium-automation-testing/hero.jpg
     alt: Automation Testing Image
 ---
 Selenium is a popular automation tool web developers can use that to test their applications. The article [An Overview on Automation Testing With Selenium](/automation-testing-in-selenium/) provides the basic concepts of automation testing with Selenium. These include the importance of Selenium, its components, and how it works.

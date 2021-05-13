@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /simple-guide-to-using-apis-nodejs/hero.jpg
+  - url: /engineering-education/simple-guide-to-using-apis-nodejs/hero.jpg
     alt: hero image using APIs
 ---
 Have you always wanted to use data from an API (Application Programming Interface) but never knew how? This tutorial will guide you through how to work with your first API using [Node.js](https://nodejs.org) and [EJS](https://ejs.co) templating to create a dynamic web app. Don't worry if you've never used JSON before or know very little JavaScript, the guide is aimed at you.

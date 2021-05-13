@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-grails-development-with-intellij/hero.jpg
+  - url: /engineering-education/introduction-to-grails-development-with-intellij/hero.jpg
     alt: Grails Java Framework example image
 ---
 In recent years, many developers have been using frameworks when developing websites. Frameworks help by making application deployment quicker and by ensuring quality code. Java provides multiplatform supports, this includes a desktop application, web application, mobile app development, and many more.

@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/hero.jpg
+  - url: /engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/hero.jpg
     alt: Intrusion Detection Systems example image
 ---
 Intruders are always ready and determined to cause data breaches, install malware, and steal sensitive information. [Research](https://www.sitelock.com/blog/security-by-obscurity-q2-2017/) shows that websites are hit with 22 cyber-attacks in a day, on average. Embracing cyber threat prevention and detection technologies is significant to mitigating threats.

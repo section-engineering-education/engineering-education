@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-recyclerviews/hero.jpg
+  - url: /engineering-education/android-recyclerviews/hero.jpg
     alt: Android recyclerviews image
 ---
 Loading vast amounts of data into normal views can lead to high CPU usage. This may lead to the operating system forcibly shutting down the applications. In Android, it is common to display a list of data.

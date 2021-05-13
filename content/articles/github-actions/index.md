@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /github-actions/hero.jpg
+  - url: /engineering-education/github-actions/hero.jpg
     alt: github actions
 ---
 [GitHub Actions](https://github.com/features/actions) enables you to create custom and automated software development workflows (including CI/CD) directly in your [GitHub repository](https://github.com/github).

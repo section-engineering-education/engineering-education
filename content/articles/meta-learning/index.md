@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /meta-learning/hero.jpg
+  - url: /engineering-education/meta-learning/hero.jpg
     alt: Meta-learning Machine Learning image example
 ---
 The application of machine learning to real-world problems is a very involving task for data scientists. For instance, they need to assess algorithms and tune many parameters. This may be based on their experience, biases, or assumptions.

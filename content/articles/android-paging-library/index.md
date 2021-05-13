@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-paging-library/hero.png
+  - url: /engineering-education/android-paging-library/hero.png
     alt: Paging image example
 ---
 With an increase in data, we may need to display it in small amounts in our application. This ensures that the device's resources are not overused. Take for instance a database that receives updates every day. We would not need to display data that was updated a week ago unless the user requests it. 

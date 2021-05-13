@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-pen-testing/hero.jpg
+  - url: /engineering-education/what-is-pen-testing/hero.jpg
     alt: pen testing
 ---
 Pen Testing, also known as penetration testing, is the method of planning attacks against security infrastructure or computer programs to find security vulnerabilities that need to be patched. Pen testing comes in many forms and contains different specialities.

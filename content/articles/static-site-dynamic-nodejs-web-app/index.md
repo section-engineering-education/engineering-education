@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /static-site-dynamic-nodejs-web-app/hero.png
+  - url: /engineering-education/static-site-dynamic-nodejs-web-app/hero.png
     alt: header image static site nodejs web app
 ---
 This tutorial will guide you on how to convert a static website that uses HTML, CSS and JavaScript (JS) to a dynamic one using MongoDB, Express, Static HTML, CSS, JS, and Node.js. Similar to the popular MEAN/MERN stack (MongoDB, Express, Angular or React, and Node.js), but instead of using Angular or React, we will use a templating engine called [EJS](https://ejs.co) (Embedded JavaScript.) Other popular templating engines include Handlebars, Pug, and Nunjucks.

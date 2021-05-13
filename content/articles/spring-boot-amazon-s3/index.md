@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /spring-boot-amazon-s3/hero.jpg
+  - url: /engineering-education/spring-boot-amazon-s3/hero.jpg
     alt: Amazon S3 in Spring Boot example image
 ---
 Amazon simple storage (Amazon S3) is a service offered by Amazon web services that offers scalable, secure, and well performing object storage. This article will go over how to upload files into Amazon S3 using Spring Boot.

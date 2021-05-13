@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /man-in-the-middle-attack/hero.jpg
+  - url: /engineering-education/man-in-the-middle-attack/hero.jpg
     alt: man in the middle example image
 ---
 Man-in-the-middle (MitM) attacks happen at different levels and in different forms. But, its basic concept requires three key players: the victim, the entity which the victim is trying to contact, and the “man in the middle". The victim can be any user trying to access a website or a web application (the entity).

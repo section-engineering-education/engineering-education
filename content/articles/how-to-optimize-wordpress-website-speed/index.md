@@ -10,7 +10,7 @@ date: 2020-09-09T00:00:00-08:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-optimize-wordpress-website-speed/hero.jpg
+  - url: /engineering-education/how-to-optimize-wordpress-website-speed/hero.jpg
     alt: wordpress image how to optimize
 ---
 The ultimate measure of website performance is loading speed. This is the amount of time it takes to load a webpage. Users are relying more and more on smartphones to access web content and services, thus, there is more demand for optimized websites, especially for users visiting through a mobile data connection. If you manage any websites, this is evident in your analytical data.

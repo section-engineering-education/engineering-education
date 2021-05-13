@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /fiber-optic-communication/hero.jpg
+  - url: /engineering-education/fiber-optic-communication/hero.jpg
     alt: fiber-optic
 ---
 

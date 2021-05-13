@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /iot-and-cloud-computing-security-threats/hero.jpg
+  - url: /engineering-education/iot-and-cloud-computing-security-threats/hero.jpg
     alt: computer laptop security threats images
 
 ---

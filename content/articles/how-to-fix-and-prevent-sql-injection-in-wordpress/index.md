@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-fix-and-prevent-sql-injection-in-wordpress/hero.jpg
+  - url: /engineering-education/how-to-fix-and-prevent-sql-injection-in-wordpress/hero.jpg
     alt: SQLi injection image example
 ---
 SQLi in [WordPress](https://kinsta.com/knowledgebase/what-is-wordpress/) is [ranked as the second most critical vulnerability](secure.wphackedhelp.com). [Updating your WordPress website](https://wordpress.org/support/article/updating-wordpress/) can shield you from SQLi; however, third-party themes and plugins still pose a significant threat.

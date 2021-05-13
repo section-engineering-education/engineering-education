@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /what-is-robotic-process-automation/hero.jpg
+  - url: /engineering-education/what-is-robotic-process-automation/hero.jpg
     alt: RPA example image robot
 ---
 Robotic process automation (RPA) is technology or software that is used to mimic the actions of a human being who is interacting with digital systems. Computer software or robots are configured to work or imitate how people interact with the systems used for business processes.

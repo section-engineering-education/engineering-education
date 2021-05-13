@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /differences-between-artificial-intelligence-machine-learning-and-deep-learning/hero.png
+  - url: /engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/hero.png
     alt: Artificial intelligence machine learning and deep learning
 ---
 These three terms: Artificial Intelligence  (AI), Machine learning (ML), and Deep Learning (DL) are often confusing. Although used interchangeably, these terminologies refer to different things. This article will explain the differences of each.

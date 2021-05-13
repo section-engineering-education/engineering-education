@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-browser-caching/hero.jpg
+  - url: /engineering-education/understanding-browser-caching/hero.jpg
     alt:  browser caching example image
 ---
 Caching is a feature in web browsing that allows recent web pages to be stored temporally in web browsers. This feature is important because it improves the page load time and reduces browsing costs. It is a resourceful technique that can be used by developers to improve web browsing experience.

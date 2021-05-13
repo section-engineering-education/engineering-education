@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /python-frameworks/hero.jpg
+  - url: /engineering-education/python-frameworks/hero.jpg
     alt: Python example image
 ---
 Many people nowadays use web frameworks to develop web apps. Using frameworks is better than using raw Python. They automate many things like database connections and management, authorization, and URL routing.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introducing-gpt3/hero.jpg
+  - url: /engineering-education/introducing-gpt3/hero.jpg
     alt: GPT3 generative pretrained transformers image  
 ---
 Generative pre-trained transformers are language models that produce human-like text. These models make it easier to develop machine learning applications while also providing a way in for people with little tech background to develop applications. GPT-3 is the third iteration of generative pretrained transformers, which produce human-like text.

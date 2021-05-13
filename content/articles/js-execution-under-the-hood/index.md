@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /js-execution-under-the-hood/hero.jpg
+  - url: /engineering-education/js-execution-under-the-hood/hero.jpg
     alt: JS execution under the hood
 ---
 ### Introduction

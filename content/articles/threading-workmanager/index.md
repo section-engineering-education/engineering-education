@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /threading-workmanager/hero.png
+  - url: /engineering-education/threading-workmanager/hero.png
     alt: Threading in WorkManager image example
 ---
 Threading is a critical area in Android that every developer must be well informed in. Thread management determines how an application uses the devices resources. This ultimately affects the general performance of an application.

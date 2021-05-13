@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /front-end-vs-back-end-in-web-development/hero.jpg
+  - url: /engineering-education/front-end-vs-back-end-in-web-development/hero.jpg
     alt: Front end back end Image
 ---
 Web development is an important field in the tech industry because it contributes to the development of e-commerce sites, social network services, and complex web applications. Building a web application requires two fundamental parts: the back end and front end.

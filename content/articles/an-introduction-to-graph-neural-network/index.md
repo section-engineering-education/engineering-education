@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-introduction-to-graph-neural-network/hero.jpg
+  - url: /engineering-education/an-introduction-to-graph-neural-network/hero.jpg
     alt: Artificial intelligence machine learning and deep learning
 ---
 Over the years, [Deep Learning (DL)](/introduction-to-deep-learning/) has been the key to solving many machine learning problems in fields of image processing, natural language processing, and even in the video games industry.

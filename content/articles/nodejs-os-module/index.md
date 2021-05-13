@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /nodejs-os-module/hero.jpg
+ - url: /engineering-education/nodejs-os-module/hero.jpg
    alt: Node.js Os Module
 ---
 We use the Node.js Operating System (OS) module to get more information about the underlying computer system. In this tutorial, you will learn the basic operating system module operations in Node.js.

@@ -10,7 +10,7 @@ date: 2020-11-26T00:00:00-20:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /tips-and-tricks-for-deep-learning/hero.jpg
+  - url: /engineering-education/tips-and-tricks-for-deep-learning/hero.jpg
     alt: tips and tricks for deep learning image example
 ---
 This article assumes a basic understanding of Machine Learning (ML) and Deep Learning (DL). For an introduction to ML and DL, feel free to check out my previous [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/).

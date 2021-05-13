@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-ai-predicted-the-coronavirus-outbreak/hero.jpg
+  - url: /engineering-education/how-ai-predicted-the-coronavirus-outbreak/hero.jpg
     alt: AI predicted the coronavirus example image
 ---
 In our hyper-connected world, outbreaks spread fast. If we want to stay ahead of them, we have to find ways of moving even faster. In 2013, having learned from previous outbreaks, a Canadian company, [BlueDot](https://bluedot.global/) was able to utilize the power of Artificial Intelligent (AI) to build a software that could detect outbreaks in record time.

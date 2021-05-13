@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-jwt-using-angular8-and-nodejs/hero.jpg
+  - url: /engineering-education/getting-started-with-jwt-using-angular8-and-nodejs/hero.jpg
     alt: JWT Angular Node example
 ---
 JSON Web Token (JWT) is an RFC standard that ensures data being transmitted between a client and a server as a JSON object is secured. The information is also digitally signed. Meaning it can be verified and signed.

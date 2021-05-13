@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /batch-processing-vs-stream-processing/hero.jpg
+  - url: /engineering-education/batch-processing-vs-stream-processing/hero.jpg
     alt: Batch Processing vs. Stream Processing example image
 ---
 Organizations are leveraging cloud technologies and big data to promote a data-driven decision making culture, modernize data centers, and improve traditional information technology structure. Cloud computing has transformed the data analytics industry in many aspects.

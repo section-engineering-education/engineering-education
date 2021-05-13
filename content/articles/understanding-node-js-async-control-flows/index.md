@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-node-js-async-control-flows/hero.jpg
+  - url: /engineering-education/understanding-node-js-async-control-flows/hero.jpg
     alt: Node.js async control flows
 ---
 Asynchronous control flows permit other processing to continue even before the first transmission has finished. JavaScript has embraced asynchronous programming with single thread processing. Every task executes in the order the code has been written. Embracing asynchronous [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and callbacks ensure [non-blocking operations flow](https://stackoverflow.com/questions/10570246/what-is-non-blocking-or-asynchronous-i-o-in-node-js).

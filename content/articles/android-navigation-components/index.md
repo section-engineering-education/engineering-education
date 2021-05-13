@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-navigation-components/hero.jpg
+  - url: /engineering-education/android-navigation-components/hero.jpg
     alt: Android navigation components image example
 ---
 As we all know, the jetpack navigation library was created to provide a better user experience with navigation. However, most developers do not know how to harness the full power of the library. This article is here to help you get a deeper understanding of the library and what it offers.

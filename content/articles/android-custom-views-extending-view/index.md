@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /android-custom-views-extending-view/hero.jpg
+  - url: /engineering-education/android-custom-views-extending-view/hero.jpg
     alt: Android custom views image example
 ---
 A [view is a basic building block](https://www.studytonight.com/android/introduction-to-views/) of UI (User Interface) in Android. The Android platform has a variety of views. These views tend to meet most applications UI needs. In some cases, these ready-built views don't conform to the application's requirements. In these cases, developers have to create their own custom views.

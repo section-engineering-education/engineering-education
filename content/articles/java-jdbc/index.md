@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /java-jdbc/hero.jpg
+  - url: /engineering-education/java-jdbc/hero.jpg
     alt: Java database connectivity (JDBC) example
 ---
 Java database connectivity (JDBC) is an application programming interface that defines how Java programs connect and execute database queries. In this tutorial, we will create a simple console application that will perform a database create, read, update, and delete operation through JDBC API.

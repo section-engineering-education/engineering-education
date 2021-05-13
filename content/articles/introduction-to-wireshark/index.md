@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-wireshark/hero.jpg
+  - url: /engineering-education/introduction-to-wireshark/hero.jpg
     alt: Introduction to wireshark example image
 ---
 As an IT professional, one of the most powerful networking tools you will find yourself using is ***Wireshark***, this tool is mostly used to analyze network packets. This tutorial will be an overview of ***Wireshark***, we will understand how it works, and go over its several uses. 

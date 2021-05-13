@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-make-an-image-carousel-for-your-website/hero.jpg
+  - url: /engineering-education/how-to-make-an-image-carousel-for-your-website/hero.jpg
     alt: Image Carousell Using Basic HTML, CSS, and JavaScript image example
 ---
 An image carousel is a container (slideshow) of images or info that users can select by clicking a button that directs them forward or backward in the slideshow. An image carousel makes a website more interactive by enhancing the user experience. 

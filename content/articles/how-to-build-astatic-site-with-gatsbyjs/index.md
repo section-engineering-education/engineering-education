@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-astatic-site-with-gatsbyjs/hero.png
+  - url: /engineering-education/how-to-build-astatic-site-with-gatsbyjs/hero.png
     alt: hero example image computer Node.js
 ---
 The goal for this tutorial is to help you get started with building your very first static site using Gatsby.js.

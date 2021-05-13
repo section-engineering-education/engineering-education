@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /building-a-nodejs-application-using-docker/hero.jpg
+  - url: /engineering-education/building-a-nodejs-application-using-docker/hero.jpg
     alt: docker example image Node.js
 ---
 [Docker](https://www.docker.com/) allows us to run our applications as *containers*. A container is a standalone executable package that is lightweight and has everything needed to run an application be it libraries, tools, runtime, settings, or code.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /build-an-outlook-clone-using-react-hooks/hero.jpg
+  - url: /engineering-education/build-an-outlook-clone-using-react-hooks/hero.jpg
     alt: output image outlook clone example
 ---
 Welcome to part two of the React series. In this tutorial, we will cover the same Outlook clone that we built in [part one](/build-an-outlook-clone-using-react), but this time we will use React Hooks. The earlier codebase was repetitive and there is a scope for optimization of the entire project. To skip the theory and get straight into coding, [click here](#code)

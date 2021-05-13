@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /dijkstra-python/hero.jpg
+  - url: /engineering-education/dijkstra-python/hero.jpg
     alt: Javascript Animation Image
 ---
 In this article, we are going to talk about how Dijkstras algorithm finds the shortest path between nodes in a network and write a Python script to illustrate the same.

@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
- - url: /flutter-folder-organization/hero.png
+ - url: /engineering-education/flutter-folder-organization/hero.png
    alt: Flutter folder organization example image
 ---
 ### Introduction

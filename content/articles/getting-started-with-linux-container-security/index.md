@@ -10,7 +10,7 @@ date: 2021-03-15T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /getting-started-with-linux-container-security/hero.png
+  - url: /engineering-education/getting-started-with-linux-container-security/hero.png
     alt: Linux container security
 ---
 Linux containers, commonly referred to as LXC, are virtualization methods used to run multiple containers using a single Linux kernel through a control host. Linux containers allow users to create or manage applications and systems as well. This is because of the containers’ use of simple tools and having a well-built API.

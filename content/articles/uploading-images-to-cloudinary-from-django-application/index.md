@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /uploading-images-to-cloudinary-from-django-application/hero.png
+  - url: /engineering-education/uploading-images-to-cloudinary-from-django-application/hero.png
     alt: Uploading images to cloudinary from django application Image
 ---
 Sometimes while working on applications that require the use of images, a simple process like uploading images to a server can become difficult. If you deploy your application to a platform like Heroku, you can't save images.

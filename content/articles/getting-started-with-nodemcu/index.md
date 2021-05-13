@@ -10,7 +10,7 @@ date: 2021-01-13T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /getting-started-with-nodemcu/hero.jpg
+  - url: /engineering-education/getting-started-with-nodemcu/hero.jpg
     alt: Getting started with NodeMCU
 ---
 In this article, we will learn about the NodeMCU microcontroller. By the end of this article, you should have a basic understanding of what a microcontroller is, what NodeMCU is, and its use in the Internet of Things. You will also learn step-by-step procedures for building a simple program to control the blinking of LEDs using NodeMCU.

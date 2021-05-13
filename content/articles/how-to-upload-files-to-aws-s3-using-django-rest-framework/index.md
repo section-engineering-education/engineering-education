@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.png
+  - url: /engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/hero.png
     alt: How to upload files to AWS S3 using Django framework example image
 ---
 File upload and download are some of the most performed actions on the web. With the rise of cloud-based solutions, companies are moving from an on-premises solution to cloud storage. A couple reasons being its cheaper cost and convenience.

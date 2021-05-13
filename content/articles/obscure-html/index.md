@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /obscure-html/hero.jpg
+  - url: /engineering-education/obscure-html/hero.jpg
     alt: computer image asm example
 ---
 If you're not familiar with [HTML](https://www.w3schools.com/html/default.asp), this article isn't going to be of much use to you. Sorry.

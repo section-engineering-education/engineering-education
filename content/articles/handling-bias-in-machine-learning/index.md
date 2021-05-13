@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /handling-bias-in-machine-learning/hero.jpg
+  - url: /engineering-education/handling-bias-in-machine-learning/hero.jpg
     alt: bias machine learning image
 ---
 We are increasingly dependent on machine learning in our daily lives. An example is in the every-day products we use. However, these algorithms are created by human beings. As a result, algorithms may contain the same biases humans possess. An algorithm displaying for example, sexist, or racist bias has the potential to cause more harm than good.

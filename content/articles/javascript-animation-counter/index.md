@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /javascript-animation-counter/hero.jpg
+  - url: /engineering-education/javascript-animation-counter/hero.jpg
     alt: Javascript Animation Image
 ---
 Animated counters are a great way to show statistics on your website because interactive elements improve the user experience. Animated counters can be used to show your site visits, members registered, or show some numbers in your online game.

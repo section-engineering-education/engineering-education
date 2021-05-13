@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-network-management/hero.jpg
+  - url: /engineering-education/getting-started-with-network-management/hero.jpg
     alt: Introduction to Network Monitoring example image
 ---
 In this article, we're going to discuss the fundamental principles of network monitoring and management while discussing the protocols and architectures involved. 

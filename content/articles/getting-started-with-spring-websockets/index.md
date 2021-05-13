@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /getting-started-with-spring-websockets/hero.jpg
+  - url: /engineering-education/getting-started-with-spring-websockets/hero.jpg
     alt: Spring WebSockets example image
 ---
 For those who don’t know, WebSocket is a communications protocol. It is useful for opening persistent two-way connections between web client and server.

@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /debug-node-devtools/hero.jpg
+  - url: /engineering-education/debug-node-devtools/hero.jpg
     alt: Devtools example image Node.js debugger
 ---
 Node.js is a robust technology stack with a rich ecosystem. However, debugging Node.js applications remains a difficult task, since they can fail without any error message. Using Chrome Dev Tools is a simple solution to finding errors in your code.

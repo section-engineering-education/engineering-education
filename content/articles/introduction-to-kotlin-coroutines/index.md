@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-kotlin-coroutines/hero.jpg
+  - url: /engineering-education/introduction-to-kotlin-coroutines/hero.jpg
     alt: Kotlin Coroutines example image
 ---
 Coroutines were introduced in Kotlin 1.1. They brought about a new way of writing asynchronous, non-blocking code. An asynchronous code (from asynchronous programming) is code that runs parallel to others. It is also called `non-blocking` since it does not block the main thread. Asynchronous programming helps in running multiple unrelated tasks faster. In synchronous programming, the code is executed line by line.

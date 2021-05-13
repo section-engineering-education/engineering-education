@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /agora-cloud-screenshots/hero.jpg
+  - url: /engineering-education/agora-cloud-screenshots/hero.jpg
     alt: agora cloud screenshots hero image
 ---
 In this tutorial, we will be building a server using Node.js and Express to capture screenshots of video streams that occur using the Agora SDKs in your application by using the Cloud Recording APIs.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /user-login-web-system/hero.jpg
+  - url: /engineering-education/user-login-web-system/hero.jpg
     alt: User Login Web System
 ---
 Recently, I started work on a project where I had to figure out how to create a user login system to protect the website from unauthorized access. In this tutorial, I will show you how to make the same system using **Python on Ubuntu Server 18.04**.

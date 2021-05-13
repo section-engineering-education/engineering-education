@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /data-science-setup/hero.jpg
+  - url: /engineering-education/data-science-setup/hero.jpg
     alt: basic setup for data science
 ---
 The path to becoming a data scientist begins with setting up your computer with the appropriate tools. Most data science ecosystems are built around Python and R.

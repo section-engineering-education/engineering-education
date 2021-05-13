@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /react-and-django-rest-framework/hero.jpg
+  - url: /engineering-education/react-and-django-rest-framework/hero.jpg
     alt: React Progressive Web Application example Image
 ---
 In this tutorial, we will build a Todo application using React and Django. [React](https://reactjs.org/) is a front-end JavaScript framework that uses components in creating user interfaces for single-page applications. [Django](https://www.djangoproject.com/) is a Python backend web framework used to build scalable and secure website applications.

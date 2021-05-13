@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /python-generators/hero.jpg
+  - url: /engineering-education/python-generators/hero.jpg
     alt: Python example image
 ---
 Generators are functions that return an iterable set of items that can be iterated through one at a time. They were introduced with Python Enhancement Proposal 255 [(PEP 255)](https://www.python.org/dev/peps/pep-0255/). Python Enhancement Proposal 255 is a design document that provides information to the Python developer community describing the concept of generators in Python.

@@ -10,7 +10,7 @@ date: 2021-05-03T00:00:00-10:30
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/hero.jpg
+  - url: /engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/hero.jpg
     alt: Location Tracking Application in Android
 ---
 In this tutorial, you will learn how to create an application that uses Google Maps API to determine the precise location of another user. We will achieve this by saving the users location on the Firebase Realtime Database and then retrieving the data from another device.

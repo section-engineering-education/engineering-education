@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /express/hero.jpg
+  - url: /engineering-education/express/hero.jpg
     alt: expressjs example text image
 ---
 [Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable, and written in JavaScript but it does not directly support common tasks such as handling requests, serving files, and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](/most-useful-nodejs-packages/) comes to our aid.

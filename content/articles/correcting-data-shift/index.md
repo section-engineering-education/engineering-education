@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /correcting-data-shift/hero.jpg
+  - url: /engineering-education/correcting-data-shift/hero.jpg
     alt: correcting data shift image example
 ---
 Dataset shift occurs when there is a change in the distribution of data. In the real world, socioeconomic factors may influence data distribution, along with varying consumer habits, and many other factors.

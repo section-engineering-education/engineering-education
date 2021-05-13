@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
- - url: /nodejs-structural-comparisons/hero.jpg
+ - url: /engineering-education/nodejs-structural-comparisons/hero.jpg
    alt: Node.js Structural comparison example image
 
 ---

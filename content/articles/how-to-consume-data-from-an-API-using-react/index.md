@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-consume-data-from-an-api-in-react/hero.png
+  - url: /engineering-education/how-to-consume-data-from-an-api-in-react/hero.png
     alt: How to consume data from an API in a React application image
 ---
 API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. APIs typically serve data. You can either build your API or use third-party APIs. You need to make network requests to communicate back and forth between the API and your application.

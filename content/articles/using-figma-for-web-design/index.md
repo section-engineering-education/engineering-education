@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /using-figma-for-web-design/hero.jpg
+  - url: /engineering-education/using-figma-for-web-design/hero.jpg
     alt: Figma example Image
 ---
 Web design is a fast-growing area in the tech industry because of digital transformation and the increased number of web applications. Web designers are seeking design tools that offer intriguing user experience. Figma is a unique web design tool that adds value to web design in terms of accessibility, collaboration, and unique features.

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /file-handling-in-cpp/hero.jpg
+  - url: /engineering-education/file-handling-in-cpp/hero.jpg
     alt: functions Function C++ cpp
 ---
 If you are a software engineer, you may come across file handling or file input/output at some point in your career. It is the ability to store the output and perform various operations on it, such as updating the data or reading/writing text on a file. Files are always a vital way to store data.

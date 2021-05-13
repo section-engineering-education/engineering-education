@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /image-classifier-keras/hero.jpg
+  - url: /engineering-education/image-classifier-keras/hero.jpg
     alt: Shared Nothing and Shared Disk Clustering image
 ---
 In this article, we will learn how to use a convolutional neural network to build an *image classifier*. We will use Keras with TensorFlow at the backend. Image classification helps us recognize and identify images. We apply image classifiers in fields such as healthcare, agriculture, education, surveillance, etc.

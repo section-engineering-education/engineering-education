@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /sorting-algorithms/hero.jpg
+  - url: /engineering-education/sorting-algorithms/hero.jpg
     alt: computer image asm example
 ---
 Sorting is a common operation that needs to be done, but there are many ways to do it. We want to use whichever algorithm can sort a list as quickly as possible. By the end of this article, you should be able to choose the best algorithm for your project.

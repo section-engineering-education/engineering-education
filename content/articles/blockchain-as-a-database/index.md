@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /blockchain-as-a-database/hero.jpg
+  - url: /engineering-education/blockchain-as-a-database/hero.jpg
     alt: blockchain example image
 ---
 

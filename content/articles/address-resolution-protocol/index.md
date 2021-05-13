@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /address-resolution-protocol/hero.jpg
+  - url: /engineering-education/address-resolution-protocol/hero.jpg
     alt: address resolution protocol image example
 
 ---

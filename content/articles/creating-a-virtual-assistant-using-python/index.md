@@ -10,7 +10,7 @@ date: 2021-05-04T00:00:00-16:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /creating-a-virtual-assistant-using-python/hero.jpg
+  - url: /engineering-education/creating-a-virtual-assistant-using-python/hero.jpg
     alt: Virtual Assistant Image Example
 ---
 Virtual assistants are Artificial Intelligent based programs. They are a smart computer program that understands human natural languages through voice commands or text and performs tasks for the user. This article will guide you through the process of creating your own voice assistant through the use of a Python library.

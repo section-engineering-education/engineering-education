@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-replicate-postgresql-database/hero.jpg
+  - url: /engineering-education/how-to-replicate-postgresql-database/hero.jpg
     alt: Replication of PostgreSQL Database example image
 ---
 Replication is the act of reproducing or copying something, Several Relational Database Management Systems (RDMS) have different ways to achieve this. PostgreSQL is an open-source RDMS, and it is what we are going to use in this article to show how replication is achieved.

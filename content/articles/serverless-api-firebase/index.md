@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /serverless-api-firebase/hero.jpg
+  - url: /engineering-education/serverless-api-firebase/hero.jpg
     alt: serverless api firebase image
 
 ---

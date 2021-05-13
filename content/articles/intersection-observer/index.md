@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /intersection-observer-api/hero.jpg
+  - url: /engineering-education/intersection-observer-api/hero.jpg
     alt: Intersection Observer example image
 ---
 An Intersection Observer is a browser API that provides a way to observe the visibility and position of a DOM element relative to the containing root element or viewport. The API is asynchronous, giving a smooth user experience. Some common use cases of this API include lazy-loading images on scroll, implementing infinite scrolling, and animations.

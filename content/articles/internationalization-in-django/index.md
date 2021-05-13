@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /internationalization-in-django/hero.jpg
+  - url: /engineering-education/internationalization-in-django/hero.jpg
     alt: Internalization in Django example image
 ---
 Django is one of the most popular web frameworks known for its battery-inclusion. One of the inbuilt features of Django is internationalization (popularly referred to as i18n). This article shows how to utilize i18n to reduce language barriers in web applications by offering their content in languages tailored to the audience.

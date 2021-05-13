@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /complex-event-processing/hero.jpg
+  - url: /engineering-education/complex-event-processing/hero.jpg
     alt: complex event processing
 ---
 Big data companies use the term Event Cloud to refer to the massive amounts of data on events being collected. The demand for rapid, actionable decisions illustrates the importance of enabling technologies like Complex Event Processing (CEP).

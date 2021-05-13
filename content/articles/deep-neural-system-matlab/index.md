@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /deep-neural-systems-matlab/hero.jpg
+  - url: /engineering-education/deep-neural-systems-matlab/hero.jpg
     alt: Deep neural systems in Matlab example image
 ---
 In this article, we will look at how to prepare your digit dataset, the structure of a convolution neural network. We will also look at the Matlab code for training and validation and code for discrete testing.

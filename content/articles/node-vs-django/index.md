@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /node-vs-django/hero.jpg
+  - url: /engineering-education/node-vs-django/hero.jpg
     alt: Node.js vs Django Image
 
 ---

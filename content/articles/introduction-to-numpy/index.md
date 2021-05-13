@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /introduction-to-numpy/hero.jpg
+  - url: /engineering-education/introduction-to-numpy/hero.jpg
     alt: NumPy example image
 ---
 One of the most fundamental libraries in the Machine Learning and Data Science landscape is unarguably NumPy (which stands for Numerical Python). Its significance has led to many other (similar) libraries like Pandas, SciPy, and Matplotlib (all based on NumPy) to be created. Let us delve into the workings and the various functions of the first import line in 99.78% of [Kaggle notebooks](https://www.kaggle.com/docs/notebooks).

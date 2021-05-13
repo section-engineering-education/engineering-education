@@ -11,7 +11,7 @@ topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /setup-ssh-ubuntu-vm-aws/hero.jpg
+  - url: /engineering-education/setup-ssh-ubuntu-vm-aws/hero.jpg
     alt: cloud computing image example
 ---
 Many modern web applications today are served from [the cloud](https://en.wikipedia.org/wiki/Cloud_computing). Public cloud providers, like Google Cloud Platform (GCP), Amazon Web Services (AWS), and Microsoft Azure, to name a few, offer service models that enable this trend.

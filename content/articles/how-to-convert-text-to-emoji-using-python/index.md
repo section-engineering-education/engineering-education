@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: 
 images:
 
- - url: /how-to-convert-text-to-emoji-using-python/hero.jpg
+ - url: /engineering-education/how-to-convert-text-to-emoji-using-python/hero.jpg
    alt: Text to emoji example image
 
 ---

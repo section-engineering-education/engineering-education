@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-crypto-mining-works/hero.jpg
+  - url: /engineering-education/how-crypto-mining-works/hero.jpg
     alt: cryptocurrency Mining example image
 ---
 It is hard to talk about cryptocurrency without mentioning mining. Mining cryptocurrency is a complex mathematical system, generally utilizing cryptographic hashing algorithms. Since hashing is extremely complicated, we will only be looking at what is hashed in the mining process. For this article, we will examine Bitcoin mining at a high level.

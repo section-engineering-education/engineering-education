@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /fork-in-c-programming-language/hero.jpg
+  - url: /engineering-education/fork-in-c-programming-language/hero.jpg
     alt: Fork function image
 ---
 You may have seen a lot of processes in your task manager if you are using Windows. Or in your resource monitor if you are using Linux. Did you ever stop to think how these are created? 

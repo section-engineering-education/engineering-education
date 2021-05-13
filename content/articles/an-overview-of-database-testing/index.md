@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /an-overview-of-database-testing/hero.jpg
+  - url: /engineering-education/an-overview-of-database-testing/hero.jpg
     alt: Database Testing image
 ---
 A database is a crucial element in software applications because it enables users to store and retrieve data. Nowadays, complex applications that require huge data have increased the need for more secure and robust databases.

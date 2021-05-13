@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /roles-data-science/hero.jpg
+  - url: /engineering-education/roles-data-science/hero.jpg
     alt: data science industry roles
 ---
 The data science industry has many synonyms associated with it. The terms artificial intelligence (AI), machine learning (ML), and data science are used interchangeably. The growth of the industry has led to phenomenal progress in the field of tech.

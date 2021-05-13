@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /nodejs-ejs/hero.png
+  - url: /engineering-education/nodejs-ejs/hero.png
     alt: Getting started with EJS templating engine example image
 ---
 In this article we are going to learn about EJS templating engine, it is one of the most used templating engines in the Node.js ecosystem. In the Node.js and Express ecosystem, there is a tone of templating engines that makes it possible to create a web interface for our Node.js and Express applications. 

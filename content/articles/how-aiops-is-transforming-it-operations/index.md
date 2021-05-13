@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-aiops-is-transforming-it-operations/hero.jpg
+  - url: /engineering-education/how-aiops-is-transforming-it-operations/hero.jpg
     alt: example image
 ---
 The world of technology is in an era of digital transformation. Part of this transformation includes [DevOps](/what-it-takes-to-be-a-devops-engineer/) and the adoption of technologies such as containers and the cloud. 

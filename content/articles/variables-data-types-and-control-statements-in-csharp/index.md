@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /variables-data-types-and-control-statements-in-csharp/hero.jpg
+  - url: /engineering-education/variables-data-types-and-control-statements-in-csharp/hero.jpg
     alt: Variables, Data Types and Control Statements in C# image
 ---
 In this tutorial, we are going to take a look at variables, data types, and control statements in C# (C-Sharp). C# is a programming language developed by Microsoft that runs on the .NET Framework. It is used to develop web apps, desktop apps, mobile apps, games, and much more.

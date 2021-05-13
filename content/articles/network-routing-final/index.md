@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /network-routing-final/hero.jpg
+  - url: /engineering-education/network-routing-final/hero.jpg
     alt: Network Routing Image
 ---
 When using the internet, our devices send requests to servers stored in various data centers in packets. Likewise, the servers return responses to the requests using data packets. These packets' journey to the data center from our devices and vice versa form the internet's backbone.

@@ -10,7 +10,7 @@ date: 2021-01-04T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /tensorflow-vs-pytorch/hero.png
+  - url: /engineering-education/tensorflow-vs-pytorch/hero.png
     alt: TensorFlow vs PyTorch example image
 ---
 Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article.  

@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /grid-search/hero.jpg
+  - url: /engineering-education/grid-search/hero.jpg
     alt: Grid search hero image
 ---
 Unlike parameters, hyperparameters are set before training a machine learning model. These hyperparameters need to be optimized to adapt a model to a dataset. However, the optimal hyperparameter settings on one dataset are unlikely to be optimal on another. This makes the task of hyperparameter optimization that much trickier. 

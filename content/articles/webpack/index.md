@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /webpack/hero.jpg
+  - url: /engineering-education/webpack/hero.jpg
     alt: webpack example text image
 ---
 [Webpack](https://webpack.js.org/) is a *static module bundler* for JavaScript applications. It takes [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), whether that's a custom file that we created or something that was installed through NPM, and converts these modules to static assets.

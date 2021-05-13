@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /connecting-basic4android-b4a-application-with-php-and-mysql-database/hero.jpg
+  - url: /engineering-education/connecting-basic4android-b4a-application-with-php-and-mysql-database/hero.jpg
     alt:  example image
 ---
 There are many tools for Android application development. Some of these tools are [Android Studio](https://developer.android.com/studio), [basic4android](https://www.b4x.com/b4a.html) (B4A), [Unity 3D](https://unity.com/). B4A is a tool for rapid application development developed by [Anywhere Software](https://www.b4x.com). B4A is free and can be downloaded and installed from the [official website](https://www.b4x.com/b4a.html).
