@@ -34,7 +34,7 @@
           {{ range . }}
           {{- $topicURLparts :=  slice "topic" (urlize .) -}}
           {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
-          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="{{ $topicURL }}">{{ . }}</a></li>
+          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="/engineering-education/{{ $topicURL }}">{{ . }}</a></li>
           {{ end }}
         </ul>
 
