@@ -36,8 +36,6 @@ The following libraries will help us set up a Node.js session.
 
 - [Express](/engineering-education/express/) - a web framework for Node.js used to create HTTP web servers. Express provides an easy-to-use API to interact with the webserver.
 
-- [Nodemon](https://www.npmjs.com/package/nodemon) - a server utility framework for monitoring changes of the code on a text editor. It automatically restarts the server whenever code changes are detected.
-
 - [Express-session](https://www.npmjs.com/package/express-session) - an HTTP server-side framework used to create and manage a session middleware. This tutorial is all about sessions. Thus Express-session library will be the main focus.
 
 - [Cookie-parser](https://www.npmjs.com/package/cookie-parser) - used to parse cookie header to store data on the browser whenever a session is established on the server-side.
@@ -46,7 +44,7 @@ The following libraries will help us set up a Node.js session.
 
 Install the above libraries using the comman:
 
-`npm install express express-session cookie-parser body-parser nodemon`
+`npm install express express-session cookie-parser body-parser`
 
 ### Express-session Options and how to use it
 To set up the session, you need to set a couple of [Express-session middleware](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
@@ -148,6 +146,10 @@ const cookieParser = require("cookie-parser");
 const bodyParser=require('body-parser');
 const sessions = require('express-session');
 
+//username and password
+const myusername = 'user1'
+const mypassword = 'mypassword'
+
 const PORT = 4000;
 var session;
 const app = express();
@@ -181,7 +183,7 @@ app.get('/',(req,res) => {
 });
 
 app.post('/user',(req,res) => {
-    if(req.body.username == 'user1' && req.body.password== 'mypassword'){
+    if(req.body.username == myusename && req.body.password == mypassword){
         session=req.session;
         session.userid=req.body.username;
         console.log(req.session)
@@ -198,12 +200,11 @@ app.get('/logout',(req,res) => {
 });
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
-
 ```
 
 In this example, we are using a simple login application. To authenticate the user. I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. The server will verrify the username and password against the database. If valid the user will be granted the necessary data access.
 
-To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == 'user1' && req.body.password == 'mypassword'`. i.e. comparing the username and the password for the existing user in the server.
+To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. i.e. comparing the username and the password for the existing user in the server.
 
 If the credentials are valid, the server will create a temporary user session with a random string known as a session ID to identify that session.
 
@@ -217,7 +218,7 @@ If the credentials are invalid, the server will not grant this user access to th
 
 When the user decides to log out, the server will destroy (`req.session.destroy();`) the session and clear out the cookie on the client-side. Cookies are cleared in the browser when the `maxAge` expires.
 
-Run the application using `nodemon app.js`. This should start the server on the set port 4000.
+Run the application using `node app.js`. This should start the server on the set port 4000.
 
 ![An express server](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/express-server.jpg)
 
