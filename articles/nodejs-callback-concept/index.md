@@ -59,7 +59,7 @@ $ node main.js
 
 The program runs successfully and produces the following output;
 
-![Output](/engineering-education/nodejs-callback-concept/output1.png)
+![Output](/engineering-education/nodejs-callback-concept/output1.PNG)
 
 What if the file had a very large amount of data that would take almost a minute or two to complete? Also, we might need to do some other tasks that do not depend on the output of the read file function. 
 
