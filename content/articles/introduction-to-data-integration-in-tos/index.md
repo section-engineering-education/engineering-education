@@ -210,4 +210,4 @@ Organizations should practice continuous data integration to improve business pr
 [Mind Majix](https://mindmajix.com/talend/introduction-and-general-principles)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

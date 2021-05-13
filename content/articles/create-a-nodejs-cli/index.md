@@ -256,4 +256,4 @@ Finally, we learned how to pass arguments and commands to the application. As a 
 You can get the full code [here](https://github.com/katungi/Node-CLI-Section).
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

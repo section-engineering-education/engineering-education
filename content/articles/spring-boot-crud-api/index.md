@@ -410,4 +410,4 @@ Now that you have learned how to create a Restful web service in Spring Boot, cl
 In our next article we will demonstrate how to secure our Restful endpoints and handle various exceptions in our application.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

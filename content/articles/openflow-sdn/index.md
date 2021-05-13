@@ -96,4 +96,4 @@ I hope you have found this article useful.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)

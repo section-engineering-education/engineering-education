@@ -125,4 +125,4 @@ In this article, we reviewed how recursion works and looked at a few interesting
 Fortunately, there are many ways to overcome this hurdle and solve problems optimally by consuming less time and less memory. One such technique is called *dynamic programming* and will be discussed in the next article. You can head over to [Hackerrank](https://www.hackerrank.com) and practice a wide array of problems on recursion. Hackerrank allows you to select the difficulty level of the problems, making it ideal for beginners.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

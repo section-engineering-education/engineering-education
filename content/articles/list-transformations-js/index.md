@@ -403,4 +403,4 @@ In the code above:
 We have looked at the various methods used for list transformations. There are other methods other than the ones mentioned. Underscore.js has many more easy to read and implement functions. I would recommend you check them out on [their website](http://underscorejs.org).
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

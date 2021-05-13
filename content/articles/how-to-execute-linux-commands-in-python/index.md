@@ -124,4 +124,4 @@ In conclusion, automation is one of the hottest topics in the industry, and almo
 An old way of doing this is by using shell scripts. However, using Python gives developers more power and control over the execution and output of the commands. Now that you have understood the basics of executing Linux commands, you can go ahead and experiment with different commands and build more complex and robust applications.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

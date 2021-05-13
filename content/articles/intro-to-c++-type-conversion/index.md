@@ -355,4 +355,4 @@ Through the use of type conversion provided by the C++ language, we can easily c
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

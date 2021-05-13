@@ -187,4 +187,4 @@ main();
 To recap, SSH is a protocol that allows users to access a remote system, and is a very useful tool for developers and system administrators. We explored how SSH works and how to use SSH in your local system using the terminal. We understood how we can leverage the power of Node.js to write an application that uses `simple-ssh` (A library that allows users to use SSH in Node.js) to SSH into a virtual machine, monitor the system disk usage, and display it to the user in a presentable format. Now that you know how SSH works and how to use it in Node.js, you can write your own application to do much more.
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

@@ -195,4 +195,4 @@ With that, you have the basic information about `WorkManager`. As you can see, i
 A good use case could be backing up data on a different network like cloud services. This can be done when some constraints are met and you have the assurance of your work being done. Feel free to raise a PR or an issue with any updates.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

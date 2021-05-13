@@ -447,4 +447,4 @@ Access the source code on [GitHub](https://github.com/BrianaNzivu/EngineeringEdu
 Download the sample APK from Google [Drive](https://drive.google.com/file/d/1wkweiHuBYV5jwncJbYRWRcRxxzrXCwGk/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

@@ -499,4 +499,4 @@ If you are looking for a JavaScript animation library great for creating typing 
 Although using a JavaScript animation library makes your web application stand out. Overdoing it, beats the purpose and often confuses the user. Be careful and sensibly use animations.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

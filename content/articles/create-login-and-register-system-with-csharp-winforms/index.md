@@ -436,4 +436,4 @@ In this article:
 Happy C-sharp coding ahead!
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

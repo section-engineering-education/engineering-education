@@ -238,4 +238,4 @@ Now that you have learned how to model the database using Spring Data JPA, imple
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

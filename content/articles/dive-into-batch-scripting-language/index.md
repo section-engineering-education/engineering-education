@@ -274,4 +274,4 @@ In this tutorial, we learned the most important things about the Batch scripting
 Unlike most shells, that accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR) which accepts and returns .NET objects. However, Batch will still be very important to run utilities in the Windows environment.
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

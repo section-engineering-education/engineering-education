@@ -119,4 +119,4 @@ I would be wrong if I said that one framework is better than the other. The fram
 13. [TensorFlow 2.0](https://www.tensorflow.org/guide/effective_tf2)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -169,4 +169,4 @@ This has been a breakthrough as past models couldn't achieve this without comple
 8. [CELEBA-HQ dataset](https://github.com/switchablenorms/CelebAMask-HQ)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -619,4 +619,4 @@ We also have:
 - Created a PHP script that communicates with the database.
 
 ---
-Peer Review Contributions by: [Benson Kariuki](/authors/benson-kariuki/)
+Peer Review Contributions by: [Benson Kariuki](/engineering-education/authors/benson-kariuki/)

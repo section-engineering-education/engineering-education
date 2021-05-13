@@ -244,4 +244,4 @@ I hope this article will shed light on hash tables in JavaScript.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

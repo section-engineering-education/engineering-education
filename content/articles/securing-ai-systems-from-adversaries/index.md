@@ -161,4 +161,4 @@ AI systems are targets of various attacks. Some of these attacks aren't only cha
 14. [How to improve Cybersecurity for Artificial Intelligence](https://www.brookings.edu/research/how-to-improve-cybersecurity-for-artificial-intelligence/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

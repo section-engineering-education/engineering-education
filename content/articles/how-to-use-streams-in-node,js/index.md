@@ -149,4 +149,4 @@ We have also went over how to connect read and write streams (pipe). I hope this
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

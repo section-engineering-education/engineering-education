@@ -275,4 +275,4 @@ You can now try out implementing the dark theme on your own website. You can fin
 Happy coding.
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

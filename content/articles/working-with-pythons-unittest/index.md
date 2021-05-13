@@ -243,4 +243,4 @@ For more information, check the [unittest documentation](https://docs.python.org
 Happy coding!
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)

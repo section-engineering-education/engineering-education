@@ -165,4 +165,4 @@ Feel free to raise any issue or PR.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

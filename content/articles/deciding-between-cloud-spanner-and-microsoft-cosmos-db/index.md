@@ -95,4 +95,4 @@ This is a setback because cloud services are needed globally. Spanner beats Cosm
 This article compared two cloud databases: Cosmos DB and Cloud Spanner.  We went over how these cloud databases can provide you with a customized experience of sorting and processing large amounts of raw data. We hope you are now better informed to make the best choice that best suits your needs.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

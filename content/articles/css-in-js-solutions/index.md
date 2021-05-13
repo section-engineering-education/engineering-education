@@ -139,4 +139,4 @@ In favor of performance, Material UI uses JSS as its core, which ensures speedy 
 CSS-in-JS changes the perspective of web application development from specificity to modularity. With a list of modern CSS-in-JS solutions with links to get you started, you can now take advantage of the power of web components combined with CSS-in-JS.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

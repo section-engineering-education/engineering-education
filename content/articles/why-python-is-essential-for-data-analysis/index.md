@@ -108,4 +108,4 @@ Happy learning!
 - [Python Data Analytics ebook](https://www.pdfdrive.com/python-data-analytics-data-analysis-and-science-using-pandas-matplotlib-and-the-python-programming-language-e158003322.html)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

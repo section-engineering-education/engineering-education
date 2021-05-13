@@ -65,4 +65,4 @@ E-commerce stores are growing, and stiff competition is becoming a reality; henc
 - [NoSQL](https://www.mongodb.com/nosql-explained) 
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

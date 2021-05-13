@@ -747,5 +747,5 @@ If you'd like to learn how to build a Video Conference app with React Native and
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)
 

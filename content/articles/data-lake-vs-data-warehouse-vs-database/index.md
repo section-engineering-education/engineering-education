@@ -132,4 +132,4 @@ Databases, data lakes, and data warehouses provide most of the analytics solutio
 With insights from this article, you will make the right choice between the three analytics solutions.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

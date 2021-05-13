@@ -76,4 +76,4 @@ The advantage of using transformers is the parallelizable features that it provi
 In this article, we have discussed the critical concept of the transformer and the attention mechanism. Such architectures have resulted in advancing the pace of research in transfer learning in NLP. I hope you enjoyed reading this article as much as I enjoyed writing it. 
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

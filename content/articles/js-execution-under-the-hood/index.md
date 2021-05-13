@@ -155,4 +155,4 @@ Congratulations! You now know exactly what happens when JavaScript executes your
 [MDN Web Docs](https://developer.mozilla.org/en-US/)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

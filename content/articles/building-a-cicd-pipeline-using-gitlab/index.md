@@ -157,4 +157,4 @@ In this tutorial, we understood the basics of GitLab and GitLab-ci by building a
 Now that you have grasped the basics, you can go ahead and build your own pipeline. Whether you are a software developer, a system administrator, or a DevOps engineer, GitLab-ci is an indispensable part of your toolkit. 
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

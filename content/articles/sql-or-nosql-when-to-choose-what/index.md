@@ -204,4 +204,4 @@ MongoDB is a database technology that most developers want to learn more about.
 Both SQL and NoSQL database structures store data, but the approach they take to do this differs. Outline the application to decide the database model that fits data structures such as schema, relation, scalability, and data size. Migrating from one to the other is costly and time-consuming, and hence the differences should be considered while architecting software.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/) & [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/) & [Sophia Raji](/engineering-education/authors/sophia-raji/)

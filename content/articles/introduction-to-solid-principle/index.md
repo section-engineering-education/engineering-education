@@ -278,4 +278,4 @@ You now have a firm understanding on the benefits of using the SOLID principle, 
 I recommend you read more about design patterns. They would build on the knowledge you've gained here and help further improve your code to make it cleaner.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

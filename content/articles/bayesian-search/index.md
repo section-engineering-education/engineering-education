@@ -138,7 +138,7 @@ Until next time, happy reading!
 
 ---
 
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

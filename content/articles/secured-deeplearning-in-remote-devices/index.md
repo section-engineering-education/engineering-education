@@ -369,4 +369,4 @@ To summarize:
 - [Learn federated learning through comics](https://federated.withgoogle.com)
 
 ---
-Peer Review Contributions by [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

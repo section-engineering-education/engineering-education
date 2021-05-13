@@ -216,4 +216,4 @@ The code snippets and files used in this guide can be accessed at the [GitHub re
 Happy coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

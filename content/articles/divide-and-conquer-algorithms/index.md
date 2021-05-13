@@ -183,4 +183,4 @@ In this case, the total profit is 865. We solved the above problem using the gre
 In this article, we have covered the divide and conquer algorithm and considered an example to show how it works. I hope you enjoyed reading this article, as much as I enjoyed writing it.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

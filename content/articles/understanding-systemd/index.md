@@ -304,4 +304,4 @@ For arguments for and against systemd, it would be interesting if you visit the 
 - [Learn Linux, 101: Runlevels, boot targets, shutdown, and reboot](https://developer.ibm.com/technologies/linux/tutorials/l-lpic1-101-3/)
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

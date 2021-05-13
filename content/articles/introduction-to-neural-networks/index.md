@@ -266,4 +266,4 @@ The pieces of equipment of a neural network are dependent on one another. By whi
 The neural network field is growing tremendously. Learning and understanding the concepts in this field is vital in order to be able to work with them. This article has explained the different kinds of neural networks. By exploring this field, you can apply neural networks in other areas to solve data problems. Good luck!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

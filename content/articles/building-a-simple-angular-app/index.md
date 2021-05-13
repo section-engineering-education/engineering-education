@@ -434,4 +434,4 @@ Below, are few screenshots for you to compare :)
 - Refer to the [Angular Docs](https://angular.io/docs) for more info.
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

@@ -208,4 +208,4 @@ You can also access the bot built in this article [here](https://t.me/lordghostx
 - https://python-telegram-bot.readthedocs.io/en/stable/
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -90,4 +90,4 @@ Due to the rampant development of technology, it's only a matter of time before 
 Digital companions will create an entirely new experience for us. From the way we relate with technology; creating a more seamless, fun, and overall personalized experience.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

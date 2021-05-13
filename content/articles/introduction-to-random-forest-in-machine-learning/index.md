@@ -144,4 +144,4 @@ This is an ideal algorithm for developers because it solves the problem of overf
 [Towards Data Science](https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

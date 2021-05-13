@@ -417,4 +417,4 @@ I hope this guide helped you to create and implement sliders in your app. For fu
 Happy coding!
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

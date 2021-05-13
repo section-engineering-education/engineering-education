@@ -118,4 +118,4 @@ Aggregation in database management systems helps at ensuring that all entities a
 - [Study Tonight](https://www.studytonight.com/dbms/generalization-and-specialization.php)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

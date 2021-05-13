@@ -432,4 +432,4 @@ We learned that `POST` creates data, `GET` reads data from the server, and PUT u
 I hope this article will shed some light and give you an understanding while working with HTML forms in PHP.
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

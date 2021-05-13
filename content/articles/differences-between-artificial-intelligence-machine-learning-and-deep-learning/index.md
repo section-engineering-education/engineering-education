@@ -158,5 +158,5 @@ ML is suitable for solving simple tasks where data is labeled and structured. A 
 3. [Artificial intelligence: a modern approach](http://aima.cs.berkeley.edu/).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)
 

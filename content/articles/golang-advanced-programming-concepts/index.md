@@ -240,4 +240,4 @@ We explored some advanced programming concepts in this article by looking at fun
 - [Go by example](https://gobyexample.com/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

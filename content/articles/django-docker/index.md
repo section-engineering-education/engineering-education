@@ -218,4 +218,4 @@ Docker is a great tool for packaging applications with the required dependencies
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

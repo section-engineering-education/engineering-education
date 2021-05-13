@@ -103,4 +103,4 @@ Databases should be tested to ensure the key database operations are functioning
 [Tutorials Point](https://www.tutorialspoint.com/database_testing/database_testing_scenarios.htm)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

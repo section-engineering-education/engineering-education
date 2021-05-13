@@ -314,4 +314,4 @@ Creating CLI applications has never been easier using React ink. Have fun buildi
 ***Challenge: As of now, the application crashes when the user enters a non-existing country or in the event of a typo. To learn more about React Ink custom hooks and to practice on React hooks, try fixing that error to display an empty table or a error message. Submit the solution as a PR to the project repo.***
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

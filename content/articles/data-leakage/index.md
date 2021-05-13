@@ -109,4 +109,4 @@ Until next time, good luck!
 8. [Understanding what is Data Leakage in Machine Learning and how it can be detected](https://insights.ai-jobs.net/understanding-what-is-data-leakage-in-machine-learning-and-how-it-can-be-detected/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

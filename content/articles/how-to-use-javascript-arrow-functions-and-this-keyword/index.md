@@ -754,4 +754,4 @@ As a beginner, arrow functions seem unfamiliar and hard to read. They take time 
 I hope this guide gives you an overview of applying the fat arrow within your functional code blocks.
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

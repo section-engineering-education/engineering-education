@@ -127,5 +127,5 @@ For a more exhaustive list of string functions available in 'C', see the [Linux 
 For more details on the history of the C programming language you can [read this article](/history-of-c-programming-language/).
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)
 

@@ -106,4 +106,4 @@ This makes the machine learning process easier for data scientists. The algorith
 
 9. [Understanding Few-shot intelligence as a Meta-Learning Problem](https://codeburst.io/understanding-few-shot-intelligence-as-a-meta-learning-problem-7823a4cd4a0c)
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

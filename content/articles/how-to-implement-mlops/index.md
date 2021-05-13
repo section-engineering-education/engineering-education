@@ -70,4 +70,4 @@ MLOps level 2 is applicable in this instance, considering that much of the pipel
 The MLOps programs are a great way to unify disparate teams of developers and data scientists taking on innovative yet challenging tasks. Organizations benefit from the control exerted by successfully implemented MLOps strategies in terms of more efficient, accurate, and productive models.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -206,4 +206,4 @@ Developers who use other tools for Android app development can also use B4A. B4A
 Happy coding with B4A.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

@@ -144,5 +144,5 @@ In this article, we have looked at an overview of Network Management System. We 
 This is just an introductory part of network management, but enough to get you started.
 
 ---
-Peer Review Contributions by: [Aakash Rawal](/authors/aakash-rawal/)
+Peer Review Contributions by: [Aakash Rawal](/engineering-education/authors/aakash-rawal/)
 

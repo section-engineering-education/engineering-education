@@ -179,4 +179,4 @@ In the first query above, we used UNION ALL, while the second one, we have used 
 MySQL development is ongoing. More tips to optimize queries are developed every day. This article is a guide on how to make better queries and make more stable database applications. Query with no doubt.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

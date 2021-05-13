@@ -95,4 +95,4 @@ A healthcare organization can spot the issues or improper data usage in case of 
 The advancement in artificial intelligence and robotic process automation has started many innovations and transformed healthcare delivery. As a result, the world is enjoying a healthy ecosystem with superior care delivery service that saves lives.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

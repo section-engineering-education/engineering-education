@@ -287,4 +287,4 @@ Download the sample APK on this [Google Drive](https://drive.google.com/file/d/1
 We just went through the advantages and disadvantages of a Bottom Navigation View and we went through how to integrate a Bottom Navigation View using a Navigation Component to add the Navigation Views in an Android application.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

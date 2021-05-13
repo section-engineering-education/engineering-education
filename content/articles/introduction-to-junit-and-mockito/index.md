@@ -267,4 +267,4 @@ In this tutorial, we have gone over the basics of JUnit and Mockito. We learned 
 This is by no means a comprehensive guide on what there is to know about the two frameworks. To learn more, I highly recommend looking at the documentation for [JUnit](https://junit.org/junit5/docs/current/user-guide/) and [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/index.html). Finally, to reference all the code written here, refer to this [repository](https://github.com/john-amiscaray/JUnitAndMockitoExample).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

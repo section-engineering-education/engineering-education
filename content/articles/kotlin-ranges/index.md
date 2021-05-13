@@ -191,4 +191,4 @@ As you can see, Ranges can help us perform various tasks easier. It provides an 
 Instead, you use ranges, and knowing how they work would of great help to any developer looking to use ranges efficiently. The keyword is used in all loops as well. Go ahead and try out different ways to use Kotlin ranges to perform different tasks. 😎
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

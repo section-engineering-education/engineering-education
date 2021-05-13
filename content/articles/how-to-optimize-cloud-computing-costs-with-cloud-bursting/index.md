@@ -89,4 +89,4 @@ If this happens, all the functions and processes may come to a near standstill. 
 Organizations with their most critical applications hosted in the private cloud or on-premises find cloud bursting a cost-effective solution to their cloud computing needs. If we address configuration and latency issues, cloud burst platforms' usage can improve performance across all applications.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

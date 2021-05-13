@@ -219,4 +219,4 @@ By adding AdminBro to our Node.js applications, we enjoy an amazing set of featu
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

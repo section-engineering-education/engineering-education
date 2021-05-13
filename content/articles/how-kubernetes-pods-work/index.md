@@ -88,4 +88,4 @@ Kubernetes pods look promising towards the future for cloud computing. Pods&#39;
 But remember, it has its challenges too, which you must analyze and find your way around them. All in all, it is a technology development heading directly to the top of the list of the best! 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

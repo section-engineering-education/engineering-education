@@ -153,4 +153,4 @@ To be clear, you are still guaranteed to have repetition at some point with this
 Any of these random number generators will make numbers that feel random. Some may be better for your program than others. After reading this, you should be capable of picking the right one for your project.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

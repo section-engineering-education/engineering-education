@@ -98,4 +98,4 @@ You can use private clouds when:
 The choice to deploy private, hybrid, or public cloud mainly depends on your needs. Understanding all different cloud types' strengths and weaknesses is key to helping you chose which will give the best return on your investment.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

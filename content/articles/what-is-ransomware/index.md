@@ -79,4 +79,4 @@ In the age of the Internet, keeping yourself safe from potential threats to your
 - [Web Application Firewall vs Bot Mitigation Solutions](/web-application-firewall-bot-mitigation-comparison/)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

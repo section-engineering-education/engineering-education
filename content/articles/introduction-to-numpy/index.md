@@ -270,4 +270,4 @@ print(time.time() - start)
 NumPy is one of the most fundamental libraries in Machine Learning and Data Science. It's coded in Python and it uses vectorized forms to perform calculations at an incredible speed. It supports various built-in functions that come in handy for many programmers.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

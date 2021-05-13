@@ -440,4 +440,4 @@ In this article, we discussed what internationalization is and how Django handle
 [Django Software Foundation Documentation: Internationalization and Localization](https://docs.djangoproject.com/en/3.1/topics/i18n/#internationalization-and-localization)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

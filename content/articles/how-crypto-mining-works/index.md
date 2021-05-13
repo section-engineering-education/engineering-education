@@ -112,4 +112,4 @@ In this article we have looked at how Bitcoin mining is completed from a higher 
 - [What are transactions](https://en.bitcoin.it/wiki/Transaction)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

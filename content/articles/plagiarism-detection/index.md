@@ -516,4 +516,4 @@ https://en.wikipedia.org/wiki/Cosine_similarity
 https://www.machinelearningplus.com/nlp/cosine-similarity/
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

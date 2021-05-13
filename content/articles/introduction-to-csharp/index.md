@@ -254,4 +254,4 @@ In this tutorial we looked at:
 - The various methods of collecting user inputs and using them in our program (Adding two numbers).
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

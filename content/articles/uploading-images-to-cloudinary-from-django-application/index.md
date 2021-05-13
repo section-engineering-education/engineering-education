@@ -305,4 +305,4 @@ For further learning on image/video upload and transformation using Cloudinary, 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

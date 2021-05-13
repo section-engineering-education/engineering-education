@@ -333,5 +333,5 @@ If you can see the image above, Congratulations! You just created a Hello World 
 4.  [Django Migrations](https://realpython.com/django-migrations-a-primer/). 
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

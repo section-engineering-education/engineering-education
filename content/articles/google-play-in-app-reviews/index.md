@@ -292,4 +292,4 @@ For more reference, check the code on [GitHub](https://github.com/kimkimani/InAp
 I hope this guide is a helpful source on how to ask users for reviews as well as implement in-app reviews within your application.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

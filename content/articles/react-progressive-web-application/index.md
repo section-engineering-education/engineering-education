@@ -495,4 +495,4 @@ Check the deployed app on [Netlify](https://reactify-pwa.netlify.app/) and the p
 We learned how to create a Todo app using the React library. We created a Form input and functionality to add todo tasks, mark them as complete and delete the todo tasks. We then explored some introduction to Progressive Web Apps and turned our Todo app into a PWA.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

@@ -369,4 +369,4 @@ Template engines such as [pug](https://www.npmjs.com/package/pug) and [ejs](http
 Happy coding.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

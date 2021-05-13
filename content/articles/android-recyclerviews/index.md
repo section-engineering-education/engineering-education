@@ -254,4 +254,4 @@ That's just the basics of Android `RecyclerViews`. There are more methods like `
 You can go ahead and try out the other layout managers to see how they work and perform. You can find the entire code for this tutorial on [GitHub](https://github.com/LinusMuema/kotlin/tree/recyclerviews) or install a sample application from [Google Drive](https://drive.google.com/file/d/1Nn8xiTcNCk7wlbygPbjxGwW-9ScPUJtr/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

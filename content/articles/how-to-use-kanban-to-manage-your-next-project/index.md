@@ -129,4 +129,4 @@ Scrum is more suitable appropriate when the product has a long development cycle
 At first, Kanban may seem complex, but you are now ready to implement Kanban in your next project after going through this article. Start now with the baby steps and keep on improving.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

@@ -474,4 +474,4 @@ In this tutorial we have learned how to use JWT authentication in our Angular 11
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

@@ -618,4 +618,4 @@ I hope this guide helps get you started writing SQL queries and executing them w
 - [Develop Your First Data-Driven Web App Using MongoDB database and Node.js](/working-with-databases-part2/)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

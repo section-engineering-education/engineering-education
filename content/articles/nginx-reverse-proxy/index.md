@@ -198,4 +198,4 @@ Thanks for reading!
  - [Wiki article on NGINX](https://en.wikipedia.org/wiki/Nginx)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

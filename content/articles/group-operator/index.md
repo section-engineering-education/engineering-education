@@ -178,4 +178,4 @@ I hope you enjoyed reading this article as much as I enjoyed writing it.
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

@@ -465,4 +465,4 @@ However, the Flask WTForms extension is the best approach to adopt when handling
 One can find the complete codebase for this tutorial [here](https://github.com/corpsgeek/flask-form-handling).
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

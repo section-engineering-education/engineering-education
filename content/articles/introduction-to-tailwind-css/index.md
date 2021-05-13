@@ -242,4 +242,4 @@ Another thing to note is how we added all the CSS classes, we used in the demo t
 For further details on Tailwind CSS, you can take a look at the official [documentation](https://tailwindcss.com/docs).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

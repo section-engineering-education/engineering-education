@@ -196,5 +196,5 @@ Happy coding.
 3. [ML Problem Framing](https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/ml-problem-framing.html)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

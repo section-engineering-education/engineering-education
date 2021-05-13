@@ -234,4 +234,4 @@ In this tutorial, we have learned the importance of inheritance, how to define a
 However, it's just the start! We will learn more about inheritance in the upcoming tutorials. Don't forget to test out the code to fully understand how it works.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

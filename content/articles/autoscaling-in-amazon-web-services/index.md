@@ -186,4 +186,4 @@ Amazon Web Services provide various tools that enhance data management, storage,
 [Amazon](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html#:~:text=%20What%20is%20Amazon%20EC2%20Auto%20Scaling%3F%20,an%20AWS%20account,%20you%20can%20access...%20More%20)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

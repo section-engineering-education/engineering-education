@@ -202,4 +202,4 @@ In this article, we got to explore what operator overloading is, where to use it
 Go ahead and try out the operator overloading examples above on  [repl.it](https://repl.it/@Dawe7/operator-overloading-using-member-functions).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

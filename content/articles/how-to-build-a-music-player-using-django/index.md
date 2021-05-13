@@ -419,4 +419,4 @@ If you have any questions, don't hesitate to hit me up on Twitter: @LordChuks3.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

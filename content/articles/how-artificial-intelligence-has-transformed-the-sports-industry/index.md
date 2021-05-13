@@ -65,4 +65,4 @@ We have seen that artificial intelligence applications have many benefits, such 
 Artificial intelligence is providing deeper insights to both players and the coaches. The support that artificial intelligence provides in sports can never be underestimated. This is even expected to disrupt the future of the sports industry as AI technology evolves. We will discover new training methods, new techniques, and modern ways of engaging with spectators through the evolution of AI technology. With the current artificial intelligence applications, it can only be anticipated that there will be a steady use of AI technology in the future.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

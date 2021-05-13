@@ -173,4 +173,4 @@ Flooding occurs in these areas and when a packet needs to go to another area, it
 That's all for now. We have seen how routers do packet forwarding by enabling communication to take place.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

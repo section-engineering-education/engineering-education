@@ -210,4 +210,4 @@ A WordPress web developer should keep abreast of recent tricks and loopholes tha
 All SQLi exploits happening day-to-day are all listed on the [Exploit-DB](https://www.exploit-db.com/search?q=) platform.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

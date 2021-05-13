@@ -294,4 +294,4 @@ Happy coding!
 - [Jquery keyboard events](https://api.jquery.com/category/events/keyboard-events/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

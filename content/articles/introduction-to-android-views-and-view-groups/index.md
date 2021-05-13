@@ -366,4 +366,4 @@ Android also provides more viewgroups such as `GridLayout` and `TableLayout` for
 In this article, we've looked at creating views and viewgroups. We have also seen some of the attributes associated with our views and viewgroups, where they are used and what they are used for. This helps developers build android applications with a better user experience.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

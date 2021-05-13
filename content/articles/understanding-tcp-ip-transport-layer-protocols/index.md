@@ -263,4 +263,4 @@ To summarize:
 - [TCP ordered data transfer](http://waksudir.blogspot.com/2015/03/transport-layer-protocols)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

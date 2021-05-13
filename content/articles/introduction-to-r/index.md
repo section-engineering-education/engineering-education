@@ -437,4 +437,4 @@ The general syntax is the name of the variable, followed by`$`, followed by the 
 In this article, we have learned the basics of R programming. It's a potent tool used extensively in the data science community. Try out the code given to gain the maximum value from the tutorial. Also, try out [Repl.it](https://repl.it/languages/rlang) and use it often. It provides hassle-free access to faster experimentation and prototyping.
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

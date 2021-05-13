@@ -328,7 +328,7 @@ This means that, whenever we are given a problem where the linear regression met
 Happy coding!
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
 
 
 <!-- MathJax script -->

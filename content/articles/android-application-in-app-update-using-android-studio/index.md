@@ -536,4 +536,4 @@ public class Immediate extends AppCompatActivity {
 I hope this guide helps you implement in-app updates, both immediate and flexible, within your application context.
 
 ---
-Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)

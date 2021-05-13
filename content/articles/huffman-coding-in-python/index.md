@@ -182,4 +182,4 @@ The second auxiliary function defined is `characteristics_huffman_code`. This fu
 In this article, we have discussed what Huffman coding is, some of its applications, and have also considered a code snippet that encodes a given text based on the frequency of characters. I hope you have enjoyed the article. I suggest you implement the code and use this guide as you code-along.
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

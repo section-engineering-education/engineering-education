@@ -635,4 +635,4 @@ Date-fns is a great library that you should put on your checklist if you have a 
 -  [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 
 ---
-Peer review contribution by: [Linus Muema](/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)

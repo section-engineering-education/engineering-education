@@ -262,4 +262,4 @@ let b = 2;
 Objects are a data-type that has properties or preferences associated with it. Arrays are a data-type used to store related items or creating ordered lists. Since objects and arrays make up a fraction of a web developer's code, understanding the basic concepts around these data types and how they work is important to understand.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

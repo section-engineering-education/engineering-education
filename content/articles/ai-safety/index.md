@@ -75,5 +75,5 @@ For future reference, here's a list of places to look at:
 All the organizations already listed have a lot of information. [Robert Miles'](https://www.youtube.com/channel/UCLB7AzTwc6VFZrBsO2ucBMg) videos are also good resources for learning about the dangers of AI. He also has made a couple of videos on [Computerphile](https://www.youtube.com/user/Computerphile) about this topic. [The Future of Life Institute](https://futureoflife.org/ai-news/) is probably worth a follow as well.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

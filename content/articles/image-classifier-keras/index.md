@@ -486,4 +486,4 @@ Thank you for reading!!!
 2. [Coursera Guided Project](https://www.coursera.org/learn/classification-of-covid19-using-chest-xray-images-in-keras/home/welcome)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -288,4 +288,4 @@ Happy coding!
 - [GitHub REST API](https://docs.github.com/en/rest)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

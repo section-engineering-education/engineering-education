@@ -143,4 +143,4 @@ Until next time, cheers!
 6. [Underspecification in AI](https://www.datascienceexamples.com/underspecification-in-ai/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

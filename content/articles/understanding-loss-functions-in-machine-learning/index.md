@@ -171,7 +171,7 @@ This article was a run-through of the loss functions used in classification and 
 5. [Article by Rohan Varma](https://rohanvarma.me/Loss-Functions/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

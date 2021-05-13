@@ -88,4 +88,4 @@ rpath = false
 ```
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

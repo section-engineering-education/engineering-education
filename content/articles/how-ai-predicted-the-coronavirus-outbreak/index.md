@@ -100,4 +100,4 @@ Diseases spread incredibly quickly. Thus, time is our most valuable resource to 
 10. [Hero Image](https://unsplash.com/photos/Tzoe6VCvQYg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink/)
  
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

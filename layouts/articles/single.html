@@ -66,7 +66,7 @@
         <div class="section-rich-text-leading">
         {{ .Content }}
         </div>
-        {{ $author_page := (printf "%sauthors/%s/index.md" .CurrentSection.Parent.RelPermalink .Params.author) }}
+        {{ $author_page := (printf "/engineering-education/%sauthors/%s/index.md" .CurrentSection.Parent.RelPermalink .Params.author) }}
         {{ with $.Site.GetPage $author_page }}
           <div class="section-rich-text-leading bio">
             <hr>

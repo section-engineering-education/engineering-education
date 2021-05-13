@@ -280,4 +280,4 @@ Now that you have learned how to configure and send emails in a Spring Boot appl
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

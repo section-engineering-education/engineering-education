@@ -91,4 +91,4 @@ That is the difference between the old imperative programming and declarative UI
 Have fun coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

@@ -168,7 +168,7 @@ In this article, we discussed the various membership functions that can be used 
 Happy learning.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)
 
 
 <!-- MathJax script -->

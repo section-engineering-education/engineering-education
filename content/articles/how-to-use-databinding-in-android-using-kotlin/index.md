@@ -525,4 +525,4 @@ As a developer, data binding will allow you to save time by eliminating boilerpl
 [Android Developer Documentation](https://developer.android.com/topic/libraries/data-binding/start)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

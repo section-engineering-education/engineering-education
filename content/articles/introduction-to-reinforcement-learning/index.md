@@ -210,4 +210,4 @@ If Machine Learning is still new to you, feel free to [download and read this e-
 9. Dang, Q. V. (2019, December). [Reinforcement Learning in Stock Trading.](https://core.ac.uk/download/pdf/231933064.pdf) In International Conference on Computer Science, Applied Mathematics and Applications (pp. 311-322). Springer, Cham.
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

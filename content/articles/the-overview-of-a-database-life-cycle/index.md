@@ -118,4 +118,4 @@ The Database Life Cycle is a sequence of stages for developing a database system
 In this article, we have learned about database development and the functionalities of each stage. I hope this article will give you an understanding of the database life cycle.
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

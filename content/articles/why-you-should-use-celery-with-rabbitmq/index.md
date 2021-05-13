@@ -469,4 +469,4 @@ We also highlighted some reasons why you should use Celery and RabbitMQ ahead of
 Happy building!
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

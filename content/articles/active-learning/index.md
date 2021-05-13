@@ -175,4 +175,4 @@ Happy reading!
 11. [Active Learning as a Way of Increasing Accuracy](http://www.ijcte.org/papers/910-AC0013.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

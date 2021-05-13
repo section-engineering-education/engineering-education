@@ -198,4 +198,4 @@ We are done! Build and run your application on an emulator or an Android device.
 In this article, we've gone through creating a custom view by extending the view class. We have also seen how we can create custom attributes for our views and add them to our layout file. Custom views give an application's UI a unique look and feel. This helps developers build applications with a better user experience. You can get the full code on [GitHub](https://github.com/kayere/android-custom-views.git).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

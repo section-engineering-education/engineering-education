@@ -212,4 +212,4 @@ For more details, visit [this link](https://nodejs.org/api/child_process.html).
 Happy coding!
 
 ---
-Peer review contribution by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

@@ -261,4 +261,4 @@ In this article;
 **Happy Yii 2 coding ahead**
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

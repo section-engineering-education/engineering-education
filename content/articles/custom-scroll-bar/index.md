@@ -279,4 +279,4 @@ I hope you find this tutorial useful.
 Happy coding.
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)

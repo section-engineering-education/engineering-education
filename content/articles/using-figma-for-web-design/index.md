@@ -220,4 +220,4 @@ Over the years, Figma has been developing new features that have improved the qu
 - [Prototypr.io](https://blog.prototypr.io/understanding-figma-as-a-ui-beginner-50d169c87c49)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

@@ -180,4 +180,4 @@ Lastly, we have learned about the limitations of widgets. Keep in mind the [widg
 Happy coding!
 
 ---
-Peer Review Contributions by: [Briana Nzivu](/authors/briana-nzivu/)
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)

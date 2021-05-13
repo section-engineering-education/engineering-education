@@ -146,4 +146,4 @@ With that, you have seen how automated tests are written and how they run. Anoth
 Happy Testing!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

@@ -351,4 +351,4 @@ Happy coding!
 - [Django-storages documentation](https://django-storages.readthedocs.io/en/latest/index.html)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

@@ -204,4 +204,4 @@ In this article, we have gone through the Room database. What it is, its advanta
 With that, you can now confidently implement room database in a new or existing application. You can find the source code for the full application from [GitHub](https://github.com/kayere/To-do/tree/master).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

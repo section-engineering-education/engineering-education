@@ -1015,7 +1015,7 @@ With that knowledge, you can now improve the application to add more functionali
 For full Laravel documentation click [here](https://laravel.com/docs/8.x/).
 
 ---
-Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)
 
 
 

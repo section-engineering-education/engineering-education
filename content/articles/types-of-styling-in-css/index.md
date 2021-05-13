@@ -173,4 +173,4 @@ Where inline lets you test out new design patterns but becomes too much of a wor
 - [Cascading Style Sheets](https://www.w3.org/Style/CSS/Overview.en.html)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

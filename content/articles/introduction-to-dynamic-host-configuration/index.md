@@ -176,4 +176,4 @@ Happy learning!
 - [DHCPv6](https://www.iana.org/assignments/dhcpv6-parameters/dhcpv6-parameters.xhtml)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

@@ -233,4 +233,4 @@ An organization can choose a business intelligence tool based on important aspec
 - [PAT Research](https://www.predictiveanalyticstoday.com/top-business-intelligence-tools/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

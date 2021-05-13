@@ -206,4 +206,4 @@ A log in form is a simple example but serves the purpose since it uses many of t
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

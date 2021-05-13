@@ -327,4 +327,4 @@ To summarize:
 - [Understanding deployment in detail](https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

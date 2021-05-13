@@ -90,4 +90,4 @@ SSL/TLS is a cryptographic protocol used to communicate and interface on the int
 4. [How is Diffie-Hellman Key Exchange Different from RSA?](https://www.venafi.com/blog/how-diffie-hellman-key-exchange-different-rsa)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

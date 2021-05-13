@@ -139,4 +139,4 @@ The error: `Uncaught TypeError: Assignment to constant variable`, informs you th
 In summary, we have learned about variables and how they are declared and used in JavaScript and have gone through different types of variable scopes. I hope you find this guide to JavaScript variables useful.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

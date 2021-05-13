@@ -527,4 +527,4 @@ You can access the entire code from this [GitHub Repository](https://github.com/
 Happy coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

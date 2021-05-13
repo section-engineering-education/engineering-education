@@ -243,4 +243,4 @@ Happy coding.
 - [Flask-Limiter Documentation](https://flask-limiter.readthedocs.io/en/stable/)
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

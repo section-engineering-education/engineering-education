@@ -196,4 +196,4 @@ To summarize:
 - [Adafruit IO - Python](https://learn.adafruit.com/adafruit-io-basics-digital-output/python-code)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

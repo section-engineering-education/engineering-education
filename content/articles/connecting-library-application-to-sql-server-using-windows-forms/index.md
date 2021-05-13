@@ -317,4 +317,4 @@ Don't forget to test out the code to fully understand how it works.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

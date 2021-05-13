@@ -92,4 +92,4 @@ The use of Jenkins has helped developers get feedback faster after the code is i
 In conclusion, CI is vital for software development. Continuous Integration has impacted and benefited developers in massive ways, such as experiencing fewer conflicts during code integration, detecting problems easily, and increasing developer's productivity. This is because programs can be built and tested automatically and continuously. Jenkins is a tool that enables developers to achieve Continuous Integration with the help of plugins that add more value to CI.
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

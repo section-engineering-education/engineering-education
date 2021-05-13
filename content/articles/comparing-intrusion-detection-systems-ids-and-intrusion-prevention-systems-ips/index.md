@@ -83,4 +83,4 @@ They can help in these area explained below.
 Today's cybersecurity environment calls for the adoption of both malware detection and prevention technologies. Stand-alone IDS is not enough to protect your system from cybercriminals. But by merging IDS and IPS and combining them with firewalls, you are in a better position to detect and prevent threats.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

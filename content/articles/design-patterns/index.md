@@ -235,4 +235,4 @@ To get the full picture, a deeper understanding, and perhaps prep for an intervi
 3. [Free course](https://courses.caveofprogramming.com/p/java-design-patterns-and-architecture)
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

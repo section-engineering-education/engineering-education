@@ -179,4 +179,4 @@ A suitable SDLC model can be selected based on the customer requirements and the
 - [EDUCBA]( https://www.educba.com/what-is-software-development/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

@@ -183,4 +183,4 @@ Although we have used JavaScript in this tutorial, you can also achieve this wit
 That's all for now. I hope you got a helpful insight into how to create animated counters using JavaScript. Later on, you can enhance this counter further by changing the durations, numbers, or even implement it for words rather than digits.</br>
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

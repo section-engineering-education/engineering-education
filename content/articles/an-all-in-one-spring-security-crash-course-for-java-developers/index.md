@@ -560,4 +560,4 @@ In this guide, we went through how to use many of the key Spring security featur
 I would also recommend you try to add claims to the JWT token and try to parse them in a request. You can also try to combine OAuth and JWT as mentioned earlier. As a final note, you can find the final code for this guide [here](https://github.com/john-amiscaray/Spring-Security-Crash-Course).
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

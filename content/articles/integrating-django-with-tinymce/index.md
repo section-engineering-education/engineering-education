@@ -219,5 +219,5 @@ Now that we have accomplished the goal, you can try to use TinyMCE in various pr
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

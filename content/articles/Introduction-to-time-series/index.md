@@ -88,4 +88,4 @@ Happy learning.
 2. [What Is Time Series Forecasting?](https://machinelearningmastery.com/time-series-forecasting/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

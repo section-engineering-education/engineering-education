@@ -445,4 +445,4 @@ Other common practices that you should also consider include:
 Consider doing some work on your own and find out which segment of your app needs to be optimized. However, as you practice these optimization tips, do not forget security practices such as [SSL/TLS and HTTP/2](https://docs.nginx.com/nginx/technical-specs/#http-2-and-ssl-tls).
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

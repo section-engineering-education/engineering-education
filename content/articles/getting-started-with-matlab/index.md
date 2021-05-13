@@ -268,5 +268,5 @@ This is just the *tip of the iceberg* when it comes to MATLAB. Change the [ampli
 Try it out for yourself and see the results. For more articles and updates on MATLAB and SimuLink, follow the [languages](/topic/languages/) section. Have a nice day.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

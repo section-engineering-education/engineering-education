@@ -149,4 +149,4 @@ You can test the application by creating an APK and installing it on your phone.
 Animation is a critical part of any application. MotionLayout makes it easy to incorporate this feature in Android apps. You can, therefore, use this knowledge to develop more appealing applications.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

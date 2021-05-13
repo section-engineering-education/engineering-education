@@ -113,4 +113,4 @@ There are many reasons why we should use Scrum:
 Scrum framework rules, artifacts, roles, and events are easy to understand. Each successful Sprint makes the team motivated and keeps the user happy as the progress is seen in short durations. Scrum is indeed an excellent agile project management framework for any organization. However, it takes time to master Scrum, but the long-term benefits are well worth getting through the learning curve. Online collaboration tools to help you master scrum faster are also available. Some of them include [ScrumDo](https://www.scrumdo.com/), [Quickscrum](https://www.quickscrum.com/), [Scrumwise](https://www.scrumwise.com/), [Tuleap](https://www.tuleap.org/), [Targetprocess](https://www.targetprocess.com/), and [Vivifyscrum](https://www.vivifyscrum.com/).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

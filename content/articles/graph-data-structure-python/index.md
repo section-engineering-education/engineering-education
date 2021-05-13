@@ -246,4 +246,4 @@ To learn more about graphs, check out the following pages:
 - Graph Representation -- [HackerEarth](https://www.hackerearth.com/practice/algorithms/graphs/graph-representation/tutorial/)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

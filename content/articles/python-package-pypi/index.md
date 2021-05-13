@@ -160,4 +160,4 @@ print(cal_lcm(4,5))
 If you have followed all the steps carefully you may have noticed that it's not very difficult to build a basic package and I'm sure you are proud of this package you just built. If you have other ideas you feel will do well as a package then you can go ahead to try and implement them following the same steps you did here.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

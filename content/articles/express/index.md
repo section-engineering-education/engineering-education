@@ -377,4 +377,4 @@ Express is an unopinionated framework which works best by making use of third pa
 - [Article](https://www.digitalocean.com/community/tutorials/nodejs-express-basics)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

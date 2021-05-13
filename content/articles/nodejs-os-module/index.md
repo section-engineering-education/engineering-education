@@ -223,4 +223,4 @@ Various operations are available such as getting details about the computer's ne
 Happy learning!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

@@ -900,4 +900,4 @@ The source code of our application is available on [GitHub](https://github.com/N
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

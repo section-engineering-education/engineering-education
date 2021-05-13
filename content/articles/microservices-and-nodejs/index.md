@@ -62,4 +62,4 @@ This article has highlighted and explained the importance and benefits of micro-
 When building complex and high traffic applications, Node.js and micro-services are the best architectures to consider since they make application development and maintenance easier compared to monoliths.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

@@ -151,5 +151,5 @@ Good understanding of the Theory of Computation helps programmers and developers
 - [Time Complexity](https://en.wikipedia.org/wiki/Time_complexity)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

@@ -194,4 +194,4 @@ We should not underestimate the need for further research. It would go a long wa
 10.	[Security of the Internet of Things: perspectives and challenges.](https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1007%2Fs11276-014-0761-7?_sg%5B0%5D=6-uaFoceyfMUKu3OkXH0XCSCuDynesvXfyCMmQ-mjmWSFf1jNy1jBOSK4T-XekuAVx1pS0nVKX9N20HU0VkFFclFQg.MGvAMDZr-aXcEGgA4tilcKF-6klWMkX5VFw5uwHnvh14ub6XOH8p0T1hxxO64iKijVyd6GaiLiEU42DhPgddcA)
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

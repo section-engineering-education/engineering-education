@@ -116,5 +116,5 @@ Happy coding!
 12. [https://mindsea.com/security-hybrid-apps-vs-native-apps/](https://mindsea.com/security-hybrid-apps-vs-native-apps/)        
 
 ---
-Peer Review Contributions by: [Eric Kahuha](/authors/eric-kahuha/)
+Peer Review Contributions by: [Eric Kahuha](/engineering-education/authors/eric-kahuha/)
 

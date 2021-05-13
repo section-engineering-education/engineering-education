@@ -139,4 +139,4 @@ To check for all the environments present, use the following command:
 In this article, we have covered the installation of Anaconda Package Manager and the creation of virtual environments. For all the future articles, we will refer to this article. I hope you enjoyed reading the article. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

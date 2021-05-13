@@ -137,7 +137,7 @@ Happy coding.
 5.  [Parametric vs Nonparametric models?](https://medium.com/@dataakkadian/what-are-parametric-vs-nonparametric-models-8bfa20726f4d)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

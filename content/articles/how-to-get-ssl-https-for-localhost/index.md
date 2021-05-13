@@ -225,4 +225,4 @@ The files and code snippets used in this article can be accessed at this [GitHub
 Happy coding!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

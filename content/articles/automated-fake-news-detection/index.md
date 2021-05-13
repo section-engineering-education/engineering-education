@@ -176,4 +176,4 @@ Their quality and quantity are impactful. It is also worth noting that, as much 
 8. [Detection of Fake News Using Transformer Model](https://doi.org/10.1109/iCoMET48670.2020.9074071)
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

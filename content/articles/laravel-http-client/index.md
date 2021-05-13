@@ -377,4 +377,4 @@ In this tutorial, we have learned how to use the new Laravel HTTP Client. We hav
 Happy Coding!
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

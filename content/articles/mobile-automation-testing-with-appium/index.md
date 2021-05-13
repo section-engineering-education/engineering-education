@@ -151,4 +151,4 @@ To summarize:
 - [Article by Edureka](https://www.edureka.co/blog/what-is-appium/)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

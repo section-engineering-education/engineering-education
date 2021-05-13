@@ -500,4 +500,4 @@ This is essential when displaying Admob banners in a React Native app. Finally, 
 The overall code for this tutorial is available on [GitHub](https://github.com/Worawat101/react-native-admon-demo).
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

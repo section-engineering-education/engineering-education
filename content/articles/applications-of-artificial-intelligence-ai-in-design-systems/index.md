@@ -79,4 +79,4 @@ It assists website designers with suggestions to create near-perfect websites. I
 AI is essential as far as the engineering field is concerned. There has been a concern arising after all the automation, whether AI is replacing engineers. The answer is no, but AI will assist many engineers with a majority of the technical work. AI in systems design is of great importance and will be part of a revolution in the future.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -320,5 +320,5 @@ Happy coding.
 - [Route summarization](https://www.ciscopress.com/articles/article.asp?p=2995352)
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
 

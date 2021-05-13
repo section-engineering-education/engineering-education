@@ -804,5 +804,5 @@ You can learn more on Django and React from this [article](https://www.digitaloc
 Happy coding.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

@@ -344,4 +344,4 @@ That is it.
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

@@ -193,7 +193,7 @@ Below are some links to some useful publications on imbalanced datasets for furt
 12. [What is ensemble learning?](https://bdtechtalks.com/2020/11/12/what-is-ensemble-learning/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 
 <!-- MathJax script -->

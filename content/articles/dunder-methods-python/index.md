@@ -423,4 +423,4 @@ Dunder methods are indeed magical and can help you improve the functionality of 
 Happy Learning! :)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

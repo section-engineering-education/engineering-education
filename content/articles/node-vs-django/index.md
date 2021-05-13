@@ -115,4 +115,4 @@ Similarly, if a developer wants full-stack apps (an app with both the front end 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

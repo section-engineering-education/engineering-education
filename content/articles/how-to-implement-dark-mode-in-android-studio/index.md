@@ -213,4 +213,4 @@ If you have followed the above steps properly, your app should now have a dark m
 Dark mode is indeed a fun thing to implement in our mobile applications. I hope that this tutorial has equipped you with the required skills and knowledge to work on dark themes.  In case you haven't understood anything, feel free to revisit the above steps.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

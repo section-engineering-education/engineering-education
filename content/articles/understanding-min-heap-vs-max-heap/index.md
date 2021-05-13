@@ -516,5 +516,5 @@ In this article, we have covered, the min-heap, the max-heap, why we need heaps,
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

@@ -111,4 +111,4 @@ We have looked at how you can debug a local and remote app using Chrome DevTools
 Alternatively, if you'd like to debug a Node.js app straight from Visual Studio Code, check out the [following article](/debug-nodejs-vscode/).
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

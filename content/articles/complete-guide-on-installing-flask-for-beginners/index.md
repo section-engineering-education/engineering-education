@@ -208,4 +208,4 @@ With this introduction, you can now build on it to create web applications.
 You can find the full codebase for this article [here](https://github.com/corpsgeek/introduction-to-flask).
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

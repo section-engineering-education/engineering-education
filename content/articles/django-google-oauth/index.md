@@ -262,4 +262,4 @@ You can integrate Google OAuth into your Django application with Django OAuth pa
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

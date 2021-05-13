@@ -162,4 +162,4 @@ In case of any query or clarification, feel free to reach out by raising an issu
 Till next time!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

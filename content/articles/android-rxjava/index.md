@@ -165,4 +165,4 @@ With that, we have gone through the basics of RxJava and some of its observables
 Go ahead and clone the repo to try out different observables. We can find an installation package for the demo application on [Google Drive](https://drive.google.com/file/d/1hW3fXiUErFSNzMSB4ZahTcnvUgK92Stg/view?usp=sharing). Next up we will look at the different RxJava operators and their different roles.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

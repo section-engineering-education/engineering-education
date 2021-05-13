@@ -568,4 +568,4 @@ The reader is encouraged to take a look at the resources provided below to get a
 7. [Wiki Files](https://www.cs.bgu.ac.il/~ds122/wiki.files/ds122_ps6.pdf)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

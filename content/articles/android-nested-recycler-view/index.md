@@ -416,4 +416,4 @@ I hope this guide helped you understand and implement nested RecyclerView within
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

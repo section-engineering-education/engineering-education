@@ -181,4 +181,4 @@ In this article we have looked at a brief description of secret key cryptography
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)
