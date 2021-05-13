@@ -7,16 +7,16 @@ A session will contain some unique data about that client to allow the server to
 ### How sessions works
 When the client makes a request to the server, the server will automatically create a session and store it on the server-side. When the server responds to the client, it sends a cookie. This cookie will reference the session stored on the server-side because the cookie contains the session's unique id.
 
-We use that session ID to look up the session in the database or the session store to maintain a one to one match between a session and a cookie.
+We use that session ID to look up the session in the database or the session store to maintain a one-to-one match between a session and a cookie.
 
-These cookies will be sent on every request to the server so that the server will know who is this client. This will make HTTP protocol connections stateful.
+These cookies will be sent on every request to the server so that the server will know who this client is. This will make HTTP protocol connections stateful.
 
 ### The difference between session and cookie
 As you might have noticed, we've introduced a new concept called a cookie. We need to answer the question of what is the difference between a session and a cookie.
 
 A cookie has its data stored in the browser. The browser attaches that cookie [key-value pair](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/key-value-pairs-explained.html?lang=en#reference) to every HTTP request that is sent to a server.
 
-In a cookie, you can't store a lot of data. A cookie, cannot store any sort of user credentials or secret information. If we did that, a hacker could easily get hold of that information and steal personal data for malicious activities.
+In a cookie, you can't store a lot of data. A cookie cannot store any sort of user credentials or secret information. If we did that, a hacker could easily get hold of that information and steal personal data for malicious activities.
 
 On the other hand, session data is stored on the server-side, i.e., a database or a session store. Hence, it can accommodate larger amounts of data. To access data from the server-side, a session is authenticated with a secret key or a session id.
 
@@ -42,12 +42,12 @@ The following libraries will help us set up a Node.js session.
 
 - [Body-parser](https://www.npmjs.com/package/body-parser) - used to parse the body of an HTTP POST request.
 
-Install the above libraries using the comman:
+Install the above libraries using the command:
 
 `npm install express express-session cookie-parser body-parser`
 
 ### Express-session Options and how to use it
-To set up the session, you need to set a couple of [Express-session middleware](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
+To set up the session, you need to set a couple of [Express-session](https://www.npmjs.com/package/express-session#sessionoptions) options, as shown below.
 
 ```js
 const oneDay = 1000 * 60 * 60 * 24;
@@ -61,7 +61,7 @@ app.use(sessions({
 
 - `secret` - a random unique string key used to authenticate a session. It is stored in an environment variable and can't be exposed to the public. The key usually is long in a production environment, and it is a randomly generated string.
 
-- `resave` - takes a Boolean value. When true, it sets the session to save event without recording any changes on the sent request. `saveUninitialized` goes hand in hand with `resave`. They tell the session middleware how to react to different events in the browser.
+- `resave` and `saveUninitialized` - tell the session middleware how to react to different events in the browser-based on the sent request.
 
 - `cookie: { maxAge:}` - this sets a cookie expiry headers. The browser will delete the cookie after the set duration elapses. The cookie will not be attached to any of the requests in the future. In this case, we've set the `maxAge` to a single day as computed by the following arithmetic.
 
@@ -202,13 +202,13 @@ app.get('/logout',(req,res) => {
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 ```
 
-In this example, we are using a simple login application. To authenticate the user. I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. The server will verrify the username and password against the database. If valid the user will be granted the necessary data access.
+In this example, we are using a simple login application. To authenticate the user, I've specified the username and password as `user1` and `mypassword`, respectively. In a production environment, these credentials are usually saved in a database. The server will verify the username and password against the database. If valid, the user will be granted the necessary data access.
 
-To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. i.e. comparing the username and the password for the existing user in the server.
+To set this session, the user will submit the credentials. The server will verify these credentials as set `req.body.username == myusername && req.body.password == mypassword`. I.e., comparing the username and the password for the existing user in the server.
 
 If the credentials are valid, the server will create a temporary user session with a random string known as a session ID to identify that session.
 
-The server will send a cookie to the client browser. The session ID is going to be placed inside this cookie.
+The server will send a cookie to the client's browser. The session ID is going to be placed inside this cookie.
 
 Once the client browser saves this cookie, it's then going to send that cookie along with each subsequent request to the server.
 
@@ -226,7 +226,7 @@ Open the server on the browser on route `http://localhost:4000/`, and you will b
 
 ![A served express server html form](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/served-express-server-html-form.jpg)
 
-To be autheticated by server, provide the credentils as specified in the server. Username as `user1` and password as `mypassword`.
+To be authenticated by the server, provide the credentials as specified in the server—username as `user1` and password as `mypassword`.
 
 ![Session user granted access](/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/user-granted-access.jpg)
 
