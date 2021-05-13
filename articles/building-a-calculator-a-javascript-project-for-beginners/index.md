@@ -6,27 +6,25 @@ url: /engineering-education/building-a-calculator-a-javascript-project-for-begin
 title: How to Build a Calculator using JavaScript
 description: This article will guide you on how to build a calculator using JavaScript. This project is suitable for beginners since it allows you to gain crucial skills and knowledge.
 author: 
-date: 2021-05-15T00:00:00-13:00
+date: 2021-05-25T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/building-a-calculator-a-javascript-project-for-beginners/hero.jpg
     alt: Building a Calculator Using JavaScript
 ---
-Building a web calculator is a great project to put your hands on if you just learned JavaScript. It is quite simple to create for people of any skill level, even as it covers the interactions with UI and javascript. 
+Building a web calculator is a great project, especially if you have just started learning JavaScript. It is quite simple to create for people of any skill level. This project covers the interactions with UI and key JavaScript methods. 
 <!--more-->
-In this article, you will be taken through the various HTML and CSS elements along with vanilla javascript and modern ES6 practices used in building a functional and responsive calculator like in the image below:
+In this article, you will be taken through the various HTML and CSS elements along with Vanilla JavaScript and modern ES6 practices used in building a functional and responsive calculator, as shown in the image below:
 
-![calculator-image](/engineering-education/building-a-calculator-a-javascript-project-for-beginners/calculator-image.jpg)
-
-This is a must-do project if you opt to learn JavaScript or amend your JavaScript adeptness.
+![calculator-image](/engineering-education/building-a-calculator-a-javascript-project-for-beginners/calculator-image.png)
 
 ### Prerequisites
-- Any good Text editor
-- Basic understanding of JavaScript
+- Any good Text editor.
+- Basic understanding of JavaScript and HTML.
 
-### Getting started with the HTML
-To get started, you need to consider the basic functionalities of your calculator. These will include addition, subtraction, multiplication, division, delete, all-clear, and of course, the ability to use decimal numbers in performing these operations.
+### Designing the Calculator
+To get started, you need to consider the basic functionalities of a calculator. They include `addition`, `subtraction`, `multiplication`, `division`, `delete`, `all-clear`, and of course, the ability to use `decimal numbers` in performing these operations.
 
 In your text editor, create `three` separate folders for your `HTML`, `CSS` and `JavaScript`. This just basically makes your code more orderly. In your HTML folder, you can link your CSS and JavaScript codes using the code below:
 
@@ -40,57 +38,67 @@ In your text editor, create `three` separate folders for your `HTML`, `CSS` and 
     <script src="Calculator with JS\script.js" defer></script>
 ```
 
-The next thing you need to do is add all the different elements using “grid” to lay everything out nice and neat. You will then need to create a class and call it "calculator-grid". You will put all the different elements, the screen, and all of the other buttons inside the application. Below is the HTML code for the calculator.
+The next thing you need to do is add all the different elements. We will use `grid` for a nice design. Therefore, create a `div` with a class named `calculator-grid`. 
+
+```html
+   <div class="calculator-grid">
+```
+
+You will put all the different `HTML elements` and `buttons` inside the `calculator-grid` div.
+
+Below is the HTML code for the calculator:
 
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Calculator</title>
     <link href="Calculator with Js\style.css" rel="stylesheet">
     <script src="Calculator with JS\script.js" defer></script>
     <div class="calculator-grid">
-    <div class="output">
-    <div class="previous-operand"></div>
-    <div class="current-operand"></div>
-  </div>
-  <button class="span-two">AC</button>
-  <button>DEL</button>
-  <button>÷</button>
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>*</button>
-  <button>4</button>
-  <button>5</button>
-  <button>6</button>
-  <button>+</button>
-  <button>7</button>
-  <button>8</button>
-  <button>9</button>
-  <button>-</button>
-  <button>.</button>
-  <button>0</button>
-  <button class="span-two">=</button>
-</div>
-  </head>
-  <body>
-
-  </body>
+        <div class="output">
+            <div class="previous-operand"></div>
+            <div class="current-operand"></div>
+        </div>
+        <button class="span-two">AC</button>
+        <button>DEL</button>
+        <button>÷</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>*</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button class="span-two">=</button>
+    </div>
+</head>
+<body>
+</body>
 </html>
 ```
 
-As you can see, some classes were added to the HTML code. These will now be explained. The "output" class represents the calculator screen. The class "previous-operand" represents the result of the previous operation in the calculator, while the "current-operand" class represents the current operation on the calculator. The "span-two" class represents the buttons that will occupy two columns on the calculator. You can get that division sign (÷) from google or anywhere else since it is not available on your computer keyboard.
+The HTML code contains several `div` classes. The `output` class represents the calculator screen. The `previous-operand` represents the result of the previous operation in the calculator, while the `current-operand` class represents the current operation on the calculator. 
+
+The `span-two` class represents the buttons that will occupy `two` columns on the calculator. You can `copy paste` the division sign (÷) from google or anywhere else since it is not available on your keyboard.
 
 This is how your calculator would look like at this point:
 
-![calculator-buttons](/engineering-education/building-a-calculator-a-javascript-project-for-beginners/calculator-buttons.jpg)
+![calculator-buttons](/engineering-education/building-a-calculator-a-javascript-project-for-beginners/calculator-buttons.png)
 
+### Styling the Calculator
+Next, we need to style the calculator using `CSS`. Firstly, select all the elements, including the `before` and `after` elements. We can then apply the `box-sizing` attribute and set it as `border-box`. 
 
-
-## Now the styling
-Next, you will need to style your calculator using CSS. You can start by selecting all the elements, including the before and after elements. You can now apply the `box-sizing` attribute changing it to "border-box". You can also change the `font-family` and `font-weight` of the calculator using the code below:
+You can also change the `font-family` and `font-weight` of the calculator using the code below:
 
 ```css
 *, *::before, *::after {
@@ -99,7 +107,7 @@ Next, you will need to style your calculator using CSS. You can start by selecti
   font-weight: normal;
 }
 ```
-Next thing you can do is to style your back-ground by selecting the "body" element. You can use this code below:
+Next, we need to style the background by using the `body` element, as shown below:
 
 ```css
 body {
@@ -109,7 +117,11 @@ body {
   }
 ```
 
-After that, you need to style the "calculator-grid" class you defined earlier, wrapping all of your different buttons and elements. You’ll be able to try this by setting the `display` to `grid`. You can also use the `justify-content` attribute to set it to the center of your screen. You can also use the `align-content` attribute to align items to the center of the screen. At this point, you may notice that your calculator grid isn’t vertically. You can fix that by using the `min-height` attribute and setting it to 100vh, meaning the calculator grid will fill 100% of the height all the time. At this point, you will notice that all the buttons are aligned at the center of your screen and spaced out. To make your calculator look like the regular calculator, you know, you have to use `grid-template-columns` then set it to repeat, and each column could be 100px wide. You can also do the same thing but for your  `grid-template-rows` . Here is the code below:
+The next step is to style the `calculator-grid` div that we defined earlier. It wraps all of our different `buttons` and `elements`. We can set the `display` to `grid`. We can also use the `justify-content` attribute to set it to the center of the screen. The `align-content` attribute can be used to align items to the center of the screen. 
+
+At this point, you may notice that the `calculator-grid` is not arranged vertically. We can fix that by setting the `min-height` to `100vh`. This means that the calculator grid will fill `100%` of the height all the time. 
+
+Another thing is that `buttons` are aligned at the center of your screen and spaced out. To make a regular calculator, we have to use `grid-template-columns` then set it to repeat, and each column could be `100px wide`. We also do the same thing for the `grid-template-rows`. Here is the code below:
 
 ```css
 .calculator-grid {
@@ -122,12 +134,11 @@ After that, you need to style the "calculator-grid" class you defined earlier, w
     }
 ```
 
-For your output to grow as large as it needs to, so it can be adaptable to any number of values you input, you need to add the "minmax" value sets the minimum value to 120px and the maximum value to auto as you see in the code above. This is how your calculator looks like at this point:
+For the `output screen` to grow as large as it needs to and be adaptable to any number of input values, we need to set the `minmax` value to 120px and the `maximum value` to `auto`, as demonstrated in the code above. Here is how your calculator looks like at this point:
 
 ![calculator-in-grid-form](/engineering-education/building-a-calculator-a-javascript-project-for-beginners/calculator-in-grid-form.png)
 
-You can see that everything is setting out as you wish it.
-In order to properly position your buttons, you need select all the buttons in your calculator grid and apply these CSS elements like in the code below :
+In order to properly position buttons, we should select all the buttons in the `calculator-grid` and apply these `CSS` elements, as shown below:
 
 ```css
 .calculator-grid > button {
@@ -143,7 +154,12 @@ In order to properly position your buttons, you need select all the buttons in y
       }
 ```
 
-At this point, you can change your `align-items` attribute to `align-content` and set it to the center so your calculator would not look quite so strange and more like a calculator. The next thing is to style the "span-two" class, which affects the All-clear button" and the Delete button. You can set the "grid-column" to span two columns. The next thing you need to do is to style the output displayed on the calculator. You can do that by adding a dummy text say "123 +" to represent your previous operand and "456" to represent the current operand in the HTML to represent what the values will look like in the actual output. Here's how the HTML code will now look like:
+At this point, we can improve the calculator's design by changing the `align-items` attribute to `align-content` and set it to the `center`. 
+
+We should then style the `span-two` class, which affects the `All-clear` and `Delete` buttons. We can set the `grid-column` to span `two` columns. 
+
+### Styling the Output Window
+Another important thing is to style the `output` displayed on the calculator. We can do that by adding a dummy text that says `123 +` to represent your previous operand and `456` to represent the current operand. Here is how the HTML code will look like:
 
 ```html
 <div class="output">
@@ -151,8 +167,17 @@ At this point, you can change your `align-items` attribute to `align-content` an
 <div class="current-operand">456</div>
 ```
 
-This way, you have a little bit of dummy text you can play around with while styling. Now you can go ahead to styling it. The first thing you can do is set the output to span across the entire width of the calculator. You can do this by using the `grid-column` attribute again and setting it to span from column 1 to -1, essentially just the last column.  The next thing you can do is changing the `background-color` to black with 75% transparency. The next thing you need to do is align all the elements inside the container, and the easiest way to do that is by using "flex". Set your `display` to "flex" then set the `align-items` attribute to "flex-end" so your output elements will be at the right side of the calculator. To make them spaced out as ways apart from every other, so you can just use the `justify-content` attribute and set it to "space-around". You can also change the `flex-direction` and set it to "column" so your output elements will be aligned vertically. After this, you can set your padding however you want it. Also, to make your output elements wrap when they get too long, you can use the `word-wrap` attribute to choose where you want to break your words. You can also add a `word-break` and set it to "break-all". Lastly, you can style your previous and current operands on your output class.
-The final CSS code comes out like this:
+This way, you have a little bit of dummy text we can play around with while styling. Now we can go ahead to style it. 
+
+The first thing we can do is to set the `output` to `span` across the entire width of the calculator. We can do this by using the `grid-column` attribute again and setting it to span from column `1 to -1`, essentially just the last column.  
+
+Next, we will change the `background-color` to `black` with a transparency of `75%`. Then, we will align all the elements inside the container. The easiest way is by using `flex`. Therefore, set the `display` attribute to `flex` and `align-items` attribute to `flex-end`. The output elements will be positioned at the `right` side of the calculator. 
+
+To space them out, we can use the `justify-content` attribute and set it to `space-around`. We can also change the `flex-direction` and set it to `column` to align the output elements vertically. 
+
+Next, we can set the `padding` to any desired value. Also, to make the output elements `wrap` when they get too long, we can use the `word-wrap` attribute to choose where the words should break. Besides, we can add a `word-break` and set it to `break-all`. Lastly, we should style the `previous` and `current` operands in the output class.
+
+The final `CSS` code comes out like this:
 
 ```css
 *, *::before, *::after {
@@ -217,10 +242,12 @@ body {
       }
 ```
 
-At this point, your calculator has already taken shape. Now, it is time to make it function using javascript.
+At this point, the calculator has already taken shape. Now, it is time to make it functional using JavaScript.
 
-## The actual JavaScript
-First thing you need to do is to select all your calculator buttons and operations. You can do this by putting some classes in your HTML but because you do not want to mix your CSS classes with your javascript classes, you can use data attributes to select them instead. "data-operation" to represent your operation buttons, "data-numbers" to represent the number buttons, "data-all-clear" to represent the All-Clear button and "data-delete" to represent your Delete button. Yoi also need to add it to your "previous-operand" and "current-operand". Here's how it would look like in your code:
+### The Actual JavaScript
+Firstly, we should select all our calculator's buttons and operations. We can do this by putting some classes in the HTML file. However, since we do not want to mix `CSS` classes with `JavaScript` classes, we can use `data attributes` to select them instead. `data-operation` to represent your operation buttons, `data-numbers` to represent the `number` buttons, `data-all-clear` to represent the `All-Clear` button and `data-delete` to represent the `Delete` button. We can add these classes to the `previous-operand` and `current-operand`. 
+
+Here's how it would look like in your code:
 
 ```html
   <div data-previous-operand class="previous-operand"></div>
@@ -245,7 +272,15 @@ First thing you need to do is to select all your calculator buttons and operatio
   <button data-equals class="span-two">=</button>
 ```
 
-These are essentially all the changes you need to make to your HTML in order for you to select these elements in your javascript folder. In the folder, you can first get some constant variables which will be all your number buttons and you can just query that by saying document.querySelectorAll(). This is going to get all elements that match a certain string. In this case, you pick a data attribute that must be inside of brackets and you select '[data-number]' which is going to select all your number elements. You can do the same thing but for your operation buttons. This also goes for your "Equals", "All-clear" and "Delete" buttons as well as your "previousOperandTextElement" and "currentOperandTextElement" . The code will come out like this:
+The above additions are the only changes we need to make to the `HTML` file to select these elements in the JavaScript folder. 
+
+In the JavaScript file, define some `constant variables` which will represent the `number` buttons. We will the perform a query using `document.querySelectorAll()`. This function will allow us to get all elements that match a certain string. 
+
+In this case, we pick a `data` attribute that must be inside of brackets and we select '[data-number]' which is going to select all `number` elements. 
+
+We can do the same thing but for the `operation` buttons. This also goes for the `Equals`, `All-clear` and `Delete` buttons as well as your `previousOperandTextElement` and `currentOperandTextElement`. 
+
+The code will come out like this:
 
 ```javascript
 const numberButtons = document.querySelectorAll('[data-number]')
@@ -256,8 +291,9 @@ const allClearButton = document.querySelector('[data-all-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 ```
-You may notice that `document.querySelectorAll` was only used for the numbers and operation buttons. Well, this is because these buttons are more than one in your calculator.
-Now that you have everything selected, you can start creating the javascript to make your calculator work. The first thing you need to consider is how you will store all the information typed on your output. You can do that by creating a calculator class at the top of your file. Inside of this class, you will put a constructor that will take all the inputs for it and all the calculator functions. This constructor is going to take your "previousOperandTextElement" and your "currentOperandTextElement" so that you can easily know where to place the display text for your calculator. Inside of it, you will need to create some variables for his class. As soon as you create your calculator, you need to call a "this.clear" function because you have to clear all your inputs and set them to the default values as soon as you create a new calculator. Here's what the code will look like:
+You may notice that `document.querySelectorAll` was only used for the `numbers` and `operation` buttons. Well, this is because these buttons appear several times on the calculator.
+
+Now that we have everything selected, we can start coding to make your calculator work. The first thing you need to consider is how you will store all the information typed on your output. You can do that by creating a calculator class at the top of your file. Inside of this class, you will put a constructor that will take all the inputs for it and all the calculator functions. This constructor is going to take your "previousOperandTextElement" and your "currentOperandTextElement" so that you can easily know where to place the display text for your calculator. Inside of it, you will need to create some variables for his class. As soon as you create your calculator, you need to call a "this.clear" function because you have to clear all your inputs and set them to the default values as soon as you create a new calculator. Here's what the code will look like:
 
 ```javascript
 class Calculator {
