@@ -42,16 +42,16 @@ You can also inherit from any inner layer. For example, if we inherit from conta
 
 ```
 . (continuing from above)
-└── container B: build upon #A, by adding library1 v2.1.15
-    └── container D: build upon #B, by adding library3 v4.2.8
-        └── container E: build upon #B, by adding library4 v3.2.1
+└── container G: build from #F, by adding library1 v2.1.15
+    └── container I: inherited from #G and uses library3 v4.2.8
+        └── container J: inherited from #I and uses library4 v3.2.1
 
 ```
 
 The images are combined with a configuration file providing instruction on setting up the environment and executing an application endpoint. 
 
 #### Building application images using Dockerfiles
-A `Dockerfile` is a text file that defines a container image and can be used to automate the creation of the image.
+A `Dockerfile` is a text file containing commands specified by a user(a developer) used for building an image.
 
 Let's look at the example below for creating a lightweight image:
 
@@ -78,9 +78,7 @@ We can then create the image using the command format below:
 $ docker build -t <image-name>:<image-version> .
 ```
 
-This command builds a Docker image from a `Dockerfile`.
-
-`-t` defines the tag of the image. The other arguments will be the image name and the version.
+`-t` in defines the tag of the image. The other arguments will be the image name and the version.
 
 For example:
 
@@ -102,7 +100,7 @@ We also need to take care of the space our images take up. Consider the diagram 
         └── layer H: builds on G
 ```
 
-`MegaFile` is still present in layer A, meaning that whenever you push or pull the image, it is still transmitted through the network.
+`MegaFile` is still contained in layer F implying that it goes through the network traffic which will eventually cut down on the performance.
 
 > When an image is removed, it is still available in the cluster but not accessible.
 
@@ -126,11 +124,9 @@ VERSUS:
         └── layer H: adds source code 'keras-test.py'
 ```
 
-It seems that both of these images will behave the same way. 
+Consider some changes done on `keras-test.py`. In the first figure, only this change will be pulled or pushed while in the other image, both `keras-test.py` and the layer containing the `matplotlib` package need to be pulled and pushed, since the `matplotlib` layer is not independent of the `keras-test.py` layer which is above it.
 
-However, consider what happens when `keras-test.py` changes. In the first figure, only this change will be pulled or pushed while in the other image, both `keras-test.py` and the layer containing the `matplotlib` package need to be pulled and pushed, since the `matplotlib` layer is not independent of the `keras-test.py` layer which is above it.
-
-It's a good practice to order our layers from the least likely to change to the most likely to change to enhance performance.
+It's a good practice to consider the frequency of changes to the layers in our images and order them appropriately to enhance the performance.
 
 #### The Docker container runtime
 Docker has a CLI tool for deploying its containers. Here is an example command syntax of running an image:
