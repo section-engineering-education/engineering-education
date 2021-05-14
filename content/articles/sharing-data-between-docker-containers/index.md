@@ -1,5 +1,4 @@
 ### Sharing Data between Docker Containers
-![Hero Image](/engineering-education/sharing-data-between-docker-containers/hero.jpg)
 
 
 ### Introduction
@@ -11,7 +10,7 @@ Check out this amazing [article](https://www.section.io/engineering-education/ge
 We will be using Ubuntu 20.04 for this tutorial but any environment is okay.
 
 ### Creating an Independent Volume
-Before we get into the creation of volumes let's get to know what they are. Docker volumes are system files that are attached to Docker containers to keep data created by running the container. Docker volumes come into play mainly when one wants to share volume among different containers, separate volumes from storage just to mention a few.
+Before we get into the creation of volumes let's get to know what they are. Docker volumes are system files that are attached to Docker containers to keep data created by running the container. Docker volumes come into play mainly when one wants to share volume among different containers, separate volumes from storage just to mention a few. For more on Docker volumes, the [documentation](https://docs.docker.com/storage/volumes/) is a good reference.
 
 We'll use the `docker volume create` command to create a volume without associating it to any container.
 Let's create a volume named `NewVol1`:
@@ -68,6 +67,9 @@ The output is:
     }
 ]
 ```
+
+The output is in array as `JSON` format. It shows the timestamp the inspection was done by the `CreatedAt` attribute. The `Driver` and `Scope` are both in our local system and the `Labels` and `Options` are empty since we did not specify any. The `Mountpoint` shows the path the volume resides in. The `name` property shows the volume we are inspecting.
+
 Next, let's start a new container and attach NewVol1:
 
 ```bash
@@ -155,14 +157,14 @@ exit
 
 Subsequently, we'll check if our data is still present in `Container3`.
 
-#### Changes made in Container4
-Let's go ahead and refresh `Container3` and check for the changes done to the data volume by `Container4`:
+#### Container4 changes
+By refreshing `Container3` we check for the changes made to the Docker volume by `Container4`:
 
 ```bash
 docker start -ai Container3
 ```
 
-The snippet below corroborate if both containers were able to read and write from the data volume and then exit the container:
+The extract below confirms if all containers were able to read and write from the Docker volume and then exit the environment:
 
 ```bash
 root@1ef4d68f08b2:/# cat /newvol3/Example3.txt
@@ -173,13 +175,13 @@ exit
 ```
 
 #### Start Container5 and Attach the Volume Read-Only
-If a container has been mounted by a data volume, we don't unmount it as a typical Linux file. We set up a new container and make the volume read-only. We append `:ro` at the end of the container name, `:ro` stand for read-only:
+If a container has been mounted by a data volume, we don't unmount it as a typical Linux file. We set up a new container and make the volume read-only. By appending the `:ro` flag at the end of the container name makes it read-only as shown below:
 
 ```bash
 docker run -ti --name=Container5 --volumes-from Container3:ro ubuntu
 ```
 
-We check the read-only status by trying to delete our file and exit out of the container.
+We test the read-only prominence by trying to omit the file we created and exit out of the container:
 
 ```bash
 root@9b1678a2d548:/# rm /newvol3/Example3.txt
@@ -195,7 +197,7 @@ docker rm Container3 Container4 Container5
 docker volume rm NewVol3
 ```
 
-So far, we've seen how data sharing happens between containers and how data volumes can be mounted as read-only.
+In this chapter we've seen how data sharing occurs among containers and how Docker volumes can be attached as read-only files.
 
 ### Conclusion
-In this chapter, you went about how to create an independent docker volume that permits data to recur when a container is deleted, shared data across containers which had a caveat of the application being designed in a way to handle file locking to curb corruption of data. Ultimately, we mounted a shared volume as read-only.
+In this tutorial, you have learned how to create an independent docker volume that permits data to recur when a container is deleted, shared data across containers which had a caveat of the application being designed in a way to handle file locking to curb corruption of data. Ultimately, we mounted a shared volume as read-only.
