@@ -89,15 +89,15 @@ Tabular representation of the differences between both versions of the internet 
 | Has 5 different classes from A - E | Allows an unlimited number of IP addresses to be stored. |
 
 **Subnet Mask:** This is a term to denote the number of bits given to the network and the number given to the host. It is the process of setting the host bits to 0s and setting the network bits to 1s.  Using this are the formula  to calculate subnet;     
-        For Network = 2n where n = number of desired bits. 
-        For Hosts = 2n+2 
+        For Network = 2^n where n = number of desired bits. 
+        For Hosts = 2^n+2 
         Example  to calculate subnets and hosts:
         Borrow 2 bits  (I.e n = 2)
 | S   | S   | H   | H   | H   | H   | H   | H   |
 | --- | --- | --- | --- | --- | --- | --- | --- |
         Number(#) of subnets = 22 = 4. 
         Subnet mask = 2bits = 128 + 64 = 192
-        Range of hosts = 26 = 64   
+        Range of hosts = 2^6 = 64   
 
 |        | Range      | Usable Range |
 | ------ | ---------- | ------------ |
