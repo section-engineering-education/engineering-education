@@ -337,7 +337,7 @@ var search = (function() {
               return '/videos/search/?q=' + this.searchTerm
               break;
             case 'education':
-              return '/search/?q=' + this.searchTerm
+              return '/engineering-education/search/?q=' + this.searchTerm
               break;
             default:
               break;
