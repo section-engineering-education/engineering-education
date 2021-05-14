@@ -1,4 +1,4 @@
-# Introduction to Evolutionary Algorithms
+### Introduction to Evolutionary Algorithms
 A computer program is built to follow rigid and explicit rules.
 This prescriptive approach has aided us well. But, it requires that the programmers know the exact steps to solve the problem and run it in this lifetime. If we swerve a bit from this strict method, we will stumble across the domain of heuristic algorithms. And in that we find a powerful, population based optimization algorithm, Evolutionary algorithm.
 
@@ -9,7 +9,7 @@ Inspired by the model of evolution by Darwin in 1859, an EA can be used to appro
 The reader must have a good understanding of the Python Programming Language.
 <br/>You can start [here](https://www.section.io/engineering-education/a-beginners-guide-to-python/)
 
-### Table of Contents
+### Table of contents
 1. [Phases of EA](#phases-of-ea)
 2. [Infinite Monkey Theorem](#the-infinite-monkey-theorem)
 3. [Why do we need Evolutionary Algorithms?](#why-do-we-need-evolutionary-algorithms)
@@ -37,7 +37,7 @@ a monkey hitting keys at random on a typewriter keyboard for an
 infinite amount of time will almost surely type any given text,
 such as the complete works of William Shakespeare.
 
-TThe actual chance that a monkey types the entire Julius Caesar is very slim. It is so minuscule that if it started at Big Bang, it still would still be typing. This is going to set the premise for the problem we are going to look at.
+The actual chance that a monkey types the entire Julius Caesar is very slim. It is so minuscule that if it started at Big Bang, it still would still be typing. This is going to set the premise for the problem we are going to look at.
 
 Let us consider a monkey aiming to type a short phrase, say "Hello".
 The probability that the monkey gets one letter right, say "H", would be 1/54 as there are 27 possible lowercase and 27 possible uppercase characters to choose from. So, the probability that the monkey gets the word 'Hello' right would be:
@@ -120,11 +120,10 @@ This stochastic operation takes two [or more] parents and combines them to gener
 offspring. Selection of parents is random, but the probability of selecting a particular candidate
 is based on the fitness score.
 
-Crossover operation for our problem, could be:
-1. Taking half of each string and combining
-2. Taking alternative characters from each of the strings
-3. Choosing a random mid point and taking first part till mid point from one parent and the rest from the other.
-4. etc.
+Crossover operation for our problem could be:
+1. Taking half of each string and combining.
+2. Taking alternative characters from each of the strings.
+3. Choosing a random mid-point and taking first part till mid-point from one parent and the rest from the other.
 
 We are going to go with the third option to include a bit more randomness.
 ````python3
@@ -392,8 +391,11 @@ Have a look at some of these. These made me gape in awe!
 
 ![walk-without-legs](/engineering-education/introduction-to-evolutionary-algorithms/EA.gif)
 
+### References
+
 - [Painting Mona Lisa using Translucent Polygons](https://rogerjohansson.blog/2008/12/07/genetic-programming-evolution-of-mona-lisa/)
-- Flexible muscle-based locomotion for bipedal creatures [Video](https://www.youtube.com/watch?v=pgaEE27nsQw) [Research Paper](https://www.cs.ubc.ca/~van/papers/2013-TOG-MuscleBasedBipeds/2013-TOG-MuscleBasedBipeds.pdf)
+- [Flexible muscle-based locomotion for bipedal creatures - Video](https://www.youtube.com/watch?v=pgaEE27nsQw) 
+- [Flexible muscle-based locomotion for bipedal creatures - Research Paper](https://www.cs.ubc.ca/~van/papers/2013-TOG-MuscleBasedBipeds/2013-TOG-MuscleBasedBipeds.pdf)
 - [Genetic Cars](https://rednuht.org/genetic_cars_2/)
 - [Genetic Walkers](https://rednuht.org/genetic_walkers/)
 - [Some Out-of-the-box solutions by AI and EA](https://arxiv.org/pdf/1803.03453.pdf)
