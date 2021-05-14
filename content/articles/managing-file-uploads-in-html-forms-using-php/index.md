@@ -220,4 +220,4 @@ You can go ahead and try handling video or pdf uploads.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

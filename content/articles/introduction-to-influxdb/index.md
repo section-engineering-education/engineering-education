@@ -155,4 +155,4 @@ SELECT * FROM temperature
 In this tutorial, we have gone through the basics of time-series data and the most popular time-series database called InfluxDB. We installed InfluxDB on our local system and executed an array of queries on time-series data. In the next tutorial, we will build an analytics system using the API provided by InfluxDB for Python. 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

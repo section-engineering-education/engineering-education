@@ -105,6 +105,6 @@ Google has continuously improved its spreadsheet to provide the best product a s
 11. [support.google.com/docs/](https://support.google.com/docs/answer/2917686?hl=en)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 

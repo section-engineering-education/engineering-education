@@ -339,5 +339,5 @@ We have looked at the tuple data structure, its implementation and methods. To g
 - Tuples: [HackerRank](https://www.hackerrank.com/challenges/python-tuples/problem)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

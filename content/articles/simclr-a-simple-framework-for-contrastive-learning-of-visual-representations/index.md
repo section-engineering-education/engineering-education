@@ -142,7 +142,7 @@ That's a simplistic view of what the contrastive loss function does in a nutshel
 4. [Supervised Contrastive Learning](https://arxiv.org/abs/2004.11362)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 
 <!-- MathJax script -->

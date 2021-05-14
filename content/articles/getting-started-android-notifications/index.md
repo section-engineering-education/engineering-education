@@ -246,4 +246,4 @@ To read more on the notification anatomy visit the [Android documentation](https
 Happy coding.
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

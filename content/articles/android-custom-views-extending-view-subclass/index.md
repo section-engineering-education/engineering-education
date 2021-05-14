@@ -217,4 +217,4 @@ In this article, we have gone through creating a custom view by extending a widg
 It gives the application a unique appearance with less work to do. Check this [article](/android-custom-views-extending-view/) for a guide on creating custom views by extending the `View` class. You can find the source code of the application on [GitHub](https://github.com/kayere/color-slider.git). Feel free to raise an issue or a PR if you notice any error.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

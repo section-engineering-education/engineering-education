@@ -131,4 +131,4 @@ While deciding what license to use for a project, I find this [website](https://
 I hope reading this article helped you understand the various licenses and guidelines. While this article is an overview of the various licenses available, always check the original licenses for accurate and the most up to date information. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

@@ -571,4 +571,4 @@ In this article we have covered an introduction to JavaScript arrays, properties
 You can access the code from [here](https://github.com/mwangiKibui/array-operators-in-js/tree/main).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

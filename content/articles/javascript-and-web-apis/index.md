@@ -133,4 +133,4 @@ Further reading:
 - [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/) 
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/) 

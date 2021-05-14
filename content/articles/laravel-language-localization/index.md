@@ -317,4 +317,4 @@ Refresh your browser and you will notice that the form labels are now presented 
 In this tutorial, we have designed a simple form that can be presented in English or Spanish. We have also learned how to define and use translation strings for different languages. You can now use this knowledge and skills to build more interactive Laravel applications.
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

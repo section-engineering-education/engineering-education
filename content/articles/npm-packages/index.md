@@ -17,7 +17,7 @@ images:
 Node.js is a popular server-side language that is used by millions of developers worldwide. While building Node.js projects, we use various packages that make development easier. All of these packages are managed by the Node Package Manager.
 <!--more-->
 
-To learn more about Node.js, check out [this](/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/authors/jethro-magaji/).
+To learn more about Node.js, check out [this](/history-of-nodejs/) amazing article about Node.js by [Section.io](https://section.io) contributor, [Jethro Magaji](/engineering-education/authors/jethro-magaji/).
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -204,4 +204,4 @@ For more knowledge on NPM packages and JavaScript, check out the articles below.
 - HTTP Requests - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

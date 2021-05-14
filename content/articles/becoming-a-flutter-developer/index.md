@@ -163,5 +163,5 @@ To get a better grip on the topic, take a look at these resources:
 Becoming a Flutter developer is simple. Dart is a friendly language and Flutter an easy-to-understand framework. Flutter development is an interesting field to dive into. In the future, the demand for Flutter developers is set to increase significantly.
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)
 

@@ -413,4 +413,4 @@ Check out the [official documentation](https://developer.android.com/guide/topic
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

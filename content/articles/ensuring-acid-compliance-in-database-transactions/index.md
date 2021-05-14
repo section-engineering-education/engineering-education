@@ -113,4 +113,4 @@ In the case that phase 1 fails, phase 2 notifies resource managers to abort the 
 ACID-compliant database management systems are maintained with utmost data security and integrity. Organizations can derive value from such databases and prevent data from being corrupted.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

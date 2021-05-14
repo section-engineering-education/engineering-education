@@ -244,5 +244,5 @@ Hence, this is highly advantageous in the case of an overall software developmen
 Happy coding!
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
 

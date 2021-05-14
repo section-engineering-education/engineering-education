@@ -82,4 +82,4 @@ Deploying 5G URLLC comes with technical requirements, standards, and security de
 Ultra-reliable low-latency communication is a revolutionary communications technology in today's digital world. With 5G URLLC, we can have a better entertainment experience, increase machine productivity in factories, conduct remote diagnosis and remote surgeries, improve electricity distribution/personnel protection, and manage traffic more efficiently.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

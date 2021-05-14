@@ -65,4 +65,4 @@ Today, developers use the Python programming language for machine and deep learn
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

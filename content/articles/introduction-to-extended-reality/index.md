@@ -125,4 +125,4 @@ Finally, XR could greatly leverage mobile computing because of its increasing ab
 [Dummies Article](https://www.dummies.com/software/virtual-reality-augmented-reality-mixed-reality-extended-reality/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

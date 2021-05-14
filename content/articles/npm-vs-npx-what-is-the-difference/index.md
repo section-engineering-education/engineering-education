@@ -277,4 +277,4 @@ NPX is a great tool that you should try out. It will help you to avoid NPM depen
 I hope this guide helped you understand the differences between NPM and NPX and understand some major use cases of NPX.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

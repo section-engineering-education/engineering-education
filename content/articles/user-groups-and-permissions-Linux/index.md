@@ -221,5 +221,5 @@ Happy learning.
 3. https://ss64.com/bash/chmod.html
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
 

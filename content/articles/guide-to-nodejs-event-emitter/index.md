@@ -211,4 +211,4 @@ We've also briefly looked at the error event, that causes the Node.js process to
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Paul Odhiambo](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Paul Odhiambo](/engineering-education/authors/odhiambo-paul/)

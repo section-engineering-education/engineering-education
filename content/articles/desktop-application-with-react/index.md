@@ -267,4 +267,4 @@ You can find the full code for the tutorial [here](https://github.com/katungi/de
 Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

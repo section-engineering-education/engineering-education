@@ -160,4 +160,4 @@ To summarize:
 - [Detailed specifications](https://lastminuteengineers.com/esp8266-nodemcu-arduino-tutorial/)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

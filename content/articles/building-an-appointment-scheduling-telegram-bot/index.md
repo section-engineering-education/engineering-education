@@ -324,4 +324,4 @@ The source code of our bot is available on [Github](https://github.com/Chukslord
 Happy coding!
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)

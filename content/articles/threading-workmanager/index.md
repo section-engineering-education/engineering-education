@@ -168,4 +168,4 @@ We just went over how you use RxJava or Coroutines in `WorkManager`. You can go 
 You can it use to handle a callback based operation where you define your threading mechanism. Otherwise, just choose from the three available classes. Go ahead and raise a PR or issue in the [Github](https://github.com/LinusMuema/kotlin/tree/workmanager-threading) repository for any suggestions and comments.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

@@ -189,5 +189,5 @@ We have also seen how easy it is to build highly appealing websites by incorpora
 Happy coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

@@ -634,4 +634,4 @@ Check out [Material documentation](https://material.io/components/sheets-bottom#
 Happy coding.
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

@@ -246,4 +246,4 @@ We will explore more in our next tutorial as we discuss more advanced features o
 Happy coding.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

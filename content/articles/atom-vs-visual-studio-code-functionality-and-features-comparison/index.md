@@ -248,4 +248,4 @@ It is also essential to use the editors to familiarize yourself with the feature
 Both editors provide almost the same features to developers. Hopefully, this article helps you decide which editor best suits your preferences.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

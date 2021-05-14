@@ -122,5 +122,5 @@ Various business intelligence companies have utilized these tools to suit their 
 - [1 Key Data](https://www.1keydata.com/datawarehousing/toololap.html)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

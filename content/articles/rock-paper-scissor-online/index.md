@@ -471,4 +471,4 @@ Although the app works, it could be improved. As mentioned before, the intention
 Thanks for reading.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

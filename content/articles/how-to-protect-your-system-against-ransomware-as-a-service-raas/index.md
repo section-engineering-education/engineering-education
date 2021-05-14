@@ -64,4 +64,4 @@ Some of these preventive measures are outlined below.
 Ransomware-as-a-Service (RaaS) adds to the list of the latest driving forces of cyber-criminal activities. One must take preventive measures to address this problem and take it seriously. Affordability and the ease of deployment (among professional and novice hackers) are some primary reasons why RaaS is on the rise.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

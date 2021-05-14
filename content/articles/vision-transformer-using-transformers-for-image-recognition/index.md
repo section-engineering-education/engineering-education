@@ -125,4 +125,4 @@ Transformers completely replaced Long Short-Term Memory (LSTM) in NLP. Now, they
 5. [Quantifying Attention Flow in Transformers](https://arxiv.org/pdf/2005.00928.pdf)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

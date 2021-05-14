@@ -236,4 +236,4 @@ For more on data classes in Python check out the [official documentation](https:
 Happy coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

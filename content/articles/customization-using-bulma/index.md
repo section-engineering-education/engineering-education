@@ -250,4 +250,4 @@ We have just learned the basics of Bulma, how to customize, and theme Bulma usin
 - [Learn Bulma](https://scrimba.com/g/gbulma) -- An interactive course to learn Bulma.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

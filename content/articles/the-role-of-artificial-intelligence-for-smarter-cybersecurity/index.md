@@ -87,4 +87,4 @@ Attackers also take advantage of AI to find loopholes in cybersecurity and plan 
 - https://itchronicles.com/security/how-ai-is-changing-the-cybersecurity-landscape/
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

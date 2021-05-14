@@ -589,4 +589,4 @@ The outputs highlighted on this article may not directly match to what will be p
 [Best Text Editors](https://www.techradar.com/best/best-text-editors)
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

@@ -382,7 +382,7 @@ Until then, good luck, and happy coding!
 
 ---
 
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

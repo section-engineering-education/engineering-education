@@ -260,4 +260,4 @@ By now, you should have a better understanding of session storage. You should co
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

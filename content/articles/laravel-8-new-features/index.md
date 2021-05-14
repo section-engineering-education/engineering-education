@@ -238,4 +238,4 @@ You have now learned the basics of Laravel 8.x. You can use this knowledge to de
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)

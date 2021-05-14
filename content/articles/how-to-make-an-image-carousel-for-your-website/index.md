@@ -243,7 +243,7 @@ In this article, we have learned how to implement an Image carousel on websites.
 Image carousels are essential in websites because they improve the user interface and experience of a website. Image carousels are a great way to show content cards.
 
 ---
-Peer Review Contributions by: [Briana Nzivu](/authors/briana-nzivu/)
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
 
 
 

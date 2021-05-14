@@ -99,4 +99,4 @@ Hashing checks for data integrity. It gives the user assurance that no data has 
 In conclusion, hashing and hash functions are essential tools in computer security. We have learned the objectives of hashing which include data integrity and authentication. We have learned what hashing is, how it works, and went over hash functions in cryptography. I hope this article will give you an in-depth understanding of hashing in cryptography.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

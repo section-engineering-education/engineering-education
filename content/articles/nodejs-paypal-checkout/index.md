@@ -212,4 +212,4 @@ The full source for the application can be downloaded [here](https://github.com/
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

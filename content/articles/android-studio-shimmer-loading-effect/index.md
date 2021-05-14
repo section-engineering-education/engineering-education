@@ -588,4 +588,4 @@ I hope this guide helps you to animate the data loading process using Shimmer. T
 For more reference, check the code on [GitHub](https://github.com/kimkimani/ShimmerLoadingEffect).
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

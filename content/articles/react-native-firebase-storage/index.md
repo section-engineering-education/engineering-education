@@ -605,4 +605,4 @@ Congratulations, :partying_face: You did it.
 Thanks for Reading!
 
 ---
-Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)

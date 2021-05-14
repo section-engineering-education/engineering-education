@@ -131,5 +131,5 @@ In the future, technological advancement to the hill climbing technique will sol
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

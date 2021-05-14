@@ -269,4 +269,4 @@ To find out more about JavaScript RegEx, read the [MDN docs](https://developer.m
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

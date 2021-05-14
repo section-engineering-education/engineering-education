@@ -136,7 +136,7 @@ var search = (function() {
               return 'videos'
               break;
             case 'education':
-              return 'engineering-education'
+              return 'articles'
               break;
             default:
               break;

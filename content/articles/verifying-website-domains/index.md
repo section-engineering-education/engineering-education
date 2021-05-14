@@ -396,4 +396,4 @@ GitHub: [@pkalynan](https://github.com/pkalynan)
 Twitter: [@pkalynan](https://twitter.com/pkalynan)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

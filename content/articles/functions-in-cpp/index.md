@@ -138,4 +138,4 @@ Moving forward, I would suggest working on some practice problems to get better 
 We covered one of the most important concepts of programming, *functions* - how do they work, what they are used for, and how they can be helpful in interviews and/or competitive programming events. In the upcoming articles, we will be moving to some intermediate programming concepts such as Data Structures and Algorithms.
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

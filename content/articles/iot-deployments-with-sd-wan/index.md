@@ -82,5 +82,5 @@ Organizations benefit from fast time-to-execution for initial installations and 
 SD-WAN solution enables organizations to exploit the IoT full potential without introducing unnecessary costs, risks, and complexity. It simplifies network architecture and better equips an organization to scale its IoT deployments securely and quickly.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 

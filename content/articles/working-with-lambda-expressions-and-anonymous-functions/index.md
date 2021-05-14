@@ -131,4 +131,4 @@ Lambda expressions allow you to treat functions as variables in different ways. 
 Happy coding.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

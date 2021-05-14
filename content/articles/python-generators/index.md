@@ -219,4 +219,4 @@ def get_longest_name():
 In this article we went over the concepts of generators in Python.  They are useful when working with complex datasets and performing memory-intensive tasks. You can find more on Python generators from the Python [wiki](https://wiki.python.org/moin/Generators/). These will help you create better applications with cleaner code and offer alternatives to creating nested for loops and working with list comprehensions that are memory intensive.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -343,4 +343,4 @@ Find the source code [here](https://github.com/paulodhiambo/spring-amazon).
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

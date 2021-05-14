@@ -121,4 +121,4 @@ To summarize:
 Happy learning!
 
 ---
-Peer Review Contributions by: [Onesmus Mbaabu](/authors/onesmus-mbaabu/)
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)

@@ -191,4 +191,4 @@ In this article, we have gone through some of the basic syntax of the `node-cron
 The full code  example of the application can be found on [GitHub](https://github.com/kayere/node-cron-example.git).
 
 ---
-Peer review contribution by: [Linus Muema](/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)

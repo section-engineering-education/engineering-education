@@ -86,5 +86,5 @@ UAT is the last chance to identify and rectify defects. Businesses may suffer lo
 The organization may also lose some reputation as a result of moving defective software to production. Therefore, an UAT is vital. Software testing is a broad field in computing. Certifications such as [Certified Test Engineer(CSE)](https://www.softwaretestinghelp.com/cste-certification-guide/) are also available.
 
 ---
-Peer Review Contributions by: [Onesmus Mbaabu](/authors/onesmus-mbaabu/)
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
 

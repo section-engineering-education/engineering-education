@@ -348,7 +348,7 @@ The final check button will have an extra code because reaching the final round 
 In this tutorial, we have created a puzzle game called Mastermind using windows forms. We have used the controls & the properties window to create the form of it, and then we connected these controls with the methods inside of it. To double the fun, try to challenge your friends with Mastermind! Don't forget to test out the code to fully understand how it works.
 
 ---
-Peer Review Contributions by: [Sylvester Tamba](/authors/sylvester-tamba/)
+Peer Review Contributions by: [Sylvester Tamba](/engineering-education/authors/sylvester-tamba/)
 
 
 

@@ -294,4 +294,4 @@ Now that you have learned how to document Django RESTful API endpoints, proceed 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

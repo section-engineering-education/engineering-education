@@ -105,4 +105,4 @@ In this article, we have analyzed and discussed the various consensus protocols 
 Happy learning. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

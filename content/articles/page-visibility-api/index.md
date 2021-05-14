@@ -142,4 +142,4 @@ I hope you find other useful ways to optimize your applications using this API.
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

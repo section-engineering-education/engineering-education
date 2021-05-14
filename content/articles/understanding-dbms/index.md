@@ -65,4 +65,4 @@ In this article, we learned the concepts of a database (Database Management Syst
 [Database | Oracle](https://www.oracle.com/database/what-is-database.html)
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

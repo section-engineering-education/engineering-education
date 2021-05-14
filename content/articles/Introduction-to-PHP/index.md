@@ -244,4 +244,4 @@ In this tutorial, we have looked at the following:
 Have a good `PHP` coding ahead.
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

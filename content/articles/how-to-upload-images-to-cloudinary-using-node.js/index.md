@@ -376,4 +376,4 @@ The following were used as main references for this tutorial:
 - [How to upload a file to Cloudinary using Django](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/#conclusion).
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

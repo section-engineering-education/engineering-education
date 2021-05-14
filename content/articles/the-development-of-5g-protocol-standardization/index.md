@@ -140,4 +140,4 @@ The security measures try to ensure the above by implementing the following:
 - [5G Huawei](https://e.huawei.com/en/talent/#/search-page?productName=&type=HALP)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

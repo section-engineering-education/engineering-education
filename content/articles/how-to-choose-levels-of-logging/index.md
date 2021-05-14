@@ -79,4 +79,4 @@ During coding, it may not seem like an important thing to consider. Yet, it is s
 Happy coding.
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

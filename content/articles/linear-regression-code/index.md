@@ -159,4 +159,4 @@ In this article, we implemented the linear regression from scratch using numpy. 
 Happy learning. 
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

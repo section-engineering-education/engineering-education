@@ -757,4 +757,4 @@ option 2: 5.086ms
 ***Note***: The above performance results will vary depending on the browser, computer model and operating system you are using to test the loops.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

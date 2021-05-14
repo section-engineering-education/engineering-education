@@ -111,4 +111,4 @@ Microsoft Power BI is offered on-premise and on the Azure Cloud Platform. This e
 [Competitive Report: Tableau vs QlikView vs Power BI](https://www.smetricinsights.com/wp-content/uploads/2019/05/Tableau-VS-QlikView-VS-Power-BI-2019-Update.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

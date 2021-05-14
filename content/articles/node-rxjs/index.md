@@ -147,4 +147,4 @@ Output:
 These are some of the RxJs operators that you can use on your observables. There are many more operators with different functions. You can get more info from the [official documentation](https://github.com/ReactiveX/rxjs) or use [learnrxjs.io](https://www.learnrxjs.io/). The code samples can be found on [Github](https://github.com/LinusMuema/node-rxjs). Feel free to raise a PR or an issue.
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

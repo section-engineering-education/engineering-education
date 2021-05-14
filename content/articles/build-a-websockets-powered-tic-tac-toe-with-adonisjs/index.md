@@ -346,5 +346,5 @@ In this article, we learned about the WebSocket protocol. We saw the details of 
 3. [Internet Engineering Task Force (IETF) Websocket Protocol](https://tools.ietf.org/html/rfc6455)
 
 ---
-Peer Review Contributions by: [Wilson Gichuhi](/authors/wilson-gichuhi/)
+Peer Review Contributions by: [Wilson Gichuhi](/engineering-education/authors/wilson-gichuhi/)
 

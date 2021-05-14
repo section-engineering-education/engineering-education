@@ -142,4 +142,4 @@ Bias is a huge issue in today’s society from a social and cultural perspective
 13. [Inspecting Algorithms for Bias](https://www.technologyreview.com/2017/06/12/105804/inspecting-algorithms-for-bias/)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

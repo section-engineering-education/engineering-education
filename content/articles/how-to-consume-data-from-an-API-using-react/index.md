@@ -395,5 +395,5 @@ If you have successfully reached this stage, congratulations. Follow the steps i
 In this tutorial, we have learned how to fetch and consume data from an API. We use async and await when performing network operations. You can refer to the final code from this [GitHub Repository](https://github.com/WanjaMIKE/react-omdapi/).
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

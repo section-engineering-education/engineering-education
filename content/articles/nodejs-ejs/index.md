@@ -244,4 +244,4 @@ The full source code can be downloaded [here](https://replit.com/@qawuor/ejs-tut
 Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

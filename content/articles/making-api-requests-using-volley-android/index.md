@@ -277,4 +277,4 @@ You can read more about Volley in their official [documentation](https://develop
 Access the source code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/CovidTrackerVolley). Download the sample APK on Google [Drive](https://drive.google.com/file/d/1Gsn9P8KxrXcDXLR4DrUYu1o7i3VVMC52/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

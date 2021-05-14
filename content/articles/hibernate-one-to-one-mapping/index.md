@@ -594,4 +594,4 @@ In the next tutorial, the reader will learn how how to perform CRUD operations u
 Happy coding!
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

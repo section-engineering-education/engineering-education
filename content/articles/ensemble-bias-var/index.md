@@ -141,7 +141,7 @@ Until next time, happy reading!
 9. [Boosting- Ensemble meta Algorithm for Reducing bias](https://medium.com/ml-research-lab/boosting-ensemble-meta-algorithm-for-reducing-bias-5b8bfdce281)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

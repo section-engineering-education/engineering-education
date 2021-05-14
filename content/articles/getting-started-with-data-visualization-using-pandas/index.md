@@ -183,4 +183,4 @@ In the digitalization era, data become cheap and difficult to understand. If it'
 The possibilities are endless and understanding **data visualization** can keep you ahead of the game.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

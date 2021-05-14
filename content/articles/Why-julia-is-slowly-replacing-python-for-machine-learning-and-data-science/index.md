@@ -101,4 +101,4 @@ Python, a well-established language, is very significant to the fields of data s
 [5 Ways Julia Is Better Than Python](https://towardsdatascience.com/5-ways-julia-is-better-than-python-334cc66d64ae)
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

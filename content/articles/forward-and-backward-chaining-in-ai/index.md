@@ -166,4 +166,4 @@ Forward chaining is important to developers that want to use data-driven algorit
 [Java Point](https://www.javatpoint.com/forward-chaining-and-backward-chaining-in-ai#:~:text=A.%20Forward%20Chaining.%20Forward%20chaining%20is%20also%20known,extract%20more%20data%20until%20a%20goal%20is%20reached.)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

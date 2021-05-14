@@ -129,4 +129,4 @@ Although AWS is enjoying a bigger market share than its competitor, the fast gro
 - [Google Billing](https://cloud.google.com/blog/products/gcp/extending-per-second-billing-in-google)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

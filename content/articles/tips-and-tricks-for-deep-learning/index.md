@@ -261,7 +261,7 @@ That's all there is for this article. I hope the mentioned techniques help you i
 7. [Hero image](https://unsplash.com/photos/-rF4kuvgHhU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
  
 

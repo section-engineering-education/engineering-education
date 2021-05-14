@@ -194,4 +194,4 @@ Fast websites boost your search engine rankings, improve search engine indexing,
 I hope that the guide was helpful to you and have a great time optimizing your WordPress website.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

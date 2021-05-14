@@ -95,4 +95,4 @@ Recently, business intelligence and analytic vendors have started to add NLP cap
 [Language](http://www.ai.mit.edu/courses/6.034b/language.pdf)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

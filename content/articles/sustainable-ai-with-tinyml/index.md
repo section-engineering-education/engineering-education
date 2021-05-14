@@ -194,4 +194,4 @@ Besides sustainability, we have seen that it also opens up many opportunities fo
 4. [Why TinyML is a giant opportunity](https://earthnewsreport.com/2020/01/12/why-tinyml-is-a-giant-opportunity/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

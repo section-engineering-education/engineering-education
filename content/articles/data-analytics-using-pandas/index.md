@@ -158,4 +158,4 @@ Now that we have a better understanding of data analytics basics, you can go to 
 You can also go one step further and apply [machine learning](https://www.geeksforgeeks.org/machine-learning/) algorithms to [classify](https://www.simplilearn.com/classification-machine-learning-tutorial) and [predict](https://www.datarobot.com/wiki/prediction-explanations/) values from the dataset.  
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

@@ -422,6 +422,6 @@ Congratulations, :partying_face: You did it.
 Thanks for Reading!
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
 
 

@@ -420,4 +420,4 @@ Lastly, try to make a plugin that will detect if emeralds are in a loaded chunk.
 My solutions may not be perfect so if you find a better solution, feel free to send a pull request. Happy coding!
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

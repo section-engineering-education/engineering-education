@@ -34,7 +34,7 @@
           {{ range . }}
           {{- $topicURLparts :=  slice "topic" (urlize .) -}}
           {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
-          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="{{ $topicURL }}">{{ . }}</a></li>
+          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="/engineering-education/{{ $topicURL }}">{{ . }}</a></li>
           {{ end }}
         </ul>
 
@@ -66,7 +66,7 @@
         <div class="section-rich-text-leading">
         {{ .Content }}
         </div>
-        {{ $author_page := (printf "%sauthors/%s/index.md" .CurrentSection.Parent.RelPermalink .Params.author) }}
+        {{ $author_page := (printf "/engineering-education/%sauthors/%s/index.md" .CurrentSection.Parent.RelPermalink .Params.author) }}
         {{ with $.Site.GetPage $author_page }}
           <div class="section-rich-text-leading bio">
             <hr>

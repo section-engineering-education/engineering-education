@@ -264,4 +264,4 @@ As I mentioned above, try to follow the DRY Principle while writing SQL Statemen
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

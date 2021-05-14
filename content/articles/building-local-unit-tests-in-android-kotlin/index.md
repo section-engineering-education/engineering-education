@@ -262,4 +262,4 @@ With that information, you can now write your unit tests. Unit tests fasten the 
 In doing so, one does not have to worry about other components of the application. The focus should be on the function being implemented and tested. You also don't need to run the whole application to test a single method.
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

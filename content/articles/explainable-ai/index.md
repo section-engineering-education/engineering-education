@@ -209,4 +209,4 @@ To be worthy of our trust, we need to understand how they work and how they arri
 8. [Is the AI black box something to be scared of?](https://bdtechtalks.com/2018/02/09/scary-ai-blackbox/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

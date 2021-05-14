@@ -106,6 +106,6 @@ Technically, cryptography is the answer to all computer network security issues 
 Happy learning!
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
 
 

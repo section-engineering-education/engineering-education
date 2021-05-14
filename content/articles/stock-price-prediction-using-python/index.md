@@ -216,4 +216,4 @@ We got a very good prediction result! Imagine if you are working with multiple v
 I also recommend you to change layers, numbers, epochs, and batch_size. Try it out for yourself and change whatever you think may improve your prediction and more accurate.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

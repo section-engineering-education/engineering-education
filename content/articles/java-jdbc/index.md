@@ -434,4 +434,4 @@ Now that you have learned how to perform various database query operations from 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Michael Barasa](/authors/michael-barasa/)
+Peer Review Contributions by: [Michael Barasa](/engineering-education/authors/michael-barasa/)

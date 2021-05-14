@@ -672,4 +672,4 @@ In case you have any query you can reach me via [twitter](https://twitter.com/it
 Happy coding!!
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

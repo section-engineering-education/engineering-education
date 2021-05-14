@@ -192,4 +192,4 @@ To get a better understanding of heaps, read a few in depth articles below and s
 Heaps are extremely versatile and useful data structures that are used along with other data structures like Graphs and Trees to improve the efficiency of various operations. Once we have mastered heaps, we can move on to advanced data structures like Graphs.
 
 ---
-Peer Review Contributions by: [Mike White](/authors/mike-white/)
+Peer Review Contributions by: [Mike White](/engineering-education/authors/mike-white/)

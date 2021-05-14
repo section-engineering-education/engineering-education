@@ -145,4 +145,4 @@ Hope the article was helpful.
 8. [MLClean](https://arxiv.org/pdf/1904.10761.pdf)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

@@ -299,4 +299,4 @@ Data Visualization is a good way to present data, and Seaborn is a useful tool t
 Happy Coding! 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

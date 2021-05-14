@@ -97,4 +97,4 @@ AIOps' focus is not limited to the present problems but learns continually to en
 Embracing AIOps is a significant step towards getting to the root cause of IT teams' problems every day. AIOps prevents alert fatigue and empowers teams to perform their tasks more efficiently.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

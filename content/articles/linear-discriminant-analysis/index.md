@@ -155,4 +155,4 @@ The output of the code should look like the image given below. The iris dataset 
 ### Conclusion
 In this article, we have looked at implementing the Linear Discriminant Analysis (LDA) from scratch. I suggest you implement the same on your own and check if you get the same output. Another fun exercise would be to implement the same algorithm on a different dataset. I hope you enjoyed reading this tutorial as much as I enjoyed writing it. Happy learning.
 
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

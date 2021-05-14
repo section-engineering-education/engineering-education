@@ -84,4 +84,4 @@ Many solutions for efficient storage and computation are present. But, ensuring 
 In this article, we considered the various aspects of a question answering system and its applications. The possibilities are endless. I hope I have succeeded in kindling the curiosity within you to explore the topic furthermore. I would recommend reading this [survey paper](https://www.sciencedirect.com/science/article/pii/S1877050915034663) published in 2015 at Elsevier.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

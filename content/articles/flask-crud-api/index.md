@@ -326,4 +326,4 @@ Now that you have learned how to create CRUD API, add the `date_created` and `la
 Happy Coding.
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

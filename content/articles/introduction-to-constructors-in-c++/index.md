@@ -303,4 +303,4 @@ area=6
 In this article, we have gone through the basics of constructors and how to overload them. In C++ programming, the primary goal of the constructor is to create an object of the class. In other words, it's used to initialize all members of the data class. This enables programmers to limit instantiation and write code that's flexible and easy to read.
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

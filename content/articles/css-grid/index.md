@@ -402,4 +402,4 @@ We've seen the basics of the CSS grid module and learned how to build a basic gr
 - [CSS Grid Garden](https://cssgridgarden.com/) - A site to learn and play with CSS grids.
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

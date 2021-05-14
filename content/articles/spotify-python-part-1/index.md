@@ -146,4 +146,4 @@ In the next tutorial, we will start analyzing our data, and to do this, we have 
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

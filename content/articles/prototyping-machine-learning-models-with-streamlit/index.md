@@ -231,4 +231,4 @@ And your application should look like this:
 If you have followed the process, you will see how fun and easy it is to prototype your machine learning models with Streamlit and save yourself a lot of stress. You can explore more advanced examples and take this project forward by deploying it on Heroku or any other hosting platform.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

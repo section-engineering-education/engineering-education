@@ -108,4 +108,4 @@ The compiler technology is applied in various computer fields such as HLL implem
 - [Tech Target](https://whatis.techtarget.com/definition/compiler)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

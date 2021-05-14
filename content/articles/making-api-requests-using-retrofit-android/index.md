@@ -240,4 +240,4 @@ We have learned that networking is a crucial factor in mobile application develo
 Check out other ways to use Retrofit in their official [documentation](https://square.github.io/retrofit/). You can access this tutorial's code on [GitHub](https://github.com/BrianaNzivu/EngineeringEducation/tree/main/MarvelRetrofit). You can also download the sample APK on Google [Drive](https://drive.google.com/file/d/1v_C-cgkmTaVswyfnC7s60nWcs6f_ncWf/view?usp=sharing).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

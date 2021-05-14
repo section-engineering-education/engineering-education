@@ -293,4 +293,4 @@ You are now familiar with the different functionalities of local storage. The ma
 [JavaScript.Info](https://javascript.info/localstorage)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

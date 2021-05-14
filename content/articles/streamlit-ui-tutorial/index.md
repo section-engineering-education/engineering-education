@@ -302,4 +302,4 @@ Based on the prediction, we display a text message.
 With just a few extra lines of code, we were able to transform a plain and boring script into a web app with a neat and clean UI. Many people might have built a model to predict the survival of a passenger in the Titanic Disaster, but building a web app for it will make you stand out.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

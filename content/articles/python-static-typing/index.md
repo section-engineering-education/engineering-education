@@ -229,4 +229,4 @@ Type hinting is a useful feature in Python. It helps you identify bugs and maint
 You also had an introduction on using mypy as a static type checker. You can go ahead and dig deeper into [PEP 484](https://www.python.org/dev/peps/pep-0484/) and the [Mypy documentation](https://mypy.readthedocs.io/) for more information.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

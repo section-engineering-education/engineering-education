@@ -84,4 +84,4 @@ A big data supply chain is essential to businesses because it provides meaningfu
 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

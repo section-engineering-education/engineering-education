@@ -68,4 +68,4 @@ The following five architectural principles are used to develop a REST API:
 In this article, we discuss the different methods that have been implemented over the years to enable resource sharing over the internet. We can take away that the technologies change over time depending on the data transferred and its current application. The future could hold far better resource sharing technologies than what we currently have.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -503,4 +503,4 @@ Congratulations, :partying_face: You did it.
 Thanks for reading!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

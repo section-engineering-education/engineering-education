@@ -172,4 +172,4 @@ The Viola-jones algorithm is the best algorithm for face object detection in rea
 Happy coding.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

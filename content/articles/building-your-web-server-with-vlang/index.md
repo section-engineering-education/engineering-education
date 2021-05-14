@@ -337,4 +337,4 @@ I have also highlighted some reasons you should keep tabs on the V project.
 Happy coding!
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

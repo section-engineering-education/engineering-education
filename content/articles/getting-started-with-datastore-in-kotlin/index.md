@@ -237,4 +237,4 @@ Happy coding!!
 - [Official Documentation](https://developer.android.com/topic/libraries/architecture/datastore)
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

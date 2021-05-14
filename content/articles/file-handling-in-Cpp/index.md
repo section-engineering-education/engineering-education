@@ -179,4 +179,4 @@ Closing a file is as simple as opening a file. You just need to use the name of 
 With this, we've come to the end of this article. We got to cover the most important and used function/actions in file handling. What we have just covered is the extent to which a developer would need to know and what basic college classes teach when it comes to file handling. Hope you find it helpful! Happy coding!
 
 ---
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

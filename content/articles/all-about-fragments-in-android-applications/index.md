@@ -426,4 +426,4 @@ You can download the full project from [here](https://github.com/WanjaMIKE/NavEx
 - [Fragments](https://developer.android.com/guide/fragments/lifecycle)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

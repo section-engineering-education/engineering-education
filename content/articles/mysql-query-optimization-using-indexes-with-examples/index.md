@@ -350,4 +350,4 @@ Indexes create additional tables and require extra storage.
 In summary, indexes speed up searches of your database by allowing MySQL to organize your data in the best way for different queries. Indexes implementation may not have significant performance improvements on small databases. As the number of data increases, indexes can be much help in speeding up database reads. Avoid incorrect use of indexes.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

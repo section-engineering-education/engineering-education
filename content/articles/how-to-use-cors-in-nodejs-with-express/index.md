@@ -207,4 +207,4 @@ This way, you are able to block users who attempt to clone your site or make req
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

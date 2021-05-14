@@ -353,4 +353,4 @@ In cases when multiple values need to be returned, we use lists. This way, a sin
 In this article, we have dealt with the advanced topics of the R programming language. At this point, you have the skills to code machine learning algorithms from scratch and perform various data science experiments.
 
 ---
-Peer Review Contributions by: [Sophia Raji](/authors/sophia-raji/)
+Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

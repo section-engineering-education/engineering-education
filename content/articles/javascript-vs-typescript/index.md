@@ -265,4 +265,4 @@ I hope this guide helps you figure out the main differences between JavaScript a
 Happy coding!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

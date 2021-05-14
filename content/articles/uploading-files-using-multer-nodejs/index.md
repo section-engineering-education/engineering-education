@@ -701,4 +701,4 @@ If you want to upload images, resize them according to your needs, in order to s
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

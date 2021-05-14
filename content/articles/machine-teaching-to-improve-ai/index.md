@@ -171,4 +171,4 @@ We need to welcome more non-experts in the creation and implementation of AI tec
 7. [Machine Teaching](https://searchenterpriseai.techtarget.com/definition/machine-teaching)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -196,4 +196,4 @@ We can use various types of clustering, including K-means, hierarchical clusteri
 [The App Solutions](https://theappsolutions.com/blog/development/unsupervised-machine-learning/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -376,4 +376,4 @@ Additional important Jekyll concepts and practices can be found below.
 - [Useful Jekyll Plugins](http://planetjekyll.github.io/plugins/)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

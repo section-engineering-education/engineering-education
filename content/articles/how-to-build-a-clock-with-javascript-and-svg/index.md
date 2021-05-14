@@ -493,4 +493,4 @@ Happy coding!
 - [SVG by W3schools](https://www.w3schools.com/graphics/svg_intro.asp)
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

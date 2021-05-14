@@ -296,4 +296,4 @@ From the above tutorial, we have learned:
 You can, therefore, use this knowledge to develop more complex applications.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

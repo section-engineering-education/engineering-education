@@ -329,6 +329,6 @@ To get a better grip on the topic, take a look at these resources:
 - [Udemy course for Dart](https://www.udemy.com/course/dart-beginners-course/?couponCode=7CA93B47A390A81961E3)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 
 

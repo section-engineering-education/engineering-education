@@ -119,7 +119,7 @@ Fuzzy logic is an effective tool for solving various computing problems in the w
 - [IGI Global](https://www.igi-global.com/dictionary/granular-computing/17211)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async

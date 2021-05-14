@@ -389,4 +389,4 @@ For any query or clarification, do not hesitate to raise an issue in this [repos
 Till next time! Happy coding!
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)

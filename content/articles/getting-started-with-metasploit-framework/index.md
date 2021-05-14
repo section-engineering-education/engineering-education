@@ -235,4 +235,4 @@ In this article, we have learned the following:
 Happy learning! 
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)

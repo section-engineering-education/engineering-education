@@ -205,4 +205,4 @@ Such a speech recognizer feature is highly useful for many audio-text-based appl
 Happy coding.
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

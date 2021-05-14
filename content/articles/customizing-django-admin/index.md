@@ -304,4 +304,4 @@ Hope you found this tutorial helpful.
 Happy coding!  
 
 ---
-Peer Review Contributions by: [Geoffrey Mungai](/authors/geoffrey-mungai/)
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)

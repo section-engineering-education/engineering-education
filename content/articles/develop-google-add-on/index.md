@@ -279,4 +279,4 @@ Add-ons user interfaces are customizable thus developers' information is availab
 6. [https://developers.google.com/gsuite/add-ons/](https://developers.google.com/gsuite/add-ons/overview)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

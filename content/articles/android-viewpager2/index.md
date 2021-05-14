@@ -239,4 +239,4 @@ In this article, we have gone through creating the ViewPager2 component. We have
 Achieving the slide transition between content screens is relatively easy with the component. You don't need to implement gesture listeners since the component does that for you. You can find the app's source code on [Github](https://github.com/kayere/view-pager-example.git).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

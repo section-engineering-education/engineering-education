@@ -107,4 +107,4 @@ This helps make modifications and enhancements to improve the websites further. 
 - [What is a Lamp Stack?](https://phoenixnap.com/kb/what-is-a-lamp-stack)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

@@ -221,4 +221,4 @@ With that, you now know more about the navigation library and some of the extra 
 Understanding the navigation library is important for any Android developer. It helps you create better applications and allows you to customize the navigation process in your application. Feel free to raise a PR or an issue on [GitHub](https://github.com/LinusMuema/kotlin).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

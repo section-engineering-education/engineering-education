@@ -444,4 +444,4 @@ function myLastFunction(arg1, callback) {
 Async.js will help you manage the flow of your tasks. It helps to keep your code light and clean. It makes it easier to debug and handle errors within your script. Async.js makes you realize how simple your code can be by avoiding running into a [callback hell](http://callbackhell.com/).
 
 ---
-Peer Review Contributions by: [Linus Muema](/authors/linus-muema/)
+Peer Review Contributions by: [Linus Muema](/engineering-education/authors/linus-muema/)

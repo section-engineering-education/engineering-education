@@ -272,4 +272,4 @@ That's all for now. Hope you will consider the scalability of your algorithm nex
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

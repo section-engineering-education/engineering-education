@@ -330,4 +330,4 @@ With that, you now have a basic understanding of how RxJava operators work. It's
 They give the developer the freedom to modify the behavior and properties of the observables themselves. Go ahead and try out the other operators from the [official documentation](http://reactivex.io/documentation/operators.html). If any error comes up or an issue, feel free to raise it. 🤓
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

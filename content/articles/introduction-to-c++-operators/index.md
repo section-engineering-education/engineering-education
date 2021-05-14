@@ -495,4 +495,4 @@ In this article, we got to explore operators provided by the C++ language. You n
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

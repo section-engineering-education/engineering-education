@@ -141,4 +141,4 @@ The output of the code pops in a separate window. It should look like the image 
 ### Conclusion
 This was a fun experiment we coded in Python. We went over how to generate a virtual environment using Anaconda and how to install the needed packages to generate word clouds. I encourage you to test the program with various inputs and experiment with the code. Happy learning.
 
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

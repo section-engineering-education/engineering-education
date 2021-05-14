@@ -260,4 +260,4 @@ This article is an introduction to Amazon DynamoDB. There is more to explore on 
 You can also get a certification for DynamoDB under [AWS certified solutions architect associate](https://digitalcloud.training/certification-training/aws-solutions-architect-associate/database/).
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

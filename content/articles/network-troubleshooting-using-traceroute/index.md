@@ -195,4 +195,4 @@ Happy learning!
 - [IP Addressing and Subnetting from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html)
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)

@@ -118,4 +118,4 @@ The dominance of Bitcoin and Ethereum is not guaranteed forever. However, until 
 Happy learning.
 
 ---
-Peer Review Contributions by [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

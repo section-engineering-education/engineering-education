@@ -99,4 +99,4 @@ The most common wireless technologies in use today include:
 In this article, we have looked at wireless networks, how they works, and some defined standards. We have also seen different types of Wireless Networks and how they relate to each other. 
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

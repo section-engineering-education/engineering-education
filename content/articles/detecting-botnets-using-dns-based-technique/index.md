@@ -91,4 +91,4 @@ This is what has led to the importance of detection techniques of a botnet. As w
 -[Computer Weekly](https://www.computerweekly.com/tip/Four-handy-botnet-detection-techniques-and-tools-A-tutorial)
 
 ---
-Peer Review Contributions by: [Onesmus Mbaabu](/authors/onesmus-mbaabu/)
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)

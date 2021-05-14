@@ -667,5 +667,5 @@ python delete_table.py
 We have learned how to write python scripts for interacting with AWS DynamoDB using AWS SDK for Python, Boto3. For more on Boto3 usage with DynamoDB, check [AWS Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html). Find the source code created in this tutorial on [Github](https://github.com/Tsanguu/Python-Boto3-DynamoDB-Tutorial).
 
 ---
-Peer Review Contributions by: [Rahul Banerjee](/authors/rahul-banerjee/)
+Peer Review Contributions by: [Rahul Banerjee](/engineering-education/authors/rahul-banerjee/)
 

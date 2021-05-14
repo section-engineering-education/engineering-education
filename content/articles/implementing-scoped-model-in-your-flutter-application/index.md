@@ -300,4 +300,4 @@ The `scoped_model` simplifies the state management process. Data is passed from 
 - [Scoped_model](https://pub.dev/packages/scoped_model)
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

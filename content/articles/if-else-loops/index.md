@@ -127,4 +127,4 @@ The best way to practice loops is to actually do it. Here are some questions tha
 ### Takeaway
 In this article, we covered some basic and important topics such as **If Else** and **Loops**, that pave the foundation for [Competitive Programming](/how-to-start-competitive-programming/). The concept of If-Else and Loops are the bottom layer of Competitive Programming that anyone would need to master before moving forward. In upcoming articles, we will be covering other important topics such as Functions and File Handling. Stay tuned!
 
-Peer Review Contributions by: [Nadiv Gold Edelstein](/authors/nadiv-gold-edelstein/)
+Peer Review Contributions by: [Nadiv Gold Edelstein](/engineering-education/authors/nadiv-gold-edelstein/)

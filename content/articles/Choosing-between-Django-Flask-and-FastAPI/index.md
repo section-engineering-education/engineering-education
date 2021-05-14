@@ -119,4 +119,4 @@ After looking at them throughly, you might be able to choose which one works bes
 Flask is ideal for machine learning engineers or developers who want to quickly prototype a web application and build APIs easily and quickly. At the same time, FastAPI is perfect if you’re looking for speed or scalability. It is always wise to choose a framework based on what you want to use it for, but generally, they are all good and have a good market demand.
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

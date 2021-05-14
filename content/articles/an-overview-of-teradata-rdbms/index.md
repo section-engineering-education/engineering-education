@@ -137,4 +137,4 @@ Teradata is used in various industries such as healthcare, finance, manufacturin
 - [Slide Share](https://www.slideshare.net/bigclasses/introduction-to-teradata-how-teradata-works)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

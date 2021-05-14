@@ -385,4 +385,4 @@ The source code for this tutorial can be found in this [GitHub repository](https
 Happy coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

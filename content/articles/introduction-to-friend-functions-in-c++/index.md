@@ -231,4 +231,4 @@ In this article, we learned about friend functions and friend classes, what they
 - [C++ friend Function and friend Classes](https://www.programiz.com/cpp-programming/friend-function-class)
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

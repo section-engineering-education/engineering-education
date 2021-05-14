@@ -326,4 +326,4 @@ In this article, we have covered how to implement caching on a Node.js REST API 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

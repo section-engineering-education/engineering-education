@@ -195,4 +195,4 @@ Besides looking at model evaluation techniques, we have gone over a few importan
 6. [How to Evaluate Machine Learning Algorithms](https://machinelearningmastery.com/how-to-evaluate-machine-learning-algorithms/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

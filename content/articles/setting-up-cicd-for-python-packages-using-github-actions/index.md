@@ -307,4 +307,4 @@ Happy building!
 - [How to Build a Python Package?](https://edeediong.me/how-to-build-a-python-package)
 
 ---
-Peer Review Contributions by: [Srishilesh P S](/authors/srishilesh-p-s/)
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)

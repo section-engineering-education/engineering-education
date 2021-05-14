@@ -230,4 +230,4 @@ Happy coding and stay safe!
 - [Telegraf documentation](https://telegraf.js.org/)
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

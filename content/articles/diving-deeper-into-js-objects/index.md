@@ -588,4 +588,4 @@ You can also access the code we have written throughout the article from [here](
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

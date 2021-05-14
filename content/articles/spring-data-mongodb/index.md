@@ -313,4 +313,4 @@ You can find the source code [here](https://github.com/paulodhiambo/mongodb).
 Happy coding.
 
 ---
-Peer review contribution by: [Linus Muema](/authors/linus-muema/)
+Peer review contribution by: [Linus Muema](/engineering-education/authors/linus-muema/)

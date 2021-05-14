@@ -262,4 +262,4 @@ We have seen the benefits of using namespace in our programs, with our examples 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by: [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

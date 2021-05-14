@@ -291,4 +291,4 @@ By creating a class, we can have more secure programs due to the emphasis on dat
 Happy Coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

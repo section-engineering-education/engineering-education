@@ -765,4 +765,4 @@ When you open the users' section in the Firebase console you'll find all signed-
 In this article, we've learned some of the best that Firebase has to offer and particularly authentication. The project we created can be improved further for production apps and it'll still work fine. I can't wait to see what you'll build with Firebase authentication.
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

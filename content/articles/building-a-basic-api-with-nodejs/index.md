@@ -220,4 +220,4 @@ I encourage you to try to implement other request types and expand your API to a
 [“RESTful Web Services - Introduction.”](https://www.tutorialspoint.com/restful/restful_introduction.htm)
 
 ---
-Peer Review Contributions by: [Louise Findlay](/authors/louise-findlay/)
+Peer Review Contributions by: [Louise Findlay](/engineering-education/authors/louise-findlay/)

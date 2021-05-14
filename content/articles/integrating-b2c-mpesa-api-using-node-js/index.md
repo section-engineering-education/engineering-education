@@ -272,4 +272,4 @@ To expand your knowledge on the covered topics, check out the following resource
 Happy coding!!
 
 ---
-Peer Review Contributions by: [Wanja Mike](/authors/michael-barasa/)
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)

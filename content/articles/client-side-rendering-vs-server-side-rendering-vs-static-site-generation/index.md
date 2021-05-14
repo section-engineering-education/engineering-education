@@ -259,4 +259,4 @@ I hope you found the blog helpful in understanding and deciding which approach b
 Happy learning!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

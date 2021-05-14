@@ -119,4 +119,4 @@ Happy simulation!
 3. https://www.sciencedirect.com/topics/computer-science/simulink
 
 ---
-Peer Review Contributions by: [Ahmad Mardeni](/authors/ahmad-mardeni/)
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)

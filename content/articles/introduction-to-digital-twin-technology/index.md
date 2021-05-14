@@ -152,4 +152,4 @@ It will drive business value through improvements in the existing processes, pro
 [Anylogic](https://www.anylogic.com/resources/white-papers/an-introduction-to-digital-twin-development/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

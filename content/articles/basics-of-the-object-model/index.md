@@ -146,4 +146,4 @@ The object model is built on a collection of models. The object model describes 
 That's all there is for this article. I hope this article  will shed some light on the object model and its techniques. Good luck!
 
 ---
-Peer Review Contributions by: [Peter Kayere](/authors/peter-kayere/)
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)

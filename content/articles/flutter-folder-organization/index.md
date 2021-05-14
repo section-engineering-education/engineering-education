@@ -108,5 +108,5 @@ Follow along with me in the next article to build a working application using th
 Happy coding.
 
 ---
-Peer Review Contributions by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
 

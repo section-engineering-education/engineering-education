@@ -381,4 +381,4 @@ We now understand how to create and document our restful endpoint APIS in Django
 In our next article, we will secure our endpoints and add social authentication to our app.
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

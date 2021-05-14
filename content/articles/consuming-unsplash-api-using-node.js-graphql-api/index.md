@@ -457,4 +457,4 @@ The ease of use of the API makes peace with every software developer interested 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Daniel Katungi](/authors/daniel-katungi/)
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)

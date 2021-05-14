@@ -225,4 +225,4 @@ Happy coding! 🙂
 - [Django Forms Project Documentation](https://docs.djangoproject.com/en/3.1/topics/forms/modelforms/)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

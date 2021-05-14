@@ -252,4 +252,4 @@ As described, Node.js and C/C++ offer several features. Based on preferences and
 Happy coding!  
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)

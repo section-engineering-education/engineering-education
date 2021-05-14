@@ -290,4 +290,4 @@ Regular Expressions is a tool that comes in handy to avoid messy code and improv
 7. [Rexegg](https://www.rexegg.com/)
 
 ---
-Peer Review Contributions by: [Adrian Murage](/authors/adrian-murage/)
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)

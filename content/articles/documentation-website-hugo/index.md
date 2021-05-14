@@ -246,4 +246,4 @@ There are tons of other configuration options you can edit to improve the look a
 Visit [gohugo.io](https://gohugo.io/documentation/) and [Docsy.dev](https://www.docsy.dev/docs/) to check out these other options.
 
 ---
-Peer Review Contributions by: [Gregory Manley](/authors/gregory-manley/)
+Peer Review Contributions by: [Gregory Manley](/engineering-education/authors/gregory-manley/)

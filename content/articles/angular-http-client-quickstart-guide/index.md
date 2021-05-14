@@ -211,5 +211,5 @@ We've seen how we can make requests to external web services and how to use thes
 Happy coding.
 
 ---
-Peer review contribution by: [Odhiambo Paul](/authors/odhiambo-paul/)
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
 

@@ -177,4 +177,4 @@ Docker is a great tool for building and packaging applications with the required
 Happy coding!
 
 ---
-Peer Review Contributions by: [Miller Juma](/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)

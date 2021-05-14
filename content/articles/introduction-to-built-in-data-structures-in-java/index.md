@@ -380,4 +380,4 @@ To summarize:
 - [Oracle Documentation on Queue](https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html)
 
 ---
-Peer Review Contributions by [Saiharsha Balasubramaniam](/authors/saiharsha-balasubramaniam/)
+Peer Review Contributions by [Saiharsha Balasubramaniam](/engineering-education/authors/saiharsha-balasubramaniam/)

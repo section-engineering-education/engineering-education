@@ -396,5 +396,5 @@ This concept has been applied to several JavaScript libraries such as:
 I hope this guide helped you understand the concept of Memoization and implement it with your heavy JavaScript computations.
 
 ---
-Peer Review Contributions by: [Mohan Raj](/authors/mohan-raj/)
+Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)
 

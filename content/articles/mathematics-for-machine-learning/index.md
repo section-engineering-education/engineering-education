@@ -160,4 +160,4 @@ As a starter, this [book](https://mml-book.github.io/) is a great resource publi
 6. [Principal Component Analysis (PCA) ](https://royalsocietypublishing.org/doi/10.1098/rsta.2015.0202)
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
