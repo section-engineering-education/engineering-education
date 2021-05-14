@@ -44,7 +44,7 @@ CSS-in-JS is an improvement over pure CSS for various reasons, but the end goal 
 
 CSS-in-JS is the best styling technique to use with web components. But, this doesn’t render CSS redundant because it does have its pros and cons.
 
-![A code example of style declaration in the JavaScript variable font](/css-in-js-solutions/js.png)
+![A code example of style declaration in the JavaScript variable font](/engineering-education/css-in-js-solutions/js.png)
 
 ### Pros of CSS
 1. Inline Styling: The use of inline styles enhances website performance because the browser loads the CSS within elements faster before loading external styles.

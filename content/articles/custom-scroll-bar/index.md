@@ -261,9 +261,9 @@ The CSS code:
 ### Final application
 The scrollbar will have a background color of `linear-gradient(transparent, #00c6ff);` when in the hover state.
 
-![the application on hover](/custom-scroll-bar/img_1.png)
+![the application on hover](/engineering-education/custom-scroll-bar/img_1.png)
 
-![the application photo](/custom-scroll-bar/img_2.png)
+![the application photo](/engineering-education/custom-scroll-bar/img_2.png)
 
 That is our final application that implements the scrollbar feature. The [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars) documentation is an awesome resource to reference and check on the current browser support.
 

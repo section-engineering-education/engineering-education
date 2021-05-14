@@ -123,7 +123,7 @@ Open this [URL](https://old.reddit.com/top/) then press **F12** to inspect the p
 
 After doing the process above on the first title on the page, you can see the following code with a highlight for the tag that holds the data you right-clicked on:
 
-![](/getting-started-with-web-scraping-using-python/1.PNG)
+![](/engineering-education/getting-started-with-web-scraping-using-python/1.PNG)
 
 Now let's pull out every title on that page. You can see that there is a "div" that contains a table called siteTable, then the title is within it.
 
@@ -194,7 +194,7 @@ In the code above you can change **US** in the URL to the name of your country, 
 
 Now if we open this [URL](https://www.worldometers.info/coronavirus/country/us/) and scroll down to the **UPDATES** section, then right-click on the "new cases" and click on inspect, we will see the following HTML code for it:
 
-![](/getting-started-with-web-scraping-using-python/2.PNG)
+![](/engineering-education/getting-started-with-web-scraping-using-python/2.PNG)
 
 We can see that the new cases and deaths part is within the "li" tag and "news_li" class, let's write a code snippet to extract that data from it.
 
@@ -218,7 +218,7 @@ The delay time before the next notification will pop up is set to 20 seconds whi
 
 After running our code you will see the following notification in the right-hand corner of your desktop.
 
-![](/getting-started-with-web-scraping-using-python/3.PNG)
+![](/engineering-education/getting-started-with-web-scraping-using-python/3.PNG)
 
 ### Conclusion
 We’ve just proven that anything on the web can be scraped and stored, there are a lot of reasons why we would want to use that information, as an example:

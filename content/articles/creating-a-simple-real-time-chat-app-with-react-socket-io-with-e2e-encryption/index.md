@@ -40,7 +40,7 @@ For the backend, we'll use Node.js and the Express framework. Socket.io is neede
 
 The folder structure for our backend will look as follows:
 
-![backend folder structure](/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/backend-folders.PNG)
+![backend folder structure](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/backend-folders.PNG)
 
 ### Coding the backend
 
@@ -206,7 +206,7 @@ We will use React, [Redux library](https://redux.js.org/tutorials/essentials/par
 
 The folder structure for our client-side will appear as below:
 
-![frontend folder structure](/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/frontend-folders.PNG)
+![frontend folder structure](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/frontend-folders.PNG)
 
 ### Coding the frontend
 
@@ -852,7 +852,7 @@ To achieve this, we need to edit the React App's `package.json` file located at 
 
 The `package.json` file will appear as below:
 
-![package.json file](/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/packagejson.PNG)
+![package.json file](/engineering-education/creating-a-real-time-chat-app-with-react-socket-io-with-e2e-encryption/packagejson.PNG)
 
 To run our server, navigate to the backend directory and type the commands below in the terminal:
 

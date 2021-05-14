@@ -35,7 +35,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Ensure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-landmark-recognition/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-landmark-recognition/env_setup.png)
 
 Head to [Firebase Console](https://console.firebase.google.com/u/0/) and create a new project.
 
@@ -50,7 +50,7 @@ You can check out the final code in this [GitHub Repository](https://github.com/
 
 In the starter code, I've added 2 buttons: One to pick a photo from the gallery and one to take a photo using the `react-native-image-picker` library. When the user selects the image, use a state to store the image's URI and display it on the UI.
 
-![With Image](/react-native-firebase-landmark-recognition/with_image.jpg)
+![With Image](/engineering-education/react-native-firebase-landmark-recognition/with_image.jpg)
 
 If you'd like to learn how to build this starter code, refer to my previous article about [Image Labeling using Firebase ML in React Native](/react-native-firebase-image-labeling/).
 
@@ -132,7 +132,7 @@ We'll render the UI using the state that we set up.
 ))}
 ```
 
-![Final Result](/react-native-firebase-landmark-recognition/final_result.jpg)
+![Final Result](/engineering-education/react-native-firebase-landmark-recognition/final_result.jpg)
 
 ### Additional configurations
 The `cloudLandmarkRecognizerProcessImage` method accepts an optional configuration object.

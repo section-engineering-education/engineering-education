@@ -535,12 +535,12 @@ console.log(today);
 ```
 
 `moment@2.28.0`
-![moment](/javascript-dates-manipulation-with-date-fns/moment.png)
+![moment](/engineering-education/javascript-dates-manipulation-with-date-fns/moment.png)
 
 [Source: bundlephobia](https://bundlephobia.com/)
 
 `date-fns@2.16.1`
-![date-fns](/javascript-dates-manipulation-with-date-fns/date-fns.png)
+![date-fns](/engineering-education/javascript-dates-manipulation-with-date-fns/date-fns.png)
 
 [Source: bundlephobia](https://bundlephobia.com/)
 
@@ -552,17 +552,17 @@ If you are dealing with time zones, I would suggest you check out Moment.js. Its
 
 #### Statistical Comparison
 - NPM download stats
-![npm-download-insights](/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
+![npm-download-insights](/engineering-education/javascript-dates-manipulation-with-date-fns/npm-download-insights.png)
 
 [Source: nodejs libhunt](https://nodejs.libhunt.com/compare-moment-vs-date-fns).
 
 - GitHub stats
-![github-stats.png](/javascript-dates-manipulation-with-date-fns/github-stats.png)
+![github-stats.png](/engineering-education/javascript-dates-manipulation-with-date-fns/github-stats.png)
 
 [Source: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
 
 - Popularity and activity popularity and activity
-![popularity-and-activity](/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
+![popularity-and-activity](/engineering-education/javascript-dates-manipulation-with-date-fns/popularity-and-activity.png)
 
 [Source: npmtrends](https://www.npmtrends.com/date-fns-vs-moment)
 

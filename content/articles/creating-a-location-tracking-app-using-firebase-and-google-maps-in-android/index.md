@@ -29,7 +29,7 @@ From this tutorial, you will be able to come up with two simple applications to 
 ### Step 1 - Create a new project
 Create a new project on Android Studio. On the select `Project template` page, choose the `Google Maps Activity` template.
 
-![project template](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/project-template.png)
+![project template](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/project-template.png)
 
 Wait for Android Studio to build your project.
 
@@ -50,19 +50,19 @@ You need to create an `API key` and enable it in the `developer console` before 
 
 Open `res/values/google_maps_api.xml`. This is what you will see.
 
-![Console link](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/console-link.png)
+![Console link](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/console-link.png)
 
 This file will contain your `API key`. Click on the underlined link and press `create a project` and continue.
 
-![create project](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/create-project.png)
+![create project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/create-project.png)
 
 In the next screen, you will need to create an `API key` to call the API.
 
-![create API Key](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/create-api-key.png)
+![create API Key](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/create-api-key.png)
 
 The `API key` is in `purple`.
 
-![API Key](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/api-key.png)
+![API Key](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/api-key.png)
 
 Once you have the `API key`, copy and paste it in the value of `google_maps_key` in the XML file.
 
@@ -102,14 +102,14 @@ At this point, once you run the app, you will notice that the marker is in Sydne
 ### Step 3 - Creating a Firebase project
 We will use Firebase to store the user's location. Once again, you will need a Google account. You can sign up [here](https://console.firebase.google.com).
 
-![Firebase Introduction](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/firebaseintro.png)
+![Firebase Introduction](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/firebaseintro.png)
 
 ### Step 4 - Connect the Firebase project to the app
 You now need to connect the project to your app.
 
 - Go to tools>firebase
 
-![Firebase in Android Studio](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/fb-androidstudio.png)
+![Firebase in Android Studio](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/fb-androidstudio.png)
 
 Make sure you add the `Realtime Database` to your app.
 
@@ -235,17 +235,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 ### Step 7 - Run the app
 Run the app. This is what you will achieve (locations may differ). Give the app location permission.
 
-![project](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatrack-perm.png)
+![project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatrack-perm.png)
 
 The user location will be seen as shown below:
 
-![project](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatrack.png)
+![project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatrack.png)
 
 From the code above, you have successfully saved the user's location in a database. Navigate to the Firebase console and click on the project you had created. 
 
 You should see something similar to this.
 
-![project](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/database-state.png)
+![project](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/database-state.png)
 
 ### The LocationChecker app
 This second application allows you to retrieve the user's location from the database.
@@ -256,7 +256,7 @@ Follow the process discussed above to create a new project. Make sure you select
 ### Step 2: Add credentials to an existing key
 Since we already have an `API key`, we can just include it in the console. Open your developer's console and click on the `edit icon`.
 
-![Add Item](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/add-item.png)
+![Add Item](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/add-item.png)
 
 Navigate to the `google_maps_api.xml` file and copy the package name and SHA-1 certificate fingerprint, paste these details on the `add item` section. Then, save the changes.
 
@@ -395,7 +395,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 When you run the app, you should be able to get a similar view (locations will differ):
 
-![Location checker](/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatchecker.png)
+![Location checker](/engineering-education/creating-a-location-tracking-app-using-firebase-and-google-maps-in-android/locatchecker.png)
 
 ### Testing the apps
 Install both apps on your phone. Make sure the internet connection is good. Check the database for the saved location. On the second app, LocationChecker, check if the location was retrieved.

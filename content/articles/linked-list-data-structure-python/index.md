@@ -19,7 +19,7 @@ images:
 We're almost at the end of the line with this series, having mastered all the Linear Data Structures in Python. To finish things off, we have the most sophisticated Linear Data Structure, the mighty **Linked List.** 😏
 <!--more-->
 
-![Thanos Meme, Linked List](/linked-list-data-structure-python/thanosll.jpg)<br>
+![Thanos Meme, Linked List](/engineering-education/linked-list-data-structure-python/thanosll.jpg)<br>
 As the meme says, the head is the most integral part of the linked list!
 
 Well, the Linked List is not as sophisticated as you think. It's extremely powerful though.
@@ -48,10 +48,10 @@ Linked Lists are a chain of **nodes**, connected together by links. Every node (
 - **Data** -> The item to be stored in the node.
 - **Next** -> The link or **reference** to the next node.
 
-![Node, Linked List](/linked-list-data-structure-python/nodell.png)<br>
+![Node, Linked List](/engineering-education/linked-list-data-structure-python/nodell.png)<br>
 In a linked list, the first node is called the **head** and the last node is determined by the condition that the **next** points to a null value.
 
-![Null, Linked List](/linked-list-data-structure-python/nonell.jpg)
+![Null, Linked List](/engineering-education/linked-list-data-structure-python/nonell.jpg)
 
 ## Uses of Linked Lists
 
@@ -160,7 +160,7 @@ class LinkedList(object):
 
 A doubly linked list is similar to a singly linked list. It differs in that it also contains a link to the previous node.
 
-![Doubly Linked List](/linked-list-data-structure-python/doublyll.png)<br>
+![Doubly Linked List](/engineering-education/linked-list-data-structure-python/doublyll.png)<br>
 We implement the following methods for the Doubly Linked List data structure: 
 
 - **```dll.addNodeLast(x)```** -> Adds a node at the right end of the linked list.

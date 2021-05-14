@@ -124,7 +124,7 @@ npm init
 
 The resulting `package.json` file should look like this:
 
-![package.json](/uploading-files-using-multer-nodejs/json.png)
+![package.json](/engineering-education/uploading-files-using-multer-nodejs/json.png)
 
 ### Setting up the project with Node.js, Express, and MongoDB
 First, we need to install the three most important npm packages that we need for this tutorial. 
@@ -299,7 +299,7 @@ app.use("/", (req, res) => {
 
 After all these steps, your `app.js` file should look like this.
 
-![app.js](/uploading-files-using-multer-nodejs/appjs.png)
+![app.js](/engineering-education/uploading-files-using-multer-nodejs/appjs.png)
 
 Restart the server with the same command as above:
 
@@ -450,7 +450,7 @@ Open that file and change the value of the action attribute in the form to '/api
 
 Just to make sure that we are on the same page, here is the state of the app.js file up to now.
 
-![app.js](/uploading-files-using-multer-nodejs/appjs2.png)
+![app.js](/engineering-education/uploading-files-using-multer-nodejs/appjs2.png)
 
 Finally, you can upload a file from your rendered page. You should see something like this on your terminal window when you hit submit.
 
@@ -569,11 +569,11 @@ try {
 ```
 
 #### Updated app.js File
-![app.js3](/uploading-files-using-multer-nodejs/appjs3.png)
+![app.js3](/engineering-education/uploading-files-using-multer-nodejs/appjs3.png)
 
 Know if you upload a file and hit submit again, the name of the file will be saved in your cloud database. To see that, you can go to your cluster at the MongoDB site, and in the collections, you should see something like the image below:
 
-![atlas](/uploading-files-using-multer-nodejs/atlas.png)
+![atlas](/engineering-education/uploading-files-using-multer-nodejs/atlas.png)
 
 Note that, the name of the file in the database should match the filename in your disk storage and this is how we can upload a file using Multer as a middleware in a node.js application.
 

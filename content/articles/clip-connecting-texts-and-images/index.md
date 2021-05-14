@@ -38,7 +38,7 @@ So, how does the CLIP model connect images and texts?
 
 ### Approach
 
-![The CLIP model](/clip-connecting-texts-and-images/clip-model.PNG)
+![The CLIP model](/engineering-education/clip-connecting-texts-and-images/clip-model.PNG)
 
 *[Image Source: OpenAI](https://cdn.openai.com/papers/Learning_Transferable_Visual_Models_From_Natural_Language_Supervision.pdf)*
 
@@ -86,7 +86,7 @@ Now, let's take a look at their results.
 
 ### Results
 
-![Results on different datasets](/clip-connecting-texts-and-images/results-on-different-datasets.PNG)
+![Results on different datasets](/engineering-education/clip-connecting-texts-and-images/results-on-different-datasets.PNG)
 
 *[Image Source: OpenAI](https://openai.com/blog/clip/)*
 

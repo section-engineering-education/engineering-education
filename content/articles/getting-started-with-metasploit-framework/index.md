@@ -66,7 +66,7 @@ $ msfconsole
 
 Starting Metasploit may take a while since it loads everything in RAM. So be patient.
 
-![Metasploit started](/getting-started-with-metasploit-framework/metasploit1.png)
+![Metasploit started](/engineering-education/getting-started-with-metasploit-framework/metasploit1.png)
 
 Hurrah! You have successfully started your Metasploit-Framework.
 
@@ -118,7 +118,7 @@ msf5 > search type:exploit platform:windows multi/handler
 
 As you can see from the example below, Metasploit returns modules fitting the search parameters.
 
-![Search Result](/getting-started-with-metasploit-framework/search.png)
+![Search Result](/engineering-education/getting-started-with-metasploit-framework/search.png)
 
 #### 3. use
 The `use` command stages an exploit and makes it available when an exploit is run.
@@ -130,7 +130,7 @@ msf5 > use exploit/multi/handler
 
 If the module is successfully staged, Metasploit will respond by showing the type of exploit and abbreviates it in red as shown below.
 
-![Use Result](/getting-started-with-metasploit-framework/use.png)
+![Use Result](/engineering-education/getting-started-with-metasploit-framework/use.png)
 
 #### 4. info
 After staging an exploit, you can run the `info` command to retrieve information like the name, author, and platform of the exploit.
@@ -140,7 +140,7 @@ Run the command as shown below:
 msf5 > info
 ```
 
-![Info result](/getting-started-with-metasploit-framework/info.png)
+![Info result](/engineering-education/getting-started-with-metasploit-framework/info.png)
 
 #### 5. show
 After successfully staging an exploit, use the `show` command to see the available payloads, targets, or options corresponding with the staged exploit.
@@ -155,7 +155,7 @@ Run the following command:
 msf5 > show payloads
 ```
 
-![Show payload result](/getting-started-with-metasploit-framework/showPayload.png)
+![Show payload result](/engineering-education/getting-started-with-metasploit-framework/showPayload.png)
 
 #### 2. show targets
 The command `show targets`, lists all the targets vulnerable to the staged exploit. A target's vulnerability can vary depending on the Operating system, update, language among others things.
@@ -165,7 +165,7 @@ Run the command as shown below:
 msf5 > show targets
 ```
 
-![Show target result](/getting-started-with-metasploit-framework/showTarget.png)
+![Show target result](/engineering-education/getting-started-with-metasploit-framework/showTarget.png)
 
 As you can see from the example above, we have a target vulnerable to the exploit we used.
 
@@ -177,7 +177,7 @@ The command is run as shown below:
 msf5 > show options
 ```
 
-![Show options result](/getting-started-with-metasploit-framework/showOptions.png)
+![Show options result](/engineering-education/getting-started-with-metasploit-framework/showOptions.png)
 
 ### 6. Set
 This command sets an option or overwrites an undesired option. The options to be `set` depends on the staged module. Options to be set may include RHOST, LHOST, PATH, etc.
@@ -187,7 +187,7 @@ Options can be set as the following:
 msf5 > set LHOST 192.168.234.122
 ```
 
-![set result](/getting-started-with-metasploit-framework/set.png)
+![set result](/engineering-education/getting-started-with-metasploit-framework/set.png)
 
 As you can now see from the show options, the LHOST has been successfully set.
 
@@ -207,7 +207,7 @@ Run the command as shown below:
 msf5 > back
 ```
 
-![back result](/getting-started-with-metasploit-framework/back.png)
+![back result](/engineering-education/getting-started-with-metasploit-framework/back.png)
 
 ### 9. exit
 This command exits the `msfconsole` and takes us back to the terminal:
@@ -215,7 +215,7 @@ This command exits the `msfconsole` and takes us back to the terminal:
 msf5 > exit
 ```
 
-![Exit Result](/getting-started-with-metasploit-framework/exit.png)
+![Exit Result](/engineering-education/getting-started-with-metasploit-framework/exit.png)
 
 ### Conclusion
 I suggest you use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2) to practice your exploits since it provides a secure environment to perform penetration testing and security research.

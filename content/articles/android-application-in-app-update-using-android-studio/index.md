@@ -473,7 +473,7 @@ public class Flexible extends AppCompatActivity {
 }
 ```
 
-![image](/android-application-in-app-update-using-android-studio/flexible.png)
+![image](/engineering-education/android-application-in-app-update-using-android-studio/flexible.png)
 
 #### Immediate
 
@@ -530,7 +530,7 @@ public class Immediate extends AppCompatActivity {
 }
 ```
 
-![image](/android-application-in-app-update-using-android-studio/immediate.png)
+![image](/engineering-education/android-application-in-app-update-using-android-studio/immediate.png)
 
 ### Conclusion
 I hope this guide helps you implement in-app updates, both immediate and flexible, within your application context.

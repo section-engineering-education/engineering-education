@@ -35,15 +35,15 @@ To complete this tutorial you will need to have an AWS account and a Linux machi
 3. Scroll down to the "Launch Instance" prompt and click on it.
 4. You will then navigate to a page where you get to choose an Amazon Machine Image.
 5. Under QuickStart, you should select the Ubuntu Server 18.04 LTS that is Free tier eligible.
-![Choose an Amazon Machine Image](/setup-ssh-ubuntu-vm-aws/ami.png)
+![Choose an Amazon Machine Image](/engineering-education/setup-ssh-ubuntu-vm-aws/ami.png)
 6. Navigate to the tab where you select the Instance type. For this case, a General Purpose t3.micro instance that is Free tier eligible is sufficient.
-![Select Instance Type](/setup-ssh-ubuntu-vm-aws/instance_type.png)
+![Select Instance Type](/engineering-education/setup-ssh-ubuntu-vm-aws/instance_type.png)
 7. Click the button labeled "Next: Configure Instance Details".
 8. On the next three subsequent pages, you do not need to make any changes. (Click the buttons labelled "Next: Add storage", "Next: Add Tags" and "Configure Security Group" respectively.)
 9. On the Configure Security Group page, select create a new security group and leave everything else as is. (Ignore the displayed warning.) Click "Review and Launch".
-![Configure Security Group](/setup-ssh-ubuntu-vm-aws/configure_security_group.png)
+![Configure Security Group](/engineering-education/setup-ssh-ubuntu-vm-aws/configure_security_group.png)
 10. On the Launch Page, click on "Launch", which will trigger a prompt. Select "create a new key pair". Name the key pair and download it. (Later on, you will use your_pem_file.pem to SSH into the Virtual Machine instance you are about to launch.) When done, you can then click on "Launch Instances".
-![Launch Instance](/setup-ssh-ubuntu-vm-aws/launch_instance.png)
+![Launch Instance](/engineering-education/setup-ssh-ubuntu-vm-aws/launch_instance.png)
 
 **CONGRATULATIONS!!** You have managed to set up and launch your own Virtual Machine Instance.
 Now you can move on to connecting to it remotely via the [SSH protocol](https://www.ssh.com/ssh/protocol/).
@@ -68,7 +68,7 @@ chmod 400 ~/.ssh/your_pem_file.pem
 To gain an understanding of how the `chmod` command works, read up on [Linux File Permissions](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/).
 
 At this point, you're almost ready to SSH into your Virtual Machine Instance. You need one last thing – your Virtual Machine's IP address. You can get this from the AWS console, as shown in the image below.
-![Virtual Machine IP address](/setup-ssh-ubuntu-vm-aws/ip_address.png)<br>
+![Virtual Machine IP address](/engineering-education/setup-ssh-ubuntu-vm-aws/ip_address.png)<br>
 Now you can ssh into your instance by running the ssh command:
 
 ```bash
@@ -116,4 +116,4 @@ To terminate the instance, right click on the instance in the console:
 
 **Instance State > Terminate**
 
-![Terminate Virtual Machine Instance](/setup-ssh-ubuntu-vm-aws/terminate_instance.png)
+![Terminate Virtual Machine Instance](/engineering-education/setup-ssh-ubuntu-vm-aws/terminate_instance.png)

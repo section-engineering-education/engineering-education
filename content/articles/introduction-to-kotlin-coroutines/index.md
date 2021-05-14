@@ -33,7 +33,7 @@ On the next window, select kotlin, console application.
 
 Choose the project JDK, download one if none is installed.
 
-![New project](/introduction-to-kotlin-coroutines/new-project.png)
+![New project](/engineering-education/introduction-to-kotlin-coroutines/new-project.png)
 
 Give the project a name and click `next`. Leave the next screen to default settings and click finish.
 

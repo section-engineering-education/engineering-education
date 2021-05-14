@@ -108,7 +108,7 @@ Earlier on, we talked about systemd starting up services required hitting a defa
 
 A visual cue could be of help here.
 
-![Figure 1. Dependency tree](/understanding-systemd/figure-1.png)
+![Figure 1. Dependency tree](/engineering-education/understanding-systemd/figure-1.png)
 
 So it turns out that dependency management is difficult in modern Linux machines. These machines have many services that depend on each other. One service failure can solely freeze the boot process of a Linux machine.
 
@@ -145,7 +145,7 @@ NB: *howlinuxworks* notes that unit files are derived from the XDG Desktop Entry
 ### Service section
 The service section contains configurations applicable only to .service unit files. 
 
-![Figure 2: An example of a unit file (.service) with Sections and Directives](/understanding-systemd/figure-2.png)
+![Figure 2: An example of a unit file (.service) with Sections and Directives](/engineering-education/understanding-systemd/figure-2.png)
 
 Figure 2 contains three directives - [Unit], [Service] and [Install] with their respective directives.
 
@@ -167,7 +167,7 @@ We talked about the remaining directives of the Unit section above. You can also
 ### Install section
 This section can be used to manage dependencies as well. It is used to define the behavior of a unit when enabled or disabled without modifying any configuration file. There are two directives commonly used within this section.
 
-![Figure 3. symbolic link of ssh.service](/understanding-systemd/figure-3.png)
+![Figure 3. symbolic link of ssh.service](/engineering-education/understanding-systemd/figure-3.png)
 
 - **WantedBy:** Figure 2 above has a WantedBy dependency in its install section. systemd usually ignores this section during its normal operation. systemd processes this section when it is enabled. The WantedBy dependency establishes a relationship between the current unit and the dependency unit without modifying the dependency unit (just like the Wants dependency of the unit section). 
 
@@ -236,25 +236,25 @@ Install stress via "**sudo apt install stress**" and create a file service named
 
 Define the body of this file with the following section and directives like this:
 
-![Figure 4. foo.serviceExecStart directives defines the program for execution](/understanding-systemd/figure-4.png)
+![Figure 4. foo.serviceExecStart directives defines the program for execution](/engineering-education/understanding-systemd/figure-4.png)
 
 This creates a cgroup for foo.service using the ExecStart --CPU,--io,--vm,--vm-bytes flags to specify values for their respective cgroup subsystem.
 
 "**sudo systemctl start foo.service**" starts the service and "**sudo systemctl status foo.service**" to view the status.
 
-![Figure 5. foo.service current status](/understanding-systemd/figure-5.png)
+![Figure 5. foo.service current status](/engineering-education/understanding-systemd/figure-5.png)
 
 To create a drop in file for foo.service in **/etc/systemd/system/**, create a foo.service.d directory create 00-foo.conf which is the drop-in file.
 
 Edit 00.foo.conf to look like this:
 
-![Figure 6. Drop-in file for foo.service](/understanding-systemd/figure-6.png)
+![Figure 6. Drop-in file for foo.service](/engineering-education/understanding-systemd/figure-6.png)
 
 When modifying ExecStart of the actual unit file in a drop-in file, make sure to define ExecStart to nothing and redefine it to a new command just like we have above.
 
 Now, ExecStart has been successfully modified in **/etc/systemd/system/foo.service** without actually writing to it. Restart the service to see the change.
 
-![Figure 7. Drop-in file modifying foo.service](/understanding-systemd/figure-7.png)
+![Figure 7. Drop-in file modifying foo.service](/engineering-education/understanding-systemd/figure-7.png)
 
 **NB: You should reload the systemd daemon before restarting.**
 

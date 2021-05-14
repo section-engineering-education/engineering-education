@@ -48,7 +48,7 @@ However, a key distinction is that we do not specify a set of possible values fo
 
 This technique allows us to control the number of attempted hyperparameter combinations. Unlike grid search, where every possible combination is attempted, random search allows us to specify the number of models to train. We can base our search iterations on our computational resources or the time taken per iteration. The image below shows a random layout.
 
-![randomgrid](/random-search-hyperparameters/randomgrid.png)
+![randomgrid](/engineering-education/random-search-hyperparameters/randomgrid.png)
 
 [*Random layout - Image Source*](https://jmlr.csail.mit.edu/papers/volume13/bergstra12a/bergstra12a.pdf)
 

@@ -111,7 +111,7 @@ For the configurations above to work in our applications, we must set up Gmail t
 - On your Gmail account, click on `manage account`.
 - On the `manage account` screen click on the `security` menu item and select `turn on access to less secure apps` as shown below.
 
-![Turning on access to less secure apps](/spring-boot-smtp/google-auth.png)
+![Turning on access to less secure apps](/engineering-education/spring-boot-smtp/google-auth.png)
 
 ### Domain layer
 Since we are going to create a simple API endpoint that allows users to request with the mail message, recipient, and the subject of the mail, we are going to create a POJO for the mail.

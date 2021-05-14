@@ -22,7 +22,7 @@ Contrast means to make things stand out from each other. You may notice that the
 
 If you want one really big thing for the reader to focus on, make it contrast with the rest of the page. Consider the following two pages:
 
-![On the left, an image showing an example of poor contrast, where everything is the same size. On the right, the meeting title is the largest element, the next largest is the date and time, and the smallest are the details](/crap-design/contrast.jpg)
+![On the left, an image showing an example of poor contrast, where everything is the same size. On the right, the meeting title is the largest element, the next largest is the date and time, and the smallest are the details](/engineering-education/crap-design/contrast.jpg)
 
 On the left, it's hard to immediately tell what you need to focus on. On the right, the biggest element is the title, which gives a very good idea of what the meeting is. The next most important thing is logistics, which would be the date and time. That's why that is the second biggest. The exact details here are less important, so we can afford to make that smaller.
 
@@ -31,7 +31,7 @@ Of course, if you're writing text that's supposed to be read in order, like in a
 
 Repetition can also be useful for tying related ideas together. Imagine if all the paragraphs of this article were different colors. That would be a very jarring experience. You wouldn't know if any of the paragraphs are related to each other.
 
-![One paragraph in red and another in green is a jarring experience](/crap-design/repetition.png)
+![One paragraph in red and another in green is a jarring experience](/engineering-education/crap-design/repetition.png)
 
 The navigation system should also be repetitive. The user doesn't want to learn how to use a whole new system for every page. In fact, all the pages of your site should look very similar, because it's the same site. That includes any logos, color scheme, typography, and layout.
 
@@ -41,7 +41,7 @@ All the elements of your page should be lined up with each other. The elements c
 
 A lot of non-designers have trouble with this. It's tempting to show off by putting all the text in different places, but it looks terrible. The easiest alignment to use is center, because it's nice and symmetrical. Although, most people are used to a left-align.
 
-![An example article with a center align. There's a margin of 10% on the left and right](/crap-design/center_align.jpg)
+![An example article with a center align. There's a margin of 10% on the left and right](/engineering-education/crap-design/center_align.jpg)
 
 Also, please don't bump into the edges. It's annoying for the eyes whenever you want to move to the next line.
 
@@ -49,7 +49,7 @@ Also, please don't bump into the edges. It's annoying for the eyes whenever you 
 
 If two items are related, they should be close together. Elements that are close together seem related. Avoid orphaning your elements by separation.
 
-![An example from the section.io homepage. The image seems to be related to the text, because it is close to it](/crap-design/proximity.jpg)
+![An example from the section.io homepage. The image seems to be related to the text, because it is close to it](/engineering-education/crap-design/proximity.jpg)
 
 This image looks related to the text, because it's pretty close to the text. This screenshot doesn't quite do it justice, but trust me, it works. If the image was separated by a few hundred pixels, the reader might think that the image is unrelated to the text.
 
@@ -58,7 +58,7 @@ Using the correct proximity helps give a structure to the page. The Section home
 ### Conclusion
 It's important to note that you can break some of these rules and still have a decent-looking site. Look at the [Pronoun Testing Grounds](https://botahamec.github.io/pronoun_test/):
 
-![A screenshot of the Pronoun Testing Grounds](/crap-design/testing_grounds.png)
+![A screenshot of the Pronoun Testing Grounds](/engineering-education/crap-design/testing_grounds.png)
 
 This is *way* more than three colors, but it still works (Probably. Maybe some color theorist will come along and scold me for this). The colors are actually somewhat similar. Most of them have a slightly bright, yet dull appearance.
 

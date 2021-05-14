@@ -206,9 +206,9 @@ On the browser navigate to [accounts](http://localhost:8000/accounts/). We find 
 
 This sample file was created when we uploaded it via the API on the browser as shown below:
 
-![media_folder_included_vs_code](/how-to-upload-files-to-aws-s3-using-django-rest-framework/media_included_structure.png)
+![media_folder_included_vs_code](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/media_included_structure.png)
 
-![sample_upload_via_api](/how-to-upload-files-to-aws-s3-using-django-rest-framework/sample_upload.png)
+![sample_upload_via_api](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/sample_upload.png)
 
 
 ### Integrating AWS S3 into the Django API application
@@ -218,30 +218,30 @@ We have a working application API endpoint. You need an AWS account to enable th
 
 Search for **S3**:
 
-![search_for_s3](/how-to-upload-files-to-aws-s3-using-django-rest-framework/search_s3.png)
+![search_for_s3](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/search_s3.png)
 
 Click on “**create bucket**” button:
 
-![click_create_bucket](/how-to-upload-files-to-aws-s3-using-django-rest-framework/click_create_bucket.png)
+![click_create_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/click_create_bucket.png)
 
 
 Provide a unique name for your S3 bucket that is globally identified:
 
 
-![globally_named_bucket](/how-to-upload-files-to-aws-s3-using-django-rest-framework/globally_name_bucket.png)
+![globally_named_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/globally_name_bucket.png)
 
 
 Naming an AWS S3 bucket may take some trial and error before a name that does not already exist is discovered.
 
 Keep default option, click **create bucket**:
 
-![finish_bucket_creation](/how-to-upload-files-to-aws-s3-using-django-rest-framework/finish_bucket_creation.png)
+![finish_bucket_creation](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/finish_bucket_creation.png)
 
 
 You will be redirected to the AWS S3 console which now shows the newly created bucket:
 
 
-![successful_create_bucket](/how-to-upload-files-to-aws-s3-using-django-rest-framework/successful_bucket_creation.png)
+![successful_create_bucket](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/successful_bucket_creation.png)
 
 
 We have successfully created an AWS S3 bucket. Recall during bucket creation, public access to the S3 bucket was blocked.
@@ -254,43 +254,43 @@ AWS allows access to its resources such as AWS S3 through User and Roles. You ca
 
 Search for IAM using AWS search bar:
 
-![search_iam](/how-to-upload-files-to-aws-s3-using-django-rest-framework/search_iam.png)
+![search_iam](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/search_iam.png)
 
 Click **User** on the IAM side menu:
 
-![click_user](/how-to-upload-files-to-aws-s3-using-django-rest-framework/iam_sidemenu.png)
+![click_user](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/iam_sidemenu.png)
 
 Click **Add user** on the IAM User dashboard:
 
-![add_user](/how-to-upload-files-to-aws-s3-using-django-rest-framework/add_user_screen.png)
+![add_user](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/add_user_screen.png)
 
 Provide a user name and check the *programmatic access* box:
 
-![assign_username_and_access_type](/how-to-upload-files-to-aws-s3-using-django-rest-framework/assign_username.png)
+![assign_username_and_access_type](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/assign_username.png)
 
 
 In *Set Permissions*, choose "*Attach existing policies directly*" and check **AWSS3FullAcess** box:
 
-![set_permissions](/how-to-upload-files-to-aws-s3-using-django-rest-framework/set_permission.png)
+![set_permissions](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/set_permission.png)
 
 
 Click through and review your choice before creating the user:
 
 
-![user_summary](/how-to-upload-files-to-aws-s3-using-django-rest-framework/user_summary.png)
+![user_summary](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/user_summary.png)
 
 
 On successful creation, it generated an AWS Access and Secret key:
 
 
-![access_key_generated](/how-to-upload-files-to-aws-s3-using-django-rest-framework/access_key_generated.png)
+![access_key_generated](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/access_key_generated.png)
 
 
 Store the AWS Secret Key before finishing because the Secret Key won’t be shown again.  
 
 Once done, we can view the newly created AWS user on the IAM User dashboard:
 
-![new_user](/how-to-upload-files-to-aws-s3-using-django-rest-framework/new_user.png)
+![new_user](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/new_user.png)
 
 
 In this article, we will use [Django-storages](https://github.com/jschneier/django-storages) to connect to the AWS S3 bucket. 
@@ -336,11 +336,11 @@ python manage.py runserver
 
 On the browser, navigate to [localhost](http://localhost:8000/accounts/) and retry uploading a sample file:
 
-![aws_successful_upload](/how-to-upload-files-to-aws-s3-using-django-rest-framework/aws_sucessful_upload.png)
+![aws_successful_upload](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/aws_sucessful_upload.png)
 
 Click the link in the `document` field. Notice the link now has "*s3.amazon***". You will be able to access the file. Here, the uploaded file is titled "Big O Cheatsheet":
 
-![remote_file](/how-to-upload-files-to-aws-s3-using-django-rest-framework/uploaded_big_o.png)
+![remote_file](/engineering-education/how-to-upload-files-to-aws-s3-using-django-rest-framework/uploaded_big_o.png)
 
 ### Summary
 In this article, we created an AWS S3 bucket and assigned IAM User with full access to the AWS S3 bucket. We uploaded files to the AWS S3 bucket using Access Key and AWS Secret Key from our Django Rest API application.

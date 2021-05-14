@@ -68,7 +68,7 @@ Netflix is an example of a company that employs hybrid recommender systems.
 ### How recommender systems work
 Recommender systems work by using users' data to generate suggestions. The following image provides an overview of how recommender systems work. 
 
-![How Recommender Systems Work](/recommender-system-explained/how-recommender-systems-work.jpg)
+![How Recommender Systems Work](/engineering-education/recommender-system-explained/how-recommender-systems-work.jpg)
 
 [Image Source: Imaginet](https://www.imaginet.com/wp/wp-content/uploads/2020/07/process-1.png)
 
@@ -82,7 +82,7 @@ The algorithms used and the recommendation approach depend on the type of recomm
 
 If one of the users buys another product, the system will recommend it to the other user because they have similar preferences. The following image shows how this type of system works. 
 
-![How Collaborative Filtering Works](/recommender-system-explained/how-collaborative-filtering-works.png)
+![How Collaborative Filtering Works](/engineering-education/recommender-system-explained/how-collaborative-filtering-works.png)
 
 [Image Source: Built In](https://builtin.com/sites/default/files/styles/ckeditor_optimize/public/inline-images/recommendation-system-machine-learning-user-similarity.png)
 
@@ -90,7 +90,7 @@ The two users have liked and previously bought two identical products. One of th
 
 A content-based filtering system analyzes the online behavior of customers to analyze product similarity. The system analyzes data such as the time spent on a specific product, purchased products, clicks, and product categories to recommend similar products. The image below shows how content-based filtering systems work. 
 
-![Content-Based Filtering](/recommender-system-explained/content-based-filtering.jpg)
+![Content-Based Filtering](/engineering-education/recommender-system-explained/content-based-filtering.jpg)
 
 [Image Source: Imaginet](https://www.imaginet.com/wp/wp-content/uploads/2020/07/content-based.png)
 

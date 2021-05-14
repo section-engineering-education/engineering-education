@@ -33,7 +33,7 @@ Continuous learning and updates enable the digital twin to provide the real-time
 
 Digital twins are created using digital twin technology. This technology integrates the internet of things (IoT), software analytics, artificial intelligence, and special network graphs to replicate physical assets or processes (physical twins).
 
-![Digital Twin](/introduction-to-digital-twin-technology/digital-twin.jpg)
+![Digital Twin](/engineering-education/introduction-to-digital-twin-technology/digital-twin.jpg)
 
 [Image Source: IDGESG](https://images.idgesg.net/images/article/2018/06/digital-twins_woman-in-profile_ai_mirror_duplicate_duo_pair-100760562-large.jpg)
 
@@ -80,7 +80,7 @@ Automobile companies use digital twin technology to create digital twins of thei
 
 In case improvements are needed with the current car models, engineers will use the digital twins to suggest new features that can improve their performance.
 
-![Digital Twin Cars](/introduction-to-digital-twin-technology/digital-twin-cars.jpg)
+![Digital Twin Cars](/engineering-education/introduction-to-digital-twin-technology/digital-twin-cars.jpg)
 
 [Image Source: PTC](https://www.ptc.com/-/media/Images/Blog/post/plr-blog/digital-twin-cars-900.jpg?h=450&w=900&la=en&hash=94BA703D996DF68600E242649A6DF231)
 
@@ -115,7 +115,7 @@ The digital twin model of a manufacturing process gives a good example of how di
 
 The following diagram shows how this digital twin model works.
 
-![How Digital Twin Technology Works](/introduction-to-digital-twin-technology/how-digital-twin-technology-works.jpg)
+![How Digital Twin Technology Works](/engineering-education/introduction-to-digital-twin-technology/how-digital-twin-technology-works.jpg)
 
 [Image Source: Deloitte University Press](https://www2.deloitte.com/content/dam/insights/us/articles/3833_Industry4-0_digital-twin-technology/figures/3833_Figure1.png)
 

@@ -39,7 +39,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart and not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-google-authentication/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-google-authentication/env_setup.png)
 
 *Setting up the development environment*
 
@@ -52,7 +52,7 @@ For the final code, refer to this [GitHub Repository](https://github.com/zolomoh
 
 Folder Structure of the repository:
 
-![Folder Structure](/react-native-firebase-google-authentication/folder_structure.png)
+![Folder Structure](/engineering-education/react-native-firebase-google-authentication/folder_structure.png)
 
 *Folder structure*
 
@@ -62,26 +62,26 @@ I've set up 2 screens in the `screens/` directory:
 
 2. `Authenticated.js`: The user can see this screen only if he is logged in.
 
-![Screens](/react-native-firebase-google-authentication/screens.jpg)
+![Screens](/engineering-education/react-native-firebase-google-authentication/screens.jpg)
 
 *Screens - Sign-in and Sign-out*
 
 ### Setting up the Firebase project
 Head to the [Firebase console](https://console.firebase.google.com/u/0/), sign in to your account and then create a new project.
 
-![Create New Project](/react-native-firebase-google-authentication/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-google-authentication/firebase_new.png)
 
 *Firebase home screen*
 
 You'll see the dashboard after you create a new project.
 
-![New Dashboard](/react-native-firebase-google-authentication/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-google-authentication/new_dashboard.png)
 
 *Firebase dashboard*
 
 Click on the Android icon to add an Android app to your Firebase project.
 
-![register_app](/react-native-firebase-google-authentication/register_app.png)
+![register_app](/engineering-education/react-native-firebase-google-authentication/register_app.png)
 
 *Adding Firebase to your Android app*
 
@@ -89,7 +89,7 @@ You'll need the package name of the application to register the application.
 
 You can find the package name in the `AndroidManifest.xml` file which is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-google-authentication/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-google-authentication/package_name.png)
 
 *Package name in AndroidManifest.xml*
 
@@ -123,7 +123,7 @@ Now, proceeding to the next step, you will have to download the `google-services
 
 This file contains configurations that'll enable your application to access firebase services.
 
-![Download Google Services JSON](/react-native-firebase-google-authentication/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-google-authentication/download_services.json.png)
 
 *Configurations file - google-services.json*
 
@@ -158,13 +158,13 @@ npm install @react-native-firebase/app
 ### Setting up Firebase Authentication
 Head over to the `Authentication` section in the dashboard and click on the `Get Started` button. This will enable the authentication module in your project.
 
-![Get Started Auth](/react-native-firebase-google-authentication/auth_get_starterd.png)
+![Get Started Auth](/engineering-education/react-native-firebase-google-authentication/auth_get_starterd.png)
 
 *Enable Firebase Authentication*
 
 Next, you should enable phone authentication in the sign-in methods. Once you've enabled it, press `Save`.
 
-![Signin-method](/react-native-firebase-google-authentication/google-enable.png)
+![Signin-method](/engineering-education/react-native-firebase-google-authentication/google-enable.png)
 
 *Enable authentication by Google sign-in*
 
@@ -195,7 +195,7 @@ We should use this library to create a credential, and then sign-in with Firebas
 
 First, we must initialize the Google SDK using your `webClientId` which can be found in the `google-services.json` file in `android/app` as the `client/oauth_client/client_id` property.
 
-![Oauth Client ID](/react-native-firebase-google-authentication/oauth_id.png)
+![Oauth Client ID](/engineering-education/react-native-firebase-google-authentication/oauth_id.png)
 
 *OAuth Client ID*
 
@@ -310,7 +310,7 @@ return (
 );
 ```
 
-![Auth Screen](/react-native-firebase-google-authentication/auth_screen.gif)
+![Auth Screen](/engineering-education/react-native-firebase-google-authentication/auth_screen.gif)
 
 *Google Authentication - Sign-in*
 
@@ -343,7 +343,7 @@ auth().onAuthStateChanged((user) => {
 })
 ```
 
-![Signout](/react-native-firebase-google-authentication/signout.gif)
+![Signout](/engineering-education/react-native-firebase-google-authentication/signout.gif)
 
 *Google Authentication - Sign-out*
 

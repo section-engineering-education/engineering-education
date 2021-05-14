@@ -48,7 +48,7 @@ Consider a file containing 100 words in which "cat" occurs three times. Hence, T
 
 Now, if we have 1000 sentences and the word cat appears in 10, Then the inverse document frequency is calculated as log(1000 / 10) = 2. Thus, the TF-IDF weight is the product of these quantities: 0.03 * 2 = 0.06
 
-![flowchart](/keyword-extraction-in-python/flowchart.png)
+![flowchart](/engineering-education/keyword-extraction-in-python/flowchart.png)
 
 ### Building the keyword extraction engine in Python
 The most important words (keywords) from a document can be extracted by their tf-idf scores. The words with high tf-idf scores are more important than the words with lower tf-idf scores.

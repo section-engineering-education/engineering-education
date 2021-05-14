@@ -27,7 +27,7 @@ There are three components in an expert system: user interface, inference engine
 
 Backward and forward chaining stem from the inference engine component. This is a component in which logical rules are applied to the knowledge base to get new information or make a decision. The backward and forward chaining techniques are used by the inference engine as strategies for proposing solutions or deducing information in the expert system. 
 
-![Expert System](/forward-and-backward-chaining-in-ai/expert-system.jpg)
+![Expert System](/engineering-education/forward-and-backward-chaining-in-ai/expert-system.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/expert_system.jpg)
 
@@ -36,7 +36,7 @@ Forward chaining is a method of reasoning in artificial intelligence in which in
 
 In this type of chaining, the inference engine starts by evaluating existing facts, derivations, and conditions before deducing new information. An endpoint (goal) is achieved through the manipulation of knowledge that exists in the knowledge base. 
 
-![Forward Chaining](/forward-and-backward-chaining-in-ai/forward-chaining.jpg)
+![Forward Chaining](/engineering-education/forward-and-backward-chaining-in-ai/forward-chaining.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/forward_chaining.jpg)
 
@@ -95,7 +95,7 @@ Backward chaining is a concept in artificial intelligence that involves backtrac
 
 The backtracking process can also enable a person establish logical steps that can be used to find other important solutions.
 
-![Backward Chaining](/forward-and-backward-chaining-in-ai/backward-chaining.jpg)
+![Backward Chaining](/engineering-education/forward-and-backward-chaining-in-ai/backward-chaining.jpg)
 
 [Image Source: Quora](https://qph.fs.quoracdn.net/main-qimg-72fa83318b4bf6238b5a0da493a56277)
 

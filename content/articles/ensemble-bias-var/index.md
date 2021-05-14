@@ -34,7 +34,7 @@ Prediction errors are defined as the collection of bias, variance, and irreducib
 
 It does not learn the key features therefore the resulting predictions are unreliable, and the generalization is poor. This is what is known as underfitting. To solve this, it is advisable to use a more complex model. However, that is not our focus today. Rather, we shall explore how to deal with bias using boosting.
 
-![bias](/ensemble-bias-var/bias.png)
+![bias](/engineering-education/ensemble-bias-var/bias.png)
 
 *Bias Error. High bias, showing how poorly a function fits datapoints, depicting underfitting.*
 
@@ -44,7 +44,7 @@ It does not learn the key features therefore the resulting predictions are unrel
 
 To deal with this, we can get more training data if the data is inadequate. We could also use a less complex model. We shall, however, look at how to reduce variance using bagging.
 
-![variance](/ensemble-bias-var/variance.png)
+![variance](/engineering-education/ensemble-bias-var/variance.png)
 
 *Variance Error. High variance. The function fits the points too closely. Overfitting is present.*
 
@@ -53,7 +53,7 @@ To deal with this, we can get more training data if the data is inadequate. We c
 ### Bias variance trade-off
 It is desirable to achieve a low bias and variance to ensure accurate predictions. High bias and high variance hint at lower performance.
 
-![biasvariancetrade](/ensemble-bias-var/biasvariancetrade.png)
+![biasvariancetrade](/engineering-education/ensemble-bias-var/biasvariancetrade.png)
 
 *Bias-Variance Trade-off.*
 
@@ -69,7 +69,7 @@ The scattering of predictions around the outer circles shows that overfitting is
 
 Increasing the bias leads to a decrease in variance. Suppose we reduce bias, and variance increases. An ideal model would have low variance and low bias. This is shown in the image below.
 
-![modelcomplexity](/ensemble-bias-var/modelcomplexity.png)
+![modelcomplexity](/engineering-education/ensemble-bias-var/modelcomplexity.png)
 
 *Model Complexity.*
 
@@ -108,7 +108,7 @@ The weighting allows each new model to concentrate its efforts on the observatio
 
 This is how bias is reduced through boosting. The steps involved in the boosting process are outlined in the article linked in the previous paragraph.
 
-![boosting](/ensemble-bias-var/boosting.jpg)
+![boosting](/engineering-education/ensemble-bias-var/boosting.jpg)
 
 *Boosting illustration.*
 

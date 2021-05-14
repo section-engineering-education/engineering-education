@@ -87,7 +87,7 @@ The next step will be to write a function that will get all the data from our di
 
 Your directory should look like this:
 
-![Simple](/prototyping-machine-learning-models-with-streamlit/img1.jpg)
+![Simple](/engineering-education/prototyping-machine-learning-models-with-streamlit/img1.jpg)
 
 ```python
 @st.cache
@@ -221,11 +221,11 @@ streamit run sentiment_analyzer.py
 
 This is what you should run on your terminal.
 
-![Simple](/prototyping-machine-learning-models-with-streamlit/img2.jpg)
+![Simple](/engineering-education/prototyping-machine-learning-models-with-streamlit/img2.jpg)
 
 And your application should look like this:
 
-![Simple](/prototyping-machine-learning-models-with-streamlit/img3.jpg)
+![Simple](/engineering-education/prototyping-machine-learning-models-with-streamlit/img3.jpg)
 
 ### Conclusion
 If you have followed the process, you will see how fun and easy it is to prototype your machine learning models with Streamlit and save yourself a lot of stress. You can explore more advanced examples and take this project forward by deploying it on Heroku or any other hosting platform.

@@ -84,7 +84,7 @@ The following are the main types of relationships in an ER model:
   
 The following diagram shows a simple ER model that can be used to explain the process flow for aggregation in DBMS.
 
-![Process Flow for Aggregation in DBMS](/aggregation-in-dbms/process-flow-for-aggregation.jpg)
+![Process Flow for Aggregation in DBMS](/engineering-education/aggregation-in-dbms/process-flow-for-aggregation.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/03/aggregation-in-dbms.jpg)
 
@@ -95,7 +95,7 @@ This operation generates a new relationship (R2). R2 is linked to another entity
 ### Example of aggregation in DBMS
 Let's assume that there is a patient who has visited a doctor in the hospital to seek treatment for a certain type of illness. The following diagram shows the process flow for aggregation in the hospital. 
 
-![Example of Aggregation](/aggregation-in-dbms/example-of-aggregation.jpg)
+![Example of Aggregation](/engineering-education/aggregation-in-dbms/example-of-aggregation.jpg)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2020/03/aggregation-in-dbms0.jpg)
 

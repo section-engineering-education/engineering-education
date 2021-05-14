@@ -41,7 +41,7 @@ Artificial intelligence has widespread use cases. A crucial one is its role in c
 Considering how much we use these systems in our daily lives today, and the responsibility placed upon them, it's important to consider their security. In this article, we explore three types of attacks that are aimed at artificial intelligence systems and their methods of mitigation.
 
 
-![matrix](/securing-ai-systems-from-adversaries/matrix.jpg)
+![matrix](/engineering-education/securing-ai-systems-from-adversaries/matrix.jpg)
 
 Adversarial ML Threat Matrix [Source](https://www.helpnetsecurity.com/2020/10/27/attacks-machine-learning-systems/)
 
@@ -76,7 +76,7 @@ Adversarial machine learning represents a technique used to trick a model with m
 
 The image below shows an example of adversarial examples.
 
-![miscategorization](/securing-ai-systems-from-adversaries/miscategorization.png)
+![miscategorization](/engineering-education/securing-ai-systems-from-adversaries/miscategorization.png)
 
 [Misclassification of a panda as a gibbon](https://arxiv.org/pdf/1412.6572.pdf)
 
@@ -104,7 +104,7 @@ Through poisoning attacks, an adversary is capable of:
 
 - **Data injection**. Here, the attacker can inject new data into the training set. The attacker doesn't have access to the algorithm itself, therefore can only inject data.
 
-![boundary](/securing-ai-systems-from-adversaries/boundary.png)
+![boundary](/engineering-education/securing-ai-systems-from-adversaries/boundary.png)
 
 [Boundary shift](https://arxiv.org/pdf/1904.06292.pdf)
 

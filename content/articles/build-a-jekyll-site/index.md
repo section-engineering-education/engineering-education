@@ -231,7 +231,7 @@ hero: /assets/images/welcome/hero.jpg
 Add the `new-site.jpg` image at the bottom of your file.
 
 ```markdown
-![demo image](/assets/images/welcome/new-site.jpg)
+![demo image](/engineering-education/assets/images/welcome/new-site.jpg)
 ```
 
 In your post layout file, add the hero image at the top.

@@ -16,7 +16,7 @@ images:
 Graphs are one of the most common data structures in computer science. Graphs are made up of nodes and edges. There are many applications for graph structures in the real world, including relationships (Facebook), locations (Google Maps), programming analysis, and more.
 <!--more-->
 
-![graph](/graph-traversals-java/graph.jpg)
+![graph](/engineering-education/graph-traversals-java/graph.jpg)
 
 By the end of this article, readers should know
 1. What graphs are.
@@ -40,7 +40,7 @@ Unweighted graphs have zero value edges, while weighted graphs have non-zero val
 
 Undirected and Unweighted  |  Directed and Weighted	 |	
 :-------------------------:|:-----------------------:|
-|![undirected](/graph-traversals-java/undirected.png)|![directed](/graph-traversals-java/directed.png)
+|![undirected](/graph-traversals-java/undirected.png)|![directed](/engineering-education/graph-traversals-java/directed.png)
 
 <br />
 <br />
@@ -282,7 +282,7 @@ public static void dfsRecursive(Node startNode, Set<Integer> visited) {
 }
 ```
 
-![graph](/graph-traversals-java/graph.jpg)
+![graph](/engineering-education/graph-traversals-java/graph.jpg)
 
 #### Outputs
 The BFS output shows that the graph is traversed in layers. The DFS iterative and recursive outputs show the traversal in depth. The DFS outputs are in different orders, but the algorithms operate the same way. There are more than one valid DFS outputs.

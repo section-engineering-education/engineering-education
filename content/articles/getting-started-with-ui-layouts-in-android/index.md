@@ -25,7 +25,7 @@ These layouts design and guide the positioning of various view groups in an appl
 - View: This refers to an object in Android's built-in View class, represented by a rectangular area of the screen, for example: `TextView`, `ImageView`, `Button`, and others.
 - View Group: This refers to an 'invisible container' that holds multiple views or view groups together, such as Linear Layout, Grid Layout, Table Layout, and others.
 
-![Anatomy of Android Layouts](/getting-started-with-ui-layouts-in-android/anatomy.jpg)
+![Anatomy of Android Layouts](/engineering-education/getting-started-with-ui-layouts-in-android/anatomy.jpg)
 
 ### Root element layouts used in android applications
 
@@ -34,7 +34,7 @@ This layout aligns its content in a single direction. It can be either vertical 
 
 One can use it either as a root element or a view group.
 
-![Linear Layout](/getting-started-with-ui-layouts-in-android/linear.jpg)
+![Linear Layout](/engineering-education/getting-started-with-ui-layouts-in-android/linear.jpg)
 
 ### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
@@ -60,7 +60,7 @@ One can use it either as a root element or a view group.
 This layout positions views relative to each other. The layout uses the `<RelativeLayout>` tag.
 The position of each view can be relative to sibling elements or relative to the parent. By default, all child views are aligned at the top corner before setting the screen's desired alignment, for example, center-left and others. One can use it either as a root element or a view group.
 
-![Relative Layout](/getting-started-with-ui-layouts-in-android/relative.png)
+![Relative Layout](/engineering-education/getting-started-with-ui-layouts-in-android/relative.png)
 
 #### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.
@@ -91,7 +91,7 @@ Constraint layout is supported in the Android 2.2 version and above. For any ver
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
 ```
 
-![Constraint Layout](/getting-started-with-ui-layouts-in-android/constraint.jpg)
+![Constraint Layout](/engineering-education/getting-started-with-ui-layouts-in-android/constraint.jpg)
 
 **Note: An error will always be displayed if the views are not constrained.**
 
@@ -117,7 +117,7 @@ Constraint layout is supported in the Android 2.2 version and above. For any ver
 ### D) Frame layout
 The Frame layout is one of the most basic and most straightforward layouts. This layout blocks out an area on the screen to display a single view group. The layout uses the `<FrameLayout>` tag. It is suitable to use this layout when the UI of an application only requires one view. One can use it either as a root element or a view group.
 
-![Frame Layout](/getting-started-with-ui-layouts-in-android/frame.jpg)
+![Frame Layout](/engineering-education/getting-started-with-ui-layouts-in-android/frame.jpg)
 
 #### Attributes
 - `android:id` - This is a unique ID signed to a specific layout.

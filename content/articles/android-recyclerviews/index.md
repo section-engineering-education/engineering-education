@@ -151,7 +151,7 @@ You can see that I have used a `CardView` as a parent to have card items on my l
 
 The layout should produce a view similar to the one below.
 
-![List Item](/android-recyclerviews/item.png)
+![List Item](/engineering-education/android-recyclerviews/item.png)
 
 Now that we have our `RecyclerView` and the list item layouts set up, we can get the data displayed. You can go ahead and download the contents from [this file](https://github.com/LinusMuema/kotlin/blob/recyclerviews/app/src/main/java/com/moose/androidkt/Data.kt) on GitHub. It generates random users and returns the list of users for us to show in our `RecyclerView`.
 
@@ -246,7 +246,7 @@ If the dimensions kept on changing, it would lead to glitches.
 
 With that, our `RecyclerView` is complete. Once you run your application, the `MainActivity` should resemble the one below.
 
-![RecyclerView](/android-recyclerviews/recyclerview.jpg)
+![RecyclerView](/engineering-education/android-recyclerviews/recyclerview.jpg)
 
 #### Conclusion
 That's just the basics of Android `RecyclerViews`. There are more methods like `notifyDataSetChanged`, that help us to manage our `Recyclerviews`. Android developers have adopted `RecyclerViews` extensively, and learning how to use them is a huge advantage. Make sure you manage your lists of data by using `RecyclerViews`.

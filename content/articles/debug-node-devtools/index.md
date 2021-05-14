@@ -71,15 +71,15 @@ The port 9221 on your local machine will be forwarded to port 9229 on `remote.ma
 ### Step 2 -- Open Chrome DevTools
 Open your browser and open the URL: `chrome://inspect`. If you are using Microsoft Edge, `edge://inspect` will open the same page. The page looks something like this:
 
-![Google Chrome Inspect Page](/debug-node-devtools/inspect.jpg)
+![Google Chrome Inspect Page](/engineering-education/debug-node-devtools/inspect.jpg)
 
 If you are debugging a remote app, after setting up an SSH tunnel, you need to add your local port to discoverable targets. To do this, make sure the **Discover network targets** checkbox is checked. Click the **Configure...** button and add your IP address and port.
 
-![Adding Remote app to Devtools](/debug-node-devtools/add-to-localhost.gif)
+![Adding Remote app to Devtools](/engineering-education/debug-node-devtools/add-to-localhost.gif)
 
 To open DevTools dedicated to Node.js debugging, click **Open dedicated DevTools for Node**.
 
-![Opening Devtools](/debug-node-devtools/open-dev-tools.gif)
+![Opening Devtools](/engineering-education/debug-node-devtools/open-dev-tools.gif)
 
 ### Step 3 -- Set Breakpoints
 To debug your app, navigate to the **Sources** tab. This is where you will be editing your code. Expand the file tree on the left and click the file you want to debug. The selected file opens in the central part of the sources tab. You can open multiple files for debugging.
@@ -88,7 +88,7 @@ To debug your app, navigate to the **Sources** tab. This is where you will be ed
 
 Add breakpoints to your code by clicking on the left side of the line number. Once set, a red dot will appear on those lines. On the right panel in the **Sources** tab,  you can watch objects and activate/deactivate breakpoints. To watch a variable, add a variable defined in your code in the **Watch** tab. In the **Scope** tab, you can view the local and global variables currently defined.
 
-![Breakpoints DevTools](/debug-node-devtools/node-devtools-breakpoints.jpg)
+![Breakpoints DevTools](/engineering-education/debug-node-devtools/node-devtools-breakpoints.jpg)
 
 ### Step 4 -- Reload app and Debug
 To step through to your code, navigate to the app URL and refresh the app. You can also open the URL in a new window. Upon hitting the reload button, the DevTools window should come into focus. If it doesn't, you can navigate to the DevTools window manually. You can also restart the app instance on a terminal using the `curl` command. Open a **new** terminal or tab and run:
@@ -97,11 +97,11 @@ To step through to your code, navigate to the app URL and refresh the app. You c
 $ curl http://127.0.0.1:8000
 ```  
 
-![Debugging started DevTools](/debug-node-devtools/node-devtools-debug-started.jpg)
+![Debugging started DevTools](/engineering-education/debug-node-devtools/node-devtools-debug-started.jpg)
 
 If you want to run some JavaScript code on the built-in JavaScript console, press `Esc` to open the console, or open the **Console** tab in DevTools.
 
-![Opening js Console](/debug-node-devtools/launch-js-console.gif)
+![Opening js Console](/engineering-education/debug-node-devtools/launch-js-console.gif)
 
 The debugger pauses on your breakpoints while printing to the console, watch, call stack, and scope tabs. You can resume code execution using the resume button right above the **Watch** tab.
 

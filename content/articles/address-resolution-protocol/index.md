@@ -26,7 +26,7 @@ Devices in a Local Area Network(LAN) are programmed to communicate using link la
 ### How does ARP work?
 *Every device that is capable of handling IPv4 packets has an ARP table. An ARP table consists of IPv4 address to MAC address mappings.* Switches do not have an ARP table as they are not equipped to handle IP packets. However, switches maintain another kind of cache mapping the MAC address of the non-switch devices connected to this LAN to the port where packets should go to reach that device. Switches will send out the packet on all the enabled ports if they do not have the destination MAC address in the cache.
 
-![ARP-example](/address-resolution-protocol/arpExample.jpg)
+![ARP-example](/engineering-education/address-resolution-protocol/arpExample.jpg)
 
 When device 1 with IP 192.168.10.154 wants to send a packet to device 3 with IP 192.168.10.160, it looks into its ARP cache to fetch device 3’s MAC address. If the IP to MAC translation for device 3 does not exist in the ARP cache, device 1 sends a broadcast packet to the network using the ARP protocol to ask "who has 192.168.10.160?".
 
@@ -37,7 +37,7 @@ All the devices in that network receive the ARP broadcast packet. The device wit
 ### Gratuitous ARP
 **A [gratuitous ARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol#ARP_announcements) is an unprompted ARP response.** *When a new device joins the LAN, it broadcasts its MAC address to the entire network immediately after its network interface boots up.* Gratuitous ARP packet has both, source and destination IP set to the IP address of the device issuing the packet and the destination MAC is the broadcast address ff:ff:ff:ff:ff:ff or 00:00:00:00:00:00 [based on the ARP implementation](https://www.practicalnetworking.net/series/arp/gratuitous-arp/). *There will be no follow up packets sent in response to a gratuitous ARP packet.*
 
-![GARP-example](/address-resolution-protocol/garp.jpg)
+![GARP-example](/engineering-education/address-resolution-protocol/garp.jpg)
 
 ### Inverse ARP(InARP)
 **[InARP](https://en.wikipedia.org/wiki/Address_Resolution_Protocol#Inverse_ARP_and_Reverse_ARP) is an addition to ARP technology that enables a device to request for an IP address corresponding to a given MAC address.** InARP is defined in [RFC 1293](https://tools.ietf.org/html/rfc1293). InARP specifically applies to **Frame Relay stations with Data Link Connection Identifier(DLCI)** associated with a Permanent Virtual Circuit(PVC) that do not know the IP address of the station on the other side of this connection. *The devices in a Frame Relay network do not have MAC addresses. Instead, they have a unique identifier called DLCI for every virtual circuit they are connected to. DLCI is the Frame Relay equivalent of a hardware/MAC address.* InARP uses MAC addresses to find corresponding IP addresses. It is used mainly for device configuration. InARP is used when a device knows the DLCI of a remote router, but does not know its IP address. This is a common scenario on networks that share data-link addresses across different physical networks, such as Frame Relay and ATM. In that case, the device sends an InARP request asking for its IP address which, on receiving, it maps to its corresponding DLCI in the InARP table.
@@ -45,7 +45,7 @@ All the devices in that network receive the ARP broadcast packet. The device wit
 ### Proxy ARP
 **[Proxy ARP](https://en.wikipedia.org/wiki/Proxy_ARP) is used to facilitate ARP exchanges in order to resolve IP addresses to MAC addresses in devices that are separated by routers in the same network or sub-network.** Routers cannot forward Layer 2 packets and hence, ARP messages are never propagated outside of their networks. *When a device wants to resolve the MAC address of another device in a different subnet, the router located between the two subnets acts as a proxy for the other device and responds to the ARP broadcast with its own MAC address.* Proxy ARP is defined in [RFC 1027](https://www.ietf.org/rfc/rfc1027.txt).
 
-![ProxyARP-example](/address-resolution-protocol/proxyARP.jpg)
+![ProxyARP-example](/engineering-education/address-resolution-protocol/proxyARP.jpg)
 
 When the ARP request from 192.168.1.2 asking for the MAC address of the device with IP 192.168.2.3 reaches 192.168.1.1(router interface), the router notices that 192.168.2.3 is in a different network. It acts as the proxy and sends an ARP response to 192.168.1.2 with its own MAC address i.e 00:00:AB:00:00:01.
 192.168.1.2 sends all packets destined for 192.168.2.3 to the router first. The router takes care of further ARP resolution and routes packets to the intended destination.   

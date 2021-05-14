@@ -52,7 +52,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-image-labeling/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-image-labeling/env_setup.png)
 
 ### Installing dependencies
 You can install these packages in advance or while going through the article.
@@ -92,23 +92,23 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](/react-native-firebase-image-labeling/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-image-labeling/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard. Upgrade you project to the Blaze plan.
 
-![New Dashboard](/react-native-firebase-image-labeling/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-image-labeling/new_dashboard.png)
 
 Now, click on the Android icon to add an Android app to the Firebase project.
 
-![register_app](/react-native-firebase-image-labeling/register_app.png)
+![register_app](/engineering-education/react-native-firebase-image-labeling/register_app.png)
 
 You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` that is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-image-labeling/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-image-labeling/package_name.png)
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
-![Download Google Services JSON](/react-native-firebase-image-labeling/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-image-labeling/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -146,23 +146,23 @@ The ML Kit uses the Cloud Vision API to label the images.
 
 Head to [Google Cloud Console](https://console.cloud.google.com/) and select the Google project that you are working on. Go to the API & Services tab.
 
-![Cloud Dashboard](/react-native-firebase-image-labeling/cloud_dashboard.png)
+![Cloud Dashboard](/engineering-education/react-native-firebase-image-labeling/cloud_dashboard.png)
 
 In the API & Service tab, head to the Libraries section.
 
-![API & Services Tab](/react-native-firebase-image-labeling/api_services.png)
+![API & Services Tab](/engineering-education/react-native-firebase-image-labeling/api_services.png)
 
 Search for Cloud Vision API.
 
-![API Library Section](/react-native-firebase-image-labeling/search_libraries.png)
+![API Library Section](/engineering-education/react-native-firebase-image-labeling/search_libraries.png)
 
 Once you open the API page, click on the Enable button.
 
-![Enable Cloud Vision](/react-native-firebase-image-labeling/enable_cloud_vision.png)
+![Enable Cloud Vision](/engineering-education/react-native-firebase-image-labeling/enable_cloud_vision.png)
 
 Once you've enabled the API, you'll see the Cloud Vision API Overview page.
 
-![Cloud Vision Metrics](/react-native-firebase-image-labeling/cloud_vision_dashboard.png)
+![Cloud Vision Metrics](/engineering-education/react-native-firebase-image-labeling/cloud_vision_dashboard.png)
 
 With this, you have set up the Cloud Vision API for your Firebase project. This will enable us to use the ML Kit for labeling the images.
 
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-![Buttons](/react-native-firebase-image-labeling/buttons_ui.jpg)
+![Buttons](/engineering-education/react-native-firebase-image-labeling/buttons_ui.jpg)
 
 ### Adding media picker
 Let's install the `react-native-image-picker` to add these functionalities.
@@ -320,7 +320,7 @@ const onImageSelect = async (media) => {
 };
 ```
 
-![Image UI](/react-native-firebase-image-labeling/with_image.jpg)
+![Image UI](/engineering-education/react-native-firebase-image-labeling/with_image.jpg)
 
 ### Label the image using Firebase ML
 
@@ -375,7 +375,7 @@ We'll use this state to render the details in the UI.
 ))}
 ```
 
-![Final Result](/react-native-firebase-image-labeling/final_result.jpg)
+![Final Result](/engineering-education/react-native-firebase-image-labeling/final_result.jpg)
 
 ### Additional configurations
 The `cloudImageLabelerProcessImage` method accepts an optional configuration object.

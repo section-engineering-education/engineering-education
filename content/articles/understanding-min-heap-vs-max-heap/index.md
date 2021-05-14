@@ -41,7 +41,7 @@ To set up the project, clone this [GitHub repository](https://github.com/mwangiK
 ### Min-heap
 In a min-heap, the parent or root node is usually lesser in value than the children nodes. The least element is accessed within constant time since it is at index `1`.
 
-![min-heap](/understanding-min-heap-vs-max-heap/min-heap.jpg)
+![min-heap](/engineering-education/understanding-min-heap-vs-max-heap/min-heap.jpg)
 
 [Image Source](https://www.geeksforgeeks.org/difference-between-min-heap-and-max-heap/)
 
@@ -50,7 +50,7 @@ Based on the figure below, at every level, the smallest number is the parent nod
 #### Implementation
 When illustrating a min-heap, we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
-![min-heap-implementation](/understanding-min-heap-vs-max-heap/min-heap-implementation.jpg)
+![min-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/min-heap-implementation.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
@@ -273,7 +273,7 @@ From the function above:
 ### Max-heap
 In a max-heap, the parent or root node is usually greater than the children nodes. The maximum element can be accessed in constant time since it is at index `1`.
 
-![max-heap](/understanding-min-heap-vs-max-heap/max-heap.jpg)
+![max-heap](/engineering-education/understanding-min-heap-vs-max-heap/max-heap.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
@@ -282,7 +282,7 @@ Based on the figure above, at every level, the largest number is the parent node
 #### Implementation
 Similarly, when illustrating a max-heap we use a tree-based structure but when representing in memory we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
-![max-heap-implementation](/understanding-min-heap-vs-max-heap/max-heap-implementation.jpg)
+![max-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/max-heap-implementation.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 

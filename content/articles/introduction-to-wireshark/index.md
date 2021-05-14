@@ -93,7 +93,7 @@ To continue downloading ***Wireshark***, type `y`. Depending on your network lev
 Upon completion, it prompts you to configure Wireshark for root privileges using a window.  
 
 
-![Configure-wireshark](/introduction-to-wireshark/configure-wireshark.jpg)
+![Configure-wireshark](/engineering-education/introduction-to-wireshark/configure-wireshark.jpg)
 
 Use the arrow keys, select the ***yes*** or ***no*** depending on your need, and then press enter.  
 
@@ -141,7 +141,7 @@ Running this command will redirect you to the ***Wireshark*** software window.
 
 ***Fig 1.2 Wireshark window***
 
-![Wireshark-window](/introduction-to-wireshark/wireshark-window.jpg) .  
+![Wireshark-window](/engineering-education/introduction-to-wireshark/wireshark-window.jpg) .  
 
 Congratulations, you now have ***Wireshark*** installed in your system and running.
 
@@ -167,7 +167,7 @@ The first step involves selecting the network interface to capture its data. Rem
 
 ***Fig 1.3 Network interfaces***
 
-![Network-Interfaces](/introduction-to-wireshark/wireshark-network-interface.jpg)
+![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interface.jpg)
 
 From the screenshot above, we have 6 interfaces, that we can then choose from.  
 
@@ -177,7 +177,7 @@ This prompts you to another window, as seen below.
 
 ***Fig 1.4 Network interfaces 2***
 
-![Network-Interfaces](/introduction-to-wireshark/wireshark-network-interfaces-2.jpg)
+![Network-Interfaces](/engineering-education/introduction-to-wireshark/wireshark-network-interfaces-2.jpg)
 
 Now select any of the interfaces you're presented with. In this example, we're going to explore the UDP Listener option. 
 
@@ -187,7 +187,7 @@ At this stage, you should be able to get an output like the one presented below.
 
 ***Fig 1.5 Network traffic***
 
-![Network-Traffics](/introduction-to-wireshark/wireshark-live-capture.jpg)
+![Network-Traffics](/engineering-education/introduction-to-wireshark/wireshark-live-capture.jpg)
 
 In the capture panel above, you should notice that network packet capturing is in sequential order, with each line representing each packet captured.  
 
@@ -213,13 +213,13 @@ Now that we can capture some data, try to click on a single row, and you will no
 
 ***Fig 1.5 Packet details***
 
-![Single-Packet-Details](/introduction-to-wireshark/wireshark-single-packet-details.jpg)
+![Single-Packet-Details](/engineering-education/introduction-to-wireshark/wireshark-single-packet-details.jpg)
 
 On the highlighted protocol, click on it to get more details about this SSDP protocol as shown below:  
 
 ***Fig 1.6 More on packet details***
 
-![Protocol-details](/introduction-to-wireshark/wireshark-protocol-details.jpg)
+![Protocol-details](/engineering-education/introduction-to-wireshark/wireshark-protocol-details.jpg)
 
 The information above tells us more about the packet captured, including the device used. This data is critical, especially in system hacks, where they can be collected for forensics.  
 
@@ -232,7 +232,7 @@ Let's take a looks.
 
 ***Fig 1.7 Bytes details***
 
-![bytes-panel](/introduction-to-wireshark/wireshark-bytes-panel.jpg)
+![bytes-panel](/engineering-education/introduction-to-wireshark/wireshark-bytes-panel.jpg)
 
 A closer look at this screenshot, the numbers are in bytes. This is the exact format of the data dump when the packet is captured.  
 

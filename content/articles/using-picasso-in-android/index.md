@@ -60,7 +60,7 @@ Picasso has the following features:
 ### Step 1 – Create a new AndroidStudio project
 - Open Android studio. Select Start new Android Studio Project ->  Empty Activity ->. Let us name the **Picasso**. Click Finish and wait for the project to build.
 
-![Name the project](/using-picasso-in-android/name.jpg)
+![Name the project](/engineering-education/using-picasso-in-android/name.jpg)
 
 ### Step 2 - Adding Picasso to our project
 Add the following dependency to the app module-level build.gradle file:
@@ -435,7 +435,7 @@ case R.id.showUrl:
 We are done! Let us run the app.
 
 
-![Picasso](/using-picasso-in-android/app.gif)
+![Picasso](/engineering-education/using-picasso-in-android/app.gif)
 
 ### Conclusion.
 Picasso is a powerful image loading library with various features. We have discussed scaling, resizing, targets, callbacks, and the rest. Instead of manually implementing all these features with a bunch of code, why not use Picasso, which is easy to use and offers better syntax. 

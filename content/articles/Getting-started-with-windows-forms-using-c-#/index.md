@@ -36,18 +36,18 @@ The *Toolbox* window provides you with all the controls that will help you build
 ### Properties window
 The *Properties* window is used to edit the properties of the form or the control (button, textbox, etc.) that you click on. To open the properties window, you can click on View -> Properties window or you can simply click F4.   
 
-![properties_window_and_toolbox](/getting-started-with-windows-forms-using-c-sharp/properties_window_and_toolbox.png)
+![properties_window_and_toolbox](/engineering-education/getting-started-with-windows-forms-using-c-sharp/properties_window_and_toolbox.png)
 
 ### Building the form with the controls
 First of all, let's start with the form and change the text to My calculator and the name to Cal_Form using the properties window.
 
 **Note**: Changing the name of a control or the form will only change the name of the object inside the code. This will make it easier to figure out which button or which textbox you are using or editing at that moment. On the other hand, changing the text of a control will only change what is displayed to the user.
 
-![Form_name_text](/getting-started-with-windows-forms-using-c-sharp/Form_name_text.png)
+![Form_name_text](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Form_name_text.png)
 
 Now let's begin by adding the numbers and the operations as buttons. Then we will add the textbox that will show the answer. To add a control, you can drag & drop it from the toolbox to the form or simply double click on it. Repeat this with the remaining controls.
 
-![Controls_display](/getting-started-with-windows-forms-using-c-sharp/Controls_display.png)
+![Controls_display](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Controls_display.png)
 
 The following table will show you the text & the name of all the controls.
 
@@ -70,7 +70,7 @@ The following table will show you the text & the name of all the controls.
 
 This is how the form should look like after adding all the controls.
 
-![First_look1](/getting-started-with-windows-forms-using-c-sharp/First_look1.png).
+![First_look1](/engineering-education/getting-started-with-windows-forms-using-c-sharp/First_look1.png).
 
 ### Let's start coding
 
@@ -197,7 +197,7 @@ Finally, we will work on the calculate button to evaluate the string expression 
 ### Final touches
 Let's change some colors and fonts using the properties window.
 
-![Final_touch_example](/getting-started-with-windows-forms-using-c-sharp/Final_touch_example.png).
+![Final_touch_example](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Final_touch_example.png).
 
 - Change the BackColor of the form from Apearance -> BackColor -> Grey.
 - Change the BackColor of all the buttons from Apearance -> BackColor -> Black.
@@ -206,7 +206,7 @@ Let's change some colors and fonts using the properties window.
 
 Remember that you can change the fonts & colors to suit your taste!
 
-![Final_look](/getting-started-with-windows-forms-using-c-sharp/Final_look.png).
+![Final_look](/engineering-education/getting-started-with-windows-forms-using-c-sharp/Final_look.png).
 
 ### Conclusion
 In this tutorial, we created a basic calculator using windows forms. We have learned how easy it is to build various applications when using *Controls*.

@@ -40,7 +40,7 @@ The steps to setup CI/CD to React ecosystem is explained below:
 
 First, we are going to set up a repository in GitHub. In the GitHub console interface, we just need to click on the **Create new repository** button and the following screen will appear:
 
-![create new github repo](1-create-new-github-repo.png)
+![create new github repo](/engineering-education1-create-new-github-repo.png)
 
 Here, we need to enter the project repository name and mark it as public or private. (Note that making the repository private is not free.)
 
@@ -60,23 +60,23 @@ Now, we need to create a React project and add git configuration to it by runnin
 
 Now, we are going to setup AWS S3. First, we need to login to the AWS console. After successful login, we need to go to the S3 menu and create a new bucket as directed in the screenshot below:
 
-![create a new bucket](2-create-a-new-s3-bucket.png)
+![create a new bucket](/engineering-education2-create-a-new-s3-bucket.png)
 
 Then, a window will open up where we need to enter the bucket name and choose the server region as directed in the screenshot below:
 
-![enter the bucket name](3-enter-the-bucket-name-and-choose-the-server-region.png)
+![enter the bucket name](/engineering-education3-enter-the-bucket-name-and-choose-the-server-region.png)
 
 Initially, the bucket will be set to private. So, we need to make the bucket mode public by clicking on the **Bucket name** option:
 
-![make the bucket mode public](4-make-the-bucket-mode-public.png)
+![make the bucket mode public](/engineering-education4-make-the-bucket-mode-public.png)
 
 Then, we need to select the **Permissions** tab as displayed in the code snippet below:
 
-![select the permissions](5-select-the-permissions-tab.png)
+![select the permissions](/engineering-education5-select-the-permissions-tab.png)
 
 In the **Permissions** tab, we need to turn-off **Block public access** option:
 
-![turn-off Block public access](6-turn-off-block-public-access.png)
+![turn-off Block public access](/engineering-education6-turn-off-block-public-access.png)
 
 Now, we move on to the local deployment setup.
 
@@ -84,11 +84,11 @@ Now, we move on to the local deployment setup.
 
 In this step, we are going to upload our react project directly from the local repository to S3 for testing purposes. Firstly, we need to go to **My Security Credential** as directed in the menu screenshot below:
 
-![go to my security credential](7-go-to-my-security-credential.png)
+![go to my security credential](/engineering-education7-go-to-my-security-credential.png)
 
 Then, we need to create a new Access Key and download the key file by pressing the **Download Key File** button as shown in the screenshot below:
 
-![create a new access key and download](8-create-a-new-access-key-and-download-the-key-file.png)
+![create a new access key and download](/engineering-education8-create-a-new-access-key-and-download-the-key-file.png)
 
 Next, we need to move back to our local repo of our project and install AWS CLI with Homebrew by running the following command in our project directory:
 
@@ -107,11 +107,11 @@ Then, we need to run `aws configure` command and set AWS Access Key ID and AWS S
 
 Now, we need to go back to the S3 project and navigate to **Properties** -> **Static Web Hosting** as directed in the screenshot below:
 
-![navigate to static web hosting](9-navigate-to-static-web-hosting.png)
+![navigate to static web hosting](/engineering-education9-navigate-to-static-web-hosting.png)
 
 In the **Static website hosting** option, we need to enable the hosting as shown in the screenshot below: 
 
-![enable the static hosting](10-enable-the-static-hosting.png)
+![enable the static hosting](/engineering-education10-enable-the-static-hosting.png)
 
 Now, we are going to try and build our react project in order to sync with the AWS S3 bucket. For that, we need to run the commands given in the following snippet in our react project terminal:
 
@@ -123,7 +123,7 @@ Here, ( -- delete) means we delete the default project file in the bucket then s
 
 If the build operation runs successfully, we will get the following result in our browser window:
 
-![build operation runs successfully](11-test-run-react-result.png)
+![build operation runs successfully](/engineering-education11-test-run-react-result.png)
 
 Hence, we are done with the local deployment of our project. This also completes our setup of AWS S3 in sync with our React Native project.
 
@@ -137,11 +137,11 @@ In the dashboard, we need to click on **Add Project**.
 
 In the Projects screen, we need to choose the repository that we want to follow by clicking on **Set Up Project** as directed in the screenshot below:
 
-![circleci setup](12-circlecI-dashboard.png)
+![circleci setup](/engineering-education12-circlecI-dashboard.png)
 
 Now, we can set up the configuration process either on CircleCI or on local projects as well:
 
-![configuration process](13-configuration-process-on-circleci.png)
+![configuration process](/engineering-education13-configuration-process-on-circleci.png)
 
 For local setup, we need to copy and paste the above code to our config file as shown in the code snippet below: 
 ```yml
@@ -190,25 +190,25 @@ For local setup, we need to copy and paste the above code to our config file as 
 ```
 For CircleCI, we need to go to the CircleCI dashboard and create a new branch and initialize a ‘pull request’ for that new branch to the master branch. Then, we can work on that branch until deployment is successful as shown in the screenshot below:
 
-![create a new deployment branch](14-work-on-deployment-branch.png)
+![create a new deployment branch](/engineering-education14-work-on-deployment-branch.png)
 
 ### Step 5:  Setting up Environment Variables
 
 Next, we are going to set up AWS credentials in CircleCI. Firstly, we need to click on the project:
 
-![setting up environment variables](15-setting-up-environment-variables.png)
+![setting up environment variables](/engineering-education15-setting-up-environment-variables.png)
 
 Then inside the project dashboard, we need to click on **Project Settings**:
 
-![project settings](16-click-on-project-settings.png)
+![project settings](/engineering-education16-click-on-project-settings.png)
 
 Inside the **Project Settings** option, we need to click on the **Add Environment Variable** button:
 
-![add environment variable](17-add-environment-variable.png)
+![add environment variable](/engineering-education17-add-environment-variable.png)
 
 Then, we need to add the correct variables or correct the existing variables:
 
-![add the correct variables](18-add-the-correct-variables.png)
+![add the correct variables](/engineering-education18-add-the-correct-variables.png)
 
 Now we have successfully configured the environment variables.
 
@@ -218,11 +218,11 @@ We know that we have already successfully deployed our React Native project to A
 
 In CloudFront, we need to go to [the console](https://console.aws.amazon.com/cloudfront/home) and select **Create Distribution -> Get Started**. Then, we need to hit the **Create Distribution** button as directed in the screenshot below:
 
-![Setting up AWS CloudFront](19-setting-up-aws-cloudfront.png)
+![Setting up AWS CloudFront](/engineering-education19-setting-up-aws-cloudfront.png)
 
 Next, we need to copy and paste the link from AWS S3 to the **Origin Domain Name** field as directed in the screenshot below:
 
-![Origin Domain Name](20-origin-domain-name.png)
+![Origin Domain Name](/engineering-education20-origin-domain-name.png)
 
 In the Distribution options, we need to supply the following configurations:
 
@@ -234,11 +234,11 @@ In the Distribution options, we need to supply the following configurations:
 
 With a successful configuration, we will see the status **In Progress**. Then, after waiting for around 15 to 20 minutes, the status will change to **Deployed**:
 
-![In Progress](21-in-progress-status.png)
+![In Progress](/engineering-education21-in-progress-status.png)
 
 After the status changes to **Deployed**, we will be able to access the site from the domain name [https://dhhqbyhy7gv01.cloudfront.net/](https://dhhqbyhy7gv01.cloudfront.net/). Here, our transmission protocol is already set to HTTPS. The access site from the above domain name is shown in the demo screenshot below:
 
-![final result](22-final-result.png)
+![final result](/engineering-education22-final-result.png)
 
 Hence, we have successfully set up the CircleCI and AWS CloudFront to our React Native project.
 

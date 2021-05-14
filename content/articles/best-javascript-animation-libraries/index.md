@@ -67,7 +67,7 @@ Here is a simple example of anime.js;
   </body>
 </html>
 ```
-![Anime.js](/best-javascript-animation-libraries/animejs.gif)
+![Anime.js](/engineering-education/best-javascript-animation-libraries/animejs.gif)
 
 ### Howler.js
 [Howler.js](https://howlerjs.com/) is an open-source JavaScript audio library. It’s used in game development and audio-related web apps. Howler.js makes coding easy while working with audio in JavaScript on web platforms.
@@ -175,7 +175,7 @@ button {
   cursor: pointer;
 }
 ```
-![KUTE.js](/best-javascript-animation-libraries/kutejs.gif)
+![KUTE.js](/engineering-education/best-javascript-animation-libraries/kutejs.gif)
 
 ### Mo.js
 [Mo.js](https://mojs.github.io/) is a JavaScript animation library dedicated to motion graphics for web use.
@@ -294,7 +294,7 @@ body {
   font-weight: 300;
 }
 ```
-![Mo.js](/best-javascript-animation-libraries/mojs.gif)
+![Mo.js](/engineering-education/best-javascript-animation-libraries/mojs.gif)
 
 ### Velocity.js
 [Velocity.js](http://velocityjs.org/) is a JavaScript animation library for fast performing animations.
@@ -375,7 +375,7 @@ canvas {
 }
 ```
 
-![Three.js](/best-javascript-animation-libraries/threejs.gif)
+![Three.js](/engineering-education/best-javascript-animation-libraries/threejs.gif)
 
 ### GreenSock.js
 [GreenSock Animation Platform (GSAP)](https://greensock.com/) is a powerful JavaScript animation library that is lightweight. It makes animations flow faster and easy to use. GSAP enables developers to create animations that look great in all major browsers, such as Chrome, Mozilla Firefox, and Internet Explorer 11+.
@@ -424,7 +424,7 @@ Here is a simple example of GSAP:
   </body>
 </html>
 ```
-![GSAP.js](/best-javascript-animation-libraries/gsapjs.gif)
+![GSAP.js](/engineering-education/best-javascript-animation-libraries/gsapjs.gif)
 
 ### Popmotion.js
 [Popmotion.js](https://popmotion.io/) is a lightweight and robust JavaScript animation library. It is powerful because it supports animations like Keyframes, spring, decay, and complex animations.
@@ -485,7 +485,7 @@ body {
   width: 100%;
 }
 ```
-![Type.js](/best-javascript-animation-libraries/typejs.gif)
+![Type.js](/engineering-education/best-javascript-animation-libraries/typejs.gif)
 
 ### Conclusion
 There are many JavaScript animation libraries that can be implemented on your projects. Those listed above are a few with the best combination of complexity, ease, and stability. Each animation library differs from others and each fit different situations.

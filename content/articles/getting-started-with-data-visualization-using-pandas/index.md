@@ -57,7 +57,7 @@ data.plot.scatter(x='fixed acidity', y='volatile acidity', title='The acidity of
 ```
 The result will be the following plot:
 
-![](/getting-started-with-data-visualization-using-pandas/scatter_plot.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/scatter_plot.PNG)
 
 ### Histogram
 The histogram provides the frequency distribution of a data set for you. Histograms are one of the most frequently used methods for charting historical data. It was first introduced by [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson).
@@ -72,7 +72,7 @@ The bins argument is the number of histogram bins to be used, and you can choose
 
 The result will be:
 
-![](/getting-started-with-data-visualization-using-pandas/histogram.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/histogram.PNG)
 
 You can also create multiple histograms in one line of code.
 
@@ -84,7 +84,7 @@ You can change the dimensions of your figure by changing the arguments of figsiz
 
 The result will be a histogram for the first five values of every column in our dataset.
 
-![](/getting-started-with-data-visualization-using-pandas/all_histogram.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/all_histogram.PNG)
 
 ### Line Chart
 The main usage of a line chart is to display the change of the data over time.
@@ -96,7 +96,7 @@ data['quality'].head().plot.line(title='quality')
 
 The result will be:
 
-![](/getting-started-with-data-visualization-using-pandas/line_chart.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/line_chart.PNG)
 
 ### Bar Chart
 When you have comparative data, the bar chart is the best choice. These bars can be displayed horizontally or vertically and it is very easy to implement.
@@ -108,7 +108,7 @@ data['total sulfur dioxide'].head().plot.bar()
 
 The result will be:
 
-![](/getting-started-with-data-visualization-using-pandas/bar.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/bar.PNG)
 
 To obtain a horizontal bar chart, we modify our code as follows:
 
@@ -131,7 +131,7 @@ The dataFrame index allows you to put strings instead of numeric values in the a
 
 Our chart will now look like:
 
-![](/getting-started-with-data-visualization-using-pandas/hbar.PNG)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/hbar.PNG)
 
 After learning the basics of **data visualization**, we're going to build a simple real-life application to flush out the idea.
 
@@ -169,7 +169,7 @@ ax.figure.savefig("output.pdf")
 You can save it as PNG by changing the suffix of the file name.
 After running our code you will see the following chart:
 
-![](/getting-started-with-data-visualization-using-pandas/protein_all.png)
+![](/engineering-education/getting-started-with-data-visualization-using-pandas/protein_all.png)
 
 As a result, we can conclude that the "Cheerios" and "Special K" brands have a higher value of protein among any of the brands in our dataset, and we can recommend it to the athletes.
 

@@ -49,7 +49,7 @@ npm install plotly
 
 A branched-out path directory will look similar to the picture below.  
 
-![Directory](/nodejs-structural-comparisons/path.jpg)  
+![Directory](/engineering-education/nodejs-structural-comparisons/path.jpg)  
 
 *Screen capture*
 
@@ -87,7 +87,7 @@ global.alphanum = [name, number];
 [ 'section.io', [ 0, -10, 3.14, -3.14 ] ]
 ```  
 
-![Defining Variables](/nodejs-structural-comparisons/define.jpg)  
+![Defining Variables](/engineering-education/nodejs-structural-comparisons/define.jpg)  
 
 *Screen capture*
 
@@ -136,7 +136,7 @@ plotly.plot(data, graphOptions, function (err, msg) {
 ```  
 
 The image below is a frozen portion of the [interactive graphic](https://chart-studio.plotly.com/~pkalynan/0).  
-![Graph](/nodejs-structural-comparisons/plotlyplt.jpg)  
+![Graph](/engineering-education/nodejs-structural-comparisons/plotlyplt.jpg)  
 
 *Screen capture*
 
@@ -224,7 +224,7 @@ g++ flip.cpp -I/usr/include/python3.9 -lpython3.9 -o section.io
 
 If `kex` is open, the image should appear similar to the picture below.  
 
-![Soundwave Curves on Matplotlib-cpp](/nodejs-structural-comparisons/soundcurve.jpg)  
+![Soundwave Curves on Matplotlib-cpp](/engineering-education/nodejs-structural-comparisons/soundcurve.jpg)  
 
 *Screen capture* 
 

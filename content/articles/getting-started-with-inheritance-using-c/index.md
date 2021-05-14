@@ -42,7 +42,7 @@ A **base** class produces derived classes that inherit the properties of the bas
 
 Inheritance forms a tree-like hierarchy:
 
-![inheritance tree](/getting-started-with-inheritance-using-c/tree-of-inheritance.png)
+![inheritance tree](/engineering-education/getting-started-with-inheritance-using-c/tree-of-inheritance.png)
 
 **In inheritance**, an object is often the object of another class, and all derived classes are objects of their base class, also note that constructors are not inherited.
 

@@ -64,7 +64,7 @@ AIOps mainly automates the more routine tasks that do not require advanced skill
 ### How AIOps works
 We are dealing with extremely complex systems today. Alert noise is a widespread issue for engineers and developers. Following up every alert may lead to alert fatigue, thus critical alerts ending up unnoticed. Relying on human labor to select the high-priority alerts and the harmless quirks may not work in the long run. That is why we need AIOps.
 
-![Gartner's guide for AIOps platforms](/how-aiops-is-transforming-it-operations/gartner-guide-for-aiops-platforms.jpg)
+![Gartner's guide for AIOps platforms](/engineering-education/how-aiops-is-transforming-it-operations/gartner-guide-for-aiops-platforms.jpg)
 
 [Image Source](https://www.bmc.com/blogs/gartner-aiops-market-guide/)
 

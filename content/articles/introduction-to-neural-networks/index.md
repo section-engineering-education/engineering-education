@@ -47,7 +47,7 @@ Consider a scenario where you have a set of labeled images, and you have to clas
 
 To create a neural network that recognizes images of cats and dogs. The network starts by processing the input. Each image is made of pixels. For example, the image dimensions might be 20 X 20 pixels that make 400 pixels. Those 400 pixels would make the first layer of our neural network.
 
-![Neural Network](/introduction-to-neural-networks/nn.png)
+![Neural Network](/engineering-education/introduction-to-neural-networks/nn.png)
 
 [Image source](https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4)
 
@@ -73,7 +73,7 @@ Artificial neurons or perceptron consist of:
 - Activation Function
 - Output
 
-![Neuron](/introduction-to-neural-networks/neuron.png)
+![Neuron](/engineering-education/introduction-to-neural-networks/neuron.png)
 
 [Image source](https://www.javatpoint.com/single-layer-perceptron-in-tensorflow)
 
@@ -118,7 +118,7 @@ A perceptron network is comprised of two layers:
 
 The input layer computes the weighted input for every node. The activation function is pertained to get the result as output.
 
-![Perceptron](/introduction-to-neural-networks/perceptron.png)
+![Perceptron](/engineering-education/introduction-to-neural-networks/perceptron.png)
 
 [Image source](https://missinglink.ai/wp-content/uploads/2018/11/Frame-3.png)
 
@@ -135,7 +135,7 @@ A couple of feed-forward neural networks applications are:
 - Speech Recognition
 - Facial Recognition
 
-![Feed forward Network](/introduction-to-neural-networks/fnn.png)
+![Feed forward Network](/engineering-education/introduction-to-neural-networks/fnn.png)
 
 [Image source](https://deepai.org/machine-learning-glossary-and-terms/feed-forward-neural-network)
 
@@ -152,7 +152,7 @@ Interpolation resizes images. Classification is executed by estimating the input
 
 According to [Dr. Saed Sayad](https://www.saedsayad.com/artificial_neural_network_rbf.htm), the sum and weights of hidden layer output sent to the output layer form a network of outputs.
 
-![Radial Basis Function Network](/introduction-to-neural-networks/rbn.png)
+![Radial Basis Function Network](/engineering-education/introduction-to-neural-networks/rbn.png)
 
 [Image source](https://miro.medium.com/max/500/0*Dezf_up8pNrdsl34.png)
 
@@ -179,7 +179,7 @@ With the example above, you can tell the output must go back in as input to deci
 RNNs have a memory that helps the network recall what happened earlier in the sequence data.
 While carrying out operations, neurons also act as memory cells.
 
-![Recurrent Neural Network](/introduction-to-neural-networks/rnn.jpeg)
+![Recurrent Neural Network](/engineering-education/introduction-to-neural-networks/rnn.jpeg)
 
 [Image source](https://deepai.org/machine-learning-glossary-and-terms/recurrent-neural-network)
 
@@ -204,7 +204,7 @@ Image processing involves conversion from RGB to a grey-scale. After the image i
 
 CNN is mainly used in signal and image processing. An article that may help shed some light on how general computer vision work [is here](/computer-vision-straight-lines/).
 
-![Convolutional Neural Network](/introduction-to-neural-networks/cnn.png)
+![Convolutional Neural Network](/engineering-education/introduction-to-neural-networks/cnn.png)
 
 [Image source](https://missinglink.ai/guides/neural-network-concepts/convolutional-neural-network-build-one-keras-pytorch/)
 
@@ -213,7 +213,7 @@ A Modular Neural Network (MNN) is composed of unassociated networks working indi
 
 MNN is advantageous because large and complex computational processes are done faster. Processes are broken down into independent components, thus increasing the computational speed.
 
-![Modular Neural Network](/introduction-to-neural-networks/mnn.png)
+![Modular Neural Network](/engineering-education/introduction-to-neural-networks/mnn.png)
 
 [Image source](https://www.researchgate.net/publication/341628332/figure/fig4/AS:895309341274112@1590469789167/Modular-neural-network-structure.png)
 

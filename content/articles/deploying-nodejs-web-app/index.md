@@ -53,7 +53,7 @@ sudo apt-get install -y nodejs
 
 Third, you'll need to navigate to the folder containing your web app. Type ls and then enter to view all the folders in your current working directory (location). This will look like the image below:
 
-![Website Folders Linux](website-folders.png)
+![Website Folders Linux](/engineering-educationwebsite-folders.png)
 
 Type cd and then the name of the folder that appears. Type ls again and you should see the files in your web app's root directory.
 
@@ -77,15 +77,15 @@ Assuming you’ve already bought a domain, the first step is to add a DNS record
 
 If you’ve not bought a domain, domain registrars like [Namecheap](https://www.namecheap.com) sell domain names and often other services such as email and static/CMS hosting, though there are benefits to going with a dedicated hosting and email provider. [Netlify](https://www.netlify.com) offers hosting for static sites and [SiteGround](https://www.siteground.co.uk) for CMS websites. Office365 and GSuite are the kings of custom email providers. See my guide for [Setting Up a Professional Email](/creating-professional-email/) to read a comparison of Office365 and GSuite.
 
-![Advanced DNS](advanced-dns.png)
+![Advanced DNS](/engineering-educationadvanced-dns.png)
 
 Login to your domain registrar and go to the advanced DNS settings of your domain. For example, on Namecheap, it’s the Advanced DNS tab on the Manage Domain screen.
 
-![DNS Records](dns-records.png)
+![DNS Records](/engineering-educationdns-records.png)
 
 You want to add a new record as follows: the type should be set to A, the host should be either @ or blank (depending on your provider), and the value should be the IP Address of your droplet. Repeat the process for the host www which will do the same for the www version of your domain.
 
-![DNS Check](dns-check.png)
+![DNS Check](/engineering-educationdns-check.png)
 
 It can take up to 24-48hrs for the changes to process, but it’s usually between 15 minutes to an hour. A quick way to check when it’s done is to go to [DNSChecker](dnschecker.org). Type in your domain name and make sure the type is set to A. When the result comes back as the IP Address of your droplet, then you’ve connected your domain successfully.
 

@@ -52,17 +52,17 @@ Let's have a look at some of the common differences between the two layouts.
 #### One vs two dimensions
 Flexbox arranges items in a one-dimensional layout. This can be either in rows or columns.
 
-![image](/css-flexbox-vs-css-grid/flex-horizontal-or-vertical.jpg)
+![image](/engineering-education/css-flexbox-vs-css-grid/flex-horizontal-or-vertical.jpg)
 
 [***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
 A Flexbox layout fits best when aligning items either horizontally or vertically. It is one dimensional and can only fit a row or a column.
 
-![image 2](/css-flexbox-vs-css-grid/vertical.png)
+![image 2](/engineering-education/css-flexbox-vs-css-grid/vertical.png)
 
 [***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
-![image 3](/css-flexbox-vs-css-grid/horizontal.png)
+![image 3](/engineering-education/css-flexbox-vs-css-grid/horizontal.png)
 
 [***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
@@ -97,13 +97,13 @@ Some CSS to style the header:
 }
 ```
 
-![flex image](/css-flexbox-vs-css-grid/flex-header-nav.png)
+![flex image](/engineering-education/css-flexbox-vs-css-grid/flex-header-nav.png)
 
 Most common header layouts lay their items in one direction; making it much easier to use Flexbox because of its one-dimensional capabilities.
 
 On the other hand, a Grid is a two-dimensional layout, meaning you can lay out items in rows and columns.
 
-![image grid](/css-flexbox-vs-css-grid/grid.png)
+![image grid](/engineering-education/css-flexbox-vs-css-grid/grid.png)
 
 [***Image Source***](https://www.youtube.com/watch?v=MdPYenT89o4)
 
@@ -135,7 +135,7 @@ An example of a basic two-dimensional layout.
 }
 ```
 
-![grid example](/css-flexbox-vs-css-grid/grid-example.jpg)
+![grid example](/engineering-education/css-flexbox-vs-css-grid/grid-example.jpg)
 
 We specify a grid with `display: grid` and then determine rows and columns with `grid-template-columns` and `grid-template-rows`. This defines a two-dimensional layout. In this case, each column and row take the size of `150px`.
 
@@ -170,7 +170,7 @@ div:nth-child(4) {
 }
 ```
 
-![Flex Content First](/css-flexbox-vs-css-grid/flex-content-first.png)
+![Flex Content First](/engineering-education/css-flexbox-vs-css-grid/flex-content-first.png)
 
 We specify a child item of the container (nth-child(4) and determine its position). That's what we mean by Flexbox being content-based.
 
@@ -195,13 +195,13 @@ On the other hand, we can implement the same using CSS Grid. The header is one d
 
 And the result looks pretty much the same.
 
-![header nav](/css-flexbox-vs-css-grid/grid-header-nav.png)
+![header nav](/engineering-education/css-flexbox-vs-css-grid/grid-header-nav.png)
 
 But notice, we specified ten columns, each taking a fraction of one unit. To drive the point home, let's see how the Grid layout works under the hood.
 
 Use a web browser to inspect the parent `div` element.
 
-![grid header](/css-flexbox-vs-css-grid/grid-header-under-the-hood.png)
+![grid header](/engineering-education/css-flexbox-vs-css-grid/grid-header-under-the-hood.png)
 
 This is awesome. We can see the grid is divided into ten cells. This is where the concept of the layout first is applied. First, we define the layout and then fix items into the grid cells.
 
@@ -235,11 +235,11 @@ div:nth-child(5) {
 }
 ```
 
-![nav layout](/css-flexbox-vs-css-grid/grid-header-nav-layout-first.png)
+![nav layout](/engineering-education/css-flexbox-vs-css-grid/grid-header-nav-layout-first.png)
 
 The layout has ten columns. To move these items to the left, specify the cells (layout first) where you want the content to be displayed.
 
-![layout](/css-flexbox-vs-css-grid/grid-header-nav-layout-first-under-the-hood.png)
+![layout](/engineering-education/css-flexbox-vs-css-grid/grid-header-nav-layout-first-under-the-hood.png)
 
 These simple examples explain the concept of content and layout first.
 
@@ -285,7 +285,7 @@ Here, I have nine items inside a Flexbox container.
 }
 ```
 
-![gap](/css-flexbox-vs-css-grid/gap.png)
+![gap](/engineering-education/css-flexbox-vs-css-grid/gap.png)
 
 **Using margin to create gutter around the items.**
 
@@ -307,9 +307,9 @@ Here, I have nine items inside a Flexbox container.
 }
 ```
 
-![gap margin](/css-flexbox-vs-css-grid/gap-with-margin.png)
+![gap margin](/engineering-education/css-flexbox-vs-css-grid/gap-with-margin.png)
 
-![wrapped margin](/css-flexbox-vs-css-grid/gap-with-margin-wrapped.png)
+![wrapped margin](/engineering-education/css-flexbox-vs-css-grid/gap-with-margin-wrapped.png)
 
 When I introduce a `margin of 6px`, notice how the spaces are created around the items. Margin creates some extra white spaces that can be avoided using the gap property.
 
@@ -335,9 +335,9 @@ Apply gap by specifying `column-gap`.
 }
 ```
 
-![column gap](/css-flexbox-vs-css-grid/column-gap.png)
+![column gap](/engineering-education/css-flexbox-vs-css-grid/column-gap.png)
 
-![gap column](/css-flexbox-vs-css-grid/column-gap-wrapped.png)
+![gap column](/engineering-education/css-flexbox-vs-css-grid/column-gap-wrapped.png)
 
 When we apply the wrap, we force Flexbox to create rows and columns on small screens. We can use `row-gap` to create the gutter around them as well.
 
@@ -360,7 +360,7 @@ When we apply the wrap, we force Flexbox to create rows and columns on small scr
 }
 ```
 
-![row gap](/css-flexbox-vs-css-grid/column-gap-row-gap.png)
+![row gap](/engineering-education/css-flexbox-vs-css-grid/column-gap-row-gap.png)
 
 **The shorthand**
 
@@ -486,7 +486,7 @@ Some CSS to style the container and the items:
 }
 ```
 
-![flex grid](/css-flexbox-vs-css-grid/grid-and-flexible.jpg)
+![flex grid](/engineering-education/css-flexbox-vs-css-grid/grid-and-flexible.jpg)
 
 Apply the wrap property to the container because it's the containing element of these items. It's going to control the wrapping of those items.
 
@@ -534,7 +534,7 @@ When we apply the wrap property, this is how the CSS styling should look like:
 }
 ```
 
-![flexible-wrapped](/css-flexbox-vs-css-grid/grid-and-flexible-wrapped.png)
+![flexible-wrapped](/engineering-education/css-flexbox-vs-css-grid/grid-and-flexible-wrapped.png)
 
 For the Flexbox layout, we are applying:
 - `flex-wrap: wrap` to push items into rows or columns.
@@ -556,7 +556,7 @@ This has to do with the Grid layout being two-dimensional, and that fits well in
 
 On the side of the application, the Grid wrap concept works best when you want to push items while maintaining the same width. A good example is the images section we used in our web designed (explained later in this guide).
 
-![image section](/css-flexbox-vs-css-grid/images-section.png)
+![image section](/engineering-education/css-flexbox-vs-css-grid/images-section.png)
 
 A fair use case of Flexbox wrap would be this subscription form, where the items don't have to be of the same size as you push them to different screen sizes.
 
@@ -604,11 +604,11 @@ A fair use case of Flexbox wrap would be this subscription form, where the items
 }
 ```
 
-![subscribe-form](/css-flexbox-vs-css-grid/subscribe-form.jpg)
+![subscribe-form](/engineering-education/css-flexbox-vs-css-grid/subscribe-form.jpg)
 
 In this case, each item takes as much space as possible as the container spread or shrink on varying screen sizes.
 
-![subscribe](/css-flexbox-vs-css-grid/subscribe.gif)
+![subscribe](/engineering-education/css-flexbox-vs-css-grid/subscribe.gif)
 
 ### Flexbox layout and Grid layout
 Some of the most commonly asked questions about these two include:
@@ -621,7 +621,7 @@ Every layout has its strength. They both work differently. The best and easiest 
 
 Let's illustrate where the CSS Grid can be implemented, working together with CSS Flexbox to create something awesome.
 
-![content-alignment](/css-flexbox-vs-css-grid/web-page-design-and-content-alignment.png)
+![content-alignment](/engineering-education/css-flexbox-vs-css-grid/web-page-design-and-content-alignment.png)
 
 The above is an example of a web page design representation. By implementation, the design was done with a Grid layout. Check the [code](https://codepen.io/abbeyjfitzgerald/pen/zzqqYo) that was used to implement it.
 
@@ -629,13 +629,13 @@ During implementation, some instances will require you to use a Flexbox layout s
 
 When the design is implemented, we can represent the content and the design of this [example](https://codepen.io/abbeyjfitzgerald/pen/RgRoKy).
 
-![web-design](/css-flexbox-vs-css-grid/web-design-implemented.png)
+![web-design](/engineering-education/css-flexbox-vs-css-grid/web-design-implemented.png)
 
 Go ahead and check the [code](https://codepen.io/abbeyjfitzgerald/pen/RgRoKy) used to implement the design above.
 
 The main layout skeleton is made with the CSS Grid as previewed using a web browser inspector tool.
 
-![under-the-hood](/css-flexbox-vs-css-grid/web-page-under-the-hood.png)
+![under-the-hood](/engineering-education/css-flexbox-vs-css-grid/web-page-under-the-hood.png)
 
 ```css
 .container {
@@ -686,7 +686,7 @@ In this case, the header is the perfect example of implementing a Flexbox inside
 }
 ```
 
-![header-content](/css-flexbox-vs-css-grid/header-content.png)
+![header-content](/engineering-education/css-flexbox-vs-css-grid/header-content.png)
 
 Again the navigation menu will fit well with a Flexbox layout.
 
@@ -697,7 +697,7 @@ Again the navigation menu will fit well with a Flexbox layout.
 }
 ```
 
-![nav-header-content](/css-flexbox-vs-css-grid/nav-header-content.png)
+![nav-header-content](/engineering-education/css-flexbox-vs-css-grid/nav-header-content.png)
 
 Another case that embraces one dimension flexibility is the extra content section.
 
@@ -735,7 +735,7 @@ Another case that embraces one dimension flexibility is the extra content sectio
 }
 ```
 
-![extra-content](/css-flexbox-vs-css-grid/extra-content.png)
+![extra-content](/engineering-education/css-flexbox-vs-css-grid/extra-content.png)
 
 Each `content-block-info` is arranged vertically; thus, a one-dimensional layout fits its design.
 
@@ -753,7 +753,7 @@ But with a Grid layout, the images will work fine on a two-dimensional layout.
 }
 ```
 
-![images-section](/css-flexbox-vs-css-grid/images-section.png)
+![images-section](/engineering-education/css-flexbox-vs-css-grid/images-section.png)
 
 CSS Grid and Flexbox layout can do a many things. But in some areas, the CSS Grid is better and more convenient, and in other areas, Flexbox is more convenient and the right choice.
 

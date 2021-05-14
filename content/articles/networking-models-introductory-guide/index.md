@@ -80,12 +80,12 @@ The probability of error is high, and therefore various other schemes are requir
 
     * Manchester Encoding:
 
-     ![](/networking-models-introductory-guide/manchester_coding.jpg)
+     ![](/engineering-education/networking-models-introductory-guide/manchester_coding.jpg)
       [Image Source](https://manikareahome.files.wordpress.com/)
 
     * NRZ Encoding:
 
-      ![](/networking-models-introductory-guide/nrz_coding.jpg)
+      ![](/engineering-education/networking-models-introductory-guide/nrz_coding.jpg)
       [Image Source](https://manikareahome.files.wordpress.com/)
 
 ### TCP/IP Model

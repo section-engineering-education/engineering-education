@@ -35,7 +35,7 @@ Clustering is the process of dividing uncategorized data into similar groups or 
 
 The following image shows an example of how clustering works.
 
-![Illustration of Clustering](/clustering-in-unsupervised-ml/illustration-of-clustering.png)
+![Illustration of Clustering](/engineering-education/clustering-in-unsupervised-ml/illustration-of-clustering.png)
 
 [Image Source: Guru 99](https://www.guru99.com/unsupervised-machine-learning.html#:~:text=Supervised%20vs.%20Unsupervised%20Machine%20Learning%20%20%20Parameters,%20%20Less%20accurate%20and%20trustworthy%20method.%20)
 
@@ -61,11 +61,11 @@ Squared Euclidean distance and cluster inertia are the two key concepts in K-mea
 
 - *Squared Euclidean distance:* If we have two points x and y, and the dimensional space given by m, the squared Euclidean distance will be given as:
 
-![Squared Euclidean Distance](/clustering-in-unsupervised-ml/squared-euclidean-distance.png)
+![Squared Euclidean Distance](/engineering-education/clustering-in-unsupervised-ml/squared-euclidean-distance.png)
 
 - *Cluster inertia:* This refers to the Sum of Squared Errors in the cluster. We give the cluster inertia as:
 
-![Cluster Inertia](/clustering-in-unsupervised-ml/cluster-inertia.png)
+![Cluster Inertia](/engineering-education/clustering-in-unsupervised-ml/cluster-inertia.png)
 
 In the equation above, μ(j) represents cluster j centroid. If x(i) is in this cluster(j), then w(i,j)=1. If it's not, then w(i,j)=0.
 
@@ -82,7 +82,7 @@ Based on this information, we should note that the K-means algorithm aims at kee
 
 5.	Steps 3-4 should be repeated until there is no further change.
 
-![K-Mean Algorithm](/clustering-in-unsupervised-ml/k-mean-algorithm.jpg)
+![K-Mean Algorithm](/engineering-education/clustering-in-unsupervised-ml/k-mean-algorithm.jpg)
 
 [Image Source: Tutorial Ride](https://www.tutorialride.com/data-mining/k-means-clustering-in-data-mining.htm)
 
@@ -100,7 +100,7 @@ In this type of clustering, an algorithm is used when constructing a hierarchy (
 Unlike K-means clustering, hierarchical clustering doesn't start by identifying the number of clusters. Instead, it starts by allocating each point of data to its cluster.
 
 A dendrogram is a simple example of how hierarchical clustering works.
-![Hierarchical Clustering Dendrogram](/clustering-in-unsupervised-ml/hierarchical-clustering-dendrogram.png)
+![Hierarchical Clustering Dendrogram](/engineering-education/clustering-in-unsupervised-ml/hierarchical-clustering-dendrogram.png)
 
 [Image Source: Scikit-Learn](https://scikit-learn.org/stable/_images/sphx_glr_plot_agglomerative_dendrogram_001.png)
 
@@ -142,7 +142,7 @@ This is a density-based clustering that involves the grouping of data points clo
 2.	Identify border points and assign them to their designated core points.
 3.	Any other point that's not within the group of border points or core points is treated as a noise point.
 
-![DBSCAN Clustering](/clustering-in-unsupervised-ml/dbscan-clustering.jpg)
+![DBSCAN Clustering](/engineering-education/clustering-in-unsupervised-ml/dbscan-clustering.jpg)
 
 [Image Source: Git Book](https://yongle.gitbooks.io/datamining/content/figures/dbscan.png)
 
@@ -166,7 +166,7 @@ In these models, each data point is a member of all clusters in the dataset, but
 In Gaussian mixture models, the key information includes the latent Gaussian centers and the covariance of data. This makes it similar to K-means clustering.
 
 The following diagram shows a graphical representation of these models.
-![Gaussian Mixture Model](/clustering-in-unsupervised-ml/gaussian-mixture-model.png)
+![Gaussian Mixture Model](/engineering-education/clustering-in-unsupervised-ml/gaussian-mixture-model.png)
 
 [Image Source: Daum](https://t1.daumcdn.net/cfile/tistory/99BC00385AC75F9A03)
 

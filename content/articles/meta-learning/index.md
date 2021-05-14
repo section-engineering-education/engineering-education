@@ -72,7 +72,7 @@ Compared to conventional models, neural networks with augmented memory capacitie
 #### Model agnostic meta-learning
 [Model agnostic meta-learning (MAML)](https://www.borealisai.com/en/blog/tutorial-3-few-shot-learning-and-meta-learning-ii) refers to a framework that applies to any model that is trained using gradient descent. We can argue that this is similar to or a variation of few-shot meta-learning. Like few-shot meta-learning, the goal is to learn a general model that can simply undergo fine-tuning for several different tasks. This includes a scenario where training data is insufficient. Let's visualize the MAML framework.
 
-![maml](/meta-learning/maml.png)
+![maml](/engineering-education/meta-learning/maml.png)
 
 *MAML approach*
 

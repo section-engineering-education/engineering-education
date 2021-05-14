@@ -20,7 +20,7 @@ Deep Learning (DL) is becoming increasingly popular among IT enthusiasts due to 
 Well, that is thanks to the concept of Deep Learning. Deep Learning is a potent tool, and once you read this article, you will have a better understanding of what DL is and how it works.
 ### What is Deep Learning?
 
-![Venn diagram](/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
+![Venn diagram](/engineering-education/introduction-to-deep-learning/ai-ml-dl.jpg)<br>
 
 [*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
 
@@ -52,7 +52,7 @@ Neurons in the hidden layer then send data to neurons in the output layer. Theor
 
 The output layer predicts the outcome. Neural Networks work with numbers and math. Math is the key to neural networks, artificial intelligence, and its techniques; i.e. [Machine Learning and Deep Learning](http://neuralnetworksanddeeplearning.com/chap1.html).
 
-![Neural Networks](/introduction-to-deep-learning/neural-networks.jpg)<br>
+![Neural Networks](/engineering-education/introduction-to-deep-learning/neural-networks.jpg)<br>
 
 [*Image source*](https://towardsdatascience.com/cousins-of-artificial-intelligence-dda4edc27b55)
 

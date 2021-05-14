@@ -57,7 +57,7 @@ Let us begin!
 - Select ***create a new project***.
 - Select ***Empty Activity***.
 
-![An Empty Activity](/first-android-app/empty-activity.png)
+![An Empty Activity](/engineering-education/first-android-app/empty-activity.png)
 
 - Configure your project by choosing an appropriate name.
 - Write an appropriate and unique package name if you plan to launch your app on the `Play Store`, if not leave it on default.
@@ -65,7 +65,7 @@ Let us begin!
 - Ensure to choose an SDK that will run your app on many devices.
 - Click Finish.
 
-![Configure your project](/first-android-app/configure-project.png)
+![Configure your project](/engineering-education/first-android-app/configure-project.png)
 
 ### Step 2. User Interface design
 UI for the First Activity:
@@ -193,7 +193,7 @@ There are two approaches to this:
  
 As demonstrated below.
 
-![Stat emulator](/first-android-app/avd-manager.png)
+![Stat emulator](/engineering-education/first-android-app/avd-manager.png)
 
 > NOTE: The performance and RAM left on your PC will determine how long the emulator will take to start.
 
@@ -208,9 +208,9 @@ As demonstrated below.
 
 As shown below.
 
-![Physical device](/first-android-app/physical-device.png)
+![Physical device](/engineering-education/first-android-app/physical-device.png)
 
-![Input](/first-android-app/input-page.png)   ![Display](/first-android-app/display-page.png)
+![Input](/first-android-app/input-page.png)   ![Display](/engineering-education/first-android-app/display-page.png)
 
 ### Conclusion
 That is it! 

@@ -116,7 +116,7 @@ Let’s briefly define a couple of ensemble methods:
 
 **Bagging**– This method attempts to apply similar learners on tiny sample populations then takes the mean of all predictions made.
 
-![bagging](/imbalanced-data-in-ml/bagging.png)
+![bagging](/engineering-education/imbalanced-data-in-ml/bagging.png)
 
 [*Bagging Image Source*](https://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/)
 

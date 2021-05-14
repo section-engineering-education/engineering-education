@@ -20,7 +20,7 @@ When people talk about blockchain, many times, they are referring to the use of 
 ### What is a Blockchain?
 A blockchain is a growing linked list of blocks, where a block is a group of ordered transactions **ledger**. Transaction, in this context, is a database transaction which stands for any changes made within the database.
 
-![blockchain image](/blockchain-as-a-database/blockchain.png)<br>
+![blockchain image](/engineering-education/blockchain-as-a-database/blockchain.png)<br>
 Each block typically contains the cryptographic hash of the previous block, a timestamp, and transaction data. To use it as a distributed ledger that is accessible and contributed to by many people, the blockchain works on the P2P ([**peer-to-peer**](https://en.wikipedia.org/wiki/Peer-to-peer)) protocol, where every node has an equal say validating the transactions on the network. This network can be public or private, depending on the needs of the user.
 
 To use blockchain as a database for [DApps](https://blockgeeks.com/guides/decentralized-applications/) (decentralized applications), there are certain concepts to bear in mind.

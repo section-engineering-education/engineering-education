@@ -41,7 +41,7 @@ First, you need to determine the cloud computing architecture that you will impl
 
 - **Hybrid Cloud:** This is the combination of public cloud and private cloud. A hybrid cloud gives your business greater flexibility, more deployment options, and helps optimize your existing infrastructure, security, and compliance.
 
-![image](/introduction-to-cloud-computing/cloud-image-1.png)
+![image](/engineering-education/introduction-to-cloud-computing/cloud-image-1.png)
 *[Image Source: Medium](https://medium.com/@karansinghreen/what-is-the-difference-between-public-private-and-hybrid-cloud-a41bba631479)*
 
 ### Types of Cloud Services
@@ -56,17 +56,17 @@ Popular IaaS cloud providers include:
    - Google Compute Engine (GCE), the IaaS component of Google Cloud Platform (GCP)
 
 
-![IaaS](/introduction-to-cloud-computing/infrastructure-management.jpg)<br>
+![IaaS](/engineering-education/introduction-to-cloud-computing/infrastructure-management.jpg)<br>
 *[Image Source:indiamart](https://www.indiamart.com/proddetail/infrastructure-management-services-9277027797.html)*
 
 - **PaaS:** It provides a platform and environment to allow developers to build applications and services. This service is hosted in the cloud and users access these tools over the Internet using APIs, web portals, or gateway software. It includes software support and management services, storage, networking, deployment, testing, collaboration, hosting, and maintenance of applications. [Heroku](https://www.heroku.com/) is a good example of a PaaS cloud provider.
 
-![PaaS](/introduction-to-cloud-computing/paas.jpg)<br>
+![PaaS](/engineering-education/introduction-to-cloud-computing/paas.jpg)<br>
 *[Image Source:360logica](https://www.360logica.com/blog/some-of-the-key-benefits-of-platform-as-a-service-paas-cloud-computing-model/)*
 
 - **SaaS:** It delivers software applications over the Internet; these applications are often called web services. With SaaS, cloud providers host and manage the software application and underlying infrastructure and handle any maintenance, like software upgrades and security patching. An example of a SaaS application is Microsoft Office 365 for productivity and email services.
 
-![SaaS](/introduction-to-cloud-computing/saas.png)<br>
+![SaaS](/engineering-education/introduction-to-cloud-computing/saas.png)<br>
 *[Image Source:hackernoon](https://hackernoon.com)*
 
 ### Cloud enabling innovation

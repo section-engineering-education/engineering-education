@@ -95,7 +95,7 @@ I've used [Bootstrap 5](https://getbootstrap.com/) to style the webpage. If you 
 </html>
 ```
 
-![HTML Web Page](/text-to-speech-in-javascript/start_screen.png)
+![HTML Web Page](/engineering-education/text-to-speech-in-javascript/start_screen.png)
 
 ### The JavaScript file
 Let's create an instance of the [`SpeechSynthesisUtterance`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance) class. We'll configure this instance with various properties.

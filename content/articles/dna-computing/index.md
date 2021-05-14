@@ -26,7 +26,7 @@ A good experience with biology and computer science is required to build algorit
 ### Applications
 The first theory of DNA computation was proposed by Leonard Adleman in 1994[1]. He put his experimental theory into the test with a seven-point Hamiltonian path problem or also called the traveling salesman problem. The salesman in this problem needs to find the shortest path between seven cities whose distances are known in such a way that he crosses no city twice and returns to the original city. Adleman represented each city with a short DNA sequence with about 20 bases and a [complementary strand](https://en.wikipedia.org/wiki/Complementary_DNA) with 20 bases as the street between the cities. All the fragments are capable of linking with each other. When the fragments were put in a tube and mixed, the natural bonding tendencies the DNA created 109 formations or solutions in less than a second. Not all were correct and he took a week to extrapolate and filter out the shortest path through various techniques.
 
-![Image source](/dna-computing/image1.png)
+![Image source](/engineering-education/dna-computing/image1.png)
 
 [*Image source*](https://www.cs.uaf.edu/2010/fall/cs441/proj1/dna/DNAComputingHTMLNotes.html)
 

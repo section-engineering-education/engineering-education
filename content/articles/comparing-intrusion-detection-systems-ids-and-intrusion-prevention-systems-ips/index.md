@@ -27,7 +27,7 @@ How does this happen? Well, IDS inspect [packets](https://techterms.com/definiti
 
 These packets refer to small amounts of data sent over a network, including the internet or local area network (LAN). They incorporate a destination, source, and data (content) being transferred. An IDS is used to detect potential network compromises in real-time.
 
-![An illustration of IDS](/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
+![An illustration of IDS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ids-security.png)
 
 [Source](https://www.comodo.com/ids-in-security.php)
 
@@ -39,7 +39,7 @@ IDS are of two types:
 ### An overview of IPS
 IPS are strategically placed between the outside internet and the internal network. Practically in the same area as firewalls. Anything that the IDS flags as a threat, IPS denies it as malicious traffic. The traffic may represent known threats in the database, but the presence of IPS ensures that it blocks the threats, and that there is no delivery of malicious packets.
 
-![An illustration of IPS](/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ips-security.png)
+![An illustration of IPS](/engineering-education/comparing-intrusion-detection-systems-ids-and-intrusion-prevention-systems-ips/ips-security.png)
 
 [Source](https://www.exabeam.com/ueba/ips-security-how-active-security-saves-time-and-stop-attacks-in-their-tracks/)
 

@@ -187,7 +187,7 @@ You should see a blank screen since we do not have any components being displaye
 
 ### Title and input datframe
 
-![image title](/streamlit-ui-tutorial/title.png)  
+![image title](/engineering-education/streamlit-ui-tutorial/title.png)  
   
 We will use the following functions for this part of our webapp:
 - **title( str )**: This method is like a \<h1> tag. It takes in a string as a parameter and displays the text as a title.
@@ -205,7 +205,7 @@ An alternative to **st.table()** is **st.dataframe()**. Both of them support a d
 
 ### Model performance
 
-![image title](/streamlit-ui-tutorial/performance.png)  
+![image title](/engineering-education/streamlit-ui-tutorial/performance.png)  
 
 First, we will need to form the confusion matrix and compute the values.
 
@@ -241,7 +241,7 @@ You can think of **st.pyplot()** as an equivalent to **plt.show()**.
 
 ### Taking input from the user
 
-![image title](/streamlit-ui-tutorial/predict.png)
+![image title](/engineering-education/streamlit-ui-tutorial/predict.png)
   
 Next, we allow the user to input data and display the prediction. 
 

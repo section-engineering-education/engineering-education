@@ -184,7 +184,7 @@ The endpoint is your Ngrok URL followed by `/list_movies`.
 
 This should return the data from the movies.json as shown below.
 
-![postman_testing](/building-a-basic-api-with-nodejs/postman_testing.png)
+![postman_testing](/engineering-education/building-a-basic-api-with-nodejs/postman_testing.png)
 
 Ngrok will record the request as well.
 

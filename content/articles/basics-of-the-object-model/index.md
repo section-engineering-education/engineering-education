@@ -127,7 +127,7 @@ Through hierarchy, a class can be composed of inter-related sub-classes, that ca
 
 Here is an example of a class of hierarchy:
 
-![Class of Hierarchy](/basics-of-the-object-model/hierarchy.gif)<br>
+![Class of Hierarchy](/engineering-education/basics-of-the-object-model/hierarchy.gif)<br>
 
 *[Image Source](http://www.dba-oracle.com/t_object_class_hierarchies_design.htm)*
 

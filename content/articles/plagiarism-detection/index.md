@@ -19,7 +19,7 @@ images:
 <!--more-->
 
 >**A:** What's worse than someone stealing your work?
-![Funny](/plagiarism-detection/funny.jpg)
+![Funny](/engineering-education/plagiarism-detection/funny.jpg)
 >
 >
 >**Q:** Someone stealing your work and claiming it's theirs!!!
@@ -103,7 +103,7 @@ For this example, I am going to replicate the example from [Selva Prabhakaran](h
 Only difference is that `Document 3` is a subsection of `Document 2`. How do you think their similarities will compare?
 
 #### Three Document Similarity Example
-![plagiarism_blog_post](/plagiarism-detection/plagarism_blog_post.png)
+![plagiarism_blog_post](/engineering-education/plagiarism-detection/plagarism_blog_post.png)
 Image Source: Author -- Earl Potters
 
 
@@ -116,7 +116,7 @@ We have limited our quantitative analysis scope by only looking at three key-wor
 To explain what I mean, here is a 3D projection of the 3 documents.
 
 #### 3D Document Projection
-![3D Projection](/plagiarism-detection/3d-projection-plagarism-blog.png)
+![3D Projection](/engineering-education/plagiarism-detection/3d-projection-plagarism-blog.png)
 
 Image Source: Author -- Earl Potters
 
@@ -125,7 +125,7 @@ As illustrated by this example, we can see that `doc 2` and `doc 3` are closer i
 The graphical representation of common words is a intersection which can be seen as a Venn diagram.
 
 #### Document Intersection
-![total common words](/plagiarism-detection/ven-diagrahm.png)
+![total common words](/engineering-education/plagiarism-detection/ven-diagrahm.png)
 Image Source: Author -- Earl Potters
 
 You can see 3 intersecting circles that contain the set of all words in their document space. The intersection of circles is the intersection of both word sets.
@@ -245,7 +245,7 @@ df_document_term_matrix = pd.DataFrame(data=document_term_matrix,
 df
 ```
 
-![table](/plagiarism-detection/screenshot1.png)
+![table](/engineering-education/plagiarism-detection/screenshot1.png)
 
 Image Source: Author -- Earl Potters
 
@@ -267,7 +267,7 @@ df_cosine_matrix = pd.DataFrame(data=cosine_matrix,
 df
 ```
 
-![table 2](/plagiarism-detection/screenshot2.png)
+![table 2](/engineering-education/plagiarism-detection/screenshot2.png)
 
 Image Source: Author -- Earl Potters
 
@@ -285,13 +285,13 @@ Your output should look like this.
 
 `df_document_term_matrix`
 
-![table](/plagiarism-detection/screenshot1.png)
+![table](/engineering-education/plagiarism-detection/screenshot1.png)
 
 Image Source: Author -- Earl Potters
 
 `df_cosine_matrix`
 
-![table 2](/plagiarism-detection/screenshot2.png)
+![table 2](/engineering-education/plagiarism-detection/screenshot2.png)
 
 Image Source: Author -- Earl Potters
 

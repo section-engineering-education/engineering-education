@@ -25,11 +25,11 @@ K-Means is a clustering algorithm. Clustering algorithms form clusters so that d
 
 Consider the data plot given below.
 
-![plot](/k-means-from-scratch-r/plot1.jpg)
+![plot](/engineering-education/k-means-from-scratch-r/plot1.jpg)
 
 To find a decision boundary that divides the data into k-different clusters, we use K-means. Let's assume we want to divide the given dataset into two clusters. What would be the optimal distribution of data points?
 
-![plot](/k-means-from-scratch-r/plot2.jpg)
+![plot](/engineering-education/k-means-from-scratch-r/plot2.jpg)
 
 The example shown is one possible scenario after clustering. The green dots represent the centroids of the clusters. A centroid is a central point that is closest to all the points.
 
@@ -73,7 +73,7 @@ Let's us plot the data points and visualize them using the `plot` function in R.
 plot(dataPoints[,1], dataPoints[,2])
 ```
 
-![plot](/k-means-from-scratch-r/plot1.jpg)
+![plot](/engineering-education/k-means-from-scratch-r/plot1.jpg)
 
 #### Step 2: Initiate Random Centroids for k-Clusters
 We will initialize 2 clusters with centroids (1, 1) and (5, 7). Ideally, a random generator function such as runif() or rnorm() should be used to initialize clusters to assert the algorithm's generalization. For the reproducibility of results, we will consider pre-defined clusters.
@@ -101,7 +101,7 @@ plot(dataPoints[,1], dataPoints[,2])
 points(centroid[,1], centroid[,2],col="red")
 ```
 
-![plot 3](/k-means-from-scratch-r/plot3.jpg)
+![plot 3](/engineering-education/k-means-from-scratch-r/plot3.jpg)
 
 #### Step 3: Calculating the Distance from each Point
 To calculate the distance between the centroid and the remaining points, we will use Euclidean distance. The Euclidean distance is defined as follows:
@@ -257,7 +257,7 @@ points(new_centroid[,1], new_centroid[,2],col="red")
 
 The updated centroids are shown in the figure below.
 
-![](/k-means-from-scratch-r/plot4.jpg)
+![](/engineering-education/k-means-from-scratch-r/plot4.jpg)
 
 ### Advantages and Disadvantages
 K-means is useful in implementing [dimensionality reduction](https://www.imperva.com/blog/clustering-and-dimensionality-reduction-understanding-the-magic-behind-machine-learning/) and [image compression](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a). Dimensionality reduction is used as a pre-processing step to reduce data dimensions during the execution of other machine learning algorithms. Image compression aims to eliminate data by reducing the size and still maintaining the relevant features and information.

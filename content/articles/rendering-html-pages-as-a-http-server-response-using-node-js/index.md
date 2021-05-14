@@ -96,7 +96,7 @@ app.get("/", (req, res) => {
 
 Restart the server and open the route `http://localhost:3000/` on the browser.
 
-![Server rendered html elements](/rendering-html-pages-as-a-http-server-response-using-node-js/server-rendered-html-elements.jpg)
+![Server rendered html elements](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/server-rendered-html-elements.jpg)
 
 `res.send` is sending individual bits of HTML data to the server, but if we want to send an entire web page such as an `index.html`, we have to use something different.
 
@@ -136,7 +136,7 @@ app.get("/", (req, res) => {
 
 Open the route `http://localhost:3000/` on the browser. This will print the values of `__dirname` into the console.
 
-![How dirname works](/rendering-html-pages-as-a-http-server-response-using-node-js/console-log-dirname.jpg)
+![How dirname works](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/console-log-dirname.jpg)
 
 As you can see, it prints the exact path to reach your server location.
 
@@ -217,7 +217,7 @@ app.get("/", (req, res) => {
 });
 ```
 
-![Html page as server response](/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-as-server-response.jpg)
+![Html page as server response](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-as-server-response.jpg)
 
 However, this did not load the CSS styling. `app.css` is a static file. To load the [static server files](https://expressjs.com/en/starter/static-files.html) included in the `index.html` use `express.static` as shown in the example below:
 
@@ -239,18 +239,18 @@ app.get("/", (req, res) => {
 
 Save the file and open `http://localhost:3000/` in the browser, and the server will send a web page as expected.
 
-![Html page with css as server response](/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-with-css-as-server-response.jpg)
+![Html page with css as server response](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/html-page-with-css-as-server-response.jpg)
 
 ### Parsing form data to the server using the HTML forms
 The server is running. It is now returning HTML form as a response to the client (browser). Whenever this server's route is accessed, the `GET` request will be executed from the browser. However, what would happen if you fill this form with the data and press the button *subscribe*?
 
 Let's try that out. This outputs the results below, an error returned by the server.
 
-![Server POST request error](/rendering-html-pages-as-a-http-server-response-using-node-js/server-post-error.jpg)
+![Server POST request error](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/server-post-error.jpg)
 
 Reload the page again. Open the browser inspector tool and head to the Network tab. Fill in the form data and click the subscribe button. This will return a 404 status code. This means the client cannot send/`POST` data to the server.
 
-![Browser inspector tool network status code](/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-status-code.jpg)
+![Browser inspector tool network status code](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-status-code.jpg)
 
 The HTML form we have created has a `POST` method. This means we are sending a `POST` request to the server.
 
@@ -280,7 +280,7 @@ app.post("/", (req, res) => {
 
 When you click the subscribe button, a `Thank you for subscribing` message will be printed on the browser. Moreover, the browser will return a 200 code upon checking the inspector network, which is okay. The client has `POST` permissions and can send a `POST` request to the server.
 
-![Browser inspector tool network error resolved](/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-error-resolved.jpg)
+![Browser inspector tool network error resolved](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/browser-inspector-tool-network-error-resolved.jpg)
 
 Everything is working great. Nevertheless, we need the server to get the form data and send the relevant results to the browser instead of sending some relative plain text such as `Thank you for subscribing`.
 
@@ -325,7 +325,7 @@ app.post("/", (req, res) => {
 
 Open `http://localhost:3000/`. Fill in the form inputs and click the subscribe button. Check your console.
 
-![Console log a request body](/rendering-html-pages-as-a-http-server-response-using-node-js/console-log-request-body.jpg)
+![Console log a request body](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/console-log-request-body.jpg)
 
 This form data is readily available, and we can now instruct the server what to do with it.
 
@@ -357,7 +357,7 @@ app.post("/", (req, res) => {
 
 Fill in the form inputs and click the subscribe button.
 
-![Using body-parser](/rendering-html-pages-as-a-http-server-response-using-node-js/body-parser.jpg)
+![Using body-parser](/engineering-education/rendering-html-pages-as-a-http-server-response-using-node-js/body-parser.jpg)
 
 >NOTE: The information stored in variables `subName` and `subEmail` correspond to `yourname` and `youremail` respectively. `yourname` and `yourname` naming comes from the `name attribute` of your HTML form inputs. This way, you can use the form data and decide what happens to each of the inputs as if they were just properties of the object body.
 

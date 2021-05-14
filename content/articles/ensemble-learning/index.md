@@ -66,7 +66,7 @@ Here are the steps to the bagging process:
 
 The image below will aid in the understanding of the bagging process.
 
-![bagging](/ensemble-learning/bagging.png)
+![bagging](/engineering-education/ensemble-learning/bagging.png)
 
 *Bagging process*
 
@@ -100,7 +100,7 @@ We can describe stacking as a technique that uses many classifiers' predictions 
 
 Let’s use an image to explain this technique a bit more intuitively.
 
-![stacking](/ensemble-learning/stacking.png)
+![stacking](/engineering-education/ensemble-learning/stacking.png)
 
 *The framework of a stacking classifier*
 
@@ -115,7 +115,7 @@ Finally, we use the resultant predictions to train the meta-classifier. It's wor
 
 The image below gives a better description of the process.
 
-![stackingregression](/ensemble-learning/stackingregression.png)
+![stackingregression](/engineering-education/ensemble-learning/stackingregression.png)
 
 *Stacking in regression*
 

@@ -97,7 +97,7 @@ Now we can check our work in the browser by running the command `pyt
 
 This should display on our browser.
 
-![Register form 1](/working-with-forms-in-django/register1.png)
+![Register form 1](/engineering-education/working-with-forms-in-django/register1.png)
 
 As seen from these few lines of code, a form has been created, and Django also provides a password validation field just by importing the `UserCreationForm`.
 
@@ -164,7 +164,7 @@ def register(request):
 
 **Note:** How we changed from UserCreationForm to UserRegisterForm.
 
-![Register form 2 with emailField](/working-with-forms-in-django/register2.png)
+![Register form 2 with emailField](/engineering-education/working-with-forms-in-django/register2.png)
 
 
 A few additional styling choices can be done using either CSS or bootstrap within the template. This additional styling is done using ***Django-crispy-forms***.
@@ -179,7 +179,7 @@ First, install crispy forms in your terminal.
 
 Once this is installed, go to your **settings.py** file and add the crispy form under installed_apps.
 
-![Settings.py file](/working-with-forms-in-django/settings.png)
+![Settings.py file](/engineering-education/working-with-forms-in-django/settings.png)
 
 Then, at the bottom of the **settings.py** file, add these lines of code.
 
@@ -208,7 +208,7 @@ Notice, we also added **crispy** in our code. This showcases that we are adding 
 
 Once this is done properly, your form would look like this.
 
-![Register form 4 with crispy](/working-with-forms-in-django/register4.png)
+![Register form 4 with crispy](/engineering-education/working-with-forms-in-django/register4.png)
 
 ### Saving user form data in a database
 This is one of the greatest features of Django. The Django framework comes with its own immersed database, ***sqlite3***. It immediately creates the Django app from the terminal, and it comes with an SQLite database.

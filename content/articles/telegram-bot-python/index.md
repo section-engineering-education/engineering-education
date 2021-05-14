@@ -52,13 +52,13 @@ Our second step will be to create a new bot on Telegram and get API keys for the
 
 Now, click on this [link](https://t.me/botfather) and open up BotFather.
 
-![Create a New Bot](/telegram-bot-python/newbot.png)<br>
+![Create a New Bot](/engineering-education/telegram-bot-python/newbot.png)<br>
 Create a new bot by entering the command, `\newbot`
 
-![Bot Username](/telegram-bot-python/botusername.png)<br>
+![Bot Username](/engineering-education/telegram-bot-python/botusername.png)<br>
 Enter a display name for the bot and hit enter. Now choose a username for the bot.
 
-![Bot Success](/telegram-bot-python/botsuccess.png)<br>
+![Bot Success](/engineering-education/telegram-bot-python/botsuccess.png)<br>
 There! You have successfully created the bot! The API Token and the bot link are given. Store it securely, as we'll need it soon.
 
 ### Create a Telegram Channel
@@ -76,7 +76,7 @@ To access posts from Reddit, we'll be using the **Reddit API** and the Python li
 - Create a new Reddit account.
 - Go to [App Preferences](https://www.reddit.com/prefs/apps/), and click on `create app`.
 
-![Reddit Credentials](/telegram-bot-python/redditcreds.png)
+![Reddit Credentials](/engineering-education/telegram-bot-python/redditcreds.png)
 
 - Give your app a **name**, and select the sub-option `script` from the radio buttons.
 - Enter a short **description**.
@@ -239,7 +239,7 @@ Let's deploy it on Heroku so that it runs 24x7!
 - Go to the [Heroku Dashboard](https://dashboard.heroku.com/) and create a new account.
 - Create a new Heroku app.
 
-![Heroku Dash](/telegram-bot-python/herokudash.png)<br>
+![Heroku Dash](/engineering-education/telegram-bot-python/herokudash.png)<br>
 - Go to the **Deploy** Tab, and select **GitHub** as the deployment method.
 - Now search for your GitHub Repository and enable **auto deploy**.
 - Auto Deploy starts deploying your script as soon as it detects an update in your GitHub.

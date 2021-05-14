@@ -27,7 +27,7 @@ JavaScript (JS) is not that clever. JS is a single-threaded language, meaning th
 
 The event loop is not just for JavaScript. It is the standard that defines how a web browser front end works.
 
-![event loop 1](https://media.giphy.com/media/RhBsyPkh1BC87DSIJe/giphy.gif)
+![event loop 1](/engineering-educationhttps://media.giphy.com/media/RhBsyPkh1BC87DSIJe/giphy.gif)
 
 The purple ball represents the current state of the event loop. Like a movie, the browser redraws the screen on every frame. Between frames, JavaScript runs. When the script event ends, control is passed back to the browser to redraw any changes that occurred. This keeps animations or UX elements fluid while still computing the JavaScript in the background.  
 
@@ -42,7 +42,7 @@ Try selecting text or clicking on buttons. Can't? Let's see why.
 
 Here is the event loop while our code is running.
 
-![blocked event loop](https://i.imgur.com/C1P1MR7.jpg)
+![blocked event loop](/engineering-educationhttps://i.imgur.com/C1P1MR7.jpg)
 
 It is stuck in our JavaScript infinite loop. The website can't re-render or handle other events, like clicks, because we haven't given control back to the browser.
 

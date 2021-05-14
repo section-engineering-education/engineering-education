@@ -64,7 +64,7 @@ This module intends to replace several older modules and functions. The subproce
 
 Create a Python file and add the following code. We also need to create a file called "servers.txt", where we can add a list of all the servers we need to ping. The Python script will read from this file and ping each server listed in it. 
 
-![Servers](/how-to-execute-linux-commands-in-python/servers.png)
+![Servers](/engineering-education/how-to-execute-linux-commands-in-python/servers.png)
 
 I have added 4 servers, out of which two exist and the other two do not. Only the servers that exist can be "pinged".
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     # print(outputlist)
 ```
 
-![Output](/how-to-execute-linux-commands-in-python/output.png)
+![Output](/engineering-education/how-to-execute-linux-commands-in-python/output.png)
 
 As you can see in the output, we get the message "name or service not known" for the two servers that did not exist. 
 

@@ -95,19 +95,19 @@ Click on usage for the project you want to enable cloud recording for.
 
 > You can acquire the app ID right next to the Usage button. Click on the eye icon to reveal the app ID. We'll be needing the app ID later in this tutorial.
 
-![Usage Button](/agora-cloud-recording/usage_button.png)
+![Usage Button](/engineering-education/agora-cloud-recording/usage_button.png)
 
 Click on duration under cloud recording. If you haven't already enabled it yet, It will ask you whether you want to enable cloud recording for this project. Click on the enable button.
 
-![Enable Cloud Recording](/agora-cloud-recording/enable_cr.png)
+![Enable Cloud Recording](/engineering-education/agora-cloud-recording/enable_cr.png)
 
 It'll display the maximum number of channels that you can record at the same time. The default value is 50 channels. If you want more, you need to contact the Sales team of Agora (sales@agora.io).
 
-![Max Concurrent Channels](/agora-cloud-recording/max_concurrent_channels.png)
+![Max Concurrent Channels](/engineering-education/agora-cloud-recording/max_concurrent_channels.png)
 
 Once you hit Apply, you'll see the statistics page of the cloud recording.
 
-![Cloud Recording Enabled](/agora-cloud-recording/cr_enabled.png)
+![Cloud Recording Enabled](/engineering-education/agora-cloud-recording/cr_enabled.png)
 
 You have successfully enabled cloud recording for your project.
 
@@ -116,13 +116,13 @@ If you want to work with Agora's APIs, you need to acquire the customer ID and c
 
 Head to the console and click the account name on the top right corner and click on RESTful API from the dropdown.
 
-![RESTful API Dropdown](/agora-cloud-recording/restful_api.png)
+![RESTful API Dropdown](/engineering-education/agora-cloud-recording/restful_api.png)
 
 Copy the customer ID and click on download under customer secret to get the customer secret.
 
 > You can download the customer secret only once. Keep the secret in a safe place.
 
-![Customer Secret](/agora-cloud-recording/customer_secret.png)
+![Customer Secret](/engineering-education/agora-cloud-recording/customer_secret.png)
 
 For the API, we should convert the customer ID and secret to base64 using the `Buffer.from()` and converting it into a base64 string using `.toString('base64)`.
 
@@ -236,7 +236,7 @@ Response:
 }
 ```
 
-![Acquire Request & Response](/agora-cloud-recording/postman_acquire.png)
+![Acquire Request & Response](/engineering-education/agora-cloud-recording/postman_acquire.png)
 
 ### Start recording
 Now, let's add a POST request handler for a new endpoint called `'/start'` to start the cloud recording.
@@ -392,7 +392,7 @@ Response:
 }
 ```
 
-![Start Request & Reponse](/agora-cloud-recording/postman_start.png)
+![Start Request & Reponse](/engineering-education/agora-cloud-recording/postman_start.png)
 
 ### Stop recording
 Now, Let's add a POST request handler for a new endpoint called `'/stop'` to stop the cloud recording.

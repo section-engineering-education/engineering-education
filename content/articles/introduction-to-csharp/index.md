@@ -38,29 +38,29 @@ To get started, you will need an IDE (Integrated Development Environment) to wri
 ### Installing C# 
 After you have installed Visual Studio, choose .NET desktop development, and click *Modify*.
 
-![vscode](/introduction-to-csharp/installation.png)
+![vscode](/engineering-education/introduction-to-csharp/installation.png)
 
 After the installation, click *Launch* to get started.  
 
 On the new window, choose *Create a new project*.
 
-![newproject](/introduction-to-csharp/vs1.png)
+![newproject](/engineering-education/introduction-to-csharp/vs1.png)
 
 Once you have selected *Create a new project*, choose *"Install more tools and features"* then click *Next*.
 
-![newproject](/introduction-to-csharp/Newproject2.png)
+![newproject](/engineering-education/introduction-to-csharp/Newproject2.png)
 
 Choose *Console App (.NET Core)* from the list and click *Next*.
 
-![newproject](/introduction-to-csharp/Consoleapp.png)
+![newproject](/engineering-education/introduction-to-csharp/Consoleapp.png)
 
 Enter your preferred project name and click *Create*. In this case, I will name my file *HelloWorld*.
 
-![newproject](/introduction-to-csharp/projectname.png)
+![newproject](/engineering-education/introduction-to-csharp/projectname.png)
 
 Visual Code will automatically generate some C# code for you.
 
-![newproject](/introduction-to-csharp/Program.png)
+![newproject](/engineering-education/introduction-to-csharp/Program.png)
 
 Let's look at the code.
 

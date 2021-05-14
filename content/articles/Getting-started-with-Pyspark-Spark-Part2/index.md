@@ -106,7 +106,7 @@ In this example, we load the ‘BX-Books.csv’ file into the program, and store
 
 Here, we have loaded the ‘BX-Books.csv’ file and converted it into a RDD, using the SparkContext object and did not perform any transformations on it.
 
-![img](/getting-started-with-pyspark-spark-part2/import.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/import.png)
 
 ```python
 books_file = spark_context.textFile("./BX-CSV-Dump/BX-Books.csv")
@@ -116,7 +116,7 @@ print("First 3 rows are - \n",books_file.take(3))
 
 Here we applied map() function to the same RDD and that resulted in each line splitting into its own row and parts of the row split into individual elements.
 
-![img](/getting-started-with-pyspark-spark-part2/map.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/map.png)
 
 ```python
 books_file = spark_context.textFile("./BX-CSV-Dump/BX-Books.csv").map(lambda l: l.split(‘;’))
@@ -134,11 +134,11 @@ print("First 3 rows are - \n",ratings_file.take(10))
 print(" \n K,V pairs are - \n", ratings_file.map(lambda x: (x[1],1)).take(10))
 ```
 
-![img](/getting-started-with-pyspark-spark-part2/kv.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/kv.png)
 
 We use filter() to remove the row containing the column names (headers). filter() is a transformation function that picks rows based on whether it passes a specified condition. In this code snippet, we check whether ‘ISBN’ occurs in the 2nd column of the row, and filter that row if it does.
 
-![img](/getting-started-with-pyspark-spark-part2/filter.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/filter.png)
 
 To count the number of occurrences of each ISBN, we use reduceByKey() transformation function. When reduceByKey is called on a (K,V) pair, it aggregates the value of each key according to the function passed to it. In this example, x represents the aggregated value for a key k, and y is the newly encountered value for the same key k. X and Y are added and assigned to X. This results in an RDD with (K,V) => (ISBN, Count of occurrences)
 
@@ -149,11 +149,11 @@ ratings_count = ratings_kv.reduceByKey(lambda x, y: x + y)
 print(ratings_count.take(10))
 ```
 
-![img](/getting-started-with-pyspark-spark-part2/reducebykey.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/reducebykey.png)
 
 Now, we swap key and value, so that Count of occurrences becomes the key, and ISBN becomes the value. Then we apply sortByKey(), which does exactly what its name states. By default, it sorts in ascending order, so we pass False to retrieve descending order of the count. If we output 10 from the top of this sorted RDD, we get our top 10!
 
-![img](/getting-started-with-pyspark-spark-part2/sort.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/sort.png)
 
 Right now, we only have the ISBN, and we still don’t know the title of the book. So let us combine both Book-Ratings and Books datasets and retrieve the Book Titles of our top 10.
 
@@ -166,7 +166,7 @@ for i in ratings_sorted.take(10):
 print(books_file.filter(lambda x: x[0] in top_10).map(lambda x: x[1]).collect())
 ```
 
-![img](/getting-started-with-pyspark-spark-part2/top10.png)
+![img](/engineering-education/getting-started-with-pyspark-spark-part2/top10.png)
 
 And we’re done! We successfully installed Spark and used its core programming concepts such as actions and transformations on RDDs to quickly derive useful insights from a large dataset. This same example, if run iteratively without using Spark, would heat up your system and take so much more time!
 

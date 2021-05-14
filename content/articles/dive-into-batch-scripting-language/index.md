@@ -212,7 +212,7 @@ You can change the color simply by using the following:
 In our code we used "2e", the first digit is for the background, and the second one is for the text color.
 If you run the code above, you will see the following:
 
-![Calculator](/dive-into-batch-scripting-language/1.PNG)
+![Calculator](/engineering-education/dive-into-batch-scripting-language/1.PNG)
 
 ### Environment variables
 We talked about the `SET` command in previous examples, now we are going to build on that knowledge of environment variables with some examples.

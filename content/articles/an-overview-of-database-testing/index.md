@@ -51,7 +51,7 @@ These properties can be described as follows:
 ### Types of database testing
 Database testing consists of three main types: structural, functional, and non-functional testing. 
 
-![Types of Database Testing](/an-overview-of-database-testing/types-of-database-testing.jpg)
+![Types of Database Testing](/engineering-education/an-overview-of-database-testing/types-of-database-testing.jpg)
 
 [Image Source: Wisdom Jobs](https://www.wisdomjobs.com/userfiles/testingtypes.PNG)
 

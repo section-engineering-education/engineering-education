@@ -34,35 +34,35 @@ Matlab itself includes the digit dataset. The digit dataset consists of 10,000 g
 ### How to locate the image dataset
 - Open the Matlab installation directory.
 
-![this is how the window appear](/deep-neural-systems-matlab/image1.jpg)
+![this is how the window appear](/engineering-education/deep-neural-systems-matlab/image1.jpg)
 
 - Select the toolbox folder.
 
-![toolbox](/deep-neural-systems-matlab/image2.jpg)
+![toolbox](/engineering-education/deep-neural-systems-matlab/image2.jpg)
 
 - Click the nnet and then choose the nndemos folder.
 
-![nndemos](/deep-neural-systems-matlab/image3.jpg)
+![nndemos](/engineering-education/deep-neural-systems-matlab/image3.jpg)
 
-![databases](/deep-neural-systems-matlab/image4.jpg)
+![databases](/engineering-education/deep-neural-systems-matlab/image4.jpg)
 
 - Select the mdataset folder.
 
-![mdataset](/deep-neural-systems-matlab/image5.jpg)
+![mdataset](/engineering-education/deep-neural-systems-matlab/image5.jpg)
 
 - Select the digit database folder.
 
-![datase](/deep-neural-systems-matlab/image6.jpg)
+![datase](/engineering-education/deep-neural-systems-matlab/image6.jpg)
 
 When we open this folder, we get ten folders that contain 1000 images of each number. 
 
-![this how the digit database appears](/deep-neural-systems-matlab/image.png)
+![this how the digit database appears](/engineering-education/deep-neural-systems-matlab/image.png)
 
 When we open a folder of any number we will be able to see the 1000 images. 
 
 Below is sample images in folder 1.
 
-![images in folder 1](/deep-neural-systems-matlab/image8.png)
+![images in folder 1](/engineering-education/deep-neural-systems-matlab/image8.png)
 
 > Note that after locating the dataset folder, you can duplicate it to your preferred folder.
 
@@ -256,7 +256,7 @@ Ypred = classify(net,testImages)
 Once the training is done, you can export this function net to be used by someone else to identify the various objects.
 We then run the script in Matlab, this may take some time since there is a lot of images being used. The first graph is for training and the second graph is for the loss of error in the workspace.
 
-![graph for training process](/deep-neural-systems-matlab/trainingProgress.png)
+![graph for training process](/engineering-education/deep-neural-systems-matlab/trainingProgress.png)
 
 ### Matlab code of discrete testing
 We create a separate script for discrete testing and call the training option in it. 
@@ -276,7 +276,7 @@ Label = classify(net,I);
 title([‘recognized digit is:’ char(label)])
 ```
 
-![recognized dataset](/deep-neural-systems-matlab/recognizedDigit.png)
+![recognized dataset](/engineering-education/deep-neural-systems-matlab/recognizedDigit.png)
 
 Apart from the images in the dataset, you can create your image and recognize it using the program. This image should be a grayscale image.
 

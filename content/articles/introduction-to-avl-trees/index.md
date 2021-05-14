@@ -33,7 +33,7 @@ To follow along with this tutorial, the reader is expected to have understood th
 ### Introduction
 AVL trees are nothing but height-balanced binary search trees. Height balancing is a condition where the difference of heights between the left and right nodes of a parent cannot be more than mod(1).
 
-![AVL trees vs BST](/introduction-to-avl-trees/avlTree.jpg)
+![AVL trees vs BST](/engineering-education/introduction-to-avl-trees/avlTree.jpg)
 
 One can observe that in figure (a), the difference between the heights of all the left and right sub-trees is less than or equal to 1.
 As an example, let us consider nodes (3) and (6) of the tree in figure(a).
@@ -62,7 +62,7 @@ Operations on BSTs like search, insertion, and deletion take O(h) time, where 'h
 
 To tackle this inefficiency in the process, the tree can be reconstructed after every operation in such a way that it always maintains logarithmic height, thereby reducing the time complexity for all operations to O(log n).
 
-![AVL trees vs BST](/introduction-to-avl-trees/skewedTree.jpg)
+![AVL trees vs BST](/engineering-education/introduction-to-avl-trees/skewedTree.jpg)
 
 This means that the height of the tree must be maintained after every insertion and deletion such that the time complexity for every operation performed thereafter remains O(h).
 
@@ -75,17 +75,17 @@ Let's see how performing an operation on a tree would affect its structure.
 
 Take the example of the following AVL Tree.
 
-![Example AVL Tree](/introduction-to-avl-trees/avl_insertion_before.jpg)
+![Example AVL Tree](/engineering-education/introduction-to-avl-trees/avl_insertion_before.jpg)
 
 On inserting nodes (1) and (2) in the tree, the structure would change to:
 
-![AVL Tree After Insertion](/introduction-to-avl-trees/avl_after_insertion.jpg)
+![AVL Tree After Insertion](/engineering-education/introduction-to-avl-trees/avl_after_insertion.jpg)
 
 In tri-node restructuring, the three roots which are involved in the imbalanced structure are chosen and are rearranged such that the order is restored.
 
 In this case, the roots of node (1), node (2), and node(3) are taken into account because the imbalance occurs at node (3). If the height at node (3) is balanced, the overall height of the tree would be in the order of log(n). For example, node (3) could be restructured similar to the figure below.
 
-![AVL Tree After Tri Node Restructuring](/introduction-to-avl-trees/avl_after_structuring.jpg)
+![AVL Tree After Tri Node Restructuring](/engineering-education/introduction-to-avl-trees/avl_after_structuring.jpg)
 
 This ensures that the height of all the nodes is balanced and therefore is an AVL Tree.
 
@@ -103,19 +103,19 @@ The procedure for tri-node restructuring for an insertion/deletion operation is 
 
 **Left-left Rotation**
 
-![Left-Left Rotation](/introduction-to-avl-trees/leftleft_rotation.jpg)
+![Left-Left Rotation](/engineering-education/introduction-to-avl-trees/leftleft_rotation.jpg)
 
 **Left-right Rotation**
 
-![Left-Right Rotation](/introduction-to-avl-trees/leftright_rotation.jpg)
+![Left-Right Rotation](/engineering-education/introduction-to-avl-trees/leftright_rotation.jpg)
 
 **Right-right Rotation**
 
-![Right-Right Rotation](/introduction-to-avl-trees/rightright_rotation.jpg)
+![Right-Right Rotation](/engineering-education/introduction-to-avl-trees/rightright_rotation.jpg)
 
 **Right-left Rotation**
 
-![Right-Left Rotation](/introduction-to-avl-trees/rightleft_rotation.jpg)
+![Right-Left Rotation](/engineering-education/introduction-to-avl-trees/rightleft_rotation.jpg)
 
 ### Insertion in AVL trees in C++
 The algorithm for inserting a new node in an AVL tree is as follows:

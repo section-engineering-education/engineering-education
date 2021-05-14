@@ -62,7 +62,7 @@ This is an active learning technique where training examples are sent to an algo
 
 The algorithm then immediately decides whether to label a given example or query the oracle to label the example. Let's look at the image below to intuitively understand this technique.
 
-![stream](/active-learning/stream.png)
+![stream](/engineering-education/active-learning/stream.png)
 
 *Stream-Based Sampling*
 
@@ -77,7 +77,7 @@ For numerous real-world machine learning problems, we can collect large collecti
 
 Pool-based sampling tries to evaluate an entire dataset before choosing the best set of examples. This process involves identifying the informativeness of all the provided examples, then selecting a given number of examples to train a model.
 
-![pool](/active-learning/pool.png)
+![pool](/engineering-education/active-learning/pool.png)
 
 *Pool-Based Sampling*
 
@@ -94,7 +94,7 @@ For instance, the data may be images of letters. The learning agent may generate
 
 The image below represents this process.
 
-![membership](/active-learning/membership.png)
+![membership](/engineering-education/active-learning/membership.png)
 
 *Membership Query Synthesis*
 

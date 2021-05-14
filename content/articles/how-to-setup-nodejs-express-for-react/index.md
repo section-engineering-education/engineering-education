@@ -28,7 +28,7 @@ To follow this article along it will be helpful to have the following:
 
 ### Setting up the folder structure
 
-![Folder Structure](/how-to-setup-nodejs-express-for-react/folder-structure.PNG)
+![Folder Structure](/engineering-education/how-to-setup-nodejs-express-for-react/folder-structure.PNG)
 
 The first step would be to create a root folder for our case, `demoreactapp`, to hold all of our App's files. Then we will have the `client` directory that will hold all the React App files. 
 
@@ -185,7 +185,7 @@ $node server.js
 
 After running the file `server.js`, next we will go to our browser, “<http://localhost:5000/express_backend>”, and the message below will be displayed:
 
-![Get Route success](/how-to-setup-nodejs-express-for-react/get-route-success.PNG)
+![Get Route success](/engineering-education/how-to-setup-nodejs-express-for-react/get-route-success.PNG)
 
 The above shows that our Express server is working as expected and that the `GET route` we created is working, and it is possible to fetch the route from the client-side. 
 
@@ -202,7 +202,7 @@ The commands above will run the React Dev server, which runs on port 3000, and a
 
 The screen below with a message will be displayed:
 
-![React app running](/how-to-setup-nodejs-express-for-react/react-app-success.PNG)
+![React app running](/engineering-education/how-to-setup-nodejs-express-for-react/react-app-success.PNG)
 
 Finally, we have rendered the data fetched from the `GET route` in `server.js` to our frontend React App, as demonstrated above.
 

@@ -32,7 +32,7 @@ Depending on the architecture, the representations will vary. Similarly, the sto
 
 With each system having different architectures, communication between two different architectures will require a common medium to transport data. This leads us to the concept of Data serialization.
 
-![Data serialization](/validating-xml-using-dtd/data_serialization.jpg)
+![Data serialization](/engineering-education/validating-xml-using-dtd/data_serialization.jpg)
 
 [Image source](https://devopedia.org/data-serialization)
 

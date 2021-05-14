@@ -29,9 +29,9 @@ Fast queries are about response time. The goal is to have queries return the req
 
 The most straightforward query cost metrics used in MySQL are query response time, the number of rows scanned, and the number of rows returned. The more the number of rows read, the higher the cost of the query. The screenshots below show the time taken to run a query in both CLI and MySQL Workbench.
 
-![mysql-command-line-interface-query-time-screenshot](mysql-cli-query-time-screenshot.jpg)
+![mysql-command-line-interface-query-time-screenshot](/engineering-educationmysql-cli-query-time-screenshot.jpg)
 
-![mysql-workbench-query-time-screenshot](mysql-workbench-query-time-screenshot.jpg)
+![mysql-workbench-query-time-screenshot](/engineering-educationmysql-workbench-query-time-screenshot.jpg)
 
 #### Optimizing Queries with EXPLAIN
 The EXPLAIN statement provides information about how MySQL executes a statement. According to the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html), EXPLAIN works alongside SELECT, DELETE, INSERT, REPLACE, and UPDATE statements. It displays information from a built-in MySQL optimizer regarding the statement execution plan and the number of rows scanned in each table. Thus we can determine the cost of the query. The query below shows how EXPLAIN works with the SELECT statement.
@@ -40,7 +40,7 @@ The EXPLAIN statement provides information about how MySQL executes a statement.
 EXPLAIN SELECT * FROM world_x.city LIMIT 5000;
 ```
 
-![mysql-explain-query-screenshot](mysql-explain-query-screenshot.jpg)
+![mysql-explain-query-screenshot](/engineering-educationmysql-explain-query-screenshot.jpg)
 MySQL EXPLAIN query output
 
 #### MySQL Query Log

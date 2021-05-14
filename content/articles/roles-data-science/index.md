@@ -49,7 +49,7 @@ The Google DeepMind team is responsible for the [RankBrain](https://www.searchen
 
 Representations of words called [word vectors](https://www.youtube.com/watch?v=ERibwqs9p38) help with search queries. Let's look at an example of a word vector. What amazes me is the degree of [abstraction](https://en.wikipedia.org/wiki/Abstraction_(computer_science)) that computer science has achieved.
 
-![word vectors](/roles-data-science/word_vec.jpg)
+![word vectors](/engineering-education/roles-data-science/word_vec.jpg)
 
 [Image Source](https://www.analyticsvidhya.com/blog/2017/06/word-embeddings-count-word2veec/)
 
@@ -66,7 +66,7 @@ For example, how do we formulate the problem of self-driving cars? The research 
 
 Let's look at the steps involved in self-driving cars:
 
-![self-driving cars](/roles-data-science/self-driving.jpg)
+![self-driving cars](/engineering-education/roles-data-science/self-driving.jpg)
 
 *[Image Source](https://arxiv.org/pdf/1910.07738.pdf)*
 
@@ -84,7 +84,7 @@ A data architect takes up a large chunk of the responsibility for the data scien
 
 Data architecture is one of the significant components of big data. Designing the architecture of the data flow using various emerging technologies is a useful skill to have. If you are good at learning new technologies at a rapid pace, this might be the right job for you.
 
-![big data](/roles-data-science/big_data_tech.jpg)
+![big data](/engineering-education/roles-data-science/big_data_tech.jpg)
 
 [Image Source](https://www.karmelsoft.com/skills-every-big-data-architect-needs/)
 

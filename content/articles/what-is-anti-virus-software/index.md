@@ -19,7 +19,7 @@ In May 2017 the world was devastated by a worldwide cyber attack that affected m
 
 ### Surviving the tech Wild West
 
-![Wild_west](/what-is-anti-virus-software/flat-wild-west-background-with-colorful-buildings_23-2147587719.jpg)
+![Wild_west](/engineering-education/what-is-anti-virus-software/flat-wild-west-background-with-colorful-buildings_23-2147587719.jpg)
 [*Image source*](https://www.freepik.com/free-vector/flat-wild-west-background-with-colorful-buildings_1008160.htm)
 <!--  Link to original image
 <a href="https://www.freepik.com/vectors/background">Background vector created by freepik - www.freepik.com</a> -->
@@ -39,7 +39,7 @@ Anti-malware software is thus an incredibly useful tool to help identify and eli
 In this article, I will go over the reason why anti-malware is important and what types of malware are out there. Furthermore, I will go over in-depth the certain techniques used to do malware analysis and investigations. Lastly, there will a reading list to give you a review of some great anti-malware software out there.
 
 ### Team Red: Malicious Rogue Bandits
-![Bandits and Roguges](/what-is-anti-virus-software/rogue-bandits.jpg)
+![Bandits and Roguges](/engineering-education/what-is-anti-virus-software/rogue-bandits.jpg)
 [*Image source*](https://www.vectorstock.com/royalty-free-vector/vintage-wild-west-bandit-poster-vector-15386994)
 
 What bandits and gangs were to the Wild West, hackers and scammers are in the 21st century. Only difference — they use malware instead of guns to attack and exfiltrate personal data.
@@ -54,7 +54,7 @@ It is important to understand why malware is a huge concern. Companies large and
 Furthermore, individuals who aren’t likely end-targets can still become potentially impacted as an intermediary; that is, they can be used, for example, as bots in a much larger botnet to enact major attacks like DDoS(distributed denial of service) attacks, etc. These attacks typically result in loss of data, intellectual property, competitive advantage, and loss of overall consumer confidence.
 
 ### Malware Arsenal
-![bandit_arsenal](/what-is-anti-virus-software/bandit_arsenal.jpg)
+![bandit_arsenal](/engineering-education/what-is-anti-virus-software/bandit_arsenal.jpg)
 [*Image source*](https://www.bigstockphoto.com/image-271869916/stock-vector-colored-vector-illustrations-of-wild-west-weapons-and-items-isolated-on-white?utm_medium=Affiliate&utm_campaign=TinEye&utm_source=77643&utm_term=)
 
 Now, let’s look at some of the major forms of malware.
@@ -79,7 +79,7 @@ Finally we have ransomware. Ransomware "*is malicious software that blocks acces
 
 ### Team Blue: The Marshal and Deputy
 
-![marshal_badge](/what-is-anti-virus-software/marshal_badges.jpg)
+![marshal_badge](/engineering-education/what-is-anti-virus-software/marshal_badges.jpg)
 [*Image source*](https://www.google.com/search?tbs=simg:CAQSmAIJUgEqR_1jOuMQajAILELCMpwgaYgpgCAMSKJQX5wGBDIsMsgzwFsUM7xaVF5IXqzSFNfQ3rjTiJIIjqDaQJOMplSkaMFSG3g2HYBxTQAkiN7bp-IoFQ6LGQRvpqGIvSt6X4bSWrfibKNlpP3mBaSYhZruTNyAEDAsQjq7-CBoKCggIARIEnjKBEQwLEJ3twQkahAEKGQoGZW1ibGVt2qWI9gMLCgkvbS8wMXdrOWMKGAoFYmFkZ2XapYj2AwsKCS9tLzAzY255OQoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsChYKBHN0YXLapYj2AwoKCC9tLzA2bmdrChsKCWFpciBmb3JjZdqliPYDCgoIL20vMDEzbTEM&sxsrf=ALeKk00fnz1awR5UZ2suwA_GCs6tZoJE7g:1596539541828&q=old+west+marshall+badge&tbm=isch&sa=X&ved=2ahUKEwi_rYqitYHrAhVJI6wKHfwECEoQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09#imgrc=fXAmoyg5R7o1UM)
 
 In the Wild West the marshal and deputy were there to protect the simple town folk from bandits and gangs. That is now the job of Anti-Malware.
@@ -89,7 +89,7 @@ Anti-malware is software that protects the user from infrastructure destruction,
 
 Anti-malware usually contains various techniques for malware protection and can provide different protection strategies and tools for different malware attacks such as anti-phishing or anti-ransomware protection.
 
-![virus_prtection](/what-is-anti-virus-software/security_shield.jpg)
+![virus_prtection](/engineering-education/what-is-anti-virus-software/security_shield.jpg)
 [*Image source*](https://www.google.com/search?tbs=simg:CAQSwQIJO9IdVJ2RTcUatQILELCMpwgaYgpgCAMSKJACuAaOAo8CsAbyE58StAagEo0Csyi8IfY2liDjNuk2tzOYNO8m4DYaMGrwhYQhy6v2GYBmfdv5DZiu73eQH_1qEqzi2_1ySxu6hNA8fAALx9qxXIzHq_1ozGYDiAEDAsQjq7-CBoKCggIARIEP9PNCgwLEJ3twQkarQEKIAoNY29tcHV0ZXIgY2FzZdqliPYDCwoJL20vMDQ5ZDhiCiIKD3ZlbmRpbmcgbWFjaGluZdqliPYDCwoJL20vMDFuZnJyCiIKDm51bWVyaWMga2V5cGFk2qWI9gMMCgovbS8wMjV0M2p0ChgKBnNlcnZlctqliPYDCgoIL20vMGJreGoKJwoTbXVsdGltZWRpYSBzb2Z0d2FyZdqliPYDDAoKL20vMHc4OHh0aAw&sxsrf=ALeKk00CIY1Ste7Cy63UfHd_N3rle0_t9A:1596539622971&q=cloud+anti+virus&tbm=isch&sa=X&ved=2ahUKEwjv3-LItYHrAhVHVK0KHUzpDLAQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09)
 
 ### Malware Protection
@@ -133,7 +133,7 @@ Virtualization and/or sandboxing allows a host to determine what and how much re
 Debuggers such as [GDB](https://en.wikipedia.org/wiki/GNU_Debugger) or [WinDBG](https://en.wikipedia.org/wiki/WinDbg) are programs that allow you to look at how programs behave during runtime as well as what effects it has on the host’s system. Debuggers give a wide variety of insights about how code is executed instruction by instruction.
 
 ### Elect Your Town Sheriff
-![town_sheriff](/what-is-anti-virus-software/New_Sheriff_in_Town.jpg)
+![town_sheriff](/engineering-education/what-is-anti-virus-software/New_Sheriff_in_Town.jpg)
 
 [*Image source*](https://www.google.com/search?tbs=simg:CAQSnwIJ2yJsUXvW6G4akwILELCMpwgaYQpfCAMSJ-4IuwNg7wixA-YI6AjKCPMIwQP4PZk1-T3PN7cn4DSpNbkp9T38PRowcRkeEiQ7oK5sIRv_1v_1zkk9sjJkX--g_17_1BFHARu_1E1vQtj56TKP0vMOAZ1A_1ErXdIAQMCxCOrv4IGgoKCAgBEgRRmgYPDAsQne3BCRqMAQoWCgNlcmfapYj2AwsKCS9tLzBkNzlqcQoZCgZzYWhhcmHapYj2AwsKCS9tLzAxdzF2dAobCgh2YWNhdGlvbtqliPYDCwoJL20vMDJqd3FoCh8KDHNpbmdpbmcgc2FuZNqliPYDCwoJL20vMDE5NHY0ChkKB3BseXdvb2TapYj2AwoKCC9tLzBqaDh3DA&sxsrf=ALeKk034-B4ffrL1T814yJm67B1W__pA0Q:1596539712877&q=sheriff+callie%27s+wild+west+toby+gets+the+scoop&tbm=isch&sa=X&ved=2ahUKEwijsdLztYHrAhUCYKwKHWjACHcQwg4oAHoECAkQKQ&biw=1694&bih=837&dpr=1.09)
 

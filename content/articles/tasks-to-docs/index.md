@@ -22,15 +22,15 @@ I currently have 2 To-Do lists.
 
 College work - containing all my college-related tasks:
 
-![school tasks](./college-work.png)
+![school tasks](/engineering-education./college-work.png)
 
 My List - containing the rest of the tasks:
 
-![personal tasks](./my-list.png)
+![personal tasks](/engineering-education./my-list.png)
 
 And I want to move these to one designated Google Doc organized by date, like this:
 
-![tasks by date](./updated-doc.png)
+![tasks by date](/engineering-education./updated-doc.png)
 
 This blog post is a tutorial on how to build a python script that moves completed tasks from Google Tasks to Google Docs, within a given time-frame, categorized by date.
 
@@ -44,17 +44,17 @@ Firstly, we need to create our project on Google Developers Console and create c
 
 2. Create a new project.
    
-![google api create project](./select-project.png)
-   ![google api new project](./create-project.png)
+![google api create project](/engineering-education./select-project.png)
+   ![google api new project](/engineering-education./create-project.png)
    
 3. Select the project, and go to its Dashboard. Click on Explore and Enable APIs.
-![enable api](./enable-api.png)<br>
+![enable api](/engineering-education./enable-api.png)<br>
 Enable Google Docs and Tasks APIs.
 
 4. Create credentials to use in our project.
 
 Go to Credentials under APIs & Services.
-![create credentials](./create-credentials.png)<br>
+![create credentials](/engineering-education./create-credentials.png)<br>
 Configure the OAuth consent screen (just entering the name of the application will suffice). Create an OAuth client ID for Desktop App by clicking on CREATE CREDENTIALS.
 
 Once created, download the OAuth credentials, rename it as “credentials.json” and store it in the Project folder. (When we run the project for the first time, it will prompt us to log in to our Google account and give permission to view and manage Docs and Tasks. Once we give permission, it will create a token file and use that for all the future runs.)
@@ -130,7 +130,7 @@ Returns the data of all To Do lists present in your account of Google Tasks. Wit
 
 
 #### pick_tasks()
-Returns the tasks (along with the date of completion) completed within a specified timeframe from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![questionary python library](./questionary-prompt.png)
+Returns the tasks (along with the date of completion) completed within a specified timeframe from the To Do lists which were chosen among all the lists present in your Google Tasks account. To improve the aesthetic of command-line user prompts, I used a python library [questionary](https://pypi.org/project/questionary/) throughout this project. ![questionary python library](/engineering-education./questionary-prompt.png)
 
 ```python
 def pick_tasks(items,service_task):

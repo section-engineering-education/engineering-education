@@ -55,7 +55,7 @@ In our scenario, the child is an agent. Our environment is the ground on which t
 
 This is a simple example of a reinforcement learning problem.
 
-![rl-architecture](/introduction-to-reinforcement-learning/rl-architecture.png)<br>
+![rl-architecture](/engineering-education/introduction-to-reinforcement-learning/rl-architecture.png)<br>
 
 *[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
@@ -69,7 +69,7 @@ Q-learning is the most popular among the RL algorithms.
 
 This algorithm finds an optimal action-selection policy by using a Q-function. By selecting the best of all possible actions, the algorithm can maximize the value function, Q.
 
-![q-learning](/introduction-to-reinforcement-learning/q-learning.PNG)
+![q-learning](/engineering-education/introduction-to-reinforcement-learning/q-learning.PNG)
 
 *[Image Source: Springer Link](https://link.springer.com/chapter/10.1007/978-981-15-4095-0_2)*
 
@@ -125,7 +125,7 @@ They integrate over only the state spaces.
 Due to these differences, SPG may need more samples to compute in cases of high dimensions action spaces.
 
 #### Actor-Critics (AC)
-![actor-critic](/introduction-to-reinforcement-learning/actor-critic.png)
+![actor-critic](/engineering-education/introduction-to-reinforcement-learning/actor-critic.png)
 
 *[Image Source: Berkeley](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/f17docs/lecture_5_actor_critic_pdf)*
 

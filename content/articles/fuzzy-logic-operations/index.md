@@ -50,11 +50,11 @@ $$
 
 Graphically the problem can be represented as follows:
 
-![graphical representation](/fuzzy-logic-operations/graphical_rep_1.png)
+![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_1.png)
 
 The same problem can be represented using fuzzy logic. Observe how a given temperature belongs to two classes of temperature in varying degrees. 
 
-![graphical representation](/fuzzy-logic-operations/graphical_rep_2.png)
+![graphical representation](/engineering-education/fuzzy-logic-operations/graphical_rep_2.png)
 
 ### Types of membership functions
 As seen in the earlier example, we used a triangular membership function to represent the temperatures. However, the triangular membership function is not suited for all applications. Therefore, many other membership functions were introduced to widen the scope of applications.
@@ -65,7 +65,7 @@ Mathematically, the gamma function is given as follows:
 $$ \gamma(x,\alpha, \beta) = \begin{cases} 0 & x\le \alpha \\
 \frac{x-\alpha}{\beta -\alpha} & \alpha\le\beta \\ 1 & x \ge \beta\end{cases}  $$
 
-![gamma](/fuzzy-logic-operations/gamma-correct.png)
+![gamma](/engineering-education/fuzzy-logic-operations/gamma-correct.png)
 
 #### s-function
 The s function gets its name from its shape. The s-shaped function is useful in cases with a gradual change in the membership. 
@@ -81,7 +81,7 @@ $$ S(x,\alpha,\beta) = \begin{cases}
 \end{cases} $$
 <br>
 
-![s-function](/fuzzy-logic-operations/gamma.png)
+![s-function](/engineering-education/fuzzy-logic-operations/gamma.png)
 
 #### L-function
 This function is the inverse of $\gamma$ function. 
@@ -94,7 +94,7 @@ $$ L(x,\alpha,\beta) = \begin{cases}
 0 & x \gt \beta 
 \end{cases} $$
  
-![L-function](/fuzzy-logic-operations/L-function.png)
+![L-function](/engineering-education/fuzzy-logic-operations/L-function.png)
 
 #### Triangular function
 
@@ -107,7 +107,7 @@ $$ L(x,\alpha,\beta,\gamma) = \begin{cases}
 \end{cases}$$
 <br>
 
-![triangular function](/fuzzy-logic-operations/triangular_function.png)
+![triangular function](/engineering-education/fuzzy-logic-operations/triangular_function.png)
 
 #### pi function
 This function gets its name from the shape of pi. This function looks similar to the symbol pi ($\pi$). 
@@ -123,7 +123,7 @@ $$ \pi(x, \alpha, \beta,\gamma, \delta) = \begin{cases}
 \end{cases}$$
 <br>
 
-![pi-function](/fuzzy-logic-operations/pi_function.png)
+![pi-function](/engineering-education/fuzzy-logic-operations/pi_function.png)
 
 #### Gaussian function
 Derived from the normal distribution, this function works in most scenarios, where information about the data is unknown. In cases dealing with sampled data, this function is used extensively.
@@ -136,7 +136,7 @@ G(x,\mu,\sigma) = exp (-\frac{(x-\mu)^2}{2\sigma^2})
 $$
 <br>
 
-![gaussian membership function](/fuzzy-logic-operations/gaussian.png)
+![gaussian membership function](/engineering-education/fuzzy-logic-operations/gaussian.png)
 
 [*Image source*](https://www.researchgate.net/figure/Gaussian-membership-function-Gxs-c_fig6_233968578)
 

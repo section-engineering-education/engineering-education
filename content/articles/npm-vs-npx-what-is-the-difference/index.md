@@ -255,7 +255,7 @@ npx https://gist.github.com/kimkimani/116e1e9d898169662fbaf6973bdbc3f5
 
 NPX will point to the remote `.js` file, download it temporarily, execute it and it will give you the result in the console.
 
-![Execute Gist Code with NPX](/npm-vs-npx/execute-gist-code-with-npx.jpg)
+![Execute Gist Code with NPX](/engineering-education/npm-vs-npx/execute-gist-code-with-npx.jpg)
 
 > Note, it is advised to take precautions when executing any remote files you don't own. Always check the code before executing the files. This way, you avoid been trapped by malicious code.
 

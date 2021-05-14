@@ -30,7 +30,7 @@ We only need to use a few JavaScript helper methods and set the duration for the
 
 Let's begin coding an animated counter similiar to the one illustrated below:
 
-![Illustration](/javascript-animation-counter/illustration.gif)
+![Illustration](/engineering-education/javascript-animation-counter/illustration.gif)
 
 ### The JavaScript code
 The full code can be accessed at my [Github Repository](https://github.com/Agusioma/animation-counter-javascript/).

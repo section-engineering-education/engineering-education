@@ -529,7 +529,7 @@ As seen in the screenshot below, open your Postman application and add requests.
 
 ### Fig 1: Postman Requests
 
-![request](/creating-countdown-in-php-javascript-mysql/timer.png)  
+![request](/engineering-education/creating-countdown-in-php-javascript-mysql/timer.png)  
 
 Hit the send button to add timer details in the `timer_tbl` table. 
 
@@ -841,7 +841,7 @@ UpdateTimer::timer_update();
 
 Visit your URL to update the timer, you should be able to see something like this depending on your styling. 
 
-![result](/creating-countdown-in-php-javascript-mysql/timer_update.png)
+![result](/engineering-education/creating-countdown-in-php-javascript-mysql/timer_update.png)
 
 Now, set your preferred countdown dates and refresh the page. 
 

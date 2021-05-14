@@ -37,7 +37,7 @@ Some of the most basic workflows used are:
 
 The diagram below shows a sample simple Kanban board with three columns. 
 
-![Simple Kanban board](/how-to-use-kanban-to-manage-your-next-project/simple-kanban-board.jpg)
+![Simple Kanban board](/engineering-education/how-to-use-kanban-to-manage-your-next-project/simple-kanban-board.jpg)
 
 [Image source](https://hygger.io/use-cases/kanban-board/)
 
@@ -49,7 +49,7 @@ This can be divided into two categories:
 
 The diagram below shows the main components of a Kanban board.
 
-![Kanban board components](/how-to-use-kanban-to-manage-your-next-project/kanban-board-components.jpg)
+![Kanban board components](/engineering-education/how-to-use-kanban-to-manage-your-next-project/kanban-board-components.jpg)
 
 [Image source](https://hygger.io/use-cases/kanban-board/)
 

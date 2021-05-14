@@ -38,7 +38,7 @@ We learn that fuzzy logic systems use degrees of possibilities rather than preci
 ### Fuzzy logic architecture
 The following diagram shows a fuzzy logic architecture. 
 
-![Architecture of Fuzzy Logic System](/an-overview-of-fuzzy-logic-system/architecture-of-fuzzy-logic-system.png)
+![Architecture of Fuzzy Logic System](/engineering-education/an-overview-of-fuzzy-logic-system/architecture-of-fuzzy-logic-system.png)
 
 [Image Source: Javat Point](https://static.javatpoint.com/tutorial/fuzzy-logic/images/architecture-of-fuzzy-logic-system.png)
 
@@ -58,7 +58,7 @@ In simple terms, the membership function is used to estimate or compute the degr
 
 The following diagram shows an example of a membership function.
 
-![Membership Function](/an-overview-of-fuzzy-logic-system/membership-function.jpg)
+![Membership Function](/engineering-education/an-overview-of-fuzzy-logic-system/membership-function.jpg)
 
 [Image Source: Tutorials Point](https://www.tutorialspoint.com/artificial_intelligence/images/membership_function_ac.jpg)
 

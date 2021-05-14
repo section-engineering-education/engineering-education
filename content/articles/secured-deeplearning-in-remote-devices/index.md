@@ -36,7 +36,7 @@ By making the deep learning model distributed, we can solve the issue of privacy
 
 For example, Google Assistant uses federated learning, when the deep learning model in our keyboard tries to predict the next word, by sending only the final aggregated model to the cloud. So, without uploading the details of any user to the cloud, we get the aggregated results based on local model training.
 
-![Workflow of federated learning](/secured-deeplearning-in-remote-devices/Introduction_to_federated_learning.png)
+![Workflow of federated learning](/engineering-education/secured-deeplearning-in-remote-devices/Introduction_to_federated_learning.png)
 
 [Image source](https://towardsdatascience.com/introduction-to-federated-learning-and-privacy-preservation-75644686b559)
 

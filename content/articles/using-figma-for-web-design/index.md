@@ -65,51 +65,51 @@ To follow this tutorial along, you will need to have:
 #### Step 1 - Set up an account with Figma
 This can be done by going to the [Figma website](www.figma.com). Click on 'Sign up' to begin the setup.
 
-![Sign Up](/using-figma-for-web-design/sign-up.jpg)
+![Sign Up](/engineering-education/using-figma-for-web-design/sign-up.jpg)
 
 Fill in your email address and desired password. Click on ‘create account’.
 
-![Email and Password](/using-figma-for-web-design/email-and-password.jpg)
+![Email and Password](/engineering-education/using-figma-for-web-design/email-and-password.jpg)
 
 This will lead you to another window that will require you to fill in your name, choose your field of work, and click on ‘create account’.
 
-![Create Account](/using-figma-for-web-design/create-account.jpg)
+![Create Account](/engineering-education/using-figma-for-web-design/create-account.jpg)
 
 You will be required to verify the email address you used in creating the account. A message will be sent to the email address containing a link for verification. Click on that link to verify your email address.
 
 To download the desktop app, go to the [Figma website](www.figma.com) and scroll down to the bottom section. Click on ‘downloads’.
 
-![Figma Downloads](/using-figma-for-web-design/figma-downloads.jpg)
+![Figma Downloads](/engineering-education/using-figma-for-web-design/figma-downloads.jpg)
 
 Choose the download that corresponds to your operating system.
 
-![Figma Desktop App](/using-figma-for-web-design/figma-desktop-app.jpg)
+![Figma Desktop App](/engineering-education/using-figma-for-web-design/figma-desktop-app.jpg)
 
 Download and install the desktop app. When you open the application, you will be required to sign in with the credentials you used in creating your account.
 
 #### Step 2 - Choose a name for the design team
 When you finish verifying your email address, the following window will appear. When you fill in the design team name, click on 'next'.
 
-![Design Team Name](/using-figma-for-web-design/design-team-name.jpg)
+![Design Team Name](/engineering-education/using-figma-for-web-design/design-team-name.jpg)
 
 #### Step 3 - Invite collaborators
 Figma allows you to invite members for collaboration. You can click on ‘skip this step’ if you do not wish to engage in collaboration.
 
-![Invite Collaborators](/using-figma-for-web-design/invite-collaborators.png)
+![Invite Collaborators](/engineering-education/using-figma-for-web-design/invite-collaborators.png)
 
 #### Step 4 - Choose a plan
 In this step, users are required to choose a plan that suits their needs. If you are a new Figma user, you can click on ‘choose starter’ to learn about the application. This plan is free for the first 3 projects, that allows you to familiarize yourself with this design tool.
 
-![Choose Plan](/using-figma-for-web-design/choose-plan.jpg)
+![Choose Plan](/engineering-education/using-figma-for-web-design/choose-plan.jpg)
 
 ### An overview of Figma user interface
 The following image shows the user interface of Figma.
 
-![Figma User Interface](/using-figma-for-web-design/figma-user-interface.png)
+![Figma User Interface](/engineering-education/using-figma-for-web-design/figma-user-interface.png)
 
 When you finish setting up an account and choosing a plan, you will get the following message.
 
-![Introductory Message](/using-figma-for-web-design/introductory-message.png)
+![Introductory Message](/engineering-education/using-figma-for-web-design/introductory-message.png)
 
 If you are a new user, you will probably want to know the various icons on the Figma's user interface. Click on ‘show me around’. This will take you through important features in the user interface. If you are already familiar with this interface, click on ‘no, thanks’.
 
@@ -117,95 +117,95 @@ Let’s look at some of the tools on Figma's user interface.
 
 - **Constraints:** These allow users to set accurate constraints and enable them to adjust layers to their needs.
 
-![Constraints](/using-figma-for-web-design/constraints.jpg)
+![Constraints](/engineering-education/using-figma-for-web-design/constraints.jpg)
 
 - **Vector networks:** These provide pen and pencil tools that are simple and powerful for web design.
 
-![Vector Networks](/using-figma-for-web-design/vector-networks.jpg)
+![Vector Networks](/engineering-education/using-figma-for-web-design/vector-networks.jpg)
 
 - **Comments:** These enable users to write notes on their design files and get requests or feedback.
 
-![Comments](/using-figma-for-web-design/comments.jpg)
+![Comments](/engineering-education/using-figma-for-web-design/comments.jpg)
 
 - **Share icon:** This enables users to share their design files with teammates and stakeholders. Users can use this section to manage permissions relating to the sharing of design files. It can also be used to enhance real-time collaboration.
 
-![Share Icon](/using-figma-for-web-design/share-icon.jpg)
+![Share Icon](/engineering-education/using-figma-for-web-design/share-icon.jpg)
 
 - **Team library:** This is a library that allows users to publish styles and components for other teammates to access.
 
-![Team Library](/using-figma-for-web-design/team-library.jpg)
+![Team Library](/engineering-education/using-figma-for-web-design/team-library.jpg)
 
 - **Menu:** The menu consists of a file browser that can be used to search for any desired command. Users can also use the menu to perform various tasks such as viewing files, managing plugins, and arranging files.  
 
-![Menu](/using-figma-for-web-design/menu.jpg)
+![Menu](/engineering-education/using-figma-for-web-design/menu.jpg)
 
 - **Canvas:** Canvas provides an area to design your work.
 
-![Canvas](/using-figma-for-web-design/canvas.jpg)
+![Canvas](/engineering-education/using-figma-for-web-design/canvas.jpg)
 
 - **Layers:** The layers section lists and organizes file elements in terms of groups and frames.
 
-![Layers](/using-figma-for-web-design/layers.jpg)
+![Layers](/engineering-education/using-figma-for-web-design/layers.jpg)
 
 - **The properties panel:** This panel consists of design, prototyping, and inspection tabs. The design tab provides various options for design. The prototype tab connects the design file with the prototype. The 'inspect' tab presents the settings and contextual information of a selected object.
 
-![Properties Panel](/using-figma-for-web-design/properties-panel.jpg)
+![Properties Panel](/engineering-education/using-figma-for-web-design/properties-panel.jpg)
 
 ### Using basic Figma tools
 #### How to create a frame
 Click on the frame tool and select 'frame'. Alternatively, you can press on the letter 'F' on your keyboard.
 
-![Frame](/using-figma-for-web-design/frame.jpg)
+![Frame](/engineering-education/using-figma-for-web-design/frame.jpg)
 
 Click on the canvas area and drag the frame to the required size.
 
-![Frame Output](/using-figma-for-web-design/frame-output.png)
+![Frame Output](/engineering-education/using-figma-for-web-design/frame-output.png)
 
 You can alternatively choose a preset frame using the design tab in the properties panel.
 
-![Preset Frame](/using-figma-for-web-design/preset-frame.jpg)
+![Preset Frame](/engineering-education/using-figma-for-web-design/preset-frame.jpg)
 
 This section consists of presets for various elements such as phones, tablets, and social media. Let's assume that we want to design a smartphone app. We can choose to preview it on iPhone 11 max. Click on iPhone 11 max to get the related frame.
 
-![iPhone 11 Frame](/using-figma-for-web-design/iphone-11-frame.png)
+![iPhone 11 Frame](/engineering-education/using-figma-for-web-design/iphone-11-frame.png)
 
 You can change the name of the frame by double-clicking on the box at the top left corner.
 
-![Changing Frame Name](/using-figma-for-web-design/changing-frame-name.jpg)
+![Changing Frame Name](/engineering-education/using-figma-for-web-design/changing-frame-name.jpg)
 
 The panel that appears on the right side of the interface can be used to change the orientation (landscape or portrait), size, and fit of the frame.
 
 #### Working with shapes
 If you want to create a shape, you should go to the shapes icon on the toolbar and select the desired shape.
 
-![Creating Shapes](/using-figma-for-web-design/creating-shapes.jpg)
+![Creating Shapes](/engineering-education/using-figma-for-web-design/creating-shapes.jpg)
 
 Let's assume we want to create a rectangle. In this case, we will click on the rectangle in the shapes tool. You should drag the cursor on the canvas to create the desired rectangle size. The rectangle will appear as follows.
 
-![Creating A Rectangle](/using-figma-for-web-design/creating-a-rectangle.png)
+![Creating A Rectangle](/engineering-education/using-figma-for-web-design/creating-a-rectangle.png)
 
 A similar procedure will be taken if we want to create a polygon. The resulting image will appear as follows.
 
-![Creating A Polygon](/using-figma-for-web-design/creating-a-polygon.png)
+![Creating A Polygon](/engineering-education/using-figma-for-web-design/creating-a-polygon.png)
 
 Other shapes that can be created include ellipses and stars. You can also create custom shapes using the pen and pencil tools on the toolbar.
 
 To change the color of the shape, go to the design tab on the properties panel and click on 'fill'. Select the desired color.
 
-![Changing Color](/using-figma-for-web-design/changing-color.png)
+![Changing Color](/engineering-education/using-figma-for-web-design/changing-color.png)
 
 If we select blue, the above polygon shape will appear as follows.
 
-![Blue Polygon](/using-figma-for-web-design/blue-polygon.png)
+![Blue Polygon](/engineering-education/using-figma-for-web-design/blue-polygon.png)
 
 #### Writing text
 You can create a text on the canvas by first clicking on the 'T' tool at the toolbar.
 
-![Text Tool](/using-figma-for-web-design/text-tool.jpg)
+![Text Tool](/engineering-education/using-figma-for-web-design/text-tool.jpg)
 
 Click on the exact location (within the canvas) where you want your text to appear. Write the intended text. The text will appear as follows.
 
-![Writing Text](/using-figma-for-web-design/writing-text.png)
+![Writing Text](/engineering-education/using-figma-for-web-design/writing-text.png)
 
 The panel on the right side of the interface provides all the tools for modifying the text. This includes the font size, alignment, and fill.
 

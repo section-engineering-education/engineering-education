@@ -23,7 +23,7 @@ Let us dive deeper into the concept of hashing by considering the following prob
 
 The problem states that there are `n` number of socks available, and an array is given with numbers representing each sock. We need to find number of pairs of socks a person can wear, that is, are in multiples of 2. For example, if n=7 and the array is [1,1,1,1,1,1,1], then number of pairs is 3.
 
-![](/bloom-filters-data-structure/hashingProblem.jpg)
+![](/engineering-education/bloom-filters-data-structure/hashingProblem.jpg)
 [*Image Source*](https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup)
 
 A solution that may come to mind is an O(n^2) solution. Using two for loops: the outer loop keeping track of the current element, and the inner loop keeping track of the count of the current element. This is a solution, but its time complexity is O(n^2). That needs to be improved.
@@ -80,7 +80,7 @@ Designed by Burton Bloom in the year [1970](https://en.wikipedia.org/wiki/Bloom_
 
 To check for the membership of a new input value, the bloom filter first passes the new value through m different hash functions. Comparing the original array with the new array gives us an idea of whether the entered input is wrong or not. The combination of m different hash function reduces the probability of the same array pattern appearing for two different strings. Therefore, we can catch all strings that don't match with the original input. Thus, true negatives are eliminated.
 
-![](/bloom-filters-data-structure/membership.jpg)
+![](/engineering-education/bloom-filters-data-structure/membership.jpg)
 
 [*Image Source*](https://yourbasic.org/)
 

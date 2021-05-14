@@ -39,7 +39,7 @@ The RFID module used is MFRC522. The RFID module is connected to
 Arduino. Here we are reading the UID number of a person’s ID card using
 RFID scanner. We load the UID value onto the RFID tag.
 
-!["Title"](/pos-system-using-arduino-and-python/arduino.jpg)
+!["Title"](/engineering-education/pos-system-using-arduino-and-python/arduino.jpg)
 
 ### Software
 ### Socket Programming
@@ -303,10 +303,10 @@ Wireshark is the go-to software for packet analysis. It can be downloaded from h
 
 Let's use the tool Wireshark to capture the packets sent and received. The outputs received are as follows-
 1. Data sent from client to server
-![wireframe_1](/pos-system-using-arduino-and-python/wireframe_1.jpg)
+![wireframe_1](/engineering-education/pos-system-using-arduino-and-python/wireframe_1.jpg)
 2. Data sent from server to client
-![wireframe_2](/pos-system-using-arduino-and-python/wireframe_2.jpg)
+![wireframe_2](/engineering-education/pos-system-using-arduino-and-python/wireframe_2.jpg)
 3. A message showing the transaction amount
-![wireframe_3](/pos-system-using-arduino-and-python/wireframe_3.jpg)
+![wireframe_3](/engineering-education/pos-system-using-arduino-and-python/wireframe_3.jpg)
 
 We have built an entire loop of establishing transactions. We can, therefore, improvise the project by encrypting the storage of the pin, securing the transit data, and creating encrypted ID's. All these suggestions can be built on top of the above-stated project. We encourage you to enhance and build your prototypes using Arduino and various modules available with it.

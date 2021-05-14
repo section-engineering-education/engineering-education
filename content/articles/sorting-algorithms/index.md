@@ -20,7 +20,7 @@ Sorting is a common operation that needs to be done, but there are many ways to 
 ### About Time Complexity
 Time complexity measures how an algorithm performs under large inputs.
 
-![A graph showing how time complexity works](/sorting-algorithms/complexity.png)
+![A graph showing how time complexity works](/engineering-education/sorting-algorithms/complexity.png)
 
 - `O(1)` is the best-case scenario. It means that no matter how big the list is, it will take the same amount of time to sort it.
 - `O(logn)` means that the extra time for each element decreases as you add more elements.
@@ -33,8 +33,8 @@ Most of the algorithms we will talk about today will be either `O(n^2)` or `O(nl
 ### Insertion Sort
 [Insertion sort](https://github.com/botahamec/sorting_algos/blob/master/python/insertion_sort.py) works by splitting the list into a "sorted part" and an "unsorted part". Initially, every element in the list is in the "unsorted part". The algorithm needs to move all the elements into the sorted part. To do this, it needs to pick an element, and shift it until the element is in its proper place.
 
-![A hand drawn demonstration showing a few steps of insertion sort](/sorting-algorithms/insertion1.jpg)<br>
-![A hand-drawn illustration of insertion sort](/sorting-algorithms/insertion2.jpg)<br>
+![A hand drawn demonstration showing a few steps of insertion sort](/engineering-education/sorting-algorithms/insertion1.jpg)<br>
+![A hand-drawn illustration of insertion sort](/engineering-education/sorting-algorithms/insertion2.jpg)<br>
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=TZRWRjq2CAg)
 
 Moving a single element, on average, is an `O(n/4)` operation. This is because it needs to go through half of the list to find where it needs to go. We can ignore the 1/4. There are n elements, which means the total complexity of insertion sort is `O(n^2)`. That's pretty bad.
@@ -44,7 +44,7 @@ There is one reason to use insertion sort, which is if there's a high chance tha
 ### Merge Sort
 [Merge sort](https://github.com/botahamec/sorting_algos/blob/master/python/merge_sort.py) splits the list in half, repeatedly, until every part of the list is just one element. Then, we can merge halves together until we eventually get the sorted list back.
 
-![A hand-drawn demonstration of merge sort](/sorting-algorithms/merge.jpg)<br>
+![A hand-drawn demonstration of merge sort](/engineering-education/sorting-algorithms/merge.jpg)<br>
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
 Merging the lists is an `O(n)` operation. This time, it only has to be done log(n) times, so the complexity of merge sort will always be `O(nlogn)`. Unlike insertion sort, the complexity does not change depending on the list. It always takes the same amount of time.
@@ -53,7 +53,7 @@ Merging the lists is an `O(n)` operation. This time, it only has to be done log(
 
 [Quick sort](https://github.com/botahamec/sorting_algos/blob/master/python/quick_sort.py) is very interesting. The first thing you do is select an element of the list to be a "pivot". Then, you split the list into three lists. One contains elements that are less than the pivot. One contains elements equal to the pivot. The last one contains elements greater than the pivot. Then you need to run quick sort on the less and greater lists, until everything has been sorted.
 
-![A hand-drawn demonstration of quick sort](/sorting-algorithms/quick.jpg)<br>
+![A hand-drawn demonstration of quick sort](/engineering-education/sorting-algorithms/quick.jpg)<br>
 [Here's a video of a robot doing it](https://www.youtube.com/watch?v=es2T6KY45cA)
 
 The complexity of quick sort is complicated. Usually, it's `O(nlogn)`, but it can take longer if the pivot chosen is close to one extreme of the list. The worst-case scenario is `O(n^2)`.
@@ -63,7 +63,7 @@ There are [many ways to choose a pivot](https://stackoverflow.com/questions/1641
 ### Counting Sort
 [Counting sort](https://github.com/botahamec/sorting_algos/blob/master/python/counting_sort.py) is amazing. You can use either a HashMap or a List. You need to count how many of each number appear in the list. Then, just go through each number and put that many in the list.
 
-![A hand-drawn demonstration of counting sort](/sorting-algorithms/counting.jpg)<br>
+![A hand-drawn demonstration of counting sort](/engineering-education/sorting-algorithms/counting.jpg)<br>
 ***Note:*** *Counting sort typically uses a different algorithm, [described here](https://www.youtube.com/watch?v=TTnvXY82dtM). It works better if you're using things that aren't numbers. It's also good when you have a lot of unused values in your range.*
 
 Counting sort is the closest thing to an `O(n)` sorting algorithm we'll see. The complexity is `O(N+R)`. `N` is the number of elements in the list. `R` is the difference between the largest and smallest elements in the list. If the value of `R` is very big, then it can take a while to sort. It works very well if you have a lot of the same value and the range isn't too large.

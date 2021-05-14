@@ -244,7 +244,7 @@ argv.help();
 ```
 
 The result will look like this:
-![image title](/create-a-nodejs-cli/terminal.png)
+![image title](/engineering-education/create-a-nodejs-cli/terminal.png)
 
 We also added the help command to provide a default `--help/help` flag to give options to our application.
 

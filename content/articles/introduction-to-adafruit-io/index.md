@@ -45,7 +45,7 @@ Cloud computing is the means of storing and accessing data over the Internet ins
 
 Features of cloud computing are as shown below:
 
-![Features of cloud computing](/introduction-to-adafruit-io/cloud-computing-features.jpg)
+![Features of cloud computing](/engineering-education/introduction-to-adafruit-io/cloud-computing-features.jpg)
 
 *Source: Features of cloud computing by [DataFlair](https://data-flair.training/blogs/features-of-cloud-computing/)*
 
@@ -159,7 +159,7 @@ Finally, our code is ready for compilation and to be uploaded. To compile your c
 
 You will see the screen as shown below:
 
-![Code compilation](/introduction-to-adafruit-io/uploading.png)
+![Code compilation](/engineering-education/introduction-to-adafruit-io/uploading.png)
 
 *Compilation of the source code*
 
@@ -169,7 +169,7 @@ The output can be seen in the LEDs, where the brightness level increases from 10
 
 Thus, we have published the values from a client module to the Adafruit IO cloud, subscribed those values to another client, and displayed the LEDs based on the brightness levels.
 
-![Result](/introduction-to-adafruit-io/result.gif)
+![Result](/engineering-education/introduction-to-adafruit-io/result.gif)
 
 *Source: GIF by [Steemit](https://steemit.com/arduino/@makerhacks/blinking-leds-with-python-how-to-code-in-micro-python-on-the-esp8266-nodemcu)*
 

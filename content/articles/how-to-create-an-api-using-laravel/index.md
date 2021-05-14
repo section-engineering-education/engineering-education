@@ -315,7 +315,7 @@ php artisan route:list
 
 Here are the available routes in the `taskmanager` project.
 
-![routes](/how-to-create-an-api-using-laravel/routes.png)
+![routes](/engineering-education/how-to-create-an-api-using-laravel/routes.png)
 
 ### 7. Testing
 We will use Postman for our tests. Please watch the video below to learn how the tests are done.

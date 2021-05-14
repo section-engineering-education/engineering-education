@@ -26,7 +26,7 @@ To follow this tutorial along ensure you have the following:
 ### Application setup
 Start Android studio and create a new Android project with an empty activity template. 
 
-![Android studio new project](/getting-started-android-notifications/android.png)
+![Android studio new project](/engineering-education/getting-started-android-notifications/android.png)
 
 ### Creating and sending notifications
 #### Basic notification

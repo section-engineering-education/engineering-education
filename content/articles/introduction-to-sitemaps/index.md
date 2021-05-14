@@ -34,13 +34,13 @@ Not only can sitemaps be useful for search engines to index a website, but they 
 ### How To Generate and Upload to Google Search Console
 Thankfully, it is easy to generate a sitemap for your website using free online services. For this example, we will use [Online XML Sitemap Generator](https://www.web-site-map.com/xml_sitemap.php) to generate a sitemap for iTech News and provide Google Search Console access in order to index our site.
 
-![sitemap generator](/introduction-to-sitemaps/sitemap-generator.png)
+![sitemap generator](/engineering-education/introduction-to-sitemaps/sitemap-generator.png)
 
 Simply go to the website and enter your website's address, then click "Create free XML Sitemap". It may take some time to generate a sitemap for your site, especially if you have hundreds of webpages. Once you have this sitemap downloaded (known as `sitemap.xml`), you will need to upload this file to your website.
 
 Once this is uploaded, head over to your Google Search Console and click on sitemap on the sidebar. Once there, enter `sitemap.xml` into the text box.
 
-![google search console sitemap](/introduction-to-sitemaps/google-search-console-sitemap.png)
+![google search console sitemap](/engineering-education/introduction-to-sitemaps/google-search-console-sitemap.png)
 
 After that, click submit and Google now knows where your sitemap is and will shortly start indexing it.
 

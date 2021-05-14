@@ -37,7 +37,7 @@ Data supply chain is similar to the concept of the supply chain in the business 
 ### Components of Big Data Supply Chain
 The following diagram shows the main components of a big data supply chain.
 
-![Components of Big Data Supply Chain](/fundamentals-of-big-data-supply-chain/components-of-big-data-supply-chain.png)
+![Components of Big Data Supply Chain](/engineering-education/fundamentals-of-big-data-supply-chain/components-of-big-data-supply-chain.png)
 
 [Image Source: EDUCBA](https://cdn.educba.com/academy/wp-content/uploads/2016/03/Data-Components.png)
 

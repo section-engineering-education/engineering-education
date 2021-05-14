@@ -31,7 +31,7 @@ Let's get started
 ### Step 1 — Creating an Android project
 In this step, we're going to create our application. Open Android Studio and start a new project using the empty activity template. On the next page, give the application a name and keep the default settings.
 
-![app name](/building-local-unit-tests-in-android-kotlin/app-name.png)
+![app name](/engineering-education/building-local-unit-tests-in-android-kotlin/app-name.png)
 
 Click `Finish` and wait for the project build process to complete.
 
@@ -59,7 +59,7 @@ The function should:
 
 To write tests for our function, we first have to create the method. We can not call a function that does not exist. To do this, create a Kotlin object and name it `AuthUtil`.
 
-![class name](/building-local-unit-tests-in-android-kotlin/class-name.png)
+![class name](/engineering-education/building-local-unit-tests-in-android-kotlin/class-name.png)
 
 We make it an object to allow us to access the function without creating an instance of the class. Add the following code to the class.
 
@@ -82,7 +82,7 @@ Right-click on the class name and select `generate` then click `Test`.
 On the next screen, select `JUnit4` as the testing library.
 Leave the other fields to default values and click `OK`.
 
-![new test image](/building-local-unit-tests-in-android-kotlin/test.png)
+![new test image](/engineering-education/building-local-unit-tests-in-android-kotlin/test.png)
 
 The next dialog box that appears prompts you to select the test source set. There are two types of test source sets. One is the test source set, and the other one is the Android test source set. 
 
@@ -90,7 +90,7 @@ The test source set is where we write business logic tests. On the other hand, t
 
 For our case, we select the test source set since our function does not depend on the Android platform.
 
-![test source set](/building-local-unit-tests-in-android-kotlin/test-source.png)
+![test source set](/engineering-education/building-local-unit-tests-in-android-kotlin/test-source.png)
 
 That's it, our test class has been created. Now let's go ahead and write the tests.
 
@@ -254,7 +254,7 @@ We use the `when` statement to validate the values. All four statements create t
 
 This is the expected output from the `run` window.
 
-![output](/building-local-unit-tests-in-android-kotlin/output.png)
+![output](/engineering-education/building-local-unit-tests-in-android-kotlin/output.png)
 
 ### Conclusion
 With that information, you can now write your unit tests. Unit tests fasten the software development process. This is because one declares the behavior before implementing it. 

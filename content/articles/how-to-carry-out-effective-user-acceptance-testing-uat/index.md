@@ -23,7 +23,7 @@ UAT is different from [unit testing](https://www.tutorialspoint.com/software_tes
 
 The diagram below shows where UAT falls in the software development process.
 
-![software process](/how-to-carry-out-effective-user-acceptance-testing-uat/software-process.jpg)
+![software process](/engineering-education/how-to-carry-out-effective-user-acceptance-testing-uat/software-process.jpg)
 
 #### Objectives of UAT
 - To confirm that the software product can perform all the business functions.

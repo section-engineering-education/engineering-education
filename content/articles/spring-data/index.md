@@ -20,7 +20,7 @@ The implementations of the JPA specifications are provided by the object-relatio
 
 JPA falls between the ORM and the application layer. In this tutorial, we will be modeling a `Recipe` application using Spring Data and JPA. The entity-relationship diagram for our application is shown below.
 
-![Entity Diagram](/introduction-spring-data/relationship.png)
+![Entity Diagram](/engineering-education/introduction-spring-data/relationship.png)
 
 ### Prerequisite
 Before we begin we will need the following:

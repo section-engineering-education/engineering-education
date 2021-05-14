@@ -60,7 +60,7 @@ The key behind these enhancements is a powerful concept called Finite State Mach
 
 There are two types of FSMs - [Deterministic Finite Machine](https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm) and [Non Deterministic Finite Machine)](https://www.tutorialspoint.com/automata_theory/non_deterministic_finite_automaton.htm). The working of a vending machine can be represented as a Finite State Machine, where certain steps must be followed in a specific order to dispense candy according to the amount inserted in the slot. 
 
-![Finite State Machine](/regular-expressions-in-python/fsm.png)
+![Finite State Machine](/engineering-education/regular-expressions-in-python/fsm.png)
 
 *Source: [FSM of a Vending Machine](http://osr600doc.sco.com/en/SDK_c++/_What_is_a_Finite_State_Machine.html)*
 

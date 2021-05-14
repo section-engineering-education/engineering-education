@@ -83,7 +83,7 @@ Using the metrics above, we are going to create a strong level password that has
     (?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})
 ```
 
-![Strong password](/password-strength-checker-javascript/strong-password.png)
+![Strong password](/engineering-education/password-strength-checker-javascript/strong-password.png)
 
 2. Medium: If the password is at least six characters long and meets all the other requirements, or has no digit but meets the rest of the requirements.
 
@@ -93,11 +93,11 @@ The code is the same as for the Strong level only that `?=.{6,}` shows that we a
     ((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))
 ```
 
-![Medium password](/password-strength-checker-javascript/medium-password.png)
+![Medium password](/engineering-education/password-strength-checker-javascript/medium-password.png)
 
 3. Weak: If the password entered does not meet the strong or medium-level requirements, then it is deemed weak.
 
-![Weak password](/password-strength-checker-javascript/weak-password.png)
+![Weak password](/engineering-education/password-strength-checker-javascript/weak-password.png)
 
 ### HTML code
 ```HTML

@@ -32,7 +32,7 @@ According to the Go documentation, Go is used widely in production inside Google
 ### Installing Go
 1. Download the Go binary file from the official [web page](https://golang.org/dl/). You can find a list of download links for different versions of Go and different operating systems. Based on your OS and requirements, choose the version you want and download the binaries. I recommend going with the latest stable version.
 
-![Downloading Go](/golang-part-1-introduction/go-downloads.png)
+![Downloading Go](/engineering-education/golang-part-1-introduction/go-downloads.png)
 
 2. Once the archive file has been downloaded, move it to /usr/local. Extract the tar file using the following command:
 
@@ -71,7 +71,7 @@ go version
 ```
 This command shows us the version of Go currently installed on the system.
 
-![Go version](/golang-part-1-introduction/go-version.png)
+![Go version](/engineering-education/golang-part-1-introduction/go-version.png)
 
 #### Running your first Go program
 1. Create a file called hello_world.go and add the following lines of code:
@@ -98,7 +98,7 @@ go build hello_world.go
 ./hello_world
 ```
 
-![Go version](/golang-part-1-introduction/hello-world-go.png)
+![Go version](/engineering-education/golang-part-1-introduction/hello-world-go.png)
 
 You will see "hello world" on your terminal. In the next few articles, we will understand the code to print hello world and explore the syntax and features of Go.
 

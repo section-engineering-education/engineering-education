@@ -309,7 +309,7 @@ tabLayout.setupWithViewPager(page,true);
 
 You can now run the application to test if everything is working.
 
-![SLIDERS](/how-to-create-an-automatic-slider-in-android-studio/sliders.gif)
+![SLIDERS](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/sliders.gif)
 
 Swiping on the screen will change the displaying slide, and tapping on the slide's tab will change the slide pages - as you'd expect.
 
@@ -409,7 +409,7 @@ public class MainActivity extends AppCompatActivity {
 
 Run the app on your mobile phone to see if this works.
 
-![Automatic slider timer](/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
+![Automatic slider timer](/engineering-education/how-to-create-an-automatic-slider-in-android-studio/automatic-slider-timer.gif)
 
 ### Conclusion
 I hope this guide helped you to create and implement sliders in your app. For further reference, download or clone this project from [here](https://github.com/kimkimani/An_Auto_Android_Slider).

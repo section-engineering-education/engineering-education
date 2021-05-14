@@ -111,7 +111,7 @@ To fix the error about the unresolved reference in the text attribute, create st
 
 *buttons preview:*
 
-![buttons image](/getting-started-with-dialogs-in-android-kotlin/buttons.png)
+![buttons image](/engineering-education/getting-started-with-dialogs-in-android-kotlin/buttons.png)
 
 As we mentioned earlier, we will use these buttons to show the necessary dialogs. To achieve this, we need DataBinding objects for each view in our layout. 
 
@@ -189,7 +189,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 Ensure that there are no errors in your code before running the app. When you click the button, you should get an output similar to the one below.
 
-![empty dialog](/getting-started-with-dialogs-in-android-kotlin/empty-dialog.png)
+![empty dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/empty-dialog.png)
 
 ##### Adding features to a Dialog
 Now that we've created a Dialog, we can add functionalities such as:
@@ -238,7 +238,7 @@ The function `toast()` is used to show a short `Toast` message with a text passe
 
 Run the app and you should see a dialog similar to the one below.
 
-![default dialog](/getting-started-with-dialogs-in-android-kotlin/default-dialog.png)
+![default dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/default-dialog.png)
 
 Notice that when you click outside the dialog, it dismisses. You can avoid this effect by adding `setCancelable(false)` in the builder.
 
@@ -403,7 +403,7 @@ The rest of the function remains the same.
 
 Now we're done. Run the app and you should see a dialog similar to this one
 
-![round dialog](/getting-started-with-dialogs-in-android-kotlin/round-dialog.png)
+![round dialog](/engineering-education/getting-started-with-dialogs-in-android-kotlin/round-dialog.png)
 
 ### Conclusion
 In this tutorial, we've learned how to create, customize, and use Alert Dialogs in Android. As you've seen, dialogs are very simple to implement. You can find the full source code for this tutorial [here](https://github.com/Ericgacoki/dialogs-in-android). 

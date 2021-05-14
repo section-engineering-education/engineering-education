@@ -18,17 +18,17 @@ RecyclerView is a container widget used to display large data sets that change d
 <!--more-->
 We can use a RecyclerView inside another RecyclerView. We refer to this as nested RecyclerView. It is an instance where one RecyclerView widget is the parent to another RecyclerView widget. A good example where a nested RecyclerView widget is implemented includes the Google Play Store.
 
-![Google play store nested RecyclerView](/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
+![Google play store nested RecyclerView](/engineering-education/android-nested-recycler-view/google-play-store-nested-recyclerview.jpg)
 
 [***Image Source***](https://play.google.com/store/apps?hl=en)
 
 Applications such as eCommerce, music apps, and movie apps such as Netflix uses this concept.
 
-![Netflix nested Recyclerview](/android-nested-recycler-view/netflix-nested-recycler-view.png)
+![Netflix nested Recyclerview](/engineering-education/android-nested-recycler-view/netflix-nested-recycler-view.png)
 
 [***Image Source***](https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en&gl=US)
 
-![Music app nested Recyclerview](/android-nested-recycler-view/music-app-nested-recycler-view.png)
+![Music app nested Recyclerview](/engineering-education/android-nested-recycler-view/music-app-nested-recycler-view.png)
 
 [***Image Source***](https://play.google.com/store/apps/details?id=com.piyush.music)
 
@@ -409,7 +409,7 @@ Initialize the parent adapter layout manager and inflate the view data into the 
 
 Everything is now set. Run the application to test if everything is working.
 
-![Nested RecyclerView](/android-nested-recycler-view/nested-recycler-view.gif)
+![Nested RecyclerView](/engineering-education/android-nested-recycler-view/nested-recycler-view.gif)
 
 I hope this guide helped you understand and implement nested RecyclerView within your application context. For more reference, check the code on [GitHub](https://github.com/kimkimani/Nested_RecyclerView).
 

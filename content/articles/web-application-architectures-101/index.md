@@ -29,7 +29,7 @@ Websites have become an integral part of the technology landscape. It is importa
 
 The end user can visualize a website, with various buttons, content and links that behave beautifully and serve the content that they request. The framework that works behind the scenes to manage this plethora of different content and programs interacting with each other could be termed as an **_architecture_**.
 
-![csr, ssr](/web-application-architectures-101/csr-ssr.png)<br>
+![csr, ssr](/engineering-education/web-application-architectures-101/csr-ssr.png)<br>
 _Figure: Client Side Rendering vs Server Side Rendering ([Source](https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering))_
 
 ### Components of a Web Application
@@ -63,7 +63,7 @@ Server-Side Rendering used to be the most common way used to build websites. The
 
 ### Client Side Rendering
 
-![CSR](/web-application-architectures-101/csr.png)<br>
+![CSR](/engineering-education/web-application-architectures-101/csr.png)<br>
 _Figure: Client Side Rendering ([Source](https://laptrinhx.com/understanding-server-side-rendering-721376809/))_
 
 In Client Side Rendering, a single request is sent to a Content Delivery Network, which sends a single HTML file back, and all the JavaScript is sent to the browser. The interactivity is managed by the JavaScript on the browser, since a web browser is capable of running JavaScript on the browser.
@@ -72,7 +72,7 @@ This approach works really well with a good internet connection and the web appl
 
 ### Universal or Isomorphic Apps
 
-![Isomorphic](/web-application-architectures-101/iso.png)<br>
+![Isomorphic](/engineering-education/web-application-architectures-101/iso.png)<br>
 _Figure: Universal Rendering ([Source](https://dzone.com/articles/client-side-vs-server-side-rendering-what-to-choos))_
 
 Client Side Rendering fares poorly with Search Engine Optimization because crawlers cannot read the entire page content due to the initial time-to-load. To solve this, there is an increasingly popular method of designing web apps called the _Universal_ approach. This approach consists of both the client and server rendering pages. This approach solves the problem of SEO, while maintaining the snappy and fluid experience of a client side rendered application. Frameworks like **Next** and **Nuxt** use the isomorphic approach.

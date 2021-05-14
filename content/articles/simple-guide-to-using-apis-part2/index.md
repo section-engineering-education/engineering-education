@@ -271,7 +271,7 @@ Finally, we should test to make sure it works. Go to `https://localhost:8080/aut
 
 See final result below:
 
-![Your Owned Books from Goodreads](/simple-guide-to-using-apis-part2/final-result.png)
+![Your Owned Books from Goodreads](/engineering-education/simple-guide-to-using-apis-part2/final-result.png)
 
 ### Next Steps
 Congratulations. You've authenticated with the Goodreads API and made your first authenticated request. Explore the [goodreads-api-node](https://github.com/baahrens/goodreads-api-node) documentation to discover more ways to use the Goodreads API.

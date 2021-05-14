@@ -40,7 +40,7 @@ _Publish-subscribe messaging is a method of communication in which messages are 
 
 Unlike the point-to-point system where a particular message can only be consumed by one consumer, in this model, consumers can subscribe to one or more topics and consume all the messages on that topic.
 
-![publish-subscribe](/introduction-to-kafka/publish-subscribe.png)
+![publish-subscribe](/engineering-education/introduction-to-kafka/publish-subscribe.png)
 
 ### Architecture and terminologies
 
@@ -74,7 +74,7 @@ Producers send data to a particular Kafka topic at regular intervals of time, an
 
 [Zookeeper](https://zookeeper.apache.org/) helps keep track of the various partitions, topics, and which nodes they are stored in so that the consumer can easily retrieve the location of a topic or a message. Kafka keeps track of messages being sent to the consumer by using **offsets**. Offsets are unique ids given to messages stored in a partition. The first message gets an offset of zero, the second message gets an offset of 1, and so on. If a consumer stops consuming messages, Kafka stores the most recent offset sent to the consumer. Once the consumer resumes pulling data, Kafka simply sends the message with the next offset value and resumes the operation.
 
-![architecture](/introduction-to-kafka/kafka-architecture.png)
+![architecture](/engineering-education/introduction-to-kafka/kafka-architecture.png)
 
 ### Installation
 

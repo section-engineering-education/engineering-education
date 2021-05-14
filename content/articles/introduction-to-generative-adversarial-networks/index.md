@@ -32,7 +32,7 @@ In every iteration, the results of classification are sent back to the generator
 ### GAN architecture
 This flowchart will give a brief description of how GANs work.
 
-![GAN architecture](/introduction-to-generative-adversarial-networks/gan-architecture.jpg)
+![GAN architecture](/engineering-education/introduction-to-generative-adversarial-networks/gan-architecture.jpg)
 
 **System flow**:
 

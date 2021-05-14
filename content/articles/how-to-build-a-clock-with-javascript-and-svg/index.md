@@ -478,7 +478,7 @@ footer {
 ### Step 10 - Testing the application
 To see the magic, start your live server or preview the application in your browser as shown below.
 
-![result on browser](/how-to-build-a-clock-with-javascript-and-svg/result.png)
+![result on browser](/engineering-education/how-to-build-a-clock-with-javascript-and-svg/result.png)
 
 Congratulations 🎉🎉
 

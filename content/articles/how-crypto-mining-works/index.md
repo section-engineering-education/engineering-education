@@ -40,7 +40,7 @@ With Bitcoin, it adjusts the target value every 2016 blocks (about 2 weeks) in o
 ### How does Bitcoin mining work?  
 In the case of mining Bitcoin, transactions are hashed and packaged to be included in a block. They are organized into a Merkle Tree. The following image from [Escape Velocity](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/) shows that transactions are initially hashed and then paired and hashed together. These resulting hashes may be paired again and hashed until it leaves one hash. In this type of tree, the root is called the Merkle Root.
 
-![](/how-crypto-mining-works/merkle-tree.jpg)
+![](/engineering-education/how-crypto-mining-works/merkle-tree.jpg)
 
 [Image Source](https://chrispacia.wordpress.com/2013/09/02/bitcoin-mining-explained-like-youre-five-part-2-mechanics/)
 
@@ -92,7 +92,7 @@ In this simple example, let’s say that the target value is: 0f0000000000000000
 
 And our output from the program may show the following hashes.
 
-![](/how-crypto-mining-works/hashingexampe.PNG)
+![](/engineering-education/how-crypto-mining-works/hashingexampe.PNG)
 
 The second hash: 0e6878e44ef7b460869034d35acd8cfda70330841dd71f24e559b45d01a035fe is less than the target value and would be a valid block.
 

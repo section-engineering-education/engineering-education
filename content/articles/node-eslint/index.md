@@ -77,21 +77,21 @@ const express = require("express")
 
 The code above is analyzed by ESLint and throws the following errors.
 
-![ESLint Error](/node-eslint/eslint-error1.png)
+![ESLint Error](/engineering-education/node-eslint/eslint-error1.png)
 
 This error is because it isn't good practice to declare and assign a variable and not use it.
 
-![ESLint Error](/node-eslint/eslint-error2.png)
+![ESLint Error](/engineering-education/node-eslint/eslint-error2.png)
 
 The Google Style Guide recommends the use of single quotes.
 
-![ESLint Error](/node-eslint/eslint-error3.png)
+![ESLint Error](/engineering-education/node-eslint/eslint-error3.png)
 
 It is good practice to use semi-colons at the end of a line.
 
 Now, to fix the errors we can set up ESLint to automatically fix errors when we save the file. In Visual Studio Code, go to Settings -> Workspace and search for **save**
 
-![VSCode Settings](/node-eslint/vscode-settings.png)
+![VSCode Settings](/engineering-education/node-eslint/vscode-settings.png)
 
 There will be an option, Editor: Code Actions on Save. Click on *Edit in settings.json* and enter the following config.
 

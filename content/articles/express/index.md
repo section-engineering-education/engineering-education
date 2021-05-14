@@ -21,7 +21,7 @@ images:
 
 When creating a Node.js web application, we write a single JavaScript application which listens to requests from the browser, based on the request, the function will send back some data or an HTML web page.
 
-![flow of a request](/express/node.png)
+![flow of a request](/engineering-education/express/node.png)
 
 [Image Credit](https://www.manning.com/books/express-in-action)
 
@@ -29,7 +29,7 @@ A *request handler* is a JavaScript function which takes a request and sends an 
 
 Node.js APIs can get complex and writing how to handle a single request can end up being over 50 lines of code. Express makes it easier to write Node.js web applications.
 
-![flow with express](/express/express.png)
+![flow with express](/engineering-education/express/express.png)
 
 [Image Credit](https://www.manning.com/books/express-in-action)
 

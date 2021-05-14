@@ -196,7 +196,7 @@ That's all! Build and run the application.
 
 This is how the application should look like.
 
-![final app](/introduction-to-room-db/app.gif)
+![final app](/engineering-education/introduction-to-room-db/app.gif)
 
 ### Conclusion
 In this article, we have gone through the Room database. What it is, its advantages, and its basic components. We have also seen how Room contributes to and follows the MVVM architecture. 

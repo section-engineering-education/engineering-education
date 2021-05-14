@@ -218,9 +218,9 @@ Using `setUIMode()`, we are updating the state of the preference if the icon is 
 Once you are done, run the app. 
 
 Here is what you would expect.
-![light mode](/getting-started-with-datastore-in-kotlin/light-mode.png)
+![light mode](/engineering-education/getting-started-with-datastore-in-kotlin/light-mode.png)
 
-![dark mode](/getting-started-with-datastore-in-kotlin/dark-mode.png)
+![dark mode](/engineering-education/getting-started-with-datastore-in-kotlin/dark-mode.png)
 
 You can check out the entire project on [GitHub](https://github.com/carolinemusyoka/NoteApp).
 

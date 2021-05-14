@@ -160,7 +160,7 @@ fun startWork(){
 
 Once you run your application, you should see two users on the screen as the first results from the two jobs.
 
-![demo](/threading-workmanager/demo.png)
+![demo](/engineering-education/threading-workmanager/demo.png)
 
 ### Conclusion
 We just went over how you use RxJava or Coroutines in `WorkManager`. You can go ahead and explore the various RxJava operators and Kotlin flow in your application. All the `Worker`, `RxWorker` and `CoroutineWorker` classes derive from the `ListenableWorker` class. This class does not handle any threading and so it would not be advisable to use it. 

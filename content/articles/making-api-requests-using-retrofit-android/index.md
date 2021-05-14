@@ -62,7 +62,7 @@ Retrofit is used to perform the following tasks:
 ### Step 1 – Create a new Android studio project
 Open Android Studio and Start a new Android Studio Project -> Empty Activity. Let us name the project `MarvelRetrofit`. Select *Finish* and wait for the project to build.
 
-![Name the project](/making-api-requests-using-retrofit-android/name.jpg)
+![Name the project](/engineering-education/making-api-requests-using-retrofit-android/name.jpg)
 
 ### Step 2 – Adding retrofit to our application
 Add the following dependencies to your app-level `build.gradle` file.
@@ -232,7 +232,7 @@ That is it!
 
 Let's run our application.
 
-![Retrofit](/making-api-requests-using-retrofit-android/app.jpg)
+![Retrofit](/engineering-education/making-api-requests-using-retrofit-android/app.jpg)
 
 ### To wrap up
 We have learned that networking is a crucial factor in mobile application development. We have learned how to use Retrofit and its advantages and disadvantages. **Did you know that Retrofit takes 312ms to carry out one discussion? That is super fast.**

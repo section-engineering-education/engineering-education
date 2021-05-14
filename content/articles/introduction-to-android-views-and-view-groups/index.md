@@ -47,7 +47,7 @@ An example of `TextView` in XML:
     android:textSize="20sp"/>
 ```
 
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-text-view.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-text-view.png)
 
 We open the view with the tag with `<`and type `TextView`, to indicate that we are creating a `TextView` that will get displayed by the app. The same structure is used in the other views and viewgroups we'll later discuss.
 
@@ -74,7 +74,7 @@ An example of `EditText` in XML:
     android:inputType="text"
     android:maxLength="10"/>
 ```
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-edit-text.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-edit-text.png)
 
 The attributes we stated above will be broken down as follows:
 - `android:hint=” Enter your Name”` - It is used to display the hint when the view is empty. The user will see the hint as “Enter your Name”.
@@ -96,7 +96,7 @@ An example of Button in XML:
     android:backgroundTint="#df3e4c"/>
 ```
 
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-button.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-button.png)
 
 The attributes are defined as follows:
 - `android:backgroundTint=”#de4f3e”` - It sets the background color of the button.
@@ -117,7 +117,7 @@ An example of `ImageView` in XML:
     android:layout_height="140dp"
     android:src="@drawable/ic_campaign"/>
 ```
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-image-view.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-image-view.png)
 
 The attribute above is defined as follows:
 
@@ -182,7 +182,7 @@ An example of `RelativeLayout` in XML:
 </RelativeLayout>
 ```
 
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-relative-layout.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-relative-layout.png)
 
 The attributes are defined as follows:
 
@@ -233,7 +233,7 @@ An example of `LinearLayout` in XML:
 </LinearLayout>
 ```
 
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-linear-layout.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-linear-layout.png)
 
 The attributes above can be defined as follows:
 -`android:gravity="center"`-  This controls how it positions all the views it contains in the viewgroup. In this case, the views will align at the center.
@@ -305,7 +305,7 @@ An example of `ConstraintLayout` in XML:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-constraint-layout.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-constraint-layout.png)
 
 The attributes above are defined as shown below:
 
@@ -354,7 +354,7 @@ The attributes above are defined as shown below:
 
 </FrameLayout>
 ```
-![Output screen](/introduction-to-android-views-and-view-groups/screenshot-frame-layout.png)
+![Output screen](/engineering-education/introduction-to-android-views-and-view-groups/screenshot-frame-layout.png)
 
 The attributes above are defined as follows:
 - `android:layout_marginTop="20dp` - Specifies extra space at the top of a view. Hence, the extra space is set to "20dp"

@@ -33,7 +33,7 @@ An overview of *MapReduce Architecture* and *MapReduce's phases* will help us un
 #### MapReduce architecture
 The following diagram shows a MapReduce architecture.
 
-![MapReduce Architecture](/understanding-map-reduce-in-hadoop/map-reduce-architecture.png)
+![MapReduce Architecture](/engineering-education/understanding-map-reduce-in-hadoop/map-reduce-architecture.png)
 
 [Image Source: A4Academics](http://a4academics.com/images/hadoop/Hadoop-Mapreduce-Architecture.png)
 
@@ -56,7 +56,7 @@ The intermediate data will then be sorted and merged. The reducer that will gene
 
 The following diagram shows a simplified flow diagram for the MapReduce program. 
 
-![MapReduce Flow Diagram](/understanding-map-reduce-in-hadoop/mapreduce-flow-diagram.jpg)
+![MapReduce Flow Diagram](/engineering-education/understanding-map-reduce-in-hadoop/mapreduce-flow-diagram.jpg)
 
 [Image Source: Data Flair](https://data-flair.training/blogs/wp-content/uploads/sites/2/2017/09/hadoop-mapreduce-flow.jpg)
 
@@ -65,7 +65,7 @@ Every job consists of two key components: mapping task and reducing task. The ma
 
 The job tracker acts as a master. It ensures that we execute all jobs. The job tracker schedules jobs that have been submitted by clients. It will assign jobs to task trackers. Each task tracker consists of a map task and reduces the task. Task trackers report the status of each assigned job to the job tracker. The following diagram summarizes how job trackers and task trackers work. 
 
-![Job Trackers and Task Trackers](/understanding-map-reduce-in-hadoop/job-trackers-and-task-trackers.png)
+![Job Trackers and Task Trackers](/engineering-education/understanding-map-reduce-in-hadoop/job-trackers-and-task-trackers.png)
 
 [Image Source: CNBlogs](https://images2015.cnblogs.com/blog/222972/201512/222972-20151215101500256-2116703561.png)
 
@@ -87,7 +87,7 @@ In the reducer phase, the output of the shuffling phase is used as the input. Th
 
 The following diagram shows an example of a MapReduce with the three main phases. Splitting is often included in the mapping stage. 
 
-![Example of MapReduce](/understanding-map-reduce-in-hadoop/example-of-mapreduce.png)
+![Example of MapReduce](/engineering-education/understanding-map-reduce-in-hadoop/example-of-mapreduce.png)
 
 [Image Source: Edureka](https://4zy7s42hws72i51dv3513vnm-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/MapReduce-Way-MapReduce-Tutorial-Edureka.png)
 
@@ -96,7 +96,7 @@ This is an optional phase that's used for optimizing the MapReduce process. It's
 
 The following diagram shows how all the four phases of MapReduce have been applied. 
 
-![MapReduce with Combiner Phase](/understanding-map-reduce-in-hadoop/mapreduce-with-combiner-phase.jpg)
+![MapReduce with Combiner Phase](/engineering-education/understanding-map-reduce-in-hadoop/mapreduce-with-combiner-phase.jpg)
 
 [Image Source: Cloud Front](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2017/05/mapreduce-job-execution-flow-1-1024x492-1.jpg)
 

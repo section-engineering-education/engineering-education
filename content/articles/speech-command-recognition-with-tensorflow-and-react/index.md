@@ -38,11 +38,11 @@ npx create-react-app speech_command
 
 Then, we need to open the project in our code editor IDE (VSCode) as shown in the screenshot below:
 
-![create new react app](/speech-command-recognition-with-tensorflow-and-react/1-create-new-react-app.png)
+![create new react app](/engineering-education/speech-command-recognition-with-tensorflow-and-react/1-create-new-react-app.png)
 
 Now, we can execute the command  `yarn start` or `npm start` to run the project on the port 3000 of our [localhost](http://localhost:3000):
 
-![preview react app](/speech-command-recognition-with-tensorflow-and-react/2-preview-react-app.png)
+![preview react app](/engineering-education/speech-command-recognition-with-tensorflow-and-react/2-preview-react-app.png)
 
 ### Installing Tensorflow.js & Speech command recognition
 Now, we are going to install the main TensorFlow.js package along with the speech commands recognition package provided by TensorFlow.org. 
@@ -113,7 +113,7 @@ In the code snippet above, we have called the loadModel method inside the useEff
 
 Now, when we can reload our app, we will see the model is loaded and the labels logged in the console as shown in the screenshot below:
 
-![list of command](/speech-command-recognition-with-tensorflow-and-react/3-list-of-command.png)
+![list of command](/engineering-education/speech-command-recognition-with-tensorflow-and-react/3-list-of-command.png)
 
 ### Activating speech recognizer
 In this step, we are going to activate our speech recognizer i.e. start listening to audio speech. For that, we are going to implement a function called `recognizeCommands`. Inside the function, we are going to listen to audio using the `listen` method from the `model` state then log the `spectrogram` result of the speech. 
@@ -146,7 +146,7 @@ Next, we add a button to activate the browser microphone whose `onClick` event w
 
 Now once we click on the button, the model in the app will start listening to speech as shown in the screenshot below:
 
-![listening for command](/speech-command-recognition-with-tensorflow-and-react/4-listening-for-command.png)
+![listening for command](/engineering-education/speech-command-recognition-with-tensorflow-and-react/4-listening-for-command.png)
 
 This completes the speech recognition feature implementation in React app. We can now run the app and detect the speech audio.
 

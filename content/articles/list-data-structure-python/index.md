@@ -36,7 +36,7 @@ colors = ['red', 'blue', 'green']
 ```
 The above list, `colors` is stored in memory as shown below.
 
-![List, Visualization](/list-data-structure-python/list-vis.png)
+![List, Visualization](/engineering-education/list-data-structure-python/list-vis.png)
 
 We can also create a list that contains multiple data types, like strings, integers, and floats.
 

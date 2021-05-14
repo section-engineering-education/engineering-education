@@ -90,7 +90,7 @@ export class StringInterpolationComponent {
 ```
 
 These produce an output, as shown below:<br>
-![String Interpolation](/data-binding-with-angular/string-Interpolation.png)<br>
+![String Interpolation](/engineering-education/data-binding-with-angular/string-Interpolation.png)<br>
 From the above output, the value of `studentId` from the TypeScript code gets displayed onto the template through the delimiter `{{ }}`.
 
 We can also pass methods, i.e. `getStudentName()`, as an expression to the delimiter as
@@ -139,9 +139,9 @@ export class PropertyBindingComponent{
 }
 ```
 
-![property-binding-disabled](/data-binding-with-angular/property-binding-disabled.png)
+![property-binding-disabled](/engineering-education/data-binding-with-angular/property-binding-disabled.png)
 
-![property-binding-enabled](/data-binding-with-angular/property-binding-enabled.png)<br>
+![property-binding-enabled](/engineering-education/data-binding-with-angular/property-binding-enabled.png)<br>
 In the code above. The `disabled` *element property* of a button is bound to the value of the *component* variable `addNewStudent`.
 - An *element property* enclosed between `[..]` identifies itself as the *target property*
  that binds to a component variable.
@@ -222,7 +222,7 @@ export class PropertyBindingComponent{
   }
 }
 ```
-![event-binding](/data-binding-with-angular/event-binding.gif)<br>
+![event-binding](/engineering-education/data-binding-with-angular/event-binding.gif)<br>
 From the code above, it can be seen that there are indeed two event binding listeners.
 - First is the *target event* `(input)` in the *input* element. When the user enters data in the *template*, it triggers `onUpdateStudent()` in the *component* file.
 - The `$event` passed as a parameter holds the information about the binding, that could be data values like an *object*, *number*, or *string*.
@@ -288,7 +288,7 @@ export class PropertyBindingComponent{
 }
 ```
 
-![two-way-binding](/data-binding-with-angular/two-way-binding.gif)<br>
+![two-way-binding](/engineering-education/data-binding-with-angular/two-way-binding.gif)<br>
 - The NgModel used here is a [*directive*](https://angular.io/guide/built-in-directives#ngModel) that displays the data property and updates the property when the user makes the changes. It requires *FormsModule* to be imported before using it.
 - The `studentID` variable is registered to user input changes and gets updated simultaneously.
 

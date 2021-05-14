@@ -117,7 +117,7 @@ To test the above:
 
 Otherwise, your webpage should resemble the following:
 
-![general_info_screenshot](/documenting-node-js-rest-api-using-swagger/general-info-screenshot.png)
+![general_info_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/general-info-screenshot.png)
 
 *A screenshot of general info about the API*
 
@@ -150,7 +150,7 @@ To test this:
 
 Otherwise, the following section should be added to your page:
 
-![servers-screenshot](/documenting-node-js-rest-api-using-swagger/servers-screenshot.png)
+![servers-screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/servers-screenshot.png)
 
 *A screenshot of the API servers*
 
@@ -178,7 +178,7 @@ To test this:
 
 Otherwise, this section should be added to your page:
 
-![tags_screenshot](/documenting-node-js-rest-api-using-swagger/tags-screenshot.png)
+![tags_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/tags-screenshot.png)
 
 *A screenshot of the API tags*
 
@@ -266,7 +266,7 @@ To test this:
 
 The following section should be added to the documentation page:
 
-![schemas_screenshot](/documenting-node-js-rest-api-using-swagger/schemas-screenshot.png)
+![schemas_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/schemas-screenshot.png)
 
 *A screenshot of the API components*
 
@@ -321,7 +321,7 @@ To test this:
 
 Otherwise, the following section should be added to the page:
 
-![get_todos_screenshot](/documenting-node-js-rest-api-using-swagger/get-todos-screenshot.png)
+![get_todos_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todos-screenshot.png)
 
 *A screenshot of getting todos route*
 
@@ -399,7 +399,7 @@ To test this:
 
 The following section should be added to the page:
 
-![get_todo_screenshot](/documenting-node-js-rest-api-using-swagger/get-todo-screenshot.png)
+![get_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/get-todo-screenshot.png)
 
 *A screenshot of getting a single todo route*
 
@@ -459,7 +459,7 @@ To test this:
 
 The following section should be added to your page:
 
-![create_todo_screenshot](/documenting-node-js-rest-api-using-swagger/create-todo-screenshot.png)
+![create_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/create-todo-screenshot.png)
 
 *A screenshot of creating todo route*
 
@@ -522,7 +522,7 @@ To test this:
 
 The following section should be added to your page:
 
-![update_todo_screenshot](/documenting-node-js-rest-api-using-swagger/update-todo-screenshot.png)
+![update_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/update-todo-screenshot.png)
 
 *A screenshot of updating todo route*
 
@@ -585,7 +585,7 @@ To test this:
 
 Otherwise, the following section should be added to your page:
 
-![delete_todo_screenshot](/documenting-node-js-rest-api-using-swagger/delete-todo-screenshot.png)
+![delete_todo_screenshot](/engineering-education/documenting-node-js-rest-api-using-swagger/delete-todo-screenshot.png)
 
 *A screenshot of deleting todo route*
 

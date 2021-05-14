@@ -33,11 +33,11 @@ Instead of wrapping the Modal Bottom Sheet with the `CoordinatorLayout` like the
 
 An excellent example of a Modal Bottom Sheet dialog is the Google Drive application.
 
-![Google Drive Modal Bottom Sheet](/bottom-sheet-dialogs-using-android-studio/google-drive-modal-bottom-sheet.png)
+![Google Drive Modal Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/google-drive-modal-bottom-sheet.png)
 
 Or this payment Bottom Sheet dialog example.
 
-![Payment Bottom Sheet Dialog](/bottom-sheet-dialogs-using-android-studio/payment-bottom-sheet-dialog.jpg).
+![Payment Bottom Sheet Dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/payment-bottom-sheet-dialog.jpg).
 
 Modal Bottom Sheets are an excellent alternative to inline menus and simple dialogs. They provide additional room for more content, iconography, and more screen actions.
 
@@ -48,7 +48,7 @@ A portion of the container is visible to provide users with more content. Unlike
 
 Here is an example of a Persistent Bottom Sheet dialog in a Google Maps application.
 
-![Google Maps Bottom Sheet](/bottom-sheet-dialogs-using-android-studio/google-map-bottom-sheet.png)
+![Google Maps Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/google-map-bottom-sheet.png)
 
 ### Implementation
 Create a new Android studio project. To implement a Bottom Sheet dialog, you need a material design library.
@@ -249,7 +249,7 @@ private void showBottomSheetDialog() {
 
 Run the app to test if the Bottom Sheet is working. Clicking the button should trigger the dialog to slide from the bottom to the top.
 
-![Modal Bottom Sheet](/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
+![Modal Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
 #### Set onClick Listener
 Each element in the dialog layout can be assigned an action. When an item is clicked, it will redirect the user as specified in the code.
@@ -314,7 +314,7 @@ bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 ```
 
 #### Testing the application
-![Modal Dialog](/bottom-sheet-dialogs-using-android-studio/modal-dialog.gif)
+![Modal Dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-dialog.gif)
 
 2. BottomSheetDialogFragment
 A fragment can be displayed as a Bottom Sheet dialog. Go ahead and create a new fragment, call it `BottomSheetFragment`. You can opt to start a new project.
@@ -367,7 +367,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
 
 When you run the application, it should show the dialog shown below.
 
-![Modal Bottom Sheet Fragment](/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
+![Modal Bottom Sheet Fragment](/engineering-education/bottom-sheet-dialogs-using-android-studio/modal-bottom-sheet-fragment.jpg)
 
 Check the code used to implement both Modal dialogs on [GitHub](https://github.com/kimkimani/ModalBottomSheet).
 
@@ -504,7 +504,7 @@ I have created a `bottom_sheet_dialog_layout.xml`file and included the following
 </LinearLayout>
 ```
 
-![Bottom Sheet](/bottom-sheet-dialogs-using-android-studio/bottom-sheet.jpg)
+![Bottom Sheet](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet.jpg)
 
 This is not a Bottom Sheet yet. It's just a regular layout. To transform the layout to a Bottom Sheet dialog, a few declarations should be added to the root layout. 
 
@@ -556,7 +556,7 @@ Here is the code to do that.
 
 ***Remember to include the Bottom Sheet we designed. Wrap it with `CoordinatorLayout`.***
 
-![Bottom Sheet Peek Height](/bottom-sheet-dialogs-using-android-studio/bottom-sheet-peek-height.jpg)
+![Bottom Sheet Peek Height](/engineering-education/bottom-sheet-dialogs-using-android-studio/bottom-sheet-peek-height.jpg)
 
 #### Expanding and collapsing the sheet dialog
 To control the sliding and collapsing of the dialog, we use states. The Bottom Sheet has several states which you need to understand. They include:
@@ -622,7 +622,7 @@ sheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback
 On the other side, the image will rotate to its original state when `STATE_COLLAPSED` is at `peekHeight`.
 
 #### Run the application
-![Persistent Dialog](/bottom-sheet-dialogs-using-android-studio/persistent-dialog.gif)
+![Persistent Dialog](/engineering-education/bottom-sheet-dialogs-using-android-studio/persistent-dialog.gif)
 
 Check the code used to implement the Persistent dialog on [GitHub](https://github.com/kimkimani/PersistentBottomSheetDialog).
 

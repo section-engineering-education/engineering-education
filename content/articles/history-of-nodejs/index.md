@@ -16,7 +16,7 @@ images:
 ---
 Today we are going to learn about a revolutionary technology that is being used to build great web applications:  ***Node.js***. You may have heard of it or worked with it; either way, join us as we further explore Node.js. We are going to talk about the history, some of the basics, and a few use case examples that use this revolutionary technology.
 <!--more-->
-![Nodejs image](/history-of-nodejs/nodejs-use-cases-cover-image.png)
+![Nodejs image](/engineering-education/history-of-nodejs/nodejs-use-cases-cover-image.png)
 [*Image Source: https://www.simform.com/nodejs-use-case/*](https://www.simform.com/nodejs-use-case/)
 
 ### What is Node.js?
@@ -155,7 +155,7 @@ A few examples of enterprise users of Node.js software include GoDaddy, Groupon,
 
 **Node.js use case Infographic**
 
-![Use cases image](/history-of-nodejs/nodejs-use-case-infographic.png)
+![Use cases image](/engineering-education/history-of-nodejs/nodejs-use-case-infographic.png)
 [*Image Source: https://www.simform.com/nodejs-use-case/*](https://www.simform.com/nodejs-use-case/)
 
 ### Additional Readings

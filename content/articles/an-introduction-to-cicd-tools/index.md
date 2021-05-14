@@ -45,7 +45,7 @@ The operations executed by developers with Continuous Delivery can vary. They ca
 
 The idea behind the integration of CI/CD in the software development process is that large organization with teams of thousands of developers making changes regularly, they can ensure that the software doesn’t break and changes are being synchronized seamlessly. Also ensuring effective communication between developers and operations.
 
-![ci/cd technique](/an-introduction-to-cicd-tools/technique.png)
+![ci/cd technique](/engineering-education/an-introduction-to-cicd-tools/technique.png)
 
 ### The importance of CI/CD
 - CI reduces the number of repeated processes across all project operations from the development to the deployment stage and receiving feedback on the software.
@@ -59,7 +59,7 @@ The idea behind the integration of CI/CD in the software development process is 
 This article will provide a structured approach to using Jenkins to automate the entire deployment process and use a docker container to deploy our code to the server. The whole development cycle will be based on the DevOps model with DevOps tools' help. 
 
 
-![Jenkins cycle view](/an-introduction-to-cicd-tools/jenkinspipe.png)
+![Jenkins cycle view](/engineering-education/an-introduction-to-cicd-tools/jenkinspipe.png)
 
 The following steps illustrate the generic approach of implementing Jenkins:
 This article assumes that you have a prior understanding of implementing CI/CD tools, thereby reinforcing that knowledge to provide a step-by-step approach to using one adequately.
@@ -77,7 +77,7 @@ The deployment process is activated once Jenkins has deployed the code. It is th
 ### Docker container 
 A docker container is essentially a set of virtual environments where we can create a server and deploy the objects to be examined. The use of Docker will enable the developer to run an entire cluster in a matter of seconds.
 
-![Docker cycle view](/an-introduction-to-cicd-tools/docker.png)
+![Docker cycle view](/engineering-education/an-introduction-to-cicd-tools/docker.png)
 
 With the Docker container setup, the next phase includes the unit testing on the staging server, then the same code is deployed to the production server once all tests are passed.
 

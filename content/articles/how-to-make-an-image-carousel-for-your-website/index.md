@@ -233,7 +233,7 @@ function SlideShow() {
 ### Testing
 One can test whether the code works by navigating to the folder where the project is stored and opening the HTML file using any browser. The code should work just fine. Check out a sample of an image carousel illustrated below from Usain Bolt's website.
 
-![demo](/how-to-make-an-image-carousel-for-your-website/example.gif)
+![demo](/engineering-education/how-to-make-an-image-carousel-for-your-website/example.gif)
  
 Access the tutorial's code on [Github](https://github.com/KanizoRGB/Imagecarousell-for-a-website/tree/main).
 

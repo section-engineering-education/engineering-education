@@ -31,7 +31,7 @@ This because it may result in a situation where a single malfunction or fault ca
 
 The figure below illustrates a single point of failure:
 
-![Single point of failure](/concepts-and-configuration-of-stp/Single-point-of-failure.jpg)
+![Single point of failure](/engineering-education/concepts-and-configuration-of-stp/Single-point-of-failure.jpg)
 
 [Image source](https://www.ictshore.com/free-ccna-course/hsrp-understanding/)
 
@@ -51,7 +51,7 @@ It's also worth remembering that the switch is designated as the spanning-tree p
 
 Another thing to bear in mind is that depending on the STP mode used, the network may have multiple root switches. Each VLAN has its STP case on and a root switch is automatically elected for each VLAN; [this mode is known as Per VLAN Spanning Tree Plus (PVST+)](https://www.ciscopress.com/articles/article.asp?p=1728837). Rapid PVST+ is used when RSTP is implemented.
 
-![STP ports](/concepts-and-configuration-of-stp/spanning-tree.jpg)
+![STP ports](/engineering-education/concepts-and-configuration-of-stp/spanning-tree.jpg)
 
 [Image source](https://imsucc.blogspot.com/2019/12/spanning-tree-protocol-example.html)
 
@@ -68,7 +68,7 @@ To avoid loops, all ports with the alternative or backup STP roles are blocked. 
 ### Spanning tree protocol interface states
 Each [activated port on a switch participates in STP](https://www.ciscopress.com/articles/article.aspx?p=1728837). And each of these ports must go through an interface state phase before being allowed to forward traffic. Figure 1 depicts the 802.1D interface states in order.
 
-![STP interface states](/concepts-and-configuration-of-stp/interface-states.jpg)
+![STP interface states](/engineering-education/concepts-and-configuration-of-stp/interface-states.jpg)
 
 [Image source](https://www.cisco.com/en/US/docs/switches/lan/catalyst3650/software/release/3se/consolidated_guide/configuration_guide/b_consolidated_3850_3se_cg_chapter_01001001.html)
 

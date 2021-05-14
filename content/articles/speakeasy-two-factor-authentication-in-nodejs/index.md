@@ -323,15 +323,15 @@ app.listen(PORT, () =>{
 ```
 
 The images below show the results for each request sent via Postman:
-![Register route](/speakeasy-two-factor-authentication-in-nodejs/register-route.png)
+![Register route](/engineering-education/speakeasy-two-factor-authentication-in-nodejs/register-route.png)
 
 *Route for registration*
 
-![Verify route](/speakeasy-two-factor-authentication-in-nodejs/verify-route.png)
+![Verify route](/engineering-education/speakeasy-two-factor-authentication-in-nodejs/verify-route.png)
 
 *Route for verification*
 
-![Validate route](/speakeasy-two-factor-authentication-in-nodejs/validate-route.png)
+![Validate route](/engineering-education/speakeasy-two-factor-authentication-in-nodejs/validate-route.png)
 
 *Route for validation*
 

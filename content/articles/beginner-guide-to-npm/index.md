@@ -146,7 +146,7 @@ Is this OK? (yes)
 
 A `package.json` file is automatically generated to save aspects of your project.
 
-![Package.json File](/beginner-guide-to-npm/package-json.png)
+![Package.json File](/engineering-education/beginner-guide-to-npm/package-json.png)
 
 
 Alternatively, add a `--yes` flag to `npm init` to generate the `package.json`file with the default NPM value.
@@ -201,7 +201,7 @@ found 0 vulnerabilities
 
 This command will install lodash to the `node_module` folder. At first, our project didn’t have a `node_module` folder. The folder will be created once you install the first package.
 
-![Node_module Folder](/beginner-guide-to-npm/node-module.png)
+![Node_module Folder](/engineering-education/beginner-guide-to-npm/node-module.png)
 
 Try another package:
 
@@ -388,7 +388,7 @@ npm install uglify-js mocha jshint --global ## installing multiple packages glob
 
 These packages are installed to `\Users\kim\.node_modules_global` path and not saved in our project dependencies.
 
-![Node_modules_global Path](/beginner-guide-to-npm/globals-path.png)
+![Node_modules_global Path](/engineering-education/beginner-guide-to-npm/globals-path.png)
 
 Let's list the packages installed globally.
 
@@ -444,7 +444,7 @@ NPM will always try to avoid the installation of a deprecated version. NPM will 
 ### Package-lock.json
 Earlier on, we saw a `package-lock.json` file created in our project.
 
-![Package-lock.json File](/beginner-guide-to-npm/packag-lock-json.png)
+![Package-lock.json File](/engineering-education/beginner-guide-to-npm/packag-lock-json.png)
 
 This file ensures that all packages version remain uniform across computers where the project is cloned. It saves information about the dependencies and package versions you use in your project.
 

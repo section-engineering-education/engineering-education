@@ -30,7 +30,7 @@ This dataset is among the first you'll encounter when introduced to Convolutiona
 
 Nowadays, it is also commonly used as the default dataset of choice in Tensorflow when introducing the concepts of Generative Adversarial Networks, as shown in this [post](https://www.tensorflow.org/tutorials/generative/dcgan). 
 
-![The MNIST Dataset](/popular-machine-learning-datasets/mnist-dataset.PNG)<br>
+![The MNIST Dataset](/engineering-education/popular-machine-learning-datasets/mnist-dataset.PNG)<br>
 
 *[Image Source: Wikipedia](https://en.wikipedia.org/wiki/MNIST_database)*
 
@@ -42,7 +42,7 @@ The exciting thing about this dataset compared to the MNIST dataset is that it c
 
 This dataset is used to solve image classification tasks similiar to the MNIST dataset.
 
-![The Fashion-MNIST Dataset](/popular-machine-learning-datasets/mnist-dataset.PNG)<br>
+![The Fashion-MNIST Dataset](/engineering-education/popular-machine-learning-datasets/mnist-dataset.PNG)<br>
 
 *[Image Source: GitHub](https://github.com/zalandoresearch/fashion-mnist)*
 
@@ -52,7 +52,7 @@ The CIFAR-10 Dataset contains 60,000 images across ten different classes. The im
 
 CIFAR-10 is very useful, particularly when you want to try different models on a much more complex dataset than the MNIST dataset but still want to perform the task relatively quickly.
 
-![The CIFAR-10 Dataset](/popular-machine-learning-datasets/cifar-10-dataset.PNG)<br>
+![The CIFAR-10 Dataset](/engineering-education/popular-machine-learning-datasets/cifar-10-dataset.PNG)<br>
 
 *[Image Source: Alex Krizhevsky](https://www.cs.toronto.edu/~kriz/cifar.html)*
 
@@ -92,7 +92,7 @@ We can classify tweets as being either positive, negative, or neutral. The class
 
 This dataset is popular in the Natural Language Processing realm. 
 
-![Sentiment140](/popular-machine-learning-datasets/sentiment140.PNG)<br>
+![Sentiment140](/engineering-education/popular-machine-learning-datasets/sentiment140.PNG)<br>
 
 *[Image Source: Sentiment140](http://www.sentiment140.com/)*
 

@@ -91,42 +91,42 @@ Head to Agora and create an account. You can reach the signup page from [here](h
 
 Fill in the details and create an account or you can signup with Google, GitHub, or Cocos. Once you've signed up, you'll see the dashboard.
 
-![Agora Dashboard](/agora-express-token-server/agora_dashboard.png)
+![Agora Dashboard](/engineering-education/agora-express-token-server/agora_dashboard.png)
 
 Click on New Project.
 
 You'll see this form. Fill out the Project Name and set the Authentication Mechanism to Secure Mode.
 
-![Agora New Project Form](/agora-express-token-server/agora_new_project.png)
+![Agora New Project Form](/engineering-education/agora-express-token-server/agora_new_project.png)
 
 Once you hit on submit, it'll create a new project and you should see it on the Project Management Console.
 
 Now, click on the closed eye icon near the app ID to reveal it and copy that app ID. We'll need this ID to generate the authentication tokens.
 
-![Agora Project Management Console App ID](/agora-express-token-server/project_management_console_app_id.png)
+![Agora Project Management Console App ID](/engineering-education/agora-express-token-server/project_management_console_app_id.png)
 
 Now, click on the Edit action.
 
-![Agora Project Management Console Edit Button](/agora-express-token-server/project_management_console_edit.png)
+![Agora Project Management Console Edit Button](/engineering-education/agora-express-token-server/project_management_console_edit.png)
 
 This will take you to the Edit Project screen. Here, you can copy the primary certificate that is required to generate the tokens.
 
-![Primary Certificate](/agora-express-token-server/primary_certificate.png)
+![Primary Certificate](/engineering-education/agora-express-token-server/primary_certificate.png)
 
 > The app ID and the app certificates must be kept secret. If the primary certificate gets compromised, you can enable a secondary app certificate and replace the current certificate with the secondary certificate. Later, you can delete the compromised app certificate. Make sure you update the token server with the new app certificate.
 
 If you've set the Authentication Mode to Testing while creating the project, the primary certificate will be disabled. You can enable the primary certificate by clicking on Enable.
 
-![Disabled Primary Certificate](/agora-express-token-server/disabled_primary_certificate.png)
+![Disabled Primary Certificate](/engineering-education/agora-express-token-server/disabled_primary_certificate.png)
 
 ### Generating a temporary token
 For testing purposes, you can generate a temporary token from the project management console. Click on the temporary token button next to the app ID in the project management console.
 
-![Agora Project Management Console Temp Token](/agora-express-token-server/project_management_console_temp_token.png)
+![Agora Project Management Console Temp Token](/engineering-education/agora-express-token-server/project_management_console_temp_token.png)
 
 This will take you to generate a temporary token form. You need to fill in the channel name and then click on the Generate Temp token button. You'll get a temporary token that you can use in your app for testing.
 
-![Agora Project Management Console Temp Token](/agora-express-token-server/temp_token_form.png)
+![Agora Project Management Console Temp Token](/engineering-education/agora-express-token-server/temp_token_form.png)
 
 ### Setting up the server
 > You'll need Node.js to set up an Express server. You can download Node.js from [here](https://nodejs.org/en/).
@@ -293,7 +293,7 @@ Body of the request:
 
 Request & Response:
 
-![RTC Token Request and Response](/agora-express-token-server/rtc_postman.png)
+![RTC Token Request and Response](/engineering-education/agora-express-token-server/rtc_postman.png)
 
 > If you are using User Accounts instead of integer UIDs, you can use the `buildTokenWithAccount` function instead of the `buildTokenWithUid`.
 > In `buildTokenWithAccount`, you will pass the user account instead of the UID. Everything else remains the same. You can learn more about user accounts [here](https://docs.agora.io/en/All/faq/string).
@@ -391,7 +391,7 @@ Body of the request:
 
 Request & Response:
 
-![RTM Token Request and Response](/agora-express-token-server/rtm_postman.png)
+![RTM Token Request and Response](/engineering-education/agora-express-token-server/rtm_postman.png)
 
 ### Let's Recap
 1. We learned about authentication mechanisms in Agora.

@@ -59,11 +59,11 @@ To start with, our activity class must extend `ComponentActivity` as from versio
 
 I have created a custom theme called `EatsTheme` that overrides some Material theme properties to give the application it's own special theme.
 
-![component](/declarative-vs-imperative-ui-android/component.png)
+![component](/engineering-education/declarative-vs-imperative-ui-android/component.png)
 
 We then create a composable called `Screen` that will hold all other composables for this screen.
 
-![composable](/declarative-vs-imperative-ui-android/composable.png)
+![composable](/engineering-education/declarative-vs-imperative-ui-android/composable.png)
 
 1. **Composable:** this annotation denotes that the function is used to create a UI element, i.e, a composable.
 
@@ -79,11 +79,11 @@ We then create a composable called `Screen` that will hold all other composables
 
 With that small code snippet, the resulting UI is shown below:
 
-![layout](/declarative-vs-imperative-ui-android/layout.jpg)
+![layout](/engineering-education/declarative-vs-imperative-ui-android/layout.jpg)
 
 A more complex UI is like the one below. You can find the code on [GitHub](https://github.com/LinusMuema/compose/tree/section)
 
-![complex](/declarative-vs-imperative-ui-android/complex.jpg)
+![complex](/engineering-education/declarative-vs-imperative-ui-android/complex.jpg)
 
 ### Conclusion
 That is the difference between the old imperative programming and declarative UI. You should now get deeper into learning how to use the declarative format as it is more flexible and easier to use.

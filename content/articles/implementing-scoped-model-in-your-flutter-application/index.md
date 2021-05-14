@@ -46,7 +46,7 @@ Open `Android Studio` click file, then create a `new Flutter project.` Ensure th
 
 You have to be patient since this stage takes time.
 
-![Creating new project](/implementing-scoped-model-in-your-flutter-application/creating-project.png)
+![Creating new project](/engineering-education/implementing-scoped-model-in-your-flutter-application/creating-project.png)
 
 ### Installing the required library
 You must install the required library for you to access the scoped\_model's functionalities. Open the `pubspec.yaml` file, go to the dependencies section, and paste `scoped\_model : ^1.1.0`. Ensure that the statement aligns vertically with the term `flutter.` Ignoring this detail will result in errors during compilation.
@@ -66,7 +66,7 @@ dependencies:
 ### Creating the UI
 In this stage, we will use different widgets to create the user interface. Our final design should be similar to the image below.
 
-![App design](/implementing-scoped-model-in-your-flutter-application/ui.jpg)
+![App design](/engineering-education/implementing-scoped-model-in-your-flutter-application/ui.jpg)
 
 ### Modify 'main.dart' file
 Go to the `lib` folder and open the `main.dart` file. You will notice that there is pre-generated code in the file. We won't be needing some of this code, you can, therefore, delete the `MyHomePage` class since we will create a new one.

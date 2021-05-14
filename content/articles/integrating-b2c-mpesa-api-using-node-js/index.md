@@ -134,7 +134,7 @@ npm run dev
 - Click the `Execute` button.
 - In case of an error, revisit the steps. Otherwise your server response should resemble the following:
 
-![access_token_response_screenshot](/integrating-b2c-mpesa-api-using-node-js/access-token-response-screenshot.png)
+![access_token_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/access-token-response-screenshot.png)
 
 *A screenshot of getting access token server response.*
 
@@ -251,13 +251,13 @@ async cb(req,res,next){
 - Click the `Execute` button.
 - In case of any error, revisit the steps above. Otherwise the following output should resemble your server response.
 
-![b2c_server_response_screenshot](/integrating-b2c-mpesa-api-using-node-js/b2c-server-response-screenshot.png)
+![b2c_server_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-server-response-screenshot.png)
 
 *A screenshot of b2c server response.*
 
 The information logged on your console should mimic the following:
 
-![b2c_console_response_screenshot](/integrating-b2c-mpesa-api-using-node-js/b2c-console-response-screenshot.png)
+![b2c_console_response_screenshot](/engineering-education/integrating-b2c-mpesa-api-using-node-js/b2c-console-response-screenshot.png)
 
 *A screenshot of b2c console response*
 

@@ -159,7 +159,7 @@ head(marketing) # Displays the first 6 observations
 
 The output is:
 
-![head-output](/linear-regression-r/head_output.png)
+![head-output](/engineering-education/linear-regression-r/head_output.png)
 
 We can also use the summary() function to look at the basic statistics of our dataset, as shown below.
 
@@ -169,7 +169,7 @@ summary(marketing)
 
 The output is:
 
-![summary-output](/linear-regression-r/summary-output.png)
+![summary-output](/engineering-education/linear-regression-r/summary-output.png)
  
 Since we are interested in building a linear regression that shows how sales vary with an advertising budget, we need to have a look at the trend of all three advertising media. 
 
@@ -178,7 +178,7 @@ This is as shown below.
 plot(marketing, col="green", main="Plotting Pairs against Each Other")
 ```
 
-![Plot image](/linear-regression-r/plot.png)
+![Plot image](/engineering-education/linear-regression-r/plot.png)
 
 The last row of our plots shows a linear relationship between sales and advertising channels (YouTube and Facebook). This means the Youtube and Facebook advertisement budgets have a positive linear impact on sales. However, the newspaper in the third plot shows no particular trend with sales.
 
@@ -194,7 +194,7 @@ To achieve this we run the code below.
  
 #### Output
 
-![boxplot](/linear-regression-r/plot-one.png)
+![boxplot](/engineering-education/linear-regression-r/plot-one.png)
 
 As we can see, newspaper is the only advertising media that reports presence of outliers (values that are far away from the majority of data distribution). We need to remember (as we saw in step 2), the linearity assumption does not hold between newspaper and sales. 
 
@@ -224,7 +224,7 @@ TrainSize=dim(train)
 TestSize=dim(test)
 ```
 
-![test-train_Size](/linear-regression-r/image-one.png)
+![test-train_Size](/engineering-education/linear-regression-r/image-one.png)
 
 Training data = 150 rows x 4 column.
 
@@ -246,7 +246,7 @@ summary(Model)
 
 The output will be:
 
-![summary](/linear-regression-r/summary.png)
+![summary](/engineering-education/linear-regression-r/summary.png)
 
 ### Understanding the model output
 
@@ -288,7 +288,7 @@ Predplot
 
 Running the code above, we get the graph below.
 
-![prediction plot](/linear-regression-r/prediction-plot.png)
+![prediction plot](/engineering-education/linear-regression-r/prediction-plot.png)
 
 The black points in the graph above are the plots of the actual sales of our test set, while the red ones are predicted sales of the same dataset predicted using our model. 
 

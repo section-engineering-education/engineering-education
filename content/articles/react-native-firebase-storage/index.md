@@ -46,7 +46,7 @@ You can follow [this documentation](https://reactnative.dev/docs/environment-set
 
 Make sure you're following the React Native CLI Quickstart, not the Expo CLI Quickstart.
 
-![Env Setup](/react-native-firebase-storage/env_setup.png)
+![Env Setup](/engineering-education/react-native-firebase-storage/env_setup.png)
 
 ### Installing dependencies
 You can install these in advance or while going through the article.
@@ -85,25 +85,25 @@ Head to the [Firebase console](console.firebase.google.com/u/0/) and sign in to 
 
 Create a new project.
 
-![Create New Project](/react-native-firebase-storage/firebase_new.png)
+![Create New Project](/engineering-education/react-native-firebase-storage/firebase_new.png)
 
 Once you create a new project, you'll see the dashboard.
 
-![New Dashboard](/react-native-firebase-storage/new_dashboard.png)
+![New Dashboard](/engineering-education/react-native-firebase-storage/new_dashboard.png)
 
 Now, click on the Android icon to add an Android app to the Firebase project.
 
-![register_app](/react-native-firebase-storage/register_app.png)
+![register_app](/engineering-education/react-native-firebase-storage/register_app.png)
 
 You will need the package name of the application to register the application. You can find the package name in the `AndroidManifest.xml` that is located in `android/app/src/main/`.
 
-![Package Name](/react-native-firebase-storage/package_name.png)
+![Package Name](/engineering-education/react-native-firebase-storage/package_name.png)
 
 Once you enter the package name and proceed to the next step, you can download the `google-services.json` file. You should place this file in the `android/app` directory.
 
 This file contains configurations that'll enable your application to access firebase services.
 
-![Download Google Services JSON](/react-native-firebase-storage/download_services.json.png)
+![Download Google Services JSON](/engineering-education/react-native-firebase-storage/download_services.json.png)
 
 After adding the file, proceed to the next step. It will ask you to add some configurations to the `build.gradle` files.
 
@@ -137,25 +137,25 @@ npm install @react-native-firebase/app
 ### Setting up Firebase storage
 Head over to the Storage section in the dashboard and click on the `Get Started` button.
 
-![Get Started Storage](/react-native-firebase-storage/enable_storage.png)
+![Get Started Storage](/engineering-education/react-native-firebase-storage/enable_storage.png)
 
 A modal will pop up with information about the storage rules. By default, only authenticated users can read and write from the cloud storage. Since we are not going to cover authentication in this tutorial, we will change the rules and set the cloud storage to open.
 
 > Do not set your cloud storage as open in a production application. This will allow anyone to read and write to your cloud storage, compromising all the data in your cloud storage.
 
-![Default Rules](/react-native-firebase-storage/default_rules.png)
+![Default Rules](/engineering-education/react-native-firebase-storage/default_rules.png)
 
 On the next step, it will ask you for the storage bucket location.
 
-![Bucket Location](/react-native-firebase-storage/bucket_location.png)
+![Bucket Location](/engineering-education/react-native-firebase-storage/bucket_location.png)
 
 Once this is done, you'll see this screen. You can upload files and delete files manually from this screen.
 
-![Storage Setup Done](/react-native-firebase-storage/storage_setup_done.png)
+![Storage Setup Done](/engineering-education/react-native-firebase-storage/storage_setup_done.png)
 
 Now, let's edit the cloud storage rules and set the cloud storage bucket as `open`. Switch to the `Rules` tab.
 
-![Storage Rules Tab](/react-native-firebase-storage/storage_default_rules.png)
+![Storage Rules Tab](/engineering-education/react-native-firebase-storage/storage_default_rules.png)
 
 Now, replace the existing rules with this.
 
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-![App UI](/react-native-firebase-storage/app_ui.jpg)
+![App UI](/engineering-education/react-native-firebase-storage/app_ui.jpg)
 
 ### Adding media picker
 Now, the first 2 buttons should open the camera to take a photo and record a video respectively, and the next 2 buttons should open the gallery to pick an image and video respectively.
@@ -342,7 +342,7 @@ const onMediaSelect = async (media) => {
 
 Once the media has been uploaded, you can take a look at it in the Firebase console.
 
-![uploaded media](/react-native-firebase-storage/uploaded_media.png)
+![uploaded media](/engineering-education/react-native-firebase-storage/uploaded_media.png)
 
 We don't have any visual feedback while the media is uploading. Let's add that in the next step.
 
@@ -422,7 +422,7 @@ statusText: {
 },
 ```
 
-![Upload Progress](/react-native-firebase-storage/upload_progress.gif)
+![Upload Progress](/engineering-education/react-native-firebase-storage/upload_progress.gif)
 
 ### Adding pause/resume upload
 Let's add a state to maintain whether the upload is paused or not. This will be a boolean state.
@@ -448,7 +448,7 @@ Let's add a button to Pause/Resume the upload when a file is being uploaded.
 )}
 ```
 
-![Pause](/react-native-firebase-storage/pause.gif)
+![Pause](/engineering-education/react-native-firebase-storage/pause.gif)
 
 To pause/resume the upload, we need to use the `Task` object. It has 2 methods: `pause` and `resume`. Since the task object is inside the `onMediaSelect` function, let's set up a state outside and assign the `Task` object to that state when it's created.
 
@@ -490,7 +490,7 @@ Let's update the status text to *paused* and hide the activity indicator if the 
 </Text>
 ```
 
-![Resume](/react-native-firebase-storage/resume.jpg)
+![Resume](/engineering-education/react-native-firebase-storage/resume.jpg)
 
 ### Get the download URL
 The `putFile` method returns a [Task](https://rnfirebase.io/reference/storage/task) object.
@@ -572,7 +572,7 @@ To open the link, we should use the `openURL` method in the `Linking` module.
 
 Now, the button should open the media that we uploaded on the phone's browser.
 
-![View Media](/react-native-firebase-storage/view_media.jpg)
+![View Media](/engineering-education/react-native-firebase-storage/view_media.jpg)
 
 ### Let's Recap
 

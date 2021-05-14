@@ -28,13 +28,13 @@ Google announced an [in-app review API](https://developer.android.com/guide/play
 
 This encourages users to give feedback on your application.
 
-![image](/google-play-in-app-reviews/in-app-review-flow.jpg)
+![image](/engineering-education/google-play-in-app-reviews/in-app-review-flow.jpg)
 
 ***[Image source](https://developer.android.com/guide/playcore/in-app-review)***
 
 This is how the in-app review API looks compared to the old fallback dialog.
 
-![image](/google-play-in-app-reviews/in-app-dialog-and-fallback-dialog.png)
+![image](/engineering-education/google-play-in-app-reviews/in-app-dialog-and-fallback-dialog.png)
 
 Typically, this API concept is a better way of asking users for a review than the fallback rate dialog.
 
@@ -281,7 +281,7 @@ mButton.setOnClickListener(new View.OnClickListener() {
 
 5. Launch the application and click `SHOW IN APP REVIEW DIALOG` to start the review flow, as shown in the image below.
 
-![image](/google-play-in-app-reviews/in-app-reviews.png)
+![image](/engineering-education/google-play-in-app-reviews/in-app-reviews.png)
 
 **Note:**
 - Since we a carrying out a test, the submit button will be inactive.

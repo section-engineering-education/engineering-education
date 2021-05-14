@@ -46,7 +46,7 @@ Launch Android Studio and create a new project, as shown below. Make sure that y
 
 If you don't have Android Studio, you can install it from [here](https://developer.android.com/studio?gclid=Cj0KCQiA7qP9BRCLARIsABDaZzieBJWjBnokDdH6b0gQchoqudRXNohAGp_noSqALLuSlYuwA6EB5T4aAntwEALw_wcB&gclsrc=aw.ds).
 
-![getting started](/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
+![getting started](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/getting-started.png)
 
 ### Step 2 – Creating the model
 Create the app model. Also referred to as the data class. To avoid confusion, create a package named model inside the java folder. Then, create a data class named Blog in the model package, as shown below.
@@ -311,7 +311,7 @@ class MainActivity : AppCompatActivity() {
 ### Step 9 – Results
 If there were no errors in your code, it should compile and show the UI in the image below. Whatever you type in the `EditText` field should display in the `recyclerview` once you click the submit button.
 
-![results](/implementing-mvvm-architecture-in-android-using-kotlin/result.png)
+![results](/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/result.png)
 
 ### Conclusion
 MVVM architecture has made it easier to build complex applications. As shown, it's easier to identify bugs due to the separation of business logic from the UI code. The architecture also prevents data loss during configuration changes. Ensure that all dependencies are present before using MVVM. This measure helps prevent runtime errors.

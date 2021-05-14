@@ -71,7 +71,7 @@ In the first step, we're going to create a console application. Open code blocks
 
 On the next page, give the project a title. In this case, we are going to name it after our class `person` example. Keep the default settings. 
 
-![Console app](/getting-started-with-classes-and-objects-in-c++/console.png)
+![Console app](/engineering-education/getting-started-with-classes-and-objects-in-c++/console.png)
 
 Click `Finish` to create the project.
 

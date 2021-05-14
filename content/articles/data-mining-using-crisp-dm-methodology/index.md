@@ -38,7 +38,7 @@ With the increase in the projects' complexity, it is recommended to follow a sta
 
 CRISP-DM is one of the most preferred techniques used to build data mining projects. A significant increase in the usage of this methodology can be seen after conducting a poll in 2007 and 2014, as shown in the below image:
 
-![Statistics](/data-mining-using-crisp-dm-methodology/statistics.PNG)
+![Statistics](/engineering-education/data-mining-using-crisp-dm-methodology/statistics.PNG)
 
 [Image source](https://www.kdnuggets.com/2014/10/crisp-dm-top-methodology-analytics-data-mining-data-science-projects.html)
 
@@ -52,7 +52,7 @@ CRISP-DM is a 6 step process:
 5. Validating the data.
 6. Presenting/Visualizing the data.
 
-![The Problem Solving Framework](/data-mining-using-crisp-dm-methodology/crisp-dm-framework.png)
+![The Problem Solving Framework](/engineering-education/data-mining-using-crisp-dm-methodology/crisp-dm-framework.png)
 
 [Image source](https://www.udacity.com/course/problem-solving-with-advanced-analytics--ud976)
 
@@ -176,7 +176,7 @@ In conclusion, we have learned various CRISP-DM methodology steps and understood
 
 Happy Coding!
 
-![Summary](/data-mining-using-crisp-dm-methodology/summary.PNG)
+![Summary](/engineering-education/data-mining-using-crisp-dm-methodology/summary.PNG)
 
 [Image source](https://paginas.fe.up.pt/~ec/files_0405/slides/02%20CRISP.pdf)
 

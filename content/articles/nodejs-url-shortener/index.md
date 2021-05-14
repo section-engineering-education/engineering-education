@@ -313,7 +313,7 @@ The first middleware allows our application to parse incoming request data forma
 In our POST route, the base URL is `/api/url` and the middleware as `app.use('/api/url', require('./routes/url'))`. Next, we need to test the application in Postman.
 
 ### A working demo in Postman
-![Demo GIF](/nodejs-url-shortener/postman.gif)
+![Demo GIF](/engineering-education/nodejs-url-shortener/postman.gif)
 
 Kindly check the source code in my GitHub repository [here](https://github.com/marienjus/Node-URL-Shortener-Service).
 

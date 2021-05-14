@@ -43,19 +43,19 @@ The Jupyter notebook, by default, comes installed with the [Python kernel](https
 jupyter notebook
 ```
 
-![running jupyter](/introduction-to-jupyter-notebooks/running-jupyter.png)
+![running jupyter](/engineering-education/introduction-to-jupyter-notebooks/running-jupyter.png)
 
 Open your browser and go to **localhost:8888**. It will redirect you to the dashboard:
 
-![blank notebook](/introduction-to-jupyter-notebooks/blank-notebook.png)
+![blank notebook](/engineering-education/introduction-to-jupyter-notebooks/blank-notebook.png)
 
 The dashboard displays the contents of the **current directory**(the directory in which you ran the notebook). In the above image, I ran the notebook inside an empty folder called example, and therefore, there are no files displayed. To create a notebook, click on the new button at the top right corner and select Python 3 in the dropdown.
 
-![new notebook](/introduction-to-jupyter-notebooks/new-notebook.png)
+![new notebook](/engineering-education/introduction-to-jupyter-notebooks/new-notebook.png)
 
 This will redirect you to another page where you can write and execute code in the notebook.
 
-![hello world](/introduction-to-jupyter-notebooks/hello-world.png)
+![hello world](/engineering-education/introduction-to-jupyter-notebooks/hello-world.png)
 
 Navigate to the textbox and type your code. To run the snippet of code in a particular cell, press **shift + enter**.
 
@@ -70,25 +70,25 @@ Python notebooks get the [.ipynb](https://fileinfo.com/extension/ipynb) extensio
 #### Cells
 *A [cell](https://www.tutorialspoint.com/jupyter/jupyter_notebook_types_of_cells.htm) is a textbox that allows us to edit and write code, with syntax highlighting, similar to that of a code editor or IDE*. The kernel associated with the notebook takes care of executing the code written in the cell. Once the kernel finishes computing the results, they are retrieved and displayed in the notebook(below the cell that was executed) as the cell's output. The notebook itself consists of **multiple cells** where the user can write and execute code.
 
-![hello world](/introduction-to-jupyter-notebooks/code-selector.png)
+![hello world](/engineering-education/introduction-to-jupyter-notebooks/code-selector.png)
 
 Click on the dropdown shown above to select the type of cell you want to execute. There are three types of cells:
 
 1. **Code**: *These cells allow users to write, edit, and execute code(Python code by default)*
 
-![even numbers](/introduction-to-jupyter-notebooks/even-numbers.png)
+![even numbers](/engineering-education/introduction-to-jupyter-notebooks/even-numbers.png)
 
 A program to print all the even numbers from 1 to 20 is shown above.
 
 2. **Markdown**: *These cells allow users to write and execute markdown. The output is displayed below the cell in a neatly formatted markdown*.
 
-![markdown](/introduction-to-jupyter-notebooks/markdown.png)
+![markdown](/engineering-education/introduction-to-jupyter-notebooks/markdown.png)
 
 When you write and run the markdown cell, Jupyter displays the output, as shown above.
 
 3. **Raw**: *Raw cells allow users to write output directly and are not evaluated by the notebook*.
 
-![markdown](/introduction-to-jupyter-notebooks/raw-cell.png)
+![markdown](/engineering-education/introduction-to-jupyter-notebooks/raw-cell.png)
 
 #### Useful commands and tips
 Jupyter has some useful commands that allow us to customize and configure our notebooks.
@@ -120,7 +120,7 @@ jupyter notebook --help
 #### Exporting the notebook
 The notebook is available as a ".ipynb" file by default. But, if you want to share the notebook in a different format such as HTML, Markdown, PDF, etc., Jupyter allows us to do that.
 
-![download](/introduction-to-jupyter-notebooks/download.png)
+![download](/engineering-education/introduction-to-jupyter-notebooks/download.png)
 
 Click on file situated at the top left corner of the notebook and go to the **"Download as"** option in the dropdown. A list of options should appear, as shown in the above figure. Select the extension you want to download it as, and Jupyter will export the notebook in that format.
 

@@ -80,7 +80,7 @@ from sklearn import preprocessing
 
 A data point x is standardized as follows:
 
-![Standardization](/introduction-to-scikit-learn-in-python/standardization-formula.png)
+![Standardization](/engineering-education/introduction-to-scikit-learn-in-python/standardization-formula.png)
 
 Where µ is the mean of the distribution and σ is the standard deviation of the distribution. Standardization is centering around zero and scaling the data point such that the mean is 0, and the standard deviation is 1. 
 
@@ -129,7 +129,7 @@ Normalization is important because it does not provide a window for the model to
 
 A data point x is normalized as follows:
 
-![Normalization](/introduction-to-scikit-learn-in-python/normalization-formula.png)
+![Normalization](/engineering-education/introduction-to-scikit-learn-in-python/normalization-formula.png)
 
 *Source: [Miro Medium](https://miro.medium.com/max/506/1*ii46F2WDo9mvFvdxzUvGbQ.png)*
 

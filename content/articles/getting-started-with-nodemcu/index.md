@@ -40,7 +40,7 @@ For example, microcontrollers are used as embedded devices in appliances like AC
 ### NodeMCU
 In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU stands for Node MicroController Unit. The below image shows a NodeMCU microcontroller board.
 
-![NodeMCU ESP2866](/getting-started-with-nodemcu/nodemcu.png)
+![NodeMCU ESP2866](/engineering-education/getting-started-with-nodemcu/nodemcu.png)
 
 [Image Source](https://cityos-air.readme.io/docs/esp8266-nodemcu)
 
@@ -63,7 +63,7 @@ In this article, we will be focusing on the NodeMCU microcontroller. NodeMCU sta
 
 All the above components with several additional features can be seen in this pin diagram.
 
-![ESP2866 Pin Diagram](/getting-started-with-nodemcu/pin-diagram.png)
+![ESP2866 Pin Diagram](/engineering-education/getting-started-with-nodemcu/pin-diagram.png)
 
 [Image source](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 
@@ -131,11 +131,11 @@ void loop() {
 
 Finally, our code is ready for compilation and upload. To compile your code, press `Ctrl + R`. After compilation, the compiled binary codes are uploaded to the NodeMCU hardware by pressing `Ctrl + U`. You will see the screen as shown below:
 
-![ESP2866 Code Uploading](/getting-started-with-nodemcu/uploading.png)
+![ESP2866 Code Uploading](/engineering-education/getting-started-with-nodemcu/uploading.png)
 
 On following the above-mentioned steps correctly, you can see both the LEDs blinking alternatively with a delay of 1 second each.
 
-![Result](/getting-started-with-nodemcu/result.gif)
+![Result](/engineering-education/getting-started-with-nodemcu/result.gif)
 
 [Image Source](https://steemit.com/arduino/@makerhacks/blinking-leds-with-python-how-to-code-in-micro-python-on-the-esp8266-nodemcu)
 

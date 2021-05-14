@@ -33,7 +33,7 @@ Before we get started with the implementation, let's understand the flow of paym
 3. Stripe API stores the card details securely and sends a token to the web application.
 4. The token is a point of reference to identify the card. Note that once the card details have been sent to Stripe and stored securely, they are never shared with anyone and only the token is used from that point on for security reasons.
 5. The backend application makes a request to the API with the token in place. The token contains information about the total price to be charged, which is calculated in the frontend part of the application. When we add products to the cart, the price is calculated in the browser, and the API call is made. Any computation on the browser is insecure as developers can easily access the price computed and change its value to 0, before the API call is made. Therefore, it's a good practice to recalculate the price at the backend. With the help of cart items present, we should access the prices of items from databases and recalculate the price and make the API call from the backend.   
-![Payment Flow](/stripe-integration-react/paymentflow.jpg)
+![Payment Flow](/engineering-education/stripe-integration-react/paymentflow.jpg)
 [*Image Source*](https://stripe.com/docs/payments/accept-a-payment#web)
 
 With this information in mind, we can understand the important role Stripe plays. Payment gateways such as Stripe and PayPal garner the trust of millions of users by providing seamlessly integrated solutions.
@@ -46,7 +46,7 @@ If already registered, log in to your dashboard with your credentials.
 #### Switching to Test Mode on Stripe
 This step is important to ensure we are in testing mode. This enables us to test aspects of payments such as receiving payments, sending payments, or approving refunds. On the bottom left of your dashboard, you should find the **Viewing test data** button. Enable that by toggling the button provided. The dashboard is shown for your reference.
 
-![Dashboard View](/stripe-integration-react/dashboard.jpg)
+![Dashboard View](/engineering-education/stripe-integration-react/dashboard.jpg)
 *Dashboard View*
 
 #### Obtain a Stripe Access Token
@@ -57,7 +57,7 @@ The cloud services and APIs provide keys for accessing their services. But menti
 We will look at an example that demonstrates the use of .env file below.
 
 
-![API Test Keys](/stripe-integration-react/api_test_keys.jpg)
+![API Test Keys](/engineering-education/stripe-integration-react/api_test_keys.jpg)
 *API Keys on Dashboard*
 
 ### Stripe Integration using react-stripe-checkout
@@ -119,12 +119,12 @@ Call the component `CheckoutWithStripe` from the payment page. The `${data.name}
 You should see a button which says `Pay With Card`.
 
 An example is given below:
-![Paywithcard stripe](/stripe-integration-react/paywithcard.jpg)
+![Paywithcard stripe](/engineering-education/stripe-integration-react/paywithcard.jpg)
 *Intermediate Output*
 
 Finally, a dialog box should appear to enter card details:
 
-![Final Output](/stripe-integration-react/final_output.jpg)
+![Final Output](/engineering-education/stripe-integration-react/final_output.jpg)
 *Final Output*
 
 The error says that the API key is invalid.

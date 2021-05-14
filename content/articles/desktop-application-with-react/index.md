@@ -162,7 +162,7 @@ By the end of this section, you will make a weather application using react. To 
 
 Navigate to `api-keys` tab and enter the name of an API key in the input provided. I named mine `react demo` and click the `generate` button to create a new api-key for our application. We are doing this to get weather data from the API and feed it into our app.
 
-![dashboard](/desktop-application-with-react/dashboard.png)
+![dashboard](/engineering-education/desktop-application-with-react/dashboard.png)
 
 Npm has a handy package for building out weather components for react applications, its called [react-open-weather](https://www.npmjs.com/package/react-open-weather). It will generate the user interface we want. To install it, in the terminal, type:
 
@@ -255,7 +255,7 @@ You can now launch your application as a desktop application by running `npm run
 
 It will look like this:
 
-![electron-demo-result](/desktop-application-with-react/electron-demo-result.png)
+![electron-demo-result](/engineering-education/desktop-application-with-react/electron-demo-result.png)
 
 ### Conclusion
 In this article, we covered how to setup a simple desktop application using `Create-React-App` and Electron. We also created a simple weather application to demonstrate how everything works together.

@@ -96,7 +96,7 @@ $ python manage.py runserver
 ```
 
 After running the command above you will see something like this in your browser.
-![form page](/ajax-request-in-django-using-axios/form_page.png)
+![form page](/engineering-education/ajax-request-in-django-using-axios/form_page.png)
 
 Let’s go into `templates/home.html`. We will add **Axios** library to our project by adding the CDN script tag below `</div>` closing tag.
 

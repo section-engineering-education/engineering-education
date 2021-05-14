@@ -307,7 +307,7 @@ This is shown here:
 ### Configure the .env file
 Open the ".env" file. In it, let's set up our cloudinary name, API key, and API secret. These are all found in the Cloudinary dashboard as shown below:
 
-![Cloudinary-dashboard image](/how-to-upload-images-to-cloudinary-using-node.js/cloudinary-dashboard.png)
+![Cloudinary-dashboard image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/cloudinary-dashboard.png)
 
 > **Note:** Remember that these are important credentials that allow one to easily access your Cloudinary account. Make sure that they are not exposed anywhere. Don't save them in an online repository by any means. I would rather recommend that you add a `.gitignore` file and include the `.env` file there. Always enable [GitGuardian](https://www.gitguardian.com/) to check for any exposed keys in your project.
 
@@ -333,13 +333,13 @@ Open a web browser and in the URL, access the webpage through `localhost:5000`.
 
 It will look like this:
 
-![Main Webpage image](/how-to-upload-images-to-cloudinary-using-node.js/uploader-landing-page.png)
+![Main Webpage image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/uploader-landing-page.png)
 
 Select the image by pressing the "Choose File" button then upload it by clicking on the "Upload" button.
 
 If successful, it shall display as shown below. *The metadata will change depending on the file uploaded.*
 
-![Feedback Webpage image](/how-to-upload-images-to-cloudinary-using-node.js/recieved-file-cloudinary-Node.js.png)
+![Feedback Webpage image](/engineering-education/how-to-upload-images-to-cloudinary-using-node.js/recieved-file-cloudinary-Node.js.png)
 
 Open your cloudinary site and sign in. Under the dashboard, view the uploaded image. You can manipulate it as you please using the onboard AI.
 

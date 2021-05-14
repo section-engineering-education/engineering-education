@@ -65,7 +65,7 @@ They realized that some countries, including Bangkok, Tokyo, Hong Kong, Singapor
 
 Besides, BlueDot's software made predictions on countries at higher risks of the spread between February and April based on IATA's passengers' travel data from cities in China from 2019.
 
-![Volume of travelers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
+![Volume of travelers to international destinations from cities in China that received over 100 000 passengers between February through April, from Wuhan, China](/engineering-education/how-ai-predicted-the-coronavirus-outbreak/international-passengers-from-china.PNG)
 
 *[Image Source: Journal of Travel Medicine](https://academic.oup.com/jtm/article/27/2/taaa011/5716260)*
 

@@ -151,15 +151,15 @@ The screenshots below shows the codes output, when different keys are pressed:
 
 - Control key (`Ctrl`) released output
 
-![JavaScript keyboard events output 2](/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
+![JavaScript keyboard events output 2](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-2.png)
 
 - Key "r" (`R`) pressed output
 
-![JavaScript keyboard events output 1](/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
+![JavaScript keyboard events output 1](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-1.png)
 
 - Combination of the control key and key "d" (`Ctrl` + `D`) output
 
-![JavaScript keyboard events output 3](/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
+![JavaScript keyboard events output 3](/engineering-education/keyboard-events-in-javascript/javascript-keyboard-event-3.png)
 
 ### Use of keyboard events in gaming demo
 Keyboard events are used in gaming, whereby a player can control game objects using some predefined keys. We will create a game demo where a player controls a game object using the arrow keys.
@@ -278,7 +278,7 @@ The complete source code for the above demo is available on [Github](https://git
 
 **Output**
 
-![JavaScript keyboard events animation](/keyboard-events-in-javascript/js-keyboard-events-animation.gif)
+![JavaScript keyboard events animation](/engineering-education/keyboard-events-in-javascript/js-keyboard-events-animation.gif)
 
 ### Conclusion
 JavaScript keyboard events are used in several ways. This article has demonstrated how we can use JavaScript keyboard events in gaming.

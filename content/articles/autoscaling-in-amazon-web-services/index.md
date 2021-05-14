@@ -21,7 +21,7 @@ SaaS is a service model where a software is licensed out (usually) on a subscrip
 
 Some of the tools offered by AWS include content delivery, database storage, and computing power. Other services provided include data management, hybrid cloud, networking, artificial intelligence, development tools, analytics, security, and mobile development.
 
-![Amazon Web Services](/autoscaling-in-amazon-web-services/amazon-web-services.png)
+![Amazon Web Services](/engineering-education/autoscaling-in-amazon-web-services/amazon-web-services.png)
 
 [Image Source: Quora](https://qph.fs.quoracdn.net/main-qimg-ae46c65ca4d8e7d0b61acbe429e0b04a)
 
@@ -50,7 +50,7 @@ An autoscaling group performs the following tasks:
 - It scales EC2 instances up or down, which helps in managing the availability of applications.
 - It runs the required number of instances. For example, if the required number of instances is 5, then it will run 5 EC2 instances.
 
-![Autoscaling Group](/autoscaling-in-amazon-web-services/autoscaling-group.png)
+![Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/autoscaling-group.png)
 
 [Image Source: Tudip](https://tudip.com/wp-content/uploads/2018/12/autoscaling-group.png)
 
@@ -89,7 +89,7 @@ AWS uses the aforementioned components to complete the process of autoscaling. F
 
 After an AMI has been created, the configuration should be launched. At the launch configuration, the right type of instance should be chosen based on the need. An AWS autoscaling group should be created after a configuration has been launched. This group will be used in the launching of new instances.
 
-![AWS Autoscaling](/autoscaling-in-amazon-web-services/aws-autoscaling.png)
+![AWS Autoscaling](/engineering-education/autoscaling-in-amazon-web-services/aws-autoscaling.png)
 
 [Image Source: Jayendra](https://jayendrapatil.com/wp-content/uploads/2016/03/AWS-Auto-Scaling-Configurations.png)
 
@@ -109,7 +109,7 @@ To perform launch configurations, go to the right hand side of the dashboard and
 
 The following diagram shows the six main steps taken in creating a launch configuration (at the top).
 
-![Launch Configuration](/autoscaling-in-amazon-web-services/launch-configuration.png)
+![Launch Configuration](/engineering-education/autoscaling-in-amazon-web-services/launch-configuration.png)
 
 [Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure2_LaunchConfiguration.png)
 
@@ -144,7 +144,7 @@ To create an autoscaling group, go to the right hand side of the dashboard and c
 
 The following diagram shows the five main steps taken in creating an autoscaling group.
 
-![Creating Autoscaling Group](/autoscaling-in-amazon-web-services/creating-autoscaling-group.png)
+![Creating Autoscaling Group](/engineering-education/autoscaling-in-amazon-web-services/creating-autoscaling-group.png)
 
 [Image Source: WhizLabs](https://www.whizlabs.com/wp-content/uploads/2017/04/Figure3_AutoScalingGroup.png)
 

@@ -43,13 +43,13 @@ To start with, you must have:
 - [References](#references)
 
 ### What is Blockchain?
-![Bitcoin Image](/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
+![Bitcoin Image](/engineering-education/building-a-simple-cryptocurrency-blockchain/bitcoin.jpg)
 
 *Bitcoin image*
 
 Bitcoin and Ethereum are digital cryptocurrencies powered and adopted with a powerful technology called **the blockchain**. It uses cryptography to securely connect and maintain a list of records growing continuously known as **blocks**.
 
-![ethereum](/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
+![ethereum](/engineering-education/building-a-simple-cryptocurrency-blockchain/ethereum.jpg)
 
 *Ethereum image*
 
@@ -196,7 +196,7 @@ console.log(JSON.stringify(thecoin, null, 4));
 ### Running our blockchain
 Typing this command in our terminal `node thecoin.js` will result in:
 
-![output](/building-a-simple-cryptocurrency-blockchain/output.jpg)
+![output](/engineering-education/building-a-simple-cryptocurrency-blockchain/output.jpg)
 
 > **NOTE:** Before running the command, make sure to navigate to the right path on your terminal.
 

@@ -43,13 +43,13 @@ The various objects found on the road need to be classified according to their c
 
 1. K-Nearest Neighbors(KNN): KNN is an algorithm that works on creating a decision boundary based on distance metrics. Distance metrics define and parameterize distance. There are various distance metrics such as Euclidean distance, Manhattan distance, etc.
 
-![distance metrics](/supervised-learning-algorithms/distance.jpg)
+![distance metrics](/engineering-education/supervised-learning-algorithms/distance.jpg)
 
 *[Image Source](https://www.ieee.ma/uaesb/pdf/distances-in-classification.pdf)*
 
 All machine learning algorithms have hyperparameters to deal with. In K-NN, the parameter is `k`. It is initialized to an integer depending on the number of classes in the dataset known before fitting. `k` signifies the number of nearest points the algorithm considers while creating decision boundaries.  
 
-![knnexample](/supervised-learning-algorithms/knnexample.jpg)
+![knnexample](/engineering-education/supervised-learning-algorithms/knnexample.jpg)
 
 *[Image Source](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2018/07/11/sagemaker-knn-1.gif)*
 
@@ -90,7 +90,7 @@ The accuracy of the classifier is 98.33%. This is tested on the test dataset. 98
 
 The reasoning behind SVM is to find the hyperplane with the maximum distance from the support vectors. The hyperplane may be a linear decision boundary or a non-linear decision boundary. When dealing with non-linear planes, the dataset is projected into higher dimensions to create linear boundaries. For example, consider the following image.
 
-![nonlinearmapping](/supervised-learning-algorithms/svm.jpg)
+![nonlinearmapping](/engineering-education/supervised-learning-algorithms/svm.jpg)
 
 *[Image Source](https://www.researchgate.net/profile/PK_Varshney/publication/228712327/figure/fig3/AS:667775798353922@1536221565025/Mapping-nonlinear-data-to-a-higher-dimensional-feature-space-where-a-linear-separating.ppm)*
 

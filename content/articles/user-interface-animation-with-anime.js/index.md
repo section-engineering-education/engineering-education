@@ -115,7 +115,7 @@ The animation parameters used in the example above are `direction` and `loop`. T
 
 **Output:**
 
-![Triangle animated with Anime.js gif](/user-interface-animation-with-animejs/shape-animation.gif)
+![Triangle animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/shape-animation.gif)
 
 ```html
 <!DOCTYPE html>
@@ -184,7 +184,7 @@ In the example above, we were able to animate a pendulum using a few lines of An
 
 **Output**
 
-![Pendulum animated with Anime.js gif](/user-interface-animation-with-animejs/pendulum-animation.gif)
+![Pendulum animated with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/pendulum-animation.gif)
 
 **Complete Source Code**
 
@@ -261,7 +261,7 @@ anime({
 
 **Output**
 
-![SVG Animation with Anime.js gif](/user-interface-animation-with-animejs/svg-path-animation.gif)
+![SVG Animation with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/svg-path-animation.gif)
 
 **Explanation**
 In the example above, the target is a ball emoji. It follows a predefined SVG path to create an animation.
@@ -338,7 +338,7 @@ In the first example, we moved an object from point A to Point B. We will use ke
 
 **Output**
 
-![Key frames animations with Anime.js gif](/user-interface-animation-with-animejs/keyframes-animation.gif)
+![Key frames animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/keyframes-animation.gif)
 
 **Complete Source Code**
 
@@ -407,7 +407,7 @@ anime({
 
 **Output**
 
-![Text path animations with Anime.js gif](/user-interface-animation-with-animejs/text-path-animation.gif)
+![Text path animations with Anime.js gif](/engineering-education/user-interface-animation-with-animejs/text-path-animation.gif)
 
 **Full source code**
 ```html

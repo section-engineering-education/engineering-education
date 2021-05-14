@@ -72,13 +72,13 @@ Let’s test to see if we have made our `manifest.json` correctly.
 
 Navigate to `chrome://extensions`
 
-![chrome://extensions toolbar](/how-to-build-chrome-extension/chrome-extension-developer-mode-off.png)<br>
+![chrome://extensions toolbar](/engineering-education/how-to-build-chrome-extension/chrome-extension-developer-mode-off.png)<br>
 Tick the developer mode switch and your toolbar will look like this:
 
-![chrome:// developer mode](/how-to-build-chrome-extension/chrome-extension-developer-mode-on.png)<br>
+![chrome:// developer mode](/engineering-education/how-to-build-chrome-extension/chrome-extension-developer-mode-on.png)<br>
 Hit the **Load unpacked** button and select the folder that we have been working in. If all goes well, it will load and appear in the chrome extensions toolbar on the upper right portion of your screen.
 
-![The foot is our extension!](/how-to-build-chrome-extension/chrome-extension-toolbar.png)<br>
+![The foot is our extension!](/engineering-education/how-to-build-chrome-extension/chrome-extension-toolbar.png)<br>
 Yay! We did it! Very cool. Now to actually add some functionality into this pretty little button.
 
 ### Starting to Code (popups!)
@@ -149,10 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 We use `addEventListener` to make sure the popup is loaded and the button is clicked, before we execute any of our code. Follow the steps to load up your extension again, hit update and click on your icon!
 
-![Should look like this!](/how-to-build-chrome-extension/popup.png)<br>
+![Should look like this!](/engineering-education/how-to-build-chrome-extension/popup.png)<br>
 Hit the **Change Text** button and if you did everything correctly, an alert should congratulate you on your screen.
 
-![Congratulations!](/how-to-build-chrome-extension/working-popup.png)
+![Congratulations!](/engineering-education/how-to-build-chrome-extension/working-popup.png)
 
 ### Grabbing Text off the Webpage
 Next we are going to grab all the text off the webpage in every html tag.This is actually really simple code that took me forever to find. You can test it out for yourself on this site by right clicking on your screen, hitting inspect and finding the console, then type:

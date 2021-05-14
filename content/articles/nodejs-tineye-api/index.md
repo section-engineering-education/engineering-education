@@ -43,7 +43,7 @@ npm install tineye-api
 ### Testing in SandBox
 TinEye gives two keys that enables us to test in the sandbox. In the sandbox, we will only search for the image below because it's the only one allowed to be used for testing.
 
-![meloncat](/nodejs-tineye-api/meloncat.jpg)
+![meloncat](/engineering-education/nodejs-tineye-api/meloncat.jpg)
 
 > You can search for other images once you go live.
 
@@ -117,7 +117,7 @@ Finally, we feed the URL and the options for the search to the API then log the 
 
 Upon running the code, we get the output shown in the screenshot below:
 
-![Screenshot 1](/nodejs-tineye-api/screen1.png)
+![Screenshot 1](/engineering-education/nodejs-tineye-api/screen1.png)
 
 A JSON response is returned containing an object `stats` which shows the statistics of the search like the time and query time. 
 
@@ -135,7 +135,7 @@ console.log(response.results);
 
 We get the following output:
 
-![Screenshot 2](/nodejs-tineye-api/screen2.png)
+![Screenshot 2](/engineering-education/nodejs-tineye-api/screen2.png)
 
 It shows the objects in the `matches` array in detail e.g the domain found backlinks, overlay, etc. You can use this information to display the images to the end-user.
 

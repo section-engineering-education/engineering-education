@@ -64,7 +64,7 @@ We now know how wireless network works, let's focus our attention to different t
 
 ***1.Fig 1.0 WLAN***
 
-![Wireless-network-LAN](/introduction-to-wireless-networking/wireless-network.jpg)
+![Wireless-network-LAN](/engineering-education/introduction-to-wireless-networking/wireless-network.jpg)
 
 ### 1. Wireless Local Area Networks (WLAN)
 

@@ -112,7 +112,7 @@ For our case, we will keep things simple and use a single Eureka server. Because
 
 When you run the discovery server and go to its URL in your browser, you should see something like this:
 
-![discovery server](/introduction-to-microservices-with-spring-and-eureka/eureka-server.png)
+![discovery server](/engineering-education/introduction-to-microservices-with-spring-and-eureka/eureka-server.png)
 
 Notice under `Instances currently registered with Eureka` it says *no instances available.* 
 
@@ -154,7 +154,7 @@ public class HelloController {
 
 Now run both the Eureka client and the Eureka server. You will notice that our Eureka client automatically registers to our Eureka server:
 
-![discovery server](/introduction-to-microservices-with-spring-and-eureka/eureka-server-registered.png)
+![discovery server](/engineering-education/introduction-to-microservices-with-spring-and-eureka/eureka-server-registered.png)
 
 To save time, I will skip over creating our `world-service`. You should have a good idea of how it would work. To create our `world-service` we would follow the exact same steps. 
 

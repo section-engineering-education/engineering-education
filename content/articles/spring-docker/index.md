@@ -141,11 +141,11 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED       ST
 
 1. Visit `localhost` on port 8080 to confirm if the `spring-boot-crud` application is running in the container.
    
-![Docker Hub image](/spring-docker/docker_get.png)
+![Docker Hub image](/engineering-education/spring-docker/docker_get.png)
 
 ### Pushing the Docker image to Docker Hub
 
-![Docker Hub image](/spring-docker/docker_create.png)
+![Docker Hub image](/engineering-education/spring-docker/docker_create.png)
 
 Docker Hub is an online repository of Docker container images. Docker hub stores Docker containers and also makes it easier to share Docker images with other developers.
 

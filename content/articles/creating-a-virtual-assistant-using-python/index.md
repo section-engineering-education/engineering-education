@@ -36,7 +36,7 @@ To use the Python speech recognition library, click this [link](https://pypi.org
 
 Copy the text circled in red.
 
-![Speech Recognition library download page](/creating-a-virtual-assistant-using-python/python-speech.png)
+![Speech Recognition library download page](/engineering-education/creating-a-virtual-assistant-using-python/python-speech.png)
 
 Paste what you copied in the terminal and click enter. The package will be installed. Once this first package is installed, we need the second package, which is:
 
@@ -44,13 +44,13 @@ Paste what you copied in the terminal and click enter. The package will be insta
 
 This package can be downloaded [here](https://pypi.org/project/pyttsx3/). Copy the command found on the website and paste it in the terminal just as you did with the first library.
 
-![Python text to speech library download page](/creating-a-virtual-assistant-using-python/pyttsx3.png)
+![Python text to speech library download page](/engineering-education/creating-a-virtual-assistant-using-python/pyttsx3.png)
 
 Once you have successfully installed the second package, we will continue to install the third package.
 
 3. Python Audio (PyAudio): PyAudio allows you to quickly play and record audio on a number of devices using Python. Download the package [here](https://pypi.org/project/PyAudio/). Install the package using the steps used in 1 above.
 
-![Python Audio library download page](/creating-a-virtual-assistant-using-python/pyaudio.png)
+![Python Audio library download page](/engineering-education/creating-a-virtual-assistant-using-python/pyaudio.png)
 
 ### Note
 For Linux users, you might encounter an error when installing Pyaudio. 

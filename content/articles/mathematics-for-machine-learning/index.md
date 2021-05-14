@@ -24,7 +24,7 @@ Machine learning is all mathematics. ML is built on mathematical prerequisites. 
 
 The chart below shows the importance of each mathematical concept needed to master ML.
 
-![The chart shows the importance of each mathematical concept](/mathematics-for-machine-learning/math-topics.png)<br>
+![The chart shows the importance of each mathematical concept](/engineering-education/mathematics-for-machine-learning/math-topics.png)<br>
 
 It can be summarized below as:
 - Linear Algebra (35.0%)

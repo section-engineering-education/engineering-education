@@ -44,7 +44,7 @@ The algorithm stores the currently known shortest path from each node to the sou
 *Example*
 The algorithm will generate the shortest path from node 0 to all other nodes 1,2,3,4,5,6 in the graph, assuming the graph's weights represent distances between the nodes.
 
-![Graph1](/network-routing-final/routing1.png)
+![Graph1](/engineering-education/network-routing-final/routing1.png)
 
 [Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-76.png)
 
@@ -66,7 +66,7 @@ We got zero as the first distance because it is the distance from the source nod
 
 **{0}**
 
-![Graph2](/network-routing-final/routing3.png)
+![Graph2](/engineering-education/network-routing-final/routing3.png)
 
 [Image source](https://www.freecodecamp.org/news/content/images/2020/06/image-83.png)
 
@@ -74,7 +74,7 @@ We start checking the distance of adjacent nodes to 0 (nodes 1 & 2). We only add
 
 *(We will mark added nodes by adding an asterisk beside them)*
 
-![Graph3](/network-routing-final/routing4.png)
+![Graph3](/engineering-education/network-routing-final/routing4.png)
 
 [Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-94.png)
 
@@ -100,7 +100,7 @@ The distance between 0-2 is 6.</br>
 
 We will choose a node with the shortest distance from node 0, which is node 2.</br>
 
-![Graph4](/network-routing-final/routing6.png)
+![Graph4](/engineering-education/network-routing-final/routing6.png)
 
 [Image Source](https://www.freecodecamp.org/news/content/images/2020/06/image-96.png)
 
@@ -120,7 +120,7 @@ This will continue till all the nodes are marked as visited and added.
 
 The final result will be this:
 
-![Graph5](/network-routing-final/routing8.png)
+![Graph5](/engineering-education/network-routing-final/routing8.png)
 
 
 |NODE|DISTANCE|
@@ -140,13 +140,13 @@ As the name suggests, *it floods each router in a network with all other neighbo
 
 For example, take a LAN with 5 routers A, B, C, D, E.
 
-![LAN-1](/network-routing-final/LAN-1.png)
+![LAN-1](/engineering-education/network-routing-final/LAN-1.png)
 
 Each router has its state info, that it passes to its neighbors. A will send to B. B to C & D and so on until all of them have all the states. They can then independently apply Dijkstra's algorithm to forward packets. 
 
 That said, this is not always the case with interconnected routers as shown below where the process of passing the link state packets goes on and on without stopping hence creating a condition called **looping**. For example, A will pass its packet to B, B then forwards it to C and C passes it again to A.
 
-![LAN-2](/network-routing-final/LAN-2.png)
+![LAN-2](/engineering-education/network-routing-final/LAN-2.png)
 
 A **unique ID** is given to each link-state packets so that this problem is solved. When C and B receives the packet with the unique ID from A, it (A) does not send it again to B, and B does not send it to C.
 
@@ -160,7 +160,7 @@ A **gateway** is a networking hardware that *connects two networks by acting as 
 A router running the OSPF protocol contains a **Link State Database(LSDB)** which lists all nodes and their link states.
 This protocol subdivides the wide networks into areas (**OSPF areas**) forming a **backbone** area that shares at least one router from the bordering areas as shown in the image below:
 
-![ospf-areas](/network-routing-final/ospf-areas.png)
+![ospf-areas](/engineering-education/network-routing-final/ospf-areas.png)
 
 [Image Source](https://packetpushers.net/wp-content/uploads/2020/01/8-1.png)
 

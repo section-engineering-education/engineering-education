@@ -24,7 +24,7 @@ You might be wondering, what type of data is being passed? For example, when you
 ### HTTP Model
 To gain a better understanding, let's look at the various components associated with HTTP.
 
-![Http model](/http-requests-nodejs/httpmodel.jpg)<br>
+![Http model](/engineering-education/http-requests-nodejs/httpmodel.jpg)<br>
 *Image source: http://wiki.hashphp.org/HttpPrimer*
 
 The client initiates the connection through a GET request. The server responds with a status code. In this case, it is 200, which means the server is ready for a connection. This is called the HTTP Response.
@@ -45,7 +45,7 @@ Earlier we looked at how HTTP Requests work in the overall picture of the Intern
 
 
 #### HTTP Request Message
-![source: https://slideplayer.com/slide/13130365/](/http-requests-nodejs/request_message.jpg)<br>
+![source: https://slideplayer.com/slide/13130365/](/engineering-education/http-requests-nodejs/request_message.jpg)<br>
 *Image source: https://slideplayer.com/slide/13130365/*
 
 Various parameters define the request message. For example, we have the request method, which indicates the type of action to be performed against the resource. The URL indicates the destination's address. HTTP version implies the level of security and features available. The header lines carry information about access-control, type of connection, details about the sender, etc. This is necessary to establish a secure and efficient connection.

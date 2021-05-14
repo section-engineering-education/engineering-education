@@ -48,7 +48,7 @@ Grid search refers to a technique used to identify the optimal hyperparameters f
 
 Grid search is thus considered a very traditional hyperparameter optimization method since we are basically “brute-forcing” all possible combinations. The models are then evaluated through cross-validation. The model boasting the best accuracy is naturally considered to be the best.
 
-![grid](/grid-search/grid.png)
+![grid](/engineering-education/grid-search/grid.png)
 
 *Grid layout.*
 
@@ -65,7 +65,7 @@ The excluded fold is used to then test the model. This process is repeated until
 
 In a technique known as the k-fold cross-validation, a user specifies the number of folds, represented by $k$. This means that when $k=5$, there are 5 folds.
 
-![crossvalidation](/grid-search/crossvalidation.png)
+![crossvalidation](/engineering-education/grid-search/crossvalidation.png)
 
 *K-fold cross-validation with K as 5.*
 

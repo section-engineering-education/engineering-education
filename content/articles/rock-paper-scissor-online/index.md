@@ -51,7 +51,7 @@ There are two important files to focus on. One is  `app.js` that handles server-
 
 ### Game flow
 
-![image](/rock-paper-scissor-online/rps.png)
+![image](/engineering-education/rock-paper-scissor-online/rps.png)
 
 This is a sequence diagram that shows the timeline of events. It's important to understand the flow before we start coding so make sure you understand the diagram completely.
 

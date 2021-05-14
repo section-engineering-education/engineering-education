@@ -26,7 +26,7 @@ Browser caching is a process that involves the temporary storage of resources in
 ### How browser caching works
 The following image shows an overview of how browser caching works. 
 
-![How Browser Caching Works](/understanding-browser-caching/how-browser-caching-works.png)
+![How Browser Caching Works](/engineering-education/understanding-browser-caching/how-browser-caching-works.png)
 
 [Image Source: Pressidium](https://cdn.pressidium.com/wp-content/uploads/2017/05/Pressidium_blogpost_04_05_2017-05.png)
 
@@ -35,7 +35,7 @@ The web server collects information from the website and passes it to the web br
 #### Case 1: A first-time user
 The following image summarizes a situation where a user visits a website for the first time. 
 
-![First Time User](/understanding-browser-caching/first-time-user.png)
+![First Time User](/engineering-education/understanding-browser-caching/first-time-user.png)
 
 [Image Source: Square Space](https://images.squarespace-cdn.com/content/v1/54dd763ce4b01f6b05bab7db/1500929956175-BSHCBXNKVLOYA7SQALND/ke17ZwdGBToddI8pDm48kOlFUBfJxpXVGWigDn9WvsVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyYnEE_v2jAnY7dzuv3yZ4jMuw6HAWdrXinR21iqkdZSawaMjy-dbGOo66KiVJ5ZCo/image-asset.png?format=750w)
 
@@ -46,7 +46,7 @@ If a user visits a website for the second time using the same computer device, t
 
 The following image summarizes this case scenario. 
 
-![Second Time User](/understanding-browser-caching/second-time-user.png)
+![Second Time User](/engineering-education/understanding-browser-caching/second-time-user.png)
 
 [Image Source: Square Space](https://images.squarespace-cdn.com/content/v1/54dd763ce4b01f6b05bab7db/1500994738580-9SU7J5VBB90VPZ7U37R8/ke17ZwdGBToddI8pDm48kII892lw0xls72lO21Q9XbVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwHTuzmK1oUKM3h2UCt2VwL5QT4uAsMd3RAMkIY_uS5-OcwnZ4GtDYemfJYE0HTnhA/image-asset.png?format=750w)
 
