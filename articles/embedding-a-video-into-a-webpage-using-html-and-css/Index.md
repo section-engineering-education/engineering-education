@@ -30,7 +30,7 @@ Both HTML and CSS work hand in hand when creating a web page. One does not need 
 ### Why use HTML and why not HTML5?
 HTML is an older version of HTML5. It can support almost all the browsers and it is easier to embed a YouTube by using the iframe tag.
 
-HTML5 uses ``` <video>```  tag and it does not support all the browers that can cause a lot of hassle in adding multiple sources to support different formats. 
+HTML5 uses ``` <video>```  tag and it does not support all the browsers and this can cause a lot of hassle in adding multiple sources to support different formats. 
 
 Iframe is an inline frame and permits items to be embedded in one webpage into another webpage and in this case, it is a YouTube page. By using iframe, you do not have to worry about the file format compatibility issues.
 
@@ -47,7 +47,7 @@ You will need the following prerequisites to embed a video:
 - Computer
 - Internet
 - Google account (To access YouTube)
-- Install a Notebook that supports HTML (The one used here is called SUBLIME TEXT) 
+- Install a Notebook that supports HTML (The one used here is called Sublime Text) 
 - Coding skills (Basic knowledge about HTML and CSS)
 - Browser 
 
@@ -104,7 +104,7 @@ background-text: white;}
 **Step 6:** Open your HTML page.
 Locate your HTML page, where you want to paste the iframe tag. 
 
-**Step 7:** Type or paste the iframe tag into your HTML page that you copied from YouTube. Below is a sample of a simple HTML page used for demonstration. 
+**Step 7:** Type or paste the iframe tag you copied from YouTube into your HTML page.
 
 ![step 7](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-7.jpg)
 
