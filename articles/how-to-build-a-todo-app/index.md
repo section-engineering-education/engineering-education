@@ -16,14 +16,14 @@
 
 ### Introduction
 Over the years software developers have used frameworks to build apps for android, IOS, Desktop, and web, flutter is one of those frameworks.
-Flutter is a technology developed by Google to enable developers build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
-In this article will use flutter to build a **To-do list** app. 
+Flutter is a technology developed by Google to enable developers to build apps for all platforms with a single code base. This technology is changing the Software development industry by making application development faster and cheaper.
+This article will use flutter to build a **To-do list** app. 
 
 ### Prerequisites
-To better understand this article, the reader is expected to have a foundational knowlegde of object-oriented programing languages such as Java, C++, etc. 
+To better understand this article, the reader is expected to have a foundational knowledge of object-oriented programing languages such as Java, C++, etc. 
 
 ### Goals
-At the end of this this article, the reader is expected to be familiar with: 
+At the end of this article, the reader is expected to be familiar with: 
 - Creating a basic flutter application.
 - Flutter and dart Packages.
 - Flutter widgets,
@@ -36,7 +36,7 @@ The **TODO List** app will look like the screenshot below.
 **To-do list app built using flutter**
 
 ### Requirements
-In this tutorial we will be using the flutter SDK which can be downloaded at [documentation for installation](https://flutter.dev/docs/get-started/install) and VS Code text editor [download VS code](https://code.visualstudio.com/download).
+In this tutorial, we will be using the flutter SDK which can be downloaded at [documentation for installation](https://flutter.dev/docs/get-started/install) and VS Code text editor [download VS code](https://code.visualstudio.com/download).
 On your terminal, navigate to the directory you want your app to be and run the command below to create your project.
 
 ```
@@ -51,7 +51,7 @@ We will be using a smartphone to run the app, follow this link to learn how to r
 ![Flutter default app](/engineering-education/how-to-build-a-todo-app/default.jpg)
 
 
-**Flutter default after runing any app for the first time**
+**Flutter default after running any app for the first time**
 
 Go to the main.dart file which is in the lib directory. Change the default code to the snippet shown in the below picture.
 
@@ -79,7 +79,7 @@ A stateless widget is a widget whose state cannot be changed once it’s built. 
 A to-do app will always have to-do items added and remove, to achieve this we will need to implement a stateful widget.
 
 ### Statful Widget
-This type of widget is dynamic. This means it can change its appearance when it recieves data or change apearance in response to events triggered.
+This type of widget is dynamic. This means it can change its appearance when it receives data or change appearance in response to events triggered.
 
  Edit your code to match the one in the picture below.
 
@@ -112,7 +112,7 @@ To run the code we would have to update the build widget code to the one below.
 
 ![Build Image](/engineering-education/how-to-build-a-todo-app/build.jpg)
 
-Your complete code should look the one below...
+Your complete code should look like the one below...
 
 ```dart
 
@@ -205,7 +205,7 @@ class _TodoListState extends State<TodoList> {
 
 ### Conclusion
 
-Now we have a simple To-do app that enable us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. 
+Now we have a simple To-do app that enables us to add to-do items. To modify the app you can check out this link (https://bezkoder.com/dart-list/) to learn how to edit and remove your added items. 
 
 To sumarize the reader learned;
 - How to create a flutter app
