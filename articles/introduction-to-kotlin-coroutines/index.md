@@ -7,7 +7,7 @@ title: Introduction to Kotlin Coroutines
 description: This article shows you some of the basics of writing asynchronous code using coroutines. Coroutines help us consecutively write asynchronous code while not using callbacks.
 author: peter-kayere
 date: 2021-01-25T00:00:00-12:00
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
