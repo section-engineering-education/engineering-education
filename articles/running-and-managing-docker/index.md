@@ -38,7 +38,7 @@ A Docker image is made up of a series of layers(File System Layers) in which eac
 
 Here, we have three containers: F, G, and H. G and H are created from F and share container F's files.
 
-You can also inherit from any inner layer. For example, if we inherit from container B by adding other versions of dependencies, we get such a diagram:
+You can also inherit from any inner layer. For example, if we inherit from container G by adding other versions of dependencies, we get such a diagram:
 
 ```
 . (continuing from above)
