@@ -151,31 +151,25 @@ With basic knowledge in `setImmediate()`, let's look at a slightly advanced exam
 In `timer.js` script file, add the following: 
 
 ```js
+setImmediate(function functionA() {
+    setImmediate(function functionB() {
+        console.log(10);
 
-setImmediate(function functionA()
-    { 
-        setImmediate(function functionB()
-    { 
-        console.log(10); 
-    
-        setImmediate(function functionD()
-    { 
-        console.log(20);
+        setImmediate(function functionD() {
+            console.log(20);
         });
-    }); 
-        setImmediate(function functionC()
-    
-    { 
-        console.log(30); 
-    
-        setImmediate(function functionE() 
-    { 
-        console.log(40);
     });
-    
-  });
-});
+    setImmediate(function functionC()
 
+        {
+            console.log(30);
+
+            setImmediate(function functionE() {
+                console.log(40);
+            });
+
+        });
+});
 
 console.log('You have started set immediate:...');
 ```
