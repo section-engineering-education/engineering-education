@@ -1,5 +1,5 @@
 ### Prerequisites
-Before learning this tutorial as a learner you need to have learned java. Know some basic java concepts and know how to compile and run java programs. HTML basics are also needed before learning this tutorial.
+Before learning this tutorial you need to have learned java. Know some basic java concepts and know how to compile and run java programs. HTML basics are also needed before learning this tutorial.
 ### Applet definition
 
 Applet are small java program that are primarily used in internet programming. To run an applet program, you require an applet viewer or a web browser that supports java.
@@ -12,10 +12,13 @@ To display a java applet program in a web page it needs to be linked to a HTML p
 
 Applets are categorized based on how they embed into a web page i.e. Local and Remote applets
 
-Local applets-is a locally developed and stored applet. A local applet does not need to use an internet connection to be located simply because the directory is in the local system.
+    Local applets-is a locally developed and stored applet. A local applet does not need to use an internet connection to be located simply because the directory is in the local system.
 
-Remote applet-is an applet stored in a remote computer that is connected to the internet. We downloaded it from the internet into our system and run it.
+    Remote applet-is an applet stored in a remote computer that is connected to the internet. We downloaded it from the internet into our system and run it.
 
+The URL address specified in the applet’s HTML document as the CODEBASE is used to locate and load a remote applet
+
+        CODEBASE= http://www.netserve.com/applets
 
 ### Preparing to write an applet
 
@@ -146,7 +149,8 @@ Below is how you invoke “My institution” applet .
 
     </html>
 ```
-
+### Conclusion
+Through applet programming we can be able to modify our website and make it more fun and attractive. I hope this article be of great help in your coding life.
 
 
 
