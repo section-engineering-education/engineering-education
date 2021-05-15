@@ -1,13 +1,9 @@
 
-# Concept of First Hop Redundancy Protocol 
-
-![Hero Image](/engineering-education/concept-of-first-hop-redundancy-protocol/hero.jpeg)
-[source](https://unsplash.com/photos/7wBFsHWQDlk)
+Organizations use various protocols to prevent a single point failure in their works, one of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near- 100 percent network uptime.
+In this article, we are going to look at how FHRP is used to achieve redundancy in networks, variety of FHRP and then configure Hot Standby Redundancy Protocol (HSRP), which is a Cisco propriety protocol use in the implementation of FHRP.
 
 ### Table of contents
-- [Concept of First Hop Redundancy Protocol](#concept-of-first-hop-redundancy-protocol) 
-- [Table of contents](#table-of-contents)
-- [Introduction](#introduction)
+
 - [Goals](#goals)
 - [Prerequisite](#prerequisite)
 - [Requirements](#requirements)
@@ -17,17 +13,13 @@
 - [Host Standby Router Protocol (HSRP)](#host-standby-router-protocol-hsrp)
 - [Gateway Load Balancing Protocol (GLBP)](#gateway-load-balancing-protocol-glbp)
 - [ICMP Router Discovery Protocol (IRDP)](#icmp-router-discovery-protocol-irdp)
-- [HSRP features.](#hsrp-features)
+- [HSRP features](#hsrp-features)
 - [HSRP preemption](#hsrp-preemption)
 - [Steps to configuring HSRP](#steps-to-configuring-hsrp)
 - [Configuring HSRP protocol on a Cisco router](#configuring-hsrp-protocol-on-a-cisco-router)
 - [Conclusion](#conclusion)
 - [Activity File](#activity-file)
 - [Further reading](#further-reading)
-
-### Introduction
-Organizations use various protocols to prevent a single point  failure in their works, one of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near- 100 percent network uptime.
-In this article, we are going to look at how FHRP is used to achieve redundancy in networks, variety of FHRP and then configure Hot Standby Redundancy Protocol (HSRP), which is a Cisco propriety protocol use in the implementation of FHRP.
 
 ### Goals
 At the end of this article, the reader is expected to learn:
