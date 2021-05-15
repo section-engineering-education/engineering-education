@@ -141,9 +141,7 @@ To access and tinker with the complete block of code, you can find it [here](htt
 
 ### Conclusion
 
-That wraps it all! 
-
-In this tutorial, we have learned how to build an object detection application using the TensorFlow library in the React app.
+That wraps it up! In this tutorial, we have learned how to build an object detection application using the TensorFlow library in the React app.
 
 *Happy Coding!*
 
