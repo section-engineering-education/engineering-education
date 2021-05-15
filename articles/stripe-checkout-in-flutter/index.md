@@ -344,6 +344,6 @@ In this tutorial, we learned how to integrate stripe checkout in a flutter. The 
 You can find the project [here](). Create an API key and secret in the stripe dashboard to use when running the project on your computer. Reach out to me in case of any questions.
 
 ### Further reading
-- [Stripe payment flutter package](https://pub.dev/packages/stripe_payment)
-- [Flutter credit card package](https://pub.dev/packages/flutter_credit_card)
-- [Http Dart Package](https://pub.dev/packages/http)
+- [Stripe payment flutter package](https://pub.dev/packages/stripe_payment).
+- [Flutter credit card package](https://pub.dev/packages/flutter_credit_card).
+- [Http Dart Package](https://pub.dev/packages/http).
