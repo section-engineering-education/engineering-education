@@ -48,10 +48,10 @@ You can also inherit from any inner layer. For example, if we inherit from conta
 
 ```
 
-The images are combined with a configuration file providing instruction on setting up the environment and executing an application endpoint. 
+The images are combined with a configuration file providing instructions on setting up the environment and executing an application endpoint. 
 
 #### Building application images using Dockerfiles
-A `Dockerfile` is a text file containing commands specified by a user(a developer) used for building an image.
+A `Dockerfile` is a text file containing commands specified by a user(a developer) for building an image.
 
 Let's look at the example below for creating a lightweight image:
 
