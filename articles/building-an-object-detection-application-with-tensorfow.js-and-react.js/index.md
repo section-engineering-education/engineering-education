@@ -4,6 +4,8 @@ So what is object detection?
 
 Object detection is a method in computer vision and image processing that allows us to find and locate where multiple objects are in an image or video. This algorithm draws bounding boxes around one or more objects in the image or video after detecting an object. These bounding boxes are defined by a point, width, and height. It then assigns the objects class labels, i.e., cat, dog, or car.
 
+### Goals
+
 In this tutorial, we will put in place the following tasks:
 
 1. Access the React.JS and Tensorflow.JS Computer Vision Template
