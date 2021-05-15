@@ -4,32 +4,32 @@
 ![Hero Image](/engineering-education/concept-of-first-hop-redundancy-protocol/hero.jpeg)
 [source](https://unsplash.com/photos/7wBFsHWQDlk)
 
-## Table of contents
-- [Concept of First Hop Redundancy Protocol](#concept-of-first-hop-redundancy-protocol)
-  - [Table of contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Goals](#goals)
-    - [Prerequisite](#prerequisite)
-    - [Requirements](#requirements)
-    - [Default gateway](#default-gateway)
-    - [First Hop Redundancy Protocol (FHRP)](#first-hop-redundancy-protocol-fhrp)
-  - [Various First Hop Redundancy Protocols](#various-first-hop-redundancy-protocols)
-      - [Host Standby Router Protocol (HSRP)](#host-standby-router-protocol-hsrp)
-      - [Gateway Load Balancing Protocol (GLBP)](#gateway-load-balancing-protocol-glbp)
-      - [ICMP Router Discovery Protocol (IRDP)](#icmp-router-discovery-protocol-irdp)
-    - [HSRP features.](#hsrp-features)
-      - [HSRP preemption](#hsrp-preemption)
-    - [Steps to configuring HSRP](#steps-to-configuring-hsrp)
-    - [Configuring HSRP protocol on a Cisco router](#configuring-hsrp-protocol-on-a-cisco-router)
-    - [Conclusion](#conclusion)
-    - [Activity File](#activity-file)
-    - [Further reading](#further-reading)
+### Table of contents
+- [Concept of First Hop Redundancy Protocol](#concept-of-first-hop-redundancy-protocol) 
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Goals](#goals)
+- [Prerequisite](#prerequisite)
+- [Requirements](#requirements)
+- [Default gateway](#default-gateway)
+- [First Hop Redundancy Protocol (FHRP)](#first-hop-redundancy-protocol-fhrp)
+- [Various First Hop Redundancy Protocols](#various-first-hop-redundancy-protocols)
+- [Host Standby Router Protocol (HSRP)](#host-standby-router-protocol-hsrp)
+- [Gateway Load Balancing Protocol (GLBP)](#gateway-load-balancing-protocol-glbp)
+- [ICMP Router Discovery Protocol (IRDP)](#icmp-router-discovery-protocol-irdp)
+- [HSRP features.](#hsrp-features)
+- [HSRP preemption](#hsrp-preemption)
+- [Steps to configuring HSRP](#steps-to-configuring-hsrp)
+- [Configuring HSRP protocol on a Cisco router](#configuring-hsrp-protocol-on-a-cisco-router)
+- [Conclusion](#conclusion)
+- [Activity File](#activity-file)
+- [Further reading](#further-reading)
 
-## Introduction
+### Introduction
 Organizations use various protocols to prevent a single point  failure in their works, one of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near- 100 percent network uptime.
 In this article, we are going to look at how FHRP is used to achieve redundancy in networks, variety of FHRP and then configure Hot Standby Redundancy Protocol (HSRP), which is a Cisco propriety protocol use in the implementation of FHRP.
 
-## Goals
+### Goals
 At the end of this article, the reader is expected to learn:
 - What FHRP is
 - Various FHRP options available
@@ -53,7 +53,7 @@ The IP address of the virtual router is configured on all hosts in that network 
 When an IP packet is sent from host devices on that network, the host uses Address Resolution Protocol (ARP) to resolve the MAC address associated. The packet sent to this MAC address is processed by any physically active router within the router group. By so doing, if one router goes down, the IP packet will be processed and forwarded by the next active router.
 FHRP uses a mechanism known as First Hop Redundancy to determine which router takes an active role in forwarding traffic and when a standby router should take over this active role.
 
-## Various First Hop Redundancy Protocols
+### Various First Hop Redundancy Protocols
 There are various First Hop Redundancy Protocols available, some of these protocols are proprietary, while others are standard protocols.
 
 #### Host Standby Router Protocol (HSRP)
