@@ -2,7 +2,7 @@ Have you ever wondered how a self-driving car operates on its own? Or how the fa
 
 So what is object detection?
 
-Object detection is a method in computer vision and image processing. The technique allows us to find and locate where multiple (objects) are in an image or video. This algorithm draws bounding boxes around one or more objects in the image or video after detecting an object. These bounding boxes are defined by a point, width, and height. It then assigns the objects class labels, i.e., cat, dog, or car.
+Object detection is a method in computer vision and image processing that allows us to find and locate where multiple objects are in an image or video. This algorithm draws bounding boxes around one or more objects in the image or video after detecting an object. These bounding boxes are defined by a point, width, and height. It then assigns the objects class labels, i.e., cat, dog, or car.
 
 In this tutorial, we will put in place the following tasks:
 
