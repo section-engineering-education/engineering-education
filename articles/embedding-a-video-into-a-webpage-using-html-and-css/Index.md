@@ -115,7 +115,6 @@ After saving, while you are still on your HTML page, right click and select “O
 ![step 8](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-8.jpg)
 
 **Step 9:** Your Browser’s output.
-
 Depending on your HTML code (or how you have styled it), you can place the iframe tag anywhere you want within your HTML page. After you have successfully embedded a video in your webpage, you can actively interact with it. This means you can forward, rewind, play, pause, and adjust the volume of the video. You can also click on the YouTube icon in the embedded page to play the video directly on YouTube. All these activities are called **video controls**.
 
 ![step 9](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-9.jpg)
