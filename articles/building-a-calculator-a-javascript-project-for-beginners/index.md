@@ -293,7 +293,13 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 ```
 You may notice that `document.querySelectorAll` was only used for the `numbers` and `operation` buttons. Well, this is because these buttons appear several times on the calculator.
 
-Now that we have everything selected, we can start coding to make your calculator work. The first thing you need to consider is how you will store all the information typed on your output. You can do that by creating a calculator class at the top of your file. Inside of this class, you will put a constructor that will take all the inputs for it and all the calculator functions. This constructor is going to take your "previousOperandTextElement" and your "currentOperandTextElement" so that you can easily know where to place the display text for your calculator. Inside of it, you will need to create some variables for his class. As soon as you create your calculator, you need to call a "this.clear" function because you have to clear all your inputs and set them to the default values as soon as you create a new calculator. Here's what the code will look like:
+Now that we have everything selected, we can start coding to make the calculator work. The first thing we should consider is how we will store the output. We can do that by creating a calculator class at the top of the file. In this class, we will put a constructor that will take all the inputs for it and all the calculator functions. 
+
+This constructor is going to take the `previousOperandTextElement` and `currentOperandTextElement` so that we can determine where to place the display text for your calculator. We also need to create some variables in this class. 
+
+As soon as we create the calculator, we should call the `this.clear` function because we have to reset the inputs. 
+
+Here's how the code will look like:
 
 ```javascript
 class Calculator {
@@ -305,7 +311,15 @@ class Calculator {
 ```
 
 ### The Calculator Functions
-Next, you have to define all the different operations the calculator can perform. The first one is clear() function, which will clear out all the different variables. Next is the delete() for clearing a single number. You will also create a function that will describe what will occur every time a user clicks on a number to add to the display called `appendNumber(number)`. The next thing you need to do is add a `chooseOperation(operation)` function that controls what will happen anytime a user clicks on any operation button. You also need to have are the `compute()` function that takes the values inside your calculator and brings out a single value result for what you need to display on the calculator. Lastly, you need a `updateDisplay()` function which lets you update the values inside of the output. The code comes out like this:
+Next, we have to define the different operations that the calculator will perform. The first one is`clear()` function, which will clear all the different variables. The next method is `delete()` for clearing a `single` number. 
+
+We will also create a function that determines what will occur every time a user clicks on a number to add to the display called `appendNumber(number)`. 
+
+We need a `chooseOperation(operation)` function that controls what will happen anytime a user clicks on any `operation` button. 
+
+Another key function is `compute()`. It takes the values inside your calculator and displays the result.
+
+Lastly, an `updateDisplay()` function lets us update the values inside of the output. These functions are illustrated in the code snippe below:
 
 ```javascript
 clear() {
@@ -327,10 +341,13 @@ updateDisplay() {
 }
 ```
 
-Now that you have defined all your operations, you can now think about the different properties the calculator needs to store. You need to know the previous operand the user entered, the current operand they are working on, and the operation they have selected.
+Now that we have defined all operations, we can now think about the different properties the calculator needs to store. We should determine the `previous operand` the user entered, the `current operand` they are working on, and the `operation` they have selected. 
+
+Let's start working on the functions.
 
 ### clear() Function
-Inside the clear() function, all you need to do is put off all the values displayed. The first thing you can do is default "this.currentOperand" to an empty string if the values on the output are removed. You can also do the same for the previous operand again, defaulting it to an empty string. Lastly, you have to change the "this.operation" to be undefined since they do not have any operation selected if they clear things. Here's how the clear function will  look like in your code:
+The `clear()` function will delete all the displayed values. We should set `this.currentOperand` to an empty string if the values on the output are removed. We can also do the same for the `previous operand`. Lastly, we have to change `this.operation` to be `undefined`. Here's how the `clear` function should look like:
+
 ```javascript
 clear() {
     this.currentOperand = ''
@@ -338,12 +355,19 @@ clear() {
     this.operation = undefined
   }
 ```
-Now that you know all the different things your calculator can do defined by the functions and all the different variables it can hold, you can now focus on hooking all the variables and making them operate on the calculator object. The first thing you need to do is create a calculator constant and set it to "new calculator" then, you pass everything from the constructor into it. You then need to pass in the previous and current operand text elements. Here is how it looks like in the code:
+
+Next, let's focus on hooking all the `variables` and making them operate on the calculator object. The first thing we should do is to create a `calculator constant` and set it to `new calculator` then, we pass everything from the constructor into it. We then pass in the `previous` and `current operand` text elements. Here is how it looks like in the code:
+
 ```javascript
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 ```
+
 ### appendNumber(number) Function
-Now that you have passed those elements in, you can then use this calculator object. To first use it, you will select your number button, and then you will say "for.each" because you want to loop over all these different buttons. You can add an "EventListener" by saying "button.addEventListener" for each of these buttons. This EventListener represents whenever you click on the button you want to do something. In this case, all you have to do is add the number to the calculator. This can be done by saying "appendNumber" of whatever is inside that button which can be specified by saying "button.innerText". Once that is done, you need to call "calculator.updateDisplay", thereby making sure the display values are constantly updated every time you click on a button on your calculator. The code comes out like this:
+Now that we have passed those elements in, we can then use this calculator object.
+
+We will select a `number` button, and then use a `for.each` statement to loop over all these different buttons. We can also add an `EventListener` on the buttons using `button.addEventListener`. The `EventListener` will invoke somehing whenever the button is clicked. 
+
+In this case, we will only add a number to the calculator. This can be done by calling the `appendNumber` function and using `button.innerText` to display it. Once that is done, we need to call the `calculator.updateDisplay` method, thereby making sure that the `displayed values` are constantly updated every time we click on a button on the calculator. The code snippet is shown below:
 
 ```javascript
 numberButtons.forEach(button => {
@@ -354,7 +378,15 @@ numberButtons.forEach(button => {
 })
 ```
 
-To test that everything you have written so far is working, inside your `updateDisplay()` function, input "this.currentOperandTextElement.innerText = this.currentOperand". Also, inside your `appendNumber()` function, you can just change the current operand to equal that number instead of appending the number. If you go over to your calculator and click on a number, it would show up on the output box, but you may notice that nothing shows up when you click on an operation button or any other buttons that are not numbers. So now you know that your appending number functions are properly hooked up on all your buttons and your display updated every time you click on a button. Since you know that your `appendNumber()` is working, you might as well write the `appendNumber()` function. All you need to do is update the current operand value and append the number you get passed to its end. You can just say "this.currentOperand" then convert it to a string if it's a number. This way, you can easily append something to the end by using "+" and you can just convert your number to a string as well. You need to convert everything to a string because JavaScript will now try to add these as actual numbers, i.e., it will now do one plus one equals two rather than one plus one equals eleven because you want your numbers to be appended and not added. When you save that and click on numbers, you find out that they constantly get added to the list. But, the period(.) symbol also continues to get added when clicked, and you do not want that. To check for that, you can say if the string of numbers in the output includes a period(.), just "return". This will stop your function from executing any further. Now, if you try to add multiple periods, it will only add one. This is the `appendNumber()` function completely done. The code will look like this:
+To ensure that everything we have written is working, inside the `updateDisplay()` function, add  `this.currentOperandTextElement.innerText = this.currentOperand`. Also, inside the `appendNumber()` function, we will change the `current operand` to match that number instead of `appending` the number. 
+
+When we click on a number on the calculator, it should be displayed in the output box. However, you may notice that nothing shows up when you click on an `operation` button or any other buttons that are not numbers. The appending number functions are, therefore, properly assigned to all the buttons. 
+
+Next, let's write the `appendNumber()` function. All you need to do is to update the `current operand` value and append the number. We can use `this.currentOperand` and convert it to a string if it's a number. This way, we can easily append something to the end by using "+". 
+
+Note that we should convert numbers to a string to prevent the compiler from performing the actual operation. When you save the file and click on numbers, you find that they constantly get added to the list. But, the period(.) symbol is also added when clicked. We can prevent this by checking if the string of numbers in the output includes a period(.), then `return`. This will stop your function from executing any further. Now, if you try to add multiple periods, it will only add one. 
+
+Below is the complete `appendNumber()`:
 
 ```javascript
   appendNumber(number) {
@@ -376,7 +408,9 @@ operationButtons.forEach(button => {
 ```
 
 Now, in your chooseOperation() function, you need to do a little bit of fancier math. When you click a number, followed by an operation on your calculator, you might want it to move up to the previous operand section for you to type in the other number to complete the entire operation. For instance, if you want to compute 2 + 60 when you type in 2+, you might want the 2+ to move into the previous operand section of the display output of the calculator so that 60 will be typed in the current operand section of the calculator. Well, you can implement that in your chooseOperation() function. The first thing you need to do is set "this.operation" equal to the operation you passed. That way, your calculator is aware of what operation it desires to use when computing the value. Then, you set "this.previousOperand = this. currentOperand" so you are essentially saying you are through typing the current number, so you recycle that over to the previous operand. You also have to clear out the new current operand, so you will just equate it to an empty string. Of course, you have to update your display so you go to your updateDisplay() function and just say "this.previousOperandTextElement = this.previousOperand"
-If you go to your calculator and click any of the operation buttons, you will notice that they display even without clicking any number buttons, so you need to add a check-in for that. You can just say if the current operation is empty, then “return”, which again will not let you execute any further into your code. One more thing you can add to your calculator functionality is computing an operation automatically while simultaneously computing another one. For instance, if you type in 54 + 50 and then click on “÷,” the calculator should be able to compute 54+50, making it 104 before dividing automatically. This can be done with the aid of simply saying if the previous operand is not equal to an empty string, then just type in “this.compute()”. Here is what the code will look like below:
+If you go to your calculator and click any of the operation buttons, you will notice that they display even without clicking any number buttons, so you need to add a check-in for that. You can just say if the current operation is empty, then “return”, which again will not let you execute any further into your code. One more thing you can add to your calculator functionality is computing an operation automatically while simultaneously computing another one. For instance, if you type in 54 + 50 and then click on “÷,” the calculator should be able to compute 54+50, making it 104 before dividing automatically. This can be done with the aid of simply saying if the previous operand is not equal to an empty string, then just type in “this.compute()”. 
+
+Here is what the code will look like:
 
 ```javascript
 chooseOperation(operation) {
