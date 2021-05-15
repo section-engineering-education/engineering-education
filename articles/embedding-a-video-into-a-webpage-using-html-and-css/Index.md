@@ -62,7 +62,9 @@ You will need the following prerequisites to embed a video:
 
 **Step 2:** Click on the video to play it.
 
-**Step 3:** Click on the share button. While the video plays, you will see a 'share' button below the video. When you click on it, you will find a few sharing options, including various social media platforms.
+**Step 3:** Click on the share button. 
+
+While the video plays, you will see a 'share' button below the video. When you click on it, you will find a few sharing options, including various social media platforms.
 
 ![step 3](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-3.jpg)
 
@@ -73,6 +75,7 @@ You will need the following prerequisites to embed a video:
 After clicking on 'Embed', YouTube will automatically generate a code for you to use. The iframe tag will have the URL of the video source, width, and height of the video, and other attributes.
 
 **Step 5:** Click on 'copy'. 
+
 As shown in the image below, click on 'copy' and paste the code in your HTML page. 
 
  ![step5](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-5.jpg)                         
@@ -110,16 +113,19 @@ Locate your HTML page, where you want to paste the iframe tag.
 ![step 7](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-7.jpg)
 
 **Step 8:** Save the changes you made on your HTML page. 
+
 After saving, while you are still on your HTML page, right click and select “Open in Browser”. Your HMTL code will run in your browser.
 
 ![step 8](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-8.jpg)
 
 **Step 9:** Your Browser’s output.
+
 Depending on your HTML code (or how you have styled it), you can place the iframe tag anywhere you want within your HTML page. After you have successfully embedded a video in your webpage, you can actively interact with it. This means you can forward, rewind, play, pause, and adjust the volume of the video. You can also click on the YouTube icon in the embedded page to play the video directly on YouTube. All these activities are called **video controls**.
 
 ![step 9](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-9.jpg)
 
 **Step 10:** Enjoy your view.
+
 As mentioned earlier, CSS is used for styling your webpage. The above screenshot contains a brownish red background while the screenshot below contains a purple background. You can play with the HTML and CSS skills to suit your preferences.
 
  ![step 10](/engineering-education/embedding-a-video-into-a-webpage-using-html-and-css/step-10.jpg)
