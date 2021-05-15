@@ -1,5 +1,5 @@
+Organizations use various protocols to prevent a single point failure in their works. One of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near- 100 percent network uptime.
 
-Organizations use various protocols to prevent a single point failure in their works, one of these protocols is the First Hop redundancy Protocol (FHRP) which presents a virtual default gateway to the organization's network to provide a near- 100 percent network uptime.
 In this article, we are going to look at how FHRP is used to achieve redundancy in networks, variety of FHRP and then configure Hot Standby Redundancy Protocol (HSRP), which is a Cisco propriety protocol use in the implementation of FHRP.
 
 ### Table of contents
@@ -10,11 +10,11 @@ In this article, we are going to look at how FHRP is used to achieve redundancy 
 - [Default gateway](#default-gateway)
 - [First Hop Redundancy Protocol (FHRP)](#first-hop-redundancy-protocol-fhrp)
 - [Various First Hop Redundancy Protocols](#various-first-hop-redundancy-protocols)
-- [Host Standby Router Protocol (HSRP)](#host-standby-router-protocol-hsrp)
-- [Gateway Load Balancing Protocol (GLBP)](#gateway-load-balancing-protocol-glbp)
-- [ICMP Router Discovery Protocol (IRDP)](#icmp-router-discovery-protocol-irdp)
+  - [Host Standby Router Protocol (HSRP)](#host-standby-router-protocol-hsrp)
+  - [Gateway Load Balancing Protocol (GLBP)](#gateway-load-balancing-protocol-glbp)
+  - [ICMP Router Discovery Protocol (IRDP)](#icmp-router-discovery-protocol-irdp)
 - [HSRP features](#hsrp-features)
-- [HSRP preemption](#hsrp-preemption)
+  - [HSRP preemption](#hsrp-preemption)
 - [Steps to configuring HSRP](#steps-to-configuring-hsrp)
 - [Configuring HSRP protocol on a Cisco router](#configuring-hsrp-protocol-on-a-cisco-router)
 - [Conclusion](#conclusion)
@@ -60,7 +60,7 @@ In GLBP, all routers in the GLBP group share the same virtual IP address but use
 IRDP is a legacy FHRP that uses Internet Control Message Protocol (ICPM) to allow hosts to discover routers on their network using **router advertisement** message to provide IPv4 connectivity to other non-local IPv4 networks.
 IRDP does not provide authentication to its advertisement messages because of this, the protocol is insecure as hosts running IRDP can be spoofed.
 
-### HSRP features.
+### HSRP features
 HSRP uses both active and standby routers to make a failover looks seamless in a network, thus providing redundancy.
 To determine the active and standby router, HSRP by default uses the numerically highest IPv4 address as it the active router. For better control of the election, HSRP uses the "HSRP priority" option to determine the active router. 
 The router configured with the highest priority value is elected as the active router, but in a situation whereby all routers have equal priorities, the router with the highest numerical IP address will be the Active router.
