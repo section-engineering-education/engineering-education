@@ -133,18 +133,21 @@ after the immediate function has been executed
 executing the immediate function: undefined
 ```
 
-While executing this method, you're likely to encounter an error as seen below, otherwise, skip this part:
+While executing this method, you're likely to encounter an error  as seen below, otherwise, skip this part:
 
 ```js
 before a set immediate function is called
 error: ReferenceError: setImmediate is not defined
 ``` 
+SetTimeout() method is not supported by most browsers hence is throws `ReferenceError: setImmediate is not defined` error.
 
 To fix this issue, simply add the following scripts on top of the script:
 
 ```js
 window.setImmediate = window.setTimeout;
 ```
+This line allows us to assign`setTimeout()`to global `setImmediate()` method. 
+> It's important to note that this method (`setImmediate()`) is unlikely to become browser standard.
 
 With basic knowledge in `setImmediate()`, let's look at a slightly advanced example with nested functions: 
 
