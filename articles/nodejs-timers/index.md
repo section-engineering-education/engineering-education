@@ -60,7 +60,7 @@ This method is then called inside a `setTimeout()` method, where it's executed a
 
 ### Scheduling timers using setInterval() method 
 
-Unlike `setTimeout()`, this method is used to execute code multiple times. For instance, [section](section.io) company may send out newsletters to its [Edge as a Service](https://www.section.io/saas-edge-solutions/) customers weekly. This is an example of where the `setInterval()` method comes in. It's an infinite loop that will execute as long as it's not exited (halted).  
+Unlike `setTimeout()`, this method is used to execute code multiple times. For instance, the company [Section.io](section.io) may send out newsletters to its [Edge as a Service](https://www.section.io/saas-edge-solutions/) customers weekly. This is an example of where the `setInterval()` method comes in. It's an infinite loop that will execute as long as it's not exited (halted).  
  
 It has the following syntax: 
 
@@ -133,23 +133,24 @@ after the immediate function has been executed
 executing the immediate function: undefined
 ```
 
-While executing this method, you're likely to encounter an error  as seen below, otherwise, skip this part:
+While executing this method, you're likely to encounter an error as seen below. If you do not get this error, skip this part:
 
-```js
+```bash
 before a set immediate function is called
 error: ReferenceError: setImmediate is not defined
-``` 
-SetTimeout() method is not supported by most browsers hence is throws `ReferenceError: setImmediate is not defined` error.
+```
+
+`setImmediate()` method is not supported by most browsers. Therefore, it throws `ReferenceError: setImmediate is not defined`.
 
 To fix this issue, simply add the following scripts on top of the script:
 
 ```js
 window.setImmediate = window.setTimeout;
 ```
-This line allows us to assign`setTimeout()`to global `setImmediate()` method. 
+This line allows us to assign `setTimeout()` to global `setImmediate()` method. 
 > It's important to note that this method (`setImmediate()`) is unlikely to become browser standard.
 
-With basic knowledge in `setImmediate()`, let's look at a slightly advanced example with nested functions: 
+With basic knowledge about `setImmediate()`, let's look at a slightly advanced example with nested functions: 
 
 In `timer.js` script file, add the following: 
 
@@ -227,7 +228,7 @@ clearImmediate(immediateTimerObject);
 ### Conclusion
 In this tutorial, we've seen the process of scheduling tasks using the Node.js timer module. We've seen how to set timeouts, set interval timers for recurring tasks, and how to bypass long operations using set immediate. We've also seen how we can halt these operations using the `clear()` method for each respective method.
 
-You can also get more information about Node.js timer [here](https://nodejs.org/en/docs/guides/timers-in-node/) and working codebase on [github](https://github.com/owinowendy/node-timers).
+You can also get more information about Node.js timers [here](https://nodejs.org/en/docs/guides/timers-in-node/) and check out the full code on [Github](https://github.com/owinowendy/node-timers).
 
 Happy coding!!
 
