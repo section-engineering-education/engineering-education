@@ -2,6 +2,11 @@
 
 Node.js `Read-Evaluate-Print-Loop`(REPL) is an easy-to-use command-line tool for processing Node.js expressions. It captures the user's JavaScript code inputs, interprets and evaluates the result of this code, displays the result to the screen, and repeats the process till the user quits the shell. It is also important to note that this tool does not require file creation to write codes. REPL comes with ready to use Node.js development environment.
 
+- A read function, which accepts an expression from the user and parses it into a data structure in memory .
+- An eval function, which takes the data structure and evaluates.
+- A print function, which prints the result.
+- A loop function, which runs the above three commands until termination
+
 In this tutorial, we learn the basics of Node.js REPL, how we can use this amazing tool to run scripts without creating `.js` files.
 
 ### Table of contents
