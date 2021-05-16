@@ -64,9 +64,9 @@ undefined
 
 In the script, we assign the text `hello world` to a variable called `hello`. Now, on calling this variable `hello`, we get `hello world` as the output on the command shell. You also notice that on pressing ENTER, `undefined` is printed. 
 
->The JavaScript functions always return something. If you don't specify something to return in the function, 'undefined' is returned by default. Don't worry though, this doesn't affect anything, you can ignore it.  
+> JavaScript functions always return something. If you don't specify something to return in the function, 'undefined' is returned by default. This doesn't affect anything, you can ignore it.  
 
-To exit this REPL, press `Ctrl+C` on your keyboard.  
+To exit the REPL, press `Ctrl+C` on your keyboard.  
 
 **Output:**
 
